@@ -1,0 +1,26 @@
+{
+  "name": "xtend",
+  "version": "0.0.5",
+  "description": "",
+  "homepage": "",
+  "license": "MIT",
+  "authors": [
+    "Riccardo Caroli <beaver82@gmail.com>"
+  ],
+  "keywords": [
+    "css",
+    "js",
+    "less",
+    "front-end",
+    "framework",
+    "library",
+    "plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minimit/xtend.git"
+  },
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
