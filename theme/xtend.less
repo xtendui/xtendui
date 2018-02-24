@@ -1,0 +1,22 @@
+//////////////////////
+// includes
+//////////////////////
+
+// xtend
+
+@import '../core/__core';
+@import '__theme';
+
+//////////////////////
+// generation of classes
+//////////////////////
+
+// set to false to use only mixins
+
+@generate-grid: true;
+@generate-utils: true;
+@generate-margins: true;
+@generate-paddings: true;
+@generate-structure: true;
+@generate-flex-utils: true;
+@generate-breakpoints: sm, md, lg; // only for this breakpoints (set to false to not generate responsive classes)

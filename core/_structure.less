@@ -1,0 +1,328 @@
+//////////////////////
+// flex
+//////////////////////
+
+.flex {
+  .display(flex);
+}
+
+// flex-auto
+// USAGE: .flex-auto(); .flex-auto(sm);
+
+.flex-auto(@breakpoint:none) when (@breakpoint = none) {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.flex-auto(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
+}
+
+& when (@generate-structure) {
+
+  // generate-flex-auto
+
+  .generate-flex-auto();
+  .generate-flex-auto(@breakpoint:none) {
+    & when (@breakpoint = none) {
+      .flex-auto {
+        .flex-auto() !important;
+      }
+    }
+    & when not (@breakpoint = none) {
+      @query-min: 'min-@{breakpoint}';
+      @media @@query-min {
+        .flex-auto-@{breakpoint} {
+          .flex-auto() !important;
+        }
+      }
+    }
+  }
+
+  // generate-flex-auto-responsive
+
+  & when not (@generate-breakpoints = false) {
+    .generate-flex-auto-responsive();
+    .generate-flex-auto-responsive(@i:length(@generate-breakpoints)) when (@i > 0) {
+      .generate-flex-auto-responsive(@i - 1);
+      @breakpoint: extract(@generate-breakpoints, @i);
+      .generate-flex-auto(@breakpoint);
+    }
+  }
+
+}
+
+// flex space
+// USAGE: .flex-space(medium);
+.flex-space(@name) {
+  .by-key(@flex-space-horizontal, @name);
+  @horizontal: @by-key;
+  .by-key-alt(@flex-space-vertical, @name);
+  @vertical: @by-key-alt;
+  margin: -@vertical -@horizontal;
+  > * {
+    padding: @vertical @horizontal;
+  }
+}
+
+& when (@generate-structure) {
+
+  // generate-flex-space
+
+  .generate-flex-space();
+  .generate-flex-space(@i:length(@flex-space-horizontal)) when (@i > 0) {
+    .generate-flex-space(@i - 1);
+    @flex: extract(@flex-space-horizontal, @i);
+    @name: extract(@flex, 1);
+    .flex-space-@{name} {
+      .flex-space(@name) !important;
+    }
+  }
+
+}
+
+//////////////////////
+// direction
+//////////////////////
+
+// vertical
+// USAGE: .vertical(); .vertical(sm);
+
+.vertical(@breakpoint:none) when (@breakpoint = none) {
+  .flex-column();
+  .flex-wrap();
+  &.reverse {
+    .flex-column();
+  }
+  /*
+  > .item {
+    width: 100%;
+  }
+  > .fluid {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
+  */
+}
+.vertical(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    .flex-column();
+    .flex-wrap();
+    &.reverse {
+      .flex-column-reverse();
+    }
+    /*
+    > .item {
+      width: 100%;
+    }
+    > .fluid {
+      -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+    }
+    */
+  }
+}
+
+// horizontal
+// USAGE: .horizontal(); .horizontal(sm);
+
+.horizontal(@breakpoint:none) when (@breakpoint = none) {
+  .flex-row();
+  .flex-nowrap();
+  &.reverse {
+    .flex-row-reverse();
+  }
+  /*
+  > .item {
+    width: 100%;
+  }
+  > .fluid {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
+  */
+}
+.horizontal(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    .flex-row();
+    .flex-nowrap();
+    &.reverse {
+      .flex-row-reverse();
+    }
+    /*
+    > .item {
+      width: auto;
+    }
+    > .fluid {
+      -webkit-flex: 1 1 0%;
+      -ms-flex: 1 1 0%;
+      flex: 1 1 0%;
+    }
+    */
+  }
+}
+
+& when (@generate-structure) {
+
+  // generate-directions
+
+  .generate-directions();
+  .generate-directions(@breakpoint:none) {
+    & when (@breakpoint = none) {
+      .vertical {
+        .vertical();
+      }
+      .horizontal {
+        .horizontal();
+      }
+    }
+    & when not (@breakpoint = none) {
+      @query-min: 'min-@{breakpoint}';
+      @media @@query-min {
+        .vertical-@{breakpoint} {
+          .vertical();
+        }
+        .horizontal-@{breakpoint} {
+          .horizontal();
+        }
+      }
+    }
+  }
+
+  // generate-directions-responsive
+
+  & when not (@generate-breakpoints = false) {
+    .generate-directions-responsive();
+    .generate-directions-responsive(@i:length(@generate-breakpoints)) when (@i > 0) {
+      .generate-directions-responsive(@i - 1);
+      @breakpoint: extract(@generate-breakpoints, @i);
+      .generate-directions(@breakpoint);
+    }
+  }
+
+}
+
+//////////////////////
+// list
+//////////////////////
+
+.list-base() {
+  .display(flex);
+  //.flex-auto(); // @FIX flex inside flex take 100% but dont bugs negative margins
+  // list
+  .list-btn({
+    .block();
+    .text(left);
+  });
+  .list-btn-default({
+    .btn();
+    .text(left);
+  });
+}
+
+// selectors
+
+.list-btn(@rules) {
+  > li  {
+    > a, > button {
+      @rules();
+    }
+  }
+}
+.list-btn-default(@rules) {
+  > li  {
+    > a, > button {
+      &:not(.btn) {
+        @rules();
+      }
+    }
+  }
+}
+
+// .list-block
+
+.list-block {
+  .list-base();
+  .flex-column();
+  .flex-nowrap();
+}
+
+// .list-line
+
+.list-line {
+  .list-base();
+  .flex-row();
+  .flex-wrap();
+}
+
+// alignment
+
+.list-left {
+  .list-btn({
+    .text(left) !important;
+  });
+}
+.list-center {
+  .list-btn({
+    .text(center) !important;
+  });
+}
+.list-right {
+  .list-btn({
+    .text(right) !important;
+  });
+}
+
+// list space
+// USAGE: .list-space(medium);
+
+.list-space(@name) {
+  .by-key(@list-space-horizontal, @name);
+  @horizontal: @by-key;
+  .by-key-alt(@list-space-vertical, @name);
+  @vertical: @by-key-alt;
+  margin: -@vertical -@horizontal;
+  > * {
+    margin: @vertical @horizontal;
+  }
+}
+
+// generate-list-space
+
+.generate-list-space();
+.generate-list-space(@i:length(@list-space-horizontal)) when (@i > 0) {
+  .generate-list-space(@i - 1);
+  @list: extract(@list-space-horizontal, @i);
+  @name: extract(@list, 1);
+  .list-space-@{name} {
+    .list-space(@name) !important;
+  }
+}
+
+//////////////////////
+// box
+//////////////////////
+
+.box {
+  .display(flex);
+  .flex-column();
+  position: relative;
+}
+
+//////////////////////
+// alert
+//////////////////////
+
+.alert {
+  .block();
+}

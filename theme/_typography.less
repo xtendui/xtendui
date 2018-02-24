@@ -1,0 +1,234 @@
+//////////////////////
+// document
+//////////////////////
+
+html {
+  // base font size for rem
+  // 100% is 16px
+  // value(%) = desired(px) * 100 / 16
+  font-size: 50%; // 8px
+  @media @min-md {
+    font-size: 56.25%; // 9px
+  }
+  @media @min-xl {
+    font-size: 62.5%; // 10px
+  }
+}
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: @white;
+  .font-sans-regular();
+  .font-medium();
+  line-height: 1.6;
+  color: @text;
+}
+
+//////////////////////
+// sizes
+//////////////////////
+
+.font-tiny {
+  font-size: 1.2rem;
+}
+.font-small {
+  font-size: 1.3rem;
+}
+.font-medium {
+  font-size: 1.4rem;
+}
+.font-big {
+  font-size: 1.5rem;
+}
+.font-giant {
+  font-size: 1.8rem;
+}
+
+//////////////////////
+// headers
+//////////////////////
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  .margin(y, layout);
+  .margin(top, big);
+  .margin(bottom, medium);
+  .font-sans-semibold();
+  line-height: 1.2;
+}
+
+h1, .h1 {
+  font-size: 3rem;
+  @media @min-sm {
+    font-size: 4rem;
+  }
+}
+h2, .h2 {
+  font-size: 3rem;
+  @media @min-sm {
+    font-size: 4rem;
+  }
+}
+h3, .h3 {
+  font-size: 3rem;
+}
+h4, .h4 {
+  font-size: 2rem;
+}
+h5, .h5 {
+  font-size: 1.7rem;
+}
+h6, .h6 {
+  font-size: 1.3rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+//////////////////////
+// text
+//////////////////////
+
+p {
+  .margin(y, layout);
+  .margin(bottom, medium);
+}
+strong {
+  .font-sans-semibold();
+}
+small {
+  font-size: .8em;
+}
+.muted {
+  color: @grey-500;
+}
+
+// code
+
+code {
+  padding: .187rem .375rem;
+  background-color: @grey-250;
+  .font-monospace();
+  font-size: .9em;
+  color: @secondary;
+}
+pre code {
+  .margin(y, layout);
+  .margin(bottom, medium);
+  font-size: .812rem;
+  line-height: 1.6;
+}
+
+// reset
+
+.reset-text {
+  font-family: inherit !important;
+  font-style: inherit !important;
+  font-weight: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+  font-size: inherit !important;
+  color: inherit !important;
+  line-height: inherit !important;
+}
+
+//////////////////////
+// ul ol
+//////////////////////
+
+.default-style { // .default-style for default ul ol
+  ul,
+  ol {
+    .margin(y, layout);
+    .margin(bottom, medium);
+    padding-left: 2rem;
+    > ul,
+    > ol {
+      .margin(y, medium);
+    }
+  }
+  ul {
+    list-style: disc;
+    ul {
+      list-style: circle;
+    }
+  }
+  ol {
+    list-style-type: decimal;
+    ol {
+      list-style-type: lower-alpha;
+    }
+  }
+}
+
+//////////////////////
+// dl
+//////////////////////
+
+dl {
+  .margin(bottom, medium);
+  .margin(bottom, layout);
+  .font-medium();
+  .dl-block();
+  dt {
+    .font-sans-bold();
+  }
+}
+
+// .dl-block
+
+.dl-block {
+  .margin-remove(top, tiny);
+  dt {
+    .margin(top, small);
+  }
+  dd {
+    .margin(top, tiny);
+  }
+}
+
+// .dl-line
+
+.dl-line {
+  .margin-remove(top, tiny);
+  dt {
+    .margin(top, tiny);
+  }
+  dd {
+    .margin(left, small);
+    .margin(top, tiny);
+  }
+}
+
+//////////////////////
+// icons
+//////////////////////
+
+// icon :before or :after
+// USAGE: .icon(@content, @size, @sr-only, @position);
+
+.icon(@content, @size: @icon-medium, @sr-only: true, @position: before) {
+  & when (@sr-only = true) {
+    > span {
+      .sr-only();
+    }
+  }
+  &:@{position} {
+    content: @content;
+    display: inline-block;
+    position: relative;
+    font-family: @icons-family !important;
+    font-size: @size;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: inherit;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

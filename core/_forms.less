@@ -1,0 +1,202 @@
+//////////////////////
+// group
+//////////////////////
+
+.form-group {
+  position: relative;
+  .display(flex);
+  .flex-row();
+  .flex-wrap();
+  // inline
+  &.inline {
+    // reset
+    .input-control {
+      width: auto;
+    }
+  }
+}
+.form-inline { .form-groups({ .form-group.inline() }); }
+
+// selectors
+
+.form-groups(@rules) {
+  .form-group {
+    @rules();
+  }
+}
+
+//////////////////////
+// label
+//////////////////////
+
+.label-control {
+  .display(inline-flex);
+  .align-items-center();
+}
+
+//////////////////////
+// input
+//////////////////////
+
+.input-control {
+  .display(block);
+  width: 100%;
+  z-index: 1;
+  &:hover, &:focus {
+    z-index: 2;
+  }
+  // select arrow
+  select& {
+    .padding(right, @select-space-size * 2) !important;
+    white-space: normal;
+    background-position:
+      calc(~'100% - ' @select-space-size / 2) 50%,
+      calc(~'100% - ' @select-space-size / 2 - @select-arrow-size) 50%,
+      100% 0;
+    background-size:
+      @select-arrow-size @select-arrow-size,
+      @select-arrow-size @select-arrow-size,
+      @select-space-size 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+//////////////////////
+// check and radio
+//////////////////////
+
+.input-special {
+  display: block;
+  position: relative;
+  float: left;
+  // label
+  & + .label-control {
+    .label-special();
+  }
+}
+.label-special {
+  position: relative;
+  overflow: hidden;
+  margin: 0 !important;
+}
+
+//////////////////////
+// input-group
+//////////////////////
+
+.input-group {
+  .display(flex);
+  .flex-nowrap();
+  width: 100%;
+  // .input-control
+  .input-control {
+    z-index: 2;
+    &:first-child {
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
+    &:last-child {
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0 !important;
+    }
+  }
+}
+
+// shared
+
+.input-group-line,
+.input-group-stack {
+  z-index: 1;
+  .btn {
+    .text(center);
+    .margin(right, -@btn-border-width);
+    z-index: 1;
+    &:hover, &:active, &.active {
+      z-index: 2;
+    }
+  }
+  .input-control ~ & {
+    .btn {
+      .margin(right, none);
+      .margin(left, -@btn-border-width);
+    }
+  }
+}
+
+// .input-group-line
+
+.input-group-line {
+  .display(flex);
+  // border
+  &:first-child {
+    .btn {
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
+  }
+  &:last-child {
+    .btn {
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+  }
+  &:not(:first-child):not(:last-child) {
+    .btn {
+      border-radius: 0 !important;
+    }
+  }
+}
+
+// .input-group-stack
+
+.input-group-stack {
+  .display(flex);
+  .flex-row();
+  .flex-wrap();
+  // .btn
+  .btn {
+    width: 100%;
+  }
+  .btn + .btn {
+    margin-top: -@btn-border-width;
+  }
+  &:first-child {
+    .btn {
+      &:not(:first-child) {
+        border-bottom-right-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+        border-top-left-radius: 0 !important;
+      }
+      &:not(:last-child) {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+      }
+      &:not(:first-child):not(:last-child) {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+      }
+    }
+  }
+  &:last-child {
+    .btn {
+      &:not(:first-child) {
+        border-bottom-left-radius: 0 !important;
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+      }
+      &:not(:last-child) {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+      }
+      &:not(:first-child):not(:last-child) {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+      }
+    }
+  }
+}

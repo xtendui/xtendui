@@ -1,0 +1,141 @@
+//////////////////////
+// timing and functions
+//////////////////////
+
+// .animation-default();
+
+.animation-default() {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(.63,.36,0,.97);
+  &.fade-out {
+    animation-timing-function: cubic-bezier(.63,.36,0,.97);
+  }
+}
+
+// .transition-default();
+
+.transition-default() {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(.63,.36,0,.97);
+  &.fade-out {
+    transition-timing-function: cubic-bezier(.63,.36,0,.97);
+  }
+}
+
+//////////////////////
+// animations
+//////////////////////
+
+// .anim-bottom();
+
+.anim-bottom() {
+  .animation-default();
+  opacity: 1;
+  &.fade-in {
+    animation-name: anim-bottom-in;
+  }
+  &.fade-out {
+    opacity: 0;
+    animation-name: anim-bottom-out;
+  }
+}
+@keyframes anim-bottom-in {
+  0%{
+    opacity: 0;
+    transform: translateY(.5rem);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes anim-bottom-out {
+  0%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(.5rem);
+  }
+}
+
+// .anim-vertical();
+
+.anim-vertical() {
+  .animation-default();
+  opacity: 1;
+  &.fade-in {
+    animation-name: anim-vertical-in;
+  }
+  &.fade-out {
+    opacity: 0;
+    animation-name: anim-vertical-out;
+  }
+}
+@keyframes anim-vertical-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes anim-vertical-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(.5rem);
+  }
+}
+
+// .anim-backdrop();
+
+.anim-backdrop() {
+  .animation-default();
+  opacity: @backdrop-opacity;
+  &.fade-in {
+    animation-name: anim-backdrop-in;
+  }
+  &.fade-out {
+    opacity: 0;
+    animation-name: anim-backdrop-out;
+  }
+}
+@keyframes anim-backdrop-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: @backdrop-opacity;
+  }
+}
+@keyframes anim-backdrop-out {
+  0% {
+    opacity: @backdrop-opacity;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+// .anim-rotate();
+
+.anim-rotate() {
+  animation: preload-rotate 0.8s infinite linear;
+  will-change: transform;
+}
+@keyframes preload-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

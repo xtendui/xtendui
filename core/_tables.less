@@ -1,0 +1,52 @@
+//////////////////////
+// tables
+//////////////////////
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  th {
+    text-align: left;
+    vertical-align: bottom;
+  }
+  td {
+    text-align: left;
+  }
+}
+
+// middle
+
+.table-middle {
+  th,
+  td {
+    vertical-align: middle;
+  }
+}
+
+// center
+
+.table-center {
+  th,
+  td {
+    text-align: center;
+  }
+}
+
+// right
+
+.table-right {
+  th:not(:nth-child(1)),
+  td:not(:nth-child(1)) {
+    text-align: right;
+  }
+}
+
+// responsive
+
+.table-scroll {
+  .block();
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}

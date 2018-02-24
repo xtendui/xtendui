@@ -1,0 +1,170 @@
+//////////////////////
+// variables
+//////////////////////
+
+@select-arrow-size: 4px; // (px)
+@select-space-size: 24px; // (px)
+
+//////////////////////
+// fieldset and legend
+//////////////////////
+
+fieldset {
+  .margin(y, layout);
+  .margin(bottom, medium);
+}
+
+legend {
+  .h4();
+}
+
+//////////////////////
+// group
+//////////////////////
+
+.form-group {
+  // inline
+  &.inline {
+    .list-line();
+    .list-space(small);
+    .align-items-center();
+  }
+  // options
+  .form-group-medium();
+}
+
+// sizes
+
+.form-group-tiny {
+  .margin(bottom, 1em);
+  font-size: 1.1rem;
+}
+.form-tiny { .form-groups({ .form-group-tiny() }); }
+
+.form-group-small {
+  .margin(bottom, 1.25em);
+  font-size: 1.2rem;
+}
+.form-small { .form-groups({ .form-group-small() }); }
+
+.form-group-medium {
+  .margin(bottom, 1.5em);
+  font-size: 1.3rem;
+}
+.form-medium { .form-groups({ .form-group-medium() }); }
+
+.form-group-big {
+  .margin(bottom, 1.75em);
+  font-size: 1.4rem;
+}
+.form-big { .form-groups({ .form-group-big() }); }
+
+.form-group-giant {
+  .margin(bottom, 2em);
+  font-size: 1.5rem;
+}
+.form-giant { .form-groups({ .form-group-giant() }); }
+
+//////////////////////
+// label
+//////////////////////
+
+.label-control {
+  // styles
+  .margin(bottom, 1em); // from .form-group font size
+  .font-sans-semibold();
+  font-size: 1em; // from .form-group font size
+  color: @grey-500;
+  line-height: 1.25;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+//////////////////////
+// input
+//////////////////////
+
+.input-control {
+  // styles
+  padding: .75em 1.2em;
+  border-radius: @border-radius;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  font-size: 1em; // from .form-group font size
+  line-height: 1.25;
+  // options
+  .input-control-secondary();
+  // animations
+  .transition-default();
+}
+
+// variants
+.input-control-secondary {
+  border-color: @secondary;
+  background-color: @secondary;
+  color: fade(@text, 80%);
+  &:hover, &:focus {
+    background-color: lighten(@secondary, 5%);
+    color: @text;
+  }
+  &:focus {
+    border-color: @secondary;
+  }
+  // select arrow
+  select& {
+    @select-arrow-color: darken(@secondary, 25%);
+    @select-space-color: darken(@secondary, 5%);
+    background-image:
+      linear-gradient(45deg, transparent 50%, @select-arrow-color 50%),
+      linear-gradient(135deg, @select-arrow-color 50%, transparent 50%),
+      linear-gradient(to right, @select-space-color, @select-space-color);
+  }
+}
+
+//////////////////////
+// check and radio
+//////////////////////
+
+.input-special {
+  // styles
+  .margin(right, medium);
+}
+.label-special {
+  // styles
+  > span {
+    .margin(left, small);
+  }
+}
+
+//////////////////////
+// note
+//////////////////////
+
+.note {
+  // styles
+  .display(block);
+  width: 100%;
+  .margin(top, small);
+  .muted();
+  .font-tiny();
+  .text(left);
+  .input-group & {
+    position: absolute;
+  }
+}
+
+// variants
+
+.note-success {
+  color: @success;
+}
+.note-notice {
+  color: @notice;
+}
+.note-warning {
+  color: @warning;
+}
+.note-error {
+  color: @error;
+}

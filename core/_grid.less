@@ -1,0 +1,154 @@
+//////////////////////
+// contain
+//////////////////////
+
+.contain,
+.contain-fluid {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contain-fluid {
+  max-width: @contain-fluid;
+}
+
+// generate-contain-responsive
+
+.generate-contain-responsive();
+.generate-contain-responsive(@i:length(@contains)) when (@i > 0) {
+  .generate-contain-responsive(@i - 1);
+  @contain: extract(@contains, @i);
+  @breakpoint: extract(@contain, 1);
+  @val: extract(@contain, 2);
+  @overlay: extract(@overlay-space, @i);
+  @breakpoint: extract(@overlay, 1);
+  @val-overlay: extract(@overlay, 2);
+  & when (@breakpoint = all) {
+    .contain {
+      width: @val;
+    }
+    .overlay .overlay-content {
+      max-width: @val - @val-overlay * 2;
+    }
+  }
+  & when not (@breakpoint = all) {
+    @query-min: 'min-@{breakpoint}';
+    @media @@query-min {
+      .contain {
+        width: @val;
+      }
+      .overlay .overlay-content {
+        max-width: @val - @val-overlay * 2;
+      }
+    }
+  }
+}
+
+// generate-contain-space
+
+.generate-contain-space();
+.generate-contain-space(@i:length(@contain-space)) when (@i > 0) {
+  .generate-contain-space(@i - 1);
+  @contain: extract(@contain-space, @i);
+  @breakpoint: extract(@contain, 1);
+  @val: extract(@contain, 2);
+  & when (@breakpoint = all) {
+    .contain,
+    .contain-fluid {
+      padding-right: @val;
+      padding-left: @val;
+    }
+  }
+  & when not (@breakpoint = all) {
+    @query-min: 'min-@{breakpoint}';
+    @media @@query-min {
+      .contain,
+      .contain-fluid {
+        padding-right: @val;
+        padding-left: @val;
+      }
+    }
+  }
+}
+
+//////////////////////
+// grid
+//////////////////////
+
+.all-auto {
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: 100%; // fix ie10 overflow
+  flex-basis: auto;
+  max-width: none;
+  width: auto;
+}
+
+// grid
+// USAGE: .all(6); .min(lg, 6); .max(xs, 6);
+
+.all(@i) {
+  @val: (percentage(@i / @columns));
+  -webkit-flex-basis: @val;
+  -ms-flex-preferred-size: @val;
+  flex-basis: @val;
+  max-width: @val;
+  width: @val;
+}
+.min(@name, @i) {
+  @query-min: 'min-@{name}';
+  @val: (percentage(@i / @columns));
+  @media @@query-min {
+    -webkit-flex-basis: @val;
+    -ms-flex-preferred-size: @val;
+    flex-basis: @val;
+    max-width: @val;
+    width: @val;
+  }
+}
+.max(@name, @i) {
+  @query-max: 'max-@{name}';
+  @val: (percentage(@i / @columns));
+  @media @@query-max {
+    -webkit-flex-basis: @val;
+    -ms-flex-preferred-size: @val;
+    flex-basis: @val;
+    max-width: @val;
+    width: @val;
+  }
+}
+
+& when (@generate-grid) {
+
+  // generate-grid
+
+  .generate-grid(all; @columns);
+  .generate-grid(@breakpoint; @columns; @i:1) when (@i =< @columns) {
+    .generate-grid(@breakpoint; @columns; (@i + 1));
+    .@{breakpoint}-@{i} {
+      .all(@i);
+    }
+  }
+
+  // generate-grid-responsive
+
+  & when not (@generate-breakpoints = false) {
+    .generate-grid-responsive();
+    .generate-grid-responsive(@i:length(@generate-breakpoints)) when (@i > 0) {
+      .generate-grid-responsive(@i - 1);
+      @breakpoint: extract(@generate-breakpoints, @i);
+      @query-min: 'min-@{breakpoint}';
+      @media @@query-min {
+        .generate-grid(@breakpoint; @columns);
+        .@{breakpoint}-auto {
+          -webkit-flex-basis: auto;
+          -ms-flex-preferred-size: 100%; // fix ie10 overflow
+          flex-basis: auto;
+          max-width: none;
+          width: auto;
+        }
+      }
+    }
+  }
+
+}

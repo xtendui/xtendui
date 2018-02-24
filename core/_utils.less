@@ -1,0 +1,873 @@
+//////////////////////
+// .by-key
+// https://stackoverflow.com/questions/27383399/extract-item-from-css-less-list-by-name
+//////////////////////
+
+// USAGE: .by-key(@list-space, @name); @val: @by-key;
+
+.by-key(@array, @key, @fallback...) {
+  .-(length(@array));
+  .-(@i) when (@i > 0) {.-((@i - 1))}
+  .-(@i) when (@key = extract(extract(@array, @i), 1)) {
+    @by-key: extract(extract(@array, @i), 2);
+  }
+  .--() {@by-key: @fallback} .--;
+}
+
+// USAGE: .by-key-alt(@list-space, @name); @val: @by-key-alt;
+
+.by-key-alt(@array, @key, @fallback...) {
+  .-(length(@array));
+  .-(@i) when (@i > 0) {.-((@i - 1))}
+  .-(@i) when (@key = extract(extract(@array, @i), 1)) {
+  @by-key-alt: extract(extract(@array, @i), 2);
+}
+  .--() {@by-key-alt: @fallback} .--;
+}
+
+//////////////////////
+// texts
+//////////////////////
+
+.text-upper {
+  text-transform: uppercase !important;
+}
+.text-lower {
+  text-transform: lowercase !important;
+}
+.text-cap {
+  text-transform: capitalize !important;
+}
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+// text
+// USAGE: .text(center); .text(center, sm);
+
+.text(@val, @breakpoint:none) when (@breakpoint = none) {
+  text-align: @val;
+}
+.text(@val, @breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    text-align: @val;
+  }
+}
+
+//////////////////////
+// float
+//////////////////////
+
+// float
+// USAGE: .float(left); .float(left, sm);
+
+.float(@val, @breakpoint:none) when (@breakpoint = none) {
+  float: @val;
+}
+.float(@val, @breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    float: @val;
+  }
+}
+
+//////////////////////
+// displays
+//////////////////////
+
+// display
+// USAGE: .display(none); .display(none, sm);
+
+.display(@val, @breakpoint:none) when (@breakpoint = none) {
+  & when not (@val = flex), not (@val = inline-flex) {
+    display: @val;
+  }
+  & when (@val = flex) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  & when (@val = inline-flex) {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+}
+.display(@val, @breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    & when not (@val = flex), not (@val = inline-flex) {
+      display: @val;
+    }
+    & when (@val = flex) {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+    & when (@val = inline-flex) {
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+    }
+  }
+}
+
+//////////////////////
+// margin
+//////////////////////
+
+// margin
+// USAGE: .margin(left, medium); .margin(left, medium, sm);
+
+.margin(@pos:all, @size, @breakpoint:none) when (@breakpoint = none) {
+  & when (isnumber(@size)) {
+    .print-margin(@pos, @size, @breakpoint);
+  }
+  & when not (isnumber(@size)) {
+    .loop-margin(@pos, @size, @breakpoint);
+  }
+  // layout
+  & when (@size = layout) and (@pos = y) {
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = x) {
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = top) {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = bottom) {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = left) {
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = right) {
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+.margin(@pos:all, @size, @breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    & when (isnumber(@size)) {
+      .print-margin(@pos, @size, @breakpoint);
+    }
+    & when not (isnumber(@size)) {
+      .loop-margin(@pos, @size, @breakpoint);
+    }
+  }
+}
+.loop-margin(@pos:all, @size, @breakpoint:none, @i:length(@margins)) when (@i > 0) {
+  .loop-margin(@pos, @size, @breakpoint:none, @i - 1);
+  @margin: extract(@margins, @i);
+  @name: extract(@margin, 1);
+  @val: extract(@margin, 2);
+  & when (@name = @size) {
+    .print-margin(@pos, @val, @breakpoint);
+  }
+}
+
+.print-margin(@pos, @val, @breakpoint) {
+  & when (@pos = all) {
+    margin: @val;
+  }
+  & when (@pos = y) {
+    margin-top: @val;
+    margin-bottom: @val;
+  }
+  & when (@pos = x) {
+    margin-left: @val;
+    margin-right: @val;
+  }
+  & when (@pos = t) or (@pos = top) {
+    margin-top: @val;
+  }
+  & when (@pos = b) or (@pos = bottom) {
+    margin-bottom: @val;
+  }
+  & when (@pos = l) or (@pos = left) {
+    margin-left: @val;
+  }
+  & when (@pos = r) or (@pos = right) {
+    margin-right: @val;
+  }
+}
+
+// margin-remove
+// USAGE: .margin-remove(left, medium); .margin-remove(left, medium, sm);
+
+.margin-remove(@pos:all, @size, @breakpoint:none) when (@breakpoint = none) {
+  & when (isnumber(@size)) {
+    .print-margin-remove(@pos, @size, @breakpoint);
+  }
+  & when not (isnumber(@size)) {
+    .loop-margin-remove(@pos, @size, @breakpoint);
+  }
+}
+.margin-remove(@pos:all, @size, @breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    & when (isnumber(@size)) {
+      .print-margin-remove(@pos, @size, @breakpoint);
+    }
+    & when not (isnumber(@size)) {
+      .loop-margin-remove(@pos, @size, @breakpoint);
+    }
+  }
+}
+.loop-margin-remove(@pos:all, @size, @breakpoint:none, @i:length(@margins)) when (@i > 0) {
+  .loop-margin-remove(@pos, @size, @breakpoint:none, @i - 1);
+  @margin: extract(@margins, @i);
+  @name: extract(@margin, 1);
+  @val: extract(@margin, 2);
+  & when (@name = @size) {
+    .print-margin-remove(@pos, @val, @breakpoint);
+  }
+}
+
+.print-margin-remove(@pos, @val, @breakpoint) {
+  & when (@pos = all) {
+    margin: -@val;
+  }
+  & when (@pos = y) {
+    margin-top: -@val;
+    margin-bottom: -@val;
+  }
+  & when (@pos = x) {
+    margin-left: -@val;
+    margin-right: -@val;
+  }
+  & when (@pos = t) or (@pos = top) {
+    margin-top: -@val;
+  }
+  & when (@pos = b) or (@pos = bottom) {
+    margin-bottom: -@val;
+  }
+  & when (@pos = l) or (@pos = left) {
+    margin-left: -@val;
+  }
+  & when (@pos = r) or (@pos = right) {
+    margin-right: -@val;
+  }
+}
+
+//////////////////////
+// padding
+//////////////////////
+
+// padding
+// USAGE: .padding(left, medium); .padding(left, medium, sm);
+
+.padding(@pos:all, @size, @breakpoint:none) when (@breakpoint = none) {
+  & when (isnumber(@size)) {
+    .print-padding(@pos, @size, @breakpoint);
+  }
+  & when not (isnumber(@size)) {
+    .loop-padding(@pos, @size, @breakpoint);
+  }
+  // layout
+  & when (@size = layout) and (@pos = y) {
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = x) {
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = top) {
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = bottom) {
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = left) {
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = right) {
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+.padding(@pos:all, @size, @breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    & when (isnumber(@size)) {
+      .print-padding(@pos, @size, @breakpoint);
+    }
+    & when not (isnumber(@size)) {
+      .loop-padding(@pos, @size, @breakpoint);
+    }
+  }
+}
+.loop-padding(@pos:all, @size, @breakpoint:none, @i:length(@paddings)) when (@i > 0) {
+  .loop-padding(@pos, @size, @breakpoint:none, @i - 1);
+  @padding: extract(@paddings, @i);
+  @name: extract(@padding, 1);
+  @val: extract(@padding, 2);
+  & when (@name = @size) {
+    .print-padding(@pos, @val, @breakpoint);
+  }
+}
+
+.print-padding(@pos, @val, @breakpoint) {
+  & when (@pos = all) {
+    padding: @val;
+  }
+  & when (@pos = y) {
+    padding-top: @val;
+    padding-bottom: @val;
+  }
+  & when (@pos = x) {
+    padding-left: @val;
+    padding-right: @val;
+  }
+  & when (@pos = t) or (@pos = top) {
+    padding-top: @val;
+  }
+  & when (@pos = b) or (@pos = bottom) {
+    padding-bottom: @val;
+  }
+  & when (@pos = l) or (@pos = left) {
+    padding-left: @val;
+  }
+  & when (@pos = r) or (@pos = right) {
+    padding-right: @val;
+  }
+}
+
+//////////////////////
+// flex utils
+//////////////////////
+
+// direction
+
+.flex-row(@breakpoint:none) when (@breakpoint = none) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.flex-row(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.flex-row-reverse(@breakpoint:none) when (@breakpoint = none) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+.flex-row-reverse(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+}
+
+.flex-column(@breakpoint:none) when (@breakpoint = none) {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.flex-column(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+.flex-column-reverse(@breakpoint:none) when (@breakpoint = none) {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+.flex-column-reverse(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+}
+
+// wrap
+
+.flex-wrap(@breakpoint:none) when (@breakpoint = none) {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.flex-wrap(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+.flex-wrap-reverse(@breakpoint:none) when (@breakpoint = none) {
+  -ms-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+.flex-wrap-reverse(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+  }
+}
+
+.flex-nowrap(@breakpoint:none) when (@breakpoint = none) {
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+.flex-nowrap(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+}
+
+// justify-content
+
+.justify-content-start(@breakpoint:none) when (@breakpoint = none) {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+.justify-content-start(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
+.justify-content-end(@breakpoint:none) when (@breakpoint = none) {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.justify-content-end(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
+}
+
+.justify-content-center(@breakpoint:none) when (@breakpoint = none) {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.justify-content-center(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
+.justify-content-between(@breakpoint:none) when (@breakpoint = none) {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.justify-content-between(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+.justify-content-around(@breakpoint:none) when (@breakpoint = none) {
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+.justify-content-around(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+}
+
+// align-items
+
+.align-items-start(@breakpoint:none) when (@breakpoint = none) {
+  -webkit-box-align: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.align-items-start(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-box-align: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+}
+
+.align-items-end(@breakpoint:none) when (@breakpoint = none) {
+  -webkit-box-align: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+.align-items-end(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-box-align: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
+}
+
+.align-items-center(@breakpoint:none) when (@breakpoint = none) {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.align-items-center(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+.align-items-baseline(@breakpoint:none) when (@breakpoint = none) {
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+.align-items-baseline(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+  }
+}
+
+.align-items-stretch(@breakpoint:none) when (@breakpoint = none) {
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+.align-items-stretch(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+// align-content
+
+.align-content-start(@breakpoint:none) when (@breakpoint = none) {
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+.align-content-start(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+  }
+}
+
+.align-content-end(@breakpoint:none) when (@breakpoint = none) {
+  -ms-flex-line-pack: end;
+  align-content: flex-end;
+}
+.align-content-end(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-line-pack: end;
+    align-content: flex-end;
+  }
+}
+
+.align-content-center(@breakpoint:none) when (@breakpoint = none) {
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+.align-content-center(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-line-pack: center;
+    align-content: center;
+  }
+}
+
+.align-content-between(@breakpoint:none) when (@breakpoint = none) {
+  -ms-flex-line-pack: justify;
+  align-content: space-between;
+}
+.align-content-between(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
+  }
+}
+
+.align-content-around(@breakpoint:none) when (@breakpoint = none) {
+  -ms-flex-line-pack: distribute;
+  align-content: space-around;
+}
+.align-content-around(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-line-pack: distribute;
+    align-content: space-around;
+  }
+}
+
+.align-content-stretch(@breakpoint:none) when (@breakpoint = none) {
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+}
+.align-content-stretch(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+  }
+}
+
+// align-self
+
+.align-self-auto(@breakpoint:none) when (@breakpoint = none) {
+  -ms-flex-item-align: auto;
+  align-self: auto;
+}
+.align-self-auto(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-item-align: auto;
+    align-self: auto;
+  }
+}
+
+.align-self-start(@breakpoint:none) when (@breakpoint = none) {
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+.align-self-start(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  }
+}
+
+.align-self-end(@breakpoint:none) when (@breakpoint = none) {
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+.align-self-end(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+  }
+}
+
+.align-self-center(@breakpoint:none) when (@breakpoint = none) {
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+.align-self-center(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-item-align: center;
+    align-self: center;
+  }
+}
+
+.align-self-baseline(@breakpoint:none) when (@breakpoint = none) {
+  -ms-flex-item-align: baseline;
+  align-self: baseline;
+}
+.align-self-baseline(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-item-align: baseline;
+    align-self: baseline;
+  }
+}
+
+.align-self-stretch(@breakpoint:none) when (@breakpoint = none) {
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+}
+.align-self-stretch(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+  }
+}
+
+//////////////////////
+// flex order
+//////////////////////
+
+// order
+// USAGE: .flex-order(1); .flex-order(1, sm);
+
+.flex-order(@i, @breakpoint:none) when (@breakpoint = none) {
+  @val: extract(@orders, @i + 1);
+  -webkit-box-ordinal-group: @val;
+  -ms-flex-order: @val;
+  order: @val;
+}
+.flex-order(@i, @breakpoint:none) when (default()) {
+  @val: extract(@orders, @i + 1);
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-box-ordinal-group: @val;
+    -ms-flex-order: @val;
+    order: @val;
+  }
+}
+
+//////////////////////
+// various
+//////////////////////
+
+.clearfix {
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+.select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.select-text {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.accelerate {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  transform: translateZ(0);
+}
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+// responsive
+// USAGE: .responsive(); .responsive(sm);
+
+.responsive(@breakpoint:none) when (@breakpoint = none) {
+  max-width: 100%;
+  height: auto;
+  // fix ie11 bug responsive
+  min-height: 2px;
+  // fix chrome bug responsive
+  .align-self-center();
+}
+.responsive(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    max-width: 100%;
+    height: auto;
+    // fix ie11 bug responsive
+    min-height: 2px;
+    // fix chrome bug responsive
+    .align-self-center();
+  }
+}
+
+// block
+// USAGE: .block(); .block(sm);
+
+.block(@breakpoint:none) when (@breakpoint = none) {
+  display: block;
+  width: 100%;
+}
+.block(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    display: block;
+    width: 100%;
+  }
+}

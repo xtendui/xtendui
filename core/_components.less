@@ -1,0 +1,305 @@
+//////////////////////
+// link
+//////////////////////
+
+// break-word
+
+a, .alink, .btn-link {
+  .select-none;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+// disabled
+
+[disabled], .disabled {
+  cursor: default;
+  pointer-events: none;
+}
+
+//////////////////////
+// btn
+//////////////////////
+
+.btn {
+  .select-none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  > span {
+    display: inline-block;
+  }
+  &:active, &.active {
+    .by-key(@core-indexes, btn-active);
+    z-index: @by-key;
+  }
+}
+
+// custom
+
+.btn-close {
+  .by-key(@core-indexes, close);
+  z-index: @by-key !important;
+}
+
+//////////////////////
+// drop
+//////////////////////
+
+.drop-outer {
+  display: inline-block;
+  position: relative;
+}
+.drop-outer-static {
+  position: static;
+  .drop,
+  .drop-inner {
+    width: 100%;
+  }
+}
+.drop {
+  position: absolute;
+  .by-key(@core-indexes, drop);
+  z-index: @by-key !important;
+  // activation
+  display: none;
+  &.active,
+  &.fade-out {
+    .display(flex);
+  }
+  // styles
+  .drop-inner {
+    position: relative;
+  }
+  .button {
+    width: 100%;
+    text-align: left;
+    white-space: nowrap;
+  }
+  // others
+  &.fade-out {
+    pointer-events: none;
+  }
+}
+
+// before + after
+
+.drop-before {
+  left: auto;
+  right: 100%;
+}
+.drop-after {
+  left: 100%;
+  right: auto;
+}
+
+// left + right
+
+.drop-left {
+  left: 0;
+  right: auto;
+}
+.drop-right {
+  left: auto;
+  right: 0;
+}
+
+// bottom + top
+
+.drop-bottom {
+  top: 100%;
+  bottom: auto;
+}
+.drop-top {
+  top: auto;
+  bottom: 100%;
+}
+
+// middle
+
+.drop-middle-bottom {
+  top: auto;
+  bottom: 0;
+}
+.drop-middle-top {
+  top: 0;
+  bottom: auto;
+}
+.drop-middle-top,
+.drop-middle-bottom,
+.drop-middle {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+// positions space
+
+.drop-left,
+.drop-right,
+.drop-top,
+.drop-bottom {
+  padding: @drop-space 0;
+}
+.drop-before,
+.drop-after {
+  padding: @drop-space;
+}
+
+// dimensions
+
+.drop-max-height {
+  .drop-inner {
+    overflow-y: auto;
+  }
+}
+.drop-max-width {
+  .drop-inner {
+    overflow-x: auto;
+  }
+}
+
+//////////////////////
+// overlay
+//////////////////////
+
+.overlay {
+  position: fixed;
+  .by-key(@core-indexes, overlay);
+  z-index: @by-key !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  // activation
+  display: none;
+  &.active,
+  &.fade-out {
+    .display(flex);
+  }
+  // styles
+  .overlay-inner {
+    position: relative;
+    .by-key(@core-indexes, overlay);
+    z-index: @by-key !important;
+    width: 100%;
+    min-height: 100vh;
+    .display(flex);
+    .flex-column();
+    .flex-nowrap();
+    .justify-content-center();
+    // fix http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
+    margin: auto;
+  }
+  .overlay-content {
+    position: relative;
+    width: 100%;
+    .align-self-center;
+    @media @max-xs {
+      max-width: 100%;
+    }
+  }
+  &.overlay-screen {
+    .overlay-content {
+      position: static;
+    }
+    .overlay-inner + .xt-backdrop {
+      display: none;
+    }
+  }
+  // .overlay-fluid
+  &.overlay-fluid {
+    .overlay-content {
+      width: 100%;
+      max-width: @overlay-fluid;
+    }
+  }
+}
+
+// generate-overlay-sizes
+
+.generate-overlay-sizes();
+.generate-overlay-sizes(@i:length(@overlays)) when (@i > 0) {
+  .generate-overlay-sizes(@i - 1);
+  @overlay: extract(@overlays, @i);
+  @name: extract(@overlay, 1);
+  @val: extract(@overlay, 2);
+  .overlay-@{name} {
+    .overlay-content {
+      width: @val;
+    }
+  }
+}
+
+// generate-overlay-space
+
+.generate-overlay-space();
+.generate-overlay-space(@i:length(@overlay-space)) when (@i > 0) {
+  .generate-overlay-space(@i - 1);
+  @overlay: extract(@overlay-space, @i);
+  @breakpoint: extract(@overlay, 1);
+  @val: extract(@overlay, 2);
+  & when (@breakpoint = all) {
+    .overlay .overlay-inner {
+      padding: @val;
+    }
+  }
+  & when not (@breakpoint = all) {
+    @query-min: 'min-@{breakpoint}';
+    @media @@query-min {
+      .overlay .overlay-inner {
+        padding: @val;
+      }
+    }
+  }
+}
+
+//////////////////////
+// loader
+//////////////////////
+
+.loader-mask {
+  position: absolute;
+  .by-key(@core-indexes, loader);
+  z-index: @by-key !important;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.loader-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+//////////////////////
+// plugins
+//////////////////////
+
+// .xt-backdrop
+
+.xt-backdrop {
+  position: fixed;
+  .by-key(@core-indexes, backdrop);
+  z-index: @by-key !important;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// .xt-fixed
+
+html.xt-fixed {
+  body {
+    overflow-y: hidden;
+  }
+  .overlay {
+    overflow-y: scroll;
+  }
+}

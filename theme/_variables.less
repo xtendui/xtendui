@@ -1,0 +1,215 @@
+//////////////////////
+// colors
+//////////////////////
+
+// greys
+
+@white: #fff;
+@black: #343a40;
+@grey-250: #edf3f6;
+@grey-500: #626c76;
+@grey-750: #343a40;
+
+// text
+
+@text: @grey-750;
+@text-inverse: #fff;
+
+// colors
+
+@primary: #00B0FF;
+@secondary: #d4e7ef;
+@success: #28a745;
+@notice: #17a2b8;
+@warning: #ffc107;
+@error: #dc3545;
+
+//////////////////////
+// utils
+//////////////////////
+
+@margins: auto auto, none 0, tiny .375rem, small .75rem, medium 1.5rem, big 3rem, giant 6rem;
+@paddings: auto auto, none 0, tiny .375rem, small .75rem, medium 1.5rem, big 3rem, giant 6rem;
+@orders: 0, 1, 2, 3, 4, 5;
+@core-indexes: btn-active 1, loader 11, backdrop 100, drop 150, overlay 200, close 300; // z-index values
+
+//////////////////////
+// structure
+//////////////////////
+
+// flex
+
+@flex-space-horizontal: none 0, tiny .25rem, small .5rem, medium 1rem, big 2rem, giant 3rem;
+@flex-space-vertical: none 0, tiny .25rem, small .5rem, medium 1rem, big 2rem, giant 3rem;
+
+// list
+
+@list-space-horizontal: none 0, tiny .25rem, small .5rem, medium 1rem, big 2rem, giant 3rem;
+@list-space-vertical: none 0, tiny .25rem, small .5rem, medium 1rem, big 2rem, giant 3rem;
+
+//////////////////////
+// components
+//////////////////////
+
+@border-radius: 3px;
+@backdrop-opacity: .6;
+
+// btn
+
+@btn-border-width: 1px;
+
+// drop
+
+@drop-space: 6px; // space between button and drop
+
+//////////////////////
+// fonts
+//////////////////////
+
+/* NEEDS: fonts css
+<link rel="stylesheet" src="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700"/>
+*/
+
+.font-sans-regular() {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.font-sans-semibold() {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.font-sans-bold() {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+.font-monospace() {
+  font-family: monaco, Consolas, 'Lucida Console', monospace;
+  font-weight: normal;
+  font-style: normal;
+}
+
+//////////////////////
+// icons
+//////////////////////
+
+@icons-family: 'luma-icons';
+@icons-path: '../icons/Luma-Icons';
+@font-face {
+  font-family: @icons-family;
+  src: url('@{icons-path}.eot');
+  src: url('@{icons-path}.eot?#iefix') format('embedded-opentype'),
+  url('@{icons-path}.woff2') format('woff2'),
+  url('@{icons-path}.woff') format('woff'),
+  url('@{icons-path}.ttf') format('truetype'),
+  url('@{icons-path}.svg#@{icons-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// sizes
+
+@icon-tiny: .5em;
+@icon-small: .75em;
+@icon-medium: 1em;
+@icon-big: 1.5em;
+@icon-giant: 2em;
+
+// content
+
+@icon-menu: '\e609';
+@icon-close: '\e616';
+@icon-search: '\e615';
+@icon-cart: '\e611';
+@icon-edit: '\e601';
+@icon-chevron-up: '\e621';
+@icon-chevron-down: '\e622';
+@icon-arrow-up: '\e613';
+@icon-arrow-down: '\e614';
+@icon-wishlist: '\e600';
+@icon-wishlist-empty: '\e601';
+@icon-trash: '\e604';
+@icon-prev: '\e617';
+@icon-next: '\e608';
+@icon-grid: '\e60d';
+@icon-list: '\e60b';
+@icon-star: '\e605';
+@icon-star-empty: '\e625';
+@icon-compare: '\e61e';
+@icon-compare-empty: '\e61f';
+@icon-envelope: '\e61d';
+
+@icon-info: '\e60c';
+@icon-success: '\e60e';
+@icon-error: '\e61f';
+@icon-warning: '\e602';
+@icon-update: '\e603';
+@icon-print: '\e624';
+@icon-account: '\e627';
+@icon-download: '\e626';
+@icon-private: '\e629';
+@icon-present: '\e62a';
+@icon-lock: '\e629';
+@icon-calendar: '\e62b';
+@icon-return: '\e628';
+@icon-settings: '\e606';
+@icon-pointer-down: '\e607';
+@icon-location: '\e60a';
+@icon-collapse: '\e60f';
+@icon-checkmark: '\e610';
+@icon-calendar: '\e612';
+@icon-pointer-up: '\e618';
+@icon-pointer-right: '\e619';
+@icon-pointer-left: '\e61a';
+@icon-flag: '\e61b';
+@icon-expand: '\e61c';
+@icon-comment: '\e620';
+@icon-comment-reflected: '\e60e';
+@icon-help: '\e623';
+@icon-arrow-up-thin: '\e633';
+@icon-arrow-down-thin: '\e626';
+@icon-arrow-left-thin: '\e625';
+@icon-arrow-right-thin: '\e624';
+
+//////////////////////
+// grid
+//////////////////////
+
+@columns: 12;
+
+// contain
+
+@contains: all 100%, xs 540px, sm 720px, md 960px, lg 1140px, xl 1300px; // contain sizes
+@contain-fluid: 1300px; // contain fluid size
+@contain-space: all 15px, xs 15px, sm 20px, md 25px, lg 30px, xl 30px; // spacing outside contain
+
+// overlay
+
+@overlays: tiny 540px, small 720px, medium 960px, big 1140px, giant 1300px; // overlay sizes
+@overlay-fluid: 1300px; // overlay fluid size
+@overlay-space: all 15px, xs 15px, sm 20px, md 25px, lg 30px, xl 30px; // space outside overlay
+
+// breakpoints
+
+@breakpoints: xs, sm, md, lg, xl; // if you change this change also variables names below
+@breakpoint-xs: 576px;
+@breakpoint-sm: 768px;
+@breakpoint-md: 992px;
+@breakpoint-lg: 1200px;
+@breakpoint-xl: 1350px;
+
+// @media queries
+// USAGE: @media @min-sm and @max-md {}
+
+@min-xs: ~'(min-width:'(@breakpoint-xs)~')';
+@max-xs: ~'(max-width:'(@breakpoint-xs - 1)~')';
+@min-sm: ~'(min-width:'(@breakpoint-sm)~')';
+@max-sm: ~'(max-width:'(@breakpoint-sm - 1)~')';
+@min-md: ~'(min-width:'(@breakpoint-md)~')';
+@max-md: ~'(max-width:'(@breakpoint-md - 1)~')';
+@min-lg: ~'(min-width:'(@breakpoint-lg)~')';
+@max-lg: ~'(max-width:'(@breakpoint-lg - 1)~')';
+@min-xl: ~'(min-width:'(@breakpoint-xl)~')';
+@max-xl: ~'(max-width:'(@breakpoint-xl - 1)~')';

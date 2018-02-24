@@ -1,0 +1,71 @@
+//////////////////////
+// document
+//////////////////////
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-size-adjust: 100%;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+//////////////////////
+// ul ol
+//////////////////////
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  cursor: default;
+  > li {
+    cursor: auto;
+  }
+}
+
+//////////////////////
+// dl
+//////////////////////
+
+// .dl-block
+
+dl, .dl-block {
+  float: none;
+  dt {
+    clear: none;
+    float: none;
+    margin: 0;
+  }
+  dd {
+    float: none;
+    margin: 0;
+  }
+}
+
+// .dl-line
+
+.dl-line {
+  float: left;
+  dt {
+    clear: both;
+    float: left;
+    margin: 0;
+  }
+  dd {
+    display: inline-block;
+    float: left;
+    margin: 0;
+  }
+}
+
+//////////////////////
+// code
+//////////////////////
+
+pre code {
+  float: left;
+  white-space: pre-wrap;
+}
