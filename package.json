@@ -4,9 +4,8 @@
   "description": "Frontend library",
   "homepage": "",
   "license": "MIT",
-  "authors": [
-    "Riccardo Caroli <beaver82@gmail.com>"
-  ],
+  "author": "Riccardo Caroli <beaver82@gmail.com>"
+  "repository": "https://github.com/minimit/xtend.git",
   "keywords": [
     "css",
     "html",
@@ -15,10 +14,6 @@
     "library",
     "plugin"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/minimit/xtend.git"
-  },
   "scripts": {},
   "dependencies": {},
   "devDependencies": {}
