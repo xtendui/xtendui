@@ -12,7 +12,7 @@ You can install with one of the following:
 ### Theming
 
 If you install with yarn or npm, you need to copy `/dist` to customize the files:
-`cp -r node_modules/xtend-library/dist/ /xtend-library/`
+`cp -r node_modules/xtend-library/dist/ xtend-library/`
 
 # Copyright
 
