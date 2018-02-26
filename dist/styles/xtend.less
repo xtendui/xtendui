@@ -4,12 +4,13 @@
 
 // core
 
-@packagePath: '../../'; // if you use yarn or npm put the package path here
-@import '@{packagePath}styles/__core';
+@corePath: '../../'; // for theming use the package path here
+@import '@{corePath}styles/__core';
 
 // theme
 
-@import '__theme';
+@themePath: './';
+@import '@{themePath}__theme';
 
 // set to false to use only mixins
 
