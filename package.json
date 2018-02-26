@@ -13,10 +13,5 @@
     "front-end",
     "library",
     "plugin"
-  ],
-  "scripts": {},
-  "dependencies": {
-    "xtend-library": "^0.0.7"
-  },
-  "devDependencies": {}
+  ]
 }
