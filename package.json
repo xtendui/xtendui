@@ -1,7 +1,7 @@
 {
-  "name": "getxtend",
+  "name": "xtend-library",
   "version": "0.0.5",
-  "description": "",
+  "description": "Frontend library",
   "homepage": "",
   "license": "MIT",
   "authors": [
@@ -9,10 +9,9 @@
   ],
   "keywords": [
     "css",
+    "html",
     "js",
-    "less",
     "front-end",
-    "framework",
     "library",
     "plugin"
   ],
