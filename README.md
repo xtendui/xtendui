@@ -6,6 +6,7 @@
 You can install with one of the following:
 * download: [latest release.](https://github.com/minimit/xtend/releases/latest)
 * git: `git clone https://github.com/minimit/xtend.git`
+* yarn: `yarn add xtend-library --save --modules-folder ./web`
 * npm: `npm install xtend-library --save`, then copy assets `cp -r node_modules/xtend-library/ /xtend-library/`
 
 # Copyright
