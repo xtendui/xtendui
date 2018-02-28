@@ -12,21 +12,21 @@ You can install with one of the following:
 
 ### Theming
 
-You need to copy xtend-library `/dist` to customize the files.
+You need to copy xtend-library **/dist** to customize the files.
 
-If you install with yarn or npm:
+If you install with **yarn** or **npm**:
 ```
 mkdir -p xtend-library/
 cp -r node_modules/xtend-library/dist/ xtend-library/
 ```
 
-If you install with composer:
+If you install with **composer**:
 ```
 mkdir -p xtend-library/
 cp -r vendor/minimit/xtend-library/dist/ xtend-library/
 ```
 
-After in `xtend.less` put the right path for the `@import`.
+After in `xtend.less` put the right path for the **@imports**.
 
 # Copyright
 
