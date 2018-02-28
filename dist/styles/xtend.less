@@ -4,13 +4,11 @@
 
 // core
 
-@corePath: '../../'; // for theming use the package path here
-@import '@{corePath}styles/__core';
+@import '../../styles/__core'; // when theming use the composer or npm package path
 
 // theme
 
-@themePath: './';
-@import '@{themePath}__theme';
+@import '__theme';
 
 // set to false to use only mixins
 

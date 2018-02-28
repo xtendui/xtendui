@@ -26,6 +26,8 @@ mkdir -p xtend-library/
 cp -r vendor/minimit/xtend-library/dist/ xtend-library/
 ```
 
+After in `xtend.less` put the right path for the `@import`.
+
 # Copyright
 
 Copyright © 2017-2018 Riccardo Caroli. Licensed under [MIT license](http://www.opensource.org/licenses/mit-license.php).
