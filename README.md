@@ -4,11 +4,11 @@
 # Installation
 
 You can install with one of the following:
-* download: [latest release.](https://github.com/minimit/xtend-library/releases/latest)
-* git: `git clone https://github.com/minimit/xtend-library.git`
-* yarn: `yarn add xtend-library --save`
-* npm: `npm install xtend-library --save`
-* composer: `composer require minimit/xtend-library`
+* download: [latest release](https://github.com/minimit/xtend-library/releases/latest).
+* clone: `git clone https://github.com/minimit/xtend-library.git`.
+* [yarn](https://yarnpkg.com/): `yarn add xtend-library --save`.
+* [npm](https://www.npmjs.com/): `npm install xtend-library --save`.
+* [composer](https://getcomposer.org/): `composer require minimit/xtend-library`.
 
 ### Theming
 
