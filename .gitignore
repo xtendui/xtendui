@@ -1,8 +1,34 @@
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.log
+*.orig
+*.rej
+*.swo
+*.swp
+*.vi
+*.zip
+*~
+
+# OS and Editor
+._*
+.cache
+.DS_Store
 .idea
-.DS_store
-node_modules
+.project
+.settings
+.tmproj
+*.esproj
+*.sublime-project
+*.sublime-workspace
+nbproject
 Thumbs.db
-prepros.cfg
-config.codekit3
+
+# docs
 .cache/
 public/
+
+# custom
+node_modules
+prepros.cfg
+config.codekit3
