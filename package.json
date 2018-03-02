@@ -13,8 +13,5 @@
     "front-end",
     "library",
     "plugin"
-  ],
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {}
+  ]
 }
