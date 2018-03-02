@@ -1,5 +1,8 @@
 .idea
 .DS_store
+node_modules
 Thumbs.db
 prepros.cfg
 config.codekit3
+.cache/
+public/
