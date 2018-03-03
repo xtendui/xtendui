@@ -4,11 +4,11 @@
 
 // core
 
-@import '../core/__core'; // when theming put the xtend-library path relative to npm or composer
+@import '../../core/__core'; // when theming put the xtend-library path relative to npm or composer
 
 // theme
 
-@import 'theme/__theme';
+@import '../../dist/theme/__theme';
 
 // set to false to use only mixins
 
@@ -20,10 +20,12 @@
 @generate-flex-utils: true;
 @generate-breakpoints: sm, md, lg; // only for this breakpoints (set to false to not generate responsive classes)
 
+//////////////////////
 // icons
+//////////////////////
 
 @icons-family: 'xtend';
-@icons-path: 'icons/fonts/xtend';
+@icons-path: '../../dist/icons/fonts/xtend';
 @font-face {
   font-family: @icons-family;
   src:
@@ -33,3 +35,17 @@
   font-weight: normal;
   font-style: normal;
 }
+
+// sizes
+
+@icon-tiny: .5em;
+@icon-small: .75em;
+@icon-medium: 1em;
+@icon-big: 1.5em;
+@icon-giant: 2em;
+
+// content
+
+@icon-close: '\e616';
+@icon-chevron-up: '\e621';
+@icon-chevron-down: '\e622';

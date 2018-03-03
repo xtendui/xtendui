@@ -5736,8 +5736,8 @@ select.input-control-secondary {
 }
 @font-face {
   font-family: 'xtend';
-  src: url('icons/fonts/xtend.ttf') format('truetype'), url('icons/fonts/xtend.woff') format('woff'), url('icons/fonts/xtend.svg#xtend') format('svg');
+  src: url('../../dist/icons/fonts/xtend.ttf') format('truetype'), url('../../dist/icons/fonts/xtend.woff') format('woff'), url('../../dist/icons/fonts/xtend.svg#xtend') format('svg');
   font-weight: normal;
   font-style: normal;
 }
-/*# sourceMappingURL=xtend.css.map */
+/*# sourceMappingURL=theme.css.map */
