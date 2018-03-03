@@ -5,7 +5,7 @@ const Header = () => (
   <div>
     <h1>
       <Link to="/">
-        Gatsby
+        Xtend
       </Link>
     </h1>
   </div>

@@ -3,15 +3,15 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Header from '../components/Header'
-import './theme.css'
+import '../styles/theme.css'
 
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="Gatsby Default Starter"
+      title="Xtend library"
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'description', content: 'Frontend library' },
+        { name: 'keywords', content: 'css, html, js, front-end, library, plugin' },
       ]}
     />
     <Header />
