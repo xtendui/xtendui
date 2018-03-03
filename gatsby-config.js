@@ -1,7 +1,25 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: `Xtend library`,
+    description: `Frontend library`,
+    keywords: `css, html, js, front-end, library, plugin`,
   },
-  pathPrefix: '/xtend-library',
-  plugins: ['gatsby-plugin-react-helmet'],
+  pathPrefix: `/xtend-library`,
+  plugins: [
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/docs/`,
+      },
+    },
+  ],
 };
