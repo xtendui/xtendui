@@ -30,10 +30,9 @@ After in `xtend.less` put the right path for the **@imports**.
 
 # Acknowledgements
 
-* Icons: [feather icons](https://github.com/feathericons/feather)
+* Icons: [feather icons](https://github.com/feathericons/feather).
 
 # Copyright
 
-Copyright © 2017-2018 Riccardo Caroli.
 Licensed under [MIT license](https://github.com/minimit/xtend-library/blob/master/LICENSE).
 
