@@ -4,9 +4,7 @@ import Link from 'gatsby-link'
 const Page = () => {
   return (
     <div>
-      <Link to="/docs/buttons/" className="btn btn-primary">
-        Buttons
-      </Link>
+      Index
     </div>
   );
 }

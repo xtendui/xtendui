@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default ({ data }) => {
+const Markdown = ({ data }) => {
   const post = data.markdownRemark;
   return (
     <div>
@@ -20,3 +20,4 @@ export const query = graphql`
     }
   }
 `
+export default Markdown
