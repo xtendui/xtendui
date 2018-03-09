@@ -10,11 +10,12 @@ const Header = ({data}) => {
     <div>
 
       <h1>
-        <Links data={data} />
         <Link to="/">
           Xtend
         </Link>
       </h1>
+      
+      <Links data={data} />
 
     </div>
   );
