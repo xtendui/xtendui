@@ -19,6 +19,7 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
+    "prismjs": "^1.12.2",
     "gh-pages": "^1.1.0",
     "gatsby": "^1.9.218",
     "gatsby-link": "^1.6.37",
@@ -31,9 +32,5 @@
     "react-helmet": "^5.2.0",
     "rehype-react": "^3.0.2"
   },
-  "dependencies": {
-    "react-element-to-jsx-string": "^13.1.0",
-    "react-escape-html": "^1.0.5",
-    "react-prism": "^4.3.2"
-  }
+  "dependencies": {}
 }
