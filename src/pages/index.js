@@ -2,11 +2,13 @@ import React from 'react'
 
 // component
 
-const Index = () => {
+const IndexPage = ({ data }) => {
   return (
     <div>
-      Index
+
+      Homepage
+
     </div>
   );
 }
-export default Index
+export default IndexPage

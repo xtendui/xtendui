@@ -1,11 +1,11 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import Links from './links'
+import Links from 'components/links'
 
 // component
 
-const Header = ({ data }) => {
+const Header = ({data}) => {
   return (
     <div>
 

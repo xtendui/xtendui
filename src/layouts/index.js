@@ -1,12 +1,12 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import '../styles/theme.css'
-import favicon from '../images/favicon.ico';
-import favicon152 from '../images/favicon-152x152.png';
+import 'styles/theme.css'
+import favicon from 'images/favicon.ico';
+import favicon152 from 'images/favicon-152x152.png';
 
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Header from 'layouts/header'
+import Footer from 'layouts/footer'
 
 // component
 
@@ -30,7 +30,7 @@ const Layout = ({ children, data }) => {
 
       <div className="site-wrapper">
           <header className="site-header">
-            <Header data={data} />
+            <Header data={ data } />
           </header>
           <main className="site-main">
             {children()}
@@ -48,7 +48,7 @@ export default Layout
 // query
 
 export const query = graphql`
-  query LayoutQuery {
+  query IndexLayoutQuery {
     site {
       siteMetadata {
         title
@@ -60,17 +60,20 @@ export const query = graphql`
       totalCount
       edges {
         node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-          }
-          fields {
-            slug
-          }
-          excerpt
+          ...AllMarkdownFragment
         }
       }
     }
   }
-`
+  fragment AllMarkdownFragment on MarkdownRemark {
+    id
+    frontmatter {
+      title
+      date(formatString: "DD MMMM, YYYY")
+    }
+    fields {
+      slug
+    }
+    excerpt
+  }
+`;
