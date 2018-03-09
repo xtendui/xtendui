@@ -71,23 +71,6 @@ export const query = graphql`
         }
       }
     }
-    allSitePage {
-      edges {
-        node {
-          id
-        }
-      }
-    }
-    allFile {
-      edges {
-        node {
-          relativePath
-          prettySize
-          extension
-          birthTime(fromNow: true)
-        }
-      }
-    }
   }
 `
 

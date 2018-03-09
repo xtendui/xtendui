@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Xtend library`,
     description: `Frontend library`,
-    keywords: `css, html, js, front-end, library, plugin`,
+    keywords: `css, html, js, front-end, library, plugin`
   },
   pathPrefix: `/xtend-library`,
   plugins: [
@@ -13,14 +13,7 @@ module.exports = {
       options: {
         name: `src`,
         path: `${__dirname}/src/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages/docs/`,
-      },
-    },
+      }
+    }
   ],
 };
