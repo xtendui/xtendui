@@ -4323,7 +4323,6 @@ small {
 }
 code {
   padding: .187rem .375rem;
-  background-color: #edf3f6;
   font-family: monaco, Consolas, 'Lucida Console', monospace;
   font-weight: normal;
   font-style: normal;
@@ -4332,7 +4331,7 @@ code {
 }
 pre code {
   margin-bottom: 1.5rem;
-  font-size: .812rem;
+  font-size: 12px;
   line-height: 1.6;
 }
 pre code:first-child {
