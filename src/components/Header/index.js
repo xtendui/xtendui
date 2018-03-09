@@ -3,6 +3,8 @@ import Link from 'gatsby-link'
 
 import Links from './links'
 
+// component
+
 const Header = ({ data }) => {
   return (
     <div>
@@ -17,5 +19,4 @@ const Header = ({ data }) => {
     </div>
   );
 }
-
 export default Header

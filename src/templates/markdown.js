@@ -1,23 +1,36 @@
 import React from 'react'
 
+// component
+
 const Markdown = ({ data }) => {
   const post = data.markdownRemark;
   return (
     <div>
       <h1>{post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div>{renderAst(post.htmlAst)}</div>
     </div>
   );
 }
+export default Markdown
+
+// query
 
 export const query = graphql`
   query MarkdownQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+      htmlAst
       frontmatter {
         title
       }
     }
   }
 `
-export default Markdown
+
+// demo
+
+import rehypeReact from 'rehype-react'
+import Demo from '../components/Demo'
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: { "demo": Demo }
+}).Compiler

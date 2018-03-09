@@ -1,12 +1,12 @@
 import React from 'react'
-import Link from 'gatsby-link'
 
-const Page = () => {
+// component
+
+const Index = () => {
   return (
     <div>
       Index
     </div>
   );
 }
-
-export default Page
+export default Index

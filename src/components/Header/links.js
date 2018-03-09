@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+// component
+
 const Links = ({ data }) => {
   return (
     <div>
@@ -18,5 +20,4 @@ const Links = ({ data }) => {
     </div>
   );
 }
-
 export default Links

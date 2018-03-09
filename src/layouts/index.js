@@ -1,12 +1,14 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import '../styles/theme.css'
 import favicon from '../images/favicon.ico';
 import favicon152 from '../images/favicon-152x152.png';
+
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+
+// component
 
 const Layout = ({ children, data }) => {
   return (
@@ -34,17 +36,16 @@ const Layout = ({ children, data }) => {
             {children()}
           </main>
           <footer className="site-footer">
-            <Footer data={data} />
+            <Footer />
           </footer>
       </div>
 
     </div>
   );
 }
+export default Layout
 
-Layout.propTypes = {
-  children: PropTypes.func,
-}
+// query
 
 export const query = graphql`
   query LayoutQuery {
@@ -73,5 +74,3 @@ export const query = graphql`
     }
   }
 `
-
-export default Layout
