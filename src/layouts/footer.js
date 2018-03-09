@@ -2,11 +2,12 @@ import React from 'react'
 
 // component
 
-const Footer = () => {
-  return (
-    <div>
-
-    </div>
-  );
+export default class Footer extends React.Component {
+  render() {
+    const {data} = this.props
+    return (
+      <div>
+      </div>
+    );
+  }
 }
-export default Footer

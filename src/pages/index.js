@@ -2,13 +2,15 @@ import React from 'react'
 
 // component
 
-const IndexPage = ({ data }) => {
-  return (
-    <div>
+export default class IndexPage extends React.Component {
+  render() {
+    const {data} = this.props
+    return (
+      <div>
 
-      Homepage
+        Homepage
 
-    </div>
-  );
+      </div>
+    )
+  }
 }
-export default IndexPage

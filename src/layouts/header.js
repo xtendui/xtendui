@@ -5,19 +5,21 @@ import Links from 'components/links'
 
 // component
 
-const Header = ({data}) => {
-  return (
-    <div>
+export default class Header extends React.Component {
+  render() {
+    const {data} = this.props
+    return (
+      <div>
 
-      <h1>
-        <Link to="/">
-          Xtend
-        </Link>
-      </h1>
-      
-      <Links data={data} />
+        <h1>
+          <Link to="/">
+            Xtend
+          </Link>
+        </h1>
 
-    </div>
-  );
+        <Links data={data}/>
+
+      </div>
+    )
+  }
 }
-export default Header

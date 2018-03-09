@@ -2,16 +2,18 @@ import React from 'react'
 
 // component
 
-const Markdown = ({ data }) => {
-  const post = data.markdownRemark;
-  return (
-    <div>
-      <h1>{post.frontmatter.title}</h1>
-      <div>{renderAst(post.htmlAst)}</div>
-    </div>
-  );
+export default class Markdown extends React.Component {
+  render() {
+    const {data} = this.props
+    const post = data.markdownRemark
+    return (
+      <div>
+        <h1>{post.frontmatter.title}</h1>
+        <div>{renderAst(post.htmlAst)}</div>
+      </div>
+    )
+  }
 }
-export default Markdown
 
 // query
 
@@ -30,7 +32,8 @@ export const query = graphql`
 
 import rehypeReact from 'rehype-react'
 import Demo from '../components/Demo'
+
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: { "demo": Demo }
+  components: {"demo": Demo}
 }).Compiler
