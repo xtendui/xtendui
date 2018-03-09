@@ -5,7 +5,9 @@ date: "2017-08-10"
 
 Lorem Ipsum
 
-<demo></demo>
+<demo>
+  <button type="button" className="btn btn-primary">test</button>
+</demo>
 
 ```javascript
 function ListItem({ item }) {

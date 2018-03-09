@@ -2,12 +2,10 @@ import React from 'react'
 
 // component
 
-const Demo = () => {
+const Demo = (props) => {
   return (
     <div>
-
-      <button type="button" className="btn btn-primary">test</button>
-
+      {props.children}
     </div>
   );
 }
