@@ -18,12 +18,12 @@
     "develop": "gatsby develop",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
-  "dependencies": {},
   "devDependencies": {
     "gatsby": "^1.9.218",
     "gatsby-link": "^1.6.37",
     "gatsby-plugin-react-helmet": "^2.0.5",
     "gatsby-source-filesystem": "^1.5.25",
+    "gatsby-transformer-remark": "^1.7.36",
     "gh-pages": "^1.1.0",
     "react-helmet": "^5.2.0"
   }

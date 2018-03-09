@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 import '../styles/theme.css'
 import favicon from '../images/favicon.ico';
 import favicon152 from '../images/favicon-152x152.png';
@@ -33,7 +34,7 @@ const Layout = ({ children, data }) => {
             {children()}
           </main>
           <footer className="site-footer">
-            Test
+            <Footer data={data} />
           </footer>
       </div>
 
@@ -52,6 +53,22 @@ export const query = graphql`
         title
         description
         keywords
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+          }
+          fields {
+            slug
+          }
+          excerpt
+        }
       }
     }
     allSitePage {
