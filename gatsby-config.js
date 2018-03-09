@@ -20,12 +20,20 @@ module.exports = {
       options: {
         plugins: [
           `gatsby-remark-component`,
+          'gatsby-remark-use-jsx',
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: `language-`,
             },
-          }
+          },
+          {
+            resolve: 'gatsby-remark-embed-snippet',
+            options: {
+              classPrefix: 'language-',
+              directory: `${__dirname}/src/demos/`,
+            },
+          },
         ]
       }
     }

@@ -10,6 +10,7 @@ export default class Demo extends React.Component {
     this.init()
   }
   init() {
+    console.log(this.source.innerHTML);
     this.target.innerHTML = this.htmlEntities(this.source.innerHTML)
     Prism.highlightElement(this._domNode, this.props.async)
   }
@@ -26,7 +27,7 @@ export default class Demo extends React.Component {
     return (
       <div className="demo">
         <div className="demo-content" ref={(source) => { this.source = source; }}>
-          {children}
+            {children}
         </div>
         <div className="demo-code">
           <pre>
