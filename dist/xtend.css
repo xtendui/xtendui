@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 html,
 body {
   height: 100%;
@@ -4110,9 +4111,6 @@ select.input-control {
     order: 5 !important;
   }
 }
-/* NEEDS: fonts css
-<link rel="stylesheet" src="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700"/>
-*/
 @keyframes anim-bottom-in {
   0% {
     opacity: 0;
