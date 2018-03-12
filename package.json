@@ -1,6 +1,6 @@
 {
   "name": "xtend-library",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Frontend library",
   "homepage": "",
   "license": "MIT",
@@ -18,8 +18,7 @@
     "develop": "gatsby develop",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "prismjs": "^1.12.2",
     "gh-pages": "^1.1.0",
