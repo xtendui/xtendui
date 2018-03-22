@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var fs = require('fs');
 var pump = require('pump');
 var merge = require('merge-stream');
+
 var less = require('gulp-less');
 var watch = require('gulp-watch');
 var concat = require('gulp-concat');
@@ -14,6 +15,7 @@ var cleanCSS = require('gulp-clean-css');
 var runSequence = require('run-sequence');
 var sourcemaps = require('gulp-sourcemaps');
 var injectString = require('gulp-inject-string');
+
 var babel = require('gulp-babel');
 var browserify = require('gulp-browserify');
 
@@ -32,10 +34,10 @@ gulp.task('watch', ['version'], function (callback) {
 // compile less
 
 gulp.task('less:watch', function () {
-  gulp.watch(['dist/*.less', 'src/docs/assets/styles/*.less', 'src/docs/demos/**/*.less'], ['less']);
+  gulp.watch(['dist/**/*.less', 'src/docs/assets/styles/**/*.less', 'src/docs/demos/**/*.less'], ['less']);
 });
 gulp.task('less', ['less-demos'], function () {
-  return gulp.src(['src/docs/assets/styles/*.less', '!src/docs/assets/styles/_*.less'])
+  return gulp.src(['src/docs/assets/styles/**/*.less', '!src/docs/assets/styles/**/_*.less'])
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(gulp.dest('src/docs/assets/styles/'))
@@ -47,13 +49,13 @@ gulp.task('less', ['less-demos'], function () {
     .pipe(gulp.dest('src/docs/assets/styles/'));
 });
 gulp.task('less-demos', ['less-dist'], function () {
-  return gulp.src(['src/docs/demos/**/*.less', '!src/docs/demos/_*.less'])
+  return gulp.src(['src/docs/demos/**/*.less', '!src/docs/demos/**/_*.less'])
     .pipe(less())
     .pipe(cleanCSS())
     .pipe(gulp.dest('src/docs/demos/'));
 });
 gulp.task('less-dist', function () {
-  return gulp.src(['dist/*.less', '!dist/_*.less'])
+  return gulp.src(['dist/**/*.less', '!dist/**/_*.less'])
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(gulp.dest('dist/'))
@@ -89,6 +91,7 @@ gulp.task('js-dist', function () {
     .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(browserify())
+    .pipe(gulp.dest('dist/'))
     .pipe(uglify({
       preserveComments: 'license'
     }))
@@ -96,7 +99,7 @@ gulp.task('js-dist', function () {
       suffix: '.min'
     }))
     .pipe(sourcemaps.write(''))
-    .pipe(gulp.dest('src/scripts/'));
+    .pipe(gulp.dest('dist/'));
 });
 
 // version
@@ -115,7 +118,7 @@ gulp.task('version', function () {
     .pipe(injectString.replace(/version: (.*)/, 'version: ' + version))
     .pipe(gulp.dest(''));
   // inject styles and scripts
-  var stream2 = gulp.src(['core/__core.less', 'dist/theme/__theme.less', 'src/scripts/xtend.js'], {base: './'})
+  var stream2 = gulp.src(['dist/core/__core.less', 'dist/theme/__theme.less', 'src/scripts/xtend.js'], {base: './'})
     .pipe(injectString.replace(/\/\*\![^\*]+\*\//, banner))
     .pipe(gulp.dest(''));
   // return merge
