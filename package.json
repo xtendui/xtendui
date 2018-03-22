@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "build": "gulp build",
-    "develop": "gulp watch",
+    "watch": "gulp watch",
     "serve": "bundle exec jekyll serve"
   },
   "dependencies": {},

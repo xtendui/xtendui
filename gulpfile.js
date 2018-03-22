@@ -14,35 +14,26 @@ var runSequence = require('run-sequence');
 var sourcemaps = require('gulp-sourcemaps');
 var injectString = require('gulp-inject-string');
 
-// main
+// scripts
 
 gulp.task('default', ['build']);
 
 gulp.task('build', ['version'], function(done) {
-  runSequence(['copy-dist'], function(done) {
-    runSequence(['bower'], function(done) {
-      runSequence(['site']);
-    });
+  runSequence(['less', 'js', 'js-dist'], function(done) {
+    runSequence(['site']);
   });
 });
 
 gulp.task('watch', ['version'], function(done) {
-  runSequence(['copy-dist'], function(done) {
-    runSequence(['bower'], function(done) {
-      runSequence(['site-serve', 'version:watch', 'less:watch', 'js-dist:watch', 'js:watch']);
-    });
+  runSequence(['less', 'js', 'js-dist'], function(done) {
+    runSequence(['site-serve', 'version:watch', 'less:watch', 'js-dist:watch', 'js:watch']);
   });
 });
 
-// compile less and js
-
-gulp.task('copy-dist', ['less', 'js', 'js-dist'], function() {
-  return gulp.src('dist/*')
-    .pipe(gulp.dest('src/docs/assets/xtend/'));
-});
+// compile less
 
 gulp.task('less:watch', function() {
-  gulp.watch(['dist/*.less', 'src/docs/assets/styles/*.less', 'src/docs/demos/**/*.less'], ['copy-dist']);
+  gulp.watch(['dist/*.less', 'src/docs/assets/styles/*.less', 'src/docs/demos/**/*.less'], ['less']);
 });
 gulp.task('less', ['less-demos'], function() {
   return gulp.src(['src/docs/assets/styles/*.less', '!src/docs/assets/styles/_*.less'])
@@ -75,11 +66,13 @@ gulp.task('less-dist', function() {
     .pipe(gulp.dest('dist/'));
 });
 
+// compile js
+
 gulp.task('js:watch', function() {
-  gulp.watch(['src/docs/assets/scripts/main.js', '!src/docs/assets/scripts/*.min.js'], ['js']);
+  gulp.watch(['src/docs/assets/scripts/theme.js', '!src/docs/assets/scripts/*.min.js'], ['js']);
 });
 gulp.task('js', function() {
-  return gulp.src(['src/docs/assets/scripts/main.js', '!src/docs/assets/scripts/*.min.js'])
+  return gulp.src(['src/docs/assets/scripts/theme.js', '!src/docs/assets/scripts/*.min.js'])
     //.pipe(sourcemaps.init())
     .pipe(uglify({
       preserveComments: 'license'
@@ -92,7 +85,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('js-dist:watch', function() {
-  gulp.watch(['dist/*.js', '!dist/*.min.js'], ['copy-dist']);
+  gulp.watch(['dist/*.js', '!dist/*.min.js'], ['js-dist']);
 });
 gulp.task('js-dist', function() {
   return gulp.src(['dist/*.js', '!dist/*.min.js'])
@@ -113,9 +106,7 @@ gulp.task('version:watch', function() {
   gulp.watch(['package.json'], ['version-changed']);
 });
 gulp.task('version-changed', ['version'], function(done) {
-  runSequence(['less', 'js', 'site'], function(done) {
-    runSequence(['copy-dist']);
-  });
+  runSequence(['less', 'js', 'site']);
 });
 gulp.task('version', function() {
   var version = JSON.parse(fs.readFileSync('package.json')).version;
@@ -124,10 +115,10 @@ gulp.task('version', function() {
     .pipe(injectString.replace(/version: (.*)/, 'version: ' + version))
     .pipe(gulp.dest(''));
   // inject styles and js
-  var banner = "/*! xtend v" + version + " (http://www.minimit.com/xtend/)\n" + "@copyright (c) 2016 - 2017 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend/blob/master/LICENSE) */";
-  return gulp.src(['dist/*.less', 'dist/*.js'])
+  var banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2018 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
+  return gulp.src(['dist/xtend.less', 'dist/xtend.js'])
     .pipe(injectString.replace(/\/\*\![^\*]+\*\//, banner))
-    .pipe(gulp.dest('src/docs/assets/xtend/'));
+    .pipe(gulp.dest('dist/'));
 });
 
 // site
@@ -141,18 +132,4 @@ gulp.task('site-serve', function() {
   require('child_process').exec('bundle exec jekyll s', function(err, stdout, stderr) {
     console.log(stdout);
   });
-});
-
-// inject bower
-
-gulp.task('bower', function() {
-  return gulp.src('bower.json')
-    .pipe(inject(gulp.src(['dist/*.less', 'dist/*.css', 'dist/*.js'], {read: false}), {
-      starttag: '"main": [',
-      endtag: ']',
-      transform: function (filepath, file, i, length) {
-        return '"' + filepath + '"' + (i + 1 < length ? ', ' : '');
-      }
-    }))
-    .pipe(gulp.dest(''));
 });
