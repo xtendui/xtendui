@@ -35,4 +35,4 @@ Icons by [feather icons](https://github.com/feathericons/feather).
 # Copyright
 
 Licensed under [MIT license](https://github.com/minimit/xtend-library/blob/master/LICENSE).
-
+Docs licensed under [CC Attribution 3.0 Unported](https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS).
