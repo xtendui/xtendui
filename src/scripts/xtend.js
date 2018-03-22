@@ -2,10 +2,4 @@
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
-@import '_variables';
-@import '_animations';
-@import '_typography';
-@import '_structure';
-@import '_components';
-@import '_forms';
-@import '_tables';
+console.log('xtend loaded');

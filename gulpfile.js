@@ -13,20 +13,22 @@ var cleanCSS = require('gulp-clean-css');
 var runSequence = require('run-sequence');
 var sourcemaps = require('gulp-sourcemaps');
 var injectString = require('gulp-inject-string');
+var babel = require('gulp-babel');
+var browserify = require('gulp-browserify');
 
 // scripts
 
 gulp.task('default', ['build']);
 
 gulp.task('build', ['version'], function(done) {
-  runSequence(['less', 'js', 'js-dist'], function(done) {
+  runSequence(['less', 'js'], function(done) {
     runSequence(['site']);
   });
 });
 
 gulp.task('watch', ['version'], function(done) {
-  runSequence(['less', 'js', 'js-dist'], function(done) {
-    runSequence(['site-serve', 'version:watch', 'less:watch', 'js-dist:watch', 'js:watch']);
+  runSequence(['less', 'js'], function(done) {
+    runSequence(['site-serve', 'version:watch', 'less:watch', 'js:watch']);
   });
 });
 
@@ -69,27 +71,13 @@ gulp.task('less-dist', function() {
 // compile js
 
 gulp.task('js:watch', function() {
-  gulp.watch(['src/docs/assets/scripts/theme.js', '!src/docs/assets/scripts/*.min.js'], ['js']);
+  gulp.watch(['src/docs/assets/scripts/theme.js', '!src/docs/assets/scripts/*.min.js', 'src/scripts/*.js', '!src/scripts/*.min.js'], ['js']);
 });
-gulp.task('js', function() {
+gulp.task('js', ['js-dist'], function() {
   return gulp.src(['src/docs/assets/scripts/theme.js', '!src/docs/assets/scripts/*.min.js'])
-    //.pipe(sourcemaps.init())
-    .pipe(uglify({
-      preserveComments: 'license'
-    }))
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    //.pipe(sourcemaps.write(''))
-    .pipe(gulp.dest('src/docs/assets/scripts/'));
-});
-
-gulp.task('js-dist:watch', function() {
-  gulp.watch(['dist/*.js', '!dist/*.min.js'], ['js-dist']);
-});
-gulp.task('js-dist', function() {
-  return gulp.src(['dist/*.js', '!dist/*.min.js'])
     .pipe(sourcemaps.init())
+    .pipe(babel())
+    .pipe(browserify())
     .pipe(uglify({
       preserveComments: 'license'
     }))
@@ -97,7 +85,21 @@ gulp.task('js-dist', function() {
       suffix: '.min'
     }))
     .pipe(sourcemaps.write(''))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('src/docs/assets/scripts/'));
+});
+gulp.task('js-dist', function() {
+  return gulp.src(['src/scripts/*.js', '!src/scripts/*.min.js'])
+    .pipe(sourcemaps.init())
+    .pipe(babel())
+    .pipe(browserify())
+    .pipe(uglify({
+      preserveComments: 'license'
+    }))
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(sourcemaps.write(''))
+    .pipe(gulp.dest('src/scripts/'));
 });
 
 // version
@@ -114,11 +116,11 @@ gulp.task('version', function() {
   gulp.src('_config.yml')
     .pipe(injectString.replace(/version: (.*)/, 'version: ' + version))
     .pipe(gulp.dest(''));
-  // inject styles and js
+  // inject styles and scripts
   var banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2018 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
-  return gulp.src(['dist/xtend.less', 'dist/xtend.js'])
+  return gulp.src(['core/__core.less', 'dist/theme/__theme.less', 'src/scripts/xtend.js'], { base: './' })
     .pipe(injectString.replace(/\/\*\![^\*]+\*\//, banner))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest(''));
 });
 
 // site
@@ -129,7 +131,7 @@ gulp.task('site', function() {
   });
 });
 gulp.task('site-serve', function() {
-  require('child_process').exec('bundle exec jekyll s', function(err, stdout, stderr) {
+  require('child_process').exec('bundle exec jekyll serve', function(err, stdout, stderr) {
     console.log(stdout);
   });
 });
