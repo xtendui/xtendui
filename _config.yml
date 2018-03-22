@@ -1,7 +1,9 @@
 # project
 title: Xtend
 description: Frontend library
-authors: Riccardo Caroli
+homepage:
+license: CC Attribution 3.0 Unported
+author: Riccardo Caroli <beaver82@gmail.com>
 
 # settings
 host: 127.0.0.1

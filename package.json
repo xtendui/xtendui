@@ -15,8 +15,23 @@
     "plugin"
   ],
   "scripts": {
+    "build": "gulp build",
+    "develop": "gulp watch",
     "serve": "bundle exec jekyll serve"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-inject": "^4.2.0",
+    "gulp-inject-string": "^1.1.0",
+    "gulp-less": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-uglify": "^2.0.1",
+    "gulp-watch": "^4.3.11",
+    "pump": "^1.0.2",
+    "run-sequence": "^1.2.2"
+  }
 }
