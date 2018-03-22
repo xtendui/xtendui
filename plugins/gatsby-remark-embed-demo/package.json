@@ -1,0 +1,67 @@
+{
+  "_from": "gatsby-remark-embed-snippet",
+  "_id": "gatsby-remark-embed-snippet@1.0.12",
+  "_inBundle": false,
+  "_integrity": "sha1-NcGz+DuvzM+vAJyDh1lNZ7yY2U8=",
+  "_location": "/gatsby-remark-embed-snippet",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "gatsby-remark-embed-snippet",
+    "name": "gatsby-remark-embed-snippet",
+    "escapedName": "gatsby-remark-embed-snippet",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gatsby-remark-embed-snippet/-/gatsby-remark-embed-snippet-1.0.11.tgz",
+  "_shasum": "35c1b3f83bafcccfaf009c8387594d67bc98d94f",
+  "_spec": "gatsby-remark-embed-snippet",
+  "_where": "/Users/riccardocaroli/Documents/Apache/www/xtend-library",
+  "author": {
+    "name": "Brian Vaughn",
+    "email": "brian.david.vaughn@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "gatsby-remark-prismjs": "^1.2.17",
+    "normalize-path": "^2.1.1",
+    "parse-numeric-range": "^0.0.2",
+    "unist-util-map": "^1.0.3"
+  },
+  "deprecated": false,
+  "description": "Gatsby plugin to embed formatted code snippets within markdown",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "cross-env": "^5.0.5"
+  },
+  "homepage": "https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-remark-embed-snippet#readme",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "prism",
+    "remark"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "gatsby-remark-embed-snippet",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-remark-embed-snippet"
+  },
+  "scripts": {
+    "build": "babel src --out-dir . --ignore __tests__",
+    "prepublish": "cross-env NODE_ENV=production npm run build",
+    "watch": "babel -w src --out-dir . --ignore __tests__"
+  },
+  "version": "1.0.21"
+}

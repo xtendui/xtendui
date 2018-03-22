@@ -8,6 +8,7 @@ import 'styles/theme.css'
 import 'assets/prism.css'
 import 'prismjs/prism.js'
 import 'prismjs/components/prism-jsx.js'
+import 'prismjs/components/prism-less.js'
 import favicon from 'assets/favicon.ico'
 import favicon152 from 'assets/favicon-152x152.png'
 

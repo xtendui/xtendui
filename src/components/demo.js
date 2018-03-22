@@ -4,15 +4,15 @@ import React from 'react'
 
 export default class Demo extends React.Component {
   componentDidMount() {
-    this.init()
+    //this.init()
   }
 
   componentDidUpdate() {
-    this.init()
+    //this.init()
   }
 
   init() {
-    console.log(this.source.innerHTML);
+    //console.log(this.source.innerHTML);
     this.target.innerHTML = this.htmlEntities(this.source.innerHTML)
     Prism.highlightElement(this._domNode, this.props.async)
   }
@@ -31,6 +31,13 @@ export default class Demo extends React.Component {
   render() {
     const {children, lang} = this.props
     return (
+      <div>
+        {children}
+      </div>
+    )
+  }
+}
+/*
       <div className="demo">
         <div className="demo-content" ref={(source) => {
           this.source = source;
@@ -49,6 +56,4 @@ export default class Demo extends React.Component {
           </pre>
         </div>
       </div>
-    )
-  }
-}
+      */

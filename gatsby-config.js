@@ -34,6 +34,13 @@ module.exports = {
               directory: `${__dirname}/src/demos/`,
             },
           },
+          {
+            resolve: 'gatsby-remark-embed-demo',
+            options: {
+              classPrefix: 'language-',
+              directory: `${__dirname}/src/demos/`,
+            },
+          },
         ]
       }
     }
