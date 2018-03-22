@@ -1,0 +1,25 @@
+
+<h2>Table of contents</h2>
+
+{% for collection in site.collections %}
+  {% if collection.label == page.collection %}
+
+    {% if page.categories[0] == collection.label %}
+      {% assign filter = page.title %}
+      {% assign different = '' %}
+    {% else %}
+      {% assign filter = page.categories[0] %}
+      {% assign different = ' different' %}
+    {% endif %}
+  
+    {% assign sorted = site.[collection.label] | where: 'categories', filter | sort: 'order' %}
+    {% for p in sorted %}
+      <a href="{{ p.url }}" class="{% if page.title != p.title %}{{ different }}{% endif %}">
+        <h5>
+          {{ p.title }}
+        </h5>
+      </a>
+    {% endfor %}
+
+  {% endif %}
+{% endfor %}

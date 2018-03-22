@@ -14,7 +14,9 @@
     "library",
     "plugin"
   ],
-  "scripts": {},
+  "scripts": {
+    "serve": "bundle exec jekyll serve"
+  },
   "dependencies": {},
   "devDependencies": {}
 }

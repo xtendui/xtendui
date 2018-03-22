@@ -1,0 +1,56 @@
+@import (reference) "../../../../dist/xtend-theme.less"; // ignore if customizing xtend.scss
+
+/* swap-in + swap-out */
+.swap-in {
+  display: none !important;
+}
+.button {
+  &:hover,
+  &:active, &.active {
+    .swap-in {
+      display: inline-block !important;
+    }
+    .swap-out {
+      display: none !important;
+    }
+  }
+}
+
+/* swap */
+.button {
+  .swap-out.swap-top {
+    .animation-default;
+    .anim-top.fade-in;
+  }
+  .swap-out.swap-bottom {
+    .animation-default;
+    .anim-bottom.fade-in;
+  }
+  .swap-out.swap-left {
+    .animation-default;
+    .anim-left.fade-in;
+  }
+  .swap-out.swap-right {
+    .animation-default;
+    .anim-right.fade-in;
+  }
+  &:hover,
+  &:active, &.active {
+    .swap-top {
+      .animation-default;
+      .anim-top.fade-in;
+    }
+    .swap-bottom {
+      .animation-default;
+      .anim-bottom.fade-in;
+    }
+    .swap-left {
+      .animation-default;
+      .anim-left.fade-in;
+    }
+    .swap-right {
+      .animation-default;
+      .anim-right.fade-in;
+    }
+  }
+}

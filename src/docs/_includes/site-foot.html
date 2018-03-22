@@ -1,0 +1,75 @@
+
+        <footer class="site-footer" data-xt-scroll='{"top": "-1"}'>
+          <div class="contain">
+            
+            <nav class="site-footer-top hide show-sm" role="navigation">
+              <div class="media">
+                <div class="item fluid">
+                  <a href="{{ site.baseurl }}" class="button">
+                    Home
+                  </a>
+                  {% for collection in site.collections %}
+                    {% if site.[collection.label].size > 0 %}
+                      {% assign sorted = site.[collection.label] | sort: 'order' %}
+                      <a href="{{ sorted[0].url }}" class="button">
+                        {{ collection.label }}
+                      </a>
+                    {% endif %}
+                  {% endfor %}
+                  <a href="#" class="button">
+                    Playground
+                  </a>
+                  <a href="#" class="button">
+                    Inspirations
+                  </a>
+                  <a href="{{ site.baseurl }}faq/" class="button">
+                    Faq
+                  </a>
+                  <a href="{{ site.baseurl }}tests/" class="button developer">
+                    Tests
+                  </a>
+                </div>
+                <div class="item">
+                  <button type="button" class="button button__developer">
+                    <span class="icon-embed2"></span>
+                  </button>
+                  {% comment %}
+                  <a href="#" class="button">
+                    Privacy policy
+                  </a>
+                  <a href="#" class="button">
+                    license
+                  </a>
+                  <a href="#" class="button">
+                    contact
+                  </a>
+                  {% endcomment %}
+                </div>
+              </div>
+            </nav>
+            
+            <div class="site-footer-bottom">
+              <div class="media small vertical horizontal-sm">
+                <div class="item fluid">
+                  Site and docs licensed <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a> <span class="separator">–</span> Xtend licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank">MIT</a>
+                </div>
+                <div class="item">
+                  © 2016 <span class="separator">–</span> 2017 <span>Riccardo Caroli</span>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </footer>
+        
+      </div>
+    </div>
+    
+    <!-- scripts -->
+    <script src="{{ site.baseurl }}assets/scripts/clipboard.min.js"></script>
+    <script src="{{ site.baseurl }}assets/scripts/highlight.pack.js"></script>
+    <script src="{{ site.baseurl }}assets/xtend/xtend.min.js?v={{ site.version }}"></script>
+    <script src="{{ site.baseurl }}assets/scripts/main.min.js?v={{ site.version }}"></script>
+    
+  </body>
+</html>

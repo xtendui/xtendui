@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" class="full">
+  <head>
+        
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- seo -->
+    <title>Demo</title>
+    <meta name="description" content="Demo" />
+
+    <!-- icons -->
+    <link rel="icon" href="/assets/images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" />
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <link rel="stylesheet" href="/assets/styles/icons/style.css?v=" />
+    <link rel="stylesheet" href="scroll-30.css?v=" />
+    <link rel="stylesheet" href="/assets/styles/demo.min.css?v=" />
+    
+    <!-- scripts -->
+    <script src="/assets/scripts/jquery.min.js"></script>
+    <script src="/assets/xtend/xtend.min.js?v="></script>
+    
+    <!-- demo scripts -->
+    <script src="/assets/scripts/ResizeSensor.min.js"></script>
+    <script src="/assets/scripts/ElementQueries.min.js"></script>
+    <script type="text/javascript">
+      // outside iframe
+      if (window.self === window.top) {
+        $(document).ready( function() {
+          $('body').xtInitAll(true);
+        });
+      }
+      // inside iframe
+      function init() {
+        // add id
+        $('html').attr('id', document.location.href.match(/[^\/]+$/)[0]);
+        // xtInitAll
+        $('body').xtInitAll(true);
+        // https://github.com/marcj/css-element-queries
+        if (!$('html').hasClass('full')) {
+          new ResizeSensor(document.getElementById('body-inside'), function() {
+            parent.resizeIframe(window.frameElement.getAttribute('id'));
+          });
+        }
+      }
+      function resize() {
+        $('#body-inside').hide().show(0);
+      }
+    </script>
+    
+  </head>
+  <body>
+    
+    <div id="body-inside"><div><br /><br /><br /><br /><br /><br /><br />
+<div class="card" data-xt-scroll='{"top": "#top", "bottom": "#bottom"}'>
+  <div class="item">
+    Element <span class="show-scroll">.show-scroll</span> <span class="hide-scroll">.hide-scroll</span>
+  </div>
+</div>
+<div class="card" id="top">
+  <div class="item">
+    Lorem Ipsum
+  </div>
+</div>
+<br /><br /><br /><br /><br /><br /><br />
+<div class="card" id="bottom">
+  <div class="item">
+    Lorem Ipsum
+  </div>
+</div>
+<br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br />
+</div></div>
+
+    
+    <less-style>@import (reference) "../../../../dist/xtend-theme.less"; // ignore if customizing xtend.scss
+
+.card[data-xt-scroll] {
+  .xt-scroll();
+}
+.card {
+  &.scroll-on-top,
+  &.scroll-off-top {
+    -webkit-animation: top-fadein 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    animation: top-fadein 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+.card {
+  &.scroll-on-bottom,
+  &.scroll-off-bottom {
+    -webkit-animation: bottom-fadein 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    animation: bottom-fadein 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+@-webkit-keyframes top-fadein {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-0.618rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+}
+@keyframes top-fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(-0.618rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@-webkit-keyframes bottom-fadein {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(0.618rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+}
+@keyframes bottom-fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(0.618rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}</less-style>
+    
+
+    
+
+  </body>
+</html>

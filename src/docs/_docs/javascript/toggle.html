@@ -1,0 +1,545 @@
+---
+title: Toggle
+description: Lorem Ipsum
+
+categories: [Javascript]
+order: 10
+---
+
+<h2>Usage</h2>
+
+<p class="lead">Html Initialization</p>
+
+<pre><code class="html">
+&lt;div class="element" data-xt-toggle'&gt;&lt;/div&gt;
+&lt;div data-xt-toggle='{"elements": ".element"}'&gt;
+  &lt;div class="element"&gt;&lt;/div&gt;
+  &lt;div class="toggle-block"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<div class="alert alert-danger">
+  <strong>Important:</strong> the plugin's attributes <strong>must be a valid json format</strong>, so with double quotes inside.
+</div>
+
+<pre><code class="js">
+$('.element').xtInitAll(); // init only '.element'
+$('body').xtInitAll(true); // init 'html' and all descendants
+</code></pre>
+
+<p class="lead">Js Initialization</p>
+
+<pre><code class="js">
+$('.element').xtToggle();
+$('div').xtToggle({"elements": ".element"});
+</code></pre>
+
+<h2>Api</h2>
+
+<p>@TODO table api</p>
+<p>@TODO link javascript modes</p>
+<p>@TODO link animations</p>
+
+<h2>Initialization</h2>
+
+<h3>Single</h3>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="self">
+    <div class="demo-text">Toggle a single <strong>element</strong> with <code>data-xt-toggle</code>.</div>
+    <div class="demo-source" data-lang="html">
+<button type="button" class="button" data-xt-toggle>
+  Toggle 0
+</button>
+<button type="button" class="button" data-xt-toggle>
+  Toggle 1
+</button>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="single target">
+    <div class="demo-text">Toggle a single <strong>target</strong> using <code>targets</code> with <strong>#id</strong>.</div>
+    <div class="demo-source" data-lang="html">
+<button type="button" class="button" data-xt-toggle='{"targets": "#card-unique-0"}'>
+  Toggle 0
+</button>
+<button type="button" class="button" data-xt-toggle='{"targets": "#card-unique-1"}'>
+  Toggle 1
+</button>
+<div class="card toggle-flex" id="card-unique-0">
+  <div class="item">
+    Target 0
+  </div>
+</div>
+<div class="card toggle-flex" id="card-unique-1">
+  <div class="item">
+    Target 1
+  </div>
+</div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="same targets">
+    <div class="demo-text">Toggle same <strong>targets</strong> using <code>targets</code> with <strong>#id</strong>.</div>
+    <div class="demo-source" data-lang="html">
+<button type="button" class="button" data-xt-toggle='{"targets": "#card-unique"}'>
+  Toggle
+</button>
+<button type="button" class="button" data-xt-toggle='{"targets": "#card-unique"}'>
+  Toggle
+</button>
+<div class="card toggle-flex" id="card-unique">
+  <div class="item">
+    Target
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+<p>For the <code>targets</code> use the classes <code>.toggle-block</code> <code>.toggle-flex</code> <code>.toggle-inline</code> <code>.toggle-inline-block</code> <code>.toggle-none</code> <code>.toggle-visible</code> <code>.toggle-hidden</code>. These classes toggle the display property on <code>.active</code>.</p>
+
+<h3>Manager</h3>
+
+<p>You can create a "manager" by assigning <code>[data-xt-toggle]</code> to the parent element, elements and targets must be inside the manager.</p>
+<p>By default the <code>elements</code> are all the <strong>direct children</strong> with the class <code>.button</code>, and the <code>targets</code> are all <strong>children</strong> with a class that starts with <code>.toggle-</code>.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="manager">
+    <div class="demo-text">With multiple <strong>targets</strong>, the ones activated is the one with the same index of the toggled <strong>element</strong>. Nested <strong>targets</strong> are filtered out.</div>
+    <div class="demo-source" data-lang="html">
+<div data-xt-toggle data-console="true">
+  <button type="button" class="button">
+    Toggle 0
+  </button>
+  <button type="button" class="button">
+    Toggle 1
+  </button>
+  <button type="button" class="button">
+    Toggle 2
+  </button>
+  <div class="card toggle-flex">
+    <div class="item">
+      Target 0
+      <div class="card toggle-flex">
+        <div class="item">
+          Nested not toggled
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card toggle-flex">
+    <div class="item">
+      Target 1
+      <div class="card toggle-flex">
+        <div class="item">
+          Nested not toggled
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card toggle-flex">
+    <div class="item">
+      Target 2
+      <div class="card toggle-flex">
+        <div class="item">
+          Nested not toggled
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="custom elements">
+    <div class="demo-text">Custom <code>"elements"</code> query.</div>
+    <div class="demo-source" data-lang="html">
+<div data-xt-toggle='{"elements": ".test > .button"}'>
+  <div class="test">
+    <button type="button" class="button">
+      Toggle 0
+    </button>
+    <button type="button" class="button">
+      Toggle 1
+    </button>
+    <button type="button" class="button">
+      Toggle 2
+    </button>
+    <div class="card toggle-flex">
+      <div class="item">
+        Target 0
+      </div>
+    </div>
+    <div class="card toggle-flex">
+      <div class="item">
+        Target 1
+      </div>
+    </div>
+    <div class="card toggle-flex">
+      <div class="item">
+        Target 2
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="custom targets">
+    <div class="demo-text">Custom <code>"targets"</code> query.</div>
+    <div class="demo-source" data-lang="html">
+<div data-xt-toggle='{"targets": ".example-target"}'>
+  <button type="button" class="button">
+    Toggle 0
+  </button>
+  <button type="button" class="button">
+    Toggle 1
+  </button>
+  <button type="button" class="button">
+    Toggle 2
+  </button>
+  <div class="card example-target">
+    <div class="item">
+      Target 0
+    </div>
+  </div>
+  <div class="card example-target">
+    <div class="item">
+      Target 1
+    </div>
+  </div>
+  <div class="card example-target">
+    <div class="item">
+      Target 2
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="demo-source" data-lang="css">
+<style scoped>
+.example-target {
+  display: none;
+}
+.example-target.active {
+  display: flex;
+}
+</style>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="custom toggle">
+    <div class="demo-text">Custom targets classname that starts with <code>.toggle-</code>.</div>
+    <div class="demo-source" data-lang="html">
+<div data-xt-toggle>
+  <button type="button" class="button">
+    Toggle 0
+  </button>
+  <button type="button" class="button">
+    Toggle 1
+  </button>
+  <button type="button" class="button">
+    Toggle 2
+  </button>
+  <div class="card toggle-custom">
+    <div class="item">
+      Target 0
+    </div>
+  </div>
+  <div class="card toggle-custom">
+    <div class="item">
+      Target 1
+    </div>
+  </div>
+  <div class="card toggle-custom">
+    <div class="item">
+      Target 2
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="demo-source" data-lang="css">
+<style scoped>
+.toggle-custom {
+  display: none;
+}
+.toggle-custom.active {
+  display: flex;
+}
+</style>
+    </div>
+  </div>
+</div>
+
+<h2>Options</h2>
+
+<h3>Groups</h3>
+
+<p>If you need to toggle <strong>multiple targets</strong> assign <code>data-group</code> to <strong>elements</strong> and the associated targets <strong>targets</strong>. Grouped elements and targets aren't counted for min and max.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="">
+    <div class="demo-source" data-lang="html">
+<div data-xt-toggle>
+  <button type="button" class="button" data-group="0">
+    Group 0
+  </button>
+  <button type="button" class="button">
+    Toggle 0
+  </button>
+  <button type="button" class="button" data-group="0">
+    Group 0
+  </button>
+  <button type="button" class="button">
+    Toggle 1
+  </button>
+  <button type="button" class="button" data-group="1">
+    Group 1
+  </button>
+  <button type="button" class="button" data-group="1">
+    Group 1
+  </button>
+  <div class="card toggle-flex">
+    <div class="item">
+      Target 0
+    </div>
+  </div>
+  <div class="card toggle-flex" data-group="0">
+    <div class="item">
+      Group 0
+    </div>
+  </div>
+  <div class="card toggle-flex" data-group="1">
+    <div class="item">
+      Group 1
+    </div>
+  </div>
+  <div class="card toggle-flex" data-group="0">
+    <div class="item">
+      Group 0
+    </div>
+  </div>
+  <div class="card toggle-flex">
+    <div class="item">
+      Target 1
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+<h3>Class</h3>
+
+<p>Toggled class is always <code>.active</code>.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="additional">
+    <div class="demo-text">You can specify custom additional classes to toggle with <code>class</code>.</div>
+    <div class="demo-source" data-lang="html">
+<div data-xt-toggle='{"class": "class-example-0 class-example-1"}'>
+  <button type="button" class="button">
+    Toggle
+  </button>
+  <div class="card toggle-flex" id="card-example">
+    <div class="item">
+      Target
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="demo-source" data-lang="css">
+<style scoped>
+.button.class-example-0 {
+  border: 1px solid red;
+}
+.button.class-example-1 {
+  color: red !important;
+}
+.card.class-example-0 {
+  border: 1px solid red;
+}
+.card.class-example-1 {
+  color: red;
+}
+</style>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="start">
+    <div class="demo-text">You can start with toggled elements and targets just by adding the class <code>.active</code> on the html <strong>elements</strong> you want activated.</div>
+    <div class="demo-source" data-lang="html">
+<div data-xt-toggle='{"class": "class-example-0 class-example-1", "min": 2, "max": 3}'>
+  <button type="button" class="button" data-group="0">
+    Group 0
+  </button>
+  <button type="button" class="button">
+    Toggle 0
+  </button>
+  <button type="button" class="button" data-group="0">
+    Group 0
+  </button>
+  <button type="button" class="button active">
+    Toggle 1
+  </button>
+  <button type="button" class="button" data-group="1">
+    Group 1
+  </button>
+  <div class="card toggle-flex">
+    <div class="item">
+      Target 0
+    </div>
+  </div>
+  <div class="card toggle-flex" data-group="0">
+    <div class="item">
+      Group 0
+    </div>
+  </div>
+  <div class="card toggle-flex" data-group="1">
+    <div class="item">
+      Group 1
+    </div>
+  </div>
+  <div class="card toggle-flex" data-group="0">
+    <div class="item">
+      Group 0
+    </div>
+  </div>
+  <div class="card toggle-flex">
+    <div class="item">
+      Target 1
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="demo-source" data-lang="css">
+<style scoped>
+.button.class-example-0 {
+  border: 1px solid red;
+}
+.button.class-example-1 {
+  color: red !important;
+}
+.card.class-example-0 {
+  border: 1px solid red;
+}
+.card.class-example-1 {
+  color: red;
+}
+</style>
+    </div>
+  </div>
+</div>
+
+<h3>Min and max</h3>
+
+<p>Inside a <strong>manager</strong> you can specify <strong>min or max</strong> activations. Default is <code>"min": 0</code> and <code>"max": 1</code>. Use <code>"max": "Infinity"</code> for no limits.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="custom">
+    <div class="demo-text">The required <strong>min</strong> activation is fulfilled on initialization. Automatic <code>[disabled]</code> on reaching the <strong>min</strong> value.</div>
+    <div class="demo-source" data-lang="html">
+<div data-xt-toggle='{"min": 2, "max": 2}'>
+  <button type="button" class="button">
+    Toggle 0
+  </button>
+  <button type="button" class="button">
+    Toggle 1
+  </button>
+  <button type="button" class="button">
+    Toggle 2
+  </button>
+  <button type="button" class="button">
+    Toggle 3
+  </button>
+  <div class="card toggle-flex">
+    <div class="item">
+      Target 0
+    </div>
+  </div>
+  <div class="card toggle-flex">
+    <div class="item">
+      Target 1
+    </div>
+  </div>
+  <div class="card toggle-flex">
+    <div class="item">
+      Target 2
+    </div>
+  </div>
+  <div class="card toggle-flex">
+    <div class="item">
+      Target 3
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+<h3>Events</h3>
+
+<p>You can specify <strong>on</strong> and <strong>off</strong> events for the toggle. Default is <code>"on": "click"</code>.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="">
+    <div class="demo-text"><code>"on": "mouseenter"</code> <code>"off": "mouseleave"</code>.</div>
+    <div class="demo-source" data-lang="html">
+<div data-xt-toggle='{"on": "mouseenter", "off": "mouseleave"}'>
+  <button type="button" class="button">
+    Toggle
+  </button>
+  <div class="card toggle-flex">
+    <div class="item">
+      Target
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+<h2>Animations</h2>
+
+<p>To disable transition detect, use <code>"timing": 0</code>, or set a number in milliseconds for the on and off animations timing.</p>
+
+<h3>Classes</h3>
+
+<p>On the <code>targets</code> use the animations classes to animate automatically on <code>.active</code>.</p>
+
+<p>@TODO link animations classes. @TODO link collapse.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="">
+    <div class="demo-source" data-lang="html">
+<div data-xt-toggle='{"max": "Infinity"}'>
+  <button type="button" class="button">
+    anim-horizontal
+  </button>
+  <button type="button" class="button">
+    anim-vertical
+  </button>
+  <button type="button" class="button">
+    anim-diagonal
+  </button>
+  <button type="button" class="button">
+    no-anim
+  </button>
+  <div class="card toggle-flex anim-horizontal">
+    <div class="item">
+      Target 0
+    </div>
+  </div>
+  <div class="card toggle-flex anim-vertical">
+    <div class="item">
+      Target 1
+    </div>
+  </div>
+  <div class="card toggle-flex anim-diagonal">
+    <div class="item">
+      Target 2
+    </div>
+  </div>
+  <div class="card toggle-flex no-anim">
+    <div class="item">
+      Target 3
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>

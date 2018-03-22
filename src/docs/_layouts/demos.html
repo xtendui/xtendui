@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="{% if page.full %}full{% endif %}">
+  <head>
+        
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- seo -->
+    <title>Demo</title>
+    <meta name="description" content="Demo" />
+
+    <!-- icons -->
+    <link rel="icon" href="{{ site.baseurl }}assets/images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}assets/images/apple-touch-icon.png" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" />
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}assets/styles/icons/style.css?v={{ site.version }}" />
+    {% if page.less %}<link rel="stylesheet" href="{{ page.name | replace: '.html', '.css' }}?v={{ site.version }}" />{% endif %}
+    <link rel="stylesheet" href="{{ site.baseurl }}assets/styles/demo.min.css?v={{ site.version }}" />
+    
+    <!-- scripts -->
+    <script src="{{ site.baseurl }}assets/scripts/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}assets/xtend/xtend.min.js?v={{ site.version }}"></script>
+    
+    <!-- demo scripts -->
+    <script src="{{ site.baseurl }}assets/scripts/ResizeSensor.min.js"></script>
+    <script src="{{ site.baseurl }}assets/scripts/ElementQueries.min.js"></script>
+    <script type="text/javascript">
+      // outside iframe
+      if (window.self === window.top) {
+        $(document).ready( function() {
+          $('body').xtInitAll(true);
+        });
+      }
+      // inside iframe
+      function init() {
+        // add id
+        $('html').attr('id', document.location.href.match(/[^\/]+$/)[0]);
+        // xtInitAll
+        $('body').xtInitAll(true);
+        // https://github.com/marcj/css-element-queries
+        if (!$('html').hasClass('full')) {
+          new ResizeSensor(document.getElementById('body-inside'), function() {
+            parent.resizeIframe(window.frameElement.getAttribute('id'));
+          });
+        }
+      }
+      function resize() {
+        $('#body-inside').hide().show(0);
+      }
+    </script>
+    
+  </head>
+  <body>
+    
+    <div id="body-inside"><div>{{ content }}</div></div>
+
+    {% if page.less %}
+    <less-style>{% include_relative {{ page.name | replace: '.html', '.less' }} %}</less-style>
+    {% endif %}
+
+    {% if page.js %}
+    <script type="text/javascript">{% include_relative {{ page.name | replace: '.html', '.js' }} %}</script>
+    {% endif %}
+
+  </body>
+</html>

@@ -1,0 +1,29 @@
+# project
+title: Xtend
+description: Frontend library
+authors: Riccardo Caroli
+
+# settings
+host: 127.0.0.1
+port: 4000
+source: src/docs/
+destination: docs/
+baseurl: /
+exclude:
+  - "*.psd"
+  - "*.scss"
+
+# collections
+collections:
+  docs:
+    output: true
+    permalink: "/:collection/:path/"
+    links:
+      github: "https://github.com/minimit/xtend-library"
+      download: "https://github.com/minimit/xtend-library/releases/latest"
+defaults:
+  - scope:
+      path: ""
+      type: docs
+    values:
+      layout: sidebar

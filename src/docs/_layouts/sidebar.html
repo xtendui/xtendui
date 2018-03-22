@@ -1,0 +1,67 @@
+{% include site-head.html %}
+
+<main class="site-main">
+  <div class="site-main-inside">
+    <div class="contain">
+      <div class="flex">
+        <div class="column md-9">
+    
+          <article class="site-article">
+            {{ content }}
+          </article>
+
+        </div>
+        <div class="column md-3 hide show-md">
+
+          <aside class="site-aside" data-xt-scroll='{"top": ".site-breadcrumbs.xt-ignore"}'>
+            
+            <div class="site-aside-text">
+              <a href="{{ page.url }}" class="button">
+                {{ page.title }}
+              </a>
+            </div>
+            
+            {% comment %}
+            
+              {% if page.collection == null %}
+                <div class="site-aside-text">
+                  <a href="{{ page.url }}" class="button">
+                    {{ page.title }}
+                  </a>
+                </div>
+              {% endif %}
+              
+              {% for collection in site.collections %}
+                {% if collection.label == page.collection %}
+              
+                  {% if page.categories[0] == collection.label %}
+                    {% assign filter = page.title %}
+                    {% assign different = '' %}
+                  {% else %}
+                    {% assign filter = page.categories[0] %}
+                    {% assign different = ' different' %}
+                  {% endif %}
+                
+                  {% assign sorted = site.[collection.label] | where: 'categories', filter | sort: 'order' %}
+                  {% for p in sorted %}
+                    <div class="site-aside-text">
+                      <a href="{{ p.url }}" class="button{% if page.title != p.title %}{{ different }}{% endif %}">
+                        {{ p.title }}
+                      </a>
+                    </div>
+                  {% endfor %}
+        
+                {% endif %}
+              {% endfor %}
+              
+            {% endcomment %}
+            
+          </aside>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% include site-foot.html %}

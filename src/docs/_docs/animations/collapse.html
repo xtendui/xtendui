@@ -1,0 +1,272 @@
+---
+title: Collapse
+description: Lorem ipsum
+
+categories: [Animations]
+order: 10
+---
+
+<h2>Api</h2>
+
+<p>@TODO table animations classes</p>
+
+<h2>Height</h2>
+<p><code>.collapse-height</code></p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="default">
+    <div class="demo-text"><code>.collapse-height</code> to the "targets".</div>
+    <div class="demo-source" data-lang="html">
+<div data-xt-toggle='{"elements": ".button"}'>
+  <button type="button" class="button">
+    Toggle
+  </button>
+  <div class="card toggle-block collapse-height">
+    <div class="item">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet turpis lacinia, efficitur leo vel, commodo leo.
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="events">
+    <div class="demo-text"><code>mouseenter</code> and <code>mouseleave</code>.</div>
+    <div class="demo-source" data-lang="html">
+<div data-xt-toggle='{"elements": ".button", "on": "mouseenter", "off": "mouseleave"}'>
+  <button type="button" class="button">
+    Toggle
+  </button>
+  <div class="card toggle-block collapse-height">
+    <div class="item">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet turpis lacinia, efficitur leo vel, commodo leo.
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="animations">
+    <div class="demo-text">Combine animations <code>.anim-horizontal</code>, @TODO link animations api.</div>
+    <div class="demo-source" data-lang="html">
+<div data-xt-toggle='{"elements": ".button", "on": "mouseenter", "off": "mouseleave"}'>
+  <button type="button" class="button">
+    Toggle
+  </button>
+  <div class="card toggle-block collapse-height anim-horizontal">
+    <div class="item">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet turpis lacinia, efficitur leo vel, commodo leo.
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="item">
+    <div class="demo-text">Collapse card item.</div>
+    <div class="demo-source" data-lang="html">
+<div class="flex" data-xt-toggle='{"elements": ".card", "on": "mouseenter", "off": "mouseleave"}'>
+  
+  <div class="column sm-6">
+    <div class="card vertical">
+      <div class="item toggle-block collapse-height">
+        <img class="responsive" src="https://placehold.it/750x250/808080/ffffff/?text=Image">
+      </div>
+      <div class="item fluid">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet turpis lacinia, efficitur leo vel, commodo leo.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column sm-6">
+    <div class="card vertical">
+      <div class="toggle-block collapse-height">
+        <img class="responsive" src="https://placehold.it/750x250/808080/ffffff/?text=Image">
+      </div>
+      <div class="item fluid">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet turpis lacinia, efficitur leo vel, commodo leo.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card vertical horizontal-sm">
+      <div class="item toggle-block collapse-height">
+        <img class="responsive hide show-sm" src="https://placehold.it/150x130/808080/ffffff/?text=Image">
+        <img class="responsive hide-sm" src="https://placehold.it/750x250/808080/ffffff/?text=Image">
+      </div>
+      <div class="item fluid">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet turpis lacinia, efficitur leo vel, commodo leo.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card vertical horizontal-sm">
+      <div class="toggle-block collapse-height">
+        <img class="responsive hide show-sm" src="https://placehold.it/150x130/808080/ffffff/?text=Image">
+        <img class="responsive hide-sm" src="https://placehold.it/750x250/808080/ffffff/?text=Image">
+      </div>
+      <div class="item fluid">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet turpis lacinia, efficitur leo vel, commodo leo.</p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="position">
+    <div class="demo-text"><code>.collapse-top</code> or <code>.collapse-bottom</code>.</div>
+    <div class="demo-source" data-lang="html">
+<div class="flex" data-xt-toggle='{"elements": ".card", "on": "mouseenter", "off": "mouseleave"}'>
+  
+  <div class="column sm-6">
+    <div class="card vertical">
+      <img class="responsive toggle-block collapse-height collapse-bottom" src="https://placehold.it/750x250/808080/ffffff/?text=Image" />
+      <div class="item fluid">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet turpis lacinia, efficitur leo vel, commodo leo.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column sm-6">
+    <div class="card vertical">
+      <div class="item fluid">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet turpis lacinia, efficitur leo vel, commodo leo.</p>
+      </div>
+      <img class="responsive toggle-block collapse-height collapse-top" src="https://placehold.it/750x250/808080/ffffff/?text=Image" />
+    </div>
+  </div>
+  
+</div>
+    </div>
+  </div>
+</div>
+
+<h2>Width</h2>
+<p><code>.collapse-width</code></p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="default">
+    <div class="demo-text"><code>.collapse-width</code> to the "targets".</div>
+    <div class="demo-source" data-lang="html">
+<div data-xt-toggle='{"elements": ".button"}'>
+  <button type="button" class="button">
+    Toggle
+  </button>
+  <br>
+  <div class="card toggle-block collapse-width">
+    <img src="https://placehold.it/750x250/808080/ffffff/?text=Image">
+  </div>
+</div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="events">
+    <div class="demo-text"><code>mouseenter</code> and <code>mouseleave</code>.</div>
+    <div class="demo-source" data-lang="html">
+<div data-xt-toggle='{"elements": ".button", "on": "mouseenter", "off": "mouseleave"}'>
+  <button type="button" class="button">
+    Toggle
+  </button>
+  <br>
+  <div class="card toggle-block collapse-width">
+    <img src="https://placehold.it/750x250/808080/ffffff/?text=Image">
+  </div>
+</div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="animations">
+    <div class="demo-text">Combine animations <code>.anim-vertical</code>, @TODO link animations api.</div>
+    <div class="demo-source" data-lang="html">
+<div data-xt-toggle='{"elements": ".button", "on": "mouseenter", "off": "mouseleave"}'>
+  <button type="button" class="button">
+    Toggle
+  </button>
+  <br>
+  <div class="card toggle-block collapse-width anim-vertical">
+    <img src="https://placehold.it/750x250/808080/ffffff/?text=Image">
+  </div>
+</div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="item">
+    <div class="demo-text">Collapse card item.</div>
+    <div class="demo-source" data-lang="html">
+<div class="flex" data-xt-toggle='{"elements": ".card", "on": "mouseenter", "off": "mouseleave"}'>
+  
+  <div class="column sm-6">
+    <div class="card vertical">
+      <div class="item toggle-block collapse-width">
+        <img class="responsive" src="https://placehold.it/750x250/808080/ffffff/?text=Image">
+      </div>
+      <div class="item fluid">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet turpis lacinia, efficitur leo vel, commodo leo.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column sm-6">
+    <div class="card vertical">
+      <div class="toggle-block collapse-width">
+        <img class="responsive" src="https://placehold.it/750x250/808080/ffffff/?text=Image">
+      </div>
+      <div class="item fluid">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet turpis lacinia, efficitur leo vel, commodo leo.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card vertical horizontal-sm">
+      <div class="item toggle-block collapse-width">
+        <img class="responsive hide show-sm" src="https://placehold.it/150x130/808080/ffffff/?text=Image">
+        <img class="responsive hide-sm" src="https://placehold.it/750x250/808080/ffffff/?text=Image">
+      </div>
+      <div class="item fluid">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet turpis lacinia, efficitur leo vel, commodo leo.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card vertical horizontal-sm">
+      <div class="toggle-block collapse-width">
+        <img class="responsive hide show-sm" src="https://placehold.it/150x130/808080/ffffff/?text=Image">
+        <img class="responsive hide-sm" src="https://placehold.it/750x250/808080/ffffff/?text=Image">
+      </div>
+      <div class="item fluid">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet turpis lacinia, efficitur leo vel, commodo leo.</p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="position">
+    <div class="demo-text"><code>.collapse-left</code> or <code>.collapse-right</code>.</div>
+    <div class="demo-source" data-lang="html">
+<div class="flex" data-xt-toggle='{"elements": ".card", "on": "mouseenter", "off": "mouseleave"}'>
+  
+  <div class="column">
+    <div class="card">
+      <div class="item fluid">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet turpis lacinia, efficitur leo vel, commodo leo.</p>
+      </div>
+      <img class="toggle-block collapse-width collapse-left" src="https://placehold.it/150x130/808080/ffffff/?text=Image">
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <div class="toggle-block collapse-width collapse-right">
+        <img class="responsive" src="https://placehold.it/150x130/808080/ffffff/?text=Image">
+      </div>
+      <div class="item fluid">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet turpis lacinia, efficitur leo vel, commodo leo.</p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+    </div>
+  </div>
+</div>

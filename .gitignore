@@ -24,10 +24,6 @@
 nbproject
 Thumbs.db
 
-# docs
-.cache/
-public/
-
 # custom
 node_modules
 prepros.cfg

@@ -1,0 +1,32 @@
+//////////////////////
+// imports
+//////////////////////
+
+@import "../../../../dist/xtend-theme.less";
+
+//////////////////////
+// main
+//////////////////////
+
+body {
+  background-color: transparent;
+}
+html:not(.full) {
+  body {
+    overflow: hidden;
+  }
+}
+#body-inside {
+  position: relative;
+  float: left;
+  width: 100%;
+  padding: @size-small;
+}
+html.full {
+  #body-inside {
+    max-height: 370px;
+  }
+}
+less-style {
+  display: none;
+}
