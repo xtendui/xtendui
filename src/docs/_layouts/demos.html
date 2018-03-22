@@ -20,10 +20,10 @@
 
     <!-- styles -->
     {% if page.less %}<link rel="stylesheet" href="{{ page.name | replace: '.html', '.css' }}" />{% endif %}
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/demo.min.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/demo.min.css?v={{ site.version }}" />
     
     <!-- scripts
-    <script src="{{ site.baseurl }}/assets/xtend/xtend.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/xtend/xtend.min.js?v={{ site.version }}"></script>
     -->
     
     <!-- demo scripts -->
