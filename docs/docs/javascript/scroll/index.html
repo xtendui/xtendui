@@ -18,6 +18,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
     
     <!-- styles -->
+    <link rel="stylesheet" href="/assets/icons/style.css?v=0.0.14" />
     <link rel="stylesheet" href="/assets/styles/theme.min.css?v=0.0.14" />
 
   </head>
@@ -28,19 +29,20 @@
       <header class="site-header">
         
         <div class="site-header-top" data-xt-scroll='{"bottom": ".site-breadcrumbs.xt-clone"}'>
-          <div class="contain">
-            <div class="media">
-              <div class="item">
+          <div class="contain-fluid">
+
+            <div class="flex justify-content-between">
+              <div>
                 <a href="/" class="logo" title="Home">
                   Xtend
                 </a>
               </div>
-              <div class="item fluid">
-                <button type="button" class="button button__menu float-right" data-xt-overlay='{"targets": "#site-menu", "class": "test-additional-class"}'>
+              <div>
+                <button type="button" class="btn btn-primary btn-menu" data-xt-overlay='{"targets": "#site-menu", "class": "test-additional-class"}'>
                   
-                    Docs
+                  Docs
                   
-                  <span class="icon icon-menu-custom right">
+                  <span class="icon-menu-custom">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -48,15 +50,17 @@
                 </button>
               </div>
             </div>
+
           </div>
         </div>
-        
+
+        <!--
         <nav class="site-menu overlay primary screen collapse-height" id="site-menu">
           <div class="overlay-inner anim-horizontal">
             <div class="overlay-content">
               
               <div class="site-header-top">
-                <div class="contain">
+                <div class="contain-fluid">
                   <div class="media">
                     <div class="item">
                       <a href="/" class="logo" title="Home">
@@ -94,11 +98,6 @@
                 <a href="#" class="button make-line">
                   Playground
                 </a>
-                <!--
-                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-                -->
                 <a href="#" class="button make-line">
                   Inspirations
                 </a>
@@ -111,16 +110,17 @@
             </div>
           </div>
         </nav>
+        -->
         
         <div class="site-hero">
                 
-          <div class="contain">
-            <div class="media big vertical horizontal-sm">
-              <div class="item fluid">
+          <div class="contain-fluid">
+            <div class="flex flex-auto align-items-center align-content-center justify-content-between">
+              <div class="site-hero-text">
                 <h1 class="h1">Scroll</h1>
-                <p class="lead">Lorem Ipsum</p>
+                <p class="font-giant">Lorem Ipsum</p>
               </div>
-              <div class="item">
+              <div class="site-hero-img">
                 <img class="responsive" src="https://placehold.it/330x132/ffffff/00B0FF/?text=ads" />
               </div>
             </div>
@@ -130,202 +130,212 @@
         
         <nav class="site-breadcrumbs" role="navigation" data-xt-scroll='{"mode": "absolute"}'>
           <div class="site-breadcrumbs-inside">
-            <div class="contain">
+            <div class="contain-fluid">
+              <div class="flex flex-auto justify-content-between">
               
-              <div class="site-breadcrumbs-body float-left spacer none top" data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave"}'>
-                
+                <div class="site-breadcrumbs-body flex flex-space-none" data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave"}'>
                   
-                
                     
-                    
-                      
-                        <div class="site-breadcrumbs-body-main">
-                          <a href="/docs/" class="button">
-                            Intro
-                          </a>
-                          <div class="site-breadcrumbs-body-sub toggle-block collapse-height">
-                            
-                            
-                          </div>
-                        </div>
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                        <div class="site-breadcrumbs-body-main">
-                          <a href="/docs/structure/" class="button">
-                            Structure
-                          </a>
-                          <div class="site-breadcrumbs-body-sub toggle-block collapse-height">
-                            
-                            
-                            <a href="/docs/structure/flex/" class="button">
-                              Flex
-                            </a>
-                            
-                            <a href="/docs/structure/spacer/" class="button">
-                              Spacer
-                            </a>
-                            
-                            <a href="/docs/structure/media/" class="button">
-                              Media
-                            </a>
-                            
-                            <a href="/docs/structure/card/" class="button">
-                              Card
-                            </a>
-                            
-                          </div>
-                        </div>
-                      
-                    
-                      
-                        <div class="site-breadcrumbs-body-main">
-                          <a href="/docs/components/" class="button">
-                            Components
-                          </a>
-                          <div class="site-breadcrumbs-body-sub toggle-block collapse-height">
-                            
-                            
-                            <a href="/docs/components/button/" class="button">
-                              Button
-                            </a>
-                            
-                            <a href="/docs/components/icons/" class="button">
-                              Icons
-                            </a>
-                            
-                            <a href="/docs/components/drop/" class="button">
-                              Drop
-                            </a>
-                            
-                            <a href="/docs/components/overlay/" class="button">
-                              Overlay
-                            </a>
-                            
-                          </div>
-                        </div>
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                        <div class="site-breadcrumbs-body-main">
-                          <a href="/docs/animations/" class="button">
-                            Animations
-                          </a>
-                          <div class="site-breadcrumbs-body-sub toggle-block collapse-height">
-                            
-                            
-                            <a href="/docs/animations/collapse/" class="button">
-                              Collapse
-                            </a>
-                            
-                          </div>
-                        </div>
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                        <div class="site-breadcrumbs-body-main">
-                          <a href="/docs/javascript/" class="button">
-                            Javascript
-                          </a>
-                          <div class="site-breadcrumbs-body-sub toggle-block collapse-height">
-                            
-                            
-                            <a href="/docs/javascript/toggle/" class="button">
-                              Toggle
-                            </a>
-                            
-                            <a href="/docs/javascript/slider/" class="button">
-                              Slider
-                            </a>
-                            
-                            <a href="/docs/javascript/scroll/" class="button">
-                              Scroll
-                            </a>
-                            
-                            <a href="/docs/javascript/overlay/" class="button">
-                              Overlay
-                            </a>
-                            
-                            <a href="/docs/javascript/ajax/" class="button">
-                              Ajax
-                            </a>
-                            
-                          </div>
-                        </div>
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    
-                  
-                
-                  
-                
-              </div>
 
-              <div class="site-breadcrumbs-meta float-right spacer none top hide show-sm">
-                
-                
-                
-                
-                  
+                      
+                      
+                        
+                          <div class="site-breadcrumbs-body-main">
+                            <a href="/docs/" class="btn btn-primary">
+                              Intro
+                            </a>
+                            <div class="site-breadcrumbs-body-sub">
+                              
+                              
+                            </div>
+                          </div>
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                          <div class="site-breadcrumbs-body-main">
+                            <a href="/docs/structure/" class="btn btn-primary">
+                              Structure
+                            </a>
+                            <div class="site-breadcrumbs-body-sub">
+                              
+                              
+                              <a href="/docs/structure/flex/" class="btn btn-primary">
+                                Flex
+                              </a>
+                              
+                              <a href="/docs/structure/spacer/" class="btn btn-primary">
+                                Spacer
+                              </a>
+                              
+                              <a href="/docs/structure/media/" class="btn btn-primary">
+                                Media
+                              </a>
+                              
+                              <a href="/docs/structure/card/" class="btn btn-primary">
+                                Card
+                              </a>
+                              
+                            </div>
+                          </div>
+                        
+                      
+                        
+                          <div class="site-breadcrumbs-body-main">
+                            <a href="/docs/components/" class="btn btn-primary">
+                              Components
+                            </a>
+                            <div class="site-breadcrumbs-body-sub">
+                              
+                              
+                              <a href="/docs/components/button/" class="btn btn-primary">
+                                Button
+                              </a>
+                              
+                              <a href="/docs/components/icons/" class="btn btn-primary">
+                                Icons
+                              </a>
+                              
+                              <a href="/docs/components/drop/" class="btn btn-primary">
+                                Drop
+                              </a>
+                              
+                              <a href="/docs/components/overlay/" class="btn btn-primary">
+                                Overlay
+                              </a>
+                              
+                            </div>
+                          </div>
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                          <div class="site-breadcrumbs-body-main">
+                            <a href="/docs/animations/" class="btn btn-primary">
+                              Animations
+                            </a>
+                            <div class="site-breadcrumbs-body-sub">
+                              
+                              
+                              <a href="/docs/animations/collapse/" class="btn btn-primary">
+                                Collapse
+                              </a>
+                              
+                            </div>
+                          </div>
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                          <div class="site-breadcrumbs-body-main">
+                            <a href="/docs/javascript/" class="btn btn-primary">
+                              Javascript
+                            </a>
+                            <div class="site-breadcrumbs-body-sub">
+                              
+                              
+                              <a href="/docs/javascript/toggle/" class="btn btn-primary">
+                                Toggle
+                              </a>
+                              
+                              <a href="/docs/javascript/slider/" class="btn btn-primary">
+                                Slider
+                              </a>
+                              
+                              <a href="/docs/javascript/scroll/" class="btn btn-primary">
+                                Scroll
+                              </a>
+                              
+                              <a href="/docs/javascript/overlay/" class="btn btn-primary">
+                                Overlay
+                              </a>
+                              
+                              <a href="/docs/javascript/ajax/" class="btn btn-primary">
+                                Ajax
+                              </a>
+                              
+                            </div>
+                          </div>
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+
+                    
                   
                     
-                      <a href="https://github.com/minimit/xtend-library/releases/latest" target="_blank" class="button">
-                        <span class="icon icon-download"></span>
-                      </a>
+                  
+                </div>
+
+                <div class="site-breadcrumbs-meta flex flex-space-none">
+
+                  <!--
+                  
+                  -->
+
+                  
                     
-                    
-                    
-                      <a href="https://github.com/minimit/xtend-library" target="_blank" class="button">
-                        <span class="icon icon-github"></span>
-                      </a>
-                    
+
+                      
+                        <div>
+                            <a href="https://github.com/minimit/xtend-library/releases/latest" target="_blank" class="btn btn-primary">
+                              <span class="icon-download icon-big"></span>
+                            </a>
+                        </div>
+                      
+
+                      
+                        <div>
+                            <a href="https://github.com/minimit/xtend-library" target="_blank" class="btn btn-primary">
+                              <span class="icon-github icon-big"></span>
+                            </a>
+                        </div>
+                      
+
                     
                   
-                
+                    
                   
-                
-                
-                <button type="button" class="button button__menu float-right show-scroll" data-xt-overlay='{"targets": "#site-menu", "class": "test-additional-class"}'>
-                  
-                    Docs
-                  
-                  <span class="icon icon-menu-custom right">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </span>
-                </button>
-                
+
+                  <!--
+                  <button type="button" class="btn btn-primary btn-menu show-scroll" data-xt-overlay='{"targets": "#site-menu", "class": "test-additional-class"}'>
+                    
+                      Docs
+                    
+                    <span class="icon icon-menu-custom right">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </span>
+                  </button>
+                  -->
+
+                </div>
+
               </div>
-              
             </div>
           </div>
         </nav>
@@ -449,52 +459,55 @@ $('.element').xtScroll({"top": "#top", "bottom": "#bottom"});
 
 
         <footer class="site-footer" data-xt-scroll='{"top": "-1"}'>
-          <div class="contain">
+          <div class="contain-fluid">
             
-            <nav class="site-footer-top hide show-sm" role="navigation">
-              <div class="media">
-                <div class="item fluid">
-                  <a href="/" class="button">
+            <nav class="site-footer-top display-none display-block-sm" role="navigation">
+              <div class="flex flex-auto justify-content-between">
+
+                <div class="site-footer-top-links">
+                  <a href="/" class="btn btn-primary">
                     Home
                   </a>
                   
                     
                       
-                      <a href="/docs/" class="button">
+                      <a href="/docs/" class="btn btn-primary">
                         docs
                       </a>
                     
                   
                     
                   
-                  <a href="#" class="button">
+                  <a href="#" class="btn btn-primary">
                     Playground
                   </a>
-                  <a href="#" class="button">
+                  <a href="#" class="btn btn-primary">
                     Inspirations
                   </a>
-                  <a href="/faq/" class="button">
+                  <a href="/faq/" class="btn btn-primary">
                     Faq
                   </a>
-                  <a href="/tests/" class="button developer">
+                  <a href="/tests/" class="btn btn-primary developer">
                     Tests
                   </a>
                 </div>
-                <div class="item">
-                  <button type="button" class="button button__developer">
+
+                <div class="site-footer-top-special">
+                  <button type="button" class="btn btn-primary">
                     <span class="icon-embed2"></span>
                   </button>
                   
                 </div>
+
               </div>
             </nav>
             
             <div class="site-footer-bottom">
-              <div class="media small vertical horizontal-sm">
-                <div class="item fluid">
-                  Site and docs licensed <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a> <span class="separator">–</span> Xtend licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank">MIT</a>
+              <div class="flex flex-auto flex-space-tiny justify-content-between">
+                <div class="site-footer-bottom-license">
+                  Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank">CC BY 3.0</a> <span class="separator">–</span> Xtend licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank">MIT</a>
                 </div>
-                <div class="item">
+                <div class="site-footer-bottom-copy">
                   © 2016 <span class="separator">–</span> 2017 <span>Riccardo Caroli</span>
                 </div>
               </div>
