@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="collection-docs">
   <head>
-        
+
     <!-- meta -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,31 +16,31 @@
     <!-- icons -->
     <link rel="icon" href="/assets/images/favicon.png" />
     <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
-    
+
     <!-- styles -->
     <link rel="stylesheet" href="/assets/icons/style.css?v=0.0.14" />
     <link rel="stylesheet" href="/assets/styles/theme.min.css?v=0.0.14" />
 
   </head>
   <body>
-    
+
     <div class="site-wrapper">
-      
+
       <header class="site-header">
-        
+
         <div class="site-header-top" data-xt-scroll='{"bottom": ".site-breadcrumbs.xt-clone"}'>
           <div class="contain-fluid">
 
-            <div class="flex justify-content-between">
+            <div class="flex flex-auto justify-content-between">
               <div>
                 <a href="/" class="logo" title="Home">
                   Xtend
                 </a>
               </div>
               <div>
-                <button type="button" class="btn btn-primary btn-menu" data-xt-overlay='{"targets": "#site-menu", "class": "test-additional-class"}'>
+                <button type="button" class="btn btn-primary btn-menu" data-xt-toggle='{"targets": "#site-menu"}'>
                   
-                  Docs
+                    Docs
                   
                   <span class="icon-menu-custom">
                     <span></span>
@@ -54,21 +54,21 @@
           </div>
         </div>
 
-        <!--
-        <nav class="site-menu overlay primary screen collapse-height" id="site-menu">
-          <div class="overlay-inner anim-horizontal">
+        <nav class="site-menu overlay overlay-primary overlay-screen" id="site-menu">
+          <div class="overlay-inner">
             <div class="overlay-content">
-              
+
               <div class="site-header-top">
                 <div class="contain-fluid">
-                  <div class="media">
-                    <div class="item">
+
+                  <div class="flex flex-auto justify-content-between">
+                    <div>
                       <a href="/" class="logo" title="Home">
                         Xtend
                       </a>
                     </div>
-                    <div class="item fluid">
-                      <button type="button" class="button button__menu float-right" data-xt-overlay='{"targets": "#site-menu", "class": "test-additional-class"}'>
+                    <div>
+                      <button type="button" class="btn btn-primary btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
                         
                           Docs
                         
@@ -80,40 +80,56 @@
                       </button>
                     </div>
                   </div>
+
                 </div>
               </div>
-                
+
               <div class="site-menu-content">
-              
+
                 
                   
                     
-                    <a href="/docs/" class="button make-line">
-                      docs
+                    <a href="/docs/" class="btn btn-primary make-line">
+                      <div class="line-container">
+                        <span class="line">
+                          docs
+                        </span>
+                      </div>
                     </a>
                   
                 
                   
                 
-                <a href="#" class="button make-line">
-                  Playground
+                <a href="#" class="btn btn-primary make-line">
+                  <div class="line-container">
+                    <span class="line">
+                      Playground
+                    </span>
+                  </div>
                 </a>
-                <a href="#" class="button make-line">
-                  Inspirations
+                <a href="#" class="btn btn-primary make-line">
+                  <div class="line-container">
+                    <span class="line">
+                      Inspirations
+                    </span>
+                  </div>
                 </a>
-                <a href="/faq/" class="button make-line">
-                  Faq
+                <a href="/faq/" class="btn btn-primary make-line">
+                  <div class="line-container">
+                    <span class="line">
+                      Faq
+                    </span>
+                  </div>
                 </a>
-                    
+
               </div>
             
             </div>
           </div>
         </nav>
-        -->
-        
+
         <div class="site-hero">
-                
+
           <div class="contain-fluid">
             <div class="flex flex-auto align-items-center align-content-center justify-content-between">
               <div class="site-hero-text">
@@ -121,18 +137,18 @@
                 <p class="font-giant">Lorem ipsum</p>
               </div>
               <div class="site-hero-img">
-                <img class="responsive" src="https://placehold.it/330x132/ffffff/00B0FF/?text=ads" />
+                <!--<img class="responsive" src="https://placehold.it/330x132/ffffff/00B0FF/?text=ads" />-->
               </div>
             </div>
           </div>
-                
+
         </div>
-        
+
         <nav class="site-breadcrumbs" role="navigation" data-xt-scroll='{"mode": "absolute"}'>
           <div class="site-breadcrumbs-inside">
             <div class="contain-fluid">
               <div class="flex flex-auto justify-content-between">
-              
+
                 <div class="site-breadcrumbs-body flex flex-space-none" data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave"}'>
                   
                     
@@ -144,7 +160,7 @@
                             <a href="/docs/" class="btn btn-primary">
                               Intro
                             </a>
-                            <div class="site-breadcrumbs-body-sub">
+                            <div class="site-breadcrumbs-body-sub toggle-block collapse-height">
                               
                               
                             </div>
@@ -162,7 +178,7 @@
                             <a href="/docs/structure/" class="btn btn-primary">
                               Structure
                             </a>
-                            <div class="site-breadcrumbs-body-sub">
+                            <div class="site-breadcrumbs-body-sub toggle-block collapse-height">
                               
                               
                               <a href="/docs/structure/flex/" class="btn btn-primary">
@@ -190,7 +206,7 @@
                             <a href="/docs/components/" class="btn btn-primary">
                               Components
                             </a>
-                            <div class="site-breadcrumbs-body-sub">
+                            <div class="site-breadcrumbs-body-sub toggle-block collapse-height">
                               
                               
                               <a href="/docs/components/button/" class="btn btn-primary">
@@ -222,7 +238,7 @@
                             <a href="/docs/animations/" class="btn btn-primary">
                               Animations
                             </a>
-                            <div class="site-breadcrumbs-body-sub">
+                            <div class="site-breadcrumbs-body-sub toggle-block collapse-height">
                               
                               
                               <a href="/docs/animations/collapse/" class="btn btn-primary">
@@ -244,7 +260,7 @@
                             <a href="/docs/javascript/" class="btn btn-primary">
                               Javascript
                             </a>
-                            <div class="site-breadcrumbs-body-sub">
+                            <div class="site-breadcrumbs-body-sub toggle-block collapse-height">
                               
                               
                               <a href="/docs/javascript/toggle/" class="btn btn-primary">
@@ -339,9 +355,9 @@
             </div>
           </div>
         </nav>
-        
+
       </header>
-      
+
       <div class="site-wrapper-inside">
 
       

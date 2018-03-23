@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="{% if page.collection %}collection-{{ page.collection | downcase }}{% else %}page-{{ page.title | downcase }}{% endif %}">
   <head>
-        
+
     <!-- meta -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,33 +16,33 @@
     <!-- icons -->
     <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.png" />
     <link rel="apple-touch-icon" sizes="152x152" href="{{ site.baseurl }}/assets/images/favicon-152x152.png" />
-    
+
     <!-- styles -->
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/icons/style.css?v={{ site.version }}" />
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/theme.min.css?v={{ site.version }}" />
 
   </head>
   <body>
-    
+
     <div class="site-wrapper">
-      
+
       <header class="site-header">
-        
+
         <div class="site-header-top" data-xt-scroll='{"bottom": ".site-breadcrumbs.xt-clone"}'>
           <div class="contain-fluid">
 
-            <div class="flex justify-content-between">
+            <div class="flex flex-auto justify-content-between">
               <div>
                 <a href="{{ site.baseurl }}/" class="logo" title="Home">
                   Xtend
                 </a>
               </div>
               <div>
-                <button type="button" class="btn btn-primary btn-menu" data-xt-overlay='{"targets": "#site-menu", "class": "test-additional-class"}'>
+                <button type="button" class="btn btn-primary btn-menu" data-xt-toggle='{"targets": "#site-menu"}'>
                   {% if page.collection %}
-                  {{ page.collection | capitalize }}
+                    {{ page.collection | capitalize }}
                   {% else %}
-                  {{ page.title | capitalize }}
+                    {{ page.title | capitalize }}
                   {% endif %}
                   <span class="icon-menu-custom">
                     <span></span>
@@ -56,21 +56,21 @@
           </div>
         </div>
 
-        <!--
-        <nav class="site-menu overlay primary screen collapse-height" id="site-menu">
-          <div class="overlay-inner anim-horizontal">
+        <nav class="site-menu overlay overlay-primary overlay-screen" id="site-menu">
+          <div class="overlay-inner">
             <div class="overlay-content">
-              
+
               <div class="site-header-top">
                 <div class="contain-fluid">
-                  <div class="media">
-                    <div class="item">
+
+                  <div class="flex flex-auto justify-content-between">
+                    <div>
                       <a href="{{ site.baseurl }}/" class="logo" title="Home">
                         Xtend
                       </a>
                     </div>
-                    <div class="item fluid">
-                      <button type="button" class="button button__menu float-right" data-xt-overlay='{"targets": "#site-menu", "class": "test-additional-class"}'>
+                    <div>
+                      <button type="button" class="btn btn-primary btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
                         {% if page.collection %}
                           {{ page.collection | capitalize }}
                         {% else %}
@@ -84,38 +84,54 @@
                       </button>
                     </div>
                   </div>
+
                 </div>
               </div>
-                
+
               <div class="site-menu-content">
-              
+
                 {% for collection in site.collections %}
                   {% if site.[collection.label].size > 0 %}
                     {% assign sorted = site.[collection.label] | sort: 'order' %}
-                    <a href="{{ site.baseurl }}{{ sorted[0].url }}" class="button make-line">
-                      {{ collection.label }}
+                    <a href="{{ site.baseurl }}{{ sorted[0].url }}" class="btn btn-primary make-line">
+                      <div class="line-container">
+                        <span class="line">
+                          {{ collection.label }}
+                        </span>
+                      </div>
                     </a>
                   {% endif %}
                 {% endfor %}
-                <a href="#" class="button make-line">
-                  Playground
+                <a href="#" class="btn btn-primary make-line">
+                  <div class="line-container">
+                    <span class="line">
+                      Playground
+                    </span>
+                  </div>
                 </a>
-                <a href="#" class="button make-line">
-                  Inspirations
+                <a href="#" class="btn btn-primary make-line">
+                  <div class="line-container">
+                    <span class="line">
+                      Inspirations
+                    </span>
+                  </div>
                 </a>
-                <a href="{{ site.baseurl }}/faq/" class="button make-line">
-                  Faq
+                <a href="{{ site.baseurl }}/faq/" class="btn btn-primary make-line">
+                  <div class="line-container">
+                    <span class="line">
+                      Faq
+                    </span>
+                  </div>
                 </a>
-                    
+
               </div>
             
             </div>
           </div>
         </nav>
-        -->
-        
+
         <div class="site-hero">
-                
+
           <div class="contain-fluid">
             <div class="flex flex-auto align-items-center align-content-center justify-content-between">
               <div class="site-hero-text">
@@ -123,18 +139,18 @@
                 <p class="font-giant">{{ page.description }}</p>
               </div>
               <div class="site-hero-img">
-                <img class="responsive" src="https://placehold.it/330x132/ffffff/00B0FF/?text=ads" />
+                <!--<img class="responsive" src="https://placehold.it/330x132/ffffff/00B0FF/?text=ads" />-->
               </div>
             </div>
           </div>
-                
+
         </div>
-        
+
         <nav class="site-breadcrumbs" role="navigation" data-xt-scroll='{"mode": "absolute"}'>
           <div class="site-breadcrumbs-inside">
             <div class="contain-fluid">
               <div class="flex flex-auto justify-content-between">
-              
+
                 <div class="site-breadcrumbs-body flex flex-space-none" data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave"}'>
                   {% for collection in site.collections %}
                     {% if collection.label == page.collection %}
@@ -146,7 +162,7 @@
                             <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary">
                               {{ p.title }}
                             </a>
-                            <div class="site-breadcrumbs-body-sub">
+                            <div class="site-breadcrumbs-body-sub toggle-block collapse-height">
                               {% assign subsorted = site.[collection.label] | where: 'categories', p.title | sort: 'order' %}
                               {% for pa in subsorted %}
                               <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn-primary">
@@ -218,9 +234,9 @@
             </div>
           </div>
         </nav>
-        
+
       </header>
-      
+
       <div class="site-wrapper-inside">
 
       

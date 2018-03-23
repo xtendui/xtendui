@@ -1,7 +1,6 @@
 /*! xtend v0.0.14 (https://getxtend.com/)
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 html,
 body {
   height: 100%;
@@ -1083,15 +1082,15 @@ a,
   width: 100%;
 }
 .drop {
+  display: none !important;
   position: absolute;
   z-index: 150 !important;
-  display: none;
 }
 .drop.active,
 .drop.fade-out {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 .drop .drop-inner {
   position: relative;
@@ -1159,6 +1158,7 @@ a,
   overflow-x: auto;
 }
 .overlay {
+  display: none !important;
   position: fixed;
   z-index: 200 !important;
   top: 0;
@@ -1166,13 +1166,12 @@ a,
   right: 0;
   bottom: 0;
   overflow: hidden;
-  display: none;
 }
 .overlay.active,
 .overlay.fade-out {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 .overlay .overlay-inner {
   position: relative;
@@ -1272,6 +1271,60 @@ a,
   bottom: 0;
   right: 0;
   margin: auto;
+}
+.toggle-block {
+  display: none !important;
+}
+.toggle-block.active,
+.toggle-block.fade-out {
+  display: block !important;
+}
+.toggle-flex {
+  display: none !important;
+}
+.toggle-flex.active,
+.toggle-flex.fade-out {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+.toggle-inline-flex {
+  display: none !important;
+}
+.toggle-inline-flex.active,
+.toggle-inline-flex.fade-out {
+  display: -webkit-inline-box !important;
+  display: -ms-inline-flexbox !important;
+  display: inline-flex !important;
+}
+.toggle-inline {
+  display: none !important;
+}
+.toggle-inline.active,
+.toggle-inline.fade-out {
+  display: inline !important;
+}
+.toggle-inline-block {
+  display: none !important;
+}
+.toggle-inline-block.active,
+.toggle-inline-block.fade-out {
+  display: inline-block !important;
+}
+.toggle-none.active,
+.toggle-none.fade-out {
+  display: none !important;
+}
+.toggle-visible {
+  visibility: hidden !important;
+}
+.toggle-visible.active,
+.toggle-visible.fade-out {
+  visibility: visible !important;
+}
+.toggle-hidden.active,
+.toggle-hidden.fade-out {
+  visibility: hidden !important;
 }
 .xt-backdrop {
   position: fixed;
@@ -1398,7 +1451,7 @@ html.xt-fixed .overlay {
 select.input-control {
   padding-right: 48px !important;
   white-space: normal;
-  background-position: calc(100% -  12px) 50%, calc(100% -  8px) 50%, 100% 0;
+  background-position: calc(100% -  24px / 2) 50%, calc(100% -  24px / 2 - 4px) 50%, 100% 0;
   background-size: 4px 4px, 4px 4px, 24px 100%;
   background-repeat: no-repeat;
 }
@@ -4117,6 +4170,24 @@ select.input-control {
 /*! xtend v0.0.14 (https://getxtend.com/)
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhs.ttf) format('truetype');
+}
 @keyframes anim-bottom-in {
   0% {
     opacity: 0;
@@ -4135,6 +4206,46 @@ select.input-control {
   100% {
     opacity: 0;
     transform: translateY(0.5rem);
+  }
+}
+@keyframes anim-left-in {
+  0% {
+    opacity: 0;
+    transform: translateX(0.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes anim-left-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0.5rem);
+  }
+}
+@keyframes anim-right-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-0.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes anim-right-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-0.5rem);
   }
 }
 @keyframes anim-vertical-in {
@@ -4452,6 +4563,12 @@ dl dt {
   margin-top: -0.5em;
   margin-bottom: -0.5em;
   font-size: 2em;
+}
+.icon-left {
+  margin-right: 0.5em;
+}
+.icon-right {
+  margin-left: 0.5em;
 }
 .flex {
   margin: -1rem -1rem;

@@ -59,15 +59,10 @@ a, .alink, .btn-link {
   }
 }
 .drop {
+  .toggle-flex();
   position: absolute;
   .by-key(@core-indexes, drop);
   z-index: @by-key !important;
-  // activation
-  display: none;
-  &.active,
-  &.fade-out {
-    .display(flex);
-  }
   // styles
   .drop-inner {
     position: relative;
@@ -164,6 +159,7 @@ a, .alink, .btn-link {
 //////////////////////
 
 .overlay {
+  .toggle-flex();
   position: fixed;
   .by-key(@core-indexes, overlay);
   z-index: @by-key !important;
@@ -172,12 +168,6 @@ a, .alink, .btn-link {
   right: 0;
   bottom: 0;
   overflow: hidden;
-  // activation
-  display: none;
-  &.active,
-  &.fade-out {
-    .display(flex);
-  }
   // styles
   .overlay-inner {
     position: relative;
@@ -280,6 +270,63 @@ a, .alink, .btn-link {
 //////////////////////
 // plugins
 //////////////////////
+
+// .toggle
+
+.toggle-block {
+  .display(none) !important;
+  &.active,
+  &.fade-out {
+    .display(block) !important;
+  }
+}
+.toggle-flex {
+  .display(none) !important;
+  &.active,
+  &.fade-out {
+    .display(flex) !important;
+  }
+}
+.toggle-inline-flex {
+  .display(none) !important;
+  &.active,
+  &.fade-out {
+    .display(inline-flex) !important;
+  }
+}
+.toggle-inline {
+  .display(none) !important;
+  &.active,
+  &.fade-out {
+    .display(inline) !important;
+  }
+}
+.toggle-inline-block {
+  .display(none) !important;
+  &.active,
+  &.fade-out {
+    .display(inline-block) !important;
+  }
+}
+.toggle-none {
+  &.active,
+  &.fade-out {
+    .display(none) !important;
+  }
+}
+.toggle-visible {
+  visibility: hidden !important;
+  &.active,
+  &.fade-out {
+    visibility: visible !important;
+  }
+}
+.toggle-hidden {
+  &.active,
+  &.fade-out {
+    visibility: hidden !important;
+  }
+}
 
 // .xt-backdrop
 

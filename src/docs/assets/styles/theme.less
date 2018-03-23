@@ -77,41 +77,6 @@
   color: @white;
 }
 
-/*
-
-// .site-menu
-
-.site-menu.overlay {
-  .site-menu-content {
-    padding-top: 52px; // add space for menu
-  }
-  .site-menu-content .button {
-    padding: @size-tiny 0;
-    width: 100%;
-    .font-sans-light();
-    font-size: @size-big;
-    color: @color-white;
-    text-align: left;
-    text-transform: capitalize;
-    .line-container {
-      .line {
-        background-color: @color-primary;
-      }
-      .line:after {
-        background-color: @color-white-75;
-        //background-color: linear-gradient(to right, @color-white-75 0%, @color-white-50 100%);
-      }
-    }
-    opacity: .75;
-    &:hover,
-    &:active, &.active {
-      color: @color-white;
-      opacity: 1;
-    }
-  }
-}
-*/
-
 // .site-hero
 
 .site-hero {
@@ -119,7 +84,7 @@
   > .contain-fluid {
     // min-height
     > .flex {
-      min-height: 35rem;
+      min-height: 300px;
     }
     // flex parent required for min-height ie10
     .display(flex);
@@ -158,27 +123,22 @@
     margin-left: -1.2em;
   }
   .site-breadcrumbs-body-sub {
-    display: none; // @TODO .toggle-block.collapse-height
     position: relative;
     z-index: 1;
     background-color: @primary;
     .padding(bottom, small);
-    /*
-    .button {
+    .btn {
       float: left;
       clear: both;
       .padding(y, tiny);
       font-size: 1rem;
     }
-    */
-    /*
-    // fix focus
-    margin-top: 1px;
-    padding-top: 1px;
-    padding-left: 1px;
-    */
   }
 }
+
+//////////////////////
+// btn-menu
+//////////////////////
 
 // .btn-menu
 
@@ -202,7 +162,7 @@
   .icon-menu-custom {
     position: relative;
     vertical-align: top;
-    .margin(left, small); // @TODO icon-right
+    .icon-right();
     width: 1em;
     height: .75em;
     top: .05em;
@@ -256,6 +216,217 @@
         background-color: @white;
       }
     }
+  }
+}
+
+//////////////////////
+// site-menu
+//////////////////////
+
+// .site-menu
+
+.site-menu.overlay {
+  .site-menu-content {
+    padding-top: 52px; // add space for menu
+  }
+  .site-menu-content .btn {
+    .padding(y, tiny);
+    .block();
+    background-color: transparent !important;
+    .font-sans-regular();
+    font-size: 4rem;
+    text-align: left;
+    text-transform: capitalize;
+    .line-container {
+      .line {
+        background-color: @primary;
+      }
+      .line:after {
+        background-color: fade(@white, 75%);
+        //background-color: linear-gradient(to right, @color-white-75 0%, @color-white-50 100%);
+      }
+    }
+    opacity: .75;
+    &:hover,
+    &:active, &.active {
+      color: @white;
+      opacity: 1;
+    }
+  }
+}
+
+// .site-menu
+
+.site-menu {
+  z-index: 69 !important;
+  .site-header-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+.site-breadcrumbs,
+.site-header-top {
+  // below demos overlay...
+  z-index: 68 !important;
+}
+.site-menu.active {
+  .site-menu-content {
+    .btn {
+      .line-container {
+        opacity: 0;
+        animation: anim-left-in 600ms cubic-bezier(.19, 1, .22, 1);
+        -webkit-animation-fill-mode: forwards;
+        -moz-animation-fill-mode: forwards;
+        -ms-animation-fill-mode: forwards;
+        -o-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+      }
+      &:nth-child(1) {
+        .line-container {
+          animation-delay: 100ms;
+        }
+      }
+      &:nth-child(2) {
+        .line-container {
+          animation-delay: 150ms;
+        }
+      }
+      &:nth-child(3) {
+        .line-container {
+          animation-delay: 200ms;
+        }
+      }
+      &:nth-child(4) {
+        .line-container {
+          animation-delay: 250ms;
+        }
+      }
+      &:nth-child(5) {
+        .line-container {
+          animation-delay: 300ms;
+        }
+      }
+      &:nth-child(6) {
+        .line-container {
+          animation-delay: 350ms;
+        }
+      }
+    }
+  }
+}
+.site-menu.fade-out {
+  opacity: 1 !important;
+  transform: none !important;
+  .site-menu-content {
+    .btn {
+      .line-container {
+        opacity: 1;
+        animation: anim-right-out 300ms cubic-bezier(.19, 1, .22, 1);
+        -webkit-animation-fill-mode: forwards;
+        -moz-animation-fill-mode: forwards;
+        -ms-animation-fill-mode: forwards;
+        -o-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+      }
+      &:nth-child(1) {
+        .line-container {
+          animation-delay: 6ms;
+        }
+      }
+      &:nth-child(2) {
+        .line-container {
+          animation-delay: 5ms;
+        }
+      }
+      &:nth-child(3) {
+        .line-container {
+          animation-delay: 4ms;
+        }
+      }
+      &:nth-child(4) {
+        .line-container {
+          animation-delay: 3ms;
+        }
+      }
+      &:nth-child(5) {
+        .line-container {
+          animation-delay: 2ms;
+        }
+      }
+      &:nth-child(6) {
+        .line-container {
+          animation-delay: 1ms;
+        }
+      }
+    }
+  }
+}
+
+// .make-line
+
+.make-line {
+  position: relative;
+  .line-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    .line {
+      display: inline-block;
+      padding-right: 15px;
+      background-color: @white;
+    }
+    .line:after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      bottom: .5em;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: fade(@primary, 25%);
+      h2 & {
+        height: 1px;
+      }
+    }
+  }
+  // animations
+  .line:after {
+    left: 100%;
+    width: 0;
+    opacity: 0;
+    transition: opacity 600ms cubic-bezier(.19, 1, .22, 1) 100ms;
+    animation: line-out 600ms cubic-bezier(.19, 1, .22, 1);
+  }
+  &:hover {
+    .line:after {
+      left: 0;
+      width: 100%;
+      opacity: 1;
+      transition: opacity 600ms cubic-bezier(.19, 1, .22, 1) 100ms;
+      animation: line-in 600ms cubic-bezier(.19, 1, .22, 1);
+    }
+  }
+}
+@keyframes line-out {
+  0% {
+    left: 0;
+    width: 100%;
+  }
+  100% {
+    left: 100%;
+    width: 0;
+  }
+}
+@keyframes line-in {
+  0% {
+    left: 0;
+    width: 0;
+  }
+  100% {
+    left: 0;
+    width: 100%;
   }
 }
 
