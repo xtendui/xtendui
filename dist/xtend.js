@@ -33,7 +33,7 @@ XtUtil.initAll = function () {
   XtUtil.forEach(toggles, function (toggle, i) {
     console.log(toggle);
     var xt = new _xtend2.default(toggle);
-    console.log(xt.getElements('test'));
+    //console.log(xt.getElements('test'));
   });
 };
 

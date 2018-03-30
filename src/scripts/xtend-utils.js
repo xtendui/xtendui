@@ -24,7 +24,7 @@ XtUtil.initAll = function () {
   XtUtil.forEach(toggles, function (toggle, i) {
     console.log(toggle);
     var xt = new Xt(toggle);
-    console.log(xt.getElements('test'));
+    //console.log(xt.getElements('test'));
   });
 };
 
