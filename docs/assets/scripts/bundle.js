@@ -1,4 +1,37 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+'use strict';
+
+var _xtend = require('../../../scripts/xtend.js');
+
+var _xtend2 = _interopRequireDefault(_xtend);
+
+var _xtendUtils = require('../../../scripts/xtend-utils.js');
+
+var _xtendUtils2 = _interopRequireDefault(_xtendUtils);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//////////////////////
+// imports
+//////////////////////
+
+console.log('theme loaded');
+
+// init
+
+var toggles = document.querySelectorAll('[data-xt-toggle]');
+Array.prototype.forEach.call(toggles, function (toggle, i) {
+  var xtend = new _xtend2.default(toggle, {
+    someCustomOption: 'Plugin was loaded vanilla style!'
+  });
+  xtend.doSomething();
+});
+
+// test utils
+
+console.log(_xtendUtils2.default.getElementIndex(toggles));
+
+},{"../../../scripts/xtend-utils.js":2,"../../../scripts/xtend.js":3}],2:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -117,7 +150,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -270,5 +303,5 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"./xtend-utils.js":1}]},{},[2])
+},{"./xtend-utils.js":2}]},{},[1])
 

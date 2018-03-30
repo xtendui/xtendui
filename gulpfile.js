@@ -4,19 +4,19 @@ var fs = require('fs');
 var gulp = require('gulp');
 var merge = require('merge-stream');
 var child = require('child_process');
+var buffer = require('vinyl-buffer');
+var source = require('vinyl-source-stream');
 
 var less = require('gulp-less');
 var gutil = require('gulp-util');
 var clean = require('gulp-clean');
 var watch = require('gulp-watch');
 var rename = require('gulp-rename');
+var browserify = require('browserify');
 let uglify = require('gulp-uglify-es').default;
 var cleanCSS = require('gulp-clean-css');
 var sourcemaps = require('gulp-sourcemaps');
 var injectString = require('gulp-inject-string');
-
-var babel = require('gulp-babel');
-var browserify = require('gulp-browserify');
 
 // fix less watch compile
 
@@ -69,12 +69,15 @@ gulp.task('less:watch', function () {
 });
 
 // compile js
-
 gulp.task('js-dist', function () {
-  return gulp.src(['src/scripts/*.js'])
-    .pipe(sourcemaps.init())
-    .pipe(babel())
-    .pipe(browserify())
+  var b = browserify({
+    entries: 'src/scripts/xtend.js',
+    debug: true
+  }).transform('babelify');
+  return b.bundle()
+    .pipe(source('xtend.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(gulp.dest('dist/'))
     .pipe(uglify({
       output: {
@@ -93,10 +96,15 @@ gulp.task('js-clean', gulp.series('js-dist', function() {
     .pipe(clean({force: true}));
 }));
 gulp.task('js', gulp.series('js-clean', function() {
-  return gulp.src(['src/docs/assets/scripts/theme.js'])
-    .pipe(sourcemaps.init())
-    .pipe(babel())
-    .pipe(browserify())
+  var b = browserify({
+    entries: 'src/docs/assets/scripts/theme.js',
+    debug: true
+  }).transform('babelify');
+  return b.bundle()
+    .pipe(source('bundle.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(gulp.dest('src/docs/assets/scripts/'))
     .pipe(uglify({
       output: {
         comments: 'some'
