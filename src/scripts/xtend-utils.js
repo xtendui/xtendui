@@ -5,14 +5,17 @@
 (function (root, factory) {
   var pluginName = 'XtUtil';
   if (typeof define === 'function' && define.amd) {
-    define([], factory(pluginName));
+    define([], factory(root));
   } else if (typeof exports === 'object') {
-    module.exports = factory(pluginName);
+    module.exports = factory(root);
   } else {
-    root[pluginName] = factory(pluginName);
+    root[pluginName] = factory(root);
   }
 })(typeof global !== "undefined" ? global : this.window || this.global, function (root) {
+
   'use strict';
+
+  var window = root;
 
   //////////////////////
   // Constructor
@@ -24,9 +27,53 @@
   // Methods
   //////////////////////
 
+  XtUtil.uid = 0;
+
+  /**
+   * requestAnimationFrame
+   */
+  XtUtil.requestAnimationFrame = function () {
+    return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
+      window.setTimeout(callback, 1000 / 60);
+    };
+  }();
+
+  /**
+   * cancelAnimationFrame
+   */
+  XtUtil.cancelAnimationFrame = function () {
+    return window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || function (callback) {
+      window.clearTimeout(id);
+    };
+  }();
+
+  /**
+   * Get unique id
+   * @param {String} prefix Text to prepend
+   * @param {String} suffix Text to append
+   * @returns {String} Unique id
+   */
+  XtUtil.getUniqueID = function (prefix, suffix) {
+    return prefix + '-' + (XtUtil.uid++) + '-' + suffix;
+  };
+
+  /**
+   * Make an array when element is only one
+   * @param {Object|Array} element
+   * @returns {Array}
+   */
+  XtUtil.arrSingle = function (single) {
+    if (!single.length) {
+      var arr = new Array(1);
+      arr[0] = single;
+      return arr;
+    } else {
+      return single;
+    }
+  };
+
   /**
    * Merge defaults with user options
-   * @private
    * @param {Object} defaults Default settings
    * @param {Object} options User options
    * @returns {Object} Merged values of defaults and options
@@ -44,7 +91,6 @@
 
   /**
    * A simple forEach() implementation for Arrays, Objects and NodeLists
-   * @private
    * @param {Array|Object|NodeList} collection Collection of items to iterate
    * @param {Function} callback Callback function for each iteration
    * @param {Array|Object|NodeList} scope Object/NodeList/Array that forEach is iterating over (aka `this`)

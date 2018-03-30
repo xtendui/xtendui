@@ -5,16 +5,19 @@
 import XtUtil from './xtend-utils.js';
 
 (function (root, factory) {
-  var pluginName = 'Xt';
+  var pluginName = 'XtUtil';
   if (typeof define === 'function' && define.amd) {
-    define([], factory(pluginName));
+    define([], factory(root));
   } else if (typeof exports === 'object') {
-    module.exports = factory(pluginName);
+    module.exports = factory(root);
   } else {
-    root[pluginName] = factory(pluginName);
+    root[pluginName] = factory(root);
   }
 })(typeof global !== "undefined" ? global : this.window || this.global, function (root) {
+
   'use strict';
+
+  var window = root;
 
   //////////////////////
   // defaults
@@ -35,16 +38,16 @@ import XtUtil from './xtend-utils.js';
    * @constructor
    */
   function Xt(element, options) {
+    var self = this;
     this.element = element;
     this.options = XtUtil.extend(defaults, options || {}); // js options
     this.options = XtUtil.extend(this.options, JSON.parse(this.element.getAttribute('data-xt-toggle')) || {}); // markup options
-    // options
-    this.group = this.element;
+    // classes
     if (this.options.class) {
       this.options.classes.push(this.options.class);
     }
     // init
-    this.scope();
+    this.setup();
     this.events();
   }
 
@@ -54,43 +57,56 @@ import XtUtil from './xtend-utils.js';
 
   Xt.prototype = {
 
+    //////////////////////
+    // Init Methods
+    //////////////////////
+
     /**
-     * scope
+     * setup
      */
-    scope: function () {
+    setup: function () {
+      var self = this;
       var options = this.options;
-      // els
+      // group and namespace
+      this.namespace = options.targets.toString() + '-' + options.classes.toString();
+      if (options.targets && options.targets.indexOf('#') !== -1) {
+        this.group = document;
+        /*} else if ($group.attr('id')) {
+          settings.uid = $group.attr('id');
+        */
+      } else {
+        this.group = this.element;
+        this.namespace = XtUtil.getUniqueID('xt', this.namespace);
+      }
+      this.namespace = this.namespace.split('#').join('');
+      // elements
       if (options.elements) {
-        if (options.elements.indexOf('#') !== -1) {
-          this.elements = document.querySelectorAll(options.elements); //.filter(':parents(.xt-ignore)');
-        } else {
-          this.elements = this.group.querySelectorAll(options.elements); //.filter(':parents(.xt-ignore)');
-        }
+        this.elements = XtUtil.arrSingle(this.group.querySelectorAll(options.elements)); //.filter(':parents(.xt-ignore)');
+      } else {
+        this.elements = XtUtil.arrSingle(this.element);
+        // on next frame set all elements querying the namespace
+        XtUtil.requestAnimationFrame.call(window, function () {
+          self.elements = XtUtil.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']'));
+        });
       }
-      if (!this.elements) {
-        this.elements = this.group;
-      }
-      // trgs
+      // targets
       if (options.targets) {
-        this.targets = document.querySelectorAll(options.targets);
+        this.targets = XtUtil.arrSingle(document.querySelectorAll(options.targets));
       }
-      // 1 object array
-      if(!this.elements.length) {
-        this.elements = [this.elements];
-      }
-      if(!this.targets.length) {
-        this.targets = [this.elements];
-      }
+      // set namespace for next frame
+      XtUtil.forEach(this.elements, function (element, i) {
+        element.setAttribute('data-xt-namespace', self.namespace);
+      });
     },
 
     /**
-     * Init
+     * init
      */
     init: function () {
     },
 
     /**
-     * Events
+     * events
      */
     events: function () {
       var self = this;
@@ -100,33 +116,82 @@ import XtUtil from './xtend-utils.js';
       XtUtil.forEach(this.elements, function (element, i) {
         if (on) {
           element.addEventListener(on, function (e) {
-            var index = XtUtil.getElementIndex(this);
-            if (!this.classList.contains('active')) {
-              this.classList.add(...options.classes);
-              self.targets[index].classList.add(...options.classes);
-            } else {
-              this.classList.remove(...options.classes);
-              self.targets[index].classList.remove(...options.classes);
-            }
+            self.on(this);
           });
         }
         if (off) {
           element.addEventListener(off, function (e) {
-            var index = XtUtil.getElementIndex(this);
-            if (this.classList.contains('active')) {
-              this.classList.remove(...options.classes);
-              self.targets[index].classList.remove(...options.classes);
-            }
+            self.off(this);
           });
         }
       });
     },
 
+    //////////////////////
+    // Event Methods
+    //////////////////////
+
     /**
-     * doSomething
+     * getElements
      */
-    doSomething: function () {
-      console.log(this.options.someCustomOption);
+    getElements: function (elements, element, group) {
+      return elements;
+      /* @TODO groups
+      var object = this;
+      var settings = this.settings;
+      var group = this.group;
+      var $group = $(this.group);
+      // $elements and $el
+      if ($elements.is($group)) {
+        return $g;
+      } else if ($el.is('[data-group]')) {
+        // with [data-group]
+        var g = $el.attr('data-group');
+        return $g.filter('[data-group="' + g + '"]');
+      } else {
+        if (settings.$targets.has($g)) {
+          var index = object.getIndex($elements.not('[data-group]'), $el);
+          return $g.not('[data-group]').eq(index);
+        } else {
+          return $el;
+        }
+      }
+      */
+    },
+
+    /**
+     * on
+     */
+    on: function (element) {
+      var options = this.options;
+      var index = XtUtil.getElementIndex(element);
+      var elements = this.getElements(this.elements, element, this.group);
+      if (!element.classList.contains('active')) {
+        XtUtil.forEach(elements, function (element, i) {
+          element.classList.add(...options.classes);
+        });
+        this.targets[index].classList.add(...options.classes);
+      } else {
+        XtUtil.forEach(elements, function (element, i) {
+          element.classList.remove(...options.classes);
+        });
+        this.targets[index].classList.remove(...options.classes);
+      }
+    },
+
+    /**
+     * off
+     */
+    off: function (element) {
+      var options = this.options;
+      var index = XtUtil.getElementIndex(element);
+      var elements = this.getElements(this.elements, element, this.group);
+      if (element.classList.contains('active')) {
+        XtUtil.forEach(elements, function (element, i) {
+          element.classList.remove(...options.classes);
+        });
+        this.targets[index].classList.remove(...options.classes);
+      }
     },
 
   };

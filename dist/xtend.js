@@ -11,14 +11,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 (function (root, factory) {
   var pluginName = 'XtUtil';
   if (typeof define === 'function' && define.amd) {
-    define([], factory(pluginName));
+    define([], factory(root));
   } else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
-    module.exports = factory(pluginName);
+    module.exports = factory(root);
   } else {
-    root[pluginName] = factory(pluginName);
+    root[pluginName] = factory(root);
   }
 })(typeof global !== "undefined" ? global : undefined.window || undefined.global, function (root) {
+
   'use strict';
+
+  var window = root;
 
   //////////////////////
   // Constructor
@@ -30,9 +33,53 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   // Methods
   //////////////////////
 
+  XtUtil.uid = 0;
+
+  /**
+   * requestAnimationFrame
+   */
+  XtUtil.requestAnimationFrame = function () {
+    return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
+      window.setTimeout(callback, 1000 / 60);
+    };
+  }();
+
+  /**
+   * cancelAnimationFrame
+   */
+  XtUtil.cancelAnimationFrame = function () {
+    return window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || function (callback) {
+      window.clearTimeout(id);
+    };
+  }();
+
+  /**
+   * Get unique id
+   * @param {String} prefix Text to prepend
+   * @param {String} suffix Text to append
+   * @returns {String} Unique id
+   */
+  XtUtil.getUniqueID = function (prefix, suffix) {
+    return prefix + '-' + XtUtil.uid++ + '-' + suffix;
+  };
+
+  /**
+   * Make an array when element is only one
+   * @param {Object|Array} element
+   * @returns {Array}
+   */
+  XtUtil.arrSingle = function (single) {
+    if (!single.length) {
+      var arr = new Array(1);
+      arr[0] = single;
+      return arr;
+    } else {
+      return single;
+    }
+  };
+
   /**
    * Merge defaults with user options
-   * @private
    * @param {Object} defaults Default settings
    * @param {Object} options User options
    * @returns {Object} Merged values of defaults and options
@@ -50,7 +97,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
   /**
    * A simple forEach() implementation for Arrays, Objects and NodeLists
-   * @private
    * @param {Array|Object|NodeList} collection Collection of items to iterate
    * @param {Function} callback Callback function for each iteration
    * @param {Array|Object|NodeList} scope Object/NodeList/Array that forEach is iterating over (aka `this`)
@@ -134,16 +180,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 (function (root, factory) {
-  var pluginName = 'Xt';
+  var pluginName = 'XtUtil';
   if (typeof define === 'function' && define.amd) {
-    define([], factory(pluginName));
+    define([], factory(root));
   } else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
-    module.exports = factory(pluginName);
+    module.exports = factory(root);
   } else {
-    root[pluginName] = factory(pluginName);
+    root[pluginName] = factory(root);
   }
 })(typeof global !== "undefined" ? global : undefined.window || undefined.global, function (root) {
+
   'use strict';
+
+  var window = root;
 
   //////////////////////
   // defaults
@@ -164,16 +213,16 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
    * @constructor
    */
   function Xt(element, options) {
+    var self = this;
     this.element = element;
     this.options = _xtendUtils2.default.extend(defaults, options || {}); // js options
     this.options = _xtendUtils2.default.extend(this.options, JSON.parse(this.element.getAttribute('data-xt-toggle')) || {}); // markup options
-    // options
-    this.group = this.element;
+    // classes
     if (this.options.class) {
       this.options.classes.push(this.options.class);
     }
     // init
-    this.scope();
+    this.setup();
     this.events();
   }
 
@@ -183,42 +232,55 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
   Xt.prototype = {
 
+    //////////////////////
+    // Init Methods
+    //////////////////////
+
     /**
-     * scope
+     * setup
      */
-    scope: function scope() {
+    setup: function setup() {
+      var self = this;
       var options = this.options;
-      // els
+      // group and namespace
+      this.namespace = options.targets.toString() + '-' + options.classes.toString();
+      if (options.targets && options.targets.indexOf('#') !== -1) {
+        this.group = document;
+        /*} else if ($group.attr('id')) {
+          settings.uid = $group.attr('id');
+        */
+      } else {
+        this.group = this.element;
+        this.namespace = _xtendUtils2.default.getUniqueID('xt', this.namespace);
+      }
+      this.namespace = this.namespace.split('#').join('');
+      // elements
       if (options.elements) {
-        if (options.elements.indexOf('#') !== -1) {
-          this.elements = document.querySelectorAll(options.elements); //.filter(':parents(.xt-ignore)');
-        } else {
-          this.elements = this.group.querySelectorAll(options.elements); //.filter(':parents(.xt-ignore)');
-        }
+        this.elements = _xtendUtils2.default.arrSingle(this.group.querySelectorAll(options.elements)); //.filter(':parents(.xt-ignore)');
+      } else {
+        this.elements = _xtendUtils2.default.arrSingle(this.element);
+        // on next frame set all elements querying the namespace
+        _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+          self.elements = _xtendUtils2.default.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']'));
+        });
       }
-      if (!this.elements) {
-        this.elements = this.group;
-      }
-      // trgs
+      // targets
       if (options.targets) {
-        this.targets = document.querySelectorAll(options.targets);
+        this.targets = _xtendUtils2.default.arrSingle(document.querySelectorAll(options.targets));
       }
-      // 1 object array
-      if (!this.elements.length) {
-        this.elements = [this.elements];
-      }
-      if (!this.targets.length) {
-        this.targets = [this.elements];
-      }
+      // set namespace for next frame
+      _xtendUtils2.default.forEach(this.elements, function (element, i) {
+        element.setAttribute('data-xt-namespace', self.namespace);
+      });
     },
 
     /**
-     * Init
+     * init
      */
     init: function init() {},
 
     /**
-     * Events
+     * events
      */
     events: function events() {
       var self = this;
@@ -228,39 +290,94 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       _xtendUtils2.default.forEach(this.elements, function (element, i) {
         if (on) {
           element.addEventListener(on, function (e) {
-            var index = _xtendUtils2.default.getElementIndex(this);
-            if (!this.classList.contains('active')) {
-              var _classList, _self$targets$index$c;
-
-              (_classList = this.classList).add.apply(_classList, _toConsumableArray(options.classes));
-              (_self$targets$index$c = self.targets[index].classList).add.apply(_self$targets$index$c, _toConsumableArray(options.classes));
-            } else {
-              var _classList2, _self$targets$index$c2;
-
-              (_classList2 = this.classList).remove.apply(_classList2, _toConsumableArray(options.classes));
-              (_self$targets$index$c2 = self.targets[index].classList).remove.apply(_self$targets$index$c2, _toConsumableArray(options.classes));
-            }
+            self.on(this);
           });
         }
         if (off) {
           element.addEventListener(off, function (e) {
-            var index = _xtendUtils2.default.getElementIndex(this);
-            if (this.classList.contains('active')) {
-              var _classList3, _self$targets$index$c3;
-
-              (_classList3 = this.classList).remove.apply(_classList3, _toConsumableArray(options.classes));
-              (_self$targets$index$c3 = self.targets[index].classList).remove.apply(_self$targets$index$c3, _toConsumableArray(options.classes));
-            }
+            self.off(this);
           });
         }
       });
     },
 
+    //////////////////////
+    // Event Methods
+    //////////////////////
+
     /**
-     * doSomething
+     * getElements
      */
-    doSomething: function doSomething() {
-      console.log(this.options.someCustomOption);
+    getElements: function getElements(elements, element, group) {
+      return elements;
+      /* @TODO groups
+      var object = this;
+      var settings = this.settings;
+      var group = this.group;
+      var $group = $(this.group);
+      // $elements and $el
+      if ($elements.is($group)) {
+        return $g;
+      } else if ($el.is('[data-group]')) {
+        // with [data-group]
+        var g = $el.attr('data-group');
+        return $g.filter('[data-group="' + g + '"]');
+      } else {
+        if (settings.$targets.has($g)) {
+          var index = object.getIndex($elements.not('[data-group]'), $el);
+          return $g.not('[data-group]').eq(index);
+        } else {
+          return $el;
+        }
+      }
+      */
+    },
+
+    /**
+     * on
+     */
+    on: function on(element) {
+      var options = this.options;
+      var index = _xtendUtils2.default.getElementIndex(element);
+      var elements = this.getElements(this.elements, element, this.group);
+      if (!element.classList.contains('active')) {
+        var _targets$index$classL;
+
+        _xtendUtils2.default.forEach(elements, function (element, i) {
+          var _element$classList;
+
+          (_element$classList = element.classList).add.apply(_element$classList, _toConsumableArray(options.classes));
+        });
+        (_targets$index$classL = this.targets[index].classList).add.apply(_targets$index$classL, _toConsumableArray(options.classes));
+      } else {
+        var _targets$index$classL2;
+
+        _xtendUtils2.default.forEach(elements, function (element, i) {
+          var _element$classList2;
+
+          (_element$classList2 = element.classList).remove.apply(_element$classList2, _toConsumableArray(options.classes));
+        });
+        (_targets$index$classL2 = this.targets[index].classList).remove.apply(_targets$index$classL2, _toConsumableArray(options.classes));
+      }
+    },
+
+    /**
+     * off
+     */
+    off: function off(element) {
+      var options = this.options;
+      var index = _xtendUtils2.default.getElementIndex(element);
+      var elements = this.getElements(this.elements, element, this.group);
+      if (element.classList.contains('active')) {
+        var _targets$index$classL3;
+
+        _xtendUtils2.default.forEach(elements, function (element, i) {
+          var _element$classList3;
+
+          (_element$classList3 = element.classList).remove.apply(_element$classList3, _toConsumableArray(options.classes));
+        });
+        (_targets$index$classL3 = this.targets[index].classList).remove.apply(_targets$index$classL3, _toConsumableArray(options.classes));
+      }
     }
 
   };
