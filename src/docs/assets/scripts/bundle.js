@@ -96,7 +96,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
    * @returns {Array}
    */
   XtUtil.arrSingle = function (single) {
-    if (!single.length) {
+    if (!single.length && single.value !== undefined) {
       var arr = new Array(1);
       arr[0] = single;
       return arr;
@@ -249,8 +249,8 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       this.options.classes.push(this.options.class);
     }
     // init
-    this.setup();
-    this.events();
+    this.initSetup();
+    this.initEvents();
   }
 
   //////////////////////
@@ -264,9 +264,14 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     //////////////////////
 
     /**
+     * init
+     */
+    init: function init() {},
+
+    /**
      * setup
      */
-    setup: function setup() {
+    initSetup: function initSetup() {
       var self = this;
       var options = this.options;
       // group and namespace
@@ -296,20 +301,17 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         this.targets = _xtendUtils2.default.arrSingle(document.querySelectorAll(options.targets));
       }
       // set namespace for next frame
-      _xtendUtils2.default.forEach(this.elements, function (element, i) {
-        element.setAttribute('data-xt-namespace', self.namespace);
-      });
+      if (this.elements.length) {
+        _xtendUtils2.default.forEach(this.elements, function (element, i) {
+          element.setAttribute('data-xt-namespace', self.namespace);
+        });
+      }
     },
-
-    /**
-     * init
-     */
-    init: function init() {},
 
     /**
      * events
      */
-    events: function events() {
+    initEvents: function initEvents() {
       var self = this;
       var options = this.options;
       var on = options.on || 'click';
@@ -317,19 +319,19 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       _xtendUtils2.default.forEach(this.elements, function (element, i) {
         if (on) {
           element.addEventListener(on, function (e) {
-            self.on(this);
+            self.eventOn(this);
           });
         }
         if (off) {
           element.addEventListener(off, function (e) {
-            self.off(this);
+            self.eventOff(this);
           });
         }
       });
     },
 
     //////////////////////
-    // Event Methods
+    // Utils Methods
     //////////////////////
 
     /**
@@ -337,32 +339,37 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
      */
     getElements: function getElements(elements, element, group) {
       return elements;
+      /* @TODO groups
+      var object = this;
+      var settings = this.settings;
+      var group = this.group;
+      var $group = $(this.group);
       // $elements and $el
-      console.log(group);
-      if (group === document) {
-        return group;
-        /*
-        } else if ($el.is('[data-group]')) {
+      if ($elements.is($group)) {
+        return $g;
+      } else if ($el.is('[data-group]')) {
         // with [data-group]
         var g = $el.attr('data-group');
         return $g.filter('[data-group="' + g + '"]');
-        */
       } else {
-        /*
-        if (this.targets.has(group)) {
-          var index = this.getIndex($elements.not('[data-group]'), element);
-          return group.not('[data-group]').eq(index);
+        if (settings.$targets.has($g)) {
+          var index = object.getIndex($elements.not('[data-group]'), $el);
+          return $g.not('[data-group]').eq(index);
         } else {
-        */
-        return elements;
-        /*}*/
+          return $el;
+        }
       }
+      */
     },
+
+    //////////////////////
+    // Event Methods
+    //////////////////////
 
     /**
      * on
      */
-    on: function on(element) {
+    eventOn: function eventOn(element) {
       var options = this.options;
       var index = _xtendUtils2.default.getElementIndex(element);
       var elements = this.getElements(this.elements, element, this.group);
@@ -390,7 +397,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     /**
      * off
      */
-    off: function off(element) {
+    eventOff: function eventOff(element) {
       var options = this.options;
       var index = _xtendUtils2.default.getElementIndex(element);
       var elements = this.getElements(this.elements, element, this.group);

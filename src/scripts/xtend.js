@@ -47,8 +47,8 @@ import XtUtil from './xtend-utils.js';
       this.options.classes.push(this.options.class);
     }
     // init
-    this.setup();
-    this.events();
+    this.initSetup();
+    this.initEvents();
   }
 
   //////////////////////
@@ -62,9 +62,15 @@ import XtUtil from './xtend-utils.js';
     //////////////////////
 
     /**
+     * init
+     */
+    init: function () {
+    },
+
+    /**
      * setup
      */
-    setup: function () {
+    initSetup: function () {
       var self = this;
       var options = this.options;
       // group and namespace
@@ -94,21 +100,17 @@ import XtUtil from './xtend-utils.js';
         this.targets = XtUtil.arrSingle(document.querySelectorAll(options.targets));
       }
       // set namespace for next frame
-      XtUtil.forEach(this.elements, function (element, i) {
-        element.setAttribute('data-xt-namespace', self.namespace);
-      });
-    },
-
-    /**
-     * init
-     */
-    init: function () {
+      if (this.elements.length) {
+        XtUtil.forEach(this.elements, function (element, i) {
+          element.setAttribute('data-xt-namespace', self.namespace);
+        });
+      }
     },
 
     /**
      * events
      */
-    events: function () {
+    initEvents: function () {
       var self = this;
       var options = this.options;
       var on = options.on || 'click';
@@ -116,19 +118,19 @@ import XtUtil from './xtend-utils.js';
       XtUtil.forEach(this.elements, function (element, i) {
         if (on) {
           element.addEventListener(on, function (e) {
-            self.on(this);
+            self.eventOn(this);
           });
         }
         if (off) {
           element.addEventListener(off, function (e) {
-            self.off(this);
+            self.eventOff(this);
           });
         }
       });
     },
 
     //////////////////////
-    // Event Methods
+    // Utils Methods
     //////////////////////
 
     /**
@@ -159,10 +161,14 @@ import XtUtil from './xtend-utils.js';
       */
     },
 
+    //////////////////////
+    // Event Methods
+    //////////////////////
+
     /**
      * on
      */
-    on: function (element) {
+    eventOn: function (element) {
       var options = this.options;
       var index = XtUtil.getElementIndex(element);
       var elements = this.getElements(this.elements, element, this.group);
@@ -182,7 +188,7 @@ import XtUtil from './xtend-utils.js';
     /**
      * off
      */
-    off: function (element) {
+    eventOff: function (element) {
       var options = this.options;
       var index = XtUtil.getElementIndex(element);
       var elements = this.getElements(this.elements, element, this.group);

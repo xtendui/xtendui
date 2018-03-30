@@ -63,7 +63,7 @@
    * @returns {Array}
    */
   XtUtil.arrSingle = function (single) {
-    if (!single.length) {
+    if (!single.length && single.value !== undefined) {
       var arr = new Array(1);
       arr[0] = single;
       return arr;
