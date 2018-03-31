@@ -23,6 +23,7 @@ var defaults = {
 
 /**
  * Plugin Object
+ * @param {Element} object Base element
  * @param {Object} options User options
  * @constructor
  */
@@ -36,6 +37,7 @@ function Xt(object, options) {
   }
   // init
   this.initSetup();
+  this.initScope();
   this.initEvents();
 }
 
@@ -50,33 +52,42 @@ Xt.prototype = {
   //////////////////////
 
   /**
-   * setup
+   * setup namespace, group and options
    */
   initSetup: function () {
-    var self = this;
     var options = this.options;
-    // group and namespace
+    // default namespace
     this.namespace = options.targets.toString() + '-' + options.classes.toString();
+    // setup (based on xtend mode)
     if (options.targets && options.targets.indexOf('#') !== -1) {
+      // xtend document mode
       this.group = document;
       options.max = Infinity;
     } else {
-      this.group = this.object;
+      // xtend unique mode
       this.namespace = XtUtil.getUniqueID('xt', this.namespace);
+      this.group = this.object;
     }
-    this.namespace = this.namespace.split('-').join('_');
-    this.namespace = this.namespace.split('#').join('');
-    this.namespace = this.namespace.split('.').join('');
-    // current based on namespace, so shared between Xt objects
-    if (!window[this.namespace]) {
-      window[this.namespace] = [];
+    // final namespace
+    this.namespace = this.namespace.replace('#', '');
+    // currents array based on namespace (so shared between Xt objects)
+    if (!this.getCurrents()) {
+      this.setCurrents([]);
     }
+  },
+
+  /**
+   * init elements, targets and currents
+   */
+  initScope: function () {
+    var self = this;
+    var options = this.options;
     // elements
     if (options.elements) {
       this.elements = XtUtil.arrSingle(this.group.querySelectorAll(options.elements)); //.filter(':parents(.xt-ignore)');
     } else {
       this.elements = XtUtil.arrSingle(this.object);
-      // on next frame set all elements querying the namespace
+      // @FIX on next frame set all elements querying the namespace
       XtUtil.requestAnimationFrame.call(window, function () {
         self.elements = XtUtil.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']'));
       });
@@ -85,7 +96,7 @@ Xt.prototype = {
     if (options.targets) {
       this.targets = XtUtil.arrSingle(this.group.querySelectorAll(options.targets));
     }
-    // set namespace for next frame
+    // @FIX set namespace for next frame
     if (this.elements.length) {
       XtUtil.forEach(this.elements, function (element, i) {
         element.setAttribute('data-xt-namespace', self.namespace);
@@ -114,7 +125,7 @@ Xt.prototype = {
   },
 
   /**
-   * events
+   * init events
    */
   initEvents: function () {
     var self = this;
@@ -139,7 +150,11 @@ Xt.prototype = {
   //////////////////////
 
   /**
-   * choose which elements to activate/deactivate
+   * choose which elements to activate/deactivate (based on xtend mode)
+   * @param {Element} elements
+   * @param {Element} element
+   * @param {Element} group
+   * @returns {Element}
    */
   getElements: function (elements, element, group) {
     if (this.group === document) {
@@ -152,7 +167,8 @@ Xt.prototype = {
   },
 
   /**
-   * get currents based on namespace, so shared between Xt objects
+   * get currents based on namespace (so shared between Xt objects)
+   * @returns {Element}
    */
 
   getCurrents: function() {
@@ -160,7 +176,17 @@ Xt.prototype = {
   },
 
   /**
-   * add current based on namespace, so shared between Xt objects
+   * set currents based on namespace (so shared between Xt objects)
+   * @param {Array} arr
+   */
+
+  setCurrents: function(arr) {
+    window[this.namespace] = arr;
+  },
+
+  /**
+   * add current based on namespace (so shared between Xt objects)
+   * @param {Element} element To be added
    */
 
   addCurrent: function(element) {
@@ -168,7 +194,8 @@ Xt.prototype = {
   },
 
   /**
-   * remove currents based on namespace, so shared between Xt objects
+   * remove currents based on namespace (so shared between Xt objects)
+   * @param {Element} element To be removed
    */
 
   removeCurrent: function(element) {
@@ -182,7 +209,8 @@ Xt.prototype = {
   //////////////////////
 
   /**
-   * on
+   * element activation
+   * @param {Element} element To be activated
    */
   eventOn: function (element) {
     var self = this;
@@ -208,7 +236,8 @@ Xt.prototype = {
   },
 
   /**
-   * off
+   * element deactivation
+   * @param {Element} element To be deactivated
    */
   eventOff: function (element) {
     var self = this;
