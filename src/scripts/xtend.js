@@ -94,19 +94,19 @@ Xt.prototype = {
       });
     }
     // currents
+    this.currents = [];
     XtUtil.requestAnimationFrame.call(window, function () {
       if (self.elements.length) {
-        var currents = [];
         // pupulate currents and activate defaults.class
         XtUtil.forEach(self.elements, function (element, i) {
           if (element.classList.contains(defaults.class)) {
             element.classList.remove(...options.classes);
-            currents.push(element);
+            self.currents.push(element);
             self.eventOn(element);
           }
         });
         // if currents < min
-        var todo = options.min - currents.length;
+        var todo = options.min - self.currents.length;
         if (todo) {
           for (var i = 0; i < todo; i++) {
             self.eventOn(self.elements[i]);
@@ -146,28 +146,13 @@ Xt.prototype = {
    * getElements
    */
   getElements: function (elements, element, group) {
-    return elements;
-    /* @TODO groups
-    var object = this;
-    var settings = this.settings;
-    var group = this.group;
-    var $group = $(this.group);
-    // $elements and $el
-    if ($elements.is($group)) {
-      return $g;
-    } else if ($el.is('[data-group]')) {
-      // with [data-group]
-      var g = $el.attr('data-group');
-      return $g.filter('[data-group="' + g + '"]');
+    if (this.group === document) {
+      // when using id for targets activate all elements
+      return elements;
     } else {
-      if (settings.$targets.has($g)) {
-        var index = object.getIndex($elements.not('[data-group]'), $el);
-        return $g.not('[data-group]').eq(index);
-      } else {
-        return $el;
-      }
+      // normally activate only element
+      return XtUtil.arrSingle(element);
     }
-    */
   },
 
   //////////////////////
@@ -181,23 +166,21 @@ Xt.prototype = {
     var options = this.options;
     var index = XtUtil.getElementIndex(element);
     var elements = this.getElements(this.elements, element, this.group);
-    if (!element.classList.contains('active')) {
-      element.classList.add(...options.classes);
-      /*
+    if (!element.classList.contains(...defaults.classes)) {
       XtUtil.forEach(elements, function (element, i) {
         element.classList.add(...options.classes);
       });
-      */
       this.targets[index].classList.add(...options.classes);
-      //console.log(element, index, this.targets[index]);
     } else {
-      element.classList.remove(...options.classes);
-      /*
       XtUtil.forEach(elements, function (element, i) {
         element.classList.remove(...options.classes);
       });
-      */
       this.targets[index].classList.remove(...options.classes);
+    }
+    // off max or differents
+    if (this.currents.length > options.max) {
+      var first = this.currents[0];
+      this.eventOff(first);
     }
   },
 
@@ -207,8 +190,8 @@ Xt.prototype = {
   eventOff: function (element) {
     var options = this.options;
     var index = XtUtil.getElementIndex(element);
-    var elements = this.getElements(this.elements, element, this.group);
-    if (element.classList.contains('active')) {
+    var elements = this.getElements(this.elements, XtUtil.arrSingle(element), this.group);
+    if (element.classList.contains(...defaults.classes)) {
       XtUtil.forEach(elements, function (element, i) {
         element.classList.remove(...options.classes);
       });
