@@ -94,34 +94,18 @@
                   {% if site.[collection.label].size > 0 %}
                     {% assign sorted = site.[collection.label] | sort: 'order' %}
                     <a href="{{ site.baseurl }}{{ sorted[0].url }}" class="btn btn-primary make-line">
-                      <div class="line-container">
-                        <span class="line">
-                          {{ collection.label }}
-                        </span>
-                      </div>
+                        {{ collection.label }}
                     </a>
                   {% endif %}
                 {% endfor %}
                 <a href="#" class="btn btn-primary make-line">
-                  <div class="line-container">
-                    <span class="line">
-                      Playground
-                    </span>
-                  </div>
+                    Playground
                 </a>
                 <a href="#" class="btn btn-primary make-line">
-                  <div class="line-container">
-                    <span class="line">
-                      Inspirations
-                    </span>
-                  </div>
+                    Inspirations
                 </a>
                 <a href="{{ site.baseurl }}/faq/" class="btn btn-primary make-line">
-                  <div class="line-container">
-                    <span class="line">
-                      Faq
-                    </span>
-                  </div>
+                    Faq
                 </a>
 
               </div>

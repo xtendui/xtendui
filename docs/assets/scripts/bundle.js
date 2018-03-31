@@ -7,9 +7,54 @@ var _xtendUtils2 = _interopRequireDefault(_xtendUtils);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_xtendUtils2.default.initAll(); //////////////////////
-// Initxtend
+_xtendUtils2.default.initAll();
+
 //////////////////////
+// others
+//////////////////////
+
+// highlight
+
+//////////////////////
+// Init xtend
+//////////////////////
+
+var elements = document.querySelectorAll('pre code');
+_xtendUtils2.default.forEach(elements, function (element, i) {
+  hljs.highlightBlock(element);
+});
+
+// .make-line
+
+var elements = document.querySelectorAll('.site-article > h2, .site-article > h3');
+_xtendUtils2.default.forEach(elements, function (element, i) {
+  element.classList.add('make-line');
+});
+var elements = document.querySelectorAll('.make-line');
+_xtendUtils2.default.forEach(elements, function (element, i) {
+  element.innerHTML = '<span class="line">' + element.innerHTML + '</div>';
+  element.innerHTML = '<span class="line-container">' + element.innerHTML + '</div>';
+});
+
+// .make-anchor
+
+var elements = document.querySelectorAll('.site-article > h2, .site-article > h3'); //.filter(':parents(.demo)')
+_xtendUtils2.default.forEach(elements, function (element, i) {
+  element.classList.add('make-line');
+  var id = element.textContent.replace(/\s+/g, '-').toLowerCase();
+  element.setAttribute('id', id);
+  element.innerHTML = '<a href="#' + id + '">' + element.innerHTML + '</a>';
+  element.classList.add('make-anchor');
+  var append = createElementFromHTML('<span class="site-article-anchor"><div class="button"><span class="icon-link" aria-hidden="true"></span></div></span>');
+  element.append(append);
+});
+function createElementFromHTML(htmlString) {
+  var div = document.createElement('div');
+  div.innerHTML = htmlString.trim();
+
+  // Change this to div.childNodes to support multiple top-level nodes
+  return div.firstChild;
+}
 
 },{"../../../scripts/xtend-utils":2}],2:[function(require,module,exports){
 /*! xtend v0.0.14 (https://getxtend.com/)
@@ -44,7 +89,6 @@ var XtUtil = {};
 XtUtil.initAll = function () {
   var toggles = document.querySelectorAll('[data-xt-toggle]');
   XtUtil.forEach(toggles, function (toggle, i) {
-    console.log(toggle);
     var xt = new _xtend2.default(toggle);
     //console.log(xt.getElements('test'));
   });

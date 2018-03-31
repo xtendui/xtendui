@@ -22,7 +22,6 @@ var XtUtil = {};
 XtUtil.initAll = function () {
   var toggles = document.querySelectorAll('[data-xt-toggle]');
   XtUtil.forEach(toggles, function (toggle, i) {
-    console.log(toggle);
     var xt = new Xt(toggle);
     //console.log(xt.getElements('test'));
   });

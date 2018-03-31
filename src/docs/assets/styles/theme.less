@@ -3,6 +3,7 @@
 //////////////////////
 
 @import '../../../../dist/xtend.less';
+@import (less) "highlight/github.css";
 
 //////////////////////
 // structure
@@ -112,8 +113,9 @@
 
 .site-breadcrumbs {
   cursor: default;
+  background-color: @primary;
   .site-breadcrumbs-inside {
-    .padding(y, small);
+    .padding(y, medium);
     background-color: @primary;
     color: @white;
   }
@@ -364,11 +366,118 @@
   }
 }
 
+//////////////////////
+// footer
+//////////////////////
+
+// .site-footer
+
+.site-footer {
+  .padding(y, medium);
+  background-color: @primary;
+  .separator {
+    .margin(x, tiny);
+  }
+}
+
+// .site-footer-top
+
+.site-footer-top {
+  .site-footer-top-links {
+    .btn {
+      &:first-child {
+        margin-left: -1.2em;
+      }
+    }
+  }
+}
+
+// .site-footer-bottom
+
+.site-footer-bottom {
+  .padding(y, medium);
+  .font-small();
+  color: fade(@white, 75%);
+  a {
+    color: @white;
+    &:hover {
+      color: @white;
+      text-decoration: underline;
+    }
+  }
+}
+
+//////////////////////
+// main
+//////////////////////
+
+.site-main-inside {
+  .block;
+  .float(left);
+  background-color: @white;
+}
+
+// .site-article
+
+.site-article {
+  .margin(y, big);
+}
+
+// .site-aside
+
+.site-aside {
+  .margin(y, big);
+}
+/*
+.site-aside-text {
+  line-height: 0;
+  .button {
+    padding: 3px 0;
+    width: 100%;
+    background-color: transparent !important;
+    .font-sans-regular();
+    color: @color-text-75;
+    text-align: left;
+    letter-spacing: 0;
+    text-transform: none;
+    &:hover,
+    &:active, &.active {
+      color: @color-text;
+    }
+  }
+  > .button:not(.site-aside-sub) {
+    margin-bottom: 8px;
+    font-size: @size-medium;
+    &.different {
+      display: none;
+    }
+  }
+  > .button.site-aside-sub {
+    margin-top: 3px;
+    font-size: 13px;
+  }
+  .site-aside-subsub {
+    > .button {
+      padding-left: 8px;
+      font-size: 13px;
+    }
+  }
+  // TEMP activation
+  .site-aside-subsub {
+    display: none;
+  }
+  .button.site-aside-sub.active + .site-aside-subsub {
+    display: block;
+  }
+}
+*/
 // .make-line
 
 .make-line {
   position: relative;
+  z-index: 1;
   .line-container {
+    display: block;
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -376,6 +485,7 @@
       display: inline-block;
       padding-right: 15px;
       background-color: @white;
+      text-decoration: none !important;
     }
     .line:after {
       content: "";
@@ -430,43 +540,232 @@
   }
 }
 
-//////////////////////
-// footer
-//////////////////////
+// .make-anchor
 
-// .site-footer
-
-.site-footer {
-  .padding(y, medium);
-  background-color: @primary;
-  .separator {
-    .margin(x, tiny);
+.make-anchor {
+  position: relative;
+  width: 100%;
+  a {
+    color: @text !important;
+    text-decoration: none !important;
+  }
+  .site-article-anchor {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1000ms cubic-bezier(.19, 1, .22, 1);
+    transition-delay: 200ms;
+  }
+  &:hover,
+  &:active, &.active {
+    .site-article-anchor {
+      opacity: 1;
+      transition-delay: 0ms;
+    }
+  }
+}
+.site-article-anchor {
+  position: absolute;
+  z-index: 2;
+  bottom: -1px;
+  @media @min-sm {
+    bottom: 3px;
+  }
+  right: 12px;
+  .button {
+    padding: 7px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: @white !important;
+    font-size: 17px;
+    color: @primary;
+    line-height: 1;
+    &:hover,
+    &:active, &.active {
+      color: @primary;
+    }
   }
 }
 
-// .site-footer-top
+//////////////////////
+// demos
+//////////////////////
 
-.site-footer-top {
-  .site-footer-top-links {
-    .btn {
-      &:first-child {
-        margin-left: -1.2em;
+// .hljs
+
+.hljs,
+pre code {
+  padding: 0;
+  width: 100%;
+  margin-top: -.238rem;
+}
+pre {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+  .demo & {
+    margin-top: 0;
+  }
+}
+
+// code colors
+
+.demo {
+  border-radius: 2px;
+  border: 3px solid @grey-250;
+}
+.demo-tabs,
+.demo-code-tabs {
+  background-color: @grey-250;
+}
+.demo-tabs-inside {
+  margin-top: -3px;
+}
+.hljs,
+.demo-code-body {
+  background-color: @grey-250;
+}
+.hljs,
+pre code {
+  .padding(x, small);
+  .padding(bottom, small);
+}
+.demo-text {
+  background-color: @grey-250;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.demo-text code {
+  background-color: darken(@grey-250, 2.5%);
+}
+
+// .demo
+
+.demo {
+  //.clear;
+  display: block;
+  position: relative;
+  width: 100%;
+  .margin(top, medium);
+  // code
+  .demo-item {
+    line-height: 0;
+    /*
+    .float;
+    display: none;
+    &.active {
+      display: block;
+    }
+    */
+  }
+  .demo-source {
+    //.float;
+    line-height: 1.8;
+  }
+  /*
+  .demo-item.populated .demo-code-body-item {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  */
+  .demo-code-body {
+    z-index: 1;
+  }
+  // iframe + .demo-source
+  iframe {
+    width: 100%;
+    height: 370px;
+  }
+  .demo-source {
+    .padding(all, small);
+  }
+  .demo-source {
+    &:not([data-lang="html"]) {
+      display: none;
+    }
+  }
+  // .hljs
+  pre {
+    margin-bottom: 0 !important;
+  }
+  .hljs {
+    margin: 0;
+    padding: 0;
+  }
+  // others
+  .button__fullscreen {
+    display: none;
+  }
+}
+
+// .demo max height
+
+pre {
+  max-height: 370px;
+  overflow: auto;
+}
+.demo-item:not(.populated) .demo-code-body {
+  height: 370px;
+}
+
+// .demo paddings
+
+.demo {
+  .demo-tabs,
+  .demo-code-tabs {
+    z-index: 2;
+    .padding(x, small);
+  }
+  .demo-code-body-item {
+    pre {
+      .padding(all, small);
+    }
+  }
+  .demo-text {
+    .padding(y, tiny);
+    .padding(x, small);
+  }
+}
+
+// .demo-highlight
+.demo-highlight {
+  .column {
+    &:before {
+      content: '';
+      position: relative;
+      float: left;
+      width: 100%;
+      height: 100%;
+      //min-height: @size-small;
+      background-color: lighten(@primary, 25%);
+    }
+    .column {
+      &:before {
+        background-color: @primary;
       }
     }
   }
-}
-
-// .site-footer-bottom
-
-.site-footer-bottom {
-  .padding(y, medium);
-  .font-small();
-  color: fade(@white, 75%);
-  a {
-    color: @white;
-    &:hover {
-      color: @white;
-      text-decoration: underline;
-    }
+  /*
+  .flex {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    background-color: lighten(@color-primary, 45%);
   }
+  .column {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: @size-tiny;
+    margin-bottom: @size-tiny;
+    min-height: @size-small;
+    background-color: lighten(@color-primary, 25%);
+    background-clip: content-box !important;
+    .column {
+      background-color: @color-primary;
+    }
+    .flex {
+      background-color: transparent;
+    }
+  }*/
 }
