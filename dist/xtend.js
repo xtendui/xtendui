@@ -29,9 +29,10 @@ var XtUtil = {};
  * init all data-xt classes
  */
 XtUtil.initAll = function () {
-  var toggles = document.querySelectorAll('[data-xt-toggle]');
-  XtUtil.forEach(toggles, function (toggle, i) {
-    var xt = new _xtend2.default(toggle);
+  var elements = document.querySelectorAll('[data-xt-toggle]');
+  XtUtil.forEach(elements, function (element, i) {
+    new _xtend2.default(element);
+    //var xt = new Xt(element);
     //console.log(xt.getElements('test'));
   });
 };
@@ -211,7 +212,8 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 var defaults = {
   classes: ['active'],
-  someCustomOption: 'foo'
+  min: 0,
+  max: 1
 };
 
 //////////////////////
@@ -282,7 +284,7 @@ Xt.prototype = {
     }
     // targets
     if (options.targets) {
-      this.targets = _xtendUtils2.default.arrSingle(document.querySelectorAll(options.targets));
+      this.targets = _xtendUtils2.default.arrSingle(this.group.querySelectorAll(options.targets));
     }
     // set namespace for next frame
     if (this.elements.length) {
@@ -290,6 +292,29 @@ Xt.prototype = {
         element.setAttribute('data-xt-namespace', self.namespace);
       });
     }
+    // currents
+    _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+      if (self.elements.length) {
+        var currents = [];
+        // pupulate currents and activate defaults.class
+        _xtendUtils2.default.forEach(self.elements, function (element, i) {
+          if (element.classList.contains(defaults.class)) {
+            var _element$classList;
+
+            (_element$classList = element.classList).remove.apply(_element$classList, _toConsumableArray(options.classes));
+            currents.push(element);
+            self.eventOn(element);
+          }
+        });
+        // if currents < min
+        var todo = options.min - currents.length;
+        if (todo) {
+          for (var i = 0; i < todo; i++) {
+            self.eventOn(self.elements[i]);
+          }
+        }
+      }
+    });
   },
 
   /**
@@ -358,22 +383,25 @@ Xt.prototype = {
     var index = _xtendUtils2.default.getElementIndex(element);
     var elements = this.getElements(this.elements, element, this.group);
     if (!element.classList.contains('active')) {
-      var _targets$index$classL;
+      var _element$classList2, _targets$index$classL;
 
-      _xtendUtils2.default.forEach(elements, function (element, i) {
-        var _element$classList;
-
-        (_element$classList = element.classList).add.apply(_element$classList, _toConsumableArray(options.classes));
+      (_element$classList2 = element.classList).add.apply(_element$classList2, _toConsumableArray(options.classes));
+      /*
+      XtUtil.forEach(elements, function (element, i) {
+        element.classList.add(...options.classes);
       });
+      */
       (_targets$index$classL = this.targets[index].classList).add.apply(_targets$index$classL, _toConsumableArray(options.classes));
+      //console.log(element, index, this.targets[index]);
     } else {
-      var _targets$index$classL2;
+      var _element$classList3, _targets$index$classL2;
 
-      _xtendUtils2.default.forEach(elements, function (element, i) {
-        var _element$classList2;
-
-        (_element$classList2 = element.classList).remove.apply(_element$classList2, _toConsumableArray(options.classes));
+      (_element$classList3 = element.classList).remove.apply(_element$classList3, _toConsumableArray(options.classes));
+      /*
+      XtUtil.forEach(elements, function (element, i) {
+        element.classList.remove(...options.classes);
       });
+      */
       (_targets$index$classL2 = this.targets[index].classList).remove.apply(_targets$index$classL2, _toConsumableArray(options.classes));
     }
   },
@@ -389,9 +417,9 @@ Xt.prototype = {
       var _targets$index$classL3;
 
       _xtendUtils2.default.forEach(elements, function (element, i) {
-        var _element$classList3;
+        var _element$classList4;
 
-        (_element$classList3 = element.classList).remove.apply(_element$classList3, _toConsumableArray(options.classes));
+        (_element$classList4 = element.classList).remove.apply(_element$classList4, _toConsumableArray(options.classes));
       });
       (_targets$index$classL3 = this.targets[index].classList).remove.apply(_targets$index$classL3, _toConsumableArray(options.classes));
     }

@@ -20,9 +20,10 @@ var XtUtil = {};
  * init all data-xt classes
  */
 XtUtil.initAll = function () {
-  var toggles = document.querySelectorAll('[data-xt-toggle]');
-  XtUtil.forEach(toggles, function (toggle, i) {
-    var xt = new Xt(toggle);
+  var elements = document.querySelectorAll('[data-xt-toggle]');
+  XtUtil.forEach(elements, function (element, i) {
+    new Xt(element);
+    //var xt = new Xt(element);
     //console.log(xt.getElements('test'));
   });
 };

@@ -626,34 +626,27 @@ pre code {
 // .demo
 
 .demo {
-  //.clear;
-  display: block;
-  position: relative;
-  width: 100%;
   .margin(top, medium);
   // code
   .demo-item {
     line-height: 0;
-    /*
-    .float;
+    // @TODO toggle
     display: none;
     &.active {
       display: block;
     }
-    */
   }
   .demo-source {
     //.float;
     line-height: 1.8;
   }
-  /*
   .demo-item.populated .demo-code-body-item {
+    // @TODO toggle
     display: none;
     &.active {
       display: block;
     }
   }
-  */
   .demo-code-body {
     z-index: 1;
   }
@@ -679,7 +672,7 @@ pre code {
     padding: 0;
   }
   // others
-  .button__fullscreen {
+  .btn-fullscreen {
     display: none;
   }
 }
@@ -699,6 +692,7 @@ pre {
 .demo {
   .demo-tabs,
   .demo-code-tabs {
+    .display(flex);
     z-index: 2;
     .padding(x, small);
   }
