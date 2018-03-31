@@ -6068,6 +6068,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   position: relative;
   z-index: 1;
   background-color: #00B0FF;
+  padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 .site-breadcrumbs-body-main .site-breadcrumbs-body-sub .btn {
@@ -6079,7 +6080,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 .btn-menu {
   box-shadow: none !important;
-  /*
+  /* @TODO after scroll
   .site-breadcrumbs & {
     //padding: .718em 1em !important;
     margin-top: .06rem;
@@ -6276,56 +6277,34 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   background-color: #fff;
 }
 .site-article {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 }
 .site-aside {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 }
-/*
 .site-aside-text {
   line-height: 0;
-  .button {
-    padding: 3px 0;
-    width: 100%;
-    background-color: transparent !important;
-    .font-sans-regular();
-    color: @color-text-75;
-    text-align: left;
-    letter-spacing: 0;
-    text-transform: none;
-    &:hover,
-    &:active, &.active {
-      color: @color-text;
-    }
-  }
-  > .button:not(.site-aside-sub) {
-    margin-bottom: 8px;
-    font-size: @size-medium;
-    &.different {
-      display: none;
-    }
-  }
-  > .button.site-aside-sub {
-    margin-top: 3px;
-    font-size: 13px;
-  }
-  .site-aside-subsub {
-    > .button {
-      padding-left: 8px;
-      font-size: 13px;
-    }
-  }
-  // TEMP activation
-  .site-aside-subsub {
-    display: none;
-  }
-  .button.site-aside-sub.active + .site-aside-subsub {
-    display: block;
-  }
 }
-*/
+.site-aside-text .btn {
+  width: 100%;
+}
+.site-aside-text > .btn:not(.site-aside-sub).different {
+  display: none;
+}
+.site-aside-text .site-aside-subsub {
+  margin-top: 1.5rem;
+}
+.site-aside-text .site-aside-subsub > .btn {
+  padding-left: 0.75rem;
+}
+.site-aside-text .site-aside-subsub {
+  display: none;
+}
+.site-aside-text .btn.site-aside-sub.active + .site-aside-subsub {
+  display: block;
+}
 .make-line {
   position: relative;
   z-index: 1;
@@ -6420,7 +6399,7 @@ h2 .make-line .line-container .line:after {
     bottom: 3px;
   }
 }
-.site-article-anchor .button {
+.site-article-anchor .btn {
   padding: 7px;
   width: 30px;
   height: 30px;
@@ -6430,9 +6409,9 @@ h2 .make-line .line-container .line:after {
   color: #00B0FF;
   line-height: 1;
 }
-.site-article-anchor .button:hover,
-.site-article-anchor .button:active,
-.site-article-anchor .button.active {
+.site-article-anchor .btn:hover,
+.site-article-anchor .btn:active,
+.site-article-anchor .btn.active {
   color: #00B0FF;
 }
 .hljs,
@@ -6513,7 +6492,7 @@ pre code {
   height: 370px;
 }
 .demo .demo-source {
-  padding: 0.75rem;
+  padding: 1.5rem;
 }
 .demo .demo-source:not([data-lang="html"]) {
   display: none;
@@ -6578,7 +6557,7 @@ pre {
   position: relative;
   float: left;
   width: 100%;
-  height: 100%;
+  height: 1.5rem;
   background-color: #80d8ff;
 }
 .demo-highlight .column .column:before {

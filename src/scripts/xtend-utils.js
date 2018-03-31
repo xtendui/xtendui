@@ -147,6 +147,30 @@ XtUtil.getClosest = function (elem, selector) {
   return false;
 };
 
+/**
+ * Create DOM element from html string
+ * @param {String} str Html string (only 1 root html tag)
+ * @return {Element} DOM element
+ */
+XtUtil.createElement = function (str) {
+  var div = document.createElement('div');
+  div.innerHTML = str.trim();
+  return div.firstChild;
+};
+
+/**
+ * Query element's parents
+ * @param {Element} element Child element
+ * @return {Element} Parents elements by query
+ */
+XtUtil.parents = function (element, query) {
+  var parents = [];
+  while (element = element.parentElement.closest(query)) {
+    parents.push(element);
+  }
+  return parents;
+};
+
 //////////////////////
 // Public APIs
 //////////////////////

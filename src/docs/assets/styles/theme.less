@@ -128,7 +128,7 @@
     position: relative;
     z-index: 1;
     background-color: @primary;
-    .padding(bottom, small);
+    .padding(y, small);
     .btn {
       float: left;
       clear: both;
@@ -153,7 +153,7 @@
     margin-right: -1.2em;
     width: auto !important;
   }
-  /*
+  /* @TODO after scroll
   .site-breadcrumbs & {
     //padding: .718em 1em !important;
     margin-top: .06rem;
@@ -245,7 +245,6 @@
       }
       .line:after {
         background-color: fade(@white, 75%);
-        //background-color: linear-gradient(to right, @color-white-75 0%, @color-white-50 100%);
       }
     }
     opacity: .75;
@@ -270,6 +269,7 @@
 }
 .site-breadcrumbs,
 .site-header-top {
+  // @TODO after scroll
   // below demos overlay...
   z-index: 68 !important;
 }
@@ -420,57 +420,41 @@
 // .site-article
 
 .site-article {
-  .margin(y, big);
+  .margin(y, giant);
 }
 
 // .site-aside
 
 .site-aside {
-  .margin(y, big);
+  .margin(y, giant);
 }
-/*
 .site-aside-text {
   line-height: 0;
-  .button {
-    padding: 3px 0;
+  .btn {
     width: 100%;
-    background-color: transparent !important;
-    .font-sans-regular();
-    color: @color-text-75;
-    text-align: left;
-    letter-spacing: 0;
-    text-transform: none;
-    &:hover,
-    &:active, &.active {
-      color: @color-text;
-    }
   }
-  > .button:not(.site-aside-sub) {
-    margin-bottom: 8px;
-    font-size: @size-medium;
+  > .btn:not(.site-aside-sub) {
     &.different {
       display: none;
     }
   }
-  > .button.site-aside-sub {
-    margin-top: 3px;
-    font-size: 13px;
+  > .btn.site-aside-sub {
   }
   .site-aside-subsub {
-    > .button {
-      padding-left: 8px;
-      font-size: 13px;
+    .margin(top, medium);
+    > .btn {
+      .padding(left, small);
     }
   }
-  // TEMP activation
+  // @TODO after xtend plugin
   .site-aside-subsub {
     display: none;
   }
-  .button.site-aside-sub.active + .site-aside-subsub {
+  .btn.site-aside-sub.active + .site-aside-subsub {
     display: block;
   }
 }
-*/
+
 // .make-line
 
 .make-line {
@@ -571,7 +555,7 @@
     bottom: 3px;
   }
   right: 12px;
-  .button {
+  .btn {
     padding: 7px;
     width: 30px;
     height: 30px;
@@ -679,7 +663,7 @@ pre code {
     height: 370px;
   }
   .demo-source {
-    .padding(all, small);
+    .padding(all, medium);
   }
   .demo-source {
     &:not([data-lang="html"]) {
@@ -737,8 +721,7 @@ pre {
       position: relative;
       float: left;
       width: 100%;
-      height: 100%;
-      //min-height: @size-small;
+      height: 1.5rem;
       background-color: lighten(@primary, 25%);
     }
     .column {

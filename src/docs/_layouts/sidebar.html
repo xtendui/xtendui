@@ -16,7 +16,7 @@
           <aside class="site-aside" data-xt-scroll='{"top": ".site-breadcrumbs.xt-ignore"}'>
             
             <div class="site-aside-text">
-              <a href="{{ page.url }}" class="button">
+              <a href="{{ page.url }}" class="btn btn-secondary-alt">
                 {{ page.title }}
               </a>
             </div>
@@ -25,7 +25,7 @@
             
               {% if page.collection == null %}
                 <div class="site-aside-text">
-                  <a href="{{ page.url }}" class="button">
+                  <a href="{{ page.url }}" class="btn btn-secondary-alt">
                     {{ page.title }}
                   </a>
                 </div>
@@ -45,7 +45,7 @@
                   {% assign sorted = site.[collection.label] | where: 'categories', filter | sort: 'order' %}
                   {% for p in sorted %}
                     <div class="site-aside-text">
-                      <a href="{{ p.url }}" class="button{% if page.title != p.title %}{{ different }}{% endif %}">
+                      <a href="{{ p.url }}" class="btn btn-secondary-alt{% if page.title != p.title %}{{ different }}{% endif %}">
                         {{ p.title }}
                       </a>
                     </div>
