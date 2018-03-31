@@ -6462,19 +6462,21 @@ pre code {
 }
 .demo .demo-item {
   line-height: 0;
-  display: none;
+  display: none !important;
 }
-.demo .demo-item.active {
-  display: block;
+.demo .demo-item.active,
+.demo .demo-item.fade-out {
+  display: block !important;
 }
 .demo .demo-source {
   line-height: 1.8;
 }
 .demo .demo-item.populated .demo-code-body-item {
-  display: none;
+  display: none !important;
 }
-.demo .demo-item.populated .demo-code-body-item.active {
-  display: block;
+.demo .demo-item.populated .demo-code-body-item.active,
+.demo .demo-item.populated .demo-code-body-item.fade-out {
+  display: block !important;
 }
 .demo .demo-code-body {
   z-index: 1;
@@ -6508,12 +6510,14 @@ pre {
 }
 .demo .demo-tabs,
 .demo .demo-code-tabs {
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  z-index: 2;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0.75rem;
 }
 .demo .demo-code-body-item pre {
   padding: 0.75rem;

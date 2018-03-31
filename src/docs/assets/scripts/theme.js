@@ -105,7 +105,7 @@ window.addEventListener('scroll', function (e) {
 var populateDemo = function (container, i) {
   var items = container.querySelectorAll('.demo-item');
   // multiple elements
-  var prepend = XtUtil.createElement('<div class="demo-tabs"><div class="demo-tabs-inside"><div class="demo-tabs-left float-left"></div><div class="demo-tabs-right float-right"></div></div></div>');
+  var prepend = XtUtil.createElement('<div class="demo-tabs"><div class="demo-tabs-left"></div><div class="demo-tabs-right"></div></div>');
   container.prepend(prepend);
   var append = XtUtil.createElement('<button type="button" class="btn btn-secondary-alt btn-fullscreen" data-toggle="tooltip" data-placement="top" title="Open fullscreen"><span class="icon-enlarge2"></span></button>');
   container.querySelectorAll('.demo-tabs-right')[0].append(append);
@@ -138,7 +138,7 @@ var populateDemo = function (container, i) {
     */
     // tabs
     var id = 'iframe' + i + k;
-    var appendItem = XtUtil.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-inside"><div class="demo-code-tabs-left float-left"></div><div class="demo-code-tabs-right float-right"><button type="button" class="btn btn-secondary-alt btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div></div><div class="demo-code-body"></div></div>');
+    var appendItem = XtUtil.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-alt btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>');
     item.append(appendItem);
     // https://github.com/zenorocha/clipboard.js/
     /*

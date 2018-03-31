@@ -12,6 +12,7 @@ import XtUtil from './xtend-utils';
 
 var defaults = {
   classes: ['active'],
+  on: 'click',
   min: 0,
   max: 1,
 };
@@ -25,11 +26,10 @@ var defaults = {
  * @param {Object} options User options
  * @constructor
  */
-function Xt(element, options) {
-  var self = this;
-  this.element = element;
+function Xt(object, options) {
+  this.object = object;
   this.options = XtUtil.extend(defaults, options || {}); // js options
-  this.options = XtUtil.extend(this.options, JSON.parse(this.element.getAttribute('data-xt-toggle')) || {}); // markup options
+  this.options = XtUtil.extend(this.options, JSON.parse(this.object.getAttribute('data-xt-toggle')) || {}); // markup options
   // classes
   if (this.options.class) {
     this.options.classes.push(this.options.class);
@@ -50,12 +50,6 @@ Xt.prototype = {
   //////////////////////
 
   /**
-   * init
-   */
-  init: function () {
-  },
-
-  /**
    * setup
    */
   initSetup: function () {
@@ -65,19 +59,23 @@ Xt.prototype = {
     this.namespace = options.targets.toString() + '-' + options.classes.toString();
     if (options.targets && options.targets.indexOf('#') !== -1) {
       this.group = document;
-      /*} else if ($group.attr('id')) {
-        settings.uid = $group.attr('id');
-      */
+      options.max = Infinity;
     } else {
-      this.group = this.element;
+      this.group = this.object;
       this.namespace = XtUtil.getUniqueID('xt', this.namespace);
     }
+    this.namespace = this.namespace.split('-').join('_');
     this.namespace = this.namespace.split('#').join('');
+    this.namespace = this.namespace.split('.').join('');
+    // current based on namespace, so shared between Xt objects
+    if (!window[this.namespace]) {
+      window[this.namespace] = [];
+    }
     // elements
     if (options.elements) {
       this.elements = XtUtil.arrSingle(this.group.querySelectorAll(options.elements)); //.filter(':parents(.xt-ignore)');
     } else {
-      this.elements = XtUtil.arrSingle(this.element);
+      this.elements = XtUtil.arrSingle(this.object);
       // on next frame set all elements querying the namespace
       XtUtil.requestAnimationFrame.call(window, function () {
         self.elements = XtUtil.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']'));
@@ -94,19 +92,18 @@ Xt.prototype = {
       });
     }
     // currents
-    this.currents = [];
     XtUtil.requestAnimationFrame.call(window, function () {
       if (self.elements.length) {
-        // pupulate currents and activate defaults.class
+        // activate defaults.class
         XtUtil.forEach(self.elements, function (element, i) {
           if (element.classList.contains(defaults.class)) {
             element.classList.remove(...options.classes);
-            self.currents.push(element);
+            self.setCurrents(element);
             self.eventOn(element);
           }
         });
         // if currents < min
-        var todo = options.min - self.currents.length;
+        var todo = options.min - self.getCurrents().length;
         if (todo) {
           for (var i = 0; i < todo; i++) {
             self.eventOn(self.elements[i]);
@@ -122,16 +119,15 @@ Xt.prototype = {
   initEvents: function () {
     var self = this;
     var options = this.options;
-    var on = options.on || 'click';
-    var off = options.off || null;
+    // on and off
     XtUtil.forEach(this.elements, function (element, i) {
-      if (on) {
-        element.addEventListener(on, function (e) {
+      if (options.on) {
+        element.addEventListener(options.on, function (e) {
           self.eventOn(this);
         });
       }
-      if (off) {
-        element.addEventListener(off, function (e) {
+      if (options.off) {
+        element.addEventListener(options.off, function (e) {
           self.eventOff(this);
         });
       }
@@ -143,16 +139,42 @@ Xt.prototype = {
   //////////////////////
 
   /**
-   * getElements
+   * choose which elements to activate/deactivate
    */
   getElements: function (elements, element, group) {
     if (this.group === document) {
-      // when using id for targets activate all elements
+      // when group is document choose all elements
       return elements;
-    } else {
-      // normally activate only element
+    } else if(this.group === this.object) {
+      // when group is Xt object choose only element
       return XtUtil.arrSingle(element);
     }
+  },
+
+  /**
+   * get currents based on namespace, so shared between Xt objects
+   */
+
+  getCurrents: function() {
+    return window[this.namespace];
+  },
+
+  /**
+   * add current based on namespace, so shared between Xt objects
+   */
+
+  addCurrent: function(element) {
+    window[this.namespace].push(element);
+  },
+
+  /**
+   * remove currents based on namespace, so shared between Xt objects
+   */
+
+  removeCurrent: function(element) {
+    window[this.namespace] = window[this.namespace].filter(function (current) {
+      return current !== element;
+    });
   },
 
   //////////////////////
@@ -163,24 +185,25 @@ Xt.prototype = {
    * on
    */
   eventOn: function (element) {
+    var self = this;
     var options = this.options;
+    // vars
     var index = XtUtil.getElementIndex(element);
     var elements = this.getElements(this.elements, element, this.group);
+    // activate or deactivate
     if (!element.classList.contains(...defaults.classes)) {
       XtUtil.forEach(elements, function (element, i) {
         element.classList.add(...options.classes);
+        self.addCurrent(element);
       });
       this.targets[index].classList.add(...options.classes);
     } else {
-      XtUtil.forEach(elements, function (element, i) {
-        element.classList.remove(...options.classes);
-      });
-      this.targets[index].classList.remove(...options.classes);
+      this.eventOff(element);
     }
-    // off max or differents
-    if (this.currents.length > options.max) {
-      var first = this.currents[0];
-      this.eventOff(first);
+    // if currents > max
+    var currents = this.getCurrents();
+    if (currents.length > options.max) {
+      this.eventOff(currents[0]);
     }
   },
 
@@ -188,12 +211,21 @@ Xt.prototype = {
    * off
    */
   eventOff: function (element) {
+    var self = this;
     var options = this.options;
+    // vars
     var index = XtUtil.getElementIndex(element);
     var elements = this.getElements(this.elements, XtUtil.arrSingle(element), this.group);
+    // if currents < min
+    var todo = options.min - this.getCurrents().length;
+    if (!todo) {
+      return;
+    }
+    // deactivate
     if (element.classList.contains(...defaults.classes)) {
       XtUtil.forEach(elements, function (element, i) {
         element.classList.remove(...options.classes);
+        self.removeCurrent(element);
       });
       this.targets[index].classList.remove(...options.classes);
     }

@@ -630,22 +630,14 @@ pre code {
   // code
   .demo-item {
     line-height: 0;
-    // @TODO toggle
-    display: none;
-    &.active {
-      display: block;
-    }
+    .toggle-block();
   }
   .demo-source {
     //.float;
     line-height: 1.8;
   }
   .demo-item.populated .demo-code-body-item {
-    // @TODO toggle
-    display: none;
-    &.active {
-      display: block;
-    }
+    .toggle-block();
   }
   .demo-code-body {
     z-index: 1;
@@ -692,9 +684,10 @@ pre {
 .demo {
   .demo-tabs,
   .demo-code-tabs {
-    .display(flex);
     z-index: 2;
-    .padding(x, small);
+    .display(flex);
+    .justify-content-between();
+    .padding(all, small);
   }
   .demo-code-body-item {
     pre {
