@@ -22,6 +22,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var XtUtil = {};
 
 //////////////////////
+// Vars
+//////////////////////
+
+// Xt currents based on namespace (so shared between Xt objects)
+
+XtUtil.currents = {};
+
+//////////////////////
 // Methods
 //////////////////////
 
@@ -374,7 +382,7 @@ Xt.prototype = {
    */
 
   getCurrents: function getCurrents() {
-    return window[this.namespace];
+    return _xtendUtils2.default.currents[this.namespace];
   },
 
   /**
@@ -383,7 +391,7 @@ Xt.prototype = {
    */
 
   setCurrents: function setCurrents(arr) {
-    window[this.namespace] = arr;
+    _xtendUtils2.default.currents[this.namespace] = arr;
   },
 
   /**
@@ -392,7 +400,7 @@ Xt.prototype = {
    */
 
   addCurrent: function addCurrent(element) {
-    window[this.namespace].push(element);
+    _xtendUtils2.default.currents[this.namespace].push(element);
   },
 
   /**
@@ -401,7 +409,7 @@ Xt.prototype = {
    */
 
   removeCurrent: function removeCurrent(element) {
-    window[this.namespace] = window[this.namespace].filter(function (current) {
+    _xtendUtils2.default.currents[this.namespace] = _xtendUtils2.default.currents[this.namespace].filter(function (current) {
       return current !== element;
     });
   },

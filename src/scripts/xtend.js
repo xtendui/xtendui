@@ -172,7 +172,7 @@ Xt.prototype = {
    */
 
   getCurrents: function() {
-    return window[this.namespace];
+    return XtUtil.currents[this.namespace];
   },
 
   /**
@@ -181,7 +181,7 @@ Xt.prototype = {
    */
 
   setCurrents: function(arr) {
-    window[this.namespace] = arr;
+    XtUtil.currents[this.namespace] = arr;
   },
 
   /**
@@ -190,7 +190,7 @@ Xt.prototype = {
    */
 
   addCurrent: function(element) {
-    window[this.namespace].push(element);
+    XtUtil.currents[this.namespace].push(element);
   },
 
   /**
@@ -199,7 +199,7 @@ Xt.prototype = {
    */
 
   removeCurrent: function(element) {
-    window[this.namespace] = window[this.namespace].filter(function (current) {
+    XtUtil.currents[this.namespace] = XtUtil.currents[this.namespace].filter(function (current) {
       return current !== element;
     });
   },

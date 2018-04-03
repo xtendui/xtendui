@@ -13,6 +13,14 @@ import Xt from "./xtend";
 var XtUtil = {};
 
 //////////////////////
+// Vars
+//////////////////////
+
+// Xt currents based on namespace (so shared between Xt objects)
+
+XtUtil.currents = {};
+
+//////////////////////
 // Methods
 //////////////////////
 
