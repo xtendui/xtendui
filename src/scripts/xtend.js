@@ -30,10 +30,13 @@ var defaults = {
 function Xt(object, options) {
   this.object = object;
   this.options = XtUtil.extend(defaults, options || {}); // js options
-  this.options = XtUtil.extend(this.options, JSON.parse(this.object.getAttribute('data-xt-toggle')) || {}); // markup options
+  var options = this.object.getAttribute('data-xt-toggle');
+  if (options) {
+    this.options = XtUtil.extend(this.options, JSON.parse(this.object.getAttribute('data-xt-toggle')) || {}); // markup options
+  }
   // classes
   if (this.options.class) {
-    this.options.classes.push(this.options.class);
+    this.options.classes.push(this.options.class.split(' '));
   }
   // init
   this.initSetup();
@@ -57,19 +60,24 @@ Xt.prototype = {
   initSetup: function () {
     var options = this.options;
     // default namespace
-    this.namespace = options.targets.toString() + '-' + options.classes.toString();
     // setup (based on xtend mode)
-    if (options.targets && options.targets.indexOf('#') !== -1) {
-      // xtend document mode
-      this.group = document;
-      options.max = Infinity;
+    if (options.targets) {
+      if (options.targets.indexOf('#') !== -1) {
+        // xtend document mode
+        this.group = document;
+        options.max = Infinity;
+        this.namespace = options.targets.toString() + '-' + options.classes.toString();
+      } else {
+        // xtend unique mode
+        this.group = this.object;
+        this.namespace = XtUtil.getUniqueID('xt', options.targets.toString() + '-' + options.classes.toString());
+      }
     } else {
-      // xtend unique mode
-      this.namespace = XtUtil.getUniqueID('xt', this.namespace);
       this.group = this.object;
+      this.namespace = XtUtil.getUniqueID('xt', options.classes.toString());
     }
     // final namespace
-    this.namespace = this.namespace.replace('#', '');
+    this.namespace = this.namespace.replace(/(#|,|\.| )/g, '');
     // currents array based on namespace (so shared between Xt objects)
     if (!this.getCurrents()) {
       this.setCurrents([]);
@@ -224,7 +232,9 @@ Xt.prototype = {
         element.classList.add(...options.classes);
         self.addCurrent(element);
       });
-      this.targets[index].classList.add(...options.classes);
+      if (this.targets) {
+        this.targets[index].classList.add(...options.classes);
+      }
     } else {
       this.eventOff(element);
     }
@@ -256,7 +266,9 @@ Xt.prototype = {
         element.classList.remove(...options.classes);
         self.removeCurrent(element);
       });
-      this.targets[index].classList.remove(...options.classes);
+      if (this.targets) {
+        this.targets[index].classList.remove(...options.classes);
+      }
     }
   },
 

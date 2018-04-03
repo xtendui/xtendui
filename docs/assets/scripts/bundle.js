@@ -577,10 +577,13 @@ var defaults = {
 function Xt(object, options) {
   this.object = object;
   this.options = _xtendUtils2.default.extend(defaults, options || {}); // js options
-  this.options = _xtendUtils2.default.extend(this.options, JSON.parse(this.object.getAttribute('data-xt-toggle')) || {}); // markup options
+  var options = this.object.getAttribute('data-xt-toggle');
+  if (options) {
+    this.options = _xtendUtils2.default.extend(this.options, JSON.parse(this.object.getAttribute('data-xt-toggle')) || {}); // markup options
+  }
   // classes
   if (this.options.class) {
-    this.options.classes.push(this.options.class);
+    this.options.classes.push(this.options.class.split(' '));
   }
   // init
   this.initSetup();
@@ -604,19 +607,24 @@ Xt.prototype = {
   initSetup: function initSetup() {
     var options = this.options;
     // default namespace
-    this.namespace = options.targets.toString() + '-' + options.classes.toString();
     // setup (based on xtend mode)
-    if (options.targets && options.targets.indexOf('#') !== -1) {
-      // xtend document mode
-      this.group = document;
-      options.max = Infinity;
+    if (options.targets) {
+      if (options.targets.indexOf('#') !== -1) {
+        // xtend document mode
+        this.group = document;
+        options.max = Infinity;
+        this.namespace = options.targets.toString() + '-' + options.classes.toString();
+      } else {
+        // xtend unique mode
+        this.group = this.object;
+        this.namespace = _xtendUtils2.default.getUniqueID('xt', options.targets.toString() + '-' + options.classes.toString());
+      }
     } else {
-      // xtend unique mode
-      this.namespace = _xtendUtils2.default.getUniqueID('xt', this.namespace);
       this.group = this.object;
+      this.namespace = _xtendUtils2.default.getUniqueID('xt', options.classes.toString());
     }
     // final namespace
-    this.namespace = this.namespace.replace('#', '');
+    this.namespace = this.namespace.replace(/(#|,|\.| )/g, '');
     // currents array based on namespace (so shared between Xt objects)
     if (!this.getCurrents()) {
       this.setCurrents([]);
@@ -771,15 +779,17 @@ Xt.prototype = {
     var elements = this.getElements(this.elements, element, this.group);
     // activate or deactivate
     if (!(_element$classList2 = element.classList).contains.apply(_element$classList2, _toConsumableArray(defaults.classes))) {
-      var _targets$index$classL;
-
       _xtendUtils2.default.forEach(elements, function (element, i) {
         var _element$classList3;
 
         (_element$classList3 = element.classList).add.apply(_element$classList3, _toConsumableArray(options.classes));
         self.addCurrent(element);
       });
-      (_targets$index$classL = this.targets[index].classList).add.apply(_targets$index$classL, _toConsumableArray(options.classes));
+      if (this.targets) {
+        var _targets$index$classL;
+
+        (_targets$index$classL = this.targets[index].classList).add.apply(_targets$index$classL, _toConsumableArray(options.classes));
+      }
     } else {
       this.eventOff(element);
     }
@@ -809,15 +819,17 @@ Xt.prototype = {
     }
     // deactivate
     if ((_element$classList4 = element.classList).contains.apply(_element$classList4, _toConsumableArray(defaults.classes))) {
-      var _targets$index$classL2;
-
       _xtendUtils2.default.forEach(elements, function (element, i) {
         var _element$classList5;
 
         (_element$classList5 = element.classList).remove.apply(_element$classList5, _toConsumableArray(options.classes));
         self.removeCurrent(element);
       });
-      (_targets$index$classL2 = this.targets[index].classList).remove.apply(_targets$index$classL2, _toConsumableArray(options.classes));
+      if (this.targets) {
+        var _targets$index$classL2;
+
+        (_targets$index$classL2 = this.targets[index].classList).remove.apply(_targets$index$classL2, _toConsumableArray(options.classes));
+      }
     }
   }
 
