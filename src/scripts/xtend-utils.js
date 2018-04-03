@@ -63,7 +63,7 @@ XtUtil.getUniqueID = function (prefix, suffix) {
  * @returns {Array}
  */
 XtUtil.arrSingle = function (single) {
-  if (!single.length) {
+  if (single.length === undefined) {
     var arr = new Array(1);
     arr[0] = single;
     return arr;
