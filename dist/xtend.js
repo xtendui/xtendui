@@ -46,7 +46,10 @@ XtUtil.initAll = function () {
 };
 
 /**
- * requestAnimationFrame
+ * request animation frame
+ * @param {Function} Function for animation frame
+ * @returns {Number} AnimationFrame id
+ * USAGE: var animationFrame = XtUtil.requestAnimationFrame.call(window, function () {});
  */
 XtUtil.requestAnimationFrame = function () {
   return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
@@ -55,7 +58,9 @@ XtUtil.requestAnimationFrame = function () {
 }();
 
 /**
- * cancelAnimationFrame
+ * cancel animation frame
+ * @param {Number} id AnimationFrame id
+ * USAGE: XtUtil.cancelAnimationFrame.call(window, animationFrame);
  */
 XtUtil.cancelAnimationFrame = function () {
   return window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || function (callback) {
