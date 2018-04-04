@@ -119,20 +119,23 @@
 //////////////////////
 
 .alert {
-  // styles
   .margin(y, layout);
   .margin(y, small);
-  .box();
+  // styles
+  border-radius: @border-radius;
+  border: 0;
+  line-height: 1.2;
+  .text(left);
+  // options
+  .box-medium(); // size
   .box-short();
   .box-narrow();
+  .box-light(); // variant
   form & {
     .box-small();
     .box-short();
     .box-narrow();
   }
-  border: 0;
-  line-height: 1.2;
-  .text(left);
 }
 
 // variants

@@ -4704,31 +4704,20 @@ dl dt {
 .alert {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  position: relative;
   border-radius: 3px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
+  border: 0;
+  line-height: 1.2;
+  text-align: left;
   padding: 1.5em;
   font-size: 1.4rem;
   line-height: 1.4;
-  border-color: #dce8ee;
-  background-color: #edf3f6;
-  color: #343a40;
   padding-top: .75em;
   padding-bottom: .75em;
   padding-left: 1em;
   padding-right: 1em;
-  border: 0;
-  line-height: 1.2;
-  text-align: left;
+  border-color: #dce8ee;
+  background-color: #edf3f6;
+  color: #343a40;
 }
 .alert:first-child {
   margin-top: 0;
@@ -6523,10 +6512,10 @@ pre {
   padding: 0.75rem;
 }
 .demo .demo-text {
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 .demo-highlight .column:before {
   content: '';

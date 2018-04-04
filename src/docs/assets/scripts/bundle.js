@@ -12,12 +12,6 @@ var _xtend2 = _interopRequireDefault(_xtend);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //////////////////////
-// xtend
-//////////////////////
-
-_xtendUtils2.default.initAll();
-
-//////////////////////
 // docs
 //////////////////////
 
@@ -292,13 +286,12 @@ function formatCode(source, lang) {
     text = text.replace(/<[^>]*>/g, '');
   }
   if (text.match(/[&<>]/g)) {
+    // replace quote entities
+    text = text.replace(/&quot;/g, '"');
     // replace entities
     text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     // replace json quotes
     text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'');
-    // replace quote entities
-    text = text.replace(/&quot;:/g, '&quot;:'); // add spacing for white-space: pre-wrap;
-    text = text.replace(/&quot;/g, '"');
     // replace empty quotes
     text = text.replace(/=""/g, '');
   }
@@ -331,6 +324,12 @@ _xtendUtils2.default.forEach(elements, function (element, i) {
     "min": 1
   });
 });
+
+//////////////////////
+// xtend
+//////////////////////
+
+_xtendUtils2.default.initAll();
 
 },{"../../../scripts/xtend":3,"../../../scripts/xtend-utils":2}],2:[function(require,module,exports){
 /*! xtend v0.0.14 (https://getxtend.com/)

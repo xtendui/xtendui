@@ -1,13 +1,4 @@
 //////////////////////
-// xtend
-//////////////////////
-
-import XtUtil from '../../../scripts/xtend-utils';
-import Xt from "../../../scripts/xtend";
-
-XtUtil.initAll();
-
-//////////////////////
 // docs
 //////////////////////
 
@@ -191,7 +182,7 @@ var populateDemo = function (container, i) {
     } else {
       populateInline(item, id);
       // .populated fix scroll
-      setTimeout( function(item) {
+      setTimeout(function (item) {
         item.classList.add('populated');
       }, 0, item);
     }
@@ -281,13 +272,12 @@ function formatCode(source, lang) {
     text = text.replace(/<[^>]*>/g, '');
   }
   if (text.match(/[&<>]/g)) {
+    // replace quote entities
+    text = text.replace(/&quot;/g, '"');
     // replace entities
     text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     // replace json quotes
     text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'');
-    // replace quote entities
-    text = text.replace(/&quot;:/g, '&quot;:'); // add spacing for white-space: pre-wrap;
-    text = text.replace(/&quot;/g, '"');
     // replace empty quotes
     text = text.replace(/=""/g, '');
   }
@@ -320,3 +310,12 @@ XtUtil.forEach(elements, function (element, i) {
     "min": 1
   });
 });
+
+//////////////////////
+// xtend
+//////////////////////
+
+import XtUtil from '../../../scripts/xtend-utils';
+import Xt from "../../../scripts/xtend";
+
+XtUtil.initAll();
