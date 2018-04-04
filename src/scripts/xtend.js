@@ -59,7 +59,6 @@ Xt.prototype = {
    */
   initSetup: function () {
     var options = this.options;
-    // default namespace
     // setup (based on xtend mode)
     if (options.targets) {
       if (options.targets.indexOf('#') !== -1) {
@@ -77,7 +76,7 @@ Xt.prototype = {
       this.namespace = XtUtil.getUniqueID('xt', options.classes.toString());
     }
     // final namespace
-    this.namespace = this.namespace.replace(/(#|,|\.| )/g, '');
+    this.namespace = this.namespace.replace(/\W+/g, '');
     // currents array based on namespace (so shared between Xt objects)
     if (!this.getCurrents()) {
       this.setCurrents([]);
@@ -93,7 +92,8 @@ Xt.prototype = {
     // elements
     if (options.elements) {
       this.elements = XtUtil.arrSingle(this.group.querySelectorAll(options.elements)); //.filter(':parents(.xt-ignore)');
-    } else {
+    }
+    if (!this.elements.length) {
       this.elements = XtUtil.arrSingle(this.object);
       // @FIX on next frame set all elements querying the namespace
       XtUtil.requestAnimationFrame.call(window, function () {
@@ -110,11 +110,9 @@ Xt.prototype = {
       this.targets = XtUtil.arrSingle(arr);
     }
     // @FIX set namespace for next frame
-    if (this.elements.length) {
-      XtUtil.forEach(this.elements, function (element, i) {
-        element.setAttribute('data-xt-namespace', self.namespace);
-      });
-    }
+    XtUtil.forEach(this.elements, function (element, i) {
+      element.setAttribute('data-xt-namespace', self.namespace);
+    });
     // currents
     XtUtil.requestAnimationFrame.call(window, function () {
       if (self.elements.length) {
@@ -196,8 +194,10 @@ Xt.prototype = {
     } else if (this.group === this.object) {
       // when group is Xt object choose only target by index
       var index = XtUtil.getElementIndex(element);
-      console.log(this.targets);
-      return XtUtil.arrSingle(this.targets[index]);
+      var el = this.targets[index];
+      if (el) {
+        return XtUtil.arrSingle(this.targets[index]);
+      }
     }
   },
 

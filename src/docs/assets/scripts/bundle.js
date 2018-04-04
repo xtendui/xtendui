@@ -370,19 +370,21 @@ XtUtil.currents = {};
  * init all data-xt classes
  */
 XtUtil.initAll = function () {
-  var elements = document.querySelectorAll('[data-xt-toggle]');
-  XtUtil.forEach(elements, function (element, i) {
-    new _xtend2.default(element, {});
-  });
+  // xt
   /*
+  var elements = document.querySelectorAll('[data-xt]');
+  XtUtil.forEach(elements, function (element, i) {
+    new Xt(element, {});
+  });
+  */
+  // xt-toggle
   var toggles = document.querySelectorAll('[data-xt-toggle]');
   XtUtil.forEach(toggles, function (el, i) {
-    new Xt(el, {
+    new _xtend2.default(el, {
       elements: ':scope > .btn',
       targets: '[class^="toggle-"], [class*=" toggle-"]'
     });
   });
-  */
 };
 
 /**
@@ -643,7 +645,6 @@ Xt.prototype = {
    */
   initSetup: function initSetup() {
     var options = this.options;
-    // default namespace
     // setup (based on xtend mode)
     if (options.targets) {
       if (options.targets.indexOf('#') !== -1) {
@@ -661,7 +662,7 @@ Xt.prototype = {
       this.namespace = _xtendUtils2.default.getUniqueID('xt', options.classes.toString());
     }
     // final namespace
-    this.namespace = this.namespace.replace(/(#|,|\.| )/g, '');
+    this.namespace = this.namespace.replace(/\W+/g, '');
     // currents array based on namespace (so shared between Xt objects)
     if (!this.getCurrents()) {
       this.setCurrents([]);
@@ -677,7 +678,8 @@ Xt.prototype = {
     // elements
     if (options.elements) {
       this.elements = _xtendUtils2.default.arrSingle(this.group.querySelectorAll(options.elements)); //.filter(':parents(.xt-ignore)');
-    } else {
+    }
+    if (!this.elements.length) {
       this.elements = _xtendUtils2.default.arrSingle(this.object);
       // @FIX on next frame set all elements querying the namespace
       _xtendUtils2.default.requestAnimationFrame.call(window, function () {
@@ -694,11 +696,9 @@ Xt.prototype = {
       this.targets = _xtendUtils2.default.arrSingle(arr);
     }
     // @FIX set namespace for next frame
-    if (this.elements.length) {
-      _xtendUtils2.default.forEach(this.elements, function (element, i) {
-        element.setAttribute('data-xt-namespace', self.namespace);
-      });
-    }
+    _xtendUtils2.default.forEach(this.elements, function (element, i) {
+      element.setAttribute('data-xt-namespace', self.namespace);
+    });
     // currents
     _xtendUtils2.default.requestAnimationFrame.call(window, function () {
       if (self.elements.length) {
@@ -784,8 +784,10 @@ Xt.prototype = {
     } else if (this.group === this.object) {
       // when group is Xt object choose only target by index
       var index = _xtendUtils2.default.getElementIndex(element);
-      console.log(this.targets);
-      return _xtendUtils2.default.arrSingle(this.targets[index]);
+      var el = this.targets[index];
+      if (el) {
+        return _xtendUtils2.default.arrSingle(this.targets[index]);
+      }
     }
   },
 

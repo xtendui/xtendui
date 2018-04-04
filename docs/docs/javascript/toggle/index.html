@@ -453,7 +453,7 @@ $('div').xtToggle({"elements": ".element"});
   <div class="demo-item demo-preview" data-name="manager">
     <div class="demo-text">With multiple <strong>targets</strong>, the ones activated is the one with the same index of the toggled <strong>element</strong>. Nested <strong>targets</strong> are filtered out.</div>
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle='{"elements": ".btn", "targets": ".toggle-flex"}'>
+<div data-xt-toggle>
   <button type="button" class="btn btn-primary-alt">
     Toggle 0
   </button>
@@ -499,7 +499,7 @@ $('div').xtToggle({"elements": ".element"});
   <div class="demo-item demo-preview" data-name="custom elements">
     <div class="demo-text">Custom <code>"elements"</code> query.</div>
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle='{"elements": ".test > .btn", "targets": ".toggle-flex"}'>
+<div data-xt-toggle='{"elements": ".test > .btn"}'>
   <div class="test">
     <button type="button" class="btn btn-primary-alt">
       Toggle 0
@@ -532,7 +532,7 @@ $('div').xtToggle({"elements": ".element"});
   <div class="demo-item demo-preview" data-name="custom targets">
     <div class="demo-text">Custom <code>"targets"</code> query.</div>
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle='{"elements": ".btn", "targets": ".example-target"}'>
+<div data-xt-toggle='{"targets": ".example-target"}'>
   <button type="button" class="btn btn-primary-alt">
     Toggle 0
   </button>
@@ -779,7 +779,6 @@ $('div').xtToggle({"elements": ".element"});
 <p>Inside a <strong>manager</strong> you can specify <strong>min or max</strong> activations. Default is <code>"min": 0</code> and <code>"max": 1</code>. Use <code>"max": "Infinity"</code> for no limits.</p>
 
 <div class="demo">
-  <!--
   <div class="demo-item demo-preview" data-name="custom">
     <div class="demo-text">The required <strong>min</strong> activation is fulfilled on initialization. Automatic <code>[disabled]</code> on reaching the <strong>min</strong> value.</div>
     <div class="demo-source" data-lang="html">
@@ -819,7 +818,6 @@ $('div').xtToggle({"elements": ".element"});
 </div>
     </div>
   </div>
-  -->
 </div>
 
 <h3>Events</h3>

@@ -28,11 +28,14 @@ XtUtil.currents = {};
  * init all data-xt classes
  */
 XtUtil.initAll = function () {
-  var elements = document.querySelectorAll('[data-xt-toggle]');
+  // xt
+  /*
+  var elements = document.querySelectorAll('[data-xt]');
   XtUtil.forEach(elements, function (element, i) {
     new Xt(element, {});
   });
-  /*
+  */
+  // xt-toggle
   var toggles = document.querySelectorAll('[data-xt-toggle]');
   XtUtil.forEach(toggles, function (el, i) {
     new Xt(el, {
@@ -40,7 +43,6 @@ XtUtil.initAll = function () {
       targets: '[class^="toggle-"], [class*=" toggle-"]'
     });
   });
-  */
 };
 
 /**
