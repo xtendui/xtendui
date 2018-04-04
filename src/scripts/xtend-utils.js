@@ -138,6 +138,7 @@ XtUtil.forEach = function (collection, callback, scope) {
  * @param {Element} node Element to check the index of
  * @return {Number} Element's index
  */
+/*
 XtUtil.getElementIndex = function (node) {
   var index = 0;
   while ((node = node.previousElementSibling)) {
@@ -145,6 +146,7 @@ XtUtil.getElementIndex = function (node) {
   }
   return index;
 };
+*/
 
 /**
  * Get the closest matching element up the DOM tree
