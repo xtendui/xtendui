@@ -9,6 +9,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
 var _xtend = require('./xtend');
 
 var _xtend2 = _interopRequireDefault(_xtend);
@@ -39,14 +41,12 @@ XtUtil.currents = {};
 XtUtil.initAll = function () {
   // xt
   /*
-  var elements = document.querySelectorAll('[data-xt]');
-  XtUtil.forEach(elements, function (el, i) {
+  document.querySelectorAll('[data-xt]').forEach(function (el, i) {
     new Xt(el, {});
   });
   */
   // xt-toggle
-  var toggles = document.querySelectorAll('[data-xt-toggle]');
-  XtUtil.forEach(toggles, function (el, i) {
+  document.querySelectorAll('[data-xt-toggle]').forEach(function (el, i) {
     new _xtend2.default(el, {
       elements: ':scope > .btn',
       targets: '[class^="toggle-"], [class*=" toggle-"]'
@@ -89,42 +89,22 @@ XtUtil.getUniqueID = function (prefix, suffix) {
 };
 
 /**
- * Merge defaults with user options
- * @param {Object} defaults Default settings
- * @param {Object} options User options
- * @returns {Object} Merged values of defaults and options
+ * Merge objects
+ * @param {Array} arr Array of objects to merge
+ * @returns {Object} Merged object
  */
-XtUtil.extend = function (defaults, options) {
-  var extended = {};
-  XtUtil.forEach(defaults, function (value, prop) {
-    extended[prop] = defaults[prop];
-  });
-  XtUtil.forEach(options, function (value, prop) {
-    extended[prop] = options[prop];
-  });
-  return extended;
-};
+XtUtil.merge = function (arr) {
+  var final = {};
+  arr.forEach(function (obj, i) {
+    Object.entries(obj).forEach(function (_ref) {
+      var _ref2 = _slicedToArray(_ref, 2),
+          key = _ref2[0],
+          value = _ref2[1];
 
-/**
- * A simple forEach() implementation for Arrays, Objects and NodeLists
- * @param {Array|Object|NodeList} collection Collection of items to iterate
- * @param {Function} callback Callback function for each iteration
- * @param {Array|Object|NodeList} scope Object/NodeList/Array that forEach is iterating over (aka `this`)
- */
-XtUtil.forEach = function (collection, callback, scope) {
-  if (Object.prototype.toString.call(collection) === '[object Object]') {
-    for (var prop in collection) {
-      if (Object.prototype.hasOwnProperty.call(collection, prop)) {
-        callback.call(scope, collection[prop], prop, collection);
-      }
-    }
-  } else {
-    if (collection) {
-      for (var i = 0, len = collection.length; i < len; i++) {
-        callback.call(scope, collection[i], i, collection);
-      }
-    }
-  }
+      return final[key] = value;
+    });
+  });
+  return final;
 };
 
 /**
@@ -288,10 +268,10 @@ var defaults = {
 function Xt(object, jsOptions) {
   this.object = object;
   // js options
-  this.options = _xtendUtils2.default.extend(defaults, jsOptions || {});
+  this.options = _xtendUtils2.default.merge([defaults, jsOptions || {}]);
   // markup options
   var markupOptions = this.object.getAttribute('data-xt-toggle');
-  this.options = _xtendUtils2.default.extend(this.options, markupOptions ? JSON.parse(markupOptions) : {});
+  this.options = _xtendUtils2.default.merge([this.options, markupOptions ? JSON.parse(markupOptions) : {}]);
   // classes
   if (this.options.class) {
     this.options.classes = [].concat(_toConsumableArray(this.options.classes), _toConsumableArray(this.options.class.split(' ')));
@@ -369,21 +349,17 @@ Xt.prototype = {
       this.targets = _xtendUtils2.default.arrSingle(arr);
     }
     // @FIX set namespace for next frame
-    _xtendUtils2.default.forEach(this.elements, function (el, i) {
+    this.elements.forEach(function (el, i) {
       el.setAttribute('data-xt-namespace', self.namespace);
     });
     // currents
     _xtendUtils2.default.requestAnimationFrame.call(window, function () {
       if (self.elements.length) {
         // activate defaults.class
-        _xtendUtils2.default.forEach(self.elements, function (el, i) {
+        self.elements.forEach(function (el, i) {
           var _el$classList;
 
           if ((_el$classList = el.classList).contains.apply(_el$classList, _toConsumableArray(defaults.classes))) {
-            var _el$classList2;
-
-            (_el$classList2 = el.classList).remove.apply(_el$classList2, _toConsumableArray(options.classes));
-            self.setCurrents(el);
             self.eventOn(el);
           }
         });
@@ -405,7 +381,7 @@ Xt.prototype = {
     var self = this;
     var options = this.options;
     // on and off
-    _xtendUtils2.default.forEach(this.elements, function (el, i) {
+    this.elements.forEach(function (el, i) {
       if (options.on) {
         el.addEventListener(options.on, function (e) {
           self.eventOn(this);
@@ -538,16 +514,16 @@ Xt.prototype = {
     if (!(_element$classList = element.classList).contains.apply(_element$classList, _toConsumableArray(defaults.classes))) {
       var fElements = this.getElements(element);
       this.addCurrent(fElements.single);
-      _xtendUtils2.default.forEach(fElements.all, function (el, i) {
+      fElements.all.forEach(function (el, i) {
+        var _el$classList2;
+
+        (_el$classList2 = el.classList).add.apply(_el$classList2, _toConsumableArray(options.classes));
+      });
+      var targets = this.getTargets(element);
+      targets.forEach(function (el, i) {
         var _el$classList3;
 
         (_el$classList3 = el.classList).add.apply(_el$classList3, _toConsumableArray(options.classes));
-      });
-      var targets = this.getTargets(element);
-      _xtendUtils2.default.forEach(targets, function (el, i) {
-        var _el$classList4;
-
-        (_el$classList4 = el.classList).add.apply(_el$classList4, _toConsumableArray(options.classes));
       });
     } else {
       this.eventOff(element);
@@ -576,16 +552,16 @@ Xt.prototype = {
     if ((_element$classList2 = element.classList).contains.apply(_element$classList2, _toConsumableArray(defaults.classes))) {
       var fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
-      _xtendUtils2.default.forEach(fElements.all, function (el, i) {
+      fElements.all.forEach(function (el, i) {
+        var _el$classList4;
+
+        (_el$classList4 = el.classList).remove.apply(_el$classList4, _toConsumableArray(options.classes));
+      });
+      var targets = this.getTargets(element);
+      targets.forEach(function (el, i) {
         var _el$classList5;
 
         (_el$classList5 = el.classList).remove.apply(_el$classList5, _toConsumableArray(options.classes));
-      });
-      var targets = this.getTargets(element);
-      _xtendUtils2.default.forEach(targets, function (el, i) {
-        var _el$classList6;
-
-        (_el$classList6 = el.classList).remove.apply(_el$classList6, _toConsumableArray(options.classes));
       });
     }
   }

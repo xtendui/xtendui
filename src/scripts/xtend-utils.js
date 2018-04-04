@@ -30,14 +30,12 @@ XtUtil.currents = {};
 XtUtil.initAll = function () {
   // xt
   /*
-  var elements = document.querySelectorAll('[data-xt]');
-  XtUtil.forEach(elements, function (el, i) {
+  document.querySelectorAll('[data-xt]').forEach(function (el, i) {
     new Xt(el, {});
   });
   */
   // xt-toggle
-  var toggles = document.querySelectorAll('[data-xt-toggle]');
-  XtUtil.forEach(toggles, function (el, i) {
+  document.querySelectorAll('[data-xt-toggle]').forEach(function (el, i) {
     new Xt(el, {
       elements: ':scope > .btn',
       targets: '[class^="toggle-"], [class*=" toggle-"]'
@@ -80,42 +78,16 @@ XtUtil.getUniqueID = function (prefix, suffix) {
 };
 
 /**
- * Merge defaults with user options
- * @param {Object} defaults Default settings
- * @param {Object} options User options
- * @returns {Object} Merged values of defaults and options
+ * Merge objects
+ * @param {Array} arr Array of objects to merge
+ * @returns {Object} Merged object
  */
-XtUtil.extend = function (defaults, options) {
-  var extended = {};
-  XtUtil.forEach(defaults, function (value, prop) {
-    extended[prop] = defaults[prop];
+XtUtil.merge = function (arr) {
+  var final = {};
+  arr.forEach(function (obj, i) {
+    Object.entries(obj).forEach(([key, value]) => final[key] = value);
   });
-  XtUtil.forEach(options, function (value, prop) {
-    extended[prop] = options[prop];
-  });
-  return extended;
-};
-
-/**
- * A simple forEach() implementation for Arrays, Objects and NodeLists
- * @param {Array|Object|NodeList} collection Collection of items to iterate
- * @param {Function} callback Callback function for each iteration
- * @param {Array|Object|NodeList} scope Object/NodeList/Array that forEach is iterating over (aka `this`)
- */
-XtUtil.forEach = function (collection, callback, scope) {
-  if (Object.prototype.toString.call(collection) === '[object Object]') {
-    for (var prop in collection) {
-      if (Object.prototype.hasOwnProperty.call(collection, prop)) {
-        callback.call(scope, collection[prop], prop, collection);
-      }
-    }
-  } else {
-    if (collection) {
-      for (var i = 0, len = collection.length; i < len; i++) {
-        callback.call(scope, collection[i], i, collection);
-      }
-    }
-  }
+  return final;
 };
 
 /**

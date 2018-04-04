@@ -360,11 +360,10 @@ $('div').xtToggle({"elements": ".element"});
 </style>
     </div>
   </div>
-  <!--
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-text">You can start with toggled elements and targets just by adding the class <code>.active</code> on the html <strong>elements</strong> you want activated.</div>
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle='{"elements": ".btn", "class": "class-example-0 class-example-1", "min": 2, "max": 3}'>
+<div data-xt-toggle='{"class": "class-example-0 class-example-1", "min": 2, "max": 3}'>
   <button type="button" class="btn btn-primary-alt" data-group="0">
     Group 0
   </button>
@@ -424,7 +423,6 @@ $('div').xtToggle({"elements": ".element"});
 </style>
     </div>
   </div>
-  -->
 </div>
 
 <h3>Min and max</h3>
@@ -435,7 +433,7 @@ $('div').xtToggle({"elements": ".element"});
   <div class="demo-item demo-preview" data-name="custom">
     <div class="demo-text">The required <strong>min</strong> activation is fulfilled on initialization. Automatic <code>[disabled]</code> on reaching the <strong>min</strong> value.</div>
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle='{"elements": ".btn", "min": 2, "max": 2}'>
+<div data-xt-toggle='{"min": 2, "max": 2}'>
   <button type="button" class="btn btn-primary-alt">
     Toggle 0
   </button>

@@ -30,10 +30,10 @@ var defaults = {
 function Xt(object, jsOptions) {
   this.object = object;
   // js options
-  this.options = XtUtil.extend(defaults, jsOptions || {});
+  this.options = XtUtil.merge([defaults, jsOptions || {}]);
   // markup options
   var markupOptions = this.object.getAttribute('data-xt-toggle');
-  this.options = XtUtil.extend(this.options, markupOptions ? JSON.parse(markupOptions) : {});
+  this.options = XtUtil.merge([this.options, markupOptions ? JSON.parse(markupOptions) : {}]);
   // classes
   if (this.options.class) {
     this.options.classes = [...this.options.classes, ...this.options.class.split(' ')];
@@ -110,17 +110,15 @@ Xt.prototype = {
       this.targets = XtUtil.arrSingle(arr);
     }
     // @FIX set namespace for next frame
-    XtUtil.forEach(this.elements, function (el, i) {
+    this.elements.forEach(function (el, i) {
       el.setAttribute('data-xt-namespace', self.namespace);
     });
     // currents
     XtUtil.requestAnimationFrame.call(window, function () {
       if (self.elements.length) {
         // activate defaults.class
-        XtUtil.forEach(self.elements, function (el, i) {
+        self.elements.forEach(function (el, i) {
           if (el.classList.contains(...defaults.classes)) {
-            el.classList.remove(...options.classes);
-            self.setCurrents(el);
             self.eventOn(el);
           }
         });
@@ -142,7 +140,7 @@ Xt.prototype = {
     var self = this;
     var options = this.options;
     // on and off
-    XtUtil.forEach(this.elements, function (el, i) {
+    this.elements.forEach(function (el, i) {
       if (options.on) {
         el.addEventListener(options.on, function (e) {
           self.eventOn(this);
@@ -271,11 +269,11 @@ Xt.prototype = {
     if (!element.classList.contains(...defaults.classes)) {
       var fElements = this.getElements(element);
       this.addCurrent(fElements.single);
-      XtUtil.forEach(fElements.all, function (el, i) {
+      fElements.all.forEach(function (el, i) {
         el.classList.add(...options.classes);
       });
       var targets = this.getTargets(element);
-      XtUtil.forEach(targets, function (el, i) {
+      targets.forEach(function (el, i) {
         el.classList.add(...options.classes);
       });
     } else {
@@ -303,11 +301,11 @@ Xt.prototype = {
     if (element.classList.contains(...defaults.classes)) {
       var fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
-      XtUtil.forEach(fElements.all, function (el, i) {
+      fElements.all.forEach(function (el, i) {
         el.classList.remove(...options.classes);
       });
       var targets = this.getTargets(element);
-      XtUtil.forEach(targets, function (el, i) {
+      targets.forEach(function (el, i) {
         el.classList.remove(...options.classes);
       });
     }
