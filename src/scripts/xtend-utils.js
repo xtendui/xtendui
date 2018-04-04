@@ -31,8 +31,8 @@ XtUtil.initAll = function () {
   // xt
   /*
   var elements = document.querySelectorAll('[data-xt]');
-  XtUtil.forEach(elements, function (element, i) {
-    new Xt(element, {});
+  XtUtil.forEach(elements, function (el, i) {
+    new Xt(el, {});
   });
   */
   // xt-toggle
@@ -150,29 +150,31 @@ XtUtil.getElementIndex = function (node) {
 
 /**
  * Get the closest matching element up the DOM tree
- * @param {Element} elem Starting element
+ * @param {Element} element Starting element
  * @param {String} selector Selector to match against (class, ID, or data attribute)
  * @return {Boolean|Element} Returns false if not match found
  */
-XtUtil.getClosest = function (elem, selector) {
+/*
+XtUtil.getClosest = function (element, selector) {
   var firstChar = selector.charAt(0);
-  for (; elem && elem !== document; elem = elem.parentNode) {
+  for (; element && element !== document; element = element.parentNode) {
     if (firstChar === '.') {
-      if (elem.classList.contains(selector.substr(1))) {
-        return elem;
+      if (element.classList.contains(selector.substr(1))) {
+        return element;
       }
     } else if (firstChar === '#') {
-      if (elem.id === selector.substr(1)) {
-        return elem;
+      if (element.id === selector.substr(1)) {
+        return element;
       }
     } else if (firstChar === '[') {
-      if (elem.hasAttribute(selector.substr(1, selector.length - 2))) {
-        return elem;
+      if (element.hasAttribute(selector.substr(1, selector.length - 2))) {
+        return element;
       }
     }
   }
   return false;
 };
+*/
 
 /**
  * Create DOM element from html string
@@ -209,7 +211,6 @@ export default XtUtil;
 // USAGE : querySelectorAll(':scope > .selector');
 //////////////////////
 
-/*
 (function (doc, proto) {
   try { // check if browser supports :scope natively
     doc.querySelector(':scope body');
@@ -231,4 +232,3 @@ export default XtUtil;
     });
   }
 })(window.document, Element.prototype);
-*/

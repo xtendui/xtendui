@@ -55,7 +55,7 @@ Xt.prototype = {
   //////////////////////
 
   /**
-   * setup namespace, group and options
+   * setup namespace, container and options
    */
   initSetup: function () {
     var options = this.options;
@@ -63,16 +63,16 @@ Xt.prototype = {
     if (options.targets) {
       if (options.targets.indexOf('#') !== -1) {
         // xtend document mode
-        this.group = document;
+        this.container = document;
         options.max = Infinity;
         this.namespace = options.targets.toString() + '-' + options.classes.toString();
       } else {
         // xtend unique mode
-        this.group = this.object;
+        this.container = this.object;
         this.namespace = XtUtil.getUniqueID('xt', options.targets.toString() + '-' + options.classes.toString());
       }
     } else {
-      this.group = this.object;
+      this.container = this.object;
       this.namespace = XtUtil.getUniqueID('xt', options.classes.toString());
     }
     // final namespace
@@ -91,7 +91,7 @@ Xt.prototype = {
     var options = this.options;
     // elements
     if (options.elements) {
-      this.elements = XtUtil.arrSingle(this.group.querySelectorAll(options.elements)); //.filter(':parents(.xt-ignore)');
+      this.elements = XtUtil.arrSingle(this.container.querySelectorAll(options.elements)); //.filter(':parents(.xt-ignore)');
     }
     if (!this.elements.length) {
       this.elements = XtUtil.arrSingle(this.object);
@@ -102,26 +102,26 @@ Xt.prototype = {
     }
     // targets
     if (options.targets) {
-      var arr = Array.from(this.group.querySelectorAll(options.targets));
-      arr = arr.filter(function (el) {
+      var arr = Array.from(this.container.querySelectorAll(options.targets));
+      arr = arr.filter(
         // filter out nested options.targets
-        return !XtUtil.parents(el, options.targets).length;
-      });
+        x => !XtUtil.parents(x, options.targets).length
+      );
       this.targets = XtUtil.arrSingle(arr);
     }
     // @FIX set namespace for next frame
-    XtUtil.forEach(this.elements, function (element, i) {
-      element.setAttribute('data-xt-namespace', self.namespace);
+    XtUtil.forEach(this.elements, function (el, i) {
+      el.setAttribute('data-xt-namespace', self.namespace);
     });
     // currents
     XtUtil.requestAnimationFrame.call(window, function () {
       if (self.elements.length) {
         // activate defaults.class
-        XtUtil.forEach(self.elements, function (element, i) {
-          if (element.classList.contains(...defaults.classes)) {
-            element.classList.remove(...options.classes);
-            self.setCurrents(element);
-            self.eventOn(element);
+        XtUtil.forEach(self.elements, function (el, i) {
+          if (el.classList.contains(...defaults.classes)) {
+            el.classList.remove(...options.classes);
+            self.setCurrents(el);
+            self.eventOn(el);
           }
         });
         // if currents < min
@@ -142,14 +142,14 @@ Xt.prototype = {
     var self = this;
     var options = this.options;
     // on and off
-    XtUtil.forEach(this.elements, function (element, i) {
+    XtUtil.forEach(this.elements, function (el, i) {
       if (options.on) {
-        element.addEventListener(options.on, function (e) {
+        el.addEventListener(options.on, function (e) {
           self.eventOn(this);
         });
       }
       if (options.off) {
-        element.addEventListener(options.off, function (e) {
+        el.addEventListener(options.off, function (e) {
           self.eventOff(this);
         });
       }
@@ -161,76 +161,71 @@ Xt.prototype = {
   //////////////////////
 
   /**
-   * choose which elements to activate/deactivate (based on xtend mode)
-   * @param {Array} elements
-   * @param {Element} element
-   * @param {Element} group
-   * @returns {Object}
+   * choose which elements to activate/deactivate (based on xtend mode and containers)
+   * @param {Element} element Element that triggered interaction
+   * @returns {Object} object.all and object.single
    */
   getElements: function (element) {
     if (!this.elements.length) {
       return {all: null, single: null};
     }
-    if (this.group === document) {
-      // when group is document choose all elements
+    if (this.container === document) {
+      // when container is document choose all elements
       return {all: this.elements, single: this.elements};
     }
-    // when group is Xt object choose element by group
-    var g = element.getAttribute('data-group');
-    if (g) {
-      // all data-group elements if data-group
-      var gElements = Array.from(this.elements).filter(function (el) {
-        return el.getAttribute('data-group') === g;
-      });
-      var final = XtUtil.arrSingle(gElements);
+    // choose element by group
+    var group = element.getAttribute('data-group');
+    if (group) {
+      // all group elements if group
+      var groupElements = Array.from(this.elements).filter(
+        x => x.getAttribute('data-group') === group
+      );
+      var final = XtUtil.arrSingle(groupElements);
       return {all: final, single: final[0]};
     } else {
-      // element if not data-group
+      // element if not group
       var final = element;
       return {all: XtUtil.arrSingle(final), single: final};
     }
   },
 
   /**
-   * choose which targets to activate/deactivate (based on xtend mode)
-   * @param {Array} targets
-   * @param {Element} element
-   * @param {Element} group
+   * choose which targets to activate/deactivate (based on xtend mode and containers)
+   * @param {Element} element Element that triggered interaction
    * @returns {Array}
    */
   getTargets: function (element) {
     if (!this.targets.length) {
       return null;
     }
-    if (this.group === document) {
-      // when group is document choose all targets
+    if (this.container === document) {
+      // when container is document choose all targets
       return this.targets;
     }
-    // when group is Xt object choose only target by group
-    var g = element.getAttribute('data-group');
-    var gElements = Array.from(this.elements).filter(function (el) {
-      return el.getAttribute('data-group') === g;
-    });
-    var gTargets = Array.from(this.targets).filter(function (el) {
-      return el.getAttribute('data-group') === g;
-    });
-    var final;
-    if (g) {
-      // all targets if data-group
-      final = gTargets;
+    // choose only target by group
+    var group = element.getAttribute('data-group');
+    var groupElements = Array.from(this.elements).filter(
+      x => x.getAttribute('data-group') === group
+    );
+    var groupTargets = Array.from(this.targets).filter(
+      x => x.getAttribute('data-group') === group
+    );
+    if (group) {
+      // all group targets if group
+      var final = groupTargets;
+      return XtUtil.arrSingle(final);
     } else {
-      // targets by index if not data-group
-      var index = gElements.findIndex(x => x === element);
-      final = gTargets[index];
+      // not group targets by index if not group
+      var index = groupElements.findIndex(x => x === element);
+      var final = groupTargets[index];
+      return XtUtil.arrSingle(final);
     }
-    return XtUtil.arrSingle(final);
   },
 
   /**
    * get currents based on namespace (so shared between Xt objects)
    * @returns {Element}
    */
-
   getCurrents: function () {
     return XtUtil.currents[this.namespace];
   },
@@ -239,7 +234,6 @@ Xt.prototype = {
    * set currents based on namespace (so shared between Xt objects)
    * @param {Array} arr
    */
-
   setCurrents: function (arr) {
     XtUtil.currents[this.namespace] = arr;
   },
@@ -248,7 +242,6 @@ Xt.prototype = {
    * add current based on namespace (so shared between Xt objects)
    * @param {Element} element To be added
    */
-
   addCurrent: function (element) {
     var arr = XtUtil.currents[this.namespace];
     arr.push(element);
@@ -258,11 +251,10 @@ Xt.prototype = {
    * remove currents based on namespace (so shared between Xt objects)
    * @param {Element} element To be removed
    */
-
   removeCurrent: function (element) {
-    XtUtil.currents[this.namespace] = XtUtil.currents[this.namespace].filter(function (el) {
-      return el !== element;
-    });
+    XtUtil.currents[this.namespace] = XtUtil.currents[this.namespace].filter(
+      x => x !== element
+    );
   },
 
   //////////////////////

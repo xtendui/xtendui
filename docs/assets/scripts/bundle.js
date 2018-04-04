@@ -373,8 +373,8 @@ XtUtil.initAll = function () {
   // xt
   /*
   var elements = document.querySelectorAll('[data-xt]');
-  XtUtil.forEach(elements, function (element, i) {
-    new Xt(element, {});
+  XtUtil.forEach(elements, function (el, i) {
+    new Xt(el, {});
   });
   */
   // xt-toggle
@@ -492,29 +492,31 @@ XtUtil.getElementIndex = function (node) {
 
 /**
  * Get the closest matching element up the DOM tree
- * @param {Element} elem Starting element
+ * @param {Element} element Starting element
  * @param {String} selector Selector to match against (class, ID, or data attribute)
  * @return {Boolean|Element} Returns false if not match found
  */
-XtUtil.getClosest = function (elem, selector) {
+/*
+XtUtil.getClosest = function (element, selector) {
   var firstChar = selector.charAt(0);
-  for (; elem && elem !== document; elem = elem.parentNode) {
+  for (; element && element !== document; element = element.parentNode) {
     if (firstChar === '.') {
-      if (elem.classList.contains(selector.substr(1))) {
-        return elem;
+      if (element.classList.contains(selector.substr(1))) {
+        return element;
       }
     } else if (firstChar === '#') {
-      if (elem.id === selector.substr(1)) {
-        return elem;
+      if (element.id === selector.substr(1)) {
+        return element;
       }
     } else if (firstChar === '[') {
-      if (elem.hasAttribute(selector.substr(1, selector.length - 2))) {
-        return elem;
+      if (element.hasAttribute(selector.substr(1, selector.length - 2))) {
+        return element;
       }
     }
   }
   return false;
 };
+*/
 
 /**
  * Create DOM element from html string
@@ -551,15 +553,17 @@ exports.default = XtUtil;
 // USAGE : querySelectorAll(':scope > .selector');
 //////////////////////
 
-/*
 (function (doc, proto) {
-  try { // check if browser supports :scope natively
+  try {
+    // check if browser supports :scope natively
     doc.querySelector(':scope body');
-  } catch (err) { // polyfill native methods if it doesn't
+  } catch (err) {
+    // polyfill native methods if it doesn't
     ['querySelector', 'querySelectorAll'].forEach(function (method) {
       var nativ = proto[method];
       proto[method] = function (selectors) {
-        if (/(^|,)\s*:scope/.test(selectors)) { // only if selectors contains :scope
+        if (/(^|,)\s*:scope/.test(selectors)) {
+          // only if selectors contains :scope
           var id = this.id; // remember current element id
           this.id = 'ID_' + Date.now(); // assign new unique id
           selectors = selectors.replace(/((^|,)\s*):scope/g, '$1#' + this.id); // replace :scope with #ID
@@ -569,11 +573,10 @@ exports.default = XtUtil;
         } else {
           return nativ.call(this, selectors); // use native code for other selectors
         }
-      }
+      };
     });
   }
 })(window.document, Element.prototype);
-*/
 
 },{"./xtend":3}],3:[function(require,module,exports){
 /*! xtend v0.0.14 (https://getxtend.com/)
@@ -643,7 +646,7 @@ Xt.prototype = {
   //////////////////////
 
   /**
-   * setup namespace, group and options
+   * setup namespace, container and options
    */
   initSetup: function initSetup() {
     var options = this.options;
@@ -651,16 +654,16 @@ Xt.prototype = {
     if (options.targets) {
       if (options.targets.indexOf('#') !== -1) {
         // xtend document mode
-        this.group = document;
+        this.container = document;
         options.max = Infinity;
         this.namespace = options.targets.toString() + '-' + options.classes.toString();
       } else {
         // xtend unique mode
-        this.group = this.object;
+        this.container = this.object;
         this.namespace = _xtendUtils2.default.getUniqueID('xt', options.targets.toString() + '-' + options.classes.toString());
       }
     } else {
-      this.group = this.object;
+      this.container = this.object;
       this.namespace = _xtendUtils2.default.getUniqueID('xt', options.classes.toString());
     }
     // final namespace
@@ -679,7 +682,7 @@ Xt.prototype = {
     var options = this.options;
     // elements
     if (options.elements) {
-      this.elements = _xtendUtils2.default.arrSingle(this.group.querySelectorAll(options.elements)); //.filter(':parents(.xt-ignore)');
+      this.elements = _xtendUtils2.default.arrSingle(this.container.querySelectorAll(options.elements)); //.filter(':parents(.xt-ignore)');
     }
     if (!this.elements.length) {
       this.elements = _xtendUtils2.default.arrSingle(this.object);
@@ -690,30 +693,31 @@ Xt.prototype = {
     }
     // targets
     if (options.targets) {
-      var arr = Array.from(this.group.querySelectorAll(options.targets));
-      arr = arr.filter(function (el) {
-        // filter out nested options.targets
-        return !_xtendUtils2.default.parents(el, options.targets).length;
+      var arr = Array.from(this.container.querySelectorAll(options.targets));
+      arr = arr.filter(
+      // filter out nested options.targets
+      function (x) {
+        return !_xtendUtils2.default.parents(x, options.targets).length;
       });
       this.targets = _xtendUtils2.default.arrSingle(arr);
     }
     // @FIX set namespace for next frame
-    _xtendUtils2.default.forEach(this.elements, function (element, i) {
-      element.setAttribute('data-xt-namespace', self.namespace);
+    _xtendUtils2.default.forEach(this.elements, function (el, i) {
+      el.setAttribute('data-xt-namespace', self.namespace);
     });
     // currents
     _xtendUtils2.default.requestAnimationFrame.call(window, function () {
       if (self.elements.length) {
         // activate defaults.class
-        _xtendUtils2.default.forEach(self.elements, function (element, i) {
-          var _element$classList;
+        _xtendUtils2.default.forEach(self.elements, function (el, i) {
+          var _el$classList;
 
-          if ((_element$classList = element.classList).contains.apply(_element$classList, _toConsumableArray(defaults.classes))) {
-            var _element$classList2;
+          if ((_el$classList = el.classList).contains.apply(_el$classList, _toConsumableArray(defaults.classes))) {
+            var _el$classList2;
 
-            (_element$classList2 = element.classList).remove.apply(_element$classList2, _toConsumableArray(options.classes));
-            self.setCurrents(element);
-            self.eventOn(element);
+            (_el$classList2 = el.classList).remove.apply(_el$classList2, _toConsumableArray(options.classes));
+            self.setCurrents(el);
+            self.eventOn(el);
           }
         });
         // if currents < min
@@ -734,14 +738,14 @@ Xt.prototype = {
     var self = this;
     var options = this.options;
     // on and off
-    _xtendUtils2.default.forEach(this.elements, function (element, i) {
+    _xtendUtils2.default.forEach(this.elements, function (el, i) {
       if (options.on) {
-        element.addEventListener(options.on, function (e) {
+        el.addEventListener(options.on, function (e) {
           self.eventOn(this);
         });
       }
       if (options.off) {
-        element.addEventListener(options.off, function (e) {
+        el.addEventListener(options.off, function (e) {
           self.eventOff(this);
         });
       }
@@ -753,78 +757,73 @@ Xt.prototype = {
   //////////////////////
 
   /**
-   * choose which elements to activate/deactivate (based on xtend mode)
-   * @param {Array} elements
-   * @param {Element} element
-   * @param {Element} group
-   * @returns {Object}
+   * choose which elements to activate/deactivate (based on xtend mode and containers)
+   * @param {Element} element Element that triggered interaction
+   * @returns {Object} object.all and object.single
    */
   getElements: function getElements(element) {
     if (!this.elements.length) {
       return { all: null, single: null };
     }
-    if (this.group === document) {
-      // when group is document choose all elements
+    if (this.container === document) {
+      // when container is document choose all elements
       return { all: this.elements, single: this.elements };
     }
-    // when group is Xt object choose element by group
-    var g = element.getAttribute('data-group');
-    if (g) {
-      // all data-group elements if data-group
-      var gElements = Array.from(this.elements).filter(function (el) {
-        return el.getAttribute('data-group') === g;
+    // choose element by group
+    var group = element.getAttribute('data-group');
+    if (group) {
+      // all group elements if group
+      var groupElements = Array.from(this.elements).filter(function (x) {
+        return x.getAttribute('data-group') === group;
       });
-      var final = _xtendUtils2.default.arrSingle(gElements);
+      var final = _xtendUtils2.default.arrSingle(groupElements);
       return { all: final, single: final[0] };
     } else {
-      // element if not data-group
+      // element if not group
       var final = element;
       return { all: _xtendUtils2.default.arrSingle(final), single: final };
     }
   },
 
   /**
-   * choose which targets to activate/deactivate (based on xtend mode)
-   * @param {Array} targets
-   * @param {Element} element
-   * @param {Element} group
+   * choose which targets to activate/deactivate (based on xtend mode and containers)
+   * @param {Element} element Element that triggered interaction
    * @returns {Array}
    */
   getTargets: function getTargets(element) {
     if (!this.targets.length) {
       return null;
     }
-    if (this.group === document) {
-      // when group is document choose all targets
+    if (this.container === document) {
+      // when container is document choose all targets
       return this.targets;
     }
-    // when group is Xt object choose only target by group
-    var g = element.getAttribute('data-group');
-    var gElements = Array.from(this.elements).filter(function (el) {
-      return el.getAttribute('data-group') === g;
+    // choose only target by group
+    var group = element.getAttribute('data-group');
+    var groupElements = Array.from(this.elements).filter(function (x) {
+      return x.getAttribute('data-group') === group;
     });
-    var gTargets = Array.from(this.targets).filter(function (el) {
-      return el.getAttribute('data-group') === g;
+    var groupTargets = Array.from(this.targets).filter(function (x) {
+      return x.getAttribute('data-group') === group;
     });
-    var final;
-    if (g) {
-      // all targets if data-group
-      final = gTargets;
+    if (group) {
+      // all group targets if group
+      var final = groupTargets;
+      return _xtendUtils2.default.arrSingle(final);
     } else {
-      // targets by index if not data-group
-      var index = gElements.findIndex(function (x) {
+      // not group targets by index if not group
+      var index = groupElements.findIndex(function (x) {
         return x === element;
       });
-      final = gTargets[index];
+      var final = groupTargets[index];
+      return _xtendUtils2.default.arrSingle(final);
     }
-    return _xtendUtils2.default.arrSingle(final);
   },
 
   /**
    * get currents based on namespace (so shared between Xt objects)
    * @returns {Element}
    */
-
   getCurrents: function getCurrents() {
     return _xtendUtils2.default.currents[this.namespace];
   },
@@ -833,7 +832,6 @@ Xt.prototype = {
    * set currents based on namespace (so shared between Xt objects)
    * @param {Array} arr
    */
-
   setCurrents: function setCurrents(arr) {
     _xtendUtils2.default.currents[this.namespace] = arr;
   },
@@ -842,33 +840,18 @@ Xt.prototype = {
    * add current based on namespace (so shared between Xt objects)
    * @param {Element} element To be added
    */
-
   addCurrent: function addCurrent(element) {
     var arr = _xtendUtils2.default.currents[this.namespace];
-    console.log(element);
     arr.push(element);
-    /*
-    console.log(element.innerHTML);
-    var found = arr.filter(function (el) {
-      return el === element;
-    });
-    //arr.forEach(x => console.log(x.innerHTML));
-    if (!found.length) {
-      arr.push(element);
-    } else {
-      console.log('ccccc');
-    }
-    */
   },
 
   /**
    * remove currents based on namespace (so shared between Xt objects)
    * @param {Element} element To be removed
    */
-
   removeCurrent: function removeCurrent(element) {
-    _xtendUtils2.default.currents[this.namespace] = _xtendUtils2.default.currents[this.namespace].filter(function (el) {
-      return el !== element;
+    _xtendUtils2.default.currents[this.namespace] = _xtendUtils2.default.currents[this.namespace].filter(function (x) {
+      return x !== element;
     });
   },
 
@@ -881,23 +864,23 @@ Xt.prototype = {
    * @param {Element} element To be activated
    */
   eventOn: function eventOn(element) {
-    var _element$classList3;
+    var _element$classList;
 
     var options = this.options;
     // activate or deactivate
-    if (!(_element$classList3 = element.classList).contains.apply(_element$classList3, _toConsumableArray(defaults.classes))) {
+    if (!(_element$classList = element.classList).contains.apply(_element$classList, _toConsumableArray(defaults.classes))) {
       var fElements = this.getElements(element);
       this.addCurrent(fElements.single);
       _xtendUtils2.default.forEach(fElements.all, function (el, i) {
-        var _el$classList;
+        var _el$classList3;
 
-        (_el$classList = el.classList).add.apply(_el$classList, _toConsumableArray(options.classes));
+        (_el$classList3 = el.classList).add.apply(_el$classList3, _toConsumableArray(options.classes));
       });
       var targets = this.getTargets(element);
       _xtendUtils2.default.forEach(targets, function (el, i) {
-        var _el$classList2;
+        var _el$classList4;
 
-        (_el$classList2 = el.classList).add.apply(_el$classList2, _toConsumableArray(options.classes));
+        (_el$classList4 = el.classList).add.apply(_el$classList4, _toConsumableArray(options.classes));
       });
     } else {
       this.eventOff(element);
@@ -905,7 +888,6 @@ Xt.prototype = {
     // if currents > max
     var currents = this.getCurrents();
     if (currents.length > options.max) {
-      console.log(currents, currents.length, currents[0]);
       this.eventOff(currents[0]);
     }
   },
@@ -915,7 +897,7 @@ Xt.prototype = {
    * @param {Element} element To be deactivated
    */
   eventOff: function eventOff(element) {
-    var _element$classList4;
+    var _element$classList2;
 
     var options = this.options;
     // if currents < min
@@ -924,20 +906,19 @@ Xt.prototype = {
       return;
     }
     // deactivate
-    console.log(',,,', element);
-    if ((_element$classList4 = element.classList).contains.apply(_element$classList4, _toConsumableArray(defaults.classes))) {
+    if ((_element$classList2 = element.classList).contains.apply(_element$classList2, _toConsumableArray(defaults.classes))) {
       var fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
       _xtendUtils2.default.forEach(fElements.all, function (el, i) {
-        var _el$classList3;
+        var _el$classList5;
 
-        (_el$classList3 = el.classList).remove.apply(_el$classList3, _toConsumableArray(options.classes));
+        (_el$classList5 = el.classList).remove.apply(_el$classList5, _toConsumableArray(options.classes));
       });
       var targets = this.getTargets(element);
       _xtendUtils2.default.forEach(targets, function (el, i) {
-        var _el$classList4;
+        var _el$classList6;
 
-        (_el$classList4 = el.classList).remove.apply(_el$classList4, _toConsumableArray(options.classes));
+        (_el$classList6 = el.classList).remove.apply(_el$classList6, _toConsumableArray(options.classes));
       });
     }
   }
