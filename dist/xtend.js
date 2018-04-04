@@ -39,10 +39,17 @@ XtUtil.currents = {};
 XtUtil.initAll = function () {
   var elements = document.querySelectorAll('[data-xt-toggle]');
   XtUtil.forEach(elements, function (element, i) {
-    new _xtend2.default(element);
-    //var xt = new Xt(element);
-    //console.log(xt.getElements('test'));
+    new _xtend2.default(element, {});
   });
+  /*
+  var toggles = document.querySelectorAll('[data-xt-toggle]');
+  XtUtil.forEach(toggles, function (el, i) {
+    new Xt(el, {
+      elements: ':scope > .btn',
+      targets: '[class^="toggle-"], [class*=" toggle-"]'
+    });
+  });
+  */
 };
 
 /**
@@ -125,8 +132,10 @@ XtUtil.forEach = function (collection, callback, scope) {
       }
     }
   } else {
-    for (var i = 0, len = collection.length; i < len; i++) {
-      callback.call(scope, collection[i], i, collection);
+    if (collection) {
+      for (var i = 0, len = collection.length; i < len; i++) {
+        callback.call(scope, collection[i], i, collection);
+      }
     }
   }
 };
@@ -200,6 +209,35 @@ XtUtil.parents = function (element, query) {
 
 exports.default = XtUtil;
 
+//////////////////////
+// Scope polyfill (https://stackoverflow.com/questions/6481612/queryselector-search-immediate-children)
+// USAGE : querySelectorAll(':scope > .selector');
+//////////////////////
+
+/*
+(function (doc, proto) {
+  try { // check if browser supports :scope natively
+    doc.querySelector(':scope body');
+  } catch (err) { // polyfill native methods if it doesn't
+    ['querySelector', 'querySelectorAll'].forEach(function (method) {
+      var nativ = proto[method];
+      proto[method] = function (selectors) {
+        if (/(^|,)\s*:scope/.test(selectors)) { // only if selectors contains :scope
+          var id = this.id; // remember current element id
+          this.id = 'ID_' + Date.now(); // assign new unique id
+          selectors = selectors.replace(/((^|,)\s*):scope/g, '$1#' + this.id); // replace :scope with #ID
+          var result = doc[method](selectors);
+          this.id = id; // restore previous id
+          return result;
+        } else {
+          return nativ.call(this, selectors); // use native code for other selectors
+        }
+      }
+    });
+  }
+})(window.document, Element.prototype);
+*/
+
 },{"./xtend":2}],2:[function(require,module,exports){
 /*! xtend v0.0.14 (https://getxtend.com/)
 @copyright (c) 2017 - 2018 Riccardo Caroli
@@ -240,16 +278,16 @@ var defaults = {
  * @param {Object} options User options
  * @constructor
  */
-function Xt(object, options) {
+function Xt(object, jsOptions) {
   this.object = object;
-  this.options = _xtendUtils2.default.extend(defaults, options || {}); // js options
-  var options = this.object.getAttribute('data-xt-toggle');
-  if (options) {
-    this.options = _xtendUtils2.default.extend(this.options, JSON.parse(this.object.getAttribute('data-xt-toggle')) || {}); // markup options
-  }
+  // js options
+  this.options = _xtendUtils2.default.extend(defaults, jsOptions || {});
+  // markup options
+  var markupOptions = this.object.getAttribute('data-xt-toggle');
+  this.options = _xtendUtils2.default.extend(this.options, markupOptions ? JSON.parse(markupOptions) : {});
   // classes
   if (this.options.class) {
-    this.options.classes.push(this.options.class.split(' '));
+    this.options.classes = [].concat(_toConsumableArray(this.options.classes), _toConsumableArray(this.options.class.split(' ')));
   }
   // init
   this.initSetup();
@@ -315,7 +353,12 @@ Xt.prototype = {
     }
     // targets
     if (options.targets) {
-      this.targets = _xtendUtils2.default.arrSingle(this.group.querySelectorAll(options.targets));
+      var arr = Array.from(this.group.querySelectorAll(options.targets));
+      arr = arr.filter(function (el) {
+        // filter out nested options.targets
+        return !_xtendUtils2.default.parents(el, options.targets).length;
+      });
+      this.targets = _xtendUtils2.default.arrSingle(arr);
     }
     // @FIX set namespace for next frame
     if (this.elements.length) {
@@ -328,10 +371,12 @@ Xt.prototype = {
       if (self.elements.length) {
         // activate defaults.class
         _xtendUtils2.default.forEach(self.elements, function (element, i) {
-          if (element.classList.contains(defaults.class)) {
-            var _element$classList;
+          var _element$classList;
 
-            (_element$classList = element.classList).remove.apply(_element$classList, _toConsumableArray(options.classes));
+          if ((_element$classList = element.classList).contains.apply(_element$classList, _toConsumableArray(defaults.classes))) {
+            var _element$classList2;
+
+            (_element$classList2 = element.classList).remove.apply(_element$classList2, _toConsumableArray(options.classes));
             self.setCurrents(element);
             self.eventOn(element);
           }
@@ -374,10 +419,10 @@ Xt.prototype = {
 
   /**
    * choose which elements to activate/deactivate (based on xtend mode)
-   * @param {Element} elements
+   * @param {Array} elements
    * @param {Element} element
    * @param {Element} group
-   * @returns {Element}
+   * @returns {Array}
    */
   getElements: function getElements(elements, element, group) {
     if (this.group === document) {
@@ -386,6 +431,28 @@ Xt.prototype = {
     } else if (this.group === this.object) {
       // when group is Xt object choose only element
       return _xtendUtils2.default.arrSingle(element);
+    }
+  },
+
+  /**
+   * choose which targets to activate/deactivate (based on xtend mode)
+   * @param {Array} targets
+   * @param {Element} element
+   * @param {Element} group
+   * @returns {Array}
+   */
+  getTargets: function getTargets(targets, element, group) {
+    if (!targets) {
+      return null;
+    }
+    if (this.group === document) {
+      // when group is document choose all targets
+      return targets;
+    } else if (this.group === this.object) {
+      // when group is Xt object choose only target by index
+      var index = _xtendUtils2.default.getElementIndex(element);
+      console.log(this.targets);
+      return _xtendUtils2.default.arrSingle(this.targets[index]);
     }
   },
 
@@ -436,26 +503,25 @@ Xt.prototype = {
    * @param {Element} element To be activated
    */
   eventOn: function eventOn(element) {
-    var _element$classList2;
+    var _element$classList3;
 
     var self = this;
     var options = this.options;
-    // vars
-    var index = _xtendUtils2.default.getElementIndex(element);
-    var elements = this.getElements(this.elements, element, this.group);
     // activate or deactivate
-    if (!(_element$classList2 = element.classList).contains.apply(_element$classList2, _toConsumableArray(defaults.classes))) {
+    if (!(_element$classList3 = element.classList).contains.apply(_element$classList3, _toConsumableArray(defaults.classes))) {
+      var elements = this.getElements(this.elements, element, this.group);
+      var targets = this.getTargets(this.targets, element, this.group);
       _xtendUtils2.default.forEach(elements, function (element, i) {
-        var _element$classList3;
+        var _element$classList4;
 
-        (_element$classList3 = element.classList).add.apply(_element$classList3, _toConsumableArray(options.classes));
+        (_element$classList4 = element.classList).add.apply(_element$classList4, _toConsumableArray(options.classes));
         self.addCurrent(element);
       });
-      if (this.targets) {
-        var _targets$index$classL;
+      _xtendUtils2.default.forEach(targets, function (target, i) {
+        var _target$classList;
 
-        (_targets$index$classL = this.targets[index].classList).add.apply(_targets$index$classL, _toConsumableArray(options.classes));
-      }
+        (_target$classList = target.classList).add.apply(_target$classList, _toConsumableArray(options.classes));
+      });
     } else {
       this.eventOff(element);
     }
@@ -471,31 +537,30 @@ Xt.prototype = {
    * @param {Element} element To be deactivated
    */
   eventOff: function eventOff(element) {
-    var _element$classList4;
+    var _element$classList5;
 
     var self = this;
     var options = this.options;
-    // vars
-    var index = _xtendUtils2.default.getElementIndex(element);
-    var elements = this.getElements(this.elements, _xtendUtils2.default.arrSingle(element), this.group);
     // if currents < min
     var todo = options.min - this.getCurrents().length;
     if (!todo) {
       return;
     }
     // deactivate
-    if ((_element$classList4 = element.classList).contains.apply(_element$classList4, _toConsumableArray(defaults.classes))) {
+    if ((_element$classList5 = element.classList).contains.apply(_element$classList5, _toConsumableArray(defaults.classes))) {
+      var elements = this.getElements(this.elements, _xtendUtils2.default.arrSingle(element), this.group);
+      var targets = this.getTargets(this.targets, element, this.group);
       _xtendUtils2.default.forEach(elements, function (element, i) {
-        var _element$classList5;
+        var _element$classList6;
 
-        (_element$classList5 = element.classList).remove.apply(_element$classList5, _toConsumableArray(options.classes));
+        (_element$classList6 = element.classList).remove.apply(_element$classList6, _toConsumableArray(options.classes));
         self.removeCurrent(element);
       });
-      if (this.targets) {
-        var _targets$index$classL2;
+      _xtendUtils2.default.forEach(targets, function (target, i) {
+        var _target$classList2;
 
-        (_targets$index$classL2 = this.targets[index].classList).remove.apply(_targets$index$classL2, _toConsumableArray(options.classes));
-      }
+        (_target$classList2 = target.classList).remove.apply(_target$classList2, _toConsumableArray(options.classes));
+      });
     }
   }
 

@@ -406,18 +406,18 @@ $('div').xtToggle({"elements": ".element"});
   <div class="demo-item demo-preview" data-name="single target">
     <div class="demo-text">Toggle a single <strong>target</strong> using <code>targets</code> with <strong>#id</strong>.</div>
     <div class="demo-source" data-lang="html">
-<button type="button" class="btn btn-primary-alt" data-xt-toggle='{"targets": "#card-unique-0"}'>
+<button type="button" class="btn btn-primary-alt" data-xt-toggle='{"targets": "#alert-unique-0"}'>
   Toggle 0
 </button>
-<button type="button" class="btn btn-primary-alt" data-xt-toggle='{"targets": "#card-unique-1"}'>
+<button type="button" class="btn btn-primary-alt" data-xt-toggle='{"targets": "#alert-unique-1"}'>
   Toggle 1
 </button>
-<div class="card toggle-flex" id="card-unique-0">
+<div class="alert alert-notice toggle-flex" id="alert-unique-0">
   <div class="item">
     Target 0
   </div>
 </div>
-<div class="card toggle-flex" id="card-unique-1">
+<div class="alert alert-notice toggle-flex" id="alert-unique-1">
   <div class="item">
     Target 1
   </div>
@@ -427,13 +427,13 @@ $('div').xtToggle({"elements": ".element"});
   <div class="demo-item demo-preview" data-name="same targets">
     <div class="demo-text">Toggle same <strong>targets</strong> using <code>targets</code> with <strong>#id</strong>.</div>
     <div class="demo-source" data-lang="html">
-<button type="button" class="btn btn-primary-alt" data-xt-toggle='{"targets": "#card-unique"}'>
+<button type="button" class="btn btn-primary-alt" data-xt-toggle='{"targets": "#alert-unique"}'>
   Toggle
 </button>
-<button type="button" class="btn btn-primary-alt" data-xt-toggle='{"targets": "#card-unique"}'>
+<button type="button" class="btn btn-primary-alt" data-xt-toggle='{"targets": "#alert-unique"}'>
   Toggle
 </button>
-<div class="card toggle-flex" id="card-unique">
+<div class="alert alert-notice toggle-flex" id="alert-unique">
   <div class="item">
     Target
   </div>
@@ -447,13 +447,13 @@ $('div').xtToggle({"elements": ".element"});
 <h3>Manager</h3>
 
 <p>You can create a "manager" by assigning <code>[data-xt-toggle]</code> to the parent element, elements and targets must be inside the manager.</p>
-<p>By default the <code>elements</code> are all the <strong>direct children</strong> with the class <code>.button</code>, and the <code>targets</code> are all <strong>children</strong> with a class that starts with <code>.toggle-</code>.</p>
+<p>By default the <code>elements</code> are all the <strong>direct children</strong> with the class <code>.btn</code>, and the <code>targets</code> are all <strong>children</strong> with a class that starts with <code>.toggle-</code>.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="manager">
     <div class="demo-text">With multiple <strong>targets</strong>, the ones activated is the one with the same index of the toggled <strong>element</strong>. Nested <strong>targets</strong> are filtered out.</div>
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle data-console="true">
+<div data-xt-toggle='{"elements": ".btn", "targets": ".toggle-flex"}'>
   <button type="button" class="btn btn-primary-alt">
     Toggle 0
   </button>
@@ -463,30 +463,30 @@ $('div').xtToggle({"elements": ".element"});
   <button type="button" class="btn btn-primary-alt">
     Toggle 2
   </button>
-  <div class="card toggle-flex">
+  <div class="alert alert-notice toggle-flex">
     <div class="item">
       Target 0
-      <div class="card toggle-flex">
+      <div class="alert alert-notice toggle-flex">
         <div class="item">
           Nested not toggled
         </div>
       </div>
     </div>
   </div>
-  <div class="card toggle-flex">
+  <div class="alert alert-notice toggle-flex">
     <div class="item">
       Target 1
-      <div class="card toggle-flex">
+      <div class="alert alert-notice toggle-flex">
         <div class="item">
           Nested not toggled
         </div>
       </div>
     </div>
   </div>
-  <div class="card toggle-flex">
+  <div class="alert alert-notice toggle-flex">
     <div class="item">
       Target 2
-      <div class="card toggle-flex">
+      <div class="alert alert-notice toggle-flex">
         <div class="item">
           Nested not toggled
         </div>
@@ -499,7 +499,7 @@ $('div').xtToggle({"elements": ".element"});
   <div class="demo-item demo-preview" data-name="custom elements">
     <div class="demo-text">Custom <code>"elements"</code> query.</div>
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle='{"elements": ".test > .button"}'>
+<div data-xt-toggle='{"elements": ".test > .btn", "targets": ".toggle-flex"}'>
   <div class="test">
     <button type="button" class="btn btn-primary-alt">
       Toggle 0
@@ -510,17 +510,17 @@ $('div').xtToggle({"elements": ".element"});
     <button type="button" class="btn btn-primary-alt">
       Toggle 2
     </button>
-    <div class="card toggle-flex">
+    <div class="alert alert-notice toggle-flex">
       <div class="item">
         Target 0
       </div>
     </div>
-    <div class="card toggle-flex">
+    <div class="alert alert-notice toggle-flex">
       <div class="item">
         Target 1
       </div>
     </div>
-    <div class="card toggle-flex">
+    <div class="alert alert-notice toggle-flex">
       <div class="item">
         Target 2
       </div>
@@ -532,7 +532,7 @@ $('div').xtToggle({"elements": ".element"});
   <div class="demo-item demo-preview" data-name="custom targets">
     <div class="demo-text">Custom <code>"targets"</code> query.</div>
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle='{"targets": ".example-target"}'>
+<div data-xt-toggle='{"elements": ".btn", "targets": ".example-target"}'>
   <button type="button" class="btn btn-primary-alt">
     Toggle 0
   </button>
@@ -542,17 +542,17 @@ $('div').xtToggle({"elements": ".element"});
   <button type="button" class="btn btn-primary-alt">
     Toggle 2
   </button>
-  <div class="card example-target">
+  <div class="alert alert-notice example-target">
     <div class="item">
       Target 0
     </div>
   </div>
-  <div class="card example-target">
+  <div class="alert alert-notice example-target">
     <div class="item">
       Target 1
     </div>
   </div>
-  <div class="card example-target">
+  <div class="alert alert-notice example-target">
     <div class="item">
       Target 2
     </div>
@@ -583,17 +583,17 @@ $('div').xtToggle({"elements": ".element"});
   <button type="button" class="btn btn-primary-alt">
     Toggle 2
   </button>
-  <div class="card toggle-custom">
+  <div class="alert alert-notice toggle-custom">
     <div class="item">
       Target 0
     </div>
   </div>
-  <div class="card toggle-custom">
+  <div class="alert alert-notice toggle-custom">
     <div class="item">
       Target 1
     </div>
   </div>
-  <div class="card toggle-custom">
+  <div class="alert alert-notice toggle-custom">
     <div class="item">
       Target 2
     </div>
@@ -641,27 +641,27 @@ $('div').xtToggle({"elements": ".element"});
   <button type="button" class="btn btn-primary-alt" data-group="1">
     Group 1
   </button>
-  <div class="card toggle-flex">
+  <div class="alert alert-notice toggle-flex">
     <div class="item">
       Target 0
     </div>
   </div>
-  <div class="card toggle-flex" data-group="0">
+  <div class="alert alert-notice toggle-flex" data-group="0">
     <div class="item">
       Group 0
     </div>
   </div>
-  <div class="card toggle-flex" data-group="1">
+  <div class="alert alert-notice toggle-flex" data-group="1">
     <div class="item">
       Group 1
     </div>
   </div>
-  <div class="card toggle-flex" data-group="0">
+  <div class="alert alert-notice toggle-flex" data-group="0">
     <div class="item">
       Group 0
     </div>
   </div>
-  <div class="card toggle-flex">
+  <div class="alert alert-notice toggle-flex">
     <div class="item">
       Target 1
     </div>
@@ -683,7 +683,7 @@ $('div').xtToggle({"elements": ".element"});
   <button type="button" class="btn btn-primary-alt">
     Toggle
   </button>
-  <div class="card toggle-flex" id="card-example">
+  <div class="alert alert-notice toggle-flex" id="alert-example">
     <div class="item">
       Target
     </div>
@@ -692,25 +692,26 @@ $('div').xtToggle({"elements": ".element"});
     </div>
     <div class="demo-source" data-lang="css">
 <style scoped>
-.button.class-example-0 {
+.btn.class-example-0 {
   border: 1px solid red;
 }
-.button.class-example-1 {
+.btn.class-example-1 {
   color: red !important;
 }
-.card.class-example-0 {
+.alert.class-example-0 {
   border: 1px solid red;
 }
-.card.class-example-1 {
+.alert.class-example-1 {
   color: red;
 }
 </style>
     </div>
   </div>
+  <!--
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-text">You can start with toggled elements and targets just by adding the class <code>.active</code> on the html <strong>elements</strong> you want activated.</div>
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle='{"elements": "button", "class": "class-example-0 class-example-1", "min": 2, "max": 3}'>
+<div data-xt-toggle='{"elements": ".btn", "class": "class-example-0 class-example-1", "min": 2, "max": 3}'>
   <button type="button" class="btn btn-primary-alt" data-group="0">
     Group 0
   </button>
@@ -726,27 +727,27 @@ $('div').xtToggle({"elements": ".element"});
   <button type="button" class="btn btn-primary-alt" data-group="1">
     Group 1
   </button>
-  <div class="card toggle-flex">
+  <div class="alert alert-notice toggle-flex">
     <div class="item">
       Target 0
     </div>
   </div>
-  <div class="card toggle-flex" data-group="0">
+  <div class="alert alert-notice toggle-flex" data-group="0">
     <div class="item">
       Group 0
     </div>
   </div>
-  <div class="card toggle-flex" data-group="1">
+  <div class="alert alert-notice toggle-flex" data-group="1">
     <div class="item">
       Group 1
     </div>
   </div>
-  <div class="card toggle-flex" data-group="0">
+  <div class="alert alert-notice toggle-flex" data-group="0">
     <div class="item">
       Group 0
     </div>
   </div>
-  <div class="card toggle-flex">
+  <div class="alert alert-notice toggle-flex">
     <div class="item">
       Target 1
     </div>
@@ -755,21 +756,22 @@ $('div').xtToggle({"elements": ".element"});
     </div>
     <div class="demo-source" data-lang="css">
 <style scoped>
-.button.class-example-0 {
+.btn.class-example-0 {
   border: 1px solid red;
 }
-.button.class-example-1 {
+.btn.class-example-1 {
   color: red !important;
 }
-.card.class-example-0 {
+.alert.class-example-0 {
   border: 1px solid red;
 }
-.card.class-example-1 {
+.alert.class-example-1 {
   color: red;
 }
 </style>
     </div>
   </div>
+  -->
 </div>
 
 <h3>Min and max</h3>
@@ -777,10 +779,11 @@ $('div').xtToggle({"elements": ".element"});
 <p>Inside a <strong>manager</strong> you can specify <strong>min or max</strong> activations. Default is <code>"min": 0</code> and <code>"max": 1</code>. Use <code>"max": "Infinity"</code> for no limits.</p>
 
 <div class="demo">
+  <!--
   <div class="demo-item demo-preview" data-name="custom">
     <div class="demo-text">The required <strong>min</strong> activation is fulfilled on initialization. Automatic <code>[disabled]</code> on reaching the <strong>min</strong> value.</div>
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle='{"elements": "button", "min": 2, "max": 2}'>
+<div data-xt-toggle='{"elements": ".btn", "min": 2, "max": 2}'>
   <button type="button" class="btn btn-primary-alt">
     Toggle 0
   </button>
@@ -793,22 +796,22 @@ $('div').xtToggle({"elements": ".element"});
   <button type="button" class="btn btn-primary-alt">
     Toggle 3
   </button>
-  <div class="card toggle-flex">
+  <div class="alert alert-notice toggle-flex">
     <div class="item">
       Target 0
     </div>
   </div>
-  <div class="card toggle-flex">
+  <div class="alert alert-notice toggle-flex">
     <div class="item">
       Target 1
     </div>
   </div>
-  <div class="card toggle-flex">
+  <div class="alert alert-notice toggle-flex">
     <div class="item">
       Target 2
     </div>
   </div>
-  <div class="card toggle-flex">
+  <div class="alert alert-notice toggle-flex">
     <div class="item">
       Target 3
     </div>
@@ -816,6 +819,7 @@ $('div').xtToggle({"elements": ".element"});
 </div>
     </div>
   </div>
+  -->
 </div>
 
 <h3>Events</h3>
@@ -830,7 +834,7 @@ $('div').xtToggle({"elements": ".element"});
   <button type="button" class="btn btn-primary-alt">
     Toggle
   </button>
-  <div class="card toggle-flex">
+  <div class="alert alert-notice toggle-flex">
     <div class="item">
       Target
     </div>
@@ -866,17 +870,17 @@ $('div').xtToggle({"elements": ".element"});
   <button type="button" class="btn btn-primary-alt">
     no-anim
   </button>
-  <div class="card toggle-flex anim-horizontal">
+  <div class="alert alert-notice toggle-flex anim-horizontal">
     <div class="item">
       Target 0
     </div>
   </div>
-  <div class="card toggle-flex anim-vertical">
+  <div class="alert alert-notice toggle-flex anim-vertical">
     <div class="item">
       Target 1
     </div>
   </div>
-  <div class="card toggle-flex anim-diagonal">
+  <div class="alert alert-notice toggle-flex anim-diagonal">
     <div class="item">
       Target 2
     </div>

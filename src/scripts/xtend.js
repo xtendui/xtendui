@@ -27,16 +27,16 @@ var defaults = {
  * @param {Object} options User options
  * @constructor
  */
-function Xt(object, options) {
+function Xt(object, jsOptions) {
   this.object = object;
-  this.options = XtUtil.extend(defaults, options || {}); // js options
-  var options = this.object.getAttribute('data-xt-toggle');
-  if (options) {
-    this.options = XtUtil.extend(this.options, JSON.parse(this.object.getAttribute('data-xt-toggle')) || {}); // markup options
-  }
+  // js options
+  this.options = XtUtil.extend(defaults, jsOptions || {});
+  // markup options
+  var markupOptions = this.object.getAttribute('data-xt-toggle');
+  this.options = XtUtil.extend(this.options, markupOptions ? JSON.parse(markupOptions) : {});
   // classes
   if (this.options.class) {
-    this.options.classes.push(this.options.class.split(' '));
+    this.options.classes = [...this.options.classes, ...this.options.class.split(' ')];
   }
   // init
   this.initSetup();
@@ -102,7 +102,12 @@ Xt.prototype = {
     }
     // targets
     if (options.targets) {
-      this.targets = XtUtil.arrSingle(this.group.querySelectorAll(options.targets));
+      var arr = Array.from(this.group.querySelectorAll(options.targets));
+      arr = arr.filter(function (el) {
+        // filter out nested options.targets
+        return !XtUtil.parents(el, options.targets).length;
+      });
+      this.targets = XtUtil.arrSingle(arr);
     }
     // @FIX set namespace for next frame
     if (this.elements.length) {
@@ -115,7 +120,7 @@ Xt.prototype = {
       if (self.elements.length) {
         // activate defaults.class
         XtUtil.forEach(self.elements, function (element, i) {
-          if (element.classList.contains(defaults.class)) {
+          if (element.classList.contains(...defaults.classes)) {
             element.classList.remove(...options.classes);
             self.setCurrents(element);
             self.eventOn(element);
@@ -159,18 +164,40 @@ Xt.prototype = {
 
   /**
    * choose which elements to activate/deactivate (based on xtend mode)
-   * @param {Element} elements
+   * @param {Array} elements
    * @param {Element} element
    * @param {Element} group
-   * @returns {Element}
+   * @returns {Array}
    */
   getElements: function (elements, element, group) {
     if (this.group === document) {
       // when group is document choose all elements
       return elements;
-    } else if(this.group === this.object) {
+    } else if (this.group === this.object) {
       // when group is Xt object choose only element
       return XtUtil.arrSingle(element);
+    }
+  },
+
+  /**
+   * choose which targets to activate/deactivate (based on xtend mode)
+   * @param {Array} targets
+   * @param {Element} element
+   * @param {Element} group
+   * @returns {Array}
+   */
+  getTargets: function (targets, element, group) {
+    if (!targets) {
+      return null;
+    }
+    if (this.group === document) {
+      // when group is document choose all targets
+      return targets;
+    } else if (this.group === this.object) {
+      // when group is Xt object choose only target by index
+      var index = XtUtil.getElementIndex(element);
+      console.log(this.targets);
+      return XtUtil.arrSingle(this.targets[index]);
     }
   },
 
@@ -179,7 +206,7 @@ Xt.prototype = {
    * @returns {Element}
    */
 
-  getCurrents: function() {
+  getCurrents: function () {
     return XtUtil.currents[this.namespace];
   },
 
@@ -188,7 +215,7 @@ Xt.prototype = {
    * @param {Array} arr
    */
 
-  setCurrents: function(arr) {
+  setCurrents: function (arr) {
     XtUtil.currents[this.namespace] = arr;
   },
 
@@ -197,7 +224,7 @@ Xt.prototype = {
    * @param {Element} element To be added
    */
 
-  addCurrent: function(element) {
+  addCurrent: function (element) {
     XtUtil.currents[this.namespace].push(element);
   },
 
@@ -206,7 +233,7 @@ Xt.prototype = {
    * @param {Element} element To be removed
    */
 
-  removeCurrent: function(element) {
+  removeCurrent: function (element) {
     XtUtil.currents[this.namespace] = XtUtil.currents[this.namespace].filter(function (current) {
       return current !== element;
     });
@@ -223,18 +250,17 @@ Xt.prototype = {
   eventOn: function (element) {
     var self = this;
     var options = this.options;
-    // vars
-    var index = XtUtil.getElementIndex(element);
-    var elements = this.getElements(this.elements, element, this.group);
     // activate or deactivate
     if (!element.classList.contains(...defaults.classes)) {
+      var elements = this.getElements(this.elements, element, this.group);
+      var targets = this.getTargets(this.targets, element, this.group);
       XtUtil.forEach(elements, function (element, i) {
         element.classList.add(...options.classes);
         self.addCurrent(element);
       });
-      if (this.targets) {
-        this.targets[index].classList.add(...options.classes);
-      }
+      XtUtil.forEach(targets, function (target, i) {
+        target.classList.add(...options.classes);
+      });
     } else {
       this.eventOff(element);
     }
@@ -252,9 +278,6 @@ Xt.prototype = {
   eventOff: function (element) {
     var self = this;
     var options = this.options;
-    // vars
-    var index = XtUtil.getElementIndex(element);
-    var elements = this.getElements(this.elements, XtUtil.arrSingle(element), this.group);
     // if currents < min
     var todo = options.min - this.getCurrents().length;
     if (!todo) {
@@ -262,13 +285,15 @@ Xt.prototype = {
     }
     // deactivate
     if (element.classList.contains(...defaults.classes)) {
+      var elements = this.getElements(this.elements, XtUtil.arrSingle(element), this.group);
+      var targets = this.getTargets(this.targets, element, this.group);
       XtUtil.forEach(elements, function (element, i) {
         element.classList.remove(...options.classes);
         self.removeCurrent(element);
       });
-      if (this.targets) {
-        this.targets[index].classList.remove(...options.classes);
-      }
+      XtUtil.forEach(targets, function (target, i) {
+        target.classList.remove(...options.classes);
+      });
     }
   },
 
