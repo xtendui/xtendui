@@ -422,21 +422,6 @@ XtUtil.getUniqueID = function (prefix, suffix) {
 };
 
 /**
- * Make an array when element is only one
- * @param {Object|Array} element
- * @returns {Array}
- */
-XtUtil.arrSingle = function (single) {
-  if (single.length === undefined) {
-    var arr = new Array(1);
-    arr[0] = single;
-    return arr;
-  } else {
-    return single;
-  }
-};
-
-/**
  * Merge defaults with user options
  * @param {Object} defaults Default settings
  * @param {Object} options User options
@@ -473,6 +458,45 @@ XtUtil.forEach = function (collection, callback, scope) {
       }
     }
   }
+};
+
+/**
+ * Make an array when element is only one
+ * @param {Object|Array} element
+ * @returns {Array}
+ */
+XtUtil.arrSingle = function (single) {
+  if (single.length === undefined) {
+    var arr = new Array(1);
+    arr[0] = single;
+    return arr;
+  } else {
+    return single;
+  }
+};
+
+/**
+ * Create DOM element from html string
+ * @param {String} str Html string (only 1 root html tag)
+ * @return {Element} DOM element
+ */
+XtUtil.createElement = function (str) {
+  var div = document.createElement('div');
+  div.innerHTML = str.trim();
+  return div.firstChild;
+};
+
+/**
+ * Query element's parents
+ * @param {Element} element Child element
+ * @return {Element} Parents elements by query
+ */
+XtUtil.parents = function (element, query) {
+  var parents = [];
+  while (element = element.parentElement.closest(query)) {
+    parents.push(element);
+  }
+  return parents;
 };
 
 /**
@@ -517,30 +541,6 @@ XtUtil.getClosest = function (element, selector) {
   return false;
 };
 */
-
-/**
- * Create DOM element from html string
- * @param {String} str Html string (only 1 root html tag)
- * @return {Element} DOM element
- */
-XtUtil.createElement = function (str) {
-  var div = document.createElement('div');
-  div.innerHTML = str.trim();
-  return div.firstChild;
-};
-
-/**
- * Query element's parents
- * @param {Element} element Child element
- * @return {Element} Parents elements by query
- */
-XtUtil.parents = function (element, query) {
-  var parents = [];
-  while (element = element.parentElement.closest(query)) {
-    parents.push(element);
-  }
-  return parents;
-};
 
 //////////////////////
 // Public APIs
