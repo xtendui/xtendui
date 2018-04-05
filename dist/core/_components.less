@@ -73,7 +73,7 @@ a, .alink, .btn-link {
     white-space: nowrap;
   }
   // others
-  &.fade-out {
+  &.out {
     pointer-events: none;
   }
 }
@@ -275,55 +275,47 @@ a, .alink, .btn-link {
 
 .toggle-block {
   .display(none) !important;
-  &.active,
-  &.fade-out {
+  &.active, &.out {
     .display(block) !important;
   }
 }
 .toggle-flex {
   .display(none) !important;
-  &.active,
-  &.fade-out {
+  &.active, &.out {
     .display(flex) !important;
   }
 }
 .toggle-inline-flex {
   .display(none) !important;
-  &.active,
-  &.fade-out {
+  &.active, &.out {
     .display(inline-flex) !important;
   }
 }
 .toggle-inline {
   .display(none) !important;
-  &.active,
-  &.fade-out {
+  &.active, &.out {
     .display(inline) !important;
   }
 }
 .toggle-inline-block {
   .display(none) !important;
-  &.active,
-  &.fade-out {
+  &.active, &.out {
     .display(inline-block) !important;
   }
 }
 .toggle-none {
-  &.active,
-  &.fade-out {
+  &.active, &.out {
     .display(none) !important;
   }
 }
 .toggle-visible {
   visibility: hidden !important;
-  &.active,
-  &.fade-out {
+  &.active, &.out {
     visibility: visible !important;
   }
 }
 .toggle-hidden {
-  &.active,
-  &.fade-out {
+  &.active, &.out {
     visibility: hidden !important;
   }
 }

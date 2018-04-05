@@ -126,13 +126,12 @@
     margin-left: -1.2em;
   }
   .site-breadcrumbs-body-sub {
+    .flex-column();
     position: relative;
     z-index: 1;
     background-color: @primary;
     .padding(y, small);
     .btn {
-      float: left;
-      clear: both;
       .padding(y, tiny);
       font-size: 1rem;
     }
@@ -229,6 +228,7 @@
 // .site-menu
 
 .site-menu.overlay {
+  .anim-horizontal();
   .site-menu-content {
     padding-top: 52px; // add space for menu
   }
@@ -275,12 +275,13 @@
   // below demos overlay...
   z-index: 68 !important;
 }
+/*
 .site-menu.active {
   .site-menu-content {
     .btn {
       .line-container {
         opacity: 0;
-        animation: anim-left-in 600ms cubic-bezier(.19, 1, .22, 1);
+        animation: anim-right-in 600ms cubic-bezier(.19, 1, .22, 1);
         -webkit-animation-fill-mode: forwards;
         -moz-animation-fill-mode: forwards;
         -ms-animation-fill-mode: forwards;
@@ -367,6 +368,7 @@
     }
   }
 }
+*/
 
 //////////////////////
 // footer

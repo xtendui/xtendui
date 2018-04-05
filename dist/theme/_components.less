@@ -369,7 +369,7 @@ a, .alink {
   // animations
   .overlay-content {
     .anim-vertical();
-    &.fade-in {
+    &.active {
       .xt-backdrop {
         animation-name: anim-bottom-in;
         animation-delay: 300ms;
@@ -414,7 +414,7 @@ a, .alink {
   background-color: fade(@white, 60%);
   // animations
   .anim-vertical();
-  .anim-vertical.fade-in();
+  .anim-vertical.active();
 }
 .loader-content {
   // styles

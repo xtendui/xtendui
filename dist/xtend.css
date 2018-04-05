@@ -75,6 +75,31 @@ select::-ms-expand {
 textarea {
   resize: vertical;
 }
+.no-anim,
+.no-anim .xt-backdrop {
+  animation: none !important;
+  transition: none !important;
+}
+.no-animation {
+  animation: none !important;
+}
+.no-transition {
+  transition: none !important;
+}
+.collapse-height {
+  height: 0;
+}
+.collapse-width {
+  width: 0;
+}
+.collapse-height,
+.collapse-width,
+.collapse-top,
+.collapse-bottom,
+.collapse-left,
+.collapse-right {
+  overflow: hidden;
+}
 .contain,
 .contain-fluid {
   width: 100%;
@@ -911,8 +936,8 @@ pre code {
 .list-block > li > button:not(.btn).active {
   z-index: 1;
 }
-.list-block > li > a:not(.btn).fade-out,
-.list-block > li > button:not(.btn).fade-out {
+.list-block > li > a:not(.btn).out,
+.list-block > li > button:not(.btn).out {
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .list-line {
@@ -969,8 +994,8 @@ pre code {
 .list-line > li > button:not(.btn).active {
   z-index: 1;
 }
-.list-line > li > a:not(.btn).fade-out,
-.list-line > li > button:not(.btn).fade-out {
+.list-line > li > a:not(.btn).out,
+.list-line > li > button:not(.btn).out {
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .list-left > li > a,
@@ -1087,7 +1112,7 @@ a,
   z-index: 150 !important;
 }
 .drop.active,
-.drop.fade-out {
+.drop.out {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -1100,7 +1125,7 @@ a,
   text-align: left;
   white-space: nowrap;
 }
-.drop.fade-out {
+.drop.out {
   pointer-events: none;
 }
 .drop-before {
@@ -1168,7 +1193,7 @@ a,
   overflow: hidden;
 }
 .overlay.active,
-.overlay.fade-out {
+.overlay.out {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -1276,14 +1301,14 @@ a,
   display: none !important;
 }
 .toggle-block.active,
-.toggle-block.fade-out {
+.toggle-block.out {
   display: block !important;
 }
 .toggle-flex {
   display: none !important;
 }
 .toggle-flex.active,
-.toggle-flex.fade-out {
+.toggle-flex.out {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -1292,7 +1317,7 @@ a,
   display: none !important;
 }
 .toggle-inline-flex.active,
-.toggle-inline-flex.fade-out {
+.toggle-inline-flex.out {
   display: -webkit-inline-box !important;
   display: -ms-inline-flexbox !important;
   display: inline-flex !important;
@@ -1301,29 +1326,29 @@ a,
   display: none !important;
 }
 .toggle-inline.active,
-.toggle-inline.fade-out {
+.toggle-inline.out {
   display: inline !important;
 }
 .toggle-inline-block {
   display: none !important;
 }
 .toggle-inline-block.active,
-.toggle-inline-block.fade-out {
+.toggle-inline-block.out {
   display: inline-block !important;
 }
 .toggle-none.active,
-.toggle-none.fade-out {
+.toggle-none.out {
   display: none !important;
 }
 .toggle-visible {
   visibility: hidden !important;
 }
 .toggle-visible.active,
-.toggle-visible.fade-out {
+.toggle-visible.out {
   visibility: visible !important;
 }
 .toggle-hidden.active,
-.toggle-hidden.fade-out {
+.toggle-hidden.out {
   visibility: hidden !important;
 }
 .xt-backdrop {
@@ -1417,8 +1442,8 @@ html.xt-fixed .overlay {
 .form-inline .form-group > li > button:not(.btn).active {
   z-index: 1;
 }
-.form-inline .form-group > li > a:not(.btn).fade-out,
-.form-inline .form-group > li > button:not(.btn).fade-out {
+.form-inline .form-group > li > a:not(.btn).out,
+.form-inline .form-group > li > button:not(.btn).out {
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .form-inline .form-group > * {
@@ -4188,70 +4213,43 @@ select.input-control {
   font-weight: 700;
   src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhs.ttf) format('truetype');
 }
-@keyframes anim-bottom-in {
-  0% {
-    opacity: 0;
-    transform: translateY(0.5rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.collapse-height,
+.collapse-width,
+.collapse-top,
+.collapse-bottom,
+.collapse-left,
+.collapse-right {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
-@keyframes anim-bottom-out {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(0.5rem);
-  }
+.collapse-height.out,
+.collapse-width.out,
+.collapse-top.out,
+.collapse-bottom.out,
+.collapse-left.out,
+.collapse-right.out {
+  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
-@keyframes anim-left-in {
-  0% {
-    opacity: 0;
-    transform: translateX(0.5rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.anim-vertical {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  opacity: 1;
 }
-@keyframes anim-left-out {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(0.5rem);
-  }
+.anim-vertical.out {
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
-@keyframes anim-right-in {
-  0% {
-    opacity: 0;
-    transform: translateX(-0.5rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.anim-vertical.active {
+  animation-name: anim-vertical-in;
 }
-@keyframes anim-right-out {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-0.5rem);
-  }
+.anim-vertical.out {
+  opacity: 0;
+  animation-name: anim-vertical-out;
 }
 @keyframes anim-vertical-in {
   0% {
     opacity: 0;
-    transform: translateY(-0.5rem);
+    transform: translateY(-1rem);
   }
   100% {
     opacity: 1;
@@ -4265,8 +4263,198 @@ select.input-control {
   }
   100% {
     opacity: 0;
-    transform: translateY(0.5rem);
+    transform: translateY(1rem);
   }
+}
+.anim-horizontal {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  opacity: 1;
+}
+.anim-horizontal.out {
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+}
+.anim-horizontal.active {
+  animation-name: anim-horizontal-in;
+}
+.anim-horizontal.out {
+  opacity: 0;
+  animation-name: anim-horizontal-out;
+}
+@keyframes anim-horizontal-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes anim-horizontal-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+}
+.anim-top {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  opacity: 1;
+}
+.anim-top.out {
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+}
+.anim-top.active {
+  animation-name: anim-top-in;
+}
+.anim-top.out {
+  opacity: 0;
+  animation-name: anim-top-out;
+}
+@keyframes anim-top-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes anim-top-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+}
+.anim-bottom {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  opacity: 1;
+}
+.anim-bottom.out {
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+}
+.anim-bottom.active {
+  animation-name: anim-bottom-in;
+}
+.anim-bottom.out {
+  opacity: 0;
+  animation-name: anim-bottom-out;
+}
+@keyframes anim-bottom-in {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes anim-bottom-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}
+.anim-left {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  opacity: 1;
+}
+.anim-left.out {
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+}
+.anim-left.active {
+  animation-name: anim-left-in;
+}
+.anim-left.out {
+  opacity: 0;
+  animation-name: anim-left-out;
+}
+@keyframes anim-left-in {
+  0% {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes anim-left-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+}
+.anim-right {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  opacity: 1;
+}
+.anim-right.out {
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+}
+.anim-right.active {
+  animation-name: anim-right-in;
+}
+.anim-right.out {
+  opacity: 0;
+  animation-name: anim-right-out;
+}
+@keyframes anim-right-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes anim-right-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+}
+.anim-backdrop {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  opacity: 0.6;
+}
+.anim-backdrop.out {
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+}
+.anim-backdrop.active {
+  animation-name: anim-backdrop-in;
+}
+.anim-backdrop.out {
+  opacity: 0;
+  animation-name: anim-backdrop-out;
 }
 @keyframes anim-backdrop-in {
   0% {
@@ -4283,6 +4471,10 @@ select.input-control {
   100% {
     opacity: 0;
   }
+}
+.anim-rotate {
+  animation: preload-rotate 0.8s infinite linear;
+  will-change: transform;
 }
 @keyframes preload-rotate {
   0% {
@@ -4858,7 +5050,7 @@ a:hover,
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
-.btn.fade-out {
+.btn.out {
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .btn-tiny {
@@ -5351,13 +5543,13 @@ a:hover,
   padding: .6em 1.2em;
   font-size: 1.2rem;
 }
-.drop.fade-out {
+.drop.out {
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
-.drop.fade-in {
+.drop.active {
   animation-name: anim-vertical-in;
 }
-.drop.fade-out {
+.drop.out {
   opacity: 0;
   animation-name: anim-vertical-out;
 }
@@ -5422,17 +5614,17 @@ a:hover,
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
 }
-.overlay .overlay-content.fade-out {
+.overlay .overlay-content.out {
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
-.overlay .overlay-content.fade-in {
+.overlay .overlay-content.active {
   animation-name: anim-vertical-in;
 }
-.overlay .overlay-content.fade-out {
+.overlay .overlay-content.out {
   opacity: 0;
   animation-name: anim-vertical-out;
 }
-.overlay .overlay-content.fade-in .xt-backdrop {
+.overlay .overlay-content.active .xt-backdrop {
   animation-name: anim-bottom-in;
   animation-delay: 300ms;
 }
@@ -5461,13 +5653,13 @@ a:hover,
   opacity: 1;
   animation-name: anim-vertical-in;
 }
-.loader-mask.fade-out {
+.loader-mask.out {
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
-.loader-mask.fade-in {
+.loader-mask.active {
   animation-name: anim-vertical-in;
 }
-.loader-mask.fade-out {
+.loader-mask.out {
   opacity: 0;
   animation-name: anim-vertical-out;
 }
@@ -5486,13 +5678,13 @@ a:hover,
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 0.6;
 }
-.xt-backdrop.fade-out {
+.xt-backdrop.out {
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
-.xt-backdrop.fade-in {
+.xt-backdrop.active {
   animation-name: anim-backdrop-in;
 }
-.xt-backdrop.fade-out {
+.xt-backdrop.out {
   opacity: 0;
   animation-name: anim-backdrop-out;
 }
@@ -5583,8 +5775,8 @@ legend:last-child {
 .form-group.inline > li > button:not(.btn).active {
   z-index: 1;
 }
-.form-group.inline > li > a:not(.btn).fade-out,
-.form-group.inline > li > button:not(.btn).fade-out {
+.form-group.inline > li > a:not(.btn).out,
+.form-group.inline > li > button:not(.btn).out {
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .form-group.inline > * {
@@ -5674,7 +5866,7 @@ legend:last-child {
 select.input-control {
   background-image: linear-gradient(45deg, transparent 50%, #77b3cc 50%), linear-gradient(135deg, #77b3cc 50%, transparent 50%), linear-gradient(to right, #c1dde8, #c1dde8);
 }
-.input-control.fade-out {
+.input-control.out {
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .input-control-secondary {

@@ -7,7 +7,7 @@
 .animation-default() {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(.63,.36,0,.97);
-  &.fade-out {
+  &.out {
     animation-timing-function: cubic-bezier(.63,.36,0,.97);
   }
 }
@@ -18,7 +18,7 @@
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(.63,.36,0,.97);
-  &.fade-out {
+  &.out {
     transition-timing-function: cubic-bezier(.63,.36,0,.97);
   }
 }
@@ -27,117 +27,26 @@
 // animations
 //////////////////////
 
-// .anim-bottom();
+// .collapse
 
-.anim-bottom() {
+.collapse-height,
+.collapse-width,
+.collapse-top,
+.collapse-bottom,
+.collapse-left,
+.collapse-right {
+  .transition-default();
+}
+
+// anim-vertical
+
+.anim-vertical {
   .animation-default();
   opacity: 1;
-  &.fade-in {
-    animation-name: anim-bottom-in;
-  }
-  &.fade-out {
-    opacity: 0;
-    animation-name: anim-bottom-out;
-  }
-}
-@keyframes anim-bottom-in {
-  0%{
-    opacity: 0;
-    transform: translateY(.5rem);
-  }
-  100%{
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes anim-bottom-out {
-  0%{
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100%{
-    opacity: 0;
-    transform: translateY(.5rem);
-  }
-}
-
-// .anim-left();
-
-.anim-left() {
-  .animation-default();
-  opacity: 1;
-  &.fade-in {
-    animation-name: anim-left-in;
-  }
-  &.fade-out {
-    opacity: 0;
-    animation-name: anim-left-out;
-  }
-}
-@keyframes anim-left-in {
-  0% {
-    opacity: 0;
-    transform: translateX(.5rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes anim-left-out {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(.5rem);
-  }
-}
-
-// .anim-right();
-
-.anim-right() {
-  .animation-default();
-  opacity: 1;
-  &.fade-in {
-    animation-name: anim-right-in;
-  }
-  &.fade-out {
-    opacity: 0;
-    animation-name: anim-right-out;
-  }
-}
-@keyframes anim-right-in {
-  0% {
-    opacity: 0;
-    transform: translateX(-.5rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes anim-right-out {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-.5rem);
-  }
-}
-
-// .anim-vertical();
-
-.anim-vertical() {
-  .animation-default();
-  opacity: 1;
-  &.fade-in {
+  &.active {
     animation-name: anim-vertical-in;
   }
-  &.fade-out {
+  &.out {
     opacity: 0;
     animation-name: anim-vertical-out;
   }
@@ -145,7 +54,7 @@
 @keyframes anim-vertical-in {
   0% {
     opacity: 0;
-    transform: translateY(-.5rem);
+    transform: translateY(-1rem);
   }
   100% {
     opacity: 1;
@@ -159,19 +68,189 @@
   }
   100% {
     opacity: 0;
-    transform: translateY(.5rem);
+    transform: translateY(1rem);
   }
 }
 
-// .anim-backdrop();
+// anim-horizontal
 
-.anim-backdrop() {
+.anim-horizontal {
+  .animation-default();
+  opacity: 1;
+  &.active {
+    animation-name: anim-horizontal-in;
+  }
+  &.out {
+    opacity: 0;
+    animation-name: anim-horizontal-out;
+  }
+}
+@keyframes anim-horizontal-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes anim-horizontal-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+}
+
+// anim-top
+
+.anim-top {
+  .animation-default();
+  opacity: 1;
+  &.active {
+    animation-name: anim-top-in;
+  }
+  &.out {
+    opacity: 0;
+    animation-name: anim-top-out;
+  }
+}
+@keyframes anim-top-in {
+  0%{
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes anim-top-out {
+  0%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+}
+
+// anim-bottom
+
+.anim-bottom {
+  .animation-default();
+  opacity: 1;
+  &.active {
+    animation-name: anim-bottom-in;
+  }
+  &.out {
+    opacity: 0;
+    animation-name: anim-bottom-out;
+  }
+}
+@keyframes anim-bottom-in {
+  0%{
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes anim-bottom-out {
+  0%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}
+
+// anim-left
+
+.anim-left {
+  .animation-default();
+  opacity: 1;
+  &.active {
+    animation-name: anim-left-in;
+  }
+  &.out {
+    opacity: 0;
+    animation-name: anim-left-out;
+  }
+}
+@keyframes anim-left-in {
+  0% {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes anim-left-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+}
+
+// anim-right
+
+.anim-right {
+  .animation-default();
+  opacity: 1;
+  &.active {
+    animation-name: anim-right-in;
+  }
+  &.out {
+    opacity: 0;
+    animation-name: anim-right-out;
+  }
+}
+@keyframes anim-right-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes anim-right-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+}
+
+// anim-backdrop
+
+.anim-backdrop {
   .animation-default();
   opacity: @backdrop-opacity;
-  &.fade-in {
+  &.active {
     animation-name: anim-backdrop-in;
   }
-  &.fade-out {
+  &.out {
     opacity: 0;
     animation-name: anim-backdrop-out;
   }
@@ -193,9 +272,9 @@
   }
 }
 
-// .anim-rotate();
+// anim-rotate
 
-.anim-rotate() {
+.anim-rotate {
   animation: preload-rotate 0.8s infinite linear;
   will-change: transform;
 }

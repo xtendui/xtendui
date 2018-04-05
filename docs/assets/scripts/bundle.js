@@ -829,7 +829,7 @@ Xt.prototype = {
   //////////////////////
 
   /**
-   * element activation
+   * element on
    * @param {Element} element To be activated
    */
   eventOn: function eventOn(element) {
@@ -840,17 +840,9 @@ Xt.prototype = {
     if (!(_element$classList = element.classList).contains.apply(_element$classList, _toConsumableArray(defaults.classes))) {
       var fElements = this.getElements(element);
       this.addCurrent(fElements.single);
-      fElements.all.forEach(function (el, i) {
-        var _el$classList2;
-
-        (_el$classList2 = el.classList).add.apply(_el$classList2, _toConsumableArray(options.classes));
-      });
+      this.activationOn(fElements.all);
       var targets = this.getTargets(element);
-      targets.forEach(function (el, i) {
-        var _el$classList3;
-
-        (_el$classList3 = el.classList).add.apply(_el$classList3, _toConsumableArray(options.classes));
-      });
+      this.activationOn(targets);
     } else {
       this.eventOff(element);
     }
@@ -862,7 +854,7 @@ Xt.prototype = {
   },
 
   /**
-   * element deactivation
+   * element off
    * @param {Element} element To be deactivated
    */
   eventOff: function eventOff(element) {
@@ -878,17 +870,151 @@ Xt.prototype = {
     if ((_element$classList2 = element.classList).contains.apply(_element$classList2, _toConsumableArray(defaults.classes))) {
       var fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
-      fElements.all.forEach(function (el, i) {
-        var _el$classList4;
-
-        (_el$classList4 = el.classList).remove.apply(_el$classList4, _toConsumableArray(options.classes));
-      });
+      this.activationOff(fElements.all);
       var targets = this.getTargets(element);
-      targets.forEach(function (el, i) {
-        var _el$classList5;
+      this.activationOff(targets);
+    }
+  },
 
-        (_el$classList5 = el.classList).remove.apply(_el$classList5, _toConsumableArray(options.classes));
+  //////////////////////
+  // Activation Methods
+  //////////////////////
+
+  /**
+   * element activation
+   * @param {Element} element To be activated
+   */
+  activationOn: function activationOn(elements) {
+    var self = this;
+    var options = this.options;
+    // activate
+    elements.forEach(function (el, i) {
+      var _el$classList2;
+
+      (_el$classList2 = el.classList).add.apply(_el$classList2, _toConsumableArray(options.classes));
+      el.classList.remove('out');
+      self.activationOffClear(el);
+      // specials
+      self.collapseOn(el);
+    });
+  },
+
+  /**
+   * element deactivation
+   * @param {Element} element To be deactivated
+   */
+  activationOff: function activationOff(elements) {
+    var self = this;
+    var options = this.options;
+    // deactivate
+    elements.forEach(function (el, i) {
+      var _el$classList3;
+
+      (_el$classList3 = el.classList).remove.apply(_el$classList3, _toConsumableArray(options.classes));
+      el.classList.add('out');
+      self.activationOffAnimate(el);
+      // specials
+      self.collapseOff(el);
+    });
+  },
+
+  /**
+   * element out animation
+   * @param {Element} element To be animated
+   */
+  activationOffAnimate: function activationOffAnimate(el) {
+    this.activationOffClear(el);
+    // timing
+    var timing = options.timing;
+    var transition = parseFloat(getComputedStyle(el)['transitionDuration']);
+    var animation = parseFloat(getComputedStyle(el)['animationDuration']);
+    if (transition || animation) {
+      timing = Math.max(transition, animation);
+    }
+    // delay
+    if (!timing) {
+      el.classList.remove('out');
+    } else {
+      timing = timing * 1000;
+      var timeout = setTimeout(function (el) {
+        el.classList.remove('out');
+      }, timing, el);
+      el.setAttribute('xt-out-timeout', timeout);
+    }
+  },
+
+  /**
+   * clear activationOffAnimate
+   * @param {Element} element
+   */
+  activationOffClear: function activationOffClear(el) {
+    clearTimeout(parseFloat(el.getAttribute('xt-out-timeout')));
+  },
+
+  //////////////////////
+  // Special Methods
+  //////////////////////
+
+  /**
+   *
+   * @param {Element} element
+   */
+  collapseOn: function collapseOn(el) {
+    if (el.classList.contains('collapse-height')) {
+      el.classList.add('no-transition');
+      el.style.height = 'auto';
+      el.style.paddingTop = '';
+      el.style.paddingBottom = '';
+      var h = el.clientHeight + 'px';
+      var pt = el.style.paddingTop;
+      var pb = el.style.paddingBottom;
+      _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+        el.style.height = '0';
+        el.style.paddingTop = '0';
+        el.style.paddingBottom = '0';
+        _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+          el.classList.remove('no-transition');
+          el.style.height = h;
+          el.style.paddingTop = pt;
+          el.style.paddingBottom = pb;
+        });
       });
+    }
+    if (el.classList.contains('collapse-width')) {
+      el.style.width = 'auto';
+      el.style.paddingLeft = '';
+      el.style.paddingRight = '';
+      var w = el.clientHeight + 'px';
+      var pl = el.style.paddingLeft;
+      var pr = el.style.paddingRight;
+      _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+        el.style.width = '0';
+        el.style.paddingLeft = '0';
+        el.style.paddingRight = '0';
+        _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+          el.classList.remove('no-transition');
+          el.style.width = w;
+          el.style.paddingLeft = pl;
+          el.style.paddingRight = pr;
+        });
+      });
+    }
+  },
+
+  /**
+   *
+   * @param {Element} element
+   */
+  collapseOff: function collapseOff(el) {
+    if (el.classList.contains('collapse-height')) {
+      el.style.height = '0';
+      el.style.paddingTop = '0';
+      el.style.paddingBottom = '0';
+    }
+    if (el.classList.contains('collapse-width')) {
+      el.style.width = '0';
+      el.style.paddingLeft = '0';
+      el.style.paddingRight = '0';
     }
   }
 

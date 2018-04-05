@@ -56,7 +56,7 @@
           </div>
         </div>
 
-        <nav class="site-menu overlay overlay-primary overlay-screen" id="site-menu">
+        <nav class="site-menu overlay overlay-primary overlay-screen collapse-height" id="site-menu">
           <div class="overlay-inner">
             <div class="overlay-content">
 
@@ -146,7 +146,7 @@
                             <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary">
                               {{ p.title }}
                             </a>
-                            <div class="site-breadcrumbs-body-sub toggle-block collapse-height">
+                            <div class="site-breadcrumbs-body-sub toggle-flex collapse-height">
                               {% assign subsorted = site.[collection.label] | where: 'categories', p.title | sort: 'order' %}
                               {% for pa in subsorted %}
                               <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn-primary">
