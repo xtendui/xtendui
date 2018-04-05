@@ -6,7 +6,8 @@
 
 var elements = document.querySelectorAll('pre code');
 elements.forEach(function (element, i) {
-  hljs.highlightBlock(element);
+  element.innerHTML = element.innerHTML.replace(/^\s+|\s+$/g, ''); // remove newline at start and end
+  window.hljs.highlightBlock(element);
 });
 
 // .make-line
@@ -132,10 +133,9 @@ var populateDemo = function (container, i) {
     var appendItem = XtUtil.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-alt btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>');
     item.append(appendItem);
     // https://github.com/zenorocha/clipboard.js/
-    /*
     var clipboard = new Clipboard('.btn-clipboard', {
       target: function(trigger) {
-        return $(trigger).parents('.demo').find('.demo-item.active .demo-code-body-item.active .hljs')[0];
+        return XtUtil.parents(trigger, '.demo')[0].querySelectorAll('.demo-item.active .demo-code-body-item.active .hljs')[0];
       }
     });
     clipboard.on('success', function(e) {
@@ -145,7 +145,6 @@ var populateDemo = function (container, i) {
     clipboard.on('error', function(e) {
       //$(e.trigger).attr('data-original-title', 'Error: copy manually').tooltip('show');
     });
-    */
     // inject iframe
     if (item.getAttribute('data-iframe')) {
       /*

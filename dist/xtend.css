@@ -4438,22 +4438,31 @@ small {
 }
 code {
   padding: .187rem .375rem;
+  background-color: #edf3f6;
   font-family: monaco, Consolas, 'Lucida Console', monospace;
   font-weight: normal;
   font-style: normal;
   font-size: .9em;
-  color: #343a40;
+  color: #00B0FF;
 }
-pre code {
+pre {
   margin-bottom: 1.5rem;
-  font-size: 12px;
-  line-height: 1.6;
+  width: 100%;
+  max-height: 37rem;
+  overflow: auto;
 }
-pre code:first-child {
+pre:first-child {
   margin-top: 0;
 }
-pre code:last-child {
+pre:last-child {
   margin-bottom: 0;
+}
+pre code {
+  padding: 1.5rem !important;
+  width: 100%;
+  font-size: 12px;
+  color: #343a40;
+  line-height: 1.6;
 }
 .reset-text {
   font-family: inherit !important;

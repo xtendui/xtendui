@@ -3,7 +3,7 @@
 //////////////////////
 
 @import '../../../../dist/xtend.less';
-@import (less) "highlight/github.css";
+@import (less) 'highlight/github.css';
 
 //////////////////////
 // structure
@@ -577,72 +577,54 @@
 // demos
 //////////////////////
 
-// .hljs
-
-.hljs,
-pre code {
-  padding: 0;
-  width: 100%;
-  margin-top: -.238rem;
-}
-pre {
-  position: relative;
-  width: 100%;
-  line-height: 0;
-  .demo & {
-    margin-top: 0;
-  }
-}
-
-// code colors
-
-.demo {
-  border-radius: 2px;
-  border: 3px solid @grey-250;
-}
-.demo-tabs,
-.demo-code-tabs {
-  background-color: @grey-250;
-}
-.demo-tabs-inside {
-  margin-top: -3px;
-}
-.hljs,
-.demo-code-body {
-  background-color: @grey-250;
-}
-.hljs,
-pre code {
-  .padding(x, small);
-  .padding(bottom, small);
-}
-.demo-text {
-  background-color: @grey-250;
-  font-size: 13px;
-  line-height: 1.6;
-}
-.demo-text code {
-  background-color: darken(@grey-250, 2.5%);
-}
-
 // .demo
 
 .demo {
-  .margin(top, medium);
+  .margin(y, layout);
+  .margin(bottom, medium);
+  border-radius: 2px;
+  border: 3px solid @grey-250;
   // code
   .demo-item {
     line-height: 0;
     .toggle-block();
+    &:not(.populated) .demo-code-body {
+      height: 370px;
+    }
+    &.populated .demo-code-body-item {
+      .toggle-block();
+    }
   }
   .demo-source {
-    //.float;
     line-height: 1.8;
   }
-  .demo-item.populated .demo-code-body-item {
-    .toggle-block();
-  }
+  .hljs,
   .demo-code-body {
     z-index: 1;
+    background-color: @grey-250;
+  }
+  // tabs
+  .demo-tabs,
+  .demo-code-tabs {
+    z-index: 2;
+    .display(flex);
+    .justify-content-between();
+    .padding(all, small);
+    background-color: @grey-250;
+  }
+  .demo-tabs-inside {
+    margin-top: -3px;
+  }
+  // text
+  .demo-text {
+    .padding(y, small);
+    .padding(x, medium);
+    background-color: @grey-250;
+    font-size: 13px;
+    line-height: 1.6;
+    code {
+      background-color: darken(@grey-250, 2.5%);
+    }
   }
   // iframe + .demo-source
   iframe {
@@ -657,48 +639,9 @@ pre code {
       display: none;
     }
   }
-  // .hljs
-  pre {
-    margin-bottom: 0 !important;
-  }
-  .hljs {
-    margin: 0;
-    padding: 0;
-  }
   // others
   .btn-fullscreen {
     display: none;
-  }
-}
-
-// .demo max height
-
-pre {
-  max-height: 370px;
-  overflow: auto;
-}
-.demo-item:not(.populated) .demo-code-body {
-  height: 370px;
-}
-
-// .demo paddings
-
-.demo {
-  .demo-tabs,
-  .demo-code-tabs {
-    z-index: 2;
-    .display(flex);
-    .justify-content-between();
-    .padding(all, small);
-  }
-  .demo-code-body-item {
-    pre {
-      .padding(all, small);
-    }
-  }
-  .demo-text {
-    .padding(y, small);
-    .padding(x, medium);
   }
 }
 

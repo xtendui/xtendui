@@ -60,20 +60,15 @@ Xt.prototype = {
   initSetup: function () {
     var options = this.options;
     // setup (based on xtend mode)
-    if (options.targets) {
-      if (options.targets.indexOf('#') !== -1) {
-        // xtend document mode
-        this.container = document;
-        options.max = Infinity;
-        this.namespace = options.targets.toString() + '-' + options.classes.toString();
-      } else {
-        // xtend unique mode
-        this.container = this.object;
-        this.namespace = XtUtil.getUniqueID('xt', options.targets.toString() + '-' + options.classes.toString());
-      }
+    if (options.targets && options.targets.indexOf('#') !== -1) {
+      // xtend document mode
+      this.container = document;
+      options.max = Infinity;
+      this.namespace = options.targets.toString() + '-' + options.classes.toString();
     } else {
+      // xtend unique mode
       this.container = this.object;
-      this.namespace = XtUtil.getUniqueID('xt', options.classes.toString());
+      this.namespace = XtUtil.getUniqueID();
     }
     // final namespace
     this.namespace = this.namespace.replace(/\W+/g, '');

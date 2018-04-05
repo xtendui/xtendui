@@ -79,13 +79,11 @@ XtUtil.cancelAnimationFrame = function () {
 
 /**
  * Get unique id
- * @param {String} prefix Text to prepend
- * @param {String} suffix Text to append
  * @returns {String} Unique id
  */
-XtUtil.getUniqueID = function (prefix, suffix) {
+XtUtil.getUniqueID = function () {
   XtUtil.uid = XtUtil.uid !== undefined ? XtUtil.uid : 0;
-  return prefix + '-' + XtUtil.uid++ + '-' + suffix;
+  return 'unique-id-' + XtUtil.uid++;
 };
 
 /**
@@ -136,6 +134,7 @@ XtUtil.createElement = function (str) {
 /**
  * Query element's parents
  * @param {Element} element Child element
+ * @param {String} query Query parents
  * @return {Element} Parents elements by query
  */
 XtUtil.parents = function (element, query) {
@@ -298,20 +297,15 @@ Xt.prototype = {
   initSetup: function initSetup() {
     var options = this.options;
     // setup (based on xtend mode)
-    if (options.targets) {
-      if (options.targets.indexOf('#') !== -1) {
-        // xtend document mode
-        this.container = document;
-        options.max = Infinity;
-        this.namespace = options.targets.toString() + '-' + options.classes.toString();
-      } else {
-        // xtend unique mode
-        this.container = this.object;
-        this.namespace = _xtendUtils2.default.getUniqueID('xt', options.targets.toString() + '-' + options.classes.toString());
-      }
+    if (options.targets && options.targets.indexOf('#') !== -1) {
+      // xtend document mode
+      this.container = document;
+      options.max = Infinity;
+      this.namespace = options.targets.toString() + '-' + options.classes.toString();
     } else {
+      // xtend unique mode
       this.container = this.object;
-      this.namespace = _xtendUtils2.default.getUniqueID('xt', options.classes.toString());
+      this.namespace = _xtendUtils2.default.getUniqueID();
     }
     // final namespace
     this.namespace = this.namespace.replace(/\W+/g, '');

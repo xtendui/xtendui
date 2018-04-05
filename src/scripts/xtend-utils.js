@@ -68,13 +68,11 @@ XtUtil.cancelAnimationFrame = function () {
 
 /**
  * Get unique id
- * @param {String} prefix Text to prepend
- * @param {String} suffix Text to append
  * @returns {String} Unique id
  */
-XtUtil.getUniqueID = function (prefix, suffix) {
+XtUtil.getUniqueID = function () {
   XtUtil.uid = XtUtil.uid !== undefined ? XtUtil.uid : 0;
-  return prefix + '-' + (XtUtil.uid++) + '-' + suffix;
+  return 'unique-id-' + (XtUtil.uid++);
 };
 
 /**
@@ -119,6 +117,7 @@ XtUtil.createElement = function (str) {
 /**
  * Query element's parents
  * @param {Element} element Child element
+ * @param {String} query Query parents
  * @return {Element} Parents elements by query
  */
 XtUtil.parents = function (element, query) {

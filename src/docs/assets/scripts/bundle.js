@@ -19,7 +19,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var elements = document.querySelectorAll('pre code');
 elements.forEach(function (element, i) {
-  hljs.highlightBlock(element);
+  element.innerHTML = element.innerHTML.replace(/^\s+|\s+$/g, ''); // remove newline at start and end
+  window.hljs.highlightBlock(element);
 });
 
 // .make-line
@@ -146,20 +147,18 @@ var populateDemo = function populateDemo(container, i) {
     var appendItem = _xtendUtils2.default.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-alt btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>');
     item.append(appendItem);
     // https://github.com/zenorocha/clipboard.js/
-    /*
     var clipboard = new Clipboard('.btn-clipboard', {
-      target: function(trigger) {
-        return $(trigger).parents('.demo').find('.demo-item.active .demo-code-body-item.active .hljs')[0];
+      target: function target(trigger) {
+        return _xtendUtils2.default.parents(trigger, '.demo')[0].querySelectorAll('.demo-item.active .demo-code-body-item.active .hljs')[0];
       }
     });
-    clipboard.on('success', function(e) {
+    clipboard.on('success', function (e) {
       e.clearSelection();
       //$(e.trigger).attr('data-original-title', 'Done').tooltip('show');
     });
-    clipboard.on('error', function(e) {
+    clipboard.on('error', function (e) {
       //$(e.trigger).attr('data-original-title', 'Error: copy manually').tooltip('show');
     });
-    */
     // inject iframe
     if (item.getAttribute('data-iframe')) {
       /*
@@ -412,13 +411,11 @@ XtUtil.cancelAnimationFrame = function () {
 
 /**
  * Get unique id
- * @param {String} prefix Text to prepend
- * @param {String} suffix Text to append
  * @returns {String} Unique id
  */
-XtUtil.getUniqueID = function (prefix, suffix) {
+XtUtil.getUniqueID = function () {
   XtUtil.uid = XtUtil.uid !== undefined ? XtUtil.uid : 0;
-  return prefix + '-' + XtUtil.uid++ + '-' + suffix;
+  return 'unique-id-' + XtUtil.uid++;
 };
 
 /**
@@ -469,6 +466,7 @@ XtUtil.createElement = function (str) {
 /**
  * Query element's parents
  * @param {Element} element Child element
+ * @param {String} query Query parents
  * @return {Element} Parents elements by query
  */
 XtUtil.parents = function (element, query) {
@@ -631,20 +629,15 @@ Xt.prototype = {
   initSetup: function initSetup() {
     var options = this.options;
     // setup (based on xtend mode)
-    if (options.targets) {
-      if (options.targets.indexOf('#') !== -1) {
-        // xtend document mode
-        this.container = document;
-        options.max = Infinity;
-        this.namespace = options.targets.toString() + '-' + options.classes.toString();
-      } else {
-        // xtend unique mode
-        this.container = this.object;
-        this.namespace = _xtendUtils2.default.getUniqueID('xt', options.targets.toString() + '-' + options.classes.toString());
-      }
+    if (options.targets && options.targets.indexOf('#') !== -1) {
+      // xtend document mode
+      this.container = document;
+      options.max = Infinity;
+      this.namespace = options.targets.toString() + '-' + options.classes.toString();
     } else {
+      // xtend unique mode
       this.container = this.object;
-      this.namespace = _xtendUtils2.default.getUniqueID('xt', options.classes.toString());
+      this.namespace = _xtendUtils2.default.getUniqueID();
     }
     // final namespace
     this.namespace = this.namespace.replace(/\W+/g, '');
