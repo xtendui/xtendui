@@ -930,8 +930,8 @@ pre code {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   text-align: left;
 }
 .list-block > li > a:not(.btn) > span,
@@ -947,8 +947,8 @@ pre code {
 .list-block > li > a:not(.btn).out,
 .list-block > li > button:not(.btn).out {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .list-line {
   display: -webkit-box;
@@ -990,8 +990,8 @@ pre code {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   text-align: left;
 }
 .list-line > li > a:not(.btn) > span,
@@ -1007,8 +1007,8 @@ pre code {
 .list-line > li > a:not(.btn).out,
 .list-line > li > button:not(.btn).out {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .list-left > li > a,
 .list-left > li > button {
@@ -1454,8 +1454,8 @@ html.xt-fixed .overlay {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   text-align: left;
 }
 .form-inline .form-group > li > a:not(.btn) > span,
@@ -1471,8 +1471,8 @@ html.xt-fixed .overlay {
 .form-inline .form-group > li > a:not(.btn).out,
 .form-inline .form-group > li > button:not(.btn).out {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .form-inline .form-group > * {
   margin: 0 0;
@@ -4248,8 +4248,8 @@ select.input-control {
 .collapse-left,
 .collapse-right {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .collapse-height.out,
 .collapse-width.out,
@@ -4258,17 +4258,17 @@ select.input-control {
 .collapse-left.out,
 .collapse-right.out {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-vertical {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-vertical.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-vertical.active {
   animation-name: anim-vertical-in;
@@ -4280,7 +4280,7 @@ select.input-control {
 @keyframes anim-vertical-in {
   0% {
     opacity: 0;
-    transform: translateY(-1rem);
+    transform: translateY(-1.5rem);
   }
   100% {
     opacity: 1;
@@ -4294,17 +4294,17 @@ select.input-control {
   }
   100% {
     opacity: 0;
-    transform: translateY(1rem);
+    transform: translateY(1.5rem);
   }
 }
 .anim-horizontal {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-horizontal.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-horizontal.active {
   animation-name: anim-horizontal-in;
@@ -4316,7 +4316,7 @@ select.input-control {
 @keyframes anim-horizontal-in {
   0% {
     opacity: 0;
-    transform: translateX(-1rem);
+    transform: translateX(-1.5rem);
   }
   100% {
     opacity: 1;
@@ -4330,17 +4330,17 @@ select.input-control {
   }
   100% {
     opacity: 0;
-    transform: translateX(1rem);
+    transform: translateX(1.5rem);
   }
 }
 .anim-top {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-top.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-top.active {
   animation-name: anim-top-in;
@@ -4352,7 +4352,7 @@ select.input-control {
 @keyframes anim-top-in {
   0% {
     opacity: 0;
-    transform: translateY(-1rem);
+    transform: translateY(-1.5rem);
   }
   100% {
     opacity: 1;
@@ -4366,17 +4366,17 @@ select.input-control {
   }
   100% {
     opacity: 0;
-    transform: translateY(-1rem);
+    transform: translateY(-1.5rem);
   }
 }
 .anim-bottom {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-bottom.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-bottom.active {
   animation-name: anim-bottom-in;
@@ -4388,7 +4388,7 @@ select.input-control {
 @keyframes anim-bottom-in {
   0% {
     opacity: 0;
-    transform: translateY(1rem);
+    transform: translateY(1.5rem);
   }
   100% {
     opacity: 1;
@@ -4402,17 +4402,17 @@ select.input-control {
   }
   100% {
     opacity: 0;
-    transform: translateY(1rem);
+    transform: translateY(1.5rem);
   }
 }
 .anim-left {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-left.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-left.active {
   animation-name: anim-left-in;
@@ -4424,7 +4424,7 @@ select.input-control {
 @keyframes anim-left-in {
   0% {
     opacity: 0;
-    transform: translateX(-1rem);
+    transform: translateX(-1.5rem);
   }
   100% {
     opacity: 1;
@@ -4438,17 +4438,17 @@ select.input-control {
   }
   100% {
     opacity: 0;
-    transform: translateX(-1rem);
+    transform: translateX(-1.5rem);
   }
 }
 .anim-right {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-right.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-right.active {
   animation-name: anim-right-in;
@@ -4460,7 +4460,7 @@ select.input-control {
 @keyframes anim-right-in {
   0% {
     opacity: 0;
-    transform: translateX(1rem);
+    transform: translateX(1.5rem);
   }
   100% {
     opacity: 1;
@@ -4474,17 +4474,17 @@ select.input-control {
   }
   100% {
     opacity: 0;
-    transform: translateX(1rem);
+    transform: translateX(1.5rem);
   }
 }
 .anim-backdrop {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 0.6;
 }
 .anim-backdrop.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-backdrop.active {
   animation-name: anim-backdrop-in;
@@ -5088,13 +5088,13 @@ a:hover,
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .btn.out {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .btn-tiny {
   padding: .6em 1.2em;
@@ -5556,8 +5556,8 @@ a:hover,
   top: 100%;
   bottom: auto;
   padding: 6px 0;
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .drop .drop-inner {
@@ -5587,8 +5587,8 @@ a:hover,
   font-size: 1.2rem;
 }
 .drop.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .drop.active {
   animation-name: anim-vertical-in;
@@ -5654,13 +5654,13 @@ a:hover,
   color: #343a40;
 }
 .overlay .overlay-content {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .overlay .overlay-content.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .overlay .overlay-content.active {
   animation-name: anim-vertical-in;
@@ -5693,14 +5693,14 @@ a:hover,
 }
 .loader-mask {
   background-color: rgba(255, 255, 255, 0.6);
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
   animation-name: anim-vertical-in;
 }
 .loader-mask.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .loader-mask.active {
   animation-name: anim-vertical-in;
@@ -5720,13 +5720,13 @@ a:hover,
 }
 .xt-backdrop {
   background-color: #120a67;
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 0.6;
 }
 .xt-backdrop.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .xt-backdrop.active {
   animation-name: anim-backdrop-in;
@@ -5810,8 +5810,8 @@ legend:last-child {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   text-align: left;
 }
 .form-group.inline > li > a:not(.btn) > span,
@@ -5827,8 +5827,8 @@ legend:last-child {
 .form-group.inline > li > a:not(.btn).out,
 .form-group.inline > li > button:not(.btn).out {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .form-group.inline > * {
   margin: 0 0;
@@ -5903,8 +5903,8 @@ legend:last-child {
   background-color: #d4e7ef;
   color: rgba(52, 58, 64, 0.8);
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .input-control:hover,
 .input-control:focus {
@@ -5919,8 +5919,8 @@ select.input-control {
 }
 .input-control.out {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .input-control-secondary {
   border-color: #d4e7ef;

@@ -930,8 +930,8 @@ pre code {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   text-align: left;
 }
 .list-block > li > a:not(.btn) > span,
@@ -947,8 +947,8 @@ pre code {
 .list-block > li > a:not(.btn).out,
 .list-block > li > button:not(.btn).out {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .list-line {
   display: -webkit-box;
@@ -990,8 +990,8 @@ pre code {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   text-align: left;
 }
 .list-line > li > a:not(.btn) > span,
@@ -1007,8 +1007,8 @@ pre code {
 .list-line > li > a:not(.btn).out,
 .list-line > li > button:not(.btn).out {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .list-left > li > a,
 .list-left > li > button {
@@ -1454,8 +1454,8 @@ html.xt-fixed .overlay {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   text-align: left;
 }
 .form-inline .form-group > li > a:not(.btn) > span,
@@ -1471,8 +1471,8 @@ html.xt-fixed .overlay {
 .form-inline .form-group > li > a:not(.btn).out,
 .form-inline .form-group > li > button:not(.btn).out {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .form-inline .form-group > * {
   margin: 0 0;
@@ -4248,8 +4248,8 @@ select.input-control {
 .collapse-left,
 .collapse-right {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .collapse-height.out,
 .collapse-width.out,
@@ -4258,17 +4258,17 @@ select.input-control {
 .collapse-left.out,
 .collapse-right.out {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-vertical {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-vertical.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-vertical.active {
   animation-name: anim-vertical-in;
@@ -4280,7 +4280,7 @@ select.input-control {
 @keyframes anim-vertical-in {
   0% {
     opacity: 0;
-    transform: translateY(-1rem);
+    transform: translateY(-1.5rem);
   }
   100% {
     opacity: 1;
@@ -4294,17 +4294,17 @@ select.input-control {
   }
   100% {
     opacity: 0;
-    transform: translateY(1rem);
+    transform: translateY(1.5rem);
   }
 }
 .anim-horizontal {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-horizontal.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-horizontal.active {
   animation-name: anim-horizontal-in;
@@ -4316,7 +4316,7 @@ select.input-control {
 @keyframes anim-horizontal-in {
   0% {
     opacity: 0;
-    transform: translateX(-1rem);
+    transform: translateX(-1.5rem);
   }
   100% {
     opacity: 1;
@@ -4330,17 +4330,17 @@ select.input-control {
   }
   100% {
     opacity: 0;
-    transform: translateX(1rem);
+    transform: translateX(1.5rem);
   }
 }
 .anim-top {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-top.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-top.active {
   animation-name: anim-top-in;
@@ -4352,7 +4352,7 @@ select.input-control {
 @keyframes anim-top-in {
   0% {
     opacity: 0;
-    transform: translateY(-1rem);
+    transform: translateY(-1.5rem);
   }
   100% {
     opacity: 1;
@@ -4366,17 +4366,17 @@ select.input-control {
   }
   100% {
     opacity: 0;
-    transform: translateY(-1rem);
+    transform: translateY(-1.5rem);
   }
 }
 .anim-bottom {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-bottom.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-bottom.active {
   animation-name: anim-bottom-in;
@@ -4388,7 +4388,7 @@ select.input-control {
 @keyframes anim-bottom-in {
   0% {
     opacity: 0;
-    transform: translateY(1rem);
+    transform: translateY(1.5rem);
   }
   100% {
     opacity: 1;
@@ -4402,17 +4402,17 @@ select.input-control {
   }
   100% {
     opacity: 0;
-    transform: translateY(1rem);
+    transform: translateY(1.5rem);
   }
 }
 .anim-left {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-left.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-left.active {
   animation-name: anim-left-in;
@@ -4424,7 +4424,7 @@ select.input-control {
 @keyframes anim-left-in {
   0% {
     opacity: 0;
-    transform: translateX(-1rem);
+    transform: translateX(-1.5rem);
   }
   100% {
     opacity: 1;
@@ -4438,17 +4438,17 @@ select.input-control {
   }
   100% {
     opacity: 0;
-    transform: translateX(-1rem);
+    transform: translateX(-1.5rem);
   }
 }
 .anim-right {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-right.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-right.active {
   animation-name: anim-right-in;
@@ -4460,7 +4460,7 @@ select.input-control {
 @keyframes anim-right-in {
   0% {
     opacity: 0;
-    transform: translateX(1rem);
+    transform: translateX(1.5rem);
   }
   100% {
     opacity: 1;
@@ -4474,17 +4474,17 @@ select.input-control {
   }
   100% {
     opacity: 0;
-    transform: translateX(1rem);
+    transform: translateX(1.5rem);
   }
 }
 .anim-backdrop {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 0.6;
 }
 .anim-backdrop.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-backdrop.active {
   animation-name: anim-backdrop-in;
@@ -5088,13 +5088,13 @@ a:hover,
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .btn.out {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .btn-tiny {
   padding: .6em 1.2em;
@@ -5556,8 +5556,8 @@ a:hover,
   top: 100%;
   bottom: auto;
   padding: 6px 0;
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .drop .drop-inner {
@@ -5587,8 +5587,8 @@ a:hover,
   font-size: 1.2rem;
 }
 .drop.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .drop.active {
   animation-name: anim-vertical-in;
@@ -5654,13 +5654,13 @@ a:hover,
   color: #343a40;
 }
 .overlay .overlay-content {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .overlay .overlay-content.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .overlay .overlay-content.active {
   animation-name: anim-vertical-in;
@@ -5693,14 +5693,14 @@ a:hover,
 }
 .loader-mask {
   background-color: rgba(255, 255, 255, 0.6);
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
   animation-name: anim-vertical-in;
 }
 .loader-mask.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .loader-mask.active {
   animation-name: anim-vertical-in;
@@ -5720,13 +5720,13 @@ a:hover,
 }
 .xt-backdrop {
   background-color: #120a67;
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 0.6;
 }
 .xt-backdrop.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .xt-backdrop.active {
   animation-name: anim-backdrop-in;
@@ -5810,8 +5810,8 @@ legend:last-child {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   text-align: left;
 }
 .form-group.inline > li > a:not(.btn) > span,
@@ -5827,8 +5827,8 @@ legend:last-child {
 .form-group.inline > li > a:not(.btn).out,
 .form-group.inline > li > button:not(.btn).out {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .form-group.inline > * {
   margin: 0 0;
@@ -5903,8 +5903,8 @@ legend:last-child {
   background-color: #d4e7ef;
   color: rgba(52, 58, 64, 0.8);
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .input-control:hover,
 .input-control:focus {
@@ -5919,8 +5919,8 @@ select.input-control {
 }
 .input-control.out {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .input-control-secondary {
   border-color: #d4e7ef;
@@ -6261,13 +6261,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-size: 3rem;
   text-decoration: none !important;
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .logo.out {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .logo:hover,
 .logo:active,
@@ -6385,16 +6385,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   animation-delay: 100ms;
 }
 .site-breadcrumbs-body-sub.active .btn {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
   animation-name: anim-left-in;
   animation-fill-mode: forwards;
   opacity: 0;
 }
 .site-breadcrumbs-body-sub.active .btn.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .site-breadcrumbs-body-sub.active .btn.active {
   animation-name: anim-left-in;
@@ -6404,17 +6404,17 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   animation-name: anim-left-out;
 }
 .site-breadcrumbs-body-sub.out .btn {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-right-out;
-  animation-duration: 300ms;
   animation-fill-mode: forwards;
   opacity: 1;
 }
 .site-breadcrumbs-body-sub.out .btn.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .site-breadcrumbs-body-sub.out .btn.active {
   animation-name: anim-right-in;
@@ -6450,15 +6450,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   left: 0;
   transform: rotate(0deg);
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
-  transition-duration: 300ms;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   will-change: top, transform;
 }
 .btn-menu .icon-menu-custom span.out {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .btn-menu .icon-menu-custom span:nth-child(1) {
   top: 0;
@@ -6523,20 +6522,20 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   opacity: 1;
 }
 .site-menu {
-  transition-delay: 150ms;
+  transition-delay: 250ms;
 }
 .site-menu.active .site-menu-content .btn .line-container {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
   animation-name: anim-left-in;
   animation-fill-mode: forwards;
   opacity: 0;
-  animation-delay: 500ms;
+  animation-delay: 450ms;
 }
 .site-menu.active .site-menu-content .btn .line-container.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .site-menu.active .site-menu-content .btn .line-container.active {
   animation-name: anim-left-in;
@@ -6546,30 +6545,30 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   animation-name: anim-left-out;
 }
 .site-menu.active .site-menu-content .btn:nth-child(1) .line-container {
-  animation-delay: 350ms;
+  animation-delay: 300ms;
 }
 .site-menu.active .site-menu-content .btn:nth-child(2) .line-container {
-  animation-delay: 400ms;
+  animation-delay: 350ms;
 }
 .site-menu.active .site-menu-content .btn:nth-child(3) .line-container {
-  animation-delay: 450ms;
+  animation-delay: 400ms;
 }
 .site-menu.active .site-menu-content .btn:nth-child(4) .line-container {
-  animation-delay: 500ms;
+  animation-delay: 450ms;
 }
 .site-menu.out .site-menu-content .btn .line-container {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-right-out;
-  animation-duration: 300ms;
   animation-fill-mode: forwards;
   opacity: 1;
   animation-delay: 200ms;
 }
 .site-menu.out .site-menu-content .btn .line-container.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .site-menu.out .site-menu-content .btn .line-container.active {
   animation-name: anim-right-in;
@@ -6748,15 +6747,24 @@ h2 .make-line .line-container .line:after {
   left: 100%;
   width: 0;
   opacity: 0;
-  transition: opacity 600ms cubic-bezier(0.63, 0.36, 0, 0.97) 150ms;
-  animation: line-out 600ms cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  animation: line-out 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .make-line:hover .line:after {
   left: 0;
   width: 100%;
   opacity: 1;
-  transition: opacity 600ms cubic-bezier(0.63, 0.36, 0, 0.97);
-  animation: line-in 600ms cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation: line-in 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.make-line:hover .line:after.out {
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 @keyframes line-out {
   0% {
@@ -6789,13 +6797,24 @@ h2 .make-line .line-container .line:after {
 .make-anchor .site-article-anchor {
   pointer-events: none;
   opacity: 0;
-  transition: opacity 600ms cubic-bezier(0.63, 0.36, 0, 0.97) 600ms;
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .make-anchor:hover .site-article-anchor,
 .make-anchor:active .site-article-anchor,
 .make-anchor.active .site-article-anchor {
   opacity: 1;
-  transition: opacity 600ms cubic-bezier(0.63, 0.36, 0, 0.97) 150ms;
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.make-anchor:hover .site-article-anchor.out,
+.make-anchor:active .site-article-anchor.out,
+.make-anchor.active .site-article-anchor.out {
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .site-article-anchor {
   position: absolute;
@@ -6938,18 +6957,18 @@ h2 .make-line .line-container .line:after {
   display: none;
 }
 .site-header-top[data-xt-scroll].scroll-on-bottom {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   animation-name: anim-top-in;
 }
 .site-header-top[data-xt-scroll].scroll-on-bottom.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .site-breadcrumbs[data-xt-scroll] {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .site-breadcrumbs[data-xt-scroll] .show-scroll {
   display: none;
@@ -6986,19 +7005,19 @@ h2 .make-line .line-container .line:after {
 }
 .site-breadcrumbs[data-xt-scroll] .site-breadcrumbs-inside {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) {
   padding: 1.5rem;
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .site-breadcrumbs[data-xt-scroll].active:not(.xt-clone).out {
   transition-property: all;
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) .site-breadcrumbs-inside {
   padding-top: 0.75rem;
@@ -7007,13 +7026,13 @@ h2 .make-line .line-container .line:after {
   background-color: rgba(115, 103, 240, 0.8);
 }
 .site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) .site-breadcrumbs-meta {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   animation-name: anim-right-in;
 }
 .site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) .site-breadcrumbs-meta.out {
-  animation-duration: 600ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .site-aside[data-xt-scroll] .show-scroll {
   display: none;

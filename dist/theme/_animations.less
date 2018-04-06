@@ -2,8 +2,6 @@
 // defaults
 //////////////////////
 
-@opacity-min: 0;
-
 // .animation-default();
 
 .animation-default() {
@@ -32,6 +30,9 @@
 // animations
 //////////////////////
 
+@anim-opacity: 0;
+@anim-size: 1.5rem;
+
 // .collapse
 
 .collapse-height,
@@ -52,15 +53,15 @@
     animation-name: anim-vertical-in;
   }
   &.out {
-    opacity: @opacity-min;
+    opacity: @anim-opacity;
     animation-name: anim-vertical-out;
   }
 }
 
 @keyframes anim-vertical-in {
   0% {
-    opacity: @opacity-min;
-    transform: translateY(-1rem);
+    opacity: @anim-opacity;
+    transform: translateY(-@anim-size);
   }
   100% {
     opacity: 1;
@@ -74,8 +75,8 @@
     transform: translateY(0);
   }
   100% {
-    opacity: @opacity-min;
-    transform: translateY(1rem);
+    opacity: @anim-opacity;
+    transform: translateY(@anim-size);
   }
 }
 
@@ -88,15 +89,15 @@
     animation-name: anim-horizontal-in;
   }
   &.out {
-    opacity: @opacity-min;
+    opacity: @anim-opacity;
     animation-name: anim-horizontal-out;
   }
 }
 
 @keyframes anim-horizontal-in {
   0% {
-    opacity: @opacity-min;
-    transform: translateX(-1rem);
+    opacity: @anim-opacity;
+    transform: translateX(-@anim-size);
   }
   100% {
     opacity: 1;
@@ -110,8 +111,8 @@
     transform: translateX(0);
   }
   100% {
-    opacity: @opacity-min;
-    transform: translateX(1rem);
+    opacity: @anim-opacity;
+    transform: translateX(@anim-size);
   }
 }
 
@@ -124,15 +125,15 @@
     animation-name: anim-top-in;
   }
   &.out {
-    opacity: @opacity-min;
+    opacity: @anim-opacity;
     animation-name: anim-top-out;
   }
 }
 
 @keyframes anim-top-in {
   0% {
-    opacity: @opacity-min;
-    transform: translateY(-1rem);
+    opacity: @anim-opacity;
+    transform: translateY(-@anim-size);
   }
   100% {
     opacity: 1;
@@ -146,8 +147,8 @@
     transform: translateX(0);
   }
   100% {
-    opacity: @opacity-min;
-    transform: translateY(-1rem);
+    opacity: @anim-opacity;
+    transform: translateY(-@anim-size);
   }
 }
 
@@ -160,15 +161,15 @@
     animation-name: anim-bottom-in;
   }
   &.out {
-    opacity: @opacity-min;
+    opacity: @anim-opacity;
     animation-name: anim-bottom-out;
   }
 }
 
 @keyframes anim-bottom-in {
   0% {
-    opacity: @opacity-min;
-    transform: translateY(1rem);
+    opacity: @anim-opacity;
+    transform: translateY(@anim-size);
   }
   100% {
     opacity: 1;
@@ -182,8 +183,8 @@
     transform: translateX(0);
   }
   100% {
-    opacity: @opacity-min;
-    transform: translateY(1rem);
+    opacity: @anim-opacity;
+    transform: translateY(@anim-size);
   }
 }
 
@@ -196,15 +197,15 @@
     animation-name: anim-left-in;
   }
   &.out {
-    opacity: @opacity-min;
+    opacity: @anim-opacity;
     animation-name: anim-left-out;
   }
 }
 
 @keyframes anim-left-in {
   0% {
-    opacity: @opacity-min;
-    transform: translateX(-1rem);
+    opacity: @anim-opacity;
+    transform: translateX(-@anim-size);
   }
   100% {
     opacity: 1;
@@ -218,8 +219,8 @@
     transform: translateY(0);
   }
   100% {
-    opacity: @opacity-min;
-    transform: translateX(-1rem);
+    opacity: @anim-opacity;
+    transform: translateX(-@anim-size);
   }
 }
 
@@ -232,15 +233,15 @@
     animation-name: anim-right-in;
   }
   &.out {
-    opacity: @opacity-min;
+    opacity: @anim-opacity;
     animation-name: anim-right-out;
   }
 }
 
 @keyframes anim-right-in {
   0% {
-    opacity: @opacity-min;
-    transform: translateX(1rem);
+    opacity: @anim-opacity;
+    transform: translateX(@anim-size);
   }
   100% {
     opacity: 1;
@@ -254,8 +255,8 @@
     transform: translateY(0);
   }
   100% {
-    opacity: @opacity-min;
-    transform: translateX(1rem);
+    opacity: @anim-opacity;
+    transform: translateX(@anim-size);
   }
 }
 
@@ -268,14 +269,14 @@
     animation-name: anim-backdrop-in;
   }
   &.out {
-    opacity: @opacity-min;
+    opacity: @anim-opacity;
     animation-name: anim-backdrop-out;
   }
 }
 
 @keyframes anim-backdrop-in {
   0% {
-    opacity: @opacity-min;
+    opacity: @anim-opacity;
   }
   100% {
     opacity: @backdrop-opacity;
@@ -287,14 +288,14 @@
     opacity: @backdrop-opacity;
   }
   100% {
-    opacity: @opacity-min;
+    opacity: @anim-opacity;
   }
 }
 
 // anim-rotate
 
 .anim-rotate {
-  animation: preload-rotate @opacity-min infinite linear;
+  animation: preload-rotate @anim-opacity infinite linear;
   will-change: transform;
 }
 

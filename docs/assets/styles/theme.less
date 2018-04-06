@@ -193,7 +193,6 @@
     .btn {
       .anim-right();
       .anim-right.out();
-      animation-duration: @time-small;
       animation-fill-mode: forwards;
       opacity: 1;
     }
@@ -230,7 +229,6 @@
       transform: rotate(0deg);
       // animations
       .transition-default();
-      transition-duration: @time-small;
       will-change: top, transform;
     }
     span:nth-child(1) {
@@ -314,7 +312,7 @@
 // animations
 
 .site-menu {
-  transition-delay: @time-tiny;
+  transition-delay: @time-default;
 }
 
 .site-menu.active {
@@ -325,9 +323,9 @@
         .anim-left.active();
         animation-fill-mode: forwards;
         opacity: 0;
-        animation-delay: @time-small + 200ms; // default delay @start + @child * @increment
+        animation-delay: @time-default + 200ms; // default delay @start + @child * @increment
       }
-      .nth-child(@child:4, @start:@time-small, @increment:50ms, @decrement:0ms, { .line-container {
+      .nth-child(@child:4, @start:@time-default, @increment:50ms, @decrement:0ms, { .line-container {
         @nth-child-animation-delay();
       } });
     }
@@ -340,7 +338,6 @@
       .line-container {
         .anim-right();
         .anim-right.out();
-        animation-duration: @time-small;
         animation-fill-mode: forwards;
         opacity: 1;
         animation-delay: 200ms; // default delay @start + @child * @increment
@@ -491,7 +488,7 @@
     left: 100%;
     width: 0;
     opacity: 0;
-    transition: opacity @time-default @bez-out @time-tiny;
+    .transition-default.out();
     animation: line-out @time-default @bez-out;
   }
   &:hover {
@@ -499,7 +496,7 @@
       left: 0;
       width: 100%;
       opacity: 1;
-      transition: opacity @time-default @bez-in;
+      .transition-default();
       animation: line-in @time-default @bez-in;
     }
   }
@@ -539,13 +536,13 @@
   .site-article-anchor {
     pointer-events: none;
     opacity: 0;
-    transition: opacity @time-default @bez-out @time-default;
+    .transition-default.out();
   }
   &:hover,
   &:active, &.active {
     .site-article-anchor {
       opacity: 1;
-      transition: opacity @time-default @bez-in @time-tiny;
+      .transition-default();
     }
   }
 }
