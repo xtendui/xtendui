@@ -5,10 +5,10 @@
 // .animation-default();
 
 .animation-default() {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(.63, .36, 0, .97);
+  animation-duration: @timing-small;
+  animation-timing-function: @bezier-in;
   &.out {
-    animation-timing-function: cubic-bezier(.63, .36, 0, .97);
+    animation-timing-function: @bezier-out;
   }
 }
 
@@ -16,10 +16,10 @@
 
 .transition-default() {
   transition-property: all;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(.63, .36, 0, .97);
+  transition-duration: @timing-small;
+  transition-timing-function: @bezier-in;
   &.out {
-    transition-timing-function: cubic-bezier(.63, .36, 0, .97);
+    transition-timing-function: @bezier-out;
   }
 }
 

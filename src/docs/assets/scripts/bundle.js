@@ -144,11 +144,16 @@ try {
     var _iteratorError11 = undefined;
 
     try {
-      for (var _iterator11 = document.querySelectorAll('.site-article > h2')[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
+      for (var _iterator11 = document.querySelectorAll('.site-article > h2, .site-article > h3')[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
         var element = _step11.value;
 
-        container.append(_xtendUtils2.default.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-secondary-alt btn-small site-aside-sub">' + element.textContent + '</a>'));
-        container.append(_xtendUtils2.default.createElement('<div class="site-aside-subsub"></div>'));
+        if (element.tagName === 'H2') {
+          container.append(_xtendUtils2.default.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-site-aside-sub">' + element.textContent + '</a>'));
+          container.append(_xtendUtils2.default.createElement('<div class="site-aside-subsub"></div>'));
+        } else if (element.tagName === 'H3') {
+          var subs = container.querySelectorAll('.site-aside-subsub');
+          subs[subs.length - 1].append(_xtendUtils2.default.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-site-aside-subsub">' + element.textContent + '</a>'));
+        }
       }
     } catch (err) {
       _didIteratorError11 = true;
@@ -161,32 +166,6 @@ try {
       } finally {
         if (_didIteratorError11) {
           throw _iteratorError11;
-        }
-      }
-    }
-
-    var _iteratorNormalCompletion12 = true;
-    var _didIteratorError12 = false;
-    var _iteratorError12 = undefined;
-
-    try {
-      for (var _iterator12 = document.querySelectorAll('.site-article > h3')[Symbol.iterator](), _step12; !(_iteratorNormalCompletion12 = (_step12 = _iterator12.next()).done); _iteratorNormalCompletion12 = true) {
-        var _element = _step12.value;
-
-        var item = container.querySelectorAll('.site-aside-subsub');
-        item[item.length - 1].append(_xtendUtils2.default.createElement('<a href="#' + _element.getAttribute('id') + '" class="btn btn-secondary-alt btn-tiny">' + _element.textContent + '</a>'));
-      }
-    } catch (err) {
-      _didIteratorError12 = true;
-      _iteratorError12 = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion12 && _iterator12.return) {
-          _iterator12.return();
-        }
-      } finally {
-        if (_didIteratorError12) {
-          throw _iteratorError12;
         }
       }
     }
@@ -209,6 +188,7 @@ try {
 }
 
 var activateAsideScroll = function activateAsideScroll(els, scrollTop) {
+  var dist = window.innerHeight / 5;
   var _iteratorNormalCompletion6 = true;
   var _didIteratorError6 = false;
   var _iteratorError6 = undefined;
@@ -221,9 +201,9 @@ var activateAsideScroll = function activateAsideScroll(els, scrollTop) {
       if (href) {
         var target = document.querySelectorAll(href);
         var rect = target[0].getBoundingClientRect();
-        var top = rect.top;
+        var top = rect.top + scrollTop;
         var bottom = Infinity;
-        if (scrollTop >= top && scrollTop < bottom) {
+        if (scrollTop >= top - dist && scrollTop < bottom - dist) {
           if (!el.classList.contains('active')) {
             var _iteratorNormalCompletion7 = true;
             var _didIteratorError7 = false;
@@ -233,7 +213,11 @@ var activateAsideScroll = function activateAsideScroll(els, scrollTop) {
               for (var _iterator7 = els[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
                 var element = _step7.value;
 
-                element.classList.remove('active');
+                if (element !== el) {
+                  element.classList.remove('active');
+                } else {
+                  el.classList.add('active');
+                }
               }
             } catch (err) {
               _didIteratorError7 = true;
@@ -249,8 +233,6 @@ var activateAsideScroll = function activateAsideScroll(els, scrollTop) {
                 }
               }
             }
-
-            el.classList.add('active');
           }
         } else {
           if (el.classList.contains('active')) {
@@ -276,9 +258,15 @@ var activateAsideScroll = function activateAsideScroll(els, scrollTop) {
 };
 window.addEventListener('scroll', function (e) {
   var scrollTop = document.documentElement.scrollTop;
-  var sub = document.querySelectorAll('.btn.site-aside-sub');
+  var sub = Array.from(document.querySelectorAll('.btn-site-aside-sub'));
+  sub = sub.filter(function (x) {
+    return !_xtendUtils2.default.parents(x, '.xt-clone').length;
+  }); // filter out parent
   activateAsideScroll(sub, scrollTop);
-  var subsub = document.querySelectorAll('.btn.site-aside-sub.active + .site-aside-subsub .btn');
+  var subsub = Array.from(document.querySelectorAll('.btn-site-aside-sub.active + .site-aside-subsub .btn-site-aside-subsub'));
+  subsub = subsub.filter(function (x) {
+    return !_xtendUtils2.default.parents(x, '.xt-clone').length;
+  }); // filter out parent
   activateAsideScroll(subsub, scrollTop);
 });
 
@@ -1009,7 +997,7 @@ var Xt = exports.Xt = function () {
         var arr = Array.from(this.container.querySelectorAll(options.targets));
         arr = arr.filter(function (x) {
           return !_xtendUtils2.default.parents(x, options.targets).length;
-        }); // filter out nested options.targets
+        }); // filter out parent
         this.targets = _xtendUtils2.default.arrSingle(arr);
       }
       // @FIX set namespace for next frame
@@ -1499,27 +1487,30 @@ var Xt = exports.Xt = function () {
         var h = el.clientHeight + 'px';
         var pt = el.style.paddingTop;
         var pb = el.style.paddingBottom;
-        el.style.height = h;
-        el.style.paddingTop = pt;
-        el.style.paddingBottom = pb;
         _xtendUtils2.default.requestAnimationFrame.call(window, function () {
-          console.log(h, el.clientHeight);
-          el.style.height = '0';
-          el.style.paddingTop = '0';
-          el.style.paddingBottom = '0';
+          el.style.height = h;
+          el.style.paddingTop = pt;
+          el.style.paddingBottom = pb;
+          _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+            el.style.height = '0';
+            el.style.paddingTop = '0';
+            el.style.paddingBottom = '0';
+          });
         });
       }
       if (el.classList.contains('collapse-width')) {
         var w = el.clientWidth + 'px';
         var pl = el.style.paddingLeft;
         var pr = el.style.paddingRight;
-        el.style.width = w;
-        el.style.paddingLeft = pl;
-        el.style.paddingRight = pr;
         _xtendUtils2.default.requestAnimationFrame.call(window, function () {
-          el.style.width = '0';
-          el.style.paddingLeft = '0';
-          el.style.paddingRight = '0';
+          el.style.width = w;
+          el.style.paddingLeft = pl;
+          el.style.paddingRight = pr;
+          _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+            el.style.width = '0';
+            el.style.paddingLeft = '0';
+            el.style.paddingRight = '0';
+          });
         });
       }
     }

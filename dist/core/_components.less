@@ -337,6 +337,19 @@ a, .alink, .btn-link {
   }
 }
 
+// .xt-container
+
+.xt-container {
+  position: relative;
+  width: 100%;
+}
+// .xt-position
+
+.xt-position {
+  float: left;
+  width: 100%;
+}
+
 // .xt-backdrop
 
 .xt-backdrop {
@@ -377,6 +390,7 @@ html.xt-fixed {
   &.xt-clone {
     position: absolute !important;
     visibility: hidden !important;
+    top: 0 !important;
     &.active {
       position: relative !important;
     }
@@ -386,7 +400,7 @@ html.xt-fixed {
     &.xt-clone {
       position: relative !important;
     }
-    .xt-position > & {
+    .xt-container > & {
       position: absolute;
       width: 100%;
     }
@@ -396,7 +410,7 @@ html.xt-fixed {
     &.xt-clone {
       position: relative !important;
     }
-    .xt-position > & {
+    .xt-container > & {
       position: fixed;
       width: 100%;
     }
@@ -405,7 +419,8 @@ html.xt-fixed {
   &.active:not(.xt-clone) {
     position: fixed !important;
     width: inherit; // fix fixed width
-    z-index: 70;
+    .by-key(@core-indexes, scroll);
+    z-index: @by-key;
     & when (@position = 'top') {
       top: @pos;
     }

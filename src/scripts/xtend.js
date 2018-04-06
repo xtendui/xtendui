@@ -87,7 +87,7 @@ export class Xt {
     // targets
     if (options.targets) {
       let arr = Array.from(this.container.querySelectorAll(options.targets));
-      arr = arr.filter(x => !XtUtil.parents(x, options.targets).length); // filter out nested options.targets
+      arr = arr.filter(x => !XtUtil.parents(x, options.targets).length); // filter out parent
       this.targets = XtUtil.arrSingle(arr);
     }
     // @FIX set namespace for next frame
@@ -426,27 +426,30 @@ export class Xt {
       let h = el.clientHeight + 'px';
       let pt = el.style.paddingTop;
       let pb = el.style.paddingBottom;
-      el.style.height = h;
-      el.style.paddingTop = pt;
-      el.style.paddingBottom = pb;
       XtUtil.requestAnimationFrame.call(window, function () {
-        console.log(h, el.clientHeight);
-        el.style.height = '0';
-        el.style.paddingTop = '0';
-        el.style.paddingBottom = '0';
+        el.style.height = h;
+        el.style.paddingTop = pt;
+        el.style.paddingBottom = pb;
+        XtUtil.requestAnimationFrame.call(window, function () {
+          el.style.height = '0';
+          el.style.paddingTop = '0';
+          el.style.paddingBottom = '0';
+        });
       });
     }
     if (el.classList.contains('collapse-width')) {
       let w = el.clientWidth + 'px';
       let pl = el.style.paddingLeft;
       let pr = el.style.paddingRight;
-      el.style.width = w;
-      el.style.paddingLeft = pl;
-      el.style.paddingRight = pr;
       XtUtil.requestAnimationFrame.call(window, function () {
-        el.style.width = '0';
-        el.style.paddingLeft = '0';
-        el.style.paddingRight = '0';
+        el.style.width = w;
+        el.style.paddingLeft = pl;
+        el.style.paddingRight = pr;
+        XtUtil.requestAnimationFrame.call(window, function () {
+          el.style.width = '0';
+          el.style.paddingLeft = '0';
+          el.style.paddingRight = '0';
+        });
       });
     }
   }

@@ -87,7 +87,7 @@
 // .site-header-top
 
 .site-header-top {
-  background-color: fade(@primary, 85%);
+  background-color: fade(@primary, 80%);
   color: @white;
   .site-menu & {
     position: absolute;
@@ -198,8 +198,9 @@
       border-radius: 0;
       left: 0;
       transform: rotate(0deg);
+      // animations
       .transition-default();
-      transition-duration: 600ms;
+      transition-duration: @timing-medium;
       will-change: top, transform;
     }
     span:nth-child(1) {
@@ -282,12 +283,14 @@
 }
 
 /*
+// animations
+
 .site-menu.active {
   .site-menu-content {
     .btn {
       .line-container {
         opacity: 0;
-        animation: anim-right-in 600ms cubic-bezier(.19, 1, .22, 1);
+        animation: anim-right-in @timing-medium cubic-bezier(.19, 1, .22, 1);
         -webkit-animation-fill-mode: forwards;
         -moz-animation-fill-mode: forwards;
         -ms-animation-fill-mode: forwards;
@@ -439,27 +442,44 @@
 .site-aside-text {
   line-height: 0;
   .btn {
+    .btn-link();
+    .btn-big();
+    .btn-narrow();
+    .btn-short();
     width: 100%;
   }
+  .site-aside-title {
+    .h4();
+    color: @text;
+  }
+  /*
   > .btn:not(.site-aside-sub) {
     &.different {
       display: none;
     }
   }
-  > .btn.site-aside-sub {
-  }
-  .site-aside-subsub {
-    .margin(top, medium);
-    > .btn {
-      .padding(left, small);
+  */
+  .btn-site-aside-sub {
+    color: fade(@text, 50%) !important;
+    &.active {
+      color: @text !important;
+      & + .site-aside-subsub {
+        display: block;
+      }
     }
   }
-  // @TODO after xtend plugin
   .site-aside-subsub {
     display: none;
-  }
-  .btn.site-aside-sub.active + .site-aside-subsub {
-    display: block;
+    .btn-site-aside-subsub {
+      .btn-small();
+      .btn-narrow();
+      .btn-short();
+      .padding(left, medium);
+      color: fade(@text, 50%) !important;
+      &.active {
+        color: @text !important;
+      }
+    }
   }
 }
 
@@ -487,9 +507,9 @@
       left: 0;
       width: 100%;
       height: 1px;
-      background-color: fade(@primary, 25%);
+      background-color: fade(@primary, 80%);
       h2 & {
-        height: 1px;
+        height: 2px;
       }
     }
   }
@@ -498,16 +518,16 @@
     left: 100%;
     width: 0;
     opacity: 0;
-    transition: opacity 600ms cubic-bezier(.19, 1, .22, 1) 100ms;
-    animation: line-out 600ms cubic-bezier(.19, 1, .22, 1);
+    transition: opacity @timing-medium @bezier-out @timing-tiny;
+    animation: line-out @timing-medium @bezier-out;
   }
   &:hover {
     .line:after {
       left: 0;
       width: 100%;
       opacity: 1;
-      transition: opacity 600ms cubic-bezier(.19, 1, .22, 1) 100ms;
-      animation: line-in 600ms cubic-bezier(.19, 1, .22, 1);
+      transition: opacity @timing-medium @bezier-in @timing-tiny;
+      animation: line-in @timing-medium @bezier-in;
     }
   }
 }
@@ -546,14 +566,13 @@
   .site-article-anchor {
     pointer-events: none;
     opacity: 0;
-    transition: opacity 1000ms cubic-bezier(.19, 1, .22, 1);
-    transition-delay: 200ms;
+    transition: opacity @timing-medium @bezier-out @timing-medium;
   }
   &:hover,
   &:active, &.active {
     .site-article-anchor {
       opacity: 1;
-      transition-delay: 0ms;
+      transition: opacity @timing-medium @bezier-in @timing-tiny;
     }
   }
 }
@@ -694,10 +713,11 @@
 // .site-header-top
 
 .site-header-top[data-xt-scroll] {
-  .xt-scroll(@mode:'fixed');
+  .xt-scroll();
+  // animations
   &.scroll-on-bottom {
     .animation-default();
-    transition-duration: 600ms;
+    transition-duration: @timing-medium;
     animation-name: anim-top-in;
   }
 }
@@ -710,18 +730,18 @@
   .site-breadcrumbs-inside {
     .transition-default();
     .transition-default.out();
-    transition-duration: 600ms;
+    transition-duration: @timing-medium;
   }
   &.active:not(.xt-clone) {
-    background-color: fade(@primary, 85%);
+    background-color: fade(@primary, 80%);
     .site-breadcrumbs-inside {
-      .transition-default();
-      transition-duration: 600ms;
       .padding(y, small);
+      .transition-default();
+      transition-duration: @timing-medium;
     }
     .site-breadcrumbs-meta {
       .animation-default();
-      transition-duration: 600ms;
+      transition-duration: @timing-medium;
       animation-name: anim-right-in;
     }
   }
@@ -737,16 +757,4 @@
 
 .site-footer {
   .xt-scroll(@position:'bottom');
-}
-
-// xt-container and xt-position
-
-.xt-container {
-  position: relative;
-  width: 100%;
-}
-
-.xt-position {
-  float: left;
-  width: 100%;
 }

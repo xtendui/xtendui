@@ -1351,9 +1351,17 @@ a,
 .toggle-hidden.out {
   visibility: hidden !important;
 }
+.xt-container {
+  position: relative;
+  width: 100%;
+}
+.xt-position {
+  float: left;
+  width: 100%;
+}
 .xt-backdrop {
   position: fixed;
-  z-index: 100 !important;
+  z-index: 130 !important;
   top: 0;
   right: 0;
   width: 100%;
@@ -4547,6 +4555,8 @@ h6,
   font-weight: 600;
   font-style: normal;
   line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
 }
 h1:first-child,
 .h1:first-child,
@@ -5712,6 +5722,8 @@ legend {
   font-weight: 600;
   font-style: normal;
   line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
   font-size: 2rem;
 }
 legend:first-child {
@@ -5933,6 +5945,8 @@ select.input-control-secondary {
   font-weight: 600;
   font-style: normal;
   line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
   font-size: 1.3rem;
   letter-spacing: .05em;
   text-transform: uppercase;

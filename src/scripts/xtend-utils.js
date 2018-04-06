@@ -4,7 +4,7 @@
 
 'use strict';
 
-import {XtToggle, XtScroll} from "./xtend";
+import {XtToggle, XtScroll} from './xtend';
 
 //////////////////////
 // Constructor

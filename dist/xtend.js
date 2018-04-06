@@ -427,7 +427,7 @@ var Xt = exports.Xt = function () {
         var arr = Array.from(this.container.querySelectorAll(options.targets));
         arr = arr.filter(function (x) {
           return !_xtendUtils2.default.parents(x, options.targets).length;
-        }); // filter out nested options.targets
+        }); // filter out parent
         this.targets = _xtendUtils2.default.arrSingle(arr);
       }
       // @FIX set namespace for next frame
@@ -917,27 +917,30 @@ var Xt = exports.Xt = function () {
         var h = el.clientHeight + 'px';
         var pt = el.style.paddingTop;
         var pb = el.style.paddingBottom;
-        el.style.height = h;
-        el.style.paddingTop = pt;
-        el.style.paddingBottom = pb;
         _xtendUtils2.default.requestAnimationFrame.call(window, function () {
-          console.log(h, el.clientHeight);
-          el.style.height = '0';
-          el.style.paddingTop = '0';
-          el.style.paddingBottom = '0';
+          el.style.height = h;
+          el.style.paddingTop = pt;
+          el.style.paddingBottom = pb;
+          _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+            el.style.height = '0';
+            el.style.paddingTop = '0';
+            el.style.paddingBottom = '0';
+          });
         });
       }
       if (el.classList.contains('collapse-width')) {
         var w = el.clientWidth + 'px';
         var pl = el.style.paddingLeft;
         var pr = el.style.paddingRight;
-        el.style.width = w;
-        el.style.paddingLeft = pl;
-        el.style.paddingRight = pr;
         _xtendUtils2.default.requestAnimationFrame.call(window, function () {
-          el.style.width = '0';
-          el.style.paddingLeft = '0';
-          el.style.paddingRight = '0';
+          el.style.width = w;
+          el.style.paddingLeft = pl;
+          el.style.paddingRight = pr;
+          _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+            el.style.width = '0';
+            el.style.paddingLeft = '0';
+            el.style.paddingRight = '0';
+          });
         });
       }
     }

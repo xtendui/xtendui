@@ -1351,9 +1351,17 @@ a,
 .toggle-hidden.out {
   visibility: hidden !important;
 }
+.xt-container {
+  position: relative;
+  width: 100%;
+}
+.xt-position {
+  float: left;
+  width: 100%;
+}
 .xt-backdrop {
   position: fixed;
-  z-index: 100 !important;
+  z-index: 130 !important;
   top: 0;
   right: 0;
   width: 100%;
@@ -4547,6 +4555,8 @@ h6,
   font-weight: 600;
   font-style: normal;
   line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
 }
 h1:first-child,
 .h1:first-child,
@@ -5712,6 +5722,8 @@ legend {
   font-weight: 600;
   font-style: normal;
   line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
   font-size: 2rem;
 }
 legend:first-child {
@@ -5933,6 +5945,8 @@ select.input-control-secondary {
   font-weight: 600;
   font-style: normal;
   line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
   font-size: 1.3rem;
   letter-spacing: .05em;
   text-transform: uppercase;
@@ -6223,7 +6237,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   color: rgba(255, 255, 255, 0.75);
 }
 .site-header-top {
-  background-color: rgba(0, 176, 255, 0.85);
+  background-color: rgba(0, 176, 255, 0.8);
   color: #fff;
 }
 .site-menu .site-header-top {
@@ -6421,12 +6435,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   opacity: 1;
 }
 /*
+// animations
+
 .site-menu.active {
   .site-menu-content {
     .btn {
       .line-container {
         opacity: 0;
-        animation: anim-right-in 600ms cubic-bezier(.19, 1, .22, 1);
+        animation: anim-right-in @timing-medium cubic-bezier(.19, 1, .22, 1);
         -webkit-animation-fill-mode: forwards;
         -moz-animation-fill-mode: forwards;
         -ms-animation-fill-mode: forwards;
@@ -6555,24 +6571,89 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 .site-aside-text {
   line-height: 0;
+  /*
+  > .btn:not(.site-aside-sub) {
+    &.different {
+      display: none;
+    }
+  }
+  */
 }
 .site-aside-text .btn {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  color: #626c76;
+  font-family: inherit !important;
+  font-style: inherit !important;
+  font-weight: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+  border: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: .6em 1.2em;
+  font-size: 1.4rem;
+  padding-left: .8rem;
+  padding-right: .8rem;
+  padding-top: .45em;
+  padding-bottom: .45em;
   width: 100%;
 }
-.site-aside-text > .btn:not(.site-aside-sub).different {
-  display: none;
+.site-aside-text .btn:hover {
+  text-decoration: underline;
 }
-.site-aside-text .site-aside-subsub {
-  margin-top: 1.5rem;
+.site-aside-text .btn:hover span {
+  text-decoration: underline;
 }
-.site-aside-text .site-aside-subsub > .btn {
-  padding-left: 0.75rem;
+.site-aside-text .btn:hover {
+  color: #009ee6;
 }
-.site-aside-text .site-aside-subsub {
-  display: none;
+.site-aside-text .site-aside-title {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 2rem;
+  color: #343a40;
 }
-.site-aside-text .btn.site-aside-sub.active + .site-aside-subsub {
+.site-aside-text .site-aside-title:first-child {
+  margin-top: 0;
+}
+.site-aside-text .site-aside-title:last-child {
+  margin-bottom: 0;
+}
+.site-aside-text .btn-site-aside-sub {
+  color: rgba(52, 58, 64, 0.5) !important;
+}
+.site-aside-text .btn-site-aside-sub.active {
+  color: #343a40 !important;
+}
+.site-aside-text .btn-site-aside-sub.active + .site-aside-subsub {
   display: block;
+}
+.site-aside-text .site-aside-subsub {
+  display: none;
+}
+.site-aside-text .site-aside-subsub .btn-site-aside-subsub {
+  padding: .6em 1.2em;
+  font-size: 1.2rem;
+  padding-left: .8rem;
+  padding-right: .8rem;
+  padding-top: .45em;
+  padding-bottom: .45em;
+  padding-left: 1.5rem;
+  color: rgba(52, 58, 64, 0.5) !important;
+}
+.site-aside-text .site-aside-subsub .btn-site-aside-subsub.active {
+  color: #343a40 !important;
 }
 .make-line {
   position: relative;
@@ -6598,24 +6679,24 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: rgba(0, 176, 255, 0.25);
+  background-color: rgba(0, 176, 255, 0.8);
 }
 h2 .make-line .line-container .line:after {
-  height: 1px;
+  height: 2px;
 }
 .make-line .line:after {
   left: 100%;
   width: 0;
   opacity: 0;
-  transition: opacity 600ms cubic-bezier(0.19, 1, 0.22, 1) 100ms;
-  animation: line-out 600ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 600ms cubic-bezier(0.63, 0.36, 0, 0.97) 150ms;
+  animation: line-out 600ms cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .make-line:hover .line:after {
   left: 0;
   width: 100%;
   opacity: 1;
-  transition: opacity 600ms cubic-bezier(0.19, 1, 0.22, 1) 100ms;
-  animation: line-in 600ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 600ms cubic-bezier(0.63, 0.36, 0, 0.97) 150ms;
+  animation: line-in 600ms cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 @keyframes line-out {
   0% {
@@ -6648,14 +6729,13 @@ h2 .make-line .line-container .line:after {
 .make-anchor .site-article-anchor {
   pointer-events: none;
   opacity: 0;
-  transition: opacity 1000ms cubic-bezier(0.19, 1, 0.22, 1);
-  transition-delay: 200ms;
+  transition: opacity 600ms cubic-bezier(0.63, 0.36, 0, 0.97) 600ms;
 }
 .make-anchor:hover .site-article-anchor,
 .make-anchor:active .site-article-anchor,
 .make-anchor.active .site-article-anchor {
   opacity: 1;
-  transition-delay: 0ms;
+  transition: opacity 600ms cubic-bezier(0.63, 0.36, 0, 0.97) 150ms;
 }
 .site-article-anchor {
   position: absolute;
@@ -6788,21 +6868,15 @@ h2 .make-line .line-container .line:after {
 .site-header-top[data-xt-scroll].xt-clone {
   position: absolute !important;
   visibility: hidden !important;
+  top: 0 !important;
 }
 .site-header-top[data-xt-scroll].xt-clone.active {
   position: relative !important;
 }
-.site-header-top[data-xt-scroll].xt-clone {
-  position: relative !important;
-}
-.xt-position > .site-header-top[data-xt-scroll] {
-  position: fixed;
-  width: 100%;
-}
 .site-header-top[data-xt-scroll].active:not(.xt-clone) {
   position: fixed !important;
   width: inherit;
-  z-index: 70;
+  z-index: 100;
   top: 0;
 }
 .site-header-top[data-xt-scroll].active:not(.xt-clone) .show-scroll {
@@ -6829,6 +6903,7 @@ h2 .make-line .line-container .line:after {
 .site-breadcrumbs[data-xt-scroll].xt-clone {
   position: absolute !important;
   visibility: hidden !important;
+  top: 0 !important;
 }
 .site-breadcrumbs[data-xt-scroll].xt-clone.active {
   position: relative !important;
@@ -6836,14 +6911,14 @@ h2 .make-line .line-container .line:after {
 .site-breadcrumbs[data-xt-scroll].xt-clone {
   position: relative !important;
 }
-.xt-position > .site-breadcrumbs[data-xt-scroll] {
+.xt-container > .site-breadcrumbs[data-xt-scroll] {
   position: absolute;
   width: 100%;
 }
 .site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) {
   position: fixed !important;
   width: inherit;
-  z-index: 70;
+  z-index: 100;
   top: 0;
 }
 .site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) .show-scroll {
@@ -6862,15 +6937,15 @@ h2 .make-line .line-container .line:after {
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) {
-  background-color: rgba(0, 176, 255, 0.85);
+  background-color: rgba(0, 176, 255, 0.8);
 }
 .site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) .site-breadcrumbs-inside {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   transition-duration: 600ms;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
 }
 .site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) .site-breadcrumbs-inside.out {
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
@@ -6893,6 +6968,7 @@ h2 .make-line .line-container .line:after {
 .site-aside[data-xt-scroll].xt-clone {
   position: absolute !important;
   visibility: hidden !important;
+  top: 0 !important;
 }
 .site-aside[data-xt-scroll].xt-clone.active {
   position: relative !important;
@@ -6900,7 +6976,7 @@ h2 .make-line .line-container .line:after {
 .site-aside[data-xt-scroll].active:not(.xt-clone) {
   position: fixed !important;
   width: inherit;
-  z-index: 70;
+  z-index: 100;
   top: 56px;
 }
 .site-aside[data-xt-scroll].active:not(.xt-clone) .show-scroll {
@@ -6918,6 +6994,7 @@ h2 .make-line .line-container .line:after {
 .site-footer.xt-clone {
   position: absolute !important;
   visibility: hidden !important;
+  top: 0 !important;
 }
 .site-footer.xt-clone.active {
   position: relative !important;
@@ -6925,7 +7002,7 @@ h2 .make-line .line-container .line:after {
 .site-footer.active:not(.xt-clone) {
   position: fixed !important;
   width: inherit;
-  z-index: 70;
+  z-index: 100;
   bottom: 0;
 }
 .site-footer.active:not(.xt-clone) .show-scroll {
@@ -6933,12 +7010,4 @@ h2 .make-line .line-container .line:after {
 }
 .site-footer.active:not(.xt-clone) .hide-scroll {
   display: none;
-}
-.xt-container {
-  position: relative;
-  width: 100%;
-}
-.xt-position {
-  float: left;
-  width: 100%;
 }

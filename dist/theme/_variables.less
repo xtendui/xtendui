@@ -25,13 +25,31 @@
 @error: #dc3545;
 
 //////////////////////
+// animations
+//////////////////////
+
+// timing
+
+@timing-none: 1ms;
+@timing-tiny: 150ms;
+@timing-small: 300ms;
+@timing-medium: 600ms;
+@timing-big: 1200ms;
+@timing-giant: 2400ms;
+
+// beziers
+
+@bezier-in: cubic-bezier(.63, .36, 0, .97);
+@bezier-out: cubic-bezier(.63, .36, 0, .97);
+
+//////////////////////
 // utils
 //////////////////////
 
 @margins: auto auto, none 0, tiny .375rem, small .75rem, medium 1.5rem, big 3rem, giant 6rem;
 @paddings: auto auto, none 0, tiny .375rem, small .75rem, medium 1.5rem, big 3rem, giant 6rem;
 @orders: 0, 1, 2, 3, 4, 5;
-@core-indexes: btn-active 1, loader 11, backdrop 100, drop 150, overlay 200, close 300; // z-index values
+@core-indexes: btn-active 1, loader 11, scroll 100, backdrop 130, drop 150, overlay 200, close 300; // z-index values
 
 //////////////////////
 // structure

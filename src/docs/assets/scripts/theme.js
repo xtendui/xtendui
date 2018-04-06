@@ -34,32 +34,37 @@ for (let el of document.querySelectorAll('.site-article > h2, .site-article > h3
 
 for (let el of document.querySelectorAll('.site-aside-text > .btn:not(.different)')) {
   let container = XtUtil.parents(el, '.site-aside-text')[0];
-  for (let element of document.querySelectorAll('.site-article > h2')) {
-    container.append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-secondary-alt btn-small site-aside-sub">' + element.textContent + '</a>'));
-    container.append(XtUtil.createElement('<div class="site-aside-subsub"></div>'));
-  }
-  for (let element of document.querySelectorAll('.site-article > h3')) {
-    let item = container.querySelectorAll('.site-aside-subsub');
-    item[item.length - 1].append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-secondary-alt btn-tiny">' + element.textContent + '</a>'));
+  for (let element of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
+    if (element.tagName === 'H2') {
+      container.append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-site-aside-sub">' + element.textContent + '</a>'));
+      container.append(XtUtil.createElement('<div class="site-aside-subsub"></div>'));
+    } else if (element.tagName === 'H3') {
+      var subs = container.querySelectorAll('.site-aside-subsub');
+      subs[subs.length - 1].append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-site-aside-subsub">' + element.textContent + '</a>'));
+    }
   }
 }
 
 // activateAsideScroll
 
 const activateAsideScroll = function (els, scrollTop) {
+  const dist = window.innerHeight / 5;
   for (let el of els) {
     let href = el.getAttribute('href');
     if (href) {
       let target = document.querySelectorAll(href);
       let rect = target[0].getBoundingClientRect();
-      let top = rect.top;
+      let top = rect.top + scrollTop;
       let bottom = Infinity;
-      if (scrollTop >= top && scrollTop < bottom) {
+      if (scrollTop >= top - dist && scrollTop < bottom - dist) {
         if (!el.classList.contains('active')) {
           for (let element of els) {
-            element.classList.remove('active');
+            if (element !== el) {
+              element.classList.remove('active');
+            } else {
+              el.classList.add('active');
+            }
           }
-          el.classList.add('active');
         }
       } else {
         if (el.classList.contains('active')) {
@@ -71,9 +76,11 @@ const activateAsideScroll = function (els, scrollTop) {
 };
 window.addEventListener('scroll', function (e) {
   let scrollTop = document.documentElement.scrollTop;
-  let sub = document.querySelectorAll('.btn.site-aside-sub');
+  let sub = Array.from(document.querySelectorAll('.btn-site-aside-sub'));
+  sub = sub.filter(x => !XtUtil.parents(x, '.xt-clone').length); // filter out parent
   activateAsideScroll(sub, scrollTop);
-  let subsub = document.querySelectorAll('.btn.site-aside-sub.active + .site-aside-subsub .btn');
+  let subsub = Array.from(document.querySelectorAll('.btn-site-aside-sub.active + .site-aside-subsub .btn-site-aside-subsub'));
+  subsub = subsub.filter(x => !XtUtil.parents(x, '.xt-clone').length); // filter out parent
   activateAsideScroll(subsub, scrollTop);
 });
 
@@ -303,6 +310,6 @@ for (let [i, el] of document.querySelectorAll('.demo').entries()) {
 //////////////////////
 
 import XtUtil from '../../../scripts/xtend-utils';
-import {XtToggle, XtScroll} from "../../../scripts/xtend";
+import {XtToggle, XtScroll} from '../../../scripts/xtend';
 
 XtUtil.initAll();
