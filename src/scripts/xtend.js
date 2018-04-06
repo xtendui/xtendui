@@ -94,18 +94,18 @@ export class Xt {
       this.targets = XtUtil.arrSingle(arr);
     }
     // @FIX set namespace for next frame
-    this.elements.forEach(function (el, i) {
+    for (var el of this.elements) {
       el.setAttribute('data-xt-namespace', self.namespace);
-    });
+    }
     // currents
     XtUtil.requestAnimationFrame.call(window, function () {
       if (self.elements.length) {
         // activate defaults.class
-        self.elements.forEach(function (el, i) {
+        for (var el of self.elements) {
           if (el.classList.contains(...self.defaults.classes)) {
             self.eventOn(el);
           }
-        });
+        }
         // if currents < min
         var todo = options.min - self.getCurrents().length;
         if (todo) {
@@ -276,34 +276,34 @@ export class Xt {
    * element activation
    * @param {Element} element To be activated
    */
-  activationOn(elements) {
+  activationOn(els) {
     var self = this;
     var options = this.options;
     // activate
-    elements.forEach(function (el, i) {
+    for (var el of els) {
       el.classList.add(...options.classes);
       el.classList.remove('out');
       self.activationOffClear(el);
       // specials
       self.collapseOn(el);
-    });
+    }
   }
 
   /**
    * element deactivation
    * @param {Element} element To be deactivated
    */
-  activationOff(elements) {
+  activationOff(els) {
     var self = this;
     var options = this.options;
     // deactivate
-    elements.forEach(function (el, i) {
+    for (var el of els) {
       el.classList.remove(...options.classes);
       el.classList.add('out');
       self.activationOffAnimate(el);
       // specials
       self.collapseOff(el);
-    });
+    }
   }
 
   /**
@@ -443,7 +443,7 @@ export class XtToggle extends Xt {
     var self = this;
     var options = this.options;
     // on and off
-    this.elements.forEach(function (el, i) {
+    for (var el of this.elements) {
       if (options.on) {
         el.addEventListener(options.on, function (e) {
           self.eventOn(this);
@@ -454,7 +454,7 @@ export class XtToggle extends Xt {
           self.eventOff(this);
         });
       }
-    });
+    }
   }
 
 }
@@ -597,7 +597,7 @@ export class XtScroll extends Xt {
           self.eventOn(element);
           // direction classes
           var fElements = self.getElements(element);
-          fElements.all.forEach(function (el, i) {
+          for (var el of fElements.all) {
             el.classList.remove('scroll-off-top', 'scroll-off-bottom');
             if (self.scrollTop > scrollTop) {
               el.classList.remove('scroll-off-bottom');
@@ -606,14 +606,14 @@ export class XtScroll extends Xt {
               el.classList.remove('scroll-on-bottom');
               el.classList.add('scroll-on-top');
             }
-          });
+          }
         }
       } else {
         if (element.classList.contains(...self.defaults.classes)) {
           self.eventOff(element);
           // direction classes
           var fElements = self.getElements(element);
-          fElements.all.forEach(function (el, i) {
+          for (var el of fElements.all) {
             el.classList.remove('scroll-on-top', 'scroll-on-bottom');
             if (self.scrollTop > scrollTop) {
               el.classList.remove('scroll-off-top');
@@ -622,7 +622,7 @@ export class XtScroll extends Xt {
               el.classList.remove('scroll-off-bottom');
               el.classList.add('scroll-off-top');
             }
-          });
+          }
         }
       }
     });

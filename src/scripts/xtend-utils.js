@@ -28,20 +28,14 @@ XtUtil.currents = {};
  * init all data-xt classes
  */
 XtUtil.initAll = function () {
-  // xt
-  /*
-  document.querySelectorAll('[data-xt]').forEach(function (el, i) {
-    new Xt(el, {});
-  });
-  */
   // xt-toggle
-  document.querySelectorAll('[data-xt-toggle]').forEach(function (el, i) {
+  for (var el of document.querySelectorAll('[data-xt-toggle]')) {
     new XtToggle(el);
-  });
+  }
   // xt-scroll
-  document.querySelectorAll('[data-xt-scroll]').forEach(function (el, i) {
+  for (var el of document.querySelectorAll('[data-xt-scroll]')) {
     new XtScroll(el);
-  });
+  }
 };
 
 /**
@@ -83,9 +77,9 @@ XtUtil.getUniqueID = function () {
  */
 XtUtil.merge = function (arr) {
   var final = {};
-  arr.forEach(function (obj, i) {
+  for (var obj of arr) {
     Object.entries(obj).forEach(([key, value]) => final[key] = value);
-  });
+  }
   return final;
 };
 
@@ -187,7 +181,7 @@ export default XtUtil;
   try { // check if browser supports :scope natively
     doc.querySelector(':scope body');
   } catch (err) { // polyfill native methods if it doesn't
-    ['querySelector', 'querySelectorAll'].forEach(function (method) {
+    for (var method of ['querySelector', 'querySelectorAll']) {
       var nativ = proto[method];
       proto[method] = function (selectors) {
         if (/(^|,)\s*:scope/.test(selectors)) { // only if selectors contains :scope
@@ -201,6 +195,6 @@ export default XtUtil;
           return nativ.call(this, selectors); // use native code for other selectors
         }
       }
-    });
+    }
   }
 })(window.document, Element.prototype);

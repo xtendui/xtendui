@@ -4,81 +4,81 @@
 
 // highlight
 
-var elements = document.querySelectorAll('pre code');
-elements.forEach(function (element, i) {
-  element.innerHTML = element.innerHTML.replace(/^\s+|\s+$/g, ''); // remove newline at start and end
-  window.hljs.highlightBlock(element);
-});
+var els = document.querySelectorAll('pre code');
+for (var el of els) {
+  el.innerHTML = el.innerHTML.replace(/^\s+|\s+$/g, ''); // remove newline at start and end
+  window.hljs.highlightBlock(el);
+}
 
 // .make-line
 
-var elements = document.querySelectorAll('.site-article > h2, .site-article > h3');
-elements.forEach(function (element, i) {
-  element.classList.add('make-line');
-});
-var elements = document.querySelectorAll('.make-line');
-elements.forEach(function (element, i) {
-  element.innerHTML = '<span class="line">' + element.innerHTML + '</div>';
-  element.innerHTML = '<span class="line-container">' + element.innerHTML + '</div>';
-});
+var els = document.querySelectorAll('.site-article > h2, .site-article > h3');
+for (var el of els) {
+  el.classList.add('make-line');
+}
+var els = document.querySelectorAll('.make-line');
+for (var el of els) {
+  el.innerHTML = '<span class="line">' + el.innerHTML + '</div>';
+  el.innerHTML = '<span class="line-container">' + el.innerHTML + '</div>';
+}
 
 // .make-anchor
 
-var elements = document.querySelectorAll('.site-article > h2, .site-article > h3');
-elements.forEach(function (element, i) {
-  element.classList.add('make-line');
-  var id = element.textContent.replace(/\s+/g, '-').toLowerCase();
-  element.setAttribute('id', id);
-  element.innerHTML = '<a href="#' + id + '">' + element.innerHTML + '</a>';
-  element.classList.add('make-anchor');
+var els = document.querySelectorAll('.site-article > h2, .site-article > h3');
+for (var el of els) {
+  el.classList.add('make-line');
+  var id = el.textContent.replace(/\s+/g, '-').toLowerCase();
+  el.setAttribute('id', id);
+  el.innerHTML = '<a href="#' + id + '">' + el.innerHTML + '</a>';
+  el.classList.add('make-anchor');
   var append = XtUtil.createElement('<span class="site-article-anchor"><div class="btn"><span class="icon-link" aria-hidden="true"></span></div></span>');
-  element.append(append);
-});
+  el.append(append);
+}
 
 // .site-aside-text
 
-var elements = document.querySelectorAll('.site-aside-text > .btn:not(.different)');
-elements.forEach(function (element, i) {
-  var container = XtUtil.parents(element, '.site-aside-text')[0];
-  var els = document.querySelectorAll('.site-article > h2');
-  els.forEach(function (el, i) {
-    var append = XtUtil.createElement('<a href="#' + el.getAttribute('id') + '" class="btn btn-secondary-alt btn-small site-aside-sub">' + el.textContent + '</a>');
+var els = document.querySelectorAll('.site-aside-text > .btn:not(.different)');
+for (var el of els) {
+  var container = XtUtil.parents(el, '.site-aside-text')[0];
+  var elements = document.querySelectorAll('.site-article > h2');
+  for (var element of elements) {
+    var append = XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-secondary-alt btn-small site-aside-sub">' + element.textContent + '</a>');
     container.append(append);
     var append = XtUtil.createElement('<div class="site-aside-subsub"></div>');
     container.append(append);
-  });
-  var els = document.querySelectorAll('.site-article > h3');
-  els.forEach(function (el, i) {
-    var append = XtUtil.createElement('<a href="#' + el.getAttribute('id') + '" class="btn btn-secondary-alt btn-tiny">' + el.textContent + '</a>');
+  }
+  var elements = document.querySelectorAll('.site-article > h3');
+  for (var element of elements) {
+    var append = XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-secondary-alt btn-tiny">' + element.textContent + '</a>');
     var item = container.querySelectorAll('.site-aside-subsub');
     item[item.length - 1].append(append);
-  });
-});
+  }
+}
 
 // activateAsideScroll
 
-var activateAsideScroll = function (elements, scrollTop) {
-  elements.forEach(function (element, i) {
-    var href = element.getAttribute('href');
+var activateAsideScroll = function (els, scrollTop) {
+  for (var el of els) {
+    var href = el.getAttribute('href');
     if (href) {
       var target = document.querySelectorAll(href);
       var rect = target[0].getBoundingClientRect();
       var top = rect.top;
       var bottom = Infinity;
       if (scrollTop >= top && scrollTop < bottom) {
-        if (!element.classList.contains('active')) {
-          elements.forEach(function (el, i) {
-            el.classList.remove('active');
-          });
-          element.classList.add('active');
+        if (!el.classList.contains('active')) {
+          for (var element of els) {
+            element.classList.remove('active');
+          }
+          el.classList.add('active');
         }
       } else {
-        if (element.classList.contains('active')) {
-          element.classList.remove('active');
+        if (el.classList.contains('active')) {
+          el.classList.remove('active');
         }
       }
     }
-  });
+  }
 };
 window.addEventListener('scroll', function (e) {
   var scrollTop = document.documentElement.scrollTop;
@@ -107,7 +107,7 @@ var populateDemo = function (container, i) {
     container.querySelectorAll('.demo-tabs')[0].style.display = 'none';
   }
   // loop items
-  items.forEach(function (item, k) {
+  for (var [k, item] of items.entries()) {
     // populate tabs
     var name = item.getAttribute('data-name');
     if (items.length === 1) {
@@ -185,18 +185,18 @@ var populateDemo = function (container, i) {
         item.classList.add('populated');
       }, 0, item);
     }
-  });
+  }
 };
 
 // populateInline
 var populateInline = function (item, id) {
-  var elements = item.querySelectorAll('.demo-source');
-  elements.forEach(function (element, z) {
-    populateSources(item, element, id, z);
+  var els = item.querySelectorAll('.demo-source');
+  for (var [z, el] of els.entries()) {
+    populateSources(item, el, id, z);
     if (!item.classList.contains('demo-preview')) {
-      element.style.display = none;
+      el.style.display = none;
     }
-  });
+  }
   new XtToggle(item, {
     "elements": ".demo-code-tabs-left .btn",
     "targets": ".demo-code-body-item",
@@ -285,9 +285,9 @@ function formatCode(source, lang) {
 
 // init demos
 
-var elements = document.querySelectorAll('.demo');
-elements.forEach(function (element, i) {
-  populateDemo(element, i);
+var els = document.querySelectorAll('.demo');
+for (var [i, el] of els.entries()) {
+  populateDemo(el, i);
   // enable fullscreen
   /*
   element.find('.demo-tabs-left .button').on('on', function(e, obj) {
@@ -303,12 +303,12 @@ elements.forEach(function (element, i) {
   });
   */
   // demo tabs
-  new XtToggle(element, {
+  new XtToggle(el, {
     "elements": ".demo-tabs-left .btn",
     "targets": ".demo-item",
     "min": 1
   });
-});
+}
 
 //////////////////////
 // xtend

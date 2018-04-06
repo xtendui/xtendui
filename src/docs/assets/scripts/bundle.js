@@ -1,6 +1,8 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 'use strict';
 
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
 var _xtendUtils = require('../../../scripts/xtend-utils');
 
 var _xtendUtils2 = _interopRequireDefault(_xtendUtils);
@@ -15,81 +17,273 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // highlight
 
-var elements = document.querySelectorAll('pre code');
-elements.forEach(function (element, i) {
-  element.innerHTML = element.innerHTML.replace(/^\s+|\s+$/g, ''); // remove newline at start and end
-  window.hljs.highlightBlock(element);
-});
+var els = document.querySelectorAll('pre code');
+var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;
 
-// .make-line
+try {
+  for (var _iterator = els[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    var el = _step.value;
 
-var elements = document.querySelectorAll('.site-article > h2, .site-article > h3');
-elements.forEach(function (element, i) {
-  element.classList.add('make-line');
-});
-var elements = document.querySelectorAll('.make-line');
-elements.forEach(function (element, i) {
-  element.innerHTML = '<span class="line">' + element.innerHTML + '</div>';
-  element.innerHTML = '<span class="line-container">' + element.innerHTML + '</div>';
-});
+    el.innerHTML = el.innerHTML.replace(/^\s+|\s+$/g, ''); // remove newline at start and end
+    window.hljs.highlightBlock(el);
+  }
 
-// .make-anchor
+  // .make-line
+} catch (err) {
+  _didIteratorError = true;
+  _iteratorError = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion && _iterator.return) {
+      _iterator.return();
+    }
+  } finally {
+    if (_didIteratorError) {
+      throw _iteratorError;
+    }
+  }
+}
 
-var elements = document.querySelectorAll('.site-article > h2, .site-article > h3');
-elements.forEach(function (element, i) {
-  element.classList.add('make-line');
-  var id = element.textContent.replace(/\s+/g, '-').toLowerCase();
-  element.setAttribute('id', id);
-  element.innerHTML = '<a href="#' + id + '">' + element.innerHTML + '</a>';
-  element.classList.add('make-anchor');
-  var append = _xtendUtils2.default.createElement('<span class="site-article-anchor"><div class="btn"><span class="icon-link" aria-hidden="true"></span></div></span>');
-  element.append(append);
-});
+var els = document.querySelectorAll('.site-article > h2, .site-article > h3');
+var _iteratorNormalCompletion2 = true;
+var _didIteratorError2 = false;
+var _iteratorError2 = undefined;
 
-// .site-aside-text
+try {
+  for (var _iterator2 = els[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+    var el = _step2.value;
 
-var elements = document.querySelectorAll('.site-aside-text > .btn:not(.different)');
-elements.forEach(function (element, i) {
-  var container = _xtendUtils2.default.parents(element, '.site-aside-text')[0];
-  var els = document.querySelectorAll('.site-article > h2');
-  els.forEach(function (el, i) {
-    var append = _xtendUtils2.default.createElement('<a href="#' + el.getAttribute('id') + '" class="btn btn-secondary-alt btn-small site-aside-sub">' + el.textContent + '</a>');
-    container.append(append);
-    var append = _xtendUtils2.default.createElement('<div class="site-aside-subsub"></div>');
-    container.append(append);
-  });
-  var els = document.querySelectorAll('.site-article > h3');
-  els.forEach(function (el, i) {
-    var append = _xtendUtils2.default.createElement('<a href="#' + el.getAttribute('id') + '" class="btn btn-secondary-alt btn-tiny">' + el.textContent + '</a>');
-    var item = container.querySelectorAll('.site-aside-subsub');
-    item[item.length - 1].append(append);
-  });
-});
+    el.classList.add('make-line');
+  }
+} catch (err) {
+  _didIteratorError2 = true;
+  _iteratorError2 = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion2 && _iterator2.return) {
+      _iterator2.return();
+    }
+  } finally {
+    if (_didIteratorError2) {
+      throw _iteratorError2;
+    }
+  }
+}
 
-// activateAsideScroll
+var els = document.querySelectorAll('.make-line');
+var _iteratorNormalCompletion3 = true;
+var _didIteratorError3 = false;
+var _iteratorError3 = undefined;
 
-var activateAsideScroll = function activateAsideScroll(elements, scrollTop) {
-  elements.forEach(function (element, i) {
-    var href = element.getAttribute('href');
-    if (href) {
-      var target = document.querySelectorAll(href);
-      var rect = target[0].getBoundingClientRect();
-      var top = rect.top;
-      var bottom = Infinity;
-      if (scrollTop >= top && scrollTop < bottom) {
-        if (!element.classList.contains('active')) {
-          elements.forEach(function (el, i) {
-            el.classList.remove('active');
-          });
-          element.classList.add('active');
+try {
+  for (var _iterator3 = els[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+    var el = _step3.value;
+
+    el.innerHTML = '<span class="line">' + el.innerHTML + '</div>';
+    el.innerHTML = '<span class="line-container">' + el.innerHTML + '</div>';
+  }
+
+  // .make-anchor
+} catch (err) {
+  _didIteratorError3 = true;
+  _iteratorError3 = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion3 && _iterator3.return) {
+      _iterator3.return();
+    }
+  } finally {
+    if (_didIteratorError3) {
+      throw _iteratorError3;
+    }
+  }
+}
+
+var els = document.querySelectorAll('.site-article > h2, .site-article > h3');
+var _iteratorNormalCompletion4 = true;
+var _didIteratorError4 = false;
+var _iteratorError4 = undefined;
+
+try {
+  for (var _iterator4 = els[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+    var el = _step4.value;
+
+    el.classList.add('make-line');
+    var id = el.textContent.replace(/\s+/g, '-').toLowerCase();
+    el.setAttribute('id', id);
+    el.innerHTML = '<a href="#' + id + '">' + el.innerHTML + '</a>';
+    el.classList.add('make-anchor');
+    var append = _xtendUtils2.default.createElement('<span class="site-article-anchor"><div class="btn"><span class="icon-link" aria-hidden="true"></span></div></span>');
+    el.append(append);
+  }
+
+  // .site-aside-text
+} catch (err) {
+  _didIteratorError4 = true;
+  _iteratorError4 = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion4 && _iterator4.return) {
+      _iterator4.return();
+    }
+  } finally {
+    if (_didIteratorError4) {
+      throw _iteratorError4;
+    }
+  }
+}
+
+var els = document.querySelectorAll('.site-aside-text > .btn:not(.different)');
+var _iteratorNormalCompletion5 = true;
+var _didIteratorError5 = false;
+var _iteratorError5 = undefined;
+
+try {
+  for (var _iterator5 = els[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+    var el = _step5.value;
+
+    var container = _xtendUtils2.default.parents(el, '.site-aside-text')[0];
+    var elements = document.querySelectorAll('.site-article > h2');
+    var _iteratorNormalCompletion11 = true;
+    var _didIteratorError11 = false;
+    var _iteratorError11 = undefined;
+
+    try {
+      for (var _iterator11 = elements[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
+        var element = _step11.value;
+
+        var append = _xtendUtils2.default.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-secondary-alt btn-small site-aside-sub">' + element.textContent + '</a>');
+        container.append(append);
+        var append = _xtendUtils2.default.createElement('<div class="site-aside-subsub"></div>');
+        container.append(append);
+      }
+    } catch (err) {
+      _didIteratorError11 = true;
+      _iteratorError11 = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion11 && _iterator11.return) {
+          _iterator11.return();
         }
-      } else {
-        if (element.classList.contains('active')) {
-          element.classList.remove('active');
+      } finally {
+        if (_didIteratorError11) {
+          throw _iteratorError11;
         }
       }
     }
-  });
+
+    var elements = document.querySelectorAll('.site-article > h3');
+    var _iteratorNormalCompletion12 = true;
+    var _didIteratorError12 = false;
+    var _iteratorError12 = undefined;
+
+    try {
+      for (var _iterator12 = elements[Symbol.iterator](), _step12; !(_iteratorNormalCompletion12 = (_step12 = _iterator12.next()).done); _iteratorNormalCompletion12 = true) {
+        var element = _step12.value;
+
+        var append = _xtendUtils2.default.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-secondary-alt btn-tiny">' + element.textContent + '</a>');
+        var item = container.querySelectorAll('.site-aside-subsub');
+        item[item.length - 1].append(append);
+      }
+    } catch (err) {
+      _didIteratorError12 = true;
+      _iteratorError12 = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion12 && _iterator12.return) {
+          _iterator12.return();
+        }
+      } finally {
+        if (_didIteratorError12) {
+          throw _iteratorError12;
+        }
+      }
+    }
+  }
+
+  // activateAsideScroll
+} catch (err) {
+  _didIteratorError5 = true;
+  _iteratorError5 = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion5 && _iterator5.return) {
+      _iterator5.return();
+    }
+  } finally {
+    if (_didIteratorError5) {
+      throw _iteratorError5;
+    }
+  }
+}
+
+var activateAsideScroll = function activateAsideScroll(els, scrollTop) {
+  var _iteratorNormalCompletion6 = true;
+  var _didIteratorError6 = false;
+  var _iteratorError6 = undefined;
+
+  try {
+    for (var _iterator6 = els[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+      var el = _step6.value;
+
+      var href = el.getAttribute('href');
+      if (href) {
+        var target = document.querySelectorAll(href);
+        var rect = target[0].getBoundingClientRect();
+        var top = rect.top;
+        var bottom = Infinity;
+        if (scrollTop >= top && scrollTop < bottom) {
+          if (!el.classList.contains('active')) {
+            var _iteratorNormalCompletion7 = true;
+            var _didIteratorError7 = false;
+            var _iteratorError7 = undefined;
+
+            try {
+              for (var _iterator7 = els[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+                var element = _step7.value;
+
+                element.classList.remove('active');
+              }
+            } catch (err) {
+              _didIteratorError7 = true;
+              _iteratorError7 = err;
+            } finally {
+              try {
+                if (!_iteratorNormalCompletion7 && _iterator7.return) {
+                  _iterator7.return();
+                }
+              } finally {
+                if (_didIteratorError7) {
+                  throw _iteratorError7;
+                }
+              }
+            }
+
+            el.classList.add('active');
+          }
+        } else {
+          if (el.classList.contains('active')) {
+            el.classList.remove('active');
+          }
+        }
+      }
+    }
+  } catch (err) {
+    _didIteratorError6 = true;
+    _iteratorError6 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion6 && _iterator6.return) {
+        _iterator6.return();
+      }
+    } finally {
+      if (_didIteratorError6) {
+        throw _iteratorError6;
+      }
+    }
+  }
 };
 window.addEventListener('scroll', function (e) {
   var scrollTop = document.documentElement.scrollTop;
@@ -119,96 +313,143 @@ var populateDemo = function populateDemo(container, i) {
     container.querySelectorAll('.demo-tabs')[0].style.display = 'none';
   }
   // loop items
-  items.forEach(function (item, k) {
-    // populate tabs
-    var name = item.getAttribute('data-name');
-    if (items.length === 1) {
-      if (!item.getAttribute('data-name')) {
-        name = 'demo';
-      }
-    } else {
-      if (!item.getAttribute('data-name')) {
-        name = 'demo #' + k;
-      }
-    }
-    var appendBtn = _xtendUtils2.default.createElement('<button type="button" class="btn btn-secondary-alt">' + name + '</button>');
-    var btn = container.querySelectorAll('.demo-tabs-left')[0].append(appendBtn);
-    btn = container.querySelectorAll('.demo-tabs-left .btn')[k];
-    /*
-    // iframe append
-    if ($item.attr('data-iframe')) {
-      $item.append('<iframe data-src="' + $item.attr('data-iframe') + '" frameborder="0"></iframe>');
-    }
-    */
-    // tabs
-    var id = 'iframe' + i + k;
-    var appendItem = _xtendUtils2.default.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-alt btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>');
-    item.append(appendItem);
-    // https://github.com/zenorocha/clipboard.js/
-    var clipboard = new Clipboard('.btn-clipboard', {
-      target: function target(trigger) {
-        return _xtendUtils2.default.parents(trigger, '.demo')[0].querySelectorAll('.demo-item.active .demo-code-body-item.active .hljs')[0];
-      }
-    });
-    clipboard.on('success', function (e) {
-      e.clearSelection();
-      //$(e.trigger).attr('data-original-title', 'Done').tooltip('show');
-    });
-    clipboard.on('error', function (e) {
-      //$(e.trigger).attr('data-original-title', 'Error: copy manually').tooltip('show');
-    });
-    // inject iframe
-    if (item.getAttribute('data-iframe')) {
-      /*
-      var $iframe = $item.find('> iframe');
-      var initIframe = function() {
-        if (!$iframe.attr('src')) {
-          $item.addClass('demo-iframe');
-          $iframe.attr('id', id);
-          $iframe.attr('src', $iframe.attr('data-src'));
-          $iframe.on('load', function(e){
-            populateIframe($item, $iframe, id);
-            window.resizeIframe(id);
-            $iframe[0].contentWindow.init();
-            // .populated fix scroll
-            setTimeout( function($item) {
-              $item.addClass('populated');
-            }, 0, $item);
-          });
+  var _iteratorNormalCompletion8 = true;
+  var _didIteratorError8 = false;
+  var _iteratorError8 = undefined;
+
+  try {
+    for (var _iterator8 = items.entries()[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
+      var _step8$value = _slicedToArray(_step8.value, 2),
+          k = _step8$value[0],
+          item = _step8$value[1];
+
+      // populate tabs
+      var name = item.getAttribute('data-name');
+      if (items.length === 1) {
+        if (!item.getAttribute('data-name')) {
+          name = 'demo';
         }
-      };
-      if (k === 0) {
-        initIframe();
+      } else {
+        if (!item.getAttribute('data-name')) {
+          name = 'demo #' + k;
+        }
       }
-      // iframe resize on show
-      $item.on('on', function(e, obj) {
-        if (e.target === this) {
-          window.resizeIframe(id);
-          if (k !== 0) {
-            initIframe();
-          }
+      var appendBtn = _xtendUtils2.default.createElement('<button type="button" class="btn btn-secondary-alt">' + name + '</button>');
+      var btn = container.querySelectorAll('.demo-tabs-left')[0].append(appendBtn);
+      btn = container.querySelectorAll('.demo-tabs-left .btn')[k];
+      /*
+      // iframe append
+      if ($item.attr('data-iframe')) {
+        $item.append('<iframe data-src="' + $item.attr('data-iframe') + '" frameborder="0"></iframe>');
+      }
+      */
+      // tabs
+      var id = 'iframe' + i + k;
+      var appendItem = _xtendUtils2.default.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-alt btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>');
+      item.append(appendItem);
+      // https://github.com/zenorocha/clipboard.js/
+      var clipboard = new Clipboard('.btn-clipboard', {
+        target: function target(trigger) {
+          return _xtendUtils2.default.parents(trigger, '.demo')[0].querySelectorAll('.demo-item.active .demo-code-body-item.active .hljs')[0];
         }
       });
-      */
-    } else {
-      populateInline(item, id);
-      // .populated fix scroll
-      setTimeout(function (item) {
-        item.classList.add('populated');
-      }, 0, item);
+      clipboard.on('success', function (e) {
+        e.clearSelection();
+        //$(e.trigger).attr('data-original-title', 'Done').tooltip('show');
+      });
+      clipboard.on('error', function (e) {
+        //$(e.trigger).attr('data-original-title', 'Error: copy manually').tooltip('show');
+      });
+      // inject iframe
+      if (item.getAttribute('data-iframe')) {
+        /*
+        var $iframe = $item.find('> iframe');
+        var initIframe = function() {
+          if (!$iframe.attr('src')) {
+            $item.addClass('demo-iframe');
+            $iframe.attr('id', id);
+            $iframe.attr('src', $iframe.attr('data-src'));
+            $iframe.on('load', function(e){
+              populateIframe($item, $iframe, id);
+              window.resizeIframe(id);
+              $iframe[0].contentWindow.init();
+              // .populated fix scroll
+              setTimeout( function($item) {
+                $item.addClass('populated');
+              }, 0, $item);
+            });
+          }
+        };
+        if (k === 0) {
+          initIframe();
+        }
+        // iframe resize on show
+        $item.on('on', function(e, obj) {
+          if (e.target === this) {
+            window.resizeIframe(id);
+            if (k !== 0) {
+              initIframe();
+            }
+          }
+        });
+        */
+      } else {
+        populateInline(item, id);
+        // .populated fix scroll
+        setTimeout(function (item) {
+          item.classList.add('populated');
+        }, 0, item);
+      }
     }
-  });
+  } catch (err) {
+    _didIteratorError8 = true;
+    _iteratorError8 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion8 && _iterator8.return) {
+        _iterator8.return();
+      }
+    } finally {
+      if (_didIteratorError8) {
+        throw _iteratorError8;
+      }
+    }
+  }
 };
 
 // populateInline
 var populateInline = function populateInline(item, id) {
-  var elements = item.querySelectorAll('.demo-source');
-  elements.forEach(function (element, z) {
-    populateSources(item, element, id, z);
-    if (!item.classList.contains('demo-preview')) {
-      element.style.display = none;
+  var els = item.querySelectorAll('.demo-source');
+  var _iteratorNormalCompletion9 = true;
+  var _didIteratorError9 = false;
+  var _iteratorError9 = undefined;
+
+  try {
+    for (var _iterator9 = els.entries()[Symbol.iterator](), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
+      var _step9$value = _slicedToArray(_step9.value, 2),
+          z = _step9$value[0],
+          el = _step9$value[1];
+
+      populateSources(item, el, id, z);
+      if (!item.classList.contains('demo-preview')) {
+        el.style.display = none;
+      }
     }
-  });
+  } catch (err) {
+    _didIteratorError9 = true;
+    _iteratorError9 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion9 && _iterator9.return) {
+        _iterator9.return();
+      }
+    } finally {
+      if (_didIteratorError9) {
+        throw _iteratorError9;
+      }
+    }
+  }
+
   new _xtend.XtToggle(item, {
     "elements": ".demo-code-tabs-left .btn",
     "targets": ".demo-code-body-item",
@@ -297,34 +538,57 @@ function formatCode(source, lang) {
 
 // init demos
 
-var elements = document.querySelectorAll('.demo');
-elements.forEach(function (element, i) {
-  populateDemo(element, i);
-  // enable fullscreen
-  /*
-  element.find('.demo-tabs-left .button').on('on', function(e, obj) {
-    var $fullscreen = $(this).parents('.demo').find('.button__fullscreen');
-    var iframe = $(this).parents('.demo').find('.demo-item.active').attr('data-iframe');
-    if (iframe) {
-      $fullscreen.css('display', 'block');
-      $fullscreen.off('click');
-      $fullscreen.on('click', function() {
-        window.open(iframe, '_blank');
-      });
-    }
-  });
-  */
-  // demo tabs
-  new _xtend.XtToggle(element, {
-    "elements": ".demo-tabs-left .btn",
-    "targets": ".demo-item",
-    "min": 1
-  });
-});
+var els = document.querySelectorAll('.demo');
+var _iteratorNormalCompletion10 = true;
+var _didIteratorError10 = false;
+var _iteratorError10 = undefined;
 
-//////////////////////
-// xtend
-//////////////////////
+try {
+  for (var _iterator10 = els.entries()[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
+    var _step10$value = _slicedToArray(_step10.value, 2),
+        i = _step10$value[0],
+        el = _step10$value[1];
+
+    populateDemo(el, i);
+    // enable fullscreen
+    /*
+    element.find('.demo-tabs-left .button').on('on', function(e, obj) {
+      var $fullscreen = $(this).parents('.demo').find('.button__fullscreen');
+      var iframe = $(this).parents('.demo').find('.demo-item.active').attr('data-iframe');
+      if (iframe) {
+        $fullscreen.css('display', 'block');
+        $fullscreen.off('click');
+        $fullscreen.on('click', function() {
+          window.open(iframe, '_blank');
+        });
+      }
+    });
+    */
+    // demo tabs
+    new _xtend.XtToggle(el, {
+      "elements": ".demo-tabs-left .btn",
+      "targets": ".demo-item",
+      "min": 1
+    });
+  }
+
+  //////////////////////
+  // xtend
+  //////////////////////
+} catch (err) {
+  _didIteratorError10 = true;
+  _iteratorError10 = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion10 && _iterator10.return) {
+      _iterator10.return();
+    }
+  } finally {
+    if (_didIteratorError10) {
+      throw _iteratorError10;
+    }
+  }
+}
 
 _xtendUtils2.default.initAll();
 
@@ -365,20 +629,57 @@ XtUtil.currents = {};
  * init all data-xt classes
  */
 XtUtil.initAll = function () {
-  // xt
-  /*
-  document.querySelectorAll('[data-xt]').forEach(function (el, i) {
-    new Xt(el, {});
-  });
-  */
   // xt-toggle
-  document.querySelectorAll('[data-xt-toggle]').forEach(function (el, i) {
-    new _xtend.XtToggle(el);
-  });
-  // xt-scroll
-  document.querySelectorAll('[data-xt-scroll]').forEach(function (el, i) {
-    new _xtend.XtScroll(el);
-  });
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = document.querySelectorAll('[data-xt-toggle]')[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var el = _step.value;
+
+      new _xtend.XtToggle(el);
+    }
+    // xt-scroll
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+
+  var _iteratorNormalCompletion2 = true;
+  var _didIteratorError2 = false;
+  var _iteratorError2 = undefined;
+
+  try {
+    for (var _iterator2 = document.querySelectorAll('[data-xt-scroll]')[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+      var el = _step2.value;
+
+      new _xtend.XtScroll(el);
+    }
+  } catch (err) {
+    _didIteratorError2 = true;
+    _iteratorError2 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion2 && _iterator2.return) {
+        _iterator2.return();
+      }
+    } finally {
+      if (_didIteratorError2) {
+        throw _iteratorError2;
+      }
+    }
+  }
 };
 
 /**
@@ -420,15 +721,37 @@ XtUtil.getUniqueID = function () {
  */
 XtUtil.merge = function (arr) {
   var final = {};
-  arr.forEach(function (obj, i) {
-    Object.entries(obj).forEach(function (_ref) {
-      var _ref2 = _slicedToArray(_ref, 2),
-          key = _ref2[0],
-          value = _ref2[1];
+  var _iteratorNormalCompletion3 = true;
+  var _didIteratorError3 = false;
+  var _iteratorError3 = undefined;
 
-      return final[key] = value;
-    });
-  });
+  try {
+    for (var _iterator3 = arr[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+      var obj = _step3.value;
+
+      Object.entries(obj).forEach(function (_ref) {
+        var _ref2 = _slicedToArray(_ref, 2),
+            key = _ref2[0],
+            value = _ref2[1];
+
+        return final[key] = value;
+      });
+    }
+  } catch (err) {
+    _didIteratorError3 = true;
+    _iteratorError3 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion3 && _iterator3.return) {
+        _iterator3.return();
+      }
+    } finally {
+      if (_didIteratorError3) {
+        throw _iteratorError3;
+      }
+    }
+  }
+
   return final;
 };
 
@@ -532,7 +855,9 @@ exports.default = XtUtil;
     doc.querySelector(':scope body');
   } catch (err) {
     // polyfill native methods if it doesn't
-    ['querySelector', 'querySelectorAll'].forEach(function (method) {
+    var _arr = ['querySelector', 'querySelectorAll'];
+    for (var _i = 0; _i < _arr.length; _i++) {
+      var method = _arr[_i];
       var nativ = proto[method];
       proto[method] = function (selectors) {
         if (/(^|,)\s*:scope/.test(selectors)) {
@@ -547,7 +872,7 @@ exports.default = XtUtil;
           return nativ.call(this, selectors); // use native code for other selectors
         }
       };
-    });
+    }
   }
 })(window.document, Element.prototype);
 
@@ -679,21 +1004,65 @@ var Xt = exports.Xt = function () {
         this.targets = _xtendUtils2.default.arrSingle(arr);
       }
       // @FIX set namespace for next frame
-      this.elements.forEach(function (el, i) {
-        el.setAttribute('data-xt-namespace', self.namespace);
-      });
-      // currents
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = this.elements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var el = _step.value;
+
+          el.setAttribute('data-xt-namespace', self.namespace);
+        }
+        // currents
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return) {
+            _iterator.return();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+
       _xtendUtils2.default.requestAnimationFrame.call(window, function () {
         if (self.elements.length) {
           // activate defaults.class
-          self.elements.forEach(function (el, i) {
-            var _el$classList;
+          var _iteratorNormalCompletion2 = true;
+          var _didIteratorError2 = false;
+          var _iteratorError2 = undefined;
 
-            if ((_el$classList = el.classList).contains.apply(_el$classList, _toConsumableArray(self.defaults.classes))) {
-              self.eventOn(el);
+          try {
+            for (var _iterator2 = self.elements[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+              var _el$classList;
+
+              var el = _step2.value;
+
+              if ((_el$classList = el.classList).contains.apply(_el$classList, _toConsumableArray(self.defaults.classes))) {
+                self.eventOn(el);
+              }
             }
-          });
-          // if currents < min
+            // if currents < min
+          } catch (err) {
+            _didIteratorError2 = true;
+            _iteratorError2 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion2 && _iterator2.return) {
+                _iterator2.return();
+              }
+            } finally {
+              if (_didIteratorError2) {
+                throw _iteratorError2;
+              }
+            }
+          }
+
           var todo = options.min - self.getCurrents().length;
           if (todo) {
             for (var i = 0; i < todo; i++) {
@@ -896,19 +1265,40 @@ var Xt = exports.Xt = function () {
 
   }, {
     key: 'activationOn',
-    value: function activationOn(elements) {
+    value: function activationOn(els) {
       var self = this;
       var options = this.options;
       // activate
-      elements.forEach(function (el, i) {
-        var _el$classList2;
+      var _iteratorNormalCompletion3 = true;
+      var _didIteratorError3 = false;
+      var _iteratorError3 = undefined;
 
-        (_el$classList2 = el.classList).add.apply(_el$classList2, _toConsumableArray(options.classes));
-        el.classList.remove('out');
-        self.activationOffClear(el);
-        // specials
-        self.collapseOn(el);
-      });
+      try {
+        for (var _iterator3 = els[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+          var _el$classList2;
+
+          var el = _step3.value;
+
+          (_el$classList2 = el.classList).add.apply(_el$classList2, _toConsumableArray(options.classes));
+          el.classList.remove('out');
+          self.activationOffClear(el);
+          // specials
+          self.collapseOn(el);
+        }
+      } catch (err) {
+        _didIteratorError3 = true;
+        _iteratorError3 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion3 && _iterator3.return) {
+            _iterator3.return();
+          }
+        } finally {
+          if (_didIteratorError3) {
+            throw _iteratorError3;
+          }
+        }
+      }
     }
 
     /**
@@ -918,19 +1308,40 @@ var Xt = exports.Xt = function () {
 
   }, {
     key: 'activationOff',
-    value: function activationOff(elements) {
+    value: function activationOff(els) {
       var self = this;
       var options = this.options;
       // deactivate
-      elements.forEach(function (el, i) {
-        var _el$classList3;
+      var _iteratorNormalCompletion4 = true;
+      var _didIteratorError4 = false;
+      var _iteratorError4 = undefined;
 
-        (_el$classList3 = el.classList).remove.apply(_el$classList3, _toConsumableArray(options.classes));
-        el.classList.add('out');
-        self.activationOffAnimate(el);
-        // specials
-        self.collapseOff(el);
-      });
+      try {
+        for (var _iterator4 = els[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+          var _el$classList3;
+
+          var el = _step4.value;
+
+          (_el$classList3 = el.classList).remove.apply(_el$classList3, _toConsumableArray(options.classes));
+          el.classList.add('out');
+          self.activationOffAnimate(el);
+          // specials
+          self.collapseOff(el);
+        }
+      } catch (err) {
+        _didIteratorError4 = true;
+        _iteratorError4 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion4 && _iterator4.return) {
+            _iterator4.return();
+          }
+        } finally {
+          if (_didIteratorError4) {
+            throw _iteratorError4;
+          }
+        }
+      }
     }
 
     /**
@@ -1092,18 +1503,39 @@ var XtToggle = exports.XtToggle = function (_Xt) {
       var self = this;
       var options = this.options;
       // on and off
-      this.elements.forEach(function (el, i) {
-        if (options.on) {
-          el.addEventListener(options.on, function (e) {
-            self.eventOn(this);
-          });
+      var _iteratorNormalCompletion5 = true;
+      var _didIteratorError5 = false;
+      var _iteratorError5 = undefined;
+
+      try {
+        for (var _iterator5 = this.elements[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+          var el = _step5.value;
+
+          if (options.on) {
+            el.addEventListener(options.on, function (e) {
+              self.eventOn(this);
+            });
+          }
+          if (options.off) {
+            el.addEventListener(options.off, function (e) {
+              self.eventOff(this);
+            });
+          }
         }
-        if (options.off) {
-          el.addEventListener(options.off, function (e) {
-            self.eventOff(this);
-          });
+      } catch (err) {
+        _didIteratorError5 = true;
+        _iteratorError5 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion5 && _iterator5.return) {
+            _iterator5.return();
+          }
+        } finally {
+          if (_didIteratorError5) {
+            throw _iteratorError5;
+          }
         }
-      });
+      }
     }
   }]);
 
@@ -1265,16 +1697,37 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
             self.eventOn(element);
             // direction classes
             var fElements = self.getElements(element);
-            fElements.all.forEach(function (el, i) {
-              el.classList.remove('scroll-off-top', 'scroll-off-bottom');
-              if (self.scrollTop > scrollTop) {
-                el.classList.remove('scroll-off-bottom');
-                el.classList.add('scroll-on-bottom');
-              } else {
-                el.classList.remove('scroll-on-bottom');
-                el.classList.add('scroll-on-top');
+            var _iteratorNormalCompletion6 = true;
+            var _didIteratorError6 = false;
+            var _iteratorError6 = undefined;
+
+            try {
+              for (var _iterator6 = fElements.all[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+                var el = _step6.value;
+
+                el.classList.remove('scroll-off-top', 'scroll-off-bottom');
+                if (self.scrollTop > scrollTop) {
+                  el.classList.remove('scroll-off-bottom');
+                  el.classList.add('scroll-on-bottom');
+                } else {
+                  el.classList.remove('scroll-on-bottom');
+                  el.classList.add('scroll-on-top');
+                }
               }
-            });
+            } catch (err) {
+              _didIteratorError6 = true;
+              _iteratorError6 = err;
+            } finally {
+              try {
+                if (!_iteratorNormalCompletion6 && _iterator6.return) {
+                  _iterator6.return();
+                }
+              } finally {
+                if (_didIteratorError6) {
+                  throw _iteratorError6;
+                }
+              }
+            }
           }
         } else {
           var _element$classList4;
@@ -1283,16 +1736,37 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
             self.eventOff(element);
             // direction classes
             var fElements = self.getElements(element);
-            fElements.all.forEach(function (el, i) {
-              el.classList.remove('scroll-on-top', 'scroll-on-bottom');
-              if (self.scrollTop > scrollTop) {
-                el.classList.remove('scroll-off-top');
-                el.classList.add('scroll-off-bottom');
-              } else {
-                el.classList.remove('scroll-off-bottom');
-                el.classList.add('scroll-off-top');
+            var _iteratorNormalCompletion7 = true;
+            var _didIteratorError7 = false;
+            var _iteratorError7 = undefined;
+
+            try {
+              for (var _iterator7 = fElements.all[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+                var el = _step7.value;
+
+                el.classList.remove('scroll-on-top', 'scroll-on-bottom');
+                if (self.scrollTop > scrollTop) {
+                  el.classList.remove('scroll-off-top');
+                  el.classList.add('scroll-off-bottom');
+                } else {
+                  el.classList.remove('scroll-off-bottom');
+                  el.classList.add('scroll-off-top');
+                }
               }
-            });
+            } catch (err) {
+              _didIteratorError7 = true;
+              _iteratorError7 = err;
+            } finally {
+              try {
+                if (!_iteratorNormalCompletion7 && _iterator7.return) {
+                  _iterator7.return();
+                }
+              } finally {
+                if (_didIteratorError7) {
+                  throw _iteratorError7;
+                }
+              }
+            }
           }
         }
       });
