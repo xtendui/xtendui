@@ -25,7 +25,7 @@ export class Xt {
     // js options
     this.options = XtUtil.merge([this.defaults, jsOptions || {}]);
     // markup options
-    var markupOptions = this.object.getAttribute(attr);
+    let markupOptions = this.object.getAttribute(attr);
     this.options = XtUtil.merge([this.options, markupOptions ? JSON.parse(markupOptions) : {}]);
     // classes
     if (this.options.class) {
@@ -44,7 +44,7 @@ export class Xt {
    * setup namespace, container and options
    */
   initSetup() {
-    var options = this.options;
+    let options = this.options;
     // setup (based on xtend mode)
     if (options.targets && options.targets.indexOf('#') !== -1) {
       // xtend all mode
@@ -70,8 +70,8 @@ export class Xt {
    * init elements, targets and currents
    */
   initScope() {
-    var self = this;
-    var options = this.options;
+    let self = this;
+    let options = this.options;
     // elements
     this.elements = [];
     if (options.elements) {
@@ -86,7 +86,7 @@ export class Xt {
     }
     // targets
     if (options.targets) {
-      var arr = Array.from(this.container.querySelectorAll(options.targets));
+      let arr = Array.from(this.container.querySelectorAll(options.targets));
       arr = arr.filter(
         // filter out nested options.targets
         x => !XtUtil.parents(x, options.targets).length
@@ -94,22 +94,22 @@ export class Xt {
       this.targets = XtUtil.arrSingle(arr);
     }
     // @FIX set namespace for next frame
-    for (var el of this.elements) {
+    for (let el of this.elements) {
       el.setAttribute('data-xt-namespace', self.namespace);
     }
     // currents
     XtUtil.requestAnimationFrame.call(window, function () {
       if (self.elements.length) {
         // activate defaults.class
-        for (var el of self.elements) {
+        for (let el of self.elements) {
           if (el.classList.contains(...self.defaults.classes)) {
             self.eventOn(el);
           }
         }
         // if currents < min
-        var todo = options.min - self.getCurrents().length;
+        let todo = options.min - self.getCurrents().length;
         if (todo) {
-          for (var i = 0; i < todo; i++) {
+          for (let i = 0; i < todo; i++) {
             self.eventOn(self.elements[i]);
           }
         }
@@ -135,17 +135,17 @@ export class Xt {
       return {all: this.elements, single: this.elements};
     } else if (this.mode === 'unique') {
       // choose element by group
-      var group = element.getAttribute('data-group');
+      let group = element.getAttribute('data-group');
       if (group) {
         // all group elements if group
-        var groupElements = Array.from(this.elements).filter(
+        let groupElements = Array.from(this.elements).filter(
           x => x.getAttribute('data-group') === group
         );
-        var final = XtUtil.arrSingle(groupElements);
+        let final = XtUtil.arrSingle(groupElements);
         return {all: final, single: final[0]};
       } else {
         // element if not group
-        var final = element;
+        let final = element;
         return {all: XtUtil.arrSingle(final), single: final};
       }
     }
@@ -165,21 +165,21 @@ export class Xt {
       return this.targets;
     } else if (this.mode === 'unique') {
       // choose only target by group
-      var group = element.getAttribute('data-group');
-      var groupElements = Array.from(this.elements).filter(
+      let group = element.getAttribute('data-group');
+      let groupElements = Array.from(this.elements).filter(
         x => x.getAttribute('data-group') === group
       );
-      var groupTargets = Array.from(this.targets).filter(
+      let groupTargets = Array.from(this.targets).filter(
         x => x.getAttribute('data-group') === group
       );
       if (group) {
         // all group targets if group
-        var final = groupTargets;
+        let final = groupTargets;
         return XtUtil.arrSingle(final);
       } else {
         // not group targets by index if not group
-        var index = groupElements.findIndex(x => x === element);
-        var final = groupTargets[index];
+        let index = groupElements.findIndex(x => x === element);
+        let final = groupTargets[index];
         return XtUtil.arrSingle(final);
       }
     }
@@ -206,7 +206,7 @@ export class Xt {
    * @param {Element} element To be added
    */
   addCurrent(element) {
-    var arr = XtUtil.currents[this.namespace];
+    let arr = XtUtil.currents[this.namespace];
     arr.push(element);
   }
 
@@ -229,19 +229,19 @@ export class Xt {
    * @param {Element} element To be activated
    */
   eventOn(element) {
-    var options = this.options;
+    let options = this.options;
     // activate or deactivate
     if (!element.classList.contains(...this.defaults.classes)) {
-      var fElements = this.getElements(element);
+      let fElements = this.getElements(element);
       this.addCurrent(fElements.single);
       this.activationOn(fElements.all);
-      var targets = this.getTargets(element);
+      let targets = this.getTargets(element);
       this.activationOn(targets);
     } else {
       this.eventOff(element);
     }
     // if currents > max
-    var currents = this.getCurrents();
+    let currents = this.getCurrents();
     if (currents.length > options.max) {
       this.eventOff(currents[0]);
     }
@@ -252,18 +252,18 @@ export class Xt {
    * @param {Element} element To be deactivated
    */
   eventOff(element) {
-    var options = this.options;
+    let options = this.options;
     // if currents < min
-    var todo = options.min - this.getCurrents().length;
+    let todo = options.min - this.getCurrents().length;
     if (!todo) {
       return;
     }
     // deactivate
     if (element.classList.contains(...this.defaults.classes)) {
-      var fElements = this.getElements(element);
+      let fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
       this.activationOff(fElements.all);
-      var targets = this.getTargets(element);
+      let targets = this.getTargets(element);
       this.activationOff(targets);
     }
   }
@@ -277,10 +277,10 @@ export class Xt {
    * @param {Element} element To be activated
    */
   activationOn(els) {
-    var self = this;
-    var options = this.options;
+    let self = this;
+    let options = this.options;
     // activate
-    for (var el of els) {
+    for (let el of els) {
       el.classList.add(...options.classes);
       el.classList.remove('out');
       self.activationOffClear(el);
@@ -294,10 +294,10 @@ export class Xt {
    * @param {Element} element To be deactivated
    */
   activationOff(els) {
-    var self = this;
-    var options = this.options;
+    let self = this;
+    let options = this.options;
     // deactivate
-    for (var el of els) {
+    for (let el of els) {
       el.classList.remove(...options.classes);
       el.classList.add('out');
       self.activationOffAnimate(el);
@@ -313,9 +313,9 @@ export class Xt {
   activationOffAnimate(el) {
     this.activationOffClear(el);
     // timing
-    var timing = options.timing;
-    var transition = parseFloat(getComputedStyle(el)['transitionDuration']);
-    var animation = parseFloat(getComputedStyle(el)['animationDuration']);
+    let timing = options.timing;
+    let transition = parseFloat(getComputedStyle(el)['transitionDuration']);
+    let animation = parseFloat(getComputedStyle(el)['animationDuration']);
     if (transition || animation) {
       timing = Math.max(transition, animation);
     }
@@ -324,7 +324,7 @@ export class Xt {
       el.classList.remove('out');
     } else {
       timing = timing * 1000;
-      var timeout = setTimeout(function (el) {
+      let timeout = setTimeout(function (el) {
         el.classList.remove('out');
       }, timing, el);
       el.setAttribute('xt-out-timeout', timeout);
@@ -353,9 +353,9 @@ export class Xt {
       el.style.height = 'auto';
       el.style.paddingTop = '';
       el.style.paddingBottom = '';
-      var h = el.clientHeight + 'px';
-      var pt = el.style.paddingTop;
-      var pb = el.style.paddingBottom;
+      let h = el.clientHeight + 'px';
+      let pt = el.style.paddingTop;
+      let pb = el.style.paddingBottom;
       XtUtil.requestAnimationFrame.call(window, function () {
         el.style.height = '0';
         el.style.paddingTop = '0';
@@ -372,9 +372,9 @@ export class Xt {
       el.style.width = 'auto';
       el.style.paddingLeft = '';
       el.style.paddingRight = '';
-      var w = el.clientHeight + 'px';
-      var pl = el.style.paddingLeft;
-      var pr = el.style.paddingRight;
+      let w = el.clientHeight + 'px';
+      let pl = el.style.paddingLeft;
+      let pr = el.style.paddingRight;
       XtUtil.requestAnimationFrame.call(window, function () {
         el.style.width = '0';
         el.style.paddingLeft = '0';
@@ -440,10 +440,10 @@ export class XtToggle extends Xt {
    * init events
    */
   initEvents() {
-    var self = this;
-    var options = this.options;
+    let self = this;
+    let options = this.options;
     // on and off
-    for (var el of this.elements) {
+    for (let el of this.elements) {
       if (options.on) {
         el.addEventListener(options.on, function (e) {
           self.eventOn(this);
@@ -496,7 +496,7 @@ export class XtScroll extends Xt {
    */
   initScope() {
     super.initScope();
-    var options = this.options;
+    let options = this.options;
     // mode
     this.mode = 'all';
     // container
@@ -538,8 +538,8 @@ export class XtScroll extends Xt {
    * init events
    */
   initEvents() {
-    var self = this;
-    var options = this.options;
+    let self = this;
+    let options = this.options;
     // scroll
     window.addEventListener(options.on, function (e) {
       self.eventScroll(this);
@@ -555,39 +555,39 @@ export class XtScroll extends Xt {
    * @param {Element} element To be activated or deactivated
    */
   eventScroll() {
-    var self = this;
-    var options = this.options;
+    let self = this;
+    let options = this.options;
     // scroll
-    var scrollTop = document.documentElement.scrollTop;
+    let scrollTop = document.documentElement.scrollTop;
     XtUtil.cancelAnimationFrame.call(window, this.scrollFrame);
     this.scrollFrame = XtUtil.requestAnimationFrame.call(window, function () {
       // on or off
-      var element = self.object;
-      var rectContainer = self.container[0].getBoundingClientRect();
-      var top = rectContainer.top;
-      var bottom = Infinity;
-        if (!isNaN(parseFloat(options.top))) {
-          top = options.top;
+      let element = self.object;
+      let rectContainer = self.container[0].getBoundingClientRect();
+      let top = rectContainer.top;
+      let bottom = Infinity;
+      if (!isNaN(parseFloat(options.top))) {
+        top = options.top;
+      } else {
+        let elTop = document.querySelectorAll(options.top);
+        if (elTop.length) {
+          let rectTop = elTop[0].getBoundingClientRect();
+          top = rectTop.top + scrollTop;
         } else {
-          var elTop = document.querySelectorAll(options.top);
-          if (elTop.length) {
-            var rectTop = elTop[0].getBoundingClientRect();
-            top = rectTop.top + scrollTop;
-          } else {
-            var rectTop = self.targets[0].getBoundingClientRect();
-            top = rectTop.top + scrollTop;
-          }
+          let rectTop = self.targets[0].getBoundingClientRect();
+          top = rectTop.top + scrollTop;
         }
+      }
       if (options.bottom !== undefined) {
         if (!isNaN(parseFloat(options.bottom))) {
           bottom = options.bottom;
         } else {
-          var elBottom = document.querySelectorAll(options.bottom);
+          let elBottom = document.querySelectorAll(options.bottom);
           if (elBottom.length) {
-            var rectBottom = elBottom[0].getBoundingClientRect();
+            let rectBottom = elBottom[0].getBoundingClientRect();
             bottom = rectBottom.top + scrollTop;
           } else {
-            var rectBottom = self.targets[0].getBoundingClientRect();
+            let rectBottom = self.targets[0].getBoundingClientRect();
             bottom = rectBottom.top + scrollTop;
           }
         }
@@ -596,8 +596,8 @@ export class XtScroll extends Xt {
         if (!element.classList.contains(...self.defaults.classes)) {
           self.eventOn(element);
           // direction classes
-          var fElements = self.getElements(element);
-          for (var el of fElements.all) {
+          let fElements = self.getElements(element);
+          for (let el of fElements.all) {
             el.classList.remove('scroll-off-top', 'scroll-off-bottom');
             if (self.scrollTop > scrollTop) {
               el.classList.remove('scroll-off-bottom');
@@ -612,8 +612,8 @@ export class XtScroll extends Xt {
         if (element.classList.contains(...self.defaults.classes)) {
           self.eventOff(element);
           // direction classes
-          var fElements = self.getElements(element);
-          for (var el of fElements.all) {
+          let fElements = self.getElements(element);
+          for (let el of fElements.all) {
             el.classList.remove('scroll-on-top', 'scroll-on-bottom');
             if (self.scrollTop > scrollTop) {
               el.classList.remove('scroll-off-top');

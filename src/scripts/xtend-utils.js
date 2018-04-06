@@ -10,10 +10,10 @@ import {XtToggle, XtScroll} from "./xtend";
 // Constructor
 //////////////////////
 
-var XtUtil = {};
+const XtUtil = {};
 
 //////////////////////
-// Vars
+// Properties
 //////////////////////
 
 // Xt currents based on namespace (so shared between Xt objects)
@@ -29,11 +29,11 @@ XtUtil.currents = {};
  */
 XtUtil.initAll = function () {
   // xt-toggle
-  for (var el of document.querySelectorAll('[data-xt-toggle]')) {
+  for (let el of document.querySelectorAll('[data-xt-toggle]')) {
     new XtToggle(el);
   }
   // xt-scroll
-  for (var el of document.querySelectorAll('[data-xt-scroll]')) {
+  for (let el of document.querySelectorAll('[data-xt-scroll]')) {
     new XtScroll(el);
   }
 };
@@ -42,7 +42,7 @@ XtUtil.initAll = function () {
  * request animation frame
  * @param {Function} Function for animation frame
  * @returns {Number} AnimationFrame id
- * USAGE: var animationFrame = XtUtil.requestAnimationFrame.call(window, function () {});
+ * USAGE: let animationFrame = XtUtil.requestAnimationFrame.call(window, function () {});
  */
 XtUtil.requestAnimationFrame = function () {
   return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
@@ -76,9 +76,11 @@ XtUtil.getUniqueID = function () {
  * @returns {Object} Merged object
  */
 XtUtil.merge = function (arr) {
-  var final = {};
-  for (var obj of arr) {
-    Object.entries(obj).forEach(([key, value]) => final[key] = value);
+  let final = {};
+  for (let obj of arr) {
+    for (let [key, value] of Object.entries(obj)) {
+      final[key] = value;
+    }
   }
   return final;
 };
@@ -90,7 +92,7 @@ XtUtil.merge = function (arr) {
  */
 XtUtil.arrSingle = function (single) {
   if (single.length === undefined) {
-    var arr = new Array(1);
+    let arr = new Array(1);
     arr[0] = single;
     return arr;
   } else {
@@ -104,7 +106,7 @@ XtUtil.arrSingle = function (single) {
  * @return {Element} DOM element
  */
 XtUtil.createElement = function (str) {
-  var div = document.createElement('div');
+  let div = document.createElement('div');
   div.innerHTML = str.trim();
   return div.firstChild;
 };
@@ -116,7 +118,7 @@ XtUtil.createElement = function (str) {
  * @return {Element} Parents elements by query
  */
 XtUtil.parents = function (element, query) {
-  var parents = [];
+  let parents = [];
   while (element = element.parentElement.closest(query)) {
     parents.push(element);
   }
@@ -130,7 +132,7 @@ XtUtil.parents = function (element, query) {
  */
 /*
 XtUtil.getElementIndex = function (node) {
-  var index = 0;
+  let index = 0;
   while ((node = node.previousElementSibling)) {
     index++;
   }
@@ -146,7 +148,7 @@ XtUtil.getElementIndex = function (node) {
  */
 /*
 XtUtil.getClosest = function (element, selector) {
-  var firstChar = selector.charAt(0);
+  let firstChar = selector.charAt(0);
   for (; element && element !== document; element = element.parentNode) {
     if (firstChar === '.') {
       if (element.classList.contains(selector.substr(1))) {
@@ -181,14 +183,14 @@ export default XtUtil;
   try { // check if browser supports :scope natively
     doc.querySelector(':scope body');
   } catch (err) { // polyfill native methods if it doesn't
-    for (var method of ['querySelector', 'querySelectorAll']) {
-      var nativ = proto[method];
+    for (let method of ['querySelector', 'querySelectorAll']) {
+      let nativ = proto[method];
       proto[method] = function (selectors) {
         if (/(^|,)\s*:scope/.test(selectors)) { // only if selectors contains :scope
-          var id = this.id; // remember current element id
+          let id = this.id; // remember current element id
           this.id = 'ID_' + Date.now(); // assign new unique id
           selectors = selectors.replace(/((^|,)\s*):scope/g, '$1#' + this.id); // replace :scope with #ID
-          var result = doc[method](selectors);
+          let result = doc[method](selectors);
           this.id = id; // restore previous id
           return result;
         } else {

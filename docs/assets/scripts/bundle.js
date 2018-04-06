@@ -17,13 +17,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // highlight
 
-var els = document.querySelectorAll('pre code');
 var _iteratorNormalCompletion = true;
 var _didIteratorError = false;
 var _iteratorError = undefined;
 
 try {
-  for (var _iterator = els[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+  for (var _iterator = document.querySelectorAll('pre code')[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
     var el = _step.value;
 
     el.innerHTML = el.innerHTML.replace(/^\s+|\s+$/g, ''); // remove newline at start and end
@@ -46,16 +45,15 @@ try {
   }
 }
 
-var els = document.querySelectorAll('.site-article > h2, .site-article > h3');
 var _iteratorNormalCompletion2 = true;
 var _didIteratorError2 = false;
 var _iteratorError2 = undefined;
 
 try {
-  for (var _iterator2 = els[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-    var el = _step2.value;
+  for (var _iterator2 = document.querySelectorAll('.site-article > h2, .site-article > h3')[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+    var _el = _step2.value;
 
-    el.classList.add('make-line');
+    _el.classList.add('make-line');
   }
 } catch (err) {
   _didIteratorError2 = true;
@@ -72,17 +70,16 @@ try {
   }
 }
 
-var els = document.querySelectorAll('.make-line');
 var _iteratorNormalCompletion3 = true;
 var _didIteratorError3 = false;
 var _iteratorError3 = undefined;
 
 try {
-  for (var _iterator3 = els[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-    var el = _step3.value;
+  for (var _iterator3 = document.querySelectorAll('.make-line')[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+    var _el2 = _step3.value;
 
-    el.innerHTML = '<span class="line">' + el.innerHTML + '</div>';
-    el.innerHTML = '<span class="line-container">' + el.innerHTML + '</div>';
+    _el2.innerHTML = '<span class="line">' + _el2.innerHTML + '</div>';
+    _el2.innerHTML = '<span class="line-container">' + _el2.innerHTML + '</div>';
   }
 
   // .make-anchor
@@ -101,22 +98,20 @@ try {
   }
 }
 
-var els = document.querySelectorAll('.site-article > h2, .site-article > h3');
 var _iteratorNormalCompletion4 = true;
 var _didIteratorError4 = false;
 var _iteratorError4 = undefined;
 
 try {
-  for (var _iterator4 = els[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
-    var el = _step4.value;
+  for (var _iterator4 = document.querySelectorAll('.site-article > h2, .site-article > h3')[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+    var _el3 = _step4.value;
 
-    el.classList.add('make-line');
-    var id = el.textContent.replace(/\s+/g, '-').toLowerCase();
-    el.setAttribute('id', id);
-    el.innerHTML = '<a href="#' + id + '">' + el.innerHTML + '</a>';
-    el.classList.add('make-anchor');
-    var append = _xtendUtils2.default.createElement('<span class="site-article-anchor"><div class="btn"><span class="icon-link" aria-hidden="true"></span></div></span>');
-    el.append(append);
+    _el3.classList.add('make-line');
+    var id = _el3.textContent.replace(/\s+/g, '-').toLowerCase();
+    _el3.setAttribute('id', id);
+    _el3.innerHTML = '<a href="#' + id + '">' + _el3.innerHTML + '</a>';
+    _el3.classList.add('make-anchor');
+    _el3.append(_xtendUtils2.default.createElement('<span class="site-article-anchor"><div class="btn"><span class="icon-link" aria-hidden="true"></span></div></span>'));
   }
 
   // .site-aside-text
@@ -135,29 +130,25 @@ try {
   }
 }
 
-var els = document.querySelectorAll('.site-aside-text > .btn:not(.different)');
 var _iteratorNormalCompletion5 = true;
 var _didIteratorError5 = false;
 var _iteratorError5 = undefined;
 
 try {
-  for (var _iterator5 = els[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
-    var el = _step5.value;
+  for (var _iterator5 = document.querySelectorAll('.site-aside-text > .btn:not(.different)')[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+    var _el4 = _step5.value;
 
-    var container = _xtendUtils2.default.parents(el, '.site-aside-text')[0];
-    var elements = document.querySelectorAll('.site-article > h2');
+    var container = _xtendUtils2.default.parents(_el4, '.site-aside-text')[0];
     var _iteratorNormalCompletion11 = true;
     var _didIteratorError11 = false;
     var _iteratorError11 = undefined;
 
     try {
-      for (var _iterator11 = elements[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
+      for (var _iterator11 = document.querySelectorAll('.site-article > h2')[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
         var element = _step11.value;
 
-        var append = _xtendUtils2.default.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-secondary-alt btn-small site-aside-sub">' + element.textContent + '</a>');
-        container.append(append);
-        var append = _xtendUtils2.default.createElement('<div class="site-aside-subsub"></div>');
-        container.append(append);
+        container.append(_xtendUtils2.default.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-secondary-alt btn-small site-aside-sub">' + element.textContent + '</a>'));
+        container.append(_xtendUtils2.default.createElement('<div class="site-aside-subsub"></div>'));
       }
     } catch (err) {
       _didIteratorError11 = true;
@@ -174,18 +165,16 @@ try {
       }
     }
 
-    var elements = document.querySelectorAll('.site-article > h3');
     var _iteratorNormalCompletion12 = true;
     var _didIteratorError12 = false;
     var _iteratorError12 = undefined;
 
     try {
-      for (var _iterator12 = elements[Symbol.iterator](), _step12; !(_iteratorNormalCompletion12 = (_step12 = _iterator12.next()).done); _iteratorNormalCompletion12 = true) {
-        var element = _step12.value;
+      for (var _iterator12 = document.querySelectorAll('.site-article > h3')[Symbol.iterator](), _step12; !(_iteratorNormalCompletion12 = (_step12 = _iterator12.next()).done); _iteratorNormalCompletion12 = true) {
+        var _element = _step12.value;
 
-        var append = _xtendUtils2.default.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-secondary-alt btn-tiny">' + element.textContent + '</a>');
         var item = container.querySelectorAll('.site-aside-subsub');
-        item[item.length - 1].append(append);
+        item[item.length - 1].append(_xtendUtils2.default.createElement('<a href="#' + _element.getAttribute('id') + '" class="btn btn-secondary-alt btn-tiny">' + _element.textContent + '</a>'));
       }
     } catch (err) {
       _didIteratorError12 = true;
@@ -363,8 +352,8 @@ var populateDemo = function populateDemo(container, i) {
       // inject iframe
       if (item.getAttribute('data-iframe')) {
         /*
-        var $iframe = $item.find('> iframe');
-        var initIframe = function() {
+        let $iframe = $item.find('> iframe');
+        let initIframe = function() {
           if (!$iframe.attr('src')) {
             $item.addClass('demo-iframe');
             $iframe.attr('id', id);
@@ -459,10 +448,10 @@ var populateInline = function populateInline(item, id) {
 
 /*
 window.resizeIframe = function(id) {
-  var $iframe = $('#' + id);
-  var $target = $iframe.contents().find('#body-inside');
+  let $iframe = $('#' + id);
+  let $target = $iframe.contents().find('#body-inside');
   $target.hide().show(0); // fix scrollbars disappearing
-  var h = $target.outerHeight();
+  let h = $target.outerHeight();
   if (h !== $iframe.data('iframeHeight')) {
     $iframe.height(h);
     $iframe.data('iframeHeight', h);
@@ -472,10 +461,10 @@ window.resizeIframe = function(id) {
 /*
 // populateIframe
 function populateIframe($item, $iframe, id) {
-  var html = $('body #body-inside', $iframe[0].contentWindow.document).html();
-  var less = $('body less-style', $iframe[0].contentWindow.document).html();
-  var css = $('body style[scoped]', $iframe[0].contentWindow.document).html();
-  var js = $('body script', $iframe[0].contentWindow.document).html();
+  let html = $('body #body-inside', $iframe[0].contentWindow.document).html();
+  let less = $('body less-style', $iframe[0].contentWindow.document).html();
+  let css = $('body style[scoped]', $iframe[0].contentWindow.document).html();
+  let js = $('body script', $iframe[0].contentWindow.document).html();
   // inject code
   if (html) {
     $iframe.append('<div class="demo-source" data-lang="html">' + html + '</div>');
@@ -487,9 +476,9 @@ function populateIframe($item, $iframe, id) {
     $iframe.append('<div class="demo-source" data-lang="js">' + js + '</div>');
   }
   // populate
-  var $sources = $item.find('.demo-source');
+  let $sources = $item.find('.demo-source');
   $sources.each( function(z) {
-    var $source = $(this);
+    let $source = $(this);
     populateSources($item, $source, id, z);
   });
   $item.xtToggle({"elements": ".demo-code-tabs-left .button", "targets": ".demo-code-body-item", "min": 1});
@@ -518,7 +507,7 @@ var populateSources = function populateSources(item, element, id, z) {
 };
 
 // formatCode
-function formatCode(source, lang) {
+var formatCode = function formatCode(source, lang) {
   var text = source.innerHTML;
   if (lang === 'css' || lang === 'js') {
     text = text.replace(/<[^>]*>/g, '');
@@ -534,27 +523,26 @@ function formatCode(source, lang) {
     text = text.replace(/=""/g, '');
   }
   return text;
-}
+};
 
 // init demos
 
-var els = document.querySelectorAll('.demo');
 var _iteratorNormalCompletion10 = true;
 var _didIteratorError10 = false;
 var _iteratorError10 = undefined;
 
 try {
-  for (var _iterator10 = els.entries()[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
+  for (var _iterator10 = document.querySelectorAll('.demo').entries()[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
     var _step10$value = _slicedToArray(_step10.value, 2),
         i = _step10$value[0],
-        el = _step10$value[1];
+        _el5 = _step10$value[1];
 
-    populateDemo(el, i);
+    populateDemo(_el5, i);
     // enable fullscreen
     /*
     element.find('.demo-tabs-left .button').on('on', function(e, obj) {
-      var $fullscreen = $(this).parents('.demo').find('.button__fullscreen');
-      var iframe = $(this).parents('.demo').find('.demo-item.active').attr('data-iframe');
+      let $fullscreen = $(this).parents('.demo').find('.button__fullscreen');
+      let iframe = $(this).parents('.demo').find('.demo-item.active').attr('data-iframe');
       if (iframe) {
         $fullscreen.css('display', 'block');
         $fullscreen.off('click');
@@ -565,7 +553,7 @@ try {
     });
     */
     // demo tabs
-    new _xtend.XtToggle(el, {
+    new _xtend.XtToggle(_el5, {
       "elements": ".demo-tabs-left .btn",
       "targets": ".demo-item",
       "min": 1
@@ -614,7 +602,7 @@ var _xtend = require('./xtend');
 var XtUtil = {};
 
 //////////////////////
-// Vars
+// Properties
 //////////////////////
 
 // Xt currents based on namespace (so shared between Xt objects)
@@ -662,9 +650,9 @@ XtUtil.initAll = function () {
 
   try {
     for (var _iterator2 = document.querySelectorAll('[data-xt-scroll]')[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-      var el = _step2.value;
+      var _el = _step2.value;
 
-      new _xtend.XtScroll(el);
+      new _xtend.XtScroll(_el);
     }
   } catch (err) {
     _didIteratorError2 = true;
@@ -686,7 +674,7 @@ XtUtil.initAll = function () {
  * request animation frame
  * @param {Function} Function for animation frame
  * @returns {Number} AnimationFrame id
- * USAGE: var animationFrame = XtUtil.requestAnimationFrame.call(window, function () {});
+ * USAGE: let animationFrame = XtUtil.requestAnimationFrame.call(window, function () {});
  */
 XtUtil.requestAnimationFrame = function () {
   return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
@@ -728,14 +716,32 @@ XtUtil.merge = function (arr) {
   try {
     for (var _iterator3 = arr[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
       var obj = _step3.value;
+      var _iteratorNormalCompletion4 = true;
+      var _didIteratorError4 = false;
+      var _iteratorError4 = undefined;
 
-      Object.entries(obj).forEach(function (_ref) {
-        var _ref2 = _slicedToArray(_ref, 2),
-            key = _ref2[0],
-            value = _ref2[1];
+      try {
+        for (var _iterator4 = Object.entries(obj)[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+          var _step4$value = _slicedToArray(_step4.value, 2),
+              key = _step4$value[0],
+              value = _step4$value[1];
 
-        return final[key] = value;
-      });
+          final[key] = value;
+        }
+      } catch (err) {
+        _didIteratorError4 = true;
+        _iteratorError4 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion4 && _iterator4.return) {
+            _iterator4.return();
+          }
+        } finally {
+          if (_didIteratorError4) {
+            throw _iteratorError4;
+          }
+        }
+      }
     }
   } catch (err) {
     _didIteratorError3 = true;
@@ -802,7 +808,7 @@ XtUtil.parents = function (element, query) {
  */
 /*
 XtUtil.getElementIndex = function (node) {
-  var index = 0;
+  let index = 0;
   while ((node = node.previousElementSibling)) {
     index++;
   }
@@ -818,7 +824,7 @@ XtUtil.getElementIndex = function (node) {
  */
 /*
 XtUtil.getClosest = function (element, selector) {
-  var firstChar = selector.charAt(0);
+  let firstChar = selector.charAt(0);
   for (; element && element !== document; element = element.parentNode) {
     if (firstChar === '.') {
       if (element.classList.contains(selector.substr(1))) {
@@ -856,22 +862,27 @@ exports.default = XtUtil;
   } catch (err) {
     // polyfill native methods if it doesn't
     var _arr = ['querySelector', 'querySelectorAll'];
-    for (var _i = 0; _i < _arr.length; _i++) {
+
+    var _loop = function _loop() {
       var method = _arr[_i];
       var nativ = proto[method];
       proto[method] = function (selectors) {
         if (/(^|,)\s*:scope/.test(selectors)) {
           // only if selectors contains :scope
-          var id = this.id; // remember current element id
+          var _id = this.id; // remember current element id
           this.id = 'ID_' + Date.now(); // assign new unique id
           selectors = selectors.replace(/((^|,)\s*):scope/g, '$1#' + this.id); // replace :scope with #ID
           var result = doc[method](selectors);
-          this.id = id; // restore previous id
+          this.id = _id; // restore previous id
           return result;
         } else {
           return nativ.call(this, selectors); // use native code for other selectors
         }
       };
+    };
+
+    for (var _i = 0; _i < _arr.length; _i++) {
+      _loop();
     }
   }
 })(window.document, Element.prototype);
@@ -1104,8 +1115,8 @@ var Xt = exports.Xt = function () {
           return { all: final, single: final[0] };
         } else {
           // element if not group
-          var final = element;
-          return { all: _xtendUtils2.default.arrSingle(final), single: final };
+          var _final = element;
+          return { all: _xtendUtils2.default.arrSingle(_final), single: _final };
         }
       }
     }
@@ -1143,8 +1154,8 @@ var Xt = exports.Xt = function () {
           var index = groupElements.findIndex(function (x) {
             return x === element;
           });
-          var final = groupTargets[index];
-          return _xtendUtils2.default.arrSingle(final);
+          var _final2 = groupTargets[index];
+          return _xtendUtils2.default.arrSingle(_final2);
         }
       }
     }
@@ -1672,8 +1683,8 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
             var rectTop = elTop[0].getBoundingClientRect();
             top = rectTop.top + scrollTop;
           } else {
-            var rectTop = self.targets[0].getBoundingClientRect();
-            top = rectTop.top + scrollTop;
+            var _rectTop = self.targets[0].getBoundingClientRect();
+            top = _rectTop.top + scrollTop;
           }
         }
         if (options.bottom !== undefined) {
@@ -1685,8 +1696,8 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
               var rectBottom = elBottom[0].getBoundingClientRect();
               bottom = rectBottom.top + scrollTop;
             } else {
-              var rectBottom = self.targets[0].getBoundingClientRect();
-              bottom = rectBottom.top + scrollTop;
+              var _rectBottom = self.targets[0].getBoundingClientRect();
+              bottom = _rectBottom.top + scrollTop;
             }
           }
         }
@@ -1735,22 +1746,22 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
           if ((_element$classList4 = element.classList).contains.apply(_element$classList4, _toConsumableArray(self.defaults.classes))) {
             self.eventOff(element);
             // direction classes
-            var fElements = self.getElements(element);
+            var _fElements = self.getElements(element);
             var _iteratorNormalCompletion7 = true;
             var _didIteratorError7 = false;
             var _iteratorError7 = undefined;
 
             try {
-              for (var _iterator7 = fElements.all[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
-                var el = _step7.value;
+              for (var _iterator7 = _fElements.all[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+                var _el = _step7.value;
 
-                el.classList.remove('scroll-on-top', 'scroll-on-bottom');
+                _el.classList.remove('scroll-on-top', 'scroll-on-bottom');
                 if (self.scrollTop > scrollTop) {
-                  el.classList.remove('scroll-off-top');
-                  el.classList.add('scroll-off-bottom');
+                  _el.classList.remove('scroll-off-top');
+                  _el.classList.add('scroll-off-bottom');
                 } else {
-                  el.classList.remove('scroll-off-bottom');
-                  el.classList.add('scroll-off-top');
+                  _el.classList.remove('scroll-off-bottom');
+                  _el.classList.add('scroll-off-top');
                 }
               }
             } catch (err) {

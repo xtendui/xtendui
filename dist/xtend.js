@@ -20,7 +20,7 @@ var _xtend = require('./xtend');
 var XtUtil = {};
 
 //////////////////////
-// Vars
+// Properties
 //////////////////////
 
 // Xt currents based on namespace (so shared between Xt objects)
@@ -68,9 +68,9 @@ XtUtil.initAll = function () {
 
   try {
     for (var _iterator2 = document.querySelectorAll('[data-xt-scroll]')[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-      var el = _step2.value;
+      var _el = _step2.value;
 
-      new _xtend.XtScroll(el);
+      new _xtend.XtScroll(_el);
     }
   } catch (err) {
     _didIteratorError2 = true;
@@ -92,7 +92,7 @@ XtUtil.initAll = function () {
  * request animation frame
  * @param {Function} Function for animation frame
  * @returns {Number} AnimationFrame id
- * USAGE: var animationFrame = XtUtil.requestAnimationFrame.call(window, function () {});
+ * USAGE: let animationFrame = XtUtil.requestAnimationFrame.call(window, function () {});
  */
 XtUtil.requestAnimationFrame = function () {
   return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
@@ -134,14 +134,32 @@ XtUtil.merge = function (arr) {
   try {
     for (var _iterator3 = arr[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
       var obj = _step3.value;
+      var _iteratorNormalCompletion4 = true;
+      var _didIteratorError4 = false;
+      var _iteratorError4 = undefined;
 
-      Object.entries(obj).forEach(function (_ref) {
-        var _ref2 = _slicedToArray(_ref, 2),
-            key = _ref2[0],
-            value = _ref2[1];
+      try {
+        for (var _iterator4 = Object.entries(obj)[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+          var _step4$value = _slicedToArray(_step4.value, 2),
+              key = _step4$value[0],
+              value = _step4$value[1];
 
-        return final[key] = value;
-      });
+          final[key] = value;
+        }
+      } catch (err) {
+        _didIteratorError4 = true;
+        _iteratorError4 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion4 && _iterator4.return) {
+            _iterator4.return();
+          }
+        } finally {
+          if (_didIteratorError4) {
+            throw _iteratorError4;
+          }
+        }
+      }
     }
   } catch (err) {
     _didIteratorError3 = true;
@@ -208,7 +226,7 @@ XtUtil.parents = function (element, query) {
  */
 /*
 XtUtil.getElementIndex = function (node) {
-  var index = 0;
+  let index = 0;
   while ((node = node.previousElementSibling)) {
     index++;
   }
@@ -224,7 +242,7 @@ XtUtil.getElementIndex = function (node) {
  */
 /*
 XtUtil.getClosest = function (element, selector) {
-  var firstChar = selector.charAt(0);
+  let firstChar = selector.charAt(0);
   for (; element && element !== document; element = element.parentNode) {
     if (firstChar === '.') {
       if (element.classList.contains(selector.substr(1))) {
@@ -262,22 +280,27 @@ exports.default = XtUtil;
   } catch (err) {
     // polyfill native methods if it doesn't
     var _arr = ['querySelector', 'querySelectorAll'];
-    for (var _i = 0; _i < _arr.length; _i++) {
+
+    var _loop = function _loop() {
       var method = _arr[_i];
       var nativ = proto[method];
       proto[method] = function (selectors) {
         if (/(^|,)\s*:scope/.test(selectors)) {
           // only if selectors contains :scope
-          var id = this.id; // remember current element id
+          var _id = this.id; // remember current element id
           this.id = 'ID_' + Date.now(); // assign new unique id
           selectors = selectors.replace(/((^|,)\s*):scope/g, '$1#' + this.id); // replace :scope with #ID
           var result = doc[method](selectors);
-          this.id = id; // restore previous id
+          this.id = _id; // restore previous id
           return result;
         } else {
           return nativ.call(this, selectors); // use native code for other selectors
         }
       };
+    };
+
+    for (var _i = 0; _i < _arr.length; _i++) {
+      _loop();
     }
   }
 })(window.document, Element.prototype);
@@ -510,8 +533,8 @@ var Xt = exports.Xt = function () {
           return { all: final, single: final[0] };
         } else {
           // element if not group
-          var final = element;
-          return { all: _xtendUtils2.default.arrSingle(final), single: final };
+          var _final = element;
+          return { all: _xtendUtils2.default.arrSingle(_final), single: _final };
         }
       }
     }
@@ -549,8 +572,8 @@ var Xt = exports.Xt = function () {
           var index = groupElements.findIndex(function (x) {
             return x === element;
           });
-          var final = groupTargets[index];
-          return _xtendUtils2.default.arrSingle(final);
+          var _final2 = groupTargets[index];
+          return _xtendUtils2.default.arrSingle(_final2);
         }
       }
     }
@@ -1078,8 +1101,8 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
             var rectTop = elTop[0].getBoundingClientRect();
             top = rectTop.top + scrollTop;
           } else {
-            var rectTop = self.targets[0].getBoundingClientRect();
-            top = rectTop.top + scrollTop;
+            var _rectTop = self.targets[0].getBoundingClientRect();
+            top = _rectTop.top + scrollTop;
           }
         }
         if (options.bottom !== undefined) {
@@ -1091,8 +1114,8 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
               var rectBottom = elBottom[0].getBoundingClientRect();
               bottom = rectBottom.top + scrollTop;
             } else {
-              var rectBottom = self.targets[0].getBoundingClientRect();
-              bottom = rectBottom.top + scrollTop;
+              var _rectBottom = self.targets[0].getBoundingClientRect();
+              bottom = _rectBottom.top + scrollTop;
             }
           }
         }
@@ -1141,22 +1164,22 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
           if ((_element$classList4 = element.classList).contains.apply(_element$classList4, _toConsumableArray(self.defaults.classes))) {
             self.eventOff(element);
             // direction classes
-            var fElements = self.getElements(element);
+            var _fElements = self.getElements(element);
             var _iteratorNormalCompletion7 = true;
             var _didIteratorError7 = false;
             var _iteratorError7 = undefined;
 
             try {
-              for (var _iterator7 = fElements.all[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
-                var el = _step7.value;
+              for (var _iterator7 = _fElements.all[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+                var _el = _step7.value;
 
-                el.classList.remove('scroll-on-top', 'scroll-on-bottom');
+                _el.classList.remove('scroll-on-top', 'scroll-on-bottom');
                 if (self.scrollTop > scrollTop) {
-                  el.classList.remove('scroll-off-top');
-                  el.classList.add('scroll-off-bottom');
+                  _el.classList.remove('scroll-off-top');
+                  _el.classList.add('scroll-off-bottom');
                 } else {
-                  el.classList.remove('scroll-off-bottom');
-                  el.classList.add('scroll-off-top');
+                  _el.classList.remove('scroll-off-bottom');
+                  _el.classList.add('scroll-off-top');
                 }
               }
             } catch (err) {
