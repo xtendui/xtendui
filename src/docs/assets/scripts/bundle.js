@@ -1268,7 +1268,7 @@ var Xt = exports.Xt = function () {
     //////////////////////
 
     /**
-     * element activation
+     * element on activation
      * @param {Element} element To be activated
      */
 
@@ -1290,7 +1290,7 @@ var Xt = exports.Xt = function () {
 
           (_el$classList2 = el.classList).add.apply(_el$classList2, _toConsumableArray(options.classes));
           el.classList.remove('out');
-          self.activationOffClear(el);
+          self.activationOnAnimate(el);
           // specials
           self.collapseOn(el);
         }
@@ -1311,7 +1311,47 @@ var Xt = exports.Xt = function () {
     }
 
     /**
-     * element deactivation
+     * element on animation
+     * @param {Element} element To be animated
+     */
+
+  }, {
+    key: 'activationOnAnimate',
+    value: function activationOnAnimate(el) {
+      this.activationOffClear(el);
+      // timing
+      var timing = options.timing;
+      var transition = parseFloat(getComputedStyle(el)['transitionDuration']);
+      var animation = parseFloat(getComputedStyle(el)['animationDuration']);
+      if (transition || animation) {
+        timing = Math.max(transition, animation);
+      }
+      // delay
+      if (!timing) {
+        // collapse-width and collapse-height
+        if (el.classList.contains('collapse-height')) {
+          el.style.height = 'auto';
+        }
+        if (el.classList.contains('collapse-width')) {
+          el.style.width = 'auto';
+        }
+      } else {
+        timing = timing * 1000;
+        var timeout = setTimeout(function (el) {
+          // collapse-width and collapse-height
+          if (el.classList.contains('collapse-height')) {
+            el.style.height = 'auto';
+          }
+          if (el.classList.contains('collapse-width')) {
+            el.style.width = 'auto';
+          }
+        }, timing, el);
+        el.setAttribute('xt-activation-animation-timeout', timeout);
+      }
+    }
+
+    /**
+     * element off activation
      * @param {Element} element To be deactivated
      */
 
@@ -1354,7 +1394,7 @@ var Xt = exports.Xt = function () {
     }
 
     /**
-     * element out animation
+     * element off animation
      * @param {Element} element To be animated
      */
 
@@ -1377,7 +1417,7 @@ var Xt = exports.Xt = function () {
         var timeout = setTimeout(function (el) {
           el.classList.remove('out');
         }, timing, el);
-        el.setAttribute('xt-out-timeout', timeout);
+        el.setAttribute('xt-activation-animation-timeout', timeout);
       }
     }
 
@@ -1389,7 +1429,7 @@ var Xt = exports.Xt = function () {
   }, {
     key: 'activationOffClear',
     value: function activationOffClear(el) {
-      clearTimeout(parseFloat(el.getAttribute('xt-out-timeout')));
+      clearTimeout(parseFloat(el.getAttribute('xt-activation-animation-timeout')));
     }
 
     //////////////////////
@@ -1454,14 +1494,30 @@ var Xt = exports.Xt = function () {
     key: 'collapseOff',
     value: function collapseOff(el) {
       if (el.classList.contains('collapse-height')) {
-        el.style.height = '0';
-        el.style.paddingTop = '0';
-        el.style.paddingBottom = '0';
+        var h = el.clientHeight + 'px';
+        var pt = el.style.paddingTop;
+        var pb = el.style.paddingBottom;
+        el.style.height = h;
+        el.style.paddingTop = pt;
+        el.style.paddingBottom = pb;
+        _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+          el.style.height = '0';
+          el.style.paddingTop = '0';
+          el.style.paddingBottom = '0';
+        });
       }
       if (el.classList.contains('collapse-width')) {
-        el.style.width = '0';
-        el.style.paddingLeft = '0';
-        el.style.paddingRight = '0';
+        var w = el.clientWidth + 'px';
+        var pl = el.style.paddingLeft;
+        var pr = el.style.paddingRight;
+        el.style.width = w;
+        el.style.paddingLeft = pl;
+        el.style.paddingRight = pr;
+        _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+          el.style.width = '0';
+          el.style.paddingLeft = '0';
+          el.style.paddingRight = '0';
+        });
       }
     }
   }]);
@@ -1665,7 +1721,7 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
           if (elTop.length) {
             var rectTop = elTop[0].getBoundingClientRect();
             top = rectTop.top + scrollTop;
-          } else {
+          } else if (self.targets.length) {
             var _rectTop = self.targets[0].getBoundingClientRect();
             top = _rectTop.top + scrollTop;
           }
@@ -1679,7 +1735,7 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
             if (elBottom.length) {
               var rectBottom = elBottom[0].getBoundingClientRect();
               bottom = rectBottom.top + scrollTop;
-            } else {
+            } else if (self.targets.length) {
               var _rectBottom = self.targets[0].getBoundingClientRect();
               bottom = _rectBottom.top + scrollTop;
             }
@@ -1784,6 +1840,47 @@ XtScroll.defaults = {
   min: 0,
   max: Infinity
 };
+
+/*
+// overlay html
+if (settings.name === 'xt-overlay') {
+  var $additional = $('html');
+  if (!$additional.hasClass(object.defaultClass)) {
+    $additional.addClass(settings.class);
+    // add paddings
+    object.onFixed($('html, .xt-backdrop')); // use this for all position fixed $('*:fixed').not($target);
+  }
+}
+// overlay html
+if (settings.name === 'xt-overlay') {
+  var $additional = $('html');
+  if ($additional.hasClass(object.defaultClass)) {
+    $additional.removeClass(settings.class);
+    // remove paddings
+    object.offFixed($('.xt-fixed')); // use this for all position fixed $('*:fixed').not($target);
+  }
+}
+
+Xt.prototype.onFixed = function($el) {
+  var object = this;
+  var settings = this.settings;
+  var group = this.group;
+  var $group = $(this.group);
+  // add scrollbar padding
+  var w = object.scrollbarWidth($el);
+  w = $el.css('overflow-y') === 'hidden' ? 0 : w;
+  $el.addClass('xt-fixed').css('right', w).css('padding-right', w);
+};
+
+Xt.prototype.offFixed = function($el) {
+  var object = this;
+  var settings = this.settings;
+  var group = this.group;
+  var $group = $(this.group);
+  // remove scrollbar padding
+  $el.removeClass('xt-fixed').css('right', 0).css('padding-right', 0);
+};
+*/
 
 },{"./xtend-utils":2}]},{},[1])
 

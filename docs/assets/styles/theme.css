@@ -6300,19 +6300,30 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
+.site-breadcrumbs-body-sub.empty {
+  padding: 0 !important;
+}
 .site-breadcrumbs-body-sub .btn {
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
   font-size: 1rem;
 }
+.btn-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 .btn-menu .icon-menu-custom {
   position: relative;
   vertical-align: top;
-  margin-left: 0.5em;
-  width: 1em;
+  top: .1rem;
+  margin-left: 1em;
+  width: 1.25em;
   height: 1em;
-  top: .18em;
-  font-size: 1.6rem;
+  font-size: 14px;
 }
 .btn-menu .icon-menu-custom span {
   display: block;
@@ -6337,11 +6348,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   transform-origin: left center;
 }
 .btn-menu .icon-menu-custom span:nth-child(2) {
-  top: calc(.4em -  1px * 1);
+  top: .5em;
+  margin-top: -1px;
   transform-origin: left center;
 }
 .btn-menu .icon-menu-custom span:nth-child(3) {
-  top: calc(.8em -  1px * 2);
+  top: 1em;
+  margin-top: -2px;
   transform-origin: left center;
 }
 .btn-menu.active .icon-menu-custom span:nth-child(1) {
@@ -6355,7 +6368,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 .btn-menu.active .icon-menu-custom span:nth-child(3) {
   transform: rotate(-45deg);
-  top: calc(.8em -  1px * 2);
+  top: 1em;
   left: 0;
 }
 .btn-menu:hover .icon-menu-custom span,
@@ -6778,6 +6791,13 @@ h2 .make-line .line-container .line:after {
 }
 .site-header-top[data-xt-scroll].xt-clone.active {
   position: relative !important;
+}
+.site-header-top[data-xt-scroll].xt-clone {
+  position: relative !important;
+}
+.xt-position > .site-header-top[data-xt-scroll] {
+  position: fixed;
+  width: 100%;
 }
 .site-header-top[data-xt-scroll].active:not(.xt-clone) {
   position: fixed !important;

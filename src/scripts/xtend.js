@@ -262,7 +262,7 @@ export class Xt {
   //////////////////////
 
   /**
-   * element activation
+   * element on activation
    * @param {Element} element To be activated
    */
   activationOn(els) {
@@ -272,14 +272,51 @@ export class Xt {
     for (let el of els) {
       el.classList.add(...options.classes);
       el.classList.remove('out');
-      self.activationOffClear(el);
+      self.activationOnAnimate(el);
       // specials
       self.collapseOn(el);
     }
   }
 
   /**
-   * element deactivation
+   * element on animation
+   * @param {Element} element To be animated
+   */
+  activationOnAnimate(el) {
+    this.activationOffClear(el);
+    // timing
+    let timing = options.timing;
+    let transition = parseFloat(getComputedStyle(el)['transitionDuration']);
+    let animation = parseFloat(getComputedStyle(el)['animationDuration']);
+    if (transition || animation) {
+      timing = Math.max(transition, animation);
+    }
+    // delay
+    if (!timing) {
+      // collapse-width and collapse-height
+      if (el.classList.contains('collapse-height')) {
+        el.style.height = 'auto';
+      }
+      if (el.classList.contains('collapse-width')) {
+        el.style.width = 'auto';
+      }
+    } else {
+      timing = timing * 1000;
+      let timeout = setTimeout(function (el) {
+        // collapse-width and collapse-height
+        if (el.classList.contains('collapse-height')) {
+          el.style.height = 'auto';
+        }
+        if (el.classList.contains('collapse-width')) {
+          el.style.width = 'auto';
+        }
+      }, timing, el);
+      el.setAttribute('xt-activation-animation-timeout', timeout);
+    }
+  }
+
+  /**
+   * element off activation
    * @param {Element} element To be deactivated
    */
   activationOff(els) {
@@ -296,7 +333,7 @@ export class Xt {
   }
 
   /**
-   * element out animation
+   * element off animation
    * @param {Element} element To be animated
    */
   activationOffAnimate(el) {
@@ -316,7 +353,7 @@ export class Xt {
       let timeout = setTimeout(function (el) {
         el.classList.remove('out');
       }, timing, el);
-      el.setAttribute('xt-out-timeout', timeout);
+      el.setAttribute('xt-activation-animation-timeout', timeout);
     }
   }
 
@@ -325,7 +362,7 @@ export class Xt {
    * @param {Element} element
    */
   activationOffClear(el) {
-    clearTimeout(parseFloat(el.getAttribute('xt-out-timeout')));
+    clearTimeout(parseFloat(el.getAttribute('xt-activation-animation-timeout')));
   }
 
   //////////////////////
@@ -384,14 +421,30 @@ export class Xt {
    */
   collapseOff(el) {
     if (el.classList.contains('collapse-height')) {
-      el.style.height = '0';
-      el.style.paddingTop = '0';
-      el.style.paddingBottom = '0';
+      let h = el.clientHeight + 'px';
+      let pt = el.style.paddingTop;
+      let pb = el.style.paddingBottom;
+      el.style.height = h;
+      el.style.paddingTop = pt;
+      el.style.paddingBottom = pb;
+      XtUtil.requestAnimationFrame.call(window, function () {
+        el.style.height = '0';
+        el.style.paddingTop = '0';
+        el.style.paddingBottom = '0';
+      });
     }
     if (el.classList.contains('collapse-width')) {
-      el.style.width = '0';
-      el.style.paddingLeft = '0';
-      el.style.paddingRight = '0';
+      let w = el.clientWidth + 'px';
+      let pl = el.style.paddingLeft;
+      let pr = el.style.paddingRight;
+      el.style.width = w;
+      el.style.paddingLeft = pl;
+      el.style.paddingRight = pr;
+      XtUtil.requestAnimationFrame.call(window, function () {
+        el.style.width = '0';
+        el.style.paddingLeft = '0';
+        el.style.paddingRight = '0';
+      });
     }
   }
 
@@ -547,7 +600,7 @@ export class XtScroll extends Xt {
         if (elTop.length) {
           let rectTop = elTop[0].getBoundingClientRect();
           top = rectTop.top + scrollTop;
-        } else {
+        } else if (self.targets.length) {
           let rectTop = self.targets[0].getBoundingClientRect();
           top = rectTop.top + scrollTop;
         }
@@ -561,7 +614,7 @@ export class XtScroll extends Xt {
           if (elBottom.length) {
             let rectBottom = elBottom[0].getBoundingClientRect();
             bottom = rectBottom.top + scrollTop;
-          } else {
+          } else if (self.targets.length) {
             let rectBottom = self.targets[0].getBoundingClientRect();
             bottom = rectBottom.top + scrollTop;
           }
@@ -618,3 +671,44 @@ XtScroll.defaults = {
   min: 0,
   max: Infinity
 };
+
+/*
+// overlay html
+if (settings.name === 'xt-overlay') {
+  var $additional = $('html');
+  if (!$additional.hasClass(object.defaultClass)) {
+    $additional.addClass(settings.class);
+    // add paddings
+    object.onFixed($('html, .xt-backdrop')); // use this for all position fixed $('*:fixed').not($target);
+  }
+}
+// overlay html
+if (settings.name === 'xt-overlay') {
+  var $additional = $('html');
+  if ($additional.hasClass(object.defaultClass)) {
+    $additional.removeClass(settings.class);
+    // remove paddings
+    object.offFixed($('.xt-fixed')); // use this for all position fixed $('*:fixed').not($target);
+  }
+}
+
+Xt.prototype.onFixed = function($el) {
+  var object = this;
+  var settings = this.settings;
+  var group = this.group;
+  var $group = $(this.group);
+  // add scrollbar padding
+  var w = object.scrollbarWidth($el);
+  w = $el.css('overflow-y') === 'hidden' ? 0 : w;
+  $el.addClass('xt-fixed').css('right', w).css('padding-right', w);
+};
+
+Xt.prototype.offFixed = function($el) {
+  var object = this;
+  var settings = this.settings;
+  var group = this.group;
+  var $group = $(this.group);
+  // remove scrollbar padding
+  $el.removeClass('xt-fixed').css('right', 0).css('padding-right', 0);
+};
+*/

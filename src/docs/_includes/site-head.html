@@ -133,7 +133,7 @@
         <nav class="site-breadcrumbs" role="navigation" data-xt-scroll>
           <div class="site-breadcrumbs-inside">
             <div class="contain-fluid">
-              <div class="flex flex-auto justify-content-between">
+              <div class="flex flex-auto justify-content-between align-items-start">
 
                 <div class="site-breadcrumbs-body flex flex-space-none" data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave"}'>
                   {% for collection in site.collections %}
@@ -146,14 +146,19 @@
                             <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary">
                               {{ p.title }}
                             </a>
-                            <div class="site-breadcrumbs-body-sub toggle-flex collapse-height">
-                              {% assign subsorted = site.[collection.label] | where: 'categories', p.title | sort: 'order' %}
-                              {% for pa in subsorted %}
-                              <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn-primary">
-                                {{ pa.title }}
-                              </a>
-                              {% endfor %}
-                            </div>
+                            {% assign subsorted = site.[collection.label] | where: 'categories', p.title | sort: 'order' %}
+                            {% if subsorted.size > 0 %}
+                              <div class="site-breadcrumbs-body-sub toggle-flex collapse-height">
+                                {% for pa in subsorted %}
+                                <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn-primary">
+                                  {{ pa.title }}
+                                </a>
+                                {% endfor %}
+                              </div>
+                            {% else %}
+                              <div class="site-breadcrumbs-body-sub toggle-flex collapse-height empty">
+                              </div>
+                            {% endif %}
                           </div>
                         {% endif %}
                       {% endfor %}
@@ -162,7 +167,7 @@
                   {% endfor %}
                 </div>
 
-                <div class="site-breadcrumbs-meta flex flex-space-none">
+                <div class="site-breadcrumbs-meta flex flex-space-none align-items-center">
 
                   <!--
                   {% if page.collection == null %}
