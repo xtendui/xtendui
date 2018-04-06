@@ -4,7 +4,7 @@
 
 'use strict';
 
-import Xt from "./xtend";
+import {XtToggle, XtScroll} from "./xtend";
 
 //////////////////////
 // Constructor
@@ -36,10 +36,11 @@ XtUtil.initAll = function () {
   */
   // xt-toggle
   document.querySelectorAll('[data-xt-toggle]').forEach(function (el, i) {
-    new Xt(el, {
-      elements: ':scope > .btn',
-      targets: '[class^="toggle-"], [class*=" toggle-"]'
-    });
+    new XtToggle(el);
+  });
+  // xt-scroll
+  document.querySelectorAll('[data-xt-scroll]').forEach(function (el, i) {
+    new XtScroll(el);
   });
 };
 

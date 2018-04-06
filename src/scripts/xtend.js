@@ -7,48 +7,34 @@
 import XtUtil from './xtend-utils';
 
 //////////////////////
-// defaults
+// Xt
 //////////////////////
 
-var defaults = {
-  classes: ['active'],
-  on: 'click',
-  min: 0,
-  max: 1,
-};
+export class Xt {
 
-//////////////////////
-// Constructor
-//////////////////////
-
-/**
- * Plugin Object
- * @param {Element} object Base element
- * @param {Object} options User options
- * @constructor
- */
-function Xt(object, jsOptions) {
-  this.object = object;
-  // js options
-  this.options = XtUtil.merge([defaults, jsOptions || {}]);
-  // markup options
-  var markupOptions = this.object.getAttribute('data-xt-toggle');
-  this.options = XtUtil.merge([this.options, markupOptions ? JSON.parse(markupOptions) : {}]);
-  // classes
-  if (this.options.class) {
-    this.options.classes = [...this.options.classes, ...this.options.class.split(' ')];
+  /**
+   * Constructor
+   * @param {Element} object Base element
+   * @param {Object} options User options
+   * @param {String} attr Attribute name with json options
+   * @constructor
+   */
+  constructor(object, jsOptions, attr) {
+    this.object = object;
+    this.defaults = this.constructor.defaults;
+    // js options
+    this.options = XtUtil.merge([this.defaults, jsOptions || {}]);
+    // markup options
+    var markupOptions = this.object.getAttribute(attr);
+    this.options = XtUtil.merge([this.options, markupOptions ? JSON.parse(markupOptions) : {}]);
+    // classes
+    if (this.options.class) {
+      this.options.classes = [...this.options.classes, ...this.options.class.split(' ')];
+    }
+    // init
+    this.initSetup();
+    this.initScope();
   }
-  // init
-  this.initSetup();
-  this.initScope();
-  this.initEvents();
-}
-
-//////////////////////
-// Methods
-//////////////////////
-
-Xt.prototype = {
 
   //////////////////////
   // Init Methods
@@ -57,16 +43,18 @@ Xt.prototype = {
   /**
    * setup namespace, container and options
    */
-  initSetup: function () {
+  initSetup() {
     var options = this.options;
     // setup (based on xtend mode)
     if (options.targets && options.targets.indexOf('#') !== -1) {
-      // xtend document mode
+      // xtend all mode
+      this.mode = 'all';
       this.container = document;
       options.max = Infinity;
       this.namespace = options.targets.toString() + '-' + options.classes.toString();
     } else {
       // xtend unique mode
+      this.mode = 'unique';
       this.container = this.object;
       this.namespace = XtUtil.getUniqueID();
     }
@@ -76,15 +64,16 @@ Xt.prototype = {
     if (!this.getCurrents()) {
       this.setCurrents([]);
     }
-  },
+  }
 
   /**
    * init elements, targets and currents
    */
-  initScope: function () {
+  initScope() {
     var self = this;
     var options = this.options;
     // elements
+    this.elements = [];
     if (options.elements) {
       this.elements = XtUtil.arrSingle(this.container.querySelectorAll(options.elements)); //.filter(':parents(.xt-ignore)');
     }
@@ -113,7 +102,7 @@ Xt.prototype = {
       if (self.elements.length) {
         // activate defaults.class
         self.elements.forEach(function (el, i) {
-          if (el.classList.contains(...defaults.classes)) {
+          if (el.classList.contains(...self.defaults.classes)) {
             self.eventOn(el);
           }
         });
@@ -126,28 +115,7 @@ Xt.prototype = {
         }
       }
     });
-  },
-
-  /**
-   * init events
-   */
-  initEvents: function () {
-    var self = this;
-    var options = this.options;
-    // on and off
-    this.elements.forEach(function (el, i) {
-      if (options.on) {
-        el.addEventListener(options.on, function (e) {
-          self.eventOn(this);
-        });
-      }
-      if (options.off) {
-        el.addEventListener(options.off, function (e) {
-          self.eventOff(this);
-        });
-      }
-    });
-  },
+  }
 
   //////////////////////
   // Utils Methods
@@ -158,97 +126,99 @@ Xt.prototype = {
    * @param {Element} element Element that triggered interaction
    * @returns {Object} object.all and object.single
    */
-  getElements: function (element) {
-    if (!this.elements.length) {
-      return {all: null, single: null};
+  getElements(element) {
+    if (!this.elements || !this.elements.length) {
+      return {all: [], single: null};
     }
-    if (this.container === document) {
-      // when container is document choose all elements
+    if (this.mode === 'all') {
+      // choose all elements
       return {all: this.elements, single: this.elements};
+    } else if (this.mode === 'unique') {
+      // choose element by group
+      var group = element.getAttribute('data-group');
+      if (group) {
+        // all group elements if group
+        var groupElements = Array.from(this.elements).filter(
+          x => x.getAttribute('data-group') === group
+        );
+        var final = XtUtil.arrSingle(groupElements);
+        return {all: final, single: final[0]};
+      } else {
+        // element if not group
+        var final = element;
+        return {all: XtUtil.arrSingle(final), single: final};
+      }
     }
-    // choose element by group
-    var group = element.getAttribute('data-group');
-    if (group) {
-      // all group elements if group
-      var groupElements = Array.from(this.elements).filter(
-        x => x.getAttribute('data-group') === group
-      );
-      var final = XtUtil.arrSingle(groupElements);
-      return {all: final, single: final[0]};
-    } else {
-      // element if not group
-      var final = element;
-      return {all: XtUtil.arrSingle(final), single: final};
-    }
-  },
+  }
 
   /**
    * choose which targets to activate/deactivate (based on xtend mode and containers)
    * @param {Element} element Element that triggered interaction
    * @returns {Array}
    */
-  getTargets: function (element) {
-    if (!this.targets.length) {
-      return null;
+  getTargets(element) {
+    if (!this.targets || !this.targets.length) {
+      return [];
     }
-    if (this.container === document) {
-      // when container is document choose all targets
+    if (this.mode === 'all') {
+      // choose all targets
       return this.targets;
+    } else if (this.mode === 'unique') {
+      // choose only target by group
+      var group = element.getAttribute('data-group');
+      var groupElements = Array.from(this.elements).filter(
+        x => x.getAttribute('data-group') === group
+      );
+      var groupTargets = Array.from(this.targets).filter(
+        x => x.getAttribute('data-group') === group
+      );
+      if (group) {
+        // all group targets if group
+        var final = groupTargets;
+        return XtUtil.arrSingle(final);
+      } else {
+        // not group targets by index if not group
+        var index = groupElements.findIndex(x => x === element);
+        var final = groupTargets[index];
+        return XtUtil.arrSingle(final);
+      }
     }
-    // choose only target by group
-    var group = element.getAttribute('data-group');
-    var groupElements = Array.from(this.elements).filter(
-      x => x.getAttribute('data-group') === group
-    );
-    var groupTargets = Array.from(this.targets).filter(
-      x => x.getAttribute('data-group') === group
-    );
-    if (group) {
-      // all group targets if group
-      var final = groupTargets;
-      return XtUtil.arrSingle(final);
-    } else {
-      // not group targets by index if not group
-      var index = groupElements.findIndex(x => x === element);
-      var final = groupTargets[index];
-      return XtUtil.arrSingle(final);
-    }
-  },
+  }
 
   /**
    * get currents based on namespace (so shared between Xt objects)
    * @returns {Element}
    */
-  getCurrents: function () {
+  getCurrents() {
     return XtUtil.currents[this.namespace];
-  },
+  }
 
   /**
    * set currents based on namespace (so shared between Xt objects)
    * @param {Array} arr
    */
-  setCurrents: function (arr) {
+  setCurrents(arr) {
     XtUtil.currents[this.namespace] = arr;
-  },
+  }
 
   /**
    * add current based on namespace (so shared between Xt objects)
    * @param {Element} element To be added
    */
-  addCurrent: function (element) {
+  addCurrent(element) {
     var arr = XtUtil.currents[this.namespace];
     arr.push(element);
-  },
+  }
 
   /**
    * remove currents based on namespace (so shared between Xt objects)
    * @param {Element} element To be removed
    */
-  removeCurrent: function (element) {
+  removeCurrent(element) {
     XtUtil.currents[this.namespace] = XtUtil.currents[this.namespace].filter(
       x => x !== element
     );
-  },
+  }
 
   //////////////////////
   // Event Methods
@@ -258,10 +228,10 @@ Xt.prototype = {
    * element on
    * @param {Element} element To be activated
    */
-  eventOn: function (element) {
+  eventOn(element) {
     var options = this.options;
     // activate or deactivate
-    if (!element.classList.contains(...defaults.classes)) {
+    if (!element.classList.contains(...this.defaults.classes)) {
       var fElements = this.getElements(element);
       this.addCurrent(fElements.single);
       this.activationOn(fElements.all);
@@ -275,13 +245,13 @@ Xt.prototype = {
     if (currents.length > options.max) {
       this.eventOff(currents[0]);
     }
-  },
+  }
 
   /**
    * element off
    * @param {Element} element To be deactivated
    */
-  eventOff: function (element) {
+  eventOff(element) {
     var options = this.options;
     // if currents < min
     var todo = options.min - this.getCurrents().length;
@@ -289,14 +259,14 @@ Xt.prototype = {
       return;
     }
     // deactivate
-    if (element.classList.contains(...defaults.classes)) {
+    if (element.classList.contains(...this.defaults.classes)) {
       var fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
       this.activationOff(fElements.all);
       var targets = this.getTargets(element);
       this.activationOff(targets);
     }
-  },
+  }
 
   //////////////////////
   // Activation Methods
@@ -306,7 +276,7 @@ Xt.prototype = {
    * element activation
    * @param {Element} element To be activated
    */
-  activationOn: function (elements) {
+  activationOn(elements) {
     var self = this;
     var options = this.options;
     // activate
@@ -317,13 +287,13 @@ Xt.prototype = {
       // specials
       self.collapseOn(el);
     });
-  },
+  }
 
   /**
    * element deactivation
    * @param {Element} element To be deactivated
    */
-  activationOff: function (elements) {
+  activationOff(elements) {
     var self = this;
     var options = this.options;
     // deactivate
@@ -334,13 +304,13 @@ Xt.prototype = {
       // specials
       self.collapseOff(el);
     });
-  },
+  }
 
   /**
    * element out animation
    * @param {Element} element To be animated
    */
-  activationOffAnimate: function (el) {
+  activationOffAnimate(el) {
     this.activationOffClear(el);
     // timing
     var timing = options.timing;
@@ -354,20 +324,20 @@ Xt.prototype = {
       el.classList.remove('out');
     } else {
       timing = timing * 1000;
-      var timeout = setTimeout( function(el) {
+      var timeout = setTimeout(function (el) {
         el.classList.remove('out');
       }, timing, el);
       el.setAttribute('xt-out-timeout', timeout);
     }
-  },
+  }
 
   /**
    * clear activationOffAnimate
    * @param {Element} element
    */
-  activationOffClear: function (el) {
+  activationOffClear(el) {
     clearTimeout(parseFloat(el.getAttribute('xt-out-timeout')));
-  },
+  }
 
   //////////////////////
   // Special Methods
@@ -377,7 +347,7 @@ Xt.prototype = {
    *
    * @param {Element} element
    */
-  collapseOn: function (el) {
+  collapseOn(el) {
     if (el.classList.contains('collapse-height')) {
       el.classList.add('no-transition');
       el.style.height = 'auto';
@@ -417,13 +387,13 @@ Xt.prototype = {
         });
       });
     }
-  },
+  }
 
   /**
    *
    * @param {Element} element
    */
-  collapseOff: function (el) {
+  collapseOff(el) {
     if (el.classList.contains('collapse-height')) {
       el.style.height = '0';
       el.style.paddingTop = '0';
@@ -434,13 +404,239 @@ Xt.prototype = {
       el.style.paddingLeft = '0';
       el.style.paddingRight = '0';
     }
-  },
+  }
+
+}
+
+// defaults
+
+Xt.defaults = {
+  classes: ['active']
+};
 
 
+//////////////////////
+// XtToggle
+//////////////////////
+
+export class XtToggle extends Xt {
+
+  /**
+   * Constructor
+   * @param {Element} object Base element
+   * @param {Object} options User options
+   * @constructor
+   */
+  constructor(object, jsOptions) {
+    super(object, jsOptions, 'data-xt-toggle');
+    this.initEvents();
+  }
+
+  //////////////////////
+  // Init Methods
+  //////////////////////
+
+  /**
+   * init events
+   */
+  initEvents() {
+    var self = this;
+    var options = this.options;
+    // on and off
+    this.elements.forEach(function (el, i) {
+      if (options.on) {
+        el.addEventListener(options.on, function (e) {
+          self.eventOn(this);
+        });
+      }
+      if (options.off) {
+        el.addEventListener(options.off, function (e) {
+          self.eventOff(this);
+        });
+      }
+    });
+  }
+
+}
+
+// defaults
+
+XtToggle.defaults = {
+  elements: ':scope > .btn',
+  targets: '[class^="toggle-"], [class*=" toggle-"]',
+  classes: ['active'],
+  on: 'click',
+  min: 0,
+  max: 1
 };
 
 //////////////////////
-// Public APIs
+// XtScroll
 //////////////////////
 
-export default Xt;
+export class XtScroll extends Xt {
+
+  /**
+   * Constructor
+   * @param {Element} object Base element
+   * @param {Object} options User options
+   * @constructor
+   */
+  constructor(object, jsOptions) {
+    super(object, jsOptions, 'data-xt-scroll');
+    this.initEvents();
+  }
+
+  //////////////////////
+  // Init Methods
+  //////////////////////
+
+  /**
+   * init events
+   */
+  initScope() {
+    super.initScope();
+    var options = this.options;
+    // mode
+    this.mode = 'all';
+    // container
+    this.container = XtUtil.parents(this.object, '.xt-container.xt-position');
+    if (!this.container.length) {
+      this.container = XtUtil.createElement('<div class="xt-container xt-position"></div>');
+      this.object.before(this.container);
+      this.container.append(this.object);
+      this.container = XtUtil.parents(this.object, '.xt-container.xt-position');
+    }
+    // targets
+    this.targets = this.container[0].querySelectorAll('.xt-clone.xt-ignore');
+    if (this.targets) {
+      this.targets = this.object.cloneNode(true);
+      this.targets.classList.add('xt-clone', 'xt-ignore');
+      this.container[0].prepend(this.targets);
+    }
+    this.targets = XtUtil.arrSingle(this.targets);
+    /*
+    // stuff
+    if (settings.mode === 'absolute') {
+      $group.css('position', 'absolute');
+    } else if (settings.mode === 'fixed') {
+      $group.css('position', 'fixed');
+    }
+    if ($group.is(':fixed') || $group.is(':absolute')) {
+      $group.css('z-index', 70);
+      settings.$targets.css('display', 'block');
+    } else {
+      settings.$targets.css('display', 'none');
+    }*/
+  }
+
+  //////////////////////
+  // Init Methods
+  //////////////////////
+
+  /**
+   * init events
+   */
+  initEvents() {
+    var self = this;
+    var options = this.options;
+    // scroll
+    window.addEventListener(options.on, function (e) {
+      self.eventScroll(this);
+    });
+  }
+
+  //////////////////////
+  // Event Methods
+  //////////////////////
+
+  /**
+   * window scroll
+   * @param {Element} element To be activated or deactivated
+   */
+  eventScroll() {
+    var self = this;
+    var options = this.options;
+    // scroll
+    var scrollTop = document.documentElement.scrollTop;
+    XtUtil.cancelAnimationFrame.call(window, this.scrollFrame);
+    this.scrollFrame = XtUtil.requestAnimationFrame.call(window, function () {
+      // on or off
+      var element = self.object;
+      var rectContainer = self.container[0].getBoundingClientRect();
+      var top = rectContainer.top;
+      var bottom = Infinity;
+        if (!isNaN(parseFloat(options.top))) {
+          top = options.top;
+        } else {
+          var elTop = document.querySelectorAll(options.top);
+          if (elTop.length) {
+            var rectTop = elTop[0].getBoundingClientRect();
+            top = rectTop.top + scrollTop;
+          } else {
+            var rectTop = self.targets[0].getBoundingClientRect();
+            top = rectTop.top + scrollTop;
+          }
+        }
+      if (options.bottom !== undefined) {
+        if (!isNaN(parseFloat(options.bottom))) {
+          bottom = options.bottom;
+        } else {
+          var elBottom = document.querySelectorAll(options.bottom);
+          if (elBottom.length) {
+            var rectBottom = elBottom[0].getBoundingClientRect();
+            bottom = rectBottom.top + scrollTop;
+          } else {
+            var rectBottom = self.targets[0].getBoundingClientRect();
+            bottom = rectBottom.top + scrollTop;
+          }
+        }
+      }
+      if (scrollTop >= top && scrollTop < bottom) {
+        if (!element.classList.contains(...self.defaults.classes)) {
+          self.eventOn(element);
+          // direction classes
+          var fElements = self.getElements(element);
+          fElements.all.forEach(function (el, i) {
+            el.classList.remove('scroll-off-top', 'scroll-off-bottom');
+            if (self.scrollTop > scrollTop) {
+              el.classList.remove('scroll-off-bottom');
+              el.classList.add('scroll-on-bottom');
+            } else {
+              el.classList.remove('scroll-on-bottom');
+              el.classList.add('scroll-on-top');
+            }
+          });
+        }
+      } else {
+        if (element.classList.contains(...self.defaults.classes)) {
+          self.eventOff(element);
+          // direction classes
+          var fElements = self.getElements(element);
+          fElements.all.forEach(function (el, i) {
+            el.classList.remove('scroll-on-top', 'scroll-on-bottom');
+            if (self.scrollTop > scrollTop) {
+              el.classList.remove('scroll-off-top');
+              el.classList.add('scroll-off-bottom');
+            } else {
+              el.classList.remove('scroll-off-bottom');
+              el.classList.add('scroll-off-top');
+            }
+          });
+        }
+      }
+    });
+    // scrollTop
+    this.scrollTop = scrollTop;
+  }
+
+}
+
+// defaults
+
+XtScroll.defaults = {
+  classes: ['active'],
+  on: 'scroll',
+  min: 0,
+  max: Infinity
+};

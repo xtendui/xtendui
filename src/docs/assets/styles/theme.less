@@ -708,6 +708,7 @@
     animation: top-in 600ms cubic-bezier(.19, 1, .22, 1);
   }
 }
+*/
 
 // .site-breadcrumbs
 .site-breadcrumbs {
@@ -719,10 +720,56 @@
     }
   }
 }
-
+/*
 // .site-aside
 .site-aside {
   .xt-scroll('top', 56px);
   z-index: 69 !important;
 }
 */
+
+// xt-container and xt-position
+
+.xt-container {
+  position: relative;
+  width: 100%;
+}
+.xt-position {
+  float: left;
+  width: 100%;
+}
+
+// .xt-scroll();
+
+.xt-scroll(@position:'top', @pos:0) {
+  .show-scroll {
+    display: none;
+  }
+  .hide-scroll {
+    display: block;
+  }
+  &.xt-clone {
+    position: absolute !important;
+    visibility: hidden !important;
+    &.active {
+      position: relative !important;
+    }
+  }
+  &.active:not(.xt-clone) {
+    position: fixed !important;
+    width: inherit; // fix fixed width
+    z-index: 70;
+    & when (@position = 'top') {
+      top: @pos;
+    }
+    & when (@position = 'bottom') {
+      bottom: @pos;
+    }
+    .show-scroll {
+      display: block;
+    }
+    .hide-scroll {
+      display: none;
+    }
+  }
+}

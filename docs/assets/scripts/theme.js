@@ -197,7 +197,7 @@ var populateInline = function (item, id) {
       element.style.display = none;
     }
   });
-  new Xt(item, {
+  new XtToggle(item, {
     "elements": ".demo-code-tabs-left .btn",
     "targets": ".demo-code-body-item",
     "min": 1
@@ -303,7 +303,7 @@ elements.forEach(function (element, i) {
   });
   */
   // demo tabs
-  new Xt(element, {
+  new XtToggle(element, {
     "elements": ".demo-tabs-left .btn",
     "targets": ".demo-item",
     "min": 1
@@ -315,6 +315,6 @@ elements.forEach(function (element, i) {
 //////////////////////
 
 import XtUtil from '../../../scripts/xtend-utils';
-import Xt from "../../../scripts/xtend";
+import {XtToggle, XtScroll} from "../../../scripts/xtend";
 
 XtUtil.initAll();

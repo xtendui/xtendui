@@ -13,10 +13,6 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 var _xtend = require('./xtend');
 
-var _xtend2 = _interopRequireDefault(_xtend);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 //////////////////////
 // Constructor
 //////////////////////
@@ -47,10 +43,11 @@ XtUtil.initAll = function () {
   */
   // xt-toggle
   document.querySelectorAll('[data-xt-toggle]').forEach(function (el, i) {
-    new _xtend2.default(el, {
-      elements: ':scope > .btn',
-      targets: '[class^="toggle-"], [class*=" toggle-"]'
-    });
+    new _xtend.XtToggle(el);
+  });
+  // xt-scroll
+  document.querySelectorAll('[data-xt-scroll]').forEach(function (el, i) {
+    new _xtend.XtScroll(el);
   });
 };
 
@@ -234,6 +231,11 @@ exports.default = XtUtil;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.XtScroll = exports.XtToggle = exports.Xt = undefined;
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _xtendUtils = require('./xtend-utils');
 
@@ -241,51 +243,45 @@ var _xtendUtils2 = _interopRequireDefault(_xtendUtils);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-//////////////////////
-// defaults
-//////////////////////
-
-var defaults = {
-  classes: ['active'],
-  on: 'click',
-  min: 0,
-  max: 1
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 //////////////////////
-// Constructor
+// Xt
 //////////////////////
 
-/**
- * Plugin Object
- * @param {Element} object Base element
- * @param {Object} options User options
- * @constructor
- */
-function Xt(object, jsOptions) {
-  this.object = object;
-  // js options
-  this.options = _xtendUtils2.default.merge([defaults, jsOptions || {}]);
-  // markup options
-  var markupOptions = this.object.getAttribute('data-xt-toggle');
-  this.options = _xtendUtils2.default.merge([this.options, markupOptions ? JSON.parse(markupOptions) : {}]);
-  // classes
-  if (this.options.class) {
-    this.options.classes = [].concat(_toConsumableArray(this.options.classes), _toConsumableArray(this.options.class.split(' ')));
+var Xt = exports.Xt = function () {
+
+  /**
+   * Constructor
+   * @param {Element} object Base element
+   * @param {Object} options User options
+   * @param {String} attr Attribute name with json options
+   * @constructor
+   */
+  function Xt(object, jsOptions, attr) {
+    _classCallCheck(this, Xt);
+
+    this.object = object;
+    this.defaults = this.constructor.defaults;
+    // js options
+    this.options = _xtendUtils2.default.merge([this.defaults, jsOptions || {}]);
+    // markup options
+    var markupOptions = this.object.getAttribute(attr);
+    this.options = _xtendUtils2.default.merge([this.options, markupOptions ? JSON.parse(markupOptions) : {}]);
+    // classes
+    if (this.options.class) {
+      this.options.classes = [].concat(_toConsumableArray(this.options.classes), _toConsumableArray(this.options.class.split(' ')));
+    }
+    // init
+    this.initSetup();
+    this.initScope();
   }
-  // init
-  this.initSetup();
-  this.initScope();
-  this.initEvents();
-}
-
-//////////////////////
-// Methods
-//////////////////////
-
-Xt.prototype = {
 
   //////////////////////
   // Init Methods
@@ -294,405 +290,698 @@ Xt.prototype = {
   /**
    * setup namespace, container and options
    */
-  initSetup: function initSetup() {
-    var options = this.options;
-    // setup (based on xtend mode)
-    if (options.targets && options.targets.indexOf('#') !== -1) {
-      // xtend document mode
-      this.container = document;
-      options.max = Infinity;
-      this.namespace = options.targets.toString() + '-' + options.classes.toString();
-    } else {
-      // xtend unique mode
-      this.container = this.object;
-      this.namespace = _xtendUtils2.default.getUniqueID();
-    }
-    // final namespace
-    this.namespace = this.namespace.replace(/\W+/g, '');
-    // currents array based on namespace (so shared between Xt objects)
-    if (!this.getCurrents()) {
-      this.setCurrents([]);
-    }
-  },
 
-  /**
-   * init elements, targets and currents
-   */
-  initScope: function initScope() {
-    var self = this;
-    var options = this.options;
-    // elements
-    if (options.elements) {
-      this.elements = _xtendUtils2.default.arrSingle(this.container.querySelectorAll(options.elements)); //.filter(':parents(.xt-ignore)');
-    }
-    if (!this.elements.length) {
-      this.elements = _xtendUtils2.default.arrSingle(this.object);
-      // @FIX on next frame set all elements querying the namespace
-      _xtendUtils2.default.requestAnimationFrame.call(window, function () {
-        self.elements = _xtendUtils2.default.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']'));
-      });
-    }
-    // targets
-    if (options.targets) {
-      var arr = Array.from(this.container.querySelectorAll(options.targets));
-      arr = arr.filter(
-      // filter out nested options.targets
-      function (x) {
-        return !_xtendUtils2.default.parents(x, options.targets).length;
-      });
-      this.targets = _xtendUtils2.default.arrSingle(arr);
-    }
-    // @FIX set namespace for next frame
-    this.elements.forEach(function (el, i) {
-      el.setAttribute('data-xt-namespace', self.namespace);
-    });
-    // currents
-    _xtendUtils2.default.requestAnimationFrame.call(window, function () {
-      if (self.elements.length) {
-        // activate defaults.class
-        self.elements.forEach(function (el, i) {
-          var _el$classList;
 
-          if ((_el$classList = el.classList).contains.apply(_el$classList, _toConsumableArray(defaults.classes))) {
-            self.eventOn(el);
-          }
+  _createClass(Xt, [{
+    key: 'initSetup',
+    value: function initSetup() {
+      var options = this.options;
+      // setup (based on xtend mode)
+      if (options.targets && options.targets.indexOf('#') !== -1) {
+        // xtend all mode
+        this.mode = 'all';
+        this.container = document;
+        options.max = Infinity;
+        this.namespace = options.targets.toString() + '-' + options.classes.toString();
+      } else {
+        // xtend unique mode
+        this.mode = 'unique';
+        this.container = this.object;
+        this.namespace = _xtendUtils2.default.getUniqueID();
+      }
+      // final namespace
+      this.namespace = this.namespace.replace(/\W+/g, '');
+      // currents array based on namespace (so shared between Xt objects)
+      if (!this.getCurrents()) {
+        this.setCurrents([]);
+      }
+    }
+
+    /**
+     * init elements, targets and currents
+     */
+
+  }, {
+    key: 'initScope',
+    value: function initScope() {
+      var self = this;
+      var options = this.options;
+      // elements
+      this.elements = [];
+      if (options.elements) {
+        this.elements = _xtendUtils2.default.arrSingle(this.container.querySelectorAll(options.elements)); //.filter(':parents(.xt-ignore)');
+      }
+      if (!this.elements.length) {
+        this.elements = _xtendUtils2.default.arrSingle(this.object);
+        // @FIX on next frame set all elements querying the namespace
+        _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+          self.elements = _xtendUtils2.default.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']'));
         });
-        // if currents < min
-        var todo = options.min - self.getCurrents().length;
-        if (todo) {
-          for (var i = 0; i < todo; i++) {
-            self.eventOn(self.elements[i]);
+      }
+      // targets
+      if (options.targets) {
+        var arr = Array.from(this.container.querySelectorAll(options.targets));
+        arr = arr.filter(
+        // filter out nested options.targets
+        function (x) {
+          return !_xtendUtils2.default.parents(x, options.targets).length;
+        });
+        this.targets = _xtendUtils2.default.arrSingle(arr);
+      }
+      // @FIX set namespace for next frame
+      this.elements.forEach(function (el, i) {
+        el.setAttribute('data-xt-namespace', self.namespace);
+      });
+      // currents
+      _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+        if (self.elements.length) {
+          // activate defaults.class
+          self.elements.forEach(function (el, i) {
+            var _el$classList;
+
+            if ((_el$classList = el.classList).contains.apply(_el$classList, _toConsumableArray(self.defaults.classes))) {
+              self.eventOn(el);
+            }
+          });
+          // if currents < min
+          var todo = options.min - self.getCurrents().length;
+          if (todo) {
+            for (var i = 0; i < todo; i++) {
+              self.eventOn(self.elements[i]);
+            }
           }
         }
+      });
+    }
+
+    //////////////////////
+    // Utils Methods
+    //////////////////////
+
+    /**
+     * choose which elements to activate/deactivate (based on xtend mode and containers)
+     * @param {Element} element Element that triggered interaction
+     * @returns {Object} object.all and object.single
+     */
+
+  }, {
+    key: 'getElements',
+    value: function getElements(element) {
+      if (!this.elements || !this.elements.length) {
+        return { all: [], single: null };
       }
-    });
-  },
+      if (this.mode === 'all') {
+        // choose all elements
+        return { all: this.elements, single: this.elements };
+      } else if (this.mode === 'unique') {
+        // choose element by group
+        var group = element.getAttribute('data-group');
+        if (group) {
+          // all group elements if group
+          var groupElements = Array.from(this.elements).filter(function (x) {
+            return x.getAttribute('data-group') === group;
+          });
+          var final = _xtendUtils2.default.arrSingle(groupElements);
+          return { all: final, single: final[0] };
+        } else {
+          // element if not group
+          var final = element;
+          return { all: _xtendUtils2.default.arrSingle(final), single: final };
+        }
+      }
+    }
+
+    /**
+     * choose which targets to activate/deactivate (based on xtend mode and containers)
+     * @param {Element} element Element that triggered interaction
+     * @returns {Array}
+     */
+
+  }, {
+    key: 'getTargets',
+    value: function getTargets(element) {
+      if (!this.targets || !this.targets.length) {
+        return [];
+      }
+      if (this.mode === 'all') {
+        // choose all targets
+        return this.targets;
+      } else if (this.mode === 'unique') {
+        // choose only target by group
+        var group = element.getAttribute('data-group');
+        var groupElements = Array.from(this.elements).filter(function (x) {
+          return x.getAttribute('data-group') === group;
+        });
+        var groupTargets = Array.from(this.targets).filter(function (x) {
+          return x.getAttribute('data-group') === group;
+        });
+        if (group) {
+          // all group targets if group
+          var final = groupTargets;
+          return _xtendUtils2.default.arrSingle(final);
+        } else {
+          // not group targets by index if not group
+          var index = groupElements.findIndex(function (x) {
+            return x === element;
+          });
+          var final = groupTargets[index];
+          return _xtendUtils2.default.arrSingle(final);
+        }
+      }
+    }
+
+    /**
+     * get currents based on namespace (so shared between Xt objects)
+     * @returns {Element}
+     */
+
+  }, {
+    key: 'getCurrents',
+    value: function getCurrents() {
+      return _xtendUtils2.default.currents[this.namespace];
+    }
+
+    /**
+     * set currents based on namespace (so shared between Xt objects)
+     * @param {Array} arr
+     */
+
+  }, {
+    key: 'setCurrents',
+    value: function setCurrents(arr) {
+      _xtendUtils2.default.currents[this.namespace] = arr;
+    }
+
+    /**
+     * add current based on namespace (so shared between Xt objects)
+     * @param {Element} element To be added
+     */
+
+  }, {
+    key: 'addCurrent',
+    value: function addCurrent(element) {
+      var arr = _xtendUtils2.default.currents[this.namespace];
+      arr.push(element);
+    }
+
+    /**
+     * remove currents based on namespace (so shared between Xt objects)
+     * @param {Element} element To be removed
+     */
+
+  }, {
+    key: 'removeCurrent',
+    value: function removeCurrent(element) {
+      _xtendUtils2.default.currents[this.namespace] = _xtendUtils2.default.currents[this.namespace].filter(function (x) {
+        return x !== element;
+      });
+    }
+
+    //////////////////////
+    // Event Methods
+    //////////////////////
+
+    /**
+     * element on
+     * @param {Element} element To be activated
+     */
+
+  }, {
+    key: 'eventOn',
+    value: function eventOn(element) {
+      var _element$classList;
+
+      var options = this.options;
+      // activate or deactivate
+      if (!(_element$classList = element.classList).contains.apply(_element$classList, _toConsumableArray(this.defaults.classes))) {
+        var fElements = this.getElements(element);
+        this.addCurrent(fElements.single);
+        this.activationOn(fElements.all);
+        var targets = this.getTargets(element);
+        this.activationOn(targets);
+      } else {
+        this.eventOff(element);
+      }
+      // if currents > max
+      var currents = this.getCurrents();
+      if (currents.length > options.max) {
+        this.eventOff(currents[0]);
+      }
+    }
+
+    /**
+     * element off
+     * @param {Element} element To be deactivated
+     */
+
+  }, {
+    key: 'eventOff',
+    value: function eventOff(element) {
+      var _element$classList2;
+
+      var options = this.options;
+      // if currents < min
+      var todo = options.min - this.getCurrents().length;
+      if (!todo) {
+        return;
+      }
+      // deactivate
+      if ((_element$classList2 = element.classList).contains.apply(_element$classList2, _toConsumableArray(this.defaults.classes))) {
+        var fElements = this.getElements(element);
+        this.removeCurrent(fElements.single);
+        this.activationOff(fElements.all);
+        var targets = this.getTargets(element);
+        this.activationOff(targets);
+      }
+    }
+
+    //////////////////////
+    // Activation Methods
+    //////////////////////
+
+    /**
+     * element activation
+     * @param {Element} element To be activated
+     */
+
+  }, {
+    key: 'activationOn',
+    value: function activationOn(elements) {
+      var self = this;
+      var options = this.options;
+      // activate
+      elements.forEach(function (el, i) {
+        var _el$classList2;
+
+        (_el$classList2 = el.classList).add.apply(_el$classList2, _toConsumableArray(options.classes));
+        el.classList.remove('out');
+        self.activationOffClear(el);
+        // specials
+        self.collapseOn(el);
+      });
+    }
+
+    /**
+     * element deactivation
+     * @param {Element} element To be deactivated
+     */
+
+  }, {
+    key: 'activationOff',
+    value: function activationOff(elements) {
+      var self = this;
+      var options = this.options;
+      // deactivate
+      elements.forEach(function (el, i) {
+        var _el$classList3;
+
+        (_el$classList3 = el.classList).remove.apply(_el$classList3, _toConsumableArray(options.classes));
+        el.classList.add('out');
+        self.activationOffAnimate(el);
+        // specials
+        self.collapseOff(el);
+      });
+    }
+
+    /**
+     * element out animation
+     * @param {Element} element To be animated
+     */
+
+  }, {
+    key: 'activationOffAnimate',
+    value: function activationOffAnimate(el) {
+      this.activationOffClear(el);
+      // timing
+      var timing = options.timing;
+      var transition = parseFloat(getComputedStyle(el)['transitionDuration']);
+      var animation = parseFloat(getComputedStyle(el)['animationDuration']);
+      if (transition || animation) {
+        timing = Math.max(transition, animation);
+      }
+      // delay
+      if (!timing) {
+        el.classList.remove('out');
+      } else {
+        timing = timing * 1000;
+        var timeout = setTimeout(function (el) {
+          el.classList.remove('out');
+        }, timing, el);
+        el.setAttribute('xt-out-timeout', timeout);
+      }
+    }
+
+    /**
+     * clear activationOffAnimate
+     * @param {Element} element
+     */
+
+  }, {
+    key: 'activationOffClear',
+    value: function activationOffClear(el) {
+      clearTimeout(parseFloat(el.getAttribute('xt-out-timeout')));
+    }
+
+    //////////////////////
+    // Special Methods
+    //////////////////////
+
+    /**
+     *
+     * @param {Element} element
+     */
+
+  }, {
+    key: 'collapseOn',
+    value: function collapseOn(el) {
+      if (el.classList.contains('collapse-height')) {
+        el.classList.add('no-transition');
+        el.style.height = 'auto';
+        el.style.paddingTop = '';
+        el.style.paddingBottom = '';
+        var h = el.clientHeight + 'px';
+        var pt = el.style.paddingTop;
+        var pb = el.style.paddingBottom;
+        _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+          el.style.height = '0';
+          el.style.paddingTop = '0';
+          el.style.paddingBottom = '0';
+          _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+            el.classList.remove('no-transition');
+            el.style.height = h;
+            el.style.paddingTop = pt;
+            el.style.paddingBottom = pb;
+          });
+        });
+      }
+      if (el.classList.contains('collapse-width')) {
+        el.style.width = 'auto';
+        el.style.paddingLeft = '';
+        el.style.paddingRight = '';
+        var w = el.clientHeight + 'px';
+        var pl = el.style.paddingLeft;
+        var pr = el.style.paddingRight;
+        _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+          el.style.width = '0';
+          el.style.paddingLeft = '0';
+          el.style.paddingRight = '0';
+          _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+            el.classList.remove('no-transition');
+            el.style.width = w;
+            el.style.paddingLeft = pl;
+            el.style.paddingRight = pr;
+          });
+        });
+      }
+    }
+
+    /**
+     *
+     * @param {Element} element
+     */
+
+  }, {
+    key: 'collapseOff',
+    value: function collapseOff(el) {
+      if (el.classList.contains('collapse-height')) {
+        el.style.height = '0';
+        el.style.paddingTop = '0';
+        el.style.paddingBottom = '0';
+      }
+      if (el.classList.contains('collapse-width')) {
+        el.style.width = '0';
+        el.style.paddingLeft = '0';
+        el.style.paddingRight = '0';
+      }
+    }
+  }]);
+
+  return Xt;
+}();
+
+// defaults
+
+Xt.defaults = {
+  classes: ['active']
+};
+
+//////////////////////
+// XtToggle
+//////////////////////
+
+var XtToggle = exports.XtToggle = function (_Xt) {
+  _inherits(XtToggle, _Xt);
+
+  /**
+   * Constructor
+   * @param {Element} object Base element
+   * @param {Object} options User options
+   * @constructor
+   */
+  function XtToggle(object, jsOptions) {
+    _classCallCheck(this, XtToggle);
+
+    var _this = _possibleConstructorReturn(this, (XtToggle.__proto__ || Object.getPrototypeOf(XtToggle)).call(this, object, jsOptions, 'data-xt-toggle'));
+
+    _this.initEvents();
+    return _this;
+  }
+
+  //////////////////////
+  // Init Methods
+  //////////////////////
 
   /**
    * init events
    */
-  initEvents: function initEvents() {
-    var self = this;
-    var options = this.options;
-    // on and off
-    this.elements.forEach(function (el, i) {
-      if (options.on) {
-        el.addEventListener(options.on, function (e) {
-          self.eventOn(this);
-        });
-      }
-      if (options.off) {
-        el.addEventListener(options.off, function (e) {
-          self.eventOff(this);
-        });
-      }
-    });
-  },
 
-  //////////////////////
-  // Utils Methods
-  //////////////////////
 
-  /**
-   * choose which elements to activate/deactivate (based on xtend mode and containers)
-   * @param {Element} element Element that triggered interaction
-   * @returns {Object} object.all and object.single
-   */
-  getElements: function getElements(element) {
-    if (!this.elements.length) {
-      return { all: null, single: null };
-    }
-    if (this.container === document) {
-      // when container is document choose all elements
-      return { all: this.elements, single: this.elements };
-    }
-    // choose element by group
-    var group = element.getAttribute('data-group');
-    if (group) {
-      // all group elements if group
-      var groupElements = Array.from(this.elements).filter(function (x) {
-        return x.getAttribute('data-group') === group;
-      });
-      var final = _xtendUtils2.default.arrSingle(groupElements);
-      return { all: final, single: final[0] };
-    } else {
-      // element if not group
-      var final = element;
-      return { all: _xtendUtils2.default.arrSingle(final), single: final };
-    }
-  },
-
-  /**
-   * choose which targets to activate/deactivate (based on xtend mode and containers)
-   * @param {Element} element Element that triggered interaction
-   * @returns {Array}
-   */
-  getTargets: function getTargets(element) {
-    if (!this.targets.length) {
-      return null;
-    }
-    if (this.container === document) {
-      // when container is document choose all targets
-      return this.targets;
-    }
-    // choose only target by group
-    var group = element.getAttribute('data-group');
-    var groupElements = Array.from(this.elements).filter(function (x) {
-      return x.getAttribute('data-group') === group;
-    });
-    var groupTargets = Array.from(this.targets).filter(function (x) {
-      return x.getAttribute('data-group') === group;
-    });
-    if (group) {
-      // all group targets if group
-      var final = groupTargets;
-      return _xtendUtils2.default.arrSingle(final);
-    } else {
-      // not group targets by index if not group
-      var index = groupElements.findIndex(function (x) {
-        return x === element;
-      });
-      var final = groupTargets[index];
-      return _xtendUtils2.default.arrSingle(final);
-    }
-  },
-
-  /**
-   * get currents based on namespace (so shared between Xt objects)
-   * @returns {Element}
-   */
-  getCurrents: function getCurrents() {
-    return _xtendUtils2.default.currents[this.namespace];
-  },
-
-  /**
-   * set currents based on namespace (so shared between Xt objects)
-   * @param {Array} arr
-   */
-  setCurrents: function setCurrents(arr) {
-    _xtendUtils2.default.currents[this.namespace] = arr;
-  },
-
-  /**
-   * add current based on namespace (so shared between Xt objects)
-   * @param {Element} element To be added
-   */
-  addCurrent: function addCurrent(element) {
-    var arr = _xtendUtils2.default.currents[this.namespace];
-    arr.push(element);
-  },
-
-  /**
-   * remove currents based on namespace (so shared between Xt objects)
-   * @param {Element} element To be removed
-   */
-  removeCurrent: function removeCurrent(element) {
-    _xtendUtils2.default.currents[this.namespace] = _xtendUtils2.default.currents[this.namespace].filter(function (x) {
-      return x !== element;
-    });
-  },
-
-  //////////////////////
-  // Event Methods
-  //////////////////////
-
-  /**
-   * element on
-   * @param {Element} element To be activated
-   */
-  eventOn: function eventOn(element) {
-    var _element$classList;
-
-    var options = this.options;
-    // activate or deactivate
-    if (!(_element$classList = element.classList).contains.apply(_element$classList, _toConsumableArray(defaults.classes))) {
-      var fElements = this.getElements(element);
-      this.addCurrent(fElements.single);
-      this.activationOn(fElements.all);
-      var targets = this.getTargets(element);
-      this.activationOn(targets);
-    } else {
-      this.eventOff(element);
-    }
-    // if currents > max
-    var currents = this.getCurrents();
-    if (currents.length > options.max) {
-      this.eventOff(currents[0]);
-    }
-  },
-
-  /**
-   * element off
-   * @param {Element} element To be deactivated
-   */
-  eventOff: function eventOff(element) {
-    var _element$classList2;
-
-    var options = this.options;
-    // if currents < min
-    var todo = options.min - this.getCurrents().length;
-    if (!todo) {
-      return;
-    }
-    // deactivate
-    if ((_element$classList2 = element.classList).contains.apply(_element$classList2, _toConsumableArray(defaults.classes))) {
-      var fElements = this.getElements(element);
-      this.removeCurrent(fElements.single);
-      this.activationOff(fElements.all);
-      var targets = this.getTargets(element);
-      this.activationOff(targets);
-    }
-  },
-
-  //////////////////////
-  // Activation Methods
-  //////////////////////
-
-  /**
-   * element activation
-   * @param {Element} element To be activated
-   */
-  activationOn: function activationOn(elements) {
-    var self = this;
-    var options = this.options;
-    // activate
-    elements.forEach(function (el, i) {
-      var _el$classList2;
-
-      (_el$classList2 = el.classList).add.apply(_el$classList2, _toConsumableArray(options.classes));
-      el.classList.remove('out');
-      self.activationOffClear(el);
-      // specials
-      self.collapseOn(el);
-    });
-  },
-
-  /**
-   * element deactivation
-   * @param {Element} element To be deactivated
-   */
-  activationOff: function activationOff(elements) {
-    var self = this;
-    var options = this.options;
-    // deactivate
-    elements.forEach(function (el, i) {
-      var _el$classList3;
-
-      (_el$classList3 = el.classList).remove.apply(_el$classList3, _toConsumableArray(options.classes));
-      el.classList.add('out');
-      self.activationOffAnimate(el);
-      // specials
-      self.collapseOff(el);
-    });
-  },
-
-  /**
-   * element out animation
-   * @param {Element} element To be animated
-   */
-  activationOffAnimate: function activationOffAnimate(el) {
-    this.activationOffClear(el);
-    // timing
-    var timing = options.timing;
-    var transition = parseFloat(getComputedStyle(el)['transitionDuration']);
-    var animation = parseFloat(getComputedStyle(el)['animationDuration']);
-    if (transition || animation) {
-      timing = Math.max(transition, animation);
-    }
-    // delay
-    if (!timing) {
-      el.classList.remove('out');
-    } else {
-      timing = timing * 1000;
-      var timeout = setTimeout(function (el) {
-        el.classList.remove('out');
-      }, timing, el);
-      el.setAttribute('xt-out-timeout', timeout);
-    }
-  },
-
-  /**
-   * clear activationOffAnimate
-   * @param {Element} element
-   */
-  activationOffClear: function activationOffClear(el) {
-    clearTimeout(parseFloat(el.getAttribute('xt-out-timeout')));
-  },
-
-  //////////////////////
-  // Special Methods
-  //////////////////////
-
-  /**
-   *
-   * @param {Element} element
-   */
-  collapseOn: function collapseOn(el) {
-    if (el.classList.contains('collapse-height')) {
-      el.classList.add('no-transition');
-      el.style.height = 'auto';
-      el.style.paddingTop = '';
-      el.style.paddingBottom = '';
-      var h = el.clientHeight + 'px';
-      var pt = el.style.paddingTop;
-      var pb = el.style.paddingBottom;
-      _xtendUtils2.default.requestAnimationFrame.call(window, function () {
-        el.style.height = '0';
-        el.style.paddingTop = '0';
-        el.style.paddingBottom = '0';
-        _xtendUtils2.default.requestAnimationFrame.call(window, function () {
-          el.classList.remove('no-transition');
-          el.style.height = h;
-          el.style.paddingTop = pt;
-          el.style.paddingBottom = pb;
-        });
+  _createClass(XtToggle, [{
+    key: 'initEvents',
+    value: function initEvents() {
+      var self = this;
+      var options = this.options;
+      // on and off
+      this.elements.forEach(function (el, i) {
+        if (options.on) {
+          el.addEventListener(options.on, function (e) {
+            self.eventOn(this);
+          });
+        }
+        if (options.off) {
+          el.addEventListener(options.off, function (e) {
+            self.eventOff(this);
+          });
+        }
       });
     }
-    if (el.classList.contains('collapse-width')) {
-      el.style.width = 'auto';
-      el.style.paddingLeft = '';
-      el.style.paddingRight = '';
-      var w = el.clientHeight + 'px';
-      var pl = el.style.paddingLeft;
-      var pr = el.style.paddingRight;
-      _xtendUtils2.default.requestAnimationFrame.call(window, function () {
-        el.style.width = '0';
-        el.style.paddingLeft = '0';
-        el.style.paddingRight = '0';
-        _xtendUtils2.default.requestAnimationFrame.call(window, function () {
-          el.classList.remove('no-transition');
-          el.style.width = w;
-          el.style.paddingLeft = pl;
-          el.style.paddingRight = pr;
-        });
-      });
-    }
-  },
+  }]);
 
-  /**
-   *
-   * @param {Element} element
-   */
-  collapseOff: function collapseOff(el) {
-    if (el.classList.contains('collapse-height')) {
-      el.style.height = '0';
-      el.style.paddingTop = '0';
-      el.style.paddingBottom = '0';
-    }
-    if (el.classList.contains('collapse-width')) {
-      el.style.width = '0';
-      el.style.paddingLeft = '0';
-      el.style.paddingRight = '0';
-    }
-  }
+  return XtToggle;
+}(Xt);
 
+// defaults
+
+XtToggle.defaults = {
+  elements: ':scope > .btn',
+  targets: '[class^="toggle-"], [class*=" toggle-"]',
+  classes: ['active'],
+  on: 'click',
+  min: 0,
+  max: 1
 };
 
 //////////////////////
-// Public APIs
+// XtScroll
 //////////////////////
 
-exports.default = Xt;
+var XtScroll = exports.XtScroll = function (_Xt2) {
+  _inherits(XtScroll, _Xt2);
+
+  /**
+   * Constructor
+   * @param {Element} object Base element
+   * @param {Object} options User options
+   * @constructor
+   */
+  function XtScroll(object, jsOptions) {
+    _classCallCheck(this, XtScroll);
+
+    var _this2 = _possibleConstructorReturn(this, (XtScroll.__proto__ || Object.getPrototypeOf(XtScroll)).call(this, object, jsOptions, 'data-xt-scroll'));
+
+    _this2.initEvents();
+    return _this2;
+  }
+
+  //////////////////////
+  // Init Methods
+  //////////////////////
+
+  /**
+   * init events
+   */
+
+
+  _createClass(XtScroll, [{
+    key: 'initScope',
+    value: function initScope() {
+      _get(XtScroll.prototype.__proto__ || Object.getPrototypeOf(XtScroll.prototype), 'initScope', this).call(this);
+      var options = this.options;
+      // mode
+      this.mode = 'all';
+      // container
+      this.container = _xtendUtils2.default.parents(this.object, '.xt-container.xt-position');
+      if (!this.container.length) {
+        this.container = _xtendUtils2.default.createElement('<div class="xt-container xt-position"></div>');
+        this.object.before(this.container);
+        this.container.append(this.object);
+        this.container = _xtendUtils2.default.parents(this.object, '.xt-container.xt-position');
+      }
+      // targets
+      this.targets = this.container[0].querySelectorAll('.xt-clone.xt-ignore');
+      if (this.targets) {
+        this.targets = this.object.cloneNode(true);
+        this.targets.classList.add('xt-clone', 'xt-ignore');
+        this.container[0].prepend(this.targets);
+      }
+      this.targets = _xtendUtils2.default.arrSingle(this.targets);
+      /*
+      // stuff
+      if (settings.mode === 'absolute') {
+        $group.css('position', 'absolute');
+      } else if (settings.mode === 'fixed') {
+        $group.css('position', 'fixed');
+      }
+      if ($group.is(':fixed') || $group.is(':absolute')) {
+        $group.css('z-index', 70);
+        settings.$targets.css('display', 'block');
+      } else {
+        settings.$targets.css('display', 'none');
+      }*/
+    }
+
+    //////////////////////
+    // Init Methods
+    //////////////////////
+
+    /**
+     * init events
+     */
+
+  }, {
+    key: 'initEvents',
+    value: function initEvents() {
+      var self = this;
+      var options = this.options;
+      // scroll
+      window.addEventListener(options.on, function (e) {
+        self.eventScroll(this);
+      });
+    }
+
+    //////////////////////
+    // Event Methods
+    //////////////////////
+
+    /**
+     * window scroll
+     * @param {Element} element To be activated or deactivated
+     */
+
+  }, {
+    key: 'eventScroll',
+    value: function eventScroll() {
+      var self = this;
+      var options = this.options;
+      // scroll
+      var scrollTop = document.documentElement.scrollTop;
+      _xtendUtils2.default.cancelAnimationFrame.call(window, this.scrollFrame);
+      this.scrollFrame = _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+        // on or off
+        var element = self.object;
+        var rectContainer = self.container[0].getBoundingClientRect();
+        var top = rectContainer.top;
+        var bottom = Infinity;
+        if (!isNaN(parseFloat(options.top))) {
+          top = options.top;
+        } else {
+          var elTop = document.querySelectorAll(options.top);
+          if (elTop.length) {
+            var rectTop = elTop[0].getBoundingClientRect();
+            top = rectTop.top + scrollTop;
+          } else {
+            var rectTop = self.targets[0].getBoundingClientRect();
+            top = rectTop.top + scrollTop;
+          }
+        }
+        if (options.bottom !== undefined) {
+          if (!isNaN(parseFloat(options.bottom))) {
+            bottom = options.bottom;
+          } else {
+            var elBottom = document.querySelectorAll(options.bottom);
+            if (elBottom.length) {
+              var rectBottom = elBottom[0].getBoundingClientRect();
+              bottom = rectBottom.top + scrollTop;
+            } else {
+              var rectBottom = self.targets[0].getBoundingClientRect();
+              bottom = rectBottom.top + scrollTop;
+            }
+          }
+        }
+        if (scrollTop >= top && scrollTop < bottom) {
+          var _element$classList3;
+
+          if (!(_element$classList3 = element.classList).contains.apply(_element$classList3, _toConsumableArray(self.defaults.classes))) {
+            self.eventOn(element);
+            // direction classes
+            var fElements = self.getElements(element);
+            fElements.all.forEach(function (el, i) {
+              el.classList.remove('scroll-off-top', 'scroll-off-bottom');
+              if (self.scrollTop > scrollTop) {
+                el.classList.remove('scroll-off-bottom');
+                el.classList.add('scroll-on-bottom');
+              } else {
+                el.classList.remove('scroll-on-bottom');
+                el.classList.add('scroll-on-top');
+              }
+            });
+          }
+        } else {
+          var _element$classList4;
+
+          if ((_element$classList4 = element.classList).contains.apply(_element$classList4, _toConsumableArray(self.defaults.classes))) {
+            self.eventOff(element);
+            // direction classes
+            var fElements = self.getElements(element);
+            fElements.all.forEach(function (el, i) {
+              el.classList.remove('scroll-on-top', 'scroll-on-bottom');
+              if (self.scrollTop > scrollTop) {
+                el.classList.remove('scroll-off-top');
+                el.classList.add('scroll-off-bottom');
+              } else {
+                el.classList.remove('scroll-off-bottom');
+                el.classList.add('scroll-off-top');
+              }
+            });
+          }
+        }
+      });
+      // scrollTop
+      this.scrollTop = scrollTop;
+    }
+  }]);
+
+  return XtScroll;
+}(Xt);
+
+// defaults
+
+XtScroll.defaults = {
+  classes: ['active'],
+  on: 'scroll',
+  min: 0,
+  max: Infinity
+};
 
 },{"./xtend-utils":1}]},{},[2])
 
