@@ -413,7 +413,7 @@ var Xt = exports.Xt = function () {
       // elements
       this.elements = [];
       if (options.elements) {
-        this.elements = _xtendUtils2.default.arrSingle(this.container.querySelectorAll(options.elements)); //.filter(':parents(.xt-ignore)');
+        this.elements = _xtendUtils2.default.arrSingle(this.container.querySelectorAll(options.elements));
       }
       if (!this.elements.length) {
         this.elements = _xtendUtils2.default.arrSingle(this.object);
@@ -425,11 +425,9 @@ var Xt = exports.Xt = function () {
       // targets
       if (options.targets) {
         var arr = Array.from(this.container.querySelectorAll(options.targets));
-        arr = arr.filter(
-        // filter out nested options.targets
-        function (x) {
+        arr = arr.filter(function (x) {
           return !_xtendUtils2.default.parents(x, options.targets).length;
-        });
+        }); // filter out nested options.targets
         this.targets = _xtendUtils2.default.arrSingle(arr);
       }
       // @FIX set namespace for next frame

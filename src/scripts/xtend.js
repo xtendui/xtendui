@@ -75,7 +75,7 @@ export class Xt {
     // elements
     this.elements = [];
     if (options.elements) {
-      this.elements = XtUtil.arrSingle(this.container.querySelectorAll(options.elements)); //.filter(':parents(.xt-ignore)');
+      this.elements = XtUtil.arrSingle(this.container.querySelectorAll(options.elements));
     }
     if (!this.elements.length) {
       this.elements = XtUtil.arrSingle(this.object);
@@ -87,10 +87,7 @@ export class Xt {
     // targets
     if (options.targets) {
       let arr = Array.from(this.container.querySelectorAll(options.targets));
-      arr = arr.filter(
-        // filter out nested options.targets
-        x => !XtUtil.parents(x, options.targets).length
-      );
+      arr = arr.filter(x => !XtUtil.parents(x, options.targets).length); // filter out nested options.targets
       this.targets = XtUtil.arrSingle(arr);
     }
     // @FIX set namespace for next frame
@@ -138,9 +135,7 @@ export class Xt {
       let group = element.getAttribute('data-group');
       if (group) {
         // all group elements if group
-        let groupElements = Array.from(this.elements).filter(
-          x => x.getAttribute('data-group') === group
-        );
+        let groupElements = Array.from(this.elements).filter(x => x.getAttribute('data-group') === group);
         let final = XtUtil.arrSingle(groupElements);
         return {all: final, single: final[0]};
       } else {
@@ -166,12 +161,8 @@ export class Xt {
     } else if (this.mode === 'unique') {
       // choose only target by group
       let group = element.getAttribute('data-group');
-      let groupElements = Array.from(this.elements).filter(
-        x => x.getAttribute('data-group') === group
-      );
-      let groupTargets = Array.from(this.targets).filter(
-        x => x.getAttribute('data-group') === group
-      );
+      let groupElements = Array.from(this.elements).filter(x => x.getAttribute('data-group') === group);
+      let groupTargets = Array.from(this.targets).filter(x => x.getAttribute('data-group') === group);
       if (group) {
         // all group targets if group
         let final = groupTargets;
@@ -215,9 +206,7 @@ export class Xt {
    * @param {Element} element To be removed
    */
   removeCurrent(element) {
-    XtUtil.currents[this.namespace] = XtUtil.currents[this.namespace].filter(
-      x => x !== element
-    );
+    XtUtil.currents[this.namespace] = XtUtil.currents[this.namespace].filter(x => x !== element);
   }
 
   //////////////////////

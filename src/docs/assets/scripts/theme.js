@@ -71,9 +71,9 @@ const activateAsideScroll = function (els, scrollTop) {
 };
 window.addEventListener('scroll', function (e) {
   let scrollTop = document.documentElement.scrollTop;
-  let sub = document.querySelectorAll('.btn.site-aside-sub'); // .filter(':parents(.xt-ignore)');
+  let sub = document.querySelectorAll('.btn.site-aside-sub');
   activateAsideScroll(sub, scrollTop);
-  let subsub = document.querySelectorAll('.btn.site-aside-sub.active + .site-aside-subsub .btn'); // .filter(':parents(.xt-ignore)');
+  let subsub = document.querySelectorAll('.btn.site-aside-sub.active + .site-aside-subsub .btn');
   activateAsideScroll(subsub, scrollTop);
 });
 
