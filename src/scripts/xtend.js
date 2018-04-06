@@ -283,7 +283,7 @@ export class Xt {
    * @param {Element} element To be animated
    */
   activationOnAnimate(el) {
-    this.activationOffClear(el);
+    let options = this.options;
     // timing
     let timing = options.timing;
     let transition = parseFloat(getComputedStyle(el)['transitionDuration']);
@@ -292,6 +292,7 @@ export class Xt {
       timing = Math.max(transition, animation);
     }
     // delay
+    this.activationOffClear(el);
     if (!timing) {
       // collapse-width and collapse-height
       if (el.classList.contains('collapse-height')) {
@@ -337,7 +338,7 @@ export class Xt {
    * @param {Element} element To be animated
    */
   activationOffAnimate(el) {
-    this.activationOffClear(el);
+    let options = this.options;
     // timing
     let timing = options.timing;
     let transition = parseFloat(getComputedStyle(el)['transitionDuration']);
@@ -346,6 +347,7 @@ export class Xt {
       timing = Math.max(transition, animation);
     }
     // delay
+    this.activationOffClear(el);
     if (!timing) {
       el.classList.remove('out');
     } else {
@@ -428,6 +430,7 @@ export class Xt {
       el.style.paddingTop = pt;
       el.style.paddingBottom = pb;
       XtUtil.requestAnimationFrame.call(window, function () {
+        console.log(h, el.clientHeight);
         el.style.height = '0';
         el.style.paddingTop = '0';
         el.style.paddingBottom = '0';

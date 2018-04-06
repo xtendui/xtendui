@@ -736,7 +736,7 @@ var Xt = exports.Xt = function () {
   }, {
     key: 'activationOnAnimate',
     value: function activationOnAnimate(el) {
-      this.activationOffClear(el);
+      var options = this.options;
       // timing
       var timing = options.timing;
       var transition = parseFloat(getComputedStyle(el)['transitionDuration']);
@@ -745,6 +745,7 @@ var Xt = exports.Xt = function () {
         timing = Math.max(transition, animation);
       }
       // delay
+      this.activationOffClear(el);
       if (!timing) {
         // collapse-width and collapse-height
         if (el.classList.contains('collapse-height')) {
@@ -819,7 +820,7 @@ var Xt = exports.Xt = function () {
   }, {
     key: 'activationOffAnimate',
     value: function activationOffAnimate(el) {
-      this.activationOffClear(el);
+      var options = this.options;
       // timing
       var timing = options.timing;
       var transition = parseFloat(getComputedStyle(el)['transitionDuration']);
@@ -828,6 +829,7 @@ var Xt = exports.Xt = function () {
         timing = Math.max(transition, animation);
       }
       // delay
+      this.activationOffClear(el);
       if (!timing) {
         el.classList.remove('out');
       } else {
@@ -919,6 +921,7 @@ var Xt = exports.Xt = function () {
         el.style.paddingTop = pt;
         el.style.paddingBottom = pb;
         _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+          console.log(h, el.clientHeight);
           el.style.height = '0';
           el.style.paddingTop = '0';
           el.style.paddingBottom = '0';
