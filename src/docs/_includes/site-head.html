@@ -149,18 +149,17 @@
                               {{ p.title }}
                             </a>
                             {% assign subsorted = site.[collection.label] | where: 'categories', p.title | sort: 'order' %}
-                            {% if subsorted.size > 0 %}
-                              <div class="site-breadcrumbs-body-sub toggle-flex collapse-height">
-                                {% for pa in subsorted %}
-                                <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn-primary">
-                                  {{ pa.title }}
-                                </a>
-                                {% endfor %}
-                              </div>
-                            {% else %}
-                              <div class="site-breadcrumbs-body-sub toggle-flex collapse-height empty">
-                              </div>
-                            {% endif %}
+                            <div class="site-breadcrumbs-body-sub toggle-flex collapse-height">
+                              {% if subsorted.size > 0 %}
+                                <div class="site-breadcrumbs-body-sub-inner">
+                                  {% for pa in subsorted %}
+                                  <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn-primary">
+                                    {{ pa.title }}
+                                  </a>
+                                  {% endfor %}
+                                </div>
+                              {% endif %}
+                            </div>
                           </div>
                         {% endif %}
                       {% endfor %}

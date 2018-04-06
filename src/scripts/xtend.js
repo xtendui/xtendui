@@ -13,7 +13,7 @@ import XtUtil from './xtend-utils';
 export class Xt {
 
   /**
-   * Constructor
+   * constructor
    * @param {Element} object Base element
    * @param {Object} options User options
    * @param {String} attr Attribute name with json options
@@ -37,7 +37,7 @@ export class Xt {
   }
 
   //////////////////////
-  // Init Methods
+  // init
   //////////////////////
 
   /**
@@ -115,7 +115,7 @@ export class Xt {
   }
 
   //////////////////////
-  // Utils Methods
+  // utils
   //////////////////////
 
   /**
@@ -210,7 +210,7 @@ export class Xt {
   }
 
   //////////////////////
-  // Event Methods
+  // events
   //////////////////////
 
   /**
@@ -258,8 +258,16 @@ export class Xt {
   }
 
   //////////////////////
-  // Activation Methods
+  // activation
   //////////////////////
+
+  /**
+   * clear activations timeouts
+   * @param {Element} element
+   */
+  animationClear(el) {
+    clearTimeout(parseFloat(el.getAttribute('xt-activation-animation-timeout')));
+  }
 
   /**
    * element on activation
@@ -283,16 +291,9 @@ export class Xt {
    * @param {Element} element To be animated
    */
   activationOnAnimate(el) {
-    let options = this.options;
-    // timing
-    let timing = options.timing;
-    let transition = parseFloat(getComputedStyle(el)['transitionDuration']);
-    let animation = parseFloat(getComputedStyle(el)['animationDuration']);
-    if (transition || animation) {
-      timing = Math.max(transition, animation);
-    }
+    let timing = this.activationTiming(el);
     // delay
-    this.activationOffClear(el);
+    this.animationClear(el);
     if (!timing) {
       // collapse-width and collapse-height
       if (el.classList.contains('collapse-height')) {
@@ -302,7 +303,6 @@ export class Xt {
         el.style.width = 'auto';
       }
     } else {
-      timing = timing * 1000;
       let timeout = setTimeout(function (el) {
         // collapse-width and collapse-height
         if (el.classList.contains('collapse-height')) {
@@ -338,20 +338,12 @@ export class Xt {
    * @param {Element} element To be animated
    */
   activationOffAnimate(el) {
-    let options = this.options;
-    // timing
-    let timing = options.timing;
-    let transition = parseFloat(getComputedStyle(el)['transitionDuration']);
-    let animation = parseFloat(getComputedStyle(el)['animationDuration']);
-    if (transition || animation) {
-      timing = Math.max(transition, animation);
-    }
+    let timing = this.activationTiming(el);
     // delay
-    this.activationOffClear(el);
+    this.animationClear(el);
     if (!timing) {
       el.classList.remove('out');
     } else {
-      timing = timing * 1000;
       let timeout = setTimeout(function (el) {
         el.classList.remove('out');
       }, timing, el);
@@ -360,15 +352,24 @@ export class Xt {
   }
 
   /**
-   * clear activationOffAnimate
-   * @param {Element} element
+   * get transition or animation timing
+   * @param {Element} element To be animated
+   * @returns {Number} Milliseconds
    */
-  activationOffClear(el) {
-    clearTimeout(parseFloat(el.getAttribute('xt-activation-animation-timeout')));
+  activationTiming(el) {
+    let options = this.options;
+    // timing
+    let timing = options.timing;
+    let transition = parseFloat(getComputedStyle(el)['transitionDuration']) + parseFloat(getComputedStyle(el)['transitionDelay']);
+    let animation = parseFloat(getComputedStyle(el)['animationDuration']) + parseFloat(getComputedStyle(el)['animationDelay']);
+    if (transition || animation) {
+      timing = Math.max(transition, animation);
+    }
+    return timing * 1000;
   }
 
   //////////////////////
-  // Special Methods
+  // activation specials
   //////////////////////
 
   /**
@@ -470,7 +471,7 @@ Xt.defaults = {
 export class XtToggle extends Xt {
 
   /**
-   * Constructor
+   * constructor
    * @param {Element} object Base element
    * @param {Object} options User options
    * @constructor
@@ -481,7 +482,7 @@ export class XtToggle extends Xt {
   }
 
   //////////////////////
-  // Init Methods
+  // init
   //////////////////////
 
   /**
@@ -525,7 +526,7 @@ XtToggle.defaults = {
 export class XtScroll extends Xt {
 
   /**
-   * Constructor
+   * constructor
    * @param {Element} object Base element
    * @param {Object} options User options
    * @constructor
@@ -536,7 +537,7 @@ export class XtScroll extends Xt {
   }
 
   //////////////////////
-  // Init Methods
+  // init
   //////////////////////
 
   /**
@@ -564,10 +565,6 @@ export class XtScroll extends Xt {
     this.targets = XtUtil.arrSingle(this.targets);
   }
 
-  //////////////////////
-  // Init Methods
-  //////////////////////
-
   /**
    * init events
    */
@@ -581,7 +578,7 @@ export class XtScroll extends Xt {
   }
 
   //////////////////////
-  // Event Methods
+  // events
   //////////////////////
 
   /**

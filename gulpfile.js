@@ -64,8 +64,9 @@ gulp.task('less', gulp.series('less-clean', function() {
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/styles/'));
 }));
-gulp.task('less:watch', function () {
+gulp.task('less:watch', function (done) {
   gulp.watch(['dist/**/*.less', 'src/docs/demos/**/*.less', 'src/docs/assets/styles/**/*.less'], gulp.series('less'));
+  done();
 });
 
 // compile js
@@ -116,8 +117,9 @@ gulp.task('js', gulp.series('js-clean', function() {
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/scripts/'));
 }));
-gulp.task('js:watch', function () {
+gulp.task('js:watch', function (done) {
   gulp.watch(['src/docs/assets/scripts/theme.js', 'src/scripts/*.js'], gulp.series('js'));
+  done();
 });
 
 // site
@@ -164,8 +166,9 @@ gulp.task('version', function () {
 gulp.task('version-changed',
   gulp.series('version', gulp.parallel('less', 'js'), 'site-build')
 );
-gulp.task('version:watch', function () {
+gulp.task('version:watch', function (done) {
   gulp.watch(['package.json'], gulp.series('version-changed'));
+  done();
 });
 
 // scripts

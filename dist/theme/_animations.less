@@ -1,14 +1,17 @@
 //////////////////////
-// timing and functions
+// defaults
 //////////////////////
+
+@opacity-min: 0;
 
 // .animation-default();
 
 .animation-default() {
-  animation-duration: @timing-small;
-  animation-timing-function: @bezier-in;
+  animation-duration: @time-default;
+  animation-timing-function: @bez-in;
   &.out {
-    animation-timing-function: @bezier-out;
+    animation-duration: @time-default;
+    animation-timing-function: @bez-out;
   }
 }
 
@@ -16,10 +19,12 @@
 
 .transition-default() {
   transition-property: all;
-  transition-duration: @timing-small;
-  transition-timing-function: @bezier-in;
+  transition-duration: @time-default;
+  transition-timing-function: @bez-in;
   &.out {
-    transition-timing-function: @bezier-out;
+    transition-property: all;
+    transition-duration: @time-default;
+    transition-timing-function: @bez-out;
   }
 }
 
@@ -47,14 +52,14 @@
     animation-name: anim-vertical-in;
   }
   &.out {
-    opacity: 0;
+    opacity: @opacity-min;
     animation-name: anim-vertical-out;
   }
 }
 
 @keyframes anim-vertical-in {
   0% {
-    opacity: 0;
+    opacity: @opacity-min;
     transform: translateY(-1rem);
   }
   100% {
@@ -69,7 +74,7 @@
     transform: translateY(0);
   }
   100% {
-    opacity: 0;
+    opacity: @opacity-min;
     transform: translateY(1rem);
   }
 }
@@ -83,14 +88,14 @@
     animation-name: anim-horizontal-in;
   }
   &.out {
-    opacity: 0;
+    opacity: @opacity-min;
     animation-name: anim-horizontal-out;
   }
 }
 
 @keyframes anim-horizontal-in {
   0% {
-    opacity: 0;
+    opacity: @opacity-min;
     transform: translateX(-1rem);
   }
   100% {
@@ -105,7 +110,7 @@
     transform: translateX(0);
   }
   100% {
-    opacity: 0;
+    opacity: @opacity-min;
     transform: translateX(1rem);
   }
 }
@@ -119,14 +124,14 @@
     animation-name: anim-top-in;
   }
   &.out {
-    opacity: 0;
+    opacity: @opacity-min;
     animation-name: anim-top-out;
   }
 }
 
 @keyframes anim-top-in {
   0% {
-    opacity: 0;
+    opacity: @opacity-min;
     transform: translateY(-1rem);
   }
   100% {
@@ -141,7 +146,7 @@
     transform: translateX(0);
   }
   100% {
-    opacity: 0;
+    opacity: @opacity-min;
     transform: translateY(-1rem);
   }
 }
@@ -155,14 +160,14 @@
     animation-name: anim-bottom-in;
   }
   &.out {
-    opacity: 0;
+    opacity: @opacity-min;
     animation-name: anim-bottom-out;
   }
 }
 
 @keyframes anim-bottom-in {
   0% {
-    opacity: 0;
+    opacity: @opacity-min;
     transform: translateY(1rem);
   }
   100% {
@@ -177,7 +182,7 @@
     transform: translateX(0);
   }
   100% {
-    opacity: 0;
+    opacity: @opacity-min;
     transform: translateY(1rem);
   }
 }
@@ -191,15 +196,15 @@
     animation-name: anim-left-in;
   }
   &.out {
-    opacity: 0;
+    opacity: @opacity-min;
     animation-name: anim-left-out;
   }
 }
 
 @keyframes anim-left-in {
   0% {
-    opacity: 0;
-    transform: translateX(1rem);
+    opacity: @opacity-min;
+    transform: translateX(-1rem);
   }
   100% {
     opacity: 1;
@@ -213,8 +218,8 @@
     transform: translateY(0);
   }
   100% {
-    opacity: 0;
-    transform: translateX(1rem);
+    opacity: @opacity-min;
+    transform: translateX(-1rem);
   }
 }
 
@@ -227,15 +232,15 @@
     animation-name: anim-right-in;
   }
   &.out {
-    opacity: 0;
+    opacity: @opacity-min;
     animation-name: anim-right-out;
   }
 }
 
 @keyframes anim-right-in {
   0% {
-    opacity: 0;
-    transform: translateX(-1rem);
+    opacity: @opacity-min;
+    transform: translateX(1rem);
   }
   100% {
     opacity: 1;
@@ -249,8 +254,8 @@
     transform: translateY(0);
   }
   100% {
-    opacity: 0;
-    transform: translateX(-1rem);
+    opacity: @opacity-min;
+    transform: translateX(1rem);
   }
 }
 
@@ -263,14 +268,14 @@
     animation-name: anim-backdrop-in;
   }
   &.out {
-    opacity: 0;
+    opacity: @opacity-min;
     animation-name: anim-backdrop-out;
   }
 }
 
 @keyframes anim-backdrop-in {
   0% {
-    opacity: 0;
+    opacity: @opacity-min;
   }
   100% {
     opacity: @backdrop-opacity;
@@ -282,14 +287,14 @@
     opacity: @backdrop-opacity;
   }
   100% {
-    opacity: 0;
+    opacity: @opacity-min;
   }
 }
 
 // anim-rotate
 
 .anim-rotate {
-  animation: preload-rotate 0.8s infinite linear;
+  animation: preload-rotate @opacity-min infinite linear;
   will-change: transform;
 }
 

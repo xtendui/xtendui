@@ -38,3 +38,28 @@
 .collapse-right {
   overflow: hidden;
 }
+
+//////////////////////
+// delay
+//////////////////////
+
+/* USAGE:
+.nth-child(@childs:4, @start:100ms, @increment:50ms, @decrement:0ms, {
+  .line-container {
+    @nth-child-animation-delay();
+    @nth-child-transition-delay();
+  }
+});
+*/
+.nth-child(@child, @start, @increment, @decrement, @rules) when(@child > 0) {
+  .nth-child(@child - 1, @start, @increment, @decrement, @rules);
+  &:nth-child(@{child}) {
+    @rules();
+  }
+}
+@nth-child-animation-delay: {
+  animation-delay: @start + (@child * @increment) - (@child * @decrement);
+};
+@nth-child-transition-delay: {
+  transition-delay: @start + (@child * @increment) - (@child * @decrement);
+};

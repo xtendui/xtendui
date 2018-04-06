@@ -7,13 +7,13 @@
 import {XtToggle, XtScroll} from './xtend';
 
 //////////////////////
-// Constructor
+// constructor
 //////////////////////
 
 const XtUtil = {};
 
 //////////////////////
-// Properties
+// properties
 //////////////////////
 
 // Xt currents based on namespace (so shared between Xt objects)
@@ -21,7 +21,7 @@ const XtUtil = {};
 XtUtil.currents = {};
 
 //////////////////////
-// Methods
+// methods
 //////////////////////
 
 /**
@@ -169,13 +169,13 @@ XtUtil.getClosest = function (element, selector) {
 */
 
 //////////////////////
-// Public APIs
+// api
 //////////////////////
 
 export default XtUtil;
 
 //////////////////////
-// Scope polyfill (https://stackoverflow.com/questions/6481612/queryselector-search-immediate-children)
+// scope polyfill (https://stackoverflow.com/questions/6481612/queryselector-search-immediate-children)
 // USAGE : querySelectorAll(':scope > .selector');
 //////////////////////
 

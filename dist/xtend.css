@@ -100,6 +100,14 @@ textarea {
 .collapse-right {
   overflow: hidden;
 }
+/* USAGE:
+.nth-child(@childs:4, @start:100ms, @increment:50ms, @decrement:0ms, {
+  .line-container {
+    @nth-child-animation-delay();
+    @nth-child-transition-delay();
+  }
+});
+*/
 .contain,
 .contain-fluid {
   width: 100%;
@@ -922,7 +930,7 @@ pre code {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 300ms;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   text-align: left;
 }
@@ -938,6 +946,8 @@ pre code {
 }
 .list-block > li > a:not(.btn).out,
 .list-block > li > button:not(.btn).out {
+  transition-property: all;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .list-line {
@@ -980,7 +990,7 @@ pre code {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 300ms;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   text-align: left;
 }
@@ -996,6 +1006,8 @@ pre code {
 }
 .list-line > li > a:not(.btn).out,
 .list-line > li > button:not(.btn).out {
+  transition-property: all;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .list-left > li > a,
@@ -1442,7 +1454,7 @@ html.xt-fixed .overlay {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 300ms;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   text-align: left;
 }
@@ -1458,6 +1470,8 @@ html.xt-fixed .overlay {
 }
 .form-inline .form-group > li > a:not(.btn).out,
 .form-inline .form-group > li > button:not(.btn).out {
+  transition-property: all;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .form-inline .form-group > * {
@@ -4212,6 +4226,12 @@ select.input-control {
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
   font-weight: 400;
   src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
 }
@@ -4221,12 +4241,6 @@ select.input-control {
   font-weight: 600;
   src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format('truetype');
 }
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhs.ttf) format('truetype');
-}
 .collapse-height,
 .collapse-width,
 .collapse-top,
@@ -4234,7 +4248,7 @@ select.input-control {
 .collapse-left,
 .collapse-right {
   transition-property: all;
-  transition-duration: 300ms;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .collapse-height.out,
@@ -4243,14 +4257,17 @@ select.input-control {
 .collapse-bottom.out,
 .collapse-left.out,
 .collapse-right.out {
+  transition-property: all;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .anim-vertical {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
 }
 .anim-vertical.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .anim-vertical.active {
@@ -4281,11 +4298,12 @@ select.input-control {
   }
 }
 .anim-horizontal {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
 }
 .anim-horizontal.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .anim-horizontal.active {
@@ -4316,11 +4334,12 @@ select.input-control {
   }
 }
 .anim-top {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
 }
 .anim-top.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .anim-top.active {
@@ -4351,11 +4370,12 @@ select.input-control {
   }
 }
 .anim-bottom {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
 }
 .anim-bottom.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .anim-bottom.active {
@@ -4386,11 +4406,12 @@ select.input-control {
   }
 }
 .anim-left {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
 }
 .anim-left.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .anim-left.active {
@@ -4403,7 +4424,7 @@ select.input-control {
 @keyframes anim-left-in {
   0% {
     opacity: 0;
-    transform: translateX(1rem);
+    transform: translateX(-1rem);
   }
   100% {
     opacity: 1;
@@ -4417,15 +4438,16 @@ select.input-control {
   }
   100% {
     opacity: 0;
-    transform: translateX(1rem);
+    transform: translateX(-1rem);
   }
 }
 .anim-right {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
 }
 .anim-right.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .anim-right.active {
@@ -4438,7 +4460,7 @@ select.input-control {
 @keyframes anim-right-in {
   0% {
     opacity: 0;
-    transform: translateX(-1rem);
+    transform: translateX(1rem);
   }
   100% {
     opacity: 1;
@@ -4452,15 +4474,16 @@ select.input-control {
   }
   100% {
     opacity: 0;
-    transform: translateX(-1rem);
+    transform: translateX(1rem);
   }
 }
 .anim-backdrop {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 0.6;
 }
 .anim-backdrop.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .anim-backdrop.active {
@@ -4487,7 +4510,7 @@ select.input-control {
   }
 }
 .anim-rotate {
-  animation: preload-rotate 0.8s infinite linear;
+  animation: preload-rotate 0 infinite linear;
   will-change: transform;
 }
 @keyframes preload-rotate {
@@ -4651,7 +4674,7 @@ code {
   font-weight: normal;
   font-style: normal;
   font-size: .9em;
-  color: #00B0FF;
+  color: #7367F0;
 }
 pre {
   margin-bottom: 1.5rem;
@@ -4740,8 +4763,8 @@ dl dd {
 }
 dl dt {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
   font-style: normal;
-  font-weight: 700;
 }
 .dl-block {
   margin-top: -0.375rem;
@@ -5021,7 +5044,7 @@ form .alert {
 }
 a,
 .alink {
-  color: #00B0FF;
+  color: #7367F0;
 }
 a:hover,
 .alink:hover {
@@ -5033,7 +5056,7 @@ a:hover span,
 }
 a:hover,
 .alink:hover {
-  color: #009ee6;
+  color: #5e50ee;
 }
 .btn-link {
   color: #626c76;
@@ -5045,7 +5068,7 @@ a:hover,
   text-decoration: underline;
 }
 .btn-link:hover {
-  color: #009ee6;
+  color: #5e50ee;
 }
 [disabled],
 .disabled {
@@ -5065,10 +5088,12 @@ a:hover,
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 300ms;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .btn.out {
+  transition-property: all;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .btn-tiny {
@@ -5174,8 +5199,8 @@ a:hover,
   padding-right: .8rem;
 }
 .btn-primary {
-  border-color: #00B0FF;
-  background-color: #00B0FF;
+  border-color: #7367F0;
+  background-color: #7367F0;
   color: rgba(255, 255, 255, 0.8);
 }
 .btn-primary:hover {
@@ -5187,18 +5212,18 @@ a:hover,
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary.active {
-  background-color: #1ab8ff;
+  background-color: #887ef2;
   color: #fff;
 }
 .btn-primary:active,
 .btn-primary.active {
-  border-color: #00B0FF;
+  border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
 .list-primary > li > a:not(.btn),
 .list-primary > li > button:not(.btn) {
-  border-color: #00B0FF;
-  background-color: #00B0FF;
+  border-color: #7367F0;
+  background-color: #7367F0;
   color: rgba(255, 255, 255, 0.8);
 }
 .list-primary > li > a:not(.btn):hover,
@@ -5215,20 +5240,20 @@ a:hover,
 .list-primary > li > button:not(.btn):active,
 .list-primary > li > a:not(.btn).active,
 .list-primary > li > button:not(.btn).active {
-  background-color: #1ab8ff;
+  background-color: #887ef2;
   color: #fff;
 }
 .list-primary > li > a:not(.btn):active,
 .list-primary > li > button:not(.btn):active,
 .list-primary > li > a:not(.btn).active,
 .list-primary > li > button:not(.btn).active {
-  border-color: #00B0FF;
+  border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
 .btn-primary-alt {
   border-color: transparent;
   background-color: transparent;
-  color: #00B0FF;
+  color: #7367F0;
   text-decoration: none !important;
 }
 .btn-primary-alt:hover {
@@ -5240,19 +5265,19 @@ a:hover,
 .btn-primary-alt:hover,
 .btn-primary-alt:active,
 .btn-primary-alt.active {
-  background-color: #1ab8ff;
+  background-color: #887ef2;
   color: #fff;
 }
 .btn-primary-alt:active,
 .btn-primary-alt.active {
-  border-color: #00B0FF;
+  border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
 .list-primary-alt > li > a:not(.btn),
 .list-primary-alt > li > button:not(.btn) {
   border-color: transparent;
   background-color: transparent;
-  color: #00B0FF;
+  color: #7367F0;
   text-decoration: none !important;
 }
 .list-primary-alt > li > a:not(.btn):hover,
@@ -5269,14 +5294,14 @@ a:hover,
 .list-primary-alt > li > button:not(.btn):active,
 .list-primary-alt > li > a:not(.btn).active,
 .list-primary-alt > li > button:not(.btn).active {
-  background-color: #1ab8ff;
+  background-color: #887ef2;
   color: #fff;
 }
 .list-primary-alt > li > a:not(.btn):active,
 .list-primary-alt > li > button:not(.btn):active,
 .list-primary-alt > li > a:not(.btn).active,
 .list-primary-alt > li > button:not(.btn).active {
-  border-color: #00B0FF;
+  border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
 .btn-secondary {
@@ -5425,7 +5450,7 @@ a:hover,
 }
 .list-link > li > a:not(.btn):hover,
 .list-link > li > button:not(.btn):hover {
-  color: #009ee6;
+  color: #5e50ee;
 }
 .btn-caret {
   display: -webkit-box;
@@ -5477,7 +5502,7 @@ a:hover,
   padding: .6em 1em !important;
   border-color: transparent;
   background-color: transparent;
-  color: #00B0FF;
+  color: #7367F0;
   text-decoration: none !important;
   position: absolute !important;
   top: 0;
@@ -5492,12 +5517,12 @@ a:hover,
 .btn-close:hover,
 .btn-close:active,
 .btn-close.active {
-  background-color: #1ab8ff;
+  background-color: #887ef2;
   color: #fff;
 }
 .btn-close:active,
 .btn-close.active {
-  border-color: #00B0FF;
+  border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
 .btn-close > span {
@@ -5531,7 +5556,7 @@ a:hover,
   top: 100%;
   bottom: auto;
   padding: 6px 0;
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
 }
@@ -5562,6 +5587,7 @@ a:hover,
   font-size: 1.2rem;
 }
 .drop.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .drop.active {
@@ -5575,8 +5601,8 @@ a:hover,
   border: 0;
 }
 .drop-primary .drop-inner {
-  border-color: #00B0FF;
-  background-color: #1ab8ff;
+  border-color: #7367F0;
+  background-color: #887ef2;
   color: #fff;
 }
 .drop-secondary .drop-inner {
@@ -5628,11 +5654,12 @@ a:hover,
   color: #343a40;
 }
 .overlay .overlay-content {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
 }
 .overlay .overlay-content.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .overlay .overlay-content.active {
@@ -5648,8 +5675,8 @@ a:hover,
 }
 .overlay-primary .overlay-content,
 .overlay-primary.overlay-screen .overlay-inner {
-  border-color: #00B0FF;
-  background-color: #00B0FF;
+  border-color: #7367F0;
+  background-color: #7367F0;
   color: #fff;
 }
 .overlay-secondary .overlay-content,
@@ -5666,12 +5693,13 @@ a:hover,
 }
 .loader-mask {
   background-color: rgba(255, 255, 255, 0.6);
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
   animation-name: anim-vertical-in;
 }
 .loader-mask.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .loader-mask.active {
@@ -5684,19 +5712,20 @@ a:hover,
 .loader-content {
   width: 1.5em;
   height: 1.5em;
-  border: 0.2em solid #00B0FF;
+  border: 0.2em solid #7367F0;
   border-right-color: transparent !important;
   border-radius: 50%;
-  animation: preload-rotate 0.8s infinite linear;
+  animation: preload-rotate 0 infinite linear;
   will-change: transform;
 }
 .xt-backdrop {
-  background-color: #001219;
-  animation-duration: 300ms;
+  background-color: #120a67;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 0.6;
 }
 .xt-backdrop.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .xt-backdrop.active {
@@ -5781,7 +5810,7 @@ legend:last-child {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 300ms;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   text-align: left;
 }
@@ -5797,6 +5826,8 @@ legend:last-child {
 }
 .form-group.inline > li > a:not(.btn).out,
 .form-group.inline > li > button:not(.btn).out {
+  transition-property: all;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .form-group.inline > * {
@@ -5872,7 +5903,7 @@ legend:last-child {
   background-color: #d4e7ef;
   color: rgba(52, 58, 64, 0.8);
   transition-property: all;
-  transition-duration: 300ms;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .input-control:hover,
@@ -5887,6 +5918,8 @@ select.input-control {
   background-image: linear-gradient(45deg, transparent 50%, #77b3cc 50%), linear-gradient(135deg, #77b3cc 50%, transparent 50%), linear-gradient(to right, #c1dde8, #c1dde8);
 }
 .input-control.out {
+  transition-property: all;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .input-control-secondary {

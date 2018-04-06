@@ -17,12 +17,16 @@
 
 // colors
 
-@primary: #00B0FF;
+@primary: #7367F0; // 8C1BAB
 @secondary: #d4e7ef;
 @success: #28a745;
 @notice: #17a2b8;
 @warning: #ffc107;
 @error: #dc3545;
+
+// gradients
+
+@g-primary: linear-gradient(0deg, darken(@primary, 2%) 10%, @primary 100%);
 
 //////////////////////
 // animations
@@ -30,17 +34,22 @@
 
 // timing
 
-@timing-none: 1ms;
-@timing-tiny: 150ms;
-@timing-small: 300ms;
-@timing-medium: 600ms;
-@timing-big: 1200ms;
-@timing-giant: 2400ms;
+@time-default: @time-medium;
+
+@time-none: 1ms;
+@time-tiny: 150ms;
+@time-small: 300ms;
+@time-medium: 600ms;
+@time-big: 1200ms;
+@time-giant: 2400ms;
 
 // beziers
 
-@bezier-in: cubic-bezier(.63, .36, 0, .97);
-@bezier-out: cubic-bezier(.63, .36, 0, .97);
+@bez-in: @bez-test;
+@bez-out: @bez-test;
+@bez-in-out: @bez-test;
+
+@bez-test: cubic-bezier(.63, .36, 0, .97);
 
 //////////////////////
 // utils
@@ -84,23 +93,26 @@
 // fonts
 //////////////////////
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+
+.font-sans-light() {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
 
 .font-sans-regular() {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
 }
+
 .font-sans-semibold() {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-style: normal;
 }
-.font-sans-bold() {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-}
+
 .font-monospace() {
   font-family: monaco, Consolas, 'Lucida Console', monospace;
   font-weight: normal;

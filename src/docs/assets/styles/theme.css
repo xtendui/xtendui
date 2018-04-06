@@ -100,6 +100,14 @@ textarea {
 .collapse-right {
   overflow: hidden;
 }
+/* USAGE:
+.nth-child(@childs:4, @start:100ms, @increment:50ms, @decrement:0ms, {
+  .line-container {
+    @nth-child-animation-delay();
+    @nth-child-transition-delay();
+  }
+});
+*/
 .contain,
 .contain-fluid {
   width: 100%;
@@ -922,7 +930,7 @@ pre code {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 300ms;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   text-align: left;
 }
@@ -938,6 +946,8 @@ pre code {
 }
 .list-block > li > a:not(.btn).out,
 .list-block > li > button:not(.btn).out {
+  transition-property: all;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .list-line {
@@ -980,7 +990,7 @@ pre code {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 300ms;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   text-align: left;
 }
@@ -996,6 +1006,8 @@ pre code {
 }
 .list-line > li > a:not(.btn).out,
 .list-line > li > button:not(.btn).out {
+  transition-property: all;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .list-left > li > a,
@@ -1442,7 +1454,7 @@ html.xt-fixed .overlay {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 300ms;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   text-align: left;
 }
@@ -1458,6 +1470,8 @@ html.xt-fixed .overlay {
 }
 .form-inline .form-group > li > a:not(.btn).out,
 .form-inline .form-group > li > button:not(.btn).out {
+  transition-property: all;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .form-inline .form-group > * {
@@ -4212,6 +4226,12 @@ select.input-control {
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
   font-weight: 400;
   src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
 }
@@ -4221,12 +4241,6 @@ select.input-control {
   font-weight: 600;
   src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format('truetype');
 }
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhs.ttf) format('truetype');
-}
 .collapse-height,
 .collapse-width,
 .collapse-top,
@@ -4234,7 +4248,7 @@ select.input-control {
 .collapse-left,
 .collapse-right {
   transition-property: all;
-  transition-duration: 300ms;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .collapse-height.out,
@@ -4243,14 +4257,17 @@ select.input-control {
 .collapse-bottom.out,
 .collapse-left.out,
 .collapse-right.out {
+  transition-property: all;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .anim-vertical {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
 }
 .anim-vertical.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .anim-vertical.active {
@@ -4281,11 +4298,12 @@ select.input-control {
   }
 }
 .anim-horizontal {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
 }
 .anim-horizontal.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .anim-horizontal.active {
@@ -4316,11 +4334,12 @@ select.input-control {
   }
 }
 .anim-top {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
 }
 .anim-top.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .anim-top.active {
@@ -4351,11 +4370,12 @@ select.input-control {
   }
 }
 .anim-bottom {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
 }
 .anim-bottom.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .anim-bottom.active {
@@ -4386,11 +4406,12 @@ select.input-control {
   }
 }
 .anim-left {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
 }
 .anim-left.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .anim-left.active {
@@ -4403,7 +4424,7 @@ select.input-control {
 @keyframes anim-left-in {
   0% {
     opacity: 0;
-    transform: translateX(1rem);
+    transform: translateX(-1rem);
   }
   100% {
     opacity: 1;
@@ -4417,15 +4438,16 @@ select.input-control {
   }
   100% {
     opacity: 0;
-    transform: translateX(1rem);
+    transform: translateX(-1rem);
   }
 }
 .anim-right {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
 }
 .anim-right.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .anim-right.active {
@@ -4438,7 +4460,7 @@ select.input-control {
 @keyframes anim-right-in {
   0% {
     opacity: 0;
-    transform: translateX(-1rem);
+    transform: translateX(1rem);
   }
   100% {
     opacity: 1;
@@ -4452,15 +4474,16 @@ select.input-control {
   }
   100% {
     opacity: 0;
-    transform: translateX(-1rem);
+    transform: translateX(1rem);
   }
 }
 .anim-backdrop {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 0.6;
 }
 .anim-backdrop.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .anim-backdrop.active {
@@ -4487,7 +4510,7 @@ select.input-control {
   }
 }
 .anim-rotate {
-  animation: preload-rotate 0.8s infinite linear;
+  animation: preload-rotate 0 infinite linear;
   will-change: transform;
 }
 @keyframes preload-rotate {
@@ -4651,7 +4674,7 @@ code {
   font-weight: normal;
   font-style: normal;
   font-size: .9em;
-  color: #00B0FF;
+  color: #7367F0;
 }
 pre {
   margin-bottom: 1.5rem;
@@ -4740,8 +4763,8 @@ dl dd {
 }
 dl dt {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
   font-style: normal;
-  font-weight: 700;
 }
 .dl-block {
   margin-top: -0.375rem;
@@ -5021,7 +5044,7 @@ form .alert {
 }
 a,
 .alink {
-  color: #00B0FF;
+  color: #7367F0;
 }
 a:hover,
 .alink:hover {
@@ -5033,7 +5056,7 @@ a:hover span,
 }
 a:hover,
 .alink:hover {
-  color: #009ee6;
+  color: #5e50ee;
 }
 .btn-link {
   color: #626c76;
@@ -5045,7 +5068,7 @@ a:hover,
   text-decoration: underline;
 }
 .btn-link:hover {
-  color: #009ee6;
+  color: #5e50ee;
 }
 [disabled],
 .disabled {
@@ -5065,10 +5088,12 @@ a:hover,
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 300ms;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .btn.out {
+  transition-property: all;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .btn-tiny {
@@ -5174,8 +5199,8 @@ a:hover,
   padding-right: .8rem;
 }
 .btn-primary {
-  border-color: #00B0FF;
-  background-color: #00B0FF;
+  border-color: #7367F0;
+  background-color: #7367F0;
   color: rgba(255, 255, 255, 0.8);
 }
 .btn-primary:hover {
@@ -5187,18 +5212,18 @@ a:hover,
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary.active {
-  background-color: #1ab8ff;
+  background-color: #887ef2;
   color: #fff;
 }
 .btn-primary:active,
 .btn-primary.active {
-  border-color: #00B0FF;
+  border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
 .list-primary > li > a:not(.btn),
 .list-primary > li > button:not(.btn) {
-  border-color: #00B0FF;
-  background-color: #00B0FF;
+  border-color: #7367F0;
+  background-color: #7367F0;
   color: rgba(255, 255, 255, 0.8);
 }
 .list-primary > li > a:not(.btn):hover,
@@ -5215,20 +5240,20 @@ a:hover,
 .list-primary > li > button:not(.btn):active,
 .list-primary > li > a:not(.btn).active,
 .list-primary > li > button:not(.btn).active {
-  background-color: #1ab8ff;
+  background-color: #887ef2;
   color: #fff;
 }
 .list-primary > li > a:not(.btn):active,
 .list-primary > li > button:not(.btn):active,
 .list-primary > li > a:not(.btn).active,
 .list-primary > li > button:not(.btn).active {
-  border-color: #00B0FF;
+  border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
 .btn-primary-alt {
   border-color: transparent;
   background-color: transparent;
-  color: #00B0FF;
+  color: #7367F0;
   text-decoration: none !important;
 }
 .btn-primary-alt:hover {
@@ -5240,19 +5265,19 @@ a:hover,
 .btn-primary-alt:hover,
 .btn-primary-alt:active,
 .btn-primary-alt.active {
-  background-color: #1ab8ff;
+  background-color: #887ef2;
   color: #fff;
 }
 .btn-primary-alt:active,
 .btn-primary-alt.active {
-  border-color: #00B0FF;
+  border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
 .list-primary-alt > li > a:not(.btn),
 .list-primary-alt > li > button:not(.btn) {
   border-color: transparent;
   background-color: transparent;
-  color: #00B0FF;
+  color: #7367F0;
   text-decoration: none !important;
 }
 .list-primary-alt > li > a:not(.btn):hover,
@@ -5269,14 +5294,14 @@ a:hover,
 .list-primary-alt > li > button:not(.btn):active,
 .list-primary-alt > li > a:not(.btn).active,
 .list-primary-alt > li > button:not(.btn).active {
-  background-color: #1ab8ff;
+  background-color: #887ef2;
   color: #fff;
 }
 .list-primary-alt > li > a:not(.btn):active,
 .list-primary-alt > li > button:not(.btn):active,
 .list-primary-alt > li > a:not(.btn).active,
 .list-primary-alt > li > button:not(.btn).active {
-  border-color: #00B0FF;
+  border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
 .btn-secondary {
@@ -5425,7 +5450,7 @@ a:hover,
 }
 .list-link > li > a:not(.btn):hover,
 .list-link > li > button:not(.btn):hover {
-  color: #009ee6;
+  color: #5e50ee;
 }
 .btn-caret {
   display: -webkit-box;
@@ -5477,7 +5502,7 @@ a:hover,
   padding: .6em 1em !important;
   border-color: transparent;
   background-color: transparent;
-  color: #00B0FF;
+  color: #7367F0;
   text-decoration: none !important;
   position: absolute !important;
   top: 0;
@@ -5492,12 +5517,12 @@ a:hover,
 .btn-close:hover,
 .btn-close:active,
 .btn-close.active {
-  background-color: #1ab8ff;
+  background-color: #887ef2;
   color: #fff;
 }
 .btn-close:active,
 .btn-close.active {
-  border-color: #00B0FF;
+  border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
 .btn-close > span {
@@ -5531,7 +5556,7 @@ a:hover,
   top: 100%;
   bottom: auto;
   padding: 6px 0;
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
 }
@@ -5562,6 +5587,7 @@ a:hover,
   font-size: 1.2rem;
 }
 .drop.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .drop.active {
@@ -5575,8 +5601,8 @@ a:hover,
   border: 0;
 }
 .drop-primary .drop-inner {
-  border-color: #00B0FF;
-  background-color: #1ab8ff;
+  border-color: #7367F0;
+  background-color: #887ef2;
   color: #fff;
 }
 .drop-secondary .drop-inner {
@@ -5628,11 +5654,12 @@ a:hover,
   color: #343a40;
 }
 .overlay .overlay-content {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
 }
 .overlay .overlay-content.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .overlay .overlay-content.active {
@@ -5648,8 +5675,8 @@ a:hover,
 }
 .overlay-primary .overlay-content,
 .overlay-primary.overlay-screen .overlay-inner {
-  border-color: #00B0FF;
-  background-color: #00B0FF;
+  border-color: #7367F0;
+  background-color: #7367F0;
   color: #fff;
 }
 .overlay-secondary .overlay-content,
@@ -5666,12 +5693,13 @@ a:hover,
 }
 .loader-mask {
   background-color: rgba(255, 255, 255, 0.6);
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 1;
   animation-name: anim-vertical-in;
 }
 .loader-mask.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .loader-mask.active {
@@ -5684,19 +5712,20 @@ a:hover,
 .loader-content {
   width: 1.5em;
   height: 1.5em;
-  border: 0.2em solid #00B0FF;
+  border: 0.2em solid #7367F0;
   border-right-color: transparent !important;
   border-radius: 50%;
-  animation: preload-rotate 0.8s infinite linear;
+  animation: preload-rotate 0 infinite linear;
   will-change: transform;
 }
 .xt-backdrop {
-  background-color: #001219;
-  animation-duration: 300ms;
+  background-color: #120a67;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   opacity: 0.6;
 }
 .xt-backdrop.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .xt-backdrop.active {
@@ -5781,7 +5810,7 @@ legend:last-child {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 300ms;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   text-align: left;
 }
@@ -5797,6 +5826,8 @@ legend:last-child {
 }
 .form-group.inline > li > a:not(.btn).out,
 .form-group.inline > li > button:not(.btn).out {
+  transition-property: all;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .form-group.inline > * {
@@ -5872,7 +5903,7 @@ legend:last-child {
   background-color: #d4e7ef;
   color: rgba(52, 58, 64, 0.8);
   transition-property: all;
-  transition-duration: 300ms;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .input-control:hover,
@@ -5887,6 +5918,8 @@ select.input-control {
   background-image: linear-gradient(45deg, transparent 50%, #77b3cc 50%), linear-gradient(135deg, #77b3cc 50%, transparent 50%), linear-gradient(to right, #c1dde8, #c1dde8);
 }
 .input-control.out {
+  transition-property: all;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .input-control-secondary {
@@ -6215,18 +6248,26 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   flex: 1 1 auto;
 }
 .site-header {
-  background-color: #00B0FF;
+  background-color: #7367F0;
 }
 .logo {
   display: inline-block;
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 600;
   font-style: normal;
+  font-weight: 300;
   color: rgba(255, 255, 255, 0.75);
-  font-size: 2.25rem;
+  font-size: 3rem;
   text-decoration: none !important;
+  transition-property: all;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+}
+.logo.out {
+  transition-property: all;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .logo:hover,
 .logo:active,
@@ -6237,7 +6278,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   color: rgba(255, 255, 255, 0.75);
 }
 .site-header-top {
-  background-color: rgba(0, 176, 255, 0.8);
+  background-color: rgba(115, 103, 240, 0.8);
   color: #fff;
 }
 .site-menu .site-header-top {
@@ -6278,6 +6319,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 @media (min-width: 768px ) {
   .site-hero .site-hero-img,
   .site-hero .site-hero-text {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 300;
     max-width: 50%;
   }
 }
@@ -6286,11 +6330,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 .site-breadcrumbs {
   cursor: default;
-  background-color: #00B0FF;
 }
 .site-breadcrumbs .site-breadcrumbs-inside {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+  border-radius: 0;
+  background: linear-gradient(0deg, #6a5eef 10%, #7367F0 100%);
   color: #fff;
 }
 .site-breadcrumbs .site-breadcrumbs-body {
@@ -6305,22 +6350,93 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   box-shadow: none !important;
 }
 .site-breadcrumbs-body-sub {
+  position: relative;
+  z-index: 1;
+}
+.site-breadcrumbs-body-sub .site-breadcrumbs-body-sub-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  position: relative;
-  z-index: 1;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-}
-.site-breadcrumbs-body-sub.empty {
-  padding: 0 !important;
 }
 .site-breadcrumbs-body-sub .btn {
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
   font-size: 1rem;
+}
+.site-breadcrumbs-body-sub .btn:nth-child(1) {
+  animation-delay: 25ms;
+}
+.site-breadcrumbs-body-sub .btn:nth-child(2) {
+  animation-delay: 50ms;
+}
+.site-breadcrumbs-body-sub .btn:nth-child(3) {
+  animation-delay: 75ms;
+}
+.site-breadcrumbs-body-sub .btn:nth-child(4) {
+  animation-delay: 100ms;
+}
+.site-breadcrumbs-body-sub .btn:nth-child(5) {
+  animation-delay: 125ms;
+}
+.site-breadcrumbs-body-sub .btn:nth-child(6) {
+  animation-delay: 150ms;
+}
+.site-breadcrumbs-body-sub .btn:nth-child(7) {
+  animation-delay: 175ms;
+}
+.site-breadcrumbs-body-sub .btn:nth-child(8) {
+  animation-delay: 200ms;
+}
+.site-breadcrumbs-body-sub .btn:nth-child(9) {
+  animation-delay: 225ms;
+}
+.site-breadcrumbs-body-sub .btn:nth-child(10) {
+  animation-delay: 250ms;
+}
+.site-breadcrumbs-body-sub.active .btn {
+  animation-duration: 600ms;
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  opacity: 1;
+  animation-name: anim-left-in;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+.site-breadcrumbs-body-sub.active .btn.out {
+  animation-duration: 600ms;
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+}
+.site-breadcrumbs-body-sub.active .btn.active {
+  animation-name: anim-left-in;
+}
+.site-breadcrumbs-body-sub.active .btn.out {
+  opacity: 0;
+  animation-name: anim-left-out;
+}
+.site-breadcrumbs-body-sub.out .btn {
+  animation-duration: 600ms;
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  opacity: 0;
+  animation-name: anim-right-out;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  opacity: 1;
+}
+.site-breadcrumbs-body-sub.out .btn.out {
+  animation-duration: 600ms;
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+}
+.site-breadcrumbs-body-sub.out .btn.active {
+  animation-name: anim-right-in;
+}
+.site-breadcrumbs-body-sub.out .btn.out {
+  opacity: 0;
+  animation-name: anim-right-out;
 }
 .btn-menu {
   display: -webkit-box;
@@ -6349,12 +6465,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   left: 0;
   transform: rotate(0deg);
   transition-property: all;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 300ms;
   will-change: top, transform;
 }
 .btn-menu .icon-menu-custom span.out {
+  transition-property: all;
+  transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .btn-menu .icon-menu-custom span:nth-child(1) {
@@ -6390,150 +6508,105 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .btn-menu.active .icon-menu-custom span {
   background-color: #fff;
 }
-.site-menu.overlay {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
-  opacity: 1;
-}
-.site-menu.overlay.out {
-  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
-}
-.site-menu.overlay.active {
-  animation-name: anim-horizontal-in;
-}
-.site-menu.overlay.out {
-  opacity: 0;
-  animation-name: anim-horizontal-out;
-}
-.site-menu.overlay .site-menu-content {
+.site-menu .site-menu-content {
   padding-top: 52px;
 }
-.site-menu.overlay .site-menu-content .btn {
+.site-menu .site-menu-content .btn {
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
   display: block;
   width: 100%;
   background-color: transparent !important;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 400;
   font-style: normal;
+  font-weight: 300;
   font-size: 4rem;
   text-align: left;
   text-transform: capitalize;
   opacity: .75;
 }
-.site-menu.overlay .site-menu-content .btn .line-container .line {
-  background-color: #00B0FF;
+.site-menu .site-menu-content .btn .line-container .line {
+  background-color: #7367F0;
 }
-.site-menu.overlay .site-menu-content .btn .line-container .line:after {
+.site-menu .site-menu-content .btn .line-container .line:after {
   background-color: rgba(255, 255, 255, 0.75);
 }
-.site-menu.overlay .site-menu-content .btn:hover,
-.site-menu.overlay .site-menu-content .btn:active,
-.site-menu.overlay .site-menu-content .btn.active {
+.site-menu .site-menu-content .btn:hover,
+.site-menu .site-menu-content .btn:active,
+.site-menu .site-menu-content .btn.active {
   color: #fff;
   opacity: 1;
 }
-/*
-// animations
-
-.site-menu.active {
-  .site-menu-content {
-    .btn {
-      .line-container {
-        opacity: 0;
-        animation: anim-right-in @timing-medium cubic-bezier(.19, 1, .22, 1);
-        -webkit-animation-fill-mode: forwards;
-        -moz-animation-fill-mode: forwards;
-        -ms-animation-fill-mode: forwards;
-        -o-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-      }
-      &:nth-child(1) {
-        .line-container {
-          animation-delay: 100ms;
-        }
-      }
-      &:nth-child(2) {
-        .line-container {
-          animation-delay: 150ms;
-        }
-      }
-      &:nth-child(3) {
-        .line-container {
-          animation-delay: 200ms;
-        }
-      }
-      &:nth-child(4) {
-        .line-container {
-          animation-delay: 250ms;
-        }
-      }
-      &:nth-child(5) {
-        .line-container {
-          animation-delay: 300ms;
-        }
-      }
-      &:nth-child(6) {
-        .line-container {
-          animation-delay: 350ms;
-        }
-      }
-    }
-  }
+.site-menu {
+  transition-delay: 150ms;
 }
-.site-menu.fade-out {
-  opacity: 1 !important;
-  transform: none !important;
-  .site-menu-content {
-    .btn {
-      .line-container {
-        opacity: 1;
-        animation: anim-right-out 300ms cubic-bezier(.19, 1, .22, 1);
-        -webkit-animation-fill-mode: forwards;
-        -moz-animation-fill-mode: forwards;
-        -ms-animation-fill-mode: forwards;
-        -o-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-      }
-      &:nth-child(1) {
-        .line-container {
-          animation-delay: 6ms;
-        }
-      }
-      &:nth-child(2) {
-        .line-container {
-          animation-delay: 5ms;
-        }
-      }
-      &:nth-child(3) {
-        .line-container {
-          animation-delay: 4ms;
-        }
-      }
-      &:nth-child(4) {
-        .line-container {
-          animation-delay: 3ms;
-        }
-      }
-      &:nth-child(5) {
-        .line-container {
-          animation-delay: 2ms;
-        }
-      }
-      &:nth-child(6) {
-        .line-container {
-          animation-delay: 1ms;
-        }
-      }
-    }
-  }
+.site-menu.active .site-menu-content .btn .line-container {
+  animation-duration: 600ms;
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  opacity: 1;
+  animation-name: anim-left-in;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
-*/
+.site-menu.active .site-menu-content .btn .line-container.out {
+  animation-duration: 600ms;
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+}
+.site-menu.active .site-menu-content .btn .line-container.active {
+  animation-name: anim-left-in;
+}
+.site-menu.active .site-menu-content .btn .line-container.out {
+  opacity: 0;
+  animation-name: anim-left-out;
+}
+.site-menu.active .site-menu-content .btn:nth-child(1) .line-container {
+  animation-delay: 350ms;
+}
+.site-menu.active .site-menu-content .btn:nth-child(2) .line-container {
+  animation-delay: 400ms;
+}
+.site-menu.active .site-menu-content .btn:nth-child(3) .line-container {
+  animation-delay: 450ms;
+}
+.site-menu.active .site-menu-content .btn:nth-child(4) .line-container {
+  animation-delay: 500ms;
+}
+.site-menu.out .site-menu-content .btn .line-container {
+  animation-duration: 600ms;
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  opacity: 0;
+  animation-name: anim-right-out;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  opacity: 1;
+}
+.site-menu.out .site-menu-content .btn .line-container.out {
+  animation-duration: 600ms;
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+}
+.site-menu.out .site-menu-content .btn .line-container.active {
+  animation-name: anim-right-in;
+}
+.site-menu.out .site-menu-content .btn .line-container.out {
+  opacity: 0;
+  animation-name: anim-right-out;
+}
+.site-menu.out .site-menu-content .btn:nth-child(1) .line-container {
+  animation-delay: 50ms;
+}
+.site-menu.out .site-menu-content .btn:nth-child(2) .line-container {
+  animation-delay: 100ms;
+}
+.site-menu.out .site-menu-content .btn:nth-child(3) .line-container {
+  animation-delay: 150ms;
+}
+.site-menu.out .site-menu-content .btn:nth-child(4) .line-container {
+  animation-delay: 200ms;
+}
 .site-footer {
   padding-top: 3rem;
   padding-bottom: 0.375rem;
-  background-color: #00B0FF;
+  background-color: #7367F0;
 }
 .site-footer .separator {
   margin-left: 0.375rem;
@@ -6610,7 +6683,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   text-decoration: underline;
 }
 .site-aside-text .btn:hover {
-  color: #009ee6;
+  color: #5e50ee;
 }
 .site-aside-text .site-aside-title {
   margin-top: 3rem;
@@ -6679,7 +6752,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: rgba(0, 176, 255, 0.8);
+  background-color: rgba(115, 103, 240, 0.8);
 }
 h2 .make-line .line-container .line:after {
   height: 2px;
@@ -6695,7 +6768,7 @@ h2 .make-line .line-container .line:after {
   left: 0;
   width: 100%;
   opacity: 1;
-  transition: opacity 600ms cubic-bezier(0.63, 0.36, 0, 0.97) 150ms;
+  transition: opacity 600ms cubic-bezier(0.63, 0.36, 0, 0.97);
   animation: line-in 600ms cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 @keyframes line-out {
@@ -6755,13 +6828,13 @@ h2 .make-line .line-container .line:after {
   border-radius: 50%;
   background-color: #fff !important;
   font-size: 17px;
-  color: #00B0FF;
+  color: #7367F0;
   line-height: 1;
 }
 .site-article-anchor .btn:hover,
 .site-article-anchor .btn:active,
 .site-article-anchor .btn.active {
-  color: #00B0FF;
+  color: #7367F0;
 }
 .demo {
   margin-bottom: 1.5rem;
@@ -6846,19 +6919,11 @@ h2 .make-line .line-container .line:after {
   float: left;
   width: 100%;
   height: 1.5rem;
-  background-color: #80d8ff;
+  background-color: #dedbfb;
 }
 .demo-highlight .column .column:before {
-  background-color: #00B0FF;
+  background-color: #7367F0;
 }
-/*
-.developer {
-  display: none !important;
-}
-.developer-show {
-  display: inline-block !important;
-}
-*/
 .site-header-top[data-xt-scroll] .show-scroll {
   display: none;
 }
@@ -6886,13 +6951,18 @@ h2 .make-line .line-container .line:after {
   display: none;
 }
 .site-header-top[data-xt-scroll].scroll-on-bottom {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
-  transition-duration: 600ms;
   animation-name: anim-top-in;
 }
 .site-header-top[data-xt-scroll].scroll-on-bottom.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+}
+.site-breadcrumbs[data-xt-scroll] {
+  transition-property: all;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .site-breadcrumbs[data-xt-scroll] .show-scroll {
   display: none;
@@ -6929,34 +6999,33 @@ h2 .make-line .line-container .line:after {
 }
 .site-breadcrumbs[data-xt-scroll] .site-breadcrumbs-inside {
   transition-property: all;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
   transition-duration: 600ms;
-}
-.site-breadcrumbs[data-xt-scroll] .site-breadcrumbs-inside.out {
   transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) {
-  background-color: rgba(0, 176, 255, 0.8);
+  padding: 1.5rem;
+  transition-property: all;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+}
+.site-breadcrumbs[data-xt-scroll].active:not(.xt-clone).out {
+  transition-property: all;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) .site-breadcrumbs-inside {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  transition-property: all;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
-  transition-duration: 600ms;
-}
-.site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) .site-breadcrumbs-inside.out {
-  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  border-radius: .75rem;
+  background-color: rgba(115, 103, 240, 0.8);
 }
 .site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) .site-breadcrumbs-meta {
-  animation-duration: 300ms;
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
-  transition-duration: 600ms;
   animation-name: anim-right-in;
 }
 .site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) .site-breadcrumbs-meta.out {
+  animation-duration: 600ms;
   animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .site-aside[data-xt-scroll] .show-scroll {

@@ -14,13 +14,13 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 var _xtend = require('./xtend');
 
 //////////////////////
-// Constructor
+// constructor
 //////////////////////
 
 var XtUtil = {};
 
 //////////////////////
-// Properties
+// properties
 //////////////////////
 
 // Xt currents based on namespace (so shared between Xt objects)
@@ -28,7 +28,7 @@ var XtUtil = {};
 XtUtil.currents = {};
 
 //////////////////////
-// Methods
+// methods
 //////////////////////
 
 /**
@@ -263,13 +263,13 @@ XtUtil.getClosest = function (element, selector) {
 */
 
 //////////////////////
-// Public APIs
+// api
 //////////////////////
 
 exports.default = XtUtil;
 
 //////////////////////
-// Scope polyfill (https://stackoverflow.com/questions/6481612/queryselector-search-immediate-children)
+// scope polyfill (https://stackoverflow.com/questions/6481612/queryselector-search-immediate-children)
 // USAGE : querySelectorAll(':scope > .selector');
 //////////////////////
 
@@ -342,7 +342,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var Xt = exports.Xt = function () {
 
   /**
-   * Constructor
+   * constructor
    * @param {Element} object Base element
    * @param {Object} options User options
    * @param {String} attr Attribute name with json options
@@ -368,7 +368,7 @@ var Xt = exports.Xt = function () {
   }
 
   //////////////////////
-  // Init Methods
+  // init
   //////////////////////
 
   /**
@@ -501,7 +501,7 @@ var Xt = exports.Xt = function () {
     }
 
     //////////////////////
-    // Utils Methods
+    // utils
     //////////////////////
 
     /**
@@ -624,7 +624,7 @@ var Xt = exports.Xt = function () {
     }
 
     //////////////////////
-    // Event Methods
+    // events
     //////////////////////
 
     /**
@@ -682,8 +682,19 @@ var Xt = exports.Xt = function () {
     }
 
     //////////////////////
-    // Activation Methods
+    // activation
     //////////////////////
+
+    /**
+     * clear activations timeouts
+     * @param {Element} element
+     */
+
+  }, {
+    key: 'animationClear',
+    value: function animationClear(el) {
+      clearTimeout(parseFloat(el.getAttribute('xt-activation-animation-timeout')));
+    }
 
     /**
      * element on activation
@@ -736,16 +747,9 @@ var Xt = exports.Xt = function () {
   }, {
     key: 'activationOnAnimate',
     value: function activationOnAnimate(el) {
-      var options = this.options;
-      // timing
-      var timing = options.timing;
-      var transition = parseFloat(getComputedStyle(el)['transitionDuration']);
-      var animation = parseFloat(getComputedStyle(el)['animationDuration']);
-      if (transition || animation) {
-        timing = Math.max(transition, animation);
-      }
+      var timing = this.activationTiming(el);
       // delay
-      this.activationOffClear(el);
+      this.animationClear(el);
       if (!timing) {
         // collapse-width and collapse-height
         if (el.classList.contains('collapse-height')) {
@@ -755,7 +759,6 @@ var Xt = exports.Xt = function () {
           el.style.width = 'auto';
         }
       } else {
-        timing = timing * 1000;
         var timeout = setTimeout(function (el) {
           // collapse-width and collapse-height
           if (el.classList.contains('collapse-height')) {
@@ -820,20 +823,12 @@ var Xt = exports.Xt = function () {
   }, {
     key: 'activationOffAnimate',
     value: function activationOffAnimate(el) {
-      var options = this.options;
-      // timing
-      var timing = options.timing;
-      var transition = parseFloat(getComputedStyle(el)['transitionDuration']);
-      var animation = parseFloat(getComputedStyle(el)['animationDuration']);
-      if (transition || animation) {
-        timing = Math.max(transition, animation);
-      }
+      var timing = this.activationTiming(el);
       // delay
-      this.activationOffClear(el);
+      this.animationClear(el);
       if (!timing) {
         el.classList.remove('out');
       } else {
-        timing = timing * 1000;
         var timeout = setTimeout(function (el) {
           el.classList.remove('out');
         }, timing, el);
@@ -842,18 +837,27 @@ var Xt = exports.Xt = function () {
     }
 
     /**
-     * clear activationOffAnimate
-     * @param {Element} element
+     * get transition or animation timing
+     * @param {Element} element To be animated
+     * @returns {Number} Milliseconds
      */
 
   }, {
-    key: 'activationOffClear',
-    value: function activationOffClear(el) {
-      clearTimeout(parseFloat(el.getAttribute('xt-activation-animation-timeout')));
+    key: 'activationTiming',
+    value: function activationTiming(el) {
+      var options = this.options;
+      // timing
+      var timing = options.timing;
+      var transition = parseFloat(getComputedStyle(el)['transitionDuration']) + parseFloat(getComputedStyle(el)['transitionDelay']);
+      var animation = parseFloat(getComputedStyle(el)['animationDuration']) + parseFloat(getComputedStyle(el)['animationDelay']);
+      if (transition || animation) {
+        timing = Math.max(transition, animation);
+      }
+      return timing * 1000;
     }
 
     //////////////////////
-    // Special Methods
+    // activation specials
     //////////////////////
 
     /**
@@ -963,7 +967,7 @@ var XtToggle = exports.XtToggle = function (_Xt) {
   _inherits(XtToggle, _Xt);
 
   /**
-   * Constructor
+   * constructor
    * @param {Element} object Base element
    * @param {Object} options User options
    * @constructor
@@ -978,7 +982,7 @@ var XtToggle = exports.XtToggle = function (_Xt) {
   }
 
   //////////////////////
-  // Init Methods
+  // init
   //////////////////////
 
   /**
@@ -1050,7 +1054,7 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
   _inherits(XtScroll, _Xt2);
 
   /**
-   * Constructor
+   * constructor
    * @param {Element} object Base element
    * @param {Object} options User options
    * @constructor
@@ -1065,7 +1069,7 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
   }
 
   //////////////////////
-  // Init Methods
+  // init
   //////////////////////
 
   /**
@@ -1097,10 +1101,6 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
       this.targets = _xtendUtils2.default.arrSingle(this.targets);
     }
 
-    //////////////////////
-    // Init Methods
-    //////////////////////
-
     /**
      * init events
      */
@@ -1117,7 +1117,7 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
     }
 
     //////////////////////
-    // Event Methods
+    // events
     //////////////////////
 
     /**
