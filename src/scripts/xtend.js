@@ -333,7 +333,7 @@ export class Xt {
   //////////////////////
 
   /**
-   *
+   * collapseOn on activation
    * @param {Element} element
    */
   collapseOn(el) {
@@ -379,7 +379,7 @@ export class Xt {
   }
 
   /**
-   *
+   * collapseOff on deactivation
    * @param {Element} element
    */
   collapseOff(el) {
@@ -481,11 +481,10 @@ export class XtScroll extends Xt {
   //////////////////////
 
   /**
-   * init events
+   * init elements, targets and currents
    */
   initScope() {
     super.initScope();
-    let options = this.options;
     // mode
     this.mode = 'all';
     // container
@@ -501,22 +500,9 @@ export class XtScroll extends Xt {
     if (this.targets) {
       this.targets = this.object.cloneNode(true);
       this.targets.classList.add('xt-clone', 'xt-ignore');
-      this.container[0].prepend(this.targets);
+      this.container[0].append(this.targets);
     }
     this.targets = XtUtil.arrSingle(this.targets);
-    /*
-    // stuff
-    if (settings.mode === 'absolute') {
-      $group.css('position', 'absolute');
-    } else if (settings.mode === 'fixed') {
-      $group.css('position', 'fixed');
-    }
-    if ($group.is(':fixed') || $group.is(':absolute')) {
-      $group.css('z-index', 70);
-      settings.$targets.css('display', 'block');
-    } else {
-      settings.$targets.css('display', 'none');
-    }*/
   }
 
   //////////////////////
@@ -531,7 +517,7 @@ export class XtScroll extends Xt {
     let options = this.options;
     // scroll
     window.addEventListener(options.on, function (e) {
-      self.eventScroll(this);
+      self.eventScroll(self.object);
     });
   }
 
@@ -543,18 +529,17 @@ export class XtScroll extends Xt {
    * window scroll
    * @param {Element} element To be activated or deactivated
    */
-  eventScroll() {
+  eventScroll(element) {
     let self = this;
     let options = this.options;
     // scroll
     let scrollTop = document.documentElement.scrollTop;
     XtUtil.cancelAnimationFrame.call(window, this.scrollFrame);
     this.scrollFrame = XtUtil.requestAnimationFrame.call(window, function () {
-      // on or off
-      let element = self.object;
       let rectContainer = self.container[0].getBoundingClientRect();
       let top = rectContainer.top;
       let bottom = Infinity;
+      // top
       if (!isNaN(parseFloat(options.top))) {
         top = options.top;
       } else {
@@ -567,6 +552,7 @@ export class XtScroll extends Xt {
           top = rectTop.top + scrollTop;
         }
       }
+      // bottom
       if (options.bottom !== undefined) {
         if (!isNaN(parseFloat(options.bottom))) {
           bottom = options.bottom;
@@ -581,26 +567,29 @@ export class XtScroll extends Xt {
           }
         }
       }
+      // check
       if (scrollTop >= top && scrollTop < bottom) {
+        // inside
         if (!element.classList.contains(...self.defaults.classes)) {
           self.eventOn(element);
-          // direction classes
+          // direction
           let fElements = self.getElements(element);
           for (let el of fElements.all) {
             el.classList.remove('scroll-off-top', 'scroll-off-bottom');
             if (self.scrollTop > scrollTop) {
-              el.classList.remove('scroll-off-bottom');
+              el.classList.remove('scroll-on-top');
               el.classList.add('scroll-on-bottom');
             } else {
-              el.classList.remove('scroll-on-bottom');
               el.classList.add('scroll-on-top');
+              el.classList.remove('scroll-on-bottom');
             }
           }
         }
       } else {
+        // outside
         if (element.classList.contains(...self.defaults.classes)) {
           self.eventOff(element);
-          // direction classes
+          // direction
           let fElements = self.getElements(element);
           for (let el of fElements.all) {
             el.classList.remove('scroll-on-top', 'scroll-on-bottom');
@@ -608,15 +597,15 @@ export class XtScroll extends Xt {
               el.classList.remove('scroll-off-top');
               el.classList.add('scroll-off-bottom');
             } else {
-              el.classList.remove('scroll-off-bottom');
               el.classList.add('scroll-off-top');
+              el.classList.remove('scroll-off-bottom');
             }
           }
         }
       }
+      // save for direction
+      self.scrollTop = scrollTop;
     });
-    // scrollTop
-    this.scrollTop = scrollTop;
   }
 
 }

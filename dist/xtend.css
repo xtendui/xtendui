@@ -1365,6 +1365,12 @@ html.xt-fixed body {
 html.xt-fixed .overlay {
   overflow-y: scroll;
 }
+/**
+ * .xt-scroll()
+ * @param {String} @mode Starting mode be 'absolute' or 'fixed'
+ * @param {String} @position Can be 'top' or 'bottom'
+ * @param {Value} @pos Position value
+ */
 .form-group {
   position: relative;
   display: -webkit-box;
@@ -4756,11 +4762,13 @@ dl dt {
   font-size: 1em;
 }
 .icon-big {
+  overflow: hidden;
   margin-top: -0.25em;
   margin-bottom: -0.25em;
   font-size: 1.5em;
 }
 .icon-giant {
+  overflow: hidden;
   margin-top: -0.5em;
   margin-bottom: -0.5em;
   font-size: 2em;

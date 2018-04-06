@@ -6,9 +6,9 @@
 
 .animation-default() {
   animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(.63,.36,0,.97);
+  animation-timing-function: cubic-bezier(.63, .36, 0, .97);
   &.out {
-    animation-timing-function: cubic-bezier(.63,.36,0,.97);
+    animation-timing-function: cubic-bezier(.63, .36, 0, .97);
   }
 }
 
@@ -17,9 +17,9 @@
 .transition-default() {
   transition-property: all;
   transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(.63,.36,0,.97);
+  transition-timing-function: cubic-bezier(.63, .36, 0, .97);
   &.out {
-    transition-timing-function: cubic-bezier(.63,.36,0,.97);
+    transition-timing-function: cubic-bezier(.63, .36, 0, .97);
   }
 }
 
@@ -51,6 +51,7 @@
     animation-name: anim-vertical-out;
   }
 }
+
 @keyframes anim-vertical-in {
   0% {
     opacity: 0;
@@ -61,6 +62,7 @@
     transform: translateY(0);
   }
 }
+
 @keyframes anim-vertical-out {
   0% {
     opacity: 1;
@@ -85,6 +87,7 @@
     animation-name: anim-horizontal-out;
   }
 }
+
 @keyframes anim-horizontal-in {
   0% {
     opacity: 0;
@@ -95,6 +98,7 @@
     transform: translateX(0);
   }
 }
+
 @keyframes anim-horizontal-out {
   0% {
     opacity: 1;
@@ -119,22 +123,24 @@
     animation-name: anim-top-out;
   }
 }
+
 @keyframes anim-top-in {
-  0%{
+  0% {
     opacity: 0;
     transform: translateY(-1rem);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
 @keyframes anim-top-out {
-  0%{
+  0% {
     opacity: 1;
     transform: translateX(0);
   }
-  100%{
+  100% {
     opacity: 0;
     transform: translateY(-1rem);
   }
@@ -153,22 +159,24 @@
     animation-name: anim-bottom-out;
   }
 }
+
 @keyframes anim-bottom-in {
-  0%{
+  0% {
     opacity: 0;
     transform: translateY(1rem);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
 @keyframes anim-bottom-out {
-  0%{
+  0% {
     opacity: 1;
     transform: translateX(0);
   }
-  100%{
+  100% {
     opacity: 0;
     transform: translateY(1rem);
   }
@@ -187,6 +195,7 @@
     animation-name: anim-left-out;
   }
 }
+
 @keyframes anim-left-in {
   0% {
     opacity: 0;
@@ -197,6 +206,7 @@
     transform: translateY(0);
   }
 }
+
 @keyframes anim-left-out {
   0% {
     opacity: 1;
@@ -221,6 +231,7 @@
     animation-name: anim-right-out;
   }
 }
+
 @keyframes anim-right-in {
   0% {
     opacity: 0;
@@ -231,6 +242,7 @@
     transform: translateY(0);
   }
 }
+
 @keyframes anim-right-out {
   0% {
     opacity: 1;
@@ -255,6 +267,7 @@
     animation-name: anim-backdrop-out;
   }
 }
+
 @keyframes anim-backdrop-in {
   0% {
     opacity: 0;
@@ -263,6 +276,7 @@
     opacity: @backdrop-opacity;
   }
 }
+
 @keyframes anim-backdrop-out {
   0% {
     opacity: @backdrop-opacity;
@@ -278,6 +292,7 @@
   animation: preload-rotate 0.8s infinite linear;
   will-change: transform;
 }
+
 @keyframes preload-rotate {
   0% {
     transform: rotate(0deg);

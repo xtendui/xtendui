@@ -28,10 +28,10 @@
 
       <header class="site-header">
 
-        <div class="site-header-top">
+        <div class="site-header-top" data-xt-scroll='{"bottom": ".site-breadcrumbs.xt-clone"}'>
           <div class="contain-fluid">
 
-            <div class="flex flex-auto justify-content-between">
+            <div class="flex flex-auto justify-content-between align-items-center">
               <div>
                 <a href="{{ site.baseurl }}/" class="logo" title="Home">
                   Xtend
@@ -63,7 +63,7 @@
               <div class="site-header-top">
                 <div class="contain-fluid">
 
-                  <div class="flex flex-auto justify-content-between">
+                  <div class="flex flex-auto justify-content-between align-items-center">
                     <div>
                       <a href="{{ site.baseurl }}/" class="logo" title="Home">
                         Xtend
@@ -130,7 +130,7 @@
 
         </div>
 
-        <nav class="site-breadcrumbs" role="navigation" data-xt-scroll='{"mode": "absolute"}'>
+        <nav class="site-breadcrumbs" role="navigation" data-xt-scroll>
           <div class="site-breadcrumbs-inside">
             <div class="contain-fluid">
               <div class="flex flex-auto justify-content-between">
@@ -180,7 +180,7 @@
 
                       {% if collection.links.download %}
                         <div>
-                            <a href="{{ collection.links.download }}" target="_blank" class="btn btn-primary">
+                            <a href="{{ collection.links.download }}" target="_blank" class="btn btn-primary btn-icon">
                               <span class="icon-download icon-big"></span>
                             </a>
                         </div>
@@ -188,7 +188,7 @@
 
                       {% if collection.links.github %}
                         <div>
-                            <a href="{{ collection.links.github }}" target="_blank" class="btn btn-primary">
+                            <a href="{{ collection.links.github }}" target="_blank" class="btn btn-primary btn-icon">
                               <span class="icon-github icon-big"></span>
                             </a>
                         </div>
@@ -197,20 +197,20 @@
                     {% endif %}
                   {% endfor %}
 
-                  <!--
-                  <button type="button" class="btn btn-primary btn-menu show-scroll" data-xt-overlay='{"targets": "#site-menu", "class": "test-additional-class"}'>
-                    {% if page.collection %}
+                  <div class="show-scroll">
+                    <button type="button" class="btn btn-primary btn-menu" data-xt-toggle='{"targets": "#site-menu"}'>
+                      {% if page.collection %}
                       {{ page.collection | capitalize }}
-                    {% else %}
+                      {% else %}
                       {{ page.title | capitalize }}
-                    {% endif %}
-                    <span class="icon icon-menu-custom right">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </span>
-                  </button>
-                  -->
+                      {% endif %}
+                      <span class="icon-menu-custom">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </span>
+                    </button>
+                  </div>
 
                 </div>
 
@@ -222,5 +222,3 @@
       </header>
 
       <div class="site-wrapper-inside">
-
-      

@@ -51,6 +51,7 @@ a, .alink, .btn-link {
   display: inline-block;
   position: relative;
 }
+
 .drop-outer-static {
   position: static;
   .drop,
@@ -58,6 +59,7 @@ a, .alink, .btn-link {
     width: 100%;
   }
 }
+
 .drop {
   .toggle-flex();
   position: absolute;
@@ -84,6 +86,7 @@ a, .alink, .btn-link {
   left: auto;
   right: 100%;
 }
+
 .drop-after {
   left: 100%;
   right: auto;
@@ -95,6 +98,7 @@ a, .alink, .btn-link {
   left: 0;
   right: auto;
 }
+
 .drop-right {
   left: auto;
   right: 0;
@@ -106,6 +110,7 @@ a, .alink, .btn-link {
   top: 100%;
   bottom: auto;
 }
+
 .drop-top {
   top: auto;
   bottom: 100%;
@@ -117,10 +122,12 @@ a, .alink, .btn-link {
   top: auto;
   bottom: 0;
 }
+
 .drop-middle-top {
   top: 0;
   bottom: auto;
 }
+
 .drop-middle-top,
 .drop-middle-bottom,
 .drop-middle {
@@ -136,6 +143,7 @@ a, .alink, .btn-link {
 .drop-bottom {
   padding: @drop-space 0;
 }
+
 .drop-before,
 .drop-after {
   padding: @drop-space;
@@ -148,6 +156,7 @@ a, .alink, .btn-link {
     overflow-y: auto;
   }
 }
+
 .drop-max-width {
   .drop-inner {
     overflow-x: auto;
@@ -258,6 +267,7 @@ a, .alink, .btn-link {
   bottom: 0;
   right: 0;
 }
+
 .loader-content {
   position: absolute;
   top: 0;
@@ -279,41 +289,48 @@ a, .alink, .btn-link {
     .display(block) !important;
   }
 }
+
 .toggle-flex {
   .display(none) !important;
   &.active, &.out {
     .display(flex) !important;
   }
 }
+
 .toggle-inline-flex {
   .display(none) !important;
   &.active, &.out {
     .display(inline-flex) !important;
   }
 }
+
 .toggle-inline {
   .display(none) !important;
   &.active, &.out {
     .display(inline) !important;
   }
 }
+
 .toggle-inline-block {
   .display(none) !important;
   &.active, &.out {
     .display(inline-block) !important;
   }
 }
+
 .toggle-none {
   &.active, &.out {
     .display(none) !important;
   }
 }
+
 .toggle-visible {
   visibility: hidden !important;
   &.active, &.out {
     visibility: visible !important;
   }
 }
+
 .toggle-hidden {
   &.active, &.out {
     visibility: hidden !important;
@@ -340,5 +357,66 @@ html.xt-fixed {
   }
   .overlay {
     overflow-y: scroll;
+  }
+}
+
+/**
+ * .xt-scroll()
+ * @param {String} @mode Starting mode be 'absolute' or 'fixed'
+ * @param {String} @position Can be 'top' or 'bottom'
+ * @param {Value} @pos Position value
+ */
+.xt-scroll(@mode:none, @position:'top', @pos:0) {
+  .show-scroll {
+    display: none;
+  }
+  .hide-scroll {
+    display: block;
+  }
+  // normal mode
+  &.xt-clone {
+    position: absolute !important;
+    visibility: hidden !important;
+    &.active {
+      position: relative !important;
+    }
+  }
+  // absolute mode
+  & when (@mode = 'absolute') {
+    &.xt-clone {
+      position: relative !important;
+    }
+    .xt-position > & {
+      position: absolute;
+      width: 100%;
+    }
+  }
+  // fixed mode
+  & when (@mode = 'fixed') {
+    &.xt-clone {
+      position: relative !important;
+    }
+    .xt-position > & {
+      position: fixed;
+      width: 100%;
+    }
+  }
+  // activation
+  &.active:not(.xt-clone) {
+    position: fixed !important;
+    width: inherit; // fix fixed width
+    z-index: 70;
+    & when (@position = 'top') {
+      top: @pos;
+    }
+    & when (@position = 'bottom') {
+      bottom: @pos;
+    }
+    .show-scroll {
+      display: block;
+    }
+    .hide-scroll {
+      display: none;
+    }
   }
 }

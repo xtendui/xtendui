@@ -28,10 +28,10 @@
 
       <header class="site-header">
 
-        <div class="site-header-top">
+        <div class="site-header-top" data-xt-scroll='{"bottom": ".site-breadcrumbs.xt-clone"}'>
           <div class="contain-fluid">
 
-            <div class="flex flex-auto justify-content-between">
+            <div class="flex flex-auto justify-content-between align-items-center">
               <div>
                 <a href="/" class="logo" title="Home">
                   Xtend
@@ -61,7 +61,7 @@
               <div class="site-header-top">
                 <div class="contain-fluid">
 
-                  <div class="flex flex-auto justify-content-between">
+                  <div class="flex flex-auto justify-content-between align-items-center">
                     <div>
                       <a href="/" class="logo" title="Home">
                         Xtend
@@ -128,7 +128,7 @@
 
         </div>
 
-        <nav class="site-breadcrumbs" role="navigation" data-xt-scroll='{"mode": "absolute"}'>
+        <nav class="site-breadcrumbs" role="navigation" data-xt-scroll>
           <div class="site-breadcrumbs-inside">
             <div class="contain-fluid">
               <div class="flex flex-auto justify-content-between">
@@ -301,7 +301,7 @@
 
                       
                         <div>
-                            <a href="https://github.com/minimit/xtend-library/releases/latest" target="_blank" class="btn btn-primary">
+                            <a href="https://github.com/minimit/xtend-library/releases/latest" target="_blank" class="btn btn-primary btn-icon">
                               <span class="icon-download icon-big"></span>
                             </a>
                         </div>
@@ -309,7 +309,7 @@
 
                       
                         <div>
-                            <a href="https://github.com/minimit/xtend-library" target="_blank" class="btn btn-primary">
+                            <a href="https://github.com/minimit/xtend-library" target="_blank" class="btn btn-primary btn-icon">
                               <span class="icon-github icon-big"></span>
                             </a>
                         </div>
@@ -320,18 +320,18 @@
                     
                   
 
-                  <!--
-                  <button type="button" class="btn btn-primary btn-menu show-scroll" data-xt-overlay='{"targets": "#site-menu", "class": "test-additional-class"}'>
-                    
+                  <div class="show-scroll">
+                    <button type="button" class="btn btn-primary btn-menu" data-xt-toggle='{"targets": "#site-menu"}'>
+                      
                       Docs
-                    
-                    <span class="icon icon-menu-custom right">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </span>
-                  </button>
-                  -->
+                      
+                      <span class="icon-menu-custom">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </span>
+                    </button>
+                  </div>
 
                 </div>
 
@@ -344,7 +344,6 @@
 
       <div class="site-wrapper-inside">
 
-      
 
 <main class="site-main">
   <div class="site-main-inside">
@@ -398,7 +397,7 @@
         </div>
         <div class="column md-3 hide show-md">
 
-          <aside class="site-aside">
+          <aside class="site-aside" data-xt-scroll='{"top": ".site-breadcrumbs.xt-clone"}'>
             
             <div class="site-aside-text">
               <a href="/docs/structure/" class="btn btn-secondary-alt">
@@ -417,7 +416,7 @@
 </main>
 
 
-        <footer class="site-footer">
+        <footer class="site-footer" data-xt-scroll='{"top": "-1"}'>
           <div class="contain-fluid">
             
             <nav class="site-footer-top display-none display-block-sm" role="navigation">

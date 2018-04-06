@@ -1365,6 +1365,12 @@ html.xt-fixed body {
 html.xt-fixed .overlay {
   overflow-y: scroll;
 }
+/**
+ * .xt-scroll()
+ * @param {String} @mode Starting mode be 'absolute' or 'fixed'
+ * @param {String} @position Can be 'top' or 'bottom'
+ * @param {Value} @pos Position value
+ */
 .form-group {
   position: relative;
   display: -webkit-box;
@@ -4756,11 +4762,13 @@ dl dt {
   font-size: 1em;
 }
 .icon-big {
+  overflow: hidden;
   margin-top: -0.25em;
   margin-bottom: -0.25em;
   font-size: 1.5em;
 }
 .icon-giant {
+  overflow: hidden;
   margin-top: -0.5em;
   margin-bottom: -0.5em;
   font-size: 2em;
@@ -6151,6 +6159,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-strong {
   font-weight: bold;
 }
+.site-header {
+  z-index: 6 !important;
+}
+.site-main {
+  z-index: 5 !important;
+}
+.site-footer {
+  z-index: 4 !important;
+}
 .site-wrapper {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6206,8 +6223,20 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   color: rgba(255, 255, 255, 0.75);
 }
 .site-header-top {
-  background-color: #00B0FF;
+  background-color: rgba(0, 176, 255, 0.85);
   color: #fff;
+}
+.site-menu .site-header-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.site-header-top .btn-menu {
+  margin-right: -1.2em;
+  border: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 .site-hero {
   color: #fff;
@@ -6248,52 +6277,42 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .site-breadcrumbs .site-breadcrumbs-inside {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  background-color: #00B0FF;
   color: #fff;
 }
-.site-breadcrumbs-body-main:first-child {
-  margin-left: -1.2em;
+.site-breadcrumbs .site-breadcrumbs-body {
+  margin-left: -1.2em !important;
 }
-.site-breadcrumbs-body-main .site-breadcrumbs-body-sub {
+.site-breadcrumbs .site-breadcrumbs-meta {
+  margin-right: -1.2em !important;
+}
+.site-breadcrumbs .btn {
+  border: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.site-breadcrumbs-body-sub {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
   position: relative;
   z-index: 1;
-  background-color: #00B0FF;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
-.site-breadcrumbs-body-main .site-breadcrumbs-body-sub .btn {
+.site-breadcrumbs-body-sub .btn {
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
   font-size: 1rem;
-}
-.btn-menu {
-  box-shadow: none !important;
-  /* @TODO after scroll
-  .site-breadcrumbs & {
-    //padding: .718em 1em !important;
-    margin-top: .06rem;
-    margin-right: -.5rem;
-  }
-  */
-}
-.site-header-top .btn-menu {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-  margin-right: -1.2em;
-  width: auto !important;
 }
 .btn-menu .icon-menu-custom {
   position: relative;
   vertical-align: top;
   margin-left: 0.5em;
   width: 1em;
-  height: .75em;
-  top: .05em;
-  font-size: 2rem;
+  height: 1em;
+  top: .18em;
+  font-size: 1.6rem;
 }
 .btn-menu .icon-menu-custom span {
   display: block;
@@ -6304,7 +6323,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   border-radius: 0;
   left: 0;
   transform: rotate(0deg);
-  transition: all 1100ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 600ms;
+  will-change: top, transform;
+}
+.btn-menu .icon-menu-custom span.out {
+  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
 .btn-menu .icon-menu-custom span:nth-child(1) {
   top: 0;
@@ -6380,19 +6406,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .site-menu.overlay .site-menu-content .btn.active {
   color: #fff;
   opacity: 1;
-}
-.site-menu {
-  z-index: 69 !important;
-}
-.site-menu .site-header-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-.site-breadcrumbs,
-.site-header-top {
-  z-index: 68 !important;
 }
 /*
 .site-menu.active {
@@ -6489,16 +6502,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 */
 .site-footer {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 3rem;
+  padding-bottom: 0.375rem;
   background-color: #00B0FF;
 }
 .site-footer .separator {
   margin-left: 0.375rem;
   margin-right: 0.375rem;
 }
-.site-footer-top .site-footer-top-links .btn:first-child {
-  margin-left: -1.2em;
+.site-footer-top .site-footer-top-links {
+  margin-left: -1.2em !important;
 }
 .site-footer-bottom {
   padding-top: 1.5rem;
@@ -6753,69 +6766,154 @@ h2 .make-line .line-container .line:after {
   display: inline-block !important;
 }
 */
-/*
-// .site-footer
-
-.site-footer {
-  .xt-scroll('bottom');
-  z-index: 4 !important;
-  width: 100%;
-}
-.site-header {
-  z-index: 6;
-}
-.site-main,
-.site-main-inside {
-  z-index: 5;
-}
-
-// .site-header-top
-.site-header-top[data-xt-scroll] {
-  .xt-scroll();
-  width: 100%;
-  &.scroll-on-bottom {
-    animation: top-in 600ms cubic-bezier(.19, 1, .22, 1);
-  }
-}
-*/
-.site-breadcrumbs .show-scroll {
+.site-header-top[data-xt-scroll] .show-scroll {
   display: none;
 }
-.site-breadcrumbs .hide-scroll {
+.site-header-top[data-xt-scroll] .hide-scroll {
   display: block;
 }
-.site-breadcrumbs.xt-clone {
+.site-header-top[data-xt-scroll].xt-clone {
   position: absolute !important;
   visibility: hidden !important;
 }
-.site-breadcrumbs.xt-clone.active {
+.site-header-top[data-xt-scroll].xt-clone.active {
   position: relative !important;
 }
-.site-breadcrumbs.active:not(.xt-clone) {
+.site-header-top[data-xt-scroll].active:not(.xt-clone) {
   position: fixed !important;
   width: inherit;
   z-index: 70;
   top: 0;
 }
-.site-breadcrumbs.active:not(.xt-clone) .show-scroll {
+.site-header-top[data-xt-scroll].active:not(.xt-clone) .show-scroll {
   display: block;
 }
-.site-breadcrumbs.active:not(.xt-clone) .hide-scroll {
+.site-header-top[data-xt-scroll].active:not(.xt-clone) .hide-scroll {
   display: none;
 }
-.site-breadcrumbs.active {
-  z-index: 71 !important;
+.site-header-top[data-xt-scroll].scroll-on-bottom {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 600ms;
+  animation-name: anim-top-in;
 }
-.site-breadcrumbs.active .site-breadcrumbs-meta {
-  animation: right-in 600ms cubic-bezier(0.19, 1, 0.22, 1);
+.site-header-top[data-xt-scroll].scroll-on-bottom.out {
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
 }
-/*
-// .site-aside
-.site-aside {
-  .xt-scroll('top', 56px);
-  z-index: 69 !important;
+.site-breadcrumbs[data-xt-scroll] .show-scroll {
+  display: none;
 }
-*/
+.site-breadcrumbs[data-xt-scroll] .hide-scroll {
+  display: block;
+}
+.site-breadcrumbs[data-xt-scroll].xt-clone {
+  position: absolute !important;
+  visibility: hidden !important;
+}
+.site-breadcrumbs[data-xt-scroll].xt-clone.active {
+  position: relative !important;
+}
+.site-breadcrumbs[data-xt-scroll].xt-clone {
+  position: relative !important;
+}
+.xt-position > .site-breadcrumbs[data-xt-scroll] {
+  position: absolute;
+  width: 100%;
+}
+.site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) {
+  position: fixed !important;
+  width: inherit;
+  z-index: 70;
+  top: 0;
+}
+.site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) .show-scroll {
+  display: block;
+}
+.site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) .hide-scroll {
+  display: none;
+}
+.site-breadcrumbs[data-xt-scroll] .site-breadcrumbs-inside {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 600ms;
+}
+.site-breadcrumbs[data-xt-scroll] .site-breadcrumbs-inside.out {
+  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+}
+.site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) {
+  background-color: rgba(0, 176, 255, 0.85);
+}
+.site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) .site-breadcrumbs-inside {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 600ms;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) .site-breadcrumbs-inside.out {
+  transition-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+}
+.site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) .site-breadcrumbs-meta {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+  transition-duration: 600ms;
+  animation-name: anim-right-in;
+}
+.site-breadcrumbs[data-xt-scroll].active:not(.xt-clone) .site-breadcrumbs-meta.out {
+  animation-timing-function: cubic-bezier(0.63, 0.36, 0, 0.97);
+}
+.site-aside[data-xt-scroll] .show-scroll {
+  display: none;
+}
+.site-aside[data-xt-scroll] .hide-scroll {
+  display: block;
+}
+.site-aside[data-xt-scroll].xt-clone {
+  position: absolute !important;
+  visibility: hidden !important;
+}
+.site-aside[data-xt-scroll].xt-clone.active {
+  position: relative !important;
+}
+.site-aside[data-xt-scroll].active:not(.xt-clone) {
+  position: fixed !important;
+  width: inherit;
+  z-index: 70;
+  top: 56px;
+}
+.site-aside[data-xt-scroll].active:not(.xt-clone) .show-scroll {
+  display: block;
+}
+.site-aside[data-xt-scroll].active:not(.xt-clone) .hide-scroll {
+  display: none;
+}
+.site-footer .show-scroll {
+  display: none;
+}
+.site-footer .hide-scroll {
+  display: block;
+}
+.site-footer.xt-clone {
+  position: absolute !important;
+  visibility: hidden !important;
+}
+.site-footer.xt-clone.active {
+  position: relative !important;
+}
+.site-footer.active:not(.xt-clone) {
+  position: fixed !important;
+  width: inherit;
+  z-index: 70;
+  bottom: 0;
+}
+.site-footer.active:not(.xt-clone) .show-scroll {
+  display: block;
+}
+.site-footer.active:not(.xt-clone) .hide-scroll {
+  display: none;
+}
 .xt-container {
   position: relative;
   width: 100%;

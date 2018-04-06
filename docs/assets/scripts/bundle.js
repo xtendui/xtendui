@@ -1397,7 +1397,7 @@ var Xt = exports.Xt = function () {
     //////////////////////
 
     /**
-     *
+     * collapseOn on activation
      * @param {Element} element
      */
 
@@ -1446,7 +1446,7 @@ var Xt = exports.Xt = function () {
     }
 
     /**
-     *
+     * collapseOff on deactivation
      * @param {Element} element
      */
 
@@ -1589,7 +1589,7 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
   //////////////////////
 
   /**
-   * init events
+   * init elements, targets and currents
    */
 
 
@@ -1597,7 +1597,6 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
     key: 'initScope',
     value: function initScope() {
       _get(XtScroll.prototype.__proto__ || Object.getPrototypeOf(XtScroll.prototype), 'initScope', this).call(this);
-      var options = this.options;
       // mode
       this.mode = 'all';
       // container
@@ -1613,22 +1612,9 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
       if (this.targets) {
         this.targets = this.object.cloneNode(true);
         this.targets.classList.add('xt-clone', 'xt-ignore');
-        this.container[0].prepend(this.targets);
+        this.container[0].append(this.targets);
       }
       this.targets = _xtendUtils2.default.arrSingle(this.targets);
-      /*
-      // stuff
-      if (settings.mode === 'absolute') {
-        $group.css('position', 'absolute');
-      } else if (settings.mode === 'fixed') {
-        $group.css('position', 'fixed');
-      }
-      if ($group.is(':fixed') || $group.is(':absolute')) {
-        $group.css('z-index', 70);
-        settings.$targets.css('display', 'block');
-      } else {
-        settings.$targets.css('display', 'none');
-      }*/
     }
 
     //////////////////////
@@ -1646,7 +1632,7 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
       var options = this.options;
       // scroll
       window.addEventListener(options.on, function (e) {
-        self.eventScroll(this);
+        self.eventScroll(self.object);
       });
     }
 
@@ -1661,18 +1647,17 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
 
   }, {
     key: 'eventScroll',
-    value: function eventScroll() {
+    value: function eventScroll(element) {
       var self = this;
       var options = this.options;
       // scroll
       var scrollTop = document.documentElement.scrollTop;
       _xtendUtils2.default.cancelAnimationFrame.call(window, this.scrollFrame);
       this.scrollFrame = _xtendUtils2.default.requestAnimationFrame.call(window, function () {
-        // on or off
-        var element = self.object;
         var rectContainer = self.container[0].getBoundingClientRect();
         var top = rectContainer.top;
         var bottom = Infinity;
+        // top
         if (!isNaN(parseFloat(options.top))) {
           top = options.top;
         } else {
@@ -1685,6 +1670,7 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
             top = _rectTop.top + scrollTop;
           }
         }
+        // bottom
         if (options.bottom !== undefined) {
           if (!isNaN(parseFloat(options.bottom))) {
             bottom = options.bottom;
@@ -1699,12 +1685,14 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
             }
           }
         }
+        // check
         if (scrollTop >= top && scrollTop < bottom) {
           var _element$classList3;
 
+          // inside
           if (!(_element$classList3 = element.classList).contains.apply(_element$classList3, _toConsumableArray(self.defaults.classes))) {
             self.eventOn(element);
-            // direction classes
+            // direction
             var fElements = self.getElements(element);
             var _iteratorNormalCompletion6 = true;
             var _didIteratorError6 = false;
@@ -1716,11 +1704,11 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
 
                 el.classList.remove('scroll-off-top', 'scroll-off-bottom');
                 if (self.scrollTop > scrollTop) {
-                  el.classList.remove('scroll-off-bottom');
+                  el.classList.remove('scroll-on-top');
                   el.classList.add('scroll-on-bottom');
                 } else {
-                  el.classList.remove('scroll-on-bottom');
                   el.classList.add('scroll-on-top');
+                  el.classList.remove('scroll-on-bottom');
                 }
               }
             } catch (err) {
@@ -1741,9 +1729,10 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
         } else {
           var _element$classList4;
 
+          // outside
           if ((_element$classList4 = element.classList).contains.apply(_element$classList4, _toConsumableArray(self.defaults.classes))) {
             self.eventOff(element);
-            // direction classes
+            // direction
             var _fElements = self.getElements(element);
             var _iteratorNormalCompletion7 = true;
             var _didIteratorError7 = false;
@@ -1758,8 +1747,8 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
                   _el.classList.remove('scroll-off-top');
                   _el.classList.add('scroll-off-bottom');
                 } else {
-                  _el.classList.remove('scroll-off-bottom');
                   _el.classList.add('scroll-off-top');
+                  _el.classList.remove('scroll-off-bottom');
                 }
               }
             } catch (err) {
@@ -1778,9 +1767,9 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
             }
           }
         }
+        // save for direction
+        self.scrollTop = scrollTop;
       });
-      // scrollTop
-      this.scrollTop = scrollTop;
     }
   }]);
 

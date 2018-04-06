@@ -1,13 +1,23 @@
-//////////////////////
-// imports
-//////////////////////
-
 @import '../../../../dist/xtend.less';
 @import (less) 'highlight/github.css';
 
 //////////////////////
 // structure
 //////////////////////
+
+// indexes
+
+.site-header {
+  z-index: 6 !important;
+}
+
+.site-main {
+  z-index: 5 !important;
+}
+
+.site-footer {
+  z-index: 4 !important;
+}
 
 // sticky footer
 
@@ -23,6 +33,7 @@
   flex-flow: column;
   min-height: 100%;
 }
+
 .site-wrapper-inside {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -38,6 +49,7 @@
   flex: 1 1 auto;
   min-height: 100%;
 }
+
 .site-main {
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
@@ -75,8 +87,20 @@
 // .site-header-top
 
 .site-header-top {
-  background-color: @primary;
+  background-color: fade(@primary, 85%);
   color: @white;
+  .site-menu & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .btn-menu {
+    margin-right: -1.2em;
+    border: 0 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
 }
 
 // .site-hero
@@ -117,24 +141,29 @@
   background-color: @primary;
   .site-breadcrumbs-inside {
     .padding(y, medium);
-    background-color: @primary;
     color: @white;
   }
-}
-.site-breadcrumbs-body-main {
-  &:first-child {
-    margin-left: -1.2em;
+  .site-breadcrumbs-body {
+    margin-left: -1.2em !important;
   }
-  .site-breadcrumbs-body-sub {
-    .flex-column();
-    position: relative;
-    z-index: 1;
-    background-color: @primary;
-    .padding(y, small);
-    .btn {
-      .padding(y, tiny);
-      font-size: 1rem;
-    }
+  .site-breadcrumbs-meta {
+    margin-right: -1.2em !important;
+  }
+  .btn {
+    border: 0 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+}
+
+.site-breadcrumbs-body-sub {
+  .flex-column();
+  position: relative;
+  z-index: 1;
+  .padding(y, small);
+  .btn {
+    .padding(y, tiny);
+    font-size: 1rem;
   }
 }
 
@@ -147,28 +176,14 @@
 @button-menu-pixels: 1px;
 
 .btn-menu {
-  box-shadow: none !important;
-  .site-header-top & {
-    .margin(y, small);
-    margin-right: -1.2em;
-    width: auto !important;
-  }
-  /* @TODO after scroll
-  .site-breadcrumbs & {
-    //padding: .718em 1em !important;
-    margin-top: .06rem;
-    margin-right: -.5rem;
-  }
-  */
-  // .icon-menu-custom
   .icon-menu-custom {
     position: relative;
     vertical-align: top;
     .icon-right();
     width: 1em;
-    height: .75em;
-    top: .05em;
-    font-size: 2rem;
+    height: 1em;
+    top: .18em;
+    font-size: 1.6rem;
     span {
       display: block;
       position: absolute;
@@ -178,7 +193,9 @@
       border-radius: 0;
       left: 0;
       transform: rotate(0deg);
-      transition: all 1100ms cubic-bezier(.19, 1, .22, 1);
+      .transition-default();
+      transition-duration: 600ms;
+      will-change: top, transform;
     }
     span:nth-child(1) {
       top: 0;
@@ -257,24 +274,6 @@
   }
 }
 
-// .site-menu
-
-.site-menu {
-  // @TODO after scroll
-  z-index: 69 !important;
-  .site-header-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-}
-.site-breadcrumbs,
-.site-header-top {
-  // @TODO after scroll
-  // below demos overlay...
-  z-index: 68 !important;
-}
 /*
 .site-menu.active {
   .site-menu-content {
@@ -377,7 +376,8 @@
 // .site-footer
 
 .site-footer {
-  .padding(y, medium);
+  .padding(top, big);
+  .padding(bottom, tiny);
   background-color: @primary;
   .separator {
     .margin(x, tiny);
@@ -388,11 +388,7 @@
 
 .site-footer-top {
   .site-footer-top-links {
-    .btn {
-      &:first-child {
-        margin-left: -1.2em;
-      }
-    }
+    margin-left: -1.2em !important;
   }
 }
 
@@ -432,6 +428,7 @@
 .site-aside {
   .margin(y, giant);
 }
+
 .site-aside-text {
   line-height: 0;
   .btn {
@@ -507,6 +504,7 @@
     }
   }
 }
+
 @keyframes line-out {
   0% {
     left: 0;
@@ -517,6 +515,7 @@
     width: 0;
   }
 }
+
 @keyframes line-in {
   0% {
     left: 0;
@@ -551,6 +550,7 @@
     }
   }
 }
+
 .site-article-anchor {
   position: absolute;
   z-index: 2;
@@ -684,49 +684,53 @@
 // xt
 //////////////////////
 
-/*
-// .site-footer
-
-.site-footer {
-  .xt-scroll('bottom');
-  z-index: 4 !important;
-  width: 100%;
-}
-.site-header {
-  z-index: 6;
-}
-.site-main,
-.site-main-inside {
-  z-index: 5;
-}
-
 // .site-header-top
+
 .site-header-top[data-xt-scroll] {
   .xt-scroll();
-  width: 100%;
   &.scroll-on-bottom {
-    animation: top-in 600ms cubic-bezier(.19, 1, .22, 1);
+    .animation-default();
+    transition-duration: 600ms;
+    animation-name: anim-top-in;
   }
 }
-*/
 
 // .site-breadcrumbs
-.site-breadcrumbs {
-  .xt-scroll();
-  &.active {
-    z-index: 71 !important;
+
+.site-breadcrumbs[data-xt-scroll] {
+  .xt-scroll(@mode:'absolute');
+  // animations
+  .site-breadcrumbs-inside {
+    .transition-default();
+    .transition-default.out();
+    transition-duration: 600ms;
+  }
+  &.active:not(.xt-clone) {
+    background-color: fade(@primary, 85%);
+    .site-breadcrumbs-inside {
+      .transition-default();
+      transition-duration: 600ms;
+      .padding(y, small);
+    }
     .site-breadcrumbs-meta {
-      animation: right-in 600ms cubic-bezier(.19, 1, .22, 1);
+      .animation-default();
+      transition-duration: 600ms;
+      animation-name: anim-right-in;
     }
   }
 }
-/*
+
 // .site-aside
-.site-aside {
-  .xt-scroll('top', 56px);
-  z-index: 69 !important;
+
+.site-aside[data-xt-scroll] {
+  .xt-scroll(@position:'top', @pos:56px);
 }
-*/
+
+// .site-footer
+
+.site-footer {
+  .xt-scroll(@position:'bottom');
+}
 
 // xt-container and xt-position
 
@@ -734,42 +738,8 @@
   position: relative;
   width: 100%;
 }
+
 .xt-position {
   float: left;
   width: 100%;
-}
-
-// .xt-scroll();
-
-.xt-scroll(@position:'top', @pos:0) {
-  .show-scroll {
-    display: none;
-  }
-  .hide-scroll {
-    display: block;
-  }
-  &.xt-clone {
-    position: absolute !important;
-    visibility: hidden !important;
-    &.active {
-      position: relative !important;
-    }
-  }
-  &.active:not(.xt-clone) {
-    position: fixed !important;
-    width: inherit; // fix fixed width
-    z-index: 70;
-    & when (@position = 'top') {
-      top: @pos;
-    }
-    & when (@position = 'bottom') {
-      bottom: @pos;
-    }
-    .show-scroll {
-      display: block;
-    }
-    .hide-scroll {
-      display: none;
-    }
-  }
 }
