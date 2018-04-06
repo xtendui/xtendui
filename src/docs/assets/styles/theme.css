@@ -6369,6 +6369,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   padding-bottom: 0.375rem;
   font-size: 1rem;
 }
+.site-breadcrumbs-body-sub .btn {
+  animation-delay: 100ms;
+}
 .site-breadcrumbs-body-sub .btn:nth-child(1) {
   animation-delay: 25ms;
 }
@@ -6380,24 +6383,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 .site-breadcrumbs-body-sub .btn:nth-child(4) {
   animation-delay: 100ms;
-}
-.site-breadcrumbs-body-sub .btn:nth-child(5) {
-  animation-delay: 125ms;
-}
-.site-breadcrumbs-body-sub .btn:nth-child(6) {
-  animation-delay: 150ms;
-}
-.site-breadcrumbs-body-sub .btn:nth-child(7) {
-  animation-delay: 175ms;
-}
-.site-breadcrumbs-body-sub .btn:nth-child(8) {
-  animation-delay: 200ms;
-}
-.site-breadcrumbs-body-sub .btn:nth-child(9) {
-  animation-delay: 225ms;
-}
-.site-breadcrumbs-body-sub .btn:nth-child(10) {
-  animation-delay: 250ms;
 }
 .site-breadcrumbs-body-sub.active .btn {
   animation-duration: 600ms;
@@ -6547,6 +6532,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   animation-name: anim-left-in;
   animation-fill-mode: forwards;
   opacity: 0;
+  animation-delay: 500ms;
 }
 .site-menu.active .site-menu-content .btn .line-container.out {
   animation-duration: 600ms;
@@ -6579,6 +6565,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   animation-duration: 300ms;
   animation-fill-mode: forwards;
   opacity: 1;
+  animation-delay: 200ms;
 }
 .site-menu.out .site-menu-content .btn .line-container.out {
   animation-duration: 600ms;

@@ -177,7 +177,8 @@
 
 .site-breadcrumbs-body-sub {
   .btn {
-    .nth-child(@child:10, @start:0ms, @increment:25ms, @decrement:0ms, {
+    animation-delay: 100ms; // default delay @start + @child * @increment
+    .nth-child(@child:4, @start:0ms, @increment:25ms, @decrement:0ms, {
       @nth-child-animation-delay(); });
   }
   &.active {
@@ -315,6 +316,7 @@
 .site-menu {
   transition-delay: @time-tiny;
 }
+
 .site-menu.active {
   .site-menu-content {
     .btn {
@@ -323,15 +325,15 @@
         .anim-left.active();
         animation-fill-mode: forwards;
         opacity: 0;
+        animation-delay: @time-small + 200ms; // default delay @start + @child * @increment
       }
-      .nth-child(@child:4, @start:@time-small, @increment:50ms, @decrement:0ms, {
-        .line-container {
-          @nth-child-animation-delay();
-        }
-      });
+      .nth-child(@child:4, @start:@time-small, @increment:50ms, @decrement:0ms, { .line-container {
+        @nth-child-animation-delay();
+      } });
     }
   }
 }
+
 .site-menu.out {
   .site-menu-content {
     .btn {
@@ -341,12 +343,11 @@
         animation-duration: @time-small;
         animation-fill-mode: forwards;
         opacity: 1;
+        animation-delay: 200ms; // default delay @start + @child * @increment
       }
-      .nth-child(@child:4, @start:0, @increment:50ms, @decrement:0ms, {
-        .line-container {
-          @nth-child-animation-delay();
-        }
-      });
+      .nth-child(@child:4, @start:0, @increment:50ms, @decrement:0ms, { .line-container {
+        @nth-child-animation-delay();
+      } });
     }
   }
 }
