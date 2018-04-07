@@ -75,6 +75,17 @@ select::-ms-expand {
 textarea {
   resize: vertical;
 }
+/* USAGE:
+.anim-load-fix & {
+  visibility: hidden;
+}
+*/
+.anim-load-fix *,
+.anim-load-fix *:before,
+.anim-load-fix *:after {
+  animation-duration: 0ms !important;
+  animation-delay: 0ms !important;
+}
 .no-anim,
 .no-anim .xt-backdrop {
   animation: none !important;
@@ -4251,6 +4262,22 @@ opacity: 0;
 .transition-default.out();
 */
 /* USAGE:
+.btn {
+  transform: translateX(-@anim-medium);
+  opacity: 0;
+  &.active {
+      .transition-default();
+      transform: translateY(0);
+      opacity: 1;
+  }
+  &.out {
+      .transition-default.out();
+      transform: translateX(@anim-medium);
+      opacity: 0;
+  }
+}
+*/
+/* USAGE:
 .anim-left();
 .anim-left.active();
 animation-fill-mode: forwards;
@@ -4281,6 +4308,38 @@ opacity: 1;
   transition-property: all;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.anim-opacity {
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  opacity: 1;
+}
+.anim-opacity.out {
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.anim-opacity.active {
+  animation-name: anim-opacity-in;
+}
+.anim-opacity.out {
+  opacity: 0;
+  animation-name: anim-opacity-out;
+}
+@keyframes anim-opacity-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes anim-opacity-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 .anim-vertical {
   animation-duration: 250ms;

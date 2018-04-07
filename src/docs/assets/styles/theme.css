@@ -75,6 +75,17 @@ select::-ms-expand {
 textarea {
   resize: vertical;
 }
+/* USAGE:
+.anim-load-fix & {
+  visibility: hidden;
+}
+*/
+.anim-load-fix *,
+.anim-load-fix *:before,
+.anim-load-fix *:after {
+  animation-duration: 0ms !important;
+  animation-delay: 0ms !important;
+}
 .no-anim,
 .no-anim .xt-backdrop {
   animation: none !important;
@@ -4251,6 +4262,22 @@ opacity: 0;
 .transition-default.out();
 */
 /* USAGE:
+.btn {
+  transform: translateX(-@anim-medium);
+  opacity: 0;
+  &.active {
+      .transition-default();
+      transform: translateY(0);
+      opacity: 1;
+  }
+  &.out {
+      .transition-default.out();
+      transform: translateX(@anim-medium);
+      opacity: 0;
+  }
+}
+*/
+/* USAGE:
 .anim-left();
 .anim-left.active();
 animation-fill-mode: forwards;
@@ -4281,6 +4308,38 @@ opacity: 1;
   transition-property: all;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.anim-opacity {
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  opacity: 1;
+}
+.anim-opacity.out {
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.anim-opacity.active {
+  animation-name: anim-opacity-in;
+}
+.anim-opacity.out {
+  opacity: 0;
+  animation-name: anim-opacity-out;
+}
+@keyframes anim-opacity-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes anim-opacity-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 .anim-vertical {
   animation-duration: 250ms;
@@ -6393,17 +6452,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-size: 1rem;
 }
 .site-breadcrumbs-body-sub .btn {
-  transition-property: all;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  opacity: 0;
   transform: translateX(-1.5rem);
+  opacity: 0;
   transition-delay: 150ms;
-}
-.site-breadcrumbs-body-sub .btn.out {
-  transition-property: all;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .site-breadcrumbs-body-sub .btn:nth-child(1) {
   transition-delay: 25ms;
@@ -6424,12 +6475,23 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   transition-delay: 150ms;
 }
 .site-breadcrumbs-body-sub.active .btn {
-  opacity: 1;
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   transform: translateY(0);
+  opacity: 1;
+}
+.site-breadcrumbs-body-sub.active .btn.out {
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .site-breadcrumbs-body-sub.out .btn {
-  opacity: 0;
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   transform: translateX(1.5rem);
+  opacity: 0;
 }
 .btn-menu {
   display: -webkit-box;
@@ -6577,8 +6639,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   opacity: 0;
   animation-name: anim-right-out;
   animation-fill-mode: forwards;
-  opacity: 1;
   animation-delay: 300ms;
+  opacity: 1;
 }
 .site-menu.out .site-menu-content .btn .line-container.out {
   animation-duration: 250ms;
@@ -6766,25 +6828,16 @@ h2 .make-line .line-container .line:after {
 .make-line .line:after {
   left: 100%;
   width: 0;
+  animation: anim-opacity-out 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19), line-out 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  animation-fill-mode: forwards;
   opacity: 0;
-  transition-property: all;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  animation: line-out 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .make-line:hover .line:after {
   left: 0;
   width: 100%;
+  animation: anim-opacity-in 250ms cubic-bezier(0.645, 0.045, 0.355, 1), line-in 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-fill-mode: forwards;
   opacity: 1;
-  transition-property: all;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  animation: line-in 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.make-line:hover .line:after.out {
-  transition-property: all;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 @keyframes line-out {
   0% {
@@ -6816,25 +6869,16 @@ h2 .make-line .line-container .line:after {
 }
 .make-anchor .site-article-anchor {
   pointer-events: none;
-  opacity: 0;
-  transition-property: all;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  animation: anim-opacity-out 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  animation-fill-mode: forwards;
+  opacity: 1;
 }
 .make-anchor:hover .site-article-anchor,
 .make-anchor:active .site-article-anchor,
 .make-anchor.active .site-article-anchor {
-  opacity: 1;
-  transition-property: all;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.make-anchor:hover .site-article-anchor.out,
-.make-anchor:active .site-article-anchor.out,
-.make-anchor.active .site-article-anchor.out {
-  transition-property: all;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  animation: anim-opacity-in 400ms cubic-bezier(0.645, 0.045, 0.355, 1) 400ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 .site-article-anchor {
   position: absolute;

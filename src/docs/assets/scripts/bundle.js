@@ -839,6 +839,14 @@ XtUtil.getClosest = function (element, selector) {
 exports.default = XtUtil;
 
 //////////////////////
+// anim-load-fix
+//////////////////////
+
+setTimeout(function () {
+  document.documentElement.classList.remove('anim-load-fix');
+}, 500);
+
+//////////////////////
 // scope polyfill (https://stackoverflow.com/questions/6481612/queryselector-search-immediate-children)
 // USAGE : querySelectorAll(':scope > .selector');
 //////////////////////

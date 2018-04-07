@@ -2,7 +2,17 @@
 // animations
 //////////////////////
 
-// no-anim
+// .anim-load-fix
+// USAGE : <html class="anim-load-fix">
+
+.anim-load-fix {
+  *, *:before, *:after {
+    animation-duration: 0ms !important;
+    animation-delay: 0ms !important;
+  }
+}
+
+// .no-anim
 
 .no-anim,
 .no-anim .xt-backdrop {

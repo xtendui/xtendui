@@ -178,23 +178,24 @@
 
 .site-breadcrumbs-body-sub {
   .btn {
-    .transition-default();
+    transform: translateX(-@anim-medium);
     opacity: 0;
-    transform: translateX(-@anim-size);
     transition-delay: 150ms; // default delay @start + @child * @increment
     .nth-child(@child:6, @start:0ms, @increment:25ms, @decrement:0ms, {
       @nth-child-transition-delay(); });
   }
   &.active {
     .btn {
-      opacity: 1;
+      .transition-default();
       transform: translateY(0);
+      opacity: 1;
     }
   }
   &.out {
     .btn {
+      .transition-default.out();
+      transform: translateX(@anim-medium);
       opacity: 0;
-      transform: translateX(@anim-size);
     }
   }
 }
@@ -312,7 +313,7 @@
 // animations
 
 .site-menu {
-  transition-delay: @time-default;
+  transition-delay: @time-small;
 }
 
 .site-menu.active {
@@ -323,9 +324,9 @@
         .anim-left.active();
         animation-fill-mode: forwards;
         opacity: 0;
-        animation-delay: @time-default + 300ms; // default delay @start + @child * @increment
+        animation-delay: @time-small + 300ms; // default delay @start + @child * @increment
       }
-      .nth-child(@child:6, @start:@time-default, @increment:50ms, @decrement:0ms, { .line-container {
+      .nth-child(@child:6, @start:@time-small, @increment:50ms, @decrement:0ms, { .line-container {
         @nth-child-animation-delay();
       } });
     }
@@ -339,8 +340,8 @@
         .anim-right();
         .anim-right.out();
         animation-fill-mode: forwards;
-        opacity: 1;
         animation-delay: 300ms; // default delay @start + @child * @increment
+        opacity: 1;
       }
       .nth-child(@child:6, @start:0, @increment:50ms, @decrement:0ms, { .line-container {
         @nth-child-animation-delay();
@@ -487,17 +488,17 @@
   .line:after {
     left: 100%;
     width: 0;
+    animation: anim-opacity-out @time-medium @bez-out, line-out @time-small @bez-out;
+    animation-fill-mode: forwards;
     opacity: 0;
-    .transition-default.out();
-    animation: line-out @time-default @bez-out;
   }
   &:hover {
     .line:after {
       left: 0;
       width: 100%;
+      animation: anim-opacity-in @time-small @bez-in, line-in @time-medium @bez-in;
+      animation-fill-mode: forwards;
       opacity: 1;
-      .transition-default();
-      animation: line-in @time-default @bez-in;
     }
   }
 }
@@ -535,14 +536,16 @@
   }
   .site-article-anchor {
     pointer-events: none;
-    opacity: 0;
-    .transition-default.out();
+    animation: anim-opacity-out @time-medium @bez-out;
+    animation-fill-mode: forwards;
+    opacity: 1;
   }
   &:hover,
   &:active, &.active {
     .site-article-anchor {
-      opacity: 1;
-      .transition-default();
+      animation: anim-opacity-in @time-medium @bez-in @time-medium;
+      animation-fill-mode: forwards;
+      opacity: 0;
     }
   }
 }

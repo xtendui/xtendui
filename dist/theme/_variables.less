@@ -29,55 +29,6 @@
 @grad-primary: linear-gradient(0deg, darken(@primary, 2%) 10%, @primary 100%);
 
 //////////////////////
-// animations
-//////////////////////
-
-// timing
-
-@time-default: @time-small;
-
-@time-none: 1ms;
-@time-tiny: 100ms;
-@time-small: 250ms;
-@time-medium: 400ms;
-@time-big: 800ms;
-@time-giant: 1200ms;
-
-// beziers
-
-@bez: @bezier-swoosh;
-@bez-in: @bezier-swoosh-in;
-@bez-out: @bezier-swoosh-out;
-
-@bez-0: cubic-bezier(.63, .36, 0, .97);
-@bezier-0: cubic-bezier(0,1,.5,1);
-@bezier-1: cubic-bezier(0.19, 1, 0.22, 1);
-@bezier-2: cubic-bezier(.25,.1,.25,1);
-@bezier-3: cubic-bezier(.79,.1,.2,.9);
-@bezier-4: cubic-bezier(.63,.36,0,.97);
-@bezier-5: cubic-bezier(0,.92,.03,.99);
-@bezier-6: cubic-bezier(.55,0,.32,1);
-@bezier-7: cubic-bezier(.24,.66,.34,.73);
-@bezier-8: cubic-bezier(.65,.04,1,.76);
-@bezier-9: cubic-bezier(.14,.68,.64,.99);
-@bezier-10: cubic-bezier(.8,.1,.94,.52);
-@bezier-11: cubic-bezier(.23,.72,.7,.2);
-@bezier-12: cubic-bezier(1,0,.33,.33);
-@bezier-13: cubic-bezier(.73,.60,0,1);
-@bezier-14: cubic-bezier(.64,.01,.98,.38);
-@bezier-15: cubic-bezier(0,.63,.41,.98);
-@bezier-16: cubic-bezier(.54,.2,.78,.41);
-@bezier-17: cubic-bezier(.28,.56,.37,.74);
-@bezier-18: cubic-bezier(.72,.31,.17,.9);
-@bezier-bounce: cubic-bezier(0, 1.8, 1, 1.8);
-@bezier-bounce-soft: cubic-bezier(0,1.3,1,1.3);
-@bezier-slide: cubic-bezier(.69,.01,.21,.99);
-@bezier-swoosh: cubic-bezier(.96,.1,.14,.88);
-@bezier-swoosh-in: cubic-bezier(0.645, 0.045, 0.355, 1.000);
-@bezier-swoosh-out: cubic-bezier(0.550, 0.055, 0.675, 0.190);
-@bezier-swoosh-delay: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-
-//////////////////////
 // utils
 //////////////////////
 
@@ -149,13 +100,68 @@
 // icons
 //////////////////////
 
-// sizes
+// size
 
 @icon-tiny: .5em;
 @icon-small: .75em;
 @icon-medium: 1em;
 @icon-big: 1.5em;
 @icon-giant: 2em;
+
+//////////////////////
+// animations
+//////////////////////
+
+// size
+
+@anim-tiny: .5rem;
+@anim-small: .75rem;
+@anim-medium: 1.5rem;
+@anim-big: 3rem;
+@anim-giant: 6rem;
+
+// time
+
+@time-none: 1ms;
+@time-tiny: 100ms;
+@time-small: 250ms;
+@time-medium: 400ms;
+@time-big: 800ms;
+@time-giant: 1200ms;
+
+// beziers
+
+@bez: @bezier-swoosh;
+@bez-in: @bezier-swoosh-in;
+@bez-out: @bezier-swoosh-out;
+
+@bez-0: cubic-bezier(.63, .36, 0, .97);
+@bezier-0: cubic-bezier(0,1,.5,1);
+@bezier-1: cubic-bezier(0.19, 1, 0.22, 1);
+@bezier-2: cubic-bezier(.25,.1,.25,1);
+@bezier-3: cubic-bezier(.79,.1,.2,.9);
+@bezier-4: cubic-bezier(.63,.36,0,.97);
+@bezier-5: cubic-bezier(0,.92,.03,.99);
+@bezier-6: cubic-bezier(.55,0,.32,1);
+@bezier-7: cubic-bezier(.24,.66,.34,.73);
+@bezier-8: cubic-bezier(.65,.04,1,.76);
+@bezier-9: cubic-bezier(.14,.68,.64,.99);
+@bezier-10: cubic-bezier(.8,.1,.94,.52);
+@bezier-11: cubic-bezier(.23,.72,.7,.2);
+@bezier-12: cubic-bezier(1,0,.33,.33);
+@bezier-13: cubic-bezier(.73,.60,0,1);
+@bezier-14: cubic-bezier(.64,.01,.98,.38);
+@bezier-15: cubic-bezier(0,.63,.41,.98);
+@bezier-16: cubic-bezier(.54,.2,.78,.41);
+@bezier-17: cubic-bezier(.28,.56,.37,.74);
+@bezier-18: cubic-bezier(.72,.31,.17,.9);
+@bezier-bounce: cubic-bezier(0, 1.8, 1, 1.8);
+@bezier-bounce-soft: cubic-bezier(0,1.3,1,1.3);
+@bezier-slide: cubic-bezier(.69,.01,.21,.99);
+@bezier-swoosh: cubic-bezier(.96,.1,.14,.88);
+@bezier-swoosh-in: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+@bezier-swoosh-out: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+@bezier-swoosh-delay: cubic-bezier(0.215, 0.610, 0.355, 1.000);
 
 //////////////////////
 // grid
@@ -165,13 +171,13 @@
 
 // contain
 
-@contains: all 100%, xs 540px, sm 720px, md 960px, lg 1140px, xl 1300px; // contain sizes
+@contains: all 100%, xs 540px, sm 720px, md 960px, lg 1140px, xl 1300px; // contain size
 @contain-fluid: 1300px; // contain fluid size
 @contain-space: all 15px, xs 15px, sm 20px, md 25px, lg 30px, xl 30px; // spacing outside contain
 
 // overlay
 
-@overlays: tiny 540px, small 720px, medium 960px, big 1140px, giant 1300px; // overlay sizes
+@overlays: tiny 540px, small 720px, medium 960px, big 1140px, giant 1300px; // overlay size
 @overlay-fluid: 1300px; // overlay fluid size
 @overlay-space: all 15px, xs 15px, sm 20px, md 25px, lg 30px, xl 30px; // space outside overlay
 
