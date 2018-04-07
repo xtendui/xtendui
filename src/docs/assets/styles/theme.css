@@ -86,6 +86,15 @@ textarea {
 .no-transition {
   transition: none !important;
 }
+/* USAGE:
+transition-delay: 150ms; // default delay @start + @child * @increment
+.nth-child(@child:6, @start:0ms, @increment:25ms, @decrement:0ms, {
+  .optional-nested {
+    @nth-child-animation-delay();
+    @nth-child-transition-delay();
+  }
+});
+*/
 .collapse-height {
   height: 0;
 }
@@ -100,14 +109,80 @@ textarea {
 .collapse-right {
   overflow: hidden;
 }
-/* USAGE:
-.nth-child(@childs:4, @start:100ms, @increment:50ms, @decrement:0ms, {
-  .line-container {
-    @nth-child-animation-delay();
-    @nth-child-transition-delay();
-  }
-});
-*/
+.toggle-block {
+  display: none !important;
+}
+.toggle-block.active,
+.toggle-block.out {
+  display: block !important;
+}
+.toggle-flex {
+  display: none !important;
+}
+.toggle-flex.active,
+.toggle-flex.out {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+.toggle-inline-flex {
+  display: none !important;
+}
+.toggle-inline-flex.active,
+.toggle-inline-flex.out {
+  display: -webkit-inline-box !important;
+  display: -ms-inline-flexbox !important;
+  display: inline-flex !important;
+}
+.toggle-inline {
+  display: none !important;
+}
+.toggle-inline.active,
+.toggle-inline.out {
+  display: inline !important;
+}
+.toggle-inline-block {
+  display: none !important;
+}
+.toggle-inline-block.active,
+.toggle-inline-block.out {
+  display: inline-block !important;
+}
+.toggle-none.active,
+.toggle-none.out {
+  display: none !important;
+}
+.toggle-visible {
+  visibility: hidden !important;
+}
+.toggle-visible.active,
+.toggle-visible.out {
+  visibility: visible !important;
+}
+.toggle-hidden.active,
+.toggle-hidden.out {
+  visibility: hidden !important;
+}
+.xt-container {
+  position: relative;
+  width: 100%;
+}
+.xt-position {
+  float: left;
+  width: 100%;
+}
+html.xt-fixed body {
+  overflow-y: hidden;
+}
+html.xt-fixed .overlay {
+  overflow-y: scroll;
+}
+/**
+ * .xt-scroll()
+ * @param {String} @mode Starting mode be 'absolute' or 'fixed'
+ * @param {String} @position Can be 'top' or 'bottom'
+ * @param {Value} @pos Position value
+ */
 .contain,
 .contain-fluid {
   width: 100%;
@@ -1309,68 +1384,6 @@ a,
   right: 0;
   margin: auto;
 }
-.toggle-block {
-  display: none !important;
-}
-.toggle-block.active,
-.toggle-block.out {
-  display: block !important;
-}
-.toggle-flex {
-  display: none !important;
-}
-.toggle-flex.active,
-.toggle-flex.out {
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-}
-.toggle-inline-flex {
-  display: none !important;
-}
-.toggle-inline-flex.active,
-.toggle-inline-flex.out {
-  display: -webkit-inline-box !important;
-  display: -ms-inline-flexbox !important;
-  display: inline-flex !important;
-}
-.toggle-inline {
-  display: none !important;
-}
-.toggle-inline.active,
-.toggle-inline.out {
-  display: inline !important;
-}
-.toggle-inline-block {
-  display: none !important;
-}
-.toggle-inline-block.active,
-.toggle-inline-block.out {
-  display: inline-block !important;
-}
-.toggle-none.active,
-.toggle-none.out {
-  display: none !important;
-}
-.toggle-visible {
-  visibility: hidden !important;
-}
-.toggle-visible.active,
-.toggle-visible.out {
-  visibility: visible !important;
-}
-.toggle-hidden.active,
-.toggle-hidden.out {
-  visibility: hidden !important;
-}
-.xt-container {
-  position: relative;
-  width: 100%;
-}
-.xt-position {
-  float: left;
-  width: 100%;
-}
 .xt-backdrop {
   position: fixed;
   z-index: 130 !important;
@@ -1379,18 +1392,6 @@ a,
   width: 100%;
   height: 100%;
 }
-html.xt-fixed body {
-  overflow-y: hidden;
-}
-html.xt-fixed .overlay {
-  overflow-y: scroll;
-}
-/**
- * .xt-scroll()
- * @param {String} @mode Starting mode be 'absolute' or 'fixed'
- * @param {String} @position Can be 'top' or 'bottom'
- * @param {Value} @pos Position value
- */
 .form-group {
   position: relative;
   display: -webkit-box;
@@ -4241,6 +4242,26 @@ select.input-control {
   font-weight: 600;
   src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format('truetype');
 }
+/* USAGE:
+opacity: 1;
+.transition-default();
+*/
+/* USAGE:
+opacity: 0;
+.transition-default.out();
+*/
+/* USAGE:
+.anim-left();
+.anim-left.active();
+animation-fill-mode: forwards;
+opacity: 0;
+*/
+/* USAGE:
+.anim-right();
+.anim-right.out();
+animation-fill-mode: forwards;
+opacity: 1;
+*/
 .collapse-height,
 .collapse-width,
 .collapse-top,
@@ -6345,6 +6366,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   margin-right: -1.2em !important;
 }
 .site-breadcrumbs .btn {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   border: 0 !important;
   background-color: transparent !important;
   box-shadow: none !important;
@@ -6370,58 +6393,43 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-size: 1rem;
 }
 .site-breadcrumbs-body-sub .btn {
-  animation-delay: 100ms;
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  opacity: 0;
+  transform: translateX(-1.5rem);
+  transition-delay: 150ms;
+}
+.site-breadcrumbs-body-sub .btn.out {
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .site-breadcrumbs-body-sub .btn:nth-child(1) {
-  animation-delay: 25ms;
+  transition-delay: 25ms;
 }
 .site-breadcrumbs-body-sub .btn:nth-child(2) {
-  animation-delay: 50ms;
+  transition-delay: 50ms;
 }
 .site-breadcrumbs-body-sub .btn:nth-child(3) {
-  animation-delay: 75ms;
+  transition-delay: 75ms;
 }
 .site-breadcrumbs-body-sub .btn:nth-child(4) {
-  animation-delay: 100ms;
+  transition-delay: 100ms;
+}
+.site-breadcrumbs-body-sub .btn:nth-child(5) {
+  transition-delay: 125ms;
+}
+.site-breadcrumbs-body-sub .btn:nth-child(6) {
+  transition-delay: 150ms;
 }
 .site-breadcrumbs-body-sub.active .btn {
-  animation-duration: 250ms;
-  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
-  animation-name: anim-left-in;
-  animation-fill-mode: forwards;
-  opacity: 0;
-}
-.site-breadcrumbs-body-sub.active .btn.out {
-  animation-duration: 250ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.site-breadcrumbs-body-sub.active .btn.active {
-  animation-name: anim-left-in;
-}
-.site-breadcrumbs-body-sub.active .btn.out {
-  opacity: 0;
-  animation-name: anim-left-out;
+  transform: translateY(0);
 }
 .site-breadcrumbs-body-sub.out .btn {
-  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  animation-duration: 250ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
-  animation-name: anim-right-out;
-  animation-fill-mode: forwards;
-  opacity: 1;
-}
-.site-breadcrumbs-body-sub.out .btn.out {
-  animation-duration: 250ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.site-breadcrumbs-body-sub.out .btn.active {
-  animation-name: anim-right-in;
-}
-.site-breadcrumbs-body-sub.out .btn.out {
-  opacity: 0;
-  animation-name: anim-right-out;
+  transform: translateX(1.5rem);
 }
 .btn-menu {
   display: -webkit-box;
@@ -6531,7 +6539,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   animation-name: anim-left-in;
   animation-fill-mode: forwards;
   opacity: 0;
-  animation-delay: 450ms;
+  animation-delay: 550ms;
 }
 .site-menu.active .site-menu-content .btn .line-container.out {
   animation-duration: 250ms;
@@ -6556,6 +6564,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .site-menu.active .site-menu-content .btn:nth-child(4) .line-container {
   animation-delay: 450ms;
 }
+.site-menu.active .site-menu-content .btn:nth-child(5) .line-container {
+  animation-delay: 500ms;
+}
+.site-menu.active .site-menu-content .btn:nth-child(6) .line-container {
+  animation-delay: 550ms;
+}
 .site-menu.out .site-menu-content .btn .line-container {
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   animation-duration: 250ms;
@@ -6564,7 +6578,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   animation-name: anim-right-out;
   animation-fill-mode: forwards;
   opacity: 1;
-  animation-delay: 200ms;
+  animation-delay: 300ms;
 }
 .site-menu.out .site-menu-content .btn .line-container.out {
   animation-duration: 250ms;
@@ -6588,6 +6602,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 .site-menu.out .site-menu-content .btn:nth-child(4) .line-container {
   animation-delay: 200ms;
+}
+.site-menu.out .site-menu-content .btn:nth-child(5) .line-container {
+  animation-delay: 250ms;
+}
+.site-menu.out .site-menu-content .btn:nth-child(6) .line-container {
+  animation-delay: 300ms;
 }
 .site-footer {
   padding-top: 3rem;

@@ -22,30 +22,14 @@
   transition: none !important;
 }
 
-// collapse
-
-.collapse-height {
-  height: 0;
-}
-.collapse-width {
-  width: 0;
-}
-.collapse-height,
-.collapse-width,
-.collapse-top,
-.collapse-bottom,
-.collapse-left,
-.collapse-right {
-  overflow: hidden;
-}
-
 //////////////////////
 // delay
 //////////////////////
 
 /* USAGE:
-.nth-child(@childs:4, @start:100ms, @increment:50ms, @decrement:0ms, {
-  .line-container {
+transition-delay: 150ms; // default delay @start + @child * @increment
+.nth-child(@child:6, @start:0ms, @increment:25ms, @decrement:0ms, {
+  .optional-nested {
     @nth-child-animation-delay();
     @nth-child-transition-delay();
   }
@@ -63,3 +47,22 @@
 @nth-child-transition-delay: {
   transition-delay: @start + (@child * @increment) - (@child * @decrement);
 };
+
+//////////////////////
+// collapse
+//////////////////////
+
+.collapse-height {
+  height: 0;
+}
+.collapse-width {
+  width: 0;
+}
+.collapse-height,
+.collapse-width,
+.collapse-top,
+.collapse-bottom,
+.collapse-left,
+.collapse-right {
+  overflow: hidden;
+}

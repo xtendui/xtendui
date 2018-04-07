@@ -5,7 +5,7 @@
     <div class="contain">
       <div class="flex">
         <div class="column md-9">
-    
+
           <article class="site-article">
             {{ content }}
           </article>
@@ -14,7 +14,7 @@
         <div class="column md-3 hide show-md">
 
           <aside class="site-aside" data-xt-scroll='{"top": ".site-breadcrumbs.xt-clone"}'>
-            
+
             <div class="site-aside-text">
               <a href="{{ page.url }}" class="btn">
                 <div class="site-aside-title">
@@ -22,9 +22,9 @@
                 </div>
               </a>
             </div>
-            
+
             {% comment %}
-            
+
               {% if page.collection == null %}
                 <div class="site-aside-text">
                   <a href="{{ page.url }}" class="btn">
@@ -32,7 +32,7 @@
                   </a>
                 </div>
               {% endif %}
-              
+
               {% for collection in site.collections %}
                 {% if collection.label == page.collection %}
 
@@ -44,12 +44,12 @@
                       </a>
                     </div>
                   {% endfor %}
-        
+
                 {% endif %}
               {% endfor %}
-              
+
             {% endcomment %}
-            
+
           </aside>
 
         </div>

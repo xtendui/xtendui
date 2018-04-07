@@ -149,7 +149,7 @@
                               {{ p.title }}
                             </a>
                             {% assign subsorted = site.[collection.label] | where: 'categories', p.title | sort: 'order' %}
-                            <div class="site-breadcrumbs-body-sub toggle-flex collapse-height">
+                            <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
                               {% if subsorted.size > 0 %}
                                 <div class="site-breadcrumbs-body-sub-inner">
                                   {% for pa in subsorted %}

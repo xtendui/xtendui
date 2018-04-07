@@ -143,7 +143,7 @@
   .site-breadcrumbs-inside {
     .padding(y, medium);
     border-radius: 0;
-    background: @g-primary;
+    background: @grad-primary;
     color: @white;
   }
   .site-breadcrumbs-body {
@@ -153,6 +153,7 @@
     margin-right: -1.2em !important;
   }
   .btn {
+    .padding(x, medium);
     border: 0 !important;
     background-color: transparent !important;
     box-shadow: none !important;
@@ -177,24 +178,23 @@
 
 .site-breadcrumbs-body-sub {
   .btn {
-    animation-delay: 100ms; // default delay @start + @child * @increment
-    .nth-child(@child:4, @start:0ms, @increment:25ms, @decrement:0ms, {
-      @nth-child-animation-delay(); });
+    .transition-default();
+    opacity: 0;
+    transform: translateX(-@anim-size);
+    transition-delay: 150ms; // default delay @start + @child * @increment
+    .nth-child(@child:6, @start:0ms, @increment:25ms, @decrement:0ms, {
+      @nth-child-transition-delay(); });
   }
   &.active {
     .btn {
-      .anim-left();
-      .anim-left.active();
-      animation-fill-mode: forwards;
-      opacity: 0;
+      opacity: 1;
+      transform: translateY(0);
     }
   }
   &.out {
     .btn {
-      .anim-right();
-      .anim-right.out();
-      animation-fill-mode: forwards;
-      opacity: 1;
+      opacity: 0;
+      transform: translateX(@anim-size);
     }
   }
 }
@@ -323,9 +323,9 @@
         .anim-left.active();
         animation-fill-mode: forwards;
         opacity: 0;
-        animation-delay: @time-default + 200ms; // default delay @start + @child * @increment
+        animation-delay: @time-default + 300ms; // default delay @start + @child * @increment
       }
-      .nth-child(@child:4, @start:@time-default, @increment:50ms, @decrement:0ms, { .line-container {
+      .nth-child(@child:6, @start:@time-default, @increment:50ms, @decrement:0ms, { .line-container {
         @nth-child-animation-delay();
       } });
     }
@@ -340,9 +340,9 @@
         .anim-right.out();
         animation-fill-mode: forwards;
         opacity: 1;
-        animation-delay: 200ms; // default delay @start + @child * @increment
+        animation-delay: 300ms; // default delay @start + @child * @increment
       }
-      .nth-child(@child:4, @start:0, @increment:50ms, @decrement:0ms, { .line-container {
+      .nth-child(@child:6, @start:0, @increment:50ms, @decrement:0ms, { .line-container {
         @nth-child-animation-delay();
       } });
     }

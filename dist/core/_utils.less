@@ -6,9 +6,9 @@
 // USAGE: .by-key(@list-space, @name); @val: @by-key;
 
 .by-key(@array, @key, @fallback...) {
-  .-(length(@array));
-  .-(@i) when (@i > 0) {.-((@i - 1))}
-  .-(@i) when (@key = extract(extract(@array, @i), 1)) {
+  .by-key-inner(length(@array));
+  .by-key-inner(@i) when (@i > 0) {.by-key-inner((@i - 1))}
+  .by-key-inner(@i) when (@key = extract(extract(@array, @i), 1)) {
     @by-key: extract(extract(@array, @i), 2);
   }
   .--() {@by-key: @fallback} .--;
@@ -17,11 +17,11 @@
 // USAGE: .by-key-alt(@list-space, @name); @val: @by-key-alt;
 
 .by-key-alt(@array, @key, @fallback...) {
-  .-(length(@array));
-  .-(@i) when (@i > 0) {.-((@i - 1))}
-  .-(@i) when (@key = extract(extract(@array, @i), 1)) {
-  @by-key-alt: extract(extract(@array, @i), 2);
-}
+  .by-key-inner(length(@array));
+  .by-key-inner(@i) when (@i > 0) {.by-key-inner((@i - 1))}
+  .by-key-inner(@i) when (@key = extract(extract(@array, @i), 1)) {
+    @by-key-alt: extract(extract(@array, @i), 2);
+  }
   .--() {@by-key-alt: @fallback} .--;
 }
 
