@@ -75,11 +75,6 @@ select::-ms-expand {
 textarea {
   resize: vertical;
 }
-/* USAGE:
-.anim-load-fix & {
-  visibility: hidden;
-}
-*/
 .anim-load-fix *,
 .anim-load-fix *:before,
 .anim-load-fix *:after {

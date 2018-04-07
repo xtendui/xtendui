@@ -75,11 +75,6 @@ select::-ms-expand {
 textarea {
   resize: vertical;
 }
-/* USAGE:
-.anim-load-fix & {
-  visibility: hidden;
-}
-*/
 .anim-load-fix *,
 .anim-load-fix *:before,
 .anim-load-fix *:after {
@@ -6876,7 +6871,7 @@ h2 .make-line .line-container .line:after {
 .make-anchor:hover .site-article-anchor,
 .make-anchor:active .site-article-anchor,
 .make-anchor.active .site-article-anchor {
-  animation: anim-opacity-in 400ms cubic-bezier(0.645, 0.045, 0.355, 1) 400ms;
+  animation: anim-opacity-in 400ms cubic-bezier(0.645, 0.045, 0.355, 1) 250ms;
   animation-fill-mode: forwards;
   opacity: 0;
 }
