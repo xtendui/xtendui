@@ -42,7 +42,7 @@
   .box-light(); // variant
 }
 
-// sizes
+// size
 
 .box-tiny {
   padding: 1em 1.25em;
@@ -108,57 +108,10 @@
   padding-right: 1em;
 }
 
-// variants
+// variant
 
 .box-light {
   border-color: darken(@grey-250, 5%);
   background-color: @grey-250;
   color: @text;
-}
-
-//////////////////////
-// alert
-//////////////////////
-
-.alert {
-  .margin(y, layout);
-  .margin(y, medium);
-  // styles
-  border-radius: @border-radius;
-  border: 0;
-  line-height: 1.2;
-  .text(left);
-  // options
-  .box-small(); // size
-  .box-short();
-  .box-narrow();
-  .box-light(); // variant
-  form & {
-    .box-small();
-    .box-short();
-    .box-narrow();
-  }
-}
-
-// variants
-
-.alert-success {
-  background: @success;
-  color: @text-inverse;
-  .links-inverse();
-}
-.alert-notice {
-  background: @notice;
-  color: @text-inverse;
-  .links-inverse();
-}
-.alert-warning {
-  background: @warning;
-  color: @text-inverse;
-  .links-inverse();
-}
-.alert-error {
-  background: @error;
-  color: @text-inverse;
-  .links-inverse();
 }

@@ -1,0 +1,60 @@
+//////////////////////
+// icon
+//////////////////////
+
+// size
+
+.icon-tiny {
+  font-size: @icon-tiny;
+}
+.icon-small {
+  font-size: @icon-small;
+}
+.icon-medium {
+  font-size: @icon-medium;
+}
+.icon-big {
+  overflow: hidden;
+  .margin(y, -.25em);
+  font-size: @icon-big;
+}
+.icon-giant {
+  overflow: hidden;
+  .margin(y, -.5em);
+  font-size: @icon-giant;
+}
+
+// spacing
+
+.icon-left {
+  .margin(right, .5em);
+}
+.icon-right {
+  .margin(left, .5em);
+}
+
+// icon :before or :after
+// USAGE: .icon(@content, @size, @sr-only, @position);
+
+.icon(@content, @size: @icon-medium, @sr-only: true, @position: before) {
+  & when (@sr-only = true) {
+    > span {
+      .sr-only();
+    }
+  }
+  &:@{position} {
+    content: @content;
+    display: inline-block;
+    position: relative;
+    font-family: @icons-family !important;
+    font-size: @size;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: inherit;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
