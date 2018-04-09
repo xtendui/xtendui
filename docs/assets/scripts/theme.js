@@ -253,7 +253,17 @@ const populateSources = function (item, element, id, z) {
   // format code
   if (!codeInside.classList.contains('hljs')) {
     let text = formatCode(element, lang);
-    text = text.replace(/^\s+|\s+$/g, ''); // remove newline at start and end
+    // remove tabs
+    let arr = text.split('\n');
+    var toRemove = arr[1].search(/\S/g);
+    console.log(arr[1], toRemove);
+    for (let i of arr.keys()) {
+      arr[i] = arr[i].substring(toRemove);
+    }
+    text = arr.join('\n');
+    // remove newline at start and end
+    text = text.replace(/^\s+|\s+$/g, '');
+    // set text
     codeInside.innerHTML = text;
     codeInside.classList.add(lang);
     window.hljs.highlightBlock(codeInside);

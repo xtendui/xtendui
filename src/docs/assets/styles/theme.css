@@ -4856,7 +4856,7 @@ h1,
 }
 h2,
 .h2 {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   font-size: 3.5rem;
 }
 h3,
@@ -4898,7 +4898,7 @@ small {
   color: #626c76;
 }
 code {
-  margin: 0 .1em;
+  margin: 0 .05em;
   padding: .05em .05em;
   background-color: #edf3f6;
   font-family: monaco, Consolas, 'Lucida Console', monospace;
@@ -4911,7 +4911,8 @@ pre {
   margin-bottom: 0.75rem;
   width: 100%;
   max-height: 37rem;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 pre:first-child {
   margin-top: 0;
@@ -6383,7 +6384,7 @@ select.input-control-secondary {
 }
 @font-face {
   font-family: 'xtend';
-  src: url('http://getxtend.com/assets/xtend-icons/fonts/xtend.ttf') format('truetype'), url('http://getxtend.com/assets/xtend-icons/fonts/xtend.woff') format('woff'), url('http://getxtend.com/assets/xtend-icons/fonts/xtend.svg#xtend') format('svg');
+  src: url('http://getxtend.com/icons/fonts/xtend.ttf') format('truetype'), url('http://getxtend.com/icons/fonts/xtend.woff') format('woff'), url('http://getxtend.com/icons/fonts/xtend.svg#xtend') format('svg');
   font-weight: normal;
   font-style: normal;
 }

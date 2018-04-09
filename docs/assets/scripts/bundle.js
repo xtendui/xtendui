@@ -139,13 +139,13 @@ try {
     var _el4 = _step5.value;
 
     var container = _xtendUtils2.default.parents(_el4, '.site-aside-text')[0];
-    var _iteratorNormalCompletion11 = true;
-    var _didIteratorError11 = false;
-    var _iteratorError11 = undefined;
+    var _iteratorNormalCompletion12 = true;
+    var _didIteratorError12 = false;
+    var _iteratorError12 = undefined;
 
     try {
-      for (var _iterator11 = document.querySelectorAll('.site-article > h2, .site-article > h3')[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
-        var element = _step11.value;
+      for (var _iterator12 = document.querySelectorAll('.site-article > h2, .site-article > h3')[Symbol.iterator](), _step12; !(_iteratorNormalCompletion12 = (_step12 = _iterator12.next()).done); _iteratorNormalCompletion12 = true) {
+        var element = _step12.value;
 
         if (element.tagName === 'H2') {
           container.append(_xtendUtils2.default.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-site-aside-sub">' + element.textContent + '</a>'));
@@ -156,16 +156,16 @@ try {
         }
       }
     } catch (err) {
-      _didIteratorError11 = true;
-      _iteratorError11 = err;
+      _didIteratorError12 = true;
+      _iteratorError12 = err;
     } finally {
       try {
-        if (!_iteratorNormalCompletion11 && _iterator11.return) {
-          _iterator11.return();
+        if (!_iteratorNormalCompletion12 && _iterator12.return) {
+          _iterator12.return();
         }
       } finally {
-        if (_didIteratorError11) {
-          throw _iteratorError11;
+        if (_didIteratorError12) {
+          throw _iteratorError12;
         }
       }
     }
@@ -487,7 +487,39 @@ var populateSources = function populateSources(item, element, id, z) {
   // format code
   if (!codeInside.classList.contains('hljs')) {
     var text = formatCode(element, lang);
-    text = text.replace(/^\s+|\s+$/g, ''); // remove newline at start and end
+    // remove tabs
+    var arr = text.split('\n');
+    var toRemove = arr[1].search(/\S/g);
+    console.log(arr[1], toRemove);
+    var _iteratorNormalCompletion10 = true;
+    var _didIteratorError10 = false;
+    var _iteratorError10 = undefined;
+
+    try {
+      for (var _iterator10 = arr.keys()[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
+        var i = _step10.value;
+
+        arr[i] = arr[i].substring(toRemove);
+      }
+    } catch (err) {
+      _didIteratorError10 = true;
+      _iteratorError10 = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion10 && _iterator10.return) {
+          _iterator10.return();
+        }
+      } finally {
+        if (_didIteratorError10) {
+          throw _iteratorError10;
+        }
+      }
+    }
+
+    text = arr.join('\n');
+    // remove newline at start and end
+    text = text.replace(/^\s+|\s+$/g, '');
+    // set text
     codeInside.innerHTML = text;
     codeInside.classList.add(lang);
     window.hljs.highlightBlock(codeInside);
@@ -515,15 +547,15 @@ var formatCode = function formatCode(source, lang) {
 
 // init demos
 
-var _iteratorNormalCompletion10 = true;
-var _didIteratorError10 = false;
-var _iteratorError10 = undefined;
+var _iteratorNormalCompletion11 = true;
+var _didIteratorError11 = false;
+var _iteratorError11 = undefined;
 
 try {
-  for (var _iterator10 = document.querySelectorAll('.demo').entries()[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
-    var _step10$value = _slicedToArray(_step10.value, 2),
-        i = _step10$value[0],
-        _el5 = _step10$value[1];
+  for (var _iterator11 = document.querySelectorAll('.demo').entries()[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
+    var _step11$value = _slicedToArray(_step11.value, 2),
+        i = _step11$value[0],
+        _el5 = _step11$value[1];
 
     populateDemo(_el5, i);
     // enable fullscreen
@@ -552,16 +584,16 @@ try {
   // xtend
   //////////////////////
 } catch (err) {
-  _didIteratorError10 = true;
-  _iteratorError10 = err;
+  _didIteratorError11 = true;
+  _iteratorError11 = err;
 } finally {
   try {
-    if (!_iteratorNormalCompletion10 && _iterator10.return) {
-      _iterator10.return();
+    if (!_iteratorNormalCompletion11 && _iterator11.return) {
+      _iterator11.return();
     }
   } finally {
-    if (_didIteratorError10) {
-      throw _iteratorError10;
+    if (_didIteratorError11) {
+      throw _iteratorError11;
     }
   }
 }

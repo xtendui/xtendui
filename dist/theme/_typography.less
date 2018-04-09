@@ -74,7 +74,7 @@ h1, .h1 {
   }
 }
 h2, .h2 {
-  .margin(bottom, 2rem);
+  .margin(bottom, big);
   font-size: 3.5rem;
 }
 h3, .h3 {
@@ -113,7 +113,7 @@ small {
 // code
 
 code {
-  margin: 0 .1em;
+  margin: 0 .05em;
   padding: .05em .05em;
   background-color: @grey-250;
   .font-monospace();
@@ -125,7 +125,8 @@ pre {
   .margin(bottom, small);
   width: 100%;
   max-height: 37rem;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   code {
     .padding(all, medium) !important;
     width: 100%;
