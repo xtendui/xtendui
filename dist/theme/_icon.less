@@ -38,19 +38,3 @@
 .icon-right {
   .margin(left, .5em);
 }
-
-// icon :before or :after
-// USAGE: .icon(@content:'\e900', @size:@icon-small, @sr-only:true, @position:after);
-
-.icon(@content, @size:@icon-medium, @sr-only:false, @position:before) {
-  & when (@sr-only = true) {
-    > span {
-      .sr-only();
-    }
-  }
-  &:@{position} {
-    .xt-icon();
-    content: @content;
-    font-size: @size;
-  }
-}

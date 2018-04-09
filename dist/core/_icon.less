@@ -40,3 +40,18 @@
   }
 
 }
+
+// icon :before or :after
+
+.icon(@content, @size:@icon-medium, @sr-only:false, @position:before) {
+  & when (@sr-only = true) {
+    > span {
+      .sr-only();
+    }
+  }
+  &:@{position} {
+    .xt-icon();
+    content: @content;
+    font-size: @size;
+  }
+}
