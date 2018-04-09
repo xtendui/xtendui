@@ -14,42 +14,37 @@
 
 // set to false to use only mixins
 
-@generate-layout: true;
 @generate-util: true;
 @generate-margin: true;
 @generate-padding: true;
+@generate-layout: true;
+@generate-icons: true;
 @generate-breakpoint: sm, md, lg; // only for this breakpoints (set to false to not generate responsive classes)
 
 //////////////////////
-// icons
+// icon
 //////////////////////
 
 // font-face
 
 @icons-family: 'xtend';
 @icons-path: 'http://getxtend.com/icons/fonts/xtend';
+
 @font-face {
   font-family: @icons-family;
-  src:
-    url('@{icons-path}.ttf') format('truetype'),
-    url('@{icons-path}.woff') format('woff'),
-    url('@{icons-path}.svg#xtend') format('svg');
+  src: url('@{icons-path}.ttf') format('truetype'),
+  url('@{icons-path}.woff') format('woff'),
+  url('@{icons-path}.svg#xtend') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 // icons
 
-@icon-close: '\e900';
-@icon-chevron-up: '\e904';
-@icon-chevron-left: '\e902';
-@icon-chevron-right: '\e903';
-@icon-chevron-down: '\e901';
+@icon-prefix: 'icon-';
 
-// size
-
-@icon-tiny: .5em;
-@icon-small: .75em;
-@icon-medium: 1em;
-@icon-big: 1.5em;
-@icon-giant: 2em;
+@icons: close '\e900',
+chevron-up '\e904',
+chevron-left '\e902',
+chevron-right '\e903',
+chevron-down '\e901';

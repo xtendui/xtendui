@@ -230,12 +230,14 @@ a, .alink {
   .display(flex);
   .align-items-baseline();
   .justify-content-between();
-  .icon(@icon-chevron-down, @icon-small, false, after);
+  .by-key(@icons, chevron-down); // extract icon value from @icons
+  .icon(@by-key, @icon-small, false, after);
   &:after {
     .icon-right();
   }
   &.active {
-    .icon(@icon-chevron-up, @icon-small, false, after);
+    .by-key(@icons, chevron-up); // extract icon value from @icons
+    .icon(@by-key, @icon-small, false, after);
   }
 }
 
@@ -243,7 +245,8 @@ a, .alink {
   .btn-small() !important;
   .btn-icon() !important;
   .btn-primary-empy();
-  .icon(@icon-close, @icon-medium);
+  .by-key(@icons, close); // extract icon value from @icons
+  .icon(@by-key, @icon-medium);
   position: absolute !important;
   top: 0;
   right: 0;

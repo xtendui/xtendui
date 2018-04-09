@@ -1,0 +1,43 @@
+//////////////////////
+// icon
+//////////////////////
+
+.default-icon {
+  display: inline-block;
+  position: relative;
+  font-family: @icons-family !important;
+  speak: none;
+  font-size: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: inherit;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^='@{icon-prefix}'], [class*=' @{icon-prefix}'] {
+  &:before {
+    .default-icon();
+  }
+}
+
+// .generate-icons
+
+& when (@generate-icons) {
+
+  .generate-icons();
+  .generate-icons(@i:length(@icons)) when (@i > 0) {
+    .generate-icons(@i - 1);
+    @icon: extract(@icons, @i);
+    @name: extract(@icon, 1);
+    @val: extract(@icon, 2);
+    .icon-@{name} {
+      &:before {
+        content: @val;
+      }
+    }
+  }
+
+}

@@ -4,6 +4,12 @@
 
 // size
 
+@icon-tiny: .5em;
+@icon-small: .75em;
+@icon-medium: 1em;
+@icon-big: 1.5em;
+@icon-giant: 2em;
+
 .icon-tiny {
   font-size: @icon-tiny;
 }
@@ -24,7 +30,7 @@
   font-size: @icon-giant;
 }
 
-// spacing
+// space
 
 .icon-left {
   .margin(right, .5em);
@@ -43,18 +49,8 @@
     }
   }
   &:@{position} {
+    .default-icon();
     content: @content;
-    display: inline-block;
-    position: relative;
-    font-family: @icons-family !important;
     font-size: @size;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    line-height: inherit;
-    text-transform: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 }

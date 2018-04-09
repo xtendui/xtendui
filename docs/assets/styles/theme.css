@@ -2688,6 +2688,50 @@ pre code {
   float: left;
   white-space: pre-wrap;
 }
+.default-icon {
+  display: inline-block;
+  position: relative;
+  font-family: 'xtend' !important;
+  speak: none;
+  font-size: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: inherit;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[class^='icon-']:before,
+[class*=' icon-']:before {
+  display: inline-block;
+  position: relative;
+  font-family: 'xtend' !important;
+  speak: none;
+  font-size: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: inherit;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-close:before {
+  content: '\e900';
+}
+.icon-chevron-up:before {
+  content: '\e904';
+}
+.icon-chevron-left:before {
+  content: '\e902';
+}
+.icon-chevron-right:before {
+  content: '\e903';
+}
+.icon-chevron-down:before {
+  content: '\e901';
+}
 .table {
   border-collapse: collapse;
   width: 100%;
@@ -5651,12 +5695,11 @@ a:hover,
   justify-content: space-between;
 }
 .btn-caret:after {
-  content: '\e901';
   display: inline-block;
   position: relative;
   font-family: 'xtend' !important;
-  font-size: 0.75em;
   speak: none;
+  font-size: inherit;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -5664,17 +5707,18 @@ a:hover,
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: '\e901';
+  font-size: 0.75em;
 }
 .btn-caret:after {
   margin-left: 0.5em;
 }
 .btn-caret.active:after {
-  content: '\e904';
   display: inline-block;
   position: relative;
   font-family: 'xtend' !important;
-  font-size: 0.75em;
   speak: none;
+  font-size: inherit;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -5682,6 +5726,8 @@ a:hover,
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: '\e904';
+  font-size: 0.75em;
 }
 .btn-close {
   padding: .6em 1.2em !important;
@@ -5723,12 +5769,11 @@ a:hover,
   clip: rect(0, 0, 0, 0);
 }
 .btn-close:before {
-  content: '\e900';
   display: inline-block;
   position: relative;
   font-family: 'xtend' !important;
-  font-size: 1em;
   speak: none;
+  font-size: inherit;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -5736,6 +5781,8 @@ a:hover,
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: '\e900';
+  font-size: 1em;
 }
 [disabled],
 .disabled {
