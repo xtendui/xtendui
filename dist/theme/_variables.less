@@ -29,6 +29,77 @@
 @grad-primary: linear-gradient(0deg, darken(@primary, 2%) 10%, @primary 100%);
 
 //////////////////////
+// fonts
+//////////////////////
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+
+.font-sans-light() {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.font-sans-regular() {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-sans-semibold() {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.font-monospace() {
+  font-family: monaco, Consolas, 'Lucida Console', monospace;
+  font-weight: normal;
+  font-style: normal;
+}
+
+//////////////////////
+// grid
+//////////////////////
+
+@columns: 12;
+
+// contain
+
+@contains: all 100%, xs 540px, sm 720px, md 960px, lg 1140px, xl 1300px; // contain size
+@contain-fluid: 1300px; // contain fluid size
+@contain-space: all 15px, xs 15px, sm 20px, md 25px, lg 30px, xl 30px; // spacing outside contain
+
+// overlay
+
+@overlays: tiny 540px, small 720px, medium 960px, big 1140px, giant 1300px; // overlay size
+@overlay-fluid: 1300px; // overlay fluid size
+@overlay-space: all 15px, xs 15px, sm 20px, md 25px, lg 30px, xl 30px; // space outside overlay
+
+// breakpoints
+
+@breakpoints: xs, sm, md, lg, xl; // if you change this change also variables names below
+@breakpoint-xs: 576px;
+@breakpoint-sm: 768px;
+@breakpoint-md: 992px;
+@breakpoint-lg: 1200px;
+@breakpoint-xl: 1350px;
+
+// @media queries
+// USAGE: @media @min-sm and @max-md {}
+
+@min-xs: ~'(min-width:'(@breakpoint-xs)~')';
+@max-xs: ~'(max-width:'(@breakpoint-xs - 1)~')';
+@min-sm: ~'(min-width:'(@breakpoint-sm)~')';
+@max-sm: ~'(max-width:'(@breakpoint-sm - 1)~')';
+@min-md: ~'(min-width:'(@breakpoint-md)~')';
+@max-md: ~'(max-width:'(@breakpoint-md - 1)~')';
+@min-lg: ~'(min-width:'(@breakpoint-lg)~')';
+@max-lg: ~'(max-width:'(@breakpoint-lg - 1)~')';
+@min-xl: ~'(min-width:'(@breakpoint-xl)~')';
+@max-xl: ~'(max-width:'(@breakpoint-xl - 1)~')';
+
+//////////////////////
 // utils
 //////////////////////
 
@@ -65,36 +136,6 @@
 // drop
 
 @drop-space: 6px; // space between button and drop
-
-//////////////////////
-// fonts
-//////////////////////
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
-
-.font-sans-light() {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 300;
-}
-
-.font-sans-regular() {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.font-sans-semibold() {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.font-monospace() {
-  font-family: monaco, Consolas, 'Lucida Console', monospace;
-  font-weight: normal;
-  font-style: normal;
-}
 
 //////////////////////
 // animations
@@ -149,44 +190,3 @@
 @bezier-swoosh-in: cubic-bezier(0.645, 0.045, 0.355, 1.000);
 @bezier-swoosh-out: cubic-bezier(0.550, 0.055, 0.675, 0.190);
 @bezier-swoosh-delay: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-
-//////////////////////
-// grid
-//////////////////////
-
-@columns: 12;
-
-// contain
-
-@contains: all 100%, xs 540px, sm 720px, md 960px, lg 1140px, xl 1300px; // contain size
-@contain-fluid: 1300px; // contain fluid size
-@contain-space: all 15px, xs 15px, sm 20px, md 25px, lg 30px, xl 30px; // spacing outside contain
-
-// overlay
-
-@overlays: tiny 540px, small 720px, medium 960px, big 1140px, giant 1300px; // overlay size
-@overlay-fluid: 1300px; // overlay fluid size
-@overlay-space: all 15px, xs 15px, sm 20px, md 25px, lg 30px, xl 30px; // space outside overlay
-
-// breakpoints
-
-@breakpoints: xs, sm, md, lg, xl; // if you change this change also variables names below
-@breakpoint-xs: 576px;
-@breakpoint-sm: 768px;
-@breakpoint-md: 992px;
-@breakpoint-lg: 1200px;
-@breakpoint-xl: 1350px;
-
-// @media queries
-// USAGE: @media @min-sm and @max-md {}
-
-@min-xs: ~'(min-width:'(@breakpoint-xs)~')';
-@max-xs: ~'(max-width:'(@breakpoint-xs - 1)~')';
-@min-sm: ~'(min-width:'(@breakpoint-sm)~')';
-@max-sm: ~'(max-width:'(@breakpoint-sm - 1)~')';
-@min-md: ~'(min-width:'(@breakpoint-md)~')';
-@max-md: ~'(max-width:'(@breakpoint-md - 1)~')';
-@min-lg: ~'(min-width:'(@breakpoint-lg)~')';
-@max-lg: ~'(max-width:'(@breakpoint-lg - 1)~')';
-@min-xl: ~'(min-width:'(@breakpoint-xl)~')';
-@max-xl: ~'(max-width:'(@breakpoint-xl - 1)~')';
