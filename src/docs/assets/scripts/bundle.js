@@ -490,7 +490,6 @@ var populateSources = function populateSources(item, element, id, z) {
     // remove tabs
     var arr = text.split('\n');
     var toRemove = arr[1].search(/\S/g);
-    console.log(arr[1], toRemove);
     var _iteratorNormalCompletion10 = true;
     var _didIteratorError10 = false;
     var _iteratorError10 = undefined;

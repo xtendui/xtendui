@@ -14,7 +14,7 @@ destination: docs/
 baseurl:
 exclude:
   - "*.psd"
-  - "*.scss"
+  - "*.less"
 
 # collections
 collections:

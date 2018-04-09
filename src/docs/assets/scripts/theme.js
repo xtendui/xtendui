@@ -256,7 +256,6 @@ const populateSources = function (item, element, id, z) {
     // remove tabs
     let arr = text.split('\n');
     var toRemove = arr[1].search(/\S/g);
-    console.log(arr[1], toRemove);
     for (let i of arr.keys()) {
       arr[i] = arr[i].substring(toRemove);
     }
