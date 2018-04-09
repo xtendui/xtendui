@@ -2691,8 +2691,8 @@ pre code {
   display: inline-block;
   position: relative;
   font-family: 'xtend' !important;
+  font-size: 1em;
   speak: none;
-  font-size: inherit;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -2701,13 +2701,13 @@ pre code {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-[class^='icon-']:before,
-[class*=' icon-']:before {
+[class^='icon-xt-']:before,
+[class*=' icon-xt-']:before {
   display: inline-block;
   position: relative;
   font-family: 'xtend' !important;
+  font-size: 1em;
   speak: none;
-  font-size: inherit;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -5415,11 +5415,11 @@ a:hover,
   padding-right: .8rem;
 }
 .btn-icon {
-  padding: .6em 1em;
+  padding: .6em .8em;
 }
 .list-icon > li > a:not(.btn),
 .list-icon > li > button:not(.btn) {
-  padding: .6em 1em;
+  padding: .6em .8em;
 }
 .btn-none {
   padding: 0;
@@ -5697,8 +5697,8 @@ a:hover,
   display: inline-block;
   position: relative;
   font-family: 'xtend' !important;
+  font-size: 1em;
   speak: none;
-  font-size: inherit;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -5712,12 +5712,12 @@ a:hover,
 .btn-caret:after {
   margin-left: 0.5em;
 }
-.btn-caret.active:after {
+.btn-caret.active:before {
   display: inline-block;
   position: relative;
   font-family: 'xtend' !important;
+  font-size: 1em;
   speak: none;
-  font-size: inherit;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -5731,7 +5731,7 @@ a:hover,
 .btn-close {
   padding: .6em 1.2em !important;
   font-size: 1.2rem !important;
-  padding: .6em 1em !important;
+  padding: .6em .8em !important;
   border-color: transparent;
   background-color: transparent;
   color: #7367F0;
@@ -5757,22 +5757,11 @@ a:hover,
   border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
-.btn-close > span {
-  position: absolute;
-  overflow: hidden;
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-}
 .btn-close:before {
   display: inline-block;
   position: relative;
   font-family: 'xtend' !important;
   speak: none;
-  font-size: inherit;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -5861,7 +5850,7 @@ a:hover,
 .overlay .btn-close {
   padding: .6em 1.2em !important;
   font-size: 1.4rem !important;
-  padding: .6em 1em !important;
+  padding: .6em .8em !important;
 }
 .overlay .overlay-content {
   border-radius: 3px;

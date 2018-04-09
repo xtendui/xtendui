@@ -132,7 +132,7 @@ a, .alink {
 .list-narrow { .list-btn-default({ .btn-narrow() }); }
 
 .btn-icon {
-  padding: .6em 1em;
+  padding: .6em .8em;
 }
 .list-icon { .list-btn-default({ .btn-icon() }); }
 
@@ -231,13 +231,13 @@ a, .alink {
   .align-items-baseline();
   .justify-content-between();
   .by-key(@icons, chevron-down); // extract icon value from @icons
-  .icon(@by-key, @icon-small, false, after);
+  .icon(@content:@by-key, @size:@icon-small, @position: after);
   &:after {
     .icon-right();
   }
   &.active {
     .by-key(@icons, chevron-up); // extract icon value from @icons
-    .icon(@by-key, @icon-small, false, after);
+    .icon(@content:@by-key, @size:@icon-small);
   }
 }
 
@@ -246,7 +246,7 @@ a, .alink {
   .btn-icon() !important;
   .btn-primary-empy();
   .by-key(@icons, close); // extract icon value from @icons
-  .icon(@by-key, @icon-medium);
+  .icon(@content:@by-key, @size:@icon-medium);
   position: absolute !important;
   top: 0;
   right: 0;
