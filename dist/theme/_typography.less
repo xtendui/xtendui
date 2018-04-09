@@ -61,22 +61,24 @@ h6, .h6 {
   line-height: 1.2;
   letter-spacing: 0;
   text-transform: none;
+  & + & {
+    .margin(top, medium);
+  }
 }
 
 h1, .h1 {
-  font-size: 3rem;
+  .margin(bottom, 2rem);
+  font-size: 3.5rem;
   @media @min-sm {
     font-size: 4rem;
   }
 }
 h2, .h2 {
-  font-size: 3rem;
-  @media @min-sm {
-    font-size: 4rem;
-  }
+  .margin(bottom, 2rem);
+  font-size: 3.5rem;
 }
 h3, .h3 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 h4, .h4 {
   font-size: 2rem;
@@ -96,7 +98,7 @@ h6, .h6 {
 
 p {
   .margin(y, layout);
-  .margin(bottom, medium);
+  .margin(bottom, small);
 }
 strong {
   .font-sans-semibold();
@@ -111,7 +113,8 @@ small {
 // code
 
 code {
-  padding: .187rem .375rem;
+  margin: 0 .1em;
+  padding: .05em .05em;
   background-color: @grey-250;
   .font-monospace();
   font-size: .9em;
@@ -119,7 +122,7 @@ code {
 }
 pre {
   .margin(y, layout);
-  .margin(bottom, medium);
+  .margin(bottom, small);
   width: 100%;
   max-height: 37rem;
   overflow: auto;
@@ -153,7 +156,7 @@ pre {
   ul,
   ol {
     .margin(y, layout);
-    .margin(bottom, medium);
+    .margin(bottom, small);
     padding-left: 2rem;
     > ul,
     > ol {
@@ -179,7 +182,7 @@ pre {
 //////////////////////
 
 dl {
-  .margin(bottom, medium);
+  .margin(bottom, small);
   .margin(bottom, layout);
   .font-medium();
   .dl-block();

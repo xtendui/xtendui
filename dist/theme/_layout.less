@@ -14,6 +14,8 @@
 
 .list-block,
 .list-line {
+  // styles
+  .align-items-center();
   // options
   .list-space(none); // space @list-space
   .list-left(); // alignment
@@ -21,7 +23,7 @@
 
 // default
 .list-default {
-  .list-secondary-alt(); // variant
+  .list-secondary-empy(); // variant
   .list-medium(); // size
 }
 
@@ -120,14 +122,14 @@
 
 .alert {
   .margin(y, layout);
-  .margin(y, small);
+  .margin(y, medium);
   // styles
   border-radius: @border-radius;
   border: 0;
   line-height: 1.2;
   .text(left);
   // options
-  .box-medium(); // size
+  .box-small(); // size
   .box-short();
   .box-narrow();
   .box-light(); // variant
@@ -143,20 +145,20 @@
 .alert-success {
   background: @success;
   color: @text-inverse;
-  .link-inverse();
+  .links-inverse();
 }
 .alert-notice {
   background: @notice;
   color: @text-inverse;
-  .link-inverse();
+  .links-inverse();
 }
 .alert-warning {
   background: @warning;
   color: @text-inverse;
-  .link-inverse();
+  .links-inverse();
 }
 .alert-error {
   background: @error;
   color: @text-inverse;
-  .link-inverse();
+  .links-inverse();
 }

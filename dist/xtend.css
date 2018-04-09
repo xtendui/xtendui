@@ -702,6 +702,9 @@ dl dd,
   float: left;
   margin: 0;
 }
+code {
+  white-space: nowrap;
+}
 pre code {
   float: left;
   white-space: pre-wrap;
@@ -1011,7 +1014,7 @@ pre code {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 250ms;
+  transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   text-align: left;
 }
@@ -1028,7 +1031,7 @@ pre code {
 .list-block > li > a:not(.btn).out,
 .list-block > li > button:not(.btn).out {
   transition-property: all;
-  transition-duration: 250ms;
+  transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .list-line {
@@ -1071,7 +1074,7 @@ pre code {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 250ms;
+  transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   text-align: left;
 }
@@ -1088,7 +1091,7 @@ pre code {
 .list-line > li > a:not(.btn).out,
 .list-line > li > button:not(.btn).out {
   transition-property: all;
-  transition-duration: 250ms;
+  transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .list-left > li > a,
@@ -1461,7 +1464,7 @@ a,
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 250ms;
+  transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   text-align: left;
 }
@@ -1478,7 +1481,7 @@ a,
 .form-inline .form-group > li > a:not(.btn).out,
 .form-inline .form-group > li > button:not(.btn).out {
   transition-property: all;
-  transition-duration: 250ms;
+  transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .form-inline .form-group > * {
@@ -4300,7 +4303,7 @@ opacity: 1;
 .collapse-left,
 .collapse-right {
   transition-property: all;
-  transition-duration: 250ms;
+  transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .collapse-height.out,
@@ -4310,16 +4313,16 @@ opacity: 1;
 .collapse-left.out,
 .collapse-right.out {
   transition-property: all;
-  transition-duration: 250ms;
+  transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-opacity {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-opacity.out {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-opacity.active {
@@ -4346,12 +4349,12 @@ opacity: 1;
   }
 }
 .anim-vertical {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-vertical.out {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-vertical.active {
@@ -4382,12 +4385,12 @@ opacity: 1;
   }
 }
 .anim-horizontal {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-horizontal.out {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-horizontal.active {
@@ -4418,12 +4421,12 @@ opacity: 1;
   }
 }
 .anim-top {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-top.out {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-top.active {
@@ -4454,12 +4457,12 @@ opacity: 1;
   }
 }
 .anim-bottom {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-bottom.out {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-bottom.active {
@@ -4490,12 +4493,12 @@ opacity: 1;
   }
 }
 .anim-left {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-left.out {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-left.active {
@@ -4526,12 +4529,12 @@ opacity: 1;
   }
 }
 .anim-right {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .anim-right.out {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-right.active {
@@ -4562,12 +4565,12 @@ opacity: 1;
   }
 }
 .anim-backdrop {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 0.6;
 }
 .anim-backdrop.out {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-backdrop.active {
@@ -4693,9 +4696,156 @@ h6:last-child,
 .h6:last-child {
   margin-bottom: 0;
 }
+h1 + h1,
+h1 + .h1,
+h1 + h2,
+h1 + .h2,
+h1 + h3,
+h1 + .h3,
+h1 + h4,
+h1 + .h4,
+h1 + h5,
+h1 + .h5,
+h1 + h6,
+h1 + .h6,
+.h1 + h1,
+.h1 + .h1,
+.h1 + h2,
+.h1 + .h2,
+.h1 + h3,
+.h1 + .h3,
+.h1 + h4,
+.h1 + .h4,
+.h1 + h5,
+.h1 + .h5,
+.h1 + h6,
+.h1 + .h6,
+h2 + h1,
+h2 + .h1,
+h2 + h2,
+h2 + .h2,
+h2 + h3,
+h2 + .h3,
+h2 + h4,
+h2 + .h4,
+h2 + h5,
+h2 + .h5,
+h2 + h6,
+h2 + .h6,
+.h2 + h1,
+.h2 + .h1,
+.h2 + h2,
+.h2 + .h2,
+.h2 + h3,
+.h2 + .h3,
+.h2 + h4,
+.h2 + .h4,
+.h2 + h5,
+.h2 + .h5,
+.h2 + h6,
+.h2 + .h6,
+h3 + h1,
+h3 + .h1,
+h3 + h2,
+h3 + .h2,
+h3 + h3,
+h3 + .h3,
+h3 + h4,
+h3 + .h4,
+h3 + h5,
+h3 + .h5,
+h3 + h6,
+h3 + .h6,
+.h3 + h1,
+.h3 + .h1,
+.h3 + h2,
+.h3 + .h2,
+.h3 + h3,
+.h3 + .h3,
+.h3 + h4,
+.h3 + .h4,
+.h3 + h5,
+.h3 + .h5,
+.h3 + h6,
+.h3 + .h6,
+h4 + h1,
+h4 + .h1,
+h4 + h2,
+h4 + .h2,
+h4 + h3,
+h4 + .h3,
+h4 + h4,
+h4 + .h4,
+h4 + h5,
+h4 + .h5,
+h4 + h6,
+h4 + .h6,
+.h4 + h1,
+.h4 + .h1,
+.h4 + h2,
+.h4 + .h2,
+.h4 + h3,
+.h4 + .h3,
+.h4 + h4,
+.h4 + .h4,
+.h4 + h5,
+.h4 + .h5,
+.h4 + h6,
+.h4 + .h6,
+h5 + h1,
+h5 + .h1,
+h5 + h2,
+h5 + .h2,
+h5 + h3,
+h5 + .h3,
+h5 + h4,
+h5 + .h4,
+h5 + h5,
+h5 + .h5,
+h5 + h6,
+h5 + .h6,
+.h5 + h1,
+.h5 + .h1,
+.h5 + h2,
+.h5 + .h2,
+.h5 + h3,
+.h5 + .h3,
+.h5 + h4,
+.h5 + .h4,
+.h5 + h5,
+.h5 + .h5,
+.h5 + h6,
+.h5 + .h6,
+h6 + h1,
+h6 + .h1,
+h6 + h2,
+h6 + .h2,
+h6 + h3,
+h6 + .h3,
+h6 + h4,
+h6 + .h4,
+h6 + h5,
+h6 + .h5,
+h6 + h6,
+h6 + .h6,
+.h6 + h1,
+.h6 + .h1,
+.h6 + h2,
+.h6 + .h2,
+.h6 + h3,
+.h6 + .h3,
+.h6 + h4,
+.h6 + .h4,
+.h6 + h5,
+.h6 + .h5,
+.h6 + h6,
+.h6 + .h6 {
+  margin-top: 1.5rem;
+}
 h1,
 .h1 {
-  font-size: 3rem;
+  margin-bottom: 2rem;
+  font-size: 3.5rem;
 }
 @media (min-width: 768px ) {
   h1,
@@ -4705,17 +4855,12 @@ h1,
 }
 h2,
 .h2 {
-  font-size: 3rem;
-}
-@media (min-width: 768px ) {
-  h2,
-  .h2 {
-    font-size: 4rem;
-  }
+  margin-bottom: 2rem;
+  font-size: 3.5rem;
 }
 h3,
 .h3 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 h4,
 .h4 {
@@ -4732,7 +4877,7 @@ h6,
   text-transform: uppercase;
 }
 p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 p:first-child {
   margin-top: 0;
@@ -4752,7 +4897,8 @@ small {
   color: #626c76;
 }
 code {
-  padding: .187rem .375rem;
+  margin: 0 .1em;
+  padding: .05em .05em;
   background-color: #edf3f6;
   font-family: monaco, Consolas, 'Lucida Console', monospace;
   font-weight: normal;
@@ -4761,7 +4907,7 @@ code {
   color: #7367F0;
 }
 pre {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
   width: 100%;
   max-height: 37rem;
   overflow: auto;
@@ -4791,7 +4937,7 @@ pre code {
 }
 .default-style ul,
 .default-style ol {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
   padding-left: 2rem;
 }
 .default-style ul:first-child,
@@ -4822,7 +4968,7 @@ pre code {
   list-style-type: lower-alpha;
 }
 dl {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
   font-size: 1.4rem;
   float: none;
   margin-top: -0.375rem;
@@ -4906,6 +5052,9 @@ dl dt {
 }
 .list-block,
 .list-line {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 0 0;
 }
 .list-block > *,
@@ -5028,14 +5177,14 @@ dl dt {
   color: #343a40;
 }
 .alert {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   border-radius: 3px;
   border: 0;
   line-height: 1.2;
   text-align: left;
-  padding: 1.5em;
-  font-size: 1.4rem;
+  padding: 1em 1.25em;
+  font-size: 1.3rem;
   line-height: 1.4;
   padding-top: .75em;
   padding-bottom: .75em;
@@ -5154,9 +5303,28 @@ a:hover,
 .btn-link:hover {
   color: #5e50ee;
 }
-[disabled],
-.disabled {
-  opacity: .75;
+.links-inverse a,
+.links-inverse .alink,
+.links-inverse .btn-link {
+  color: #fff;
+  text-decoration: underline;
+}
+.links-inverse a:hover,
+.links-inverse .alink:hover,
+.links-inverse .btn-link:hover {
+  color: #f2f2f2;
+}
+.link-underline:hover {
+  text-decoration: underline;
+}
+.link-underline:hover span {
+  text-decoration: underline;
+}
+.link-no-underline:hover {
+  text-decoration: none;
+}
+.link-no-underline:hover span {
+  text-decoration: none;
 }
 .btn {
   border-radius: 3px;
@@ -5172,12 +5340,12 @@ a:hover,
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 250ms;
+  transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .btn.out {
   transition-property: all;
-  transition-duration: 250ms;
+  transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .btn-tiny {
@@ -5232,20 +5400,6 @@ a:hover,
 .list-squared > li > button:not(.btn) {
   border-radius: 0;
 }
-.btn-none {
-  padding: 0;
-}
-.list-none > li > a:not(.btn),
-.list-none > li > button:not(.btn) {
-  padding: 0;
-}
-.btn-icon {
-  padding: .6em 1em;
-}
-.list-icon > li > a:not(.btn),
-.list-icon > li > button:not(.btn) {
-  padding: .6em 1em;
-}
 .btn-tall {
   padding-top: 1.15em;
   padding-bottom: 1.15em;
@@ -5281,6 +5435,20 @@ a:hover,
 .list-narrow > li > button:not(.btn) {
   padding-left: .8rem;
   padding-right: .8rem;
+}
+.btn-icon {
+  padding: .6em 1em;
+}
+.list-icon > li > a:not(.btn),
+.list-icon > li > button:not(.btn) {
+  padding: .6em 1em;
+}
+.btn-none {
+  padding: 0;
+}
+.list-none > li > a:not(.btn),
+.list-none > li > button:not(.btn) {
+  padding: 0;
 }
 .btn-primary {
   border-color: #7367F0;
@@ -5334,57 +5502,57 @@ a:hover,
   border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
-.btn-primary-alt {
+.btn-primary-empy {
   border-color: transparent;
   background-color: transparent;
   color: #7367F0;
   text-decoration: none !important;
 }
-.btn-primary-alt:hover {
+.btn-primary-empy:hover {
   text-decoration: none;
 }
-.btn-primary-alt:hover span {
+.btn-primary-empy:hover span {
   text-decoration: none;
 }
-.btn-primary-alt:hover,
-.btn-primary-alt:active,
-.btn-primary-alt.active {
+.btn-primary-empy:hover,
+.btn-primary-empy:active,
+.btn-primary-empy.active {
   background-color: #887ef2;
   color: #fff;
 }
-.btn-primary-alt:active,
-.btn-primary-alt.active {
+.btn-primary-empy:active,
+.btn-primary-empy.active {
   border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
-.list-primary-alt > li > a:not(.btn),
-.list-primary-alt > li > button:not(.btn) {
+.list-primary-empy > li > a:not(.btn),
+.list-primary-empy > li > button:not(.btn) {
   border-color: transparent;
   background-color: transparent;
   color: #7367F0;
   text-decoration: none !important;
 }
-.list-primary-alt > li > a:not(.btn):hover,
-.list-primary-alt > li > button:not(.btn):hover {
+.list-primary-empy > li > a:not(.btn):hover,
+.list-primary-empy > li > button:not(.btn):hover {
   text-decoration: none;
 }
-.list-primary-alt > li > a:not(.btn):hover span,
-.list-primary-alt > li > button:not(.btn):hover span {
+.list-primary-empy > li > a:not(.btn):hover span,
+.list-primary-empy > li > button:not(.btn):hover span {
   text-decoration: none;
 }
-.list-primary-alt > li > a:not(.btn):hover,
-.list-primary-alt > li > button:not(.btn):hover,
-.list-primary-alt > li > a:not(.btn):active,
-.list-primary-alt > li > button:not(.btn):active,
-.list-primary-alt > li > a:not(.btn).active,
-.list-primary-alt > li > button:not(.btn).active {
+.list-primary-empy > li > a:not(.btn):hover,
+.list-primary-empy > li > button:not(.btn):hover,
+.list-primary-empy > li > a:not(.btn):active,
+.list-primary-empy > li > button:not(.btn):active,
+.list-primary-empy > li > a:not(.btn).active,
+.list-primary-empy > li > button:not(.btn).active {
   background-color: #887ef2;
   color: #fff;
 }
-.list-primary-alt > li > a:not(.btn):active,
-.list-primary-alt > li > button:not(.btn):active,
-.list-primary-alt > li > a:not(.btn).active,
-.list-primary-alt > li > button:not(.btn).active {
+.list-primary-empy > li > a:not(.btn):active,
+.list-primary-empy > li > button:not(.btn):active,
+.list-primary-empy > li > a:not(.btn).active,
+.list-primary-empy > li > button:not(.btn).active {
   border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
@@ -5442,57 +5610,57 @@ a:hover,
   border-color: #d4e7ef;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
-.btn-secondary-alt {
+.btn-secondary-empy {
   border-color: transparent;
   background-color: transparent;
   color: #626c76;
   text-decoration: none !important;
 }
-.btn-secondary-alt:hover {
+.btn-secondary-empy:hover {
   text-decoration: none;
 }
-.btn-secondary-alt:hover span {
+.btn-secondary-empy:hover span {
   text-decoration: none;
 }
-.btn-secondary-alt:hover,
-.btn-secondary-alt:active,
-.btn-secondary-alt.active {
+.btn-secondary-empy:hover,
+.btn-secondary-empy:active,
+.btn-secondary-empy.active {
   background-color: #e7f1f6;
   color: #343a40;
 }
-.btn-secondary-alt:active,
-.btn-secondary-alt.active {
+.btn-secondary-empy:active,
+.btn-secondary-empy.active {
   border-color: #d4e7ef;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
-.list-secondary-alt > li > a:not(.btn),
-.list-secondary-alt > li > button:not(.btn) {
+.list-secondary-empy > li > a:not(.btn),
+.list-secondary-empy > li > button:not(.btn) {
   border-color: transparent;
   background-color: transparent;
   color: #626c76;
   text-decoration: none !important;
 }
-.list-secondary-alt > li > a:not(.btn):hover,
-.list-secondary-alt > li > button:not(.btn):hover {
+.list-secondary-empy > li > a:not(.btn):hover,
+.list-secondary-empy > li > button:not(.btn):hover {
   text-decoration: none;
 }
-.list-secondary-alt > li > a:not(.btn):hover span,
-.list-secondary-alt > li > button:not(.btn):hover span {
+.list-secondary-empy > li > a:not(.btn):hover span,
+.list-secondary-empy > li > button:not(.btn):hover span {
   text-decoration: none;
 }
-.list-secondary-alt > li > a:not(.btn):hover,
-.list-secondary-alt > li > button:not(.btn):hover,
-.list-secondary-alt > li > a:not(.btn):active,
-.list-secondary-alt > li > button:not(.btn):active,
-.list-secondary-alt > li > a:not(.btn).active,
-.list-secondary-alt > li > button:not(.btn).active {
+.list-secondary-empy > li > a:not(.btn):hover,
+.list-secondary-empy > li > button:not(.btn):hover,
+.list-secondary-empy > li > a:not(.btn):active,
+.list-secondary-empy > li > button:not(.btn):active,
+.list-secondary-empy > li > a:not(.btn).active,
+.list-secondary-empy > li > button:not(.btn).active {
   background-color: #e7f1f6;
   color: #343a40;
 }
-.list-secondary-alt > li > a:not(.btn):active,
-.list-secondary-alt > li > button:not(.btn):active,
-.list-secondary-alt > li > a:not(.btn).active,
-.list-secondary-alt > li > button:not(.btn).active {
+.list-secondary-empy > li > a:not(.btn):active,
+.list-secondary-empy > li > button:not(.btn):active,
+.list-secondary-empy > li > a:not(.btn).active,
+.list-secondary-empy > li > button:not(.btn).active {
   border-color: #d4e7ef;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
@@ -5634,13 +5802,17 @@ a:hover,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+[disabled],
+.disabled {
+  opacity: .75;
+}
 .drop {
   left: 0;
   right: auto;
   top: 100%;
   bottom: auto;
   padding: 6px 0;
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
@@ -5671,7 +5843,7 @@ a:hover,
   font-size: 1.2rem;
 }
 .drop.out {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .drop.active {
@@ -5738,12 +5910,12 @@ a:hover,
   color: #343a40;
 }
 .overlay .overlay-content {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
 .overlay .overlay-content.out {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .overlay .overlay-content.active {
@@ -5777,13 +5949,13 @@ a:hover,
 }
 .loader-mask {
   background-color: rgba(255, 255, 255, 0.6);
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
   animation-name: anim-vertical-in;
 }
 .loader-mask.out {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .loader-mask.active {
@@ -5804,12 +5976,12 @@ a:hover,
 }
 .xt-backdrop {
   background-color: #120a67;
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 0.6;
 }
 .xt-backdrop.out {
-  animation-duration: 250ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .xt-backdrop.active {
@@ -5844,6 +6016,9 @@ legend:first-child {
 }
 legend:last-child {
   margin-bottom: 0;
+}
+legend + legend {
+  margin-top: 1.5rem;
 }
 .form-group {
   margin-bottom: 1.5em;
@@ -5894,7 +6069,7 @@ legend:last-child {
   padding: .6em 1.2em;
   font-size: 1.3rem;
   transition-property: all;
-  transition-duration: 250ms;
+  transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   text-align: left;
 }
@@ -5911,7 +6086,7 @@ legend:last-child {
 .form-group.inline > li > a:not(.btn).out,
 .form-group.inline > li > button:not(.btn).out {
   transition-property: all;
-  transition-duration: 250ms;
+  transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .form-group.inline > * {
@@ -5987,7 +6162,7 @@ legend:last-child {
   background-color: #d4e7ef;
   color: rgba(52, 58, 64, 0.8);
   transition-property: all;
-  transition-duration: 250ms;
+  transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .input-control:hover,
@@ -6003,7 +6178,7 @@ select.input-control {
 }
 .input-control.out {
   transition-property: all;
-  transition-duration: 250ms;
+  transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .input-control-secondary {
@@ -6074,6 +6249,9 @@ select.input-control-secondary {
 }
 .table th:last-child {
   margin-bottom: 0;
+}
+.table th + .table th {
+  margin-top: 1.5rem;
 }
 .table td {
   padding: 1.5rem;
@@ -6204,7 +6382,42 @@ select.input-control-secondary {
 }
 @font-face {
   font-family: 'xtend';
-  src: url('icons/fonts/xtend.ttf') format('truetype'), url('icons/fonts/xtend.woff') format('woff'), url('icons/fonts/xtend.svg#xtend') format('svg');
+  src: url('http://getxtend.com/assets/xtend-icons/fonts.ttf') format('truetype'), url('http://getxtend.com/assets/xtend-icons/fonts.woff') format('woff'), url('http://getxtend.com/assets/xtend-icons/fonts.svg#xtend') format('svg');
   font-weight: normal;
   font-style: normal;
+}
+@font-face {
+  font-family: 'xtend';
+  src: url('fonts/xtend.ttf?rlk7w8') format('truetype'), url('fonts/xtend.woff?rlk7w8') format('woff'), url('fonts/xtend.svg?rlk7w8#xtend') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'xtend' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-x:before {
+  content: "\e900";
+}
+.icon-chevron-down:before {
+  content: "\e901";
+}
+.icon-chevron-left:before {
+  content: "\e902";
+}
+.icon-chevron-right:before {
+  content: "\e903";
+}
+.icon-chevron-up:before {
+  content: "\e904";
 }

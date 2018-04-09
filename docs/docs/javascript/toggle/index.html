@@ -464,10 +464,10 @@ $('div').xtToggle({"elements": ".element"});
   <div class="demo-item demo-preview" data-name="self">
     <div class="demo-text">Toggle a single <strong>element</strong> with <code>data-xt-toggle</code>.</div>
     <div class="demo-source" data-lang="html">
-<button type="button" class="btn btn-primary-alt" data-xt-toggle>
+<button type="button" class="btn btn-primary-empy" data-xt-toggle>
   Toggle 0
 </button>
-<button type="button" class="btn btn-primary-alt" data-xt-toggle>
+<button type="button" class="btn btn-primary-empy" data-xt-toggle>
   Toggle 1
 </button>
     </div>
@@ -475,10 +475,10 @@ $('div').xtToggle({"elements": ".element"});
   <div class="demo-item demo-preview" data-name="single target">
     <div class="demo-text">Toggle a single <strong>target</strong> using <code>targets</code> with <strong>#id</strong>.</div>
     <div class="demo-source" data-lang="html">
-<button type="button" class="btn btn-primary-alt" data-xt-toggle='{"targets": "#alert-unique-0"}'>
+<button type="button" class="btn btn-primary-empy" data-xt-toggle='{"targets": "#alert-unique-0"}'>
   Toggle 0
 </button>
-<button type="button" class="btn btn-primary-alt" data-xt-toggle='{"targets": "#alert-unique-1"}'>
+<button type="button" class="btn btn-primary-empy" data-xt-toggle='{"targets": "#alert-unique-1"}'>
   Toggle 1
 </button>
 <div class="alert alert-notice toggle-flex" id="alert-unique-0">
@@ -492,10 +492,10 @@ $('div').xtToggle({"elements": ".element"});
   <div class="demo-item demo-preview" data-name="same targets">
     <div class="demo-text">Toggle same <strong>targets</strong> using <code>targets</code> with <strong>#id</strong>.</div>
     <div class="demo-source" data-lang="html">
-<button type="button" class="btn btn-primary-alt" data-xt-toggle='{"targets": "#alert-unique"}'>
+<button type="button" class="btn btn-primary-empy" data-xt-toggle='{"targets": "#alert-unique"}'>
   Toggle
 </button>
-<button type="button" class="btn btn-primary-alt" data-xt-toggle='{"targets": "#alert-unique"}'>
+<button type="button" class="btn btn-primary-empy" data-xt-toggle='{"targets": "#alert-unique"}'>
   Toggle
 </button>
 <div class="alert alert-notice toggle-flex" id="alert-unique">
@@ -517,13 +517,13 @@ $('div').xtToggle({"elements": ".element"});
     <div class="demo-text">With multiple <strong>targets</strong>, the ones activated is the one with the same index of the toggled <strong>element</strong>. Nested <strong>targets</strong> are filtered out.</div>
     <div class="demo-source" data-lang="html">
 <div data-xt-toggle>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle 0
   </button>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle 1
   </button>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle 2
   </button>
   <div class="alert alert-notice toggle-flex">
@@ -552,13 +552,13 @@ $('div').xtToggle({"elements": ".element"});
     <div class="demo-source" data-lang="html">
 <div data-xt-toggle='{"elements": ".test > .btn"}'>
   <div class="test">
-    <button type="button" class="btn btn-primary-alt">
+    <button type="button" class="btn btn-primary-empy">
       Toggle 0
     </button>
-    <button type="button" class="btn btn-primary-alt">
+    <button type="button" class="btn btn-primary-empy">
       Toggle 1
     </button>
-    <button type="button" class="btn btn-primary-alt">
+    <button type="button" class="btn btn-primary-empy">
       Toggle 2
     </button>
     <div class="alert alert-notice toggle-flex">
@@ -578,13 +578,13 @@ $('div').xtToggle({"elements": ".element"});
     <div class="demo-text">Custom <code>"targets"</code> query.</div>
     <div class="demo-source" data-lang="html">
 <div data-xt-toggle='{"targets": ".example-target"}'>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle 0
   </button>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle 1
   </button>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle 2
   </button>
   <div class="alert alert-notice example-target">
@@ -613,13 +613,13 @@ $('div').xtToggle({"elements": ".element"});
     <div class="demo-text">Custom targets classname that starts with <code>.toggle-</code>.</div>
     <div class="demo-source" data-lang="html">
 <div data-xt-toggle>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle 0
   </button>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle 1
   </button>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle 2
   </button>
   <div class="alert alert-notice toggle-custom">
@@ -656,22 +656,22 @@ $('div').xtToggle({"elements": ".element"});
   <div class="demo-item demo-preview" data-name="">
     <div class="demo-source" data-lang="html">
 <div data-xt-toggle>
-  <button type="button" class="btn btn-primary-alt" data-group="0">
+  <button type="button" class="btn btn-primary-empy" data-group="0">
     Group 0
   </button>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle 0
   </button>
-  <button type="button" class="btn btn-primary-alt" data-group="0">
+  <button type="button" class="btn btn-primary-empy" data-group="0">
     Group 0
   </button>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle 1
   </button>
-  <button type="button" class="btn btn-primary-alt" data-group="1">
+  <button type="button" class="btn btn-primary-empy" data-group="1">
     Group 1
   </button>
-  <button type="button" class="btn btn-primary-alt" data-group="1">
+  <button type="button" class="btn btn-primary-empy" data-group="1">
     Group 1
   </button>
   <div class="alert alert-notice toggle-flex">
@@ -703,7 +703,7 @@ $('div').xtToggle({"elements": ".element"});
     <div class="demo-text">You can specify custom additional classes to toggle with <code>class</code>.</div>
     <div class="demo-source" data-lang="html">
 <div data-xt-toggle='{"class": "class-example-0 class-example-1"}'>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle
   </button>
   <div class="alert alert-notice toggle-flex" id="alert-example">
@@ -732,19 +732,19 @@ $('div').xtToggle({"elements": ".element"});
     <div class="demo-text">You can start with toggled elements and targets just by adding the class <code>.active</code> on the html <strong>elements</strong> you want activated.</div>
     <div class="demo-source" data-lang="html">
 <div data-xt-toggle='{"class": "class-example-0 class-example-1", "min": 2, "max": 3}'>
-  <button type="button" class="btn btn-primary-alt" data-group="0">
+  <button type="button" class="btn btn-primary-empy" data-group="0">
     Group 0
   </button>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle 0
   </button>
-  <button type="button" class="btn btn-primary-alt" data-group="0">
+  <button type="button" class="btn btn-primary-empy" data-group="0">
     Group 0
   </button>
-  <button type="button" class="btn btn-primary-alt active">
+  <button type="button" class="btn btn-primary-empy active">
     Toggle 1
   </button>
-  <button type="button" class="btn btn-primary-alt" data-group="1">
+  <button type="button" class="btn btn-primary-empy" data-group="1">
     Group 1
   </button>
   <div class="alert alert-notice toggle-flex">
@@ -792,16 +792,16 @@ $('div').xtToggle({"elements": ".element"});
     <div class="demo-text">The required <strong>min</strong> activation is fulfilled on initialization. Automatic <code>[disabled]</code> on reaching the <strong>min</strong> value.</div>
     <div class="demo-source" data-lang="html">
 <div data-xt-toggle='{"min": 2, "max": 2}'>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle 0
   </button>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle 1
   </button>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle 2
   </button>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle 3
   </button>
   <div class="alert alert-notice toggle-flex">
@@ -830,7 +830,7 @@ $('div').xtToggle({"elements": ".element"});
     <div class="demo-text"><code>"on": "mouseenter"</code> <code>"off": "mouseleave"</code>.</div>
     <div class="demo-source" data-lang="html">
 <div data-xt-toggle='{"on": "mouseenter", "off": "mouseleave"}'>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     Toggle
   </button>
   <div class="alert alert-notice toggle-flex">
@@ -855,13 +855,13 @@ $('div').xtToggle({"elements": ".element"});
   <div class="demo-item demo-preview" data-name="">
     <div class="demo-source" data-lang="html">
 <div data-xt-toggle='{"max": "Infinity"}'>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     anim-horizontal
   </button>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     anim-vertical
   </button>
-  <button type="button" class="btn btn-primary-alt">
+  <button type="button" class="btn btn-primary-empy">
     no-anim
   </button>
   <div class="alert alert-notice toggle-flex anim-horizontal">

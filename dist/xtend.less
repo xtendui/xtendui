@@ -2,13 +2,15 @@
 // xtend
 //////////////////////
 
+@xtend-dist: ''; // when theming put the xtend-library/dist path
+
 // core
 
-@import 'core/__core'; // when theming put the xtend-library path relative to npm or composer
+@import '@{xtend-dist}core/__core'; // when theming put the xtend-library path relative to npm or composer
 
 // theme
 
-@import 'theme/__theme';
+@import '@{xtend-dist}theme/__theme';
 
 // set to false to use only mixins
 
@@ -20,21 +22,28 @@
 @generate-flex-utils: true;
 @generate-breakpoints: sm, md, lg; // only for this breakpoints (set to false to not generate responsive classes)
 
+//////////////////////
 // icons
+//////////////////////
+
+// xtend icons font-face
 
 @icons-family: 'xtend';
-@icons-path: 'icons/fonts/xtend';
+@icons-path: 'http://getxtend.com/assets/xtend-icons/fonts';
 @font-face {
   font-family: @icons-family;
   src:
-      url('@{icons-path}.ttf') format('truetype'),
-      url('@{icons-path}.woff') format('woff'),
-      url('@{icons-path}.svg#xtend') format('svg');
+    url('@{icons-path}.ttf') format('truetype'),
+    url('@{icons-path}.woff') format('woff'),
+    url('@{icons-path}.svg#xtend') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 // xtend icons
+
+@import (less) url('@{xtend-dist}icons/style.css');
+@icons-family: 'xtend';
 
 @icon-close: '\e616';
 @icon-chevron-up: '\e621';

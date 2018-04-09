@@ -1,5 +1,5 @@
-@import '../../../../dist/xtend.less';
-@import (less) 'highlight/github.css';
+@import 'highlight/github.css';
+@import '../../../../dist/xtend';
 
 //////////////////////
 // structure
@@ -484,16 +484,13 @@
       width: 100%;
       height: 1px;
       background-color: fade(@primary, 80%);
-      h2 & {
-        height: 2px;
-      }
     }
   }
   // animations
   .line:after {
     left: 100%;
     width: 0;
-    animation: anim-opacity-out @time-medium @bez-out, line-out @time-medium @bez-out;
+    animation: anim-opacity-out @time-big @bez-out, line-out @time-medium @bez-out;
     animation-fill-mode: forwards;
     opacity: 0;
   }
@@ -501,7 +498,7 @@
     .line:after {
       left: 0;
       width: 100%;
-      animation: anim-opacity-in @time-medium @bez-in, line-in @time-medium @bez-in;
+      animation: anim-opacity-in @time-big @bez-in, line-in @time-big @bez-in;
       animation-fill-mode: forwards;
       opacity: 1;
     }
@@ -541,14 +538,14 @@
   }
   .site-article-anchor {
     pointer-events: none;
-    animation: anim-opacity-out @time-medium @bez-out;
+    animation: anim-opacity-out @time-big @bez-out;
     animation-fill-mode: forwards;
     opacity: 1;
   }
   &:hover,
   &:active, &.active {
     .site-article-anchor {
-      animation: anim-opacity-in @time-medium @bez-in @time-medium;
+      animation: anim-opacity-in @time-big @bez-in @time-small;
       animation-fill-mode: forwards;
       opacity: 0;
     }
@@ -558,8 +555,8 @@
 .site-article-anchor {
   position: absolute;
   z-index: 2;
-  bottom: -1px;
-  @media @min-sm {
+  bottom: 0;
+  h2 & {
     bottom: 3px;
   }
   right: 12px;
@@ -583,11 +580,21 @@
 // demos
 //////////////////////
 
+// code
+
+code {
+  .demo-text &,
+  .alert & {
+    color: @grey-750;
+    background-color: darken(@grey-250, 4%);
+  }
+}
+
 // .demo
 
 .demo {
   .margin(y, layout);
-  .margin(bottom, medium);
+  .margin(y, 2.5rem);
   border-radius: 2px;
   border: 3px solid @grey-250;
   // code
@@ -628,9 +635,6 @@
     background-color: @grey-250;
     font-size: 13px;
     line-height: 1.6;
-    code {
-      background-color: darken(@grey-250, 2.5%);
-    }
   }
   // iframe + .demo-source
   iframe {
