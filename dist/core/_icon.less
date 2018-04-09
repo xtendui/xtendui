@@ -2,7 +2,7 @@
 // icon
 //////////////////////
 
-.default-icon {
+.xt-icon {
   display: inline-block;
   position: relative;
   font-family: @icons-family !important;
@@ -16,10 +16,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-[class^='@{icon-prefix}'], [class*=' @{icon-prefix}'] {
+[class^='xt-icon-'], [class*=' xt-icon-'] {
   &:before {
-    .default-icon();
+    .xt-icon();
   }
 }
 
@@ -33,7 +32,7 @@
     @icon: extract(@icons, @i);
     @name: extract(@icon, 1);
     @val: extract(@icon, 2);
-    .icon-@{name} {
+    .xt-icon-@{name} {
       &:before {
         content: @val;
       }

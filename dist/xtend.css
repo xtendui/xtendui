@@ -2687,7 +2687,7 @@ pre code {
   float: left;
   white-space: pre-wrap;
 }
-.default-icon {
+.xt-icon {
   display: inline-block;
   position: relative;
   font-family: 'xtend' !important;
@@ -2701,8 +2701,8 @@ pre code {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-[class^='icon-xt-']:before,
-[class*=' icon-xt-']:before {
+[class^='xt-icon-']:before,
+[class*=' xt-icon-']:before {
   display: inline-block;
   position: relative;
   font-family: 'xtend' !important;
@@ -2716,20 +2716,20 @@ pre code {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-close:before {
-  content: '\e900';
-}
-.icon-chevron-up:before {
+.xt-icon-close:before {
   content: '\e904';
 }
-.icon-chevron-left:before {
-  content: '\e902';
-}
-.icon-chevron-right:before {
+.xt-icon-chevron-up:before {
   content: '\e903';
 }
-.icon-chevron-down:before {
+.xt-icon-chevron-left:before {
   content: '\e901';
+}
+.xt-icon-chevron-right:before {
+  content: '\e902';
+}
+.xt-icon-chevron-down:before {
+  content: '\e900';
 }
 .table {
   border-collapse: collapse;
@@ -5706,7 +5706,7 @@ a:hover,
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: '\e901';
+  content: '\e900';
   font-size: 0.75em;
 }
 .btn-caret:after {
@@ -5725,7 +5725,7 @@ a:hover,
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: '\e904';
+  content: '\e903';
   font-size: 0.75em;
 }
 .btn-close {
@@ -5769,7 +5769,7 @@ a:hover,
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: '\e900';
+  content: '\e904';
   font-size: 1em;
 }
 [disabled],
