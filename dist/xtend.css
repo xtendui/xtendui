@@ -4257,19 +4257,17 @@ opacity: 0;
 .transition-default.out();
 */
 /* USAGE:
-.btn {
-  transform: translateX(-@anim-medium);
+transform: translateX(-@anim-medium);
+opacity: 0;
+&.active {
+  .transition-default();
+  transform: translateY(0);
+  opacity: 1;
+}
+&.out {
+  .transition-default.out();
+  transform: translateX(@anim-medium);
   opacity: 0;
-  &.active {
-      .transition-default();
-      transform: translateY(0);
-      opacity: 1;
-  }
-  &.out {
-      .transition-default.out();
-      transform: translateX(@anim-medium);
-      opacity: 0;
-  }
 }
 */
 /* USAGE:
@@ -4283,6 +4281,17 @@ opacity: 0;
 .anim-right.out();
 animation-fill-mode: forwards;
 opacity: 1;
+*/
+/* USAGE:
+animation: anim-opacity-out @time-medium @bez-out;
+animation-fill-mode: forwards;
+opacity: 1;
+&:hover,
+&:active, &.active {
+  animation: anim-opacity-in @time-medium @bez-in @time-small;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
 */
 .collapse-height,
 .collapse-width,

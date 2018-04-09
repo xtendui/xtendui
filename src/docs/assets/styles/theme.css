@@ -4257,19 +4257,17 @@ opacity: 0;
 .transition-default.out();
 */
 /* USAGE:
-.btn {
-  transform: translateX(-@anim-medium);
+transform: translateX(-@anim-medium);
+opacity: 0;
+&.active {
+  .transition-default();
+  transform: translateY(0);
+  opacity: 1;
+}
+&.out {
+  .transition-default.out();
+  transform: translateX(@anim-medium);
   opacity: 0;
-  &.active {
-      .transition-default();
-      transform: translateY(0);
-      opacity: 1;
-  }
-  &.out {
-      .transition-default.out();
-      transform: translateX(@anim-medium);
-      opacity: 0;
-  }
 }
 */
 /* USAGE:
@@ -4283,6 +4281,17 @@ opacity: 0;
 .anim-right.out();
 animation-fill-mode: forwards;
 opacity: 1;
+*/
+/* USAGE:
+animation: anim-opacity-out @time-medium @bez-out;
+animation-fill-mode: forwards;
+opacity: 1;
+&:hover,
+&:active, &.active {
+  animation: anim-opacity-in @time-medium @bez-in @time-small;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
 */
 .collapse-height,
 .collapse-width,
@@ -6427,6 +6436,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   box-shadow: none !important;
 }
 .site-breadcrumbs-body-sub {
+  /*
+  &.out {
+    transition-delay: @time-medium;
+  }
+  */
   position: relative;
   z-index: 1;
 }
@@ -6596,7 +6610,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   animation-name: anim-left-in;
   animation-fill-mode: forwards;
   opacity: 0;
-  animation-delay: 550ms;
+  animation-delay: 700ms;
 }
 .site-menu.active .site-menu-content .btn .line-container.out {
   animation-duration: 250ms;
@@ -6610,22 +6624,22 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   animation-name: anim-left-out;
 }
 .site-menu.active .site-menu-content .btn:nth-child(1) .line-container {
-  animation-delay: 300ms;
-}
-.site-menu.active .site-menu-content .btn:nth-child(2) .line-container {
-  animation-delay: 350ms;
-}
-.site-menu.active .site-menu-content .btn:nth-child(3) .line-container {
-  animation-delay: 400ms;
-}
-.site-menu.active .site-menu-content .btn:nth-child(4) .line-container {
   animation-delay: 450ms;
 }
-.site-menu.active .site-menu-content .btn:nth-child(5) .line-container {
+.site-menu.active .site-menu-content .btn:nth-child(2) .line-container {
   animation-delay: 500ms;
 }
-.site-menu.active .site-menu-content .btn:nth-child(6) .line-container {
+.site-menu.active .site-menu-content .btn:nth-child(3) .line-container {
   animation-delay: 550ms;
+}
+.site-menu.active .site-menu-content .btn:nth-child(4) .line-container {
+  animation-delay: 600ms;
+}
+.site-menu.active .site-menu-content .btn:nth-child(5) .line-container {
+  animation-delay: 650ms;
+}
+.site-menu.active .site-menu-content .btn:nth-child(6) .line-container {
+  animation-delay: 700ms;
 }
 .site-menu.out .site-menu-content .btn .line-container {
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -6823,14 +6837,14 @@ h2 .make-line .line-container .line:after {
 .make-line .line:after {
   left: 100%;
   width: 0;
-  animation: anim-opacity-out 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19), line-out 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  animation: anim-opacity-out 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19), line-out 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
   animation-fill-mode: forwards;
   opacity: 0;
 }
 .make-line:hover .line:after {
   left: 0;
   width: 100%;
-  animation: anim-opacity-in 250ms cubic-bezier(0.645, 0.045, 0.355, 1), line-in 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation: anim-opacity-in 400ms cubic-bezier(0.645, 0.045, 0.355, 1), line-in 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
   animation-fill-mode: forwards;
   opacity: 1;
 }
@@ -6871,7 +6885,7 @@ h2 .make-line .line-container .line:after {
 .make-anchor:hover .site-article-anchor,
 .make-anchor:active .site-article-anchor,
 .make-anchor.active .site-article-anchor {
-  animation: anim-opacity-in 400ms cubic-bezier(0.645, 0.045, 0.355, 1) 250ms;
+  animation: anim-opacity-in 400ms cubic-bezier(0.645, 0.045, 0.355, 1) 400ms;
   animation-fill-mode: forwards;
   opacity: 0;
 }
