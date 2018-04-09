@@ -5717,7 +5717,7 @@ a:hover,
   justify-content: space-between;
 }
 .btn-caret:after {
-  content: '\e622';
+  content: '\e901';
   display: inline-block;
   position: relative;
   font-family: 'xtend' !important;
@@ -5735,7 +5735,7 @@ a:hover,
   margin-left: 0.75rem;
 }
 .btn-caret.active:after {
-  content: '\e621';
+  content: '\e904';
   display: inline-block;
   position: relative;
   font-family: 'xtend' !important;
@@ -5789,7 +5789,7 @@ a:hover,
   clip: rect(0, 0, 0, 0);
 }
 .btn-close:before {
-  content: '\e616';
+  content: '\e900';
   display: inline-block;
   position: relative;
   font-family: 'xtend' !important;
@@ -6383,38 +6383,9 @@ select.input-control-secondary {
 }
 @font-face {
   font-family: 'xtend';
-  src: url('fonts/xtend.ttf?rlk7w8') format('truetype'), url('fonts/xtend.woff?rlk7w8') format('woff'), url('fonts/xtend.svg?rlk7w8#xtend') format('svg');
+  src: url('http://getxtend.com/assets/xtend-icons/fonts/xtend.ttf') format('truetype'), url('http://getxtend.com/assets/xtend-icons/fonts/xtend.woff') format('woff'), url('http://getxtend.com/assets/xtend-icons/fonts/xtend.svg#xtend') format('svg');
   font-weight: normal;
   font-style: normal;
-}
-[class^="icon-"],
-[class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'xtend' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.icon-x:before {
-  content: "\e900";
-}
-.icon-chevron-down:before {
-  content: "\e901";
-}
-.icon-chevron-left:before {
-  content: "\e902";
-}
-.icon-chevron-right:before {
-  content: "\e903";
-}
-.icon-chevron-up:before {
-  content: "\e904";
 }
 .site-header {
   z-index: 6 !important;

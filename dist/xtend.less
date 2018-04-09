@@ -26,10 +26,18 @@
 // icons
 //////////////////////
 
-// xtend icons font-face
+// size
+
+@icon-tiny: .5em;
+@icon-small: .75em;
+@icon-medium: 1em;
+@icon-big: 1.5em;
+@icon-giant: 2em;
+
+// font-face
 
 @icons-family: 'xtend';
-@icons-path: 'http://getxtend.com/assets/xtend-icons/fonts';
+@icons-path: 'http://getxtend.com/xtend-icons/fonts/xtend';
 @font-face {
   font-family: @icons-family;
   src:
@@ -40,11 +48,10 @@
   font-style: normal;
 }
 
-// xtend icons
+// icons
 
-@import (less) url('@{xtend-dist}icons/style.css');
-@icons-family: 'xtend';
-
-@icon-close: '\e616';
-@icon-chevron-up: '\e621';
-@icon-chevron-down: '\e622';
+@icon-close: '\e900';
+@icon-chevron-up: '\e904';
+@icon-chevron-left: '\e902';
+@icon-chevron-right: '\e903';
+@icon-chevron-down: '\e901';
