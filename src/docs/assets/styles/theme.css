@@ -6560,7 +6560,7 @@ opacity: 1;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   border-radius: 0;
-  background: linear-gradient(0deg, #6a5eef 10%, #7367F0 100%);
+  background-color: linear-gradient(0deg, #6a5eef 10%, #7367F0 100%);
   color: #fff;
 }
 .site-breadcrumbs .site-breadcrumbs-body {
@@ -6834,6 +6834,11 @@ opacity: 1;
 }
 .site-footer-top .site-footer-top-links {
   margin-left: -1.2em !important;
+}
+.site-footer-top .site-footer-top-links .btn {
+  border: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 .site-footer-bottom {
   padding-top: 1.5rem;
