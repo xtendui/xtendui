@@ -4306,9 +4306,6 @@ html.xt-fixed .overlay {
 }
 .list-block,
 .list-line {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   margin: 0 0;
 }
 .list-block > *,
@@ -5757,6 +5754,16 @@ a:hover,
 .btn-close.active {
   border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
+}
+.btn-close > span {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
 }
 .btn-close:before {
   display: inline-block;
