@@ -6560,7 +6560,7 @@ opacity: 1;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   border-radius: 0;
-  background-color: linear-gradient(0deg, #6a5eef 10%, #7367F0 100%);
+  background: linear-gradient(0deg, #6a5eef 10%, #7367F0 100%);
   color: #fff;
 }
 .site-breadcrumbs .site-breadcrumbs-body {
