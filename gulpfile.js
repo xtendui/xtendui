@@ -2,6 +2,7 @@
 
 var fs = require('fs');
 var gulp = require('gulp');
+var log = require('fancy-log');
 var merge = require('merge-stream');
 var child = require('child_process');
 var buffer = require('vinyl-buffer');
@@ -12,11 +13,11 @@ var gutil = require('gulp-util');
 var clean = require('gulp-clean');
 var watch = require('gulp-watch');
 var rename = require('gulp-rename');
+var replace = require('gulp-replace');
 var browserify = require('browserify');
 let uglify = require('gulp-uglify-es').default;
 var cleanCSS = require('gulp-clean-css');
 var sourcemaps = require('gulp-sourcemaps');
-var injectString = require('gulp-inject-string');
 
 // fix less watch compile
 
@@ -41,18 +42,18 @@ gulp.task('less-dist', function () {
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('dist/'));
 });
-gulp.task('less-demos', gulp.series('less-dist', function() {
+gulp.task('less-demos', gulp.series('less-dist', function () {
   return gulp.src(['src/docs/demos/**/*.less', '!src/docs/demos/**/_*.less'])
     .pipe(less())
     .pipe(cleanCSS())
     .pipe(gulp.dest('src/docs/demos/'));
 }));
-gulp.task('less-clean', gulp.series('less-demos', function() {
+gulp.task('less-clean', gulp.series('less-demos', function () {
   // fix jekyll triggering file change
   return gulp.src(['docs/assets/styles/theme.*'], {read: false})
     .pipe(clean({force: true}));
 }));
-gulp.task('less', gulp.series('less-clean', function() {
+gulp.task('less', gulp.series('less-clean', function () {
   return gulp.src(['src/docs/assets/styles/**/*.less', '!src/docs/assets/styles/**/_*.less'])
     .pipe(sourcemaps.init())
     .pipe(less())
@@ -91,12 +92,12 @@ gulp.task('js-dist', function () {
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('dist/'));
 });
-gulp.task('js-clean', gulp.series('js-dist', function() {
+gulp.task('js-clean', gulp.series('js-dist', function () {
   // fix jekyll triggering file change
   return gulp.src('docs/assets/scripts/theme.*', {read: false})
     .pipe(clean({force: true}));
 }));
-gulp.task('js', gulp.series('js-clean', function() {
+gulp.task('js', gulp.series('js-clean', function () {
   var b = browserify({
     entries: 'src/docs/assets/scripts/theme.js',
     debug: true
@@ -150,15 +151,16 @@ gulp.task('site-serve', function (callback) {
 // version
 
 gulp.task('version', function () {
-  var version = JSON.parse(fs.readFileSync('package.json')).version;
-  var banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2018 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
-  // inject _config.yml
-  var stream1 = gulp.src('_config.yml')
-    .pipe(injectString.replace(/version: (.*)/, 'version: ' + version))
+  const version = JSON.parse(fs.readFileSync('package.json')).version;
+  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2018 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
+  log('package.json version: ' + version);
+  // replace _config.yml
+  let stream1 = gulp.src('_config.yml', {base: './'})
+    .pipe(replace(/version: (.*)/, 'version: ' + version))
     .pipe(gulp.dest('./'));
-  // inject styles and scripts
-  var stream2 = gulp.src(['dist/core/__core.less', 'dist/theme/__theme.less', 'src/scripts/xtend.js'], {base: './'})
-    .pipe(injectString.replace(/\/\*\![^\*]+\*\//, banner))
+  // replace styles and scripts
+  let stream2 = gulp.src(['dist/core/__core.less', 'dist/theme/__theme.less', 'src/scripts/*.js'], {base: './'})
+    .pipe(replace(/\/\*\![^\*]+\*\//, banner))
     .pipe(gulp.dest('./'));
   // return merge
   return merge(stream1, stream2);
