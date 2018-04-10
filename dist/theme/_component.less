@@ -159,7 +159,7 @@ a, .alink {
 }
 .list-primary { .list-btn-default({ .btn-primary() }); }
 
-.btn-primary-empy {
+.btn-primary-empty {
   .link-no-underline();
   border-color: transparent;
   background-color: transparent;
@@ -174,7 +174,7 @@ a, .alink {
     box-shadow: 0 3px 10px 1px fade(@black, 15%);
   }
 }
-.list-primary-empy { .list-btn-default({ .btn-primary-empy() }); }
+.list-primary-empty { .list-btn-default({ .btn-primary-empty() }); }
 
 .btn-secondary {
   .link-no-underline();
@@ -193,7 +193,7 @@ a, .alink {
 }
 .list-secondary { .list-btn-default({ .btn-secondary() }); }
 
-.btn-secondary-empy {
+.btn-secondary-empty {
   .link-no-underline();
   border-color: transparent;
   background-color: transparent;
@@ -208,7 +208,7 @@ a, .alink {
     box-shadow: 0 3px 10px 1px fade(@black, 15%);
   }
 }
-.list-secondary-empy { .list-btn-default({ .btn-secondary-empy() }); }
+.list-secondary-empty { .list-btn-default({ .btn-secondary-empty() }); }
 
 .btn-link {
   // reset text
@@ -244,7 +244,7 @@ a, .alink {
 .btn-close {
   .btn-small() !important;
   .btn-icon() !important;
-  .btn-primary-empy();
+  .btn-primary-empty();
   .by-key(@icons, close); // extract icon value from @icons
   .icon(@content:@by-key, @size:@icon-medium);
   position: absolute !important;

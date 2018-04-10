@@ -281,7 +281,7 @@ var populateDemo = function populateDemo(container, i) {
   // multiple elements
   var prepend = _xtendUtils2.default.createElement('<div class="demo-tabs"><div class="demo-tabs-left"></div><div class="demo-tabs-right"></div></div>');
   container.prepend(prepend);
-  var append = _xtendUtils2.default.createElement('<button type="button" class="btn btn-secondary-empy btn-fullscreen" data-toggle="tooltip" data-placement="top" title="Open fullscreen"><span class="icon-enlarge2"></span></button>');
+  var append = _xtendUtils2.default.createElement('<button type="button" class="btn btn-secondary-empty btn-fullscreen" data-toggle="tooltip" data-placement="top" title="Open fullscreen"><span class="icon-enlarge2"></span></button>');
   container.querySelectorAll('.demo-tabs-right')[0].append(append);
   // single element and no demo tabs
   if (items.length === 1) {
@@ -311,7 +311,7 @@ var populateDemo = function populateDemo(container, i) {
           name = 'demo #' + k;
         }
       }
-      var appendBtn = _xtendUtils2.default.createElement('<button type="button" class="btn btn-secondary-empy">' + name + '</button>');
+      var appendBtn = _xtendUtils2.default.createElement('<button type="button" class="btn btn-secondary-empty">' + name + '</button>');
       var btn = container.querySelectorAll('.demo-tabs-left')[0].append(appendBtn);
       btn = container.querySelectorAll('.demo-tabs-left .btn')[k];
       /*
@@ -322,7 +322,7 @@ var populateDemo = function populateDemo(container, i) {
       */
       // tabs
       var id = 'iframe' + i + k;
-      var appendItem = _xtendUtils2.default.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-empy btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>');
+      var appendItem = _xtendUtils2.default.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-empty btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>');
       item.append(appendItem);
       // https://github.com/zenorocha/clipboard.js/
       var clipboard = new Clipboard('.btn-clipboard', {
@@ -481,7 +481,7 @@ var populateSources = function populateSources(item, element, id, z) {
   var appendCode = _xtendUtils2.default.createElement('<div class="demo-code-body-item"><pre><code></code></pre></div>');
   var codeInside = item.querySelectorAll('.demo-code-body')[0].append(appendCode);
   codeInside = item.querySelectorAll('.demo-code-body .demo-code-body-item')[z].querySelectorAll('pre code')[0];
-  var appendBtn = _xtendUtils2.default.createElement('<button type="button" class="btn btn-secondary-empy">' + lang + '</button>');
+  var appendBtn = _xtendUtils2.default.createElement('<button type="button" class="btn btn-secondary-empty">' + lang + '</button>');
   var btnInside = item.querySelectorAll('.demo-code-tabs-left')[0].append(appendBtn);
   //btnInside = item.querySelectorAll('.demo-code-tabs-left').querySelectorAll('.btn')[z];
   // format code
@@ -600,7 +600,7 @@ try {
 _xtendUtils2.default.initAll();
 
 },{"../../../scripts/xtend":3,"../../../scripts/xtend-utils":2}],2:[function(require,module,exports){
-/*! xtend v0.1.3 (https://getxtend.com/)
+/*! xtend v0.1.4 (https://getxtend.com/)
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
@@ -915,7 +915,7 @@ setTimeout(function () {
 })(window.document, Element.prototype);
 
 },{"./xtend":3}],3:[function(require,module,exports){
-/*! xtend v0.1.3 (https://getxtend.com/)
+/*! xtend v0.1.4 (https://getxtend.com/)
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 

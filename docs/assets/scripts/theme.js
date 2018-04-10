@@ -95,7 +95,7 @@ const populateDemo = function (container, i) {
   // multiple elements
   let prepend = XtUtil.createElement('<div class="demo-tabs"><div class="demo-tabs-left"></div><div class="demo-tabs-right"></div></div>');
   container.prepend(prepend);
-  let append = XtUtil.createElement('<button type="button" class="btn btn-secondary-empy btn-fullscreen" data-toggle="tooltip" data-placement="top" title="Open fullscreen"><span class="icon-enlarge2"></span></button>');
+  let append = XtUtil.createElement('<button type="button" class="btn btn-secondary-empty btn-fullscreen" data-toggle="tooltip" data-placement="top" title="Open fullscreen"><span class="icon-enlarge2"></span></button>');
   container.querySelectorAll('.demo-tabs-right')[0].append(append);
   // single element and no demo tabs
   if (items.length === 1) { // && !$items.hasClass('demo-preview') && !$items.attr('data-iframe')
@@ -115,7 +115,7 @@ const populateDemo = function (container, i) {
         name = 'demo #' + k;
       }
     }
-    let appendBtn = XtUtil.createElement('<button type="button" class="btn btn-secondary-empy">' + name + '</button>');
+    let appendBtn = XtUtil.createElement('<button type="button" class="btn btn-secondary-empty">' + name + '</button>');
     let btn = container.querySelectorAll('.demo-tabs-left')[0].append(appendBtn);
     btn = container.querySelectorAll('.demo-tabs-left .btn')[k];
     /*
@@ -126,7 +126,7 @@ const populateDemo = function (container, i) {
     */
     // tabs
     let id = 'iframe' + i + k;
-    let appendItem = XtUtil.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-empy btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>');
+    let appendItem = XtUtil.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-empty btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>');
     item.append(appendItem);
     // https://github.com/zenorocha/clipboard.js/
     let clipboard = new Clipboard('.btn-clipboard', {
@@ -247,7 +247,7 @@ const populateSources = function (item, element, id, z) {
   let appendCode = XtUtil.createElement('<div class="demo-code-body-item"><pre><code></code></pre></div>');
   let codeInside = item.querySelectorAll('.demo-code-body')[0].append(appendCode);
   codeInside = item.querySelectorAll('.demo-code-body .demo-code-body-item')[z].querySelectorAll('pre code')[0];
-  let appendBtn = XtUtil.createElement('<button type="button" class="btn btn-secondary-empy">' + lang + '</button>');
+  let appendBtn = XtUtil.createElement('<button type="button" class="btn btn-secondary-empty">' + lang + '</button>');
   let btnInside = item.querySelectorAll('.demo-code-tabs-left')[0].append(appendBtn);
   //btnInside = item.querySelectorAll('.demo-code-tabs-left').querySelectorAll('.btn')[z];
   // format code

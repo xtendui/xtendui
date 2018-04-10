@@ -1,5 +1,5 @@
 @import 'highlight/github.css';
-/*! xtend v0.1.3 (https://getxtend.com/)
+/*! xtend v0.1.4 (https://getxtend.com/)
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 html,
@@ -4275,7 +4275,7 @@ html.xt-fixed .overlay {
  * @param {String} @position Can be 'top' or 'bottom'
  * @param {Value} @pos Position value
  */
-/*! xtend v0.1.3 (https://getxtend.com/)
+/*! xtend v0.1.4 (https://getxtend.com/)
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 @font-face {
@@ -5481,57 +5481,57 @@ a:hover,
   border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
-.btn-primary-empy {
+.btn-primary-empty {
   border-color: transparent;
   background-color: transparent;
   color: #7367F0;
   text-decoration: none !important;
 }
-.btn-primary-empy:hover {
+.btn-primary-empty:hover {
   text-decoration: none;
 }
-.btn-primary-empy:hover span {
+.btn-primary-empty:hover span {
   text-decoration: none;
 }
-.btn-primary-empy:hover,
-.btn-primary-empy:active,
-.btn-primary-empy.active {
+.btn-primary-empty:hover,
+.btn-primary-empty:active,
+.btn-primary-empty.active {
   background-color: #887ef2;
   color: #fff;
 }
-.btn-primary-empy:active,
-.btn-primary-empy.active {
+.btn-primary-empty:active,
+.btn-primary-empty.active {
   border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
-.list-primary-empy > li > a:not(.btn),
-.list-primary-empy > li > button:not(.btn) {
+.list-primary-empty > li > a:not(.btn),
+.list-primary-empty > li > button:not(.btn) {
   border-color: transparent;
   background-color: transparent;
   color: #7367F0;
   text-decoration: none !important;
 }
-.list-primary-empy > li > a:not(.btn):hover,
-.list-primary-empy > li > button:not(.btn):hover {
+.list-primary-empty > li > a:not(.btn):hover,
+.list-primary-empty > li > button:not(.btn):hover {
   text-decoration: none;
 }
-.list-primary-empy > li > a:not(.btn):hover span,
-.list-primary-empy > li > button:not(.btn):hover span {
+.list-primary-empty > li > a:not(.btn):hover span,
+.list-primary-empty > li > button:not(.btn):hover span {
   text-decoration: none;
 }
-.list-primary-empy > li > a:not(.btn):hover,
-.list-primary-empy > li > button:not(.btn):hover,
-.list-primary-empy > li > a:not(.btn):active,
-.list-primary-empy > li > button:not(.btn):active,
-.list-primary-empy > li > a:not(.btn).active,
-.list-primary-empy > li > button:not(.btn).active {
+.list-primary-empty > li > a:not(.btn):hover,
+.list-primary-empty > li > button:not(.btn):hover,
+.list-primary-empty > li > a:not(.btn):active,
+.list-primary-empty > li > button:not(.btn):active,
+.list-primary-empty > li > a:not(.btn).active,
+.list-primary-empty > li > button:not(.btn).active {
   background-color: #887ef2;
   color: #fff;
 }
-.list-primary-empy > li > a:not(.btn):active,
-.list-primary-empy > li > button:not(.btn):active,
-.list-primary-empy > li > a:not(.btn).active,
-.list-primary-empy > li > button:not(.btn).active {
+.list-primary-empty > li > a:not(.btn):active,
+.list-primary-empty > li > button:not(.btn):active,
+.list-primary-empty > li > a:not(.btn).active,
+.list-primary-empty > li > button:not(.btn).active {
   border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
@@ -5589,57 +5589,57 @@ a:hover,
   border-color: #d4e7ef;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
-.btn-secondary-empy {
+.btn-secondary-empty {
   border-color: transparent;
   background-color: transparent;
   color: #626c76;
   text-decoration: none !important;
 }
-.btn-secondary-empy:hover {
+.btn-secondary-empty:hover {
   text-decoration: none;
 }
-.btn-secondary-empy:hover span {
+.btn-secondary-empty:hover span {
   text-decoration: none;
 }
-.btn-secondary-empy:hover,
-.btn-secondary-empy:active,
-.btn-secondary-empy.active {
+.btn-secondary-empty:hover,
+.btn-secondary-empty:active,
+.btn-secondary-empty.active {
   background-color: #e7f1f6;
   color: #343a40;
 }
-.btn-secondary-empy:active,
-.btn-secondary-empy.active {
+.btn-secondary-empty:active,
+.btn-secondary-empty.active {
   border-color: #d4e7ef;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
-.list-secondary-empy > li > a:not(.btn),
-.list-secondary-empy > li > button:not(.btn) {
+.list-secondary-empty > li > a:not(.btn),
+.list-secondary-empty > li > button:not(.btn) {
   border-color: transparent;
   background-color: transparent;
   color: #626c76;
   text-decoration: none !important;
 }
-.list-secondary-empy > li > a:not(.btn):hover,
-.list-secondary-empy > li > button:not(.btn):hover {
+.list-secondary-empty > li > a:not(.btn):hover,
+.list-secondary-empty > li > button:not(.btn):hover {
   text-decoration: none;
 }
-.list-secondary-empy > li > a:not(.btn):hover span,
-.list-secondary-empy > li > button:not(.btn):hover span {
+.list-secondary-empty > li > a:not(.btn):hover span,
+.list-secondary-empty > li > button:not(.btn):hover span {
   text-decoration: none;
 }
-.list-secondary-empy > li > a:not(.btn):hover,
-.list-secondary-empy > li > button:not(.btn):hover,
-.list-secondary-empy > li > a:not(.btn):active,
-.list-secondary-empy > li > button:not(.btn):active,
-.list-secondary-empy > li > a:not(.btn).active,
-.list-secondary-empy > li > button:not(.btn).active {
+.list-secondary-empty > li > a:not(.btn):hover,
+.list-secondary-empty > li > button:not(.btn):hover,
+.list-secondary-empty > li > a:not(.btn):active,
+.list-secondary-empty > li > button:not(.btn):active,
+.list-secondary-empty > li > a:not(.btn).active,
+.list-secondary-empty > li > button:not(.btn).active {
   background-color: #e7f1f6;
   color: #343a40;
 }
-.list-secondary-empy > li > a:not(.btn):active,
-.list-secondary-empy > li > button:not(.btn):active,
-.list-secondary-empy > li > a:not(.btn).active,
-.list-secondary-empy > li > button:not(.btn).active {
+.list-secondary-empty > li > a:not(.btn):active,
+.list-secondary-empty > li > button:not(.btn):active,
+.list-secondary-empty > li > a:not(.btn).active,
+.list-secondary-empty > li > button:not(.btn).active {
   border-color: #d4e7ef;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
