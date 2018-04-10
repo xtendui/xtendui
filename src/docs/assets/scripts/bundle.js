@@ -600,7 +600,7 @@ try {
 _xtendUtils2.default.initAll();
 
 },{"../../../scripts/xtend":3,"../../../scripts/xtend-utils":2}],2:[function(require,module,exports){
-/*! xtend v0.1.4 (https://getxtend.com/)
+/*! xtend v0.1.5 (https://getxtend.com/)
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
@@ -915,7 +915,7 @@ setTimeout(function () {
 })(window.document, Element.prototype);
 
 },{"./xtend":3}],3:[function(require,module,exports){
-/*! xtend v0.1.4 (https://getxtend.com/)
+/*! xtend v0.1.5 (https://getxtend.com/)
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
