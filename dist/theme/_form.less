@@ -39,31 +39,46 @@ legend {
   .margin(bottom, 1em);
   font-size: 1.1rem;
 }
-.form-tiny { .form-groups({ .form-group-tiny() }); }
+
+.form-tiny {
+  .form-groups({ .form-group-tiny() });
+}
 
 .form-group-small {
   .margin(bottom, 1.25em);
   font-size: 1.2rem;
 }
-.form-small { .form-groups({ .form-group-small() }); }
+
+.form-small {
+  .form-groups({ .form-group-small() });
+}
 
 .form-group-medium {
   .margin(bottom, 1.5em);
   font-size: 1.3rem;
 }
-.form-medium { .form-groups({ .form-group-medium() }); }
+
+.form-medium {
+  .form-groups({ .form-group-medium() });
+}
 
 .form-group-big {
   .margin(bottom, 1.75em);
   font-size: 1.4rem;
 }
-.form-big { .form-groups({ .form-group-big() }); }
+
+.form-big {
+  .form-groups({ .form-group-big() });
+}
 
 .form-group-giant {
   .margin(bottom, 2em);
   font-size: 1.5rem;
 }
-.form-giant { .form-groups({ .form-group-giant() }); }
+
+.form-giant {
+  .form-groups({ .form-group-giant() });
+}
 
 //////////////////////
 // label
@@ -115,10 +130,9 @@ legend {
   select& {
     @select-arrow-color: darken(@secondary, 25%);
     @select-space-color: darken(@secondary, 5%);
-    background-image:
-      linear-gradient(45deg, transparent 50%, @select-arrow-color 50%),
-      linear-gradient(135deg, @select-arrow-color 50%, transparent 50%),
-      linear-gradient(to right, @select-space-color, @select-space-color);
+    background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%),
+    linear-gradient(135deg, @select-arrow-color 50%, transparent 50%),
+    linear-gradient(to right, @select-space-color, @select-space-color);
   }
 }
 
@@ -130,6 +144,7 @@ legend {
   // styles
   .margin(right, medium);
 }
+
 .label-special {
   // styles
   > span {
@@ -159,12 +174,15 @@ legend {
 .note-success {
   color: @success;
 }
+
 .note-notice {
   color: @notice;
 }
+
 .note-warning {
   color: @warning;
 }
+
 .note-error {
   color: @error;
 }

@@ -7,22 +7,32 @@
 
 .by-key(@array, @key, @fallback...) {
   .by-key-inner(length(@array));
-  .by-key-inner(@i) when (@i > 0) {.by-key-inner((@i - 1))}
+  .by-key-inner(@i) when (@i > 0) {
+    .by-key-inner((@i - 1))
+  }
   .by-key-inner(@i) when (@key = extract(extract(@array, @i), 1)) {
     @by-key: extract(extract(@array, @i), 2);
   }
-  .--() {@by-key: @fallback} .--;
+  .--() {
+    @by-key: @fallback
+  }
+  .--;
 }
 
 // USAGE: .by-key-alt(@list-space, @name); @val: @by-key-alt;
 
 .by-key-alt(@array, @key, @fallback...) {
   .by-key-inner(length(@array));
-  .by-key-inner(@i) when (@i > 0) {.by-key-inner((@i - 1))}
+  .by-key-inner(@i) when (@i > 0) {
+    .by-key-inner((@i - 1))
+  }
   .by-key-inner(@i) when (@key = extract(extract(@array, @i), 1)) {
     @by-key-alt: extract(extract(@array, @i), 2);
   }
-  .--() {@by-key-alt: @fallback} .--;
+  .--() {
+    @by-key-alt: @fallback
+  }
+  .--;
 }
 
 //////////////////////
@@ -32,12 +42,15 @@
 .text-upper {
   text-transform: uppercase !important;
 }
+
 .text-lower {
   text-transform: lowercase !important;
 }
+
 .text-cap {
   text-transform: capitalize !important;
 }
+
 .text-nowrap {
   white-space: nowrap !important;
 }
@@ -48,6 +61,7 @@
 .text(@val, @breakpoint:none) when (@breakpoint = none) {
   text-align: @val;
 }
+
 .text(@val, @breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -65,6 +79,7 @@
 .float(@val, @breakpoint:none) when (@breakpoint = none) {
   float: @val;
 }
+
 .float(@val, @breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -94,17 +109,20 @@
     display: inline-flex;
   }
 }
+
 .display(@val, @breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     & when not (@val = flex), not (@val = inline-flex) {
       display: @val;
     }
+    
     & when (@val = flex) {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
     }
+    
     & when (@val = inline-flex) {
       display: -webkit-inline-box;
       display: -ms-inline-flexbox;
@@ -165,17 +183,20 @@
     }
   }
 }
+
 .margin(@pos:all, @size, @breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     & when (isnumber(@size)) {
       .print-margin(@pos, @size, @breakpoint);
     }
+    
     & when not (isnumber(@size)) {
       .loop-margin(@pos, @size, @breakpoint);
     }
   }
 }
+
 .loop-margin(@pos:all, @size, @breakpoint:none, @i:length(@margins)) when (@i > 0) {
   .loop-margin(@pos, @size, @breakpoint:none, @i - 1);
   @margin: extract(@margins, @i);
@@ -223,17 +244,20 @@
     .loop-margin-remove(@pos, @size, @breakpoint);
   }
 }
+
 .margin-remove(@pos:all, @size, @breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     & when (isnumber(@size)) {
       .print-margin-remove(@pos, @size, @breakpoint);
     }
+    
     & when not (isnumber(@size)) {
       .loop-margin-remove(@pos, @size, @breakpoint);
     }
   }
 }
+
 .loop-margin-remove(@pos:all, @size, @breakpoint:none, @i:length(@margins)) when (@i > 0) {
   .loop-margin-remove(@pos, @size, @breakpoint:none, @i - 1);
   @margin: extract(@margins, @i);
@@ -322,17 +346,20 @@
     }
   }
 }
+
 .padding(@pos:all, @size, @breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     & when (isnumber(@size)) {
       .print-padding(@pos, @size, @breakpoint);
     }
+    
     & when not (isnumber(@size)) {
       .loop-padding(@pos, @size, @breakpoint);
     }
   }
 }
+
 .loop-padding(@pos:all, @size, @breakpoint:none, @i:length(@paddings)) when (@i > 0) {
   .loop-padding(@pos, @size, @breakpoint:none, @i - 1);
   @padding: extract(@paddings, @i);
@@ -381,6 +408,7 @@
   -ms-flex-direction: row;
   flex-direction: row;
 }
+
 .flex-row(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -397,6 +425,7 @@
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
 }
+
 .flex-row-reverse(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -413,6 +442,7 @@
   -ms-flex-direction: column;
   flex-direction: column;
 }
+
 .flex-column(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -429,6 +459,7 @@
   -ms-flex-direction: column-reverse;
   flex-direction: column-reverse;
 }
+
 .flex-column-reverse(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -445,6 +476,7 @@
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
+
 .flex-wrap(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -457,6 +489,7 @@
   -ms-flex-wrap: wrap-reverse;
   flex-wrap: wrap-reverse;
 }
+
 .flex-wrap-reverse(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -469,6 +502,7 @@
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
+
 .flex-nowrap(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -484,6 +518,7 @@
   -ms-flex-pack: start;
   justify-content: flex-start;
 }
+
 .justify-content-start(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -498,6 +533,7 @@
   -ms-flex-pack: end;
   justify-content: flex-end;
 }
+
 .justify-content-end(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -512,6 +548,7 @@
   -ms-flex-pack: center;
   justify-content: center;
 }
+
 .justify-content-center(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -526,6 +563,7 @@
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
+
 .justify-content-between(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -539,6 +577,7 @@
   -ms-flex-pack: distribute;
   justify-content: space-around;
 }
+
 .justify-content-around(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -554,6 +593,7 @@
   -ms-flex-align: start;
   align-items: flex-start;
 }
+
 .align-items-start(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -568,6 +608,7 @@
   -ms-flex-align: end;
   align-items: flex-end;
 }
+
 .align-items-end(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -582,6 +623,7 @@
   -ms-flex-align: center;
   align-items: center;
 }
+
 .align-items-center(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -596,6 +638,7 @@
   -ms-flex-align: baseline;
   align-items: baseline;
 }
+
 .align-items-baseline(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -610,6 +653,7 @@
   -ms-flex-align: stretch;
   align-items: stretch;
 }
+
 .align-items-stretch(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -625,6 +669,7 @@
   -ms-flex-line-pack: start;
   align-content: flex-start;
 }
+
 .align-content-start(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -637,6 +682,7 @@
   -ms-flex-line-pack: end;
   align-content: flex-end;
 }
+
 .align-content-end(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -649,6 +695,7 @@
   -ms-flex-line-pack: center;
   align-content: center;
 }
+
 .align-content-center(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -661,6 +708,7 @@
   -ms-flex-line-pack: justify;
   align-content: space-between;
 }
+
 .align-content-between(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -673,6 +721,7 @@
   -ms-flex-line-pack: distribute;
   align-content: space-around;
 }
+
 .align-content-around(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -685,6 +734,7 @@
   -ms-flex-line-pack: stretch;
   align-content: stretch;
 }
+
 .align-content-stretch(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -699,6 +749,7 @@
   -ms-flex-item-align: auto;
   align-self: auto;
 }
+
 .align-self-auto(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -711,6 +762,7 @@
   -ms-flex-item-align: start;
   align-self: flex-start;
 }
+
 .align-self-start(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -723,6 +775,7 @@
   -ms-flex-item-align: end;
   align-self: flex-end;
 }
+
 .align-self-end(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -735,6 +788,7 @@
   -ms-flex-item-align: center;
   align-self: center;
 }
+
 .align-self-center(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -747,6 +801,7 @@
   -ms-flex-item-align: baseline;
   align-self: baseline;
 }
+
 .align-self-baseline(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -759,6 +814,7 @@
   -ms-flex-item-align: stretch;
   align-self: stretch;
 }
+
 .align-self-stretch(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -780,6 +836,7 @@
   -ms-flex-order: @val;
   order: @val;
 }
+
 .flex-order(@i, @breakpoint:none) when (default()) {
   @val: extract(@orders, @i + 1);
   @query-min: 'min-@{breakpoint}';
@@ -804,18 +861,21 @@
     clear: both;
   }
 }
+
 .select-none {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
+
 .select-text {
   -webkit-user-select: text;
   -moz-user-select: text;
   -ms-user-select: text;
   user-select: text;
 }
+
 .accelerate {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -823,6 +883,7 @@
   perspective: 1000;
   transform: translateZ(0);
 }
+
 .sr-only {
   position: absolute;
   overflow: hidden;
@@ -845,6 +906,7 @@
   // fix chrome bug responsive
   .align-self-center();
 }
+
 .responsive(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -864,6 +926,7 @@
   display: block;
   width: 100%;
 }
+
 .block(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {

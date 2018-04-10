@@ -5709,7 +5709,7 @@ a:hover,
 .btn-caret:after {
   margin-left: 0.5em;
 }
-.btn-caret.active:before {
+.btn-caret.active:after {
   display: inline-block;
   position: relative;
   font-family: 'xtend' !important;
