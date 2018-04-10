@@ -4856,10 +4856,10 @@ dl dt {
   font-size: 2em;
 }
 .icon-left {
-  margin-right: 0.5em;
+  margin-right: 1em;
 }
 .icon-right {
-  margin-left: 0.5em;
+  margin-left: 1em;
 }
 .table tr {
   border-bottom: 1px solid #edf3f6;
@@ -5707,7 +5707,7 @@ a:hover,
   font-size: 0.75em;
 }
 .btn-caret:after {
-  margin-left: 0.5em;
+  margin-left: 1em;
 }
 .btn-caret.active:after {
   display: inline-block;
