@@ -26,11 +26,13 @@ mkdir -p xtend-library/
 cp -r vendor/minimit/xtend-library/dist/ xtend-library/
 ```
 
-After in `xtend.less` put the right path for the **@imports**.
+After in `xtend.less` put the right path to `'xtend-library/dist/'` in **@xtend-dist**.
 
+<!--
 # Acknowledgements
 
 Icons by [feather icons](https://github.com/feathericons/feather).
+-->
 
 # Copyright
 
