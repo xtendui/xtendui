@@ -498,10 +498,6 @@ textarea {
   -ms-flex-line-pack: stretch !important;
   align-content: stretch !important;
 }
-.align-self-auto {
-  -ms-flex-item-align: auto !important;
-  align-self: auto !important;
-}
 .align-self-start {
   -ms-flex-item-align: start !important;
   align-self: flex-start !important;
@@ -521,6 +517,10 @@ textarea {
 .align-self-stretch {
   -ms-flex-item-align: stretch !important;
   align-self: stretch !important;
+}
+.align-self-auto {
+  -ms-flex-item-align: auto !important;
+  align-self: auto !important;
 }
 @media (min-width: 768px ) {
   .flex-row-sm {
@@ -4664,7 +4664,6 @@ h6 + .h6,
 }
 h1,
 .h1 {
-  margin-bottom: 2rem;
   font-size: 4.5rem;
 }
 @media (min-width: 768px ) {
@@ -4675,7 +4674,6 @@ h1,
 }
 h2,
 .h2 {
-  margin-bottom: 3rem;
   font-size: 3.5rem;
 }
 h3,
@@ -7068,10 +7066,10 @@ h2 .site-article-anchor {
   background-color: #dfeaef;
 }
 .demo {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
   border-radius: 2px;
   border: 3px solid #edf3f6;
+  margin-top: 2rem;
+  margin-bottom: 3.5rem;
 }
 .demo:first-child {
   margin-top: 0;

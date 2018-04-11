@@ -601,9 +601,13 @@ code {
 
 .demo {
   .margin(y, layout);
-  .margin(y, 2.5rem);
   border-radius: 2px;
   border: 3px solid @grey-250;
+  // add space because text and div spacing is different
+  .by-key(@margins, medium);
+  .margin(top, @by-key + .5rem);
+  .by-key-alt(@margins, big);
+  .margin(bottom, @by-key-alt + .5rem);
   // code
   .demo-item {
     line-height: 0;
