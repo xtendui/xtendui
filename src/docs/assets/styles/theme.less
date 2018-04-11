@@ -159,7 +159,7 @@
     box-shadow: none !important;
   }
   .btn:not(.btn-icon) {
-    .padding(x, medium);
+    .padding(x, small);
   }
 }
 
@@ -456,9 +456,7 @@
     display: none;
     .btn-site-aside-subsub {
       .btn-small();
-      .btn-narrow();
       .btn-short();
-      .padding(left, medium);
       color: fade(@text, 50%) !important;
       &.active {
         color: @text !important;
@@ -591,8 +589,8 @@
 
 code {
   .demo-text &,
-  .alert & {
-    color: @grey-750;
+  .alert &,
+  .table-stripe tbody tr:nth-of-type(odd) & {
     background-color: darken(@grey-250, 4%);
   }
 }
@@ -601,13 +599,10 @@ code {
 
 .demo {
   .margin(y, layout);
+  .margin(top, medium);
+  .margin(bottom, big);
   border-radius: 2px;
   border: 3px solid @grey-250;
-  // add space because text and div spacing is different
-  .by-key(@margins, medium);
-  .margin(top, @by-key + .5rem);
-  .by-key-alt(@margins, big);
-  .margin(bottom, @by-key-alt + .5rem);
   // code
   .demo-item {
     line-height: 0;
@@ -625,7 +620,6 @@ code {
   .hljs,
   .demo-code-body {
     z-index: 1;
-    background-color: @grey-250;
   }
   // tabs
   .demo-tabs,

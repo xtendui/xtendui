@@ -5,6 +5,7 @@ description: Frontend library
 homepage:
 license: CC Attribution 3.0 Unported
 author: Riccardo Caroli <beaver82@gmail.com>
+copyright: © 2017 – 2018 <span>Riccardo Caroli</span>
 
 # settings
 host: 127.0.0.1

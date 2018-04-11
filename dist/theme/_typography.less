@@ -129,21 +129,23 @@ code {
   background-color: @grey-250;
   .font-monospace();
   font-size: .9em;
-  color: @primary;
+  color: @grey-750;
 }
 
 pre {
   .margin(y, layout);
-  .margin(bottom, small);
+  .margin(bottom, medium);
   width: 100%;
   max-height: 37rem;
   overflow-x: hidden;
   overflow-y: auto;
+  line-height: 0;
   code {
     .padding(all, medium) !important;
     width: 100%;
+    background-color: @grey-250 !important;
     font-size: 12px;
-    color: @text;
+    color: @grey-750;
     line-height: 1.6;
   }
 }
@@ -173,7 +175,7 @@ pre {
     padding-left: 2rem;
     > ul,
     > ol {
-      .margin(y, medium);
+      .margin(y, small);
     }
   }
   ul {
@@ -195,8 +197,8 @@ pre {
 //////////////////////
 
 dl {
-  .margin(bottom, small);
   .margin(bottom, layout);
+  .margin(bottom, small);
   .font-medium();
   .dl-block();
   dt {

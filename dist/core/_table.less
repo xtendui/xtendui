@@ -2,19 +2,22 @@
 // tables
 //////////////////////
 
+// .table
+
 .table {
   border-collapse: collapse;
   width: 100%;
-  th {
+  thead th {
     text-align: left;
     vertical-align: bottom;
   }
-  td {
+  tbody th,
+  tbody td {
     text-align: left;
   }
 }
 
-// middle
+// .table-middle
 
 .table-middle {
   th,
@@ -23,7 +26,7 @@
   }
 }
 
-// center
+// .table-center
 
 .table-center {
   th,
@@ -32,7 +35,7 @@
   }
 }
 
-// right
+// .table-right
 
 .table-right {
   th:not(:nth-child(1)),
@@ -41,12 +44,25 @@
   }
 }
 
-// responsive
+// .table-scroll
 
 .table-scroll {
   .block();
   overflow-x: auto;
-  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+// generate-container-responsive
+
+.generate-table-scroll-responsive();
+.generate-table-scroll-responsive(@i:length(@breakpoints)) when (@i > 0) {
+  .generate-table-scroll-responsive(@i - 1);
+  @breakpoint: extract(@breakpoints, @i);
+  @query-max: 'max-@{breakpoint}';
+  @media @@query-max {
+    .table-scroll-@{breakpoint} {
+      .table-scroll();
+    }
+  }
 }

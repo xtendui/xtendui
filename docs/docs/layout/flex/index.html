@@ -439,7 +439,7 @@
   <div class="site-main-inside">
     <div class="container-fluid">
       <div class="flex">
-        <div class="col col-md-9">
+        <div class="col col-12 col-md-9">
 
           <article class="site-article">
             <p class="alert">Read the documentation of <a href="/docs/layout/">Layout</a> with theming and usage
@@ -744,6 +744,40 @@
 
 <h3>Align items</h3>
 
+<p>Set children's vertical alignment inside the flexbox.</p>
+
+<table class="table table-small">
+  <thead>
+  <tr>
+    <th></th>
+    <th>Syntax</th>
+    <th>Example</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">Class</th>
+    <td><code>.align-items-{type}</code></td>
+    <td><code>.align-items-start</code></td>
+  </tr>
+  <tr>
+    <th scope="row">Class responsive</th>
+    <td><code>.align-items-{type}-{breakpoint}</code></td>
+    <td><code>.align-items-start-sm</code></td>
+  </tr>
+  <tr>
+    <th scope="row">Mixin</th>
+    <td><code>.align-items-{type}()</code></td>
+    <td><code>.align-items-start()</code></td>
+  </tr>
+  <tr>
+    <th scope="row">Mixin responsive</th>
+    <td><code>.align-items-{type}({breakpoint})</code></td>
+    <td><code>.align-items-start('sm')</code></td>
+  </tr>
+  </tbody>
+</table>
+
 <div class="demo">
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-text"><code>.align-items-start</code></div>
@@ -803,6 +837,40 @@
 </div>
 
 <h3>Align content</h3>
+
+<p>Set children's vertical alignment inside the flexbox.</p>
+
+<table class="table table-small">
+  <thead>
+  <tr>
+    <th></th>
+    <th>Syntax</th>
+    <th>Example</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">Class</th>
+    <td><code>.align-content-{type}</code></td>
+    <td><code>.align-content-start</code></td>
+  </tr>
+  <tr>
+    <th scope="row">Class responsive</th>
+    <td><code>.align-content-{type}-{breakpoint}</code></td>
+    <td><code>.align-content-start-sm</code></td>
+  </tr>
+  <tr>
+    <th scope="row">Mixin</th>
+    <td><code>.align-content-{type}()</code></td>
+    <td><code>.align-content-start()</code></td>
+  </tr>
+  <tr>
+    <th scope="row">Mixin responsive</th>
+    <td><code>.align-content-{type}({breakpoint})</code></td>
+    <td><code>.align-content-start('sm')</code></td>
+  </tr>
+  </tbody>
+</table>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="start">
@@ -875,6 +943,40 @@
 
 <h3>Align self</h3>
 
+<p>Set item's vertical alignment inside the flexbox. If set to <strong>auto</strong> computes to the parent's <code>align-items</code> value.</p>
+
+<table class="table table-small">
+  <thead>
+  <tr>
+    <th></th>
+    <th>Syntax</th>
+    <th>Example</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">Class</th>
+    <td><code>.align-self-{type}</code></td>
+    <td><code>.align-self-start</code></td>
+  </tr>
+  <tr>
+    <th scope="row">Class responsive</th>
+    <td><code>.align-self-{type}-{breakpoint}</code></td>
+    <td><code>.align-self-start-sm</code></td>
+  </tr>
+  <tr>
+    <th scope="row">Mixin</th>
+    <td><code>.align-self-{type}()</code></td>
+    <td><code>.align-self-start()</code></td>
+  </tr>
+  <tr>
+    <th scope="row">Mixin responsive</th>
+    <td><code>.align-self-{type}({breakpoint})</code></td>
+    <td><code>.align-self-start('sm')</code></td>
+  </tr>
+  </tbody>
+</table>
+
 <div class="demo">
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-text"><code>.align-self-start</code></div>
@@ -946,6 +1048,40 @@
 
 <h3>Order</h3>
 
+<p>Set item's order inside the flexbox.</p>
+
+<table class="table table-small">
+  <thead>
+  <tr>
+    <th></th>
+    <th>Syntax</th>
+    <th>Example</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">Class</th>
+    <td><code>.order-{number}</code></td>
+    <td><code>.order-1</code></td>
+  </tr>
+  <tr>
+    <th scope="row">Class responsive</th>
+    <td><code>.order-{number}-{breakpoint}</code></td>
+    <td><code>.order-1-sm</code></td>
+  </tr>
+  <tr>
+    <th scope="row">Mixin</th>
+    <td><code>.order({number})</code></td>
+    <td><code>.order(1)</code></td>
+  </tr>
+  <tr>
+    <th scope="row">Mixin responsive</th>
+    <td><code>.order({number}, {breakpoint})</code></td>
+    <td><code>.order(1, 'sm')</code></td>
+  </tr>
+  </tbody>
+</table>
+
 <div class="demo">
   <div class="demo-item demo-preview" data-name="order">
     <div class="demo-source demo-cols" data-lang="html">
@@ -964,7 +1100,7 @@
           </article>
 
         </div>
-        <div class="col col-md-3 hide show-md">
+        <div class="col col-12 col-md-3 hide show-md">
 
           <aside class="site-aside" data-xt-scroll='{"top": ".site-breadcrumbs.xt-clone"}'>
 
@@ -1037,7 +1173,7 @@
                   Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank">CC BY 3.0</a> <span class="separator">–</span> Xtend licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank">MIT</a>
                 </div>
                 <div class="site-footer-bottom-copy">
-                  © 2016 <span class="separator">–</span> 2017 <span>Riccardo Caroli</span>
+                  © 2017 – 2018 <span>Riccardo Caroli</span>
                 </div>
               </div>
             </div>

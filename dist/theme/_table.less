@@ -4,7 +4,11 @@
 
 @table-border-width: 1px;
 
+// .table
+
 .table {
+  .margin(y, layout);
+  .margin(bottom, medium);
   tr {
     border-bottom: @table-border-width solid @grey-250;
   }
@@ -60,18 +64,30 @@
   }
 }
 
-// stripe
+// .table-small
+
+.table-small {
+  th {
+    .padding(y, small);
+    .font-tiny();
+  }
+  td {
+    .padding(y, small);
+  }
+}
+
+// .table-stripe
 
 .table-stripe {
-  tbody tr:nth-of-type(even) {
+  tbody tr:nth-of-type(odd) {
     background-color: @grey-250;
   }
-  tbody tr:nth-of-type(odd) {
+  tbody tr:nth-of-type(even) {
     background-color: transparent;
   }
 }
 
-// border
+// .table-border
 
 .table-border {
   border: @table-border-width solid @grey-250;

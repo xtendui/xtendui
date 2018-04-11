@@ -88,29 +88,19 @@
 // grid
 // USAGE: .all(6); .min(lg, 6); .max(xs, 6);
 
-.col(@i) {
-  @val: (percentage(@i / @columns));
+.col(@number, @breakpoint:none) when (@breakpoint = none) {
+  @val: (percentage(@number / @columns));
   -webkit-flex-basis: @val;
   -ms-flex-preferred-size: @val;
   flex-basis: @val;
   max-width: @val;
   width: @val;
 }
-.col-min(@name, @i) {
-  @query-min: 'min-@{name}';
-  @val: (percentage(@i / @columns));
+
+.col(@number, @breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @val: (percentage(@number / @columns));
   @media @@query-min {
-    -webkit-flex-basis: @val;
-    -ms-flex-preferred-size: @val;
-    flex-basis: @val;
-    max-width: @val;
-    width: @val;
-  }
-}
-.col-max(@name, @i) {
-  @query-max: 'max-@{name}';
-  @val: (percentage(@i / @columns));
-  @media @@query-max {
     -webkit-flex-basis: @val;
     -ms-flex-preferred-size: @val;
     flex-basis: @val;
