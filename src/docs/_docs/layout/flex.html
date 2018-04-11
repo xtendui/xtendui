@@ -13,9 +13,6 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 
 <p>Use <code>.flex</code> to create a column/row layout.</p>
 
-<p class="alert">You can set flex's sizes <code>_variables.less</code> file. Read the documentation of <a
-  href="{% link _docs/intro/variables.html %}#flex">flex's variables</a>.</p>
-
 <div class="demo">
   <div class="demo-item demo-preview" data-name="cols">
     <div class="demo-source demo-cols" data-lang="html">
@@ -64,6 +61,33 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 <h3>Sizes</h3>
 
 <p>Flex automatically add horizontal and vertical spacing to the contents.</p>
+
+<div class="table-scroll">
+  <table class="table table-small">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Syntax</th>
+      <th>Example</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">Class</th>
+      <td><code>.flex-space-{size}</code></td>
+      <td><code>.flex-space-small</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin</th>
+      <td><code>.flex-space({size})</code></td>
+      <td><code>.flex-space(small)</code></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<p class="alert">You can set flex's sizes <code>_variables.less</code> file. Read the documentation of <a
+  href="{% link _docs/intro/variables.html %}#flex">flex's variables</a>.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="none">
@@ -153,6 +177,42 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 
 <h3>Direction</h3>
 
+<p>Set children's wrapping inside the flexbox.</p>
+
+<div class="table-scroll">
+  <table class="table table-small">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Syntax</th>
+      <th>Example</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">Class</th>
+      <td><code>.flex-{type}</code></td>
+      <td><code>.flex-row</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Class responsive</th>
+      <td><code>.flex-{type}-{breakpoint}</code></td>
+      <td><code>.flex-row-sm</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin</th>
+      <td><code>.flex-{type}()</code></td>
+      <td><code>.flex-row()</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin responsive</th>
+      <td><code>.flex-{type}({breakpoint})</code></td>
+      <td><code>.flex-row('sm')</code></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
 <div class="demo">
   <div class="demo-item demo-preview" data-name="row">
     <div class="demo-text"><code>.flex-row</code></div>
@@ -214,6 +274,42 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 
 <h3>Wrap</h3>
 
+<p>Set children's wrapping inside the flexbox.</p>
+
+<div class="table-scroll">
+  <table class="table table-small">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Syntax</th>
+      <th>Example</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">Class</th>
+      <td><code>.flex-wrap</code></td>
+      <td><code>.flex-wrap</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Class responsive</th>
+      <td><code>.flex-wrap-{breakpoint}</code></td>
+      <td><code>.flex-wrap-sm</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin</th>
+      <td><code>.flex-wrap()</code></td>
+      <td><code>.flex-wrap()</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin responsive</th>
+      <td><code>.flex-wrap({breakpoint})</code></td>
+      <td><code>.flex-wrap('sm')</code></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
 <div class="demo">
   <div class="demo-item demo-preview" data-name="reverse">
     <div class="demo-text"><code>.flex-wrap</code></div>
@@ -257,6 +353,42 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 </div>
 
 <h3>Justify content</h3>
+
+<p>Set children's horizontal alignment inside the flexbox.</p>
+
+<div class="table-scroll">
+  <table class="table table-small">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Syntax</th>
+      <th>Example</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">Class</th>
+      <td><code>.justify-content-{type}</code></td>
+      <td><code>.justify-content-start</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Class responsive</th>
+      <td><code>.justify-content-{type}-{breakpoint}</code></td>
+      <td><code>.justify-content-start-sm</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin</th>
+      <td><code>.justify-content-{type}()</code></td>
+      <td><code>.justify-content-start()</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin responsive</th>
+      <td><code>.justify-content-{type}({breakpoint})</code></td>
+      <td><code>.justify-content-start('sm')</code></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="start">
@@ -310,37 +442,39 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 
 <p>Set children's vertical alignment inside the flexbox.</p>
 
-<table class="table table-small">
-  <thead>
-  <tr>
-    <th></th>
-    <th>Syntax</th>
-    <th>Example</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <th scope="row">Class</th>
-    <td><code>.align-items-{type}</code></td>
-    <td><code>.align-items-start</code></td>
-  </tr>
-  <tr>
-    <th scope="row">Class responsive</th>
-    <td><code>.align-items-{type}-{breakpoint}</code></td>
-    <td><code>.align-items-start-sm</code></td>
-  </tr>
-  <tr>
-    <th scope="row">Mixin</th>
-    <td><code>.align-items-{type}()</code></td>
-    <td><code>.align-items-start()</code></td>
-  </tr>
-  <tr>
-    <th scope="row">Mixin responsive</th>
-    <td><code>.align-items-{type}({breakpoint})</code></td>
-    <td><code>.align-items-start('sm')</code></td>
-  </tr>
-  </tbody>
-</table>
+<div class="table-scroll">
+  <table class="table table-small">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Syntax</th>
+      <th>Example</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">Class</th>
+      <td><code>.align-items-{type}</code></td>
+      <td><code>.align-items-start</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Class responsive</th>
+      <td><code>.align-items-{type}-{breakpoint}</code></td>
+      <td><code>.align-items-start-sm</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin</th>
+      <td><code>.align-items-{type}()</code></td>
+      <td><code>.align-items-start()</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin responsive</th>
+      <td><code>.align-items-{type}({breakpoint})</code></td>
+      <td><code>.align-items-start('sm')</code></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="start">
@@ -404,37 +538,39 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 
 <p>Set children's vertical alignment inside the flexbox.</p>
 
-<table class="table table-small">
-  <thead>
-  <tr>
-    <th></th>
-    <th>Syntax</th>
-    <th>Example</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <th scope="row">Class</th>
-    <td><code>.align-content-{type}</code></td>
-    <td><code>.align-content-start</code></td>
-  </tr>
-  <tr>
-    <th scope="row">Class responsive</th>
-    <td><code>.align-content-{type}-{breakpoint}</code></td>
-    <td><code>.align-content-start-sm</code></td>
-  </tr>
-  <tr>
-    <th scope="row">Mixin</th>
-    <td><code>.align-content-{type}()</code></td>
-    <td><code>.align-content-start()</code></td>
-  </tr>
-  <tr>
-    <th scope="row">Mixin responsive</th>
-    <td><code>.align-content-{type}({breakpoint})</code></td>
-    <td><code>.align-content-start('sm')</code></td>
-  </tr>
-  </tbody>
-</table>
+<div class="table-scroll">
+  <table class="table table-small">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Syntax</th>
+      <th>Example</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">Class</th>
+      <td><code>.align-content-{type}</code></td>
+      <td><code>.align-content-start</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Class responsive</th>
+      <td><code>.align-content-{type}-{breakpoint}</code></td>
+      <td><code>.align-content-start-sm</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin</th>
+      <td><code>.align-content-{type}()</code></td>
+      <td><code>.align-content-start()</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin responsive</th>
+      <td><code>.align-content-{type}({breakpoint})</code></td>
+      <td><code>.align-content-start('sm')</code></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="start">
@@ -509,37 +645,39 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 
 <p>Set item's vertical alignment inside the flexbox. If set to <strong>auto</strong> computes to the parent's <code>align-items</code> value.</p>
 
-<table class="table table-small">
-  <thead>
-  <tr>
-    <th></th>
-    <th>Syntax</th>
-    <th>Example</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <th scope="row">Class</th>
-    <td><code>.align-self-{type}</code></td>
-    <td><code>.align-self-start</code></td>
-  </tr>
-  <tr>
-    <th scope="row">Class responsive</th>
-    <td><code>.align-self-{type}-{breakpoint}</code></td>
-    <td><code>.align-self-start-sm</code></td>
-  </tr>
-  <tr>
-    <th scope="row">Mixin</th>
-    <td><code>.align-self-{type}()</code></td>
-    <td><code>.align-self-start()</code></td>
-  </tr>
-  <tr>
-    <th scope="row">Mixin responsive</th>
-    <td><code>.align-self-{type}({breakpoint})</code></td>
-    <td><code>.align-self-start('sm')</code></td>
-  </tr>
-  </tbody>
-</table>
+<div class="table-scroll">
+  <table class="table table-small">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Syntax</th>
+      <th>Example</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">Class</th>
+      <td><code>.align-self-{type}</code></td>
+      <td><code>.align-self-start</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Class responsive</th>
+      <td><code>.align-self-{type}-{breakpoint}</code></td>
+      <td><code>.align-self-start-sm</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin</th>
+      <td><code>.align-self-{type}()</code></td>
+      <td><code>.align-self-start()</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin responsive</th>
+      <td><code>.align-self-{type}({breakpoint})</code></td>
+      <td><code>.align-self-start('sm')</code></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="start">
@@ -614,37 +752,39 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 
 <p>Set item's order inside the flexbox.</p>
 
-<table class="table table-small">
-  <thead>
-  <tr>
-    <th></th>
-    <th>Syntax</th>
-    <th>Example</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <th scope="row">Class</th>
-    <td><code>.order-{number}</code></td>
-    <td><code>.order-1</code></td>
-  </tr>
-  <tr>
-    <th scope="row">Class responsive</th>
-    <td><code>.order-{number}-{breakpoint}</code></td>
-    <td><code>.order-1-sm</code></td>
-  </tr>
-  <tr>
-    <th scope="row">Mixin</th>
-    <td><code>.order({number})</code></td>
-    <td><code>.order(1)</code></td>
-  </tr>
-  <tr>
-    <th scope="row">Mixin responsive</th>
-    <td><code>.order({number}, {breakpoint})</code></td>
-    <td><code>.order(1, 'sm')</code></td>
-  </tr>
-  </tbody>
-</table>
+<div class="table-scroll">
+  <table class="table table-small">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Syntax</th>
+      <th>Example</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">Class</th>
+      <td><code>.order-{number}</code></td>
+      <td><code>.order-1</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Class responsive</th>
+      <td><code>.order-{number}-{breakpoint}</code></td>
+      <td><code>.order-1-sm</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin</th>
+      <td><code>.order({number})</code></td>
+      <td><code>.order(1)</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin responsive</th>
+      <td><code>.order({number}, {breakpoint})</code></td>
+      <td><code>.order(1, 'sm')</code></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="order">
