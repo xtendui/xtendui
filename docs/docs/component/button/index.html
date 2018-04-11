@@ -11,7 +11,7 @@
 
     <!-- seo -->
     <title>Button • Xtend</title>
-    <meta name="description" content="Lorem ipsum" />
+    <meta name="description" content="Links styles and extensible button component with structured theming." />
 
     <!-- icons -->
     <link rel="icon" href="/assets/images/favicon.png?v=0.1.6" />
@@ -29,7 +29,7 @@
       <header class="site-header">
 
         <div class="site-header-top" data-xt-scroll='{"bottom": ".site-breadcrumbs.xt-clone"}'>
-          <div class="contain-fluid">
+          <div class="container-fluid">
 
             <div class="flex flex-auto justify-content-between align-items-center">
               <div>
@@ -59,7 +59,7 @@
             <div class="overlay-content">
 
               <div class="site-header-top">
-                <div class="contain-fluid">
+                <div class="container-fluid">
 
                   <div class="flex flex-auto justify-content-between align-items-center">
                     <div>
@@ -114,11 +114,11 @@
 
         <div class="site-hero">
 
-          <div class="contain-fluid">
+          <div class="container-fluid">
             <div class="flex flex-auto align-items-center align-content-center justify-content-between">
               <div class="site-hero-text">
-                <h1 class="h1">Button</h1>
-                <p class="font-giant">Lorem ipsum</p>
+                <h1>Button</h1>
+                <p class="font-giant">Links styles and extensible button component with structured theming.</p>
               </div>
               <div class="site-hero-img">
                 <!--
@@ -132,7 +132,7 @@
 
         <nav class="site-breadcrumbs" role="navigation" data-xt-scroll>
           <div class="site-breadcrumbs-inside">
-            <div class="contain-fluid">
+            <div class="container-fluid">
               <div class="flex flex-auto justify-content-between align-items-start">
 
                 <div class="site-breadcrumbs-body flex flex-space-none" data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave"}'>
@@ -437,17 +437,19 @@
 
 <main class="site-main">
   <div class="site-main-inside">
-    <div class="contain-fluid">
+    <div class="container-fluid">
       <div class="flex">
-        <div class="column md-9">
+        <div class="col col-md-9">
 
           <article class="site-article">
-            <p class="alert">Read documentation of <a href="/docs/component/">Component</a> with theming and usage info.</p>
+            <p class="alert">Read the documentation of <a href="/docs/component/">Component</a> with theming and
+  usage info.</p>
 
 <h2>Links</h2>
 
 <p>On containers use <code>.links-inverse</code> to have white links.</p>
-<p>In the code the mixins <code>.link-underline()</code> and <code>.link-no-underline()</code> are used assign proper underline on buttons.</p>
+<p>In the code the mixins <code>.link-underline()</code> and <code>.link-no-underline()</code> are used assign proper
+  underline on buttons.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="links">
@@ -460,7 +462,7 @@
         <div class="alink">
           class
         </div>
-        <div class="links-inverse" style="background: #000000;">
+        <div class="links-inverse" style="padding: 0.5rem 1rem; background: #7367F0;">
           <a href="#">
             link
           </a>
@@ -472,17 +474,22 @@
 
 <h2>Buttons</h2>
 
-<p>After <code>// styles</code> you set shared styles, like font or border, after <code>// options</code> you set the <strong>default options</strong> for buttons, like size or special.</p>
-<p>You set the button modifier classes after <code>// size</code> <code>// special</code> and <code>// variant</code>. <strong>You can remove or add new classes depending on your needs</strong>, and inside the classes you can override css as you wish (for example if you want all <code>.btn-primary</code> with a custom font).</p>
+<p>After <code>// styles</code> you set shared styles, like font or border, after <code>// options</code> you set the
+  <strong>default options</strong> for buttons, like size or special.</p>
+<p>You set the button modifier classes after <code>// size</code> <code>// special</code> and <code>// variant</code>.
+  <strong>You can remove or add new classes depending on your needs</strong>, and inside the classes you can override
+  css as you wish (for example if you want all <code>.btn-primary</code> with a custom font).</p>
 
 <h3>Variants</h3>
 
-<p>You need to specify a variant on each <code>.btn</code>. <code>-empty</code> variants are for buttons without background.</p>
+<p>You need to specify a variant on each <code>.btn</code>. <code>-empty</code> variants are for buttons without
+  background.</p>
 <p><code>.btn-link</code> is styled like normal links but with custom color.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="variants">
-    <div class="demo-text"><code>.btn-primary</code> <code>.btn-primary-empty</code> <code>.btn-secondary</code> <code>.btn-secondary-empty</code> <code>.btn-link</code></div>
+    <div class="demo-text"><code>.btn-primary</code> <code>.btn-primary-empty</code> <code>.btn-secondary</code> <code>.btn-secondary-empty</code>
+      <code>.btn-link</code></div>
     <div class="demo-source" data-lang="html">
       <div class="list-line list-space-small align-items-center">
         <button type="button" class="btn btn-primary">
@@ -507,11 +514,13 @@
 
 <h3>Sizes</h3>
 
-<p>Optional classes for assigning sizes. By default <code>.btn-medium</code> is used on all <code>.btn</code>. Sizes uses <code>em</code> padding that depends on font size.</p>
+<p>Optional classes for assigning sizes. By default <code>.btn-medium</code> is used on all <code>.btn</code>. Sizes
+  uses <code>em</code> padding that depends on font size.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="sizes">
-    <div class="demo-text"><code>.btn-tiny</code> <code>.btn-small</code>  <code>.btn-medium</code> <code>.btn-big</code> <code>.btn-giant</code></div>
+    <div class="demo-text"><code>.btn-tiny</code> <code>.btn-small</code> <code>.btn-medium</code> <code>.btn-big</code>
+      <code>.btn-giant</code></div>
     <div class="demo-source" data-lang="html">
       <div class="list-line list-space-small align-items-center">
         <button type="button" class="btn btn-primary-empty btn-tiny">
@@ -540,7 +549,8 @@
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="squared">
-    <div class="demo-text"><code>.btn-squared</code> <code>.btn-none</code> <code>.btn-icon</code> <code>.btn-tall</code> <code>.btn-short</code> <code>.btn-wide</code> <code>.btn-narrow</code></div>
+    <div class="demo-text"><code>.btn-squared</code> <code>.btn-none</code> <code>.btn-icon</code>
+      <code>.btn-tall</code> <code>.btn-short</code> <code>.btn-wide</code> <code>.btn-narrow</code></div>
     <div class="demo-source" data-lang="html">
       <div class="list-line list-space-small align-items-center">
         <button type="button" class="btn btn-primary-empty btn-medium btn-squared">
@@ -581,7 +591,8 @@
         </button>
         <div class="box">
           <button type="button" class="btn btn-close"></button>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>Nullam posuere ex ac felis venenatis pretium.<br/>Aenean aliquam interdum enim et faucibus.<br/>In tempor convallis est vel dapibus.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>Nullam posuere ex ac felis venenatis
+          pretium.<br/>Aenean aliquam interdum enim et faucibus.<br/>In tempor convallis est vel dapibus.
         </div>
       </div>
     </div>
@@ -620,7 +631,7 @@
           </article>
 
         </div>
-        <div class="column md-3 hide show-md">
+        <div class="col col-md-3 hide show-md">
 
           <aside class="site-aside" data-xt-scroll='{"top": ".site-breadcrumbs.xt-clone"}'>
 
@@ -644,7 +655,7 @@
 
 
         <footer class="site-footer" data-xt-scroll='{"top": "-1"}'>
-          <div class="contain-fluid">
+          <div class="container-fluid">
             
             <nav class="site-footer-top display-none display-block-sm" role="navigation">
               <div class="flex flex-auto justify-content-between">

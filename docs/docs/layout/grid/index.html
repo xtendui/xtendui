@@ -11,7 +11,7 @@
 
     <!-- seo -->
     <title>Grid • Xtend</title>
-    <meta name="description" content="Lorem ipsum" />
+    <meta name="description" content="Take advance of the powerfull flexbox grid with container and columns classes and mixins." />
 
     <!-- icons -->
     <link rel="icon" href="/assets/images/favicon.png?v=0.1.6" />
@@ -29,7 +29,7 @@
       <header class="site-header">
 
         <div class="site-header-top" data-xt-scroll='{"bottom": ".site-breadcrumbs.xt-clone"}'>
-          <div class="contain-fluid">
+          <div class="container-fluid">
 
             <div class="flex flex-auto justify-content-between align-items-center">
               <div>
@@ -59,7 +59,7 @@
             <div class="overlay-content">
 
               <div class="site-header-top">
-                <div class="contain-fluid">
+                <div class="container-fluid">
 
                   <div class="flex flex-auto justify-content-between align-items-center">
                     <div>
@@ -114,11 +114,11 @@
 
         <div class="site-hero">
 
-          <div class="contain-fluid">
+          <div class="container-fluid">
             <div class="flex flex-auto align-items-center align-content-center justify-content-between">
               <div class="site-hero-text">
-                <h1 class="h1">Grid</h1>
-                <p class="font-giant">Lorem ipsum</p>
+                <h1>Grid</h1>
+                <p class="font-giant">Take advance of the powerfull flexbox grid with container and columns classes and mixins.</p>
               </div>
               <div class="site-hero-img">
                 <!--
@@ -132,7 +132,7 @@
 
         <nav class="site-breadcrumbs" role="navigation" data-xt-scroll>
           <div class="site-breadcrumbs-inside">
-            <div class="contain-fluid">
+            <div class="container-fluid">
               <div class="flex flex-auto justify-content-between align-items-start">
 
                 <div class="site-breadcrumbs-body flex flex-space-none" data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave"}'>
@@ -437,16 +437,44 @@
 
 <main class="site-main">
   <div class="site-main-inside">
-    <div class="contain-fluid">
+    <div class="container-fluid">
       <div class="flex">
-        <div class="column md-9">
+        <div class="col col-md-9">
 
           <article class="site-article">
-            
+            <p class="alert">Read the documentation of <a href="/docs/layout/">Layout</a> with theming and usage
+  info.</p>
+
+<h2>Container</h2>
+
+<p>Containers are needed to center the website's contents and add spacing on the side. <strong>Normal
+  containers</strong> <code>.container</code> have fixed width for each breakpoints, <strong>fluid containers</strong>
+  <code>.container-fluid</code> have 100% of viewport width until max-width is reached.</code></p>
+
+<p class="alert">You can set container's size and space in the <code>_variables.less</code> file. Read the documentation
+  of <a href="/docs/intro/variables/#container">grid's variables</a>.</p>
+
+<pre>
+  <code class="html">
+    <div class="container">
+      <!-- content -->
+    </div>
+    <div class="container-fluid">
+      <!-- content -->
+    </div>
+  </code>
+</pre>
+
+<h2>Grid</h2>
+
+<p class="alert">You can set grid's breakpoints in the <code>_variables.less</code> file. Read the documentation of <a
+  href="/docs/intro/variables/#grid">grid's variables</a>.</p>
+
+<p>Columns are placed in a column/row layout using <a href="/docs/layout/flex/">flex</a>.</p>
           </article>
 
         </div>
-        <div class="column md-3 hide show-md">
+        <div class="col col-md-3 hide show-md">
 
           <aside class="site-aside" data-xt-scroll='{"top": ".site-breadcrumbs.xt-clone"}'>
 
@@ -470,7 +498,7 @@
 
 
         <footer class="site-footer" data-xt-scroll='{"top": "-1"}'>
-          <div class="contain-fluid">
+          <div class="container-fluid">
             
             <nav class="site-footer-top display-none display-block-sm" role="navigation">
               <div class="flex flex-auto justify-content-between">

@@ -273,9 +273,6 @@
         .align-content-stretch() !important;
       }
       
-      .align-self-auto {
-        .align-self-auto() !important;
-      }
       .align-self-start {
         .align-self-start() !important;
       }
@@ -290,6 +287,9 @@
       }
       .align-self-stretch {
         .align-self-stretch() !important;
+      }
+      .align-self-auto {
+        .align-self-auto() !important;
       }
       
     }
@@ -453,12 +453,12 @@
     .generate-order(@breakpoint, @i - 1);
     @val: extract(@orders, @i);
     & when (@breakpoint = none) {
-      .o-@{val} {
+      .order-@{val} {
         .flex-order(@val) !important;
       }
     }
     & when not (@breakpoint = none) {
-      .o-@{breakpoint}-@{val} {
+      .order-@{breakpoint}-@{val} {
         .flex-order(@val) !important;
       }
     }

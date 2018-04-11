@@ -15,6 +15,26 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // docs
 //////////////////////
 
+// formatCode
+
+var formatCode = function formatCode(source, lang) {
+  var text = source.innerHTML;
+  if (lang === 'css' || lang === 'js') {
+    text = text.replace(/<[^>]*>/g, '');
+  }
+  if (text.match(/[&<>]/g)) {
+    // replace quote entities
+    text = text.replace(/&quot;/g, '"');
+    // replace entities
+    text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    // replace json quotes
+    text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'');
+    // replace empty quotes
+    text = text.replace(/=""/g, '');
+  }
+  return text;
+};
+
 // highlight
 
 var _iteratorNormalCompletion = true;
@@ -25,7 +45,41 @@ try {
   for (var _iterator = document.querySelectorAll('pre code')[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
     var el = _step.value;
 
-    el.innerHTML = el.innerHTML.replace(/^\s+|\s+$/g, ''); // remove newline at start and end
+    var lang = el.className;
+    var text = formatCode(el, lang);
+    // remove tabs
+    var arr = text.split('\n');
+    var toRemove = arr[1].search(/\S/g);
+    var _iteratorNormalCompletion14 = true;
+    var _didIteratorError14 = false;
+    var _iteratorError14 = undefined;
+
+    try {
+      for (var _iterator14 = arr.keys()[Symbol.iterator](), _step14; !(_iteratorNormalCompletion14 = (_step14 = _iterator14.next()).done); _iteratorNormalCompletion14 = true) {
+        var i = _step14.value;
+
+        arr[i] = arr[i].substring(toRemove);
+      }
+    } catch (err) {
+      _didIteratorError14 = true;
+      _iteratorError14 = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion14 && _iterator14.return) {
+          _iterator14.return();
+        }
+      } finally {
+        if (_didIteratorError14) {
+          throw _iteratorError14;
+        }
+      }
+    }
+
+    text = arr.join('\n');
+    // remove newline at start and end
+    text = text.replace(/^\s+|\s+$/g, '');
+    // set text
+    el.innerHTML = text;
     window.hljs.highlightBlock(el);
   }
 
@@ -139,13 +193,13 @@ try {
     var _el4 = _step5.value;
 
     var container = _xtendUtils2.default.parents(_el4, '.site-aside-text')[0];
-    var _iteratorNormalCompletion12 = true;
-    var _didIteratorError12 = false;
-    var _iteratorError12 = undefined;
+    var _iteratorNormalCompletion15 = true;
+    var _didIteratorError15 = false;
+    var _iteratorError15 = undefined;
 
     try {
-      for (var _iterator12 = document.querySelectorAll('.site-article > h2, .site-article > h3')[Symbol.iterator](), _step12; !(_iteratorNormalCompletion12 = (_step12 = _iterator12.next()).done); _iteratorNormalCompletion12 = true) {
-        var element = _step12.value;
+      for (var _iterator15 = document.querySelectorAll('.site-article > h2, .site-article > h3')[Symbol.iterator](), _step15; !(_iteratorNormalCompletion15 = (_step15 = _iterator15.next()).done); _iteratorNormalCompletion15 = true) {
+        var element = _step15.value;
 
         if (element.tagName === 'H2') {
           container.append(_xtendUtils2.default.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-site-aside-sub">' + element.textContent + '</a>'));
@@ -156,16 +210,16 @@ try {
         }
       }
     } catch (err) {
-      _didIteratorError12 = true;
-      _iteratorError12 = err;
+      _didIteratorError15 = true;
+      _iteratorError15 = err;
     } finally {
       try {
-        if (!_iteratorNormalCompletion12 && _iterator12.return) {
-          _iterator12.return();
+        if (!_iteratorNormalCompletion15 && _iterator15.return) {
+          _iterator15.return();
         }
       } finally {
-        if (_didIteratorError12) {
-          throw _iteratorError12;
+        if (_didIteratorError15) {
+          throw _iteratorError15;
         }
       }
     }
@@ -525,25 +579,6 @@ var populateSources = function populateSources(item, element, id, z) {
   }
 };
 
-// formatCode
-var formatCode = function formatCode(source, lang) {
-  var text = source.innerHTML;
-  if (lang === 'css' || lang === 'js') {
-    text = text.replace(/<[^>]*>/g, '');
-  }
-  if (text.match(/[&<>]/g)) {
-    // replace quote entities
-    text = text.replace(/&quot;/g, '"');
-    // replace entities
-    text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    // replace json quotes
-    text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'');
-    // replace empty quotes
-    text = text.replace(/=""/g, '');
-  }
-  return text;
-};
-
 // init demos
 
 var _iteratorNormalCompletion11 = true;
@@ -553,10 +588,10 @@ var _iteratorError11 = undefined;
 try {
   for (var _iterator11 = document.querySelectorAll('.demo').entries()[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
     var _step11$value = _slicedToArray(_step11.value, 2),
-        i = _step11$value[0],
+        _i2 = _step11$value[0],
         _el5 = _step11$value[1];
 
-    populateDemo(_el5, i);
+    populateDemo(_el5, _i2);
     // enable fullscreen
     /*
     element.find('.demo-tabs-left .button').on('on', function(e, obj) {
@@ -580,8 +615,10 @@ try {
   }
 
   //////////////////////
-  // xtend
+  // others
   //////////////////////
+
+  // .demo-cols
 } catch (err) {
   _didIteratorError11 = true;
   _iteratorError11 = err;
@@ -593,6 +630,110 @@ try {
   } finally {
     if (_didIteratorError11) {
       throw _iteratorError11;
+    }
+  }
+}
+
+var _iteratorNormalCompletion12 = true;
+var _didIteratorError12 = false;
+var _iteratorError12 = undefined;
+
+try {
+  for (var _iterator12 = document.querySelectorAll('.demo-cols')[Symbol.iterator](), _step12; !(_iteratorNormalCompletion12 = (_step12 = _iterator12.next()).done); _iteratorNormalCompletion12 = true) {
+    var _element = _step12.value;
+    var _iteratorNormalCompletion16 = true;
+    var _didIteratorError16 = false;
+    var _iteratorError16 = undefined;
+
+    try {
+      for (var _iterator16 = _element.querySelectorAll('.col').entries()[Symbol.iterator](), _step16; !(_iteratorNormalCompletion16 = (_step16 = _iterator16.next()).done); _iteratorNormalCompletion16 = true) {
+        var _step16$value = _slicedToArray(_step16.value, 2),
+            _i3 = _step16$value[0],
+            _el6 = _step16$value[1];
+
+        _el6.setAttribute('data-index', _i3);
+      }
+    } catch (err) {
+      _didIteratorError16 = true;
+      _iteratorError16 = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion16 && _iterator16.return) {
+          _iterator16.return();
+        }
+      } finally {
+        if (_didIteratorError16) {
+          throw _iteratorError16;
+        }
+      }
+    }
+  }
+
+  // .demo-cols-nested
+} catch (err) {
+  _didIteratorError12 = true;
+  _iteratorError12 = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion12 && _iterator12.return) {
+      _iterator12.return();
+    }
+  } finally {
+    if (_didIteratorError12) {
+      throw _iteratorError12;
+    }
+  }
+}
+
+var _iteratorNormalCompletion13 = true;
+var _didIteratorError13 = false;
+var _iteratorError13 = undefined;
+
+try {
+  for (var _iterator13 = document.querySelectorAll('.demo-cols-nested .col')[Symbol.iterator](), _step13; !(_iteratorNormalCompletion13 = (_step13 = _iterator13.next()).done); _iteratorNormalCompletion13 = true) {
+    var _element2 = _step13.value;
+    var _iteratorNormalCompletion17 = true;
+    var _didIteratorError17 = false;
+    var _iteratorError17 = undefined;
+
+    try {
+      for (var _iterator17 = _element2.querySelectorAll('.col').entries()[Symbol.iterator](), _step17; !(_iteratorNormalCompletion17 = (_step17 = _iterator17.next()).done); _iteratorNormalCompletion17 = true) {
+        var _step17$value = _slicedToArray(_step17.value, 2),
+            _i4 = _step17$value[0],
+            _el7 = _step17$value[1];
+
+        _el7.setAttribute('data-index', _i4);
+      }
+    } catch (err) {
+      _didIteratorError17 = true;
+      _iteratorError17 = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion17 && _iterator17.return) {
+          _iterator17.return();
+        }
+      } finally {
+        if (_didIteratorError17) {
+          throw _iteratorError17;
+        }
+      }
+    }
+  }
+
+  //////////////////////
+  // xtend
+  //////////////////////
+} catch (err) {
+  _didIteratorError13 = true;
+  _iteratorError13 = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion13 && _iterator13.return) {
+      _iterator13.return();
+    }
+  } finally {
+    if (_didIteratorError13) {
+      throw _iteratorError13;
     }
   }
 }

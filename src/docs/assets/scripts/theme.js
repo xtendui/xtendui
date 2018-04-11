@@ -2,10 +2,42 @@
 // docs
 //////////////////////
 
+// formatCode
+
+const formatCode = function (source, lang) {
+  let text = source.innerHTML;
+  if (lang === 'css' || lang === 'js') {
+    text = text.replace(/<[^>]*>/g, '');
+  }
+  if (text.match(/[&<>]/g)) {
+    // replace quote entities
+    text = text.replace(/&quot;/g, '"');
+    // replace entities
+    text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    // replace json quotes
+    text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'');
+    // replace empty quotes
+    text = text.replace(/=""/g, '');
+  }
+  return text;
+};
+
 // highlight
 
 for (let el of document.querySelectorAll('pre code')) {
-  el.innerHTML = el.innerHTML.replace(/^\s+|\s+$/g, ''); // remove newline at start and end
+  let lang = el.className;
+  let text = formatCode(el, lang);
+  // remove tabs
+  let arr = text.split('\n');
+  var toRemove = arr[1].search(/\S/g);
+  for (let i of arr.keys()) {
+    arr[i] = arr[i].substring(toRemove);
+  }
+  text = arr.join('\n');
+  // remove newline at start and end
+  text = text.replace(/^\s+|\s+$/g, '');
+  // set text
+  el.innerHTML = text;
   window.hljs.highlightBlock(el);
 }
 
@@ -269,25 +301,6 @@ const populateSources = function (item, element, id, z) {
   }
 };
 
-// formatCode
-const formatCode = function (source, lang) {
-  let text = source.innerHTML;
-  if (lang === 'css' || lang === 'js') {
-    text = text.replace(/<[^>]*>/g, '');
-  }
-  if (text.match(/[&<>]/g)) {
-    // replace quote entities
-    text = text.replace(/&quot;/g, '"');
-    // replace entities
-    text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    // replace json quotes
-    text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'');
-    // replace empty quotes
-    text = text.replace(/=""/g, '');
-  }
-  return text;
-};
-
 // init demos
 
 for (let [i, el] of document.querySelectorAll('.demo').entries()) {
@@ -312,6 +325,26 @@ for (let [i, el] of document.querySelectorAll('.demo').entries()) {
     "targets": ".demo-item",
     "min": 1
   });
+}
+
+//////////////////////
+// others
+//////////////////////
+
+// .demo-cols
+
+for (let element of document.querySelectorAll('.demo-cols')) {
+  for (let [i, el] of element.querySelectorAll('.col').entries()) {
+    el.setAttribute('data-index', i);
+  }
+}
+
+// .demo-cols-nested
+
+for (let element of document.querySelectorAll('.demo-cols-nested .col')) {
+  for (let [i, el] of element.querySelectorAll('.col').entries()) {
+    el.setAttribute('data-index', i);
+  }
 }
 
 //////////////////////

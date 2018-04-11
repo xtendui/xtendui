@@ -2,6 +2,35 @@
 title: Grid
 categories: [Layout]
 order: 100
-
-description: Lorem ipsum
+description: Take advance of the powerfull flexbox grid with container and columns classes and mixins.
 ---
+
+<p class="alert">Read the documentation of <a href="{% link _docs/layout.html %}">Layout</a> with theming and usage
+  info.</p>
+
+<h2>Container</h2>
+
+<p>Containers are needed to center the website's contents and add spacing on the side. <strong>Normal
+  containers</strong> <code>.container</code> have fixed width for each breakpoints, <strong>fluid containers</strong>
+  <code>.container-fluid</code> have 100% of viewport width until max-width is reached.</code></p>
+
+<p class="alert">You can set container's size and space in the <code>_variables.less</code> file. Read the documentation
+  of <a href="{% link _docs/intro/variables.html %}#container">grid's variables</a>.</p>
+
+<pre>
+  <code class="html">
+    <div class="container">
+      <!-- content -->
+    </div>
+    <div class="container-fluid">
+      <!-- content -->
+    </div>
+  </code>
+</pre>
+
+<h2>Grid</h2>
+
+<p class="alert">You can set grid's breakpoints in the <code>_variables.less</code> file. Read the documentation of <a
+  href="{% link _docs/intro/variables.html %}#grid">grid's variables</a>.</p>
+
+<p>Columns are placed in a column/row layout using <a href="{% link _docs/layout/flex.html %}">flex</a>.</p>

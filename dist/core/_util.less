@@ -745,19 +745,6 @@
 
 // align-self
 
-.align-self-auto(@breakpoint:none) when (@breakpoint = none) {
-  -ms-flex-item-align: auto;
-  align-self: auto;
-}
-
-.align-self-auto(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    -ms-flex-item-align: auto;
-    align-self: auto;
-  }
-}
-
 .align-self-start(@breakpoint:none) when (@breakpoint = none) {
   -ms-flex-item-align: start;
   align-self: flex-start;
@@ -820,6 +807,19 @@
   @media @@query-min {
     -ms-flex-item-align: stretch;
     align-self: stretch;
+  }
+}
+
+.align-self-auto(@breakpoint:none) when (@breakpoint = none) {
+  -ms-flex-item-align: auto;
+  align-self: auto;
+}
+
+.align-self-auto(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-item-align: auto;
+    align-self: auto;
   }
 }
 

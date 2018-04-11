@@ -3,65 +3,55 @@ title: Flex
 categories: [Layout]
 order: 200
 
-description: Lorem ipsum
+description: Flex is used to place it's childrens in a column/row layout. You can set and all the flex's properties using utils classes or mixins.
 ---
 
-<!--
-<h2>Contain</h2>
+<p class="alert">Read the documentation of <a href="{% link _docs/layout.html %}">Layout</a> with theming and usage
+  info.</p>
 
-<p>You can set <code>.contain</code> sizes and spacing inside the .less file.</p>
+<h2>Flex</h2>
 
-<pre><code class="html">
-&lt;!-- contain inside responsive sizes --&gt;
-&lt;div class="contain"&gt;
-  &lt;!-- content --&gt;
-&lt;/div&gt;
+<p>Use <code>.flex</code> to create a column/row layout.</p>
 
-&lt;!-- fluid size contain --&gt;
-&lt;div class="contain fluid"&gt;
-  &lt;!-- content --&gt;
-&lt;/div&gt;
-</code></pre>
-
-<h2>Flex and Columns</h2>
-
-<p>@TODO table column sizes with .-auto</p>
-
-<p><code>.flex</code> and <code>.column</code>.</p>
-  
 <div class="demo">
-  <div class="demo-item demo-preview" data-name="columns">
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex">
-  <div class="column all-4"></div>
-  <div class="column all-8"></div>
-  <div class="column sm-8"></div>
-  <div class="column sm-4"></div>
-  <div class="column all-auto sm-2"></div>
-  <div class="column all-auto"></div>
-  <div class="column all-auto sm-2 lg-auto"></div>
-</div>
+  <div class="demo-item demo-preview" data-name="cols">
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-12 col-sm-8"></div>
+        <div class="col col-12 col-sm-4"></div>
+        <div class="col col-sm-2"></div>
+        <div class="col"></div>
+        <div class="col col-sm-2 col-lg-auto"></div>
+      </div>
     </div>
   </div>
+</div>
+
+<p>You can nest <code>.flex</code>, but a flex children can't be a flex itself.</p>
+
+<div class="demo">
   <div class="demo-item demo-preview" data-name="nested">
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex">
-  <div class="column all-4">
-    <div class="flex">
-      <div class="column all-4"></div>
-      <div class="column all-8"></div>
-      <div class="column all-8"></div>
-      <div class="column all-4"></div>
-    </div>
-  </div>
-  <div class="column all-auto">
-    <div class="flex">
-      <div class="column all-auto xs-6"></div>
-      <div class="column all-auto sm-2"></div>
-      <div class="column all-auto"></div>
-    </div>
-  </div>
-</div>
+    <div class="demo-source demo-cols-nested" data-lang="html">
+      <div class="flex">
+        <div class="col col-4">
+          <div class="flex">
+            <div class="col col-4"></div>
+            <div class="col col-8"></div>
+            <div class="col col-8"></div>
+            <div class="col col-4"></div>
+          </div>
+        </div>
+        <div class="col col-8">
+          <div class="flex">
+            <div class="col col-12 col-sm-8"></div>
+            <div class="col col-12 col-sm-4"></div>
+            <div class="col"></div>
+            <div class="col col-sm-2 col-lg-auto"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -70,290 +60,468 @@ description: Lorem ipsum
 
 <h3>Sizes</h3>
 
-<p>You can set <strong>default size</strong> inside the .less file.</p>
-<p>For automatic spacing use the classes <code>.spacing-auto</code> <code>.spacing-top</code><code>.spacing-bottom</code>.</p>
+<p class="alert">You can set flex's sizes <code>_variables.less</code> file. Read the documentation of <a
+  href="{% link _docs/intro/variables.html %}#flex">flex's variables</a>.</p>
+
+<p>Flex automatically add horizontal and vertical spacing to the contents.</p>
 
 <div class="demo">
-  <div class="demo-item demo-preview" data-name="default">
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex spacing-auto">
-  <div class="column all-4"></div>
-  <div class="column all-8"></div>
-  <div class="column sm-8"></div>
-  <div class="column sm-4"></div>
-  <div class="column all-auto sm-2"></div>
-  <div class="column all-auto"></div>
-  <div class="column all-auto sm-2 lg-auto"></div>
-</div>
-<small class="muted">* Automatic spacing</small>
-    </div>
-  </div>
   <div class="demo-item demo-preview" data-name="none">
-    <div class="demo-text"><code>.none</code>.</div>
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex none spacing-auto">
-  <div class="column all-4"></div>
-  <div class="column all-8"></div>
-  <div class="column sm-8"></div>
-  <div class="column sm-4"></div>
-  <div class="column all-auto sm-2"></div>
-  <div class="column all-auto"></div>
-  <div class="column all-auto sm-2 lg-auto"></div>
-</div>
-<small class="muted">* Automatic spacing</small>
+    <div class="demo-text"><code>.flex-space-none</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex flex-space-none">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-12 col-sm-8"></div>
+        <div class="col col-12 col-sm-4"></div>
+        <div class="col col-sm-2"></div>
+        <div class="col"></div>
+        <div class="col col-sm-2 col-lg-auto"></div>
+      </div>
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="tiny">
-    <div class="demo-text"><code>.tiny</code>.</div>
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex tiny spacing-auto">
-  <div class="column all-4"></div>
-  <div class="column all-8"></div>
-  <div class="column sm-8"></div>
-  <div class="column sm-4"></div>
-  <div class="column all-auto sm-2"></div>
-  <div class="column all-auto"></div>
-  <div class="column all-auto sm-2 lg-auto"></div>
-</div>
-<small class="muted">* Automatic spacing</small>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="small">
-    <div class="demo-text"><code>.small</code>.</div>
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex small spacing-auto">
-  <div class="column all-4"></div>
-  <div class="column all-8"></div>
-  <div class="column sm-8"></div>
-  <div class="column sm-4"></div>
-  <div class="column all-auto sm-2"></div>
-  <div class="column all-auto"></div>
-  <div class="column all-auto sm-2 lg-auto"></div>
-</div>
-<small class="muted">* Automatic spacing</small>
+    <div class="demo-text"><code>.flex-space-tiny</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex flex-space-tiny">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-12 col-sm-8"></div>
+        <div class="col col-12 col-sm-4"></div>
+        <div class="col col-sm-2"></div>
+        <div class="col"></div>
+        <div class="col col-sm-2 col-lg-auto"></div>
+      </div>
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="medium">
-    <div class="demo-text"><code>.medium</code>.</div>
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex medium spacing-auto">
-  <div class="column all-4"></div>
-  <div class="column all-8"></div>
-  <div class="column sm-8"></div>
-  <div class="column sm-4"></div>
-  <div class="column all-auto sm-2"></div>
-  <div class="column all-auto"></div>
-  <div class="column all-auto sm-2 lg-auto"></div>
-</div>
-<small class="muted">* Automatic spacing</small>
+    <div class="demo-text"><code>.flex-space-small</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex flex-space-small">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-12 col-sm-8"></div>
+        <div class="col col-sm-4"></div>
+        <div class="col col-sm-2"></div>
+        <div class="col"></div>
+        <div class="col col-sm-2 col-lg-auto"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="medium">
+    <div class="demo-text"><code>.flex-space-medium</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex flex-space-medium">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-12 col-sm-8"></div>
+        <div class="col col-12 col-sm-4"></div>
+        <div class="col col-sm-2"></div>
+        <div class="col"></div>
+        <div class="col col-sm-2 col-lg-auto"></div>
+      </div>
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="big">
-    <div class="demo-text"><code>.big</code>.</div>
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex big spacing-auto">
-  <div class="column all-4"></div>
-  <div class="column all-8"></div>
-  <div class="column sm-8"></div>
-  <div class="column sm-4"></div>
-  <div class="column all-auto sm-2"></div>
-  <div class="column all-auto"></div>
-  <div class="column all-auto sm-2 lg-auto"></div>
-</div>
-<small class="muted">* Automatic spacing</small>
+    <div class="demo-text"><code>.flex-space-big</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex flex-space-big">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-12 col-sm-8"></div>
+        <div class="col col-12 col-sm-4"></div>
+        <div class="col col-sm-2"></div>
+        <div class="col"></div>
+        <div class="col col-sm-2 col-lg-auto"></div>
+      </div>
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="giant">
-    <div class="demo-text"><code>.giant</code>.</div>
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex giant spacing-auto">
-  <div class="column all-4"></div>
-  <div class="column all-8"></div>
-  <div class="column sm-8"></div>
-  <div class="column sm-4"></div>
-  <div class="column all-auto sm-2"></div>
-  <div class="column all-auto"></div>
-  <div class="column all-auto sm-2 lg-auto"></div>
-</div>
-<small class="muted">* Automatic spacing</small>
+    <div class="demo-text"><code>.flex-space-giant</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex flex-space-giant">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-12 col-sm-8"></div>
+        <div class="col col-12 col-sm-4"></div>
+        <div class="col col-sm-2"></div>
+        <div class="col"></div>
+      </div>
     </div>
   </div>
 </div>
 
-<h3>Alignment</h3>
-
-<p>You can set <strong>default alignment</strong> inside the .less file.</p>
+<h3>Direction</h3>
 
 <div class="demo">
-  <div class="demo-item demo-preview" data-name="default">
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex" style="height: 175px;">
-  <div class="column all-4"></div>
-  <div class="column all-8"></div>
-  <div class="column all-8"></div>
-  <div class="column all-4"></div>
-</div>
+  <div class="demo-item demo-preview" data-name="row">
+    <div class="demo-text"><code>.flex-row</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex flex-row">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-12 col-sm-8"></div>
+        <div class="col col-12 col-sm-4"></div>
+        <div class="col col-sm-2"></div>
+        <div class="col"></div>
+        <div class="col col-sm-2 col-lg-auto"></div>
+      </div>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="middle">
-    <div class="demo-text"><code>.middle</code>.</div>
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex middle" style="height: 175px;">
-  <div class="column all-4"></div>
-  <div class="column all-8"></div>
-  <div class="column all-8"></div>
-  <div class="column all-4"></div>
-</div>
+  <div class="demo-item demo-preview" data-name="row-reverse">
+    <div class="demo-text"><code>.flex-row-reverse</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex flex-row-reverse">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-12 col-sm-8"></div>
+        <div class="col col-12 col-sm-4"></div>
+        <div class="col col-sm-2"></div>
+        <div class="col"></div>
+        <div class="col col-sm-2 col-lg-auto"></div>
+      </div>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="top">
-    <div class="demo-text"><code>.top</code>.</div>
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex top" style="height: 175px;">
-  <div class="column all-4"></div>
-  <div class="column all-8"></div>
-  <div class="column all-8"></div>
-  <div class="column all-4"></div>
-</div>
+  <div class="demo-item demo-preview" data-name="column">
+    <div class="demo-text"><code>.flex-column</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex flex-column">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-12 col-sm-8"></div>
+        <div class="col col-12 col-sm-4"></div>
+        <div class="col col-sm-2"></div>
+        <div class="col"></div>
+        <div class="col col-sm-2 col-lg-auto"></div>
+      </div>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="bottom">
-    <div class="demo-text"><code>.bottom</code>.</div>
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex bottom" style="height: 175px;">
-  <div class="column all-4"></div>
-  <div class="column all-8"></div>
-  <div class="column all-8"></div>
-  <div class="column all-4"></div>
-</div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="stretch">
-    <div class="demo-text"><code>.stretch</code>.</div>
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex stretch" style="height: 175px;">
-  <div class="column all-4"></div>
-  <div class="column all-8"></div>
-  <div class="column all-8"></div>
-  <div class="column all-4"></div>
-</div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="granular">
-    <div class="demo-text">You can set alignment granularly to the single items.</div>
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex top" style="height: 175px;">
-  <div class="column all-4 middle"></div>
-  <div class="column all-8 stretch"></div>
-  <div class="column all-8"></div>
-  <div class="column all-4"></div>
-</div>
+  <div class="demo-item demo-preview" data-name="column-reverse">
+    <div class="demo-text"><code>.flex-column-reverse</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex flex-column-reverse">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-12 col-sm-8"></div>
+        <div class="col col-12 col-sm-4"></div>
+        <div class="col col-sm-2"></div>
+        <div class="col"></div>
+        <div class="col col-sm-2 col-lg-auto"></div>
+      </div>
     </div>
   </div>
 </div>
 
-<h3>Justification</h3>
-
-<p>You can set <strong>default justification</strong> inside the .less file.</p>
+<h3>Wrap</h3>
 
 <div class="demo">
-  <div class="demo-item demo-preview" data-name="default">
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex">
-  <div class="column xs-2"></div>
-  <div class="column xs-4"></div>
-</div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="left">
-    <div class="demo-text"><code>.left</code>.</div>
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex left">
-  <div class="column xs-2"></div>
-  <div class="column xs-4"></div>
-</div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="right">
-    <div class="demo-text"><code>.right</code>.</div>
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex right">
-  <div class="column xs-2"></div>
-  <div class="column xs-4"></div>
-</div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="center">
-    <div class="demo-text"><code>.center</code>.</div>
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex center">
-  <div class="column xs-2"></div>
-  <div class="column xs-4"></div>
-</div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="between">
-    <div class="demo-text"><code>.between</code>.</div>
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex between">
-  <div class="column xs-2"></div>
-  <div class="column xs-4"></div>
-</div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="around">
-    <div class="demo-text"><code>.around</code>.</div>
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex around">
-  <div class="column xs-2"></div>
-  <div class="column xs-4"></div>
-</div>
+  <div class="demo-item demo-preview" data-name="reverse">
+    <div class="demo-text"><code>.flex-wrap</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex flex-wrap">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-12 col-sm-8"></div>
+        <div class="col col-12 col-sm-4"></div>
+        <div class="col col-sm-2"></div>
+        <div class="col"></div>
+        <div class="col col-sm-2 col-lg-auto"></div>
+      </div>
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="reverse">
-    <div class="demo-text"><code>.reverse</code> and <code>.wrap-reverse</code>.</div>
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex reverse">
-  <div class="column xs-2"></div>
-  <div class="column xs-4"></div>
+    <div class="demo-text"><code>.flex-wrap-reverse</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex flex-wrap-reverse">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-12 col-sm-8"></div>
+        <div class="col col-12 col-sm-4"></div>
+        <div class="col col-sm-2"></div>
+        <div class="col"></div>
+        <div class="col col-sm-2 col-lg-auto"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="nowrap">
+    <div class="demo-text"><code>.flex-nowrap</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex flex-nowrap">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-12 col-sm-8"></div>
+        <div class="col col-12 col-sm-4"></div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="flex wrap-reverse">
-  <div class="column all-4"></div>
-  <div class="column all-8"></div>
-  <div class="column sm-8"></div>
-  <div class="column sm-4"></div>
-  <div class="column all-auto sm-2"></div>
-  <div class="column all-auto"></div>
-  <div class="column all-auto sm-2 lg-auto"></div>
+
+<h3>Justify content</h3>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="start">
+    <div class="demo-text"><code>.justify-content-start</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex justify-content-start">
+        <div class="col col-2"></div>
+        <div class="col col-4"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="end">
+    <div class="demo-text"><code>.justify-content-end</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex justify-content-end">
+        <div class="col col-2"></div>
+        <div class="col col-4"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="center">
+    <div class="demo-text"><code>.justify-content-center</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex justify-content-center">
+        <div class="col col-2"></div>
+        <div class="col col-4"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="between">
+    <div class="demo-text"><code>.justify-content-between</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex justify-content-between">
+        <div class="col col-2"></div>
+        <div class="col col-4"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="around">
+    <div class="demo-text"><code>.justify-content-around</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex justify-content-around">
+        <div class="col col-2"></div>
+        <div class="col col-4"></div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<h3>Align items</h3>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="start">
+    <div class="demo-text"><code>.align-items-start</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex align-items-start" style="height: 125px;">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-8"></div>
+        <div class="col col-4"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="end">
+    <div class="demo-text"><code>.align-items-end</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex align-items-end" style="height: 125px;">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-8"></div>
+        <div class="col col-4"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="center">
+    <div class="demo-text"><code>.align-items-center</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex align-items-center" style="height: 125px;">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-8"></div>
+        <div class="col col-4"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="baseline">
+    <div class="demo-text"><code>.align-items-baseline</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex align-items-baseline" style="height: 125px;">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-8"></div>
+        <div class="col col-4"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="stretch">
+    <div class="demo-text"><code>.align-items-stretch</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex align-items-stretch" style="height: 125px;">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-8"></div>
+        <div class="col col-4"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Align content</h3>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="start">
+    <div class="demo-text"><code>.align-content-start</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex align-content-start" style="height: 125px;">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-8"></div>
+        <div class="col col-4"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="end">
+    <div class="demo-text"><code>.align-content-end</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex align-content-end" style="height: 125px;">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-8"></div>
+        <div class="col col-4"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="center">
+    <div class="demo-text"><code>.align-content-center</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex align-content-center" style="height: 125px;">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-8"></div>
+        <div class="col col-4"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="between">
+    <div class="demo-text"><code>.align-content-between</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex align-content-between" style="height: 125px;">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-8"></div>
+        <div class="col col-4"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="around">
+    <div class="demo-text"><code>.align-content-around</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex align-content-around" style="height: 125px;">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-8"></div>
+        <div class="col col-4"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="stretch">
+    <div class="demo-text"><code>.align-content-stretch</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex align-content-stretch" style="height: 125px;">
+        <div class="col col-4"></div>
+        <div class="col col-8"></div>
+        <div class="col col-8"></div>
+        <div class="col col-4"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Align self</h3>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="start">
+    <div class="demo-text"><code>.align-self-start</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex">
+        <div class="col col-4" style="height: 60px;"></div>
+        <div class="col col-8 align-self-start"></div>
+        <div class="col col-8" style="height: 60px;"></div>
+        <div class="col col-4 align-self-start"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="end">
+    <div class="demo-text"><code>.align-self-end</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex">
+        <div class="col col-4" style="height: 60px;"></div>
+        <div class="col col-8 align-self-end"></div>
+        <div class="col col-8" style="height: 60px;"></div>
+        <div class="col col-4 align-self-end"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="center">
+    <div class="demo-text"><code>.align-self-center</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex">
+        <div class="col col-4" style="height: 60px;"></div>
+        <div class="col col-8 align-self-center"></div>
+        <div class="col col-8" style="height: 60px;"></div>
+        <div class="col col-4 align-self-center"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="baseline">
+    <div class="demo-text"><code>.align-self-baseline</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex">
+        <div class="col col-4" style="height: 60px;"></div>
+        <div class="col col-8 align-self-baseline"></div>
+        <div class="col col-8" style="height: 60px;"></div>
+        <div class="col col-4 align-self-baseline"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="stretch">
+    <div class="demo-text"><code>.align-self-stretch</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex">
+        <div class="col col-4" style="height: 60px;"></div>
+        <div class="col col-8 align-self-stretch"></div>
+        <div class="col col-8" style="height: 60px;"></div>
+        <div class="col col-4 align-self-stretch"></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="auto">
+    <div class="demo-text"><code>.align-self-auto</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex">
+        <div class="col col-4" style="height: 60px;"></div>
+        <div class="col col-8 align-self-auto"></div>
+        <div class="col col-8" style="height: 60px;"></div>
+        <div class="col col-4 align-self-auto"></div>
+      </div>
     </div>
   </div>
 </div>
 
 <h3>Order</h3>
 
-<p>Custom styles for order, can be a negative number, put inside media queries if you need reponsive order.</p>
-<p>@TODO link to media query</p>
-
-<pre><code class="less">
--webkit-order: 1;
--ms-flex-order: 1;
-order: 1;
-</code></pre>
-
 <div class="demo">
   <div class="demo-item demo-preview" data-name="order">
-    <div class="demo-source demo-highlight" data-lang="html">
-<div class="flex">
-  <div class="column all-4"></div>
-  <div class="column all-8" style="-webkit-order: -1; -ms-flex-order: -1; order: -1;"></div>
-  <div class="column sm-8"></div>
-  <div class="column sm-4"></div>
-  <div class="column all-auto sm-2"></div>
-  <div class="column all-auto" style="-webkit-order: -1; -ms-flex-order: -1; order: -1;"></div>
-  <div class="column all-auto sm-2 lg-auto"></div>
-</div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <div class="flex">
+        <div class="col col-4 order-2"></div>
+        <div class="col col-8 order-2"></div>
+        <div class="col col-12 col-sm-8 order-lg-1"></div>
+        <div class="col col-12 col-sm-4 order-lg-0"></div>
+        <div class="col col-sm-2 order-5"></div>
+        <div class="col order-4"></div>
+        <div class="col col-sm-2 col-lg-auto order-3"></div>
+      </div>
     </div>
   </div>
 </div>
--->

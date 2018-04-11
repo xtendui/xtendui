@@ -108,7 +108,10 @@
 
 .site-hero {
   color: @white;
-  > .contain-fluid {
+  .site-hero-text {
+    .font-sans-light();
+  }
+  > .container-fluid {
     // min-height
     > .flex {
       min-height: 300px;
@@ -127,7 +130,6 @@
   @media @min-sm {
     .site-hero-img,
     .site-hero-text {
-      .font-sans-light();
       max-width: 50%;
     }
   }
@@ -142,7 +144,6 @@
   cursor: default;
   .site-breadcrumbs-inside {
     .padding(y, medium);
-    border-radius: 0;
     background: @grad-primary;
     color: @white;
   }
@@ -475,7 +476,6 @@
     display: block;
     position: relative;
     width: 100%;
-    overflow: hidden;
     .line {
       display: inline-block;
       padding-right: 15px;
@@ -658,23 +658,36 @@ code {
   }
 }
 
-// .demo-highlight
+// .demo-cols
 
-.demo-highlight {
-  .column {
+.demo-cols {
+  .col {
     &:before {
-      content: '';
       position: relative;
       float: left;
       width: 100%;
-      height: 1.5rem;
+      height: 22px;
+      min-height: 100%;
+      border: 1px solid lighten(@primary, 20%);
       background-color: lighten(@primary, 25%);
+      content: attr(data-index);
+      .font-sans-semibold();
+      font-size: 12px;
+      color: lighten(@primary, 5%);
+      line-height: 1.8;
+      text-align: center;
     }
-    .column {
+    .col {
       &:before {
         background-color: @primary;
       }
     }
+  }
+}
+
+.demo-cols-nested {
+  .col {
+    .demo-cols();
   }
 }
 
@@ -697,6 +710,9 @@ code {
 
 .site-breadcrumbs[data-xt-scroll] {
   .xt-scroll(@mode:'absolute');
+  // above .site-header-top
+  .by-key(@core-indexes, scroll);
+  z-index: @by-key + 1;
   // animations
   .transition-default.out();
   .site-breadcrumbs-inside {
@@ -708,7 +724,7 @@ code {
     .site-breadcrumbs-inside {
       .padding(y, small);
       border-radius: .75rem;
-      background-color: fade(@primary, 80%);
+      .transition-default();
     }
     .site-breadcrumbs-meta {
       .animation-default();
