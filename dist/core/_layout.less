@@ -24,7 +24,7 @@
   @overlay: extract(@overlay-space, @i);
   @breakpoint: extract(@overlay, 1);
   @val-overlay: extract(@overlay, 2);
-  & when (@breakpoint = all) {
+  & when (@breakpoint = none) {
     .container {
       width: @val;
     }
@@ -32,7 +32,7 @@
       max-width: @val - @val-overlay * 2;
     }
   }
-  & when not (@breakpoint = all) {
+  & when not (@breakpoint = none) {
     @query-min: 'min-@{breakpoint}';
     @media @@query-min {
       .container {
@@ -53,14 +53,14 @@
   @container: extract(@container-space, @i);
   @breakpoint: extract(@container, 1);
   @val: extract(@container, 2);
-  & when (@breakpoint = all) {
+  & when (@breakpoint = none) {
     .container,
     .container-fluid {
       padding-right: @val;
       padding-left: @val;
     }
   }
-  & when not (@breakpoint = all) {
+  & when not (@breakpoint = none) {
     @query-min: 'min-@{breakpoint}';
     @media @@query-min {
       .container,
@@ -86,7 +86,6 @@
 }
 
 // grid
-// USAGE: .all(6); .min(lg, 6); .max(xs, 6);
 
 .col(@number, @breakpoint:none) when (@breakpoint = none) {
   @val: (percentage(@number / @columns));
@@ -113,15 +112,15 @@
 
   // generate-grid
 
-  .generate-grid(all; @columns);
+  .generate-grid(none; @columns);
   .generate-grid(@breakpoint; @columns; @i:1) when (@i =< @columns) {
     .generate-grid(@breakpoint; @columns; (@i + 1));
-    & when (@breakpoint = all) {
+    & when (@breakpoint = none) {
       .col-@{i} {
         .col(@i);
       }
     }
-    & when not (@breakpoint = all) {
+    & when not (@breakpoint = none) {
       .col-@{breakpoint}-@{i} {
         .col(@i);
       }

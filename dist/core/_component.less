@@ -239,12 +239,12 @@ a, .alink, .btn-link {
   @overlay: extract(@overlay-space, @i);
   @breakpoint: extract(@overlay, 1);
   @val: extract(@overlay, 2);
-  & when (@breakpoint = all) {
+  & when (@breakpoint = none) {
     .overlay .overlay-inner {
       padding: @val;
     }
   }
-  & when not (@breakpoint = all) {
+  & when not (@breakpoint = none) {
     @query-min: 'min-@{breakpoint}';
     @media @@query-min {
       .overlay .overlay-inner {
