@@ -155,10 +155,6 @@
                                     Variables
                                   </a>
                                   
-                                  <a href="/docs/intro/theming/" class="btn btn-primary">
-                                    Theming
-                                  </a>
-                                  
                                   <a href="/docs/intro/utils/" class="btn btn-primary">
                                     Utils
                                   </a>
@@ -167,6 +163,8 @@
                               
                             </div>
                           </div>
+                        
+                      
                         
                       
                         
@@ -222,6 +220,10 @@
                         
                       
                         
+                      
+                        
+                      
+                        
                           <div class="site-breadcrumbs-body-main">
                             <a href="/docs/content/" class="btn btn-primary">
                               Content
@@ -251,14 +253,6 @@
                               
                             </div>
                           </div>
-                        
-                      
-                        
-                      
-                        
-                      
-                        
-                      
                         
                       
                         
@@ -447,40 +441,97 @@
       <div class="flex">
         <div class="col col-12 col-md-9">
 
-          <article class="site-article">
-            
+          <article class="site-article default-style">
+            <h2>Installation</h2>
+
+<p>You can install with one of the following:</p>
+
+<ul>
+  <li>download: <a href="https://github.com/minimit/xtend-library/releases/latest" target="_blank">latest release</a></li>
+  <li>clone: <code>git clone https://github.com/minimit/xtend-library.git</code></li>
+  <li><a href="https://yarnpkg.com/" target="_blank">yarn</a>: <code>yarn add xtend-library --save</code></li>
+  <li><a href="https://www.npmjs.com/" target="_blank">npm</a>: <code>npm install xtend-library --save</code></li>
+  <li><a href="https://getcomposer.org/" target="_blank">composer</a>: <code>composer require minimit/xtend-library</code></li>
+</ul>
+
+<h3>Theming</h3>
+
+<p>You need to copy xtend-library <strong>/dist</strong> to customize the files.</p>
+
+<p>If you installed with <strong>yarn</strong> or <strong>npm</strong>:</p>
+
+<pre>
+  <code>
+    mkdir -p xtend-library/
+    cp -r node_modules/xtend-library/dist/ xtend-library/
+  </code>
+</pre>
+
+<p>If you installed with <strong>composer</strong>:</p>
+
+<pre>
+  <code>
+    mkdir -p xtend-library/
+    cp -r vendor/minimit/xtend-library/dist/ xtend-library/
+  </code>
+</pre>
+
+<p>After in <code>xtend.less</code> put the right path to the <strong>@import</strong> of core and theme.</p>
+
+<h2>Theme</h2>
+
+<h3>Structure</h3>
+
+<p>Theming styles are defined inside <code>/dist/theme/</code>.</p>
+
+<p><strong>You can remove or add new classes depending on your needs</strong>, and inside the classes you can override
+  css as you wish.</p>
+
+<p>The files inside <code>/dist/core/</code> are core styles that shouldn't be modified. They are separated to keep the
+  theming files shorter and cleaner.</p>
+
+<h3>Code</h3>
+
+<p>The css code is structure this way:
+
+<ul>
+  <li>You have a <em>main</em> selector (for example <code>.btn {}</code>). Inside it after <code>// styles</code> you set <strong>shared styles</strong> (like font or border), after <code>// options</code> you set the <strong>default options</strong> using a <em>option</em> class (like size or special, see point below).
+  </li>
+  <li>You have the <em>options</em> selectors after the main selector, where you put the options: for example buttons have <code>// size</code> where you put button sizes, <code>// special</code> where you put special options, <code>// variants</code> where you put the button design variants.
+  </li>
+</ul>
+
+
 <h2>Table of contents</h2>
 
-
-  
-
-    
+<ul>
   
     
-    
-      <a href="/docs/intro/variables/" class="">
-        <h5>
-          Variables
-        </h5>
-      </a>
-    
-      <a href="/docs/intro/theming/" class="">
-        <h5>
-          Theming
-        </h5>
-      </a>
-    
-      <a href="/docs/intro/utils/" class="">
-        <h5>
-          Utils
-        </h5>
-      </a>
-    
 
+      
+
+      
+      
+        <li>
+          <strong>Variables</strong> <span class="separator separator-arrow"></span>
+          <a href="/docs/intro/variables/" class=" ">
+            /docs/intro/variables/
+          </a>
+        </li>
+      
+        <li>
+          <strong>Utils</strong> <span class="separator separator-arrow"></span>
+          <a href="/docs/intro/utils/" class=" ">
+            /docs/intro/utils/
+          </a>
+        </li>
+      
+
+    
   
-
+    
   
-
+</ul>
 
           </article>
 
@@ -555,7 +606,7 @@
             <div class="site-footer-bottom">
               <div class="flex flex-auto flex-space-tiny justify-content-between">
                 <div class="site-footer-bottom-license">
-                  Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank">CC BY 3.0</a> <span class="separator">–</span> Xtend licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank">MIT</a>
+                  Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank">CC BY 3.0</a> <span class="separator separator-dash"></span> Xtend licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank">MIT</a>
                 </div>
                 <div class="site-footer-bottom-copy">
                   © 2017 – 2018 <span>Riccardo Caroli</span>

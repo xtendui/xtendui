@@ -26,7 +26,7 @@ mkdir -p xtend-library/
 cp -r vendor/minimit/xtend-library/dist/ xtend-library/
 ```
 
-After in `xtend.less` put the right path to `'xtend-library/dist/'` in **@xtend-dist**.
+After in `xtend.less` put the right path to the `@import` of core and theme.
 
 <!--
 # Acknowledgements

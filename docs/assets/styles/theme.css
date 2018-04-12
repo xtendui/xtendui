@@ -4801,35 +4801,55 @@ pre code {
   color: inherit !important;
   line-height: inherit !important;
 }
+ul.default-style,
+ol.default-style,
 .default-style ul,
 .default-style ol {
   margin-bottom: 1rem;
   padding-left: 2rem;
 }
+ul.default-style:first-child,
+ol.default-style:first-child,
 .default-style ul:first-child,
 .default-style ol:first-child {
   margin-top: 0;
 }
+ul.default-style:last-child,
+ol.default-style:last-child,
 .default-style ul:last-child,
 .default-style ol:last-child {
   margin-bottom: 0;
 }
+ul.default-style > li,
+ol.default-style > li,
+.default-style ul > li,
+.default-style ol > li {
+  margin-bottom: 1rem;
+}
+ul.default-style > ul,
+ol.default-style > ul,
 .default-style ul > ul,
 .default-style ol > ul,
+ul.default-style > ol,
+ol.default-style > ol,
 .default-style ul > ol,
 .default-style ol > ol {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+ul.default-style,
 .default-style ul {
   list-style: disc;
 }
+ul.default-style ul,
 .default-style ul ul {
   list-style: circle;
 }
+ol.default-style,
 .default-style ol {
   list-style-type: decimal;
 }
+ol.default-style ol,
 .default-style ol ol {
   list-style-type: lower-alpha;
 }
@@ -4880,6 +4900,21 @@ dl dt {
 .dl-line dd {
   margin-left: 1rem;
   margin-top: 0.5rem;
+}
+.separator {
+  display: inline-block;
+  position: relative;
+  top: -0.15em;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: .7em;
+  vertical-align: middle;
+}
+.separator-dash:before {
+  content: '–';
+}
+.separator-arrow:before {
+  content: '>';
 }
 .icon-tiny {
   font-size: 0.5em;
@@ -6643,6 +6678,9 @@ opacity: 1;
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.site-breadcrumbs .site-breadcrumbs-body-main > .btn {
+  padding-right: 2rem;
+}
 .site-breadcrumbs-body-sub {
   /*
   &.out {
@@ -6889,13 +6927,9 @@ opacity: 1;
   animation-delay: 300ms;
 }
 .site-footer {
-  padding-top: 4rem;
-  padding-bottom: 0.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   background-color: #7367F0;
-}
-.site-footer .separator {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
 }
 .site-footer-top .site-footer-top-links {
   margin-left: -1.2em !important;
@@ -6906,10 +6940,13 @@ opacity: 1;
   box-shadow: none !important;
 }
 .site-footer-bottom {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
   font-size: 1.3rem;
   color: rgba(255, 255, 255, 0.75);
+}
+@media (min-width: 768px ) {
+  .site-footer-bottom {
+    padding-top: 1rem;
+  }
 }
 .site-footer-bottom a {
   color: #fff;

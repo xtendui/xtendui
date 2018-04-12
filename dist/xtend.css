@@ -4800,35 +4800,55 @@ pre code {
   color: inherit !important;
   line-height: inherit !important;
 }
+ul.default-style,
+ol.default-style,
 .default-style ul,
 .default-style ol {
   margin-bottom: 1rem;
   padding-left: 2rem;
 }
+ul.default-style:first-child,
+ol.default-style:first-child,
 .default-style ul:first-child,
 .default-style ol:first-child {
   margin-top: 0;
 }
+ul.default-style:last-child,
+ol.default-style:last-child,
 .default-style ul:last-child,
 .default-style ol:last-child {
   margin-bottom: 0;
 }
+ul.default-style > li,
+ol.default-style > li,
+.default-style ul > li,
+.default-style ol > li {
+  margin-bottom: 1rem;
+}
+ul.default-style > ul,
+ol.default-style > ul,
 .default-style ul > ul,
 .default-style ol > ul,
+ul.default-style > ol,
+ol.default-style > ol,
 .default-style ul > ol,
 .default-style ol > ol {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+ul.default-style,
 .default-style ul {
   list-style: disc;
 }
+ul.default-style ul,
 .default-style ul ul {
   list-style: circle;
 }
+ol.default-style,
 .default-style ol {
   list-style-type: decimal;
 }
+ol.default-style ol,
 .default-style ol ol {
   list-style-type: lower-alpha;
 }
@@ -4879,6 +4899,21 @@ dl dt {
 .dl-line dd {
   margin-left: 1rem;
   margin-top: 0.5rem;
+}
+.separator {
+  display: inline-block;
+  position: relative;
+  top: -0.15em;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: .7em;
+  vertical-align: middle;
+}
+.separator-dash:before {
+  content: '–';
+}
+.separator-arrow:before {
+  content: '>';
 }
 .icon-tiny {
   font-size: 0.5em;

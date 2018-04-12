@@ -161,6 +161,11 @@
   .btn:not(.btn-icon) {
     .padding(x, small);
   }
+  .site-breadcrumbs-body-main {
+    > .btn {
+      .padding(right, medium);
+    }
+  }
 }
 
 .site-breadcrumbs-body-sub {
@@ -365,12 +370,8 @@
 // .site-footer
 
 .site-footer {
-  .padding(top, big);
-  .padding(bottom, tiny);
+  .padding(y, medium);
   background-color: @primary;
-  .separator {
-    .margin(x, tiny);
-  }
 }
 
 // .site-footer-top
@@ -389,7 +390,7 @@
 // .site-footer-bottom
 
 .site-footer-bottom {
-  .padding(y, medium);
+  .padding(top, small, sm);
   .font-small();
   color: fade(@white, 75%);
   a {

@@ -2,15 +2,8 @@
 // xtend
 //////////////////////
 
-@xtend-dist: ''; // when theming put the 'xtend-library/dist/' path
-
-// core
-
-@import '@{xtend-dist}core/__core'; // when theming put the xtend-library path relative to npm or composer
-
-// theme
-
-@import '@{xtend-dist}theme/__theme';
+@import 'core/__core'; // when theming put the xtend-library path relative to npm or composer
+@import 'theme/__theme'; // when theming put the xtend-library path relative to theming
 
 // set to false to use only mixins
 

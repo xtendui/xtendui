@@ -167,24 +167,34 @@ pre {
 // ul ol
 //////////////////////
 
-.default-style { // .default-style for default ul ol
-  ul,
-  ol {
+ul,
+ol {
+  &.default-style,
+  .default-style & {
     .margin(y, layout);
     .margin(bottom, small);
     padding-left: 2rem;
+    > li {
+      .margin(bottom, small);
+    }
     > ul,
     > ol {
       .margin(y, small);
     }
   }
-  ul {
+}
+ul {
+  &.default-style,
+  .default-style & {
     list-style: disc;
     ul {
       list-style: circle;
     }
   }
-  ol {
+}
+ol {
+  &.default-style,
+  .default-style & {
     list-style-type: decimal;
     ol {
       list-style-type: lower-alpha;
@@ -228,5 +238,28 @@ dl {
   dd {
     .margin(left, small);
     .margin(top, tiny);
+  }
+}
+
+//////////////////////
+// others
+//////////////////////
+
+.separator {
+  .display(inline-block);
+  position: relative;
+  top: -.15em;
+  .margin(x, tiny);
+  font-size: .7em;
+  vertical-align: middle;
+}
+.separator-dash {
+  &:before {
+    content: '–';
+  }
+}
+.separator-arrow {
+  &:before {
+    content: '>';
   }
 }
