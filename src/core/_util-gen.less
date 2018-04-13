@@ -458,7 +458,7 @@
       }
     }
     & when not (@breakpoint = none) {
-      .order-@{breakpoint}-@{val} {
+      .order-@{val}-@{breakpoint} {
         .flex-order(@val) !important;
       }
     }

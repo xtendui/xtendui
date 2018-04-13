@@ -121,7 +121,7 @@
       }
     }
     & when not (@breakpoint = none) {
-      .col-@{breakpoint}-@{i} {
+      .col-@{i}-@{breakpoint} {
         .col(@i);
       }
     }
@@ -137,7 +137,7 @@
       @query-min: 'min-@{breakpoint}';
       @media @@query-min {
         .generate-grid(@breakpoint; @columns);
-        .col-@{breakpoint}-auto {
+        .col-auto-@{breakpoint} {
           -webkit-flex-basis: auto;
           -ms-flex-preferred-size: 100%; // fix ie10 overflow
           flex-basis: auto;

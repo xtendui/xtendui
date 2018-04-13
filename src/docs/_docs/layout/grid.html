@@ -61,8 +61,8 @@ description: Take advance of the flexbox column/row layout with container and co
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
-      <td><code>.col-{breakpoint}-{number}</code></td>
-      <td><code>.col-sm-6</code></td>
+      <td><code>.col-{number}-{breakpoint}</code></td>
+      <td><code>.col-6-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
@@ -87,11 +87,11 @@ description: Take advance of the flexbox column/row layout with container and co
       <div class="flex">
         <div class="col col-4"></div>
         <div class="col col-8"></div>
-        <div class="col col-12 col-sm-8"></div>
-        <div class="col col-12 col-sm-4"></div>
-        <div class="col col-sm-2"></div>
+        <div class="col col-12 col-8-sm"></div>
+        <div class="col col-12 col-4-sm"></div>
+        <div class="col col-2-sm"></div>
         <div class="col"></div>
-        <div class="col col-sm-2 col-lg-auto"></div>
+        <div class="col col-2-sm col-auto-lg"></div>
       </div>
     </div>
   </div>
