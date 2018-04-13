@@ -17,8 +17,10 @@
       .block {
         .block() !important;
       }
-      // text
-      .generate-text(@breakpoint);
+      // text-transform
+      .generate-text-transform(@breakpoint);
+      // text-align
+      .generate-text-align(@breakpoint);
       // float
       .generate-float(@breakpoint);
       // display
@@ -35,8 +37,10 @@
         .block-@{breakpoint} {
           .block() !important;
         }
-        // text
-        .generate-text(@breakpoint);
+        // text-transform
+        .generate-text-transform(@breakpoint);
+        // text-align
+        .generate-text-align(@breakpoint);
         // float
         .generate-float(@breakpoint);
         // display
@@ -58,21 +62,40 @@
     
   }
   
-  // generate-text
+  // generate-text-transform
+
+  @text-transform-arr: uppercase, lowercase, capitalize, nowrap;
+  
+  .generate-text-transform(@breakpoint:none, @i:length(@text-transform-arr)) when (@i > 0) {
+    .generate-text-transform(@breakpoint, @i - 1);
+    @val: extract(@text-transform-arr, @i);
+    & when (@breakpoint = none) {
+      .text-transform-@{val} {
+        .text-transform(@val) !important;
+      }
+    }
+    & when not (@breakpoint = none) {
+      .text-transform-@{val}-@{breakpoint} {
+        .text-transform(@val) !important;
+      }
+    }
+  }
+  
+  // generate-text-align
   
   @text-arr: left, right, center;
   
-  .generate-text(@breakpoint:none, @i:length(@text-arr)) when (@i > 0) {
-    .generate-text(@breakpoint, @i - 1);
+  .generate-text-align(@breakpoint:none, @i:length(@text-arr)) when (@i > 0) {
+    .generate-text-align(@breakpoint, @i - 1);
     @val: extract(@text-arr, @i);
     & when (@breakpoint = none) {
       .text-@{val} {
-        .text(@val) !important;
+        .text-align(@val) !important;
       }
     }
     & when not (@breakpoint = none) {
       .text-@{val}-@{breakpoint} {
-        .text(@val) !important;
+        .text-align(@val) !important;
       }
     }
   }

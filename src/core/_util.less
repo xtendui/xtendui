@@ -88,29 +88,26 @@
 // text
 //////////////////////
 
-.text-upper {
-  text-transform: uppercase !important;
+// text-transform
+
+.text-transform(@val, @breakpoint:none) when (@breakpoint = none) {
+  text-transform: @val;
 }
 
-.text-lower {
-  text-transform: lowercase !important;
+.text-transform(@val, @breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    text-transform: @val;
+  }
 }
 
-.text-cap {
-  text-transform: capitalize !important;
-}
+// text-align
 
-.text-nowrap {
-  white-space: nowrap !important;
-}
-
-// text
-
-.text(@val, @breakpoint:none) when (@breakpoint = none) {
+.text-align(@val, @breakpoint:none) when (@breakpoint = none) {
   text-align: @val;
 }
 
-.text(@val, @breakpoint:none) when (default()) {
+.text-align(@val, @breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     text-align: @val;
@@ -531,35 +528,35 @@
 // list alignment
 
 .list-left(@breakpoint:none) when (@breakpoint = none) {
-  .list-btn({ .text(left); });
+  .list-btn({ .text-align(left); });
 }
 
 .list-left(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list-btn({ .text(left); });
+    .list-btn({ .text-align(left); });
   }
 }
 
 .list-center(@breakpoint:none) when (@breakpoint = none) {
-  .list-btn({ .text(center); });
+  .list-btn({ .text-align(center); });
 }
 
 .list-center(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list-btn({ .text(center); });
+    .list-btn({ .text-align(center); });
   }
 }
 
 .list-right(@breakpoint:none) when (@breakpoint = none) {
-  .list-btn({ .text(right); });
+  .list-btn({ .text-align(right); });
 }
 
 .list-right(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list-btn({ .text(right); });
+    .list-btn({ .text-align(right); });
   }
 }
 

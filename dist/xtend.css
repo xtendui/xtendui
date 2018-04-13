@@ -1140,18 +1140,6 @@ html.xt-fixed .overlay {
   border: 0;
   clip: rect(0, 0, 0, 0);
 }
-.text-upper {
-  text-transform: uppercase !important;
-}
-.text-lower {
-  text-transform: lowercase !important;
-}
-.text-cap {
-  text-transform: capitalize !important;
-}
-.text-nowrap {
-  white-space: nowrap !important;
-}
 .responsive {
   max-width: 100% !important;
   height: auto !important;
@@ -1162,6 +1150,18 @@ html.xt-fixed .overlay {
 .block {
   display: block !important;
   width: 100% !important;
+}
+.text-transform-uppercase {
+  text-transform: uppercase !important;
+}
+.text-transform-lowercase {
+  text-transform: lowercase !important;
+}
+.text-transform-capitalize {
+  text-transform: capitalize !important;
+}
+.text-transform-nowrap {
+  text-transform: nowrap !important;
 }
 .text-left {
   text-align: left !important;
@@ -1223,6 +1223,18 @@ html.xt-fixed .overlay {
   .block-sm {
     display: block !important;
     width: 100% !important;
+  }
+  .text-transform-uppercase-sm {
+    text-transform: uppercase !important;
+  }
+  .text-transform-lowercase-sm {
+    text-transform: lowercase !important;
+  }
+  .text-transform-capitalize-sm {
+    text-transform: capitalize !important;
+  }
+  .text-transform-nowrap-sm {
+    text-transform: nowrap !important;
   }
   .text-left-sm {
     text-align: left !important;
@@ -1286,6 +1298,18 @@ html.xt-fixed .overlay {
     display: block !important;
     width: 100% !important;
   }
+  .text-transform-uppercase-md {
+    text-transform: uppercase !important;
+  }
+  .text-transform-lowercase-md {
+    text-transform: lowercase !important;
+  }
+  .text-transform-capitalize-md {
+    text-transform: capitalize !important;
+  }
+  .text-transform-nowrap-md {
+    text-transform: nowrap !important;
+  }
   .text-left-md {
     text-align: left !important;
   }
@@ -1347,6 +1371,18 @@ html.xt-fixed .overlay {
   .block-lg {
     display: block !important;
     width: 100% !important;
+  }
+  .text-transform-uppercase-lg {
+    text-transform: uppercase !important;
+  }
+  .text-transform-lowercase-lg {
+    text-transform: lowercase !important;
+  }
+  .text-transform-capitalize-lg {
+    text-transform: capitalize !important;
+  }
+  .text-transform-nowrap-lg {
+    text-transform: nowrap !important;
   }
   .text-left-lg {
     text-align: left !important;
