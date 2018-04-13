@@ -425,15 +425,14 @@
         <div class="col col-12 col-9-md">
 
           <article class="site-article default-lists">
-            <p class="alert">Read the documentation of <a href="/docs/layout/">Layout</a>.</p>
-
-<h2>Container</h2>
+            <h2>Container</h2>
 
 <p>Containers are needed to center the website's contents and add spacing on the side. Add a container using the class
-  <code>.container</code> are <strong>fluid by default</strong> have 100% of viewport width until max-width is reached.</code></p>
+  <code>.container</code> are <strong>fluid by default</strong> have 100% of viewport width until max-width is
+  reached.</code></p>
 
 <p class="alert">You can set container's space in the <code>_variables.less</code> file. Read the documentation
-  of <a href="/docs/intro/variables/#container">grid's variables</a>.</p>
+  of <a href="/docs/intro/variables/#container">container's variables</a>.</p>
 
 <pre>
   <code class="html">
@@ -451,14 +450,19 @@
 
 <h3>Usage</h3>
 
-<p>Every column must have the <code>.col</code> class, by default columns have <strong>automatic width</strong> inside
-  the flexbox.</p>
+<p>Use <code>.col</code> to create a <strong>column</strong>, by default columns have <strong>automatic width</strong>
+  inside the flexbox.</p>
+
+<pre>
+  <code class="html">
+    <div class="col">
+      <!-- content -->
+    </div>
+  </code>
+</pre>
 
 <p>You can set <strong>column's width</strong> specifying a number between 1 and 12, for example <code>.col-6</code>
   will take 50% width.</p>
-
-<p>If you used a responsive columns you can set back automatic width in a bigger breakpoint using <code>auto</code>
-  instead of the number.</p>
 
 <div class="table-scroll">
   <table class="table table-small">
@@ -494,6 +498,9 @@
   </table>
 </div>
 
+<p>If you used a responsive columns you can set back automatic width in a bigger breakpoint using <code>auto</code>
+  instead of the number.</p>
+
 <p class="alert">You can set grid's count and breakpoints in the <code>_variables.less</code> file. Read the
   documentation of <a href="/docs/intro/variables/#grid">grid's variables</a>.</p>
 
@@ -512,6 +519,11 @@
     </div>
   </div>
 </div>
+
+<h2>Variables</h2>
+
+<p class="alert">Read the documentation of <a href="/docs/layout/#variables">layout's variables</a>.</p>
+
           </article>
 
         </div>
@@ -527,6 +539,17 @@
               </a>
             </div>
 
+            
+
+            
+              
+
+                
+                
+
+              
+            
+              
             
 
           </aside>

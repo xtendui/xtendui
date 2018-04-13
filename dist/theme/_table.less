@@ -4,11 +4,14 @@
 
 @table-border-width: 1px;
 
+.table, .table-scroll {
+  .margin(y, layout);
+  .margin(bottom, medium);
+}
+
 // .table
 
 .table {
-  .margin(y, layout);
-  .margin(bottom, medium);
   tr {
     border-bottom: @table-border-width solid @grey-250;
   }

@@ -6,8 +6,6 @@ order: 100
 description: Links styles and extensible button component with structured theming.
 ---
 
-<p class="alert">Read the documentation of <a href="{% link _docs/component.html %}">Component</a>.</p>
-
 <h2>Links</h2>
 
 <p>On containers use <code>.links-inverse</code> to have white links.</p>
@@ -37,7 +35,14 @@ description: Links styles and extensible button component with structured themin
 
 <h2>Buttons</h2>
 
-<p>Every button must have the <code>.btn</code> class.</p>
+<p>Use <code>.btn</code> to create a button.</p>
+
+<pre>
+  <code class="html">
+    <button type="button" class="btn"><!-- content --></button>
+    <a href="#" class="btn"><!-- content --></a>
+  </code>
+</pre>
 
 <h3>Variants</h3>
 
@@ -186,3 +191,7 @@ description: Links styles and extensible button component with structured themin
     </div>
   </div>
 </div>
+
+<h2>Variables</h2>
+
+<p class="alert">Read the documentation of <a href="{% link _docs/component.html %}#variables">component's variables</a>.</p>

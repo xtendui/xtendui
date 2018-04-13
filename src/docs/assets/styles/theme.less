@@ -110,6 +110,7 @@
   color: @white;
   .site-hero-text {
     .font-sans-light();
+    .links-inverse();
   }
   > .container {
     > .flex {
@@ -428,17 +429,13 @@
     .btn-short();
     width: 100%;
   }
+  .btn:first-child {
+    .margin(bottom, tiny);
+  }
   .site-aside-title {
     .h4();
     color: @text;
   }
-  /*
-  > .btn:not(.site-aside-sub) {
-    &.different {
-      display: none;
-    }
-  }
-  */
   .btn-site-aside-sub {
     color: fade(@text, 50%) !important;
     &.active {

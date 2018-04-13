@@ -23,32 +23,28 @@
               </a>
             </div>
 
-            {% comment %}
+            {% if page.collection == null %}
+              <div class="site-aside-text">
+                <a href="{{ page.url }}" class="btn">
+                  {{ page.title }}
+                </a>
+              </div>
+            {% endif %}
 
-              {% if page.collection == null %}
-                <div class="site-aside-text">
-                  <a href="{{ page.url }}" class="btn">
-                    {{ page.title }}
-                  </a>
-                </div>
+            {% for collection in site.collections %}
+              {% if collection.label == page.collection %}
+
+                {% assign sorted = site.[collection.label] | where: 'categories', filter | sort: 'order' %}
+                {% for p in sorted %}
+                  <div class="site-aside-text">
+                    <a href="{{ p.url }}" class="btn">
+                      {{ p.title }}
+                    </a>
+                  </div>
+                {% endfor %}
+
               {% endif %}
-
-              {% for collection in site.collections %}
-                {% if collection.label == page.collection %}
-
-                  {% assign sorted = site.[collection.label] | where: 'categories', filter | sort: 'order' %}
-                  {% for p in sorted %}
-                    <div class="site-aside-text">
-                      <a href="{{ p.url }}" class="btn">
-                        {{ p.title }}
-                      </a>
-                    </div>
-                  {% endfor %}
-
-                {% endif %}
-              {% endfor %}
-
-            {% endcomment %}
+            {% endfor %}
 
           </aside>
 

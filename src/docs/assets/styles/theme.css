@@ -213,6 +213,13 @@ pre code {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+    margin-bottom: 2rem;
+  }
+  .table-scroll-xs:first-child {
+    margin-top: 0;
+  }
+  .table-scroll-xs:last-child {
+    margin-bottom: 0;
   }
 }
 @media (max-width: 767px ) {
@@ -222,6 +229,13 @@ pre code {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+    margin-bottom: 2rem;
+  }
+  .table-scroll-sm:first-child {
+    margin-top: 0;
+  }
+  .table-scroll-sm:last-child {
+    margin-bottom: 0;
   }
 }
 @media (max-width: 991px ) {
@@ -231,6 +245,13 @@ pre code {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+    margin-bottom: 2rem;
+  }
+  .table-scroll-md:first-child {
+    margin-top: 0;
+  }
+  .table-scroll-md:last-child {
+    margin-bottom: 0;
   }
 }
 @media (max-width: 1199px ) {
@@ -240,6 +261,13 @@ pre code {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+    margin-bottom: 2rem;
+  }
+  .table-scroll-lg:first-child {
+    margin-top: 0;
+  }
+  .table-scroll-lg:last-child {
+    margin-bottom: 0;
   }
 }
 @media (max-width: 1349px ) {
@@ -249,6 +277,13 @@ pre code {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+    margin-bottom: 2rem;
+  }
+  .table-scroll-xl:first-child {
+    margin-top: 0;
+  }
+  .table-scroll-xl:last-child {
+    margin-bottom: 0;
   }
 }
 .form-group {
@@ -4858,6 +4893,7 @@ code {
   color: #343a40;
 }
 pre {
+  margin-top: 2rem;
   margin-bottom: 2rem;
   width: 100%;
   max-height: 37rem;
@@ -5031,13 +5067,16 @@ dl dt {
 .icon-right {
   margin-left: 1em;
 }
-.table {
+.table,
+.table-scroll {
   margin-bottom: 2rem;
 }
-.table:first-child {
+.table:first-child,
+.table-scroll:first-child {
   margin-top: 0;
 }
-.table:last-child {
+.table:last-child,
+.table-scroll:last-child {
   margin-bottom: 0;
 }
 .table tr {
@@ -5433,13 +5472,13 @@ select.input-control-secondary {
   position: absolute;
 }
 .note-success {
-  color: #28a745;
+  color: #019623;
 }
 .note-notice {
-  color: #17a2b8;
+  color: #7367F0;
 }
 .note-warning {
-  color: #ffc107;
+  color: #efb61e;
 }
 .note-error {
   color: #dc3545;
@@ -6192,17 +6231,8 @@ a:hover,
 .alert table.table tr td {
   border-color: #dce8ee !important;
 }
-form .alert {
-  padding: 1em 1.25em;
-  font-size: 1.3rem;
-  line-height: 1.4;
-  padding-top: .75em;
-  padding-bottom: .75em;
-  padding-left: 1em;
-  padding-right: 1em;
-}
 .alert-success {
-  background: #28a745;
+  background: #019623;
   color: #fff;
 }
 .alert-success a,
@@ -6217,7 +6247,7 @@ form .alert {
   color: #f2f2f2;
 }
 .alert-notice {
-  background: #17a2b8;
+  background: #7367F0;
   color: #fff;
 }
 .alert-notice a,
@@ -6232,7 +6262,7 @@ form .alert {
   color: #f2f2f2;
 }
 .alert-warning {
-  background: #ffc107;
+  background: #efb61e;
   color: #fff;
 }
 .alert-warning a,
@@ -6719,6 +6749,17 @@ opacity: 1;
   font-style: normal;
   font-weight: 300;
 }
+.site-hero .site-hero-text a,
+.site-hero .site-hero-text .alink,
+.site-hero .site-hero-text .btn-link {
+  color: #fff;
+  text-decoration: underline;
+}
+.site-hero .site-hero-text a:hover,
+.site-hero .site-hero-text .alink:hover,
+.site-hero .site-hero-text .btn-link:hover {
+  color: #f2f2f2;
+}
 .site-hero > .container > .flex {
   min-height: 300px;
 }
@@ -7053,13 +7094,6 @@ opacity: 1;
 }
 .site-aside-text {
   line-height: 0;
-  /*
-  > .btn:not(.site-aside-sub) {
-    &.different {
-      display: none;
-    }
-  }
-  */
 }
 .site-aside-text .btn {
   -webkit-user-select: none;
@@ -7093,6 +7127,9 @@ opacity: 1;
 }
 .site-aside-text .btn:hover {
   color: #5e50ee;
+}
+.site-aside-text .btn:first-child {
+  margin-bottom: 0.5rem;
 }
 .site-aside-text .site-aside-title {
   margin-top: 4rem;
@@ -7444,15 +7481,6 @@ h2 .site-article-anchor {
 .demo .demo-text table.table tr th,
 .demo .demo-text table.table tr td {
   border-color: #dce8ee !important;
-}
-form .demo .demo-text {
-  padding: 1em 1.25em;
-  font-size: 1.3rem;
-  line-height: 1.4;
-  padding-top: .75em;
-  padding-bottom: .75em;
-  padding-left: 1em;
-  padding-right: 1em;
 }
 .demo iframe {
   width: 100%;
