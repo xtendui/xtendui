@@ -234,9 +234,9 @@ a, .alink, .btn-link {
 // generate-overlay-space
 
 .generate-overlay-space();
-.generate-overlay-space(@i:length(@overlay-space)) when (@i > 0) {
+.generate-overlay-space(@i:length(@container-space)) when (@i > 0) {
   .generate-overlay-space(@i - 1);
-  @overlay: extract(@overlay-space, @i);
+  @overlay: extract(@container-space, @i);
   @breakpoint: extract(@overlay, 1);
   @val: extract(@overlay, 2);
   & when (@breakpoint = none) {

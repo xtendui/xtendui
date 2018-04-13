@@ -9,19 +9,15 @@ description: Take advance of the flexbox column/row layout with container and co
 
 <h2>Container</h2>
 
-<p>Containers are needed to center the website's contents and add spacing on the side. <strong>Normal
-  containers</strong> <code>.container</code> have fixed width for each breakpoints, <strong>fluid containers</strong>
-  <code>.container-fluid</code> have 100% of viewport width until max-width is reached.</code></p>
+<p>Containers are needed to center the website's contents and add spacing on the side. Add a container using the class
+  <code>.container</code> are <strong>fluid by default</strong> have 100% of viewport width until max-width is reached.</code></p>
 
-<p class="alert">You can set container's size and space in the <code>_variables.less</code> file. Read the documentation
+<p class="alert">You can set container's space in the <code>_variables.less</code> file. Read the documentation
   of <a href="{% link _docs/intro/variables.html %}#container">grid's variables</a>.</p>
 
 <pre>
   <code class="html">
     <div class="container">
-      <!-- content -->
-    </div>
-    <div class="container-fluid">
       <!-- content -->
     </div>
   </code>

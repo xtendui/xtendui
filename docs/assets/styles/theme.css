@@ -541,13 +541,10 @@ select.input-control {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
-.container,
-.container-fluid {
-  width: 100%;
+.container {
   margin-left: auto;
   margin-right: auto;
-}
-.container-fluid {
+  width: 100%;
   max-width: 1300px;
 }
 .col {
@@ -2980,90 +2977,8 @@ html.xt-fixed .overlay {
   }
 }
 .container {
-  width: 100%;
-}
-.overlay .overlay-content {
-  max-width: 70%;
-}
-@media (min-width: 576px ) {
-  .container {
-    width: 540px;
-  }
-  .overlay .overlay-content {
-    max-width: 510px;
-  }
-}
-@media (min-width: 768px ) {
-  .container {
-    width: 720px;
-  }
-  .overlay .overlay-content {
-    max-width: 680px;
-  }
-}
-@media (min-width: 992px ) {
-  .container {
-    width: 960px;
-  }
-  .overlay .overlay-content {
-    max-width: 910px;
-  }
-}
-@media (min-width: 1200px ) {
-  .container {
-    width: 1140px;
-  }
-  .overlay .overlay-content {
-    max-width: 1080px;
-  }
-}
-@media (min-width: 1350px ) {
-  .container {
-    width: 1300px;
-  }
-  .overlay .overlay-content {
-    max-width: 1240px;
-  }
-}
-.container,
-.container-fluid {
   padding-right: 15px;
   padding-left: 15px;
-}
-@media (min-width: 576px ) {
-  .container,
-  .container-fluid {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-@media (min-width: 768px ) {
-  .container,
-  .container-fluid {
-    padding-right: 20px;
-    padding-left: 20px;
-  }
-}
-@media (min-width: 992px ) {
-  .container,
-  .container-fluid {
-    padding-right: 25px;
-    padding-left: 25px;
-  }
-}
-@media (min-width: 1200px ) {
-  .container,
-  .container-fluid {
-    padding-right: 30px;
-    padding-left: 30px;
-  }
-}
-@media (min-width: 1350px ) {
-  .container,
-  .container-fluid {
-    padding-right: 30px;
-    padding-left: 30px;
-  }
 }
 .col-12 {
   -webkit-flex-basis: 100%;
@@ -3397,6 +3312,10 @@ html.xt-fixed .overlay {
   align-self: auto !important;
 }
 @media (min-width: 768px ) {
+  .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
   .col-12-sm {
     -webkit-flex-basis: 100%;
     -ms-flex-preferred-size: 100%;
@@ -3730,6 +3649,10 @@ html.xt-fixed .overlay {
   }
 }
 @media (min-width: 992px ) {
+  .container {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
   .col-12-md {
     -webkit-flex-basis: 100%;
     -ms-flex-preferred-size: 100%;
@@ -4063,6 +3986,10 @@ html.xt-fixed .overlay {
   }
 }
 @media (min-width: 1200px ) {
+  .container {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
   .col-12-lg {
     -webkit-flex-basis: 100%;
     -ms-flex-preferred-size: 100%;

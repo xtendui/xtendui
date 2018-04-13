@@ -337,70 +337,6 @@
 & when not (@classes-layout = false) {
   
   //////////////////////
-  // contain
-  //////////////////////
-  
-  // generate-container-responsive
-  
-  .generate-container-responsive();
-  .generate-container-responsive(@i:length(@containers)) when (@i > 0) {
-    .generate-container-responsive(@i - 1);
-    @container: extract(@containers, @i);
-    @breakpoint: extract(@container, 1);
-    @val: extract(@container, 2);
-    @overlay: extract(@overlay-space, @i);
-    @breakpoint: extract(@overlay, 1);
-    @val-overlay: extract(@overlay, 2);
-    & when (@breakpoint = none) {
-      .container {
-        width: @val;
-      }
-      .overlay .overlay-content {
-        max-width: @val - @val-overlay * 2;
-      }
-    }
-    & when not (@breakpoint = none) {
-      @query-min: 'min-@{breakpoint}';
-      @media @@query-min {
-        .container {
-          width: @val;
-        }
-        
-        .overlay .overlay-content {
-          max-width: @val - @val-overlay * 2;
-        }
-      }
-    }
-  }
-  
-  // generate-container-space
-  
-  .generate-container-space();
-  .generate-container-space(@i:length(@container-space)) when (@i > 0) {
-    .generate-container-space(@i - 1);
-    @container: extract(@container-space, @i);
-    @breakpoint: extract(@container, 1);
-    @val: extract(@container, 2);
-    & when (@breakpoint = none) {
-      .container,
-      .container-fluid {
-        padding-right: @val;
-        padding-left: @val;
-      }
-    }
-    & when not (@breakpoint = none) {
-      @query-min: 'min-@{breakpoint}';
-      @media @@query-min {
-        .container,
-        .container-fluid {
-          padding-right: @val;
-          padding-left: @val;
-        }
-      }
-    }
-  }
-  
-  //////////////////////
   // layout
   //////////////////////
   
@@ -409,6 +345,8 @@
   .generate-layouts();
   .generate-layouts(@breakpoint:none) {
     & when (@breakpoint = none) {
+      // container
+      .generate-container(@breakpoint);
       // grid
       .generate-grid(@breakpoint);
       .col-auto {
@@ -430,6 +368,8 @@
     & when not (@breakpoint = none) {
       @query-min: 'min-@{breakpoint}';
       @media @@query-min {
+        // container
+        .generate-container(@breakpoint);
         // grid
         .generate-grid(@breakpoint);
         .col-auto-@{breakpoint} {
@@ -462,6 +402,21 @@
       .generate-layouts(@breakpoint);
     }
     
+  }
+  
+  // generate-container
+  
+  .generate-container(@breakpoint:none, @i:length(@container-space)) when (@i > 0) {
+    .generate-container(@breakpoint, @i - 1);
+    @container: extract(@container-space, @i);
+    @break: extract(@container, 1);
+    @val: extract(@container, 2);
+    & when (@breakpoint = @break) {
+      .container {
+        padding-right: @val;
+        padding-left: @val;
+      }
+    }
   }
   
   // generate-grid
