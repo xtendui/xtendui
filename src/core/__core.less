@@ -14,3 +14,40 @@
 @import '_animation';
 @import '_javascript';
 @import '_generation';
+
+//////////////////////
+// .by-key
+// https://stackoverflow.com/questions/27383399/extract-item-from-css-less-list-by-name
+//////////////////////
+
+// USAGE: .by-key(@list-space, @name); @val: @by-key;
+
+.by-key(@array, @key, @fallback...) {
+  .by-key-inner(length(@array));
+  .by-key-inner(@i) when (@i > 0) {
+    .by-key-inner((@i - 1))
+  }
+  .by-key-inner(@i) when (@key = extract(extract(@array, @i), 1)) {
+    @by-key: extract(extract(@array, @i), 2);
+  }
+  .--() {
+    @by-key: @fallback
+  }
+  .--;
+}
+
+// USAGE: .by-key-alt(@list-space, @name); @val: @by-key-alt;
+
+.by-key-alt(@array, @key, @fallback...) {
+  .by-key-inner(length(@array));
+  .by-key-inner(@i) when (@i > 0) {
+    .by-key-inner((@i - 1))
+  }
+  .by-key-inner(@i) when (@key = extract(extract(@array, @i), 1)) {
+    @by-key-alt: extract(extract(@array, @i), 2);
+  }
+  .--() {
+    @by-key-alt: @fallback
+  }
+  .--;
+}

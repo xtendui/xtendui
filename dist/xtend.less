@@ -5,14 +5,15 @@
 @import '../src/core/__core'; // when theming put the xtend-library path relative to npm or composer
 @import 'theme/__theme'; // when theming put the xtend-library path relative to theming
 
-// set to false to use only mixins
+// set to false to not generate any classes
+// set to true to only generate non responsive classes
+// set to array of breakpoints to generate non responsive classes and responsive classes for those breakpoints
 
-@generate-layout: true;
-@generate-icons: true;
-@generate-util: true;
-@generate-margin: true;
-@generate-padding: true;
-@generate-breakpoint: sm, md, lg; // only for this breakpoints (set to false to not generate responsive classes)
+@classes-icons: true;
+@classes-util: sm, md, lg;
+@classes-margin: sm, md, lg;
+@classes-padding: sm, md, lg;
+@classes-layout: sm, md, lg;
 
 //////////////////////
 // icon

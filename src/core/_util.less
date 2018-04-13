@@ -1,42 +1,91 @@
 //////////////////////
-// .by-key
-// https://stackoverflow.com/questions/27383399/extract-item-from-css-less-list-by-name
+// various
 //////////////////////
 
-// USAGE: .by-key(@list-space, @name); @val: @by-key;
-
-.by-key(@array, @key, @fallback...) {
-  .by-key-inner(length(@array));
-  .by-key-inner(@i) when (@i > 0) {
-    .by-key-inner((@i - 1))
+.clearfix {
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
   }
-  .by-key-inner(@i) when (@key = extract(extract(@array, @i), 1)) {
-    @by-key: extract(extract(@array, @i), 2);
+  &:after {
+    clear: both;
   }
-  .--() {
-    @by-key: @fallback
-  }
-  .--;
 }
 
-// USAGE: .by-key-alt(@list-space, @name); @val: @by-key-alt;
+.select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
-.by-key-alt(@array, @key, @fallback...) {
-  .by-key-inner(length(@array));
-  .by-key-inner(@i) when (@i > 0) {
-    .by-key-inner((@i - 1))
+.select-text {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.accelerate {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  transform: translateZ(0);
+}
+
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+// responsive
+
+.responsive(@breakpoint:none) when (@breakpoint = none) {
+  max-width: 100%;
+  height: auto;
+  // fix ie11 bug responsive
+  min-height: 2px;
+  // fix chrome bug responsive
+  .align-self-center();
+}
+
+.responsive(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    max-width: 100%;
+    height: auto;
+    // fix ie11 bug responsive
+    min-height: 2px;
+    // fix chrome bug responsive
+    .align-self-center();
   }
-  .by-key-inner(@i) when (@key = extract(extract(@array, @i), 1)) {
-    @by-key-alt: extract(extract(@array, @i), 2);
+}
+
+// block
+
+.block(@breakpoint:none) when (@breakpoint = none) {
+  display: block;
+  width: 100%;
+}
+
+.block(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    display: block;
+    width: 100%;
   }
-  .--() {
-    @by-key-alt: @fallback
-  }
-  .--;
 }
 
 //////////////////////
-// texts
+// text
 //////////////////////
 
 .text-upper {
@@ -56,7 +105,6 @@
 }
 
 // text
-// USAGE: .text(center); .text(center, sm);
 
 .text(@val, @breakpoint:none) when (@breakpoint = none) {
   text-align: @val;
@@ -74,7 +122,6 @@
 //////////////////////
 
 // float
-// USAGE: .float(left); .float(left, sm);
 
 .float(@val, @breakpoint:none) when (@breakpoint = none) {
   float: @val;
@@ -92,7 +139,6 @@
 //////////////////////
 
 // display
-// USAGE: .display(none); .display(none, sm);
 
 .display(@val, @breakpoint:none) when (@breakpoint = none) {
   & when not (@val = flex), not (@val = inline-flex) {
@@ -132,11 +178,33 @@
 }
 
 //////////////////////
+// order
+//////////////////////
+
+// order
+
+.order(@i, @breakpoint:none) when (@breakpoint = none) {
+  @val: extract(@orders, @i + 1);
+  -webkit-box-ordinal-group: @val;
+  -ms-flex-order: @val;
+  order: @val;
+}
+
+.order(@i, @breakpoint:none) when (default()) {
+  @val: extract(@orders, @i + 1);
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-box-ordinal-group: @val;
+    -ms-flex-order: @val;
+    order: @val;
+  }
+}
+
+//////////////////////
 // margin
 //////////////////////
 
 // margin
-// USAGE: .margin(left, medium); .margin(left, medium, sm);
 
 .margin(@pos:all, @size, @breakpoint:none) when (@breakpoint = none) {
   & when (isnumber(@size)) {
@@ -234,7 +302,6 @@
 }
 
 // margin-remove
-// USAGE: .margin-remove(left, medium); .margin-remove(left, medium, sm);
 
 .margin-remove(@pos:all, @size, @breakpoint:none) when (@breakpoint = none) {
   & when (isnumber(@size)) {
@@ -299,7 +366,6 @@
 //////////////////////
 
 // padding
-// USAGE: .padding(left, medium); .padding(left, medium, sm);
 
 .padding(@pos:all, @size, @breakpoint:none) when (@breakpoint = none) {
   & when (isnumber(@size)) {
@@ -402,7 +468,7 @@
 
 // list space
 
-.list-space(@size, @breakpoint:none) {
+.list-space(@name, @breakpoint:none) {
   .by-key(@list-space-horizontal, @name);
   @horizontal: @by-key;
   .by-key-alt(@list-space-vertical, @name);
@@ -412,7 +478,7 @@
     margin: @vertical @horizontal;
   }
 }
-.list-space(@size, @breakpoint:none) when (default()) {
+.list-space(@name, @breakpoint:none) when (default()) {
   .by-key(@list-space-horizontal, @name);
   @horizontal: @by-key;
   .by-key-alt(@list-space-vertical, @name);
@@ -432,20 +498,20 @@
 
 // flex space
 
-.flex-space(@size, @breakpoint:none) {
-  .by-key(@flex-space-horizontal, @size);
+.flex-space(@name, @breakpoint:none) {
+  .by-key(@flex-space-horizontal, @name);
   @horizontal: @by-key;
-  .by-key-alt(@flex-space-vertical, @size);
+  .by-key-alt(@flex-space-vertical, @name);
   @vertical: @by-key-alt;
   margin: -@vertical -@horizontal;
   > * {
     padding: @vertical @horizontal;
   }
 }
-.flex-space(@size, @breakpoint:none) when (default()) {
-  .by-key(@flex-space-horizontal, @size);
+.flex-space(@name, @breakpoint:none) when (default()) {
+  .by-key(@flex-space-horizontal, @name);
   @horizontal: @by-key;
-  .by-key-alt(@flex-space-vertical, @size);
+  .by-key-alt(@flex-space-vertical, @name);
   @vertical: @by-key-alt;
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -457,7 +523,7 @@
 }
 
 //////////////////////
-// flex utils
+// flex util
 //////////////////////
 
 // flex-auto
@@ -896,121 +962,5 @@
   @media @@query-min {
     -ms-flex-item-align: auto;
     align-self: auto;
-  }
-}
-
-//////////////////////
-// flex order
-//////////////////////
-
-// order
-// USAGE: .flex-order(1); .flex-order(1, sm);
-
-.flex-order(@i, @breakpoint:none) when (@breakpoint = none) {
-  @val: extract(@orders, @i + 1);
-  -webkit-box-ordinal-group: @val;
-  -ms-flex-order: @val;
-  order: @val;
-}
-
-.flex-order(@i, @breakpoint:none) when (default()) {
-  @val: extract(@orders, @i + 1);
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    -webkit-box-ordinal-group: @val;
-    -ms-flex-order: @val;
-    order: @val;
-  }
-}
-
-//////////////////////
-// flex utils
-//////////////////////
-
-//////////////////////
-// various
-//////////////////////
-
-.clearfix {
-  &:before,
-  &:after {
-    content: ' ';
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
-}
-
-.select-none {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.select-text {
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
-  user-select: text;
-}
-
-.accelerate {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  perspective: 1000;
-  transform: translateZ(0);
-}
-
-.sr-only {
-  position: absolute;
-  overflow: hidden;
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-}
-
-// responsive
-// USAGE: .responsive(); .responsive(sm);
-
-.responsive(@breakpoint:none) when (@breakpoint = none) {
-  max-width: 100%;
-  height: auto;
-  // fix ie11 bug responsive
-  min-height: 2px;
-  // fix chrome bug responsive
-  .align-self-center();
-}
-
-.responsive(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    max-width: 100%;
-    height: auto;
-    // fix ie11 bug responsive
-    min-height: 2px;
-    // fix chrome bug responsive
-    .align-self-center();
-  }
-}
-
-// block
-// USAGE: .block(); .block(sm);
-
-.block(@breakpoint:none) when (@breakpoint = none) {
-  display: block;
-  width: 100%;
-}
-
-.block(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    display: block;
-    width: 100%;
   }
 }

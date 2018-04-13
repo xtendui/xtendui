@@ -144,7 +144,6 @@
 //////////////////////
 
 // vertical
-// USAGE: .vertical(); .vertical(sm);
 
 .vertical(@breakpoint:none) when (@breakpoint = none) {
   .flex-column();
@@ -165,7 +164,6 @@
 }
 
 // horizontal
-// USAGE: .horizontal(); .horizontal(sm);
 
 .horizontal(@breakpoint:none) when (@breakpoint = none) {
   .flex-row();
@@ -185,7 +183,7 @@
   }
 }
 
-& when (@generate-layout) {
+& when (@classes-layout) {
   
   // generate-directions
   
@@ -214,11 +212,11 @@
   
   // generate-directions-responsive
   
-  & when not (@generate-breakpoint = false) {
+  & when not (@classes-breakpoint = false) {
     .generate-directions-responsive();
-    .generate-directions-responsive(@i:length(@generate-breakpoint)) when (@i > 0) {
+    .generate-directions-responsive(@i:length(@classes-breakpoint)) when (@i > 0) {
       .generate-directions-responsive(@i - 1);
-      @breakpoint: extract(@generate-breakpoint, @i);
+      @breakpoint: extract(@classes-breakpoint, @i);
       .generate-directions(@breakpoint);
     }
   }
