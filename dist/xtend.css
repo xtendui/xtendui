@@ -5600,17 +5600,6 @@ a:hover,
   padding: .6em 1.2em;
   font-size: 1.5rem;
 }
-.btn-text-only {
-  border: 0 !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-}
-.list-text-only > li > a:not(.btn),
-.list-text-only > li > button:not(.btn) {
-  border: 0 !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-}
 .btn-squared {
   border-radius: 0;
 }
@@ -5667,6 +5656,17 @@ a:hover,
 .list-none > li > a:not(.btn),
 .list-none > li > button:not(.btn) {
   padding: 0;
+}
+.btn-text-only {
+  border: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.list-text-only > li > a:not(.btn),
+.list-text-only > li > button:not(.btn) {
+  border: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 .btn-primary {
   border-color: #7367F0;
