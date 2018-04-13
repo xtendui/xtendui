@@ -5,6 +5,10 @@
 // formatCode
 
 const formatCode = function (source, lang) {
+  var inner = source.querySelectorAll('.demo-source-from');
+  if (inner.length) {
+    source = inner[0];
+  }
   let text = source.innerHTML;
   if (lang === 'css' || lang === 'js') {
     text = text.replace(/<[^>]*>/g, '');

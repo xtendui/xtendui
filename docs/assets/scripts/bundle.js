@@ -18,6 +18,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // formatCode
 
 var formatCode = function formatCode(source, lang) {
+  var inner = source.querySelectorAll('.demo-source-from');
+  if (inner.length) {
+    source = inner[0];
+  }
   var text = source.innerHTML;
   if (lang === 'css' || lang === 'js') {
     text = text.replace(/<[^>]*>/g, '');

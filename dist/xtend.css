@@ -269,10 +269,10 @@ pre code {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 !important;
-  padding: 0 !important;
-  list-style: none !important;
-  cursor: default !important;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  cursor: default;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -288,7 +288,7 @@ pre code {
   width: auto;
 }
 .form-inline .form-group > li {
-  cursor: auto !important;
+  cursor: auto;
 }
 .form-inline .form-group > li > a,
 .form-inline .form-group > li > button {
@@ -520,10 +520,10 @@ select.input-control {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 !important;
-  padding: 0 !important;
-  list-style: none !important;
-  cursor: default !important;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  cursor: default;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -532,7 +532,7 @@ select.input-control {
   flex-wrap: nowrap;
 }
 .list-block > li {
-  cursor: auto !important;
+  cursor: auto;
 }
 .list-block > li > a,
 .list-block > li > button {
@@ -587,10 +587,10 @@ select.input-control {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 !important;
-  padding: 0 !important;
-  list-style: none !important;
-  cursor: default !important;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  cursor: default;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -599,7 +599,7 @@ select.input-control {
   flex-wrap: wrap;
 }
 .list-line > li {
-  cursor: auto !important;
+  cursor: auto;
 }
 .list-line > li > a,
 .list-line > li > button {
@@ -4451,11 +4451,6 @@ html.xt-fixed .overlay {
 .list-line > li > button {
   text-align: left;
 }
-.list-line {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
 .list-default > li > a:not(.btn),
 .list-default > li > button:not(.btn) {
   border-color: transparent;
@@ -5244,10 +5239,10 @@ legend + legend {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 !important;
-  padding: 0 !important;
-  list-style: none !important;
-  cursor: default !important;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  cursor: default;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -5260,7 +5255,7 @@ legend + legend {
   align-items: center;
 }
 .form-group.inline > li {
-  cursor: auto !important;
+  cursor: auto;
 }
 .form-group.inline > li > a,
 .form-group.inline > li > button {
