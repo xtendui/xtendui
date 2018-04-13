@@ -705,8 +705,7 @@ code {
 .site-breadcrumbs[data-xt-scroll] {
   .xt-scroll(@mode:'absolute');
   // above .site-header-top
-  .by-key(@zindex-xt, scroll);
-  z-index: @by-key + 1;
+  z-index: @index-scroll + 1;
   // animations
   .transition-default.out();
   .site-breadcrumbs-inside {
