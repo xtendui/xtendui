@@ -170,45 +170,23 @@
 
                 <div class="site-breadcrumbs-meta flex flex-space-none align-items-center">
 
-                  <!--
-                  {% if page.collection == null %}
-                    <a href="{{ site.twitter }}" target="_blank" class="btn btn-primary">
-                      <span class="icon icon-twitter"></span>
+                  <div>
+                    <a href="{{ site.download }}" target="_blank" class="btn btn-primary btn-icon">
+                      <span class="icon-download icon-big"></span>
                     </a>
-                    <a href="{{ site.google }}" target="_blank" class="btn btn-primary">
-                      <span class="icon icon-google"></span>
+                  </div>
+                  <div>
+                    <a href="{{ site.github }}" target="_blank" class="btn btn-primary btn-icon">
+                      <span class="icon-github icon-big"></span>
                     </a>
-                  {% endif %}
-                  -->
-
-                  {% for collection in site.collections %}
-                    {% if collection.label == page.collection %}
-
-                      {% if collection.links.download %}
-                        <div>
-                            <a href="{{ collection.links.download }}" target="_blank" class="btn btn-primary btn-icon">
-                              <span class="icon-download icon-big"></span>
-                            </a>
-                        </div>
-                      {% endif %}
-
-                      {% if collection.links.github %}
-                        <div>
-                            <a href="{{ collection.links.github }}" target="_blank" class="btn btn-primary btn-icon">
-                              <span class="icon-github icon-big"></span>
-                            </a>
-                        </div>
-                      {% endif %}
-
-                    {% endif %}
-                  {% endfor %}
+                  </div>
 
                   <div class="show-scroll">
                     <button type="button" class="btn btn-primary btn-menu" data-xt-toggle='{"targets": "#site-menu"}'>
                       {% if page.collection %}
-                      {{ page.collection | capitalize }}
+                        {{ page.collection | capitalize }}
                       {% else %}
-                      {{ page.title | capitalize }}
+                        {{ page.title | capitalize }}
                       {% endif %}
                       <span class="icon-menu-custom">
                         <span></span>

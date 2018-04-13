@@ -63,14 +63,6 @@
 // .xt-container
 
 .xt-container {
-  position: relative;
-  width: 100%;
-}
-
-// .xt-position
-
-.xt-position {
-  float: left;
   width: 100%;
 }
 
@@ -135,7 +127,7 @@ html.xt-fixed {
   &.active:not(.xt-clone) {
     position: fixed !important;
     width: inherit; // fix fixed width
-    .by-key(@core-indexes, scroll);
+    .by-key(@zindex-xt, scroll);
     z-index: @by-key;
     & when (@position = 'top') {
       top: @pos;

@@ -111,15 +111,10 @@
   .site-hero-text {
     .font-sans-light();
   }
-  > .container-fluid {
-    // min-height
+  > .container {
     > .flex {
       min-height: 300px;
     }
-    // flex parent required for min-height ie10
-    .display(flex);
-    .flex-row();
-    .flex-wrap();
   }
   @media @max-sm {
     .site-hero-img,
@@ -710,7 +705,7 @@ code {
 .site-breadcrumbs[data-xt-scroll] {
   .xt-scroll(@mode:'absolute');
   // above .site-header-top
-  .by-key(@core-indexes, scroll);
+  .by-key(@zindex-xt, scroll);
   z-index: @by-key + 1;
   // animations
   .transition-default.out();

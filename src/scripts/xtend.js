@@ -548,12 +548,12 @@ export class XtScroll extends Xt {
     // mode
     this.mode = 'all';
     // container
-    this.container = XtUtil.parents(this.object, '.xt-container.xt-position');
+    this.container = XtUtil.parents(this.object, '.xt-container');
     if (!this.container.length) {
-      this.container = XtUtil.createElement('<div class="xt-container xt-position"></div>');
+      this.container = XtUtil.createElement('<div class="xt-container"></div>');
       this.object.before(this.container);
       this.container.append(this.object);
-      this.container = XtUtil.parents(this.object, '.xt-container.xt-position');
+      this.container = XtUtil.parents(this.object, '.xt-container');
     }
     // targets
     this.targets = this.container[0].querySelectorAll('.xt-clone.xt-ignore');

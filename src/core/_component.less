@@ -31,7 +31,7 @@ a, .alink, .btn-link {
     display: inline-block;
   }
   &:active, &.active {
-    .by-key(@core-indexes, btn-active);
+    .by-key(@zindex-xt, btn-active);
     z-index: @by-key;
   }
 }
@@ -39,7 +39,7 @@ a, .alink, .btn-link {
 // custom
 
 .btn-close {
-  .by-key(@core-indexes, close);
+  .by-key(@zindex-xt, close);
   z-index: @by-key !important;
 }
 
@@ -63,7 +63,7 @@ a, .alink, .btn-link {
 .drop {
   .toggle-flex();
   position: absolute;
-  .by-key(@core-indexes, drop);
+  .by-key(@zindex-xt, drop);
   z-index: @by-key !important;
   // styles
   .drop-inner {
@@ -170,7 +170,7 @@ a, .alink, .btn-link {
 .overlay {
   .toggle-flex();
   position: fixed;
-  .by-key(@core-indexes, overlay);
+  .by-key(@zindex-xt, overlay);
   z-index: @by-key !important;
   top: 0;
   left: 0;
@@ -180,7 +180,7 @@ a, .alink, .btn-link {
   // styles
   .overlay-inner {
     position: relative;
-    .by-key(@core-indexes, overlay);
+    .by-key(@zindex-xt, overlay);
     z-index: @by-key !important;
     width: 100%;
     min-height: 100vh;
@@ -260,7 +260,7 @@ a, .alink, .btn-link {
 
 .loader-mask {
   position: absolute;
-  .by-key(@core-indexes, loader);
+  .by-key(@zindex-xt, loader);
   z-index: @by-key !important;
   top: 0;
   left: 0;
@@ -285,7 +285,7 @@ a, .alink, .btn-link {
 
 .xt-backdrop {
   position: fixed;
-  .by-key(@core-indexes, backdrop);
+  .by-key(@zindex-xt, backdrop);
   z-index: @by-key !important;
   top: 0;
   right: 0;

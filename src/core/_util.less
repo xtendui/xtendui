@@ -463,36 +463,6 @@
 }
 
 //////////////////////
-// list space
-//////////////////////
-
-// list space
-
-.list-space(@name, @breakpoint:none) {
-  .by-key(@list-space-horizontal, @name);
-  @horizontal: @by-key;
-  .by-key-alt(@list-space-vertical, @name);
-  @vertical: @by-key-alt;
-  margin: -@vertical -@horizontal;
-  > * {
-    margin: @vertical @horizontal;
-  }
-}
-.list-space(@name, @breakpoint:none) when (default()) {
-  .by-key(@list-space-horizontal, @name);
-  @horizontal: @by-key;
-  .by-key-alt(@list-space-vertical, @name);
-  @vertical: @by-key-alt;
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    margin: -@vertical -@horizontal;
-    > * {
-      margin: @vertical @horizontal;
-    }
-  }
-}
-
-//////////////////////
 // flex space
 //////////////////////
 
@@ -518,6 +488,36 @@
     margin: -@vertical -@horizontal;
     > * {
       padding: @vertical @horizontal;
+    }
+  }
+}
+
+//////////////////////
+// list space
+//////////////////////
+
+// list space
+
+.list-space(@name, @breakpoint:none) {
+  .by-key(@list-space-horizontal, @name);
+  @horizontal: @by-key;
+  .by-key-alt(@list-space-vertical, @name);
+  @vertical: @by-key-alt;
+  margin: -@vertical -@horizontal;
+  > * {
+    margin: @vertical @horizontal;
+  }
+}
+.list-space(@name, @breakpoint:none) when (default()) {
+  .by-key(@list-space-horizontal, @name);
+  @horizontal: @by-key;
+  .by-key-alt(@list-space-vertical, @name);
+  @vertical: @by-key-alt;
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    margin: -@vertical -@horizontal;
+    > * {
+      margin: @vertical @horizontal;
     }
   }
 }
