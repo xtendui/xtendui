@@ -169,8 +169,7 @@ pre {
 
 ul,
 ol {
-  &.default-style,
-  .default-style & {
+  .default-lists({
     .margin(y, layout);
     .margin(bottom, small);
     padding-left: 2rem;
@@ -181,25 +180,23 @@ ol {
     > ol {
       .margin(y, small);
     }
-  }
+  });
 }
 ul {
-  &.default-style,
-  .default-style & {
+  .default-lists({
     list-style: disc;
     ul {
       list-style: circle;
     }
-  }
+  });
 }
 ol {
-  &.default-style,
-  .default-style & {
+  .default-lists({
     list-style-type: decimal;
     ol {
       list-style-type: lower-alpha;
     }
-  }
+  });
 }
 
 //////////////////////

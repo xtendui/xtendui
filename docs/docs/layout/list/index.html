@@ -424,8 +424,656 @@
       <div class="flex">
         <div class="col col-12 col-9-md">
 
-          <article class="site-article default-style">
-            
+          <article class="site-article default-lists">
+            <p class="alert">Read the documentation of <a href="/docs/layout/">Layout</a>.</p>
+
+<h2>Usage</h2>
+
+<p>Use <code>.list-block</code> to create a <strong>column list</strong> or <code>.list-line</code> to create a <strong>row
+  list</strong> with flexbox.
+</p>
+
+<p>Every list should have the <code>ul</code> tags, with <code>li</code> childrens.</p>
+
+<pre>
+  <code class="html">
+    <ul class="list-block">
+      <li><!-- content --></li>
+      <li><!-- content --></li>
+      <li><!-- content --></li>
+    </ul>
+    <ul class="list-line">
+      <li><!-- content --></li>
+      <li><!-- content --></li>
+      <li><!-- content --></li>
+    </ul>
+  </code>
+</pre>
+
+<h3>List of anything</h3>
+
+<p>You can use list to space childrens like <a href="/docs/layout/flex/">flex</a> does. But the childrens
+  are spaced with <strong>margin</strong> instead of <strong>padding</strong> so they aren't used to a grid.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="list-block">
+    <div class="demo-source demo-cols" data-lang="html">
+      <ul class="list-block">
+        <li>
+          Lorem ipsum dolor sit amet.
+        </li>
+        <li>
+          consectetur adipiscing elit.
+        </li>
+        <li>
+          Cras placerat pellentesque pulvinar.
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="list-line">
+    <div class="demo-source demo-cols" data-lang="html">
+      <ul class="list-line">
+        <li>
+          Lorem ipsum dolor sit amet.
+        </li>
+        <li>
+          consectetur adipiscing elit.
+        </li>
+        <li>
+          Cras placerat pellentesque pulvinar.
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h3>List of buttons</h3>
+
+<p>The natural way to use lists is to use them <strong>to space buttons</strong> in a column/row. You can specify for
+  each button variant, size and all the properties you want.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="list-block">
+    <div class="demo-source demo-cols" data-lang="html">
+      <ul class="list-block">
+        <li>
+          <button type="button" class="btn btn-primary">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary btn-tiny">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="list-line">
+    <div class="demo-source demo-cols" data-lang="html">
+      <ul class="list-line">
+        <li>
+          <button type="button" class="btn btn-primary">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary btn-tiny">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h2>Options</h2>
+
+<h3>Sizes</h3>
+
+<p>Lists <strong>automatically</strong> add horizontal and vertical spacing to the contents. You can <strong>specify a
+  different one</strong> with this classes/mixins.</p>
+
+<div class="table-scroll">
+  <table class="table table-small">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Syntax</th>
+      <th>Example</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">Class</th>
+      <td><code>.list-space-{size}</code></td>
+      <td><code>.list-space-small</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Class responsive</th>
+      <td><code>.list-space-{size}-{breakpoint}</code></td>
+      <td><code>.list-space-small-sm</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin</th>
+      <td><code>.list-space({size})</code></td>
+      <td><code>.list-space(small)</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin responsive</th>
+      <td><code>.list-space({size}, {breakpoint})</code></td>
+      <td><code>.list-space(small, sm)</code></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<p class="alert">You can set list's sizes <code>_variables.less</code> file. Read the documentation of <a
+  href="/docs/intro/variables/#list">list's variables</a>.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="none">
+    <div class="demo-text"><code>.list-space-none</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <ul class="list-line list-space-none">
+        <li>
+          <button type="button" class="btn btn-primary">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary btn-tiny">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="tiny">
+    <div class="demo-text"><code>.list-space-tiny</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <ul class="list-line list-space-tiny">
+        <li>
+          <button type="button" class="btn btn-primary">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary btn-tiny">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="small">
+    <div class="demo-text"><code>.list-space-small</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <ul class="list-line list-space-small">
+        <li>
+          <button type="button" class="btn btn-primary">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary btn-tiny">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="medium">
+    <div class="demo-text"><code>.list-space-medium</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <ul class="list-line list-space-medium">
+        <li>
+          <button type="button" class="btn btn-primary">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary btn-tiny">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="big">
+    <div class="demo-text"><code>.list-space-big</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <ul class="list-line list-space-big">
+        <li>
+          <button type="button" class="btn btn-primary">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary btn-tiny">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="giant">
+    <div class="demo-text"><code>.list-space-giant</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <ul class="list-line list-space-giant">
+        <li>
+          <button type="button" class="btn btn-primary">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary btn-tiny">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h3>Alignment</h3>
+
+<p>Lists <strong>automatically</strong> add left aligment. You can <strong>specify a different one</strong> with this classes/mixins.</p>
+
+<div class="table-scroll">
+  <table class="table table-small">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Syntax</th>
+      <th>Example</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">Class</th>
+      <td><code>.list-left</code></td>
+      <td><code>.list-left</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Class responsive</th>
+      <td><code>.list-left-{breakpoint}</code></td>
+      <td><code>.list-left-sm</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin</th>
+      <td><code>.list-left()</code></td>
+      <td><code>.list-left()</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin responsive</th>
+      <td><code>.list-left({breakpoint})</code></td>
+      <td><code>.list-left(sm)</code></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="left">
+    <div class="demo-text"><code>.list-left</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <ul class="list-block list-left">
+        <li>
+          <button type="button" class="btn btn-primary">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary btn-tiny">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="center">
+    <div class="demo-text"><code>.list-center</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <ul class="list-block list-center">
+        <li>
+          <button type="button" class="btn btn-primary">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary btn-tiny">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="right">
+    <div class="demo-text"><code>.list-right</code></div>
+    <div class="demo-source demo-cols" data-lang="html">
+      <ul class="list-block list-right">
+        <li>
+          <button type="button" class="btn btn-primary">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary btn-tiny">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h2>List options</h2>
+
+<p>List options are used to style to all the buttons inside (<code>a</code> or <code>button</code>) with a
+  <strong>default option</strong>, without the need to assing for each one the classes.</p>
+
+<p>You have a list option for each option of <code>.btn</code>. <code>.list-default</code> is a default option.</p>
+
+<h3>Variants</h3>
+
+<p>Optional classes for assigning variant.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="default">
+    <div class="demo-text"><code>.list-default</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-default">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="primary">
+    <div class="demo-text"><code>.list-primary</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-primary">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="primary-empty">
+    <div class="demo-text"><code>.list-primary-empty</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-primary-empty">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="secondary">
+    <div class="demo-text"><code>.list-secondary</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-secondary">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="secondary-empty">
+    <div class="demo-text"><code>.list-secondary-empty</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-secondary-empty">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="link">
+    <div class="demo-text"><code>.list-link</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-link">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h3>Sizes</h3>
+
+<p>Optional classes for assigning size.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="tiny">
+    <div class="demo-text"><code>.list-tiny</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-primary list-tiny">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="small">
+    <div class="demo-text"><code>.list-small</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-primary list-small">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="medium">
+    <div class="demo-text"><code>.list-medium</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-primary list-medium">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="big">
+    <div class="demo-text"><code>.list-big</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-primary list-big">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="giant">
+    <div class="demo-text"><code>.list-giant</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-primary list-giant">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h3>Special</h3>
+
+<p>Special optional modifiers classes.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="squared">
+    <div class="demo-text"><code>.list-squared</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-primary list-squared">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="tall">
+    <div class="demo-text"><code>.list-tall</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-primary list-tall">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="short">
+    <div class="demo-text"><code>.list-short</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-primary list-short">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="wide">
+    <div class="demo-text"><code>.list-wide</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-primary list-wide">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="narrow">
+    <div class="demo-text"><code>.list-narrow</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-primary list-narrow">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="icon">
+    <div class="demo-text"><code>.list-icon</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-primary list-icon">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="none">
+    <div class="demo-text"><code>.list-none</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list-line list-primary list-none">
+        <li>
+          <button type="button">Lorem Ipsum</button>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button">Amet</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
           </article>
 
         </div>

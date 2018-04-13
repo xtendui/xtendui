@@ -478,6 +478,7 @@
     padding: @vertical @horizontal;
   }
 }
+
 .flex-space(@name, @breakpoint:none) when (default()) {
   .by-key(@flex-space-horizontal, @name);
   @horizontal: @by-key;
@@ -508,6 +509,7 @@
     margin: @vertical @horizontal;
   }
 }
+
 .list-space(@name, @breakpoint:none) when (default()) {
   .by-key(@list-space-horizontal, @name);
   @horizontal: @by-key;
@@ -523,6 +525,45 @@
 }
 
 //////////////////////
+// list alignment
+//////////////////////
+
+// list alignment
+
+.list-left(@breakpoint:none) when (@breakpoint = none) {
+  .list-btn({ .text(left); });
+}
+
+.list-left(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    .list-btn({ .text(left); });
+  }
+}
+
+.list-center(@breakpoint:none) when (@breakpoint = none) {
+  .list-btn({ .text(center); });
+}
+
+.list-center(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    .list-btn({ .text(center); });
+  }
+}
+
+.list-right(@breakpoint:none) when (@breakpoint = none) {
+  .list-btn({ .text(right); });
+}
+
+.list-right(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    .list-btn({ .text(right); });
+  }
+}
+
+//////////////////////
 // flex util
 //////////////////////
 
@@ -533,6 +574,7 @@
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
 }
+
 .flex-auto(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {

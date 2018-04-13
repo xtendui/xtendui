@@ -18,12 +18,28 @@ body {
 //////////////////////
 
 ul, ol {
+  .reset-list();
+}
+
+// .reset-list()
+
+.reset-list() {
   margin: 0;
   padding: 0;
   list-style: none;
   cursor: default;
   > li {
     cursor: auto;
+  }
+}
+
+// selectors
+
+.default-lists(@rules) {
+  &:not([class^='list-']):not([class*=' list-']) {
+    &.default-lists, .default-lists & {
+      @rules();
+    }
   }
 }
 

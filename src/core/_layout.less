@@ -59,6 +59,7 @@
 
 .list-base() {
   .display(flex);
+  .reset-list() !important;
   //.flex-auto(); // @FIX flex inside flex take 100% but dont bugs negative margins
   // list
   .list-btn({
@@ -104,24 +105,6 @@
   .list-base();
   .flex-row();
   .flex-wrap();
-}
-
-// alignment
-
-.list-left {
-  .list-btn({
-    .text(left) !important;
-  });
-}
-.list-center {
-  .list-btn({
-    .text(center) !important;
-  });
-}
-.list-right {
-  .list-btn({
-    .text(right) !important;
-  });
 }
 
 //////////////////////

@@ -76,55 +76,6 @@ select::-ms-expand {
 textarea {
   resize: vertical;
 }
-.clearfix:before,
-.clearfix:after {
-  content: ' ';
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
-.select-none {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.select-text {
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
-  user-select: text;
-}
-.accelerate {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  perspective: 1000;
-  transform: translateZ(0);
-}
-.sr-only {
-  position: absolute;
-  overflow: hidden;
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-}
-.text-upper {
-  text-transform: uppercase !important;
-}
-.text-lower {
-  text-transform: lowercase !important;
-}
-.text-cap {
-  text-transform: capitalize !important;
-}
-.text-nowrap {
-  white-space: nowrap !important;
-}
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -319,13 +270,16 @@ pre code {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  cursor: default !important;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin: 0 0;
   margin: -0.5rem -0.5rem;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -333,6 +287,9 @@ pre code {
 }
 .form-inline .form-group .input-control {
   width: auto;
+}
+.form-inline .form-group > li {
+  cursor: auto !important;
 }
 .form-inline .form-group > li > a,
 .form-inline .form-group > li > button {
@@ -384,11 +341,11 @@ pre code {
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .form-inline .form-group > * {
-  margin: 0 0;
+  margin: 0.5rem 0.5rem;
 }
 .form-inline .form-group > li > a,
 .form-inline .form-group > li > button {
-  text-align: left !important;
+  text-align: left;
 }
 .form-inline .form-group > * {
   margin: 0.5rem 0.5rem;
@@ -564,12 +521,19 @@ select.input-control {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  cursor: default !important;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+}
+.list-block > li {
+  cursor: auto !important;
 }
 .list-block > li > a,
 .list-block > li > button {
@@ -624,12 +588,19 @@ select.input-control {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  cursor: default !important;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+}
+.list-line > li {
+  cursor: auto !important;
 }
 .list-line > li > a,
 .list-line > li > button {
@@ -679,18 +650,6 @@ select.input-control {
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.list-left > li > a,
-.list-left > li > button {
-  text-align: left !important;
-}
-.list-center > li > a,
-.list-center > li > button {
-  text-align: center !important;
-}
-.list-right > li > a,
-.list-right > li > button {
-  text-align: right !important;
 }
 .box {
   display: -webkit-box;
@@ -1145,6 +1104,55 @@ html.xt-fixed .overlay {
  * @param {String} @position Can be 'top' or 'bottom'
  * @param {Value} @pos Position value
  */
+.clearfix:before,
+.clearfix:after {
+  content: ' ';
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.select-text {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.accelerate {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  transform: translateZ(0);
+}
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+.text-upper {
+  text-transform: uppercase !important;
+}
+.text-lower {
+  text-transform: lowercase !important;
+}
+.text-cap {
+  text-transform: capitalize !important;
+}
+.text-nowrap {
+  white-space: nowrap !important;
+}
 .responsive {
   max-width: 100% !important;
   height: auto !important;
@@ -2971,6 +2979,18 @@ html.xt-fixed .overlay {
     padding-right: 6rem !important;
   }
 }
+.list-left > li > a,
+.list-left > li > button {
+  text-align: left !important;
+}
+.list-center > li > a,
+.list-center > li > button {
+  text-align: center !important;
+}
+.list-right > li > a,
+.list-right > li > button {
+  text-align: right !important;
+}
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -3307,6 +3327,18 @@ html.xt-fixed .overlay {
   align-self: auto !important;
 }
 @media (min-width: 768px ) {
+  .list-left-sm > li > a,
+  .list-left-sm > li > button {
+    text-align: left !important;
+  }
+  .list-center-sm > li > a,
+  .list-center-sm > li > button {
+    text-align: center !important;
+  }
+  .list-right-sm > li > a,
+  .list-right-sm > li > button {
+    text-align: right !important;
+  }
   .container {
     padding-right: 20px;
     padding-left: 20px;
@@ -3644,6 +3676,18 @@ html.xt-fixed .overlay {
   }
 }
 @media (min-width: 992px ) {
+  .list-left-md > li > a,
+  .list-left-md > li > button {
+    text-align: left !important;
+  }
+  .list-center-md > li > a,
+  .list-center-md > li > button {
+    text-align: center !important;
+  }
+  .list-right-md > li > a,
+  .list-right-md > li > button {
+    text-align: right !important;
+  }
   .container {
     padding-right: 25px;
     padding-left: 25px;
@@ -3981,6 +4025,18 @@ html.xt-fixed .overlay {
   }
 }
 @media (min-width: 1200px ) {
+  .list-left-lg > li > a,
+  .list-left-lg > li > button {
+    text-align: left !important;
+  }
+  .list-center-lg > li > a,
+  .list-center-lg > li > button {
+    text-align: center !important;
+  }
+  .list-right-lg > li > a,
+  .list-right-lg > li > button {
+    text-align: right !important;
+  }
   .container {
     padding-right: 30px;
     padding-left: 30px;
@@ -4348,17 +4404,22 @@ html.xt-fixed .overlay {
 }
 .list-block,
 .list-line {
-  margin: 0 0;
+  margin: -0.5rem -0.5rem;
 }
 .list-block > *,
 .list-line > * {
-  margin: 0 0;
+  margin: 0.5rem 0.5rem;
 }
 .list-block > li > a,
 .list-line > li > a,
 .list-block > li > button,
 .list-line > li > button {
-  text-align: left !important;
+  text-align: left;
+}
+.list-line {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 .list-default > li > a:not(.btn),
 .list-default > li > button:not(.btn) {
@@ -4797,56 +4858,56 @@ pre code {
   color: inherit !important;
   line-height: inherit !important;
 }
-ul.default-style,
-ol.default-style,
-.default-style ul,
-.default-style ol {
+ul:not([class^='list-']):not([class*=' list-']).default-lists,
+ol:not([class^='list-']):not([class*=' list-']).default-lists,
+.default-lists ul:not([class^='list-']):not([class*=' list-']),
+.default-lists ol:not([class^='list-']):not([class*=' list-']) {
   margin-bottom: 1rem;
   padding-left: 2rem;
 }
-ul.default-style:first-child,
-ol.default-style:first-child,
-.default-style ul:first-child,
-.default-style ol:first-child {
+ul:not([class^='list-']):not([class*=' list-']).default-lists:first-child,
+ol:not([class^='list-']):not([class*=' list-']).default-lists:first-child,
+.default-lists ul:not([class^='list-']):not([class*=' list-']):first-child,
+.default-lists ol:not([class^='list-']):not([class*=' list-']):first-child {
   margin-top: 0;
 }
-ul.default-style:last-child,
-ol.default-style:last-child,
-.default-style ul:last-child,
-.default-style ol:last-child {
+ul:not([class^='list-']):not([class*=' list-']).default-lists:last-child,
+ol:not([class^='list-']):not([class*=' list-']).default-lists:last-child,
+.default-lists ul:not([class^='list-']):not([class*=' list-']):last-child,
+.default-lists ol:not([class^='list-']):not([class*=' list-']):last-child {
   margin-bottom: 0;
 }
-ul.default-style > li,
-ol.default-style > li,
-.default-style ul > li,
-.default-style ol > li {
+ul:not([class^='list-']):not([class*=' list-']).default-lists > li,
+ol:not([class^='list-']):not([class*=' list-']).default-lists > li,
+.default-lists ul:not([class^='list-']):not([class*=' list-']) > li,
+.default-lists ol:not([class^='list-']):not([class*=' list-']) > li {
   margin-bottom: 1rem;
 }
-ul.default-style > ul,
-ol.default-style > ul,
-.default-style ul > ul,
-.default-style ol > ul,
-ul.default-style > ol,
-ol.default-style > ol,
-.default-style ul > ol,
-.default-style ol > ol {
+ul:not([class^='list-']):not([class*=' list-']).default-lists > ul,
+ol:not([class^='list-']):not([class*=' list-']).default-lists > ul,
+.default-lists ul:not([class^='list-']):not([class*=' list-']) > ul,
+.default-lists ol:not([class^='list-']):not([class*=' list-']) > ul,
+ul:not([class^='list-']):not([class*=' list-']).default-lists > ol,
+ol:not([class^='list-']):not([class*=' list-']).default-lists > ol,
+.default-lists ul:not([class^='list-']):not([class*=' list-']) > ol,
+.default-lists ol:not([class^='list-']):not([class*=' list-']) > ol {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-ul.default-style,
-.default-style ul {
+ul:not([class^='list-']):not([class*=' list-']).default-lists,
+.default-lists ul:not([class^='list-']):not([class*=' list-']) {
   list-style: disc;
 }
-ul.default-style ul,
-.default-style ul ul {
+ul:not([class^='list-']):not([class*=' list-']).default-lists ul,
+.default-lists ul:not([class^='list-']):not([class*=' list-']) ul {
   list-style: circle;
 }
-ol.default-style,
-.default-style ol {
+ol:not([class^='list-']):not([class*=' list-']).default-lists,
+.default-lists ol:not([class^='list-']):not([class*=' list-']) {
   list-style-type: decimal;
 }
-ol.default-style ol,
-.default-style ol ol {
+ol:not([class^='list-']):not([class*=' list-']).default-lists ol,
+.default-lists ol:not([class^='list-']):not([class*=' list-']) ol {
   list-style-type: lower-alpha;
 }
 dl {
@@ -5148,17 +5209,23 @@ legend + legend {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  cursor: default !important;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin: 0 0;
   margin: -0.5rem -0.5rem;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+.form-group.inline > li {
+  cursor: auto !important;
 }
 .form-group.inline > li > a,
 .form-group.inline > li > button {
@@ -5210,11 +5277,11 @@ legend + legend {
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .form-group.inline > * {
-  margin: 0 0;
+  margin: 0.5rem 0.5rem;
 }
 .form-group.inline > li > a,
 .form-group.inline > li > button {
-  text-align: left !important;
+  text-align: left;
 }
 .form-group.inline > * {
   margin: 0.5rem 0.5rem;
@@ -6608,7 +6675,7 @@ opacity: 1;
   width: 100%;
 }
 .site-header-top .btn-menu {
-  margin-right: -1.2em;
+  margin-right: -1rem;
   border: 0 !important;
   background-color: transparent !important;
   box-shadow: none !important;
@@ -6649,10 +6716,10 @@ opacity: 1;
   color: #fff;
 }
 .site-breadcrumbs .site-breadcrumbs-body {
-  margin-left: -1.2em !important;
+  margin-left: -1.2rem !important;
 }
 .site-breadcrumbs .site-breadcrumbs-meta {
-  margin-right: -1.2em !important;
+  margin-right: -1.2rem !important;
 }
 .site-breadcrumbs .btn {
   border: 0 !important;
@@ -6916,10 +6983,9 @@ opacity: 1;
   padding-bottom: 2rem;
   background-color: #7367F0;
 }
-.site-footer-top .site-footer-top-links {
-  margin-left: -1.2em !important;
-}
 .site-footer-top .site-footer-top-links .btn {
+  padding-left: 1rem;
+  padding-right: 1rem;
   border: 0 !important;
   background-color: transparent !important;
   box-shadow: none !important;
@@ -7161,6 +7227,9 @@ h2 .site-article-anchor {
 .demo:last-child {
   margin-bottom: 0;
 }
+.demo .demo-tabs {
+  margin-top: -2px;
+}
 .demo .demo-item {
   line-height: 0;
   display: none !important;
@@ -7189,14 +7258,128 @@ h2 .site-article-anchor {
 .demo .demo-tabs,
 .demo .demo-code-tabs {
   z-index: 2;
+  margin-bottom: -0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   background-color: #edf3f6;
+}
+.demo .demo-tabs > *,
+.demo .demo-code-tabs > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  cursor: default !important;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: -0.5rem -0.5rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 0;
+}
+.demo .demo-tabs > * > li,
+.demo .demo-code-tabs > * > li {
+  cursor: auto !important;
+}
+.demo .demo-tabs > * > li > a,
+.demo .demo-code-tabs > * > li > a,
+.demo .demo-tabs > * > li > button,
+.demo .demo-code-tabs > * > li > button {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+.demo .demo-tabs > * > li > a:not(.btn),
+.demo .demo-code-tabs > * > li > a:not(.btn),
+.demo .demo-tabs > * > li > button:not(.btn),
+.demo .demo-code-tabs > * > li > button:not(.btn) {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: .6em 1.2em;
+  font-size: 1.3rem;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  text-align: left;
+}
+.demo .demo-tabs > * > li > a:not(.btn) > span,
+.demo .demo-code-tabs > * > li > a:not(.btn) > span,
+.demo .demo-tabs > * > li > button:not(.btn) > span,
+.demo .demo-code-tabs > * > li > button:not(.btn) > span {
+  display: inline-block;
+}
+.demo .demo-tabs > * > li > a:not(.btn):active,
+.demo .demo-code-tabs > * > li > a:not(.btn):active,
+.demo .demo-tabs > * > li > button:not(.btn):active,
+.demo .demo-code-tabs > * > li > button:not(.btn):active,
+.demo .demo-tabs > * > li > a:not(.btn).active,
+.demo .demo-code-tabs > * > li > a:not(.btn).active,
+.demo .demo-tabs > * > li > button:not(.btn).active,
+.demo .demo-code-tabs > * > li > button:not(.btn).active {
+  z-index: 1;
+}
+.demo .demo-tabs > * > li > a:not(.btn).out,
+.demo .demo-code-tabs > * > li > a:not(.btn).out,
+.demo .demo-tabs > * > li > button:not(.btn).out,
+.demo .demo-code-tabs > * > li > button:not(.btn).out {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.demo .demo-tabs > * > *,
+.demo .demo-code-tabs > * > * {
+  margin: 0.5rem 0.5rem;
+}
+.demo .demo-tabs > * > li > a,
+.demo .demo-code-tabs > * > li > a,
+.demo .demo-tabs > * > li > button,
+.demo .demo-code-tabs > * > li > button {
+  text-align: left;
+}
+.demo .demo-tabs > * > *,
+.demo .demo-code-tabs > * > * {
+  margin: 0 0;
+}
+.demo .demo-tabs .btn,
+.demo .demo-code-tabs .btn {
+  padding: .6em 1.2em;
+  font-size: 1.1rem;
+  padding-left: .8rem;
+  padding-right: .8rem;
+  border: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 .demo .demo-tabs-inside {
   margin-top: -3px;
@@ -7220,6 +7403,7 @@ h2 .site-article-anchor {
   border-color: #dce8ee;
   background-color: #edf3f6;
   color: #343a40;
+  margin: 0;
 }
 .demo .demo-text:first-child {
   margin-top: 0;

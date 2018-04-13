@@ -345,6 +345,16 @@
   .generate-layouts();
   .generate-layouts(@breakpoint:none) {
     & when (@breakpoint = none) {
+      // list alignment
+      .list-left {
+        .list-left() !important;
+      }
+      .list-center {
+        .list-center() !important;
+      }
+      .list-right {
+        .list-right() !important;
+      }
       // container
       .generate-container(@breakpoint);
       // grid
@@ -368,6 +378,16 @@
     & when not (@breakpoint = none) {
       @query-min: 'min-@{breakpoint}';
       @media @@query-min {
+        // list alignment
+        .list-left-@{breakpoint} {
+          .list-left() !important;
+        }
+        .list-center-@{breakpoint} {
+          .list-center() !important;
+        }
+        .list-right-@{breakpoint} {
+          .list-right() !important;
+        }
         // container
         .generate-container(@breakpoint);
         // grid
