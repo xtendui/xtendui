@@ -792,7 +792,7 @@ XtUtil.initAll = function () {
 
       new _xtend.XtToggle(el);
     }
-    // xt-scroll
+    // xt-drop
   } catch (err) {
     _didIteratorError = true;
     _iteratorError = err;
@@ -813,11 +813,12 @@ XtUtil.initAll = function () {
   var _iteratorError2 = undefined;
 
   try {
-    for (var _iterator2 = document.querySelectorAll('[data-xt-scroll]')[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+    for (var _iterator2 = document.querySelectorAll('[data-xt-drop]')[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
       var _el = _step2.value;
 
-      new _xtend.XtScroll(_el);
+      new _xtend.XtDrop(_el);
     }
+    // xt-scroll
   } catch (err) {
     _didIteratorError2 = true;
     _iteratorError2 = err;
@@ -829,6 +830,31 @@ XtUtil.initAll = function () {
     } finally {
       if (_didIteratorError2) {
         throw _iteratorError2;
+      }
+    }
+  }
+
+  var _iteratorNormalCompletion3 = true;
+  var _didIteratorError3 = false;
+  var _iteratorError3 = undefined;
+
+  try {
+    for (var _iterator3 = document.querySelectorAll('[data-xt-scroll]')[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+      var _el2 = _step3.value;
+
+      new _xtend.XtScroll(_el2);
+    }
+  } catch (err) {
+    _didIteratorError3 = true;
+    _iteratorError3 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion3 && _iterator3.return) {
+        _iterator3.return();
+      }
+    } finally {
+      if (_didIteratorError3) {
+        throw _iteratorError3;
       }
     }
   }
@@ -873,51 +899,51 @@ XtUtil.getUniqueID = function () {
  */
 XtUtil.merge = function (arr) {
   var final = {};
-  var _iteratorNormalCompletion3 = true;
-  var _didIteratorError3 = false;
-  var _iteratorError3 = undefined;
+  var _iteratorNormalCompletion4 = true;
+  var _didIteratorError4 = false;
+  var _iteratorError4 = undefined;
 
   try {
-    for (var _iterator3 = arr[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-      var obj = _step3.value;
-      var _iteratorNormalCompletion4 = true;
-      var _didIteratorError4 = false;
-      var _iteratorError4 = undefined;
+    for (var _iterator4 = arr[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+      var obj = _step4.value;
+      var _iteratorNormalCompletion5 = true;
+      var _didIteratorError5 = false;
+      var _iteratorError5 = undefined;
 
       try {
-        for (var _iterator4 = Object.entries(obj)[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
-          var _step4$value = _slicedToArray(_step4.value, 2),
-              key = _step4$value[0],
-              value = _step4$value[1];
+        for (var _iterator5 = Object.entries(obj)[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+          var _step5$value = _slicedToArray(_step5.value, 2),
+              key = _step5$value[0],
+              value = _step5$value[1];
 
           final[key] = value;
         }
       } catch (err) {
-        _didIteratorError4 = true;
-        _iteratorError4 = err;
+        _didIteratorError5 = true;
+        _iteratorError5 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion4 && _iterator4.return) {
-            _iterator4.return();
+          if (!_iteratorNormalCompletion5 && _iterator5.return) {
+            _iterator5.return();
           }
         } finally {
-          if (_didIteratorError4) {
-            throw _iteratorError4;
+          if (_didIteratorError5) {
+            throw _iteratorError5;
           }
         }
       }
     }
   } catch (err) {
-    _didIteratorError3 = true;
-    _iteratorError3 = err;
+    _didIteratorError4 = true;
+    _iteratorError4 = err;
   } finally {
     try {
-      if (!_iteratorNormalCompletion3 && _iterator3.return) {
-        _iterator3.return();
+      if (!_iteratorNormalCompletion4 && _iterator4.return) {
+        _iterator4.return();
       }
     } finally {
-      if (_didIteratorError3) {
-        throw _iteratorError3;
+      if (_didIteratorError4) {
+        throw _iteratorError4;
       }
     }
   }
@@ -1069,7 +1095,7 @@ setTimeout(function () {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.XtScroll = exports.XtToggle = exports.Xt = undefined;
+exports.XtScroll = exports.XtDrop = exports.XtToggle = exports.Xt = undefined;
 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
@@ -1801,11 +1827,98 @@ XtToggle.defaults = {
 };
 
 //////////////////////
+// XtDrop
+//////////////////////
+
+var XtDrop = exports.XtDrop = function (_Xt2) {
+  _inherits(XtDrop, _Xt2);
+
+  /**
+   * constructor
+   * @param {Element} object Base element
+   * @param {Object} options User options
+   * @constructor
+   */
+  function XtDrop(object, jsOptions) {
+    _classCallCheck(this, XtDrop);
+
+    var _this2 = _possibleConstructorReturn(this, (XtDrop.__proto__ || Object.getPrototypeOf(XtDrop)).call(this, object, jsOptions, 'data-xt-drop'));
+
+    _this2.initEvents();
+    return _this2;
+  }
+
+  //////////////////////
+  // init
+  //////////////////////
+
+  /**
+   * init events
+   */
+
+
+  _createClass(XtDrop, [{
+    key: 'initEvents',
+    value: function initEvents() {
+      var self = this;
+      var options = this.options;
+      // on and off
+      var _iteratorNormalCompletion6 = true;
+      var _didIteratorError6 = false;
+      var _iteratorError6 = undefined;
+
+      try {
+        for (var _iterator6 = this.elements[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+          var el = _step6.value;
+
+          if (options.on) {
+            el.addEventListener(options.on, function (e) {
+              self.eventOn(this);
+            });
+          }
+          if (options.off) {
+            el.addEventListener(options.off, function (e) {
+              self.eventOff(this);
+            });
+          }
+        }
+      } catch (err) {
+        _didIteratorError6 = true;
+        _iteratorError6 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion6 && _iterator6.return) {
+            _iterator6.return();
+          }
+        } finally {
+          if (_didIteratorError6) {
+            throw _iteratorError6;
+          }
+        }
+      }
+    }
+  }]);
+
+  return XtDrop;
+}(Xt);
+
+// defaults
+
+XtDrop.defaults = {
+  elements: ':scope > .btn',
+  targets: ':scope > .drop',
+  classes: ['active'],
+  on: 'click',
+  min: 0,
+  max: 1
+};
+
+//////////////////////
 // XtScroll
 //////////////////////
 
-var XtScroll = exports.XtScroll = function (_Xt2) {
-  _inherits(XtScroll, _Xt2);
+var XtScroll = exports.XtScroll = function (_Xt3) {
+  _inherits(XtScroll, _Xt3);
 
   /**
    * constructor
@@ -1816,10 +1929,10 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
   function XtScroll(object, jsOptions) {
     _classCallCheck(this, XtScroll);
 
-    var _this2 = _possibleConstructorReturn(this, (XtScroll.__proto__ || Object.getPrototypeOf(XtScroll)).call(this, object, jsOptions, 'data-xt-scroll'));
+    var _this3 = _possibleConstructorReturn(this, (XtScroll.__proto__ || Object.getPrototypeOf(XtScroll)).call(this, object, jsOptions, 'data-xt-scroll'));
 
-    _this2.initEvents();
-    return _this2;
+    _this3.initEvents();
+    return _this3;
   }
 
   //////////////////////
@@ -1928,13 +2041,13 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
             self.eventOn(element);
             // direction
             var fElements = self.getElements(element);
-            var _iteratorNormalCompletion6 = true;
-            var _didIteratorError6 = false;
-            var _iteratorError6 = undefined;
+            var _iteratorNormalCompletion7 = true;
+            var _didIteratorError7 = false;
+            var _iteratorError7 = undefined;
 
             try {
-              for (var _iterator6 = fElements.all[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
-                var el = _step6.value;
+              for (var _iterator7 = fElements.all[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+                var el = _step7.value;
 
                 el.classList.remove('scroll-off-top', 'scroll-off-bottom');
                 if (self.scrollTop > scrollTop) {
@@ -1943,46 +2056,6 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
                 } else {
                   el.classList.add('scroll-on-top');
                   el.classList.remove('scroll-on-bottom');
-                }
-              }
-            } catch (err) {
-              _didIteratorError6 = true;
-              _iteratorError6 = err;
-            } finally {
-              try {
-                if (!_iteratorNormalCompletion6 && _iterator6.return) {
-                  _iterator6.return();
-                }
-              } finally {
-                if (_didIteratorError6) {
-                  throw _iteratorError6;
-                }
-              }
-            }
-          }
-        } else {
-          var _element$classList4;
-
-          // outside
-          if ((_element$classList4 = element.classList).contains.apply(_element$classList4, _toConsumableArray(self.defaults.classes))) {
-            self.eventOff(element);
-            // direction
-            var _fElements = self.getElements(element);
-            var _iteratorNormalCompletion7 = true;
-            var _didIteratorError7 = false;
-            var _iteratorError7 = undefined;
-
-            try {
-              for (var _iterator7 = _fElements.all[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
-                var _el = _step7.value;
-
-                _el.classList.remove('scroll-on-top', 'scroll-on-bottom');
-                if (self.scrollTop > scrollTop) {
-                  _el.classList.remove('scroll-off-top');
-                  _el.classList.add('scroll-off-bottom');
-                } else {
-                  _el.classList.add('scroll-off-top');
-                  _el.classList.remove('scroll-off-bottom');
                 }
               }
             } catch (err) {
@@ -1996,6 +2069,46 @@ var XtScroll = exports.XtScroll = function (_Xt2) {
               } finally {
                 if (_didIteratorError7) {
                   throw _iteratorError7;
+                }
+              }
+            }
+          }
+        } else {
+          var _element$classList4;
+
+          // outside
+          if ((_element$classList4 = element.classList).contains.apply(_element$classList4, _toConsumableArray(self.defaults.classes))) {
+            self.eventOff(element);
+            // direction
+            var _fElements = self.getElements(element);
+            var _iteratorNormalCompletion8 = true;
+            var _didIteratorError8 = false;
+            var _iteratorError8 = undefined;
+
+            try {
+              for (var _iterator8 = _fElements.all[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
+                var _el = _step8.value;
+
+                _el.classList.remove('scroll-on-top', 'scroll-on-bottom');
+                if (self.scrollTop > scrollTop) {
+                  _el.classList.remove('scroll-off-top');
+                  _el.classList.add('scroll-off-bottom');
+                } else {
+                  _el.classList.add('scroll-off-top');
+                  _el.classList.remove('scroll-off-bottom');
+                }
+              }
+            } catch (err) {
+              _didIteratorError8 = true;
+              _iteratorError8 = err;
+            } finally {
+              try {
+                if (!_iteratorNormalCompletion8 && _iterator8.return) {
+                  _iterator8.return();
+                }
+              } finally {
+                if (_didIteratorError8) {
+                  throw _iteratorError8;
                 }
               }
             }

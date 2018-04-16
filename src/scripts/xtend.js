@@ -463,7 +463,6 @@ Xt.defaults = {
   classes: ['active']
 };
 
-
 //////////////////////
 // XtToggle
 //////////////////////
@@ -513,6 +512,61 @@ export class XtToggle extends Xt {
 XtToggle.defaults = {
   elements: ':scope > .btn',
   targets: '[class^="toggle-"], [class*=" toggle-"]',
+  classes: ['active'],
+  on: 'click',
+  min: 0,
+  max: 1
+};
+
+//////////////////////
+// XtDrop
+//////////////////////
+
+export class XtDrop extends Xt {
+
+  /**
+   * constructor
+   * @param {Element} object Base element
+   * @param {Object} options User options
+   * @constructor
+   */
+  constructor(object, jsOptions) {
+    super(object, jsOptions, 'data-xt-drop');
+    this.initEvents();
+  }
+
+  //////////////////////
+  // init
+  //////////////////////
+
+  /**
+   * init events
+   */
+  initEvents() {
+    let self = this;
+    let options = this.options;
+    // on and off
+    for (let el of this.elements) {
+      if (options.on) {
+        el.addEventListener(options.on, function (e) {
+          self.eventOn(this);
+        });
+      }
+      if (options.off) {
+        el.addEventListener(options.off, function (e) {
+          self.eventOff(this);
+        });
+      }
+    }
+  }
+
+}
+
+// defaults
+
+XtDrop.defaults = {
+  elements: ':scope > .btn',
+  targets: ':scope > .drop',
   classes: ['active'],
   on: 'click',
   min: 0,

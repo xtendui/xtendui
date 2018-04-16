@@ -329,6 +329,9 @@ pre code {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 .form-inline .form-group > li > a,
 .form-inline .form-group > li > button {
@@ -577,6 +580,9 @@ select.input-control {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 .list-block > li > a,
 .list-block > li > button {
@@ -648,6 +654,9 @@ select.input-control {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 .list-line > li > a,
 .list-line > li > button {
@@ -4534,6 +4543,55 @@ html.xt-fixed .overlay {
   padding: .6em 1.2em;
   font-size: 1.3rem;
 }
+.list-drop {
+  margin: 0 0;
+}
+.list-drop > * {
+  margin: 0 0;
+}
+.list-drop > li > a:not(.btn),
+.list-drop > li > button:not(.btn) {
+  border-color: transparent;
+  background-color: transparent;
+  color: #626c76;
+  text-decoration: none !important;
+}
+.list-drop > li > a:not(.btn):hover,
+.list-drop > li > button:not(.btn):hover {
+  text-decoration: none;
+}
+.list-drop > li > a:not(.btn):hover span,
+.list-drop > li > button:not(.btn):hover span {
+  text-decoration: none;
+}
+.list-drop > li > a:not(.btn):hover,
+.list-drop > li > button:not(.btn):hover,
+.list-drop > li > a:not(.btn):active,
+.list-drop > li > button:not(.btn):active,
+.list-drop > li > a:not(.btn).active,
+.list-drop > li > button:not(.btn).active {
+  background-color: #e7f1f6;
+  color: #343a40;
+}
+.list-drop > li > a:not(.btn):active,
+.list-drop > li > button:not(.btn):active,
+.list-drop > li > a:not(.btn).active,
+.list-drop > li > button:not(.btn).active {
+  border-color: #d4e7ef;
+  box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
+}
+.list-drop > li > a:not(.btn),
+.list-drop > li > button:not(.btn) {
+  padding: .6em 1.2em;
+  font-size: 1.2rem;
+}
+.list-drop > li > a,
+.list-drop > li > button {
+  padding-left: 2.2rem !important;
+  padding-right: 2.2rem !important;
+  border-radius: 0 !important;
+  white-space: nowrap !important;
+}
 .box {
   border-radius: 3px;
   border-width: 1px;
@@ -5312,6 +5370,9 @@ legend + legend {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 .form-group.inline > li > a,
 .form-group.inline > li > button {
@@ -6066,18 +6127,6 @@ a:hover,
   background-color: #fff;
   color: #343a40;
 }
-.drop .drop-inner > ul > li > a,
-.drop .drop-inner > ul > li > button {
-  padding-left: 2.2rem !important;
-  padding-right: 2.2rem !important;
-  border-radius: 0 !important;
-  white-space: nowrap;
-}
-.drop .drop-inner > ul > li > a:not(.btn),
-.drop .drop-inner > ul > li > button:not(.btn) {
-  padding: .6em 1.2em;
-  font-size: 1.2rem;
-}
 .drop.out {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -6089,17 +6138,20 @@ a:hover,
   opacity: 0;
   animation-name: anim-vertical-out;
 }
+.drop-squared .drop-inner {
+  border-radius: 0;
+}
 .drop-noborder .drop-inner {
   border: 0;
 }
 .drop-primary .drop-inner {
-  border-color: #7367F0;
-  background-color: #887ef2;
+  border-color: #5e50ee;
+  background-color: #7367F0;
   color: #fff;
 }
 .drop-secondary .drop-inner {
-  border-color: #d4e7ef;
-  background-color: #e7f1f6;
+  border-color: #c1dde8;
+  background-color: #d4e7ef;
   color: #343a40;
 }
 .drop-white .drop-inner {

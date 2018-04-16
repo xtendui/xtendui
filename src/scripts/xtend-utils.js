@@ -4,7 +4,7 @@
 
 'use strict';
 
-import {XtToggle, XtScroll} from './xtend';
+import {XtToggle, XtDrop, XtScroll} from './xtend';
 
 //////////////////////
 // constructor
@@ -31,6 +31,10 @@ XtUtil.initAll = function () {
   // xt-toggle
   for (let el of document.querySelectorAll('[data-xt-toggle]')) {
     new XtToggle(el);
+  }
+  // xt-drop
+  for (let el of document.querySelectorAll('[data-xt-drop]')) {
+    new XtDrop(el);
   }
   // xt-scroll
   for (let el of document.querySelectorAll('[data-xt-scroll]')) {
