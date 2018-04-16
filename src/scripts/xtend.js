@@ -282,6 +282,8 @@ export class Xt {
       el.classList.remove('out');
       self.activationOnAnimate(el);
       // specials
+      self.centerOn(el);
+      self.middleOn(el);
       self.collapseOn(el);
     }
   }
@@ -371,6 +373,30 @@ export class Xt {
   //////////////////////
   // activation specials
   //////////////////////
+
+  /**
+   * centerOn on activation
+   * @param {Element} element
+   */
+  centerOn(el) {
+    if (el.classList.contains('drop-center')) {
+      let add = this.object.clientWidth;
+      let remove = el.clientWidth;
+      el.style.left = ((add - remove) / 2) + 'px';
+    }
+  }
+
+  /**
+   * middleOn on activation
+   * @param {Element} element
+   */
+  middleOn(el) {
+    if (el.classList.contains('drop-middle')) {
+      let add = this.object.clientHeight;
+      let remove = el.clientHeight;
+      el.style.top = ((add - remove) / 2) + 'px';
+    }
+  }
 
   /**
    * collapseOn on activation
@@ -493,12 +519,14 @@ export class XtToggle extends Xt {
     // on and off
     for (let el of this.elements) {
       if (options.on) {
-        el.addEventListener(options.on, function (e) {
+        el.xtUtilOff(options.on + '.xtend');
+        el.xtUtilOn(options.on + '.xtend', function (e) {
           self.eventOn(this);
         });
       }
       if (options.off) {
-        el.addEventListener(options.off, function (e) {
+        el.xtUtilOff(options.off + '.xtend');
+        el.xtUtilOn(options.off, function (e) {
           self.eventOff(this);
         });
       }
@@ -548,16 +576,44 @@ export class XtDrop extends Xt {
     // on and off
     for (let el of this.elements) {
       if (options.on) {
-        el.addEventListener(options.on, function (e) {
+        el.xtUtilOff(options.on + '.xtend');
+        el.xtUtilOn(options.on + '.xtend', function (e) {
           self.eventOn(this);
+          self.documentOn(this);
         });
       }
       if (options.off) {
-        el.addEventListener(options.off, function (e) {
+        el.xtUtilOff(options.off + '.xtend');
+        el.xtUtilOn(options.off + '.xtend', function (e) {
           self.eventOff(this);
+          self.documentOff();
         });
       }
     }
+  }
+  /**
+   * documentOn on activation
+   * @param {Element} element
+   */
+  documentOn(el) {
+    let self = this;
+    XtUtil.requestAnimationFrame.call(window, function () {
+      document.documentElement.xtUtilOff('click.xtend');
+      document.documentElement.xtUtilOn('click.xtend', function (e) {
+        if (e.target !== el && !self.object.contains(e.target)) {
+          self.eventOff(el);
+          self.documentOff();
+        }
+      });
+    });
+  }
+
+  /**
+   * documentOff on deactivation
+   * @param {Element} element
+   */
+  documentOff() {
+    document.documentElement.xtUtilOff('click.xtend');
   }
 
 }
@@ -626,7 +682,8 @@ export class XtScroll extends Xt {
     let self = this;
     let options = this.options;
     // scroll
-    window.addEventListener(options.on, function (e) {
+    window.xtUtilOff(options.on + '.xtend');
+    window.xtUtilOn(options.on, function (e) {
       self.eventScroll(self.object);
     });
   }

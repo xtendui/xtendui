@@ -1,4 +1,4 @@
-/*! xtend v0.2.0 (https://getxtend.com/)
+/*! xtend v0.1.3 (https://getxtend.com/)
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
@@ -171,6 +171,32 @@ XtUtil.getClosest = function (element, selector) {
   return false;
 };
 */
+
+/**
+ * Events with namespace
+ * element.xtUtilOn('click.namespace', function (e) {});
+ * element.xtUtilOff('click.namespace');
+ * https://stackoverflow.com/questions/21817397/event-handler-namespace-in-vanilla-javascript
+ */
+XtUtil.xtUtilOn = function (event, cb, opts) {
+  if (!this.namespaces) {
+    this.namespaces = {}; // save the namespaces on the DOM element itself
+  }
+  this.namespaces[event] = cb;
+  var options = opts || false;
+  this.addEventListener(event.split('.')[0], cb, options);
+  return this;
+};
+XtUtil.xtUtilOff = function (event) {
+  if (this.namespaces) {
+    this.removeEventListener(event.split('.')[0], this.namespaces[event]);
+    delete this.namespaces[event];
+  }
+  return this;
+};
+
+window.xtUtilOn = Element.prototype.xtUtilOn = XtUtil.xtUtilOn;
+window.xtUtilOff = Element.prototype.xtUtilOff = XtUtil.xtUtilOff;
 
 //////////////////////
 // api

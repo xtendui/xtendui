@@ -745,7 +745,7 @@ try {
 _xtendUtils2.default.initAll();
 
 },{"../../../scripts/xtend":3,"../../../scripts/xtend-utils":2}],2:[function(require,module,exports){
-/*! xtend v0.2.0 (https://getxtend.com/)
+/*! xtend v0.1.3 (https://getxtend.com/)
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
@@ -1033,6 +1033,32 @@ XtUtil.getClosest = function (element, selector) {
   return false;
 };
 */
+
+/**
+ * Events with namespace
+ * element.xtUtilOn('click.namespace', function (e) {});
+ * element.xtUtilOff('click.namespace');
+ * https://stackoverflow.com/questions/21817397/event-handler-namespace-in-vanilla-javascript
+ */
+XtUtil.xtUtilOn = function (event, cb, opts) {
+  if (!this.namespaces) {
+    this.namespaces = {}; // save the namespaces on the DOM element itself
+  }
+  this.namespaces[event] = cb;
+  var options = opts || false;
+  this.addEventListener(event.split('.')[0], cb, options);
+  return this;
+};
+XtUtil.xtUtilOff = function (event) {
+  if (this.namespaces) {
+    this.removeEventListener(event.split('.')[0], this.namespaces[event]);
+    delete this.namespaces[event];
+  }
+  return this;
+};
+
+window.xtUtilOn = Element.prototype.xtUtilOn = XtUtil.xtUtilOn;
+window.xtUtilOff = Element.prototype.xtUtilOff = XtUtil.xtUtilOff;
 
 //////////////////////
 // api
@@ -1501,6 +1527,8 @@ var Xt = exports.Xt = function () {
           el.classList.remove('out');
           self.activationOnAnimate(el);
           // specials
+          self.centerOn(el);
+          self.middleOn(el);
           self.collapseOn(el);
         }
       } catch (err) {
@@ -1639,6 +1667,36 @@ var Xt = exports.Xt = function () {
     //////////////////////
     // activation specials
     //////////////////////
+
+    /**
+     * centerOn on activation
+     * @param {Element} element
+     */
+
+  }, {
+    key: 'centerOn',
+    value: function centerOn(el) {
+      if (el.classList.contains('drop-center')) {
+        var add = this.object.clientWidth;
+        var remove = el.clientWidth;
+        el.style.left = (add - remove) / 2 + 'px';
+      }
+    }
+
+    /**
+     * middleOn on activation
+     * @param {Element} element
+     */
+
+  }, {
+    key: 'middleOn',
+    value: function middleOn(el) {
+      if (el.classList.contains('drop-middle')) {
+        var add = this.object.clientHeight;
+        var remove = el.clientHeight;
+        el.style.top = (add - remove) / 2 + 'px';
+      }
+    }
 
     /**
      * collapseOn on activation
@@ -1785,12 +1843,14 @@ var XtToggle = exports.XtToggle = function (_Xt) {
           var el = _step5.value;
 
           if (options.on) {
-            el.addEventListener(options.on, function (e) {
+            el.xtUtilOff(options.on + '.xtend');
+            el.xtUtilOn(options.on + '.xtend', function (e) {
               self.eventOn(this);
             });
           }
           if (options.off) {
-            el.addEventListener(options.off, function (e) {
+            el.xtUtilOff(options.off + '.xtend');
+            el.xtUtilOn(options.off, function (e) {
               self.eventOff(this);
             });
           }
@@ -1872,13 +1932,17 @@ var XtDrop = exports.XtDrop = function (_Xt2) {
           var el = _step6.value;
 
           if (options.on) {
-            el.addEventListener(options.on, function (e) {
+            el.xtUtilOff(options.on + '.xtend');
+            el.xtUtilOn(options.on + '.xtend', function (e) {
               self.eventOn(this);
+              self.documentOn(this);
             });
           }
           if (options.off) {
-            el.addEventListener(options.off, function (e) {
+            el.xtUtilOff(options.off + '.xtend');
+            el.xtUtilOn(options.off + '.xtend', function (e) {
               self.eventOff(this);
+              self.documentOff();
             });
           }
         }
@@ -1896,6 +1960,36 @@ var XtDrop = exports.XtDrop = function (_Xt2) {
           }
         }
       }
+    }
+    /**
+     * documentOn on activation
+     * @param {Element} element
+     */
+
+  }, {
+    key: 'documentOn',
+    value: function documentOn(el) {
+      var self = this;
+      _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+        document.documentElement.xtUtilOff('click.xtend');
+        document.documentElement.xtUtilOn('click.xtend', function (e) {
+          if (e.target !== el && !self.object.contains(e.target)) {
+            self.eventOff(el);
+            self.documentOff();
+          }
+        });
+      });
+    }
+
+    /**
+     * documentOff on deactivation
+     * @param {Element} element
+     */
+
+  }, {
+    key: 'documentOff',
+    value: function documentOff() {
+      document.documentElement.xtUtilOff('click.xtend');
     }
   }]);
 
@@ -1978,7 +2072,8 @@ var XtScroll = exports.XtScroll = function (_Xt3) {
       var self = this;
       var options = this.options;
       // scroll
-      window.addEventListener(options.on, function (e) {
+      window.xtUtilOff(options.on + '.xtend');
+      window.xtUtilOn(options.on, function (e) {
         self.eventScroll(self.object);
       });
     }

@@ -738,59 +738,59 @@ a,
 .drop.out {
   pointer-events: none;
 }
-.drop-before {
-  left: auto;
-  right: 100%;
+.drop.drop-before {
+  padding: 6px !important;
+  left: auto !important;
+  right: 100% !important;
 }
-.drop-after {
-  left: 100%;
-  right: auto;
+.drop.drop-after {
+  padding: 6px !important;
+  left: 100% !important;
+  right: auto !important;
 }
-.drop-left {
-  left: 0;
-  right: auto;
+.drop.drop-left {
+  padding: 6px 0 !important;
+  left: 0 !important;
+  right: auto !important;
 }
-.drop-right {
-  left: auto;
-  right: 0;
+.drop.drop-right {
+  padding: 6px 0 !important;
+  left: auto !important;
+  right: 0 !important;
 }
-.drop-bottom {
-  top: 100%;
-  bottom: auto;
+.drop.drop-bottom {
+  padding: 6px 0 !important;
+  top: 100% !important;
+  bottom: auto !important;
 }
-.drop-top {
-  top: auto;
-  bottom: 100%;
+.drop.drop-top {
+  padding: 6px 0 !important;
+  top: auto !important;
+  bottom: 100% !important;
 }
-.drop-middle-bottom {
-  top: auto;
-  bottom: 0;
-}
-.drop-middle-top {
-  top: 0;
-  bottom: auto;
-}
-.drop-middle-top,
-.drop-middle-bottom,
-.drop-middle {
+.drop.drop-middle {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
-.drop-left,
-.drop-right,
-.drop-top,
-.drop-bottom {
-  padding: 6px 0;
+.drop.drop-middle-bottom {
+  top: auto !important;
+  bottom: 0 !important;
 }
-.drop-before,
-.drop-after {
-  padding: 6px;
+.drop.drop-middle-top {
+  top: 0 !important;
+  bottom: auto !important;
 }
-.drop-max-height .drop-inner {
-  overflow-y: auto;
+.drop.drop-max-height .drop-inner {
+  overflow-y: auto !important;
 }
-.drop-max-width .drop-inner {
-  overflow-x: auto;
+.drop.drop-max-height .drop-inner {
+  max-height: 20rem !important;
+}
+.drop.drop-max-width .drop-inner {
+  overflow-x: auto !important;
+}
+.drop.drop-max-width .drop-inner {
+  max-width: 20rem !important;
 }
 .overlay {
   display: none !important;
@@ -5969,9 +5969,9 @@ a:hover,
 .drop {
   left: 0;
   right: auto;
+  padding: 6px 0;
   top: 100%;
   bottom: auto;
-  padding: 6px 0;
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
@@ -6023,10 +6023,10 @@ a:hover,
   color: #343a40;
 }
 .drop-max-height .drop-inner {
-  max-height: 225px;
+  max-height: 20rem;
 }
 .drop-max-width .drop-inner {
-  max-width: 225px;
+  max-width: 20rem;
 }
 .overlay .btn-close {
   padding: .6em 1.2em !important;
