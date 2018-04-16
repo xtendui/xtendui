@@ -4480,37 +4480,6 @@ html.xt-fixed .overlay {
 }
 .list-drop > li > a:not(.btn),
 .list-drop > li > button:not(.btn) {
-  border-color: transparent;
-  background-color: transparent;
-  color: #626c76;
-  text-decoration: none !important;
-}
-.list-drop > li > a:not(.btn):hover,
-.list-drop > li > button:not(.btn):hover {
-  text-decoration: none;
-}
-.list-drop > li > a:not(.btn):hover span,
-.list-drop > li > button:not(.btn):hover span {
-  text-decoration: none;
-}
-.list-drop > li > a:not(.btn):hover,
-.list-drop > li > button:not(.btn):hover,
-.list-drop > li > a:not(.btn):active,
-.list-drop > li > button:not(.btn):active,
-.list-drop > li > a:not(.btn).active,
-.list-drop > li > button:not(.btn).active {
-  background-color: #e7f1f6;
-  color: #343a40;
-}
-.list-drop > li > a:not(.btn):active,
-.list-drop > li > button:not(.btn):active,
-.list-drop > li > a:not(.btn).active,
-.list-drop > li > button:not(.btn).active {
-  border-color: #d4e7ef;
-  box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
-}
-.list-drop > li > a:not(.btn),
-.list-drop > li > button:not(.btn) {
   padding: .6em 1.2em;
   font-size: 1.2rem;
 }
@@ -5985,11 +5954,6 @@ a:hover,
   border-color: transparent;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
-.drop .drop-inner {
-  border-color: #f2f2f2;
-  background-color: #fff;
-  color: #343a40;
-}
 .drop.out {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -6001,26 +5965,154 @@ a:hover,
   opacity: 0;
   animation-name: anim-vertical-out;
 }
+.drop-default .drop-inner {
+  border-color: #f2f2f2;
+  background-color: #fff;
+  color: #343a40;
+}
+.drop-default .list-drop > li > a:not(.btn),
+.drop-default .list-drop > li > button:not(.btn) {
+  border-color: transparent;
+  background-color: transparent;
+  color: #7367F0;
+  text-decoration: none !important;
+}
+.drop-default .list-drop > li > a:not(.btn):hover,
+.drop-default .list-drop > li > button:not(.btn):hover {
+  text-decoration: none;
+}
+.drop-default .list-drop > li > a:not(.btn):hover span,
+.drop-default .list-drop > li > button:not(.btn):hover span {
+  text-decoration: none;
+}
+.drop-default .list-drop > li > a:not(.btn):hover,
+.drop-default .list-drop > li > button:not(.btn):hover,
+.drop-default .list-drop > li > a:not(.btn):active,
+.drop-default .list-drop > li > button:not(.btn):active,
+.drop-default .list-drop > li > a:not(.btn).active,
+.drop-default .list-drop > li > button:not(.btn).active {
+  background-color: #887ef2;
+  color: #fff;
+}
+.drop-default .list-drop > li > a:not(.btn):active,
+.drop-default .list-drop > li > button:not(.btn):active,
+.drop-default .list-drop > li > a:not(.btn).active,
+.drop-default .list-drop > li > button:not(.btn).active {
+  border-color: #7367F0;
+  box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
+}
 .drop-squared .drop-inner {
   border-radius: 0;
 }
 .drop-noborder .drop-inner {
   border: 0;
 }
-.drop-white .drop-inner {
-  border-color: #f2f2f2;
-  background-color: #fff;
-  color: #343a40;
-}
 .drop-primary .drop-inner {
   border-color: #5e50ee;
   background-color: #7367F0;
   color: #fff;
 }
+.drop-primary .list-drop > li > a:not(.btn),
+.drop-primary .list-drop > li > button:not(.btn) {
+  border-color: #7367F0;
+  background-color: #7367F0;
+  color: rgba(255, 255, 255, 0.8);
+}
+.drop-primary .list-drop > li > a:not(.btn):hover,
+.drop-primary .list-drop > li > button:not(.btn):hover {
+  text-decoration: none;
+}
+.drop-primary .list-drop > li > a:not(.btn):hover span,
+.drop-primary .list-drop > li > button:not(.btn):hover span {
+  text-decoration: none;
+}
+.drop-primary .list-drop > li > a:not(.btn):hover,
+.drop-primary .list-drop > li > button:not(.btn):hover,
+.drop-primary .list-drop > li > a:not(.btn):active,
+.drop-primary .list-drop > li > button:not(.btn):active,
+.drop-primary .list-drop > li > a:not(.btn).active,
+.drop-primary .list-drop > li > button:not(.btn).active {
+  background-color: #887ef2;
+  color: #fff;
+}
+.drop-primary .list-drop > li > a:not(.btn):active,
+.drop-primary .list-drop > li > button:not(.btn):active,
+.drop-primary .list-drop > li > a:not(.btn).active,
+.drop-primary .list-drop > li > button:not(.btn).active {
+  border-color: #7367F0;
+  box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
+}
 .drop-secondary .drop-inner {
   border-color: #c1dde8;
   background-color: #d4e7ef;
   color: #343a40;
+}
+.drop-secondary .list-drop > li > a:not(.btn),
+.drop-secondary .list-drop > li > button:not(.btn) {
+  border-color: #d4e7ef;
+  background-color: #d4e7ef;
+  color: rgba(52, 58, 64, 0.8);
+  text-decoration: none !important;
+}
+.drop-secondary .list-drop > li > a:not(.btn):hover,
+.drop-secondary .list-drop > li > button:not(.btn):hover {
+  text-decoration: none;
+}
+.drop-secondary .list-drop > li > a:not(.btn):hover span,
+.drop-secondary .list-drop > li > button:not(.btn):hover span {
+  text-decoration: none;
+}
+.drop-secondary .list-drop > li > a:not(.btn):hover,
+.drop-secondary .list-drop > li > button:not(.btn):hover,
+.drop-secondary .list-drop > li > a:not(.btn):active,
+.drop-secondary .list-drop > li > button:not(.btn):active,
+.drop-secondary .list-drop > li > a:not(.btn).active,
+.drop-secondary .list-drop > li > button:not(.btn).active {
+  background-color: #e7f1f6;
+  color: #343a40;
+}
+.drop-secondary .list-drop > li > a:not(.btn):active,
+.drop-secondary .list-drop > li > button:not(.btn):active,
+.drop-secondary .list-drop > li > a:not(.btn).active,
+.drop-secondary .list-drop > li > button:not(.btn).active {
+  border-color: #d4e7ef;
+  box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
+}
+.drop-white .drop-inner {
+  border-color: #f2f2f2;
+  background-color: #fff;
+  color: #343a40;
+}
+.drop-white .list-drop > li > a:not(.btn),
+.drop-white .list-drop > li > button:not(.btn) {
+  border-color: transparent;
+  background-color: transparent;
+  color: #7367F0;
+  text-decoration: none !important;
+}
+.drop-white .list-drop > li > a:not(.btn):hover,
+.drop-white .list-drop > li > button:not(.btn):hover {
+  text-decoration: none;
+}
+.drop-white .list-drop > li > a:not(.btn):hover span,
+.drop-white .list-drop > li > button:not(.btn):hover span {
+  text-decoration: none;
+}
+.drop-white .list-drop > li > a:not(.btn):hover,
+.drop-white .list-drop > li > button:not(.btn):hover,
+.drop-white .list-drop > li > a:not(.btn):active,
+.drop-white .list-drop > li > button:not(.btn):active,
+.drop-white .list-drop > li > a:not(.btn).active,
+.drop-white .list-drop > li > button:not(.btn).active {
+  background-color: #887ef2;
+  color: #fff;
+}
+.drop-white .list-drop > li > a:not(.btn):active,
+.drop-white .list-drop > li > button:not(.btn):active,
+.drop-white .list-drop > li > a:not(.btn).active,
+.drop-white .list-drop > li > button:not(.btn).active {
+  border-color: #7367F0;
+  box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
 .drop-max-height .drop-inner {
   max-height: 20rem;

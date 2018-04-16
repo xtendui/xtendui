@@ -341,9 +341,14 @@ a, .alink {
   // options
   .drop-left(); // position
   .drop-bottom(); // position
-  .drop-white(); // variant
   // animations
   .anim-vertical();
+}
+
+// default
+
+.drop-default {
+  .drop-white(); // variant
 }
 
 // special
@@ -362,19 +367,14 @@ a, .alink {
 
 // variant
 
-.drop-white {
-  .drop-inner {
-    border-color: darken(@white, 5%);
-    background-color: @white;
-    color: @text;
-  }
-}
-
 .drop-primary {
   .drop-inner {
     border-color: darken(@primary, 5%);
     background-color: @primary;
     color: @text-inverse;
+  }
+  .list-drop {
+    .list-btn-default({ .btn-primary() });
   }
 }
 
@@ -383,6 +383,20 @@ a, .alink {
     border-color: darken(@secondary, 5%);
     background-color: @secondary;
     color: @text;
+  }
+  .list-drop {
+    .list-btn-default({ .btn-secondary() });
+  }
+}
+
+.drop-white {
+  .drop-inner {
+    border-color: darken(@white, 5%);
+    background-color: @white;
+    color: @text;
+  }
+  .list-drop {
+    .list-btn-default({ .btn-primary-empty() });
   }
 }
 

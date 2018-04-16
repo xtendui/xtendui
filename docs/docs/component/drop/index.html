@@ -436,7 +436,7 @@
       <button type="button">
         <!-- content -->
       </button>
-      <div class="drop">
+      <div class="drop drop-default">
         <div class="drop-inner">
           <!-- content -->
         </div>
@@ -460,7 +460,7 @@
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
-        <div class="drop">
+        <div class="drop drop-default">
           <div class="drop-inner">
             <div class="box">
               Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit.<br/>Nullam posuere ex ac felis venenatis
@@ -485,7 +485,7 @@
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
-        <div class="drop">
+        <div class="drop drop-default">
           <div class="drop-inner">
             <ul class="list list-drop">
               <li>
@@ -507,23 +507,19 @@
 
 <h2>Options</h2>
 
-<h3>List</h3>
+<h3>Variants</h3>
 
-<p>You also have to assign a <a href="/docs/layout/list/#variants">list variant</a>.</p>
-
-<p><code>.list-drop</code> has drop's list default options that you can <strong>override adding classes</strong>, except
-  the
-  <code>// not overridable</code> options in the theme.</p>
+<p>Optional classes for assigning variant to style all buttons the same way.</p>
 
 <div class="demo">
-  <div class="demo-item demo-preview" data-name="list-drop">
-    <div class="demo-text"><code>.list-drop</code></div>
+  <div class="demo-item demo-preview" data-name="default">
+    <div class="demo-text"><code>.drop-default</code></div>
     <div class="demo-source demo-drops" data-lang="html">
       <div class="drop-outer" data-xt-drop>
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
-        <div class="drop">
+        <div class="drop drop-default">
           <div class="drop-inner">
             <ul class="list list-drop">
               <li>
@@ -541,17 +537,16 @@
       </div>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="override">
-    <div class="demo-text"><code>.list-space-tiny</code> <code>.list-center</code> <code>.list-primary-empty</code>
-      <code>.list-big</code> <code>.list-short</code></div>
+  <div class="demo-item demo-preview" data-name="primary">
+    <div class="demo-text"><code>.drop-primary</code></div>
     <div class="demo-source demo-drops" data-lang="html">
       <div class="drop-outer" data-xt-drop>
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
-        <div class="drop">
+        <div class="drop drop-primary">
           <div class="drop-inner">
-            <ul class="list list-drop list-space-tiny list-center list-primary-empty list-big list-short">
+            <ul class="list list-drop">
               <li>
                 <button type="button">Lorem ipsum dolor</button>
               </li>
@@ -567,21 +562,14 @@
       </div>
     </div>
   </div>
-</div>
-
-<h3>Variants</h3>
-
-<p>Optional classes for assigning variant.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="default">
-    <div class="demo-text"><code>.list-drop</code></div>
+  <div class="demo-item demo-preview" data-name="secondary">
+    <div class="demo-text"><code>.drop-secondary</code></div>
     <div class="demo-source demo-drops" data-lang="html">
       <div class="drop-outer" data-xt-drop>
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
-        <div class="drop">
+        <div class="drop drop-secondary">
           <div class="drop-inner">
             <ul class="list list-drop">
               <li>
@@ -600,7 +588,7 @@
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="white">
-    <div class="demo-text"><code>.drop-white</code> <code>.list-primary-empty</code></div>
+    <div class="demo-text"><code>.drop-white</code></div>
     <div class="demo-source demo-drops" data-lang="html">
       <div class="drop-outer" data-xt-drop>
         <button type="button" class="btn btn-primary">
@@ -608,7 +596,7 @@
         </button>
         <div class="drop drop-white">
           <div class="drop-inner">
-            <ul class="list list-drop list-primary-empty">
+            <ul class="list list-drop">
               <li>
                 <button type="button">Lorem ipsum dolor</button>
               </li>
@@ -624,16 +612,19 @@
       </div>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="primary">
-    <div class="demo-text"><code>.drop-primary</code> <code>.list-primary</code></div>
+  <div class="demo-item demo-preview" data-name="override">
+    <div class="demo-text">
+      With <code>.list-drop</code> you can <strong>override</strong> some options: you can't override
+      <strong>variant</strong> and the <code>// not overridable</code> code in the theme.
+    </div>
     <div class="demo-source demo-drops" data-lang="html">
       <div class="drop-outer" data-xt-drop>
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
-        <div class="drop drop-primary">
+        <div class="drop drop-default">
           <div class="drop-inner">
-            <ul class="list list-drop list-primary">
+            <ul class="list list-drop list-space-tiny list-center list-big list-short">
               <li>
                 <button type="button">Lorem ipsum dolor</button>
               </li>
@@ -649,16 +640,18 @@
       </div>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="secondary">
-    <div class="demo-text"><code>.drop-secondary</code> <code>.list-secondary</code></div>
+  <div class="demo-item demo-preview" data-name="custom">
+    <div class="demo-text">
+      For complete control over lists don't use <code>.list-drop</code>.
+    </div>
     <div class="demo-source demo-drops" data-lang="html">
       <div class="drop-outer" data-xt-drop>
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
-        <div class="drop drop-secondary">
+        <div class="drop drop-default">
           <div class="drop-inner">
-            <ul class="list list-drop list-secondary">
+            <ul class="list list-secondary-empty list-squared list-space-tiny list-center list-big list-short">
               <li>
                 <button type="button">Lorem ipsum dolor</button>
               </li>
@@ -688,7 +681,7 @@
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
-        <div class="drop drop-squared">
+        <div class="drop drop-default drop-squared">
           <div class="drop-inner">
             <ul class="list list-drop">
               <li>
@@ -713,7 +706,7 @@
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
-        <div class="drop drop-noborder">
+        <div class="drop drop-default drop-noborder">
           <div class="drop-inner">
             <ul class="list list-drop">
               <li>
@@ -740,14 +733,15 @@
 <div class="demo">
   <div class="demo-item demo-preview" data-name="bottom">
     <div class="demo-text"><code>.drop-bottom</code> <code>.drop-left</code> <code>.drop-right</code>
-      <code>.drop-center</code></div>
+      <code>.drop-center</code>
+    </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-line list-space-small align-items-center demo-source-from">
         <div class="drop-outer" data-xt-drop>
           <button type="button" class="btn btn-primary">
             bottom left
           </button>
-          <div class="drop drop-bottom drop-left">
+          <div class="drop drop-default drop-bottom drop-left">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -768,7 +762,7 @@
           <button type="button" class="btn btn-primary">
             bottom right
           </button>
-          <div class="drop drop-bottom drop-right">
+          <div class="drop drop-default drop-bottom drop-right">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -789,7 +783,7 @@
           <button type="button" class="btn btn-primary">
             bottom center
           </button>
-          <div class="drop drop-bottom drop-center">
+          <div class="drop drop-default drop-bottom drop-center">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -817,7 +811,7 @@
           <button type="button" class="btn btn-primary">
             top left
           </button>
-          <div class="drop drop-top drop-left">
+          <div class="drop drop-default drop-top drop-left">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -838,7 +832,7 @@
           <button type="button" class="btn btn-primary">
             top right
           </button>
-          <div class="drop drop-top drop-right">
+          <div class="drop drop-default drop-top drop-right">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -859,7 +853,7 @@
           <button type="button" class="btn btn-primary">
             top center
           </button>
-          <div class="drop drop-top drop-center">
+          <div class="drop drop-default drop-top drop-center">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -887,7 +881,7 @@
           <button type="button" class="btn btn-primary">
             middle left
           </button>
-          <div class="drop drop-middle drop-left">
+          <div class="drop drop-default drop-middle drop-left">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -908,7 +902,7 @@
           <button type="button" class="btn btn-primary">
             middle right
           </button>
-          <div class="drop drop-middle drop-right">
+          <div class="drop drop-default drop-middle drop-right">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -929,7 +923,7 @@
           <button type="button" class="btn btn-primary">
             middle center
           </button>
-          <div class="drop drop-middle drop-center">
+          <div class="drop drop-default drop-middle drop-center">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -957,7 +951,7 @@
           <button type="button" class="btn btn-primary">
             before top
           </button>
-          <div class="drop drop-before drop-top">
+          <div class="drop drop-default drop-before drop-top">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -978,7 +972,7 @@
           <button type="button" class="btn btn-primary">
             before bottom
           </button>
-          <div class="drop drop-before drop-bottom">
+          <div class="drop drop-default drop-before drop-bottom">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -999,7 +993,7 @@
           <button type="button" class="btn btn-primary">
             before middle
           </button>
-          <div class="drop drop-before drop-middle">
+          <div class="drop drop-default drop-before drop-middle">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1027,7 +1021,7 @@
           <button type="button" class="btn btn-primary">
             after top
           </button>
-          <div class="drop drop-after drop-top">
+          <div class="drop drop-default drop-after drop-top">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1048,7 +1042,7 @@
           <button type="button" class="btn btn-primary">
             after bottom
           </button>
-          <div class="drop drop-after drop-bottom">
+          <div class="drop drop-default drop-after drop-bottom">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1069,7 +1063,7 @@
           <button type="button" class="btn btn-primary">
             after middle
           </button>
-          <div class="drop drop-after drop-middle">
+          <div class="drop drop-default drop-after drop-middle">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1096,7 +1090,7 @@
           <button type="button" class="btn btn-primary">
             right middle bottom
           </button>
-          <div class="drop drop-right drop-middle drop-middle-bottom">
+          <div class="drop drop-default drop-right drop-middle drop-middle-bottom">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1117,7 +1111,7 @@
           <button type="button" class="btn btn-primary">
             right middle-top
           </button>
-          <div class="drop drop-right drop-middle drop-middle-top">
+          <div class="drop drop-default drop-right drop-middle drop-middle-top">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1138,7 +1132,7 @@
           <button type="button" class="btn btn-primary">
             left middle-bottom
           </button>
-          <div class="drop drop-left drop-middle drop-middle-bottom">
+          <div class="drop drop-default drop-left drop-middle drop-middle-bottom">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1159,7 +1153,7 @@
           <button type="button" class="btn btn-primary">
             left middle-top
           </button>
-          <div class="drop drop-left drop-middle drop-middle-top">
+          <div class="drop drop-default drop-left drop-middle drop-middle-top">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1180,7 +1174,7 @@
           <button type="button" class="btn btn-primary">
             before middle-bottom
           </button>
-          <div class="drop drop-before drop-middle drop-middle-bottom">
+          <div class="drop drop-default drop-before drop-middle drop-middle-bottom">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1201,7 +1195,7 @@
           <button type="button" class="btn btn-primary">
             before middle-top
           </button>
-          <div class="drop drop-before drop-middle drop-middle-top">
+          <div class="drop drop-default drop-before drop-middle drop-middle-top">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1222,7 +1216,7 @@
           <button type="button" class="btn btn-primary">
             after middle-bottom
           </button>
-          <div class="drop drop-after drop-middle drop-middle-bottom">
+          <div class="drop drop-default drop-after drop-middle drop-middle-bottom">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1243,7 +1237,7 @@
           <button type="button" class="btn btn-primary">
             after middle-top
           </button>
-          <div class="drop drop-after drop-middle drop-middle-top">
+          <div class="drop drop-default drop-after drop-middle drop-middle-top">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1277,7 +1271,7 @@
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
-          <div class="drop">
+          <div class="drop drop-default drop-default">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1304,7 +1298,7 @@
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
-          <div class="drop drop-top">
+          <div class="drop drop-default drop-top">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1331,7 +1325,7 @@
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
-          <div class="drop drop-middle">
+          <div class="drop drop-default drop-middle">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1365,7 +1359,7 @@
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
-          <div class="drop drop-max-height">
+          <div class="drop drop-default drop-max-height">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1404,7 +1398,7 @@
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
-          <div class="drop drop-max-width">
+          <div class="drop drop-default drop-max-width">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1443,7 +1437,7 @@
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
-          <div class="drop drop-max-height drop-max-width">
+          <div class="drop drop-default drop-max-height drop-max-width">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1476,997 +1470,9 @@
   </div>
 </div>
 
-<!--
-  <div class="demo-item demo-preview" data-name="group">
-    <div class="demo-text"><code>[data-group]</code>.</div>
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty" data-group="0">
-    Toggle
-  </button>
-  <div class="drop bottom left" data-group="0">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-  <div class="drop top right" data-group="0">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-  <div class="drop before middle-top" data-group="0">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-  <div class="drop after middle-bottom" data-group="0">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-</div>
+<h2>Variables</h2>
 
-<h3>Positions</h3>
-
-<p>You can set <strong>default position</strong> inside the .less file.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="default">
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    default
-  </button>
-  <div class="drop">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="bottom">
-    <div class="demo-text"><code>.bottom</code> with <code>.left</code> <code>.right</code> <code>.center</code>.</div>
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    bottom left
-  </button>
-  <div class="drop bottom left">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    bottom right
-  </button>
-  <div class="drop bottom right">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    bottom center
-  </button>
-  <div class="drop bottom center">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="top">
-    <div class="demo-text"><code>.top</code> with <code>.left</code> <code>.right</code> <code>.center</code>.</div>
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    top left
-  </button>
-  <div class="drop top left">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    top right
-  </button>
-  <div class="drop top right">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    top center
-  </button>
-  <div class="drop top center">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="middle">
-    <div class="demo-text"><code>.middle</code> with <code>.left</code> <code>.right</code> <code>.center</code>.</div>
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    middle
-  </button>
-  <div class="drop middle left">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    middle right
-  </button>
-  <div class="drop middle right">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-    <button type="button" class="btn btn-primary-empty">
-      middle center
-    </button>
-    <div class="drop middle center">
-      <div class="drop-inner">
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      </div>
-    </div>
-  </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="before">
-    <div class="demo-text"><code>.before</code> with <code>.top</code> <code>.bottom</code> <code>.middle</code>.</div>
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    before top
-  </button>
-  <div class="drop before top">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    before bottom
-  </button>
-  <div class="drop before bottom">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-    <button type="button" class="btn btn-primary-empty">
-      before middle
-    </button>
-    <div class="drop before middle">
-      <div class="drop-inner">
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      </div>
-    </div>
-  </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="after">
-    <div class="demo-text"><code>.after</code> with <code>.top</code> <code>.bottom</code> <code>.middle</code>.</div>
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    after top
-  </button>
-  <div class="drop after top">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    after bottom
-  </button>
-  <div class="drop after bottom">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-    <button type="button" class="btn btn-primary-empty">
-      after middle
-    </button>
-    <div class="drop after middle">
-      <div class="drop-inner">
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      </div>
-    </div>
-  </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="others">
-    <div class="demo-text"><code>.middle-top</code> and <code>.middle-bottom</code>.</div>
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    right middle-bottom
-  </button>
-  <div class="drop right middle-bottom">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    right middle-top
-  </button>
-  <div class="drop right middle-top">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    left middle-bottom
-  </button>
-  <div class="drop left middle-bottom">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    left middle-top
-  </button>
-  <div class="drop left middle-top">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    before middle-bottom
-  </button>
-  <div class="drop before middle-bottom">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    before middle-top
-  </button>
-  <div class="drop before middle-top">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    after middle-bottom
-  </button>
-  <div class="drop after middle-bottom">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-    <button type="button" class="btn btn-primary-empty">
-      after middle-top
-    </button>
-    <div class="drop after middle-top">
-      <div class="drop-inner">
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      </div>
-    </div>
-  </div>
-    </div>
-  </div>
-</div>
-
-<h3>Static</h3>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="static">
-    <div class="demo-text">Width relative to parent's relative elements with <code>.drop-outer.static</code>.</div>
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer static" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    default
-  </button>
-  <div class="drop">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer static" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    top
-  </button>
-  <div class="drop top">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer static" data-xt-drop>
-    <button type="button" class="btn btn-primary-empty">
-      middle
-    </button>
-    <div class="drop middle">
-      <div class="drop-inner">
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      </div>
-    </div>
-  </div>
-    </div>
-  </div>
-</div>
-
-<h3>Dimensions</h3>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="">
-    <div class="demo-text"><code>max-height</code> <code>max-width</code>.</div>
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    max-height
-  </button>
-  <div class="drop max-height">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    max-width
-  </button>
-  <div class="drop max-width">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-    <button type="button" class="btn btn-primary-empty">
-      max-height max-width
-    </button>
-    <div class="drop max-width max-height">
-      <div class="drop-inner">
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit</button>
-      </div>
-    </div>
-  </div>
-    </div>
-  </div>
-</div>
-
-<h3>Backdrop</h3>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="backdrop">
-    <div class="demo-text"><code>.backdrop</code>.</div>
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    default
-  </button>
-  <div class="drop backdrop">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    after middle
-  </button>
-  <div class="drop after middle backdrop">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-    <button type="button" class="btn btn-primary-empty" data-group="0">
-      Group
-    </button>
-    <div class="drop bottom left backdrop" data-group="0">
-      <div class="drop-inner">
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      </div>
-    </div>
-    <div class="drop top right backdrop" data-group="0">
-      <div class="drop-inner">
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      </div>
-    </div>
-    <div class="drop before middle-top backdrop" data-group="0">
-      <div class="drop-inner">
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      </div>
-    </div>
-    <div class="drop after middle-bottom backdrop" data-group="0">
-      <div class="drop-inner">
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      </div>
-    </div>
-  </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="backdrop-over">
-    <div class="demo-text"><code>.backdrop-over</code>.</div>
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty backdrop-over">
-    default
-  </button>
-  <div class="drop backdrop">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty backdrop-over">
-    after middle
-  </button>
-  <div class="drop after middle backdrop">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-    <button type="button" class="btn btn-primary-empty backdrop-over" data-group="0">
-      Group
-    </button>
-    <div class="drop bottom left backdrop" data-group="0">
-      <div class="drop-inner">
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      </div>
-    </div>
-    <div class="drop top right backdrop" data-group="0">
-      <div class="drop-inner">
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      </div>
-    </div>
-    <div class="drop before middle-top backdrop" data-group="0">
-      <div class="drop-inner">
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      </div>
-    </div>
-    <div class="drop after middle-bottom backdrop" data-group="0">
-      <div class="drop-inner">
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      </div>
-    </div>
-  </div>
-    </div>
-  </div>
-</div>
-
-<h3>Events</h3>
-
-<p>You can specify <strong>on</strong> and <strong>off</strong> events. Default is <code>"on": "click"</code>.</p>
-<p>Remember to use <code>.backdrop-over</code> on the toggle elements if you use backdrop.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="">
-    <div class="demo-text"><code>"on": "mouseenter"</code> <code>"off": "mouseleave"</code>.</div>
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer" data-xt-drop='{"on": "mouseenter", "off": "mouseleave"}'>
-  <button type="button" class="btn btn-primary-empty">
-    default
-  </button>
-  <div class="drop">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop='{"on": "mouseenter", "off": "mouseleave"}'>
-  <button type="button" class="btn btn-primary-empty">
-    after middle
-  </button>
-  <div class="drop after middle">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop='{"on": "mouseenter", "off": "mouseleave"}'>
-  <button type="button" class="btn btn-primary-empty">
-    no-anim
-  </button>
-  <div class="drop no-anim">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop='{"on": "mouseenter", "off": "mouseleave"}'>
-    <button type="button" class="btn btn-primary-empty backdrop-over">
-      backdrop
-    </button>
-    <div class="drop backdrop">
-      <div class="drop-inner">
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      </div>
-    </div>
-  </div>
-    </div>
-  </div>
-</div>
-
-<h3>Nested</h3>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="default">
-    <div class="demo-text"><code>.bottom.left</code>.</div>
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    default
-  </button>
-  <div class="drop">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-
-      <div class="drop-outer" data-xt-drop>
-        <button type="button" class="btn btn-primary-empty">
-          default
-        </button>
-        <div class="drop">
-          <div class="drop-inner">
-            <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-
-            <div class="drop-outer" data-xt-drop>
-              <button type="button" class="btn btn-primary-empty">
-                default
-              </button>
-              <div class="drop">
-                <div class="drop-inner">
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="drop-outer" data-xt-drop>
-              <button type="button" class="btn btn-primary-empty">
-                default
-              </button>
-              <div class="drop">
-                <div class="drop-inner">
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                </div>
-              </div>
-            </div>
-
-            <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-          </div>
-        </div>
-      </div>
-
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="stack">
-    <div class="demo-text"><code>.bottom.left</code> inside <code>.drop-outer.static</code>.</div>
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    default
-  </button>
-  <div class="drop">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-
-      <div class="drop-outer static" data-xt-drop>
-        <button type="button" class="btn btn-primary-empty">
-          default
-        </button>
-        <div class="drop">
-          <div class="drop-inner">
-            <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-
-            <div class="drop-outer static" data-xt-drop>
-              <button type="button" class="btn btn-primary-empty">
-                default
-              </button>
-              <div class="drop">
-                <div class="drop-inner">
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="drop-outer static" data-xt-drop>
-              <button type="button" class="btn btn-primary-empty">
-                default
-              </button>
-              <div class="drop">
-                <div class="drop-inner">
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                </div>
-              </div>
-            </div>
-
-            <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-          </div>
-        </div>
-      </div>
-
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="after">
-    <div class="demo-text"><code>.after.middle-top</code>.</div>
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    after middle-top
-  </button>
-  <div class="drop after middle-top">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-
-      <div class="drop-outer" data-xt-drop>
-        <button type="button" class="btn btn-primary-empty">
-          after middle-top
-        </button>
-        <div class="drop after middle-top">
-          <div class="drop-inner">
-            <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-
-            <div class="drop-outer" data-xt-drop>
-              <button type="button" class="btn btn-primary-empty">
-                after middle-top
-              </button>
-              <div class="drop after middle-top">
-                <div class="drop-inner">
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="drop-outer" data-xt-drop>
-              <button type="button" class="btn btn-primary-empty">
-                after middle-top
-              </button>
-              <div class="drop after middle-top">
-                <div class="drop-inner">
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                </div>
-              </div>
-            </div>
-
-            <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-          </div>
-        </div>
-      </div>
-
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="stack after">
-    <div class="demo-text"><code>.after.middle-top</code> inside <code>.drop-outer.static</code>.</div>
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    after middle-top
-  </button>
-  <div class="drop after middle-top">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-
-      <div class="drop-outer static" data-xt-drop>
-        <button type="button" class="btn btn-primary-empty">
-          after middle-top
-        </button>
-        <div class="drop after middle-top">
-          <div class="drop-inner">
-            <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-
-            <div class="drop-outer static" data-xt-drop>
-              <button type="button" class="btn btn-primary-empty">
-                after middle-top
-              </button>
-              <div class="drop after middle-top">
-                <div class="drop-inner">
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="drop-outer static" data-xt-drop>
-              <button type="button" class="btn btn-primary-empty">
-                after middle-top
-              </button>
-              <div class="drop after middle-top">
-                <div class="drop-inner">
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                  <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-                </div>
-              </div>
-            </div>
-
-            <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-          </div>
-        </div>
-      </div>
-
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-</div>
-
-<h2>Animations</h2>
-
-<p>You can set <strong>default animation</strong> inside the .less file.</p>
-<p>@TODO link animations.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="">
-    <div class="demo-text"><code>.anim-horizontal</code> <code>.anim-oblique</code>.</div>
-    <div class="demo-source" data-lang="html">
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    default
-  </button>
-  <div class="drop">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    anim-horizontal
-  </button>
-  <div class="drop anim-horizontal">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-  <button type="button" class="btn btn-primary-empty">
-    anim-diagonal
-  </button>
-  <div class="drop anim-diagonal">
-    <div class="drop-inner">
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-    </div>
-  </div>
-</div>
-
-<div class="drop-outer" data-xt-drop>
-    <button type="button" class="btn btn-primary-empty">
-      no-anim
-    </button>
-    <div class="drop no-anim">
-      <div class="drop-inner">
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-        <button type="button" class="btn btn-primary-empty">Lorem ipsum dolor dolor</button>
-      </div>
-    </div>
-  </div>
-    </div>
-  </div>
-</div>
--->
+<p class="alert">Read the documentation of <a href="/docs/component/#variables">component's variables</a>.</p>
 
           </article>
 
