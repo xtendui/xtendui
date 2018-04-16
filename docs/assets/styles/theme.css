@@ -3293,8 +3293,9 @@ html.xt-fixed .overlay {
   align-self: stretch !important;
 }
 .align-self-stretch > * {
-  -ms-flex-item-align: stretch !important;
-  align-self: stretch !important;
+  -webkit-box-align: stretch !important;
+  -ms-flex-align: stretch !important;
+  align-items: stretch !important;
 }
 .align-self-auto {
   -ms-flex-item-align: auto !important;
@@ -3659,8 +3660,9 @@ html.xt-fixed .overlay {
     align-self: stretch !important;
   }
   .align-self-stretch-sm > * {
-    -ms-flex-item-align: stretch !important;
-    align-self: stretch !important;
+    -webkit-box-align: stretch !important;
+    -ms-flex-align: stretch !important;
+    align-items: stretch !important;
   }
 }
 @media (min-width: 992px ) {
@@ -4022,8 +4024,9 @@ html.xt-fixed .overlay {
     align-self: stretch !important;
   }
   .align-self-stretch-md > * {
-    -ms-flex-item-align: stretch !important;
-    align-self: stretch !important;
+    -webkit-box-align: stretch !important;
+    -ms-flex-align: stretch !important;
+    align-items: stretch !important;
   }
 }
 @media (min-width: 1200px ) {
@@ -4385,8 +4388,9 @@ html.xt-fixed .overlay {
     align-self: stretch !important;
   }
   .align-self-stretch-lg > * {
-    -ms-flex-item-align: stretch !important;
-    align-self: stretch !important;
+    -webkit-box-align: stretch !important;
+    -ms-flex-align: stretch !important;
+    align-items: stretch !important;
   }
 }
 /*! xtend v0.2.0 (https://getxtend.com/)
