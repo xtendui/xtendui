@@ -362,6 +362,14 @@ a, .alink {
 
 // variant
 
+.drop-white {
+  .drop-inner {
+    border-color: darken(@white, 5%);
+    background-color: @white;
+    color: @text;
+  }
+}
+
 .drop-primary {
   .drop-inner {
     border-color: darken(@primary, 5%);
@@ -374,14 +382,6 @@ a, .alink {
   .drop-inner {
     border-color: darken(@secondary, 5%);
     background-color: @secondary;
-    color: @text;
-  }
-}
-
-.drop-white {
-  .drop-inner {
-    border-color: darken(@white, 5%);
-    background-color: @white;
     color: @text;
   }
 }

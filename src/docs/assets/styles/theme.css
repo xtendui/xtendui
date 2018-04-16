@@ -6145,6 +6145,11 @@ a:hover,
 .drop-noborder .drop-inner {
   border: 0;
 }
+.drop-white .drop-inner {
+  border-color: #f2f2f2;
+  background-color: #fff;
+  color: #343a40;
+}
 .drop-primary .drop-inner {
   border-color: #5e50ee;
   background-color: #7367F0;
@@ -6153,11 +6158,6 @@ a:hover,
 .drop-secondary .drop-inner {
   border-color: #c1dde8;
   background-color: #d4e7ef;
-  color: #343a40;
-}
-.drop-white .drop-inner {
-  border-color: #f2f2f2;
-  background-color: #fff;
   color: #343a40;
 }
 .drop-max-height .drop-inner {
@@ -7624,6 +7624,12 @@ h2 .site-article-anchor {
 }
 .demo-cols-nested .col .col .col:before {
   background-color: #7367F0;
+}
+.demo-drops .drop {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  position: relative !important;
 }
 .site-header-top[data-xt-scroll] .show-scroll {
   display: none;
