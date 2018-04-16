@@ -833,6 +833,11 @@
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
+  > * {
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
 }
 
 .align-items-stretch(@breakpoint:none) when (default()) {
@@ -841,6 +846,11 @@
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
+    > * {
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+    }
   }
 }
 
@@ -914,6 +924,11 @@
 .align-content-stretch(@breakpoint:none) when (@breakpoint = none) {
   -ms-flex-line-pack: stretch;
   align-content: stretch;
+  > * {
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
 }
 
 .align-content-stretch(@breakpoint:none) when (default()) {
@@ -921,6 +936,11 @@
   @media @@query-min {
     -ms-flex-line-pack: stretch;
     align-content: stretch;
+    > * {
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+    }
   }
 }
 
@@ -981,6 +1001,10 @@
 .align-self-stretch(@breakpoint:none) when (@breakpoint = none) {
   -ms-flex-item-align: stretch;
   align-self: stretch;
+  > * {
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+  }
 }
 
 .align-self-stretch(@breakpoint:none) when (default()) {
@@ -988,6 +1012,10 @@
   @media @@query-min {
     -ms-flex-item-align: stretch;
     align-self: stretch;
+    > * {
+      -ms-flex-item-align: stretch;
+      align-self: stretch;
+    }
   }
 }
 

@@ -36,7 +36,7 @@ ul, ol {
 // selectors
 
 .default-lists(@rules) {
-  &:not([class^='list-']):not([class*=' list-']) {
+  &:not(.list) {
     &.default-lists, .default-lists & {
       @rules();
     }
