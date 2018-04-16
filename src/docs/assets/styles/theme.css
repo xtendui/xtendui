@@ -326,6 +326,11 @@ pre code {
 .form-inline .form-group > li {
   cursor: auto;
 }
+.form-inline .form-group > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .form-inline .form-group > li > a,
 .form-inline .form-group > li > button {
   display: block;
@@ -357,7 +362,6 @@ pre code {
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  text-align: left;
 }
 .form-inline .form-group > li > a:not(.btn) > span,
 .form-inline .form-group > li > button:not(.btn) > span {
@@ -570,6 +574,11 @@ select.input-control {
 .list-block > li {
   cursor: auto;
 }
+.list-block > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .list-block > li > a,
 .list-block > li > button {
   display: block;
@@ -601,7 +610,6 @@ select.input-control {
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  text-align: left;
 }
 .list-block > li > a:not(.btn) > span,
 .list-block > li > button:not(.btn) > span {
@@ -637,6 +645,11 @@ select.input-control {
 .list-line > li {
   cursor: auto;
 }
+.list-line > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .list-line > li > a,
 .list-line > li > button {
   display: block;
@@ -668,7 +681,6 @@ select.input-control {
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  text-align: left;
 }
 .list-line > li > a:not(.btn) > span,
 .list-line > li > button:not(.btn) > span {
@@ -5297,6 +5309,11 @@ legend + legend {
 .form-group.inline > li {
   cursor: auto;
 }
+.form-group.inline > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .form-group.inline > li > a,
 .form-group.inline > li > button {
   display: block;
@@ -5328,7 +5345,6 @@ legend + legend {
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  text-align: left;
 }
 .form-group.inline > li > a:not(.btn) > span,
 .form-group.inline > li > button:not(.btn) > span {
@@ -7142,7 +7158,7 @@ opacity: 1;
 .site-aside-text .btn:hover {
   color: #5e50ee;
 }
-.site-aside-text .btn:first-child {
+.site-aside-text > .btn:first-child {
   margin-bottom: 0.5rem;
 }
 .site-aside-text .site-aside-title {
@@ -7375,6 +7391,12 @@ h2 .site-article-anchor {
 .demo .demo-code-tabs > * > li {
   cursor: auto;
 }
+.demo .demo-tabs > * > li,
+.demo .demo-code-tabs > * > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .demo .demo-tabs > * > li > a,
 .demo .demo-code-tabs > * > li > a,
 .demo .demo-tabs > * > li > button,
@@ -7410,7 +7432,6 @@ h2 .site-article-anchor {
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  text-align: left;
 }
 .demo .demo-tabs > * > li > a:not(.btn) > span,
 .demo .demo-code-tabs > * > li > a:not(.btn) > span,
