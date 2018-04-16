@@ -11,7 +11,7 @@
 
     <!-- seo -->
     <title>Drop • Xtend</title>
-    <meta name="description" content="Lorem ipsum dolor" />
+    <meta name="description" content="Extensible dropdown component with structured theming." />
 
     <!-- icons -->
     <link rel="icon" href="/assets/images/favicon.ico?v=0.2.0" />
@@ -118,7 +118,7 @@
             <div class="flex flex-auto align-items-center align-content-center justify-content-between">
               <div class="site-hero-text">
                 <h1>Drop</h1>
-                <p class="font-giant">Lorem ipsum dolor</p>
+                <p class="font-giant">Extensible dropdown component with structured theming.</p>
               </div>
               <div class="site-hero-img">
                 <!--
@@ -427,8 +427,8 @@
           <article class="site-article default-lists">
             <h2>Usage</h2>
 
-<p>Use this format to create a drop. For customizing the interactions you can read the documentation of <a
-  href="/docs/javascript/toggle/#drop">toggle drop</a>.</p>
+<p>Use this markup to create a dropdown. <code>data-xt-drop</code> must be <a
+  href="/docs/javascript/#initialization">initialized by javascript</a>.</p>
 
 <pre>
   <code class="html">
@@ -444,6 +444,9 @@
     </div>
   </code>
 </pre>
+
+<p class="alert">For customizing the interactions read the documentation of <a
+  href="/docs/javascript/toggle/#drop">toggle drop</a>.</p>
 
 <h3>Drop of anything</h3>
 
@@ -508,7 +511,8 @@
 
 <p>You also have to assign a <a href="/docs/layout/list/#variants">list variant</a>.</p>
 
-<p><code>.list-drop</code> has drop's list default options that you can <strong>override adding classes</strong>, except the
+<p><code>.list-drop</code> has drop's list default options that you can <strong>override adding classes</strong>, except
+  the
   <code>// not overridable</code> options in the theme.</p>
 
 <div class="demo">
@@ -735,7 +739,8 @@
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="bottom">
-    <div class="demo-text"><code>.drop-bottom</code> <code>.drop-left</code> <code>.drop-right</code> <code>.drop-center</code></div>
+    <div class="demo-text"><code>.drop-bottom</code> <code>.drop-left</code> <code>.drop-right</code>
+      <code>.drop-center</code></div>
     <div class="demo-source" data-lang="html">
       <div class="list list-line list-space-small align-items-center demo-source-from">
         <div class="drop-outer" data-xt-drop>
@@ -804,7 +809,8 @@
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="top">
-    <div class="demo-text"><code>.drop-top</code> <code>.drop-left</code> <code>.drop-right</code> <code>.drop-center</code></div>
+    <div class="demo-text"><code>.drop-top</code> <code>.drop-left</code> <code>.drop-right</code>
+      <code>.drop-center</code></div>
     <div class="demo-source" data-lang="html">
       <div class="list list-line list-space-small align-items-center demo-source-from">
         <div class="drop-outer" data-xt-drop>
@@ -873,7 +879,8 @@
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="middle">
-    <div class="demo-text"><code>.drop-middle</code> <code>.drop-left</code> <code>.drop-right</code> <code>.drop-center</code></div>
+    <div class="demo-text"><code>.drop-middle</code> <code>.drop-left</code> <code>.drop-right</code>
+      <code>.drop-center</code></div>
     <div class="demo-source" data-lang="html">
       <div class="list list-line list-space-small align-items-center demo-source-from">
         <div class="drop-outer" data-xt-drop>
@@ -942,7 +949,8 @@
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="before">
-    <div class="demo-text"><code>.drop-before</code> <code>.drop-top</code> <code>.drop-bottom</code> <code>.drop-middle</code></div>
+    <div class="demo-text"><code>.drop-before</code> <code>.drop-top</code> <code>.drop-bottom</code>
+      <code>.drop-middle</code></div>
     <div class="demo-source" data-lang="html">
       <div class="list list-line list-space-small align-items-center demo-source-from">
         <div class="drop-outer" data-xt-drop>
@@ -1011,7 +1019,8 @@
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="after">
-    <div class="demo-text"><code>.drop-after</code> <code>.drop-top</code> <code>.drop-bottom</code> <code>.drop-middle</code></div>
+    <div class="demo-text"><code>.drop-after</code> <code>.drop-top</code> <code>.drop-bottom</code>
+      <code>.drop-middle</code></div>
     <div class="demo-source" data-lang="html">
       <div class="list list-line list-space-small align-items-center demo-source-from">
         <div class="drop-outer" data-xt-drop>
