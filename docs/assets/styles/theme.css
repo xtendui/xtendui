@@ -6794,7 +6794,7 @@ opacity: 1;
   color: #f2f2f2;
 }
 .site-hero > .container > .flex {
-  min-height: 300px;
+  min-height: 35rem;
 }
 @media (max-width: 767px ) {
   .site-hero .site-hero-img,
@@ -6817,7 +6817,8 @@ opacity: 1;
 .site-breadcrumbs .site-breadcrumbs-inside {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  background: linear-gradient(0deg, #6a5eef 10%, #7367F0 100%);
+  background-color: #7367F0;
+  background: linear-gradient(0deg, #6659ef 10%, #7367F0 100%);
   color: #fff;
 }
 .site-breadcrumbs .site-breadcrumbs-body {
