@@ -590,7 +590,7 @@ code {
   .margin(y, layout);
   .margin(top, medium);
   .margin(bottom, big);
-  border-radius: 2px;
+  border-radius: @border-radius;
   border: 3px solid @grey-250;
   .demo-tabs {
     .margin-remove(top, 2px); // remove border space
@@ -639,6 +639,8 @@ code {
   // text
   .demo-text {
     .alert();
+    .alert-default();
+    .box-squared();
     .margin(all, none);
   }
   // iframe + .demo-source
