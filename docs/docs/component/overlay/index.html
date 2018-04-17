@@ -11,7 +11,7 @@
 
     <!-- seo -->
     <title>Overlay • Xtend</title>
-    <meta name="description" content="Lorem ipsum" />
+    <meta name="description" content="Component to show modal elements inside the page." />
 
     <!-- icons -->
     <link rel="icon" href="/assets/images/favicon.ico?v=0.2.0" />
@@ -38,7 +38,7 @@
                 </a>
               </div>
               <div>
-                <button type="button" class="btn btn-primary btn-menu" data-xt-toggle='{"targets": "#site-menu"}'>
+                <button type="button" class="btn btn-primary btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
                   
                     Docs
                   
@@ -54,9 +54,9 @@
           </div>
         </div>
 
-        <nav class="site-menu overlay overlay-primary overlay-screen collapse-height" id="site-menu">
-          <div class="overlay-inner">
-            <div class="overlay-content">
+        <nav class="site-menu overlay-outer collapse-height" id="site-menu">
+          <div class="overlay overlay-primary overlay-screen">
+            <div class="overlay-inner">
 
               <div class="site-header-top">
                 <div class="container">
@@ -68,7 +68,7 @@
                       </a>
                     </div>
                     <div>
-                      <button type="button" class="btn btn-primary btn-menu" data-xt-toggle='{"targets": "#site-menu"}'>
+                      <button type="button" class="btn btn-primary btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
                         
                           Docs
                         
@@ -107,7 +107,7 @@
                 </a>
 
               </div>
-            
+
             </div>
           </div>
         </nav>
@@ -118,7 +118,7 @@
             <div class="flex flex-auto align-items-center align-content-center justify-content-between">
               <div class="site-hero-text">
                 <h1>Overlay</h1>
-                <p class="font-giant">Lorem ipsum</p>
+                <p class="font-giant">Component to show modal elements inside the page.</p>
               </div>
               <div class="site-hero-img">
                 <!--
@@ -394,7 +394,7 @@
                   </div>
 
                   <div class="show-scroll">
-                    <button type="button" class="btn btn-primary btn-menu" data-xt-toggle='{"targets": "#site-menu"}'>
+                    <button type="button" class="btn btn-primary btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
                       
                         Docs
                       
@@ -425,7 +425,125 @@
         <div class="col col-12 col-9-md">
 
           <article class="site-article default-lists">
-            <h2>Api</h2>
+            <h2>Usage</h2>
+
+<p>Use this markup to create a overlay. <code>data-xt-overlay</code> must be <a
+  href="/docs/javascript/#initialization">initialized by javascript</a>.</p>
+
+<pre>
+  <code class="html">
+    <div data-xt-overlay>
+      <button type="button">
+        <!-- content -->
+      </button>
+      <div class="overlay-outer">
+        <div class="overlay overlay-primary">
+          <div class="overlay-inner">
+            <!-- content -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </code>
+</pre>
+
+<pre>
+  <code class="html">
+    <button type="button" data-xt-overlay='{"targets": "#overlay-custom"}'>
+      <!-- content -->
+    </button>
+    <div class="overlay-outer" id="overlay-custom">
+      <div class="overlay overlay-primary">
+        <div class="overlay-inner">
+          <!-- content -->
+        </div>
+      </div>
+    </div>
+  </code>
+</pre>
+
+<p class="alert alert-default">For customizing the interactions read the documentation of <a
+  href="/docs/javascript/toggle/#overlay">toggle overlay</a>.</p>
+
+<h2>Options</h2>
+
+<h3>Variants</h3>
+
+<p>Optional classes for assigning variant.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="default">
+    <div class="demo-text"><code>.overlay-default</code></div>
+    <div class="demo-source demo-drops" data-lang="html">
+      <div data-xt-overlay>
+        <button type="button" class="btn btn-primary">
+          Toggle
+        </button>
+        <div class="overlay-outer">
+          <div class="overlay overlay-default">
+            <div class="overlay-inner">
+              Test
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="primary">
+    <div class="demo-text"><code>.overlay-primary</code></div>
+    <div class="demo-source demo-drops" data-lang="html">
+      <div data-xt-overlay>
+        <button type="button" class="btn btn-primary">
+          Toggle
+        </button>
+        <div class="overlay-outer">
+          <div class="overlay overlay-primary">
+            <div class="overlay-inner">
+              Test
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="secondary">
+    <div class="demo-text"><code>.overlay-secondary</code></div>
+    <div class="demo-source demo-drops" data-lang="html">
+      <div data-xt-overlay>
+        <button type="button" class="btn btn-primary">
+          Toggle
+        </button>
+        <div class="overlay-outer">
+          <div class="overlay overlay-secondary">
+            <div class="overlay-inner">
+              Test
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="white">
+    <div class="demo-text"><code>.overlay-white</code></div>
+    <div class="demo-source demo-drops" data-lang="html">
+      <div data-xt-overlay>
+        <button type="button" class="btn btn-primary">
+          Toggle
+        </button>
+        <div class="overlay-outer">
+          <div class="overlay overlay-white">
+            <div class="overlay-inner">
+              Test
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+<h2>Api</h2>
 
 <p>@TODO table api + default "elements" and "targets".</p>
 <p>@TODO <a href="#">link</a> to toggle.</p>
@@ -808,7 +926,7 @@
     </div>
   </div>
 </div>
-
+-->
           </article>
 
         </div>

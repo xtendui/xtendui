@@ -45,12 +45,12 @@ a, .alink, .btn-link {
 // drop
 //////////////////////
 
-.drop-outer {
+.drop-container {
   display: inline-block;
   position: relative;
 }
 
-.drop-outer-static {
+.drop-container-static {
   position: static;
   .drop,
   .drop-inner {
@@ -176,7 +176,7 @@ a, .alink, .btn-link {
 // overlay
 //////////////////////
 
-.overlay {
+.overlay-outer {
   .toggle-flex();
   position: fixed;
   z-index: @index-overlay !important;
@@ -185,43 +185,48 @@ a, .alink, .btn-link {
   right: 0;
   bottom: 0;
   overflow: hidden;
+}
+
+.overlay {
   // styles
+  .display(flex);
+  .flex-column();
+  .flex-nowrap();
+  .justify-content-center();
+  position: relative;
+  z-index: @index-overlay !important;
+  margin: auto; // @FIX http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
+  width: 100%;
+  min-height: 100vh;
   .overlay-inner {
-    position: relative;
-    z-index: @index-overlay !important;
-    width: 100%;
-    min-height: 100vh;
-    .display(flex);
-    .flex-column();
-    .flex-nowrap();
-    .justify-content-center();
-    // fix http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
-    margin: auto;
-  }
-  .overlay-content {
     position: relative;
     width: 100%;
     .align-self-center;
-    @media @max-xs {
-      max-width: 100%;
-    }
-  }
-  &.overlay-screen {
-    .overlay-content {
-      position: static;
-    }
-    .overlay-inner + .xt-backdrop {
-      display: none;
-    }
-  }
-  // .overlay-fluid
-  &.overlay-fluid {
-    .overlay-content {
-      width: 100%;
-      max-width: @overlay-fluid;
-    }
   }
 }
+
+// default
+
+.overlay-screen() {
+  max-width: none !important;
+  .overlay-inner {
+    position: static;
+  }
+  & + .xt-backdrop {
+    display: none;
+  }
+}
+
+// fluid
+
+/*
+.overlay-fluid {
+  .overlay-inner {
+    width: 100%;
+    max-width: @overlay-fluid;
+  }
+}
+*/
 
 // generate-overlay-sizes
 
@@ -232,9 +237,7 @@ a, .alink, .btn-link {
   @name: extract(@overlay, 1);
   @val: extract(@overlay, 2);
   .overlay-@{name} {
-    .overlay-content {
-      width: @val;
-    }
+    max-width: @val;
   }
 }
 
@@ -247,14 +250,14 @@ a, .alink, .btn-link {
   @breakpoint: extract(@overlay, 1);
   @val: extract(@overlay, 2);
   & when (@breakpoint = none) {
-    .overlay .overlay-inner {
+    .overlay {
       padding: @val;
     }
   }
   & when not (@breakpoint = none) {
     @query-min: 'min-@{breakpoint}';
     @media @@query-min {
-      .overlay .overlay-inner {
+      .overlay {
         padding: @val;
       }
     }

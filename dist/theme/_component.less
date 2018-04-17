@@ -467,41 +467,63 @@ a, .alink {
 
 .overlay {
   // styles
-  .btn-close {
-    .btn-big() !important;
-    .btn-icon() !important;
-  }
-  .overlay-content {
+  .overlay-inner {
     border-radius: @border-radius;
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
     box-shadow: 0 3px 10px 1px fade(@black, 15%);
-    // spacing inside
+    // space
     padding: 3rem;
     @media @min-sm {
       padding: 4rem;
     }
-  }
-  &.overlay-screen {
-    .overlay-content {
-      padding-left: 0;
-      padding-right: 0;
-      box-shadow: none;
+    // custom
+    .btn-close {
+      .btn-big() !important;
+      .btn-icon() !important;
     }
   }
   // options
-  .overlay-medium(); // size @overlays
-  // animations
-  .overlay-content {
-    .anim-vertical();
-    &.active {
-      .xt-backdrop {
-        animation-name: anim-bottom-in;
-        animation-delay: 300ms;
-      }
+  .overlay-medium(); // size
+}
+
+// animations
+
+.overlay-outer {
+  .overlay-inner {
+    .animation-default();
+  }
+  &.active {
+    .overlay-inner {
+      .anim-vertical.active();
+    }
+    .xt-backdrop {
+      .anim-backdrop.active();
     }
   }
+  &.out {
+    .overlay-inner {
+      .anim-vertical.out();
+    }
+    .xt-backdrop {
+      .anim-backdrop.out();
+    }
+  }
+}
+
+// default
+
+.overlay-screen() {
+  .overlay-inner {
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: none;
+  }
+}
+
+.overlay.overlay-screen {
+  .overlay-screen();
 }
 
 // default
@@ -517,7 +539,7 @@ a, .alink {
 // variant
 
 .overlay-primary() {
-  .overlay-content, &.overlay-screen .overlay-inner {
+  .overlay-inner, &.overlay-screen {
     border-color: @primary;
     background-color: @primary;
     color: @text-inverse;
@@ -529,10 +551,10 @@ a, .alink {
 }
 
 .overlay-secondary() {
-  .overlay-content, &.overlay-screen .overlay-inner {
+  .overlay-inner, &.overlay-screen {
     border-color: @secondary;
     background-color: @secondary;
-    color: @text-inverse;
+    color: @text;
   }
 }
 
@@ -541,7 +563,7 @@ a, .alink {
 }
 
 .overlay-white() {
-  .overlay-content, &.overlay-screen .overlay-inner {
+  .overlay-inner, &.overlay-screen {
     border-color: @white;
     background-color: @white;
     color: @text;
@@ -583,7 +605,7 @@ a, .alink {
 
 .xt-backdrop {
   // styles
-  background-color: darken(@primary, 45%);
+  background-color: darken(@primary, 65%);
   // animations
   .anim-backdrop();
 }

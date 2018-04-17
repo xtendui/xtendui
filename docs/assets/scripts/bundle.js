@@ -818,7 +818,7 @@ XtUtil.initAll = function () {
 
       new _xtend.XtDrop(_el);
     }
-    // xt-scroll
+    // xt-overlay
   } catch (err) {
     _didIteratorError2 = true;
     _iteratorError2 = err;
@@ -839,11 +839,12 @@ XtUtil.initAll = function () {
   var _iteratorError3 = undefined;
 
   try {
-    for (var _iterator3 = document.querySelectorAll('[data-xt-scroll]')[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+    for (var _iterator3 = document.querySelectorAll('[data-xt-overlay]')[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
       var _el2 = _step3.value;
 
-      new _xtend.XtScroll(_el2);
+      new _xtend.XtOverlay(_el2);
     }
+    // xt-scroll
   } catch (err) {
     _didIteratorError3 = true;
     _iteratorError3 = err;
@@ -855,6 +856,31 @@ XtUtil.initAll = function () {
     } finally {
       if (_didIteratorError3) {
         throw _iteratorError3;
+      }
+    }
+  }
+
+  var _iteratorNormalCompletion4 = true;
+  var _didIteratorError4 = false;
+  var _iteratorError4 = undefined;
+
+  try {
+    for (var _iterator4 = document.querySelectorAll('[data-xt-scroll]')[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+      var _el3 = _step4.value;
+
+      new _xtend.XtScroll(_el3);
+    }
+  } catch (err) {
+    _didIteratorError4 = true;
+    _iteratorError4 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion4 && _iterator4.return) {
+        _iterator4.return();
+      }
+    } finally {
+      if (_didIteratorError4) {
+        throw _iteratorError4;
       }
     }
   }
@@ -899,51 +925,51 @@ XtUtil.getUniqueID = function () {
  */
 XtUtil.merge = function (arr) {
   var final = {};
-  var _iteratorNormalCompletion4 = true;
-  var _didIteratorError4 = false;
-  var _iteratorError4 = undefined;
+  var _iteratorNormalCompletion5 = true;
+  var _didIteratorError5 = false;
+  var _iteratorError5 = undefined;
 
   try {
-    for (var _iterator4 = arr[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
-      var obj = _step4.value;
-      var _iteratorNormalCompletion5 = true;
-      var _didIteratorError5 = false;
-      var _iteratorError5 = undefined;
+    for (var _iterator5 = arr[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+      var obj = _step5.value;
+      var _iteratorNormalCompletion6 = true;
+      var _didIteratorError6 = false;
+      var _iteratorError6 = undefined;
 
       try {
-        for (var _iterator5 = Object.entries(obj)[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
-          var _step5$value = _slicedToArray(_step5.value, 2),
-              key = _step5$value[0],
-              value = _step5$value[1];
+        for (var _iterator6 = Object.entries(obj)[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+          var _step6$value = _slicedToArray(_step6.value, 2),
+              key = _step6$value[0],
+              value = _step6$value[1];
 
           final[key] = value;
         }
       } catch (err) {
-        _didIteratorError5 = true;
-        _iteratorError5 = err;
+        _didIteratorError6 = true;
+        _iteratorError6 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion5 && _iterator5.return) {
-            _iterator5.return();
+          if (!_iteratorNormalCompletion6 && _iterator6.return) {
+            _iterator6.return();
           }
         } finally {
-          if (_didIteratorError5) {
-            throw _iteratorError5;
+          if (_didIteratorError6) {
+            throw _iteratorError6;
           }
         }
       }
     }
   } catch (err) {
-    _didIteratorError4 = true;
-    _iteratorError4 = err;
+    _didIteratorError5 = true;
+    _iteratorError5 = err;
   } finally {
     try {
-      if (!_iteratorNormalCompletion4 && _iterator4.return) {
-        _iterator4.return();
+      if (!_iteratorNormalCompletion5 && _iterator5.return) {
+        _iterator5.return();
       }
     } finally {
-      if (_didIteratorError4) {
-        throw _iteratorError4;
+      if (_didIteratorError5) {
+        throw _iteratorError5;
       }
     }
   }
@@ -1121,7 +1147,7 @@ setTimeout(function () {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.XtScroll = exports.XtDrop = exports.XtToggle = exports.Xt = undefined;
+exports.XtScroll = exports.XtOverlay = exports.XtDrop = exports.XtToggle = exports.Xt = undefined;
 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
@@ -1235,6 +1261,15 @@ var Xt = exports.Xt = function () {
           return !_xtendUtils2.default.parents(x, options.targets).length;
         }); // filter out parent
         this.targets = _xtendUtils2.default.arrSingle(arr);
+      }
+      // appendTo
+      if (options.appendTo) {
+        var appendToTarget = document.querySelectorAll(options.appendTo);
+        if (appendToTarget.length) {
+          this.targets.forEach(function (el) {
+            appendToTarget[0].appendChild(el);
+          });
+        }
       }
       // @FIX set namespace for next frame
       var _iteratorNormalCompletion = true;
@@ -1448,9 +1483,9 @@ var Xt = exports.Xt = function () {
       if (!(_element$classList = element.classList).contains.apply(_element$classList, _toConsumableArray(this.defaults.classes))) {
         var fElements = this.getElements(element);
         this.addCurrent(fElements.single);
-        this.activationOn(fElements.all);
+        this.activationOn(fElements.all, fElements, 'elements');
         var targets = this.getTargets(element);
-        this.activationOn(targets);
+        this.activationOn(targets, fElements, 'targets');
       } else {
         this.eventOff(element);
       }
@@ -1481,9 +1516,9 @@ var Xt = exports.Xt = function () {
       if ((_element$classList2 = element.classList).contains.apply(_element$classList2, _toConsumableArray(this.defaults.classes))) {
         var fElements = this.getElements(element);
         this.removeCurrent(fElements.single);
-        this.activationOff(fElements.all);
+        this.activationOff(fElements.all, fElements, 'elements');
         var targets = this.getTargets(element);
-        this.activationOff(targets);
+        this.activationOff(targets, fElements, 'targets');
       }
     }
 
@@ -1509,7 +1544,7 @@ var Xt = exports.Xt = function () {
 
   }, {
     key: 'activationOn',
-    value: function activationOn(els) {
+    value: function activationOn(els, fElements, type) {
       var self = this;
       var options = this.options;
       // activate
@@ -1527,9 +1562,13 @@ var Xt = exports.Xt = function () {
           el.classList.remove('out');
           self.activationOnAnimate(el);
           // specials
-          self.centerOn(el);
-          self.middleOn(el);
-          self.collapseOn(el);
+          if (type === 'targets') {
+            self.centerOn(el);
+            self.middleOn(el);
+            self.collapseOn(el);
+            self.backdrop(el);
+            self.closeOn(el, fElements.single);
+          }
         }
       } catch (err) {
         _didIteratorError3 = true;
@@ -1587,7 +1626,7 @@ var Xt = exports.Xt = function () {
 
   }, {
     key: 'activationOff',
-    value: function activationOff(els) {
+    value: function activationOff(els, fElements, type) {
       var self = this;
       var options = this.options;
       // deactivate
@@ -1605,7 +1644,10 @@ var Xt = exports.Xt = function () {
           el.classList.add('out');
           self.activationOffAnimate(el);
           // specials
-          self.collapseOff(el);
+          if (type === 'targets') {
+            self.collapseOff(el);
+            self.closeOff(el);
+          }
         }
       } catch (err) {
         _didIteratorError4 = true;
@@ -1786,6 +1828,126 @@ var Xt = exports.Xt = function () {
         });
       }
     }
+
+    /**
+     * closeOn on activation
+     * @param {Element} element
+     */
+
+  }, {
+    key: 'closeOn',
+    value: function closeOn(el, toggle) {
+      var self = this;
+      var options = this.options;
+      if (options.close) {
+        var closeElements = el.querySelectorAll(options.close);
+        var check = function check(e, t) {
+          return e.target === t;
+        };
+        if (!closeElements.length) {
+          closeElements = _xtendUtils2.default.arrSingle(document.documentElement);
+          check = function check(e, t) {
+            return e.target !== el && !el.contains(e.target);
+          };
+        }
+        _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+          var _iteratorNormalCompletion5 = true;
+          var _didIteratorError5 = false;
+          var _iteratorError5 = undefined;
+
+          try {
+            for (var _iterator5 = closeElements[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+              var closeElement = _step5.value;
+
+              closeElement.xtUtilOff('click.xtend');
+              closeElement.xtUtilOn('click.xtend', function (e) {
+                if (check(e, this)) {
+                  self.eventOff(toggle);
+                }
+                /*
+                //if (e.target === this) {
+                if (e.target !== el && !el.contains(e.target)) {
+                  self.eventOff(toggle);
+                }
+                */
+              });
+            }
+          } catch (err) {
+            _didIteratorError5 = true;
+            _iteratorError5 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion5 && _iterator5.return) {
+                _iterator5.return();
+              }
+            } finally {
+              if (_didIteratorError5) {
+                throw _iteratorError5;
+              }
+            }
+          }
+        });
+      }
+    }
+
+    /**
+     * closeOff on deactivation
+     * @param {Element} element
+     */
+
+  }, {
+    key: 'closeOff',
+    value: function closeOff(el) {
+      var options = this.options;
+      if (options.close) {
+        var closeElements = el.querySelectorAll(options.close);
+        if (!closeElements.length) {
+          closeElements = _xtendUtils2.default.arrSingle(document.documentElement);
+        }
+        var _iteratorNormalCompletion6 = true;
+        var _didIteratorError6 = false;
+        var _iteratorError6 = undefined;
+
+        try {
+          for (var _iterator6 = closeElements[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+            var closeElement = _step6.value;
+
+            closeElement.xtUtilOff('click.xtend');
+          }
+        } catch (err) {
+          _didIteratorError6 = true;
+          _iteratorError6 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion6 && _iterator6.return) {
+              _iterator6.return();
+            }
+          } finally {
+            if (_didIteratorError6) {
+              throw _iteratorError6;
+            }
+          }
+        }
+      }
+    }
+
+    /**
+     * backdrop append to element
+     * @param {Element} element
+     */
+
+  }, {
+    key: 'backdrop',
+    value: function backdrop(el) {
+      var options = this.options;
+      if (options.backdrop) {
+        var backdrop = el.querySelectorAll('.xt-backdrop');
+        if (!backdrop.length) {
+          backdrop = _xtendUtils2.default.createElement('<div class="xt-backdrop"></div>');
+          el.append(backdrop);
+        }
+      }
+    }
   }]);
 
   return Xt;
@@ -1834,13 +1996,13 @@ var XtToggle = exports.XtToggle = function (_Xt) {
       var self = this;
       var options = this.options;
       // on and off
-      var _iteratorNormalCompletion5 = true;
-      var _didIteratorError5 = false;
-      var _iteratorError5 = undefined;
+      var _iteratorNormalCompletion7 = true;
+      var _didIteratorError7 = false;
+      var _iteratorError7 = undefined;
 
       try {
-        for (var _iterator5 = this.elements[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
-          var el = _step5.value;
+        for (var _iterator7 = this.elements[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+          var el = _step7.value;
 
           if (options.on) {
             el.xtUtilOff(options.on + '.xtend');
@@ -1856,16 +2018,16 @@ var XtToggle = exports.XtToggle = function (_Xt) {
           }
         }
       } catch (err) {
-        _didIteratorError5 = true;
-        _iteratorError5 = err;
+        _didIteratorError7 = true;
+        _iteratorError7 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion5 && _iterator5.return) {
-            _iterator5.return();
+          if (!_iteratorNormalCompletion7 && _iterator7.return) {
+            _iterator7.return();
           }
         } finally {
-          if (_didIteratorError5) {
-            throw _iteratorError5;
+          if (_didIteratorError7) {
+            throw _iteratorError7;
           }
         }
       }
@@ -1923,73 +2085,41 @@ var XtDrop = exports.XtDrop = function (_Xt2) {
       var self = this;
       var options = this.options;
       // on and off
-      var _iteratorNormalCompletion6 = true;
-      var _didIteratorError6 = false;
-      var _iteratorError6 = undefined;
+      var _iteratorNormalCompletion8 = true;
+      var _didIteratorError8 = false;
+      var _iteratorError8 = undefined;
 
       try {
-        for (var _iterator6 = this.elements[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
-          var el = _step6.value;
+        for (var _iterator8 = this.elements[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
+          var el = _step8.value;
 
           if (options.on) {
             el.xtUtilOff(options.on + '.xtend');
             el.xtUtilOn(options.on + '.xtend', function (e) {
               self.eventOn(this);
-              self.documentOn(this);
             });
           }
           if (options.off) {
             el.xtUtilOff(options.off + '.xtend');
             el.xtUtilOn(options.off + '.xtend', function (e) {
               self.eventOff(this);
-              self.documentOff();
             });
           }
         }
       } catch (err) {
-        _didIteratorError6 = true;
-        _iteratorError6 = err;
+        _didIteratorError8 = true;
+        _iteratorError8 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion6 && _iterator6.return) {
-            _iterator6.return();
+          if (!_iteratorNormalCompletion8 && _iterator8.return) {
+            _iterator8.return();
           }
         } finally {
-          if (_didIteratorError6) {
-            throw _iteratorError6;
+          if (_didIteratorError8) {
+            throw _iteratorError8;
           }
         }
       }
-    }
-    /**
-     * documentOn on activation
-     * @param {Element} element
-     */
-
-  }, {
-    key: 'documentOn',
-    value: function documentOn(el) {
-      var self = this;
-      _xtendUtils2.default.requestAnimationFrame.call(window, function () {
-        document.documentElement.xtUtilOff('click.xtend');
-        document.documentElement.xtUtilOn('click.xtend', function (e) {
-          if (e.target !== el && !self.object.contains(e.target)) {
-            self.eventOff(el);
-            self.documentOff();
-          }
-        });
-      });
-    }
-
-    /**
-     * documentOff on deactivation
-     * @param {Element} element
-     */
-
-  }, {
-    key: 'documentOff',
-    value: function documentOff() {
-      document.documentElement.xtUtilOff('click.xtend');
     }
   }]);
 
@@ -2004,15 +2134,108 @@ XtDrop.defaults = {
   classes: ['active'],
   on: 'click',
   min: 0,
-  max: 1
+  max: 1,
+  close: true
+};
+
+//////////////////////
+// XtOverlay
+//////////////////////
+
+var XtOverlay = exports.XtOverlay = function (_Xt3) {
+  _inherits(XtOverlay, _Xt3);
+
+  /**
+   * constructor
+   * @param {Element} object Base element
+   * @param {Object} options User options
+   * @constructor
+   */
+  function XtOverlay(object, jsOptions) {
+    _classCallCheck(this, XtOverlay);
+
+    var _this3 = _possibleConstructorReturn(this, (XtOverlay.__proto__ || Object.getPrototypeOf(XtOverlay)).call(this, object, jsOptions, 'data-xt-overlay'));
+
+    _this3.initEvents();
+    return _this3;
+  }
+
+  //////////////////////
+  // init
+  //////////////////////
+
+  /**
+   * init events
+   */
+
+
+  _createClass(XtOverlay, [{
+    key: 'initEvents',
+    value: function initEvents() {
+      var self = this;
+      var options = this.options;
+      // on and off
+      var _iteratorNormalCompletion9 = true;
+      var _didIteratorError9 = false;
+      var _iteratorError9 = undefined;
+
+      try {
+        for (var _iterator9 = this.elements[Symbol.iterator](), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
+          var el = _step9.value;
+
+          if (options.on) {
+            el.xtUtilOff(options.on + '.xtend');
+            el.xtUtilOn(options.on + '.xtend', function (e) {
+              self.eventOn(this);
+            });
+          }
+          if (options.off) {
+            el.xtUtilOff(options.off + '.xtend');
+            el.xtUtilOn(options.off, function (e) {
+              self.eventOff(this);
+            });
+          }
+        }
+      } catch (err) {
+        _didIteratorError9 = true;
+        _iteratorError9 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion9 && _iterator9.return) {
+            _iterator9.return();
+          }
+        } finally {
+          if (_didIteratorError9) {
+            throw _iteratorError9;
+          }
+        }
+      }
+    }
+  }]);
+
+  return XtOverlay;
+}(Xt);
+
+// defaults
+
+XtOverlay.defaults = {
+  elements: ':scope > .btn',
+  targets: ':scope > .overlay-outer',
+  classes: ['active'],
+  on: 'click',
+  min: 0,
+  max: 1,
+  appendTo: 'body',
+  backdrop: true,
+  close: '.overlay'
 };
 
 //////////////////////
 // XtScroll
 //////////////////////
 
-var XtScroll = exports.XtScroll = function (_Xt3) {
-  _inherits(XtScroll, _Xt3);
+var XtScroll = exports.XtScroll = function (_Xt4) {
+  _inherits(XtScroll, _Xt4);
 
   /**
    * constructor
@@ -2023,10 +2246,10 @@ var XtScroll = exports.XtScroll = function (_Xt3) {
   function XtScroll(object, jsOptions) {
     _classCallCheck(this, XtScroll);
 
-    var _this3 = _possibleConstructorReturn(this, (XtScroll.__proto__ || Object.getPrototypeOf(XtScroll)).call(this, object, jsOptions, 'data-xt-scroll'));
+    var _this4 = _possibleConstructorReturn(this, (XtScroll.__proto__ || Object.getPrototypeOf(XtScroll)).call(this, object, jsOptions, 'data-xt-scroll'));
 
-    _this3.initEvents();
-    return _this3;
+    _this4.initEvents();
+    return _this4;
   }
 
   //////////////////////
@@ -2136,13 +2359,13 @@ var XtScroll = exports.XtScroll = function (_Xt3) {
             self.eventOn(element);
             // direction
             var fElements = self.getElements(element);
-            var _iteratorNormalCompletion7 = true;
-            var _didIteratorError7 = false;
-            var _iteratorError7 = undefined;
+            var _iteratorNormalCompletion10 = true;
+            var _didIteratorError10 = false;
+            var _iteratorError10 = undefined;
 
             try {
-              for (var _iterator7 = fElements.all[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
-                var el = _step7.value;
+              for (var _iterator10 = fElements.all[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
+                var el = _step10.value;
 
                 el.classList.remove('scroll-off-top', 'scroll-off-bottom');
                 if (self.scrollTop > scrollTop) {
@@ -2154,16 +2377,16 @@ var XtScroll = exports.XtScroll = function (_Xt3) {
                 }
               }
             } catch (err) {
-              _didIteratorError7 = true;
-              _iteratorError7 = err;
+              _didIteratorError10 = true;
+              _iteratorError10 = err;
             } finally {
               try {
-                if (!_iteratorNormalCompletion7 && _iterator7.return) {
-                  _iterator7.return();
+                if (!_iteratorNormalCompletion10 && _iterator10.return) {
+                  _iterator10.return();
                 }
               } finally {
-                if (_didIteratorError7) {
-                  throw _iteratorError7;
+                if (_didIteratorError10) {
+                  throw _iteratorError10;
                 }
               }
             }
@@ -2176,13 +2399,13 @@ var XtScroll = exports.XtScroll = function (_Xt3) {
             self.eventOff(element);
             // direction
             var _fElements = self.getElements(element);
-            var _iteratorNormalCompletion8 = true;
-            var _didIteratorError8 = false;
-            var _iteratorError8 = undefined;
+            var _iteratorNormalCompletion11 = true;
+            var _didIteratorError11 = false;
+            var _iteratorError11 = undefined;
 
             try {
-              for (var _iterator8 = _fElements.all[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
-                var _el = _step8.value;
+              for (var _iterator11 = _fElements.all[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
+                var _el = _step11.value;
 
                 _el.classList.remove('scroll-on-top', 'scroll-on-bottom');
                 if (self.scrollTop > scrollTop) {
@@ -2194,16 +2417,16 @@ var XtScroll = exports.XtScroll = function (_Xt3) {
                 }
               }
             } catch (err) {
-              _didIteratorError8 = true;
-              _iteratorError8 = err;
+              _didIteratorError11 = true;
+              _iteratorError11 = err;
             } finally {
               try {
-                if (!_iteratorNormalCompletion8 && _iterator8.return) {
-                  _iterator8.return();
+                if (!_iteratorNormalCompletion11 && _iterator11.return) {
+                  _iterator11.return();
                 }
               } finally {
-                if (_didIteratorError8) {
-                  throw _iteratorError8;
+                if (_didIteratorError11) {
+                  throw _iteratorError11;
                 }
               }
             }

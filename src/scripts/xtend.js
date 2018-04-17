@@ -90,6 +90,15 @@ export class Xt {
       arr = arr.filter(x => !XtUtil.parents(x, options.targets).length); // filter out parent
       this.targets = XtUtil.arrSingle(arr);
     }
+    // appendTo
+    if (options.appendTo) {
+      let appendToTarget = document.querySelectorAll(options.appendTo);
+      if (appendToTarget.length) {
+        this.targets.forEach(function (el) {
+          appendToTarget[0].appendChild(el);
+        });
+      }
+    }
     // @FIX set namespace for next frame
     for (let el of this.elements) {
       el.setAttribute('data-xt-namespace', self.namespace);
@@ -223,9 +232,9 @@ export class Xt {
     if (!element.classList.contains(...this.defaults.classes)) {
       let fElements = this.getElements(element);
       this.addCurrent(fElements.single);
-      this.activationOn(fElements.all);
+      this.activationOn(fElements.all, fElements, 'elements');
       let targets = this.getTargets(element);
-      this.activationOn(targets);
+      this.activationOn(targets, fElements, 'targets');
     } else {
       this.eventOff(element);
     }
@@ -251,9 +260,9 @@ export class Xt {
     if (element.classList.contains(...this.defaults.classes)) {
       let fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
-      this.activationOff(fElements.all);
+      this.activationOff(fElements.all, fElements, 'elements');
       let targets = this.getTargets(element);
-      this.activationOff(targets);
+      this.activationOff(targets, fElements, 'targets');
     }
   }
 
@@ -273,7 +282,7 @@ export class Xt {
    * element on activation
    * @param {Element} element To be activated
    */
-  activationOn(els) {
+  activationOn(els, fElements, type) {
     let self = this;
     let options = this.options;
     // activate
@@ -282,9 +291,13 @@ export class Xt {
       el.classList.remove('out');
       self.activationOnAnimate(el);
       // specials
-      self.centerOn(el);
-      self.middleOn(el);
-      self.collapseOn(el);
+      if (type === 'targets') {
+        self.centerOn(el);
+        self.middleOn(el);
+        self.collapseOn(el);
+        self.backdrop(el);
+        self.closeOn(el, fElements.single);
+      }
     }
   }
 
@@ -322,7 +335,7 @@ export class Xt {
    * element off activation
    * @param {Element} element To be deactivated
    */
-  activationOff(els) {
+  activationOff(els, fElements, type) {
     let self = this;
     let options = this.options;
     // deactivate
@@ -331,7 +344,10 @@ export class Xt {
       el.classList.add('out');
       self.activationOffAnimate(el);
       // specials
-      self.collapseOff(el);
+      if (type === 'targets') {
+        self.collapseOff(el);
+        self.closeOff(el);
+      }
     }
   }
 
@@ -481,6 +497,75 @@ export class Xt {
     }
   }
 
+  /**
+   * closeOn on activation
+   * @param {Element} element
+   */
+  closeOn(el, toggle) {
+    let self = this;
+    let options = this.options;
+    if (options.close) {
+      let closeElements = el.querySelectorAll(options.close);
+      let check = function (e, t) {
+        return e.target === t;
+      };
+      if (!closeElements.length) {
+        closeElements = XtUtil.arrSingle(document.documentElement);
+        check = function (e, t) {
+          return e.target !== el && !el.contains(e.target);
+        };
+      }
+      XtUtil.requestAnimationFrame.call(window, function () {
+        for (let closeElement of closeElements) {
+          closeElement.xtUtilOff('click.xtend');
+          closeElement.xtUtilOn('click.xtend', function (e) {
+            if (check(e, this)) {
+              self.eventOff(toggle);
+            }
+            /*
+            //if (e.target === this) {
+            if (e.target !== el && !el.contains(e.target)) {
+              self.eventOff(toggle);
+            }
+            */
+          });
+        }
+      });
+    }
+  }
+
+  /**
+   * closeOff on deactivation
+   * @param {Element} element
+   */
+  closeOff(el) {
+    let options = this.options;
+    if (options.close) {
+      let closeElements = el.querySelectorAll(options.close);
+      if (!closeElements.length) {
+        closeElements = XtUtil.arrSingle(document.documentElement);
+      }
+      for (let closeElement of closeElements) {
+        closeElement.xtUtilOff('click.xtend');
+      }
+    }
+  }
+
+  /**
+   * backdrop append to element
+   * @param {Element} element
+   */
+  backdrop(el) {
+    let options = this.options;
+    if (options.backdrop) {
+      let backdrop = el.querySelectorAll('.xt-backdrop');
+      if (!backdrop.length) {
+        backdrop = XtUtil.createElement('<div class="xt-backdrop"></div>');
+        el.append(backdrop);
+      }
+    }
+  }
+
 }
 
 // defaults
@@ -579,41 +664,15 @@ export class XtDrop extends Xt {
         el.xtUtilOff(options.on + '.xtend');
         el.xtUtilOn(options.on + '.xtend', function (e) {
           self.eventOn(this);
-          self.documentOn(this);
         });
       }
       if (options.off) {
         el.xtUtilOff(options.off + '.xtend');
         el.xtUtilOn(options.off + '.xtend', function (e) {
           self.eventOff(this);
-          self.documentOff();
         });
       }
     }
-  }
-  /**
-   * documentOn on activation
-   * @param {Element} element
-   */
-  documentOn(el) {
-    let self = this;
-    XtUtil.requestAnimationFrame.call(window, function () {
-      document.documentElement.xtUtilOff('click.xtend');
-      document.documentElement.xtUtilOn('click.xtend', function (e) {
-        if (e.target !== el && !self.object.contains(e.target)) {
-          self.eventOff(el);
-          self.documentOff();
-        }
-      });
-    });
-  }
-
-  /**
-   * documentOff on deactivation
-   * @param {Element} element
-   */
-  documentOff() {
-    document.documentElement.xtUtilOff('click.xtend');
   }
 
 }
@@ -626,7 +685,68 @@ XtDrop.defaults = {
   classes: ['active'],
   on: 'click',
   min: 0,
-  max: 1
+  max: 1,
+  close: true
+};
+
+//////////////////////
+// XtOverlay
+//////////////////////
+
+export class XtOverlay extends Xt {
+
+  /**
+   * constructor
+   * @param {Element} object Base element
+   * @param {Object} options User options
+   * @constructor
+   */
+  constructor(object, jsOptions) {
+    super(object, jsOptions, 'data-xt-overlay');
+    this.initEvents();
+  }
+
+  //////////////////////
+  // init
+  //////////////////////
+
+  /**
+   * init events
+   */
+  initEvents() {
+    let self = this;
+    let options = this.options;
+    // on and off
+    for (let el of this.elements) {
+      if (options.on) {
+        el.xtUtilOff(options.on + '.xtend');
+        el.xtUtilOn(options.on + '.xtend', function (e) {
+          self.eventOn(this);
+        });
+      }
+      if (options.off) {
+        el.xtUtilOff(options.off + '.xtend');
+        el.xtUtilOn(options.off, function (e) {
+          self.eventOff(this);
+        });
+      }
+    }
+  }
+
+}
+
+// defaults
+
+XtOverlay.defaults = {
+  elements: ':scope > .btn',
+  targets: ':scope > .overlay-outer',
+  classes: ['active'],
+  on: 'click',
+  min: 0,
+  max: 1,
+  appendTo: 'body',
+  backdrop: true,
+  close: '.overlay'
 };
 
 //////////////////////

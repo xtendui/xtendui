@@ -13,7 +13,7 @@ description: Dropdown component with structured theming that can show anything.
 
 <pre>
   <code class="html">
-    <div class="drop-outer" data-xt-drop>
+    <div class="drop-container" data-xt-drop>
       <button type="button">
         <!-- content -->
       </button>
@@ -37,7 +37,7 @@ description: Dropdown component with structured theming that can show anything.
 <div class="demo">
   <div class="demo-item demo-preview" data-name="box">
     <div class="demo-source" data-lang="html">
-      <div class="drop-outer" data-xt-drop>
+      <div class="drop-container" data-xt-drop>
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
@@ -62,7 +62,7 @@ description: Dropdown component with structured theming that can show anything.
 <div class="demo">
   <div class="demo-item demo-preview" data-name="list">
     <div class="demo-source" data-lang="html">
-      <div class="drop-outer" data-xt-drop>
+      <div class="drop-container" data-xt-drop>
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
@@ -98,7 +98,7 @@ description: Dropdown component with structured theming that can show anything.
   <div class="demo-item demo-preview" data-name="default">
     <div class="demo-text"><code>.drop-default</code></div>
     <div class="demo-source demo-drops" data-lang="html">
-      <div class="drop-outer" data-xt-drop>
+      <div class="drop-container" data-xt-drop>
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
@@ -123,7 +123,7 @@ description: Dropdown component with structured theming that can show anything.
   <div class="demo-item demo-preview" data-name="primary">
     <div class="demo-text"><code>.drop-primary</code></div>
     <div class="demo-source demo-drops" data-lang="html">
-      <div class="drop-outer" data-xt-drop>
+      <div class="drop-container" data-xt-drop>
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
@@ -148,7 +148,7 @@ description: Dropdown component with structured theming that can show anything.
   <div class="demo-item demo-preview" data-name="secondary">
     <div class="demo-text"><code>.drop-secondary</code></div>
     <div class="demo-source demo-drops" data-lang="html">
-      <div class="drop-outer" data-xt-drop>
+      <div class="drop-container" data-xt-drop>
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
@@ -173,7 +173,7 @@ description: Dropdown component with structured theming that can show anything.
   <div class="demo-item demo-preview" data-name="white">
     <div class="demo-text"><code>.drop-white</code></div>
     <div class="demo-source demo-drops" data-lang="html">
-      <div class="drop-outer" data-xt-drop>
+      <div class="drop-container" data-xt-drop>
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
@@ -200,7 +200,7 @@ description: Dropdown component with structured theming that can show anything.
       You can <strong>override</strong> all options of <code>.list-drop</code> except <code>// not overridable</code> code in the theme.
     </div>
     <div class="demo-source demo-drops" data-lang="html">
-      <div class="drop-outer" data-xt-drop>
+      <div class="drop-container" data-xt-drop>
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
@@ -232,7 +232,7 @@ description: Dropdown component with structured theming that can show anything.
   <div class="demo-item demo-preview" data-name="squared">
     <div class="demo-text"><code>.drop-squared</code></div>
     <div class="demo-source demo-drops" data-lang="html">
-      <div class="drop-outer" data-xt-drop>
+      <div class="drop-container" data-xt-drop>
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
@@ -257,7 +257,7 @@ description: Dropdown component with structured theming that can show anything.
   <div class="demo-item demo-preview" data-name="noborder">
     <div class="demo-text"><code>.drop-noborder</code></div>
     <div class="demo-source demo-drops" data-lang="html">
-      <div class="drop-outer" data-xt-drop>
+      <div class="drop-container" data-xt-drop>
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
@@ -281,627 +281,7 @@ description: Dropdown component with structured theming that can show anything.
   </div>
 </div>
 
-<h3>Position</h3>
-
-<p>Optional classes for assigning position.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="bottom">
-    <div class="demo-text"><code>.drop-bottom</code> <code>.drop-left</code> <code>.drop-right</code>
-      <code>.drop-center</code>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div class="list list-line list-space-small align-items-center demo-source-from">
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            bottom left
-          </button>
-          <div class="drop drop-default drop-bottom drop-left">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            bottom right
-          </button>
-          <div class="drop drop-default drop-bottom drop-right">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            bottom center
-          </button>
-          <div class="drop drop-default drop-bottom drop-center">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="top">
-    <div class="demo-text"><code>.drop-top</code> <code>.drop-left</code> <code>.drop-right</code>
-      <code>.drop-center</code></div>
-    <div class="demo-source" data-lang="html">
-      <div class="list list-line list-space-small align-items-center demo-source-from">
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            top left
-          </button>
-          <div class="drop drop-default drop-top drop-left">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            top right
-          </button>
-          <div class="drop drop-default drop-top drop-right">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            top center
-          </button>
-          <div class="drop drop-default drop-top drop-center">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="middle">
-    <div class="demo-text"><code>.drop-middle</code> <code>.drop-left</code> <code>.drop-right</code>
-      <code>.drop-center</code></div>
-    <div class="demo-source" data-lang="html">
-      <div class="list list-line list-space-small align-items-center demo-source-from">
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            middle left
-          </button>
-          <div class="drop drop-default drop-middle drop-left">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            middle right
-          </button>
-          <div class="drop drop-default drop-middle drop-right">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            middle center
-          </button>
-          <div class="drop drop-default drop-middle drop-center">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="before">
-    <div class="demo-text"><code>.drop-before</code> <code>.drop-top</code> <code>.drop-bottom</code>
-      <code>.drop-middle</code></div>
-    <div class="demo-source" data-lang="html">
-      <div class="list list-line list-space-small align-items-center demo-source-from">
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            before top
-          </button>
-          <div class="drop drop-default drop-before drop-top">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            before bottom
-          </button>
-          <div class="drop drop-default drop-before drop-bottom">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            before middle
-          </button>
-          <div class="drop drop-default drop-before drop-middle">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="after">
-    <div class="demo-text"><code>.drop-after</code> <code>.drop-top</code> <code>.drop-bottom</code>
-      <code>.drop-middle</code></div>
-    <div class="demo-source" data-lang="html">
-      <div class="list list-line list-space-small align-items-center demo-source-from">
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            after top
-          </button>
-          <div class="drop drop-default drop-after drop-top">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            after bottom
-          </button>
-          <div class="drop drop-default drop-after drop-bottom">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            after middle
-          </button>
-          <div class="drop drop-default drop-after drop-middle">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="others">
-    <div class="demo-text"><code>.drop-middle-top</code> <code>.drop-middle-bottom</code></div>
-    <div class="demo-source" data-lang="html">
-      <div class="list list-line list-space-small align-items-center demo-source-from">
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            right middle bottom
-          </button>
-          <div class="drop drop-default drop-right drop-middle drop-middle-bottom">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            right middle-top
-          </button>
-          <div class="drop drop-default drop-right drop-middle drop-middle-top">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            left middle-bottom
-          </button>
-          <div class="drop drop-default drop-left drop-middle drop-middle-bottom">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            left middle-top
-          </button>
-          <div class="drop drop-default drop-left drop-middle drop-middle-top">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            before middle-bottom
-          </button>
-          <div class="drop drop-default drop-before drop-middle drop-middle-bottom">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            before middle-top
-          </button>
-          <div class="drop drop-default drop-before drop-middle drop-middle-top">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            after middle-bottom
-          </button>
-          <div class="drop drop-default drop-after drop-middle drop-middle-bottom">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            after middle-top
-          </button>
-          <div class="drop drop-default drop-after drop-middle drop-middle-top">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Static</h3>
-
-<p>Drop position relative to closest element with <code>position: relative;</code>.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="bottom">
-    <div class="demo-text"><code>.drop-outer-static</code> <code>.drop-bottom</code></div>
-    <div class="demo-source" data-lang="html">
-      <div style="position: relative;">
-        <div class="drop-outer drop-outer-static" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            Toggle
-          </button>
-          <div class="drop drop-default drop-default">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="top">
-    <div class="demo-text"><code>.drop-outer-static</code> <code>.drop-top</code></div>
-    <div class="demo-source" data-lang="html">
-      <div style="position: relative;">
-        <div class="drop-outer drop-outer-static" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            Toggle
-          </button>
-          <div class="drop drop-default drop-top">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="middle">
-    <div class="demo-text"><code>.drop-outer-static</code> <code>.drop-middle</code></div>
-    <div class="demo-source" data-lang="html">
-      <div style="position: relative;">
-        <div class="drop-outer drop-outer-static" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            Toggle
-          </button>
-          <div class="drop drop-default drop-middle">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Max size</h3>
+<h3>Dimensions</h3>
 
 <p>Drop with max sizes with automatic scrollbar on overflow.</p>
 
@@ -910,7 +290,7 @@ description: Dropdown component with structured theming that can show anything.
     <div class="demo-text"><code>.drop-max-height</code></div>
     <div class="demo-source" data-lang="html">
       <div style="position: relative;">
-        <div class="drop-outer" data-xt-drop>
+        <div class="drop-container" data-xt-drop>
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
@@ -949,7 +329,7 @@ description: Dropdown component with structured theming that can show anything.
     <div class="demo-text"><code>.drop-max-width</code></div>
     <div class="demo-source" data-lang="html">
       <div style="position: relative;">
-        <div class="drop-outer" data-xt-drop>
+        <div class="drop-container" data-xt-drop>
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
@@ -988,7 +368,7 @@ description: Dropdown component with structured theming that can show anything.
     <div class="demo-text"><code>.drop-max-height</code> <code>.drop-max-width</code></div>
     <div class="demo-source" data-lang="html">
       <div style="position: relative;">
-        <div class="drop-outer" data-xt-drop>
+        <div class="drop-container" data-xt-drop>
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
@@ -1015,6 +395,626 @@ description: Dropdown component with structured theming that can show anything.
                 </li>
                 <li>
                   <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Position</h3>
+
+<p>Optional classes for assigning position.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="bottom">
+    <div class="demo-text"><code>.drop-bottom</code> <code>.drop-left</code> <code>.drop-right</code>
+      <code>.drop-center</code>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-line list-space-small align-items-center demo-source-from">
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            bottom left
+          </button>
+          <div class="drop drop-default drop-bottom drop-left">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            bottom right
+          </button>
+          <div class="drop drop-default drop-bottom drop-right">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            bottom center
+          </button>
+          <div class="drop drop-default drop-bottom drop-center">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="top">
+    <div class="demo-text"><code>.drop-top</code> <code>.drop-left</code> <code>.drop-right</code>
+      <code>.drop-center</code></div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-line list-space-small align-items-center demo-source-from">
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            top left
+          </button>
+          <div class="drop drop-default drop-top drop-left">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            top right
+          </button>
+          <div class="drop drop-default drop-top drop-right">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            top center
+          </button>
+          <div class="drop drop-default drop-top drop-center">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="middle">
+    <div class="demo-text"><code>.drop-middle</code> <code>.drop-left</code> <code>.drop-right</code>
+      <code>.drop-center</code></div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-line list-space-small align-items-center demo-source-from">
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            middle left
+          </button>
+          <div class="drop drop-default drop-middle drop-left">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            middle right
+          </button>
+          <div class="drop drop-default drop-middle drop-right">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            middle center
+          </button>
+          <div class="drop drop-default drop-middle drop-center">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="before">
+    <div class="demo-text"><code>.drop-before</code> <code>.drop-top</code> <code>.drop-bottom</code>
+      <code>.drop-middle</code></div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-line list-space-small align-items-center demo-source-from">
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            before top
+          </button>
+          <div class="drop drop-default drop-before drop-top">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            before bottom
+          </button>
+          <div class="drop drop-default drop-before drop-bottom">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            before middle
+          </button>
+          <div class="drop drop-default drop-before drop-middle">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="after">
+    <div class="demo-text"><code>.drop-after</code> <code>.drop-top</code> <code>.drop-bottom</code>
+      <code>.drop-middle</code></div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-line list-space-small align-items-center demo-source-from">
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            after top
+          </button>
+          <div class="drop drop-default drop-after drop-top">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            after bottom
+          </button>
+          <div class="drop drop-default drop-after drop-bottom">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            after middle
+          </button>
+          <div class="drop drop-default drop-after drop-middle">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="others">
+    <div class="demo-text"><code>.drop-middle-top</code> <code>.drop-middle-bottom</code></div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-line list-space-small align-items-center demo-source-from">
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            right middle bottom
+          </button>
+          <div class="drop drop-default drop-right drop-middle drop-middle-bottom">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            right middle-top
+          </button>
+          <div class="drop drop-default drop-right drop-middle drop-middle-top">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            left middle-bottom
+          </button>
+          <div class="drop drop-default drop-left drop-middle drop-middle-bottom">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            left middle-top
+          </button>
+          <div class="drop drop-default drop-left drop-middle drop-middle-top">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            before middle-bottom
+          </button>
+          <div class="drop drop-default drop-before drop-middle drop-middle-bottom">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            before middle-top
+          </button>
+          <div class="drop drop-default drop-before drop-middle drop-middle-top">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            after middle-bottom
+          </button>
+          <div class="drop drop-default drop-after drop-middle drop-middle-bottom">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            after middle-top
+          </button>
+          <div class="drop drop-default drop-after drop-middle drop-middle-top">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Static</h3>
+
+<p>Drop position relative to closest element with <code>position: relative;</code>.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="bottom">
+    <div class="demo-text"><code>.drop-container-static</code> <code>.drop-bottom</code></div>
+    <div class="demo-source" data-lang="html">
+      <div style="position: relative;">
+        <div class="drop-container drop-container-static" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            Toggle
+          </button>
+          <div class="drop drop-default drop-default">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="top">
+    <div class="demo-text"><code>.drop-container-static</code> <code>.drop-top</code></div>
+    <div class="demo-source" data-lang="html">
+      <div style="position: relative;">
+        <div class="drop-container drop-container-static" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            Toggle
+          </button>
+          <div class="drop drop-default drop-top">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="middle">
+    <div class="demo-text"><code>.drop-container-static</code> <code>.drop-middle</code></div>
+    <div class="demo-source" data-lang="html">
+      <div style="position: relative;">
+        <div class="drop-container drop-container-static" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            Toggle
+          </button>
+          <div class="drop drop-default drop-middle">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
                 </li>
               </ul>
             </div>

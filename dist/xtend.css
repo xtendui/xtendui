@@ -704,15 +704,15 @@ a,
 .btn-close {
   z-index: 300 !important;
 }
-.drop-outer {
+.drop-container {
   display: inline-block;
   position: relative;
 }
-.drop-outer-static {
+.drop-container-static {
   position: static;
 }
-.drop-outer-static .drop,
-.drop-outer-static .drop-inner {
+.drop-container-static .drop,
+.drop-container-static .drop-inner {
   width: 100%;
 }
 .drop {
@@ -779,7 +779,7 @@ a,
   top: 0 !important;
   bottom: auto !important;
 }
-.overlay {
+.overlay-outer {
   display: none !important;
   position: fixed;
   z-index: 200 !important;
@@ -789,17 +789,13 @@ a,
   bottom: 0;
   overflow: hidden;
 }
-.overlay.active,
-.overlay.out {
+.overlay-outer.active,
+.overlay-outer.out {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
 }
-.overlay .overlay-inner {
-  position: relative;
-  z-index: 200 !important;
-  width: 100%;
-  min-height: 100vh;
+.overlay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -812,69 +808,66 @@ a,
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  position: relative;
+  z-index: 200 !important;
   margin: auto;
+  width: 100%;
+  min-height: 100vh;
 }
-.overlay .overlay-content {
+.overlay .overlay-inner {
   position: relative;
   width: 100%;
   -ms-flex-item-align: center;
   align-self: center;
 }
-@media (max-width: 575px ) {
-  .overlay .overlay-content {
-    max-width: 100%;
+/*
+.overlay-fluid {
+  .overlay-inner {
+    width: 100%;
+    max-width: @overlay-fluid;
   }
 }
-.overlay.overlay-screen .overlay-content {
-  position: static;
+*/
+.overlay-tiny {
+  max-width: 540px;
 }
-.overlay.overlay-screen .overlay-inner + .xt-backdrop {
-  display: none;
+.overlay-small {
+  max-width: 720px;
 }
-.overlay.overlay-fluid .overlay-content {
-  width: 100%;
+.overlay-medium {
+  max-width: 960px;
+}
+.overlay-big {
+  max-width: 1140px;
+}
+.overlay-giant {
   max-width: 1300px;
 }
-.overlay-tiny .overlay-content {
-  width: 540px;
-}
-.overlay-small .overlay-content {
-  width: 720px;
-}
-.overlay-medium .overlay-content {
-  width: 960px;
-}
-.overlay-big .overlay-content {
-  width: 1140px;
-}
-.overlay-giant .overlay-content {
-  width: 1300px;
-}
-.overlay .overlay-inner {
+.overlay {
   padding: 15px;
 }
 @media (min-width: 576px ) {
-  .overlay .overlay-inner {
+  .overlay {
     padding: 15px;
   }
 }
 @media (min-width: 768px ) {
-  .overlay .overlay-inner {
+  .overlay {
     padding: 20px;
   }
 }
 @media (min-width: 992px ) {
-  .overlay .overlay-inner {
+  .overlay {
     padding: 25px;
   }
 }
 @media (min-width: 1200px ) {
-  .overlay .overlay-inner {
+  .overlay {
     padding: 30px;
   }
 }
 @media (min-width: 1350px ) {
-  .overlay .overlay-inner {
+  .overlay {
     padding: 30px;
   }
 }
@@ -4416,7 +4409,6 @@ a:hover,
   bottom: auto;
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  opacity: 1;
 }
 .drop .drop-inner {
   padding-top: 1.3rem;
@@ -4432,6 +4424,7 @@ a:hover,
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .drop.active {
+  opacity: 1;
   animation-name: anim-vertical-in;
 }
 .drop.out {
@@ -4595,12 +4588,10 @@ a:hover,
   overflow-x: auto !important;
   max-width: 20rem !important;
 }
-.overlay .btn-close {
-  padding: .6em 1.2em !important;
-  font-size: 1.4rem !important;
-  padding: .6em .8em !important;
+.overlay {
+  max-width: 960px;
 }
-.overlay .overlay-content {
+.overlay .overlay-inner {
   border-radius: 3px;
   border-width: 1px;
   border-style: solid;
@@ -4609,58 +4600,73 @@ a:hover,
   padding: 3rem;
 }
 @media (min-width: 768px ) {
-  .overlay .overlay-content {
+  .overlay .overlay-inner {
     padding: 4rem;
   }
 }
-.overlay.overlay-screen .overlay-content {
+.overlay .overlay-inner .btn-close {
+  padding: .6em 1.2em !important;
+  font-size: 1.4rem !important;
+  padding: .6em .8em !important;
+}
+.overlay-outer .overlay-inner {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.overlay-outer .overlay-inner.out {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.overlay-outer.active .overlay-inner {
+  opacity: 1;
+  animation-name: anim-vertical-in;
+}
+.overlay-outer.active .xt-backdrop {
+  opacity: 0.6;
+  animation-name: anim-backdrop-in;
+}
+.overlay-outer.out .overlay-inner {
+  opacity: 0;
+  animation-name: anim-vertical-out;
+}
+.overlay-outer.out .xt-backdrop {
+  opacity: 0;
+  animation-name: anim-backdrop-out;
+}
+.overlay.overlay-screen {
+  max-width: none !important;
+}
+.overlay.overlay-screen .overlay-inner {
+  position: static;
+}
+.overlay.overlay-screen + .xt-backdrop {
+  display: none;
+}
+.overlay.overlay-screen .overlay-inner {
   padding-left: 0;
   padding-right: 0;
   box-shadow: none;
 }
-.overlay .overlay-content {
-  width: 960px;
-}
-.overlay .overlay-content {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  opacity: 1;
-}
-.overlay .overlay-content.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.overlay .overlay-content.active {
-  animation-name: anim-vertical-in;
-}
-.overlay .overlay-content.out {
-  opacity: 0;
-  animation-name: anim-vertical-out;
-}
-.overlay .overlay-content.active .xt-backdrop {
-  animation-name: anim-bottom-in;
-  animation-delay: 300ms;
-}
-.overlay.overlay-default .overlay-content,
-.overlay.overlay-default.overlay-screen .overlay-inner {
+.overlay.overlay-default .overlay-inner,
+.overlay.overlay-default.overlay-screen {
   border-color: #fff;
   background-color: #fff;
   color: #343a40;
 }
-.overlay.overlay-primary .overlay-content,
-.overlay.overlay-primary.overlay-screen .overlay-inner {
+.overlay.overlay-primary .overlay-inner,
+.overlay.overlay-primary.overlay-screen {
   border-color: #7367F0 !important;
   background-color: #7367F0 !important;
   color: #fff !important;
 }
-.overlay.overlay-secondary .overlay-content,
-.overlay.overlay-secondary.overlay-screen .overlay-inner {
+.overlay.overlay-secondary .overlay-inner,
+.overlay.overlay-secondary.overlay-screen {
   border-color: #d4e7ef !important;
   background-color: #d4e7ef !important;
-  color: #fff !important;
+  color: #343a40 !important;
 }
-.overlay.overlay-white .overlay-content,
-.overlay.overlay-white.overlay-screen .overlay-inner {
+.overlay.overlay-white .overlay-inner,
+.overlay.overlay-white.overlay-screen {
   border-color: #fff !important;
   background-color: #fff !important;
   color: #343a40 !important;
@@ -4677,6 +4683,7 @@ a:hover,
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .loader-mask.active {
+  opacity: 1;
   animation-name: anim-vertical-in;
 }
 .loader-mask.out {
@@ -4693,16 +4700,16 @@ a:hover,
   will-change: transform;
 }
 .xt-backdrop {
-  background-color: #120a67;
+  background-color: #02010a;
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  opacity: 0.6;
 }
 .xt-backdrop.out {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .xt-backdrop.active {
+  opacity: 0.6;
   animation-name: anim-backdrop-in;
 }
 .xt-backdrop.out {
@@ -4871,13 +4878,13 @@ opacity: 1;
 .anim-opacity {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  opacity: 1;
 }
 .anim-opacity.out {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-opacity.active {
+  opacity: 1;
   animation-name: anim-opacity-in;
 }
 .anim-opacity.out {
@@ -4903,13 +4910,13 @@ opacity: 1;
 .anim-vertical {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  opacity: 1;
 }
 .anim-vertical.out {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-vertical.active {
+  opacity: 1;
   animation-name: anim-vertical-in;
 }
 .anim-vertical.out {
@@ -4939,13 +4946,13 @@ opacity: 1;
 .anim-horizontal {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  opacity: 1;
 }
 .anim-horizontal.out {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-horizontal.active {
+  opacity: 1;
   animation-name: anim-horizontal-in;
 }
 .anim-horizontal.out {
@@ -4975,13 +4982,13 @@ opacity: 1;
 .anim-top {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  opacity: 1;
 }
 .anim-top.out {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-top.active {
+  opacity: 1;
   animation-name: anim-top-in;
 }
 .anim-top.out {
@@ -5011,13 +5018,13 @@ opacity: 1;
 .anim-bottom {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  opacity: 1;
 }
 .anim-bottom.out {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-bottom.active {
+  opacity: 1;
   animation-name: anim-bottom-in;
 }
 .anim-bottom.out {
@@ -5047,13 +5054,13 @@ opacity: 1;
 .anim-left {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  opacity: 1;
 }
 .anim-left.out {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-left.active {
+  opacity: 1;
   animation-name: anim-left-in;
 }
 .anim-left.out {
@@ -5083,13 +5090,13 @@ opacity: 1;
 .anim-right {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  opacity: 1;
 }
 .anim-right.out {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-right.active {
+  opacity: 1;
   animation-name: anim-right-in;
 }
 .anim-right.out {
@@ -5119,13 +5126,13 @@ opacity: 1;
 .anim-backdrop {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  opacity: 0.6;
 }
 .anim-backdrop.out {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-backdrop.active {
+  opacity: 0.6;
   animation-name: anim-backdrop-in;
 }
 .anim-backdrop.out {
