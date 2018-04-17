@@ -314,14 +314,9 @@ a, .alink {
 }
 
 .btn-close() {
-  .btn-small() !important;
-  .btn-icon() !important;
   .btn-primary-empty();
   .by-key(@icons, close); // extract icon value from @icons
   .icon(@content:@by-key, @size:@icon-medium, @sr-only: true);
-  position: absolute !important;
-  top: 0;
-  right: 0;
 }
 
 .btn.btn-close {
@@ -478,10 +473,13 @@ a, .alink {
     @media @min-sm {
       padding: 4rem;
     }
-    // custom
-    .btn-close {
-      .btn-big() !important;
-      .btn-icon() !important;
+    // .btn-close
+    > .btn-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      .btn-giant();
+      .btn-icon();
     }
   }
   // options
@@ -491,6 +489,7 @@ a, .alink {
 // animations
 
 .overlay-outer {
+  .animation-default(); // needed for .out animation timing
   .overlay-inner {
     .animation-default();
   }
@@ -544,6 +543,11 @@ a, .alink {
     background-color: @primary;
     color: @text-inverse;
   }
+  .overlay-inner {
+    > .btn-close {
+      .btn-primary();
+    }
+  }
 }
 
 .overlay.overlay-primary {
@@ -556,6 +560,11 @@ a, .alink {
     background-color: @secondary;
     color: @text;
   }
+  .overlay-inner {
+    > .btn-close {
+      .btn-secondary();
+    }
+  }
 }
 
 .overlay.overlay-secondary {
@@ -567,6 +576,11 @@ a, .alink {
     border-color: @white;
     background-color: @white;
     color: @text;
+  }
+  .overlay-inner {
+    > .btn-close {
+      .btn-primary-empty();
+    }
   }
 }
 

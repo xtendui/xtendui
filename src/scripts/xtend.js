@@ -511,7 +511,7 @@ export class Xt {
       };
       if (!closeElements.length) {
         closeElements = XtUtil.arrSingle(document.documentElement);
-        check = function (e, t) {
+        check = function (e) {
           return e.target !== el && !el.contains(e.target);
         };
       }
@@ -522,12 +522,6 @@ export class Xt {
             if (check(e, this)) {
               self.eventOff(toggle);
             }
-            /*
-            //if (e.target === this) {
-            if (e.target !== el && !el.contains(e.target)) {
-              self.eventOff(toggle);
-            }
-            */
           });
         }
       });
@@ -746,7 +740,7 @@ XtOverlay.defaults = {
   max: 1,
   appendTo: 'body',
   backdrop: true,
-  close: '.overlay'
+  close: ':scope > .overlay, :scope > .overlay > .overlay-inner > .btn-close'
 };
 
 //////////////////////
@@ -907,24 +901,6 @@ XtScroll.defaults = {
 };
 
 /*
-// overlay html
-if (settings.name === 'xt-overlay') {
-  var $additional = $('html');
-  if (!$additional.hasClass(object.defaultClass)) {
-    $additional.addClass(settings.class);
-    // add paddings
-    object.onFixed($('html, .xt-backdrop')); // use this for all position fixed $('*:fixed').not($target);
-  }
-}
-// overlay html
-if (settings.name === 'xt-overlay') {
-  var $additional = $('html');
-  if ($additional.hasClass(object.defaultClass)) {
-    $additional.removeClass(settings.class);
-    // remove paddings
-    object.offFixed($('.xt-fixed')); // use this for all position fixed $('*:fixed').not($target);
-  }
-}
 
 Xt.prototype.onFixed = function($el) {
   var object = this;

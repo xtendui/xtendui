@@ -200,6 +200,14 @@
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
+  // .btn-close
+  > .btn-close {
+    .btn-tiny();
+    .btn-icon();
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
   // options
   .box-medium(); // size
 }
@@ -215,6 +223,45 @@
 }
 
 // variant
+
+.box-primary() {
+  border-color: darken(@primary, 5%);
+  background-color: @primary;
+  color: @text-inverse;
+  > .btn-close {
+    .btn-primary();
+  }
+}
+
+.box.box-primary {
+  .box-primary() !important;
+}
+
+.box-secondary() {
+  border-color: darken(@secondary, 5%);
+  background-color: @secondary;
+  color: @text;
+  > .btn-close {
+    .btn-secondary();
+  }
+}
+
+.box.box-secondary {
+  .box-secondary() !important;
+}
+
+.box-white() {
+  border-color: darken(@white, 5%);
+  background-color: @white;
+  color: @text;
+  > .btn-close {
+    .btn-primary-empty();
+  }
+}
+
+.box.box-white {
+  .box-white() !important;
+}
 
 .box-light() {
   border-color: darken(@grey-250, 5%);

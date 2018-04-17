@@ -202,6 +202,9 @@ a, .alink, .btn-link {
     position: relative;
     width: 100%;
     .align-self-center;
+    > .btn-close + * {
+      .margin(top, none) !important;
+    }
   }
 }
 
@@ -237,7 +240,9 @@ a, .alink, .btn-link {
   @name: extract(@overlay, 1);
   @val: extract(@overlay, 2);
   .overlay-@{name} {
-    max-width: @val;
+    .overlay-inner {
+      max-width: @val;
+    }
   }
 }
 
