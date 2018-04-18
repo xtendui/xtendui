@@ -289,7 +289,7 @@ export class Xt {
     for (let el of els) {
       el.classList.add(...options.classes);
       el.classList.remove('out');
-      self.activationOnAnimate(el);
+      self.activationOnAnimate(el, type);
       // specials
       if (type === 'targets') {
         self.specialCenterOn(el);
@@ -297,7 +297,6 @@ export class Xt {
         self.specialCollapseOn(el);
         self.specialBackdrop(el);
         self.specialCloseOn(el, fElements.single);
-        self.specialScrollbarOn();
       }
     }
   }
@@ -306,11 +305,14 @@ export class Xt {
    * element on animation
    * @param {Element} element To be animated
    */
-  activationOnAnimate(el) {
-    let timing = this.activationTiming(el);
-    // delay
-    this.animationClear(el);
-    if (!timing) {
+  activationOnAnimate(el, type) {
+    let self = this;
+    // onDone
+    let onDone = function(el, type) {
+      // specials
+      if (type === 'targets') {
+        self.specialScrollbarOn();
+      }
       // collapse-width and collapse-height
       if (el.classList.contains('collapse-height')) {
         el.style.height = 'auto';
@@ -318,16 +320,16 @@ export class Xt {
       if (el.classList.contains('collapse-width')) {
         el.style.width = 'auto';
       }
+    };
+    // delay onDone
+    let timing = this.activationTiming(el);
+    this.animationClear(el);
+    if (!timing) {
+      onDone(el, type);
     } else {
-      let timeout = setTimeout(function (el) {
-        // collapse-width and collapse-height
-        if (el.classList.contains('collapse-height')) {
-          el.style.height = 'auto';
-        }
-        if (el.classList.contains('collapse-width')) {
-          el.style.width = 'auto';
-        }
-      }, timing, el);
+      let timeout = setTimeout(function (el, type) {
+        onDone(el, type);
+      }, timing, el, type);
       el.setAttribute('xt-activation-animation-timeout', timeout);
     }
   }
@@ -572,8 +574,9 @@ export class Xt {
       container.style.paddingRight = width + 'px';
       container.classList.add('xt-scrollbar');
       // fixed
-      var elements = document.documentElement.querySelectorAll('.xt-fixed');
+      var elements = document.documentElement.querySelectorAll('.xt-fixed:not(.xt-clone)');
       for (let element of elements) {
+        element.style.paddingRight = '';
         var style = window.getComputedStyle(element);
         var padding = style.paddingRight;
         var str = 'calc(' + padding + ' + ' + width + 'px)';
@@ -606,9 +609,11 @@ export class Xt {
       var elements = document.documentElement.querySelectorAll('.xt-fixed');
       for (let element of elements) {
         element.classList.add('no-transition');
-        element.style.paddingRight = '';
         XtUtil.requestAnimationFrame.call(window, function () {
-          element.classList.remove('no-transition');
+          element.style.paddingRight = '';
+          XtUtil.requestAnimationFrame.call(window, function () {
+            element.classList.remove('no-transition');
+          });
         });
       }
       // backdrop
@@ -858,10 +863,10 @@ export class XtScroll extends Xt {
       this.container = XtUtil.parents(this.object, '.xt-container');
     }
     // targets
-    this.targets = this.container[0].querySelectorAll('.xt-clone.xt-ignore');
+    this.targets = this.container[0].querySelectorAll('.xt-clone');
     if (this.targets) {
       this.targets = this.object.cloneNode(true);
-      this.targets.classList.add('xt-clone', 'xt-ignore');
+      this.targets.classList.add('xt-clone');
       this.container[0].append(this.targets);
     }
     this.targets = XtUtil.arrSingle(this.targets);

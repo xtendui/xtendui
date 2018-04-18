@@ -112,7 +112,13 @@
 
 // overlay
 
-@overlays: tiny @breakpoint-xs, small @breakpoint-sm, medium @breakpoint-md, big @breakpoint-lg, giant @breakpoint-xl, full none; // overlay size
+@overlays:
+  tiny @breakpoint-xs - 60,
+  small @breakpoint-sm - 60,
+  medium @breakpoint-md - 60,
+  big @breakpoint-lg - 60,
+  giant @breakpoint-xl - 60,
+  full none; // overlay size
 
 //////////////////////
 // animations

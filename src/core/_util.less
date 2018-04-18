@@ -1040,21 +1040,23 @@
 
 // size
 
-.overlay-size(@name) {
+.overlay-width(@name) {
   .by-key(@overlays, @name);
   @val: @by-key;
-  max-width: @val;
+  .overlay-inner {
+    max-width: @val;
+  }
 }
 
-// generate-overlay-size
+// generate-overlay-width
 
-.generate-overlay-size();
-.generate-overlay-size(@i:length(@overlays)) when (@i > 0) {
-  .generate-overlay-size(@i - 1);
+.generate-overlay-width();
+.generate-overlay-width(@i:length(@overlays)) when (@i > 0) {
+  .generate-overlay-width(@i - 1);
   @overlay: extract(@overlays, @i);
   @name: extract(@overlay, 1);
-  .overlay-@{name} {
-    .overlay-size(@name) !important;
+  .overlay-width-@{name} {
+    .overlay-width(@name) !important;
   }
 }
 

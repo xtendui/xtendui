@@ -994,22 +994,22 @@ html.xt-scrollbar .overlay-outer {
   border: 0;
   clip: rect(0, 0, 0, 0);
 }
-.overlay-tiny {
-  max-width: 576px !important;
+.overlay-width-tiny .overlay-inner {
+  max-width: 516px !important;
 }
-.overlay-small {
-  max-width: 768px !important;
+.overlay-width-small .overlay-inner {
+  max-width: 708px !important;
 }
-.overlay-medium {
-  max-width: 992px !important;
+.overlay-width-medium .overlay-inner {
+  max-width: 932px !important;
 }
-.overlay-big {
-  max-width: 1200px !important;
+.overlay-width-big .overlay-inner {
+  max-width: 1140px !important;
 }
-.overlay-giant {
-  max-width: 1350px !important;
+.overlay-width-giant .overlay-inner {
+  max-width: 1290px !important;
 }
-.overlay-full {
+.overlay-width-full .overlay-inner {
   max-width: none !important;
 }
 .overlay {
@@ -4655,16 +4655,13 @@ a:hover,
   overflow-x: auto !important;
   max-width: 20rem !important;
 }
-.overlay {
-  max-width: 768px;
-}
 .overlay .overlay-inner {
+  padding: 3rem;
   border-radius: 3px;
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
-  padding: 3rem;
 }
 @media (min-width: 768px ) {
   .overlay .overlay-inner {
@@ -4678,6 +4675,9 @@ a:hover,
   padding: .6em 1.2em;
   font-size: 1.5rem;
   padding: .6em .8em;
+}
+.overlay .overlay-inner {
+  max-width: 708px;
 }
 .overlay.overlay-default .overlay-inner,
 .overlay.overlay-default.overlay-screen {
@@ -4813,6 +4813,9 @@ a:hover,
 }
 .overlay.overlay-noborder .overlay-inner {
   border: 0 !important;
+}
+.overlay.overlay-none .overlay-inner {
+  padding: 0 !important;
 }
 .overlay-outer {
   animation-duration: 300ms;

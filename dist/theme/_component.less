@@ -460,16 +460,15 @@ a, .alink {
 .overlay {
   // styles
   .overlay-inner {
+    padding: 3rem;
+    @media @min-sm {
+      padding: 4rem;
+    }
     border-radius: @border-radius;
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
     box-shadow: 0 3px 10px 1px fade(@black, 15%);
-    // space
-    padding: 3rem;
-    @media @min-sm {
-      padding: 4rem;
-    }
     // .btn-close
     > .btn-close {
       position: absolute;
@@ -480,7 +479,7 @@ a, .alink {
     }
   }
   // options
-  .overlay-size(small); // size
+  .overlay-width(small); // width
 }
 
 // default
@@ -581,6 +580,16 @@ a, .alink {
 
 .overlay.overlay-noborder {
   .overlay-noborder() !important;
+}
+
+.overlay-none() {
+  .overlay-inner {
+    padding: 0 !important;
+  }
+}
+
+.overlay.overlay-none {
+  .overlay-none();
 }
 
 // animations

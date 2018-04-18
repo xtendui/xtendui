@@ -838,7 +838,7 @@ var Xt = exports.Xt = function () {
 
           (_el$classList2 = el.classList).add.apply(_el$classList2, _toConsumableArray(options.classes));
           el.classList.remove('out');
-          self.activationOnAnimate(el);
+          self.activationOnAnimate(el, type);
           // specials
           if (type === 'targets') {
             self.specialCenterOn(el);
@@ -846,7 +846,6 @@ var Xt = exports.Xt = function () {
             self.specialCollapseOn(el);
             self.specialBackdrop(el);
             self.specialCloseOn(el, fElements.single);
-            self.specialScrollbarOn();
           }
         }
       } catch (err) {
@@ -872,11 +871,14 @@ var Xt = exports.Xt = function () {
 
   }, {
     key: 'activationOnAnimate',
-    value: function activationOnAnimate(el) {
-      var timing = this.activationTiming(el);
-      // delay
-      this.animationClear(el);
-      if (!timing) {
+    value: function activationOnAnimate(el, type) {
+      var self = this;
+      // onDone
+      var onDone = function onDone(el, type) {
+        // specials
+        if (type === 'targets') {
+          self.specialScrollbarOn();
+        }
         // collapse-width and collapse-height
         if (el.classList.contains('collapse-height')) {
           el.style.height = 'auto';
@@ -884,16 +886,16 @@ var Xt = exports.Xt = function () {
         if (el.classList.contains('collapse-width')) {
           el.style.width = 'auto';
         }
+      };
+      // delay onDone
+      var timing = this.activationTiming(el);
+      this.animationClear(el);
+      if (!timing) {
+        onDone(el, type);
       } else {
-        var timeout = setTimeout(function (el) {
-          // collapse-width and collapse-height
-          if (el.classList.contains('collapse-height')) {
-            el.style.height = 'auto';
-          }
-          if (el.classList.contains('collapse-width')) {
-            el.style.width = 'auto';
-          }
-        }, timing, el);
+        var timeout = setTimeout(function (el, type) {
+          onDone(el, type);
+        }, timing, el, type);
         el.setAttribute('xt-activation-animation-timeout', timeout);
       }
     }
@@ -1254,7 +1256,7 @@ var Xt = exports.Xt = function () {
         container.style.paddingRight = width + 'px';
         container.classList.add('xt-scrollbar');
         // fixed
-        var elements = document.documentElement.querySelectorAll('.xt-fixed');
+        var elements = document.documentElement.querySelectorAll('.xt-fixed:not(.xt-clone)');
         var _iteratorNormalCompletion8 = true;
         var _didIteratorError8 = false;
         var _iteratorError8 = undefined;
@@ -1262,6 +1264,8 @@ var Xt = exports.Xt = function () {
         try {
           var _loop = function _loop() {
             var element = _step8.value;
+
+            element.style.paddingRight = '';
             style = window.getComputedStyle(element);
             padding = style.paddingRight;
             str = 'calc(' + padding + ' + ' + width + 'px)';
@@ -1349,9 +1353,11 @@ var Xt = exports.Xt = function () {
             var element = _step10.value;
 
             element.classList.add('no-transition');
-            element.style.paddingRight = '';
             _xtendUtils2.default.requestAnimationFrame.call(window, function () {
-              element.classList.remove('no-transition');
+              element.style.paddingRight = '';
+              _xtendUtils2.default.requestAnimationFrame.call(window, function () {
+                element.classList.remove('no-transition');
+              });
             });
           };
 
@@ -1772,10 +1778,10 @@ var XtScroll = exports.XtScroll = function (_Xt4) {
         this.container = _xtendUtils2.default.parents(this.object, '.xt-container');
       }
       // targets
-      this.targets = this.container[0].querySelectorAll('.xt-clone.xt-ignore');
+      this.targets = this.container[0].querySelectorAll('.xt-clone');
       if (this.targets) {
         this.targets = this.object.cloneNode(true);
-        this.targets.classList.add('xt-clone', 'xt-ignore');
+        this.targets.classList.add('xt-clone');
         this.container[0].append(this.targets);
       }
       this.targets = _xtendUtils2.default.arrSingle(this.targets);
