@@ -809,13 +809,13 @@ a,
   -ms-flex-pack: center;
   justify-content: center;
   position: relative;
-  z-index: 200 !important;
   margin: auto;
   width: 100%;
   min-height: 100vh;
 }
 .overlay .overlay-inner {
   position: relative;
+  z-index: 200 !important;
   width: 100%;
   -ms-flex-item-align: center;
   align-self: center;
@@ -4738,7 +4738,7 @@ a:hover,
 .overlay.overlay-screen .overlay-inner {
   position: static;
 }
-.overlay.overlay-screen + .xt-backdrop {
+.overlay.overlay-screen .overlay-inner + .xt-backdrop {
   display: none;
 }
 .overlay.overlay-screen .overlay-inner {

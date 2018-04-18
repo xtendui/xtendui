@@ -1839,17 +1839,8 @@ var Xt = exports.Xt = function () {
     value: function closeOn(el, toggle) {
       var self = this;
       var options = this.options;
-      if (options.close) {
-        var closeElements = el.querySelectorAll(options.close);
-        var check = function check(e, t) {
-          return e.target === t;
-        };
-        if (!closeElements.length) {
-          closeElements = _xtendUtils2.default.arrSingle(document.documentElement);
-          check = function check(e) {
-            return e.target !== el && !el.contains(e.target);
-          };
-        }
+      // closeEvent
+      var closeEvent = function closeEvent(closeElements, check) {
         _xtendUtils2.default.requestAnimationFrame.call(window, function () {
           var _iteratorNormalCompletion5 = true;
           var _didIteratorError5 = false;
@@ -1881,6 +1872,22 @@ var Xt = exports.Xt = function () {
             }
           }
         });
+      };
+      // closeInside
+      if (options.closeInside) {
+        var closeElements = el.querySelectorAll(options.closeInside);
+        var check = function check(e, t) {
+          return e.target === t;
+        };
+        closeEvent(closeElements, check);
+      }
+      // closeOutside
+      if (options.closeOutside) {
+        var _closeElements = document.documentElement.querySelectorAll(options.closeOutside);
+        var _check = function _check(e) {
+          return e.target !== el && !el.contains(e.target);
+        };
+        closeEvent(_closeElements, _check);
       }
     }
 
@@ -1893,11 +1900,9 @@ var Xt = exports.Xt = function () {
     key: 'closeOff',
     value: function closeOff(el) {
       var options = this.options;
-      if (options.close) {
-        var closeElements = el.querySelectorAll(options.close);
-        if (!closeElements.length) {
-          closeElements = _xtendUtils2.default.arrSingle(document.documentElement);
-        }
+      // closeInside
+      if (options.closeInside) {
+        var closeElements = el.querySelectorAll(options.closeInside);
         var _iteratorNormalCompletion6 = true;
         var _didIteratorError6 = false;
         var _iteratorError6 = undefined;
@@ -1923,6 +1928,34 @@ var Xt = exports.Xt = function () {
           }
         }
       }
+      // closeOutside
+      if (options.closeOutside) {
+        var _closeElements2 = document.documentElement.querySelectorAll(options.closeOutside);
+        var _iteratorNormalCompletion7 = true;
+        var _didIteratorError7 = false;
+        var _iteratorError7 = undefined;
+
+        try {
+          for (var _iterator7 = _closeElements2[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+            var _closeElement = _step7.value;
+
+            _closeElement.xtUtilOff('click.xtend');
+          }
+        } catch (err) {
+          _didIteratorError7 = true;
+          _iteratorError7 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion7 && _iterator7.return) {
+              _iterator7.return();
+            }
+          } finally {
+            if (_didIteratorError7) {
+              throw _iteratorError7;
+            }
+          }
+        }
+      }
     }
 
     /**
@@ -1935,10 +1968,34 @@ var Xt = exports.Xt = function () {
     value: function backdrop(el) {
       var options = this.options;
       if (options.backdrop) {
-        var backdrop = el.querySelectorAll('.xt-backdrop');
-        if (!backdrop.length) {
-          backdrop = _xtendUtils2.default.createElement('<div class="xt-backdrop"></div>');
-          el.append(backdrop);
+        var elements = el.querySelectorAll(options.backdrop);
+        var _iteratorNormalCompletion8 = true;
+        var _didIteratorError8 = false;
+        var _iteratorError8 = undefined;
+
+        try {
+          for (var _iterator8 = elements[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
+            var element = _step8.value;
+
+            var backdrop = element.querySelectorAll('.xt-backdrop');
+            if (!backdrop.length) {
+              backdrop = _xtendUtils2.default.createElement('<div class="xt-backdrop"></div>');
+              element.append(backdrop);
+            }
+          }
+        } catch (err) {
+          _didIteratorError8 = true;
+          _iteratorError8 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion8 && _iterator8.return) {
+              _iterator8.return();
+            }
+          } finally {
+            if (_didIteratorError8) {
+              throw _iteratorError8;
+            }
+          }
         }
       }
     }
@@ -1990,13 +2047,13 @@ var XtToggle = exports.XtToggle = function (_Xt) {
       var self = this;
       var options = this.options;
       // on and off
-      var _iteratorNormalCompletion7 = true;
-      var _didIteratorError7 = false;
-      var _iteratorError7 = undefined;
+      var _iteratorNormalCompletion9 = true;
+      var _didIteratorError9 = false;
+      var _iteratorError9 = undefined;
 
       try {
-        for (var _iterator7 = this.elements[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
-          var el = _step7.value;
+        for (var _iterator9 = this.elements[Symbol.iterator](), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
+          var el = _step9.value;
 
           if (options.on) {
             el.xtUtilOff(options.on + '.xtend');
@@ -2012,16 +2069,16 @@ var XtToggle = exports.XtToggle = function (_Xt) {
           }
         }
       } catch (err) {
-        _didIteratorError7 = true;
-        _iteratorError7 = err;
+        _didIteratorError9 = true;
+        _iteratorError9 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion7 && _iterator7.return) {
-            _iterator7.return();
+          if (!_iteratorNormalCompletion9 && _iterator9.return) {
+            _iterator9.return();
           }
         } finally {
-          if (_didIteratorError7) {
-            throw _iteratorError7;
+          if (_didIteratorError9) {
+            throw _iteratorError9;
           }
         }
       }
@@ -2035,7 +2092,7 @@ var XtToggle = exports.XtToggle = function (_Xt) {
 
 XtToggle.defaults = {
   elements: ':scope > .btn',
-  targets: '[class^="toggle-"], [class*=" toggle-"]',
+  targets: ':scope > [class^="toggle-"], :scope > [class*=" toggle-"]',
   classes: ['active'],
   on: 'click',
   min: 0,
@@ -2079,13 +2136,13 @@ var XtDrop = exports.XtDrop = function (_Xt2) {
       var self = this;
       var options = this.options;
       // on and off
-      var _iteratorNormalCompletion8 = true;
-      var _didIteratorError8 = false;
-      var _iteratorError8 = undefined;
+      var _iteratorNormalCompletion10 = true;
+      var _didIteratorError10 = false;
+      var _iteratorError10 = undefined;
 
       try {
-        for (var _iterator8 = this.elements[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
-          var el = _step8.value;
+        for (var _iterator10 = this.elements[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
+          var el = _step10.value;
 
           if (options.on) {
             el.xtUtilOff(options.on + '.xtend');
@@ -2101,16 +2158,16 @@ var XtDrop = exports.XtDrop = function (_Xt2) {
           }
         }
       } catch (err) {
-        _didIteratorError8 = true;
-        _iteratorError8 = err;
+        _didIteratorError10 = true;
+        _iteratorError10 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion8 && _iterator8.return) {
-            _iterator8.return();
+          if (!_iteratorNormalCompletion10 && _iterator10.return) {
+            _iterator10.return();
           }
         } finally {
-          if (_didIteratorError8) {
-            throw _iteratorError8;
+          if (_didIteratorError10) {
+            throw _iteratorError10;
           }
         }
       }
@@ -2129,7 +2186,7 @@ XtDrop.defaults = {
   on: 'click',
   min: 0,
   max: 1,
-  close: true
+  closeOutside: 'body'
 };
 
 //////////////////////
@@ -2169,13 +2226,13 @@ var XtOverlay = exports.XtOverlay = function (_Xt3) {
       var self = this;
       var options = this.options;
       // on and off
-      var _iteratorNormalCompletion9 = true;
-      var _didIteratorError9 = false;
-      var _iteratorError9 = undefined;
+      var _iteratorNormalCompletion11 = true;
+      var _didIteratorError11 = false;
+      var _iteratorError11 = undefined;
 
       try {
-        for (var _iterator9 = this.elements[Symbol.iterator](), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
-          var el = _step9.value;
+        for (var _iterator11 = this.elements[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
+          var el = _step11.value;
 
           if (options.on) {
             el.xtUtilOff(options.on + '.xtend');
@@ -2191,16 +2248,16 @@ var XtOverlay = exports.XtOverlay = function (_Xt3) {
           }
         }
       } catch (err) {
-        _didIteratorError9 = true;
-        _iteratorError9 = err;
+        _didIteratorError11 = true;
+        _iteratorError11 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion9 && _iterator9.return) {
-            _iterator9.return();
+          if (!_iteratorNormalCompletion11 && _iterator11.return) {
+            _iterator11.return();
           }
         } finally {
-          if (_didIteratorError9) {
-            throw _iteratorError9;
+          if (_didIteratorError11) {
+            throw _iteratorError11;
           }
         }
       }
@@ -2220,8 +2277,8 @@ XtOverlay.defaults = {
   min: 0,
   max: 1,
   appendTo: 'body',
-  backdrop: true,
-  close: ':scope > .overlay, :scope > .overlay > .overlay-inner > .btn-close'
+  backdrop: ':scope > .overlay',
+  closeInside: ':scope > .overlay > .xt-backdrop, :scope > .overlay > .overlay-inner > .btn-close'
 };
 
 //////////////////////
@@ -2353,13 +2410,13 @@ var XtScroll = exports.XtScroll = function (_Xt4) {
             self.eventOn(element);
             // direction
             var fElements = self.getElements(element);
-            var _iteratorNormalCompletion10 = true;
-            var _didIteratorError10 = false;
-            var _iteratorError10 = undefined;
+            var _iteratorNormalCompletion12 = true;
+            var _didIteratorError12 = false;
+            var _iteratorError12 = undefined;
 
             try {
-              for (var _iterator10 = fElements.all[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
-                var el = _step10.value;
+              for (var _iterator12 = fElements.all[Symbol.iterator](), _step12; !(_iteratorNormalCompletion12 = (_step12 = _iterator12.next()).done); _iteratorNormalCompletion12 = true) {
+                var el = _step12.value;
 
                 el.classList.remove('scroll-off-top', 'scroll-off-bottom');
                 if (self.scrollTop > scrollTop) {
@@ -2371,16 +2428,16 @@ var XtScroll = exports.XtScroll = function (_Xt4) {
                 }
               }
             } catch (err) {
-              _didIteratorError10 = true;
-              _iteratorError10 = err;
+              _didIteratorError12 = true;
+              _iteratorError12 = err;
             } finally {
               try {
-                if (!_iteratorNormalCompletion10 && _iterator10.return) {
-                  _iterator10.return();
+                if (!_iteratorNormalCompletion12 && _iterator12.return) {
+                  _iterator12.return();
                 }
               } finally {
-                if (_didIteratorError10) {
-                  throw _iteratorError10;
+                if (_didIteratorError12) {
+                  throw _iteratorError12;
                 }
               }
             }
@@ -2393,13 +2450,13 @@ var XtScroll = exports.XtScroll = function (_Xt4) {
             self.eventOff(element);
             // direction
             var _fElements = self.getElements(element);
-            var _iteratorNormalCompletion11 = true;
-            var _didIteratorError11 = false;
-            var _iteratorError11 = undefined;
+            var _iteratorNormalCompletion13 = true;
+            var _didIteratorError13 = false;
+            var _iteratorError13 = undefined;
 
             try {
-              for (var _iterator11 = _fElements.all[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
-                var _el = _step11.value;
+              for (var _iterator13 = _fElements.all[Symbol.iterator](), _step13; !(_iteratorNormalCompletion13 = (_step13 = _iterator13.next()).done); _iteratorNormalCompletion13 = true) {
+                var _el = _step13.value;
 
                 _el.classList.remove('scroll-on-top', 'scroll-on-bottom');
                 if (self.scrollTop > scrollTop) {
@@ -2411,16 +2468,16 @@ var XtScroll = exports.XtScroll = function (_Xt4) {
                 }
               }
             } catch (err) {
-              _didIteratorError11 = true;
-              _iteratorError11 = err;
+              _didIteratorError13 = true;
+              _iteratorError13 = err;
             } finally {
               try {
-                if (!_iteratorNormalCompletion11 && _iterator11.return) {
-                  _iterator11.return();
+                if (!_iteratorNormalCompletion13 && _iterator13.return) {
+                  _iterator13.return();
                 }
               } finally {
-                if (_didIteratorError11) {
-                  throw _iteratorError11;
+                if (_didIteratorError13) {
+                  throw _iteratorError13;
                 }
               }
             }

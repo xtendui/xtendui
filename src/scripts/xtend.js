@@ -504,17 +504,8 @@ export class Xt {
   closeOn(el, toggle) {
     let self = this;
     let options = this.options;
-    if (options.close) {
-      let closeElements = el.querySelectorAll(options.close);
-      let check = function (e, t) {
-        return e.target === t;
-      };
-      if (!closeElements.length) {
-        closeElements = XtUtil.arrSingle(document.documentElement);
-        check = function (e) {
-          return e.target !== el && !el.contains(e.target);
-        };
-      }
+    // closeEvent
+    let closeEvent = function (closeElements, check) {
       XtUtil.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
           closeElement.xtUtilOff('click.xtend');
@@ -525,6 +516,22 @@ export class Xt {
           });
         }
       });
+    };
+    // closeInside
+    if (options.closeInside) {
+      let closeElements = el.querySelectorAll(options.closeInside);
+      let check = function (e, t) {
+        return e.target === t;
+      };
+      closeEvent(closeElements, check);
+    }
+    // closeOutside
+    if (options.closeOutside) {
+      let closeElements = document.documentElement.querySelectorAll(options.closeOutside);
+      let check = function (e) {
+        return e.target !== el && !el.contains(e.target);
+      };
+      closeEvent(closeElements, check);
     }
   }
 
@@ -534,11 +541,16 @@ export class Xt {
    */
   closeOff(el) {
     let options = this.options;
-    if (options.close) {
-      let closeElements = el.querySelectorAll(options.close);
-      if (!closeElements.length) {
-        closeElements = XtUtil.arrSingle(document.documentElement);
+    // closeInside
+    if (options.closeInside) {
+      let closeElements = el.querySelectorAll(options.closeInside);
+      for (let closeElement of closeElements) {
+        closeElement.xtUtilOff('click.xtend');
       }
+    }
+    // closeOutside
+    if (options.closeOutside) {
+      let closeElements = document.documentElement.querySelectorAll(options.closeOutside);
       for (let closeElement of closeElements) {
         closeElement.xtUtilOff('click.xtend');
       }
@@ -552,10 +564,13 @@ export class Xt {
   backdrop(el) {
     let options = this.options;
     if (options.backdrop) {
-      let backdrop = el.querySelectorAll('.xt-backdrop');
-      if (!backdrop.length) {
-        backdrop = XtUtil.createElement('<div class="xt-backdrop"></div>');
-        el.append(backdrop);
+      var elements = el.querySelectorAll(options.backdrop);
+      for (let element of elements) {
+        let backdrop = element.querySelectorAll('.xt-backdrop');
+        if (!backdrop.length) {
+          backdrop = XtUtil.createElement('<div class="xt-backdrop"></div>');
+          element.append(backdrop);
+        }
       }
     }
   }
@@ -618,7 +633,7 @@ export class XtToggle extends Xt {
 
 XtToggle.defaults = {
   elements: ':scope > .btn',
-  targets: '[class^="toggle-"], [class*=" toggle-"]',
+  targets: ':scope > [class^="toggle-"], :scope > [class*=" toggle-"]',
   classes: ['active'],
   on: 'click',
   min: 0,
@@ -680,7 +695,7 @@ XtDrop.defaults = {
   on: 'click',
   min: 0,
   max: 1,
-  close: true
+  closeOutside: 'body'
 };
 
 //////////////////////
@@ -739,8 +754,8 @@ XtOverlay.defaults = {
   min: 0,
   max: 1,
   appendTo: 'body',
-  backdrop: true,
-  close: ':scope > .overlay, :scope > .overlay > .overlay-inner > .btn-close'
+  backdrop: ':scope > .overlay',
+  closeInside: ':scope > .overlay > .xt-backdrop, :scope > .overlay > .overlay-inner > .btn-close'
 };
 
 //////////////////////
