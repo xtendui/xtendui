@@ -42,7 +42,7 @@
   .display(block);
   width: 100%;
   z-index: 1;
-  &:hover, &:focus {
+  &:hover, &:active, &:focus, &.active {
     z-index: 2;
   }
   // select arrow
@@ -114,7 +114,7 @@
     .text-align(center);
     .margin(right, -@btn-border-width);
     z-index: 1;
-    &:hover, &:active, &.active {
+    &:hover, &:active, &:focus, &.active {
       z-index: 2;
     }
   }

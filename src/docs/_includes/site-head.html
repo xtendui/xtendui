@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="anim-load-fix{% if page.collection %} collection-{{ page.collection | downcase }}{% else %} page-{{ page.title | downcase }}{% endif %}">
+<html lang="en" class="{% if page.collection %} collection-{{ page.collection | downcase }}{% else %} page-{{ page.title | downcase }}{% endif %}">
   <head>
 
     <!-- meta -->

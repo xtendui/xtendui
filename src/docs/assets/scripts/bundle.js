@@ -341,10 +341,8 @@ var populateDemo = function populateDemo(container, i) {
   container.prepend(prepend);
   var append = _xtendUtils2.default.createElement('<button type="button" class="btn btn-secondary-empty btn-fullscreen" data-toggle="tooltip" data-placement="top" title="Open fullscreen"><span class="icon-enlarge2"></span></button>');
   container.querySelectorAll('.demo-tabs-right')[0].append(append);
-  // single element and no demo tabs
+  // don't show tabs on single
   if (items.length === 1) {
-    // && !$items.hasClass('demo-preview') && !$items.attr('data-iframe')
-    items[0].style.display = 'block';
     container.querySelectorAll('.demo-tabs')[0].style.display = 'none';
   }
   // loop items
@@ -469,6 +467,12 @@ var populateInline = function populateInline(item, id) {
       if (!item.classList.contains('demo-preview')) {
         el.style.display = none;
       }
+      /*
+      // don't show tabs on single
+      if (els.length === 1) {
+        item.querySelectorAll('.demo-code-tabs')[0].style.display = 'none';
+      }
+      */
     }
   } catch (err) {
     _didIteratorError9 = true;
@@ -1117,14 +1121,6 @@ window.xtUtilOff = Element.prototype.xtUtilOff = XtUtil.xtUtilOff;
 exports.default = XtUtil;
 
 //////////////////////
-// anim-load-fix
-//////////////////////
-
-setTimeout(function () {
-  document.documentElement.classList.remove('anim-load-fix');
-}, 500);
-
-//////////////////////
 // scope polyfill (https://stackoverflow.com/questions/6481612/queryselector-search-immediate-children)
 // USAGE : querySelectorAll(':scope > .selector');
 //////////////////////
@@ -1160,6 +1156,27 @@ setTimeout(function () {
     }
   }
 })(window.document, Element.prototype);
+
+//////////////////////
+// anim-load-fix
+//////////////////////
+
+/*
+// .anim-load-fix
+// USAGE : <html class="anim-load-fix">
+
+.anim-load-fix {
+*, *:before, *:after {
+    animation-duration: 0ms !important;
+    animation-delay: 0ms !important;
+  }
+}
+*/
+/*
+setTimeout(function () {
+  document.documentElement.classList.remove('anim-load-fix');
+}, 1000);
+*/
 
 },{"./xtend":3}],3:[function(require,module,exports){
 /*! xtend v0.2.0 (https://getxtend.com/)

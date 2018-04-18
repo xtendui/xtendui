@@ -5,7 +5,7 @@
 a, .alink {
   .link-underline();
   color: @primary;
-  &:hover {
+  &:hover, &:active, &:focus, &.active {
     color: darken(@primary, @perc-xs);
   }
 }
@@ -13,7 +13,7 @@ a, .alink {
 .btn-link {
   .link-underline();
   color: @grey-500;
-  &:hover {
+  &:hover, &:active, &:focus, &.active {
     color: darken(@primary, @perc-xs);
   }
 }
@@ -24,16 +24,16 @@ a, .alink {
   a, .alink, .btn-link {
     color: @white;
     text-decoration: underline;
-    &:hover {
+    &:hover, &:active, &:focus, &.active {
       color: darken(@white, @perc-xs);
     }
   }
 }
 
-// underline
+// underline mixins
 
-.link-underline {
-  &:hover {
+.link-underline() {
+  &:hover, &:active, &:focus, &.active {
     text-decoration: underline;
     span {
       text-decoration: underline;
@@ -41,8 +41,8 @@ a, .alink {
   }
 }
 
-.link-no-underline {
-  &:hover {
+.link-no-underline() {
+  &:hover, &:active, &:focus, &.active {
     text-decoration: none;
     span {
       text-decoration: none;
@@ -67,7 +67,10 @@ a, .alink {
   // options
   .btn-medium(); // size
   // animations
-  .transition-default();
+  .transition-default.out();
+  &:hover, &:active, &:focus, &.active {
+    .transition-default.active();
+  }
 }
 
 // variant
@@ -77,7 +80,7 @@ a, .alink {
   border-color: @primary;
   background-color: @primary;
   color: fade(@text-inverse, @perc-xl);
-  &:hover, &:active, &.active {
+  &:hover, &:active, &:focus, &.active {
     background-color: lighten(@primary, @perc-xs);
     color: @text-inverse;
   }
@@ -96,7 +99,7 @@ a, .alink {
   border-color: transparent;
   background-color: transparent;
   color: @primary;
-  &:hover, &:active, &.active {
+  &:hover, &:active, &:focus, &.active {
     background-color: lighten(@primary, @perc-xs);
     color: @text-inverse;
   }
@@ -115,7 +118,7 @@ a, .alink {
   border-color: @secondary;
   background-color: @secondary;
   color: fade(@text, @perc-xl);
-  &:hover, &:active, &.active {
+  &:hover, &:active, &:focus, &.active {
     background-color: lighten(@secondary, @perc-xs);
     color: @text;
   }
@@ -134,7 +137,7 @@ a, .alink {
   border-color: transparent;
   background-color: transparent;
   color: fade(@text, @perc-xl);
-  &:hover, &:active, &.active {
+  &:hover, &:active, &:focus, &.active {
     background-color: lighten(@secondary, @perc-xs);
     color: @text;
   }
@@ -278,7 +281,7 @@ a, .alink {
   border: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
-  &:hover, &:active, &.active {
+  &:hover, &:active, &:focus, &.active {
     border: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
@@ -595,23 +598,17 @@ a, .alink {
 // animations
 
 .overlay-outer {
-  .animation-default(); // needed for .out animation timing
-  .overlay {
-    .animation-default();
-  }
-  .overlay-inner {
-    .animation-default();
-    > .btn-close {
-      .animation-default();
-    }
-  }
+  .animation-default.active(); // needed for .out animation timing
   &.active {
     .overlay {
+      .animation-default.active();
       .anim-opacity.active();
     }
     .overlay-inner {
+      .animation-default.active();
       .anim-vertical.active();
       > .btn-close {
+        .animation-default.active();
         .anim-vertical.active();
         animation-fill-mode: forwards;
         opacity: 0;
@@ -647,7 +644,6 @@ a, .alink {
   background-color: fade(@white, @perc-lg);
   // animations
   .anim-vertical();
-  .anim-vertical.active();
 }
 
 .loader-content {
@@ -671,6 +667,6 @@ a, .alink {
   // styles
   background-color: darken(@primary, @perc-xl);
   // animations
-  .anim-backdrop();
   opacity: @backdrop-opacity;
+  .anim-backdrop();
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="anim-load-fix collection-docs">
+<html lang="en" class=" collection-docs">
   <head>
 
     <!-- meta -->
@@ -426,16 +426,26 @@
 
           <article class="site-article default-lists">
             <h2>Usage</h2>
-
+<!--
 <p class="lead">Html Initialization</p>
 
-<pre><code class="html">
-&lt;div class="element" data-xt-toggle'&gt;&lt;/div&gt;
-&lt;div data-xt-toggle='{"elements": ".element"}'&gt;
-  &lt;div class="element"&gt;&lt;/div&gt;
-  &lt;div class="toggle-block"&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+<pre>
+  <code class="html">
+    <button type="button" data-xt-toggle>
+    </button>
+  </code>
+</pre>
+
+<pre>
+  <code class="html">
+    <div data-xt-toggle='{"elements": ".element"}'>
+      <button type="button">
+      </button>
+      <div class="toggle-block">
+      </div>
+    </div>
+  </code>
+</pre>
 
 <div class="alert alert-warning">
   <strong>Important:</strong> the plugin's attributes <strong>must be a valid json format</strong>, so with double quotes inside.
@@ -458,7 +468,7 @@ $('div').xtToggle({"elements": ".element"});
 <p>@TODO table api</p>
 <p>@TODO link javascript modes</p>
 <p>@TODO link animations</p>
-
+-->
 <h2>Initialization</h2>
 
 <h3>Single</h3>
@@ -468,10 +478,10 @@ $('div').xtToggle({"elements": ".element"});
     <div class="demo-text">Toggle a single <strong>element</strong> with <code>data-xt-toggle</code>.</div>
     <div class="demo-source" data-lang="html">
 <button type="button" class="btn btn-primary-empty" data-xt-toggle>
-  Toggle 0
+  Toggle
 </button>
 <button type="button" class="btn btn-primary-empty" data-xt-toggle>
-  Toggle 1
+  Toggle
 </button>
     </div>
   </div>

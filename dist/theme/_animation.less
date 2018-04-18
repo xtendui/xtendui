@@ -1,55 +1,47 @@
-//////////////////////
-// usage
-//////////////////////
+
 
 /* USAGE:
-opacity: 1;
-.transition-default();
+.anim-opacity.out();
+&:hover, &:active, &:focus, &.active {
+  .anim-opacity.active();
+}
 */
 
 /* USAGE:
-opacity: 0;
-.transition-default.out();
-*/
-
-/* USAGE:
-transform: translateX(-@anim-medium);
-opacity: 0;
 &.active {
-  .transition-default();
-  transform: translateY(0);
-  opacity: 1;
+  .inner {
+    .anim-opacity.active();
+  }
 }
 &.out {
-  .transition-default.out();
-  transform: translateX(@anim-medium);
-  opacity: 0;
+  .inner {
+    .anim-opacity.out();
+  }
 }
 */
 
 /* USAGE:
-.anim-left();
-.anim-left.active();
-animation-fill-mode: forwards;
-opacity: 0;
-*/
 
-/* USAGE:
-.anim-right();
-.anim-right.out();
-animation-fill-mode: forwards;
-opacity: 1;
-*/
-
-/* USAGE:
-animation: anim-opacity-out @time-medium @bez-out;
-animation-fill-mode: forwards;
-opacity: 1;
-&:hover,
-&:active, &.active {
-  animation: anim-opacity-in @time-medium @bez-in @time-small;
-  animation-fill-mode: forwards;
-  opacity: 0;
+&.active {
+  .inner {
+    opacity: 0;
+    .anim-left.active();
+    animation-fill-mode: forwards;
+  }
+  .nth-child(@child:6, @start:@time-medium, @increment:50ms, @decrement:0ms, { .line-container {
+    @nth-child-animation-delay();
+  } });
+}
+&.out {
+  .inner {
+    opacity: 1;
+    .anim-right.out();
+    animation-fill-mode: forwards;
+    animation-delay: 300ms; // default delay @start + @child * @increment
+  }
+  .nth-child(@child:6, @start:0, @increment:50ms, @decrement:0ms, { .line-container {
+    @nth-child-animation-delay();
+  } });
 }
 */
 
@@ -59,9 +51,35 @@ opacity: 1;
 
 // .animation-default();
 
+/* USAGE:
+.animation-default.out();
+animation-name: anim-top-out;
+&:hover, &:active, &:focus, &.active {
+  .animation-default.active();
+  animation-name: anim-top-in;
+}
+*/
+
+/* USAGE:
+&.active {
+  .inner {
+    .animation-default.active();
+    animation-name: anim-top-in;
+  }
+}
+&.out {
+  .inner {
+    .animation-default.out();
+    animation-name: anim-top-out;
+  }
+}
+*/
+
 .animation-default() {
-  animation-duration: @time-medium;
-  animation-timing-function: @bez-in;
+  &.active {
+    animation-duration: @time-medium;
+    animation-timing-function: @bez-in;
+  }
   &.out {
     animation-duration: @time-medium;
     animation-timing-function: @bez-out;
@@ -70,10 +88,36 @@ opacity: 1;
 
 // .transition-default();
 
+/* USAGE:
+opacity: 0;
+.transition-default.out();
+&:hover, &:active, &:focus, &.active {
+   opacity: 1;
+  .transition-default.active();
+}
+*/
+
+/* USAGE:
+&.active {
+  .inner {
+    opacity: 1;
+    .transition-default.active();
+  }
+}
+&.out {
+  .inner {
+    opacity: 0;
+    .transition-default.out();
+  }
+}
+*/
+
 .transition-default() {
-  transition-property: all;
-  transition-duration: @time-medium;
-  transition-timing-function: @bez-in;
+  &.active {
+    transition-property: all;
+    transition-duration: @time-medium;
+    transition-timing-function: @bez-in;
+  }
   &.out {
     transition-property: all;
     transition-duration: @time-medium;
@@ -85,26 +129,16 @@ opacity: 1;
 // animations
 //////////////////////
 
-// .collapse
-
-.collapse-height,
-.collapse-width,
-.collapse-top,
-.collapse-bottom,
-.collapse-left,
-.collapse-right {
-  .transition-default();
-}
-
 // anim-opacity
 
 .anim-opacity {
-  .animation-default();
   &.active {
+    .animation-default.active();
     opacity: 1;
     animation-name: anim-opacity-in;
   }
   &.out {
+    .animation-default.out();
     opacity: 0;
     animation-name: anim-opacity-out;
   }
@@ -131,12 +165,13 @@ opacity: 1;
 // anim-vertical
 
 .anim-vertical {
-  .animation-default();
   &.active {
+    .animation-default.active();
     opacity: 1;
     animation-name: anim-vertical-in;
   }
   &.out {
+    .animation-default.out();
     opacity: 0;
     animation-name: anim-vertical-out;
   }
@@ -167,12 +202,13 @@ opacity: 1;
 // anim-horizontal
 
 .anim-horizontal {
-  .animation-default();
   &.active {
+    .animation-default.active();
     opacity: 1;
     animation-name: anim-horizontal-in;
   }
   &.out {
+    .animation-default.out();
     opacity: 0;
     animation-name: anim-horizontal-out;
   }
@@ -203,12 +239,13 @@ opacity: 1;
 // anim-top
 
 .anim-top {
-  .animation-default();
   &.active {
+    .animation-default.active();
     opacity: 1;
     animation-name: anim-top-in;
   }
   &.out {
+    .animation-default.out();
     opacity: 0;
     animation-name: anim-top-out;
   }
@@ -239,12 +276,13 @@ opacity: 1;
 // anim-bottom
 
 .anim-bottom {
-  .animation-default();
   &.active {
+    .animation-default.active();
     opacity: 1;
     animation-name: anim-bottom-in;
   }
   &.out {
+    .animation-default.out();
     opacity: 0;
     animation-name: anim-bottom-out;
   }
@@ -275,12 +313,13 @@ opacity: 1;
 // anim-left
 
 .anim-left {
-  .animation-default();
   &.active {
+    .animation-default.active();
     opacity: 1;
     animation-name: anim-left-in;
   }
   &.out {
+    .animation-default.out();
     opacity: 0;
     animation-name: anim-left-out;
   }
@@ -311,12 +350,13 @@ opacity: 1;
 // anim-right
 
 .anim-right {
-  .animation-default();
   &.active {
+    .animation-default.active();
     opacity: 1;
     animation-name: anim-right-in;
   }
   &.out {
+    .animation-default.out();
     opacity: 0;
     animation-name: anim-right-out;
   }
@@ -347,12 +387,13 @@ opacity: 1;
 // anim-backdrop
 
 .anim-backdrop {
-  .animation-default();
   &.active {
+    .animation-default.active();
     opacity: @backdrop-opacity;
     animation-name: anim-backdrop-in;
   }
   &.out {
+    .animation-default.out();
     opacity: 0;
     animation-name: anim-backdrop-out;
   }
@@ -374,6 +415,21 @@ opacity: 1;
   100% {
     opacity: 0;
   }
+}
+
+//////////////////////
+// custom
+//////////////////////
+
+// .collapse
+
+.collapse-height,
+.collapse-width,
+.collapse-top,
+.collapse-bottom,
+.collapse-left,
+.collapse-right {
+  .transition-default();
 }
 
 // anim-rotate

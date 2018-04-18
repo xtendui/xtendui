@@ -548,7 +548,7 @@ select.input-control {
   font-size: 1.3rem;
   transition-property: all;
   transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .list > li > a:not(.btn) > span,
 .list > li > button:not(.btn) > span {
@@ -560,11 +560,17 @@ select.input-control {
 .list > li > button:not(.btn).active {
   z-index: 1;
 }
-.list > li > a:not(.btn).out,
-.list > li > button:not(.btn).out {
+.list > li > a:not(.btn):hover,
+.list > li > button:not(.btn):hover,
+.list > li > a:not(.btn):active,
+.list > li > button:not(.btn):active,
+.list > li > a:not(.btn):focus,
+.list > li > button:not(.btn):focus,
+.list > li > a:not(.btn).active,
+.list > li > button:not(.btn).active {
   transition-property: all;
   transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .list-line {
   -webkit-box-orient: horizontal;
@@ -847,12 +853,6 @@ a,
 .alert {
   display: block;
   width: 100%;
-}
-.anim-load-fix *,
-.anim-load-fix *:before,
-.anim-load-fix *:after {
-  animation-duration: 0ms !important;
-  animation-delay: 0ms !important;
 }
 .no-anim,
 .no-anim .xt-backdrop {
@@ -4073,7 +4073,7 @@ legend + legend {
   color: rgba(52, 58, 64, 0.8);
   transition-property: all;
   transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .input-control:hover,
 .input-control:focus {
@@ -4086,10 +4086,13 @@ legend + legend {
 select.input-control {
   background-image: linear-gradient(45deg, transparent 50%, #77b3cc 50%), linear-gradient(135deg, #77b3cc 50%, transparent 50%), linear-gradient(to right, #c1dde8, #c1dde8);
 }
-.input-control.out {
+.input-control:hover,
+.input-control:active,
+.input-control:focus,
+.input-control.active {
   transition-property: all;
   transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .input-control-secondary {
   border-color: #d4e7ef;
@@ -4202,12 +4205,15 @@ a:hover,
   font-size: 1.3rem;
   transition-property: all;
   transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
-.btn.out {
+.btn:hover,
+.btn:active,
+.btn:focus,
+.btn.active {
   transition-property: all;
   transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .btn.btn-primary {
   border-color: #7367F0 !important;
@@ -4484,8 +4490,6 @@ a:hover,
   padding: 6px 0;
   top: 100%;
   bottom: auto;
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .drop .drop-inner {
   padding-top: 1.3rem;
@@ -4496,15 +4500,15 @@ a:hover,
   border-color: transparent;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
-.drop.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
 .drop.active {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
   animation-name: anim-vertical-in;
 }
 .drop.out {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-vertical-out;
 }
@@ -4828,43 +4832,21 @@ a:hover,
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.overlay-outer.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.overlay-outer .overlay {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.overlay-outer .overlay.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.overlay-outer .overlay-inner {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.overlay-outer .overlay-inner.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.overlay-outer .overlay-inner > .btn-close {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.overlay-outer .overlay-inner > .btn-close.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
 .overlay-outer.active .overlay {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
   animation-name: anim-opacity-in;
 }
 .overlay-outer.active .overlay-inner {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
   animation-name: anim-vertical-in;
 }
 .overlay-outer.active .overlay-inner > .btn-close {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
   animation-name: anim-vertical-in;
   animation-fill-mode: forwards;
@@ -4872,14 +4854,20 @@ a:hover,
   animation-delay: 300ms;
 }
 .overlay-outer.active .xt-backdrop {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 0.6;
   animation-name: anim-backdrop-in;
 }
 .overlay-outer.out .overlay {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-opacity-out;
 }
 .overlay-outer.out .overlay-inner {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-vertical-out;
 }
@@ -4887,11 +4875,15 @@ a:hover,
   opacity: 0;
 }
 .overlay-outer.out .xt-backdrop {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-backdrop-out;
 }
 .loader-mask {
   background-color: rgba(255, 255, 255, 0.5);
+}
+.loader-mask.active {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
@@ -4900,12 +4892,6 @@ a:hover,
 .loader-mask.out {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.loader-mask.active {
-  opacity: 1;
-  animation-name: anim-vertical-in;
-}
-.loader-mask.out {
   opacity: 0;
   animation-name: anim-vertical-out;
 }
@@ -4920,26 +4906,23 @@ a:hover,
 }
 .xt-backdrop {
   background-color: #000000;
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 0.6;
 }
-.xt-backdrop.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
 .xt-backdrop.active {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 0.6;
   animation-name: anim-backdrop-in;
 }
 .xt-backdrop.out {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-backdrop-out;
 }
 .alert {
   margin-top: 2rem;
   margin-bottom: 2rem;
-  display: block !important;
   text-align: left;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4959,6 +4942,7 @@ a:hover,
   font-size: 1.3rem;
   line-height: 1.2;
   border: 0;
+  display: block;
 }
 .alert:first-child {
   margin-top: 0;
@@ -5039,83 +5023,100 @@ a:hover,
   color: #f2f2f2;
 }
 /* USAGE:
-opacity: 1;
-.transition-default();
+.anim-opacity.out();
+&:hover, &:active, &:focus, &.active {
+  .anim-opacity.active();
+}
+*/
+/* USAGE:
+&.active {
+  .inner {
+    .anim-opacity.active();
+  }
+}
+&.out {
+  .inner {
+    .anim-opacity.out();
+  }
+}
+*/
+/* USAGE:
+
+&.active {
+  .inner {
+    opacity: 0;
+    .anim-left.active();
+    animation-fill-mode: forwards;
+  }
+  .nth-child(@child:6, @start:@time-medium, @increment:50ms, @decrement:0ms, { .line-container {
+    @nth-child-animation-delay();
+  } });
+}
+&.out {
+  .inner {
+    opacity: 1;
+    .anim-right.out();
+    animation-fill-mode: forwards;
+    animation-delay: 300ms; // default delay @start + @child * @increment
+  }
+  .nth-child(@child:6, @start:0, @increment:50ms, @decrement:0ms, { .line-container {
+    @nth-child-animation-delay();
+  } });
+}
+*/
+/* USAGE:
+.animation-default.out();
+animation-name: anim-top-out;
+&:hover, &:active, &:focus, &.active {
+  .animation-default.active();
+  animation-name: anim-top-in;
+}
+*/
+/* USAGE:
+&.active {
+  .inner {
+    .animation-default.active();
+    animation-name: anim-top-in;
+  }
+}
+&.out {
+  .inner {
+    .animation-default.out();
+    animation-name: anim-top-out;
+  }
+}
 */
 /* USAGE:
 opacity: 0;
 .transition-default.out();
+&:hover, &:active, &:focus, &.active {
+   opacity: 1;
+  .transition-default.active();
+}
 */
 /* USAGE:
-transform: translateX(-@anim-medium);
-opacity: 0;
 &.active {
-  .transition-default();
-  transform: translateY(0);
-  opacity: 1;
+  .inner {
+    opacity: 1;
+    .transition-default.active();
+  }
 }
 &.out {
-  .transition-default.out();
-  transform: translateX(@anim-medium);
-  opacity: 0;
+  .inner {
+    opacity: 0;
+    .transition-default.out();
+  }
 }
 */
-/* USAGE:
-.anim-left();
-.anim-left.active();
-animation-fill-mode: forwards;
-opacity: 0;
-*/
-/* USAGE:
-.anim-right();
-.anim-right.out();
-animation-fill-mode: forwards;
-opacity: 1;
-*/
-/* USAGE:
-animation: anim-opacity-out @time-medium @bez-out;
-animation-fill-mode: forwards;
-opacity: 1;
-&:hover,
-&:active, &.active {
-  animation: anim-opacity-in @time-medium @bez-in @time-small;
-  animation-fill-mode: forwards;
-  opacity: 0;
-}
-*/
-.collapse-height,
-.collapse-width,
-.collapse-top,
-.collapse-bottom,
-.collapse-left,
-.collapse-right {
-  transition-property: all;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.collapse-height.out,
-.collapse-width.out,
-.collapse-top.out,
-.collapse-bottom.out,
-.collapse-left.out,
-.collapse-right.out {
-  transition-property: all;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.anim-opacity {
+.anim-opacity.active {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.anim-opacity.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.anim-opacity.active {
   opacity: 1;
   animation-name: anim-opacity-in;
 }
 .anim-opacity.out {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-opacity-out;
 }
@@ -5135,19 +5136,15 @@ opacity: 1;
     opacity: 0;
   }
 }
-.anim-vertical {
+.anim-vertical.active {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.anim-vertical.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.anim-vertical.active {
   opacity: 1;
   animation-name: anim-vertical-in;
 }
 .anim-vertical.out {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-vertical-out;
 }
@@ -5171,19 +5168,15 @@ opacity: 1;
     transform: translateY(1.5rem);
   }
 }
-.anim-horizontal {
+.anim-horizontal.active {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.anim-horizontal.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.anim-horizontal.active {
   opacity: 1;
   animation-name: anim-horizontal-in;
 }
 .anim-horizontal.out {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-horizontal-out;
 }
@@ -5207,19 +5200,15 @@ opacity: 1;
     transform: translateX(1.5rem);
   }
 }
-.anim-top {
+.anim-top.active {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.anim-top.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.anim-top.active {
   opacity: 1;
   animation-name: anim-top-in;
 }
 .anim-top.out {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-top-out;
 }
@@ -5243,19 +5232,15 @@ opacity: 1;
     transform: translateY(-1.5rem);
   }
 }
-.anim-bottom {
+.anim-bottom.active {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.anim-bottom.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.anim-bottom.active {
   opacity: 1;
   animation-name: anim-bottom-in;
 }
 .anim-bottom.out {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-bottom-out;
 }
@@ -5279,19 +5264,15 @@ opacity: 1;
     transform: translateY(1.5rem);
   }
 }
-.anim-left {
+.anim-left.active {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.anim-left.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.anim-left.active {
   opacity: 1;
   animation-name: anim-left-in;
 }
 .anim-left.out {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-left-out;
 }
@@ -5315,19 +5296,15 @@ opacity: 1;
     transform: translateX(-1.5rem);
   }
 }
-.anim-right {
+.anim-right.active {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.anim-right.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.anim-right.active {
   opacity: 1;
   animation-name: anim-right-in;
 }
 .anim-right.out {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-right-out;
 }
@@ -5351,19 +5328,15 @@ opacity: 1;
     transform: translateX(1.5rem);
   }
 }
-.anim-backdrop {
+.anim-backdrop.active {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.anim-backdrop.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.anim-backdrop.active {
   opacity: 0.6;
   animation-name: anim-backdrop-in;
 }
 .anim-backdrop.out {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-backdrop-out;
 }
@@ -5382,6 +5355,26 @@ opacity: 1;
   100% {
     opacity: 0;
   }
+}
+.collapse-height.active,
+.collapse-width.active,
+.collapse-top.active,
+.collapse-bottom.active,
+.collapse-left.active,
+.collapse-right.active {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.collapse-height.out,
+.collapse-width.out,
+.collapse-top.out,
+.collapse-bottom.out,
+.collapse-left.out,
+.collapse-right.out {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .anim-rotate {
   animation: preload-rotate 0 infinite linear;

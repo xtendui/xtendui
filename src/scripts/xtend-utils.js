@@ -233,14 +233,6 @@ window.xtUtilOff = Element.prototype.xtUtilOff = XtUtil.xtUtilOff;
 export default XtUtil;
 
 //////////////////////
-// anim-load-fix
-//////////////////////
-
-setTimeout(function () {
-  document.documentElement.classList.remove('anim-load-fix');
-}, 500);
-
-//////////////////////
 // scope polyfill (https://stackoverflow.com/questions/6481612/queryselector-search-immediate-children)
 // USAGE : querySelectorAll(':scope > .selector');
 //////////////////////
@@ -266,3 +258,24 @@ setTimeout(function () {
     }
   }
 })(window.document, Element.prototype);
+
+//////////////////////
+// anim-load-fix
+//////////////////////
+
+/*
+// .anim-load-fix
+// USAGE : <html class="anim-load-fix">
+
+.anim-load-fix {
+*, *:before, *:after {
+    animation-duration: 0ms !important;
+    animation-delay: 0ms !important;
+  }
+}
+*/
+/*
+setTimeout(function () {
+  document.documentElement.classList.remove('anim-load-fix');
+}, 1000);
+*/

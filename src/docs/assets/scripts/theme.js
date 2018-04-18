@@ -133,9 +133,8 @@ const populateDemo = function (container, i) {
   container.prepend(prepend);
   let append = XtUtil.createElement('<button type="button" class="btn btn-secondary-empty btn-fullscreen" data-toggle="tooltip" data-placement="top" title="Open fullscreen"><span class="icon-enlarge2"></span></button>');
   container.querySelectorAll('.demo-tabs-right')[0].append(append);
-  // single element and no demo tabs
-  if (items.length === 1) { // && !$items.hasClass('demo-preview') && !$items.attr('data-iframe')
-    items[0].style.display = 'block';
+  // don't show tabs on single
+  if (items.length === 1) {
     container.querySelectorAll('.demo-tabs')[0].style.display = 'none';
   }
   // loop items
@@ -228,6 +227,12 @@ const populateInline = function (item, id) {
     if (!item.classList.contains('demo-preview')) {
       el.style.display = none;
     }
+    /*
+    // don't show tabs on single
+    if (els.length === 1) {
+      item.querySelectorAll('.demo-code-tabs')[0].style.display = 'none';
+    }
+    */
   }
   new XtToggle(item, {
     "elements": ".demo-code-tabs-left .btn",
