@@ -1592,7 +1592,7 @@ var Xt = exports.Xt = function () {
             self.specialCollapseOn(el);
             self.specialBackdrop(el);
             self.specialCloseOn(el, fElements.single);
-            self.specialFixedOn();
+            self.specialScrollbarOn();
           }
         }
       } catch (err) {
@@ -1672,7 +1672,7 @@ var Xt = exports.Xt = function () {
           if (type === 'targets') {
             self.specialCollapseOff(el);
             self.specialCloseOff(el);
-            self.specialFixedOff();
+            self.specialScrollbarOff();
           }
         }
       } catch (err) {
@@ -1985,13 +1985,13 @@ var Xt = exports.Xt = function () {
     }
 
     /**
-     * add fixed class on activation
+     * scrollbar activation
      * @param {Element} element
      */
 
   }, {
-    key: 'specialFixedOn',
-    value: function specialFixedOn() {
+    key: 'specialScrollbarOn',
+    value: function specialScrollbarOn() {
       var options = this.options;
       if (options.scrollbar) {
         var width = _xtendUtils2.default.scrollbarWidth();
@@ -2071,13 +2071,13 @@ var Xt = exports.Xt = function () {
     }
 
     /**
-     * add fixed class on activation
+     * scrollbar deactivation
      * @param {Element} element
      */
 
   }, {
-    key: 'specialFixedOff',
-    value: function specialFixedOff() {
+    key: 'specialScrollbarOff',
+    value: function specialScrollbarOff() {
       var options = this.options;
       if (options.scrollbar) {
         // scroll
@@ -2147,27 +2147,6 @@ var Xt = exports.Xt = function () {
         }
       }
     }
-
-    /*
-     Xt.prototype.onFixed = function($el) {
-      var object = this;
-      var settings = this.settings;
-      var group = this.group;
-      var $group = $(this.group);
-      // add scrollbar padding
-      var w = object.scrollbarWidth($el);
-      w = $el.css('overflow-y') === 'hidden' ? 0 : w;
-      $el.addClass('xt-fixed').css('right', w).css('padding-right', w);
-    };
-     Xt.prototype.offFixed = function($el) {
-      var object = this;
-      var settings = this.settings;
-      var group = this.group;
-      var $group = $(this.group);
-      // remove scrollbar padding
-      $el.removeClass('xt-fixed').css('right', 0).css('padding-right', 0);
-    };
-    */
 
     /**
      * backdrop append to element
