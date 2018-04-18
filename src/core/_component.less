@@ -37,8 +37,8 @@ a, .alink, .btn-link {
 
 // custom
 
-.btn-close {
-  z-index: @index-btn-close !important;
+.btn-close() {
+  z-index: @index-btn-close;
 }
 
 //////////////////////
@@ -216,55 +216,6 @@ a, .alink, .btn-link {
     position: static;
     & + .xt-backdrop {
       display: none;
-    }
-  }
-}
-
-// fluid
-
-/*
-.overlay-fluid {
-  .overlay-inner {
-    width: 100%;
-    max-width: @overlay-fluid;
-  }
-}
-*/
-
-// generate-overlay-sizes
-
-.generate-overlay-sizes();
-.generate-overlay-sizes(@i:length(@overlays)) when (@i > 0) {
-  .generate-overlay-sizes(@i - 1);
-  @overlay: extract(@overlays, @i);
-  @name: extract(@overlay, 1);
-  @val: extract(@overlay, 2);
-  .overlay-@{name} {
-    .overlay-inner {
-      max-width: @val;
-    }
-  }
-}
-
-// generate-overlay-space
-
-.generate-overlay-space();
-.generate-overlay-space(@i:length(@container-space)) when (@i > 0) {
-  .generate-overlay-space(@i - 1);
-  @overlay: extract(@container-space, @i);
-  @breakpoint: extract(@overlay, 1);
-  @val: extract(@overlay, 2);
-  & when (@breakpoint = none) {
-    .overlay {
-      padding: @val;
-    }
-  }
-  & when not (@breakpoint = none) {
-    @query-min: 'min-@{breakpoint}';
-    @media @@query-min {
-      .overlay {
-        padding: @val;
-      }
     }
   }
 }

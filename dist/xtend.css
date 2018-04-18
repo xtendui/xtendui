@@ -477,7 +477,7 @@ select.input-control {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 1300px;
+  max-width: 1350px;
 }
 .col {
   flex: 1 1 100%;
@@ -701,9 +701,6 @@ a,
 .btn.active {
   z-index: 1;
 }
-.btn-close {
-  z-index: 300 !important;
-}
 .drop-container {
   display: inline-block;
   position: relative;
@@ -822,57 +819,6 @@ a,
 }
 .overlay .overlay-inner > .btn-close + * {
   margin-top: 0 !important;
-}
-/*
-.overlay-fluid {
-  .overlay-inner {
-    width: 100%;
-    max-width: @overlay-fluid;
-  }
-}
-*/
-.overlay-tiny .overlay-inner {
-  max-width: 540px;
-}
-.overlay-small .overlay-inner {
-  max-width: 720px;
-}
-.overlay-medium .overlay-inner {
-  max-width: 960px;
-}
-.overlay-big .overlay-inner {
-  max-width: 1140px;
-}
-.overlay-giant .overlay-inner {
-  max-width: 1300px;
-}
-.overlay {
-  padding: 15px;
-}
-@media (min-width: 576px ) {
-  .overlay {
-    padding: 15px;
-  }
-}
-@media (min-width: 768px ) {
-  .overlay {
-    padding: 20px;
-  }
-}
-@media (min-width: 992px ) {
-  .overlay {
-    padding: 25px;
-  }
-}
-@media (min-width: 1200px ) {
-  .overlay {
-    padding: 30px;
-  }
-}
-@media (min-width: 1350px ) {
-  .overlay {
-    padding: 30px;
-  }
 }
 .loader-mask {
   position: absolute;
@@ -1047,6 +993,52 @@ html.xt-fixed .overlay {
   height: 1px;
   border: 0;
   clip: rect(0, 0, 0, 0);
+}
+.overlay-tiny {
+  max-width: 576px !important;
+}
+.overlay-small {
+  max-width: 768px !important;
+}
+.overlay-medium {
+  max-width: 992px !important;
+}
+.overlay-big {
+  max-width: 1200px !important;
+}
+.overlay-giant {
+  max-width: 1350px !important;
+}
+.overlay-full {
+  max-width: none !important;
+}
+.overlay {
+  padding: 15px;
+}
+@media (min-width: 576px ) {
+  .overlay {
+    padding: 15px;
+  }
+}
+@media (min-width: 768px ) {
+  .overlay {
+    padding: 20px;
+  }
+}
+@media (min-width: 992px ) {
+  .overlay {
+    padding: 25px;
+  }
+}
+@media (min-width: 1200px ) {
+  .overlay {
+    padding: 30px;
+  }
+}
+@media (min-width: 1350px ) {
+  .overlay {
+    padding: 30px;
+  }
 }
 .responsive {
   max-width: 100% !important;
@@ -2844,7 +2836,6 @@ html.xt-fixed .overlay {
   border-color: transparent;
   background-color: transparent;
   color: #626c76;
-  text-decoration: none !important;
 }
 .list.list-default > li > a:not(.btn):hover,
 .list.list-default > li > button:not(.btn):hover {
@@ -2928,7 +2919,6 @@ html.xt-fixed .overlay {
   border-color: transparent !important;
   background-color: transparent !important;
   color: #7367F0 !important;
-  text-decoration: none !important !important;
 }
 .list.list-primary-empty > li > a:not(.btn):hover,
 .list.list-primary-empty > li > button:not(.btn):hover {
@@ -2959,7 +2949,6 @@ html.xt-fixed .overlay {
   border-color: #d4e7ef;
   background-color: #d4e7ef;
   color: rgba(52, 58, 64, 0.8);
-  text-decoration: none !important;
 }
 .list-secondary > li > a:not(.btn):hover,
 .list-secondary > li > button:not(.btn):hover {
@@ -3020,7 +3009,6 @@ html.xt-fixed .overlay {
   border-color: transparent !important;
   background-color: transparent !important;
   color: #626c76 !important;
-  text-decoration: none !important !important;
 }
 .list.list-secondary-empty > li > a:not(.btn):hover,
 .list.list-secondary-empty > li > button:not(.btn):hover {
@@ -3213,7 +3201,6 @@ html.xt-fixed .overlay {
   border-color: #d4e7ef !important;
   background-color: #d4e7ef !important;
   color: rgba(52, 58, 64, 0.8) !important;
-  text-decoration: none !important !important;
 }
 .box.box-secondary > .btn-close:hover {
   text-decoration: none !important;
@@ -3241,7 +3228,6 @@ html.xt-fixed .overlay {
   border-color: transparent !important;
   background-color: transparent !important;
   color: #7367F0 !important;
-  text-decoration: none !important !important;
 }
 .box.box-white > .btn-close:hover {
   text-decoration: none !important;
@@ -4242,7 +4228,6 @@ a:hover,
   border-color: transparent !important;
   background-color: transparent !important;
   color: #7367F0 !important;
-  text-decoration: none !important !important;
 }
 .btn.btn-primary-empty:hover {
   text-decoration: none !important;
@@ -4265,7 +4250,6 @@ a:hover,
   border-color: #d4e7ef !important;
   background-color: #d4e7ef !important;
   color: rgba(52, 58, 64, 0.8) !important;
-  text-decoration: none !important !important;
 }
 .btn.btn-secondary:hover {
   text-decoration: none !important;
@@ -4288,7 +4272,6 @@ a:hover,
   border-color: transparent !important;
   background-color: transparent !important;
   color: #626c76 !important;
-  text-decoration: none !important !important;
 }
 .btn.btn-secondary-empty:hover {
   text-decoration: none !important;
@@ -4441,7 +4424,6 @@ a:hover,
   border-color: transparent !important;
   background-color: transparent !important;
   color: #7367F0 !important;
-  text-decoration: none !important !important;
 }
 .btn.btn-close:hover {
   text-decoration: none !important;
@@ -4529,7 +4511,6 @@ a:hover,
   border-color: transparent;
   background-color: transparent;
   color: #7367F0;
-  text-decoration: none !important;
 }
 .drop.drop-default .list-drop > li > a:not(.btn):hover,
 .drop.drop-default .list-drop > li > button:not(.btn):hover {
@@ -4600,7 +4581,6 @@ a:hover,
   border-color: #d4e7ef !important;
   background-color: #d4e7ef !important;
   color: rgba(52, 58, 64, 0.8) !important;
-  text-decoration: none !important !important;
 }
 .drop.drop-secondary .list-drop > li > a:not(.btn):hover,
 .drop.drop-secondary .list-drop > li > button:not(.btn):hover {
@@ -4636,7 +4616,6 @@ a:hover,
   border-color: transparent !important;
   background-color: transparent !important;
   color: #7367F0 !important;
-  text-decoration: none !important !important;
 }
 .drop.drop-white .list-drop > li > a:not(.btn):hover,
 .drop.drop-white .list-drop > li > button:not(.btn):hover {
@@ -4676,6 +4655,9 @@ a:hover,
   overflow-x: auto !important;
   max-width: 20rem !important;
 }
+.overlay {
+  max-width: 768px;
+}
 .overlay .overlay-inner {
   border-radius: 3px;
   border-width: 1px;
@@ -4697,14 +4679,19 @@ a:hover,
   font-size: 1.5rem;
   padding: .6em .8em;
 }
-.overlay .overlay-inner {
-  max-width: 960px;
-}
 .overlay-outer {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .overlay-outer.out {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.overlay-outer .overlay {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.overlay-outer .overlay.out {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
@@ -4716,35 +4703,47 @@ a:hover,
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
+.overlay-outer .overlay-inner > .btn-close {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.overlay-outer .overlay-inner > .btn-close.out {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.overlay-outer.active .overlay {
+  opacity: 1;
+  animation-name: anim-opacity-in;
+}
 .overlay-outer.active .overlay-inner {
   opacity: 1;
   animation-name: anim-vertical-in;
+}
+.overlay-outer.active .overlay-inner > .btn-close {
+  opacity: 1;
+  animation-name: anim-vertical-in;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  animation-delay: 300ms;
 }
 .overlay-outer.active .xt-backdrop {
   opacity: 0.6;
   animation-name: anim-backdrop-in;
 }
+.overlay-outer.out .overlay {
+  opacity: 0;
+  animation-name: anim-opacity-out;
+}
 .overlay-outer.out .overlay-inner {
   opacity: 0;
   animation-name: anim-vertical-out;
 }
+.overlay-outer.out .overlay-inner > .btn-close {
+  opacity: 0;
+}
 .overlay-outer.out .xt-backdrop {
   opacity: 0;
   animation-name: anim-backdrop-out;
-}
-.overlay.overlay-screen {
-  max-width: none !important;
-}
-.overlay.overlay-screen .overlay-inner {
-  position: static;
-}
-.overlay.overlay-screen .overlay-inner + .xt-backdrop {
-  display: none;
-}
-.overlay.overlay-screen .overlay-inner {
-  padding-left: 0;
-  padding-right: 0;
-  box-shadow: none;
 }
 .overlay.overlay-default .overlay-inner,
 .overlay.overlay-default.overlay-screen {
@@ -4756,7 +4755,6 @@ a:hover,
   border-color: transparent;
   background-color: transparent;
   color: #7367F0;
-  text-decoration: none !important;
 }
 .overlay.overlay-default .overlay-inner > .btn-close:hover {
   text-decoration: none;
@@ -4774,6 +4772,20 @@ a:hover,
 .overlay.overlay-default .overlay-inner > .btn-close.active {
   border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
+}
+.overlay.overlay-screen {
+  max-width: none !important;
+}
+.overlay.overlay-screen .overlay-inner {
+  position: static;
+}
+.overlay.overlay-screen .overlay-inner + .xt-backdrop {
+  display: none;
+}
+.overlay.overlay-screen .overlay-inner {
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none;
 }
 .overlay.overlay-primary .overlay-inner,
 .overlay.overlay-primary.overlay-screen {
@@ -4813,7 +4825,6 @@ a:hover,
   border-color: #d4e7ef !important;
   background-color: #d4e7ef !important;
   color: rgba(52, 58, 64, 0.8) !important;
-  text-decoration: none !important !important;
 }
 .overlay.overlay-secondary .overlay-inner > .btn-close:hover {
   text-decoration: none !important;
@@ -4842,7 +4853,6 @@ a:hover,
   border-color: transparent !important;
   background-color: transparent !important;
   color: #7367F0 !important;
-  text-decoration: none !important !important;
 }
 .overlay.overlay-white .overlay-inner > .btn-close:hover {
   text-decoration: none !important;
@@ -4860,6 +4870,15 @@ a:hover,
 .overlay.overlay-white .overlay-inner > .btn-close.active {
   border-color: #7367F0 !important;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15) !important;
+}
+.overlay.overlay-squared .overlay-inner {
+  border-radius: 0 !important;
+}
+.overlay.overlay-squared .overlay-inner > .btn-close {
+  border-radius: 0 !important;
+}
+.overlay.overlay-noborder .overlay-inner {
+  border: 0 !important;
 }
 .loader-mask {
   background-color: rgba(255, 255, 255, 0.6);

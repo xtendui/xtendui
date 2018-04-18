@@ -817,11 +817,11 @@ var Xt = exports.Xt = function () {
           self.activationOnAnimate(el);
           // specials
           if (type === 'targets') {
-            self.centerOn(el);
-            self.middleOn(el);
-            self.collapseOn(el);
-            self.backdrop(el);
-            self.closeOn(el, fElements.single);
+            self.specialCenterOn(el);
+            self.specialMiddleOn(el);
+            self.specialCollapseOn(el);
+            self.specialBackdrop(el);
+            self.specialCloseOn(el, fElements.single);
           }
         }
       } catch (err) {
@@ -899,8 +899,8 @@ var Xt = exports.Xt = function () {
           self.activationOffAnimate(el);
           // specials
           if (type === 'targets') {
-            self.collapseOff(el);
-            self.closeOff(el);
+            self.specialCollapseOff(el);
+            self.specialCloseOff(el);
           }
         }
       } catch (err) {
@@ -965,13 +965,13 @@ var Xt = exports.Xt = function () {
     //////////////////////
 
     /**
-     * centerOn on activation
+     * center position on activation
      * @param {Element} element
      */
 
   }, {
-    key: 'centerOn',
-    value: function centerOn(el) {
+    key: 'specialCenterOn',
+    value: function specialCenterOn(el) {
       if (el.classList.contains('drop-center')) {
         var add = this.object.clientWidth;
         var remove = el.clientWidth;
@@ -980,13 +980,13 @@ var Xt = exports.Xt = function () {
     }
 
     /**
-     * middleOn on activation
+     * middle position on activation
      * @param {Element} element
      */
 
   }, {
-    key: 'middleOn',
-    value: function middleOn(el) {
+    key: 'specialMiddleOn',
+    value: function specialMiddleOn(el) {
       if (el.classList.contains('drop-middle')) {
         var add = this.object.clientHeight;
         var remove = el.clientHeight;
@@ -995,13 +995,13 @@ var Xt = exports.Xt = function () {
     }
 
     /**
-     * collapseOn on activation
+     * open collapse on activation
      * @param {Element} element
      */
 
   }, {
-    key: 'collapseOn',
-    value: function collapseOn(el) {
+    key: 'specialCollapseOn',
+    value: function specialCollapseOn(el) {
       if (el.classList.contains('collapse-height')) {
         el.classList.add('no-transition');
         el.style.height = 'auto';
@@ -1044,13 +1044,13 @@ var Xt = exports.Xt = function () {
     }
 
     /**
-     * collapseOff on deactivation
+     * close collapse on deactivation
      * @param {Element} element
      */
 
   }, {
-    key: 'collapseOff',
-    value: function collapseOff(el) {
+    key: 'specialCollapseOff',
+    value: function specialCollapseOff(el) {
       if (el.classList.contains('collapse-height')) {
         var h = el.clientHeight + 'px';
         var pt = el.style.paddingTop;
@@ -1084,13 +1084,13 @@ var Xt = exports.Xt = function () {
     }
 
     /**
-     * closeOn on activation
+     * add close events on element
      * @param {Element} element
      */
 
   }, {
-    key: 'closeOn',
-    value: function closeOn(el, toggle) {
+    key: 'specialCloseOn',
+    value: function specialCloseOn(el, toggle) {
       var self = this;
       var options = this.options;
       // closeEvent
@@ -1146,13 +1146,13 @@ var Xt = exports.Xt = function () {
     }
 
     /**
-     * closeOff on deactivation
+     * remove close events on element
      * @param {Element} element
      */
 
   }, {
-    key: 'closeOff',
-    value: function closeOff(el) {
+    key: 'specialCloseOff',
+    value: function specialCloseOff(el) {
       var options = this.options;
       // closeInside
       if (options.closeInside) {
@@ -1218,8 +1218,8 @@ var Xt = exports.Xt = function () {
      */
 
   }, {
-    key: 'backdrop',
-    value: function backdrop(el) {
+    key: 'specialBackdrop',
+    value: function specialBackdrop(el) {
       var options = this.options;
       if (options.backdrop) {
         var elements = el.querySelectorAll(options.backdrop);

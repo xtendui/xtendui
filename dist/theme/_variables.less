@@ -112,8 +112,7 @@
 
 // overlay
 
-@overlay-fluid: 1300px; // max-width
-@overlays: tiny 540px, small 720px, medium 960px, big 1140px, giant 1300px; // overlay size
+@overlays: tiny @breakpoint-xs, small @breakpoint-sm, medium @breakpoint-md, big @breakpoint-lg, giant @breakpoint-xl, full none; // overlay size
 
 //////////////////////
 // animations
@@ -153,7 +152,7 @@
 
 // container
 
-@container-fluid: 1300px; // max-width
+@container-fluid: 1350px; // max-width
 @container-space: none 15px, xs 15px, sm 20px, md 25px, lg 30px, xl 30px; // spacing outside container
 
 // breakpoints

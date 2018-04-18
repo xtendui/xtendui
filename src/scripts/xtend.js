@@ -292,11 +292,11 @@ export class Xt {
       self.activationOnAnimate(el);
       // specials
       if (type === 'targets') {
-        self.centerOn(el);
-        self.middleOn(el);
-        self.collapseOn(el);
-        self.backdrop(el);
-        self.closeOn(el, fElements.single);
+        self.specialCenterOn(el);
+        self.specialMiddleOn(el);
+        self.specialCollapseOn(el);
+        self.specialBackdrop(el);
+        self.specialCloseOn(el, fElements.single);
       }
     }
   }
@@ -345,8 +345,8 @@ export class Xt {
       self.activationOffAnimate(el);
       // specials
       if (type === 'targets') {
-        self.collapseOff(el);
-        self.closeOff(el);
+        self.specialCollapseOff(el);
+        self.specialCloseOff(el);
       }
     }
   }
@@ -391,10 +391,10 @@ export class Xt {
   //////////////////////
 
   /**
-   * centerOn on activation
+   * center position on activation
    * @param {Element} element
    */
-  centerOn(el) {
+  specialCenterOn(el) {
     if (el.classList.contains('drop-center')) {
       let add = this.object.clientWidth;
       let remove = el.clientWidth;
@@ -403,10 +403,10 @@ export class Xt {
   }
 
   /**
-   * middleOn on activation
+   * middle position on activation
    * @param {Element} element
    */
-  middleOn(el) {
+  specialMiddleOn(el) {
     if (el.classList.contains('drop-middle')) {
       let add = this.object.clientHeight;
       let remove = el.clientHeight;
@@ -415,10 +415,10 @@ export class Xt {
   }
 
   /**
-   * collapseOn on activation
+   * open collapse on activation
    * @param {Element} element
    */
-  collapseOn(el) {
+  specialCollapseOn(el) {
     if (el.classList.contains('collapse-height')) {
       el.classList.add('no-transition');
       el.style.height = 'auto';
@@ -461,10 +461,10 @@ export class Xt {
   }
 
   /**
-   * collapseOff on deactivation
+   * close collapse on deactivation
    * @param {Element} element
    */
-  collapseOff(el) {
+  specialCollapseOff(el) {
     if (el.classList.contains('collapse-height')) {
       let h = el.clientHeight + 'px';
       let pt = el.style.paddingTop;
@@ -498,10 +498,10 @@ export class Xt {
   }
 
   /**
-   * closeOn on activation
+   * add close events on element
    * @param {Element} element
    */
-  closeOn(el, toggle) {
+  specialCloseOn(el, toggle) {
     let self = this;
     let options = this.options;
     // closeEvent
@@ -536,10 +536,10 @@ export class Xt {
   }
 
   /**
-   * closeOff on deactivation
+   * remove close events on element
    * @param {Element} element
    */
-  closeOff(el) {
+  specialCloseOff(el) {
     let options = this.options;
     // closeInside
     if (options.closeInside) {
@@ -561,7 +561,7 @@ export class Xt {
    * backdrop append to element
    * @param {Element} element
    */
-  backdrop(el) {
+  specialBackdrop(el) {
     let options = this.options;
     if (options.backdrop) {
       var elements = el.querySelectorAll(options.backdrop);

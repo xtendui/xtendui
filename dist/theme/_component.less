@@ -96,7 +96,6 @@ a, .alink {
   border-color: transparent;
   background-color: transparent;
   color: @primary;
-  text-decoration: none !important;
   &:hover, &:active, &.active {
     background-color: lighten(@primary, 5%);
     color: @text-inverse;
@@ -116,7 +115,6 @@ a, .alink {
   border-color: @secondary;
   background-color: @secondary;
   color: fade(@text, 80%);
-  text-decoration: none !important;
   &:hover, &:active, &.active {
     background-color: lighten(@secondary, 5%);
     color: @text;
@@ -136,7 +134,6 @@ a, .alink {
   border-color: transparent;
   background-color: transparent;
   color: @grey-500;
-  text-decoration: none !important;
   &:hover, &:active, &.active {
     background-color: lighten(@secondary, 5%);
     color: @grey-750;
@@ -483,27 +480,48 @@ a, .alink {
     }
   }
   // options
-  .overlay-medium(); // size
+  .overlay-size(small); // size
 }
 
 // animations
 
 .overlay-outer {
   .animation-default(); // needed for .out animation timing
-  .overlay-inner {
+  .overlay {
     .animation-default();
   }
+  .overlay-inner {
+    .animation-default();
+    > .btn-close {
+      .animation-default();
+    }
+  }
   &.active {
+    .overlay {
+      .anim-opacity.active();
+    }
     .overlay-inner {
       .anim-vertical.active();
+      > .btn-close {
+        .anim-vertical.active();
+        animation-fill-mode: forwards;
+        opacity: 0;
+        animation-delay: @time-medium;
+      }
     }
     .xt-backdrop {
       .anim-backdrop.active();
     }
   }
   &.out {
+    .overlay {
+      .anim-opacity.out();
+    }
     .overlay-inner {
       .anim-vertical.out();
+      > .btn-close {
+        opacity: 0;
+      }
     }
     .xt-backdrop {
       .anim-backdrop.out();
@@ -512,6 +530,14 @@ a, .alink {
 }
 
 // default
+
+.overlay-default() {
+  .overlay-white();
+}
+
+.overlay.overlay-default {
+  .overlay-default();
+}
 
 .overlay-screen() {
   .overlay-inner {
@@ -523,16 +549,6 @@ a, .alink {
 
 .overlay.overlay-screen {
   .overlay-screen();
-}
-
-// default
-
-.overlay-default() {
-  .overlay-white();
-}
-
-.overlay.overlay-default {
-  .overlay-default();
 }
 
 // variant
@@ -586,6 +602,31 @@ a, .alink {
 
 .overlay.overlay-white {
   .overlay-white() !important;
+}
+
+// special
+
+.overlay-squared() {
+  .overlay-inner {
+    border-radius: 0;
+    > .btn-close {
+      .btn-squared();
+    }
+  }
+}
+
+.overlay.overlay-squared {
+  .overlay-squared() !important;
+}
+
+.overlay-noborder() {
+  .overlay-inner {
+    border: 0;
+  }
+}
+
+.overlay.overlay-noborder {
+  .overlay-noborder() !important;
 }
 
 //////////////////////
