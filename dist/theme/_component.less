@@ -2,6 +2,27 @@
 // link
 //////////////////////
 
+.link-underline() {
+  &:hover, &:active, &:focus, &.active {
+    text-decoration: underline;
+    span {
+      text-decoration: underline;
+    }
+  }
+}
+
+.link-none() {
+  text-decoration: none;
+  &:hover, &:active, &:focus, &.active {
+    text-decoration: none;
+    span {
+      text-decoration: none;
+    }
+  }
+}
+
+// links
+
 a, .alink {
   .link-underline();
   color: @primary;
@@ -18,7 +39,7 @@ a, .alink {
   }
 }
 
-// links-inverse
+// .links-inverse
 
 .links-inverse {
   a, .alink, .btn-link {
@@ -26,26 +47,6 @@ a, .alink {
     text-decoration: underline;
     &:hover, &:active, &:focus, &.active {
       color: darken(@white, @perc-xs);
-    }
-  }
-}
-
-// underline mixins
-
-.link-underline() {
-  &:hover, &:active, &:focus, &.active {
-    text-decoration: underline;
-    span {
-      text-decoration: underline;
-    }
-  }
-}
-
-.link-no-underline() {
-  &:hover, &:active, &:focus, &.active {
-    text-decoration: none;
-    span {
-      text-decoration: none;
     }
   }
 }
@@ -76,7 +77,7 @@ a, .alink {
 // variant
 
 .btn-primary() {
-  .link-no-underline();
+  .link-none();
   border-color: @primary;
   background-color: @primary;
   color: fade(@text-inverse, @perc-xl);
@@ -95,7 +96,7 @@ a, .alink {
 }
 
 .btn-primary-empty() {
-  .link-no-underline();
+  .link-none();
   border-color: transparent;
   background-color: transparent;
   color: @primary;
@@ -114,7 +115,7 @@ a, .alink {
 }
 
 .btn-secondary() {
-  .link-no-underline();
+  .link-none();
   border-color: @secondary;
   background-color: @secondary;
   color: fade(@text, @perc-xl);
@@ -133,7 +134,7 @@ a, .alink {
 }
 
 .btn-secondary-empty() {
-  .link-no-underline();
+  .link-none();
   border-color: transparent;
   background-color: transparent;
   color: fade(@text, @perc-xl);

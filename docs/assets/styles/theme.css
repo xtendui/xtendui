@@ -340,7 +340,9 @@ pre code {
   z-index: 1;
 }
 .input-control:hover,
-.input-control:focus {
+.input-control:active,
+.input-control:focus,
+.input-control.active {
   z-index: 2;
 }
 select.input-control {
@@ -404,6 +406,8 @@ select.input-control {
 .input-group-stack .btn:hover,
 .input-group-line .btn:active,
 .input-group-stack .btn:active,
+.input-group-line .btn:focus,
+.input-group-stack .btn:focus,
 .input-group-line .btn.active,
 .input-group-stack .btn.active {
   z-index: 2;
@@ -2834,22 +2838,37 @@ html.xt-scrollbar .overlay-outer {
 }
 .list.list-default > li > a:not(.btn),
 .list.list-default > li > button:not(.btn) {
+  text-decoration: none;
   border-color: transparent;
   background-color: transparent;
   color: rgba(52, 58, 64, 0.8);
 }
 .list.list-default > li > a:not(.btn):hover,
-.list.list-default > li > button:not(.btn):hover {
+.list.list-default > li > button:not(.btn):hover,
+.list.list-default > li > a:not(.btn):active,
+.list.list-default > li > button:not(.btn):active,
+.list.list-default > li > a:not(.btn):focus,
+.list.list-default > li > button:not(.btn):focus,
+.list.list-default > li > a:not(.btn).active,
+.list.list-default > li > button:not(.btn).active {
   text-decoration: none;
 }
 .list.list-default > li > a:not(.btn):hover span,
-.list.list-default > li > button:not(.btn):hover span {
+.list.list-default > li > button:not(.btn):hover span,
+.list.list-default > li > a:not(.btn):active span,
+.list.list-default > li > button:not(.btn):active span,
+.list.list-default > li > a:not(.btn):focus span,
+.list.list-default > li > button:not(.btn):focus span,
+.list.list-default > li > a:not(.btn).active span,
+.list.list-default > li > button:not(.btn).active span {
   text-decoration: none;
 }
 .list.list-default > li > a:not(.btn):hover,
 .list.list-default > li > button:not(.btn):hover,
 .list.list-default > li > a:not(.btn):active,
 .list.list-default > li > button:not(.btn):active,
+.list.list-default > li > a:not(.btn):focus,
+.list.list-default > li > button:not(.btn):focus,
 .list.list-default > li > a:not(.btn).active,
 .list.list-default > li > button:not(.btn).active {
   background-color: #e7f1f6;
@@ -2887,22 +2906,37 @@ html.xt-scrollbar .overlay-outer {
 }
 .list.list-primary > li > a:not(.btn),
 .list.list-primary > li > button:not(.btn) {
+  text-decoration: none !important;
   border-color: #7367F0 !important;
   background-color: #7367F0 !important;
   color: rgba(255, 255, 255, 0.8) !important;
 }
 .list.list-primary > li > a:not(.btn):hover,
-.list.list-primary > li > button:not(.btn):hover {
+.list.list-primary > li > button:not(.btn):hover,
+.list.list-primary > li > a:not(.btn):active,
+.list.list-primary > li > button:not(.btn):active,
+.list.list-primary > li > a:not(.btn):focus,
+.list.list-primary > li > button:not(.btn):focus,
+.list.list-primary > li > a:not(.btn).active,
+.list.list-primary > li > button:not(.btn).active {
   text-decoration: none !important;
 }
 .list.list-primary > li > a:not(.btn):hover span,
-.list.list-primary > li > button:not(.btn):hover span {
+.list.list-primary > li > button:not(.btn):hover span,
+.list.list-primary > li > a:not(.btn):active span,
+.list.list-primary > li > button:not(.btn):active span,
+.list.list-primary > li > a:not(.btn):focus span,
+.list.list-primary > li > button:not(.btn):focus span,
+.list.list-primary > li > a:not(.btn).active span,
+.list.list-primary > li > button:not(.btn).active span {
   text-decoration: none !important;
 }
 .list.list-primary > li > a:not(.btn):hover,
 .list.list-primary > li > button:not(.btn):hover,
 .list.list-primary > li > a:not(.btn):active,
 .list.list-primary > li > button:not(.btn):active,
+.list.list-primary > li > a:not(.btn):focus,
+.list.list-primary > li > button:not(.btn):focus,
 .list.list-primary > li > a:not(.btn).active,
 .list.list-primary > li > button:not(.btn).active {
   background-color: #887ef2 !important;
@@ -2917,22 +2951,37 @@ html.xt-scrollbar .overlay-outer {
 }
 .list.list-primary-empty > li > a:not(.btn),
 .list.list-primary-empty > li > button:not(.btn) {
+  text-decoration: none !important;
   border-color: transparent !important;
   background-color: transparent !important;
   color: #7367F0 !important;
 }
 .list.list-primary-empty > li > a:not(.btn):hover,
-.list.list-primary-empty > li > button:not(.btn):hover {
+.list.list-primary-empty > li > button:not(.btn):hover,
+.list.list-primary-empty > li > a:not(.btn):active,
+.list.list-primary-empty > li > button:not(.btn):active,
+.list.list-primary-empty > li > a:not(.btn):focus,
+.list.list-primary-empty > li > button:not(.btn):focus,
+.list.list-primary-empty > li > a:not(.btn).active,
+.list.list-primary-empty > li > button:not(.btn).active {
   text-decoration: none !important;
 }
 .list.list-primary-empty > li > a:not(.btn):hover span,
-.list.list-primary-empty > li > button:not(.btn):hover span {
+.list.list-primary-empty > li > button:not(.btn):hover span,
+.list.list-primary-empty > li > a:not(.btn):active span,
+.list.list-primary-empty > li > button:not(.btn):active span,
+.list.list-primary-empty > li > a:not(.btn):focus span,
+.list.list-primary-empty > li > button:not(.btn):focus span,
+.list.list-primary-empty > li > a:not(.btn).active span,
+.list.list-primary-empty > li > button:not(.btn).active span {
   text-decoration: none !important;
 }
 .list.list-primary-empty > li > a:not(.btn):hover,
 .list.list-primary-empty > li > button:not(.btn):hover,
 .list.list-primary-empty > li > a:not(.btn):active,
 .list.list-primary-empty > li > button:not(.btn):active,
+.list.list-primary-empty > li > a:not(.btn):focus,
+.list.list-primary-empty > li > button:not(.btn):focus,
 .list.list-primary-empty > li > a:not(.btn).active,
 .list.list-primary-empty > li > button:not(.btn).active {
   background-color: #887ef2 !important;
@@ -2947,22 +2996,37 @@ html.xt-scrollbar .overlay-outer {
 }
 .list-secondary > li > a:not(.btn),
 .list-secondary > li > button:not(.btn) {
+  text-decoration: none;
   border-color: #d4e7ef;
   background-color: #d4e7ef;
   color: rgba(52, 58, 64, 0.8);
 }
 .list-secondary > li > a:not(.btn):hover,
-.list-secondary > li > button:not(.btn):hover {
+.list-secondary > li > button:not(.btn):hover,
+.list-secondary > li > a:not(.btn):active,
+.list-secondary > li > button:not(.btn):active,
+.list-secondary > li > a:not(.btn):focus,
+.list-secondary > li > button:not(.btn):focus,
+.list-secondary > li > a:not(.btn).active,
+.list-secondary > li > button:not(.btn).active {
   text-decoration: none;
 }
 .list-secondary > li > a:not(.btn):hover span,
-.list-secondary > li > button:not(.btn):hover span {
+.list-secondary > li > button:not(.btn):hover span,
+.list-secondary > li > a:not(.btn):active span,
+.list-secondary > li > button:not(.btn):active span,
+.list-secondary > li > a:not(.btn):focus span,
+.list-secondary > li > button:not(.btn):focus span,
+.list-secondary > li > a:not(.btn).active span,
+.list-secondary > li > button:not(.btn).active span {
   text-decoration: none;
 }
 .list-secondary > li > a:not(.btn):hover,
 .list-secondary > li > button:not(.btn):hover,
 .list-secondary > li > a:not(.btn):active,
 .list-secondary > li > button:not(.btn):active,
+.list-secondary > li > a:not(.btn):focus,
+.list-secondary > li > button:not(.btn):focus,
 .list-secondary > li > a:not(.btn).active,
 .list-secondary > li > button:not(.btn).active {
   background-color: #e7f1f6;
@@ -2977,22 +3041,37 @@ html.xt-scrollbar .overlay-outer {
 }
 .list.list-primary > li > a:not(.btn),
 .list.list-primary > li > button:not(.btn) {
+  text-decoration: none !important;
   border-color: #7367F0 !important;
   background-color: #7367F0 !important;
   color: rgba(255, 255, 255, 0.8) !important;
 }
 .list.list-primary > li > a:not(.btn):hover,
-.list.list-primary > li > button:not(.btn):hover {
+.list.list-primary > li > button:not(.btn):hover,
+.list.list-primary > li > a:not(.btn):active,
+.list.list-primary > li > button:not(.btn):active,
+.list.list-primary > li > a:not(.btn):focus,
+.list.list-primary > li > button:not(.btn):focus,
+.list.list-primary > li > a:not(.btn).active,
+.list.list-primary > li > button:not(.btn).active {
   text-decoration: none !important;
 }
 .list.list-primary > li > a:not(.btn):hover span,
-.list.list-primary > li > button:not(.btn):hover span {
+.list.list-primary > li > button:not(.btn):hover span,
+.list.list-primary > li > a:not(.btn):active span,
+.list.list-primary > li > button:not(.btn):active span,
+.list.list-primary > li > a:not(.btn):focus span,
+.list.list-primary > li > button:not(.btn):focus span,
+.list.list-primary > li > a:not(.btn).active span,
+.list.list-primary > li > button:not(.btn).active span {
   text-decoration: none !important;
 }
 .list.list-primary > li > a:not(.btn):hover,
 .list.list-primary > li > button:not(.btn):hover,
 .list.list-primary > li > a:not(.btn):active,
 .list.list-primary > li > button:not(.btn):active,
+.list.list-primary > li > a:not(.btn):focus,
+.list.list-primary > li > button:not(.btn):focus,
 .list.list-primary > li > a:not(.btn).active,
 .list.list-primary > li > button:not(.btn).active {
   background-color: #887ef2 !important;
@@ -3007,22 +3086,37 @@ html.xt-scrollbar .overlay-outer {
 }
 .list.list-secondary-empty > li > a:not(.btn),
 .list.list-secondary-empty > li > button:not(.btn) {
+  text-decoration: none !important;
   border-color: transparent !important;
   background-color: transparent !important;
   color: rgba(52, 58, 64, 0.8) !important;
 }
 .list.list-secondary-empty > li > a:not(.btn):hover,
-.list.list-secondary-empty > li > button:not(.btn):hover {
+.list.list-secondary-empty > li > button:not(.btn):hover,
+.list.list-secondary-empty > li > a:not(.btn):active,
+.list.list-secondary-empty > li > button:not(.btn):active,
+.list.list-secondary-empty > li > a:not(.btn):focus,
+.list.list-secondary-empty > li > button:not(.btn):focus,
+.list.list-secondary-empty > li > a:not(.btn).active,
+.list.list-secondary-empty > li > button:not(.btn).active {
   text-decoration: none !important;
 }
 .list.list-secondary-empty > li > a:not(.btn):hover span,
-.list.list-secondary-empty > li > button:not(.btn):hover span {
+.list.list-secondary-empty > li > button:not(.btn):hover span,
+.list.list-secondary-empty > li > a:not(.btn):active span,
+.list.list-secondary-empty > li > button:not(.btn):active span,
+.list.list-secondary-empty > li > a:not(.btn):focus span,
+.list.list-secondary-empty > li > button:not(.btn):focus span,
+.list.list-secondary-empty > li > a:not(.btn).active span,
+.list.list-secondary-empty > li > button:not(.btn).active span {
   text-decoration: none !important;
 }
 .list.list-secondary-empty > li > a:not(.btn):hover,
 .list.list-secondary-empty > li > button:not(.btn):hover,
 .list.list-secondary-empty > li > a:not(.btn):active,
 .list.list-secondary-empty > li > button:not(.btn):active,
+.list.list-secondary-empty > li > a:not(.btn):focus,
+.list.list-secondary-empty > li > button:not(.btn):focus,
 .list.list-secondary-empty > li > a:not(.btn).active,
 .list.list-secondary-empty > li > button:not(.btn).active {
   background-color: #e7f1f6 !important;
@@ -3054,15 +3148,33 @@ html.xt-scrollbar .overlay-outer {
   box-shadow: none !important;
 }
 .list.list-link > li > a:not(.btn):hover,
-.list.list-link > li > button:not(.btn):hover {
+.list.list-link > li > button:not(.btn):hover,
+.list.list-link > li > a:not(.btn):active,
+.list.list-link > li > button:not(.btn):active,
+.list.list-link > li > a:not(.btn):focus,
+.list.list-link > li > button:not(.btn):focus,
+.list.list-link > li > a:not(.btn).active,
+.list.list-link > li > button:not(.btn).active {
   text-decoration: underline;
 }
 .list.list-link > li > a:not(.btn):hover span,
-.list.list-link > li > button:not(.btn):hover span {
+.list.list-link > li > button:not(.btn):hover span,
+.list.list-link > li > a:not(.btn):active span,
+.list.list-link > li > button:not(.btn):active span,
+.list.list-link > li > a:not(.btn):focus span,
+.list.list-link > li > button:not(.btn):focus span,
+.list.list-link > li > a:not(.btn).active span,
+.list.list-link > li > button:not(.btn).active span {
   text-decoration: underline;
 }
 .list.list-link > li > a:not(.btn):hover,
-.list.list-link > li > button:not(.btn):hover {
+.list.list-link > li > button:not(.btn):hover,
+.list.list-link > li > a:not(.btn):active,
+.list.list-link > li > button:not(.btn):active,
+.list.list-link > li > a:not(.btn):focus,
+.list.list-link > li > button:not(.btn):focus,
+.list.list-link > li > a:not(.btn).active,
+.list.list-link > li > button:not(.btn).active {
   color: #5e50ee;
 }
 .list.list-tiny > li > a:not(.btn),
@@ -3132,6 +3244,8 @@ html.xt-scrollbar .overlay-outer {
 .list.list-text-only > li > button:not(.btn):hover,
 .list.list-text-only > li > a:not(.btn):active,
 .list.list-text-only > li > button:not(.btn):active,
+.list.list-text-only > li > a:not(.btn):focus,
+.list.list-text-only > li > button:not(.btn):focus,
 .list.list-text-only > li > a:not(.btn).active,
 .list.list-text-only > li > button:not(.btn).active {
   border: 0 !important !important;
@@ -3172,18 +3286,26 @@ html.xt-scrollbar .overlay-outer {
   color: #fff !important;
 }
 .box.box-primary > .btn-close {
+  text-decoration: none !important;
   border-color: #7367F0 !important;
   background-color: #7367F0 !important;
   color: rgba(255, 255, 255, 0.8) !important;
 }
-.box.box-primary > .btn-close:hover {
+.box.box-primary > .btn-close:hover,
+.box.box-primary > .btn-close:active,
+.box.box-primary > .btn-close:focus,
+.box.box-primary > .btn-close.active {
   text-decoration: none !important;
 }
-.box.box-primary > .btn-close:hover span {
+.box.box-primary > .btn-close:hover span,
+.box.box-primary > .btn-close:active span,
+.box.box-primary > .btn-close:focus span,
+.box.box-primary > .btn-close.active span {
   text-decoration: none !important;
 }
 .box.box-primary > .btn-close:hover,
 .box.box-primary > .btn-close:active,
+.box.box-primary > .btn-close:focus,
 .box.box-primary > .btn-close.active {
   background-color: #887ef2 !important;
   color: #fff !important;
@@ -3199,18 +3321,26 @@ html.xt-scrollbar .overlay-outer {
   color: #343a40 !important;
 }
 .box.box-secondary > .btn-close {
+  text-decoration: none !important;
   border-color: #d4e7ef !important;
   background-color: #d4e7ef !important;
   color: rgba(52, 58, 64, 0.8) !important;
 }
-.box.box-secondary > .btn-close:hover {
+.box.box-secondary > .btn-close:hover,
+.box.box-secondary > .btn-close:active,
+.box.box-secondary > .btn-close:focus,
+.box.box-secondary > .btn-close.active {
   text-decoration: none !important;
 }
-.box.box-secondary > .btn-close:hover span {
+.box.box-secondary > .btn-close:hover span,
+.box.box-secondary > .btn-close:active span,
+.box.box-secondary > .btn-close:focus span,
+.box.box-secondary > .btn-close.active span {
   text-decoration: none !important;
 }
 .box.box-secondary > .btn-close:hover,
 .box.box-secondary > .btn-close:active,
+.box.box-secondary > .btn-close:focus,
 .box.box-secondary > .btn-close.active {
   background-color: #e7f1f6 !important;
   color: #343a40 !important;
@@ -3226,18 +3356,26 @@ html.xt-scrollbar .overlay-outer {
   color: #343a40 !important;
 }
 .box.box-white > .btn-close {
+  text-decoration: none !important;
   border-color: transparent !important;
   background-color: transparent !important;
   color: #7367F0 !important;
 }
-.box.box-white > .btn-close:hover {
+.box.box-white > .btn-close:hover,
+.box.box-white > .btn-close:active,
+.box.box-white > .btn-close:focus,
+.box.box-white > .btn-close.active {
   text-decoration: none !important;
 }
-.box.box-white > .btn-close:hover span {
+.box.box-white > .btn-close:hover span,
+.box.box-white > .btn-close:active span,
+.box.box-white > .btn-close:focus span,
+.box.box-white > .btn-close.active span {
   text-decoration: none !important;
 }
 .box.box-white > .btn-close:hover,
 .box.box-white > .btn-close:active,
+.box.box-white > .btn-close:focus,
 .box.box-white > .btn-close.active {
   background-color: #887ef2 !important;
   color: #fff !important;
@@ -4077,7 +4215,9 @@ legend + legend {
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .input-control:hover,
-.input-control:focus {
+.input-control:active,
+.input-control:focus,
+.input-control.active {
   background-color: #e7f1f6;
   color: #343a40;
 }
@@ -4101,7 +4241,9 @@ select.input-control {
   color: rgba(52, 58, 64, 0.8);
 }
 .input-control-secondary:hover,
-.input-control-secondary:focus {
+.input-control-secondary:active,
+.input-control-secondary:focus,
+.input-control-secondary.active {
   background-color: #e7f1f6;
   color: #343a40;
 }
@@ -4145,27 +4287,54 @@ a,
   color: #7367F0;
 }
 a:hover,
-.alink:hover {
+.alink:hover,
+a:active,
+.alink:active,
+a:focus,
+.alink:focus,
+a.active,
+.alink.active {
   text-decoration: underline;
 }
 a:hover span,
-.alink:hover span {
+.alink:hover span,
+a:active span,
+.alink:active span,
+a:focus span,
+.alink:focus span,
+a.active span,
+.alink.active span {
   text-decoration: underline;
 }
 a:hover,
-.alink:hover {
+.alink:hover,
+a:active,
+.alink:active,
+a:focus,
+.alink:focus,
+a.active,
+.alink.active {
   color: #5e50ee;
 }
 .btn-link {
   color: #626c76;
 }
-.btn-link:hover {
+.btn-link:hover,
+.btn-link:active,
+.btn-link:focus,
+.btn-link.active {
   text-decoration: underline;
 }
-.btn-link:hover span {
+.btn-link:hover span,
+.btn-link:active span,
+.btn-link:focus span,
+.btn-link.active span {
   text-decoration: underline;
 }
-.btn-link:hover {
+.btn-link:hover,
+.btn-link:active,
+.btn-link:focus,
+.btn-link.active {
   color: #5e50ee;
 }
 .links-inverse a,
@@ -4176,20 +4345,17 @@ a:hover,
 }
 .links-inverse a:hover,
 .links-inverse .alink:hover,
-.links-inverse .btn-link:hover {
+.links-inverse .btn-link:hover,
+.links-inverse a:active,
+.links-inverse .alink:active,
+.links-inverse .btn-link:active,
+.links-inverse a:focus,
+.links-inverse .alink:focus,
+.links-inverse .btn-link:focus,
+.links-inverse a.active,
+.links-inverse .alink.active,
+.links-inverse .btn-link.active {
   color: #f2f2f2;
-}
-.link-underline:hover {
-  text-decoration: underline;
-}
-.link-underline:hover span {
-  text-decoration: underline;
-}
-.link-no-underline:hover {
-  text-decoration: none;
-}
-.link-no-underline:hover span {
-  text-decoration: none;
 }
 .btn {
   border-radius: 3px;
@@ -4217,18 +4383,26 @@ a:hover,
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .btn.btn-primary {
+  text-decoration: none !important;
   border-color: #7367F0 !important;
   background-color: #7367F0 !important;
   color: rgba(255, 255, 255, 0.8) !important;
 }
-.btn.btn-primary:hover {
+.btn.btn-primary:hover,
+.btn.btn-primary:active,
+.btn.btn-primary:focus,
+.btn.btn-primary.active {
   text-decoration: none !important;
 }
-.btn.btn-primary:hover span {
+.btn.btn-primary:hover span,
+.btn.btn-primary:active span,
+.btn.btn-primary:focus span,
+.btn.btn-primary.active span {
   text-decoration: none !important;
 }
 .btn.btn-primary:hover,
 .btn.btn-primary:active,
+.btn.btn-primary:focus,
 .btn.btn-primary.active {
   background-color: #887ef2 !important;
   color: #fff !important;
@@ -4239,18 +4413,26 @@ a:hover,
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15) !important;
 }
 .btn.btn-primary-empty {
+  text-decoration: none !important;
   border-color: transparent !important;
   background-color: transparent !important;
   color: #7367F0 !important;
 }
-.btn.btn-primary-empty:hover {
+.btn.btn-primary-empty:hover,
+.btn.btn-primary-empty:active,
+.btn.btn-primary-empty:focus,
+.btn.btn-primary-empty.active {
   text-decoration: none !important;
 }
-.btn.btn-primary-empty:hover span {
+.btn.btn-primary-empty:hover span,
+.btn.btn-primary-empty:active span,
+.btn.btn-primary-empty:focus span,
+.btn.btn-primary-empty.active span {
   text-decoration: none !important;
 }
 .btn.btn-primary-empty:hover,
 .btn.btn-primary-empty:active,
+.btn.btn-primary-empty:focus,
 .btn.btn-primary-empty.active {
   background-color: #887ef2 !important;
   color: #fff !important;
@@ -4261,18 +4443,26 @@ a:hover,
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15) !important;
 }
 .btn.btn-secondary {
+  text-decoration: none !important;
   border-color: #d4e7ef !important;
   background-color: #d4e7ef !important;
   color: rgba(52, 58, 64, 0.8) !important;
 }
-.btn.btn-secondary:hover {
+.btn.btn-secondary:hover,
+.btn.btn-secondary:active,
+.btn.btn-secondary:focus,
+.btn.btn-secondary.active {
   text-decoration: none !important;
 }
-.btn.btn-secondary:hover span {
+.btn.btn-secondary:hover span,
+.btn.btn-secondary:active span,
+.btn.btn-secondary:focus span,
+.btn.btn-secondary.active span {
   text-decoration: none !important;
 }
 .btn.btn-secondary:hover,
 .btn.btn-secondary:active,
+.btn.btn-secondary:focus,
 .btn.btn-secondary.active {
   background-color: #e7f1f6 !important;
   color: #343a40 !important;
@@ -4283,18 +4473,26 @@ a:hover,
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15) !important;
 }
 .btn.btn-secondary-empty {
+  text-decoration: none !important;
   border-color: transparent !important;
   background-color: transparent !important;
   color: rgba(52, 58, 64, 0.8) !important;
 }
-.btn.btn-secondary-empty:hover {
+.btn.btn-secondary-empty:hover,
+.btn.btn-secondary-empty:active,
+.btn.btn-secondary-empty:focus,
+.btn.btn-secondary-empty.active {
   text-decoration: none !important;
 }
-.btn.btn-secondary-empty:hover span {
+.btn.btn-secondary-empty:hover span,
+.btn.btn-secondary-empty:active span,
+.btn.btn-secondary-empty:focus span,
+.btn.btn-secondary-empty.active span {
   text-decoration: none !important;
 }
 .btn.btn-secondary-empty:hover,
 .btn.btn-secondary-empty:active,
+.btn.btn-secondary-empty:focus,
 .btn.btn-secondary-empty.active {
   background-color: #e7f1f6 !important;
   color: #343a40 !important;
@@ -4321,13 +4519,22 @@ a:hover,
   background-color: transparent !important;
   box-shadow: none !important;
 }
-.btn.btn-link:hover {
+.btn.btn-link:hover,
+.btn.btn-link:active,
+.btn.btn-link:focus,
+.btn.btn-link.active {
   text-decoration: underline;
 }
-.btn.btn-link:hover span {
+.btn.btn-link:hover span,
+.btn.btn-link:active span,
+.btn.btn-link:focus span,
+.btn.btn-link.active span {
   text-decoration: underline;
 }
-.btn.btn-link:hover {
+.btn.btn-link:hover,
+.btn.btn-link:active,
+.btn.btn-link:focus,
+.btn.btn-link.active {
   color: #5e50ee;
 }
 .btn.btn-tiny {
@@ -4382,6 +4589,7 @@ a:hover,
 }
 .btn.btn-text-only:hover,
 .btn.btn-text-only:active,
+.btn.btn-text-only:focus,
 .btn.btn-text-only.active {
   border: 0 !important !important;
   background: transparent !important !important;
@@ -4435,18 +4643,26 @@ a:hover,
 }
 .btn.btn-close {
   z-index: 300 !important;
+  text-decoration: none !important;
   border-color: transparent !important;
   background-color: transparent !important;
   color: #7367F0 !important;
 }
-.btn.btn-close:hover {
+.btn.btn-close:hover,
+.btn.btn-close:active,
+.btn.btn-close:focus,
+.btn.btn-close.active {
   text-decoration: none !important;
 }
-.btn.btn-close:hover span {
+.btn.btn-close:hover span,
+.btn.btn-close:active span,
+.btn.btn-close:focus span,
+.btn.btn-close.active span {
   text-decoration: none !important;
 }
 .btn.btn-close:hover,
 .btn.btn-close:active,
+.btn.btn-close:focus,
 .btn.btn-close.active {
   background-color: #887ef2 !important;
   color: #fff !important;
@@ -4520,22 +4736,37 @@ a:hover,
 }
 .drop.drop-default .list-drop > li > a:not(.btn),
 .drop.drop-default .list-drop > li > button:not(.btn) {
+  text-decoration: none;
   border-color: transparent;
   background-color: transparent;
   color: #7367F0;
 }
 .drop.drop-default .list-drop > li > a:not(.btn):hover,
-.drop.drop-default .list-drop > li > button:not(.btn):hover {
+.drop.drop-default .list-drop > li > button:not(.btn):hover,
+.drop.drop-default .list-drop > li > a:not(.btn):active,
+.drop.drop-default .list-drop > li > button:not(.btn):active,
+.drop.drop-default .list-drop > li > a:not(.btn):focus,
+.drop.drop-default .list-drop > li > button:not(.btn):focus,
+.drop.drop-default .list-drop > li > a:not(.btn).active,
+.drop.drop-default .list-drop > li > button:not(.btn).active {
   text-decoration: none;
 }
 .drop.drop-default .list-drop > li > a:not(.btn):hover span,
-.drop.drop-default .list-drop > li > button:not(.btn):hover span {
+.drop.drop-default .list-drop > li > button:not(.btn):hover span,
+.drop.drop-default .list-drop > li > a:not(.btn):active span,
+.drop.drop-default .list-drop > li > button:not(.btn):active span,
+.drop.drop-default .list-drop > li > a:not(.btn):focus span,
+.drop.drop-default .list-drop > li > button:not(.btn):focus span,
+.drop.drop-default .list-drop > li > a:not(.btn).active span,
+.drop.drop-default .list-drop > li > button:not(.btn).active span {
   text-decoration: none;
 }
 .drop.drop-default .list-drop > li > a:not(.btn):hover,
 .drop.drop-default .list-drop > li > button:not(.btn):hover,
 .drop.drop-default .list-drop > li > a:not(.btn):active,
 .drop.drop-default .list-drop > li > button:not(.btn):active,
+.drop.drop-default .list-drop > li > a:not(.btn):focus,
+.drop.drop-default .list-drop > li > button:not(.btn):focus,
 .drop.drop-default .list-drop > li > a:not(.btn).active,
 .drop.drop-default .list-drop > li > button:not(.btn).active {
   background-color: #887ef2;
@@ -4555,22 +4786,37 @@ a:hover,
 }
 .drop.drop-primary .list-drop > li > a:not(.btn),
 .drop.drop-primary .list-drop > li > button:not(.btn) {
+  text-decoration: none !important;
   border-color: #7367F0 !important;
   background-color: #7367F0 !important;
   color: rgba(255, 255, 255, 0.8) !important;
 }
 .drop.drop-primary .list-drop > li > a:not(.btn):hover,
-.drop.drop-primary .list-drop > li > button:not(.btn):hover {
+.drop.drop-primary .list-drop > li > button:not(.btn):hover,
+.drop.drop-primary .list-drop > li > a:not(.btn):active,
+.drop.drop-primary .list-drop > li > button:not(.btn):active,
+.drop.drop-primary .list-drop > li > a:not(.btn):focus,
+.drop.drop-primary .list-drop > li > button:not(.btn):focus,
+.drop.drop-primary .list-drop > li > a:not(.btn).active,
+.drop.drop-primary .list-drop > li > button:not(.btn).active {
   text-decoration: none !important;
 }
 .drop.drop-primary .list-drop > li > a:not(.btn):hover span,
-.drop.drop-primary .list-drop > li > button:not(.btn):hover span {
+.drop.drop-primary .list-drop > li > button:not(.btn):hover span,
+.drop.drop-primary .list-drop > li > a:not(.btn):active span,
+.drop.drop-primary .list-drop > li > button:not(.btn):active span,
+.drop.drop-primary .list-drop > li > a:not(.btn):focus span,
+.drop.drop-primary .list-drop > li > button:not(.btn):focus span,
+.drop.drop-primary .list-drop > li > a:not(.btn).active span,
+.drop.drop-primary .list-drop > li > button:not(.btn).active span {
   text-decoration: none !important;
 }
 .drop.drop-primary .list-drop > li > a:not(.btn):hover,
 .drop.drop-primary .list-drop > li > button:not(.btn):hover,
 .drop.drop-primary .list-drop > li > a:not(.btn):active,
 .drop.drop-primary .list-drop > li > button:not(.btn):active,
+.drop.drop-primary .list-drop > li > a:not(.btn):focus,
+.drop.drop-primary .list-drop > li > button:not(.btn):focus,
 .drop.drop-primary .list-drop > li > a:not(.btn).active,
 .drop.drop-primary .list-drop > li > button:not(.btn).active {
   background-color: #887ef2 !important;
@@ -4590,22 +4836,37 @@ a:hover,
 }
 .drop.drop-secondary .list-drop > li > a:not(.btn),
 .drop.drop-secondary .list-drop > li > button:not(.btn) {
+  text-decoration: none !important;
   border-color: #d4e7ef !important;
   background-color: #d4e7ef !important;
   color: rgba(52, 58, 64, 0.8) !important;
 }
 .drop.drop-secondary .list-drop > li > a:not(.btn):hover,
-.drop.drop-secondary .list-drop > li > button:not(.btn):hover {
+.drop.drop-secondary .list-drop > li > button:not(.btn):hover,
+.drop.drop-secondary .list-drop > li > a:not(.btn):active,
+.drop.drop-secondary .list-drop > li > button:not(.btn):active,
+.drop.drop-secondary .list-drop > li > a:not(.btn):focus,
+.drop.drop-secondary .list-drop > li > button:not(.btn):focus,
+.drop.drop-secondary .list-drop > li > a:not(.btn).active,
+.drop.drop-secondary .list-drop > li > button:not(.btn).active {
   text-decoration: none !important;
 }
 .drop.drop-secondary .list-drop > li > a:not(.btn):hover span,
-.drop.drop-secondary .list-drop > li > button:not(.btn):hover span {
+.drop.drop-secondary .list-drop > li > button:not(.btn):hover span,
+.drop.drop-secondary .list-drop > li > a:not(.btn):active span,
+.drop.drop-secondary .list-drop > li > button:not(.btn):active span,
+.drop.drop-secondary .list-drop > li > a:not(.btn):focus span,
+.drop.drop-secondary .list-drop > li > button:not(.btn):focus span,
+.drop.drop-secondary .list-drop > li > a:not(.btn).active span,
+.drop.drop-secondary .list-drop > li > button:not(.btn).active span {
   text-decoration: none !important;
 }
 .drop.drop-secondary .list-drop > li > a:not(.btn):hover,
 .drop.drop-secondary .list-drop > li > button:not(.btn):hover,
 .drop.drop-secondary .list-drop > li > a:not(.btn):active,
 .drop.drop-secondary .list-drop > li > button:not(.btn):active,
+.drop.drop-secondary .list-drop > li > a:not(.btn):focus,
+.drop.drop-secondary .list-drop > li > button:not(.btn):focus,
 .drop.drop-secondary .list-drop > li > a:not(.btn).active,
 .drop.drop-secondary .list-drop > li > button:not(.btn).active {
   background-color: #e7f1f6 !important;
@@ -4625,22 +4886,37 @@ a:hover,
 }
 .drop.drop-white .list-drop > li > a:not(.btn),
 .drop.drop-white .list-drop > li > button:not(.btn) {
+  text-decoration: none !important;
   border-color: transparent !important;
   background-color: transparent !important;
   color: #7367F0 !important;
 }
 .drop.drop-white .list-drop > li > a:not(.btn):hover,
-.drop.drop-white .list-drop > li > button:not(.btn):hover {
+.drop.drop-white .list-drop > li > button:not(.btn):hover,
+.drop.drop-white .list-drop > li > a:not(.btn):active,
+.drop.drop-white .list-drop > li > button:not(.btn):active,
+.drop.drop-white .list-drop > li > a:not(.btn):focus,
+.drop.drop-white .list-drop > li > button:not(.btn):focus,
+.drop.drop-white .list-drop > li > a:not(.btn).active,
+.drop.drop-white .list-drop > li > button:not(.btn).active {
   text-decoration: none !important;
 }
 .drop.drop-white .list-drop > li > a:not(.btn):hover span,
-.drop.drop-white .list-drop > li > button:not(.btn):hover span {
+.drop.drop-white .list-drop > li > button:not(.btn):hover span,
+.drop.drop-white .list-drop > li > a:not(.btn):active span,
+.drop.drop-white .list-drop > li > button:not(.btn):active span,
+.drop.drop-white .list-drop > li > a:not(.btn):focus span,
+.drop.drop-white .list-drop > li > button:not(.btn):focus span,
+.drop.drop-white .list-drop > li > a:not(.btn).active span,
+.drop.drop-white .list-drop > li > button:not(.btn).active span {
   text-decoration: none !important;
 }
 .drop.drop-white .list-drop > li > a:not(.btn):hover,
 .drop.drop-white .list-drop > li > button:not(.btn):hover,
 .drop.drop-white .list-drop > li > a:not(.btn):active,
 .drop.drop-white .list-drop > li > button:not(.btn):active,
+.drop.drop-white .list-drop > li > a:not(.btn):focus,
+.drop.drop-white .list-drop > li > button:not(.btn):focus,
 .drop.drop-white .list-drop > li > a:not(.btn).active,
 .drop.drop-white .list-drop > li > button:not(.btn).active {
   background-color: #887ef2 !important;
@@ -4698,18 +4974,26 @@ a:hover,
   color: #343a40;
 }
 .overlay.overlay-default .overlay-inner > .btn-close {
+  text-decoration: none;
   border-color: transparent;
   background-color: transparent;
   color: #7367F0;
 }
-.overlay.overlay-default .overlay-inner > .btn-close:hover {
+.overlay.overlay-default .overlay-inner > .btn-close:hover,
+.overlay.overlay-default .overlay-inner > .btn-close:active,
+.overlay.overlay-default .overlay-inner > .btn-close:focus,
+.overlay.overlay-default .overlay-inner > .btn-close.active {
   text-decoration: none;
 }
-.overlay.overlay-default .overlay-inner > .btn-close:hover span {
+.overlay.overlay-default .overlay-inner > .btn-close:hover span,
+.overlay.overlay-default .overlay-inner > .btn-close:active span,
+.overlay.overlay-default .overlay-inner > .btn-close:focus span,
+.overlay.overlay-default .overlay-inner > .btn-close.active span {
   text-decoration: none;
 }
 .overlay.overlay-default .overlay-inner > .btn-close:hover,
 .overlay.overlay-default .overlay-inner > .btn-close:active,
+.overlay.overlay-default .overlay-inner > .btn-close:focus,
 .overlay.overlay-default .overlay-inner > .btn-close.active {
   background-color: #887ef2;
   color: #fff;
@@ -4740,18 +5024,26 @@ a:hover,
   color: #fff !important;
 }
 .overlay.overlay-primary .overlay-inner > .btn-close {
+  text-decoration: none !important;
   border-color: #7367F0 !important;
   background-color: #7367F0 !important;
   color: rgba(255, 255, 255, 0.8) !important;
 }
-.overlay.overlay-primary .overlay-inner > .btn-close:hover {
+.overlay.overlay-primary .overlay-inner > .btn-close:hover,
+.overlay.overlay-primary .overlay-inner > .btn-close:active,
+.overlay.overlay-primary .overlay-inner > .btn-close:focus,
+.overlay.overlay-primary .overlay-inner > .btn-close.active {
   text-decoration: none !important;
 }
-.overlay.overlay-primary .overlay-inner > .btn-close:hover span {
+.overlay.overlay-primary .overlay-inner > .btn-close:hover span,
+.overlay.overlay-primary .overlay-inner > .btn-close:active span,
+.overlay.overlay-primary .overlay-inner > .btn-close:focus span,
+.overlay.overlay-primary .overlay-inner > .btn-close.active span {
   text-decoration: none !important;
 }
 .overlay.overlay-primary .overlay-inner > .btn-close:hover,
 .overlay.overlay-primary .overlay-inner > .btn-close:active,
+.overlay.overlay-primary .overlay-inner > .btn-close:focus,
 .overlay.overlay-primary .overlay-inner > .btn-close.active {
   background-color: #887ef2 !important;
   color: #fff !important;
@@ -4768,18 +5060,26 @@ a:hover,
   color: #343a40 !important;
 }
 .overlay.overlay-secondary .overlay-inner > .btn-close {
+  text-decoration: none !important;
   border-color: #d4e7ef !important;
   background-color: #d4e7ef !important;
   color: rgba(52, 58, 64, 0.8) !important;
 }
-.overlay.overlay-secondary .overlay-inner > .btn-close:hover {
+.overlay.overlay-secondary .overlay-inner > .btn-close:hover,
+.overlay.overlay-secondary .overlay-inner > .btn-close:active,
+.overlay.overlay-secondary .overlay-inner > .btn-close:focus,
+.overlay.overlay-secondary .overlay-inner > .btn-close.active {
   text-decoration: none !important;
 }
-.overlay.overlay-secondary .overlay-inner > .btn-close:hover span {
+.overlay.overlay-secondary .overlay-inner > .btn-close:hover span,
+.overlay.overlay-secondary .overlay-inner > .btn-close:active span,
+.overlay.overlay-secondary .overlay-inner > .btn-close:focus span,
+.overlay.overlay-secondary .overlay-inner > .btn-close.active span {
   text-decoration: none !important;
 }
 .overlay.overlay-secondary .overlay-inner > .btn-close:hover,
 .overlay.overlay-secondary .overlay-inner > .btn-close:active,
+.overlay.overlay-secondary .overlay-inner > .btn-close:focus,
 .overlay.overlay-secondary .overlay-inner > .btn-close.active {
   background-color: #e7f1f6 !important;
   color: #343a40 !important;
@@ -4796,18 +5096,26 @@ a:hover,
   color: #343a40 !important;
 }
 .overlay.overlay-white .overlay-inner > .btn-close {
+  text-decoration: none !important;
   border-color: transparent !important;
   background-color: transparent !important;
   color: #7367F0 !important;
 }
-.overlay.overlay-white .overlay-inner > .btn-close:hover {
+.overlay.overlay-white .overlay-inner > .btn-close:hover,
+.overlay.overlay-white .overlay-inner > .btn-close:active,
+.overlay.overlay-white .overlay-inner > .btn-close:focus,
+.overlay.overlay-white .overlay-inner > .btn-close.active {
   text-decoration: none !important;
 }
-.overlay.overlay-white .overlay-inner > .btn-close:hover span {
+.overlay.overlay-white .overlay-inner > .btn-close:hover span,
+.overlay.overlay-white .overlay-inner > .btn-close:active span,
+.overlay.overlay-white .overlay-inner > .btn-close:focus span,
+.overlay.overlay-white .overlay-inner > .btn-close.active span {
   text-decoration: none !important;
 }
 .overlay.overlay-white .overlay-inner > .btn-close:hover,
 .overlay.overlay-white .overlay-inner > .btn-close:active,
+.overlay.overlay-white .overlay-inner > .btn-close:focus,
 .overlay.overlay-white .overlay-inner > .btn-close.active {
   background-color: #887ef2 !important;
   color: #fff !important;
@@ -4975,7 +5283,16 @@ a:hover,
 }
 .alert.alert-success a:hover,
 .alert.alert-success .alink:hover,
-.alert.alert-success .btn-link:hover {
+.alert.alert-success .btn-link:hover,
+.alert.alert-success a:active,
+.alert.alert-success .alink:active,
+.alert.alert-success .btn-link:active,
+.alert.alert-success a:focus,
+.alert.alert-success .alink:focus,
+.alert.alert-success .btn-link:focus,
+.alert.alert-success a.active,
+.alert.alert-success .alink.active,
+.alert.alert-success .btn-link.active {
   color: #f2f2f2;
 }
 .alert.alert-notice {
@@ -4990,7 +5307,16 @@ a:hover,
 }
 .alert.alert-notice a:hover,
 .alert.alert-notice .alink:hover,
-.alert.alert-notice .btn-link:hover {
+.alert.alert-notice .btn-link:hover,
+.alert.alert-notice a:active,
+.alert.alert-notice .alink:active,
+.alert.alert-notice .btn-link:active,
+.alert.alert-notice a:focus,
+.alert.alert-notice .alink:focus,
+.alert.alert-notice .btn-link:focus,
+.alert.alert-notice a.active,
+.alert.alert-notice .alink.active,
+.alert.alert-notice .btn-link.active {
   color: #f2f2f2;
 }
 .alert.alert-warning {
@@ -5005,7 +5331,16 @@ a:hover,
 }
 .alert.alert-warning a:hover,
 .alert.alert-warning .alink:hover,
-.alert.alert-warning .btn-link:hover {
+.alert.alert-warning .btn-link:hover,
+.alert.alert-warning a:active,
+.alert.alert-warning .alink:active,
+.alert.alert-warning .btn-link:active,
+.alert.alert-warning a:focus,
+.alert.alert-warning .alink:focus,
+.alert.alert-warning .btn-link:focus,
+.alert.alert-warning a.active,
+.alert.alert-warning .alink.active,
+.alert.alert-warning .btn-link.active {
   color: #f2f2f2;
 }
 .alert.alert-error {
@@ -5020,7 +5355,16 @@ a:hover,
 }
 .alert.alert-error a:hover,
 .alert.alert-error .alink:hover,
-.alert.alert-error .btn-link:hover {
+.alert.alert-error .btn-link:hover,
+.alert.alert-error a:active,
+.alert.alert-error .alink:active,
+.alert.alert-error .btn-link:active,
+.alert.alert-error a:focus,
+.alert.alert-error .alink:focus,
+.alert.alert-error .btn-link:focus,
+.alert.alert-error a.active,
+.alert.alert-error .alink.active,
+.alert.alert-error .btn-link.active {
   color: #f2f2f2;
 }
 /* USAGE:
@@ -5440,6 +5784,7 @@ opacity: 0;
   background-color: #7367F0;
 }
 .logo {
+  text-decoration: none;
   display: inline-block;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -5452,10 +5797,16 @@ opacity: 0;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
-.logo:hover {
+.logo:hover,
+.logo:active,
+.logo:focus,
+.logo.active {
   text-decoration: none;
 }
-.logo:hover span {
+.logo:hover span,
+.logo:active span,
+.logo:focus span,
+.logo.active span {
   text-decoration: none;
 }
 .logo:hover,
@@ -5488,6 +5839,7 @@ opacity: 0;
 }
 .site-header-top .btn-menu:hover,
 .site-header-top .btn-menu:active,
+.site-header-top .btn-menu:focus,
 .site-header-top .btn-menu.active {
   border: 0 !important;
   background: transparent !important;
@@ -5509,7 +5861,16 @@ opacity: 0;
 }
 .site-hero .site-hero-text a:hover,
 .site-hero .site-hero-text .alink:hover,
-.site-hero .site-hero-text .btn-link:hover {
+.site-hero .site-hero-text .btn-link:hover,
+.site-hero .site-hero-text a:active,
+.site-hero .site-hero-text .alink:active,
+.site-hero .site-hero-text .btn-link:active,
+.site-hero .site-hero-text a:focus,
+.site-hero .site-hero-text .alink:focus,
+.site-hero .site-hero-text .btn-link:focus,
+.site-hero .site-hero-text a.active,
+.site-hero .site-hero-text .alink.active,
+.site-hero .site-hero-text .btn-link.active {
   color: #f2f2f2;
 }
 .site-hero > .container > .flex {
@@ -5553,6 +5914,7 @@ opacity: 0;
 }
 .site-breadcrumbs .btn:hover,
 .site-breadcrumbs .btn:active,
+.site-breadcrumbs .btn:focus,
 .site-breadcrumbs .btn.active {
   border: 0 !important;
   background: transparent !important;
@@ -5804,6 +6166,7 @@ opacity: 0;
 }
 .site-footer-top .site-footer-top-links .btn:hover,
 .site-footer-top .site-footer-top-links .btn:active,
+.site-footer-top .site-footer-top-links .btn:focus,
 .site-footer-top .site-footer-top-links .btn.active {
   border: 0 !important;
   background: transparent !important;
@@ -5861,6 +6224,7 @@ opacity: 0;
   border: 0 !important;
   background-color: transparent !important;
   box-shadow: none !important;
+  text-decoration: none;
   padding: .6em 1.2em;
   font-size: 1.4rem;
   padding-left: .8rem;
@@ -5872,19 +6236,34 @@ opacity: 0;
   font-weight: 300 !important;
   width: 100%;
 }
-.site-aside-text .btn:hover {
+.site-aside-text .btn:hover,
+.site-aside-text .btn:active,
+.site-aside-text .btn:focus,
+.site-aside-text .btn.active {
   text-decoration: underline;
 }
-.site-aside-text .btn:hover span {
+.site-aside-text .btn:hover span,
+.site-aside-text .btn:active span,
+.site-aside-text .btn:focus span,
+.site-aside-text .btn.active span {
   text-decoration: underline;
 }
-.site-aside-text .btn:hover {
+.site-aside-text .btn:hover,
+.site-aside-text .btn:active,
+.site-aside-text .btn:focus,
+.site-aside-text .btn.active {
   color: #5e50ee;
 }
-.site-aside-text .btn:hover {
+.site-aside-text .btn:hover,
+.site-aside-text .btn:active,
+.site-aside-text .btn:focus,
+.site-aside-text .btn.active {
   text-decoration: none;
 }
-.site-aside-text .btn:hover span {
+.site-aside-text .btn:hover span,
+.site-aside-text .btn:active span,
+.site-aside-text .btn:focus span,
+.site-aside-text .btn.active span {
   text-decoration: none;
 }
 .site-aside-text .btn:hover,
@@ -5944,14 +6323,21 @@ opacity: 0;
   width: 100%;
 }
 .make-line .line-container .line {
+  text-decoration: none;
   display: inline-block;
   padding-right: 15px;
   background-color: #fff;
 }
-.make-line .line-container .line:hover {
+.make-line .line-container .line:hover,
+.make-line .line-container .line:active,
+.make-line .line-container .line:focus,
+.make-line .line-container .line.active {
   text-decoration: none;
 }
-.make-line .line-container .line:hover span {
+.make-line .line-container .line:hover span,
+.make-line .line-container .line:active span,
+.make-line .line-container .line:focus span,
+.make-line .line-container .line.active span {
   text-decoration: none;
 }
 .site-menu .make-line .line-container .line {
@@ -6000,12 +6386,19 @@ opacity: 0;
   width: 100%;
 }
 .make-anchor a {
+  text-decoration: none;
   color: #343a40 !important;
 }
-.make-anchor a:hover {
+.make-anchor a:hover,
+.make-anchor a:active,
+.make-anchor a:focus,
+.make-anchor a.active {
   text-decoration: none;
 }
-.make-anchor a:hover span {
+.make-anchor a:hover span,
+.make-anchor a:active span,
+.make-anchor a:focus span,
+.make-anchor a.active span {
   text-decoration: none;
 }
 .make-anchor .site-article-anchor {
