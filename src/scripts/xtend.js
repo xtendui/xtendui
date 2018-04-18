@@ -297,6 +297,7 @@ export class Xt {
         self.specialCollapseOn(el);
         self.specialBackdrop(el);
         self.specialCloseOn(el, fElements.single);
+        self.specialFixedOn();
       }
     }
   }
@@ -347,6 +348,7 @@ export class Xt {
       if (type === 'targets') {
         self.specialCollapseOff(el);
         self.specialCloseOff(el);
+        self.specialFixedOff();
       }
     }
   }
@@ -558,6 +560,89 @@ export class Xt {
   }
 
   /**
+   * add fixed class on activation
+   * @param {Element} element
+   */
+  specialFixedOn() {
+    let options = this.options;
+    if (options.scrollbar) {
+      var width = XtUtil.scrollbarWidth();
+      // scroll
+      var container = document.documentElement;
+      container.style.paddingRight = width + 'px';
+      container.classList.add('xt-scrollbar');
+      // fixed
+      var elements = document.documentElement.querySelectorAll('.xt-fixed');
+      for (let element of elements) {
+        var style = window.getComputedStyle(element);
+        var padding = style.paddingRight;
+        var str = 'calc(' + padding + ' + ' + width + 'px)';
+        element.classList.add('no-transition');
+        element.style.paddingRight = str;
+        XtUtil.requestAnimationFrame.call(window, function () {
+          element.classList.remove('no-transition');
+        });
+      }
+      // backdrop
+      var elements = document.documentElement.querySelectorAll('.xt-backdrop');
+      for (let element of elements) {
+        element.style.right = width + 'px';
+      }
+    }
+  }
+
+  /**
+   * add fixed class on activation
+   * @param {Element} element
+   */
+  specialFixedOff() {
+    let options = this.options;
+    if (options.scrollbar) {
+      // scroll
+      var container = document.documentElement;
+      container.style.paddingRight = '';
+      container.classList.remove('xt-scrollbar');
+      // fixed
+      var elements = document.documentElement.querySelectorAll('.xt-fixed');
+      for (let element of elements) {
+        element.classList.add('no-transition');
+        element.style.paddingRight = '';
+        XtUtil.requestAnimationFrame.call(window, function () {
+          element.classList.remove('no-transition');
+        });
+      }
+      // backdrop
+      var elements = document.documentElement.querySelectorAll('.xt-backdrop');
+      for (let element of elements) {
+        element.style.right = '';
+      }
+    }
+  }
+
+  /*
+
+  Xt.prototype.onFixed = function($el) {
+    var object = this;
+    var settings = this.settings;
+    var group = this.group;
+    var $group = $(this.group);
+    // add scrollbar padding
+    var w = object.scrollbarWidth($el);
+    w = $el.css('overflow-y') === 'hidden' ? 0 : w;
+    $el.addClass('xt-fixed').css('right', w).css('padding-right', w);
+  };
+
+  Xt.prototype.offFixed = function($el) {
+    var object = this;
+    var settings = this.settings;
+    var group = this.group;
+    var $group = $(this.group);
+    // remove scrollbar padding
+    $el.removeClass('xt-fixed').css('right', 0).css('padding-right', 0);
+  };
+  */
+
+  /**
    * backdrop append to element
    * @param {Element} element
    */
@@ -755,7 +840,8 @@ XtOverlay.defaults = {
   max: 1,
   appendTo: 'body',
   backdrop: ':scope > .overlay',
-  closeInside: ':scope > .overlay > .xt-backdrop, :scope > .overlay > .overlay-inner > .btn-close'
+  closeInside: ':scope > .overlay > .xt-backdrop, :scope > .overlay > .overlay-inner > .btn-close',
+  scrollbar: true
 };
 
 //////////////////////
@@ -872,6 +958,7 @@ export class XtScroll extends Xt {
           let fElements = self.getElements(element);
           for (let el of fElements.all) {
             el.classList.remove('scroll-off-top', 'scroll-off-bottom');
+            el.classList.add('xt-fixed');
             if (self.scrollTop > scrollTop) {
               el.classList.remove('scroll-on-top');
               el.classList.add('scroll-on-bottom');
@@ -888,7 +975,7 @@ export class XtScroll extends Xt {
           // direction
           let fElements = self.getElements(element);
           for (let el of fElements.all) {
-            el.classList.remove('scroll-on-top', 'scroll-on-bottom');
+            el.classList.remove('scroll-on-top', 'scroll-on-bottom', 'xt-fixed');
             if (self.scrollTop > scrollTop) {
               el.classList.remove('scroll-off-top');
               el.classList.add('scroll-off-bottom');
@@ -914,26 +1001,3 @@ XtScroll.defaults = {
   min: 0,
   max: Infinity
 };
-
-/*
-
-Xt.prototype.onFixed = function($el) {
-  var object = this;
-  var settings = this.settings;
-  var group = this.group;
-  var $group = $(this.group);
-  // add scrollbar padding
-  var w = object.scrollbarWidth($el);
-  w = $el.css('overflow-y') === 'hidden' ? 0 : w;
-  $el.addClass('xt-fixed').css('right', w).css('padding-right', w);
-};
-
-Xt.prototype.offFixed = function($el) {
-  var object = this;
-  var settings = this.settings;
-  var group = this.group;
-  var $group = $(this.group);
-  // remove scrollbar padding
-  $el.removeClass('xt-fixed').css('right', 0).css('padding-right', 0);
-};
-*/

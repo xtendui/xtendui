@@ -945,10 +945,10 @@ transition-delay: 150ms; // default delay @start + @child * @increment
 .xt-container {
   width: 100%;
 }
-html.xt-fixed body {
+html.xt-scrollbar body {
   overflow-y: hidden;
 }
-html.xt-fixed .overlay {
+html.xt-scrollbar .overlay-outer {
   overflow-y: scroll;
 }
 /**
@@ -4679,72 +4679,6 @@ a:hover,
   font-size: 1.5rem;
   padding: .6em .8em;
 }
-.overlay-outer {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.overlay-outer.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.overlay-outer .overlay {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.overlay-outer .overlay.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.overlay-outer .overlay-inner {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.overlay-outer .overlay-inner.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.overlay-outer .overlay-inner > .btn-close {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.overlay-outer .overlay-inner > .btn-close.out {
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.overlay-outer.active .overlay {
-  opacity: 1;
-  animation-name: anim-opacity-in;
-}
-.overlay-outer.active .overlay-inner {
-  opacity: 1;
-  animation-name: anim-vertical-in;
-}
-.overlay-outer.active .overlay-inner > .btn-close {
-  opacity: 1;
-  animation-name: anim-vertical-in;
-  animation-fill-mode: forwards;
-  opacity: 0;
-  animation-delay: 300ms;
-}
-.overlay-outer.active .xt-backdrop {
-  opacity: 0.6;
-  animation-name: anim-backdrop-in;
-}
-.overlay-outer.out .overlay {
-  opacity: 0;
-  animation-name: anim-opacity-out;
-}
-.overlay-outer.out .overlay-inner {
-  opacity: 0;
-  animation-name: anim-vertical-out;
-}
-.overlay-outer.out .overlay-inner > .btn-close {
-  opacity: 0;
-}
-.overlay-outer.out .xt-backdrop {
-  opacity: 0;
-  animation-name: anim-backdrop-out;
-}
 .overlay.overlay-default .overlay-inner,
 .overlay.overlay-default.overlay-screen {
   border-color: #fff;
@@ -4879,6 +4813,72 @@ a:hover,
 }
 .overlay.overlay-noborder .overlay-inner {
   border: 0 !important;
+}
+.overlay-outer {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.overlay-outer.out {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.overlay-outer .overlay {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.overlay-outer .overlay.out {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.overlay-outer .overlay-inner {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.overlay-outer .overlay-inner.out {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.overlay-outer .overlay-inner > .btn-close {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.overlay-outer .overlay-inner > .btn-close.out {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.overlay-outer.active .overlay {
+  opacity: 1;
+  animation-name: anim-opacity-in;
+}
+.overlay-outer.active .overlay-inner {
+  opacity: 1;
+  animation-name: anim-vertical-in;
+}
+.overlay-outer.active .overlay-inner > .btn-close {
+  opacity: 1;
+  animation-name: anim-vertical-in;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  animation-delay: 300ms;
+}
+.overlay-outer.active .xt-backdrop {
+  opacity: 0.6;
+  animation-name: anim-backdrop-in;
+}
+.overlay-outer.out .overlay {
+  opacity: 0;
+  animation-name: anim-opacity-out;
+}
+.overlay-outer.out .overlay-inner {
+  opacity: 0;
+  animation-name: anim-vertical-out;
+}
+.overlay-outer.out .overlay-inner > .btn-close {
+  opacity: 0;
+}
+.overlay-outer.out .xt-backdrop {
+  opacity: 0;
+  animation-name: anim-backdrop-out;
 }
 .loader-mask {
   background-color: rgba(255, 255, 255, 0.6);

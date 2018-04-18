@@ -70,6 +70,30 @@ XtUtil.cancelAnimationFrame = function () {
 }();
 
 /**
+ * Get scrollbar width of document
+ * @returns {String} Unique id
+ */
+XtUtil.scrollbarWidth = function () {
+  // add outer
+  var outer = document.createElement('div');
+  outer.style.visibility = 'hidden';
+  outer.style.width = '100px';
+  outer.style.msOverflowStyle = 'scrollbar'; // needed for WinJS apps
+  document.body.appendChild(outer);
+  var widthNoScroll = outer.offsetWidth;
+  // force scrollbars
+  outer.style.overflow = 'scroll';
+  // add inner
+  var inner = document.createElement('div');
+  inner.style.width = '100%';
+  outer.appendChild(inner);
+  var widthWithScroll = inner.offsetWidth;
+  // remove
+  outer.parentNode.removeChild(outer);
+  return widthNoScroll - widthWithScroll;
+};
+
+/**
  * Get unique id
  * @returns {String} Unique id
  */

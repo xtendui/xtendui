@@ -483,52 +483,6 @@ a, .alink {
   .overlay-size(small); // size
 }
 
-// animations
-
-.overlay-outer {
-  .animation-default(); // needed for .out animation timing
-  .overlay {
-    .animation-default();
-  }
-  .overlay-inner {
-    .animation-default();
-    > .btn-close {
-      .animation-default();
-    }
-  }
-  &.active {
-    .overlay {
-      .anim-opacity.active();
-    }
-    .overlay-inner {
-      .anim-vertical.active();
-      > .btn-close {
-        .anim-vertical.active();
-        animation-fill-mode: forwards;
-        opacity: 0;
-        animation-delay: @time-medium;
-      }
-    }
-    .xt-backdrop {
-      .anim-backdrop.active();
-    }
-  }
-  &.out {
-    .overlay {
-      .anim-opacity.out();
-    }
-    .overlay-inner {
-      .anim-vertical.out();
-      > .btn-close {
-        opacity: 0;
-      }
-    }
-    .xt-backdrop {
-      .anim-backdrop.out();
-    }
-  }
-}
-
 // default
 
 .overlay-default() {
@@ -627,6 +581,52 @@ a, .alink {
 
 .overlay.overlay-noborder {
   .overlay-noborder() !important;
+}
+
+// animations
+
+.overlay-outer {
+  .animation-default(); // needed for .out animation timing
+  .overlay {
+    .animation-default();
+  }
+  .overlay-inner {
+    .animation-default();
+    > .btn-close {
+      .animation-default();
+    }
+  }
+  &.active {
+    .overlay {
+      .anim-opacity.active();
+    }
+    .overlay-inner {
+      .anim-vertical.active();
+      > .btn-close {
+        .anim-vertical.active();
+        animation-fill-mode: forwards;
+        opacity: 0;
+        animation-delay: @time-medium;
+      }
+    }
+    .xt-backdrop {
+      .anim-backdrop.active();
+    }
+  }
+  &.out {
+    .overlay {
+      .anim-opacity.out();
+    }
+    .overlay-inner {
+      .anim-vertical.out();
+      > .btn-close {
+        opacity: 0;
+      }
+    }
+    .xt-backdrop {
+      .anim-backdrop.out();
+    }
+  }
 }
 
 //////////////////////
