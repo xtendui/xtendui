@@ -104,7 +104,7 @@
 
 .table-responsive {
   @media @max-sm {
-    border: @table-border-width solid darken(@grey-250, 5%);
+    border: @table-border-width solid darken(@grey-250, @perc-xs);
     border-bottom: 0;
     thead, th {
       display: none;
@@ -149,7 +149,7 @@
     tr,
     tr th,
     tr td {
-      border-color: darken(@grey-250, 5%) !important;
+      border-color: darken(@grey-250, @perc-xs) !important;
     }
   }
 }

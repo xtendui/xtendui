@@ -225,7 +225,7 @@
 // variant
 
 .box-primary() {
-  border-color: darken(@primary, 5%);
+  border-color: darken(@primary, @perc-xs);
   background-color: @primary;
   color: @text-inverse;
   > .btn-close {
@@ -238,7 +238,7 @@
 }
 
 .box-secondary() {
-  border-color: darken(@secondary, 5%);
+  border-color: darken(@secondary, @perc-xs);
   background-color: @secondary;
   color: @text;
   > .btn-close {
@@ -251,7 +251,7 @@
 }
 
 .box-white() {
-  border-color: darken(@white, 5%);
+  border-color: darken(@white, @perc-xs);
   background-color: @white;
   color: @text;
   > .btn-close {
@@ -264,7 +264,7 @@
 }
 
 .box-light() {
-  border-color: darken(@grey-250, 5%);
+  border-color: darken(@grey-250, @perc-xs);
   background-color: @grey-250;
   color: @text;
 }

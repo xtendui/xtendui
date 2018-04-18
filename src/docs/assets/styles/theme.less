@@ -72,7 +72,7 @@
   display: inline-block;
   .margin(y, small);
   .font-sans-light();
-  color: fade(@white, 75%);
+  color: fade(@white, @perc-xl);
   font-size: 3rem;
   text-decoration: none !important;
   .transition-default();
@@ -81,14 +81,14 @@
     color: @white;
   }
   &:focus {
-    color: fade(@white, 75%);
+    color: fade(@white, @perc-xl);
   }
 }
 
 // .site-header-top
 
 .site-header-top {
-  background-color: fade(@primary, 80%);
+  background-color: fade(@primary, @perc-xl);
   color: @white;
   .site-menu & {
     position: absolute;
@@ -128,7 +128,7 @@
     }
   }
   p {
-    color: fade(@white, 75%);
+    color: fade(@white, @perc-xl);
   }
 }
 
@@ -230,7 +230,7 @@
       position: absolute;
       height: @button-menu-pixels;
       width: 100%;
-      background-color: fade(@white, 75%);
+      background-color: fade(@white, @perc-xl);
       border-radius: 0;
       left: 0;
       transform: rotate(0deg);
@@ -304,7 +304,7 @@
         background-color: @primary;
       }
       .line:after {
-        background-color: fade(@white, 75%);
+        background-color: fade(@white, @perc-xl);
       }
     }
     opacity: .75;
@@ -392,7 +392,7 @@
 .site-footer-bottom {
   .padding(top, small, sm);
   .font-small();
-  color: fade(@white, 75%);
+  color: fade(@white, @perc-xl);
   a {
     color: @white;
     &:hover {
@@ -431,7 +431,12 @@
     .btn-big();
     .btn-narrow();
     .btn-short();
+    .font-sans-light() !important;
     width: 100%;
+    text-decoration: none !important;
+    &:hover, &:active, &.active {
+      color: @text !important;
+    }
   }
   > .btn:first-child {
     .margin(bottom, tiny);
@@ -441,9 +446,8 @@
     color: @text;
   }
   .btn-site-aside-sub {
-    color: fade(@text, 50%) !important;
+    color: fade(@text, @perc-lg);
     &.active {
-      color: @text !important;
       & + .site-aside-subsub {
         display: block;
       }
@@ -454,10 +458,7 @@
     .btn-site-aside-subsub {
       .btn-small();
       .btn-short();
-      color: fade(@text, 50%) !important;
-      &.active {
-        color: @text !important;
-      }
+      color: fade(@text, @perc-lg);
     }
   }
 }
@@ -485,7 +486,7 @@
       left: 0;
       width: 100%;
       height: 1px;
-      background-color: fade(@primary, 80%);
+      background-color: fade(@primary, @perc-xl);
     }
   }
   // animations
@@ -588,7 +589,7 @@ code {
   .demo-text &,
   .alert &,
   .table-stripe tbody tr:nth-of-type(odd) & {
-    background-color: darken(@grey-250, 5%);
+    background-color: darken(@grey-250, @perc-xs);
   }
 }
 
@@ -680,12 +681,12 @@ code {
       width: 100%;
       height: 22px;
       min-height: 100%;
-      border: 1px solid lighten(@primary, 20%);
-      background-color: lighten(@primary, 25%);
+      border: 1px solid lighten(@primary, @perc-md);
+      background-color: lighten(@primary, @perc-md);
       content: attr(data-index);
       .font-sans-semibold();
       font-size: 12px;
-      color: lighten(@primary, 5%);
+      color: lighten(@primary, @perc-xs);
       line-height: 1.8;
       text-align: center;
     }

@@ -2836,7 +2836,7 @@ html.xt-scrollbar .overlay-outer {
 .list.list-default > li > button:not(.btn) {
   border-color: transparent;
   background-color: transparent;
-  color: #626c76;
+  color: rgba(52, 58, 64, 0.8);
 }
 .list.list-default > li > a:not(.btn):hover,
 .list.list-default > li > button:not(.btn):hover {
@@ -3009,7 +3009,7 @@ html.xt-scrollbar .overlay-outer {
 .list.list-secondary-empty > li > button:not(.btn) {
   border-color: transparent !important;
   background-color: transparent !important;
-  color: #626c76 !important;
+  color: rgba(52, 58, 64, 0.8) !important;
 }
 .list.list-secondary-empty > li > a:not(.btn):hover,
 .list.list-secondary-empty > li > button:not(.btn):hover {
@@ -3562,10 +3562,16 @@ h3,
 }
 h4,
 .h4 {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
   font-size: 2rem;
 }
 h5,
 .h5 {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
   font-size: 1.7rem;
 }
 h6,
@@ -3960,12 +3966,13 @@ fieldset:last-child {
 legend {
   margin-top: 4rem;
   margin-bottom: 2rem;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
-  font-style: normal;
   line-height: 1.2;
   letter-spacing: 0;
   text-transform: none;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
   font-size: 2rem;
 }
 legend:first-child {
@@ -4272,7 +4279,7 @@ a:hover,
 .btn.btn-secondary-empty {
   border-color: transparent !important;
   background-color: transparent !important;
-  color: #626c76 !important;
+  color: rgba(52, 58, 64, 0.8) !important;
 }
 .btn.btn-secondary-empty:hover {
   text-decoration: none !important;
@@ -4885,7 +4892,7 @@ a:hover,
   animation-name: anim-backdrop-out;
 }
 .loader-mask {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.5);
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
@@ -4913,9 +4920,10 @@ a:hover,
   will-change: transform;
 }
 .xt-backdrop {
-  background-color: #02010a;
+  background-color: #000000;
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  opacity: 0.6;
 }
 .xt-backdrop.out {
   animation-duration: 300ms;
@@ -5445,7 +5453,7 @@ opacity: 1;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 3rem;
   text-decoration: none !important;
   transition-property: all;
@@ -5463,7 +5471,7 @@ opacity: 1;
   color: #fff;
 }
 .logo:focus {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.8);
 }
 .site-header-top {
   background-color: rgba(115, 103, 240, 0.8);
@@ -5523,7 +5531,7 @@ opacity: 1;
   }
 }
 .site-hero p {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.8);
 }
 .site-breadcrumbs {
   cursor: default;
@@ -5649,7 +5657,7 @@ opacity: 1;
   position: absolute;
   height: 1px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 0;
   left: 0;
   transform: rotate(0deg);
@@ -5717,7 +5725,7 @@ opacity: 1;
   background-color: #7367F0;
 }
 .site-menu .site-menu-content .btn .line-container .line:after {
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .site-menu .site-menu-content .btn:hover,
 .site-menu .site-menu-content .btn:active,
@@ -5839,7 +5847,7 @@ opacity: 1;
 }
 .site-footer-bottom {
   font-size: 1.3rem;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.8);
 }
 @media (min-width: 768px ) {
   .site-footer-bottom {
@@ -5892,7 +5900,11 @@ opacity: 1;
   padding-right: .8rem;
   padding-top: .3em;
   padding-bottom: .3em;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  font-style: normal !important;
+  font-weight: 300 !important;
   width: 100%;
+  text-decoration: none !important;
 }
 .site-aside-text .btn:hover {
   text-decoration: underline;
@@ -5903,18 +5915,24 @@ opacity: 1;
 .site-aside-text .btn:hover {
   color: #5e50ee;
 }
+.site-aside-text .btn:hover,
+.site-aside-text .btn:active,
+.site-aside-text .btn.active {
+  color: #343a40 !important;
+}
 .site-aside-text > .btn:first-child {
   margin-bottom: 0.5rem;
 }
 .site-aside-text .site-aside-title {
   margin-top: 4rem;
   margin-bottom: 2rem;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
-  font-style: normal;
   line-height: 1.2;
   letter-spacing: 0;
   text-transform: none;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
   font-size: 2rem;
   color: #343a40;
 }
@@ -5928,10 +5946,7 @@ opacity: 1;
   margin-top: 2rem;
 }
 .site-aside-text .btn-site-aside-sub {
-  color: rgba(52, 58, 64, 0.5) !important;
-}
-.site-aside-text .btn-site-aside-sub.active {
-  color: #343a40 !important;
+  color: rgba(52, 58, 64, 0.5);
 }
 .site-aside-text .btn-site-aside-sub.active + .site-aside-subsub {
   display: block;
@@ -5944,10 +5959,7 @@ opacity: 1;
   font-size: 1.2rem;
   padding-top: .3em;
   padding-bottom: .3em;
-  color: rgba(52, 58, 64, 0.5) !important;
-}
-.site-aside-text .site-aside-subsub .btn-site-aside-subsub.active {
-  color: #343a40 !important;
+  color: rgba(52, 58, 64, 0.5);
 }
 .make-line {
   position: relative;
@@ -6225,7 +6237,7 @@ h2 .site-article-anchor {
   width: 100%;
   height: 22px;
   min-height: 100%;
-  border: 1px solid #c9c4f9;
+  border: 1px solid #dedbfb;
   background-color: #dedbfb;
   content: attr(data-index);
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -6245,7 +6257,7 @@ h2 .site-article-anchor {
   width: 100%;
   height: 22px;
   min-height: 100%;
-  border: 1px solid #c9c4f9;
+  border: 1px solid #dedbfb;
   background-color: #dedbfb;
   content: attr(data-index);
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;

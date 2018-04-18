@@ -6,7 +6,7 @@ a, .alink {
   .link-underline();
   color: @primary;
   &:hover {
-    color: darken(@primary, 5%);
+    color: darken(@primary, @perc-xs);
   }
 }
 
@@ -14,7 +14,7 @@ a, .alink {
   .link-underline();
   color: @grey-500;
   &:hover {
-    color: darken(@primary, 5%);
+    color: darken(@primary, @perc-xs);
   }
 }
 
@@ -25,7 +25,7 @@ a, .alink {
     color: @white;
     text-decoration: underline;
     &:hover {
-      color: darken(@white, 5%);
+      color: darken(@white, @perc-xs);
     }
   }
 }
@@ -76,14 +76,14 @@ a, .alink {
   .link-no-underline();
   border-color: @primary;
   background-color: @primary;
-  color: fade(@text-inverse, 80%);
+  color: fade(@text-inverse, @perc-xl);
   &:hover, &:active, &.active {
-    background-color: lighten(@primary, 5%);
+    background-color: lighten(@primary, @perc-xs);
     color: @text-inverse;
   }
   &:active, &.active {
     border-color: @primary;
-    box-shadow: 0 3px 10px 1px fade(@black, 15%);
+    box-shadow: 0 3px 10px 1px fade(@black, @perc-sm);
   }
 }
 
@@ -97,12 +97,12 @@ a, .alink {
   background-color: transparent;
   color: @primary;
   &:hover, &:active, &.active {
-    background-color: lighten(@primary, 5%);
+    background-color: lighten(@primary, @perc-xs);
     color: @text-inverse;
   }
   &:active, &.active {
     border-color: @primary;
-    box-shadow: 0 3px 10px 1px fade(@black, 15%);
+    box-shadow: 0 3px 10px 1px fade(@black, @perc-sm);
   }
 }
 
@@ -114,14 +114,14 @@ a, .alink {
   .link-no-underline();
   border-color: @secondary;
   background-color: @secondary;
-  color: fade(@text, 80%);
+  color: fade(@text, @perc-xl);
   &:hover, &:active, &.active {
-    background-color: lighten(@secondary, 5%);
+    background-color: lighten(@secondary, @perc-xs);
     color: @text;
   }
   &:active, &.active {
     border-color: @secondary;
-    box-shadow: 0 3px 10px 1px fade(@black, 15%);
+    box-shadow: 0 3px 10px 1px fade(@black, @perc-sm);
   }
 }
 
@@ -133,14 +133,14 @@ a, .alink {
   .link-no-underline();
   border-color: transparent;
   background-color: transparent;
-  color: @grey-500;
+  color: fade(@text, @perc-xl);
   &:hover, &:active, &.active {
-    background-color: lighten(@secondary, 5%);
-    color: @grey-750;
+    background-color: lighten(@secondary, @perc-xs);
+    color: @text;
   }
   &:active, &.active {
     border-color: @secondary;
-    box-shadow: 0 3px 10px 1px fade(@black, 15%);
+    box-shadow: 0 3px 10px 1px fade(@black, @perc-sm);
   }
 }
 
@@ -341,7 +341,7 @@ a, .alink {
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
-    box-shadow: 0 3px 10px 1px fade(@black, 15%);
+    box-shadow: 0 3px 10px 1px fade(@black, @perc-sm);
   }
   // options
   .drop-left(); // position
@@ -364,7 +364,7 @@ a, .alink {
 
 .drop-primary() {
   .drop-inner {
-    border-color: darken(@primary, 5%);
+    border-color: darken(@primary, @perc-xs);
     background-color: @primary;
     color: @text-inverse;
   }
@@ -379,7 +379,7 @@ a, .alink {
 
 .drop-secondary() {
   .drop-inner {
-    border-color: darken(@secondary, 5%);
+    border-color: darken(@secondary, @perc-xs);
     background-color: @secondary;
     color: @text;
   }
@@ -394,7 +394,7 @@ a, .alink {
 
 .drop-white() {
   .drop-inner {
-    border-color: darken(@white, 5%);
+    border-color: darken(@white, @perc-xs);
     background-color: @white;
     color: @text;
   }
@@ -468,7 +468,7 @@ a, .alink {
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
-    box-shadow: 0 3px 10px 1px fade(@black, 15%);
+    box-shadow: 0 3px 10px 1px fade(@black, @perc-sm);
     // .btn-close
     > .btn-close {
       position: absolute;
@@ -644,7 +644,7 @@ a, .alink {
 
 .loader-mask {
   // styles
-  background-color: fade(@white, 60%);
+  background-color: fade(@white, @perc-lg);
   // animations
   .anim-vertical();
   .anim-vertical.active();
@@ -669,7 +669,8 @@ a, .alink {
 
 .xt-backdrop {
   // styles
-  background-color: darken(@primary, 65%);
+  background-color: darken(@primary, @perc-xl);
   // animations
   .anim-backdrop();
+  opacity: @backdrop-opacity;
 }
