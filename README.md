@@ -28,10 +28,26 @@ cp -r vendor/minimit/xtend-library/dist/ xtend-library/
 
 After in `xtend.less` put the right path to the `@import` of core and theme.
 
-<!--
+# Compilation
+
+We use gulp to compile and watch files. **If you want to recompile the library**:
+
+* Install required npm packages with ```npm install```
+* Use ```npm run build``` or ```npm run watch```
+
+# Documentation
+
+We use jekyll to serve the docs. **If you want to serve the docs locally**:
+
+* You need to [install jekyll](https://jekyllrb.com/docs/installation/) on your local machine
+
+* Use ```npm run serve```, docs will be served to ```http://127.0.0.1:4000/```
+
 # Acknowledgements
 
-Icons by [feather icons](https://github.com/feathericons/feather).
+* Documentation with [jekyll](https://jekyllrb.com/).
+<!--
+* Icons by [feather icons](https://github.com/feathericons/feather).
 -->
 
 # Copyright
