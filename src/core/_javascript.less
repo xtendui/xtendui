@@ -82,16 +82,16 @@ html.xt-scrollbar {
 //////////////////////
 
 /**
- * .xt-scroll()
+ * .xt-sticky()
  * @param {String} @mode Starting mode be 'absolute' or 'fixed'
  * @param {String} @position Can be 'top' or 'bottom'
  * @param {Value} @pos Position value
  */
-.xt-scroll(@mode:none, @position:'top', @pos:0) {
-  .show-scroll {
+.xt-sticky(@mode:none, @position:'top', @pos:0) {
+  .show-sticky {
     display: none;
   }
-  .hide-scroll {
+  .hide-sticky {
     display: block;
   }
   // normal mode
@@ -127,17 +127,17 @@ html.xt-scrollbar {
   &.active:not(.xt-clone) {
     position: fixed !important;
     width: inherit; // fix fixed width
-    z-index: @index-scroll;
+    z-index: @index-sticky;
     & when (@position = 'top') {
       top: @pos;
     }
     & when (@position = 'bottom') {
       bottom: @pos;
     }
-    .show-scroll {
+    .show-sticky {
       display: block;
     }
-    .hide-scroll {
+    .hide-sticky {
       display: none;
     }
   }

@@ -1,19 +1,19 @@
 /*
 @import (reference) "../../../../dist/xtend.less"; // ignore if customizing xtend.scss
 
-.card[data-xt-scroll] {
-  .xt-scroll();
+.card[data-xt-sticky] {
+  .xt-sticky();
 }
 .card {
-  &.scroll-on-top,
-  &.scroll-off-top {
+  &.sticky-on-top,
+  &.sticky-off-top {
     -webkit-animation: top-fadein 0.6s cubic-bezier(0.19, 1, 0.22, 1);
     animation: top-fadein 0.6s cubic-bezier(0.19, 1, 0.22, 1);
   }
 }
 .card {
-  &.scroll-on-bottom,
-  &.scroll-off-bottom {
+  &.sticky-on-bottom,
+  &.sticky-off-bottom {
     -webkit-animation: bottom-fadein 0.6s cubic-bezier(0.19, 1, 0.22, 1);
     animation: bottom-fadein 0.6s cubic-bezier(0.19, 1, 0.22, 1);
   }

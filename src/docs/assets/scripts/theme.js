@@ -361,6 +361,6 @@ for (let element of document.querySelectorAll('.demo-cols-nested .col')) {
 //////////////////////
 
 import XtUtil from '../../../scripts/xtend-utils';
-import {XtToggle, XtScroll} from '../../../scripts/xtend';
+import {XtToggle, xtSticky} from '../../../scripts/xtend';
 
 XtUtil.initAll();

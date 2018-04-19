@@ -956,7 +956,7 @@ html.xt-scrollbar .overlay-outer {
   overflow-y: scroll;
 }
 /**
- * .xt-scroll()
+ * .xt-sticky()
  * @param {String} @mode Starting mode be 'absolute' or 'fixed'
  * @param {String} @position Can be 'top' or 'bottom'
  * @param {Value} @pos Position value

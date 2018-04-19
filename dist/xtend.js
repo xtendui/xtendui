@@ -119,10 +119,10 @@ XtUtil.initAll = function () {
   var _iteratorError4 = undefined;
 
   try {
-    for (var _iterator4 = document.querySelectorAll('[data-xt-scroll]')[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+    for (var _iterator4 = document.querySelectorAll('[data-xt-sticky]')[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
       var _el3 = _step4.value;
 
-      new _xtend.XtScroll(_el3);
+      new _xtend.XtSticky(_el3);
     }
   } catch (err) {
     _didIteratorError4 = true;
@@ -438,7 +438,7 @@ setTimeout(function () {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.XtScroll = exports.XtOverlay = exports.XtDrop = exports.XtToggle = exports.Xt = undefined;
+exports.XtSticky = exports.XtOverlay = exports.XtDrop = exports.XtToggle = exports.Xt = undefined;
 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
@@ -1746,11 +1746,11 @@ XtOverlay.defaults = {
 };
 
 //////////////////////
-// XtScroll
+// XtSticky
 //////////////////////
 
-var XtScroll = exports.XtScroll = function (_Xt4) {
-  _inherits(XtScroll, _Xt4);
+var XtSticky = exports.XtSticky = function (_Xt4) {
+  _inherits(XtSticky, _Xt4);
 
   /**
    * constructor
@@ -1758,10 +1758,10 @@ var XtScroll = exports.XtScroll = function (_Xt4) {
    * @param {Object} options User options
    * @constructor
    */
-  function XtScroll(object, jsOptions) {
-    _classCallCheck(this, XtScroll);
+  function XtSticky(object, jsOptions) {
+    _classCallCheck(this, XtSticky);
 
-    var _this4 = _possibleConstructorReturn(this, (XtScroll.__proto__ || Object.getPrototypeOf(XtScroll)).call(this, object, jsOptions, 'data-xt-scroll'));
+    var _this4 = _possibleConstructorReturn(this, (XtSticky.__proto__ || Object.getPrototypeOf(XtSticky)).call(this, object, jsOptions, 'data-xt-sticky'));
 
     _this4.initEvents();
     return _this4;
@@ -1776,10 +1776,10 @@ var XtScroll = exports.XtScroll = function (_Xt4) {
    */
 
 
-  _createClass(XtScroll, [{
+  _createClass(XtSticky, [{
     key: 'initScope',
     value: function initScope() {
-      _get(XtScroll.prototype.__proto__ || Object.getPrototypeOf(XtScroll.prototype), 'initScope', this).call(this);
+      _get(XtSticky.prototype.__proto__ || Object.getPrototypeOf(XtSticky.prototype), 'initScope', this).call(this);
       // mode
       this.mode = 'all';
       // container
@@ -1882,14 +1882,14 @@ var XtScroll = exports.XtScroll = function (_Xt4) {
               for (var _iterator16 = fElements.all[Symbol.iterator](), _step16; !(_iteratorNormalCompletion16 = (_step16 = _iterator16.next()).done); _iteratorNormalCompletion16 = true) {
                 var el = _step16.value;
 
-                el.classList.remove('scroll-off-top', 'scroll-off-bottom');
+                el.classList.remove('sticky-off-top', 'sticky-off-bottom');
                 el.classList.add('xt-fixed');
                 if (self.scrollTop > scrollTop) {
-                  el.classList.remove('scroll-on-top');
-                  el.classList.add('scroll-on-bottom');
+                  el.classList.remove('sticky-on-top');
+                  el.classList.add('sticky-on-bottom');
                 } else {
-                  el.classList.add('scroll-on-top');
-                  el.classList.remove('scroll-on-bottom');
+                  el.classList.add('sticky-on-top');
+                  el.classList.remove('sticky-on-bottom');
                 }
               }
             } catch (err) {
@@ -1923,13 +1923,13 @@ var XtScroll = exports.XtScroll = function (_Xt4) {
               for (var _iterator17 = _fElements.all[Symbol.iterator](), _step17; !(_iteratorNormalCompletion17 = (_step17 = _iterator17.next()).done); _iteratorNormalCompletion17 = true) {
                 var _el = _step17.value;
 
-                _el.classList.remove('scroll-on-top', 'scroll-on-bottom', 'xt-fixed');
+                _el.classList.remove('sticky-on-top', 'sticky-on-bottom', 'xt-fixed');
                 if (self.scrollTop > scrollTop) {
-                  _el.classList.remove('scroll-off-top');
-                  _el.classList.add('scroll-off-bottom');
+                  _el.classList.remove('sticky-off-top');
+                  _el.classList.add('sticky-off-bottom');
                 } else {
-                  _el.classList.add('scroll-off-top');
-                  _el.classList.remove('scroll-off-bottom');
+                  _el.classList.add('sticky-off-top');
+                  _el.classList.remove('sticky-off-bottom');
                 }
               }
             } catch (err) {
@@ -1954,12 +1954,12 @@ var XtScroll = exports.XtScroll = function (_Xt4) {
     }
   }]);
 
-  return XtScroll;
+  return XtSticky;
 }(Xt);
 
 // defaults
 
-XtScroll.defaults = {
+XtSticky.defaults = {
   classes: ['active'],
   on: 'scroll',
   min: 0,

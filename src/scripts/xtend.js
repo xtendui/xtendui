@@ -827,10 +827,10 @@ XtOverlay.defaults = {
 };
 
 //////////////////////
-// XtScroll
+// XtSticky
 //////////////////////
 
-export class XtScroll extends Xt {
+export class XtSticky extends Xt {
 
   /**
    * constructor
@@ -839,7 +839,7 @@ export class XtScroll extends Xt {
    * @constructor
    */
   constructor(object, jsOptions) {
-    super(object, jsOptions, 'data-xt-scroll');
+    super(object, jsOptions, 'data-xt-sticky');
     this.initEvents();
   }
 
@@ -939,14 +939,14 @@ export class XtScroll extends Xt {
           // direction
           let fElements = self.getElements(element);
           for (let el of fElements.all) {
-            el.classList.remove('scroll-off-top', 'scroll-off-bottom');
+            el.classList.remove('sticky-off-top', 'sticky-off-bottom');
             el.classList.add('xt-fixed');
             if (self.scrollTop > scrollTop) {
-              el.classList.remove('scroll-on-top');
-              el.classList.add('scroll-on-bottom');
+              el.classList.remove('sticky-on-top');
+              el.classList.add('sticky-on-bottom');
             } else {
-              el.classList.add('scroll-on-top');
-              el.classList.remove('scroll-on-bottom');
+              el.classList.add('sticky-on-top');
+              el.classList.remove('sticky-on-bottom');
             }
           }
         }
@@ -957,13 +957,13 @@ export class XtScroll extends Xt {
           // direction
           let fElements = self.getElements(element);
           for (let el of fElements.all) {
-            el.classList.remove('scroll-on-top', 'scroll-on-bottom', 'xt-fixed');
+            el.classList.remove('sticky-on-top', 'sticky-on-bottom', 'xt-fixed');
             if (self.scrollTop > scrollTop) {
-              el.classList.remove('scroll-off-top');
-              el.classList.add('scroll-off-bottom');
+              el.classList.remove('sticky-off-top');
+              el.classList.add('sticky-off-bottom');
             } else {
-              el.classList.add('scroll-off-top');
-              el.classList.remove('scroll-off-bottom');
+              el.classList.add('sticky-off-top');
+              el.classList.remove('sticky-off-bottom');
             }
           }
         }
@@ -977,7 +977,7 @@ export class XtScroll extends Xt {
 
 // defaults
 
-XtScroll.defaults = {
+XtSticky.defaults = {
   classes: ['active'],
   on: 'scroll',
   min: 0,

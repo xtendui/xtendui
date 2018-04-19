@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
 
     <!-- seo -->
-    <title>Scroll • Xtend</title>
+    <title>Sticky • Xtend</title>
     <meta name="description" content="Lorem Ipsum" />
 
     <!-- icons -->
@@ -28,7 +28,7 @@
 
       <header class="site-header">
 
-        <div class="site-header-top" data-xt-scroll='{"bottom": ".site-breadcrumbs.xt-clone"}'>
+        <div class="site-header-top" data-xt-sticky='{"bottom": ".site-breadcrumbs.xt-clone"}'>
           <div class="container">
 
             <div class="flex flex-auto justify-content-between align-items-center">
@@ -117,7 +117,7 @@
           <div class="container">
             <div class="flex flex-auto align-items-center align-content-center justify-content-between">
               <div class="site-hero-text">
-                <h1>Scroll</h1>
+                <h1>Sticky</h1>
                 <p class="font-giant">Lorem Ipsum</p>
               </div>
               <div class="site-hero-img">
@@ -130,7 +130,7 @@
 
         </div>
 
-        <nav class="site-breadcrumbs" role="navigation" data-xt-scroll>
+        <nav class="site-breadcrumbs" role="navigation" data-xt-sticky>
           <div class="site-breadcrumbs-inside">
             <div class="container">
               <div class="flex flex-auto justify-content-between align-items-start">
@@ -363,8 +363,8 @@
                                     Toggle
                                   </a>
                                   
-                                  <a href="/docs/javascript/scroll/" class="btn btn-primary">
-                                    Scroll
+                                  <a href="/docs/javascript/sticky/" class="btn btn-primary">
+                                    Sticky
                                   </a>
                                   
                                   <a href="/docs/javascript/slider/" class="btn btn-primary">
@@ -405,7 +405,7 @@
                     </a>
                   </div>
 
-                  <div class="show-scroll">
+                  <div class="show-sticky">
                     <button type="button" class="btn btn-primary btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
                       
                         Docs
@@ -437,13 +437,14 @@
         <div class="col col-12 col-9-md">
 
           <article class="site-article default-lists">
-            <h2>Usage</h2>
+            <!--
+<h2>Usage</h2>
 
 <p class="lead">Html Initialization</p>
 
 <pre><code class="html">
-&lt;div class="element" data-xt-scroll&gt;&lt;/div&gt;
-&lt;div class="element" data-xt-scroll='{"top": "#top", "bottom": "#bottom"}'&gt;&lt;/div&gt;
+&lt;div class="element" data-xt-sticky&gt;&lt;/div&gt;
+&lt;div class="element" data-xt-sticky='{"top": "#top", "bottom": "#bottom"}'&gt;&lt;/div&gt;
 </code></pre>
 
 <div class="alert alert-warning">
@@ -455,30 +456,28 @@ $('.element').xtInitAll(); // init only '.element'
 $('body').xtInitAll(true); // init 'html' and all descendants
 </code></pre>
 
-<!--
 <p>The scroll plugin adds to the "element" and body the <code>.scroll</code> class when the windows is top reach the element.</p>
 <p>The plugin clones the "element" and hides it, so it adds the space of the "element" also if it's <code>position: fixed;</code>, it works with responsive automatically.</p>
 <p>You can set custom class, top position with <code>top</code>, bottom position with <code>bottom</code>.</p>
--->
 
 <p class="lead">Js Initialization</p>
 
 <pre><code class="js">
-$('.element').xtScroll();
-$('.element').xtScroll({"top": "#top", "bottom": "#bottom"});
+$('.element').xtSticky();
+$('.element').xtSticky({"top": "#top", "bottom": "#bottom"});
 </code></pre>
 
 <p class="lead">Scss</p>
 
-<p>@TODO table xt-scroll</p>
+<p>@TODO table xt-sticky</p>
 
 <pre><code class="scss">
-.card[data-xt-scroll] {
-  .xt-scroll();
+.card[data-xt-sticky] {
+  .xt-sticky();
 }
 // 56px top when scrolling
-.card[data-xt-scroll] {
-  .xt-scroll('top', 56px);
+.card[data-xt-sticky] {
+  .xt-sticky('top', 56px);
 }
 </code></pre>
 
@@ -492,7 +491,7 @@ $('.element').xtScroll({"top": "#top", "bottom": "#bottom"});
 
 <div class="demo">
   <div class="demo-item" data-iframe="/demos/xtend/scroll-0.html" data-name="default">
-    <div class="demo-text"><code>[data-xt-scroll]</code> <code>.show-scroll</code> <code>.hide-scroll</code>.</div>
+    <div class="demo-text"><code>[data-xt-sticky]</code> <code>.show-sticky</code> <code>.hide-sticky</code>.</div>
   </div>
   <div class="demo-item" data-iframe="/demos/xtend/scroll-10.html" data-name="top">
     <div class="demo-text"><code>$position</code> <strong>top</strong> and <code>$pos</code>.</div>
@@ -515,20 +514,21 @@ $('.element').xtScroll({"top": "#top", "bottom": "#bottom"});
 
 <div class="demo">
   <div class="demo-item" data-iframe="/demos/xtend/scroll-30.html" data-name="">
-    <div class="demo-text"><code>.scroll-on-top</code> <code>.scroll-on-bottom</code> <code>.scroll-off-top</code> <code>.scroll-off-bottom</code>.</div>
+    <div class="demo-text"><code>.sticky-on-top</code> <code>.sticky-on-bottom</code> <code>.sticky-off-top</code> <code>.sticky-off-bottom</code>.</div>
   </div>
 </div>
+-->
           </article>
 
         </div>
         <div class="col col-12 col-3-md hide show-md">
 
-          <aside class="site-aside" data-xt-scroll='{"top": ".site-breadcrumbs.xt-clone"}'>
+          <aside class="site-aside" data-xt-sticky='{"top": ".site-breadcrumbs.xt-clone"}'>
 
             <div class="site-aside-text">
-              <a href="/docs/javascript/scroll/" class="btn">
+              <a href="/docs/javascript/sticky/" class="btn">
                 <div class="site-aside-title">
-                  Scroll
+                  Sticky
                 </div>
               </a>
             </div>
@@ -555,7 +555,7 @@ $('.element').xtScroll({"top": "#top", "bottom": "#bottom"});
 </main>
 
 
-        <footer class="site-footer" data-xt-scroll='{"top": "-1"}'>
+        <footer class="site-footer" data-xt-sticky='{"top": "-1"}'>
           <div class="container">
             
             <nav class="site-footer-top display-none display-block-sm" role="navigation">
