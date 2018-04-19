@@ -302,6 +302,18 @@ pre code {
   width: auto;
 }
 .form-inline .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  cursor: default;
+  -webkit-box-orient: vertical;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -315,6 +327,78 @@ pre code {
 }
 .form-inline .form-group .input-control {
   width: auto;
+}
+.form-inline .form-group > li {
+  cursor: auto;
+}
+.form-inline .form-group > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.form-inline .form-group > li > a,
+.form-inline .form-group > li > button {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+.form-inline .form-group > li > a:not(.btn),
+.form-inline .form-group > li > button:not(.btn) {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: .6em 1.2em;
+  font-size: 1.3rem;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.form-inline .form-group > li > a:not(.btn) > span,
+.form-inline .form-group > li > button:not(.btn) > span {
+  display: inline-block;
+}
+.form-inline .form-group > li > a:not(.btn):active,
+.form-inline .form-group > li > button:not(.btn):active,
+.form-inline .form-group > li > a:not(.btn).active,
+.form-inline .form-group > li > button:not(.btn).active {
+  z-index: 1;
+}
+.form-inline .form-group > li > a:not(.btn):hover,
+.form-inline .form-group > li > button:not(.btn):hover,
+.form-inline .form-group > li > a:not(.btn):active,
+.form-inline .form-group > li > button:not(.btn):active,
+.form-inline .form-group > li > a:not(.btn):focus,
+.form-inline .form-group > li > button:not(.btn):focus,
+.form-inline .form-group > li > a:not(.btn).active,
+.form-inline .form-group > li > button:not(.btn).active {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.form-inline .form-group > * {
+  margin: 0.5rem 0.5rem;
+}
+.form-inline .form-group > li > a,
+.form-inline .form-group > li > button {
+  text-align: left;
 }
 .form-inline .form-group > * {
   margin: 0.5rem 0.5rem;
@@ -4120,6 +4204,18 @@ legend + legend {
   font-size: 1.3rem;
 }
 .form-group.inline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  cursor: default;
+  -webkit-box-orient: vertical;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -4130,6 +4226,78 @@ legend + legend {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+.form-group.inline > li {
+  cursor: auto;
+}
+.form-group.inline > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.form-group.inline > li > a,
+.form-group.inline > li > button {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+.form-group.inline > li > a:not(.btn),
+.form-group.inline > li > button:not(.btn) {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: .6em 1.2em;
+  font-size: 1.3rem;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.form-group.inline > li > a:not(.btn) > span,
+.form-group.inline > li > button:not(.btn) > span {
+  display: inline-block;
+}
+.form-group.inline > li > a:not(.btn):active,
+.form-group.inline > li > button:not(.btn):active,
+.form-group.inline > li > a:not(.btn).active,
+.form-group.inline > li > button:not(.btn).active {
+  z-index: 1;
+}
+.form-group.inline > li > a:not(.btn):hover,
+.form-group.inline > li > button:not(.btn):hover,
+.form-group.inline > li > a:not(.btn):active,
+.form-group.inline > li > button:not(.btn):active,
+.form-group.inline > li > a:not(.btn):focus,
+.form-group.inline > li > button:not(.btn):focus,
+.form-group.inline > li > a:not(.btn).active,
+.form-group.inline > li > button:not(.btn).active {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.form-group.inline > * {
+  margin: 0.5rem 0.5rem;
+}
+.form-group.inline > li > a,
+.form-group.inline > li > button {
+  text-align: left;
 }
 .form-group.inline > * {
   margin: 0.5rem 0.5rem;
@@ -6492,6 +6660,18 @@ h2 .site-article-anchor {
 }
 .demo .demo-tabs > *,
 .demo .demo-code-tabs > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  cursor: default;
+  -webkit-box-orient: vertical;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -6500,6 +6680,101 @@ h2 .site-article-anchor {
   flex-wrap: wrap;
   margin: -0.5rem -0.5rem;
   margin: -0.25rem -0.25rem;
+}
+.demo .demo-tabs > * > li,
+.demo .demo-code-tabs > * > li {
+  cursor: auto;
+}
+.demo .demo-tabs > * > li,
+.demo .demo-code-tabs > * > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.demo .demo-tabs > * > li > a,
+.demo .demo-code-tabs > * > li > a,
+.demo .demo-tabs > * > li > button,
+.demo .demo-code-tabs > * > li > button {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+.demo .demo-tabs > * > li > a:not(.btn),
+.demo .demo-code-tabs > * > li > a:not(.btn),
+.demo .demo-tabs > * > li > button:not(.btn),
+.demo .demo-code-tabs > * > li > button:not(.btn) {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: .6em 1.2em;
+  font-size: 1.3rem;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.demo .demo-tabs > * > li > a:not(.btn) > span,
+.demo .demo-code-tabs > * > li > a:not(.btn) > span,
+.demo .demo-tabs > * > li > button:not(.btn) > span,
+.demo .demo-code-tabs > * > li > button:not(.btn) > span {
+  display: inline-block;
+}
+.demo .demo-tabs > * > li > a:not(.btn):active,
+.demo .demo-code-tabs > * > li > a:not(.btn):active,
+.demo .demo-tabs > * > li > button:not(.btn):active,
+.demo .demo-code-tabs > * > li > button:not(.btn):active,
+.demo .demo-tabs > * > li > a:not(.btn).active,
+.demo .demo-code-tabs > * > li > a:not(.btn).active,
+.demo .demo-tabs > * > li > button:not(.btn).active,
+.demo .demo-code-tabs > * > li > button:not(.btn).active {
+  z-index: 1;
+}
+.demo .demo-tabs > * > li > a:not(.btn):hover,
+.demo .demo-code-tabs > * > li > a:not(.btn):hover,
+.demo .demo-tabs > * > li > button:not(.btn):hover,
+.demo .demo-code-tabs > * > li > button:not(.btn):hover,
+.demo .demo-tabs > * > li > a:not(.btn):active,
+.demo .demo-code-tabs > * > li > a:not(.btn):active,
+.demo .demo-tabs > * > li > button:not(.btn):active,
+.demo .demo-code-tabs > * > li > button:not(.btn):active,
+.demo .demo-tabs > * > li > a:not(.btn):focus,
+.demo .demo-code-tabs > * > li > a:not(.btn):focus,
+.demo .demo-tabs > * > li > button:not(.btn):focus,
+.demo .demo-code-tabs > * > li > button:not(.btn):focus,
+.demo .demo-tabs > * > li > a:not(.btn).active,
+.demo .demo-code-tabs > * > li > a:not(.btn).active,
+.demo .demo-tabs > * > li > button:not(.btn).active,
+.demo .demo-code-tabs > * > li > button:not(.btn).active {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.demo .demo-tabs > * > *,
+.demo .demo-code-tabs > * > * {
+  margin: 0.5rem 0.5rem;
+}
+.demo .demo-tabs > * > li > a,
+.demo .demo-code-tabs > * > li > a,
+.demo .demo-tabs > * > li > button,
+.demo .demo-code-tabs > * > li > button {
+  text-align: left;
 }
 .demo .demo-tabs > * > *,
 .demo .demo-code-tabs > * > * {
