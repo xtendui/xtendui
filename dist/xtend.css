@@ -308,11 +308,6 @@ pre code {
   padding: 0;
   list-style: none;
   cursor: default;
-  -webkit-box-orient: vertical;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -575,6 +570,12 @@ select.input-control {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .list {
   display: -webkit-box;
@@ -584,12 +585,12 @@ select.input-control {
   padding: 0;
   list-style: none;
   cursor: default;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .list > li {
   cursor: auto;
@@ -656,13 +657,13 @@ select.input-control {
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.list-line {
-  -webkit-box-orient: horizontal;
+.list-block {
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
 }
 .box {
   display: -webkit-box;
@@ -2975,6 +2976,12 @@ html.xt-scrollbar .overlay-outer {
   font-size: 1.3rem;
 }
 .list-drop {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   margin: 0 0;
 }
 .list-drop > * {
@@ -4170,11 +4177,6 @@ legend + legend {
   padding: 0;
   list-style: none;
   cursor: default;
-  -webkit-box-orient: vertical;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;

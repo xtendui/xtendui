@@ -439,7 +439,7 @@
           <article class="site-article default-lists">
             <h2>Usage</h2>
 
-<p>Use <code>.list</code> to create a <strong>column list</strong> or <code>.list.list-line</code> to create a <strong>row
+<p>Use <code>.list</code> to create a <strong>row list</strong> or <code>.list.list-block</code> to create a <strong>column
   list</strong> with flexbox.
 </p>
 
@@ -452,7 +452,7 @@
       <li><!-- content --></li>
       <li><!-- content --></li>
     </ul>
-    <ul class="list list-line">
+    <ul class="list list-block">
       <li><!-- content --></li>
       <li><!-- content --></li>
       <li><!-- content --></li>
@@ -481,9 +481,9 @@
       </ul>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="list-line">
+  <div class="demo-item demo-preview" data-name="list-block">
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line">
+      <ul class="list list-block">
         <li>
           Lorem ipsum dolor sit amet.
         </li>
@@ -498,11 +498,11 @@
   </div>
   <div class="demo-item demo-preview" data-name="nested">
     <div class="demo-source" data-lang="html">
-      <ul class="list">
+      <ul class="list list-block">
         <li>
-          <ul class="list list-line">
+          <ul class="list">
             <li>
-              <ul class="list">
+              <ul class="list list-block">
                 <li>
                   Lorem ipsum dolor sit amet.
                 </li>
@@ -523,7 +523,7 @@
           </ul>
         </li>
         <li>
-          <ul class="list list-line">
+          <ul class="list">
             <li>
               Lorem ipsum dolor sit amet.
             </li>
@@ -561,9 +561,9 @@
       </ul>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="list-line">
+  <div class="demo-item demo-preview" data-name="list-block">
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line">
+      <ul class="list list-block">
         <li>
           <button type="button" class="btn btn-primary">Lorem Ipsum</button>
         </li>
@@ -578,11 +578,11 @@
   </div>
   <div class="demo-item demo-preview" data-name="nested">
     <div class="demo-source" data-lang="html">
-      <ul class="list">
+      <ul class="list list-block">
         <li>
-          <ul class="list list-line">
+          <ul class="list">
             <li>
-              <ul class="list">
+              <ul class="list list-block">
                 <li>
                   <button type="button" class="btn btn-primary">Lorem Ipsum</button>
                 </li>
@@ -603,7 +603,7 @@
           </ul>
         </li>
         <li>
-          <ul class="list list-line">
+          <ul class="list">
             <li>
               <button type="button" class="btn btn-primary">Lorem Ipsum</button>
             </li>
@@ -614,6 +614,32 @@
               <button type="button" class="btn btn-secondary-empty btn-tiny">Amet</button>
             </li>
           </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<p><a href="#variants">List's variants</a> are used to style automatically <code>a</code> or <code>button</code> inside,
+  If you want to customize them use the <code>.btn</code> class instead.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="default">
+    <div class="demo-text"><code>.list-default</code></div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list list-default">
+        <li>
+          <a href="#">Lorem Ipsum</a>
+        </li>
+        <li>
+          <button type="button">Dolor sit</button>
+        </li>
+        <li>
+          <button type="button" class="btn-primary btn-tiny">Amet</button>
+          <!-- this doesn't works you need to use .btn -->
+        </li>
+        <li>
+          <button type="button" class="btn btn-primary btn-tiny">Amet</button>
         </li>
       </ul>
     </div>
@@ -661,14 +687,15 @@
   </table>
 </div>
 
-<p class="alert alert-default">You can set list's spaces in the <code>_variables.less</code> file. Read the documentation of <a
-  href="/docs/introduction/variables/#list">list's variables</a>.</p>
+<p class="alert alert-default">You can set list's spaces in the <code>_variables.less</code> file. Read the
+  documentation of <a
+    href="/docs/introduction/variables/#list">list's variables</a>.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="none">
     <div class="demo-text"><code>.list-space-none</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-space-none">
+      <ul class="list list-space-none">
         <li>
           <button type="button" class="btn btn-primary">Lorem Ipsum</button>
         </li>
@@ -684,7 +711,7 @@
   <div class="demo-item demo-preview" data-name="tiny">
     <div class="demo-text"><code>.list-space-tiny</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-space-tiny">
+      <ul class="list list-space-tiny">
         <li>
           <button type="button" class="btn btn-primary">Lorem Ipsum</button>
         </li>
@@ -700,7 +727,7 @@
   <div class="demo-item demo-preview" data-name="small">
     <div class="demo-text"><code>.list-space-small</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-space-small">
+      <ul class="list list-space-small">
         <li>
           <button type="button" class="btn btn-primary">Lorem Ipsum</button>
         </li>
@@ -716,7 +743,7 @@
   <div class="demo-item demo-preview" data-name="medium">
     <div class="demo-text"><code>.list-space-medium</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-space-medium">
+      <ul class="list list-space-medium">
         <li>
           <button type="button" class="btn btn-primary">Lorem Ipsum</button>
         </li>
@@ -732,7 +759,7 @@
   <div class="demo-item demo-preview" data-name="big">
     <div class="demo-text"><code>.list-space-big</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-space-big">
+      <ul class="list list-space-big">
         <li>
           <button type="button" class="btn btn-primary">Lorem Ipsum</button>
         </li>
@@ -748,7 +775,7 @@
   <div class="demo-item demo-preview" data-name="giant">
     <div class="demo-text"><code>.list-space-giant</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-space-giant">
+      <ul class="list list-space-giant">
         <li>
           <button type="button" class="btn btn-primary">Lorem Ipsum</button>
         </li>
@@ -806,7 +833,7 @@
   <div class="demo-item demo-preview" data-name="left">
     <div class="demo-text"><code>.list-left</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-left">
+      <ul class="list list-block list-left">
         <li>
           <button type="button" class="btn btn-primary">Lorem Ipsum</button>
         </li>
@@ -822,7 +849,7 @@
   <div class="demo-item demo-preview" data-name="center">
     <div class="demo-text"><code>.list-center</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-center">
+      <ul class="list list-block list-center">
         <li>
           <button type="button" class="btn btn-primary">Lorem Ipsum</button>
         </li>
@@ -838,7 +865,7 @@
   <div class="demo-item demo-preview" data-name="right">
     <div class="demo-text"><code>.list-right</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-right">
+      <ul class="list list-block list-right">
         <li>
           <button type="button" class="btn btn-primary">Lorem Ipsum</button>
         </li>
@@ -857,13 +884,14 @@
 
 <p>Optional classes for assigning variant to style all buttons the same way.</p>
 
-<p><code>.list-default</code> has list's default options.</p>
+<p>There are some <code>// default</code> lists to use: <code>.list-default</code> has list's default options, there's
+  also <a href="/docs/component/drop/#drop-of-lists"><code>.list-drop</code></a>.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="default">
     <div class="demo-text"><code>.list-default</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-default">
+      <ul class="list list-default">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -879,7 +907,7 @@
   <div class="demo-item demo-preview" data-name="primary">
     <div class="demo-text"><code>.list-primary</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-primary">
+      <ul class="list list-primary">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -895,7 +923,7 @@
   <div class="demo-item demo-preview" data-name="primary-empty">
     <div class="demo-text"><code>.list-primary-empty</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-primary-empty">
+      <ul class="list list-primary-empty">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -911,7 +939,7 @@
   <div class="demo-item demo-preview" data-name="secondary">
     <div class="demo-text"><code>.list-secondary</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary">
+      <ul class="list list-secondary">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -927,7 +955,7 @@
   <div class="demo-item demo-preview" data-name="secondary-empty">
     <div class="demo-text"><code>.list-secondary-empty</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary-empty">
+      <ul class="list list-secondary-empty">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -943,7 +971,7 @@
   <div class="demo-item demo-preview" data-name="link">
     <div class="demo-text"><code>.list-link</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-link">
+      <ul class="list list-link">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -961,7 +989,7 @@
       You can <strong>override</strong> all options of <code>.list-default</code>.
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-default list-primary list-space-none list-center list-big list-squared">
+      <ul class="list list-default list-primary list-space-none list-center list-big list-squared">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -984,7 +1012,7 @@
   <div class="demo-item demo-preview" data-name="tiny">
     <div class="demo-text"><code>.list-tiny</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary list-tiny">
+      <ul class="list list-secondary list-tiny">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1000,7 +1028,7 @@
   <div class="demo-item demo-preview" data-name="small">
     <div class="demo-text"><code>.list-small</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary list-small">
+      <ul class="list list-secondary list-small">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1016,7 +1044,7 @@
   <div class="demo-item demo-preview" data-name="medium">
     <div class="demo-text"><code>.list-medium</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary list-medium">
+      <ul class="list list-secondary list-medium">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1032,7 +1060,7 @@
   <div class="demo-item demo-preview" data-name="big">
     <div class="demo-text"><code>.list-big</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary list-big">
+      <ul class="list list-secondary list-big">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1048,7 +1076,7 @@
   <div class="demo-item demo-preview" data-name="giant">
     <div class="demo-text"><code>.list-giant</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary list-giant">
+      <ul class="list list-secondary list-giant">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1071,7 +1099,7 @@
   <div class="demo-item demo-preview" data-name="squared">
     <div class="demo-text"><code>.list-squared</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary list-squared">
+      <ul class="list list-secondary list-squared">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1087,7 +1115,7 @@
   <div class="demo-item demo-preview" data-name="tall">
     <div class="demo-text"><code>.list-tall</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary list-tall">
+      <ul class="list list-secondary list-tall">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1103,7 +1131,7 @@
   <div class="demo-item demo-preview" data-name="short">
     <div class="demo-text"><code>.list-short</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary list-short">
+      <ul class="list list-secondary list-short">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1119,7 +1147,7 @@
   <div class="demo-item demo-preview" data-name="wide">
     <div class="demo-text"><code>.list-wide</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary list-wide">
+      <ul class="list list-secondary list-wide">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1135,7 +1163,7 @@
   <div class="demo-item demo-preview" data-name="narrow">
     <div class="demo-text"><code>.list-narrow</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary list-narrow">
+      <ul class="list list-secondary list-narrow">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1151,7 +1179,7 @@
   <div class="demo-item demo-preview" data-name="icon">
     <div class="demo-text"><code>.list-icon</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary list-icon">
+      <ul class="list list-secondary list-icon">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1167,7 +1195,7 @@
   <div class="demo-item demo-preview" data-name="none">
     <div class="demo-text"><code>.list-none</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary list-none">
+      <ul class="list list-secondary list-none">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1184,7 +1212,7 @@
     <div class="demo-text"><code>.list-text-only</code></div>
     <div class="demo-source" data-lang="html">
       <div style="padding: 0.5rem 1rem; background: #7367F0;">
-        <ul class="list list-line list-primary list-text-only">
+        <ul class="list list-primary list-text-only">
           <li>
             <button type="button">Lorem Ipsum</button>
           </li>
@@ -1246,7 +1274,7 @@
   <div class="demo-item demo-preview" data-name="row">
     <div class="demo-text"><code>.flex-row</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary flex-row">
+      <ul class="list list-secondary flex-row">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1262,7 +1290,7 @@
   <div class="demo-item demo-preview" data-name="row-reverse">
     <div class="demo-text"><code>.flex-row-reverse</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary flex-row-reverse">
+      <ul class="list list-secondary flex-row-reverse">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1351,7 +1379,7 @@
   <div class="demo-item demo-preview" data-name="reverse">
     <div class="demo-text"><code>.flex-wrap</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary flex-wrap">
+      <ul class="list list-secondary flex-wrap">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1385,7 +1413,7 @@
   <div class="demo-item demo-preview" data-name="reverse">
     <div class="demo-text"><code>.flex-wrap-reverse</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary flex-wrap-reverse">
+      <ul class="list list-secondary flex-wrap-reverse">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1419,7 +1447,7 @@
   <div class="demo-item demo-preview" data-name="nowrap">
     <div class="demo-text"><code>.flex-nowrap</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary flex-nowrap">
+      <ul class="list list-secondary flex-nowrap">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1494,7 +1522,7 @@
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-text"><code>.justify-content-start</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary justify-content-start">
+      <ul class="list list-secondary justify-content-start">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1510,7 +1538,7 @@
   <div class="demo-item demo-preview" data-name="end">
     <div class="demo-text"><code>.justify-content-end</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary justify-content-end">
+      <ul class="list list-secondary justify-content-end">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1526,7 +1554,7 @@
   <div class="demo-item demo-preview" data-name="center">
     <div class="demo-text"><code>.justify-content-center</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary justify-content-center">
+      <ul class="list list-secondary justify-content-center">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1542,7 +1570,7 @@
   <div class="demo-item demo-preview" data-name="between">
     <div class="demo-text"><code>.justify-content-between</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary justify-content-between">
+      <ul class="list list-secondary justify-content-between">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1558,7 +1586,7 @@
   <div class="demo-item demo-preview" data-name="around">
     <div class="demo-text"><code>.justify-content-around</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary justify-content-around">
+      <ul class="list list-secondary justify-content-around">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1615,7 +1643,7 @@
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-text"><code>.align-items-start</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary align-items-start" style="height: 125px;">
+      <ul class="list list-secondary align-items-start" style="height: 125px;">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1649,7 +1677,7 @@
   <div class="demo-item demo-preview" data-name="end">
     <div class="demo-text"><code>.align-items-end</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary align-items-end" style="height: 125px;">
+      <ul class="list list-secondary align-items-end" style="height: 125px;">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1683,7 +1711,7 @@
   <div class="demo-item demo-preview" data-name="center">
     <div class="demo-text"><code>.align-items-center</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary align-items-center" style="height: 125px;">
+      <ul class="list list-secondary align-items-center" style="height: 125px;">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1717,7 +1745,7 @@
   <div class="demo-item demo-preview" data-name="baseline">
     <div class="demo-text"><code>.align-items-baseline</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary align-items-baseline" style="height: 125px;">
+      <ul class="list list-secondary align-items-baseline" style="height: 125px;">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1751,7 +1779,7 @@
   <div class="demo-item demo-preview" data-name="stretch">
     <div class="demo-text"><code>.align-items-stretch</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary align-items-stretch" style="height: 125px;">
+      <ul class="list list-secondary align-items-stretch" style="height: 125px;">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1826,7 +1854,7 @@
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-text"><code>.align-content-start</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary align-content-start" style="height: 125px;">
+      <ul class="list list-secondary align-content-start" style="height: 125px;">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1860,7 +1888,7 @@
   <div class="demo-item demo-preview" data-name="end">
     <div class="demo-text"><code>.align-content-end</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary align-content-end" style="height: 125px;">
+      <ul class="list list-secondary align-content-end" style="height: 125px;">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1894,7 +1922,7 @@
   <div class="demo-item demo-preview" data-name="center">
     <div class="demo-text"><code>.align-content-center</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary align-content-center" style="height: 125px;">
+      <ul class="list list-secondary align-content-center" style="height: 125px;">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1928,7 +1956,7 @@
   <div class="demo-item demo-preview" data-name="between">
     <div class="demo-text"><code>.align-content-between</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary align-content-between" style="height: 125px;">
+      <ul class="list list-secondary align-content-between" style="height: 125px;">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1962,7 +1990,7 @@
   <div class="demo-item demo-preview" data-name="around">
     <div class="demo-text"><code>.align-content-around</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary align-content-around" style="height: 125px;">
+      <ul class="list list-secondary align-content-around" style="height: 125px;">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -1996,7 +2024,7 @@
   <div class="demo-item demo-preview" data-name="stretch">
     <div class="demo-text"><code>.align-content-stretch</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary align-content-stretch" style="height: 125px;">
+      <ul class="list list-secondary align-content-stretch" style="height: 125px;">
         <li>
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -2072,7 +2100,7 @@
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-text"><code>.align-self-start</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary">
+      <ul class="list list-secondary">
         <li>
           <button type="button" style="height: 60px;">Lorem Ipsum</button>
         </li>
@@ -2088,7 +2116,7 @@
   <div class="demo-item demo-preview" data-name="end">
     <div class="demo-text"><code>.align-self-end</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary">
+      <ul class="list list-secondary">
         <li>
           <button type="button" style="height: 60px;">Lorem Ipsum</button>
         </li>
@@ -2104,7 +2132,7 @@
   <div class="demo-item demo-preview" data-name="center">
     <div class="demo-text"><code>.align-self-center</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary">
+      <ul class="list list-secondary">
         <li>
           <button type="button" style="height: 60px;">Lorem Ipsum</button>
         </li>
@@ -2120,7 +2148,7 @@
   <div class="demo-item demo-preview" data-name="baseline">
     <div class="demo-text"><code>.align-self-baseline</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary">
+      <ul class="list list-secondary">
         <li>
           <button type="button" style="height: 60px;">Lorem Ipsum</button>
         </li>
@@ -2136,7 +2164,7 @@
   <div class="demo-item demo-preview" data-name="stretch">
     <div class="demo-text"><code>.align-self-stretch</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary">
+      <ul class="list list-secondary">
         <li>
           <button type="button" style="height: 60px;">Lorem Ipsum</button>
         </li>
@@ -2152,7 +2180,7 @@
   <div class="demo-item demo-preview" data-name="auto">
     <div class="demo-text"><code>.align-self-auto</code></div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary">
+      <ul class="list list-secondary">
         <li>
           <button type="button" style="height: 60px;">Lorem Ipsum</button>
         </li>
@@ -2211,7 +2239,7 @@
 <div class="demo">
   <div class="demo-item demo-preview" data-name="order">
     <div class="demo-source" data-lang="html">
-      <ul class="list list-line list-secondary">
+      <ul class="list list-secondary">
         <li class="order-2">
           <button type="button">Lorem Ipsum</button>
         </li>
@@ -2228,7 +2256,8 @@
 
 <h2>Variables</h2>
 
-<p class="alert alert-default">Read the documentation of <a href="/docs/layout/#variables">layout's variables</a>.</p>
+<p class="alert alert-default">Read the documentation of <a href="/docs/layout/#variables">layout's
+  variables</a>.</p>
 
           </article>
 
@@ -2273,7 +2302,7 @@
             <nav class="site-footer-top display-none display-block-sm" role="navigation">
               <div class="flex flex-auto justify-content-between">
 
-                <div class="site-footer-top-links list-line list-space-none">
+                <div class="site-footer-top-links list-space-none">
                   <a href="/" class="btn btn-primary">
                     Home
                   </a>

@@ -18,11 +18,11 @@
   .list-left(); // alignment
 }
 
-// default
-
-.list-line {
+.list-block {
   .list-space(small); // space
 }
+
+// default
 
 .list-default {
   .list-secondary-empty(); // variant
@@ -30,6 +30,8 @@
 }
 
 .list-drop {
+  .flex-column();
+  .flex-nowrap();
   .list-space(none); // space
   .list-small(); // size
   .list-btn({ .btn-wide(); .btn-squared(); white-space: nowrap; }) !important;
