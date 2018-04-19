@@ -197,7 +197,7 @@ a, .alink, .btn-link {
   margin: auto; // @FIX http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
   width: 100%;
   min-height: 100vh;
-  .overlay-inner {
+  > .overlay-inner {
     position: relative;
     z-index: @index-overlay !important;
     width: 100%;
@@ -212,7 +212,7 @@ a, .alink, .btn-link {
 
 .overlay-screen() {
   max-width: none !important;
-  .overlay-inner {
+  > .overlay-inner {
     position: static;
     & + .xt-backdrop {
       display: none;

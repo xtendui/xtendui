@@ -1043,7 +1043,7 @@
 .overlay-width(@name) {
   .by-key(@overlays, @name);
   @val: @by-key;
-  .overlay-inner {
+  > .overlay-inner {
     max-width: @val;
   }
 }

@@ -820,14 +820,14 @@ a,
   width: 100%;
   min-height: 100vh;
 }
-.overlay .overlay-inner {
+.overlay > .overlay-inner {
   position: relative;
   z-index: 200 !important;
   width: 100%;
   -ms-flex-item-align: center;
   align-self: center;
 }
-.overlay .overlay-inner > .btn-close + * {
+.overlay > .overlay-inner > .btn-close + * {
   margin-top: 0 !important;
 }
 .loader-mask {
@@ -998,22 +998,22 @@ html.xt-scrollbar .overlay-outer {
   border: 0;
   clip: rect(0, 0, 0, 0);
 }
-.overlay-width-tiny .overlay-inner {
+.overlay-width-tiny > .overlay-inner {
   max-width: 516px !important;
 }
-.overlay-width-small .overlay-inner {
+.overlay-width-small > .overlay-inner {
   max-width: 708px !important;
 }
-.overlay-width-medium .overlay-inner {
+.overlay-width-medium > .overlay-inner {
   max-width: 932px !important;
 }
-.overlay-width-big .overlay-inner {
+.overlay-width-big > .overlay-inner {
   max-width: 1140px !important;
 }
-.overlay-width-giant .overlay-inner {
+.overlay-width-giant > .overlay-inner {
   max-width: 1290px !important;
 }
-.overlay-width-full .overlay-inner {
+.overlay-width-full > .overlay-inner {
   max-width: none !important;
 }
 .overlay {
@@ -4935,7 +4935,7 @@ a.active,
   overflow-x: auto !important;
   max-width: 20rem !important;
 }
-.overlay .overlay-inner {
+.overlay > .overlay-inner {
   padding: 3rem;
   border-radius: 3px;
   border-width: 1px;
@@ -4944,11 +4944,11 @@ a.active,
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
 @media (min-width: 768px ) {
-  .overlay .overlay-inner {
+  .overlay > .overlay-inner {
     padding: 4rem;
   }
 }
-.overlay .overlay-inner > .btn-close {
+.overlay > .overlay-inner > .btn-close {
   position: absolute;
   top: 0;
   right: 0;
@@ -4956,177 +4956,177 @@ a.active,
   font-size: 1.5rem;
   padding: .6em .8em;
 }
-.overlay .overlay-inner {
+.overlay > .overlay-inner {
   max-width: 708px;
 }
-.overlay.overlay-default .overlay-inner,
+.overlay.overlay-default > .overlay-inner,
 .overlay.overlay-default.overlay-screen {
   border-color: #fff;
   background-color: #fff;
   color: #343a40;
 }
-.overlay.overlay-default .overlay-inner > .btn-close {
+.overlay.overlay-default > .overlay-inner > .btn-close {
   text-decoration: none;
   border-color: transparent;
   background-color: transparent;
   color: #7367F0;
 }
-.overlay.overlay-default .overlay-inner > .btn-close:hover,
-.overlay.overlay-default .overlay-inner > .btn-close:active,
-.overlay.overlay-default .overlay-inner > .btn-close:focus,
-.overlay.overlay-default .overlay-inner > .btn-close.active {
+.overlay.overlay-default > .overlay-inner > .btn-close:hover,
+.overlay.overlay-default > .overlay-inner > .btn-close:active,
+.overlay.overlay-default > .overlay-inner > .btn-close:focus,
+.overlay.overlay-default > .overlay-inner > .btn-close.active {
   text-decoration: none;
 }
-.overlay.overlay-default .overlay-inner > .btn-close:hover span,
-.overlay.overlay-default .overlay-inner > .btn-close:active span,
-.overlay.overlay-default .overlay-inner > .btn-close:focus span,
-.overlay.overlay-default .overlay-inner > .btn-close.active span {
+.overlay.overlay-default > .overlay-inner > .btn-close:hover span,
+.overlay.overlay-default > .overlay-inner > .btn-close:active span,
+.overlay.overlay-default > .overlay-inner > .btn-close:focus span,
+.overlay.overlay-default > .overlay-inner > .btn-close.active span {
   text-decoration: none;
 }
-.overlay.overlay-default .overlay-inner > .btn-close:hover,
-.overlay.overlay-default .overlay-inner > .btn-close:active,
-.overlay.overlay-default .overlay-inner > .btn-close:focus,
-.overlay.overlay-default .overlay-inner > .btn-close.active {
+.overlay.overlay-default > .overlay-inner > .btn-close:hover,
+.overlay.overlay-default > .overlay-inner > .btn-close:active,
+.overlay.overlay-default > .overlay-inner > .btn-close:focus,
+.overlay.overlay-default > .overlay-inner > .btn-close.active {
   background-color: #887ef2;
   color: #fff;
 }
-.overlay.overlay-default .overlay-inner > .btn-close:active,
-.overlay.overlay-default .overlay-inner > .btn-close.active {
+.overlay.overlay-default > .overlay-inner > .btn-close:active,
+.overlay.overlay-default > .overlay-inner > .btn-close.active {
   border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
 .overlay.overlay-screen {
   max-width: none !important;
 }
-.overlay.overlay-screen .overlay-inner {
+.overlay.overlay-screen > .overlay-inner {
   position: static;
 }
-.overlay.overlay-screen .overlay-inner + .xt-backdrop {
+.overlay.overlay-screen > .overlay-inner + .xt-backdrop {
   display: none;
 }
-.overlay.overlay-screen .overlay-inner {
+.overlay.overlay-screen > .overlay-inner {
   padding-left: 0;
   padding-right: 0;
   box-shadow: none;
 }
-.overlay.overlay-primary .overlay-inner,
+.overlay.overlay-primary > .overlay-inner,
 .overlay.overlay-primary.overlay-screen {
   border-color: #7367F0 !important;
   background-color: #7367F0 !important;
   color: #fff !important;
 }
-.overlay.overlay-primary .overlay-inner > .btn-close {
+.overlay.overlay-primary > .overlay-inner > .btn-close {
   text-decoration: none !important;
   border-color: #7367F0 !important;
   background-color: #7367F0 !important;
   color: rgba(255, 255, 255, 0.8) !important;
 }
-.overlay.overlay-primary .overlay-inner > .btn-close:hover,
-.overlay.overlay-primary .overlay-inner > .btn-close:active,
-.overlay.overlay-primary .overlay-inner > .btn-close:focus,
-.overlay.overlay-primary .overlay-inner > .btn-close.active {
+.overlay.overlay-primary > .overlay-inner > .btn-close:hover,
+.overlay.overlay-primary > .overlay-inner > .btn-close:active,
+.overlay.overlay-primary > .overlay-inner > .btn-close:focus,
+.overlay.overlay-primary > .overlay-inner > .btn-close.active {
   text-decoration: none !important;
 }
-.overlay.overlay-primary .overlay-inner > .btn-close:hover span,
-.overlay.overlay-primary .overlay-inner > .btn-close:active span,
-.overlay.overlay-primary .overlay-inner > .btn-close:focus span,
-.overlay.overlay-primary .overlay-inner > .btn-close.active span {
+.overlay.overlay-primary > .overlay-inner > .btn-close:hover span,
+.overlay.overlay-primary > .overlay-inner > .btn-close:active span,
+.overlay.overlay-primary > .overlay-inner > .btn-close:focus span,
+.overlay.overlay-primary > .overlay-inner > .btn-close.active span {
   text-decoration: none !important;
 }
-.overlay.overlay-primary .overlay-inner > .btn-close:hover,
-.overlay.overlay-primary .overlay-inner > .btn-close:active,
-.overlay.overlay-primary .overlay-inner > .btn-close:focus,
-.overlay.overlay-primary .overlay-inner > .btn-close.active {
+.overlay.overlay-primary > .overlay-inner > .btn-close:hover,
+.overlay.overlay-primary > .overlay-inner > .btn-close:active,
+.overlay.overlay-primary > .overlay-inner > .btn-close:focus,
+.overlay.overlay-primary > .overlay-inner > .btn-close.active {
   background-color: #887ef2 !important;
   color: #fff !important;
 }
-.overlay.overlay-primary .overlay-inner > .btn-close:active,
-.overlay.overlay-primary .overlay-inner > .btn-close.active {
+.overlay.overlay-primary > .overlay-inner > .btn-close:active,
+.overlay.overlay-primary > .overlay-inner > .btn-close.active {
   border-color: #7367F0 !important;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15) !important;
 }
-.overlay.overlay-secondary .overlay-inner,
+.overlay.overlay-secondary > .overlay-inner,
 .overlay.overlay-secondary.overlay-screen {
   border-color: #d4e7ef !important;
   background-color: #d4e7ef !important;
   color: #343a40 !important;
 }
-.overlay.overlay-secondary .overlay-inner > .btn-close {
+.overlay.overlay-secondary > .overlay-inner > .btn-close {
   text-decoration: none !important;
   border-color: #d4e7ef !important;
   background-color: #d4e7ef !important;
   color: rgba(52, 58, 64, 0.8) !important;
 }
-.overlay.overlay-secondary .overlay-inner > .btn-close:hover,
-.overlay.overlay-secondary .overlay-inner > .btn-close:active,
-.overlay.overlay-secondary .overlay-inner > .btn-close:focus,
-.overlay.overlay-secondary .overlay-inner > .btn-close.active {
+.overlay.overlay-secondary > .overlay-inner > .btn-close:hover,
+.overlay.overlay-secondary > .overlay-inner > .btn-close:active,
+.overlay.overlay-secondary > .overlay-inner > .btn-close:focus,
+.overlay.overlay-secondary > .overlay-inner > .btn-close.active {
   text-decoration: none !important;
 }
-.overlay.overlay-secondary .overlay-inner > .btn-close:hover span,
-.overlay.overlay-secondary .overlay-inner > .btn-close:active span,
-.overlay.overlay-secondary .overlay-inner > .btn-close:focus span,
-.overlay.overlay-secondary .overlay-inner > .btn-close.active span {
+.overlay.overlay-secondary > .overlay-inner > .btn-close:hover span,
+.overlay.overlay-secondary > .overlay-inner > .btn-close:active span,
+.overlay.overlay-secondary > .overlay-inner > .btn-close:focus span,
+.overlay.overlay-secondary > .overlay-inner > .btn-close.active span {
   text-decoration: none !important;
 }
-.overlay.overlay-secondary .overlay-inner > .btn-close:hover,
-.overlay.overlay-secondary .overlay-inner > .btn-close:active,
-.overlay.overlay-secondary .overlay-inner > .btn-close:focus,
-.overlay.overlay-secondary .overlay-inner > .btn-close.active {
+.overlay.overlay-secondary > .overlay-inner > .btn-close:hover,
+.overlay.overlay-secondary > .overlay-inner > .btn-close:active,
+.overlay.overlay-secondary > .overlay-inner > .btn-close:focus,
+.overlay.overlay-secondary > .overlay-inner > .btn-close.active {
   background-color: #e7f1f6 !important;
   color: #343a40 !important;
 }
-.overlay.overlay-secondary .overlay-inner > .btn-close:active,
-.overlay.overlay-secondary .overlay-inner > .btn-close.active {
+.overlay.overlay-secondary > .overlay-inner > .btn-close:active,
+.overlay.overlay-secondary > .overlay-inner > .btn-close.active {
   border-color: #d4e7ef !important;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15) !important;
 }
-.overlay.overlay-white .overlay-inner,
+.overlay.overlay-white > .overlay-inner,
 .overlay.overlay-white.overlay-screen {
   border-color: #fff !important;
   background-color: #fff !important;
   color: #343a40 !important;
 }
-.overlay.overlay-white .overlay-inner > .btn-close {
+.overlay.overlay-white > .overlay-inner > .btn-close {
   text-decoration: none !important;
   border-color: transparent !important;
   background-color: transparent !important;
   color: #7367F0 !important;
 }
-.overlay.overlay-white .overlay-inner > .btn-close:hover,
-.overlay.overlay-white .overlay-inner > .btn-close:active,
-.overlay.overlay-white .overlay-inner > .btn-close:focus,
-.overlay.overlay-white .overlay-inner > .btn-close.active {
+.overlay.overlay-white > .overlay-inner > .btn-close:hover,
+.overlay.overlay-white > .overlay-inner > .btn-close:active,
+.overlay.overlay-white > .overlay-inner > .btn-close:focus,
+.overlay.overlay-white > .overlay-inner > .btn-close.active {
   text-decoration: none !important;
 }
-.overlay.overlay-white .overlay-inner > .btn-close:hover span,
-.overlay.overlay-white .overlay-inner > .btn-close:active span,
-.overlay.overlay-white .overlay-inner > .btn-close:focus span,
-.overlay.overlay-white .overlay-inner > .btn-close.active span {
+.overlay.overlay-white > .overlay-inner > .btn-close:hover span,
+.overlay.overlay-white > .overlay-inner > .btn-close:active span,
+.overlay.overlay-white > .overlay-inner > .btn-close:focus span,
+.overlay.overlay-white > .overlay-inner > .btn-close.active span {
   text-decoration: none !important;
 }
-.overlay.overlay-white .overlay-inner > .btn-close:hover,
-.overlay.overlay-white .overlay-inner > .btn-close:active,
-.overlay.overlay-white .overlay-inner > .btn-close:focus,
-.overlay.overlay-white .overlay-inner > .btn-close.active {
+.overlay.overlay-white > .overlay-inner > .btn-close:hover,
+.overlay.overlay-white > .overlay-inner > .btn-close:active,
+.overlay.overlay-white > .overlay-inner > .btn-close:focus,
+.overlay.overlay-white > .overlay-inner > .btn-close.active {
   background-color: #887ef2 !important;
   color: #fff !important;
 }
-.overlay.overlay-white .overlay-inner > .btn-close:active,
-.overlay.overlay-white .overlay-inner > .btn-close.active {
+.overlay.overlay-white > .overlay-inner > .btn-close:active,
+.overlay.overlay-white > .overlay-inner > .btn-close.active {
   border-color: #7367F0 !important;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15) !important;
 }
-.overlay.overlay-squared .overlay-inner {
+.overlay.overlay-squared > .overlay-inner {
   border-radius: 0 !important;
 }
-.overlay.overlay-squared .overlay-inner > .btn-close {
+.overlay.overlay-squared > .overlay-inner > .btn-close {
   border-radius: 0 !important;
 }
-.overlay.overlay-noborder .overlay-inner {
+.overlay.overlay-noborder > .overlay-inner {
   border: 0 !important;
 }
-.overlay.overlay-none .overlay-inner {
+.overlay.overlay-none > .overlay-inner {
   padding: 0 !important;
 }
 .overlay-outer {
@@ -5139,13 +5139,13 @@ a.active,
   opacity: 1;
   animation-name: anim-opacity-in;
 }
-.overlay-outer.active .overlay-inner {
+.overlay-outer.active .overlay > .overlay-inner {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
   animation-name: anim-vertical-in;
 }
-.overlay-outer.active .overlay-inner > .btn-close {
+.overlay-outer.active .overlay > .overlay-inner > .btn-close {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
@@ -5166,13 +5166,13 @@ a.active,
   opacity: 0;
   animation-name: anim-opacity-out;
 }
-.overlay-outer.out .overlay-inner {
+.overlay-outer.out .overlay > .overlay-inner {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-vertical-out;
 }
-.overlay-outer.out .overlay-inner > .btn-close {
+.overlay-outer.out .overlay > .overlay-inner > .btn-close {
   opacity: 0;
 }
 .overlay-outer.out .xt-backdrop {
