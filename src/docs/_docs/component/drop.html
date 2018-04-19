@@ -233,49 +233,54 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item demo-preview" data-name="override">
     <div class="demo-text">
-      You can <strong>override</strong> each buttons by using the <code>.btn</code> class. For custom list style don't
-      use <code>.list-drop</code>.
+      You can <strong>override</strong> each buttons by using the <code>.btn</code> class.
     </div>
     <div class="demo-source demo-drops" data-lang="html">
-      <div class="list list-space-small align-items-center demo-source-from">
-        <div class="drop-container" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            Toggle
-          </button>
-          <div class="drop drop-default">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button" class="btn btn-primary">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
+      <div class="drop-container" data-xt-drop>
+        <button type="button" class="btn btn-primary">
+          Toggle
+        </button>
+        <div class="drop drop-default">
+          <div class="drop-inner">
+            <ul class="list list-drop">
+              <li>
+                <button type="button">Lorem ipsum dolor</button>
+              </li>
+              <li>
+                <!-- this options don't works you need to use .btn -->
+                <button type="button" class="btn-primary btn-tiny">Dolor sit</button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-primary btn-tiny">Amet</button>
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="drop-container" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            Toggle
-          </button>
-          <div class="drop drop-default">
-            <div class="drop-inner">
-              <ul class="list list-block list-primary list-space-none list-center list-big list-squared">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="custom">
+    <div class="demo-text">
+      For custom list style don't use <code>.list-drop</code>.
+    </div>
+    <div class="demo-source demo-drops" data-lang="html">
+      <div class="drop-container" data-xt-drop>
+        <button type="button" class="btn btn-primary">
+          Toggle
+        </button>
+        <div class="drop drop-default">
+          <div class="drop-inner">
+            <ul class="list list-block list-primary list-space-none list-center list-big list-squared">
+              <li>
+                <button type="button">Lorem ipsum dolor</button>
+              </li>
+              <li>
+                <button type="button">Dolor sit</button>
+              </li>
+              <li>
+                <button type="button">Amet</button>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

@@ -308,6 +308,10 @@ pre code {
   padding: 0;
   list-style: none;
   cursor: default;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: -0.5rem -0.5rem;
@@ -563,6 +567,10 @@ select.input-control {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
@@ -574,6 +582,10 @@ select.input-control {
   padding: 0;
   list-style: none;
   cursor: default;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
@@ -4162,6 +4174,10 @@ legend + legend {
   padding: 0;
   list-style: none;
   cursor: default;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: -0.5rem -0.5rem;
