@@ -339,7 +339,7 @@ a, .alink {
 
 .drop {
   // styles
-  .drop-inner {
+  > .drop-inner {
     .padding(y, 1.3rem); // vertical space
     border-radius: @border-radius;
     border-width: 1px;
@@ -367,13 +367,13 @@ a, .alink {
 // variant
 
 .drop-primary() {
-  .drop-inner {
+  > .drop-inner {
     border-color: darken(@primary, @perc-xs);
     background-color: @primary;
     color: @text-inverse;
-  }
-  .list-drop {
-    .list-btn-default({ .btn-primary() });
+    > .list-drop {
+      .list-btn-default({ .btn-primary() });
+    }
   }
 }
 
@@ -382,13 +382,13 @@ a, .alink {
 }
 
 .drop-secondary() {
-  .drop-inner {
+  > .drop-inner {
     border-color: darken(@secondary, @perc-xs);
     background-color: @secondary;
     color: @text;
-  }
-  .list-drop {
-    .list-btn-default({ .btn-secondary() });
+    > .list-drop {
+      .list-btn-default({ .btn-secondary() });
+    }
   }
 }
 
@@ -397,13 +397,13 @@ a, .alink {
 }
 
 .drop-white() {
-  .drop-inner {
+  > .drop-inner {
     border-color: darken(@white, @perc-xs);
     background-color: @white;
     color: @text;
-  }
-  .list-drop {
-    .list-btn-default({ .btn-primary-empty() });
+    > .list-drop {
+      .list-btn-default({ .btn-primary-empty() });
+    }
   }
 }
 
@@ -414,7 +414,7 @@ a, .alink {
 // special
 
 .drop-squared() {
-  .drop-inner {
+  > .drop-inner {
     border-radius: 0;
   }
 }
@@ -424,7 +424,7 @@ a, .alink {
 }
 
 .drop-noborder() {
-  .drop-inner {
+  > .drop-inner {
     border: 0;
   }
 }
@@ -436,7 +436,7 @@ a, .alink {
 // dimensions
 
 .drop-max-height() {
-  .drop-inner {
+  > .drop-inner {
     overflow-y: auto;
     max-height: 20rem;
   }
@@ -447,7 +447,7 @@ a, .alink {
 }
 
 .drop-max-width() {
-  .drop-inner {
+  > .drop-inner {
     overflow-x: auto;
     max-width: 20rem;
   }
@@ -601,7 +601,7 @@ a, .alink {
 .overlay-outer {
   .animation-default.active(); // needed for .out animation timing
   &.active {
-    .overlay {
+    > .overlay {
       .animation-default.active();
       .anim-opacity.active();
       > .overlay-inner {
@@ -616,12 +616,12 @@ a, .alink {
         }
       }
     }
-    .xt-backdrop {
+    > .xt-backdrop {
       .anim-backdrop.active();
     }
   }
   &.out {
-    .overlay {
+    > .overlay {
       .anim-opacity.out();
       > .overlay-inner {
         .anim-vertical.out();
@@ -630,7 +630,7 @@ a, .alink {
         }
       }
     }
-    .xt-backdrop {
+    > .xt-backdrop {
       .anim-backdrop.out();
     }
   }

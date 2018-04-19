@@ -52,24 +52,19 @@ a, .alink, .btn-link {
 
 .drop-container-static {
   position: static;
-  .drop,
-  .drop-inner {
+  > .drop,
+  > .drop > .drop-inner {
     width: 100%;
   }
 }
 
 .drop {
   .toggle-flex();
+  // styles
   position: absolute;
   z-index: @index-drop !important;
-  // styles
-  .drop-inner {
+  > .drop-inner {
     position: relative;
-  }
-  .button {
-    width: 100%;
-    text-align: left;
-    white-space: nowrap;
   }
   // others
   &.out {

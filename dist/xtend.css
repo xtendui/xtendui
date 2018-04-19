@@ -802,8 +802,8 @@ a,
 .drop-container-static {
   position: static;
 }
-.drop-container-static .drop,
-.drop-container-static .drop-inner {
+.drop-container-static > .drop,
+.drop-container-static > .drop > .drop-inner {
   width: 100%;
 }
 .drop {
@@ -817,13 +817,8 @@ a,
   display: -ms-flexbox !important;
   display: flex !important;
 }
-.drop .drop-inner {
+.drop > .drop-inner {
   position: relative;
-}
-.drop .button {
-  width: 100%;
-  text-align: left;
-  white-space: nowrap;
 }
 .drop.out {
   pointer-events: none;
@@ -4868,7 +4863,7 @@ a.active,
   top: 100%;
   bottom: auto;
 }
-.drop .drop-inner {
+.drop > .drop-inner {
   padding-top: 1.3rem;
   padding-bottom: 1.3rem;
   border-radius: 3px;
@@ -4889,217 +4884,217 @@ a.active,
   opacity: 0;
   animation-name: anim-vertical-out;
 }
-.drop.drop-default .drop-inner {
+.drop.drop-default > .drop-inner {
   border-color: #f2f2f2;
   background-color: #fff;
   color: #343a40;
 }
-.drop.drop-default .list-drop > li > a:not(.btn),
-.drop.drop-default .list-drop > li > button:not(.btn) {
+.drop.drop-default > .drop-inner > .list-drop > li > a:not(.btn),
+.drop.drop-default > .drop-inner > .list-drop > li > button:not(.btn) {
   text-decoration: none;
   border-color: transparent;
   background-color: transparent;
   color: #7367F0;
 }
-.drop.drop-default .list-drop > li > a:not(.btn):hover,
-.drop.drop-default .list-drop > li > button:not(.btn):hover,
-.drop.drop-default .list-drop > li > a:not(.btn):active,
-.drop.drop-default .list-drop > li > button:not(.btn):active,
-.drop.drop-default .list-drop > li > a:not(.btn):focus,
-.drop.drop-default .list-drop > li > button:not(.btn):focus,
-.drop.drop-default .list-drop > li > a:not(.btn).active,
-.drop.drop-default .list-drop > li > button:not(.btn).active {
+.drop.drop-default > .drop-inner > .list-drop > li > a:not(.btn):hover,
+.drop.drop-default > .drop-inner > .list-drop > li > button:not(.btn):hover,
+.drop.drop-default > .drop-inner > .list-drop > li > a:not(.btn):active,
+.drop.drop-default > .drop-inner > .list-drop > li > button:not(.btn):active,
+.drop.drop-default > .drop-inner > .list-drop > li > a:not(.btn):focus,
+.drop.drop-default > .drop-inner > .list-drop > li > button:not(.btn):focus,
+.drop.drop-default > .drop-inner > .list-drop > li > a:not(.btn).active,
+.drop.drop-default > .drop-inner > .list-drop > li > button:not(.btn).active {
   text-decoration: none;
 }
-.drop.drop-default .list-drop > li > a:not(.btn):hover span,
-.drop.drop-default .list-drop > li > button:not(.btn):hover span,
-.drop.drop-default .list-drop > li > a:not(.btn):active span,
-.drop.drop-default .list-drop > li > button:not(.btn):active span,
-.drop.drop-default .list-drop > li > a:not(.btn):focus span,
-.drop.drop-default .list-drop > li > button:not(.btn):focus span,
-.drop.drop-default .list-drop > li > a:not(.btn).active span,
-.drop.drop-default .list-drop > li > button:not(.btn).active span {
+.drop.drop-default > .drop-inner > .list-drop > li > a:not(.btn):hover span,
+.drop.drop-default > .drop-inner > .list-drop > li > button:not(.btn):hover span,
+.drop.drop-default > .drop-inner > .list-drop > li > a:not(.btn):active span,
+.drop.drop-default > .drop-inner > .list-drop > li > button:not(.btn):active span,
+.drop.drop-default > .drop-inner > .list-drop > li > a:not(.btn):focus span,
+.drop.drop-default > .drop-inner > .list-drop > li > button:not(.btn):focus span,
+.drop.drop-default > .drop-inner > .list-drop > li > a:not(.btn).active span,
+.drop.drop-default > .drop-inner > .list-drop > li > button:not(.btn).active span {
   text-decoration: none;
 }
-.drop.drop-default .list-drop > li > a:not(.btn):hover,
-.drop.drop-default .list-drop > li > button:not(.btn):hover,
-.drop.drop-default .list-drop > li > a:not(.btn):active,
-.drop.drop-default .list-drop > li > button:not(.btn):active,
-.drop.drop-default .list-drop > li > a:not(.btn):focus,
-.drop.drop-default .list-drop > li > button:not(.btn):focus,
-.drop.drop-default .list-drop > li > a:not(.btn).active,
-.drop.drop-default .list-drop > li > button:not(.btn).active {
+.drop.drop-default > .drop-inner > .list-drop > li > a:not(.btn):hover,
+.drop.drop-default > .drop-inner > .list-drop > li > button:not(.btn):hover,
+.drop.drop-default > .drop-inner > .list-drop > li > a:not(.btn):active,
+.drop.drop-default > .drop-inner > .list-drop > li > button:not(.btn):active,
+.drop.drop-default > .drop-inner > .list-drop > li > a:not(.btn):focus,
+.drop.drop-default > .drop-inner > .list-drop > li > button:not(.btn):focus,
+.drop.drop-default > .drop-inner > .list-drop > li > a:not(.btn).active,
+.drop.drop-default > .drop-inner > .list-drop > li > button:not(.btn).active {
   background-color: #887ef2;
   color: #fff;
 }
-.drop.drop-default .list-drop > li > a:not(.btn):active,
-.drop.drop-default .list-drop > li > button:not(.btn):active,
-.drop.drop-default .list-drop > li > a:not(.btn).active,
-.drop.drop-default .list-drop > li > button:not(.btn).active {
+.drop.drop-default > .drop-inner > .list-drop > li > a:not(.btn):active,
+.drop.drop-default > .drop-inner > .list-drop > li > button:not(.btn):active,
+.drop.drop-default > .drop-inner > .list-drop > li > a:not(.btn).active,
+.drop.drop-default > .drop-inner > .list-drop > li > button:not(.btn).active {
   border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
 }
-.drop.drop-primary .drop-inner {
+.drop.drop-primary > .drop-inner {
   border-color: #5e50ee !important;
   background-color: #7367F0 !important;
   color: #fff !important;
 }
-.drop.drop-primary .list-drop > li > a:not(.btn),
-.drop.drop-primary .list-drop > li > button:not(.btn) {
+.drop.drop-primary > .drop-inner > .list-drop > li > a:not(.btn),
+.drop.drop-primary > .drop-inner > .list-drop > li > button:not(.btn) {
   text-decoration: none !important;
   border-color: #7367F0 !important;
   background-color: #7367F0 !important;
   color: rgba(255, 255, 255, 0.8) !important;
 }
-.drop.drop-primary .list-drop > li > a:not(.btn):hover,
-.drop.drop-primary .list-drop > li > button:not(.btn):hover,
-.drop.drop-primary .list-drop > li > a:not(.btn):active,
-.drop.drop-primary .list-drop > li > button:not(.btn):active,
-.drop.drop-primary .list-drop > li > a:not(.btn):focus,
-.drop.drop-primary .list-drop > li > button:not(.btn):focus,
-.drop.drop-primary .list-drop > li > a:not(.btn).active,
-.drop.drop-primary .list-drop > li > button:not(.btn).active {
+.drop.drop-primary > .drop-inner > .list-drop > li > a:not(.btn):hover,
+.drop.drop-primary > .drop-inner > .list-drop > li > button:not(.btn):hover,
+.drop.drop-primary > .drop-inner > .list-drop > li > a:not(.btn):active,
+.drop.drop-primary > .drop-inner > .list-drop > li > button:not(.btn):active,
+.drop.drop-primary > .drop-inner > .list-drop > li > a:not(.btn):focus,
+.drop.drop-primary > .drop-inner > .list-drop > li > button:not(.btn):focus,
+.drop.drop-primary > .drop-inner > .list-drop > li > a:not(.btn).active,
+.drop.drop-primary > .drop-inner > .list-drop > li > button:not(.btn).active {
   text-decoration: none !important;
 }
-.drop.drop-primary .list-drop > li > a:not(.btn):hover span,
-.drop.drop-primary .list-drop > li > button:not(.btn):hover span,
-.drop.drop-primary .list-drop > li > a:not(.btn):active span,
-.drop.drop-primary .list-drop > li > button:not(.btn):active span,
-.drop.drop-primary .list-drop > li > a:not(.btn):focus span,
-.drop.drop-primary .list-drop > li > button:not(.btn):focus span,
-.drop.drop-primary .list-drop > li > a:not(.btn).active span,
-.drop.drop-primary .list-drop > li > button:not(.btn).active span {
+.drop.drop-primary > .drop-inner > .list-drop > li > a:not(.btn):hover span,
+.drop.drop-primary > .drop-inner > .list-drop > li > button:not(.btn):hover span,
+.drop.drop-primary > .drop-inner > .list-drop > li > a:not(.btn):active span,
+.drop.drop-primary > .drop-inner > .list-drop > li > button:not(.btn):active span,
+.drop.drop-primary > .drop-inner > .list-drop > li > a:not(.btn):focus span,
+.drop.drop-primary > .drop-inner > .list-drop > li > button:not(.btn):focus span,
+.drop.drop-primary > .drop-inner > .list-drop > li > a:not(.btn).active span,
+.drop.drop-primary > .drop-inner > .list-drop > li > button:not(.btn).active span {
   text-decoration: none !important;
 }
-.drop.drop-primary .list-drop > li > a:not(.btn):hover,
-.drop.drop-primary .list-drop > li > button:not(.btn):hover,
-.drop.drop-primary .list-drop > li > a:not(.btn):active,
-.drop.drop-primary .list-drop > li > button:not(.btn):active,
-.drop.drop-primary .list-drop > li > a:not(.btn):focus,
-.drop.drop-primary .list-drop > li > button:not(.btn):focus,
-.drop.drop-primary .list-drop > li > a:not(.btn).active,
-.drop.drop-primary .list-drop > li > button:not(.btn).active {
+.drop.drop-primary > .drop-inner > .list-drop > li > a:not(.btn):hover,
+.drop.drop-primary > .drop-inner > .list-drop > li > button:not(.btn):hover,
+.drop.drop-primary > .drop-inner > .list-drop > li > a:not(.btn):active,
+.drop.drop-primary > .drop-inner > .list-drop > li > button:not(.btn):active,
+.drop.drop-primary > .drop-inner > .list-drop > li > a:not(.btn):focus,
+.drop.drop-primary > .drop-inner > .list-drop > li > button:not(.btn):focus,
+.drop.drop-primary > .drop-inner > .list-drop > li > a:not(.btn).active,
+.drop.drop-primary > .drop-inner > .list-drop > li > button:not(.btn).active {
   background-color: #887ef2 !important;
   color: #fff !important;
 }
-.drop.drop-primary .list-drop > li > a:not(.btn):active,
-.drop.drop-primary .list-drop > li > button:not(.btn):active,
-.drop.drop-primary .list-drop > li > a:not(.btn).active,
-.drop.drop-primary .list-drop > li > button:not(.btn).active {
+.drop.drop-primary > .drop-inner > .list-drop > li > a:not(.btn):active,
+.drop.drop-primary > .drop-inner > .list-drop > li > button:not(.btn):active,
+.drop.drop-primary > .drop-inner > .list-drop > li > a:not(.btn).active,
+.drop.drop-primary > .drop-inner > .list-drop > li > button:not(.btn).active {
   border-color: #7367F0 !important;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15) !important;
 }
-.drop.drop-secondary .drop-inner {
+.drop.drop-secondary > .drop-inner {
   border-color: #c1dde8 !important;
   background-color: #d4e7ef !important;
   color: #343a40 !important;
 }
-.drop.drop-secondary .list-drop > li > a:not(.btn),
-.drop.drop-secondary .list-drop > li > button:not(.btn) {
+.drop.drop-secondary > .drop-inner > .list-drop > li > a:not(.btn),
+.drop.drop-secondary > .drop-inner > .list-drop > li > button:not(.btn) {
   text-decoration: none !important;
   border-color: #d4e7ef !important;
   background-color: #d4e7ef !important;
   color: rgba(52, 58, 64, 0.8) !important;
 }
-.drop.drop-secondary .list-drop > li > a:not(.btn):hover,
-.drop.drop-secondary .list-drop > li > button:not(.btn):hover,
-.drop.drop-secondary .list-drop > li > a:not(.btn):active,
-.drop.drop-secondary .list-drop > li > button:not(.btn):active,
-.drop.drop-secondary .list-drop > li > a:not(.btn):focus,
-.drop.drop-secondary .list-drop > li > button:not(.btn):focus,
-.drop.drop-secondary .list-drop > li > a:not(.btn).active,
-.drop.drop-secondary .list-drop > li > button:not(.btn).active {
+.drop.drop-secondary > .drop-inner > .list-drop > li > a:not(.btn):hover,
+.drop.drop-secondary > .drop-inner > .list-drop > li > button:not(.btn):hover,
+.drop.drop-secondary > .drop-inner > .list-drop > li > a:not(.btn):active,
+.drop.drop-secondary > .drop-inner > .list-drop > li > button:not(.btn):active,
+.drop.drop-secondary > .drop-inner > .list-drop > li > a:not(.btn):focus,
+.drop.drop-secondary > .drop-inner > .list-drop > li > button:not(.btn):focus,
+.drop.drop-secondary > .drop-inner > .list-drop > li > a:not(.btn).active,
+.drop.drop-secondary > .drop-inner > .list-drop > li > button:not(.btn).active {
   text-decoration: none !important;
 }
-.drop.drop-secondary .list-drop > li > a:not(.btn):hover span,
-.drop.drop-secondary .list-drop > li > button:not(.btn):hover span,
-.drop.drop-secondary .list-drop > li > a:not(.btn):active span,
-.drop.drop-secondary .list-drop > li > button:not(.btn):active span,
-.drop.drop-secondary .list-drop > li > a:not(.btn):focus span,
-.drop.drop-secondary .list-drop > li > button:not(.btn):focus span,
-.drop.drop-secondary .list-drop > li > a:not(.btn).active span,
-.drop.drop-secondary .list-drop > li > button:not(.btn).active span {
+.drop.drop-secondary > .drop-inner > .list-drop > li > a:not(.btn):hover span,
+.drop.drop-secondary > .drop-inner > .list-drop > li > button:not(.btn):hover span,
+.drop.drop-secondary > .drop-inner > .list-drop > li > a:not(.btn):active span,
+.drop.drop-secondary > .drop-inner > .list-drop > li > button:not(.btn):active span,
+.drop.drop-secondary > .drop-inner > .list-drop > li > a:not(.btn):focus span,
+.drop.drop-secondary > .drop-inner > .list-drop > li > button:not(.btn):focus span,
+.drop.drop-secondary > .drop-inner > .list-drop > li > a:not(.btn).active span,
+.drop.drop-secondary > .drop-inner > .list-drop > li > button:not(.btn).active span {
   text-decoration: none !important;
 }
-.drop.drop-secondary .list-drop > li > a:not(.btn):hover,
-.drop.drop-secondary .list-drop > li > button:not(.btn):hover,
-.drop.drop-secondary .list-drop > li > a:not(.btn):active,
-.drop.drop-secondary .list-drop > li > button:not(.btn):active,
-.drop.drop-secondary .list-drop > li > a:not(.btn):focus,
-.drop.drop-secondary .list-drop > li > button:not(.btn):focus,
-.drop.drop-secondary .list-drop > li > a:not(.btn).active,
-.drop.drop-secondary .list-drop > li > button:not(.btn).active {
+.drop.drop-secondary > .drop-inner > .list-drop > li > a:not(.btn):hover,
+.drop.drop-secondary > .drop-inner > .list-drop > li > button:not(.btn):hover,
+.drop.drop-secondary > .drop-inner > .list-drop > li > a:not(.btn):active,
+.drop.drop-secondary > .drop-inner > .list-drop > li > button:not(.btn):active,
+.drop.drop-secondary > .drop-inner > .list-drop > li > a:not(.btn):focus,
+.drop.drop-secondary > .drop-inner > .list-drop > li > button:not(.btn):focus,
+.drop.drop-secondary > .drop-inner > .list-drop > li > a:not(.btn).active,
+.drop.drop-secondary > .drop-inner > .list-drop > li > button:not(.btn).active {
   background-color: #e7f1f6 !important;
   color: #343a40 !important;
 }
-.drop.drop-secondary .list-drop > li > a:not(.btn):active,
-.drop.drop-secondary .list-drop > li > button:not(.btn):active,
-.drop.drop-secondary .list-drop > li > a:not(.btn).active,
-.drop.drop-secondary .list-drop > li > button:not(.btn).active {
+.drop.drop-secondary > .drop-inner > .list-drop > li > a:not(.btn):active,
+.drop.drop-secondary > .drop-inner > .list-drop > li > button:not(.btn):active,
+.drop.drop-secondary > .drop-inner > .list-drop > li > a:not(.btn).active,
+.drop.drop-secondary > .drop-inner > .list-drop > li > button:not(.btn).active {
   border-color: #d4e7ef !important;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15) !important;
 }
-.drop.drop-white .drop-inner {
+.drop.drop-white > .drop-inner {
   border-color: #f2f2f2 !important;
   background-color: #fff !important;
   color: #343a40 !important;
 }
-.drop.drop-white .list-drop > li > a:not(.btn),
-.drop.drop-white .list-drop > li > button:not(.btn) {
+.drop.drop-white > .drop-inner > .list-drop > li > a:not(.btn),
+.drop.drop-white > .drop-inner > .list-drop > li > button:not(.btn) {
   text-decoration: none !important;
   border-color: transparent !important;
   background-color: transparent !important;
   color: #7367F0 !important;
 }
-.drop.drop-white .list-drop > li > a:not(.btn):hover,
-.drop.drop-white .list-drop > li > button:not(.btn):hover,
-.drop.drop-white .list-drop > li > a:not(.btn):active,
-.drop.drop-white .list-drop > li > button:not(.btn):active,
-.drop.drop-white .list-drop > li > a:not(.btn):focus,
-.drop.drop-white .list-drop > li > button:not(.btn):focus,
-.drop.drop-white .list-drop > li > a:not(.btn).active,
-.drop.drop-white .list-drop > li > button:not(.btn).active {
+.drop.drop-white > .drop-inner > .list-drop > li > a:not(.btn):hover,
+.drop.drop-white > .drop-inner > .list-drop > li > button:not(.btn):hover,
+.drop.drop-white > .drop-inner > .list-drop > li > a:not(.btn):active,
+.drop.drop-white > .drop-inner > .list-drop > li > button:not(.btn):active,
+.drop.drop-white > .drop-inner > .list-drop > li > a:not(.btn):focus,
+.drop.drop-white > .drop-inner > .list-drop > li > button:not(.btn):focus,
+.drop.drop-white > .drop-inner > .list-drop > li > a:not(.btn).active,
+.drop.drop-white > .drop-inner > .list-drop > li > button:not(.btn).active {
   text-decoration: none !important;
 }
-.drop.drop-white .list-drop > li > a:not(.btn):hover span,
-.drop.drop-white .list-drop > li > button:not(.btn):hover span,
-.drop.drop-white .list-drop > li > a:not(.btn):active span,
-.drop.drop-white .list-drop > li > button:not(.btn):active span,
-.drop.drop-white .list-drop > li > a:not(.btn):focus span,
-.drop.drop-white .list-drop > li > button:not(.btn):focus span,
-.drop.drop-white .list-drop > li > a:not(.btn).active span,
-.drop.drop-white .list-drop > li > button:not(.btn).active span {
+.drop.drop-white > .drop-inner > .list-drop > li > a:not(.btn):hover span,
+.drop.drop-white > .drop-inner > .list-drop > li > button:not(.btn):hover span,
+.drop.drop-white > .drop-inner > .list-drop > li > a:not(.btn):active span,
+.drop.drop-white > .drop-inner > .list-drop > li > button:not(.btn):active span,
+.drop.drop-white > .drop-inner > .list-drop > li > a:not(.btn):focus span,
+.drop.drop-white > .drop-inner > .list-drop > li > button:not(.btn):focus span,
+.drop.drop-white > .drop-inner > .list-drop > li > a:not(.btn).active span,
+.drop.drop-white > .drop-inner > .list-drop > li > button:not(.btn).active span {
   text-decoration: none !important;
 }
-.drop.drop-white .list-drop > li > a:not(.btn):hover,
-.drop.drop-white .list-drop > li > button:not(.btn):hover,
-.drop.drop-white .list-drop > li > a:not(.btn):active,
-.drop.drop-white .list-drop > li > button:not(.btn):active,
-.drop.drop-white .list-drop > li > a:not(.btn):focus,
-.drop.drop-white .list-drop > li > button:not(.btn):focus,
-.drop.drop-white .list-drop > li > a:not(.btn).active,
-.drop.drop-white .list-drop > li > button:not(.btn).active {
+.drop.drop-white > .drop-inner > .list-drop > li > a:not(.btn):hover,
+.drop.drop-white > .drop-inner > .list-drop > li > button:not(.btn):hover,
+.drop.drop-white > .drop-inner > .list-drop > li > a:not(.btn):active,
+.drop.drop-white > .drop-inner > .list-drop > li > button:not(.btn):active,
+.drop.drop-white > .drop-inner > .list-drop > li > a:not(.btn):focus,
+.drop.drop-white > .drop-inner > .list-drop > li > button:not(.btn):focus,
+.drop.drop-white > .drop-inner > .list-drop > li > a:not(.btn).active,
+.drop.drop-white > .drop-inner > .list-drop > li > button:not(.btn).active {
   background-color: #887ef2 !important;
   color: #fff !important;
 }
-.drop.drop-white .list-drop > li > a:not(.btn):active,
-.drop.drop-white .list-drop > li > button:not(.btn):active,
-.drop.drop-white .list-drop > li > a:not(.btn).active,
-.drop.drop-white .list-drop > li > button:not(.btn).active {
+.drop.drop-white > .drop-inner > .list-drop > li > a:not(.btn):active,
+.drop.drop-white > .drop-inner > .list-drop > li > button:not(.btn):active,
+.drop.drop-white > .drop-inner > .list-drop > li > a:not(.btn).active,
+.drop.drop-white > .drop-inner > .list-drop > li > button:not(.btn).active {
   border-color: #7367F0 !important;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15) !important;
 }
-.drop.drop-squared .drop-inner {
+.drop.drop-squared > .drop-inner {
   border-radius: 0 !important;
 }
-.drop.drop-noborder .drop-inner {
+.drop.drop-noborder > .drop-inner {
   border: 0 !important;
 }
-.drop.drop-max-height .drop-inner {
+.drop.drop-max-height > .drop-inner {
   overflow-y: auto !important;
   max-height: 20rem !important;
 }
-.drop.drop-max-width .drop-inner {
+.drop.drop-max-width > .drop-inner {
   overflow-x: auto !important;
   max-width: 20rem !important;
 }
@@ -5301,19 +5296,19 @@ a.active,
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.overlay-outer.active .overlay {
+.overlay-outer.active > .overlay {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
   animation-name: anim-opacity-in;
 }
-.overlay-outer.active .overlay > .overlay-inner {
+.overlay-outer.active > .overlay > .overlay-inner {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
   animation-name: anim-vertical-in;
 }
-.overlay-outer.active .overlay > .overlay-inner > .btn-close {
+.overlay-outer.active > .overlay > .overlay-inner > .btn-close {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
@@ -5322,28 +5317,28 @@ a.active,
   opacity: 0;
   animation-delay: 300ms;
 }
-.overlay-outer.active .xt-backdrop {
+.overlay-outer.active > .xt-backdrop {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 0.6;
   animation-name: anim-backdrop-in;
 }
-.overlay-outer.out .overlay {
+.overlay-outer.out > .overlay {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-opacity-out;
 }
-.overlay-outer.out .overlay > .overlay-inner {
+.overlay-outer.out > .overlay > .overlay-inner {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
   animation-name: anim-vertical-out;
 }
-.overlay-outer.out .overlay > .overlay-inner > .btn-close {
+.overlay-outer.out > .overlay > .overlay-inner > .btn-close {
   opacity: 0;
 }
-.overlay-outer.out .xt-backdrop {
+.overlay-outer.out > .xt-backdrop {
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   opacity: 0;
