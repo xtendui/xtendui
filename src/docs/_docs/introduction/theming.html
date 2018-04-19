@@ -1,0 +1,34 @@
+---
+title: Theming
+categories: [Introduction]
+order: 100
+
+description: Lorem ipsum
+---
+
+<h2>Theming</h2>
+
+<h3>Structure</h3>
+
+<p>Theming styles are defined inside <code>/dist/theme/</code>.</p>
+
+<p><strong>You can remove or add new classes depending on your needs</strong>, and inside the classes you can override
+  css as you wish.</p>
+
+<p>The files inside <code>/dist/core/</code> are core styles that shouldn't be modified. They are separated to keep the
+  theming files shorter and cleaner.</p>
+
+<h3>Code</h3>
+
+<p>The css code is structure this way:
+
+<ul>
+  <li>You have a <em>main</em> selector (for example <code>.btn {}</code>). Inside it after <code>// styles</code> you
+    set <strong>shared styles</strong> (like font or border), after <code>// options</code> you set the <strong>default
+      options</strong> using a <em>option</em> class (like size or special, see point below).
+  </li>
+  <li>You have the <em>options</em> selectors after the main selector, where you put the options: for example buttons
+    have <code>// size</code> where you put button sizes, <code>// special</code> where you put special options, <code>//
+      variant</code> where you put the button design variants.
+  </li>
+</ul>

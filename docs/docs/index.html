@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
 
     <!-- seo -->
-    <title>Intro • Xtend</title>
+    <title>Introduction • Xtend</title>
     <meta name="description" content="Lorem ipsum" />
 
     <!-- icons -->
@@ -117,7 +117,7 @@
           <div class="container">
             <div class="flex flex-auto align-items-center align-content-center justify-content-between">
               <div class="site-hero-text">
-                <h1>Intro</h1>
+                <h1>Introduction</h1>
                 <p class="font-giant">Lorem ipsum</p>
               </div>
               <div class="site-hero-img">
@@ -144,18 +144,26 @@
                         
                           <div class="site-breadcrumbs-body-main">
                             <a href="/docs/" class="btn btn-primary">
-                              Intro
+                              Introduction
                             </a>
                             
                             <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
                               
                                 <div class="site-breadcrumbs-body-sub-inner">
                                   
-                                  <a href="/docs/intro/variables/" class="btn btn-primary">
+                                  <a href="/docs/introduction/installation/" class="btn btn-primary">
+                                    Installation
+                                  </a>
+                                  
+                                  <a href="/docs/introduction/theming/" class="btn btn-primary">
+                                    Theming
+                                  </a>
+                                  
+                                  <a href="/docs/introduction/variables/" class="btn btn-primary">
                                     Variables
                                   </a>
                                   
-                                  <a href="/docs/intro/utils/" class="btn btn-primary">
+                                  <a href="/docs/introduction/utils/" class="btn btn-primary">
                                     Utils
                                   </a>
                                   
@@ -260,6 +268,12 @@
                         
                       
                         
+                      
+                        
+                      
+                        
+                      
+                        
                           <div class="site-breadcrumbs-body-main">
                             <a href="/docs/component/" class="btn btn-primary">
                               Component
@@ -289,8 +303,6 @@
                               
                             </div>
                           </div>
-                        
-                      
                         
                       
                         
@@ -425,90 +437,7 @@
         <div class="col col-12 col-9-md">
 
           <article class="site-article default-lists">
-            <h2>Installation</h2>
-
-<p>You can install with one of the following:</p>
-
-<ul>
-  <li>download: <a href="https://github.com/minimit/xtend-library/releases/latest" target="_blank">latest release</a>
-  </li>
-  <li>clone: <code>git clone https://github.com/minimit/xtend-library.git</code></li>
-  <li><a href="https://yarnpkg.com/" target="_blank">yarn</a>: <code>yarn add xtend-library --save</code></li>
-  <li><a href="https://www.npmjs.com/" target="_blank">npm</a>: <code>npm install xtend-library --save</code></li>
-  <li><a href="https://getcomposer.org/" target="_blank">composer</a>: <code>composer require
-    minimit/xtend-library</code></li>
-</ul>
-
-<h3>Theming</h3>
-
-<p>You need to copy xtend-library <strong>/dist</strong> to customize the files.</p>
-
-<p>If you installed with <strong>yarn</strong> or <strong>npm</strong>:</p>
-
-<pre>
-  <code>
-    mkdir -p xtend-library/
-    cp -r node_modules/xtend-library/dist/ xtend-library/
-  </code>
-</pre>
-
-<p>If you installed with <strong>composer</strong>:</p>
-
-<pre>
-  <code>
-    mkdir -p xtend-library/
-    cp -r vendor/minimit/xtend-library/dist/ xtend-library/
-  </code>
-</pre>
-
-<p>After in <code>xtend.less</code> put the right path to the <strong>@import</strong> of core and theme.</p>
-
-<h3>Compilation</h3>
-
-<p>We use gulp to compile and watch files. <strong>If you want to recompile the library</strong>:</p>
-
-<ul>
-  <li>Install required npm packages with <code>npm install</code></li>
-  <li>Use <code>npm run build</code> or <code>npm run watch</code></li>
-</ul>
-
-<h3>Documentation</h3>
-
-<p>We use jekyll to serve the docs. <strong>If you want to serve the docs locally</strong>:</p>
-
-<ul>
-  <li>You need to <a href="https://jekyllrb.com/docs/installation/" target="_blank">install jekyll</a> on your local machine</li>
-  <li>Use <code>npm run serve</code>, docs will be served to <code>http://127.0.0.1:4000/</code></li>
-</ul>
-
-<h2>Theme</h2>
-
-<h3>Structure</h3>
-
-<p>Theming styles are defined inside <code>/dist/theme/</code>.</p>
-
-<p><strong>You can remove or add new classes depending on your needs</strong>, and inside the classes you can override
-  css as you wish.</p>
-
-<p>The files inside <code>/dist/core/</code> are core styles that shouldn't be modified. They are separated to keep the
-  theming files shorter and cleaner.</p>
-
-<h3>Code</h3>
-
-<p>The css code is structure this way:
-
-<ul>
-  <li>You have a <em>main</em> selector (for example <code>.btn {}</code>). Inside it after <code>// styles</code> you
-    set <strong>shared styles</strong> (like font or border), after <code>// options</code> you set the <strong>default
-      options</strong> using a <em>option</em> class (like size or special, see point below).
-  </li>
-  <li>You have the <em>options</em> selectors after the main selector, where you put the options: for example buttons
-    have <code>// size</code> where you put button sizes, <code>// special</code> where you put special options, <code>//
-      variant</code> where you put the button design variants.
-  </li>
-</ul>
-
-
+            
 <h2>Table of contents</h2>
 
 <ul>
@@ -520,16 +449,30 @@
       
       
         <li>
+          <strong>Installation</strong> <span class="separator separator-arrow"></span>
+          <a href="/docs/introduction/installation/" class=" ">
+            /docs/introduction/installation/
+          </a>
+        </li>
+      
+        <li>
+          <strong>Theming</strong> <span class="separator separator-arrow"></span>
+          <a href="/docs/introduction/theming/" class=" ">
+            /docs/introduction/theming/
+          </a>
+        </li>
+      
+        <li>
           <strong>Variables</strong> <span class="separator separator-arrow"></span>
-          <a href="/docs/intro/variables/" class=" ">
-            /docs/intro/variables/
+          <a href="/docs/introduction/variables/" class=" ">
+            /docs/introduction/variables/
           </a>
         </li>
       
         <li>
           <strong>Utils</strong> <span class="separator separator-arrow"></span>
-          <a href="/docs/intro/utils/" class=" ">
-            /docs/intro/utils/
+          <a href="/docs/introduction/utils/" class=" ">
+            /docs/introduction/utils/
           </a>
         </li>
       
@@ -550,7 +493,7 @@
             <div class="site-aside-text">
               <a href="/docs/" class="btn">
                 <div class="site-aside-title">
-                  Intro
+                  Introduction
                 </div>
               </a>
             </div>
