@@ -3700,16 +3700,10 @@ h3,
 }
 h4,
 .h4 {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 300;
   font-size: 2rem;
 }
 h5,
 .h5 {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 300;
   font-size: 1.7rem;
 }
 h6,
@@ -4104,13 +4098,12 @@ fieldset:last-child {
 legend {
   margin-top: 4rem;
   margin-bottom: 2rem;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
+  font-style: normal;
   line-height: 1.2;
   letter-spacing: 0;
   text-transform: none;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 300;
   font-size: 2rem;
 }
 legend:first-child {
@@ -6231,9 +6224,6 @@ opacity: 0;
   padding-right: .8rem;
   padding-top: .3em;
   padding-bottom: .3em;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-  font-style: normal !important;
-  font-weight: 300 !important;
   width: 100%;
 }
 .site-aside-text .btn:hover,
@@ -6278,13 +6268,12 @@ opacity: 0;
 .site-aside-text .site-aside-title {
   margin-top: 4rem;
   margin-bottom: 2rem;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
+  font-style: normal;
   line-height: 1.2;
   letter-spacing: 0;
   text-transform: none;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 300;
   font-size: 2rem;
   color: #343a40;
 }
