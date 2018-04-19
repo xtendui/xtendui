@@ -402,13 +402,6 @@ pre code {
 .form-inline .form-group > * {
   margin: 0.5rem 0.5rem;
 }
-.form-inline .form-group > li > a,
-.form-inline .form-group > li > button {
-  text-align: left;
-}
-.form-inline .form-group > * {
-  margin: 0.5rem 0.5rem;
-}
 .label-control {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -659,14 +652,6 @@ select.input-control {
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.list-line {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 .box {
   display: -webkit-box;
@@ -2900,19 +2885,23 @@ html.xt-scrollbar .overlay-outer {
 .flex > * {
   padding: 1rem 1rem;
 }
-.list,
-.list-line {
+.list {
   margin: -0.5rem -0.5rem;
 }
-.list > *,
-.list-line > * {
+.list > * {
   margin: 0.5rem 0.5rem;
 }
 .list > li > a,
-.list-line > li > a,
-.list > li > button,
-.list-line > li > button {
+.list > li > button {
   text-align: left;
+}
+.list.list-line {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .list.list-default > li > a:not(.btn),
 .list.list-default > li > button:not(.btn) {
@@ -3072,94 +3061,49 @@ html.xt-scrollbar .overlay-outer {
   border-color: #7367F0 !important;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15) !important;
 }
-.list-secondary > li > a:not(.btn),
-.list-secondary > li > button:not(.btn) {
-  text-decoration: none;
-  border-color: #d4e7ef;
-  background-color: #d4e7ef;
-  color: rgba(52, 58, 64, 0.8);
-}
-.list-secondary > li > a:not(.btn):hover,
-.list-secondary > li > button:not(.btn):hover,
-.list-secondary > li > a:not(.btn):active,
-.list-secondary > li > button:not(.btn):active,
-.list-secondary > li > a:not(.btn):focus,
-.list-secondary > li > button:not(.btn):focus,
-.list-secondary > li > a:not(.btn).active,
-.list-secondary > li > button:not(.btn).active {
-  text-decoration: none;
-}
-.list-secondary > li > a:not(.btn):hover span,
-.list-secondary > li > button:not(.btn):hover span,
-.list-secondary > li > a:not(.btn):active span,
-.list-secondary > li > button:not(.btn):active span,
-.list-secondary > li > a:not(.btn):focus span,
-.list-secondary > li > button:not(.btn):focus span,
-.list-secondary > li > a:not(.btn).active span,
-.list-secondary > li > button:not(.btn).active span {
-  text-decoration: none;
-}
-.list-secondary > li > a:not(.btn):hover,
-.list-secondary > li > button:not(.btn):hover,
-.list-secondary > li > a:not(.btn):active,
-.list-secondary > li > button:not(.btn):active,
-.list-secondary > li > a:not(.btn):focus,
-.list-secondary > li > button:not(.btn):focus,
-.list-secondary > li > a:not(.btn).active,
-.list-secondary > li > button:not(.btn).active {
-  background-color: #e7f1f6;
-  color: #343a40;
-}
-.list-secondary > li > a:not(.btn):active,
-.list-secondary > li > button:not(.btn):active,
-.list-secondary > li > a:not(.btn).active,
-.list-secondary > li > button:not(.btn).active {
-  border-color: #d4e7ef;
-  box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
-}
-.list.list-primary > li > a:not(.btn),
-.list.list-primary > li > button:not(.btn) {
+.list.list-secondary > li > a:not(.btn),
+.list.list-secondary > li > button:not(.btn) {
   text-decoration: none !important;
-  border-color: #7367F0 !important;
-  background-color: #7367F0 !important;
-  color: rgba(255, 255, 255, 0.8) !important;
+  border-color: #d4e7ef !important;
+  background-color: #d4e7ef !important;
+  color: rgba(52, 58, 64, 0.8) !important;
 }
-.list.list-primary > li > a:not(.btn):hover,
-.list.list-primary > li > button:not(.btn):hover,
-.list.list-primary > li > a:not(.btn):active,
-.list.list-primary > li > button:not(.btn):active,
-.list.list-primary > li > a:not(.btn):focus,
-.list.list-primary > li > button:not(.btn):focus,
-.list.list-primary > li > a:not(.btn).active,
-.list.list-primary > li > button:not(.btn).active {
+.list.list-secondary > li > a:not(.btn):hover,
+.list.list-secondary > li > button:not(.btn):hover,
+.list.list-secondary > li > a:not(.btn):active,
+.list.list-secondary > li > button:not(.btn):active,
+.list.list-secondary > li > a:not(.btn):focus,
+.list.list-secondary > li > button:not(.btn):focus,
+.list.list-secondary > li > a:not(.btn).active,
+.list.list-secondary > li > button:not(.btn).active {
   text-decoration: none !important;
 }
-.list.list-primary > li > a:not(.btn):hover span,
-.list.list-primary > li > button:not(.btn):hover span,
-.list.list-primary > li > a:not(.btn):active span,
-.list.list-primary > li > button:not(.btn):active span,
-.list.list-primary > li > a:not(.btn):focus span,
-.list.list-primary > li > button:not(.btn):focus span,
-.list.list-primary > li > a:not(.btn).active span,
-.list.list-primary > li > button:not(.btn).active span {
+.list.list-secondary > li > a:not(.btn):hover span,
+.list.list-secondary > li > button:not(.btn):hover span,
+.list.list-secondary > li > a:not(.btn):active span,
+.list.list-secondary > li > button:not(.btn):active span,
+.list.list-secondary > li > a:not(.btn):focus span,
+.list.list-secondary > li > button:not(.btn):focus span,
+.list.list-secondary > li > a:not(.btn).active span,
+.list.list-secondary > li > button:not(.btn).active span {
   text-decoration: none !important;
 }
-.list.list-primary > li > a:not(.btn):hover,
-.list.list-primary > li > button:not(.btn):hover,
-.list.list-primary > li > a:not(.btn):active,
-.list.list-primary > li > button:not(.btn):active,
-.list.list-primary > li > a:not(.btn):focus,
-.list.list-primary > li > button:not(.btn):focus,
-.list.list-primary > li > a:not(.btn).active,
-.list.list-primary > li > button:not(.btn).active {
-  background-color: #887ef2 !important;
-  color: #fff !important;
+.list.list-secondary > li > a:not(.btn):hover,
+.list.list-secondary > li > button:not(.btn):hover,
+.list.list-secondary > li > a:not(.btn):active,
+.list.list-secondary > li > button:not(.btn):active,
+.list.list-secondary > li > a:not(.btn):focus,
+.list.list-secondary > li > button:not(.btn):focus,
+.list.list-secondary > li > a:not(.btn).active,
+.list.list-secondary > li > button:not(.btn).active {
+  background-color: #e7f1f6 !important;
+  color: #343a40 !important;
 }
-.list.list-primary > li > a:not(.btn):active,
-.list.list-primary > li > button:not(.btn):active,
-.list.list-primary > li > a:not(.btn).active,
-.list.list-primary > li > button:not(.btn).active {
-  border-color: #7367F0 !important;
+.list.list-secondary > li > a:not(.btn):active,
+.list.list-secondary > li > button:not(.btn):active,
+.list.list-secondary > li > a:not(.btn).active,
+.list.list-secondary > li > button:not(.btn).active {
+  border-color: #d4e7ef !important;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15) !important;
 }
 .list.list-secondary-empty > li > a:not(.btn),
@@ -4285,13 +4229,6 @@ legend + legend {
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.form-group.inline > * {
-  margin: 0.5rem 0.5rem;
-}
-.form-group.inline > li > a,
-.form-group.inline > li > button {
-  text-align: left;
 }
 .form-group.inline > * {
   margin: 0.5rem 0.5rem;

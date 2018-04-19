@@ -4,7 +4,7 @@
 
 .flex {
   // options
-  .flex-space(medium); // space @flex-space
+  .flex-space(medium); // space
   .flex-wrap(); // wrap
 }
 
@@ -12,14 +12,21 @@
 // list
 //////////////////////
 
-.list,
-.list-line {
+.list {
   // options
-  .list-space(small); // space @list-space
+  .list-space(small); // space
   .list-left(); // alignment
 }
 
 // default
+
+.list-line() {
+  .list-space(small); // space
+}
+
+.list.list-line {
+  .list-line();
+}
 
 .list-default() {
   .list-secondary-empty(); // variant

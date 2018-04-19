@@ -1467,7 +1467,7 @@ var Xt = exports.Xt = function () {
   return Xt;
 }();
 
-// defaults
+// default
 
 Xt.defaults = {
   classes: ['active']
@@ -1551,7 +1551,7 @@ var XtToggle = exports.XtToggle = function (_Xt) {
   return XtToggle;
 }(Xt);
 
-// defaults
+// default
 
 XtToggle.defaults = {
   elements: ':scope > .btn',
@@ -1640,7 +1640,7 @@ var XtDrop = exports.XtDrop = function (_Xt2) {
   return XtDrop;
 }(Xt);
 
-// defaults
+// default
 
 XtDrop.defaults = {
   elements: ':scope > .btn',
@@ -1730,7 +1730,7 @@ var XtOverlay = exports.XtOverlay = function (_Xt3) {
   return XtOverlay;
 }(Xt);
 
-// defaults
+// default
 
 XtOverlay.defaults = {
   elements: ':scope > .btn',
@@ -1957,7 +1957,7 @@ var XtSticky = exports.XtSticky = function (_Xt4) {
   return XtSticky;
 }(Xt);
 
-// defaults
+// default
 
 XtSticky.defaults = {
   classes: ['active'],
