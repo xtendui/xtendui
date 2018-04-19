@@ -6591,7 +6591,7 @@ h2 .site-article-anchor {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: -0.5rem -0.5rem;
-  margin: -0.25rem -0.25rem;
+  margin: 0 0;
 }
 .demo .demo-tabs > * > li,
 .demo .demo-code-tabs > * > li {
@@ -6690,7 +6690,7 @@ h2 .site-article-anchor {
 }
 .demo .demo-tabs > * > *,
 .demo .demo-code-tabs > * > * {
-  margin: 0.25rem 0.25rem;
+  margin: 0 0;
 }
 .demo .demo-tabs .btn,
 .demo .demo-code-tabs .btn {
