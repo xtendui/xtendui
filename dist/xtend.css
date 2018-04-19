@@ -1,4 +1,4 @@
-/*! xtend v0.3.3 (https://getxtend.com/)
+/*! xtend v0.3.4 (https://getxtend.com/)
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 html,
@@ -398,6 +398,9 @@ pre code {
 .form-inline .form-group > li > a,
 .form-inline .form-group > li > button {
   text-align: left;
+}
+.form-inline .form-group > * {
+  margin: 0.5rem 0.5rem;
 }
 .form-inline .form-group > * {
   margin: 0.5rem 0.5rem;
@@ -2856,7 +2859,7 @@ html.xt-scrollbar .overlay-outer {
     align-items: stretch !important;
   }
 }
-/*! xtend v0.3.3 (https://getxtend.com/)
+/*! xtend v0.3.4 (https://getxtend.com/)
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 @font-face {
@@ -2902,6 +2905,10 @@ html.xt-scrollbar .overlay-outer {
   flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  margin: -0.5rem -0.5rem;
+}
+.list.list-line > * {
+  margin: 0.5rem 0.5rem;
 }
 .list.list-default > li > a:not(.btn),
 .list.list-default > li > button:not(.btn) {
@@ -4236,6 +4243,9 @@ legend + legend {
 .form-group.inline > li > a,
 .form-group.inline > li > button {
   text-align: left;
+}
+.form-group.inline > * {
+  margin: 0.5rem 0.5rem;
 }
 .form-group.inline > * {
   margin: 0.5rem 0.5rem;
