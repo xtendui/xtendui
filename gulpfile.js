@@ -12,7 +12,6 @@ var less = require('gulp-less');
 var gutil = require('gulp-util');
 var clean = require('gulp-clean');
 var watch = require('gulp-watch');
-var rename = require('gulp-rename');
 var replace = require('gulp-replace');
 var browserify = require('browserify');
 var uglify = require('gulp-uglify-es').default;
@@ -25,11 +24,7 @@ gulp.task('less-dist', function () {
   return gulp.src(['dist/**/*.less', '!dist/**/_*.less'])
     .pipe(sourcemaps.init())
     .pipe(less())
-    .pipe(gulp.dest('dist/'))
     .pipe(cleanCSS())
-    .pipe(rename({
-      suffix: '.min'
-    }))
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('dist/'));
 });
@@ -48,11 +43,7 @@ gulp.task('less', gulp.series('less-clean', function () {
   return gulp.src(['src/docs/assets/styles/**/*.less', '!src/docs/assets/styles/**/_*.less'])
     .pipe(sourcemaps.init())
     .pipe(less())
-    .pipe(gulp.dest('src/docs/assets/styles/'))
     .pipe(cleanCSS())
-    .pipe(rename({
-      suffix: '.min'
-    }))
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/styles/'));
 }));
@@ -71,14 +62,10 @@ gulp.task('js-dist', function () {
     .pipe(source('xtend.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(gulp.dest('dist/'))
     .pipe(uglify({
       output: {
         comments: /^!/
       }
-    }))
-    .pipe(rename({
-      suffix: '.min'
     }))
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('dist/'));
@@ -97,14 +84,10 @@ gulp.task('js', gulp.series('js-clean', function () {
     .pipe(source('bundle.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(gulp.dest('src/docs/assets/scripts/'))
     .pipe(uglify({
       output: {
         comments: /^!/
       }
-    }))
-    .pipe(rename({
-      suffix: '.min'
     }))
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/scripts/'));
