@@ -1040,7 +1040,7 @@
 
 // size
 
-.overlay-width(@name) {
+.overlay-size(@name) {
   .by-key(@overlays, @name);
   @val: @by-key;
   > .overlay-inner {
@@ -1048,15 +1048,15 @@
   }
 }
 
-// generate-overlay-width
+// generate-overlay-size
 
-.generate-overlay-width();
-.generate-overlay-width(@i:length(@overlays)) when (@i > 0) {
-  .generate-overlay-width(@i - 1);
+.generate-overlay-size();
+.generate-overlay-size(@i:length(@overlays)) when (@i > 0) {
+  .generate-overlay-size(@i - 1);
   @overlay: extract(@overlays, @i);
   @name: extract(@overlay, 1);
-  .overlay-width-@{name} {
-    .overlay-width(@name) !important;
+  .overlay-size-@{name} {
+    .overlay-size(@name) !important;
   }
 }
 

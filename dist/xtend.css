@@ -1083,22 +1083,22 @@ html.xt-scrollbar .overlay-outer {
   border: 0;
   clip: rect(0, 0, 0, 0);
 }
-.overlay-width-tiny > .overlay-inner {
+.overlay-size-tiny > .overlay-inner {
   max-width: 516px !important;
 }
-.overlay-width-small > .overlay-inner {
+.overlay-size-small > .overlay-inner {
   max-width: 708px !important;
 }
-.overlay-width-medium > .overlay-inner {
+.overlay-size-medium > .overlay-inner {
   max-width: 932px !important;
 }
-.overlay-width-big > .overlay-inner {
+.overlay-size-big > .overlay-inner {
   max-width: 1140px !important;
 }
-.overlay-width-giant > .overlay-inner {
+.overlay-size-giant > .overlay-inner {
   max-width: 1290px !important;
 }
-.overlay-width-full > .overlay-inner {
+.overlay-size-full > .overlay-inner {
   max-width: none !important;
 }
 .overlay {
