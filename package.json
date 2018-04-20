@@ -12,7 +12,8 @@
     "js",
     "front-end",
     "library",
-    "plugin"
+    "plugin",
+    "theme"
   ],
   "scripts": {
     "build": "gulp build",

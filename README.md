@@ -20,12 +20,6 @@ mkdir -p xtend-library/
 cp -r node_modules/xtend-library/dist/ xtend-library/
 ```
 
-If you installed with **composer**:
-```
-mkdir -p xtend-library/
-cp -r vendor/minimit/xtend-library/dist/ xtend-library/
-```
-
 After in `xtend.less` put the right path to the `@import` of core and theme.
 
 ### Compilation
