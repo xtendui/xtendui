@@ -11,15 +11,14 @@ You can install with one of the following:
 
 ### Theming
 
-**If you installed with a package manager**: you need to copy xtend-library **/dist** to customize the files.
+You need to copy xtend-library **/dist** to customize the files.
 
-If you installed with **yarn** or **npm**:
 ```
 mkdir -p xtend-library/
 cp -r node_modules/xtend-library/dist/ xtend-library/
 ```
 
-After in `xtend.less` put the right path to the `@import` of core and theme.
+After in `xtend.less` put the right path to the `@import`.
 
 ### Compilation
 
