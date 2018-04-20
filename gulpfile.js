@@ -19,15 +19,6 @@ var uglify = require('gulp-uglify-es').default;
 var cleanCSS = require('gulp-clean-css');
 var sourcemaps = require('gulp-sourcemaps');
 
-// fix less watch compile
-
-var fileManagers = less.environment && less.environment.fileManagers || [];
-fileManagers.forEach(fileManager => {
-  if (fileManager.contents) {
-    fileManager.contents = {};
-  }
-});
-
 // compile less
 
 gulp.task('less-dist', function () {
@@ -159,7 +150,7 @@ gulp.task('version', function () {
     .pipe(replace(/version: (.*)/, 'version: ' + version))
     .pipe(gulp.dest('./'));
   // replace styles and scripts
-  let stream2 = gulp.src(['src/core/__core.less', 'dist/theme/__theme.less', 'src/scripts/*.js'], {base: './'})
+  let stream2 = gulp.src(['dist/core/__core.less', 'dist/theme/__theme.less', 'src/scripts/*.js'], {base: './'})
     .pipe(replace(/\/\*\![^\*]+\*\//, banner))
     .pipe(gulp.dest('./'));
   // return merge
