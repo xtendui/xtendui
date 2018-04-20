@@ -22,14 +22,14 @@ After in `xtend.less` put package manager xtend-library path in `@import`.
 
 ### Compilation
 
-**If you want to recompile the library**: we use gulp to compile and watch files.
+We use gulp to compile and watch files.
 
 * Install required npm packages with ```npm install```
 * Use ```npm run build``` or ```npm run watch```
 
 ### Documentation
 
-**If you want to serve the docs locally**: we use jekyll to serve the docs.
+We use jekyll to serve the docs.
 
 * You need to [install jekyll](https://jekyllrb.com/docs/installation/) on your local machine
 
