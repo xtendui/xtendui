@@ -617,12 +617,6 @@ select.input-control {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 .list {
   display: -webkit-box;
@@ -2955,6 +2949,10 @@ html.xt-scrollbar .overlay-outer {
 }
 .flex {
   margin: -1rem -1rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
@@ -5594,6 +5592,9 @@ a.active,
 }
 .alert:last-child {
   margin-bottom: 0;
+}
+.alert + .alert {
+  margin-top: -1rem;
 }
 .alert > .btn-close {
   padding: .6em 1.2em;

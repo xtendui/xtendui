@@ -8,7 +8,7 @@ description: Dropdown component with structured theming that can show anything.
 
 <h2>Usage</h2>
 
-<p>Use this markup to create a dropdown. <code>[data-xt-drop]</code> must be <a
+<p>Use this markup to create a drop. <code>[data-xt-drop]</code> must be <a
   href="{% link _docs/javascript.html %}#initialization">initialized by javascript</a>.</p>
 
 <pre>
@@ -58,6 +58,9 @@ description: Dropdown component with structured theming that can show anything.
 
 <p>The natural way to use drops is to use them <strong>with lists of buttons</strong>.</p>
 
+<p class="alert alert-default">Read the documentation of <a href="{% link _docs/layout/list.html %}#list-of-buttons">list
+  of buttons</a>.</p>
+
 <div class="demo">
   <div class="demo-item demo-preview" data-name="list">
     <div class="demo-source" data-lang="html">
@@ -89,6 +92,9 @@ description: Dropdown component with structured theming that can show anything.
 
 <p><code>.list-drop > li > a</code> and <code>.list-drop > li > button</code> are styled
   automatically, If you want to customize the buttons use the <code>.btn</code> class instead.</p>
+
+<p class="alert alert-default">Read the documentation of <a href="{% link _docs/layout/list.html %}#buttons-styles">list's
+  buttons styles</a>.</p>
 
 <p class="alert">In theming code use <code>.list-btn-default({});</code> to style <code>a</code> and
   <code>button</code>. To style also if they have the <code>.btn</code> class use <code>.list-btn-all({});</code>.</p>

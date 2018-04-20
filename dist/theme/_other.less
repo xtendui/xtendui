@@ -5,6 +5,9 @@
 .alert {
   .margin(y, layout);
   .margin(y, medium);
+  & + & {
+    .margin-remove(top, small);
+  }
   // styles
   border-radius: @border-radius;
   .text-align(left);
