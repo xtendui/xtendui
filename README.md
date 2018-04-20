@@ -8,7 +8,6 @@ You can install with one of the following:
 * clone: `git clone https://github.com/minimit/xtend-library.git`
 * [yarn](https://yarnpkg.com/): `yarn add xtend-library --save`
 * [npm](https://www.npmjs.com/): `npm install xtend-library --save`
-* [composer](https://getcomposer.org/): `composer require minimit/xtend-library`
 
 ### Theming
 
