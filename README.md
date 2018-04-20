@@ -18,7 +18,7 @@ mkdir -p xtend-library/
 cp -r node_modules/xtend-library/dist/ xtend-library/
 ```
 
-After in `xtend.less` put package manager xtend-library path in `@import`.
+After in `xtend.less` put package manager xtend-library core path.
 
 ### Compilation
 
