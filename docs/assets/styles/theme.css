@@ -363,7 +363,7 @@ pre code {
   font-weight: 600;
   font-style: normal;
   line-height: 1.25;
-  letter-spacing: .05em;
+  letter-spacing: .075em;
   text-transform: uppercase;
   padding: .6em 1.2em;
   font-size: 1.3rem;
@@ -674,7 +674,7 @@ select.input-control {
   font-weight: 600;
   font-style: normal;
   line-height: 1.25;
-  letter-spacing: .05em;
+  letter-spacing: .075em;
   text-transform: uppercase;
   padding: .6em 1.2em;
   font-size: 1.3rem;
@@ -4364,7 +4364,7 @@ legend + legend {
   font-weight: 600;
   font-style: normal;
   line-height: 1.25;
-  letter-spacing: .05em;
+  letter-spacing: .075em;
   text-transform: uppercase;
   padding: .6em 1.2em;
   font-size: 1.3rem;
@@ -4667,7 +4667,7 @@ a.active,
   font-weight: 600;
   font-style: normal;
   line-height: 1.25;
-  letter-spacing: .05em;
+  letter-spacing: .075em;
   text-transform: uppercase;
   padding: .6em 1.2em;
   font-size: 1.3rem;
@@ -6936,7 +6936,7 @@ h2 .site-article-anchor {
   font-weight: 600;
   font-style: normal;
   line-height: 1.25;
-  letter-spacing: .05em;
+  letter-spacing: .075em;
   text-transform: uppercase;
   padding: .6em 1.2em;
   font-size: 1.3rem;
