@@ -699,7 +699,7 @@ export class XtToggle extends Xt {
 // default
 
 XtToggle.defaults = {
-  elements: ':scope > .btn',
+  elements: ':scope > a, :scope > button',
   targets: ':scope > [class^="toggle-"], :scope > [class*=" toggle-"]',
   classes: ['active'],
   on: 'click',
@@ -756,7 +756,7 @@ export class XtDrop extends Xt {
 // default
 
 XtDrop.defaults = {
-  elements: ':scope > .btn',
+  elements: ':scope > a, :scope > button',
   targets: ':scope > .drop',
   classes: ['active'],
   on: 'click',
@@ -814,7 +814,7 @@ export class XtOverlay extends Xt {
 // default
 
 XtOverlay.defaults = {
-  elements: ':scope > .btn',
+  elements: ':scope > a, :scope > button',
   targets: ':scope > .overlay-outer',
   classes: ['active'],
   on: 'click',

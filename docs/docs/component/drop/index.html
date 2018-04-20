@@ -448,7 +448,7 @@
       <button type="button">
         <!-- content -->
       </button>
-      <div class="drop drop-default">
+      <div class="drop">
         <div class="drop-inner">
           <!-- content -->
         </div>
@@ -457,7 +457,7 @@
   </code>
 </pre>
 
-<p class="alert alert-default">For customizing the interactions read the documentation of <a
+<p class="alert">For customizing the interactions read the documentation of <a
   href="/docs/javascript/toggle/#drop">toggle drop</a>.</p>
 
 <h3>Drop of anything</h3>
@@ -472,7 +472,7 @@
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
-        <div class="drop drop-default">
+        <div class="drop">
           <div class="drop-inner">
             <div class="box">
               Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit.<br/>Nullam posuere ex ac felis venenatis
@@ -496,7 +496,7 @@
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
-        <div class="drop drop-default">
+        <div class="drop">
           <div class="drop-inner">
             <ul class="list list-drop">
               <li>
@@ -516,10 +516,13 @@
   </div>
 </div>
 
-<p><code>list-drop</code> is used to style automatically <code>a</code> or <code>button</code> inside,
-  If you want to customize them use the <code>.btn</code> class instead.</p>
+<h3>Buttons styles</h3>
 
-<p class="alert alert-default">Read the documentation of <a href="/docs/layout/list/#list-of-buttons">list of buttons</a>.</p>
+<p><code>.list-drop > li > a</code> and <code>.list-drop > li > button</code> are styled
+  automatically, If you want to customize the buttons use the <code>.btn</code> class instead.</p>
+
+<p class="alert">In theming code use <code>.list-btn-default({});</code> to style <code>a</code> and
+  <code>button</code>. To style also if they have the <code>.btn</code> class use <code>.list-btn-all({});</code>.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="list-drop">
@@ -529,7 +532,34 @@
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
-        <div class="drop drop-default">
+        <div class="drop">
+          <div class="drop-inner">
+            <ul class="list list-drop">
+              <li>
+                <a href="#">Lorem Ipsum</a>
+              </li>
+              <li>
+                <button type="button">Dolor sit</button>
+              </li>
+              <li>
+                <button type="button">Amet</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="override">
+    <div class="demo-text">
+      You can <strong>override</strong> each buttons by using the <code>.btn</code> class.
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="drop-container" data-xt-drop>
+        <button type="button" class="btn btn-primary">
+          Toggle
+        </button>
+        <div class="drop">
           <div class="drop-inner">
             <ul class="list list-drop">
               <li>
@@ -551,6 +581,91 @@
       </div>
     </div>
   </div>
+  <div class="demo-item demo-preview" data-name="custom">
+    <div class="demo-text">
+      For custom list style don't use <code>.list-drop</code>.
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="drop-container" data-xt-drop>
+        <button type="button" class="btn btn-primary">
+          Toggle
+        </button>
+        <div class="drop">
+          <div class="drop-inner">
+            <ul class="list list-block list-primary list-space-none list-center list-big list-squared">
+              <li>
+                <button type="button">Lorem ipsum dolor</button>
+              </li>
+              <li>
+                <button type="button">Dolor sit</button>
+              </li>
+              <li>
+                <button type="button">Amet</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="nested">
+    <div class="demo-source" data-lang="html">
+      <div class="drop-container" data-xt-drop>
+        <button type="button" class="btn btn-primary">
+          Toggle
+        </button>
+        <div class="drop">
+          <div class="drop-inner">
+            <ul class="list list-drop">
+              <li>
+                <button type="button">Lorem ipsum dolor</button>
+              </li>
+              <li>
+                <button type="button">Dolor sit</button>
+              </li>
+              <li class="drop-container" data-xt-drop>
+                <button type="button">
+                  Toggle
+                </button>
+                <div class="drop drop-secondary drop-after drop-middle">
+                  <div class="drop-inner">
+                    <ul class="list list-drop">
+                      <li>
+                        <button type="button">Lorem ipsum dolor</button>
+                      </li>
+                      <li>
+                        <button type="button">Dolor sit</button>
+                      </li>
+                      <li class="drop-container" data-xt-drop>
+                        <button type="button">
+                          Toggle
+                        </button>
+                        <div class="drop drop-primary drop-center drop-middle">
+                          <div class="drop-inner">
+                            <ul class="list list-drop">
+                              <li>
+                                <button type="button">Lorem ipsum dolor</button>
+                              </li>
+                              <li>
+                                <button type="button">Dolor sit</button>
+                              </li>
+                              <li>
+                                <button type="button">Amet</button>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <h2>Options</h2>
@@ -563,13 +678,12 @@
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="default">
-    <div class="demo-text"><code>.drop-default</code></div>
     <div class="demo-source demo-drops" data-lang="html">
       <div class="drop-container" data-xt-drop>
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
-        <div class="drop drop-default">
+        <div class="drop">
           <div class="drop-inner">
             <ul class="list list-drop">
               <li>
@@ -662,61 +776,6 @@
       </div>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="override">
-    <div class="demo-text">
-      You can <strong>override</strong> each buttons by using the <code>.btn</code> class.
-    </div>
-    <div class="demo-source demo-drops" data-lang="html">
-      <div class="drop-container" data-xt-drop>
-        <button type="button" class="btn btn-primary">
-          Toggle
-        </button>
-        <div class="drop drop-default">
-          <div class="drop-inner">
-            <ul class="list list-drop">
-              <li>
-                <button type="button">Lorem ipsum dolor</button>
-              </li>
-              <li>
-                <!-- this options don't works you need to use .btn -->
-                <button type="button" class="btn-primary btn-tiny">Dolor sit</button>
-              </li>
-              <li>
-                <button type="button" class="btn btn-primary btn-tiny">Amet</button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="custom">
-    <div class="demo-text">
-      For custom list style don't use <code>.list-drop</code>.
-    </div>
-    <div class="demo-source demo-drops" data-lang="html">
-      <div class="drop-container" data-xt-drop>
-        <button type="button" class="btn btn-primary">
-          Toggle
-        </button>
-        <div class="drop drop-default">
-          <div class="drop-inner">
-            <ul class="list list-block list-primary list-space-none list-center list-big list-squared">
-              <li>
-                <button type="button">Lorem ipsum dolor</button>
-              </li>
-              <li>
-                <button type="button">Dolor sit</button>
-              </li>
-              <li>
-                <button type="button">Amet</button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
 <h3>Special</h3>
@@ -731,7 +790,7 @@
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
-        <div class="drop drop-default drop-squared">
+        <div class="drop drop-squared">
           <div class="drop-inner">
             <ul class="list list-drop">
               <li>
@@ -756,7 +815,7 @@
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
-        <div class="drop drop-default drop-noborder">
+        <div class="drop drop-noborder">
           <div class="drop-inner">
             <ul class="list list-drop">
               <li>
@@ -789,7 +848,7 @@
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
-          <div class="drop drop-default drop-max-height">
+          <div class="drop drop-max-height">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -828,7 +887,7 @@
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
-          <div class="drop drop-default drop-max-width">
+          <div class="drop drop-max-width">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -867,7 +926,7 @@
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
-          <div class="drop drop-default drop-max-height drop-max-width">
+          <div class="drop drop-max-height drop-max-width">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -915,7 +974,7 @@
           <button type="button" class="btn btn-primary">
             bottom left
           </button>
-          <div class="drop drop-default drop-bottom drop-left">
+          <div class="drop drop-bottom drop-left">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -936,7 +995,7 @@
           <button type="button" class="btn btn-primary">
             bottom right
           </button>
-          <div class="drop drop-default drop-bottom drop-right">
+          <div class="drop drop-bottom drop-right">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -957,7 +1016,7 @@
           <button type="button" class="btn btn-primary">
             bottom center
           </button>
-          <div class="drop drop-default drop-bottom drop-center">
+          <div class="drop drop-bottom drop-center">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -985,7 +1044,7 @@
           <button type="button" class="btn btn-primary">
             top left
           </button>
-          <div class="drop drop-default drop-top drop-left">
+          <div class="drop drop-top drop-left">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1006,7 +1065,7 @@
           <button type="button" class="btn btn-primary">
             top right
           </button>
-          <div class="drop drop-default drop-top drop-right">
+          <div class="drop drop-top drop-right">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1027,7 +1086,7 @@
           <button type="button" class="btn btn-primary">
             top center
           </button>
-          <div class="drop drop-default drop-top drop-center">
+          <div class="drop drop-top drop-center">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1055,7 +1114,7 @@
           <button type="button" class="btn btn-primary">
             middle left
           </button>
-          <div class="drop drop-default drop-middle drop-left">
+          <div class="drop drop-middle drop-left">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1076,7 +1135,7 @@
           <button type="button" class="btn btn-primary">
             middle right
           </button>
-          <div class="drop drop-default drop-middle drop-right">
+          <div class="drop drop-middle drop-right">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1097,7 +1156,7 @@
           <button type="button" class="btn btn-primary">
             middle center
           </button>
-          <div class="drop drop-default drop-middle drop-center">
+          <div class="drop drop-middle drop-center">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1125,7 +1184,7 @@
           <button type="button" class="btn btn-primary">
             before top
           </button>
-          <div class="drop drop-default drop-before drop-top">
+          <div class="drop drop-before drop-top">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1146,7 +1205,7 @@
           <button type="button" class="btn btn-primary">
             before bottom
           </button>
-          <div class="drop drop-default drop-before drop-bottom">
+          <div class="drop drop-before drop-bottom">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1167,7 +1226,7 @@
           <button type="button" class="btn btn-primary">
             before middle
           </button>
-          <div class="drop drop-default drop-before drop-middle">
+          <div class="drop drop-before drop-middle">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1195,7 +1254,7 @@
           <button type="button" class="btn btn-primary">
             after top
           </button>
-          <div class="drop drop-default drop-after drop-top">
+          <div class="drop drop-after drop-top">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1216,7 +1275,7 @@
           <button type="button" class="btn btn-primary">
             after bottom
           </button>
-          <div class="drop drop-default drop-after drop-bottom">
+          <div class="drop drop-after drop-bottom">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1237,7 +1296,7 @@
           <button type="button" class="btn btn-primary">
             after middle
           </button>
-          <div class="drop drop-default drop-after drop-middle">
+          <div class="drop drop-after drop-middle">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1264,7 +1323,7 @@
           <button type="button" class="btn btn-primary">
             right middle bottom
           </button>
-          <div class="drop drop-default drop-right drop-middle drop-middle-bottom">
+          <div class="drop drop-right drop-middle drop-middle-bottom">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1285,7 +1344,7 @@
           <button type="button" class="btn btn-primary">
             right middle-top
           </button>
-          <div class="drop drop-default drop-right drop-middle drop-middle-top">
+          <div class="drop drop-right drop-middle drop-middle-top">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1306,7 +1365,7 @@
           <button type="button" class="btn btn-primary">
             left middle-bottom
           </button>
-          <div class="drop drop-default drop-left drop-middle drop-middle-bottom">
+          <div class="drop drop-left drop-middle drop-middle-bottom">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1327,7 +1386,7 @@
           <button type="button" class="btn btn-primary">
             left middle-top
           </button>
-          <div class="drop drop-default drop-left drop-middle drop-middle-top">
+          <div class="drop drop-left drop-middle drop-middle-top">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1348,7 +1407,7 @@
           <button type="button" class="btn btn-primary">
             before middle-bottom
           </button>
-          <div class="drop drop-default drop-before drop-middle drop-middle-bottom">
+          <div class="drop drop-before drop-middle drop-middle-bottom">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1369,7 +1428,7 @@
           <button type="button" class="btn btn-primary">
             before middle-top
           </button>
-          <div class="drop drop-default drop-before drop-middle drop-middle-top">
+          <div class="drop drop-before drop-middle drop-middle-top">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1390,7 +1449,7 @@
           <button type="button" class="btn btn-primary">
             after middle-bottom
           </button>
-          <div class="drop drop-default drop-after drop-middle drop-middle-bottom">
+          <div class="drop drop-after drop-middle drop-middle-bottom">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1411,7 +1470,7 @@
           <button type="button" class="btn btn-primary">
             after middle-top
           </button>
-          <div class="drop drop-default drop-after drop-middle drop-middle-top">
+          <div class="drop drop-after drop-middle drop-middle-top">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1445,7 +1504,7 @@
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
-          <div class="drop drop-default drop-default">
+          <div class="drop">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1472,7 +1531,7 @@
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
-          <div class="drop drop-default drop-top">
+          <div class="drop drop-top">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1499,7 +1558,7 @@
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
-          <div class="drop drop-default drop-middle">
+          <div class="drop drop-middle">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1522,7 +1581,7 @@
 
 <h2>Variables</h2>
 
-<p class="alert alert-default">Read the documentation of <a href="/docs/component/#variables">component's
+<p class="alert">Read the documentation of <a href="/docs/component/#variables">component's
   variables</a>.</p>
 
           </article>

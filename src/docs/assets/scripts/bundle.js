@@ -2304,7 +2304,7 @@ var XtToggle = exports.XtToggle = function (_Xt) {
 // default
 
 XtToggle.defaults = {
-  elements: ':scope > .btn',
+  elements: ':scope > a, :scope > button',
   targets: ':scope > [class^="toggle-"], :scope > [class*=" toggle-"]',
   classes: ['active'],
   on: 'click',
@@ -2393,7 +2393,7 @@ var XtDrop = exports.XtDrop = function (_Xt2) {
 // default
 
 XtDrop.defaults = {
-  elements: ':scope > .btn',
+  elements: ':scope > a, :scope > button',
   targets: ':scope > .drop',
   classes: ['active'],
   on: 'click',
@@ -2483,7 +2483,7 @@ var XtOverlay = exports.XtOverlay = function (_Xt3) {
 // default
 
 XtOverlay.defaults = {
-  elements: ':scope > .btn',
+  elements: ':scope > a, :scope > button',
   targets: ':scope > .overlay-outer',
   classes: ['active'],
   on: 'click',

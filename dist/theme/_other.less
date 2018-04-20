@@ -7,23 +7,21 @@
   .margin(y, medium);
   // styles
   border-radius: @border-radius;
-  line-height: 1.2;
   .text-align(left);
   // options
   .box();
   .box-small();
   .box-noborder();
   .display(block);
-}
-
-// default
-
-.alert-default {
-  background-color: @grey-250;
-  color: @text;
+  .alert-light(); // variant
 }
 
 // variant
+
+.alert-light {
+  background-color: @grey-250;
+  color: @text;
+}
 
 .alert-success {
   background: @success;

@@ -67,14 +67,17 @@
   > li {
     .display(flex);
     .align-items-start();
+    > * {
+      .flex-auto();
+    }
   }
-  .list-btn({ .block(); .text-align(left); });
+  .list-btn-all({ .block(); .text-align(left); });
   .list-btn-default({ .btn(); });
 }
 
 // selectors
 
-.list-btn(@rules) {
+.list-btn-all(@rules) {
   > li {
     > a, > button {
       @rules();

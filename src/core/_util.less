@@ -528,35 +528,35 @@
 // list alignment
 
 .list-left(@breakpoint:none) when (@breakpoint = none) {
-  .list-btn({ .text-align(left); });
+  .list-btn-all({ .text-align(left); });
 }
 
 .list-left(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list-btn({ .text-align(left); });
+    .list-btn-all({ .text-align(left); });
   }
 }
 
 .list-center(@breakpoint:none) when (@breakpoint = none) {
-  .list-btn({ .text-align(center); });
+  .list-btn-all({ .text-align(center); });
 }
 
 .list-center(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list-btn({ .text-align(center); });
+    .list-btn-all({ .text-align(center); });
   }
 }
 
 .list-right(@breakpoint:none) when (@breakpoint = none) {
-  .list-btn({ .text-align(right); });
+  .list-btn-all({ .text-align(right); });
 }
 
 .list-right(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list-btn({ .text-align(right); });
+    .list-btn-all({ .text-align(right); });
   }
 }
 
