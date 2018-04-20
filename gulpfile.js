@@ -83,7 +83,7 @@ gulp.task('js-dist', function () {
     .pipe(gulp.dest('dist/'))
     .pipe(uglify({
       output: {
-        comments: 'some'
+        comments: /^!/
       }
     }))
     .pipe(rename({
@@ -109,7 +109,7 @@ gulp.task('js', gulp.series('js-clean', function () {
     .pipe(gulp.dest('src/docs/assets/scripts/'))
     .pipe(uglify({
       output: {
-        comments: 'some'
+        comments: /^!/
       }
     }))
     .pipe(rename({
