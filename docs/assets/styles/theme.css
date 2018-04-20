@@ -1,5 +1,5 @@
 @import 'highlight/github.css';
-/*! xtend v0.3.5 (https://getxtend.com/)
+/*! xtend v0.3.6 (https://getxtend.com/)
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 html,
@@ -956,13 +956,13 @@ a,
 .overlay > .overlay-inner > .btn-close + * {
   margin-top: 0 !important;
 }
-.overlay-screen {
+.overlay.overlay-screen {
   max-width: none !important;
 }
-.overlay-screen > .overlay-inner {
+.overlay.overlay-screen > .overlay-inner {
   position: static;
 }
-.overlay-screen > .overlay-inner + .xt-backdrop {
+.overlay.overlay-screen > .overlay-inner + .xt-backdrop {
   display: none;
 }
 .loader-mask {
@@ -5246,6 +5246,11 @@ a.active,
   font-size: 1.5rem;
   padding: .6em .8em;
 }
+.overlay.overlay-screen > .overlay-inner {
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none;
+}
 .overlay > .overlay-inner {
   max-width: 708px;
 }
@@ -5299,11 +5304,6 @@ a.active,
 .overlay.overlay-screen > .btn-close.active {
   border-color: #7367F0;
   box-shadow: 0 3px 10px 1px rgba(52, 58, 64, 0.15);
-}
-.overlay-screen > .overlay-inner {
-  padding-left: 0;
-  padding-right: 0;
-  box-shadow: none;
 }
 .overlay-primary > .overlay-inner,
 .overlay-primary.overlay-screen {

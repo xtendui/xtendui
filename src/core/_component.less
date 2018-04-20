@@ -201,16 +201,14 @@ a, .alink, .btn-link {
       .margin(top, none) !important;
     }
   }
-}
-
-// default
-
-.overlay-screen {
-  max-width: none !important;
-  > .overlay-inner {
-    position: static;
-    & + .xt-backdrop {
-      display: none;
+  // screen
+  &.overlay-screen {
+    max-width: none !important;
+    > .overlay-inner {
+      position: static;
+      & + .xt-backdrop {
+        display: none;
+      }
     }
   }
 }
