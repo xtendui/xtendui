@@ -11,7 +11,7 @@ You can install with one of the following:
 
 ### Theming
 
-**If you installed with a package manager**, you need to copy xtend-library **/dist** to customize the files.
+**If you installed with a package manager**: you need to copy xtend-library **/dist** to customize the files.
 
 If you installed with **yarn** or **npm**:
 ```
@@ -23,14 +23,14 @@ After in `xtend.less` put the right path to the `@import` of core and theme.
 
 ### Compilation
 
-We use gulp to compile and watch files. **If you want to recompile the library**:
+**If you want to recompile the library**: we use gulp to compile and watch files.
 
 * Install required npm packages with ```npm install```
 * Use ```npm run build``` or ```npm run watch```
 
 ### Documentation
 
-We use jekyll to serve the docs. **If you want to serve the docs locally**:
+**If you want to serve the docs locally**: we use jekyll to serve the docs.
 
 * You need to [install jekyll](https://jekyllrb.com/docs/installation/) on your local machine
 
