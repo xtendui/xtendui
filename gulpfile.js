@@ -15,7 +15,7 @@ var watch = require('gulp-watch');
 var rename = require('gulp-rename');
 var replace = require('gulp-replace');
 var browserify = require('browserify');
-let uglify = require('gulp-uglify-es').default;
+var uglify = require('gulp-uglify-es').default;
 var cleanCSS = require('gulp-clean-css');
 var sourcemaps = require('gulp-sourcemaps');
 
