@@ -272,30 +272,28 @@
   }
 }
 
-.print-margin(@pos, @val, @breakpoint) {
-  & when (@pos = all) {
-    margin: @val;
-  }
-  & when (@pos = y) {
-    margin-top: @val;
-    margin-bottom: @val;
-  }
-  & when (@pos = x) {
-    margin-left: @val;
-    margin-right: @val;
-  }
-  & when (@pos = t) or (@pos = top) {
-    margin-top: @val;
-  }
-  & when (@pos = b) or (@pos = bottom) {
-    margin-bottom: @val;
-  }
-  & when (@pos = l) or (@pos = left) {
-    margin-left: @val;
-  }
-  & when (@pos = r) or (@pos = right) {
-    margin-right: @val;
-  }
+.print-margin(@pos, @val, @breakpoint) when (@pos = all) {
+  margin: @val;
+}
+.print-margin(@pos, @val, @breakpoint) when (@pos = y) {
+  margin-top: @val;
+  margin-bottom: @val;
+}
+.print-margin(@pos, @val, @breakpoint) when (@pos = x) {
+  margin-left: @val;
+  margin-right: @val;
+}
+.print-margin(@pos, @val, @breakpoint) when (@pos = top) {
+  margin-top: @val;
+}
+.print-margin(@pos, @val, @breakpoint) when (@pos = bottom) {
+  margin-bottom: @val;
+}
+.print-margin(@pos, @val, @breakpoint) when (@pos = left) {
+  margin-left: @val;
+}
+.print-margin(@pos, @val, @breakpoint) when (@pos = right) {
+  margin-right: @val;
 }
 
 // margin-remove
@@ -332,30 +330,28 @@
   }
 }
 
-.print-margin-remove(@pos, @val, @breakpoint) {
-  & when (@pos = all) {
-    margin: -@val;
-  }
-  & when (@pos = y) {
-    margin-top: -@val;
-    margin-bottom: -@val;
-  }
-  & when (@pos = x) {
-    margin-left: -@val;
-    margin-right: -@val;
-  }
-  & when (@pos = t) or (@pos = top) {
-    margin-top: -@val;
-  }
-  & when (@pos = b) or (@pos = bottom) {
-    margin-bottom: -@val;
-  }
-  & when (@pos = l) or (@pos = left) {
-    margin-left: -@val;
-  }
-  & when (@pos = r) or (@pos = right) {
-    margin-right: -@val;
-  }
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = all) {
+  margin: -@val;
+}
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = y) {
+  margin-top: -@val;
+  margin-bottom: -@val;
+}
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = x) {
+  margin-left: -@val;
+  margin-right: -@val;
+}
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = top) {
+  margin-top: -@val;
+}
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = bottom) {
+  margin-bottom: -@val;
+}
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = left) {
+  margin-left: -@val;
+}
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = right) {
+  margin-right: -@val;
 }
 
 //////////////////////
@@ -433,30 +429,28 @@
   }
 }
 
-.print-padding(@pos, @val, @breakpoint) {
-  & when (@pos = all) {
-    padding: @val;
-  }
-  & when (@pos = y) {
-    padding-top: @val;
-    padding-bottom: @val;
-  }
-  & when (@pos = x) {
-    padding-left: @val;
-    padding-right: @val;
-  }
-  & when (@pos = t) or (@pos = top) {
-    padding-top: @val;
-  }
-  & when (@pos = b) or (@pos = bottom) {
-    padding-bottom: @val;
-  }
-  & when (@pos = l) or (@pos = left) {
-    padding-left: @val;
-  }
-  & when (@pos = r) or (@pos = right) {
-    padding-right: @val;
-  }
+.print-padding(@pos, @val, @breakpoint) when (@pos = all) {
+  padding: @val;
+}
+.print-padding(@pos, @val, @breakpoint) when (@pos = y) {
+  padding-top: @val;
+  padding-bottom: @val;
+}
+.print-padding(@pos, @val, @breakpoint) when (@pos = x) {
+  padding-left: @val;
+  padding-right: @val;
+}
+.print-padding(@pos, @val, @breakpoint) when (@pos = top) {
+  padding-top: @val;
+}
+.print-padding(@pos, @val, @breakpoint) when (@pos = bottom) {
+  padding-bottom: @val;
+}
+.print-padding(@pos, @val, @breakpoint) when (@pos = left) {
+  padding-left: @val;
+}
+.print-padding(@pos, @val, @breakpoint) when (@pos = right) {
+  padding-right: @val;
 }
 
 //////////////////////
@@ -466,10 +460,9 @@
 // flex space
 
 .flex-space(@name, @breakpoint:none) {
-  .by-key(@flex-space-horizontal, @name);
-  @horizontal: @by-key;
-  .by-key-alt(@flex-space-vertical, @name);
-  @vertical: @by-key-alt;
+  @arr: ~"flex-space-@{name}";
+  @horizontal: extract(@@arr, 1);
+  @vertical: extract(@@arr, 2);
   margin: -@vertical -@horizontal;
   > * {
     padding: @vertical @horizontal;
@@ -477,10 +470,9 @@
 }
 
 .flex-space(@name, @breakpoint:none) when (default()) {
-  .by-key(@flex-space-horizontal, @name);
-  @horizontal: @by-key;
-  .by-key-alt(@flex-space-vertical, @name);
-  @vertical: @by-key-alt;
+  @arr: ~"flex-space-@{name}";
+  @horizontal: extract(@@arr, 1);
+  @vertical: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     margin: -@vertical -@horizontal;
@@ -497,10 +489,9 @@
 // list space
 
 .list-space(@name, @breakpoint:none) {
-  .by-key(@list-space-horizontal, @name);
-  @horizontal: @by-key;
-  .by-key-alt(@list-space-vertical, @name);
-  @vertical: @by-key-alt;
+  @arr: ~"list-space-@{name}";
+  @horizontal: extract(@@arr, 1);
+  @vertical: extract(@@arr, 2);
   margin: -@vertical -@horizontal;
   > * {
     margin: @vertical @horizontal;
@@ -508,11 +499,9 @@
 }
 
 .list-space(@name, @breakpoint:none) when (default()) {
-  .by-key(@list-space-horizontal, @name);
-  @horizontal: @by-key;
-  .by-key-alt(@list-space-vertical, @name);
-  @vertical: @by-key-alt;
-  @query-min: 'min-@{breakpoint}';
+  @arr: ~"list-space-@{name}";
+  @horizontal: extract(@@arr, 1);
+  @vertical: extract(@@arr, 2);
   @media @@query-min {
     margin: -@vertical -@horizontal;
     > * {
@@ -1041,8 +1030,9 @@
 // size
 
 .overlay-size(@name) {
-  .by-key(@overlays, @name);
-  @val: @by-key;
+  // .by-key(@overlays, @name);
+  @arr: ~"overlay-size-@{name}";
+  @val: @@arr;
   > .overlay-inner {
     max-width: @val;
   }
@@ -1051,10 +1041,9 @@
 // generate-overlay-size
 
 .generate-overlay-size();
-.generate-overlay-size(@i:length(@overlays)) when (@i > 0) {
+.generate-overlay-size(@i:length(@overlay-sizes)) when (@i > 0) {
   .generate-overlay-size(@i - 1);
-  @overlay: extract(@overlays, @i);
-  @name: extract(@overlay, 1);
+  @name: extract(@overlay-sizes, @i);
   .overlay-size-@{name} {
     .overlay-size(@name) !important;
   }

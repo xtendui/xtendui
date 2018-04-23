@@ -227,21 +227,18 @@ a, .alink {
   .display(flex);
   .align-items-baseline();
   .justify-content-between();
-  .by-key(@icons, chevron-down); // extract icon value from @icons
-  .icon(@content:@by-key, @size:@icon-small, @position: after);
+  .icon(@content: @icon-chevron-down, @size: @icon-small, @position: after);
   &:after {
     .icon-right();
   }
   &.active {
-    .by-key(@icons, chevron-up); // extract icon value from @icons
-    .icon(@content:@by-key, @size:@icon-small, @position: after);
+    .icon(@content: @icon-chevron-up, @size: @icon-small, @position: after);
   }
 }
 
 .btn-close {
   .btn-primary-empty();
-  .by-key(@icons, close); // extract icon value from @icons
-  .icon(@content:@by-key, @size:@icon-medium, @sr-only: true);
+  .icon(@content: @icon-close, @size: @icon-medium, @sr-only: true);
 }
 
 //////////////////////

@@ -28,7 +28,7 @@
     .anim-left.active();
     animation-fill-mode: forwards;
   }
-  .nth-child(@child:6, @start:@time-medium, @increment:50ms, @decrement:0ms, { .line-container {
+  .nth-child(@child: 6, @start: @time-medium, @increment: 50ms, @decrement: 0ms, { .line-container {
     @nth-child-animation-delay();
   } });
 }
@@ -39,7 +39,7 @@
     animation-fill-mode: forwards;
     animation-delay: 300ms; // default delay @start + @child * @increment
   }
-  .nth-child(@child:6, @start:0, @increment:50ms, @decrement:0ms, { .line-container {
+  .nth-child(@child: 6, @start: 0, @increment: 50ms, @decrement: 0ms, { .line-container {
     @nth-child-animation-delay();
   } });
 }

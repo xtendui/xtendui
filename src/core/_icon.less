@@ -2,7 +2,7 @@
 // icon
 //////////////////////
 
-.xt-icon {
+.icon {
   display: inline-block;
   position: relative;
   font-family: @icons-family !important;
@@ -16,9 +16,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-[class^='xt-icon-'], [class*=' xt-icon-'] {
+[class^='icon-'], [class*=' icon-'] {
   &:before {
-    .xt-icon();
+    .icon();
   }
 }
 
@@ -32,7 +32,7 @@
     @icon: extract(@icons, @i);
     @name: extract(@icon, 1);
     @val: extract(@icon, 2);
-    .xt-icon-@{name} {
+    .icon-@{name} {
       &:before {
         content: @val;
       }
@@ -43,15 +43,24 @@
 
 // icon :before or :after
 
-.icon(@content, @size:@icon-medium, @sr-only:false, @position:before) {
+.icon(@content, @size: @icon-medium, @sr-only: false, @position: before) {
   & when (@sr-only = true) {
     > span {
       .sr-only();
     }
   }
-  &:@{position} {
-    .xt-icon();
-    content: @content;
-    font-size: @size;
+  & when (@position = before) {
+    &:before {
+      .icon();
+      content: @content;
+      font-size: @size;
+    }
+  }
+  & when (@position = after) {
+    &:after {
+      .icon();
+      content: @content;
+      font-size: @size;
+    }
   }
 }

@@ -497,10 +497,9 @@
   
   // generate-flex-space
   
-  .generate-flex-space(@breakpoint:none, @i:length(@flex-space-horizontal)) when (@i > 0) {
+  .generate-flex-space(@breakpoint:none, @i:length(@flex-spaces)) when (@i > 0) {
     .generate-flex-space(@breakpoint, @i - 1);
-    @flex: extract(@flex-space-horizontal, @i);
-    @name: extract(@flex, 1);
+    @name: extract(@flex-spaces, @i);
     & when (@breakpoint = none) {
       .flex-space-@{name} {
         .flex-space(@name) !important;
@@ -515,10 +514,9 @@
   
   // generate-list-space
   
-  .generate-list-space(@breakpoint:none, @i:length(@list-space-horizontal)) when (@i > 0) {
+  .generate-list-space(@breakpoint:none, @i:length(@list-spaces)) when (@i > 0) {
     .generate-list-space(@breakpoint, @i - 1);
-    @list: extract(@list-space-horizontal, @i);
-    @name: extract(@list, 1);
+    @name: extract(@list-spaces, @i);
     & when (@breakpoint = none) {
       .list-space-@{name} {
         .list-space(@name) !important;

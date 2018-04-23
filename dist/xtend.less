@@ -2,6 +2,10 @@
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
+//////////////////////
+// xtend
+//////////////////////
+
 @import '../src/core/__core'; // put package manager xtend-library core path
 @import 'theme/__theme';
 
@@ -34,11 +38,16 @@
 }
 
 // icons
-// USAGE MARKUP: <span class="xt-icon-close"></span>)
-// USAGE LESS : .by-key(@icons, close); .icon(@content:@by-key, @size:@icon-small, @sr-only:false, @position:after);
+// USAGE MARKUP: <span class="icon-close"></span>)
+// USAGE LESS : // .icon(@content: @icon-close, @size: @icon-small, @sr-only: false, @position:after);
 
-@icons: close '\e904',
-chevron-up '\e903',
-chevron-left '\e901',
-chevron-right '\e902',
-chevron-down '\e900';
+@icons: // this will generate classes .icon-{name}
+  close, chevron-up, chevron-left, chevron-right, chevron-down;
+
+// xtend icons
+
+@icon-close: '\e904';
+@icon-chevron-up: '\e903';
+@icon-chevron-left: '\e901';
+@icon-chevron-right: '\e902';
+@icon-chevron-down: '\e900';

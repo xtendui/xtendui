@@ -95,13 +95,23 @@
 
 // flex
 
-@flex-space-horizontal: none 0, tiny .25rem, small .5rem, medium 1rem, big 2rem, giant 3rem;
-@flex-space-vertical: none 0, tiny .25rem, small .5rem, medium 1rem, big 2rem, giant 3rem;
+@flex-spaces: none, tiny, small, medium, big, giant; // if you change this change also variables names below
+@flex-space-none: 0 0;
+@flex-space-tiny: .25rem .25rem;
+@flex-space-small: .5rem .5rem;
+@flex-space-medium: 1rem 1rem;
+@flex-space-big: 2rem 2rem;
+@flex-space-giant: 3rem 3rem;
 
 // list
 
-@list-space-horizontal: none 0, tiny .25rem, small .5rem, medium 1rem, big 2rem, giant 3rem;
-@list-space-vertical: none 0, tiny .25rem, small .5rem, medium 1rem, big 2rem, giant 3rem;
+@list-spaces: none, tiny, small, medium, big, giant; // if you change this change also variables names below
+@list-space-none: 0 0;
+@list-space-tiny: .25rem .25rem;
+@list-space-small: .5rem .5rem;
+@list-space-medium: 1rem 1rem;
+@list-space-big: 2rem 2rem;
+@list-space-giant: 3rem 3rem;
 
 //////////////////////
 // components
@@ -120,13 +130,13 @@
 
 // overlay
 
-@overlays:
-  tiny @breakpoint-xs - 60,
-  small @breakpoint-sm - 60,
-  medium @breakpoint-md - 60,
-  big @breakpoint-lg - 60,
-  giant @breakpoint-xl - 60,
-  full none; // overlay size
+@overlay-sizes: tiny, small, medium, big, giant, full; // if you change this change also variables names below
+@overlay-size-tiny: @breakpoint-xs - 60;
+@overlay-size-small: @breakpoint-sm - 60;
+@overlay-size-medium: @breakpoint-md - 60;
+@overlay-size-big: @breakpoint-lg - 60;
+@overlay-size-giant: @breakpoint-xl - 60;
+@overlay-size-full: none;
 
 //////////////////////
 // animations
@@ -164,11 +174,6 @@
 
 @columns: 12;
 
-// container
-
-@container-fluid: 1350px; // max-width
-@container-space: none 15px, xs 15px, sm 20px, md 25px, lg 30px, xl 30px; // spacing outside container
-
 // breakpoints
 
 @breakpoints: xs, sm, md, lg, xl; // if you change this change also variables names below
@@ -177,6 +182,11 @@
 @breakpoint-md: 992px;
 @breakpoint-lg: 1200px;
 @breakpoint-xl: 1350px;
+
+// container
+
+@container-fluid: 1350px; // max-width
+@container-space: none 15px, xs 15px, sm 20px, md 25px, lg 30px, xl 30px; // spacing outside container
 
 // @media queries
 // USAGE: @media @min-sm and @max-md {}
