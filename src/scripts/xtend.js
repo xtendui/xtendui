@@ -1,4 +1,4 @@
-/*! xtend v0.3.12 (https://getxtend.com/)
+/*! xtend v0.4.0 (https://getxtend.com/)
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
