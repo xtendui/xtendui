@@ -112,7 +112,10 @@ legend {
   .input-control-secondary();
   // animations
   .transition-default.out();
-  &:hover, &:active, &:focus, &.active {
+  &:hover, &.active {
+    .transition-default.active();
+  }
+  &:focus {
     .transition-default.active();
   }
 }
@@ -122,7 +125,7 @@ legend {
   border-color: @secondary;
   background-color: @secondary;
   color: fade(@text, @perc-xl);
-  &:hover, &:active, &:focus, &.active {
+  &:hover, &.active {
     background-color: lighten(@secondary, @perc-xs);
     color: @text;
   }

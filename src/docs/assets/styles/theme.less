@@ -71,17 +71,19 @@
 .logo {
   .link-none();
   display: inline-block;
-  .margin(y, small);
-  .font-sans-light();
-  color: fade(@white, @perc-xl);
-  font-size: 3rem;
+  .margin(y, medium);
+  opacity: .8;
+  img {
+    width: auto;
+    height: 2.5rem;
+  }
   .transition-default.out();
-  &:hover, &:active, &:focus, &.active {
+  &:hover, &:active, &.active {
     .transition-default.active();
-    color: @white;
+    opacity: 1;
   }
   &:focus {
-    color: fade(@white, @perc-xl);
+    opacity: .8;
   }
 }
 
@@ -107,8 +109,9 @@
 .site-hero {
   color: @white;
   .site-hero-text {
-    .font-sans-light();
-    .links-inverse();
+    p {
+      .font-sans-light();
+    }
   }
   > .container {
     > .flex {
@@ -275,7 +278,7 @@
       }
     }
   }
-  &:hover, &:active, &:focus, &.active {
+  &:hover, &:active, &.active {
     .icon-menu-custom {
       span {
         background-color: @white;
@@ -302,7 +305,7 @@
     font-size: 4rem;
     text-align: left;
     text-transform: capitalize;
-    &:hover, &:active, &:focus, &.active {
+    &:hover, &:active, &.active {
       color: @white;
       opacity: 1;
     }
@@ -386,7 +389,7 @@
   color: fade(@white, @perc-xl);
   a {
     color: @white;
-    &:hover, &:active, &:focus, &.active {
+    &:hover, &:active, &.active {
       color: @white;
       text-decoration: underline;
     }
@@ -424,7 +427,7 @@
     .btn-narrow();
     .btn-short();
     width: 100%;
-    &:hover, &:active, &:focus, &.active {
+    &:hover, &:active, &.active {
       color: @text !important;
     }
   }
@@ -494,7 +497,7 @@
       opacity: 0;
     }
   }
-  &:hover, &:active, &:focus, &.active {
+  &:hover, &:active, &.active {
     .line-container {
       .line:after {
         left: 0;
@@ -534,7 +537,7 @@
     transition: all @time-medium @bez-out;
     opacity: 0;
   }
-  &:hover, &:active, &:focus, &.active {
+  &:hover, &:active, &.active {
     .site-article-anchor {
       animation: anim-opacity-in @time-medium @bez-in;
       opacity: 1;
@@ -559,7 +562,7 @@
     font-size: 17px;
     color: @primary;
     line-height: 1;
-    &:hover, &:active, &:focus, &.active {
+    &:hover, &:active, &.active {
       color: @primary;
     }
   }
