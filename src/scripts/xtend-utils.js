@@ -1,7 +1,3 @@
-/* xtend v0.3.4 (https://getxtend.com/)
-@copyright (c) 2017 - 2018 Riccardo Caroli
-@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
-
 'use strict';
 
 import {XtToggle, XtDrop, XtOverlay, XtSticky} from './xtend';
