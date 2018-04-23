@@ -22,25 +22,6 @@
   }
 }
 
-// .generate-icons
-
-& when (@classes-icons) {
-
-  .generate-icons();
-  .generate-icons(@i:length(@icons)) when (@i > 0) {
-    .generate-icons(@i - 1);
-    @icon: extract(@icons, @i);
-    @name: extract(@icon, 1);
-    @val: extract(@icon, 2);
-    .icon-@{name} {
-      &:before {
-        content: @val;
-      }
-    }
-  }
-
-}
-
 // icon :before or :after
 
 .icon(@content, @size: @icon-medium, @sr-only: false, @position: before) {
@@ -63,4 +44,22 @@
       font-size: @size;
     }
   }
+}
+
+// .generate-icons
+
+& when (@classes-icons) {
+  
+  .generate-icons();
+  .generate-icons(@i:length(@icons)) when (@i > 0) {
+    .generate-icons(@i - 1);
+    @name: extract(@icons, @i);
+    @val: ~"icon-@{name}";
+    .icon-@{name} {
+      &:before {
+        content: @@val;
+      }
+    }
+  }
+  
 }
