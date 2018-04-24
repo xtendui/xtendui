@@ -461,8 +461,8 @@
 
 .flex-space(@name, @breakpoint:none) {
   @arr: ~"flex-space-@{name}";
-  @horizontal: extract(@@arr, 1);
-  @vertical: extract(@@arr, 2);
+  @vertical: extract(@@arr, 1);
+  @horizontal: extract(@@arr, 2);
   margin: -@vertical -@horizontal;
   > * {
     padding: @vertical @horizontal;
@@ -471,8 +471,8 @@
 
 .flex-space(@name, @breakpoint:none) when (default()) {
   @arr: ~"flex-space-@{name}";
-  @horizontal: extract(@@arr, 1);
-  @vertical: extract(@@arr, 2);
+  @vertical: extract(@@arr, 1);
+  @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     margin: -@vertical -@horizontal;
@@ -490,8 +490,8 @@
 
 .list-space(@name, @breakpoint:none) {
   @arr: ~"list-space-@{name}";
-  @horizontal: extract(@@arr, 1);
-  @vertical: extract(@@arr, 2);
+  @vertical: extract(@@arr, 1);
+  @horizontal: extract(@@arr, 2);
   margin: -@vertical -@horizontal;
   > * {
     margin: @vertical @horizontal;
@@ -500,8 +500,8 @@
 
 .list-space(@name, @breakpoint:none) when (default()) {
   @arr: ~"list-space-@{name}";
-  @horizontal: extract(@@arr, 1);
-  @vertical: extract(@@arr, 2);
+  @vertical: extract(@@arr, 1);
+  @horizontal: extract(@@arr, 2);
   @media @@query-min {
     margin: -@vertical -@horizontal;
     > * {
