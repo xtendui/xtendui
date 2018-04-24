@@ -6,7 +6,7 @@ import {XtToggle, XtDrop, XtOverlay, XtSticky} from './xtend';
 // constructor
 //////////////////////
 
-const XtUtil = {};
+const XtUtil = window.XtUtil || {};
 
 //////////////////////
 // properties
@@ -226,6 +226,7 @@ window.xtUtilOff = Element.prototype.xtUtilOff = XtUtil.xtUtilOff;
 // api
 //////////////////////
 
+window.XtUtil = XtUtil;
 export default XtUtil;
 
 //////////////////////
