@@ -360,8 +360,11 @@ for (let element of document.querySelectorAll('.demo-cols-nested .col')) {
 // xtend
 //////////////////////
 
-import XtUtil from '../../../scripts/xtend-utils';
+import {XtUtil} from '../../../scripts/xtend-utils';
 import {XtToggle} from '../../../scripts/xtend';
 XtUtil.initAll();
 
-// OR window.XtUtil.initAll();
+/* OR use <script> and
+new window.XtToggle(item, {});
+window.XtUtil.initAll();
+*/

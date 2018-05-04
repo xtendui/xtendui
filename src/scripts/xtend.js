@@ -4,13 +4,13 @@
 
 'use strict';
 
-import XtUtil from './xtend-utils';
+import {XtUtil} from './xtend-utils';
 
 //////////////////////
 // Xt
 //////////////////////
 
-export class Xt {
+class Xt {
 
   /**
    * constructor
@@ -650,11 +650,16 @@ Xt.defaults = {
   classes: ['active']
 };
 
+// export
+
+window.Xt = Xt;
+export {Xt};
+
 //////////////////////
 // XtToggle
 //////////////////////
 
-export class XtToggle extends Xt {
+class XtToggle extends Xt {
 
   /**
    * constructor
@@ -707,11 +712,16 @@ XtToggle.defaults = {
   max: 1
 };
 
+// export
+
+window.XtToggle = XtToggle;
+export {XtToggle};
+
 //////////////////////
 // XtDrop
 //////////////////////
 
-export class XtDrop extends Xt {
+class XtDrop extends Xt {
 
   /**
    * constructor
@@ -765,11 +775,16 @@ XtDrop.defaults = {
   closeOutside: 'body'
 };
 
+// export
+
+window.XtDrop = XtDrop;
+export {XtDrop};
+
 //////////////////////
 // XtOverlay
 //////////////////////
 
-export class XtOverlay extends Xt {
+class XtOverlay extends Xt {
 
   /**
    * constructor
@@ -826,11 +841,16 @@ XtOverlay.defaults = {
   scrollbar: true
 };
 
+// export
+
+window.XtOverlay = XtOverlay;
+export {XtOverlay};
+
 //////////////////////
 // XtSticky
 //////////////////////
 
-export class XtSticky extends Xt {
+class XtSticky extends Xt {
 
   /**
    * constructor
@@ -983,3 +1003,8 @@ XtSticky.defaults = {
   min: 0,
   max: Infinity
 };
+
+// export
+
+window.XtSticky = XtSticky;
+export {XtSticky};

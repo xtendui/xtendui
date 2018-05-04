@@ -6,7 +6,7 @@ import {XtToggle, XtDrop, XtOverlay, XtSticky} from './xtend';
 // constructor
 //////////////////////
 
-const XtUtil = window.XtUtil || {};
+const XtUtil = {};
 
 //////////////////////
 // properties
@@ -227,7 +227,7 @@ window.xtUtilOff = Element.prototype.xtUtilOff = XtUtil.xtUtilOff;
 //////////////////////
 
 window.XtUtil = XtUtil;
-export default XtUtil;
+export {XtUtil};
 
 //////////////////////
 // scope polyfill (https://stackoverflow.com/questions/6481612/queryselector-search-immediate-children)
