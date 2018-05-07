@@ -138,7 +138,7 @@ class Xt {
     }
     if (this.mode === 'all') {
       // choose all elements
-      return {all: this.elements, single: this.elements};
+      return {all: this.elements, single: this.elements[0]};
     } else if (this.mode === 'unique') {
       // choose element by group
       let group = element.getAttribute('data-group');
