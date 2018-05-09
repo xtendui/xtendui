@@ -460,9 +460,10 @@ a, .alink {
 
 .overlay-outer {
   .animation-default.active(); // needed for .out animation timing
-  .anim-opacity.active();
   &.active {
     > .overlay {
+      .animation-default.active(); // needed for .out animation timing
+      .anim-opacity.active();
       > .overlay-inner {
         .animation-default.active();
         .anim-vertical.active();
@@ -480,8 +481,8 @@ a, .alink {
     }
   }
   &.out {
-    .anim-opacity.out();
     > .overlay {
+      .anim-opacity.out();
       > .overlay-inner {
         .anim-vertical.out();
         > .btn-close {
@@ -503,6 +504,9 @@ a, .alink {
   box-shadow: 0 3px 100px 1px fade(@black, @perc-sm);
   // animations
   &.active {
+    &:before {
+      .anim-left.active();
+    }
     > .overlay {
       > .overlay-inner {
         .anim-left.active();
@@ -510,6 +514,7 @@ a, .alink {
     }
   }
   &.out {
+    .anim-left.out();
     > .overlay {
       > .overlay-inner {
         .anim-left.out();
@@ -524,6 +529,7 @@ a, .alink {
   box-shadow: 0 3px 100px 1px fade(@black, @perc-sm);
   // animations
   &.active {
+    .anim-right.active();
     > .overlay {
       > .overlay-inner {
         .anim-right.active();
@@ -531,6 +537,7 @@ a, .alink {
     }
   }
   &.out {
+    .anim-right.out();
     > .overlay {
       > .overlay-inner {
         .anim-right.out();

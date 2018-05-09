@@ -362,9 +362,9 @@ for (let element of document.querySelectorAll('.demo-cols-nested .col')) {
 
 import {XtUtil} from '../../../scripts/xtend-utils';
 import {XtToggle} from '../../../scripts/xtend';
-XtUtil.initAll();
 
-/* OR use <script> and
-new window.XtToggle(item, {});
-window.XtUtil.initAll();
-*/
+// init all
+
+document.addEventListener("DOMContentLoaded", function() {
+  XtUtil.initAll();
+});
