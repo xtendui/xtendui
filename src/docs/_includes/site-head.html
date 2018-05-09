@@ -29,30 +29,32 @@
       <header class="site-header">
 
         <div class="site-header-top" data-xt-sticky='{"bottom": ".site-breadcrumbs.xt-clone"}'>
-          <div class="container">
+          <div class="site-header-top-inner">
+            <div class="container">
 
-            <div class="flex flex-auto justify-content-between align-items-center">
-              <div>
-                <a href="{{ site.baseurl }}/" class="logo" title="Home">
-                  <img src="{{ site.baseurl }}/assets/images/logo.svg" />
-                </a>
+              <div class="flex flex-auto justify-content-between align-items-center">
+                <div>
+                  <a href="{{ site.baseurl }}/" class="logo" title="Home">
+                    <img src="{{ site.baseurl }}/assets/images/logo.svg" />
+                  </a>
+                </div>
+                <div>
+                  <button type="button" class="btn btn-primary btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
+                    {% if page.collection %}
+                      {{ page.collection | capitalize }}
+                    {% else %}
+                      {{ page.title | capitalize }}
+                    {% endif %}
+                    <span class="icon-menu-custom">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </span>
+                  </button>
+                </div>
               </div>
-              <div>
-                <button type="button" class="btn btn-primary btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
-                  {% if page.collection %}
-                    {{ page.collection | capitalize }}
-                  {% else %}
-                    {{ page.title | capitalize }}
-                  {% endif %}
-                  <span class="icon-menu-custom">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </span>
-                </button>
-              </div>
+
             </div>
-
           </div>
         </div>
 
@@ -133,7 +135,7 @@
         </div>
 
         <nav class="site-breadcrumbs" role="navigation" data-xt-sticky>
-          <div class="site-breadcrumbs-inside">
+          <div class="site-breadcrumbs-inner">
             <div class="container">
               <div class="flex flex-auto justify-content-between align-items-start">
 
@@ -205,4 +207,4 @@
 
       </header>
 
-      <div class="site-wrapper-inside">
+      <div class="site-wrapper-inner">

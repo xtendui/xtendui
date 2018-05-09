@@ -44,20 +44,20 @@
         $('body').xtInitAll(true);
         // https://github.com/marcj/css-element-queries
         if (!$('html').hasClass('full')) {
-          new ResizeSensor(document.getElementById('body-inside'), function() {
+          new ResizeSensor(document.getElementById('body-inner'), function() {
             parent.resizeIframe(window.frameElement.getAttribute('id'));
           });
         }
       }
       function resize() {
-        $('#body-inside').hide().show(0);
+        $('#body-inner').hide().show(0);
       }
     </script>
     
   </head>
   <body>
     
-    <div id="body-inside"><div>{{ content }}</div></div>
+    <div id="body-inner"><div>{{ content }}</div></div>
 
     {% if page.less %}
     <less-style>{% include_relative {{ page.name | replace: '.html', '.less' }} %}</less-style>

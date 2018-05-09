@@ -44,20 +44,20 @@
         $('body').xtInitAll(true);
         // https://github.com/marcj/css-element-queries
         if (!$('html').hasClass('full')) {
-          new ResizeSensor(document.getElementById('body-inside'), function() {
+          new ResizeSensor(document.getElementById('body-inner'), function() {
             parent.resizeIframe(window.frameElement.getAttribute('id'));
           });
         }
       }
       function resize() {
-        $('#body-inside').hide().show(0);
+        $('#body-inner').hide().show(0);
       }
     </script>
     
   </head>
   <body>
     
-    <div id="body-inside"><div><br /><br /><br /><br /><br /><br /><br />
+    <div id="body-inner"><div><br /><br /><br /><br /><br /><br /><br />
 <div class="card" data-xt-sticky='{"mode": "fixed"}'>
   <div class="item">
     Element <span class="show-sticky">.show-sticky</span> <span class="hide-sticky">.hide-sticky</span>

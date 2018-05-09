@@ -244,7 +244,7 @@ const populateInline = function (item, id) {
 /*
 window.resizeIframe = function(id) {
   let $iframe = $('#' + id);
-  let $target = $iframe.contents().find('#body-inside');
+  let $target = $iframe.contents().find('#body-inner');
   $target.hide().show(0); // fix scrollbars disappearing
   let h = $target.outerHeight();
   if (h !== $iframe.data('iframeHeight')) {
@@ -256,7 +256,7 @@ window.resizeIframe = function(id) {
 /*
 // populateIframe
 function populateIframe($item, $iframe, id) {
-  let html = $('body #body-inside', $iframe[0].contentWindow.document).html();
+  let html = $('body #body-inner', $iframe[0].contentWindow.document).html();
   let less = $('body less-style', $iframe[0].contentWindow.document).html();
   let css = $('body style[scoped]', $iframe[0].contentWindow.document).html();
   let js = $('body script', $iframe[0].contentWindow.document).html();
@@ -365,6 +365,11 @@ import {XtToggle} from '../../../scripts/xtend';
 
 // init all
 
-document.addEventListener("DOMContentLoaded", function() {
+function initAll() {
   XtUtil.initAll();
-});
+}
+if (document.readyState !== 'loading') {
+  initAll();
+} else if (document.addEventListener) {
+  document.addEventListener('DOMContentLoaded', initAll);
+}

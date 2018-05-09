@@ -892,6 +892,11 @@ class XtSticky extends Xt {
       this.container[0].append(this.targets);
     }
     this.targets = XtUtil.arrSingle(this.targets);
+    // xt-fixed
+    var style = window.getComputedStyle(this.object);
+    if (style.position === 'absolute' || style.position === 'fixed') {
+      this.container[0].classList.add('xt-fixed');
+    }
   }
 
   /**
@@ -970,6 +975,11 @@ class XtSticky extends Xt {
               el.classList.add('sticky-on-top');
               el.classList.remove('sticky-on-bottom');
             }
+            // xt-fixed
+            var style = window.getComputedStyle(el);
+            if (style.position === 'absolute' || style.position === 'fixed') {
+              self.container[0].classList.add('xt-fixed');
+            }
           }
         }
       } else {
@@ -979,13 +989,18 @@ class XtSticky extends Xt {
           // direction
           let fElements = self.getElements(element);
           for (let el of fElements.all) {
-            el.classList.remove('sticky-on-top', 'sticky-on-bottom', 'xt-fixed');
+            el.classList.remove('sticky-on-top', 'sticky-on-bottom');
             if (self.scrollTop > scrollTop) {
               el.classList.remove('sticky-off-top');
               el.classList.add('sticky-off-bottom');
             } else {
               el.classList.add('sticky-off-top');
               el.classList.remove('sticky-off-bottom');
+            }
+            // xt-fixed
+            var style = window.getComputedStyle(el);
+            if (style.position !== 'absolute' && style.position !== 'fixed') {
+              self.container[0].classList.remove('xt-fixed');
             }
           }
         }
