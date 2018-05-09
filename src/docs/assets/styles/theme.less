@@ -71,7 +71,7 @@
 .logo {
   .link-none();
   display: inline-block;
-  .margin(y, medium);
+  .margin(y, 2rem);
   opacity: .8;
   img {
     width: auto;
@@ -91,6 +91,7 @@
 
 .site-header-top {
   .site-header-top-inner {
+    .display(flex);
     background-color: fade(@primary, @perc-xl);
     color: @white;
   }
@@ -721,15 +722,16 @@ code {
   // above .site-header-top
   z-index: @index-sticky + 1;
   // animations
-  .site-breadcrumbs-inner {
+  .site-breadcrumbs-outer {
     .transition-default.out();
   }
-  .site-breadcrumbs-content {
+  .site-breadcrumbs-inner {
     .transition-default.out();
   }
   &.active:not(.xt-clone) {
     .site-breadcrumbs-outer {
       padding: 1.5rem;
+      padding-bottom: 0;
       .transition-default.active();
     }
     .site-breadcrumbs-inner {
