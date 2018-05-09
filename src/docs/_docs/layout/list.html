@@ -186,29 +186,39 @@ description: List is used to space it's childrens in a column/row layout. Can al
       </ul>
     </div>
   </div>
-</div>
-
-<p>You can style also dropdown's buttons by assigning the <code>.drop-container</code> to the <code>.list > li</code>.</p>
-
-<pre>
-  <code class="html">
-    <ul class="list">
-      <li>
-        <button type="button" class="btn btn-primary">Lorem Ipsum</button>
-      </li>
-      <li class="drop-container" data-xt-drop>
-        <button type="button">
-          <!-- content -->
-        </button>
-        <div class="drop">
-          <div class="drop-inner">
-            <!-- content -->
+  <div class="demo-item demo-preview" data-name="drop">
+    <div class="demo-text">
+      You can style also dropdown's buttons by assigning the <code>.drop-container</code> to the <code>.list > li</code>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <ul class="list">
+        <li>
+          <button type="button" class="btn btn-primary">Lorem Ipsum</button>
+        </li>
+        <li class="drop-container" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            Toggle
+          </button>
+          <div class="drop">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <a href="#">Lorem Ipsum</a>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </li>
-    </ul>
-  </code>
-</pre>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <h3>Buttons styles</h3>
 
