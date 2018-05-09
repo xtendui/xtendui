@@ -57,7 +57,7 @@ gulp.task('js-dist', function () {
   var b = browserify({
     entries: 'src/scripts/xtend.js',
     debug: true
-  }).transform('babelify');
+  });
   return b.bundle()
     .pipe(source('xtend.js'))
     .pipe(buffer())
@@ -79,7 +79,7 @@ gulp.task('js', gulp.series('js-clean', function () {
   var b = browserify({
     entries: 'src/docs/assets/scripts/theme.js',
     debug: true
-  }).transform('babelify');
+  });
   return b.bundle()
     .pipe(source('bundle.js'))
     .pipe(buffer())
