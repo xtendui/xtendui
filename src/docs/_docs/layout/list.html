@@ -188,6 +188,28 @@ description: List is used to space it's childrens in a column/row layout. Can al
   </div>
 </div>
 
+<p>You can style also dropdown's buttons by assigning the <code>.drop-container</code> to the <code>.list > li</code>.</p>
+
+<pre>
+  <code class="html">
+    <ul class="list">
+      <li>
+        <button type="button" class="btn btn-primary">Lorem Ipsum</button>
+      </li>
+      <li class="drop-container" data-xt-drop>
+        <button type="button">
+          <!-- content -->
+        </button>
+        <div class="drop">
+          <div class="drop-inner">
+            <!-- content -->
+          </div>
+        </div>
+      </li>
+    </ul>
+  </code>
+</pre>
+
 <h3>Buttons styles</h3>
 
 <p><code>.list > li > a</code> and <code>.list > li > button</code> are styled automatically, If you
