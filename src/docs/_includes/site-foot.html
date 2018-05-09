@@ -1,67 +1,69 @@
 
         <footer class="site-footer" data-xt-sticky='{"top": "-1"}'>
-          <div class="container">
-            
-            <nav class="site-footer-top display-none display-block-sm" role="navigation">
-              <div class="flex flex-auto justify-content-between">
+          <div class="site-footer-inner">
+            <div class="container">
 
-                <div class="site-footer-top-links list-space-none">
-                  <a href="{{ site.baseurl }}/" class="btn btn-primary">
-                    Home
-                  </a>
-                  {% for collection in site.collections %}
-                    {% if site.[collection.label].size > 0 %}
-                      {% assign sorted = site.[collection.label] | sort: 'order' %}
-                      <a href="{{ sorted[0].url }}" class="btn btn-primary">
-                        {{ collection.label }}
-                      </a>
-                    {% endif %}
-                  {% endfor %}
-                  <a href="#" class="btn btn-primary">
-                    Playground
-                  </a>
-                  <a href="#" class="btn btn-primary">
-                    Inspirations
-                  </a>
-                  <a href="{{ site.baseurl }}/faq/" class="btn btn-primary">
-                    Faq
-                  </a>
-                  <a href="{{ site.baseurl }}/tests/" class="btn btn-primary developer">
-                    Tests
-                  </a>
+              <nav class="site-footer-top display-none display-block-sm" role="navigation">
+                <div class="flex flex-auto justify-content-between">
+
+                  <div class="site-footer-top-links list-space-none">
+                    <a href="{{ site.baseurl }}/" class="btn btn-primary">
+                      Home
+                    </a>
+                    {% for collection in site.collections %}
+                      {% if site.[collection.label].size > 0 %}
+                        {% assign sorted = site.[collection.label] | sort: 'order' %}
+                        <a href="{{ sorted[0].url }}" class="btn btn-primary">
+                          {{ collection.label }}
+                        </a>
+                      {% endif %}
+                    {% endfor %}
+                    <a href="#" class="btn btn-primary">
+                      Playground
+                    </a>
+                    <a href="#" class="btn btn-primary">
+                      Inspirations
+                    </a>
+                    <a href="{{ site.baseurl }}/faq/" class="btn btn-primary">
+                      Faq
+                    </a>
+                    <a href="{{ site.baseurl }}/tests/" class="btn btn-primary developer">
+                      Tests
+                    </a>
+                  </div>
+
+                  <div class="site-footer-top-special">
+                    <button type="button" class="btn btn-primary">
+                      <span class="icon-embed2"></span>
+                    </button>
+                    {% comment %}
+                    <a href="#" class="btn btn-primary">
+                      Privacy policy
+                    </a>
+                    <a href="#" class="btn btn-primary">
+                      license
+                    </a>
+                    <a href="#" class="btn btn-primary">
+                      contact
+                    </a>
+                    {% endcomment %}
+                  </div>
+
                 </div>
+              </nav>
 
-                <div class="site-footer-top-special">
-                  <button type="button" class="btn btn-primary">
-                    <span class="icon-embed2"></span>
-                  </button>
-                  {% comment %}
-                  <a href="#" class="btn btn-primary">
-                    Privacy policy
-                  </a>
-                  <a href="#" class="btn btn-primary">
-                    license
-                  </a>
-                  <a href="#" class="btn btn-primary">
-                    contact
-                  </a>
-                  {% endcomment %}
+              <div class="site-footer-bottom">
+                <div class="flex flex-auto flex-space-tiny justify-content-between">
+                  <div class="site-footer-bottom-license">
+                    Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank">CC BY 3.0</a> <span class="separator separator-dash"></span> Xtend licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank">MIT</a>
+                  </div>
+                  <div class="site-footer-bottom-copy">
+                    {{ site.copyright }}
+                  </div>
                 </div>
-
               </div>
-            </nav>
-            
-            <div class="site-footer-bottom">
-              <div class="flex flex-auto flex-space-tiny justify-content-between">
-                <div class="site-footer-bottom-license">
-                  Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank">CC BY 3.0</a> <span class="separator separator-dash"></span> Xtend licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank">MIT</a>
-                </div>
-                <div class="site-footer-bottom-copy">
-                  {{ site.copyright }}
-                </div>
-              </div>
+
             </div>
-            
           </div>
         </footer>
         
