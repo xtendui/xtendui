@@ -134,7 +134,7 @@ gulp.task('version', function () {
     .pipe(gulp.dest('./'));
   // replace styles and scripts
   let stream2 = gulp.src(['src/core/__core.less', 'dist/theme/__theme.less', 'src/scripts/*.js'], {base: './'})
-    .pipe(replace(/\/\*\![^\*]+\*\//, banner))
+    //.pipe(replace(/\/\*\![^\*]+\*\//, banner))
     .pipe(gulp.dest('./'));
   // return merge
   return merge(stream1, stream2);
