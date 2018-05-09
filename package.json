@@ -1,6 +1,6 @@
 {
   "name": "xtend-library",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "Frontend library",
   "homepage": "http://getxtend.com/",
   "license": "MIT",
@@ -45,6 +45,8 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "browserify": {
-    "transform": ["babelify"]
+    "transform": [
+      "babelify"
+    ]
   }
 }
