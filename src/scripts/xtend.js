@@ -292,12 +292,12 @@ class Xt {
       self.activationOnAnimate(el, type);
       // specials
       if (type === 'targets') {
+        self.specialBackdrop(el);
         self.specialCenterOn(el);
         self.specialMiddleOn(el);
         self.specialCollapseOn(el);
         self.specialCloseOn(el, fElements.single);
         self.specialScrollbarOn();
-        self.specialBackdrop(el);
       }
     }
   }
@@ -395,6 +395,24 @@ class Xt {
   //////////////////////
   // activation specials
   //////////////////////
+
+  /**
+   * backdrop append to element
+   * @param {Element} element
+   */
+  specialBackdrop(el) {
+    let options = this.options;
+    if (options.backdrop) {
+      var elements = el.querySelectorAll(options.backdrop);
+      for (let element of elements) {
+        let backdrop = element.querySelectorAll('.xt-backdrop');
+        if (!backdrop.length) {
+          backdrop = XtUtil.createElement('<div class="xt-backdrop"></div>');
+          element.append(backdrop);
+        }
+      }
+    }
+  }
 
   /**
    * center position on activation
@@ -622,24 +640,6 @@ class Xt {
       var elements = document.documentElement.querySelectorAll('.xt-backdrop');
       for (let element of elements) {
         element.style.right = '';
-      }
-    }
-  }
-
-  /**
-   * backdrop append to element
-   * @param {Element} element
-   */
-  specialBackdrop(el) {
-    let options = this.options;
-    if (options.backdrop) {
-      var elements = el.querySelectorAll(options.backdrop);
-      for (let element of elements) {
-        let backdrop = element.querySelectorAll('.xt-backdrop');
-        if (!backdrop.length) {
-          backdrop = XtUtil.createElement('<div class="xt-backdrop"></div>');
-          element.append(backdrop);
-        }
       }
     }
   }
