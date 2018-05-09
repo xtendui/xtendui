@@ -18,7 +18,9 @@
   "scripts": {
     "build": "gulp build",
     "watch": "gulp watch",
-    "serve": "bundle exec jekyll serve"
+    "serve": "bundle exec jekyll serve",
+    "version": "npm run build && git add . && git status",
+    "postversion": "npm publish && git push && git push --tags"
   },
   "dependencies": {},
   "devDependencies": {
