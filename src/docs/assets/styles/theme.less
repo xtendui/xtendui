@@ -90,11 +90,9 @@
 // .site-header-top
 
 .site-header-top {
-  .site-header-top-inner {
-    .display(flex);
-    background-color: fade(@primary, @perc-xl);
-    color: @white;
-  }
+  .display(flex);
+  background-color: fade(@primary, @perc-xl);
+  color: @white;
   .site-menu & {
     position: absolute;
     top: 0;
@@ -140,14 +138,12 @@
 
 // .site-breadcrumbs
 
-.site-breadcrumbs {
-  .site-breadcrumbs-inner {
-    cursor: default;
-    .padding(y, medium);
-    background-color: @primary;
-    background: @grad-primary;
-    color: @white;
-  }
+.site-breadcrumbs-inner {
+  cursor: default;
+  .padding(y, medium);
+  background-color: @primary;
+  background: @grad-primary;
+  color: @white;
   .site-breadcrumbs-body {
     margin-left: -1rem !important;
   }
@@ -706,7 +702,7 @@ code {
 
 // .site-header-top
 
-.site-header-top[data-xt-sticky] {
+.site-header-top-outer[data-xt-sticky] {
   .xt-sticky();
   // animations
   &.sticky-on-bottom {
@@ -717,19 +713,19 @@ code {
 
 // .site-breadcrumbs
 
-.site-breadcrumbs[data-xt-sticky] {
+.site-breadcrumbs-outer[data-xt-sticky] {
   .xt-sticky(@mode:'absolute');
   // above .site-header-top
   z-index: @index-sticky + 1;
   // animations
-  .site-breadcrumbs-outer {
+  .site-breadcrumbs {
     .transition-default.out();
   }
   .site-breadcrumbs-inner {
     .transition-default.out();
   }
   &.active:not(.xt-clone) {
-    .site-breadcrumbs-outer {
+    .site-breadcrumbs {
       padding: 1.5rem;
       padding-bottom: 0;
       .transition-default.active();
