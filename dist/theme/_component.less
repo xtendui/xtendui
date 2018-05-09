@@ -491,6 +491,50 @@ a, .alink {
   }
 }
 
+// overlay-pos
+
+.overlay-pos-left {
+  // styles
+  max-width: 510px !important;
+  box-shadow: 0 3px 100px 1px fade(@black, @perc-sm);
+  // animations
+  &.active {
+    > .overlay {
+      > .overlay-inner {
+        .anim-left.active();
+      }
+    }
+  }
+  &.out {
+    > .overlay {
+      > .overlay-inner {
+        .anim-left.out();
+      }
+    }
+  }
+}
+
+.overlay-pos-right {
+  // styles
+  max-width: 510px !important;
+  box-shadow: 0 3px 100px 1px fade(@black, @perc-sm);
+  // animations
+  &.active {
+    > .overlay {
+      > .overlay-inner {
+        .anim-right.active();
+      }
+    }
+  }
+  &.out {
+    > .overlay {
+      > .overlay-inner {
+        .anim-right.out();
+      }
+    }
+  }
+}
+
 //////////////////////
 // loader
 //////////////////////

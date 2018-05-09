@@ -295,8 +295,9 @@ class Xt {
         self.specialCenterOn(el);
         self.specialMiddleOn(el);
         self.specialCollapseOn(el);
-        self.specialBackdrop(el);
         self.specialCloseOn(el, fElements.single);
+        self.specialScrollbarOn();
+        self.specialBackdrop(el);
       }
     }
   }
@@ -306,13 +307,8 @@ class Xt {
    * @param {Element} element To be animated
    */
   activationOnAnimate(el, type) {
-    let self = this;
     // onDone
     let onDone = function(el, type) {
-      // specials
-      if (type === 'targets') {
-        self.specialScrollbarOn();
-      }
       // collapse-width and collapse-height
       if (el.classList.contains('collapse-height')) {
         el.style.height = 'auto';
@@ -345,12 +341,11 @@ class Xt {
     for (let el of els) {
       el.classList.remove(...options.classes);
       el.classList.add('out');
-      self.activationOffAnimate(el);
+      self.activationOffAnimate(el, type);
       // specials
       if (type === 'targets') {
         self.specialCollapseOff(el);
         self.specialCloseOff(el);
-        self.specialScrollbarOff();
       }
     }
   }
@@ -359,16 +354,23 @@ class Xt {
    * element off animation
    * @param {Element} element To be animated
    */
-  activationOffAnimate(el) {
+  activationOffAnimate(el, type) {
+    let self = this;
+    // onDone
+    let onDone = function(el, type) {
+      el.classList.remove('out');
+      // specials
+      self.specialScrollbarOff();
+    };
+    // delay onDone
     let timing = this.activationTiming(el);
-    // delay
     this.animationClear(el);
     if (!timing) {
-      el.classList.remove('out');
+      onDone(el, type);
     } else {
-      let timeout = setTimeout(function (el) {
-        el.classList.remove('out');
-      }, timing, el);
+      let timeout = setTimeout(function (el, type) {
+        onDone(el, type);
+      }, timing, el, type);
       el.setAttribute('xt-activation-animation-timeout', timeout);
     }
   }

@@ -206,10 +206,27 @@ a, .alink, .btn-link {
     max-width: none !important;
     > .overlay-inner {
       position: static;
+      .padding(y, none) !important;
       & + .xt-backdrop {
-        display: none;
+        opacity: 0 !important;
       }
     }
+  }
+}
+
+// overlay-pos
+
+.overlay-pos-left {
+  margin-right: auto;
+  > .overlay {
+    .justify-content-start();
+  }
+}
+
+.overlay-pos-right {
+  margin-left: auto;
+  > .overlay {
+    .justify-content-start();
   }
 }
 
