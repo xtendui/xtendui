@@ -893,9 +893,10 @@ class XtSticky extends Xt {
     }
     this.targets = XtUtil.arrSingle(this.targets);
     // xt-fixed
-    var style = window.getComputedStyle(this.object);
+    var el = this.object;
+    var style = window.getComputedStyle(el);
     if (style.position === 'absolute' || style.position === 'fixed') {
-      this.container[0].classList.add('xt-fixed');
+      el.classList.add('xt-fixed');
     }
   }
 
@@ -978,7 +979,7 @@ class XtSticky extends Xt {
             // xt-fixed
             var style = window.getComputedStyle(el);
             if (style.position === 'absolute' || style.position === 'fixed') {
-              self.container[0].classList.add('xt-fixed');
+              el.classList.add('xt-fixed');
             }
           }
         }
@@ -1000,7 +1001,7 @@ class XtSticky extends Xt {
             // xt-fixed
             var style = window.getComputedStyle(el);
             if (style.position !== 'absolute' && style.position !== 'fixed') {
-              self.container[0].classList.remove('xt-fixed');
+              el.classList.remove('xt-fixed');
             }
           }
         }
