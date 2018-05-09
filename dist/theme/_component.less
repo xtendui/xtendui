@@ -193,13 +193,13 @@ a, .alink {
 }
 
 .btn-wide {
-  padding-left: 2.2rem;
-  padding-right: 2.2rem;
+  padding-left: 1.8em;
+  padding-right: 1.8em;
 }
 
 .btn-narrow {
-  padding-left: .8rem;
-  padding-right: .8rem;
+  padding-left: .6em;
+  padding-right: .6em;
 }
 
 .btn-icon {
@@ -208,6 +208,16 @@ a, .alink {
 
 .btn-none {
   padding: 0;
+}
+
+.btn-none-x {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.btn-none-y {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .btn-text-only {
@@ -264,7 +274,7 @@ a, .alink {
     border-color: transparent;
     box-shadow: 0 3px 10px 1px fade(@black, @perc-sm);
     > .list {
-      .list-btn-all({ .btn-wide(); .btn-squared(); white-space: nowrap; }); // not overridable
+      .list-btn-all({ .btn-squared(); padding-left: 2.2rem; padding-right: 2.2rem; white-space: nowrap; }); // not overridable
     }
   }
   // options
