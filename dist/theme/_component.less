@@ -460,10 +460,9 @@ a, .alink {
 
 .overlay-outer {
   .animation-default.active(); // needed for .out animation timing
+  .anim-opacity.active();
   &.active {
     > .overlay {
-      .animation-default.active();
-      .anim-opacity.active();
       > .overlay-inner {
         .animation-default.active();
         .anim-vertical.active();
@@ -481,8 +480,8 @@ a, .alink {
     }
   }
   &.out {
+    .anim-opacity.out();
     > .overlay {
-      .anim-opacity.out();
       > .overlay-inner {
         .anim-vertical.out();
         > .btn-close {
