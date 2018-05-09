@@ -20,7 +20,7 @@
     "watch": "gulp watch",
     "serve": "bundle exec jekyll serve",
     "version": "npm run build && git add .",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags && npm publish"
   },
   "dependencies": {},
   "devDependencies": {
