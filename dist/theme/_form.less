@@ -114,6 +114,7 @@ legend {
 }
 
 // variant
+
 .input-control-secondary {
   border-color: @secondary;
   background-color: @secondary;
@@ -133,6 +134,27 @@ legend {
     linear-gradient(135deg, @select-arrow-color 50%, transparent 50%),
     linear-gradient(to right, @select-space-color, @select-space-color);
   }
+}
+
+// placeholder
+
+:-ms-input-placeholder {
+  color: @grey-500;
+}
+:-moz-placeholder {
+  color: @grey-500;
+}
+::-webkit-input-placeholder {
+  color: @grey-500;
+}
+::-ms-input-placeholder {
+  color: @grey-500;
+}
+::-moz-placeholder {
+  color: @grey-500;
+}
+::placeholder {
+  color: @grey-500;
 }
 
 //////////////////////
@@ -159,7 +181,6 @@ legend {
   // styles
   .display(block);
   width: 100%;
-  .margin(top, small);
   .muted();
   .font-tiny();
   .text-align(left);
