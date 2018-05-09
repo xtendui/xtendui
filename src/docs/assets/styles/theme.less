@@ -140,8 +140,8 @@
 // .site-breadcrumbs
 
 .site-breadcrumbs {
-  cursor: default;
   .site-breadcrumbs-inner {
+    cursor: default;
     .padding(y, medium);
     background-color: @primary;
     background: @grad-primary;
@@ -721,13 +721,17 @@ code {
   // above .site-header-top
   z-index: @index-sticky + 1;
   // animations
-  .transition-default.out();
   .site-breadcrumbs-inner {
     .transition-default.out();
   }
+  .site-breadcrumbs-content {
+    .transition-default.out();
+  }
   &.active:not(.xt-clone) {
-    padding: 1.5rem;
-    .transition-default.active();
+    .site-breadcrumbs-outer {
+      padding: 1.5rem;
+      .transition-default.active();
+    }
     .site-breadcrumbs-inner {
       .padding(y, small);
       border-radius: .75rem;

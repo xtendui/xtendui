@@ -135,71 +135,73 @@
         </div>
 
         <nav class="site-breadcrumbs" role="navigation" data-xt-sticky>
-          <div class="site-breadcrumbs-inner">
-            <div class="container">
-              <div class="flex flex-auto justify-content-between align-items-start">
+          <div class="site-breadcrumbs-outer">
+            <div class="site-breadcrumbs-inner">
+              <div class="container">
+                <div class="flex flex-auto justify-content-between align-items-start">
 
-                <div class="site-breadcrumbs-body flex flex-space-none" data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave"}'>
-                  {% for collection in site.collections %}
-                    {% if collection.label == page.collection %}
+                  <div class="site-breadcrumbs-body flex flex-space-none" data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave"}'>
+                    {% for collection in site.collections %}
+                      {% if collection.label == page.collection %}
 
-                      {% assign sorted = site.[collection.label] | sort: 'order' %}
-                      {% for p in sorted %}
-                        {% if p.categories[0] == collection.label %}
-                          <div class="site-breadcrumbs-body-main">
-                            <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary">
-                              {{ p.title }}
-                            </a>
-                            {% assign subsorted = site.[collection.label] | where: 'categories', p.title | sort: 'order' %}
-                            <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
-                              {% if subsorted.size > 0 %}
-                                <div class="site-breadcrumbs-body-sub-inner">
-                                  {% for pa in subsorted %}
-                                  <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn-primary">
-                                    {{ pa.title }}
-                                  </a>
-                                  {% endfor %}
-                                </div>
-                              {% endif %}
+                        {% assign sorted = site.[collection.label] | sort: 'order' %}
+                        {% for p in sorted %}
+                          {% if p.categories[0] == collection.label %}
+                            <div class="site-breadcrumbs-body-main">
+                              <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary">
+                                {{ p.title }}
+                              </a>
+                              {% assign subsorted = site.[collection.label] | where: 'categories', p.title | sort: 'order' %}
+                              <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
+                                {% if subsorted.size > 0 %}
+                                  <div class="site-breadcrumbs-body-sub-inner">
+                                    {% for pa in subsorted %}
+                                    <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn-primary">
+                                      {{ pa.title }}
+                                    </a>
+                                    {% endfor %}
+                                  </div>
+                                {% endif %}
+                              </div>
                             </div>
-                          </div>
-                        {% endif %}
-                      {% endfor %}
+                          {% endif %}
+                        {% endfor %}
 
-                    {% endif %}
-                  {% endfor %}
-                </div>
-
-                <div class="site-breadcrumbs-meta flex flex-space-none align-items-center">
-
-                  <div>
-                    <a href="{{ site.download }}" target="_blank" class="btn btn-primary btn-icon">
-                      <span class="icon-download icon-big"></span>
-                    </a>
-                  </div>
-                  <div>
-                    <a href="{{ site.github }}" target="_blank" class="btn btn-primary btn-icon">
-                      <span class="icon-github icon-big"></span>
-                    </a>
-                  </div>
-
-                  <div class="show-sticky">
-                    <button type="button" class="btn btn-primary btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
-                      {% if page.collection %}
-                        {{ page.collection | capitalize }}
-                      {% else %}
-                        {{ page.title | capitalize }}
                       {% endif %}
-                      <span class="icon-menu-custom">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                      </span>
-                    </button>
+                    {% endfor %}
+                  </div>
+
+                  <div class="site-breadcrumbs-meta flex flex-space-none align-items-center">
+
+                    <div>
+                      <a href="{{ site.download }}" target="_blank" class="btn btn-primary btn-icon">
+                        <span class="icon-download icon-big"></span>
+                      </a>
+                    </div>
+                    <div>
+                      <a href="{{ site.github }}" target="_blank" class="btn btn-primary btn-icon">
+                        <span class="icon-github icon-big"></span>
+                      </a>
+                    </div>
+
+                    <div class="show-sticky">
+                      <button type="button" class="btn btn-primary btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
+                        {% if page.collection %}
+                          {{ page.collection | capitalize }}
+                        {% else %}
+                          {{ page.title | capitalize }}
+                        {% endif %}
+                        <span class="icon-menu-custom">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </span>
+                      </button>
+                    </div>
+
                   </div>
 
                 </div>
-
               </div>
             </div>
           </div>
