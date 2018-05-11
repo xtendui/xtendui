@@ -59,13 +59,13 @@
       @breakpoint: extract(@classes-util, @i);
       .generate-utils(@breakpoint);
     }
-    
+
   }
-  
+
   // generate-text-transform
 
   @text-transform-arr: uppercase, lowercase, capitalize, nowrap;
-  
+
   .generate-text-transform(@breakpoint:none, @i:length(@text-transform-arr)) when (@i > 0) {
     .generate-text-transform(@breakpoint, @i - 1);
     @val: extract(@text-transform-arr, @i);
@@ -80,11 +80,11 @@
       }
     }
   }
-  
+
   // generate-text-align
-  
+
   @text-arr: left, right, center;
-  
+
   .generate-text-align(@breakpoint:none, @i:length(@text-arr)) when (@i > 0) {
     .generate-text-align(@breakpoint, @i - 1);
     @val: extract(@text-arr, @i);
@@ -99,11 +99,11 @@
       }
     }
   }
-  
+
   // generate-float
-  
+
   @float-arr: left, right, none;
-  
+
   .generate-float(@breakpoint:none, @i:length(@float-arr)) when (@i > 0) {
     .generate-float(@breakpoint, @i - 1);
     @val: extract(@float-arr, @i);
@@ -118,11 +118,11 @@
       }
     }
   }
-  
+
   // generate-display
-  
+
   @display-arr: none, block, inline, inline-block, table, table-row, table-cell, flex, inline-flex;
-  
+
   .generate-display(@breakpoint:none, @i:length(@display-arr)) when (@i > 0) {
     .generate-display(@breakpoint, @i - 1);
     @val: extract(@display-arr, @i);
@@ -137,21 +137,21 @@
       }
     }
   }
-  
+
   //////////////////////
-  
+
 }
 
 & when not (@classes-margin = false) {
-  
+
   //////////////////////
   // margin
   //////////////////////
-  
+
   @margin-arr: none, y, x, t, b, l, r;
-  
+
   // layout
-  
+
   .m-y-layout {
     .margin(y, layout) !important;
   }
@@ -170,9 +170,9 @@
   .m-right-layout {
     .margin(right, layout) !important;
   }
-  
+
   // generate-margin
-  
+
   .generate-margins();
   .generate-margins(@breakpoint:none) {
     & when (@breakpoint = none) {
@@ -185,9 +185,9 @@
       }
     }
   }
-  
+
   // generate-margins
-  
+
   .generate-margin(@breakpoint:none, @i:length(@margin-arr)) when (@i > 0) {
     .generate-margin(@breakpoint, @i - 1);
     @pos: extract(@margin-arr, @i);
@@ -243,34 +243,34 @@
       }
     }
   }
-  
+
   // generate-margin-responsive
-  
+
   & when not (@classes-margin = true) {
-    
+
     .generate-margin-responsive();
     .generate-margin-responsive(@i:length(@classes-margin)) when (@i > 0) {
       .generate-margin-responsive(@i - 1);
       @breakpoint: extract(@classes-margin, @i);
       .generate-margins(@breakpoint);
     }
-    
+
   }
-  
+
   //////////////////////
-  
+
 }
 
 & when not (@classes-padding = false) {
-  
+
   //////////////////////
   // padding
   //////////////////////
-  
+
   @padding-arr: none, y, x, t, b, l, r;
-  
+
   // layout
-  
+
   .p-y-layout {
     .padding(y, layout) !important;
   }
@@ -289,9 +289,9 @@
   .p-right-layout {
     .padding(right, layout) !important;
   }
-  
+
   // generate-padding
-  
+
   .generate-paddings();
   .generate-paddings(@breakpoint:none) {
     & when (@breakpoint = none) {
@@ -339,32 +339,32 @@
       }
     }
   }
-  
+
   // generate-padding-responsive
-  
+
   & when not (@classes-padding = true) {
-    
+
     .generate-padding-responsive();
     .generate-padding-responsive(@i:length(@classes-padding)) when (@i > 0) {
       .generate-padding-responsive(@i - 1);
       @breakpoint: extract(@classes-padding, @i);
       .generate-paddings(@breakpoint);
     }
-    
+
   }
-  
+
   //////////////////////
-  
+
 }
 
 & when not (@classes-layout = false) {
-  
+
   //////////////////////
   // layout
   //////////////////////
-  
+
   // generate-layouts
-  
+
   .generate-layouts();
   .generate-layouts(@breakpoint:none) {
     & when (@breakpoint = none) {
@@ -433,22 +433,22 @@
       }
     }
   }
-  
+
   // generate-layout-responsive
-  
+
   & when not (@classes-layout = true) {
-    
+
     .generate-layout-responsive();
     .generate-layout-responsive(@i:length(@classes-layout)) when (@i > 0) {
       .generate-layout-responsive(@i - 1);
       @breakpoint: extract(@classes-layout, @i);
       .generate-layouts(@breakpoint);
     }
-    
+
   }
-  
+
   // generate-container
-  
+
   .generate-container(@breakpoint:none, @i:length(@container-space)) when (@i > 0) {
     .generate-container(@breakpoint, @i - 1);
     @container: extract(@container-space, @i);
@@ -461,9 +461,9 @@
       }
     }
   }
-  
+
   // generate-grid
-  
+
   .generate-grid(@breakpoint; @i:1) when (@i =< @columns) {
     .generate-grid(@breakpoint; (@i + 1));
     & when (@breakpoint = none) {
@@ -477,9 +477,9 @@
       }
     }
   }
-  
+
   // generate-order
-  
+
   .generate-order(@breakpoint:none, @i:length(@orders)) when (@i > 0) {
     .generate-order(@breakpoint, @i - 1);
     @val: extract(@orders, @i);
@@ -494,9 +494,9 @@
       }
     }
   }
-  
+
   // generate-flex-space
-  
+
   .generate-flex-space(@breakpoint:none, @i:length(@flex-spaces)) when (@i > 0) {
     .generate-flex-space(@breakpoint, @i - 1);
     @name: extract(@flex-spaces, @i);
@@ -511,9 +511,9 @@
       }
     }
   }
-  
+
   // generate-list-space
-  
+
   .generate-list-space(@breakpoint:none, @i:length(@list-spaces)) when (@i > 0) {
     .generate-list-space(@breakpoint, @i - 1);
     @name: extract(@list-spaces, @i);

@@ -198,12 +198,12 @@
 @breakpoint-sm: 768px;
 @breakpoint-md: 992px;
 @breakpoint-lg: 1200px;
-@breakpoint-xl: 1350px;
+@breakpoint-xl: 1400px;
 
 // container
 
-@container-fluid: 1350px; // max-width
-@container-space: none 15px, xs 15px, sm 20px, md 25px, lg 30px, xl 30px; // spacing outside container
+@container-fluid: @breakpoint-xl; // max-width
+@container-space: none 15px, xs 15px, sm 20px, md 25px, lg 30px, xl 30px; // container padding
 
 // @media queries
 // USAGE: @media @min-sm and @max-md {}
