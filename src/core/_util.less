@@ -459,7 +459,7 @@
 
 // flex space
 
-.flex-space(@name, @breakpoint:none) {
+.flex-space(@name, @breakpoint:none) when (@breakpoint = none) {
   @arr: ~"flex-space-@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
@@ -488,7 +488,7 @@
 
 // list space
 
-.list-space(@name, @breakpoint:none) {
+.list-space(@name, @breakpoint:none) when (@breakpoint = none) {
   @arr: ~"list-space-@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);

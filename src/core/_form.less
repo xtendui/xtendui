@@ -4,18 +4,7 @@
 
 .form-group {
   position: relative;
-  .display(flex);
-  .flex-row();
-  .flex-wrap();
-  // inline
-  &.inline {
-    // reset
-    .input-control {
-      width: auto;
-    }
-  }
 }
-.form-inline { .form-groups({ .form-group.inline() }); }
 
 // selectors
 
@@ -30,8 +19,7 @@
 //////////////////////
 
 .label-control {
-  .display(inline-flex);
-  .align-items-center();
+  .display(block);
 }
 
 //////////////////////
@@ -65,19 +53,16 @@
 // check and radio
 //////////////////////
 
-.input-special {
+.input-special, input[type="checkbox"], input[type="radio"] {
   display: block;
-  position: relative;
   float: left;
-  // label
   & + .label-control {
     .label-special();
   }
 }
 .label-special {
-  position: relative;
+  display: block;
   overflow: hidden;
-  margin: 0 !important;
 }
 
 //////////////////////

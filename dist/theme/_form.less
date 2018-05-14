@@ -16,14 +16,44 @@ legend {
 //////////////////////
 
 .form-group {
-  // inline
-  &.inline {
-    .list();
-    .list-space(small);
-    .align-items-center();
-  }
   // options
   .form-group-medium();
+}
+
+// components
+
+.form-group-inline {
+  @media @min-sm {
+    .list();
+    .list-space(medium);
+    .align-items-baseline();
+    .input-control {
+      width: auto;
+    }
+  }
+}
+
+.form-group-flex {
+  .flex();
+  .flex-space(none);
+  @media @min-sm {
+    .flex-space(medium);
+  }
+}
+
+.form-group-horizontal {
+  .flex();
+  .flex-column();
+  .flex-space(none);
+  @media @min-sm {
+    .flex-row();
+    .flex-space(medium);
+    .align-items-center();
+    .text-align(right);
+    .label-control {
+      .margin(all, none);
+    }
+  }
 }
 
 // size
@@ -99,7 +129,7 @@ legend {
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
-  font-size: 1em; // from .form-group font size
+  font-size: .9em; // from .form-group font size
   line-height: 1.25;
   // options
   .input-control-secondary();
@@ -119,12 +149,13 @@ legend {
   border-color: @secondary;
   background-color: @secondary;
   color: fade(@text, @perc-xl);
-  &:hover, &.active {
+  &:hover, &.active, &:focus {
+    border-color: @secondary;
     background-color: lighten(@secondary, @perc-xs);
     color: @text;
   }
   &:focus {
-    border-color: @secondary;
+    box-shadow: 0 3px 10px 1px fade(@black, @perc-sm);
   }
   // select arrow
   select& {
@@ -161,16 +192,15 @@ legend {
 // check and radio
 //////////////////////
 
-.input-special {
-  // styles
-  .margin(right, medium);
-}
-
 .label-special {
+  .margin(all, none); // reset .label-control
+  .padding(left, small); // space from checkbox/radio
   // styles
-  > span {
-    .margin(left, small);
-  }
+  .font-sans-regular();
+  font-size: 13px;
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 //////////////////////
@@ -204,6 +234,7 @@ legend {
   .text-align(left);
   .input-group & {
     position: absolute;
+    top: 100%;
   }
 }
 
