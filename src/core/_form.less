@@ -110,19 +110,15 @@
 
 .input-group-line,
 .input-group-stack {
-  z-index: 1;
+  z-index: 3;
   .btn {
     .text-align(center);
-    .margin(right, -@btn-border-width);
-    z-index: 1;
-    &:hover, &:active, &.active {
-      z-index: 2;
-    }
+    //.margin(right, -@btn-border-width);
   }
   .input-control ~ & {
     .btn {
       .margin(right, none);
-      .margin(left, -@btn-border-width);
+      //.margin(left, -@btn-border-width);
     }
   }
 }
