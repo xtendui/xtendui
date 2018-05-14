@@ -91,7 +91,6 @@
   width: 100%;
   // .input-control
   .input-control {
-    z-index: 2;
     &:first-child {
       border-top-right-radius: 0 !important;
       border-bottom-right-radius: 0 !important;
@@ -110,15 +109,12 @@
 
 .input-group-line,
 .input-group-stack {
-  z-index: 3;
   .btn {
     .text-align(center);
-    //.margin(right, -@btn-border-width);
   }
   .input-control ~ & {
     .btn {
       .margin(right, none);
-      //.margin(left, -@btn-border-width);
     }
   }
 }
