@@ -593,8 +593,18 @@ class Xt {
       var container = document.documentElement;
       container.style.paddingRight = width + 'px';
       container.classList.add('xt-scrollbar');
+      // check fixed
+      var elements = document.documentElement.querySelectorAll('.xt-check-fixed > *');
+      for (let element of elements) {
+        var style = window.getComputedStyle(element);
+        if (style.position === 'absolute' || style.position === 'fixed') {
+          element.classList.add('xt-fixed');
+        } else {
+          element.classList.remove('xt-fixed');
+        }
+      }
       // fixed
-      var elements = document.documentElement.querySelectorAll('.xt-fixed:not(.xt-clone)');
+      var elements = document.documentElement.querySelectorAll('.xt-fixed');
       for (let element of elements) {
         element.style.paddingRight = '';
         var style = window.getComputedStyle(element);
@@ -879,7 +889,7 @@ class XtSticky extends Xt {
     // container
     this.container = XtUtil.parents(this.object, '.xt-container');
     if (!this.container.length) {
-      this.container = XtUtil.createElement('<div class="xt-container"></div>');
+      this.container = XtUtil.createElement('<div class="xt-container xt-check-fixed"></div>');
       this.object.before(this.container);
       this.container.append(this.object);
       this.container = XtUtil.parents(this.object, '.xt-container');
@@ -892,12 +902,6 @@ class XtSticky extends Xt {
       this.container[0].append(this.targets);
     }
     this.targets = XtUtil.arrSingle(this.targets);
-    // xt-fixed
-    var el = this.object;
-    var style = window.getComputedStyle(el);
-    if (style.position === 'absolute' || style.position === 'fixed') {
-      el.classList.add('xt-fixed');
-    }
   }
 
   /**
@@ -976,11 +980,6 @@ class XtSticky extends Xt {
               el.classList.add('sticky-on-top');
               el.classList.remove('sticky-on-bottom');
             }
-            // xt-fixed
-            var style = window.getComputedStyle(el);
-            if (style.position === 'absolute' || style.position === 'fixed') {
-              el.classList.add('xt-fixed');
-            }
           }
         }
       } else {
@@ -997,11 +996,6 @@ class XtSticky extends Xt {
             } else {
               el.classList.add('sticky-off-top');
               el.classList.remove('sticky-off-bottom');
-            }
-            // xt-fixed
-            var style = window.getComputedStyle(el);
-            if (style.position !== 'absolute' && style.position !== 'fixed') {
-              el.classList.remove('xt-fixed');
             }
           }
         }
