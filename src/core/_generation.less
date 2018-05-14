@@ -378,8 +378,6 @@
       .list-right {
         .list-right() !important;
       }
-      // container
-      .generate-container(@breakpoint);
       // grid
       .generate-grid(@breakpoint);
       .col-auto {
@@ -411,8 +409,6 @@
         .list-right-@{breakpoint} {
           .list-right() !important;
         }
-        // container
-        .generate-container(@breakpoint);
         // grid
         .generate-grid(@breakpoint);
         .col-auto-@{breakpoint} {
@@ -445,21 +441,6 @@
       .generate-layouts(@breakpoint);
     }
 
-  }
-
-  // generate-container
-
-  .generate-container(@breakpoint:none, @i:length(@container-space)) when (@i > 0) {
-    .generate-container(@breakpoint, @i - 1);
-    @container: extract(@container-space, @i);
-    @break: extract(@container, 1);
-    @val: extract(@container, 2);
-    & when (@breakpoint = @break) {
-      .container {
-        padding-right: @val;
-        padding-left: @val;
-      }
-    }
   }
 
   // generate-grid
