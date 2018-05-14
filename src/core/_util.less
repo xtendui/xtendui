@@ -1027,43 +1027,29 @@
 // container
 //////////////////////
 
-// generate-container
+// generate-container-space-responsive
 
-.generate-container(@breakpoint:none, @i:length(@container-space)) when (@i > 0) {
-  .generate-container(@breakpoint, @i - 1);
+.generate-container-space-responsive();
+.generate-container-space-responsive(@i:length(@container-space)) when (@i > 0) {
+  .generate-container-space-responsive(@i - 1);
   @container: extract(@container-space, @i);
-  @break: extract(@container, 1);
+  @breakpoint: extract(@container, 1);
   @val: extract(@container, 2);
-  & when (@breakpoint = @break) {
+  & when (@breakpoint = none) {
     .container {
       padding-right: @val;
       padding-left: @val;
     }
   }
-}
-
-// .generate-containers
-
-.generate-containers();
-.generate-containers(@breakpoint:none) {
-  & when (@breakpoint = none) {
-    .generate-container(@breakpoint);
-  }
   & when not (@breakpoint = none) {
     @query-min: 'min-@{breakpoint}';
     @media @@query-min {
-      .generate-container(@breakpoint);
+      .container {
+        padding-right: @val;
+        padding-left: @val;
+      }
     }
   }
-}
-
-// .generate-container-responsive
-
-.generate-container-responsive();
-.generate-container-responsive(@i:length(@breakpoints)) when (@i > 0) {
-  .generate-container-responsive(@i - 1);
-  @breakpoint: extract(@breakpoints, @i);
-  .generate-containers(@breakpoint);
 }
 
 //////////////////////
