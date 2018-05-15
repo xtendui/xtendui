@@ -459,6 +459,28 @@
 
 // flex space
 
+.flex-space-y(@name, @breakpoint:none) when (@breakpoint = none) {
+  @arr: ~"flex-space-@{name}";
+  @vertical: extract(@@arr, 1);
+  margin-top: -@vertical;
+  margin-bottom: -@vertical;
+  > * {
+    padding-top: @vertical;
+    padding-bottom: @vertical;
+  }
+}
+
+.flex-space-x(@name, @breakpoint:none) when (@breakpoint = none) {
+  @arr: ~"flex-space-@{name}";
+  @horizontal: extract(@@arr, 2);
+  margin-left: -@horizontal;
+  margin-right: -@horizontal;
+  > * {
+    padding-left: @horizontal;
+    padding-right: @horizontal;
+  }
+}
+
 .flex-space(@name, @breakpoint:none) when (@breakpoint = none) {
   @arr: ~"flex-space-@{name}";
   @vertical: extract(@@arr, 1);
@@ -487,6 +509,28 @@
 //////////////////////
 
 // list space
+
+.list-space-y(@name, @breakpoint:none) when (@breakpoint = none) {
+  @arr: ~"list-space-@{name}";
+  @vertical: extract(@@arr, 1);
+  margin-top: -@vertical;
+  margin-bottom: -@vertical;
+  > * {
+    margin-top: @vertical;
+    margin-bottom: @vertical;
+  }
+}
+
+.list-space-x(@name, @breakpoint:none) when (@breakpoint = none) {
+  @arr: ~"list-space-@{name}";
+  @horizontal: extract(@@arr, 2);
+  margin-left: -@horizontal;
+  margin-right: -@horizontal;
+  > * {
+    margin-left: @horizontal;
+    margin-right: @horizontal;
+  }
+}
 
 .list-space(@name, @breakpoint:none) when (@breakpoint = none) {
   @arr: ~"list-space-@{name}";

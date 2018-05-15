@@ -482,11 +482,23 @@
     .generate-flex-space(@breakpoint, @i - 1);
     @name: extract(@flex-spaces, @i);
     & when (@breakpoint = none) {
+      .flex-space-y-@{name} {
+        .flex-space-y(@name) !important;
+      }
+      .flex-space-x-@{name} {
+        .flex-space-x(@name) !important;
+      }
       .flex-space-@{name} {
         .flex-space(@name) !important;
       }
     }
     & when not (@breakpoint = none) {
+      .flex-space-y-@{name}-@{breakpoint} {
+        .flex-space-y(@name) !important;
+      }
+      .flex-space-x-@{name}-@{breakpoint} {
+        .flex-space-x(@name) !important;
+      }
       .flex-space-@{name}-@{breakpoint} {
         .flex-space(@name) !important;
       }

@@ -23,7 +23,7 @@ legend {
 // components
 
 .form-group-flex {
-  .flex-space(medium);
+  .flex-space-x(medium);
 }
 
 .form-group-flex-sm {
@@ -33,7 +33,7 @@ legend {
 }
 
 .form-group-horizontal {
-  .flex-space(medium);
+  .flex-space-x(medium);
   .align-items-center();
   .text-align(right);
 }
@@ -45,7 +45,7 @@ legend {
 }
 
 .form-group-inline {
-  .flex-space(medium);
+  .list-space-x(medium);
   .align-items-baseline();
 }
 
@@ -55,21 +55,10 @@ legend {
   }
 }
 
-.form-group-list {
-  .list-space(medium);
-  .align-items-baseline();
-}
-
-.form-group-list-sm {
-  @media @min-sm {
-    .form-group-list();
-  }
-}
-
 // size
 
 .form-group-tiny {
-  .margin(bottom, 1em);
+  .padding(bottom, 1em);
   font-size: 1.1rem;
 }
 
@@ -78,7 +67,7 @@ legend {
 }
 
 .form-group-small {
-  .margin(bottom, 1.25em);
+  .padding(bottom, 1.25em);
   font-size: 1.2rem;
 }
 
@@ -87,7 +76,7 @@ legend {
 }
 
 .form-group-medium {
-  .margin(bottom, 1.5em);
+  .padding(bottom, 1.5em);
   font-size: 1.3rem;
 }
 
@@ -96,7 +85,7 @@ legend {
 }
 
 .form-group-big {
-  .margin(bottom, 1.5em);
+  .padding(bottom, 1.5em);
   font-size: 1.4rem;
 }
 
@@ -105,7 +94,7 @@ legend {
 }
 
 .form-group-giant {
-  .margin(bottom, 1.5em);
+  .padding(bottom, 1.5em);
   font-size: 1.5rem;
 }
 
