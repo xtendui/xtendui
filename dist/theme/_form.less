@@ -22,37 +22,47 @@ legend {
 
 // components
 
-.form-group-inline {
-  @media @min-sm {
-    .list();
-    .list-space(medium);
-    .align-items-baseline();
-    .input-control {
-      width: auto;
-    }
-  }
+.form-group-flex {
+  .flex-space(medium);
 }
 
-.form-group-flex {
-  .flex();
-  .flex-space(none);
+.form-group-flex-sm {
   @media @min-sm {
-    .flex-space(medium);
+    .form-group-flex();
   }
 }
 
 .form-group-horizontal {
-  .flex();
-  .flex-column();
-  .flex-space(none);
+  .flex-space(medium);
+  .align-items-center();
+  .text-align(right);
+}
+
+.form-group-horizontal-sm {
   @media @min-sm {
-    .flex-row();
-    .flex-space(medium);
-    .align-items-center();
-    .text-align(right);
-    .label-control {
-      .margin(all, none);
-    }
+    .form-group-horizontal();
+  }
+}
+
+.form-group-inline {
+  .flex-space(medium);
+  .align-items-baseline();
+}
+
+.form-group-inline-sm {
+  @media @min-sm {
+    .form-group-inline();
+  }
+}
+
+.form-group-list {
+  .list-space(medium);
+  .align-items-baseline();
+}
+
+.form-group-list-sm {
+  @media @min-sm {
+    .form-group-list();
   }
 }
 
@@ -86,7 +96,7 @@ legend {
 }
 
 .form-group-big {
-  .margin(bottom, 1.75em);
+  .margin(bottom, 1.5em);
   font-size: 1.4rem;
 }
 
@@ -95,7 +105,7 @@ legend {
 }
 
 .form-group-giant {
-  .margin(bottom, 2em);
+  .margin(bottom, 1.5em);
   font-size: 1.5rem;
 }
 
@@ -172,18 +182,23 @@ legend {
 :-ms-input-placeholder {
   color: @grey-500;
 }
+
 :-moz-placeholder {
   color: @grey-500;
 }
+
 ::-webkit-input-placeholder {
   color: @grey-500;
 }
+
 ::-ms-input-placeholder {
   color: @grey-500;
 }
+
 ::-moz-placeholder {
   color: @grey-500;
 }
+
 ::placeholder {
   color: @grey-500;
 }
@@ -215,11 +230,11 @@ legend {
     }
   }
 }
+
 .input-group-line,
 .input-group-stack {
   z-index: 2;
 }
-
 
 //////////////////////
 // note

@@ -13,7 +13,7 @@ description: Lorem ipsum
     <div class="demo-source" data-lang="html">
       <form>
 
-        <h6>Test checkbox and radio</h6>
+        <legend>Test checkbox and radio</legend>
         <div class="form-group">
           <input type="checkbox">
           <label class="label-control">
@@ -27,45 +27,61 @@ description: Lorem ipsum
           </label>
         </div>
 
-        <h6>Test inline checkbox and radio</h6>
-        <div class="form-group">
-          <div class="form-group-inline">
-            <div class="form-group">
-              <input type="checkbox">
-              <label class="label-control">
-                checkbox
-              </label>
-            </div>
-            <div class="form-group">
-              <input type="checkbox">
-              <label class="label-control">
-                checkbox
-              </label>
-            </div>
-            <div class="form-group">
-              <input type="checkbox">
-              <label class="label-control">
-                radio
-              </label>
-            </div>
-            <div class="form-group">
-              <input type="checkbox">
-              <label class="label-control">
-                radio
-              </label>
-            </div>
+        <legend>Test inline checkbox and radio</legend>
+        <div class="form-group-inline-sm">
+          <div class="form-group">
+            <input type="checkbox">
+            <label class="label-control">
+              checkbox
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox">
+            <label class="label-control">
+              checkbox
+            </label>
+          </div>
+        </div>
+        <div class="form-group-inline-sm">
+          <div class="form-group">
+            <input type="checkbox">
+            <label class="label-control">
+              radio
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox">
+            <label class="label-control">
+              radio
+            </label>
           </div>
         </div>
 
-        <h6>Test inline input</h6>
+        <legend>Test normal</legend>
         <div class="form-group">
-          <div class="form-group-inline">
+          <label class="label-control">
+            Lorem
+          </label>
+          <input type="text" class="input-control">
+        </div>
+        <div class="form-group">
+          <label class="label-control">
+            Lorem Ipsum
+          </label>
+          <input type="text" class="input-control">
+        </div>
+
+        <legend>Test flex</legend>
+        <div class="form-group-flex-sm">
+          <div class="col-12 col-3-sm">
             <div class="form-group">
               <label class="label-control">
                 Lorem
               </label>
               <input type="text" class="input-control">
             </div>
+          </div>
+          <div class="col-12 col-9-sm">
             <div class="form-group">
               <label class="label-control">
                 Lorem Ipsum
@@ -74,31 +90,7 @@ description: Lorem ipsum
             </div>
           </div>
         </div>
-
-        <h6>Test inline input and label</h6>
-        <div class="form-group">
-          <div class="form-group-inline">
-            <div>
-              <div class="form-group form-group-inline">
-                <label class="label-control">
-                  Lorem
-                </label>
-                <input type="text" class="input-control">
-              </div>
-            </div>
-            <div>
-              <div class="form-group form-group-inline">
-                <label class="label-control">
-                  Lorem Ipsum
-                </label>
-                <input type="text" class="input-control">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <h6>Test columns</h6>
-        <div class="form-group-flex">
+        <div class="form-group-flex-sm">
           <div class="col-12 col-3-sm">
             <div class="form-group">
               <label class="label-control">
@@ -117,9 +109,9 @@ description: Lorem ipsum
           </div>
         </div>
 
-        <h6>Test horizontal</h6>
+        <legend>Test horizontal</legend>
         <div class="form-group">
-          <div class="form-group-horizontal">
+          <div class="form-group-horizontal-sm">
             <div class="col-12 col-3-sm">
               <label class="label-control">
                 Lorem
@@ -131,7 +123,7 @@ description: Lorem ipsum
           </div>
         </div>
         <div class="form-group">
-          <div class="form-group-horizontal">
+          <div class="form-group-horizontal-sm">
             <div class="col-12 col-3-sm">
               <label class="label-control">
                 Lorem Ipsum
@@ -142,7 +134,153 @@ description: Lorem ipsum
             </div>
           </div>
         </div>
-        <div class="form-group text-right">
+
+        <legend>Test inline input</legend>
+        <div class="form-group-inline-sm">
+          <div class="form-group">
+            <label class="label-control">
+              Lorem
+            </label>
+            <input type="text" class="input-control">
+          </div>
+          <div class="form-group">
+            <label class="label-control">
+              Lorem Ipsum
+            </label>
+            <input type="text" class="input-control">
+          </div>
+        </div>
+        <div class="form-group-inline-sm">
+          <div class="form-group">
+            <label class="label-control">
+              Lorem
+            </label>
+            <input type="text" class="input-control">
+          </div>
+          <div class="form-group">
+            <label class="label-control">
+              Lorem Ipsum
+            </label>
+            <input type="text" class="input-control">
+          </div>
+        </div>
+
+        <legend>Test inline input and label</legend>
+        <div class="form-group-inline-sm">
+          <div class="form-group">
+            <div class="form-group-list-sm">
+              <label class="label-control">
+                Lorem
+              </label>
+              <input type="text" class="input-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-group-list-sm">
+              <label class="label-control">
+                Lorem Ipsum
+              </label>
+              <input type="text" class="input-control">
+            </div>
+          </div>
+        </div>
+        <div class="form-group-inline-sm">
+          <div class="form-group">
+            <div class="form-group-list-sm">
+              <label class="label-control">
+                Lorem
+              </label>
+              <input type="text" class="input-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-group-list-sm">
+              <label class="label-control">
+                Lorem Ipsum
+              </label>
+              <input type="text" class="input-control">
+            </div>
+          </div>
+        </div>
+
+        <p>Lorem ipsum.</p>
+
+        <legend>Test combo</legend>
+
+        <div class="form-group">
+          <label class="label-control">
+            Lorem
+          </label>
+          <input type="text" class="input-control">
+        </div>
+
+        <div class="form-group-flex-sm">
+          <div class="col-12 col-3-sm">
+            <div class="form-group">
+              <label class="label-control">
+                Lorem
+              </label>
+              <input type="text" class="input-control">
+            </div>
+          </div>
+          <div class="col-12 col-9-sm">
+            <div class="form-group">
+              <label class="label-control">
+                Lorem Ipsum
+              </label>
+              <input type="text" class="input-control">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-group-horizontal-sm">
+            <div class="col-12 col-3-sm">
+              <label class="label-control">
+                Lorem
+              </label>
+            </div>
+            <div class="col-12 col-9-sm">
+              <input type="text" class="input-control">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group-inline-sm">
+          <div class="form-group">
+            <label class="label-control">
+              Lorem
+            </label>
+            <input type="text" class="input-control">
+          </div>
+          <div class="form-group">
+            <label class="label-control">
+              Lorem Ipsum
+            </label>
+            <input type="text" class="input-control">
+          </div>
+        </div>
+
+        <div class="form-group-inline-sm">
+          <div class="form-group">
+            <div class="form-group-list-sm">
+              <label class="label-control">
+                Lorem
+              </label>
+              <input type="text" class="input-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-group-list-sm">
+              <label class="label-control">
+                Lorem Ipsum
+              </label>
+              <input type="text" class="input-control">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
           <button type="submit" class="btn btn-primary btn-sm">Submit</button>
         </div>
 
