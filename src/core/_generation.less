@@ -511,11 +511,23 @@
     .generate-list-space(@breakpoint, @i - 1);
     @name: extract(@list-spaces, @i);
     & when (@breakpoint = none) {
+      .list-space-y-@{name} {
+        .list-space-y(@name) !important;
+      }
+      .list-space-x-@{name} {
+        .list-space-x(@name) !important;
+      }
       .list-space-@{name} {
         .list-space(@name) !important;
       }
     }
     & when not (@breakpoint = none) {
+      .list-space-y-@{name}-@{breakpoint} {
+        .list-space-y(@name) !important;
+      }
+      .list-space-x-@{name}-@{breakpoint} {
+        .list-space-x(@name) !important;
+      }
       .list-space-@{name}-@{breakpoint} {
         .list-space(@name) !important;
       }
