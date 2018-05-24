@@ -627,8 +627,8 @@ class Xt {
       let closeElements = el.querySelectorAll(options.closeInside);
       XtUtil.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
-          closeElement.xtUtilOff('click.xtend');
-          closeElement.xtUtilOn('click.xtend', function (e) {
+          closeElement.xtUtilOff('click.xtend.' + self.namespace);
+          closeElement.xtUtilOn('click.xtend.' + self.namespace, function (e) {
             if (XtUtil.checkInside(e, this)) {
               self.eventOff(toggle);
             }
@@ -641,8 +641,8 @@ class Xt {
       let closeElements = document.documentElement.querySelectorAll(options.closeOutside);
       XtUtil.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
-          closeElement.xtUtilOff('click.xtend');
-          closeElement.xtUtilOn('click.xtend', function (e) {
+          closeElement.xtUtilOff('click.xtend.' + self.namespace);
+          closeElement.xtUtilOn('click.xtend.' + self.namespace, function (e) {
             if (XtUtil.checkOutside(e, el)) {
               self.eventOff(toggle);
             }
@@ -662,14 +662,14 @@ class Xt {
     if (options.closeInside) {
       let closeElements = el.querySelectorAll(options.closeInside);
       for (let closeElement of closeElements) {
-        closeElement.xtUtilOff('click.xtend');
+        closeElement.xtUtilOff('click.xtend.' + this.namespace);
       }
     }
     // closeOutside
     if (options.closeOutside) {
       let closeElements = document.documentElement.querySelectorAll(options.closeOutside);
       for (let closeElement of closeElements) {
-        closeElement.xtUtilOff('click.xtend');
+        closeElement.xtUtilOff('click.xtend.' + this.namespace);
       }
     }
   }
