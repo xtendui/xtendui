@@ -732,8 +732,9 @@
           display: none;
         }
 
-        .example-toggle.active {
-          display: flex;
+        .example-toggle.active,
+        .example-toggle.out {
+          display: block;
         }
       </style>
     </div>
@@ -768,8 +769,9 @@
           display: none;
         }
 
-        .toggle-custom.active {
-          display: flex;
+        .toggle-custom.active,
+        .toggle-custom.out {
+          display: block;
         }
       </style>
     </div>
@@ -864,7 +866,8 @@
   </div>
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-text">You can start with toggled elements and targets just by adding all of the classes to the
-      <strong>elements</strong> you want activated.</div>
+      <strong>elements</strong> you want activated.
+    </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"class": "active class-example-2 class-example-3", "min": 2, "max": 3}'>
         <button type="button" class="btn btn-primary-empty" data-group="0">
@@ -985,19 +988,21 @@
 
 <h2>Animations</h2>
 
-<p>To disable transition detect, use <code>"timing": 0</code>, or set a number in milliseconds for the on and off
-  animations timing.</p>
+<p>Toggle classes <code>.active</code> and <code>.out</code> set the pace of the activation/deactivation depending on
+  the animations/transition they have.</p>
 
-<p>On the <code>targets</code> use the animations classes to animate automatically on <code>.active</code>.</p>
+<p>Deactivation automatically waits for the <code>.out</code> animations to finish before removing the <code>.out</code>
+  class.</p>
 
-<p>@TODO link animations classes. @TODO link collapse.</p>
+<p>Activation automatically waits for the <code>.out</code> deactivating element's animations to finish before adding
+  <code>.active</code> class to new elements.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="">
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"max": "Infinity"}'>
         <button type="button" class="btn btn-primary-empty">
-          anim-horizontal
+          anim-opacity
         </button>
         <button type="button" class="btn btn-primary-empty">
           anim-vertical
@@ -1005,7 +1010,7 @@
         <button type="button" class="btn btn-primary-empty">
           no-anim
         </button>
-        <div class="alert alert-notice toggle-flex anim-horizontal">
+        <div class="alert alert-notice toggle-flex anim-opacity">
           Target 0
         </div>
         <div class="alert alert-notice toggle-flex anim-vertical">
@@ -1018,6 +1023,10 @@
     </div>
   </div>
 </div>
+
+<p class="alert">For customizing the animations read the documentation of <a
+  href="/docs/animation/#toggle">animations</a>.</p>
+
           </article>
 
         </div>

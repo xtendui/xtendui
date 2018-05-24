@@ -228,21 +228,26 @@ class Xt {
    * @param {Element} element To be activated
    */
   eventOn(element) {
+    let self = this;
     let options = this.options;
     // activate or deactivate
     if (!element.classList.contains(...this.defaults.classes)) {
       let fElements = this.getElements(element);
       this.addCurrent(fElements.single);
-      this.activationOn(fElements.all, fElements, 'elements');
       let targets = this.getTargets(element);
-      this.activationOn(targets, fElements, 'targets');
+      let activationDelay = function() {
+        self.activationOn(fElements.all, fElements, 'elements');
+        self.activationOn(targets, fElements, 'targets');
+      };
+      // if currents > max
+      let currents = this.getCurrents();
+      if (currents.length > options.max) {
+        this.eventOff(currents[0], activationDelay);
+      } else {
+        activationDelay();
+      }
     } else {
       this.eventOff(element);
-    }
-    // if currents > max
-    let currents = this.getCurrents();
-    if (currents.length > options.max) {
-      this.eventOff(currents[0]);
     }
   }
 
@@ -250,7 +255,7 @@ class Xt {
    * element off
    * @param {Element} element To be deactivated
    */
-  eventOff(element) {
+  eventOff(element, activationDelay) {
     let options = this.options;
     // if currents < min
     let todo = options.min - this.getCurrents().length;
@@ -261,9 +266,9 @@ class Xt {
     if (element.classList.contains(...this.defaults.classes)) {
       let fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
-      this.activationOff(fElements.all, fElements, 'elements');
+      this.activationOff(fElements.all, fElements, 'elements', activationDelay);
       let targets = this.getTargets(element);
-      this.activationOff(targets, fElements, 'targets');
+      this.activationOff(targets, fElements, 'targets', activationDelay);
     }
   }
 
@@ -335,14 +340,14 @@ class Xt {
    * element off activation
    * @param {Element} element To be deactivated
    */
-  activationOff(els, fElements, type) {
+  activationOff(els, fElements, type, activationDelay) {
     let self = this;
     let options = this.options;
     // deactivate
     for (let el of els) {
       el.classList.remove(...options.classes);
       el.classList.add('out');
-      self.activationOffAnimate(el, type);
+      self.activationOffAnimate(el, type, activationDelay);
       // specials
       if (type === 'targets') {
         self.specialCollapseOff(el);
@@ -355,13 +360,17 @@ class Xt {
    * element off animation
    * @param {Element} element To be animated
    */
-  activationOffAnimate(el, type) {
+  activationOffAnimate(el, type, activationDelay) {
     let self = this;
     // onDone
     let onDone = function(el, type) {
       el.classList.remove('out');
       // specials
       self.specialScrollbarOff();
+      // activationDelay
+      if (activationDelay) {
+        activationDelay();
+      }
     };
     // delay onDone
     let timing = this.activationTiming(el);
