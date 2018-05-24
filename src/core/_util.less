@@ -51,10 +51,12 @@
 .responsive(@breakpoint:none) when (@breakpoint = none) {
   max-width: 100%;
   height: auto;
+  /*
   // fix ie11 bug responsive
   min-height: 2px;
   // fix chrome bug responsive
   .align-self-center();
+  */
 }
 
 .responsive(@breakpoint:none) when (default()) {
@@ -62,10 +64,19 @@
   @media @@query-min {
     max-width: 100%;
     height: auto;
-    // fix ie11 bug responsive
-    min-height: 2px;
-    // fix chrome bug responsive
-    .align-self-center();
+  }
+}
+
+.responsive-y(@breakpoint:none) when (@breakpoint = none) {
+  max-height: 100%;
+  width: auto;
+}
+
+.responsive-y(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    max-height: 100%;
+    width: auto;
   }
 }
 
