@@ -294,6 +294,11 @@ a, .alink {
   .drop-white(); // variant
   // animations
   .anim-vertical();
+  &.out {
+    animation-fill-mode: forwards;
+    opacity: 1;
+    animation-delay: @time-small;
+  }
 }
 .drop-container {
   animation-duration: @time-big; // needed for .out animation timing
