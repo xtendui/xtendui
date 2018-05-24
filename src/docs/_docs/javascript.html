@@ -42,9 +42,16 @@ description: Lorem Ipsum
 
 <pre>
   <code class="js">
-    new XtToggle(document.querySelectorAll('.my-element'), {
+    // single
+    new XtToggle(document.querySelectorAll('.my-element')[0], {
       // options
     });
+    // looping
+    for (let el of document.querySelectorAll('.my-element')) {
+      new XtToggle(el, {
+        // options
+      });
+    }
   </code>
 </pre>
 
@@ -54,9 +61,16 @@ description: Lorem Ipsum
 
 <pre>
   <code class="js">
-    new XtDrop(document.querySelectorAll('.my-element'), {
+    // single
+    new XtDrop(document.querySelectorAll('.my-element')[0], {
       // options
     });
+    // looping
+    for (let el of document.querySelectorAll('.my-element')) {
+      new XtDrop(el, {
+        // options
+      });
+    }
   </code>
 </pre>
 
@@ -66,8 +80,15 @@ description: Lorem Ipsum
 
 <pre>
   <code class="js">
-    new XtOverlay(document.querySelectorAll('.my-element'), {
+    // single
+    new XtOverlay(document.querySelectorAll('.my-element')[0], {
       // options
     });
+    // looping
+    for (let el of document.querySelectorAll('.my-element')) {
+      new XtOverlay(el, {
+        // options
+      });
+    }
   </code>
 </pre>

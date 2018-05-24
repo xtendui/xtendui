@@ -45,15 +45,6 @@ const formatCode = function (source, lang) {
 for (let el of document.querySelectorAll('pre code')) {
   let lang = el.className;
   let text = formatCode(el, lang);
-  // remove tabs
-  let arr = text.split('\n');
-  var toRemove = arr[1].search(/\S/g);
-  for (let i of arr.keys()) {
-    arr[i] = arr[i].substring(toRemove);
-  }
-  text = arr.join('\n');
-  // remove newline at start and end
-  text = text.replace(/^\s+|\s+$/g, '');
   // set text
   el.innerHTML = text;
   window.hljs.highlightBlock(el);
@@ -73,7 +64,24 @@ for (let el of document.querySelectorAll('.make-line')) {
 
 for (let el of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
   el.classList.add('make-line');
-  let id = el.textContent.replace(/\s+/g, '-').toLowerCase();
+  // previous h2 if h3
+  let prevElement;
+  if (el.tagName === 'H3') {
+    prevElement = el;
+    while (prevElement.previousElementSibling) {
+      if (prevElement.tagName === 'H2') {
+        break;
+      }
+      prevElement = prevElement.previousElementSibling;
+    }
+  }
+  // id
+  let id = '';
+  if (prevElement) {
+    id += prevElement.textContent.replace(/\s+/g, '-').toLowerCase() + '-';
+  }
+  id += el.textContent.replace(/\s+/g, '-').toLowerCase();
+  // make-anchor
   el.setAttribute('id', id);
   el.innerHTML = '<a href="#' + id + '">' + el.innerHTML + '</a>';
   el.classList.add('make-anchor');
@@ -87,12 +95,23 @@ for (let el of document.querySelectorAll('.site-aside-text > .btn:not(.different
   for (let element of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
     if (element.tagName === 'H2') {
       container.append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-site-aside-sub">' + element.textContent + '</a>'));
-      container.append(XtUtil.createElement('<div class="site-aside-subsub"></div>'));
+      container.append(XtUtil.createElement('<div class="site-aside-subsub collapse-height"></div>'));
     } else if (element.tagName === 'H3') {
       var subs = container.querySelectorAll('.site-aside-subsub');
       subs[subs.length - 1].append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-site-aside-subsub">' + element.textContent + '</a>'));
     }
   }
+}
+
+for (let el of document.querySelectorAll('.site-aside-text')) {
+  new XtToggle(el, {
+    "elements": ".btn-site-aside-sub",
+    "targets": ".site-aside-subsub",
+    "on": "mouseenter",
+    "off": "mouseleave",
+    "min": 0,
+    "max": 1
+  });
 }
 
 // activateAsideScroll
@@ -110,15 +129,15 @@ const activateAsideScroll = function (els, scrollTop) {
         if (!el.classList.contains('active')) {
           for (let element of els) {
             if (element !== el) {
-              element.classList.remove('active');
+              element.classList.remove('active', 'open');
             } else {
-              el.classList.add('active');
+              el.classList.add('active', 'open');
             }
           }
         }
       } else {
         if (el.classList.contains('active')) {
-          el.classList.remove('active');
+          el.classList.remove('active', 'open');
         }
       }
     }

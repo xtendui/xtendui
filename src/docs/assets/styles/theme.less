@@ -439,14 +439,14 @@
   }
   .btn-site-aside-sub {
     color: fade(@text, @perc-lg);
-    &.active {
+    &.open {
       & + .site-aside-subsub {
-        display: block;
+        display: block !important;
+        height: auto !important;
       }
     }
   }
   .site-aside-subsub {
-    display: none;
     .btn-site-aside-subsub {
       .btn-small();
       .btn-short();
