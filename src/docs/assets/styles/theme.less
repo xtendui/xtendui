@@ -619,21 +619,29 @@ code {
   // tabs
   .demo-tabs,
   .demo-code-tabs {
+    position: relative;
     z-index: 2;
     .margin-remove(bottom, tiny);
     .display(flex);
     .justify-content-between();
-    .padding(y, small);
-    .padding(x, small);
     background-color: @grey-250;
     > * {
       .list();
       .list-space(none);
     }
+    /*
+    .padding(y, small);
+    .padding(x, small);
     .btn {
       .btn-tiny();
       .btn-short();
       .btn-narrow();
+    }
+    */
+    .padding(y, tiny);
+    .padding(x, tiny);
+    .btn {
+      .btn-tiny();
     }
   }
   .demo-tabs-inner {

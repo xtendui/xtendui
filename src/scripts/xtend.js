@@ -418,6 +418,12 @@ class Xt {
       el.classList.remove(...options.classes);
       el.classList.add('out');
       self.activationOffAnimate(el, type, activationDelay);
+      // activationDelay
+      if (activationDelay && activationDelay[type]) {
+        if (options.instant && options.instant[type]) {
+          activationDelay[type]();
+        }
+      }
       // specials
       if (type === 'targets') {
         self.specialCollapseOff(el);
@@ -439,7 +445,9 @@ class Xt {
       self.specialScrollbarOff();
       // activationDelay
       if (activationDelay && activationDelay[type]) {
-        activationDelay[type]();
+        if (!options.instant || !options.instant[type]) {
+          activationDelay[type]();
+        }
       }
     };
     // delay onDone
@@ -777,6 +785,7 @@ XtToggle.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
   "class": "active",
+  "instant": { "elements": true },
   "on": "click",
   "min": 0,
   "max": 1
@@ -814,7 +823,7 @@ XtDrop.defaults = {
   "additional": ":scope > a, :scope > button",
   "class": "active",
   "on": "click",
-  "onOutside": "true", "onInside": "true", "offOutside": "true", "offInside": "true",
+  "onOutside": true, "onInside": true, "offOutside": true, "offInside": true,
   "min": 0,
   "max": 1,
   "closeOutside": "body"

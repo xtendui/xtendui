@@ -551,6 +551,7 @@
       "elements": ":scope > a, :scope > button",
       "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
       "class": "active",
+      "instant": { "elements": true },
       "on": "click",
       "min": 0,
       "max": 1
@@ -570,7 +571,7 @@
       "additional": ":scope > a, :scope > button",
       "class": "active",
       "on": "click",
-      "onOutside": "true", "onInside": "true", "offOutside": "true", "offInside": "true",
+      "onOutside": true, "onInside": true, "offOutside": true, "offInside": true,
       "min": 0,
       "max": 1,
       "closeOutside": "body"
