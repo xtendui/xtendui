@@ -11,7 +11,9 @@ const formatCode = function (source, lang) {
   }
   let text = source.innerHTML;
   if (lang === 'css' || lang === 'js') {
+    // remove <style> or <script> tag
     text = text.replace(/<[^>]*>/g, '');
+    text = text.substring(1);
     // replace entities
     text = text.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
   }
@@ -25,6 +27,17 @@ const formatCode = function (source, lang) {
     // replace empty quotes
     text = text.replace(/=""/g, '');
   }
+  // remove tabs
+  let arr = text.split('\n');
+  var toRemove = arr[1].search(/\S/g);
+  for (let i of arr.keys()) {
+    arr[i] = arr[i].substring(toRemove);
+  }
+  text = arr.join('\n');
+  // remove newline at start and end
+  text = text.replace(/^\s+|\s+$/g, '');
+  // return
+  console.log(text);
   return text;
 };
 
@@ -296,15 +309,6 @@ const populateSources = function (item, element, id, z) {
   // format code
   if (!codeInside.classList.contains('hljs')) {
     let text = formatCode(element, lang);
-    // remove tabs
-    let arr = text.split('\n');
-    var toRemove = arr[1].search(/\S/g);
-    for (let i of arr.keys()) {
-      arr[i] = arr[i].substring(toRemove);
-    }
-    text = arr.join('\n');
-    // remove newline at start and end
-    text = text.replace(/^\s+|\s+$/g, '');
     // set text
     codeInside.innerHTML = text;
     codeInside.classList.add(lang);
