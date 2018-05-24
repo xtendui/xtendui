@@ -113,12 +113,12 @@ description: Many possible behaviour, interactions and animations are possible w
 <pre>
   <code class="js">
     XtToggle.defaults = {
-      elements: ':scope > a, :scope > button',
-      targets: ':scope > [class^="toggle-"], :scope > [class*=" toggle-"]',
-      classes: ['active'],
-      on: 'click',
-      min: 0,
-      max: 1
+      "elements": ":scope > a, :scope > button",
+      "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
+      "class": "active",
+      "on": "click",
+      "min": 0,
+      "max": 1
     };
   </code>
 </pre>
@@ -130,15 +130,15 @@ description: Many possible behaviour, interactions and animations are possible w
 <pre>
   <code class="js">
     XtDrop.defaults = {
-      elements: ':scope',
-      targets: ':scope > .drop',
-      additional: ':scope > a, :scope > button',
-      classes: ['active'],
-      on: 'click',
-      onOutside: 'true', onInside: 'true', offOutside: 'true', offInside: 'true',
-      min: 0,
-      max: 1,
-      closeOutside: 'body'
+      "elements": ":scope",
+      "targets": ":scope > .drop",
+      "additional": ":scope > a, :scope > button",
+      "class": "active",
+      "on": "click",
+      "onOutside": "true", "onInside": "true", "offOutside": "true", "offInside": "true",
+      "min": 0,
+      "max": 1,
+      "closeOutside": "body"
     };
   </code>
 </pre>
@@ -150,17 +150,16 @@ description: Many possible behaviour, interactions and animations are possible w
 <pre>
   <code class="js">
     XtOverlay.defaults = {
-      elements: ':scope > a, :scope > button',
-      targets: ':scope > .overlay-outer',
-      additional: ':scope > a, :scope > button',
-      classes: ['active'],
-      on: 'click',
-      min: 0,
-      max: 1,
-      appendTo: 'body',
-      backdrop: ':scope > .overlay',
-      closeInside: ':scope > .overlay > .xt-backdrop, :scope > .overlay > .overlay-inner > .btn-close',
-      scrollbar: true
+      "elements": ":scope > a, :scope > button",
+      "targets": ":scope > .overlay-outer",
+      "class": "active",
+      "on": "click",
+      "min": 0,
+      "max": 1,
+      "appendTo": "body",
+      "backdrop": ":scope > .overlay",
+      "closeInside": ":scope > .overlay > .xt-backdrop, :scope > .overlay > .overlay-inner > .btn-close",
+      "scrollbar": true
     };
   </code>
 </pre>

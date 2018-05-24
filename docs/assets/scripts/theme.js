@@ -12,8 +12,10 @@ const formatCode = function (source, lang) {
   let text = source.innerHTML;
   if (lang === 'css' || lang === 'js') {
     // remove <style> or <script> tag
-    text = text.replace(/<[^>]*>/g, '');
-    text = text.substring(1);
+    if (text.search(/<[^>]*>/g) !== -1) {
+      text = text.replace(/<[^>]*>/g, '');
+      text = text.substring(1);
+    }
     // replace entities
     text = text.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
   }

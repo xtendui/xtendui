@@ -107,7 +107,7 @@ class Xt {
     XtUtil.requestAnimationFrame.call(window, function () {
       if (self.elements.length) {
         // activate options.class
-        let classes = self.options.class || self.defaults.classes;
+        let classes = self.options.classes;
         for (let el of self.elements) {
           if (el.classList.contains(...classes)) {
             self.eventOn(el);
@@ -289,7 +289,7 @@ class Xt {
     let self = this;
     let options = this.options;
     // activate or deactivate
-    if (!element.classList.contains(...this.defaults.classes)) {
+    if (!element.classList.contains(...this.options.classes)) {
       let fElements = this.getElements(element);
       this.addCurrent(fElements.single);
       let targets = this.getTargets(element);
@@ -331,7 +331,7 @@ class Xt {
       return;
     }
     // deactivate
-    if (element.classList.contains(...this.defaults.classes)) {
+    if (element.classList.contains(...this.options.classes)) {
       let fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
       this.activationOff(fElements.all, fElements, 'elements', activationDelay);
@@ -744,7 +744,7 @@ class Xt {
 // default
 
 Xt.defaults = {
-  classes: ['active']
+  "class": "active",
 };
 
 // export
@@ -774,12 +774,12 @@ class XtToggle extends Xt {
 // default
 
 XtToggle.defaults = {
-  elements: ':scope > a, :scope > button',
-  targets: ':scope > [class^="toggle-"], :scope > [class*=" toggle-"]',
-  classes: ['active'],
-  on: 'click',
-  min: 0,
-  max: 1
+  "elements": ":scope > a, :scope > button",
+  "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
+  "class": "active",
+  "on": "click",
+  "min": 0,
+  "max": 1
 };
 
 // export
@@ -809,15 +809,15 @@ class XtDrop extends Xt {
 // default
 
 XtDrop.defaults = {
-  elements: ':scope',
-  targets: ':scope > .drop',
-  additional: ':scope > a, :scope > button',
-  classes: ['active'],
-  on: 'click',
-  onOutside: 'true', onInside: 'true', offOutside: 'true', offInside: 'true',
-  min: 0,
-  max: 1,
-  closeOutside: 'body'
+  "elements": ":scope",
+  "targets": ":scope > .drop",
+  "additional": ":scope > a, :scope > button",
+  "class": "active",
+  "on": "click",
+  "onOutside": "true", "onInside": "true", "offOutside": "true", "offInside": "true",
+  "min": 0,
+  "max": 1,
+  "closeOutside": "body"
 };
 
 // export
@@ -847,16 +847,16 @@ class XtOverlay extends Xt {
 // default
 
 XtOverlay.defaults = {
-  elements: ':scope > a, :scope > button',
-  targets: ':scope > .overlay-outer',
-  classes: ['active'],
-  on: 'click',
-  min: 0,
-  max: 1,
-  appendTo: 'body',
-  backdrop: ':scope > .overlay',
-  closeInside: ':scope > .overlay > .xt-backdrop, :scope > .overlay > .overlay-inner > .btn-close',
-  scrollbar: true
+  "elements": ":scope > a, :scope > button",
+  "targets": ":scope > .overlay-outer",
+  "class": "active",
+  "on": "click",
+  "min": 0,
+  "max": 1,
+  "appendTo": "body",
+  "backdrop": ":scope > .overlay",
+  "closeInside": ":scope > .overlay > .xt-backdrop, :scope > .overlay > .overlay-inner > .btn-close",
+  "scrollbar": true
 };
 
 // export
@@ -972,7 +972,7 @@ class XtSticky extends Xt {
       // check
       if (scrollTop >= top && scrollTop < bottom) {
         // inside
-        if (!element.classList.contains(...self.defaults.classes)) {
+        if (!element.classList.contains(...self.options.classes)) {
           self.eventOn(element);
           // direction
           let fElements = self.getElements(element);
@@ -990,7 +990,7 @@ class XtSticky extends Xt {
         }
       } else {
         // outside
-        if (element.classList.contains(...self.defaults.classes)) {
+        if (element.classList.contains(...self.options.classes)) {
           self.eventOff(element);
           // direction
           let fElements = self.getElements(element);
@@ -1016,10 +1016,10 @@ class XtSticky extends Xt {
 // default
 
 XtSticky.defaults = {
-  classes: ['active'],
-  on: 'scroll',
-  min: 0,
-  max: Infinity
+  "class": "active",
+  "on": "scroll",
+  "min": 0,
+  "max": Infinity
 };
 
 // export
