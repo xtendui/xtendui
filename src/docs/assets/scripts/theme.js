@@ -94,8 +94,10 @@ for (let el of document.querySelectorAll('.site-aside-text > .btn:not(.different
   let container = XtUtil.parents(el, '.site-aside-text')[0];
   for (let element of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
     if (element.tagName === 'H2') {
-      container.append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-site-aside-sub">' + element.textContent + '</a>'));
-      container.append(XtUtil.createElement('<div class="site-aside-subsub collapse-height"></div>'));
+      let appendItem = XtUtil.createElement('<div class="site-aside-sub-container"></div>');
+      container.append(appendItem);
+      appendItem.append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-site-aside-sub">' + element.textContent + '</a>'));
+      appendItem.append(XtUtil.createElement('<div class="site-aside-subsub collapse-height"></div>'));
     } else if (element.tagName === 'H3') {
       var subs = container.querySelectorAll('.site-aside-subsub');
       subs[subs.length - 1].append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-site-aside-subsub">' + element.textContent + '</a>'));
@@ -105,7 +107,7 @@ for (let el of document.querySelectorAll('.site-aside-text > .btn:not(.different
 
 for (let el of document.querySelectorAll('.site-aside-text')) {
   new XtToggle(el, {
-    "elements": ".btn-site-aside-sub",
+    "elements": ".site-aside-sub-container",
     "targets": ".site-aside-subsub",
     "on": "mouseenter",
     "off": "mouseleave",

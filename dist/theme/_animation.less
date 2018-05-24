@@ -387,12 +387,14 @@ opacity: 0;
 // anim-backdrop
 
 .anim-backdrop {
+  .active &,
   &.active {
     .animation-default.active();
     opacity: @backdrop-opacity;
     animation-name: anim-backdrop-in;
     animation-duration: @time-big;
   }
+  .out &,
   &.out {
     .animation-default.out();
     opacity: 0;

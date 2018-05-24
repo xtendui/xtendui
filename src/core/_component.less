@@ -48,6 +48,14 @@ a, .alink, .btn-link {
 .drop-container {
   display: inline-block;
   position: relative;
+  > .xt-backdrop {
+    .display(none);
+  }
+  &.active, &.out {
+    > .xt-backdrop {
+      .display(block);
+    }
+  }
 }
 
 .drop-container-static {

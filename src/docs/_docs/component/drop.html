@@ -31,7 +31,8 @@ description: Dropdown component with structured theming that can show anything.
 
 <h2>Variables</h2>
 
-<p class="alert">Read the documentation of <a href="{% link _docs/introduction/variables.html %}#component">component's variables</a>.</p>
+<p class="alert">Read the documentation of <a href="{% link _docs/introduction/variables.html %}#component">component's
+  variables</a>.</p>
 
 <h3>Drop of anything</h3>
 
@@ -1138,6 +1139,136 @@ description: Dropdown component with structured theming that can show anything.
             Toggle
           </button>
           <div class="drop drop-middle">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Backdrop</h3>
+
+<p>Option to have a backdrop.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="backdrop">
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space-small align-items-center demo-source-from">
+        <div class="drop-container" data-xt-drop='{"backdrop": true}'>
+          <button type="button" class="btn btn-primary">
+            bottom left
+          </button>
+          <div class="drop drop-bottom drop-left">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop='{"backdrop": true}'>
+          <button type="button" class="btn btn-primary">
+            middle center
+          </button>
+          <div class="drop drop-middle drop-center">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop='{"backdrop": true}'>
+          <button type="button" class="btn btn-primary">
+            after middle-top
+          </button>
+          <div class="drop drop-after drop-middle drop-middle-top">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Event</h3>
+
+<p>You can specify <strong>on</strong> and <strong>off</strong> events for the drop. Default is <code>"on":
+  "click"</code>.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="event">
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space-small align-items-center demo-source-from">
+        <div class="drop-container" data-xt-drop='{"on": "mouseenter", "off": "mouseleave"}'>
+          <button type="button" class="btn btn-primary">
+            Normal
+          </button>
+          <div class="drop">
+            <div class="drop-inner">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-container" data-xt-drop='{"on": "mouseenter", "off": "mouseleave", "backdrop": true}'>
+          <button type="button" class="btn btn-primary">
+            Backdrop
+          </button>
+          <div class="drop drop-bottom drop-left">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>

@@ -70,6 +70,26 @@ XtUtil.cancelAnimationFrame = function () {
 }();
 
 /**
+ * Check if event target is inside
+ * @param {Event} e
+ * @param {Element} t
+ * @return {Boolean}
+ */
+XtUtil.checkInside = function (e, t) {
+  return e.target === t;
+};
+
+/**
+ * Check if event target is outside
+ * @param {Event} e
+ * @param {Element} t
+ * @return {Boolean}
+ */
+XtUtil.checkOutside = function (e, t) {
+  return e.target !== t && !t.contains(e.target);
+};
+
+/**
  * Get scrollbar width of document
  * @returns {String} Unique id
  */

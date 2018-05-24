@@ -295,6 +295,9 @@ a, .alink {
   // animations
   .anim-vertical();
 }
+.drop-container {
+  animation-duration: @time-big; // needed for .out animation timing
+}
 
 // variant
 
@@ -460,8 +463,12 @@ a, .alink {
 // animations
 
 .overlay-outer {
+  animation-duration: @time-big; // needed for .out animation timing
   &.active {
     > .overlay {
+      &.overlay-screen {
+        .anim-opacity.active();
+      }
       > .overlay-inner {
         .anim-vertical.active();
         > .btn-close {
@@ -471,22 +478,18 @@ a, .alink {
           animation-delay: @time-medium;
         }
       }
-      > .xt-backdrop {
-        .anim-backdrop.active();
-      }
     }
   }
   &.out {
-    animation-duration: @time-big; // needed for .out animation timing
     > .overlay {
+      &.overlay-screen {
+        .anim-opacity.out();
+      }
       > .overlay-inner {
         .anim-vertical.out();
         > .btn-close {
           opacity: 0;
         }
-      }
-      > .xt-backdrop {
-        .anim-backdrop.out();
       }
     }
   }

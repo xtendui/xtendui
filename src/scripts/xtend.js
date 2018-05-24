@@ -124,6 +124,55 @@ class Xt {
     });
   }
 
+  /**
+   * init events
+   */
+  initEvents() {
+    let self = this;
+    let options = this.options;
+    // check
+    let checkOutside = function (e, targets) {
+      let result = false;
+      for (let t of targets) {
+        if (XtUtil.checkOutside(e, t)) {
+          result = true;
+        }
+      }
+      return result;
+    };
+    // on and off
+    for (let el of this.elements) {
+      if (options.on) {
+        el.xtUtilOff(options.on + '.xtend');
+        el.xtUtilOn(options.on + '.xtend', function (e) {
+          if (options.onOutside) {
+            if (checkOutside(e, self.container.querySelectorAll(options.targets))) {
+              self.eventOn(this);
+            }
+          } else if (options.onInside) {
+            if (checkInside(e, self.container.querySelectorAll(options.targets))) {
+              self.eventOn(this);
+            }
+          } else {
+            self.eventOn(this);
+          }
+        });
+      }
+      if (options.off) {
+        el.xtUtilOff(options.off + '.xtend');
+        el.xtUtilOn(options.off + '.xtend', function (e) {
+          if (options.offOutside && checkOutside(e, self.container.querySelectorAll(options.targets))) {
+            self.eventOff(this);
+          } else if (options.offInside && checkInside(e, self.container.querySelectorAll(options.targets))) {
+            self.eventOn(this);
+          } else {
+            self.eventOff(this);
+          }
+        });
+      }
+    }
+  }
+
   //////////////////////
   // utils
   //////////////////////
@@ -187,6 +236,15 @@ class Xt {
   }
 
   /**
+   * additional elements to activate/deactivate
+   * @returns {Element}
+   */
+  getAdditional() {
+    let options = this.options;
+    return this.object.querySelectorAll(options.additional);
+  }
+
+  /**
    * get currents based on namespace (so shared between Xt objects)
    * @returns {Element}
    */
@@ -235,16 +293,26 @@ class Xt {
       let fElements = this.getElements(element);
       this.addCurrent(fElements.single);
       let targets = this.getTargets(element);
-      let activationDelay = function() {
-        self.activationOn(fElements.all, fElements, 'elements');
-        self.activationOn(targets, fElements, 'targets');
+      let additional = this.getAdditional(fElements.single);
+      let activationDelay = {
+        elements: function () {
+          self.activationOn(fElements.all, fElements, 'elements');
+        },
+        targets: function () {
+          self.activationOn(targets, fElements, 'targets');
+        },
+        additional: function () {
+          self.activationOn(additional, fElements, 'additional');
+        },
       };
       // if currents > max
       let currents = this.getCurrents();
       if (currents.length > options.max) {
         this.eventOff(currents[0], activationDelay);
       } else {
-        activationDelay();
+        activationDelay.elements();
+        activationDelay.targets();
+        activationDelay.additional();
       }
     } else {
       this.eventOff(element);
@@ -269,6 +337,8 @@ class Xt {
       this.activationOff(fElements.all, fElements, 'elements', activationDelay);
       let targets = this.getTargets(element);
       this.activationOff(targets, fElements, 'targets', activationDelay);
+      let additional = this.getAdditional(fElements.all);
+      this.activationOff(additional, fElements, 'additional', activationDelay);
     }
   }
 
@@ -314,7 +384,7 @@ class Xt {
    */
   activationOnAnimate(el, type) {
     // onDone
-    let onDone = function(el, type) {
+    let onDone = function (el, type) {
       // collapse-width and collapse-height
       if (el.classList.contains('collapse-height')) {
         el.style.height = 'auto';
@@ -363,13 +433,13 @@ class Xt {
   activationOffAnimate(el, type, activationDelay) {
     let self = this;
     // onDone
-    let onDone = function(el, type) {
+    let onDone = function (el, type) {
       el.classList.remove('out');
       // specials
       self.specialScrollbarOff();
       // activationDelay
-      if (activationDelay) {
-        activationDelay();
+      if (activationDelay && activationDelay[type]) {
+        activationDelay[type]();
       }
     };
     // delay onDone
@@ -414,6 +484,12 @@ class Xt {
     let options = this.options;
     if (options.backdrop) {
       var elements = el.querySelectorAll(options.backdrop);
+      if (!elements.length) {
+        elements = this.object.querySelectorAll(options.backdrop);
+      }
+      if (!elements.length) {
+        elements = XtUtil.arrSingle(this.object);
+      }
       for (let element of elements) {
         let backdrop = element.querySelectorAll('.xt-backdrop');
         if (!backdrop.length) {
@@ -538,34 +614,33 @@ class Xt {
   specialCloseOn(el, toggle) {
     let self = this;
     let options = this.options;
-    // closeEvent
-    let closeEvent = function (closeElements, check) {
+    // closeInside
+    if (options.closeInside) {
+      let closeElements = el.querySelectorAll(options.closeInside);
       XtUtil.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
           closeElement.xtUtilOff('click.xtend');
           closeElement.xtUtilOn('click.xtend', function (e) {
-            if (check(e, this)) {
+            if (XtUtil.checkInside(e, this)) {
               self.eventOff(toggle);
             }
           });
         }
       });
-    };
-    // closeInside
-    if (options.closeInside) {
-      let closeElements = el.querySelectorAll(options.closeInside);
-      let check = function (e, t) {
-        return e.target === t;
-      };
-      closeEvent(closeElements, check);
     }
     // closeOutside
     if (options.closeOutside) {
       let closeElements = document.documentElement.querySelectorAll(options.closeOutside);
-      let check = function (e) {
-        return e.target !== el && !el.contains(e.target);
-      };
-      closeEvent(closeElements, check);
+      XtUtil.requestAnimationFrame.call(window, function () {
+        for (let closeElement of closeElements) {
+          closeElement.xtUtilOff('click.xtend');
+          closeElement.xtUtilOn('click.xtend', function (e) {
+            if (XtUtil.checkOutside(e, el)) {
+              self.eventOff(toggle);
+            }
+          });
+        }
+      });
     }
   }
 
@@ -694,33 +769,6 @@ class XtToggle extends Xt {
     this.initEvents();
   }
 
-  //////////////////////
-  // init
-  //////////////////////
-
-  /**
-   * init events
-   */
-  initEvents() {
-    let self = this;
-    let options = this.options;
-    // on and off
-    for (let el of this.elements) {
-      if (options.on) {
-        el.xtUtilOff(options.on + '.xtend');
-        el.xtUtilOn(options.on + '.xtend', function (e) {
-          self.eventOn(this);
-        });
-      }
-      if (options.off) {
-        el.xtUtilOff(options.off + '.xtend');
-        el.xtUtilOn(options.off, function (e) {
-          self.eventOff(this);
-        });
-      }
-    }
-  }
-
 }
 
 // default
@@ -756,42 +804,17 @@ class XtDrop extends Xt {
     this.initEvents();
   }
 
-  //////////////////////
-  // init
-  //////////////////////
-
-  /**
-   * init events
-   */
-  initEvents() {
-    let self = this;
-    let options = this.options;
-    // on and off
-    for (let el of this.elements) {
-      if (options.on) {
-        el.xtUtilOff(options.on + '.xtend');
-        el.xtUtilOn(options.on + '.xtend', function (e) {
-          self.eventOn(this);
-        });
-      }
-      if (options.off) {
-        el.xtUtilOff(options.off + '.xtend');
-        el.xtUtilOn(options.off + '.xtend', function (e) {
-          self.eventOff(this);
-        });
-      }
-    }
-  }
-
 }
 
 // default
 
 XtDrop.defaults = {
-  elements: ':scope > a, :scope > button',
+  elements: ':scope',
   targets: ':scope > .drop',
+  additional: ':scope > a, :scope > button',
   classes: ['active'],
   on: 'click',
+  onOutside: 'true', onInside: 'true', offOutside: 'true', offInside: 'true',
   min: 0,
   max: 1,
   closeOutside: 'body'
@@ -817,33 +840,6 @@ class XtOverlay extends Xt {
   constructor(object, jsOptions) {
     super(object, jsOptions, 'data-xt-overlay');
     this.initEvents();
-  }
-
-  //////////////////////
-  // init
-  //////////////////////
-
-  /**
-   * init events
-   */
-  initEvents() {
-    let self = this;
-    let options = this.options;
-    // on and off
-    for (let el of this.elements) {
-      if (options.on) {
-        el.xtUtilOff(options.on + '.xtend');
-        el.xtUtilOn(options.on + '.xtend', function (e) {
-          self.eventOn(this);
-        });
-      }
-      if (options.off) {
-        el.xtUtilOff(options.off + '.xtend');
-        el.xtUtilOn(options.off, function (e) {
-          self.eventOff(this);
-        });
-      }
-    }
   }
 
 }
