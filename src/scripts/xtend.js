@@ -29,7 +29,7 @@ class Xt {
     this.options = XtUtil.merge([this.options, markupOptions ? JSON.parse(markupOptions) : {}]);
     // classes
     if (this.options.class) {
-      this.options.classes = [...this.options.classes, ...this.options.class.split(' ')];
+      this.options.classes = [...this.options.class.split(' ')];
     }
     // init
     this.initSetup();
@@ -106,9 +106,10 @@ class Xt {
     // currents
     XtUtil.requestAnimationFrame.call(window, function () {
       if (self.elements.length) {
-        // activate defaults.class
+        // activate options.class
+        let classes = self.options.class || self.defaults.classes;
         for (let el of self.elements) {
-          if (el.classList.contains(...self.defaults.classes)) {
+          if (el.classList.contains(...classes)) {
             self.eventOn(el);
           }
         }

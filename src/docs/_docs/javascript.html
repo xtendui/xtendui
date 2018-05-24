@@ -9,3 +9,65 @@ description: Lorem Ipsum
 {% include text-contents.html %}
 
 <h2>Initialization</h2>
+
+<h3>All</h3>
+
+<p>You can initialize all javascript components on the document attributes (using <code>[data-xt-]</code>) using
+  <strong>XtUtil</strong>. Be sure to initialize them when the page is ready.</p>
+
+<pre>
+  <code class="js">
+    function initAll() {
+      XtUtil.initAll();
+    }
+    if (document.readyState !== 'loading') {
+      initAll();
+    } else if (document.addEventListener) {
+      document.addEventListener('DOMContentLoaded', initAll);
+    }
+  </code>
+</pre>
+
+<p>You can also pass a container to search for javascript components.</p>
+
+<pre>
+  <code class="js">
+    XtUtil.initAll(document.querySelectorAll('.my-container'));
+  </code>
+</pre>
+
+<h3>Toggle</h3>
+
+<p>You can initialize <strong>toggle</strong> by javascript.</p>
+
+<pre>
+  <code class="js">
+    new XtToggle(document.querySelectorAll('.my-element'), {
+      // options
+    });
+  </code>
+</pre>
+
+<h3>Drop</h3>
+
+<p>You can initialize <strong>drop</strong> by javascript.</p>
+
+<pre>
+  <code class="js">
+    new XtDrop(document.querySelectorAll('.my-element'), {
+      // options
+    });
+  </code>
+</pre>
+
+<h3>Overlay</h3>
+
+<p>You can initialize <strong>overlay</strong> by javascript.</p>
+
+<pre>
+  <code class="js">
+    new XtOverlay(document.querySelectorAll('.my-element'), {
+      // options
+    });
+  </code>
+</pre>

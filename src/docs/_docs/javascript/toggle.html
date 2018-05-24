@@ -3,239 +3,340 @@ title: Toggle
 categories: [Javascript]
 order: 100
 
-description: Lorem Ipsum
+description: Many possible behaviour, interactions and animations are possible with this toggle scripts.
 ---
 
 <h2>Usage</h2>
-<!--
-<p class="lead">Html Initialization</p>
+
+<h3>Toggle</h3>
+
+<p>Use this markup to create a toggle. <code>[data-xt-toggle]</code> must be <a
+  href="{% link _docs/javascript.html %}#initialization">initialized by javascript</a>.</p>
 
 <pre>
   <code class="html">
     <button type="button" data-xt-toggle>
+      <!-- content -->
     </button>
   </code>
 </pre>
 
 <pre>
   <code class="html">
-    <div data-xt-toggle='{"elements": ".element"}'>
+    <div data-xt-toggle>
       <button type="button">
+        <!-- content -->
       </button>
       <div class="toggle-block">
+        <!-- content -->
       </div>
     </div>
   </code>
 </pre>
 
-<div class="alert alert-warning">
-  <strong>Important:</strong> the plugin's attributes <strong>must be a valid json format</strong>, so with double quotes inside.
-</div>
+<p>Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#toggle">toggle by
+  javascript</a> using the same options syntax.</p>
 
-<pre><code class="js">
-$('.element').xtInitAll(); // init only '.element'
-$('body').xtInitAll(true); // init 'html' and all descendants
-</code></pre>
+<h3>Drop</h3>
 
-<p class="lead">Js Initialization</p>
+<p>Use this markup to create a drop. <code>[data-xt-drop]</code> must be <a
+  href="{% link _docs/javascript.html %}#initialization">initialized by javascript</a>.</p>
 
-<pre><code class="js">
-$('.element').xtToggle();
-$('div').xtToggle({"elements": ".element"});
-</code></pre>
+<pre>
+  <code class="html">
+    <div class="drop-container" data-xt-drop>
+      <button type="button">
+        <!-- content -->
+      </button>
+      <div class="drop">
+        <div class="drop-inner">
+          <!-- content -->
+        </div>
+      </div>
+    </div>
+  </code>
+</pre>
 
-<h2>Api</h2>
+<p>Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#drop">drop by
+  javascript</a> using the same options syntax.</p>
 
-<p>@TODO table api</p>
-<p>@TODO link javascript modes</p>
-<p>@TODO link animations</p>
--->
-<h2>Initialization</h2>
+<h3>Overlay</h3>
+
+<p>Use this markup to create a overlay. <code>[data-xt-overlay]</code> must be <a
+  href="{% link _docs/javascript.html %}#initialization">initialized by javascript</a>.</p>
+
+<pre>
+  <code class="html">
+    <div data-xt-overlay>
+      <button type="button">
+        <!-- content -->
+      </button>
+      <div class="overlay-outer">
+        <div class="overlay overlay-primary">
+          <div class="overlay-inner">
+            <button type="button" class="btn btn-close"></button>
+            <!-- content -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </code>
+</pre>
+
+<pre>
+  <code class="html">
+    <button type="button" data-xt-overlay='{"targets": "#overlay-custom"}'>
+      <!-- content -->
+    </button>
+    <div class="overlay-outer" id="overlay-custom">
+      <div class="overlay overlay-primary">
+        <div class="overlay-inner">
+          <button type="button" class="btn btn-close"></button>
+          <!-- content -->
+        </div>
+      </div>
+    </div>
+  </code>
+</pre>
+
+<p>Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#overlay">overlay by
+  javascript</a> using the same options syntax.</p>
+
+<h2>Defaults</h2>
+
+<h3>Toggle</h3>
+
+<p>Here are the defaults options for toggle.</p>
+
+<pre>
+  <code class="js">
+    XtToggle.defaults = {
+      elements: ':scope > a, :scope > button',
+      targets: ':scope > [class^="toggle-"], :scope > [class*=" toggle-"]',
+      classes: ['active'],
+      on: 'click',
+      min: 0,
+      max: 1
+    };
+  </code>
+</pre>
+
+<h3>Drop</h3>
+
+<p>Here are the defaults options for drop.</p>
+
+<pre>
+  <code class="js">
+    XtDrop.defaults = {
+      elements: ':scope > a, :scope > button',
+      targets: ':scope > .drop',
+      classes: ['active'],
+      on: 'click',
+      min: 0,
+      max: 1,
+      closeOutside: 'body'
+    };
+  </code>
+</pre>
+
+<h3>Overlay</h3>
+
+<p>Here are the defaults options for overlay.</p>
+
+<pre>
+  <code class="js">
+    XtOverlay.defaults = {
+      elements: ':scope > a, :scope > button',
+      targets: ':scope > .overlay-outer',
+      classes: ['active'],
+      on: 'click',
+      min: 0,
+      max: 1,
+      appendTo: 'body',
+      backdrop: ':scope > .overlay',
+      closeInside: ':scope > .overlay > .xt-backdrop, :scope > .overlay > .overlay-inner > .btn-close',
+      scrollbar: true
+    };
+  </code>
+</pre>
+
+<h2>Scope</h2>
 
 <h3>Single</h3>
+
+<p>When single scoping the toggle (initializing it on the element), you toggle the single element, and to assign
+  <strong>targets</strong> you need to use <strong>#id</strong>.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="self">
     <div class="demo-text">Toggle a single <strong>element</strong> with <code>[data-xt-toggle]</code>.</div>
     <div class="demo-source" data-lang="html">
-<button type="button" class="btn btn-primary-empty" data-xt-toggle>
-  Toggle
-</button>
-<button type="button" class="btn btn-primary-empty" data-xt-toggle>
-  Toggle
-</button>
+      <button type="button" class="btn btn-primary-empty" data-xt-toggle>
+        Toggle
+      </button>
+      <button type="button" class="btn btn-primary-empty" data-xt-toggle>
+        Toggle
+      </button>
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="single target">
-    <div class="demo-text">Toggle a single <strong>target</strong> using <code>targets</code> with <strong>#id</strong>.</div>
+    <div class="demo-text">Toggle a single <strong>target</strong> using <code>targets</code> with <strong>#id</strong>.
+    </div>
     <div class="demo-source" data-lang="html">
-<button type="button" class="btn btn-primary-empty" data-xt-toggle='{"targets": "#alert-unique-0"}'>
-  Toggle 0
-</button>
-<button type="button" class="btn btn-primary-empty" data-xt-toggle='{"targets": "#alert-unique-1"}'>
-  Toggle 1
-</button>
-<div class="alert alert-notice toggle-flex" id="alert-unique-0">
-  Target 0
-</div>
-<div class="alert alert-notice toggle-flex" id="alert-unique-1">
-  Target 1
-</div>
+      <button type="button" class="btn btn-primary-empty" data-xt-toggle='{"targets": "#toggle-unique-0"}'>
+        Toggle 0
+      </button>
+      <button type="button" class="btn btn-primary-empty" data-xt-toggle='{"targets": "#toggle-unique-1"}'>
+        Toggle 1
+      </button>
+      <div class="alert alert-notice toggle-flex" id="toggle-unique-0">
+        Target 0
+      </div>
+      <div class="alert alert-notice toggle-flex" id="toggle-unique-1">
+        Target 1
+      </div>
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="same targets">
-    <div class="demo-text">Toggle same <strong>targets</strong> using <code>targets</code> with <strong>#id</strong>.</div>
+    <div class="demo-text">Toggle same <strong>targets</strong> using <code>targets</code> with <strong>#id</strong>.
+    </div>
     <div class="demo-source" data-lang="html">
-<button type="button" class="btn btn-primary-empty" data-xt-toggle='{"targets": "#alert-unique"}'>
-  Toggle
-</button>
-<button type="button" class="btn btn-primary-empty" data-xt-toggle='{"targets": "#alert-unique"}'>
-  Toggle
-</button>
-<div class="alert alert-notice toggle-flex" id="alert-unique">
-  Target
-</div>
+      <button type="button" class="btn btn-primary-empty"
+              data-xt-toggle='{"targets": "#alert-unique-2, #toggle-unique-3"}'>
+        Toggle
+      </button>
+      <button type="button" class="btn btn-primary-empty"
+              data-xt-toggle='{"targets": "#alert-unique-2, #toggle-unique-3"}'>
+        Toggle
+      </button>
+      <div class="alert alert-notice toggle-flex" id="toggle-unique-2">
+        Target 0
+      </div>
+      <div class="alert alert-notice toggle-flex" id="toggle-unique-3">
+        Target 1
+      </div>
     </div>
   </div>
 </div>
-
-<p>For the <code>targets</code> use the classes <code>.toggle-block</code> <code>.toggle-flex</code> <code>.toggle-inline</code> <code>.toggle-inline-block</code> <code>.toggle-none</code> <code>.toggle-visible</code> <code>.toggle-hidden</code>. These classes toggle the display property on <code>.active</code>.</p>
 
 <h3>Manager</h3>
 
-<p>You can create a "manager" by assigning <code>[data-xt-toggle]</code> to the parent element, elements and targets must be inside the manager.</p>
-<p>By default the <code>elements</code> are all the <strong>direct children</strong> with the class <code>.btn</code>, and the <code>targets</code> are all <strong>children</strong> with a class that starts with <code>.toggle-</code>.</p>
+<p>You can create a "manager" by assigning <code>[data-xt-toggle]</code> to the parent element, elements and targets
+  must be inside the manager.</p>
+
+<p>By default the <code>elements</code> are all the <strong>direct children</strong> with the tag <code>a</code> or
+  <code>button</code>, and the <code>targets</code> are all <strong>children</strong> with a class that starts with
+  <code>.toggle-</code>, see <a href="{% link _docs/introduction/utils.html %}#toggle">toggle utils</a>.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="manager">
-    <div class="demo-text">With multiple <strong>targets</strong>, the ones activated is the one with the same index of the toggled <strong>element</strong>. Nested <strong>targets</strong> are filtered out.</div>
+    <div class="demo-text">With multiple <strong>targets</strong>, the ones activated is the one with the same index of
+      the toggled <strong>element</strong>. Nested <strong>targets</strong> are filtered out.
+    </div>
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle 0
-  </button>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle 1
-  </button>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle 2
-  </button>
-  <div class="alert alert-notice toggle-flex">
-    Target 0
-    <div class="alert alert-notice toggle-flex">
-      Nested not toggled
+      <div data-xt-toggle>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle 0
+        </button>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle 1
+        </button>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle 2
+        </button>
+        <div class="alert alert-notice toggle-flex">
+          Target 0
+          <div class="alert alert-notice toggle-flex">
+            Nested not toggled
+          </div>
+        </div>
+        <div class="alert alert-notice toggle-flex">
+          Target 1
+          <div class="alert alert-notice toggle-flex">
+            Nested not toggled
+          </div>
+        </div>
+        <div class="alert alert-notice toggle-flex">
+          Target 2
+          <div class="alert alert-notice toggle-flex">
+            Nested not toggled
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="alert alert-notice toggle-flex">
-    Target 1
-    <div class="alert alert-notice toggle-flex">
-      Nested not toggled
-    </div>
-  </div>
-  <div class="alert alert-notice toggle-flex">
-    Target 2
-    <div class="alert alert-notice toggle-flex">
-      Nested not toggled
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="custom elements">
-    <div class="demo-text">Custom <code>"elements"</code> query.</div>
+  <div class="demo-item demo-preview" data-name="custom">
+    <div class="demo-text">Custom <strong>elements</strong> and <strong>targets</strong>.</div>
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle='{"elements": ".test > .btn"}'>
-  <div class="test">
-    <button type="button" class="btn btn-primary-empty">
-      Toggle 0
-    </button>
-    <button type="button" class="btn btn-primary-empty">
-      Toggle 1
-    </button>
-    <button type="button" class="btn btn-primary-empty">
-      Toggle 2
-    </button>
-    <div class="alert alert-notice toggle-flex">
-      Target 0
-    </div>
-    <div class="alert alert-notice toggle-flex">
-      Target 1
-    </div>
-    <div class="alert alert-notice toggle-flex">
-      Target 2
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="custom targets">
-    <div class="demo-text">Custom <code>"targets"</code> query.</div>
-    <div class="demo-source" data-lang="html">
-<div data-xt-toggle='{"targets": ".example-target"}'>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle 0
-  </button>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle 1
-  </button>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle 2
-  </button>
-  <div class="alert alert-notice example-target">
-    Target 0
-  </div>
-  <div class="alert alert-notice example-target">
-    Target 1
-  </div>
-  <div class="alert alert-notice example-target">
-    Target 2
-  </div>
-</div>
+      <div data-xt-toggle='{"elements": ".test > .btn", "targets": ".test > .example-toggle"}'>
+        <div class="test">
+          <button type="button" class="btn btn-primary-empty">
+            Toggle 0
+          </button>
+          <button type="button" class="btn btn-primary-empty">
+            Toggle 1
+          </button>
+          <button type="button" class="btn btn-primary-empty">
+            Toggle 2
+          </button>
+          <div class="alert alert-notice example-toggle">
+            Target 0
+          </div>
+          <div class="alert alert-notice example-toggle">
+            Target 1
+          </div>
+          <div class="alert alert-notice example-toggle">
+            Target 2
+          </div>
+        </div>
+      </div>
     </div>
     <div class="demo-source" data-lang="css">
-<style scoped>
-.example-target {
-  display: none;
-}
-.example-target.active {
-  display: flex;
-}
-</style>
+      <style>
+        .example-toggle {
+          display: none;
+        }
+
+        .example-toggle.active {
+          display: flex;
+        }
+      </style>
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="custom toggle">
     <div class="demo-text">Custom targets classname that starts with <code>.toggle-</code>.</div>
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle 0
-  </button>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle 1
-  </button>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle 2
-  </button>
-  <div class="alert alert-notice toggle-custom">
-    Target 0
-  </div>
-  <div class="alert alert-notice toggle-custom">
-    Target 1
-  </div>
-  <div class="alert alert-notice toggle-custom">
-    Target 2
-  </div>
-</div>
+      <div data-xt-toggle>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle 0
+        </button>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle 1
+        </button>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle 2
+        </button>
+        <div class="alert alert-notice toggle-custom">
+          Target 0
+        </div>
+        <div class="alert alert-notice toggle-custom">
+          Target 1
+        </div>
+        <div class="alert alert-notice toggle-custom">
+          Target 2
+        </div>
+      </div>
     </div>
     <div class="demo-source" data-lang="css">
-<style scoped>
-.toggle-custom {
-  display: none;
-}
-.toggle-custom.active {
-  display: flex;
-}
-</style>
+      <style>
+        .toggle-custom {
+          display: none;
+        }
+
+        .toggle-custom.active {
+          display: flex;
+        }
+      </style>
     </div>
   </div>
 </div>
@@ -244,202 +345,213 @@ $('div').xtToggle({"elements": ".element"});
 
 <h3>Groups</h3>
 
-<p>If you need to toggle <strong>multiple targets</strong> assign <code>data-group</code> to <strong>elements</strong> and the associated targets <strong>targets</strong>. Grouped elements and targets aren't counted for min and max.</p>
+<p>If you need to toggle <strong>multiple targets</strong> assign <code>data-group</code> to <strong>elements</strong>
+  and the associated targets <strong>targets</strong>. Grouped elements and targets aren't counted for min and max.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="">
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle>
-  <button type="button" class="btn btn-primary-empty" data-group="0">
-    Group 0
-  </button>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle 0
-  </button>
-  <button type="button" class="btn btn-primary-empty" data-group="0">
-    Group 0
-  </button>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle 1
-  </button>
-  <button type="button" class="btn btn-primary-empty" data-group="1">
-    Group 1
-  </button>
-  <button type="button" class="btn btn-primary-empty" data-group="1">
-    Group 1
-  </button>
-  <div class="alert alert-notice toggle-flex">
-    Target 0
-  </div>
-  <div class="alert alert-notice toggle-flex" data-group="0">
-    Group 0
-  </div>
-  <div class="alert alert-notice toggle-flex" data-group="1">
-    Group 1
-  </div>
-  <div class="alert alert-notice toggle-flex" data-group="0">
-    Group 0
-  </div>
-  <div class="alert alert-notice toggle-flex">
-    Target 1
-  </div>
-</div>
+      <div data-xt-toggle>
+        <button type="button" class="btn btn-primary-empty" data-group="0">
+          Group 0
+        </button>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle 0
+        </button>
+        <button type="button" class="btn btn-primary-empty" data-group="0">
+          Group 0
+        </button>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle 1
+        </button>
+        <button type="button" class="btn btn-primary-empty" data-group="1">
+          Group 1
+        </button>
+        <button type="button" class="btn btn-primary-empty" data-group="1">
+          Group 1
+        </button>
+        <div class="alert alert-notice toggle-flex">
+          Target 0
+        </div>
+        <div class="alert alert-notice toggle-flex" data-group="0">
+          Group 0
+        </div>
+        <div class="alert alert-notice toggle-flex" data-group="1">
+          Group 1
+        </div>
+        <div class="alert alert-notice toggle-flex" data-group="0">
+          Group 0
+        </div>
+        <div class="alert alert-notice toggle-flex">
+          Target 1
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <h3>Class</h3>
 
-<p>Toggled class is always <code>.active</code>.</p>
+<p>Toggled class is by default <code>.active</code>.</p>
 
 <div class="demo">
-  <div class="demo-item demo-preview" data-name="additional">
-    <div class="demo-text">You can specify custom additional classes to toggle with <code>class</code>.</div>
+  <div class="demo-item demo-preview" data-name="class">
+    <div class="demo-text">You can specify classes to toggle with <strong>class</strong>.</div>
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle='{"class": "class-example-0 class-example-1"}'>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle
-  </button>
-  <div class="alert alert-notice toggle-flex" id="alert-example">
-    Target
-  </div>
-</div>
+      <div data-xt-toggle='{"class": "active class-example-0 class-example-1"}'>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle
+        </button>
+        <div class="alert alert-notice toggle-flex" id="alert-example">
+          Target
+        </div>
+      </div>
     </div>
     <div class="demo-source" data-lang="css">
-<style scoped>
-.btn.class-example-0 {
-  border: 1px solid red;
-}
-.btn.class-example-1 {
-  color: red !important;
-}
-.alert.class-example-0 {
-  border: 1px solid red;
-}
-.alert.class-example-1 {
-  color: red;
-}
-</style>
+      <style>
+        .btn.class-example-0 {
+          border: 1px solid black;
+        }
+
+        .btn.class-example-1 {
+          color: black !important;
+        }
+
+        .alert.class-example-0 {
+          border: 1px solid black;
+        }
+
+        .alert.class-example-1 {
+          color: black;
+        }
+      </style>
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="start">
-    <div class="demo-text">You can start with toggled elements and targets just by adding the class <code>.active</code> on the html <strong>elements</strong> you want activated.</div>
+    <div class="demo-text">You can start with toggled elements and targets just by adding all of the classes to the
+      <strong>elements</strong> you want activated.</div>
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle='{"class": "class-example-0 class-example-1", "min": 2, "max": 3}'>
-  <button type="button" class="btn btn-primary-empty" data-group="0">
-    Group 0
-  </button>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle 0
-  </button>
-  <button type="button" class="btn btn-primary-empty" data-group="0">
-    Group 0
-  </button>
-  <button type="button" class="btn btn-primary-empty active">
-    Toggle 1
-  </button>
-  <button type="button" class="btn btn-primary-empty" data-group="1">
-    Group 1
-  </button>
-  <div class="alert alert-notice toggle-flex">
-    Target 0
-  </div>
-  <div class="alert alert-notice toggle-flex" data-group="0">
-    Group 0
-  </div>
-  <div class="alert alert-notice toggle-flex" data-group="1">
-    Group 1
-  </div>
-  <div class="alert alert-notice toggle-flex" data-group="0">
-    Group 0
-  </div>
-  <div class="alert alert-notice toggle-flex">
-    Target 1
-  </div>
-</div>
+      <div data-xt-toggle='{"class": "active class-example-2 class-example-3", "min": 2, "max": 3}'>
+        <button type="button" class="btn btn-primary-empty" data-group="0">
+          Group 0
+        </button>
+        <button type="button" class="btn btn-primary-empty active class-example-2 class-example-">
+          Toggle 0
+        </button>
+        <button type="button" class="btn btn-primary-empty" data-group="0">
+          Group 0
+        </button>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle 1
+        </button>
+        <button type="button" class="btn btn-primary-empty" data-group="1">
+          Group 1
+        </button>
+        <div class="alert alert-notice toggle-flex">
+          Target 0
+        </div>
+        <div class="alert alert-notice toggle-flex" data-group="0">
+          Group 0
+        </div>
+        <div class="alert alert-notice toggle-flex" data-group="1">
+          Group 1
+        </div>
+        <div class="alert alert-notice toggle-flex" data-group="0">
+          Group 0
+        </div>
+        <div class="alert alert-notice toggle-flex">
+          Target 1
+        </div>
+      </div>
     </div>
     <div class="demo-source" data-lang="css">
-<style scoped>
-.btn.class-example-0 {
-  border: 1px solid red;
-}
-.btn.class-example-1 {
-  color: red !important;
-}
-.alert.class-example-0 {
-  border: 1px solid red;
-}
-.alert.class-example-1 {
-  color: red;
-}
-</style>
+      <style>
+        .btn.class-example-2 {
+          border: 1px solid black;
+        }
+
+        .btn.class-example-3 {
+          color: black !important;
+        }
+
+        .alert.class-example-2 {
+          border: 1px solid black;
+        }
+
+        .alert.class-example-3 {
+          color: black;
+        }
+      </style>
     </div>
   </div>
 </div>
 
 <h3>Min and max</h3>
 
-<p>Inside a <strong>manager</strong> you can specify <strong>min or max</strong> activations. Default is <code>"min": 0</code> and <code>"max": 1</code>. Use <code>"max": "Infinity"</code> for no limits.</p>
+<p>Inside a <strong>manager</strong> you can specify <strong>min or max</strong> activations. Default is <code>"min":
+  0</code> and <code>"max": 1</code>. Use <code>"max": "Infinity"</code> for no limits.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="custom">
-    <div class="demo-text">The required <strong>min</strong> activation is fulfilled on initialization. Automatic <code>[disabled]</code> on reaching the <strong>min</strong> value.</div>
+    <div class="demo-text">The required <strong>min</strong> activation is fulfilled on initialization. Automatic <code>[disabled]</code>
+      on reaching the <strong>min</strong> value.
+    </div>
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle='{"min": 2, "max": 2}'>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle 0
-  </button>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle 1
-  </button>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle 2
-  </button>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle 3
-  </button>
-  <div class="alert alert-notice toggle-flex">
-    Target 0
-  </div>
-  <div class="alert alert-notice toggle-flex">
-    Target 1
-  </div>
-  <div class="alert alert-notice toggle-flex">
-    Target 2
-  </div>
-  <div class="alert alert-notice toggle-flex">
-    Target 3
-  </div>
-</div>
+      <div data-xt-toggle='{"min": 2, "max": 2}'>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle 0
+        </button>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle 1
+        </button>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle 2
+        </button>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle 3
+        </button>
+        <div class="alert alert-notice toggle-flex">
+          Target 0
+        </div>
+        <div class="alert alert-notice toggle-flex">
+          Target 1
+        </div>
+        <div class="alert alert-notice toggle-flex">
+          Target 2
+        </div>
+        <div class="alert alert-notice toggle-flex">
+          Target 3
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <h3>Events</h3>
 
-<p>You can specify <strong>on</strong> and <strong>off</strong> events for the toggle. Default is <code>"on": "click"</code>.</p>
+<p>You can specify <strong>on</strong> and <strong>off</strong> events for the toggle. Default is <code>"on":
+  "click"</code>.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="">
     <div class="demo-text"><code>"on": "mouseenter"</code> <code>"off": "mouseleave"</code>.</div>
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle='{"on": "mouseenter", "off": "mouseleave"}'>
-  <button type="button" class="btn btn-primary-empty">
-    Toggle
-  </button>
-  <div class="alert alert-notice toggle-flex">
-    Target
-  </div>
-</div>
+      <div data-xt-toggle='{"on": "mouseenter", "off": "mouseleave"}'>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle
+        </button>
+        <div class="alert alert-notice toggle-flex">
+          Target
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <h2>Animations</h2>
 
-<p>To disable transition detect, use <code>"timing": 0</code>, or set a number in milliseconds for the on and off animations timing.</p>
-
-<h3>Classes</h3>
+<p>To disable transition detect, use <code>"timing": 0</code>, or set a number in milliseconds for the on and off
+  animations timing.</p>
 
 <p>On the <code>targets</code> use the animations classes to animate automatically on <code>.active</code>.</p>
 
@@ -448,26 +560,26 @@ $('div').xtToggle({"elements": ".element"});
 <div class="demo">
   <div class="demo-item demo-preview" data-name="">
     <div class="demo-source" data-lang="html">
-<div data-xt-toggle='{"max": "Infinity"}'>
-  <button type="button" class="btn btn-primary-empty">
-    anim-horizontal
-  </button>
-  <button type="button" class="btn btn-primary-empty">
-    anim-vertical
-  </button>
-  <button type="button" class="btn btn-primary-empty">
-    no-anim
-  </button>
-  <div class="alert alert-notice toggle-flex anim-horizontal">
-    Target 0
-  </div>
-  <div class="alert alert-notice toggle-flex anim-vertical">
-    Target 1
-  </div>
-  <div class="alert alert-notice toggle-flex no-anim">
-    Target 3
-  </div>
-</div>
+      <div data-xt-toggle='{"max": "Infinity"}'>
+        <button type="button" class="btn btn-primary-empty">
+          anim-horizontal
+        </button>
+        <button type="button" class="btn btn-primary-empty">
+          anim-vertical
+        </button>
+        <button type="button" class="btn btn-primary-empty">
+          no-anim
+        </button>
+        <div class="alert alert-notice toggle-flex anim-horizontal">
+          Target 0
+        </div>
+        <div class="alert alert-notice toggle-flex anim-vertical">
+          Target 1
+        </div>
+        <div class="alert alert-notice toggle-flex no-anim">
+          Target 3
+        </div>
+      </div>
     </div>
   </div>
 </div>

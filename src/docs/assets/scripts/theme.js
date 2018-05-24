@@ -12,6 +12,8 @@ const formatCode = function (source, lang) {
   let text = source.innerHTML;
   if (lang === 'css' || lang === 'js') {
     text = text.replace(/<[^>]*>/g, '');
+    // replace entities
+    text = text.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
   }
   if (text.match(/[&<>]/g)) {
     // replace quote entities

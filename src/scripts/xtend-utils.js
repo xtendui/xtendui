@@ -27,21 +27,21 @@ XtUtil.currents = {};
 /**
  * init all data-xt classes
  */
-XtUtil.initAll = function () {
+XtUtil.initAll = function (container = document) {
   // xt-toggle
-  for (let el of document.querySelectorAll('[data-xt-toggle]')) {
+  for (let el of container.querySelectorAll('[data-xt-toggle]')) {
     new XtToggle(el);
   }
   // xt-drop
-  for (let el of document.querySelectorAll('[data-xt-drop]')) {
+  for (let el of container.querySelectorAll('[data-xt-drop]')) {
     new XtDrop(el);
   }
   // xt-overlay
-  for (let el of document.querySelectorAll('[data-xt-overlay]')) {
+  for (let el of container.querySelectorAll('[data-xt-overlay]')) {
     new XtOverlay(el);
   }
   // xt-scroll
-  for (let el of document.querySelectorAll('[data-xt-sticky]')) {
+  for (let el of container.querySelectorAll('[data-xt-sticky]')) {
     new XtSticky(el);
   }
 };
