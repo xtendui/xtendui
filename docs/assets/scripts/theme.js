@@ -37,7 +37,6 @@ const formatCode = function (source, lang) {
   // remove newline at start and end
   text = text.replace(/^\s+|\s+$/g, '');
   // return
-  console.log(text);
   return text;
 };
 
