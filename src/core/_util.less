@@ -2,6 +2,16 @@
 // various
 //////////////////////
 
+.design-setup {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .clearfix {
   &:before,
   &:after {
@@ -481,6 +491,20 @@
   }
 }
 
+.flex-space-y(@name, @breakpoint:none) when (default()) {
+  @arr: ~"flex-space-@{name}";
+  @vertical: extract(@@arr, 1);
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    margin-top: -@vertical;
+    margin-bottom: -@vertical;
+    > * {
+      padding-top: @vertical;
+      padding-bottom: @vertical;
+    }
+  }
+}
+
 .flex-space-x(@name, @breakpoint:none) when (@breakpoint = none) {
   @arr: ~"flex-space-@{name}";
   @horizontal: extract(@@arr, 2);
@@ -489,6 +513,20 @@
   > * {
     padding-left: @horizontal;
     padding-right: @horizontal;
+  }
+}
+
+.flex-space-x(@name, @breakpoint:none) when (default()) {
+  @arr: ~"flex-space-@{name}";
+  @horizontal: extract(@@arr, 2);
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    margin-left: -@horizontal;
+    margin-right: -@horizontal;
+    > * {
+      padding-left: @horizontal;
+      padding-right: @horizontal;
+    }
   }
 }
 
@@ -532,6 +570,20 @@
   }
 }
 
+.list-space-y(@name, @breakpoint:none) when (default()) {
+  @arr: ~"list-space-@{name}";
+  @vertical: extract(@@arr, 1);
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    margin-top: -@vertical;
+    margin-bottom: -@vertical;
+    > * {
+      margin-top: @vertical;
+      margin-bottom: @vertical;
+    }
+  }
+}
+
 .list-space-x(@name, @breakpoint:none) when (@breakpoint = none) {
   @arr: ~"list-space-@{name}";
   @horizontal: extract(@@arr, 2);
@@ -540,6 +592,20 @@
   > * {
     margin-left: @horizontal;
     margin-right: @horizontal;
+  }
+}
+
+.list-space-x(@name, @breakpoint:none) when (default()) {
+  @arr: ~"list-space-@{name}";
+  @horizontal: extract(@@arr, 2);
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    margin-left: -@horizontal;
+    margin-right: -@horizontal;
+    > * {
+      margin-left: @horizontal;
+      margin-right: @horizontal;
+    }
   }
 }
 
@@ -557,6 +623,7 @@
   @arr: ~"list-space-@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
+  @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     margin: -@vertical -@horizontal;
     > * {

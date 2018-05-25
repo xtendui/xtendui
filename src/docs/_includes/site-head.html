@@ -39,7 +39,7 @@
                   </a>
                 </div>
                 <div>
-                  <button type="button" class="btn btn-primary btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
+                  <button type="button" class="btn btn-primary btn-nodesign btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
                     {% if page.collection %}
                       {{ page.collection | capitalize }}
                     {% else %}
@@ -72,7 +72,7 @@
                       </a>
                     </div>
                     <div>
-                      <button type="button" class="btn btn-primary btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
+                      <button type="button" class="btn btn-primary btn-nodesign btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
                         {% if page.collection %}
                           {{ page.collection | capitalize }}
                         {% else %}
@@ -95,18 +95,18 @@
                 {% for collection in site.collections %}
                   {% if site.[collection.label].size > 0 %}
                     {% assign sorted = site.[collection.label] | sort: 'order' %}
-                    <a href="{{ site.baseurl }}{{ sorted[0].url }}" class="btn btn-primary make-line">
+                    <a href="{{ site.baseurl }}{{ sorted[0].url }}" class="btn btn-primary btn-nodesign make-line">
                         {{ collection.label }}
                     </a>
                   {% endif %}
                 {% endfor %}
-                <a href="{{ site.baseurl }}/" class="btn btn-primary make-line">
+                <a href="{{ site.baseurl }}/" class="btn btn-primary btn-nodesign make-line">
                     Playground
                 </a>
-                <a href="{{ site.baseurl }}/" class="btn btn-primary make-line">
+                <a href="{{ site.baseurl }}/" class="btn btn-primary btn-nodesign make-line">
                     Inspirations
                 </a>
-                <a href="{{ site.baseurl }}/faq/" class="btn btn-primary make-line">
+                <a href="{{ site.baseurl }}/faq/" class="btn btn-primary btn-nodesign make-line">
                     Faq
                 </a>
 
@@ -148,7 +148,7 @@
                         {% for p in sorted %}
                           {% if p.categories[0] == collection.label %}
                             <div class="site-breadcrumbs-body-main">
-                              <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary">
+                              <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary btn-nodesign">
                                 {{ p.title }}
                               </a>
                               {% assign subsorted = site.[collection.label] | where: 'categories', p.title | sort: 'order' %}
@@ -156,7 +156,7 @@
                                 {% if subsorted.size > 0 %}
                                   <div class="site-breadcrumbs-body-sub-inner">
                                     {% for pa in subsorted %}
-                                    <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn-primary">
+                                    <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn-primary btn-nodesign">
                                       {{ pa.title }}
                                     </a>
                                     {% endfor %}
@@ -174,18 +174,18 @@
                   <div class="site-breadcrumbs-meta flex flex-space-none align-items-center">
 
                     <div>
-                      <a href="{{ site.download }}" target="_blank" class="btn btn-primary btn-icon">
+                      <a href="{{ site.download }}" target="_blank" class="btn btn-primary btn-icon btn-nodesign">
                         <span class="icon-download icon-big"></span>
                       </a>
                     </div>
                     <div>
-                      <a href="{{ site.github }}" target="_blank" class="btn btn-primary btn-icon">
+                      <a href="{{ site.github }}" target="_blank" class="btn btn-primary btn-icon btn-nodesign">
                         <span class="icon-github icon-big"></span>
                       </a>
                     </div>
 
                     <div class="show-sticky">
-                      <button type="button" class="btn btn-primary btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
+                      <button type="button" class="btn btn-primary btn-nodesign btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
                         {% if page.collection %}
                           {{ page.collection | capitalize }}
                         {% else %}

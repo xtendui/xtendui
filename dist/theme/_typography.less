@@ -133,10 +133,13 @@ small {
 code {
   margin: 0 .05em;
   padding: .05em .05em;
-  background-color: @grey-250;
+  background-color: fade(@black, 6%);
   .font-monospace();
   font-size: .9em;
   color: @grey-750;
+  .table-stripe tbody tr:nth-of-type(odd) & {
+    background-color: fade(@white, 18%);
+  }
 }
 
 pre {
@@ -160,16 +163,20 @@ pre {
 // .inverse
 
 .inverse {
-  color: @white;
+  color: @text-inverse;
   h1, h2, h3, h4, h5, h6 {
-    color: @white;
+    color: @text-inverse;
+  }
+  code {
+    background-color: fade(@white, 18%);
+    color: @text-inverse;
   }
   a:not(.btn), .alink, .btn-link {
-    color: @white !important;
+    color: @text-inverse !important;
     text-decoration: underline !important;
   }
   .btn {
-    color: @white !important;
+    color: @text-inverse !important;
   }
 }
 

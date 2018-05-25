@@ -77,6 +77,7 @@
 
 // z-index
 
+@index-btn: 0;
 @index-btn-active: 1;
 @index-loader: 11;
 @index-sticky: 100;
@@ -176,13 +177,14 @@
 
 // beziers
 
-@bez: @bezier-swoosh;
-@bez-in: @bezier-swoosh-in;
-@bez-out: @bezier-swoosh-out;
+@bez-in: @bezier-ease;
+@bez-out: @bezier-ease;
 
-@bezier-swoosh: cubic-bezier(.96, .1, .14, .88);
-@bezier-swoosh-in: cubic-bezier(0.645, 0.045, 0.355, 1.000);
-@bezier-swoosh-out: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+@bezier-ease: ease; // others at https://easings.net/
+@bezier-tiger: cubic-bezier(.96, .1, .14, .88);
+@bezier-cat: cubic-bezier(.77, 0, .175, 1); // https://www.notanotherbill.com/gifts/gifts-for-all
+@bezier-frog-in: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+@bezier-frog-out: cubic-bezier(0.550, 0.055, 0.675, 0.190);
 
 //////////////////////
 // grid

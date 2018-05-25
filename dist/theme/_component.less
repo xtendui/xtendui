@@ -49,10 +49,10 @@ a, .alink {
 
 .links-inverse {
   a, .alink, .btn-link {
-    color: @white;
+    color: @text-inverse;
     text-decoration: underline;
     &:hover, &:active, &.active {
-      color: darken(@white, @perc-xs);
+      color: darken(@text-inverse, @perc-xs);
     }
   }
 }
@@ -63,20 +63,44 @@ a, .alink {
 
 .btn {
   // styles
-  border-radius: @border-radius;
-  border-width: @btn-border-width;
-  border-style: solid;
-  border-color: transparent;
   .font-sans-semibold();
   line-height: 1.25;
   letter-spacing: .075em;
   text-transform: uppercase;
+  &:before {
+    .design-setup();
+    border-radius: @border-radius;
+    border-width: @btn-border-width;
+    border-style: solid;
+    border-color: transparent;
+  }
   // options
   .btn-medium(); // size
-  // animations
+}
+
+// animations
+
+.btn {
   .transition-default.out();
-  &:hover, &:active, &.active {
+  &:before {
+    .transition-default.out();
+    transform: scale(1);
+  }
+  &:hover {
     .transition-default.active();
+    &:before {
+      .transition-default.active();
+      transform: scale(1.06, 1.08);
+      transition-duration: @time-small;
+    }
+  }
+  &:active, &.active {
+    .transition-default.active();
+    &:before {
+      .transition-default.active();
+      transform: scale(1);
+      transition-duration: @time-small;
+    }
   }
 }
 
@@ -84,61 +108,81 @@ a, .alink {
 
 .btn-primary {
   .link-none();
-  border-color: @primary;
-  background-color: @primary;
   color: fade(@text-inverse, @perc-xl);
+  &:before {
+    border-color: @primary;
+    background-color: @primary;
+  }
   &:hover, &:active, &.active {
-    background-color: lighten(@primary, @perc-xs);
     color: @text-inverse;
+    &:before {
+      background-color: lighten(@primary, @perc-xs);
+    }
   }
   &:active, &.active {
-    border-color: @primary;
-    box-shadow: 0 3px 10px 1px fade(@black, @perc-sm);
+    &:before {
+      border-color: @primary;
+    }
   }
 }
 
 .btn-primary-empty {
   .link-none();
-  border-color: transparent;
-  background-color: transparent;
   color: @primary;
+  &:before {
+    border-color: transparent;
+    background-color: transparent;
+  }
   &:hover, &:active, &.active {
-    background-color: lighten(@primary, @perc-xs);
     color: @text-inverse;
+    &:before {
+      background-color: lighten(@primary, @perc-xs);
+    }
   }
   &:active, &.active {
-    border-color: @primary;
-    box-shadow: 0 3px 10px 1px fade(@black, @perc-sm);
+    &:before {
+      border-color: @primary;
+    }
   }
 }
 
 .btn-secondary {
   .link-none();
-  border-color: @secondary;
-  background-color: @secondary;
   color: fade(@text, @perc-xl);
+  &:before {
+    border-color: @secondary;
+    background-color: @secondary;
+  }
   &:hover, &:active, &.active {
-    background-color: lighten(@secondary, @perc-xs);
     color: @text;
+    &:before {
+      background-color: lighten(@secondary, @perc-xs);
+    }
   }
   &:active, &.active {
-    border-color: @secondary;
-    box-shadow: 0 3px 10px 1px fade(@black, @perc-sm);
+    &:before {
+      border-color: @secondary;
+    }
   }
 }
 
 .btn-secondary-empty {
   .link-none();
-  border-color: transparent;
-  background-color: transparent;
   color: fade(@text, @perc-xl);
+  &:before {
+    border-color: transparent;
+    background-color: transparent;
+  }
   &:hover, &:active, &.active {
-    background-color: lighten(@secondary, @perc-xs);
     color: @text;
+    &:before {
+      background-color: lighten(@secondary, @perc-xs);
+    }
   }
   &:active, &.active {
-    border-color: @secondary;
-    box-shadow: 0 3px 10px 1px fade(@black, @perc-sm);
+    &:before {
+      border-color: @secondary;
+    }
   }
 }
 
@@ -150,16 +194,18 @@ a, .alink {
   letter-spacing: inherit !important;
   text-transform: inherit !important;
   // reset .btn styles
-  border: 0 !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
+  &:before {
+    border: 0 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
 }
 
 // size
 
 .btn-tiny {
-  padding: .6em 1.2em;
-  font-size: 1.1rem;
+  padding: .5em 1em;
+  font-size: 10px;
 }
 
 .btn-small {
@@ -184,8 +230,16 @@ a, .alink {
 
 // special
 
+.btn-nodesign {
+  &:before {
+    display: none;
+  }
+}
+
 .btn-squared {
-  border-radius: 0;
+  &:before {
+    border-radius: 0;
+  }
 }
 
 .btn-tall {
@@ -231,35 +285,30 @@ a, .alink {
   text-transform: none;
 }
 
-.btn-text-only {
-  border: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  &:hover, &:active, &.active {
-    border: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-  }
-}
-
 // custom
 
 .btn-caret {
   .display(flex);
   .align-items-baseline();
   .justify-content-between();
-  .icon(@content: @icon-chevron-down, @size: @icon-small, @position: after);
-  &:after {
-    .icon-right();
+  span {
+    .icon(@content: @icon-chevron-down, @size: @icon-small, @position: after);
+    &:after {
+      .icon-right();
+    }
   }
   &.active {
-    .icon(@content: @icon-chevron-up, @size: @icon-small, @position: after);
+    span {
+      .icon(@content: @icon-chevron-up, @size: @icon-small, @position: after);
+    }
   }
 }
 
 .btn-close {
   .btn-primary-empty();
-  .icon(@content: @icon-close, @size: @icon-medium, @sr-only: true);
+  span {
+    .icon(@content: @icon-close, @size: @icon-medium, @sr-only: true);
+  }
 }
 
 //////////////////////
@@ -279,11 +328,14 @@ a, .alink {
   // styles
   > .drop-inner {
     .padding(y, 1.3rem); // vertical space
-    border-radius: @border-radius;
-    border-width: 1px;
-    border-style: solid;
-    border-color: transparent;
-    box-shadow: 0 3px 10px 1px fade(@black, @perc-sm);
+    &:before {
+      .design-setup();
+      border-radius: @border-radius;
+      border-width: 1px;
+      border-style: solid;
+      border-color: transparent;
+      box-shadow: 0 3px 10px 1px fade(@black, @perc-sm);
+    }
     > .list {
       .list-btn-all({ .btn-squared(); padding-left: 2.2rem; padding-right: 2.2rem; white-space: nowrap; }); // not overridable
     }
@@ -292,25 +344,63 @@ a, .alink {
   .drop-left(); // position
   .drop-bottom(); // position
   .drop-white(); // variant
-  // animations
-  .anim-vertical();
+}
+
+// animations
+
+.drop {
+  animation-duration: @time-big; // needed for .out animation timing
+  &.active {
+    > .drop-inner {
+      &:before {
+        .anim-zoom.active();
+      }
+      & > * {
+        .anim-vertical.active();
+        animation-delay: @time-small;
+        animation-fill-mode: forwards;
+        opacity: 0;
+      }
+    }
+  }
   &.out {
-    animation-fill-mode: forwards;
-    opacity: 1;
-    animation-delay: @time-small;
+    > .drop-inner {
+      &:before {
+        .anim-zoom.out();
+        animation-delay: @time-small;
+        animation-fill-mode: forwards;
+        opacity: 1;
+      }
+      & > * {
+        .anim-vertical.out();
+      }
+    }
   }
 }
+
 .drop-container {
   animation-duration: @time-big; // needed for .out animation timing
+  &.active {
+    .xt-backdrop {
+      .xt-backdrop.active();
+    }
+  }
+  &.out {
+    .xt-backdrop {
+      .xt-backdrop.out();
+    }
+  }
 }
 
 // variant
 
 .drop-primary {
   > .drop-inner {
-    border-color: darken(@primary, @perc-xs);
-    background-color: @primary;
     color: @text-inverse;
+    &:before {
+      border-color: darken(@primary, @perc-xs);
+      background-color: @primary;
+    }
     > .list-drop {
       .list-btn-default({ .btn-primary() });
     }
@@ -319,9 +409,11 @@ a, .alink {
 
 .drop-secondary {
   > .drop-inner {
-    border-color: darken(@secondary, @perc-xs);
-    background-color: @secondary;
     color: @text;
+    &:before {
+      border-color: darken(@secondary, @perc-xs);
+      background-color: @secondary;
+    }
     > .list-drop {
       .list-btn-default({ .btn-secondary() });
     }
@@ -330,9 +422,11 @@ a, .alink {
 
 .drop-white {
   > .drop-inner {
-    border-color: darken(@white, @perc-xs);
-    background-color: @white;
     color: @text;
+    &:before {
+      border-color: darken(@white, @perc-xs);
+      background-color: @white;
+    }
     > .list-drop {
       .list-btn-default({ .btn-primary-empty() });
     }
@@ -438,10 +532,13 @@ a, .alink {
       .anim-vertical.active();
       > .btn-close {
         .anim-opacity.active();
+        animation-delay: @time-medium;
         animation-fill-mode: forwards;
         opacity: 0;
-        animation-delay: @time-medium;
       }
+    }
+    .xt-backdrop {
+      .xt-backdrop.active();
     }
     &.overlay-screen {
       .anim-opacity.active();
@@ -463,6 +560,9 @@ a, .alink {
       > .btn-close {
         opacity: 0; // @FIX animation position because of parent fixed
       }
+    }
+    .xt-backdrop {
+      .xt-backdrop.out();
     }
     &.overlay-screen {
       .anim-opacity.out();
@@ -579,14 +679,12 @@ a, .alink {
   background-color: darken(@primary, @perc-md);
   // animations
   opacity: 0;
-  .active &,
   &.active {
     .animation-default.active();
     opacity: @backdrop-opacity;
     animation-name: anim-backdrop-in;
     animation-duration: @time-big;
   }
-  .out &,
   &.out {
     .animation-default.out();
     opacity: 0;

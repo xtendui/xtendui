@@ -29,7 +29,9 @@ a, .alink, .btn-link {
   vertical-align: middle;
   span {
     display: inline-block;
+    position: relative;
   }
+  z-index: @index-btn; // fix :before negative z-index
   &:active, &.active {
     z-index: @index-btn-active;
   }

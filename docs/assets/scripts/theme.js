@@ -58,8 +58,8 @@ for (let el of document.querySelectorAll('.site-article > h2, .site-article > h3
   el.classList.add('make-line');
 }
 for (let el of document.querySelectorAll('.make-line')) {
-  el.innerHTML = '<span class="line">' + el.innerHTML + '</div>';
-  el.innerHTML = '<span class="line-container">' + el.innerHTML + '</div>';
+  el.innerHTML = '<div class="line">' + el.innerHTML + '</div>';
+  el.innerHTML = '<div class="line-container">' + el.innerHTML + '</div>';
 }
 
 // .make-anchor
@@ -98,11 +98,11 @@ for (let el of document.querySelectorAll('.site-aside-text > .btn:not(.different
     if (element.tagName === 'H2') {
       let appendItem = XtUtil.createElement('<div class="site-aside-sub-container"></div>');
       container.append(appendItem);
-      appendItem.append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-site-aside-sub">' + element.textContent + '</a>'));
+      appendItem.append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-nodesign btn-site-aside-sub">' + element.textContent + '</a>'));
       appendItem.append(XtUtil.createElement('<div class="site-aside-subsub collapse-height"></div>'));
     } else if (element.tagName === 'H3') {
       var subs = container.querySelectorAll('.site-aside-subsub');
-      subs[subs.length - 1].append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-site-aside-subsub">' + element.textContent + '</a>'));
+      subs[subs.length - 1].append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-nodesign btn-site-aside-subsub">' + element.textContent + '</a>'));
     }
   }
 }
