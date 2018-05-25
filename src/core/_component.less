@@ -58,14 +58,6 @@ a, .alink, .btn-link {
   }
 }
 
-.drop-container-static {
-  position: static;
-  > .drop,
-  > .drop > .drop-inner {
-    width: 100%;
-  }
-}
-
 .drop {
   .toggle-flex();
   // styles
@@ -77,6 +69,16 @@ a, .alink, .btn-link {
   // others
   &.out {
     pointer-events: none;
+  }
+}
+
+// components
+
+.drop-container-static {
+  position: static;
+  > .drop,
+  > .drop > .drop-inner {
+    width: 100%;
   }
 }
 
@@ -187,38 +189,44 @@ a, .alink, .btn-link {
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: hidden;
 }
 
 .overlay {
-  // styles
   .display(flex);
   .flex-column();
   .flex-nowrap();
   .justify-content-center();
-  position: relative;
   margin: auto; // @FIX http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
   width: 100%;
   min-height: 100vh;
-  > .overlay-inner {
+}
+
+.overlay-inner {
+  position: relative;
+  z-index: @index-overlay !important;
+  width: 100%;
+  .align-self-center();
+  > .btn-close + * {
+    .margin(top, none) !important;
+  }
+}
+
+// screen
+
+.overlay-screen {
+  .overlay {
     position: relative;
     z-index: @index-overlay !important;
-    width: 100%;
-    .align-self-center;
-    > .btn-close + * {
-      .margin(top, none) !important;
+    max-width: none !important;
+    .overlay-inner {
+      position: static;
+      .padding(all, none) !important;
     }
   }
-  // screen
-  &.overlay-screen {
-    max-width: none !important;
-    > .overlay-inner {
-      position: static;
-      .padding(y, none) !important;
-      & + .xt-backdrop {
-        opacity: 0 !important;
-        animation: none !important;
-      }
+  &:not(.overlay-left):not(.overlay-right) {
+    .xt-backdrop {
+      opacity: 0 !important;
+      animation: none !important;
     }
   }
 }
@@ -227,14 +235,14 @@ a, .alink, .btn-link {
 
 .overlay-left {
   margin-right: auto;
-  > .overlay {
+  .overlay {
     .justify-content-start();
   }
 }
 
 .overlay-right {
   margin-left: auto;
-  > .overlay {
+  .overlay {
     .justify-content-start();
   }
 }

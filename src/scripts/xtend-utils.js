@@ -255,7 +255,7 @@ export {XtUtil};
 
 //////////////////////
 // scope polyfill (https://stackoverflow.com/questions/6481612/queryselector-search-immediate-children)
-// USAGE : querySelectorAll(':scope > .selector');
+// USAGE: querySelectorAll(':scope > .selector');
 //////////////////////
 
 (function (doc, proto) {
@@ -286,7 +286,7 @@ export {XtUtil};
 
 /*
 // .anim-load-fix
-// USAGE : <html class="anim-load-fix">
+// USAGE: <html class="anim-load-fix">
 
 .anim-load-fix {
 *, *:before, *:after {

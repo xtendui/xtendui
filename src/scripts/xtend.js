@@ -491,12 +491,16 @@ class Xt {
   specialBackdrop(el) {
     let options = this.options;
     if (options.backdrop) {
-      var elements = el.querySelectorAll(options.backdrop);
-      if (!elements.length) {
-        elements = this.object.querySelectorAll(options.backdrop);
-      }
-      if (!elements.length) {
+      let elements;
+      if (options.backdrop === 'object') {
         elements = XtUtil.arrSingle(this.object);
+      } else if (options.backdrop === 'targets') {
+        elements = XtUtil.arrSingle(el);
+      } else {
+        elements = el.querySelectorAll(options.backdrop);
+        if (!elements.length) {
+          elements = this.object.querySelectorAll(options.backdrop);
+        }
       }
       for (let element of elements) {
         let backdrop = element.querySelectorAll('.xt-backdrop');
@@ -822,6 +826,7 @@ XtDrop.defaults = {
   "targets": ":scope > .drop",
   "additional": ":scope > a, :scope > button",
   "class": "active",
+  "instant": { "elements": true },
   "on": "click",
   "onOutside": true, "onInside": true, "offOutside": true, "offInside": true,
   "min": 0,
@@ -859,12 +864,13 @@ XtOverlay.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > .overlay-outer",
   "class": "active",
+  "instant": { "elements": true },
   "on": "click",
   "min": 0,
   "max": 1,
   "appendTo": "body",
-  "backdrop": ":scope > .overlay",
-  "closeInside": ":scope > .overlay > .xt-backdrop, :scope > .overlay > .overlay-inner > .btn-close",
+  "backdrop": "targets",
+  "closeInside": ":scope > .xt-backdrop, :scope .overlay-inner > .btn-close",
   "scrollbar": true
 };
 

@@ -72,7 +72,10 @@ html.xt-scrollbar {
   body {
     overflow-y: hidden;
   }
-  .overlay-outer {
+  .overlay-outer:not(.overlay-screen) {
+    overflow-y: scroll;
+  }
+  .overlay-outer.overlay-screen .overlay {
     overflow-y: scroll;
   }
 }

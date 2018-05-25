@@ -315,13 +315,12 @@
 
 .site-menu {
   transition-delay: @time-small;
-  > .overlay {
+  // animations
+  animation: none !important;
+  opacity: 1 !important;
+  .overlay-inner {
     animation: none !important;
     opacity: 1 !important;
-    > .overlay-inner {
-      animation: none !important;
-      opacity: 1 !important;
-    }
   }
 }
 
@@ -330,11 +329,11 @@
     .btn {
       .line-container {
         .anim-left.active();
-        animation-delay: @time-medium + 300ms; // default delay @start + @child * @increment
+        animation-delay: none; // default delay @start + @child * @increment
         animation-fill-mode: forwards;
         opacity: 0;
       }
-      .nth-child(@child: 6, @start: @time-medium, @increment: 50ms, @decrement: 0ms, { .line-container {
+      .nth-child(@child: 6, @start: @time-medium, @increment: 20ms, @decrement: 0ms, { .line-container {
         @nth-child-animation-delay();
       } });
     }
@@ -346,11 +345,11 @@
     .btn {
       .line-container {
         .anim-right.out();
-        animation-delay: 300ms; // default delay @start + @child * @increment
+        animation-delay: 120ms; // default delay @start + @child * @increment
         animation-fill-mode: forwards;
         opacity: 1;
       }
-      .nth-child(@child: 6, @start: 0, @increment: 50ms, @decrement: 0ms, { .line-container {
+      .nth-child(@child: 6, @start: 0, @increment: 20ms, @decrement: 0ms, { .line-container {
         @nth-child-animation-delay();
       } });
     }

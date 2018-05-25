@@ -56,8 +56,8 @@
           </div>
         </div>
 
-        <nav class="site-menu overlay-outer collapse-height" id="site-menu">
-          <div class="overlay overlay-primary overlay-screen overlay-size-medium">
+        <nav class="site-menu overlay-outer overlay-primary overlay-screen overlay-size-medium collapse-height" id="site-menu">
+          <div class="overlay">
             <div class="overlay-inner">
 
               <div class="site-header-top">
@@ -570,6 +570,7 @@
       "targets": ":scope > .drop",
       "additional": ":scope > a, :scope > button",
       "class": "active",
+      "instant": { "elements": true },
       "on": "click",
       "onOutside": true, "onInside": true, "offOutside": true, "offInside": true,
       "min": 0,
@@ -589,12 +590,13 @@
       "elements": ":scope > a, :scope > button",
       "targets": ":scope > .overlay-outer",
       "class": "active",
+      "instant": { "elements": true },
       "on": "click",
       "min": 0,
       "max": 1,
       "appendTo": "body",
-      "backdrop": ":scope > .overlay",
-      "closeInside": ":scope > .overlay > .xt-backdrop, :scope > .overlay > .overlay-inner > .btn-close",
+      "backdrop": "targets",
+      "closeInside": ":scope > .xt-backdrop, :scope .overlay-inner > .btn-close",
       "scrollbar": true
     };
   </code>

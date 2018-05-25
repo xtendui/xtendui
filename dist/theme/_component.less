@@ -375,7 +375,7 @@ a, .alink {
 
 .overlay {
   // styles
-  > .overlay-inner {
+  .overlay-inner {
     padding: 3rem;
     @media @min-sm {
       padding: 4rem;
@@ -384,7 +384,7 @@ a, .alink {
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
-    box-shadow: 0 3px 10px 1px fade(@black, @perc-sm);
+    box-shadow: 0 3px 100px 1px fade(@black, @perc-sm);
     // .btn-close
     > .btn-close {
       position: absolute;
@@ -394,23 +394,97 @@ a, .alink {
       .btn-icon();
     }
   }
-  // screen
-  &.overlay-screen {
-    > .overlay-inner {
-      padding-left: 0;
-      padding-right: 0;
+  // options
+  .overlay-size(small); // size
+  .overlay-white(); // variant
+}
+
+// components
+
+.overlay-screen {
+  // styles
+  .overlay {
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    box-shadow: 0 3px 100px 1px fade(@black, @perc-sm);
+    .overlay-inner {
       box-shadow: none;
     }
   }
   // options
-  .overlay-size(small); // width
+  .overlay-size(giant); // size
   .overlay-white(); // variant
+  .overlay-squared();
+  .overlay-noborder();
+}
+
+.overlay-left {
+  // styles
+  max-width: 510px !important;
+}
+
+.overlay-right {
+  // styles
+  max-width: 510px !important;
+}
+
+// animations
+
+.overlay-outer {
+  animation-duration: @time-big; // needed for .out animation timing
+  &.active {
+    .overlay-inner {
+      .anim-vertical.active();
+      > .btn-close {
+        .anim-opacity.active();
+        animation-fill-mode: forwards;
+        opacity: 0;
+        animation-delay: @time-medium;
+      }
+    }
+    &.overlay-screen {
+      .anim-opacity.active();
+    }
+    &.overlay-left {
+      .overlay-inner {
+        .anim-left.active();
+      }
+    }
+    &.overlay-right {
+      .overlay-inner {
+        .anim-right.active();
+      }
+    }
+  }
+  &.out {
+    .overlay-inner {
+      .anim-vertical.out();
+      > .btn-close {
+        opacity: 0; // @FIX animation position because of parent fixed
+      }
+    }
+    &.overlay-screen {
+      .anim-opacity.out();
+    }
+    &.overlay-left {
+      .overlay-inner {
+        .anim-left.out();
+      }
+    }
+    &.overlay-right {
+      .overlay-inner {
+        .anim-right.out();
+      }
+    }
+  }
 }
 
 // variant
 
 .overlay-primary {
-  > .overlay-inner, &.overlay-screen {
+  .overlay-inner,
+  &.overlay-screen .overlay {
     border-color: @primary;
     background-color: @primary;
     color: @text-inverse;
@@ -421,7 +495,8 @@ a, .alink {
 }
 
 .overlay-secondary {
-  > .overlay-inner, &.overlay-screen {
+  .overlay-inner,
+  &.overlay-screen .overlay {
     border-color: @secondary;
     background-color: @secondary;
     color: @text;
@@ -432,7 +507,8 @@ a, .alink {
 }
 
 .overlay-white {
-  > .overlay-inner, &.overlay-screen {
+  .overlay-inner,
+  &.overlay-screen .overlay {
     border-color: @white;
     background-color: @white;
     color: @text;
@@ -445,7 +521,8 @@ a, .alink {
 // special
 
 .overlay-squared {
-  > .overlay-inner {
+  .overlay-inner,
+  &.overlay-screen .overlay {
     border-radius: 0;
     > .btn-close {
       .btn-squared();
@@ -454,99 +531,16 @@ a, .alink {
 }
 
 .overlay-noborder {
-  > .overlay-inner {
+  .overlay-inner,
+  &.overlay-screen .overlay {
     border: 0;
   }
 }
 
 .overlay-none {
-  > .overlay-inner {
+  .overlay-inner,
+  &.overlay-screen .overlay {
     padding: 0 !important;
-  }
-}
-
-// animations
-
-.overlay-outer {
-  animation-duration: @time-big; // needed for .out animation timing
-  &.active {
-    > .overlay {
-      &.overlay-screen {
-        .anim-opacity.active();
-      }
-      > .overlay-inner {
-        .anim-vertical.active();
-        > .btn-close {
-          .anim-opacity.active();
-          animation-fill-mode: forwards;
-          opacity: 0;
-          animation-delay: @time-medium;
-        }
-      }
-    }
-  }
-  &.out {
-    > .overlay {
-      &.overlay-screen {
-        .anim-opacity.out();
-      }
-      > .overlay-inner {
-        .anim-vertical.out();
-        > .btn-close {
-          opacity: 0;
-        }
-      }
-    }
-  }
-}
-
-// position
-
-.overlay-left {
-  // styles
-  max-width: 510px !important;
-  box-shadow: 0 3px 100px 1px fade(@black, @perc-sm);
-  // animations
-  &.active {
-    &:before {
-      .anim-left.active();
-    }
-    > .overlay {
-      > .overlay-inner {
-        .anim-left.active();
-      }
-    }
-  }
-  &.out {
-    .anim-left.out();
-    > .overlay {
-      > .overlay-inner {
-        .anim-left.out();
-      }
-    }
-  }
-}
-
-.overlay-right {
-  // styles
-  max-width: 510px !important;
-  box-shadow: 0 3px 100px 1px fade(@black, @perc-sm);
-  // animations
-  &.active {
-    .anim-right.active();
-    > .overlay {
-      > .overlay-inner {
-        .anim-right.active();
-      }
-    }
-  }
-  &.out {
-    .anim-right.out();
-    > .overlay {
-      > .overlay-inner {
-        .anim-right.out();
-      }
-    }
   }
 }
 

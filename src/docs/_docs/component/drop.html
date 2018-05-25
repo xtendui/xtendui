@@ -29,11 +29,6 @@ description: Dropdown component with structured theming that can show anything.
 <p class="alert">For customizing the interactions read the documentation of <a
   href="{% link _docs/javascript/toggle.html %}#drop">toggle drop</a>.</p>
 
-<h2>Variables</h2>
-
-<p class="alert">Read the documentation of <a href="{% link _docs/introduction/variables.html %}#component">component's
-  variables</a>.</p>
-
 <h3>Drop of anything</h3>
 
 <p>You can use drop to make a dropdown with inside anything. For example we use a <a
@@ -244,6 +239,11 @@ description: Dropdown component with structured theming that can show anything.
   </div>
 </div>
 
+<h2>Variables</h2>
+
+<p class="alert">Read the documentation of <a href="{% link _docs/introduction/variables.html %}#component">component's
+  variables</a>.</p>
+
 <h2>Options</h2>
 
 <h3>Variants</h3>
@@ -418,7 +418,7 @@ description: Dropdown component with structured theming that can show anything.
 <div class="demo">
   <div class="demo-item demo-preview" data-name="max-height">
     <div class="demo-text"><code>.drop-max-height</code></div>
-    <div class="demo-source" data-lang="html">
+    <div class="demo-source demo-drops" data-lang="html">
       <div style="position: relative;">
         <div class="drop-container" data-xt-drop>
           <button type="button" class="btn btn-primary">
@@ -457,7 +457,7 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item demo-preview" data-name="max-width">
     <div class="demo-text"><code>.drop-max-width</code></div>
-    <div class="demo-source" data-lang="html">
+    <div class="demo-source demo-drops" data-lang="html">
       <div style="position: relative;">
         <div class="drop-container" data-xt-drop>
           <button type="button" class="btn btn-primary">
@@ -496,7 +496,7 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item demo-preview" data-name="both">
     <div class="demo-text"><code>.drop-max-height</code> <code>.drop-max-width</code></div>
-    <div class="demo-source" data-lang="html">
+    <div class="demo-source demo-drops" data-lang="html">
       <div style="position: relative;">
         <div class="drop-container" data-xt-drop>
           <button type="button" class="btn btn-primary">
@@ -1067,6 +1067,8 @@ description: Dropdown component with structured theming that can show anything.
   </div>
 </div>
 
+<h2>Components</h2>
+
 <h3>Static</h3>
 
 <p>Drop position relative to closest element with <code>position: relative;</code>.</p>
@@ -1163,7 +1165,7 @@ description: Dropdown component with structured theming that can show anything.
   <div class="demo-item demo-preview" data-name="backdrop">
     <div class="demo-source" data-lang="html">
       <div class="list list-space-small align-items-center demo-source-from">
-        <div class="drop-container" data-xt-drop='{"backdrop": true}'>
+        <div class="drop-container" data-xt-drop='{"backdrop": "object"}'>
           <button type="button" class="btn btn-primary">
             bottom left
           </button>
@@ -1184,7 +1186,7 @@ description: Dropdown component with structured theming that can show anything.
           </div>
         </div>
 
-        <div class="drop-container" data-xt-drop='{"backdrop": true}'>
+        <div class="drop-container" data-xt-drop='{"backdrop": "object"}'>
           <button type="button" class="btn btn-primary">
             middle center
           </button>
@@ -1205,7 +1207,7 @@ description: Dropdown component with structured theming that can show anything.
           </div>
         </div>
 
-        <div class="drop-container" data-xt-drop='{"backdrop": true}'>
+        <div class="drop-container" data-xt-drop='{"backdrop": "object"}'>
           <button type="button" class="btn btn-primary">
             after middle-top
           </button>
@@ -1260,7 +1262,7 @@ description: Dropdown component with structured theming that can show anything.
           </div>
         </div>
 
-        <div class="drop-container" data-xt-drop='{"on": "mouseenter", "off": "mouseleave", "backdrop": true}'>
+        <div class="drop-container" data-xt-drop='{"on": "mouseenter", "off": "mouseleave", "backdrop": "object"}'>
           <button type="button" class="btn btn-primary">
             Backdrop
           </button>
