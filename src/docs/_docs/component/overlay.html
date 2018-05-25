@@ -575,3 +575,84 @@ description: Component to show modal elements inside the page.
     </div>
   </div>
 </div>
+
+<h3>Playground</h3>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="left">
+    <div class="demo-text"><code>.overlay-message</code></div>
+    <div class="demo-source demo-drops" data-lang="html">
+      <div class="list list-space-small align-items-center demo-source-from">
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            left
+          </button>
+          <div class="overlay-outer overlay-screen overlay-left">
+            <div class="overlay-message">
+              <div class="btn btn-primary btn-small overlay-dismiss">
+                close message
+              </div>
+            </div>
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"></button>
+                <h2>Lorem ipsum</h2>
+                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                  ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                  justo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            right
+          </button>
+          <div class="overlay-outer overlay-screen overlay-right">
+            <div class="overlay-message">
+              <div class="btn btn-primary btn-small overlay-dismiss">
+                close message
+              </div>
+            </div>
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"></button>
+                <h2>Lorem ipsum</h2>
+                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                  ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                  justo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-source" data-lang="css">
+        <style>
+          .overlay-message {
+            position: absolute;
+            z-index: 200; /* z-index: @index-overlay !important; */
+            top: 50%;
+            width: calc(100vw - 510px);
+            text-align: center;
+            /*
+            @media @max-sm {
+              display: none;
+            }
+            */
+          }
+          /* todo inside .overlay-message */
+          .overlay-left .overlay-message {
+            left: 100%;
+          }
+          .overlay-right .overlay-message {
+            right: 100%;
+          }
+        </style>
+      </div>
+    </div>
+  </div>
+</div>

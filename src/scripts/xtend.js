@@ -354,6 +354,7 @@ class Xt {
       self.activationOnAnimate(el, type);
       // specials
       if (type === 'targets') {
+        self.specialClassHtmlOn();
         self.specialBackdrop(el);
         self.specialCenterOn(el);
         self.specialMiddleOn(el);
@@ -412,6 +413,7 @@ class Xt {
       }
       // specials
       if (type === 'targets') {
+        self.specialClassHtmlOff();
         self.specialCollapseOff(el);
         self.specialCloseOff(el);
       }
@@ -469,6 +471,28 @@ class Xt {
   //////////////////////
   // activation specials
   //////////////////////
+
+  /**
+   * add html class
+   */
+  specialClassHtmlOn() {
+    let options = this.options;
+    if (options.classHtml) {
+      var container = document.documentElement;
+      container.classList.add(...options.classHtml.split(' '));
+    }
+  }
+
+  /**
+   * remove html class
+   */
+  specialClassHtmlOff() {
+    let options = this.options;
+    if (options.classHtml) {
+      var container = document.documentElement;
+      container.classList.remove(...options.classHtml.split(' '));
+    }
+  }
 
   /**
    * backdrop append to element
@@ -856,7 +880,7 @@ XtOverlay.defaults = {
   "max": 1,
   "appendTo": "body",
   "backdrop": "targets",
-  "closeInside": ":scope > .xt-backdrop, :scope .overlay-inner > .btn-close",
+  "closeInside": ".overlay-dismiss, :scope > .xt-backdrop, :scope .overlay-inner > .btn-close",
   "scrollbar": true
 };
 
