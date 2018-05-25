@@ -576,10 +576,11 @@ description: Component to show modal elements inside the page.
   </div>
 </div>
 
+<!--
 <h3>Playground</h3>
 
 <div class="demo">
-  <div class="demo-item demo-preview" data-name="left">
+  <div class="demo-item demo-preview" data-name="message">
     <div class="demo-text"><code>.overlay-message</code></div>
     <div class="demo-source demo-drops" data-lang="html">
       <div class="list list-space-small align-items-center demo-source-from">
@@ -644,16 +645,79 @@ description: Component to show modal elements inside the page.
             }
             */
           }
-          /* todo inside .overlay-message */
+          /* todo refactor */
+          /* todo animations */
           .overlay-left .overlay-message {
             left: 100%;
           }
           .overlay-right .overlay-message {
             right: 100%;
           }
-          /* todo animations */
         </style>
       </div>
     </div>
   </div>
 </div>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="classHtml">
+    <div class="demo-text"><code>"classHtml"</code></div>
+    <div class="demo-source demo-drops" data-lang="html">
+      <div class="list list-space-small align-items-center demo-source-from">
+        <div data-xt-overlay='{"classHtml": "xt-overlay xt-overlay-left"}'>
+          <button type="button" class="btn btn-primary">
+            left
+          </button>
+          <div class="overlay-outer overlay-screen overlay-left">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"></button>
+                <h2>Lorem ipsum</h2>
+                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                  ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                  justo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div data-xt-overlay='{"classHtml": "xt-overlay xt-overlay-right"}'>
+          <button type="button" class="btn btn-primary">
+            right
+          </button>
+          <div class="overlay-outer overlay-screen overlay-right">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"></button>
+                <h2>Lorem ipsum</h2>
+                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                  ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                  justo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-source" data-lang="css">
+        <style>
+          .site-main { /* todo selector variable */
+            .transition-default.out();
+            transform: translateX(0);
+            html.xt-overlay-left & {
+              .transition-default.active();
+              transform: translateX(@anim-big);
+            }
+            html.xt-overlay-right & {
+              .transition-default.active();
+              transform: translateX(-@anim-big);
+            }
+          }
+        </style>
+      </div>
+    </div>
+  </div>
+</div>
+-->
