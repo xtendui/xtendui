@@ -130,27 +130,13 @@ class Xt {
   initEvents() {
     let self = this;
     let options = this.options;
-    // check
-    let checkOutside = function (e, targets) {
-      let result = false;
-      for (let t of targets) {
-        if (XtUtil.checkOutside(e, t)) {
-          result = true;
-        }
-      }
-      return result;
-    };
     // on and off
     for (let el of this.elements) {
       if (options.on) {
         el.xtUtilOff(options.on + '.xtend');
         el.xtUtilOn(options.on + '.xtend', function (e) {
           if (options.onOutside) {
-            if (checkOutside(e, self.container.querySelectorAll(options.targets))) {
-              self.eventOn(this);
-            }
-          } else if (options.onInside) {
-            if (checkInside(e, self.container.querySelectorAll(options.targets))) {
+            if (XtUtil.checkOutside(e, self.container.querySelectorAll(options.targets))) {
               self.eventOn(this);
             }
           } else {
@@ -161,10 +147,10 @@ class Xt {
       if (options.off) {
         el.xtUtilOff(options.off + '.xtend');
         el.xtUtilOn(options.off + '.xtend', function (e) {
-          if (options.offOutside && checkOutside(e, self.container.querySelectorAll(options.targets))) {
-            self.eventOff(this);
-          } else if (options.offInside && checkInside(e, self.container.querySelectorAll(options.targets))) {
-            self.eventOn(this);
+          if (options.offOutside) {
+            if (XtUtil.checkOutside(e, self.container.querySelectorAll(options.targets))) {
+              self.eventOff(this);
+            }
           } else {
             self.eventOff(this);
           }
@@ -633,7 +619,7 @@ class Xt {
         for (let closeElement of closeElements) {
           closeElement.xtUtilOff('click.xtend.' + self.namespace);
           closeElement.xtUtilOn('click.xtend.' + self.namespace, function (e) {
-            if (XtUtil.checkInside(e, this)) {
+            if (XtUtil.checkInside(e, XtUtil.arrSingle(this))) {
               self.eventOff(toggle);
             }
           });
@@ -647,7 +633,7 @@ class Xt {
         for (let closeElement of closeElements) {
           closeElement.xtUtilOff('click.xtend.' + self.namespace);
           closeElement.xtUtilOn('click.xtend.' + self.namespace, function (e) {
-            if (XtUtil.checkOutside(e, el)) {
+            if (XtUtil.checkOutside(e, XtUtil.arrSingle(el))) {
               self.eventOff(toggle);
             }
           });
@@ -828,7 +814,7 @@ XtDrop.defaults = {
   "class": "active",
   "instant": { "elements": true },
   "on": "click",
-  "onOutside": true, "onInside": true, "offOutside": true, "offInside": true,
+  "onOutside": true, "offOutside": true,
   "min": 0,
   "max": 1,
   "closeOutside": "body"

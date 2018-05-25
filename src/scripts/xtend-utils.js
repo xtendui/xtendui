@@ -70,23 +70,35 @@ XtUtil.cancelAnimationFrame = function () {
 }();
 
 /**
- * Check if event target is inside
- * @param {Event} e
- * @param {Element} t
+ * Check if event target is inside elements
+ * @param {Event} e Event to check target
+ * @param {Array} targets Elements to check inside
  * @return {Boolean}
  */
-XtUtil.checkInside = function (e, t) {
-  return e.target === t;
+XtUtil.checkInside = function (e, targets) {
+  let result = false;
+  for (let t of targets) {
+    if (e.target === t) {
+      result = true;
+    }
+  }
+  return result;
 };
 
 /**
- * Check if event target is outside
- * @param {Event} e
- * @param {Element} t
+ * Check if event target is outside elements
+ * @param {Event} e Event to check target
+ * @param {Array} targets Elements to check Outside
  * @return {Boolean}
  */
-XtUtil.checkOutside = function (e, t) {
-  return e.target !== t && !t.contains(e.target);
+XtUtil.checkOutside = function (e, targets) {
+  let result = false;
+  for (let t of targets) {
+    if (e.target !== t && !t.contains(e.target)) {
+      result = true;
+    }
+  }
+  return result;
 };
 
 /**
