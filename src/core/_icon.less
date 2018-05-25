@@ -25,6 +25,7 @@
 // icon :before or :after
 
 .icon(@content, @size: @icon-medium, @sr-only: false, @position: before) {
+  @position: after; // @FIX force position because :before is taken by design
   & when (@sr-only = true) {
     > span {
       .sr-only();
