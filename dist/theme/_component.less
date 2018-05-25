@@ -437,13 +437,17 @@ a, .alink {
 
 .drop-squared {
   > .drop-inner {
-    border-radius: 0;
+    &:before {
+      border-radius: 0;
+    }
   }
 }
 
 .drop-noborder {
   > .drop-inner {
-    border: 0;
+    &:before {
+      border: 0;
+    }
   }
 }
 
