@@ -83,6 +83,7 @@ a, .alink {
 .btn {
   .transition-default.out();
   &:before {
+    .accelerate();
     .transition-default.out();
     transform: scale(1);
   }
@@ -90,7 +91,7 @@ a, .alink {
     .transition-default.active();
     &:before {
       .transition-default.active();
-      transform: scale(1.06, 1.08);
+      transform: scale(1.065, 1);
       transition-duration: @time-small;
     }
   }
@@ -119,11 +120,6 @@ a, .alink {
       background-color: lighten(@primary, @perc-xs);
     }
   }
-  &:active, &.active {
-    &:before {
-      border-color: @primary;
-    }
-  }
 }
 
 .btn-primary-empty {
@@ -137,11 +133,6 @@ a, .alink {
     color: @text-inverse;
     &:before {
       background-color: lighten(@primary, @perc-xs);
-    }
-  }
-  &:active, &.active {
-    &:before {
-      border-color: @primary;
     }
   }
 }
@@ -159,11 +150,6 @@ a, .alink {
       background-color: lighten(@secondary, @perc-xs);
     }
   }
-  &:active, &.active {
-    &:before {
-      border-color: @secondary;
-    }
-  }
 }
 
 .btn-secondary-empty {
@@ -177,11 +163,6 @@ a, .alink {
     color: @text;
     &:before {
       background-color: lighten(@secondary, @perc-xs);
-    }
-  }
-  &:active, &.active {
-    &:before {
-      border-color: @secondary;
     }
   }
 }
@@ -291,24 +272,18 @@ a, .alink {
   .display(flex);
   .align-items-baseline();
   .justify-content-between();
-  span {
-    .icon(@content: @icon-chevron-down, @size: @icon-small, @position: after);
-    &:after {
-      .icon-right();
-    }
+  .icon(@content: @icon-chevron-down, @size: @icon-small, @position: after);
+  &:after {
+    .icon-right();
   }
   &.active {
-    span {
-      .icon(@content: @icon-chevron-up, @size: @icon-small, @position: after);
-    }
+    .icon(@content: @icon-chevron-up, @size: @icon-small, @position: after);
   }
 }
 
 .btn-close {
   .btn-primary-empty();
-  span {
-    .icon(@content: @icon-close, @size: @icon-medium, @sr-only: true);
-  }
+  .icon(@content: @icon-close, @size: @icon-medium, @sr-only: true, @position: after);
 }
 
 //////////////////////
@@ -350,6 +325,9 @@ a, .alink {
 
 .drop {
   animation-duration: @time-big; // needed for .out animation timing
+  &:before {
+    .accelerate();
+  }
   &.active {
     > .drop-inner {
       &:before {
@@ -486,8 +464,8 @@ a, .alink {
     // .btn-close
     > .btn-close {
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 2px;
+      right: 2px;
       .btn-giant();
       .btn-icon();
     }
