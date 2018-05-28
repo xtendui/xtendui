@@ -316,10 +316,8 @@
 .site-menu {
   transition-delay: @time-small;
   // animations
-  animation: none !important;
-  opacity: 1 !important;
-  .overlay-inner {
-    animation: none !important;
+  .overlay-inner:before, .site-header-top {
+    .no-animation();
     opacity: 1 !important;
   }
 }

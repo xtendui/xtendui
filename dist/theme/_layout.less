@@ -131,10 +131,13 @@
 
 .box {
   // styles
-  border-radius: @border-radius;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
+  &:before {
+    .design-setup();
+    border-radius: @border-radius;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+  }
   // .btn-close
   > .btn-close {
     .btn-tiny();
@@ -151,36 +154,44 @@
 // variant
 
 .box-primary {
-  border-color: darken(@primary, @perc-xs);
-  background-color: @primary;
   color: @text-inverse;
+  &:before {
+    border-color: darken(@primary, @perc-xs);
+    background-color: @primary;
+  }
   > .btn-close {
     .btn-primary();
   }
 }
 
 .box-secondary {
-  border-color: darken(@secondary, @perc-xs);
-  background-color: @secondary;
   color: @text;
+  &:before {
+    border-color: darken(@secondary, @perc-xs);
+    background-color: @secondary;
+  }
   > .btn-close {
     .btn-secondary();
   }
 }
 
 .box-white {
-  border-color: darken(@white, @perc-xs);
-  background-color: @white;
   color: @text;
+  &:before {
+    border-color: darken(@white, @perc-xs);
+    background-color: @white;
+  }
   > .btn-close {
     .btn-secondary-empty();
   }
 }
 
 .box-light {
-  border-color: darken(@grey-250, @perc-xs);
-  background-color: @grey-250;
   color: @text;
+  &:before {
+    border-color: darken(@grey-250, @perc-xs);
+    background-color: @grey-250;
+  }
   > .btn-close {
     .btn-primary-empty();
   }
@@ -216,11 +227,15 @@
 // special
 
 .box-squared {
-  border-radius: 0;
+  &:before {
+    border-radius: 0;
+  }
 }
 
 .box-noborder {
-  border: 0;
+  &:before {
+    border: 0;
+  }
 }
 
 .box-none {
