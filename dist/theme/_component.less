@@ -87,19 +87,14 @@ a, .alink {
     .transition-default.out();
     transform: scale(1);
   }
-  &:hover {
-    .transition-default.active();
-    &:before {
-      .transition-default.active();
-      transform: scale(1.065, 1);
-      transition-duration: @time-small;
-    }
-  }
   &:active, &.active {
     .transition-default.active();
     &:before {
+      left: .2em;
+      right: .2em;
+      top: .1em;
+      bottom: .1em;
       .transition-default.active();
-      transform: scale(1);
       transition-duration: @time-small;
     }
   }
