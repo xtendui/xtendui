@@ -17,29 +17,29 @@
   -moz-osx-font-smoothing: grayscale;
 }
 [class^='xt-icon-'], [class*=' xt-icon-'] {
-  &:before {
+  &::before {
     .xt-icon();
   }
 }
 
-// icon :before or :after
+// icon ::before or ::after
 
 .icon(@content, @size: @icon-medium, @sr-only: false, @position: before) {
-  @position: after; // @FIX force position because :before is taken by design
+  @position: after; // @FIX force position because ::before is taken by design
   & when (@sr-only = true) {
     > span {
       .sr-only();
     }
   }
   & when (@position = before) {
-    &:before {
+    &::before {
       .xt-icon();
       content: @content;
       font-size: @size;
     }
   }
   & when (@position = after) {
-    &:after {
+    &::after {
       .xt-icon();
       content: @content;
       font-size: @size;
@@ -57,7 +57,7 @@
     @name: extract(@icons, @i);
     @val: ~"icon-@{name}";
     .xt-icon-@{name} {
-      &:before {
+      &::before {
         content: @@val;
       }
     }

@@ -316,7 +316,7 @@
 .site-menu {
   transition-delay: @time-small;
   // animations
-  .overlay-inner:before, .site-header-top {
+  .overlay-inner::before, .site-header-top {
     .no-animation();
     opacity: 1 !important;
   }
@@ -479,7 +479,7 @@
         background-color: @primary;
       }
     }
-    .line:after {
+    .line::after {
       content: "";
       position: absolute;
       z-index: -1;
@@ -495,7 +495,7 @@
   }
   // animations
   .line-container {
-    .line:after {
+    .line::after {
       left: 100%;
       width: 0;
       transition: all @time-medium @bez-out;
@@ -504,7 +504,7 @@
   }
   &:hover, &:active, &.active {
     .line-container {
-      .line:after {
+      .line::after {
         left: 0;
         width: 100%;
         animation: anim-opacity-in @time-medium @bez-in, line-in @time-medium @bez-in;
@@ -654,7 +654,7 @@
 
 .demo-cols {
   .col {
-    &:before {
+    &::before {
       position: relative;
       float: left;
       width: 100%;
@@ -670,7 +670,7 @@
       text-align: center;
     }
     .col {
-      &:before {
+      &::before {
         background-color: @primary;
       }
     }

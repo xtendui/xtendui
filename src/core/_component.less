@@ -27,7 +27,7 @@ a, .alink, .btn-link {
   display: inline-block;
   position: relative;
   vertical-align: middle;
-  z-index: @index-base; // fix :before negative z-index
+  z-index: @index-base; // fix ::before negative z-index
   span {
     display: inline-block;
     position: relative;
@@ -67,7 +67,7 @@ a, .alink, .btn-link {
   z-index: @index-drop !important;
   > .drop-inner {
     position: relative;
-    z-index: @index-base; // fix :before negative z-index
+    z-index: @index-base; // fix ::before negative z-index
   }
   // others
   &.out {

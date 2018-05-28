@@ -301,7 +301,7 @@ export {XtUtil};
 // USAGE: <html class="anim-load-fix">
 
 .anim-load-fix {
-*, *:before, *:after {
+*, *::before, *::after {
     animation-duration: 0ms !important;
     animation-delay: 0ms !important;
   }
