@@ -92,3 +92,22 @@ description: Lorem Ipsum
     }
   </code>
 </pre>
+
+<h3>Sticky</h3>
+
+<p>You can initialize <strong>sticky</strong> by javascript.</p>
+
+<pre>
+  <code class="js">
+    // single
+    new XtSticky(document.querySelectorAll('.my-element')[0], {
+      // options
+    });
+    // looping
+    for (let el of document.querySelectorAll('.my-element')) {
+      new XtSticky(el, {
+        // options
+      });
+    }
+  </code>
+</pre>

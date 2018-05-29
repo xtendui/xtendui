@@ -22,30 +22,40 @@
 // variant
 
 .alert-light {
-  background-color: @grey-250;
   color: @text;
+  &:before {
+    background-color: @grey-250;
+  }
 }
 
 .alert-success {
-  background: @success;
   .inverse();
   .links-inverse();
+  &:before {
+    background: @success;
+  }
 }
 
 .alert-notice {
-  background: @notice;
   .inverse();
   .links-inverse();
+  &:before {
+    background: @notice;
+  }
 }
 
 .alert-warning {
-  background: @warning;
   .inverse();
   .links-inverse();
+  &:before {
+    background: @warning;
+  }
 }
 
 .alert-error {
-  background: @error;
   .inverse();
   .links-inverse();
+  &:before {
+    background: @error;
+  }
 }
