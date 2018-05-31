@@ -426,6 +426,7 @@ class Xt {
    */
   activationOffAnimate(el, type, activationDelay) {
     let self = this;
+    let options = this.options;
     // onDone
     let onDone = function (el, type) {
       el.classList.remove('out');
