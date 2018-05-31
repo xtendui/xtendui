@@ -154,7 +154,8 @@
 // variant
 
 .box-primary {
-  color: @text-inverse;
+  .inverse();
+  .links-inverse();
   &::before {
     border-color: darken(@primary, @perc-xs);
     background-color: @primary;
