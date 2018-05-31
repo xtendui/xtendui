@@ -234,6 +234,17 @@ a, .alink, .btn-link {
   }
 }
 
+// scrollbar
+
+.overlay-outer:not(.overlay-screen) {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.overlay-outer.overlay-screen .overlay {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 // position
 
 .overlay-left {

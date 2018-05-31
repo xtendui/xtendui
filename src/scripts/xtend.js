@@ -431,7 +431,9 @@ class Xt {
     let onDone = function (el, type) {
       el.classList.remove('out');
       // specials
-      self.specialScrollbarOff();
+      if (type === 'targets') {
+        self.specialScrollbarOff();
+      }
       // activationDelay
       if (activationDelay && activationDelay[type]) {
         if (!options.instant || !options.instant[type]) {
