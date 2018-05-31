@@ -23,7 +23,7 @@
 
 .alert-light {
   color: @text;
-  &:before {
+  &::before {
     background-color: @grey-250;
   }
 }
@@ -31,7 +31,7 @@
 .alert-success {
   .inverse();
   .links-inverse();
-  &:before {
+  &::before {
     background: @success;
   }
 }
@@ -39,7 +39,7 @@
 .alert-notice {
   .inverse();
   .links-inverse();
-  &:before {
+  &::before {
     background: @notice;
   }
 }
@@ -47,7 +47,7 @@
 .alert-warning {
   .inverse();
   .links-inverse();
-  &:before {
+  &::before {
     background: @warning;
   }
 }
@@ -55,7 +55,7 @@
 .alert-error {
   .inverse();
   .links-inverse();
-  &:before {
+  &::before {
     background: @error;
   }
 }
