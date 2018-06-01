@@ -28,12 +28,12 @@ a, .alink, .btn-link {
   position: relative;
   vertical-align: middle;
   z-index: @index-base; // fix ::before negative z-index
-  span {
-    display: inline-block;
-    position: relative;
-  }
   &:active, &.active {
     z-index: @index-btn-active;
+  }
+  > span {
+    display: inline-block;
+    vertical-align: middle;
   }
 }
 
