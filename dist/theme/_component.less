@@ -45,15 +45,21 @@ a, .alink {
   }
 }
 
-// .links-inverse
+// .inverse
 
-.links-inverse {
-  a, .alink, .btn-link {
+.inverse {
+  // links color
+  a:not(.btn), .alink, .btn-link {
     color: @text-inverse;
     text-decoration: underline;
     &:hover, &:active, &.active {
       color: darken(@text-inverse, @perc-xs);
     }
+  }
+  // buttons color
+  .btn-primary-empty,
+  .btn-secondary-empty {
+    color: @text-inverse !important;
   }
 }
 
