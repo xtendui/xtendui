@@ -269,15 +269,23 @@ a, .alink {
 // custom
 
 .btn-caret {
-  .display(flex);
-  .align-items-baseline();
+  .display(flex) !important;
+  .align-items-center();
   .justify-content-between();
-  .icon(@content: @icon-chevron-down, @size: @icon-small, @position: after);
+  .icon(@content: @icon-chevron-down, @size: @icon-tiny, @position: after);
   &::after {
-    .icon-right();
+    .margin(left, 2em);
   }
   &.active {
-    .icon(@content: @icon-chevron-up, @size: @icon-small, @position: after);
+    .icon(@content: @icon-chevron-up, @size: @icon-tiny, @position: after);
+    &::after {
+      .anim-bottom.active();
+    }
+  }
+  &.out {
+    &::after {
+      .anim-top.active();
+    }
   }
 }
 
