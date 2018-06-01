@@ -192,6 +192,9 @@ a, .alink, .btn-link {
   left: 0;
   right: 0;
   bottom: 0;
+  // scroll
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .overlay {
@@ -232,17 +235,6 @@ a, .alink, .btn-link {
       animation: none !important;
     }
   }
-}
-
-// scrollbar
-
-.overlay-outer:not(.overlay-screen) {
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-.overlay-outer.overlay-screen .overlay {
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 // position
