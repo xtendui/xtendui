@@ -973,7 +973,122 @@ class XtSticky extends Xt {
         el.classList.remove('sticky-down');
         el.classList.add('sticky-up');
       }
-      //el.style.top = topAdd;
+      // contain
+      let add = 0;
+      let addEl;
+      let addOption;
+      if (options.contain) {
+        addOption = options.contain['top'];
+        /*
+        if (scrollTopReal > self.scrollTopOld) {
+          addOption = options.contain['bottom'];
+        } else {
+          addOption = options.contain['top'];
+        }
+        */
+        if (addOption) {
+          if (!isNaN(parseFloat(addOption))) {
+            add = addOption;
+          } else {
+            addEl = document.querySelectorAll(addOption);
+            if (addEl.length) {
+              addEl = addEl[0];
+              if (addEl.classList.contains('active')) {
+                add = addEl.clientHeight;
+              }
+            }
+          }
+        }
+      }
+      // TODO addOption both
+      /*
+      if (activationDelay && activationDelay[type]) {
+        if (options.instant && options.instant[type]) {
+          activationDelay[type]();
+        }
+      }
+      */
+      // add
+      /*
+      if (scrollTop >= top - add && scrollTop < bottom + add) {
+        // fix jump setting current position before add
+        if (scrollTop >= top - add && scrollTop <= top) {
+          if (scrollTopReal > self.scrollTopOld) {
+            el.style.top = '';
+            if (el.classList.contains('hero-mobile')) {
+              console.log(2, el.style.top);
+            }
+          } else {
+            el.style.top = el.getBoundingClientRect().top + 'px';
+            XtUtil.requestAnimationFrame.call(window, function () {
+              el.style.top = add + 'px';
+              if (el.classList.contains('hero-mobile')) {
+                console.log(1, el.style.top);
+              }
+            });
+          }
+        } else {
+          el.style.top = add + 'px';
+          if (el.classList.contains('hero-mobile')) {
+            console.log(3, el.style.top);
+          }
+        }
+      } else {
+        el.style.top = '';
+        if (el.classList.contains('hero-mobile')) {
+          console.log(4, el.style.top);
+        }
+      }
+      */
+      console.log(add);
+      if (scrollTop >= top - add && scrollTop < bottom + add) {
+        // if inside scrolling
+        if (scrollTop <= top) {
+          // if inside scrolling plus add current position before add
+          el.style.top = el.getBoundingClientRect().top + 'px';
+          // open or close
+          if (scrollTopReal > self.scrollTopOld) {
+            XtUtil.requestAnimationFrame.call(window, function () {
+              el.style.top = '';
+              if (el.classList.contains('hero-mobile')) {
+                console.log(10, el.style.top);
+              }
+            });
+          } else {
+            XtUtil.requestAnimationFrame.call(window, function () {
+              el.style.top = add + 'px';
+              if (el.classList.contains('hero-mobile')) {
+                console.log(11, el.style.top);
+              }
+            });
+          }
+        } else {
+          // if inside scrolling not add use add
+          el.style.top = add + 'px';
+          if (el.classList.contains('hero-mobile')) {
+            console.log(3, el.style.top);
+          }
+        }
+      } else {
+        // if outside scrolling
+        console.log(scrollTop, top, add);
+        if (scrollTop > top) {
+          // if outside scrolling plus add
+          el.style.top = el.getBoundingClientRect().top + 'px';
+          XtUtil.requestAnimationFrame.call(window, function () {
+            el.style.top = add + 'px';
+            if (el.classList.contains('hero-mobile')) {
+              console.log(4, el.style.top);
+            }
+          });
+        } else {
+          // if outside scrolling not add
+          el.style.top = '';
+          if (el.classList.contains('hero-mobile')) {
+            console.log(5, el.style.top);
+          }
+        }
+      }
       // delay add
       /*
       if (!addEl) {
@@ -992,41 +1107,6 @@ class XtSticky extends Xt {
         }
       }
       */
-      // contain
-      let add = 0;
-      let addEl;
-      let addOption;
-      if (options.contain) {
-        if (scrollTopReal > self.scrollTopOld) {
-          addOption = options.contain['bottom'];
-        } else {
-          addOption = options.contain['top'];
-        }
-        if (addOption) {
-          if (!isNaN(parseFloat(addOption))) {
-            add = addOption;
-          } else {
-            addEl = document.querySelectorAll(addOption);
-            if (addEl.length) {
-              addEl = addEl[0];
-              if (addEl.classList.contains('active')) {
-                add = addEl.clientHeight;
-              }
-            }
-          }
-        }
-      }
-      // fix jump
-      //if (scrollTop >= top - add && scrollTop <= top) {
-      if (scrollTop >= top - add && scrollTop < bottom + add) {
-        el.style.top = el.getBoundingClientRect().top + 'px';
-        console.log(1, el.style.top, add);
-        XtUtil.requestAnimationFrame.call(window, function () {
-          el.style.top = add + 'px';
-        });
-      } else {
-        el.style.top = '';
-      }
       // activation
       if (scrollTop >= top - add && scrollTop < bottom + add) {
         // inside
