@@ -1,212 +1,221 @@
 <!DOCTYPE html>
-<html lang="en" class="{% if page.collection %} collection-{{ page.collection | downcase }}{% else %} page-{{ page.title | downcase }}{% endif %}">
-  <head>
+<html lang="en"
+      class="{% if page.collection %} collection-{{ page.collection | downcase }}{% else %} page-{{ page.title | downcase }}{% endif %}">
+<head>
 
-    <!-- meta -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+  <!-- meta -->
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
 
-    <!-- seo -->
-    <title>{{ page.title }} • Xtend</title>
-    <meta name="description" content="{{ page.description }}" />
+  <!-- seo -->
+  <title>{{ page.title }} • Xtend</title>
+  <meta name="description" content="{{ page.description }}"/>
 
-    <!-- icons -->
-    <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.ico?v={{ site.version }}" />
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ site.baseurl }}/assets/images/favicon-152x152.png?v={{ site.version }}" />
+  <!-- icons -->
+  <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.ico?v={{ site.version }}"/>
+  <link rel="apple-touch-icon" sizes="152x152"
+        href="{{ site.baseurl }}/assets/images/favicon-152x152.png?v={{ site.version }}"/>
 
-    <!-- styles -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/icons/style.css?v={{ site.version }}" />
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/theme.css?v={{ site.version }}" />
+  <!-- styles -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/icons/style.css?v={{ site.version }}"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/theme.css?v={{ site.version }}"/>
 
-  </head>
-  <body>
+</head>
+<body>
 
-    <div class="site-wrapper">
+<div class="site-wrapper">
 
-      <header class="site-header">
+  <header class="site-header">
 
-        <div class="site-header-top-outer" data-xt-sticky='{}'> <!-- "contain": {"bottom": ".site-breadcrumbs-outer.xt-clone"} "bottom": ".site-breadcrumbs-outer.xt-clone", "top": ".site-hero", -->
+    <div class="site-header-top-outer" data-xt-sticky='{"bottom": ".site-breadcrumbs-outer.xt-clone"}'>
+      <div class="site-header-top">
+        <div class="container">
+
+          <div class="flex flex-auto justify-content-between align-items-center">
+            <div>
+              <a href="{{ site.baseurl }}/" class="logo" title="Home">
+                <img src="{{ site.baseurl }}/assets/images/logo.svg"/>
+              </a>
+            </div>
+            <div>
+              <button type="button" class="btn btn-primary btn-nodesign btn-menu"
+                      data-xt-overlay='{"targets": "#site-menu"}'>
+                {% if page.collection %}
+                {{ page.collection | capitalize }}
+                {% else %}
+                {{ page.title | capitalize }}
+                {% endif %}
+                <span class="icon-menu-custom">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <nav class="site-menu overlay-outer overlay-primary overlay-screen overlay-size-medium collapse-height"
+         id="site-menu">
+      <div class="overlay">
+        <div class="overlay-inner">
+
           <div class="site-header-top">
             <div class="container">
 
               <div class="flex flex-auto justify-content-between align-items-center">
                 <div>
                   <a href="{{ site.baseurl }}/" class="logo" title="Home">
-                    <img src="{{ site.baseurl }}/assets/images/logo.svg" />
+                    <img src="{{ site.baseurl }}/assets/images/logo.svg"/>
                   </a>
                 </div>
                 <div>
-                  <button type="button" class="btn btn-primary btn-nodesign btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
+                  <button type="button" class="btn btn-primary btn-nodesign btn-menu"
+                          data-xt-overlay='{"targets": "#site-menu"}'>
                     {% if page.collection %}
-                      {{ page.collection | capitalize }}
+                    {{ page.collection | capitalize }}
                     {% else %}
-                      {{ page.title | capitalize }}
+                    {{ page.title | capitalize }}
                     {% endif %}
-                    <span class="icon-menu-custom">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </span>
+                    <span class="icon icon-menu-custom right">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </span>
                   </button>
                 </div>
               </div>
 
             </div>
           </div>
-        </div>
 
-        <nav class="site-menu overlay-outer overlay-primary overlay-screen overlay-size-medium collapse-height" id="site-menu">
-          <div class="overlay">
-            <div class="overlay-inner">
+          <div class="site-menu-content">
 
-              <div class="site-header-top">
-                <div class="container">
+            {% for collection in site.collections %}
+            {% if site.[collection.label].size > 0 %}
+            {% assign sorted = site.[collection.label] | sort: 'order' %}
+            <a href="{{ site.baseurl }}{{ sorted[0].url }}" class="btn btn-primary btn-nodesign make-line">
+              {{ collection.label }}
+            </a>
+            {% endif %}
+            {% endfor %}
+            <a href="{{ site.baseurl }}/" class="btn btn-primary btn-nodesign make-line">
+              Playground
+            </a>
+            <a href="{{ site.baseurl }}/" class="btn btn-primary btn-nodesign make-line">
+              Inspirations
+            </a>
+            <a href="{{ site.baseurl }}/faq/" class="btn btn-primary btn-nodesign make-line">
+              Faq
+            </a>
 
-                  <div class="flex flex-auto justify-content-between align-items-center">
-                    <div>
-                      <a href="{{ site.baseurl }}/" class="logo" title="Home">
-                        <img src="{{ site.baseurl }}/assets/images/logo.svg" />
-                      </a>
-                    </div>
-                    <div>
-                      <button type="button" class="btn btn-primary btn-nodesign btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
-                        {% if page.collection %}
-                          {{ page.collection | capitalize }}
-                        {% else %}
-                          {{ page.title | capitalize }}
-                        {% endif %}
-                        <span class="icon icon-menu-custom right">
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="site-menu-content">
-
-                {% for collection in site.collections %}
-                  {% if site.[collection.label].size > 0 %}
-                    {% assign sorted = site.[collection.label] | sort: 'order' %}
-                    <a href="{{ site.baseurl }}{{ sorted[0].url }}" class="btn btn-primary btn-nodesign make-line">
-                        {{ collection.label }}
-                    </a>
-                  {% endif %}
-                {% endfor %}
-                <a href="{{ site.baseurl }}/" class="btn btn-primary btn-nodesign make-line">
-                    Playground
-                </a>
-                <a href="{{ site.baseurl }}/" class="btn btn-primary btn-nodesign make-line">
-                    Inspirations
-                </a>
-                <a href="{{ site.baseurl }}/faq/" class="btn btn-primary btn-nodesign make-line">
-                    Faq
-                </a>
-
-              </div>
-
-            </div>
           </div>
-        </nav>
 
-        <div class="site-hero">
+        </div>
+      </div>
+    </nav>
 
+    <div class="site-hero">
+
+      <div class="container">
+        <div class="flex flex-auto align-items-center align-content-center justify-content-between">
+          <div class="site-hero-text">
+            <h1>{{ page.title }}</h1>
+            <p class="font-giant">{{ page.description }}</p>
+          </div>
+          <div class="site-hero-img">
+            <!--
+            <img class="responsive" src="https://placehold.it/330x132/ffffff/00B0FF/?text=ads" />
+            -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <nav class="site-breadcrumbs-outer" role="navigation"
+         data-xt-sticky='{}'> <!-- "contain": {"top": ".site-header-top-outer:not(.xt-clone)", "bottom": ".site-header-top-outer:not(.xt-clone)"} -->
+      <div class="site-breadcrumbs">
+        <div class="site-breadcrumbs-inner">
           <div class="container">
-            <div class="flex flex-auto align-items-center align-content-center justify-content-between">
-              <div class="site-hero-text">
-                <h1>{{ page.title }}</h1>
-                <p class="font-giant">{{ page.description }}</p>
-              </div>
-              <div class="site-hero-img">
-                <!--
-                <img class="responsive" src="https://placehold.it/330x132/ffffff/00B0FF/?text=ads" />
-                -->
-              </div>
-            </div>
-          </div>
+            <div class="flex flex-auto justify-content-between align-items-start">
 
-        </div>
+              <div class="site-breadcrumbs-body flex flex-space-none"
+                   data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave"}'>
+                {% for collection in site.collections %}
+                {% if collection.label == page.collection %}
 
-        <nav class="site-breadcrumbs-outer" role="navigation" data-xt-sticky='{ "contain": {"top": ".site-header-top-outer:not(.xt-clone)"} }'>
-          <div class="site-breadcrumbs">
-            <div class="site-breadcrumbs-inner">
-              <div class="container">
-                <div class="flex flex-auto justify-content-between align-items-start">
-
-                  <div class="site-breadcrumbs-body flex flex-space-none" data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave"}'>
-                    {% for collection in site.collections %}
-                      {% if collection.label == page.collection %}
-
-                        {% assign sorted = site.[collection.label] | sort: 'order' %}
-                        {% for p in sorted %}
-                          {% if p.categories[0] == collection.label %}
-                            <div class="site-breadcrumbs-body-main">
-                              <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary btn-nodesign">
-                                {{ p.title }}
-                              </a>
-                              {% assign subsorted = site.[collection.label] | where: 'categories', p.title | sort: 'order' %}
-                              <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
-                                {% if subsorted.size > 0 %}
-                                  <div class="site-breadcrumbs-body-sub-inner">
-                                    {% for pa in subsorted %}
-                                    <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn-primary btn-nodesign">
-                                      {{ pa.title }}
-                                    </a>
-                                    {% endfor %}
-                                  </div>
-                                {% endif %}
-                              </div>
-                            </div>
-                          {% endif %}
-                        {% endfor %}
-
-                      {% endif %}
-                    {% endfor %}
+                {% assign sorted = site.[collection.label] | sort: 'order' %}
+                {% for p in sorted %}
+                {% if p.categories[0] == collection.label %}
+                <div class="site-breadcrumbs-body-main">
+                  <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary btn-nodesign">
+                    {{ p.title }}
+                  </a>
+                  {% assign subsorted = site.[collection.label] | where: 'categories', p.title | sort: 'order' %}
+                  <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
+                    {% if subsorted.size > 0 %}
+                    <div class="site-breadcrumbs-body-sub-inner">
+                      {% for pa in subsorted %}
+                      <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn-primary btn-nodesign">
+                        {{ pa.title }}
+                      </a>
+                      {% endfor %}
+                    </div>
+                    {% endif %}
                   </div>
+                </div>
+                {% endif %}
+                {% endfor %}
 
-                  <div class="site-breadcrumbs-meta flex flex-space-none align-items-center">
+                {% endif %}
+                {% endfor %}
+              </div>
 
-                    <div>
-                      <a href="{{ site.download }}" target="_blank" class="btn btn-primary btn-icon btn-nodesign">
-                        <span class="icon-download icon-big"></span>
-                      </a>
-                    </div>
-                    <div>
-                      <a href="{{ site.github }}" target="_blank" class="btn btn-primary btn-icon btn-nodesign">
-                        <span class="icon-github icon-big"></span>
-                      </a>
-                    </div>
+              <div class="site-breadcrumbs-meta flex flex-space-none align-items-center">
 
-                    <div class="show-sticky">
-                      <button type="button" class="btn btn-primary btn-nodesign btn-menu" data-xt-overlay='{"targets": "#site-menu"}'>
-                        {% if page.collection %}
-                          {{ page.collection | capitalize }}
-                        {% else %}
-                          {{ page.title | capitalize }}
-                        {% endif %}
-                        <span class="icon-menu-custom">
+                <div>
+                  <a href="{{ site.download }}" target="_blank" class="btn btn-primary btn-icon btn-nodesign">
+                    <span class="icon-download icon-big"></span>
+                  </a>
+                </div>
+                <div>
+                  <a href="{{ site.github }}" target="_blank" class="btn btn-primary btn-icon btn-nodesign">
+                    <span class="icon-github icon-big"></span>
+                  </a>
+                </div>
+
+                <div class="show-sticky">
+                  <button type="button" class="btn btn-primary btn-nodesign btn-menu"
+                          data-xt-overlay='{"targets": "#site-menu"}'>
+                    {% if page.collection %}
+                    {{ page.collection | capitalize }}
+                    {% else %}
+                    {{ page.title | capitalize }}
+                    {% endif %}
+                    <span class="icon-menu-custom">
                           <span></span>
                           <span></span>
                           <span></span>
                         </span>
-                      </button>
-                    </div>
-
-                  </div>
-
+                  </button>
                 </div>
+
               </div>
+
             </div>
           </div>
-        </nav>
+        </div>
+      </div>
+    </nav>
 
-      </header>
+  </header>
 
-      <div class="site-wrapper-inner">
+  <div class="site-wrapper-inner">
