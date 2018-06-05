@@ -707,7 +707,7 @@ class Xt {
       var elements = document.documentElement.querySelectorAll('.xt-check-fixed > *');
       for (let element of elements) {
         var style = window.getComputedStyle(element);
-        if (style.position === 'absolute' || style.position === 'fixed') {
+        if (style.position === 'fixed') {
           element.classList.add('xt-fixed');
         } else {
           element.classList.remove('xt-fixed');
@@ -963,51 +963,27 @@ class XtSticky extends Xt {
     let self = this;
     let options = this.options;
     // scroll
-    let scrollTop = document.documentElement.scrollTop;
+    let scrollTopReal = document.documentElement.scrollTop;
+    let scrollTop = scrollTopReal;
     XtUtil.cancelAnimationFrame.call(window, this.scrollFrame);
     this.scrollFrame = XtUtil.requestAnimationFrame.call(window, function () {
+      let el = self.object;
       let rectContainer = self.container[0].getBoundingClientRect();
-      let fElements = self.getElements(element);
-      let el = fElements.single;
-      // top
-      let top = rectContainer.top;
-      if (!isNaN(parseFloat(options.top))) {
-        top = options.top;
-      } else {
-        let elTop = document.querySelectorAll(options.top);
-        if (elTop.length) {
-          let rectTop = elTop[0].getBoundingClientRect();
-          top = rectTop.top + scrollTop;
-        } else if (self.targets.length) {
-          let rectTop = self.targets[0].getBoundingClientRect();
-          top = rectTop.top + scrollTop;
-        }
-      }
-      // bottom
-      let bottom = Infinity;
-      if (options.bottom || options.bottom === 0) {
-        if (!isNaN(parseFloat(options.bottom))) {
-          bottom = options.bottom;
-        } else {
-          let elBottom = document.querySelectorAll(options.bottom);
-          if (elBottom.length) {
-            let rectBottom = elBottom[0].getBoundingClientRect();
-            bottom = rectBottom.top + scrollTop; //  - self.container[0].clientHeight;
-          } else if (self.targets.length) {
-            let rectBottom = self.targets[0].getBoundingClientRect();
-            bottom = rectBottom.top + scrollTop;
-          }
-        }
+      let bottom = self.eventScrollBottom(options.bottom, Infinity, scrollTop);
+      let top = self.eventScrollTop(options.top, rectContainer.top, scrollTop);
+      var topAdd = parseFloat(getComputedStyle(el)['top']);
+      if (!topAdd) {
+        topAdd = 0;
       }
       // activation
-      if (scrollTop >= top && scrollTop < bottom) {
+      if (scrollTop >= top - topAdd && scrollTop < bottom + topAdd) {
         // inside
         if (!element.classList.contains(...self.options.classes)) {
           self.eventOn(element);
           // direction
           el.classList.remove('sticky-off-top', 'sticky-off-bottom');
           el.classList.add('xt-fixed');
-          if (self.scrollTop > scrollTop) {
+          if (self.scrollTopOld > scrollTopReal) {
             el.classList.remove('sticky-on-top');
             el.classList.add('sticky-on-bottom');
           } else {
@@ -1021,7 +997,7 @@ class XtSticky extends Xt {
           self.eventOff(element);
           // direction
           el.classList.remove('sticky-on-top', 'sticky-on-bottom');
-          if (self.scrollTop > scrollTop) {
+          if (self.scrollTopOld > scrollTopReal) {
             el.classList.remove('sticky-off-top');
             el.classList.add('sticky-off-bottom');
           } else {
@@ -1032,17 +1008,26 @@ class XtSticky extends Xt {
       }
       // contain
       if (options.contain) {
-        if (scrollTop >= top && scrollTop < bottom) {
-          let diff = bottom - scrollTop;
-          if (diff < el.clientHeight) {
-            el.style.top = (bottom - scrollTop - el.clientHeight) + 'px';
+        if (options.contain['bottom']) {
+          let bottom = self.eventScrollBottom(options.contain['bottom'], Infinity, scrollTop);
+          if (scrollTop >= top - topAdd && scrollTop < bottom) {
+            let diff = bottom - scrollTop;
+            if (diff < el.clientHeight) {
+              el.style.top = (bottom - scrollTop - el.clientHeight) + 'px';
+            } else {
+              el.style.top = 0 + 'px';
+            }
           } else {
             el.style.top = 0 + 'px';
           }
         }
+        if (options.contain['top']) {
+          let top = self.eventScrollTop(options.contain['top'], rectContainer.top, scrollTop);
+          // @TODO
+        }
       }
       // direction
-      if (scrollTop > self.scrollTop) {
+      if (scrollTopReal > self.scrollTopOld) {
         el.classList.remove('sticky-up');
         el.classList.add('sticky-down');
       } else {
@@ -1050,8 +1035,56 @@ class XtSticky extends Xt {
         el.classList.add('sticky-up');
       }
       // save for direction
-      self.scrollTop = scrollTop;
+      self.scrollTopOld = scrollTopReal;
     });
+  }
+
+  /**
+   * get bottom position of option
+   * @param {String|Number|Element} option
+   * @param {Number} bottom Default bottom
+   * @param {Number} scrollTop Window's scrollTop
+   * @returns {Number} value Option's position (px)
+   */
+  eventScrollBottom(option, bottom, scrollTop) {
+    if (option) {
+      if (!isNaN(parseFloat(option))) {
+        bottom = option;
+      } else {
+        let elBottom = document.querySelectorAll(option);
+        if (elBottom.length) {
+          let rectBottom = elBottom[0].getBoundingClientRect();
+          bottom = rectBottom.top + scrollTop; //  - self.container[0].clientHeight;
+        } else if (this.targets.length) {
+          let rectBottom = this.targets[0].getBoundingClientRect();
+          bottom = rectBottom.top + scrollTop;
+        }
+      }
+    }
+    return bottom;
+  }
+
+  /**
+   * get top position of option
+   * @param {String|Number|Element} option
+   * @param {Number} top Default top
+   * @param {Number} scrollTop Window's scrollTop
+   * @returns {Number} value Option's position (px)
+   */
+  eventScrollTop(option, top, scrollTop) {
+    if (!isNaN(parseFloat(option))) {
+      top = option;
+    } else {
+      let elTop = document.querySelectorAll(option);
+      if (elTop.length) {
+        let rectTop = elTop[0].getBoundingClientRect();
+        top = rectTop.top + scrollTop;
+      } else if (this.targets.length) {
+        let rectTop = this.targets[0].getBoundingClientRect();
+        top = rectTop.top + scrollTop;
+      }
+    }
+    return top;
   }
 
 }
@@ -1063,7 +1096,7 @@ XtSticky.defaults = {
   "on": "scroll",
   "min": 0,
   "max": Infinity,
-  "contain": false
+  contain: false
 };
 
 // export

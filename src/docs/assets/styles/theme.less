@@ -722,12 +722,16 @@
       }
     }
   }
-  /*
-  &.sticky-on-bottom {
-    .animation-default.active();
-    animation-name: anim-top-in;
+  &.active:not(.xt-clone) {
+    &.sticky-down {
+      .transition-default.out();
+      transform: translateY(-100%);
+    }
+    &.sticky-up {
+      .transition-default.active();
+      transform: translateY(0);
+    }
   }
-  */
 }
 
 // .site-breadcrumbs
@@ -735,7 +739,7 @@
 .site-breadcrumbs-outer[data-xt-sticky] {
   .xt-sticky(@mode:'absolute');
   // above .site-header-top
-  z-index: @index-sticky + 1;
+  //z-index: @index-sticky + 1;
   // animations
   .site-breadcrumbs {
     .transition-default.out();
@@ -757,6 +761,16 @@
     .site-breadcrumbs-meta {
       .animation-default.active();
       animation-name: anim-right-in;
+    }
+  }
+  &.active:not(.xt-clone) {
+    &.sticky-down {
+      .transition-default.out();
+      top: 0;
+    }
+    &.sticky-up {
+      .transition-default.active();
+      top: 5.1rem;
     }
   }
 }
