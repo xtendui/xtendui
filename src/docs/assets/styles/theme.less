@@ -709,14 +709,16 @@
       .transition-default.out();
     }
   }
-  &.sticky-down:not(.xt-clone) {
-    .logo {
-      .margin(top, 1.5rem);
-      .margin(bottom, 1rem);
-      .transition-default.active();
-      img {
-        height: 2rem;
+  &.active:not(.xt-clone) {
+    &.sticky-down {
+      .logo {
+        .margin(top, 1.5rem);
+        .margin(bottom, 1rem);
         .transition-default.active();
+        img {
+          height: 2rem;
+          .transition-default.active();
+        }
       }
     }
   }
