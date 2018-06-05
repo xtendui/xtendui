@@ -71,7 +71,8 @@
 .logo {
   .link-none();
   display: inline-block;
-  .margin(y, 2rem);
+  .margin(top, 2rem);
+  .margin(bottom, 1.5rem);
   opacity: .8;
   img {
     width: auto;
@@ -140,7 +141,8 @@
 
 .site-breadcrumbs-inner {
   cursor: default;
-  .padding(y, medium);
+  .padding(top, small);
+  .padding(bottom, medium);
   background-color: @primary;
   background: @grad-primary;
   color: @white;
@@ -701,10 +703,29 @@
 .site-header-top-outer[data-xt-sticky] {
   .xt-sticky();
   // animations
+  .logo {
+    .transition-default.out();
+    img {
+      .transition-default.out();
+    }
+  }
+  &.sticky-down:not(.xt-clone) {
+    .logo {
+      .margin(top, 1.5rem);
+      .margin(bottom, 1rem);
+      .transition-default.active();
+      img {
+        height: 2rem;
+        .transition-default.active();
+      }
+    }
+  }
+  /*
   &.sticky-on-bottom {
     .animation-default.active();
     animation-name: anim-top-in;
   }
+  */
 }
 
 // .site-breadcrumbs

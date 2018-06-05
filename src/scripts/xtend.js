@@ -967,9 +967,10 @@ class XtSticky extends Xt {
     XtUtil.cancelAnimationFrame.call(window, this.scrollFrame);
     this.scrollFrame = XtUtil.requestAnimationFrame.call(window, function () {
       let rectContainer = self.container[0].getBoundingClientRect();
-      let top = rectContainer.top;
-      let bottom = Infinity;
+      let fElements = self.getElements(element);
+      let el = fElements.single;
       // top
+      let top = rectContainer.top;
       if (!isNaN(parseFloat(options.top))) {
         top = options.top;
       } else {
@@ -983,37 +984,35 @@ class XtSticky extends Xt {
         }
       }
       // bottom
-      if (options.bottom !== undefined) {
+      let bottom = Infinity;
+      if (options.bottom || options.bottom === 0) {
         if (!isNaN(parseFloat(options.bottom))) {
           bottom = options.bottom;
         } else {
           let elBottom = document.querySelectorAll(options.bottom);
           if (elBottom.length) {
             let rectBottom = elBottom[0].getBoundingClientRect();
-            bottom = rectBottom.top + scrollTop;
+            bottom = rectBottom.top + scrollTop; //  - self.container[0].clientHeight;
           } else if (self.targets.length) {
             let rectBottom = self.targets[0].getBoundingClientRect();
             bottom = rectBottom.top + scrollTop;
           }
         }
       }
-      // check
+      // activation
       if (scrollTop >= top && scrollTop < bottom) {
         // inside
         if (!element.classList.contains(...self.options.classes)) {
           self.eventOn(element);
           // direction
-          let fElements = self.getElements(element);
-          for (let el of fElements.all) {
-            el.classList.remove('sticky-off-top', 'sticky-off-bottom');
-            el.classList.add('xt-fixed');
-            if (self.scrollTop > scrollTop) {
-              el.classList.remove('sticky-on-top');
-              el.classList.add('sticky-on-bottom');
-            } else {
-              el.classList.add('sticky-on-top');
-              el.classList.remove('sticky-on-bottom');
-            }
+          el.classList.remove('sticky-off-top', 'sticky-off-bottom');
+          el.classList.add('xt-fixed');
+          if (self.scrollTop > scrollTop) {
+            el.classList.remove('sticky-on-top');
+            el.classList.add('sticky-on-bottom');
+          } else {
+            el.classList.add('sticky-on-top');
+            el.classList.remove('sticky-on-bottom');
           }
         }
       } else {
@@ -1021,18 +1020,34 @@ class XtSticky extends Xt {
         if (element.classList.contains(...self.options.classes)) {
           self.eventOff(element);
           // direction
-          let fElements = self.getElements(element);
-          for (let el of fElements.all) {
-            el.classList.remove('sticky-on-top', 'sticky-on-bottom');
-            if (self.scrollTop > scrollTop) {
-              el.classList.remove('sticky-off-top');
-              el.classList.add('sticky-off-bottom');
-            } else {
-              el.classList.add('sticky-off-top');
-              el.classList.remove('sticky-off-bottom');
-            }
+          el.classList.remove('sticky-on-top', 'sticky-on-bottom');
+          if (self.scrollTop > scrollTop) {
+            el.classList.remove('sticky-off-top');
+            el.classList.add('sticky-off-bottom');
+          } else {
+            el.classList.add('sticky-off-top');
+            el.classList.remove('sticky-off-bottom');
           }
         }
+      }
+      // contain
+      if (options.contain) {
+        if (scrollTop >= top && scrollTop < bottom) {
+          let diff = bottom - scrollTop;
+          if (diff < el.clientHeight) {
+            el.style.top = (bottom - scrollTop - el.clientHeight) + 'px';
+          } else {
+            el.style.top = 0 + 'px';
+          }
+        }
+      }
+      // direction
+      if (scrollTop > self.scrollTop) {
+        el.classList.remove('sticky-up');
+        el.classList.add('sticky-down');
+      } else {
+        el.classList.remove('sticky-down');
+        el.classList.add('sticky-up');
       }
       // save for direction
       self.scrollTop = scrollTop;
@@ -1047,7 +1062,8 @@ XtSticky.defaults = {
   "class": "active",
   "on": "scroll",
   "min": 0,
-  "max": Infinity
+  "max": Infinity,
+  "contain": false
 };
 
 // export
