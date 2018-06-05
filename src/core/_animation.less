@@ -46,9 +46,11 @@ transition-delay: 150ms; // default delay @start + @child * @increment
 //////////////////////
 
 .collapse-height {
+  overflow-x: hidden;
   height: 0;
 }
 .collapse-width {
+  overflow-y: hidden;
   width: 0;
 }
 .collapse-height,
@@ -57,5 +59,4 @@ transition-delay: 150ms; // default delay @start + @child * @increment
 .collapse-bottom,
 .collapse-left,
 .collapse-right {
-  overflow: hidden;
 }
