@@ -971,9 +971,37 @@ class XtSticky extends Xt {
       let rectContainer = self.container[0].getBoundingClientRect();
       let bottom = self.eventScrollBottom(options.bottom, Infinity, scrollTop);
       let top = self.eventScrollTop(options.top, rectContainer.top, scrollTop);
-      var topAdd = parseFloat(getComputedStyle(el)['top']);
-      if (!topAdd) {
-        topAdd = 0;
+      // contain
+      let topAdd = 0;
+      if (options.contain) {
+        if (scrollTopReal > self.scrollTopOld) {
+          /* @TODO topAdd OR topRemove or bottomAdd
+          topAdd = self.eventScrollAdd(options.contain['bottom'], 0);
+          */
+        } else {
+          topAdd = self.eventScrollAdd(options.contain['top'], 0);
+        }
+      }
+      // direction
+      if (scrollTopReal > self.scrollTopOld) {
+        el.classList.remove('sticky-up');
+        el.classList.add('sticky-down');
+        /* @TODO
+        if (scrollTop >= top - topAdd && scrollTop < bottom + topAdd) {
+          el.style.bottom = topAdd + 'px';
+        } else {
+          el.style.bottom = '';
+        }
+        */
+        el.style.top = '';
+      } else {
+        el.classList.remove('sticky-down');
+        el.classList.add('sticky-up');
+        if (scrollTop >= top - topAdd && scrollTop < bottom + topAdd) {
+          el.style.top = topAdd + 'px';
+        } else {
+          el.style.top = '';
+        }
       }
       // activation
       if (scrollTop >= top - topAdd && scrollTop < bottom + topAdd) {
@@ -1006,85 +1034,77 @@ class XtSticky extends Xt {
           }
         }
       }
-      // contain
-      if (options.contain) {
-        if (options.contain['bottom']) {
-          let bottom = self.eventScrollBottom(options.contain['bottom'], Infinity, scrollTop);
-          if (scrollTop >= top - topAdd && scrollTop < bottom) {
-            let diff = bottom - scrollTop;
-            if (diff < el.clientHeight) {
-              el.style.top = (bottom - scrollTop - el.clientHeight) + 'px';
-            } else {
-              el.style.top = 0 + 'px';
-            }
-          } else {
-            el.style.top = 0 + 'px';
-          }
-        }
-        if (options.contain['top']) {
-          let top = self.eventScrollTop(options.contain['top'], rectContainer.top, scrollTop);
-          // @TODO
-        }
-      }
-      // direction
-      if (scrollTopReal > self.scrollTopOld) {
-        el.classList.remove('sticky-up');
-        el.classList.add('sticky-down');
-      } else {
-        el.classList.remove('sticky-down');
-        el.classList.add('sticky-up');
-      }
       // save for direction
       self.scrollTopOld = scrollTopReal;
     });
   }
 
   /**
-   * get bottom position of option
+   * get add position of option
    * @param {String|Number|Element} option
-   * @param {Number} bottom Default bottom
-   * @param {Number} scrollTop Window's scrollTop
+   * @param {Number} val Default add
    * @returns {Number} value Option's position (px)
    */
-  eventScrollBottom(option, bottom, scrollTop) {
+  eventScrollAdd(option, val) {
     if (option) {
       if (!isNaN(parseFloat(option))) {
-        bottom = option;
+        val = option;
       } else {
-        let elBottom = document.querySelectorAll(option);
-        if (elBottom.length) {
-          let rectBottom = elBottom[0].getBoundingClientRect();
-          bottom = rectBottom.top + scrollTop; //  - self.container[0].clientHeight;
-        } else if (this.targets.length) {
-          let rectBottom = this.targets[0].getBoundingClientRect();
-          bottom = rectBottom.top + scrollTop;
+        let el = document.querySelectorAll(option);
+        if (el.length) {
+          val = el[0].clientHeight;
         }
       }
     }
-    return bottom;
+    return val;
+  }
+
+  /**
+   * get bottom position of option
+   * @param {String|Number|Element} option
+   * @param {Number} val Default bottom
+   * @param {Number} scrollTop Window's scrollTop
+   * @returns {Number} value Option's position (px)
+   */
+  eventScrollBottom(option, val, scrollTop) {
+    if (option) {
+      if (!isNaN(parseFloat(option))) {
+        val = option;
+      } else {
+        let el = document.querySelectorAll(option);
+        if (el.length) {
+          let rectBottom = el[0].getBoundingClientRect();
+          val = rectBottom.top + scrollTop; //  - self.container[0].clientHeight;
+        } else if (this.targets.length) {
+          let rectBottom = this.targets[0].getBoundingClientRect();
+          val = rectBottom.top + scrollTop;
+        }
+      }
+    }
+    return val;
   }
 
   /**
    * get top position of option
    * @param {String|Number|Element} option
-   * @param {Number} top Default top
+   * @param {Number} val Default top
    * @param {Number} scrollTop Window's scrollTop
    * @returns {Number} value Option's position (px)
    */
-  eventScrollTop(option, top, scrollTop) {
+  eventScrollTop(option, val, scrollTop) {
     if (!isNaN(parseFloat(option))) {
-      top = option;
+      val = option;
     } else {
-      let elTop = document.querySelectorAll(option);
-      if (elTop.length) {
-        let rectTop = elTop[0].getBoundingClientRect();
-        top = rectTop.top + scrollTop;
+      let el = document.querySelectorAll(option);
+      if (el.length) {
+        let rectTop = el[0].getBoundingClientRect();
+        val = rectTop.top + scrollTop;
       } else if (this.targets.length) {
         let rectTop = this.targets[0].getBoundingClientRect();
-        top = rectTop.top + scrollTop;
+        val = rectTop.top + scrollTop;
       }
     }
-    return top;
+    return val;
   }
 
 }
