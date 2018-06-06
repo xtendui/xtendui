@@ -108,7 +108,7 @@ html.xt-scrollbar {
     }
     .xt-container > & {
       position: absolute;
-      width: 100%;
+      width: inherit;
     }
   }
   // fixed mode
@@ -118,13 +118,13 @@ html.xt-scrollbar {
     }
     .xt-container > & {
       position: fixed;
-      width: 100%;
+      z-index: @index-sticky;
+      width: inherit;
     }
   }
   // activation
   &.active:not(.xt-clone) {
     position: fixed !important;
-    width: inherit; // fix fixed width
     z-index: @index-sticky;
     & when (@position = 'top') {
       top: @pos;

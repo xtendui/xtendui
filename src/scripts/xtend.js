@@ -991,7 +991,7 @@ class XtSticky extends Xt {
       // add
       if (scrollTop >= top - add && scrollTop < bottom + add) {
         // if inside scrolling
-        if (scrollTop <= top) {
+        if ((addTop || addBottom) && scrollTop <= top) {
           // if inside scrolling plus add current position before add
           if (el.getAttribute('xt-scroll-add') !== 'block-add-inside') {
             el.setAttribute('xt-scroll-add', 'block-add-inside');
@@ -1009,7 +1009,7 @@ class XtSticky extends Xt {
         }
       } else {
         // if outside scrolling
-        if (scrollTop >= top - addTop) {
+        if ((addTop || addBottom) && scrollTop >= top - addTop) {
           // if outside scrolling plus add
           if (el.getAttribute('xt-scroll-add') !== 'block-add-outside') {
             el.setAttribute('xt-scroll-add', 'block-add-outside');
@@ -1027,6 +1027,28 @@ class XtSticky extends Xt {
           el.style.top = '';
         }
       }
+      // activation
+      var checkTop = scrollTop >= top - add;
+      var checkBottom = scrollTop < bottom + add;
+      if (checkTop && checkBottom) {
+        // inside
+        if (!element.classList.contains(...self.options.classes)) {
+          self.eventOn(element);
+        }
+      } else {
+        // outside
+        if (element.classList.contains(...self.options.classes)) {
+          self.eventOff(element);
+        }
+      }
+      // top and bottom
+      el.classList.remove('sticky-top', 'sticky-bottom');
+      if (!checkTop) {
+        el.classList.add('sticky-top');
+      }
+      if (!checkBottom) {
+        el.classList.add('sticky-bottom');
+      }
       // direction
       if (scrollTopReal > self.scrollTopOld) {
         el.classList.remove('sticky-up');
@@ -1034,24 +1056,6 @@ class XtSticky extends Xt {
       } else {
         el.classList.remove('sticky-down');
         el.classList.add('sticky-up');
-      }
-      // activation
-      if (scrollTop >= top - add && scrollTop < bottom + add) {
-        // inside
-        if (!element.classList.contains(...self.options.classes)) {
-          self.eventOn(element);
-          // direction
-          el.classList.remove('sticky-off');
-          el.classList.add('sticky-on');
-        }
-      } else {
-        // outside
-        if (element.classList.contains(...self.options.classes)) {
-          self.eventOff(element);
-          // direction
-          el.classList.remove('sticky-on');
-          el.classList.add('sticky-off');
-        }
       }
       // save for direction
       self.scrollTopOld = scrollTopReal;
