@@ -1018,19 +1018,6 @@ class XtSticky extends Xt {
       }
       // activation
       if (scrollTop >= top - add && scrollTop < bottom + add) {
-        // inside
-        if (!element.classList.contains(...self.options.classes)) {
-          self.eventOn(element);
-          // direction
-          el.classList.remove('sticky-off-top', 'sticky-off-bottom');
-          if (self.scrollTopOld > scrollTopReal) {
-            el.classList.remove('sticky-on-top');
-            el.classList.add('sticky-on-bottom');
-          } else {
-            el.classList.add('sticky-on-top');
-            el.classList.remove('sticky-on-bottom');
-          }
-        }
         // direction
         if (scrollTopReal > self.scrollTopOld) {
           el.classList.remove('sticky-up');
@@ -1039,19 +1026,22 @@ class XtSticky extends Xt {
           el.classList.remove('sticky-down');
           el.classList.add('sticky-up');
         }
+        // inside
+        if (!element.classList.contains(...self.options.classes)) {
+          self.eventOn(element);
+          // direction
+          el.classList.remove('sticky-off');
+          el.classList.add('sticky-on');
+        }
       } else {
+        // direction
+        el.classList.remove('sticky-up', 'sticky-down');
         // outside
         if (element.classList.contains(...self.options.classes)) {
           self.eventOff(element);
           // direction
-          el.classList.remove('sticky-on-top', 'sticky-on-bottom');
-          if (self.scrollTopOld > scrollTopReal) {
-            el.classList.remove('sticky-off-top');
-            el.classList.add('sticky-off-bottom');
-          } else {
-            el.classList.add('sticky-off-top');
-            el.classList.remove('sticky-off-bottom');
-          }
+          el.classList.remove('sticky-on');
+          el.classList.add('sticky-off');
         }
       }
       // save for direction
