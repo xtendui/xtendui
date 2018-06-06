@@ -1015,7 +1015,6 @@ class XtSticky extends Xt {
             el.setAttribute('xt-scroll-add', 'block-add-outside');
             el.classList.add('no-transition');
             el.style.top = rectEl.top - rectContainer.top + 'px';
-            console.log(el.style.top, rectEl.top, rectContainer.top);
             XtUtil.requestAnimationFrame.call(window, function () {
               el.classList.remove('no-transition');
               el.style.top = add + 'px';
