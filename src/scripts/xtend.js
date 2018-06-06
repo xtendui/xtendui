@@ -971,6 +971,7 @@ class XtSticky extends Xt {
     XtUtil.cancelAnimationFrame.call(window, this.scrollFrame);
     this.scrollFrame = XtUtil.requestAnimationFrame.call(window, function () {
       let el = self.object;
+      let rectEl = el.getBoundingClientRect();
       let rectContainer = self.container[0].getBoundingClientRect();
       let bottom = self.eventScrollBottom(options.bottom, Infinity, scrollTop, el.clientHeight);
       let top = self.eventScrollTop(options.top, rectContainer.top, scrollTop);
@@ -995,7 +996,7 @@ class XtSticky extends Xt {
           if (el.getAttribute('xt-scroll-add') !== 'block-add-inside') {
             el.setAttribute('xt-scroll-add', 'block-add-inside');
             el.classList.add('no-transition');
-            el.style.top = el.getBoundingClientRect().top + 'px';
+            el.style.top = rectEl.top + 'px';
             XtUtil.requestAnimationFrame.call(window, function () {
               el.classList.remove('no-transition');
               el.style.top = add + 'px';
@@ -1013,7 +1014,8 @@ class XtSticky extends Xt {
           if (el.getAttribute('xt-scroll-add') !== 'block-add-outside') {
             el.setAttribute('xt-scroll-add', 'block-add-outside');
             el.classList.add('no-transition');
-            el.style.top = el.getBoundingClientRect().top - el.parentElement.getBoundingClientRect().top + 'px';
+            el.style.top = rectEl.top - rectContainer.top + 'px';
+            console.log(el.style.top, rectEl.top, rectContainer.top);
             XtUtil.requestAnimationFrame.call(window, function () {
               el.classList.remove('no-transition');
               el.style.top = add + 'px';
@@ -1025,16 +1027,16 @@ class XtSticky extends Xt {
           el.style.top = '';
         }
       }
+      // direction
+      if (scrollTopReal > self.scrollTopOld) {
+        el.classList.remove('sticky-up');
+        el.classList.add('sticky-down');
+      } else {
+        el.classList.remove('sticky-down');
+        el.classList.add('sticky-up');
+      }
       // activation
       if (scrollTop >= top - add && scrollTop < bottom + add) {
-        // direction
-        if (scrollTopReal > self.scrollTopOld) {
-          el.classList.remove('sticky-up');
-          el.classList.add('sticky-down');
-        } else {
-          el.classList.remove('sticky-down');
-          el.classList.add('sticky-up');
-        }
         // inside
         if (!element.classList.contains(...self.options.classes)) {
           self.eventOn(element);
@@ -1043,8 +1045,6 @@ class XtSticky extends Xt {
           el.classList.add('sticky-on');
         }
       } else {
-        // direction
-        el.classList.remove('sticky-up', 'sticky-down');
         // outside
         if (element.classList.contains(...self.options.classes)) {
           self.eventOff(element);
