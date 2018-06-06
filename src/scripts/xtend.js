@@ -148,7 +148,7 @@ class Xt {
         }
       }
       if (options.off) {
-        let events = [...options.on.split(' ')];
+        let events = [...options.off.split(' ')];
         for (let event of events) {
           el.xtUtilOff(event + '.xtend');
           el.xtUtilOn(event + '.xtend', function (e) {

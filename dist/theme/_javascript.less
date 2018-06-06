@@ -1,0 +1,55 @@
+//////////////////////
+// backdrop
+//////////////////////
+
+// .xt-backdrop
+
+@backdrop-opacity: .15;
+
+.xt-backdrop {
+  // styles
+  background-color: darken(@primary, @perc-md);
+  // animations
+  opacity: 0;
+  &.active {
+    .animation-default.active();
+    opacity: @backdrop-opacity;
+    animation-name: anim-backdrop-in;
+    animation-duration: @time-big;
+  }
+  &.out {
+    .animation-default.out();
+    opacity: 0;
+    animation-name: anim-backdrop-out;
+    animation-duration: @time-big;
+  }
+}
+
+@keyframes anim-backdrop-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: @backdrop-opacity;
+  }
+}
+
+@keyframes anim-backdrop-out {
+  0% {
+    opacity: @backdrop-opacity;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+//////////////////////
+// xt-sticky
+//////////////////////
+
+.sticky-down {
+  .transition-default.out();
+}
+.sticky-up {
+  .transition-default.active();
+}
