@@ -2,10 +2,12 @@
 // fieldset and legend
 //////////////////////
 
-fieldset {
+fieldset + fieldset {
+  .margin(top, medium);
 }
 
 legend {
+  .block();
   .h4();
 }
 
@@ -244,7 +246,7 @@ legend {
   .display(block);
   width: 100%;
   .muted();
-  .font-tiny();
+  .font-medium();
   .text-align(left);
   .input-group & {
     position: absolute;
