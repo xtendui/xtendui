@@ -133,28 +133,34 @@ class Xt {
     // on and off
     for (let el of this.elements) {
       if (options.on) {
-        el.xtUtilOff(options.on + '.xtend');
-        el.xtUtilOn(options.on + '.xtend', function (e) {
-          if (options.onOutside) {
-            if (XtUtil.checkOutside(e, self.container.querySelectorAll(options.targets))) {
+        let events = [...options.on.split(' ')];
+        for (let event of events) {
+          el.xtUtilOff(event + '.xtend');
+          el.xtUtilOn(event + '.xtend', function (e) {
+            if (options.onOutside) {
+              if (XtUtil.checkOutside(e, self.container.querySelectorAll(options.targets))) {
+                self.eventOn(this);
+              }
+            } else {
               self.eventOn(this);
             }
-          } else {
-            self.eventOn(this);
-          }
-        });
+          });
+        }
       }
       if (options.off) {
-        el.xtUtilOff(options.off + '.xtend');
-        el.xtUtilOn(options.off + '.xtend', function (e) {
-          if (options.offOutside) {
-            if (XtUtil.checkOutside(e, self.container.querySelectorAll(options.targets))) {
+        let events = [...options.on.split(' ')];
+        for (let event of events) {
+          el.xtUtilOff(event + '.xtend');
+          el.xtUtilOn(event + '.xtend', function (e) {
+            if (options.offOutside) {
+              if (XtUtil.checkOutside(e, self.container.querySelectorAll(options.targets))) {
+                self.eventOff(this);
+              }
+            } else {
               self.eventOff(this);
             }
-          } else {
-            self.eventOff(this);
-          }
-        });
+          });
+        }
       }
     }
   }
@@ -938,11 +944,14 @@ class XtSticky extends Xt {
   initEvents() {
     let self = this;
     let options = this.options;
-    // scroll
-    window.xtUtilOff(options.on + '.xtend');
-    window.xtUtilOn(options.on, function (e) {
-      self.eventScroll(self.object);
-    });
+    // events
+    let events = [...options.on.split(' ')];
+    for (let event of events) {
+      window.xtUtilOff(event + '.xtend' + this.namespace);
+      window.xtUtilOn(event + '.xtend' + this.namespace, function (e) {
+        self.eventScroll(self.object);
+      });
+    }
   }
 
   //////////////////////
@@ -1126,7 +1135,7 @@ class XtSticky extends Xt {
 
 XtSticky.defaults = {
   "class": "active",
-  "on": "scroll",
+  "on": "scroll resize",
   "min": 0,
   "max": Infinity,
   contain: false
