@@ -439,19 +439,3 @@ opacity: 0;
     transition-delay: @time-tiny;
   }
 }
-
-// anim-rotate
-
-.anim-rotate {
-  animation: preload-rotate 0 infinite linear;
-  will-change: transform;
-}
-
-@keyframes preload-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}

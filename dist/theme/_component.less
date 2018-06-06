@@ -705,5 +705,15 @@ a, .alink {
   border-right-color: transparent !important;
   border-radius: 50%;
   // animations
-  .anim-rotate();
+  animation: anim-rotate 1000ms infinite linear;
+  will-change: transform;
+}
+
+@keyframes anim-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
