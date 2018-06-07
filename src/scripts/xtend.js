@@ -696,9 +696,9 @@ class Xt {
   specialScrollbarOn() {
     let options = this.options;
     if (options.scrollbar) {
-      var width = XtUtil.scrollbarWidth();
+      let width = XtUtil.scrollbarWidth();
       // scroll
-      var container = document.documentElement;
+      let container = document.documentElement;
       container.style.paddingRight = width + 'px';
       container.classList.add('xt-scrollbar');
       // check fixed
@@ -719,9 +719,11 @@ class Xt {
         var padding = style.paddingRight;
         var str = 'calc(' + padding + ' + ' + width + 'px)';
         element.classList.add('no-transition');
-        element.style.paddingRight = str;
         XtUtil.requestAnimationFrame.call(window, function () {
-          element.classList.remove('no-transition');
+          element.style.paddingRight = str;
+          XtUtil.requestAnimationFrame.call(window, function () {
+            element.classList.remove('no-transition');
+          });
         });
       }
       // backdrop
