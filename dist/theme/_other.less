@@ -24,6 +24,7 @@
 .alert-light {
   color: @text;
   &::before {
+    border-color: @grey-250;
     background-color: @grey-250;
   }
 }
@@ -31,27 +32,31 @@
 .alert-success {
   .inverse();
   &::before {
-    background: @success;
+    border-color: @success;
+    background-color: @success;
   }
 }
 
 .alert-notice {
   .inverse();
   &::before {
-    background: @notice;
+    border-color: @notice;
+    background-color: @notice;
   }
 }
 
 .alert-warning {
   .inverse();
   &::before {
-    background: @warning;
+    border-color: @warning;
+    background-color: @warning;
   }
 }
 
 .alert-error {
   .inverse();
   &::before {
-    background: @error;
+    border-color: @error;
+    background-color: @error;
   }
 }

@@ -126,11 +126,14 @@ html.xt-scrollbar {
   &.active:not(.xt-clone) {
     position: fixed !important;
     z-index: @index-sticky;
+    width: inherit;
     & when (@position = 'top') {
-      top: @pos;
+      top: @pos !important;
+      bottom: auto !important;
     }
     & when (@position = 'bottom') {
-      bottom: @pos;
+      top: auto !important;
+      bottom: @pos !important;
     }
     .show-sticky {
       display: block;

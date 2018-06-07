@@ -977,16 +977,16 @@ class XtSticky extends Xt {
       let top = self.eventScrollTop(options.top, rectContainer.top, scrollTop);
       // add from contain
       let add = 0;
-      let addTop = 0;
-      let addBottom = 0;
+      let addBottom;
+      let addTop;
       if (options.contain) {
         addBottom = self.eventScrollAdd(options.contain['bottom'], 0);
         addTop = self.eventScrollAdd(options.contain['top'], 0);
-      }
-      if (scrollTopReal > self.scrollTopOld) {
-        add = addBottom;
-      } else {
-        add = addTop;
+        if (scrollTopReal > self.scrollTopOld) {
+          add = addBottom;
+        } else {
+          add = addTop;
+        }
       }
       // add
       if (scrollTop >= top - add && scrollTop < bottom + add) {
