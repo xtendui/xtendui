@@ -78,7 +78,7 @@ XtUtil.cancelAnimationFrame = function () {
 XtUtil.checkInside = function (e, targets) {
   let result = false;
   for (let t of targets) {
-    if (e.target === t) {
+    if (e.target === t || t.contains(e.target)) {
       result = true;
     }
   }
