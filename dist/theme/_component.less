@@ -482,6 +482,7 @@ a, .alink {
 
 .overlay-screen {
   // styles
+  box-shadow: 0 0 4px fade(@black, @perc-xs), 0 6px 10px fade(@black, @perc-sm);
   .overlay {
     padding: 3rem;
     @media @min-sm {
@@ -493,9 +494,10 @@ a, .alink {
       border-style: solid;
       border-color: transparent;
     }
-    box-shadow: 0 0 4px fade(@black, @perc-xs), 0 6px 10px fade(@black, @perc-sm);
     .overlay-inner {
-      box-shadow: none;
+      &::before {
+        .display(none);
+      }
     }
   }
   // options
