@@ -1018,7 +1018,7 @@
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
-        <div class="overlay-outer overlay-screen overlay-left">
+        <div class="overlay-outer overlay-pos overlay-left">
           <div class="overlay">
             <div class="overlay-inner">
               <button type="button" class="btn btn-close"></button>
@@ -1043,7 +1043,7 @@
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
-        <div class="overlay-outer overlay-screen overlay-right">
+        <div class="overlay-outer overlay-pos overlay-right">
           <div class="overlay">
             <div class="overlay-inner">
               <button type="button" class="btn btn-close"></button>
@@ -1116,6 +1116,8 @@
 </div>
 
 <!--
+
+-->
 <h3>Playground</h3>
 
 <div class="demo">
@@ -1129,7 +1131,7 @@
           <button type="button" class="btn btn-primary">
             left
           </button>
-          <div class="overlay-outer overlay-screen overlay-left">
+          <div class="overlay-outer overlay-pos overlay-left">
             <div class="overlay-message">
               <div class="btn btn-primary btn-small overlay-dismiss">
                 close message
@@ -1152,7 +1154,7 @@
           <button type="button" class="btn btn-primary">
             right
           </button>
-          <div class="overlay-outer overlay-screen overlay-right">
+          <div class="overlay-outer overlay-pos overlay-right">
             <div class="overlay-message">
               <div class="btn btn-primary btn-small overlay-dismiss">
                 close message
@@ -1189,10 +1191,10 @@
           /* todo refactor */
           /* todo animations */
           .overlay-left .overlay-message {
-            left: 100%;
+            right: 0;
           }
           .overlay-right .overlay-message {
-            right: 100%;
+            left: 0;
           }
         </style>
       </div>
@@ -1211,7 +1213,7 @@
           <button type="button" class="btn btn-primary">
             left
           </button>
-          <div class="overlay-outer overlay-screen overlay-left">
+          <div class="overlay-outer overlay-pos overlay-left">
             <div class="overlay">
               <div class="overlay-inner">
                 <button type="button" class="btn btn-close"></button>
@@ -1229,7 +1231,7 @@
           <button type="button" class="btn btn-primary">
             right
           </button>
-          <div class="overlay-outer overlay-screen overlay-right">
+          <div class="overlay-outer overlay-pos overlay-right">
             <div class="overlay">
               <div class="overlay-inner">
                 <button type="button" class="btn btn-close"></button>
@@ -1263,7 +1265,6 @@
     </div>
   </div>
 </div>
--->
           </article>
 
         </div>

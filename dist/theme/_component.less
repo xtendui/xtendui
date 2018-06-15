@@ -507,14 +507,24 @@ a, .alink {
   .overlay-noborder();
 }
 
-.overlay-left {
+.overlay-pos {
   // styles
-  max-width: 510px !important;
-}
-
-.overlay-right {
-  // styles
-  max-width: 510px !important;
+  .overlay {
+    padding: 3rem;
+    @media @min-sm {
+      padding: 4rem;
+    }
+    .overlay-left& {
+      max-width: 510px !important;
+    }
+    .overlay-right& {
+      max-width: 510px !important;
+    }
+  }
+  // options
+  .overlay-white(); // variant
+  .overlay-squared();
+  .overlay-noborder();
 }
 
 // animations

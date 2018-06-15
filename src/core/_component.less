@@ -217,7 +217,7 @@ a, .alink, .btn-link {
   }
 }
 
-// screen
+// addons
 
 .overlay-screen {
   .overlay {
@@ -229,27 +229,33 @@ a, .alink, .btn-link {
       .padding(all, none) !important;
     }
   }
-  &:not(.overlay-left):not(.overlay-right) {
-    .xt-backdrop {
-      opacity: 0 !important;
-      animation: none !important;
+  .xt-backdrop {
+    opacity: 0 !important;
+    animation: none !important;
+  }
+}
+
+.overlay-pos {
+  .overlay {
+    position: relative;
+    z-index: @index-overlay !important;
+    .justify-content-start();
+    .overlay-inner {
+      position: static;
+      .padding(all, none) !important;
     }
   }
-}
-
-// position
-
-.overlay-left {
-  margin-right: auto;
-  .overlay {
-    .justify-content-start();
+  .overlay-left& {
+    .overlay {
+      margin-left: 0;
+      margin-right: auto;
+    }
   }
-}
-
-.overlay-right {
-  margin-left: auto;
-  .overlay {
-    .justify-content-start();
+  .overlay-right& {
+    .overlay {
+      margin-left: auto;
+      margin-right: 0;
+    }
   }
 }
 
