@@ -12,6 +12,8 @@
 // .table
 
 .table {
+  .font-small();
+  line-height: 1.25;
   tr {
     border-bottom: @table-border-width solid @grey-250;
   }
@@ -23,7 +25,6 @@
   td {
     .padding(all, medium);
     .font-small();
-    line-height: 1.25;
   }
   // layout
   &:not(.table-stripe):not(.table-border):not(.table-center) {
@@ -47,20 +48,20 @@
       th,
       td {
         .padding(y, tiny) !important;
-        .padding(x, big) !important;
+        .padding(x, medium) !important;
         text-align: right;
         vertical-align: top;
       }
       &:first-child {
         th,
         td {
-          .padding(top, big) !important;
+          .padding(top, medium) !important;
         }
       }
       &:last-child {
         th,
         td {
-          .padding(bottom, big) !important;
+          .padding(bottom, medium) !important;
         }
       }
     }
