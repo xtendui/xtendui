@@ -4,6 +4,8 @@
 
 // formatCode
 
+import {XtUtil} from "../../../scripts/xtend-utils";
+
 const formatCode = function (source, lang) {
   var inner = source.querySelectorAll('.demo-source-from');
   if (inner.length) {
@@ -190,12 +192,12 @@ const populateDemo = function (container, i) {
     let appendBtn = XtUtil.createElement('<button type="button" class="btn btn-secondary-empty">' + name + '</button>');
     let btn = container.querySelectorAll('.demo-tabs-left')[0].append(appendBtn);
     btn = container.querySelectorAll('.demo-tabs-left .btn')[k];
-    /*
     // iframe append
-    if ($item.attr('data-iframe')) {
-      $item.append('<iframe data-src="' + $item.attr('data-iframe') + '" frameborder="0"></iframe>');
+    var src = item.getAttribute('data-iframe');
+    if (src) {
+      let appendIframe = XtUtil.createElement('<iframe data-src="' + src + '" frameborder="0"></iframe>');
+      item.append(appendIframe);
     }
-    */
     // tabs
     let id = 'iframe' + i + k;
     let appendItem = XtUtil.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-empty btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>');
@@ -215,37 +217,33 @@ const populateDemo = function (container, i) {
     });
     // inject iframe
     if (item.getAttribute('data-iframe')) {
-      /*
-      let $iframe = $item.find('> iframe');
+      let iframe = item.querySelectorAll('iframe')[0];
       let initIframe = function() {
-        if (!$iframe.attr('src')) {
-          $item.addClass('demo-iframe');
-          $iframe.attr('id', id);
-          $iframe.attr('src', $iframe.attr('data-src'));
-          $iframe.on('load', function(e){
-            populateIframe($item, $iframe, id);
+        if (!iframe.getAttribute('src')) {
+          item.classList.add('demo-iframe');
+          iframe.setAttribute('id', id);
+          iframe.setAttribute('src', iframe.getAttribute('data-src'));
+          iframe.xtUtilOn('load', function (e) {
+            populateIframe(item, iframe, id);
             window.resizeIframe(id);
-            $iframe[0].contentWindow.init();
+            iframe.contentWindow.init();
             // .populated fix scroll
-            setTimeout( function($item) {
-              $item.addClass('populated');
-            }, 0, $item);
+            setTimeout( function(item) {
+              item.classList.add('populated');
+            }, 0, item);
           });
         }
       };
       if (k === 0) {
         initIframe();
       }
-      // iframe resize on show
-      $item.on('on', function(e, obj) {
+      iframe.parentElement.addEventListener('on', function (e) {
         if (e.target === this) {
-          window.resizeIframe(id);
           if (k !== 0) {
             initIframe();
           }
         }
       });
-      */
     } else {
       populateInline(item, id);
       // .populated fix scroll
@@ -278,44 +276,48 @@ const populateInline = function (item, id) {
   });
 };
 
-/*
 window.resizeIframe = function(id) {
-  let $iframe = $('#' + id);
-  let $target = $iframe.contents().find('#body-inner');
-  $target.hide().show(0); // fix scrollbars disappearing
-  let h = $target.outerHeight();
-  if (h !== $iframe.data('iframeHeight')) {
-    $iframe.height(h);
-    $iframe.data('iframeHeight', h);
+  let iframe = document.querySelectorAll('#' + id)[0];
+  if (!iframe.contentWindow.document.body.classList.contains('full')) {
+    let target = iframe.contentWindow.document.body.querySelectorAll('#body-inner')[0];
+    let h = target.offsetHeight;
+    console.log(h, iframe.getAttribute('iframeHeight'));
+    if (h !== iframe.getAttribute('iframeHeight')) {
+      iframe.style.height = h + 'px';
+      iframe.setAttribute('iframeHeight', h);
+    }
   }
 };
-*/
-/*
+
 // populateIframe
-function populateIframe($item, $iframe, id) {
-  let html = $('body #body-inner', $iframe[0].contentWindow.document).html();
-  let less = $('body less-style', $iframe[0].contentWindow.document).html();
-  let css = $('body style[scoped]', $iframe[0].contentWindow.document).html();
-  let js = $('body script', $iframe[0].contentWindow.document).html();
+function populateIframe(item, iframe, id) {
+  let html = iframe.contentWindow.document.body.querySelectorAll('#body-inner')[0];
+  let less = iframe.contentWindow.document.body.querySelectorAll('less-style')[0];
+  let css = iframe.contentWindow.document.body.querySelectorAll('style[scoped]')[0];
+  let js = iframe.contentWindow.document.body.querySelectorAll('script')[0];
   // inject code
   if (html) {
-    $iframe.append('<div class="demo-source" data-lang="html">' + html + '</div>');
+    let appendItem = XtUtil.createElement('<div class="demo-source" data-lang="html">' + html.innerHTML + '</div>');
+    iframe.append(appendItem);
   }
   if (less) {
-    $iframe.append('<div class="demo-source" data-lang="less">' + less + '</div>');
+    let appendItem = XtUtil.createElement('<div class="demo-source" data-lang="less">' + less.innerHTML + '</div>');
+    iframe.append(appendItem);
   }
   if (js) {
-    $iframe.append('<div class="demo-source" data-lang="js">' + js + '</div>');
+    let appendItem = XtUtil.createElement('<div class="demo-source" data-lang="js">' + js.innerHTML + '</div>');
+    iframe.append(appendItem);
   }
   // populate
-  let $sources = $item.find('.demo-source');
-  $sources.each( function(z) {
-    let $source = $(this);
-    populateSources($item, $source, id, z);
+  for (let [z, source] of item.querySelectorAll('.demo-source').entries()) {
+    populateSources(item, source, id, z);
+  }
+  new XtToggle(item, {
+    "elements": ".demo-code-tabs-left .btn",
+    "targets": ".demo-code-body-item",
+    "min": 1
   });
-  $item.xtToggle({"elements": ".demo-code-tabs-left .button", "targets": ".demo-code-body-item", "min": 1});
 }
-*/
 
 // populateSources
 
@@ -387,9 +389,6 @@ for (let element of document.querySelectorAll('.demo-cols-nested .col')) {
 //////////////////////
 // xtend
 //////////////////////
-
-import {XtUtil} from '../../../scripts/xtend-utils';
-import {XtToggle} from '../../../scripts/xtend';
 
 // init all
 

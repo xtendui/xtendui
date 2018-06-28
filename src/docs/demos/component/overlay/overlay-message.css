@@ -1,0 +1,1 @@
+.overlay-message{position:absolute;z-index:200;top:50%;width:calc(100vw - 510px);text-align:center}@media (max-width:767px){.overlay-message{display:none}}.overlay-left .overlay-message{right:0}.overlay-right .overlay-message{left:0}

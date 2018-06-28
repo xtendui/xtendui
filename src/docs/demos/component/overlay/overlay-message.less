@@ -1,0 +1,19 @@
+@import (reference) "../../../../../dist/xtend.less"; // ignore if customizing xtend.scss
+
+.overlay-message {
+  @media @max-sm {
+    display: none;
+  }
+  position: absolute;
+  z-index: 200; /* z-index: @index-overlay !important; */
+  top: 50%;
+  width: calc(100vw - 510px);
+  text-align: center;
+  .overlay-left & {
+    right: 0;
+  }
+  .overlay-right & {
+    left: 0;
+  }
+  // @TODO animations
+}

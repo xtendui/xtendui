@@ -360,6 +360,8 @@ class Xt {
         self.specialCloseOn(el, fElements.single);
         self.specialScrollbarOn();
       }
+      // dispatch
+      el.dispatchEvent(new Event('on')); // @TODO events revision
     }
   }
 
@@ -415,6 +417,8 @@ class Xt {
         self.specialCollapseOff(el);
         self.specialCloseOff(el);
       }
+      // dispatch
+      el.dispatchEvent(new Event('off')); // @TODO events revision
     }
   }
 

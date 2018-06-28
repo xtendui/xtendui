@@ -81,13 +81,30 @@ gulp.task('js-clean', gulp.series('js-dist', function () {
   return gulp.src('docs/assets/scripts/theme.*', {read: false})
     .pipe(clean({force: true}));
 }));
-gulp.task('js', gulp.series('js-clean', function () {
+gulp.task('js-theme', gulp.series('js-clean', function () {
   var b = browserify({
     entries: 'src/docs/assets/scripts/theme.js',
     debug: true
   });
   return b.bundle()
-    .pipe(source('bundle.js'))
+    .pipe(source('theme.min.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(uglify({
+      output: {
+        comments: /^!/
+      }
+    }))
+    .pipe(sourcemaps.write(''))
+    .pipe(gulp.dest('src/docs/assets/scripts/'));
+}));
+gulp.task('js', gulp.series('js-theme', function () {
+  var b = browserify({
+    entries: 'src/docs/assets/scripts/xtend.js',
+    debug: true
+  });
+  return b.bundle()
+    .pipe(source('xtend.min.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(uglify({
