@@ -281,7 +281,6 @@ window.resizeIframe = function(id) {
   if (!iframe.contentWindow.document.body.classList.contains('full')) {
     let target = iframe.contentWindow.document.body.querySelectorAll('#body-inner')[0];
     let h = target.offsetHeight;
-    console.log(h, iframe.getAttribute('iframeHeight'));
     if (h !== iframe.getAttribute('iframeHeight')) {
       iframe.style.height = h + 'px';
       iframe.setAttribute('iframeHeight', h);

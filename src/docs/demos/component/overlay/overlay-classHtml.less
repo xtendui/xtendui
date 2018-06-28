@@ -1,0 +1,14 @@
+@import (reference) "../../../../../dist/xtend.less";
+
+#body-inner { // animate any html children
+  .transition-default.out();
+  transform: translateX(0);
+  html.xt-overlay-left & {
+    .transition-default.active();
+    transform: translateX(@anim-big);
+  }
+  html.xt-overlay-right & {
+    .transition-default.active();
+    transform: translateX(-@anim-big);
+  }
+}

@@ -1,19 +1,40 @@
-@import (reference) "../../../../../dist/xtend.less"; // ignore if customizing xtend.scss
+@import (reference) "../../../../../dist/xtend.less";
 
 .overlay-message {
-  @media @max-sm {
-    display: none;
-  }
+  // styles
   position: absolute;
-  z-index: 200; /* z-index: @index-overlay !important; */
+  z-index: @index-overlay !important;
   top: 50%;
   width: calc(100vw - 510px);
   text-align: center;
+  @media @max-sm {
+    display: none;
+  }
+  // add box shadow to button
+  .overlay-dismiss {
+    &::before {
+      box-shadow: 3px 3px 15px fade(@black, @perc-sm);
+    }
+  }
   .overlay-left & {
     right: 0;
+    margin-right: 3rem;
   }
   .overlay-right & {
     left: 0;
+    margin-left: 3rem;
   }
-  // @TODO animations
+  // animations
+  .overlay-left.active & {
+    .anim-right.active();
+  }
+  .overlay-left.out & {
+    .anim-right.out();
+  }
+  .overlay-right.active & {
+    .anim-left.active();
+  }
+  .overlay-right.out & {
+    .anim-left.out();
+  }
 }

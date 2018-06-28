@@ -613,7 +613,6 @@
   .demo-code-tabs {
     position: relative;
     z-index: 2;
-    .margin-remove(bottom, tiny);
     .display(flex);
     .justify-content-between();
     background-color: @grey-250;
@@ -636,6 +635,7 @@
     .alert();
     .box-squared();
     .margin(all, none);
+    .margin-remove(top, tiny);
   }
   // iframe + .demo-source
   iframe {
