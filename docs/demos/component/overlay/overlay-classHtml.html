@@ -46,7 +46,7 @@
         // add id
         document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
         // https://github.com/marcj/css-element-queries
-        new ResizeSensor(document.getElementById('body-inner'), function() {
+        new ResizeSensor(document.getElementById('body-outer'), function() {
           parent.resizeIframe(window.frameElement.getAttribute('id'));
         });
       }

@@ -19,7 +19,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
 
     <!-- styles -->
-    <link rel="stylesheet" href="sticky-10.css?v=0.4.26" />
+    <link rel="stylesheet" href="sticky-contain-top.css?v=0.4.26" />
     <link rel="stylesheet" href="/assets/styles/demo.css?v=0.4.26" />
     
     <!-- scripts -->
@@ -46,7 +46,7 @@
         // add id
         document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
         // https://github.com/marcj/css-element-queries
-        new ResizeSensor(document.getElementById('body-inner'), function() {
+        new ResizeSensor(document.getElementById('body-outer'), function() {
           parent.resizeIframe(window.frameElement.getAttribute('id'));
         });
       }
@@ -55,37 +55,39 @@
   </head>
   <body class="full">
     
-    <div id="body-outer"><br /><br /><br /><br /><br /><br /><br />
-<div data-xt-sticky data-xt-sticky='{"top": 0, "bottom": "#bottom"}'>
-  <div class="box">
-    <div class="item">
-      Element <span class="show-sticky">.show-sticky</span> <span class="hide-sticky">.hide-sticky</span>
-    </div>
+    <div id="body-outer"><br><br><br><br><br><br><br>
+
+<div id="sticky-contain-top" data-xt-sticky>
+  <div class="alert box-squared">
+    Element <span class="show-sticky">.show-sticky</span> <span class="hide-sticky">.hide-sticky</span>
   </div>
 </div>
-<div class="box">
-  <div class="item">
-    Lorem Ipsum
+
+<div class="alert box-squared">
+  Lorem Ipsum
+</div>
+
+<br><br><br><br><br><br><br>
+
+<div id="sticky-contain-bottom" data-xt-sticky='{"contain": {"top": "#sticky-contain-top"}}'>
+  <div class="alert box-squared">
+    Element <span class="show-sticky">.show-sticky</span> <span class="hide-sticky">.hide-sticky</span>
   </div>
 </div>
-<br /><br /><br /><br /><br /><br /><br />
-<div class="box" id="bottom">
-  <div class="item">
-    Lorem Ipsum
-  </div>
+
+<br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
 </div>
-<br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /></div>
 
     
     <less-style>@import (reference) "../../../../../dist/xtend.less";
 
 [data-xt-sticky] {
-  .xt-sticky('top', 30px);
+  .xt-sticky();
 }</less-style>
     
 
