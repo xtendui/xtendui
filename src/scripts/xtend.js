@@ -974,6 +974,8 @@ class XtSticky extends Xt {
         self.eventScroll(self.object);
       });
     }
+    // trigger initial
+    self.eventScroll(self.object);
   }
 
   //////////////////////
@@ -996,7 +998,7 @@ class XtSticky extends Xt {
       let rectEl = el.getBoundingClientRect();
       let rectContainer = self.container[0].getBoundingClientRect();
       let top = self.eventScrollPos(options.limit.top, rectContainer.top, scrollTop);
-      let bottom = self.eventScrollPos(options.limit.bottom, Infinity, scrollTop);
+      let bottom = self.eventScrollPos(options.limit.bottom, Infinity, scrollTop) - height;
       //bottom -= height;
       if (options.position === 'bottom') {
         top += height - window.innerHeight;
