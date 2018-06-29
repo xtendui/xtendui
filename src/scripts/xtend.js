@@ -972,11 +972,15 @@ class XtSticky extends Xt {
     for (let event of events) {
       window.xtUtilOff(event + '.xtend' + this.namespace);
       window.xtUtilOn(event + '.xtend' + this.namespace, function (e) {
-        self.eventScroll(self.object);
+        self.eventScroll(self.object, true);
       });
     }
     // trigger initial
     self.eventScroll(self.object); // @TODO events revision
+    // @TODO temporary fix mix demo
+    self.object.addEventListener('refresh', function (e) {
+      self.eventScroll(self.object);
+    });
   }
 
   //////////////////////
@@ -987,83 +991,90 @@ class XtSticky extends Xt {
    * window scroll
    * @param {Element} element To be activated or deactivated
    */
-  eventScroll(element) {
+  eventScroll(element, propagate) {
     let self = this;
     let options = this.options;
-    // scroll
+    // vars
+    let el = self.object;
+    let height = el.clientHeight;
+    let rectContainer = self.container[0].getBoundingClientRect();
+    let totalHeight = window.innerHeight;
     let scrollTop = document.documentElement.scrollTop;
-    let windowHeight = window.innerHeight;
-    XtUtil.cancelAnimationFrame.call(window, this.scrollFrame);
-    this.scrollFrame = XtUtil.requestAnimationFrame.call(window, function () {
-      let el = self.object;
-      let height = el.clientHeight;
-      let rectContainer = self.container[0].getBoundingClientRect();
-      let top = self.eventScrollPos(options.limit['top'] || self.targets, scrollTop, rectContainer.top, false);
-      let bottom = self.eventScrollPos(options.limit['bottom'] || self.targets, scrollTop, Infinity, false) - height;
-      if (options.position === 'bottom') {
-        top += height - windowHeight;
-        bottom += height - windowHeight;
-      }
-      // contain
-      let add = 0;
-      if (options.contain) {
-        if (options.contain['top']) {
-          let addTop = self.eventScrollHeight(options.contain['top']);
+    // scroll
+    let top = self.eventScrollPos(options.limit['top'] || self.targets, scrollTop, rectContainer.top, false);
+    let bottom = self.eventScrollPos(options.limit['bottom'] || self.targets, scrollTop, Infinity, false) - height;
+    if (options.position === 'bottom') {
+      top += height - totalHeight;
+      bottom += height - totalHeight;
+    }
+    // contain and add
+    let add = 0;
+    let addTop = 0;
+    let addBottom = 0;
+    if (options.contain) {
+      if (options.contain['top']) {
+        addTop = self.eventScrollHeight(options.contain['top']);
+        if (addTop > 0) {
           add = addTop;
         }
-        if (options.contain['bottom']) {
-          let addBottom = self.eventScrollPos(options.contain['bottom']) - height;
-          if (addBottom < 0) {
-            add = addBottom;
-          }
+      }
+      if (options.contain['bottom']) {
+        addBottom = self.eventScrollPos(options.contain['bottom']) - height;
+        if (addTop > addBottom) {
+          add = addBottom;
         }
       }
-      // add
-      el.classList.add('no-transition');
-      el.style[options.position] = add + 'px';
+    }
+    el.style[options.position] = add + 'px';
+    // @TODO temporary fix mix demo
+    if (propagate) {
       XtUtil.requestAnimationFrame.call(window, function () {
-        el.classList.remove('no-transition');
-      });
-      // activation
-      let checkTop = scrollTop >= top - add;
-      let checkBottom = scrollTop < bottom + add;
-      if (checkTop && checkBottom) {
-        // inside
-        if (!element.classList.contains(...self.options.classes)) {
-          self.eventOn(element);
+        let elements = document.querySelectorAll(options.contain['top'] + ',' + options.contain['bottom']);
+        elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
+        for (let el of elements) {
+          el.dispatchEvent(new Event('refresh'));
         }
-      } else {
-        // outside
-        if (element.classList.contains(...self.options.classes)) {
-          self.eventOff(element);
-        }
-      }
-      // top and bottom
-      el.classList.remove('sticky-top', 'sticky-bottom');
-      if (!checkTop) {
-        el.classList.add('sticky-top');
-      }
-      if (!checkBottom) {
-        el.classList.add('sticky-bottom');
-      }
-      // direction
-      if (scrollTop > self.scrollTopOld) {
-        el.classList.remove('sticky-up');
-        el.classList.add('sticky-down');
-      } else {
-        el.classList.remove('sticky-down');
-        el.classList.add('sticky-up');
-      }
-      // fix position fixed width 100% of parent
-      var width = self.normalizeWidth(self.container[0].clientWidth);
-      el.classList.add('no-transition');
-      el.style.width = width;
-      XtUtil.requestAnimationFrame.call(window, function () {
-        el.classList.remove('no-transition');
       });
-      // save for direction
-      self.scrollTopOld = scrollTop;
+    }
+    // activation
+    let checkTop = scrollTop >= top - add;
+    let checkBottom = scrollTop < bottom + add;
+    if (checkTop && checkBottom) {
+      // inside
+      if (!element.classList.contains(...self.options.classes)) {
+        self.eventOn(element);
+      }
+    } else {
+      // outside
+      if (element.classList.contains(...self.options.classes)) {
+        self.eventOff(element);
+      }
+    }
+    // top and bottom
+    el.classList.remove('sticky-top', 'sticky-bottom');
+    if (!checkTop) {
+      el.classList.add('sticky-top');
+    }
+    if (!checkBottom) {
+      el.classList.add('sticky-bottom');
+    }
+    // direction
+    if (scrollTop > self.scrollTopOld) {
+      el.classList.remove('sticky-up');
+      el.classList.add('sticky-down');
+    } else {
+      el.classList.remove('sticky-down');
+      el.classList.add('sticky-up');
+    }
+    // fix position fixed width 100% of parent
+    var width = self.normalizeWidth(self.container[0].clientWidth);
+    el.classList.add('no-transition');
+    el.style.width = width;
+    XtUtil.requestAnimationFrame.call(window, function () {
+      el.classList.remove('no-transition');
     });
+    // save for direction
+    self.scrollTopOld = scrollTop;
   }
 
   /**
@@ -1085,7 +1096,7 @@ class XtSticky extends Xt {
         }
         for (let el of elements) {
           let rect = el.getBoundingClientRect();
-          val += rect.top;
+          val += Math.round(rect.top);
         }
       }
     }

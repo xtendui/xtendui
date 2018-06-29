@@ -601,7 +601,8 @@
     &:not(.populated) {
       .demo-code-body {
         width: 100%;
-        height: 15rem;
+        height: 30rem;
+        overflow: hidden;
       }
     }
     &.populated {
@@ -715,16 +716,14 @@
 .site-header-top-outer[data-xt-sticky] {
   .xt-sticky(@mode:'fixed');
   // animations
-  .site-header-top {
+  > * {
     .transition-default.active();
     transform: translateY(0);
   }
-  &.active:not(.xt-clone) {
-    &.sticky-down {
-      .site-header-top {
-        .transition-default.out();
-        transform: translateY(-100%);
-      }
+  &.sticky-down {
+    > * {
+      .transition-default.out();
+      transform: translateY(-100%);
     }
   }
 }
