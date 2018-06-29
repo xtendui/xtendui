@@ -290,7 +290,7 @@ window.resizeIframe = function(id) {
 
 // populateIframe
 function populateIframe(item, iframe, id) {
-  let html = iframe.contentWindow.document.body.querySelectorAll('#body-inner')[0];
+  let html = iframe.contentWindow.document.body.querySelectorAll('#body-outer')[0];
   let less = iframe.contentWindow.document.body.querySelectorAll('less-style')[0];
   let css = iframe.contentWindow.document.body.querySelectorAll('style[scoped]')[0];
   let js = iframe.contentWindow.document.body.querySelectorAll('script')[0];
