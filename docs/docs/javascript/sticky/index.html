@@ -31,7 +31,9 @@
 
   <header class="site-header">
 
-    <div class="site-header-top-outer" data-xt-sticky='{"limit": {"top": ".site-hero", "bottom": ".site-breadcrumbs-outer.xt-clone"}}'>
+    <div class="site-header-top-outer"
+         data-xt-sticky='{"limit": {"top": ".site-hero", "bottom": ".site-breadcrumbs-outer.xt-clone"},
+             "contain": {"bottom":".site-breadcrumbs-outer"}}'>
       <div class="site-header-top">
         <div class="container">
 
@@ -470,7 +472,7 @@
 </div>
 
 <div class="alert alert-warning">
-  It's recomended to style a inner div <code>[data-xt-xticky] > div</code> when using <strong>sticky component</strong>.
+  It's recomended to style and animate a inner div <code>[data-xt-xticky] > div</code> when using <strong>sticky component</strong>.
 </div>
 
 <h2>Defaults</h2>
@@ -532,6 +534,11 @@
       <code>"contain": {"bottom": Element}</code>.
     </div>
   </div>
+  <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-contain-mix.html" data-name="mix">
+    <div class="demo-text">
+      <code>"contain": {"bottom": Element}</code>.
+    </div>
+  </div>
 </div>
 
           </article>
@@ -539,12 +546,12 @@
         </div>
         <div class="col col-12 col-3-md hide show-md">
 
-          <aside class="site-aside" data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)"}}'>
+          <aside class="site-aside" data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer"}}'>
 
             <div class="site-aside-text">
               <a href="/docs/javascript/sticky/" class="btn btn-nodesign">
                 <div class="site-aside-title">
-                  Sticky Lorem ipsum dolor sit amet
+                  Sticky
                 </div>
               </a>
             </div>

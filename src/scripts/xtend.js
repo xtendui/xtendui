@@ -951,7 +951,7 @@ class XtSticky extends Xt {
     }
     // targets
     this.targets = this.container[0].querySelectorAll('.xt-clone');
-    if (this.targets) {
+    if (!this.targets.length) {
       this.targets = this.object.cloneNode(true);
       this.targets.classList.add('xt-clone');
       this.container[0].append(this.targets);
@@ -997,100 +997,33 @@ class XtSticky extends Xt {
     this.scrollFrame = XtUtil.requestAnimationFrame.call(window, function () {
       let el = self.object;
       let height = el.clientHeight;
-      let rectEl = el.getBoundingClientRect();
       let rectContainer = self.container[0].getBoundingClientRect();
-      let top = self.eventScrollPos(options.limit['top'], scrollTop, rectContainer.top);
-      let bottom = self.eventScrollPos(options.limit['bottom'], scrollTop, Infinity) - height;
+      let top = self.eventScrollPos(options.limit['top'] || self.targets, scrollTop, rectContainer.top, false);
+      let bottom = self.eventScrollPos(options.limit['bottom'] || self.targets, scrollTop, Infinity, false) - height;
       if (options.position === 'bottom') {
         top += height - windowHeight;
         bottom += height - windowHeight;
       }
-      // add
-      let add = 0;
       // contain
-      let addTop;
-      let addBottom;
+      let add = 0;
       if (options.contain) {
         if (options.contain['top']) {
-          addTop = self.eventScrollHeight(options.contain['top']);
+          let addTop = self.eventScrollHeight(options.contain['top']);
           add = addTop;
-          console.log(add);
         }
         if (options.contain['bottom']) {
-          addBottom = self.eventScrollPos(options.contain['bottom']) - height;
+          let addBottom = self.eventScrollPos(options.contain['bottom']) - height;
           if (addBottom < 0) {
             add = addBottom;
           }
         }
       }
-      if (options.contain['bottom']) {
-      }
-      // position
+      // add
       el.classList.add('no-transition');
-      el.style.top = add + 'px';
+      el.style[options.position] = add + 'px';
       XtUtil.requestAnimationFrame.call(window, function () {
         el.classList.remove('no-transition');
       });
-      /*
-      // add from contain
-      let add = 0;
-      let addTop;
-      let addBottom;
-      if (options.contain) {
-        //if (scrollTop > self.scrollTopOld) {
-          addBottom = -self.eventScrollBottom(options.contain['bottom']);
-          add = addBottom;
-          if (options.contain['bottom']) {
-            //console.log(addBottom);
-          }
-        //} else {
-          addTop = self.eventScrollHeight(options.contain['top']);
-          add = addTop;
-        //}
-      }
-      */
-      /*
-      // add
-      if (scrollTop >= top - add && scrollTop < bottom + add) {
-        // if inside scrolling
-        if ((addTop || addBottom) && scrollTop <= top) {
-          //console.log('1', add, addBottom);
-          // if inside scrolling plus add current position before add
-          if (el.getAttribute('xt-scroll-add') !== 'block-add-inside') {
-            el.setAttribute('xt-scroll-add', 'block-add-inside');
-            el.classList.add('no-transition');
-            el.style.top = rectEl.top + 'px';
-            XtUtil.requestAnimationFrame.call(window, function () {
-              el.classList.remove('no-transition');
-              el.style.top = add + 'px';
-            });
-          }
-        } else {
-          el.setAttribute('xt-scroll-add', '');
-          // if inside scrolling not inside add use add
-          el.style.top = add + 'px';
-        }
-      } else {
-        // if outside scrolling
-        if ((addTop || addBottom) && scrollTop >= top - addTop) {
-          //console.log('2', add, addBottom);
-          // if outside scrolling plus add
-          if (el.getAttribute('xt-scroll-add') !== 'block-add-outside') {
-            el.setAttribute('xt-scroll-add', 'block-add-outside');
-            el.classList.add('no-transition');
-            el.style.top = rectEl.top - rectContainer.top + 'px';
-            XtUtil.requestAnimationFrame.call(window, function () {
-              el.classList.remove('no-transition');
-              el.style.top = add + 'px';
-            });
-          }
-        } else {
-          el.setAttribute('xt-scroll-add', '');
-          // if outside scrolling not inside add
-          el.style.top = '';
-        }
-      }
-      */
       // activation
       let checkTop = scrollTop >= top - add;
       let checkBottom = scrollTop < bottom + add;
@@ -1134,25 +1067,26 @@ class XtSticky extends Xt {
   }
 
   /**
-   * get top position of option
+   * get position of option
    * @param {String|Number|Element} option
-   * @param {Number} val Default top
+   * @param {Number} val Default value
    * @param {Number} scrollTop Window's scrollTop
    * @returns {Number} value Option's position (px)
    */
-  eventScrollPos(option, scrollTop = 0, val = 0) {
+  eventScrollPos(option, scrollTop = 0, val = 0, filter = true) {
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
-      let el = document.querySelectorAll(option);
-      let rect;
-      if (el.length) {
-        rect = el[0].getBoundingClientRect();
-      } else if (this.targets.length) {
-        rect = this.targets[0].getBoundingClientRect();
-      }
-      if (rect) {
-        val = rect.top + scrollTop;
+      let elements = Array.isArray(option) ? option : document.querySelectorAll(option);
+      if (elements.length) {
+        val = scrollTop;
+        if (filter) {
+          elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
+        }
+        for (let el of elements) {
+          let rect = el.getBoundingClientRect();
+          val += rect.top;
+        }
       }
     }
     return val;
@@ -1164,14 +1098,18 @@ class XtSticky extends Xt {
    * @param {Number} val Default value
    * @returns {Number} value Option's height (px)
    */
-  eventScrollHeight(option, val = 0) {
+  eventScrollHeight(option, val = 0, filter = true) {
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
-      let el = document.querySelectorAll(option);
-      if (el.length) {
-        el = el[0];
-        val = el.clientHeight;
+      let elements = Array.isArray(option) ? option : document.querySelectorAll(option);
+      if (elements.length) {
+        if (filter) {
+          elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
+        }
+        for (let el of elements) {
+          val += el.clientHeight;
+        }
       }
     }
     return val;

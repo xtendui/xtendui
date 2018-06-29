@@ -715,24 +715,17 @@
 .site-header-top-outer[data-xt-sticky] {
   .xt-sticky(@mode:'fixed');
   // animations
-  .transition-default.active();
-  transform: translateY(0);
+  .site-header-top {
+    .transition-default.active();
+    transform: translateY(0);
+  }
   &.active:not(.xt-clone) {
-    .site-header-top {
-      .anim-vertical.active();
-    }
     &.sticky-down {
-      .transition-default.out();
-      transform: translateY(-100%);
       .site-header-top {
-        .anim-vertical.out();
+        .transition-default.out();
+        transform: translateY(-100%);
       }
     }
-  }
-  &.sticky-bottom {
-    .no-transition();
-    visibility: hidden !important;
-    transform: translateY(-100%);
   }
 }
 
