@@ -976,14 +976,11 @@ class XtSticky extends Xt {
     XtUtil.cancelAnimationFrame.call(window, this.scrollFrame);
     this.scrollFrame = XtUtil.requestAnimationFrame.call(window, function () {
       let el = self.object;
-      var height = el.clientHeight;
+      let height = el.clientHeight;
       let rectEl = el.getBoundingClientRect();
       let rectContainer = self.container[0].getBoundingClientRect();
-      let top = self.eventScrollPos(options.top, rectContainer.top, scrollTop);
-      if (!options.bottom) {
-        options.bottom = Infinity;
-      }
-      let bottom = self.eventScrollPos(options.bottom, Infinity, scrollTop);
+      let top = self.eventScrollPos(options.limit.top, rectContainer.top, scrollTop);
+      let bottom = self.eventScrollPos(options.limit.bottom, Infinity, scrollTop);
       //bottom -= height;
       if (options.position === 'bottom') {
         top += height - window.innerHeight;
@@ -1074,8 +1071,8 @@ class XtSticky extends Xt {
       }
       */
       // activation
-      var checkTop = scrollTop >= top - add;
-      var checkBottom = scrollTop < bottom + add;
+      let checkTop = scrollTop >= top - add;
+      let checkBottom = scrollTop < bottom + add;
       if (checkTop && checkBottom) {
         // inside
         if (!element.classList.contains(...self.options.classes)) {
@@ -1104,12 +1101,14 @@ class XtSticky extends Xt {
         el.classList.add('sticky-up');
       }
       // fix position fixed width 100% of parent
-      var width = parseFloat(getComputedStyle(self.container[0]).width);
-      el.classList.add('no-transition');
-      el.style.width = width + 'px';
-      XtUtil.requestAnimationFrame.call(window, function () {
-        el.classList.remove('no-transition');
-      });
+      let width = parseFloat(getComputedStyle(self.container[0]).width);
+      if (width + XtUtil.scrollbarWidth() !== window.innerWidth) {
+        el.classList.add('no-transition');
+        el.style.width = width + 'px';
+        XtUtil.requestAnimationFrame.call(window, function () {
+          el.classList.remove('no-transition');
+        });
+      }
       // save for direction
       self.scrollTopOld = scrollTop;
     });
@@ -1169,6 +1168,7 @@ XtSticky.defaults = {
   "min": 0,
   "max": Infinity,
   "position": "top",
+  "limit": {"bottom": Infinity},
   "contain": false
 };
 
