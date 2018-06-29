@@ -465,8 +465,9 @@ class Xt {
     let options = this.options;
     // timing
     let timing = options.timing;
-    let transition = parseFloat(getComputedStyle(el)['transitionDuration']) + parseFloat(getComputedStyle(el)['transitionDelay']);
-    let animation = parseFloat(getComputedStyle(el)['animationDuration']) + parseFloat(getComputedStyle(el)['animationDelay']);
+    let style = getComputedStyle(el);
+    let transition = parseFloat(style['transitionDuration']) + parseFloat(style['transitionDelay']);
+    let animation = parseFloat(style['animationDuration']) + parseFloat(style['animationDelay']);
     if (transition || animation) {
       timing = Math.max(transition, animation);
     }
@@ -705,7 +706,7 @@ class Xt {
       // check fixed
       var elements = document.documentElement.querySelectorAll('.xt-check-fixed > *');
       for (let element of elements) {
-        var style = getComputedStyle(element);
+        let style = getComputedStyle(element);
         if (style.position === 'fixed') {
           element.classList.add('xt-fixed');
         } else {
@@ -716,10 +717,10 @@ class Xt {
       var elements = document.documentElement.querySelectorAll('.xt-fixed');
       for (let element of elements) {
         element.style.paddingRight = '';
-        var style = getComputedStyle(element);
-        if (self.normalizeWidth(parseFloat(style.width)) === '') {
-          var padding = style.paddingRight;
-          var str = 'calc(' + padding + ' + ' + width + 'px)';
+        if (self.normalizeWidth(element.clientWidth) === '') {
+          let style = getComputedStyle(element);
+          let padding = style.paddingRight;
+          let str = 'calc(' + padding + ' + ' + width + 'px)';
           element.classList.add('no-transition');
           XtUtil.requestAnimationFrame.call(window, function () {
             element.style.paddingRight = str;
@@ -991,43 +992,45 @@ class XtSticky extends Xt {
     let options = this.options;
     // scroll
     let scrollTop = document.documentElement.scrollTop;
+    let windowHeight = window.innerHeight;
     XtUtil.cancelAnimationFrame.call(window, this.scrollFrame);
     this.scrollFrame = XtUtil.requestAnimationFrame.call(window, function () {
       let el = self.object;
       let height = el.clientHeight;
       let rectEl = el.getBoundingClientRect();
       let rectContainer = self.container[0].getBoundingClientRect();
-      let top = self.eventScrollPos(options.limit.top, rectContainer.top, scrollTop);
-      let bottom = self.eventScrollPos(options.limit.bottom, Infinity, scrollTop) - height;
-      //bottom -= height;
+      let top = self.eventScrollPos(options.limit['top'], scrollTop, rectContainer.top);
+      let bottom = self.eventScrollPos(options.limit['bottom'], scrollTop, Infinity) - height;
       if (options.position === 'bottom') {
-        top += height - window.innerHeight;
-        bottom += height - window.innerHeight;
+        top += height - windowHeight;
+        bottom += height - windowHeight;
       }
       // add
       let add = 0;
       // contain
-      /*
       let addTop;
       let addBottom;
       if (options.contain) {
         if (options.contain['top']) {
           addTop = self.eventScrollHeight(options.contain['top']);
           add = addTop;
+          console.log(add);
         }
         if (options.contain['bottom']) {
-          addBottom = -self.eventScrollBottom(options.contain['bottom']);
-          add = addBottom;
+          addBottom = self.eventScrollPos(options.contain['bottom']) - height;
+          if (addBottom < 0) {
+            add = addBottom;
+          }
         }
       }
-      */
-      // position
-      el.style[options.position] = add + 'px';
-      /*
-      if (options.position === 'bottom') {
-        console.log(top, bottom, add);
+      if (options.contain['bottom']) {
       }
-      */
+      // position
+      el.classList.add('no-transition');
+      el.style.top = add + 'px';
+      XtUtil.requestAnimationFrame.call(window, function () {
+        el.classList.remove('no-transition');
+      });
       /*
       // add from contain
       let add = 0;
@@ -1119,8 +1122,7 @@ class XtSticky extends Xt {
         el.classList.add('sticky-up');
       }
       // fix position fixed width 100% of parent
-      let style = getComputedStyle(self.container[0]);
-      var width = self.normalizeWidth(parseFloat(style.width));
+      var width = self.normalizeWidth(self.container[0].clientWidth);
       el.classList.add('no-transition');
       el.style.width = width;
       XtUtil.requestAnimationFrame.call(window, function () {
@@ -1138,7 +1140,7 @@ class XtSticky extends Xt {
    * @param {Number} scrollTop Window's scrollTop
    * @returns {Number} value Option's position (px)
    */
-  eventScrollPos(option, val = 0, scrollTop = 0) {
+  eventScrollPos(option, scrollTop = 0, val = 0) {
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
