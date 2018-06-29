@@ -975,7 +975,7 @@ class XtSticky extends Xt {
       });
     }
     // trigger initial
-    self.eventScroll(self.object);
+    self.eventScroll(self.object); // @TODO events revision
   }
 
   //////////////////////
