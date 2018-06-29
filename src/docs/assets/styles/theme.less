@@ -594,18 +594,17 @@
   .demo-item {
     line-height: 0;
     .toggle-block();
+    iframe {
+      width: 100%;
+      height: 30rem;
+    }
     &:not(.populated) {
-      iframe,
       .demo-code-body {
         width: 100%;
         height: 15rem;
       }
     }
     &.populated {
-      iframe {
-        width: 100%;
-        height: 30rem;
-      }
       .demo-code-body-item {
         .toggle-block();
       }

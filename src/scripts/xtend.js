@@ -698,17 +698,14 @@ class Xt {
    * @param {Element} element
    */
   specialScrollbarOn() {
+    let self = this;
     let options = this.options;
     if (options.scrollbar) {
       let width = XtUtil.scrollbarWidth();
-      // scroll
-      let container = document.documentElement;
-      container.style.paddingRight = width + 'px';
-      container.classList.add('xt-scrollbar');
       // check fixed
       var elements = document.documentElement.querySelectorAll('.xt-check-fixed > *');
       for (let element of elements) {
-        var style = window.getComputedStyle(element);
+        var style = getComputedStyle(element);
         if (style.position === 'fixed') {
           element.classList.add('xt-fixed');
         } else {
@@ -719,22 +716,28 @@ class Xt {
       var elements = document.documentElement.querySelectorAll('.xt-fixed');
       for (let element of elements) {
         element.style.paddingRight = '';
-        var style = window.getComputedStyle(element);
-        var padding = style.paddingRight;
-        var str = 'calc(' + padding + ' + ' + width + 'px)';
-        element.classList.add('no-transition');
-        XtUtil.requestAnimationFrame.call(window, function () {
-          element.style.paddingRight = str;
+        var style = getComputedStyle(element);
+        if (self.normalizeWidth(parseFloat(style.width)) === '') {
+          var padding = style.paddingRight;
+          var str = 'calc(' + padding + ' + ' + width + 'px)';
+          element.classList.add('no-transition');
           XtUtil.requestAnimationFrame.call(window, function () {
-            element.classList.remove('no-transition');
+            element.style.paddingRight = str;
+            XtUtil.requestAnimationFrame.call(window, function () {
+              element.classList.remove('no-transition');
+            });
           });
-        });
+        }
       }
       // backdrop
       var elements = document.documentElement.querySelectorAll('.xt-backdrop');
       for (let element of elements) {
         element.style.right = width + 'px';
       }
+      // scroll
+      let container = document.documentElement;
+      container.style.paddingRight = width + 'px';
+      container.classList.add('xt-scrollbar');
     }
   }
 
@@ -766,6 +769,19 @@ class Xt {
         element.style.right = '';
       }
     }
+  }
+
+  /**
+   * if full width return '' else return value in px
+   * @param {Number} width
+   */
+  normalizeWidth(width) {
+    if (width + XtUtil.scrollbarWidth() === window.innerWidth) {
+      width = '';
+    } else {
+      width += 'px';
+    }
+    return width;
   }
 
 }
@@ -1101,14 +1117,13 @@ class XtSticky extends Xt {
         el.classList.add('sticky-up');
       }
       // fix position fixed width 100% of parent
-      let width = parseFloat(getComputedStyle(self.container[0]).width);
-      if (width + XtUtil.scrollbarWidth() !== window.innerWidth) {
-        el.classList.add('no-transition');
-        el.style.width = width + 'px';
-        XtUtil.requestAnimationFrame.call(window, function () {
-          el.classList.remove('no-transition');
-        });
-      }
+      let style = getComputedStyle(self.container[0]);
+      var width = self.normalizeWidth(parseFloat(style.width));
+      el.classList.add('no-transition');
+      el.style.width = width;
+      XtUtil.requestAnimationFrame.call(window, function () {
+        el.classList.remove('no-transition');
+      });
       // save for direction
       self.scrollTopOld = scrollTop;
     });
