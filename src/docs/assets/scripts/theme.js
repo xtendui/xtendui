@@ -239,8 +239,13 @@ const populateDemo = function (container, i) {
       }
       iframe.parentElement.addEventListener('on', function (e) {
         if (e.target === this) {
-          if (k !== 0) {
+          if (!item.classList.contains('populated')) {
             initIframe();
+          } else {
+            // fix trigger resize
+            XtUtil.requestAnimationFrame.call(window, function () {
+              iframe.contentWindow.dispatchEvent(new Event('resize')); // @TODO events revision
+            });
           }
         }
       });

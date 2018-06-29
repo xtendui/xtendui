@@ -490,19 +490,33 @@
 
 <h2>Options</h2>
 
-<h3>Position</h3>
+<h3>Position and Mode</h3>
+
+<p>The default position is <code>"position": "top"</code>. The default limit is the element's own position.</p>
+
+<p>You can limit the sticky to values or elements, for limiting to a sticky element use the class<code>.xt-clone</code>.</p>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-option-vanilla.html" data-name="vanilla"></div>
-  <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-option-top.html" data-name="top"></div>
-  <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-option-bottom.html" data-name="bottom"></div>
-</div>
-
-<h3>Mode</h3>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-mode-absolute.html" data-name="absolute"></div>
-  <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-mode-fixed.html" data-name="fixed"></div>
+  <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-option-position.html" data-name="position">
+    <div class="demo-text">
+      <code>"position": "top"</code> <code>"position": "bottom"</code>.
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-option-limit.html" data-name="limit">
+    <div class="demo-text">
+      <code>"top": val</code> <code>"bottom": val</code>.
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-mode-fixed.html" data-name="fixed">
+    <div class="demo-text">
+      Use <code>"mode": "fixed"</code> in the less to have fixed position when not sticky.
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-mode-absolute.html" data-name="absolute">
+    <div class="demo-text">
+      Use <code>"mode": "absolute"</code> in the less mixin to have absolute position when not sticky.
+    </div>
+  </div>
 </div>
 
 <h3>Contain</h3>
@@ -517,12 +531,12 @@
         </div>
         <div class="col col-12 col-3-md hide show-md">
 
-          <aside class="site-aside" data-xt-sticky='{"top": ".site-breadcrumbs-outer.xt-clone"}'>
+          <aside class="site-aside" data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)"}}'>
 
             <div class="site-aside-text">
               <a href="/docs/javascript/sticky/" class="btn btn-nodesign">
                 <div class="site-aside-title">
-                  Sticky
+                  Sticky Lorem ipsum dolor sit amet
                 </div>
               </a>
             </div>
@@ -549,7 +563,7 @@
 </main>
 
 
-        <footer class="site-footer" data-xt-sticky='{"top": "-1"}'>
+        <footer class="site-footer" data-xt-sticky='{"position": "bottom"}'>
           <div class="site-footer-inner">
             <div class="container">
 
