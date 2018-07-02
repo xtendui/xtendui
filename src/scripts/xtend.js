@@ -44,7 +44,8 @@ class Xt {
    * setup namespace, container and options
    */
   initSetup() {
-    let options = this.options;
+    let self = this;
+    let options = self.options;
     // setup (based on xtend mode)
     if (options.targets && options.targets.indexOf('#') !== -1) {
       // xtend all mode
@@ -71,7 +72,7 @@ class Xt {
    */
   initScope() {
     let self = this;
-    let options = this.options;
+    let options = self.options;
     // elements
     this.elements = [];
     if (options.elements) {
@@ -129,7 +130,7 @@ class Xt {
    */
   initEvents() {
     let self = this;
-    let options = this.options;
+    let options = self.options;
     // on and off
     for (let el of this.elements) {
       if (options.on) {
@@ -232,7 +233,9 @@ class Xt {
    * @returns {Element}
    */
   getAdditional() {
-    let options = this.options;
+    let self = this;
+    let options = self.options;
+    //
     return this.object.querySelectorAll(options.additional);
   }
 
@@ -279,7 +282,7 @@ class Xt {
    */
   eventOn(element) {
     let self = this;
-    let options = this.options;
+    let options = self.options;
     // activate or deactivate
     if (!element.classList.contains(...this.options.classes)) {
       let fElements = this.getElements(element);
@@ -316,7 +319,8 @@ class Xt {
    * @param {Element} element To be deactivated
    */
   eventOff(element, activationDelay) {
-    let options = this.options;
+    let self = this;
+    let options = self.options;
     // if currents < min
     let todo = options.min - this.getCurrents().length;
     if (!todo) {
@@ -344,7 +348,7 @@ class Xt {
    */
   activationOn(els, fElements, type) {
     let self = this;
-    let options = this.options;
+    let options = self.options;
     // activate
     for (let el of els) {
       el.classList.add(...options.classes);
@@ -399,7 +403,7 @@ class Xt {
    */
   activationOff(els, fElements, type, activationDelay) {
     let self = this;
-    let options = this.options;
+    let options = self.options;
     // deactivate
     for (let el of els) {
       el.classList.remove(...options.classes);
@@ -428,7 +432,7 @@ class Xt {
    */
   activationOffAnimate(el, type, activationDelay) {
     let self = this;
-    let options = this.options;
+    let options = self.options;
     // onDone
     let onDone = function (el, type) {
       el.classList.remove('out');
@@ -462,7 +466,8 @@ class Xt {
    * @returns {Number} Milliseconds
    */
   activationTiming(el) {
-    let options = this.options;
+    let self = this;
+    let options = self.options;
     // timing
     let timing = options.timing;
     let style = getComputedStyle(el);
@@ -482,7 +487,9 @@ class Xt {
    * add html class
    */
   specialClassHtmlOn() {
-    let options = this.options;
+    let self = this;
+    let options = self.options;
+    //
     if (options.classHtml) {
       var container = document.documentElement;
       container.classList.add(...options.classHtml.split(' '));
@@ -493,7 +500,9 @@ class Xt {
    * remove html class
    */
   specialClassHtmlOff() {
-    let options = this.options;
+    let self = this;
+    let options = self.options;
+    //
     if (options.classHtml) {
       var container = document.documentElement;
       container.classList.remove(...options.classHtml.split(' '));
@@ -505,7 +514,9 @@ class Xt {
    * @param {Element} element
    */
   specialBackdrop(el) {
-    let options = this.options;
+    let self = this;
+    let options = self.options;
+    //
     if (options.backdrop) {
       let elements;
       if (options.backdrop === 'object') {
@@ -641,7 +652,7 @@ class Xt {
    */
   specialCloseOn(el, toggle) {
     let self = this;
-    let options = this.options;
+    let options = self.options;
     // closeInside
     if (options.closeInside) {
       let closeElements = el.querySelectorAll(options.closeInside);
@@ -677,7 +688,8 @@ class Xt {
    * @param {Element} element
    */
   specialCloseOff(el) {
-    let options = this.options;
+    let self = this;
+    let options = self.options;
     // closeInside
     if (options.closeInside) {
       let closeElements = el.querySelectorAll(options.closeInside);
@@ -700,7 +712,8 @@ class Xt {
    */
   specialScrollbarOn() {
     let self = this;
-    let options = this.options;
+    let options = self.options;
+    //
     if (options.scrollbar) {
       let width = XtUtil.scrollbarWidth();
       // check fixed
@@ -747,7 +760,9 @@ class Xt {
    * @param {Element} element
    */
   specialScrollbarOff() {
-    let options = this.options;
+    let self = this;
+    let options = self.options;
+    //
     if (options.scrollbar) {
       // scroll
       var container = document.documentElement;
@@ -966,7 +981,7 @@ class XtSticky extends Xt {
    */
   initEvents() {
     let self = this;
-    let options = this.options;
+    let options = self.options;
     // events
     let events = [...options.on.split(' ')];
     for (let event of events) {
@@ -993,13 +1008,14 @@ class XtSticky extends Xt {
    */
   eventScroll(element, propagate, scrollTop, scrollTopOld) {
     let self = this;
-    let options = this.options;
+    let options = self.options;
     // vars
     let add = 0;
     scrollTop = scrollTop ? scrollTop : document.documentElement.scrollTop;
     scrollTopOld = scrollTopOld ? scrollTopOld : self.scrollTopOld;
     let totalHeight = window.innerHeight;
     let el = self.object;
+    let rectEl = el.getBoundingClientRect();
     let height = el.clientHeight;
     let rectContainer = self.container[0].getBoundingClientRect();
     // direction
@@ -1015,22 +1031,17 @@ class XtSticky extends Xt {
     }
     // hide
     let addHide;
+    //el.classList.remove('sticky-hide-down', 'sticky-hide-up');
     if (options.hide === 'down') {
+      el.classList.add('sticky-hide-down', 'sticky-anim');
       if (!scrollInverse) {
         addHide = - height;
       }
-      if (!el.classList.contains('sticky-hide-down')) {
-        el.classList.add('sticky-hide-down');
-        el.classList.add('sticky-anim');
-      }
     }
     if (options.hide === 'up') {
+      el.classList.add('sticky-hide-up', 'sticky-anim');
       if (scrollInverse) {
         addHide = - height;
-      }
-      if (!el.classList.contains('sticky-hide-up')) {
-        el.classList.add('sticky-hide-up');
-        el.classList.add('sticky-anim');
       }
     }
     // scroll
@@ -1054,6 +1065,9 @@ class XtSticky extends Xt {
         addBottom = self.eventScrollPos(options.contain['bottom']) - height;
         if (addTop > addBottom) {
           add = addBottom;
+          if (this.options.contain['bottom'] === '#sticky-contain-middle') {
+            //console.log(addBottom);
+          }
         }
       }
     }
@@ -1083,14 +1097,21 @@ class XtSticky extends Xt {
     }
     // set add
     if (add !== self.addOld) {
+      el.classList.add('no-transition');
+      el.style[options.position] = rectEl.top + 'px';
+      if (options.contain['top'] === '#sticky-contain-top') {
+        console.log(add);
+      }
       XtUtil.cancelAnimationFrame.call(window, self.scrollFrame);
       self.scrollFrame = XtUtil.requestAnimationFrame.call(window, function () {
+        el.classList.remove('no-transition');
         el.style[options.position] = add + 'px';
       });
     }
     // fix position fixed width 100% of parent
     var width = self.normalizeWidth(self.container[0].clientWidth);
     el.style.width = width;
+    /*
     // @TODO temporary fix mix demo
     if (propagate) {
       XtUtil.cancelAnimationFrame.call(window, self.scrollFramePropagate);
@@ -1105,6 +1126,7 @@ class XtSticky extends Xt {
         }
       });
     }
+    */
     // save for direction
     self.addOld = add;
     self.scrollTopOld = scrollTop;
@@ -1118,18 +1140,31 @@ class XtSticky extends Xt {
    * @returns {Number} value Option's position (px)
    */
   eventScrollPos(option, scrollTop = 0, val = 0, filter = true) {
+    let self = this;
+    let options = self.options;
+    //
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
       let elements = Array.isArray(option) ? option : document.querySelectorAll(option);
       if (elements.length) {
-        val = scrollTop;
         if (filter) {
           elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
         }
+        val = scrollTop;
         for (let el of elements) {
-          let rect = el.getBoundingClientRect();
-          val += Math.round(rect.top);
+          let container = XtUtil.parents(el, '.xt-container');
+          if (container.length) {
+            var current = parseFloat(el.style[this.options.position]) || 0;
+            let top = Math.floor(container[0].getBoundingClientRect().top) + current;
+            val += top > current ? top : current;
+            // NO RECT bugs with animation
+            //let rect = el.getBoundingClientRect();
+            //val += Math.floor(rect.top);
+            if (self.object.getAttribute('id') === 'sticky-contain-top') {
+              //console.log(top, current, val, Math.ceil(rect.top));
+            }
+          }
         }
       }
     }
@@ -1143,6 +1178,9 @@ class XtSticky extends Xt {
    * @returns {Number} value Option's height (px)
    */
   eventScrollHeight(option, scrollInverse, val = 0, filter = true) {
+    let self = this;
+    let options = self.options;
+    //
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
@@ -1157,14 +1195,23 @@ class XtSticky extends Xt {
             if (scrollInverse) {
               val += el.clientHeight;
               anim = true;
+              if (options.contain['top'] === '#sticky-contain-top') {
+                //console.log("aaa" + val);
+              }
             }
           } else if (el.classList.contains('sticky-hide-up')) {
             if (!scrollInverse) {
               val += el.clientHeight;
               anim = true;
+              if (options.contain['top'] === '#sticky-contain-top') {
+                //console.log("bbb" + val);
+              }
             }
           } else {
             val += el.clientHeight;
+            if (options.contain['top'] === '#sticky-contain-top') {
+              //console.log("cccc" + val);
+            }
           }
         }
         // add anim class
