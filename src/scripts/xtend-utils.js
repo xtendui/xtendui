@@ -205,34 +205,6 @@ XtUtil.getElementIndex = function (node) {
 */
 
 /**
- * Get the closest matching element up the DOM tree
- * @param {Element} element Starting element
- * @param {String} selector Selector to match against (class, ID, or data attribute)
- * @return {Boolean|Element} Returns false if not match found
- */
-/*
-XtUtil.getClosest = function (element, selector) {
-  let firstChar = selector.charAt(0);
-  for (; element && element !== document; element = element.parentNode) {
-    if (firstChar === '.') {
-      if (element.classList.contains(selector.substr(1))) {
-        return element;
-      }
-    } else if (firstChar === '#') {
-      if (element.id === selector.substr(1)) {
-        return element;
-      }
-    } else if (firstChar === '[') {
-      if (element.hasAttribute(selector.substr(1, selector.length - 2))) {
-        return element;
-      }
-    }
-  }
-  return false;
-};
-*/
-
-/**
  * Events with namespace
  * element.xtUtilOn('click.namespace', function (e) {});
  * element.xtUtilOff('click.namespace');

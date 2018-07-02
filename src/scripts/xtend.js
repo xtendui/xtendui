@@ -992,10 +992,6 @@ class XtSticky extends Xt {
     }
     // trigger initial
     self.eventScroll(self.object); // @TODO events revision
-    // @TODO temporary fix mix demo
-    self.object.addEventListener('refresh', function (e) {
-      self.eventScroll(self.object, false, e.scrollTop, e.scrollTopOld);
-    });
   }
 
   //////////////////////
@@ -1065,9 +1061,6 @@ class XtSticky extends Xt {
         addBottom = self.eventScrollPos(options.contain['bottom']) - height;
         if (addTop > addBottom) {
           add = addBottom;
-          if (this.options.contain['bottom'] === '#sticky-contain-middle') {
-            //console.log(addBottom);
-          }
         }
       }
     }
@@ -1099,9 +1092,6 @@ class XtSticky extends Xt {
     if (add !== self.addOld) {
       el.classList.add('no-transition');
       el.style[options.position] = rectEl.top + 'px';
-      if (options.contain['top'] === '#sticky-contain-top') {
-        console.log(add);
-      }
       XtUtil.cancelAnimationFrame.call(window, self.scrollFrame);
       self.scrollFrame = XtUtil.requestAnimationFrame.call(window, function () {
         el.classList.remove('no-transition');
@@ -1111,22 +1101,6 @@ class XtSticky extends Xt {
     // fix position fixed width 100% of parent
     var width = self.normalizeWidth(self.container[0].clientWidth);
     el.style.width = width;
-    /*
-    // @TODO temporary fix mix demo
-    if (propagate) {
-      XtUtil.cancelAnimationFrame.call(window, self.scrollFramePropagate);
-      self.scrollFramePropagate = XtUtil.requestAnimationFrame.call(window, function () {
-        let elements = document.querySelectorAll(options.contain['top'] + ',' + options.contain['bottom']);
-        elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
-        for (let el of elements) {
-          let event = new Event('refresh');
-          event.scrollTop = scrollTop;
-          event.scrollTopOld = scrollTopOld;
-          el.dispatchEvent(event);
-        }
-      });
-    }
-    */
     // save for direction
     self.addOld = add;
     self.scrollTopOld = scrollTop;
@@ -1140,9 +1114,6 @@ class XtSticky extends Xt {
    * @returns {Number} value Option's position (px)
    */
   eventScrollPos(option, scrollTop = 0, val = 0, filter = true) {
-    let self = this;
-    let options = self.options;
-    //
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
@@ -1155,15 +1126,8 @@ class XtSticky extends Xt {
         for (let el of elements) {
           let container = XtUtil.parents(el, '.xt-container');
           if (container.length) {
-            var current = parseFloat(el.style[this.options.position]) || 0;
-            let top = Math.floor(container[0].getBoundingClientRect().top) + current;
-            val += top > current ? top : current;
-            // NO RECT bugs with animation
-            //let rect = el.getBoundingClientRect();
-            //val += Math.floor(rect.top);
-            if (self.object.getAttribute('id') === 'sticky-contain-top') {
-              //console.log(top, current, val, Math.ceil(rect.top));
-            }
+            let rect = el.getBoundingClientRect();
+            val += Math.floor(rect.top);
           }
         }
       }
@@ -1178,9 +1142,6 @@ class XtSticky extends Xt {
    * @returns {Number} value Option's height (px)
    */
   eventScrollHeight(option, scrollInverse, val = 0, filter = true) {
-    let self = this;
-    let options = self.options;
-    //
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
@@ -1195,23 +1156,14 @@ class XtSticky extends Xt {
             if (scrollInverse) {
               val += el.clientHeight;
               anim = true;
-              if (options.contain['top'] === '#sticky-contain-top') {
-                //console.log("aaa" + val);
-              }
             }
           } else if (el.classList.contains('sticky-hide-up')) {
             if (!scrollInverse) {
               val += el.clientHeight;
               anim = true;
-              if (options.contain['top'] === '#sticky-contain-top') {
-                //console.log("bbb" + val);
-              }
             }
           } else {
             val += el.clientHeight;
-            if (options.contain['top'] === '#sticky-contain-top') {
-              //console.log("cccc" + val);
-            }
           }
         }
         // add anim class
