@@ -55,7 +55,9 @@
   </head>
   <body class="{% if page.full %}full{% endif %}">
     
-    <div id="body-outer">{{ content }}</div>
+    <div id="body-outer">
+{{ content }}
+    </div>
 
     {% if page.less %}
     <less-style>{% include_relative {{ page.name | replace: '.html', '.less' }} %}</less-style>

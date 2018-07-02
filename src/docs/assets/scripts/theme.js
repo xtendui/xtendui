@@ -284,7 +284,7 @@ const populateInline = function (item, id) {
 window.resizeIframe = function(id) {
   let iframe = document.querySelectorAll('#' + id)[0];
   if (!iframe.contentWindow.document.body.classList.contains('full')) {
-    let target = iframe.contentWindow.document.body.querySelectorAll('#body-inner')[0];
+    let target = iframe.contentWindow.document.body.querySelectorAll('#body-outer')[0];
     let h = target.offsetHeight;
     if (h !== iframe.getAttribute('iframeHeight')) {
       iframe.style.height = h + 'px';
