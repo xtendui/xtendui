@@ -48,43 +48,39 @@
 //////////////////////
 
 .sticky-anim {
-  &.sticky-down {
-    .transition-default.out();
-  }
-  &.sticky-up {
+  .transition-default.out();
+  transition-property: top;
+  &.active {
     .transition-default.active();
+    transition-property: top;
   }
 }
 
 /*
+// .sticky-hide-down
+
 .sticky-hide-down {
-  > * {
-    .transition-default.active();
-    transform: translateY(0);
+  &.sticky-up {
+    & > * {
+    }
   }
-  &.active:not(.xt-clone) {
-    overflow: hidden;
-    &.sticky-down {
-      > * {
-        .transition-default.out();
-        transform: translateY(-100%);
-      }
+  &.active.sticky-down {
+    & > * {
     }
   }
 }
+*/
+
+/*
+// .sticky-hide-up
 
 .sticky-hide-up {
-  > * {
-    .transition-default.active();
-    transform: translateY(0);
+  &.sticky-down {
+    & > * {
+    }
   }
-  &.active:not(.xt-clone) {
-    overflow: hidden;
-    &.sticky-up {
-      > * {
-        .transition-default.out();
-        transform: translateY(-100%);
-      }
+  &.active.sticky-up {
+    & > * {
     }
   }
 }
