@@ -995,11 +995,11 @@ class XtSticky extends Xt {
     let self = this;
     let options = this.options;
     // vars
+    let totalHeight = window.innerHeight;
+    let scrollTop = document.documentElement.scrollTop;
     let el = self.object;
     let height = el.clientHeight;
     let rectContainer = self.container[0].getBoundingClientRect();
-    let totalHeight = window.innerHeight;
-    let scrollTop = document.documentElement.scrollTop;
     // scroll
     let top = self.eventScrollPos(options.limit['top'] || self.targets, scrollTop, rectContainer.top, false);
     let bottom = self.eventScrollPos(options.limit['bottom'] || self.targets, scrollTop, Infinity, false) - height;
@@ -1013,7 +1013,7 @@ class XtSticky extends Xt {
     let addBottom = 0;
     if (options.contain) {
       if (options.contain['top']) {
-        addTop = self.eventScrollHeight(options.contain['top']);
+        addTop = self.eventScrollHeight(options.contain['top'], scrollTop);
         if (addTop > 0) {
           add = addTop;
         }
@@ -1027,7 +1027,7 @@ class XtSticky extends Xt {
     }
     el.style[options.position] = add + 'px';
     // @TODO temporary fix mix demo
-    if (propagate) {
+    if (propagate && options.contain['top'] && options.contain['bottom']) {
       XtUtil.requestAnimationFrame.call(window, function () {
         let elements = document.querySelectorAll(options.contain['top'] + ',' + options.contain['bottom']);
         elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
@@ -1109,7 +1109,7 @@ class XtSticky extends Xt {
    * @param {Number} val Default value
    * @returns {Number} value Option's height (px)
    */
-  eventScrollHeight(option, val = 0, filter = true) {
+  eventScrollHeight(option, scrollTop = 0, val = 0, filter = true) {
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
@@ -1119,7 +1119,17 @@ class XtSticky extends Xt {
           elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
         }
         for (let el of elements) {
-          val += el.clientHeight;
+          if (el.classList.contains('sticky-hide-down')) {
+            if (scrollTop <= this.scrollTopOld) {
+              val += el.clientHeight;
+            }
+          } else if (el.classList.contains('sticky-hide-up')) {
+            if (scrollTop > this.scrollTopOld) {
+              val += el.clientHeight;
+            }
+          } else {
+            val += el.clientHeight;
+          }
         }
       }
     }

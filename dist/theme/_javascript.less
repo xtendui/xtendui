@@ -42,3 +42,48 @@
     opacity: 0;
   }
 }
+
+//////////////////////
+// xt-sticky
+//////////////////////
+
+.sticky-anim {
+  &.sticky-down {
+    .transition-default.out();
+  }
+  &.sticky-up {
+    .transition-default.active();
+  }
+}
+
+.sticky-hide-down {
+  > * {
+    .transition-default.active();
+    transform: translateY(0);
+  }
+  &.active:not(.xt-clone) {
+    overflow: hidden;
+    &.sticky-down {
+      > * {
+        .transition-default.out();
+        transform: translateY(-100%);
+      }
+    }
+  }
+}
+
+.sticky-hide-up {
+  > * {
+    .transition-default.active();
+    transform: translateY(0);
+  }
+  &.active:not(.xt-clone) {
+    overflow: hidden;
+    &.sticky-up {
+      > * {
+        .transition-default.out();
+        transform: translateY(-100%);
+      }
+    }
+  }
+}
