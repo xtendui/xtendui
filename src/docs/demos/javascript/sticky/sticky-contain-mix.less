@@ -3,20 +3,3 @@
 [data-xt-sticky] {
   .xt-sticky();
 }
-
-// animations
-
-#sticky-contain-top {
-  > * {
-    .transition-default.active();
-    transform: translateY(0);
-  }
-  &.active:not(.xt-clone) {
-    &.sticky-down {
-      > * {
-        .transition-default.out();
-        transform: translateY(-100%);
-      }
-    }
-  }
-}
