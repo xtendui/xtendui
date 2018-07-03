@@ -1003,15 +1003,11 @@ class XtSticky extends Xt {
     for (let event of events) {
       window.xtUtilOff(event + '.xtend' + this.namespace);
       window.xtUtilOn(event + '.xtend' + this.namespace, function (e) {
-        self.eventScroll(self.object, true);
+        self.eventScroll(self.object);
       });
     }
     // trigger initial
     self.eventScroll(self.object); // @TODO events revision
-    // @TODO temporary fix mix demo
-    self.object.addEventListener('refresh', function (e) {
-      self.eventScroll(self.object, false, e.scrollTop, e.scrollTopOld);
-    });
   }
 
   //////////////////////
@@ -1022,7 +1018,7 @@ class XtSticky extends Xt {
    * window scroll
    * @param {Element} element To be activated or deactivated
    */
-  eventScroll(element, propagate, scrollTop, scrollTopOld) {
+  eventScroll(element) {
     let self = this;
     let options = self.options;
     // vars
@@ -1035,8 +1031,8 @@ class XtSticky extends Xt {
     let rectEl = el.getBoundingClientRect();
     let heightEl = parseFloat(getComputedStyle(el).height);
     let rectContainer = self.container[0].getBoundingClientRect();
-    scrollTop = scrollTop ? scrollTop : document.documentElement.scrollTop;
-    scrollTopOld = scrollTopOld ? scrollTopOld : self.scrollTopOld;
+    let scrollTop = document.documentElement.scrollTop;
+    let scrollTopOld = self.scrollTopOld;
     // direction
     var scrollInverse;
     if (scrollTop >= scrollTopOld) {
@@ -1146,22 +1142,6 @@ class XtSticky extends Xt {
         el.style[options.position] = add + 'px';
       });
     }
-    /*
-    // @TODO temporary fix mix demo
-    if (propagate) {
-      XtUtil.cancelAnimationFrame.call(window, self.scrollFramePropagate);
-      self.scrollFramePropagate = XtUtil.requestAnimationFrame.call(window, function () {
-        let elements = document.querySelectorAll(options.contain['top'] + ',' + options.contain['bottom']);
-        elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
-        for (let el of elements) {
-          let event = new Event('refresh');
-          event.scrollTop = scrollTop;
-          event.scrollTopOld = scrollTopOld; // @TODO scrollTopOld WRONG maybe
-          el.dispatchEvent(event);
-        }
-      });
-    }
-    */
     // fix position fixed width 100% of parent
     var width = self.normalizeWidth(self.container[0].clientWidth);
     el.style.width = width;
