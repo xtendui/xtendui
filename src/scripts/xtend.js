@@ -985,6 +985,9 @@ class XtSticky extends Xt {
     } else {
       this.object.classList.remove('sticky-hide-up');
     }
+    // z-index
+    this.unique = XtUtil.getUniqueNum();
+    this.object.style.zIndex = 100 - this.unique;
   }
 
   /**
@@ -1024,6 +1027,8 @@ class XtSticky extends Xt {
     let options = self.options;
     // vars
     let add = 0;
+    let addHide = 0;
+    let anim = false;
     let windowHeight = window.innerHeight;
     let scrollHeight = document.documentElement.scrollHeight;
     let el = self.object;
@@ -1044,15 +1049,14 @@ class XtSticky extends Xt {
       scrollInverse = true;
     }
     // hide
-    let addHide;
     if (options.hide === 'down') {
       if (!scrollInverse) {
-        addHide = - heightEl;
+        addHide = heightEl;
       }
     }
     if (options.hide === 'up') {
       if (scrollInverse) {
-        addHide = - heightEl;
+        addHide = heightEl;
       }
     }
     // scroll
@@ -1068,6 +1072,7 @@ class XtSticky extends Xt {
     // contain and add
     let addTop = 0;
     let addBottom = 0;
+    anim = true;
     if (options.contain) {
       if (options.contain['top']) {
         addTop = self.eventScrollHeight(options.contain['top'], scrollInverse);
@@ -1079,13 +1084,16 @@ class XtSticky extends Xt {
         addBottom = self.eventScrollPos(options.contain['bottom']);
         if (addBottom < heightEl) {
           add = addBottom - heightEl;
+          anim = false;
         }
       }
     }
     // activation
-    let checkTop = scrollTop > top - add + 1;
-    let checkBottom = scrollTop < bottom + add;
-    el.classList.remove('sticky-anim');
+    if (el.getAttribute('id') === 'sticky-bottom') {
+      console.log(add, addTop, addBottom);
+    }
+    let checkTop = scrollTop > top - add + 1 + addHide;
+    let checkBottom = scrollTop < bottom + add - addHide;
     el.classList.remove('sticky-hide');
     if (checkTop && checkBottom) {
       // inside
@@ -1094,14 +1102,11 @@ class XtSticky extends Xt {
       }
       // save real add for calculation
       el.setAttribute('data-add-sticky', add + 'px');
-      // addHide
+      // hide
       if (addHide) {
         el.classList.add('sticky-hide');
-        el.classList.add('sticky-anim');
-        add = addHide;
-      }
-      if (el.getAttribute('id') === 'sticky-contain-middle') {
-        console.log(add, addHide, addTop, addBottom);
+        add -= addHide;
+        anim = true;
       }
     } else {
       // save real add for calculation
@@ -1109,6 +1114,16 @@ class XtSticky extends Xt {
       // outside
       if (element.classList.contains(...self.options.classes)) {
         self.eventOff(element);
+      }
+    }
+    // anim
+    if (anim) {
+      if (!el.classList.contains('sticky-anim')) {
+        el.classList.add('sticky-anim');
+      }
+    } else {
+      if (el.classList.contains('sticky-anim')) {
+        el.classList.remove('sticky-anim');
       }
     }
     // top and bottom
@@ -1129,8 +1144,8 @@ class XtSticky extends Xt {
         el.style[options.position] = add + 'px';
       });
     }
-    // @TODO temporary fix mix demo
     /*
+    // @TODO temporary fix mix demo
     if (propagate) {
       XtUtil.cancelAnimationFrame.call(window, self.scrollFramePropagate);
       self.scrollFramePropagate = XtUtil.requestAnimationFrame.call(window, function () {
@@ -1172,8 +1187,8 @@ class XtSticky extends Xt {
         val = scrollTop;
         for (let el of elements) {
           var addSticky = el.getAttribute('data-add-sticky');
-          //if (el.classList.contains('sticky-hide')) { // if sticky-hide get real add
-          if (addSticky) { // if sticky-hide get real add
+          if (addSticky) {
+            // if sticky-hide get real add
             val += parseFloat(addSticky);
           } else {
             let rect = el.getBoundingClientRect();
@@ -1200,7 +1215,6 @@ class XtSticky extends Xt {
         if (filter) {
           elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
         }
-        let anim = false;
         for (let el of elements) {
           if (el.classList.contains('sticky-hide-down')) {
             if (scrollInverse) {

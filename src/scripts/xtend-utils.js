@@ -135,6 +135,15 @@ XtUtil.getUniqueID = function () {
 };
 
 /**
+ * Get unique number
+ * @returns {Number} Unique number
+ */
+XtUtil.getUniqueNum = function () {
+  XtUtil.unumber = XtUtil.unumber !== undefined ? XtUtil.unumber : 0;
+  return XtUtil.unumber++;
+};
+
+/**
  * Merge objects
  * @param {Array} arr Array of objects to merge
  * @returns {Object} Merged object
