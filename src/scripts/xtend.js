@@ -996,21 +996,19 @@ class XtSticky extends Xt {
   initEvents() {
     let self = this;
     let options = self.options;
-    // vars
-    this.scrollTopOld = 0;
     // events
     let events = [...options.on.split(' ')];
     for (let event of events) {
       window.xtUtilOff(event + '.xtend' + this.namespace);
       window.xtUtilOn(event + '.xtend' + this.namespace, function (e) {
-        self.eventScroll(self.object, true);
+        self.eventScroll(self.object);
       });
     }
     // trigger initial
     self.eventScroll(self.object); // @TODO events revision
     // @TODO temporary fix mix demo
     self.object.addEventListener('refresh', function (e) {
-      self.eventScroll(self.object, false, e.scrollTop, e.scrollTopOld);
+      self.eventScroll(self.object, false, e.scrollTop, e.scrollTopOld, e.propagating);
     });
   }
 
@@ -1022,7 +1020,7 @@ class XtSticky extends Xt {
    * window scroll
    * @param {Element} element To be activated or deactivated
    */
-  eventScroll(element, propagate = false, scrollTop, scrollTopOld) {
+  eventScroll(element, propagate = true, scrollTop, scrollTopOld, propagating) {
     let self = this;
     let options = self.options;
     // vars
@@ -1086,12 +1084,11 @@ class XtSticky extends Xt {
         if (addBottom < heightEl) {
           add = addBottom - heightEl;
           anim = false;
-          if (el.getAttribute('id') === 'sticky-top') {
-            console.log(add, addBottom, heightEl);
-          }
         }
       }
     }
+    // save real add for calculation
+    el.setAttribute('data-add-sticky', add + 'px');
     // activation
     let checkTop = scrollTop > top - add + 1 + addHide;
     let checkBottom = scrollTop < bottom + add - addHide;
@@ -1110,34 +1107,23 @@ class XtSticky extends Xt {
         self.eventOff(element);
       }
     }
-    // save real add for calculation
-    el.setAttribute('data-add-sticky', add + 'px');
     // hide
     if (hide) {
       anim = true;
       add -= addHide;
-      el.classList.add('sticky-hide');
-      /*
-      // @TODO temporary fix mix demo
-      if (propagate) {
-        XtUtil.cancelAnimationFrame.call(window, self.scrollFramePropagate);
-        self.scrollFramePropagate = XtUtil.requestAnimationFrame.call(window, function () {
-          let elements = document.querySelectorAll(options.contain['top'] + ',' + options.contain['bottom']);
-          elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
-          for (let el of elements) {
-            let event = new Event('refresh');
-            event.scrollTop = scrollTop;
-            event.scrollTopOld = scrollTopOld; // @TODO scrollTopOld WRONG maybe
-            el.dispatchEvent(event);
-          }
-        });
+      if (!el.classList.contains('sticky-hide')) {
+        el.classList.add('sticky-hide');
       }
-      */
     } else {
-      el.classList.remove('sticky-hide');
+      if (el.classList.contains('sticky-hide')) {
+        el.classList.remove('sticky-hide');
+      }
     }
     // anim
-    if (anim) {
+    if (el.getAttribute('id') === 'sticky-top') {
+      console.log(add, addHide, addTop, addBottom, anim);
+    }
+    if (anim && self.scrollTopOld !== undefined) {
       if (!el.classList.contains('sticky-anim')) {
         el.classList.add('sticky-anim');
       }
@@ -1148,14 +1134,22 @@ class XtSticky extends Xt {
     }
     // top and bottom
     if (!checkTop) {
-      el.classList.add('sticky-top');
+      if (!el.classList.contains('sticky-top')) {
+        el.classList.add('sticky-top');
+      }
     } else {
-      el.classList.remove('sticky-top');
+      if (el.classList.contains('sticky-top')) {
+        el.classList.remove('sticky-top');
+      }
     }
     if (!checkBottom) {
-      el.classList.add('sticky-bottom');
+      if (!el.classList.contains('sticky-bottom')) {
+        el.classList.add('sticky-bottom');
+      }
     } else {
-      el.classList.remove('sticky-bottom');
+      if (el.classList.contains('sticky-bottom')) {
+        el.classList.remove('sticky-bottom');
+      }
     }
     // set add
     if (add !== self.addOld) {
@@ -1167,6 +1161,23 @@ class XtSticky extends Xt {
         el.style[options.position] = add + 'px';
       });
     }
+    /*
+    // @TODO temporary fix mix demo
+    XtUtil.cancelAnimationFrame.call(window, self.scrollFramePropagate);
+    self.scrollFramePropagate = XtUtil.requestAnimationFrame.call(window, function () {
+      if (propagate) {
+        let elements = document.querySelectorAll(options.contain['top'] + ',' + options.contain['bottom']);
+        elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
+        for (let el of elements) {
+          let event = new Event('refresh');
+          event.propagating = true;
+          event.scrollTop = scrollTop;
+          event.scrollTopOld = scrollTopOld;
+          el.dispatchEvent(event);
+        }
+      }
+    });
+    */
     // fix position fixed width 100% of parent
     let width = self.normalizeWidth(self.container[0].clientWidth);
     el.style.width = width;
