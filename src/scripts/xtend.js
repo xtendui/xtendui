@@ -1026,8 +1026,8 @@ class XtSticky extends Xt {
     let add = 0;
     scrollTop = scrollTop ? scrollTop : document.documentElement.scrollTop;
     scrollTopOld = scrollTopOld ? scrollTopOld : self.scrollTopOld;
-    let totalHeight = window.innerHeight;
-    let documentHeight = document.documentElement.scrollHeight;
+    let windowHeight = window.innerHeight;
+    let scrollHeight = document.documentElement.scrollHeight;
     let el = self.object;
     let rectEl = el.getBoundingClientRect();
     let height = el.clientHeight;
@@ -1044,14 +1044,15 @@ class XtSticky extends Xt {
       scrollInverse = true;
     }
     // hide
+    let addHide;
     if (options.hide === 'down') {
       if (!scrollInverse) {
-        add = - height;
+        addHide = - height;
       }
     }
     if (options.hide === 'up') {
       if (scrollInverse) {
-        add = - height;
+        addHide = - height;
       }
     }
     // scroll
@@ -1061,8 +1062,8 @@ class XtSticky extends Xt {
       bottom -= height;
     }
     if (options.position === 'bottom') {
-      top -= totalHeight - height;
-      bottom = Math.abs(documentHeight - totalHeight - bottom);
+      top -= windowHeight - height;
+      bottom = Math.abs(scrollHeight - windowHeight - bottom);
     }
     // contain and add
     let addTop = 0;
@@ -1070,24 +1071,41 @@ class XtSticky extends Xt {
     if (options.contain) {
       if (options.contain['top']) {
         addTop = self.eventScrollHeight(options.contain['top'], scrollInverse);
-        if (addTop > 0) {
+        if (addTop > add) { // if (addTop > 0) {
           add = addTop;
         }
       }
       if (options.contain['bottom']) {
+        addBottom = self.eventScrollPos(options.contain['bottom']);
+        if (addBottom < height) {
+          add = addBottom - height;
+        }
+        /*
         addBottom = self.eventScrollPos(options.contain['bottom']) - height;
-        if (addBottom == 0 || addBottom < addTop) {
+        if (addBottom < addTop) {
           add = addBottom;
         }
+        */
       }
     }
     // activation
-    let checkTop = scrollTop >= top - add;
+    let checkTop = scrollTop > top - add + 1;
     let checkBottom = scrollTop < bottom + add;
+    el.classList.remove('sticky-hide');
     if (checkTop && checkBottom) {
       // inside
       if (!element.classList.contains(...self.options.classes)) {
         self.eventOn(element);
+      }
+      // save real add for calculation
+      el.setAttribute('data-sticky-add', add);
+      // addHide
+      if (addHide) {
+        el.classList.add('sticky-hide');
+        add = addHide;
+      }
+      if (el.getAttribute('id') === 'sticky-contain-middle') {
+        console.log(add, addHide, addTop, addBottom);
       }
     } else {
       // outside
@@ -1105,9 +1123,6 @@ class XtSticky extends Xt {
     }
     // set add
     if (add !== self.addOld) {
-      if (el.getAttribute('id') === 'sticky-contain-top') {
-        console.log(add, addTop, addBottom);
-      }
       el.classList.add('no-transition');
       el.style[options.position] = rectEl.top + 'px';
       XtUtil.cancelAnimationFrame.call(window, self.scrollFrame);
@@ -1148,7 +1163,6 @@ class XtSticky extends Xt {
    * @returns {Number} value Option's position (px)
    */
   eventScrollPos(option, scrollTop = 0, val = 0, filter = true) {
-    let self = this;
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
@@ -1159,16 +1173,12 @@ class XtSticky extends Xt {
         }
         val = scrollTop;
         for (let el of elements) {
-          /*
-          let container = XtUtil.parents(el, '.xt-container');
-          //if (container.length) {
-            var current = parseFloat(el.style[self.options.position]) || 0;
-            let top = Math.floor(container[0].getBoundingClientRect().top) + current;
-            val += top > current ? top : current;*/
-          //} else {
+          if (el.classList.contains('sticky-hide')) { // if sticky-hide get real add
+            val += parseFloat(el.getAttribute('data-sticky-add'));
+          } else {
             let rect = el.getBoundingClientRect();
             val += Math.floor(rect.top);
-          //}
+          }
         }
       }
     }
