@@ -1024,14 +1024,14 @@ class XtSticky extends Xt {
     let options = self.options;
     // vars
     let add = 0;
-    scrollTop = scrollTop ? scrollTop : document.documentElement.scrollTop;
-    scrollTopOld = scrollTopOld ? scrollTopOld : self.scrollTopOld;
     let windowHeight = window.innerHeight;
     let scrollHeight = document.documentElement.scrollHeight;
     let el = self.object;
     let rectEl = el.getBoundingClientRect();
-    let height = el.clientHeight;
+    let heightEl = el.clientHeight;
     let rectContainer = self.container[0].getBoundingClientRect();
+    scrollTop = scrollTop ? scrollTop : document.documentElement.scrollTop;
+    scrollTopOld = scrollTopOld ? scrollTopOld : self.scrollTopOld;
     // direction
     var scrollInverse;
     if (scrollTop >= scrollTopOld) {
@@ -1047,22 +1047,22 @@ class XtSticky extends Xt {
     let addHide;
     if (options.hide === 'down') {
       if (!scrollInverse) {
-        addHide = - height;
+        addHide = - heightEl;
       }
     }
     if (options.hide === 'up') {
       if (scrollInverse) {
-        addHide = - height;
+        addHide = - heightEl;
       }
     }
     // scroll
     let top = self.eventScrollPos(options.limit['top'] || self.targets, scrollTop, rectContainer.top, false);
     let bottom = self.eventScrollPos(options.limit['bottom'], scrollTop, Infinity, false);
     if (options.position === 'top') {
-      bottom -= height;
+      bottom -= heightEl;
     }
     if (options.position === 'bottom') {
-      top -= windowHeight - height;
+      top -= windowHeight - heightEl;
       bottom = Math.abs(scrollHeight - windowHeight - bottom);
     }
     // contain and add
@@ -1077,15 +1077,9 @@ class XtSticky extends Xt {
       }
       if (options.contain['bottom']) {
         addBottom = self.eventScrollPos(options.contain['bottom']);
-        if (addBottom < height) {
-          add = addBottom - height;
+        if (addBottom < heightEl) {
+          add = addBottom - heightEl;
         }
-        /*
-        addBottom = self.eventScrollPos(options.contain['bottom']) - height;
-        if (addBottom < addTop) {
-          add = addBottom;
-        }
-        */
       }
     }
     // activation
