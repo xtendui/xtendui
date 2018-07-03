@@ -1085,6 +1085,7 @@ class XtSticky extends Xt {
     // activation
     let checkTop = scrollTop > top - add + 1;
     let checkBottom = scrollTop < bottom + add;
+    el.classList.remove('sticky-anim');
     el.classList.remove('sticky-hide');
     if (checkTop && checkBottom) {
       // inside
@@ -1092,16 +1093,19 @@ class XtSticky extends Xt {
         self.eventOn(element);
       }
       // save real add for calculation
-      el.setAttribute('data-sticky-add', add);
+      el.setAttribute('data-add-sticky', add + 'px');
       // addHide
       if (addHide) {
         el.classList.add('sticky-hide');
+        el.classList.add('sticky-anim');
         add = addHide;
       }
       if (el.getAttribute('id') === 'sticky-contain-middle') {
         console.log(add, addHide, addTop, addBottom);
       }
     } else {
+      // save real add for calculation
+      el.setAttribute('data-add-sticky', '');
       // outside
       if (element.classList.contains(...self.options.classes)) {
         self.eventOff(element);
@@ -1167,8 +1171,10 @@ class XtSticky extends Xt {
         }
         val = scrollTop;
         for (let el of elements) {
-          if (el.classList.contains('sticky-hide')) { // if sticky-hide get real add
-            val += parseFloat(el.getAttribute('data-sticky-add'));
+          var addSticky = el.getAttribute('data-add-sticky');
+          //if (el.classList.contains('sticky-hide')) { // if sticky-hide get real add
+          if (addSticky) { // if sticky-hide get real add
+            val += parseFloat(addSticky);
           } else {
             let rect = el.getBoundingClientRect();
             val += Math.floor(rect.top);
@@ -1199,20 +1205,14 @@ class XtSticky extends Xt {
           if (el.classList.contains('sticky-hide-down')) {
             if (scrollInverse) {
               val += el.clientHeight;
-              anim = true;
             }
           } else if (el.classList.contains('sticky-hide-up')) {
             if (!scrollInverse) {
               val += el.clientHeight;
-              anim = true;
             }
           } else {
             val += el.clientHeight;
           }
-        }
-        // add anim class
-        if (anim) {
-          //this.object.classList.add('sticky-anim');
         }
       }
     }
