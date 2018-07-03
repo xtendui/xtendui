@@ -1003,11 +1003,15 @@ class XtSticky extends Xt {
     for (let event of events) {
       window.xtUtilOff(event + '.xtend' + this.namespace);
       window.xtUtilOn(event + '.xtend' + this.namespace, function (e) {
-        self.eventScroll(self.object);
+        self.eventScroll(self.object, true);
       });
     }
     // trigger initial
     self.eventScroll(self.object); // @TODO events revision
+    // @TODO temporary fix mix demo
+    self.object.addEventListener('refresh', function (e) {
+      self.eventScroll(self.object, false, e.scrollTop, e.scrollTopOld);
+    });
   }
 
   //////////////////////
@@ -1018,7 +1022,7 @@ class XtSticky extends Xt {
    * window scroll
    * @param {Element} element To be activated or deactivated
    */
-  eventScroll(element) {
+  eventScroll(element, propagate = false, scrollTop, scrollTopOld) {
     let self = this;
     let options = self.options;
     // vars
@@ -1033,8 +1037,8 @@ class XtSticky extends Xt {
     let rectEl = el.getBoundingClientRect();
     let heightEl = parseFloat(getComputedStyle(el).height);
     let rectContainer = self.container[0].getBoundingClientRect();
-    let scrollTop = document.documentElement.scrollTop;
-    let scrollTopOld = self.scrollTopOld;
+    scrollTop = scrollTop ? scrollTop : document.documentElement.scrollTop;
+    scrollTopOld = scrollTopOld ? scrollTopOld : self.scrollTopOld;
     // direction
     if (scrollTop >= scrollTopOld) {
       el.classList.add('sticky-down');
@@ -1082,44 +1086,53 @@ class XtSticky extends Xt {
         if (addBottom < heightEl) {
           add = addBottom - heightEl;
           anim = false;
-          /* @TODO fix advanced #sticky-bottom
-          if (el.getAttribute('id') === 'sticky-bottom') {
+          if (el.getAttribute('id') === 'sticky-top') {
             console.log(add, addBottom, heightEl);
           }
-          */
         }
       }
     }
     // activation
     let checkTop = scrollTop > top - add + 1 + addHide;
     let checkBottom = scrollTop < bottom + add - addHide;
-    if (el.getAttribute('id') === 'sticky-top') {
-      console.log(add, addBottom, heightEl);
-    }
     if (checkTop && checkBottom) {
       // inside
       if (!element.classList.contains(...self.options.classes)) {
         self.eventOn(element);
       }
-      // save real add for calculation
-      el.setAttribute('data-add-sticky', add + 'px');
       // hide
       if (addHide) {
-        add -= addHide;
         hide = true
-        anim = true;
       }
     } else {
-      // save real add for calculation
-      el.setAttribute('data-add-sticky', '');
       // outside
       if (element.classList.contains(...self.options.classes)) {
         self.eventOff(element);
       }
     }
+    // save real add for calculation
+    el.setAttribute('data-add-sticky', add + 'px');
     // hide
     if (hide) {
+      anim = true;
+      add -= addHide;
       el.classList.add('sticky-hide');
+      /*
+      // @TODO temporary fix mix demo
+      if (propagate) {
+        XtUtil.cancelAnimationFrame.call(window, self.scrollFramePropagate);
+        self.scrollFramePropagate = XtUtil.requestAnimationFrame.call(window, function () {
+          let elements = document.querySelectorAll(options.contain['top'] + ',' + options.contain['bottom']);
+          elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
+          for (let el of elements) {
+            let event = new Event('refresh');
+            event.scrollTop = scrollTop;
+            event.scrollTopOld = scrollTopOld; // @TODO scrollTopOld WRONG maybe
+            el.dispatchEvent(event);
+          }
+        });
+      }
+      */
     } else {
       el.classList.remove('sticky-hide');
     }
@@ -1181,7 +1194,7 @@ class XtSticky extends Xt {
         val = scrollTop;
         for (let el of elements) {
           let addSticky = el.getAttribute('data-add-sticky');
-          if (addSticky) {
+          if (addSticky && addSticky !== '0px') {
             // if sticky-hide get real add
             val += parseFloat(addSticky);
           } else {
