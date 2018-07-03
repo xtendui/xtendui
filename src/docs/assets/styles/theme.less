@@ -715,17 +715,6 @@
 
 .site-header-top-outer[data-xt-sticky] {
   .xt-sticky(@mode:'fixed');
-  // animations
-  > * {
-    .transition-default.active();
-    transform: translateY(0);
-  }
-  &.sticky-down {
-    > * {
-      .transition-default.out();
-      transform: translateY(-100%);
-    }
-  }
 }
 
 // .site-breadcrumbs

@@ -471,8 +471,8 @@ class Xt {
     // timing
     let timing = options.timing;
     let style = getComputedStyle(el);
-    let transition = parseFloat(style['transitionDuration']) + parseFloat(style['transitionDelay']);
-    let animation = parseFloat(style['animationDuration']) + parseFloat(style['animationDelay']);
+    let transition = parseFloat(style.transitionDuration) + parseFloat(style.transitionDelay);
+    let animation = parseFloat(style.animationDuration) + parseFloat(style.animationDelay);
     if (transition || animation) {
       timing = Math.max(transition, animation);
     }
@@ -1033,7 +1033,7 @@ class XtSticky extends Xt {
     let scrollHeight = document.documentElement.scrollHeight;
     let el = self.object;
     let rectEl = el.getBoundingClientRect();
-    let heightEl = el.clientHeight;
+    let heightEl = parseFloat(getComputedStyle(el).height);
     let rectContainer = self.container[0].getBoundingClientRect();
     scrollTop = scrollTop ? scrollTop : document.documentElement.scrollTop;
     scrollTopOld = scrollTopOld ? scrollTopOld : self.scrollTopOld;
@@ -1076,7 +1076,7 @@ class XtSticky extends Xt {
     if (options.contain) {
       if (options.contain['top']) {
         addTop = self.eventScrollHeight(options.contain['top'], scrollInverse);
-        if (addTop > add) { // if (addTop > 0) {
+        if (addTop > add) {
           add = addTop;
         }
       }
@@ -1085,13 +1085,15 @@ class XtSticky extends Xt {
         if (addBottom < heightEl) {
           add = addBottom - heightEl;
           anim = false;
+          /* @TODO fix advanced #sticky-bottom
+          if (el.getAttribute('id') === 'sticky-bottom') {
+            console.log(add, addBottom, heightEl);
+          }
+          */
         }
       }
     }
     // activation
-    if (el.getAttribute('id') === 'sticky-bottom') {
-      console.log(add, addTop, addBottom);
-    }
     let checkTop = scrollTop > top - add + 1 + addHide;
     let checkBottom = scrollTop < bottom + add - addHide;
     el.classList.remove('sticky-hide');
@@ -1192,7 +1194,7 @@ class XtSticky extends Xt {
             val += parseFloat(addSticky);
           } else {
             let rect = el.getBoundingClientRect();
-            val += Math.floor(rect.top);
+            val += rect.top;
           }
         }
       }
