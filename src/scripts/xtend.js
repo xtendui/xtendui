@@ -1091,8 +1091,13 @@ class XtSticky extends Xt {
     // save real add for calculation
     el.setAttribute('data-add-sticky', add + 'px');
     // activation
-    let checkTop = scrollTop >= top - add - addHide;
+    let checkTop = scrollTop >= top - add + addHide;
     let checkBottom = scrollTop < bottom + add - addHide;
+    /*
+    if (el.getAttribute('id') === 'sticky-middle') {
+      console.log(scrollTop, top - add - addHide);
+    }
+    */
     if (checkTop && checkBottom) {
       // inside
       if (!element.classList.contains(...self.options.classes)) {
@@ -1150,10 +1155,12 @@ class XtSticky extends Xt {
       }
     }
     // set add
+    /*
+    if (el.getAttribute('id') === 'sticky-middle') {
+      console.log(add, addTop, addBottom, addHide, hide);
+    }
+    */
     if (add !== self.addOld) {
-      if (el.getAttribute('id') === 'sticky-top') {
-        console.log(scrollTop, scrollTopOld);
-      }
       el.classList.add('no-transition');
       el.style[options.position] = rectEl.top + 'px';
       XtUtil.cancelAnimationFrame.call(window, self.scrollFrame);
