@@ -21,19 +21,22 @@ class Xt {
    */
   constructor(object, jsOptions, attr) {
     this.object = object;
-    this.defaults = this.constructor.defaults;
-    // js options
-    this.options = XtUtil.merge([this.defaults, jsOptions || {}]);
-    // markup options
-    let markupOptions = this.object.getAttribute(attr);
-    this.options = XtUtil.merge([this.options, markupOptions ? JSON.parse(markupOptions) : {}]);
-    // classes
-    if (this.options.class) {
-      this.options.classes = [...this.options.class.split(' ')];
+    if (this.object) {
+      this.defaults = this.constructor.defaults;
+      // js options
+      this.options = XtUtil.merge([this.defaults, jsOptions || {}]);
+      // markup options
+      let markupOptions = this.object.getAttribute(attr);
+      this.options = XtUtil.merge([this.options, markupOptions ? JSON.parse(markupOptions) : {}]);
+      // classes
+      if (this.options.class) {
+        this.options.classes = [...this.options.class.split(' ')];
+      }
+      // init
+      this.initSetup();
+      this.initScope();
+      this.initEvents();
     }
-    // init
-    this.initSetup();
-    this.initScope();
   }
 
   //////////////////////
@@ -790,9 +793,10 @@ class Xt {
   /**
    * if full width return '' else return value in px
    * @param {Number} width
+   * @returns {String} Value in px
    */
   normalizeWidth(width) {
-    if (width + XtUtil.scrollbarWidth() === window.innerWidth) {
+    if (width + XtUtil.scrollbarWidth() >= window.innerWidth) {
       width = '';
     } else {
       width += 'px';
@@ -827,7 +831,6 @@ class XtToggle extends Xt {
    */
   constructor(object, jsOptions) {
     super(object, jsOptions, 'data-xt-toggle');
-    this.initEvents();
   }
 
 }
@@ -863,7 +866,6 @@ class XtDrop extends Xt {
    */
   constructor(object, jsOptions) {
     super(object, jsOptions, 'data-xt-drop');
-    this.initEvents();
   }
 
 }
@@ -902,7 +904,6 @@ class XtOverlay extends Xt {
    */
   constructor(object, jsOptions) {
     super(object, jsOptions, 'data-xt-overlay');
-    this.initEvents();
   }
 
 }
@@ -942,7 +943,6 @@ class XtSticky extends Xt {
    */
   constructor(object, jsOptions) {
     super(object, jsOptions, 'data-xt-sticky');
-    this.initEvents();
   }
 
   //////////////////////
@@ -1074,13 +1074,15 @@ class XtSticky extends Xt {
     if (options.contain) {
       if (options.contain['top']) {
         addTop = self.eventScrollHeight(options.contain['top'], scrollInverse);
-        if (addTop > add) {
+        if (addTop !== null && addTop > Math.ceil(rectContainer.top)) {
           add = addTop;
+        } else {
+          anim = false;
         }
       }
       if (options.contain['bottom']) {
         addBottom = self.eventScrollPos(options.contain['bottom']);
-        if (addBottom < Math.floor(heightEl)) {
+        if (addBottom !== null && addBottom < Math.floor(heightEl)) {
           add = addBottom - heightEl;
           if (!propagating) {
             anim = false;
@@ -1093,11 +1095,6 @@ class XtSticky extends Xt {
     // activation
     let checkTop = scrollTop >= top - add + addHide;
     let checkBottom = scrollTop < bottom + add - addHide;
-    /*
-    if (el.getAttribute('id') === 'sticky-middle') {
-      console.log(scrollTop, top - add - addHide);
-    }
-    */
     if (checkTop && checkBottom) {
       // inside
       if (!element.classList.contains(...self.options.classes)) {
@@ -1116,7 +1113,7 @@ class XtSticky extends Xt {
     // hide
     if (hide) {
       anim = true;
-      add -= addHide;
+      add = -addHide;
       if (!el.classList.contains('sticky-hide')) {
         el.classList.add('sticky-hide');
       }
@@ -1155,11 +1152,6 @@ class XtSticky extends Xt {
       }
     }
     // set add
-    /*
-    if (el.getAttribute('id') === 'sticky-middle') {
-      console.log(add, addTop, addBottom, addHide, hide);
-    }
-    */
     if (add !== self.addOld) {
       el.classList.add('no-transition');
       el.style[options.position] = rectEl.top + 'px';
@@ -1169,7 +1161,7 @@ class XtSticky extends Xt {
         el.style[options.position] = add + 'px';
       });
     }
-    // @TODO temporary fix mix demo
+    // propagate fix with next frame calc
     XtUtil.cancelAnimationFrame.call(window, self.scrollFramePropagate);
     self.scrollFramePropagate = XtUtil.requestAnimationFrame.call(window, function () {
       if (propagate && scrollTopOld !== undefined) {
@@ -1194,7 +1186,9 @@ class XtSticky extends Xt {
     });
     // fix position fixed width 100% of parent
     let width = self.normalizeWidth(self.container[0].clientWidth);
-    el.style.width = width;
+    if (el.style.width !== width) {
+      el.style.width = width;
+    }
     // save for direction
     self.addOld = add;
     self.scrollTopOld = scrollTop;
@@ -1207,16 +1201,16 @@ class XtSticky extends Xt {
    * @param {Number} scrollTop Window's scrollTop
    * @returns {Number} value Option's position (px)
    */
-  eventScrollPos(option, scrollTop = 0, val = 0, filter = true) {
+  eventScrollPos(option, scrollTop = 0, val = null, filter = true) {
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
       let elements = Array.isArray(option) ? option : document.querySelectorAll(option);
       if (elements.length) {
+        val = scrollTop;
         if (filter) {
           elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
         }
-        val = scrollTop;
         for (let el of elements) {
           let addSticky = el.getAttribute('data-add-sticky');
           if (addSticky && addSticky !== '0px') {
@@ -1238,7 +1232,7 @@ class XtSticky extends Xt {
    * @param {Number} val Default value
    * @returns {Number} value Option's height (px)
    */
-  eventScrollHeight(option, scrollInverse, val = 0, filter = true) {
+  eventScrollHeight(option, scrollInverse, val = null, filter = true) {
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
