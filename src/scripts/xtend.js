@@ -1076,8 +1076,6 @@ class XtSticky extends Xt {
         addTop = self.eventScrollHeight(options.contain['top'], scrollInverse);
         if (addTop !== null && addTop > Math.ceil(rectContainer.top)) {
           add = addTop;
-        } else {
-          anim = false;
         }
       }
       if (options.contain['bottom']) {
