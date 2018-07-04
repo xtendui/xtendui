@@ -1164,7 +1164,7 @@ class XtSticky extends Xt {
     // propagate fix with next frame calc
     XtUtil.cancelAnimationFrame.call(window, self.scrollFramePropagate);
     self.scrollFramePropagate = XtUtil.requestAnimationFrame.call(window, function () {
-      if (propagate && scrollTopOld !== undefined) {
+      if (propagate) {
         let elements;
         if (options.contain['top']) {
           elements = document.querySelectorAll(options.contain['top']);
@@ -1177,8 +1177,10 @@ class XtSticky extends Xt {
           for (let el of elements) {
             let event = new Event('refresh');
             event.propagating = true;
-            event.scrollTop = scrollTop;
-            event.scrollTopOld = scrollTopOld;
+            if (scrollTopOld !== undefined) {
+              event.scrollTop = scrollTop;
+              event.scrollTopOld = scrollTopOld;
+            }
             el.dispatchEvent(event);
           }
         }
