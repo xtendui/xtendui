@@ -1032,9 +1032,9 @@ class XtSticky extends Xt {
     let windowHeight = window.innerHeight;
     let scrollHeight = document.documentElement.scrollHeight;
     let el = self.object;
-    let rectEl = el.getBoundingClientRect();
+    let rectElTop = Math.ceil(el.getBoundingClientRect().top);
     let heightEl = parseFloat(getComputedStyle(el).height);
-    let rectContainer = self.container[0].getBoundingClientRect();
+    let rectContainerTop =  Math.ceil(self.container[0].getBoundingClientRect().top);
     scrollTop = scrollTop ? scrollTop : document.documentElement.scrollTop;
     scrollTopOld = scrollTopOld ? scrollTopOld : self.scrollTopOld;
     // direction
@@ -1059,7 +1059,7 @@ class XtSticky extends Xt {
       }
     }
     // scroll
-    let top = self.eventScrollPos(options.limit['top'] || self.targets, scrollTop, rectContainer.top, false);
+    let top = self.eventScrollPos(options.limit['top'] || self.targets, scrollTop, rectContainerTop, false);
     let bottom = self.eventScrollPos(options.limit['bottom'], scrollTop, Infinity, false);
     if (options.position === 'top') {
       bottom -= heightEl;
@@ -1074,8 +1074,10 @@ class XtSticky extends Xt {
     if (options.contain) {
       if (options.contain['top']) {
         addTop = self.eventScrollHeight(options.contain['top'], scrollInverse);
-        if (addTop !== null && addTop > Math.ceil(rectContainer.top)) {
+        if (addTop !== null && addTop > rectContainerTop) {
           add = addTop;
+        } else {
+          addTop = null;
         }
       }
       if (options.contain['bottom']) {
@@ -1085,6 +1087,8 @@ class XtSticky extends Xt {
           if (!propagating) {
             anim = false;
           }
+        } else {
+          addBottom = null;
         }
       }
     }
@@ -1108,7 +1112,19 @@ class XtSticky extends Xt {
         self.eventOff(element);
       }
     }
-    // hide
+    // anim before hide
+    if (!el.classList.contains('active')) {
+      anim = false;
+      // @TODO fix absolute animation when not .active
+      // if (rectContainerTop > scrollTop) {
+      // add = scrollTop - rectElTop;
+      // }
+    }
+    // addTop after save
+    if (addTop && !el.classList.contains('active')) {
+      add -= rectContainerTop;
+    }
+    // hide after save
     if (hide) {
       anim = true;
       add = -addHide;
@@ -1152,7 +1168,7 @@ class XtSticky extends Xt {
     // set add
     if (add !== self.addOld) {
       el.classList.add('no-transition');
-      el.style[options.position] = rectEl.top + 'px';
+      el.style[options.position] = rectElTop + 'px';
       XtUtil.cancelAnimationFrame.call(window, self.scrollFrame);
       self.scrollFrame = XtUtil.requestAnimationFrame.call(window, function () {
         el.classList.remove('no-transition');
@@ -1167,6 +1183,7 @@ class XtSticky extends Xt {
         if (options.contain['top']) {
           elements = document.querySelectorAll(options.contain['top']);
           elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
+          elements.push(el);
         }
         if (options.contain['bottom']) {
           elements = XtUtil.arrSingle(el);
@@ -1207,18 +1224,27 @@ class XtSticky extends Xt {
     } else {
       let elements = Array.isArray(option) ? option : document.querySelectorAll(option);
       if (elements.length) {
-        val = scrollTop;
         if (filter) {
           elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
         }
+        let found = false;
+        val = 0;
         for (let el of elements) {
           let addSticky = el.getAttribute('data-add-sticky');
-          if (addSticky && addSticky !== '0px') {
-            // if sticky-hide get real add
-            val += parseFloat(addSticky);
+          let style = getComputedStyle(el);
+          if (style.display !== 'none') {
+            found = true;
+            if (addSticky && addSticky !== '0px') { // if sticky-hide get real add
+              val += parseFloat(addSticky);
+            } else {
+              let rect = el.getBoundingClientRect();
+              val += rect.top;
+            }
+          }
+          if (found) {
+            val += scrollTop;
           } else {
-            let rect = el.getBoundingClientRect();
-            val += rect.top;
+            val = null;
           }
         }
       }
