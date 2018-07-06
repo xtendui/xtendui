@@ -31,6 +31,9 @@ a, .alink, .btn-link {
   &:active, &.active {
     z-index: @index-active;
   }
+  &.out {
+    z-index: @index-out;
+  }
   > span {
     display: inline-block;
     vertical-align: middle;
@@ -50,8 +53,11 @@ a, .alink, .btn-link {
 .drop-container {
   display: inline-block;
   position: relative;
-  &.active, &.out {
-    z-index: @index-active !important;
+  &.active {
+    z-index: @index-active;
+  }
+  &.out {
+    z-index: @index-out
   }
   > .xt-backdrop {
     .display(none);
@@ -67,7 +73,7 @@ a, .alink, .btn-link {
   .toggle-flex();
   // styles
   position: absolute;
-  z-index: @index-drop !important;
+  z-index: @index-drop;
   > .drop-inner {
     position: relative;
     z-index: @index-base; // fix ::before negative z-index
@@ -190,7 +196,7 @@ a, .alink, .btn-link {
 .overlay-outer {
   .toggle-flex();
   position: fixed;
-  z-index: @index-overlay !important;
+  z-index: @index-overlay;
   top: 0;
   left: 0;
   right: 0;
@@ -212,7 +218,7 @@ a, .alink, .btn-link {
 
 .overlay-inner {
   position: relative;
-  z-index: @index-overlay !important;
+  z-index: @index-overlay;
   width: 100%;
   .align-self-center();
   > .btn-close + * {
@@ -225,7 +231,7 @@ a, .alink, .btn-link {
 .overlay-screen {
   .overlay {
     position: relative;
-    z-index: @index-overlay !important;
+    z-index: @index-overlay;
     max-width: none !important;
     .overlay-inner {
       position: static;
@@ -241,7 +247,7 @@ a, .alink, .btn-link {
 .overlay-pos {
   .overlay {
     position: relative;
-    z-index: @index-overlay !important;
+    z-index: @index-overlay;
     .justify-content-start();
     .overlay-inner {
       position: static;
@@ -268,7 +274,7 @@ a, .alink, .btn-link {
 
 .loader-mask {
   position: absolute;
-  z-index: @index-loader !important;
+  z-index: @index-loader;
   top: 0;
   left: 0;
   bottom: 0;
@@ -292,7 +298,7 @@ a, .alink, .btn-link {
 
 .xt-backdrop {
   position: fixed;
-  z-index: @index-backdrop !important;
+  z-index: @index-backdrop;
   top: 0;
   right: 0;
   width: 100%;
