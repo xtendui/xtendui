@@ -189,6 +189,31 @@ a, .alink, .btn-link {
   .drop-middle-top() !important;
 }
 
+// .drop-disable
+
+.drop-disable {
+  position: static;
+  z-index: initial;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+  > a, > button {
+    .display(none) !important;
+  }
+  > .drop {
+    .display(block) !important;
+    position: relative;
+    > .drop-inner {
+      z-index: initial;
+      min-width: auto;
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
 //////////////////////
 // overlay
 //////////////////////

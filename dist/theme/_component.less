@@ -332,12 +332,11 @@ a, .alink {
 // animations
 
 .drop-container {
-  animation-duration: @time-medium; // needed for .out animation timing
-  .drop {
+  &, > .drop {
     animation-duration: @time-medium; // needed for .out animation timing
   }
   &.active {
-    .drop-inner {
+    > .drop > .drop-inner {
       &::before {
         .anim-zoom.active();
       }
@@ -353,7 +352,7 @@ a, .alink {
     }
   }
   &.out {
-    .drop-inner {
+    > .drop > .drop-inner {
       &::before {
         .anim-zoom.out();
         animation-delay: @time-small;
@@ -366,6 +365,16 @@ a, .alink {
     }
     .xt-backdrop {
       .xt-backdrop.out();
+    }
+  }
+}
+
+.drop-disable {
+  // disable custom animation
+  > .drop > .drop-inner {
+    & > * {
+      .no-anim();
+      opacity: 1 !important;
     }
   }
 }

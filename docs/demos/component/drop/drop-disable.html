@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- seo -->
+    <title>Xtend demo</title>
+    <meta name="description" content="Xtend demo" />
+
+    <!-- icons -->
+    <link rel="icon" href="/assets/images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="drop-disable.css?v=0.4.26" />
+    <link rel="stylesheet" href="/assets/styles/demo.css?v=0.4.26" />
+    
+    <!-- scripts -->
+    <script src="/assets/scripts/xtend.min.js?v=0.4.26"></script>
+
+    <!-- demo scripts -->
+    <script src="/assets/scripts/ResizeSensor.min.js"></script>
+    <script src="/assets/scripts/ElementQueries.min.js"></script>
+    <script type="text/javascript">
+      // outside iframe
+      if (window.self === window.top) {
+        function initAll() {
+          XtUtil.initAll();
+        }
+        if (document.readyState !== 'loading') {
+          initAll();
+        } else if (document.addEventListener) {
+          document.addEventListener('DOMContentLoaded', initAll);
+        }
+      }
+      // inside iframe
+      function init() {
+        XtUtil.initAll();
+        // add id
+        document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
+        // https://github.com/marcj/css-element-queries
+        new ResizeSensor(document.getElementById('body-outer'), function() {
+          parent.resizeIframe(window.frameElement.getAttribute('id'));
+        });
+      }
+    </script>
+    
+  </head>
+  <body class="full">
+    
+    <div id="body-outer">
+<div id="body-inner">
+
+  <div class="drop-container drop-disable" data-xt-drop>
+    <button type="button" class="btn btn-primary">
+      Toggle
+    </button>
+    <div class="drop">
+      <div class="drop-inner">
+        <ul class="list list-drop">
+          <li>
+            <button type="button">Lorem ipsum dolor</button>
+          </li>
+          <li>
+            <button type="button">Dolor sit</button>
+          </li>
+          <li class="drop-container" data-xt-drop='{"onOutside": true, "offOutside": true}'>
+            <button type="button">
+              Toggle
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="drop-container drop-disable-example" data-xt-drop='{"onOutside": true, "offOutside": true}'>
+    <button type="button" class="btn btn-primary">
+      Toggle
+    </button>
+    <div class="drop">
+      <div class="drop-inner">
+        <ul class="list list-drop">
+          <li>
+            <button type="button">Lorem ipsum dolor</button>
+          </li>
+          <li>
+            <button type="button">Dolor sit</button>
+          </li>
+          <li class="drop-container" data-xt-drop='{"onOutside": true, "offOutside": true}'>
+            <button type="button">
+              Toggle
+            </button>
+            <div class="drop drop-secondary drop-after drop-middle">
+              <div class="drop-inner">
+                <ul class="list list-drop">
+                  <li>
+                    <button type="button">Lorem ipsum dolor</button>
+                  </li>
+                  <li>
+                    <button type="button">Dolor sit</button>
+                  </li>
+                  <li class="drop-container" data-xt-drop='{"onOutside": true, "offOutside": true}'>
+                    <button type="button">
+                      Toggle
+                    </button>
+                    <div class="drop drop-primary drop-center drop-middle">
+                      <div class="drop-inner">
+                        <ul class="list list-drop">
+                          <li>
+                            <button type="button">Lorem ipsum dolor</button>
+                          </li>
+                          <li>
+                            <button type="button">Dolor sit</button>
+                          </li>
+                          <li>
+                            <button type="button">Amet</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+    </div>
+
+    
+    <less-style>@import (reference) "../../../../../dist/xtend.less";
+
+.drop-disable-example {
+  @media @min-sm {
+    .drop-disable();
+  }
+}</less-style>
+    
+
+    
+
+  </body>
+</html>
