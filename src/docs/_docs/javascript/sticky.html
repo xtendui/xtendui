@@ -39,9 +39,13 @@ description: Javascript and css code to achieve sticky elements effects on scrol
   <code class="js">
     XtSticky.defaults = {
       "class": "active",
-      "on": "scroll",
+      "on": "scroll resize",
       "min": 0,
-      "max": Infinity
+      "max": Infinity,
+      "position": "top",
+      "limit": {"bottom": Infinity},
+      "contain": false,
+      "hide": false
     };
   </code>
 </pre>

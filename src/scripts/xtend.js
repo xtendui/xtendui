@@ -879,7 +879,6 @@ XtDrop.defaults = {
   "class": "active",
   "instant": { "elements": true },
   "on": "click",
-  "onOutside": true, "offOutside": true,
   "min": 0,
   "max": 1,
   "closeOutside": "body"
