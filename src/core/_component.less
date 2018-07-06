@@ -32,7 +32,7 @@ a, .alink, .btn-link {
     z-index: @index-active;
   }
   &.out {
-    z-index: @index-out;
+    z-index: @index-active - 1;
   }
   > span {
     display: inline-block;
@@ -54,10 +54,10 @@ a, .alink, .btn-link {
   display: inline-block;
   position: relative;
   &.active {
-    z-index: @index-active;
+    z-index: @index-drop;
   }
   &.out {
-    z-index: @index-out
+    z-index: @index-drop - 1;
   }
   > .xt-backdrop {
     .display(none);
