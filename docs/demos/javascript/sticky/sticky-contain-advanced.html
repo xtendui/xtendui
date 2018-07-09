@@ -57,7 +57,7 @@
 
     <div id="body-outer">
 
-<div id="sticky-top" data-xt-sticky='{"limit": {"top": "#sticky-top-start"}, "contain": {"bottom": "#sticky-middle"}, "hide": "down"}'>
+<div id="sticky-top" data-xt-sticky='{"limit": {"top": "#sticky-top-start"}, "contain": {"bottom": "#sticky-middle:not(.xt-clone)"}, "hide": "down"}'>
   <div class="box box-squared box-primary">
     Sticky top <span class="show-sticky">.show-sticky</span> <span class="hide-sticky">.hide-sticky</span>
   </div>
@@ -65,7 +65,7 @@
 
 <div id="sticky-top-start"></div>
 
-<div id="sticky-middle" data-xt-sticky='{"contain": {"top": "#sticky-top"}}'>
+<div id="sticky-middle" data-xt-sticky='{"contain": {"top": "#sticky-top:not(.xt-clone)"}}'>
   <div class="box box-squared box-secondary">
     Sticky middle
   </div>
@@ -76,7 +76,7 @@
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
 </div>
 
-<div id="sticky-bottom" data-xt-sticky='{"contain": {"top": "#sticky-top, #sticky-middle", "bottom": "#sticky-last"}, "hide": "up"}'>
+<div id="sticky-bottom" data-xt-sticky='{"contain": {"top": "#sticky-top:not(.xt-clone), #sticky-middle:not(.xt-clone)", "bottom": "#sticky-last:not(.xt-clone)"}, "hide": "up"}'>
   <div class="box box-squared box-secondary">
     Sticky bottom
   </div>
@@ -87,7 +87,7 @@
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
 </div>
 
-<div id="sticky-last" data-xt-sticky='{"contain": {"top": "#sticky-top, #sticky-middle, #sticky-bottom"}, "hide": "down"}'>
+<div id="sticky-last" data-xt-sticky='{"contain": {"top": "#sticky-top:not(.xt-clone), #sticky-middle:not(.xt-clone), #sticky-bottom:not(.xt-clone)"}, "hide": "down"}'>
   <div class="box box-squared box-secondary">
     Sticky last
   </div>

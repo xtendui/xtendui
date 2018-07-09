@@ -1058,8 +1058,8 @@ class XtSticky extends Xt {
       }
     }
     // scroll
-    let top = self.eventScrollPos(options.limit['top'] || self.targets, scrollTop, rectContainerTop, false);
-    let bottom = self.eventScrollPos(options.limit['bottom'], scrollTop, Infinity, false);
+    let top = self.eventScrollPos(options.limit['top'] || self.targets, scrollTop, rectContainerTop);
+    let bottom = self.eventScrollPos(options.limit['bottom'], scrollTop, Infinity);
     if (options.position === 'top') {
       bottom -= heightEl;
     }
@@ -1081,7 +1081,7 @@ class XtSticky extends Xt {
       }
       if (options.contain['bottom']) {
         addBottom = self.eventScrollPos(options.contain['bottom']);
-        if (addBottom !== null && addBottom < Math.floor(heightEl)) {
+        if (addBottom !== null && addBottom < Math.floor(heightEl) + addTop) {
           add = addBottom - heightEl;
           if (!propagating) {
             anim = false;
@@ -1180,8 +1180,7 @@ class XtSticky extends Xt {
       if (propagate) {
         let elements;
         if (options.contain['top']) {
-          elements = document.querySelectorAll(options.contain['top']);
-          elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
+          elements = Array.from(document.querySelectorAll(options.contain['top']));
           elements.push(el);
         }
         if (options.contain['bottom']) {
@@ -1217,15 +1216,12 @@ class XtSticky extends Xt {
    * @param {Number} scrollTop Window's scrollTop
    * @returns {Number} value Option's position (px)
    */
-  eventScrollPos(option, scrollTop = 0, val = null, filter = true) {
+  eventScrollPos(option, scrollTop = 0, val = null) {
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
       let elements = Array.isArray(option) ? option : document.querySelectorAll(option);
       if (elements.length) {
-        if (filter) {
-          elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
-        }
         let found = false;
         val = 0;
         for (let el of elements) {
@@ -1257,15 +1253,12 @@ class XtSticky extends Xt {
    * @param {Number} val Default value
    * @returns {Number} value Option's height (px)
    */
-  eventScrollHeight(option, scrollInverse, val = null, filter = true) {
+  eventScrollHeight(option, scrollInverse, val = null) {
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
       let elements = Array.isArray(option) ? option : document.querySelectorAll(option);
       if (elements.length) {
-        if (filter) {
-          elements = Array.from(elements).filter(x => !x.classList.contains('xt-clone')); // filter out .xt-clone
-        }
         for (let el of elements) {
           if (el.classList.contains('sticky-hide-down')) {
             if (scrollInverse) {

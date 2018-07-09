@@ -19,7 +19,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
 
     <!-- styles -->
-    <link rel="stylesheet" href="sticky-hide.css?v=0.4.26" />
+    <link rel="stylesheet" href="sticky-contain-hide.css?v=0.4.26" />
     <link rel="stylesheet" href="/assets/styles/demo.css?v=0.4.26" />
     
     <!-- scripts -->
@@ -68,7 +68,7 @@
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
 </div>
 
-<div id="sticky-middle" data-xt-sticky='{"contain": {"top": "#sticky-top"}, "hide": "up"}'>
+<div id="sticky-middle" data-xt-sticky='{"contain": {"top": "#sticky-top:not(.xt-clone)"}, "hide": "up"}'>
   <div class="box box-squared box-secondary">
     Sticky middle
   </div>
@@ -79,7 +79,7 @@
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
 </div>
 
-<div id="sticky-bottom" data-xt-sticky='{"contain": {"top": "#sticky-top, #sticky-middle"}}'>
+<div id="sticky-bottom" data-xt-sticky='{"contain": {"top": "#sticky-top:not(.xt-clone), #sticky-middle:not(.xt-clone)"}}'>
   <div class="box box-squared box-secondary">
     Sticky bottom
   </div>
