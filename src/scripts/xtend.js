@@ -1260,11 +1260,11 @@ class XtSticky extends Xt {
       let elements = Array.isArray(option) ? option : document.querySelectorAll(option);
       if (elements.length) {
         for (let el of elements) {
-          if (el.classList.contains('sticky-hide-down')) {
+          if (el.classList.contains('sticky-hide-down') && el.classList.contains('active')) {
             if (scrollInverse) {
               val += el.clientHeight;
             }
-          } else if (el.classList.contains('sticky-hide-up')) {
+          } else if (el.classList.contains('sticky-hide-up') && el.classList.contains('active')) {
             if (!scrollInverse) {
               val += el.clientHeight;
             }
