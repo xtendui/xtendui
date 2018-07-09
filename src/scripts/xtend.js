@@ -1005,10 +1005,6 @@ class XtSticky extends Xt {
     }
     // trigger initial
     self.eventScroll(self.object); // @TODO events revision
-    // @TODO temporary fix mix demo
-    self.object.addEventListener('refresh', function (e) {
-      self.eventScroll(self.object, false, e.scrollTop, e.scrollTopOld, e.propagating);
-    });
   }
 
   //////////////////////
@@ -1019,7 +1015,7 @@ class XtSticky extends Xt {
    * window scroll
    * @param {Element} element To be activated or deactivated
    */
-  eventScroll(element, propagate = true, scrollTop, scrollTopOld, propagating) {
+  eventScroll(element) {
     let self = this;
     let options = self.options;
     // vars
@@ -1034,8 +1030,8 @@ class XtSticky extends Xt {
     let rectElTop = Math.ceil(el.getBoundingClientRect().top);
     let heightEl = parseFloat(getComputedStyle(el).height);
     let rectContainerTop =  Math.ceil(self.container[0].getBoundingClientRect().top);
-    scrollTop = scrollTop ? scrollTop : document.documentElement.scrollTop;
-    scrollTopOld = scrollTopOld ? scrollTopOld : self.scrollTopOld;
+    let scrollTop = document.documentElement.scrollTop;
+    let scrollTopOld = self.scrollTopOld;
     // direction
     if (scrollTop > scrollTopOld) {
       el.classList.add('sticky-down');
@@ -1083,9 +1079,7 @@ class XtSticky extends Xt {
         addBottom = self.eventScrollPos(options.contain['bottom']);
         if (addBottom !== null && addBottom < Math.floor(heightEl) + addTop) {
           add = addBottom - heightEl;
-          if (!propagating) {
-            anim = false;
-          }
+          anim = false;
         } else {
           addBottom = null;
         }
@@ -1174,31 +1168,6 @@ class XtSticky extends Xt {
         el.style[options.position] = add + 'px';
       });
     }
-    // propagate fix with next frame calc
-    XtUtil.cancelAnimationFrame.call(window, self.scrollFramePropagate);
-    self.scrollFramePropagate = XtUtil.requestAnimationFrame.call(window, function () {
-      if (propagate) {
-        let elements;
-        if (options.contain['top']) {
-          elements = Array.from(document.querySelectorAll(options.contain['top']));
-          elements.push(el);
-        }
-        if (options.contain['bottom']) {
-          elements = XtUtil.arrSingle(el);
-        }
-        if (elements) {
-          for (let el of elements) {
-            let event = new Event('refresh');
-            event.propagating = true;
-            if (scrollTopOld !== undefined) {
-              event.scrollTop = scrollTop;
-              event.scrollTopOld = scrollTopOld;
-            }
-            el.dispatchEvent(event);
-          }
-        }
-      }
-    });
     // fix position fixed width 100% of parent
     let width = self.normalizeWidth(self.container[0].clientWidth);
     if (el.style.width !== width) {
