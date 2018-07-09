@@ -56,9 +56,9 @@
   <body class="{% if page.full %}full{% endif %}">
 
     <div id="body-outer">
-      {% if page.padding %}<div id="body-inner">{% endif %}
+{% if page.padding %}<div id="body-inner" class="demo-source-from">{% endif %}
 {{ content }}
-      {% if page.padding %}</div>{% endif %}
+{% if page.padding %}</div>{% endif %}
     </div>
 
     {% if page.less %}
