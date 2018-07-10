@@ -54,10 +54,14 @@ a, .alink, .btn-link {
   display: inline-block;
   position: relative;
   &.active {
-    z-index: @index-drop;
+    &, & > .drop {
+      z-index: @index-drop;
+    }
   }
   &.out {
-    z-index: @index-drop - 1;
+    &, & > .drop {
+      z-index: @index-drop - 1;
+    }
   }
   > .xt-backdrop {
     .display(none);
@@ -73,7 +77,6 @@ a, .alink, .btn-link {
   .toggle-flex();
   // styles
   position: absolute;
-  z-index: @index-drop;
   > .drop-inner {
     position: relative;
     z-index: @index-base; // fix ::before negative z-index
@@ -329,3 +332,10 @@ a, .alink, .btn-link {
   width: 100%;
   height: 100%;
 }
+
+.over-backdrop {
+  &.active, &.out {
+    z-index: @index-backdrop + 1;
+  }
+}
+
