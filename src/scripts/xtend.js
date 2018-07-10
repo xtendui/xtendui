@@ -929,6 +929,119 @@ window.XtOverlay = XtOverlay;
 export {XtOverlay};
 
 //////////////////////
+// XtFade
+//////////////////////
+
+class XtFade extends Xt {
+
+  /**
+   * constructor
+   * @param {Element} object Base element
+   * @param {Object} options User options
+   * @constructor
+   */
+  constructor(object, jsOptions) {
+    super(object, jsOptions, 'data-xt-fade');
+  }
+
+  //////////////////////
+  // init
+  //////////////////////
+
+  /**
+   * init events
+   */
+  initEvents() {
+    let self = this;
+    let options = self.options;
+    // events
+    let events = [...options.on.split(' ')];
+    for (let event of events) {
+      window.xtUtilOff(event + '.xtend' + this.namespace);
+      window.xtUtilOn(event + '.xtend' + this.namespace, function (e) {
+        self.eventScroll(self.object);
+      });
+    }
+    // trigger initial
+    self.eventScroll(self.object); // @TODO events revision
+  }
+
+  //////////////////////
+  // events
+  //////////////////////
+
+  /**
+   * window scroll
+   * @param {Element} element To be activated or deactivated
+   */
+  eventScroll(element) {
+    let self = this;
+    let options = self.options;
+    // vars
+    let scrollInverse;
+    let windowHeight = window.innerHeight;
+    let scrollTop = document.documentElement.scrollTop;
+    let scrollTopOld = self.scrollTopOld;
+    // direction
+    if (scrollTop < scrollTopOld) {
+      scrollInverse = true;
+    } else {
+      scrollInverse = false;
+    }
+    // core
+    for (let el of self.elements) {
+      // vars
+      let rectElTop = Math.ceil(el.getBoundingClientRect().top);
+      let heightEl = parseFloat(getComputedStyle(el).height);
+      // direction
+      if (scrollInverse) {
+        el.classList.remove('fade-down');
+        el.classList.add('fade-up');
+      } else {
+        el.classList.add('fade-down');
+        el.classList.remove('fade-up');
+      }
+      // scroll
+      var top = rectElTop;
+      var bottom = top + heightEl;
+      // activation
+      let checkTop = scrollTop + windowHeight >= top + options.dist;
+      let checkBottom = scrollTop < bottom - options.dist;
+      if (checkTop && checkBottom) {
+        // inside
+        if (!el.classList.contains(...self.options.classes)) {
+          self.eventOn(el);
+        }
+      } else {
+        // outside
+        if (el.classList.contains(...self.options.classes)) {
+          self.eventOff(el);
+        }
+      }
+    }
+    // save for direction
+    self.scrollTopOld = scrollTop;
+  }
+
+}
+
+// default
+
+XtFade.defaults = {
+  "class": "fade",
+  "on": "scroll resize",
+  "min": 0,
+  "max": Infinity,
+  "mode": "scroll", // scroll visible infinite
+  "dist": 0 // px distance from top and bottom
+};
+
+// export
+
+window.XtFade = XtFade;
+export {XtFade};
+
+//////////////////////
 // XtSticky
 //////////////////////
 
@@ -1033,14 +1146,14 @@ class XtSticky extends Xt {
     let scrollTop = document.documentElement.scrollTop;
     let scrollTopOld = self.scrollTopOld;
     // direction
-    if (scrollTop > scrollTopOld) {
-      el.classList.add('sticky-down');
-      el.classList.remove('sticky-up');
-      scrollInverse = false;
-    } else {
+    if (scrollTop < scrollTopOld) {
       el.classList.remove('sticky-down');
       el.classList.add('sticky-up');
       scrollInverse = true;
+    } else {
+      el.classList.add('sticky-down');
+      el.classList.remove('sticky-up');
+      scrollInverse = false;
     }
     // hide
     if (options.hide === 'down') {

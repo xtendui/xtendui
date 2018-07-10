@@ -4,7 +4,7 @@
 
 'use strict';
 
-import {XtToggle, XtDrop, XtOverlay, XtSticky} from './xtend';
+import {XtToggle, XtDrop, XtOverlay, XtFade, XtSticky} from './xtend';
 
 //////////////////////
 // constructor
@@ -39,6 +39,10 @@ XtUtil.initAll = function (container = document) {
   // xt-overlay
   for (let el of container.querySelectorAll('[data-xt-overlay]')) {
     new XtOverlay(el);
+  }
+  // xt-fade
+  for (let el of container.querySelectorAll('[data-xt-fade]')) {
+    new XtFade(el);
   }
   // xt-scroll
   for (let el of container.querySelectorAll('[data-xt-sticky]')) {

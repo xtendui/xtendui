@@ -12,8 +12,8 @@
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
 
   <!-- seo -->
-  <title>Sticky • Xtend</title>
-  <meta name="description" content="Javascript and css code to achieve sticky elements effects on scroll."/>
+  <title>Fade • Xtend</title>
+  <meta name="description" content="Lorem Ipsum"/>
 
   <!-- icons -->
   <link rel="icon" href="/assets/images/favicon.ico?v=0.4.26"/>
@@ -126,8 +126,8 @@
       <div class="container">
         <div class="flex flex-auto align-items-center align-content-center justify-content-between">
           <div class="site-hero-text">
-            <h1>Sticky</h1>
-            <p class="font-giant">Javascript and css code to achieve sticky elements effects on scroll.</p>
+            <h1>Fade</h1>
+            <p class="font-giant">Lorem Ipsum</p>
           </div>
           <div class="site-hero-img">
             <!--
@@ -462,120 +462,10 @@
         <div class="col col-12 col-9-md">
 
           <article class="site-article default-lists">
-            <h2>Usage</h2>
-
-<p>Use this markup to create a sticky. <code>[data-xt-sticky]</code> must be <a
-  href="/docs/javascript/#initialization">initialized by javascript</a>.</p>
-
-<pre>
-  <code class="html">
-    <div data-xt-xticky>
-      <div>
-        <!-- content -->
-      </div>
-    </div>
-  </code>
-</pre>
-
-<div class="alert">
-  Instead of using html arguments you can initialize <a href="/docs/javascript/#initialization-sticky">sticky
-  by javascript</a> using the same options syntax.
-</div>
-
-<div class="alert alert-warning">
-  It's recomended to style and animate a inner div <code>[data-xt-xticky] > div</code> when using <strong>sticky
-  component</strong>.
-</div>
-
-<h2>Defaults</h2>
-
-<p>Here are the defaults options for sticky.</p>
-
-<pre>
-  <code class="js">
-    XtSticky.defaults = {
-      "class": "active",
-      "on": "scroll resize",
-      "min": 0,
-      "max": Infinity,
-      "position": "top",
-      "limit": {"bottom": Infinity},
-      "contain": false,
-      "hide": false
-    };
-  </code>
-</pre>
-
-<h2>Options</h2>
-
-<h3>Position and Mode</h3>
-
-<p>The default <strong>position</strong> is <code>"position": "top"</code>.</p>
-
-<p>The default <strong>limit</strong> for <code>"limit": {"top": Element}</code> is the element's own position, for
-  <code>"limit": {"bottom": Element}</code> is Infinity.</p>
-
-<p>You can optionally set in the less mixin a mode <strong>fixed</strong> or <strong>absolute</strong>, to have that
-  position when not sticky.</p>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-option-position.html"
-       data-name="position">
+            <div class="demo">
+  <div class="demo-item" data-iframe="/demos/javascript/fade/fade-0.html" data-name="fade">
     <div class="demo-text">
-      <code>"position": "top"</code> <code>"position": "bottom"</code>.
-    </div>
-  </div>
-  <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-option-limit.html"
-       data-name="limit">
-    <div class="demo-text">
-      <code>"limit": {"top": Element}</code> <code>"limit": {"bottom": Element}</code>.
-    </div>
-  </div>
-  <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-mode-fixed.html"
-       data-name="fixed">
-    <div class="demo-text">
-      Use <code>"mode": "fixed"</code> in the less to have fixed position when not sticky.
-    </div>
-  </div>
-  <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-mode-absolute.html"
-       data-name="absolute">
-    <div class="demo-text">
-      Use <code>"mode": "absolute"</code> in the less mixin to have absolute position when not sticky.
-    </div>
-  </div>
-</div>
-
-<h3>Contain</h3>
-
-<p>Use the <code>"contain": {}</code> option to stack consecutive sticky elements. with <code>"contain": {"top":
-  Element}</code> you stack the sticky to a previous element, with <code>"contain": {"bottom": Element}</code> you stack
-  the sticky to a next element. The two solutions brings <strong>different stacking effects</strong>.</p>
-
-<div class="alert alert-warning">
-  If contain to <strong>sticky elements</strong> remember to filter out <code>:not(.xt-clone)</code> or filter in <code>.xt-clone</code>.
-</div>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-contain-top.html" data-name="top">
-    <div class="demo-text">
-      <code>"contain": {"top": Element}</code>.
-    </div>
-  </div>
-  <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-contain-bottom.html" data-name="bottom">
-    <div class="demo-text">
-      <code>"contain": {"bottom": Element}</code>.
-    </div>
-  </div>
-</div>
-
-<h3>Hide</h3>
-
-<p>To hide when scrolling down or up use <code>"hide": "down"</code> or <code>"hide": "up"</code>. Here's a complex example with hide behaviour.</p>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-hide.html" data-name="hide">
-    <div class="demo-text">
-      <code>"hide": "down"</code> <code>"hide": "up"</code>.
+      <code></code>.
     </div>
   </div>
 </div>
@@ -587,9 +477,9 @@
           <aside class="site-aside" data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
 
             <div class="site-aside-text">
-              <a href="/docs/javascript/sticky/" class="btn btn-nodesign">
+              <a href="/docs/javascript/fade/" class="btn btn-nodesign">
                 <div class="site-aside-title">
-                  Sticky
+                  Fade
                 </div>
               </a>
             </div>
