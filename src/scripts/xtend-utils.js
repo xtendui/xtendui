@@ -96,10 +96,10 @@ XtUtil.checkInside = function (e, targets) {
  * @return {Boolean}
  */
 XtUtil.checkOutside = function (e, targets) {
-  let result = false;
+  let result = true;
   for (let t of targets) {
-    if (e.target !== t && !t.contains(e.target)) {
-      result = true;
+    if (e.target === t || t.contains(e.target)) {
+      result = false;
     }
   }
   return result;

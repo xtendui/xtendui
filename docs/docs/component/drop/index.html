@@ -1506,7 +1506,7 @@
 
 <p>Drop position relative to closest element with <code>position: relative;</code>.</p>
 
-<p>For not closign if clicking inside <code>"onOutside": true, "offOutside": true</code>.</p>
+<p>For limiting event inside a selector use <code>.event-limit</code>.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="bottom">
@@ -1515,11 +1515,11 @@
     </div>
     <div class="demo-source" data-lang="html">
       <div style="position: relative;">
-        <div class="drop-container drop-container-static" data-xt-drop='{"onOutside": true, "offOutside": true}'>
+        <div class="drop-container drop-container-static" data-xt-drop>
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
-          <div class="drop">
+          <div class="drop event-limit">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1544,11 +1544,11 @@
     </div>
     <div class="demo-source" data-lang="html">
       <div style="position: relative;">
-        <div class="drop-container drop-container-static" data-xt-drop='{"onOutside": true, "offOutside": true}'>
+        <div class="drop-container drop-container-static" data-xt-drop>
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
-          <div class="drop drop-top">
+          <div class="drop drop-top event-limit">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1573,11 +1573,11 @@
     </div>
     <div class="demo-source" data-lang="html">
       <div style="position: relative;">
-        <div class="drop-container drop-container-static" data-xt-drop='{"onOutside": true, "offOutside": true}'>
+        <div class="drop-container drop-container-static">
           <button type="button" class="btn btn-primary">
             Toggle
           </button>
-          <div class="drop drop-middle">
+          <div class="drop drop-middle event-limit">
             <div class="drop-inner">
               <ul class="list list-drop">
                 <li>
@@ -1741,10 +1741,10 @@
   </div>
   <div class="demo-item demo-preview" data-name="nested">
     <div class="demo-text">
-      <p>For not closign if clicking inside <code>"onOutside": true, "offOutside": true</code>.</p>
+      <p>For limiting event inside a selector use <code>.event-limit</code>.</p>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="drop-container" data-xt-drop='{"onOutside": true, "offOutside": true}'>
+      <div class="drop-container" data-xt-drop>
         <button type="button" class="btn btn-primary">
           Toggle
         </button>
@@ -1757,7 +1757,7 @@
               <li>
                 <button type="button">Dolor sit</button>
               </li>
-              <li class="drop-container" data-xt-drop='{"onOutside": true, "offOutside": true}'>
+              <li class="drop-container event-limit" data-xt-drop>
                 <button type="button">
                   Toggle
                 </button>
@@ -1770,7 +1770,7 @@
                       <li>
                         <button type="button">Dolor sit</button>
                       </li>
-                      <li class="drop-container" data-xt-drop='{"onOutside": true, "offOutside": true}'>
+                      <li class="drop-container event-limit" data-xt-drop>
                         <button type="button">
                           Toggle
                         </button>

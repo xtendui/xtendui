@@ -141,8 +141,10 @@ class Xt {
         for (let event of events) {
           el.xtUtilOff(event + '.xtend');
           el.xtUtilOn(event + '.xtend', function (e) {
-            if (options.onOutside) {
-              if (XtUtil.checkOutside(e, self.container.querySelectorAll(options.targets))) {
+            let eventLimit = self.container.querySelectorAll('.event-limit');
+            console.log(self.container.querySelectorAll('.event-limit'));
+            if (eventLimit.length) {
+              if (XtUtil.checkOutside(e, eventLimit)) {
                 self.eventOn(this);
               }
             } else {
@@ -156,8 +158,9 @@ class Xt {
         for (let event of events) {
           el.xtUtilOff(event + '.xtend');
           el.xtUtilOn(event + '.xtend', function (e) {
-            if (options.offOutside) {
-              if (XtUtil.checkOutside(e, self.container.querySelectorAll(options.targets))) {
+            let eventLimit = self.container.querySelectorAll('.event-limit');
+            if (eventLimit.length) {
+              if (XtUtil.checkOutside(e, eventLimit)) {
                 self.eventOff(this);
               }
             } else {
