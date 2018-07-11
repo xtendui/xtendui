@@ -1187,9 +1187,13 @@ class XtSticky extends Xt {
     let addBottom = 0;
     if (options.contain) {
       if (options.contain['top']) {
-        addTop = self.eventScrollHeight(options.contain['top'], scrollInverse);
+        let addTopObj = self.eventScrollHeight(options.contain['top'], scrollInverse);
+        addTop = addTopObj.val;
         if (addTop !== null && addTop > rectContainerTop) {
           add = addTop;
+          if (!addTopObj.foundHide) {
+            anim = false;
+          }
         } else {
           addTop = null;
         }
@@ -1339,9 +1343,10 @@ class XtSticky extends Xt {
    * get height of option
    * @param {String|Number|Element} option
    * @param {Number} val Default value
-   * @returns {Number} value Option's height (px)
+   * @returns {Object} obj Option's height (px) and if found hide element
    */
   eventScrollHeight(option, scrollInverse, val = null) {
+    let foundHide = false;
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
@@ -1351,10 +1356,12 @@ class XtSticky extends Xt {
           if (el.classList.contains('sticky-hide-down') && el.classList.contains('active')) {
             if (scrollInverse) {
               val += el.clientHeight;
+              foundHide = true;
             }
           } else if (el.classList.contains('sticky-hide-up') && el.classList.contains('active')) {
             if (!scrollInverse) {
               val += el.clientHeight;
+              foundHide = true;
             }
           } else {
             val += el.clientHeight;
@@ -1362,7 +1369,7 @@ class XtSticky extends Xt {
         }
       }
     }
-    return val;
+    return {val: val, foundHide: foundHide};
   }
 
 }
