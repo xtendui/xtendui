@@ -1081,6 +1081,12 @@ class XtSticky extends Xt {
     if (!this.targets.length) {
       this.targets = this.object.cloneNode(true);
       this.targets.classList.add('xt-clone');
+      for (let elId of this.targets.querySelectorAll('[id]')) {
+        elId.setAttribute('id', elId.getAttribute('id') + '-clone');
+      }
+      for (let elName of this.targets.querySelectorAll('[name]')) {
+        elName.setAttribute('name', elName.getAttribute('name') + '-clone');
+      }
       this.container[0].append(this.targets);
     }
     this.targets = XtUtil.arrSingle(this.targets);
