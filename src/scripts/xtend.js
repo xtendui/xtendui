@@ -142,7 +142,6 @@ class Xt {
           el.xtUtilOff(event + '.xtend');
           el.xtUtilOn(event + '.xtend', function (e) {
             let eventLimit = self.container.querySelectorAll('.event-limit');
-            console.log(self.container.querySelectorAll('.event-limit'));
             if (eventLimit.length) {
               if (XtUtil.checkOutside(e, eventLimit)) {
                 self.eventOn(this);
