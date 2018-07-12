@@ -7,7 +7,7 @@
 import {XtUtil} from "../../../scripts/xtend-utils";
 
 const formatCode = function (source, lang) {
-  var inner = Array.from(source.querySelectorAll('.demo-source-from'));
+  let inner = Array.from(source.querySelectorAll('.demo-source-from'));
   inner = inner.filter(x => !x.querySelectorAll('.demo-source-from').length); // filter out nested
   if (inner.length) {
     source = inner[0];
@@ -35,7 +35,7 @@ const formatCode = function (source, lang) {
   }
   // remove tabs
   let arr = text.split('\n');
-  var toRemove = arr[1].search(/\S/g);
+  let toRemove = arr[1].search(/\S/g);
   for (let i of arr.keys()) {
     arr[i] = arr[i].substring(toRemove);
   }
@@ -105,7 +105,7 @@ for (let el of document.querySelectorAll('.site-aside-text > .btn:not(.different
       appendItem.append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-nodesign btn-site-aside-sub">' + element.textContent + '</a>'));
       appendItem.append(XtUtil.createElement('<div class="site-aside-subsub collapse-height"></div>'));
     } else if (element.tagName === 'H3') {
-      var subs = container.querySelectorAll('.site-aside-subsub');
+      let subs = container.querySelectorAll('.site-aside-subsub');
       subs[subs.length - 1].append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-nodesign btn-site-aside-subsub">' + element.textContent + '</a>'));
     }
   }
@@ -195,13 +195,13 @@ const populateDemo = function (container, i) {
     let btn = container.querySelectorAll('.demo-tabs-left')[0].append(appendBtn);
     btn = container.querySelectorAll('.demo-tabs-left .btn')[k];
     // iframe append
-    var src = item.getAttribute('data-iframe');
+    let src = item.getAttribute('data-iframe');
+    let id = 'iframe' + i + k;
     if (src) {
-      let appendIframe = XtUtil.createElement('<iframe data-src="' + src + '" frameborder="0"></iframe>');
+      let appendIframe = XtUtil.createElement('<iframe data-src="' + src + '" frameborder="0" name="' + id + '"></iframe>');
       item.append(appendIframe);
     }
     // tabs
-    let id = 'iframe' + i + k;
     let appendItem = XtUtil.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-empty btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>');
     item.append(appendItem);
     // https://github.com/zenorocha/clipboard.js/
@@ -223,17 +223,7 @@ const populateDemo = function (container, i) {
       let initIframe = function() {
         if (!iframe.getAttribute('src')) {
           item.classList.add('demo-iframe');
-          iframe.setAttribute('id', id);
           iframe.setAttribute('src', iframe.getAttribute('data-src'));
-          iframe.xtUtilOn('load', function (e) {
-            populateIframe(item, iframe, id);
-            window.resizeIframe(id);
-            iframe.contentWindow.init();
-            // .populated fix scroll
-            setTimeout( function(item) {
-              item.classList.add('populated');
-            }, 0, item);
-          });
         }
       };
       if (k === 0) {
@@ -262,10 +252,11 @@ const populateDemo = function (container, i) {
 };
 
 // populateInline
+
 const populateInline = function (item, id) {
   let els = item.querySelectorAll('.demo-source');
   for (let [z, el] of els.entries()) {
-    populateSources(item, el, id, z);
+    populateSources(item, el, z);
     if (!item.classList.contains('demo-preview')) {
       el.style.display = none;
     }
@@ -283,8 +274,21 @@ const populateInline = function (item, id) {
   });
 };
 
-window.resizeIframe = function(id) {
-  let iframe = document.querySelectorAll('#' + id)[0];
+// populateIframe
+
+window.initIframe = function(name) {
+  let iframe = document.documentElement.querySelectorAll('[name="' + name + '"')[0];
+  let item = XtUtil.parents(iframe, '.demo-item')[0];
+  populateIframe(item, iframe);
+  window.resizeIframe(name);
+  // .populated fix scroll
+  setTimeout( function(item) {
+    item.classList.add('populated');
+  }, 0, item);
+}
+
+window.resizeIframe = function(name) {
+  let iframe = document.querySelectorAll('[name="' + name + '"')[0];
   if (!iframe.contentWindow.document.body.classList.contains('full')) {
     let target = iframe.contentWindow.document.body.querySelectorAll('#body-outer')[0];
     let h = target.offsetHeight;
@@ -295,12 +299,11 @@ window.resizeIframe = function(id) {
   }
 };
 
-// populateIframe
-function populateIframe(item, iframe, id) {
+function populateIframe(item, iframe) {
   let html = iframe.contentWindow.document.body.querySelectorAll('#body-outer')[0];
   let less = iframe.contentWindow.document.body.querySelectorAll('less-style')[0];
   let css = iframe.contentWindow.document.body.querySelectorAll('style[scoped]')[0];
-  let js = iframe.contentWindow.document.body.querySelectorAll('script')[0];
+  let js = iframe.contentWindow.document.body.querySelectorAll('js-script')[0];
   // inject code
   if (html) {
     let appendItem = XtUtil.createElement('<div class="demo-source" data-lang="html">' + html.innerHTML + '</div>');
@@ -316,7 +319,7 @@ function populateIframe(item, iframe, id) {
   }
   // populate
   for (let [z, source] of item.querySelectorAll('.demo-source').entries()) {
-    populateSources(item, source, id, z);
+    populateSources(item, source, z);
   }
   new XtToggle(item, {
     "elements": ".demo-code-tabs-left .btn",
@@ -327,7 +330,7 @@ function populateIframe(item, iframe, id) {
 
 // populateSources
 
-const populateSources = function (item, element, id, z) {
+const populateSources = function (item, element, z) {
   let lang = element.getAttribute('data-lang');
   // populate tabs
   let appendCode = XtUtil.createElement('<div class="demo-code-body-item"><pre><code></code></pre></div>');

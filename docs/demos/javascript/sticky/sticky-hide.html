@@ -28,30 +28,7 @@
     <!-- demo scripts -->
     <script src="/assets/scripts/ResizeSensor.min.js"></script>
     <script src="/assets/scripts/ElementQueries.min.js"></script>
-    <script type="text/javascript">
-      // outside iframe
-      if (window.self === window.top) {
-        function initAll() {
-          XtUtil.initAll();
-        }
-        if (document.readyState !== 'loading') {
-          initAll();
-        } else if (document.addEventListener) {
-          document.addEventListener('DOMContentLoaded', initAll);
-        }
-      }
-      // inside iframe
-      function init() {
-        XtUtil.initAll();
-        // add id
-        document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
-        // https://github.com/marcj/css-element-queries
-        new ResizeSensor(document.getElementById('body-outer'), function() {
-          parent.resizeIframe(window.frameElement.getAttribute('id'));
-        });
-      }
-    </script>
-    
+
   </head>
   <body class="full">
 
@@ -119,6 +96,28 @@
 }
 </less-style>
     
+
+    
+
+    <script>
+      // add id
+      document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
+      // init
+      function initAll() {
+        XtUtil.initAll();
+        // https://github.com/marcj/css-element-queries
+        new ResizeSensor(document.getElementById('body-outer'), function() {
+          parent.resizeIframe(window.frameElement.getAttribute('id'));
+        });
+      }
+      if (document.readyState !== 'loading') {
+        initAll();
+      } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', initAll);
+      }
+      // init iframe
+      window.parent.initIframe(window.name);
+    </script>
 
     
 
