@@ -401,7 +401,7 @@ class Xt {
       let timeout = setTimeout(function (el, type) {
         onDone(el, type);
       }, timing, el, type);
-      el.setAttribute('xt-activation-animation-timeout', timeout);
+      el.setAttribute('xt-activation-animation-timeout', timeout.toString());
     }
   }
 
@@ -469,7 +469,7 @@ class Xt {
       let timeout = setTimeout(function (el, type) {
         onDone(el, type);
       }, timing, el, type);
-      el.setAttribute('xt-activation-animation-timeout', timeout);
+      el.setAttribute('xt-activation-animation-timeout', timeout.toString());
     }
   }
 
