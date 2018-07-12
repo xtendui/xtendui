@@ -21,16 +21,17 @@ const formatCode = function (source, lang) {
     }
     // replace entities
     text = text.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-  }
-  if (text.match(/[&<>]/g)) {
-    // replace quote entities
-    text = text.replace(/&quot;/g, '"');
-    // replace entities
-    text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    // replace json quotes
-    text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'');
-    // replace empty quotes
-    text = text.replace(/=""/g, '');
+  } else if (lang === 'html') {
+    if (text.match(/[&<>]/g)) {
+      // replace quote entities
+      text = text.replace(/&quot;/g, '"');
+      // replace entities
+      text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      // replace json quotes
+      text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'');
+      // replace empty quotes
+      text = text.replace(/=""/g, '');
+    }
   }
   // remove tabs
   let arr = text.split('\n');

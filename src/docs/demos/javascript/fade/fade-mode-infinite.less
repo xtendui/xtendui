@@ -1,0 +1,11 @@
+@import (reference) "../../../../../dist/xtend.less";
+
+.fade {
+  opacity: 0;
+  &.in {
+    .anim-horizontal.active();
+  }
+  &.out {
+    .anim-horizontal.out();
+  }
+}

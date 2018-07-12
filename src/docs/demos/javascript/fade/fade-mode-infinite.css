@@ -1,0 +1,1 @@
+.fade{opacity:0}.fade.in{animation-duration:.3s;animation-timing-function:ease;animation-delay:initial;opacity:1;animation-name:anim-horizontal-in}.fade.out{animation-duration:.3s;animation-timing-function:ease;animation-delay:initial;opacity:0;animation-name:anim-horizontal-out}

@@ -283,6 +283,7 @@ class Xt {
   /**
    * element on
    * @param {Node|HTMLElement} element To be activated
+   * @returns {Boolean} If activation changed
    */
   eventOn(element) {
     let self = this;
@@ -312,16 +313,20 @@ class Xt {
         activationDelay.elements();
         activationDelay.targets();
         activationDelay.additional();
+        return true;
       }
     } else if (options.toggle) {
       this.eventOff(element);
+      return true;
     }
+    return false;
   }
 
   /**
    * element off
    * @param {Node|HTMLElement} element To be deactivated
    * @param {Number} activationDelay Delay in milliseconds
+   * @returns {Boolean} If activation changed
    */
   eventOff(element, activationDelay = null) {
     let self = this;
@@ -329,7 +334,7 @@ class Xt {
     // if currents < min
     let todo = options.min - this.getCurrents().length;
     if (!todo) {
-      return;
+      return false;
     }
     // deactivate
     if (element.classList.contains(...this.options.classes)) {
@@ -340,7 +345,9 @@ class Xt {
       this.activationOff(targets, fElements, 'targets', activationDelay);
       let additional = this.getAdditional();
       this.activationOff(additional, fElements, 'additional', activationDelay);
+      return true;
     }
+    return false;
   }
 
   //////////////////////
@@ -1003,29 +1010,43 @@ class XtFade extends Xt {
     }
     // core
     for (let el of self.elements) {
-      // vars
-      let rectElTop = Math.ceil(el.getBoundingClientRect().top);
-      let heightEl = parseFloat(getComputedStyle(el).height);
-      // direction
-      if (scrollInverse) {
-        el.classList.remove('fade-down');
-        el.classList.add('fade-up');
-      } else {
-        el.classList.add('fade-down');
-        el.classList.remove('fade-up');
-      }
-      // scroll
-      let top = rectElTop + scrollTop;
-      let bottom = top + heightEl;
-      // activation
-      let checkTop = scrollTop + windowHeight >= top + options.dist;
-      let checkBottom = scrollTop < bottom - options.dist;
-      if (checkTop && checkBottom) {
-        // inside
-        self.eventOn(el);
-      } else {
-        // outside
-        self.eventOff(el);
+      if (el.offsetParent) {
+        // vars
+        let rectElTop = el.offsetParent.getBoundingClientRect().top + el.offsetTop; // we use parents to not include transforms animations
+        let heightEl = parseFloat(getComputedStyle(el).height);
+        // scroll
+        let changed = false;
+        let top = rectElTop + scrollTop;
+        let bottom = top + heightEl;
+        let dist = windowHeight * options.distance;
+        // activation
+        let checkTop = scrollTop + windowHeight >= top + dist;
+        let checkBottom = scrollTop < bottom - dist;
+        if (!el.classList.contains('fade-block')) {
+          if (checkTop && checkBottom) {
+            // inside
+            changed = self.eventOn(el);
+          } else  {
+            // outside
+            if (options.mode === 'scroll') {
+            } else if (options.mode === 'visible') {
+              el.classList.add('fade-block');
+              el.classList.remove('fade');
+            } else {
+              changed = self.eventOff(el);
+            }
+          }
+        }
+        // direction
+        if (changed) {
+          if (scrollInverse) {
+            el.classList.remove('fade-down');
+            el.classList.add('fade-up');
+          } else {
+            el.classList.add('fade-down');
+            el.classList.remove('fade-up');
+          }
+        }
       }
     }
     // save for direction
@@ -1037,12 +1058,13 @@ class XtFade extends Xt {
 // default
 
 XtFade.defaults = {
-  "class": "fade",
+  "elements": ".fade",
+  "class": "in",
   "on": "scroll resize",
   "min": 0,
   "max": Infinity,
-  "mode": "scroll", // scroll visible infinite
-  "dist": 0 // px distance from top and bottom
+  "mode": false,
+  "distance": 0.2
 };
 
 // export
@@ -1157,9 +1179,9 @@ class XtSticky extends Xt {
     let windowHeight = window.innerHeight;
     let scrollHeight = document.documentElement.scrollHeight;
     let el = self.object;
-    let rectElTop = Math.ceil(el.getBoundingClientRect().top);
+    let rectElTop = el.getBoundingClientRect().top;
     let heightEl = parseFloat(getComputedStyle(el).height);
-    let rectContainerTop =  Math.ceil(self.container[0].getBoundingClientRect().top);
+    let rectContainerTop =  self.container[0].getBoundingClientRect().top;
     let scrollTop = document.documentElement.scrollTop;
     let scrollTopOld = self.scrollTopOld;
     // direction
@@ -1210,7 +1232,7 @@ class XtSticky extends Xt {
       }
       if (options.contain['bottom']) {
         addBottom = self.eventScrollPos(options.contain['bottom']);
-        if (addBottom !== null && addBottom < Math.floor(heightEl) + addTop) {
+        if (addBottom !== null && addBottom < heightEl + addTop) {
           add = addBottom - heightEl;
           anim = false;
         } else {

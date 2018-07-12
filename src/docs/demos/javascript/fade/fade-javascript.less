@@ -1,18 +1,11 @@
 @import (reference) "../../../../../dist/xtend.less";
 
-.box-giant {
-  &.fade {
+.fade {
+  opacity: 0;
+  &.in {
     .anim-horizontal.active();
-    &.fade-up {
-    }
-    &.fade-down {
-    }
   }
   &.out {
     .anim-horizontal.out();
-    &.fade-up {
-    }
-    &.fade-down {
-    }
   }
 }

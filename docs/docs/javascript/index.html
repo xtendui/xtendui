@@ -201,12 +201,6 @@
                 
                 
                 
-                
-                
-                
-                
-                
-                
                 <div class="site-breadcrumbs-body-main">
                   <a href="/docs/layout/" class="btn btn-primary btn-nodesign">
                     Layout
@@ -236,6 +230,10 @@
                     
                   </div>
                 </div>
+                
+                
+                
+                
                 
                 
                 
@@ -283,12 +281,6 @@
                 
                 
                 
-                
-                
-                
-                
-                
-                
                 <div class="site-breadcrumbs-body-main">
                   <a href="/docs/component/" class="btn btn-primary btn-nodesign">
                     Component
@@ -318,6 +310,14 @@
                     
                   </div>
                 </div>
+                
+                
+                
+                
+                
+                
+                
+                
                 
                 
                 
@@ -378,20 +378,20 @@
                         Toggle
                       </a>
                       
-                      <a href="/docs/javascript/fade/" class="btn btn-primary btn-nodesign">
-                        Fade
-                      </a>
-                      
                       <a href="/docs/javascript/slider/" class="btn btn-primary btn-nodesign">
                         Slider
+                      </a>
+                      
+                      <a href="/docs/javascript/scroll/" class="btn btn-primary btn-nodesign">
+                        Scroll
                       </a>
                       
                       <a href="/docs/javascript/sticky/" class="btn btn-primary btn-nodesign">
                         Sticky
                       </a>
                       
-                      <a href="/docs/javascript/scroll/" class="btn btn-primary btn-nodesign">
-                        Scroll
+                      <a href="/docs/javascript/fade/" class="btn btn-primary btn-nodesign">
+                        Fade
                       </a>
                       
                       <a href="/docs/javascript/ajax/" class="btn btn-primary btn-nodesign">
@@ -481,16 +481,16 @@
         </li>
       
         <li>
-          <strong>Fade</strong> <span class="separator separator-arrow"></span>
-          <a href="/docs/javascript/fade/" class=" ">
-            /docs/javascript/fade/
+          <strong>Slider</strong> <span class="separator separator-arrow"></span>
+          <a href="/docs/javascript/slider/" class=" ">
+            /docs/javascript/slider/
           </a>
         </li>
       
         <li>
-          <strong>Slider</strong> <span class="separator separator-arrow"></span>
-          <a href="/docs/javascript/slider/" class=" ">
-            /docs/javascript/slider/
+          <strong>Scroll</strong> <span class="separator separator-arrow"></span>
+          <a href="/docs/javascript/scroll/" class=" ">
+            /docs/javascript/scroll/
           </a>
         </li>
       
@@ -502,9 +502,9 @@
         </li>
       
         <li>
-          <strong>Scroll</strong> <span class="separator separator-arrow"></span>
-          <a href="/docs/javascript/scroll/" class=" ">
-            /docs/javascript/scroll/
+          <strong>Fade</strong> <span class="separator separator-arrow"></span>
+          <a href="/docs/javascript/fade/" class=" ">
+            /docs/javascript/fade/
           </a>
         </li>
       
@@ -561,6 +561,7 @@
     new XtToggle(document.querySelectorAll('.my-element')[0], {
       // options
     });
+
     // looping
     for (let el of document.querySelectorAll('.my-element')) {
       new XtToggle(el, {
@@ -580,6 +581,7 @@
     new XtDrop(document.querySelectorAll('.my-element')[0], {
       // options
     });
+
     // looping
     for (let el of document.querySelectorAll('.my-element')) {
       new XtDrop(el, {
@@ -599,6 +601,7 @@
     new XtOverlay(document.querySelectorAll('.my-element')[0], {
       // options
     });
+
     // looping
     for (let el of document.querySelectorAll('.my-element')) {
       new XtOverlay(el, {
@@ -618,9 +621,30 @@
     new XtSticky(document.querySelectorAll('.my-element')[0], {
       // options
     });
+
     // looping
     for (let el of document.querySelectorAll('.my-element')) {
       new XtSticky(el, {
+        // options
+      });
+    }
+  </code>
+</pre>
+
+<h3>Fade</h3>
+
+<p>You can initialize <strong>fade</strong> by javascript.</p>
+
+<pre>
+  <code class="js">
+    // single
+    new XtFade(document.querySelectorAll('.my-element')[0], {
+      // options
+    });
+
+    // looping
+    for (let el of document.querySelectorAll('.my-element')) {
+      new XtFade(el, {
         // options
       });
     }

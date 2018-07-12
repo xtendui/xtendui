@@ -1,15 +1,93 @@
 ---
 title: Fade
 categories: [Javascript]
-order: 150
+order: 500
 
 description: Lorem Ipsum
 ---
 
+
+<h2>Usage</h2>
+
+<p>Use this markup to create a fade. <code>[data-xt-fade]</code> must be <a
+  href="{% link _docs/javascript.html %}#initialization">initialized by javascript</a>.</p>
+
+<pre>
+  <code class="html">
+    <div data-xt-fade>
+      <div class="fade">
+        <!-- content -->
+      </div>
+    </div>
+  </code>
+</pre>
+
+<div class="alert">
+  Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-fade">fade
+  by javascript</a> using the same options syntax.
+</div>
+
+<h2>Defaults</h2>
+
+<p>Here are the defaults options for fade.</p>
+
+<pre>
+  <code class="js">
+    XtFade.defaults = {
+      "elements": ".fade",
+      "class": "in",
+      "on": "scroll resize",
+      "min": 0,
+      "max": Infinity,
+      "mode": "scroll",
+      "distance": 0.2
+    };
+  </code>
+</pre>
+
+<h2>Options</h2>
+
+<h3>Javascript</h3>
+
 <div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-0.html" data-name="fade">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-javascript.html" data-name="javascript">
     <div class="demo-text">
-      <code></code>.
+      Example initialized by javascript on document.
+    </div>
+  </div>
+</div>
+
+<h3>Mode</h3>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-mode-infinite.html" data-name="default">
+    <div class="demo-text">
+      Default <code>"mode": false</code>.
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-mode-scroll.html" data-name="scroll">
+    <div class="demo-text">
+      <code>"mode": "scroll"</code>.
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-mode-visible.html" data-name="visible">
+    <div class="demo-text">
+      <code>"mode": "visible"</code>.
+    </div>
+  </div>
+</div>
+
+<h3>Direction and Distance</h3>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-direction.html" data-name="direction">
+    <div class="demo-text">
+      <code>.fade-up</code> <code>.fade-down</code>.
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-distance.html" data-name="distance">
+    <div class="demo-text">
+      <code>"distance": Number</code> is the window's top and bottom activation and deactivation. Factor between 0 and 1.
     </div>
   </div>
 </div>
