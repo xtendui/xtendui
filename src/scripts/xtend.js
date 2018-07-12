@@ -1248,7 +1248,7 @@ class XtSticky extends Xt {
     }
     // hide after save
     if (hide) {
-      anim = true;
+      //anim = true;
       add = -addHide;
       if (!el.classList.contains('sticky-hide')) {
         el.classList.add('sticky-hide');
@@ -1290,7 +1290,9 @@ class XtSticky extends Xt {
     // set add
     if (add !== self.addOld) {
       el.classList.add('no-transition');
-      el.style[options.position] = rectElTop + 'px';
+      if (self.addOld !== undefined) {
+        el.style[options.position] = rectElTop + 'px';
+      }
       XtUtil.cancelAnimationFrame.call(window, self.scrollFrame);
       self.scrollFrame = XtUtil.requestAnimationFrame.call(window, function () {
         el.classList.remove('no-transition');
