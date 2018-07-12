@@ -494,7 +494,6 @@
       "on": "scroll resize",
       "min": 0,
       "max": Infinity,
-      "mode": "scroll",
       "distance": 0.2
     };
   </code>
@@ -515,19 +514,19 @@
 <h3>Mode</h3>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="/demos/javascript/fade/fade-mode-infinite.html" data-name="default">
+  <div class="demo-item" data-iframe="/demos/javascript/fade/fade-mode-infinite.html" data-name="infinite">
     <div class="demo-text">
-      Default <code>"mode": false</code>.
+      Default mode infinite.
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/fade/fade-mode-scroll.html" data-name="scroll">
     <div class="demo-text">
-      <code>"mode": "scroll"</code>.
+      <code>&:not(.fade-scroll)</code>.
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/fade/fade-mode-visible.html" data-name="visible">
     <div class="demo-text">
-      <code>"mode": "visible"</code>.
+      <code>&:not(.fade-visible)</code>.
     </div>
   </div>
 </div>

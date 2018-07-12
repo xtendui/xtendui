@@ -1022,19 +1022,15 @@ class XtFade extends Xt {
         // activation
         let checkTop = scrollTop + windowHeight >= top + dist;
         let checkBottom = scrollTop < bottom - dist;
-        if (!el.classList.contains('fade-block')) {
-          if (checkTop && checkBottom) {
-            // inside
-            changed = self.eventOn(el);
-          } else  {
-            // outside
-            if (options.mode === 'scroll') {
-            } else if (options.mode === 'visible') {
-              el.classList.add('fade-block');
-              el.classList.remove('fade');
-            } else {
-              changed = self.eventOff(el);
-            }
+        if (checkTop && checkBottom) {
+          // inside
+          changed = self.eventOn(el);
+        } else  {
+          // outside
+          changed = self.eventOff(el);
+          el.classList.add('fade-visible');
+          if (changed) {
+            el.classList.add('fade-scroll');
           }
         }
         // direction
@@ -1063,7 +1059,6 @@ XtFade.defaults = {
   "on": "scroll resize",
   "min": 0,
   "max": Infinity,
-  "mode": false,
   "distance": 0.2
 };
 

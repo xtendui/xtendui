@@ -229,24 +229,25 @@ const populateDemo = function (container, i) {
       if (k === 0) {
         initIframe();
       }
+      // @TODO events revision
       iframe.parentElement.addEventListener('on', function (e) {
         if (e.target === this) {
           if (!item.classList.contains('populated')) {
             initIframe();
           } else {
-            // fix trigger resize
-            XtUtil.requestAnimationFrame.call(window, function () {
-              iframe.contentWindow.dispatchEvent(new Event('resize')); // @TODO events revision
-            });
+            iframe.contentDocument.location.reload(true);
           }
+        }
+      });
+      iframe.parentElement.addEventListener('off', function (e) {
+        if (e.target === this) {
+          iframe.classList.remove('show');
         }
       });
     } else {
       populateInline(item, id);
       // .populated fix scroll
-      setTimeout(function (item) {
-        item.classList.add('populated');
-      }, 0, item);
+      item.classList.add('populated');
     }
   }
 };
@@ -278,13 +279,13 @@ const populateInline = function (item, id) {
 
 window.initIframe = function(name) {
   let iframe = document.documentElement.querySelectorAll('[name="' + name + '"')[0];
+  iframe.classList.add('show');
   let item = XtUtil.parents(iframe, '.demo-item')[0];
-  populateIframe(item, iframe);
-  window.resizeIframe(name);
-  // .populated fix scroll
-  setTimeout( function(item) {
+  if (!item.classList.contains('populated')) {
+    populateIframe(item, iframe);
+    window.resizeIframe(name);
     item.classList.add('populated');
-  }, 0, item);
+  }
 }
 
 window.resizeIframe = function(name) {
