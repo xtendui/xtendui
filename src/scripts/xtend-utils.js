@@ -52,8 +52,7 @@ XtUtil.initAll = function (container = document) {
 
 /**
  * request animation frame
- * @param {Function} Function for animation frame
- * @returns {Number} AnimationFrame id
+ * @returns {Number} animationFrameID
  * USAGE: let animationFrame = XtUtil.requestAnimationFrame.call(window, function () {});
  */
 XtUtil.requestAnimationFrame = function () {
@@ -64,8 +63,7 @@ XtUtil.requestAnimationFrame = function () {
 
 /**
  * cancel animation frame
- * @param {Number} id AnimationFrame id
- * USAGE: XtUtil.cancelAnimationFrame.call(window, animationFrame);
+ * USAGE: XtUtil.cancelAnimationFrame.call(window, animationFrameID);
  */
 XtUtil.cancelAnimationFrame = function () {
   return window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || function (callback) {
@@ -76,7 +74,7 @@ XtUtil.cancelAnimationFrame = function () {
 /**
  * Check if event target is inside elements
  * @param {Event} e Event to check target
- * @param {Array} targets Elements to check inside
+ * @param {NodeList|Array} targets Elements to check inside
  * @return {Boolean}
  */
 XtUtil.checkInside = function (e, targets) {
@@ -92,7 +90,7 @@ XtUtil.checkInside = function (e, targets) {
 /**
  * Check if event target is outside elements
  * @param {Event} e Event to check target
- * @param {Array} targets Elements to check Outside
+ * @param {NodeList|Array} targets Elements to check Outside
  * @return {Boolean}
  */
 XtUtil.checkOutside = function (e, targets) {
@@ -107,23 +105,23 @@ XtUtil.checkOutside = function (e, targets) {
 
 /**
  * Get scrollbar width of document
- * @returns {String} Unique id
+ * @returns {Number} Scrollbar width
  */
 XtUtil.scrollbarWidth = function () {
   // add outer
-  var outer = document.createElement('div');
+  let outer = document.createElement('div');
   outer.style.visibility = 'hidden';
   outer.style.width = '100px';
   outer.style.msOverflowStyle = 'scrollbar'; // needed for WinJS apps
   document.body.appendChild(outer);
-  var widthNoScroll = outer.offsetWidth;
+  let widthNoScroll = outer.offsetWidth;
   // force scrollbars
   outer.style.overflow = 'scroll';
   // add inner
-  var inner = document.createElement('div');
+  let inner = document.createElement('div');
   inner.style.width = '100%';
   outer.appendChild(inner);
-  var widthWithScroll = inner.offsetWidth;
+  let widthWithScroll = inner.offsetWidth;
   // remove
   outer.parentNode.removeChild(outer);
   return widthNoScroll - widthWithScroll;
@@ -167,20 +165,20 @@ XtUtil.merge = function (arr) {
  * @param {Object|Array} element
  * @returns {Array}
  */
-XtUtil.arrSingle = function (single) {
-  if (single.length === undefined) {
+XtUtil.arrSingle = function (element) {
+  if (element.length === undefined) {
     let arr = new Array(1);
-    arr[0] = single;
+    arr[0] = element;
     return arr;
   } else {
-    return single;
+    return element;
   }
 };
 
 /**
  * Create DOM element from html string
  * @param {String} str Html string (only 1 root html tag)
- * @return {Element} DOM element
+ * @return {Node|HTMLElement} DOM element
  */
 XtUtil.createElement = function (str) {
   let div = document.createElement('div');
@@ -190,9 +188,9 @@ XtUtil.createElement = function (str) {
 
 /**
  * Query element's parents
- * @param {Element} element Child element
+ * @param {Node|HTMLElement} element Child element
  * @param {String} query Query parents
- * @return {Element} Parents elements by query
+ * @return {Array} Parents elements by query
  */
 XtUtil.parents = function (element, query) {
   let parents = [];
@@ -204,7 +202,7 @@ XtUtil.parents = function (element, query) {
 
 /**
  * Get element index
- * @param {Element} node Element to check the index of
+ * @param {Node|HTMLElement} node Element to check the index of
  * @return {Number} Element's index
  */
 /*
@@ -228,7 +226,7 @@ XtUtil.xtUtilOn = function (event, cb, opts) {
     this.namespaces = {}; // save the namespaces on the DOM element itself
   }
   this.namespaces[event] = cb;
-  var options = opts || false;
+  let options = opts || false;
   this.addEventListener(event.split('.')[0], cb, options);
   return this;
 };
@@ -276,24 +274,3 @@ export {XtUtil};
     }
   }
 })(window.document, Element.prototype);
-
-//////////////////////
-// anim-load-fix
-//////////////////////
-
-/*
-// .anim-load-fix
-// USAGE: <html class="anim-load-fix">
-
-.anim-load-fix {
-*, *::before, *::after {
-    animation-duration: 0ms !important;
-    animation-delay: 0ms !important;
-  }
-}
-*/
-/*
-setTimeout(function () {
-  document.documentElement.classList.remove('anim-load-fix');
-}, 1000);
-*/

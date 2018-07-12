@@ -14,17 +14,17 @@ class Xt {
 
   /**
    * constructor
-   * @param {Element} object Base element
-   * @param {Object} options User options
+   * @param {Node|HTMLElement} object Base node
+   * @param {Object} jsOptions User options
    * @param {String} attr Attribute name with json options
    * @constructor
    */
-  constructor(object, jsOptions, attr) {
+  constructor(object, jsOptions = {}, attr) {
     this.object = object;
     if (this.object) {
       this.defaults = this.constructor.defaults;
       // js options
-      this.options = XtUtil.merge([this.defaults, jsOptions || {}]);
+      this.options = XtUtil.merge([this.defaults, jsOptions]);
       // markup options
       let markupOptions = this.object.getAttribute(attr);
       this.options = XtUtil.merge([this.options, markupOptions ? JSON.parse(markupOptions) : {}]);
@@ -85,7 +85,8 @@ class Xt {
       this.elements = XtUtil.arrSingle(this.object);
       // @FIX on next frame set all elements querying the namespace
       XtUtil.requestAnimationFrame.call(window, function () {
-        self.elements = XtUtil.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']'));
+        let namespaceQuery = '[data-xt-namespace=' + self.namespace + ']';
+        self.elements = XtUtil.arrSingle(document.querySelectorAll(namespaceQuery));
       });
     }
     // targets
@@ -177,7 +178,7 @@ class Xt {
 
   /**
    * choose which elements to activate/deactivate (based on xtend mode and containers)
-   * @param {Element} element Element that triggered interaction
+   * @param {Node|HTMLElement} element Element that triggered interaction
    * @returns {Object} object.all and object.single
    */
   getElements(element) {
@@ -205,7 +206,7 @@ class Xt {
 
   /**
    * choose which targets to activate/deactivate (based on xtend mode and containers)
-   * @param {Element} element Element that triggered interaction
+   * @param {Node|HTMLElement} element Element that triggered interaction
    * @returns {Array}
    */
   getTargets(element) {
@@ -220,14 +221,15 @@ class Xt {
       let group = element.getAttribute('data-group');
       let groupElements = Array.from(this.elements).filter(x => x.getAttribute('data-group') === group);
       let groupTargets = Array.from(this.targets).filter(x => x.getAttribute('data-group') === group);
+      let final;
       if (group) {
         // all group targets if group
-        let final = groupTargets;
+        final = groupTargets;
         return XtUtil.arrSingle(final);
       } else {
         // not group targets by index if not group
         let index = groupElements.findIndex(x => x === element);
-        let final = groupTargets[index];
+        final = groupTargets[index];
         return XtUtil.arrSingle(final);
       }
     }
@@ -235,18 +237,15 @@ class Xt {
 
   /**
    * additional elements to activate/deactivate
-   * @returns {Element}
+   * @returns {NodeList|Array}
    */
   getAdditional() {
-    let self = this;
-    let options = self.options;
-    //
-    return this.object.querySelectorAll(options.additional);
+    return this.object.querySelectorAll(this.options.additional);
   }
 
   /**
    * get currents based on namespace (so shared between Xt objects)
-   * @returns {Element}
+   * @returns {Array}
    */
   getCurrents() {
     return XtUtil.currents[this.namespace];
@@ -262,7 +261,7 @@ class Xt {
 
   /**
    * add current based on namespace (so shared between Xt objects)
-   * @param {Element} element To be added
+   * @param {Node|HTMLElement} element To be added
    */
   addCurrent(element) {
     let arr = XtUtil.currents[this.namespace];
@@ -271,7 +270,7 @@ class Xt {
 
   /**
    * remove currents based on namespace (so shared between Xt objects)
-   * @param {Element} element To be removed
+   * @param {Node|HTMLElement} element To be removed
    */
   removeCurrent(element) {
     XtUtil.currents[this.namespace] = XtUtil.currents[this.namespace].filter(x => x !== element);
@@ -283,7 +282,7 @@ class Xt {
 
   /**
    * element on
-   * @param {Element} element To be activated
+   * @param {Node|HTMLElement} element To be activated
    */
   eventOn(element) {
     let self = this;
@@ -293,7 +292,7 @@ class Xt {
       let fElements = this.getElements(element);
       this.addCurrent(fElements.single);
       let targets = this.getTargets(element);
-      let additional = this.getAdditional(fElements.single);
+      let additional = this.getAdditional();
       let activationDelay = {
         elements: function () {
           self.activationOn(fElements.all, fElements, 'elements');
@@ -314,16 +313,17 @@ class Xt {
         activationDelay.targets();
         activationDelay.additional();
       }
-    } else {
+    } else if (options.toggle) {
       this.eventOff(element);
     }
   }
 
   /**
    * element off
-   * @param {Element} element To be deactivated
+   * @param {Node|HTMLElement} element To be deactivated
+   * @param {Number} activationDelay Delay in milliseconds
    */
-  eventOff(element, activationDelay) {
+  eventOff(element, activationDelay = null) {
     let self = this;
     let options = self.options;
     // if currents < min
@@ -338,7 +338,7 @@ class Xt {
       this.activationOff(fElements.all, fElements, 'elements', activationDelay);
       let targets = this.getTargets(element);
       this.activationOff(targets, fElements, 'targets', activationDelay);
-      let additional = this.getAdditional(fElements.all);
+      let additional = this.getAdditional();
       this.activationOff(additional, fElements, 'additional', activationDelay);
     }
   }
@@ -349,7 +349,9 @@ class Xt {
 
   /**
    * element on activation
-   * @param {Element} element To be activated
+   * @param {NodeList|Array} els Elements to be activated
+   * @param {Object} fElements Additional elements
+   * @param {String} type Type of elements
    */
   activationOn(els, fElements, type) {
     let self = this;
@@ -376,7 +378,8 @@ class Xt {
 
   /**
    * element on animation
-   * @param {Element} element To be animated
+   * @param {Node|HTMLElement} el Element to be animated
+   * @param {String} type Type of element
    */
   activationOnAnimate(el, type) {
     // onDone
@@ -404,7 +407,10 @@ class Xt {
 
   /**
    * element off activation
-   * @param {Element} element To be deactivated
+   * @param {NodeList|Array} els Elements to be deactivated
+   * @param {Object} fElements Additional elements
+   * @param {String} type Type of elements
+   * @param {Number} activationDelay Delay in milliseconds
    */
   activationOff(els, fElements, type, activationDelay) {
     let self = this;
@@ -433,7 +439,9 @@ class Xt {
 
   /**
    * element off animation
-   * @param {Element} element To be animated
+   * @param {Node|HTMLElement} el Element to be animated
+   * @param {String} type Type of element
+   * @param {Number} activationDelay Delay in milliseconds
    */
   activationOffAnimate(el, type, activationDelay) {
     let self = this;
@@ -467,8 +475,8 @@ class Xt {
 
   /**
    * get transition or animation timing
-   * @param {Element} element To be animated
-   * @returns {Number} Milliseconds
+   * @param {Node|HTMLElement} el To be animated
+   * @returns {Number} Time in milliseconds
    */
   activationTiming(el) {
     let self = this;
@@ -516,7 +524,7 @@ class Xt {
 
   /**
    * backdrop append to element
-   * @param {Element} element
+   * @param {Node|HTMLElement} el Element
    */
   specialBackdrop(el) {
     let self = this;
@@ -546,7 +554,7 @@ class Xt {
 
   /**
    * center position on activation
-   * @param {Element} element
+   * @param {Node|HTMLElement} el Element
    */
   specialCenterOn(el) {
     if (el.classList.contains('drop-center')) {
@@ -558,7 +566,7 @@ class Xt {
 
   /**
    * middle position on activation
-   * @param {Element} element
+   * @param {Node|HTMLElement} el Element
    */
   specialMiddleOn(el) {
     if (el.classList.contains('drop-middle')) {
@@ -570,7 +578,7 @@ class Xt {
 
   /**
    * open collapse on activation
-   * @param {Element} element
+   * @param {Node|HTMLElement} el Element
    */
   specialCollapseOn(el) {
     if (el.classList.contains('collapse-height')) {
@@ -616,7 +624,7 @@ class Xt {
 
   /**
    * close collapse on deactivation
-   * @param {Element} element
+   * @param {Node|HTMLElement} el Element
    */
   specialCollapseOff(el) {
     if (el.classList.contains('collapse-height')) {
@@ -653,9 +661,10 @@ class Xt {
 
   /**
    * add close events on element
-   * @param {Element} element
+   * @param {Node|HTMLElement} el Element
+   * @param {Node|HTMLElement} single Element to toggle
    */
-  specialCloseOn(el, toggle) {
+  specialCloseOn(el, single) {
     let self = this;
     let options = self.options;
     // closeInside
@@ -666,7 +675,7 @@ class Xt {
           closeElement.xtUtilOff('click.xtend.' + self.namespace);
           closeElement.xtUtilOn('click.xtend.' + self.namespace, function (e) {
             if (XtUtil.checkInside(e, XtUtil.arrSingle(this))) {
-              self.eventOff(toggle);
+              self.eventOff(single);
             }
           });
         }
@@ -680,7 +689,7 @@ class Xt {
           closeElement.xtUtilOff('click.xtend.' + self.namespace);
           closeElement.xtUtilOn('click.xtend.' + self.namespace, function (e) {
             if (XtUtil.checkOutside(e, XtUtil.arrSingle(el))) {
-              self.eventOff(toggle);
+              self.eventOff(single);
             }
           });
         }
@@ -690,7 +699,7 @@ class Xt {
 
   /**
    * remove close events on element
-   * @param {Element} element
+   * @param {Node|HTMLElement} el Element
    */
   specialCloseOff(el) {
     let self = this;
@@ -713,16 +722,16 @@ class Xt {
 
   /**
    * scrollbar activation
-   * @param {Element} element
    */
   specialScrollbarOn() {
     let self = this;
     let options = self.options;
     //
     if (options.scrollbar) {
+      let elements;
       let width = XtUtil.scrollbarWidth();
       // check fixed
-      var elements = document.documentElement.querySelectorAll('.xt-check-fixed > *');
+      elements = document.documentElement.querySelectorAll('.xt-check-fixed > *');
       for (let element of elements) {
         let style = getComputedStyle(element);
         if (style.position === 'fixed') {
@@ -732,7 +741,7 @@ class Xt {
         }
       }
       // fixed
-      var elements = document.documentElement.querySelectorAll('.xt-fixed');
+      elements = document.documentElement.querySelectorAll('.xt-fixed');
       for (let element of elements) {
         element.style.paddingRight = '';
         if (self.normalizeWidth(element.clientWidth) === '') {
@@ -749,7 +758,7 @@ class Xt {
         }
       }
       // backdrop
-      var elements = document.documentElement.querySelectorAll('.xt-backdrop');
+      elements = document.documentElement.querySelectorAll('.xt-backdrop');
       for (let element of elements) {
         element.style.right = width + 'px';
       }
@@ -762,19 +771,19 @@ class Xt {
 
   /**
    * scrollbar deactivation
-   * @param {Element} element
    */
   specialScrollbarOff() {
     let self = this;
     let options = self.options;
     //
     if (options.scrollbar) {
+      let elements;
       // scroll
       let container = document.documentElement;
       container.style.paddingRight = '';
       container.classList.remove('xt-scrollbar');
       // fixed
-      var elements = document.documentElement.querySelectorAll('.xt-fixed');
+      elements = document.documentElement.querySelectorAll('.xt-fixed');
       for (let element of elements) {
         element.classList.add('no-transition');
         XtUtil.requestAnimationFrame.call(window, function () {
@@ -785,7 +794,7 @@ class Xt {
         });
       }
       // backdrop
-      var elements = document.documentElement.querySelectorAll('.xt-backdrop');
+      elements = document.documentElement.querySelectorAll('.xt-backdrop');
       for (let element of elements) {
         element.style.right = '';
       }
@@ -794,10 +803,11 @@ class Xt {
 
   /**
    * if full width return '' else return value in px
-   * @param {Number} width
+   * @param {Number|String} width
    * @returns {String} Value in px
    */
   normalizeWidth(width) {
+    width = parseFloat(width);
     if (width + XtUtil.scrollbarWidth() >= window.innerWidth) {
       width = '';
     } else {
@@ -811,7 +821,6 @@ class Xt {
 // default
 
 Xt.defaults = {
-  "class": "active",
 };
 
 // export
@@ -827,11 +836,11 @@ class XtToggle extends Xt {
 
   /**
    * constructor
-   * @param {Element} object Base element
-   * @param {Object} options User options
+   * @param {Node|HTMLElement} object Base node
+   * @param {Object} jsOptions User options
    * @constructor
    */
-  constructor(object, jsOptions) {
+  constructor(object, jsOptions = {}) {
     super(object, jsOptions, 'data-xt-toggle');
   }
 
@@ -845,6 +854,7 @@ XtToggle.defaults = {
   "class": "active",
   "instant": { "elements": true },
   "on": "click",
+  "toggle": true,
   "min": 0,
   "max": 1
 };
@@ -862,11 +872,11 @@ class XtDrop extends Xt {
 
   /**
    * constructor
-   * @param {Element} object Base element
-   * @param {Object} options User options
+   * @param {Node|HTMLElement} object Base node
+   * @param {Object} jsOptions User options
    * @constructor
    */
-  constructor(object, jsOptions) {
+  constructor(object, jsOptions = {}) {
     super(object, jsOptions, 'data-xt-drop');
   }
 
@@ -881,6 +891,7 @@ XtDrop.defaults = {
   "class": "active",
   "instant": { "elements": true },
   "on": "click",
+  "toggle": true,
   "min": 0,
   "max": 1,
   "closeOutside": "body"
@@ -899,11 +910,11 @@ class XtOverlay extends Xt {
 
   /**
    * constructor
-   * @param {Element} object Base element
-   * @param {Object} options User options
+   * @param {Node|HTMLElement} object Base node
+   * @param {Object} jsOptions User options
    * @constructor
    */
-  constructor(object, jsOptions) {
+  constructor(object, jsOptions = {}) {
     super(object, jsOptions, 'data-xt-overlay');
   }
 
@@ -917,6 +928,7 @@ XtOverlay.defaults = {
   "class": "active",
   "instant": { "elements": true },
   "on": "click",
+  "toggle": true,
   "min": 0,
   "max": 1,
   "appendTo": "body",
@@ -938,11 +950,11 @@ class XtFade extends Xt {
 
   /**
    * constructor
-   * @param {Element} object Base element
-   * @param {Object} options User options
+   * @param {Node|HTMLElement} object Base node
+   * @param {Object} jsOptions User options
    * @constructor
    */
-  constructor(object, jsOptions) {
+  constructor(object, jsOptions = {}) {
     super(object, jsOptions, 'data-xt-fade');
   }
 
@@ -957,12 +969,14 @@ class XtFade extends Xt {
     let self = this;
     let options = self.options;
     // events
-    let events = [...options.on.split(' ')];
-    for (let event of events) {
-      window.xtUtilOff(event + '.xtend' + this.namespace);
-      window.xtUtilOn(event + '.xtend' + this.namespace, function (e) {
-        self.eventScroll(self.object);
-      });
+    if (options.on) {
+      let events = [...options.on.split(' ')];
+      for (let event of events) {
+        window.xtUtilOff(event + '.xtend' + this.namespace);
+        window.xtUtilOn(event + '.xtend' + this.namespace, function (e) {
+          self.eventScroll(self.object);
+        });
+      }
     }
     // trigger initial
     self.eventScroll(self.object); // @TODO events revision
@@ -974,21 +988,18 @@ class XtFade extends Xt {
 
   /**
    * window scroll
-   * @param {Element} element To be activated or deactivated
    */
-  eventScroll(element) {
+  eventScroll() {
     let self = this;
     let options = self.options;
     // vars
-    let scrollInverse;
+    let scrollInverse = false;
     let windowHeight = window.innerHeight;
     let scrollTop = document.documentElement.scrollTop;
     let scrollTopOld = self.scrollTopOld;
     // direction
     if (scrollTop < scrollTopOld) {
       scrollInverse = true;
-    } else {
-      scrollInverse = false;
     }
     // core
     for (let el of self.elements) {
@@ -1004,21 +1015,17 @@ class XtFade extends Xt {
         el.classList.remove('fade-up');
       }
       // scroll
-      var top = rectElTop;
-      var bottom = top + heightEl;
+      let top = rectElTop + scrollTop;
+      let bottom = top + heightEl;
       // activation
       let checkTop = scrollTop + windowHeight >= top + options.dist;
       let checkBottom = scrollTop < bottom - options.dist;
       if (checkTop && checkBottom) {
         // inside
-        if (!el.classList.contains(...self.options.classes)) {
-          self.eventOn(el);
-        }
+        self.eventOn(el);
       } else {
         // outside
-        if (el.classList.contains(...self.options.classes)) {
-          self.eventOff(el);
-        }
+        self.eventOff(el);
       }
     }
     // save for direction
@@ -1051,11 +1058,11 @@ class XtSticky extends Xt {
 
   /**
    * constructor
-   * @param {Element} object Base element
-   * @param {Object} options User options
+   * @param {Node|HTMLElement} object Base node
+   * @param {Object} jsOptions User options
    * @constructor
    */
-  constructor(object, jsOptions) {
+  constructor(object, jsOptions = {}) {
     super(object, jsOptions, 'data-xt-sticky');
   }
 
@@ -1107,7 +1114,7 @@ class XtSticky extends Xt {
     }
     // z-index
     this.unique = XtUtil.getUniqueNum();
-    this.object.style.zIndex = 100 - this.unique;
+    this.object.style.zIndex = '' + (100 - this.unique);
   }
 
   /**
@@ -1117,12 +1124,14 @@ class XtSticky extends Xt {
     let self = this;
     let options = self.options;
     // events
-    let events = [...options.on.split(' ')];
-    for (let event of events) {
-      window.xtUtilOff(event + '.xtend' + this.namespace);
-      window.xtUtilOn(event + '.xtend' + this.namespace, function (e) {
-        self.eventScroll(self.object);
-      });
+    if (options.on) {
+      let events = [...options.on.split(' ')];
+      for (let event of events) {
+        window.xtUtilOff(event + '.xtend' + this.namespace);
+        window.xtUtilOn(event + '.xtend' + this.namespace, function (e) {
+          self.eventScroll(self.object);
+        });
+      }
     }
     // trigger initial
     self.eventScroll(self.object); // @TODO events revision
@@ -1134,7 +1143,7 @@ class XtSticky extends Xt {
 
   /**
    * window scroll
-   * @param {Element} element To be activated or deactivated
+   * @param {Node|HTMLElement} element To be activated or deactivated
    */
   eventScroll(element) {
     let self = this;
@@ -1142,7 +1151,7 @@ class XtSticky extends Xt {
     // vars
     let anim = true;
     let hide = false;
-    let scrollInverse;
+    let scrollInverse = false;
     let add = 0;
     let addHide = 0;
     let windowHeight = window.innerHeight;
@@ -1161,7 +1170,6 @@ class XtSticky extends Xt {
     } else {
       el.classList.add('sticky-down');
       el.classList.remove('sticky-up');
-      scrollInverse = false;
     }
     // hide
     if (options.hide === 'down') {
@@ -1217,18 +1225,14 @@ class XtSticky extends Xt {
     let checkBottom = scrollTop < bottom + add - addHide;
     if (checkTop && checkBottom) {
       // inside
-      if (!element.classList.contains(...self.options.classes)) {
-        self.eventOn(element);
-      }
+      self.eventOn(element);
       // hide
       if (addHide) {
         hide = true;
       }
     } else {
       // outside
-      if (element.classList.contains(...self.options.classes)) {
-        self.eventOff(element);
-      }
+      self.eventOff(element);
     }
     // anim before hide
     if (!el.classList.contains('active')) {
@@ -1344,6 +1348,7 @@ class XtSticky extends Xt {
   /**
    * get height of option
    * @param {String|Number|Element} option
+   * @param {Boolean} scrollInverse
    * @param {Number} val Default value
    * @returns {Object} obj Option's height (px) and if found hide element
    */
