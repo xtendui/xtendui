@@ -13,15 +13,15 @@
   opacity: 0;
   &.active {
     .animation-default.active();
-    opacity: @backdrop-opacity;
     animation-name: anim-backdrop-in;
     animation-duration: @time-big;
+    animation-fill-mode: forwards;
   }
   &.out {
     .animation-default.out();
-    opacity: 0;
     animation-name: anim-backdrop-out;
     animation-duration: @time-big;
+    animation-fill-mode: forwards;
   }
 }
 

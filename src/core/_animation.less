@@ -36,13 +36,6 @@ transition-delay: 150ms; // @start + @child * @increment
   }
 }
 
-.fade-index(@child, @start, @increment, @decrement, @rules) when(@child > 0) {
-  .fade-index(@child - 1, @start, @increment, @decrement, @rules);
-  &[data-fade-index="@{child}"] {
-    @rules();
-  }
-}
-
 @animation-delay: {
   animation-delay: @start + (@child * @increment) - (@child * @decrement);
 };

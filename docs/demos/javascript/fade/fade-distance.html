@@ -67,17 +67,21 @@
   &.in {
     &.fade-up {
       .anim-top.active();
+      opacity: 1;
     }
     &.fade-down {
       .anim-bottom.active();
+      opacity: 1;
     }
   }
   &.out {
     &.fade-up {
       .anim-bottom.out();
+      opacity: 0;
     }
     &.fade-down {
       .anim-top.out();
+      opacity: 0;
     }
   }
 }

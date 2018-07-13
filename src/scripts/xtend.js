@@ -289,7 +289,8 @@ class Xt {
     let self = this;
     let options = self.options;
     // activate or deactivate
-    if (!element.classList.contains(...this.options.classes)) {
+    if (!element.classList.contains(...this.options.classes) && !element.classList.contains('on-block')) {
+      element.classList.remove('off-block');
       let fElements = this.getElements(element);
       this.addCurrent(fElements.single);
       let targets = this.getTargets(element);
@@ -337,7 +338,8 @@ class Xt {
       return false;
     }
     // deactivate
-    if (element.classList.contains(...this.options.classes)) {
+    if (element.classList.contains(...this.options.classes) && !element.classList.contains('off-block')) {
+      element.classList.remove('on-block');
       let fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
       this.activationOff(fElements.all, fElements, 'elements', activationDelay);
@@ -364,7 +366,7 @@ class Xt {
     let self = this;
     let options = self.options;
     // activate
-    for (let el of els) {
+    function activate(self, el, fElements, type) {
       el.classList.add(...options.classes);
       el.classList.remove('out');
       self.activationOnAnimate(el, type);
@@ -380,6 +382,21 @@ class Xt {
       }
       // dispatch
       el.dispatchEvent(new Event('on')); // @TODO events revision
+    }
+    // delay
+    for (let el of els) {
+      let delay = el.getAttribute('data-xt-on-delay');
+      if (delay) {
+        el.classList.add('on-block');
+        clearTimeout(parseFloat(el.getAttribute('xt-delay-timeout')));
+        let timeout = setTimeout(function (self, el, fElements, type) {
+          el.classList.remove('on-block');
+          activate(self, el, fElements, type);
+        }, parseFloat(delay), self, el, fElements, type);
+        el.setAttribute('xt-delay-timeout', timeout);
+      } else {
+        activate(self, el, fElements, type);
+      }
     }
   }
 
@@ -423,7 +440,7 @@ class Xt {
     let self = this;
     let options = self.options;
     // deactivate
-    for (let el of els) {
+    function deactivate(self, el, fElements, type) {
       el.classList.remove(...options.classes);
       el.classList.add('out');
       self.activationOffAnimate(el, type, activationDelay);
@@ -441,6 +458,21 @@ class Xt {
       }
       // dispatch
       el.dispatchEvent(new Event('off')); // @TODO events revision
+    }
+    // delay
+    for (let el of els) {
+      let delay = el.getAttribute('data-xt-off-delay');
+      if (delay) {
+        el.classList.add('off-block');
+        clearTimeout(parseFloat(el.getAttribute('xt-delay-timeout')));
+        let timeout = setTimeout(function (self, el, fElements, type, activationDelay) {
+          el.classList.remove('off-block');
+          deactivate(self, el, fElements, type, activationDelay);
+        }, parseFloat(delay), self, el, fElements, type, activationDelay);
+        el.setAttribute('xt-delay-timeout', timeout);
+      } else {
+        deactivate(self, el, fElements, type, activationDelay);
+      }
     }
   }
 
@@ -490,13 +522,17 @@ class Xt {
     let options = self.options;
     // timing
     let timing = options.timing;
-    let style = getComputedStyle(el);
-    let transition = parseFloat(style.transitionDuration) + parseFloat(style.transitionDelay);
-    let animation = parseFloat(style.animationDuration) + parseFloat(style.animationDelay);
-    if (transition || animation) {
-      timing = Math.max(transition, animation);
+    if (timing !== undefined) {
+      return timing;
+    } else {
+      let style = getComputedStyle(el);
+      let transition = parseFloat(style.transitionDuration) + parseFloat(style.transitionDelay);
+      let animation = parseFloat(style.animationDuration) + parseFloat(style.animationDelay);
+      if (transition || animation) {
+        timing = Math.max(transition, animation);
+      }
+      return timing * 1000;
     }
-    return timing * 1000;
   }
 
   //////////////////////
@@ -1025,18 +1061,27 @@ class XtFade extends Xt {
         let checkBottom = scrollTop < bottom - dist;
         if (checkTop && checkBottom) {
           // inside
+          if (options.delayOnIndex) {
+            el.setAttribute('data-xt-on-delay', indexElements.length * options.delayOnIndex);
+          }
           changed = self.eventOn(el);
+          if (changed) {
+            indexElements.push(el);
+          }
         } else  {
           // outside
+          if (options.delayOffIndex) {
+            el.setAttribute('data-xt-off-delay', indexElements.length * options.delayOffIndex);
+          }
           changed = self.eventOff(el);
           el.classList.add('fade-visible');
           if (changed) {
             el.classList.add('fade-scroll');
+            indexElements.push(el);
           }
         }
         // direction
         if (changed) {
-          indexElements.push(el);
           if (scrollInverse) {
             el.classList.remove('fade-down');
             el.classList.add('fade-up');
@@ -1046,10 +1091,6 @@ class XtFade extends Xt {
           }
         }
       }
-    }
-    // index
-    for (let [i, el] of indexElements.entries()) {
-      el.setAttribute('data-fade-index', i + 1);
     }
     // save for direction
     self.scrollTopOld = scrollTop;
@@ -1065,7 +1106,9 @@ XtFade.defaults = {
   "on": "scroll resize",
   "min": 0,
   "max": Infinity,
-  "distance": 0.2
+  "distance": 0.2,
+  "delayOnIndex": false,
+  "delayOffIndex": false
 };
 
 // export

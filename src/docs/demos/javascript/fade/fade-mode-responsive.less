@@ -6,10 +6,12 @@
     opacity: 0;
     &.in {
       .anim-horizontal.active();
+      opacity: 1;
     }
 
     &.out {
       .anim-horizontal.out();
+      opacity: 0;
     }
   }
   @media @max-sm {
@@ -18,9 +20,11 @@
       opacity: 0;
       &.in {
         .anim-horizontal.active();
+        opacity: 1;
       }
       &.out {
         .anim-horizontal.out();
+        opacity: 0;
       }
     }
   }

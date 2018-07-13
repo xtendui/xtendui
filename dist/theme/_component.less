@@ -279,11 +279,13 @@ a, .alink {
     .icon(@content: @icon-chevron-up, @size: @icon-tiny, @position: after);
     &::after {
       .anim-bottom.active();
+      opacity: 1;
     }
   }
   &.out {
     &::after {
       .anim-top.active();
+      opacity: 1;
     }
   }
 }
@@ -339,10 +341,12 @@ a, .alink {
     > .drop > .drop-inner {
       &::before {
         .anim-zoom.active();
+        opacity: 1;
       }
       & > * {
         .anim-vertical.active();
         animation-delay: @time-small;
+        animation-fill-mode: forwards;
       }
     }
     .xt-backdrop {
@@ -354,9 +358,11 @@ a, .alink {
       &::before {
         .anim-zoom.out();
         animation-delay: @time-small;
+        animation-fill-mode: forwards;
       }
       & > * {
         .anim-vertical.out();
+        opacity: 0;
       }
     }
     .xt-backdrop {
@@ -540,10 +546,12 @@ a, .alink {
     .overlay-inner {
       &::before {
         .anim-zoom.active();
+        opacity: 1;
       }
       & > * {
         .anim-vertical.active();
         animation-delay: @time-small;
+        animation-fill-mode: forwards;
       }
     }
     .xt-backdrop {
@@ -552,15 +560,18 @@ a, .alink {
     // addons
     &.overlay-screen {
       .anim-opacity.active();
+      opacity: 1;
     }
     &.overlay-left {
       .overlay-inner {
         &::before {
           .anim-left.active();
+          opacity: 1;
         }
         & > * {
           .anim-left.active();
           animation-delay: @time-small;
+          animation-fill-mode: forwards;
         }
       }
     }
@@ -568,10 +579,12 @@ a, .alink {
       .overlay-inner {
         &::before {
           .anim-right.active();
+          opacity: 1;
         }
         & > * {
           .anim-right.active();
           animation-delay: @time-small;
+          animation-fill-mode: forwards;
         }
       }
     }
@@ -581,9 +594,11 @@ a, .alink {
       &::before {
         .anim-zoom.out();
         animation-delay: @time-small;
+        animation-fill-mode: forwards;
       }
       & > * {
         .anim-vertical.out();
+        opacity: 0;
       }
     }
     .xt-backdrop {
@@ -593,15 +608,18 @@ a, .alink {
     &.overlay-screen {
       .anim-opacity.out();
       animation-delay: @time-small;
+      animation-fill-mode: forwards;
     }
     &.overlay-left {
       .overlay-inner {
         &::before {
           .anim-left.out();
           animation-delay: @time-small;
+          animation-fill-mode: forwards;
         }
         & > * {
           .anim-left.out();
+          opacity: 0;
         }
       }
     }
@@ -610,9 +628,11 @@ a, .alink {
         &::before {
           .anim-right.out();
           animation-delay: @time-small;
+          animation-fill-mode: forwards;
         }
         & > * {
           .anim-right.out();
+          opacity: 0;
         }
       }
     }
@@ -701,7 +721,14 @@ a, .alink {
   // styles
   background-color: fade(@white, @perc-lg);
   // animations
-  .anim-vertical();
+  &.active {
+    .anim-vertical.active();
+    opacity: 1;
+  }
+  &.out {
+    .anim-vertical.out();
+    opacity: 1;
+  }
 }
 
 .loader-content {

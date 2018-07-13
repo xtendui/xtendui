@@ -6,8 +6,10 @@
 
 /* USAGE:
 .anim-opacity.active();
+opacity: 1;
 &:hover, &:active, &.active {
   .anim-opacity.out();
+   opacity: 0;
 }
 */
 
@@ -15,11 +17,13 @@
 &.active {
   .inner {
     .anim-opacity.active();
+    opacity: 1;
   }
 }
 &.out {
   .inner {
     .anim-opacity.out();
+    opacity: 0;
   }
 }
 */
@@ -28,12 +32,12 @@
   &.active {
     animation-duration: @time-medium;
     animation-timing-function: @bez-in;
-    animation-fill-mode: forwards;
+    animation-fill-mode: initial;
   }
   &.out {
     animation-duration: @time-medium;
     animation-timing-function: @bez-out;
-    animation-fill-mode: forwards;
+    animation-fill-mode: initial;
   }
 }
 

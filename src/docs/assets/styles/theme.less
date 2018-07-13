@@ -330,6 +330,7 @@
       .line-container {
         .anim-left.active();
         animation-delay: 0; // @start + @child * @increment
+        animation-fill-mode: forwards;
       }
       .nth-child(@child: 6, @start: @time-medium, @increment: 50ms, @decrement: 0ms, { .line-container {
         @animation-delay();
@@ -344,6 +345,7 @@
       .line-container {
         .anim-right.out();
         animation-delay: 120ms; // @start + @child * @increment
+        animation-fill-mode: forwards;
       }
       .nth-child(@child: 6, @start: 0, @increment: 50ms, @decrement: 0ms, { .line-container {
         @animation-delay();
