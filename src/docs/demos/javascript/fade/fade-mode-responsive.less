@@ -1,0 +1,27 @@
+@import (reference) "../../../../../dist/xtend.less";
+
+.fade {
+  @media @min-sm {
+    // infinite
+    opacity: 0;
+    &.in {
+      .anim-horizontal.active();
+    }
+
+    &.out {
+      .anim-horizontal.out();
+    }
+  }
+  @media @max-sm {
+    // scroll
+    &:not(.fade-scroll) {
+      opacity: 0;
+      &.in {
+        .anim-horizontal.active();
+      }
+      &.out {
+        .anim-horizontal.out();
+      }
+    }
+  }
+}

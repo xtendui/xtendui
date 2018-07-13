@@ -290,12 +290,14 @@ window.initIframe = function(name) {
 
 window.resizeIframe = function(name) {
   let iframe = document.querySelectorAll('[name="' + name + '"')[0];
-  if (!iframe.contentWindow.document.body.classList.contains('full')) {
-    let target = iframe.contentWindow.document.body.querySelectorAll('#body-outer')[0];
-    let h = target.offsetHeight;
-    if (h !== iframe.getAttribute('iframeHeight')) {
-      iframe.style.height = h + 'px';
-      iframe.setAttribute('iframeHeight', h);
+  if (iframe) {
+    if (!iframe.contentWindow.document.body.classList.contains('full')) {
+      let target = iframe.contentWindow.document.body.querySelectorAll('#body-outer')[0];
+      let h = target.offsetHeight;
+      if (h !== iframe.getAttribute('iframeHeight')) {
+        iframe.style.height = h + 'px';
+        iframe.setAttribute('iframeHeight', h);
+      }
     }
   }
 };
