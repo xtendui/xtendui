@@ -1,7 +1,13 @@
+//////////////////////
+// default
+//////////////////////
+
+// .animation-default();
+
 /* USAGE:
-.anim-opacity.out();
+.anim-opacity.active();
 &:hover, &:active, &.active {
-  .anim-opacity.active();
+  .anim-opacity.out();
 }
 */
 
@@ -14,57 +20,6 @@
 &.out {
   .inner {
     .anim-opacity.out();
-  }
-}
-*/
-
-/* USAGE:
-
-&.active {
-  .inner {
-    .anim-left.active();
-  }
-  .nth-child(@child: 6, @start: @time-medium, @increment: 50ms, @decrement: 0ms, { .line-container {
-    @nth-child-animation-delay();
-  } });
-}
-&.out {
-  .inner {
-    .anim-right.out();
-    animation-delay: 300ms; // default delay @start + @child * @increment
-  }
-  .nth-child(@child: 6, @start: 0, @increment: 50ms, @decrement: 0ms, { .line-container {
-    @nth-child-animation-delay();
-  } });
-}
-*/
-
-//////////////////////
-// default
-//////////////////////
-
-// .animation-default();
-
-/* USAGE:
-.animation-default.out();
-animation-name: anim-top-out;
-&:hover, &:active, &.active {
-  .animation-default.active();
-  animation-name: anim-top-in;
-}
-*/
-
-/* USAGE:
-&.active {
-  .inner {
-    .animation-default.active();
-    animation-name: anim-top-in;
-  }
-}
-&.out {
-  .inner {
-    .animation-default.out();
-    animation-name: anim-top-out;
   }
 }
 */

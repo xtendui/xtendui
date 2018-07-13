@@ -8,7 +8,12 @@
   &.out {
     .anim-horizontal.out();
   }
-  // index
+  // delay
+  transition-delay: 50ms; // @start + @child * @increment
+  .fade-index(@child:3, @start:50ms, @increment:50ms, @decrement:0ms, {
+    @animation-delay();
+  });
+  /* same as:
   &[data-fade-index="0"] {
     animation-delay: 50ms;
   }
@@ -18,4 +23,5 @@
   &[data-fade-index="2"] {
     animation-delay: 150ms;
   }
+  */
 }
