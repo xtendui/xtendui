@@ -1,0 +1,21 @@
+@import (reference) "../../../../../dist/xtend.less";
+
+.fade {
+  opacity: 0;
+  &.in {
+    .anim-horizontal.active();
+  }
+  &.out {
+    .anim-horizontal.out();
+  }
+  // index
+  &[data-fade-index="0"] {
+    animation-delay: 50ms;
+  }
+  &[data-fade-index="1"] {
+    animation-delay: 100ms;
+  }
+  &[data-fade-index="2"] {
+    animation-delay: 150ms;
+  }
+}

@@ -1000,6 +1000,7 @@ class XtFade extends Xt {
     let self = this;
     let options = self.options;
     // vars
+    let indexElements = [];
     let scrollInverse = false;
     let windowHeight = window.innerHeight;
     let scrollTop = document.documentElement.scrollTop;
@@ -1035,6 +1036,7 @@ class XtFade extends Xt {
         }
         // direction
         if (changed) {
+          indexElements.push(el);
           if (scrollInverse) {
             el.classList.remove('fade-down');
             el.classList.add('fade-up');
@@ -1044,6 +1046,10 @@ class XtFade extends Xt {
           }
         }
       }
+    }
+    // index
+    for (let [i, el] of indexElements.entries()) {
+      el.setAttribute('data-fade-index', i);
     }
     // save for direction
     self.scrollTopOld = scrollTop;

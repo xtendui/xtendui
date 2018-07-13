@@ -22,9 +22,7 @@
 
 &.active {
   .inner {
-    opacity: 0;
     .anim-left.active();
-    animation-fill-mode: forwards;
   }
   .nth-child(@child: 6, @start: @time-medium, @increment: 50ms, @decrement: 0ms, { .line-container {
     @nth-child-animation-delay();
@@ -32,9 +30,7 @@
 }
 &.out {
   .inner {
-    opacity: 1;
     .anim-right.out();
-    animation-fill-mode: forwards;
     animation-delay: 300ms; // default delay @start + @child * @increment
   }
   .nth-child(@child: 6, @start: 0, @increment: 50ms, @decrement: 0ms, { .line-container {
@@ -78,11 +74,13 @@ animation-name: anim-top-out;
     animation-duration: @time-medium;
     animation-timing-function: @bez-in;
     animation-delay: initial;
+    animation-fill-mode: forwards;
   }
   &.out {
     animation-duration: @time-medium;
     animation-timing-function: @bez-out;
     animation-delay: initial;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -134,13 +132,13 @@ opacity: 0;
 .anim-opacity {
   &.active {
     .animation-default.active();
-    opacity: 1;
     animation-name: anim-opacity-in;
+    opacity: 0;
   }
   &.out {
     .animation-default.out();
-    opacity: 0;
     animation-name: anim-opacity-out;
+    opacity: 1;
   }
 }
 
@@ -167,13 +165,13 @@ opacity: 0;
 .anim-zoom {
   &.active {
     .animation-default.active();
-    opacity: 1;
     animation-name: anim-zoom-in;
+    opacity: 0;
   }
   &.out {
     .animation-default.out();
-    opacity: 0;
     animation-name: anim-zoom-out;
+    opacity: 1;
   }
 }
 
@@ -204,13 +202,13 @@ opacity: 0;
 .anim-vertical {
   &.active {
     .animation-default.active();
-    opacity: 1;
     animation-name: anim-vertical-in;
+    opacity: 0;
   }
   &.out {
     .animation-default.out();
-    opacity: 0;
     animation-name: anim-vertical-out;
+    opacity: 1;
   }
 }
 
@@ -241,13 +239,13 @@ opacity: 0;
 .anim-horizontal {
   &.active {
     .animation-default.active();
-    opacity: 1;
     animation-name: anim-horizontal-in;
+    opacity: 0;
   }
   &.out {
     .animation-default.out();
-    opacity: 0;
     animation-name: anim-horizontal-out;
+    opacity: 1;
   }
 }
 
@@ -278,13 +276,13 @@ opacity: 0;
 .anim-top {
   &.active {
     .animation-default.active();
-    opacity: 1;
     animation-name: anim-top-in;
+    opacity: 0;
   }
   &.out {
     .animation-default.out();
-    opacity: 0;
     animation-name: anim-top-out;
+    opacity: 1;
   }
 }
 
@@ -315,13 +313,13 @@ opacity: 0;
 .anim-bottom {
   &.active {
     .animation-default.active();
-    opacity: 1;
     animation-name: anim-bottom-in;
+    opacity: 0;
   }
   &.out {
     .animation-default.out();
-    opacity: 0;
     animation-name: anim-bottom-out;
+    opacity: 1;
   }
 }
 
@@ -352,13 +350,13 @@ opacity: 0;
 .anim-left {
   &.active {
     .animation-default.active();
-    opacity: 1;
     animation-name: anim-left-in;
+    opacity: 0;
   }
   &.out {
     .animation-default.out();
-    opacity: 0;
     animation-name: anim-left-out;
+    opacity: 1;
   }
 }
 
@@ -389,13 +387,13 @@ opacity: 0;
 .anim-right {
   &.active {
     .animation-default.active();
-    opacity: 1;
     animation-name: anim-right-in;
+    opacity: 0;
   }
   &.out {
     .animation-default.out();
-    opacity: 0;
     animation-name: anim-right-out;
+    opacity: 1;
   }
 }
 
