@@ -85,7 +85,7 @@ class Xt {
       this.elements = XtUtil.arrSingle(this.object);
       // @FIX on next frame set all elements querying the namespace
       XtUtil.requestAnimationFrame.call(window, function () {
-        let namespaceQuery = '[data-xt-namespace=' + self.namespace + ']';
+        let namespaceQuery = '[data-xt-id=' + self.namespace + ']';
         self.elements = XtUtil.arrSingle(document.querySelectorAll(namespaceQuery));
       });
     }
@@ -106,7 +106,7 @@ class Xt {
     }
     // @FIX set namespace for next frame
     for (let el of this.elements) {
-      el.setAttribute('data-xt-namespace', self.namespace);
+      el.setAttribute('data-xt-id', self.namespace);
     }
     // currents
     XtUtil.requestAnimationFrame.call(window, function () {
@@ -310,6 +310,7 @@ class Xt {
       let currents = this.getCurrents();
       if (currents.length > options.max) {
         this.eventOff(currents[0], activationDelay);
+        return true;
       } else {
         activationDelay.elements();
         activationDelay.targets();
@@ -385,15 +386,15 @@ class Xt {
     }
     // delay
     for (let el of els) {
-      let delay = el.getAttribute('data-xt-on-delay');
+      let delay = el.getAttribute('data-xt-ondelay');
       if (delay) {
         el.classList.add('on-block');
-        clearTimeout(parseFloat(el.getAttribute('xt-delay-timeout')));
+        clearTimeout(parseFloat(el.getAttribute('data-xt-delaytimeout')));
         let timeout = setTimeout(function (self, el, fElements, type) {
           el.classList.remove('on-block');
           activate(self, el, fElements, type);
         }, parseFloat(delay), self, el, fElements, type);
-        el.setAttribute('xt-delay-timeout', timeout);
+        el.setAttribute('data-xt-delaytimeout', timeout);
       } else {
         activate(self, el, fElements, type);
       }
@@ -418,14 +419,14 @@ class Xt {
     };
     // delay onDone
     let timing = this.activationTiming(el);
-    clearTimeout(parseFloat(el.getAttribute('xt-activation-animation-timeout')));
+    clearTimeout(parseFloat(el.getAttribute('data-xt-animtimeout')));
     if (!timing) {
       onDone(el, type);
     } else {
       let timeout = setTimeout(function (el, type) {
         onDone(el, type);
       }, timing, el, type);
-      el.setAttribute('xt-activation-animation-timeout', timeout.toString());
+      el.setAttribute('data-xt-animtimeout', timeout.toString());
     }
   }
 
@@ -440,14 +441,15 @@ class Xt {
     let self = this;
     let options = self.options;
     // deactivate
-    function deactivate(self, el, fElements, type) {
+    function deactivate(self, el, fElements, type, activationDelay) {
       el.classList.remove(...options.classes);
       el.classList.add('out');
       self.activationOffAnimate(el, type, activationDelay);
       // activationDelay
-      if (activationDelay && activationDelay[type]) {
+      if (activationDelay && activationDelay[type] && !activationDelay[type + 'done']) {
         if (options.instant && options.instant[type]) {
           activationDelay[type]();
+          activationDelay[type + 'done'] = true;
         }
       }
       // specials
@@ -461,15 +463,15 @@ class Xt {
     }
     // delay
     for (let el of els) {
-      let delay = el.getAttribute('data-xt-off-delay');
+      let delay = el.getAttribute('data-xt-offdelay');
       if (delay) {
         el.classList.add('off-block');
-        clearTimeout(parseFloat(el.getAttribute('xt-delay-timeout')));
+        clearTimeout(parseFloat(el.getAttribute('data-xt-delaytimeout')));
         let timeout = setTimeout(function (self, el, fElements, type, activationDelay) {
           el.classList.remove('off-block');
           deactivate(self, el, fElements, type, activationDelay);
         }, parseFloat(delay), self, el, fElements, type, activationDelay);
-        el.setAttribute('xt-delay-timeout', timeout);
+        el.setAttribute('data-xt-delaytimeout', timeout);
       } else {
         deactivate(self, el, fElements, type, activationDelay);
       }
@@ -493,22 +495,23 @@ class Xt {
         self.specialScrollbarOff();
       }
       // activationDelay
-      if (activationDelay && activationDelay[type]) {
+      if (activationDelay && activationDelay[type] && !activationDelay[type + 'done']) {
         if (!options.instant || !options.instant[type]) {
           activationDelay[type]();
+          activationDelay[type + 'done'] = true;
         }
       }
     };
     // delay onDone
     let timing = this.activationTiming(el);
-    clearTimeout(parseFloat(el.getAttribute('xt-activation-animation-timeout')));
+    clearTimeout(parseFloat(el.getAttribute('data-xt-animtimeout')));
     if (!timing) {
       onDone(el, type);
     } else {
       let timeout = setTimeout(function (el, type) {
         onDone(el, type);
       }, timing, el, type);
-      el.setAttribute('xt-activation-animation-timeout', timeout.toString());
+      el.setAttribute('data-xt-animtimeout', timeout.toString());
     }
   }
 
@@ -1062,7 +1065,7 @@ class XtFade extends Xt {
         if (checkTop && checkBottom) {
           // inside
           if (options.delayOnIndex) {
-            el.setAttribute('data-xt-on-delay', indexElements.length * options.delayOnIndex);
+            el.setAttribute('data-xt-ondelay', (indexElements.length * options.delayOnIndex).toString());
           }
           changed = self.eventOn(el);
           if (changed) {
@@ -1071,7 +1074,7 @@ class XtFade extends Xt {
         } else  {
           // outside
           if (options.delayOffIndex) {
-            el.setAttribute('data-xt-off-delay', indexElements.length * options.delayOffIndex);
+            el.setAttribute('data-xt-offdelay', (indexElements.length * options.delayOffIndex).toString());
           }
           changed = self.eventOff(el);
           el.classList.add('fade-visible');
