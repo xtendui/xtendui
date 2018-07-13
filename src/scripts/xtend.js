@@ -1049,7 +1049,7 @@ class XtFade extends Xt {
     }
     // index
     for (let [i, el] of indexElements.entries()) {
-      el.setAttribute('data-fade-index', i);
+      el.setAttribute('data-fade-index', i + 1);
     }
     // save for direction
     self.scrollTopOld = scrollTop;
