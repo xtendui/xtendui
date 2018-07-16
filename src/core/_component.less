@@ -297,25 +297,46 @@ a, .alink, .btn-link {
 }
 
 //////////////////////
-// loader
+// preload
 //////////////////////
 
-.loader-mask {
+.preload-container {
   position: absolute;
   z-index: @index-loader;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
 }
 
-.loader-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
+.preload {
+  position: relative;
+  width: 100%;
+}
+
+// addons
+
+.preload-container {
+  width: 100%;
+}
+
+.preload-full {
+  .display(flex);
+  .align-items-center();
+  .justify-content-center();
+  height: 100%;
+}
+
+.preload-relative {
+  position: relative;
+}
+
+.preload-fixed {
+  position: fixed;
+}
+
+.preload-html {
+  html.preloaded & {
+    display: none;
+  }
 }
 
 //////////////////////

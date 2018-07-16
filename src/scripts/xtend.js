@@ -1020,8 +1020,8 @@ class XtFade extends Xt {
         });
       }
     }
-    // trigger initial
-    self.eventScroll(self.object); // @TODO events revision
+    // trigger initial // @TODO events revision
+    self.eventScroll(self.object);
   }
 
   //////////////////////
@@ -1198,8 +1198,8 @@ class XtSticky extends Xt {
         });
       }
     }
-    // trigger initial
-    self.eventScroll(self.object); // @TODO events revision
+    // trigger initial // @TODO events revision
+    self.eventScroll(self.object);
   }
 
   //////////////////////
@@ -1358,8 +1358,8 @@ class XtSticky extends Xt {
       if (self.addOld !== undefined) {
         el.style[options.position] = rectElTop + 'px';
       }
-      XtUtil.cancelAnimationFrame.call(window, self.scrollFrame);
-      self.scrollFrame = XtUtil.requestAnimationFrame.call(window, function () {
+      XtUtil.cancelAnimationFrame.call(window, self.eventFrame);
+      self.eventFrame = XtUtil.requestAnimationFrame.call(window, function () {
         el.classList.remove('no-transition');
         el.style[options.position] = add + 'px';
       });

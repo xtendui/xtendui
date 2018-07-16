@@ -714,40 +714,91 @@ a, .alink {
 }
 
 //////////////////////
-// loader
+// preload
 //////////////////////
 
-.loader-mask {
-  // styles
-  background-color: fade(@white, @perc-lg);
-  // animations
-  &.active {
-    .anim-vertical.active();
-    opacity: 1;
-  }
-  &.out {
-    .anim-vertical.out();
-    opacity: 1;
+// addons
+
+.preload-background {
+  &::before {
+    .design-setup();
+    background-color: @white;
   }
 }
 
-.loader-content {
-  // styles
-  width: 1.5em;
-  height: 1.5em;
-  border: .2em solid @primary;
-  border-right-color: transparent !important;
-  border-radius: 50%;
-  // animations
-  animation: anim-rotate 1000ms infinite linear;
-  will-change: transform;
+.preload-full {
+  .padding(x, 33%) !important;
 }
 
-@keyframes anim-rotate {
+// variant
+
+.preload {
+  overflow: hidden;
+  height: 2px;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+  &::before {
+    z-index: 2;
+    width: 100%;
+    background-color: @grey-250;
+  }
+  &::after {
+    z-index: 3;
+    width: 0;
+    background-color: @black;
+    // animations
+    animation: anim-preload 1000ms infinite linear;
+  }
+}
+
+@keyframes anim-preload {
   0% {
-    transform: rotate(0deg);
+    left: 0;
+    width: 0;
+  }
+  50% {
+    left: 0;
+    width: 100%;
+    animation-timing-function: @bez-out;
   }
   100% {
-    transform: rotate(360deg);
+    left: 100%;
+    width: 0;
   }
 }
+
+// activation
+
+.preload-container {
+  .anim-opacity.active();
+  opacity: 1;
+}
+
+/* USAGE:
+<div class="preload-container preload-html preload-relative">
+    <div class="preload"></div>
+</div>
+<div class="preload-container preload-background preload-full">
+    <div class="preload"></div>
+</div>
+*/
+
+/* USAGE:
+// xt-preload
+document.querySelectorAll('html')[0].classList.add('preloaded');
+*/
+
+/* put any selector here you want to preload
+.main-container {
+  visibility: hidden;
+  html.preloaded & {
+    visibility: visible;
+  }
+}
+*/
