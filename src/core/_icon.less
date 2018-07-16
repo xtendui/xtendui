@@ -16,6 +16,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 [class^='xt-icon-'], [class*=' xt-icon-'] {
   &::before {
     .xt-icon();
@@ -33,14 +34,14 @@
   & when (@position = before) {
     &::before {
       .xt-icon();
-      content: @content;
+      content: '@{content}';
       font-size: @size;
     }
   }
   & when (@position = after) {
     &::after {
       .xt-icon();
-      content: @content;
+      content: '@{content}';
       font-size: @size;
     }
   }
@@ -49,7 +50,7 @@
 // .generate-icons
 
 & when (@classes-icons) {
-  
+
   .generate-icons();
   .generate-icons(@i:length(@icons)) when (@i > 0) {
     .generate-icons(@i - 1);
@@ -61,5 +62,5 @@
       }
     }
   }
-  
+
 }

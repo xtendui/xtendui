@@ -26,14 +26,14 @@ gulp.task('less-dist', function () {
     .pipe(replace(/\/\*\![^\*]+\*\//, banner))
     .pipe(sourcemaps.init())
     .pipe(less())
-    .pipe(cleanCSS())
+    //.pipe(cleanCSS())
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('dist/'));
 });
 gulp.task('less-demos', gulp.series('less-dist', function () {
   return gulp.src(['src/docs/demos/**/*.less', '!src/docs/demos/**/_*.less'])
     .pipe(less())
-    .pipe(cleanCSS())
+    //.pipe(cleanCSS())
     .pipe(gulp.dest('src/docs/demos/'));
 }));
 gulp.task('less-clean', gulp.series('less-demos', function () {
@@ -45,7 +45,7 @@ gulp.task('less', gulp.series('less-clean', function () {
   return gulp.src(['src/docs/assets/styles/**/*.less', '!src/docs/assets/styles/**/_*.less'])
     .pipe(sourcemaps.init())
     .pipe(less())
-    .pipe(cleanCSS())
+    //.pipe(cleanCSS())
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/styles/'));
 }));
