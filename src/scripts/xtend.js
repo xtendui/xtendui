@@ -386,15 +386,14 @@ class Xt {
     }
     // delay
     for (let el of els) {
-      let delay = el.getAttribute('data-xt-ondelay');
+      let delay = el.dataset.xtOnDelay;
       if (delay) {
         el.classList.add('on-block');
-        clearTimeout(parseFloat(el.getAttribute('data-xt-delaytimeout')));
-        let timeout = setTimeout(function (self, el, fElements, type) {
+        clearTimeout(el.dataset.xtDelayTimeout)
+        el.dataset.xtDelayTimeout = setTimeout(function (self, el, fElements, type) {
           el.classList.remove('on-block');
           activate(self, el, fElements, type);
-        }, parseFloat(delay), self, el, fElements, type);
-        el.setAttribute('data-xt-delaytimeout', timeout);
+        }, parseFloat(delay), self, el, fElements, type).toString();
       } else {
         activate(self, el, fElements, type);
       }
@@ -419,14 +418,13 @@ class Xt {
     };
     // delay onDone
     let timing = this.activationTiming(el);
-    clearTimeout(parseFloat(el.getAttribute('data-xt-animtimeout')));
+    clearTimeout(el.dataset.xtAnimTimeout);
     if (!timing) {
       onDone(el, type);
     } else {
-      let timeout = setTimeout(function (el, type) {
+      el.dataset.xtAnimTimeout = setTimeout(function (el, type) {
         onDone(el, type);
-      }, timing, el, type);
-      el.setAttribute('data-xt-animtimeout', timeout.toString());
+      }, timing, el, type).toString();
     }
   }
 
@@ -463,15 +461,14 @@ class Xt {
     }
     // delay
     for (let el of els) {
-      let delay = el.getAttribute('data-xt-offdelay');
+      let delay = el.dataset.xtOffDelay;
       if (delay) {
         el.classList.add('off-block');
-        clearTimeout(parseFloat(el.getAttribute('data-xt-delaytimeout')));
-        let timeout = setTimeout(function (self, el, fElements, type, activationDelay) {
+        clearTimeout(el.dataset.xtDelayTimeout);
+        el.dataset.xtDelayTimeout = setTimeout(function (self, el, fElements, type, activationDelay) {
           el.classList.remove('off-block');
           deactivate(self, el, fElements, type, activationDelay);
-        }, parseFloat(delay), self, el, fElements, type, activationDelay);
-        el.setAttribute('data-xt-delaytimeout', timeout);
+        }, parseFloat(delay), self, el, fElements, type, activationDelay).toString();
       } else {
         deactivate(self, el, fElements, type, activationDelay);
       }
@@ -504,14 +501,13 @@ class Xt {
     };
     // delay onDone
     let timing = this.activationTiming(el);
-    clearTimeout(parseFloat(el.getAttribute('data-xt-animtimeout')));
+    clearTimeout(el.dataset.xtAnimTimeout);
     if (!timing) {
       onDone(el, type);
     } else {
-      let timeout = setTimeout(function (el, type) {
+      el.dataset.xtAnimTimeout = setTimeout(function (el, type) {
         onDone(el, type);
-      }, timing, el, type);
-      el.setAttribute('data-xt-animtimeout', timeout.toString());
+      }, timing, el, type).toString();
     }
   }
 
@@ -1065,7 +1061,7 @@ class XtFade extends Xt {
         if (checkTop && checkBottom) {
           // inside
           if (options.delayOnIndex) {
-            el.setAttribute('data-xt-ondelay', (indexElements.length * options.delayOnIndex).toString());
+            el.dataset.xtOnDelay = (indexElements.length * options.delayOnIndex).toString();
           }
           changed = self.eventOn(el);
           if (changed) {
@@ -1074,7 +1070,7 @@ class XtFade extends Xt {
         } else  {
           // outside
           if (options.delayOffIndex) {
-            el.setAttribute('data-xt-offdelay', (indexElements.length * options.delayOffIndex).toString());
+            el.dataset.xtOffDelay = (indexElements.length * options.delayOffIndex).toString();
           }
           changed = self.eventOff(el);
           el.classList.add('fade-visible');
@@ -1288,7 +1284,7 @@ class XtSticky extends Xt {
       }
     }
     // save real add for calculation
-    el.setAttribute('data-add-sticky', add + 'px');
+    el.dataset.xtAddSticky = add.toString();
     // activation
     let checkTop = scrollTop >= top - add + addHide;
     let checkBottom = scrollTop < bottom + add - addHide;
@@ -1394,12 +1390,12 @@ class XtSticky extends Xt {
         let found = false;
         val = 0;
         for (let el of elements) {
-          let addSticky = el.getAttribute('data-add-sticky');
           let style = getComputedStyle(el);
           if (style.display !== 'none') {
             found = true;
-            if (addSticky && addSticky !== '0px') { // if sticky-hide get real add
-              val += parseFloat(addSticky);
+            let addSticky = parseFloat(el.dataset.xtAddSticky);
+            if (addSticky) { // if sticky-hide get real add
+              val += addSticky;
             } else {
               let rect = el.getBoundingClientRect();
               val += rect.top;
