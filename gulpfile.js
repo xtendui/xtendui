@@ -3,7 +3,6 @@
 var fs = require('fs');
 var gulp = require('gulp');
 var log = require('fancy-log');
-var merge = require('merge-stream');
 var child = require('child_process');
 var buffer = require('vinyl-buffer');
 var source = require('vinyl-source-stream');
@@ -56,6 +55,7 @@ gulp.task('less:watch', function (done) {
 });
 
 // compile js
+
 gulp.task('js-dist', function () {
   var b = browserify({
     entries: 'src/scripts/xtend.js',
