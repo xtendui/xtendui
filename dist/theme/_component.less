@@ -347,6 +347,7 @@ a, .alink {
         .anim-vertical.active();
         animation-delay: @time-small;
         animation-fill-mode: forwards;
+        opacity: 0;
       }
     }
     .xt-backdrop {
@@ -359,6 +360,7 @@ a, .alink {
         .anim-zoom.out();
         animation-delay: @time-small;
         animation-fill-mode: forwards;
+        opacity: 1;
       }
       & > * {
         .anim-vertical.out();
@@ -552,6 +554,7 @@ a, .alink {
         .anim-vertical.active();
         animation-delay: @time-small;
         animation-fill-mode: forwards;
+        opacity: 0;
       }
     }
     .xt-backdrop {
@@ -572,6 +575,7 @@ a, .alink {
           .anim-left.active();
           animation-delay: @time-small;
           animation-fill-mode: forwards;
+          opacity: 0;
         }
       }
     }
@@ -585,6 +589,7 @@ a, .alink {
           .anim-right.active();
           animation-delay: @time-small;
           animation-fill-mode: forwards;
+          opacity: 0;
         }
       }
     }
@@ -595,6 +600,7 @@ a, .alink {
         .anim-zoom.out();
         animation-delay: @time-small;
         animation-fill-mode: forwards;
+        opacity: 1;
       }
       & > * {
         .anim-vertical.out();
@@ -609,6 +615,7 @@ a, .alink {
       .anim-opacity.out();
       animation-delay: @time-small;
       animation-fill-mode: forwards;
+      opacity: 1;
     }
     &.overlay-left {
       .overlay-inner {
@@ -616,6 +623,7 @@ a, .alink {
           .anim-left.out();
           animation-delay: @time-small;
           animation-fill-mode: forwards;
+          opacity: 1;
         }
         & > * {
           .anim-left.out();
@@ -629,6 +637,7 @@ a, .alink {
           .anim-right.out();
           animation-delay: @time-small;
           animation-fill-mode: forwards;
+          opacity: 1;
         }
         & > * {
           .anim-right.out();
