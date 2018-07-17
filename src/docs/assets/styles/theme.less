@@ -316,9 +316,11 @@
 // animations
 
 .site-menu {
-  transition-delay: @time-small;
   // animations
-  .overlay-inner::before, .site-header-top {
+  &.out {
+    transition-delay: @time-medium;
+  }
+  &, &::before, .overlay-inner::before, .overlay-inner > * {
     .no-animation();
     opacity: 1 !important;
   }
