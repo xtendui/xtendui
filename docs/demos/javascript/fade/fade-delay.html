@@ -34,7 +34,7 @@
 
     <div id="body-outer">
 <div id="body-inner" class="demo-source-from">
-<div data-xt-fade='{"delayOn": "return current * 100", "delayOff": "return (total - current) * 100"}'>
+<div data-xt-fade='{"delayOn": "return Math.min(current * 100, 300)", "delayOff": "return Math.min((total - current) * 100, 300)"}'>
 
   <div class="flex">
 
