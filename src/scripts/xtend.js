@@ -288,8 +288,6 @@ class Xt {
   checkOn(element) {
     if ((!element.classList.contains(...this.options.classes) || element.classList.contains('off-block')) && !element.classList.contains('on-block')) {
       return true;
-    } else if (this.options.toggle) {
-      return true;
     } else {
       return false;
     }
