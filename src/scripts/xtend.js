@@ -281,16 +281,47 @@ class Xt {
   //////////////////////
 
   /**
+   * check element on
+   * @param {Node|HTMLElement} element To be activated
+   * @returns {Boolean} If eventOn changes activation
+   */
+  checkOn(element) {
+    if ((!element.classList.contains(...this.options.classes) || element.classList.contains('off-block')) && !element.classList.contains('on-block')) {
+      return true;
+    } else if (this.options.toggle) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  /**
+   * check element off
+   * @param {Node|HTMLElement} element To be activated
+   * @returns {Boolean} If eventOff changes activation
+   */
+  checkOff(element) {
+    // if currents < min
+    let todo = this.options.min - this.getCurrents().length;
+    if (!todo) {
+      return false;
+    }
+    if ((element.classList.contains(...this.options.classes) || element.classList.contains('on-block')) && !element.classList.contains('off-block')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  /**
    * element on
    * @param {Node|HTMLElement} element To be activated
-   * @returns {Boolean} If activation changed
    */
   eventOn(element) {
     let self = this;
     let options = self.options;
     // activate or deactivate
-    if (!element.classList.contains(...this.options.classes) && !element.classList.contains('on-block')) {
-      element.classList.remove('off-block');
+    if (this.checkOn(element)) {
       let fElements = this.getElements(element);
       this.addCurrent(fElements.single);
       let targets = this.getTargets(element);
@@ -310,37 +341,24 @@ class Xt {
       let currents = this.getCurrents();
       if (currents.length > options.max) {
         this.eventOff(currents[0], activationDelay);
-        return true;
       } else {
         activationDelay.elements();
         activationDelay.targets();
         activationDelay.additional();
-        return true;
       }
     } else if (options.toggle) {
       this.eventOff(element);
-      return true;
     }
-    return false;
   }
 
   /**
    * element off
    * @param {Node|HTMLElement} element To be deactivated
    * @param {Number} activationDelay Delay in milliseconds
-   * @returns {Boolean} If activation changed
    */
   eventOff(element, activationDelay = null) {
-    let self = this;
-    let options = self.options;
-    // if currents < min
-    let todo = options.min - this.getCurrents().length;
-    if (!todo) {
-      return false;
-    }
     // deactivate
-    if (element.classList.contains(...this.options.classes) && !element.classList.contains('off-block')) {
-      element.classList.remove('on-block');
+    if (this.checkOff(element)) {
       let fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
       this.activationOff(fElements.all, fElements, 'elements', activationDelay);
@@ -348,14 +366,8 @@ class Xt {
       this.activationOff(targets, fElements, 'targets', activationDelay);
       let additional = this.getAdditional();
       this.activationOff(additional, fElements, 'additional', activationDelay);
-      return true;
     }
-    return false;
   }
-
-  //////////////////////
-  // activation
-  //////////////////////
 
   /**
    * element on activation
@@ -386,10 +398,12 @@ class Xt {
     }
     // delay
     for (let el of els) {
+      el.classList.remove('off-block');
+      clearTimeout(el.dataset.xtDelayTimeout);
+      clearTimeout(el.dataset.xtAnimTimeout);
       let delay = el.dataset.xtOnDelay;
       if (delay) {
         el.classList.add('on-block');
-        clearTimeout(el.dataset.xtDelayTimeout)
         el.dataset.xtDelayTimeout = setTimeout(function (self, el, fElements, type) {
           el.classList.remove('on-block');
           activate(self, el, fElements, type);
@@ -397,34 +411,6 @@ class Xt {
       } else {
         activate(self, el, fElements, type);
       }
-    }
-  }
-
-  /**
-   * element on animation
-   * @param {Node|HTMLElement} el Element to be animated
-   * @param {String} type Type of element
-   */
-  activationOnAnimate(el, type) {
-    // onDone
-    let onDone = function (el, type) {
-      // collapse-width and collapse-height
-      if (el.classList.contains('collapse-height')) {
-        el.style.height = 'auto';
-      }
-      if (el.classList.contains('collapse-width')) {
-        el.style.width = 'auto';
-      }
-    };
-    // delay onDone
-    let timing = this.activationTiming(el);
-    clearTimeout(el.dataset.xtAnimTimeout);
-    if (!timing) {
-      onDone(el, type);
-    } else {
-      el.dataset.xtAnimTimeout = setTimeout(function (el, type) {
-        onDone(el, type);
-      }, timing, el, type).toString();
     }
   }
 
@@ -461,10 +447,12 @@ class Xt {
     }
     // delay
     for (let el of els) {
+      el.classList.remove('on-block');
+      clearTimeout(el.dataset.xtDelayTimeout);
+      clearTimeout(el.dataset.xtAnimTimeout);
       let delay = el.dataset.xtOffDelay;
       if (delay) {
         el.classList.add('off-block');
-        clearTimeout(el.dataset.xtDelayTimeout);
         el.dataset.xtDelayTimeout = setTimeout(function (self, el, fElements, type, activationDelay) {
           el.classList.remove('off-block');
           deactivate(self, el, fElements, type, activationDelay);
@@ -472,6 +460,34 @@ class Xt {
       } else {
         deactivate(self, el, fElements, type, activationDelay);
       }
+    }
+  }
+
+  /**
+   * element on animation
+   * @param {Node|HTMLElement} el Element to be animated
+   * @param {String} type Type of element
+   */
+  activationOnAnimate(el, type) {
+    // onDone
+    let onDone = function (el, type) {
+      // collapse-width and collapse-height
+      if (el.classList.contains('collapse-height')) {
+        el.style.height = 'auto';
+      }
+      if (el.classList.contains('collapse-width')) {
+        el.style.width = 'auto';
+      }
+    };
+    // delay onDone
+    let timing = this.activationTiming(el);
+    clearTimeout(el.dataset.xtAnimTimeout);
+    if (!timing) {
+      onDone(el, type);
+    } else {
+      el.dataset.xtAnimTimeout = setTimeout(function (el, type) {
+        onDone(el, type);
+      }, timing, el, type).toString();
     }
   }
 
@@ -1035,7 +1051,8 @@ class XtFade extends Xt {
     let self = this;
     let options = self.options;
     // vars
-    let indexElements = [];
+    let current = 0;
+    let currents = [];
     let scrollInverse = false;
     let windowHeight = window.innerHeight;
     let scrollTop = document.documentElement.scrollTop;
@@ -1060,23 +1077,35 @@ class XtFade extends Xt {
         let checkBottom = scrollTop < bottom - dist;
         if (checkTop && checkBottom) {
           // inside
-          if (options.delayOnIndex) {
-            el.dataset.xtOnDelay = (indexElements.length * options.delayOnIndex).toString();
-          }
-          changed = self.eventOn(el);
+          changed = self.checkOn(el);
           if (changed) {
-            indexElements.push(el);
+            currents.push(el);
+            XtUtil.cancelAnimationFrame.call(window, el.dataset.eventFrame);
+            el.dataset.eventFrame = XtUtil.requestAnimationFrame.call(window, function () {
+              if (options.delayOn) {
+                let func = new Function('current', 'total', options.delayOn);
+                el.dataset.xtOnDelay = func(current, currents.length).toString();
+                current++;
+              }
+              self.eventOn(el);
+            });
           }
         } else  {
           // outside
-          if (options.delayOffIndex) {
-            el.dataset.xtOffDelay = (indexElements.length * options.delayOffIndex).toString();
-          }
-          changed = self.eventOff(el);
+          changed = self.checkOff(el);
           el.classList.add('fade-visible');
           if (changed) {
             el.classList.add('fade-scroll');
-            indexElements.push(el);
+            currents.push(el);
+            XtUtil.cancelAnimationFrame.call(window, el.dataset.eventFrame);
+            el.dataset.eventFrame = XtUtil.requestAnimationFrame.call(window, function () {
+              if (options.delayOff) {
+                let func = new Function('current', 'total', options.delayOff);
+                el.dataset.xtOffDelay = func(current, currents.length).toString();
+                current++;
+              }
+              changed = self.eventOff(el);
+            });
           }
         }
         // direction
@@ -1106,8 +1135,8 @@ XtFade.defaults = {
   "min": 0,
   "max": Infinity,
   "distance": 0.2,
-  "delayOnIndex": false,
-  "delayOffIndex": false
+  "delayOn": false,
+  "delayOff": false
 };
 
 // export
