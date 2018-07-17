@@ -173,14 +173,16 @@
 
 // beziers
 
-@bez-in: @bezier-ease;
-@bez-out: @bezier-ease;
+@bez-in: @bezier-cat-in;
+@bez-out: @bezier-cat-out;
 
 @bezier-ease: ease; // others at https://easings.net/
-@bezier-tiger: cubic-bezier(.96, .1, .14, .88);
-@bezier-cat: cubic-bezier(.77, 0, .175, 1); // https://www.notanotherbill.com/gifts/gifts-for-all
-@bezier-frog-in: cubic-bezier(0.645, 0.045, 0.355, 1.000);
-@bezier-frog-out: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+@bezier-cat-in: ~'cubic-bezier(.41, .1, .175, 1)';
+@bezier-cat-out: ~'cubic-bezier(.77, 0, .175, 1)'; // https://www.notanotherbill.com/gifts/gifts-for-all
+//@bezier-frog-in: ~'cubic-bezier(.645, .045, .355, 1.000)';
+//@bezier-frog-out: ~'cubic-bezier(.550, .055, .675, .190)';
+//@bezier-tiger: ~'cubic-bezier(.96, .1, .14, .88)';
+//@bezier-new: ~'cubic-bezier(.165,.84,.44,1)';
 
 //////////////////////
 // grid

@@ -988,6 +988,7 @@ XtOverlay.defaults = {
   "max": 1,
   "appendTo": "body",
   "backdrop": "targets",
+  "classHtml": "xt-overlay",
   "closeInside": ".overlay-dismiss, :scope > .xt-backdrop, :scope .overlay-inner > .btn-close",
   "scrollbar": true
 };
