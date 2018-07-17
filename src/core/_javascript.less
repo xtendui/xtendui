@@ -81,7 +81,7 @@ html.xt-scrollbar {
 
 /**
  * .xt-sticky()
- * @param {String} @mode Starting mode be 'absolute' or 'fixed'
+ * @param {String} @mode Starting mode be 'absolute' or 'fixed' or 'fixed-always'
  */
 .xt-sticky(@mode:none) {
   .show-sticky {
@@ -91,23 +91,16 @@ html.xt-scrollbar {
     display: block;
   }
   // normal mode
-  &.xt-clone {
-    position: absolute !important;
-    visibility: hidden !important;
-    top: 0 !important;
-    &.active {
-      position: relative !important;
-    }
-  }
-  // fixed mode
-  & when (@mode = 'fixed') {
+  & when (@mode = none) {
     &.xt-clone {
-      position: relative !important;
+      position: absolute !important;
+      visibility: hidden !important;
+      &.active {
+        position: relative !important;
+      }
     }
-    .xt-container > & {
-      position: fixed;
-      z-index: @index-sticky;
-      width: inherit;
+    &:not(.xt-clone) {
+      position: relative !important;
     }
   }
   // absolute mode
@@ -115,21 +108,55 @@ html.xt-scrollbar {
     &.xt-clone {
       position: relative !important;
     }
-    .xt-container > & {
+    .xt-container > &:not(.xt-clone) {
       position: absolute;
-      width: inherit;
+      width: 100%;
+    }
+  }
+  // fixed mode
+  & when (@mode = 'fixed') {
+    &.xt-clone {
+      position: relative !important;
+    }
+    .xt-container > &:not(.xt-clone) {
+      position: fixed;
+      z-index: @index-sticky;
+      width: 100%;
+    }
+  }
+  // fixed-always mode
+  & when (@mode = 'fixed-always') {
+    &.xt-clone {
+      position: relative !important;
+    }
+    &:not(.xt-clone) {
+      position: fixed;
+      z-index: @index-sticky;
+      width: 100%;
     }
   }
   // activation
-  &.active:not(.xt-clone) {
+  &:not(.xt-clone).active {
     position: fixed !important;
     z-index: @index-sticky;
-    width: inherit;
+    width: 100%;
     .show-sticky {
       display: block;
     }
     .hide-sticky {
       display: none;
     }
+  }
+}
+
+.xt-sticky-disable {
+  position: relative !important;
+  top: auto !important;
+  bottom: auto !important;
+  &.xt-clone {
+    position: absolute !important;
+  }
+  &:not(.xt-clone) {
+    position: relative !important;
   }
 }
