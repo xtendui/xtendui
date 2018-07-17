@@ -379,7 +379,7 @@ class Xt {
     let self = this;
     let options = self.options;
     // activate
-    function activate(self, el, fElements, type) {
+    let activate = function (self, el, fElements, type) {
       el.classList.add(...options.classes);
       el.classList.remove('out');
       self.activationOnAnimate(el, type);
@@ -395,7 +395,7 @@ class Xt {
       }
       // dispatch
       el.dispatchEvent(new Event('on')); // @TODO events revision
-    }
+    };
     // delay
     for (let el of els) {
       el.classList.remove('off-block');
@@ -425,7 +425,7 @@ class Xt {
     let self = this;
     let options = self.options;
     // deactivate
-    function deactivate(self, el, fElements, type, activationDelay) {
+    let deactivate = function (self, el, fElements, type, activationDelay) {
       el.classList.remove(...options.classes);
       el.classList.add('out');
       self.activationOffAnimate(el, type, activationDelay);
@@ -444,7 +444,7 @@ class Xt {
       }
       // dispatch
       el.dispatchEvent(new Event('off')); // @TODO events revision
-    }
+    };
     // delay
     for (let el of els) {
       el.classList.remove('on-block');
@@ -878,8 +878,7 @@ class Xt {
 
 // default
 
-Xt.defaults = {
-};
+Xt.defaults = {};
 
 // export
 
@@ -910,7 +909,7 @@ XtToggle.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
   "class": "active",
-  "instant": { "elements": true },
+  "instant": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -947,7 +946,7 @@ XtDrop.defaults = {
   "targets": ":scope > .drop",
   "additional": ":scope > a, :scope > button",
   "class": "active",
-  "instant": { "elements": true },
+  "instant": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -984,7 +983,7 @@ XtOverlay.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > .overlay-outer",
   "class": "active",
-  "instant": { "elements": true },
+  "instant": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -1090,7 +1089,7 @@ class XtFade extends Xt {
               self.eventOn(el);
             });
           }
-        } else  {
+        } else {
           // outside
           changed = self.checkOff(el);
           el.classList.add('fade-visible');
@@ -1253,7 +1252,7 @@ class XtSticky extends Xt {
     let el = self.object;
     let rectElTop = el.getBoundingClientRect().top;
     let heightEl = parseFloat(getComputedStyle(el).height);
-    let rectContainerTop =  self.container[0].getBoundingClientRect().top;
+    let rectContainerTop = self.container[0].getBoundingClientRect().top;
     let scrollTop = document.documentElement.scrollTop;
     let scrollTopOld = self.scrollTopOld;
     // direction
