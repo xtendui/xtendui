@@ -46,7 +46,7 @@ gulp.task('less', gulp.series('less-demos', function () {
 }));
 gulp.task('less-clean', gulp.series('less', function () {
   // fix jekyll triggering file change
-  return gulp.src(['docs/assets/styles/theme.*'], {read: false})
+  return gulp.src(['docs/assets/styles/theme.*', 'docs/demos/**/*.css'], {read: false})
     .pipe(clean({force: true}));
 }));
 gulp.task('less:watch', function (done) {
@@ -76,12 +76,7 @@ gulp.task('js-dist', function () {
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('dist/'));
 });
-gulp.task('js-clean', gulp.series('js-dist', function () {
-  // fix jekyll triggering file change
-  return gulp.src('docs/assets/scripts/theme.*', {read: false})
-    .pipe(clean({force: true}));
-}));
-gulp.task('js-theme', gulp.series('js-clean', function () {
+gulp.task('js-theme', gulp.series('js-dist', function () {
   var b = browserify({
     entries: 'src/docs/assets/scripts/theme.js',
     debug: true
@@ -115,8 +110,13 @@ gulp.task('js', gulp.series('js-theme', function () {
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/scripts/'));
 }));
+gulp.task('js-clean', gulp.series('js', function () {
+  // fix jekyll triggering file change
+  return gulp.src('docs/assets/scripts/theme.*', {read: false})
+    .pipe(clean({force: true}));
+}));
 gulp.task('js:watch', function (done) {
-  gulp.watch(['src/docs/assets/scripts/theme.js', 'src/scripts/*.js'], gulp.series('js'));
+  gulp.watch(['src/docs/assets/scripts/theme.js', 'src/scripts/*.js'], gulp.series('js-clean'));
   done();
 });
 
