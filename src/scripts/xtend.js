@@ -1061,7 +1061,7 @@ class XtFade extends Xt {
     }
     // core
     for (let el of self.elements) {
-      if (el.offsetParent) {
+      if (el.offsetParent && !el.classList.contains('fade-block')) {
         // vars
         let rectElTop = el.offsetParent.getBoundingClientRect().top + el.offsetTop; // we use parents to not include transforms animations
         let heightEl = parseFloat(getComputedStyle(el).height);
