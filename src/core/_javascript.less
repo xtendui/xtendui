@@ -90,11 +90,13 @@ html.xt-scrollbar {
   .hide-sticky {
     display: block;
   }
+  &.xt-clone {
+    visibility: hidden !important;
+  }
   // normal mode
   & when (@mode = none) {
     &.xt-clone {
       position: absolute !important;
-      visibility: hidden !important;
       &.active {
         position: relative !important;
       }
