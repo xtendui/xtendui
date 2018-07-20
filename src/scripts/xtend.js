@@ -139,25 +139,25 @@ class Xt {
     for (let el of this.elements) {
       if (options.on) {
         // handler
-        el.xtOnHandler = self.eventOnHandler.bind(self).bind(self, el); // multiple bind inverse order arguments
+        let xtOnHandler = XtUtil.dataStorage.put(el, 'xtOnHandler', self.eventOnHandler.bind(self).bind(self, el));
         // event
         let events = [...options.on.split(' ')];
         for (let event of events) {
-          el.removeEventListener(event, el.xtOnHandler);
-          el.addEventListener(event, el.xtOnHandler);
+          el.removeEventListener(event, xtOnHandler);
+          el.addEventListener(event, xtOnHandler);
         }
-        el.addEventListener('on.trigger', el.xtOnHandler);
+        el.addEventListener('on.trigger', xtOnHandler);
       }
       if (options.off) {
         // handler
-        el.xtOffHandler = self.eventOffHandler.bind(self).bind(self, el); // multiple bind inverse order arguments
+        let xtOffHandler = XtUtil.dataStorage.put(el, 'xtOffHandler', self.eventOffHandler.bind(self).bind(self, el));
         // event
         let events = [...options.off.split(' ')];
         for (let event of events) {
-          el.removeEventListener(event, el.xtOffHandler);
-          el.addEventListener(event, el.xtOffHandler);
+          el.removeEventListener(event, xtOffHandler);
+          el.addEventListener(event, xtOffHandler);
         }
-        el.addEventListener('off.trigger', el.xtOffHandler);
+        el.addEventListener('off.trigger', xtOffHandler);
       }
     }
   }
@@ -184,7 +184,6 @@ class Xt {
   eventOffHandler(element, e) {
     let eventLimit = this.container.querySelectorAll('.event-limit');
     if (eventLimit.length) {
-      console.log(XtUtil.checkOutside(e, eventLimit));
       if (XtUtil.checkOutside(e, eventLimit)) {
         this.eventOff(element);
       }
@@ -750,10 +749,10 @@ class Xt {
       XtUtil.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
           // handler
-          el.xtSpecialCloseOnHandler = self.specialCloseOnHandler.bind(self).bind(self, closeElement, single); // multiple bind inverse order arguments
+          let specialCloseOnHandler = XtUtil.dataStorage.put(el, 'specialCloseOnHandler', self.specialCloseOnHandler.bind(self).bind(self, closeElement, single));
           // event
-          closeElement.removeEventListener('click', el.xtSpecialCloseOnHandler, true);
-          closeElement.addEventListener('click', el.xtSpecialCloseOnHandler, true);
+          closeElement.removeEventListener('click', specialCloseOnHandler);
+          closeElement.addEventListener('click', specialCloseOnHandler);
         }
       });
     }
@@ -763,10 +762,10 @@ class Xt {
       XtUtil.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
           // handler
-          el.xtSpecialCloseOffHandler = self.specialCloseOffHandler.bind(self).bind(self, el, single); // multiple bind inverse order arguments
+          let specialCloseOffHandler = XtUtil.dataStorage.put(el, 'specialCloseOffHandler', self.specialCloseOffHandler.bind(self).bind(self, el, single));
           // event
-          closeElement.removeEventListener('click', el.xtSpecialCloseOffHandler);
-          closeElement.addEventListener('click', el.xtSpecialCloseOffHandler);
+          closeElement.removeEventListener('click', specialCloseOffHandler);
+          closeElement.addEventListener('click', specialCloseOffHandler);
         }
       });
     }
@@ -783,14 +782,17 @@ class Xt {
     if (options.closeInside) {
       let closeElements = el.querySelectorAll(options.closeInside);
       for (let closeElement of closeElements) {
-        closeElement.removeEventListener('click', closeElement.xtSpecialCloseOnHandler);
+        // handler
+        let specialCloseOnHandler = XtUtil.dataStorage.get(el, 'specialCloseOnHandler');
+        closeElement.removeEventListener('click', specialCloseOnHandler);
       }
     }
     // closeOutside
     if (options.closeOutside) {
       let closeElements = document.documentElement.querySelectorAll(options.closeOutside);
       for (let closeElement of closeElements) {
-        closeElement.removeEventListener('click', el.xtSpecialCloseOffHandler);
+        let specialCloseOffHandler = XtUtil.dataStorage.get(el, 'specialCloseOffHandler');
+        closeElement.removeEventListener('click', specialCloseOffHandler);
       }
     }
   }
@@ -814,7 +816,6 @@ class Xt {
    * @param {Event} e
    */
   specialCloseOffHandler(checkEl, single, e) {
-    console.log(checkEl, single, e);
     if (XtUtil.checkOutside(e, XtUtil.arrSingle(checkEl))) {
       this.eventOff(single);
     }
@@ -1071,14 +1072,14 @@ class XtFade extends Xt {
     // events
     if (options.on) {
       // handler
-      window.fadeOffHandler = self.eventOnHandler.bind(self);
+      let fadeOffHandler = XtUtil.dataStorage.put(window, 'fadeOffHandler', self.eventOnHandler.bind(self));
       // event
       let events = [...options.on.split(' ')];
       for (let event of events) {
-        window.removeEventListener(event, window.fadeOffHandler);
-        window.addEventListener(event, window.fadeOffHandler);
+        window.removeEventListener(event, fadeOffHandler);
+        window.addEventListener(event, fadeOffHandler);
       }
-      window.addEventListener('on.trigger', window.fadeOffHandler);
+      window.addEventListener('on.trigger', fadeOffHandler);
     }
     // trigger initial
     window.dispatchEvent(new Event('on.trigger')); // @TODO call only one time
@@ -1272,14 +1273,14 @@ class XtSticky extends Xt {
     // events
     if (options.on) {
       // handler
-      window.stickyOffHandler = self.eventOnHandler.bind(self);
+      let stickyOffHandler = XtUtil.dataStorage.put(window, 'stickyOffHandler', self.eventOnHandler.bind(self));
       // event
       let events = [...options.on.split(' ')];
       for (let event of events) {
-        window.removeEventListener(event, window.stickyOffHandler);
-        window.addEventListener(event, window.stickyOffHandler);
+        window.removeEventListener(event, stickyOffHandler);
+        window.addEventListener(event, stickyOffHandler);
       }
-      window.addEventListener('on.trigger', window.stickyOffHandler);
+      window.addEventListener('on.trigger', stickyOffHandler);
     }
     // trigger initial // @TODO events revision
     window.dispatchEvent(new Event('on.trigger')); // @TODO call only one time

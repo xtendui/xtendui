@@ -215,6 +215,35 @@ XtUtil.getElementIndex = function (node) {
 };
 */
 
+/**
+ * dataStorage
+ * https://stackoverflow.com/questions/29222027/vanilla-alternative-to-jquery-data-function-any-native-javascript-alternati
+ * USAGE: XtUtil.dataStorage.put(element, 'key', value);
+ */
+XtUtil.dataStorage = {
+  _storage: new WeakMap(),
+  put: function (element, key, obj) {
+    if (!this._storage.has(key)) {
+      this._storage.set(element, new Map());
+    }
+    this._storage.get(element).set(key, obj);
+    return this._storage.get(element).get(key);
+  },
+  get: function (element, key) {
+    return this._storage.get(element).get(key);
+  },
+  has: function (element, key) {
+    return this._storage.get(element).has(key);
+  },
+  remove: function (element, key) {
+    var ret = this._storage.get(element).delete(key);
+    if (!this._storage.get(key).size === 0) {
+      this._storage.delete(element);
+    }
+    return ret;
+  }
+};
+
 //////////////////////
 // api
 //////////////////////
