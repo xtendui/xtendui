@@ -229,7 +229,6 @@ const populateDemo = function (container, i) {
       if (k === 0) {
         initIframe();
       }
-      // @TODO events revision
       iframe.parentElement.addEventListener('on', function (e) {
         if (e.target === this) {
           if (!item.classList.contains('populated')) {
