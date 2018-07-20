@@ -1044,160 +1044,6 @@ window.XtOverlay = XtOverlay;
 export {XtOverlay};
 
 //////////////////////
-// XtFade
-//////////////////////
-
-class XtFade extends Xt {
-
-  /**
-   * constructor
-   * @param {Node|HTMLElement} object Base node
-   * @param {Object} jsOptions User options
-   * @constructor
-   */
-  constructor(object, jsOptions = {}) {
-    super(object, jsOptions, 'data-xt-fade');
-  }
-
-  //////////////////////
-  // init
-  //////////////////////
-
-  /**
-   * init events
-   */
-  initEvents() {
-    let self = this;
-    let options = self.options;
-    // events
-    if (options.on) {
-      // handler
-      let fadeOffHandler = XtUtil.dataStorage.put(window, 'fadeOffHandler', self.eventOnHandler.bind(self));
-      // event
-      let events = [...options.on.split(' ')];
-      for (let event of events) {
-        window.removeEventListener(event, fadeOffHandler);
-        window.addEventListener(event, fadeOffHandler);
-      }
-      window.addEventListener('on.trigger', fadeOffHandler);
-    }
-    // trigger initial
-    window.dispatchEvent(new Event('on.trigger')); // @TODO call only one time
-  }
-
-  /**
-   * element on handler
-   * @param {Event} e
-   */
-  eventOnHandler(e) {
-    this.eventScroll(this.object);
-  }
-
-  //////////////////////
-  // events
-  //////////////////////
-
-  /**
-   * window scroll
-   */
-  eventScroll() {
-    let self = this;
-    let options = self.options;
-    // vars
-    let current = 0;
-    let currents = [];
-    let scrollInverse = false;
-    let windowHeight = window.innerHeight;
-    let scrollTop = document.documentElement.scrollTop;
-    let scrollTopOld = self.scrollTopOld;
-    // direction
-    if (scrollTop < scrollTopOld) {
-      scrollInverse = true;
-    }
-    // core
-    for (let el of self.elements) {
-      if (el.offsetParent && !el.classList.contains('fade-block')) {
-        // vars
-        let rectElTop = el.offsetParent.getBoundingClientRect().top + el.offsetTop; // we use parents to not include transforms animations
-        let heightEl = parseFloat(getComputedStyle(el).height);
-        // scroll
-        let changed = false;
-        let top = rectElTop + scrollTop;
-        let bottom = top + heightEl;
-        let dist = windowHeight * options.distance;
-        // activation
-        let checkTop = scrollTop + windowHeight >= top + dist;
-        let checkBottom = scrollTop < bottom - dist;
-        if (checkTop && checkBottom) {
-          // inside
-          changed = self.checkOn(el);
-          if (changed) {
-            currents.push(el);
-            XtUtil.cancelAnimationFrame.call(window, el.dataset.eventFrame);
-            el.dataset.eventFrame = XtUtil.requestAnimationFrame.call(window, function () {
-              if (options.delayOn) {
-                let func = new Function('current', 'total', options.delayOn);
-                el.dataset.xtOnDelay = func(current, currents.length).toString();
-                current++;
-              }
-              self.eventOn(el);
-            });
-          }
-        } else {
-          // outside
-          changed = self.checkOff(el);
-          el.classList.add('fade-visible');
-          if (changed) {
-            el.classList.add('fade-scroll');
-            currents.push(el);
-            XtUtil.cancelAnimationFrame.call(window, el.dataset.eventFrame);
-            el.dataset.eventFrame = XtUtil.requestAnimationFrame.call(window, function () {
-              if (options.delayOff) {
-                let func = new Function('current', 'total', options.delayOff);
-                el.dataset.xtOffDelay = func(current, currents.length).toString();
-                current++;
-              }
-              changed = self.eventOff(el);
-            });
-          }
-        }
-        // direction
-        if (changed) {
-          if (scrollInverse) {
-            el.classList.remove('fade-down');
-            el.classList.add('fade-up');
-          } else {
-            el.classList.add('fade-down');
-            el.classList.remove('fade-up');
-          }
-        }
-      }
-    }
-    // save for direction
-    self.scrollTopOld = scrollTop;
-  }
-
-}
-
-// default
-
-XtFade.defaults = {
-  "elements": ".fade",
-  "class": "in",
-  "on": "scroll resize",
-  "min": 0,
-  "max": Infinity,
-  "distance": 0.2,
-  "delayOn": false,
-  "delayOff": false
-};
-
-// export
-
-window.XtFade = XtFade;
-export {XtFade};
-
-//////////////////////
 // XtSticky
 //////////////////////
 
@@ -1557,3 +1403,157 @@ XtSticky.defaults = {
 
 window.XtSticky = XtSticky;
 export {XtSticky};
+
+//////////////////////
+// XtFade
+//////////////////////
+
+class XtFade extends Xt {
+
+  /**
+   * constructor
+   * @param {Node|HTMLElement} object Base node
+   * @param {Object} jsOptions User options
+   * @constructor
+   */
+  constructor(object, jsOptions = {}) {
+    super(object, jsOptions, 'data-xt-fade');
+  }
+
+  //////////////////////
+  // init
+  //////////////////////
+
+  /**
+   * init events
+   */
+  initEvents() {
+    let self = this;
+    let options = self.options;
+    // events
+    if (options.on) {
+      // handler
+      let fadeOffHandler = XtUtil.dataStorage.put(window, 'fadeOffHandler', self.eventOnHandler.bind(self));
+      // event
+      let events = [...options.on.split(' ')];
+      for (let event of events) {
+        window.removeEventListener(event, fadeOffHandler);
+        window.addEventListener(event, fadeOffHandler);
+      }
+      window.addEventListener('on.trigger', fadeOffHandler);
+    }
+    // trigger initial
+    window.dispatchEvent(new Event('on.trigger')); // @TODO call only one time
+  }
+
+  /**
+   * element on handler
+   * @param {Event} e
+   */
+  eventOnHandler(e) {
+    this.eventScroll(this.object);
+  }
+
+  //////////////////////
+  // events
+  //////////////////////
+
+  /**
+   * window scroll
+   */
+  eventScroll() {
+    let self = this;
+    let options = self.options;
+    // vars
+    let current = 0;
+    let currents = [];
+    let scrollInverse = false;
+    let windowHeight = window.innerHeight;
+    let scrollTop = document.documentElement.scrollTop;
+    let scrollTopOld = self.scrollTopOld;
+    // direction
+    if (scrollTop < scrollTopOld) {
+      scrollInverse = true;
+    }
+    // core
+    for (let el of self.elements) {
+      if (el.offsetParent && !el.classList.contains('fade-block')) {
+        // vars
+        let rectElTop = el.offsetParent.getBoundingClientRect().top + el.offsetTop; // we use parents to not include transforms animations
+        let heightEl = parseFloat(getComputedStyle(el).height);
+        // scroll
+        let changed = false;
+        let top = rectElTop + scrollTop;
+        let bottom = top + heightEl;
+        let dist = windowHeight * options.distance;
+        // activation
+        let checkTop = scrollTop + windowHeight >= top + dist;
+        let checkBottom = scrollTop < bottom - dist;
+        if (checkTop && checkBottom) {
+          // inside
+          changed = self.checkOn(el);
+          if (changed) {
+            currents.push(el);
+            XtUtil.cancelAnimationFrame.call(window, el.dataset.eventFrame);
+            el.dataset.eventFrame = XtUtil.requestAnimationFrame.call(window, function () {
+              if (options.delayOn) {
+                let func = new Function('current', 'total', options.delayOn);
+                el.dataset.xtOnDelay = func(current, currents.length).toString();
+                current++;
+              }
+              self.eventOn(el);
+            });
+          }
+        } else {
+          // outside
+          changed = self.checkOff(el);
+          el.classList.add('fade-visible');
+          if (changed) {
+            el.classList.add('fade-scroll');
+            currents.push(el);
+            XtUtil.cancelAnimationFrame.call(window, el.dataset.eventFrame);
+            el.dataset.eventFrame = XtUtil.requestAnimationFrame.call(window, function () {
+              if (options.delayOff) {
+                let func = new Function('current', 'total', options.delayOff);
+                el.dataset.xtOffDelay = func(current, currents.length).toString();
+                current++;
+              }
+              changed = self.eventOff(el);
+            });
+          }
+        }
+        // direction
+        if (changed) {
+          if (scrollInverse) {
+            el.classList.remove('fade-down');
+            el.classList.add('fade-up');
+          } else {
+            el.classList.add('fade-down');
+            el.classList.remove('fade-up');
+          }
+        }
+      }
+    }
+    // save for direction
+    self.scrollTopOld = scrollTop;
+  }
+
+}
+
+// default
+
+XtFade.defaults = {
+  "elements": ".fade",
+  "class": "in",
+  "on": "scroll resize",
+  "min": 0,
+  "max": Infinity,
+  "distance": 0.2,
+  "delayOn": false,
+  "delayOff": false
+};
+
+// export
+
+window.XtFade = XtFade;
+export {XtFade};
