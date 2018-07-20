@@ -135,40 +135,60 @@ class Xt {
   initEvents() {
     let self = this;
     let options = self.options;
-    // on and off
+    // events
     for (let el of this.elements) {
       if (options.on) {
+        // handler
+        el.xtOnHandler = self.eventOnHandler.bind(self).bind(self, el); // multiple bind inverse order arguments
+        // event
         let events = [...options.on.split(' ')];
         for (let event of events) {
-          el.xtUtilOff(event + '.xtend');
-          el.xtUtilOn(event + '.xtend', function (e) {
-            let eventLimit = self.container.querySelectorAll('.event-limit');
-            if (eventLimit.length) {
-              if (XtUtil.checkOutside(e, eventLimit)) {
-                self.eventOn(this);
-              }
-            } else {
-              self.eventOn(this);
-            }
-          });
+          el.removeEventListener(event, el.xtOnHandler);
+          el.addEventListener(event, el.xtOnHandler);
         }
+        el.addEventListener('on.trigger', el.xtOnHandler);
       }
       if (options.off) {
+        // handler
+        el.xtOffHandler = self.eventOffHandler.bind(self).bind(self, el); // multiple bind inverse order arguments
+        // event
         let events = [...options.off.split(' ')];
         for (let event of events) {
-          el.xtUtilOff(event + '.xtend');
-          el.xtUtilOn(event + '.xtend', function (e) {
-            let eventLimit = self.container.querySelectorAll('.event-limit');
-            if (eventLimit.length) {
-              if (XtUtil.checkOutside(e, eventLimit)) {
-                self.eventOff(this);
-              }
-            } else {
-              self.eventOff(this);
-            }
-          });
+          el.removeEventListener(event, el.xtOffHandler);
+          el.addEventListener(event, el.xtOffHandler);
         }
+        el.addEventListener('off.trigger', el.xtOffHandler);
       }
+    }
+  }
+
+  /**
+   * element on handler
+   * @param {Event} e
+   */
+  eventOnHandler(element, e) {
+    let eventLimit = this.container.querySelectorAll('.event-limit');
+    if (eventLimit.length) {
+      if (XtUtil.checkOutside(e, eventLimit)) {
+        this.eventOn(element);
+      }
+    } else {
+      this.eventOn(element);
+    }
+  }
+
+  /**
+   * element off handler
+   * @param {Event} e
+   */
+  eventOffHandler(element, e) {
+    let eventLimit = this.container.querySelectorAll('.event-limit');
+    if (eventLimit.length) {
+      if (XtUtil.checkOutside(e, eventLimit)) {
+        this.eventOff(element);
+      }
+    } else {
+      this.eventOff(element);
     }
   }
 
@@ -392,7 +412,7 @@ class Xt {
         self.specialScrollbarOn();
       }
       // dispatch
-      el.dispatchEvent(new Event('on')); // @TODO events revision
+      el.dispatchEvent(new Event('on'));
     };
     // delay
     for (let el of els) {
@@ -441,7 +461,7 @@ class Xt {
         self.specialCloseOff(el);
       }
       // dispatch
-      el.dispatchEvent(new Event('off')); // @TODO events revision
+      el.dispatchEvent(new Event('off'));
     };
     // delay
     for (let el of els) {
@@ -728,12 +748,11 @@ class Xt {
       let closeElements = el.querySelectorAll(options.closeInside);
       XtUtil.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
-          closeElement.xtUtilOff('click.xtend.' + self.namespace);
-          closeElement.xtUtilOn('click.xtend.' + self.namespace, function (e) {
-            if (XtUtil.checkInside(e, XtUtil.arrSingle(this))) {
-              self.eventOff(single);
-            }
-          });
+          // handler
+          closeElement.placespecialCloseOnHandler = self.specialCloseOnHandler.bind(self).bind(self, closeElement, single); // multiple bind inverse order arguments
+          // event
+          closeElement.removeEventListener('click', closeElement.placespecialCloseOnHandler);
+          closeElement.addEventListener('click', closeElement.placespecialCloseOnHandler, true);
         }
       });
     }
@@ -742,12 +761,11 @@ class Xt {
       let closeElements = document.documentElement.querySelectorAll(options.closeOutside);
       XtUtil.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
-          closeElement.xtUtilOff('click.xtend.' + self.namespace);
-          closeElement.xtUtilOn('click.xtend.' + self.namespace, function (e) {
-            if (XtUtil.checkOutside(e, XtUtil.arrSingle(el))) {
-              self.eventOff(single);
-            }
-          });
+          // handler
+          closeElement.placespecialCloseOffHandler = self.specialCloseOffHandler.bind(self).bind(self, el, single); // multiple bind inverse order arguments
+          // event
+          closeElement.removeEventListener('click', closeElement.placespecialCloseOffHandler);
+          closeElement.addEventListener('click', closeElement.placespecialCloseOffHandler, true);
         }
       });
     }
@@ -764,15 +782,48 @@ class Xt {
     if (options.closeInside) {
       let closeElements = el.querySelectorAll(options.closeInside);
       for (let closeElement of closeElements) {
-        closeElement.xtUtilOff('click.xtend.' + this.namespace);
+        closeElement.removeEventListener('click', closeElement.placespecialCloseOnHandler);
       }
     }
     // closeOutside
     if (options.closeOutside) {
       let closeElements = document.documentElement.querySelectorAll(options.closeOutside);
       for (let closeElement of closeElements) {
-        closeElement.xtUtilOff('click.xtend.' + this.namespace);
+        closeElement.removeEventListener('click', closeElement.placespecialCloseOffHandler);
       }
+    }
+  }
+/*
+    let eventLimit = this.container.querySelectorAll('.event-limit');
+    if (eventLimit.length) {
+      if (XtUtil.checkOutside(e, eventLimit)) {
+        this.eventOn(element);
+      }
+    } else {
+      this.eventOn(element);
+    }*/
+  /**
+   * element on handler
+   * @param {Node|HTMLElement} checkEl
+   * @param {Node|HTMLElement} single
+   * @param {Event} e
+   */
+  specialCloseOnHandler(checkEl, single, e) {
+    console.log(single);
+    if (XtUtil.checkInside(e, XtUtil.arrSingle(checkEl))) {
+      this.eventOff(single);
+    }
+  }
+
+  /**
+   * element off handler
+   * @param {Node|HTMLElement} checkEl
+   * @param {Node|HTMLElement} single
+   * @param {Event} e
+   */
+  specialCloseOffHandler(checkEl, single, e) {
+    if (XtUtil.checkOutside(e, XtUtil.arrSingle(checkEl))) {
+      this.eventOff(single);
     }
   }
 
@@ -1026,16 +1077,26 @@ class XtFade extends Xt {
     let options = self.options;
     // events
     if (options.on) {
+      // handler
+      window.fadeOffHandler = self.eventOnHandler.bind(self);
+      // event
       let events = [...options.on.split(' ')];
       for (let event of events) {
-        window.xtUtilOff(event + '.xtend' + this.namespace);
-        window.xtUtilOn(event + '.xtend' + this.namespace, function (e) {
-          self.eventScroll(self.object);
-        });
+        window.removeEventListener(event, window.fadeOffHandler);
+        window.addEventListener(event, window.fadeOffHandler);
       }
+      window.addEventListener('on.trigger', window.fadeOffHandler);
     }
-    // trigger initial // @TODO events revision
-    self.eventScroll(self.object);
+    // trigger initial
+    window.dispatchEvent(new Event('on.trigger')); // @TODO call only one time
+  }
+
+  /**
+   * element on handler
+   * @param {Event} e
+   */
+  eventOnHandler(e) {
+    this.eventScroll(this.object);
   }
 
   //////////////////////
@@ -1217,16 +1278,26 @@ class XtSticky extends Xt {
     let options = self.options;
     // events
     if (options.on) {
+      // handler
+      window.stickyOffHandler = self.eventOnHandler.bind(self);
+      // event
       let events = [...options.on.split(' ')];
       for (let event of events) {
-        window.xtUtilOff(event + '.xtend' + this.namespace);
-        window.xtUtilOn(event + '.xtend' + this.namespace, function (e) {
-          self.eventScroll(self.object);
-        });
+        window.removeEventListener(event, window.stickyOffHandler);
+        window.addEventListener(event, window.stickyOffHandler);
       }
+      window.addEventListener('on.trigger', window.stickyOffHandler);
     }
     // trigger initial // @TODO events revision
-    self.eventScroll(self.object);
+    window.dispatchEvent(new Event('on.trigger')); // @TODO call only one time
+  }
+
+  /**
+   * element on handler
+   * @param {Event} e
+   */
+  eventOnHandler(e) {
+    this.eventScroll(this.object);
   }
 
   //////////////////////
