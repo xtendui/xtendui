@@ -806,7 +806,8 @@ document.querySelectorAll('html')[0].classList.add('preloaded');
 /* put any selector here you want to preload
 .main-container {
   visibility: hidden;
-  html.preloaded & {
+  html.preloaded &,
+  html.preload-fade & {
     visibility: visible;
   }
 }
