@@ -184,6 +184,7 @@ class Xt {
   eventOffHandler(element, e) {
     let eventLimit = this.container.querySelectorAll('.event-limit');
     if (eventLimit.length) {
+      console.log(XtUtil.checkOutside(e, eventLimit));
       if (XtUtil.checkOutside(e, eventLimit)) {
         this.eventOff(element);
       }
@@ -749,10 +750,10 @@ class Xt {
       XtUtil.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
           // handler
-          closeElement.placespecialCloseOnHandler = self.specialCloseOnHandler.bind(self).bind(self, closeElement, single); // multiple bind inverse order arguments
+          el.xtSpecialCloseOnHandler = self.specialCloseOnHandler.bind(self).bind(self, closeElement, single); // multiple bind inverse order arguments
           // event
-          closeElement.removeEventListener('click', closeElement.placespecialCloseOnHandler);
-          closeElement.addEventListener('click', closeElement.placespecialCloseOnHandler, true);
+          closeElement.removeEventListener('click', el.xtSpecialCloseOnHandler, true);
+          closeElement.addEventListener('click', el.xtSpecialCloseOnHandler, true);
         }
       });
     }
@@ -762,10 +763,10 @@ class Xt {
       XtUtil.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
           // handler
-          closeElement.placespecialCloseOffHandler = self.specialCloseOffHandler.bind(self).bind(self, el, single); // multiple bind inverse order arguments
+          el.xtSpecialCloseOffHandler = self.specialCloseOffHandler.bind(self).bind(self, el, single); // multiple bind inverse order arguments
           // event
-          closeElement.removeEventListener('click', closeElement.placespecialCloseOffHandler);
-          closeElement.addEventListener('click', closeElement.placespecialCloseOffHandler, true);
+          closeElement.removeEventListener('click', el.xtSpecialCloseOffHandler);
+          closeElement.addEventListener('click', el.xtSpecialCloseOffHandler);
         }
       });
     }
@@ -782,26 +783,18 @@ class Xt {
     if (options.closeInside) {
       let closeElements = el.querySelectorAll(options.closeInside);
       for (let closeElement of closeElements) {
-        closeElement.removeEventListener('click', closeElement.placespecialCloseOnHandler);
+        closeElement.removeEventListener('click', closeElement.xtSpecialCloseOnHandler);
       }
     }
     // closeOutside
     if (options.closeOutside) {
       let closeElements = document.documentElement.querySelectorAll(options.closeOutside);
       for (let closeElement of closeElements) {
-        closeElement.removeEventListener('click', closeElement.placespecialCloseOffHandler);
+        closeElement.removeEventListener('click', el.xtSpecialCloseOffHandler);
       }
     }
   }
-/*
-    let eventLimit = this.container.querySelectorAll('.event-limit');
-    if (eventLimit.length) {
-      if (XtUtil.checkOutside(e, eventLimit)) {
-        this.eventOn(element);
-      }
-    } else {
-      this.eventOn(element);
-    }*/
+
   /**
    * element on handler
    * @param {Node|HTMLElement} checkEl
@@ -809,7 +802,6 @@ class Xt {
    * @param {Event} e
    */
   specialCloseOnHandler(checkEl, single, e) {
-    console.log(single);
     if (XtUtil.checkInside(e, XtUtil.arrSingle(checkEl))) {
       this.eventOff(single);
     }
@@ -822,6 +814,7 @@ class Xt {
    * @param {Event} e
    */
   specialCloseOffHandler(checkEl, single, e) {
+    console.log(checkEl, single, e);
     if (XtUtil.checkOutside(e, XtUtil.arrSingle(checkEl))) {
       this.eventOff(single);
     }

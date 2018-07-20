@@ -215,32 +215,6 @@ XtUtil.getElementIndex = function (node) {
 };
 */
 
-/**
- * Events with namespace
- * element.xtUtilOn('click.namespace', function (e) {});
- * element.xtUtilOff('click.namespace');
- * https://stackoverflow.com/questions/21817397/event-handler-namespace-in-vanilla-javascript
- */
-XtUtil.xtUtilOn = function (event, cb, opts) {
-  if (!this.namespaces) {
-    this.namespaces = {}; // save the namespaces on the DOM element itself
-  }
-  this.namespaces[event] = cb;
-  let options = opts || false;
-  this.addEventListener(event.split('.')[0], cb, options);
-  return this;
-};
-XtUtil.xtUtilOff = function (event) {
-  if (this.namespaces) {
-    this.removeEventListener(event.split('.')[0], this.namespaces[event]);
-    delete this.namespaces[event];
-  }
-  return this;
-};
-
-window.xtUtilOn = Element.prototype.xtUtilOn = XtUtil.xtUtilOn;
-window.xtUtilOff = Element.prototype.xtUtilOff = XtUtil.xtUtilOff;
-
 //////////////////////
 // api
 //////////////////////
