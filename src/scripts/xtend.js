@@ -1128,7 +1128,7 @@ class XtSticky extends Xt {
       }
       window.addEventListener('on.trigger', stickyOffHandler);
     }
-    // trigger initial // @TODO events revision
+    // trigger initial
     window.dispatchEvent(new Event('on.trigger')); // @TODO call only one time
   }
 
