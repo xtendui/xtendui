@@ -1,0 +1,13 @@
+@import (reference) "../../../../../dist/xtend.less";
+
+[data-xt-sticky] {
+  .xt-sticky();
+}
+
+#sticky-top {
+  .xt-sticky(@mode:'fixed');
+}
+
+#sticky-middle {
+  .xt-sticky(@mode:'absolute');
+}

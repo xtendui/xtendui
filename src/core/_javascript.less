@@ -84,12 +84,7 @@ html.xt-scrollbar {
  * @param {String} @mode Starting mode be 'absolute' or 'fixed' or 'fixed-always'
  */
 .xt-sticky(@mode:none) {
-  .show-sticky {
-    display: none;
-  }
-  .hide-sticky {
-    display: block;
-  }
+  // defaults
   &.xt-clone {
     position: relative !important;
     visibility: hidden !important;
@@ -130,6 +125,12 @@ html.xt-scrollbar {
     }
   }
   // activation
+  .show-sticky {
+    display: none;
+  }
+  .hide-sticky {
+    display: block;
+  }
   &:not(.xt-clone).active {
     position: fixed !important;
     z-index: @index-sticky;
