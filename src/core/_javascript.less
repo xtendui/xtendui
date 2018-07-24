@@ -93,21 +93,21 @@ html.xt-scrollbar {
   &.xt-clone {
     position: relative !important;
     visibility: hidden !important;
+  }
+  &:not(.xt-clone):not(.active) {
+    position: relative;
     top: 0 !important;
   }
   // normal mode
   & when (@mode = none) {
     &.xt-clone:not(.active) {
       position: absolute !important;
-    }
-    &:not(.xt-clone):not(.active) {
-      position: relative;
       top: 0 !important;
     }
   }
   // absolute mode
   & when (@mode = 'absolute') {
-    .xt-container > &:not(.xt-clone) {
+    .xt-container > &:not(.xt-clone):not(.active) {
       position: absolute;
       z-index: @index-sticky;
       width: 100%;
@@ -115,7 +115,7 @@ html.xt-scrollbar {
   }
   // fixed mode
   & when (@mode = 'fixed') {
-    .xt-container > &:not(.xt-clone) {
+    .xt-container > &:not(.xt-clone):not(.active) {
       position: fixed;
       z-index: @index-sticky;
       width: 100%;
@@ -123,7 +123,7 @@ html.xt-scrollbar {
   }
   // fixed-always mode
   & when (@mode = 'fixed-always') {
-    &:not(.xt-clone) {
+    &:not(.xt-clone):not(.active) {
       position: fixed;
       z-index: @index-sticky;
       width: 100%;
