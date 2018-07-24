@@ -758,7 +758,7 @@ class Xt {
     }
     // closeOutside
     if (options.closeOutside) {
-      let closeElements = document.documentElement.querySelectorAll(options.closeOutside);
+      let closeElements = document.querySelectorAll(options.closeOutside);
       XtUtil.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
           // handler
@@ -789,7 +789,7 @@ class Xt {
     }
     // closeOutside
     if (options.closeOutside) {
-      let closeElements = document.documentElement.querySelectorAll(options.closeOutside);
+      let closeElements = document.querySelectorAll(options.closeOutside);
       for (let closeElement of closeElements) {
         let specialCloseOffHandler = XtUtil.dataStorage.get(el, 'specialCloseOffHandler');
         closeElement.removeEventListener('click', specialCloseOffHandler);
@@ -832,7 +832,7 @@ class Xt {
       let elements;
       let width = XtUtil.scrollbarWidth();
       // check fixed
-      elements = document.documentElement.querySelectorAll('.xt-check-fixed > *');
+      elements = document.querySelectorAll('.xt-check-fixed > *');
       for (let element of elements) {
         let style = getComputedStyle(element);
         if (style.position === 'fixed') {
@@ -842,7 +842,7 @@ class Xt {
         }
       }
       // fixed
-      elements = document.documentElement.querySelectorAll('.xt-fixed');
+      elements = document.querySelectorAll('.xt-fixed');
       for (let element of elements) {
         element.style.paddingRight = '';
         if (self.normalizeWidth(element.clientWidth) === '') {
@@ -859,7 +859,7 @@ class Xt {
         }
       }
       // backdrop
-      elements = document.documentElement.querySelectorAll('.xt-backdrop');
+      elements = document.querySelectorAll('.xt-backdrop');
       for (let element of elements) {
         element.style.right = width + 'px';
       }
@@ -884,7 +884,7 @@ class Xt {
       container.style.paddingRight = '';
       container.classList.remove('xt-scrollbar');
       // fixed
-      elements = document.documentElement.querySelectorAll('.xt-fixed');
+      elements = document.querySelectorAll('.xt-fixed');
       for (let element of elements) {
         element.classList.add('no-transition');
         XtUtil.requestAnimationFrame.call(window, function () {
@@ -895,7 +895,7 @@ class Xt {
         });
       }
       // backdrop
-      elements = document.documentElement.querySelectorAll('.xt-backdrop');
+      elements = document.querySelectorAll('.xt-backdrop');
       for (let element of elements) {
         element.style.right = '';
       }
@@ -1240,10 +1240,6 @@ class XtSticky extends Xt {
     // anim before hide
     if (!el.classList.contains('active')) {
       anim = false;
-      // @TODO fix absolute animation when not .active
-      // if (rectContainerTop > scrollTop) {
-      // add = scrollTop - rectElTop;
-      // }
     }
     // addTop after save
     if (addTop && !el.classList.contains('active')) {
@@ -1328,22 +1324,23 @@ class XtSticky extends Xt {
         let found = false;
         val = 0;
         for (let el of elements) {
-          let style = getComputedStyle(el);
-          if (style.display !== 'none') {
-            found = true;
-            let addSticky = parseFloat(el.dataset.xtAddSticky);
-            if (addSticky) { // if sticky-hide get real add
+          let addSticky = parseFloat(el.dataset.xtAddSticky);
+          if (addSticky) { // if sticky-hide get real add
+            let style = getComputedStyle(el);
+            if (style.display !== 'none') {
               val += addSticky;
-            } else {
-              let rect = el.getBoundingClientRect();
-              val += rect.top;
+              found = true;
             }
-          }
-          if (found) {
-            val += scrollTop;
           } else {
-            val = null;
+            let rect = el.getBoundingClientRect();
+            val += rect.top;
+            found = true;
           }
+        }
+        if (found) {
+          val += scrollTop;
+        } else {
+          val = null;
         }
       }
     }

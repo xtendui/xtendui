@@ -91,25 +91,22 @@ html.xt-scrollbar {
     display: block;
   }
   &.xt-clone {
+    position: relative !important;
     visibility: hidden !important;
+    top: 0 !important;
   }
   // normal mode
   & when (@mode = none) {
-    &.xt-clone {
+    &.xt-clone:not(.active) {
       position: absolute !important;
-      &.active {
-        position: relative !important;
-      }
     }
-    &:not(.xt-clone) {
+    &:not(.xt-clone):not(.active) {
       position: relative;
+      top: 0 !important;
     }
   }
   // absolute mode
   & when (@mode = 'absolute') {
-    &.xt-clone {
-      position: relative !important;
-    }
     .xt-container > &:not(.xt-clone) {
       position: absolute;
       z-index: @index-sticky;
@@ -118,9 +115,6 @@ html.xt-scrollbar {
   }
   // fixed mode
   & when (@mode = 'fixed') {
-    &.xt-clone {
-      position: relative !important;
-    }
     .xt-container > &:not(.xt-clone) {
       position: fixed;
       z-index: @index-sticky;
@@ -129,9 +123,6 @@ html.xt-scrollbar {
   }
   // fixed-always mode
   & when (@mode = 'fixed-always') {
-    &.xt-clone {
-      position: relative !important;
-    }
     &:not(.xt-clone) {
       position: fixed;
       z-index: @index-sticky;

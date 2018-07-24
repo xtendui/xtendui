@@ -277,7 +277,8 @@ const populateInline = function (item, id) {
 // populateIframe
 
 window.initIframe = function(name) {
-  let iframe = document.documentElement.querySelectorAll('[name="' + name + '"')[0];
+  let src = 'iframe[name="' + name + '"]';
+  let iframe = document.querySelectorAll(src)[0];
   iframe.classList.add('show');
   let item = XtUtil.parents(iframe, '.demo-item')[0];
   if (!item.classList.contains('populated')) {
@@ -288,7 +289,8 @@ window.initIframe = function(name) {
 }
 
 window.resizeIframe = function(name) {
-  let iframe = document.querySelectorAll('[name="' + name + '"')[0];
+  let src = 'iframe[name="' + name + '"]';
+  let iframe = document.querySelectorAll(src)[0];
   if (iframe) {
     if (!iframe.contentWindow.document.body.classList.contains('full')) {
       let target = iframe.contentWindow.document.body.querySelectorAll('#body-outer')[0];
