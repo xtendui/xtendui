@@ -1162,6 +1162,7 @@ class XtSticky extends Xt {
     let el = self.object;
     let rectElTop = el.getBoundingClientRect().top;
     let heightEl = parseFloat(getComputedStyle(el).height);
+    let heightTarget = parseFloat(getComputedStyle(self.targets[0]).height);
     let rectContainerTop = self.container[0].getBoundingClientRect().top;
     let scrollTop = document.documentElement.scrollTop;
     let scrollTopOld = self.scrollTopOld;
@@ -1177,22 +1178,22 @@ class XtSticky extends Xt {
     // hide
     if (options.hide === 'down') {
       if (!scrollInverse) {
-        addHide = heightEl;
+        addHide = heightTarget;
       }
     }
     if (options.hide === 'up') {
       if (scrollInverse) {
-        addHide = heightEl;
+        addHide = heightTarget;
       }
     }
     // scroll
     let top = self.eventScrollPos(options.limit['top'] || self.targets, scrollTop, rectContainerTop);
     let bottom = self.eventScrollPos(options.limit['bottom'], scrollTop, Infinity);
     if (options.position === 'top') {
-      bottom -= heightEl;
+      bottom -= heightTarget;
     }
     if (options.position === 'bottom') {
-      top -= windowHeight - heightEl;
+      top -= windowHeight - heightTarget;
       bottom = Math.abs(scrollHeight - windowHeight - bottom);
     }
     // contain and add
@@ -1237,25 +1238,23 @@ class XtSticky extends Xt {
       // outside
       self.eventOff(element);
     }
-    // anim before hide
-    if (!el.classList.contains('active')) {
-      anim = false;
-    }
-    // addTop after save
-    if (addTop && !el.classList.contains('active')) {
-      add -= rectContainerTop;
-    }
-    // hide after save
-    if (hide) {
-      //anim = true;
-      add = -addHide;
-      if (!el.classList.contains('sticky-hide')) {
-        el.classList.add('sticky-hide');
+    // after active
+    if (el.classList.contains('active')) {
+      // hide
+      if (hide) {
+        add = - heightEl;
+        if (!el.classList.contains('sticky-hide')) {
+          el.classList.add('sticky-hide');
+        }
+      } else {
+        if (el.classList.contains('sticky-hide')) {
+          el.classList.remove('sticky-hide');
+        }
       }
     } else {
-      if (el.classList.contains('sticky-hide')) {
-        el.classList.remove('sticky-hide');
-      }
+      // reset
+      add = 0;
+      anim = false;
     }
     // anim
     if (anim && scrollTopOld !== undefined) {

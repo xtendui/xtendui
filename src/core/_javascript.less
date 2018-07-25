@@ -83,21 +83,20 @@ html.xt-scrollbar {
  * .xt-sticky()
  * @param {String} @mode Starting mode be 'absolute' or 'fixed' or 'fixed-always'
  */
-.xt-sticky(@mode:none) {
+.xt-sticky(@mode: none) {
   // defaults
   &.xt-clone {
-    position: relative !important;
-    visibility: hidden !important;
+    position: relative;
+    visibility: hidden;
   }
   &:not(.xt-clone):not(.active) {
     position: relative;
-    top: 0 !important;
   }
   // normal mode
   & when (@mode = none) {
     &.xt-clone:not(.active) {
-      position: absolute !important;
-      top: 0 !important;
+      position: absolute;
+      top: 0;
     }
   }
   // absolute mode
@@ -124,7 +123,7 @@ html.xt-scrollbar {
       width: 100%;
     }
   }
-  // activation
+  // showhide
   .show-sticky {
     display: none;
   }
@@ -132,15 +131,18 @@ html.xt-scrollbar {
     display: block;
   }
   &:not(.xt-clone).active {
-    position: fixed !important;
-    z-index: @index-sticky;
-    width: 100%;
     .show-sticky {
       display: block;
     }
     .hide-sticky {
       display: none;
     }
+  }
+  // activation
+  &:not(.xt-clone).active {
+    position: fixed;
+    z-index: @index-sticky;
+    width: 100%;
   }
 }
 

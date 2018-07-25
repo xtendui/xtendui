@@ -122,8 +122,8 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
 <p>The default <strong>limit</strong> for <code>"limit": {"top": Element}</code> is the element's own position, for
   <code>"limit": {"bottom": Element}</code> is Infinity.</p>
 
-<p>You can optionally set in the less mixin a mode <strong>fixed</strong> or <strong>absolute</strong>, to have that
-  position when not sticky.</p>
+<p>You can optionally set in the less mixin a mode <strong>absolute</strong> or <strong>fixed</strong> or <strong>fixed-always</strong>,
+  to have that position when the sticky is not activated.</p>
 
 <div class="demo">
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-option-position.html"
@@ -138,16 +138,17 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
       <code>"limit": {"top": Element}</code> <code>"limit": {"bottom": Element}</code>.
     </div>
   </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-mode-fixed.html"
-       data-name="fixed">
-    <div class="demo-text">
-      Use <code>"mode": "fixed"</code> in the less to have fixed position when not sticky.
-    </div>
-  </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-mode-absolute.html"
        data-name="absolute">
     <div class="demo-text">
-      Use <code>"mode": "absolute"</code> in the less mixin to have absolute position when not sticky.
+      Use <code>@mode: 'absolute'</code> in the less mixin to have absolute position when not sticky.
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-mode-fixed.html"
+       data-name="fixed">
+    <div class="demo-text">
+      Use <code>@mode: 'fixed'</code> or <code>@mode: 'fixed-always'</code> in the less to have fixed position when not
+      sticky.
     </div>
   </div>
 </div>
@@ -177,16 +178,11 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
   </div>
 </div>
 
-<h3>Hide and content</h3>
+<h3>Hide</h3>
 
-<p>To hide the sticky when scrolling down or up use <code>"hide": "down"</code> or <code>"hide": "up"</code>. Here's a complex
+<p>To hide the sticky when scrolling down or up use <code>"hide": "down"</code> or <code>"hide": "up"</code>. Here's a
+  complex
   example with hide behaviour.</p>
-
-<p>To show or hide content when sticky activates use <code>.show-sticky</code> or <code>.hide-sticky</code>.</p>
-
-<div class="alert alert-primary">
-  The height of the sticky object must be the same when showing or hiding content.
-</div>
 
 <div class="demo">
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-hide.html" data-name="hide">
@@ -194,7 +190,27 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
       <code>"hide": "down"</code> <code>"hide": "up"</code>.
     </div>
   </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-change.html" data-name="content">
+</div>
+
+<h3>Show and hide</h3>
+
+<p>To show or hide content when sticky activates use <code>.show-sticky</code> or <code>.hide-sticky</code>.</p>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-showhide-top.html"
+       data-name="top">
+    <div class="demo-text">
+      <code>"contain": {"top": Element}</code>.
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-showhide-bottom.html"
+       data-name="bottom">
+    <div class="demo-text">
+      <code>"contain": {"bottom": Element}</code>.
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-showhide-hide.html"
+       data-name="hide">
     <div class="demo-text">
       <code>.show-sticky</code> <code>.hide-sticky</code>.
     </div>
