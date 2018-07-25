@@ -167,46 +167,8 @@ class Xt {
   }
 
   /**
-   * set automatic change
-   * @param {Boolean} instant
-   */
-  auto(instant = false) {
-    let self = this;
-    let options = self.options;
-    // auto
-    let time = !instant ? parseFloat(options.auto) : 0;
-    clearInterval(this.autoInterval);
-    clearTimeout(this.autoPauseTimeout);
-    if (time !== Infinity) {
-      self.autoInterval = setInterval(function () {
-        self.autoCurrent = self.autoCurrent !== undefined ? self.autoCurrent + 1 : 0;
-        self.autoCurrent = self.autoCurrent >= self.elements.length ? 0 : self.autoCurrent;
-        self.eventOn(self.elements[self.autoCurrent]);
-      }, time);
-    }
-  }
-
-  /**
-   * set automatic pause change
-   * @param {Boolean} instant
-   */
-  autoPause(instant = false) {
-    let self = this;
-    let options = self.options;
-    // autoPause
-    let time = !instant ? parseFloat(options.autoPause) : 0;
-    clearInterval(this.autoInterval);
-    clearTimeout(this.autoPauseTimeout);
-    if (time !== Infinity) {
-      self.autoPauseTimeout = setTimeout( function() {
-        self.auto(true);
-        self.auto();
-      }, time);
-    }
-  }
-
-  /**
    * element on handler
+   * @param {Node|HTMLElement} element
    * @param {Event} e
    */
   eventOnHandler(element, e) {
@@ -228,6 +190,7 @@ class Xt {
 
   /**
    * element off handler
+   * @param {Node|HTMLElement} element
    * @param {Event} e
    */
   eventOffHandler(element, e) {
@@ -238,6 +201,45 @@ class Xt {
       }
     } else {
       this.eventOff(element);
+    }
+  }
+
+  /**
+   * set auto change
+   * @param {Boolean} instant
+   */
+  auto(instant = false) {
+    let self = this;
+    let options = self.options;
+    // auto
+    let time = !instant ? parseFloat(options.auto) : 0;
+    clearInterval(this.autoInterval);
+    clearTimeout(this.autoPauseTimeout);
+    if (time !== Infinity) {
+      self.autoInterval = setInterval(function () {
+        self.autoCurrent = self.autoCurrent !== undefined ? self.autoCurrent + 1 : 0;
+        self.autoCurrent = self.autoCurrent >= self.elements.length ? 0 : self.autoCurrent;
+        self.eventOn(self.elements[self.autoCurrent]);
+      }, time);
+    }
+  }
+
+  /**
+   * set autoPause change
+   * @param {Boolean} instant
+   */
+  autoPause(instant = false) {
+    let self = this;
+    let options = self.options;
+    // autoPause
+    let time = !instant ? parseFloat(options.autoPause) : 0;
+    clearInterval(this.autoInterval);
+    clearTimeout(this.autoPauseTimeout);
+    if (time !== Infinity) {
+      self.autoPauseTimeout = setTimeout( function() {
+        self.auto(true);
+        self.auto();
+      }, time);
     }
   }
 
