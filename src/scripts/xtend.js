@@ -112,9 +112,9 @@ class Xt {
     XtUtil.requestAnimationFrame.call(window, function () {
       if (self.elements.length) {
         // activate options.class
-        let classes = self.options.classes;
         for (let el of self.elements) {
-          if (el.classList.contains(...classes)) {
+          if (el.classList.contains(...options.classes)) {
+            el.classList.remove(...options.classes); // remove to activate also targets
             self.eventOn(el);
           }
         }
@@ -160,6 +160,49 @@ class Xt {
         el.addEventListener('off.trigger', xtOffHandler);
       }
     }
+    // auto
+    if (options.auto) {
+      this.auto();
+    }
+  }
+
+  /**
+   * set automatic change
+   * @param {Boolean} instant
+   */
+  auto(instant = false) {
+    let self = this;
+    let options = self.options;
+    // auto
+    let time = !instant ? parseFloat(options.auto) : 0;
+    clearInterval(this.autoInterval);
+    clearTimeout(this.autoPauseTimeout);
+    if (time !== Infinity) {
+      self.autoInterval = setInterval(function () {
+        self.autoCurrent = self.autoCurrent !== undefined ? self.autoCurrent + 1 : 0;
+        self.autoCurrent = self.autoCurrent >= self.elements.length ? 0 : self.autoCurrent;
+        self.eventOn(self.elements[self.autoCurrent]);
+      }, time);
+    }
+  }
+
+  /**
+   * set automatic pause change
+   * @param {Boolean} instant
+   */
+  autoPause(instant = false) {
+    let self = this;
+    let options = self.options;
+    // autoPause
+    let time = !instant ? parseFloat(options.autoPause) : 0;
+    clearInterval(this.autoInterval);
+    clearTimeout(this.autoPauseTimeout);
+    if (time !== Infinity) {
+      self.autoPauseTimeout = setTimeout( function() {
+        self.auto(true);
+        self.auto();
+      }, time);
+    }
   }
 
   /**
@@ -174,6 +217,12 @@ class Xt {
       }
     } else {
       this.eventOn(element);
+    }
+    // auto
+    if (this.options.autoPause) {
+      this.autoPause();
+    } else if (this.options.auto) {
+      this.auto();
     }
   }
 
@@ -355,6 +404,17 @@ class Xt {
           self.activationOn(additional, fElements, 'additional');
         },
       };
+      // set autoCurrent
+      if (options.auto) {
+        var index = 0;
+        for (let [i, el] of self.elements.entries()) {
+          if (el === element) {
+            index = i;
+            break;
+          }
+        }
+        self.autoCurrent = index;
+      }
       // if currents > max
       let currents = this.getCurrents();
       if (currents.length > options.max) {
@@ -365,6 +425,7 @@ class Xt {
         activationDelay.additional();
       }
     } else if (options.toggle) {
+      // toggle
       this.eventOff(element);
     }
   }
@@ -372,7 +433,7 @@ class Xt {
   /**
    * element off
    * @param {Node|HTMLElement} element To be deactivated
-   * @param {Number} activationDelay Delay in milliseconds
+   * @param {Object} activationDelay Object with delayed activations
    */
   eventOff(element, activationDelay = null) {
     // deactivate
@@ -437,7 +498,7 @@ class Xt {
    * @param {NodeList|Array} els Elements to be deactivated
    * @param {Object} fElements Additional elements
    * @param {String} type Type of elements
-   * @param {Number} activationDelay Delay in milliseconds
+   * @param {Object} activationDelay Object with delayed activations
    */
   activationOff(els, fElements, type, activationDelay) {
     let self = this;
@@ -513,7 +574,7 @@ class Xt {
    * element off animation
    * @param {Node|HTMLElement} el Element to be animated
    * @param {String} type Type of element
-   * @param {Number} activationDelay Delay in milliseconds
+   * @param {Object} activationDelay Object with delayed activations
    */
   activationOffAnimate(el, type, activationDelay) {
     let self = this;
