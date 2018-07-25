@@ -592,7 +592,10 @@ description: Many possible behaviour, interactions and animations are possible w
 <p>You can set automatic activation with <code>"auto": Milliseconds</code> and <code>"autoPause": Milliseconds</code> on
   user interaction. At the end it automatically loops.</p>
 
-<p>Use <code>"autoPause": "Infinity"</code> for stopping on interaction.</p>
+<p>Use <code>"autoPause": "stop"</code> for stopping on interaction.</p>
+
+<p>Use <code>"autoAlways": true</code> to execute auto always, by default it only execute auto if the initialized
+  selector is visible in the DOM.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="auto">
@@ -663,7 +666,7 @@ description: Many possible behaviour, interactions and animations are possible w
   </div>
   <div class="demo-item demo-preview" data-name="complex">
     <div class="demo-source" data-lang="html">
-      <div data-xt-toggle='{"min": 1, "max": 2, "auto": 2000, "autoPause": "Infinity"}'>
+      <div data-xt-toggle='{"min": 1, "max": 2, "auto": 2000, "autoPause": "stop"}'>
         <button type="button" class="btn btn-primary-empty">
           Toggle 0
         </button>

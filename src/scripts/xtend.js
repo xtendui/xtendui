@@ -212,16 +212,17 @@ class Xt {
     let self = this;
     let options = self.options;
     // auto
-    let time = !instant ? parseFloat(options.auto) : 0;
+    let time = !instant ? options.auto : 0;
     clearInterval(this.autoInterval);
     clearTimeout(this.autoPauseTimeout);
-    if (time !== Infinity) {
-      self.autoInterval = setInterval(function () {
-        self.autoCurrent = self.autoCurrent !== undefined ? self.autoCurrent + 1 : 0;
-        self.autoCurrent = self.autoCurrent >= self.elements.length ? 0 : self.autoCurrent;
-        self.eventOn(self.elements[self.autoCurrent]);
-      }, time);
-    }
+    self.autoInterval = setInterval(function () {
+      if (!options.autoAlways && self.object.offsetParent === null) { // if not :visible don't change
+        return false;
+      }
+      self.autoCurrent = self.autoCurrent !== undefined ? self.autoCurrent + 1 : 0;
+      self.autoCurrent = self.autoCurrent >= self.elements.length ? 0 : self.autoCurrent;
+      self.eventOn(self.elements[self.autoCurrent]);
+    }, time);
   }
 
   /**
@@ -232,10 +233,10 @@ class Xt {
     let self = this;
     let options = self.options;
     // autoPause
-    let time = !instant ? parseFloat(options.autoPause) : 0;
+    let time = !instant ? options.autoPause : 0;
     clearInterval(this.autoInterval);
     clearTimeout(this.autoPauseTimeout);
-    if (time !== Infinity) {
+    if (time !== 'stop') {
       self.autoPauseTimeout = setTimeout( function() {
         self.auto(true);
         self.auto();
@@ -408,7 +409,7 @@ class Xt {
       };
       // set autoCurrent
       if (options.auto) {
-        var index = 0;
+        let index = 0;
         for (let [i, el] of self.elements.entries()) {
           if (el === element) {
             index = i;
@@ -984,7 +985,11 @@ class Xt {
 
 // default
 
-Xt.defaults = {};
+Xt.defaults = {
+  "auto": false,
+  "autoPause": false,
+  "autoAlways": false
+};
 
 // export
 
