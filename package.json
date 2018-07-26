@@ -19,10 +19,10 @@
     "build": "gulp build",
     "watch": "gulp watch",
     "serve": "bundle exec jekyll serve",
-    "version": "npm run build && git add .",
+    "deploy": "gh-pages -d docs",
+    "version": "npm run build && npm deploy && git add .",
     "postversion": "git push && git push --tags && npm publish"
   },
-  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -30,6 +30,7 @@
     "babelify": "^8.0.0",
     "browserify": "^16.1.1",
     "fancy-log": "^1.3.2",
+    "gh-pages": "^1.2.0",
     "gulp": "^4.0.0",
     "gulp-browserify": "^0.5.1",
     "gulp-clean": "^0.4.0",
