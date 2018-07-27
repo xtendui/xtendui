@@ -77,10 +77,11 @@
 .input-special, input[type="checkbox"], input[type="radio"] {
   display: block;
   float: left;
-  & + .label-control {
+  & ~ .label-control {
     .label-special();
   }
 }
+
 .label-special {
   display: block;
   overflow: hidden;

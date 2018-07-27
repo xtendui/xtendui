@@ -218,6 +218,70 @@ legend {
   text-transform: none;
 }
 
+// design
+
+.checkradio {
+  input[type="checkbox"],
+  input[type="radio"] {
+    & ~ .label-control {
+      padding-left: 3rem;
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: .25rem;
+        left: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: @border-radius;
+      }
+      &::before {
+        .user-select-none();
+        pointer-events: none;
+        background-color: @grey-250;
+        border: 1px solid @grey-250;
+      }
+      &::after {
+        color: @white;
+        font-size: 1.5rem;
+      }
+    }
+    // activation
+    &:checked ~ .label-control {
+      &::before {
+        background-color: @primary;
+      }
+    }
+  }
+}
+
+.checkradio {
+  input[type="checkbox"] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    // activation
+    &:checked ~ .label-control {
+      &::after {
+        .xt-icon();
+        content: @icon-check;
+      }
+    }
+  }
+  input[type="radio"] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    // activation
+    &:checked ~ .label-control {
+      &::after {
+        .xt-icon();
+        content: @icon-circle;
+      }
+    }
+  }
+}
+
 //////////////////////
 // input-group
 //////////////////////
