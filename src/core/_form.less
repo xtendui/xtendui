@@ -41,6 +41,7 @@
 
 .label-control {
   .display(block);
+  .user-select-none();
 }
 
 //////////////////////
@@ -58,14 +59,12 @@
   select& {
     .padding(right, @select-space-size * 2) !important;
     white-space: normal;
-    background-position:
-      calc(~'100% - ' @select-space-size / 2) 50%,
-      calc(~'100% - (' @select-space-size / 2 ~') + ' @select-arrow-size) 50%,
-      100% 0;
-    background-size:
-      @select-arrow-size @select-arrow-size,
-      @select-arrow-size @select-arrow-size,
-      @select-space-size 100%;
+    background-position: calc(~'100% - '@select-space-size / 2) 50%,
+    calc(~'100% - ('@select-space-size / 2~') + '@select-arrow-size) 50%,
+    100% 0;
+    background-size: @select-arrow-size @select-arrow-size,
+    @select-arrow-size @select-arrow-size,
+    @select-space-size 100%;
     background-repeat: no-repeat;
   }
 }
@@ -85,6 +84,41 @@
 .label-special {
   display: block;
   overflow: hidden;
+}
+
+// check and radio design
+
+input[type="checkbox"]:not(.unstyled),
+input[type="radio"]:not(.unstyled) {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  & ~ .label-control {
+    &::before,
+    &::after {
+      content: '';
+      position: absolute !important;
+      top: 0;
+      left: 0;
+    }
+    &::before {
+      pointer-events: none;
+    }
+    &::after {
+      .display(flex) !important;
+      .align-items-center();
+      .justify-content-center();
+    }
+  }
+  // disabled
+  &:disabled ~ .label-control {
+    &::before {
+      .disabled();
+    }
+    &::after {
+      .disabled();
+    }
+  }
 }
 
 //////////////////////

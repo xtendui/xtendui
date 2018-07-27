@@ -10,105 +10,141 @@ description: Lorem ipsum
 
 <h3>Usage</h3>
 
-<p>Use this markup to create a checkbox or radio <strong>Unstyled</strong>.</p>
+<p>Use this markup to create a checkbox or radio.</p>
 
 <pre>
   <code class="html">
     <div class="form-group">
-      <input type="checkbox" id="checkbox-id">
-      <label class="label-control" for="checkbox-id">
+      <input type="checkbox" id="checkbox-0">
+      <label class="label-control" for="checkbox-0">
         <!-- content -->
       </label>
     </div>
 
     <div class="form-group">
-      <input type="radio" id="radio-id">
-      <label class="label-control" for="radio-id">
+      <input type="radio" id="radio-0" name="radio">
+      <label class="label-control" for="radio-0">
         <!-- content -->
       </label>
     </div>
   </code>
 </pre>
 
-<p>Use this markup to create a checkbox or radio <strong>Styled</strong>.</p>
+<h2>Options</h2>
 
-<pre>
-  <code class="html">
-    <div class="form-group checkradio">
-      <input type="checkbox" id="checkbox-id">
-      <label class="label-control" for="checkbox-id">
-        <!-- content -->
-      </label>
-    </div>
+<h3>Styles</h3>
 
-    <div class="form-group checkradio">
-      <input type="radio" id="radio-id">
-      <label class="label-control" for="radio-id">
-        <!-- content -->
-      </label>
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="default">
+    <div class="demo-text">
+      <code>Check and radio design.</code>
     </div>
-  </code>
-</pre>
+    <div class="demo-source" data-lang="html">
+      <div class="form-group">
+        <input type="checkbox" id="checkbox-block" checked>
+        <label class="label-control" for="checkbox-block">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="radio" id="radio-block-0" name="radio-block" checked>
+        <label class="label-control" for="radio-block-0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="radio" id="radio-block-1" name="radio-block">
+        <label class="label-control" for="radio-block-1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="inline">
+    <div class="demo-text">
+      <code>.form-group-inline</code> (@TODO link to form group).
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="form-group-inline">
+        <div class="form-group">
+          <input type="checkbox" id="checkbox-inline" checked>
+          <label class="label-control" for="checkbox-inline">
+            Lorem ipsum dolor
+          </label>
+        </div>
+
+        <div class="form-group">
+          <input type="radio" id="radio-inline-0" name="radio-inline" checked>
+          <label class="label-control" for="radio-inline-0">
+            Lorem ipsum dolor
+          </label>
+        </div>
+
+        <div class="form-group">
+          <input type="radio" id="radio-inline-1" name="radio-inline">
+          <label class="label-control" for="radio-inline-1">
+            Lorem ipsum dolor
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="disabled">
+    <div class="demo-text">
+      <code>[disabled]</code>.
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="form-group">
+        <input type="checkbox" id="checkbox-disabled" disabled checked>
+        <label class="label-control" for="checkbox-disabled">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="radio" id="radio-disabled-0" name="radio-disabled" disabled checked>
+        <label class="label-control" for="radio-block-0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="radio" id="radio-disabled-1" name="radio-disabled" disabled>
+        <label class="label-control" for="radio-disabled-1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
 
 <h3>Unstyled</h3>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="block">
-    <div class="demo-source" data-lang="html">
-      <div class="form-group">
-        <input type="checkbox" id="checkbox-unstyled-block">
-        <label class="label-control" for="checkbox-unstyled-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
-        </label>
-      </div>
-
-      <div class="form-group">
-        <input type="radio" id="radio-unstyled-block">
-        <label class="label-control" for="radio-unstyled-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="inline">
-    <div class="demo-source" data-lang="html">
-      <div class="form-group-inline-sm">
-        <div class="form-group">
-          <input type="checkbox" id="checkbox-unstyled-inline">
-          <label class="label-control" for="checkbox-unstyled-inline">
-            Lorem ipsum dolor
-          </label>
-        </div>
-
-        <div class="form-group">
-          <input type="radio" id="radio-unstyled-inline">
-          <label class="label-control" for="radio-unstyled-inline">
-            Lorem ipsum dolor
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Styled</h3>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="block">
     <div class="demo-text">
-
+      <code>.unstyled</code>.
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="form-group checkradio">
-        <input type="checkbox" id="checkbox-styled-block">
-        <label class="label-control" for="checkbox-styled-block">
+      <div class="form-group">
+        <input type="checkbox" class="unstyled" id="checkbox-block-unstyled" checked>
+        <label class="label-control" for="checkbox-block-unstyled">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
         </label>
       </div>
 
-      <div class="form-group checkradio">
-        <input type="radio" id="radio-styled-block">
-          <label class="label-control" for="radio-styled-block">
+      <div class="form-group">
+        <input type="radio" class="unstyled" id="radio-block-unstyled-0" name="radio-block-unstyled" checked>
+        <label class="label-control" for="radio-block-unstyled-0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="radio" class="unstyled" id="radio-block-unstyled-1" name="radio-block-unstyled">
+        <label class="label-control" for="radio-block-unstyled-1">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
         </label>
       </div>
@@ -116,29 +152,61 @@ description: Lorem ipsum
   </div>
   <div class="demo-item demo-preview" data-name="inline">
     <div class="demo-text">
-
+      <code>.form-group-inline .unstyled</code> (@TODO link to form group).
     </div>
     <div class="demo-source" data-lang="html">
       <div class="form-group-inline-sm">
-        <div class="form-group checkradio">
-          <input type="checkbox" id="checkbox-styled-inline">
-          <label class="label-control" for="checkbox-styled-inline">
+        <div class="form-group">
+          <input type="checkbox" class="unstyled" id="checkbox-inline-unstyled" checked>
+          <label class="label-control" for="checkbox-inline-unstyled">
             Lorem ipsum dolor
           </label>
         </div>
 
-        <div class="form-group checkradio">
-          <input type="radio" id="radio-styled-inline">
-          <label class="label-control" for="radio-styled-inline">
+        <div class="form-group">
+          <input type="radio" class="unstyled" id="radio-inline-unstyled-0" name="radio-inline-unstyled" checked>
+          <label class="label-control" for="radio-inline-unstyled-0">
+            Lorem ipsum dolor
+          </label>
+        </div>
+
+        <div class="form-group">
+          <input type="radio" class="unstyled" id="radio-inline-unstyled-1" name="radio-inline-unstyled">
+          <label class="label-control" for="radio-inline-unstyled-1">
             Lorem ipsum dolor
           </label>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <div class="demo-item demo-preview" data-name="disabled">
+    <div class="demo-text">
+      <code>.unstyled[disabled]</code>.
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="form-group">
+        <input type="checkbox" class="unstyled" id="checkbox-disabled-unstyled" disabled checked>
+        <label class="label-control" for="checkbox-disabled-unstyled">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
+        </label>
+      </div>
 
-<h3>Options</h3>
+      <div class="form-group">
+        <input type="radio" class="unstyled" id="radio-disabled-unstyled-0" name="radio-disabled-unstyled" disabled checked>
+        <label class="label-control" for="radio-disabled-unstyled-0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="radio" class="unstyled" id="radio-disabled-unstyled-1" name="radio-disabled-unstyled" disabled>
+        <label class="label-control" for="radio-disabled-unstyled-1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
 
 <h2>Tests</h2>
 
@@ -146,50 +214,6 @@ description: Lorem ipsum
   <div class="demo-item demo-preview" data-name="tests">
     <div class="demo-source" data-lang="html">
       <form>
-
-        <legend>Test checkbox and radio</legend>
-        <div class="form-group">
-          <input type="checkbox">
-          <label class="label-control">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
-          </label>
-        </div>
-        <div class="form-group">
-          <input type="radio">
-          <label class="label-control">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
-          </label>
-        </div>
-
-        <legend>Test inline checkbox and radio</legend>
-        <div class="form-group-inline-sm">
-          <div class="form-group">
-            <input type="checkbox">
-            <label class="label-control">
-              checkbox
-            </label>
-          </div>
-          <div class="form-group">
-            <input type="checkbox">
-            <label class="label-control">
-              checkbox
-            </label>
-          </div>
-        </div>
-        <div class="form-group-inline-sm">
-          <div class="form-group">
-            <input type="checkbox">
-            <label class="label-control">
-              radio
-            </label>
-          </div>
-          <div class="form-group">
-            <input type="checkbox">
-            <label class="label-control">
-              radio
-            </label>
-          </div>
-        </div>
 
         <legend>Test normal</legend>
         <div class="form-group">
