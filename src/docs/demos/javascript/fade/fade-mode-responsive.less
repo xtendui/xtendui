@@ -1,19 +1,6 @@
 @import (reference) "../../../../../dist/xtend.less";
 
 .fade {
-  @media @min-sm {
-    // infinite
-    opacity: 0;
-    &.in {
-      .anim-horizontal.active();
-      opacity: 1;
-    }
-
-    &.out {
-      .anim-horizontal.out();
-      opacity: 0;
-    }
-  }
   @media @max-sm {
     // scroll
     &:not(.fade-scroll) {
@@ -26,6 +13,18 @@
         .anim-horizontal.out();
         opacity: 0;
       }
+    }
+  }
+  @media @min-sm {
+    // infinite
+    opacity: 0;
+    &.in {
+      .anim-horizontal.active();
+      opacity: 1;
+    }
+    &.out {
+      .anim-horizontal.out();
+      opacity: 0;
     }
   }
 }
