@@ -235,6 +235,19 @@ input[type="radio"]:not(.unstyled) {
       background-color: @grey-250;
       border: 1px solid darken(@grey-250, @perc-md);
     }
+    &::after {
+      color: darken(@grey-250, @perc-lg);
+    }
+  }
+  // disabled
+  &:disabled ~ .label-control {
+    &::before {
+      .disabled();
+    }
+    &::after {
+      .disabled();
+      color: darken(@grey-250, @perc-md);
+    }
   }
   // animation
   & ~ .label-control {
@@ -272,14 +285,6 @@ input[type="checkbox"]:not(.unstyled) {
       .xt-icon();
       content: @icon-check;
       font-size: 100%;
-      color: @white;
-    }
-  }
-  // activation
-  &:checked ~ .label-control {
-    &::before {
-      border: 1px solid @primary;
-      background-color: @primary;
     }
   }
 }
@@ -295,13 +300,6 @@ input[type="radio"]:not(.unstyled) {
       .xt-icon();
       content: @icon-circle;
       font-size: 55%;
-      color: @primary;
-    }
-  }
-  // activation
-  &:checked ~ .label-control {
-    &::before {
-      border: 1px solid @primary;
     }
   }
 }
