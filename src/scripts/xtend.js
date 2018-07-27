@@ -146,6 +146,7 @@ class Xt {
           el.removeEventListener(event, xtOnHandler);
           el.addEventListener(event, xtOnHandler);
         }
+        // listener
         el.addEventListener('on.trigger', xtOnHandler);
       }
       if (options.off) {
@@ -157,7 +158,20 @@ class Xt {
           el.removeEventListener(event, xtOffHandler);
           el.addEventListener(event, xtOffHandler);
         }
+        // listener
         el.addEventListener('off.trigger', xtOffHandler);
+      }
+    }
+    // listener
+    for (let tr of this.targets) {
+      let el = this.getElementsFromTarget(tr)[0];
+      if (el) {
+        // handler
+        let xtOnHandler = XtUtil.dataStorage.put(el, 'xtOnHandler', self.eventOnHandler.bind(self).bind(self, el));
+        let xtOffHandler = XtUtil.dataStorage.put(el, 'xtOffHandler', self.eventOffHandler.bind(self).bind(self, el));
+        // listener
+        tr.addEventListener('on.trigger', xtOnHandler);
+        tr.addEventListener('off.trigger', xtOffHandler);
       }
     }
     // auto
@@ -304,6 +318,32 @@ class Xt {
         final = groupTargets[index];
         return XtUtil.arrSingle(final);
       }
+    }
+  }
+
+  /**
+   * choose which elements to activate/deactivate from target (based on xtend mode and containers)
+   * @param {Node|HTMLElement} element Target to trigger interaction on
+   * @returns {Array}
+   */
+  getElementsFromTarget(target) {
+    if (!this.elements || !this.elements.length) {
+      return [];
+    }
+    // choose only target by group
+    let group = target.getAttribute('data-group');
+    let groupElements = Array.from(this.elements).filter(x => x.getAttribute('data-group') === group);
+    let groupTargets = Array.from(this.targets).filter(x => x.getAttribute('data-group') === group);
+    let final;
+    if (group) {
+      // all group targets if group
+      final = groupElements;
+      return XtUtil.arrSingle(final);
+    } else {
+      // not group targets by index if not group
+      let index = groupTargets.findIndex(x => x === target);
+      final = groupElements[index];
+      return XtUtil.arrSingle(final);
     }
   }
 
@@ -1187,17 +1227,17 @@ class XtSticky extends Xt {
     // events
     if (options.on) {
       // handler
-      let stickyOffHandler = XtUtil.dataStorage.put(window, 'stickyOffHandler', self.eventOnHandler.bind(self));
+      let stickyHandler = XtUtil.dataStorage.put(window, 'stickyHandler', self.eventOnHandler.bind(self));
       // event
       let events = [...options.on.split(' ')];
       for (let event of events) {
-        window.removeEventListener(event, stickyOffHandler);
-        window.addEventListener(event, stickyOffHandler);
+        window.removeEventListener(event, stickyHandler);
+        window.addEventListener(event, stickyHandler);
       }
-      window.addEventListener('on.trigger', stickyOffHandler);
+      window.addEventListener('on.sticky', stickyHandler);
     }
     // trigger initial
-    window.dispatchEvent(new Event('on.trigger')); // @TODO call only one time
+    window.dispatchEvent(new Event('on.sticky'));
   }
 
   /**
@@ -1497,17 +1537,17 @@ class XtFade extends Xt {
     // events
     if (options.on) {
       // handler
-      let fadeOffHandler = XtUtil.dataStorage.put(window, 'fadeOffHandler', self.eventOnHandler.bind(self));
+      let fadeHandler = XtUtil.dataStorage.put(window, 'fadeHandler', self.eventOnHandler.bind(self));
       // event
       let events = [...options.on.split(' ')];
       for (let event of events) {
-        window.removeEventListener(event, fadeOffHandler);
-        window.addEventListener(event, fadeOffHandler);
+        window.removeEventListener(event, fadeHandler);
+        window.addEventListener(event, fadeHandler);
       }
-      window.addEventListener('on.trigger', fadeOffHandler);
+      window.addEventListener('on.fade', fadeHandler);
     }
     // trigger initial
-    window.dispatchEvent(new Event('on.trigger')); // @TODO call only one time
+    window.dispatchEvent(new Event('on.fade'));
   }
 
   /**
