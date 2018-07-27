@@ -88,39 +88,47 @@ html.xt-scrollbar {
   &.xt-clone {
     position: relative;
     visibility: hidden;
+    top: 0;
   }
-  &:not(.xt-clone):not(.active) {
+  &:not(.xt-clone) {
     position: relative;
+    z-index: @index-sticky;
+    width: 100%;
   }
   // normal mode
   & when (@mode = none) {
     &.xt-clone:not(.active) {
       position: absolute;
-      top: 0;
+    }
+    .xt-container > &:not(.xt-clone):not(.active) {
+      position: relative;
     }
   }
   // absolute mode
   & when (@mode = 'absolute') {
+    &.xt-clone:not(.active) {
+      position: relative;
+    }
     .xt-container > &:not(.xt-clone):not(.active) {
       position: absolute;
-      z-index: @index-sticky;
-      width: 100%;
     }
   }
   // fixed mode
   & when (@mode = 'fixed') {
+    &.xt-clone:not(.active) {
+      position: relative;
+    }
     .xt-container > &:not(.xt-clone):not(.active) {
       position: fixed;
-      z-index: @index-sticky;
-      width: 100%;
     }
   }
   // fixed-always mode
   & when (@mode = 'fixed-always') {
+    &.xt-clone:not(.active) {
+      position: relative;
+    }
     &:not(.xt-clone):not(.active) {
-      position: fixed;
-      z-index: @index-sticky;
-      width: 100%;
+      position: fixed !important;
     }
   }
   // showhide
