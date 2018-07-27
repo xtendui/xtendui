@@ -74,17 +74,23 @@
 // check and radio
 //////////////////////
 
-.input-special, input[type="checkbox"], input[type="radio"] {
-  display: block;
-  float: left;
+// label
+
+input[type="checkbox"], input[type="radio"] {
   & ~ .label-control {
-    .label-special();
+    .label-checkradio();
   }
 }
 
-.label-special {
+// unstyled
+
+input[type="checkbox"].unstyled, input[type="radio"].unstyled {
   display: block;
-  overflow: hidden;
+  float: left;
+  & ~ .label-control {
+    display: block;
+    overflow: hidden;
+  }
 }
 
 // check and radio design
