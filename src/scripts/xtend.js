@@ -1353,10 +1353,12 @@ class XtSticky extends Xt {
         add = - heightEl;
         if (!el.classList.contains('sticky-hide')) {
           el.classList.add('sticky-hide');
+          el.dispatchEvent(new Event('sticky.hide'));
         }
       } else {
         if (el.classList.contains('sticky-hide')) {
           el.classList.remove('sticky-hide');
+          el.dispatchEvent(new Event('sticky.show'));
         }
       }
     } else {
