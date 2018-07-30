@@ -177,6 +177,13 @@ class Xt {
     // auto
     if (options.auto) {
       this.auto();
+      // focus and blur
+      window.addEventListener('focus', function () {
+        self.auto();
+      });
+      window.addEventListener('blur', function () {
+        self.autoStop();
+      });
     }
   }
 
@@ -226,9 +233,8 @@ class Xt {
     let self = this;
     let options = self.options;
     // auto
+    this.autoStop();
     let time = !instant ? options.auto : 0;
-    clearInterval(this.autoInterval);
-    clearTimeout(this.autoPauseTimeout);
     self.autoInterval = setInterval(function () {
       if (!options.autoAlways && self.object.offsetParent === null) { // if not :visible don't change
         return false;
@@ -247,15 +253,22 @@ class Xt {
     let self = this;
     let options = self.options;
     // autoPause
+    this.autoStop();
     let time = !instant ? options.autoPause : 0;
-    clearInterval(this.autoInterval);
-    clearTimeout(this.autoPauseTimeout);
     if (time !== 'stop') {
-      self.autoPauseTimeout = setTimeout( function() {
+      self.autoPauseTimeout = setTimeout(function () {
         self.auto(true);
         self.auto();
       }, time);
     }
+  }
+
+  /**
+   * stop auto change
+   */
+  autoStop() {
+    clearInterval(this.autoInterval);
+    clearTimeout(this.autoPauseTimeout);
   }
 
   //////////////////////
@@ -1350,7 +1363,7 @@ class XtSticky extends Xt {
     if (el.classList.contains('active')) {
       // hide
       if (hide) {
-        add = - heightEl;
+        add = -heightEl;
         if (!el.classList.contains('sticky-hide')) {
           el.classList.add('sticky-hide');
           el.dispatchEvent(new Event('sticky.hide'));
