@@ -1204,6 +1204,7 @@ class XtSticky extends Xt {
     if (!this.targets.length) {
       this.targets = this.object.cloneNode(true);
       this.targets.classList.add('xt-clone');
+      this.targets.setAttribute('aria-hidden', 'true');
       for (let elId of this.targets.querySelectorAll('[id]')) {
         elId.setAttribute('id', elId.getAttribute('id') + '-clone');
       }
