@@ -1330,13 +1330,13 @@ class XtSticky extends Xt {
     let add = 0;
     let addHide = 0;
     let windowHeight = window.innerHeight;
-    let scrollHeight = document.documentElement.scrollHeight;
+    let scrollHeight = document.scrollingElement.scrollHeight;
     let el = self.object;
     let rectElTop = el.getBoundingClientRect().top;
     let heightEl = parseFloat(getComputedStyle(el).height);
     let heightTarget = parseFloat(getComputedStyle(self.targets[0]).height);
     let rectContainerTop = self.container[0].getBoundingClientRect().top;
-    let scrollTop = document.documentElement.scrollTop;
+    let scrollTop = document.scrollingElement.scrollTop;
     let scrollTopOld = self.scrollTopOld;
     // direction
     if (scrollTop < scrollTopOld) {
@@ -1639,7 +1639,7 @@ class XtFade extends Xt {
     let currents = [];
     let scrollInverse = false;
     let windowHeight = window.innerHeight;
-    let scrollTop = document.documentElement.scrollTop;
+    let scrollTop = document.scrollingElement.scrollTop;
     let scrollTopOld = self.scrollTopOld;
     // direction
     if (scrollTop < scrollTopOld) {
