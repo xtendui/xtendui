@@ -127,6 +127,14 @@ class Xt {
         }
       }
     });
+    // aria
+    this.initAria();
+  }
+
+  /**
+   * init aria
+   */
+  initAria() {
   }
 
   /**
@@ -1137,6 +1145,22 @@ class XtOverlay extends Xt {
    */
   constructor(object, jsOptions = {}) {
     super(object, jsOptions, 'data-xt-overlay');
+  }
+
+  /**
+   * init aria
+   */
+  initAria() {
+    for (let tr of this.targets) {
+      // role
+      tr.setAttribute('role', 'dialog');
+      tr.setAttribute('aria-modal', 'true');
+      // aria-label
+      let headers = tr.querySelectorAll('h1, h2, h3, h4, h5, h6');
+      let label = headers.length ? headers[0].textContent : this.getElementsFromTarget(tr)[0].textContent;
+      label = label.replace(/\s+/g, ' ').trim();
+      tr.setAttribute('aria-label', label);
+    }
   }
 
 }
