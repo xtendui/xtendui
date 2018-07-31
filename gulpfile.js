@@ -68,11 +68,13 @@ gulp.task('js-dist', function () {
     .pipe(replace(/\/\*\![^\*]+\*\//, banner))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
+    /*
     .pipe(uglify({
       output: {
         comments: /^!/
       }
     }))
+    */
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('dist/'));
 });

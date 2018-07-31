@@ -5608,19 +5608,19 @@ XtUtil.initAll = function () {
   var container = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
   // xt-toggle
-  Array.from(container.querySelectorAll('[data-xt-toggle]')).forEach(function (el, i) {
+  Array.from(container.querySelectorAll('[data-xt-toggle]')).forEach(function (el) {
     new _xtend.XtToggle(el);
   });
-  Array.from(container.querySelectorAll('[data-xt-drop]')).forEach(function (el, i) {
+  Array.from(container.querySelectorAll('[data-xt-drop]')).forEach(function (el) {
     new _xtend.XtDrop(el);
   });
-  Array.from(container.querySelectorAll('[data-xt-overlay]')).forEach(function (el, i) {
+  Array.from(container.querySelectorAll('[data-xt-overlay]')).forEach(function (el) {
     new _xtend.XtOverlay(el);
   });
-  Array.from(container.querySelectorAll('[data-xt-fade]')).forEach(function (el, i) {
+  Array.from(container.querySelectorAll('[data-xt-fade]')).forEach(function (el) {
     new _xtend.XtFade(el);
   });
-  Array.from(container.querySelectorAll('[data-xt-sticky]')).forEach(function (el, i) {
+  Array.from(container.querySelectorAll('[data-xt-sticky]')).forEach(function (el) {
     new _xtend.XtSticky(el);
   });
 };
@@ -5900,7 +5900,7 @@ XtUtil.dataStorage = {
   },
   remove: function remove(element, key) {
     var ret = this._storage.get(element).delete(key);
-    if (!this._storage.get(key).size === 0) {
+    if (!this._storage.get(key).size === false) {
       this._storage.delete(element);
     }
     return ret;
@@ -5953,14 +5953,14 @@ exports.XtUtil = XtUtil;
 
 (function (proto) {
   if (typeof proto.matches !== 'function') {
-    proto.matches = proto.msMatchesSelector || proto.mozMatchesSelector || proto.webkitMatchesSelector || function matches(selector) {
-      var element = this;
-      var elements = (element.document || element.ownerDocument).querySelectorAll(selector);
+    proto.matches = proto.msMatchesSelector || proto.webkitMatchesSelector || function matches(query) {
+      var el = this;
+      var els = (el.document || el.ownerDocument).querySelectorAll(query);
       var index = 0;
-      while (elements[index] && elements[index] !== element) {
+      while (els[index] && els[index] !== el) {
         ++index;
       }
-      return Boolean(elements[index]);
+      return Boolean(els[index]);
     };
   }
 })(Element.prototype);
@@ -5973,13 +5973,13 @@ exports.XtUtil = XtUtil;
 
 (function (proto) {
   if (typeof proto.closest !== 'function') {
-    proto.closest = function closest(selector) {
-      var element = this;
-      while (element && element.nodeType === 1) {
-        if (element.matches(selector)) {
-          return element;
+    proto.closest = function closest(query) {
+      var el = this;
+      while (el && el.nodeType === 1) {
+        if (el.matches(query)) {
+          return el;
         }
-        element = element.parentNode;
+        el = el.parentNode;
       }
       return null;
     };
