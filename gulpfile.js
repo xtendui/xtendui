@@ -1,21 +1,21 @@
 'use strict';
 
-var fs = require('fs');
-var gulp = require('gulp');
-var log = require('fancy-log');
-var child = require('child_process');
-var buffer = require('vinyl-buffer');
-var source = require('vinyl-source-stream');
+let fs = require('fs');
+let gulp = require('gulp');
+let log = require('fancy-log');
+let child = require('child_process');
+let buffer = require('vinyl-buffer');
+let source = require('vinyl-source-stream');
 
-var less = require('gulp-less');
-var gutil = require('gulp-util');
-var clean = require('gulp-clean');
-var watch = require('gulp-watch');
-var replace = require('gulp-replace');
-var browserify = require('browserify');
-var uglify = require('gulp-uglify-es').default;
-var cleanCSS = require('gulp-clean-css');
-var sourcemaps = require('gulp-sourcemaps');
+let less = require('gulp-less');
+let gutil = require('gulp-util');
+let clean = require('gulp-clean');
+let watch = require('gulp-watch');
+let replace = require('gulp-replace');
+let browserify = require('browserify');
+let uglify = require('gulp-uglify-es').default;
+let cleanCSS = require('gulp-clean-css');
+let sourcemaps = require('gulp-sourcemaps');
 
 // compile less
 
@@ -57,7 +57,7 @@ gulp.task('less:watch', function (done) {
 // compile js
 
 gulp.task('js-dist', function () {
-  var b = browserify({
+  let b = browserify({
     entries: 'src/scripts/xtend.js',
     debug: true
   });
@@ -77,7 +77,7 @@ gulp.task('js-dist', function () {
     .pipe(gulp.dest('dist/'));
 });
 gulp.task('js-theme', gulp.series('js-dist', function () {
-  var b = browserify({
+  let b = browserify({
     entries: 'src/docs/assets/scripts/theme.js',
     debug: true
   });
@@ -94,7 +94,7 @@ gulp.task('js-theme', gulp.series('js-dist', function () {
     .pipe(gulp.dest('src/docs/assets/scripts/'));
 }));
 gulp.task('js', gulp.series('js-theme', function () {
-  var b = browserify({
+  let b = browserify({
     entries: 'src/docs/assets/scripts/xtend.js',
     debug: true
   });
@@ -123,8 +123,8 @@ gulp.task('js:watch', function (done) {
 // site
 
 gulp.task('site-build', function (callback) {
-  var jekyll = child.spawn('bundle', ['exec', 'jekyll', 'build']);
-  var jekyllLogger = function (buffer) {
+  let jekyll = child.spawn('bundle', ['exec', 'jekyll', 'build']);
+  let jekyllLogger = function (buffer) {
     buffer.toString()
       .split(/\n/)
       .forEach((message) => gutil.log('Jekyll: ' + message));
@@ -134,8 +134,8 @@ gulp.task('site-build', function (callback) {
   callback();
 });
 gulp.task('site-serve', function (callback) {
-  var jekyll = child.spawn('bundle', ['exec', 'jekyll', 'serve']);
-  var jekyllLogger = function (buffer) {
+  let jekyll = child.spawn('bundle', ['exec', 'jekyll', 'serve']);
+  let jekyllLogger = function (buffer) {
     buffer.toString()
       .split(/\n/)
       .forEach((message) => gutil.log('Jekyll: ' + message));

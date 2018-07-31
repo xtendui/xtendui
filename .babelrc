@@ -1,8 +1,14 @@
 {
   "presets": [
-    ["es2015"]
+    ["env", {
+      "targets": {
+        "browsers": ["last 2 versions", "safari >= 7", "Explorer 11"]
+      },
+      "useBuiltIns": true,
+      "debug": true
+    }]
   ],
   "plugins":  [
-    ["transform-object-rest-spread"]
+    ["transform-es2015-for-of", "transform-object-rest-spread"]
   ]
 }

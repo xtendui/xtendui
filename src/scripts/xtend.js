@@ -4,6 +4,8 @@
 
 'use strict';
 
+import 'babel-polyfill';
+
 import {XtUtil} from './xtend-utils';
 
 //////////////////////
@@ -549,7 +551,7 @@ class Xt {
         self.specialScrollbarOn();
       }
       // dispatch
-      el.dispatchEvent(new Event('on'));
+      el.dispatchEvent(new CustomEvent('on'));
     };
     // delay
     for (let el of els) {
@@ -598,7 +600,7 @@ class Xt {
         self.specialCloseOff(el);
       }
       // dispatch
-      el.dispatchEvent(new Event('off'));
+      el.dispatchEvent(new CustomEvent('off'));
     };
     // delay
     for (let el of els) {
@@ -1301,7 +1303,7 @@ class XtSticky extends Xt {
       window.addEventListener('on.sticky', stickyHandler);
     }
     // trigger initial
-    window.dispatchEvent(new Event('on.sticky'));
+    window.dispatchEvent(new CustomEvent('on.sticky'));
   }
 
   /**
@@ -1331,13 +1333,14 @@ class XtSticky extends Xt {
     let add = 0;
     let addHide = 0;
     let windowHeight = window.innerHeight;
-    let scrollHeight = document.scrollingElement.scrollHeight;
     let el = self.object;
     let rectElTop = el.getBoundingClientRect().top;
     let heightEl = parseFloat(getComputedStyle(el).height);
     let heightTarget = parseFloat(getComputedStyle(self.targets[0]).height);
     let rectContainerTop = self.container[0].getBoundingClientRect().top;
-    let scrollTop = document.scrollingElement.scrollTop;
+    let scrollingElement = document.scrollingElement;
+    let scrollHeight = scrollingElement.scrollHeight;
+    let scrollTop = scrollingElement.scrollTop;
     let scrollTopOld = self.scrollTopOld;
     // direction
     if (scrollTop < scrollTopOld) {
@@ -1418,12 +1421,12 @@ class XtSticky extends Xt {
         add = -heightEl;
         if (!el.classList.contains('sticky-hide')) {
           el.classList.add('sticky-hide');
-          el.dispatchEvent(new Event('sticky.hide'));
+          el.dispatchEvent(new CustomEvent('sticky.hide'));
         }
       } else {
         if (el.classList.contains('sticky-hide')) {
           el.classList.remove('sticky-hide');
-          el.dispatchEvent(new Event('sticky.show'));
+          el.dispatchEvent(new CustomEvent('sticky.show'));
         }
       }
     } else {
@@ -1614,7 +1617,7 @@ class XtFade extends Xt {
       window.addEventListener('on.fade', fadeHandler);
     }
     // trigger initial
-    window.dispatchEvent(new Event('on.fade'));
+    window.dispatchEvent(new CustomEvent('on.fade'));
   }
 
   /**
@@ -1641,7 +1644,8 @@ class XtFade extends Xt {
     let currents = [];
     let scrollInverse = false;
     let windowHeight = window.innerHeight;
-    let scrollTop = document.scrollingElement.scrollTop;
+    let scrollingElement = document.scrollingElement;
+    let scrollTop = scrollingElement.scrollTop;
     let scrollTopOld = self.scrollTopOld;
     // direction
     if (scrollTop < scrollTopOld) {

@@ -4,6 +4,8 @@
 
 'use strict';
 
+import 'babel-polyfill';
+
 import {XtToggle, XtDrop, XtOverlay, XtFade, XtSticky} from './xtend';
 
 //////////////////////
@@ -236,7 +238,7 @@ XtUtil.dataStorage = {
     return this._storage.get(element).has(key);
   },
   remove: function (element, key) {
-    var ret = this._storage.get(element).delete(key);
+    let ret = this._storage.get(element).delete(key);
     if (!this._storage.get(key).size === 0) {
       this._storage.delete(element);
     }
@@ -252,7 +254,8 @@ window.XtUtil = XtUtil;
 export {XtUtil};
 
 //////////////////////
-// scope polyfill (https://stackoverflow.com/questions/6481612/queryselector-search-immediate-children)
+// scope polyfill
+// https://stackoverflow.com/questions/6481612/queryselector-search-immediate-children
 // USAGE: querySelectorAll(':scope > .selector');
 //////////////////////
 
@@ -277,3 +280,85 @@ export {XtUtil};
     }
   }
 })(window.document, Element.prototype);
+
+//////////////////////
+// closest polyfill
+// https://developer.mozilla.org/en-US/docs/Web/API/Element/closest#Polyfill
+// USAGE: element.closest(query);
+//////////////////////
+
+(function (proto) {
+  if (!proto.matches) {
+    proto.matches = proto.msMatchesSelector || proto.webkitMatchesSelector;
+  }
+  if (!proto.closest) {
+    proto.closest = function (s) {
+      var el = this;
+      if (!document.documentElement.contains(el)) {
+        return null;
+      }
+      do {
+        if (el.matches(s)) {
+          return el;
+        }
+        el = el.parentElement || el.parentNode;
+      } while (el !== null && el.nodeType === 1);
+      return null;
+    };
+  }
+})(Element.prototype);
+
+//////////////////////
+// CustomEvent polyfill
+// https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
+//////////////////////
+
+(function () {
+  if (typeof window.CustomEvent === "function") {
+    return false;
+  }
+
+  function CustomEvent(event, params) {
+    params = params || {bubbles: false, cancelable: false, detail: undefined};
+    let evt = document.createEvent('CustomEvent');
+    evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+    return evt;
+  }
+
+  CustomEvent.prototype = window.Event.prototype;
+  window.CustomEvent = CustomEvent;
+})();
+
+//////////////////////
+// scrollingElement polyfill
+// https://github.com/yangg/scrolling-element
+//////////////////////
+
+(function () {
+  if (document.scrollingElement) {
+    return;
+  }
+  let element = null;
+
+  function scrollingElement() {
+    if (element) {
+      return element;
+    } else if (document.body.scrollTop) {
+      // speed up if scrollTop > 0
+      return (element = document.body);
+    }
+    let iframe = document.createElement('iframe');
+    iframe.style.height = '1px';
+    document.documentElement.appendChild(iframe);
+    let doc = iframe.contentWindow.document;
+    doc.write('<!DOCTYPE html><div style="height:9999em">x</div>');
+    doc.close();
+    let isCompliant = doc.documentElement.scrollHeight > doc.body.scrollHeight;
+    iframe.parentNode.removeChild(iframe);
+    return (element = isCompliant ? document.documentElement : document.body);
+  }
+
+  Object.defineProperty(document, 'scrollingElement', {
+    get: scrollingElement
+  })
+})();
