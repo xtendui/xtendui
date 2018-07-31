@@ -31,25 +31,21 @@ XtUtil.currents = {};
  */
 XtUtil.initAll = function (container = document) {
   // xt-toggle
-  for (let el of container.querySelectorAll('[data-xt-toggle]')) {
+  Array.from(container.querySelectorAll('[data-xt-toggle]')).forEach(function (el, i) {
     new XtToggle(el);
-  }
-  // xt-drop
-  for (let el of container.querySelectorAll('[data-xt-drop]')) {
+  });
+  Array.from(container.querySelectorAll('[data-xt-drop]')).forEach(function (el, i) {
     new XtDrop(el);
-  }
-  // xt-overlay
-  for (let el of container.querySelectorAll('[data-xt-overlay]')) {
+  });
+  Array.from(container.querySelectorAll('[data-xt-overlay]')).forEach(function (el, i) {
     new XtOverlay(el);
-  }
-  // xt-fade
-  for (let el of container.querySelectorAll('[data-xt-fade]')) {
+  });
+  Array.from(container.querySelectorAll('[data-xt-fade]')).forEach(function (el, i) {
     new XtFade(el);
-  }
-  // xt-scroll
-  for (let el of container.querySelectorAll('[data-xt-sticky]')) {
+  });
+  Array.from(container.querySelectorAll('[data-xt-sticky]')).forEach(function (el, i) {
     new XtSticky(el);
-  }
+  });
 };
 
 /**
@@ -263,7 +259,7 @@ export {XtUtil};
   try { // check if browser supports :scope natively
     doc.querySelector(':scope body');
   } catch (err) { // polyfill native methods if it doesn't
-    for (let method of ['querySelector', 'querySelectorAll']) {
+    ['querySelector', 'querySelectorAll'].forEach(function (method) {
       let nativ = proto[method];
       proto[method] = function (selectors) {
         if (/(^|,)\s*:scope/.test(selectors)) { // only if selectors contains :scope
@@ -277,32 +273,46 @@ export {XtUtil};
           return nativ.call(this, selectors); // use native code for other selectors
         }
       }
-    }
+    });
   }
 })(window.document, Element.prototype);
 
 //////////////////////
+// matches polyfill
+// https://github.com/jonathantneal/closest
+// USAGE: element.matches(query);
+//////////////////////
+
+(function (proto) {
+  if (typeof proto.matches !== 'function') {
+    proto.matches = proto.msMatchesSelector || proto.mozMatchesSelector || proto.webkitMatchesSelector || function matches(selector) {
+      let element = this;
+      let elements = (element.document || element.ownerDocument).querySelectorAll(selector);
+      let index = 0;
+      while (elements[index] && elements[index] !== element) {
+        ++index;
+      }
+      return Boolean(elements[index]);
+    };
+  }
+})(Element.prototype);
+
+//////////////////////
 // closest polyfill
-// https://developer.mozilla.org/en-US/docs/Web/API/Element/closest#Polyfill
+// https://github.com/jonathantneal/closest
 // USAGE: element.closest(query);
 //////////////////////
 
 (function (proto) {
-  if (!proto.matches) {
-    proto.matches = proto.msMatchesSelector || proto.webkitMatchesSelector;
-  }
-  if (!proto.closest) {
-    proto.closest = function (s) {
-      var el = this;
-      if (!document.documentElement.contains(el)) {
-        return null;
-      }
-      do {
-        if (el.matches(s)) {
-          return el;
+  if (typeof proto.closest !== 'function') {
+    proto.closest = function closest(selector) {
+      let element = this;
+      while (element && element.nodeType === 1) {
+        if (element.matches(selector)) {
+          return element;
         }
-        el = el.parentElement || el.parentNode;
-      } while (el !== null && el.nodeType === 1);
+        element = element.parentNode;
+      }
       return null;
     };
   }

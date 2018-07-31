@@ -1,7 +1,7 @@
 
 setTimeout( function() {
-  for (let el of document.querySelectorAll('.fade')) {
+  Array.from(container.querySelectorAll('.fade')).forEach(function (el, i) {
     el.classList.add('fade-block');
-  }
+  });
   alert('fade blocked');
 }, 2000);

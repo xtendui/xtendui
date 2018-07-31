@@ -48,27 +48,27 @@ const formatCode = function (source, lang) {
 
 // highlight
 
-for (let el of document.querySelectorAll('pre code')) {
+Array.from(document.querySelectorAll('pre code')).forEach(function (el) {
   let lang = el.className;
   let text = formatCode(el, lang);
   // set text
   el.innerHTML = text;
   window.hljs.highlightBlock(el);
-}
+});
 
 // .make-line
 
-for (let el of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
+Array.from(document.querySelectorAll('.site-article > h2, .site-article > h3')).forEach(function (el) {
   el.classList.add('make-line');
-}
-for (let el of document.querySelectorAll('.make-line')) {
+});
+Array.from(document.querySelectorAll('.make-line')).forEach(function (el) {
   el.innerHTML = '<div class="line">' + el.innerHTML + '</div>';
   el.innerHTML = '<div class="line-container">' + el.innerHTML + '</div>';
-}
+});
 
 // .make-anchor
 
-for (let el of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
+Array.from(document.querySelectorAll('.site-article > h2, .site-article > h3')).forEach(function (el) {
   el.classList.add('make-line');
   // previous h2 if h3
   let prevElement;
@@ -92,13 +92,13 @@ for (let el of document.querySelectorAll('.site-article > h2, .site-article > h3
   el.innerHTML = '<a href="#' + id + '">' + el.innerHTML + '</a>';
   el.classList.add('make-anchor');
   el.append(XtUtil.createElement('<span class="site-article-anchor"><div class="btn"><span class="icon-link" aria-hidden="true"></span></div></span>'));
-}
+});
 
 // .site-aside-text
 
-for (let el of document.querySelectorAll('.site-aside-text > .btn:not(.different)')) {
+Array.from(document.querySelectorAll('.site-aside-text > .btn:not(.different)')).forEach(function (el) {
   let container = XtUtil.parents(el, '.site-aside-text')[0];
-  for (let element of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
+  Array.from(document.querySelectorAll('.site-article > h2, .site-article > h3')).forEach(function (element) {
     if (element.tagName === 'H2') {
       let appendItem = XtUtil.createElement('<div class="site-aside-sub-container"></div>');
       container.append(appendItem);
@@ -108,10 +108,10 @@ for (let el of document.querySelectorAll('.site-aside-text > .btn:not(.different
       let subs = container.querySelectorAll('.site-aside-subsub');
       subs[subs.length - 1].append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-nodesign btn-site-aside-subsub">' + element.textContent + '</a>'));
     }
-  }
-}
+  });
+});
 
-for (let el of document.querySelectorAll('.site-aside-text')) {
+Array.from(document.querySelectorAll('.site-aside-text')).forEach(function (el) {
   new XtToggle(el, {
     "elements": ".site-aside-sub-container",
     "targets": ".site-aside-subsub",
@@ -120,13 +120,13 @@ for (let el of document.querySelectorAll('.site-aside-text')) {
     "min": 0,
     "max": 1
   });
-}
+});
 
 // activateAsideScroll
 
 const activateAsideScroll = function (els, scrollTop) {
   const dist = window.innerHeight / 5;
-  for (let el of els) {
+  Array.from(els).forEach(function (el) {
     let href = el.getAttribute('href');
     if (href) {
       let target = document.querySelectorAll(href);
@@ -135,13 +135,13 @@ const activateAsideScroll = function (els, scrollTop) {
       let bottom = Infinity;
       if (scrollTop >= top - dist && scrollTop < bottom - dist) {
         if (!el.classList.contains('active')) {
-          for (let element of els) {
+          Array.from(els).forEach(function (element) {
             if (element !== el) {
               element.classList.remove('active', 'open');
             } else {
               el.classList.add('active', 'open');
             }
-          }
+          });
         }
       } else {
         if (el.classList.contains('active')) {
@@ -149,7 +149,7 @@ const activateAsideScroll = function (els, scrollTop) {
         }
       }
     }
-  }
+  });
 };
 window.addEventListener('scroll', function (e) {
   let scrollTop = document.documentElement.scrollTop;
@@ -179,7 +179,7 @@ const populateDemo = function (container, i) {
     container.querySelectorAll('.demo-tabs')[0].style.display = 'none';
   }
   // loop items
-  for (let [k, item] of items.entries()) {
+  Array.from(items).forEach(function (item, k) {
     // populate tabs
     let name = item.getAttribute('data-name');
     if (items.length === 1) {
@@ -248,14 +248,14 @@ const populateDemo = function (container, i) {
       // .populated fix scroll
       item.classList.add('populated');
     }
-  }
+  });
 };
 
 // populateInline
 
 const populateInline = function (item, id) {
   let els = item.querySelectorAll('.demo-source');
-  for (let [z, el] of els.entries()) {
+  Array.from(els).forEach(function (el, z) {
     populateSources(item, el, z);
     if (!item.classList.contains('demo-preview')) {
       el.style.display = none;
@@ -266,7 +266,7 @@ const populateInline = function (item, id) {
       item.querySelectorAll('.demo-code-tabs')[0].style.display = 'none';
     }
     */
-  }
+  });
   new XtToggle(item, {
     "elements": ".demo-code-tabs-left .btn",
     "targets": ".demo-code-body-item",
@@ -322,9 +322,9 @@ function populateIframe(item, iframe) {
     iframe.append(appendItem);
   }
   // populate
-  for (let [z, source] of item.querySelectorAll('.demo-source').entries()) {
+  Array.from(item.querySelectorAll('.demo-source')).forEach(function (source, z) {
     populateSources(item, source, z);
-  }
+  });
   new XtToggle(item, {
     "elements": ".demo-code-tabs-left .btn",
     "targets": ".demo-code-body-item",
@@ -355,7 +355,7 @@ const populateSources = function (item, element, z) {
 
 // init demos
 
-for (let [i, el] of document.querySelectorAll('.demo').entries()) {
+Array.from(document.querySelectorAll('.demo')).forEach(function (el, i) {
   populateDemo(el, i);
   // enable fullscreen
   /*
@@ -377,7 +377,7 @@ for (let [i, el] of document.querySelectorAll('.demo').entries()) {
     "targets": ".demo-item",
     "min": 1
   });
-}
+});
 
 //////////////////////
 // others
@@ -385,19 +385,19 @@ for (let [i, el] of document.querySelectorAll('.demo').entries()) {
 
 // .demo-cols
 
-for (let element of document.querySelectorAll('.demo-cols')) {
-  for (let [i, el] of element.querySelectorAll('.col').entries()) {
+Array.from(document.querySelectorAll('.demo-cols')).forEach(function (element) {
+  Array.from(element.querySelectorAll('.col')).forEach(function (el, i) {
     el.setAttribute('data-index', i);
-  }
-}
+  });
+});
 
 // .demo-cols-nested
 
-for (let element of document.querySelectorAll('.demo-cols-nested .col')) {
-  for (let [i, el] of element.querySelectorAll('.col').entries()) {
+Array.from(document.querySelectorAll('.demo-cols-nested .col')).forEach(function (element) {
+  Array.from(element.querySelectorAll('.col')).forEach(function (el, i) {
     el.setAttribute('data-index', i);
-  }
-}
+  });
+});
 
 //////////////////////
 // xtend
