@@ -1306,9 +1306,10 @@ class XtSticky extends Xt {
 
   /**
    * element on handler
+   * @param {Node|HTMLElement} element
    * @param {Event} e
    */
-  eventOnHandler(e) {
+  eventOnHandler(element, e) {
     this.eventScroll(this.object);
   }
 
@@ -1618,9 +1619,10 @@ class XtFade extends Xt {
 
   /**
    * element on handler
+   * @param {Node|HTMLElement} element
    * @param {Event} e
    */
-  eventOnHandler(e) {
+  eventOnHandler(element, e) {
     this.eventScroll(this.object);
   }
 
