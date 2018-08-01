@@ -235,72 +235,89 @@ window.XtUtil = XtUtil;
 export {XtUtil};
 
 //////////////////////
+// closest polyfill
+// https://github.com/jonathantneal/closest
+// USAGE: element.closest(query);
+//////////////////////
+
+(function (ElementProto) {
+  if (typeof ElementProto.matches !== 'function') {
+    ElementProto.matches = ElementProto.msMatchesSelector || ElementProto.mozMatchesSelector || ElementProto.webkitMatchesSelector || function matches(selector) {
+      var element = this;
+      var elements = (element.document || element.ownerDocument).querySelectorAll(selector);
+      var index = 0;
+      while (elements[index] && elements[index] !== element) {
+        ++index;
+      }
+      return Boolean(elements[index]);
+    };
+  }
+  if (typeof ElementProto.closest !== 'function') {
+    ElementProto.closest = function closest(selector) {
+      var element = this;
+      while (element && element.nodeType === 1) {
+        if (element.matches(selector)) {
+          return element;
+        }
+        element = element.parentNode;
+      }
+      return null;
+    };
+  }
+})(window.Element.prototype);
+
+//////////////////////
 // scope polyfill
 // https://github.com/jonathantneal/element-qsa-scope
 // USAGE: querySelectorAll(':scope > .selector');
 //////////////////////
 
-try {
-  // test for scope support
-  document.querySelector(':scope *');
-} catch (error) {
-  (function (ElementPrototype) {
+(function (ElementPrototype) {
+  try {
+    // test for scope support
+    document.querySelector(':scope *');
+  } catch (error) {
     // scope regex
-    var scope = /:scope(?![\w-])/gi;
-
+    let scope = /:scope(?![\w-])/gi;
     // polyfill Element#querySelector
-    var querySelectorWithScope = polyfill(ElementPrototype.querySelector);
-
+    let querySelectorWithScope = polyfill(ElementPrototype.querySelector);
     ElementPrototype.querySelector = function querySelector(selectors) {
       return querySelectorWithScope.apply(this, arguments);
     };
-
     // polyfill Element#querySelectorAll
-    var querySelectorAllWithScope = polyfill(ElementPrototype.querySelectorAll);
-
+    let querySelectorAllWithScope = polyfill(ElementPrototype.querySelectorAll);
     ElementPrototype.querySelectorAll = function querySelectorAll(selectors) {
       return querySelectorAllWithScope.apply(this, arguments);
     };
-
     // polyfill Element#matches
     if (ElementPrototype.matches) {
-      var matchesWithScope = polyfill(ElementPrototype.matches);
-
+      let matchesWithScope = polyfill(ElementPrototype.matches);
       ElementPrototype.matches = function matches(selectors) {
         return matchesWithScope.apply(this, arguments);
       };
     }
-
     // polyfill Element#closest
     if (ElementPrototype.closest) {
-      var closestWithScope = polyfill(ElementPrototype.closest);
-
+      let closestWithScope = polyfill(ElementPrototype.closest);
       ElementPrototype.closest = function closest(selectors) {
         return closestWithScope.apply(this, arguments);
       };
     }
-
     function polyfill(qsa) {
       return function (selectors) {
         // whether the selectors contain :scope
-        var hasScope = selectors && scope.test(selectors);
-
+        let hasScope = selectors && scope.test(selectors);
         if (hasScope) {
           // fallback attribute
-          var attr = 'q' + Math.floor(Math.random() * 9000000) + 1000000;
-
+          let attr = 'q' + Math.floor(Math.random() * 9000000) + 1000000;
           // replace :scope with the fallback attribute
           arguments[0] = selectors.replace(scope, '[' + attr + ']');
-
           // add the fallback attribute
           this.setAttribute(attr, '');
-
           // results of the qsa
-          var elementOrNodeList = qsa.apply(this, arguments);
-
+          let elementOrNodeList = qsa.apply(this, arguments);
           // remove the fallback attribute
           this.removeAttribute(attr);
-
           // return the results of the qsa
           return elementOrNodeList;
         } else {
@@ -309,51 +326,9 @@ try {
         }
       };
     }
-  })(Element.prototype);
-}
-
-//////////////////////
-// matches polyfill
-// https://github.com/jonathantneal/closest
-// USAGE: element.matches(query);
-//////////////////////
-/*
-(function (proto) {
-  if (typeof proto.matches !== 'function') {
-    proto.matches = proto.msMatchesSelector || proto.webkitMatchesSelector || function matches(query) {
-      let el = this;
-      let els = (el.document || el.ownerDocument).querySelectorAll(query);
-      let index = 0;
-      while (els[index] && els[index] !== el) {
-        ++index;
-      }
-      return Boolean(els[index]);
-    };
   }
 })(Element.prototype);
-*/
-//////////////////////
-// closest polyfill
-// https://github.com/jonathantneal/closest
-// USAGE: element.closest(query);
-//////////////////////
 
-/*
-(function (proto) {
-  if (typeof proto.closest !== 'function') {
-    proto.closest = function closest(query) {
-      let el = this;
-      while (el && el.nodeType === 1) {
-        if (el.matches(query)) {
-          return el;
-        }
-        el = el.parentNode;
-      }
-      return null;
-    };
-  }
-})(Element.prototype);
-*/
 //////////////////////
 // CustomEvent polyfill
 // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
@@ -474,8 +449,8 @@ try {
 
 (function (obj) {
   if (!obj.entries) {
-    obj.entries = function( obj ){
-      let ownProps = Object.keys( obj ),
+    obj.entries = function (obj) {
+      let ownProps = Object.keys(obj),
         i = ownProps.length,
         resArray = new Array(i); // preallocate the Array
       while (i--)
@@ -500,8 +475,12 @@ try {
       };
       var toInteger = function (value) {
         var number = Number(value);
-        if (isNaN(number)) { return 0; }
-        if (number === 0 || !isFinite(number)) { return number; }
+        if (isNaN(number)) {
+          return 0;
+        }
+        if (number === 0 || !isFinite(number)) {
+          return number;
+        }
         return (number > 0 ? 1 : -1) * Math.floor(Math.abs(number));
       };
       var maxSafeInteger = Math.pow(2, 53) - 1;
