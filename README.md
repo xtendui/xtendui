@@ -42,6 +42,7 @@ We use jekyll to serve the docs.
 * Polyfills:
   * [closest](https://github.com/jonathantneal/closest/).
   * [:scope](https://github.com/jonathantneal/element-qsa-scope/).
+  * [prepend](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend).
   * [append](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append).
   * [before](https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/before).
   * [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent).

@@ -14,21 +14,23 @@
 //////////////////////
 
 .col {
-  flex: 1 1 100%;
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: 100%; // fix ie10 overflow
   flex-basis: auto;
   max-width: none;
   width: auto;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
 }
 
 // grid
 
 .col(@number, @breakpoint:none) when (@breakpoint = none) {
   @val: (percentage(@number / @columns));
-  -webkit-flex-basis: @val;
-  -ms-flex-preferred-size: @val;
-  flex-basis: @val;
+  // NO BUGS IE11
+  //-webkit-flex-basis: @val;
+  //-ms-flex-preferred-size: @val;
+  //flex-basis: @val;
   max-width: @val;
   width: @val;
 }
@@ -37,9 +39,10 @@
   @query-min: 'min-@{breakpoint}';
   @val: (percentage(@number / @columns));
   @media @@query-min {
-    -webkit-flex-basis: @val;
-    -ms-flex-preferred-size: @val;
-    flex-basis: @val;
+    // NO BUGS IE11
+    //-webkit-flex-basis: @val;
+    //-ms-flex-preferred-size: @val;
+    //flex-basis: @val;
     max-width: @val;
     width: @val;
   }
