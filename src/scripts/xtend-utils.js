@@ -29,7 +29,7 @@ XtUtil.currents = {};
 /**
  * init all data-xt classes
  */
-XtUtil.initAll = function (container = document) {
+XtUtil.initAll = function (container = document.documentElement) {
   // xt-toggle
   Array.from(container.querySelectorAll('[data-xt-toggle]')).forEach(function (el) {
     new XtToggle(el);
@@ -199,21 +199,6 @@ XtUtil.parents = function (element, query) {
 };
 
 /**
- * Get element index
- * @param {Node|HTMLElement} node Element to check the index of
- * @return {Number} Element's index
- */
-/*
-XtUtil.getElementIndex = function (node) {
-  let index = 0;
-  while ((node = node.previousElementSibling)) {
-    index++;
-  }
-  return index;
-};
-*/
-
-/**
  * dataStorage
  * https://stackoverflow.com/questions/29222027/vanilla-alternative-to-jquery-data-function-any-native-javascript-alternati
  * USAGE: XtUtil.dataStorage.put(element, 'key', value);
@@ -251,38 +236,88 @@ export {XtUtil};
 
 //////////////////////
 // scope polyfill
-// https://stackoverflow.com/questions/6481612/queryselector-search-immediate-children
+// https://github.com/jonathantneal/element-qsa-scope
 // USAGE: querySelectorAll(':scope > .selector');
 //////////////////////
 
-(function (doc, proto) {
-  try { // check if browser supports :scope natively
-    doc.querySelector(':scope body');
-  } catch (err) { // polyfill native methods if it doesn't
-    ['querySelector', 'querySelectorAll'].forEach(function (method) {
-      let nativ = proto[method];
-      proto[method] = function (selectors) {
-        if (/(^|,)\s*:scope/.test(selectors)) { // only if selectors contains :scope
-          let id = this.id; // remember current element id
-          this.id = 'ID_' + Date.now(); // assign new unique id
-          selectors = selectors.replace(/((^|,)\s*):scope/g, '$1#' + this.id); // replace :scope with #ID
-          let result = doc[method](selectors);
-          this.id = id; // restore previous id
-          return result;
+try {
+  // test for scope support
+  document.querySelector(':scope *');
+} catch (error) {
+  (function (ElementPrototype) {
+    // scope regex
+    var scope = /:scope(?![\w-])/gi;
+
+    // polyfill Element#querySelector
+    var querySelectorWithScope = polyfill(ElementPrototype.querySelector);
+
+    ElementPrototype.querySelector = function querySelector(selectors) {
+      return querySelectorWithScope.apply(this, arguments);
+    };
+
+    // polyfill Element#querySelectorAll
+    var querySelectorAllWithScope = polyfill(ElementPrototype.querySelectorAll);
+
+    ElementPrototype.querySelectorAll = function querySelectorAll(selectors) {
+      return querySelectorAllWithScope.apply(this, arguments);
+    };
+
+    // polyfill Element#matches
+    if (ElementPrototype.matches) {
+      var matchesWithScope = polyfill(ElementPrototype.matches);
+
+      ElementPrototype.matches = function matches(selectors) {
+        return matchesWithScope.apply(this, arguments);
+      };
+    }
+
+    // polyfill Element#closest
+    if (ElementPrototype.closest) {
+      var closestWithScope = polyfill(ElementPrototype.closest);
+
+      ElementPrototype.closest = function closest(selectors) {
+        return closestWithScope.apply(this, arguments);
+      };
+    }
+
+    function polyfill(qsa) {
+      return function (selectors) {
+        // whether the selectors contain :scope
+        var hasScope = selectors && scope.test(selectors);
+
+        if (hasScope) {
+          // fallback attribute
+          var attr = 'q' + Math.floor(Math.random() * 9000000) + 1000000;
+
+          // replace :scope with the fallback attribute
+          arguments[0] = selectors.replace(scope, '[' + attr + ']');
+
+          // add the fallback attribute
+          this.setAttribute(attr, '');
+
+          // results of the qsa
+          var elementOrNodeList = qsa.apply(this, arguments);
+
+          // remove the fallback attribute
+          this.removeAttribute(attr);
+
+          // return the results of the qsa
+          return elementOrNodeList;
         } else {
-          return nativ.call(this, selectors); // use native code for other selectors
+          // return the results of the qsa
+          return qsa.apply(this, arguments);
         }
-      }
-    });
-  }
-})(window.document, Element.prototype);
+      };
+    }
+  })(Element.prototype);
+}
 
 //////////////////////
 // matches polyfill
 // https://github.com/jonathantneal/closest
 // USAGE: element.matches(query);
 //////////////////////
-
+/*
 (function (proto) {
   if (typeof proto.matches !== 'function') {
     proto.matches = proto.msMatchesSelector || proto.webkitMatchesSelector || function matches(query) {
@@ -296,13 +331,14 @@ export {XtUtil};
     };
   }
 })(Element.prototype);
-
+*/
 //////////////////////
 // closest polyfill
 // https://github.com/jonathantneal/closest
 // USAGE: element.closest(query);
 //////////////////////
 
+/*
 (function (proto) {
   if (typeof proto.closest !== 'function') {
     proto.closest = function closest(query) {
@@ -317,7 +353,7 @@ export {XtUtil};
     };
   }
 })(Element.prototype);
-
+*/
 //////////////////////
 // CustomEvent polyfill
 // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
@@ -372,3 +408,165 @@ export {XtUtil};
     get: scrollingElement
   })
 })();
+
+//////////////////////
+// append polyfill
+// https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append
+//////////////////////
+
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('append')) {
+      return;
+    }
+    Object.defineProperty(item, 'append', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function append() {
+        let argArr = Array.prototype.slice.call(arguments),
+          docFrag = document.createDocumentFragment();
+
+        argArr.forEach(function (argItem) {
+          let isNode = argItem instanceof Node;
+          docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
+        });
+
+        this.appendChild(docFrag);
+      }
+    });
+  });
+})([Element.prototype, Document.prototype, DocumentFragment.prototype]);
+
+//////////////////////
+// before polyfill
+// https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/before
+//////////////////////
+
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('before')) {
+      return;
+    }
+    Object.defineProperty(item, 'before', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function before() {
+        let argArr = Array.prototype.slice.call(arguments),
+          docFrag = document.createDocumentFragment();
+
+        argArr.forEach(function (argItem) {
+          let isNode = argItem instanceof Node;
+          docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
+        });
+
+        this.parentNode.insertBefore(docFrag, this);
+      }
+    });
+  });
+})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+
+//////////////////////
+// entries polyfill
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+//////////////////////
+
+(function (obj) {
+  if (!obj.entries) {
+    obj.entries = function( obj ){
+      let ownProps = Object.keys( obj ),
+        i = ownProps.length,
+        resArray = new Array(i); // preallocate the Array
+      while (i--)
+        resArray[i] = [ownProps[i], obj[ownProps[i]]];
+
+      return resArray;
+    };
+  }
+})(Object);
+
+//////////////////////
+// Array.from polyfill
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+//////////////////////
+
+(function (arr) {
+  if (!arr.from) {
+    arr.from = (function () {
+      var toStr = Object.prototype.toString;
+      var isCallable = function (fn) {
+        return typeof fn === 'function' || toStr.call(fn) === '[object Function]';
+      };
+      var toInteger = function (value) {
+        var number = Number(value);
+        if (isNaN(number)) { return 0; }
+        if (number === 0 || !isFinite(number)) { return number; }
+        return (number > 0 ? 1 : -1) * Math.floor(Math.abs(number));
+      };
+      var maxSafeInteger = Math.pow(2, 53) - 1;
+      var toLength = function (value) {
+        var len = toInteger(value);
+        return Math.min(Math.max(len, 0), maxSafeInteger);
+      };
+
+      // The length property of the from method is 1.
+      return function from(arrayLike/*, mapFn, thisArg */) {
+        // 1. Let C be the this value.
+        var C = this;
+
+        // 2. Let items be ToObject(arrayLike).
+        var items = Object(arrayLike);
+
+        // 3. ReturnIfAbrupt(items).
+        if (arrayLike == null) {
+          throw new TypeError('Array.from requires an array-like object - not null or undefined');
+        }
+
+        // 4. If mapfn is undefined, then let mapping be false.
+        var mapFn = arguments.length > 1 ? arguments[1] : void undefined;
+        var T;
+        if (typeof mapFn !== 'undefined') {
+          // 5. else
+          // 5. a If IsCallable(mapfn) is false, throw a TypeError exception.
+          if (!isCallable(mapFn)) {
+            throw new TypeError('Array.from: when provided, the second argument must be a function');
+          }
+
+          // 5. b. If thisArg was supplied, let T be thisArg; else let T be undefined.
+          if (arguments.length > 2) {
+            T = arguments[2];
+          }
+        }
+
+        // 10. Let lenValue be Get(items, "length").
+        // 11. Let len be ToLength(lenValue).
+        var len = toLength(items.length);
+
+        // 13. If IsConstructor(C) is true, then
+        // 13. a. Let A be the result of calling the [[Construct]] internal method
+        // of C with an argument list containing the single item len.
+        // 14. a. Else, Let A be ArrayCreate(len).
+        var A = isCallable(C) ? Object(new C(len)) : new Array(len);
+
+        // 16. Let k be 0.
+        var k = 0;
+        // 17. Repeat, while k < len… (also steps a - h)
+        var kValue;
+        while (k < len) {
+          kValue = items[k];
+          if (mapFn) {
+            A[k] = typeof T === 'undefined' ? mapFn(kValue, k) : mapFn.call(T, kValue, k);
+          } else {
+            A[k] = kValue;
+          }
+          k += 1;
+        }
+        // 18. Let putStatus be Put(A, "length", len, true).
+        A.length = len;
+        // 20. Return A.
+        return A;
+      };
+    }());
+  }
+})(Array);

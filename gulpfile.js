@@ -87,11 +87,13 @@ gulp.task('js-theme', gulp.series('js-dist', function () {
     .pipe(source('theme.min.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
+    /*
     .pipe(uglify({
       output: {
         comments: /^!/
       }
     }))
+    */
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/scripts/'));
 }));
@@ -104,11 +106,13 @@ gulp.task('js', gulp.series('js-theme', function () {
     .pipe(source('xtend.min.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
+    /*
     .pipe(uglify({
       output: {
         comments: /^!/
       }
     }))
+    */
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/scripts/'));
 }));

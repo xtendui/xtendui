@@ -2,7 +2,7 @@
   "presets": [
     ["env", {
       "targets": {
-        "browsers": ["last 2 versions", "safari >= 7", "Explorer 11"]
+        "browsers": [">0.25%", "Explorer 11", "not op_mini all"]
       },
       "useBuiltIns": true,
       "debug": true

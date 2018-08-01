@@ -56,7 +56,7 @@ class Xt {
     if (options.targets && options.targets.indexOf('#') !== -1) {
       // xtend all mode
       this.mode = 'all';
-      this.container = document;
+      this.container = document.documentElement;
       options.max = Infinity;
       this.namespace = options.targets.toString() + '-' + options.classes.toString();
     } else {
@@ -89,18 +89,18 @@ class Xt {
       // @FIX on next frame set all elements querying the namespace
       XtUtil.requestAnimationFrame.call(window, function () {
         let namespaceQuery = '[data-xt-id=' + self.namespace + ']';
-        self.elements = XtUtil.arrSingle(document.querySelectorAll(namespaceQuery));
+        self.elements = XtUtil.arrSingle(document.documentElement.querySelectorAll(namespaceQuery));
       });
     }
     // targets
     if (options.targets) {
       let arr = Array.from(this.container.querySelectorAll(options.targets));
       arr = arr.filter(x => !XtUtil.parents(x, options.targets).length); // filter out parent
-      this.targets = XtUtil.arrSingle(arr);
+      this.targets = arr;
     }
     // appendTo
     if (options.appendTo) {
-      let appendToTarget = document.querySelectorAll(options.appendTo);
+      let appendToTarget = document.documentElement.querySelectorAll(options.appendTo);
       if (appendToTarget.length) {
         this.targets.forEach(function (el) {
           appendToTarget[0].appendChild(el);
@@ -140,9 +140,11 @@ class Xt {
       for (let tr of this.targets) {
         // aria-label
         let headers = tr.querySelectorAll('h1, h2, h3, h4, h5, h6');
-        let label = headers.length ? headers[0].innerText : this.getElementsFromTarget(tr)[0].innerText;
-        label = label.replace(/\s+/g, ' ').trim();
-        tr.setAttribute('aria-label', label);
+        let label = headers.length ? headers : this.getElementsFromTarget(tr);
+        if (label.length) {
+          label = label[0].innerText.replace(/\s+/g, ' ').trim();
+          tr.setAttribute('aria-label', label);
+        }
       }
     }
   }
@@ -897,7 +899,7 @@ class Xt {
     }
     // closeOutside
     if (options.closeOutside) {
-      let closeElements = document.querySelectorAll(options.closeOutside);
+      let closeElements = document.documentElement.querySelectorAll(options.closeOutside);
       XtUtil.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
           // handler
@@ -928,7 +930,7 @@ class Xt {
     }
     // closeOutside
     if (options.closeOutside) {
-      let closeElements = document.querySelectorAll(options.closeOutside);
+      let closeElements = document.documentElement.querySelectorAll(options.closeOutside);
       for (let closeElement of closeElements) {
         let specialCloseOffHandler = XtUtil.dataStorage.get(el, 'specialCloseOffHandler');
         closeElement.removeEventListener('click', specialCloseOffHandler);
@@ -971,7 +973,7 @@ class Xt {
       let elements;
       let width = XtUtil.scrollbarWidth();
       // check fixed
-      elements = document.querySelectorAll('.xt-check-fixed > *');
+      elements = document.documentElement.querySelectorAll('.xt-check-fixed > *');
       for (let element of elements) {
         let style = getComputedStyle(element);
         if (style.position === 'fixed') {
@@ -981,7 +983,7 @@ class Xt {
         }
       }
       // fixed
-      elements = document.querySelectorAll('.xt-fixed');
+      elements = document.documentElement.querySelectorAll('.xt-fixed');
       for (let element of elements) {
         element.style.paddingRight = '';
         if (self.normalizeWidth(element.clientWidth) === '') {
@@ -998,7 +1000,7 @@ class Xt {
         }
       }
       // backdrop
-      elements = document.querySelectorAll('.xt-backdrop');
+      elements = document.documentElement.querySelectorAll('.xt-backdrop');
       for (let element of elements) {
         element.style.right = width + 'px';
       }
@@ -1023,7 +1025,7 @@ class Xt {
       container.style.paddingRight = '';
       container.classList.remove('xt-scrollbar');
       // fixed
-      elements = document.querySelectorAll('.xt-fixed');
+      elements = document.documentElement.querySelectorAll('.xt-fixed');
       for (let element of elements) {
         element.classList.add('no-transition');
         XtUtil.requestAnimationFrame.call(window, function () {
@@ -1034,7 +1036,7 @@ class Xt {
         });
       }
       // backdrop
-      elements = document.querySelectorAll('.xt-backdrop');
+      elements = document.documentElement.querySelectorAll('.xt-backdrop');
       for (let element of elements) {
         element.style.right = '';
       }
@@ -1131,9 +1133,11 @@ class XtDrop extends Xt {
       for (let tr of this.targets) {
         // aria-label
         if (this.options.additional) {
-          let label = this.getAdditional()[0].innerText;
-          label = label.replace(/\s+/g, ' ').trim();
-          tr.setAttribute('aria-label', label);
+          let label = this.getAdditional();
+          if (label.length) {
+            label = label[0].innerText.replace(/\s+/g, ' ').trim();
+            tr.setAttribute('aria-label', label);
+          }
         }
       }
     }
@@ -1496,7 +1500,7 @@ class XtSticky extends Xt {
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
-      let elements = Array.isArray(option) ? option : document.querySelectorAll(option);
+      let elements = Array.isArray(option) ? option : document.documentElement.querySelectorAll(option);
       if (elements.length) {
         let found = false;
         val = 0;
@@ -1536,7 +1540,7 @@ class XtSticky extends Xt {
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
-      let elements = Array.isArray(option) ? option : document.querySelectorAll(option);
+      let elements = Array.isArray(option) ? option : document.documentElement.querySelectorAll(option);
       if (elements.length) {
         for (let el of elements) {
           if (el.classList.contains('sticky-hide-down') && el.classList.contains('active')) {

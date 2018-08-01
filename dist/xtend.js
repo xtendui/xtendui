@@ -5605,7 +5605,7 @@ XtUtil.currents = {};
  * init all data-xt classes
  */
 XtUtil.initAll = function () {
-  var container = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+  var container = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document.documentElement;
 
   // xt-toggle
   Array.from(container.querySelectorAll('[data-xt-toggle]')).forEach(function (el) {
@@ -5864,21 +5864,6 @@ XtUtil.parents = function (element, query) {
 };
 
 /**
- * Get element index
- * @param {Node|HTMLElement} node Element to check the index of
- * @return {Number} Element's index
- */
-/*
-XtUtil.getElementIndex = function (node) {
-  let index = 0;
-  while ((node = node.previousElementSibling)) {
-    index++;
-  }
-  return index;
-};
-*/
-
-/**
  * dataStorage
  * https://stackoverflow.com/questions/29222027/vanilla-alternative-to-jquery-data-function-any-native-javascript-alternati
  * USAGE: XtUtil.dataStorage.put(element, 'key', value);
@@ -5916,47 +5901,94 @@ exports.XtUtil = XtUtil;
 
 //////////////////////
 // scope polyfill
-// https://stackoverflow.com/questions/6481612/queryselector-search-immediate-children
+// https://github.com/jonathantneal/element-qsa-scope
 // USAGE: querySelectorAll(':scope > .selector');
 //////////////////////
 
-(function (doc, proto) {
-  try {
-    // check if browser supports :scope natively
-    doc.querySelector(':scope body');
-  } catch (err) {
-    // polyfill native methods if it doesn't
-    ['querySelector', 'querySelectorAll'].forEach(function (method) {
-      var nativ = proto[method];
-      proto[method] = function (selectors) {
-        if (/(^|,)\s*:scope/.test(selectors)) {
-          // only if selectors contains :scope
-          var _id = this.id; // remember current element id
-          this.id = 'ID_' + Date.now(); // assign new unique id
-          selectors = selectors.replace(/((^|,)\s*):scope/g, '$1#' + this.id); // replace :scope with #ID
-          var result = doc[method](selectors);
-          this.id = _id; // restore previous id
-          return result;
+try {
+  // test for scope support
+  document.querySelector(':scope *');
+} catch (error) {
+  (function (ElementPrototype) {
+    // scope regex
+    var scope = /:scope(?![\w-])/gi;
+
+    // polyfill Element#querySelector
+    var querySelectorWithScope = polyfill(ElementPrototype.querySelector);
+
+    ElementPrototype.querySelector = function querySelector(selectors) {
+      return querySelectorWithScope.apply(this, arguments);
+    };
+
+    // polyfill Element#querySelectorAll
+    var querySelectorAllWithScope = polyfill(ElementPrototype.querySelectorAll);
+
+    ElementPrototype.querySelectorAll = function querySelectorAll(selectors) {
+      return querySelectorAllWithScope.apply(this, arguments);
+    };
+
+    // polyfill Element#matches
+    if (ElementPrototype.matches) {
+      var matchesWithScope = polyfill(ElementPrototype.matches);
+
+      ElementPrototype.matches = function matches(selectors) {
+        return matchesWithScope.apply(this, arguments);
+      };
+    }
+
+    // polyfill Element#closest
+    if (ElementPrototype.closest) {
+      var closestWithScope = polyfill(ElementPrototype.closest);
+
+      ElementPrototype.closest = function closest(selectors) {
+        return closestWithScope.apply(this, arguments);
+      };
+    }
+
+    function polyfill(qsa) {
+      return function (selectors) {
+        // whether the selectors contain :scope
+        var hasScope = selectors && scope.test(selectors);
+
+        if (hasScope) {
+          // fallback attribute
+          var attr = 'q' + Math.floor(Math.random() * 9000000) + 1000000;
+
+          // replace :scope with the fallback attribute
+          arguments[0] = selectors.replace(scope, '[' + attr + ']');
+
+          // add the fallback attribute
+          this.setAttribute(attr, '');
+
+          // results of the qsa
+          var elementOrNodeList = qsa.apply(this, arguments);
+
+          // remove the fallback attribute
+          this.removeAttribute(attr);
+
+          // return the results of the qsa
+          return elementOrNodeList;
         } else {
-          return nativ.call(this, selectors); // use native code for other selectors
+          // return the results of the qsa
+          return qsa.apply(this, arguments);
         }
       };
-    });
-  }
-})(window.document, Element.prototype);
+    }
+  })(Element.prototype);
+}
 
 //////////////////////
 // matches polyfill
 // https://github.com/jonathantneal/closest
 // USAGE: element.matches(query);
 //////////////////////
-
+/*
 (function (proto) {
   if (typeof proto.matches !== 'function') {
     proto.matches = proto.msMatchesSelector || proto.webkitMatchesSelector || function matches(query) {
-      var el = this;
-      var els = (el.document || el.ownerDocument).querySelectorAll(query);
-      var index = 0;
+      let el = this;
+      let els = (el.document || el.ownerDocument).querySelectorAll(query);
+      let index = 0;
       while (els[index] && els[index] !== el) {
         ++index;
       }
@@ -5964,17 +5996,18 @@ exports.XtUtil = XtUtil;
     };
   }
 })(Element.prototype);
-
+*/
 //////////////////////
 // closest polyfill
 // https://github.com/jonathantneal/closest
 // USAGE: element.closest(query);
 //////////////////////
 
+/*
 (function (proto) {
   if (typeof proto.closest !== 'function') {
     proto.closest = function closest(query) {
-      var el = this;
+      let el = this;
       while (el && el.nodeType === 1) {
         if (el.matches(query)) {
           return el;
@@ -5985,7 +6018,7 @@ exports.XtUtil = XtUtil;
     };
   }
 })(Element.prototype);
-
+*/
 //////////////////////
 // CustomEvent polyfill
 // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
@@ -6040,6 +6073,171 @@ exports.XtUtil = XtUtil;
     get: scrollingElement
   });
 })();
+
+//////////////////////
+// append polyfill
+// https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append
+//////////////////////
+
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('append')) {
+      return;
+    }
+    Object.defineProperty(item, 'append', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function append() {
+        var argArr = Array.prototype.slice.call(arguments),
+            docFrag = document.createDocumentFragment();
+
+        argArr.forEach(function (argItem) {
+          var isNode = argItem instanceof Node;
+          docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
+        });
+
+        this.appendChild(docFrag);
+      }
+    });
+  });
+})([Element.prototype, Document.prototype, DocumentFragment.prototype]);
+
+//////////////////////
+// before polyfill
+// https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/before
+//////////////////////
+
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('before')) {
+      return;
+    }
+    Object.defineProperty(item, 'before', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function before() {
+        var argArr = Array.prototype.slice.call(arguments),
+            docFrag = document.createDocumentFragment();
+
+        argArr.forEach(function (argItem) {
+          var isNode = argItem instanceof Node;
+          docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
+        });
+
+        this.parentNode.insertBefore(docFrag, this);
+      }
+    });
+  });
+})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+
+//////////////////////
+// entries polyfill
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+//////////////////////
+
+(function (obj) {
+  if (!obj.entries) {
+    obj.entries = function (obj) {
+      var ownProps = Object.keys(obj),
+          i = ownProps.length,
+          resArray = new Array(i); // preallocate the Array
+      while (i--) {
+        resArray[i] = [ownProps[i], obj[ownProps[i]]];
+      }return resArray;
+    };
+  }
+})(Object);
+
+//////////////////////
+// Array.from polyfill
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+//////////////////////
+
+(function (arr) {
+  if (!arr.from) {
+    arr.from = function () {
+      var toStr = Object.prototype.toString;
+      var isCallable = function isCallable(fn) {
+        return typeof fn === 'function' || toStr.call(fn) === '[object Function]';
+      };
+      var toInteger = function toInteger(value) {
+        var number = Number(value);
+        if (isNaN(number)) {
+          return 0;
+        }
+        if (number === 0 || !isFinite(number)) {
+          return number;
+        }
+        return (number > 0 ? 1 : -1) * Math.floor(Math.abs(number));
+      };
+      var maxSafeInteger = Math.pow(2, 53) - 1;
+      var toLength = function toLength(value) {
+        var len = toInteger(value);
+        return Math.min(Math.max(len, 0), maxSafeInteger);
+      };
+
+      // The length property of the from method is 1.
+      return function from(arrayLike /*, mapFn, thisArg */) {
+        // 1. Let C be the this value.
+        var C = this;
+
+        // 2. Let items be ToObject(arrayLike).
+        var items = Object(arrayLike);
+
+        // 3. ReturnIfAbrupt(items).
+        if (arrayLike == null) {
+          throw new TypeError('Array.from requires an array-like object - not null or undefined');
+        }
+
+        // 4. If mapfn is undefined, then let mapping be false.
+        var mapFn = arguments.length > 1 ? arguments[1] : void undefined;
+        var T;
+        if (typeof mapFn !== 'undefined') {
+          // 5. else
+          // 5. a If IsCallable(mapfn) is false, throw a TypeError exception.
+          if (!isCallable(mapFn)) {
+            throw new TypeError('Array.from: when provided, the second argument must be a function');
+          }
+
+          // 5. b. If thisArg was supplied, let T be thisArg; else let T be undefined.
+          if (arguments.length > 2) {
+            T = arguments[2];
+          }
+        }
+
+        // 10. Let lenValue be Get(items, "length").
+        // 11. Let len be ToLength(lenValue).
+        var len = toLength(items.length);
+
+        // 13. If IsConstructor(C) is true, then
+        // 13. a. Let A be the result of calling the [[Construct]] internal method
+        // of C with an argument list containing the single item len.
+        // 14. a. Else, Let A be ArrayCreate(len).
+        var A = isCallable(C) ? Object(new C(len)) : new Array(len);
+
+        // 16. Let k be 0.
+        var k = 0;
+        // 17. Repeat, while k < len… (also steps a - h)
+        var kValue;
+        while (k < len) {
+          kValue = items[k];
+          if (mapFn) {
+            A[k] = typeof T === 'undefined' ? mapFn(kValue, k) : mapFn.call(T, kValue, k);
+          } else {
+            A[k] = kValue;
+          }
+          k += 1;
+        }
+        // 18. Let putStatus be Put(A, "length", len, true).
+        A.length = len;
+        // 20. Return A.
+        return A;
+      };
+    }();
+  }
+})(Array);
 
 },{"./xtend":204,"core-js/modules/es6.array.copy-within":107,"core-js/modules/es6.array.fill":108,"core-js/modules/es6.array.find":110,"core-js/modules/es6.array.find-index":109,"core-js/modules/es6.array.from":111,"core-js/modules/es6.array.iterator":112,"core-js/modules/es6.array.of":113,"core-js/modules/es6.function.name":114,"core-js/modules/es6.map":115,"core-js/modules/es6.math.acosh":116,"core-js/modules/es6.math.asinh":117,"core-js/modules/es6.math.atanh":118,"core-js/modules/es6.math.cbrt":119,"core-js/modules/es6.math.clz32":120,"core-js/modules/es6.math.cosh":121,"core-js/modules/es6.math.expm1":122,"core-js/modules/es6.math.fround":123,"core-js/modules/es6.math.hypot":124,"core-js/modules/es6.math.imul":125,"core-js/modules/es6.math.log10":126,"core-js/modules/es6.math.log1p":127,"core-js/modules/es6.math.log2":128,"core-js/modules/es6.math.sign":129,"core-js/modules/es6.math.sinh":130,"core-js/modules/es6.math.tanh":131,"core-js/modules/es6.math.trunc":132,"core-js/modules/es6.number.epsilon":133,"core-js/modules/es6.number.is-finite":134,"core-js/modules/es6.number.is-integer":135,"core-js/modules/es6.number.is-nan":136,"core-js/modules/es6.number.is-safe-integer":137,"core-js/modules/es6.number.max-safe-integer":138,"core-js/modules/es6.number.min-safe-integer":139,"core-js/modules/es6.object.assign":140,"core-js/modules/es6.object.freeze":141,"core-js/modules/es6.object.get-own-property-descriptor":142,"core-js/modules/es6.object.get-own-property-names":143,"core-js/modules/es6.object.get-prototype-of":144,"core-js/modules/es6.object.is":148,"core-js/modules/es6.object.is-extensible":145,"core-js/modules/es6.object.is-frozen":146,"core-js/modules/es6.object.is-sealed":147,"core-js/modules/es6.object.keys":149,"core-js/modules/es6.object.prevent-extensions":150,"core-js/modules/es6.object.seal":151,"core-js/modules/es6.object.set-prototype-of":152,"core-js/modules/es6.promise":153,"core-js/modules/es6.reflect.apply":154,"core-js/modules/es6.reflect.construct":155,"core-js/modules/es6.reflect.define-property":156,"core-js/modules/es6.reflect.delete-property":157,"core-js/modules/es6.reflect.get":160,"core-js/modules/es6.reflect.get-own-property-descriptor":158,"core-js/modules/es6.reflect.get-prototype-of":159,"core-js/modules/es6.reflect.has":161,"core-js/modules/es6.reflect.is-extensible":162,"core-js/modules/es6.reflect.own-keys":163,"core-js/modules/es6.reflect.prevent-extensions":164,"core-js/modules/es6.reflect.set":166,"core-js/modules/es6.reflect.set-prototype-of":165,"core-js/modules/es6.regexp.flags":167,"core-js/modules/es6.regexp.match":168,"core-js/modules/es6.regexp.replace":169,"core-js/modules/es6.regexp.search":170,"core-js/modules/es6.regexp.split":171,"core-js/modules/es6.set":172,"core-js/modules/es6.string.code-point-at":173,"core-js/modules/es6.string.ends-with":174,"core-js/modules/es6.string.from-code-point":175,"core-js/modules/es6.string.includes":176,"core-js/modules/es6.string.raw":177,"core-js/modules/es6.string.repeat":178,"core-js/modules/es6.string.starts-with":179,"core-js/modules/es6.symbol":180,"core-js/modules/es6.typed.array-buffer":181,"core-js/modules/es6.typed.float32-array":182,"core-js/modules/es6.typed.float64-array":183,"core-js/modules/es6.typed.int16-array":184,"core-js/modules/es6.typed.int32-array":185,"core-js/modules/es6.typed.int8-array":186,"core-js/modules/es6.typed.uint16-array":187,"core-js/modules/es6.typed.uint32-array":188,"core-js/modules/es6.typed.uint8-array":189,"core-js/modules/es6.typed.uint8-clamped-array":190,"core-js/modules/es6.weak-map":191,"core-js/modules/es6.weak-set":192,"core-js/modules/es7.array.includes":193,"core-js/modules/es7.object.entries":194,"core-js/modules/es7.object.get-own-property-descriptors":195,"core-js/modules/es7.object.values":196,"core-js/modules/es7.string.pad-end":197,"core-js/modules/es7.string.pad-start":198,"core-js/modules/web.dom.iterable":199,"core-js/modules/web.immediate":200,"core-js/modules/web.timers":201,"regenerator-runtime/runtime":202}],204:[function(require,module,exports){
 /* xtend (https://getxtend.com/)
@@ -6318,7 +6516,7 @@ var Xt = function () {
       if (options.targets && options.targets.indexOf('#') !== -1) {
         // xtend all mode
         this.mode = 'all';
-        this.container = document;
+        this.container = document.documentElement;
         options.max = Infinity;
         this.namespace = options.targets.toString() + '-' + options.classes.toString();
       } else {
@@ -6354,7 +6552,7 @@ var Xt = function () {
         // @FIX on next frame set all elements querying the namespace
         _xtendUtils.XtUtil.requestAnimationFrame.call(window, function () {
           var namespaceQuery = '[data-xt-id=' + self.namespace + ']';
-          self.elements = _xtendUtils.XtUtil.arrSingle(document.querySelectorAll(namespaceQuery));
+          self.elements = _xtendUtils.XtUtil.arrSingle(document.documentElement.querySelectorAll(namespaceQuery));
         });
       }
       // targets
@@ -6363,11 +6561,11 @@ var Xt = function () {
         arr = arr.filter(function (x) {
           return !_xtendUtils.XtUtil.parents(x, options.targets).length;
         }); // filter out parent
-        this.targets = _xtendUtils.XtUtil.arrSingle(arr);
+        this.targets = arr;
       }
       // appendTo
       if (options.appendTo) {
-        var appendToTarget = document.querySelectorAll(options.appendTo);
+        var appendToTarget = document.documentElement.querySelectorAll(options.appendTo);
         if (appendToTarget.length) {
           this.targets.forEach(function (el) {
             appendToTarget[0].appendChild(el);
@@ -6465,9 +6663,11 @@ var Xt = function () {
 
             // aria-label
             var headers = tr.querySelectorAll('h1, h2, h3, h4, h5, h6');
-            var label = headers.length ? headers[0].innerText : this.getElementsFromTarget(tr)[0].innerText;
-            label = label.replace(/\s+/g, ' ').trim();
-            tr.setAttribute('aria-label', label);
+            var label = headers.length ? headers : this.getElementsFromTarget(tr);
+            if (label.length) {
+              label = label[0].innerText.replace(/\s+/g, ' ').trim();
+              tr.setAttribute('aria-label', label);
+            }
           }
         } catch (err) {
           _didIteratorError3 = true;
@@ -7560,7 +7760,7 @@ var Xt = function () {
       }
       // closeOutside
       if (options.closeOutside) {
-        var _closeElements = document.querySelectorAll(options.closeOutside);
+        var _closeElements = document.documentElement.querySelectorAll(options.closeOutside);
         _xtendUtils.XtUtil.requestAnimationFrame.call(window, function () {
           var _iteratorNormalCompletion13 = true;
           var _didIteratorError13 = false;
@@ -7636,7 +7836,7 @@ var Xt = function () {
       }
       // closeOutside
       if (options.closeOutside) {
-        var _closeElements2 = document.querySelectorAll(options.closeOutside);
+        var _closeElements2 = document.documentElement.querySelectorAll(options.closeOutside);
         var _iteratorNormalCompletion15 = true;
         var _didIteratorError15 = false;
         var _iteratorError15 = undefined;
@@ -7709,7 +7909,7 @@ var Xt = function () {
         var elements = void 0;
         var width = _xtendUtils.XtUtil.scrollbarWidth();
         // check fixed
-        elements = document.querySelectorAll('.xt-check-fixed > *');
+        elements = document.documentElement.querySelectorAll('.xt-check-fixed > *');
         var _iteratorNormalCompletion16 = true;
         var _didIteratorError16 = false;
         var _iteratorError16 = undefined;
@@ -7741,7 +7941,7 @@ var Xt = function () {
           }
         }
 
-        elements = document.querySelectorAll('.xt-fixed');
+        elements = document.documentElement.querySelectorAll('.xt-fixed');
         var _iteratorNormalCompletion17 = true;
         var _didIteratorError17 = false;
         var _iteratorError17 = undefined;
@@ -7784,7 +7984,7 @@ var Xt = function () {
           }
         }
 
-        elements = document.querySelectorAll('.xt-backdrop');
+        elements = document.documentElement.querySelectorAll('.xt-backdrop');
         var _iteratorNormalCompletion18 = true;
         var _didIteratorError18 = false;
         var _iteratorError18 = undefined;
@@ -7834,7 +8034,7 @@ var Xt = function () {
         container.style.paddingRight = '';
         container.classList.remove('xt-scrollbar');
         // fixed
-        elements = document.querySelectorAll('.xt-fixed');
+        elements = document.documentElement.querySelectorAll('.xt-fixed');
         var _iteratorNormalCompletion19 = true;
         var _didIteratorError19 = false;
         var _iteratorError19 = undefined;
@@ -7871,7 +8071,7 @@ var Xt = function () {
           }
         }
 
-        elements = document.querySelectorAll('.xt-backdrop');
+        elements = document.documentElement.querySelectorAll('.xt-backdrop');
         var _iteratorNormalCompletion20 = true;
         var _didIteratorError20 = false;
         var _iteratorError20 = undefined;
@@ -8016,9 +8216,11 @@ var XtDrop = function (_Xt2) {
 
             // aria-label
             if (this.options.additional) {
-              var label = this.getAdditional()[0].innerText;
-              label = label.replace(/\s+/g, ' ').trim();
-              tr.setAttribute('aria-label', label);
+              var label = this.getAdditional();
+              if (label.length) {
+                label = label[0].innerText.replace(/\s+/g, ' ').trim();
+                tr.setAttribute('aria-label', label);
+              }
             }
           }
         } catch (err) {
@@ -8519,7 +8721,7 @@ var XtSticky = function (_Xt4) {
       if (!isNaN(parseFloat(option))) {
         val = option;
       } else {
-        var elements = Array.isArray(option) ? option : document.querySelectorAll(option);
+        var elements = Array.isArray(option) ? option : document.documentElement.querySelectorAll(option);
         if (elements.length) {
           var found = false;
           val = 0;
@@ -8587,7 +8789,7 @@ var XtSticky = function (_Xt4) {
       if (!isNaN(parseFloat(option))) {
         val = option;
       } else {
-        var elements = Array.isArray(option) ? option : document.querySelectorAll(option);
+        var elements = Array.isArray(option) ? option : document.documentElement.querySelectorAll(option);
         if (elements.length) {
           var _iteratorNormalCompletion27 = true;
           var _didIteratorError27 = false;
