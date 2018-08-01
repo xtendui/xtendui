@@ -733,7 +733,42 @@ description: Many possible behaviour, interactions and animations are possible w
   </div>
 </div>
 
-<div class="alert">
-  For customizing the animations read the documentation of <a
-  href="{% link _docs/animation.html %}#toggle">animations</a>.
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="manager">
+    <div class="demo-text">
+      With multiple <strong>targets</strong>, the ones activated is the one with the same index of the toggled <strong>element</strong>.
+      Nested <strong>targets</strong> are filtered out.
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div data-xt-toggle>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle 0
+        </button>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle 1
+        </button>
+        <button type="button" class="btn btn-primary-empty">
+          Toggle 2
+        </button>
+        <div class="alert toggle-block">
+          Target 0
+          <div class="alert toggle-block">
+            Nested not toggled
+          </div>
+        </div>
+        <div class="alert toggle-block">
+          Target 1
+          <div class="alert toggle-block">
+            Nested not toggled
+          </div>
+        </div>
+        <div class="alert toggle-block">
+          Target 2
+          <div class="alert toggle-block">
+            Nested not toggled
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

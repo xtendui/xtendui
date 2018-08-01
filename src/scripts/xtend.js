@@ -433,11 +433,7 @@ class Xt {
    * @returns {Boolean} If eventOn changes activation
    */
   checkOn(element) {
-    if ((!element.classList.contains(...this.options.classes) || element.classList.contains('off-block')) && !element.classList.contains('on-block')) {
-      return true;
-    } else {
-      return false;
-    }
+    return (!element.classList.contains(...this.options.classes) || element.classList.contains('off-block')) && !element.classList.contains('on-block');
   }
 
   /**
@@ -448,14 +444,8 @@ class Xt {
   checkOff(element) {
     // if currents < min
     let todo = this.options.min - this.getCurrents().length;
-    if (!todo) {
-      return false;
-    }
-    if ((element.classList.contains(...this.options.classes) || element.classList.contains('on-block')) && !element.classList.contains('off-block')) {
-      return true;
-    } else {
-      return false;
-    }
+    if (!todo) return false;
+    return (element.classList.contains(...this.options.classes) || element.classList.contains('on-block')) && !element.classList.contains('off-block');
   }
 
   /**
