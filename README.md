@@ -38,6 +38,14 @@ We use jekyll to serve the docs.
 # Acknowledgements
 
 * Documentation with [jekyll](https://jekyllrb.com/).
+* Javascript with [babel](https://babeljs.io/).
+* Polyfills:
+  * [closest](https://github.com/jonathantneal/closest/).
+  * [:scope](https://github.com/jonathantneal/element-qsa-scope/).
+  * [append](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append).
+  * [before](https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/before).
+  * [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent).
+  * [scrollingElement](https://github.com/yangg/scrolling-element).
 <!--
 * Icons by [feather icons](https://github.com/feathericons/feather).
 -->
