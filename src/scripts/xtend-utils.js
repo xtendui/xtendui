@@ -29,7 +29,7 @@ XtUtil.currents = {};
 /**
  * init all data-xt classes
  */
-XtUtil.initAll = function (container = document.documentElement) {
+XtUtil.initAll = function (container = document) {
   // xt-toggle
   Array.from(container.querySelectorAll('[data-xt-toggle]')).forEach(function (el) {
     new XtToggle(el);

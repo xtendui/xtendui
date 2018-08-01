@@ -48,7 +48,7 @@ const formatCode = function (source, lang) {
 
 // highlight
 
-Array.from(document.documentElement.querySelectorAll('pre code')).forEach(function (el) {
+Array.from(document.querySelectorAll('pre code')).forEach(function (el) {
   let lang = el.className;
   let text = formatCode(el, lang);
   // set text
@@ -58,17 +58,17 @@ Array.from(document.documentElement.querySelectorAll('pre code')).forEach(functi
 
 // .make-line
 
-Array.from(document.documentElement.querySelectorAll('.site-article > h2, .site-article > h3')).forEach(function (el) {
+Array.from(document.querySelectorAll('.site-article > h2, .site-article > h3')).forEach(function (el) {
   el.classList.add('make-line');
 });
-Array.from(document.documentElement.querySelectorAll('.make-line')).forEach(function (el) {
+Array.from(document.querySelectorAll('.make-line')).forEach(function (el) {
   el.innerHTML = '<div class="line">' + el.innerHTML + '</div>';
   el.innerHTML = '<div class="line-container">' + el.innerHTML + '</div>';
 });
 
 // .make-anchor
 
-Array.from(document.documentElement.querySelectorAll('.site-article > h2, .site-article > h3')).forEach(function (el) {
+Array.from(document.querySelectorAll('.site-article > h2, .site-article > h3')).forEach(function (el) {
   el.classList.add('make-line');
   // previous h2 if h3
   let prevElement;
@@ -96,9 +96,9 @@ Array.from(document.documentElement.querySelectorAll('.site-article > h2, .site-
 
 // .site-aside-text
 
-Array.from(document.documentElement.querySelectorAll('.site-aside-text > .btn:not(.different)')).forEach(function (el) {
+Array.from(document.querySelectorAll('.site-aside-text > .btn:not(.different)')).forEach(function (el) {
   let container = XtUtil.parents(el, '.site-aside-text')[0];
-  Array.from(document.documentElement.querySelectorAll('.site-article > h2, .site-article > h3')).forEach(function (element) {
+  Array.from(document.querySelectorAll('.site-article > h2, .site-article > h3')).forEach(function (element) {
     if (element.tagName === 'H2') {
       let appendItem = XtUtil.createElement('<div class="site-aside-sub-container"></div>');
       container.append(appendItem);
@@ -111,7 +111,7 @@ Array.from(document.documentElement.querySelectorAll('.site-aside-text > .btn:no
   });
 });
 
-Array.from(document.documentElement.querySelectorAll('.site-aside-text')).forEach(function (el) {
+Array.from(document.querySelectorAll('.site-aside-text')).forEach(function (el) {
   new XtToggle(el, {
     "elements": ".site-aside-sub-container",
     "targets": ".site-aside-subsub",
@@ -129,7 +129,7 @@ const activateAsideScroll = function (els, scrollTop) {
   Array.from(els).forEach(function (el) {
     let href = el.getAttribute('href');
     if (href) {
-      let target = document.documentElement.querySelectorAll(href);
+      let target = document.querySelectorAll(href);
       let rect = target[0].getBoundingClientRect();
       let top = rect.top + scrollTop;
       let bottom = Infinity;
@@ -153,10 +153,10 @@ const activateAsideScroll = function (els, scrollTop) {
 };
 window.addEventListener('scroll', function (e) {
   let scrollTop = document.documentElement.scrollTop;
-  let sub = Array.from(document.documentElement.querySelectorAll('.btn-site-aside-sub'));
+  let sub = Array.from(document.querySelectorAll('.btn-site-aside-sub'));
   sub = sub.filter(x => !XtUtil.parents(x, '.xt-clone').length); // filter out parent
   activateAsideScroll(sub, scrollTop);
-  let subsub = Array.from(document.documentElement.querySelectorAll('.btn-site-aside-sub.active + .site-aside-subsub .btn-site-aside-subsub'));
+  let subsub = Array.from(document.querySelectorAll('.btn-site-aside-sub.active + .site-aside-subsub .btn-site-aside-subsub'));
   subsub = subsub.filter(x => !XtUtil.parents(x, '.xt-clone').length); // filter out parent
   activateAsideScroll(subsub, scrollTop);
 });
@@ -278,7 +278,7 @@ const populateInline = function (item, id) {
 
 window.initIframe = function(name) {
   let src = 'iframe[name="' + name + '"]';
-  let iframe = document.documentElement.querySelectorAll(src)[0];
+  let iframe = document.querySelectorAll(src)[0];
   iframe.classList.add('show');
   let item = XtUtil.parents(iframe, '.demo-item')[0];
   if (!item.classList.contains('populated')) {
@@ -290,7 +290,7 @@ window.initIframe = function(name) {
 
 window.resizeIframe = function(name) {
   let src = 'iframe[name="' + name + '"]';
-  let iframe = document.documentElement.querySelectorAll(src)[0];
+  let iframe = document.querySelectorAll(src)[0];
   if (iframe) {
     if (!iframe.contentWindow.document.body.classList.contains('full')) {
       let target = iframe.contentWindow.document.body.querySelectorAll('#body-outer')[0];
@@ -355,7 +355,7 @@ const populateSources = function (item, element, z) {
 
 // init demos
 
-Array.from(document.documentElement.querySelectorAll('.demo')).forEach(function (el, i) {
+Array.from(document.querySelectorAll('.demo')).forEach(function (el, i) {
   populateDemo(el, i);
   // enable fullscreen
   /*
@@ -385,7 +385,7 @@ Array.from(document.documentElement.querySelectorAll('.demo')).forEach(function 
 
 // .demo-cols
 
-Array.from(document.documentElement.querySelectorAll('.demo-cols')).forEach(function (element) {
+Array.from(document.querySelectorAll('.demo-cols')).forEach(function (element) {
   Array.from(element.querySelectorAll('.col')).forEach(function (el, i) {
     el.setAttribute('data-index', i);
   });
@@ -393,7 +393,7 @@ Array.from(document.documentElement.querySelectorAll('.demo-cols')).forEach(func
 
 // .demo-cols-nested
 
-Array.from(document.documentElement.querySelectorAll('.demo-cols-nested .col')).forEach(function (element) {
+Array.from(document.querySelectorAll('.demo-cols-nested .col')).forEach(function (element) {
   Array.from(element.querySelectorAll('.col')).forEach(function (el, i) {
     el.setAttribute('data-index', i);
   });
