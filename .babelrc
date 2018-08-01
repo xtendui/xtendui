@@ -5,7 +5,7 @@
         "browsers": [">0.25%", "Explorer 11", "not op_mini all"]
       },
       "useBuiltIns": true,
-      "debug": true
+      "debug": false
     }]
   ],
   "plugins":  [

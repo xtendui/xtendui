@@ -4,8 +4,6 @@
 
 'use strict';
 
-import 'babel-polyfill';
-
 import {XtToggle, XtDrop, XtOverlay, XtFade, XtSticky} from './xtend';
 
 //////////////////////

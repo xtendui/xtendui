@@ -4,8 +4,6 @@
 
 'use strict';
 
-import 'babel-polyfill';
-
 import {XtUtil} from './xtend-utils';
 
 //////////////////////
