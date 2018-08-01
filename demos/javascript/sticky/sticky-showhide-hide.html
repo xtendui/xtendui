@@ -111,10 +111,10 @@
           parent.resizeIframe(window.frameElement.getAttribute('id'));
         });
       }
-      if (document.readyState !== 'loading') {
-        initAll();
-      } else if (document.addEventListener) {
+      if (document.readyState === "loading") {
         document.addEventListener('DOMContentLoaded', initAll);
+      } else {
+        initAll();
       }
       // init iframe
       window.parent.initIframe(window.name);

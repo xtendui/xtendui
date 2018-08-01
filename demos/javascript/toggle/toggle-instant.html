@@ -19,7 +19,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
 
     <!-- styles -->
-    <link rel="stylesheet" href="sticky-mode-absolute.css?v=0.4.27" />
+    
     <link rel="stylesheet" href="/assets/styles/demo.css?v=0.4.27" />
     
     <!-- scripts -->
@@ -34,35 +34,41 @@
   <body class="full">
 
     <div id="body-outer">
+<div id="body-inner" class="demo-source-from">
+<div data-xt-toggle='{"instant": {"elements": true, "targets": true, "additional": true}}'>
 
-<br><br><br><br><br><br><br>
-
-<div data-xt-sticky>
-  <div class="box box-squared box-primary">
-    Sticky
+  <button type="button" class="btn btn-primary-empty">
+    Toggle 0
+  </button>
+  <button type="button" class="btn btn-primary-empty">
+    Toggle 1
+  </button>
+  <button type="button" class="btn btn-primary-empty">
+    Toggle 2
+  </button>
+  <div class="alert toggle-block">
+    Target 0
+    <div class="alert toggle-block">
+      Nested not toggled
+    </div>
+  </div>
+  <div class="alert toggle-block">
+    Target 1
+    <div class="alert toggle-block">
+      Nested not toggled
+    </div>
+  </div>
+  <div class="alert toggle-block">
+    Target 2
+    <div class="alert toggle-block">
+      Nested not toggled
+    </div>
   </div>
 </div>
 
-<div class="box box-white box-giant">
-  <h3>Lorem ipsum dolor sit amet</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
 </div>
-
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-
     </div>
 
-    
-    <less-style>@import (reference) "../../../../../dist/xtend.less";
-
-[data-xt-sticky] {
-  .xt-sticky(@mode:'absolute');
-}</less-style>
     
 
     
