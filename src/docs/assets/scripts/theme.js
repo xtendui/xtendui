@@ -408,8 +408,9 @@ Array.from(document.querySelectorAll('.demo-cols-nested .col')).forEach(function
 function initAll() {
   XtUtil.initAll();
 }
-if (document.readyState !== 'loading') {
-  initAll();
-} else if (document.addEventListener) {
+
+if (document.readyState === "loading") {
   document.addEventListener('DOMContentLoaded', initAll);
+} else {
+  initAll();
 }
