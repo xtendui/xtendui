@@ -100,9 +100,9 @@ class Xt {
     if (options.appendTo) {
       let appendToTarget = document.querySelectorAll(options.appendTo);
       if (appendToTarget.length) {
-        this.targets.forEach(function (el) {
+        for(let el of this.targets) {
           appendToTarget[0].appendChild(el);
-        });
+        }
       }
     }
     // @FIX set namespace for next frame

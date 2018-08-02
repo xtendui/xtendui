@@ -29,21 +29,21 @@ XtUtil.currents = {};
  */
 XtUtil.initAll = function (container = document) {
   // xt-toggle
-  Array.from(container.querySelectorAll('[data-xt-toggle]')).forEach(function (el) {
+  for(let el of container.querySelectorAll('[data-xt-toggle]')) {
     new XtToggle(el);
-  });
-  Array.from(container.querySelectorAll('[data-xt-drop]')).forEach(function (el) {
+  }
+  for(let el of container.querySelectorAll('[data-xt-drop]')) {
     new XtDrop(el);
-  });
-  Array.from(container.querySelectorAll('[data-xt-overlay]')).forEach(function (el) {
+  }
+  for(let el of container.querySelectorAll('[data-xt-overlay]')) {
     new XtOverlay(el);
-  });
-  Array.from(container.querySelectorAll('[data-xt-fade]')).forEach(function (el) {
+  }
+  for(let el of container.querySelectorAll('[data-xt-fade]')) {
     new XtFade(el);
-  });
-  Array.from(container.querySelectorAll('[data-xt-sticky]')).forEach(function (el) {
+  }
+  for(let el of container.querySelectorAll('[data-xt-sticky]')) {
     new XtSticky(el);
-  });
+  }
 };
 
 /**
