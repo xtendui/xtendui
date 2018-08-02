@@ -122,7 +122,7 @@ description: Many possible behaviour, interactions and animations are possible w
       "class": "active",
       "instant": { "elements": true },
       "on": "click",
-      "min": 0,
+      "min": 1,
       "max": 1
     };
   </code>
@@ -505,7 +505,7 @@ description: Many possible behaviour, interactions and animations are possible w
 <h3>Min and max</h3>
 
 <p>Inside a <strong>manager</strong> you can specify <strong>min or max</strong> activations. Default is <code>"min":
-  0</code> and <code>"max": 1</code>.</p>
+  1</code> and <code>"max": 1</code>.</p>
 
 <p>Use <code>"max": "Infinity"</code> for no limits.</p>
 
@@ -556,7 +556,7 @@ description: Many possible behaviour, interactions and animations are possible w
       <code>"on": "mouseenter"</code> <code>"off": "mouseleave"</code>.
     </div>
     <div class="demo-source" data-lang="html">
-      <div data-xt-toggle='{"min": 1, "on": "mouseenter", "off": "mouseleave"}'>
+      <div data-xt-toggle='{"on": "mouseenter", "off": "mouseleave"}'>
         <button type="button" class="btn btn-primary-empty">
           Toggle 0
         </button>
@@ -665,7 +665,7 @@ description: Many possible behaviour, interactions and animations are possible w
   </div>
   <div class="demo-item demo-preview" data-name="complex">
     <div class="demo-source" data-lang="html">
-      <div data-xt-toggle='{"min": 1, "max": 2, "auto": 2000, "autoPause": "stop"}'>
+      <div data-xt-toggle='{"max": 2, "auto": 2000, "autoPause": "stop"}'>
         <button type="button" class="btn btn-primary-empty">
           Toggle 0
         </button>
