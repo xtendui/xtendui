@@ -1519,8 +1519,8 @@ class XtSticky extends Xt {
       if (self.addOld !== undefined) {
         el.style[options.position] = rectElTop + 'px';
       }
-      XtUtil.cancelAnimationFrame.call(window, self.eventFrame);
-      self.eventFrame = XtUtil.requestAnimationFrame.call(window, function () {
+      XtUtil.cancelAnimationFrame.call(window, el.dataset.eventFrame);
+      el.dataset.eventFrame = XtUtil.requestAnimationFrame.call(window, function () {
         el.classList.remove('no-transition');
         el.style[options.position] = add + 'px';
       });
