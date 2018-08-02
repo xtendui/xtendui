@@ -433,6 +433,7 @@ class Xt {
    * @returns {Boolean} If eventOn changes activation
    */
   checkOn(element) {
+    // check
     return (!element.classList.contains(...this.options.classes) || element.classList.contains('off-block')) && !element.classList.contains('on-block');
   }
 
@@ -442,9 +443,12 @@ class Xt {
    * @returns {Boolean} If eventOff changes activation
    */
   checkOff(element) {
-    // if currents < min
+    // skip if currents < min
     let todo = this.options.min - this.getCurrents().length;
-    if (!todo) return false;
+    if (!todo) {
+      return false;
+    }
+    // check
     return (element.classList.contains(...this.options.classes) || element.classList.contains('on-block')) && !element.classList.contains('off-block');
   }
 
@@ -455,23 +459,30 @@ class Xt {
   eventOn(element) {
     let self = this;
     let options = self.options;
-    // activate or deactivate
+    // toggle
     if (this.checkOn(element)) {
+      // on
       let fElements = this.getElements(element);
       this.addCurrent(fElements.single);
       let targets = this.getTargets(element);
       let additional = this.getAdditional();
-      let activationDelay = {
-        elements: function () {
+      // execute defer @FIX delay animation
+      self.activationDelay = {};
+      if (fElements.all.length) {
+        self.activationDelay['elements'] = function () {
           self.activationOn(fElements.all, fElements, 'elements');
-        },
-        targets: function () {
+        };
+      }
+      if (targets.length) {
+        self.activationDelay['targets'] = function () {
           self.activationOn(targets, fElements, 'targets');
-        },
-        additional: function () {
+        };
+      }
+      if (additional.length) {
+        self.activationDelay['additional'] = function () {
           self.activationOn(additional, fElements, 'additional');
-        },
-      };
+        };
+      }
       // set autoCurrent
       if (options.auto) {
         let index = 0;
@@ -483,17 +494,29 @@ class Xt {
         }
         self.autoCurrent = index;
       }
-      // if currents > max
+      // delay activation if currents > max
       let currents = this.getCurrents();
       if (currents.length > options.max) {
-        this.eventOff(currents[0], activationDelay);
+        console.log('delay', fElements.single.innerText);
+        // delayed activation
+        this.eventOff(currents[0]);
       } else {
-        activationDelay.elements();
-        activationDelay.targets();
-        activationDelay.additional();
+        console.log('instant', fElements.single.innerText);
+        // instant activation
+        if (this.activationDelay) {
+          for (let type in this.activationDelay) {
+            let actType = self.activationDelay[type];
+            if (!actType.done) {
+              actType();
+              actType.done = true;
+            }
+          }
+        }
+        // reset activation
+        this.activationDelay = {};
       }
     } else if (options.toggle) {
-      // toggle
+      // off
       this.eventOff(element);
     }
   }
@@ -501,18 +524,19 @@ class Xt {
   /**
    * element off
    * @param {Node|HTMLElement} element To be deactivated
-   * @param {Object} activationDelay Object with delayed activations
    */
-  eventOff(element, activationDelay = null) {
-    // deactivate
+  eventOff(element) {
+    // toggle
     if (this.checkOff(element)) {
+      // off
       let fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
-      this.activationOff(fElements.all, fElements, 'elements', activationDelay);
       let targets = this.getTargets(element);
-      this.activationOff(targets, fElements, 'targets', activationDelay);
       let additional = this.getAdditional();
-      this.activationOff(additional, fElements, 'additional', activationDelay);
+      // execute
+      this.activationOff(fElements.all, fElements, 'elements');
+      this.activationOff(targets, fElements, 'targets');
+      this.activationOff(additional, fElements, 'additional');
     }
   }
 
@@ -524,39 +548,22 @@ class Xt {
    */
   activationOn(els, fElements, type) {
     let self = this;
-    let options = self.options;
-    // activate
-    let activate = function (self, el, fElements, type) {
-      el.classList.add(...options.classes);
-      el.classList.remove('out');
-      self.activationOnAnimate(el, type);
-      // specials
-      if (type === 'targets') {
-        self.specialClassHtmlOn();
-        self.specialBackdrop(el);
-        self.specialCenterOn(el);
-        self.specialMiddleOn(el);
-        self.specialCollapseOn(el);
-        self.specialCloseOn(el, fElements.single);
-        self.specialScrollbarOn();
-      }
-      // dispatch
-      el.dispatchEvent(new CustomEvent('on'));
-    };
     // delay
     for (let el of els) {
-      el.classList.remove('off-block');
-      clearTimeout(el.dataset.xtDelayTimeout);
-      clearTimeout(el.dataset.xtAnimTimeout);
-      let delay = el.dataset.xtOnDelay;
-      if (delay) {
-        el.classList.add('on-block');
-        el.dataset.xtDelayTimeout = setTimeout(function (self, el, fElements, type) {
-          el.classList.remove('on-block');
-          activate(self, el, fElements, type);
-        }, parseFloat(delay), self, el, fElements, type).toString();
-      } else {
-        activate(self, el, fElements, type);
+      if (!el.classList.contains(...this.options.classes)) { // check each element @FIX delay animation
+        el.classList.remove('on-block', 'off-block');
+        clearTimeout(el.dataset.xtDelayTimeout);
+        clearTimeout(el.dataset.xtAnimTimeout);
+        let delay = el.dataset.xtOnDelay;
+        if (delay) {
+          el.classList.add('on-block');
+          el.dataset.xtDelayTimeout = setTimeout(function (el, fElements, type) {
+            el.classList.remove('on-block');
+            self.activationOnActivate(el, fElements, type);
+          }, parseFloat(delay), el, fElements, type).toString();
+        } else {
+          self.activationOnActivate(el, fElements, type);
+        }
       }
     }
   }
@@ -566,48 +573,97 @@ class Xt {
    * @param {NodeList|Array} els Elements to be deactivated
    * @param {Object} fElements Additional elements
    * @param {String} type Type of elements
-   * @param {Object} activationDelay Object with delayed activations
    */
-  activationOff(els, fElements, type, activationDelay) {
+  activationOff(els, fElements, type) {
+    let self = this;
+    // delay
+    for (let el of els) {
+      if (el.classList.contains(...this.options.classes)) { // check each element @FIX delay animation
+        el.classList.remove('on-block', 'off-block');
+        clearTimeout(el.dataset.xtDelayTimeout);
+        clearTimeout(el.dataset.xtAnimTimeout);
+        let delay = el.dataset.xtOffDelay;
+        if (delay) {
+          el.classList.add('off-block');
+          el.dataset.xtDelayTimeout = setTimeout(function (el, fElements, type) {
+            el.classList.remove('off-block');
+            self.activationOffDeactivate(el, fElements, type);
+          }, parseFloat(delay), el, fElements, type).toString();
+        } else {
+          self.activationOffDeactivate(el, fElements, type);
+        }
+      }
+    }
+  }
+
+  /**
+   * element activation
+   * @param {Node|HTMLElement} el Elements to be deactivated
+   * @param {Object} fElements Additional elements
+   * @param {String} type Type of elements
+   */
+  activationOnActivate(el, fElements, type) {
+    let self = this;
+    let options = self.options;
+    // activate
+    el.classList.add(...options.classes);
+    el.classList.remove('out');
+    self.activationOnAnimate(el, type);
+    // specials
+    if (type === 'targets') {
+      self.specialClassHtmlOn();
+      self.specialBackdrop(el);
+      self.specialCenterOn(el);
+      self.specialMiddleOn(el);
+      self.specialCollapseOn(el);
+      self.specialCloseOn(el, fElements.single);
+      self.specialScrollbarOn();
+    }
+    // dispatch
+    el.dispatchEvent(new CustomEvent('on'));
+  }
+
+  /**
+   * element deactivation
+   * @param {Node|HTMLElement} el Elements to be deactivated
+   * @param {Object} fElements Additional elements
+   * @param {String} type Type of elements
+   */
+  activationOffDeactivate(el, fElements, type) {
     let self = this;
     let options = self.options;
     // deactivate
-    let deactivate = function (self, el, fElements, type, activationDelay) {
-      el.classList.remove(...options.classes);
-      el.classList.add('out');
-      self.activationOffAnimate(el, type, activationDelay);
-      // activationDelay
-      if (activationDelay && activationDelay[type] && !activationDelay[type + 'done']) {
+    el.classList.remove(...options.classes);
+    el.classList.add('out');
+    self.activationOffAnimate(el, type);
+    // activationDelay @FIX delay animation
+    if (this.activationDelay ) {
+      if (this.activationDelay[type] && !this.activationDelay[type].done) {
         if (options.instant && options.instant[type]) {
-          activationDelay[type]();
-          activationDelay[type + 'done'] = true;
+          this.activationDelay[type]();
+          this.activationDelay[type].done = true;
         }
       }
-      // specials
-      if (type === 'targets') {
-        self.specialClassHtmlOff();
-        self.specialCollapseOff(el);
-        self.specialCloseOff(el);
+      // reset activation
+      let doneAll = 0;
+      for (let type in this.activationDelay) {
+        let actType = self.activationDelay[type];
+        if (actType.done) {
+          doneAll ++;
+        }
       }
-      // dispatch
-      el.dispatchEvent(new CustomEvent('off'));
-    };
-    // delay
-    for (let el of els) {
-      el.classList.remove('on-block');
-      clearTimeout(el.dataset.xtDelayTimeout);
-      clearTimeout(el.dataset.xtAnimTimeout);
-      let delay = el.dataset.xtOffDelay;
-      if (delay) {
-        el.classList.add('off-block');
-        el.dataset.xtDelayTimeout = setTimeout(function (self, el, fElements, type, activationDelay) {
-          el.classList.remove('off-block');
-          deactivate(self, el, fElements, type, activationDelay);
-        }, parseFloat(delay), self, el, fElements, type, activationDelay).toString();
-      } else {
-        deactivate(self, el, fElements, type, activationDelay);
+      if (doneAll === this.activationDelay.length) {
+        this.activationDelay = {};
       }
     }
+    // specials
+    if (type === 'targets') {
+      self.specialClassHtmlOff();
+      self.specialCollapseOff(el);
+      self.specialCloseOff(el);
+    }
+    // dispatch
+    el.dispatchEvent(new CustomEvent('off'));
   }
 
   /**
@@ -642,9 +698,8 @@ class Xt {
    * element off animation
    * @param {Node|HTMLElement} el Element to be animated
    * @param {String} type Type of element
-   * @param {Object} activationDelay Object with delayed activations
    */
-  activationOffAnimate(el, type, activationDelay) {
+  activationOffAnimate(el, type) {
     let self = this;
     let options = self.options;
     // onDone
@@ -654,11 +709,24 @@ class Xt {
       if (type === 'targets') {
         self.specialScrollbarOff();
       }
-      // activationDelay
-      if (activationDelay && activationDelay[type] && !activationDelay[type + 'done']) {
-        if (!options.instant || !options.instant[type]) {
-          activationDelay[type]();
-          activationDelay[type + 'done'] = true;
+      // activationDelay @FIX delay animation
+      if (self.activationDelay) {
+        if (self.activationDelay[type] && !self.activationDelay[type].done) {
+          if (!options.instant || !options.instant[type]) {
+            self.activationDelay[type]();
+            self.activationDelay[type].done = true;
+          }
+        }
+        // reset activation
+        let doneAll = 0;
+        for (let type in self.activationDelay) {
+          let actType = self.activationDelay[type];
+          if (actType.done) {
+            doneAll ++;
+          }
+        }
+        if (doneAll === self.activationDelay.length) {
+          self.activationDelay = {};
         }
       }
     };

@@ -1,13 +1,12 @@
 ---
 layout: demos
-less: false
+less: true
 js: false
 full: true
 padding: true
 ---
 
-<div data-xt-toggle='{"timing": 2000}'>
-
+<div data-xt-toggle='{"min":1, "timing": 2000}'>
   <button type="button" class="btn btn-primary-empty">
     Toggle 0
   </button>
@@ -35,4 +34,8 @@ padding: true
       Nested not toggled
     </div>
   </div>
+</div>
+
+<div class="alert">
+  This block doesn't move
 </div>

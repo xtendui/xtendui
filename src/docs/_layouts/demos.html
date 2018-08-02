@@ -19,8 +19,8 @@
     <link rel="apple-touch-icon" sizes="152x152" href="{{ site.baseurl }}/assets/images/favicon-152x152.png" />
 
     <!-- styles -->
-    {% if page.less %}<link rel="stylesheet" href="{{ page.name | replace: '.html', '.css' }}?v={{ site.version }}" />{% endif %}
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/demo.css?v={{ site.version }}" />
+    {% if page.less %}<link rel="stylesheet" href="{{ page.name | replace: '.html', '.css' }}?v={{ site.version }}" />{% endif %}
     
     <!-- scripts -->
     <script src="{{ site.baseurl }}/assets/scripts/polyfill.min.js"></script>

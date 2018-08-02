@@ -2,12 +2,9 @@
 
 .alert {
   // animations
-  &.active {
-    animation-duration: @time-giant;
-  }
   &.out {
-    animation-duration: @time-giant;
     animation-name: anim-out;
+    animation-fill-mode: forwards;
     opacity: .5;
   }
 }
