@@ -467,53 +467,46 @@ class Xt {
       let targets = this.getTargets(element);
       let additional = this.getAdditional();
       // execute defer @FIX delay animation
-      self.activationDelay = {};
+      this.activationDelay = {};
       if (fElements.all.length) {
-        self.activationDelay['elements'] = function () {
+        this.activationDelay['elements'] = function () {
           self.activationOn(fElements.all, fElements, 'elements');
         };
       }
       if (targets.length) {
-        self.activationDelay['targets'] = function () {
+        this.activationDelay['targets'] = function () {
           self.activationOn(targets, fElements, 'targets');
         };
       }
       if (additional.length) {
-        self.activationDelay['additional'] = function () {
+        this.activationDelay['additional'] = function () {
           self.activationOn(additional, fElements, 'additional');
         };
       }
       // set autoCurrent
       if (options.auto) {
         let index = 0;
-        for (let [i, el] of self.elements.entries()) {
+        for (let [i, el] of this.elements.entries()) {
           if (el === element) {
             index = i;
             break;
           }
         }
-        self.autoCurrent = index;
+        this.autoCurrent = index;
       }
       // delay activation if currents > max
       let currents = this.getCurrents();
       if (currents.length > options.max) {
-        console.log('delay', fElements.single.innerText);
         // delayed activation
         this.eventOff(currents[0]);
       } else {
-        console.log('instant', fElements.single.innerText);
-        // instant activation
+        // instant activation @FIX delay animation
         if (this.activationDelay) {
           for (let type in this.activationDelay) {
-            let actType = self.activationDelay[type];
-            if (!actType.done) {
-              actType();
-              actType.done = true;
-            }
+            self.activationDelayRun(type, true);
           }
+          this.activationDelayCheckAndReset();
         }
-        // reset activation
-        this.activationDelay = {};
       }
     } else if (options.toggle) {
       // off
@@ -635,26 +628,11 @@ class Xt {
     // deactivate
     el.classList.remove(...options.classes);
     el.classList.add('out');
-    self.activationOffAnimate(el, type);
+    this.activationOffAnimate(el, type);
     // activationDelay @FIX delay animation
-    if (this.activationDelay ) {
-      if (this.activationDelay[type] && !this.activationDelay[type].done) {
-        if (options.instant && options.instant[type]) {
-          this.activationDelay[type]();
-          this.activationDelay[type].done = true;
-        }
-      }
-      // reset activation
-      let doneAll = 0;
-      for (let type in this.activationDelay) {
-        let actType = self.activationDelay[type];
-        if (actType.done) {
-          doneAll ++;
-        }
-      }
-      if (doneAll === this.activationDelay.length) {
-        this.activationDelay = {};
-      }
+    if (this.activationDelay) {
+      this.activationDelayRun(type, options.instant && options.instant[type]);
+      this.activationDelayCheckAndReset();
     }
     // specials
     if (type === 'targets') {
@@ -711,23 +689,8 @@ class Xt {
       }
       // activationDelay @FIX delay animation
       if (self.activationDelay) {
-        if (self.activationDelay[type] && !self.activationDelay[type].done) {
-          if (!options.instant || !options.instant[type]) {
-            self.activationDelay[type]();
-            self.activationDelay[type].done = true;
-          }
-        }
-        // reset activation
-        let doneAll = 0;
-        for (let type in self.activationDelay) {
-          let actType = self.activationDelay[type];
-          if (actType.done) {
-            doneAll ++;
-          }
-        }
-        if (doneAll === self.activationDelay.length) {
-          self.activationDelay = {};
-        }
+        self.activationDelayRun(type, !options.instant || !options.instant[type]);
+        self.activationDelayCheckAndReset();
       }
     };
     // delay onDone
@@ -762,6 +725,33 @@ class Xt {
         timing = Math.max(transition, animation);
       }
       return timing * 1000;
+    }
+  }
+
+  /**
+   * run activationDelay and set done @FIX delay animation
+   */
+  activationDelayRun(type, check) {
+    let func = this.activationDelay[type];
+    if (func && !func.done && check) {
+      func();
+      func.done = true;
+    }
+  }
+
+  /**
+   * check and reset if all activationDelay are done @FIX delay animation
+   */
+  activationDelayCheckAndReset() {
+    let count = 0;
+    for (let type in this.activationDelay) {
+      let func = this.activationDelay[type];
+      if (func.done) {
+        count ++;
+      }
+    }
+    if (count === this.activationDelay.length) {
+      this.activationDelay = {};
     }
   }
 
