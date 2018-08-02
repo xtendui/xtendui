@@ -269,7 +269,8 @@ const populateInline = function (item, id) {
   });
   new XtToggle(item, {
     "elements": ".demo-code-tabs-left .btn",
-    "targets": ".demo-code-body-item"
+    "targets": ".demo-code-body-item",
+    "min": 1
   });
 };
 
@@ -326,7 +327,8 @@ function populateIframe(item, iframe) {
   });
   new XtToggle(item, {
     "elements": ".demo-code-tabs-left .btn",
-    "targets": ".demo-code-body-item"
+    "targets": ".demo-code-body-item",
+    "min": 1
   });
 }
 
@@ -372,7 +374,8 @@ Array.from(document.querySelectorAll('.demo')).forEach(function (el, i) {
   // demo tabs
   new XtToggle(el, {
     "elements": ".demo-tabs-left .btn",
-    "targets": ".demo-item"
+    "targets": ".demo-item",
+    "min": 1
   });
 });
 

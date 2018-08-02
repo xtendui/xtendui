@@ -1146,7 +1146,7 @@ XtToggle.defaults = {
   "instant": {"elements": true},
   "on": "click",
   "toggle": true,
-  "min": 1,
+  "min": 0,
   "max": 1
 };
 
