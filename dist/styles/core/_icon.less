@@ -15,3 +15,115 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+// generate icons
+// USAGE LESS: .icon-xt(@content: @icon-xt-close, @size: @icon-small, @sr-only: false, @position: after);
+// USAGE MARKUP: <span class="icon-xt-close"></span>
+
+.icon-xt {
+  .icon();
+  font-family: @icons-xt-family;
+}
+
+[class^='icon-xt-'], [class*=' icon-xt-'] {
+  &::before {
+    .icon-xt();
+  }
+}
+
+.icon-xt(@content, @size: @icon-medium, @sr-only: false, @position: after) {
+  & when (@sr-only = true) {
+    > span {
+      .sr-only();
+    }
+  }
+  & when (@position = before) {
+    &::before {
+      .icon-xt();
+      content: '@{content}';
+      font-size: @size;
+    }
+  }
+  & when (@position = after) {
+    &::after {
+      .icon-xt();
+      content: '@{content}';
+      font-size: @size;
+    }
+  }
+}
+
+& when (@classes-icons) {
+
+  .generate-icons();
+  .generate-icons(@i:length(@icons-xt)) when (@i > 0) {
+    .generate-icons(@i - 1);
+    @name: extract(@icons-xt, @i);
+    @val: ~"icon-@{name}";
+    .icon-xt-@{name} {
+      &::before {
+        content: @@val;
+      }
+    }
+  }
+
+}
+
+// generate icons
+// USAGE LESS: .icon(@content: @icon-menu, @size: @icon-small, @sr-only: false, @position: after);
+// USAGE MARKUP: <span class="icon-menu"></span>
+
+@icons-family: none;
+
+& when not (@icons-family = none) {
+
+  .icon {
+    //.icon();
+    font-family: @icons-family;
+  }
+
+  [class^='icon-'], [class*=' icon-'] {
+    &::before {
+      .icon();
+    }
+  }
+
+  .icon(@content, @size: @icon-medium, @sr-only: false, @position: after) {
+    & when (@sr-only = true) {
+      > span {
+        .sr-only();
+      }
+    }
+    & when (@position = before) {
+      &::before {
+        .icon();
+        content: '@{content}';
+        font-size: @size;
+      }
+    }
+    & when (@position = after) {
+      &::after {
+        .icon();
+        content: '@{content}';
+        font-size: @size;
+      }
+    }
+  }
+
+  & when (@classes-icons) {
+
+    .generate-icons();
+    .generate-icons(@i:length(@icons)) when (@i > 0) {
+      .generate-icons(@i - 1);
+      @name: extract(@icons, @i);
+      @val: ~"icon-@{name}";
+      .icon-@{name} {
+        &::before {
+          content: @@val;
+        }
+      }
+    }
+
+  }
+
+}

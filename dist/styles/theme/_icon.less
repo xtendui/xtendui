@@ -18,6 +18,8 @@
 
 // icons
 
+@icons-xt: xt-close, xt-chevron-down, xt-chevron-left, xt-chevron-right, xt-chevron-up, xt-check, xt-circle; // this will generate classes .icon-xt-{name}
+
 @icon-xt-chevron-down: '\e900';
 @icon-xt-chevron-left: '\e901';
 @icon-xt-chevron-right: '\e902';
@@ -25,63 +27,6 @@
 @icon-xt-close: '\e904';
 @icon-xt-check: '\e905';
 @icon-xt-circle: '\e906';
-
-// generate icons
-// USAGE LESS: .icon-xt(@content: @icon-xt-close, @size: @icon-small, @sr-only: false, @position: after);
-// USAGE MARKUP: <span class="icon-xt-close"></span>
-
-@icons-xt: xt-close, xt-chevron-down, xt-chevron-left, xt-chevron-right, xt-chevron-up, xt-check, xt-circle; // this will generate classes .icon-xt-{name}
-
-.icon-xt(@content, @size: @icon-medium, @sr-only: false, @position: after) {
-  & when (@sr-only = true) {
-    > span {
-      .sr-only();
-    }
-  }
-  & when (@position = before) {
-    &::before {
-      .icon-xt();
-      content: '@{content}';
-      font-size: @size;
-    }
-  }
-  & when (@position = after) {
-    &::after {
-      .icon-xt();
-      content: '@{content}';
-      font-size: @size;
-    }
-  }
-}
-
-& when (@classes-icons) {
-
-  .generate-icons();
-  .generate-icons(@i:length(@icons-xt)) when (@i > 0) {
-    .generate-icons(@i - 1);
-    @name: extract(@icons-xt, @i);
-    @val: ~"icon-@{name}";
-    .icon-xt-@{name} {
-      &::before {
-        content: @@val;
-      }
-    }
-  }
-
-}
-
-// icons styles
-
-.icon-xt {
-  .icon();
-  font-family: @icons-xt-family;
-}
-
-[class^='icon-xt-'], [class*=' icon-xt-'] {
-  &::before {
-    .icon-xt();
-  }
-}
 
 //////////////////////
 // icon
