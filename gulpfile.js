@@ -22,13 +22,13 @@ let sourcemaps = require('gulp-sourcemaps');
 gulp.task('less-dist', function () {
   const version = JSON.parse(fs.readFileSync('package.json')).version;
   let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2018 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
-  return gulp.src(['dist/**/*.less', '!dist/**/_*.less'])
+  return gulp.src(['dist/styles/*.less', '!dist/styles/_*.less'])
     .pipe(replace(/\/\*\![^\*]+\*\//, banner))
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(cleanCSS())
     .pipe(sourcemaps.write(''))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('dist/styles/'));
 });
 gulp.task('less-demos', gulp.series('less-dist', function () {
   return gulp.src(['src/docs/demos/**/*.less', '!src/docs/demos/**/_*.less'])
@@ -50,7 +50,7 @@ gulp.task('less-clean', gulp.series('less', function () {
     .pipe(clean({force: true}));
 }));
 gulp.task('less:watch', function (done) {
-  gulp.watch(['dist/**/*.less', 'src/docs/demos/**/*.less', 'src/docs/assets/styles/**/*.less'], gulp.series('less-clean'));
+  gulp.watch(['dist/styles/**/*.less', 'src/docs/demos/**/*.less', 'src/docs/assets/styles/**/*.less'], gulp.series('less-clean'));
   done();
 });
 
@@ -74,7 +74,7 @@ gulp.task('js-dist', function () {
       }
     }))
     .pipe(sourcemaps.write(''))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('dist/scripts/'));
 });
 gulp.task('js-theme', gulp.series('js-dist', function () {
   let b = browserify({
