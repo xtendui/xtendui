@@ -24,31 +24,31 @@ After in `xtend.less` put package manager xtend-library core path.
 
 We use gulp to compile and watch files.
 
-* Install required npm packages with ```npm install```
-* Use ```npm run build``` or ```npm run watch```
+* Install required npm packages with `npm install`
+* Use `npm run build` or `npm run watch` (with watch you need also jekyll)
 
 ### Documentation
 
 We use jekyll to serve the docs.
 
 * You need to [install jekyll](https://jekyllrb.com/docs/installation/) on your local machine
-
-* Use ```npm run serve```, docs will be served to ```http://127.0.0.1:4000/```
+* Use `bundle install` to install jekyll's bundles
+* Use `npm run serve`, docs will be served to `http://127.0.0.1:4000/`
 
 # Acknowledgements
 
-* Documentation with [jekyll](https://jekyllrb.com/).
-* Javascript with [babel](https://babeljs.io/).
+* Documentation with [jekyll](https://jekyllrb.com/)
+* Javascript with [babel](https://babeljs.io/)
 * Polyfills:
-  * [closest](https://github.com/jonathantneal/closest/).
-  * [:scope](https://github.com/jonathantneal/element-qsa-scope/).
-  * [prepend](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend).
-  * [append](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append).
-  * [before](https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/before).
-  * [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent).
-  * [scrollingElement](https://github.com/yangg/scrolling-element).
+  * [closest](https://github.com/jonathantneal/closest/)
+  * [:scope](https://github.com/jonathantneal/element-qsa-scope/)
+  * [prepend](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend)
+  * [append](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append)
+  * [before](https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/before)
+  * [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent)
+  * [scrollingElement](https://github.com/yangg/scrolling-element)
 <!--
-* Icons by [feather icons](https://github.com/feathericons/feather).
+* Icons by [feather icons](https://github.com/feathericons/feather)
 -->
 
 # Copyright
