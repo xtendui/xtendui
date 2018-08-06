@@ -18,37 +18,3 @@
 @classes-margin: false;
 @classes-padding: false;
 @classes-layout: sm, md, lg;
-
-//////////////////////
-// icon
-//////////////////////
-
-// font-face
-
-@icons-family: 'xtend';
-@icons-path: '//getxtend.com/icons/fonts/xtend';
-
-@font-face {
-  font-family: @icons-family;
-  src: url('@{icons-path}.ttf') format('truetype'),
-  url('@{icons-path}.woff') format('woff'),
-  url('@{icons-path}.svg#xtend') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-// icons
-// USAGE MARKUP: <span class="icon-close"></span>
-// USAGE LESS : .icon(@content: @icon-close, @size: @icon-small, @sr-only: false, @position: after);
-
-@icons: close, chevron-down, chevron-left, chevron-right, chevron-up, check, circle; // this will generate classes .icon-{name}
-
-// xtend icons
-
-@icon-chevron-down: '\e900';
-@icon-chevron-left: '\e901';
-@icon-chevron-right: '\e902';
-@icon-chevron-up: '\e903';
-@icon-close: '\e904';
-@icon-check: '\e905';
-@icon-circle: '\e906';
