@@ -18,8 +18,6 @@ mkdir -p xtend-library/
 cp -r node_modules/xtend-library/dist/ xtend-library/
 ```
 
-After in `xtend.less` put package manager xtend-library core path.
-
 ### Compilation
 
 We use gulp to compile and watch files.

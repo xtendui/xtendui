@@ -271,12 +271,12 @@ a, .alink {
   .display(flex) !important;
   .align-items-center();
   .justify-content-between();
-  .icon(@content: @icon-chevron-down, @size: @icon-tiny, @position: after);
+  .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-tiny, @position: after);
   &::after {
     .margin(left, 2em);
   }
   &.active {
-    .icon(@content: @icon-chevron-up, @size: @icon-tiny, @position: after);
+    .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-tiny, @position: after);
     &::after {
       .anim-bottom.active();
       opacity: 1;
@@ -292,7 +292,7 @@ a, .alink {
 
 .btn-close {
   .btn-primary-empty();
-  .icon(@content: @icon-close, @size: @icon-medium, @sr-only: true);
+  .icon-xt(@content: @icon-xt-close, @size: @icon-medium, @sr-only: true);
 }
 
 //////////////////////
