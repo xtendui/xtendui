@@ -16,13 +16,13 @@
   <meta name="description" content="Lorem ipsum"/>
 
   <!-- icons -->
-  <link rel="icon" href="/assets/images/favicon.ico?v=0.4.27"/>
+  <link rel="icon" href="/assets/images/favicon.ico?v=0.4.28"/>
   <link rel="apple-touch-icon" sizes="152x152"
-        href="/assets/images/favicon-152x152.png?v=0.4.27"/>
+        href="/assets/images/favicon-152x152.png?v=0.4.28"/>
 
   <!-- styles -->
-  <link rel="stylesheet" href="/assets/icons/style.css?v=0.4.27"/>
-  <link rel="stylesheet" href="/assets/styles/theme.css?v=0.4.27"/>
+  <link rel="stylesheet" href="/assets/icons/style.css?v=0.4.28"/>
+  <link rel="stylesheet" href="/assets/styles/theme.css?v=0.4.28"/>
 
 </head>
 <body>
@@ -460,15 +460,11 @@
   <li>clone: <code>git clone https://github.com/minimit/xtend-library.git</code></li>
   <li><a href="https://yarnpkg.com/" target="_blank">yarn</a>: <code>yarn add xtend-library --save</code></li>
   <li><a href="https://www.npmjs.com/" target="_blank">npm</a>: <code>npm install xtend-library --save</code></li>
-  <li><a href="https://getcomposer.org/" target="_blank">composer</a>: <code>composer require
-    minimit/xtend-library</code></li>
 </ul>
 
 <h3>Theming</h3>
 
 <p>You need to copy xtend-library <strong>/dist</strong> to customize the files.</p>
-
-<p>If you installed with <strong>yarn</strong> or <strong>npm</strong>:</p>
 
 <pre>
   <code>
@@ -477,16 +473,7 @@
   </code>
 </pre>
 
-<p>If you installed with <strong>composer</strong>:</p>
-
-<pre>
-  <code>
-    mkdir -p xtend-library/
-    cp -r vendor/minimit/xtend-library/dist/ xtend-library/
-  </code>
-</pre>
-
-<p>After in <code>xtend.less</code> put the right path to the <strong>@import</strong> of core and theme.</p>
+<p>After in <code>xtend.less</code> put package manager xtend-library core path.</p>
 
 <h3>Compilation</h3>
 
@@ -494,7 +481,7 @@
 
 <ul>
   <li>Install required npm packages with <code>npm install</code></li>
-  <li>Use <code>npm run build</code> or <code>npm run watch</code></li>
+  <li>Use <code>npm run build</code> or <code>npm run watch</code> (with watch you need also jekyll)</li>
 </ul>
 
 <h3>Documentation</h3>
@@ -503,6 +490,7 @@
 
 <ul>
   <li>You need to <a href="https://jekyllrb.com/docs/installation/" target="_blank">install jekyll</a> on your local machine</li>
+  <li>Use <code>bundle install</code> to install jekyll's bundles</li>
   <li>Use <code>npm run serve</code>, docs will be served to <code>http://127.0.0.1:4000/</code></li>
 </ul>
 
@@ -603,11 +591,11 @@
       </div>
     </div>
 
-    <script src="/assets/scripts/clipboard.min.js?v=0.4.27"></script>
-    <script src="/assets/scripts/highlight.pack.js?v=0.4.27"></script>
-    <script src="/assets/scripts/polyfill.min.js?v=0.4.27"></script>
-    <script src="/assets/scripts/xtend.min.js?v=0.4.27"></script>
-    <script src="/assets/scripts/theme.min.js?v=0.4.27"></script>
+    <script src="/assets/scripts/clipboard.min.js?v=0.4.28"></script>
+    <script src="/assets/scripts/highlight.pack.js?v=0.4.28"></script>
+    <script src="/assets/scripts/polyfill.min.js?v=0.4.28"></script>
+    <script src="/assets/scripts/xtend.min.js?v=0.4.28"></script>
+    <script src="/assets/scripts/theme.min.js?v=0.4.28"></script>
     
   </body>
 </html>
