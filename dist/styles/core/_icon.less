@@ -16,7 +16,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-// generate icons
+//////////////////////
+// icons xtend
+//////////////////////
+
+// styles
 
 .icon-xt {
   .icon();
@@ -28,6 +32,8 @@
     .icon-xt();
   }
 }
+
+// mixins
 
 .icon-xt(@content, @size: @icon-medium, @sr-only: false, @position: after) {
   & when (@sr-only = true) {
@@ -51,6 +57,8 @@
   }
 }
 
+// generate icons
+
 & when (@classes-icons) {
 
   .generate-icons();
@@ -63,6 +71,74 @@
         content: @@val;
       }
     }
+  }
+
+}
+
+//////////////////////
+// icons theme
+//////////////////////
+
+@icons-family: none;
+@icons: none;
+
+// styles
+
+.icon {
+  & when not (@icons-family = none) {
+    //.icon();
+    font-family: @icons-family;
+  }
+}
+
+[class^='icon-'], [class*=' icon-'] {
+  &::before {
+    .icon();
+  }
+}
+
+// mixins
+
+.icon(@content, @size: @icon-medium, @sr-only: false, @position: after) {
+  & when (@sr-only = true) {
+    > span {
+      .sr-only();
+    }
+  }
+  & when (@position = before) {
+    &::before {
+      .icon();
+      content: '@{content}';
+      font-size: @size;
+    }
+  }
+  & when (@position = after) {
+    &::after {
+      .icon();
+      content: '@{content}';
+      font-size: @size;
+    }
+  }
+}
+
+// generate icons
+
+& when not (@icons-family = none) {
+
+  & when (@classes-icons) {
+
+    .generate-icons();
+    .generate-icons(@i:length(@icons)) when (@i > 0) {
+      .generate-icons(@i - 1);
+      @name: extract(@icons, @i);
+      @val: ~"icon-@{name}";
+      .icon-@{name} {
+        &::before {
+          content: @@val;
+        }
+      }
+    }
+
   }
 
 }
