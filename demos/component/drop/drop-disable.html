@@ -35,80 +35,88 @@
 
     <div id="body-outer">
 <div id="body-inner" class="demo-source-from">
-<div class="drop-container drop-disable" data-xt-drop>
+<div class="drop-outer drop-disable" data-xt-drop>
   <button type="button" class="btn btn-primary">
     Toggle
   </button>
   <div class="drop">
     <div class="drop-inner">
-      <ul class="list list-drop">
-        <li>
-          <button type="button">Lorem ipsum dolor</button>
-        </li>
-        <li>
-          <button type="button">Dolor sit</button>
-        </li>
-        <li class="drop-container event-limit" data-xt-drop>
-          <button type="button">
-            Toggle
-          </button>
-        </li>
-      </ul>
+      <div class="drop-content">
+        <ul class="list list-drop">
+          <li>
+            <button type="button">Lorem ipsum dolor</button>
+          </li>
+          <li>
+            <button type="button">Dolor sit</button>
+          </li>
+          <li class="drop-outer event-limit" data-xt-drop>
+            <button type="button">
+              Toggle
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="drop-container drop-disable-example" data-xt-drop>
+<div class="drop-outer drop-disable-example" data-xt-drop>
   <button type="button" class="btn btn-primary">
     Toggle
   </button>
   <div class="drop">
     <div class="drop-inner">
-      <ul class="list list-drop">
-        <li>
-          <button type="button">Lorem ipsum dolor</button>
-        </li>
-        <li>
-          <button type="button">Dolor sit</button>
-        </li>
-        <li class="drop-container event-limit" data-xt-drop>
-          <button type="button">
-            Toggle
-          </button>
-          <div class="drop drop-secondary drop-after drop-middle">
-            <div class="drop-inner">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li class="drop-container event-limit" data-xt-drop>
-                  <button type="button">
-                    Toggle
-                  </button>
-                  <div class="drop drop-primary drop-center drop-middle">
-                    <div class="drop-inner">
-                      <ul class="list list-drop">
-                        <li>
-                          <button type="button">Lorem ipsum dolor</button>
-                        </li>
-                        <li>
-                          <button type="button">Dolor sit</button>
-                        </li>
-                        <li>
-                          <button type="button">Amet</button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+      <div class="drop-content">
+        <ul class="list list-drop">
+          <li>
+            <button type="button">Lorem ipsum dolor</button>
+          </li>
+          <li>
+            <button type="button">Dolor sit</button>
+          </li>
+          <li class="drop-outer event-limit" data-xt-drop>
+            <button type="button">
+              Toggle
+            </button>
+            <div class="drop drop-secondary drop-after drop-middle">
+              <div class="drop-inner">
+                <div class="drop-content">
+                  <ul class="list list-drop">
+                    <li>
+                      <button type="button">Lorem ipsum dolor</button>
+                    </li>
+                    <li>
+                      <button type="button">Dolor sit</button>
+                    </li>
+                    <li class="drop-outer event-limit" data-xt-drop>
+                      <button type="button">
+                        Toggle
+                      </button>
+                      <div class="drop drop-primary drop-center drop-middle">
+                        <div class="drop-inner">
+                          <div class="drop-content">
+                            <ul class="list list-drop">
+                              <li>
+                                <button type="button">Lorem ipsum dolor</button>
+                              </li>
+                              <li>
+                                <button type="button">Dolor sit</button>
+                              </li>
+                              <li>
+                                <button type="button">Amet</button>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

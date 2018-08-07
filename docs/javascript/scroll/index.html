@@ -198,52 +198,6 @@
                 
                 
                 <div class="site-breadcrumbs-body-main">
-                  <a href="/docs/layout/" class="btn btn-primary btn-nodesign">
-                    Layout
-                  </a>
-                  
-                  <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
-                    
-                    <div class="site-breadcrumbs-body-sub-inner">
-                      
-                      <a href="/docs/layout/grid/" class="btn btn-primary btn-nodesign">
-                        Grid
-                      </a>
-                      
-                      <a href="/docs/layout/flex/" class="btn btn-primary btn-nodesign">
-                        Flex
-                      </a>
-                      
-                      <a href="/docs/layout/list/" class="btn btn-primary btn-nodesign">
-                        List
-                      </a>
-                      
-                      <a href="/docs/layout/box/" class="btn btn-primary btn-nodesign">
-                        Box
-                      </a>
-                      
-                    </div>
-                    
-                  </div>
-                </div>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <div class="site-breadcrumbs-body-main">
                   <a href="/docs/content/" class="btn btn-primary btn-nodesign">
                     Content
                   </a>
@@ -272,6 +226,56 @@
                     
                   </div>
                 </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="site-breadcrumbs-body-main">
+                  <a href="/docs/layout/" class="btn btn-primary btn-nodesign">
+                    Layout
+                  </a>
+                  
+                  <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
+                    
+                    <div class="site-breadcrumbs-body-sub-inner">
+                      
+                      <a href="/docs/layout/grid/" class="btn btn-primary btn-nodesign">
+                        Grid
+                      </a>
+                      
+                      <a href="/docs/layout/flex/" class="btn btn-primary btn-nodesign">
+                        Flex
+                      </a>
+                      
+                      <a href="/docs/layout/list/" class="btn btn-primary btn-nodesign">
+                        List
+                      </a>
+                      
+                      <a href="/docs/layout/box/" class="btn btn-primary btn-nodesign">
+                        Box
+                      </a>
+                      
+                      <a href="/docs/layout/other/" class="btn btn-primary btn-nodesign">
+                        Other
+                      </a>
+                      
+                    </div>
+                    
+                  </div>
+                </div>
+                
+                
+                
+                
+                
+                
                 
                 
                 
@@ -318,26 +322,6 @@
                 
                 
                 
-                
-                
-                
-                <div class="site-breadcrumbs-body-main">
-                  <a href="/docs/other/" class="btn btn-primary btn-nodesign">
-                    Other
-                  </a>
-                  
-                  <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
-                    
-                    <div class="site-breadcrumbs-body-sub-inner">
-                      
-                      <a href="/docs/other/alert/" class="btn btn-primary btn-nodesign">
-                        Alert
-                      </a>
-                      
-                    </div>
-                    
-                  </div>
-                </div>
                 
                 
                 
@@ -450,13 +434,9 @@
         <div class="col col-12 col-9-md">
 
           <article class="site-article default-lists">
-            <h2>Usage</h2>
+            <h2>Sticky</h2>
 
-<h3>Smooth</h3>
-
-<p>@TODO</p>
-
-<h3>Sticky</h3>
+<h3>Usage</h3>
 
 <p>Use this markup to create a sticky. <code>[data-xt-sticky]</code> must be <a
   href="/docs/javascript/#initialization">initialized by javascript</a>.</p>
@@ -481,37 +461,7 @@
   component</strong>.
 </div>
 
-<h3>Fade</h3>
-
-<p>Use this markup to create a fade. <code>[data-xt-fade]</code> must be <a
-  href="/docs/javascript/#initialization">initialized by javascript</a>.</p>
-
-<pre>
-  <code class="html">
-    <div data-xt-fade>
-      <div class="fade">
-        <!-- content -->
-      </div>
-    </div>
-  </code>
-</pre>
-
-<div class="alert">
-  Instead of using html arguments you can initialize <a href="/docs/javascript/#initialization-fade">fade
-  by javascript</a> using the same options syntax.
-</div>
-
-<h3>Parallax</h3>
-
-<p>@TODO</p>
-
-<h2>Defaults</h2>
-
-<h3>Smooth</h3>
-
-<p>@TODO</p>
-
-<h3>Sticky</h3>
+<h3>Defaults</h3>
 
 <p>Here are the defaults options for sticky.</p>
 
@@ -530,35 +480,6 @@
   </code>
 </pre>
 
-<h3>Fade</h3>
-
-<p>Here are the defaults options for fade.</p>
-
-<pre>
-  <code class="js">
-    XtFade.defaults = {
-      "elements": ".fade",
-      "class": "in",
-      "on": "scroll resize",
-      "min": 0,
-      "max": Infinity,
-      "distance": 0.2,
-      "delayOn": false,
-      "delayOff": false
-    };
-  </code>
-</pre>
-
-<h3>Parallax</h3>
-
-<p>@TODO</p>
-
-<h2>Smooth</h2>
-
-<p>@TODO</p>
-
-<h2>Sticky</h2>
-
 <h3>Position and Mode</h3>
 
 <p>The default <strong>position</strong> is <code>"position": "top"</code>.</p>
@@ -573,33 +494,33 @@
   <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-option-position.html"
        data-name="position">
     <div class="demo-text">
-      <code>"position": "top"</code> <code>"position": "bottom"</code>.
+      <code>"position": "top"</code> <code>"position": "bottom"</code>
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-option-limit.html"
        data-name="limit">
     <div class="demo-text">
-      <code>"limit": {"top": Element}</code> <code>"limit": {"bottom": Element}</code>.
+      <code>"limit": {"top": Element}</code> <code>"limit": {"bottom": Element}</code>
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-mode-absolute.html"
        data-name="absolute">
     <div class="demo-text">
-      Use <code>@mode: 'absolute'</code> in the less mixin to have absolute position when not sticky.
+      Use <code>@mode: 'absolute'</code> in the less mixin to have absolute position when not sticky
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-mode-fixed.html"
        data-name="fixed">
     <div class="demo-text">
       Use <code>@mode: 'fixed'</code> or <code>@mode: 'fixed-always'</code> in the less to have fixed position when not
-      sticky.
+      sticky
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-responsive.html"
        data-name="responsive">
     <div class="demo-text">
       It's possible to disable sticky with <code>.xt-sticky-disable</code>, so also inside <strong>media query
-      mixins</strong> (@TODO link media queries mixins) for responsive.
+      mixins</strong> (@TODO link media queries mixins) for responsive
     </div>
   </div>
 </div>
@@ -638,7 +559,7 @@
 <div class="demo">
   <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-hide.html" data-name="hide">
     <div class="demo-text">
-      <code>"hide": "down"</code> <code>"hide": "up"</code>.
+      <code>"hide": "down"</code> <code>"hide": "up"</code>
     </div>
   </div>
 </div>
@@ -651,24 +572,63 @@
   <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-showhide-top.html"
        data-name="top">
     <div class="demo-text">
-      <code>"contain": {"top": Element}</code>.
+      <code>"contain": {"top": Element}</code>
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-showhide-bottom.html"
        data-name="bottom">
     <div class="demo-text">
-      <code>"contain": {"bottom": Element}</code>.
+      <code>"contain": {"bottom": Element}</code>
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/sticky/sticky-showhide-hide.html"
        data-name="hide">
     <div class="demo-text">
-      <code>.show-sticky</code> <code>.hide-sticky</code>.
+      <code>.show-sticky</code> <code>.hide-sticky</code>
     </div>
   </div>
 </div>
 
 <h2>Fade</h2>
+
+<h3>Usage</h3>
+
+<p>Use this markup to create a fade. <code>[data-xt-fade]</code> must be <a
+  href="/docs/javascript/#initialization">initialized by javascript</a>.</p>
+
+<pre>
+  <code class="html">
+    <div data-xt-fade>
+      <div class="fade">
+        <!-- content -->
+      </div>
+    </div>
+  </code>
+</pre>
+
+<div class="alert">
+  Instead of using html arguments you can initialize <a href="/docs/javascript/#initialization-fade">fade
+  by javascript</a> using the same options syntax.
+</div>
+
+<h3>Defaults</h3>
+
+<p>Here are the defaults options for fade.</p>
+
+<pre>
+  <code class="js">
+    XtFade.defaults = {
+      "elements": ".fade",
+      "class": "in",
+      "on": "scroll resize",
+      "min": 0,
+      "max": Infinity,
+      "distance": 0.2,
+      "delayOn": false,
+      "delayOff": false
+    };
+  </code>
+</pre>
 
 <h3>Javascript</h3>
 
@@ -676,7 +636,7 @@
   <div class="demo-item" data-iframe="/demos/javascript/fade/fade-javascript.html"
        data-name="javascript">
     <div class="demo-text">
-      Example initialized by javascript on document.
+      Example initialized by javascript on document
     </div>
   </div>
 </div>
@@ -689,26 +649,26 @@
   <div class="demo-item" data-iframe="/demos/javascript/fade/fade-mode-infinite.html"
        data-name="infinite">
     <div class="demo-text">
-      Default mode infinite.
+      Default mode infinite
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/fade/fade-mode-scroll.html"
        data-name="scroll">
     <div class="demo-text">
-      <code>&:not(.fade-scroll)</code>.
+      <code>&:not(.fade-scroll)</code>
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/fade/fade-mode-visible.html"
        data-name="visible">
     <div class="demo-text">
-      <code>&:not(.fade-visible)</code>.
+      <code>&:not(.fade-visible)</code>
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/fade/fade-mode-responsive.html"
        data-name="responsive">
     <div class="demo-text">
       It's possible to specify different modes with <strong>media query mixins</strong> (@TODO link media queries
-      mixins) for responsive.
+      mixins) for responsive
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/fade/fade-mode-block.html"
@@ -725,13 +685,12 @@
   <div class="demo-item" data-iframe="/demos/javascript/fade/fade-direction.html"
        data-name="direction">
     <div class="demo-text">
-      <code>.fade-up</code> <code>.fade-down</code>.
+      <code>.fade-up</code> <code>.fade-down</code>
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/fade/fade-distance.html" data-name="distance">
     <div class="demo-text">
-      <code>"distance": Number</code> is the window's top and bottom activation and deactivation. Factor between 0 and
-      1.
+      <code>"distance": Number</code> is the window's top and bottom activation and deactivation. Factor between 0 and 1
     </div>
   </div>
 </div>
@@ -741,15 +700,19 @@
 <div class="demo">
   <div class="demo-item" data-iframe="/demos/javascript/fade/fade-delay.html" data-name="delay">
     <div class="demo-text">
-      <code>"delayOn": Function</code> <code>"delayOff": Function</code> return number using
-      <strong>total</strong> and <strong>current</strong>.
+      <code>"delayOn": Function</code> <code>"delayOff": Function</code> return number using <strong>total</strong> and <strong>current</strong>
     </div>
   </div>
 </div>
 
+<h2>Smooth</h2>
+
+<p>@TODO</p>
+
 <h2>Parallax</h2>
 
 <p>@TODO</p>
+
           </article>
 
         </div>

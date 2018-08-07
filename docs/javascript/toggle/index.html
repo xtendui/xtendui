@@ -198,52 +198,6 @@
                 
                 
                 <div class="site-breadcrumbs-body-main">
-                  <a href="/docs/layout/" class="btn btn-primary btn-nodesign">
-                    Layout
-                  </a>
-                  
-                  <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
-                    
-                    <div class="site-breadcrumbs-body-sub-inner">
-                      
-                      <a href="/docs/layout/grid/" class="btn btn-primary btn-nodesign">
-                        Grid
-                      </a>
-                      
-                      <a href="/docs/layout/flex/" class="btn btn-primary btn-nodesign">
-                        Flex
-                      </a>
-                      
-                      <a href="/docs/layout/list/" class="btn btn-primary btn-nodesign">
-                        List
-                      </a>
-                      
-                      <a href="/docs/layout/box/" class="btn btn-primary btn-nodesign">
-                        Box
-                      </a>
-                      
-                    </div>
-                    
-                  </div>
-                </div>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <div class="site-breadcrumbs-body-main">
                   <a href="/docs/content/" class="btn btn-primary btn-nodesign">
                     Content
                   </a>
@@ -272,6 +226,56 @@
                     
                   </div>
                 </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="site-breadcrumbs-body-main">
+                  <a href="/docs/layout/" class="btn btn-primary btn-nodesign">
+                    Layout
+                  </a>
+                  
+                  <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
+                    
+                    <div class="site-breadcrumbs-body-sub-inner">
+                      
+                      <a href="/docs/layout/grid/" class="btn btn-primary btn-nodesign">
+                        Grid
+                      </a>
+                      
+                      <a href="/docs/layout/flex/" class="btn btn-primary btn-nodesign">
+                        Flex
+                      </a>
+                      
+                      <a href="/docs/layout/list/" class="btn btn-primary btn-nodesign">
+                        List
+                      </a>
+                      
+                      <a href="/docs/layout/box/" class="btn btn-primary btn-nodesign">
+                        Box
+                      </a>
+                      
+                      <a href="/docs/layout/other/" class="btn btn-primary btn-nodesign">
+                        Other
+                      </a>
+                      
+                    </div>
+                    
+                  </div>
+                </div>
+                
+                
+                
+                
+                
+                
                 
                 
                 
@@ -318,26 +322,6 @@
                 
                 
                 
-                
-                
-                
-                <div class="site-breadcrumbs-body-main">
-                  <a href="/docs/other/" class="btn btn-primary btn-nodesign">
-                    Other
-                  </a>
-                  
-                  <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
-                    
-                    <div class="site-breadcrumbs-body-sub-inner">
-                      
-                      <a href="/docs/other/alert/" class="btn btn-primary btn-nodesign">
-                        Alert
-                      </a>
-                      
-                    </div>
-                    
-                  </div>
-                </div>
                 
                 
                 
@@ -452,8 +436,6 @@
           <article class="site-article default-lists">
             <h2>Usage</h2>
 
-<h3>Toggle</h3>
-
 <p>Use this markup to create a toggle. <code>[data-xt-toggle]</code> must be <a
   href="/docs/javascript/#initialization">initialized by javascript</a>.</p>
 
@@ -485,18 +467,20 @@
 
 <h3>Drop</h3>
 
-<p>Use this markup to create a drop. <code>[data-xt-drop]</code> must be <a
+<p>Drop is a special type of toggle. Use this markup to create a drop. <code>[data-xt-drop]</code> must be <a
   href="/docs/javascript/#initialization">initialized by javascript</a>.</p>
 
 <pre>
   <code class="html">
-    <div class="drop-container" data-xt-drop>
+    <div class="drop-outer" data-xt-drop>
       <button type="button">
         <!-- content -->
       </button>
       <div class="drop">
         <div class="drop-inner">
-          <!-- content -->
+          <div class="drop-content">
+            <!-- content -->
+          </div>
         </div>
       </div>
     </div>
@@ -510,7 +494,7 @@
 
 <h3>Overlay</h3>
 
-<p>Use this markup to create a overlay. <code>[data-xt-overlay]</code> must be <a
+<p>Overlay is a special type of toggle. Use this markup to create a overlay. <code>[data-xt-overlay]</code> must be <a
   href="/docs/javascript/#initialization">initialized by javascript</a>.</p>
 
 <pre>
@@ -553,8 +537,6 @@
 </div>
 
 <h2>Defaults</h2>
-
-<h3>Toggle</h3>
 
 <p>Here are the defaults options for toggle.</p>
 
@@ -624,26 +606,26 @@
 <div class="demo">
   <div class="demo-item demo-preview" data-name="self">
     <div class="demo-text">
-      Toggle a single <strong>element</strong> with <code>[data-xt-toggle]</code>.
+      Toggle a single <strong>element</strong> with <code>[data-xt-toggle]</code>
     </div>
     <div class="demo-source" data-lang="html">
-      <button type="button" class="btn btn-primary-empty" data-xt-toggle>
+      <button type="button" class="btn" data-xt-toggle>
         Toggle
       </button>
-      <button type="button" class="btn btn-primary-empty" data-xt-toggle>
+      <button type="button" class="btn" data-xt-toggle>
         Toggle
       </button>
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="single target">
     <div class="demo-text">
-      Toggle a single <strong>target</strong> using <code>targets</code> with <strong>#id</strong>.
+      Toggle a single <strong>target</strong> using <code>targets</code> with <strong>#id</strong>
     </div>
     <div class="demo-source" data-lang="html">
-      <button type="button" class="btn btn-primary-empty" data-xt-toggle='{"targets": "#toggle-unique-0"}'>
+      <button type="button" class="btn" data-xt-toggle='{"targets": "#toggle-unique-0"}'>
         Toggle 0
       </button>
-      <button type="button" class="btn btn-primary-empty" data-xt-toggle='{"targets": "#toggle-unique-1"}'>
+      <button type="button" class="btn" data-xt-toggle='{"targets": "#toggle-unique-1"}'>
         Toggle 1
       </button>
       <div class="alert toggle-block" id="toggle-unique-0">
@@ -656,14 +638,14 @@
   </div>
   <div class="demo-item demo-preview" data-name="same targets">
     <div class="demo-text">
-      Toggle same <strong>targets</strong> using <code>targets</code> with <strong>#id</strong>.
+      Toggle same <strong>targets</strong> using <code>targets</code> with <strong>#id</strong>
     </div>
     <div class="demo-source" data-lang="html">
-      <button type="button" class="btn btn-primary-empty"
+      <button type="button" class="btn"
               data-xt-toggle='{"targets": "#alert-unique-2, #toggle-unique-3"}'>
         Toggle
       </button>
-      <button type="button" class="btn btn-primary-empty"
+      <button type="button" class="btn"
               data-xt-toggle='{"targets": "#alert-unique-2, #toggle-unique-3"}'>
         Toggle
       </button>
@@ -690,17 +672,17 @@
   <div class="demo-item demo-preview" data-name="manager">
     <div class="demo-text">
       With multiple <strong>targets</strong>, the ones activated is the one with the same index of the toggled <strong>element</strong>.
-      Nested <strong>targets</strong> are filtered out.
+      Nested <strong>targets</strong> are filtered out
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 2
         </button>
         <div class="alert toggle-block">
@@ -726,18 +708,18 @@
   </div>
   <div class="demo-item demo-preview" data-name="custom">
     <div class="demo-text">
-      Custom <strong>elements</strong> and <strong>targets</strong>.
+      Custom <strong>elements</strong> and <strong>targets</strong>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"elements": ".test > .btn", "targets": ".test > .example-toggle"}'>
         <div class="test">
-          <button type="button" class="btn btn-primary-empty">
+          <button type="button" class="btn">
             Toggle 0
           </button>
-          <button type="button" class="btn btn-primary-empty">
+          <button type="button" class="btn">
             Toggle 1
           </button>
-          <button type="button" class="btn btn-primary-empty">
+          <button type="button" class="btn">
             Toggle 2
           </button>
           <div class="alert example-toggle">
@@ -767,17 +749,17 @@
   </div>
   <div class="demo-item demo-preview" data-name="custom toggle">
     <div class="demo-text">
-      Custom targets classname that starts with <code>.toggle-</code>.
+      Custom targets classname that starts with <code>.toggle-</code>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 2
         </button>
         <div class="alert toggle-custom">
@@ -822,22 +804,22 @@
   <div class="demo-item demo-preview" data-name="group">
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle>
-        <button type="button" class="btn btn-primary-empty" data-group="0">
+        <button type="button" class="btn" data-group="0">
           Group 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty" data-group="0">
+        <button type="button" class="btn" data-group="0">
           Group 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty" data-group="1">
+        <button type="button" class="btn" data-group="1">
           Group 1
         </button>
-        <button type="button" class="btn btn-primary-empty" data-group="1">
+        <button type="button" class="btn" data-group="1">
           Group 1
         </button>
         <div class="alert toggle-block">
@@ -867,11 +849,11 @@
 <div class="demo">
   <div class="demo-item demo-preview" data-name="class">
     <div class="demo-text">
-      You can specify classes to toggle with <strong>class</strong>.
+      You can specify classes to toggle with <strong>class</strong>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"class": "active class-example-0"}'>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle
         </button>
         <div class="alert toggle-block" id="alert-example">
@@ -881,12 +863,12 @@
     </div>
     <div class="demo-source" data-lang="css">
       <style>
-        .btn.class-example-0::before {
-          border: 1px solid black;
+        .btn.class-example-0 {
+          color: red;
         }
 
-        .alert.class-example-0::before {
-          border: 1px solid black;
+        .alert.class-example-0 {
+          color: red;
         }
       </style>
     </div>
@@ -900,19 +882,19 @@
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"class": "active class-example-1", "min": 2, "max": 3}'>
-        <button type="button" class="btn btn-primary-empty" data-group="0">
+        <button type="button" class="btn" data-group="0">
           Group 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty" data-group="0">
+        <button type="button" class="btn" data-group="0">
           Group 0
         </button>
-        <button type="button" class="btn btn-primary-empty active class-example-1">
+        <button type="button" class="btn active class-example-1">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty" data-group="1">
+        <button type="button" class="btn" data-group="1">
           Group 1
         </button>
         <div class="alert toggle-block">
@@ -934,12 +916,12 @@
     </div>
     <div class="demo-source" data-lang="css">
       <style>
-        .btn.class-example-1::before {
-          border: 1px solid black;
+        .btn.class-example-1 {
+          color: red;
         }
 
-        .alert.class-example-1::before {
-          border: 1px solid black;
+        .alert.class-example-1 {
+          color: red;
         }
       </style>
     </div>
@@ -956,20 +938,20 @@
 <div class="demo">
   <div class="demo-item demo-preview" data-name="custom">
     <div class="demo-text">
-      The required <strong>min</strong> activation is fulfilled on initialization.
+      The required <strong>min</strong> activation is fulfilled on initialization
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"min": 2, "max": 2}'>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 2
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 3
         </button>
         <div class="alert toggle-block">
@@ -997,20 +979,20 @@
 <div class="demo">
   <div class="demo-item demo-preview" data-name="event">
     <div class="demo-text">
-      <code>"on": "mouseenter"</code> <code>"off": "mouseleave"</code>.
+      <code>"on": "mouseenter"</code> <code>"off": "mouseleave"</code>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"min": 1, "on": "mouseenter", "off": "mouseleave"}'>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 2
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 3
         </button>
         <div class="alert toggle-block">
@@ -1043,20 +1025,20 @@
 <div class="demo">
   <div class="demo-item demo-preview" data-name="auto">
     <div class="demo-text">
-      <code>"auto": Milliseconds</code>.
+      <code>"auto": Milliseconds</code>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"auto": 2000}'>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 2
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 3
         </button>
         <div class="alert toggle-block">
@@ -1076,20 +1058,20 @@
   </div>
   <div class="demo-item demo-preview" data-name="autoPause">
     <div class="demo-text">
-      <code>"autoPause": Milliseconds</code>.
+      <code>"autoPause": Milliseconds</code>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"auto": 2000, "autoPause": 6000}'>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 2
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 3
         </button>
         <div class="alert toggle-block">
@@ -1110,16 +1092,16 @@
   <div class="demo-item demo-preview" data-name="complex">
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"min": 1, "max": 2, "auto": 2000, "autoPause": "stop"}'>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty active">
+        <button type="button" class="btn active">
           Toggle 2
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 3
         </button>
         <div class="alert toggle-block">
@@ -1145,17 +1127,17 @@
   <div class="demo-item demo-preview" data-name="css">
     <div class="demo-text">
       Toggle classes <code>.active</code> and <code>.out</code> set the pace of the activation/deactivation depending on
-      the animations/transition they have.
+      the animations/transition they have
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           anim-opacity
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           anim-vertical
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           no-anim
         </button>
         <div class="alert toggle-block anim-opacity">
@@ -1174,20 +1156,20 @@
        data-name="out">
     <div class="demo-text">
       Activation automatically waits for the <strong>targets</strong> <code>.out</code> css animation or transition to
-      finish before adding <code>.active</code> class to new targets.
+      finish before adding <code>.active</code> class to new targets
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/toggle/toggle-timing.html"
        data-name="timing">
     <div class="demo-text">
       Timing option for <code>.out</code> instead of waiting for css animation or transition: <code>"timing":
-      Milliseconds</code>.
+      Milliseconds</code>
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/toggle/toggle-instant.html"
        data-name="instant">
     <div class="demo-text">
-      Options for not waiting: <code>"instant": {"elements": true, "targets": true, "additional": true}</code>.
+      Options for not waiting: <code>"instant": {"elements": true, "targets": true, "additional": true}</code>
     </div>
   </div>
 </div>
