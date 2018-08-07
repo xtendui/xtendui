@@ -9,6 +9,16 @@
   .generate-utils();
   .generate-utils(@breakpoint:none) {
     & when (@breakpoint = none) {
+      // animation
+      .no-transition {
+        .no-transition() !important;
+      }
+      .no-animation {
+        .no-animation() !important;
+      }
+      .no-anim {
+        .no-anim() !important;
+      }
       // responsive
       .responsive {
         .responsive() !important;

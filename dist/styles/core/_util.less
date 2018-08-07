@@ -56,6 +56,21 @@
   clip: rect(0, 0, 0, 0);
 }
 
+// animation
+
+.no-transition() {
+  transition-property: none;
+}
+
+.no-animation() {
+  animation-name: none;
+}
+
+.no-anim() {
+  transition-property: none;
+  animation-name: none;
+}
+
 // responsive
 
 .responsive(@breakpoint:none) when (@breakpoint = none) {
