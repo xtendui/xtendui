@@ -649,6 +649,13 @@
     .padding(x, small);
     .btn {
       .btn-tiny();
+      &:hover, &:active, &.active {
+        color: @text;
+        &@{btn-design} {
+          border-color: @white;
+          background-color: @white;
+        }
+      }
     }
   }
   .demo-tabs-inner {
@@ -707,12 +714,14 @@
 
 // .demo-drops
 
+/*
 .demo-drops {
   .drop {
     .display(block) !important;
     position: relative !important;
   }
 }
+*/
 
 //////////////////////
 // xt

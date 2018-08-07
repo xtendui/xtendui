@@ -95,7 +95,7 @@ a, .alink {
     border-color: transparent;
   }
   // options
-  .btn-primary-empty(); // variant
+  .btn-secondary(); // variant
   .btn-medium(); // size
 }
 
@@ -132,6 +132,7 @@ a, .alink {
   &:hover, &:active, &.active {
     color: @text-inverse;
     &@{btn-design} {
+      border-color: @primary;
       background-color: lighten(@primary, @perc-xs);
     }
   }
@@ -147,6 +148,7 @@ a, .alink {
   &:hover, &:active, &.active {
     color: @text-inverse;
     &@{btn-design} {
+      border-color: @primary;
       background-color: lighten(@primary, @perc-xs);
     }
   }
@@ -162,7 +164,8 @@ a, .alink {
   &:hover, &:active, &.active {
     color: @text;
     &@{btn-design} {
-      background-color: lighten(@secondary, @perc-xs);
+      border-color: darken(@secondary, @perc-sm);
+      background-color: darken(@secondary, @perc-xs);
     }
   }
 }
@@ -177,7 +180,8 @@ a, .alink {
   &:hover, &:active, &.active {
     color: @text;
     &@{btn-design} {
-      background-color: lighten(@secondary, @perc-xs);
+      border-color: darken(@secondary, @perc-sm);
+      background-color: darken(@secondary, @perc-xs);
     }
   }
 }

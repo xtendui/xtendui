@@ -17,13 +17,13 @@
   // options
   .list-space(small); // space
   .list-left(); // alignment
-  .list-secondary-empty(); // variant
+  .list-secondary(); // variant
 }
 
 .list-block {
   // options
   .list-space(small); // space
-  .list-secondary-empty(); // variant
+  .list-secondary(); // variant
 }
 
 // addons
@@ -156,7 +156,7 @@
 .box-primary {
   .inverse();
   &@{box-design} {
-    border-color: darken(@primary, @perc-xs);
+    border-color: @primary;
     background-color: @primary;
   }
   > .btn-close {
@@ -167,7 +167,7 @@
 .box-secondary {
   color: @text;
   &@{box-design} {
-    border-color: darken(@secondary, @perc-xs);
+    border-color: @secondary;
     background-color: @secondary;
   }
   > .btn-close {
