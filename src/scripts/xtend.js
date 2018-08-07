@@ -820,7 +820,7 @@ class Xt {
    * @param {Node|HTMLElement} el Element
    */
   specialCenterOn(el) {
-    if (el.classList.contains('drop-center')) {
+    if (el.classList.contains('center')) {
       let add = this.object.clientWidth;
       let remove = el.clientWidth;
       el.style.left = ((add - remove) / 2) + 'px';
@@ -832,7 +832,7 @@ class Xt {
    * @param {Node|HTMLElement} el Element
    */
   specialMiddleOn(el) {
-    if (el.classList.contains('drop-middle')) {
+    if (el.classList.contains('middle')) {
       let add = this.object.clientHeight;
       let remove = el.clientHeight;
       el.style.top = ((add - remove) / 2) + 'px';
