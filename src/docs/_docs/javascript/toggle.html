@@ -181,10 +181,10 @@ description: Many possible behaviour, interactions and animations are possible w
       Toggle a single <strong>element</strong> with <code>[data-xt-toggle]</code>
     </div>
     <div class="demo-source" data-lang="html">
-      <button type="button" class="btn btn-primary-empty" data-xt-toggle>
+      <button type="button" class="btn" data-xt-toggle>
         Toggle
       </button>
-      <button type="button" class="btn btn-primary-empty" data-xt-toggle>
+      <button type="button" class="btn" data-xt-toggle>
         Toggle
       </button>
     </div>
@@ -194,10 +194,10 @@ description: Many possible behaviour, interactions and animations are possible w
       Toggle a single <strong>target</strong> using <code>targets</code> with <strong>#id</strong>
     </div>
     <div class="demo-source" data-lang="html">
-      <button type="button" class="btn btn-primary-empty" data-xt-toggle='{"targets": "#toggle-unique-0"}'>
+      <button type="button" class="btn" data-xt-toggle='{"targets": "#toggle-unique-0"}'>
         Toggle 0
       </button>
-      <button type="button" class="btn btn-primary-empty" data-xt-toggle='{"targets": "#toggle-unique-1"}'>
+      <button type="button" class="btn" data-xt-toggle='{"targets": "#toggle-unique-1"}'>
         Toggle 1
       </button>
       <div class="alert toggle-block" id="toggle-unique-0">
@@ -213,11 +213,11 @@ description: Many possible behaviour, interactions and animations are possible w
       Toggle same <strong>targets</strong> using <code>targets</code> with <strong>#id</strong>
     </div>
     <div class="demo-source" data-lang="html">
-      <button type="button" class="btn btn-primary-empty"
+      <button type="button" class="btn"
               data-xt-toggle='{"targets": "#alert-unique-2, #toggle-unique-3"}'>
         Toggle
       </button>
-      <button type="button" class="btn btn-primary-empty"
+      <button type="button" class="btn"
               data-xt-toggle='{"targets": "#alert-unique-2, #toggle-unique-3"}'>
         Toggle
       </button>
@@ -248,13 +248,13 @@ description: Many possible behaviour, interactions and animations are possible w
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 2
         </button>
         <div class="alert toggle-block">
@@ -285,13 +285,13 @@ description: Many possible behaviour, interactions and animations are possible w
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"elements": ".test > .btn", "targets": ".test > .example-toggle"}'>
         <div class="test">
-          <button type="button" class="btn btn-primary-empty">
+          <button type="button" class="btn">
             Toggle 0
           </button>
-          <button type="button" class="btn btn-primary-empty">
+          <button type="button" class="btn">
             Toggle 1
           </button>
-          <button type="button" class="btn btn-primary-empty">
+          <button type="button" class="btn">
             Toggle 2
           </button>
           <div class="alert example-toggle">
@@ -325,13 +325,13 @@ description: Many possible behaviour, interactions and animations are possible w
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 2
         </button>
         <div class="alert toggle-custom">
@@ -376,22 +376,22 @@ description: Many possible behaviour, interactions and animations are possible w
   <div class="demo-item demo-preview" data-name="group">
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle>
-        <button type="button" class="btn btn-primary-empty" data-group="0">
+        <button type="button" class="btn" data-group="0">
           Group 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty" data-group="0">
+        <button type="button" class="btn" data-group="0">
           Group 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty" data-group="1">
+        <button type="button" class="btn" data-group="1">
           Group 1
         </button>
-        <button type="button" class="btn btn-primary-empty" data-group="1">
+        <button type="button" class="btn" data-group="1">
           Group 1
         </button>
         <div class="alert toggle-block">
@@ -425,7 +425,7 @@ description: Many possible behaviour, interactions and animations are possible w
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"class": "active class-example-0"}'>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle
         </button>
         <div class="alert toggle-block" id="alert-example">
@@ -454,19 +454,19 @@ description: Many possible behaviour, interactions and animations are possible w
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"class": "active class-example-1", "min": 2, "max": 3}'>
-        <button type="button" class="btn btn-primary-empty" data-group="0">
+        <button type="button" class="btn" data-group="0">
           Group 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty" data-group="0">
+        <button type="button" class="btn" data-group="0">
           Group 0
         </button>
-        <button type="button" class="btn btn-primary-empty active class-example-1">
+        <button type="button" class="btn active class-example-1">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty" data-group="1">
+        <button type="button" class="btn" data-group="1">
           Group 1
         </button>
         <div class="alert toggle-block">
@@ -514,16 +514,16 @@ description: Many possible behaviour, interactions and animations are possible w
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"min": 2, "max": 2}'>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 2
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 3
         </button>
         <div class="alert toggle-block">
@@ -555,16 +555,16 @@ description: Many possible behaviour, interactions and animations are possible w
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"min": 1, "on": "mouseenter", "off": "mouseleave"}'>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 2
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 3
         </button>
         <div class="alert toggle-block">
@@ -601,16 +601,16 @@ description: Many possible behaviour, interactions and animations are possible w
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"auto": 2000}'>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 2
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 3
         </button>
         <div class="alert toggle-block">
@@ -634,16 +634,16 @@ description: Many possible behaviour, interactions and animations are possible w
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"auto": 2000, "autoPause": 6000}'>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 2
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 3
         </button>
         <div class="alert toggle-block">
@@ -664,16 +664,16 @@ description: Many possible behaviour, interactions and animations are possible w
   <div class="demo-item demo-preview" data-name="complex">
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"min": 1, "max": 2, "auto": 2000, "autoPause": "stop"}'>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 0
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 1
         </button>
-        <button type="button" class="btn btn-primary-empty active">
+        <button type="button" class="btn active">
           Toggle 2
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           Toggle 3
         </button>
         <div class="alert toggle-block">
@@ -703,13 +703,13 @@ description: Many possible behaviour, interactions and animations are possible w
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           anim-opacity
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           anim-vertical
         </button>
-        <button type="button" class="btn btn-primary-empty">
+        <button type="button" class="btn">
           no-anim
         </button>
         <div class="alert toggle-block anim-opacity">
