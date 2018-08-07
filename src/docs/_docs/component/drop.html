@@ -49,8 +49,9 @@ description: Dropdown component with structured theming that can show anything.
           <div class="drop-inner">
             <div class="drop-content">
               <div class="box">
-                Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit.<br/>Nullam posuere ex ac felis venenatis
-                pretium.<br/>Aenean aliquam interdum enim et faucibus.<br/>In tempor convallis est vel dapibus.
+                <h6>Box</h6>
+                <p>Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit.<br/>Nullam posuere ex ac felis venenatis
+                  pretium.<br/>Aenean aliquam interdum enim et faucibus.<br/>In tempor convallis est vel dapibus.</p>
               </div>
             </div>
           </div>
@@ -143,7 +144,7 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item demo-preview" data-name="override">
     <div class="demo-text">
-      You can <strong>override</strong> each buttons by using the <code>.btn</code> class.
+      You can <strong>override</strong> each buttons by using the <code>.btn</code> class
     </div>
     <div class="demo-source" data-lang="html">
       <div class="drop-outer" data-xt-drop>
@@ -176,7 +177,7 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item demo-preview" data-name="custom">
     <div class="demo-text">
-      For custom list style don't use <code>.list-drop</code>.
+      For custom list style don't use <code>.list-drop</code>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="drop-outer" data-xt-drop>
@@ -220,98 +221,15 @@ description: Dropdown component with structured theming that can show anything.
 <p><code>.list-drop</code> has drop's list default options.</p>
 
 <div class="demo">
-  <div class="demo-item demo-preview" data-name="default">
-    <div class="demo-source demo-drops" data-lang="html">
-      <div class="drop-outer" data-xt-drop>
-        <button type="button" class="btn btn-primary">
-          Toggle
-        </button>
-        <div class="drop">
-          <div class="drop-inner">
-            <div class="drop-content">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="primary">
+  <div class="demo-item demo-preview" data-name="variants">
     <div class="demo-text">
-      <code>.drop-primary</code>
+      <code>.drop-white</code> <code>.drop-primary</code> <code>.drop-secondary</code>
     </div>
     <div class="demo-source demo-drops" data-lang="html">
+
       <div class="drop-outer" data-xt-drop>
         <button type="button" class="btn btn-primary">
-          Toggle
-        </button>
-        <div class="drop drop-primary">
-          <div class="drop-inner">
-            <div class="drop-content">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="secondary">
-    <div class="demo-text">
-      <code>.drop-secondary</code>
-    </div>
-    <div class="demo-source demo-drops" data-lang="html">
-      <div class="drop-outer" data-xt-drop>
-        <button type="button" class="btn btn-primary">
-          Toggle
-        </button>
-        <div class="drop drop-secondary">
-          <div class="drop-inner">
-            <div class="drop-content">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="white">
-    <div class="demo-text">
-      <code>.drop-white</code>
-    </div>
-    <div class="demo-source demo-drops" data-lang="html">
-      <div class="drop-outer" data-xt-drop>
-        <button type="button" class="btn btn-primary">
-          Toggle
+          default
         </button>
         <div class="drop drop-white">
           <div class="drop-inner">
@@ -331,25 +249,12 @@ description: Dropdown component with structured theming that can show anything.
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
-<h3>Special</h3>
-
-<p>Special optional modifiers classes.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="squared">
-    <div class="demo-text">
-      <code>.drop-squared</code>
-    </div>
-    <div class="demo-source demo-drops" data-lang="html">
       <div class="drop-outer" data-xt-drop>
         <button type="button" class="btn btn-primary">
-          Toggle
+          white
         </button>
-        <div class="drop drop-squared">
+        <div class="drop drop-white">
           <div class="drop-inner">
             <div class="drop-content">
               <ul class="list list-drop">
@@ -367,18 +272,12 @@ description: Dropdown component with structured theming that can show anything.
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="noborder">
-    <div class="demo-text">
-      <code>.drop-noborder</code>
-    </div>
-    <div class="demo-source demo-drops" data-lang="html">
+
       <div class="drop-outer" data-xt-drop>
         <button type="button" class="btn btn-primary">
-          Toggle
+          primary
         </button>
-        <div class="drop drop-noborder">
+        <div class="drop drop-primary">
           <div class="drop-inner">
             <div class="drop-content">
               <ul class="list list-drop">
@@ -396,138 +295,25 @@ description: Dropdown component with structured theming that can show anything.
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
-<h3>Dimensions</h3>
-
-<p>Drop with max sizes with automatic scrollbar on overflow.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="max-height">
-    <div class="demo-text">
-      <code>.drop-max-height</code>
-    </div>
-    <div class="demo-source demo-drops" data-lang="html">
-      <div style="position: relative;">
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            Toggle
-          </button>
-          <div class="drop drop-max-height">
-            <div class="drop-inner">
-              <div class="drop-content">
-                <ul class="list list-drop">
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="max-width">
-    <div class="demo-text">
-      <code>.drop-max-width</code>
-    </div>
-    <div class="demo-source demo-drops" data-lang="html">
-      <div style="position: relative;">
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            Toggle
-          </button>
-          <div class="drop drop-max-width">
-            <div class="drop-inner">
-              <div class="drop-content">
-                <ul class="list list-drop">
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="both">
-    <div class="demo-text">
-      <code>.drop-max-height</code> <code>.drop-max-width</code>
-    </div>
-    <div class="demo-source demo-drops" data-lang="html">
-      <div style="position: relative;">
-        <div class="drop-outer" data-xt-drop>
-          <button type="button" class="btn btn-primary">
-            Toggle
-          </button>
-          <div class="drop drop-max-height drop-max-width">
-            <div class="drop-inner">
-              <div class="drop-content">
-                <ul class="list list-drop">
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                  <li>
-                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
-                  </li>
-                </ul>
-              </div>
+      <div class="drop-outer" data-xt-drop>
+        <button type="button" class="btn btn-primary">
+          secondary
+        </button>
+        <div class="drop drop-secondary">
+          <div class="drop-inner">
+            <div class="drop-content">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -1120,6 +906,90 @@ description: Dropdown component with structured theming that can show anything.
   </div>
 </div>
 
+<h3>Special</h3>
+
+<p>Special optional modifiers classes.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="special">
+    <div class="demo-text">
+      <code>.drop-nodesign</code> <code>.drop-squared</code> <code>.drop-noborder</code>
+    </div>
+    <div class="demo-source demo-drops" data-lang="html">
+      <div class="list list-space-small align-items-center demo-source-from">
+        <div class="drop-outer" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            nodesign
+          </button>
+          <div class="drop drop-nodesign">
+            <div class="drop-inner">
+              <div class="drop-content">
+                <ul class="list list-drop">
+                  <li>
+                    <button type="button">Lorem ipsum dolor</button>
+                  </li>
+                  <li>
+                    <button type="button">Dolor sit</button>
+                  </li>
+                  <li>
+                    <button type="button">Amet</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-outer" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            squared
+          </button>
+          <div class="drop drop-squared">
+            <div class="drop-inner">
+              <div class="drop-content">
+                <ul class="list list-drop">
+                  <li>
+                    <button type="button">Lorem ipsum dolor</button>
+                  </li>
+                  <li>
+                    <button type="button">Dolor sit</button>
+                  </li>
+                  <li>
+                    <button type="button">Amet</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-outer" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            noborder
+          </button>
+          <div class="drop drop-noborder">
+            <div class="drop-inner">
+              <div class="drop-content">
+                <ul class="list list-drop">
+                  <li>
+                    <button type="button">Lorem ipsum dolor</button>
+                  </li>
+                  <li>
+                    <button type="button">Dolor sit</button>
+                  </li>
+                  <li>
+                    <button type="button">Amet</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <h2>Addons</h2>
 
 <h3>Static</h3>
@@ -1231,7 +1101,7 @@ description: Dropdown component with structured theming that can show anything.
 <div class="demo">
   <div class="demo-item demo-preview" data-name="backdrop">
     <div class="demo-text">
-      <code>data-xt-drop='{"backdrop": "object"}'</code> <code>.over-backdrop</code>.
+      <code>data-xt-drop='{"backdrop": "object"}'</code> <code>.over-backdrop</code>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space-small align-items-center demo-source-from">
@@ -1367,12 +1237,148 @@ description: Dropdown component with structured theming that can show anything.
   </div>
 </div>
 
-<h2>Nested and Disable</h2>
+<h3>Dimensions</h3>
+
+<p>Drop with max sizes with automatic scrollbar on overflow.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="max-height">
+    <div class="demo-text">
+      <code>.drop-max-height</code>
+    </div>
+    <div class="demo-source demo-drops" data-lang="html">
+      <div style="position: relative;">
+        <div class="drop-outer" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            Toggle
+          </button>
+          <div class="drop drop-max-height">
+            <div class="drop-inner">
+              <div class="drop-content">
+                <ul class="list list-drop">
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="max-width">
+    <div class="demo-text">
+      <code>.drop-max-width</code>
+    </div>
+    <div class="demo-source demo-drops" data-lang="html">
+      <div style="position: relative;">
+        <div class="drop-outer" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            Toggle
+          </button>
+          <div class="drop drop-max-width">
+            <div class="drop-inner">
+              <div class="drop-content">
+                <ul class="list list-drop">
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="both">
+    <div class="demo-text">
+      <code>.drop-max-height</code> <code>.drop-max-width</code>
+    </div>
+    <div class="demo-source demo-drops" data-lang="html">
+      <div style="position: relative;">
+        <div class="drop-outer" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            Toggle
+          </button>
+          <div class="drop drop-max-height drop-max-width">
+            <div class="drop-inner">
+              <div class="drop-content">
+                <ul class="list list-drop">
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                  <li>
+                    <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Nested and Disable</h3>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="nested">
     <div class="demo-text">
-      <p>For limiting event inside a selector use <code>.event-limit</code>.</p>
+      For limiting event inside a selector use <code>.event-limit</code>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="drop-outer" data-xt-drop>
@@ -1439,7 +1445,7 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/component/drop/drop-disable.html"data-name="disable">
     <div class="demo-text">
-      To disable drop use <code>.drop-disable</code> useful within media queries.
+      To disable drop use <code>.drop-disable</code> useful within media queries
     </div>
   </div>
 </div>

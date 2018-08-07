@@ -178,7 +178,7 @@ description: Many possible behaviour, interactions and animations are possible w
 <div class="demo">
   <div class="demo-item demo-preview" data-name="self">
     <div class="demo-text">
-      Toggle a single <strong>element</strong> with <code>[data-xt-toggle]</code>.
+      Toggle a single <strong>element</strong> with <code>[data-xt-toggle]</code>
     </div>
     <div class="demo-source" data-lang="html">
       <button type="button" class="btn btn-primary-empty" data-xt-toggle>
@@ -191,7 +191,7 @@ description: Many possible behaviour, interactions and animations are possible w
   </div>
   <div class="demo-item demo-preview" data-name="single target">
     <div class="demo-text">
-      Toggle a single <strong>target</strong> using <code>targets</code> with <strong>#id</strong>.
+      Toggle a single <strong>target</strong> using <code>targets</code> with <strong>#id</strong>
     </div>
     <div class="demo-source" data-lang="html">
       <button type="button" class="btn btn-primary-empty" data-xt-toggle='{"targets": "#toggle-unique-0"}'>
@@ -210,7 +210,7 @@ description: Many possible behaviour, interactions and animations are possible w
   </div>
   <div class="demo-item demo-preview" data-name="same targets">
     <div class="demo-text">
-      Toggle same <strong>targets</strong> using <code>targets</code> with <strong>#id</strong>.
+      Toggle same <strong>targets</strong> using <code>targets</code> with <strong>#id</strong>
     </div>
     <div class="demo-source" data-lang="html">
       <button type="button" class="btn btn-primary-empty"
@@ -244,7 +244,7 @@ description: Many possible behaviour, interactions and animations are possible w
   <div class="demo-item demo-preview" data-name="manager">
     <div class="demo-text">
       With multiple <strong>targets</strong>, the ones activated is the one with the same index of the toggled <strong>element</strong>.
-      Nested <strong>targets</strong> are filtered out.
+      Nested <strong>targets</strong> are filtered out
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle>
@@ -280,7 +280,7 @@ description: Many possible behaviour, interactions and animations are possible w
   </div>
   <div class="demo-item demo-preview" data-name="custom">
     <div class="demo-text">
-      Custom <strong>elements</strong> and <strong>targets</strong>.
+      Custom <strong>elements</strong> and <strong>targets</strong>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"elements": ".test > .btn", "targets": ".test > .example-toggle"}'>
@@ -321,7 +321,7 @@ description: Many possible behaviour, interactions and animations are possible w
   </div>
   <div class="demo-item demo-preview" data-name="custom toggle">
     <div class="demo-text">
-      Custom targets classname that starts with <code>.toggle-</code>.
+      Custom targets classname that starts with <code>.toggle-</code>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle>
@@ -421,7 +421,7 @@ description: Many possible behaviour, interactions and animations are possible w
 <div class="demo">
   <div class="demo-item demo-preview" data-name="class">
     <div class="demo-text">
-      You can specify classes to toggle with <strong>class</strong>.
+      You can specify classes to toggle with <strong>class</strong>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"class": "active class-example-0"}'>
@@ -510,7 +510,7 @@ description: Many possible behaviour, interactions and animations are possible w
 <div class="demo">
   <div class="demo-item demo-preview" data-name="custom">
     <div class="demo-text">
-      The required <strong>min</strong> activation is fulfilled on initialization.
+      The required <strong>min</strong> activation is fulfilled on initialization
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"min": 2, "max": 2}'>
@@ -551,7 +551,7 @@ description: Many possible behaviour, interactions and animations are possible w
 <div class="demo">
   <div class="demo-item demo-preview" data-name="event">
     <div class="demo-text">
-      <code>"on": "mouseenter"</code> <code>"off": "mouseleave"</code>.
+      <code>"on": "mouseenter"</code> <code>"off": "mouseleave"</code>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"min": 1, "on": "mouseenter", "off": "mouseleave"}'>
@@ -597,7 +597,7 @@ description: Many possible behaviour, interactions and animations are possible w
 <div class="demo">
   <div class="demo-item demo-preview" data-name="auto">
     <div class="demo-text">
-      <code>"auto": Milliseconds</code>.
+      <code>"auto": Milliseconds</code>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"auto": 2000}'>
@@ -630,7 +630,7 @@ description: Many possible behaviour, interactions and animations are possible w
   </div>
   <div class="demo-item demo-preview" data-name="autoPause">
     <div class="demo-text">
-      <code>"autoPause": Milliseconds</code>.
+      <code>"autoPause": Milliseconds</code>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"auto": 2000, "autoPause": 6000}'>
@@ -699,7 +699,7 @@ description: Many possible behaviour, interactions and animations are possible w
   <div class="demo-item demo-preview" data-name="css">
     <div class="demo-text">
       Toggle classes <code>.active</code> and <code>.out</code> set the pace of the activation/deactivation depending on
-      the animations/transition they have.
+      the animations/transition they have
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle>
@@ -728,20 +728,20 @@ description: Many possible behaviour, interactions and animations are possible w
        data-name="out">
     <div class="demo-text">
       Activation automatically waits for the <strong>targets</strong> <code>.out</code> css animation or transition to
-      finish before adding <code>.active</code> class to new targets.
+      finish before adding <code>.active</code> class to new targets
     </div>
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/toggle/toggle-timing.html"
        data-name="timing">
     <div class="demo-text">
       Timing option for <code>.out</code> instead of waiting for css animation or transition: <code>"timing":
-      Milliseconds</code>.
+      Milliseconds</code>
     </div>
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/toggle/toggle-instant.html"
        data-name="instant">
     <div class="demo-text">
-      Options for not waiting: <code>"instant": {"elements": true, "targets": true, "additional": true}</code>.
+      Options for not waiting: <code>"instant": {"elements": true, "targets": true, "additional": true}</code>
     </div>
   </div>
 </div>

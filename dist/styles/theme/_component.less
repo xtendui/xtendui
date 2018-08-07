@@ -222,6 +222,12 @@ a, .alink {
   }
 }
 
+.btn-noborder {
+  &@{box-design} {
+    border: 0;
+  }
+}
+
 .btn-tall {
   padding-top: .9em;
   padding-bottom: .9em;
@@ -242,10 +248,6 @@ a, .alink {
   padding-right: .6em;
 }
 
-.btn-icon {
-  padding: .6em .8em;
-}
-
 .btn-none {
   padding: 0;
 }
@@ -258,6 +260,10 @@ a, .alink {
 .btn-none-y {
   padding-top: 0;
   padding-bottom: 0;
+}
+
+.btn-icon {
+  padding: .6em .8em;
 }
 
 .btn-transform {
@@ -375,6 +381,8 @@ a, .alink {
   }
 }
 
+// addons
+
 .drop-disable {
   // disable custom animation
   > .drop > .drop-inner {
@@ -385,7 +393,34 @@ a, .alink {
   }
 }
 
+.drop-max-height {
+  > .drop-inner > .drop-content {
+    overflow-y: auto;
+    max-height: 20rem;
+  }
+}
+
+.drop-max-width {
+  > .drop-inner > .drop-content {
+    overflow-x: auto;
+    max-width: 20rem;
+  }
+}
+
 // variant
+
+.drop-white {
+  > .drop-inner {
+    color: @text;
+    &@{drop-design} {
+      border-color: darken(@white, @perc-xs);
+      background-color: @white;
+    }
+    > .drop-content > .list-drop {
+      .list-btn-default({ .btn-primary-empty() });
+    }
+  }
+}
 
 .drop-primary {
   > .drop-inner {
@@ -413,20 +448,15 @@ a, .alink {
   }
 }
 
-.drop-white {
+// special
+
+.drop-nodesign {
   > .drop-inner {
-    color: @text;
-    &@{drop-design} {
-      border-color: darken(@white, @perc-xs);
-      background-color: @white;
-    }
-    > .drop-content > .list-drop {
-      .list-btn-default({ .btn-primary-empty() });
+    &@{btn-design} {
+      display: none;
     }
   }
 }
-
-// special
 
 .drop-squared {
   > .drop-inner {
@@ -441,22 +471,6 @@ a, .alink {
     &@{drop-design} {
       border: 0;
     }
-  }
-}
-
-// dimensions
-
-.drop-max-height {
-  > .drop-inner > .drop-content {
-    overflow-y: auto;
-    max-height: 20rem;
-  }
-}
-
-.drop-max-width {
-  > .drop-inner > .drop-content {
-    overflow-x: auto;
-    max-width: 20rem;
   }
 }
 
@@ -652,6 +666,20 @@ a, .alink {
 
 // variant
 
+.overlay-white {
+  .overlay-inner,
+  &.overlay-screen .overlay {
+    color: @text;
+    &@{overlay-design} {
+      border-color: @white;
+      background-color: @white;
+    }
+    > .btn-close {
+      .btn-primary-empty();
+    }
+  }
+}
+
 .overlay-primary {
   .overlay-inner,
   &.overlay-screen .overlay {
@@ -676,20 +704,6 @@ a, .alink {
     }
     > .btn-close {
       .btn-secondary();
-    }
-  }
-}
-
-.overlay-white {
-  .overlay-inner,
-  &.overlay-screen .overlay {
-    color: @text;
-    &@{overlay-design} {
-      border-color: @white;
-      background-color: @white;
-    }
-    > .btn-close {
-      .btn-primary-empty();
     }
   }
 }
