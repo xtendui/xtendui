@@ -311,8 +311,6 @@ a, .alink {
 .drop {
   // styles
   > .drop-inner {
-    min-width: 18rem;
-    .padding(y, 1.3rem); // vertical space
     &@{drop-design} {
       .design-setup();
       border-radius: @border-radius;
@@ -321,7 +319,11 @@ a, .alink {
       border-color: transparent;
       box-shadow: 0 0 4px fade(@black, @perc-xs), 0 6px 10px fade(@black, @perc-sm);
     }
-    > .list {
+    > .drop-content {
+      .padding(y, 1.3rem); // vertical space
+      min-width: 18rem;
+    }
+    > .drop-content > .list {
       .list-btn-all({ .btn-squared(); padding-left: 2.2rem; padding-right: 2.2rem; white-space: nowrap; }); // not overridable
     }
   }
@@ -392,7 +394,7 @@ a, .alink {
       border-color: darken(@primary, @perc-xs);
       background-color: @primary;
     }
-    > .list-drop {
+    > .drop-content > .list-drop {
       .list-btn-default({ .btn-primary() });
     }
   }
@@ -405,7 +407,7 @@ a, .alink {
       border-color: darken(@secondary, @perc-xs);
       background-color: @secondary;
     }
-    > .list-drop {
+    > .drop-content > .list-drop {
       .list-btn-default({ .btn-secondary() });
     }
   }
@@ -418,7 +420,7 @@ a, .alink {
       border-color: darken(@white, @perc-xs);
       background-color: @white;
     }
-    > .list-drop {
+    > .drop-content > .list-drop {
       .list-btn-default({ .btn-primary-empty() });
     }
   }
@@ -445,14 +447,14 @@ a, .alink {
 // dimensions
 
 .drop-max-height {
-  > .drop-inner {
+  > .drop-inner > .drop-content {
     overflow-y: auto;
     max-height: 20rem;
   }
 }
 
 .drop-max-width {
-  > .drop-inner {
+  > .drop-inner > .drop-content {
     overflow-x: auto;
     max-width: 20rem;
   }
