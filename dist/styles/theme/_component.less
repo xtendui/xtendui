@@ -47,7 +47,7 @@ a, .alink {
   letter-spacing: inherit !important;
   text-transform: inherit !important;
   // reset .btn styles
-  &::before {
+  &@{btn-design} {
     border: 0 !important;
     background-color: transparent !important;
     box-shadow: none !important;
@@ -87,7 +87,7 @@ a, .alink {
   line-height: 1.25;
   letter-spacing: .075em;
   text-transform: uppercase;
-  &::before {
+  &@{btn-design} {
     .design-setup();
     border-radius: @border-radius;
     border-width: @btn-border-width;
@@ -102,13 +102,13 @@ a, .alink {
 
 .btn {
   .transition-default.out();
-  &::before {
+  &@{btn-design} {
     .transition-default.out();
     transform: scale(1);
   }
   &:active {
     .transition-default.active();
-    &::before {
+    &@{btn-design} {
       left: .2em;
       right: .2em;
       top: .1em;
@@ -124,13 +124,13 @@ a, .alink {
 .btn-primary {
   .link-none();
   color: fade(@text-inverse, @perc-xl);
-  &::before {
+  &@{btn-design} {
     border-color: @primary;
     background-color: @primary;
   }
   &:hover, &:active, &.active {
     color: @text-inverse;
-    &::before {
+    &@{btn-design} {
       background-color: lighten(@primary, @perc-xs);
     }
   }
@@ -139,13 +139,13 @@ a, .alink {
 .btn-primary-empty {
   .link-none();
   color: @primary;
-  &::before {
+  &@{btn-design} {
     border-color: transparent;
     background-color: transparent;
   }
   &:hover, &:active, &.active {
     color: @text-inverse;
-    &::before {
+    &@{btn-design} {
       background-color: lighten(@primary, @perc-xs);
     }
   }
@@ -154,13 +154,13 @@ a, .alink {
 .btn-secondary {
   .link-none();
   color: fade(@text, @perc-xl);
-  &::before {
+  &@{btn-design} {
     border-color: @secondary;
     background-color: @secondary;
   }
   &:hover, &:active, &.active {
     color: @text;
-    &::before {
+    &@{btn-design} {
       background-color: lighten(@secondary, @perc-xs);
     }
   }
@@ -169,13 +169,13 @@ a, .alink {
 .btn-secondary-empty {
   .link-none();
   color: fade(@text, @perc-xl);
-  &::before {
+  &@{btn-design} {
     border-color: transparent;
     background-color: transparent;
   }
   &:hover, &:active, &.active {
     color: @text;
-    &::before {
+    &@{btn-design} {
       background-color: lighten(@secondary, @perc-xs);
     }
   }
@@ -211,13 +211,13 @@ a, .alink {
 // special
 
 .btn-nodesign {
-  &::before {
+  &@{btn-design} {
     display: none;
   }
 }
 
 .btn-squared {
-  &::before {
+  &@{btn-design} {
     border-radius: 0;
   }
 }
@@ -313,7 +313,7 @@ a, .alink {
   > .drop-inner {
     min-width: 18rem;
     .padding(y, 1.3rem); // vertical space
-    &::before {
+    &@{drop-design} {
       .design-setup();
       border-radius: @border-radius;
       border-width: 1px;
@@ -339,7 +339,7 @@ a, .alink {
   }
   &.active {
     > .drop > .drop-inner {
-      &::before {
+      &@{drop-design} {
         .anim-zoom.active();
         opacity: 1;
       }
@@ -356,7 +356,7 @@ a, .alink {
   }
   &.out {
     > .drop > .drop-inner {
-      &::before {
+      &@{drop-design} {
         .anim-zoom.out();
         animation-delay: @time-small;
         animation-fill-mode: forwards;
@@ -388,7 +388,7 @@ a, .alink {
 .drop-primary {
   > .drop-inner {
     color: @text-inverse;
-    &::before {
+    &@{drop-design} {
       border-color: darken(@primary, @perc-xs);
       background-color: @primary;
     }
@@ -401,7 +401,7 @@ a, .alink {
 .drop-secondary {
   > .drop-inner {
     color: @text;
-    &::before {
+    &@{drop-design} {
       border-color: darken(@secondary, @perc-xs);
       background-color: @secondary;
     }
@@ -414,7 +414,7 @@ a, .alink {
 .drop-white {
   > .drop-inner {
     color: @text;
-    &::before {
+    &@{drop-design} {
       border-color: darken(@white, @perc-xs);
       background-color: @white;
     }
@@ -428,7 +428,7 @@ a, .alink {
 
 .drop-squared {
   > .drop-inner {
-    &::before {
+    &@{drop-design} {
       border-radius: 0;
     }
   }
@@ -436,7 +436,7 @@ a, .alink {
 
 .drop-noborder {
   > .drop-inner {
-    &::before {
+    &@{drop-design} {
       border: 0;
     }
   }
@@ -469,7 +469,7 @@ a, .alink {
     @media @min-sm {
       padding: 4rem;
     }
-    &::before {
+    &@{overlay-design} {
       .design-setup();
       border-radius: @border-radius;
       border-width: 1px;
@@ -501,14 +501,14 @@ a, .alink {
     @media @min-sm {
       padding: 4rem;
     }
-    &::before {
+    &@{overlay-design} {
       .design-setup();
       border-width: 1px;
       border-style: solid;
       border-color: transparent;
     }
     .overlay-inner {
-      &::before {
+      &@{overlay-design} {
         .display(none);
       }
     }
@@ -546,7 +546,7 @@ a, .alink {
   animation-duration: @time-big; // needed for .out animation timing
   &.active {
     .overlay-inner {
-      &::before {
+      &@{overlay-design} {
         .anim-zoom.active();
         opacity: 1;
       }
@@ -567,7 +567,7 @@ a, .alink {
     }
     &.overlay-left {
       .overlay-inner {
-        &::before {
+        &@{overlay-design} {
           .anim-left.active();
           opacity: 1;
         }
@@ -581,7 +581,7 @@ a, .alink {
     }
     &.overlay-right {
       .overlay-inner {
-        &::before {
+        &@{overlay-design} {
           .anim-right.active();
           opacity: 1;
         }
@@ -596,7 +596,7 @@ a, .alink {
   }
   &.out {
     .overlay-inner {
-      &::before {
+      &@{overlay-design} {
         .anim-zoom.out();
         animation-delay: @time-small;
         animation-fill-mode: forwards;
@@ -619,7 +619,7 @@ a, .alink {
     }
     &.overlay-left {
       .overlay-inner {
-        &::before {
+        &@{overlay-design} {
           .anim-left.out();
           animation-delay: @time-small;
           animation-fill-mode: forwards;
@@ -633,7 +633,7 @@ a, .alink {
     }
     &.overlay-right {
       .overlay-inner {
-        &::before {
+        &@{overlay-design} {
           .anim-right.out();
           animation-delay: @time-small;
           animation-fill-mode: forwards;
@@ -654,7 +654,7 @@ a, .alink {
   .overlay-inner,
   &.overlay-screen .overlay {
     color: @text-inverse;
-    &::before {
+    &@{overlay-design} {
       border-color: @primary;
       background-color: @primary;
     }
@@ -668,7 +668,7 @@ a, .alink {
   .overlay-inner,
   &.overlay-screen .overlay {
     color: @text;
-    &::before {
+    &@{overlay-design} {
       border-color: @secondary;
       background-color: @secondary;
     }
@@ -682,7 +682,7 @@ a, .alink {
   .overlay-inner,
   &.overlay-screen .overlay {
     color: @text;
-    &::before {
+    &@{overlay-design} {
       border-color: @white;
       background-color: @white;
     }
@@ -697,7 +697,7 @@ a, .alink {
 .overlay-squared {
   .overlay-inner,
   &.overlay-screen .overlay {
-    &::before {
+    &@{overlay-design} {
       border-radius: 0;
     }
     > .btn-close {
@@ -709,7 +709,7 @@ a, .alink {
 .overlay-noborder {
   .overlay-inner,
   &.overlay-screen .overlay {
-    &::before {
+    &@{overlay-design} {
       border: 0;
     }
   }

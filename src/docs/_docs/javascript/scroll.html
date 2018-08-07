@@ -6,13 +6,9 @@ order: 200
 description: "Advanced components for scroll interaction: smooth, sticky, fade, parallax"
 ---
 
-<h2>Usage</h2>
+<h2>Sticky</h2>
 
-<h3>Smooth</h3>
-
-<p>@TODO</p>
-
-<h3>Sticky</h3>
+<h3>Usage</h3>
 
 <p>Use this markup to create a sticky. <code>[data-xt-sticky]</code> must be <a
   href="{% link _docs/javascript.html %}#initialization">initialized by javascript</a>.</p>
@@ -37,37 +33,7 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
   component</strong>.
 </div>
 
-<h3>Fade</h3>
-
-<p>Use this markup to create a fade. <code>[data-xt-fade]</code> must be <a
-  href="{% link _docs/javascript.html %}#initialization">initialized by javascript</a>.</p>
-
-<pre>
-  <code class="html">
-    <div data-xt-fade>
-      <div class="fade">
-        <!-- content -->
-      </div>
-    </div>
-  </code>
-</pre>
-
-<div class="alert">
-  Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-fade">fade
-  by javascript</a> using the same options syntax.
-</div>
-
-<h3>Parallax</h3>
-
-<p>@TODO</p>
-
-<h2>Defaults</h2>
-
-<h3>Smooth</h3>
-
-<p>@TODO</p>
-
-<h3>Sticky</h3>
+<h3>Defaults</h3>
 
 <p>Here are the defaults options for sticky.</p>
 
@@ -85,35 +51,6 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
     };
   </code>
 </pre>
-
-<h3>Fade</h3>
-
-<p>Here are the defaults options for fade.</p>
-
-<pre>
-  <code class="js">
-    XtFade.defaults = {
-      "elements": ".fade",
-      "class": "in",
-      "on": "scroll resize",
-      "min": 0,
-      "max": Infinity,
-      "distance": 0.2,
-      "delayOn": false,
-      "delayOff": false
-    };
-  </code>
-</pre>
-
-<h3>Parallax</h3>
-
-<p>@TODO</p>
-
-<h2>Smooth</h2>
-
-<p>@TODO</p>
-
-<h2>Sticky</h2>
 
 <h3>Position and Mode</h3>
 
@@ -226,6 +163,45 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
 
 <h2>Fade</h2>
 
+<h3>Usage</h3>
+
+<p>Use this markup to create a fade. <code>[data-xt-fade]</code> must be <a
+  href="{% link _docs/javascript.html %}#initialization">initialized by javascript</a>.</p>
+
+<pre>
+  <code class="html">
+    <div data-xt-fade>
+      <div class="fade">
+        <!-- content -->
+      </div>
+    </div>
+  </code>
+</pre>
+
+<div class="alert">
+  Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-fade">fade
+  by javascript</a> using the same options syntax.
+</div>
+
+<h3>Defaults</h3>
+
+<p>Here are the defaults options for fade.</p>
+
+<pre>
+  <code class="js">
+    XtFade.defaults = {
+      "elements": ".fade",
+      "class": "in",
+      "on": "scroll resize",
+      "min": 0,
+      "max": Infinity,
+      "distance": 0.2,
+      "delayOn": false,
+      "delayOff": false
+    };
+  </code>
+</pre>
+
 <h3>Javascript</h3>
 
 <div class="demo">
@@ -302,6 +278,10 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
     </div>
   </div>
 </div>
+
+<h2>Smooth</h2>
+
+<p>@TODO</p>
 
 <h2>Parallax</h2>
 

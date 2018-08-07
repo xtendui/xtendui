@@ -83,6 +83,23 @@
 @index-btn-close: 300;
 
 //////////////////////
+// content
+//////////////////////
+
+// icon
+
+@icon-tiny: .5em;
+@icon-small: .75em;
+@icon-medium: 1em;
+@icon-big: 1.5em;
+@icon-giant: 2em;
+
+// form
+
+@select-arrow-size: 4px; // in px
+@select-space-size: 24px; // in px
+
+//////////////////////
 // layout
 //////////////////////
 
@@ -110,39 +127,29 @@
 @list-space-big: 2rem 2rem;
 @list-space-giant: 3rem 3rem;
 
-//////////////////////
-// icon
-//////////////////////
+// box
 
-@icon-tiny: .5em;
-@icon-small: .75em;
-@icon-medium: 1em;
-@icon-big: 1.5em;
-@icon-giant: 2em;
+@box-design: ~':before';
 
 //////////////////////
-// form
-//////////////////////
-
-@select-arrow-size: 4px; // in px
-@select-space-size: 24px; // in px
-
-//////////////////////
-// addons
+// components
 //////////////////////
 
 @border-radius: 4px;
 
 // btn
 
+@btn-design: ~':before';
 @btn-border-width: 1px;
 
 // drop
 
+@drop-design: ~':before';
 @drop-space: 6px; // space between button and drop
 
 // overlay
 
+@overlay-design: ~':before';
 @overlay-sizes: tiny, small, medium, big, giant, full; // if you change this change also variables names below
 @overlay-size-tiny: @breakpoint-xs - 60;
 @overlay-size-small: @breakpoint-sm - 60;

@@ -131,7 +131,7 @@
 
 .box {
   // styles
-  &::before {
+  &@{box-design} {
     .design-setup();
     border-radius: @border-radius;
     border-width: 1px;
@@ -155,7 +155,7 @@
 
 .box-primary {
   .inverse();
-  &::before {
+  &@{box-design} {
     border-color: darken(@primary, @perc-xs);
     background-color: @primary;
   }
@@ -166,7 +166,7 @@
 
 .box-secondary {
   color: @text;
-  &::before {
+  &@{box-design} {
     border-color: darken(@secondary, @perc-xs);
     background-color: @secondary;
   }
@@ -177,7 +177,7 @@
 
 .box-white {
   color: @text;
-  &::before {
+  &@{box-design} {
     border-color: darken(@white, @perc-xs);
     background-color: @white;
   }
@@ -188,7 +188,7 @@
 
 .box-grey {
   color: @text;
-  &::before {
+  &@{box-design} {
     border-color: darken(@grey-250, @perc-xs);
     background-color: @grey-250;
   }
@@ -227,13 +227,13 @@
 // special
 
 .box-squared {
-  &::before {
+  &@{box-design} {
     border-radius: 0;
   }
 }
 
 .box-noborder {
-  &::before {
+  &@{box-design} {
     border: 0;
   }
 }

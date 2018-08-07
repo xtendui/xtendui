@@ -320,7 +320,7 @@
   &.out {
     transition-delay: @time-medium;
   }
-  &, &::before, .overlay-inner::before, .overlay-inner > * {
+  &, &@{overlay-design}, .overlay-inner@{overlay-design}, .overlay-inner > * {
     .no-animation();
     opacity: 1 !important;
   }

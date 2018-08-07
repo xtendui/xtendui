@@ -30,7 +30,7 @@
 
 .alert-primary {
   .inverse();
-  &::before {
+  &@{box-design} {
     border-color: @primary;
     background-color: @primary;
   }
@@ -38,7 +38,7 @@
 
 .alert-secondary {
   color: @text;
-  &::before {
+  &@{box-design} {
     border-color: @secondary;
     background-color: @secondary;
   }
@@ -46,7 +46,7 @@
 
 .alert-white {
   color: @text;
-  &::before {
+  &@{box-design} {
     border-color: @white;
     background-color: @white;
   }
@@ -54,7 +54,7 @@
 
 .alert-grey {
   color: @text;
-  &::before {
+  &@{box-design} {
     border-color: @grey-250;
     background-color: @grey-250;
   }

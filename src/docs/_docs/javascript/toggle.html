@@ -8,8 +8,6 @@ description: Many possible behaviour, interactions and animations are possible w
 
 <h2>Usage</h2>
 
-<h3>Toggle</h3>
-
 <p>Use this markup to create a toggle. <code>[data-xt-toggle]</code> must be <a
   href="{% link _docs/javascript.html %}#initialization">initialized by javascript</a>.</p>
 
@@ -41,7 +39,7 @@ description: Many possible behaviour, interactions and animations are possible w
 
 <h3>Drop</h3>
 
-<p>Use this markup to create a drop. <code>[data-xt-drop]</code> must be <a
+<p>Drop is a special type of toggle. Use this markup to create a drop. <code>[data-xt-drop]</code> must be <a
   href="{% link _docs/javascript.html %}#initialization">initialized by javascript</a>.</p>
 
 <pre>
@@ -66,7 +64,7 @@ description: Many possible behaviour, interactions and animations are possible w
 
 <h3>Overlay</h3>
 
-<p>Use this markup to create a overlay. <code>[data-xt-overlay]</code> must be <a
+<p>Overlay is a special type of toggle. Use this markup to create a overlay. <code>[data-xt-overlay]</code> must be <a
   href="{% link _docs/javascript.html %}#initialization">initialized by javascript</a>.</p>
 
 <pre>
@@ -109,8 +107,6 @@ description: Many possible behaviour, interactions and animations are possible w
 </div>
 
 <h2>Defaults</h2>
-
-<h3>Toggle</h3>
 
 <p>Here are the defaults options for toggle.</p>
 
@@ -437,12 +433,12 @@ description: Many possible behaviour, interactions and animations are possible w
     </div>
     <div class="demo-source" data-lang="css">
       <style>
-        .btn.class-example-0::before {
-          border: 1px solid black;
+        .btn.class-example-0 {
+          color: red;
         }
 
-        .alert.class-example-0::before {
-          border: 1px solid black;
+        .alert.class-example-0 {
+          color: red;
         }
       </style>
     </div>
@@ -490,12 +486,12 @@ description: Many possible behaviour, interactions and animations are possible w
     </div>
     <div class="demo-source" data-lang="css">
       <style>
-        .btn.class-example-1::before {
-          border: 1px solid black;
+        .btn.class-example-1 {
+          color: red;
         }
 
-        .alert.class-example-1::before {
-          border: 1px solid black;
+        .alert.class-example-1 {
+          color: red;
         }
       </style>
     </div>
