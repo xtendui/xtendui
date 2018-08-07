@@ -163,33 +163,44 @@ a, .alink, .btn-link {
   .drop-top() !important;
 }
 
+// center
+
+.drop-center() {
+  --center: true;
+}
+
+.drop.drop-center {
+  .drop-center() !important;
+}
+
 // middle
 
-.middle() {
+.drop-middle() {
+  --middle: true;
   padding-top: 0;
   padding-bottom: 0;
 }
 
-.drop.middle {
-  .middle() !important;
+.drop.drop-middle {
+  .drop-middle() !important;
 }
 
-.middle-bottom() {
+.drop-middle-bottom() {
   top: auto;
   bottom: 0;
 }
 
-.drop.middle-bottom {
-  .middle-bottom() !important;
+.drop.drop-middle-bottom {
+  .drop-middle-bottom() !important;
 }
 
-.middle-top() {
+.drop-middle-top() {
   top: 0;
   bottom: auto;
 }
 
-.drop.middle-top {
-  .middle-top() !important;
+.drop.drop-middle-top {
+  .drop-middle-top() !important;
 }
 
 // .drop-disable

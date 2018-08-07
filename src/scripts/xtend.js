@@ -820,7 +820,8 @@ class Xt {
    * @param {Node|HTMLElement} el Element
    */
   specialCenterOn(el) {
-    if (el.classList.contains('center')) {
+    let style = getComputedStyle(el);
+    if (style.getPropertyValue('--center') === 'true') {
       let add = this.object.clientWidth;
       let remove = el.clientWidth;
       el.style.left = ((add - remove) / 2) + 'px';
@@ -832,7 +833,8 @@ class Xt {
    * @param {Node|HTMLElement} el Element
    */
   specialMiddleOn(el) {
-    if (el.classList.contains('middle')) {
+    let style = getComputedStyle(el);
+    if (style.getPropertyValue('--middle') === 'true') {
       let add = this.object.clientHeight;
       let remove = el.clientHeight;
       el.style.top = ((add - remove) / 2) + 'px';
