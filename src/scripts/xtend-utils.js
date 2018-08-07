@@ -29,19 +29,19 @@ XtUtil.currents = {};
  */
 XtUtil.initAll = function (container = document) {
   // xt-toggle
-  for(let el of container.querySelectorAll('[data-xt-toggle]')) {
+  for (let el of container.querySelectorAll('[data-xt-toggle]')) {
     new XtToggle(el);
   }
-  for(let el of container.querySelectorAll('[data-xt-drop]')) {
+  for (let el of container.querySelectorAll('[data-xt-drop]')) {
     new XtDrop(el);
   }
-  for(let el of container.querySelectorAll('[data-xt-overlay]')) {
+  for (let el of container.querySelectorAll('[data-xt-overlay]')) {
     new XtOverlay(el);
   }
-  for(let el of container.querySelectorAll('[data-xt-fade]')) {
+  for (let el of container.querySelectorAll('[data-xt-fade]')) {
     new XtFade(el);
   }
-  for(let el of container.querySelectorAll('[data-xt-sticky]')) {
+  for (let el of container.querySelectorAll('[data-xt-sticky]')) {
     new XtSticky(el);
   }
 };
@@ -275,6 +275,29 @@ export {XtUtil};
     // test for scope support
     document.querySelector(':scope *');
   } catch (error) {
+    let polyfill = function (qsa) {
+      return function (selectors) {
+        // whether the selectors contain :scope
+        let hasScope = selectors && scope.test(selectors);
+        if (hasScope) {
+          // fallback attribute
+          let attr = 'q' + Math.floor(Math.random() * 9000000) + 1000000;
+          // replace :scope with the fallback attribute
+          arguments[0] = selectors.replace(scope, '[' + attr + ']');
+          // add the fallback attribute
+          this.setAttribute(attr, '');
+          // results of the qsa
+          let elementOrNodeList = qsa.apply(this, arguments);
+          // remove the fallback attribute
+          this.removeAttribute(attr);
+          // return the results of the qsa
+          return elementOrNodeList;
+        } else {
+          // return the results of the qsa
+          return qsa.apply(this, arguments);
+        }
+      };
+    }
     // scope regex
     let scope = /:scope(?![\w-])/gi;
     // polyfill Element#querySelector
@@ -299,29 +322,6 @@ export {XtUtil};
       let closestWithScope = polyfill(ElementPrototype.closest);
       ElementPrototype.closest = function closest(selectors) {
         return closestWithScope.apply(this, arguments);
-      };
-    }
-    function polyfill(qsa) {
-      return function (selectors) {
-        // whether the selectors contain :scope
-        let hasScope = selectors && scope.test(selectors);
-        if (hasScope) {
-          // fallback attribute
-          let attr = 'q' + Math.floor(Math.random() * 9000000) + 1000000;
-          // replace :scope with the fallback attribute
-          arguments[0] = selectors.replace(scope, '[' + attr + ']');
-          // add the fallback attribute
-          this.setAttribute(attr, '');
-          // results of the qsa
-          let elementOrNodeList = qsa.apply(this, arguments);
-          // remove the fallback attribute
-          this.removeAttribute(attr);
-          // return the results of the qsa
-          return elementOrNodeList;
-        } else {
-          // return the results of the qsa
-          return qsa.apply(this, arguments);
-        }
       };
     }
   }

@@ -218,42 +218,21 @@ description: Dropdown component with structured theming that can show anything.
 
 <p>Optional classes for assigning variant to style all buttons the same way.</p>
 
+<p>You can change the default variant inside <code>/theme/_component.less</code>.</p>
+
 <p><code>.list-drop</code> has drop's list default options.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="variants">
     <div class="demo-text">
-      <code>.drop-white</code> <code>.drop-primary</code> <code>.drop-secondary</code>
+      <code>.drop-primary</code> <code>.drop-secondary</code> <code>.drop-white</code>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="drop-outer" data-xt-drop>
         <button type="button" class="btn btn-primary">
           default
         </button>
-        <div class="drop drop-white">
-          <div class="drop-inner">
-            <div class="drop-content">
-              <ul class="list list-drop">
-                <li>
-                  <button type="button">Lorem ipsum dolor</button>
-                </li>
-                <li>
-                  <button type="button">Dolor sit</button>
-                </li>
-                <li>
-                  <button type="button">Amet</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="drop-outer" data-xt-drop>
-        <button type="button" class="btn btn-primary">
-          white
-        </button>
-        <div class="drop drop-white">
+        <div class="drop">
           <div class="drop-inner">
             <div class="drop-content">
               <ul class="list list-drop">
@@ -300,6 +279,29 @@ description: Dropdown component with structured theming that can show anything.
           secondary
         </button>
         <div class="drop drop-secondary">
+          <div class="drop-inner">
+            <div class="drop-content">
+              <ul class="list list-drop">
+                <li>
+                  <button type="button">Lorem ipsum dolor</button>
+                </li>
+                <li>
+                  <button type="button">Dolor sit</button>
+                </li>
+                <li>
+                  <button type="button">Amet</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="drop-outer" data-xt-drop>
+        <button type="button" class="btn btn-primary">
+          white
+        </button>
+        <div class="drop drop-white">
           <div class="drop-inner">
             <div class="drop-content">
               <ul class="list list-drop">

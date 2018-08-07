@@ -14,7 +14,7 @@
   line-height: 1.4;
   .text-align(left);
   // options
-  .alert-grey(); // variant
+  .alert-secondary(); // variant
   // animations
   &.active {
     .anim-horizontal.active();
@@ -49,13 +49,5 @@
   &@{box-design} {
     border-color: @white;
     background-color: @white;
-  }
-}
-
-.alert-grey {
-  color: @text;
-  &@{box-design} {
-    border-color: @grey-250;
-    background-color: @grey-250;
   }
 }

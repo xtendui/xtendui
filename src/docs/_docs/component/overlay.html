@@ -62,10 +62,12 @@ description: Component to show modal elements inside the page.
 
 <p>Optional classes for assigning variant.</p>
 
+<p>You can change the default variant inside <code>/theme/_component.less</code>.</p>
+
 <div class="demo">
   <div class="demo-item demo-preview" data-name="variants">
     <div class="demo-text">
-      <code>.overlay-white</code> <code>.overlay-primary</code> <code>.overlay-secondary</code>
+      <code>.overlay-primary</code> <code>.overlay-secondary</code> <code>.overlay-white</code>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space-small align-items-center demo-source-from">
@@ -74,25 +76,6 @@ description: Component to show modal elements inside the page.
             default
           </button>
           <div class="overlay-outer">
-            <div class="overlay">
-              <div class="overlay-inner">
-                <button type="button" class="btn btn-close"></button>
-                <h2>Lorem ipsum</h2>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
-                  ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
-                  justo.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div data-xt-overlay>
-          <button type="button" class="btn btn-primary">
-            white
-          </button>
-          <div class="overlay-outer overlay-white">
             <div class="overlay">
               <div class="overlay-inner">
                 <button type="button" class="btn btn-close"></button>
@@ -131,6 +114,25 @@ description: Component to show modal elements inside the page.
             secondary
           </button>
           <div class="overlay-outer overlay-secondary">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"></button>
+                <h2>Lorem ipsum</h2>
+                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                  ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                  justo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            white
+          </button>
+          <div class="overlay-outer overlay-white">
             <div class="overlay">
               <div class="overlay-inner">
                 <button type="button" class="btn btn-close"></button>
