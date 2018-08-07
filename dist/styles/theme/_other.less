@@ -14,7 +14,7 @@
   line-height: 1.4;
   .text-align(left);
   // options
-  .alert-secondary(); // variant
+  .box-secondary(); // variant
   // animations
   &.active {
     .anim-horizontal.active();
@@ -23,31 +23,5 @@
   &.out {
     .anim-horizontal.out();
     opacity: 0;
-  }
-}
-
-// variant
-
-.alert-primary {
-  .inverse();
-  &@{box-design} {
-    border-color: @primary;
-    background-color: @primary;
-  }
-}
-
-.alert-secondary {
-  color: @text;
-  &@{box-design} {
-    border-color: @secondary;
-    background-color: @secondary;
-  }
-}
-
-.alert-white {
-  color: @text;
-  &@{box-design} {
-    border-color: @white;
-    background-color: @white;
   }
 }
