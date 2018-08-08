@@ -138,13 +138,9 @@ const activateAsideScroll = function (els, scrollTop) {
             if (element !== el) {
               element.classList.remove('active', 'open');
             } else {
-              el.classList.add('active', 'open');
+              element.classList.add('active', 'open');
             }
           }
-        }
-      } else {
-        if (el.classList.contains('active')) {
-          el.classList.remove('active', 'open');
         }
       }
     }
@@ -156,7 +152,7 @@ window.addEventListener('scroll', function (e) {
   let sub = Array.from(document.querySelectorAll('.btn-site-aside-sub'));
   sub = sub.filter(x => !XtUtil.parents(x, '.xt-clone').length); // filter out parent
   activateAsideScroll(sub, scrollTop);
-  let subsub = Array.from(document.querySelectorAll('.btn-site-aside-sub.active + .site-aside-subsub .btn-site-aside-subsub'));
+  let subsub = Array.from(document.querySelectorAll('.btn-site-aside-sub + .site-aside-subsub .btn-site-aside-subsub'));
   subsub = subsub.filter(x => !XtUtil.parents(x, '.xt-clone').length); // filter out parent
   activateAsideScroll(subsub, scrollTop);
 });
