@@ -278,6 +278,12 @@ a, .alink {
 
 // custom
 
+.btn-close {
+  .btn-primary-empty(); // variant
+  .btn-icon(); // special
+  .icon-xt(@content: @icon-xt-close, @size: @icon-medium, @sr-only: true);
+}
+
 .btn-caret {
   .display(flex) !important;
   .align-items-center();
@@ -299,11 +305,6 @@ a, .alink {
       opacity: 1;
     }
   }
-}
-
-.btn-close {
-  .btn-primary-empty();
-  .icon-xt(@content: @icon-xt-close, @size: @icon-medium, @sr-only: true);
 }
 
 //////////////////////
@@ -504,7 +505,6 @@ a, .alink {
       top: 2px;
       right: 2px;
       .btn-giant();
-      .btn-icon();
     }
   }
   // options
