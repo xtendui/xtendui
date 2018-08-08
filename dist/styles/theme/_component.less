@@ -280,7 +280,7 @@ a, .alink {
 
 .btn-close {
   .btn-primary-empty(); // variant
-  .btn-icon(); // special
+  .btn-icon() !important; // special
   .icon-xt(@content: @icon-xt-close, @size: @icon-medium, @sr-only: true);
 }
 
@@ -720,9 +720,6 @@ a, .alink {
   &.overlay-screen .overlay {
     &@{overlay-design} {
       border-radius: 0;
-    }
-    > .btn-close {
-      .btn-squared();
     }
   }
 }
