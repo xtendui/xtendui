@@ -150,6 +150,7 @@ const activateAsideScroll = function (els, scrollTop) {
     }
   }
 };
+
 window.addEventListener('scroll', function (e) {
   let scrollTop = document.documentElement.scrollTop;
   let sub = Array.from(document.querySelectorAll('.btn-site-aside-sub'));
@@ -228,19 +229,16 @@ const populateDemo = function (container, i) {
       if (k === 0) {
         initIframe();
       }
+      // listener
       iframe.parentElement.addEventListener('on', function (e) {
-        if (e.target === this) {
-          if (!item.classList.contains('populated')) {
-            initIframe();
-          } else {
-            iframe.contentDocument.location.reload(true);
-          }
+        if (!item.classList.contains('populated')) {
+          initIframe();
+        } else {
+          iframe.contentDocument.location.reload(true);
         }
       });
       iframe.parentElement.addEventListener('off', function (e) {
-        if (e.target === this) {
-          iframe.classList.remove('show');
-        }
+        iframe.classList.remove('show');
       });
     } else {
       populateInline(item, id);

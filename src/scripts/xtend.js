@@ -165,7 +165,7 @@ class Xt {
           el.addEventListener(event, xtOnHandler);
         }
         // listener
-        el.addEventListener('on.trigger', xtOnHandler);
+        el.addEventListener('on', xtOnHandler);
       }
       if (options.off) {
         // handler
@@ -177,7 +177,7 @@ class Xt {
           el.addEventListener(event, xtOffHandler);
         }
         // listener
-        el.addEventListener('off.trigger', xtOffHandler);
+        el.addEventListener('off', xtOffHandler);
       }
     }
     // listener
@@ -188,8 +188,8 @@ class Xt {
         let xtOnHandler = XtUtil.dataStorage.put(el, 'xtOnHandler', self.eventOnHandler.bind(self).bind(self, el));
         let xtOffHandler = XtUtil.dataStorage.put(el, 'xtOffHandler', self.eventOffHandler.bind(self).bind(self, el));
         // listener
-        tr.addEventListener('on.trigger', xtOnHandler);
-        tr.addEventListener('off.trigger', xtOffHandler);
+        tr.addEventListener('on', xtOnHandler);
+        tr.addEventListener('off', xtOffHandler);
       }
     }
     // auto
@@ -211,19 +211,21 @@ class Xt {
    * @param {Event} e
    */
   eventOnHandler(element, e) {
-    let eventLimit = this.container.querySelectorAll('.event-limit');
-    if (eventLimit.length) {
-      if (XtUtil.checkOutside(e, eventLimit)) {
+    if (!e.detail || !e.detail.skip) {
+      let eventLimit = this.container.querySelectorAll('.event-limit');
+      if (eventLimit.length) {
+        if (XtUtil.checkOutside(e, eventLimit)) {
+          this.eventOn(element);
+        }
+      } else {
         this.eventOn(element);
       }
-    } else {
-      this.eventOn(element);
-    }
-    // auto
-    if (this.options.autoPause) {
-      this.autoPause();
-    } else if (this.options.auto) {
-      this.auto();
+      // auto
+      if (this.options.autoPause) {
+        this.autoPause();
+      } else if (this.options.auto) {
+        this.auto();
+      }
     }
   }
 
@@ -233,13 +235,15 @@ class Xt {
    * @param {Event} e
    */
   eventOffHandler(element, e) {
-    let eventLimit = this.container.querySelectorAll('.event-limit');
-    if (eventLimit.length) {
-      if (XtUtil.checkOutside(e, eventLimit)) {
+    if (!e.detail || !e.detail.skip) {
+      let eventLimit = this.container.querySelectorAll('.event-limit');
+      if (eventLimit.length) {
+        if (XtUtil.checkOutside(e, eventLimit)) {
+          this.eventOff(element);
+        }
+      } else {
         this.eventOff(element);
       }
-    } else {
-      this.eventOff(element);
     }
   }
 
@@ -612,8 +616,8 @@ class Xt {
       self.specialCloseOn(el, fElements.single);
       self.specialScrollbarOn();
     }
-    // dispatch
-    el.dispatchEvent(new CustomEvent('on'));
+    // listener dispatch
+    el.dispatchEvent(new CustomEvent('on', {detail: {skip: true}}));
   }
 
   /**
@@ -640,8 +644,8 @@ class Xt {
       self.specialCollapseOff(el);
       self.specialCloseOff(el);
     }
-    // dispatch
-    el.dispatchEvent(new CustomEvent('off'));
+    // listener dispatch
+    el.dispatchEvent(new CustomEvent('off', {detail: {skip: true}}));
   }
 
   /**
@@ -1352,10 +1356,11 @@ class XtSticky extends Xt {
         window.removeEventListener(event, stickyHandler);
         window.addEventListener(event, stickyHandler);
       }
-      window.addEventListener('on.sticky', stickyHandler);
+      // listener
+      window.addEventListener('scroll.sticky', stickyHandler);
     }
-    // trigger initial
-    window.dispatchEvent(new CustomEvent('on.sticky'));
+    // listener dispatch initial
+    window.dispatchEvent(new CustomEvent('scroll.sticky'));
   }
 
   /**
@@ -1363,8 +1368,10 @@ class XtSticky extends Xt {
    * @param {Node|HTMLElement} element
    * @param {Event} e
    */
-  eventOnHandler(element, e) {
-    this.eventScroll(this.object);
+  eventOnHandler(e) {
+    if (!e.detail || !e.detail.skip) {
+      this.eventScroll(this.object);
+    }
   }
 
   //////////////////////
@@ -1473,12 +1480,14 @@ class XtSticky extends Xt {
         add = -heightEl;
         if (!el.classList.contains('sticky-hide')) {
           el.classList.add('sticky-hide');
-          el.dispatchEvent(new CustomEvent('sticky.hide'));
+          // listener dispatch
+          el.dispatchEvent(new CustomEvent('hide.sticky', {detail: {skip: true}}));
         }
       } else {
         if (el.classList.contains('sticky-hide')) {
           el.classList.remove('sticky-hide');
-          el.dispatchEvent(new CustomEvent('sticky.show'));
+          // listener dispatch
+          el.dispatchEvent(new CustomEvent('show.sticky', {detail: {skip: true}}));
         }
       }
     } else {
@@ -1666,10 +1675,11 @@ class XtFade extends Xt {
         window.removeEventListener(event, fadeHandler);
         window.addEventListener(event, fadeHandler);
       }
-      window.addEventListener('on.fade', fadeHandler);
+      // listener
+      window.addEventListener('scroll.fade', fadeHandler);
     }
-    // trigger initial
-    window.dispatchEvent(new CustomEvent('on.fade'));
+    // listener dispatch initial
+    window.dispatchEvent(new CustomEvent('scroll.fade'));
   }
 
   /**
@@ -1677,8 +1687,10 @@ class XtFade extends Xt {
    * @param {Node|HTMLElement} element
    * @param {Event} e
    */
-  eventOnHandler(element, e) {
-    this.eventScroll(this.object);
+  eventOnHandler(e) {
+    if (!e.detail || !e.detail.skip) {
+      this.eventScroll(this.object);
+    }
   }
 
   //////////////////////
