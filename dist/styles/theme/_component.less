@@ -357,7 +357,7 @@ a, .alink {
         .anim-zoom.active();
         opacity: 1;
       }
-      > * {
+      > .content {
         .anim-vertical.active();
         animation-delay: @time-small;
         animation-fill-mode: forwards;
@@ -376,7 +376,7 @@ a, .alink {
         animation-fill-mode: forwards;
         opacity: 1;
       }
-      > * {
+      > .content {
         .anim-vertical.out();
         opacity: 0;
       }
@@ -392,7 +392,7 @@ a, .alink {
 .drop-disable {
   // disable custom animation
   > .drop > .drop-inner {
-    > * {
+    > .content {
       .no-anim() !important;
       opacity: 1 !important;
     }
@@ -564,7 +564,8 @@ a, .alink {
         .anim-zoom.active();
         opacity: 1;
       }
-      > * {
+      > .btn-close,
+      > .content {
         .anim-vertical.active();
         animation-delay: @time-small;
         animation-fill-mode: forwards;
@@ -585,7 +586,8 @@ a, .alink {
           .anim-left.active();
           opacity: 1;
         }
-        > * {
+        > .btn-close,
+        > .content {
           .anim-left.active();
           animation-delay: @time-small;
           animation-fill-mode: forwards;
@@ -599,7 +601,8 @@ a, .alink {
           .anim-right.active();
           opacity: 1;
         }
-        > * {
+        > .btn-close,
+        > .content {
           .anim-right.active();
           animation-delay: @time-small;
           animation-fill-mode: forwards;
@@ -616,7 +619,8 @@ a, .alink {
         animation-fill-mode: forwards;
         opacity: 1;
       }
-      > * {
+      > .btn-close,
+      > .content {
         .anim-vertical.out();
         opacity: 0;
       }
@@ -639,7 +643,8 @@ a, .alink {
           animation-fill-mode: forwards;
           opacity: 1;
         }
-        > * {
+        > .btn-close,
+        > .content {
           .anim-left.out();
           opacity: 0;
         }
@@ -653,7 +658,8 @@ a, .alink {
           animation-fill-mode: forwards;
           opacity: 1;
         }
-        > * {
+        > .btn-close,
+        > .content {
           .anim-right.out();
           opacity: 0;
         }
