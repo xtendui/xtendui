@@ -131,6 +131,7 @@
 
 .box {
   // styles
+  .margin(y, layout) !important; // no margins :first-child or :last-child
   &@{box-design} {
     .design-setup();
     border-radius: @border-radius;
@@ -151,66 +152,100 @@
   .box-secondary(); // variant
 }
 
+// addons
+
+.box-max-height {
+  > .content {
+    overflow-y: auto;
+    max-height: 10rem;
+  }
+}
+
+.box-max-width {
+  .flex-none();
+  > .content {
+    overflow-x: auto;
+    max-width: 20rem;
+  }
+}
+
 // variant
 
 .box-primary {
-  .inverse();
   &@{box-design} {
     border-color: @primary;
     background-color: @primary;
   }
-  > .btn-close {
-    .btn-primary();
+  > .content {
+    .inverse();
   }
 }
 
 .box-secondary {
-  color: @text;
   &@{box-design} {
     border-color: @secondary;
     background-color: @secondary;
   }
-  > .btn-close {
-    .btn-secondary();
+  > .content {
+    color: @text;
   }
 }
 
 .box-white {
-  color: @text;
   &@{box-design} {
     border-color: @white;
     background-color: @white;
   }
-  > .btn-close {
-    .btn-secondary-empty();
+  > .content {
+    color: @text;
   }
 }
 
 // size
 
 .box-tiny {
-  padding: .5em 1em;
-  .font-tiny();
+  .margin(top, tiny);
+  .margin(bottom, tiny);
+  > .content {
+    padding: .75em 1em;
+    .font-tiny();
+  }
 }
 
 .box-small {
-  padding: 1em 1.25em;
-  .font-small();
+  .margin(top, small);
+  .margin(bottom, small);
+  > .content {
+    padding: 1em 1.25em;
+    .font-small();
+  }
 }
 
 .box-medium {
-  padding: 1.25em 1.5em;
-  .font-medium();
+  .margin(top, medium);
+  .margin(bottom, medium);
+  > .content {
+    padding: 1.25em 1.5em;
+    .font-medium();
+  }
 }
 
 .box-big {
-  padding: 1.5em 1.75em;
-  .font-medium();
+  .margin(top, big);
+  .margin(bottom, big);
+  > .content {
+    padding: 1.5em 1.75em;
+    .font-big();
+  }
 }
 
 .box-giant {
-  padding: 1.75em 2em;
-  .font-medium();
+  .margin(top, giant);
+  .margin(bottom, giant);
+  > .content {
+    padding: 2em 2.25em;
+    .font-giant();
+  }
 }
 
 // special
@@ -234,35 +269,49 @@
 }
 
 .box-tall {
-  padding-top: 1.75em;
-  padding-bottom: 1.75em;
+  > .content {
+    padding-top: 1.75em;
+    padding-bottom: 1.75em;
+  }
 }
 
 .box-short {
-  padding-top: .75em;
-  padding-bottom: .75em;
+  > .content {
+    padding-top: .75em;
+    padding-bottom: .75em;
+  }
 }
 
 .box-wide {
-  padding-left: 2em;
-  padding-right: 2em;
+  > .content {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
 }
 
 .box-narrow {
-  padding-left: 1em;
-  padding-right: 1em;
+  > .content {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
 }
 
 .box-none {
-  padding: 0;
+  > .content {
+    padding: 0;
+  }
 }
 
 .box-none-x {
-  padding-left: 0;
-  padding-right: 0;
+  > .content {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .box-none-y {
-  padding-top: 0;
-  padding-bottom: 0;
+  > .content {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }

@@ -330,11 +330,11 @@ a, .alink {
       border-color: transparent;
       box-shadow: 0 0 4px fade(@black, @perc-xs), 0 6px 10px fade(@black, @perc-sm);
     }
-    > .drop-content {
+    > .content {
       .padding(y, 1.3rem); // vertical space
       min-width: 18rem;
     }
-    > .drop-content > .list {
+    > .content > .list {
       .list-btn-all({ .btn-squared(); padding-left: 2.2rem; padding-right: 2.2rem; white-space: nowrap; }); // not overridable
     }
   }
@@ -399,14 +399,14 @@ a, .alink {
 }
 
 .drop-max-height {
-  > .drop-inner > .drop-content {
+  > .drop-inner > .content {
     overflow-y: auto;
     max-height: 20rem;
   }
 }
 
 .drop-max-width {
-  > .drop-inner > .drop-content {
+  > .drop-inner > .content {
     overflow-x: auto;
     max-width: 20rem;
   }
@@ -421,7 +421,7 @@ a, .alink {
       border-color: darken(@white, @perc-xs);
       background-color: @white;
     }
-    > .drop-content > .list-drop {
+    > .content > .list-drop {
       .list-btn-default({ .btn-primary-empty() });
     }
   }
@@ -434,7 +434,7 @@ a, .alink {
       border-color: darken(@primary, @perc-xs);
       background-color: @primary;
     }
-    > .drop-content > .list-drop {
+    > .content > .list-drop {
       .list-btn-default({ .btn-primary() });
     }
   }
@@ -447,7 +447,7 @@ a, .alink {
       border-color: darken(@secondary, @perc-xs);
       background-color: @secondary;
     }
-    > .drop-content > .list-drop {
+    > .content > .list-drop {
       .list-btn-default({ .btn-secondary() });
     }
   }

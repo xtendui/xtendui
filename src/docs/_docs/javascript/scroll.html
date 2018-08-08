@@ -24,13 +24,17 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
 </pre>
 
 <div class="alert">
-  Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-sticky">sticky
-  by javascript</a> using the same options syntax.
+  <div class="content">
+    Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-sticky">sticky
+    by javascript</a> using the same options syntax.
+  </div>
 </div>
 
 <div class="alert alert-primary">
-  It's recomended to style and animate a inner div <code>[data-xt-xticky] > div</code> when using <strong>sticky
-  component</strong>.
+  <div class="content">
+    It's recomended to style and animate a inner div <code>[data-xt-xticky] > div</code> when using <strong>sticky
+    component</strong>.
+  </div>
 </div>
 
 <h3>Defaults</h3>
@@ -66,7 +70,9 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-option-position.html"
        data-name="position">
     <div class="demo-text">
-      <code>"position": "top"</code> <code>"position": "bottom"</code>
+      <div class="content">
+        <code>"position": "top"</code> <code>"position": "bottom"</code>
+      </div>
     </div>
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-option-limit.html"
@@ -78,7 +84,9 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-mode-absolute.html"
        data-name="absolute">
     <div class="demo-text">
-      Use <code>@mode: 'absolute'</code> in the less mixin to have absolute position when not sticky
+      <div class="content">
+        Use <code>@mode: 'absolute'</code> in the less mixin to have absolute position when not sticky
+      </div>
     </div>
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-mode-fixed.html"
@@ -91,8 +99,10 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-responsive.html"
        data-name="responsive">
     <div class="demo-text">
-      It's possible to disable sticky with <code>.xt-sticky-disable</code>, so also inside <strong>media query
-      mixins</strong> (@TODO link media queries mixins) for responsive
+      <div class="content">
+        It's possible to disable sticky with <code>.xt-sticky-disable</code>, so also inside <strong>media query
+        mixins</strong> (@TODO link media queries mixins) for responsive
+      </div>
     </div>
   </div>
 </div>
@@ -104,20 +114,27 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
   the sticky to a next element. The two solutions brings <strong>different stacking effects</strong>.</p>
 
 <div class="alert alert-primary">
-  If contain to <strong>sticky elements</strong> remember to filter out <code>:not(.xt-clone)</code> or filter in <code>.xt-clone</code>.
+  <div class="content">
+    If contain to <strong>sticky elements</strong> remember to filter out <code>:not(.xt-clone)</code> or filter in
+    <code>.xt-clone</code>.
+  </div>
 </div>
 
 <div class="demo">
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-contain-top.html"
        data-name="top">
     <div class="demo-text">
-      <code>"contain": {"top": Element}</code>.
+      <div class="content">
+        <code>"contain": {"top": Element}</code>
+      </div>
     </div>
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-contain-bottom.html"
        data-name="bottom">
     <div class="demo-text">
-      <code>"contain": {"bottom": Element}</code>.
+      <div class="content">
+        <code>"contain": {"bottom": Element}</code>
+      </div>
     </div>
   </div>
 </div>
@@ -131,7 +148,9 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
 <div class="demo">
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-hide.html" data-name="hide">
     <div class="demo-text">
-      <code>"hide": "down"</code> <code>"hide": "up"</code>
+      <div class="content">
+        <code>"hide": "down"</code> <code>"hide": "up"</code>
+      </div>
     </div>
   </div>
 </div>
@@ -144,19 +163,25 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-showhide-top.html"
        data-name="top">
     <div class="demo-text">
-      <code>"contain": {"top": Element}</code>
+      <div class="content">
+        <code>"contain": {"top": Element}</code>
+      </div>
     </div>
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-showhide-bottom.html"
        data-name="bottom">
     <div class="demo-text">
-      <code>"contain": {"bottom": Element}</code>
+      <div class="content">
+        <code>"contain": {"bottom": Element}</code>
+      </div>
     </div>
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/sticky/sticky-showhide-hide.html"
        data-name="hide">
     <div class="demo-text">
-      <code>.show-sticky</code> <code>.hide-sticky</code>
+      <div class="content">
+        <code>.show-sticky</code> <code>.hide-sticky</code>
+      </div>
     </div>
   </div>
 </div>
@@ -179,8 +204,10 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
 </pre>
 
 <div class="alert">
-  Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-fade">fade
-  by javascript</a> using the same options syntax.
+  <div class="content">
+    Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-fade">fade
+    by javascript</a> using the same options syntax.
+  </div>
 </div>
 
 <h3>Defaults</h3>
@@ -208,7 +235,9 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-javascript.html"
        data-name="javascript">
     <div class="demo-text">
-      Example initialized by javascript on document
+      <div class="content">
+        Example initialized by javascript on document
+      </div>
     </div>
   </div>
 </div>
@@ -221,32 +250,42 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-mode-infinite.html"
        data-name="infinite">
     <div class="demo-text">
-      Default mode infinite
+      <div class="content">
+        Default mode infinite
+      </div>
     </div>
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-mode-scroll.html"
        data-name="scroll">
     <div class="demo-text">
-      <code>&:not(.fade-scroll)</code>
+      <div class="content">
+        <code>&:not(.fade-scroll)</code>
+      </div>
     </div>
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-mode-visible.html"
        data-name="visible">
     <div class="demo-text">
-      <code>&:not(.fade-visible)</code>
+      <div class="content">
+        <code>&:not(.fade-visible)</code>
+      </div>
     </div>
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-mode-responsive.html"
        data-name="responsive">
     <div class="demo-text">
-      It's possible to specify different modes with <strong>media query mixins</strong> (@TODO link media queries
-      mixins) for responsive
+      <div class="content">
+        It's possible to specify different modes with <strong>media query mixins</strong> (@TODO link media queries
+        mixins) for responsive
+      </div>
     </div>
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-mode-block.html"
        data-name="block">
     <div class="demo-text">
-      <code>.fade-block</code>
+      <div class="content">
+        <code>.fade-block</code>
+      </div>
     </div>
   </div>
 </div>
@@ -257,12 +296,16 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-direction.html"
        data-name="direction">
     <div class="demo-text">
-      <code>.fade-up</code> <code>.fade-down</code>
+      <div class="content">
+        <code>.fade-up</code> <code>.fade-down</code>
+      </div>
     </div>
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-distance.html" data-name="distance">
     <div class="demo-text">
-      <code>"distance": Number</code> is the window's top and bottom activation and deactivation. Factor between 0 and 1
+      <div class="content">
+        <code>"distance": Number</code> is the window's top and bottom activation and deactivation. Factor between 0 and 1
+      </div>
     </div>
   </div>
 </div>
@@ -272,7 +315,10 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
 <div class="demo">
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-delay.html" data-name="delay">
     <div class="demo-text">
-      <code>"delayOn": Function</code> <code>"delayOff": Function</code> return number using <strong>total</strong> and <strong>current</strong>
+      <div class="content">
+        <code>"delayOn": Function</code> <code>"delayOff": Function</code> return number using <strong>total</strong> and
+        <strong>current</strong>
+      </div>
     </div>
   </div>
 </div>

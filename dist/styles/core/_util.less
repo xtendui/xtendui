@@ -690,6 +690,23 @@
 // flex util
 //////////////////////
 
+// flex-none
+
+.flex-none(@breakpoint:none) when (@breakpoint = none) {
+  -webkit-box-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.flex-none(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-box-flex: none;
+    -ms-flex: none;
+    flex: none;
+  }
+}
+
 // flex-auto
 
 .flex-auto(@breakpoint:none) when (@breakpoint = none) {

@@ -60,7 +60,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  .margin(y, layout) !important;
+  .margin(y, layout) !important; // no margins :first-child or :last-child
   .margin(top, big);
   .margin(bottom, medium);
   .font-sans-semibold();
@@ -130,7 +130,7 @@ h6, .h6 {
 //////////////////////
 
 p {
-  .margin(y, layout) !important;
+  .margin(y, layout) !important; // no margins :first-child or :last-child
   .margin(bottom, small);
 }
 
@@ -161,7 +161,7 @@ code {
 }
 
 pre {
-  .margin(y, layout) !important;
+  .margin(y, layout) !important; // no margins :first-child or :last-child
   .margin(y, medium);
   width: 100%;
   max-height: 30rem;
@@ -212,7 +212,7 @@ pre {
 ul,
 ol {
   .default-lists({
-    .margin(y, layout) !important;
+    .margin(y, layout) !important; // no margins :first-child or :last-child
     .margin(bottom, small);
     padding-left: 2rem;
     > li {

@@ -554,6 +554,9 @@
   
   .generate-flex-util(@breakpoint:none) {
     & when (@breakpoint = none) {
+      .flex-none {
+        .flex-none() !important;
+      }
       .flex-auto {
         .flex-auto() !important;
       }
@@ -646,6 +649,9 @@
       }
     }
     & when not (@breakpoint = none) {
+      .flex-none-@{breakpoint} {
+        .flex-none() !important;
+      }
       .flex-auto-@{breakpoint} {
         .flex-auto() !important;
       }

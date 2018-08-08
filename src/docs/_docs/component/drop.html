@@ -19,7 +19,7 @@ description: Dropdown component with structured theming that can show anything.
       </button>
       <div class="drop">
         <div class="drop-inner">
-          <div class="drop-content">
+          <div class="content">
             <!-- content -->
           </div>
         </div>
@@ -29,8 +29,10 @@ description: Dropdown component with structured theming that can show anything.
 </pre>
 
 <div class="alert">
-  For customizing the interactions read the documentation of <a href="{% link _docs/javascript/toggle.html %}#drop">toggle
-  drop</a>.
+  <div class="content">
+    For customizing the interactions read the documentation of <a href="{% link _docs/javascript/toggle.html %}#drop">toggle
+    drop</a>.
+  </div>
 </div>
 
 <h3>Drop of anything</h3>
@@ -47,11 +49,13 @@ description: Dropdown component with structured theming that can show anything.
         </button>
         <div class="drop">
           <div class="drop-inner">
-            <div class="drop-content">
+            <div class="content">
               <div class="box">
-                <h6>Box</h6>
-                <p>Lorem ipsum dolor dolor sit amet, consectetur adipiscing elit.<br/>Nullam posuere ex ac felis venenatis
-                  pretium.<br/>Aenean aliquam interdum enim et faucibus.<br/>In tempor convallis est vel dapibus.</p>
+                <div class="content">
+                  <h6>Box</h6>
+                  <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.
+                    Sed sit amet leo nunc.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -65,8 +69,10 @@ description: Dropdown component with structured theming that can show anything.
 
 <p>The natural way to use drops is to use them <strong>with lists of buttons</strong>.</p>
 
-<div class="alert alert-default">
-  Read the documentation of <a href="{% link _docs/layout/list.html %}#list-of-buttons">list of buttons</a>.
+<div class="alert">
+  <div class="content">
+    Read the documentation of <a href="{% link _docs/layout/list.html %}#list-of-buttons">list of buttons</a>.
+  </div>
 </div>
 
 <div class="demo">
@@ -78,7 +84,7 @@ description: Dropdown component with structured theming that can show anything.
         </button>
         <div class="drop">
           <div class="drop-inner">
-            <div class="drop-content">
+            <div class="content">
               <ul class="list list-drop">
                 <li>
                   <button type="button" class="btn btn-primary">Lorem ipsum dolor</button>
@@ -103,19 +109,25 @@ description: Dropdown component with structured theming that can show anything.
 <p><code>.list-drop > li > a</code> and <code>.list-drop > li > button</code> are styled
   automatically, If you want to customize the buttons use the <code>.btn</code> class instead.</p>
 
-<div class="alert alert-default">
-  Read the documentation of <a href="{% link _docs/layout/list.html %}#buttons-styles">list's buttons styles</a>.
+<div class="alert">
+  <div class="content">
+    Read the documentation of <a href="{% link _docs/layout/list.html %}#buttons-styles">list's buttons styles</a>.
+  </div>
 </div>
 
 <div class="alert">
-  In theming code use <code>.list-btn-default({});</code> to style <code>a</code> and <code>button</code>. To style also
-  if they have the <code>.btn</code> class use <code>.list-btn-all({});</code>.
+  <div class="content">
+    In theming code use <code>.list-btn-default({});</code> to style <code>a</code> and <code>button</code>. To style also
+    if they have the <code>.btn</code> class use <code>.list-btn-all({});</code>.
+  </div>
 </div>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="list-drop">
     <div class="demo-text">
-      <code>.list-drop</code>
+      <div class="content">
+        <code>.list-drop</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="drop-outer" data-xt-drop>
@@ -124,7 +136,7 @@ description: Dropdown component with structured theming that can show anything.
         </button>
         <div class="drop">
           <div class="drop-inner">
-            <div class="drop-content">
+            <div class="content">
               <ul class="list list-drop">
                 <li>
                   <a href="#">Lorem Ipsum</a>
@@ -144,7 +156,9 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item demo-preview" data-name="override">
     <div class="demo-text">
-      You can <strong>override</strong> each buttons by using the <code>.btn</code> class
+      <div class="content">
+        You can <strong>override</strong> each buttons by using the <code>.btn</code> class
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="drop-outer" data-xt-drop>
@@ -153,7 +167,7 @@ description: Dropdown component with structured theming that can show anything.
         </button>
         <div class="drop">
           <div class="drop-inner">
-            <div class="drop-content">
+            <div class="content">
               <ul class="list list-drop">
                 <li>
                   <a href="#">Lorem Ipsum</a>
@@ -177,7 +191,9 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item demo-preview" data-name="custom">
     <div class="demo-text">
-      For custom list style don't use <code>.list-drop</code>
+      <div class="content">
+        For custom list style don't use <code>.list-drop</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="drop-outer" data-xt-drop>
@@ -186,7 +202,7 @@ description: Dropdown component with structured theming that can show anything.
         </button>
         <div class="drop">
           <div class="drop-inner">
-            <div class="drop-content">
+            <div class="content">
               <ul class="list list-block list-primary list-space-none list-center list-big list-squared">
                 <li>
                   <button type="button">Lorem ipsum dolor</button>
@@ -209,7 +225,9 @@ description: Dropdown component with structured theming that can show anything.
 <h2>Variables</h2>
 
 <div class="alert">
-  Read the documentation of <a href="{% link _docs/introduction/variables.html %}#component">component's variables</a>.
+  <div class="content">
+    Read the documentation of <a href="{% link _docs/introduction/variables.html %}#component">component's variables</a>.
+  </div>
 </div>
 
 <h2>Options</h2>
@@ -223,7 +241,9 @@ description: Dropdown component with structured theming that can show anything.
 <div class="demo">
   <div class="demo-item demo-preview" data-name="variants">
     <div class="demo-text">
-      <code>.drop-primary</code> <code>.drop-secondary</code> <code>.drop-white</code>
+      <div class="content">
+        <code>.drop-primary</code> <code>.drop-secondary</code> <code>.drop-white</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="drop-outer" data-xt-drop>
@@ -232,7 +252,7 @@ description: Dropdown component with structured theming that can show anything.
         </button>
         <div class="drop">
           <div class="drop-inner">
-            <div class="drop-content">
+            <div class="content">
               <ul class="list list-drop">
                 <li>
                   <button type="button">Lorem ipsum dolor</button>
@@ -255,7 +275,7 @@ description: Dropdown component with structured theming that can show anything.
         </button>
         <div class="drop drop-primary">
           <div class="drop-inner">
-            <div class="drop-content">
+            <div class="content">
               <ul class="list list-drop">
                 <li>
                   <button type="button">Lorem ipsum dolor</button>
@@ -278,7 +298,7 @@ description: Dropdown component with structured theming that can show anything.
         </button>
         <div class="drop drop-secondary">
           <div class="drop-inner">
-            <div class="drop-content">
+            <div class="content">
               <ul class="list list-drop">
                 <li>
                   <button type="button">Lorem ipsum dolor</button>
@@ -301,7 +321,7 @@ description: Dropdown component with structured theming that can show anything.
         </button>
         <div class="drop drop-white">
           <div class="drop-inner">
-            <div class="drop-content">
+            <div class="content">
               <ul class="list list-drop">
                 <li>
                   <button type="button">Lorem ipsum dolor</button>
@@ -330,7 +350,9 @@ description: Dropdown component with structured theming that can show anything.
 <div class="demo">
   <div class="demo-item demo-preview" data-name="bottom">
     <div class="demo-text">
-      <code>.drop-bottom</code> <code>.drop-left</code> <code>.drop-right</code> <code>.drop-center</code>
+      <div class="content">
+        <code>.drop-bottom</code> <code>.drop-left</code> <code>.drop-right</code> <code>.drop-center</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space-small align-items-center demo-source-from">
@@ -340,7 +362,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-bottom drop-left">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -363,7 +385,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-bottom drop-right">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -386,7 +408,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-bottom drop-center">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -407,7 +429,9 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item demo-preview" data-name="top">
     <div class="demo-text">
-      <code>.drop-top</code> <code>.drop-left</code> <code>.drop-right</code> <code>.drop-center</code>
+      <div class="content">
+        <code>.drop-top</code> <code>.drop-left</code> <code>.drop-right</code> <code>.drop-center</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space-small align-items-center demo-source-from">
@@ -417,7 +441,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-top drop-left">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -440,7 +464,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-top drop-right">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -463,7 +487,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-top drop-center">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -484,7 +508,9 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item demo-preview" data-name="middle">
     <div class="demo-text">
-      <code>.drop-left</code> <code>.drop-right</code> <code>.drop-middle</code> <code>.drop-center</code>
+      <div class="content">
+        <code>.drop-left</code> <code>.drop-right</code> <code>.drop-middle</code> <code>.drop-center</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space-small align-items-center demo-source-from">
@@ -494,7 +520,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-left drop-middle">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -517,7 +543,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-right drop-middle">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -540,7 +566,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-center drop-middle">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -561,7 +587,9 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item demo-preview" data-name="before">
     <div class="demo-text">
-      <code>.drop-before</code> <code>.drop-top</code> <code>.drop-bottom</code> <code>.drop-middle</code>
+      <div class="content">
+        <code>.drop-before</code> <code>.drop-top</code> <code>.drop-bottom</code> <code>.drop-middle</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space-small align-items-center demo-source-from">
@@ -571,7 +599,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-before drop-top">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -594,7 +622,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-before drop-bottom">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -617,7 +645,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-before drop-middle">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -638,7 +666,9 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item demo-preview" data-name="after">
     <div class="demo-text">
-      <code>.drop-after</code> <code>.drop-top</code> <code>.drop-bottom</code> <code>.drop-middle</code>
+      <div class="content">
+        <code>.drop-after</code> <code>.drop-top</code> <code>.drop-bottom</code> <code>.drop-middle</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space-small align-items-center demo-source-from">
@@ -648,7 +678,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-after drop-top">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -671,7 +701,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-after drop-bottom">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -694,7 +724,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-after drop-middle">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -715,7 +745,9 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item demo-preview" data-name="others">
     <div class="demo-text">
-      <code>.drop-middle-top</code> <code>.drop-middle-bottom</code>
+      <div class="content">
+        <code>.drop-middle-top</code> <code>.drop-middle-bottom</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space-small align-items-center demo-source-from">
@@ -725,7 +757,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-right drop-middle drop-middle-bottom">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -748,7 +780,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-right drop-middle drop-middle-top">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -771,7 +803,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-left drop-middle drop-middle-bottom">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -794,7 +826,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-left drop-middle drop-middle-top">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -817,7 +849,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-before drop-middle drop-middle-bottom">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -840,7 +872,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-before drop-middle drop-middle-top">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -863,7 +895,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-after drop-middle drop-middle-bottom">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -886,7 +918,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-after drop-middle drop-middle-top">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -914,7 +946,9 @@ description: Dropdown component with structured theming that can show anything.
 <div class="demo">
   <div class="demo-item demo-preview" data-name="special">
     <div class="demo-text">
-      <code>.drop-nodesign</code> <code>.drop-squared</code> <code>.drop-noborder</code>
+      <div class="content">
+        <code>.drop-nodesign</code> <code>.drop-squared</code> <code>.drop-noborder</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space-small align-items-center demo-source-from">
@@ -924,7 +958,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-nodesign">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -947,7 +981,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-squared">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -970,7 +1004,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-noborder">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -1002,7 +1036,9 @@ description: Dropdown component with structured theming that can show anything.
 <div class="demo">
   <div class="demo-item demo-preview" data-name="static">
     <div class="demo-text">
-      <code>.drop-outer-static</code>
+      <div class="content">
+        <code>.drop-outer-static</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div style="position: relative;">
@@ -1012,7 +1048,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop event-limit">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -1033,7 +1069,9 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item demo-preview" data-name="top">
     <div class="demo-text">
-      <code>.drop-outer-static</code> <code>.drop-top</code>
+      <div class="content">
+        <code>.drop-outer-static</code> <code>.drop-top</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div style="position: relative;">
@@ -1043,7 +1081,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-top event-limit">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -1064,7 +1102,9 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item demo-preview" data-name="middle">
     <div class="demo-text">
-      <code>.drop-outer-static</code> <code>.middle</code>
+      <div class="content">
+        <code>.drop-outer-static</code> <code>.middle</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div style="position: relative;">
@@ -1074,7 +1114,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-middle event-limit">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -1102,7 +1142,9 @@ description: Dropdown component with structured theming that can show anything.
 <div class="demo">
   <div class="demo-item demo-preview" data-name="backdrop">
     <div class="demo-text">
-      <code>data-xt-drop='{"backdrop": "object"}'</code> <code>.over-backdrop</code>
+      <div class="content">
+        <code>data-xt-drop='{"backdrop": "object"}'</code> <code>.over-backdrop</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space-small align-items-center demo-source-from">
@@ -1112,7 +1154,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-bottom drop-left">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -1135,7 +1177,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-middle drop-center">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -1158,7 +1200,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-after drop-middle drop-middle-top">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -1194,7 +1236,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -1217,7 +1259,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-bottom drop-left">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor</button>
@@ -1245,7 +1287,9 @@ description: Dropdown component with structured theming that can show anything.
 <div class="demo">
   <div class="demo-item demo-preview" data-name="max-height">
     <div class="demo-text">
-      <code>.drop-max-height</code>
+      <div class="content">
+        <code>.drop-max-height</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div style="position: relative;">
@@ -1255,7 +1299,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-max-height">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
@@ -1288,7 +1332,9 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item demo-preview" data-name="max-width">
     <div class="demo-text">
-      <code>.drop-max-width</code>
+      <div class="content">
+        <code>.drop-max-width</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div style="position: relative;">
@@ -1298,7 +1344,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-max-width">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
@@ -1331,7 +1377,9 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item demo-preview" data-name="both">
     <div class="demo-text">
-      <code>.drop-max-height</code> <code>.drop-max-width</code>
+      <div class="content">
+        <code>.drop-max-height</code> <code>.drop-max-width</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div style="position: relative;">
@@ -1341,7 +1389,7 @@ description: Dropdown component with structured theming that can show anything.
           </button>
           <div class="drop drop-max-height drop-max-width">
             <div class="drop-inner">
-              <div class="drop-content">
+              <div class="content">
                 <ul class="list list-drop">
                   <li>
                     <button type="button">Lorem ipsum dolor sit amet, consectetur adipiscing elit</button>
@@ -1379,7 +1427,9 @@ description: Dropdown component with structured theming that can show anything.
 <div class="demo">
   <div class="demo-item demo-preview" data-name="nested">
     <div class="demo-text">
-      For limiting event inside a selector use <code>.event-limit</code>
+      <div class="content">
+        For limiting event inside a selector use <code>.event-limit</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="drop-outer" data-xt-drop>
@@ -1388,7 +1438,7 @@ description: Dropdown component with structured theming that can show anything.
         </button>
         <div class="drop">
           <div class="drop-inner">
-            <div class="drop-content">
+            <div class="content">
               <ul class="list list-drop">
                 <li>
                   <button type="button">Lorem ipsum dolor</button>
@@ -1402,7 +1452,7 @@ description: Dropdown component with structured theming that can show anything.
                   </button>
                   <div class="drop drop-secondary drop-after drop-middle">
                     <div class="drop-inner">
-                      <div class="drop-content">
+                      <div class="content">
                         <ul class="list list-drop">
                           <li>
                             <button type="button">Lorem ipsum dolor</button>
@@ -1416,7 +1466,7 @@ description: Dropdown component with structured theming that can show anything.
                             </button>
                             <div class="drop drop-primary drop-center drop-middle">
                               <div class="drop-inner">
-                                <div class="drop-content">
+                                <div class="content">
                                   <ul class="list list-drop">
                                     <li>
                                       <button type="button">Lorem ipsum dolor</button>
@@ -1446,7 +1496,9 @@ description: Dropdown component with structured theming that can show anything.
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/component/drop/drop-disable.html"data-name="disable">
     <div class="demo-text">
-      To disable drop use <code>.drop-disable</code> useful within media queries
+      <div class="content">
+        To disable drop use <code>.drop-disable</code> useful within media queries
+      </div>
     </div>
   </div>
 </div>

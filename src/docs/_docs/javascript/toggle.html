@@ -33,8 +33,10 @@ description: Many possible behaviour, interactions and animations are possible w
 </pre>
 
 <div class="alert">
-  Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-toggle">toggle
-  by javascript</a> using the same options syntax.
+  <div class="content">
+    Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-toggle">toggle
+    by javascript</a> using the same options syntax.
+  </div>
 </div>
 
 <h3>Drop</h3>
@@ -50,7 +52,7 @@ description: Many possible behaviour, interactions and animations are possible w
       </button>
       <div class="drop">
         <div class="drop-inner">
-          <div class="drop-content">
+          <div class="content">
             <!-- content -->
           </div>
         </div>
@@ -60,8 +62,10 @@ description: Many possible behaviour, interactions and animations are possible w
 </pre>
 
 <div class="alert">
-  Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-drop">drop
-  by javascript</a> using the same options syntax.
+  <div class="content">
+    Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-drop">drop
+    by javascript</a> using the same options syntax.
+  </div>
 </div>
 
 <h3>Overlay</h3>
@@ -104,8 +108,10 @@ description: Many possible behaviour, interactions and animations are possible w
 </pre>
 
 <div class="alert">
-  Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-overlay">overlay
-  by javascript</a> using the same options syntax.
+  <div class="content">
+    Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-overlay">overlay
+    by javascript</a> using the same options syntax.
+  </div>
 </div>
 
 <h2>Defaults</h2>
@@ -178,7 +184,9 @@ description: Many possible behaviour, interactions and animations are possible w
 <div class="demo">
   <div class="demo-item demo-preview" data-name="self">
     <div class="demo-text">
-      Toggle a single <strong>element</strong> with <code>[data-xt-toggle]</code>
+      <div class="content">
+        Toggle a single <strong>element</strong> with <code>[data-xt-toggle]</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <button type="button" class="btn" data-xt-toggle>
@@ -191,7 +199,9 @@ description: Many possible behaviour, interactions and animations are possible w
   </div>
   <div class="demo-item demo-preview" data-name="single target">
     <div class="demo-text">
-      Toggle a single <strong>target</strong> using <code>targets</code> with <strong>#id</strong>
+      <div class="content">
+        Toggle a single <strong>target</strong> using <code>targets</code> with <strong>#id</strong>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <button type="button" class="btn" data-xt-toggle='{"targets": "#toggle-unique-0"}'>
@@ -201,16 +211,22 @@ description: Many possible behaviour, interactions and animations are possible w
         Toggle 1
       </button>
       <div class="alert toggle-block" id="toggle-unique-0">
-        Target 0
+        <div class="content">
+          Target 0
+        </div>
       </div>
       <div class="alert toggle-block" id="toggle-unique-1">
-        Target 1
+        <div class="content">
+          Target 1
+        </div>
       </div>
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="same targets">
     <div class="demo-text">
-      Toggle same <strong>targets</strong> using <code>targets</code> with <strong>#id</strong>
+      <div class="content">
+        Toggle same <strong>targets</strong> using <code>targets</code> with <strong>#id</strong>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <button type="button" class="btn"
@@ -222,10 +238,14 @@ description: Many possible behaviour, interactions and animations are possible w
         Toggle
       </button>
       <div class="alert toggle-block" id="toggle-unique-2">
-        Target 0
+        <div class="content">
+          Target 0
+        </div>
       </div>
       <div class="alert toggle-block" id="toggle-unique-3">
-        Target 1
+        <div class="content">
+          Target 1
+        </div>
       </div>
     </div>
   </div>
@@ -243,8 +263,10 @@ description: Many possible behaviour, interactions and animations are possible w
 <div class="demo">
   <div class="demo-item demo-preview" data-name="manager">
     <div class="demo-text">
-      With multiple <strong>targets</strong>, the ones activated is the one with the same index of the toggled <strong>element</strong>.
-      Nested <strong>targets</strong> are filtered out
+      <div class="content">
+        With multiple <strong>targets</strong>, the ones activated is the one with the same index of the toggled <strong>element</strong>.
+        Nested <strong>targets</strong> are filtered out
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle>
@@ -258,21 +280,33 @@ description: Many possible behaviour, interactions and animations are possible w
           Toggle 2
         </button>
         <div class="alert toggle-block">
-          Target 0
-          <div class="alert toggle-block">
-            Nested not toggled
+          <div class="content">
+            Target 0
+            <div class="alert toggle-block">
+              <div class="content">
+                Nested not toggled
+              </div>
+            </div>
           </div>
         </div>
         <div class="alert toggle-block">
-          Target 1
-          <div class="alert toggle-block">
-            Nested not toggled
+          <div class="content">
+            Target 1
+            <div class="alert toggle-block">
+              <div class="content">
+                Nested not toggled
+              </div>
+            </div>
           </div>
         </div>
         <div class="alert toggle-block">
-          Target 2
-          <div class="alert toggle-block">
-            Nested not toggled
+          <div class="content">
+            Target 2
+            <div class="alert toggle-block">
+              <div class="content">
+                Nested not toggled
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -280,7 +314,9 @@ description: Many possible behaviour, interactions and animations are possible w
   </div>
   <div class="demo-item demo-preview" data-name="custom">
     <div class="demo-text">
-      Custom <strong>elements</strong> and <strong>targets</strong>
+      <div class="content">
+        Custom <strong>elements</strong> and <strong>targets</strong>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"elements": ".test > .btn", "targets": ".test > .example-toggle"}'>
@@ -295,13 +331,19 @@ description: Many possible behaviour, interactions and animations are possible w
             Toggle 2
           </button>
           <div class="alert example-toggle">
-            Target 0
+            <div class="content">
+              Target 0
+            </div>
           </div>
           <div class="alert example-toggle">
-            Target 1
+            <div class="content">
+              Target 1
+            </div>
           </div>
           <div class="alert example-toggle">
-            Target 2
+            <div class="content">
+              Target 2
+            </div>
           </div>
         </div>
       </div>
@@ -321,7 +363,9 @@ description: Many possible behaviour, interactions and animations are possible w
   </div>
   <div class="demo-item demo-preview" data-name="custom toggle">
     <div class="demo-text">
-      Custom targets classname that starts with <code>.toggle-</code>
+      <div class="content">
+        Custom targets classname that starts with <code>.toggle-</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle>
@@ -335,13 +379,19 @@ description: Many possible behaviour, interactions and animations are possible w
           Toggle 2
         </button>
         <div class="alert toggle-custom">
-          Target 0
+          <div class="content">
+            Target 0
+          </div>
         </div>
         <div class="alert toggle-custom">
-          Target 1
+          <div class="content">
+            Target 1
+          </div>
         </div>
         <div class="alert toggle-custom">
-          Target 2
+          <div class="content">
+            Target 2
+          </div>
         </div>
       </div>
     </div>
@@ -361,8 +411,10 @@ description: Many possible behaviour, interactions and animations are possible w
 </div>
 
 <div class="alert">
-  For toggle utils classes read the documentation of <a href="{% link _docs/introduction/utils.html %}#toggle">toggle
-  utils</a>.
+  <div class="content">
+    For toggle utils classes read the documentation of <a href="{% link _docs/introduction/utils.html %}#toggle">toggle
+    utils</a>.
+  </div>
 </div>
 
 <h2>Options</h2>
@@ -395,19 +447,29 @@ description: Many possible behaviour, interactions and animations are possible w
           Group 1
         </button>
         <div class="alert toggle-block">
-          Target 0
+          <div class="content">
+            Target 0
+          </div>
         </div>
         <div class="alert toggle-block" data-group="0">
-          Group 0
+          <div class="content">
+            Group 0
+          </div>
         </div>
         <div class="alert toggle-block" data-group="1">
-          Group 1
+          <div class="content">
+            Group 1
+          </div>
         </div>
         <div class="alert toggle-block" data-group="0">
-          Group 0
+          <div class="content">
+            Group 0
+          </div>
         </div>
         <div class="alert toggle-block">
-          Target 1
+          <div class="content">
+            Target 1
+          </div>
         </div>
       </div>
     </div>
@@ -421,7 +483,9 @@ description: Many possible behaviour, interactions and animations are possible w
 <div class="demo">
   <div class="demo-item demo-preview" data-name="class">
     <div class="demo-text">
-      You can specify classes to toggle with <strong>class</strong>
+      <div class="content">
+        You can specify classes to toggle with <strong>class</strong>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"class": "active class-example-0"}'>
@@ -429,7 +493,9 @@ description: Many possible behaviour, interactions and animations are possible w
           Toggle
         </button>
         <div class="alert toggle-block" id="alert-example">
-          Target
+          <div class="content">
+            Target
+          </div>
         </div>
       </div>
     </div>
@@ -470,19 +536,29 @@ description: Many possible behaviour, interactions and animations are possible w
           Group 1
         </button>
         <div class="alert toggle-block">
-          Target 0
+          <div class="content">
+            Target 0
+          </div>
         </div>
         <div class="alert toggle-block" data-group="0">
-          Group 0
+          <div class="content">
+            Group 0
+          </div>
         </div>
         <div class="alert toggle-block" data-group="1">
-          Group 1
+          <div class="content">
+            Group 1
+          </div>
         </div>
         <div class="alert toggle-block" data-group="0">
-          Group 0
+          <div class="content">
+            Group 0
+          </div>
         </div>
         <div class="alert toggle-block">
-          Target 1
+          <div class="content">
+            Target 1
+          </div>
         </div>
       </div>
     </div>
@@ -510,7 +586,9 @@ description: Many possible behaviour, interactions and animations are possible w
 <div class="demo">
   <div class="demo-item demo-preview" data-name="custom">
     <div class="demo-text">
-      The required <strong>min</strong> activation is fulfilled on initialization
+      <div class="content">
+        The required <strong>min</strong> activation is fulfilled on initialization
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"min": 2, "max": 2}'>
@@ -527,16 +605,24 @@ description: Many possible behaviour, interactions and animations are possible w
           Toggle 3
         </button>
         <div class="alert toggle-block">
-          Target 0
+          <div class="content">
+            Target 0
+          </div>
         </div>
         <div class="alert toggle-block">
-          Target 1
+          <div class="content">
+            Target 1
+          </div>
         </div>
         <div class="alert toggle-block">
-          Target 2
+          <div class="content">
+            Target 2
+          </div>
         </div>
         <div class="alert toggle-block">
-          Target 3
+          <div class="content">
+            Target 3
+          </div>
         </div>
       </div>
     </div>
@@ -551,7 +637,9 @@ description: Many possible behaviour, interactions and animations are possible w
 <div class="demo">
   <div class="demo-item demo-preview" data-name="event">
     <div class="demo-text">
-      <code>"on": "mouseenter"</code> <code>"off": "mouseleave"</code>
+      <div class="content">
+        <code>"on": "mouseenter"</code> <code>"off": "mouseleave"</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"min": 1, "on": "mouseenter", "off": "mouseleave"}'>
@@ -568,16 +656,24 @@ description: Many possible behaviour, interactions and animations are possible w
           Toggle 3
         </button>
         <div class="alert toggle-block">
-          Target 0
+          <div class="content">
+            Target 0
+          </div>
         </div>
         <div class="alert toggle-block">
-          Target 1
+          <div class="content">
+            Target 1
+          </div>
         </div>
         <div class="alert toggle-block">
-          Target 2
+          <div class="content">
+            Target 2
+          </div>
         </div>
         <div class="alert toggle-block">
-          Target 3
+          <div class="content">
+            Target 3
+          </div>
         </div>
       </div>
     </div>
@@ -597,7 +693,9 @@ description: Many possible behaviour, interactions and animations are possible w
 <div class="demo">
   <div class="demo-item demo-preview" data-name="auto">
     <div class="demo-text">
-      <code>"auto": Milliseconds</code>
+      <div class="content">
+        <code>"auto": Milliseconds</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"auto": 2000}'>
@@ -614,23 +712,33 @@ description: Many possible behaviour, interactions and animations are possible w
           Toggle 3
         </button>
         <div class="alert toggle-block">
-          Target 0
+          <div class="content">
+            Target 0
+          </div>
         </div>
         <div class="alert toggle-block">
-          Target 1
+          <div class="content">
+            Target 1
+          </div>
         </div>
         <div class="alert toggle-block">
-          Target 2
+          <div class="content">
+            Target 2
+          </div>
         </div>
         <div class="alert toggle-block">
-          Target 3
+          <div class="content">
+            Target 3
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="autoPause">
     <div class="demo-text">
-      <code>"autoPause": Milliseconds</code>
+      <div class="content">
+        <code>"autoPause": Milliseconds</code>
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"auto": 2000, "autoPause": 6000}'>
@@ -647,16 +755,24 @@ description: Many possible behaviour, interactions and animations are possible w
           Toggle 3
         </button>
         <div class="alert toggle-block">
-          Target 0
+          <div class="content">
+            Target 0
+          </div>
         </div>
         <div class="alert toggle-block">
-          Target 1
+          <div class="content">
+            Target 1
+          </div>
         </div>
         <div class="alert toggle-block">
-          Target 2
+          <div class="content">
+            Target 2
+          </div>
         </div>
         <div class="alert toggle-block">
-          Target 3
+          <div class="content">
+            Target 3
+          </div>
         </div>
       </div>
     </div>
@@ -677,16 +793,24 @@ description: Many possible behaviour, interactions and animations are possible w
           Toggle 3
         </button>
         <div class="alert toggle-block">
-          Target 0
+          <div class="content">
+            Target 0
+          </div>
         </div>
         <div class="alert toggle-block">
-          Target 1
+          <div class="content">
+            Target 1
+          </div>
         </div>
         <div class="alert toggle-block">
-          Target 2
+          <div class="content">
+            Target 2
+          </div>
         </div>
         <div class="alert toggle-block">
-          Target 3
+          <div class="content">
+            Target 3
+          </div>
         </div>
       </div>
     </div>
@@ -698,8 +822,10 @@ description: Many possible behaviour, interactions and animations are possible w
 <div class="demo">
   <div class="demo-item demo-preview" data-name="css">
     <div class="demo-text">
-      Toggle classes <code>.active</code> and <code>.out</code> set the pace of the activation/deactivation depending on
-      the animations/transition they have
+      <div class="content">
+        Toggle classes <code>.active</code> and <code>.out</code> set the pace of the activation/deactivation depending on
+        the animations/transition they have
+      </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle>
@@ -713,13 +839,19 @@ description: Many possible behaviour, interactions and animations are possible w
           no-anim
         </button>
         <div class="alert toggle-block anim-opacity">
-          Target 0
+          <div class="content">
+            Target 0
+          </div>
         </div>
         <div class="alert toggle-block anim-vertical">
-          Target 1
+          <div class="content">
+            Target 1
+          </div>
         </div>
         <div class="alert toggle-block no-anim">
-          Target 3
+          <div class="content">
+            Target 2
+          </div>
         </div>
       </div>
     </div>
@@ -727,21 +859,27 @@ description: Many possible behaviour, interactions and animations are possible w
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/toggle/toggle-out.html"
        data-name="out">
     <div class="demo-text">
-      Activation automatically waits for the <strong>targets</strong> <code>.out</code> css animation or transition to
-      finish before adding <code>.active</code> class to new targets
+      <div class="content">
+        Activation automatically waits for the <strong>targets</strong> <code>.out</code> css animation or transition to
+        finish before adding <code>.active</code> class to new targets
+      </div>
     </div>
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/toggle/toggle-timing.html"
        data-name="timing">
     <div class="demo-text">
-      Timing option for <code>.out</code> instead of waiting for css animation or transition: <code>"timing":
-      Milliseconds</code>
+      <div class="content">
+        Timing option for <code>.out</code> instead of waiting for css animation or transition: <code>"timing":
+        Milliseconds</code>
+      </div>
     </div>
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/toggle/toggle-instant.html"
        data-name="instant">
     <div class="demo-text">
-      Options for not waiting: <code>"instant": {"elements": true, "targets": true, "additional": true}</code>
+      <div class="content">
+        Options for not waiting: <code>"instant": {"elements": true, "targets": true, "additional": true}</code>
+      </div>
     </div>
   </div>
 </div>
