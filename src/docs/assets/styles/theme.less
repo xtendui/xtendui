@@ -70,9 +70,9 @@
 
 .logo {
   .link-none();
-  display: inline-block;
-  .margin(top, 2rem);
-  .margin(bottom, 1.5rem);
+  .display(flex);
+  .align-items-center();
+  height: 7.25rem;
   opacity: .8;
   img {
     width: auto;
@@ -102,6 +102,8 @@
   }
   .btn-menu {
     margin-right: -1rem;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
     .btn-nodesign();
   }
 }
@@ -222,10 +224,11 @@
   .display(flex);
   .align-items-center();
   .icon-menu-custom {
+    display: inline-block;
     position: relative;
     vertical-align: top;
-    top: .1rem; // to uppercase
-    margin-left: 1em;
+    top: .2rem;
+    margin-left: .75em;
     width: 1.25em;
     height: 1em;
     font-size: 14px;
@@ -317,6 +320,9 @@
 
 .site-menu {
   // animations
+  &.active {
+    transition-delay: @time-small;
+  }
   &.out {
     transition-delay: @time-medium;
   }
@@ -746,7 +752,7 @@
   }
   &.active:not(.xt-clone) {
     .site-breadcrumbs {
-      padding: 1.5rem;
+      padding: 1rem;
       padding-bottom: 0;
       .transition-default.active();
     }

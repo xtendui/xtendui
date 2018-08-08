@@ -18,7 +18,7 @@
             <div class="site-aside-text">
               <a href="{{ page.url }}" class="btn btn-nodesign">
                 <div class="site-aside-title">
-                  {{ page.title }}
+                  <span>{{ page.title }}</span>
                 </div>
               </a>
             </div>
@@ -26,7 +26,7 @@
             {% if page.collection == null %}
               <div class="site-aside-text">
                 <a href="{{ page.url }}" class="btn btn-nodesign">
-                  {{ page.title }}
+                  <span>{{ page.title }}</span>
                 </a>
               </div>
             {% endif %}
@@ -38,7 +38,7 @@
                 {% for p in sorted %}
                   <div class="site-aside-text">
                     <a href="{{ p.url }}" class="btn btn-nodesign">
-                      {{ p.title }}
+                      <span>{{ p.title }}</span>
                     </a>
                   </div>
                 {% endfor %}

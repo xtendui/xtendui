@@ -8,40 +8,40 @@
 
                   <div class="site-footer-top-links list-space-none">
                     <a href="{{ site.baseurl }}/" class="btn btn-primary btn-nodesign">
-                      Home
+                      <span>Home</span>
                     </a>
                     {% for collection in site.collections %}
                       {% if site.[collection.label].size > 0 %}
                         {% assign sorted = site.[collection.label] | sort: 'order' %}
                         <a href="{{ sorted[0].url }}" class="btn btn-primary btn-nodesign">
-                          {{ collection.label }}
+                          <span>{{ collection.label }}</span>
                         </a>
                       {% endif %}
                     {% endfor %}
                     <a href="#" class="btn btn-primary btn-nodesign">
-                      Playground
+                      <span>Playground</span>
                     </a>
                     <a href="#" class="btn btn-primary btn-nodesign">
-                      Inspirations
+                      <span>Inspirations</span>
                     </a>
                     <a href="{{ site.baseurl }}/faq/" class="btn btn-primary btn-nodesign">
-                      Faq
+                      <span>Faq</span>
                     </a>
                   </div>
 
                   <div class="site-footer-top-special">
                     <button type="button" class="btn btn-primary btn-nodesign">
-                      <span class="icon-embed2"></span>
+                      <span><span class="icon-embed2"></span></span>
                     </button>
                     {% comment %}
                     <a href="#" class="btn btn-primary btn-nodesign">
-                      Privacy policy
+                      <span>Privacy policy</span>
                     </a>
                     <a href="#" class="btn btn-primary btn-nodesign">
-                      license
+                      <span>license</span>
                     </a>
                     <a href="#" class="btn btn-primary btn-nodesign">
-                      contact
+                      <span>contact</span>
                     </a>
                     {% endcomment %}
                   </div>
@@ -63,7 +63,7 @@
             </div>
           </div>
         </footer>
-        
+
       </div>
     </div>
 
@@ -72,6 +72,6 @@
     <script src="{{ site.baseurl }}/assets/scripts/polyfill.min.js?v={{ site.version }}"></script>
     <script src="{{ site.baseurl }}/assets/scripts/xtend.min.js?v={{ site.version }}"></script>
     <script src="{{ site.baseurl }}/assets/scripts/theme.min.js?v={{ site.version }}"></script>
-    
+
   </body>
 </html>

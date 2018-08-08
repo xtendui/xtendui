@@ -2,7 +2,7 @@
 // icon
 //////////////////////
 
-.icon {
+.icon-base() {
   display: inline-block;
   position: relative;
   font-size: @icon-medium;
@@ -23,11 +23,12 @@
 // styles
 
 .icon-xt {
-  .icon();
+  .icon-base();
   font-family: @icons-xt-family;
 }
 
 [class^='icon-xt-'], [class*=' icon-xt-'] {
+  display: inline-block;
   &::before {
     .icon-xt();
   }
@@ -86,12 +87,13 @@
 
 .icon {
   & when not (@icons-family = none) {
-    //.icon();
+    .icon-base();
     font-family: @icons-family;
   }
 }
 
 [class^='icon-'], [class*=' icon-'] {
+  display: inline-block;
   &::before {
     .icon();
   }
@@ -107,14 +109,14 @@
   }
   & when (@position = before) {
     &::before {
-      .icon();
+      .icon-base();
       content: '@{content}';
       font-size: @size;
     }
   }
   & when (@position = after) {
     &::after {
-      .icon();
+      .icon-base();
       content: '@{content}';
       font-size: @size;
     }

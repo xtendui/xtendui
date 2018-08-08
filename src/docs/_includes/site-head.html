@@ -45,16 +45,18 @@
             <div>
               <button type="button" class="btn btn-primary btn-nodesign btn-menu"
                       data-xt-overlay='{"targets": "#site-menu"}'>
-                {% if page.collection %}
-                {{ page.collection | capitalize }}
-                {% else %}
-                {{ page.title | capitalize }}
-                {% endif %}
-                <span class="icon-menu-custom">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </span>
+                <span>
+                  {% if page.collection %}
+                    {{ page.collection | capitalize }}
+                  {% else %}
+                    {{ page.title | capitalize }}
+                  {% endif %}
+                  <span class="icon-menu-custom">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </span>
+                </span>
               </button>
             </div>
           </div>
@@ -80,16 +82,18 @@
                 <div>
                   <button type="button" class="btn btn-primary btn-nodesign btn-menu"
                           data-xt-overlay='{"targets": "#site-menu"}'>
-                    {% if page.collection %}
-                    {{ page.collection | capitalize }}
-                    {% else %}
-                    {{ page.title | capitalize }}
-                    {% endif %}
-                    <span class="icon icon-menu-custom right">
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                        </span>
+                    <span>
+                      {% if page.collection %}
+                        {{ page.collection | capitalize }}
+                      {% else %}
+                        {{ page.title | capitalize }}
+                      {% endif %}
+                      <span class="icon icon-menu-custom right">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </span>
+                    </span>
                   </button>
                 </div>
               </div>
@@ -104,18 +108,18 @@
               {% if site.[collection.label].size > 0 %}
               {% assign sorted = site.[collection.label] | sort: 'order' %}
               <a href="{{ site.baseurl }}{{ sorted[0].url }}" class="btn btn-primary btn-nodesign make-line">
-                {{ collection.label }}
+                <span>{{ collection.label }}</span>
               </a>
               {% endif %}
               {% endfor %}
               <a href="{{ site.baseurl }}/" class="btn btn-primary btn-nodesign make-line">
-                Playground
+                <span>Playground</span>
               </a>
               <a href="{{ site.baseurl }}/" class="btn btn-primary btn-nodesign make-line">
-                Inspirations
+                <span>Inspirations</span>
               </a>
               <a href="{{ site.baseurl }}/faq/" class="btn btn-primary btn-nodesign make-line">
-                Faq
+                <span>Faq</span>
               </a>
 
             </div>
@@ -159,7 +163,7 @@
                 {% if p.categories[0] == collection.label %}
                 <div class="site-breadcrumbs-body-main">
                   <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary btn-nodesign">
-                    {{ p.title }}
+                    <span>{{ p.title }}</span>
                   </a>
                   {% assign subsorted = site.[collection.label] | where: 'categories', p.title | sort: 'order' %}
                   <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
@@ -167,7 +171,7 @@
                     <div class="site-breadcrumbs-body-sub-inner">
                       {% for pa in subsorted %}
                       <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn-primary btn-nodesign">
-                        {{ pa.title }}
+                        <span>{{ pa.title }}</span>
                       </a>
                       {% endfor %}
                     </div>
@@ -185,28 +189,30 @@
 
                 <div>
                   <a href="{{ site.download }}" target="_blank" class="btn btn-primary btn-icon btn-nodesign">
-                    <span class="icon-download icon-big"></span>
+                    <span><span class="icon-download icon-big"></span></span>
                   </a>
                 </div>
                 <div>
                   <a href="{{ site.github }}" target="_blank" class="btn btn-primary btn-icon btn-nodesign">
-                    <span class="icon-github icon-big"></span>
+                    <span><span class="icon-github icon-big"></span></span>
                   </a>
                 </div>
 
                 <div class="show-sticky">
                   <button type="button" class="btn btn-primary btn-nodesign btn-menu"
                           data-xt-overlay='{"targets": "#site-menu"}'>
-                    {% if page.collection %}
-                    {{ page.collection | capitalize }}
-                    {% else %}
-                    {{ page.title | capitalize }}
-                    {% endif %}
-                    <span class="icon-menu-custom">
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                        </span>
+                    <span>
+                      {% if page.collection %}
+                      {{ page.collection | capitalize }}
+                      {% else %}
+                      {{ page.title | capitalize }}
+                      {% endif %}
+                      <span class="icon-menu-custom">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </span>
+                    </span>
                   </button>
                 </div>
 
