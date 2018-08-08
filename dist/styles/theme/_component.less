@@ -349,7 +349,7 @@ a, .alink {
 
 .drop-outer {
   &, > .drop {
-    animation-duration: @time-big; // needed for .out animation timing
+    animation-duration: @time-medium + @time-small; // needed for .out animation timing, put max animation time
   }
   &.active {
     > .drop > .drop-inner {
@@ -357,7 +357,7 @@ a, .alink {
         .anim-zoom.active();
         opacity: 1;
       }
-      & > * {
+      > * {
         .anim-vertical.active();
         animation-delay: @time-small;
         animation-fill-mode: forwards;
@@ -376,7 +376,7 @@ a, .alink {
         animation-fill-mode: forwards;
         opacity: 1;
       }
-      & > * {
+      > * {
         .anim-vertical.out();
         opacity: 0;
       }
@@ -392,7 +392,7 @@ a, .alink {
 .drop-disable {
   // disable custom animation
   > .drop > .drop-inner {
-    & > * {
+    > * {
       .no-anim() !important;
       opacity: 1 !important;
     }
@@ -402,14 +402,14 @@ a, .alink {
 .drop-max-height {
   > .drop-inner > .content {
     overflow-y: auto;
-    max-height: 20rem;
+    max-height: 25rem;
   }
 }
 
 .drop-max-width {
   > .drop-inner > .content {
     overflow-x: auto;
-    max-width: 20rem;
+    max-width: 35rem;
   }
 }
 
@@ -487,10 +487,6 @@ a, .alink {
 .overlay {
   // styles
   .overlay-inner {
-    padding: 3rem;
-    @media @min-sm {
-      padding: 4rem;
-    }
     &@{overlay-design} {
       .design-setup();
       border-radius: @border-radius;
@@ -499,7 +495,12 @@ a, .alink {
       border-color: transparent;
       box-shadow: 0 0 30rem fade(@black, @perc-sm);
     }
-    // .btn-close
+    > .content {
+      padding: 3rem;
+      @media @min-sm {
+        padding: 4rem;
+      }
+    }
     > .btn-close {
       position: absolute;
       top: 2px;
@@ -518,10 +519,6 @@ a, .alink {
   // styles
   box-shadow: 0 0 30rem fade(@black, @perc-sm);
   .overlay {
-    padding: 3rem;
-    @media @min-sm {
-      padding: 4rem;
-    }
     &@{overlay-design} {
       .design-setup();
       border-width: 1px;
@@ -544,10 +541,6 @@ a, .alink {
 .overlay-pos {
   // styles
   .overlay {
-    padding: 3rem;
-    @media @min-sm {
-      padding: 4rem;
-    }
     .overlay-left& {
       max-width: 510px !important;
     }
@@ -564,14 +557,14 @@ a, .alink {
 // animations
 
 .overlay-outer {
-  animation-duration: @time-big; // needed for .out animation timing
+  animation-duration: @time-medium + @time-small; // needed for .out animation timing, put max animation time
   &.active {
     .overlay-inner {
       &@{overlay-design} {
         .anim-zoom.active();
         opacity: 1;
       }
-      & > * {
+      > * {
         .anim-vertical.active();
         animation-delay: @time-small;
         animation-fill-mode: forwards;
@@ -592,7 +585,7 @@ a, .alink {
           .anim-left.active();
           opacity: 1;
         }
-        & > * {
+        > * {
           .anim-left.active();
           animation-delay: @time-small;
           animation-fill-mode: forwards;
@@ -606,7 +599,7 @@ a, .alink {
           .anim-right.active();
           opacity: 1;
         }
-        & > * {
+        > * {
           .anim-right.active();
           animation-delay: @time-small;
           animation-fill-mode: forwards;
@@ -623,7 +616,7 @@ a, .alink {
         animation-fill-mode: forwards;
         opacity: 1;
       }
-      & > * {
+      > * {
         .anim-vertical.out();
         opacity: 0;
       }
@@ -646,7 +639,7 @@ a, .alink {
           animation-fill-mode: forwards;
           opacity: 1;
         }
-        & > * {
+        > * {
           .anim-left.out();
           opacity: 0;
         }
@@ -660,7 +653,7 @@ a, .alink {
           animation-fill-mode: forwards;
           opacity: 1;
         }
-        & > * {
+        > * {
           .anim-right.out();
           opacity: 0;
         }
@@ -734,9 +727,10 @@ a, .alink {
 }
 
 .overlay-none {
-  .overlay-inner,
-  &.overlay-screen .overlay {
-    padding: 0 !important;
+  .overlay-inner {
+    > .content {
+      padding: 0 !important;
+    }
   }
 }
 

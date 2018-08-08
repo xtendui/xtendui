@@ -39,81 +39,6 @@ description: Many possible behaviour, interactions and animations are possible w
   </div>
 </div>
 
-<h3>Drop</h3>
-
-<p>Drop is a special type of toggle. Use this markup to create a drop. <code>[data-xt-drop]</code> must be <a
-  href="{% link _docs/javascript.html %}#initialization">initialized by javascript</a>.</p>
-
-<pre>
-  <code class="html">
-    <div class="drop-outer" data-xt-drop>
-      <button type="button">
-        <!-- content -->
-      </button>
-      <div class="drop">
-        <div class="drop-inner">
-          <div class="content">
-            <!-- content -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </code>
-</pre>
-
-<div class="alert">
-  <div class="content">
-    Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-drop">drop
-    by javascript</a> using the same options syntax.
-  </div>
-</div>
-
-<h3>Overlay</h3>
-
-<p>Overlay is a special type of toggle. Use this markup to create a overlay. <code>[data-xt-overlay]</code> must be <a
-  href="{% link _docs/javascript.html %}#initialization">initialized by javascript</a>.</p>
-
-<pre>
-  <code class="html">
-    <div data-xt-overlay>
-      <button type="button">
-        <!-- content -->
-      </button>
-      <div class="overlay-outer">
-        <div class="overlay overlay-primary">
-          <div class="overlay-inner">
-            <button type="button" class="btn btn-close"></button>
-            <!-- content -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </code>
-</pre>
-
-<pre>
-  <code class="html">
-    <button type="button" data-xt-overlay='{"targets": "#overlay-custom"}'>
-      <!-- content -->
-    </button>
-    <div class="overlay-outer" id="overlay-custom">
-      <div class="overlay overlay-primary">
-        <div class="overlay-inner">
-          <button type="button" class="btn btn-close"></button>
-          <!-- content -->
-        </div>
-      </div>
-    </div>
-  </code>
-</pre>
-
-<div class="alert">
-  <div class="content">
-    Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-overlay">overlay
-    by javascript</a> using the same options syntax.
-  </div>
-</div>
-
 <h2>Defaults</h2>
 
 <p>Here are the defaults options for toggle.</p>
@@ -134,6 +59,17 @@ description: Many possible behaviour, interactions and animations are possible w
 
 <h3>Drop</h3>
 
+<p>Drop is a special type of toggle. Use <a href="{% link _docs/component/drop.html %}#usage">this markup</a> to
+  create a drop. <code>[data-xt-drop]</code> must be <a href="{% link _docs/javascript.html %}#initialization">initialized
+    by javascript</a>.</p>
+
+<div class="alert">
+  <div class="content">
+    Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-drop">drop
+    by javascript</a> using the same options syntax.
+  </div>
+</div>
+
 <p>Here are the defaults options for drop.</p>
 
 <pre>
@@ -153,6 +89,18 @@ description: Many possible behaviour, interactions and animations are possible w
 </pre>
 
 <h3>Overlay</h3>
+
+<p>Overlay is a special type of toggle. Use <a href="{% link _docs/component/overlay.html %}#usage">this markup</a> to
+  create a overlay. <code>[data-xt-overlay]</code> must be <a href="{% link _docs/javascript.html %}#initialization">initialized
+    by javascript</a>.</p>
+
+<div class="alert">
+  <div class="content">
+    Instead of using html arguments you can initialize <a
+    href="{% link _docs/javascript.html %}#initialization-overlay">overlay
+    by javascript</a> using the same options syntax.
+  </div>
+</div>
 
 <p>Here are the defaults options for overlay.</p>
 
@@ -264,7 +212,8 @@ description: Many possible behaviour, interactions and animations are possible w
   <div class="demo-item demo-preview" data-name="manager">
     <div class="demo-text">
       <div class="content">
-        With multiple <strong>targets</strong>, the ones activated is the one with the same index of the toggled <strong>element</strong>.
+        With multiple <strong>targets</strong>, the ones activated is the one with the same index of the toggled
+        <strong>element</strong>.
         Nested <strong>targets</strong> are filtered out
       </div>
     </div>
@@ -823,7 +772,8 @@ description: Many possible behaviour, interactions and animations are possible w
   <div class="demo-item demo-preview" data-name="css">
     <div class="demo-text">
       <div class="content">
-        Toggle classes <code>.active</code> and <code>.out</code> set the pace of the activation/deactivation depending on
+        Toggle classes <code>.active</code> and <code>.out</code> set the pace of the activation/deactivation depending
+        on
         the animations/transition they have
       </div>
     </div>
