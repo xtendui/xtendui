@@ -138,24 +138,21 @@ const activateAsideScroll = function (els, scrollTop) {
             if (element !== el) {
               element.classList.remove('active', 'open');
             } else {
-              el.classList.add('active', 'open');
+              element.classList.add('active', 'open');
             }
           }
-        }
-      } else {
-        if (el.classList.contains('active')) {
-          el.classList.remove('active', 'open');
         }
       }
     }
   }
 };
+
 window.addEventListener('scroll', function (e) {
   let scrollTop = document.documentElement.scrollTop;
   let sub = Array.from(document.querySelectorAll('.btn-site-aside-sub'));
   sub = sub.filter(x => !XtUtil.parents(x, '.xt-clone').length); // filter out parent
   activateAsideScroll(sub, scrollTop);
-  let subsub = Array.from(document.querySelectorAll('.btn-site-aside-sub.active + .site-aside-subsub .btn-site-aside-subsub'));
+  let subsub = Array.from(document.querySelectorAll('.btn-site-aside-sub + .site-aside-subsub .btn-site-aside-subsub'));
   subsub = subsub.filter(x => !XtUtil.parents(x, '.xt-clone').length); // filter out parent
   activateAsideScroll(subsub, scrollTop);
 });
@@ -228,19 +225,16 @@ const populateDemo = function (container, i) {
       if (k === 0) {
         initIframe();
       }
+      // listener
       iframe.parentElement.addEventListener('on', function (e) {
-        if (e.target === this) {
-          if (!item.classList.contains('populated')) {
-            initIframe();
-          } else {
-            iframe.contentDocument.location.reload(true);
-          }
+        if (!item.classList.contains('populated')) {
+          initIframe();
+        } else {
+          iframe.contentDocument.location.reload(true);
         }
       });
       iframe.parentElement.addEventListener('off', function (e) {
-        if (e.target === this) {
-          iframe.classList.remove('show');
-        }
+        iframe.classList.remove('show');
       });
     } else {
       populateInline(item, id);
