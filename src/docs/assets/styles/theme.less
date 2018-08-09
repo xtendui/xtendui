@@ -302,11 +302,14 @@
     padding-top: 52px; // add space for menu
   }
   .site-menu-content .btn {
-    .padding(y, tiny);
     .block();
+    .padding(y, tiny) !important;
+    @media @max-sm {
+      .padding(x, tiny) !important;
+    }
     background-color: transparent !important;
     .font-sans-light();
-    font-size: 4rem;
+    font-size: 4rem !important;
     text-align: left;
     text-transform: capitalize;
     &:hover, &:active, &.active {
@@ -651,8 +654,7 @@
     .justify-content-between();
     > * {
       .list();
-      .list-space(none);
-      .list-space(tiny, lg);
+      .list-space(tiny);
     }
     .padding(y, small);
     .padding(x, small);

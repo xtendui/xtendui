@@ -106,20 +106,9 @@ class Xt {
         }
       }
     }
-    // elements and targets settings
+    // @FIX set namespace for next frame
     for (let el of this.elements) {
-      el.setAttribute('data-xt-namespace', self.namespace); // @FIX set namespace for next frame
-      // aria
-      if (self.mode === 'multiple') {
-        let ariaEls = self.getInside(el, options.elementsAria);
-        let ariaEl = ariaEls.length ? ariaEls[0] : el;
-        ariaEl.setAttribute('aria-selected', 'false');
-        ariaEl.setAttribute('aria-expanded', 'false');
-      }
-    }
-    for (let tr of this.targets) {
-      // aria
-      tr.setAttribute('tabindex', '-1');
+      el.setAttribute('data-xt-namespace', self.namespace);
     }
     // currents
     XtUtil.requestAnimationFrame.call(window, function () {
@@ -151,6 +140,7 @@ class Xt {
     // aria
     if (this.targets.length) {
       for (let el of this.elements) {
+        // id
         let ariaEls = self.getInside(el, options.elementsAria);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;
         let id = ariaEl.getAttribute('id');
@@ -158,8 +148,11 @@ class Xt {
         if (!id) {
           ariaEl.setAttribute('id', el.dataset.namespace + '-element');
         }
+        // selected
+        ariaEl.setAttribute('aria-selected', 'false');
       }
       for (let tr of this.targets) {
+        // id
         let el = this.getElementsFromTarget(tr)[0];
         let id = tr.getAttribute('id');
         tr.dataset.namespace = el.dataset.namespace;
@@ -167,6 +160,14 @@ class Xt {
           id = tr.dataset.namespace + '-target';
           tr.setAttribute('id', id);
         }
+        // tabindex
+        tr.setAttribute('tabindex', '-1');
+        // expanded
+        let role = tr.getAttribute('role');
+        if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
+          tr.setAttribute('aria-expanded', 'false');
+        }
+        // depending on el
         let ariaEls = self.getInside(el, options.elementsAria);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;
         ariaEl.setAttribute('aria-controls', id);
@@ -638,12 +639,9 @@ class Xt {
     // specials
     if (type === 'elements') {
       // aria
-      if (self.mode === 'multiple') {
-        let ariaEls = self.getInside(el, options.elementsAria);
-        let ariaEl = ariaEls.length ? ariaEls[0] : el;
-        ariaEl.setAttribute('aria-selected', 'true');
-        ariaEl.setAttribute('aria-expanded', 'true');
-      }
+      let ariaEls = self.getInside(el, options.elementsAria);
+      let ariaEl = ariaEls.length ? ariaEls[0] : el;
+      ariaEl.setAttribute('aria-selected', 'true');
     }
     if (type === 'targets') {
       self.specialClassHtmlOn();
@@ -654,7 +652,10 @@ class Xt {
       self.specialCloseOn(el, fElements.single);
       self.specialScrollbarOn();
       // aria
-      el.focus();
+      let role = el.getAttribute('role');
+      if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
+        el.setAttribute('aria-expanded', 'true');
+      }
     }
     // listener dispatch
     el.dispatchEvent(new CustomEvent('on', {detail: {skip: true}}));
@@ -730,15 +731,17 @@ class Xt {
       // specials
       if (type === 'elements') {
         // aria
-        if (self.mode === 'multiple') {
-          let ariaEls = self.getInside(el, options.elementsAria);
-          let ariaEl = ariaEls.length ? ariaEls[0] : el;
-          ariaEl.setAttribute('aria-selected', 'false');
-          ariaEl.setAttribute('aria-expanded', 'false');
-        }
+        let ariaEls = self.getInside(el, options.elementsAria);
+        let ariaEl = ariaEls.length ? ariaEls[0] : el;
+        ariaEl.setAttribute('aria-selected', 'false');
       }
       if (type === 'targets') {
         self.specialScrollbarOff();
+        // aria
+        let role = el.getAttribute('role');
+        if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
+          el.setAttribute('aria-expanded', 'false');
+        }
       }
       // activationDelay @FIX delay animation
       if (self.activationDelay) {
@@ -1198,19 +1201,15 @@ class XtToggle extends Xt {
     let self = this;
     let options = self.options;
     // aria
-    if (this.mode === 'multiple') {
-      if (this.container.length) {
-        this.container.setAttribute('role', 'tablist');
+    if (this.targets.length) {
+      this.object.setAttribute('role', 'tablist');
+      for (let el of this.elements) {
+        let ariaEls = self.getInside(el, options.elementsAria);
+        let ariaEl = ariaEls.length ? ariaEls[0] : el;
+        ariaEl.setAttribute('role', 'tab');
       }
-      if (this.targets.length) {
-        for (let el of this.elements) {
-          let ariaEls = self.getInside(el, options.elementsAria);
-          let ariaEl = ariaEls.length ? ariaEls[0] : el;
-          ariaEl.setAttribute('role', 'tab');
-        }
-        for (let tr of this.targets) {
-          tr.setAttribute('role', 'tabpanel');
-        }
+      for (let tr of this.targets) {
+        tr.setAttribute('role', 'tabpanel');
       }
     }
   }
