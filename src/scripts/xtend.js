@@ -91,6 +91,7 @@ class Xt {
       });
     }
     // targets
+    this.targets = [];
     if (options.targets) {
       let arr = Array.from(this.container.querySelectorAll(options.targets));
       arr = arr.filter(x => !XtUtil.parents(x, options.targets).length); // filter out parent
@@ -105,7 +106,7 @@ class Xt {
         }
       }
     }
-    // elements and targets data
+    // elements and targets settings
     for (let el of this.elements) {
       el.setAttribute('data-xt-namespace', self.namespace); // @FIX set namespace for next frame
       // aria
@@ -115,6 +116,10 @@ class Xt {
         ariaEl.setAttribute('aria-selected', 'false');
         ariaEl.setAttribute('aria-expanded', 'false');
       }
+    }
+    for (let tr of this.targets) {
+      // aria
+      tr.setAttribute('tabindex', '-1');
     }
     // currents
     XtUtil.requestAnimationFrame.call(window, function () {
@@ -144,22 +149,24 @@ class Xt {
     let self = this;
     let options = self.options;
     // aria
-    if (this.elements.length && this.targets.length) {
+    if (this.targets.length) {
       for (let el of this.elements) {
         let ariaEls = self.getInside(el, options.elementsAria);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;
         let id = ariaEl.getAttribute('id');
+        el.dataset.namespace = XtUtil.getUniqueID();
         if (!id) {
-          ariaEl.setAttribute('id', self.namespace + '-element');
+          ariaEl.setAttribute('id', el.dataset.namespace + '-element');
         }
       }
       for (let tr of this.targets) {
+        let el = this.getElementsFromTarget(tr)[0];
         let id = tr.getAttribute('id');
+        tr.dataset.namespace = el.dataset.namespace;
         if (!id) {
-          id = self.namespace + '-target';
+          id = tr.dataset.namespace + '-target';
           tr.setAttribute('id', id);
         }
-        let el = this.getElementsFromTarget(tr)[0];
         let ariaEls = self.getInside(el, options.elementsAria);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;
         ariaEl.setAttribute('aria-controls', id);
@@ -646,6 +653,8 @@ class Xt {
       self.specialCollapseOn(el);
       self.specialCloseOn(el, fElements.single);
       self.specialScrollbarOn();
+      // aria
+      el.focus();
     }
     // listener dispatch
     el.dispatchEvent(new CustomEvent('on', {detail: {skip: true}}));
@@ -1112,10 +1121,6 @@ class Xt {
     //
     if (options.scrollbar) {
       let elements;
-      // scroll
-      let container = document.documentElement;
-      container.style.paddingRight = '';
-      container.classList.remove('xt-scrollbar');
       // fixed
       elements = document.querySelectorAll('.xt-fixed');
       for (let element of elements) {
@@ -1132,6 +1137,10 @@ class Xt {
       for (let element of elements) {
         element.style.right = '';
       }
+      // scroll
+      let container = document.documentElement;
+      container.style.paddingRight = '';
+      container.classList.remove('xt-scrollbar');
     }
   }
 
@@ -1193,7 +1202,7 @@ class XtToggle extends Xt {
       if (this.container.length) {
         this.container.setAttribute('role', 'tablist');
       }
-      if (this.elements.length && this.targets.length) {
+      if (this.targets.length) {
         for (let el of this.elements) {
           let ariaEls = self.getInside(el, options.elementsAria);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
@@ -1250,7 +1259,7 @@ class XtDrop extends Xt {
     let self = this;
     let options = self.options;
     // aria
-    if (this.elements.length && this.targets.length) {
+    if (this.targets.length) {
       for (let el of this.elements) {
         let ariaEls = self.getInside(el, options.elementsAria);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;
@@ -1308,7 +1317,7 @@ class XtOverlay extends Xt {
     let self = this;
     let options = self.options;
     // aria
-    if (this.elements.length && this.targets.length) {
+    if (this.targets.length) {
       for (let el of this.elements) {
         let ariaEls = self.getInside(el, options.elementsAria);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;

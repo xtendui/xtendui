@@ -117,7 +117,7 @@ for(let el of document.querySelectorAll('.site-aside-text')) {
     "on": "mouseenter",
     "off": "mouseleave",
     "min": 0,
-    "max": 1
+    "max": Infinity
   });
 }
 
@@ -125,6 +125,7 @@ for(let el of document.querySelectorAll('.site-aside-text')) {
 
 const activateAsideScroll = function (els, scrollTop) {
   const dist = window.innerHeight / 5;
+  let last;
   for(let el of els) {
     let href = el.getAttribute('href');
     if (href) {
@@ -134,11 +135,11 @@ const activateAsideScroll = function (els, scrollTop) {
       let bottom = Infinity;
       if (scrollTop >= top - dist && scrollTop < bottom - dist) {
         if (!el.classList.contains('active')) {
-          for(let element of els) {
-            if (element !== el) {
-              element.classList.remove('active', 'open');
-            } else {
+          for (let element of els) {
+            if (element === el) {
               element.classList.add('active', 'open');
+            } else {
+              element.classList.remove('active', 'open');
             }
           }
         }
