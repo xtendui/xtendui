@@ -1215,14 +1215,19 @@ class XtToggle extends Xt {
     let options = self.options;
     // aria
     if (this.targets.length) {
-      this.object.setAttribute('role', 'tablist');
-      for (let el of this.elements) {
-        let ariaEls = self.getInside(el, options.elementsAria);
-        let ariaEl = ariaEls.length ? ariaEls[0] : el;
-        ariaEl.setAttribute('role', 'tab');
-      }
-      for (let tr of this.targets) {
-        tr.setAttribute('role', 'tabpanel');
+      if (this.mode === 'multiple') {
+        this.object.setAttribute('role', 'tablist');
+        if (options.max > 1) {
+          this.object.setAttribute('aria-multiselectable', 'true');
+        }
+        for (let el of this.elements) {
+          let ariaEls = self.getInside(el, options.elementsAria);
+          let ariaEl = ariaEls.length ? ariaEls[0] : el;
+          ariaEl.setAttribute('role', 'tab');
+        }
+        for (let tr of this.targets) {
+          tr.setAttribute('role', 'tabpanel');
+        }
       }
     }
   }
