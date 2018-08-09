@@ -656,6 +656,11 @@ class Xt {
       if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
         el.setAttribute('aria-expanded', 'true');
       }
+      // focus
+      if (options.scrollbar) {
+        XtUtil.focusBlock = true;
+        el.focus();
+      }
     }
     // listener dispatch
     el.dispatchEvent(new CustomEvent('on', {detail: {skip: true}}));
@@ -741,6 +746,14 @@ class Xt {
         let role = el.getAttribute('role');
         if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
           el.setAttribute('aria-expanded', 'false');
+        }
+        // focus
+        if (options.scrollbar) {
+          let focus = XtUtil.focus;
+          if (focus) {
+            focus.focus();
+          }
+          XtUtil.focusBlock = false;
         }
       }
       // activationDelay @FIX delay animation
@@ -1072,7 +1085,7 @@ class Xt {
   specialScrollbarOn() {
     let self = this;
     let options = self.options;
-    //
+    // scrollbar on
     if (options.scrollbar) {
       let elements;
       let width = XtUtil.scrollbarWidth();
@@ -1121,7 +1134,7 @@ class Xt {
   specialScrollbarOff() {
     let self = this;
     let options = self.options;
-    //
+    // scrollbar off
     if (options.scrollbar) {
       let elements;
       // fixed

@@ -226,16 +226,25 @@ XtUtil.dataStorage = {
 };
 
 /**
- * Add html.xt-focus when tab focusing
+ * Add html.xt-focus when tab focusing and remember XtUtil.focus
  */
 let xtFocus = function(e) {
   let code = e.keyCode ? e.keyCode : e.which;
   if (code === 9) {
-    document.documentElement.classList.add('xt-focus');
-    document.removeEventListener('keyup', xtFocusHandler);
+    if (!document.documentElement.classList.contains('xt-focus')) {
+      document.documentElement.classList.add('xt-focus');
+    }
+    if (!XtUtil.focusBlock) {
+      XtUtil.focus = document.activeElement;
+    }
   }
 };
+
+XtUtil.focus = null;
+XtUtil.focusBlock = false;
+
 let xtFocusHandler = XtUtil.dataStorage.put(document, 'xtFocusHandler', xtFocus);
+document.removeEventListener('keyup', xtFocusHandler);
 document.addEventListener('keyup', xtFocusHandler);
 
 //////////////////////
