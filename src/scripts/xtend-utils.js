@@ -129,7 +129,7 @@ XtUtil.scrollbarWidth = function () {
  */
 XtUtil.getUniqueID = function () {
   XtUtil.uid = XtUtil.uid !== undefined ? XtUtil.uid : 0;
-  return 'unique-id-' + (XtUtil.uid++);
+  return 'xt-' + (XtUtil.uid++);
 };
 
 /**
@@ -224,6 +224,19 @@ XtUtil.dataStorage = {
     return ret;
   }
 };
+
+/**
+ * Add html.xt-focus when tab focusing
+ */
+let xtFocus = function(e) {
+  let code = e.keyCode ? e.keyCode : e.which;
+  if (code === 9) {
+    document.documentElement.classList.add('xt-focus');
+    document.removeEventListener('keyup', xtFocusHandler);
+  }
+};
+let xtFocusHandler = XtUtil.dataStorage.put(document, 'xtFocusHandler', xtFocus);
+document.addEventListener('keyup', xtFocusHandler);
 
 //////////////////////
 // api

@@ -53,18 +53,18 @@ class Xt {
     // setup (based on xtend mode)
     if (options.targets && options.targets.indexOf('#') !== -1) {
       // xtend all mode
-      this.mode = 'all';
+      this.mode = 'unique';
       this.container = document.documentElement;
       options.max = Infinity;
       this.namespace = options.targets.toString() + '-' + options.classes.toString();
     } else {
       // xtend unique mode
-      this.mode = 'unique';
+      this.mode = 'multiple';
       this.container = this.object;
       this.namespace = XtUtil.getUniqueID();
     }
     // final namespace
-    this.namespace = this.namespace.replace(/\W+/g, '');
+    this.namespace = this.namespace.replace(/^[^a-z]+|[^\w:.-]+/gi, '');
     // currents array based on namespace (so shared between Xt objects)
     if (!this.getCurrents()) {
       this.setCurrents([]);
@@ -86,7 +86,7 @@ class Xt {
       this.elements = XtUtil.arrSingle(this.object);
       // @FIX on next frame set all elements querying the namespace
       XtUtil.requestAnimationFrame.call(window, function () {
-        let namespaceQuery = '[data-xt-id=' + self.namespace + ']';
+        let namespaceQuery = '[data-xt-namespace=' + self.namespace + ']';
         self.elements = XtUtil.arrSingle(document.querySelectorAll(namespaceQuery));
       });
     }
@@ -100,14 +100,21 @@ class Xt {
     if (options.appendTo) {
       let appendToTarget = document.querySelectorAll(options.appendTo);
       if (appendToTarget.length) {
-        for(let el of this.targets) {
+        for (let el of this.targets) {
           appendToTarget[0].appendChild(el);
         }
       }
     }
-    // @FIX set namespace for next frame
+    // elements and targets data
     for (let el of this.elements) {
-      el.setAttribute('data-xt-id', self.namespace);
+      el.setAttribute('data-xt-namespace', self.namespace); // @FIX set namespace for next frame
+      // aria
+      if (self.mode === 'multiple') {
+        let ariaEls = self.getInside(el, options.elementsAria);
+        let ariaEl = ariaEls.length ? ariaEls[0] : el;
+        ariaEl.setAttribute('aria-selected', 'false');
+        ariaEl.setAttribute('aria-expanded', 'false');
+      }
     }
     // currents
     XtUtil.requestAnimationFrame.call(window, function () {
@@ -134,15 +141,29 @@ class Xt {
    * init aria
    */
   initAria() {
-    if (this.targets) {
-      for (let tr of this.targets) {
-        // aria-label
-        let headers = tr.querySelectorAll('h1, h2, h3, h4, h5, h6');
-        let label = headers.length ? headers : this.getElementsFromTarget(tr);
-        if (label.length) {
-          label = label[0].innerText.replace(/\s+/g, ' ').trim();
-          tr.setAttribute('aria-label', label);
+    let self = this;
+    let options = self.options;
+    // aria
+    if (this.elements.length && this.targets.length) {
+      for (let el of this.elements) {
+        let ariaEls = self.getInside(el, options.elementsAria);
+        let ariaEl = ariaEls.length ? ariaEls[0] : el;
+        let id = ariaEl.getAttribute('id');
+        if (!id) {
+          ariaEl.setAttribute('id', self.namespace + '-element');
         }
+      }
+      for (let tr of this.targets) {
+        let id = tr.getAttribute('id');
+        if (!id) {
+          id = self.namespace + '-target';
+          tr.setAttribute('id', id);
+        }
+        let el = this.getElementsFromTarget(tr)[0];
+        let ariaEls = self.getInside(el, options.elementsAria);
+        let ariaEl = ariaEls.length ? ariaEls[0] : el;
+        ariaEl.setAttribute('aria-controls', id);
+        tr.setAttribute('aria-labelledby', ariaEl.getAttribute('id'));
       }
     }
   }
@@ -306,10 +327,10 @@ class Xt {
     if (!this.elements || !this.elements.length) {
       return {all: [], single: null};
     }
-    if (this.mode === 'all') {
+    if (this.mode === 'unique') {
       // choose all elements
       return {all: this.elements, single: this.elements[0]};
-    } else if (this.mode === 'unique') {
+    } else if (this.mode === 'multiple') {
       // choose element by group
       let group = element.getAttribute('data-group');
       if (group) {
@@ -334,10 +355,10 @@ class Xt {
     if (!this.targets || !this.targets.length) {
       return [];
     }
-    if (this.mode === 'all') {
+    if (this.mode === 'unique') {
       // choose all targets
       return this.targets;
-    } else if (this.mode === 'unique') {
+    } else if (this.mode === 'multiple') {
       // choose only target by group
       let group = element.getAttribute('data-group');
       let groupElements = Array.from(this.elements).filter(x => x.getAttribute('data-group') === group);
@@ -354,6 +375,19 @@ class Xt {
         return XtUtil.arrSingle(final);
       }
     }
+  }
+  
+  /**
+   * query for additional
+   * @param {Node|HTMLElement} element Element to search from
+   * @param {String} query Query for querySelectorAll
+   * @returns {Array}
+   */
+  getInside(element, query) {
+    if (!query) {
+      return [];
+    }
+    return XtUtil.arrSingle(element.querySelectorAll(query));
   }
 
   /**
@@ -379,18 +413,6 @@ class Xt {
       let index = groupTargets.findIndex(x => x === target);
       final = groupElements[index];
       return XtUtil.arrSingle(final);
-    }
-  }
-
-  /**
-   * additional elements to activate/deactivate
-   * @returns {NodeList|Array}
-   */
-  getAdditional() {
-    if (!this.options.additional) {
-      return [];
-    } else {
-      return this.object.querySelectorAll(this.options.additional);
     }
   }
 
@@ -469,7 +491,7 @@ class Xt {
       let fElements = this.getElements(element);
       this.addCurrent(fElements.single);
       let targets = this.getTargets(element);
-      let additional = this.getAdditional();
+      let additional = this.getInside(element, this.options.additional);
       // execute defer @FIX delay animation
       this.activationDelay = {};
       if (fElements.all.length) {
@@ -529,7 +551,7 @@ class Xt {
       let fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
       let targets = this.getTargets(element);
-      let additional = this.getAdditional();
+      let additional = this.getInside(element, this.options.additional);
       // execute
       this.activationOff(fElements.all, fElements, 'elements');
       this.activationOff(targets, fElements, 'targets');
@@ -540,7 +562,7 @@ class Xt {
   /**
    * element on activation
    * @param {NodeList|Array} els Elements to be activated
-   * @param {Object} fElements Additional elements
+   * @param {Object} fElements
    * @param {String} type Type of elements
    */
   activationOn(els, fElements, type) {
@@ -568,7 +590,7 @@ class Xt {
   /**
    * element off activation
    * @param {NodeList|Array} els Elements to be deactivated
-   * @param {Object} fElements Additional elements
+   * @param {Object} fElements
    * @param {String} type Type of elements
    */
   activationOff(els, fElements, type) {
@@ -596,7 +618,7 @@ class Xt {
   /**
    * element activation
    * @param {Node|HTMLElement} el Elements to be deactivated
-   * @param {Object} fElements Additional elements
+   * @param {Object} fElements
    * @param {String} type Type of elements
    */
   activationOnActivate(el, fElements, type) {
@@ -607,6 +629,15 @@ class Xt {
     el.classList.remove('out');
     self.activationOnAnimate(el, type);
     // specials
+    if (type === 'elements') {
+      // aria
+      if (self.mode === 'multiple') {
+        let ariaEls = self.getInside(el, options.elementsAria);
+        let ariaEl = ariaEls.length ? ariaEls[0] : el;
+        ariaEl.setAttribute('aria-selected', 'true');
+        ariaEl.setAttribute('aria-expanded', 'true');
+      }
+    }
     if (type === 'targets') {
       self.specialClassHtmlOn();
       self.specialBackdrop(el);
@@ -623,7 +654,7 @@ class Xt {
   /**
    * element deactivation
    * @param {Node|HTMLElement} el Elements to be deactivated
-   * @param {Object} fElements Additional elements
+   * @param {Object} fElements
    * @param {String} type Type of elements
    */
   activationOffDeactivate(el, fElements, type) {
@@ -688,6 +719,15 @@ class Xt {
     let onDone = function (el, type) {
       el.classList.remove('out');
       // specials
+      if (type === 'elements') {
+        // aria
+        if (self.mode === 'multiple') {
+          let ariaEls = self.getInside(el, options.elementsAria);
+          let ariaEl = ariaEls.length ? ariaEls[0] : el;
+          ariaEl.setAttribute('aria-selected', 'false');
+          ariaEl.setAttribute('aria-expanded', 'false');
+        }
+      }
       if (type === 'targets') {
         self.specialScrollbarOff();
       }
@@ -751,7 +791,7 @@ class Xt {
     for (let type in this.activationDelay) {
       let func = this.activationDelay[type];
       if (func.done) {
-        count ++;
+        count++;
       }
     }
     if (count === this.activationDelay.length) {
@@ -1141,6 +1181,31 @@ class XtToggle extends Xt {
     super(object, jsOptions, 'data-xt-toggle');
   }
 
+  /**
+   * init aria
+   */
+  initAria() {
+    super.initAria();
+    let self = this;
+    let options = self.options;
+    // aria
+    if (this.mode === 'multiple') {
+      if (this.container.length) {
+        this.container.setAttribute('role', 'tablist');
+      }
+      if (this.elements.length && this.targets.length) {
+        for (let el of this.elements) {
+          let ariaEls = self.getInside(el, options.elementsAria);
+          let ariaEl = ariaEls.length ? ariaEls[0] : el;
+          ariaEl.setAttribute('role', 'tab');
+        }
+        for (let tr of this.targets) {
+          tr.setAttribute('role', 'tabpanel');
+        }
+      }
+    }
+  }
+
 }
 
 // default
@@ -1181,16 +1246,18 @@ class XtDrop extends Xt {
    * init aria
    */
   initAria() {
-    if (this.targets) {
+    super.initAria();
+    let self = this;
+    let options = self.options;
+    // aria
+    if (this.elements.length && this.targets.length) {
+      for (let el of this.elements) {
+        let ariaEls = self.getInside(el, options.elementsAria);
+        let ariaEl = ariaEls.length ? ariaEls[0] : el;
+        ariaEl.setAttribute('aria-haspopup', 'listbox');
+      }
       for (let tr of this.targets) {
-        // aria-label
-        if (this.options.additional) {
-          let label = this.getAdditional();
-          if (label.length) {
-            label = label[0].innerText.replace(/\s+/g, ' ').trim();
-            tr.setAttribute('aria-label', label);
-          }
-        }
+        tr.setAttribute('role', 'listbox');
       }
     }
   }
@@ -1200,7 +1267,7 @@ class XtDrop extends Xt {
 // default
 
 XtDrop.defaults = {
-  "elements": ":scope",
+  "elementsAria": ":scope > a, :scope > button",
   "targets": ":scope > .drop",
   "additional": ":scope > a, :scope > button",
   "class": "active",
@@ -1238,9 +1305,16 @@ class XtOverlay extends Xt {
    */
   initAria() {
     super.initAria();
-    if (this.targets) {
+    let self = this;
+    let options = self.options;
+    // aria
+    if (this.elements.length && this.targets.length) {
+      for (let el of this.elements) {
+        let ariaEls = self.getInside(el, options.elementsAria);
+        let ariaEl = ariaEls.length ? ariaEls[0] : el;
+        ariaEl.setAttribute('aria-haspopup', 'dialog');
+      }
       for (let tr of this.targets) {
-        // role
         tr.setAttribute('role', 'dialog');
         tr.setAttribute('aria-modal', 'true');
       }
@@ -1298,7 +1372,7 @@ class XtSticky extends Xt {
   initScope() {
     super.initScope();
     // mode
-    this.mode = 'all';
+    this.mode = 'unique';
     // container
     this.container = XtUtil.parents(this.object, '.xt-container');
     if (!this.container.length) {
@@ -1312,7 +1386,6 @@ class XtSticky extends Xt {
     if (!this.targets.length) {
       this.targets = this.object.cloneNode(true);
       this.targets.classList.add('xt-clone');
-      this.targets.setAttribute('aria-hidden', 'true');
       for (let elId of this.targets.querySelectorAll('[id]')) {
         elId.setAttribute('id', elId.getAttribute('id') + '-clone');
       }

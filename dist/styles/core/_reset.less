@@ -25,11 +25,6 @@ body {
   box-sizing: inherit;
 }
 
-:focus {
-  // remove outline
-  outline: 0;
-}
-
 a img {
   // ie10 remove border
   border: 0;
@@ -90,4 +85,11 @@ select {
 
 textarea {
   resize: vertical;
+}
+
+html:not(.xt-focus) {
+  :focus {
+    // disable focus
+    outline: 0;
+  }
 }
