@@ -574,11 +574,14 @@
     padding: 7px;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-    background-color: @white !important;
     font-size: 17px;
     color: @primary;
     line-height: 1;
+    &@{btn-design} {
+      border-radius: 50%;
+      border-color: @white !important;
+      background-color: @white !important;
+    }
     &:hover, &:active, &.active {
       color: @primary;
     }
