@@ -228,7 +228,7 @@ XtUtil.dataStorage = {
 /**
  * limit focus to element
  */
-XtUtil.limitFocus = function(focusable, first, last, e) {
+XtUtil.focusLimit = function(focusable, first, last, e) {
   let code = e.keyCode ? e.keyCode : e.which;
   if (code === 9) {
     if (!focusable.includes(document.activeElement)) {
@@ -243,45 +243,57 @@ XtUtil.limitFocus = function(focusable, first, last, e) {
   }
 };
 
-XtUtil.limitFocusOn = function (element) {
+XtUtil.focusLimitOn = function (element) {
   // vars
   let focusable = Array.from(element.querySelectorAll('a, button, details, input, iframe, select, textarea'));
   focusable = focusable.filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])')); // filter out parent
   let first = focusable[0];
   let last = focusable[focusable.length - 1];
   // event
-  let limitFocusHandler = XtUtil.dataStorage.put(document, 'limitFocusHandler', XtUtil.limitFocus.bind(this).bind(this, focusable, first, last));
-  document.removeEventListener('keyup', limitFocusHandler);
-  document.addEventListener('keyup', limitFocusHandler);
+  let focusLimitHandler = XtUtil.dataStorage.put(document, 'focusLimitHandler', XtUtil.focusLimit.bind(this).bind(this, focusable, first, last));
+  document.removeEventListener('keyup', focusLimitHandler);
+  document.addEventListener('keyup', focusLimitHandler);
 };
 
-XtUtil.limitFocusOff = function () {
+XtUtil.focusLimitOff = function () {
   // event
-  let limitFocusHandler = XtUtil.dataStorage.get(document, 'limitFocusHandler');
-  document.removeEventListener('keyup', limitFocusHandler);
+  let focusLimitHandler = XtUtil.dataStorage.get(document, 'focusLimitHandler');
+  document.removeEventListener('keyup', focusLimitHandler);
 };
 
 /**
- * Add html.xt-focus when tab focusing and remember XtUtil.focus
+ * document focus utilities 
  */
-let xtFocus = function(e) {
+XtUtil.focusUtil = function(e) {
   let code = e.keyCode ? e.keyCode : e.which;
   if (code === 9) {
-    if (!document.documentElement.classList.contains('xt-focus')) {
-      document.documentElement.classList.add('xt-focus');
-    }
+    // remember XtUtil.focus
     if (!XtUtil.focusBlock) {
       XtUtil.focus = document.activeElement;
     }
+    // add html.xt-focus
+    if (!document.documentElement.classList.contains('xt-focus')) {
+      document.documentElement.classList.add('xt-focus');
+    }
   }
 };
-XtUtil.xtFocusHandler = XtUtil.dataStorage.put(document, 'xtFocusHandler', xtFocus);
+
+XtUtil.focusUtilOn = function () {
+  // event
+  let focusUtilHandler = XtUtil.dataStorage.put(document, 'focusUtilHandler', XtUtil.focusUtil.bind(this));
+  document.removeEventListener('keyup', focusUtilHandler);
+  document.addEventListener('keyup', focusUtilHandler);
+};
+
+XtUtil.focusUtilOff = function () {
+  // event
+  let focusUtilHandler = XtUtil.dataStorage.put(document, 'focusUtilHandler', XtUtil.focusUtil.bind(this));
+  document.removeEventListener('keyup', focusUtilHandler);
+};
 
 XtUtil.focus = null;
 XtUtil.focusBlock = false;
-
-document.removeEventListener('keyup', XtUtil.xtFocusHandler);
-document.addEventListener('keyup', XtUtil.xtFocusHandler);
+XtUtil.focusUtilOn();
 
 //////////////////////
 // api

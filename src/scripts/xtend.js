@@ -667,7 +667,7 @@ class Xt {
         if (options.scrollbar) {
           XtUtil.focusBlock = true;
           el.focus();
-          XtUtil.limitFocusOn(el);
+          XtUtil.focusLimitOn(el);
         }
       }
     }
@@ -768,7 +768,7 @@ class Xt {
               focus.focus();
             }
             XtUtil.focusBlock = false;
-            XtUtil.limitFocusOff();
+            XtUtil.focusLimitOff();
           }
         }
       }
