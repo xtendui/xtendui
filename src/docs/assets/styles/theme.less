@@ -125,7 +125,10 @@
   }
   > .container {
     > .flex {
-      min-height: 35rem;
+      .padding(y, big);
+      @media @min-sm {
+        min-height: 35rem;
+      }
     }
   }
   @media @max-sm {
