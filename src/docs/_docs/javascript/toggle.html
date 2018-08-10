@@ -45,15 +45,17 @@ description: Many possible behaviour, interactions and animations are possible w
 
 <pre>
   <code class="js">
-    XtToggle.defaults = {
-      "elements": ":scope > a, :scope > button",
-      "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
-      "class": "active",
-      "instant": { "elements": true },
-      "on": "click",
-      "min": 0,
-      "max": 1
-    };
+XtToggle.defaults = {
+  "elements": ":scope > a, :scope > button",
+  "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
+  "class": "active",
+  "instant": {"elements": true},
+  "on": "click",
+  "toggle": true,
+  "min": 0,
+  "max": 1,
+  "aria": true
+};
   </code>
 </pre>
 
@@ -80,16 +82,18 @@ description: Many possible behaviour, interactions and animations are possible w
 
 <pre>
   <code class="js">
-    XtDrop.defaults = {
-      "targets": ":scope > .drop",
-      "controls": ":scope > a, :scope > button",
-      "class": "active",
-      "instant": { "elements": true },
-      "on": "click",
-      "min": 0,
-      "max": 1,
-      "closeOutside": "body"
-    };
+XtDrop.defaults = {
+  "targets": ":scope > .drop",
+  "controls": ":scope > a, :scope > button",
+  "class": "active",
+  "instant": {"elements": true},
+  "on": "click",
+  "toggle": true,
+  "min": 0,
+  "max": 1,
+  "closeOutside": "body",
+  "aria": true
+};
   </code>
 </pre>
 
@@ -115,19 +119,22 @@ description: Many possible behaviour, interactions and animations are possible w
 
 <pre>
   <code class="js">
-    XtOverlay.defaults = {
-      "elements": ":scope > a, :scope > button",
-      "targets": ":scope > .overlay-outer",
-      "class": "active",
-      "instant": { "elements": true },
-      "on": "click",
-      "min": 0,
-      "max": 1,
-      "appendTo": "body",
-      "backdrop": "targets",
-      "closeInside": ":scope > .xt-backdrop, :scope .overlay-inner > .btn-close",
-      "scrollbar": true
-    };
+XtOverlay.defaults = {
+  "elements": ":scope > a, :scope > button",
+  "targets": ":scope > .overlay-outer",
+  "class": "active",
+  "instant": {"elements": true},
+  "on": "click",
+  "toggle": true,
+  "min": 0,
+  "max": 1,
+  "appendTo": "body",
+  "backdrop": "targets",
+  "classHtml": "xt-overlay",
+  "closeInside": ".overlay-dismiss, :scope > .xt-backdrop, :scope .overlay-inner > .btn-close",
+  "scrollbar": true,
+  "aria": true
+};
   </code>
 </pre>
 
