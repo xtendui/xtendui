@@ -37,7 +37,9 @@
 
 <div class="sticky-0" data-xt-sticky='{"limit": {"top": ".sticky-0-start"}, "hide": "down"}'>
   <div class="box box-squared box-primary">
-    Sticky top <span class="show-sticky">.show-sticky</span>
+    <div class="content">
+      Sticky top <span class="show-sticky">.show-sticky</span>
+    </div>
   </div>
 </div>
 
@@ -45,29 +47,39 @@
 
 <div class="sticky-1" data-xt-sticky='{"contain": {"top": ".sticky-0:not(.xt-clone)"}}'>
   <div class="box box-squared box-secondary">
-    Sticky middle <span class="hide-sticky">.hide-sticky</span>
+    <div class="content">
+      Sticky middle <span class="hide-sticky">.hide-sticky</span>
+    </div>
   </div>
 </div>
 
 <div class="box box-white">
-  <h3>Lorem ipsum dolor sit amet</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
+  <div class="content">
+    <h3>Lorem ipsum dolor sit amet</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
+  </div>
 </div>
 
 <div class="sticky-2" data-xt-sticky='{"contain": {"top": ".sticky-0:not(.xt-clone), .sticky-1:not(.xt-clone)", "bottom": ".sticky-3:not(.xt-clone)"}, "hide": "up"}'>
   <div class="box box-squared box-secondary">
-    Sticky bottom <span class="show-sticky">.show-sticky</span>
+    <div class="content">
+      Sticky bottom <span class="show-sticky">.show-sticky</span>
+    </div>
   </div>
 </div>
 
 <div class="box box-white">
-  <h3>Lorem ipsum dolor sit amet</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
+  <div class="content">
+    <h3>Lorem ipsum dolor sit amet</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
+  </div>
 </div>
 
 <div class="sticky-3" data-xt-sticky='{"contain": {"top": ".sticky-0:not(.xt-clone), .sticky-1:not(.xt-clone), .sticky-2:not(.xt-clone)"}, "hide": "down"}'>
   <div class="box box-squared box-secondary">
-    Sticky last <span class="hide-sticky">.hide-sticky</span>
+    <div class="content">
+      Sticky last <span class="hide-sticky">.hide-sticky</span>
+    </div>
   </div>
 </div>
 
@@ -105,7 +117,7 @@
       document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
       // init
       function initAll() {
-        XtUtil.initAll();
+        Xt.initAll();
         // https://github.com/marcj/css-element-queries
         new ResizeSensor(document.getElementById('body-outer'), function() {
           parent.resizeIframe(window.frameElement.getAttribute('id'));

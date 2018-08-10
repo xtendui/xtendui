@@ -35,39 +35,47 @@
 
     <div id="body-outer">
 <div id="body-inner" class="demo-source-from">
-<div data-xt-toggle='{"min":1, "instant": {"elements": true, "targets": true, "additional": true}}'>
-
+<div class="list list-space-small align-items-center"
+     data-xt-toggle='{"min":1, "instant": {"elements": true, "targets": true, "additional": true}}'>
   <button type="button" class="btn">
-    Toggle 0
+    <span>Toggle 0</span>
   </button>
   <button type="button" class="btn">
-    Toggle 1
+    <span>Toggle 1</span>
   </button>
   <button type="button" class="btn">
-    Toggle 2
+    <span>Toggle 2</span>
   </button>
   <div class="alert toggle-block">
-    Target 0
-    <div class="alert toggle-block">
-      Nested not toggled
+    <div class="content">
+      Target 0
+      <div class="alert toggle-block">
+        <div class="content">
+          Nested not toggled
+        </div>
+      </div>
     </div>
   </div>
   <div class="alert toggle-block">
-    Target 1
-    <div class="alert toggle-block">
-      Nested not toggled
+    <div class="content">
+      Target 1
+      <div class="alert toggle-block">
+        <div class="content">
+          Nested not toggled
+        </div>
+      </div>
     </div>
   </div>
   <div class="alert toggle-block">
-    Target 2
-    <div class="alert toggle-block">
-      Nested not toggled
+    <div class="content">
+      Target 2
+      <div class="alert toggle-block">
+        <div class="content">
+          Nested not toggled
+        </div>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="alert">
-  Space below doesn't change
 </div>
 </div>
     </div>
@@ -81,7 +89,7 @@
       document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
       // init
       function initAll() {
-        XtUtil.initAll();
+        Xt.initAll();
         // https://github.com/marcj/css-element-queries
         new ResizeSensor(document.getElementById('body-outer'), function() {
           parent.resizeIframe(window.frameElement.getAttribute('id'));

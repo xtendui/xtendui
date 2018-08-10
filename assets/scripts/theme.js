@@ -4,8 +4,6 @@
 
 // formatCode
 
-import {XtUtil} from "../../../scripts/xtend-utils";
-
 const formatCode = function (source, lang) {
   let inner = Array.from(source.querySelectorAll('.demo-source-from'));
   inner = inner.filter(x => !x.querySelectorAll('.demo-source-from').length); // filter out nested
@@ -90,22 +88,22 @@ for(let el of document.querySelectorAll('.site-article > h2, .site-article > h3'
   el.setAttribute('id', id);
   el.innerHTML = '<a href="#' + id + '">' + el.innerHTML + '</a>';
   el.classList.add('make-anchor');
-  el.append(XtUtil.createElement('<span class="site-article-anchor"><div class="btn"><span class="icon-link" aria-hidden="true"></span></div></span>'));
+  el.append(Xt.createElement('<span class="site-article-anchor"><div class="btn"><span class="icon-link" aria-hidden="true"></span></div></span>'));
 }
 
 // .site-aside-text
 
 for(let el of document.querySelectorAll('.site-aside-text > .btn:not(.different)')) {
-  let container = XtUtil.parents(el, '.site-aside-text')[0];
+  let container = Xt.parents(el, '.site-aside-text')[0];
   for(let element of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
     if (element.tagName === 'H2') {
-      let appendItem = XtUtil.createElement('<div class="site-aside-sub-container"></div>');
+      let appendItem = Xt.createElement('<div class="site-aside-sub-container"></div>');
       container.append(appendItem);
-      appendItem.append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-nodesign btn-site-aside-sub">' + element.textContent + '</a>'));
-      appendItem.append(XtUtil.createElement('<div class="site-aside-subsub collapse-height"></div>'));
+      appendItem.append(Xt.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-nodesign btn-site-aside-sub">' + element.textContent + '</a>'));
+      appendItem.append(Xt.createElement('<div class="site-aside-subsub collapse-height"></div>'));
     } else if (element.tagName === 'H3') {
       let subs = container.querySelectorAll('.site-aside-subsub');
-      subs[subs.length - 1].append(XtUtil.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-nodesign btn-site-aside-subsub">' + element.textContent + '</a>'));
+      subs[subs.length - 1].append(Xt.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-nodesign btn-site-aside-subsub">' + element.textContent + '</a>'));
     }
   }
 }
@@ -117,7 +115,7 @@ for(let el of document.querySelectorAll('.site-aside-text')) {
     "on": "mouseenter",
     "off": "mouseleave",
     "min": 0,
-    "max": 1
+    "max": Infinity
   });
 }
 
@@ -125,6 +123,7 @@ for(let el of document.querySelectorAll('.site-aside-text')) {
 
 const activateAsideScroll = function (els, scrollTop) {
   const dist = window.innerHeight / 5;
+  let last;
   for(let el of els) {
     let href = el.getAttribute('href');
     if (href) {
@@ -134,11 +133,11 @@ const activateAsideScroll = function (els, scrollTop) {
       let bottom = Infinity;
       if (scrollTop >= top - dist && scrollTop < bottom - dist) {
         if (!el.classList.contains('active')) {
-          for(let element of els) {
-            if (element !== el) {
-              element.classList.remove('active', 'open');
-            } else {
+          for (let element of els) {
+            if (element === el) {
               element.classList.add('active', 'open');
+            } else {
+              element.classList.remove('active', 'open');
             }
           }
         }
@@ -150,10 +149,10 @@ const activateAsideScroll = function (els, scrollTop) {
 window.addEventListener('scroll', function (e) {
   let scrollTop = document.documentElement.scrollTop;
   let sub = Array.from(document.querySelectorAll('.btn-site-aside-sub'));
-  sub = sub.filter(x => !XtUtil.parents(x, '.xt-clone').length); // filter out parent
+  sub = sub.filter(x => !Xt.parents(x, '.xt-clone').length); // filter out parent
   activateAsideScroll(sub, scrollTop);
   let subsub = Array.from(document.querySelectorAll('.btn-site-aside-sub + .site-aside-subsub .btn-site-aside-subsub'));
-  subsub = subsub.filter(x => !XtUtil.parents(x, '.xt-clone').length); // filter out parent
+  subsub = subsub.filter(x => !Xt.parents(x, '.xt-clone').length); // filter out parent
   activateAsideScroll(subsub, scrollTop);
 });
 
@@ -166,9 +165,9 @@ window.addEventListener('scroll', function (e) {
 const populateDemo = function (container, i) {
   let items = container.querySelectorAll('.demo-item');
   // multiple elements
-  let prepend = XtUtil.createElement('<div class="demo-tabs"><div class="demo-tabs-left"></div><div class="demo-tabs-right"></div></div>');
+  let prepend = Xt.createElement('<div class="demo-tabs"><div class="demo-tabs-left"></div><div class="demo-tabs-right"></div></div>');
   container.prepend(prepend);
-  let append = XtUtil.createElement('<button type="button" class="btn btn-secondary-empty btn-fullscreen" data-toggle="tooltip" data-placement="top" title="Open fullscreen"><span class="icon-enlarge2"></span></button>');
+  let append = Xt.createElement('<button type="button" class="btn btn-secondary-empty btn-fullscreen" data-toggle="tooltip" data-placement="top" title="Open fullscreen"><span class="icon-enlarge2"></span></button>');
   container.querySelectorAll('.demo-tabs-right')[0].append(append);
   // don't show tabs on single
   if (items.length === 1) {
@@ -187,23 +186,23 @@ const populateDemo = function (container, i) {
         name = 'demo #' + k;
       }
     }
-    let appendBtn = XtUtil.createElement('<button type="button" class="btn btn-secondary-empty">' + name + '</button>');
+    let appendBtn = Xt.createElement('<button type="button" class="btn btn-secondary-empty">' + name + '</button>');
     let btn = container.querySelectorAll('.demo-tabs-left')[0].append(appendBtn);
     btn = container.querySelectorAll('.demo-tabs-left .btn')[k];
     // iframe append
     let src = item.getAttribute('data-iframe');
     let id = 'iframe' + i + k;
     if (src) {
-      let appendIframe = XtUtil.createElement('<iframe data-src="' + src + '" frameborder="0" name="' + id + '"></iframe>');
+      let appendIframe = Xt.createElement('<iframe data-src="' + src + '" frameborder="0" name="' + id + '"></iframe>');
       item.append(appendIframe);
     }
     // tabs
-    let appendItem = XtUtil.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-empty btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>');
+    let appendItem = Xt.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-empty btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>');
     item.append(appendItem);
     // https://github.com/zenorocha/clipboard.js/
     let clipboard = new Clipboard('.btn-clipboard', {
       target: function (trigger) {
-        return XtUtil.parents(trigger, '.demo')[0].querySelectorAll('.demo-item.active .demo-code-body-item.active .hljs')[0];
+        return Xt.parents(trigger, '.demo')[0].querySelectorAll('.demo-item.active .demo-code-body-item.active .hljs')[0];
       }
     });
     clipboard.on('success', function (e) {
@@ -273,7 +272,7 @@ window.initIframe = function(name) {
   let src = 'iframe[name="' + name + '"]';
   let iframe = document.querySelectorAll(src)[0];
   iframe.classList.add('show');
-  let item = XtUtil.parents(iframe, '.demo-item')[0];
+  let item = Xt.parents(iframe, '.demo-item')[0];
   if (!item.classList.contains('populated')) {
     populateIframe(item, iframe);
     window.resizeIframe(name);
@@ -303,15 +302,15 @@ function populateIframe(item, iframe) {
   let js = iframe.contentWindow.document.body.querySelectorAll('js-script')[0];
   // inject code
   if (html) {
-    let appendItem = XtUtil.createElement('<div class="demo-source" data-lang="html">' + html.innerHTML + '</div>');
+    let appendItem = Xt.createElement('<div class="demo-source" data-lang="html">' + html.innerHTML + '</div>');
     iframe.append(appendItem);
   }
   if (less) {
-    let appendItem = XtUtil.createElement('<div class="demo-source" data-lang="less">' + less.innerHTML + '</div>');
+    let appendItem = Xt.createElement('<div class="demo-source" data-lang="less">' + less.innerHTML + '</div>');
     iframe.append(appendItem);
   }
   if (js) {
-    let appendItem = XtUtil.createElement('<div class="demo-source" data-lang="js">' + js.innerHTML + '</div>');
+    let appendItem = Xt.createElement('<div class="demo-source" data-lang="js">' + js.innerHTML + '</div>');
     iframe.append(appendItem);
   }
   // populate
@@ -330,10 +329,10 @@ function populateIframe(item, iframe) {
 const populateSources = function (item, element, z) {
   let lang = element.getAttribute('data-lang');
   // populate tabs
-  let appendCode = XtUtil.createElement('<div class="demo-code-body-item"><pre><code></code></pre></div>');
+  let appendCode = Xt.createElement('<div class="demo-code-body-item"><pre><code></code></pre></div>');
   let codeInside = item.querySelectorAll('.demo-code-body')[0].append(appendCode);
   codeInside = item.querySelectorAll('.demo-code-body .demo-code-body-item')[z].querySelectorAll('pre code')[0];
-  let appendBtn = XtUtil.createElement('<button type="button" class="btn btn-secondary-empty">' + lang + '</button>');
+  let appendBtn = Xt.createElement('<button type="button" class="btn btn-secondary-empty">' + lang + '</button>');
   let btnInside = item.querySelectorAll('.demo-code-tabs-left')[0].append(appendBtn);
   //btnInside = item.querySelectorAll('.demo-code-tabs-left').querySelectorAll('.btn')[z];
   // format code
@@ -399,7 +398,7 @@ for(let element of document.querySelectorAll('.demo-cols-nested .col')) {
 // init all
 
 function initAll() {
-  XtUtil.initAll();
+  Xt.initAll();
 }
 
 if (document.readyState === "loading") {
