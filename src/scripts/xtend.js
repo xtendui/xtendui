@@ -138,40 +138,42 @@ class Xt {
     let self = this;
     let options = self.options;
     // aria
-    if (this.targets.length) {
-      for (let el of this.elements) {
-        // id
-        let ariaEls = self.getInside(el, options.controls);
-        let ariaEl = ariaEls.length ? ariaEls[0] : el;
-        let id = ariaEl.getAttribute('id');
-        el.dataset.namespace = XtUtil.getUniqueID();
-        if (!id) {
-          ariaEl.setAttribute('id', el.dataset.namespace + '-element');
+    if (options.aria) {
+      if (this.targets.length) {
+        for (let el of this.elements) {
+          // id
+          let ariaEls = self.getInside(el, options.controls);
+          let ariaEl = ariaEls.length ? ariaEls[0] : el;
+          let id = ariaEl.getAttribute('id');
+          el.dataset.namespace = XtUtil.getUniqueID();
+          if (!id) {
+            ariaEl.setAttribute('id', el.dataset.namespace + '-element');
+          }
+          // selected
+          ariaEl.setAttribute('aria-selected', 'false');
         }
-        // selected
-        ariaEl.setAttribute('aria-selected', 'false');
-      }
-      for (let tr of this.targets) {
-        // id
-        let el = this.getElementsFromTarget(tr)[0];
-        let id = tr.getAttribute('id');
-        tr.dataset.namespace = el.dataset.namespace;
-        if (!id) {
-          id = tr.dataset.namespace + '-target';
-          tr.setAttribute('id', id);
+        for (let tr of this.targets) {
+          // id
+          let el = this.getElementsFromTarget(tr)[0];
+          let id = tr.getAttribute('id');
+          tr.dataset.namespace = el.dataset.namespace;
+          if (!id) {
+            id = tr.dataset.namespace + '-target';
+            tr.setAttribute('id', id);
+          }
+          // tabindex
+          tr.setAttribute('tabindex', '-1');
+          // expanded
+          let role = tr.getAttribute('role');
+          if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
+            tr.setAttribute('aria-expanded', 'false');
+          }
+          // depending on el
+          let ariaEls = self.getInside(el, options.controls);
+          let ariaEl = ariaEls.length ? ariaEls[0] : el;
+          ariaEl.setAttribute('aria-controls', id);
+          tr.setAttribute('aria-labelledby', ariaEl.getAttribute('id'));
         }
-        // tabindex
-        tr.setAttribute('tabindex', '-1');
-        // expanded
-        let role = tr.getAttribute('role');
-        if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
-          tr.setAttribute('aria-expanded', 'false');
-        }
-        // depending on el
-        let ariaEls = self.getInside(el, options.controls);
-        let ariaEl = ariaEls.length ? ariaEls[0] : el;
-        ariaEl.setAttribute('aria-controls', id);
-        tr.setAttribute('aria-labelledby', ariaEl.getAttribute('id'));
       }
     }
   }
@@ -639,9 +641,11 @@ class Xt {
     // specials
     if (type === 'elements') {
       // aria
-      let ariaEls = self.getInside(el, options.controls);
-      let ariaEl = ariaEls.length ? ariaEls[0] : el;
-      ariaEl.setAttribute('aria-selected', 'true');
+      if (options.aria) {
+        let ariaEls = self.getInside(el, options.controls);
+        let ariaEl = ariaEls.length ? ariaEls[0] : el;
+        ariaEl.setAttribute('aria-selected', 'true');
+      }
     }
     if (type === 'targets') {
       self.specialClassHtmlOn();
@@ -652,14 +656,18 @@ class Xt {
       self.specialCloseOn(el, fElements.single);
       self.specialScrollbarOn();
       // aria
-      let role = el.getAttribute('role');
-      if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
-        el.setAttribute('aria-expanded', 'true');
+      if (options.aria) {
+        let role = el.getAttribute('role');
+        if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
+          el.setAttribute('aria-expanded', 'true');
+        }
       }
       // focus
-      if (options.scrollbar) {
-        XtUtil.focusBlock = true;
-        el.focus();
+      if (options.aria) {
+        if (options.scrollbar) {
+          XtUtil.focusBlock = true;
+          el.focus();
+        }
       }
     }
     // listener dispatch
@@ -736,24 +744,30 @@ class Xt {
       // specials
       if (type === 'elements') {
         // aria
-        let ariaEls = self.getInside(el, options.controls);
-        let ariaEl = ariaEls.length ? ariaEls[0] : el;
-        ariaEl.setAttribute('aria-selected', 'false');
+        if (options.aria) {
+          let ariaEls = self.getInside(el, options.controls);
+          let ariaEl = ariaEls.length ? ariaEls[0] : el;
+          ariaEl.setAttribute('aria-selected', 'false');
+        }
       }
       if (type === 'targets') {
         self.specialScrollbarOff();
         // aria
-        let role = el.getAttribute('role');
-        if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
-          el.setAttribute('aria-expanded', 'false');
+        if (options.aria) {
+          let role = el.getAttribute('role');
+          if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
+            el.setAttribute('aria-expanded', 'false');
+          }
         }
         // focus
-        if (options.scrollbar) {
-          let focus = XtUtil.focus;
-          if (focus) {
-            focus.focus();
+        if (options.aria) {
+          if (options.scrollbar) {
+            let focus = XtUtil.focus;
+            if (focus) {
+              focus.focus();
+            }
+            XtUtil.focusBlock = false;
           }
-          XtUtil.focusBlock = false;
         }
       }
       // activationDelay @FIX delay animation
@@ -1214,19 +1228,21 @@ class XtToggle extends Xt {
     let self = this;
     let options = self.options;
     // aria
-    if (this.targets.length) {
-      if (this.mode === 'multiple') {
-        this.object.setAttribute('role', 'tablist');
-        if (options.max > 1) {
-          this.object.setAttribute('aria-multiselectable', 'true');
-        }
-        for (let el of this.elements) {
-          let ariaEls = self.getInside(el, options.controls);
-          let ariaEl = ariaEls.length ? ariaEls[0] : el;
-          ariaEl.setAttribute('role', 'tab');
-        }
-        for (let tr of this.targets) {
-          tr.setAttribute('role', 'tabpanel');
+    if (options.aria) {
+      if (this.targets.length) {
+        if (this.mode === 'multiple') {
+          this.object.setAttribute('role', 'tablist');
+          if (options.max > 1) {
+            this.object.setAttribute('aria-multiselectable', 'true');
+          }
+          for (let el of this.elements) {
+            let ariaEls = self.getInside(el, options.controls);
+            let ariaEl = ariaEls.length ? ariaEls[0] : el;
+            ariaEl.setAttribute('role', 'tab');
+          }
+          for (let tr of this.targets) {
+            tr.setAttribute('role', 'tabpanel');
+          }
         }
       }
     }
@@ -1244,7 +1260,8 @@ XtToggle.defaults = {
   "on": "click",
   "toggle": true,
   "min": 0,
-  "max": 1
+  "max": 1,
+  "aria": true
 };
 
 // export
@@ -1276,14 +1293,16 @@ class XtDrop extends Xt {
     let self = this;
     let options = self.options;
     // aria
-    if (this.targets.length) {
-      for (let el of this.elements) {
-        let ariaEls = self.getInside(el, options.controls);
-        let ariaEl = ariaEls.length ? ariaEls[0] : el;
-        ariaEl.setAttribute('aria-haspopup', 'listbox');
-      }
-      for (let tr of this.targets) {
-        tr.setAttribute('role', 'listbox');
+    if (options.aria) {
+      if (this.targets.length) {
+        for (let el of this.elements) {
+          let ariaEls = self.getInside(el, options.controls);
+          let ariaEl = ariaEls.length ? ariaEls[0] : el;
+          ariaEl.setAttribute('aria-haspopup', 'listbox');
+        }
+        for (let tr of this.targets) {
+          tr.setAttribute('role', 'listbox');
+        }
       }
     }
   }
@@ -1301,7 +1320,8 @@ XtDrop.defaults = {
   "toggle": true,
   "min": 0,
   "max": 1,
-  "closeOutside": "body"
+  "closeOutside": "body",
+  "aria": true
 };
 
 // export
@@ -1333,15 +1353,17 @@ class XtOverlay extends Xt {
     let self = this;
     let options = self.options;
     // aria
-    if (this.targets.length) {
-      for (let el of this.elements) {
-        let ariaEls = self.getInside(el, options.controls);
-        let ariaEl = ariaEls.length ? ariaEls[0] : el;
-        ariaEl.setAttribute('aria-haspopup', 'dialog');
-      }
-      for (let tr of this.targets) {
-        tr.setAttribute('role', 'dialog');
-        tr.setAttribute('aria-modal', 'true');
+    if (options.aria) {
+      if (this.targets.length) {
+        for (let el of this.elements) {
+          let ariaEls = self.getInside(el, options.controls);
+          let ariaEl = ariaEls.length ? ariaEls[0] : el;
+          ariaEl.setAttribute('aria-haspopup', 'dialog');
+        }
+        for (let tr of this.targets) {
+          tr.setAttribute('role', 'dialog');
+          tr.setAttribute('aria-modal', 'true');
+        }
       }
     }
   }
@@ -1363,7 +1385,8 @@ XtOverlay.defaults = {
   "backdrop": "targets",
   "classHtml": "xt-overlay",
   "closeInside": ".overlay-dismiss, :scope > .xt-backdrop, :scope .overlay-inner > .btn-close",
-  "scrollbar": true
+  "scrollbar": true,
+  "aria": true
 };
 
 // export
@@ -1729,7 +1752,8 @@ XtSticky.defaults = {
   "position": "top",
   "limit": {"bottom": Infinity},
   "contain": false,
-  "hide": false
+  "hide": false,
+  "aria": false
 };
 
 // export
@@ -1888,7 +1912,8 @@ XtFade.defaults = {
   "max": Infinity,
   "distance": 0.2,
   "delayOn": false,
-  "delayOff": false
+  "delayOff": false,
+  "aria": false
 };
 
 // export
