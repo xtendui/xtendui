@@ -154,35 +154,65 @@
             <div class="flex flex-auto justify-content-between align-items-start">
 
               <div class="site-breadcrumbs-body flex flex-space-none"
-                   data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button", "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave"}'>
+                   data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
+                   "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave"}'>
                 {% for collection in site.collections %}
                 {% if collection.label == page.collection %}
 
                 {% assign sorted = site.[collection.label] | sort: 'order' %}
                 {% for p in sorted %}
                 {% if p.categories[0] == collection.label %}
+                {% assign subsorted = site.[collection.label] | where: 'categories', p.title | sort: 'order' %}
+                {% if subsorted.size > 0 %}
                 <div class="site-breadcrumbs-body-main">
                   <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary btn-nodesign">
                     <span>{{ p.title }}</span>
                   </a>
-                  {% assign subsorted = site.[collection.label] | where: 'categories', p.title | sort: 'order' %}
                   <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
-                    {% if subsorted.size > 0 %}
                     <div class="site-breadcrumbs-body-sub-inner">
                       {% for pa in subsorted %}
-                      <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn-primary btn-nodesign">
+                      <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn-primary btn-nodesign {% if pa.title == page.title %}active{% endif %}">
                         <span>{{ pa.title }}</span>
                       </a>
                       {% endfor %}
                     </div>
-                    {% endif %}
                   </div>
                 </div>
+                {% endif %}
                 {% endif %}
                 {% endfor %}
 
                 {% endif %}
                 {% endfor %}
+              </div>
+
+              <div class="site-breadcrumbs-body site-breadcrumbs-body-mobile flex flex-space-none"
+                   data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
+                   "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave"}'>
+
+                <div class="site-breadcrumbs-body-main">
+                  <button type="button" class="btn btn-primary btn-nodesign">
+                    <span>{{ page.categories }}</span>
+                  </button>
+                  <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
+                    <div class="site-breadcrumbs-body-sub-inner">
+                      {% for collection in site.collections %}
+                      {% if collection.label == page.collection %}
+
+                      {% assign sorted = site.[collection.label] | sort: 'order' %}
+                      {% for p in sorted %}
+                      {% if p.categories[0] == collection.label %}
+                      <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary btn-nodesign">
+                        <span>{{ p.title }}</span>
+                      </a>
+                      {% endif %}
+                      {% endfor %}
+
+                      {% endif %}
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div class="site-breadcrumbs-meta flex flex-space-none align-items-center">

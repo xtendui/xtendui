@@ -15,6 +15,7 @@ html {
 body {
   overflow-x: hidden;
   overflow-y: scroll;
+  .overflow-style();
   background-color: @white;
   .font-sans-regular();
   .font-medium();
@@ -161,12 +162,13 @@ code {
 }
 
 pre {
+  overflow-x: hidden;
+  overflow-y: auto;
+  .overflow-style();
   .margin(y, layout) !important; // no margins :first-child or :last-child
   .margin(y, medium);
   width: 100%;
   max-height: 30rem;
-  overflow-x: hidden;
-  overflow-y: auto;
   line-height: 0;
   code {
     .padding(all, medium) !important;

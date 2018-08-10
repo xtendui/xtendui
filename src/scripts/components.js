@@ -214,8 +214,8 @@ class XtCore {
       let el = this.getElementsFromTarget(tr)[0];
       if (el) {
         // handler
-        let onHandler = Xt.dataStorage.put(el, 'onHandler', self.eventOnHandler.bind(self).bind(self, el));
-        let offHandler = Xt.dataStorage.put(el, 'offHandler', self.eventOffHandler.bind(self).bind(self, el));
+        let onHandler = Xt.dataStorage.get(el, 'onHandler');
+        let offHandler = Xt.dataStorage.get(el, 'offHandler');
         // listener
         tr.addEventListener('on', onHandler);
         tr.addEventListener('off', offHandler);
@@ -1025,11 +1025,12 @@ class XtCore {
       let closeElements = el.querySelectorAll(options.closeInside);
       Xt.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
-          // handler
-          let specialCloseOnHandler = Xt.dataStorage.put(el, 'specialCloseOnHandler', self.specialCloseOnHandler.bind(self).bind(self, closeElement, single));
-          // event
-          closeElement.removeEventListener('click', specialCloseOnHandler);
-          closeElement.addEventListener('click', specialCloseOnHandler);
+          let events = Xt.clickEvents;
+          let specialCloseInsideHandler = Xt.dataStorage.put(el, 'specialCloseInsideHandler', self.specialCloseInsideHandler.bind(self).bind(self, closeElement, single));
+          for (let event of events) {
+            closeElement.removeEventListener(event, specialCloseInsideHandler);
+            closeElement.addEventListener(event, specialCloseInsideHandler);
+          }
         }
       });
     }
@@ -1038,11 +1039,12 @@ class XtCore {
       let closeElements = document.querySelectorAll(options.closeOutside);
       Xt.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
-          // handler
-          let specialCloseOffHandler = Xt.dataStorage.put(el, 'specialCloseOffHandler', self.specialCloseOffHandler.bind(self).bind(self, el, single));
-          // event
-          closeElement.removeEventListener('click', specialCloseOffHandler);
-          closeElement.addEventListener('click', specialCloseOffHandler);
+          let events = Xt.clickEvents;
+          let specialCloseOutsideHandler = Xt.dataStorage.put(el, 'specialCloseOutsideHandler', self.specialCloseOutsideHandler.bind(self).bind(self, el, single));
+          for (let event of events) {
+            closeElement.removeEventListener(event, specialCloseOutsideHandler);
+            closeElement.addEventListener(event, specialCloseOutsideHandler);
+          }
         }
       });
     }
@@ -1059,17 +1061,22 @@ class XtCore {
     if (options.closeInside) {
       let closeElements = el.querySelectorAll(options.closeInside);
       for (let closeElement of closeElements) {
-        // handler
-        let specialCloseOnHandler = Xt.dataStorage.get(el, 'specialCloseOnHandler');
-        closeElement.removeEventListener('click', specialCloseOnHandler);
+        let events = Xt.clickEvents;
+        let specialCloseInsideHandler = Xt.dataStorage.get(el, 'specialCloseInsideHandler');
+        for (let event of events) {
+          closeElement.removeEventListener(event, specialCloseInsideHandler);
+        }
       }
     }
     // closeOutside
     if (options.closeOutside) {
       let closeElements = document.querySelectorAll(options.closeOutside);
       for (let closeElement of closeElements) {
-        let specialCloseOffHandler = Xt.dataStorage.get(el, 'specialCloseOffHandler');
-        closeElement.removeEventListener('click', specialCloseOffHandler);
+        let events = Xt.clickEvents;
+        let specialCloseOutsideHandler = Xt.dataStorage.get(el, 'specialCloseOutsideHandler');
+        for (let event of events) {
+          closeElement.removeEventListener(event, specialCloseOutsideHandler);
+        }
       }
     }
   }
@@ -1080,7 +1087,7 @@ class XtCore {
    * @param {Node|HTMLElement} single
    * @param {Event} e
    */
-  specialCloseOnHandler(checkEl, single, e) {
+  specialCloseInsideHandler(checkEl, single, e) {
     if (Xt.checkInside(e, Xt.arrSingle(checkEl))) {
       this.eventOff(single);
     }
@@ -1092,7 +1099,7 @@ class XtCore {
    * @param {Node|HTMLElement} single
    * @param {Event} e
    */
-  specialCloseOffHandler(checkEl, single, e) {
+  specialCloseOutsideHandler(checkEl, single, e) {
     if (Xt.checkOutside(e, Xt.arrSingle(checkEl))) {
       this.eventOff(single);
     }
