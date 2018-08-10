@@ -4,8 +4,6 @@
 
 'use strict';
 
-import {XtUtil} from './xtend-utils';
-
 //////////////////////
 // Xt
 //////////////////////

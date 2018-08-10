@@ -4,8 +4,6 @@
 
 // formatCode
 
-import {XtUtil} from "../../../scripts/xtend-utils";
-
 const formatCode = function (source, lang) {
   let inner = Array.from(source.querySelectorAll('.demo-source-from'));
   inner = inner.filter(x => !x.querySelectorAll('.demo-source-from').length); // filter out nested
