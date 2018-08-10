@@ -386,6 +386,37 @@ class XtCore {
   }
 
   /**
+   * choose which elements to activate/deactivate from target (based on xtend mode and containers)
+   * @param {Node|HTMLElement} element Target to trigger interaction on
+   * @returns {Array}
+   */
+  getElementsFromTarget(target) {
+    if (!this.elements || !this.elements.length) {
+      return [];
+    }
+    if (this.mode === 'unique') {
+      // choose all targets
+      return this.elements;
+    } else if (this.mode === 'multiple') {
+      // choose only target by group
+      let group = target.getAttribute('data-group');
+      let groupElements = Array.from(this.elements).filter(x => x.getAttribute('data-group') === group);
+      let groupTargets = Array.from(this.targets).filter(x => x.getAttribute('data-group') === group);
+      let final;
+      if (group) {
+        // all group targets if group
+        final = groupElements;
+        return Xt.arrSingle(final);
+      } else {
+        // not group targets by index if not group
+        let index = groupTargets.findIndex(x => x === target);
+        final = groupElements[index];
+        return Xt.arrSingle(final);
+      }
+    }
+  }
+
+  /**
    * query for inside
    * @param {Node|HTMLElement} element Element to search from
    * @param {String} query Query for querySelectorAll
@@ -396,32 +427,6 @@ class XtCore {
       return [];
     }
     return Xt.arrSingle(element.querySelectorAll(query));
-  }
-
-  /**
-   * choose which elements to activate/deactivate from target (based on xtend mode and containers)
-   * @param {Node|HTMLElement} element Target to trigger interaction on
-   * @returns {Array}
-   */
-  getElementsFromTarget(target) {
-    if (!this.elements || !this.elements.length) {
-      return [];
-    }
-    // choose only target by group
-    let group = target.getAttribute('data-group');
-    let groupElements = Array.from(this.elements).filter(x => x.getAttribute('data-group') === group);
-    let groupTargets = Array.from(this.targets).filter(x => x.getAttribute('data-group') === group);
-    let final;
-    if (group) {
-      // all group targets if group
-      final = groupElements;
-      return Xt.arrSingle(final);
-    } else {
-      // not group targets by index if not group
-      let index = groupTargets.findIndex(x => x === target);
-      final = groupElements[index];
-      return Xt.arrSingle(final);
-    }
   }
 
   /**
