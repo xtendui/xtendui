@@ -19,12 +19,12 @@ description: Lorem Ipsum
 <h3>All</h3>
 
 <p>You can initialize all javascript components on the document attributes (using <code>[data-xt-]</code>) using
-  <strong>XtUtil</strong>. Be sure to initialize them when the page is ready.</p>
+  <strong>Xt</strong>. Be sure to initialize them when the page is ready.</p>
 
 <pre>
   <code class="js">
     function initAll() {
-      XtUtil.initAll();
+      Xt.initAll();
     }
 
     if (document.readyState === "loading") {
@@ -39,7 +39,7 @@ description: Lorem Ipsum
 
 <pre>
   <code class="js">
-    XtUtil.initAll(document.querySelectorAll('.my-container'));
+    Xt.initAll(document.querySelectorAll('.my-container'));
   </code>
 </pre>
 

@@ -4,13 +4,13 @@
 
 'use strict';
 
-import {XtToggle, XtDrop, XtOverlay, XtFade, XtSticky} from './xtend';
+import {XtCore, XtToggle, XtDrop, XtOverlay, XtSticky, XtFade} from './xtend';
 
 //////////////////////
 // constructor
 //////////////////////
 
-const XtUtil = {};
+const Xt = {};
 
 //////////////////////
 // properties
@@ -18,7 +18,7 @@ const XtUtil = {};
 
 // Xt currents based on namespace (so shared between Xt objects)
 
-XtUtil.currents = {};
+Xt.currents = {};
 
 //////////////////////
 // methods
@@ -27,7 +27,7 @@ XtUtil.currents = {};
 /**
  * init all data-xt classes
  */
-XtUtil.initAll = function (container = document) {
+Xt.initAll = function (container = document) {
   // xt-toggle
   for (let el of container.querySelectorAll('[data-xt-toggle]')) {
     new XtToggle(el);
@@ -49,9 +49,9 @@ XtUtil.initAll = function (container = document) {
 /**
  * request animation frame
  * @returns {Number} animationFrameID
- * USAGE: let animationFrame = XtUtil.requestAnimationFrame.call(window, function () {});
+ * USAGE: let animationFrame = Xt.requestAnimationFrame.call(window, function () {});
  */
-XtUtil.requestAnimationFrame = function () {
+Xt.requestAnimationFrame = function () {
   return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
     window.setTimeout(callback, 1000 / 60);
   };
@@ -59,9 +59,9 @@ XtUtil.requestAnimationFrame = function () {
 
 /**
  * cancel animation frame
- * USAGE: XtUtil.cancelAnimationFrame.call(window, animationFrameID);
+ * USAGE: Xt.cancelAnimationFrame.call(window, animationFrameID);
  */
-XtUtil.cancelAnimationFrame = function () {
+Xt.cancelAnimationFrame = function () {
   return window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || function (callback) {
     window.clearTimeout(id);
   };
@@ -73,7 +73,7 @@ XtUtil.cancelAnimationFrame = function () {
  * @param {NodeList|Array} targets Elements to check inside
  * @return {Boolean}
  */
-XtUtil.checkInside = function (e, targets) {
+Xt.checkInside = function (e, targets) {
   let result = false;
   for (let t of targets) {
     if (e.target === t || t.contains(e.target)) {
@@ -89,7 +89,7 @@ XtUtil.checkInside = function (e, targets) {
  * @param {NodeList|Array} targets Elements to check Outside
  * @return {Boolean}
  */
-XtUtil.checkOutside = function (e, targets) {
+Xt.checkOutside = function (e, targets) {
   let result = true;
   for (let t of targets) {
     if (e.target === t || t.contains(e.target)) {
@@ -103,7 +103,7 @@ XtUtil.checkOutside = function (e, targets) {
  * Get scrollbar width of document
  * @returns {Number} Scrollbar width
  */
-XtUtil.scrollbarWidth = function () {
+Xt.scrollbarWidth = function () {
   // add outer
   let outer = document.createElement('div');
   outer.style.visibility = 'hidden';
@@ -127,18 +127,18 @@ XtUtil.scrollbarWidth = function () {
  * Get unique id
  * @returns {String} Unique id
  */
-XtUtil.getUniqueID = function () {
-  XtUtil.uid = XtUtil.uid !== undefined ? XtUtil.uid : 0;
-  return 'xt-' + (XtUtil.uid++);
+Xt.getUniqueID = function () {
+  Xt.uid = Xt.uid !== undefined ? Xt.uid : 0;
+  return 'xt-' + (Xt.uid++);
 };
 
 /**
  * Get unique number
  * @returns {Number} Unique number
  */
-XtUtil.getUniqueNum = function () {
-  XtUtil.unumber = XtUtil.unumber !== undefined ? XtUtil.unumber : 0;
-  return XtUtil.unumber++;
+Xt.getUniqueNum = function () {
+  Xt.unumber = Xt.unumber !== undefined ? Xt.unumber : 0;
+  return Xt.unumber++;
 };
 
 /**
@@ -146,7 +146,7 @@ XtUtil.getUniqueNum = function () {
  * @param {Array} arr Array of objects to merge
  * @returns {Object} Merged object
  */
-XtUtil.merge = function (arr) {
+Xt.merge = function (arr) {
   let final = {};
   for (let obj of arr) {
     for (let [key, value] of Object.entries(obj)) {
@@ -161,7 +161,7 @@ XtUtil.merge = function (arr) {
  * @param {Object|Array} element
  * @returns {Array}
  */
-XtUtil.arrSingle = function (element) {
+Xt.arrSingle = function (element) {
   if (element.length === undefined) {
     let arr = new Array(1);
     arr[0] = element;
@@ -176,7 +176,7 @@ XtUtil.arrSingle = function (element) {
  * @param {String} str Html string (only 1 root html tag)
  * @return {Node|HTMLElement} DOM element
  */
-XtUtil.createElement = function (str) {
+Xt.createElement = function (str) {
   let div = document.createElement('div');
   div.innerHTML = str.trim();
   return div.firstChild;
@@ -188,7 +188,7 @@ XtUtil.createElement = function (str) {
  * @param {String} query Query parents
  * @return {Array} Parents elements by query
  */
-XtUtil.parents = function (element, query) {
+Xt.parents = function (element, query) {
   let parents = [];
   while (element = element.parentElement.closest(query)) {
     parents.push(element);
@@ -199,9 +199,9 @@ XtUtil.parents = function (element, query) {
 /**
  * dataStorage
  * https://stackoverflow.com/questions/29222027/vanilla-alternative-to-jquery-data-function-any-native-javascript-alternati
- * USAGE: XtUtil.dataStorage.put(element, 'key', value);
+ * USAGE: Xt.dataStorage.put(element, 'key', value);
  */
-XtUtil.dataStorage = {
+Xt.dataStorage = {
   _storage: new WeakMap(),
   put: function (element, key, obj) {
     if (!this._storage.has(key)) {
@@ -228,7 +228,7 @@ XtUtil.dataStorage = {
 /**
  * limit focus to element
  */
-XtUtil.focusLimit = function(focusable, first, last, e) {
+Xt.focusLimit = function(focusable, first, last, e) {
   let code = e.keyCode ? e.keyCode : e.which;
   if (code === 9) {
     if (!focusable.includes(document.activeElement)) {
@@ -243,33 +243,33 @@ XtUtil.focusLimit = function(focusable, first, last, e) {
   }
 };
 
-XtUtil.focusLimitOn = function (element) {
+Xt.focusLimitOn = function (element) {
   // vars
   let focusable = Array.from(element.querySelectorAll('a, button, details, input, iframe, select, textarea'));
   focusable = focusable.filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])')); // filter out parent
   let first = focusable[0];
   let last = focusable[focusable.length - 1];
   // event
-  let focusLimitHandler = XtUtil.dataStorage.put(document, 'focusLimitHandler', XtUtil.focusLimit.bind(this).bind(this, focusable, first, last));
+  let focusLimitHandler = Xt.dataStorage.put(document, 'focusLimitHandler', Xt.focusLimit.bind(this).bind(this, focusable, first, last));
   document.removeEventListener('keyup', focusLimitHandler);
   document.addEventListener('keyup', focusLimitHandler);
 };
 
-XtUtil.focusLimitOff = function () {
+Xt.focusLimitOff = function () {
   // event
-  let focusLimitHandler = XtUtil.dataStorage.get(document, 'focusLimitHandler');
+  let focusLimitHandler = Xt.dataStorage.get(document, 'focusLimitHandler');
   document.removeEventListener('keyup', focusLimitHandler);
 };
 
 /**
  * document focus utilities 
  */
-XtUtil.focusUtil = function(e) {
+Xt.focusUtil = function(e) {
   let code = e.keyCode ? e.keyCode : e.which;
   if (code === 9) {
-    // remember XtUtil.focus
-    if (!XtUtil.focusBlock) {
-      XtUtil.focus = document.activeElement;
+    // remember Xt.focus
+    if (!Xt.focusBlock) {
+      Xt.focus = document.activeElement;
     }
     // add html.xt-focus
     if (!document.documentElement.classList.contains('xt-focus')) {
@@ -278,29 +278,29 @@ XtUtil.focusUtil = function(e) {
   }
 };
 
-XtUtil.focusUtilOn = function () {
+Xt.focusUtilOn = function () {
   // event
-  let focusUtilHandler = XtUtil.dataStorage.put(document, 'focusUtilHandler', XtUtil.focusUtil.bind(this));
+  let focusUtilHandler = Xt.dataStorage.put(document, 'focusUtilHandler', Xt.focusUtil.bind(this));
   document.removeEventListener('keyup', focusUtilHandler);
   document.addEventListener('keyup', focusUtilHandler);
 };
 
-XtUtil.focusUtilOff = function () {
+Xt.focusUtilOff = function () {
   // event
-  let focusUtilHandler = XtUtil.dataStorage.put(document, 'focusUtilHandler', XtUtil.focusUtil.bind(this));
+  let focusUtilHandler = Xt.dataStorage.put(document, 'focusUtilHandler', Xt.focusUtil.bind(this));
   document.removeEventListener('keyup', focusUtilHandler);
 };
 
-XtUtil.focus = null;
-XtUtil.focusBlock = false;
-XtUtil.focusUtilOn();
+Xt.focus = null;
+Xt.focusBlock = false;
+Xt.focusUtilOn();
 
 //////////////////////
 // api
 //////////////////////
 
-window.XtUtil = XtUtil;
-export {XtUtil};
+window.Xt = Xt;
+export {Xt};
 
 //////////////////////
 // closest polyfill

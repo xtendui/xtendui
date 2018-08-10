@@ -8,7 +8,7 @@
 // Xt
 //////////////////////
 
-class Xt {
+class XtCore {
 
   /**
    * constructor
@@ -22,10 +22,10 @@ class Xt {
     if (this.object) {
       this.defaults = this.constructor.defaults;
       // js options
-      this.options = XtUtil.merge([this.defaults, jsOptions]);
+      this.options = Xt.merge([this.defaults, jsOptions]);
       // markup options
       let markupOptions = this.object.getAttribute(attr);
-      this.options = XtUtil.merge([this.options, markupOptions ? JSON.parse(markupOptions) : {}]);
+      this.options = Xt.merge([this.options, markupOptions ? JSON.parse(markupOptions) : {}]);
       // classes
       if (this.options.class) {
         this.options.classes = [...this.options.class.split(' ')];
@@ -59,7 +59,7 @@ class Xt {
       // xtend unique mode
       this.mode = 'multiple';
       this.container = this.object;
-      this.namespace = XtUtil.getUniqueID();
+      this.namespace = Xt.getUniqueID();
     }
     // final namespace
     this.namespace = this.namespace.replace(/^[^a-z]+|[^\w:.-]+/gi, '');
@@ -78,21 +78,21 @@ class Xt {
     // elements
     this.elements = [];
     if (options.elements) {
-      this.elements = XtUtil.arrSingle(this.container.querySelectorAll(options.elements));
+      this.elements = Xt.arrSingle(this.container.querySelectorAll(options.elements));
     }
     if (!this.elements.length) {
-      this.elements = XtUtil.arrSingle(this.object);
+      this.elements = Xt.arrSingle(this.object);
       // @FIX on next frame set all elements querying the namespace
-      XtUtil.requestAnimationFrame.call(window, function () {
+      Xt.requestAnimationFrame.call(window, function () {
         let namespaceQuery = '[data-xt-namespace=' + self.namespace + ']';
-        self.elements = XtUtil.arrSingle(document.querySelectorAll(namespaceQuery));
+        self.elements = Xt.arrSingle(document.querySelectorAll(namespaceQuery));
       });
     }
     // targets
     this.targets = [];
     if (options.targets) {
       let arr = Array.from(this.container.querySelectorAll(options.targets));
-      arr = arr.filter(x => !XtUtil.parents(x, options.targets).length); // filter out parent
+      arr = arr.filter(x => !Xt.parents(x, options.targets).length); // filter out parent
       this.targets = arr;
     }
     // appendTo
@@ -109,7 +109,7 @@ class Xt {
       el.setAttribute('data-xt-namespace', self.namespace);
     }
     // currents
-    XtUtil.requestAnimationFrame.call(window, function () {
+    Xt.requestAnimationFrame.call(window, function () {
       if (self.elements.length) {
         // activate options.class
         for (let el of self.elements) {
@@ -143,7 +143,7 @@ class Xt {
           let ariaEls = self.getInside(el, options.controls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
           let id = ariaEl.getAttribute('id');
-          el.dataset.namespace = XtUtil.getUniqueID();
+          el.dataset.namespace = Xt.getUniqueID();
           if (!id) {
             ariaEl.setAttribute('id', el.dataset.namespace + '-element');
           }
@@ -186,7 +186,7 @@ class Xt {
     for (let el of this.elements) {
       if (options.on) {
         // handler
-        let onHandler = XtUtil.dataStorage.put(el, 'onHandler', self.eventOnHandler.bind(self).bind(self, el));
+        let onHandler = Xt.dataStorage.put(el, 'onHandler', self.eventOnHandler.bind(self).bind(self, el));
         // event
         let events = [...options.on.split(' ')];
         for (let event of events) {
@@ -198,7 +198,7 @@ class Xt {
       }
       if (options.off) {
         // handler
-        let offHandler = XtUtil.dataStorage.put(el, 'offHandler', self.eventOffHandler.bind(self).bind(self, el));
+        let offHandler = Xt.dataStorage.put(el, 'offHandler', self.eventOffHandler.bind(self).bind(self, el));
         // event
         let events = [...options.off.split(' ')];
         for (let event of events) {
@@ -214,8 +214,8 @@ class Xt {
       let el = this.getElementsFromTarget(tr)[0];
       if (el) {
         // handler
-        let onHandler = XtUtil.dataStorage.put(el, 'onHandler', self.eventOnHandler.bind(self).bind(self, el));
-        let offHandler = XtUtil.dataStorage.put(el, 'offHandler', self.eventOffHandler.bind(self).bind(self, el));
+        let onHandler = Xt.dataStorage.put(el, 'onHandler', self.eventOnHandler.bind(self).bind(self, el));
+        let offHandler = Xt.dataStorage.put(el, 'offHandler', self.eventOffHandler.bind(self).bind(self, el));
         // listener
         tr.addEventListener('on', onHandler);
         tr.addEventListener('off', offHandler);
@@ -243,7 +243,7 @@ class Xt {
     if (!e.detail || !e.detail.skip) {
       let eventLimit = this.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
-        if (XtUtil.checkOutside(e, eventLimit)) {
+        if (Xt.checkOutside(e, eventLimit)) {
           this.eventOn(element);
         }
       } else {
@@ -267,7 +267,7 @@ class Xt {
     if (!e.detail || !e.detail.skip) {
       let eventLimit = this.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
-        if (XtUtil.checkOutside(e, eventLimit)) {
+        if (Xt.checkOutside(e, eventLimit)) {
           this.eventOff(element);
         }
       } else {
@@ -344,12 +344,12 @@ class Xt {
       if (group) {
         // all group elements if group
         let groupElements = Array.from(this.elements).filter(x => x.getAttribute('data-group') === group);
-        let final = XtUtil.arrSingle(groupElements);
+        let final = Xt.arrSingle(groupElements);
         return {all: final, single: final[0]};
       } else {
         // element if not group
         let final = element;
-        return {all: XtUtil.arrSingle(final), single: final};
+        return {all: Xt.arrSingle(final), single: final};
       }
     }
   }
@@ -375,16 +375,16 @@ class Xt {
       if (group) {
         // all group targets if group
         final = groupTargets;
-        return XtUtil.arrSingle(final);
+        return Xt.arrSingle(final);
       } else {
         // not group targets by index if not group
         let index = groupElements.findIndex(x => x === element);
         final = groupTargets[index];
-        return XtUtil.arrSingle(final);
+        return Xt.arrSingle(final);
       }
     }
   }
-  
+
   /**
    * query for inside
    * @param {Node|HTMLElement} element Element to search from
@@ -395,7 +395,7 @@ class Xt {
     if (!query) {
       return [];
     }
-    return XtUtil.arrSingle(element.querySelectorAll(query));
+    return Xt.arrSingle(element.querySelectorAll(query));
   }
 
   /**
@@ -415,12 +415,12 @@ class Xt {
     if (group) {
       // all group targets if group
       final = groupElements;
-      return XtUtil.arrSingle(final);
+      return Xt.arrSingle(final);
     } else {
       // not group targets by index if not group
       let index = groupTargets.findIndex(x => x === target);
       final = groupElements[index];
-      return XtUtil.arrSingle(final);
+      return Xt.arrSingle(final);
     }
   }
 
@@ -429,7 +429,7 @@ class Xt {
    * @returns {Array}
    */
   getCurrents() {
-    return XtUtil.currents[this.namespace];
+    return Xt.currents[this.namespace];
   }
 
   /**
@@ -437,7 +437,7 @@ class Xt {
    * @param {Array} arr
    */
   setCurrents(arr) {
-    XtUtil.currents[this.namespace] = arr;
+    Xt.currents[this.namespace] = arr;
   }
 
   /**
@@ -445,7 +445,7 @@ class Xt {
    * @param {Node|HTMLElement} element To be added
    */
   addCurrent(element) {
-    let arr = XtUtil.currents[this.namespace];
+    let arr = Xt.currents[this.namespace];
     arr.push(element);
   }
 
@@ -454,7 +454,7 @@ class Xt {
    * @param {Node|HTMLElement} element To be removed
    */
   removeCurrent(element) {
-    XtUtil.currents[this.namespace] = XtUtil.currents[this.namespace].filter(x => x !== element);
+    Xt.currents[this.namespace] = Xt.currents[this.namespace].filter(x => x !== element);
   }
 
   //////////////////////
@@ -663,9 +663,9 @@ class Xt {
       // focus
       if (options.aria) {
         if (options.scrollbar) {
-          XtUtil.focusBlock = true;
+          Xt.focusBlock = true;
           el.focus();
-          XtUtil.focusLimitOn(el);
+          Xt.focusLimitOn(el);
         }
       }
     }
@@ -761,12 +761,12 @@ class Xt {
         // focus
         if (options.aria) {
           if (options.scrollbar) {
-            let focus = XtUtil.focus;
+            let focus = Xt.focus;
             if (focus) {
               focus.focus();
             }
-            XtUtil.focusBlock = false;
-            XtUtil.focusLimitOff();
+            Xt.focusBlock = false;
+            Xt.focusLimitOff();
           }
         }
       }
@@ -879,9 +879,9 @@ class Xt {
     if (options.backdrop) {
       let elements;
       if (options.backdrop === 'object') {
-        elements = XtUtil.arrSingle(this.object);
+        elements = Xt.arrSingle(this.object);
       } else if (options.backdrop === 'targets') {
-        elements = XtUtil.arrSingle(el);
+        elements = Xt.arrSingle(el);
       } else {
         elements = el.querySelectorAll(options.backdrop);
         if (!elements.length) {
@@ -891,7 +891,7 @@ class Xt {
       for (let element of elements) {
         let backdrop = element.querySelectorAll('.xt-backdrop');
         if (!backdrop.length) {
-          backdrop = XtUtil.createElement('<div class="xt-backdrop"></div>');
+          backdrop = Xt.createElement('<div class="xt-backdrop"></div>');
           element.append(backdrop);
         }
       }
@@ -937,11 +937,11 @@ class Xt {
       let h = el.clientHeight + 'px';
       let pt = el.style.paddingTop;
       let pb = el.style.paddingBottom;
-      XtUtil.requestAnimationFrame.call(window, function () {
+      Xt.requestAnimationFrame.call(window, function () {
         el.style.height = '0';
         el.style.paddingTop = '0';
         el.style.paddingBottom = '0';
-        XtUtil.requestAnimationFrame.call(window, function () {
+        Xt.requestAnimationFrame.call(window, function () {
           el.classList.remove('no-transition');
           el.style.height = h;
           el.style.paddingTop = pt;
@@ -956,11 +956,11 @@ class Xt {
       let w = el.clientHeight + 'px';
       let pl = el.style.paddingLeft;
       let pr = el.style.paddingRight;
-      XtUtil.requestAnimationFrame.call(window, function () {
+      Xt.requestAnimationFrame.call(window, function () {
         el.style.width = '0';
         el.style.paddingLeft = '0';
         el.style.paddingRight = '0';
-        XtUtil.requestAnimationFrame.call(window, function () {
+        Xt.requestAnimationFrame.call(window, function () {
           el.classList.remove('no-transition');
           el.style.width = w;
           el.style.paddingLeft = pl;
@@ -979,11 +979,11 @@ class Xt {
       let h = el.clientHeight + 'px';
       let pt = el.style.paddingTop;
       let pb = el.style.paddingBottom;
-      XtUtil.requestAnimationFrame.call(window, function () {
+      Xt.requestAnimationFrame.call(window, function () {
         el.style.height = h;
         el.style.paddingTop = pt;
         el.style.paddingBottom = pb;
-        XtUtil.requestAnimationFrame.call(window, function () {
+        Xt.requestAnimationFrame.call(window, function () {
           el.style.height = '0';
           el.style.paddingTop = '0';
           el.style.paddingBottom = '0';
@@ -994,11 +994,11 @@ class Xt {
       let w = el.clientWidth + 'px';
       let pl = el.style.paddingLeft;
       let pr = el.style.paddingRight;
-      XtUtil.requestAnimationFrame.call(window, function () {
+      Xt.requestAnimationFrame.call(window, function () {
         el.style.width = w;
         el.style.paddingLeft = pl;
         el.style.paddingRight = pr;
-        XtUtil.requestAnimationFrame.call(window, function () {
+        Xt.requestAnimationFrame.call(window, function () {
           el.style.width = '0';
           el.style.paddingLeft = '0';
           el.style.paddingRight = '0';
@@ -1018,10 +1018,10 @@ class Xt {
     // closeInside
     if (options.closeInside) {
       let closeElements = el.querySelectorAll(options.closeInside);
-      XtUtil.requestAnimationFrame.call(window, function () {
+      Xt.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
           // handler
-          let specialCloseOnHandler = XtUtil.dataStorage.put(el, 'specialCloseOnHandler', self.specialCloseOnHandler.bind(self).bind(self, closeElement, single));
+          let specialCloseOnHandler = Xt.dataStorage.put(el, 'specialCloseOnHandler', self.specialCloseOnHandler.bind(self).bind(self, closeElement, single));
           // event
           closeElement.removeEventListener('click', specialCloseOnHandler);
           closeElement.addEventListener('click', specialCloseOnHandler);
@@ -1031,10 +1031,10 @@ class Xt {
     // closeOutside
     if (options.closeOutside) {
       let closeElements = document.querySelectorAll(options.closeOutside);
-      XtUtil.requestAnimationFrame.call(window, function () {
+      Xt.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
           // handler
-          let specialCloseOffHandler = XtUtil.dataStorage.put(el, 'specialCloseOffHandler', self.specialCloseOffHandler.bind(self).bind(self, el, single));
+          let specialCloseOffHandler = Xt.dataStorage.put(el, 'specialCloseOffHandler', self.specialCloseOffHandler.bind(self).bind(self, el, single));
           // event
           closeElement.removeEventListener('click', specialCloseOffHandler);
           closeElement.addEventListener('click', specialCloseOffHandler);
@@ -1055,7 +1055,7 @@ class Xt {
       let closeElements = el.querySelectorAll(options.closeInside);
       for (let closeElement of closeElements) {
         // handler
-        let specialCloseOnHandler = XtUtil.dataStorage.get(el, 'specialCloseOnHandler');
+        let specialCloseOnHandler = Xt.dataStorage.get(el, 'specialCloseOnHandler');
         closeElement.removeEventListener('click', specialCloseOnHandler);
       }
     }
@@ -1063,7 +1063,7 @@ class Xt {
     if (options.closeOutside) {
       let closeElements = document.querySelectorAll(options.closeOutside);
       for (let closeElement of closeElements) {
-        let specialCloseOffHandler = XtUtil.dataStorage.get(el, 'specialCloseOffHandler');
+        let specialCloseOffHandler = Xt.dataStorage.get(el, 'specialCloseOffHandler');
         closeElement.removeEventListener('click', specialCloseOffHandler);
       }
     }
@@ -1076,7 +1076,7 @@ class Xt {
    * @param {Event} e
    */
   specialCloseOnHandler(checkEl, single, e) {
-    if (XtUtil.checkInside(e, XtUtil.arrSingle(checkEl))) {
+    if (Xt.checkInside(e, Xt.arrSingle(checkEl))) {
       this.eventOff(single);
     }
   }
@@ -1088,7 +1088,7 @@ class Xt {
    * @param {Event} e
    */
   specialCloseOffHandler(checkEl, single, e) {
-    if (XtUtil.checkOutside(e, XtUtil.arrSingle(checkEl))) {
+    if (Xt.checkOutside(e, Xt.arrSingle(checkEl))) {
       this.eventOff(single);
     }
   }
@@ -1102,7 +1102,7 @@ class Xt {
     // scrollbar on
     if (options.scrollbar) {
       let elements;
-      let width = XtUtil.scrollbarWidth();
+      let width = Xt.scrollbarWidth();
       // check fixed
       elements = document.querySelectorAll('.xt-check-fixed > *');
       for (let element of elements) {
@@ -1122,9 +1122,9 @@ class Xt {
           let padding = style.paddingRight;
           let str = 'calc(' + padding + ' + ' + width + 'px)';
           element.classList.add('no-transition');
-          XtUtil.requestAnimationFrame.call(window, function () {
+          Xt.requestAnimationFrame.call(window, function () {
             element.style.paddingRight = str;
-            XtUtil.requestAnimationFrame.call(window, function () {
+            Xt.requestAnimationFrame.call(window, function () {
               element.classList.remove('no-transition');
             });
           });
@@ -1155,9 +1155,9 @@ class Xt {
       elements = document.querySelectorAll('.xt-fixed');
       for (let element of elements) {
         element.classList.add('no-transition');
-        XtUtil.requestAnimationFrame.call(window, function () {
+        Xt.requestAnimationFrame.call(window, function () {
           element.style.paddingRight = '';
-          XtUtil.requestAnimationFrame.call(window, function () {
+          Xt.requestAnimationFrame.call(window, function () {
             element.classList.remove('no-transition');
           });
         });
@@ -1181,7 +1181,7 @@ class Xt {
    */
   normalizeWidth(width) {
     width = parseFloat(width);
-    if (width + XtUtil.scrollbarWidth() >= window.innerWidth) {
+    if (width + Xt.scrollbarWidth() >= window.innerWidth) {
       width = '';
     } else {
       width += 'px';
@@ -1193,7 +1193,7 @@ class Xt {
 
 // default
 
-Xt.defaults = {
+XtCore.defaults = {
   "auto": false,
   "autoPause": false,
   "autoAlways": false
@@ -1201,14 +1201,14 @@ Xt.defaults = {
 
 // export
 
-window.Xt = Xt;
-export {Xt};
+window.XtCore = XtCore;
+export {XtCore};
 
 //////////////////////
 // XtToggle
 //////////////////////
 
-class XtToggle extends Xt {
+class XtToggle extends XtCore {
 
   /**
    * constructor
@@ -1273,7 +1273,7 @@ export {XtToggle};
 // XtDrop
 //////////////////////
 
-class XtDrop extends Xt {
+class XtDrop extends XtCore {
 
   /**
    * constructor
@@ -1333,7 +1333,7 @@ export {XtDrop};
 // XtOverlay
 //////////////////////
 
-class XtOverlay extends Xt {
+class XtOverlay extends XtCore {
 
   /**
    * constructor
@@ -1398,7 +1398,7 @@ export {XtOverlay};
 // XtSticky
 //////////////////////
 
-class XtSticky extends Xt {
+class XtSticky extends XtCore {
 
   /**
    * constructor
@@ -1422,12 +1422,12 @@ class XtSticky extends Xt {
     // mode
     this.mode = 'unique';
     // container
-    this.container = XtUtil.parents(this.object, '.xt-container');
+    this.container = Xt.parents(this.object, '.xt-container');
     if (!this.container.length) {
-      this.container = XtUtil.createElement('<div class="xt-container xt-check-fixed"></div>');
+      this.container = Xt.createElement('<div class="xt-container xt-check-fixed"></div>');
       this.object.before(this.container);
       this.container.append(this.object);
-      this.container = XtUtil.parents(this.object, '.xt-container');
+      this.container = Xt.parents(this.object, '.xt-container');
     }
     // targets
     this.targets = this.container[0].querySelectorAll('.xt-clone');
@@ -1442,7 +1442,7 @@ class XtSticky extends Xt {
       }
       this.container[0].append(this.targets);
     }
-    this.targets = XtUtil.arrSingle(this.targets);
+    this.targets = Xt.arrSingle(this.targets);
     // xt-fixed
     this.object.classList.add('xt-fixed');
     // hide
@@ -1457,7 +1457,7 @@ class XtSticky extends Xt {
       this.object.classList.remove('sticky-hide-up');
     }
     // z-index
-    this.unique = XtUtil.getUniqueNum();
+    this.unique = Xt.getUniqueNum();
     this.object.style.zIndex = '' + (100 - this.unique);
   }
 
@@ -1470,7 +1470,7 @@ class XtSticky extends Xt {
     // events
     if (options.on) {
       // handler
-      let stickyHandler = XtUtil.dataStorage.put(window, 'stickyHandler', self.eventOnHandler.bind(self));
+      let stickyHandler = Xt.dataStorage.put(window, 'stickyHandler', self.eventOnHandler.bind(self));
       // event
       let events = [...options.on.split(' ')];
       for (let event of events) {
@@ -1651,8 +1651,8 @@ class XtSticky extends Xt {
       if (self.addOld !== undefined) {
         el.style[options.position] = rectElTop + 'px';
       }
-      XtUtil.cancelAnimationFrame.call(window, el.dataset.eventFrame);
-      el.dataset.eventFrame = XtUtil.requestAnimationFrame.call(window, function () {
+      Xt.cancelAnimationFrame.call(window, el.dataset.eventFrame);
+      el.dataset.eventFrame = Xt.requestAnimationFrame.call(window, function () {
         el.classList.remove('no-transition');
         el.style[options.position] = add + 'px';
       });
@@ -1765,7 +1765,7 @@ export {XtSticky};
 // XtFade
 //////////////////////
 
-class XtFade extends Xt {
+class XtFade extends XtCore {
 
   /**
    * constructor
@@ -1790,7 +1790,7 @@ class XtFade extends Xt {
     // events
     if (options.on) {
       // handler
-      let fadeHandler = XtUtil.dataStorage.put(window, 'fadeHandler', self.eventOnHandler.bind(self));
+      let fadeHandler = Xt.dataStorage.put(window, 'fadeHandler', self.eventOnHandler.bind(self));
       // event
       let events = [...options.on.split(' ')];
       for (let event of events) {
@@ -1856,8 +1856,8 @@ class XtFade extends Xt {
           changed = self.checkOn(el);
           if (changed) {
             currents.push(el);
-            XtUtil.cancelAnimationFrame.call(window, el.dataset.eventFrame);
-            el.dataset.eventFrame = XtUtil.requestAnimationFrame.call(window, function () {
+            Xt.cancelAnimationFrame.call(window, el.dataset.eventFrame);
+            el.dataset.eventFrame = Xt.requestAnimationFrame.call(window, function () {
               if (options.delayOn) {
                 let func = new Function('current', 'total', options.delayOn);
                 el.dataset.xtOnDelay = func(current, currents.length).toString();
@@ -1873,8 +1873,8 @@ class XtFade extends Xt {
           if (changed) {
             el.classList.add('fade-scroll');
             currents.push(el);
-            XtUtil.cancelAnimationFrame.call(window, el.dataset.eventFrame);
-            el.dataset.eventFrame = XtUtil.requestAnimationFrame.call(window, function () {
+            Xt.cancelAnimationFrame.call(window, el.dataset.eventFrame);
+            el.dataset.eventFrame = Xt.requestAnimationFrame.call(window, function () {
               if (options.delayOff) {
                 let func = new Function('current', 'total', options.delayOff);
                 el.dataset.xtOffDelay = func(current, currents.length).toString();
