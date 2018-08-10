@@ -131,12 +131,192 @@ description: Many possible behaviour, interactions and animations are possible w
   </code>
 </pre>
 
-<h2>Scope</h2>
+<h2>Mode</h2>
 
-<h3>Single</h3>
+<p>Preferred mode is <a href="#mode-multiple">multiple</a>, but <a href="#mode-unique">unique</a> is useful when
+  triggering <strong>targets outside the scope</strong>, like overlay where the targets are moved to <code>body</code>.
+</p>
 
-<p>When single scoping the toggle (initializing it on the element), you toggle the single element, and to assign
-  <strong>targets</strong> you need to use <strong>#id</strong>.</p>
+<div class="alert">
+  <div class="content">
+    For toggle utils classes read the documentation of <a href="{% link _docs/introduction/utils.html %}#toggle">toggle
+    utils</a>.
+  </div>
+</div>
+
+<h3>Multiple</h3>
+
+<p>You can create a "mutiple" mode by assigning <code>[data-xt-toggle]</code> to a scope element, elements and
+  targets must be inside the scope. Check <a href="#defaults">toggle's defaults</a> for the default elements and
+  targets.</p>
+
+<div class="alert box-primary">
+  <div class="content">
+    With <strong>multiple mode</strong> you can't specify targets with <strong>#id</strong>.
+  </div>
+</div>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="index">
+    <div class="demo-text">
+      <div class="content">
+        With multiple <strong>targets</strong>, the ones activated is the one with the same index of the toggled
+        <strong>element</strong>.
+        Nested <strong>targets</strong> are filtered out
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space-small align-items-center" data-xt-toggle>
+        <button type="button" class="btn">
+          <span>Toggle 0</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 1</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 2</span>
+        </button>
+        <div class="alert toggle-block">
+          <div class="content">
+            Target 0
+            <div class="alert toggle-block">
+              <div class="content">
+                Nested not toggled
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="alert toggle-block">
+          <div class="content">
+            Target 1
+            <div class="alert toggle-block">
+              <div class="content">
+                Nested not toggled
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="alert toggle-block">
+          <div class="content">
+            Target 2
+            <div class="alert toggle-block">
+              <div class="content">
+                Nested not toggled
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="options">
+    <div class="demo-text">
+      <div class="content">
+        Custom <strong>elements</strong> and <strong>targets</strong>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div data-xt-toggle='{"elements": ".test > .btn", "targets": ".test > .example-toggle"}'>
+        <div class="list list-space-small align-items-center test">
+          <button type="button" class="btn">
+            <span>Toggle 0</span>
+          </button>
+          <button type="button" class="btn">
+            <span>Toggle 1</span>
+          </button>
+          <button type="button" class="btn">
+            <span>Toggle 2</span>
+          </button>
+          <div class="alert example-toggle">
+            <div class="content">
+              Target 0
+            </div>
+          </div>
+          <div class="alert example-toggle">
+            <div class="content">
+              Target 1
+            </div>
+          </div>
+          <div class="alert example-toggle">
+            <div class="content">
+              Target 2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="css">
+      <style>
+        .example-toggle {
+          display: none;
+        }
+
+        .example-toggle.active,
+        .example-toggle.out {
+          display: block;
+        }
+      </style>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="toggle">
+    <div class="demo-text">
+      <div class="content">
+        Custom targets classname that starts with <code>.toggle-</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space-small align-items-center" data-xt-toggle>
+        <button type="button" class="btn">
+          <span>Toggle 0</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 1</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 2</span>
+        </button>
+        <div class="alert toggle-custom">
+          <div class="content">
+            Target 0
+          </div>
+        </div>
+        <div class="alert toggle-custom">
+          <div class="content">
+            Target 1
+          </div>
+        </div>
+        <div class="alert toggle-custom">
+          <div class="content">
+            Target 2
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="css">
+      <style>
+        .toggle-custom {
+          display: none;
+        }
+
+        .toggle-custom.active,
+        .toggle-custom.out {
+          display: block;
+        }
+      </style>
+    </div>
+  </div>
+</div>
+
+<h3>Unique</h3>
+
+<p>When you don't specify <strong>elements</strong> the scope becomes global and the element becomes <code>[data-xt-toggle]</code>
+  itself.</p>
+
+<div class="alert box-primary">
+  <div class="content">
+    With <strong>unique mode</strong> you need to specify targets with <strong>#id</strong>.
+  </div>
+</div>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="self">
@@ -209,173 +389,6 @@ description: Many possible behaviour, interactions and animations are possible w
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-<h3>Manager</h3>
-
-<p>You can create a "manager" by assigning <code>[data-xt-toggle]</code> to the parent element, elements and targets
-  must be inside the manager.</p>
-
-<p>By default the <code>elements</code> are all the <strong>direct children</strong> with the tag <code>a</code> or
-  <code>button</code>, and the <code>targets</code> are all <strong>children</strong> with a class that starts with
-  <code>.toggle-</code>.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="manager">
-    <div class="demo-text">
-      <div class="content">
-        With multiple <strong>targets</strong>, the ones activated is the one with the same index of the toggled
-        <strong>element</strong>.
-        Nested <strong>targets</strong> are filtered out
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div class="list list-space-small align-items-center" data-xt-toggle>
-        <button type="button" class="btn">
-          <span>Toggle 0</span>
-        </button>
-        <button type="button" class="btn">
-          <span>Toggle 1</span>
-        </button>
-        <button type="button" class="btn">
-          <span>Toggle 2</span>
-        </button>
-        <div class="alert toggle-block">
-          <div class="content">
-            Target 0
-            <div class="alert toggle-block">
-              <div class="content">
-                Nested not toggled
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="alert toggle-block">
-          <div class="content">
-            Target 1
-            <div class="alert toggle-block">
-              <div class="content">
-                Nested not toggled
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="alert toggle-block">
-          <div class="content">
-            Target 2
-            <div class="alert toggle-block">
-              <div class="content">
-                Nested not toggled
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="custom">
-    <div class="demo-text">
-      <div class="content">
-        Custom <strong>elements</strong> and <strong>targets</strong>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div data-xt-toggle='{"elements": ".test > .btn", "targets": ".test > .example-toggle"}'>
-        <div class="list list-space-small align-items-center test">
-          <button type="button" class="btn">
-            <span>Toggle 0</span>
-          </button>
-          <button type="button" class="btn">
-            <span>Toggle 1</span>
-          </button>
-          <button type="button" class="btn">
-            <span>Toggle 2</span>
-          </button>
-          <div class="alert example-toggle">
-            <div class="content">
-              Target 0
-            </div>
-          </div>
-          <div class="alert example-toggle">
-            <div class="content">
-              Target 1
-            </div>
-          </div>
-          <div class="alert example-toggle">
-            <div class="content">
-              Target 2
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="css">
-      <style>
-        .example-toggle {
-          display: none;
-        }
-
-        .example-toggle.active,
-        .example-toggle.out {
-          display: block;
-        }
-      </style>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="custom toggle">
-    <div class="demo-text">
-      <div class="content">
-        Custom targets classname that starts with <code>.toggle-</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div class="list list-space-small align-items-center" data-xt-toggle>
-        <button type="button" class="btn">
-          <span>Toggle 0</span>
-        </button>
-        <button type="button" class="btn">
-          <span>Toggle 1</span>
-        </button>
-        <button type="button" class="btn">
-          <span>Toggle 2</span>
-        </button>
-        <div class="alert toggle-custom">
-          <div class="content">
-            Target 0
-          </div>
-        </div>
-        <div class="alert toggle-custom">
-          <div class="content">
-            Target 1
-          </div>
-        </div>
-        <div class="alert toggle-custom">
-          <div class="content">
-            Target 2
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="css">
-      <style>
-        .toggle-custom {
-          display: none;
-        }
-
-        .toggle-custom.active,
-        .toggle-custom.out {
-          display: block;
-        }
-      </style>
-    </div>
-  </div>
-</div>
-
-<div class="alert">
-  <div class="content">
-    For toggle utils classes read the documentation of <a href="{% link _docs/introduction/utils.html %}#toggle">toggle
-    utils</a>.
   </div>
 </div>
 
