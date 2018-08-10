@@ -141,7 +141,7 @@ class Xt {
     if (this.targets.length) {
       for (let el of this.elements) {
         // id
-        let ariaEls = self.getInside(el, options.elementsAria);
+        let ariaEls = self.getInside(el, options.controls);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;
         let id = ariaEl.getAttribute('id');
         el.dataset.namespace = XtUtil.getUniqueID();
@@ -168,7 +168,7 @@ class Xt {
           tr.setAttribute('aria-expanded', 'false');
         }
         // depending on el
-        let ariaEls = self.getInside(el, options.elementsAria);
+        let ariaEls = self.getInside(el, options.controls);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;
         ariaEl.setAttribute('aria-controls', id);
         tr.setAttribute('aria-labelledby', ariaEl.getAttribute('id'));
@@ -386,7 +386,7 @@ class Xt {
   }
   
   /**
-   * query for additional
+   * query for inside
    * @param {Node|HTMLElement} element Element to search from
    * @param {String} query Query for querySelectorAll
    * @returns {Array}
@@ -499,7 +499,7 @@ class Xt {
       let fElements = this.getElements(element);
       this.addCurrent(fElements.single);
       let targets = this.getTargets(element);
-      let additional = this.getInside(element, this.options.additional);
+      let controls = this.getInside(element, this.options.controls);
       // execute defer @FIX delay animation
       this.activationDelay = {};
       if (fElements.all.length) {
@@ -512,9 +512,9 @@ class Xt {
           self.activationOn(targets, fElements, 'targets');
         };
       }
-      if (additional.length) {
-        this.activationDelay['additional'] = function () {
-          self.activationOn(additional, fElements, 'additional');
+      if (controls.length) {
+        this.activationDelay['controls'] = function () {
+          self.activationOn(controls, fElements, 'controls');
         };
       }
       // set autoCurrent
@@ -559,11 +559,11 @@ class Xt {
       let fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
       let targets = this.getTargets(element);
-      let additional = this.getInside(element, this.options.additional);
+      let controls = this.getInside(element, this.options.controls);
       // execute
       this.activationOff(fElements.all, fElements, 'elements');
       this.activationOff(targets, fElements, 'targets');
-      this.activationOff(additional, fElements, 'additional');
+      this.activationOff(controls, fElements, 'controls');
     }
   }
 
@@ -639,7 +639,7 @@ class Xt {
     // specials
     if (type === 'elements') {
       // aria
-      let ariaEls = self.getInside(el, options.elementsAria);
+      let ariaEls = self.getInside(el, options.controls);
       let ariaEl = ariaEls.length ? ariaEls[0] : el;
       ariaEl.setAttribute('aria-selected', 'true');
     }
@@ -736,7 +736,7 @@ class Xt {
       // specials
       if (type === 'elements') {
         // aria
-        let ariaEls = self.getInside(el, options.elementsAria);
+        let ariaEls = self.getInside(el, options.controls);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;
         ariaEl.setAttribute('aria-selected', 'false');
       }
@@ -1221,7 +1221,7 @@ class XtToggle extends Xt {
           this.object.setAttribute('aria-multiselectable', 'true');
         }
         for (let el of this.elements) {
-          let ariaEls = self.getInside(el, options.elementsAria);
+          let ariaEls = self.getInside(el, options.controls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
           ariaEl.setAttribute('role', 'tab');
         }
@@ -1278,7 +1278,7 @@ class XtDrop extends Xt {
     // aria
     if (this.targets.length) {
       for (let el of this.elements) {
-        let ariaEls = self.getInside(el, options.elementsAria);
+        let ariaEls = self.getInside(el, options.controls);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;
         ariaEl.setAttribute('aria-haspopup', 'listbox');
       }
@@ -1293,9 +1293,8 @@ class XtDrop extends Xt {
 // default
 
 XtDrop.defaults = {
-  "elementsAria": ":scope > a, :scope > button",
   "targets": ":scope > .drop",
-  "additional": ":scope > a, :scope > button",
+  "controls": ":scope > a, :scope > button",
   "class": "active",
   "instant": {"elements": true},
   "on": "click",
@@ -1336,7 +1335,7 @@ class XtOverlay extends Xt {
     // aria
     if (this.targets.length) {
       for (let el of this.elements) {
-        let ariaEls = self.getInside(el, options.elementsAria);
+        let ariaEls = self.getInside(el, options.controls);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;
         ariaEl.setAttribute('aria-haspopup', 'dialog');
       }
