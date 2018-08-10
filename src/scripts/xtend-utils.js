@@ -226,6 +226,42 @@ XtUtil.dataStorage = {
 };
 
 /**
+ * limit focus to element
+ */
+XtUtil.limitFocus = function(focusable, first, last, e) {
+  let code = e.keyCode ? e.keyCode : e.which;
+  if (code === 9) {
+    if (!focusable.includes(document.activeElement)) {
+      if (e.shiftKey) {
+        last.focus();
+        e.preventDefault();
+      } else {
+        first.focus();
+        e.preventDefault();
+      }
+    }
+  }
+};
+
+XtUtil.limitFocusOn = function (element) {
+  // vars
+  let focusable = Array.from(element.querySelectorAll('a, button, details, input, iframe, select, textarea'));
+  focusable = focusable.filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])')); // filter out parent
+  let first = focusable[0];
+  let last = focusable[focusable.length - 1];
+  // event
+  let limitFocusHandler = XtUtil.dataStorage.put(document, 'limitFocusHandler', XtUtil.limitFocus.bind(this).bind(this, focusable, first, last));
+  document.removeEventListener('keyup', limitFocusHandler);
+  document.addEventListener('keyup', limitFocusHandler);
+};
+
+XtUtil.limitFocusOff = function () {
+  // event
+  let limitFocusHandler = XtUtil.dataStorage.get(document, 'limitFocusHandler');
+  document.removeEventListener('keyup', limitFocusHandler);
+};
+
+/**
  * Add html.xt-focus when tab focusing and remember XtUtil.focus
  */
 let xtFocus = function(e) {
@@ -239,13 +275,13 @@ let xtFocus = function(e) {
     }
   }
 };
+XtUtil.xtFocusHandler = XtUtil.dataStorage.put(document, 'xtFocusHandler', xtFocus);
 
 XtUtil.focus = null;
 XtUtil.focusBlock = false;
 
-let xtFocusHandler = XtUtil.dataStorage.put(document, 'xtFocusHandler', xtFocus);
-document.removeEventListener('keyup', xtFocusHandler);
-document.addEventListener('keyup', xtFocusHandler);
+document.removeEventListener('keyup', XtUtil.xtFocusHandler);
+document.addEventListener('keyup', XtUtil.xtFocusHandler);
 
 //////////////////////
 // api

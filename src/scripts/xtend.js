@@ -188,27 +188,27 @@ class Xt {
     for (let el of this.elements) {
       if (options.on) {
         // handler
-        let xtOnHandler = XtUtil.dataStorage.put(el, 'xtOnHandler', self.eventOnHandler.bind(self).bind(self, el));
+        let onHandler = XtUtil.dataStorage.put(el, 'onHandler', self.eventOnHandler.bind(self).bind(self, el));
         // event
         let events = [...options.on.split(' ')];
         for (let event of events) {
-          el.removeEventListener(event, xtOnHandler);
-          el.addEventListener(event, xtOnHandler);
+          el.removeEventListener(event, onHandler);
+          el.addEventListener(event, onHandler);
         }
         // listener
-        el.addEventListener('on', xtOnHandler);
+        el.addEventListener('on', onHandler);
       }
       if (options.off) {
         // handler
-        let xtOffHandler = XtUtil.dataStorage.put(el, 'xtOffHandler', self.eventOffHandler.bind(self).bind(self, el));
+        let offHandler = XtUtil.dataStorage.put(el, 'offHandler', self.eventOffHandler.bind(self).bind(self, el));
         // event
         let events = [...options.off.split(' ')];
         for (let event of events) {
-          el.removeEventListener(event, xtOffHandler);
-          el.addEventListener(event, xtOffHandler);
+          el.removeEventListener(event, offHandler);
+          el.addEventListener(event, offHandler);
         }
         // listener
-        el.addEventListener('off', xtOffHandler);
+        el.addEventListener('off', offHandler);
       }
     }
     // listener
@@ -216,11 +216,11 @@ class Xt {
       let el = this.getElementsFromTarget(tr)[0];
       if (el) {
         // handler
-        let xtOnHandler = XtUtil.dataStorage.put(el, 'xtOnHandler', self.eventOnHandler.bind(self).bind(self, el));
-        let xtOffHandler = XtUtil.dataStorage.put(el, 'xtOffHandler', self.eventOffHandler.bind(self).bind(self, el));
+        let onHandler = XtUtil.dataStorage.put(el, 'onHandler', self.eventOnHandler.bind(self).bind(self, el));
+        let offHandler = XtUtil.dataStorage.put(el, 'offHandler', self.eventOffHandler.bind(self).bind(self, el));
         // listener
-        tr.addEventListener('on', xtOnHandler);
-        tr.addEventListener('off', xtOffHandler);
+        tr.addEventListener('on', onHandler);
+        tr.addEventListener('off', offHandler);
       }
     }
     // auto
@@ -667,6 +667,7 @@ class Xt {
         if (options.scrollbar) {
           XtUtil.focusBlock = true;
           el.focus();
+          XtUtil.limitFocusOn(el);
         }
       }
     }
@@ -767,6 +768,7 @@ class Xt {
               focus.focus();
             }
             XtUtil.focusBlock = false;
+            XtUtil.limitFocusOff();
           }
         }
       }
