@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: sidebar
 
 title: Faq
 description: Lorem ipsum
@@ -9,22 +9,14 @@ order: 0
 permalink: /faq/
 ---
 
-<!--
-<h2>Faq</h2>
+<h2>Browsers bugs</h2>
 
-<p>To have the overlay on <code>screen</code> by default use this less:</p>
-<pre><code class="less">
-.overlay {
-  .overlay.screen;
-  .overlay-inner + .xt-backdrop {
-    display: block;
-    background-color: @color-white;
-    &:not([class*=" anim-"]) {
-      &.active {
-        opacity: 1;
-      }
-    }
-  }
-}
-</code></pre>
--->
+<h3>Fixed position</h3>
+
+<p>On all browsers, when using <strong>transforms</strong> on elements or within a running animation, all childs with
+  <code>position: fixed;</code> behave likes <code>position: absolute;</code>.</p>
+
+<h3>Transitions and animations</h3>
+
+<p>On safari, when using both <strong>transitions</strong> and <strong>animations</strong> on elements, the animations
+  runs incorrectly sometimes, use just transitions or animations don't mix them.</p>

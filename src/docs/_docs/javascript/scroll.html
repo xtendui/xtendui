@@ -30,7 +30,7 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
   </div>
 </div>
 
-<div class="alert alert-primary">
+<div class="alert box-primary">
   <div class="content">
     It's recomended to style and animate a inner div <code>[data-xt-xticky] > div</code> when using <strong>sticky
     component</strong>.
@@ -96,7 +96,8 @@ XtSticky.defaults = {
        data-name="fixed">
     <div class="demo-text">
       <div class="content">
-        Use <code>@mode: 'fixed'</code> or <code>@mode: 'fixed-always'</code> in the less to have fixed position when not
+        Use <code>@mode: 'fixed'</code> or <code>@mode: 'fixed-always'</code> in the less to have fixed position when
+        not
         sticky
       </div>
     </div>
@@ -118,7 +119,7 @@ XtSticky.defaults = {
   Element}</code> you stack the sticky to a previous element, with <code>"contain": {"bottom": Element}</code> you stack
   the sticky to a next element. The two solutions brings <strong>different stacking effects</strong>.</p>
 
-<div class="alert alert-primary">
+<div class="alert box-primary">
   <div class="content">
     If contain to <strong>sticky elements</strong> remember to filter out <code>:not(.xt-clone)</code> or filter in
     <code>.xt-clone</code>.
@@ -192,6 +193,13 @@ XtSticky.defaults = {
 </div>
 
 <h2>Fade</h2>
+
+<div class="alert box-primary">
+  <div class="content">
+    It's recomended to animate the fade elements with <code>animation</code> instead of <code>transition</code> because
+    of <a href="{% link faq.html %}#browsers-bugs-fixed-position">this bug</a>.
+  </div>
+</div>
 
 <h3>Usage</h3>
 
@@ -310,7 +318,8 @@ XtFade.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-distance.html" data-name="distance">
     <div class="demo-text">
       <div class="content">
-        <code>"distance": Number</code> is the window's top and bottom activation and deactivation. Factor between 0 and 1
+        <code>"distance": Number</code> is the window's top and bottom activation and deactivation. Factor between 0 and
+        1
       </div>
     </div>
   </div>
@@ -322,7 +331,8 @@ XtFade.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-delay.html" data-name="delay">
     <div class="demo-text">
       <div class="content">
-        <code>"delayOn": Function</code> <code>"delayOff": Function</code> return number using <strong>total</strong> and
+        <code>"delayOn": Function</code> <code>"delayOff": Function</code> return number using <strong>total</strong>
+        and
         <strong>current</strong>
       </div>
     </div>

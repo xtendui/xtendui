@@ -23,14 +23,6 @@
               </a>
             </div>
 
-            {% if page.collection == null %}
-              <div class="site-aside-text">
-                <a href="{{ page.url }}" class="btn btn-nodesign">
-                  <span>{{ page.title }}</span>
-                </a>
-              </div>
-            {% endif %}
-
             {% for collection in site.collections %}
               {% if collection.label == page.collection %}
 
