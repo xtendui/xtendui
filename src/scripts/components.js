@@ -1025,12 +1025,9 @@ class XtCore {
       let closeElements = el.querySelectorAll(options.closeInside);
       Xt.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
-          let events = Xt.clickEvents;
           let specialCloseInsideHandler = Xt.dataStorage.put(el, 'specialCloseInsideHandler', self.specialCloseInsideHandler.bind(self).bind(self, closeElement, single));
-          for (let event of events) {
-            closeElement.removeEventListener(event, specialCloseInsideHandler);
-            closeElement.addEventListener(event, specialCloseInsideHandler);
-          }
+          closeElement.removeEventListener('click', specialCloseInsideHandler);
+          closeElement.addEventListener('click', specialCloseInsideHandler);
         }
       });
     }
@@ -1039,12 +1036,9 @@ class XtCore {
       let closeElements = document.querySelectorAll(options.closeOutside);
       Xt.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
-          let events = Xt.clickEvents;
           let specialCloseOutsideHandler = Xt.dataStorage.put(el, 'specialCloseOutsideHandler', self.specialCloseOutsideHandler.bind(self).bind(self, el, single));
-          for (let event of events) {
-            closeElement.removeEventListener(event, specialCloseOutsideHandler);
-            closeElement.addEventListener(event, specialCloseOutsideHandler);
-          }
+          closeElement.removeEventListener('click', specialCloseOutsideHandler);
+          closeElement.addEventListener('click', specialCloseOutsideHandler);
         }
       });
     }
@@ -1061,22 +1055,16 @@ class XtCore {
     if (options.closeInside) {
       let closeElements = el.querySelectorAll(options.closeInside);
       for (let closeElement of closeElements) {
-        let events = Xt.clickEvents;
         let specialCloseInsideHandler = Xt.dataStorage.get(el, 'specialCloseInsideHandler');
-        for (let event of events) {
-          closeElement.removeEventListener(event, specialCloseInsideHandler);
-        }
+        closeElement.removeEventListener('click', specialCloseInsideHandler);
       }
     }
     // closeOutside
     if (options.closeOutside) {
       let closeElements = document.querySelectorAll(options.closeOutside);
       for (let closeElement of closeElements) {
-        let events = Xt.clickEvents;
         let specialCloseOutsideHandler = Xt.dataStorage.get(el, 'specialCloseOutsideHandler');
-        for (let event of events) {
-          closeElement.removeEventListener(event, specialCloseOutsideHandler);
-        }
+        closeElement.removeEventListener('click', specialCloseOutsideHandler);
       }
     }
   }

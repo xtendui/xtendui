@@ -20,10 +20,6 @@ const Xt = {};
 
 Xt.currents = {};
 
-// click events with also touch
-
-Xt.clickEvents = ['click', 'touchstart'];
-
 //////////////////////
 // methods
 //////////////////////
