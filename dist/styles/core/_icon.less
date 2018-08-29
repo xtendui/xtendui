@@ -109,14 +109,14 @@
   }
   & when (@position = before) {
     &::before {
-      .icon-base();
+      .icon();
       content: '@{content}';
       font-size: @size;
     }
   }
   & when (@position = after) {
     &::after {
-      .icon-base();
+      .icon();
       content: '@{content}';
       font-size: @size;
     }
