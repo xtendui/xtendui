@@ -281,36 +281,28 @@ a, .alink {
 .btn-close {
   .btn-primary-empty(); // variant
   .btn-icon() !important; // special
-  > span {
-    .icon-xt(@content: @icon-xt-close, @size: @icon-medium, @sr-only: true);
-  }
+  .icon-xt(@content: @icon-xt-close, @size: @icon-medium, @sr-only: true);
 }
 
 .btn-caret {
   .display(flex) !important;
   .align-items-center();
   .justify-content-between();
-  > span {
-    .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-tiny, @position: after);
-    &::after {
-      .margin(left, 2em);
-    }
+  .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-tiny);
+  &::after {
+    .margin(left, 2em);
   }
   &.active {
-    > span {
-      .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-tiny, @position: after);
-      &::after {
-        .anim-bottom.active();
-        opacity: 1;
-      }
+    .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-tiny);
+    &::after {
+      .anim-bottom.active();
+      opacity: 1;
     }
   }
   &.out {
-    > span {
-      &::after {
-        .anim-top.active();
-        opacity: 1;
-      }
+    &::after {
+      .anim-top.active();
+      opacity: 1;
     }
   }
 }
