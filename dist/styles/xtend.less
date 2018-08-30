@@ -18,3 +18,67 @@
 @classes-margin: false;
 @classes-padding: false;
 @classes-layout: sm, md, lg;
+
+//////////////////////
+// icons xt
+//////////////////////
+
+// font-face
+
+@icons-xt-family: 'xtend';
+@icons-xt-path: '../icons/fonts/xtend';
+
+@font-face {
+  font-family: @icons-xt-family;
+  src: url('@{icons-xt-path}.ttf') format('truetype'),
+  url('@{icons-xt-path}.woff') format('woff'),
+  url('@{icons-xt-path}.svg#xtend') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// icons
+// USAGE LESS: .icon-xt(@content: @icon-xt-close, @size: @icon-small, @sr-only: false, @position: after);
+// USAGE MARKUP: <span class="icon-xt-close"></span>
+
+@icons-xt: xt-close, xt-chevron-down, xt-chevron-left, xt-chevron-right, xt-chevron-up, xt-check, xt-circle;
+
+@icon-xt-chevron-down: '\e900';
+@icon-xt-chevron-left: '\e901';
+@icon-xt-chevron-right: '\e902';
+@icon-xt-chevron-up: '\e903';
+@icon-xt-close: '\e904';
+@icon-xt-check: '\e905';
+@icon-xt-circle: '\e906';
+
+//////////////////////
+// icons theme
+//////////////////////
+
+/*
+// font-face
+
+@icons-family: 'luma-icons';
+@icons-path: '../icons-theme/Luma-Icons';
+
+@font-face {
+  font-family: @icons-family;
+  src: url('@{icons-path}.eot');
+  src: url('@{icons-path}.eot?#iefix') format('embedded-opentype'),
+  url('@{icons-path}.woff2') format('woff2'),
+  url('@{icons-path}.woff') format('woff'),
+  url('@{icons-path}.ttf') format('truetype'),
+  url('@{icons-path}.svg#@{icons-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// icons
+// USAGE LESS: .icon(@content: @icon-menu, @size: @icon-small, @sr-only: false, @position: after);
+// USAGE MARKUP: <span class="icon-menu"></span>
+
+@icons: menu, search; // this will generate classes .icon-{name}
+
+@icon-menu: '\e609';
+@icon-search: '\e615';
+*/
