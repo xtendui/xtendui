@@ -166,8 +166,8 @@ const populateDemo = function (container, i) {
   let items = container.querySelectorAll('.demo-item');
   // multiple elements
   container.prepend(Xt.createElement('<div class="demo-tabs"><div class="demo-tabs-left"></div><div class="demo-tabs-right"></div></div>'));
-  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn-secondary-empty btn-show-code" data-toggle="tooltip" data-placement="top" title="Show code"><span class="icon-embed"></span></button>'));
-  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn-secondary-empty btn-open-full" data-toggle="tooltip" data-placement="top" title="Open full"><span class="icon-enlarge2"></span></button>'));
+  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn-secondary-empty btn-tiny btn-narrow btn-show-code" data-toggle="tooltip" data-placement="top" title="Show code"><span class="icon-code icon-big"></span></button>'));
+  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn-secondary-empty btn-tiny btn-narrow btn-open-full" data-toggle="tooltip" data-placement="top" title="Open full"><span class="icon-maximize icon-big"></span></button>'));
   /*
   append.addEventListener('click', function (e) {
     console.log();
@@ -192,7 +192,7 @@ const populateDemo = function (container, i) {
         name = 'demo #' + k;
       }
     }
-    let btn = container.querySelectorAll('.demo-tabs-left')[0].append(Xt.createElement('<button type="button" class="btn btn-secondary-empty">' + name + '</button>'));
+    let btn = container.querySelectorAll('.demo-tabs-left')[0].append(Xt.createElement('<button type="button" class="btn btn-secondary-empty btn-tiny">' + name + '</button>'));
     btn = container.querySelectorAll('.demo-tabs-left .btn')[k];
     // iframe append
     let src = item.getAttribute('data-iframe');
@@ -201,7 +201,7 @@ const populateDemo = function (container, i) {
       item.append(Xt.createElement('<iframe data-src="' + src + '" frameborder="0" name="' + id + '"></iframe>'));
     }
     // tabs
-    item.append(Xt.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-empty btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>'));
+    item.append(Xt.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-empty btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>'));
     // https://github.com/zenorocha/clipboard.js/
     let clipboard = new Clipboard('.btn-clipboard', {
       target: function (trigger) {
@@ -330,7 +330,7 @@ const populateSources = function (item, element, z) {
   let lang = element.getAttribute('data-lang');
   // populate tabs
   item.querySelectorAll('.demo-code-body')[0].append(Xt.createElement('<div class="demo-code-body-item"><pre><code></code></pre></div>'));
-  item.querySelectorAll('.demo-code-tabs-left')[0].append(Xt.createElement('<button type="button" class="btn btn-secondary-empty">' + lang + '</button>'));
+  item.querySelectorAll('.demo-code-tabs-left')[0].append(Xt.createElement('<button type="button" class="btn btn-secondary-empty btn-tiny">' + lang + '</button>'));
   // format code
   let codeInside = item.querySelectorAll('.demo-code-body .demo-code-body-item')[z].querySelectorAll('pre code')[0];
   if (!codeInside.classList.contains('hljs')) {
