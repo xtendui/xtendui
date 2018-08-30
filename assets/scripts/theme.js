@@ -165,14 +165,20 @@ window.addEventListener('scroll', function (e) {
 const populateDemo = function (container, i) {
   let items = container.querySelectorAll('.demo-item');
   // multiple elements
-  let prepend = Xt.createElement('<div class="demo-tabs"><div class="demo-tabs-left"></div><div class="demo-tabs-right"></div></div>');
-  container.prepend(prepend);
-  let append = Xt.createElement('<button type="button" class="btn btn-secondary-empty btn-fullscreen" data-toggle="tooltip" data-placement="top" title="Open fullscreen"><span class="icon-enlarge2"></span></button>');
-  container.querySelectorAll('.demo-tabs-right')[0].append(append);
+  container.prepend(Xt.createElement('<div class="demo-tabs"><div class="demo-tabs-left"></div><div class="demo-tabs-right"></div></div>'));
+  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn-secondary-empty btn-tiny btn-narrow btn-show-code" data-toggle="tooltip" data-placement="top" title="Show code"><span class="icon-code icon-big"></span></button>'));
+  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn-secondary-empty btn-tiny btn-narrow btn-open-full" data-toggle="tooltip" data-placement="top" title="Open full"><span class="icon-maximize icon-big"></span></button>'));
+  /*
+  append.addEventListener('click', function (e) {
+    console.log();
+  });
+  */
   // don't show tabs on single
+  /*
   if (items.length === 1) {
     container.querySelectorAll('.demo-tabs')[0].style.display = 'none';
   }
+  */
   // loop items
   for(let [k, item] of items.entries()) {
     // populate tabs
@@ -186,19 +192,16 @@ const populateDemo = function (container, i) {
         name = 'demo #' + k;
       }
     }
-    let appendBtn = Xt.createElement('<button type="button" class="btn btn-secondary-empty">' + name + '</button>');
-    let btn = container.querySelectorAll('.demo-tabs-left')[0].append(appendBtn);
+    let btn = container.querySelectorAll('.demo-tabs-left')[0].append(Xt.createElement('<button type="button" class="btn btn-secondary-empty btn-tiny">' + name + '</button>'));
     btn = container.querySelectorAll('.demo-tabs-left .btn')[k];
     // iframe append
     let src = item.getAttribute('data-iframe');
     let id = 'iframe' + i + k;
     if (src) {
-      let appendIframe = Xt.createElement('<iframe data-src="' + src + '" frameborder="0" name="' + id + '"></iframe>');
-      item.append(appendIframe);
+      item.append(Xt.createElement('<iframe data-src="' + src + '" frameborder="0" name="' + id + '"></iframe>'));
     }
     // tabs
-    let appendItem = Xt.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-empty btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>');
-    item.append(appendItem);
+    item.append(Xt.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-empty btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>'));
     // https://github.com/zenorocha/clipboard.js/
     let clipboard = new Clipboard('.btn-clipboard', {
       target: function (trigger) {
@@ -302,16 +305,13 @@ function populateIframe(item, iframe) {
   let js = iframe.contentWindow.document.body.querySelectorAll('js-script')[0];
   // inject code
   if (html) {
-    let appendItem = Xt.createElement('<div class="demo-source" data-lang="html">' + html.innerHTML + '</div>');
-    iframe.append(appendItem);
+    iframe.append(Xt.createElement('<div class="demo-source" data-lang="html">' + html.innerHTML + '</div>'));
   }
   if (less) {
-    let appendItem = Xt.createElement('<div class="demo-source" data-lang="less">' + less.innerHTML + '</div>');
-    iframe.append(appendItem);
+    iframe.append(Xt.createElement('<div class="demo-source" data-lang="less">' + less.innerHTML + '</div>'));
   }
   if (js) {
-    let appendItem = Xt.createElement('<div class="demo-source" data-lang="js">' + js.innerHTML + '</div>');
-    iframe.append(appendItem);
+    iframe.append(Xt.createElement('<div class="demo-source" data-lang="js">' + js.innerHTML + '</div>'));
   }
   // populate
   for(let [z, source] of item.querySelectorAll('.demo-source').entries()) {
@@ -329,13 +329,10 @@ function populateIframe(item, iframe) {
 const populateSources = function (item, element, z) {
   let lang = element.getAttribute('data-lang');
   // populate tabs
-  let appendCode = Xt.createElement('<div class="demo-code-body-item"><pre><code></code></pre></div>');
-  let codeInside = item.querySelectorAll('.demo-code-body')[0].append(appendCode);
-  codeInside = item.querySelectorAll('.demo-code-body .demo-code-body-item')[z].querySelectorAll('pre code')[0];
-  let appendBtn = Xt.createElement('<button type="button" class="btn btn-secondary-empty">' + lang + '</button>');
-  let btnInside = item.querySelectorAll('.demo-code-tabs-left')[0].append(appendBtn);
-  //btnInside = item.querySelectorAll('.demo-code-tabs-left').querySelectorAll('.btn')[z];
+  item.querySelectorAll('.demo-code-body')[0].append(Xt.createElement('<div class="demo-code-body-item"><pre><code></code></pre></div>'));
+  item.querySelectorAll('.demo-code-tabs-left')[0].append(Xt.createElement('<button type="button" class="btn btn-secondary-empty btn-tiny">' + lang + '</button>'));
   // format code
+  let codeInside = item.querySelectorAll('.demo-code-body .demo-code-body-item')[z].querySelectorAll('pre code')[0];
   if (!codeInside.classList.contains('hljs')) {
     let text = formatCode(element, lang);
     // set text
