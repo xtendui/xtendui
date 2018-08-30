@@ -420,7 +420,7 @@ class XtCore {
 
   /**
    * query for inside
-   * @param {Node|HTMLElement} element Element to search from
+   * @param {Node|HTMLElement|Array} element Element to search from
    * @param {String} query Query for querySelectorAll
    * @returns {Array}
    */
@@ -428,7 +428,17 @@ class XtCore {
     if (!query) {
       return [];
     }
-    return Xt.arrSingle(element.querySelectorAll(query));
+    if (!element.length) {
+      // search element
+      return Xt.arrSingle(element.querySelectorAll(query));
+    } else {
+      // search array
+      let arr = [];
+      for (let el of element) {
+        arr.push(...el.querySelectorAll(query));
+      }
+      return arr;
+    }
   }
 
   /**
@@ -502,11 +512,14 @@ class XtCore {
     let options = self.options;
     // toggle
     if (this.checkOn(element)) {
+      // special
+      this.specialDoneOn = false;
       // on
       let fElements = this.getElements(element);
       this.addCurrent(fElements.single);
       let targets = this.getTargets(element);
       let controls = this.getInside(element, this.options.controls);
+      let additionals = this.getInside(targets, this.options.additionals);
       // execute defer @FIX delay animation
       this.activationDelay = {};
       if (fElements.all.length) {
@@ -522,6 +535,11 @@ class XtCore {
       if (controls.length) {
         this.activationDelay['controls'] = function () {
           self.activationOn(controls, fElements, 'controls');
+        };
+      }
+      if (additionals.length) {
+        this.activationDelay['additionals'] = function () {
+          self.activationOn(additionals, fElements, 'additionals');
         };
       }
       // set autoCurrent
@@ -562,15 +580,27 @@ class XtCore {
   eventOff(element) {
     // toggle
     if (this.checkOff(element)) {
+      // special
+      this.specialDoneOff = false;
       // off
       let fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
       let targets = this.getTargets(element);
       let controls = this.getInside(element, this.options.controls);
+      let additionals = this.getInside(targets, this.options.additionals);
       // execute
-      this.activationOff(fElements.all, fElements, 'elements');
-      this.activationOff(targets, fElements, 'targets');
-      this.activationOff(controls, fElements, 'controls');
+      if (fElements.all.length) {
+        this.activationOff(fElements.all, fElements, 'elements');
+      }
+      if (targets.length) {
+        this.activationOff(targets, fElements, 'targets');
+      }
+      if (controls.length) {
+        this.activationOff(controls, fElements, 'controls');
+      }
+      if (additionals.length) {
+        this.activationOff(additionals, fElements, 'additionals');
+      }
     }
   }
 
@@ -644,6 +674,11 @@ class XtCore {
     el.classList.remove('out');
     self.activationOnAnimate(el, type);
     // specials
+    if (!this.specialDoneOn) {
+      self.specialClassHtmlOn();
+      self.specialScrollbarOn();
+      this.specialDoneOn = true;
+    }
     if (type === 'elements') {
       // aria
       if (options.aria) {
@@ -652,14 +687,12 @@ class XtCore {
         ariaEl.setAttribute('aria-selected', 'true');
       }
     }
-    if (type === 'targets') {
-      self.specialClassHtmlOn();
+    if (type === 'targets' || type === 'additionals') {
       self.specialBackdrop(el);
-      self.specialCenterOn(el);
-      self.specialMiddleOn(el);
+      self.specialCenter(el);
+      self.specialMiddle(el);
       self.specialCollapseOn(el);
       self.specialCloseOn(el, fElements.single);
-      self.specialScrollbarOn();
       // aria
       if (options.aria) {
         let role = el.getAttribute('role');
@@ -699,8 +732,11 @@ class XtCore {
       this.activationDelayCheckAndReset();
     }
     // specials
-    if (type === 'targets') {
+    if (!this.specialDoneOff) {
       self.specialClassHtmlOff();
+      this.specialDoneOff = true;
+    }
+    if (type === 'targets' || type === 'additionals') {
       self.specialCollapseOff(el);
       self.specialCloseOff(el);
     }
@@ -717,10 +753,11 @@ class XtCore {
     // onDone
     let onDone = function (el, type) {
       // collapse-width and collapse-height
-      if (el.classList.contains('collapse-height')) {
+      let style = getComputedStyle(el);
+      if (style.getPropertyValue('--collapse-height') === 'true') {
         el.style.height = 'auto';
       }
-      if (el.classList.contains('collapse-width')) {
+      if (style.getPropertyValue('--collapse-width') === 'true') {
         el.style.width = 'auto';
       }
     };
@@ -748,6 +785,9 @@ class XtCore {
     let onDone = function (el, type) {
       el.classList.remove('out');
       // specials
+      if (type === 'object') {
+        self.specialScrollbarOff();
+      }
       if (type === 'elements') {
         // aria
         if (options.aria) {
@@ -757,7 +797,6 @@ class XtCore {
         }
       }
       if (type === 'targets') {
-        self.specialScrollbarOff();
         // aria
         if (options.aria) {
           let role = el.getAttribute('role');
@@ -906,7 +945,7 @@ class XtCore {
    * center position on activation
    * @param {Node|HTMLElement} el Element
    */
-  specialCenterOn(el) {
+  specialCenter(el) {
     let style = getComputedStyle(el);
     if (style.getPropertyValue('--center') === 'true') {
       let add = this.object.clientWidth;
@@ -919,7 +958,7 @@ class XtCore {
    * middle position on activation
    * @param {Node|HTMLElement} el Element
    */
-  specialMiddleOn(el) {
+  specialMiddle(el) {
     let style = getComputedStyle(el);
     if (style.getPropertyValue('--middle') === 'true') {
       let add = this.object.clientHeight;
@@ -933,7 +972,8 @@ class XtCore {
    * @param {Node|HTMLElement} el Element
    */
   specialCollapseOn(el) {
-    if (el.classList.contains('collapse-height')) {
+    let style = getComputedStyle(el);
+    if (style.getPropertyValue('--collapse-height') === 'true') {
       el.classList.add('no-transition');
       el.style.height = 'auto';
       el.style.paddingTop = '';
@@ -953,7 +993,7 @@ class XtCore {
         });
       });
     }
-    if (el.classList.contains('collapse-width')) {
+    if (style.getPropertyValue('--collapse-width') === 'true') {
       el.style.width = 'auto';
       el.style.paddingLeft = '';
       el.style.paddingRight = '';
@@ -979,7 +1019,8 @@ class XtCore {
    * @param {Node|HTMLElement} el Element
    */
   specialCollapseOff(el) {
-    if (el.classList.contains('collapse-height')) {
+    let style = getComputedStyle(el);
+    if (style.getPropertyValue('--collapse-height') === 'true') {
       let h = el.clientHeight + 'px';
       let pt = el.style.paddingTop;
       let pb = el.style.paddingBottom;
@@ -994,7 +1035,7 @@ class XtCore {
         });
       });
     }
-    if (el.classList.contains('collapse-width')) {
+    if (style.getPropertyValue('--collapse-width') === 'true') {
       let w = el.clientWidth + 'px';
       let pl = el.style.paddingLeft;
       let pr = el.style.paddingRight;

@@ -166,7 +166,11 @@ a, .alink, .btn-link {
 // center
 
 .drop-center() {
+  // custom property
   --center: true;
+  > * {
+    --center: initial;
+  }
 }
 
 .drop.drop-center {
@@ -176,9 +180,13 @@ a, .alink, .btn-link {
 // middle
 
 .drop-middle() {
-  --middle: true;
   padding-top: 0;
   padding-bottom: 0;
+  // custom property
+  --middle: true;
+  > * {
+    --middle: initial;
+  }
 }
 
 .drop.drop-middle {

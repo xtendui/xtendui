@@ -36,8 +36,18 @@ transition-delay: 150ms; // @start + @child * @increment
 .collapse-height {
   overflow: hidden;
   height: 0;
+  // custom property
+  --collapse-height: true;
+  > * {
+    --collapse-height: initial;
+  }
 }
 .collapse-width {
   overflow: hidden;
   width: 0;
+  // custom property
+  --collapse-width: true;
+  > * {
+    --collapse-height: initial;
+  }
 }

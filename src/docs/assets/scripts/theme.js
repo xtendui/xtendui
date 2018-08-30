@@ -4,6 +4,8 @@
 
 // .make-line
 
+import {Xt} from "../../../scripts/xtend";
+
 for(let el of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
   el.classList.add('make-line');
 }
@@ -201,7 +203,14 @@ const populateDemo = function (container, i) {
       item.append(Xt.createElement('<iframe data-src="' + src + '" frameborder="0" name="' + id + '"></iframe>'));
     }
     // tabs
-    item.append(Xt.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-empty btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>'));
+    item.prepend(Xt.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-empty btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>'));
+    // collapse code
+    let demoId = 'demo-' + i;
+    container.setAttribute('id', demoId);
+    new XtToggle(container.querySelectorAll('.btn-show-code')[0], {
+      "targets": "#" + demoId,
+      "additionals": ".demo-code"
+    });
     // https://github.com/zenorocha/clipboard.js/
     let clipboard = new Clipboard('.btn-clipboard', {
       target: function (trigger) {

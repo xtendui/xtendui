@@ -631,8 +631,31 @@
   .demo-tabs {
     .margin-remove(top, 2px); // remove border space
   }
+  // activation
+  .demo-code {
+    .collapse-height();
+    /*
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    */
+  }
+  /*
+  .demo-source {
+    &.active {
+      display: none;
+    }
+  }
+  .demo-code {
+    &.active {
+      display: block;
+    }
+  }
+  */
   // code
   .demo-item {
+    position: relative;
     line-height: 0;
     .toggle-block();
     iframe {
@@ -654,9 +677,6 @@
         .toggle-block();
       }
     }
-  }
-  .demo-source {
-    line-height: 1.8;
   }
   .hljs {
     z-index: 1;
