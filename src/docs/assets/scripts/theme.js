@@ -1,57 +1,6 @@
 //////////////////////
-// docs
+// anchors and sidebar
 //////////////////////
-
-// formatCode
-
-const formatCode = function (source, lang) {
-  let inner = Array.from(source.querySelectorAll('.demo-source-from'));
-  inner = inner.filter(x => !x.querySelectorAll('.demo-source-from').length); // filter out nested
-  if (inner.length) {
-    source = inner[0];
-  }
-  let text = source.innerHTML;
-  if (lang === 'css' || lang === 'js') {
-    // remove <style> or <script> tag
-    if (text.search(/<[^>]*>/g) !== -1) {
-      text = text.replace(/<[^>]*>/g, '');
-      text = text.substring(1);
-    }
-    // replace entities
-    text = text.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-  } else if (lang === 'html') {
-    if (text.match(/[&<>]/g)) {
-      // replace quote entities
-      text = text.replace(/&quot;/g, '"');
-      // replace entities
-      text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-      // replace json quotes
-      text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'');
-      // replace empty quotes
-      text = text.replace(/=""/g, '');
-    }
-  }
-  // remove tabs
-  let arr = text.split('\n');
-  let toRemove = arr[1].search(/\S/g);
-  for (let i of arr.keys()) {
-    arr[i] = arr[i].substring(toRemove);
-  }
-  text = arr.join('\n');
-  // remove newline at start and end
-  text = text.replace(/^\s+|\s+$/g, '');
-  // return
-  return text;
-};
-
-// highlight
-
-for(let el of document.querySelectorAll('pre code')) {
-  let lang = el.className;
-  // set text
-  el.innerHTML = formatCode(el, lang);
-  window.hljs.highlightBlock(el);
-}
 
 // .make-line
 
@@ -86,7 +35,7 @@ for(let el of document.querySelectorAll('.site-article > h2, .site-article > h3'
   id += el.textContent.replace(/\s+/g, '-').toLowerCase();
   // make-anchor
   el.setAttribute('id', id);
-  el.innerHTML = '<a href="#' + id + '">' + el.innerHTML + '</a>';
+  el.innerHTML = '<a href="#' + id + '" tabindex="-1">' + el.innerHTML + '</a>';
   el.classList.add('make-anchor');
   el.append(Xt.createElement('<span class="site-article-anchor"><div class="btn"><span class="icon-link" aria-hidden="true"></span></div></span>'));
 }
@@ -159,6 +108,57 @@ window.addEventListener('scroll', function (e) {
 //////////////////////
 // demos
 //////////////////////
+
+// formatCode
+
+const formatCode = function (source, lang) {
+  let inner = Array.from(source.querySelectorAll('.demo-source-from'));
+  inner = inner.filter(x => !x.querySelectorAll('.demo-source-from').length); // filter out nested
+  if (inner.length) {
+    source = inner[0];
+  }
+  let text = source.innerHTML;
+  if (lang === 'css' || lang === 'js') {
+    // remove <style> or <script> tag
+    if (text.search(/<[^>]*>/g) !== -1) {
+      text = text.replace(/<[^>]*>/g, '');
+      text = text.substring(1);
+    }
+    // replace entities
+    text = text.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+  } else if (lang === 'html') {
+    if (text.match(/[&<>]/g)) {
+      // replace quote entities
+      text = text.replace(/&quot;/g, '"');
+      // replace entities
+      text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      // replace json quotes
+      text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'');
+      // replace empty quotes
+      text = text.replace(/=""/g, '');
+    }
+  }
+  // remove tabs
+  let arr = text.split('\n');
+  let toRemove = arr[1].search(/\S/g);
+  for (let i of arr.keys()) {
+    arr[i] = arr[i].substring(toRemove);
+  }
+  text = arr.join('\n');
+  // remove newline at start and end
+  text = text.replace(/^\s+|\s+$/g, '');
+  // return
+  return text;
+};
+
+// highlight
+
+for(let el of document.querySelectorAll('pre code')) {
+  let lang = el.className;
+  // set text
+  el.innerHTML = formatCode(el, lang);
+  window.hljs.highlightBlock(el);
+}
 
 // populateDemo
 

@@ -8,6 +8,8 @@
 // Xt
 //////////////////////
 
+import {Xt} from "./xtend";
+
 class XtCore {
 
   /**
@@ -669,8 +671,8 @@ class XtCore {
       if (options.aria) {
         if (options.scrollbar) {
           Xt.focusBlock = true;
-          el.focus();
           Xt.focusLimitOn(el);
+          el.focus();
         }
       }
     }
@@ -766,12 +768,9 @@ class XtCore {
         // focus
         if (options.aria) {
           if (options.scrollbar) {
-            let focus = Xt.focus;
-            if (focus) {
-              focus.focus();
-            }
             Xt.focusBlock = false;
             Xt.focusLimitOff();
+            Xt.focus.focus();
           }
         }
       }

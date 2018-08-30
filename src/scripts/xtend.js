@@ -244,6 +244,8 @@ Xt.focusLimit = function(focusable, first, last, e) {
 };
 
 Xt.focusLimitOn = function (element) {
+  // @FIX Xt.focus when clicking and not used tab before
+  Xt.focus = Xt.focus ? Xt.focus : document.activeElement;
   // vars
   let focusable = Array.from(element.querySelectorAll('a, button, details, input, iframe, select, textarea'));
   focusable = focusable.filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])')); // filter out parent
@@ -264,31 +266,53 @@ Xt.focusLimitOff = function () {
 /**
  * document focus utilities 
  */
-Xt.focusUtil = function(e) {
+Xt.focusUtilKey = function(e) {
   let code = e.keyCode ? e.keyCode : e.which;
   if (code === 9) {
-    // remember Xt.focus
     if (!Xt.focusBlock) {
+      // remember Xt.focus
       Xt.focus = document.activeElement;
     }
-    // add html.xt-focus
     if (!document.documentElement.classList.contains('xt-focus')) {
+      // html.xt-focus
       document.documentElement.classList.add('xt-focus');
+      // switch mode
+      Xt.focusUtilOff();
     }
+  }
+};
+Xt.focusUtilMouse = function(e) {
+  if (!Xt.focusBlock) {
+    // remember Xt.focus
+    Xt.focus = e.target;
+  }
+  if (document.documentElement.classList.contains('xt-focus')) {
+    // html.xt-focus
+    document.documentElement.classList.remove('xt-focus');
+    // switch mode
+    Xt.focusUtilOn();
   }
 };
 
 Xt.focusUtilOn = function () {
-  // event
-  let focusUtilHandler = Xt.dataStorage.put(document, 'focusUtilHandler', Xt.focusUtil.bind(this));
-  document.removeEventListener('keyup', focusUtilHandler);
-  document.addEventListener('keyup', focusUtilHandler);
+  // event key
+  let focusUtilKeyHandler = Xt.dataStorage.put(document, 'focusUtilKeyHandler', Xt.focusUtilKey.bind(this));
+  document.addEventListener('keyup', focusUtilKeyHandler);
+  // event mouse
+  let focusUtilMouseHandler = Xt.dataStorage.put(document, 'focusUtilMouseHandler', Xt.focusUtilMouse.bind(this));
+  document.removeEventListener('mousedown', focusUtilMouseHandler);
+  document.removeEventListener('touchstart', focusUtilMouseHandler);
+  document.removeEventListener('pointerdown', focusUtilMouseHandler);
 };
-
 Xt.focusUtilOff = function () {
   // event
-  let focusUtilHandler = Xt.dataStorage.put(document, 'focusUtilHandler', Xt.focusUtil.bind(this));
-  document.removeEventListener('keyup', focusUtilHandler);
+  let focusUtilKeyHandler = Xt.dataStorage.put(document, 'focusUtilKeyHandler', Xt.focusUtilKey.bind(this));
+  document.removeEventListener('keyup', focusUtilKeyHandler);
+  // event mouse
+  let focusUtilMouseHandler = Xt.dataStorage.put(document, 'focusUtilMouseHandler', Xt.focusUtilMouse.bind(this));
+  document.addEventListener('mousedown', focusUtilMouseHandler);
+  document.addEventListener('touchstart', focusUtilMouseHandler);
+  document.addEventListener('pointerdown', focusUtilMouseHandler);
 };
 
 Xt.focus = null;
