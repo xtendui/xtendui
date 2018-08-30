@@ -512,8 +512,8 @@ class XtCore {
     let options = self.options;
     // toggle
     if (this.checkOn(element)) {
-      // special
-      this.specialDoneOn = false;
+      // specials
+      this.specialOnDeactivate = false;
       // on
       let fElements = this.getElements(element);
       this.addCurrent(fElements.single);
@@ -580,8 +580,9 @@ class XtCore {
   eventOff(element) {
     // toggle
     if (this.checkOff(element)) {
-      // special
-      this.specialDoneOff = false;
+      // specials
+      this.specialOffDeactivate = false;
+      this.specialOffAnimate = false;
       // off
       let fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
@@ -672,13 +673,8 @@ class XtCore {
     // activate
     el.classList.add(...options.classes);
     el.classList.remove('out');
-    self.activationOnAnimate(el, type);
+    this.activationOnAnimate(el, type);
     // specials
-    if (!this.specialDoneOn) {
-      self.specialClassHtmlOn();
-      self.specialScrollbarOn();
-      this.specialDoneOn = true;
-    }
     if (type === 'elements') {
       // aria
       if (options.aria) {
@@ -688,24 +684,30 @@ class XtCore {
       }
     }
     if (type === 'targets' || type === 'additionals') {
-      self.specialBackdrop(el);
-      self.specialCenter(el);
-      self.specialMiddle(el);
-      self.specialCollapseOn(el);
-      self.specialCloseOn(el, fElements.single);
+      this.specialBackdrop(el);
+      this.specialCenter(el);
+      this.specialMiddle(el);
+      this.specialCollapseOn(el);
+      this.specialCloseOn(el, fElements.single);
+      // specials
+      if (!this.specialOnDeactivate) {
+        this.specialClassHtmlOn();
+        this.specialScrollbarOn();
+        this.specialOnDeactivate = true;
+        // focus
+        if (options.aria) {
+          if (options.scrollbar) {
+            Xt.focusBlock = true;
+            Xt.focusLimitOn(el);
+            el.focus();
+          }
+        }
+      }
       // aria
       if (options.aria) {
         let role = el.getAttribute('role');
         if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
           el.setAttribute('aria-expanded', 'true');
-        }
-      }
-      // focus
-      if (options.aria) {
-        if (options.scrollbar) {
-          Xt.focusBlock = true;
-          Xt.focusLimitOn(el);
-          el.focus();
         }
       }
     }
@@ -731,14 +733,14 @@ class XtCore {
       this.activationDelayRun(type, options.instant && options.instant[type]);
       this.activationDelayCheckAndReset();
     }
-    // specials
-    if (!this.specialDoneOff) {
-      self.specialClassHtmlOff();
-      this.specialDoneOff = true;
-    }
     if (type === 'targets' || type === 'additionals') {
-      self.specialCollapseOff(el);
-      self.specialCloseOff(el);
+      this.specialCollapseOff(el);
+      this.specialCloseOff(el);
+      // specials
+      if (!this.specialOffDeactivate) {
+        this.specialClassHtmlOff();
+        this.specialOffDeactivate = true;
+      }
     }
     // listener dispatch
     el.dispatchEvent(new CustomEvent('off', {detail: {skip: true}}));
@@ -785,9 +787,6 @@ class XtCore {
     let onDone = function (el, type) {
       el.classList.remove('out');
       // specials
-      if (type === 'object') {
-        self.specialScrollbarOff();
-      }
       if (type === 'elements') {
         // aria
         if (options.aria) {
@@ -797,19 +796,24 @@ class XtCore {
         }
       }
       if (type === 'targets') {
+        // specials
+        if (!self.specialOffAnimate) {
+          self.specialScrollbarOff();
+          self.specialOffAnimate = true;
+          // focus
+          if (options.aria) {
+            if (options.scrollbar) {
+              Xt.focusBlock = false;
+              Xt.focusLimitOff();
+              Xt.focus.focus();
+            }
+          }
+        }
         // aria
         if (options.aria) {
           let role = el.getAttribute('role');
           if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
             el.setAttribute('aria-expanded', 'false');
-          }
-        }
-        // focus
-        if (options.aria) {
-          if (options.scrollbar) {
-            Xt.focusBlock = false;
-            Xt.focusLimitOff();
-            Xt.focus.focus();
           }
         }
       }
