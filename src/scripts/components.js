@@ -142,7 +142,7 @@ class XtCore {
       if (this.targets.length) {
         for (let el of this.elements) {
           // id
-          let ariaEls = self.getInside(el, options.controls);
+          let ariaEls = self.getInside(el, options.ariaControls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
           let id = ariaEl.getAttribute('id');
           el.dataset.namespace = Xt.getUniqueID();
@@ -169,7 +169,7 @@ class XtCore {
             tr.setAttribute('aria-expanded', 'false');
           }
           // depending on el
-          let ariaEls = self.getInside(el, options.controls);
+          let ariaEls = self.getInside(el, options.ariaControls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
           ariaEl.setAttribute('aria-controls', id);
           tr.setAttribute('aria-labelledby', ariaEl.getAttribute('id'));
@@ -518,8 +518,8 @@ class XtCore {
       let fElements = this.getElements(element);
       this.addCurrent(fElements.single);
       let targets = this.getTargets(element);
-      let controls = this.getInside(element, this.options.controls);
-      let additionals = this.getInside(targets, this.options.additionals);
+      let elementsInner = this.getInside(element, this.options.elementsInner);
+      let targetsInner = this.getInside(targets, this.options.targetsInner);
       // execute defer @FIX delay animation
       this.activationDelay = {};
       if (fElements.all.length) {
@@ -532,14 +532,14 @@ class XtCore {
           self.activationOn(targets, fElements, 'targets');
         };
       }
-      if (controls.length) {
+      if (elementsInner.length) {
         this.activationDelay['controls'] = function () {
-          self.activationOn(controls, fElements, 'controls');
+          self.activationOn(elementsInner, fElements, 'elementsInner');
         };
       }
-      if (additionals.length) {
-        this.activationDelay['additionals'] = function () {
-          self.activationOn(additionals, fElements, 'additionals');
+      if (targetsInner.length) {
+        this.activationDelay['targetsInner'] = function () {
+          self.activationOn(targetsInner, fElements, 'targetsInner');
         };
       }
       // set autoCurrent
@@ -587,8 +587,8 @@ class XtCore {
       let fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
       let targets = this.getTargets(element);
-      let controls = this.getInside(element, this.options.controls);
-      let additionals = this.getInside(targets, this.options.additionals);
+      let elementsInner = this.getInside(element, this.options.elementsInner);
+      let targetsInner = this.getInside(targets, this.options.targetsInner);
       // execute
       if (fElements.all.length) {
         this.activationOff(fElements.all, fElements, 'elements');
@@ -596,11 +596,11 @@ class XtCore {
       if (targets.length) {
         this.activationOff(targets, fElements, 'targets');
       }
-      if (controls.length) {
-        this.activationOff(controls, fElements, 'controls');
+      if (elementsInner.length) {
+        this.activationOff(elementsInner, fElements, 'elementsInner');
       }
-      if (additionals.length) {
-        this.activationOff(additionals, fElements, 'additionals');
+      if (targetsInner.length) {
+        this.activationOff(targetsInner, fElements, 'targetsInner');
       }
     }
   }
@@ -674,22 +674,29 @@ class XtCore {
     el.classList.add(...options.classes);
     el.classList.remove('out');
     this.activationOnAnimate(el, type);
-    // specials
+    // additionals
     if (type === 'elements') {
       // aria
       if (options.aria) {
-        let ariaEls = self.getInside(el, options.controls);
+        let ariaEls = self.getInside(el, options.ariaControls);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;
         ariaEl.setAttribute('aria-selected', 'true');
       }
     }
-    if (type === 'targets' || type === 'additionals') {
+    if (type === 'targets' || type === 'targetsInner') {
+      // aria
+      if (options.aria) {
+        let role = el.getAttribute('role');
+        if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
+          el.setAttribute('aria-expanded', 'true');
+        }
+      }
+      // specials
       this.specialBackdrop(el);
       this.specialCenter(el);
       this.specialMiddle(el);
       this.specialCollapseOn(el);
       this.specialCloseOn(el, fElements.single);
-      // specials
       if (!this.specialOnDeactivate) {
         this.specialClassHtmlOn();
         this.specialScrollbarOn();
@@ -701,13 +708,6 @@ class XtCore {
             Xt.focusLimitOn(el);
             el.focus();
           }
-        }
-      }
-      // aria
-      if (options.aria) {
-        let role = el.getAttribute('role');
-        if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
-          el.setAttribute('aria-expanded', 'true');
         }
       }
     }
@@ -733,10 +733,11 @@ class XtCore {
       this.activationDelayRun(type, options.instant && options.instant[type]);
       this.activationDelayCheckAndReset();
     }
-    if (type === 'targets' || type === 'additionals') {
+    // additionals
+    if (type === 'targets' || type === 'targetsInner') {
+      // specials
       this.specialCollapseOff(el);
       this.specialCloseOff(el);
-      // specials
       if (!this.specialOffDeactivate) {
         this.specialClassHtmlOff();
         this.specialOffDeactivate = true;
@@ -786,16 +787,23 @@ class XtCore {
     // onDone
     let onDone = function (el, type) {
       el.classList.remove('out');
-      // specials
+      // additionals
       if (type === 'elements') {
         // aria
         if (options.aria) {
-          let ariaEls = self.getInside(el, options.controls);
+          let ariaEls = self.getInside(el, options.ariaControls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
           ariaEl.setAttribute('aria-selected', 'false');
         }
       }
       if (type === 'targets') {
+        // aria
+        if (options.aria) {
+          let role = el.getAttribute('role');
+          if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
+            el.setAttribute('aria-expanded', 'false');
+          }
+        }
         // specials
         if (!self.specialOffAnimate) {
           self.specialScrollbarOff();
@@ -807,13 +815,6 @@ class XtCore {
               Xt.focusLimitOff();
               Xt.focus.focus();
             }
-          }
-        }
-        // aria
-        if (options.aria) {
-          let role = el.getAttribute('role');
-          if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
-            el.setAttribute('aria-expanded', 'false');
           }
         }
       }
@@ -1280,7 +1281,7 @@ class XtToggle extends XtCore {
             this.object.setAttribute('aria-multiselectable', 'true');
           }
           for (let el of this.elements) {
-            let ariaEls = self.getInside(el, options.controls);
+            let ariaEls = self.getInside(el, options.ariaControls);
             let ariaEl = ariaEls.length ? ariaEls[0] : el;
             ariaEl.setAttribute('role', 'tab');
           }
@@ -1340,7 +1341,7 @@ class XtDrop extends XtCore {
     if (options.aria) {
       if (this.targets.length) {
         for (let el of this.elements) {
-          let ariaEls = self.getInside(el, options.controls);
+          let ariaEls = self.getInside(el, options.ariaControls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
           ariaEl.setAttribute('aria-haspopup', 'listbox');
         }
@@ -1357,7 +1358,7 @@ class XtDrop extends XtCore {
 
 XtDrop.defaults = {
   "targets": ":scope > .drop",
-  "controls": ":scope > a, :scope > button",
+  "elementsInner": ":scope > a, :scope > button",
   "class": "active",
   "instant": {"elements": true},
   "on": "click",
@@ -1365,7 +1366,8 @@ XtDrop.defaults = {
   "min": 0,
   "max": 1,
   "closeOutside": "body",
-  "aria": true
+  "aria": true,
+  "ariaControls": ":scope > a, :scope > button"
 };
 
 // export
@@ -1400,7 +1402,7 @@ class XtOverlay extends XtCore {
     if (options.aria) {
       if (this.targets.length) {
         for (let el of this.elements) {
-          let ariaEls = self.getInside(el, options.controls);
+          let ariaEls = self.getInside(el, options.ariaControls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
           ariaEl.setAttribute('aria-haspopup', 'dialog');
         }

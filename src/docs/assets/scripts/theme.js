@@ -209,7 +209,7 @@ const populateDemo = function (container, i) {
     container.setAttribute('id', demoId);
     new XtToggle(container.querySelectorAll('.btn-show-code')[0], {
       "targets": "#" + demoId,
-      "additionals": ".demo-code"
+      "targetsInner": ".demo-code"
     });
     // https://github.com/zenorocha/clipboard.js/
     let clipboard = new Clipboard('.btn-clipboard', {
