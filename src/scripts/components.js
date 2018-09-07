@@ -186,30 +186,30 @@ class XtCore {
     let options = self.options;
     // events
     for (let el of this.elements) {
+      // handler
+      let onHandler = Xt.dataStorage.put(el, 'onHandler', self.eventOnHandler.bind(self).bind(self, el));
+      // event
       if (options.on) {
-        // handler
-        let onHandler = Xt.dataStorage.put(el, 'onHandler', self.eventOnHandler.bind(self).bind(self, el));
-        // event
         let events = [...options.on.split(' ')];
         for (let event of events) {
           el.removeEventListener(event, onHandler);
           el.addEventListener(event, onHandler);
         }
-        // listener
-        el.addEventListener('on', onHandler);
       }
+      // listener
+      el.addEventListener('on', onHandler);
+      // handler
+      let offHandler = Xt.dataStorage.put(el, 'offHandler', self.eventOffHandler.bind(self).bind(self, el));
+      // event
       if (options.off) {
-        // handler
-        let offHandler = Xt.dataStorage.put(el, 'offHandler', self.eventOffHandler.bind(self).bind(self, el));
-        // event
         let events = [...options.off.split(' ')];
         for (let event of events) {
           el.removeEventListener(event, offHandler);
           el.addEventListener(event, offHandler);
         }
-        // listener
-        el.addEventListener('off', offHandler);
       }
+      // listener
+      el.addEventListener('off', offHandler);
     }
     // listener
     for (let tr of this.targets) {
@@ -1513,19 +1513,18 @@ class XtSticky extends XtCore {
   initEvents() {
     let self = this;
     let options = self.options;
-    // events
+    // handler
+    let stickyHandler = Xt.dataStorage.put(window, 'stickyHandler', self.eventOnHandler.bind(self));
+    // event
     if (options.on) {
-      // handler
-      let stickyHandler = Xt.dataStorage.put(window, 'stickyHandler', self.eventOnHandler.bind(self));
-      // event
       let events = [...options.on.split(' ')];
       for (let event of events) {
         window.removeEventListener(event, stickyHandler);
         window.addEventListener(event, stickyHandler);
       }
-      // listener
-      window.addEventListener('scroll.sticky', stickyHandler);
     }
+    // listener
+    window.addEventListener('scroll.sticky', stickyHandler);
     // listener dispatch initial
     window.dispatchEvent(new CustomEvent('scroll.sticky'));
   }
@@ -1833,19 +1832,18 @@ class XtFade extends XtCore {
   initEvents() {
     let self = this;
     let options = self.options;
-    // events
+    // handler
+    let fadeHandler = Xt.dataStorage.put(window, 'fadeHandler', self.eventOnHandler.bind(self));
+    // event
     if (options.on) {
-      // handler
-      let fadeHandler = Xt.dataStorage.put(window, 'fadeHandler', self.eventOnHandler.bind(self));
-      // event
       let events = [...options.on.split(' ')];
       for (let event of events) {
         window.removeEventListener(event, fadeHandler);
         window.addEventListener(event, fadeHandler);
       }
-      // listener
-      window.addEventListener('scroll.fade', fadeHandler);
     }
+    // listener
+    window.addEventListener('scroll.fade', fadeHandler);
     // listener dispatch initial
     window.dispatchEvent(new CustomEvent('scroll.fade'));
   }
