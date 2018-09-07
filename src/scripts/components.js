@@ -757,10 +757,10 @@ class XtCore {
     let onDone = function (el, type) {
       // collapse-width and collapse-height
       let style = getComputedStyle(el);
-      if (style.getPropertyValue('--collapse-height') === 'true') {
+      if (style.getPropertyValue('--collapse-height').replace(/\s/g, '') === 'true') {
         el.style.height = 'auto';
       }
-      if (style.getPropertyValue('--collapse-width') === 'true') {
+      if (style.getPropertyValue('--collapse-width').replace(/\s/g, '') === 'true') {
         el.style.width = 'auto';
       }
     };
@@ -952,7 +952,7 @@ class XtCore {
    */
   specialCenter(el) {
     let style = getComputedStyle(el);
-    if (style.getPropertyValue('--center') === 'true') {
+    if (style.getPropertyValue('--center').replace(/\s/g, '') === 'true') {
       let add = this.object.clientWidth;
       let remove = el.clientWidth;
       el.style.left = ((add - remove) / 2) + 'px';
@@ -965,7 +965,7 @@ class XtCore {
    */
   specialMiddle(el) {
     let style = getComputedStyle(el);
-    if (style.getPropertyValue('--middle') === 'true') {
+    if (style.getPropertyValue('--middle').replace(/\s/g, '') === 'true') {
       let add = this.object.clientHeight;
       let remove = el.clientHeight;
       el.style.top = ((add - remove) / 2) + 'px';
@@ -978,7 +978,7 @@ class XtCore {
    */
   specialCollapseOn(el) {
     let style = getComputedStyle(el);
-    if (style.getPropertyValue('--collapse-height') === 'true') {
+    if (style.getPropertyValue('--collapse-height').replace(/\s/g, '') === 'true') {
       el.classList.add('no-transition');
       el.style.height = 'auto';
       el.style.paddingTop = '';
@@ -998,7 +998,7 @@ class XtCore {
         });
       });
     }
-    if (style.getPropertyValue('--collapse-width') === 'true') {
+    if (style.getPropertyValue('--collapse-width').replace(/\s/g, '') === 'true') {
       el.style.width = 'auto';
       el.style.paddingLeft = '';
       el.style.paddingRight = '';
@@ -1025,7 +1025,7 @@ class XtCore {
    */
   specialCollapseOff(el) {
     let style = getComputedStyle(el);
-    if (style.getPropertyValue('--collapse-height') === 'true') {
+    if (style.getPropertyValue('--collapse-height').replace(/\s/g, '') === 'true') {
       let h = el.clientHeight + 'px';
       let pt = el.style.paddingTop;
       let pb = el.style.paddingBottom;
@@ -1040,7 +1040,7 @@ class XtCore {
         });
       });
     }
-    if (style.getPropertyValue('--collapse-width') === 'true') {
+    if (style.getPropertyValue('--collapse-width').replace(/\s/g, '') === 'true') {
       let w = el.clientWidth + 'px';
       let pl = el.style.paddingLeft;
       let pr = el.style.paddingRight;
