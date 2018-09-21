@@ -81,6 +81,9 @@
 .responsive(@breakpoint:none) when (@breakpoint = none) {
   max-width: 100%;
   height: auto;
+  // fix ie11 images inside flex
+  -ms-flex-shrink: 0;
+  flex-shrink: 0;
   /*
   // fix ie11 bug responsive
   min-height: 2px;
@@ -94,12 +97,18 @@
   @media @@query-min {
     max-width: 100%;
     height: auto;
+    // fix ie11 images inside flex
+    -ms-flex-shrink: 0;
+    flex-shrink: 0;
   }
 }
 
 .responsive-y(@breakpoint:none) when (@breakpoint = none) {
   max-height: 100%;
   width: auto;
+  // fix ie11 images inside flex
+  -ms-flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 .responsive-y(@breakpoint:none) when (default()) {
@@ -107,6 +116,9 @@
   @media @@query-min {
     max-height: 100%;
     width: auto;
+    // fix ie11 images inside flex
+    -ms-flex-shrink: 0;
+    flex-shrink: 0;
   }
 }
 
