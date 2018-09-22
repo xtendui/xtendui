@@ -1441,6 +1441,42 @@ window.XtOverlay = XtOverlay;
 export {XtOverlay};
 
 //////////////////////
+// XtSlider
+//////////////////////
+
+class XtSlider extends XtCore {
+
+  /**
+   * constructor
+   * @param {Node|HTMLElement} object Base node
+   * @param {Object} jsOptions User options
+   * @constructor
+   */
+  constructor(object, jsOptions = {}) {
+    super(object, jsOptions, 'data-xt-slider');
+  }
+
+}
+
+// default
+
+XtSlider.defaults = {
+  "elements": ":scope > a, :scope > button",
+  "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
+  "class": "active",
+  "instant": {"elements": true},
+  "on": "click",
+  "min": 1,
+  "max": 1,
+  "aria": true
+};
+
+// export
+
+window.XtSlider = XtSlider;
+export {XtSlider};
+
+//////////////////////
 // XtSticky
 //////////////////////
 
