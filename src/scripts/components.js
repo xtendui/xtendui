@@ -1456,6 +1456,138 @@ class XtSlider extends XtCore {
     super(object, jsOptions, 'data-xt-slider');
   }
 
+  //////////////////////
+  // init
+  //////////////////////
+
+  /**
+   * init events
+   */
+  initEvents() {
+    super.initEvents();
+    let self = this;
+    let options = self.options;
+    if (options.drag) {
+      for (let tr of this.targets) {
+        // handler
+        let dragOnHandler = Xt.dataStorage.put(tr, 'dragOnHandler', self.eventDragOnHandler.bind(self).bind(self, tr));
+        // event
+        let eventsOn = ['mousedown', 'touchstart'];
+        for (let event of eventsOn) {
+          tr.removeEventListener(event, dragOnHandler);
+          tr.addEventListener(event, dragOnHandler);
+        }
+        // listener
+        tr.addEventListener('drag.on.slider', dragOnHandler);
+        // handler
+        let dragOffHandler = Xt.dataStorage.put(tr, 'dragOffHandler', self.eventDragOffHandler.bind(self).bind(self, tr));
+        // event
+        let eventsOff = ['mouseup', 'touchend'];
+        for (let event of eventsOff) {
+          tr.removeEventListener(event, dragOffHandler);
+          tr.addEventListener(event, dragOffHandler);
+        }
+        // listener
+        tr.addEventListener('drag.off.slider', dragOffHandler);
+      }
+      // when events are outside use window
+      let eventsOff = ['mouseup', 'touchend'];
+      for (let event of eventsOff) {
+        window.addEventListener(event, function(e) {
+          for (let tr of self.targets) {
+            self.eventDragOffHandler(tr, e);
+          }
+        });
+      }
+    }
+  }
+
+  /**
+   * element drag on handler
+   * @param {Node|HTMLElement} element
+   * @param {Event} e
+   */
+  eventDragOnHandler(target, e) {
+    let self = this;
+    let dragOn = function(target) {
+      // handler
+      let dragHandler = Xt.dataStorage.put(target, 'dragHandler', self.eventDragHandler.bind(self).bind(self, target));
+      // event
+      let events = ['mousemove', 'touchmove'];
+      for (let event of events) {
+        target.removeEventListener(event, dragHandler);
+        target.addEventListener(event, dragHandler);
+      }
+      // listener
+      target.addEventListener('drag.slider', dragHandler);
+    };
+    // logic
+    if (!e.detail || !e.detail.skip) {
+      let eventLimit = this.container.querySelectorAll('.event-limit');
+      if (eventLimit.length) {
+        if (Xt.checkOutside(e, eventLimit)) {
+          dragOn(target);
+        }
+      } else {
+        dragOn(target);
+      }
+      // auto
+      if (this.options.autoPause) {
+        this.autoPause();
+      }
+    }
+  }
+
+  /**
+   * element drag off handler
+   * @param {Node|HTMLElement} target
+   * @param {Event} e
+   */
+  eventDragOffHandler(target, e) {
+    let dragOff = function(target) {
+      // handler
+      let dragHandler = Xt.dataStorage.get(target, 'dragHandler');
+      // event
+      let events = ['mousemove', 'touchmove'];
+      for (let event of events) {
+        target.removeEventListener(event, dragHandler);
+      }
+      // listener
+      target.removeEventListener('drag.slider', dragHandler);
+    };
+    // logic
+    if (!e.detail || !e.detail.skip) {
+      let eventLimit = this.container.querySelectorAll('.event-limit');
+      if (eventLimit.length) {
+        if (Xt.checkOutside(e, eventLimit)) {
+          dragOff(target);
+        }
+      } else {
+        dragOff(target);
+      }
+      // auto
+      if (this.options.autoPause) {
+        this.autoPause();
+      }
+    }
+  }
+
+  /**
+   * element drag handler
+   * @param {Node|HTMLElement} target
+   * @param {Event} e
+   */
+  eventDragHandler(target, e) {
+    if (!e.detail || !e.detail.skip) {
+      let el = this.getElementsFromTarget(target)[0];
+      this.eventDrag(target, el);
+    }
+  }
+
+  eventDrag(e, target, el) {
+    console.log(e, e.clientX);
+  }
+
 }
 
 // default
@@ -1468,7 +1600,8 @@ XtSlider.defaults = {
   "on": "click",
   "min": 1,
   "max": 1,
-  "aria": true
+  "aria": true,
+  "drag": true
 };
 
 // export
