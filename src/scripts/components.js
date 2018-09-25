@@ -186,39 +186,32 @@ class XtCore {
     let options = self.options;
     // events
     for (let el of this.elements) {
-      // handler
+      // event on
       let onHandler = Xt.dataStorage.put(el, 'onHandler', self.eventOnHandler.bind(self).bind(self, el));
-      // event
       if (options.on) {
         let events = [...options.on.split(' ')];
         for (let event of events) {
-          el.removeEventListener(event, onHandler);
           el.addEventListener(event, onHandler);
         }
       }
-      // listener
       el.addEventListener('on', onHandler);
-      // handler
+      // event off
       let offHandler = Xt.dataStorage.put(el, 'offHandler', self.eventOffHandler.bind(self).bind(self, el));
-      // event
       if (options.off) {
         let events = [...options.off.split(' ')];
         for (let event of events) {
-          el.removeEventListener(event, offHandler);
           el.addEventListener(event, offHandler);
         }
       }
-      // listener
       el.addEventListener('off', offHandler);
     }
     // listener
     for (let tr of this.targets) {
       let el = this.getElementsFromTarget(tr)[0];
       if (el) {
-        // handler
+        // event
         let onHandler = Xt.dataStorage.get(el, 'onHandler');
         let offHandler = Xt.dataStorage.get(el, 'offHandler');
-        // listener
         tr.addEventListener('on', onHandler);
         tr.addEventListener('off', offHandler);
       }
@@ -1071,7 +1064,6 @@ class XtCore {
       Xt.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
           let specialCloseInsideHandler = Xt.dataStorage.put(el, 'specialCloseInsideHandler', self.specialCloseInsideHandler.bind(self).bind(self, closeElement, single));
-          closeElement.removeEventListener('click', specialCloseInsideHandler);
           closeElement.addEventListener('click', specialCloseInsideHandler);
         }
       });
@@ -1082,7 +1074,6 @@ class XtCore {
       Xt.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
           let specialCloseOutsideHandler = Xt.dataStorage.put(el, 'specialCloseOutsideHandler', self.specialCloseOutsideHandler.bind(self).bind(self, el, single));
-          closeElement.removeEventListener('click', specialCloseOutsideHandler);
           closeElement.addEventListener('click', specialCloseOutsideHandler);
         }
       });
@@ -1469,72 +1460,50 @@ class XtSlider extends XtCore {
     let options = self.options;
     if (options.drag) {
       for (let tr of this.targets) {
-        // handler
+        // event on
         let dragOnHandler = Xt.dataStorage.put(tr, 'dragOnHandler', self.eventDragOnHandler.bind(self).bind(self, tr));
-        // event
         let eventsOn = ['mousedown', 'touchstart'];
         for (let event of eventsOn) {
-          tr.removeEventListener(event, dragOnHandler);
           tr.addEventListener(event, dragOnHandler);
         }
-        // listener
         tr.addEventListener('drag.on.slider', dragOnHandler);
-        // handler
-        let dragOffHandler = Xt.dataStorage.put(tr, 'dragOffHandler', self.eventDragOffHandler.bind(self).bind(self, tr));
-        // event
-        let eventsOff = ['mouseup', 'touchend'];
-        for (let event of eventsOff) {
-          tr.removeEventListener(event, dragOffHandler);
-          tr.addEventListener(event, dragOffHandler);
-        }
-        // listener
-        tr.addEventListener('drag.off.slider', dragOffHandler);
-      }
-      // when events are outside use window
-      let eventsOff = ['mouseup', 'touchend'];
-      for (let event of eventsOff) {
-        window.addEventListener(event, function(e) {
-          for (let tr of self.targets) {
-            self.eventDragOffHandler(tr, e);
-          }
-        });
       }
     }
   }
 
   /**
    * element drag on handler
-   * @param {Node|HTMLElement} element
+   * @param {Node|HTMLElement} target
    * @param {Event} e
    */
   eventDragOnHandler(target, e) {
     let self = this;
-    let dragOn = function(target) {
-      // handler
-      let dragHandler = Xt.dataStorage.put(target, 'dragHandler', self.eventDragHandler.bind(self).bind(self, target));
-      // event
-      let events = ['mousemove', 'touchmove'];
-      for (let event of events) {
-        target.removeEventListener(event, dragHandler);
-        target.addEventListener(event, dragHandler);
-      }
-      // listener
-      target.addEventListener('drag.slider', dragHandler);
-    };
-    // logic
     if (!e.detail || !e.detail.skip) {
+      // vars
+      this.dragStart = e;
+      if (this.options.dragStatic) {
+        this.dragStatics = target.querySelectorAll(this.options.dragStatic);
+      }
+      // logic
       let eventLimit = this.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
         if (Xt.checkOutside(e, eventLimit)) {
-          dragOn(target);
+          this.eventDragOn(target, e);
         }
       } else {
-        dragOn(target);
+        this.eventDragOn(target, e);
       }
       // auto
       if (this.options.autoPause) {
         this.autoPause();
       }
+      // event off
+      let dragOffHandler = Xt.dataStorage.put(window, 'dragOffHandler', self.eventDragOffHandler.bind(self).bind(self, target));
+      let eventsOff = ['mouseup', 'touchend'];
+      for (let event of eventsOff) {
+        window.addEventListener(event, dragOffHandler);
+      }
+      window.addEventListener('drag.off.slider', dragOffHandler);
     }
   }
 
@@ -1544,32 +1513,81 @@ class XtSlider extends XtCore {
    * @param {Event} e
    */
   eventDragOffHandler(target, e) {
-    let dragOff = function(target) {
-      // handler
-      let dragHandler = Xt.dataStorage.get(target, 'dragHandler');
-      // event
-      let events = ['mousemove', 'touchmove'];
-      for (let event of events) {
-        target.removeEventListener(event, dragHandler);
-      }
-      // listener
-      target.removeEventListener('drag.slider', dragHandler);
-    };
-    // logic
     if (!e.detail || !e.detail.skip) {
+      // logic
       let eventLimit = this.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
         if (Xt.checkOutside(e, eventLimit)) {
-          dragOff(target);
+          this.eventDragOff(target, e);
         }
       } else {
-        dragOff(target);
+        this.eventDragOff(target, e);
       }
       // auto
       if (this.options.autoPause) {
         this.autoPause();
       }
+      // event off
+      let dragOffHandler = Xt.dataStorage.get(window, 'dragOffHandler');
+      let eventsOff = ['mouseup', 'touchend'];
+      for (let event of eventsOff) {
+        window.removeEventListener(event, dragOffHandler);
+      }
     }
+  }
+
+  /**
+   * element drag on
+   * @param {Node|HTMLElement} target
+   * @param {Event} e
+   */
+  eventDragOn(target, e) {
+    let self = this;
+    // event move
+    let dragHandler = Xt.dataStorage.put(target, 'dragHandler', self.eventDragHandler.bind(self).bind(self, target));
+    let events = ['mousemove', 'touchmove'];
+    for (let event of events) {
+      target.addEventListener(event, dragHandler);
+    }
+    target.addEventListener('drag.slider', dragHandler);
+  }
+
+  /**
+   * element drag off
+   * @param {Node|HTMLElement} target
+   * @param {Event} e
+   */
+  eventDragOff(target, e) {
+    // event
+    let dragHandler = Xt.dataStorage.get(target, 'dragHandler');
+    let events = ['mousemove', 'touchmove'];
+    for (let event of events) {
+      target.removeEventListener(event, dragHandler);
+    }
+    target.removeEventListener('drag.slider', dragHandler);
+    // set position
+    let xMax = target.clientWidth;
+    let xFinal = parseFloat(target.style.left);
+    console.log(Math.abs(xFinal), xMax / 2);
+    if (Math.abs(xFinal) > xMax / 2) {
+      console.log('cccc');
+      target.style.left = xMax + 'px';
+      if (this.dragStatics) {
+        for (let dragStatic of this.dragStatics) {
+          dragStatic.style.left = - xMax + 'px';
+        }
+      }
+    } else {
+      target.style.left = 0 + 'px';
+      if (this.dragStatics) {
+        for (let dragStatic of this.dragStatics) {
+          dragStatic.style.left = 0 + 'px';
+        }
+      }
+    }
+    // vars
+    this.dragStart = false;
+    this.dragStatics = false;
   }
 
   /**
@@ -1579,13 +1597,23 @@ class XtSlider extends XtCore {
    */
   eventDragHandler(target, e) {
     if (!e.detail || !e.detail.skip) {
-      let el = this.getElementsFromTarget(target)[0];
-      this.eventDrag(target, el);
+      // set position
+      let xStart = this.dragStart.clientX;
+      let xCurrent = e.clientX;
+      let xDist = xCurrent - xStart;
+      target.style.left = xDist + 'px';
+      if (this.dragStatics) {
+        for (let dragStatic of this.dragStatics) {
+          dragStatic.style.left = - xDist + 'px';
+        }
+      }
+      //console.log(xDist);
+      //let element = this.getElementsFromTarget(target)[0];
+      //console.log(this.dragInit, e);
+      // call function
+      //let func = new Function('dragStart', 'drag', 'target', 'element', options.drag);
+      //let val = func(this.dragStart, e, target, element);
     }
-  }
-
-  eventDrag(e, target, el) {
-    console.log(e, e.clientX);
   }
 
 }
@@ -1601,7 +1629,8 @@ XtSlider.defaults = {
   "min": 1,
   "max": 1,
   "aria": true,
-  "drag": true
+  "drag": "target.style.left = drag.clientX - dragStart.clientX + 'px'",
+  "dragStatic": ":scope > .content"
 };
 
 // export
@@ -1682,17 +1711,14 @@ class XtSticky extends XtCore {
   initEvents() {
     let self = this;
     let options = self.options;
-    // handler
+    // event on
     let stickyHandler = Xt.dataStorage.put(window, 'stickyHandler', self.eventOnHandler.bind(self));
-    // event
     if (options.on) {
       let events = [...options.on.split(' ')];
       for (let event of events) {
-        window.removeEventListener(event, stickyHandler);
         window.addEventListener(event, stickyHandler);
       }
     }
-    // listener
     window.addEventListener('scroll.sticky', stickyHandler);
     // listener dispatch initial
     window.dispatchEvent(new CustomEvent('scroll.sticky'));
@@ -2001,17 +2027,14 @@ class XtFade extends XtCore {
   initEvents() {
     let self = this;
     let options = self.options;
-    // handler
+    // event on
     let fadeHandler = Xt.dataStorage.put(window, 'fadeHandler', self.eventOnHandler.bind(self));
-    // event
     if (options.on) {
       let events = [...options.on.split(' ')];
       for (let event of events) {
-        window.removeEventListener(event, fadeHandler);
         window.addEventListener(event, fadeHandler);
       }
     }
-    // listener
     window.addEventListener('scroll.fade', fadeHandler);
     // listener dispatch initial
     window.dispatchEvent(new CustomEvent('scroll.fade'));
@@ -2019,7 +2042,6 @@ class XtFade extends XtCore {
 
   /**
    * element on handler
-   * @param {Node|HTMLElement} element
    * @param {Event} e
    */
   eventOnHandler(e) {
