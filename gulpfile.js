@@ -9,7 +9,6 @@ let source = require('vinyl-source-stream');
 
 let less = require('gulp-less');
 let gutil = require('gulp-util');
-let clean = require('gulp-clean');
 let watch = require('gulp-watch');
 let replace = require('gulp-replace');
 let browserify = require('browserify');
@@ -44,13 +43,8 @@ gulp.task('less', gulp.series('less-demos', function () {
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/styles/'));
 }));
-gulp.task('less-clean', gulp.series('less', function () {
-  // fix jekyll triggering file change
-  return gulp.src(['docs/assets/styles/theme.*', 'docs/demos/**/*.css'], {read: false})
-    .pipe(clean({force: true}));
-}));
 gulp.task('less:watch', function (done) {
-  gulp.watch(['dist/styles/**/*.less', 'src/docs/demos/**/*.less', 'src/docs/assets/styles/**/*.less'], gulp.series('less-clean'));
+  gulp.watch(['dist/styles/**/*.less', 'src/docs/demos/**/*.less', 'src/docs/assets/styles/**/*.less'], gulp.series('less', 'site-build'));
   done();
 });
 
@@ -110,13 +104,8 @@ gulp.task('js', gulp.series('js-theme', function () {
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/scripts/'));
 }));
-gulp.task('js-clean', gulp.series('js', function () {
-  // fix jekyll triggering file change
-  return gulp.src('docs/assets/scripts/theme.*', {read: false})
-    .pipe(clean({force: true}));
-}));
 gulp.task('js:watch', function (done) {
-  gulp.watch(['src/docs/assets/scripts/theme.js', 'src/scripts/*.js'], gulp.series('js-clean'));
+  gulp.watch(['src/docs/assets/scripts/theme.js', 'src/docs/demos/**/*.js', 'src/scripts/*.js'], gulp.series('js', 'site-build'));
   done();
 });
 
@@ -124,17 +113,6 @@ gulp.task('js:watch', function (done) {
 
 gulp.task('site-build', function (callback) {
   let jekyll = child.spawn('bundle', ['exec', 'jekyll', 'build']);
-  let jekyllLogger = function (buffer) {
-    buffer.toString()
-      .split(/\n/)
-      .forEach((message) => gutil.log('Jekyll: ' + message));
-  };
-  jekyll.stdout.on('data', jekyllLogger);
-  jekyll.stderr.on('data', jekyllLogger);
-  callback();
-});
-gulp.task('site-serve', function (callback) {
-  let jekyll = child.spawn('bundle', ['exec', 'jekyll', 'serve']);
   let jekyllLogger = function (buffer) {
     buffer.toString()
       .split(/\n/)
@@ -159,14 +137,14 @@ gulp.task('version-changed',
   gulp.series('version', gulp.parallel('less', 'js'), 'site-build')
 );
 gulp.task('version:watch', function (done) {
-  gulp.watch(['package.json'], gulp.series('version-changed'));
+  gulp.watch(['package.json'], gulp.series('version-changed', 'site-build'));
   done();
 });
 
 // scripts
 
 gulp.task('watch',
-  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('site-serve', 'version:watch', 'less:watch', 'js:watch'))
+  gulp.series('version', gulp.parallel('less', 'js'), 'site-build', gulp.parallel('version:watch', 'less:watch', 'js:watch'))
 );
 
 gulp.task('build',
