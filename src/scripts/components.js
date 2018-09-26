@@ -1524,15 +1524,14 @@ class XtSlider extends XtCore {
     super.initEvents();
     let self = this;
     let options = self.options;
-    if (options.events && options.events.drag) {
+    if (options.drag) {
       for (let tr of this.targets) {
         // event on
-        let dragOnHandler = Xt.dataStorage.put(tr, 'dragOnHandler', self.eventDragOnHandler.bind(self).bind(self, tr));
+        let dragStartHandler = Xt.dataStorage.put(tr, 'dragStartHandler', self.eventDragStartHandler.bind(self).bind(self, tr));
         let eventsOn = ['mousedown', 'touchstart'];
         for (let event of eventsOn) {
-          tr.addEventListener(event, dragOnHandler);
+          tr.addEventListener(event, dragStartHandler);
         }
-        tr.addEventListener('drag.on.slider', dragOnHandler);
       }
     }
   }
@@ -1542,33 +1541,30 @@ class XtSlider extends XtCore {
    * @param {Node|HTMLElement} target
    * @param {Event} e
    */
-  eventDragOnHandler(target, e) {
+  eventDragStartHandler(target, e) {
     let self = this;
     let options = self.options;
     if (!e.button || e.button !== 2) { // not right click or it gets stuck
-      if (!e.detail || !e.detail.skip) {
-        // vars
-        this.eInit = e;
-        // logic
-        let eventLimit = this.container.querySelectorAll('.event-limit');
-        if (eventLimit.length) {
-          if (Xt.checkOutside(e, eventLimit)) {
-            this.eventDragOn(target, e);
-          }
-        } else {
-          this.eventDragOn(target, e);
+      // vars
+      this.eInit = e;
+      // logic
+      let eventLimit = this.container.querySelectorAll('.event-limit');
+      if (eventLimit.length) {
+        if (Xt.checkOutside(e, eventLimit)) {
+          this.eventDragStart(target, e);
         }
-        // auto
-        if (options.autoPause) {
-          this.autoPause();
-        }
-        // event off
-        let dragOffHandler = Xt.dataStorage.put(window, 'dragOffHandler', self.eventDragOffHandler.bind(self).bind(self, target));
-        let eventsOff = ['mouseup', 'touchend'];
-        for (let event of eventsOff) {
-          window.addEventListener(event, dragOffHandler);
-        }
-        window.addEventListener('drag.off.slider', dragOffHandler);
+      } else {
+        this.eventDragStart(target, e);
+      }
+      // auto
+      if (options.autoPause) {
+        this.autoPause();
+      }
+      // event off
+      let dragEndHandler = Xt.dataStorage.put(window, 'dragEndHandler', self.eventDragEndHandler.bind(self).bind(self, target));
+      let eventsOff = ['mouseup', 'touchend'];
+      for (let event of eventsOff) {
+        window.addEventListener(event, dragEndHandler);
       }
     }
   }
@@ -1578,29 +1574,27 @@ class XtSlider extends XtCore {
    * @param {Node|HTMLElement} target
    * @param {Event} e
    */
-  eventDragOffHandler(target, e) {
+  eventDragEndHandler(target, e) {
     let self = this;
     let options = self.options;
-    if (!e.detail || !e.detail.skip) {
-      // logic
-      let eventLimit = this.container.querySelectorAll('.event-limit');
-      if (eventLimit.length) {
-        if (Xt.checkOutside(e, eventLimit)) {
-          this.eventDragOff(target, e);
-        }
-      } else {
-        this.eventDragOff(target, e);
+    // logic
+    let eventLimit = this.container.querySelectorAll('.event-limit');
+    if (eventLimit.length) {
+      if (Xt.checkOutside(e, eventLimit)) {
+        this.eventDragEnd(target, e);
       }
-      // auto
-      if (options.autoPause) {
-        this.autoPause();
-      }
-      // event off
-      let dragOffHandler = Xt.dataStorage.get(window, 'dragOffHandler');
-      let eventsOff = ['mouseup', 'touchend'];
-      for (let event of eventsOff) {
-        window.removeEventListener(event, dragOffHandler);
-      }
+    } else {
+      this.eventDragEnd(target, e);
+    }
+    // auto
+    if (options.autoPause) {
+      this.autoPause();
+    }
+    // event off
+    let dragEndHandler = Xt.dataStorage.get(window, 'dragEndHandler');
+    let eventsOff = ['mouseup', 'touchend'];
+    for (let event of eventsOff) {
+      window.removeEventListener(event, dragEndHandler);
     }
   }
 
@@ -1609,22 +1603,18 @@ class XtSlider extends XtCore {
    * @param {Node|HTMLElement} target
    * @param {Event} e
    */
-  eventDragOn(target, e) {
+  eventDragStart(target, e) {
     let self = this;
-    let options = self.options;
     // event move
     let dragHandler = Xt.dataStorage.put(target, 'dragHandler', self.eventDragHandler.bind(self).bind(self, target));
     let events = ['mousemove', 'touchmove'];
     for (let event of events) {
       target.addEventListener(event, dragHandler);
     }
-    target.addEventListener('drag.slider', dragHandler);
     // dragging
     target.classList.add('dragging');
-    // call function
-    if (options.events && options.events.dragOn) {
-      options.events.dragOn(self, e, self.eInit, target);
-    }
+    // listener dispatch
+    target.dispatchEvent(new CustomEvent('dragStart.slider', {detail: {skip: true, self: self, eInit:self.eInit, eCurrent: e}}));
   }
 
   /**
@@ -1632,22 +1622,18 @@ class XtSlider extends XtCore {
    * @param {Node|HTMLElement} target
    * @param {Event} e
    */
-  eventDragOff(target, e) {
+  eventDragEnd(target, e) {
     let self = this;
-    let options = self.options;
     // event move
     let dragHandler = Xt.dataStorage.get(target, 'dragHandler');
     let events = ['mousemove', 'touchmove'];
     for (let event of events) {
       target.removeEventListener(event, dragHandler);
     }
-    target.removeEventListener('drag.slider', dragHandler);
     // dragging
     target.classList.remove('dragging');
-    // call function
-    if (options.events && options.events.dragOff) {
-      options.events.dragOff(self, e, self.eInit, target);
-    }
+    // listener dispatch
+    target.dispatchEvent(new CustomEvent('dragEnd.slider', {detail: {skip: true, self: self, eInit:self.eInit, eCurrent: e}}));
   }
 
   /**
@@ -1657,13 +1643,8 @@ class XtSlider extends XtCore {
    */
   eventDragHandler(target, e) {
     let self = this;
-    let options = self.options;
-    if (!e.detail || !e.detail.skip) {
-      // call function
-      if (options.events && options.events.drag) {
-        options.events.drag(self, e, self.eInit, target);
-      }
-    }
+    // listener dispatch
+    target.dispatchEvent(new CustomEvent('drag.slider', {detail: {skip: true, self: self, eInit:self.eInit, eCurrent: e}}));
   }
 
 }
@@ -1679,8 +1660,7 @@ XtSlider.defaults = {
   "min": 1,
   "max": 1,
   "aria": true,
-  "dragOn": false,
-  "dragOff": false
+  "drag": false
 };
 
 // export
@@ -1762,7 +1742,7 @@ class XtSticky extends XtCore {
     let self = this;
     let options = self.options;
     // event on
-    let stickyHandler = Xt.dataStorage.put(window, 'stickyHandler', self.eventOnHandler.bind(self));
+    let stickyHandler = Xt.dataStorage.put(window, 'stickyHandler', self.eventStickyHandler.bind(self));
     if (options.on) {
       let events = [...options.on.split(' ')];
       for (let event of events) {
@@ -1779,7 +1759,7 @@ class XtSticky extends XtCore {
    * @param {Node|HTMLElement} element
    * @param {Event} e
    */
-  eventOnHandler(e) {
+  eventStickyHandler(e) {
     if (!e.detail || !e.detail.skip) {
       this.eventScroll(this.object);
     }
@@ -2078,7 +2058,7 @@ class XtFade extends XtCore {
     let self = this;
     let options = self.options;
     // event on
-    let fadeHandler = Xt.dataStorage.put(window, 'fadeHandler', self.eventOnHandler.bind(self));
+    let fadeHandler = Xt.dataStorage.put(window, 'fadeHandler', self.eventFadeHandler.bind(self));
     if (options.on) {
       let events = [...options.on.split(' ')];
       for (let event of events) {
@@ -2094,7 +2074,7 @@ class XtFade extends XtCore {
    * element on handler
    * @param {Event} e
    */
-  eventOnHandler(e) {
+  eventFadeHandler(e) {
     if (!e.detail || !e.detail.skip) {
       this.eventScroll(this.object);
     }
