@@ -537,14 +537,14 @@ class XtCore {
     let options = self.options;
     // toggle
     if (this.checkOn(element)) {
-      // specials
-      this.specialOnDeactivate = false;
+      // special one time
+      this.specialOnActivate = false;
       // on
       let fElements = this.getElements(element);
       this.addCurrent(fElements.single);
       let targets = this.getTargets(element);
-      let elementsInner = this.getInside(element, this.options.elementsInner);
-      let targetsInner = this.getInside(targets, this.options.targetsInner);
+      let elementsInner = this.getInside(element, options.elementsInner);
+      let targetsInner = this.getInside(targets, options.targetsInner);
       // execute defer @FIX delay animation
       this.activationDelay = {};
       if (fElements.all.length) {
@@ -567,7 +567,6 @@ class XtCore {
           self.activationOn(targetsInner, fElements, 'targetsInner');
         };
       }
-
       // set curentIndex and direction
       let index = 0;
       for (let [i, el] of this.elements.entries()) {
@@ -619,17 +618,19 @@ class XtCore {
    * @param {Node|HTMLElement} element To be deactivated
    */
   eventOff(element) {
+    let self = this;
+    let options = self.options;
     // toggle
     if (this.checkOff(element)) {
-      // specials
+      // special one time
       this.specialOffDeactivate = false;
       this.specialOffAnimate = false;
       // off
       let fElements = this.getElements(element);
       this.removeCurrent(fElements.single);
       let targets = this.getTargets(element);
-      let elementsInner = this.getInside(element, this.options.elementsInner);
-      let targetsInner = this.getInside(targets, this.options.targetsInner);
+      let elementsInner = this.getInside(element, options.elementsInner);
+      let targetsInner = this.getInside(targets, options.targetsInner);
       // execute
       if (fElements.all.length) {
         this.activationOff(fElements.all, fElements, 'elements');
@@ -732,16 +733,17 @@ class XtCore {
           el.setAttribute('aria-expanded', 'true');
         }
       }
-      // specials
+      // special
       this.specialBackdrop(el);
       this.specialCenter(el);
       this.specialMiddle(el);
       this.specialCollapseOn(el);
       this.specialCloseOn(el, fElements.single);
-      if (!this.specialOnDeactivate) {
+      // special one time
+      if (!this.specialOnActivate) {
+        this.specialOnActivate = true;
         this.specialClassHtmlOn();
         this.specialScrollbarOn();
-        this.specialOnDeactivate = true;
         // focus
         if (options.aria) {
           if (options.scrollbar) {
@@ -776,12 +778,13 @@ class XtCore {
     }
     // additionals
     if (type === 'targets' || type === 'targetsInner') {
-      // specials
+      // special
       this.specialCollapseOff(el);
       this.specialCloseOff(el);
+      // special one time
       if (!this.specialOffDeactivate) {
-        this.specialClassHtmlOff();
         this.specialOffDeactivate = true;
+        this.specialClassHtmlOff();
       }
     }
     // listener dispatch
@@ -794,6 +797,8 @@ class XtCore {
    * @param {String} type Type of element
    */
   activationOnAnimate(el, type) {
+    let self = this;
+    let options = self.options;
     // onDone
     let onDone = function (el, type) {
       // collapse-width and collapse-height
@@ -806,7 +811,7 @@ class XtCore {
       }
     };
     // delay onDone
-    let timing = this.activationTiming(el);
+    let timing = this.activationTiming(el, options.timing);
     clearTimeout(el.dataset.xtAnimTimeout);
     if (!timing) {
       onDone(el, type);
@@ -845,10 +850,10 @@ class XtCore {
             el.setAttribute('aria-expanded', 'false');
           }
         }
-        // specials
+        // special one time
         if (!self.specialOffAnimate) {
-          self.specialScrollbarOff();
           self.specialOffAnimate = true;
+          self.specialScrollbarOff();
           // focus
           if (options.aria) {
             if (options.scrollbar) {
@@ -866,7 +871,7 @@ class XtCore {
       }
     };
     // delay onDone
-    let timing = this.activationTiming(el);
+    let timing = this.activationTiming(el, options.timing);
     clearTimeout(el.dataset.xtAnimTimeout);
     if (!timing) {
       onDone(el, type);
@@ -880,14 +885,11 @@ class XtCore {
   /**
    * get transition or animation timing
    * @param {Node|HTMLElement} el To be animated
+   * @param {Number} timing Force timing
    * @returns {Number} Time in milliseconds
    */
-  activationTiming(el) {
-    let self = this;
-    let options = self.options;
-    // timing
-    let timing = options.timing;
-    if (timing !== undefined) {
+  activationTiming(el, timing = null) {
+    if (timing) {
       return timing;
     } else {
       let style = getComputedStyle(el);
@@ -1506,7 +1508,7 @@ class XtSlider extends XtCore {
     super.initEvents();
     let self = this;
     let options = self.options;
-    if (options.dragOn && options.dragOff) {
+    if (options.events && options.events.drag) {
       for (let tr of this.targets) {
         // event on
         let dragOnHandler = Xt.dataStorage.put(tr, 'dragOnHandler', self.eventDragOnHandler.bind(self).bind(self, tr));
@@ -1526,6 +1528,7 @@ class XtSlider extends XtCore {
    */
   eventDragOnHandler(target, e) {
     let self = this;
+    let options = self.options;
     if (!e.button || e.button !== 2) { // not right click or it gets stuck
       if (!e.detail || !e.detail.skip) {
         // vars
@@ -1540,7 +1543,7 @@ class XtSlider extends XtCore {
           this.eventDragOn(target, e);
         }
         // auto
-        if (this.options.autoPause) {
+        if (options.autoPause) {
           this.autoPause();
         }
         // event off
@@ -1560,6 +1563,8 @@ class XtSlider extends XtCore {
    * @param {Event} e
    */
   eventDragOffHandler(target, e) {
+    let self = this;
+    let options = self.options;
     if (!e.detail || !e.detail.skip) {
       // logic
       let eventLimit = this.container.querySelectorAll('.event-limit');
@@ -1571,7 +1576,7 @@ class XtSlider extends XtCore {
         this.eventDragOff(target, e);
       }
       // auto
-      if (this.options.autoPause) {
+      if (options.autoPause) {
         this.autoPause();
       }
       // event off
@@ -1590,6 +1595,7 @@ class XtSlider extends XtCore {
    */
   eventDragOn(target, e) {
     let self = this;
+    let options = self.options;
     // event move
     let dragHandler = Xt.dataStorage.put(target, 'dragHandler', self.eventDragHandler.bind(self).bind(self, target));
     let events = ['mousemove', 'touchmove'];
@@ -1597,6 +1603,12 @@ class XtSlider extends XtCore {
       target.addEventListener(event, dragHandler);
     }
     target.addEventListener('drag.slider', dragHandler);
+    // dragging
+    target.classList.add('dragging');
+    // call function
+    if (options.events && options.events.dragOn) {
+      options.events.dragOn(self, e, self.eInit, target);
+    }
   }
 
   /**
@@ -1605,15 +1617,21 @@ class XtSlider extends XtCore {
    * @param {Event} e
    */
   eventDragOff(target, e) {
-    // event
+    let self = this;
+    let options = self.options;
+    // event move
     let dragHandler = Xt.dataStorage.get(target, 'dragHandler');
     let events = ['mousemove', 'touchmove'];
     for (let event of events) {
       target.removeEventListener(event, dragHandler);
     }
     target.removeEventListener('drag.slider', dragHandler);
+    // dragging
+    target.classList.remove('dragging');
     // call function
-    this.options.dragOff(this, e, this.eInit, target);
+    if (options.events && options.events.dragOff) {
+      options.events.dragOff(self, e, self.eInit, target);
+    }
   }
 
   /**
@@ -1622,9 +1640,13 @@ class XtSlider extends XtCore {
    * @param {Event} e
    */
   eventDragHandler(target, e) {
+    let self = this;
+    let options = self.options;
     if (!e.detail || !e.detail.skip) {
       // call function
-      this.options.dragOn(this, e, this.eInit, target);
+      if (options.events && options.events.drag) {
+        options.events.drag(self, e, self.eInit, target);
+      }
     }
   }
 

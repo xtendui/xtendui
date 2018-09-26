@@ -10,33 +10,53 @@
     position: relative;
   }
   .margin(bottom, medium);
-  &:after {
-    content: '';
-    position: absolute;
-    z-index: 9;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: @white;
-    transform: translateX(0);
-  }
-  &.active {
-    .anim-right.active();
-    &:after {
-      .animation-default.active();
-      animation-name: anim-special-in;
-      transform: translateX(-100%);
+  // mask animation
+  &:not(.dragging) {
+    .transition-default.out();
+    > .content {
+      .transition-default.out();
     }
-    &.direction-inverse {
-      .anim-left.active();
-      &:after {
-        .animation-default.active();
-        animation-name: anim-special-in-inverse;
-        transform: translateX(100%);
+    &.active {
+      .transition-default.active();
+      > .content {
+        .transition-default.active();
       }
     }
   }
+  // content animation
+  /*
+  > .content {
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: 9;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: @white;
+      transform: translateX(0);
+    }
+  }
+  &.active {
+    > .content {
+      .anim-right.active();
+      &:after {
+        .animation-default.active();
+        animation-name: anim-special-in;
+        transform: translateX(-100%);
+      }
+      &.direction-inverse {
+        .anim-left.active();
+        &:after {
+          .animation-default.active();
+          animation-name: anim-special-in-inverse;
+          transform: translateX(100%);
+        }
+      }
+    }
+  }
+  */
 }
 
 @keyframes anim-special-in {
