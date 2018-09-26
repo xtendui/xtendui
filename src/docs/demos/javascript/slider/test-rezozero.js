@@ -3,7 +3,7 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
   // slider
   new XtSlider(el, {
     "auto": 6000,
-    "autoPause": "Infinity",
+    "autoPause": 6000,
     "drag": true
   });
 
@@ -11,14 +11,22 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
   for (let [i, tr] of el.querySelectorAll('.slider-item').entries()) {
 
     // drag event
+    tr.addEventListener('dragStart.slider', function (e) {
+      let target = this;
+      // dragging
+      target.classList.add('dragging');
+    });
+
+    // drag event
     tr.addEventListener('drag.slider', function (e) {
       let target = this;
       let self = e.detail.self;
-      let eInit = e.detail.eInit;
-      let eCurrent = e.detail.eCurrent;
+      let eInit = self.eInit;
+      let eCurrent = self.eCurrent;
       let xStart = eInit.clientX;
       let xCurrent = eCurrent.clientX;
       let xDist = xCurrent - xStart;
+      // drag
       target.style.left = xDist + 'px';
       for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
         content.style.left = -xDist + 'px';
@@ -29,23 +37,21 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
     tr.addEventListener('dragEnd.slider', function (e) {
       let target = this;
       let self = e.detail.self;
-      let eInit = e.detail.eInit;
-      let eCurrent = e.detail.eCurrent;
       let xFinal = parseFloat(target.style.left);
-      if (Math.abs(xFinal) > 100) { // trigger if dragging more than 100px
+      // dragging
+      target.classList.remove('dragging');
+      // activate or reset
+      if (Math.abs(xFinal) > self.options.dragThreshold) {
         // direction
         if (Math.sign(xFinal) < 0) {
-          // goto
           self.goToNext();
         } else {
-          // goto
           self.goToPrev();
         }
         // reset after animation done
-        let timing = self.activationTiming(target);
-        clearTimeout(target.dataset.xtDragOffTimeout);
-        target.dataset.xtDragOffTimeout = setTimeout(function () {
-          // reset drag
+        let timing = Xt.animationTiming(target);
+        clearTimeout(target.dataset.xtDragEndTimeout);
+        target.dataset.xtDragEndTimeout = setTimeout(function () {
           target.style.left = 0 + 'px';
           for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
             content.style.left = 0 + 'px';
@@ -64,27 +70,32 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
     tr.addEventListener('on', function (e) {
       let target = this;
       let xMax = target.clientWidth;
-      // pre initial drag position
+      // dragging
       target.classList.add('dragging');
-      if (target.classList.contains('direction-inverse')) {
-        target.style.left = -xMax + 'px';
-        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          content.style.left = xMax + 'px';
-        }
-      } else {
+      // pre initial drag position
+      if (!target.classList.contains('direction-inverse')) {
         target.style.left = xMax + 'px';
         for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
           content.style.left = -xMax + 'px';
         }
+      } else {
+        target.style.left = -xMax + 'px';
+        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
+          content.style.left = xMax + 'px';
+        }
       }
       // initial drag position
-      Xt.cancelAnimationFrame.call(window, target.dataset.onFrame);
-      target.dataset.onFrame = Xt.requestAnimationFrame.call(window, function () {
+      Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
+      target.dataset.xtDragResetFrame = Xt.requestAnimationFrame.call(window, function () {
+        // dragging
         target.classList.remove('dragging');
-        target.style.left = 0 + 'px';
-        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          content.style.left = 0 + 'px';
-        }
+        target.dataset.xtDragResetFrame = Xt.requestAnimationFrame.call(window, function () {
+          // reset drag
+          target.style.left = 0 + 'px';
+          for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
+            content.style.left = 0 + 'px';
+          }
+        });
       });
     });
 
@@ -92,18 +103,19 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
     tr.addEventListener('off', function (e) {
       let target = this;
       let xMax = target.clientWidth;
-      // finish drag
+      // dragging
       target.classList.remove('dragging');
-      Xt.cancelAnimationFrame.call(window, target.dataset.onFrame);
-      if (target.classList.contains('direction-inverse')) {
-        target.style.left = xMax + 'px';
-        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          content.style.left = -xMax + 'px';
-        }
-      } else {
+      // complete drag
+      Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
+      if (!target.classList.contains('direction-inverse')) {
         target.style.left = -xMax + 'px';
         for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
           content.style.left = xMax + 'px';
+        }
+      } else {
+        target.style.left = xMax + 'px';
+        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
+          content.style.left = -xMax + 'px';
         }
       }
     });

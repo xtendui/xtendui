@@ -287,7 +287,7 @@ class XtCore {
   goToNext() {
     let curentIndex = this.curentIndex !== undefined ? this.curentIndex + 1 : 0;
     curentIndex = curentIndex > this.elements.length - 1 ? 0 : curentIndex;
-    this.forceNormalDir = this.curentIndex > curentIndex;
+    this.forceNormalDirection = this.curentIndex > curentIndex;
     let current = this.elements[curentIndex];
     this.eventOn(current);
     return current;
@@ -299,7 +299,7 @@ class XtCore {
   goToPrev() {
     let curentIndex = this.curentIndex !== undefined ? this.curentIndex - 1 : 0;
     curentIndex = curentIndex < 0 ? this.elements.length - 1 : curentIndex;
-    this.forceInverseDir = this.curentIndex < curentIndex;
+    this.forceInverseDirection = this.curentIndex < curentIndex;
     let current = this.elements[curentIndex];
     this.eventOn(current);
     return current;
@@ -350,7 +350,7 @@ class XtCore {
   }
 
   //////////////////////
-  // utils
+  // events utils
   //////////////////////
 
   /**
@@ -499,10 +499,6 @@ class XtCore {
     Xt.currents[this.namespace] = Xt.currents[this.namespace].filter(x => x !== element);
   }
 
-  //////////////////////
-  // events
-  //////////////////////
-
   /**
    * check element on
    * @param {Node|HTMLElement} element To be activated
@@ -540,13 +536,9 @@ class XtCore {
         break;
       }
     }
-    if (!this.forceNormalDir && (this.forceInverseDir || this.curentIndex > index)) {
-      this.curentDirection = 0;
-    } else {
-      this.curentDirection = 1;
-    }
-    this.forceNormalDir = false;
-    this.forceInverseDir = false;
+    this.inverseDirection = !this.forceNormalDirection && (this.forceInverseDirection || this.curentIndex > index);
+    this.forceNormalDirection = false;
+    this.forceInverseDirection = false;
     this.curentIndex = index;
   }
 
@@ -555,16 +547,20 @@ class XtCore {
    * @param {Array} all All objects to be decorate
    */
   decorateDirection(all) {
-    if (this.curentDirection === 0) {
-      for (let el of all) {
-        el.classList.add('direction-inverse');
-      }
-    } else {
+    if (!this.inverseDirection) {
       for (let el of all) {
         el.classList.remove('direction-inverse');
       }
+    } else {
+      for (let el of all) {
+        el.classList.add('direction-inverse');
+      }
     }
   }
+
+  //////////////////////
+  // events
+  //////////////////////
 
   /**
    * element on
@@ -662,6 +658,10 @@ class XtCore {
       }
     }
   }
+
+  //////////////////////
+  // activation
+  //////////////////////
 
   /**
    * element on activation
@@ -771,7 +771,7 @@ class XtCore {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('on', {detail: {skip: true}}));
+    el.dispatchEvent(new CustomEvent('on', {detail: {skip: true, self: self}}));
   }
 
   /**
@@ -804,7 +804,7 @@ class XtCore {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('off', {detail: {skip: true}}));
+    el.dispatchEvent(new CustomEvent('off', {detail: {skip: true, self: self}}));
   }
 
   /**
@@ -827,7 +827,7 @@ class XtCore {
       }
     };
     // delay onDone
-    let timing = this.activationTiming(el, options.timing);
+    let timing = Xt.animationTiming(el, options.timing);
     clearTimeout(el.dataset.xtAnimTimeout);
     if (!timing) {
       onDone(el, type);
@@ -887,7 +887,7 @@ class XtCore {
       }
     };
     // delay onDone
-    let timing = this.activationTiming(el, options.timing);
+    let timing = Xt.animationTiming(el, options.timing);
     clearTimeout(el.dataset.xtAnimTimeout);
     if (!timing) {
       onDone(el, type);
@@ -895,26 +895,6 @@ class XtCore {
       el.dataset.xtAnimTimeout = setTimeout(function (el, type) {
         onDone(el, type);
       }, timing, el, type).toString();
-    }
-  }
-
-  /**
-   * get transition or animation timing
-   * @param {Node|HTMLElement} el To be animated
-   * @param {Number} timing Force timing
-   * @returns {Number} Time in milliseconds
-   */
-  activationTiming(el, timing = null) {
-    if (timing) {
-      return timing;
-    } else {
-      let style = getComputedStyle(el);
-      let transition = parseFloat(style.transitionDuration) + parseFloat(style.transitionDelay);
-      let animation = parseFloat(style.animationDuration) + parseFloat(style.animationDelay);
-      if (transition || animation) {
-        timing = Math.max(transition, animation);
-      }
-      return timing * 1000;
     }
   }
 
@@ -1545,7 +1525,7 @@ class XtSlider extends XtCore {
     let self = this;
     let options = self.options;
     if (!e.button || e.button !== 2) { // not right click or it gets stuck
-      // vars
+      // save event
       this.eInit = e;
       // logic
       let eventLimit = this.container.querySelectorAll('.event-limit');
@@ -1605,16 +1585,16 @@ class XtSlider extends XtCore {
    */
   eventDragStart(target, e) {
     let self = this;
+    // save event
+    this.eCurrent = e;
     // event move
     let dragHandler = Xt.dataStorage.put(target, 'dragHandler', self.eventDragHandler.bind(self).bind(self, target));
     let events = ['mousemove', 'touchmove'];
     for (let event of events) {
       target.addEventListener(event, dragHandler);
     }
-    // dragging
-    target.classList.add('dragging');
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('dragStart.slider', {detail: {skip: true, self: self, eInit:self.eInit, eCurrent: e}}));
+    target.dispatchEvent(new CustomEvent('dragStart.slider', {detail: {skip: true, self: self}}));
   }
 
   /**
@@ -1624,16 +1604,16 @@ class XtSlider extends XtCore {
    */
   eventDragEnd(target, e) {
     let self = this;
+    // save event
+    this.eCurrent = e;
     // event move
     let dragHandler = Xt.dataStorage.get(target, 'dragHandler');
     let events = ['mousemove', 'touchmove'];
     for (let event of events) {
       target.removeEventListener(event, dragHandler);
     }
-    // dragging
-    target.classList.remove('dragging');
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('dragEnd.slider', {detail: {skip: true, self: self, eInit:self.eInit, eCurrent: e}}));
+    target.dispatchEvent(new CustomEvent('dragEnd.slider', {detail: {skip: true, self: self}}));
   }
 
   /**
@@ -1643,8 +1623,10 @@ class XtSlider extends XtCore {
    */
   eventDragHandler(target, e) {
     let self = this;
+    // save event
+    this.eCurrent = e;
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('drag.slider', {detail: {skip: true, self: self, eInit:self.eInit, eCurrent: e}}));
+    target.dispatchEvent(new CustomEvent('drag.slider', {detail: {skip: true, self: self}}));
   }
 
 }
@@ -1659,8 +1641,9 @@ XtSlider.defaults = {
   "on": "click",
   "min": 1,
   "max": 1,
-  "aria": true,
-  "drag": false
+  "drag": false,
+  "dragThreshold": 100,
+  "aria": true
 };
 
 // export
@@ -1872,13 +1855,13 @@ class XtSticky extends XtCore {
         if (!el.classList.contains('sticky-hide')) {
           el.classList.add('sticky-hide');
           // listener dispatch
-          el.dispatchEvent(new CustomEvent('hide.sticky', {detail: {skip: true}}));
+          el.dispatchEvent(new CustomEvent('hide.sticky', {detail: {skip: true, self: self}}));
         }
       } else {
         if (el.classList.contains('sticky-hide')) {
           el.classList.remove('sticky-hide');
           // listener dispatch
-          el.dispatchEvent(new CustomEvent('show.sticky', {detail: {skip: true}}));
+          el.dispatchEvent(new CustomEvent('show.sticky', {detail: {skip: true, self: self}}));
         }
       }
     } else {
