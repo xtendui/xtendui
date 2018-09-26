@@ -580,32 +580,32 @@ class XtCore {
       // set index and direction
       this.setIndexAndDirection(element);
       // on
-      let fElements = this.getElements(element);
-      this.addCurrent(fElements.single);
+      let groupElements = this.getElements(element);
+      this.addCurrent(groupElements.single);
       let targets = this.getTargets(element);
       let elementsInner = this.getInside(element, options.elementsInner);
       let targetsInner = this.getInside(targets, options.targetsInner);
-      this.decorateDirection([...fElements.all, ...targets, ...elementsInner, ...targetsInner]);
+      this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // execute defer @FIX delay animation
       this.activationDelay = {};
-      if (fElements.all.length) {
+      if (groupElements.all.length) {
         this.activationDelay['elements'] = function () {
-          self.activationOn(fElements.all, fElements, 'elements');
+          self.activationOn(groupElements.all, groupElements, 'elements');
         };
       }
       if (targets.length) {
         this.activationDelay['targets'] = function () {
-          self.activationOn(targets, fElements, 'targets');
+          self.activationOn(targets, groupElements, 'targets');
         };
       }
       if (elementsInner.length) {
         this.activationDelay['controls'] = function () {
-          self.activationOn(elementsInner, fElements, 'elementsInner');
+          self.activationOn(elementsInner, groupElements, 'elementsInner');
         };
       }
       if (targetsInner.length) {
         this.activationDelay['targetsInner'] = function () {
-          self.activationOn(targetsInner, fElements, 'targetsInner');
+          self.activationOn(targetsInner, groupElements, 'targetsInner');
         };
       }
       // delay activation if currents > max
@@ -641,24 +641,24 @@ class XtCore {
       this.specialOffDeactivate = false;
       this.specialOffAnimate = false;
       // off
-      let fElements = this.getElements(element);
-      this.removeCurrent(fElements.single);
+      let groupElements = this.getElements(element);
+      this.removeCurrent(groupElements.single);
       let targets = this.getTargets(element);
       let elementsInner = this.getInside(element, options.elementsInner);
       let targetsInner = this.getInside(targets, options.targetsInner);
-      this.decorateDirection([...fElements.all, ...targets, ...elementsInner, ...targetsInner]);
+      this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // execute
-      if (fElements.all.length) {
-        this.activationOff(fElements.all, fElements, 'elements');
+      if (groupElements.all.length) {
+        this.activationOff(groupElements.all, groupElements, 'elements');
       }
       if (targets.length) {
-        this.activationOff(targets, fElements, 'targets');
+        this.activationOff(targets, groupElements, 'targets');
       }
       if (elementsInner.length) {
-        this.activationOff(elementsInner, fElements, 'elementsInner');
+        this.activationOff(elementsInner, groupElements, 'elementsInner');
       }
       if (targetsInner.length) {
-        this.activationOff(targetsInner, fElements, 'targetsInner');
+        this.activationOff(targetsInner, groupElements, 'targetsInner');
       }
     }
   }
@@ -666,10 +666,10 @@ class XtCore {
   /**
    * element on activation
    * @param {NodeList|Array} els Elements to be activated
-   * @param {Object} fElements
+   * @param {Object} groupElements
    * @param {String} type Type of elements
    */
-  activationOn(els, fElements, type) {
+  activationOn(els, groupElements, type) {
     let self = this;
     // delay
     for (let el of els) {
@@ -680,12 +680,12 @@ class XtCore {
         let delay = el.dataset.xtOnDelay;
         if (delay) {
           el.classList.add('on-block');
-          el.dataset.xtDelayTimeout = setTimeout(function (el, fElements, type) {
+          el.dataset.xtDelayTimeout = setTimeout(function (el, groupElements, type) {
             el.classList.remove('on-block');
-            self.activationOnActivate(el, fElements, type);
-          }, parseFloat(delay), el, fElements, type).toString();
+            self.activationOnActivate(el, groupElements, type);
+          }, parseFloat(delay), el, groupElements, type).toString();
         } else {
-          self.activationOnActivate(el, fElements, type);
+          self.activationOnActivate(el, groupElements, type);
         }
       }
     }
@@ -694,10 +694,10 @@ class XtCore {
   /**
    * element off activation
    * @param {NodeList|Array} els Elements to be deactivated
-   * @param {Object} fElements
+   * @param {Object} groupElements
    * @param {String} type Type of elements
    */
-  activationOff(els, fElements, type) {
+  activationOff(els, groupElements, type) {
     let self = this;
     // delay
     for (let el of els) {
@@ -708,12 +708,12 @@ class XtCore {
         let delay = el.dataset.xtOffDelay;
         if (delay) {
           el.classList.add('off-block');
-          el.dataset.xtDelayTimeout = setTimeout(function (el, fElements, type) {
+          el.dataset.xtDelayTimeout = setTimeout(function (el, groupElements, type) {
             el.classList.remove('off-block');
-            self.activationOffDeactivate(el, fElements, type);
-          }, parseFloat(delay), el, fElements, type).toString();
+            self.activationOffDeactivate(el, groupElements, type);
+          }, parseFloat(delay), el, groupElements, type).toString();
         } else {
-          self.activationOffDeactivate(el, fElements, type);
+          self.activationOffDeactivate(el, groupElements, type);
         }
       }
     }
@@ -722,10 +722,10 @@ class XtCore {
   /**
    * element activation
    * @param {Node|HTMLElement} el Elements to be deactivated
-   * @param {Object} fElements
+   * @param {Object} groupElements
    * @param {String} type Type of elements
    */
-  activationOnActivate(el, fElements, type) {
+  activationOnActivate(el, groupElements, type) {
     let self = this;
     let options = self.options;
     // activate
@@ -754,7 +754,7 @@ class XtCore {
       this.specialCenter(el);
       this.specialMiddle(el);
       this.specialCollapseOn(el);
-      this.specialCloseOn(el, fElements.single);
+      this.specialCloseOn(el, groupElements.single);
       // special one time
       if (!this.specialOnActivate) {
         this.specialOnActivate = true;
@@ -777,10 +777,10 @@ class XtCore {
   /**
    * element deactivation
    * @param {Node|HTMLElement} el Elements to be deactivated
-   * @param {Object} fElements
+   * @param {Object} groupElements
    * @param {String} type Type of elements
    */
-  activationOffDeactivate(el, fElements, type) {
+  activationOffDeactivate(el, groupElements, type) {
     let self = this;
     let options = self.options;
     // deactivate
