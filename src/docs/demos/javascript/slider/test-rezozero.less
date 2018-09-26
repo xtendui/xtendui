@@ -28,13 +28,13 @@
       animation-name: anim-special-in;
       transform: translateX(-100%);
     }
-  }
-  &.out {
-    .anim-left.out();
-    &:after {
-      .animation-default.out();
-      animation-name: anim-special-out;
-      transform: translateX(0);
+    &.direction-inverse {
+      .anim-left.active();
+      &:after {
+        .animation-default.active();
+        animation-name: anim-special-in-inverse;
+        transform: translateX(100%);
+      }
     }
   }
 }
@@ -48,11 +48,11 @@
   }
 }
 
-@keyframes anim-special-out {
+@keyframes anim-special-in-inverse {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(100%);
   }
 }

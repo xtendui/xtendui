@@ -123,6 +123,13 @@ gulp.task('site-build', function (callback) {
   callback();
 });
 
+// html
+
+gulp.task('html:watch', function (done) {
+  gulp.watch(['src/docs/**/*.html'], gulp.series('site-build'));
+  done();
+});
+
 // version
 
 gulp.task('version', function () {
@@ -144,7 +151,7 @@ gulp.task('version:watch', function (done) {
 // scripts
 
 gulp.task('watch',
-  gulp.series('version', gulp.parallel('less', 'js'), 'site-build', gulp.parallel('version:watch', 'less:watch', 'js:watch'))
+  gulp.series('version', gulp.parallel('less', 'js'), 'site-build', gulp.parallel('version:watch', 'html:watch', 'less:watch', 'js:watch'))
 );
 
 gulp.task('build',

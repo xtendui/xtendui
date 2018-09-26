@@ -272,6 +272,40 @@ class XtCore {
   }
 
   /**
+   * activate index element
+   * @param {Number} index
+   */
+  goToIndex(index) {
+    let current = this.elements[index];
+    this.eventOn(current);
+    return current;
+  }
+
+  /**
+   * activate next element
+   */
+  goToNext() {
+    let curentIndex = this.curentIndex !== undefined ? this.curentIndex + 1 : 0;
+    curentIndex = curentIndex > this.elements.length - 1 ? 0 : curentIndex;
+    this.forceNormalDir = this.curentIndex > curentIndex;
+    let current = this.elements[curentIndex];
+    this.eventOn(current);
+    return current;
+  }
+
+  /**
+   * activate prev element
+   */
+  goToPrev() {
+    let curentIndex = this.curentIndex !== undefined ? this.curentIndex - 1 : 0;
+    curentIndex = curentIndex < 0 ? this.elements.length - 1 : curentIndex;
+    this.forceInverseDir = this.curentIndex < curentIndex;
+    let current = this.elements[curentIndex];
+    this.eventOn(current);
+    return current;
+  }
+
+  /**
    * set auto change
    * @param {Boolean} instant
    */
@@ -285,9 +319,7 @@ class XtCore {
       if (!options.autoAlways && self.object.offsetParent === null) { // if not :visible don't change
         return false;
       }
-      self.autoCurrent = self.autoCurrent !== undefined ? self.autoCurrent + 1 : 0;
-      self.autoCurrent = self.autoCurrent >= self.elements.length ? 0 : self.autoCurrent;
-      self.eventOn(self.elements[self.autoCurrent]);
+      self.goToNext();
     }, time);
   }
 
@@ -535,17 +567,33 @@ class XtCore {
           self.activationOn(targetsInner, fElements, 'targetsInner');
         };
       }
-      // set autoCurrent
-      if (options.auto) {
-        let index = 0;
-        for (let [i, el] of this.elements.entries()) {
-          if (el === element) {
-            index = i;
-            break;
-          }
+
+      // set curentIndex and direction
+      let index = 0;
+      for (let [i, el] of this.elements.entries()) {
+        if (el === element) {
+          index = i;
+          break;
         }
-        this.autoCurrent = index;
       }
+      if (!this.forceNormalDir && (this.forceInverseDir || this.curentIndex > index)) {
+        for (let el of fElements.all) {
+          el.classList.add('direction-inverse');
+        }
+        for (let el of targets) {
+          el.classList.add('direction-inverse');
+        }
+      } else {
+        for (let el of fElements.all) {
+          el.classList.remove('direction-inverse');
+        }
+        for (let el of targets) {
+          el.classList.remove('direction-inverse');
+        }
+      }
+      this.forceNormalDir = false;
+      this.forceInverseDir = false;
+      this.curentIndex = index;
       // delay activation if currents > max
       let currents = this.getCurrents();
       if (currents.length > options.max) {
@@ -1458,7 +1506,7 @@ class XtSlider extends XtCore {
     super.initEvents();
     let self = this;
     let options = self.options;
-    if (options.dragOn) {
+    if (options.dragOn && options.dragOff) {
       for (let tr of this.targets) {
         // event on
         let dragOnHandler = Xt.dataStorage.put(tr, 'dragOnHandler', self.eventDragOnHandler.bind(self).bind(self, tr));
@@ -1478,29 +1526,31 @@ class XtSlider extends XtCore {
    */
   eventDragOnHandler(target, e) {
     let self = this;
-    if (!e.detail || !e.detail.skip) {
-      // vars
-      this.eInit = e;
-      // logic
-      let eventLimit = this.container.querySelectorAll('.event-limit');
-      if (eventLimit.length) {
-        if (Xt.checkOutside(e, eventLimit)) {
+    if (!e.button || e.button !== 2) { // not right click or it gets stuck
+      if (!e.detail || !e.detail.skip) {
+        // vars
+        this.eInit = e;
+        // logic
+        let eventLimit = this.container.querySelectorAll('.event-limit');
+        if (eventLimit.length) {
+          if (Xt.checkOutside(e, eventLimit)) {
+            this.eventDragOn(target, e);
+          }
+        } else {
           this.eventDragOn(target, e);
         }
-      } else {
-        this.eventDragOn(target, e);
+        // auto
+        if (this.options.autoPause) {
+          this.autoPause();
+        }
+        // event off
+        let dragOffHandler = Xt.dataStorage.put(window, 'dragOffHandler', self.eventDragOffHandler.bind(self).bind(self, target));
+        let eventsOff = ['mouseup', 'touchend'];
+        for (let event of eventsOff) {
+          window.addEventListener(event, dragOffHandler);
+        }
+        window.addEventListener('drag.off.slider', dragOffHandler);
       }
-      // auto
-      if (this.options.autoPause) {
-        this.autoPause();
-      }
-      // event off
-      let dragOffHandler = Xt.dataStorage.put(window, 'dragOffHandler', self.eventDragOffHandler.bind(self).bind(self, target));
-      let eventsOff = ['mouseup', 'touchend'];
-      for (let event of eventsOff) {
-        window.addEventListener(event, dragOffHandler);
-      }
-      window.addEventListener('drag.off.slider', dragOffHandler);
     }
   }
 
@@ -1563,7 +1613,7 @@ class XtSlider extends XtCore {
     }
     target.removeEventListener('drag.slider', dragHandler);
     // call function
-    this.options.dragOff(e, this.eInit, target);
+    this.options.dragOff(this, e, this.eInit, target);
   }
 
   /**
@@ -1574,7 +1624,7 @@ class XtSlider extends XtCore {
   eventDragHandler(target, e) {
     if (!e.detail || !e.detail.skip) {
       // call function
-      this.options.dragOn(e, this.eInit, target);
+      this.options.dragOn(this, e, this.eInit, target);
     }
   }
 
