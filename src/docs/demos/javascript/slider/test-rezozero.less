@@ -24,39 +24,16 @@
     }
   }
   // content animation
-  /*
-  > .content {
-    &:after {
-      content: '';
-      position: absolute;
-      z-index: 9;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background-color: @white;
-      transform: translateX(0);
-    }
-  }
   &.active {
     > .content {
       .anim-right.active();
-      &:after {
-        .animation-default.active();
-        animation-name: anim-special-in;
-        transform: translateX(-100%);
-      }
-      &.direction-inverse {
+    }
+    &.direction-inverse {
+      > .content {
         .anim-left.active();
-        &:after {
-          .animation-default.active();
-          animation-name: anim-special-in-inverse;
-          transform: translateX(100%);
-        }
       }
     }
   }
-  */
 }
 
 @keyframes anim-special-in {
