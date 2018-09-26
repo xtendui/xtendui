@@ -1458,7 +1458,7 @@ class XtSlider extends XtCore {
     super.initEvents();
     let self = this;
     let options = self.options;
-    if (options.drag) {
+    if (options.dragOn) {
       for (let tr of this.targets) {
         // event on
         let dragOnHandler = Xt.dataStorage.put(tr, 'dragOnHandler', self.eventDragOnHandler.bind(self).bind(self, tr));
@@ -1480,10 +1480,7 @@ class XtSlider extends XtCore {
     let self = this;
     if (!e.detail || !e.detail.skip) {
       // vars
-      this.dragStart = e;
-      if (this.options.dragStatic) {
-        this.dragStatics = target.querySelectorAll(this.options.dragStatic);
-      }
+      this.eInit = e;
       // logic
       let eventLimit = this.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
@@ -1565,29 +1562,8 @@ class XtSlider extends XtCore {
       target.removeEventListener(event, dragHandler);
     }
     target.removeEventListener('drag.slider', dragHandler);
-    // set position
-    let xMax = target.clientWidth;
-    let xFinal = parseFloat(target.style.left);
-    console.log(Math.abs(xFinal), xMax / 2);
-    if (Math.abs(xFinal) > xMax / 2) {
-      console.log('cccc');
-      target.style.left = xMax + 'px';
-      if (this.dragStatics) {
-        for (let dragStatic of this.dragStatics) {
-          dragStatic.style.left = - xMax + 'px';
-        }
-      }
-    } else {
-      target.style.left = 0 + 'px';
-      if (this.dragStatics) {
-        for (let dragStatic of this.dragStatics) {
-          dragStatic.style.left = 0 + 'px';
-        }
-      }
-    }
-    // vars
-    this.dragStart = false;
-    this.dragStatics = false;
+    // call function
+    this.options.dragOff(e, this.eInit, target);
   }
 
   /**
@@ -1597,22 +1573,8 @@ class XtSlider extends XtCore {
    */
   eventDragHandler(target, e) {
     if (!e.detail || !e.detail.skip) {
-      // set position
-      let xStart = this.dragStart.clientX;
-      let xCurrent = e.clientX;
-      let xDist = xCurrent - xStart;
-      target.style.left = xDist + 'px';
-      if (this.dragStatics) {
-        for (let dragStatic of this.dragStatics) {
-          dragStatic.style.left = - xDist + 'px';
-        }
-      }
-      //console.log(xDist);
-      //let element = this.getElementsFromTarget(target)[0];
-      //console.log(this.dragInit, e);
       // call function
-      //let func = new Function('dragStart', 'drag', 'target', 'element', options.drag);
-      //let val = func(this.dragStart, e, target, element);
+      this.options.dragOn(e, this.eInit, target);
     }
   }
 
@@ -1629,8 +1591,8 @@ XtSlider.defaults = {
   "min": 1,
   "max": 1,
   "aria": true,
-  "drag": "target.style.left = drag.clientX - dragStart.clientX + 'px'",
-  "dragStatic": ":scope > .content"
+  "dragOn": false,
+  "dragOff": false
 };
 
 // export
