@@ -52,16 +52,16 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
         let timing = Xt.animationTiming(target);
         clearTimeout(target.dataset.xtDragEndTimeout);
         target.dataset.xtDragEndTimeout = setTimeout(function () {
-          target.style.left = 0 + 'px';
+          target.style.left = '0';
           for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-            content.style.left = 0 + 'px';
+            content.style.left = '0';
           }
         }, timing).toString();
       } else {
         // reset drag
-        target.style.left = 0 + 'px';
+        target.style.left = '0';
         for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          content.style.left = 0 + 'px';
+          content.style.left = '0';
         }
       }
     });
@@ -91,9 +91,9 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
         target.classList.remove('dragging');
         target.dataset.xtDragResetFrame = Xt.requestAnimationFrame.call(window, function () {
           // reset drag
-          target.style.left = 0 + 'px';
+          target.style.left = '0';
           for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-            content.style.left = 0 + 'px';
+            content.style.left = '0';
           }
         });
       });
