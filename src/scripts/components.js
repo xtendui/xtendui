@@ -529,6 +529,44 @@ class XtCore {
   }
 
   /**
+   * set index and direction
+   * @param {Node|HTMLElement} element Current element
+   */
+  setIndexAndDirection(element) {
+    let index = 0;
+    for (let [i, el] of this.elements.entries()) {
+      if (el === element) {
+        index = i;
+        break;
+      }
+    }
+    if (!this.forceNormalDir && (this.forceInverseDir || this.curentIndex > index)) {
+      this.curentDirection = 0;
+    } else {
+      this.curentDirection = 1;
+    }
+    this.forceNormalDir = false;
+    this.forceInverseDir = false;
+    this.curentIndex = index;
+  }
+
+  /**
+   * set index and direction
+   * @param {Array} all All objects to be decorate
+   */
+  decorateDirection(all) {
+    if (this.curentDirection === 0) {
+      for (let el of all) {
+        el.classList.add('direction-inverse');
+      }
+    } else {
+      for (let el of all) {
+        el.classList.remove('direction-inverse');
+      }
+    }
+  }
+
+  /**
    * element on
    * @param {Node|HTMLElement} element To be activated
    */
@@ -539,12 +577,15 @@ class XtCore {
     if (this.checkOn(element)) {
       // special one time
       this.specialOnActivate = false;
+      // set index and direction
+      this.setIndexAndDirection(element);
       // on
       let fElements = this.getElements(element);
       this.addCurrent(fElements.single);
       let targets = this.getTargets(element);
       let elementsInner = this.getInside(element, options.elementsInner);
       let targetsInner = this.getInside(targets, options.targetsInner);
+      this.decorateDirection([...fElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // execute defer @FIX delay animation
       this.activationDelay = {};
       if (fElements.all.length) {
@@ -567,32 +608,6 @@ class XtCore {
           self.activationOn(targetsInner, fElements, 'targetsInner');
         };
       }
-      // set curentIndex and direction
-      let index = 0;
-      for (let [i, el] of this.elements.entries()) {
-        if (el === element) {
-          index = i;
-          break;
-        }
-      }
-      if (!this.forceNormalDir && (this.forceInverseDir || this.curentIndex > index)) {
-        for (let el of fElements.all) {
-          el.classList.add('direction-inverse');
-        }
-        for (let el of targets) {
-          el.classList.add('direction-inverse');
-        }
-      } else {
-        for (let el of fElements.all) {
-          el.classList.remove('direction-inverse');
-        }
-        for (let el of targets) {
-          el.classList.remove('direction-inverse');
-        }
-      }
-      this.forceNormalDir = false;
-      this.forceInverseDir = false;
-      this.curentIndex = index;
       // delay activation if currents > max
       let currents = this.getCurrents();
       if (currents.length > options.max) {
@@ -631,6 +646,7 @@ class XtCore {
       let targets = this.getTargets(element);
       let elementsInner = this.getInside(element, options.elementsInner);
       let targetsInner = this.getInside(targets, options.targetsInner);
+      this.decorateDirection([...fElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // execute
       if (fElements.all.length) {
         this.activationOff(fElements.all, fElements, 'elements');

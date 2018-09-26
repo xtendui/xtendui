@@ -1,4 +1,5 @@
 for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
+
   // slider
   new XtSlider(el, {
     "auto": 6000,
@@ -71,12 +72,12 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
       target.classList.add('dragging');
       if (target.classList.contains('direction-inverse')) {
         target.style.left = -xMax + 'px';
-        for (let content of target.querySelectorAll(':scope > .content')) {
+        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
           content.style.left = xMax + 'px';
         }
       } else {
         target.style.left = xMax + 'px';
-        for (let content of target.querySelectorAll(':scope > .content')) {
+        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
           content.style.left = -xMax + 'px';
         }
       }
@@ -85,7 +86,7 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
       target.dataset.onFrame = Xt.requestAnimationFrame.call(window, function () {
         target.classList.remove('dragging');
         target.style.left = 0 + 'px';
-        for (let content of target.querySelectorAll(':scope > .content')) {
+        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
           content.style.left = 0 + 'px';
         }
       });
@@ -99,9 +100,9 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
       target.classList.remove('dragging');
       Xt.cancelAnimationFrame.call(window, target.dataset.onFrame);
       if (target.classList.contains('direction-inverse')) {
-        target.style.left = -xMax + 'px';
-        for (let content of target.querySelectorAll(':scope > .content')) {
-          content.style.left = xMax + 'px';
+        target.style.left = xMax + 'px';
+        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
+          content.style.left = -xMax + 'px';
         }
       } else {
         target.style.left = -xMax + 'px';
