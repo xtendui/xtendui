@@ -1,10 +1,16 @@
+let time = .3;
+let animSize = 15;
+CustomEase.create('easeIn', '.41, .1, .175, 1');
+CustomEase.create('easeOut', '.77, 0, .175, 1');
+
 for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
 
   // slider
   new XtSlider(el, {
     "auto": 6000,
     "autoPause": 6000,
-    "drag": true
+    "drag": true,
+    "timing": time * 1000
   });
 
   // slider items
@@ -26,10 +32,12 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
       let xStart = eInit.clientX;
       let xCurrent = eCurrent.clientX;
       let xDist = xCurrent - xStart;
+      let xMax = target.clientWidth;
+      let ratio = 1 - (Math.abs(xStart - xCurrent) / xMax);
       // drag
-      target.style.left = xDist + 'px';
+      TweenMax.set(target, {left: xDist + 'px', opacity: ratio});
       for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-        content.style.left = -xDist + 'px';
+        TweenMax.set(content, {left: -xDist});
       }
     });
 
@@ -48,20 +56,11 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
         } else {
           self.goToPrev();
         }
-        // reset after animation done
-        let timing = Xt.animationTiming(target);
-        clearTimeout(target.dataset.xtDragEndTimeout);
-        target.dataset.xtDragEndTimeout = setTimeout(function () {
-          target.style.left = '0';
-          for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-            content.style.left = '0';
-          }
-        }, timing).toString();
       } else {
         // reset drag
-        target.style.left = '0';
+        TweenMax.to(target, time, {left: 0, opacity: 0, ease: 'easeOut'});
         for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          content.style.left = '0';
+          TweenMax.to(content, time, {left: 0, ease: 'easeOut'});
         }
       }
     });
@@ -73,15 +72,26 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
       // dragging
       target.classList.add('dragging');
       // pre initial drag position
+      TweenMax.set(target, {opacity: 0});
       if (!target.classList.contains('direction-inverse')) {
-        target.style.left = xMax + 'px';
+        TweenMax.set(target, {left: xMax});
         for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          content.style.left = -xMax + 'px';
+          TweenMax.set(content, {left: -xMax});
+          /* can't do this because it gets overwritten by drag animation
+          // content animation
+          TweenMax.set(content, {left: animSize});
+          TweenMax.to(content, time, {left: 0, ease: 'easeOut'});
+          */
         }
       } else {
-        target.style.left = -xMax + 'px';
+        TweenMax.set(target, {left: -xMax});
         for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          content.style.left = xMax + 'px';
+          TweenMax.set(content, {left: xMax});
+          /* can't do this because it gets overwritten by drag animation
+          // content animation
+          TweenMax.set(content, {left: -animSize});
+          TweenMax.to(content, time, {left: 0, ease: 'easeOut'});
+          */
         }
       }
       // initial drag position
@@ -91,9 +101,9 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
         target.classList.remove('dragging');
         target.dataset.xtDragResetFrame = Xt.requestAnimationFrame.call(window, function () {
           // reset drag
-          target.style.left = '0';
+          TweenMax.to(target, time, {left: 0, opacity: 1, ease: 'easeIn'});
           for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-            content.style.left = '0';
+            TweenMax.to(content, time, {left: 0, ease: 'easeIn'});
           }
         });
       });
@@ -108,14 +118,14 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
       // complete drag
       Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
       if (!target.classList.contains('direction-inverse')) {
-        target.style.left = -xMax + 'px';
+        TweenMax.to(target, time, {left: -xMax, opacity: 0, ease: 'easeOut'});
         for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          content.style.left = xMax + 'px';
+          TweenMax.to(content, time, {left: xMax, ease: 'easeOut'});
         }
       } else {
-        target.style.left = xMax + 'px';
+        TweenMax.to(target, time, {left: xMax, opacity: 0, ease: 'easeOut'});
         for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          content.style.left = -xMax + 'px';
+          TweenMax.to(content, time, {left: -xMax, ease: 'easeOut'});
         }
       }
     });

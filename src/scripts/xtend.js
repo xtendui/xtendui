@@ -71,26 +71,6 @@ Xt.cancelAnimationFrame = function () {
 }();
 
 /**
- * get transition or animation timing
- * @param {Node|HTMLElement} el To be animated
- * @param {Number} timing Force timing
- * @returns {Number} Time in milliseconds
- */
-Xt.animationTiming = function (el, timing = null) {
-  if (timing) {
-    return timing;
-  } else {
-    let style = getComputedStyle(el);
-    let transition = parseFloat(style.transitionDuration) + parseFloat(style.transitionDelay);
-    let animation = parseFloat(style.animationDuration) + parseFloat(style.animationDelay);
-    if (transition || animation) {
-      timing = Math.max(transition, animation);
-    }
-    return timing * 1000;
-  }
-};
-
-/**
  * Check if event target is inside elements
  * @param {Event} e Event to check target
  * @param {NodeList|Array} targets Elements to check inside
@@ -245,6 +225,26 @@ Xt.dataStorage = {
       this._storage.delete(element);
     }
     return ret;
+  }
+};
+
+/**
+ * get transition or animation timing
+ * @param {Node|HTMLElement} el To be animated
+ * @param {Number} timing Force timing
+ * @returns {Number} Time in milliseconds
+ */
+Xt.animationTiming = function (el, timing = null) {
+  if (timing) {
+    return timing;
+  } else {
+    let style = getComputedStyle(el);
+    let transition = parseFloat(style.transitionDuration) + parseFloat(style.transitionDelay);
+    let animation = parseFloat(style.animationDuration) + parseFloat(style.animationDelay);
+    if (transition || animation) {
+      timing = Math.max(transition, animation);
+    }
+    return timing * 1000;
   }
 };
 
