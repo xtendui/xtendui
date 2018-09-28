@@ -58,7 +58,7 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
         }
       } else {
         // reset drag
-        TweenMax.to(target, time, {x: 0, opacity: 0, ease: 'easeOut'});
+        TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeOut'});
         for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
           TweenMax.to(content, time, {x: 0, ease: 'easeOut'});
         }

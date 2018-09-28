@@ -63,7 +63,7 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
         }, timing).toString();
       } else {
         // reset drag
-        target.style.opacity = '0';
+        target.style.opacity = '1';
         target.style.left = '0';
         for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
           content.style.left = '0';
