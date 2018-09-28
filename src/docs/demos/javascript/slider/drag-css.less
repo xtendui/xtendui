@@ -3,13 +3,6 @@
 // animations
 
 .slide {
-  .user-select-none();
-  position: relative;
-  overflow: hidden;
-  > * {
-    position: relative;
-  }
-  .margin(bottom, medium);
   // mask animation
   &:not(.dragging) {
     .transition-default.out();

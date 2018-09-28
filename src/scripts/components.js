@@ -1635,7 +1635,7 @@ class XtSlider extends XtCore {
 // default
 
 XtSlider.defaults = {
-  "elements": ":scope > a, :scope > button",
+  "elements": ".slide-control",
   "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
   "class": "active",
   "instant": {"elements": true},
