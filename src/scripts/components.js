@@ -1018,7 +1018,7 @@ class XtCore {
   specialCollapseOn(el) {
     let style = getComputedStyle(el);
     if (style.getPropertyValue('--collapse-height')) {
-      el.classList.add('no-transition');
+      el.classList.add('xt-calculating');
       el.style.height = 'auto';
       el.style.paddingTop = '';
       el.style.paddingBottom = '';
@@ -1030,7 +1030,7 @@ class XtCore {
         el.style.paddingTop = '0';
         el.style.paddingBottom = '0';
         Xt.requestAnimationFrame.call(window, function () {
-          el.classList.remove('no-transition');
+          el.classList.remove('xt-calculating');
           el.style.height = h;
           el.style.paddingTop = pt;
           el.style.paddingBottom = pb;
@@ -1038,6 +1038,7 @@ class XtCore {
       });
     }
     if (style.getPropertyValue('--collapse-width')) {
+      el.classList.add('xt-calculating');
       el.style.width = 'auto';
       el.style.paddingLeft = '';
       el.style.paddingRight = '';
@@ -1049,7 +1050,7 @@ class XtCore {
         el.style.paddingLeft = '0';
         el.style.paddingRight = '0';
         Xt.requestAnimationFrame.call(window, function () {
-          el.classList.remove('no-transition');
+          el.classList.remove('xt-calculating');
           el.style.width = w;
           el.style.paddingLeft = pl;
           el.style.paddingRight = pr;
