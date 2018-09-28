@@ -109,6 +109,13 @@ gulp.task('js:watch', function (done) {
   done();
 });
 
+// html
+
+gulp.task('content:watch', function (done) {
+  gulp.watch(['src/docs/**/*.html', 'src/docs/demos/**/*.js'], gulp.series('site-build'));
+  done();
+});
+
 // site
 
 gulp.task('site-build', function (callback) {
@@ -123,12 +130,18 @@ gulp.task('site-build', function (callback) {
   callback();
 });
 
-// html
-
-gulp.task('content:watch', function (done) {
-  gulp.watch(['src/docs/**/*.html', 'src/docs/demos/**/*.js'], gulp.series('site-build'));
-  done();
+gulp.task('site-serve', function (callback) {
+  let jekyll = child.spawn('bundle', ['exec', 'jekyll', 'serve', '--no-watch']);
+  let jekyllLogger = function (buffer) {
+    buffer.toString()
+      .split(/\n/)
+      .forEach((message) => gutil.log('Jekyll: ' + message));
+  };
+  jekyll.stdout.on('data', jekyllLogger);
+  jekyll.stderr.on('data', jekyllLogger);
+  callback();
 });
+
 
 // version
 
@@ -151,7 +164,7 @@ gulp.task('version:watch', function (done) {
 // scripts
 
 gulp.task('watch',
-  gulp.series('version', gulp.parallel('less', 'js'), 'site-build', gulp.parallel('version:watch', 'content:watch', 'less:watch', 'js:watch'))
+  gulp.series('version', gulp.parallel('less', 'js'), 'site-serve', gulp.parallel('version:watch', 'content:watch', 'less:watch', 'js:watch'))
 );
 
 gulp.task('build',
