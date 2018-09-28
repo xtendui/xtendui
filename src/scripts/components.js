@@ -414,7 +414,7 @@ class XtCore {
 
   /**
    * choose which elements to activate/deactivate from target (based on xtend mode and containers)
-   * @param {Node|HTMLElement} element Target to trigger interaction on
+   * @param {Node|HTMLElement} target Target to trigger interaction on
    * @returns {Array}
    */
   getElementsFromTarget(target) {
@@ -1740,7 +1740,6 @@ class XtSticky extends XtCore {
 
   /**
    * element on handler
-   * @param {Node|HTMLElement} element
    * @param {Event} e
    */
   eventStickyHandler(e) {
