@@ -1,4 +1,5 @@
-for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
+
+for (let [i, el] of document.querySelectorAll('.slider').entries()) {
 
   // slider
   new XtSlider(el, {
@@ -8,7 +9,7 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
   });
 
   // slider items
-  for (let [i, tr] of el.querySelectorAll('.slider-item').entries()) {
+  for (let [i, tr] of el.querySelectorAll('.slide').entries()) {
 
     // drag event
     tr.addEventListener('dragStart.slider', function (e) {
@@ -31,9 +32,7 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
       // drag
       target.style.opacity = ratio.toString();
       target.style.left = xDist + 'px';
-      for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-        content.style.left = -xDist + 'px';
-      }
+      target.children[0].style.left = -xDist + 'px';
     });
 
     // dragOff event
@@ -57,17 +56,13 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
         target.dataset.xtDragEndTimeout = setTimeout(function () {
           target.style.opacity = '0';
           target.style.left = '0';
-          for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-            content.style.left = '0';
-          }
+          target.children[0].style.left = '0';
         }, timing).toString();
       } else {
         // reset drag
         target.style.opacity = '1';
         target.style.left = '0';
-        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          content.style.left = '0';
-        }
+        target.children[0].style.left = '0';
       }
     });
 
@@ -81,14 +76,10 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
       target.style.opacity = '0';
       if (!target.classList.contains('direction-inverse')) {
         target.style.left = xMax + 'px';
-        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          content.style.left = -xMax + 'px';
-        }
+        target.children[0].style.left = -xMax + 'px';
       } else {
         target.style.left = -xMax + 'px';
-        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          content.style.left = xMax + 'px';
-        }
+        target.children[0].style.left = xMax + 'px';
       }
       // initial drag position
       Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
@@ -99,9 +90,7 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
           // reset drag
           target.style.opacity = '1';
           target.style.left = '0';
-          for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-            content.style.left = '0';
-          }
+          target.children[0].style.left = '0';
         });
       });
     });
@@ -117,15 +106,11 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
       if (!target.classList.contains('direction-inverse')) {
         target.style.opacity = '0';
         target.style.left = -xMax + 'px';
-        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          content.style.left = xMax + 'px';
-        }
+        target.children[0].style.left = xMax + 'px';
       } else {
         target.style.opacity = '0';
         target.style.left = xMax + 'px';
-        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          content.style.left = -xMax + 'px';
-        }
+        target.children[0].style.left = -xMax + 'px';
       }
     });
 

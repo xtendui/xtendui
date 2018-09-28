@@ -103,6 +103,26 @@ description: Lorem Ipsum
   </code>
 </pre>
 
+<h3>Slider</h3>
+
+<p>You can initialize <strong>overlay</strong> by javascript.</p>
+
+<pre>
+  <code class="js">
+    // single
+    new XtSlider(document.querySelectorAll('.my-element')[0], {
+      // options
+    });
+
+    // looping
+    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
+      new XtSlider(el, {
+        // options
+      });
+    }
+  </code>
+</pre>
+
 <h3>Sticky</h3>
 
 <p>You can initialize <strong>sticky</strong> by javascript.</p>

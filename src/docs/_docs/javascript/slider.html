@@ -6,6 +6,42 @@ order: 300
 description: Lorem Ipsum
 ---
 
+<h2>Usage</h2>
+
+<p>Use this markup to create a drop. <code>[data-xt-drop]</code> must be <a
+  href="{% link _docs/javascript.html %}#initialization">initialized by javascript</a>.</p>
+
+<pre>
+  <code class="html">
+    <div class="slider" data-xt-slider>
+
+      <div class="slide toggle-block">
+        <div class="slide-inner">
+          <div class="content">
+            <!-- content -->
+          </div>
+        </div>
+      </div>
+
+      <div class="slide toggle-block">
+        <div class="slide-inner">
+          <div class="content">
+            <!-- content -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </code>
+</pre>
+
+<div class="alert">
+  <div class="content">
+    Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-slider">slider
+    by javascript</a> using the same options syntax.
+  </div>
+</div>
+
 <h2>Demos</h2>
 
 <h3>Simple</h3>
@@ -16,6 +52,13 @@ description: Lorem Ipsum
 </div>
 
 <h3>Drag</h3>
+
+<div class="alert box-primary">
+  <div class="content">
+    For assigning drag you need to initialize <a
+    href="{% link _docs/javascript.html %}#initialization-slider">slider by javascript</a>.
+  </div>
+</div>
 
 <div class="demo">
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/slider/drag-css.html"

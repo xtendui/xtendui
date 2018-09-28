@@ -3,7 +3,7 @@ let animSize = 15;
 CustomEase.create('easeIn', '.41, .1, .175, 1');
 CustomEase.create('easeOut', '.77, 0, .175, 1');
 
-for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
+for (let [i, el] of document.querySelectorAll('.slider').entries()) {
 
   // slider
   new XtSlider(el, {
@@ -14,14 +14,7 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
   });
 
   // slider items
-  for (let [i, tr] of el.querySelectorAll('.slider-item').entries()) {
-
-    // drag event
-    tr.addEventListener('dragStart.slider', function (e) {
-      let target = this;
-      // dragging
-      target.classList.add('dragging');
-    });
+  for (let [i, tr] of el.querySelectorAll('.slide').entries()) {
 
     // drag event
     tr.addEventListener('drag.slider', function (e) {
@@ -36,9 +29,7 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
       let ratio = 1 - (Math.abs(xStart - xCurrent) / xMax);
       // drag
       TweenMax.set(target, {x: xDist + 'px', opacity: ratio});
-      for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-        TweenMax.set(content, {x: -xDist});
-      }
+      TweenMax.set(target.children[0], {x: -xDist});
     });
 
     // dragOff event
@@ -59,9 +50,7 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
       } else {
         // reset drag
         TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeOut'});
-        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          TweenMax.to(content, time, {x: 0, ease: 'easeOut'});
-        }
+        TweenMax.to(target.children[0], time, {x: 0, ease: 'easeOut'});
       }
     });
 
@@ -69,64 +58,36 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
     tr.addEventListener('on', function (e) {
       let target = this;
       let xMax = target.clientWidth;
-      // dragging
-      target.classList.add('dragging');
       // pre initial drag position
       TweenMax.set(target, {opacity: 0});
       if (!target.classList.contains('direction-inverse')) {
         TweenMax.set(target, {x: xMax});
-        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          TweenMax.set(content, {x: -xMax});
-          /* can't do this because it gets overwritten by drag animation
-          // content animation
-          TweenMax.set(content, {x: animSize});
-          TweenMax.to(content, time, {x: 0, ease: 'easeOut'});
-          */
-        }
+        TweenMax.set(target.children[0], {x: -xMax});
+        TweenMax.set(target.children[0].children[0], {x: animSize});
+        TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeOut'});
       } else {
         TweenMax.set(target, {x: -xMax});
-        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          TweenMax.set(content, {x: xMax});
-          /* can't do this because it gets overwritten by drag animation
-          // content animation
-          TweenMax.set(content, {x: -animSize});
-          TweenMax.to(content, time, {x: 0, ease: 'easeOut'});
-          */
-        }
+        TweenMax.set(target.children[0], {x: xMax});
+        TweenMax.set(target.children[0].children[0], {x: -animSize});
+        TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeOut'});
       }
-      // initial drag position
-      Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
-      target.dataset.xtDragResetFrame = Xt.requestAnimationFrame.call(window, function () {
-        // dragging
-        target.classList.remove('dragging');
-        target.dataset.xtDragResetFrame = Xt.requestAnimationFrame.call(window, function () {
-          // reset drag
-          TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeIn'});
-          for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-            TweenMax.to(content, time, {x: 0, ease: 'easeIn'});
-          }
-        });
-      });
+      // reset drag
+      TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeIn'});
+      TweenMax.to(target.children[0], time, {x: 0, ease: 'easeIn'});
     });
 
     // off event
     tr.addEventListener('off', function (e) {
       let target = this;
       let xMax = target.clientWidth;
-      // dragging
-      target.classList.remove('dragging');
       // complete drag
       Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
       if (!target.classList.contains('direction-inverse')) {
         TweenMax.to(target, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
-        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          TweenMax.to(content, time, {x: xMax, ease: 'easeOut'});
-        }
+        TweenMax.to(target.children[0], time, {x: xMax, ease: 'easeOut'});
       } else {
         TweenMax.to(target, time, {x: xMax, opacity: 0, ease: 'easeOut'});
-        for (let [i, content] of target.querySelectorAll(':scope > .content').entries()) {
-          TweenMax.to(content, time, {x: -xMax, ease: 'easeOut'});
-        }
+        TweenMax.to(target.children[0], time, {x: -xMax, ease: 'easeOut'});
       }
     });
 

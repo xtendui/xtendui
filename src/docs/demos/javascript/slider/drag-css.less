@@ -2,23 +2,23 @@
 
 // animations
 
-.slider-item {
+.slide {
   .user-select-none();
   position: relative;
   overflow: hidden;
-  > .content {
+  > * {
     position: relative;
   }
   .margin(bottom, medium);
   // mask animation
   &:not(.dragging) {
     .transition-default.out();
-    > .content {
+    > * {
       .transition-default.out();
     }
     &.active {
       .transition-default.active();
-      > .content {
+      > * {
         .transition-default.active();
       }
     }
@@ -29,7 +29,7 @@
       .anim-right.active();
     }
     &.direction-inverse {
-      > .content {
+      > * {
         .anim-left.active();
       }
     }
