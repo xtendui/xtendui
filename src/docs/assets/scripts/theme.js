@@ -290,7 +290,7 @@ window.initIframe = function(name) {
     window.resizeIframe(name);
     item.classList.add('populated');
   }
-}
+};
 
 window.resizeIframe = function(name) {
   let src = 'iframe[name="' + name + '"]';

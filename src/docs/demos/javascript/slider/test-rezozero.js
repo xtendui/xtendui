@@ -2,8 +2,8 @@ for (let [i, el] of document.querySelectorAll('.slider-container').entries()) {
 
   // slider
   new XtSlider(el, {
-    "auto": 6000,
-    "autoPause": 6000,
+    "auto": 1500,
+    "autoPause": 3000,
     "drag": true
   });
 

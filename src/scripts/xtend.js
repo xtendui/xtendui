@@ -350,6 +350,22 @@ window.Xt = Xt;
 export {Xt};
 
 //////////////////////
+// pass some window events to iframes
+//////////////////////
+
+window.addEventListener('focus', function () {
+  for (let iframe of document.querySelectorAll('iframe')) {
+    iframe.contentWindow.dispatchEvent(new CustomEvent('focus'));
+  }
+});
+
+window.addEventListener('blur', function () {
+  for (let iframe of document.querySelectorAll('iframe')) {
+    iframe.contentWindow.dispatchEvent(new CustomEvent('blur'));
+  }
+});
+
+//////////////////////
 // closest polyfill
 // https://github.com/jonathantneal/closest
 // USAGE: element.closest(query);
