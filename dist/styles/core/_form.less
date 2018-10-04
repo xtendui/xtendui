@@ -131,6 +131,12 @@ input[type="radio"]:not(.unstyled) {
   width: 100%;
   // .input-control
   .input-control {
+    // index
+    z-index: @index-active - 1;
+    &:focus {
+      z-index: @index-active + 1;
+    }
+    // content
     &:first-child {
       border-top-right-radius: 0 !important;
       border-bottom-right-radius: 0 !important;
@@ -145,26 +151,28 @@ input[type="radio"]:not(.unstyled) {
   }
 }
 
-// shared
+// .input-group-inner
 
-.input-group-line,
-.input-group-stack {
+.input-group-inner {
+  .display(flex);
+  .flex-row();
+  .flex-wrap();
+  // index
+  z-index: @index-active;
+  // .btn
   .btn {
+    width: 100%;
     .text-align(center);
+    & + .btn {
+      margin-top: -@btn-border-width;
+    }
   }
   .input-control ~ & {
     .btn {
       .margin(right, none);
     }
   }
-}
-
-// .input-group-line
-
-.input-group-line {
-  .display(flex);
-  .flex-nowrap();
-  // border
+  // border inline
   &:first-child {
     .btn {
       &@{btn-design} {
@@ -188,21 +196,7 @@ input[type="radio"]:not(.unstyled) {
       }
     }
   }
-}
-
-// .input-group-stack
-
-.input-group-stack {
-  .display(flex);
-  .flex-row();
-  .flex-wrap();
-  // .btn
-  .btn {
-    width: 100%;
-  }
-  .btn + .btn {
-    margin-top: -@btn-border-width;
-  }
+  // border stack
   &:first-child {
     .btn {
       &:not(:first-child) {

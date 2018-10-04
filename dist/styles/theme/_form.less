@@ -113,21 +113,6 @@ legend {
 }
 
 //////////////////////
-// label
-//////////////////////
-
-.label-control {
-  // styles
-  .margin(bottom, 1em); // from .form-group font size
-  .font-sans-semibold();
-  font-size: 1em; // from .form-group font size
-  color: @grey-500;
-  line-height: 1.25;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-}
-
-//////////////////////
 // input
 //////////////////////
 
@@ -142,7 +127,7 @@ legend {
   font-size: .9em; // from .form-group font size
   line-height: 1.25;
   // options
-  .input-control-secondary();
+  .input-control-grey();
   // animations
   .transition-default.out();
   &:hover, &.active {
@@ -155,25 +140,38 @@ legend {
 
 // variant
 
-.input-control-secondary {
-  border-color: @secondary;
-  background-color: @secondary;
-  color: fade(@text, @perc-xl);
-  &:hover, &.active, &:focus {
-    border-color: @secondary;
-    background-color: lighten(@secondary, @perc-xs);
-    color: @text;
-  }
+.input-control-grey {
+  // styles
+  border-color: @grey-300;
+  background-color: @white;
+  color: @text;
   &:focus {
-    border-color: darken(@secondary, @perc-md);
+    background-color: darken(@white, @perc-xs);
   }
   // select arrow
   select& {
-    @select-arrow-color: darken(@secondary, @perc-md);
-    @select-space-color: darken(@secondary, @perc-xs);
+    @select-arrow-color: darken(@grey-300, @perc-md);
+    @select-space-color: darken(@grey-300, @perc-xs);
     background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%),
     linear-gradient(135deg, @select-arrow-color 50%, transparent 50%),
     linear-gradient(to right, @select-space-color, @select-space-color);
+  }
+}
+
+.input-group-grey {
+  // spacing
+  margin-right: -@input-border-width;
+  .input-control ~ & {
+    margin-left: -@input-border-width;
+  }
+  // btn
+  .btn {
+    &@{btn-design} {
+      border-radius: @border-radius;
+      border-width: @input-border-width;
+      border-style: solid;
+      border-color: @grey-300;
+    }
   }
 }
 
@@ -201,6 +199,21 @@ legend {
 
 ::placeholder {
   color: @grey-500;
+}
+
+//////////////////////
+// label
+//////////////////////
+
+.label-control {
+  // styles
+  .margin(bottom, 1em); // from .form-group font size
+  .font-sans-semibold();
+  font-size: 1em; // from .form-group font size
+  color: @grey-500;
+  line-height: 1.25;
+  letter-spacing: .05em;
+  text-transform: uppercase;
 }
 
 //////////////////////
@@ -302,24 +315,6 @@ input[type="radio"]:not(.unstyled) {
       font-size: 55%;
     }
   }
-}
-
-//////////////////////
-// input-group
-//////////////////////
-
-.input-group {
-  .input-control {
-    z-index: 1;
-    &:focus {
-      z-index: 3;
-    }
-  }
-}
-
-.input-group-line,
-.input-group-stack {
-  z-index: 2;
 }
 
 //////////////////////
