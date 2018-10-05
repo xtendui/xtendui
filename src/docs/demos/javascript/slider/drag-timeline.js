@@ -1,8 +1,8 @@
 let time = .6;
 let animSize = 15;
 let timeInner = .3;
-let animSizeInner = 15;
-let delayInner = .3;
+let delayInner = .1;
+let delayInnerMax = .3;
 CustomEase.create('easeIn', '.41, .1, .175, 1');
 CustomEase.create('easeOut', '.77, 0, .175, 1');
 
@@ -27,9 +27,9 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       window.tl = [];
       for (let [z, inner] of target.querySelectorAll('.content > *').entries()) {
         window.tl[z] = new TimelineMax({paused: true});
-        window.tl[z].add(TweenMax.set(inner, {y: -animSizeInner}));
-        window.tl[z].add(TweenMax.to(inner, timeInner, {y: 0, ease: 'easeIn'}));
-        window.tl[z].add(TweenMax.to(inner, timeInner + timeInner, {y: animSizeInner, ease: 'easeIn'}));
+        window.tl[z].add(TweenMax.set(inner, {x: -animSize, opacity: 0}));
+        window.tl[z].add(TweenMax.to(inner, timeInner, {x: 0, opacity: 1, ease: 'easeIn'}));
+        window.tl[z].add(TweenMax.to(inner, timeInner + timeInner, {x: animSize, opacity: 0, ease: 'easeIn'}));
         let tlPos = timeInner;
         window.tl[z].time(tlPos);
       }
@@ -43,7 +43,10 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         // timeline
         let tlPos = timeInner + timeInner;
         for(let [z, inner] of target.querySelectorAll('.content > *').entries()) {
-          window.tl[z].time(tlPos).tweenTo(timeInner);
+          TweenMax.set(inner, {opacity: 0});
+          setTimeout( function() {
+            window.tl[z].time(tlPos).tweenTo(timeInner);
+          }, Math.min(delayInner * z, delayInnerMax) * 1000).toString();
         }
       } else {
         TweenMax.set(target, {x: -xMax});
@@ -53,7 +56,10 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         // timeline
         let tlPos = timeInner - timeInner;
         for(let [z, inner] of target.querySelectorAll('.content > *').entries()) {
-          window.tl[z].time(tlPos).tweenTo(timeInner);
+          TweenMax.set(inner, {opacity: 0});
+          setTimeout( function() {
+            window.tl[z].time(tlPos).tweenTo(timeInner);
+          }, Math.min(delayInner * z, delayInnerMax) * 1000).toString();
         }
       }
       // reset drag
@@ -73,7 +79,9 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         // timeline
         let tlPos = timeInner + timeInner;
         for(let [z, inner] of target.querySelectorAll('.content > *').entries()) {
-          window.tl[z].tweenTo(tlPos);
+          setTimeout( function() {
+            window.tl[z].tweenTo(tlPos);
+          }, Math.min(delayInner * z, delayInnerMax) * 1000).toString();
         }
       } else {
         TweenMax.to(target, time, {x: xMax, opacity: 0, ease: 'easeOut'});
@@ -81,7 +89,9 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         // timeline
         let tlPos = timeInner - timeInner;
         for(let [z, inner] of target.querySelectorAll('.content > *').entries()) {
-          window.tl[z].tweenTo(tlPos);
+          setTimeout( function() {
+            window.tl[z].tweenTo(tlPos);
+          }, Math.min(delayInner * z, delayInnerMax) * 1000).toString();
         }
       }
     });
@@ -134,7 +144,9 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         // timeline
         let tlPos = timeInner;
         for(let [z, inner] of target.querySelectorAll('.content > *').entries()) {
-          window.tl[z].tweenTo(tlPos);
+          setTimeout( function() {
+            window.tl[z].tweenTo(tlPos);
+          }, Math.min(delayInner * z, delayInnerMax) * 1000).toString();
         }
       }
     });
