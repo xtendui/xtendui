@@ -1,5 +1,6 @@
 let time = .6;
 let animSize = 15;
+
 CustomEase.create('easeIn', '.41, .1, .175, 1');
 CustomEase.create('easeOut', '.77, 0, .175, 1');
 
