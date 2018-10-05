@@ -28,7 +28,7 @@ Xt.currents = {};
  * init all data-xt classes
  */
 Xt.initAll = function (container = document) {
-  // xt-toggle
+  // xt
   for (let el of container.querySelectorAll('[data-xt-toggle]')) {
     new XtToggle(el);
   }
@@ -46,6 +46,43 @@ Xt.initAll = function (container = document) {
   }
   for (let el of container.querySelectorAll('[data-xt-sticky]')) {
     new XtSticky(el);
+  }
+  // btn decorator
+  function btnHoverOn() {
+    let els = this.querySelectorAll('.btn');
+    for (let el of els) {
+      el.classList.add('hover');
+    }
+  }
+  function btnHoverOff() {
+    let els = this.querySelectorAll('.btn');
+    for (let el of els) {
+      el.classList.remove('hover');
+    }
+  }
+  function btnActiveOn() {
+    let els = this.querySelectorAll('.btn');
+    for (let el of els) {
+      el.classList.add('active');
+    }
+  }
+  function btnActiveOff() {
+    let els = this.querySelectorAll('.btn');
+    for (let el of els) {
+      el.classList.remove('active');
+    }
+  }
+  let els = container.querySelectorAll('a, button');
+  els = Array.from(els).filter(x => x.querySelectorAll('.btn').length !== 0);
+  for (let el of els) {
+    el.removeEventListener('mouseenter', btnHoverOn);
+    el.addEventListener('mouseenter', btnHoverOn);
+    el.removeEventListener('mouseleave', btnHoverOff);
+    el.addEventListener('mouseleave', btnHoverOff);
+    el.removeEventListener('mousedown', btnActiveOn);
+    el.addEventListener('mousedown', btnActiveOn);
+    window.removeEventListener('mouseup', btnActiveOff.bind(el));
+    window.addEventListener('mouseup', btnActiveOff.bind(el));
   }
 };
 

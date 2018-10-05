@@ -2,9 +2,9 @@
 // link
 //////////////////////
 
-.link-underline() {
+.link-underline {
   text-decoration: none;
-  &:hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active {
     text-decoration: underline;
     span {
       text-decoration: underline;
@@ -12,9 +12,9 @@
   }
 }
 
-.link-none() {
+.link-none {
   text-decoration: none;
-  &:hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active {
     text-decoration: none;
     span {
       text-decoration: none;
@@ -28,12 +28,12 @@ a, .alink {
   .link-underline();
   // styles
   color: @primary;
-  &:hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active {
     color: darken(@primary, @perc-xs);
   }
   // animations
   .transition-default.out();
-  &:hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active {
     .transition-default.active();
   }
 }
@@ -54,7 +54,7 @@ a, .alink {
   }
   // styles
   color: @grey-500;
-  &:hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active {
     color: darken(@primary, @perc-xs);
   }
 }
@@ -66,7 +66,7 @@ a, .alink {
   a:not(.btn), .alink, .btn-link {
     color: @text-inverse;
     text-decoration: underline;
-    &:hover, &:active, &.active {
+    &:hover, &.hover, &:active, &.active {
       color: darken(@text-inverse, @perc-xs);
     }
   }
@@ -107,7 +107,7 @@ a, .alink {
     .transition-default.out();
     transform: scale(1);
   }
-  &:active {
+  &:active, &.active {
     .transition-default.active();
     &@{btn-design} {
       left: .2em;
@@ -129,7 +129,7 @@ a, .alink {
     border-color: @primary;
     background-color: @primary;
   }
-  &:hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active {
     color: @text-inverse;
     &@{btn-design} {
       border-color: @primary;
@@ -145,7 +145,7 @@ a, .alink {
     border-color: transparent;
     background-color: transparent;
   }
-  &:hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active {
     color: @text-inverse;
     &@{btn-design} {
       border-color: @primary;
@@ -161,7 +161,7 @@ a, .alink {
     border-color: @secondary;
     background-color: @secondary;
   }
-  &:hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active {
     color: @text;
     &@{btn-design} {
       border-color: darken(@secondary, @perc-sm);
@@ -177,7 +177,7 @@ a, .alink {
     border-color: transparent;
     background-color: transparent;
   }
-  &:hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active {
     color: @text;
     &@{btn-design} {
       border-color: darken(@secondary, @perc-sm);

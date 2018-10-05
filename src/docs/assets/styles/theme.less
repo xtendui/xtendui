@@ -85,7 +85,7 @@
     height: 2.5rem;
   }
   .transition-default.out();
-  &:hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active {
     .transition-default.active();
     opacity: 1;
   }
@@ -307,7 +307,7 @@
       }
     }
   }
-  &:hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active {
     .icon-menu-custom {
       span {
         background-color: @white;
@@ -337,7 +337,7 @@
     font-size: 4rem !important;
     text-align: left;
     text-transform: capitalize;
-    &:hover, &:active, &.active {
+    &:hover, &.hover, &:active, &.active {
       color: @white;
       opacity: 1;
     }
@@ -423,7 +423,7 @@
   color: fade(@white, @perc-xl);
   a {
     color: @white;
-    &:hover, &:active, &.active {
+    &:hover, &.hover, &:active, &.active {
       color: @white;
       text-decoration: underline;
     }
@@ -466,7 +466,7 @@
     .btn-narrow();
     .btn-short();
     width: 100%;
-    &:hover, &:active, &.active {
+    &:hover, &.hover, &:active, &.active {
       color: @text !important;
     }
   }
@@ -542,7 +542,7 @@
       opacity: 0;
     }
   }
-  &:hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active {
     .line-container {
       .line::after {
         left: 0;
@@ -582,7 +582,7 @@
     transition: all @time-medium @bez-out;
     opacity: 0;
   }
-  &:hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active {
     .site-article-anchor {
       animation: anim-opacity-in @time-medium @bez-in;
       opacity: 1;
@@ -610,7 +610,7 @@
       border-color: @white !important;
       background-color: @white !important;
     }
-    &:hover, &:active, &.active {
+    &:hover, &.hover, &:active, &.active {
       color: @primary;
     }
   }
@@ -685,7 +685,7 @@
     .padding(y, small);
     .padding(x, small);
     .btn {
-      &:hover, &:active, &.active {
+      &:hover, &.hover, &:active, &.active {
         color: @text;
         &@{btn-design} {
           border-color: @white;
