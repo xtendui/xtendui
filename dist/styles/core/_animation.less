@@ -12,20 +12,16 @@ transition-delay: 150ms; // @start + @child * @increment
 });
 */
 
-.nth-child(@child, @start, @increment, @decrement, @rules) when(@child > 0) {
+.nth-child(@child, @start, @increment, @decrement, @rules) when (@child > 0) {
   .nth-child(@child - 1, @start, @increment, @decrement, @rules);
   &:nth-child(@{child}) {
     @rules();
   }
 }
 
-@animation-delay: {
-  animation-delay: @start + (@child * @increment) - (@child * @decrement);
-};
+@animation-delay: { animation-delay: @start + (@child * @increment) - (@child * @decrement); };
 
-@transition-delay: {
-  transition-delay: @start + (@child * @increment) - (@child * @decrement);
-};
+@transition-delay: { transition-delay: @start + (@child * @increment) - (@child * @decrement); };
 
 //////////////////////
 // custom
@@ -42,6 +38,7 @@ transition-delay: 150ms; // @start + @child * @increment
     --collapse-height: initial;
   }
 }
+
 .collapse-width {
   overflow: hidden;
   width: 0;

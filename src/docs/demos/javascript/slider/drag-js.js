@@ -1,4 +1,4 @@
-let time = .3;
+let time = .6;
 let animSize = 15;
 CustomEase.create('easeIn', '.41, .1, .175, 1');
 CustomEase.create('easeOut', '.77, 0, .175, 1');
@@ -15,44 +15,6 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
 
   // slider items
   for (let [i, tr] of el.querySelectorAll('.slide').entries()) {
-
-    // drag event
-    tr.addEventListener('drag.slider', function (e) {
-      let target = this;
-      let self = e.detail.object;
-      let eInit = self.detail.eInit;
-      let eCurrent = self.detail.eCurrent;
-      let xStart = eInit.clientX;
-      let xCurrent = eCurrent.clientX;
-      let xDist = xCurrent - xStart;
-      let xMax = target.clientWidth;
-      let ratio = 1 - (Math.abs(xStart - xCurrent) / xMax);
-      // drag
-      TweenMax.set(target, {x: xDist + 'px', opacity: ratio});
-      TweenMax.set(target.children[0], {x: -xDist});
-    });
-
-    // dragOff event
-    tr.addEventListener('dragEnd.slider', function (e) {
-      let target = this;
-      let self = e.detail.object;
-      let xFinal = parseFloat(target._gsTransform.x);
-      // dragging
-      target.classList.remove('dragging');
-      // activate or reset
-      if (Math.abs(xFinal) > self.options.dragThreshold) {
-        // direction
-        if (Math.sign(xFinal) < 0) {
-          self.goToNext();
-        } else {
-          self.goToPrev();
-        }
-      } else {
-        // reset drag
-        TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeOut'});
-        TweenMax.to(target.children[0], time, {x: 0, ease: 'easeOut'});
-      }
-    });
 
     // on event
     tr.addEventListener('on', function (e) {
@@ -88,6 +50,42 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       } else {
         TweenMax.to(target, time, {x: xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: -xMax, ease: 'easeOut'});
+      }
+    });
+
+    // drag event
+    tr.addEventListener('drag.slider', function (e) {
+      let target = this;
+      let self = e.detail.object;
+      let eInit = self.detail.eInit;
+      let eCurrent = self.detail.eCurrent;
+      let xStart = eInit.clientX;
+      let xCurrent = eCurrent.clientX;
+      let xDist = xCurrent - xStart;
+      let xMax = target.clientWidth;
+      let ratio = Math.abs(xStart - xCurrent) / xMax;
+      // drag
+      TweenMax.set(target, {x: xDist + 'px', opacity: 1 - ratio});
+      TweenMax.set(target.children[0], {x: -xDist});
+    });
+
+    // dragOff event
+    tr.addEventListener('dragEnd.slider', function (e) {
+      let target = this;
+      let self = e.detail.object;
+      let xFinal = parseFloat(target._gsTransform.x);
+      // activate or reset
+      if (Math.abs(xFinal) > self.options.dragThreshold) {
+        // direction
+        if (Math.sign(xFinal) < 0) {
+          self.goToNext();
+        } else {
+          self.goToPrev();
+        }
+      } else {
+        // reset drag
+        TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeOut'});
+        TweenMax.to(target.children[0], time, {x: 0, ease: 'easeOut'});
       }
     });
 

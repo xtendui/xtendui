@@ -6,24 +6,56 @@
   // mask animation
   &:not(.dragging) {
     .transition-default.out();
+    transition-duration: @time-big;
     > * {
       .transition-default.out();
+      transition-duration: @time-big;
     }
     &.active {
       .transition-default.active();
+      transition-duration: @time-big;
       > * {
         .transition-default.active();
+        transition-duration: @time-big;
       }
     }
   }
-  // content animation
-  &.active {
+  // animation
+  > * {
+    .anim-left.out();
+    animation-duration: @time-big;
     > .content {
+      .anim-bottom.out();
+      animation-fill-mode: forwards;
+    }
+  }
+  &.direction-inverse {
+    > * {
+      .anim-right.out();
+      animation-duration: @time-big;
+      > .content {
+        .anim-top.out();
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+  &.active {
+    > * {
       .anim-right.active();
+      animation-duration: @time-big;
+      > .content {
+        .anim-bottom.active();
+        animation-fill-mode: forwards;
+      }
     }
     &.direction-inverse {
       > * {
         .anim-left.active();
+        animation-duration: @time-big;
+        > .content {
+          .anim-top.active();
+          animation-fill-mode: forwards;
+        }
       }
     }
   }

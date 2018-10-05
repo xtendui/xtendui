@@ -1,4 +1,3 @@
-
 for (let [i, el] of document.querySelectorAll('.slider').entries()) {
 
   // slider

@@ -1626,10 +1626,15 @@ class XtSlider extends XtCore {
    */
   eventDragHandler(target, e) {
     let self = this;
+    let options = self.options;
     // save event
     this.detail.eCurrent = e;
     // listener dispatch
     target.dispatchEvent(new CustomEvent('drag.slider', {detail: {skip: true, object: self}}));
+    // auto
+    if (options.autoPause) {
+      this.autoPause();
+    }
   }
 
 }
