@@ -36,27 +36,12 @@
 }
 
 //////////////////////
-// label
-//////////////////////
-
-.label-control {
-  .display(block);
-  position: relative;
-  cursor: pointer;
-  .user-select-none();
-}
-
-//////////////////////
 // input
 //////////////////////
 
 .input-control {
   .display(block);
   width: 100%;
-  z-index: 1;
-  &:hover, &:active, &.active {
-    z-index: 2;
-  }
   // select arrow
   select& {
     .padding(right, @select-space-size * 2) !important;
@@ -72,55 +57,6 @@
 }
 
 //////////////////////
-// check and radio
-//////////////////////
-
-// label
-
-input[type="checkbox"], input[type="radio"] {
-  & ~ .label-control {
-    .label-checkradio();
-  }
-}
-
-// unstyled
-
-input[type="checkbox"].unstyled, input[type="radio"].unstyled {
-  display: block;
-  float: left;
-  & ~ .label-control {
-    display: block;
-    overflow: hidden;
-  }
-}
-
-// check and radio design
-
-input[type="checkbox"]:not(.unstyled),
-input[type="radio"]:not(.unstyled) {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-  & ~ .label-control {
-    &::before,
-    &::after {
-      content: '';
-      position: absolute !important;
-      top: 0;
-      left: 0;
-    }
-    &::before {
-      pointer-events: none;
-    }
-    &::after {
-      .display(flex) !important;
-      .align-items-center();
-      .justify-content-center();
-    }
-  }
-}
-
-//////////////////////
 // input-group
 //////////////////////
 
@@ -131,12 +67,7 @@ input[type="radio"]:not(.unstyled) {
   width: 100%;
   // .input-control
   .input-control {
-    // index
-    z-index: @index-active - 1;
-    &:focus {
-      z-index: @index-active + 1;
-    }
-    // content
+    // border
     &:first-child {
       border-top-right-radius: 0 !important;
       border-bottom-right-radius: 0 !important;
@@ -157,8 +88,12 @@ input[type="radio"]:not(.unstyled) {
   .display(flex);
   .flex-row();
   .flex-wrap();
-  // index
-  z-index: @index-active;
+  // spacing
+  margin-right: -@input-border-width;
+  .input-control ~ & {
+    margin-right: 0;
+    margin-left: -@input-border-width;
+  }
   // .btn
   .btn {
     width: 100%;
@@ -243,6 +178,66 @@ input[type="radio"]:not(.unstyled) {
           border-bottom-right-radius: 0 !important;
         }
       }
+    }
+  }
+}
+
+//////////////////////
+// label
+//////////////////////
+
+.label-control {
+  .display(block);
+  position: relative;
+  cursor: pointer;
+  .user-select-none();
+}
+
+//////////////////////
+// check and radio
+//////////////////////
+
+// label
+
+input[type="checkbox"], input[type="radio"] {
+  & ~ .label-control {
+    .label-checkradio();
+  }
+}
+
+// unstyled
+
+input[type="checkbox"].unstyled, input[type="radio"].unstyled {
+  display: block;
+  float: left;
+  & ~ .label-control {
+    display: block;
+    overflow: hidden;
+  }
+}
+
+// check and radio design
+
+input[type="checkbox"]:not(.unstyled),
+input[type="radio"]:not(.unstyled) {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  & ~ .label-control {
+    &::before,
+    &::after {
+      content: '';
+      position: absolute !important;
+      top: 0;
+      left: 0;
+    }
+    &::before {
+      pointer-events: none;
+    }
+    &::after {
+      .display(flex) !important;
+      .align-items-center();
+      .justify-content-center();
     }
   }
 }

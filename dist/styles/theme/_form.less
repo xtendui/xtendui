@@ -159,18 +159,11 @@ legend {
 }
 
 .input-group-grey {
-  // spacing
-  margin-right: -@input-border-width;
-  .input-control ~ & {
-    margin-left: -@input-border-width;
-  }
-  // btn
+  // styles
   .btn {
     &@{btn-design} {
-      border-radius: @border-radius;
-      border-width: @input-border-width;
-      border-style: solid;
-      border-color: @grey-300;
+      border-width: @input-border-width !important;
+      border-color: @grey-300 !important;
     }
   }
 }
