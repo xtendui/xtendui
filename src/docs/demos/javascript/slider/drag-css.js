@@ -22,8 +22,8 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     tr.addEventListener('drag.slider', function (e) {
       let target = this;
       let self = e.detail.object;
-      let eInit = self.eInit;
-      let eCurrent = self.eCurrent;
+      let eInit = self.detail.eInit;
+      let eCurrent = self.detail.eCurrent;
       let xStart = eInit.clientX;
       let xCurrent = eCurrent.clientX;
       let xDist = xCurrent - xStart;

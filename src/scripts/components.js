@@ -32,6 +32,8 @@ class XtCore {
       if (this.options.class) {
         this.options.classes = [...this.options.class.split(' ')];
       }
+      // detaul
+      this.detail = {};
       // init
       this.initSetup();
       this.initScope();
@@ -1527,7 +1529,7 @@ class XtSlider extends XtCore {
     let options = self.options;
     if (!e.button || e.button !== 2) { // not right click or it gets stuck
       // save event
-      this.eInit = e;
+      this.detail.eInit = e;
       // logic
       let eventLimit = this.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
@@ -1587,7 +1589,7 @@ class XtSlider extends XtCore {
   eventDragStart(target, e) {
     let self = this;
     // save event
-    this.eCurrent = e;
+    this.detail.eCurrent = e;
     // event move
     let dragHandler = Xt.dataStorage.put(target, 'dragHandler', self.eventDragHandler.bind(self).bind(self, target));
     let events = ['mousemove', 'touchmove'];
@@ -1606,7 +1608,7 @@ class XtSlider extends XtCore {
   eventDragEnd(target, e) {
     let self = this;
     // save event
-    this.eCurrent = e;
+    this.detail.eCurrent = e;
     // event move
     let dragHandler = Xt.dataStorage.get(target, 'dragHandler');
     let events = ['mousemove', 'touchmove'];
@@ -1625,7 +1627,7 @@ class XtSlider extends XtCore {
   eventDragHandler(target, e) {
     let self = this;
     // save event
-    this.eCurrent = e;
+    this.detail.eCurrent = e;
     // listener dispatch
     target.dispatchEvent(new CustomEvent('drag.slider', {detail: {skip: true, object: self}}));
   }
@@ -1774,7 +1776,7 @@ class XtSticky extends XtCore {
     let scrollingElement = document.scrollingElement;
     let scrollHeight = scrollingElement.scrollHeight;
     let scrollTop = scrollingElement.scrollTop;
-    let scrollTopOld = self.scrollTopOld;
+    let scrollTopOld = self.detail.scrollTopOld;
     // direction
     if (scrollTop < scrollTopOld) {
       el.classList.remove('sticky-down');
@@ -1899,9 +1901,9 @@ class XtSticky extends XtCore {
       }
     }
     // set add
-    if (add !== self.addOld) {
+    if (add !== self.detail.addOld) {
       el.classList.add('no-transition');
-      if (self.addOld !== undefined) {
+      if (self.detail.addOld !== undefined) {
         el.style[options.position] = rectElTop + 'px';
       }
       Xt.cancelAnimationFrame.call(window, el.dataset.eventFrame);
@@ -1916,8 +1918,8 @@ class XtSticky extends XtCore {
       el.style.width = width;
     }
     // save for direction
-    self.addOld = add;
-    self.scrollTopOld = scrollTop;
+    self.detail.addOld = add;
+    self.detail.scrollTopOld = scrollTop;
   }
 
   /**
@@ -2080,7 +2082,7 @@ class XtFade extends XtCore {
     let windowHeight = window.innerHeight;
     let scrollingElement = document.scrollingElement;
     let scrollTop = scrollingElement.scrollTop;
-    let scrollTopOld = self.scrollTopOld;
+    let scrollTopOld = self.detail.scrollTopOld;
     // direction
     if (scrollTop < scrollTopOld) {
       scrollInverse = true;
@@ -2145,7 +2147,7 @@ class XtFade extends XtCore {
       }
     }
     // save for direction
-    self.scrollTopOld = scrollTop;
+    self.detail.scrollTopOld = scrollTop;
   }
 
 }
