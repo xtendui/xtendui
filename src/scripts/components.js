@@ -771,7 +771,7 @@ class XtCore {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('on', {detail: {skip: true, self: self}}));
+    el.dispatchEvent(new CustomEvent('on', {detail: {skip: true, object: self}}));
   }
 
   /**
@@ -804,7 +804,7 @@ class XtCore {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('off', {detail: {skip: true, self: self}}));
+    el.dispatchEvent(new CustomEvent('off', {detail: {skip: true, object: self}}));
   }
 
   /**
@@ -1595,7 +1595,7 @@ class XtSlider extends XtCore {
       target.addEventListener(event, dragHandler);
     }
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('dragStart.slider', {detail: {skip: true, self: self}}));
+    target.dispatchEvent(new CustomEvent('dragStart.slider', {detail: {skip: true, object: self}}));
   }
 
   /**
@@ -1614,7 +1614,7 @@ class XtSlider extends XtCore {
       target.removeEventListener(event, dragHandler);
     }
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('dragEnd.slider', {detail: {skip: true, self: self}}));
+    target.dispatchEvent(new CustomEvent('dragEnd.slider', {detail: {skip: true, object: self}}));
   }
 
   /**
@@ -1627,7 +1627,7 @@ class XtSlider extends XtCore {
     // save event
     this.eCurrent = e;
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('drag.slider', {detail: {skip: true, self: self}}));
+    target.dispatchEvent(new CustomEvent('drag.slider', {detail: {skip: true, object: self}}));
   }
 
 }
@@ -1855,13 +1855,13 @@ class XtSticky extends XtCore {
         if (!el.classList.contains('sticky-hide')) {
           el.classList.add('sticky-hide');
           // listener dispatch
-          el.dispatchEvent(new CustomEvent('hide.sticky', {detail: {skip: true, self: self}}));
+          el.dispatchEvent(new CustomEvent('hide.sticky', {detail: {skip: true, object: self}}));
         }
       } else {
         if (el.classList.contains('sticky-hide')) {
           el.classList.remove('sticky-hide');
           // listener dispatch
-          el.dispatchEvent(new CustomEvent('show.sticky', {detail: {skip: true, self: self}}));
+          el.dispatchEvent(new CustomEvent('show.sticky', {detail: {skip: true, object: self}}));
         }
       }
     } else {

@@ -19,7 +19,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     // drag event
     tr.addEventListener('drag.slider', function (e) {
       let target = this;
-      let self = e.detail.self;
+      let self = e.detail.object;
       let eInit = self.eInit;
       let eCurrent = self.eCurrent;
       let xStart = eInit.clientX;
@@ -35,7 +35,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     // dragOff event
     tr.addEventListener('dragEnd.slider', function (e) {
       let target = this;
-      let self = e.detail.self;
+      let self = e.detail.object;
       let xFinal = parseFloat(target._gsTransform.x);
       // dragging
       target.classList.remove('dragging');
