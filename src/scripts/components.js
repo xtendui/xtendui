@@ -34,8 +34,8 @@ class XtCore {
       }
       // detaul
       this.detail = {};
-      this.detail.queueOnObj = {};
-      this.detail.queueOffObj = {};
+      this.detail.queueOn = {};
+      this.detail.queueOff = {};
       // init
       this.initSetup();
       this.initScope();
@@ -596,24 +596,24 @@ class XtCore {
       this.setIndexAndDirection(element);
       this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // queue obj
-      this.detail.queueOnObj = {};
+      this.detail.queueOn = {};
       if (groupElements.all.length) {
-        this.detail.queueOnObj['elements'] = function () {
+        this.detail.queueOn['elements'] = function () {
           self.queueOn(groupElements.all, groupElements, 'elements');
         };
       }
       if (targets.length) {
-        this.detail.queueOnObj['targets'] = function () {
+        this.detail.queueOn['targets'] = function () {
           self.queueOn(targets, groupElements, 'targets');
         };
       }
       if (elementsInner.length) {
-        this.detail.queueOnObj['controls'] = function () {
+        this.detail.queueOn['controls'] = function () {
           self.queueOn(elementsInner, groupElements, 'elementsInner');
         };
       }
       if (targetsInner.length) {
-        this.detail.queueOnObj['targetsInner'] = function () {
+        this.detail.queueOn['targetsInner'] = function () {
           self.queueOn(targetsInner, groupElements, 'targetsInner');
         };
       }
@@ -623,8 +623,8 @@ class XtCore {
         // delayed activation
         this.eventOff(currents[0]);
       } else { // queue instant
-        for (let type in this.detail.queueOnObj) {
-          self.queueOnObjRun(type, true);
+        for (let type in this.detail.queueOn) {
+          self.queueOnRun(type, true);
         }
       }
     } else if (options.toggle) {
@@ -652,30 +652,62 @@ class XtCore {
       this.removeCurrent(groupElements.single);
       this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // queue obj
-      this.detail.queueOffObj = {};
+      this.detail.queueOff = {};
       if (groupElements.all.length) {
-        this.detail.queueOffObj['elements'] = function () {
+        this.detail.queueOff['elements'] = function () {
           self.queueOff(groupElements.all, groupElements, 'elements');
         };
       }
       if (targets.length) {
-        this.detail.queueOffObj['targets'] = function () {
+        this.detail.queueOff['targets'] = function () {
           self.queueOff(targets, groupElements, 'targets');
         };
       }
       if (elementsInner.length) {
-        this.detail.queueOffObj['controls'] = function () {
+        this.detail.queueOff['controls'] = function () {
           self.queueOff(elementsInner, groupElements, 'elementsInner');
         };
       }
       if (targetsInner.length) {
-        this.detail.queueOffObj['targetsInner'] = function () {
+        this.detail.queueOff['targetsInner'] = function () {
           self.queueOff(targetsInner, groupElements, 'targetsInner');
         };
       }
       // queue instant
-      for (let type in this.detail.queueOffObj) {
-        self.queueOffObjRun(type, true);
+      for (let type in this.detail.queueOff) {
+        self.queueOffRun(type, true);
+      }
+    }
+  }
+
+  /**
+   * run queueOn and set done
+   * @param {String} type Type of element
+   * @param {Boolean} skip Skip logic
+   */
+  queueOnRun(type, skip) {
+    if (this.detail.queueOn) {
+      let func = this.detail.queueOn[type];
+      if (func && !func.done && skip) {
+        func();
+        func.done = true;
+        //console.log('on ' + type);
+      }
+    }
+  }
+
+  /**
+   * run queueOff and set done
+   * @param {String} type Type of element
+   * @param {Boolean} skip Skip logic
+   */
+  queueOffRun(type, skip) {
+    if (this.detail.queueOff) {
+      let func = this.detail.queueOff[type];
+      if (func && !func.done && skip) {
+        func();
+        func.done = true;
+        //console.log('off ' + type);
       }
     }
   }
@@ -685,7 +717,7 @@ class XtCore {
   //////////////////////
 
   /**
-   * element on activation
+   * queue on
    * @param {NodeList|Array} els Elements to be activated
    * @param {Object} groupElements
    * @param {String} type Type of elements
@@ -703,17 +735,17 @@ class XtCore {
           el.classList.add('on-block');
           el.dataset.xtDelayTimeout = setTimeout(function (el, groupElements, type) {
             el.classList.remove('on-block');
-            self.queueOnActivate(el, groupElements, type);
+            self.queueOnDelay(el, groupElements, type);
           }, parseFloat(delay), el, groupElements, type).toString();
         } else {
-          self.queueOnActivate(el, groupElements, type);
+          self.queueOnDelay(el, groupElements, type);
         }
       }
     }
   }
 
   /**
-   * element off activation
+   * queue off
    * @param {NodeList|Array} els Elements to be deactivated
    * @param {Object} groupElements
    * @param {String} type Type of elements
@@ -731,31 +763,31 @@ class XtCore {
           el.classList.add('off-block');
           el.dataset.xtDelayTimeout = setTimeout(function (el, groupElements, type) {
             el.classList.remove('off-block');
-            self.queueOffDeactivate(el, groupElements, type);
+            self.queueOffDelay(el, groupElements, type);
           }, parseFloat(delay), el, groupElements, type).toString();
         } else {
-          self.queueOffDeactivate(el, groupElements, type);
+          self.queueOffDelay(el, groupElements, type);
         }
       }
     }
   }
 
   /**
-   * element activation
+   * queue on delay
    * @param {Node|HTMLElement} el Elements to be deactivated
    * @param {Object} groupElements
    * @param {String} type Type of elements
    */
-  queueOnActivate(el, groupElements, type) {
+  queueOnDelay(el, groupElements, type) {
     let self = this;
     let options = self.options;
     // activate
     el.classList.add(...options.classes);
     el.classList.add('in');
     el.classList.remove('out');
-    this.queueOnAnimate(el, type);
+    this.queueOnAnim(el, type);
     // queue delayed
-    this.queueOffObjRun(type, options.instant && options.instant[type]);
+    this.queueOffRun(type, options.instant && options.instant[type]);
     // additionals
     if (type === 'elements') {
       // aria
@@ -799,20 +831,20 @@ class XtCore {
   }
 
   /**
-   * element deactivation
+   * queue off delay
    * @param {Node|HTMLElement} el Elements to be deactivated
    * @param {Object} groupElements
    * @param {String} type Type of elements
    */
-  queueOffDeactivate(el, groupElements, type) {
+  queueOffDelay(el, groupElements, type) {
     let self = this;
     let options = self.options;
     // deactivate
     el.classList.remove(...options.classes);
     el.classList.add('out');
-    this.queueOffAnimate(el, type);
+    this.queueOffAnim(el, type);
     // queue delayed
-    this.queueOnObjRun(type, options.instant && options.instant[type]);
+    this.queueOnRun(type, options.instant && options.instant[type]);
     // additionals
     if (type === 'targets' || type === 'targetsInner') {
       // special
@@ -829,11 +861,11 @@ class XtCore {
   }
 
   /**
-   * element on animation
+   * queue on animation
    * @param {Node|HTMLElement} el Element to be animated
    * @param {String} type Type of element
    */
-  queueOnAnimate(el, type) {
+  queueOnAnim(el, type) {
     let self = this;
     let options = self.options;
     // onDone
@@ -849,7 +881,7 @@ class XtCore {
         el.style.width = 'auto';
       }
       // queue after animation
-      self.queueOffObjRun(type, !options.instant || !options.instant[type]);
+      self.queueOffRun(type, !options.instant || !options.instant[type]);
     };
     // delay onDone
     let timing = Xt.animationTiming(el, options.timing);
@@ -864,11 +896,11 @@ class XtCore {
   }
 
   /**
-   * element off animation
+   * queue off animation
    * @param {Node|HTMLElement} el Element to be animated
    * @param {String} type Type of element
    */
-  queueOffAnimate(el, type) {
+  queueOffAnim(el, type) {
     let self = this;
     let options = self.options;
     // onDone
@@ -906,7 +938,7 @@ class XtCore {
         }
       }
       // queue after animation
-      self.queueOnObjRun(type, !options.instant || !options.instant[type]);
+      self.queueOnRun(type, !options.instant || !options.instant[type]);
     };
     // delay onDone
     let timing = Xt.animationTiming(el, options.timing);
@@ -917,38 +949,6 @@ class XtCore {
       el.dataset.xtAnimTimeout = setTimeout(function (el, type) {
         onDone(el, type);
       }, timing, el, type).toString();
-    }
-  }
-
-  /**
-   * run queueOnObj and set done
-   * @param {String} type Type of element
-   * @param {Boolean} skip Skip logic
-   */
-  queueOnObjRun(type, skip) {
-    if (this.detail.queueOnObj) {
-      let func = this.detail.queueOnObj[type];
-      if (func && !func.done && skip) {
-        console.log('on ' + type);
-        func();
-        func.done = true;
-      }
-    }
-  }
-
-  /**
-   * run queueOffObj and set done
-   * @param {String} type Type of element
-   * @param {Boolean} skip Skip logic
-   */
-  queueOffObjRun(type, skip) {
-    if (this.detail.queueOffObj) {
-      let func = this.detail.queueOffObj[type];
-      if (func && !func.done && skip) {
-        console.log('off ' + type);
-        func();
-        func.done = true;
-      }
     }
   }
 
