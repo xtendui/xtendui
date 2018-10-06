@@ -732,6 +732,7 @@ class XtCore {
     let options = self.options;
     // activate
     el.classList.add(...options.classes);
+    el.classList.add('in');
     el.classList.remove('out');
     this.activationOnAnimate(el, type);
     // additionals
@@ -819,6 +820,8 @@ class XtCore {
     let options = self.options;
     // onDone
     let onDone = function (el, type) {
+      // deactivate in
+      el.classList.remove('in');
       // collapse-width and collapse-height
       let style = getComputedStyle(el);
       if (style.getPropertyValue('--collapse-height')) {
@@ -1528,7 +1531,7 @@ class XtSlider extends XtCore {
     let self = this;
     let options = self.options;
     if (!e.button || e.button !== 2) { // not right click or it gets stuck
-      if (!target.classList.contains('out')) { // block on out
+      if (!target.classList.contains('in') && !target.classList.contains('out')) { // block
         // save event
         this.detail.eInit = e;
         // logic
@@ -1562,7 +1565,7 @@ class XtSlider extends XtCore {
   eventDragEndHandler(target, e) {
     let self = this;
     let options = self.options;
-    if (!target.classList.contains('out')) { // block on out
+    if (!target.classList.contains('in') && !target.classList.contains('out')) { // block
       let eventLimit = this.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
         if (Xt.checkOutside(e, eventLimit)) {
