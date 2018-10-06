@@ -26,7 +26,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     tr.addEventListener('on', function (e) {
       let target = this;
       let xMax = target.clientWidth;
-      // timeline init
+      // inner timeline
       window.tl = [];
       let inners = target.querySelectorAll(':scope > * > .content > .box > .content > *');
       for (let [z, inner] of inners.entries()) {
@@ -41,7 +41,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         window.tl[z].addLabel('endDelay');
         window.tl[z].add(TweenMax.to(inner, delayInnerMax, {x: animSize, opacity: 0, ease: 'easeOut'})); // delay
         window.tl[z].addLabel('end');
-        // timeline
+        // inner timeline
         window.tl[z].seek('middle');
         inner.dataset.tlDelay = Math.min(delayInner * z, delayInnerMax).toString();
       }
@@ -52,7 +52,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.set(target.children[0], {x: -xMax});
         TweenMax.set(target.children[0].children[0], {x: animSize});
         TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeOut'});
-        // timeline
+        // inner timeline
         for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
           TweenMax.set(inner, {opacity: 0});
           window.tl[z].seek('endDelay' + '+=' + inner.dataset.tlDelay).tweenTo('middle', {ease: 'easeIn'});
@@ -62,7 +62,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.set(target.children[0], {x: xMax});
         TweenMax.set(target.children[0].children[0], {x: -animSize});
         TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeOut'});
-        // timeline
+        // inner timeline
         for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
           TweenMax.set(inner, {opacity: 0});
           window.tl[z].seek('startDelay' + '-=' + inner.dataset.tlDelay).tweenTo('middle', {ease: 'easeIn'});
@@ -82,14 +82,14 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       if (!target.classList.contains('direction-inverse')) {
         TweenMax.to(target, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: xMax, ease: 'easeOut'});
-        // timeline
+        // inner timeline
         for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
           window.tl[z].tweenTo('startDelay' + '-=' + inner.dataset.tlDelay, {ease: 'easeOut'});
         }
       } else {
         TweenMax.to(target, time, {x: xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: -xMax, ease: 'easeOut'});
-        // timeline
+        // inner timeline
         for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
           window.tl[z].tweenTo('endDelay' + '+=' + inner.dataset.tlDelay, {ease: 'easeOut'});
         }
@@ -110,7 +110,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       // drag
       TweenMax.set(target, {x: xDist + 'px', opacity: 1 - ratio});
       TweenMax.set(target.children[0], {x: -xDist});
-      // timeline
+      // inner timeline
       if (xStart - xCurrent > 0) {
         for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
           let tlPos = durationInner - (durationInner + parseFloat(inner.dataset.tlDelay)) * ratio;
@@ -141,7 +141,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         // reset drag
         TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: 0, ease: 'easeOut'});
-        // timeline
+        // inner timeline
         for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
           window.tl[z].tweenTo('middle', {ease: 'easeOut'});
         }

@@ -28,9 +28,9 @@ transition-delay: 0ms; // @start - @child * @decrement
   }
 }
 
-@animation-delay: { animation-delay: @start + (@child * @increment) - (@child * @decrement); };
+@animation-delay: { animation-delay: @start + ((@child - 1) * @increment) - ((@child - 1) * @decrement); };
 
-@transition-delay: { transition-delay: @start + (@child * @increment) - (@child * @decrement); };
+@transition-delay: { transition-delay: @start + ((@child - 1) * @increment) - ((@child - 1) * @decrement); };
 
 //////////////////////
 // custom

@@ -30,8 +30,8 @@
       animation-fill-mode: forwards;
       opacity: 1;
       // delay
-      animation-delay: 450ms; // @start + @child * @increment
-      .nth-child(@child:3, @start:0ms, @increment:150ms, @decrement:0ms, {
+      animation-delay: 300ms; // @start + @child * @increment
+      .nth-child(@child:2, @start:0ms, @increment:150ms, @decrement:0ms, {
         @animation-delay(); });
     }
   }
@@ -44,10 +44,6 @@
         animation-duration: @time-big;
         animation-fill-mode: forwards;
         opacity: 1;
-        // delay
-        animation-delay: 0ms; // @start - @child * @decrement
-        .nth-child(@child:3, @start:450ms, @increment:0ms, @decrement:150ms, {
-          @animation-delay(); });
       }
     }
   }
