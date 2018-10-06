@@ -503,7 +503,7 @@ class XtCore {
 
   /**
    * check element on
-   * @param {Node|HTMLElement} element To be activated
+   * @param {Node|HTMLElement} element To be checked
    * @returns {Boolean} If eventOn changes activation
    */
   checkOn(element) {
@@ -513,7 +513,7 @@ class XtCore {
 
   /**
    * check element off
-   * @param {Node|HTMLElement} element To be activated
+   * @param {Node|HTMLElement} element To be checked
    * @returns {Boolean} If eventOff changes activation
    */
   checkOff(element) {
@@ -524,6 +524,17 @@ class XtCore {
     }
     // check
     return (element.classList.contains(...this.options.classes) || element.classList.contains('on-block')) && !element.classList.contains('off-block');
+  }
+
+  /**
+   * check elements animation
+   * @param {NodeList|Array} elements To be checked
+   * @returns {Boolean} If elements are animating
+   */
+  checkAnim(elements) {
+    // check
+    elements = elements.filter(x => x.classList.contains('in') || x.classList.contains('out'));
+    return elements.length > 0;
   }
 
   /**
@@ -573,53 +584,53 @@ class XtCore {
     let options = self.options;
     // toggle
     if (this.checkOn(element)) {
-      // special one time
-      this.specialOnActivate = false;
-      // set index and direction
-      this.setIndexAndDirection(element);
-      // on
       let groupElements = this.getElements(element);
-      this.addCurrent(groupElements.single);
       let targets = this.getTargets(element);
       let elementsInner = this.getInside(element, options.elementsInner);
       let targetsInner = this.getInside(targets, options.targetsInner);
-      this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
-      // execute defer @FIX delay animation
-      this.activationDelay = {};
-      if (groupElements.all.length) {
-        this.activationDelay['elements'] = function () {
-          self.activationOn(groupElements.all, groupElements, 'elements');
-        };
-      }
-      if (targets.length) {
-        this.activationDelay['targets'] = function () {
-          self.activationOn(targets, groupElements, 'targets');
-        };
-      }
-      if (elementsInner.length) {
-        this.activationDelay['controls'] = function () {
-          self.activationOn(elementsInner, groupElements, 'elementsInner');
-        };
-      }
-      if (targetsInner.length) {
-        this.activationDelay['targetsInner'] = function () {
-          self.activationOn(targetsInner, groupElements, 'targetsInner');
-        };
-      }
-      // delay activation if currents > max
-      let currents = this.getCurrents();
-      if (currents.length > options.max) {
-        // delayed activation
-        this.eventOff(currents[0]);
-      } else {
-        // instant activation @FIX delay animation
-        if (this.activationDelay) {
-          for (let type in this.activationDelay) {
-            self.activationDelayRun(type, true);
-          }
-          this.activationDelayCheckAndReset();
+      //if (!this.checkAnim(targets)) {
+        // on
+        this.specialOnActivate = false;
+        this.addCurrent(groupElements.single);
+        this.setIndexAndDirection(element);
+        this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
+        // execute defer @FIX delay animation
+        this.activationDelay = {};
+        if (groupElements.all.length) {
+          this.activationDelay['elements'] = function () {
+            self.activationOn(groupElements.all, groupElements, 'elements');
+          };
         }
-      }
+        if (targets.length) {
+          this.activationDelay['targets'] = function () {
+            self.activationOn(targets, groupElements, 'targets');
+          };
+        }
+        if (elementsInner.length) {
+          this.activationDelay['controls'] = function () {
+            self.activationOn(elementsInner, groupElements, 'elementsInner');
+          };
+        }
+        if (targetsInner.length) {
+          this.activationDelay['targetsInner'] = function () {
+            self.activationOn(targetsInner, groupElements, 'targetsInner');
+          };
+        }
+        // delay activation if currents > max
+        let currents = this.getCurrents();
+        if (currents.length > options.max) {
+          // delayed activation
+          this.eventOff(currents[0]);
+        } else {
+          // instant activation @FIX delay animation
+          if (this.activationDelay) {
+            for (let type in this.activationDelay) {
+              self.activationDelayRun(type, true);
+            }
+            this.activationDelayCheckAndReset();
+          }
+        }
+      //}
     } else if (options.toggle) {
       // off
       this.eventOff(element);
@@ -635,29 +646,30 @@ class XtCore {
     let options = self.options;
     // toggle
     if (this.checkOff(element)) {
-      // special one time
-      this.specialOffDeactivate = false;
-      this.specialOffAnimate = false;
-      // off
       let groupElements = this.getElements(element);
-      this.removeCurrent(groupElements.single);
       let targets = this.getTargets(element);
       let elementsInner = this.getInside(element, options.elementsInner);
       let targetsInner = this.getInside(targets, options.targetsInner);
-      this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
-      // execute
-      if (groupElements.all.length) {
-        this.activationOff(groupElements.all, groupElements, 'elements');
-      }
-      if (targets.length) {
-        this.activationOff(targets, groupElements, 'targets');
-      }
-      if (elementsInner.length) {
-        this.activationOff(elementsInner, groupElements, 'elementsInner');
-      }
-      if (targetsInner.length) {
-        this.activationOff(targetsInner, groupElements, 'targetsInner');
-      }
+      //if (!this.checkAnim(targets)) {
+        // off
+        this.specialOffDeactivate = false;
+        this.specialOffAnimate = false;
+        this.removeCurrent(groupElements.single);
+        this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
+        // execute
+        if (groupElements.all.length) {
+          this.activationOff(groupElements.all, groupElements, 'elements');
+        }
+        if (targets.length) {
+          this.activationOff(targets, groupElements, 'targets');
+        }
+        if (elementsInner.length) {
+          this.activationOff(elementsInner, groupElements, 'elementsInner');
+        }
+        if (targetsInner.length) {
+          this.activationOff(targetsInner, groupElements, 'targetsInner');
+        }
+      //}
     }
   }
 
@@ -1531,7 +1543,7 @@ class XtSlider extends XtCore {
     let self = this;
     let options = self.options;
     if (!e.button || e.button !== 2) { // not right click or it gets stuck
-      if (!target.classList.contains('in') && !target.classList.contains('out')) { // block
+      if (!this.checkAnim(Xt.arrSingle(target))) {
         // save event
         this.detail.eInit = e;
         // logic
@@ -1565,7 +1577,7 @@ class XtSlider extends XtCore {
   eventDragEndHandler(target, e) {
     let self = this;
     let options = self.options;
-    if (!target.classList.contains('in') && !target.classList.contains('out')) { // block
+    if (!this.checkAnim(Xt.arrSingle(target))) {
       let eventLimit = this.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
         if (Xt.checkOutside(e, eventLimit)) {
