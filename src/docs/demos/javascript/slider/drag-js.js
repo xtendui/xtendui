@@ -4,6 +4,7 @@ let animSize = 15;
 let timeInner = .6;
 let delayInner = .15;
 let delayInnerMax = delayInner * 2;
+let durationInner = timeInner + delayInnerMax;
 
 CustomEase.create('easeIn', '.41, .1, .175, 1');
 CustomEase.create('easeOut', '.77, 0, .175, 1');
@@ -106,12 +107,12 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       // inner
       if (xStart - xCurrent > 0) {
         for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
-          let ratioWithDelay = (delayInnerMax - parseFloat(inner.dataset.tlDelay)) * ratio / timeInner;
+          let ratioWithDelay = (durationInner - parseFloat(inner.dataset.tlDelay)) * ratio / timeInner;
           TweenMax.set(inner, {x: -animSize * ratioWithDelay, opacity: 1 - ratioWithDelay});
         }
       } else {
         for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
-          let ratioWithDelay = (delayInnerMax - parseFloat(inner.dataset.tlDelay)) * ratio / timeInner;
+          let ratioWithDelay = (durationInner - parseFloat(inner.dataset.tlDelay)) * ratio / timeInner;
           TweenMax.set(inner, {x: animSize * ratioWithDelay, opacity: 1 - ratioWithDelay});
         }
       }

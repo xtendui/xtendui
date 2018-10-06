@@ -33,17 +33,22 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         window.tl[z] = new TimelineMax({paused: true});
         window.tl[z].addLabel('start');
         window.tl[z].add(TweenMax.set(inner, {x: -animSize, opacity: 0}));
-        window.tl[z].add(TweenMax.to(inner, delayInnerMax, {x: -animSize, opacity: 0, ease: 'easeOut'})); // delay
+        window.tl[z].add(TweenMax.to(inner, delayInnerMax, {x: -animSize, opacity: 0})); // delay
         window.tl[z].addLabel('startDelay');
-        window.tl[z].add(TweenMax.to(inner, timeInner, {x: 0, opacity: 1, ease: 'easeOut'}));
+        window.tl[z].add(TweenMax.to(inner, timeInner, {x: 0, opacity: 1}));
         window.tl[z].addLabel('middle');
-        window.tl[z].add(TweenMax.to(inner, timeInner, {x: animSize, opacity: 0, ease: 'easeOut'}));
+        window.tl[z].add(TweenMax.to(inner, timeInner, {x: animSize, opacity: 0}));
         window.tl[z].addLabel('endDelay');
-        window.tl[z].add(TweenMax.to(inner, delayInnerMax, {x: animSize, opacity: 0, ease: 'easeOut'})); // delay
+        window.tl[z].add(TweenMax.to(inner, delayInnerMax, {x: animSize, opacity: 0})); // delay
         window.tl[z].addLabel('end');
-        // inner timeline
+        // inner middle
         window.tl[z].seek('middle');
+        // inner delay
         inner.dataset.tlDelay = Math.min(delayInner * z, delayInnerMax).toString();
+      }
+      for (var z = inners.length - 1; z >= 0; z--) {
+        // inner delay inverse
+        inners[z].dataset.tlDelayInverse = Math.min(delayInner * z, delayInnerMax).toString();
       }
       // pre initial drag position
       TweenMax.set(target, {opacity: 0});
@@ -65,7 +70,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         // inner timeline
         for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
           TweenMax.set(inner, {opacity: 0});
-          window.tl[z].seek('startDelay' + '-=' + inner.dataset.tlDelay).tweenTo('middle', {ease: 'easeIn'});
+          window.tl[z].seek('startDelay' + '-=' + inner.dataset.tlDelayInverse).tweenTo('middle', {ease: 'easeIn'});
         }
       }
       // reset drag
@@ -113,12 +118,12 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       // inner timeline
       if (xStart - xCurrent > 0) {
         for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
-          let tlPos = durationInner - (durationInner + parseFloat(inner.dataset.tlDelay)) * ratio;
+          let tlPos = durationInner - (durationInner - parseFloat(inner.dataset.tlDelayInverse)) * ratio;
           window.tl[z].tweenTo(tlPos, {ease: 'easeOut'});
         }
       } else {
         for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
-          let tlPos = durationInner + (durationInner + parseFloat(inner.dataset.tlDelay)) * ratio;
+          let tlPos = durationInner + (durationInner - parseFloat(inner.dataset.tlDelay)) * ratio;
           window.tl[z].tweenTo(tlPos, {ease: 'easeOut'});
         }
       }
