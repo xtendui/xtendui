@@ -34,6 +34,8 @@ class XtCore {
       }
       // detaul
       this.detail = {};
+      this.detail.queueOnObj = {};
+      this.detail.queueOffObj = {};
       // init
       this.initSetup();
       this.initScope();
@@ -588,49 +590,43 @@ class XtCore {
       let targets = this.getTargets(element);
       let elementsInner = this.getInside(element, options.elementsInner);
       let targetsInner = this.getInside(targets, options.targetsInner);
-      //if (!this.checkAnim(targets)) {
-        // on
-        this.specialOnActivate = false;
-        this.addCurrent(groupElements.single);
-        this.setIndexAndDirection(element);
-        this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
-        // execute defer @FIX delay animation
-        this.activationDelay = {};
-        if (groupElements.all.length) {
-          this.activationDelay['elements'] = function () {
-            self.activationOn(groupElements.all, groupElements, 'elements');
-          };
+      // on
+      this.specialOnActivate = false;
+      this.addCurrent(groupElements.single);
+      this.setIndexAndDirection(element);
+      this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
+      // queue obj
+      this.detail.queueOnObj = {};
+      if (groupElements.all.length) {
+        this.detail.queueOnObj['elements'] = function () {
+          self.queueOn(groupElements.all, groupElements, 'elements');
+        };
+      }
+      if (targets.length) {
+        this.detail.queueOnObj['targets'] = function () {
+          self.queueOn(targets, groupElements, 'targets');
+        };
+      }
+      if (elementsInner.length) {
+        this.detail.queueOnObj['controls'] = function () {
+          self.queueOn(elementsInner, groupElements, 'elementsInner');
+        };
+      }
+      if (targetsInner.length) {
+        this.detail.queueOnObj['targetsInner'] = function () {
+          self.queueOn(targetsInner, groupElements, 'targetsInner');
+        };
+      }
+      // delay activation if currents > max
+      let currents = this.getCurrents();
+      if (currents.length > options.max) {
+        // delayed activation
+        this.eventOff(currents[0]);
+      } else { // queue instant
+        for (let type in this.detail.queueOnObj) {
+          self.queueOnObjRun(type, true);
         }
-        if (targets.length) {
-          this.activationDelay['targets'] = function () {
-            self.activationOn(targets, groupElements, 'targets');
-          };
-        }
-        if (elementsInner.length) {
-          this.activationDelay['controls'] = function () {
-            self.activationOn(elementsInner, groupElements, 'elementsInner');
-          };
-        }
-        if (targetsInner.length) {
-          this.activationDelay['targetsInner'] = function () {
-            self.activationOn(targetsInner, groupElements, 'targetsInner');
-          };
-        }
-        // delay activation if currents > max
-        let currents = this.getCurrents();
-        if (currents.length > options.max) {
-          // delayed activation
-          this.eventOff(currents[0]);
-        } else {
-          // instant activation @FIX delay animation
-          if (this.activationDelay) {
-            for (let type in this.activationDelay) {
-              self.activationDelayRun(type, true);
-            }
-            this.activationDelayCheckAndReset();
-          }
-        }
-      //}
+      }
     } else if (options.toggle) {
       // off
       this.eventOff(element);
@@ -650,26 +646,37 @@ class XtCore {
       let targets = this.getTargets(element);
       let elementsInner = this.getInside(element, options.elementsInner);
       let targetsInner = this.getInside(targets, options.targetsInner);
-      //if (!this.checkAnim(targets)) {
-        // off
-        this.specialOffDeactivate = false;
-        this.specialOffAnimate = false;
-        this.removeCurrent(groupElements.single);
-        this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
-        // execute
-        if (groupElements.all.length) {
-          this.activationOff(groupElements.all, groupElements, 'elements');
-        }
-        if (targets.length) {
-          this.activationOff(targets, groupElements, 'targets');
-        }
-        if (elementsInner.length) {
-          this.activationOff(elementsInner, groupElements, 'elementsInner');
-        }
-        if (targetsInner.length) {
-          this.activationOff(targetsInner, groupElements, 'targetsInner');
-        }
-      //}
+      // off
+      this.specialOffDeactivate = false;
+      this.specialOffAnimate = false;
+      this.removeCurrent(groupElements.single);
+      this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
+      // queue obj
+      this.detail.queueOffObj = {};
+      if (groupElements.all.length) {
+        this.detail.queueOffObj['elements'] = function () {
+          self.queueOff(groupElements.all, groupElements, 'elements');
+        };
+      }
+      if (targets.length) {
+        this.detail.queueOffObj['targets'] = function () {
+          self.queueOff(targets, groupElements, 'targets');
+        };
+      }
+      if (elementsInner.length) {
+        this.detail.queueOffObj['controls'] = function () {
+          self.queueOff(elementsInner, groupElements, 'elementsInner');
+        };
+      }
+      if (targetsInner.length) {
+        this.detail.queueOffObj['targetsInner'] = function () {
+          self.queueOff(targetsInner, groupElements, 'targetsInner');
+        };
+      }
+      // queue instant
+      for (let type in this.detail.queueOffObj) {
+        self.queueOffObjRun(type, true);
+      }
     }
   }
 
@@ -683,11 +690,11 @@ class XtCore {
    * @param {Object} groupElements
    * @param {String} type Type of elements
    */
-  activationOn(els, groupElements, type) {
+  queueOn(els, groupElements, type) {
     let self = this;
     // delay
     for (let el of els) {
-      if (!el.classList.contains(...this.options.classes)) { // check each element @FIX delay animation
+      if (!el.classList.contains(...this.options.classes)) { // queue check each element
         el.classList.remove('on-block', 'off-block');
         clearTimeout(el.dataset.xtDelayTimeout);
         clearTimeout(el.dataset.xtAnimTimeout);
@@ -696,10 +703,10 @@ class XtCore {
           el.classList.add('on-block');
           el.dataset.xtDelayTimeout = setTimeout(function (el, groupElements, type) {
             el.classList.remove('on-block');
-            self.activationOnActivate(el, groupElements, type);
+            self.queueOnActivate(el, groupElements, type);
           }, parseFloat(delay), el, groupElements, type).toString();
         } else {
-          self.activationOnActivate(el, groupElements, type);
+          self.queueOnActivate(el, groupElements, type);
         }
       }
     }
@@ -711,11 +718,11 @@ class XtCore {
    * @param {Object} groupElements
    * @param {String} type Type of elements
    */
-  activationOff(els, groupElements, type) {
+  queueOff(els, groupElements, type) {
     let self = this;
     // delay
     for (let el of els) {
-      if (el.classList.contains(...this.options.classes)) { // check each element @FIX delay animation
+      if (el.classList.contains(...this.options.classes)) { // queue check each element
         el.classList.remove('on-block', 'off-block');
         clearTimeout(el.dataset.xtDelayTimeout);
         clearTimeout(el.dataset.xtAnimTimeout);
@@ -724,10 +731,10 @@ class XtCore {
           el.classList.add('off-block');
           el.dataset.xtDelayTimeout = setTimeout(function (el, groupElements, type) {
             el.classList.remove('off-block');
-            self.activationOffDeactivate(el, groupElements, type);
+            self.queueOffDeactivate(el, groupElements, type);
           }, parseFloat(delay), el, groupElements, type).toString();
         } else {
-          self.activationOffDeactivate(el, groupElements, type);
+          self.queueOffDeactivate(el, groupElements, type);
         }
       }
     }
@@ -739,14 +746,16 @@ class XtCore {
    * @param {Object} groupElements
    * @param {String} type Type of elements
    */
-  activationOnActivate(el, groupElements, type) {
+  queueOnActivate(el, groupElements, type) {
     let self = this;
     let options = self.options;
     // activate
     el.classList.add(...options.classes);
     el.classList.add('in');
     el.classList.remove('out');
-    this.activationOnAnimate(el, type);
+    this.queueOnAnimate(el, type);
+    // queue delayed
+    this.queueOffObjRun(type, options.instant && options.instant[type]);
     // additionals
     if (type === 'elements') {
       // aria
@@ -795,18 +804,15 @@ class XtCore {
    * @param {Object} groupElements
    * @param {String} type Type of elements
    */
-  activationOffDeactivate(el, groupElements, type) {
+  queueOffDeactivate(el, groupElements, type) {
     let self = this;
     let options = self.options;
     // deactivate
     el.classList.remove(...options.classes);
     el.classList.add('out');
-    this.activationOffAnimate(el, type);
-    // activationDelay @FIX delay animation
-    if (this.activationDelay) {
-      this.activationDelayRun(type, options.instant && options.instant[type]);
-      this.activationDelayCheckAndReset();
-    }
+    this.queueOffAnimate(el, type);
+    // queue delayed
+    this.queueOnObjRun(type, options.instant && options.instant[type]);
     // additionals
     if (type === 'targets' || type === 'targetsInner') {
       // special
@@ -827,7 +833,7 @@ class XtCore {
    * @param {Node|HTMLElement} el Element to be animated
    * @param {String} type Type of element
    */
-  activationOnAnimate(el, type) {
+  queueOnAnimate(el, type) {
     let self = this;
     let options = self.options;
     // onDone
@@ -842,6 +848,8 @@ class XtCore {
       if (style.getPropertyValue('--collapse-width')) {
         el.style.width = 'auto';
       }
+      // queue after animation
+      self.queueOffObjRun(type, !options.instant || !options.instant[type]);
     };
     // delay onDone
     let timing = Xt.animationTiming(el, options.timing);
@@ -860,7 +868,7 @@ class XtCore {
    * @param {Node|HTMLElement} el Element to be animated
    * @param {String} type Type of element
    */
-  activationOffAnimate(el, type) {
+  queueOffAnimate(el, type) {
     let self = this;
     let options = self.options;
     // onDone
@@ -897,11 +905,8 @@ class XtCore {
           }
         }
       }
-      // activationDelay @FIX delay animation
-      if (self.activationDelay) {
-        self.activationDelayRun(type, !options.instant || !options.instant[type]);
-        self.activationDelayCheckAndReset();
-      }
+      // queue after animation
+      self.queueOnObjRun(type, !options.instant || !options.instant[type]);
     };
     // delay onDone
     let timing = Xt.animationTiming(el, options.timing);
@@ -916,29 +921,34 @@ class XtCore {
   }
 
   /**
-   * run activationDelay and set done @FIX delay animation
+   * run queueOnObj and set done
+   * @param {String} type Type of element
+   * @param {Boolean} skip Skip logic
    */
-  activationDelayRun(type, check) {
-    let func = this.activationDelay[type];
-    if (func && !func.done && check) {
-      func();
-      func.done = true;
+  queueOnObjRun(type, skip) {
+    if (this.detail.queueOnObj) {
+      let func = this.detail.queueOnObj[type];
+      if (func && !func.done && skip) {
+        console.log('on ' + type);
+        func();
+        func.done = true;
+      }
     }
   }
 
   /**
-   * check and reset if all activationDelay are done @FIX delay animation
+   * run queueOffObj and set done
+   * @param {String} type Type of element
+   * @param {Boolean} skip Skip logic
    */
-  activationDelayCheckAndReset() {
-    let count = 0;
-    for (let type in this.activationDelay) {
-      let func = this.activationDelay[type];
-      if (func.done) {
-        count++;
+  queueOffObjRun(type, skip) {
+    if (this.detail.queueOffObj) {
+      let func = this.detail.queueOffObj[type];
+      if (func && !func.done && skip) {
+        console.log('off ' + type);
+        func();
+        func.done = true;
       }
-    }
-    if (count === this.activationDelay.length) {
-      this.activationDelay = {};
     }
   }
 
@@ -1543,7 +1553,7 @@ class XtSlider extends XtCore {
     let self = this;
     let options = self.options;
     if (!e.button || e.button !== 2) { // not right click or it gets stuck
-      if (!this.checkAnim(Xt.arrSingle(target))) {
+      //if (!this.checkAnim(Xt.arrSingle(target))) { // @TODO
         // save event
         this.detail.eInit = e;
         // logic
@@ -1565,7 +1575,7 @@ class XtSlider extends XtCore {
         for (let event of eventsOff) {
           window.addEventListener(event, dragEndHandler);
         }
-      }
+      //}
     }
   }
 
@@ -1577,7 +1587,8 @@ class XtSlider extends XtCore {
   eventDragEndHandler(target, e) {
     let self = this;
     let options = self.options;
-    if (!this.checkAnim(Xt.arrSingle(target))) {
+    //if (!this.checkAnim(Xt.arrSingle(target))) { // @TODO
+      // logic
       let eventLimit = this.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
         if (Xt.checkOutside(e, eventLimit)) {
@@ -1596,7 +1607,7 @@ class XtSlider extends XtCore {
       for (let event of eventsOff) {
         window.removeEventListener(event, dragEndHandler);
       }
-    }
+    //}
   }
 
   /**
@@ -1663,7 +1674,7 @@ XtSlider.defaults = {
   "elements": ".slide-control",
   "targets": ":scope > .slides > .slide",
   "class": "active",
-  "instant": {"elements": true},
+  //"instant": {"elements": true}, @TODO
   "on": "click",
   "min": 1,
   "max": 1,
