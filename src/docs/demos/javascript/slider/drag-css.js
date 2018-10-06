@@ -19,11 +19,11 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       // pre initial drag position
       target.style.opacity = '0';
       if (!target.classList.contains('direction-inverse')) {
-        target.style.left = xMax + 'px';
-        target.children[0].style.left = -xMax + 'px';
+        target.style.transform = 'translateX(' + xMax + 'px)';
+        target.children[0].style.transform = 'translateX(' + (-xMax) + 'px)';
       } else {
-        target.style.left = -xMax + 'px';
-        target.children[0].style.left = xMax + 'px';
+        target.style.transform = 'translateX(' + (-xMax) + 'px)';
+        target.children[0].style.transform = 'translateX(' + xMax + 'px)';
       }
       // initial drag position
       Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
@@ -33,8 +33,8 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         target.dataset.xtDragResetFrame = Xt.requestAnimationFrame.call(window, function () {
           // reset drag
           target.style.opacity = '1';
-          target.style.left = '0';
-          target.children[0].style.left = '0';
+          target.style.transform = 'translateX(' + 0 + 'px)';
+          target.children[0].style.transform = 'translateX(' + 0 + 'px)';
         });
       });
     });
@@ -49,12 +49,12 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
       if (!target.classList.contains('direction-inverse')) {
         target.style.opacity = '0';
-        target.style.left = -xMax + 'px';
-        target.children[0].style.left = xMax + 'px';
+        target.style.transform = 'translateX(' + -xMax + 'px)';
+        target.children[0].style.transform = 'translateX(' + xMax + 'px)';
       } else {
         target.style.opacity = '0';
-        target.style.left = xMax + 'px';
-        target.children[0].style.left = -xMax + 'px';
+        target.style.transform = 'translateX(' + xMax + 'px)';
+        target.children[0].style.transform = 'translateX(' + -xMax + 'px)';
       }
     });
 
@@ -78,8 +78,8 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       let ratio = 1 - (Math.abs(xStart - xCurrent) / xMax);
       // drag
       target.style.opacity = ratio.toString();
-      target.style.left = xDist + 'px';
-      target.children[0].style.left = -xDist + 'px';
+      target.style.transform = 'translateX(' + xDist + 'px)';
+      target.children[0].style.transform = 'translateX(' + -xDist + 'px)';
     });
 
     // dragEnd event
@@ -106,14 +106,14 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         clearTimeout(target.dataset.xtDragEndTimeout);
         target.dataset.xtDragEndTimeout = setTimeout(function () {
           target.style.opacity = '0';
-          target.style.left = '0';
-          target.children[0].style.left = '0';
+          target.style.transform = 'translateX(' + 0 + 'px)';
+          target.children[0].style.transform = 'translateX(' + 0 + 'px)';
         }, timing).toString();
       } else {
         // reset drag
         target.style.opacity = '1';
-        target.style.left = '0';
-        target.children[0].style.left = '0';
+        target.style.transform = 'translateX(' + 0 + 'px)';
+        target.children[0].style.transform = 'translateX(' + 0 + 'px)';
       }
     });
 

@@ -21,10 +21,10 @@
     }
   }
   // content
-  > * {
+  > * > .content {
     .anim-left.out();
     animation-duration: @time-big;
-    > .content > .box > .content > * {
+    > .box > .content > * {
       .anim-left.out();
       animation-duration: @time-big;
       animation-fill-mode: forwards;
@@ -36,10 +36,10 @@
     }
   }
   &.direction-inverse {
-    > * {
+    > * > .content {
       .anim-right.out();
       animation-duration: @time-big;
-      > .content > .box > .content > * {
+      > .box > .content > * {
         .anim-right.out();
         animation-duration: @time-big;
         animation-fill-mode: forwards;
@@ -48,10 +48,10 @@
     }
   }
   &.active {
-    > * {
+    > * > .content {
       .anim-right.active();
       animation-duration: @time-big;
-      > .content > .box > .content > * {
+      > .box > .content > * {
         .anim-right.active();
         animation-duration: @time-big;
         animation-fill-mode: forwards;
@@ -59,10 +59,10 @@
       }
     }
     &.direction-inverse {
-      > * {
+      > * > .content {
         .anim-left.active();
         animation-duration: @time-big;
-        > .content > .box > .content > * {
+        > .box > .content > * {
           .anim-left.active();
           animation-duration: @time-big;
           animation-fill-mode: forwards;
