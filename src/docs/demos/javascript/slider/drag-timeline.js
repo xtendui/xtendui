@@ -1,10 +1,10 @@
 let time = .6;
 let animSize = 15;
 
-let timeInner = .6;
-let delayInner = .15;
-let delayInnerMax = delayInner * 2;
-let durationInner = timeInner + delayInnerMax;
+let timecontent = .6;
+let delaycontent = .15;
+let delaycontentMax = delaycontent * 2;
+let durationcontent = timecontent + delaycontentMax;
 
 CustomEase.create('easeIn', '.41, .1, .175, 1');
 CustomEase.create('easeOut', '.77, 0, .175, 1');
@@ -26,51 +26,53 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     tr.addEventListener('on', function (e) {
       let target = this;
       let xMax = target.clientWidth;
-      // inner timeline
+      // content
       window.tl = [];
-      let inners = target.querySelectorAll(':scope > * > .content > .box > .content > *');
-      for (let [z, inner] of inners.entries()) {
+      let contents = target.querySelectorAll(':scope > * > .content > .box > .content > *');
+      for (let [z, content] of contents.entries()) {
         window.tl[z] = new TimelineMax({paused: true});
         window.tl[z].addLabel('start');
-        window.tl[z].add(TweenMax.set(inner, {x: -animSize, opacity: 0}));
-        window.tl[z].add(TweenMax.to(inner, delayInnerMax, {x: -animSize, opacity: 0})); // delay
+        window.tl[z].add(TweenMax.set(content, {x: -animSize, opacity: 0}));
+        window.tl[z].add(TweenMax.to(content, delaycontentMax, {x: -animSize, opacity: 0})); // delay
         window.tl[z].addLabel('startDelay');
-        window.tl[z].add(TweenMax.to(inner, timeInner, {x: 0, opacity: 1}));
+        window.tl[z].add(TweenMax.to(content, timecontent, {x: 0, opacity: 1}));
         window.tl[z].addLabel('middle');
-        window.tl[z].add(TweenMax.to(inner, timeInner, {x: animSize, opacity: 0}));
+        window.tl[z].add(TweenMax.to(content, timecontent, {x: animSize, opacity: 0}));
         window.tl[z].addLabel('endDelay');
-        window.tl[z].add(TweenMax.to(inner, delayInnerMax, {x: animSize, opacity: 0})); // delay
+        window.tl[z].add(TweenMax.to(content, delaycontentMax, {x: animSize, opacity: 0})); // delay
         window.tl[z].addLabel('end');
-        // inner middle
+        // content middle
         window.tl[z].seek('middle');
-        // inner delay
-        inner.dataset.tlDelay = Math.min(delayInner * z, delayInnerMax).toString();
+        // content delay
+        content.dataset.tlDelay = Math.min(delaycontent * z, delaycontentMax).toString();
       }
-      for (var z = inners.length - 1; z >= 0; z--) {
-        // inner delay inverse
-        inners[z].dataset.tlDelayInverse = Math.min(delayInner * z, delayInnerMax).toString();
+      for (var z = contents.length - 1; z >= 0; z--) {
+        // content delay inverse
+        contents[z].dataset.tlDelayInverse = Math.min(delaycontent * z, delaycontentMax).toString();
       }
       // pre initial drag position
       TweenMax.set(target, {opacity: 0});
       if (!target.classList.contains('direction-inverse')) {
+        // mask
         TweenMax.set(target, {x: xMax});
         TweenMax.set(target.children[0], {x: -xMax});
         TweenMax.set(target.children[0].children[0], {x: animSize});
         TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeOut'});
-        // inner timeline
-        for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
-          TweenMax.set(inner, {opacity: 0});
-          window.tl[z].seek('endDelay' + '+=' + inner.dataset.tlDelay).tweenTo('middle', {ease: 'easeIn'});
+        // content
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          TweenMax.set(content, {opacity: 0});
+          window.tl[z].seek('endDelay' + '+=' + content.dataset.tlDelay).tweenTo('middle', {ease: 'easeIn'});
         }
       } else {
+        // mask
         TweenMax.set(target, {x: -xMax});
         TweenMax.set(target.children[0], {x: xMax});
         TweenMax.set(target.children[0].children[0], {x: -animSize});
         TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeOut'});
-        // inner timeline
-        for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
-          TweenMax.set(inner, {opacity: 0});
-          window.tl[z].seek('startDelay' + '-=' + inner.dataset.tlDelayInverse).tweenTo('middle', {ease: 'easeIn'});
+        // content
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          TweenMax.set(content, {opacity: 0});
+          window.tl[z].seek('startDelay' + '-=' + content.dataset.tlDelayInverse).tweenTo('middle', {ease: 'easeIn'});
         }
       }
       // reset drag
@@ -85,18 +87,20 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       // complete drag
       Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
       if (!target.classList.contains('direction-inverse')) {
+        // mask
         TweenMax.to(target, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: xMax, ease: 'easeOut'});
-        // inner timeline
-        for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
-          window.tl[z].tweenTo('startDelay' + '-=' + inner.dataset.tlDelay, {ease: 'easeOut'});
+        // content
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          window.tl[z].tweenTo('startDelay' + '-=' + content.dataset.tlDelay, {ease: 'easeOut'});
         }
       } else {
+        // mask
         TweenMax.to(target, time, {x: xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: -xMax, ease: 'easeOut'});
-        // inner timeline
-        for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
-          window.tl[z].tweenTo('endDelay' + '+=' + inner.dataset.tlDelay, {ease: 'easeOut'});
+        // content
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          window.tl[z].tweenTo('endDelay' + '+=' + content.dataset.tlDelay, {ease: 'easeOut'});
         }
       }
     });
@@ -112,18 +116,18 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       let xDist = xCurrent - xStart;
       let xMax = target.clientWidth;
       let ratio = Math.abs(xStart - xCurrent) / xMax;
-      // drag
+      // mask
       TweenMax.set(target, {x: xDist + 'px', opacity: 1 - ratio});
       TweenMax.set(target.children[0], {x: -xDist});
-      // inner timeline
+      // content
       if (xStart - xCurrent > 0) {
-        for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
-          let tlPos = durationInner - (durationInner - parseFloat(inner.dataset.tlDelayInverse)) * ratio;
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          let tlPos = durationcontent - (durationcontent - parseFloat(content.dataset.tlDelayInverse)) * ratio;
           window.tl[z].tweenTo(tlPos, {ease: 'easeOut'});
         }
       } else {
-        for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
-          let tlPos = durationInner + (durationInner - parseFloat(inner.dataset.tlDelay)) * ratio;
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          let tlPos = durationcontent + (durationcontent - parseFloat(content.dataset.tlDelay)) * ratio;
           window.tl[z].tweenTo(tlPos, {ease: 'easeOut'});
         }
       }
@@ -147,11 +151,11 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
           self.goToPrev();
         }
       } else {
-        // reset drag
+        // mask
         TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: 0, ease: 'easeOut'});
-        // inner timeline
-        for (let [z, inner] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+        // content
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
           window.tl[z].tweenTo('middle', {ease: 'easeOut'});
         }
       }

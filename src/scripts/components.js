@@ -1528,26 +1528,28 @@ class XtSlider extends XtCore {
     let self = this;
     let options = self.options;
     if (!e.button || e.button !== 2) { // not right click or it gets stuck
-      // save event
-      this.detail.eInit = e;
-      // logic
-      let eventLimit = this.container.querySelectorAll('.event-limit');
-      if (eventLimit.length) {
-        if (Xt.checkOutside(e, eventLimit)) {
+      if (!target.classList.contains('out')) { // block on out
+        // save event
+        this.detail.eInit = e;
+        // logic
+        let eventLimit = this.container.querySelectorAll('.event-limit');
+        if (eventLimit.length) {
+          if (Xt.checkOutside(e, eventLimit)) {
+            this.eventDragStart(target, e);
+          }
+        } else {
           this.eventDragStart(target, e);
         }
-      } else {
-        this.eventDragStart(target, e);
-      }
-      // auto
-      if (options.autoPause) {
-        this.autoPause();
-      }
-      // event off
-      let dragEndHandler = Xt.dataStorage.put(window, 'dragEndHandler', self.eventDragEndHandler.bind(self).bind(self, target));
-      let eventsOff = ['mouseup', 'touchend'];
-      for (let event of eventsOff) {
-        window.addEventListener(event, dragEndHandler);
+        // auto
+        if (options.autoPause) {
+          this.autoPause();
+        }
+        // event off
+        let dragEndHandler = Xt.dataStorage.put(window, 'dragEndHandler', self.eventDragEndHandler.bind(self).bind(self, target));
+        let eventsOff = ['mouseup', 'touchend'];
+        for (let event of eventsOff) {
+          window.addEventListener(event, dragEndHandler);
+        }
       }
     }
   }
@@ -1560,24 +1562,25 @@ class XtSlider extends XtCore {
   eventDragEndHandler(target, e) {
     let self = this;
     let options = self.options;
-    // logic
-    let eventLimit = this.container.querySelectorAll('.event-limit');
-    if (eventLimit.length) {
-      if (Xt.checkOutside(e, eventLimit)) {
+    if (!target.classList.contains('out')) { // block on out
+      let eventLimit = this.container.querySelectorAll('.event-limit');
+      if (eventLimit.length) {
+        if (Xt.checkOutside(e, eventLimit)) {
+          this.eventDragEnd(target, e);
+        }
+      } else {
         this.eventDragEnd(target, e);
       }
-    } else {
-      this.eventDragEnd(target, e);
-    }
-    // auto
-    if (options.autoPause) {
-      this.autoPause();
-    }
-    // event off
-    let dragEndHandler = Xt.dataStorage.get(window, 'dragEndHandler');
-    let eventsOff = ['mouseup', 'touchend'];
-    for (let event of eventsOff) {
-      window.removeEventListener(event, dragEndHandler);
+      // auto
+      if (options.autoPause) {
+        this.autoPause();
+      }
+      // event off
+      let dragEndHandler = Xt.dataStorage.get(window, 'dragEndHandler');
+      let eventsOff = ['mouseup', 'touchend'];
+      for (let event of eventsOff) {
+        window.removeEventListener(event, dragEndHandler);
+      }
     }
   }
 
