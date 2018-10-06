@@ -118,15 +118,19 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       }
     });
 
-    // dragOff event
+    // dragEnd event
     tr.addEventListener('dragEnd.slider', function (e) {
       let target = this;
       let self = e.detail.object;
-      let xFinal = parseFloat(target._gsTransform.x);
+      let eInit = self.detail.eInit;
+      let eCurrent = self.detail.eCurrent;
+      let xStart = eInit.clientX;
+      let xCurrent = eCurrent.clientX;
+      let xDist = xCurrent - xStart;
       // activate or reset
-      if (Math.abs(xFinal) > self.options.dragThreshold) {
+      if (Math.abs(xDist) > self.options.dragThreshold) {
         // direction
-        if (Math.sign(xFinal) < 0) {
+        if (Math.sign(xDist) < 0) {
           self.goToNext();
         } else {
           self.goToPrev();
