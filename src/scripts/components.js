@@ -1031,11 +1031,11 @@ class XtCore {
       let pt = el.style.paddingTop;
       let pb = el.style.paddingBottom;
       Xt.requestAnimationFrame.call(window, function () {
+        el.classList.remove('xt-calculating');
         el.style.height = '0';
         el.style.paddingTop = '0';
         el.style.paddingBottom = '0';
         Xt.requestAnimationFrame.call(window, function () {
-          el.classList.remove('xt-calculating');
           el.style.height = h;
           el.style.paddingTop = pt;
           el.style.paddingBottom = pb;
@@ -1051,11 +1051,11 @@ class XtCore {
       let pl = el.style.paddingLeft;
       let pr = el.style.paddingRight;
       Xt.requestAnimationFrame.call(window, function () {
+        el.classList.remove('xt-calculating');
         el.style.width = '0';
         el.style.paddingLeft = '0';
         el.style.paddingRight = '0';
         Xt.requestAnimationFrame.call(window, function () {
-          el.classList.remove('xt-calculating');
           el.style.width = w;
           el.style.paddingLeft = pl;
           el.style.paddingRight = pr;
