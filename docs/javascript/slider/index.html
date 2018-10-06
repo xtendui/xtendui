@@ -556,7 +556,73 @@
         <div class="col col-12 col-9-md">
 
           <article class="site-article default-lists">
-            
+            <h2>Usage</h2>
+
+<p>Use this markup to create a drop. <code>[data-xt-drop]</code> must be <a
+  href="/docs/javascript/#initialization">initialized by javascript</a>.</p>
+
+<pre>
+  <code class="html">
+    <div class="slider" data-xt-slider>
+
+      <div class="slides">
+
+        <div class="slide toggle-block">
+          <div class="slide-inner">
+            <div class="content">
+              <!-- content -->
+            </div>
+          </div>
+        </div>
+
+        <div class="slide toggle-block">
+          <div class="slide-inner">
+            <div class="content">
+              <!-- content -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </code>
+</pre>
+
+<div class="alert">
+  <div class="content">
+    Instead of using html arguments you can initialize <a href="/docs/javascript/#initialization-slider">slider
+    by javascript</a> using the same options syntax.
+  </div>
+</div>
+
+<h2>Demos</h2>
+
+<h3>Simple</h3>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="/demos/javascript/slider/simple.html"
+       data-name="simple"></div>
+</div>
+
+<h3>Drag</h3>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="/demos/javascript/slider/drag-css.html"
+       data-name="css"></div>
+  <div class="demo-item" data-iframe="/demos/javascript/slider/drag-js.html"
+       data-name="js"></div>
+  <div class="demo-item" data-iframe="/demos/javascript/slider/drag-timeline.html"
+       data-name="timeline"></div>
+</div>
+
+<h3>Multiple</h3>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="/demos/javascript/slider/multiple.html"
+       data-name="multiple"></div>
+</div>
+
           </article>
 
         </div>
@@ -649,10 +715,15 @@
       </div>
     </div>
 
-    <script src="/assets/scripts/clipboard.min.js?v=0.5.4"></script>
-    <script src="/assets/scripts/highlight.pack.js?v=0.5.4"></script>
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.5.4"></script>
     <script src="/assets/scripts/polyfill.min.js?v=0.5.4"></script>
     <script src="/assets/scripts/xtend.min.js?v=0.5.4"></script>
+
+    <!-- theme scripts -->
+    <script src="/assets/scripts/clipboard.min.js?v=0.5.4"></script>
+    <script src="/assets/scripts/highlight.pack.js?v=0.5.4"></script>
     <script src="/assets/scripts/theme.min.js?v=0.5.4"></script>
 
   </body>

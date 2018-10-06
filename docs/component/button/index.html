@@ -591,7 +591,8 @@
 
 <p>Optional classes for assigning variant.</p>
 
-<p>You can change the default <strong>variant</strong> inside the <code>.btn</code> selector in <code>/theme/_component.less</code>.</p>
+<p>You can change the default <strong>variant</strong> inside the <code>.btn</code> selector in <code>/theme/_component.less</code>.
+</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="variants">
@@ -635,7 +636,8 @@
 
 <p>Optional classes for assigning size. Sizes uses <code>em</code> padding that depends on font size.</p>
 
-<p>You can change the default <strong>size</strong> inside the <code>.btn</code> selector in <code>/theme/_component.less</code>.</p>
+<p>You can change the default <strong>size</strong> inside the <code>.btn</code> selector in <code>/theme/_component.less</code>.
+</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="sizes">
@@ -761,7 +763,63 @@
   </div>
 </div>
 
-<h2>Links</h2>
+<h2>Others</h2>
+
+<h3>Combo</h3>
+
+<p>To combo buttons use a containing <code>a, button</code>. Use <code>font-size: 0;</code> to fix horizontal spacing of
+  btn's <strong>display: inline-block;</strong>.</p>
+
+<p>Elements with <code>a, button</code> tag propagate <code>.hover</code> and <code>.active</code> classes on
+  <code>.btn</code> childs automatically.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="disabled">
+    <div class="demo-text">
+      <div class="content">
+        <code>.hover</code> <code>.active</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space-small align-items-center demo-source-from">
+        <button type="button" style="font-size: 0;">
+          <span class="btn btn-primary btn-squared">Test</span>
+          <span class="btn btn-squared">Test</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Disabled</h3>
+
+<p>Disabled attribute or class.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="disabled">
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space-small align-items-center demo-source-from">
+        <button type="button" class="btn btn-primary" disabled>
+          <span>primary</span>
+        </button>
+        <button type="button" class="btn btn-primary-empty" disabled>
+          <span>primary empty</span>
+        </button>
+        <button type="button" class="btn btn-secondary" disabled>
+          <span>secondary</span>
+        </button>
+        <button type="button" class="btn btn-secondary-empty" disabled>
+          <span>secondary empty</span>
+        </button>
+        <button type="button" class="btn btn-link" disabled>
+          <span>link</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Links</h3>
 
 <p>On containers use <code>.inverse</code> to have white links.</p>
 
@@ -790,39 +848,6 @@
             link
           </a>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h2>Disabled</h2>
-
-<p>Disabled attribute or class.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="disabled">
-    <div class="demo-text">
-      <div class="content">
-        <code>[disabled]</code> <code>.disabled</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div class="list list-space-small align-items-center demo-source-from">
-        <button type="button" class="btn btn-primary" disabled>
-          <span>primary</span>
-        </button>
-        <button type="button" class="btn btn-primary-empty" disabled>
-          <span>primary empty</span>
-        </button>
-        <button type="button" class="btn btn-secondary" disabled>
-          <span>secondary</span>
-        </button>
-        <button type="button" class="btn btn-secondary-empty" disabled>
-          <span>secondary empty</span>
-        </button>
-        <button type="button" class="btn btn-link" disabled>
-          <span>link</span>
-        </button>
       </div>
     </div>
   </div>
@@ -920,10 +945,15 @@
       </div>
     </div>
 
-    <script src="/assets/scripts/clipboard.min.js?v=0.5.4"></script>
-    <script src="/assets/scripts/highlight.pack.js?v=0.5.4"></script>
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.5.4"></script>
     <script src="/assets/scripts/polyfill.min.js?v=0.5.4"></script>
     <script src="/assets/scripts/xtend.min.js?v=0.5.4"></script>
+
+    <!-- theme scripts -->
+    <script src="/assets/scripts/clipboard.min.js?v=0.5.4"></script>
+    <script src="/assets/scripts/highlight.pack.js?v=0.5.4"></script>
     <script src="/assets/scripts/theme.min.js?v=0.5.4"></script>
 
   </body>

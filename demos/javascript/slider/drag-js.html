@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- seo -->
+    <title>Xtend demo</title>
+    <meta name="description" content="Xtend demo" />
+
+    <!-- icons -->
+    <link rel="icon" href="/assets/images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/styles/demo.css?v=0.5.4" />
+    
+    
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.5.4"></script>
+    <script src="/assets/scripts/polyfill.min.js"></script>
+    <script src="/assets/scripts/xtend.min.js?v=0.5.4"></script>
+
+    <!-- demo scripts -->
+    <script src="/assets/scripts/ResizeSensor.min.js"></script>
+    <script src="/assets/scripts/ElementQueries.min.js"></script>
+
+  </head>
+  <body class="full">
+
+    <div id="body-outer">
+<div id="body-inner" class="demo-source-from">
+<div class="slider">
+
+  <div class="slides">
+
+    <div class="slide toggle-block">
+      <div class="slide-inner">
+        <div class="content">
+          <div class="box">
+            <div class="content">
+              <h2>Lorem ipsum #0</h2>
+              <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                justo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide toggle-block">
+      <div class="slide-inner">
+        <div class="content">
+          <div class="box">
+            <div class="content">
+              <h2>Lorem ipsum #1</h2>
+              <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                justo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide toggle-block">
+      <div class="slide-inner">
+        <div class="content">
+          <div class="box">
+            <div class="content">
+              <h2>Lorem ipsum #2</h2>
+              <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                justo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="list list-space-small align-items-center" style="margin-top: 1rem !important;">
+    <button type="button" class="btn slide-control">
+      <span>#0</span>
+    </button>
+    <button type="button" class="btn slide-control">
+      <span>#1</span>
+    </button>
+    <button type="button" class="btn slide-control">
+      <span>#2</span>
+    </button>
+  </div>
+
+</div>
+
+
+</div>
+    </div>
+
+    
+
+    
+    <js-script>let time = .6;
+let animSize = 15;
+
+let timecontent = .6;
+let delaycontent = .15;
+let delaycontentMax = delaycontent * 2;
+let durationcontent = timecontent + delaycontentMax;
+
+CustomEase.create('easeIn', '.41, .1, .175, 1');
+CustomEase.create('easeOut', '.77, 0, .175, 1');
+
+for (let [i, el] of document.querySelectorAll('.slider').entries()) {
+
+  // slider
+  new XtSlider(el, {
+    "auto": 6000,
+    "autoPause": 6000,
+    "drag": true,
+    "timing": time * 1000
+  });
+
+  // slider items
+  for (let [i, tr] of el.querySelectorAll('.slide').entries()) {
+
+    // on event
+    tr.addEventListener('on', function (e) {
+      let target = this;
+      let xMax = target.clientWidth;
+      // content
+      let contents = target.querySelectorAll(':scope > * > .content > .box > .content > *');
+      for (let [z, content] of contents.entries()) {
+        content.dataset.tlDelay = Math.min(delaycontent * z, delaycontentMax).toString();
+      }
+      // pre initial drag position
+      TweenMax.set(target, {opacity: 0});
+      if (!target.classList.contains('direction-inverse')) {
+        // mask
+        TweenMax.set(target, {x: xMax});
+        TweenMax.set(target.children[0], {x: -xMax});
+        TweenMax.set(target.children[0].children[0], {x: animSize});
+        TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeIn'});
+        // content
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          TweenMax.set(content, {x: animSize, opacity: 0});
+          setTimeout(function () {
+            TweenMax.to(content, timecontent, {x: 0, opacity: 1, ease: 'easeIn'});
+          }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+      } else {
+        // mask
+        TweenMax.set(target, {x: -xMax});
+        TweenMax.set(target.children[0], {x: xMax});
+        TweenMax.set(target.children[0].children[0], {x: -animSize});
+        TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeIn'});
+        // content
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          TweenMax.set(content, {x: -animSize, opacity: 0});
+          setTimeout(function () {
+            TweenMax.to(content, timecontent, {x: 0, opacity: 1, ease: 'easeIn'});
+          }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+      }
+      // reset drag
+      TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeIn'});
+      TweenMax.to(target.children[0], time, {x: 0, ease: 'easeIn'});
+    });
+
+    // off event
+    tr.addEventListener('off', function (e) {
+      let target = this;
+      let xMax = target.clientWidth;
+      // complete drag
+      Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
+      if (!target.classList.contains('direction-inverse')) {
+        // mask
+        TweenMax.to(target, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
+        TweenMax.to(target.children[0], time, {x: xMax, ease: 'easeOut'});
+        // content
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          setTimeout(function () {
+            TweenMax.to(content, timecontent, {x: -animSize, opacity: 1, ease: 'easeOut'});
+          }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+      } else {
+        // mask
+        TweenMax.to(target, time, {x: xMax, opacity: 0, ease: 'easeOut'});
+        TweenMax.to(target.children[0], time, {x: -xMax, ease: 'easeOut'});
+        // content
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          setTimeout(function () {
+            TweenMax.to(content, timecontent, {x: animSize, opacity: 1, ease: 'easeOut'});
+          }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+      }
+    });
+
+    // drag event
+    tr.addEventListener('drag.slider', function (e) {
+      let target = this;
+      let self = e.detail.object;
+      let eInit = self.detail.eInit;
+      let eCurrent = self.detail.eCurrent;
+      let xStart = eInit.clientX;
+      let xCurrent = eCurrent.clientX;
+      let xDist = xCurrent - xStart;
+      let xMax = target.clientWidth;
+      let ratio = Math.abs(xStart - xCurrent) / xMax;
+      // mask
+      TweenMax.set(target, {x: xDist + 'px', opacity: 1 - ratio});
+      TweenMax.set(target.children[0], {x: -xDist});
+      // content
+      if (xStart - xCurrent > 0) {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          let ratioWithDelay = (durationcontent - parseFloat(content.dataset.tlDelay)) * ratio / timecontent;
+          TweenMax.set(content, {x: -animSize * ratioWithDelay, opacity: 1 - ratioWithDelay});
+        }
+      } else {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          let ratioWithDelay = (durationcontent - parseFloat(content.dataset.tlDelay)) * ratio / timecontent;
+          TweenMax.set(content, {x: animSize * ratioWithDelay, opacity: 1 - ratioWithDelay});
+        }
+      }
+    });
+
+    // dragEnd event
+    tr.addEventListener('dragEnd.slider', function (e) {
+      let target = this;
+      let self = e.detail.object;
+      let eInit = self.detail.eInit;
+      let eCurrent = self.detail.eCurrent;
+      let xStart = eInit.clientX;
+      let xCurrent = eCurrent.clientX;
+      let xDist = xCurrent - xStart;
+      // activate or reset
+      if (Math.abs(xDist) > self.options.dragThreshold) {
+        // direction
+        if (Math.sign(xDist) < 0) {
+          self.goToNext();
+        } else {
+          self.goToPrev();
+        }
+      } else {
+        // mask
+        TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeOut'});
+        TweenMax.to(target.children[0], time, {x: 0, ease: 'easeOut'});
+        // content
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          TweenMax.to(content, timecontent, {x: 0, opacity: 1, ease: 'easeOut'});
+        }
+      }
+    });
+
+  }
+
+}</js-script>
+    
+
+    <script>
+      // add id
+      document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
+      // init
+      function initAll() {
+        Xt.initAll();
+        // https://github.com/marcj/css-element-queries
+        new ResizeSensor(document.getElementById('body-outer'), function() {
+          parent.resizeIframe(window.frameElement.getAttribute('id'));
+        });
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener('DOMContentLoaded', initAll);
+      } else {
+        initAll();
+      }
+      // init iframe
+      window.parent.initIframe(window.name);
+    </script>
+
+    
+    <script>let time = .6;
+let animSize = 15;
+
+let timecontent = .6;
+let delaycontent = .15;
+let delaycontentMax = delaycontent * 2;
+let durationcontent = timecontent + delaycontentMax;
+
+CustomEase.create('easeIn', '.41, .1, .175, 1');
+CustomEase.create('easeOut', '.77, 0, .175, 1');
+
+for (let [i, el] of document.querySelectorAll('.slider').entries()) {
+
+  // slider
+  new XtSlider(el, {
+    "auto": 6000,
+    "autoPause": 6000,
+    "drag": true,
+    "timing": time * 1000
+  });
+
+  // slider items
+  for (let [i, tr] of el.querySelectorAll('.slide').entries()) {
+
+    // on event
+    tr.addEventListener('on', function (e) {
+      let target = this;
+      let xMax = target.clientWidth;
+      // content
+      let contents = target.querySelectorAll(':scope > * > .content > .box > .content > *');
+      for (let [z, content] of contents.entries()) {
+        content.dataset.tlDelay = Math.min(delaycontent * z, delaycontentMax).toString();
+      }
+      // pre initial drag position
+      TweenMax.set(target, {opacity: 0});
+      if (!target.classList.contains('direction-inverse')) {
+        // mask
+        TweenMax.set(target, {x: xMax});
+        TweenMax.set(target.children[0], {x: -xMax});
+        TweenMax.set(target.children[0].children[0], {x: animSize});
+        TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeIn'});
+        // content
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          TweenMax.set(content, {x: animSize, opacity: 0});
+          setTimeout(function () {
+            TweenMax.to(content, timecontent, {x: 0, opacity: 1, ease: 'easeIn'});
+          }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+      } else {
+        // mask
+        TweenMax.set(target, {x: -xMax});
+        TweenMax.set(target.children[0], {x: xMax});
+        TweenMax.set(target.children[0].children[0], {x: -animSize});
+        TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeIn'});
+        // content
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          TweenMax.set(content, {x: -animSize, opacity: 0});
+          setTimeout(function () {
+            TweenMax.to(content, timecontent, {x: 0, opacity: 1, ease: 'easeIn'});
+          }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+      }
+      // reset drag
+      TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeIn'});
+      TweenMax.to(target.children[0], time, {x: 0, ease: 'easeIn'});
+    });
+
+    // off event
+    tr.addEventListener('off', function (e) {
+      let target = this;
+      let xMax = target.clientWidth;
+      // complete drag
+      Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
+      if (!target.classList.contains('direction-inverse')) {
+        // mask
+        TweenMax.to(target, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
+        TweenMax.to(target.children[0], time, {x: xMax, ease: 'easeOut'});
+        // content
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          setTimeout(function () {
+            TweenMax.to(content, timecontent, {x: -animSize, opacity: 1, ease: 'easeOut'});
+          }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+      } else {
+        // mask
+        TweenMax.to(target, time, {x: xMax, opacity: 0, ease: 'easeOut'});
+        TweenMax.to(target.children[0], time, {x: -xMax, ease: 'easeOut'});
+        // content
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          setTimeout(function () {
+            TweenMax.to(content, timecontent, {x: animSize, opacity: 1, ease: 'easeOut'});
+          }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+      }
+    });
+
+    // drag event
+    tr.addEventListener('drag.slider', function (e) {
+      let target = this;
+      let self = e.detail.object;
+      let eInit = self.detail.eInit;
+      let eCurrent = self.detail.eCurrent;
+      let xStart = eInit.clientX;
+      let xCurrent = eCurrent.clientX;
+      let xDist = xCurrent - xStart;
+      let xMax = target.clientWidth;
+      let ratio = Math.abs(xStart - xCurrent) / xMax;
+      // mask
+      TweenMax.set(target, {x: xDist + 'px', opacity: 1 - ratio});
+      TweenMax.set(target.children[0], {x: -xDist});
+      // content
+      if (xStart - xCurrent > 0) {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          let ratioWithDelay = (durationcontent - parseFloat(content.dataset.tlDelay)) * ratio / timecontent;
+          TweenMax.set(content, {x: -animSize * ratioWithDelay, opacity: 1 - ratioWithDelay});
+        }
+      } else {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          let ratioWithDelay = (durationcontent - parseFloat(content.dataset.tlDelay)) * ratio / timecontent;
+          TweenMax.set(content, {x: animSize * ratioWithDelay, opacity: 1 - ratioWithDelay});
+        }
+      }
+    });
+
+    // dragEnd event
+    tr.addEventListener('dragEnd.slider', function (e) {
+      let target = this;
+      let self = e.detail.object;
+      let eInit = self.detail.eInit;
+      let eCurrent = self.detail.eCurrent;
+      let xStart = eInit.clientX;
+      let xCurrent = eCurrent.clientX;
+      let xDist = xCurrent - xStart;
+      // activate or reset
+      if (Math.abs(xDist) > self.options.dragThreshold) {
+        // direction
+        if (Math.sign(xDist) < 0) {
+          self.goToNext();
+        } else {
+          self.goToPrev();
+        }
+      } else {
+        // mask
+        TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeOut'});
+        TweenMax.to(target.children[0], time, {x: 0, ease: 'easeOut'});
+        // content
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+          TweenMax.to(content, timecontent, {x: 0, opacity: 1, ease: 'easeOut'});
+        }
+      }
+    });
+
+  }
+
+}</script>
+    
+
+  </body>
+</html>

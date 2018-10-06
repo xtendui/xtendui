@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="fade-mode-block.css?v=0.5.4" />
     
     <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.5.4"></script>
     <script src="/assets/scripts/polyfill.min.js"></script>
     <script src="/assets/scripts/xtend.min.js?v=0.5.4"></script>
 
@@ -124,7 +126,7 @@
     
     <js-script>
 setTimeout( function() {
-  for(let [i, el] of document.querySelectorAll('.fade').entries()) {
+  for (let [i, el] of document.querySelectorAll('.fade').entries()) {
     el.classList.add('fade-block');
   }
   alert('fade blocked');
@@ -154,7 +156,7 @@ setTimeout( function() {
     
     <script>
 setTimeout( function() {
-  for(let [i, el] of document.querySelectorAll('.fade').entries()) {
+  for (let [i, el] of document.querySelectorAll('.fade').entries()) {
     el.classList.add('fade-block');
   }
   alert('fade blocked');

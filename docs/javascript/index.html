@@ -650,7 +650,7 @@
     });
 
     // looping
-    for(let [i, el] of document.querySelectorAll('.my-element').entries()) {
+    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
       new XtToggle(el, {
         // options
       });
@@ -670,7 +670,7 @@
     });
 
     // looping
-    for(let [i, el] of document.querySelectorAll('.my-element').entries()) {
+    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
       new XtDrop(el, {
         // options
       });
@@ -690,8 +690,28 @@
     });
 
     // looping
-    for(let [i, el] of document.querySelectorAll('.my-element').entries()) {
+    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
       new XtOverlay(el, {
+        // options
+      });
+    }
+  </code>
+</pre>
+
+<h3>Slider</h3>
+
+<p>You can initialize <strong>overlay</strong> by javascript.</p>
+
+<pre>
+  <code class="js">
+    // single
+    new XtSlider(document.querySelectorAll('.my-element')[0], {
+      // options
+    });
+
+    // looping
+    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
+      new XtSlider(el, {
         // options
       });
     }
@@ -710,7 +730,7 @@
     });
 
     // looping
-    for(let [i, el] of document.querySelectorAll('.my-element').entries()) {
+    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
       new XtSticky(el, {
         // options
       });
@@ -730,7 +750,7 @@
     });
 
     // looping
-    for(let [i, el] of document.querySelectorAll('.my-element').entries()) {
+    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
       new XtFade(el, {
         // options
       });
@@ -829,10 +849,15 @@
       </div>
     </div>
 
-    <script src="/assets/scripts/clipboard.min.js?v=0.5.4"></script>
-    <script src="/assets/scripts/highlight.pack.js?v=0.5.4"></script>
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.5.4"></script>
     <script src="/assets/scripts/polyfill.min.js?v=0.5.4"></script>
     <script src="/assets/scripts/xtend.min.js?v=0.5.4"></script>
+
+    <!-- theme scripts -->
+    <script src="/assets/scripts/clipboard.min.js?v=0.5.4"></script>
+    <script src="/assets/scripts/highlight.pack.js?v=0.5.4"></script>
     <script src="/assets/scripts/theme.min.js?v=0.5.4"></script>
 
   </body>

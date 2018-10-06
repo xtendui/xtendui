@@ -74,7 +74,6 @@ for(let el of document.querySelectorAll('.site-aside-text')) {
 
 const activateAsideScroll = function (els, scrollTop) {
   const dist = window.innerHeight / 5;
-  let last;
   for(let el of els) {
     let href = el.getAttribute('href');
     if (href) {
@@ -290,7 +289,7 @@ window.initIframe = function(name) {
     window.resizeIframe(name);
     item.classList.add('populated');
   }
-}
+};
 
 window.resizeIframe = function(name) {
   let src = 'iframe[name="' + name + '"]';
