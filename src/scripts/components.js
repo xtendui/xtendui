@@ -628,11 +628,13 @@ class XtCore {
         };
       }
       // queue
-      for (let type in this.detail.queueOn) {
+      for (let type in this.detail.queueOff) {
         // reset other queue if queue too big
         if (self.detail.queueOnRunning[type]) {
           self.detail.queueOffRunning[type] = false;
         }
+      }
+      for (let type in this.detail.queueOn) {
         // queue running
         self.detail.queueOnRunning[type] = true;
       }
@@ -700,11 +702,13 @@ class XtCore {
         };
       }
       // queue
-      for (let type in this.detail.queueOff) {
+      for (let type in this.detail.queueOn) {
         // reset other queue if queue too big
         if (self.detail.queueOffRunning[type]) {
           self.detail.queueOnRunning[type] = false;
         }
+      }
+      for (let type in this.detail.queueOff) {
         // queue running
         self.detail.queueOffRunning[type] = true;
         // queue instant
@@ -906,7 +910,7 @@ class XtCore {
     let self = this;
     let options = self.options;
     // onDone
-    let onDone = function (el, type) {
+    let onDone = function () {
       // deactivate in
       el.classList.remove('in');
       // collapse-width and collapse-height
@@ -928,11 +932,11 @@ class XtCore {
     let timing = Xt.animationTiming(el, options.timing);
     clearTimeout(el.dataset.xtAnimTimeout);
     if (!timing) {
-      onDone(el, type);
+      onDone();
     } else {
-      el.dataset.xtAnimTimeout = setTimeout(function (el, type) {
+      el.dataset.xtAnimTimeout = setTimeout(function () {
         onDone(el, type);
-      }, timing, el, type).toString();
+      }, timing).toString();
     }
   }
 
@@ -945,7 +949,7 @@ class XtCore {
     let self = this;
     let options = self.options;
     // onDone
-    let onDone = function (el, type) {
+    let onDone = function () {
       el.classList.remove('out');
       // additionals
       if (type === 'elements') {
@@ -989,11 +993,11 @@ class XtCore {
     let timing = Xt.animationTiming(el, options.timing);
     clearTimeout(el.dataset.xtAnimTimeout);
     if (!timing) {
-      onDone(el, type);
+      onDone();
     } else {
-      el.dataset.xtAnimTimeout = setTimeout(function (el, type) {
+      el.dataset.xtAnimTimeout = setTimeout(function () {
         onDone(el, type);
-      }, timing, el, type).toString();
+      }, timing).toString();
     }
   }
 
