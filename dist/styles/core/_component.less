@@ -53,28 +53,29 @@ a, .alink, .btn-link {
 .drop-outer {
   display: inline-block;
   position: relative;
+  // z-index
   &.active {
-    &, & > .drop {
+    &, > .drop {
       z-index: @index-drop;
     }
   }
   &.out {
-    &, & > .drop {
+    &, > .drop {
       z-index: @index-drop - 1;
     }
   }
-  > .xt-backdrop {
+  // conent
+  > .xt-backdrop, > .drop {
     .display(none);
   }
   &.active, &.out {
-    > .xt-backdrop {
+    > .xt-backdrop, > .drop {
       .display(block);
     }
   }
 }
 
 .drop {
-  .toggle-block();
   // styles
   position: absolute;
   > .drop-inner {

@@ -582,8 +582,9 @@ class XtCore {
   /**
    * element on
    * @param {Node|HTMLElement} element To be activated
+   * @param {Boolean} queueForce Force change also if other queue are running
    */
-  eventOn(element, queueForce) {
+  eventOn(element, queueForce = false) {
     let self = this;
     let options = self.options;
     // toggle
@@ -600,31 +601,43 @@ class XtCore {
       // queue obj
       this.detail.queueOn = {};
       if (groupElements.all.length) {
-        this.detail.queueOn['elements'] = function () {
-          self.queueOn(groupElements.all, groupElements, 'elements');
+        this.detail.queueOn['elements'] = {
+          queueEls: groupElements.all,
+          groupElements: groupElements
         };
       }
       if (targets.length) {
-        this.detail.queueOn['targets'] = function () {
-          self.queueOn(targets, groupElements, 'targets');
+        this.detail.queueOn['targets'] = {
+          queueEls: targets,
+          groupElements: groupElements
         };
       }
       if (elementsInner.length) {
-        this.detail.queueOn['controls'] = function () {
-          self.queueOn(elementsInner, groupElements, 'elementsInner');
+        this.detail.queueOn['elementsInner'] = {
+          queueEls: elementsInner,
+          groupElements: groupElements
         };
       }
       if (targetsInner.length) {
-        this.detail.queueOn['targetsInner'] = function () {
-          self.queueOn(targetsInner, groupElements, 'targetsInner');
+        this.detail.queueOn['targetsInner'] = {
+          queueEls: targetsInner,
+          groupElements: groupElements
         };
       }
       // queue
       for (let type in this.detail.queueOn) {
         // reset if queue too big
         if (self.detail.queueOnRunning[type]) {
-          self.detail.queueOffRunning[type] = false;;
-          //self.queueOffRun(type, true, true);
+          self.detail.queueOffRunning[type] = false;
+          /*
+          let queueDeactivate = self.detail.queueOff[type];
+          if (queueDeactivate && queueDeactivate.queueEls) {
+            for (let queueEl of queueDeactivate.queueEls) {
+              self.specialCollapseOff(queueEl);
+              self.queueOffDelay(queueEl, groupElements, type);
+            }
+          }
+          */
         }
         // queue running
         self.detail.queueOnRunning[type] = true;
@@ -638,7 +651,7 @@ class XtCore {
         // queue
         for (let type in this.detail.queueOn) {
           // queue instant
-          self.queueOnRun(type, true, queueForce, options.noQueue ? true : false);
+          self.queueOnRun(type, true, queueForce, !!options.noQueue);
         }
       }
     } else if (options.toggle) {
@@ -650,8 +663,9 @@ class XtCore {
   /**
    * element off
    * @param {Node|HTMLElement} element To be deactivated
+   * @param {Boolean} queueForce Force change also if other queue are running
    */
-  eventOff(element, queueForce) {
+  eventOff(element, queueForce = false) {
     let self = this;
     let options = self.options;
     // toggle
@@ -668,23 +682,27 @@ class XtCore {
       // queue obj
       this.detail.queueOff = {};
       if (groupElements.all.length) {
-        this.detail.queueOff['elements'] = function () {
-          self.queueOff(groupElements.all, groupElements, 'elements');
+        this.detail.queueOff['elements'] = {
+          queueEls: groupElements.all,
+          groupElements: groupElements
         };
       }
       if (targets.length) {
-        this.detail.queueOff['targets'] = function () {
-          self.queueOff(targets, groupElements, 'targets');
+        this.detail.queueOff['targets'] = {
+          queueEls: targets,
+          groupElements: groupElements
         };
       }
       if (elementsInner.length) {
-        this.detail.queueOff['controls'] = function () {
-          self.queueOff(elementsInner, groupElements, 'elementsInner');
+        this.detail.queueOff['elementsInner'] = {
+          queueEls: elementsInner,
+          groupElements: groupElements
         };
       }
       if (targetsInner.length) {
-        this.detail.queueOff['targetsInner'] = function () {
-          self.queueOff(targetsInner, groupElements, 'targetsInner');
+        this.detail.queueOff['targetsInner'] = {
+          queueEls: targetsInner,
+          groupElements: groupElements
         };
       }
       // queue
@@ -692,12 +710,12 @@ class XtCore {
         // reset if queue too big
         if (self.detail.queueOffRunning[type]) {
           self.detail.queueOnRunning[type] = false;
-          //self.queueOnRun(type, true, true);
         }
         // queue running
         self.detail.queueOffRunning[type] = true;
         // queue instant
-        self.queueOffRun(type, true, queueForce, options.noQueue ? true : false);
+        console.log('off', type);
+        self.queueOffRun(type, true, queueForce, !!options.noQueue);
       }
     }
   }
@@ -705,28 +723,33 @@ class XtCore {
   /**
    * run queueOn and set done
    * @param {String} type Type of element
-   * @param {Boolean} skip Skip logic
+   * @param {Boolean} calc Do logic for change or skip with false
+   * @param {Boolean} queueForce Force change also if other queue are running
+   * @param {Boolean} force Force change
    */
-  queueOnRun(type, skip, queueForce = false, force = false) {
-    let func = this.detail.queueOn[type];
+  queueOnRun(type, calc, queueForce = false, force = false) {
+    let obj = this.detail.queueOn[type];
     let running = this.detail.queueOnRunning[type];
     let runningOther = this.detail.queueOffRunning[type];
-    if (force || (skip && func && running && (queueForce || !runningOther))) {
-      func();
+    if (force || (calc && obj && running && (queueForce || !runningOther))) {
+      this.queueOn(obj.queueEls, obj.groupElements, type);
     }
   }
 
   /**
    * run queueOff and set done
    * @param {String} type Type of element
-   * @param {Boolean} skip Skip logic
+   * @param {Boolean} calc Do logic for change or skip with false
+   * @param {Boolean} queueForce Force change also if other queue are running
+   * @param {Boolean} force Force change
    */
-  queueOffRun(type, skip, queueForce = false, force = false) {
-    let func = this.detail.queueOff[type];
+  queueOffRun(type, calc, queueForce = false, force = false) {
+    let obj = this.detail.queueOff[type];
     let running = this.detail.queueOffRunning[type];
     let runningOther = this.detail.queueOnRunning[type];
-    if (force || (skip && func && running && (queueForce || !runningOther))) {
-      func();
+    if (force || (calc && obj && running && (queueForce || !runningOther))) {
+      console.log(type, obj.queueEls, runningOther);
+      this.queueOff(obj.queueEls, obj.groupElements, type);
     }
   }
 
@@ -1451,7 +1474,7 @@ XtDrop.defaults = {
   "targets": ":scope > .drop",
   "elementsInner": ":scope > a, :scope > button",
   "class": "active",
-  "instant": {"elements": true},
+  "instant": {"elementsInner": true},
   "on": "click",
   "toggle": true,
   "min": 0,
