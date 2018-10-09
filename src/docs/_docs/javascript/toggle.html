@@ -487,7 +487,7 @@ XtOverlay.defaults = {
           color: red;
         }
 
-        .alert.class-example-0 {
+        .alert.class-example-0 > .content {
           color: red;
         }
       </style>
@@ -551,7 +551,7 @@ XtOverlay.defaults = {
           color: red;
         }
 
-        .alert.class-example-1 {
+        .alert.class-example-1 > .content {
           color: red;
         }
       </style>
@@ -809,8 +809,7 @@ XtOverlay.defaults = {
     <div class="demo-text">
       <div class="content">
         Toggle classes <code>.active</code> and <code>.out</code> set the pace of the activation/deactivation depending
-        on
-        the animations/transition they have
+        on the animations/transition they have
       </div>
     </div>
     <div class="demo-source" data-lang="html">
@@ -851,12 +850,11 @@ XtOverlay.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/toggle/toggle-timing.html"
-       data-name="timing">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/toggle/toggle-duration.html"
+       data-name="duration">
     <div class="demo-text">
       <div class="content">
-        Timing option for <code>.out</code> instead of waiting for css animation or transition: <code>"timing":
-        Milliseconds</code>
+        Force duration: <code>"durationOn": Milliseconds</code> <code>"durationOff": Milliseconds</code>
       </div>
     </div>
   </div>

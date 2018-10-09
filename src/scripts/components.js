@@ -877,6 +877,7 @@ class XtCore {
     let options = self.options;
     // deactivate
     el.classList.remove(...options.classes);
+    el.classList.remove('in');
     el.classList.add('out');
     this.queueOffAnim(el, type);
     // additionals
@@ -909,8 +910,8 @@ class XtCore {
   queueOnAnim(el, type) {
     let self = this;
     let options = self.options;
-    // onDone
-    let onDone = function () {
+    // doneAnim
+    let doneAnim = function () {
       // deactivate in
       el.classList.remove('in');
       // collapse-width and collapse-height
@@ -928,15 +929,15 @@ class XtCore {
         self.queueOffRun(type);
       }
     };
-    // delay onDone
-    let timing = Xt.animationTiming(el, options.timing);
+    // delay doneAnim
+    let duration = Xt.animDuration(el, options.durationOn);
     clearTimeout(el.dataset.xtAnimTimeout);
-    if (!timing) {
-      onDone();
+    if (!duration) {
+      doneAnim();
     } else {
       el.dataset.xtAnimTimeout = setTimeout(function () {
-        onDone(el, type);
-      }, timing).toString();
+        doneAnim(el, type);
+      }, duration).toString();
     }
   }
 
@@ -948,8 +949,8 @@ class XtCore {
   queueOffAnim(el, type) {
     let self = this;
     let options = self.options;
-    // onDone
-    let onDone = function () {
+    // doneAnim
+    let doneAnim = function () {
       el.classList.remove('out');
       // additionals
       if (type === 'elements') {
@@ -989,15 +990,15 @@ class XtCore {
         self.queueOnRun(type);
       }
     };
-    // delay onDone
-    let timing = Xt.animationTiming(el, options.timing);
+    // delay doneAnim
+    let duration = Xt.animDuration(el, options.durationOff);
     clearTimeout(el.dataset.xtAnimTimeout);
-    if (!timing) {
-      onDone();
+    if (!duration) {
+      doneAnim();
     } else {
       el.dataset.xtAnimTimeout = setTimeout(function () {
-        onDone(el, type);
-      }, timing).toString();
+        doneAnim(el, type);
+      }, duration).toString();
     }
   }
 

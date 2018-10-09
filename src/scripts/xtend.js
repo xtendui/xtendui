@@ -266,12 +266,12 @@ Xt.dataStorage = {
 };
 
 /**
- * get transition or animation timing
- * @param {Node|HTMLElement} el To be animated
- * @param {Number} timing Force timing
+ * get transition or animation duration
+ * @param {Node|HTMLElement} el Element animating
+ * @param {Number} timing Force duration
  * @returns {Number} Time in milliseconds
  */
-Xt.animationTiming = function (el, timing = null) {
+Xt.animDuration = function (el, timing = null) {
   if (timing) {
     return timing;
   } else {
