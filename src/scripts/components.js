@@ -266,7 +266,7 @@ class XtCore {
    */
   eventOffHandler(element, e) {
     let self = this;
-    Xt.requestAnimationFrame.call(window, function () { // @FIX mouseenter triggering before mouseout of another one near
+    Xt.requestAnimationFrame.call(window, function () { // @FIX mouseenter triggering before mouseout adiacent elements
       if (!e.detail || !e.detail.skip) {
         let eventLimit = self.container.querySelectorAll('.event-limit');
         if (eventLimit.length) {
@@ -645,7 +645,7 @@ class XtCore {
         // queue
         for (let type in this.detail.queueOn) {
           // queue instant
-          self.queueOnRun(type, true, queueForce, !!options.noQueue);
+          self.queueOnRun(type, queueForce, !!options.noQueue);
         }
       }
     } else if (options.toggle) {
@@ -708,7 +708,7 @@ class XtCore {
         // queue running
         self.detail.queueOffRunning[type] = true;
         // queue instant
-        self.queueOffRun(type, true, queueForce, !!options.noQueue);
+        self.queueOffRun(type, queueForce, !!options.noQueue);
       }
     }
   }
@@ -716,15 +716,14 @@ class XtCore {
   /**
    * run queueOn and set done
    * @param {String} type Type of element
-   * @param {Boolean} calc Do logic for change or skip with false
    * @param {Boolean} queueForce Force change also if other queue are running
    * @param {Boolean} force Force change
    */
-  queueOnRun(type, calc, queueForce = false, force = false) {
+  queueOnRun(type, queueForce = false, force = false) {
     let obj = this.detail.queueOn[type];
     let running = this.detail.queueOnRunning[type];
     let runningOther = this.detail.queueOffRunning[type];
-    if (force || (calc && obj && running && (queueForce || !runningOther))) {
+    if (force || (obj && running && (queueForce || !runningOther))) {
       this.queueOn(obj.queueEls, obj.groupElements, type);
     }
   }
@@ -732,15 +731,14 @@ class XtCore {
   /**
    * run queueOff and set done
    * @param {String} type Type of element
-   * @param {Boolean} calc Do logic for change or skip with false
    * @param {Boolean} queueForce Force change also if other queue are running
    * @param {Boolean} force Force change
    */
-  queueOffRun(type, calc, queueForce = false, force = false) {
+  queueOffRun(type, queueForce = false, force = false) {
     let obj = this.detail.queueOff[type];
     let running = this.detail.queueOffRunning[type];
     let runningOther = this.detail.queueOnRunning[type];
-    if (force || (calc && obj && running && (queueForce || !runningOther))) {
+    if (force || (obj && running && (queueForce || !runningOther))) {
       this.queueOff(obj.queueEls, obj.groupElements, type);
     }
   }
@@ -853,12 +851,13 @@ class XtCore {
         }
       }
     }
-    // queue running
+    // queue
     if (options.instant && options.instant[type]) {
+      // queue running
       self.detail.queueOnRunning[type] = false;
+      // queue delayed
+      this.queueOffRun(type);
     }
-    // queue delayed
-    this.queueOffRun(type, options.instant && options.instant[type]);
     // listener dispatch
     el.dispatchEvent(new CustomEvent('on', {detail: {skip: true, object: self}}));
   }
@@ -887,12 +886,13 @@ class XtCore {
         this.specialClassHtmlOff();
       }
     }
-    // queue running
+    // queue
     if (options.instant && options.instant[type]) {
+      // queue running
       self.detail.queueOffRunning[type] = false;
+      // queue delayed
+      this.queueOnRun(type);
     }
-    // queue delayed
-    this.queueOnRun(type, options.instant && options.instant[type]);
     // listener dispatch
     el.dispatchEvent(new CustomEvent('off', {detail: {skip: true, object: self}}));
   }
@@ -920,7 +920,9 @@ class XtCore {
       // queue running
       self.detail.queueOnRunning[type] = false;
       // queue after animation
-      self.queueOffRun(type, !options.instant || !options.instant[type]);
+      if (!options.instant || !options.instant[type]) {
+        self.queueOffRun(type);
+      }
     };
     // delay onDone
     let timing = Xt.animationTiming(el, options.timing);
@@ -979,7 +981,9 @@ class XtCore {
       // queue running
       self.detail.queueOffRunning[type] = false;
       // queue after animation
-      self.queueOnRun(type, !options.instant || !options.instant[type]);
+      if (!options.instant || !options.instant[type]) {
+        self.queueOnRun(type);
+      }
     };
     // delay onDone
     let timing = Xt.animationTiming(el, options.timing);
