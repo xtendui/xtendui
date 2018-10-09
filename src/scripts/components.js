@@ -647,7 +647,7 @@ class XtCore {
         // queue
         for (let type in this.detail.queueOn) {
           // queue instant
-          self.queueOnRun(type, queueForce, !!options.noQueue);
+          self.queueOnRun(type, queueForce, options.noQueue);
         }
       }
     } else if (options.toggle) {
@@ -712,7 +712,7 @@ class XtCore {
         // queue running
         self.detail.queueOffRunning[type] = true;
         // queue instant
-        self.queueOffRun(type, queueForce, !!options.noQueue);
+        self.queueOffRun(type, queueForce, options.noQueue);
       }
     }
   }
@@ -1356,7 +1356,8 @@ class XtCore {
 XtCore.defaults = {
   "auto": false,
   "autoPause": false,
-  "autoAlways": false
+  "autoAlways": false,
+  "noQueue": false
 };
 
 // export
