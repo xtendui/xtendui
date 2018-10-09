@@ -36,6 +36,8 @@ class XtCore {
       this.detail = {};
       this.detail.queueOn = {};
       this.detail.queueOff = {};
+      this.detail.queueOnRunning = {};
+      this.detail.queueOffRunning = {};
       // init
       this.initSetup();
       this.initScope();
@@ -581,7 +583,7 @@ class XtCore {
    * element on
    * @param {Node|HTMLElement} element To be activated
    */
-  eventOn(element) {
+  eventOn(element, queueForce) {
     let self = this;
     let options = self.options;
     // toggle
@@ -617,14 +619,26 @@ class XtCore {
           self.queueOn(targetsInner, groupElements, 'targetsInner');
         };
       }
+      // queue
+      for (let type in this.detail.queueOn) {
+        // reset if queue too big
+        if (self.detail.queueOnRunning[type]) {
+          self.detail.queueOffRunning[type] = false;;
+          //self.queueOffRun(type, true, true);
+        }
+        // queue running
+        self.detail.queueOnRunning[type] = true;
+      }
       // delay activation if currents > max
       let currents = this.getCurrents();
       if (currents.length > options.max) {
         // delayed activation
-        this.eventOff(currents[0]);
-      } else { // queue instant
+        this.eventOff(currents[0], true);
+      } else {
+        // queue
         for (let type in this.detail.queueOn) {
-          self.queueOnRun(type, true);
+          // queue instant
+          self.queueOnRun(type, true, queueForce, options.noQueue ? true : false);
         }
       }
     } else if (options.toggle) {
@@ -637,7 +651,7 @@ class XtCore {
    * element off
    * @param {Node|HTMLElement} element To be deactivated
    */
-  eventOff(element) {
+  eventOff(element, queueForce) {
     let self = this;
     let options = self.options;
     // toggle
@@ -673,9 +687,17 @@ class XtCore {
           self.queueOff(targetsInner, groupElements, 'targetsInner');
         };
       }
-      // queue instant
+      // queue
       for (let type in this.detail.queueOff) {
-        self.queueOffRun(type, true);
+        // reset if queue too big
+        if (self.detail.queueOffRunning[type]) {
+          self.detail.queueOnRunning[type] = false;
+          //self.queueOnRun(type, true, true);
+        }
+        // queue running
+        self.detail.queueOffRunning[type] = true;
+        // queue instant
+        self.queueOffRun(type, true, queueForce, options.noQueue ? true : false);
       }
     }
   }
@@ -685,14 +707,12 @@ class XtCore {
    * @param {String} type Type of element
    * @param {Boolean} skip Skip logic
    */
-  queueOnRun(type, skip) {
-    if (this.detail.queueOn) {
-      let func = this.detail.queueOn[type];
-      if (func && !func.done && skip) {
-        func();
-        func.done = true;
-        //console.log('on ' + type);
-      }
+  queueOnRun(type, skip, queueForce = false, force = false) {
+    let func = this.detail.queueOn[type];
+    let running = this.detail.queueOnRunning[type];
+    let runningOther = this.detail.queueOffRunning[type];
+    if (force || (skip && func && running && (queueForce || !runningOther))) {
+      func();
     }
   }
 
@@ -701,20 +721,14 @@ class XtCore {
    * @param {String} type Type of element
    * @param {Boolean} skip Skip logic
    */
-  queueOffRun(type, skip) {
-    if (this.detail.queueOff) {
-      let func = this.detail.queueOff[type];
-      if (func && !func.done && skip) {
-        func();
-        func.done = true;
-        //console.log('off ' + type);
-      }
+  queueOffRun(type, skip, queueForce = false, force = false) {
+    let func = this.detail.queueOff[type];
+    let running = this.detail.queueOffRunning[type];
+    let runningOther = this.detail.queueOnRunning[type];
+    if (force || (skip && func && running && (queueForce || !runningOther))) {
+      func();
     }
   }
-
-  //////////////////////
-  // activation
-  //////////////////////
 
   /**
    * queue on
@@ -786,8 +800,6 @@ class XtCore {
     el.classList.add('in');
     el.classList.remove('out');
     this.queueOnAnim(el, type);
-    // queue delayed
-    this.queueOffRun(type, options.instant && options.instant[type]);
     // additionals
     if (type === 'elements') {
       // aria
@@ -826,6 +838,12 @@ class XtCore {
         }
       }
     }
+    // queue running
+    if (options.instant && options.instant[type]) {
+      self.detail.queueOnRunning[type] = false;
+    }
+    // queue delayed
+    this.queueOffRun(type, options.instant && options.instant[type]);
     // listener dispatch
     el.dispatchEvent(new CustomEvent('on', {detail: {skip: true, object: self}}));
   }
@@ -843,8 +861,6 @@ class XtCore {
     el.classList.remove(...options.classes);
     el.classList.add('out');
     this.queueOffAnim(el, type);
-    // queue delayed
-    this.queueOnRun(type, options.instant && options.instant[type]);
     // additionals
     if (type === 'targets' || type === 'targetsInner') {
       // special
@@ -856,6 +872,12 @@ class XtCore {
         this.specialClassHtmlOff();
       }
     }
+    // queue running
+    if (options.instant && options.instant[type]) {
+      self.detail.queueOffRunning[type] = false;
+    }
+    // queue delayed
+    this.queueOnRun(type, options.instant && options.instant[type]);
     // listener dispatch
     el.dispatchEvent(new CustomEvent('off', {detail: {skip: true, object: self}}));
   }
@@ -880,6 +902,8 @@ class XtCore {
       if (style.getPropertyValue('--collapse-width')) {
         el.style.width = 'auto';
       }
+      // queue running
+      self.detail.queueOnRunning[type] = false;
       // queue after animation
       self.queueOffRun(type, !options.instant || !options.instant[type]);
     };
@@ -937,6 +961,8 @@ class XtCore {
           }
         }
       }
+      // queue running
+      self.detail.queueOffRunning[type] = false;
       // queue after animation
       self.queueOnRun(type, !options.instant || !options.instant[type]);
     };
