@@ -265,16 +265,19 @@ class XtCore {
    * @param {Event} e
    */
   eventOffHandler(element, e) {
-    if (!e.detail || !e.detail.skip) {
-      let eventLimit = this.container.querySelectorAll('.event-limit');
-      if (eventLimit.length) {
-        if (Xt.checkOutside(e, eventLimit)) {
-          this.eventOff(element);
+    let self = this;
+    Xt.requestAnimationFrame.call(window, function () { // @FIX mouseenter triggering before mouseout of another one near
+      if (!e.detail || !e.detail.skip) {
+        let eventLimit = self.container.querySelectorAll('.event-limit');
+        if (eventLimit.length) {
+          if (Xt.checkOutside(e, eventLimit)) {
+            self.eventOff(element);
+          }
+        } else {
+          self.eventOff(element);
         }
-      } else {
-        this.eventOff(element);
       }
-    }
+    });
   }
 
   /**
@@ -626,18 +629,9 @@ class XtCore {
       }
       // queue
       for (let type in this.detail.queueOn) {
-        // reset if queue too big
+        // reset other queue if queue too big
         if (self.detail.queueOnRunning[type]) {
           self.detail.queueOffRunning[type] = false;
-          /*
-          let queueDeactivate = self.detail.queueOff[type];
-          if (queueDeactivate && queueDeactivate.queueEls) {
-            for (let queueEl of queueDeactivate.queueEls) {
-              self.specialCollapseOff(queueEl);
-              self.queueOffDelay(queueEl, groupElements, type);
-            }
-          }
-          */
         }
         // queue running
         self.detail.queueOnRunning[type] = true;
@@ -707,14 +701,13 @@ class XtCore {
       }
       // queue
       for (let type in this.detail.queueOff) {
-        // reset if queue too big
+        // reset other queue if queue too big
         if (self.detail.queueOffRunning[type]) {
           self.detail.queueOnRunning[type] = false;
         }
         // queue running
         self.detail.queueOffRunning[type] = true;
         // queue instant
-        console.log('off', type);
         self.queueOffRun(type, true, queueForce, !!options.noQueue);
       }
     }
@@ -748,7 +741,6 @@ class XtCore {
     let running = this.detail.queueOffRunning[type];
     let runningOther = this.detail.queueOnRunning[type];
     if (force || (calc && obj && running && (queueForce || !runningOther))) {
-      console.log(type, obj.queueEls, runningOther);
       this.queueOff(obj.queueEls, obj.groupElements, type);
     }
   }
