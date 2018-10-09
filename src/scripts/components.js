@@ -2239,7 +2239,7 @@ class XtFade extends XtCore {
 
 XtFade.defaults = {
   "elements": ".fade",
-  "class": "in",
+  "class": "active",
   "on": "scroll resize",
   "min": 0,
   "max": Infinity,
