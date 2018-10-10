@@ -28,7 +28,7 @@ a, .alink, .btn-link {
   position: relative;
   vertical-align: middle;
   z-index: @index-base; // fix ::before negative z-index
-    &:hover, &.hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active {
     z-index: @index-active;
   }
   &.out {
@@ -64,7 +64,7 @@ a, .alink, .btn-link {
       z-index: @index-drop - 1;
     }
   }
-  // conent
+  // content
   > .xt-backdrop, > .drop {
     .display(none);
   }
