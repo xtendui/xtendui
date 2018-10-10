@@ -515,7 +515,9 @@ class XtCore {
    */
   checkOn(element) {
     // check
-    return (!element.classList.contains(...this.options.classes) || element.classList.contains('delay-off')) && !element.classList.contains('delay-on');
+    return (!element.classList.contains('block-on')) &&
+      (!element.classList.contains(...this.options.classes) || element.classList.contains('block-off')) ||
+      (element.classList.contains('queue-off') || !element.classList.contains('queue-on'));
   }
 
   /**
@@ -524,13 +526,14 @@ class XtCore {
    * @returns {Boolean} If eventOff changes activation
    */
   checkOff(element) {
-    // skip if currents < min
-    let todo = this.options.min - this.getCurrents().length;
-    if (!todo) {
+    // skip if min >= currents
+    if (this.options.min - this.getCurrents().length >= 0) {
       return false;
     }
     // check
-    return (element.classList.contains(...this.options.classes) || element.classList.contains('delay-on')) && !element.classList.contains('delay-off');
+    return (!element.classList.contains('block-off')) &&
+      (element.classList.contains(...this.options.classes) || element.classList.contains('block-on')) ||
+      (element.classList.contains('queue-on') || !element.classList.contains('queue-off'));
   }
 
   /**
@@ -585,9 +588,8 @@ class XtCore {
   /**
    * element on
    * @param {Node|HTMLElement} element To be activated
-   * @param {Boolean} queueForce Force change also if other queue are running
    */
-  eventOn(element, queueForce = false) {
+  eventOn(element) {
     let self = this;
     let options = self.options;
     // toggle
@@ -596,11 +598,6 @@ class XtCore {
       let targets = this.getTargets(element);
       let elementsInner = this.getInside(element, options.elementsInner);
       let targetsInner = this.getInside(targets, options.targetsInner);
-      // on
-      this.specialOnActivate = false;
-      this.addCurrent(groupElements.single);
-      this.setIndexAndDirection(element);
-      this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // queue obj
       this.detail.queueOn = {};
       if (groupElements.all.length) {
@@ -627,27 +624,34 @@ class XtCore {
           groupElements: groupElements
         };
       }
-      // queue
+      // on
+      this.specialOnActivate = false;
+      groupElements.single.classList.add('queue-on');
+      this.addCurrent(groupElements.single);
+      this.setIndexAndDirection(element);
+      this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
+      // REMOVE
+      let c = this.getCurrents();
+      //console.log('on', element.getAttribute('id'), c);
+      // reset other queue if queue too big
       for (let type in this.detail.queueOff) {
-        // reset other queue if queue too big
         if (self.detail.queueOnRunning[type]) {
           self.detail.queueOffRunning[type] = false;
         }
       }
+      // queue running
       for (let type in this.detail.queueOn) {
-        // queue running
         self.detail.queueOnRunning[type] = true;
       }
       // delay activation if currents > max
       let currents = this.getCurrents();
       if (currents.length > options.max) {
         // delayed activation
-        this.eventOff(currents[0], true);
+        this.eventOff(currents[0]);
       } else {
-        // queue
+        // queue instant
         for (let type in this.detail.queueOn) {
-          // queue instant
-          self.queueOnRun(type, queueForce, options.noQueue);
+          self.queueOnRun(type, options.noQueue, true);
         }
       }
     } else if (options.toggle) {
@@ -659,9 +663,8 @@ class XtCore {
   /**
    * element off
    * @param {Node|HTMLElement} element To be deactivated
-   * @param {Boolean} queueForce Force change also if other queue are running
    */
-  eventOff(element, queueForce = false) {
+  eventOff(element) {
     let self = this;
     let options = self.options;
     // toggle
@@ -670,11 +673,6 @@ class XtCore {
       let targets = this.getTargets(element);
       let elementsInner = this.getInside(element, options.elementsInner);
       let targetsInner = this.getInside(targets, options.targetsInner);
-      // off
-      this.specialOffDeactivate = false;
-      this.specialOffAnimate = false;
-      this.removeCurrent(groupElements.single);
-      this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // queue obj
       this.detail.queueOff = {};
       if (groupElements.all.length) {
@@ -701,49 +699,81 @@ class XtCore {
           groupElements: groupElements
         };
       }
-      // queue
+      // off
+      this.specialOffDeactivate = false;
+      this.specialOffAnimate = false;
+      groupElements.single.classList.add('queue-off');
+      this.removeCurrent(groupElements.single);
+      this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
+      // REMOVE
+      let c = this.getCurrents();
+      //console.log('off', element.getAttribute('id'), c);
+      // reset other queue if queue too big
       for (let type in this.detail.queueOn) {
-        // reset other queue if queue too big
         if (self.detail.queueOffRunning[type]) {
           self.detail.queueOnRunning[type] = false;
         }
       }
+      // queue running
       for (let type in this.detail.queueOff) {
-        // queue running
         self.detail.queueOffRunning[type] = true;
         // queue instant
-        self.queueOffRun(type, queueForce, options.noQueue);
+        self.queueOffRun(type, options.noQueue, true);
       }
+    } else {
+      //console.log('off NOT', element);
     }
   }
 
   /**
    * run queueOn and set done
    * @param {String} type Type of element
-   * @param {Boolean} queueForce Force change also if other queue are running
    * @param {Boolean} force Force change
+   * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOnRun(type, queueForce = false, force = false) {
+  queueOnRun(type, force = false, queueInitial = false) {
     let obj = this.detail.queueOn[type];
     let running = this.detail.queueOnRunning[type];
     let runningOther = this.detail.queueOffRunning[type];
-    if (force || (obj && running && (queueForce || !runningOther))) {
-      this.queueOn(obj.queueEls, obj.groupElements, type);
+    if (force || (obj && running && (queueInitial || !runningOther))) {
+      obj.done = true;
+      this.queueOn(obj.queueEls, obj.groupElements, type, queueInitial);
+      // complete queue
+      let allDone = true;
+      for (let type in this.detail.queueOn) {
+        if (!this.detail.queueOn[type].done) {
+          allDone = true;
+        }
+      }
+      if (allDone) {
+        obj.groupElements.single.classList.remove('queue-on');
+      }
     }
   }
 
   /**
    * run queueOff and set done
    * @param {String} type Type of element
-   * @param {Boolean} queueForce Force change also if other queue are running
    * @param {Boolean} force Force change
+   * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOffRun(type, queueForce = false, force = false) {
+  queueOffRun(type, force = false, queueInitial = false) {
     let obj = this.detail.queueOff[type];
     let running = this.detail.queueOffRunning[type];
     let runningOther = this.detail.queueOnRunning[type];
-    if (force || (obj && running && (queueForce || !runningOther))) {
-      this.queueOff(obj.queueEls, obj.groupElements, type);
+    if (force || (obj && running && (queueInitial || !runningOther))) {
+      obj.done = true;
+      this.queueOff(obj.queueEls, obj.groupElements, type, queueInitial);
+      // complete queue
+      let allDone = true;
+      for (let type in this.detail.queueOff) {
+        if (!this.detail.queueOff[type].done) {
+          allDone = true;
+        }
+      }
+      if (allDone) {
+        obj.groupElements.single.classList.remove('queue-off');
+      }
     }
   }
 
@@ -752,23 +782,27 @@ class XtCore {
    * @param {NodeList|Array} els Elements to be activated
    * @param {Object} groupElements
    * @param {String} type Type of elements
+   * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOn(els, groupElements, type) {
+  queueOn(els, groupElements, type, queueInitial) {
     let self = this;
     let options = self.options;
     // delay
     for (let el of els) {
       if (!el.classList.contains(...this.options.classes)) { // queue check each element
-        el.classList.remove('delay-on', 'delay-off');
+        el.classList.remove('block-on', 'block-off');
         clearTimeout(el.dataset.xtDelayTimeout);
         clearTimeout(el.dataset.xtAnimTimeout);
-        let delay = el.dataset.xtOnDelay || options.delayOn;
+        let delay = parseFloat(el.dataset.xtOnDelay) || options.delayOn || 0;
+        if (options.queueOn) {
+          delay += queueInitial ? 0 : options.queueOn;
+        }
         if (delay) {
-          el.classList.add('delay-on');
+          el.classList.add('block-on');
           el.dataset.xtDelayTimeout = setTimeout(function (el, groupElements, type) {
-            el.classList.remove('delay-on');
             self.queueOnDelay(el, groupElements, type);
-          }, parseFloat(delay), el, groupElements, type).toString();
+            el.classList.remove('block-on');
+          }, delay, el, groupElements, type).toString();
         } else {
           self.queueOnDelay(el, groupElements, type);
         }
@@ -781,23 +815,27 @@ class XtCore {
    * @param {NodeList|Array} els Elements to be deactivated
    * @param {Object} groupElements
    * @param {String} type Type of elements
+   * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOff(els, groupElements, type) {
+  queueOff(els, groupElements, type, queueInitial) {
     let self = this;
     let options = self.options;
     // delay
     for (let el of els) {
       if (el.classList.contains(...this.options.classes)) { // queue check each element
-        el.classList.remove('delay-on', 'delay-off');
+        el.classList.remove('block-on', 'block-off');
         clearTimeout(el.dataset.xtDelayTimeout);
         clearTimeout(el.dataset.xtAnimTimeout);
-        let delay = el.dataset.xtOffDelay || options.delayOff;
+        let delay = parseFloat(el.dataset.xtOffDelay) || options.delayOff || 0;
+        if (options.queueOff) {
+          delay += queueInitial ? 0 : options.queueOff;
+        }
         if (delay) {
-          el.classList.add('delay-off');
+          el.classList.add('block-off');
           el.dataset.xtDelayTimeout = setTimeout(function (el, groupElements, type) {
-            el.classList.remove('delay-off');
             self.queueOffDelay(el, groupElements, type);
-          }, parseFloat(delay), el, groupElements, type).toString();
+            el.classList.remove('block-off');
+          }, delay, el, groupElements, type).toString();
         } else {
           self.queueOffDelay(el, groupElements, type);
         }
@@ -858,7 +896,7 @@ class XtCore {
       }
     }
     // queue
-    if (options.instant && options.instant[type]) {
+    if (options.noDuration && options.noDuration[type]) {
       // queue running
       self.detail.queueOnRunning[type] = false;
       // queue delayed
@@ -894,7 +932,7 @@ class XtCore {
       }
     }
     // queue
-    if (options.instant && options.instant[type]) {
+    if (options.noDuration && options.noDuration[type]) {
       // queue running
       self.detail.queueOffRunning[type] = false;
       // queue delayed
@@ -927,7 +965,7 @@ class XtCore {
       // queue running
       self.detail.queueOnRunning[type] = false;
       // queue after animation
-      if (!options.instant || !options.instant[type]) {
+      if (!options.noDuration || !options.noDuration[type]) {
         self.queueOffRun(type);
       }
     };
@@ -988,7 +1026,7 @@ class XtCore {
       // queue running
       self.detail.queueOffRunning[type] = false;
       // queue after animation
-      if (!options.instant || !options.instant[type]) {
+      if (!options.noDuration || !options.noDuration[type]) {
         self.queueOnRun(type);
       }
     };
@@ -1356,13 +1394,15 @@ class XtCore {
 // default
 
 XtCore.defaults = {
+  "auto": false,
   "autoPause": false,
   "autoAlways": false,
   "durationOn": false,
   "durationOff": false,
   "delayOn": false,
   "delayOff": false,
-  "auto": false,
+  "queueOn": false,
+  "queueOff": false,
   "noQueue": false
 };
 
@@ -1423,11 +1463,11 @@ XtToggle.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
   "class": "active",
-  "instant": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
   "max": 1,
+  "noDuration": {"elements": true},
   "aria": true
 };
 
@@ -1482,11 +1522,11 @@ XtDrop.defaults = {
   "targets": ":scope > .drop",
   "elementsInner": ":scope > a, :scope > button",
   "class": "active",
-  "instant": {"elementsInner": true},
   "on": "click",
   "toggle": true,
   "min": 0,
   "max": 1,
+  "noDuration": {"elementsInner": true},
   "closeOutside": "body",
   "aria": true,
   "ariaControls": ":scope > a, :scope > button"
@@ -1544,11 +1584,11 @@ XtOverlay.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > .overlay-outer",
   "class": "active",
-  "instant": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
   "max": 1,
+  "noDuration": {"elements": true},
   "appendTo": "body",
   "backdrop": "targets",
   "classHtml": "xt-overlay",
@@ -1611,27 +1651,27 @@ class XtSlider extends XtCore {
     let options = self.options;
     if (!e.button || e.button !== 2) { // not right click or it gets stuck
       //if (!this.checkAnim(Xt.arrSingle(target))) { // @TODO
-        // save event
-        this.detail.eInit = e;
-        // logic
-        let eventLimit = this.container.querySelectorAll('.event-limit');
-        if (eventLimit.length) {
-          if (Xt.checkOutside(e, eventLimit)) {
-            this.eventDragStart(target, e);
-          }
-        } else {
+      // save event
+      this.detail.eInit = e;
+      // logic
+      let eventLimit = this.container.querySelectorAll('.event-limit');
+      if (eventLimit.length) {
+        if (Xt.checkOutside(e, eventLimit)) {
           this.eventDragStart(target, e);
         }
-        // auto
-        if (options.autoPause) {
-          this.autoPause();
-        }
-        // event off
-        let dragEndHandler = Xt.dataStorage.put(window, 'dragEndHandler', self.eventDragEndHandler.bind(self).bind(self, target));
-        let eventsOff = ['mouseup', 'touchend'];
-        for (let event of eventsOff) {
-          window.addEventListener(event, dragEndHandler);
-        }
+      } else {
+        this.eventDragStart(target, e);
+      }
+      // auto
+      if (options.autoPause) {
+        this.autoPause();
+      }
+      // event off
+      let dragEndHandler = Xt.dataStorage.put(window, 'dragEndHandler', self.eventDragEndHandler.bind(self).bind(self, target));
+      let eventsOff = ['mouseup', 'touchend'];
+      for (let event of eventsOff) {
+        window.addEventListener(event, dragEndHandler);
+      }
       //}
     }
   }
@@ -1645,25 +1685,25 @@ class XtSlider extends XtCore {
     let self = this;
     let options = self.options;
     //if (!this.checkAnim(Xt.arrSingle(target))) { // @TODO
-      // logic
-      let eventLimit = this.container.querySelectorAll('.event-limit');
-      if (eventLimit.length) {
-        if (Xt.checkOutside(e, eventLimit)) {
-          this.eventDragEnd(target, e);
-        }
-      } else {
+    // logic
+    let eventLimit = this.container.querySelectorAll('.event-limit');
+    if (eventLimit.length) {
+      if (Xt.checkOutside(e, eventLimit)) {
         this.eventDragEnd(target, e);
       }
-      // auto
-      if (options.autoPause) {
-        this.autoPause();
-      }
-      // event off
-      let dragEndHandler = Xt.dataStorage.get(window, 'dragEndHandler');
-      let eventsOff = ['mouseup', 'touchend'];
-      for (let event of eventsOff) {
-        window.removeEventListener(event, dragEndHandler);
-      }
+    } else {
+      this.eventDragEnd(target, e);
+    }
+    // auto
+    if (options.autoPause) {
+      this.autoPause();
+    }
+    // event off
+    let dragEndHandler = Xt.dataStorage.get(window, 'dragEndHandler');
+    let eventsOff = ['mouseup', 'touchend'];
+    for (let event of eventsOff) {
+      window.removeEventListener(event, dragEndHandler);
+    }
     //}
   }
 
@@ -1731,10 +1771,10 @@ XtSlider.defaults = {
   "elements": ".slide-control",
   "targets": ":scope > .slides > .slide",
   "class": "active",
-  //"instant": {"elements": true}, @TODO
   "on": "click",
   "min": 1,
   "max": 1,
+  "noDuration": {"elements": true},
   "drag": false,
   "dragThreshold": 100,
   "aria": true

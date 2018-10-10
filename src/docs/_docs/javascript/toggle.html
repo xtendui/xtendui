@@ -49,7 +49,7 @@ XtToggle.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
   "class": "active",
-  "instant": {"elements": true},
+  "noDuration": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -86,7 +86,7 @@ XtDrop.defaults = {
   "targets": ":scope > .drop",
   "controls": ":scope > a, :scope > button",
   "class": "active",
-  "instant": {"elements": true},
+  "noDuration": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -123,7 +123,7 @@ XtOverlay.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > .overlay-outer",
   "class": "active",
-  "instant": {"elements": true},
+  "noDuration": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -831,16 +831,25 @@ XtOverlay.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/toggle/toggle-instant.html"
-       data-name="instant">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/toggle/toggle-queue.html"
+       data-name="queue">
     <div class="demo-text">
       <div class="content">
-        For instant activation/deactivation use <code>"instant": {"elements": true, "targets": true,
+        To add a delay on queue (so on consequential activations) use <code>"queueOn": Milliseconds</code> <code>"queueOff":
+        Milliseconds</code>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/toggle/toggle-instant.html"
+       data-name="noDuration">
+    <div class="demo-text">
+      <div class="content">
+        To disable automatic duration use <code>"noDuration": {"elements": true, "targets": true,
         "elementsInner": true, "targetsInner": true}</code>
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/toggle/toggle-queue.html"
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/toggle/toggle-noqueue.html"
        data-name="noQueue">
     <div class="demo-text">
       <div class="content">
