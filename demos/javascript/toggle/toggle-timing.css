@@ -1,1 +1,0 @@
-.alert.out{animation-name:anim-out;animation-fill-mode:forwards;opacity:.5}@keyframes anim-out{0%{opacity:1;transform:translateX(0)}100%{opacity:.5;transform:translateX(1.5rem)}}

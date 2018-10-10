@@ -19,14 +19,14 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
 
     <!-- styles -->
-    <link rel="stylesheet" href="/assets/styles/demo.css?v=0.5.4" />
-    <link rel="stylesheet" href="toggle-out.css?v=0.5.4" />
+    <link rel="stylesheet" href="/assets/styles/demo.css?v=0.5.5" />
+    <link rel="stylesheet" href="toggle-out.css?v=0.5.5" />
     
     <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.5.4"></script>
+    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.5.5"></script>
     <script src="/assets/scripts/polyfill.min.js"></script>
-    <script src="/assets/scripts/xtend.min.js?v=0.5.4"></script>
+    <script src="/assets/scripts/xtend.min.js?v=0.5.5"></script>
 
     <!-- demo scripts -->
     <script src="/assets/scripts/ResizeSensor.min.js"></script>
@@ -37,7 +37,7 @@
 
     <div id="body-outer">
 <div id="body-inner" class="demo-source-from">
-<div class="list list-space-small align-items-center" data-xt-toggle='{"min":1}'>
+<div class="list list-space-small align-items-center" data-xt-toggle>
   <button type="button" class="btn">
     <span>Toggle 0</span>
   </button>
@@ -92,21 +92,9 @@
   }
   &.out {
     animation-duration: @time-giant;
-    animation-name: anim-out;
-    opacity: .5;
   }
 }
-
-@keyframes anim-out {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: .5;
-    transform: translateX(@anim-medium);
-  }
-}</less-style>
+</less-style>
     
 
     

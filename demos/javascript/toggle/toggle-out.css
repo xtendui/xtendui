@@ -1,1 +1,1 @@
-.alert.active{animation-duration:1.2s}.alert.out{animation-duration:1.2s;animation-name:anim-out;opacity:.5}@keyframes anim-out{0%{opacity:1;transform:translateX(0)}100%{opacity:.5;transform:translateX(1.5rem)}}
+.alert.active{animation-duration:1.2s}.alert.out{animation-duration:1.2s}
