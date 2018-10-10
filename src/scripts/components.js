@@ -515,7 +515,7 @@ class XtCore {
    */
   checkOn(element) {
     // check
-    return (!element.classList.contains(...this.options.classes) || element.classList.contains('off-block')) && !element.classList.contains('on-block');
+    return (!element.classList.contains(...this.options.classes) || element.classList.contains('delay-off')) && !element.classList.contains('delay-on');
   }
 
   /**
@@ -530,7 +530,7 @@ class XtCore {
       return false;
     }
     // check
-    return (element.classList.contains(...this.options.classes) || element.classList.contains('on-block')) && !element.classList.contains('off-block');
+    return (element.classList.contains(...this.options.classes) || element.classList.contains('delay-on')) && !element.classList.contains('delay-off');
   }
 
   /**
@@ -755,17 +755,18 @@ class XtCore {
    */
   queueOn(els, groupElements, type) {
     let self = this;
+    let options = self.options;
     // delay
     for (let el of els) {
       if (!el.classList.contains(...this.options.classes)) { // queue check each element
-        el.classList.remove('on-block', 'off-block');
+        el.classList.remove('delay-on', 'delay-off');
         clearTimeout(el.dataset.xtDelayTimeout);
         clearTimeout(el.dataset.xtAnimTimeout);
-        let delay = el.dataset.xtOnDelay;
+        let delay = el.dataset.xtOnDelay || options.delayOn;
         if (delay) {
-          el.classList.add('on-block');
+          el.classList.add('delay-on');
           el.dataset.xtDelayTimeout = setTimeout(function (el, groupElements, type) {
-            el.classList.remove('on-block');
+            el.classList.remove('delay-on');
             self.queueOnDelay(el, groupElements, type);
           }, parseFloat(delay), el, groupElements, type).toString();
         } else {
@@ -783,17 +784,18 @@ class XtCore {
    */
   queueOff(els, groupElements, type) {
     let self = this;
+    let options = self.options;
     // delay
     for (let el of els) {
       if (el.classList.contains(...this.options.classes)) { // queue check each element
-        el.classList.remove('on-block', 'off-block');
+        el.classList.remove('delay-on', 'delay-off');
         clearTimeout(el.dataset.xtDelayTimeout);
         clearTimeout(el.dataset.xtAnimTimeout);
-        let delay = el.dataset.xtOffDelay;
+        let delay = el.dataset.xtOffDelay || options.delayOff;
         if (delay) {
-          el.classList.add('off-block');
+          el.classList.add('delay-off');
           el.dataset.xtDelayTimeout = setTimeout(function (el, groupElements, type) {
-            el.classList.remove('off-block');
+            el.classList.remove('delay-off');
             self.queueOffDelay(el, groupElements, type);
           }, parseFloat(delay), el, groupElements, type).toString();
         } else {
@@ -1354,9 +1356,13 @@ class XtCore {
 // default
 
 XtCore.defaults = {
-  "auto": false,
   "autoPause": false,
   "autoAlways": false,
+  "durationOn": false,
+  "durationOff": false,
+  "delayOn": false,
+  "delayOff": false,
+  "auto": false,
   "noQueue": false
 };
 
