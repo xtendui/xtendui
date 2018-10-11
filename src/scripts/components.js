@@ -509,6 +509,14 @@ class XtCore {
   }
 
   /**
+   * if element is in current (so shared between Xt objects)
+   * @param {Node|HTMLElement} element To be checked
+   */
+  hasCurrent(element) {
+    return Xt.currents[this.namespace].filter(x => x === element).length;
+  }
+
+  /**
    * check element on
    * @param {Node|HTMLElement} element To be checked
    * @returns {Boolean} If eventOn changes activation
@@ -593,7 +601,7 @@ class XtCore {
     let self = this;
     let options = self.options;
     // toggle
-    if (this.checkOn(element)) {
+    if (!this.hasCurrent(element)) {
       let groupElements = this.getElements(element);
       let targets = this.getTargets(element);
       let elementsInner = this.getInside(element, options.elementsInner);
@@ -630,9 +638,6 @@ class XtCore {
       this.addCurrent(groupElements.single);
       this.setIndexAndDirection(element);
       this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
-      // REMOVE
-      let c = this.getCurrents();
-      //console.log('on', element.getAttribute('id'), c);
       // reset other queue if queue too big
       for (let type in this.detail.queueOff) {
         if (self.detail.queueOnRunning[type]) {
@@ -668,7 +673,7 @@ class XtCore {
     let self = this;
     let options = self.options;
     // toggle
-    if (this.checkOff(element)) {
+    if (this.hasCurrent(element)) {
       let groupElements = this.getElements(element);
       let targets = this.getTargets(element);
       let elementsInner = this.getInside(element, options.elementsInner);
@@ -705,9 +710,6 @@ class XtCore {
       groupElements.single.classList.add('queue-off');
       this.removeCurrent(groupElements.single);
       this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
-      // REMOVE
-      let c = this.getCurrents();
-      //console.log('off', element.getAttribute('id'), c);
       // reset other queue if queue too big
       for (let type in this.detail.queueOn) {
         if (self.detail.queueOffRunning[type]) {
@@ -721,7 +723,7 @@ class XtCore {
         self.queueOffRun(type, options.noQueue, true);
       }
     } else {
-      //console.log('off NOT', element);
+      console.log('off NOT', element);
     }
   }
 
@@ -742,11 +744,12 @@ class XtCore {
       let allDone = true;
       for (let type in this.detail.queueOn) {
         if (!this.detail.queueOn[type].done) {
-          allDone = true;
+          allDone = false;
         }
       }
       if (allDone) {
         obj.groupElements.single.classList.remove('queue-on');
+        console.log('on done', obj.groupElements.single);
       }
     }
   }
@@ -773,6 +776,7 @@ class XtCore {
       }
       if (allDone) {
         obj.groupElements.single.classList.remove('queue-off');
+        console.log('off done', obj.groupElements.single);
       }
     }
   }
