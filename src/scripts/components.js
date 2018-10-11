@@ -601,11 +601,16 @@ class XtCore {
     let self = this;
     let options = self.options;
     // toggle
-    if (!this.hasCurrent(element)) {
-      let groupElements = this.getElements(element);
+    let groupElements = this.getElements(element);
+    if (!this.hasCurrent(groupElements.single)) {
+      // on
+      this.specialOnActivate = false;
+      this.addCurrent(groupElements.single);
+      this.setIndexAndDirection(element);
       let targets = this.getTargets(element);
       let elementsInner = this.getInside(element, options.elementsInner);
       let targetsInner = this.getInside(targets, options.targetsInner);
+      this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // queue obj
       this.detail.queueOn = {};
       if (groupElements.all.length) {
@@ -632,16 +637,20 @@ class XtCore {
           groupElements: groupElements
         };
       }
-      // on
-      this.specialOnActivate = false;
-      groupElements.single.classList.add('queue-on');
-      this.addCurrent(groupElements.single);
-      this.setIndexAndDirection(element);
-      this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // reset other queue if queue too big
       for (let type in this.detail.queueOff) {
         if (self.detail.queueOnRunning[type]) {
           self.detail.queueOffRunning[type] = false;
+          let obj = self.detail.queueOff[type];
+          console.log('queueOff', obj.queueEls);
+          /*
+          for (let el of obj.queueEls) {
+            clearTimeout(el.dataset.xtDelayTimeout);
+            clearTimeout(el.dataset.xtAnimTimeout);
+            self.queueOffStart(el, obj.groupElements, type, true);
+            self.queueOffDone(el, type, true);
+          }
+          */
         }
       }
       // queue running
@@ -656,7 +665,7 @@ class XtCore {
       } else {
         // queue instant
         for (let type in this.detail.queueOn) {
-          self.queueOnRun(type, options.noQueue, true);
+          self.queueOn(type, options.noQueue, true);
         }
       }
     } else if (options.toggle) {
@@ -673,11 +682,16 @@ class XtCore {
     let self = this;
     let options = self.options;
     // toggle
-    if (this.hasCurrent(element)) {
-      let groupElements = this.getElements(element);
+    let groupElements = this.getElements(element);
+    if (this.hasCurrent(groupElements.single)) {
+      // off
+      this.specialOffDeactivate = false;
+      this.specialOffAnimate = false;
+      this.removeCurrent(groupElements.single);
       let targets = this.getTargets(element);
       let elementsInner = this.getInside(element, options.elementsInner);
       let targetsInner = this.getInside(targets, options.targetsInner);
+      this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // queue obj
       this.detail.queueOff = {};
       if (groupElements.all.length) {
@@ -704,43 +718,46 @@ class XtCore {
           groupElements: groupElements
         };
       }
-      // off
-      this.specialOffDeactivate = false;
-      this.specialOffAnimate = false;
-      groupElements.single.classList.add('queue-off');
-      this.removeCurrent(groupElements.single);
-      this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // reset other queue if queue too big
       for (let type in this.detail.queueOn) {
         if (self.detail.queueOffRunning[type]) {
           self.detail.queueOnRunning[type] = false;
+          let obj = self.detail.queueOn[type];
+          //console.log('queueOn', obj.queueEls);
+          /*
+          for (let el of obj.queueEls) {
+            clearTimeout(el.dataset.xtDelayTimeout);
+            clearTimeout(el.dataset.xtAnimTimeout);
+            self.queueOnStart(el, obj.groupElements, type, true);
+            self.queueOnDone(el, type, true);
+          }
+          */
         }
       }
       // queue running
       for (let type in this.detail.queueOff) {
         self.detail.queueOffRunning[type] = true;
         // queue instant
-        self.queueOffRun(type, options.noQueue, true);
+        self.queueOff(type, options.noQueue, true);
       }
-    } else {
-      console.log('off NOT', element);
     }
   }
 
   /**
-   * run queueOn and set done
+   * queue on
    * @param {String} type Type of element
    * @param {Boolean} force Force change
    * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOnRun(type, force = false, queueInitial = false) {
+  queueOn(type, force = false, queueInitial = false) {
     let obj = this.detail.queueOn[type];
     let running = this.detail.queueOnRunning[type];
     let runningOther = this.detail.queueOffRunning[type];
     if (force || (obj && running && (queueInitial || !runningOther))) {
-      obj.done = true;
-      this.queueOn(obj.queueEls, obj.groupElements, type, queueInitial);
+      //obj.done = true;
+      this.queueOnDelay(obj.queueEls, obj.groupElements, type, queueInitial);
       // complete queue
+      /*
       let allDone = true;
       for (let type in this.detail.queueOn) {
         if (!this.detail.queueOn[type].done) {
@@ -748,26 +765,27 @@ class XtCore {
         }
       }
       if (allDone) {
-        obj.groupElements.single.classList.remove('queue-on');
         console.log('on done', obj.groupElements.single);
       }
+      */
     }
   }
 
   /**
-   * run queueOff and set done
+   * queue off
    * @param {String} type Type of element
    * @param {Boolean} force Force change
    * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOffRun(type, force = false, queueInitial = false) {
+  queueOff(type, force = false, queueInitial = false) {
     let obj = this.detail.queueOff[type];
     let running = this.detail.queueOffRunning[type];
     let runningOther = this.detail.queueOnRunning[type];
     if (force || (obj && running && (queueInitial || !runningOther))) {
-      obj.done = true;
-      this.queueOff(obj.queueEls, obj.groupElements, type, queueInitial);
+      //obj.done = true;
+      this.queueOffDelay(obj.queueEls, obj.groupElements, type, queueInitial);
       // complete queue
+      /*
       let allDone = true;
       for (let type in this.detail.queueOff) {
         if (!this.detail.queueOff[type].done) {
@@ -775,26 +793,25 @@ class XtCore {
         }
       }
       if (allDone) {
-        obj.groupElements.single.classList.remove('queue-off');
         console.log('off done', obj.groupElements.single);
       }
+      */
     }
   }
 
   /**
-   * queue on
+   * queue on delay
    * @param {NodeList|Array} els Elements to be activated
    * @param {Object} groupElements
    * @param {String} type Type of elements
    * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOn(els, groupElements, type, queueInitial) {
+  queueOnDelay(els, groupElements, type, queueInitial) {
     let self = this;
     let options = self.options;
     // delay
     for (let el of els) {
       if (!el.classList.contains(...this.options.classes)) { // queue check each element
-        el.classList.remove('block-on', 'block-off');
         clearTimeout(el.dataset.xtDelayTimeout);
         clearTimeout(el.dataset.xtAnimTimeout);
         let delay = parseFloat(el.dataset.xtOnDelay) || options.delayOn || 0;
@@ -802,32 +819,29 @@ class XtCore {
           delay += queueInitial ? 0 : options.queueOn;
         }
         if (delay) {
-          el.classList.add('block-on');
           el.dataset.xtDelayTimeout = setTimeout(function (el, groupElements, type) {
-            self.queueOnDelay(el, groupElements, type);
-            el.classList.remove('block-on');
+            self.queueOnStart(el, groupElements, type);
           }, delay, el, groupElements, type).toString();
         } else {
-          self.queueOnDelay(el, groupElements, type);
+          self.queueOnStart(el, groupElements, type);
         }
       }
     }
   }
 
   /**
-   * queue off
+   * queue off delay
    * @param {NodeList|Array} els Elements to be deactivated
    * @param {Object} groupElements
    * @param {String} type Type of elements
    * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOff(els, groupElements, type, queueInitial) {
+  queueOffDelay(els, groupElements, type, queueInitial) {
     let self = this;
     let options = self.options;
     // delay
     for (let el of els) {
       if (el.classList.contains(...this.options.classes)) { // queue check each element
-        el.classList.remove('block-on', 'block-off');
         clearTimeout(el.dataset.xtDelayTimeout);
         clearTimeout(el.dataset.xtAnimTimeout);
         let delay = parseFloat(el.dataset.xtOffDelay) || options.delayOff || 0;
@@ -835,32 +849,30 @@ class XtCore {
           delay += queueInitial ? 0 : options.queueOff;
         }
         if (delay) {
-          el.classList.add('block-off');
           el.dataset.xtDelayTimeout = setTimeout(function (el, groupElements, type) {
-            self.queueOffDelay(el, groupElements, type);
-            el.classList.remove('block-off');
+            self.queueOffStart(el, groupElements, type);
           }, delay, el, groupElements, type).toString();
         } else {
-          self.queueOffDelay(el, groupElements, type);
+          self.queueOffStart(el, groupElements, type);
         }
       }
     }
   }
 
   /**
-   * queue on delay
+   * queue on start
    * @param {Node|HTMLElement} el Elements to be deactivated
    * @param {Object} groupElements
    * @param {String} type Type of elements
+   * @param {Boolean} skipQueue If continue queue
    */
-  queueOnDelay(el, groupElements, type) {
+  queueOnStart(el, groupElements, type, skipQueue = false) {
     let self = this;
     let options = self.options;
     // activate
     el.classList.add(...options.classes);
     el.classList.add('in');
-    el.classList.remove('out');
-    this.queueOnAnim(el, type);
+    el.classList.remove('out'); // @TODO REMOVE
     // additionals
     if (type === 'elements') {
       // aria
@@ -900,30 +912,33 @@ class XtCore {
       }
     }
     // queue
-    if (options.noDuration && options.noDuration[type]) {
-      // queue running
-      self.detail.queueOnRunning[type] = false;
-      // queue delayed
-      this.queueOffRun(type);
+    if (!skipQueue) {
+      this.queueOnAnim(el, type);
+      if (options.noDuration && options.noDuration[type]) {
+        // queue running
+        self.detail.queueOnRunning[type] = false;
+        // queue delayed
+        this.queueOff(type);
+      }
     }
     // listener dispatch
     el.dispatchEvent(new CustomEvent('on', {detail: {skip: true, object: self}}));
   }
 
   /**
-   * queue off delay
+   * queue off start
    * @param {Node|HTMLElement} el Elements to be deactivated
    * @param {Object} groupElements
    * @param {String} type Type of elements
+   * @param {Boolean} skipQueue If continue queue
    */
-  queueOffDelay(el, groupElements, type) {
+  queueOffStart(el, groupElements, type, skipQueue = false) {
     let self = this;
     let options = self.options;
     // deactivate
     el.classList.remove(...options.classes);
     el.classList.remove('in');
     el.classList.add('out');
-    this.queueOffAnim(el, type);
     // additionals
     if (type === 'targets' || type === 'targetsInner') {
       // special
@@ -936,113 +951,139 @@ class XtCore {
       }
     }
     // queue
-    if (options.noDuration && options.noDuration[type]) {
-      // queue running
-      self.detail.queueOffRunning[type] = false;
-      // queue delayed
-      this.queueOnRun(type);
+    if (!skipQueue) {
+      this.queueOffAnim(el, type);
+      if (options.noDuration && options.noDuration[type]) {
+        // queue running
+        self.detail.queueOffRunning[type] = false;
+        // queue delayed
+        this.queueOn(type);
+      }
     }
     // listener dispatch
     el.dispatchEvent(new CustomEvent('off', {detail: {skip: true, object: self}}));
   }
 
   /**
-   * queue on animation
+   * queue on anim
    * @param {Node|HTMLElement} el Element to be animated
    * @param {String} type Type of element
    */
   queueOnAnim(el, type) {
     let self = this;
     let options = self.options;
-    // doneAnim
-    let doneAnim = function () {
-      // deactivate in
-      el.classList.remove('in');
-      // collapse-width and collapse-height
-      let style = getComputedStyle(el);
-      if (style.getPropertyValue('--collapse-height')) {
-        el.style.height = 'auto';
-      }
-      if (style.getPropertyValue('--collapse-width')) {
-        el.style.width = 'auto';
-      }
-      // queue running
-      self.detail.queueOnRunning[type] = false;
-      // queue after animation
-      if (!options.noDuration || !options.noDuration[type]) {
-        self.queueOffRun(type);
-      }
-    };
-    // delay doneAnim
+    // anim
     let duration = Xt.animDuration(el, options.durationOn);
     clearTimeout(el.dataset.xtAnimTimeout);
     if (!duration) {
-      doneAnim();
+      self.queueOnDone(el, type);
     } else {
       el.dataset.xtAnimTimeout = setTimeout(function () {
-        doneAnim(el, type);
+        self.queueOnDone(el, type);
       }, duration).toString();
     }
   }
 
   /**
-   * queue off animation
+   * queue off anim
    * @param {Node|HTMLElement} el Element to be animated
    * @param {String} type Type of element
    */
   queueOffAnim(el, type) {
     let self = this;
     let options = self.options;
-    // doneAnim
-    let doneAnim = function () {
-      el.classList.remove('out');
-      // additionals
-      if (type === 'elements') {
-        // aria
-        if (options.aria) {
-          let ariaEls = self.getInside(el, options.ariaControls);
-          let ariaEl = ariaEls.length ? ariaEls[0] : el;
-          ariaEl.setAttribute('aria-selected', 'false');
+    // anim
+    let duration = Xt.animDuration(el, options.durationOff);
+    clearTimeout(el.dataset.xtAnimTimeout);
+    if (!duration) {
+      self.queueOffDone(el, type);
+    } else {
+      el.dataset.xtAnimTimeout = setTimeout(function () {
+        self.queueOffDone(el, type);
+      }, duration).toString();
+    }
+  }
+
+  /**
+   * queue on done
+   * @param {Node|HTMLElement} el Element to be animated
+   * @param {String} type Type of element
+   * @param {Boolean} skipQueue If continue queue
+   */
+  queueOnDone(el, type, skipQueue = false) {
+    let self = this;
+    let options = self.options;
+    // reset
+    el.classList.remove('in');
+    // collapse-width and collapse-height
+    let style = getComputedStyle(el);
+    if (style.getPropertyValue('--collapse-height')) {
+      el.style.height = 'auto';
+    }
+    if (style.getPropertyValue('--collapse-width')) {
+      el.style.width = 'auto';
+    }
+    // queue
+    if (!skipQueue) {
+      // queue running
+      self.detail.queueOnRunning[type] = false;
+      // queue after animation
+      if (!options.noDuration || !options.noDuration[type]) {
+        self.queueOff(type);
+      }
+    }
+  }
+
+  /**
+   * queue off done
+   * @param {Node|HTMLElement} el Element to be animated
+   * @param {String} type Type of element
+   * @param {Boolean} skipQueue If continue queue
+   */
+  queueOffDone(el, type, skipQueue = false) {
+    let self = this;
+    let options = self.options;
+    // reset
+    el.classList.remove('out');
+    // additionals
+    if (type === 'elements') {
+      // aria
+      if (options.aria) {
+        let ariaEls = self.getInside(el, options.ariaControls);
+        let ariaEl = ariaEls.length ? ariaEls[0] : el;
+        ariaEl.setAttribute('aria-selected', 'false');
+      }
+    }
+    if (type === 'targets') {
+      // aria
+      if (options.aria) {
+        let role = el.getAttribute('role');
+        if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
+          el.setAttribute('aria-expanded', 'false');
         }
       }
-      if (type === 'targets') {
-        // aria
+      // special one time
+      if (!self.specialOffAnimate) {
+        self.specialOffAnimate = true;
+        self.specialScrollbarOff();
+        // focus
         if (options.aria) {
-          let role = el.getAttribute('role');
-          if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
-            el.setAttribute('aria-expanded', 'false');
-          }
-        }
-        // special one time
-        if (!self.specialOffAnimate) {
-          self.specialOffAnimate = true;
-          self.specialScrollbarOff();
-          // focus
-          if (options.aria) {
-            if (options.scrollbar) {
-              Xt.focusBlock = false;
-              Xt.focusLimitOff();
-              Xt.focus.focus();
-            }
+          if (options.scrollbar) {
+            Xt.focusBlock = false;
+            Xt.focusLimitOff();
+            Xt.focus.focus();
           }
         }
       }
+    }
+    // queue
+    if (!skipQueue) {
       // queue running
       self.detail.queueOffRunning[type] = false;
       // queue after animation
       if (!options.noDuration || !options.noDuration[type]) {
-        self.queueOnRun(type);
+        self.queueOn(type);
       }
-    };
-    // delay doneAnim
-    let duration = Xt.animDuration(el, options.durationOff);
-    clearTimeout(el.dataset.xtAnimTimeout);
-    if (!duration) {
-      doneAnim();
-    } else {
-      el.dataset.xtAnimTimeout = setTimeout(function () {
-        doneAnim(el, type);
-      }, duration).toString();
     }
   }
 
