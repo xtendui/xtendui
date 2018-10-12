@@ -264,7 +264,7 @@ class XtCore {
    */
   eventOffHandler(element, e) {
     let self = this;
-    //Xt.requestAnimationFrame.call(window, function () { // @FIX mouseenter triggering before mouseout adiacent elements
+    //Xt.requestAnimationFrame.call(window, function () { // @FIX mouseenter triggering before mouseleave adiacent elements
     if (!e.detail || !e.detail.skip) {
       let eventLimit = self.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
@@ -612,34 +612,44 @@ class XtCore {
       // if currents > max first deactivate old
       let currents = this.getCurrents();
       if (currents.length > options.max) {
+        let obj = this.detail.queueOn.pop();
+        for (let type in obj) {
+          for (let el of obj[type].queueEls) {
+            clearTimeout(el.dataset.xtDelayTimeout);
+            clearTimeout(el.dataset.xtAnimTimeout);
+            self.queueOffStart(el, obj[type].groupElements, type, true);
+            self.queueOffAnimDone(el, type, true);
+          }
+        }
         this.eventOff(currents[0]);
       }
       // queue obj
-      this.detail.queueOn.push({});
+      let obj = {};
       if (groupElements.all.length) {
-        this.detail.queueOn[0]['elements'] = {
+        obj['elements'] = {
           queueEls: groupElements.all,
           groupElements: groupElements
         };
       }
       if (targets.length) {
-        this.detail.queueOn[0]['targets'] = {
+        obj['targets'] = {
           queueEls: targets,
           groupElements: groupElements
         };
       }
       if (elementsInner.length) {
-        this.detail.queueOn[0]['elementsInner'] = {
+        obj['elementsInner'] = {
           queueEls: elementsInner,
           groupElements: groupElements
         };
       }
       if (targetsInner.length) {
-        this.detail.queueOn[0]['targetsInner'] = {
+        obj['targetsInner'] = {
           queueEls: targetsInner,
           groupElements: groupElements
         };
       }
+      this.detail.queueOn.push(obj);
       // reset other queue if queue too big
       if (this.detail.queueOff.length > 1) {
         let obj = this.detail.queueOff.pop();
@@ -647,18 +657,14 @@ class XtCore {
           for (let el of obj[type].queueEls) {
             clearTimeout(el.dataset.xtDelayTimeout);
             clearTimeout(el.dataset.xtAnimTimeout);
-            self.queueOffStart(el, obj.groupElements, type, true);
+            self.queueOffStart(el, obj[type].groupElements, type, true);
             self.queueOffAnimDone(el, type, true);
-            //this.queueOnDone(type, index);
           }
         }
       }
       // queue instant
-      console.log('onevent offqueue', this.detail.queueOff, this.detail.queueOff.length);
-      if (!this.detail.queueOff.length) {
-        for (let type in this.detail.queueOn[0]) {
-          self.queueOn(type, options.noQueue, true);
-        }
+      for (let type in this.detail.queueOn[0]) {
+        self.queueOn(type, options.noQueue, true);
       }
     } else if (options.toggle) {
       // off
@@ -685,31 +691,32 @@ class XtCore {
       let targetsInner = this.getInside(targets, options.targetsInner);
       this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // queue obj
-      this.detail.queueOff.push({});
+      let obj = {};
       if (groupElements.all.length) {
-        this.detail.queueOff[0]['elements'] = {
+        obj['elements'] = {
           queueEls: groupElements.all,
           groupElements: groupElements
         };
       }
       if (targets.length) {
-        this.detail.queueOff[0]['targets'] = {
+        obj['targets'] = {
           queueEls: targets,
           groupElements: groupElements
         };
       }
       if (elementsInner.length) {
-        this.detail.queueOff[0]['elementsInner'] = {
+        obj['elementsInner'] = {
           queueEls: elementsInner,
           groupElements: groupElements
         };
       }
       if (targetsInner.length) {
-        this.detail.queueOff[0]['targetsInner'] = {
+        obj['targetsInner'] = {
           queueEls: targetsInner,
           groupElements: groupElements
         };
       }
+      this.detail.queueOff.push(obj);
       // reset other queue if queue too big
       if (this.detail.queueOn.length > 1) {
         let obj = this.detail.queueOn.pop();
@@ -717,17 +724,14 @@ class XtCore {
           for (let el of obj[type].queueEls) {
             clearTimeout(el.dataset.xtDelayTimeout);
             clearTimeout(el.dataset.xtAnimTimeout);
-            self.queueOnStart(el, obj.groupElements, type, true);
+            self.queueOnStart(el, obj[type].groupElements, type, true);
             self.queueOnAnimDone(el, type, true);
           }
         }
       }
       // queue instant
-      console.log('offevent onqueue', this.detail.queueOn, this.detail.queueOn.length);
-      if (!this.detail.queueOn.length) {
-        for (let type in this.detail.queueOff[0]) {
-          self.queueOff(type, options.noQueue, true);
-        }
+      for (let type in this.detail.queueOff[0]) {
+        self.queueOff(type, options.noQueue);
       }
     }
   }
@@ -741,8 +745,8 @@ class XtCore {
   queueOn(type, force = false, queueInitial = false) {
     let item = this.detail.queueOn[0];
     let itemOther = this.detail.queueOff[0];
-    if (force || (item && item[type] && !item[type].done && (!itemOther || !itemOther[type] || queueInitial || itemOther[type].done))) {
-      //console.log(item[type].groupElements.single);
+    if (force || (item && item[type] && !item[type].done && (!itemOther || !itemOther[type] || itemOther[type].done))) {
+      //console.log('on', type, item, item[type].groupElements.single);
       this.queueOnDelay(item[type].queueEls, item[type].groupElements, type, queueInitial);
     }
   }
@@ -756,7 +760,8 @@ class XtCore {
   queueOff(type, force = false, queueInitial = false) {
     let item = this.detail.queueOff[0];
     let itemOther = this.detail.queueOn[0];
-    if (force || (item && item[type] && !item[type].done && (!itemOther || !itemOther[type] || queueInitial || itemOther[type].done))) {
+    if (force || (item && item[type] && !item[type].done && (!itemOther || !itemOther[type] || itemOther[type].done))) {
+      //console.log('off', type, itemOther, itemOther[type].groupElements.single);
       this.queueOffDelay(item[type].queueEls, item[type].groupElements, type, queueInitial);
     }
   }
@@ -769,6 +774,8 @@ class XtCore {
     let obj = this.detail.queueOn[0];
     if (obj && obj[type]) {
       obj[type].done = true;
+      this.queueOff(type);
+      // all done
       let allDone = true;
       for (let type in obj) {
         if (!obj[type].done) {
@@ -791,6 +798,9 @@ class XtCore {
     let obj = this.detail.queueOff[0];
     if (obj && obj[type]) {
       obj[type].done = true;
+      //console.log(type, this.detail.queueOn[0][type].groupElements.single);
+      this.queueOn(type);
+      // all done
       let allDone = true;
       for (let type in obj) {
         if (!obj[type].done) {
@@ -817,7 +827,6 @@ class XtCore {
     let options = self.options;
     // delay
     for (let el of els) {
-      //if (!el.classList.contains(...this.options.classes)) { // queue check each element
       clearTimeout(el.dataset.xtDelayTimeout);
       clearTimeout(el.dataset.xtAnimTimeout);
       let delay = parseFloat(el.dataset.xtOnDelay) || options.delayOn || 0;
@@ -831,7 +840,6 @@ class XtCore {
       } else {
         self.queueOnStart(el, groupElements, type);
       }
-      //}
     }
   }
 
@@ -847,7 +855,6 @@ class XtCore {
     let options = self.options;
     // delay
     for (let el of els) {
-      //if (el.classList.contains(...this.options.classes)) { // queue check each element
       clearTimeout(el.dataset.xtDelayTimeout);
       clearTimeout(el.dataset.xtAnimTimeout);
       let delay = parseFloat(el.dataset.xtOffDelay) || options.delayOff || 0;
@@ -861,7 +868,6 @@ class XtCore {
       } else {
         self.queueOffStart(el, groupElements, type);
       }
-      //}
     }
   }
 
@@ -878,7 +884,6 @@ class XtCore {
     // activate
     el.classList.add(...options.classes);
     el.classList.add('in');
-    el.classList.remove('out'); // @TODO REMOVE
     // additionals
     if (type === 'elements') {
       // aria
@@ -923,8 +928,6 @@ class XtCore {
       if (options.noDuration && options.noDuration[type]) {
         // queue running
         this.queueOnDone(type);
-        // queue delayed
-        this.queueOff(type);
       }
     }
     // listener dispatch
@@ -962,8 +965,7 @@ class XtCore {
       if (options.noDuration && options.noDuration[type]) {
         // queue running
         this.queueOffDone(type);
-        // queue delayed
-        this.queueOn(type);
+        //console.log(type, this.detail.queueOn[0][type].groupElements.single);
       }
     }
     // listener dispatch
@@ -1033,10 +1035,6 @@ class XtCore {
     if (!skipQueue) {
       // queue running
       this.queueOnDone(type);
-      // queue after animation
-      if (!options.noDuration || !options.noDuration[type]) {
-        self.queueOff(type);
-      }
     }
   }
 
@@ -1086,10 +1084,6 @@ class XtCore {
     if (!skipQueue) {
       // queue running
       this.queueOffDone(type);
-      // queue after animation
-      if (!options.noDuration || !options.noDuration[type]) {
-        self.queueOn(type);
-      }
     }
   }
 
