@@ -649,7 +649,11 @@ class XtCore {
           groupElements: groupElements
         };
       }
-      this.detail.queueOn.push(obj);
+      if (options.noQueue) {
+        this.detail.queueOn = [obj]
+      } else {
+        this.detail.queueOn.push(obj);
+      }
       // reset other queue if queue too big
       if (this.detail.queueOff.length > 1) {
         let o = this.detail.queueOff.pop();
@@ -681,7 +685,7 @@ class XtCore {
     let options = self.options;
     // toggle
     let groupElements = this.getElements(element);
-    if (this.hasCurrent(groupElements.single)) {
+    if (this.hasCurrent(groupElements.single) && this.options.min - this.getCurrents().length < 0) {
       // off
       this.specialOffDeactivate = false;
       this.specialOffAnimate = false;
@@ -716,7 +720,11 @@ class XtCore {
           groupElements: groupElements
         };
       }
-      this.detail.queueOff.push(obj);
+      if (options.noQueue) {
+        this.detail.queueOff = [obj]
+      } else {
+        this.detail.queueOff.push(obj);
+      }
       // reset other queue if queue too big
       if (this.detail.queueOn.length > 1) {
         let o = this.detail.queueOn.pop();
@@ -731,7 +739,7 @@ class XtCore {
       }
       // queue instant
       for (let type in this.detail.queueOff[0]) {
-        self.queueOff(type, options.noQueue);
+        self.queueOff(type, options.noQueue, true);
       }
     }
   }
@@ -743,11 +751,11 @@ class XtCore {
    * @param {Boolean} queueInitial If it's the initial queue
    */
   queueOn(type, force = false, queueInitial = false) {
-    let item = this.detail.queueOn[0];
-    let itemOther = this.detail.queueOff[0];
-    if (force || (item && item[type] && !item[type].done && (!itemOther || !itemOther[type] || itemOther[type].done))) {
-      //console.log('on', type, item, item[type].groupElements.single);
-      this.queueOnDelay(item[type].queueEls, item[type].groupElements, type, queueInitial);
+    let obj = this.detail.queueOn[0];
+    let objOther = this.detail.queueOff[0];
+    if (force || (obj && obj[type] && !obj[type].done && (!objOther || !objOther[type] || objOther[type].done))) {
+      //console.log('on', type, obj, obj[type].groupElements.single);
+      this.queueOnDelay(obj[type].queueEls, obj[type].groupElements, type, queueInitial);
     }
   }
 
@@ -758,11 +766,11 @@ class XtCore {
    * @param {Boolean} queueInitial If it's the initial queue
    */
   queueOff(type, force = false, queueInitial = false) {
-    let item = this.detail.queueOff[0];
-    let itemOther = this.detail.queueOn[0];
-    if (force || (item && item[type] && !item[type].done && (!itemOther || !itemOther[type] || itemOther[type].done))) {
-      //console.log('off', type, itemOther, itemOther[type].groupElements.single);
-      this.queueOffDelay(item[type].queueEls, item[type].groupElements, type, queueInitial);
+    let obj = this.detail.queueOff[0];
+    let objOther = this.detail.queueOn[0];
+    if (force || (obj && obj[type] && !obj[type].done && (!objOther || !objOther[type] || objOther[type].done))) {
+      //console.log('off', type, obj, obj[type].groupElements.single);
+      this.queueOffDelay(obj[type].queueEls, obj[type].groupElements, type, queueInitial);
     }
   }
 

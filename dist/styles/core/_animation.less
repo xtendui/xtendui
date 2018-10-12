@@ -41,6 +41,7 @@ transition-delay: 0ms; // @start - @child * @decrement
 .collapse-height {
   overflow: hidden;
   height: 0;
+  will-change: height;
   // custom property
   --collapse-height: true;
   > * {
@@ -51,6 +52,7 @@ transition-delay: 0ms; // @start - @child * @decrement
 .collapse-width {
   overflow: hidden;
   width: 0;
+  will-change: width;
   // custom property
   --collapse-width: true;
   > * {
