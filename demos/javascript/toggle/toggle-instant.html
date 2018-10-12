@@ -38,7 +38,52 @@
     <div id="body-outer">
 <div id="body-inner" class="demo-source-from">
 <div class="list list-space-small align-items-center"
-     data-xt-toggle='{"min":1, "instant": {"elements": true, "targets": true, "additional": true}}'>
+     data-xt-toggle='{"noDuration": {"elements": true, "targets": true}}'>
+  <button type="button" class="btn">
+    <span>Toggle 0</span>
+  </button>
+  <button type="button" class="btn">
+    <span>Toggle 1</span>
+  </button>
+  <button type="button" class="btn">
+    <span>Toggle 2</span>
+  </button>
+  <div class="alert toggle-block">
+    <div class="content">
+      Target 0
+      <div class="alert toggle-block">
+        <div class="content">
+          Nested not toggled
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="alert toggle-block">
+    <div class="content">
+      Target 1
+      <div class="alert toggle-block">
+        <div class="content">
+          Nested not toggled
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="alert toggle-block">
+    <div class="content">
+      Target 2
+      <div class="alert toggle-block">
+        <div class="content">
+          Nested not toggled
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>With mouse events</h3>
+
+<div class="list list-space-small align-items-center"
+     data-xt-toggle='{"on": "mouseenter", "off": "mouseleave", "noDuration": {"elements": true, "targets": true}}'>
   <button type="button" class="btn">
     <span>Toggle 0</span>
   </button>

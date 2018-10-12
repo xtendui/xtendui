@@ -20,7 +20,7 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="/assets/styles/demo.css?v=0.5.5" />
-    <link rel="stylesheet" href="toggle-duration.css?v=0.5.5" />
+    <link rel="stylesheet" href="toggle-automatic.css?v=0.5.5" />
     
     <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
@@ -37,7 +37,7 @@
 
     <div id="body-outer">
 <div id="body-inner" class="demo-source-from">
-<div class="list list-space-small align-items-center" data-xt-toggle='{"durationOn": 1000, "durationOff": 1000}'>
+<div class="list list-space-small align-items-center" data-xt-toggle>
   <button type="button" class="btn">
     <span>Toggle 0</span>
   </button>
@@ -81,7 +81,7 @@
 
 <h3>With mouse events</h3>
 
-<div class="list list-space-small align-items-center" data-xt-toggle='{"on": "mouseenter", "off": "mouseleave", "durationOn": 1000, "durationOff": 1000}'>
+<div class="list list-space-small align-items-center" data-xt-toggle='{"on": "mouseenter", "off": "mouseleave"}'>
   <button type="button" class="btn">
     <span>Toggle 0</span>
   </button>
@@ -128,6 +128,16 @@
 
     
     <less-style>@import (reference) "../../../../../dist/styles/xtend.less";
+
+.alert {
+  // animations
+  &.active {
+    animation-duration: @time-giant;
+  }
+  &.out {
+    animation-duration: @time-giant;
+  }
+}
 
 .in {
   > * {

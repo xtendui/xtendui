@@ -153,7 +153,8 @@
 
               <div class="site-breadcrumbs-body flex flex-space-none"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
-                   "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave"}'>
+                   "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave",
+                   "noQueue": true, "noDuration": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true}}'>
                 
                 
 
@@ -599,7 +600,7 @@ XtToggle.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
   "class": "active",
-  "instant": {"elements": true},
+  "noDuration": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -636,7 +637,7 @@ XtDrop.defaults = {
   "targets": ":scope > .drop",
   "controls": ":scope > a, :scope > button",
   "class": "active",
-  "instant": {"elements": true},
+  "noDuration": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -673,7 +674,7 @@ XtOverlay.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > .overlay-outer",
   "class": "active",
-  "instant": {"elements": true},
+  "noDuration": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -1213,7 +1214,7 @@ XtOverlay.defaults = {
     </div>
   </div>
 </div>
-
+<!--
 <h3>Auto</h3>
 
 <p>You can set automatic activation with <code>"auto": Milliseconds</code> and <code>"autoPause": Milliseconds</code> on
@@ -1351,52 +1352,16 @@ XtOverlay.defaults = {
     </div>
   </div>
 </div>
-
-<h2>Animation</h2>
+-->
+<h3>Timing</h3>
 
 <div class="demo">
-  <div class="demo-item demo-preview" data-name="css">
+  <div class="demo-item" data-iframe="/demos/javascript/toggle/toggle-automatic.html"
+       data-name="automatic">
     <div class="demo-text">
       <div class="content">
-        Toggle classes <code>.active</code> and <code>.out</code> set the pace of the activation/deactivation depending
-        on the animations/transition they have
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div class="list list-space-small align-items-center" data-xt-toggle>
-        <button type="button" class="btn">
-          <span>anim-opacity</span>
-        </button>
-        <button type="button" class="btn">
-          <span>anim-vertical</span>
-        </button>
-        <button type="button" class="btn">
-          <span>no-anim</span>
-        </button>
-        <div class="alert toggle-block anim-opacity">
-          <div class="content">
-            Target 0
-          </div>
-        </div>
-        <div class="alert toggle-block anim-vertical">
-          <div class="content">
-            Target 1
-          </div>
-        </div>
-        <div class="alert toggle-block no-anim">
-          <div class="content">
-            Target 2
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item" data-iframe="/demos/javascript/toggle/toggle-out.html"
-       data-name="out">
-    <div class="demo-text">
-      <div class="content">
-        Activation automatically waits for the <strong>targets</strong> <code>.out</code> css animation or transition to
-        finish before adding <code>.active</code> class to new targets
+        Activation/deactivation automatically waits for the <strong>duration</strong> of animations and transitions on
+        <code>.active</code> and <code>.out</code>
       </div>
     </div>
   </div>
@@ -1404,15 +1369,42 @@ XtOverlay.defaults = {
        data-name="duration">
     <div class="demo-text">
       <div class="content">
-        Force duration: <code>"durationOn": Milliseconds</code> <code>"durationOff": Milliseconds</code>
+        To set duration (if you are animating by js for example) use <code>"durationOn": Milliseconds</code> <code>"durationOff":
+        Milliseconds</code>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="/demos/javascript/toggle/toggle-delay.html"
+       data-name="delay">
+    <div class="demo-text">
+      <div class="content">
+        To add a delay before duration use <code>"delayOn": Milliseconds</code> <code>"delayOff": Milliseconds</code>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="/demos/javascript/toggle/toggle-queue.html"
+       data-name="queue">
+    <div class="demo-text">
+      <div class="content">
+        To add a delay on queue (so on consequential activations) use <code>"queueOn": Milliseconds</code> <code>"queueOff":
+        Milliseconds</code>
       </div>
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/toggle/toggle-instant.html"
-       data-name="instant">
+       data-name="noDuration">
     <div class="demo-text">
       <div class="content">
-        Options for not waiting: <code>"instant": {"elements": true, "targets": true, "additional": true}</code>
+        To disable automatic duration use <code>"noDuration": {"elements": true, "targets": true,
+        "elementsInner": true, "targetsInner": true}</code>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="/demos/javascript/toggle/toggle-noqueue.html"
+       data-name="noQueue">
+    <div class="demo-text">
+      <div class="content">
+        To disable activation/deactivation queue use <code>"noQueue": true</code>
       </div>
     </div>
   </div>

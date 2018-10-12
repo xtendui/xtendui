@@ -20,7 +20,7 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="/assets/styles/demo.css?v=0.5.5" />
-    <link rel="stylesheet" href="toggle-out.css?v=0.5.5" />
+    <link rel="stylesheet" href="toggle-queue.css?v=0.5.5" />
     
     <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
@@ -37,7 +37,51 @@
 
     <div id="body-outer">
 <div id="body-inner" class="demo-source-from">
-<div class="list list-space-small align-items-center" data-xt-toggle>
+<div class="list list-space-small align-items-center" data-xt-toggle='{"queueOn": 500, "queueOff": 500}'>
+  <button type="button" class="btn">
+    <span>Toggle 0</span>
+  </button>
+  <button type="button" class="btn">
+    <span>Toggle 1</span>
+  </button>
+  <button type="button" class="btn">
+    <span>Toggle 2</span>
+  </button>
+  <div class="alert toggle-block">
+    <div class="content">
+      Target 0
+      <div class="alert toggle-block">
+        <div class="content">
+          Nested not toggled
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="alert toggle-block">
+    <div class="content">
+      Target 1
+      <div class="alert toggle-block">
+        <div class="content">
+          Nested not toggled
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="alert toggle-block">
+    <div class="content">
+      Target 2
+      <div class="alert toggle-block">
+        <div class="content">
+          Nested not toggled
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>With mouse events</h3>
+
+<div class="list list-space-small align-items-center" data-xt-toggle='{"on": "mouseenter", "off": "mouseleave", "queueOn": 500, "queueOff": 500}'>
   <button type="button" class="btn">
     <span>Toggle 0</span>
   </button>
@@ -85,13 +129,15 @@
     
     <less-style>@import (reference) "../../../../../dist/styles/xtend.less";
 
-.alert {
-  // animations
-  &.active {
-    animation-duration: @time-giant;
+.in {
+  > * {
+    color: green !important;
   }
-  &.out {
-    animation-duration: @time-giant;
+}
+
+.out {
+  > * {
+    color: red !important;
   }
 }
 </less-style>
