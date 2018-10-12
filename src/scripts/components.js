@@ -188,6 +188,12 @@ class XtCore {
   initEvents() {
     let self = this;
     let options = self.options;
+    // toggle
+    if (!options.off) {
+      options.toggle = true;
+    } else {
+      options.toggle = false;
+    }
     // events
     for (let el of this.elements) {
       // event on
@@ -816,7 +822,6 @@ class XtCore {
     if (obj[type]) {
       obj[type].done = true;
       //console.log('on done', type);
-      this.queueOff(type);
       // all done
       let allDone = true;
       for (let type in obj) {
@@ -825,7 +830,7 @@ class XtCore {
         }
       }
       if (allDone) {
-        console.log('ondone', this.detail.queueOn, this.detail.queueOn[0][type].groupElements.single);
+        console.log('ondone', this.detail.queueOn[0], this.detail.queueOn[0][type].groupElements.single);
         this.detail.queueOn.shift();
         //this.detail.queueOn = []; // @TODO
         /*
@@ -846,6 +851,8 @@ class XtCore {
         //console.log('on done', obj[type].groupElements.single);
         //this.detail.queueOn = [];
       }
+      // queue run other
+      this.queueOff(type);
     }
   }
 
@@ -860,7 +867,6 @@ class XtCore {
     if (obj[type]) {
       obj[type].done = true;
       //console.log('off done', type);
-      this.queueOn(type);
       // all done
       let allDone = true;
       for (let type in obj) {
@@ -869,7 +875,7 @@ class XtCore {
         }
       }
       if (allDone) {
-        console.log('offdone', this.detail.queueOff, this.detail.queueOff[0][type].groupElements.single);
+        console.log('offdone', this.detail.queueOff[0], this.detail.queueOff[0][type].groupElements.single);
         this.detail.queueOff.shift();
         //this.detail.queueOff = []; // @TODO
         /*
@@ -890,6 +896,8 @@ class XtCore {
         //console.log('off done', obj[type].groupElements.single);
         //this.detail.queueOff = [];
       }
+      // queue run other
+      this.queueOn(type);
     }
   }
 
@@ -1595,7 +1603,6 @@ XtToggle.defaults = {
   "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
   "class": "active",
   "on": "click",
-  "toggle": true,
   "min": 0,
   "max": 1,
   "durationNone": {"elements": true},
@@ -1654,7 +1661,6 @@ XtDrop.defaults = {
   "elementsInner": ":scope > a, :scope > button",
   "class": "active",
   "on": "click",
-  "toggle": true,
   "min": 0,
   "max": 1,
   "durationNone": {"elementsInner": true},
@@ -1716,7 +1722,6 @@ XtOverlay.defaults = {
   "targets": ":scope > .overlay-outer",
   "class": "active",
   "on": "click",
-  "toggle": true,
   "min": 0,
   "max": 1,
   "durationNone": {"elements": true},
