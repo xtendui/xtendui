@@ -609,18 +609,12 @@ class XtCore {
       let elementsInner = this.getInside(element, options.elementsInner);
       let targetsInner = this.getInside(targets, options.targetsInner);
       this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
-      // if currents > max first deactivate old
+      // if currents > max
       let currents = this.getCurrents();
       if (currents.length > options.max) {
-        let o = this.detail.queueOn.pop();
-        for (let type in o) {
-          for (let el of o[type].queueEls) {
-            clearTimeout(el.dataset.xtDelayTimeout);
-            clearTimeout(el.dataset.xtAnimTimeout);
-            self.queueOffStart(el, o[type].groupElements, type, true);
-            self.queueOffAnimDone(el, type, true);
-          }
-        }
+        // pop queue and end
+        this.queueOffEnd(this.detail.queueOn.pop());
+        // deactivate old
         this.eventOff(currents[0]);
       }
       // queue obj
@@ -649,26 +643,28 @@ class XtCore {
           groupElements: groupElements
         };
       }
-      if (options.noQueue) {
+      if (options.queueNone) {
         this.detail.queueOn = [obj]
       } else {
         this.detail.queueOn.push(obj);
       }
-      // reset other queue if queue too big
-      if (this.detail.queueOff.length > 1) {
-        let o = this.detail.queueOff.pop();
-        for (let type in o) {
-          for (let el of o[type].queueEls) {
-            clearTimeout(el.dataset.xtDelayTimeout);
-            clearTimeout(el.dataset.xtAnimTimeout);
-            self.queueOffStart(el, o[type].groupElements, type, true);
-            self.queueOffAnimDone(el, type, true);
-          }
+      // if queue too big
+      /*
+      if (this.detail.queueOn.length > 1) {
+        if (this.detail.queueOn[0]['elements'].groupElements.single === this.detail.queueOn[1]['elements'].groupElements.single) {
+          // pop queue and end
+          this.queueOnEnd(this.detail.queueOn.pop());
+          console.log('ccc');
         }
+      }
+      */
+      if (this.detail.queueOff.length > 1) {
+        // pop queue and end
+        this.queueOffEnd(this.detail.queueOff.pop()); // @TODO
       }
       // queue instant
       for (let type in this.detail.queueOn[0]) {
-        self.queueOn(type, options.noQueue, true);
+        self.queueOn(type, true);
       }
     } else if (options.toggle) {
       // off
@@ -720,26 +716,62 @@ class XtCore {
           groupElements: groupElements
         };
       }
-      if (options.noQueue) {
+      if (options.queueNone) {
         this.detail.queueOff = [obj]
       } else {
         this.detail.queueOff.push(obj);
       }
-      // reset other queue if queue too big
-      if (this.detail.queueOn.length > 1) {
-        let o = this.detail.queueOn.pop();
-        for (let type in o) {
-          for (let el of o[type].queueEls) {
-            clearTimeout(el.dataset.xtDelayTimeout);
-            clearTimeout(el.dataset.xtAnimTimeout);
-            self.queueOnStart(el, o[type].groupElements, type, true);
-            self.queueOnAnimDone(el, type, true);
-          }
+      // if queue too big
+      /*
+      if (this.detail.queueOff.length > 1) {
+        if (this.detail.queueOff[0]['elements'].groupElements.single === this.detail.queueOff[1]['elements'].groupElements.single) {
+          // pop queue and end
+          this.queueOffEnd(this.detail.queueOff.pop());
+          console.log('aaa');
         }
+      }
+      */
+      if (this.detail.queueOn.length > 1) {
+        // pop queue and end
+        this.queueOnEnd(this.detail.queueOn.pop()); // @TODO
       }
       // queue instant
       for (let type in this.detail.queueOff[0]) {
-        self.queueOff(type, options.noQueue, true);
+        self.queueOff(type, true);
+      }
+    }
+  }
+
+  /**
+   * queue on end
+   * @param {Object} obj Queue object to end
+   */
+  queueOnEnd(obj) {
+    let self = this;
+    // end queue
+    for (let type in obj) {
+      for (let el of obj[type].queueEls) {
+        clearTimeout(el.dataset.xtDelayTimeout);
+        clearTimeout(el.dataset.xtAnimTimeout);
+        self.queueOnStart(obj, el, type, true);
+        self.queueOnAnimDone(obj, el, type, true);
+      }
+    }
+  }
+
+  /**
+   * queue off end
+   * @param {Object} obj Queue object to end
+   */
+  queueOffEnd(obj) {
+    let self = this;
+    // end queue
+    for (let type in obj) {
+      for (let el of obj[type].queueEls) {
+        clearTimeout(el.dataset.xtDelayTimeout);
+        clearTimeout(el.dataset.xtAnimTimeout);
+        self.queueOffStart(obj, el, type, true);
+        self.queueOffAnimDone(obj, el, type, true);
       }
     }
   }
@@ -747,41 +779,43 @@ class XtCore {
   /**
    * queue on
    * @param {String} type Type of element
-   * @param {Boolean} force Force change
    * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOn(type, force = false, queueInitial = false) {
+  queueOn(type, queueInitial = false) {
     let obj = this.detail.queueOn[0];
     let objOther = this.detail.queueOff[0];
-    if (force || (obj && obj[type] && !obj[type].done && (!objOther || !objOther[type] || objOther[type].done))) {
+    //console.log(type, obj[type].done);
+    if (obj && obj[type] && !obj[type].done && (!objOther || !objOther[type] || objOther[type].done)) {
       //console.log('on', type, obj, obj[type].groupElements.single);
-      this.queueOnDelay(obj[type].queueEls, obj[type].groupElements, type, queueInitial);
+      this.queueOnDelay(obj, type, queueInitial);
     }
   }
 
   /**
    * queue off
    * @param {String} type Type of element
-   * @param {Boolean} force Force change
    * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOff(type, force = false, queueInitial = false) {
+  queueOff(type, queueInitial = false) {
     let obj = this.detail.queueOff[0];
     let objOther = this.detail.queueOn[0];
-    if (force || (obj && obj[type] && !obj[type].done && (!objOther || !objOther[type] || objOther[type].done))) {
+    if (obj && obj[type] && !obj[type].done && (!objOther || !objOther[type] || objOther[type].done)) {
       //console.log('off', type, obj, obj[type].groupElements.single);
-      this.queueOffDelay(obj[type].queueEls, obj[type].groupElements, type, queueInitial);
+      this.queueOffDelay(obj, type, queueInitial);
     }
   }
 
   /**
    * queue on done
+   * @param {Object} obj Queue object
    * @param {String} type Type of element
    */
-  queueOnDone(type) {
-    let obj = this.detail.queueOn[0];
-    if (obj && obj[type]) {
+  queueOnDone(obj, type) {
+    let self = this;
+    // done
+    if (obj[type]) {
       obj[type].done = true;
+      //console.log('on done', type);
       this.queueOff(type);
       // all done
       let allDone = true;
@@ -791,8 +825,25 @@ class XtCore {
         }
       }
       if (allDone) {
-        //console.log('on done', obj[type].groupElements.single);
+        console.log('ondone', this.detail.queueOn, this.detail.queueOn[0][type].groupElements.single);
         this.detail.queueOn.shift();
+        //this.detail.queueOn = []; // @TODO
+        /*
+        for (let o in obj) {
+          self.queueOnEnd(o);
+        }
+        */
+        /*
+        let arr = this.detail.queueOn;
+        for (let i = 0; i < this.detail.queueOn.length; i++) {
+          if (obj[type].id === arr[i][type].id) {
+          //if (obj['elements'].queueEls === arr[i]['elements'].queueEls) {
+            console.log(obj, arr[i]);
+            arr.splice(i, 1);
+          }
+        }
+        */
+        //console.log('on done', obj[type].groupElements.single);
         //this.detail.queueOn = [];
       }
     }
@@ -800,13 +851,15 @@ class XtCore {
 
   /**
    * queue off done
+   * @param {Object} obj Queue object
    * @param {String} type Type of element
    */
-  queueOffDone(type) {
-    let obj = this.detail.queueOff[0];
-    if (obj && obj[type]) {
+  queueOffDone(obj, type) {
+    let self = this;
+    // done
+    if (obj[type]) {
       obj[type].done = true;
-      //console.log(type, this.detail.queueOn[0][type].groupElements.single);
+      //console.log('off done', type);
       this.queueOn(type);
       // all done
       let allDone = true;
@@ -816,8 +869,25 @@ class XtCore {
         }
       }
       if (allDone) {
-        //console.log('off done', obj[type].groupElements.single);
+        console.log('offdone', this.detail.queueOff, this.detail.queueOff[0][type].groupElements.single);
         this.detail.queueOff.shift();
+        //this.detail.queueOff = []; // @TODO
+        /*
+        for (let o in obj) {
+          self.queueOffEnd(o);
+        }
+        */
+        /*
+        let arr = this.detail.queueOff;
+        for (let i = 0; i < this.detail.queueOff.length; i++) {
+          if (obj[type].id === arr[i][type].id) {
+          //if (obj['elements'].queueEls === arr[i]['elements'].queueEls) {
+            console.log(obj, arr[i]);
+            arr.splice(i, 1);
+          }
+        }
+        */
+        //console.log('off done', obj[type].groupElements.single);
         //this.detail.queueOff = [];
       }
     }
@@ -825,14 +895,14 @@ class XtCore {
 
   /**
    * queue on delay
-   * @param {NodeList|Array} els Elements to be activated
-   * @param {Object} groupElements
+   * @param {Object} obj Queue object
    * @param {String} type Type of elements
    * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOnDelay(els, groupElements, type, queueInitial) {
+  queueOnDelay(obj, type, queueInitial) {
     let self = this;
     let options = self.options;
+    let els = obj[type].queueEls;
     // delay
     for (let el of els) {
       clearTimeout(el.dataset.xtDelayTimeout);
@@ -843,24 +913,24 @@ class XtCore {
       }
       if (delay) {
         el.dataset.xtDelayTimeout = setTimeout(function () {
-          self.queueOnStart(el, groupElements, type);
+          self.queueOnStart(obj, el, type);
         }, delay).toString();
       } else {
-        self.queueOnStart(el, groupElements, type);
+        self.queueOnStart(obj, el, type);
       }
     }
   }
 
   /**
    * queue off delay
-   * @param {NodeList|Array} els Elements to be deactivated
-   * @param {Object} groupElements
+   * @param {Object} obj Queue object
    * @param {String} type Type of elements
    * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOffDelay(els, groupElements, type, queueInitial) {
+  queueOffDelay(obj, type, queueInitial) {
     let self = this;
     let options = self.options;
+    let els = obj[type].queueEls;
     // delay
     for (let el of els) {
       clearTimeout(el.dataset.xtDelayTimeout);
@@ -871,22 +941,22 @@ class XtCore {
       }
       if (delay) {
         el.dataset.xtDelayTimeout = setTimeout(function () {
-          self.queueOffStart(el, groupElements, type);
+          self.queueOffStart(obj, el, type);
         }, delay).toString();
       } else {
-        self.queueOffStart(el, groupElements, type);
+        self.queueOffStart(obj, el, type);
       }
     }
   }
 
   /**
    * queue on start
+   * @param {Object} obj Queue object
    * @param {Node|HTMLElement} el Elements to be deactivated
-   * @param {Object} groupElements
    * @param {String} type Type of elements
-   * @param {Boolean} skipQueue If continue queue
+   * @param {Boolean} end If end queue
    */
-  queueOnStart(el, groupElements, type, skipQueue = false) {
+  queueOnStart(obj, el, type, end = false) {
     let self = this;
     let options = self.options;
     // activate
@@ -915,7 +985,7 @@ class XtCore {
       this.specialCenter(el);
       this.specialMiddle(el);
       this.specialCollapseOn(el);
-      this.specialCloseOn(el, groupElements.single);
+      this.specialCloseOn(el, obj[type].groupElements.single);
       // special one time
       if (!this.specialOnActivate) {
         this.specialOnActivate = true;
@@ -932,11 +1002,11 @@ class XtCore {
       }
     }
     // queue
-    if (!skipQueue) {
-      this.queueOnAnim(el, type);
-      if (options.noDuration && options.noDuration[type]) {
+    if (!end) {
+      this.queueOnAnim(obj, el, type);
+      if (options.durationNone && options.durationNone[type]) {
         // queue running
-        this.queueOnDone(type);
+        this.queueOnDone(obj, type);
       }
     }
     // listener dispatch
@@ -945,12 +1015,12 @@ class XtCore {
 
   /**
    * queue off start
+   * @param {Object} obj Queue object
    * @param {Node|HTMLElement} el Elements to be deactivated
-   * @param {Object} groupElements
    * @param {String} type Type of elements
-   * @param {Boolean} skipQueue If continue queue
+   * @param {Boolean} end If end queue
    */
-  queueOffStart(el, groupElements, type, skipQueue = false) {
+  queueOffStart(obj, el, type, end = false) {
     let self = this;
     let options = self.options;
     // deactivate
@@ -969,12 +1039,11 @@ class XtCore {
       }
     }
     // queue
-    if (!skipQueue) {
-      this.queueOffAnim(el, type);
-      if (options.noDuration && options.noDuration[type]) {
-        // queue running
-        this.queueOffDone(type);
-        //console.log(type, this.detail.queueOn[0][type].groupElements.single);
+    if (!end) {
+      this.queueOffAnim(obj, el, type);
+      // queue running
+      if (options.durationNone && options.durationNone[type]) {
+        this.queueOffDone(obj, type);
       }
     }
     // listener dispatch
@@ -983,52 +1052,56 @@ class XtCore {
 
   /**
    * queue on anim
+   * @param {Object} obj Queue object
    * @param {Node|HTMLElement} el Element to be animated
    * @param {String} type Type of element
    */
-  queueOnAnim(el, type) {
+  queueOnAnim(obj, el, type) {
     let self = this;
     let options = self.options;
     // anim
     let duration = Xt.animDuration(el, options.durationOn);
     clearTimeout(el.dataset.xtAnimTimeout);
     if (!duration) {
-      self.queueOnAnimDone(el, type);
+      self.queueOnAnimDone(obj, el, type);
     } else {
       el.dataset.xtAnimTimeout = setTimeout(function () {
-        self.queueOnAnimDone(el, type);
+        self.queueOnAnimDone(obj, el, type);
       }, duration).toString();
     }
   }
 
   /**
    * queue off anim
+   * @param {Object} obj Queue object
    * @param {Node|HTMLElement} el Element to be animated
    * @param {String} type Type of element
    */
-  queueOffAnim(el, type) {
+  queueOffAnim(obj, el, type) {
     let self = this;
     let options = self.options;
     // anim
     let duration = Xt.animDuration(el, options.durationOff);
     clearTimeout(el.dataset.xtAnimTimeout);
     if (!duration) {
-      self.queueOffAnimDone(el, type);
+      self.queueOffAnimDone(obj, el, type);
     } else {
       el.dataset.xtAnimTimeout = setTimeout(function () {
-        self.queueOffAnimDone(el, type);
+        self.queueOffAnimDone(obj, el, type);
       }, duration).toString();
     }
   }
 
   /**
    * queue on anim done
+   * @param {Object} obj Queue object
    * @param {Node|HTMLElement} el Element to be animated
    * @param {String} type Type of element
-   * @param {Boolean} skipQueue If continue queue
+   * @param {Boolean} end If end queue
    */
-  queueOnAnimDone(el, type, skipQueue = false) {
+  queueOnAnimDone(obj, el, type, end = false) {
     let self = this;
+    let options = self.options;
     // reset
     el.classList.remove('in');
     // collapse-width and collapse-height
@@ -1040,19 +1113,22 @@ class XtCore {
       el.style.width = 'auto';
     }
     // queue
-    if (!skipQueue) {
+    if (!end) {
       // queue running
-      this.queueOnDone(type);
+      if (!options.durationNone || !options.durationNone[type]) {
+        this.queueOnDone(obj, type);
+      }
     }
   }
 
   /**
    * queue off anim done
+   * @param {Object} obj Queue object
    * @param {Node|HTMLElement} el Element to be animated
    * @param {String} type Type of element
-   * @param {Boolean} skipQueue If continue queue
+   * @param {Boolean} end If end queue
    */
-  queueOffAnimDone(el, type, skipQueue = false) {
+  queueOffAnimDone(obj, el, type, end = false) {
     let self = this;
     let options = self.options;
     // reset
@@ -1089,9 +1165,11 @@ class XtCore {
       }
     }
     // queue
-    if (!skipQueue) {
+    if (!end) {
       // queue running
-      this.queueOffDone(type);
+      if (!options.durationNone || !options.durationNone[type]) {
+        this.queueOffDone(obj, type);
+      }
     }
   }
 
@@ -1456,7 +1534,7 @@ XtCore.defaults = {
   "delayOff": false,
   "queueOn": false,
   "queueOff": false,
-  "noQueue": false
+  "queueNone": false
 };
 
 // export
@@ -1520,7 +1598,7 @@ XtToggle.defaults = {
   "toggle": true,
   "min": 0,
   "max": 1,
-  "noDuration": {"elements": true},
+  "durationNone": {"elements": true},
   "aria": true
 };
 
@@ -1579,7 +1657,7 @@ XtDrop.defaults = {
   "toggle": true,
   "min": 0,
   "max": 1,
-  "noDuration": {"elementsInner": true},
+  "durationNone": {"elementsInner": true},
   "closeOutside": "body",
   "aria": true,
   "ariaControls": ":scope > a, :scope > button"
@@ -1641,7 +1719,7 @@ XtOverlay.defaults = {
   "toggle": true,
   "min": 0,
   "max": 1,
-  "noDuration": {"elements": true},
+  "durationNone": {"elements": true},
   "appendTo": "body",
   "backdrop": "targets",
   "classHtml": "xt-overlay",
@@ -1827,7 +1905,7 @@ XtSlider.defaults = {
   "on": "click",
   "min": 1,
   "max": 1,
-  "noDuration": {"elements": true},
+  "durationNone": {"elements": true},
   "drag": false,
   "dragThreshold": 100,
   "aria": true

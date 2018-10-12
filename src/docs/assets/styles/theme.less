@@ -215,24 +215,23 @@
 
 .site-breadcrumbs-body-sub {
   .btn {
-    transition-delay: 150ms; // @start + @child * @increment
-    .nth-child(@child:6, @start:0ms, @increment:25ms, @decrement:0ms, {
-      @transition-delay(); });
-    transform: translateX(-@anim-medium);
     opacity: 0;
   }
   &.active {
     .btn {
-      .transition-default.active();
-      transform: translateY(0);
-      opacity: 1;
+      .anim-horizontal.active();
+      animation-fill-mode: forwards;
+      animation-delay: 250ms; // @start + @child * @increment
+      .nth-child(@child:6, @start:100ms, @increment:25ms, @decrement:0ms, {
+        @animation-delay(); });
+      opacity: 0;
     }
   }
   &.out {
     .btn {
-      .transition-default.out();
-      transform: translateX(@anim-medium);
-      opacity: 0;
+      .anim-horizontal.out();
+      animation-fill-mode: forwards;
+      opacity: 1;
     }
   }
 }
