@@ -1554,7 +1554,8 @@ XtToggle.defaults = {
   "on": "click",
   "min": 0,
   "max": 1,
-  "durationNone": {"elements": true},
+  //"durationNone": {"elements": true}, // @TODO
+  "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
   "aria": true
 };
 
@@ -1612,7 +1613,8 @@ XtDrop.defaults = {
   "on": "click",
   "min": 0,
   "max": 1,
-  "durationNone": {"elementsInner": true},
+  //"durationNone": {"elementsInner": true}, // @TODO
+  "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
   "closeOutside": "body",
   "aria": true,
   "ariaControls": ":scope > a, :scope > button"
@@ -1673,7 +1675,8 @@ XtOverlay.defaults = {
   "on": "click",
   "min": 0,
   "max": 1,
-  "durationNone": {"elements": true},
+  // durationNone": {"elements": true}, // @TODO
+  "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
   "appendTo": "body",
   "backdrop": "targets",
   "classHtml": "xt-overlay",
@@ -1859,7 +1862,8 @@ XtSlider.defaults = {
   "on": "click",
   "min": 1,
   "max": 1,
-  "durationNone": {"elements": true},
+  // "durationNone": {"elements": true}, // @TODO
+  "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
   "drag": false,
   "dragThreshold": 100,
   "aria": true
@@ -2221,6 +2225,7 @@ XtSticky.defaults = {
   "min": 0,
   "max": Infinity,
   "position": "top",
+  "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true}, // @TODO
   "limit": {"bottom": Infinity},
   "contain": false,
   "hide": false,
@@ -2376,6 +2381,7 @@ XtFade.defaults = {
   "on": "scroll resize",
   "min": 0,
   "max": Infinity,
+  "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true}, // @TODO
   "distance": 0.2,
   "delayOn": false,
   "delayOff": false,
