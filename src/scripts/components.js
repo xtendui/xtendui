@@ -620,11 +620,11 @@ class XtCore {
       let currents = this.getCurrents();
       if (currents.length > options.max) {
         // pop queue and end
-        //let removed = this.detail.queueOn.pop();
-        //console.log('on remove 1', removed['elements'].groupElements.single); // @TODO
-        //this.queueOffEnd(removed);
+        let removed = this.detail.queueOn.pop();
+        console.log('CURRENTS RESET'); // @TODO
+        this.queueOffEnd(removed);
         // deactivate old
-        //this.eventOff(currents[0]);
+        this.eventOff(currents[0]);
       }
       // queue obj
       let obj = {};
@@ -660,23 +660,17 @@ class XtCore {
       // if queue too big
       /*
       if (this.detail.queueOn.length > 1) {
-        if (this.detail.queueOn[0]['elements'].groupElements.single === this.detail.queueOn[1]['elements'].groupElements.single) {
-          // pop queue and end
-          this.queueOnEnd(this.detail.queueOn.pop());
-          console.log('ccc');
-        }
-      }
-      */
-      /*
-      if (this.detail.queueOn.length > 1) {
-        console.log('on', this.detail.queueOn[0]['elements'].groupElements.single, this.detail.queueOn[1]['elements'].groupElements.single);
+        // pop queue and end
+        let removed = this.detail.queueOn.shift();
+        console.log('on remove 2a', removed['elements'].groupElements.single); // @TODO
+        this.queueOnEnd(removed);
       }
       */
       if (this.detail.queueOff.length > 1) {
         // pop queue and end
-        //let removed = this.detail.queueOff.pop();
-        //console.log('off remove 2', removed['elements'].groupElements.single); // @TODO
-        //this.queueOffEnd(removed);
+        let removed = this.detail.queueOff.shift();
+        console.log('off remove 2b', removed['elements'].groupElements.single); // @TODO
+        this.queueOffEnd(removed);
       }
       // queue instant
       for (let type in this.detail.queueOn[0]) {
@@ -738,25 +732,17 @@ class XtCore {
         this.detail.queueOff.unshift(obj);
       }
       // if queue too big
-      /*
-      if (this.detail.queueOff.length > 1) {
-        if (this.detail.queueOff[0]['elements'].groupElements.single === this.detail.queueOff[1]['elements'].groupElements.single) {
-          // pop queue and end
-          this.queueOffEnd(this.detail.queueOff.pop());
-          console.log('aaa');
-        }
-      }
-      */
-      /*
-      if (this.detail.queueOff.length > 1) {
-        console.log('off', this.detail.queueOff[0]['elements'].groupElements.single, this.detail.queueOff[1]['elements'].groupElements.single);
-      }
-      */
       if (this.detail.queueOn.length > 1) {
         // pop queue and end
-        //let removed = this.detail.queueOn.pop();
-        //console.log('on remove 3', removed['elements'].groupElements.single); // @TODO
-        //this.queueOnEnd(removed);
+        let removed = this.detail.queueOn.shift();
+        console.log('on remove 3a', removed['elements'].groupElements.single); // @TODO
+        this.queueOnEnd(removed);
+      }
+      if (this.detail.queueOff.length > 1) {
+        // pop queue and end
+        let removed = this.detail.queueOff.shift();
+        console.log('on remove 3b', removed['elements'].groupElements.single); // @TODO
+        this.queueOffEnd(removed);
       }
       // queue instant
       for (let type in this.detail.queueOff[0]) {
@@ -773,13 +759,16 @@ class XtCore {
   queueOn(type, queueInitial = false) {
     let test = false;
     let obj = this.detail.queueOn[0];
-    let objOther = this.detail.queueOff[this.detail.queueOn.length - 1];
+    let objOther = this.detail.queueOff[this.detail.queueOff.length - 1];
+    /*
+    if (queueInitial) {
+      objOther = this.detail.queueOff[0];
+    }
+    */
     if (obj && obj[type] && !obj[type].done && (test || !objOther || !objOther[type] || objOther[type].done)) {
-      if (type === 'targets') {
-        console.log('on', type, obj[type].groupElements.single);
-        if (objOther && objOther[type]) {
-          console.log('on other', type, objOther[type].done, objOther[type].groupElements.single);
-        }
+      //console.log('on', type, obj[type].groupElements.single);
+      if (objOther && objOther[type]) {
+        //console.log('on other', type, objOther[type].done, objOther[type].groupElements.single);
       }
       this.queueOnDelay(obj, type, queueInitial);
     }
@@ -794,12 +783,15 @@ class XtCore {
     let test = false;
     let obj = this.detail.queueOff[0];
     let objOther = this.detail.queueOn[this.detail.queueOn.length - 1];
+    /*
+    if (queueInitial) {
+      objOther = this.detail.queueOn[0];
+    }
+    */
     if (obj && obj[type] && !obj[type].done && (test || !objOther || !objOther[type] || objOther[type].done)) {
-      if (type === 'targets') {
-        console.log('off', type, obj[type].groupElements.single);
-        if (objOther && objOther[type]) {
-          console.log('off other', type, objOther[type].done, objOther[type].groupElements.single);
-        }
+      //console.log('off', type, obj[type].groupElements.single);
+      if (objOther && objOther[type]) {
+        //console.log('off other', type, objOther[type].done, objOther[type].groupElements.single);
       }
       this.queueOffDelay(obj, type, queueInitial);
     }
@@ -829,8 +821,7 @@ class XtCore {
         }
       }
       if (allDone) {
-        //let removed = this.detail.queueOn.pop();
-        //this.queueOnEnd(removed);
+        let removed = this.detail.queueOn.pop();
         //console.log('on remove 4', removed[type].groupElements.single);
         //console.log('ondone', this.detail.queueOn[0], this.detail.queueOn[0][type].groupElements.single);
         //this.detail.queueOn = []; // @TODO
@@ -878,7 +869,7 @@ class XtCore {
         }
       }
       if (allDone) {
-        //let removed = this.detail.queueOff.pop();
+        let removed = this.detail.queueOff.pop();
         //console.log('offdone', this.detail.queueOff[0], this.detail.queueOff[0][type].groupElements.single);
         //console.log('off remove 5', removed[type].groupElements.single);
         //this.detail.queueOff = []; // @TODO
