@@ -154,7 +154,7 @@
               <div class="site-breadcrumbs-body flex flex-space-none"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave",
-                   "noQueue": true, "noDuration": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true}}'>
+                   "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true}}'>
                 
                 
 
@@ -600,7 +600,7 @@ XtToggle.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
   "class": "active",
-  "noDuration": {"elements": true},
+  "durationNone": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -637,7 +637,7 @@ XtDrop.defaults = {
   "targets": ":scope > .drop",
   "controls": ":scope > a, :scope > button",
   "class": "active",
-  "noDuration": {"elements": true},
+  "durationNone": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -674,7 +674,7 @@ XtOverlay.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > .overlay-outer",
   "class": "active",
-  "noDuration": {"elements": true},
+  "durationNone": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -1392,19 +1392,11 @@ XtOverlay.defaults = {
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/toggle/toggle-instant.html"
-       data-name="noDuration">
+       data-name="durationNone">
     <div class="demo-text">
       <div class="content">
-        To disable automatic duration use <code>"noDuration": {"elements": true, "targets": true,
+        To disable automatic duration use <code>"durationNone": {"elements": true, "targets": true,
         "elementsInner": true, "targetsInner": true}</code>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item" data-iframe="/demos/javascript/toggle/toggle-noqueue.html"
-       data-name="noQueue">
-    <div class="demo-text">
-      <div class="content">
-        To disable activation/deactivation queue use <code>"noQueue": true</code>
       </div>
     </div>
   </div>
