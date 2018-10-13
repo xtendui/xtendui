@@ -22,7 +22,20 @@ class XtCore {
   constructor(object, jsOptions = {}, attr) {
     this.object = object;
     if (this.object) {
-      this.defaults = this.constructor.defaults;
+      this.defaults = {
+        "onBlock": 250,
+        "offBlock": 250,
+        "auto": false,
+        "autoPause": false,
+        "autoAlways": false,
+        "durationOn": false,
+        "durationOff": false,
+        "delayOn": false,
+        "delayOff": false,
+        "queueOn": false,
+        "queueOff": false
+      };
+      this.defaults = Xt.merge([this.defaults, this.constructor.defaults]);
       // js options
       this.options = Xt.merge([this.defaults, jsOptions]);
       // markup options
@@ -32,7 +45,7 @@ class XtCore {
       if (this.options.class) {
         this.options.classes = [...this.options.class.split(' ')];
       }
-      // detaul
+      // internals
       this.detail = {};
       this.detail.queueOn = [];
       this.detail.queueOff = [];
@@ -242,7 +255,18 @@ class XtCore {
    */
   eventOnHandler(element, e) {
     let self = this;
+    let options = self.options;
     if (!e.detail || !e.detail.skip) {
+      // event block
+      if (options.onBlock) {
+        let now = new Date().getTime();
+        let old = parseFloat(element.dataset['xtEventBlock' + e.type]) || 0;
+        element.dataset['xtEventBlock' + e.type] = now.toString();
+        if (now - old < options.onBlock) {
+          return false;
+        }
+      }
+      // on handler
       let eventLimit = self.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
         if (Xt.checkOutside(e, eventLimit)) {
@@ -267,7 +291,18 @@ class XtCore {
    */
   eventOffHandler(element, e) {
     let self = this;
+    let options = self.options;
     if (!e.detail || !e.detail.skip) {
+      // event block
+      if (options.offBlock) {
+        let now = new Date().getTime();
+        let old = parseFloat(element.dataset['xtEventBlock' + e.type]) || 0;
+        element.dataset['xtEventBlock' + e.type] = now.toString();
+        if (now - old < options.offBlock) {
+          return false;
+        }
+      }
+      // off handler
       let eventLimit = self.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
         if (Xt.checkOutside(e, eventLimit)) {
@@ -609,15 +644,18 @@ class XtCore {
       // if currents > max
       let currents = this.getCurrents();
       if (currents.length > options.max) {
-        // pop queue and end
+        /*
+        // remove queue and end
         let removed = this.detail.queueOn.pop();
         console.log('CURRENTS RESET'); // @TODO
         this.queueOffEnd(removed);
+        */
         // deactivate old
         this.eventOff(currents[0]);
       }
       // if queue too big
       this.queueOnTodo();
+      this.queueOffTodo();
       // queue obj
       let obj = {};
       if (groupElements.all.length) {
@@ -645,11 +683,19 @@ class XtCore {
         };
       }
       this.detail.queueOn.unshift(obj);
-      // if queue too big
-      this.queueOffTodo();
+      // queue remove duplicate
+      for (let i = 0; i < this.detail.queueOff.length - 1; i++) { // - 1 not the last one running!
+        let check = this.detail.queueOff[i];
+        if (self.detail.queueOn[0]['elements'].groupElements.single === check['elements'].groupElements.single) {
+          let removed = self.detail.queueOff.splice(i, 1);
+          console.log('on removeoff', check['elements'].groupElements.single, self.detail.queueOff, self.detail.queueOn);
+          self.queueOffEnd(check);
+          break;
+        }
+      }
       // queue run
       for (let type in this.detail.queueOn[0]) {
-        self.queueOn(type, true);
+        self.queueOn(type, 0, true);
       }
     } else if (options.toggle) {
       // off
@@ -676,6 +722,7 @@ class XtCore {
       let targetsInner = this.getInside(targets, options.targetsInner);
       this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // if queue too big
+      this.queueOnTodo();
       this.queueOffTodo();
       // queue obj
       let obj = {};
@@ -704,11 +751,19 @@ class XtCore {
         };
       }
       this.detail.queueOff.unshift(obj);
-      // if queue too big
-      this.queueOnTodo();
+      // queue remove duplicate
+      for (let i = 0; i < this.detail.queueOn.length - 1; i++) { // - 1 not the last one running!
+        let check = this.detail.queueOn[i];
+        if (self.detail.queueOff[0]['elements'].groupElements.single === check['elements'].groupElements.single) {
+          let removed = self.detail.queueOn.splice(i, 1);
+          console.log('off removeon', check['elements'].groupElements.single, self.detail.queueOn, self.detail.queueOff);
+          self.queueOnEnd(check);
+          break;
+        }
+      }
       // queue run
       for (let type in this.detail.queueOff[0]) {
-        self.queueOff(type, true);
+        self.queueOff(type, 0, true);
       }
     }
   }
@@ -716,11 +771,12 @@ class XtCore {
   /**
    * queue on
    * @param {String} type Type of element
+   * @param {Number} index Queue index
    * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOn(type, queueInitial = false) {
+  queueOn(type, index, queueInitial = false) {
     let test = false;
-    let obj = this.detail.queueOn[0];
+    let obj = this.detail.queueOn[index];
     let objOther = this.detail.queueOff[this.detail.queueOff.length - 1];
     if (obj && obj[type] && !obj[type].done && (test || !objOther || !objOther[type] || objOther[type].done)) {
       this.queueOnDelay(obj, type, queueInitial);
@@ -730,11 +786,12 @@ class XtCore {
   /**
    * queue off
    * @param {String} type Type of element
+   * @param {Number} index Queue index
    * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOff(type, queueInitial = false) {
+  queueOff(type, index, queueInitial = false) {
     let test = false;
-    let obj = this.detail.queueOff[0];
+    let obj = this.detail.queueOff[index];
     let objOther = this.detail.queueOn[this.detail.queueOn.length - 1];
     if (obj && obj[type] && !obj[type].done && (test || !objOther || !objOther[type] || objOther[type].done)) {
       this.queueOffDelay(obj, type, queueInitial);
@@ -749,7 +806,7 @@ class XtCore {
   queueOnDone(obj, type) {
     if (obj[type]) {
       obj[type].done = true;
-      this.queueOff(type);
+      this.queueOff(type, this.detail.queueOff.length - 1);
       // all done
       let allDone = true;
       for (let type in obj) {
@@ -771,7 +828,7 @@ class XtCore {
   queueOffDone(obj, type) {
     if (obj[type]) {
       obj[type].done = true;
-      this.queueOn(type);
+      this.queueOn(type, this.detail.queueOn.length - 1);
       // all done
       let allDone = true;
       for (let type in obj) {
@@ -786,13 +843,37 @@ class XtCore {
   }
 
   /**
+   * if queue on too big, end what is still to do
+   */
+  queueOnTodo() {
+    // end what is still to do
+    if (this.detail.queueOn.length > 1) {
+      // remove queue and end
+      let removed = this.detail.queueOn.shift();
+      this.queueOnEnd(removed);
+    }
+  }
+
+  /**
+   * if queue off too big, end what is still to do
+   */
+  queueOffTodo() {
+    // end what is still to do
+    if (this.detail.queueOff.length > 1) {
+      // remove queue and end
+      let removed = this.detail.queueOff.shift();
+      this.queueOffEnd(removed);
+    }
+  }
+
+  /**
    * queue on end
    * @param {Object} obj Queue object to end
    */
   queueOnEnd(obj) {
     let self = this;
     // end queue
-    /* // BUGGA FADE
+    // BUGGA FADE
     for (let type in obj) {
       if (!obj[type].done) {
         for (let el of obj[type].queueEls) {
@@ -802,9 +883,8 @@ class XtCore {
           self.queueOnAnimDone(obj, el, type, true);
         }
       }
-      self.queueOff(type);
+      self.queueOff(type, this.detail.queueOff.length - 1);
     }
-    */
   }
 
   /**
@@ -814,7 +894,7 @@ class XtCore {
   queueOffEnd(obj) {
     let self = this;
     // end queue
-    /* // BUGGA FADE
+    // BUGGA FADE
     for (let type in obj) {
       if (!obj[type].done) {
         for (let el of obj[type].queueEls) {
@@ -824,34 +904,7 @@ class XtCore {
           self.queueOffAnimDone(obj, el, type, true);
         }
       }
-      self.queueOn(type);
-    }
-    */
-  }
-
-  /**
-   * if queue on too big, end what is still to do
-   */
-  queueOnTodo() {
-    if (this.detail.queueOn.length > 1) {
-      // pop queue and end
-      let removed = this.detail.queueOn.shift();
-      if (removed['elements'].groupElements.single !== this.detail.queueOn[0]['elements'].groupElements.single) {
-        this.queueOnEnd(removed);
-      }
-    }
-  }
-
-  /**
-   * if queue off too big, end what is still to do
-   */
-  queueOffTodo() {
-    if (this.detail.queueOff.length > 1) {
-      // pop queue and end
-      let removed = this.detail.queueOff.shift();
-      if (removed['elements'].groupElements.single !== this.detail.queueOff[0]['elements'].groupElements.single) {
-        this.queueOffEnd(removed);
-      }
+      self.queueOn(type, this.detail.queueOn.length - 1);
     }
   }
 
@@ -1484,20 +1537,6 @@ class XtCore {
 
 }
 
-// default
-
-XtCore.defaults = {
-  "auto": false,
-  "autoPause": false,
-  "autoAlways": false,
-  "durationOn": false,
-  "durationOff": false,
-  "delayOn": false,
-  "delayOff": false,
-  "queueOn": false,
-  "queueOff": false
-};
-
 // export
 
 window.XtCore = XtCore;
@@ -1558,7 +1597,7 @@ XtToggle.defaults = {
   "on": "click",
   "min": 0,
   "max": 1,
-  "durationNone": {"elements": true}, // @TODO
+  //"durationNone": {"elements": true}, // @TODO
   //"durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
   "aria": true
 };
