@@ -23,8 +23,8 @@ class XtCore {
     this.object = object;
     if (this.object) {
       this.defaults = {
-        "onBlock": 250,
-        "offBlock": 250,
+        "onBlock": false,
+        "offBlock": false,
         "auto": false,
         "autoPause": false,
         "autoAlways": false,
@@ -683,16 +683,16 @@ class XtCore {
         };
       }
       this.detail.queueOn.unshift(obj);
-      // queue remove duplicate
-      for (let i = 0; i < this.detail.queueOff.length - 1; i++) { // - 1 not the last one running!
-        let check = this.detail.queueOff[i];
-        if (self.detail.queueOn[0]['elements'].groupElements.single === check['elements'].groupElements.single) {
-          let removed = self.detail.queueOff.splice(i, 1);
-          console.log('on removeoff', check['elements'].groupElements.single, self.detail.queueOff, self.detail.queueOn);
-          self.queueOffEnd(check);
-          break;
-        }
-      }
+      // queue remove duplicate // @TODO MEGLIO SBALLA ANCHE FADE
+      // for (let i = 0; i < this.detail.queueOff.length - 1; i++) { // - 1 not the last one running!
+      //   let check = this.detail.queueOff[i];
+      //   if (self.detail.queueOn[0]['elements'].groupElements.single === check['elements'].groupElements.single) {
+      //     let removed = self.detail.queueOff.splice(i, 1);
+      //     console.log('on removeoff', check['elements'].groupElements.single, self.detail.queueOff, self.detail.queueOn);
+      //     self.queueOffEnd(check);
+      //     break;
+      //   }
+      // }
       // queue run
       for (let type in this.detail.queueOn[0]) {
         self.queueOn(type, 0, true);
@@ -751,16 +751,16 @@ class XtCore {
         };
       }
       this.detail.queueOff.unshift(obj);
-      // queue remove duplicate
-      for (let i = 0; i < this.detail.queueOn.length - 1; i++) { // - 1 not the last one running!
-        let check = this.detail.queueOn[i];
-        if (self.detail.queueOff[0]['elements'].groupElements.single === check['elements'].groupElements.single) {
-          let removed = self.detail.queueOn.splice(i, 1);
-          console.log('off removeon', check['elements'].groupElements.single, self.detail.queueOn, self.detail.queueOff);
-          self.queueOnEnd(check);
-          break;
-        }
-      }
+      // // queue remove duplicate // @TODO MEGLIO SBALLA ANCHE FADE
+      // for (let i = 0; i < this.detail.queueOn.length - 1; i++) { // - 1 not the last one running!
+      //   let check = this.detail.queueOn[i];
+      //   if (self.detail.queueOff[0]['elements'].groupElements.single === check['elements'].groupElements.single) {
+      //     let removed = self.detail.queueOn.splice(i, 1);
+      //     console.log('off removeon', check['elements'].groupElements.single, self.detail.queueOn, self.detail.queueOff);
+      //     self.queueOnEnd(check);
+      //     break;
+      //   }
+      // }
       // queue run
       for (let type in this.detail.queueOff[0]) {
         self.queueOff(type, 0, true);
@@ -847,7 +847,8 @@ class XtCore {
    */
   queueOnTodo() {
     // end what is still to do
-    if (this.detail.queueOn.length > 1) {
+    if (this.detail.queueOn.length > this.options.max) {
+      console.log('on', this.options.max);
       // remove queue and end
       let removed = this.detail.queueOn.shift();
       this.queueOnEnd(removed);
@@ -859,7 +860,8 @@ class XtCore {
    */
   queueOffTodo() {
     // end what is still to do
-    if (this.detail.queueOff.length > 1) {
+    if (this.detail.queueOff.length > this.options.max) {
+      console.log('off', this.options.max);
       // remove queue and end
       let removed = this.detail.queueOff.shift();
       this.queueOffEnd(removed);
@@ -1597,7 +1599,7 @@ XtToggle.defaults = {
   "on": "click",
   "min": 0,
   "max": 1,
-  //"durationNone": {"elements": true}, // @TODO
+  "durationNone": {"elements": true}, // @TODO
   //"durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
   "aria": true
 };
@@ -2268,7 +2270,7 @@ XtSticky.defaults = {
   "min": 0,
   "max": Infinity,
   "position": "top",
-  //"durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true}, // @TODO
+  "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true}, // @TODO
   "limit": {"bottom": Infinity},
   "contain": false,
   "hide": false,
