@@ -372,7 +372,9 @@ class XtCore {
     }
     if (this.mode === 'unique') {
       // choose all elements
-      return {all: Xt.arrSingle(this.elements), single: this.elements};
+      let final = this.elements;
+      final = final.length > 1 ? final[0] : final;
+      return {all: Xt.arrSingle(final), single: final};
     } else if (this.mode === 'multiple') {
       // choose element by group
       let group = element.getAttribute('data-group');
@@ -410,13 +412,12 @@ class XtCore {
       if (group) {
         // all group targets if group
         final = groupTargets;
-        return Xt.arrSingle(final);
       } else {
         // not group targets by index if not group
         let index = groupElements.findIndex(x => x === element);
         final = groupTargets[index];
-        return Xt.arrSingle(final);
       }
+      return Xt.arrSingle(final);
     }
   }
 
@@ -441,13 +442,12 @@ class XtCore {
       if (group) {
         // all group targets if group
         final = groupElements;
-        return Xt.arrSingle(final);
       } else {
         // not group targets by index if not group
         let index = groupTargets.findIndex(x => x === target);
         final = groupElements[index];
-        return Xt.arrSingle(final);
       }
+      return Xt.arrSingle(final);
     }
   }
 
@@ -518,17 +518,16 @@ class XtCore {
   /**
    * check element on
    * @param {Node|HTMLElement} element To be checked
-   * @returns {Boolean} If eventOn changes activation
    */
   checkOn(element) {
     // check
-    return !element.classList.contains(...this.options.classes) && !element.classList.contains('in') && !element.classList.contains('out');
+    let groupElements = this.getElements(element);
+    return !this.hasCurrent(groupElements.single);
   }
 
   /**
    * check element off
    * @param {Node|HTMLElement} element To be checked
-   * @returns {Boolean} If eventOff changes activation
    */
   checkOff(element) {
     // skip if min >= currents
@@ -536,7 +535,8 @@ class XtCore {
       return false;
     }
     // check
-    return element.classList.contains(...this.options.classes) && !element.classList.contains('in') && !element.classList.contains('out');
+    let groupElements = this.getElements(element);
+    return this.hasCurrent(groupElements.single);
   }
 
   /**
@@ -596,10 +596,10 @@ class XtCore {
     let self = this;
     let options = self.options;
     // toggle
-    let groupElements = this.getElements(element);
     if (this.checkOn(element)) {
       // on
       this.specialOnActivate = false;
+      let groupElements = this.getElements(element);
       this.addCurrent(groupElements.single);
       this.setIndexAndDirection(element);
       let targets = this.getTargets(element);
@@ -665,11 +665,11 @@ class XtCore {
     let self = this;
     let options = self.options;
     // toggle
-    let groupElements = this.getElements(element);
     if (this.checkOff(element)) {
       // off
       this.specialOffDeactivate = false;
       this.specialOffAnimate = false;
+      let groupElements = this.getElements(element);
       this.removeCurrent(groupElements.single);
       let targets = this.getTargets(element);
       let elementsInner = this.getInside(element, options.elementsInner);
@@ -792,6 +792,7 @@ class XtCore {
   queueOnEnd(obj) {
     let self = this;
     // end queue
+    /* // BUGGA FADE
     for (let type in obj) {
       if (!obj[type].done) {
         for (let el of obj[type].queueEls) {
@@ -803,6 +804,7 @@ class XtCore {
       }
       self.queueOff(type);
     }
+    */
   }
 
   /**
@@ -812,6 +814,7 @@ class XtCore {
   queueOffEnd(obj) {
     let self = this;
     // end queue
+    /* // BUGGA FADE
     for (let type in obj) {
       if (!obj[type].done) {
         for (let el of obj[type].queueEls) {
@@ -823,6 +826,7 @@ class XtCore {
       }
       self.queueOn(type);
     }
+    */
   }
 
   /**
@@ -1554,8 +1558,8 @@ XtToggle.defaults = {
   "on": "click",
   "min": 0,
   "max": 1,
-  //"durationNone": {"elements": true}, // @TODO
-  "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
+  "durationNone": {"elements": true}, // @TODO
+  //"durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
   "aria": true
 };
 
@@ -1613,8 +1617,8 @@ XtDrop.defaults = {
   "on": "click",
   "min": 0,
   "max": 1,
-  //"durationNone": {"elementsInner": true}, // @TODO
-  "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
+  "durationNone": {"elementsInner": true}, // @TODO
+  //"durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
   "closeOutside": "body",
   "aria": true,
   "ariaControls": ":scope > a, :scope > button"
@@ -1675,8 +1679,8 @@ XtOverlay.defaults = {
   "on": "click",
   "min": 0,
   "max": 1,
-  // durationNone": {"elements": true}, // @TODO
-  "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
+  "durationNone": {"elements": true}, // @TODO
+  //"durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
   "appendTo": "body",
   "backdrop": "targets",
   "classHtml": "xt-overlay",
@@ -1862,8 +1866,8 @@ XtSlider.defaults = {
   "on": "click",
   "min": 1,
   "max": 1,
-  // "durationNone": {"elements": true}, // @TODO
-  "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
+  "durationNone": {"elements": true}, // @TODO
+  //"durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
   "drag": false,
   "dragThreshold": 100,
   "aria": true
@@ -2225,7 +2229,7 @@ XtSticky.defaults = {
   "min": 0,
   "max": Infinity,
   "position": "top",
-  "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true}, // @TODO
+  //"durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true}, // @TODO
   "limit": {"bottom": Infinity},
   "contain": false,
   "hide": false,
@@ -2351,7 +2355,7 @@ class XtFade extends XtCore {
                 el.dataset.xtOffDelay = func(current, currents.length).toString();
                 current++;
               }
-              changed = self.eventOff(el);
+              self.eventOff(el);
             });
           }
         }
@@ -2383,8 +2387,6 @@ XtFade.defaults = {
   "max": Infinity,
   "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true}, // @TODO
   "distance": 0.2,
-  "delayOn": false,
-  "delayOff": false,
   "aria": false
 };
 
