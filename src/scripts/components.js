@@ -682,7 +682,11 @@ class XtCore {
           groupElements: groupElements
         };
       }
-      this.detail.queueOn.unshift(obj);
+      if (options.durationNone === true) {
+        this.detail.queueOn = [obj];
+      } else {
+        this.detail.queueOn.unshift(obj);
+      }
       // queue remove duplicate // @TODO
       // for (let i = 0; i < this.detail.queueOff.length - 1; i++) { // - 1 not the last one running!
       //   let check = this.detail.queueOff[i];
@@ -750,7 +754,11 @@ class XtCore {
           groupElements: groupElements
         };
       }
-      this.detail.queueOff.unshift(obj);
+      if (options.durationNone === true) {
+        this.detail.queueOff = [obj];
+      } else {
+        this.detail.queueOff.unshift(obj);
+      }
       // // queue remove duplicate // @TODO
       // for (let i = 0; i < this.detail.queueOn.length - 1; i++) { // - 1 not the last one running!
       //   let check = this.detail.queueOn[i];
@@ -1019,7 +1027,7 @@ class XtCore {
     // queue
     if (!end) {
       this.queueOnAnim(obj, el, type);
-      if (options.durationNone && options.durationNone[type]) {
+      if (options.durationNone === true || (typeof options.durationNone === 'object' && options.durationNone[type])) {
         // queue running
         this.queueOnDone(obj, type);
       }
@@ -1057,7 +1065,7 @@ class XtCore {
     if (!end) {
       this.queueOffAnim(obj, el, type);
       // queue running
-      if (options.durationNone && options.durationNone[type]) {
+      if (options.durationNone === true || (typeof options.durationNone === 'object' && options.durationNone[type])) {
         this.queueOffDone(obj, type);
       }
     }
@@ -1902,7 +1910,7 @@ XtSlider.defaults = {
   "on": "click",
   "min": 1,
   "max": 1,
-  "durationNone": {"elements": true}, // @TODO
+  "durationNone": {"elements": true},
   "drag": false,
   "dragThreshold": 100,
   "aria": true
@@ -2419,7 +2427,7 @@ XtFade.defaults = {
   "on": "scroll resize",
   "min": 0,
   "max": Infinity,
-  "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true}, // @TODO
+  "durationNone": true,
   "distance": 0.2,
   "aria": false
 };
