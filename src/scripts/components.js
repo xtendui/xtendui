@@ -189,11 +189,7 @@ class XtCore {
     let self = this;
     let options = self.options;
     // toggle
-    if (!options.off) {
-      options.toggle = true;
-    } else {
-      options.toggle = false;
-    }
+    options.toggle = !options.off;
     // events
     for (let el of this.elements) {
       // event on
@@ -246,7 +242,6 @@ class XtCore {
    */
   eventOnHandler(element, e) {
     let self = this;
-    //Xt.requestAnimationFrame.call(window, function () { // @FIX mouseenter triggering before mouseleave adiacent elements // @TODO
     if (!e.detail || !e.detail.skip) {
       let eventLimit = self.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
@@ -263,7 +258,6 @@ class XtCore {
         self.auto();
       }
     }
-    //});
   }
 
   /**
@@ -528,9 +522,7 @@ class XtCore {
    */
   checkOn(element) {
     // check
-    return (!element.classList.contains('block-on')) &&
-      (!element.classList.contains(...this.options.classes) || element.classList.contains('block-off')) ||
-      (element.classList.contains('queue-off') || !element.classList.contains('queue-on'));
+    return !element.classList.contains(...this.options.classes) && !element.classList.contains('in') && !element.classList.contains('out');
   }
 
   /**
@@ -544,9 +536,7 @@ class XtCore {
       return false;
     }
     // check
-    return (!element.classList.contains('block-off')) &&
-      (element.classList.contains(...this.options.classes) || element.classList.contains('block-on')) ||
-      (element.classList.contains('queue-on') || !element.classList.contains('queue-off'));
+    return element.classList.contains(...this.options.classes) && !element.classList.contains('in') && !element.classList.contains('out');
   }
 
   /**
@@ -607,7 +597,7 @@ class XtCore {
     let options = self.options;
     // toggle
     let groupElements = this.getElements(element);
-    if (!this.hasCurrent(groupElements.single)) {
+    if (this.checkOn(element)) {
       // on
       this.specialOnActivate = false;
       this.addCurrent(groupElements.single);
@@ -626,6 +616,8 @@ class XtCore {
         // deactivate old
         this.eventOff(currents[0]);
       }
+      // if queue too big
+      this.queueOnTodo();
       // queue obj
       let obj = {};
       if (groupElements.all.length) {
@@ -652,27 +644,10 @@ class XtCore {
           groupElements: groupElements
         };
       }
-      if (options.queueNone) {
-        this.detail.queueOn = [obj]
-      } else {
-        this.detail.queueOn.unshift(obj);
-      }
+      this.detail.queueOn.unshift(obj);
       // if queue too big
-      /*
-      if (this.detail.queueOn.length > 1) {
-        // pop queue and end
-        let removed = this.detail.queueOn.shift();
-        console.log('on remove 2a', removed['elements'].groupElements.single); // @TODO
-        this.queueOnEnd(removed);
-      }
-      */
-      if (this.detail.queueOff.length > 1) {
-        // pop queue and end
-        let removed = this.detail.queueOff.shift();
-        console.log('off remove 2b', removed['elements'].groupElements.single); // @TODO
-        this.queueOffEnd(removed);
-      }
-      // queue instant
+      this.queueOffTodo();
+      // queue run
       for (let type in this.detail.queueOn[0]) {
         self.queueOn(type, true);
       }
@@ -691,7 +666,7 @@ class XtCore {
     let options = self.options;
     // toggle
     let groupElements = this.getElements(element);
-    if (this.hasCurrent(groupElements.single) && this.options.min - this.getCurrents().length < 0) {
+    if (this.checkOff(element)) {
       // off
       this.specialOffDeactivate = false;
       this.specialOffAnimate = false;
@@ -700,6 +675,8 @@ class XtCore {
       let elementsInner = this.getInside(element, options.elementsInner);
       let targetsInner = this.getInside(targets, options.targetsInner);
       this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
+      // if queue too big
+      this.queueOffTodo();
       // queue obj
       let obj = {};
       if (groupElements.all.length) {
@@ -726,25 +703,10 @@ class XtCore {
           groupElements: groupElements
         };
       }
-      if (options.queueNone) {
-        this.detail.queueOff = [obj]
-      } else {
-        this.detail.queueOff.unshift(obj);
-      }
+      this.detail.queueOff.unshift(obj);
       // if queue too big
-      if (this.detail.queueOn.length > 1) {
-        // pop queue and end
-        let removed = this.detail.queueOn.shift();
-        console.log('on remove 3a', removed['elements'].groupElements.single); // @TODO
-        this.queueOnEnd(removed);
-      }
-      if (this.detail.queueOff.length > 1) {
-        // pop queue and end
-        let removed = this.detail.queueOff.shift();
-        console.log('on remove 3b', removed['elements'].groupElements.single); // @TODO
-        this.queueOffEnd(removed);
-      }
-      // queue instant
+      this.queueOnTodo();
+      // queue run
       for (let type in this.detail.queueOff[0]) {
         self.queueOff(type, true);
       }
@@ -760,16 +722,7 @@ class XtCore {
     let test = false;
     let obj = this.detail.queueOn[0];
     let objOther = this.detail.queueOff[this.detail.queueOff.length - 1];
-    /*
-    if (queueInitial) {
-      objOther = this.detail.queueOff[0];
-    }
-    */
     if (obj && obj[type] && !obj[type].done && (test || !objOther || !objOther[type] || objOther[type].done)) {
-      //console.log('on', type, obj[type].groupElements.single);
-      if (objOther && objOther[type]) {
-        //console.log('on other', type, objOther[type].done, objOther[type].groupElements.single);
-      }
       this.queueOnDelay(obj, type, queueInitial);
     }
   }
@@ -783,16 +736,7 @@ class XtCore {
     let test = false;
     let obj = this.detail.queueOff[0];
     let objOther = this.detail.queueOn[this.detail.queueOn.length - 1];
-    /*
-    if (queueInitial) {
-      objOther = this.detail.queueOn[0];
-    }
-    */
     if (obj && obj[type] && !obj[type].done && (test || !objOther || !objOther[type] || objOther[type].done)) {
-      //console.log('off', type, obj[type].groupElements.single);
-      if (objOther && objOther[type]) {
-        //console.log('off other', type, objOther[type].done, objOther[type].groupElements.single);
-      }
       this.queueOffDelay(obj, type, queueInitial);
     }
   }
@@ -803,15 +747,8 @@ class XtCore {
    * @param {String} type Type of element
    */
   queueOnDone(obj, type) {
-    let self = this;
-    // done
     if (obj[type]) {
       obj[type].done = true;
-      // queue run other
-      if (this.detail.queueOff[0]) {
-        //console.log('off 4', this.detail.queueOff);
-        //console.log('ondone off', type, this.detail.queueOff[1][type].groupElements.single);
-      }
       this.queueOff(type);
       // all done
       let allDone = true;
@@ -821,25 +758,7 @@ class XtCore {
         }
       }
       if (allDone) {
-        let removed = this.detail.queueOn.pop();
-        //console.log('on remove 4', removed[type].groupElements.single);
-        //console.log('ondone', this.detail.queueOn[0], this.detail.queueOn[0][type].groupElements.single);
-        //this.detail.queueOn = []; // @TODO
-        /*
-        for (let o in obj) {
-          self.queueOnEnd(o);
-        }
-        */
-        /*
-        let arr = this.detail.queueOn;
-        for (let i = 0; i < this.detail.queueOn.length; i++) {
-          if (obj[type].id === arr[i][type].id) {
-          //if (obj['elements'].queueEls === arr[i]['elements'].queueEls) {
-            console.log(obj, arr[i]);
-            arr.splice(i, 1);
-          }
-        }
-        */
+        this.detail.queueOn.pop();
       }
     }
   }
@@ -850,16 +769,8 @@ class XtCore {
    * @param {String} type Type of element
    */
   queueOffDone(obj, type) {
-    let self = this;
-    // done
     if (obj[type]) {
       obj[type].done = true;
-      //console.log('off done', type);
-      // queue run other
-      if (this.detail.queueOn[1]) {
-        //console.log('on 5', this.detail.queueOn);
-        //console.log('offdone on', type, this.detail.queueOn[1][type].groupElements.single);
-      }
       this.queueOn(type);
       // all done
       let allDone = true;
@@ -869,29 +780,10 @@ class XtCore {
         }
       }
       if (allDone) {
-        let removed = this.detail.queueOff.pop();
-        //console.log('offdone', this.detail.queueOff[0], this.detail.queueOff[0][type].groupElements.single);
-        //console.log('off remove 5', removed[type].groupElements.single);
-        //this.detail.queueOff = []; // @TODO
-        /*
-        for (let o in obj) {
-          self.queueOffEnd(o);
-        }
-        */
-        /*
-        let arr = this.detail.queueOff;
-        for (let i = 0; i < this.detail.queueOff.length; i++) {
-          if (obj[type].id === arr[i][type].id) {
-          //if (obj['elements'].queueEls === arr[i]['elements'].queueEls) {
-            console.log(obj, arr[i]);
-            arr.splice(i, 1);
-          }
-        }
-        */
+        this.detail.queueOff.pop();
       }
     }
   }
-
 
   /**
    * queue on end
@@ -909,6 +801,7 @@ class XtCore {
           self.queueOnAnimDone(obj, el, type, true);
         }
       }
+      self.queueOff(type);
     }
   }
 
@@ -927,6 +820,33 @@ class XtCore {
           self.queueOffStart(obj, el, type, true);
           self.queueOffAnimDone(obj, el, type, true);
         }
+      }
+      self.queueOn(type);
+    }
+  }
+
+  /**
+   * if queue on too big, end what is still to do
+   */
+  queueOnTodo() {
+    if (this.detail.queueOn.length > 1) {
+      // pop queue and end
+      let removed = this.detail.queueOn.shift();
+      if (removed['elements'].groupElements.single !== this.detail.queueOn[0]['elements'].groupElements.single) {
+        this.queueOnEnd(removed);
+      }
+    }
+  }
+
+  /**
+   * if queue off too big, end what is still to do
+   */
+  queueOffTodo() {
+    if (this.detail.queueOff.length > 1) {
+      // pop queue and end
+      let removed = this.detail.queueOff.shift();
+      if (removed['elements'].groupElements.single !== this.detail.queueOff[0]['elements'].groupElements.single) {
+        this.queueOffEnd(removed);
       }
     }
   }
@@ -1571,8 +1491,7 @@ XtCore.defaults = {
   "delayOn": false,
   "delayOff": false,
   "queueOn": false,
-  "queueOff": false,
-  "queueNone": false
+  "queueOff": false
 };
 
 // export
