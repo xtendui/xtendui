@@ -653,9 +653,9 @@ class XtCore {
         // deactivate old
         this.eventOff(currents[0]);
       }
-      // if queue too big
-      this.queueOnTodo();
-      this.queueOffTodo();
+      // if queue too big // @TODO
+      //this.queueOnTodo();
+      //this.queueOffTodo();
       // queue obj
       let obj = {};
       if (groupElements.all.length) {
@@ -683,7 +683,7 @@ class XtCore {
         };
       }
       this.detail.queueOn.unshift(obj);
-      // queue remove duplicate // @TODO MEGLIO SBALLA ANCHE FADE
+      // queue remove duplicate // @TODO
       // for (let i = 0; i < this.detail.queueOff.length - 1; i++) { // - 1 not the last one running!
       //   let check = this.detail.queueOff[i];
       //   if (self.detail.queueOn[0]['elements'].groupElements.single === check['elements'].groupElements.single) {
@@ -721,9 +721,9 @@ class XtCore {
       let elementsInner = this.getInside(element, options.elementsInner);
       let targetsInner = this.getInside(targets, options.targetsInner);
       this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
-      // if queue too big
-      this.queueOnTodo();
-      this.queueOffTodo();
+      // if queue too big // @TODO
+      //this.queueOnTodo();
+      //this.queueOffTodo();
       // queue obj
       let obj = {};
       if (groupElements.all.length) {
@@ -751,7 +751,7 @@ class XtCore {
         };
       }
       this.detail.queueOff.unshift(obj);
-      // // queue remove duplicate // @TODO MEGLIO SBALLA ANCHE FADE
+      // // queue remove duplicate // @TODO
       // for (let i = 0; i < this.detail.queueOn.length - 1; i++) { // - 1 not the last one running!
       //   let check = this.detail.queueOn[i];
       //   if (self.detail.queueOff[0]['elements'].groupElements.single === check['elements'].groupElements.single) {
@@ -848,7 +848,6 @@ class XtCore {
   queueOnTodo() {
     // end what is still to do
     if (this.detail.queueOn.length > this.options.max) {
-      console.log('on', this.options.max);
       // remove queue and end
       let removed = this.detail.queueOn.shift();
       this.queueOnEnd(removed);
@@ -861,7 +860,6 @@ class XtCore {
   queueOffTodo() {
     // end what is still to do
     if (this.detail.queueOff.length > this.options.max) {
-      console.log('off', this.options.max);
       // remove queue and end
       let removed = this.detail.queueOff.shift();
       this.queueOffEnd(removed);
@@ -1599,8 +1597,7 @@ XtToggle.defaults = {
   "on": "click",
   "min": 0,
   "max": 1,
-  "durationNone": {"elements": true}, // @TODO
-  //"durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
+  "durationNone": {"elements": true},
   "aria": true
 };
 
@@ -1658,8 +1655,7 @@ XtDrop.defaults = {
   "on": "click",
   "min": 0,
   "max": 1,
-  "durationNone": {"elementsInner": true}, // @TODO
-  //"durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
+  "durationNone": {"elementsInner": true},
   "closeOutside": "body",
   "aria": true,
   "ariaControls": ":scope > a, :scope > button"
@@ -1720,8 +1716,7 @@ XtOverlay.defaults = {
   "on": "click",
   "min": 0,
   "max": 1,
-  "durationNone": {"elements": true}, // @TODO
-  //"durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
+  "durationNone": {"elements": true},
   "appendTo": "body",
   "backdrop": "targets",
   "classHtml": "xt-overlay",
@@ -1908,7 +1903,6 @@ XtSlider.defaults = {
   "min": 1,
   "max": 1,
   "durationNone": {"elements": true}, // @TODO
-  //"durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
   "drag": false,
   "dragThreshold": 100,
   "aria": true
@@ -2270,7 +2264,6 @@ XtSticky.defaults = {
   "min": 0,
   "max": Infinity,
   "position": "top",
-  "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true}, // @TODO
   "limit": {"bottom": Infinity},
   "contain": false,
   "hide": false,
