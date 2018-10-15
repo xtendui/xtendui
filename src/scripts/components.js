@@ -408,8 +408,7 @@ class XtCore {
     if (this.mode === 'unique') {
       // choose all elements
       let final = this.elements;
-      final = final.length > 1 ? final[0] : final;
-      return {all: Xt.arrSingle(final), single: final};
+      return {all: Xt.arrSingle(final), single: final.length > 1 ? final[0] : final};
     } else if (this.mode === 'multiple') {
       // choose element by group
       let group = element.getAttribute('data-group');
