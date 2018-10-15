@@ -127,13 +127,24 @@ class XtCore {
     for (let el of this.elements) {
       el.setAttribute('data-xt-namespace', self.namespace);
     }
-    // currents
+    // automatic initial currents
     Xt.requestAnimationFrame.call(window, function () {
       if (self.elements.length) {
-        // activate options.class
+        // elements
         for (let el of self.elements) {
+          let found = false;
           if (el.classList.contains(...options.classes)) {
-            el.classList.remove(...options.classes); // remove to activate also targets
+            el.classList.remove(...options.classes);
+            found = true;
+          }
+          let targets = self.getTargets(el);
+          for (let tr of targets) {
+            if (tr.classList.contains(...options.classes)) {
+              tr.classList.remove(...options.classes);
+              found = true;
+            }
+          }
+          if (found) {
             self.eventOn(el);
           }
         }
@@ -929,7 +940,7 @@ class XtCore {
     for (let el of els) {
       clearTimeout(el.dataset.xtDelayTimeout);
       clearTimeout(el.dataset.xtAnimTimeout);
-      let delay = parseFloat(el.dataset.xtOnDelay) || options.delayOn || 0;
+      let delay = parseFloat(el.dataset.xtOnDelay) || 0;
       if (options.queueOn) {
         delay += queueInitial ? 0 : options.queueOn;
       }
@@ -957,7 +968,7 @@ class XtCore {
     for (let el of els) {
       clearTimeout(el.dataset.xtDelayTimeout);
       clearTimeout(el.dataset.xtAnimTimeout);
-      let delay = parseFloat(el.dataset.xtOffDelay) || options.delayOff || 0;
+      let delay = parseFloat(el.dataset.xtOffDelay) || 0;
       if (options.queueOff) {
         delay += queueInitial ? 0 : options.queueOff;
       }

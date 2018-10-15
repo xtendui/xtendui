@@ -495,14 +495,14 @@ XtOverlay.defaults = {
   </div>
 </div>
 
-<p>You can start with toggled elements and targets just by adding all of the classes to the <strong>elements</strong>
-  you want activated.</p>
+<p>You can start with toggled elements and targets just by adding all of the classes to the <strong>elements</strong> or
+  <strong>targets</strong> you want activated. Following this activation the <strong>min</strong> option will take effect.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-source" data-lang="html">
       <div class="list list-space-small align-items-center"
-           data-xt-toggle='{"class": "active class-example-1", "min": 2, "max": 3}'>
+           data-xt-toggle='{"class": "active class-example-1", "min": 3, "max": 3}'>
         <button type="button" class="btn" data-group="0">
           <span>Group 0</span>
         </button>
@@ -541,6 +541,11 @@ XtOverlay.defaults = {
         <div class="alert toggle-block">
           <div class="content">
             Target 1
+          </div>
+        </div>
+        <div class="alert toggle-block active class-example-1" data-group="1">
+          <div class="content">
+            Group 1
           </div>
         </div>
       </div>
