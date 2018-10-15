@@ -28,12 +28,12 @@ class XtCore {
         "auto": false,
         "autoPause": false,
         "autoAlways": false,
-        "durationOn": false,
-        "durationOff": false,
         "delayOn": false,
         "delayOff": false,
-        "queueOn": false,
-        "queueOff": false
+        "delayOnInit": false,
+        "delayOffInit": false,
+        "durationOn": false,
+        "durationOff": false
       };
       this.defaults = Xt.merge([this.defaults, this.constructor.defaults]);
       // js options
@@ -940,9 +940,16 @@ class XtCore {
     for (let el of els) {
       clearTimeout(el.dataset.xtDelayTimeout);
       clearTimeout(el.dataset.xtAnimTimeout);
-      let delay = parseFloat(el.dataset.xtOnDelay) || 0;
-      if (options.queueOn) {
-        delay += queueInitial ? 0 : options.queueOn;
+      let delay;
+      if (options.delayOn) {
+        if (isNaN(options.delayOn)) { // @DELAY
+          let fnc = new Function('current', 'total', options.delayOn);
+          delay = fnc(parseInt(el.dataset.xtOnCount), parseInt(el.dataset.xtOnTot)).toString();
+        } else {
+          delay = options.delayOn;
+        }
+        delay = options.delayOnInit && queueInitial ? options.delayOnInit : delay;
+        console.log('on', delay);
       }
       if (delay) {
         el.dataset.xtDelayTimeout = setTimeout(function () {
@@ -968,11 +975,20 @@ class XtCore {
     for (let el of els) {
       clearTimeout(el.dataset.xtDelayTimeout);
       clearTimeout(el.dataset.xtAnimTimeout);
-      let delay = parseFloat(el.dataset.xtOffDelay) || 0;
-      if (options.queueOff) {
-        delay += queueInitial ? 0 : options.queueOff;
+      let delay;
+      if (options.delayOn) {
+        let d;
+        if (isNaN(options.delayOn)) { // @DELAY
+          let fnc = new Function('current', 'total', options.delayOff);
+          delay = fnc(parseInt(el.dataset.xtOffCount), parseInt(el.dataset.xtOffTot)).toString();
+        } else {
+          delay = options.delayOff;
+        }
+        delay = options.delayOnInit && queueInitial ? options.delayOnInit : delay;
+        console.log('off', delay);
       }
       if (delay) {
+        console.log('off', delay);
         el.dataset.xtDelayTimeout = setTimeout(function () {
           self.queueOffStart(obj, el, type);
         }, delay).toString();
@@ -2385,12 +2401,10 @@ class XtFade extends XtCore {
             currents.push(el);
             Xt.cancelAnimationFrame.call(window, el.dataset.eventFrame);
             el.dataset.eventFrame = Xt.requestAnimationFrame.call(window, function () {
-              if (options.delayOn) {
-                let func = new Function('current', 'total', options.delayOn);
-                el.dataset.xtOnDelay = func(current, currents.length).toString();
-                current++;
-              }
-              self.eventOn(el);
+              current++;
+              el.dataset.xtOnCount = current.toString();
+              el.dataset.xtOnTot = currents.length.toString();
+              self.eventOn(el); // @DELAY
             });
           }
         } else {
@@ -2402,12 +2416,10 @@ class XtFade extends XtCore {
             currents.push(el);
             Xt.cancelAnimationFrame.call(window, el.dataset.eventFrame);
             el.dataset.eventFrame = Xt.requestAnimationFrame.call(window, function () {
-              if (options.delayOff) {
-                let func = new Function('current', 'total', options.delayOff);
-                el.dataset.xtOffDelay = func(current, currents.length).toString();
-                current++;
-              }
-              self.eventOff(el);
+              current++;
+              el.dataset.xtOffCount = current.toString();
+              el.dataset.xtOffTot = currents.length.toString();
+              self.eventOff(el); // @DELAY
             });
           }
         }

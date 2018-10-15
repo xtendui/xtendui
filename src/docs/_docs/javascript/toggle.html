@@ -496,7 +496,8 @@ XtOverlay.defaults = {
 </div>
 
 <p>You can start with toggled elements and targets just by adding all of the classes to the <strong>elements</strong> or
-  <strong>targets</strong> you want activated. Following this activation the <strong>min</strong> option will take effect.</p>
+  <strong>targets</strong> you want activated. Following this activation the <strong>min</strong> option will take
+  effect.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="start">
@@ -832,16 +833,18 @@ XtOverlay.defaults = {
        data-name="delay">
     <div class="demo-text">
       <div class="content">
-        To add a delay before duration use <code>"delayOn": Milliseconds</code> <code>"delayOff": Milliseconds</code>
+        To add a delay before duration use <code>"delayOn": Milliseconds</code> <code>"delayOff": Milliseconds</code>,
+        To set the delay for the initial activation use <code>"delayOnInit": Milliseconds</code> <code>"delayOffInit":
+        Milliseconds</code>
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/toggle/toggle-queue.html"
-       data-name="queue">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/toggle/toggle-delay-fnc.html"
+       data-name="delay fnc">
     <div class="demo-text">
       <div class="content">
-        To add a delay on queue (so on consequential activations) use <code>"queueOn": Milliseconds</code> <code>"queueOff":
-        Milliseconds</code>
+        Complex delay with <code>"delayOn": Function</code> <code>"delayOff": Function</code> return number using
+        <strong>total</strong> and <strong>current</strong>
       </div>
     </div>
   </div>
