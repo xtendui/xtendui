@@ -942,7 +942,7 @@ class XtCore {
       clearTimeout(el.dataset.xtAnimTimeout);
       let delay;
       if (options.delayOn) {
-        if (isNaN(options.delayOn)) { // @DELAY
+        if (isNaN(options.delayOn)) {
           let fnc = new Function('current', 'total', options.delayOn);
           delay = fnc(parseInt(el.dataset.xtOnCount), parseInt(el.dataset.xtOnTot)).toString();
         } else {
@@ -978,7 +978,7 @@ class XtCore {
       let delay;
       if (options.delayOn) {
         let d;
-        if (isNaN(options.delayOn)) { // @DELAY
+        if (isNaN(options.delayOn)) {
           let fnc = new Function('current', 'total', options.delayOff);
           delay = fnc(parseInt(el.dataset.xtOffCount), parseInt(el.dataset.xtOffTot)).toString();
         } else {
@@ -2404,7 +2404,7 @@ class XtFade extends XtCore {
               current++;
               el.dataset.xtOnCount = current.toString();
               el.dataset.xtOnTot = currents.length.toString();
-              self.eventOn(el); // @DELAY
+              self.eventOn(el);
             });
           }
         } else {
@@ -2419,7 +2419,7 @@ class XtFade extends XtCore {
               current++;
               el.dataset.xtOffCount = current.toString();
               el.dataset.xtOffTot = currents.length.toString();
-              self.eventOff(el); // @DELAY
+              self.eventOff(el);
             });
           }
         }
