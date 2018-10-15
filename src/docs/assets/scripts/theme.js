@@ -65,7 +65,7 @@ for(let el of document.querySelectorAll('.site-aside-text')) {
     "targets": ".site-aside-subsub",
     "on": "mouseenter",
     "off": "mouseleave",
-    "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
+    "instant": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
     "min": 0,
     "max": Infinity
   });

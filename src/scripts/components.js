@@ -681,7 +681,7 @@ class XtCore {
           groupElements: groupElements
         };
       }
-      if (options.durationNone === true) {
+      if (options.instant === true) {
         this.detail.queueOn = [obj];
       } else {
         this.detail.queueOn.unshift(obj);
@@ -753,7 +753,7 @@ class XtCore {
           groupElements: groupElements
         };
       }
-      if (options.durationNone === true) {
+      if (options.instant === true) {
         this.detail.queueOff = [obj];
       } else {
         this.detail.queueOff.unshift(obj);
@@ -1026,7 +1026,7 @@ class XtCore {
     // queue
     if (!end) {
       this.queueOnAnim(obj, el, type);
-      if (options.durationNone === true || (typeof options.durationNone === 'object' && options.durationNone[type])) {
+      if (options.instant === true || (typeof options.instant === 'object' && options.instant[type])) {
         // queue running
         this.queueOnDone(obj, type);
       }
@@ -1064,7 +1064,7 @@ class XtCore {
     if (!end) {
       this.queueOffAnim(obj, el, type);
       // queue running
-      if (options.durationNone === true || (typeof options.durationNone === 'object' && options.durationNone[type])) {
+      if (options.instant === true || (typeof options.instant === 'object' && options.instant[type])) {
         this.queueOffDone(obj, type);
       }
     }
@@ -1137,7 +1137,7 @@ class XtCore {
     // queue
     if (!end) {
       // queue running
-      if (!options.durationNone || !options.durationNone[type]) {
+      if (!options.instant || !options.instant[type]) {
         this.queueOnDone(obj, type);
       }
     }
@@ -1189,7 +1189,7 @@ class XtCore {
     // queue
     if (!end) {
       // queue running
-      if (!options.durationNone || !options.durationNone[type]) {
+      if (!options.instant || !options.instant[type]) {
         this.queueOffDone(obj, type);
       }
     }
@@ -1604,7 +1604,7 @@ XtToggle.defaults = {
   "on": "click",
   "min": 0,
   "max": 1,
-  "durationNone": {"elements": true},
+  "instant": {"elements": true},
   "aria": true
 };
 
@@ -1662,7 +1662,7 @@ XtDrop.defaults = {
   "on": "click",
   "min": 0,
   "max": 1,
-  "durationNone": {"elementsInner": true},
+  "instant": {"elementsInner": true},
   "closeOutside": "body",
   "aria": true,
   "ariaControls": ":scope > a, :scope > button"
@@ -1723,7 +1723,7 @@ XtOverlay.defaults = {
   "on": "click",
   "min": 0,
   "max": 1,
-  "durationNone": {"elements": true},
+  "instant": {"elements": true},
   "appendTo": "body",
   "backdrop": "targets",
   "classHtml": "xt-overlay",
@@ -1909,7 +1909,7 @@ XtSlider.defaults = {
   "on": "click",
   "min": 1,
   "max": 1,
-  "durationNone": {"elements": true},
+  "instant": {"elements": true},
   "drag": false,
   "dragThreshold": 100,
   "aria": true
@@ -2426,7 +2426,7 @@ XtFade.defaults = {
   "on": "scroll resize",
   "min": 0,
   "max": Infinity,
-  "durationNone": true,
+  "instant": true,
   "distance": 0.2,
   "aria": false
 };

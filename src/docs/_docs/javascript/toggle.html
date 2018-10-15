@@ -49,7 +49,7 @@ XtToggle.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
   "class": "active",
-  "durationNone": {"elements": true},
+  "instant": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -86,7 +86,7 @@ XtDrop.defaults = {
   "targets": ":scope > .drop",
   "controls": ":scope > a, :scope > button",
   "class": "active",
-  "durationNone": {"elements": true},
+  "instant": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -123,7 +123,7 @@ XtOverlay.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > .overlay-outer",
   "class": "active",
-  "durationNone": {"elements": true},
+  "instant": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -841,11 +841,10 @@ XtOverlay.defaults = {
     </div>
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/toggle/toggle-instant.html"
-       data-name="durationNone">
+       data-name="instant">
     <div class="demo-text">
       <div class="content">
-        To disable automatic duration use <code>"durationNone": {"elements": true, "targets": true,
-        "elementsInner": true, "targetsInner": true}</code>
+        To disable queue and duration use <code>"instant": true</code>
       </div>
     </div>
   </div>
