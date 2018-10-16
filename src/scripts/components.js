@@ -944,11 +944,11 @@ class XtCore {
           let count = parseInt(el.dataset.xtOnCount) || obj[type].queueEls.findIndex(x => x === el);
           let tot = parseInt(el.dataset.xtOnTot) || els.length;
           let fnc = new Function('current', 'total', options.delayOn);
-          delay = fnc(count, tot).toString();
+          delay = fnc(count, tot - 1).toString();
+          console.log('on', delay, el);
         } else {
           delay = queueInitial ? 0 : options.delayOn;
         }
-        console.log('on', delay);
       }
       if (delay) {
         el.dataset.xtDelayTimeout = setTimeout(function () {
@@ -980,14 +980,13 @@ class XtCore {
           let count = parseInt(el.dataset.xtOffCount) || obj[type].queueEls.findIndex(x => x === el);
           let tot = parseInt(el.dataset.xtOffTot) || els.length;
           let fnc = new Function('current', 'total', options.delayOff);
-          delay = fnc(count, tot).toString();
+          delay = fnc(count, tot - 1).toString();
+          console.log('off', delay, el);
         } else {
           delay = queueInitial ? 0 : options.delayOff;
         }
-        console.log('off', delay);
       }
       if (delay) {
-        console.log('off', delay);
         el.dataset.xtDelayTimeout = setTimeout(function () {
           self.queueOffStart(obj, el, type);
         }, delay).toString();
