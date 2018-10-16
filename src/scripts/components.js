@@ -30,8 +30,6 @@ class XtCore {
         "autoAlways": false,
         "delayOn": false,
         "delayOff": false,
-        "delayOnInit": false,
-        "delayOffInit": false,
         "durationOn": false,
         "durationOff": false
       };
@@ -943,12 +941,13 @@ class XtCore {
       let delay;
       if (options.delayOn) {
         if (isNaN(options.delayOn)) {
+          let count = parseInt(el.dataset.xtOnCount) || obj[type].queueEls.findIndex(x => x === el);
+          let tot = parseInt(el.dataset.xtOnTot) || els.length;
           let fnc = new Function('current', 'total', options.delayOn);
-          delay = fnc(parseInt(el.dataset.xtOnCount), parseInt(el.dataset.xtOnTot)).toString();
+          delay = fnc(count, tot).toString();
         } else {
-          delay = options.delayOn;
+          delay = queueInitial ? 0 : options.delayOn;
         }
-        delay = options.delayOnInit && queueInitial ? options.delayOnInit : delay;
         console.log('on', delay);
       }
       if (delay) {
@@ -977,14 +976,14 @@ class XtCore {
       clearTimeout(el.dataset.xtAnimTimeout);
       let delay;
       if (options.delayOn) {
-        let d;
         if (isNaN(options.delayOn)) {
+          let count = parseInt(el.dataset.xtOffCount) || obj[type].queueEls.findIndex(x => x === el);
+          let tot = parseInt(el.dataset.xtOffTot) || els.length;
           let fnc = new Function('current', 'total', options.delayOff);
-          delay = fnc(parseInt(el.dataset.xtOffCount), parseInt(el.dataset.xtOffTot)).toString();
+          delay = fnc(count, tot).toString();
         } else {
-          delay = options.delayOff;
+          delay = queueInitial ? 0 : options.delayOff;
         }
-        delay = options.delayOnInit && queueInitial ? options.delayOnInit : delay;
         console.log('off', delay);
       }
       if (delay) {

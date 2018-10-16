@@ -43,6 +43,7 @@ We use jekyll to serve the docs.
   * [prepend](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend)
   * [append](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append)
   * [before](https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/before)
+  * [findIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
   * [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent)
   * [scrollingElement](https://github.com/yangg/scrolling-element)
 <!--
