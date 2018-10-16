@@ -785,42 +785,13 @@ class XtCore {
   }
 
   /**
-   * queue on
-   * @param {String} type Type of element
-   * @param {Number} index Queue index
-   * @param {Boolean} queueInitial If it's the initial queue
-   */
-  queueOn(type, index, queueInitial = false) {
-    let test = false;
-    let obj = this.detail.queueOn[index];
-    let objOther = this.detail.queueOff[this.detail.queueOff.length - 1];
-    if (obj && obj[type] && !obj[type].done && (test || !objOther || !objOther[type] || objOther[type].done)) {
-      this.queueOnDelay(obj, type, queueInitial);
-    }
-  }
-
-  /**
-   * queue off
-   * @param {String} type Type of element
-   * @param {Number} index Queue index
-   * @param {Boolean} queueInitial If it's the initial queue
-   */
-  queueOff(type, index, queueInitial = false) {
-    let test = false;
-    let obj = this.detail.queueOff[index];
-    let objOther = this.detail.queueOn[this.detail.queueOn.length - 1];
-    if (obj && obj[type] && !obj[type].done && (test || !objOther || !objOther[type] || objOther[type].done)) {
-      this.queueOffDelay(obj, type, queueInitial);
-    }
-  }
-
-  /**
    * queue on done
    * @param {Object} obj Queue object
    * @param {String} type Type of element
    */
   queueOnDone(obj, type) {
     if (obj[type]) {
+      // done
       obj[type].done = true;
       this.queueOff(type, this.detail.queueOff.length - 1);
       // all done
@@ -843,6 +814,7 @@ class XtCore {
    */
   queueOffDone(obj, type) {
     if (obj[type]) {
+      // done
       obj[type].done = true;
       this.queueOn(type, this.detail.queueOn.length - 1);
       // all done
@@ -889,7 +861,6 @@ class XtCore {
   queueOnEnd(obj) {
     let self = this;
     // end queue
-    // BUGGA FADE
     for (let type in obj) {
       if (!obj[type].done) {
         for (let el of obj[type].queueEls) {
@@ -910,7 +881,6 @@ class XtCore {
   queueOffEnd(obj) {
     let self = this;
     // end queue
-    // BUGGA FADE
     for (let type in obj) {
       if (!obj[type].done) {
         for (let el of obj[type].queueEls) {
@@ -925,6 +895,38 @@ class XtCore {
   }
 
   /**
+   * queue on
+   * @param {String} type Type of element
+   * @param {Number} index Queue index
+   * @param {Boolean} queueInitial If it's the initial queue
+   */
+  queueOn(type, index, queueInitial = false) {
+    let obj = this.detail.queueOn[index];
+    let objOther = this.detail.queueOff[this.detail.queueOff.length - 1];
+    if (obj && obj[type] && !obj[type].done) {
+      if (!objOther || !objOther[type] || objOther[type].done) {
+        this.queueOnDelay(obj, type, queueInitial);
+      }
+    }
+  }
+
+  /**
+   * queue off
+   * @param {String} type Type of element
+   * @param {Number} index Queue index
+   * @param {Boolean} queueInitial If it's the initial queue
+   */
+  queueOff(type, index, queueInitial = false) {
+    let obj = this.detail.queueOff[index];
+    let objOther = this.detail.queueOn[this.detail.queueOn.length - 1];
+    if (obj && obj[type] && !obj[type].done) {
+      if (!objOther || !objOther[type] || objOther[type].done) {
+        this.queueOffDelay(obj, type, queueInitial);
+      }
+    }
+  }
+
+  /**
    * queue on delay
    * @param {Object} obj Queue object
    * @param {String} type Type of elements
@@ -933,8 +935,8 @@ class XtCore {
   queueOnDelay(obj, type, queueInitial) {
     let self = this;
     let options = self.options;
-    let els = obj[type].queueEls;
     // delay
+    let els = obj[type].queueEls;
     for (let el of els) {
       clearTimeout(el.dataset.xtDelayTimeout);
       clearTimeout(el.dataset.xtAnimTimeout);
@@ -945,7 +947,6 @@ class XtCore {
           let tot = parseInt(el.dataset.xtOnTot) || els.length;
           let fnc = new Function('current', 'total', options.delayOn);
           delay = fnc(count, tot - 1).toString();
-          console.log('on', delay, el);
         } else {
           delay = queueInitial ? 0 : options.delayOn;
         }
@@ -956,6 +957,12 @@ class XtCore {
         }, delay).toString();
       } else {
         self.queueOnStart(obj, el, type);
+      }
+      // queue done
+      if (options.instant === true) {
+        if (el === els[0]) { // only if first element
+          self.queueOnDone(obj, type);
+        }
       }
     }
   }
@@ -969,8 +976,8 @@ class XtCore {
   queueOffDelay(obj, type, queueInitial) {
     let self = this;
     let options = self.options;
-    let els = obj[type].queueEls;
     // delay
+    let els = obj[type].queueEls;
     for (let el of els) {
       clearTimeout(el.dataset.xtDelayTimeout);
       clearTimeout(el.dataset.xtAnimTimeout);
@@ -981,7 +988,6 @@ class XtCore {
           let tot = parseInt(el.dataset.xtOffTot) || els.length;
           let fnc = new Function('current', 'total', options.delayOff);
           delay = fnc(count, tot - 1).toString();
-          console.log('off', delay, el);
         } else {
           delay = queueInitial ? 0 : options.delayOff;
         }
@@ -993,6 +999,12 @@ class XtCore {
       } else {
         self.queueOffStart(obj, el, type);
       }
+      // queue done
+      if (options.instant === true) {
+        if (el === els[0]) { // only if first element
+          self.queueOffDone(obj, type);
+        }
+      }
     }
   }
 
@@ -1001,9 +1013,9 @@ class XtCore {
    * @param {Object} obj Queue object
    * @param {Node|HTMLElement} el Elements to be deactivated
    * @param {String} type Type of elements
-   * @param {Boolean} end If end queue
+   * @param {Boolean} skipQueue If skip queue
    */
-  queueOnStart(obj, el, type, end = false) {
+  queueOnStart(obj, el, type, skipQueue = false) {
     let self = this;
     let options = self.options;
     // activate
@@ -1049,11 +1061,14 @@ class XtCore {
       }
     }
     // queue
-    if (!end) {
+    if (!skipQueue) {
       this.queueOnAnim(obj, el, type);
-      if (options.instant === true || (typeof options.instant === 'object' && options.instant[type])) {
-        // queue running
-        this.queueOnDone(obj, type);
+      // queue done
+      let els = obj[type].queueEls;
+      if (typeof options.instant === 'object' && options.instant[type]) {
+        if (el === els[els.length - 1]) { // only if last element
+          this.queueOnDone(obj, type);
+        }
       }
     }
     // listener dispatch
@@ -1065,9 +1080,9 @@ class XtCore {
    * @param {Object} obj Queue object
    * @param {Node|HTMLElement} el Elements to be deactivated
    * @param {String} type Type of elements
-   * @param {Boolean} end If end queue
+   * @param {Boolean} skipQueue If skip queue
    */
-  queueOffStart(obj, el, type, end = false) {
+  queueOffStart(obj, el, type, skipQueue = false) {
     let self = this;
     let options = self.options;
     // deactivate
@@ -1086,11 +1101,14 @@ class XtCore {
       }
     }
     // queue
-    if (!end) {
+    if (!skipQueue) {
       this.queueOffAnim(obj, el, type);
-      // queue running
-      if (options.instant === true || (typeof options.instant === 'object' && options.instant[type])) {
-        this.queueOffDone(obj, type);
+      // queue done
+      let els = obj[type].queueEls;
+      if (typeof options.instant === 'object' && options.instant[type]) {
+        if (el === els[els.length - 1]) { // only if last element
+          this.queueOffDone(obj, type);
+        }
       }
     }
     // listener dispatch
@@ -1144,9 +1162,9 @@ class XtCore {
    * @param {Object} obj Queue object
    * @param {Node|HTMLElement} el Element to be animated
    * @param {String} type Type of element
-   * @param {Boolean} end If end queue
+   * @param {Boolean} skipQueue If skip queue
    */
-  queueOnAnimDone(obj, el, type, end = false) {
+  queueOnAnimDone(obj, el, type, skipQueue = false) {
     let self = this;
     let options = self.options;
     // reset
@@ -1160,10 +1178,13 @@ class XtCore {
       el.style.width = 'auto';
     }
     // queue
-    if (!end) {
-      // queue running
+    if (!skipQueue) {
+      // queue done
+      let els = obj[type].queueEls;
       if (!options.instant || !options.instant[type]) {
-        this.queueOnDone(obj, type);
+        if (el === els[els.length - 1]) { // only if last element
+          this.queueOnDone(obj, type);
+        }
       }
     }
   }
@@ -1173,9 +1194,9 @@ class XtCore {
    * @param {Object} obj Queue object
    * @param {Node|HTMLElement} el Element to be animated
    * @param {String} type Type of element
-   * @param {Boolean} end If end queue
+   * @param {Boolean} skipQueue If skip queue
    */
-  queueOffAnimDone(obj, el, type, end = false) {
+  queueOffAnimDone(obj, el, type, skipQueue = false) {
     let self = this;
     let options = self.options;
     // reset
@@ -1212,10 +1233,13 @@ class XtCore {
       }
     }
     // queue
-    if (!end) {
-      // queue running
+    if (!skipQueue) {
+      // queue done
+      let els = obj[type].queueEls;
       if (!options.instant || !options.instant[type]) {
-        this.queueOffDone(obj, type);
+        if (el === els[els.length - 1]) { // only if last element
+          this.queueOffDone(obj, type);
+        }
       }
     }
   }
