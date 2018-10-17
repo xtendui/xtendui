@@ -125,14 +125,14 @@
 // block
 
 .block(@breakpoint:none) when (@breakpoint = none) {
-  display: block;
+  display: inline-block;
   width: 100%;
 }
 
 .block(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    display: block;
+    display: inline-block;
     width: 100%;
   }
 }
