@@ -202,6 +202,9 @@ Xt.merge = function (arr) {
  * @returns {Array}
  */
 Xt.arrSingle = function (element) {
+  if (!element) {
+    return [];
+  }
   if (element.length === undefined) {
     let arr = new Array(1);
     arr[0] = element;
