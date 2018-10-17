@@ -1135,7 +1135,7 @@ description: Dropdown component with structured theming that can show anything.
   <div class="demo-item demo-preview" data-name="special">
     <div class="demo-text">
       <div class="content">
-        <code>.drop-nodesign</code> <code>.drop-squared</code> <code>.drop-noborder</code>
+        <code>.drop-nodesign</code> <code>.drop-squared</code> <code>.drop-noborder</code> <code>.drop-none-y</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
@@ -1203,6 +1203,35 @@ description: Dropdown component with structured theming that can show anything.
             <span>noborder</span>
           </button>
           <div class="drop drop-noborder">
+            <div class="drop-inner">
+              <div class="content">
+                <ul class="list list-drop">
+                  <li>
+                    <button type="button">
+                      <span>Lorem ipsum dolor</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <span>Dolor sit</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <span>Amet</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="drop-outer" data-xt-drop>
+          <button type="button" class="btn btn-primary">
+            <span>drop-none-y</span>
+          </button>
+          <div class="drop drop-none-y">
             <div class="drop-inner">
               <div class="content">
                 <ul class="list list-drop">
