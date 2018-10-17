@@ -332,11 +332,11 @@ a, .alink {
       box-shadow: 0 0 4px fade(@black, @perc-xs), 0 6px 10px fade(@black, @perc-sm);
     }
     > .content {
-      .padding(y, 1.3rem); // vertical space
-      min-width: 18rem;
-    }
-    > .content > .list {
-      .list-btn-all({ .btn-squared(); padding-left: 2.2rem; padding-right: 2.2rem; white-space: nowrap; }); // not overridable
+      > .list {
+        .padding(y, 1.3rem); // vertical space
+        min-width: 18rem;
+        .list-btn-all({ .btn-squared(); padding-left: 2.2rem; padding-right: 2.2rem; white-space: nowrap; }); // not overridable
+      }
     }
   }
   // options
@@ -478,14 +478,6 @@ a, .alink {
   > .drop-inner {
     &@{drop-design} {
       border: 0;
-    }
-  }
-}
-
-.drop-none-y {
-  > .drop-inner {
-    > .content {
-      .padding(y, none);
     }
   }
 }
