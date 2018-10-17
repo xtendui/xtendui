@@ -1,6 +1,8 @@
 //////////////////////
-// link
+// general
 //////////////////////
+
+// decoration
 
 .link-underline {
   text-decoration: none;
@@ -74,6 +76,34 @@ a, .alink {
   .btn-primary-empty,
   .btn-secondary-empty {
     color: @text-inverse !important;
+  }
+}
+
+// disabled
+
+[disabled],
+.disabled {
+  opacity: .75;
+}
+
+//////////////////////
+// group
+//////////////////////
+
+.group {
+  .link-none();
+}
+
+// variants
+
+.group-input {
+  > .input-control {
+    border-color: @grey-300 !important;
+  }
+  > .group-inner > .btn {
+    &@{btn-design} {
+      border-color: @grey-300 !important;
+    }
   }
 }
 
@@ -305,15 +335,6 @@ a, .alink {
       opacity: 1;
     }
   }
-}
-
-//////////////////////
-// disabled
-//////////////////////
-
-[disabled],
-.disabled {
-  opacity: .75;
 }
 
 //////////////////////

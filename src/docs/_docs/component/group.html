@@ -1,0 +1,452 @@
+---
+title: Group
+categories: [Component]
+order: 150
+
+description: Extensible button component with structured theming.
+---
+
+<h2>Button group</h2>
+
+<h3>Usage</h3>
+
+<p>Use this markup to create a button group as line.</p>
+
+<pre>
+  <code class="html">
+    <div class="group">
+
+      <span class="group-inner">
+        <button type="button">
+          <!-- content -->
+        </button>
+      </span>
+
+      <span class="group-inner">
+        <button type="button">
+          <!-- content -->
+        </button>
+      </span>
+
+    </div>
+  </code>
+</pre>
+
+<p>Use this markup to create a button group as stack.</p>
+
+<pre>
+  <code class="html">
+    <div class="group">
+
+      <span class="group-inner">
+        <button type="button">
+          <!-- content -->
+        </button>
+        <button type="button">
+          <!-- content -->
+        </button>
+      </span>
+
+    </div>
+  </code>
+</pre>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="line">
+    <div class="demo-source" data-lang="html">
+      <div class="group">
+        <div class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 1
+          </button>
+        </div>
+        <div class="group-inner">
+          <button type="button" class="btn btn-primary-empty">
+            btn 2
+          </button>
+        </div>
+        <div class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 3
+          </button>
+        </div>
+        <div class="group-inner">
+          <button type="button" class="btn btn-secondary-empty">
+            btn 4
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="stack">
+    <div class="demo-source" data-lang="html">
+      <div class="group">
+        <div class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 1a
+          </button>
+          <button type="button" class="btn btn-primary-empty">
+            btn 1b
+          </button>
+        </div>
+        <div class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 2a
+          </button>
+          <button type="button" class="btn btn-secondary-empty">
+            btn 2b
+          </button>
+        </div>
+        <div class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 3a
+          </button>
+          <button type="button" class="btn btn-primary-empty">
+            btn 3b
+          </button>
+        </div>
+        <div class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 4a
+          </button>
+          <button type="button" class="btn btn-secondary-empty">
+            btn 4b
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Merge</h3>
+
+<p>Use this markup to merge multiple <code>.btn</code> in one <code>[button]</code> as line.</p>
+
+<pre>
+  <code class="html">
+    <button type="button" class="group">
+
+      <span class="group-inner">
+        <span class="btn">
+          <!-- content -->
+        </span>
+      </span>
+
+      <span class="group-inner">
+        <span class="btn">
+          <!-- content -->
+        </span>
+      </span>
+
+    </button>
+  </code>
+</pre>
+
+<p>Use this markup to merge multiple <code>.btn</code> in one <code>[button]</code> as stack.</p>
+
+<pre>
+  <code class="html">
+    <button type="button" class="group">
+
+      <span class="group-inner">
+        <span class="btn">
+          <!-- content -->
+        </span>
+        <span class="btn">
+          <!-- content -->
+        </span>
+      </span>
+
+    </button>
+  </code>
+</pre>
+
+<div class="alert">
+  <div class="content">
+    Elements with <code>a, button</code> tag propagate <code>.hover</code> and <code>.active</code> classes on
+    <code>.btn</code> childs automatically.
+  </div>
+</div>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="line">
+    <div class="demo-source" data-lang="html">
+      <button type="button" class="group">
+        <span class="group-inner">
+          <span class="btn btn-primary">
+            btn 1
+          </span>
+        </span>
+        <span class="group-inner">
+          <span class="btn btn-primary-empty">
+            btn 2
+          </span>
+        </span>
+        <span class="group-inner">
+          <span class="btn btn-secondary">
+            btn 3
+          </span>
+        </span>
+        <span class="group-inner">
+          <span class="btn btn-secondary-empty">
+            btn 4
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="stack">
+    <div class="demo-source" data-lang="html">
+      <button type="button" class="group">
+        <span class="group-inner">
+          <span class="btn btn-primary">
+            btn 1a
+          </span>
+          <span class="btn btn-primary-empty">
+            btn 1b
+          </span>
+        </span>
+        <span class="group-inner">
+          <span class="btn btn-secondary">
+            btn 2a
+          </span>
+          <span class="btn btn-secondary-empty">
+            btn 2b
+          </span>
+        </span>
+        <span class="group-inner">
+          <span class="btn btn-primary">
+            btn 3a
+          </span>
+          <span class="btn btn-primary-empty">
+            btn 3b
+          </span>
+        </span>
+        <span class="group-inner">
+          <span class="btn btn-secondary">
+            btn 4a
+          </span>
+          <span class="btn btn-secondary-empty">
+            btn 4b
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<h2>Input group</h2>
+
+<h3>Usage</h3>
+
+<p>Use this markup to create a input group as line.</p>
+
+<pre>
+  <code class="html">
+    <div class="group">
+
+      <span class="group-inner">
+        <span class="btn">
+          <!-- content -->
+        </span>
+      </span>
+
+      <input type="text" class="input-control">
+
+      <span class="group-inner">
+        <span class="btn">
+          <!-- content -->
+        </span>
+      </span>
+
+    </div>
+  </code>
+</pre>
+
+<p>Use this markup to create a input group as stack.</p>
+
+<pre>
+  <code class="html">
+    <div class="group">
+
+      <span class="group-inner">
+        <span class="btn">
+          <!-- content -->
+        </span>
+        <span class="btn">
+          <!-- content -->
+        </span>
+      </span>
+
+      <input type="text" class="input-control">
+
+      <span class="group-inner">
+        <span class="btn">
+          <!-- content -->
+        </span>
+        <span class="btn">
+          <!-- content -->
+        </span>
+      </span>
+
+    </div>
+  </code>
+</pre>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="line">
+    <div class="demo-source" data-lang="html">
+      <div class="group">
+        <span class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 1
+          </button>
+        </span>
+        <span class="group-inner">
+          <button type="button" class="btn btn-primary-empty">
+            btn 2
+          </button>
+        </span>
+        <input type="text" class="input-control">
+        <span class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 3
+          </button>
+        </span>
+        <span class="group-inner">
+          <button type="button" class="btn btn-secondary-empty">
+            btn 4
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="stack">
+    <div class="demo-source" data-lang="html">
+      <div class="group">
+        <span class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 1a
+          </button>
+          <button type="button" class="btn btn-primary-empty">
+            btn 1b
+          </button>
+        </span>
+        <span class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 2a
+          </button>
+          <button type="button" class="btn btn-secondary-empty">
+            btn 2b
+          </button>
+        </span>
+        <input type="text" class="input-control">
+        <span class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 3a
+          </button>
+          <button type="button" class="btn btn-primary-empty">
+            btn 3b
+          </button>
+        </span>
+        <span class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 4a
+          </button>
+          <button type="button" class="btn btn-secondary-empty">
+            btn 4b
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Options</h2>
+
+<h3>Variants</h3>
+
+<p>Optional classes for assigning variant.</p>
+
+<div class="alert">
+  <div class="content">
+    Group variants are defined inside <code>/theme/_components.less</code>.
+  </div>
+</div>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="line">
+    <div class="demo-source" data-lang="html">
+      <div class="group group-input">
+        <span class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 1
+          </button>
+        </span>
+        <span class="group-inner">
+          <button type="button" class="btn btn-primary-empty">
+            btn 2
+          </button>
+        </span>
+        <input type="text" class="input-control">
+        <span class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 3
+          </button>
+        </span>
+        <span class="group-inner">
+          <button type="button" class="btn btn-secondary-empty">
+            btn 4
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="stack">
+    <div class="demo-source" data-lang="html">
+      <div class="group group-input">
+        <span class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 1a
+          </button>
+          <button type="button" class="btn btn-primary-empty">
+            btn 1b
+          </button>
+        </span>
+        <span class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 2a
+          </button>
+          <button type="button" class="btn btn-secondary-empty">
+            btn 2b
+          </button>
+        </span>
+        <input type="text" class="input-control">
+        <span class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 3a
+          </button>
+          <button type="button" class="btn btn-primary-empty">
+            btn 3b
+          </button>
+        </span>
+        <span class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 4a
+          </button>
+          <button type="button" class="btn btn-secondary-empty">
+            btn 4b
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Playground</h2>
+
+<h3>Input group number</h3>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/component/group/group-number.html" data-name="number"></div>
+</div>
