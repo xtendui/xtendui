@@ -254,6 +254,9 @@ Xt.dataStorage = {
     return this._storage.get(element).get(key);
   },
   get: function (element, key) {
+    if (!this._storage.get(element)) {
+      return null;
+    }
     return this._storage.get(element).get(key);
   },
   has: function (element, key) {

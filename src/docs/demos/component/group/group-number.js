@@ -1,3 +1,4 @@
+// extension: group-number
 
 function inputNumberValidate(val) {
   let group = this;
