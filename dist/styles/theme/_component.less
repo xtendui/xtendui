@@ -94,6 +94,21 @@ a, .alink {
   .link-none();
 }
 
+// animations
+
+.group {
+  // interaction
+  a&, button& {
+    .transition-default.out();
+    transform: scale(1);
+    &:active, &.active {
+      transform: scale(.95);
+      .transition-default.active();
+      transition-duration: @time-small;
+    }
+  }
+}
+
 // variants
 
 .group-input {
@@ -135,17 +150,23 @@ a, .alink {
   .transition-default.out();
   &@{btn-design} {
     .transition-default.out();
-    transform: scale(1);
   }
   &:active, &.active {
     .transition-default.active();
     &@{btn-design} {
-      left: .2em;
-      right: .2em;
-      top: .1em;
-      bottom: .1em;
       .transition-default.active();
-      transition-duration: @time-small;
+    }
+  }
+  // interaction
+  a&, button& {
+    &@{btn-design} {
+      transform: scale(1);
+    }
+    &:active, &.active {
+      &@{btn-design} {
+        transform: scale(.95);
+        transition-duration: @time-small;
+      }
     }
   }
 }

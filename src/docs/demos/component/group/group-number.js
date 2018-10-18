@@ -1,4 +1,6 @@
-// extension: group-number
+//////////////////////
+// xtend group-number
+//////////////////////
 
 function inputNumberValidate(val) {
   let group = this;
