@@ -615,7 +615,7 @@ Xt.currents = {};
 /**
  * init all data-xt classes
  */
-Xt.initAll = function (containers = document.documentElement) {
+Xt.init = function (containers = document.documentElement) {
   containers = Xt.arrSingle(containers);
   for (let container of containers) {
     // xt
@@ -647,10 +647,12 @@ Xt.initAll = function (containers = document.documentElement) {
 
 if (document.readyState === "loading") {
   document.addEventListener('DOMContentLoaded', function () {
-    Xt.initAll();
+    Xt.init();
   });
 } else {
-  Xt.initAll();
+  Xt.requestAnimationFrame.call(window, function () {
+    Xt.init();
+  });
 }
 
 // mutation observer
@@ -660,7 +662,7 @@ Xt.initObserver = new MutationObserver(function (mutationsList) {
     if (mutation.type == 'childList') {
       for (let added of mutation.addedNodes) {
         if (added.nodeType === 1) {
-          Xt.initAll(added);
+          Xt.init(added);
         }
       }
     }
