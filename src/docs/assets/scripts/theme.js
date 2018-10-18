@@ -4,8 +4,6 @@
 
 // .make-line
 
-import {Xt} from "../../../scripts/xtend";
-
 for(let el of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
   el.classList.add('make-line');
 }
@@ -381,6 +379,7 @@ for(let [i, el] of document.querySelectorAll('.demo').entries()) {
 // others
 //////////////////////
 
+
 // .demo-cols
 
 for(let element of document.querySelectorAll('.demo-cols')) {
@@ -395,20 +394,4 @@ for(let element of document.querySelectorAll('.demo-cols-nested .col')) {
   for(let [i, el] of element.querySelectorAll('.col').entries()) {
     el.setAttribute('data-index', i);
   }
-}
-
-//////////////////////
-// xtend
-//////////////////////
-
-// init all
-
-function initAll() {
-  Xt.initAll();
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener('DOMContentLoaded', initAll);
-} else {
-  initAll();
 }

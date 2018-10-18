@@ -21,68 +21,109 @@ const Xt = {};
 Xt.currents = {};
 
 //////////////////////
-// methods
+// init
 //////////////////////
 
 /**
  * init all data-xt classes
  */
-Xt.initAll = function (container = document) {
-  // xt
-  for (let el of container.querySelectorAll('[data-xt-toggle]')) {
-    new XtToggle(el);
-  }
-  for (let el of container.querySelectorAll('[data-xt-drop]')) {
-    new XtDrop(el);
-  }
-  for (let el of container.querySelectorAll('[data-xt-overlay]')) {
-    new XtOverlay(el);
-  }
-  for (let el of container.querySelectorAll('[data-xt-slider]')) {
-    new XtSlider(el);
-  }
-  for (let el of container.querySelectorAll('[data-xt-fade]')) {
-    new XtFade(el);
-  }
-  for (let el of container.querySelectorAll('[data-xt-sticky]')) {
-    new XtSticky(el);
-  }
-  // btn decorator
-  function btnHoverOn() {
-    let els = this.querySelectorAll('.btn');
-    for (let el of els) {
-      el.classList.add('hover');
+Xt.initAll = function (containers = document.documentElement) {
+  containers = Xt.arrSingle(containers);
+  for (let container of containers) {
+    // xt
+    for (let el of container.querySelectorAll('[data-xt-toggle]')) {
+      new XtToggle(el);
+    }
+    for (let el of container.querySelectorAll('[data-xt-drop]')) {
+      new XtDrop(el);
+    }
+    for (let el of container.querySelectorAll('[data-xt-overlay]')) {
+      new XtOverlay(el);
+    }
+    for (let el of container.querySelectorAll('[data-xt-slider]')) {
+      new XtSlider(el);
+    }
+    for (let el of container.querySelectorAll('[data-xt-fade]')) {
+      new XtFade(el);
+    }
+    for (let el of container.querySelectorAll('[data-xt-sticky]')) {
+      new XtSticky(el);
+    }
+    for (let el of Array.from(container.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
+      Xt.btnDeco(el);
     }
   }
-  function btnHoverOff() {
-    let els = this.querySelectorAll('.btn');
-    for (let el of els) {
-      el.classList.remove('hover');
+};
+
+// init all
+
+if (document.readyState === "loading") {
+  document.addEventListener('DOMContentLoaded', function () {
+    Xt.initAll();
+  });
+} else {
+  Xt.initAll();
+}
+
+// mutation observer
+
+Xt.initObserver = new MutationObserver(function (mutationsList) {
+  for (let mutation of mutationsList) {
+    if (mutation.type == 'childList') {
+      for (let added of mutation.addedNodes) {
+        if (added.nodeType === 1) {
+          Xt.initAll(added);
+        }
+      }
     }
   }
-  function btnActiveOn() {
-    let els = this.querySelectorAll('.btn');
-    for (let el of els) {
-      el.classList.add('active');
-    }
-  }
-  function btnActiveOff() {
-    let els = this.querySelectorAll('.btn');
-    for (let el of els) {
-      el.classList.remove('active');
-    }
-  }
-  let els = container.querySelectorAll('a, button');
-  els = Array.from(els).filter(x => x.querySelectorAll('.btn').length !== 0);
+});
+Xt.initObserver.observe(document, {characterData: false, attributes: false, childList: true, subtree: true});
+
+//////////////////////
+// utils
+//////////////////////
+
+/**
+ * decorate .btn inside [a, button]
+ */
+
+Xt.btnDecoHoverOn = function () {
+  let els = this.querySelectorAll('.btn');
   for (let el of els) {
-    el.removeEventListener('mouseenter', btnHoverOn);
-    el.addEventListener('mouseenter', btnHoverOn);
-    el.removeEventListener('mouseleave', btnHoverOff);
-    el.addEventListener('mouseleave', btnHoverOff);
-    el.removeEventListener('mousedown', btnActiveOn);
-    el.addEventListener('mousedown', btnActiveOn);
-    window.removeEventListener('mouseup', btnActiveOff.bind(el));
-    window.addEventListener('mouseup', btnActiveOff.bind(el));
+    el.classList.add('hover');
+  }
+};
+Xt.btnDecoHoverOff = function () {
+  let els = this.querySelectorAll('.btn');
+  for (let el of els) {
+    el.classList.remove('hover');
+  }
+};
+Xt.btnDecoActiveOn = function () {
+  let els = this.querySelectorAll('.btn');
+  for (let el of els) {
+    el.classList.add('active');
+  }
+};
+Xt.btnDecoActiveOff = function () {
+  let els = this.querySelectorAll('.btn');
+  for (let el of els) {
+    el.classList.remove('active');
+  }
+};
+
+Xt.btnDeco = function (el) {
+  if (!el.dataset.xtBtnDecoInitialized) {
+    el.dataset.xtBtnDecoInitialized = 'true';
+    el.removeEventListener('mouseenter', Xt.btnDecoHoverOn);
+    el.addEventListener('mouseenter', Xt.btnDecoHoverOn);
+    el.removeEventListener('mouseleave', Xt.btnDecoHoverOff);
+    el.addEventListener('mouseleave', Xt.btnDecoHoverOff);
+    el.removeEventListener('mousedown', Xt.btnDecoActiveOn);
+    el.addEventListener('mousedown', Xt.btnDecoActiveOn);
+    window.removeEventListener('mouseup', Xt.btnDecoActiveOff.bind(el));
+    window.addEventListener('mouseup', Xt.btnDecoActiveOff.bind(el));
   }
 };
 
@@ -294,7 +335,7 @@ Xt.animDuration = function (el, timing = null) {
 /**
  * limit focus to element
  */
-Xt.focusLimit = function(focusable, first, last, e) {
+Xt.focusLimit = function (focusable, first, last, e) {
   let code = e.keyCode ? e.keyCode : e.which;
   if (code === 9) {
     if (!focusable.includes(document.activeElement)) {
@@ -330,9 +371,9 @@ Xt.focusLimitOff = function () {
 };
 
 /**
- * document focus utilities 
+ * document focus utilities
  */
-Xt.focusUtilKey = function(e) {
+Xt.focusUtilKey = function (e) {
   let code = e.keyCode ? e.keyCode : e.which;
   if (code === 9) {
     if (!Xt.focusBlock) {
@@ -347,7 +388,7 @@ Xt.focusUtilKey = function(e) {
     }
   }
 };
-Xt.focusUtilMouse = function(e) {
+Xt.focusUtilMouse = function (e) {
   if (!Xt.focusBlock) {
     // remember Xt.focus
     Xt.focus = e.target;
@@ -597,7 +638,7 @@ window.addEventListener('blur', function () {
 
 if (!Array.prototype.findIndex) {
   Object.defineProperty(Array.prototype, 'findIndex', {
-    value: function(predicate) {
+    value: function (predicate) {
       if (this == null) {
         throw new TypeError('"this" is null or not defined');
       }

@@ -21,7 +21,8 @@ class XtCore {
    */
   constructor(object, jsOptions = {}, attr) {
     this.object = object;
-    if (this.object) {
+    if (this.object && !this.object.dataset.xtCoreInitialized) {
+      this.object.dataset.xtCoreInitialized = 'true';
       this.defaults = {
         "onBlock": false,
         "offBlock": false,
@@ -2248,7 +2249,7 @@ class XtSticky extends XtCore {
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
-      let elements = Array.isArray(option) ? option : document.querySelectorAll(option);
+      let elements = Array.isArray(option) || NodeList.prototype.isPrototypeOf(option) ? option : document.querySelectorAll(option);
       if (elements.length) {
         let found = false;
         val = 0;
@@ -2288,7 +2289,7 @@ class XtSticky extends XtCore {
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
-      let elements = Array.isArray(option) ? option : document.querySelectorAll(option);
+      let elements = Array.isArray(option) || NodeList.prototype.isPrototypeOf(option) ? option : document.querySelectorAll(option);
       if (elements.length) {
         for (let el of elements) {
           if (el.classList.contains('sticky-hide-down') && el.classList.contains('active')) {
