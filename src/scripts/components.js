@@ -2054,6 +2054,12 @@ class XtSticky extends XtCore {
     window.addEventListener('scroll.sticky', stickyHandler);
     // listener dispatch initial
     window.dispatchEvent(new CustomEvent('scroll.sticky'));
+    // autoClose
+    let autoCloseEl = this.object;
+    let autoCloseHandler = Xt.dataStorage.get(autoCloseEl, 'addHandler');
+    autoCloseHandler = autoCloseHandler ? autoCloseHandler : Xt.dataStorage.put(autoCloseEl, 'addHandler', this.autoCloseSticky);
+    autoCloseEl.removeEventListener('hide.sticky', autoCloseHandler);
+    autoCloseEl.addEventListener('hide.sticky', autoCloseHandler);
   }
 
   /**
@@ -2063,6 +2069,16 @@ class XtSticky extends XtCore {
   eventStickyHandler(e) {
     if (!e.detail || !e.detail.skip) {
       this.eventScroll(this.object);
+    }
+  }
+
+  /**
+   * autoclose xt components on hide.sticky
+   * @param {Event} e
+   */
+  autoCloseSticky(e) {
+    for (let drop of e.target.querySelectorAll('.drop-outer.active')) {
+      drop.dispatchEvent(new CustomEvent('off'));
     }
   }
 
