@@ -16,26 +16,12 @@ description: Lorem Ipsum
 
 <h2>Initialization</h2>
 
-<h3>All</h3>
+<h3>Attributes</h3>
 
-<p>You can initialize all javascript components on the document attributes (using <code>[data-xt-]</code>) using
-  <strong>Xt</strong>. Be sure to initialize them when the page is ready.</p>
+<p>The document attributes with <code>[data-xt-]</code> gets initialized automatically, also on DOM changes with
+  Mutation Observer.</p>
 
-<pre>
-  <code class="js">
-    function initAll() {
-      Xt.initAll();
-    }
-
-    if (document.readyState === "loading") {
-      document.addEventListener('DOMContentLoaded', initAll);
-    } else {
-      initAll();
-    }
-  </code>
-</pre>
-
-<p>You can also pass a container to search for javascript components.</p>
+<p>If you really need, but probably not, you can call yourself the document attributes initializzation.</p>
 
 <pre>
   <code class="js">

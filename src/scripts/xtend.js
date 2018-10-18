@@ -50,7 +50,7 @@ Xt.initAll = function (containers = document.documentElement) {
       new XtSticky(el);
     }
     for (let el of Array.from(container.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
-      Xt.btnDeco(el);
+      Xt.btnMerge.init(el);
     }
   }
 };
@@ -88,44 +88,49 @@ Xt.initObserver.observe(document, {characterData: false, attributes: false, chil
  * decorate .btn inside [a, button]
  */
 
-Xt.btnDecoHoverOn = function () {
-  let els = this.querySelectorAll('.btn');
-  for (let el of els) {
-    el.classList.add('hover');
-  }
-};
-Xt.btnDecoHoverOff = function () {
-  let els = this.querySelectorAll('.btn');
-  for (let el of els) {
-    el.classList.remove('hover');
-  }
-};
-Xt.btnDecoActiveOn = function () {
-  let els = this.querySelectorAll('.btn');
-  for (let el of els) {
-    el.classList.add('active');
-  }
-};
-Xt.btnDecoActiveOff = function () {
-  let els = this.querySelectorAll('.btn');
-  for (let el of els) {
-    el.classList.remove('active');
+Xt.btnMerge = {
+  init: function (el) {
+    if (!el.dataset.xtbtnMergeDone) {
+      el.dataset.xtbtnMergeDone = 'true';
+      el.removeEventListener('mouseenter', Xt.btnMerge.hoverOn);
+      el.addEventListener('mouseenter', Xt.btnMerge.hoverOn);
+      el.removeEventListener('mouseleave', Xt.btnMerge.hoverOff);
+      el.addEventListener('mouseleave', Xt.btnMerge.hoverOff);
+      el.removeEventListener('mousedown', Xt.btnMerge.activeOn);
+      el.addEventListener('mousedown', Xt.btnMerge.activeOn);
+      window.removeEventListener('mouseup', Xt.btnMerge.activeOff.bind(el));
+      window.addEventListener('mouseup', Xt.btnMerge.activeOff.bind(el));
+    }
+  },
+  hoverOn: function () {
+    let els = this.querySelectorAll('.btn');
+    for (let el of els) {
+      el.classList.add('hover');
+    }
+  },
+  hoverOff: function () {
+    let els = this.querySelectorAll('.btn');
+    for (let el of els) {
+      el.classList.remove('hover');
+    }
+  },
+  activeOn: function () {
+    let els = this.querySelectorAll('.btn');
+    for (let el of els) {
+      el.classList.add('active');
+    }
+  },
+  activeOff: function () {
+    let els = this.querySelectorAll('.btn');
+    for (let el of els) {
+      el.classList.remove('active');
+    }
   }
 };
 
-Xt.btnDeco = function (el) {
-  if (!el.dataset.xtBtnDecoInitialized) {
-    el.dataset.xtBtnDecoInitialized = 'true';
-    el.removeEventListener('mouseenter', Xt.btnDecoHoverOn);
-    el.addEventListener('mouseenter', Xt.btnDecoHoverOn);
-    el.removeEventListener('mouseleave', Xt.btnDecoHoverOff);
-    el.addEventListener('mouseleave', Xt.btnDecoHoverOff);
-    el.removeEventListener('mousedown', Xt.btnDecoActiveOn);
-    el.addEventListener('mousedown', Xt.btnDecoActiveOn);
-    window.removeEventListener('mouseup', Xt.btnDecoActiveOff.bind(el));
-    window.addEventListener('mouseup', Xt.btnDecoActiveOff.bind(el));
-  }
-};
+//////////////////////
+// utils
+//////////////////////
 
 /**
  * request animation frame
