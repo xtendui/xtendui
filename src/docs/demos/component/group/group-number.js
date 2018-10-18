@@ -36,7 +36,7 @@ function inputNumberChange(step, e) {
 }
 
 function inputNumberInit(container) {
-  for (let [i, group] of container.querySelectorAll('.group-number-line, .group-number-stack').entries()) {
+  for (let [i, group] of container.querySelectorAll('.group-number, .group-number').entries()) {
     // init
     inputNumberChange.bind(group, 0)();
     // vars
