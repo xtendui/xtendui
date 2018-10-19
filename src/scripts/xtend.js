@@ -4,298 +4,366 @@
 
 'use strict';
 
+import './polyfills';
 import {XtCore, XtToggle, XtDrop, XtOverlay, XtSlider, XtSticky, XtFade} from './components';
-
-//////////////////////
-// closest polyfill
-// https://github.com/jonathantneal/closest
-// USAGE: element.closest(query);
-//////////////////////
-
-(function (ElementProto) {
-  if (typeof ElementProto.matches !== 'function') {
-    ElementProto.matches = ElementProto.msMatchesSelector || ElementProto.mozMatchesSelector || ElementProto.webkitMatchesSelector || function matches(selector) {
-      var element = this;
-      var elements = (element.document || element.ownerDocument).querySelectorAll(selector);
-      var index = 0;
-      while (elements[index] && elements[index] !== element) {
-        ++index;
-      }
-      return Boolean(elements[index]);
-    };
-  }
-  if (typeof ElementProto.closest !== 'function') {
-    ElementProto.closest = function closest(selector) {
-      var element = this;
-      while (element && element.nodeType === 1) {
-        if (element.matches(selector)) {
-          return element;
-        }
-        element = element.parentNode;
-      }
-      return null;
-    };
-  }
-})(window.Element.prototype);
-
-//////////////////////
-// scope polyfill
-// https://github.com/jonathantneal/element-qsa-scope
-// USAGE: querySelectorAll(':scope > .selector');
-//////////////////////
-
-(function (ElementPrototype) {
-  try {
-    // test for scope support
-    document.querySelector(':scope *');
-  } catch (error) {
-    let polyfill = function (qsa) {
-      return function (selectors) {
-        // whether the selectors contain :scope
-        let hasScope = selectors && scope.test(selectors);
-        if (hasScope) {
-          // fallback attribute
-          let attr = 'q' + Math.floor(Math.random() * 9000000) + 1000000;
-          // replace :scope with the fallback attribute
-          arguments[0] = selectors.replace(scope, '[' + attr + ']');
-          // add the fallback attribute
-          this.setAttribute(attr, '');
-          // results of the qsa
-          let elementOrNodeList = qsa.apply(this, arguments);
-          // remove the fallback attribute
-          this.removeAttribute(attr);
-          // return the results of the qsa
-          return elementOrNodeList;
-        } else {
-          // return the results of the qsa
-          return qsa.apply(this, arguments);
-        }
-      };
-    }
-    // scope regex
-    let scope = /:scope(?![\w-])/gi;
-    // polyfill Element#querySelector
-    let querySelectorWithScope = polyfill(ElementPrototype.querySelector);
-    ElementPrototype.querySelector = function querySelector(selectors) {
-      return querySelectorWithScope.apply(this, arguments);
-    };
-    // polyfill Element#querySelectorAll
-    let querySelectorAllWithScope = polyfill(ElementPrototype.querySelectorAll);
-    ElementPrototype.querySelectorAll = function querySelectorAll(selectors) {
-      return querySelectorAllWithScope.apply(this, arguments);
-    };
-    // polyfill Element#matches
-    if (ElementPrototype.matches) {
-      let matchesWithScope = polyfill(ElementPrototype.matches);
-      ElementPrototype.matches = function matches(selectors) {
-        return matchesWithScope.apply(this, arguments);
-      };
-    }
-    // polyfill Element#closest
-    if (ElementPrototype.closest) {
-      let closestWithScope = polyfill(ElementPrototype.closest);
-      ElementPrototype.closest = function closest(selectors) {
-        return closestWithScope.apply(this, arguments);
-      };
-    }
-  }
-})(Element.prototype);
-
-//////////////////////
-// prepend polyfill
-// https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend
-//////////////////////
-
-(function (arr) {
-  arr.forEach(function (item) {
-    if (item.hasOwnProperty('prepend')) {
-      return;
-    }
-    Object.defineProperty(item, 'prepend', {
-      configurable: true,
-      enumerable: true,
-      writable: true,
-      value: function prepend() {
-        var argArr = Array.prototype.slice.call(arguments),
-          docFrag = document.createDocumentFragment();
-
-        argArr.forEach(function (argItem) {
-          var isNode = argItem instanceof Node;
-          docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
-        });
-
-        this.insertBefore(docFrag, this.firstChild);
-      }
-    });
-  });
-})([Element.prototype, Document.prototype, DocumentFragment.prototype]);
-
-//////////////////////
-// append polyfill
-// https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append
-//////////////////////
-
-(function (arr) {
-  arr.forEach(function (item) {
-    if (item.hasOwnProperty('append')) {
-      return;
-    }
-    Object.defineProperty(item, 'append', {
-      configurable: true,
-      enumerable: true,
-      writable: true,
-      value: function append() {
-        let argArr = Array.prototype.slice.call(arguments),
-          docFrag = document.createDocumentFragment();
-
-        argArr.forEach(function (argItem) {
-          let isNode = argItem instanceof Node;
-          docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
-        });
-
-        this.appendChild(docFrag);
-      }
-    });
-  });
-})([Element.prototype, Document.prototype, DocumentFragment.prototype]);
-
-//////////////////////
-// before polyfill
-// https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/before
-//////////////////////
-
-(function (arr) {
-  arr.forEach(function (item) {
-    if (item.hasOwnProperty('before')) {
-      return;
-    }
-    Object.defineProperty(item, 'before', {
-      configurable: true,
-      enumerable: true,
-      writable: true,
-      value: function before() {
-        let argArr = Array.prototype.slice.call(arguments),
-          docFrag = document.createDocumentFragment();
-
-        argArr.forEach(function (argItem) {
-          let isNode = argItem instanceof Node;
-          docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
-        });
-
-        this.parentNode.insertBefore(docFrag, this);
-      }
-    });
-  });
-})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
-
-//////////////////////
-// findIndex polyfill
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
-//////////////////////
-
-if (!Array.prototype.findIndex) {
-  Object.defineProperty(Array.prototype, 'findIndex', {
-    value: function (predicate) {
-      if (this == null) {
-        throw new TypeError('"this" is null or not defined');
-      }
-      var o = Object(this);
-      var len = o.length >>> 0;
-      if (typeof predicate !== 'function') {
-        throw new TypeError('predicate must be a function');
-      }
-      var thisArg = arguments[1];
-      var k = 0;
-      while (k < len) {
-        var kValue = o[k];
-        if (predicate.call(thisArg, kValue, k, o)) {
-          return k;
-        }
-        k++;
-      }
-      return -1;
-    },
-    configurable: true,
-    writable: true
-  });
-}
-
-//////////////////////
-// CustomEvent polyfill
-// https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
-//////////////////////
-
-(function () {
-  if (typeof window.CustomEvent === "function") {
-    return false;
-  }
-
-  function CustomEvent(event, params) {
-    params = params || {bubbles: false, cancelable: false, detail: undefined};
-    let evt = document.createEvent('CustomEvent');
-    evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
-    return evt;
-  }
-
-  CustomEvent.prototype = window.Event.prototype;
-  window.CustomEvent = CustomEvent;
-})();
-
-//////////////////////
-// scrollingElement polyfill
-// https://github.com/yangg/scrolling-element
-//////////////////////
-
-(function () {
-  if (document.scrollingElement) {
-    return;
-  }
-  let element = null;
-
-  function scrollingElement() {
-    if (element) {
-      return element;
-    } else if (document.body.scrollTop) {
-      // speed up if scrollTop > 0
-      return (element = document.body);
-    }
-    let iframe = document.createElement('iframe');
-    iframe.style.height = '1px';
-    document.documentElement.appendChild(iframe);
-    let doc = iframe.contentWindow.document;
-    doc.write('<!DOCTYPE html><div style="height:9999em">x</div>');
-    doc.close();
-    let isCompliant = doc.documentElement.scrollHeight > doc.body.scrollHeight;
-    iframe.parentNode.removeChild(iframe);
-    return (element = isCompliant ? document.documentElement : document.body);
-  }
-
-  Object.defineProperty(document, 'scrollingElement', {
-    get: scrollingElement
-  })
-})();
-
-//////////////////////
-// pass some window events to iframes
-//////////////////////
-
-window.addEventListener('focus', function () {
-  for (let iframe of document.querySelectorAll('iframe')) {
-    iframe.contentWindow.dispatchEvent(new CustomEvent('focus'));
-  }
-});
-
-window.addEventListener('blur', function () {
-  for (let iframe of document.querySelectorAll('iframe')) {
-    iframe.contentWindow.dispatchEvent(new CustomEvent('blur'));
-  }
-});
 
 //////////////////////
 // constructor
 //////////////////////
 
 const Xt = {};
+
+//////////////////////
+// properties
+//////////////////////
+
+Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
+
+//////////////////////
+// init
+//////////////////////
+
+/**
+ * init all data-xt classes
+ */
+Xt.init = function (containers = document.documentElement) {
+  containers = Xt.arrSingle(containers);
+  for (let container of containers) {
+    // xt
+    for (let el of container.querySelectorAll('[data-xt-toggle]')) {
+      new XtToggle(el);
+    }
+    for (let el of container.querySelectorAll('[data-xt-drop]')) {
+      new XtDrop(el);
+    }
+    for (let el of container.querySelectorAll('[data-xt-overlay]')) {
+      new XtOverlay(el);
+    }
+    for (let el of container.querySelectorAll('[data-xt-slider]')) {
+      new XtSlider(el);
+    }
+    for (let el of container.querySelectorAll('[data-xt-fade]')) {
+      new XtFade(el);
+    }
+    for (let el of container.querySelectorAll('[data-xt-sticky]')) {
+      new XtSticky(el);
+    }
+    for (let el of Array.from(container.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
+      Xt.btnMerge.init(el);
+    }
+  }
+};
+
+// init all
+
+if (document.readyState === "loading") {
+  document.addEventListener('DOMContentLoaded', function () {
+    Xt.init();
+  });
+} else {
+  Xt.requestAnimationFrame.call(window, function () {
+    Xt.init();
+  });
+}
+
+// mutation observer
+
+Xt.initObserver = new MutationObserver(function (mutationsList) {
+  for (let mutation of mutationsList) {
+    if (mutation.type == 'childList') {
+      for (let added of mutation.addedNodes) {
+        if (added.nodeType === 1) {
+          Xt.init(added);
+        }
+      }
+    }
+  }
+});
+Xt.initObserver.observe(document, {characterData: false, attributes: false, childList: true, subtree: true});
+
+//////////////////////
+// btnMerge
+// pass .hover and .active classes to .btn inside
+//////////////////////
+
+Xt.btnMerge = {
+
+  /**
+   * init to pass .hover and .active to .btn inside Element
+   * @param {Node|HTMLElement} el Element
+   */
+  init: function (el) {
+    if (!el.dataset.xtbtnMergeDone) {
+      el.dataset.xtbtnMergeDone = 'true';
+      el.removeEventListener('mouseenter', Xt.btnMerge.hoverOn);
+      el.addEventListener('mouseenter', Xt.btnMerge.hoverOn);
+      el.removeEventListener('mouseleave', Xt.btnMerge.hoverOff);
+      el.addEventListener('mouseleave', Xt.btnMerge.hoverOff);
+      el.removeEventListener('mousedown', Xt.btnMerge.activeOn);
+      el.addEventListener('mousedown', Xt.btnMerge.activeOn);
+      window.removeEventListener('mouseup', Xt.btnMerge.activeOff.bind(el));
+      window.addEventListener('mouseup', Xt.btnMerge.activeOff.bind(el));
+    }
+  },
+
+  /**
+   * event hover on
+   */
+  hoverOn: function () {
+    let els = this.querySelectorAll('.btn');
+    for (let el of els) {
+      el.classList.add('hover');
+    }
+  },
+
+  /**
+   * event hover off
+   */
+  hoverOff: function () {
+    let els = this.querySelectorAll('.btn');
+    for (let el of els) {
+      el.classList.remove('hover');
+    }
+  },
+
+  /**
+   * event active on
+   */
+  activeOn: function () {
+    let els = this.querySelectorAll('.btn');
+    for (let el of els) {
+      el.classList.add('active');
+    }
+  },
+
+  /**
+   * event active off
+   */
+  activeOff: function () {
+    let els = this.querySelectorAll('.btn');
+    for (let el of els) {
+      el.classList.remove('active');
+    }
+  }
+
+};
+
+//////////////////////
+// dataStorage
+// map storage for HTML elements
+//////////////////////
+
+Xt.dataStorage = {
+
+  /**
+   * properties
+   */
+  _storage: new WeakMap(),
+
+  /**
+   * put key/obj pair on element's map
+   * @param {Node|HTMLElement} element
+   * @param {String} key
+   * @param {Object|Function} obj
+   * @returns {Object|Function}
+   */
+  put: function (element, key, obj) {
+    // new map if not already there
+    if (!this._storage.has(key)) {
+      this._storage.set(element, new Map());
+    }
+    // if already there return
+    if (this._storage.get(element).get(key)) {
+      return this._storage.get(element).get(key);
+    }
+    // else put
+    this._storage.get(element).set(key, obj);
+    return this._storage.get(element).get(key);
+  },
+
+  /**
+   * get obj from key on element's map
+   * @param {Node|HTMLElement} element
+   * @param {String} key
+   * @returns {Object|Function}
+   */
+  get: function (element, key) {
+    // if no map return null
+    if (!this._storage.get(element)) {
+      return null;
+    }
+    // else get
+    return this._storage.get(element).get(key);
+  },
+
+  /**
+   * has key on element's map
+   * @param {Node|HTMLElement} element
+   * @param {String} key
+   * @returns {Boolean}
+   */
+  has: function (element, key) {
+    // has
+    return this._storage.get(element).has(key);
+  },
+
+  /**
+   * remove element's map key
+   * @param {Node|HTMLElement} element
+   * @param {String} key
+   * @returns {Boolean}
+   */
+  remove: function (element, key) {
+    // remove
+    let ret = this._storage.get(element).delete(key);
+    if (!this._storage.get(key).size === false) {
+      this._storage.delete(element);
+    }
+    return ret;
+  }
+
+};
+
+//////////////////////
+// focus
+// util to remember focus on key or interactions events
+//////////////////////
+
+Xt.focus = {
+
+  /**
+   * properties
+   */
+  block: false,
+  current: null,
+
+  /**
+   * enable focus change events
+   */
+  on: function () {
+    // event key
+    let focusChangeKeyHandler = Xt.dataStorage.put(document, 'focusChangeKeyHandler', Xt.focus.changeKey);
+    document.removeEventListener('keyup', focusChangeKeyHandler);
+    document.addEventListener('keyup', focusChangeKeyHandler);
+    // event mouse
+    let focusChangeOtherHandler = Xt.dataStorage.get(document, 'focusChangeOtherHandler');
+    document.removeEventListener('mousedown', focusChangeOtherHandler);
+    document.removeEventListener('touchstart', focusChangeOtherHandler);
+    document.removeEventListener('pointerdown', focusChangeOtherHandler);
+  },
+
+  /**
+   * disable focus change events
+   */
+  off: function () {
+    // event
+    let focusChangeKeyHandler = Xt.dataStorage.get(document, 'focusChangeKeyHandler');
+    document.removeEventListener('keyup', focusChangeKeyHandler);
+    // event mouse
+    let focusChangeOtherHandler = Xt.dataStorage.put(document, 'focusChangeOtherHandler', Xt.focus.changeOther);
+    document.addEventListener('mousedown', focusChangeOtherHandler);
+    document.addEventListener('touchstart', focusChangeOtherHandler);
+    document.addEventListener('pointerdown', focusChangeOtherHandler);
+  },
+
+  /**
+   * focus change on key events
+   * @param {Event} e Event
+   */
+  changeKey: function (e) {
+    let code = e.keyCode ? e.keyCode : e.which;
+    if (code === 9) {
+      if (!Xt.focus.block) {
+        // remember Xt.focus
+        Xt.focus.current = document.activeElement;
+      }
+      if (!document.documentElement.classList.contains('xt-focus')) {
+        // html.xt-focus
+        document.documentElement.classList.add('xt-focus');
+        // switch mode
+        Xt.focus.off();
+      }
+    }
+  },
+
+  /**
+   * focus change on other events
+   * @param {Event} e Event
+   */
+  changeOther: function (e) {
+    if (!Xt.focus.block) {
+      // remember Xt.focus
+      Xt.focus.current = e.target;
+    }
+    if (document.documentElement.classList.contains('xt-focus')) {
+      // html.xt-focus
+      document.documentElement.classList.remove('xt-focus');
+      // switch mode
+      Xt.focus.on();
+    }
+  }
+
+};
+
+Xt.focus.on();
+
+//////////////////////
+// focusLimit
+// util to limit focus inside HTML elements
+//////////////////////
+
+Xt.focusLimit = {
+
+  /**
+   * activate focusLimit to an element
+   * @param {Node|HTMLElement} element Element
+   */
+  on: function (element) {
+    // @FIX Xt.focus when clicking and not used tab before
+    Xt.focus.current = Xt.focus.current ? Xt.focus.current : document.activeElement;
+    // vars
+    let focusable = Array.from(element.querySelectorAll('a, button, details, input, iframe, select, textarea'));
+    focusable = focusable.filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])')); // filter out parent
+    let first = focusable[0];
+    let last = focusable[focusable.length - 1];
+    // event
+    let focusLimitHandler = Xt.dataStorage.put(document, 'focusLimitHandler', Xt.focusLimit.limit.bind(this).bind(this, focusable, first, last));
+    document.removeEventListener('keyup', focusLimitHandler);
+    document.addEventListener('keyup', focusLimitHandler);
+  },
+
+  /**
+   * deactivate focusLimit to an element
+   */
+  off: function () {
+    // event
+    let focusLimitHandler = Xt.dataStorage.get(document, 'focusLimitHandler');
+    document.removeEventListener('keyup', focusLimitHandler);
+  },
+
+  /**
+   * limit even on focus when activated
+   * @param {NodeList|Array} focusable Focusable elements
+   * @param {Node|HTMLElement} first First focusable element
+   * @param {Node|HTMLElement} last Last focusable element
+   * @param {Event} e Event
+   */
+  limit: function (focusable, first, last, e) {
+    let code = e.keyCode ? e.keyCode : e.which;
+    if (code === 9) {
+      if (!focusable.includes(document.activeElement)) {
+        if (e.shiftKey) {
+          last.focus();
+          e.preventDefault();
+        } else {
+          first.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  }
+
+};
 
 //////////////////////
 // utils
@@ -438,9 +506,9 @@ Xt.arrSingle = function (element) {
 };
 
 /**
- * Create DOM element from html string
+ * Create HTML elements from html string
  * @param {String} str Html string (only 1 root html tag)
- * @return {Node|HTMLElement} DOM element
+ * @return {Node|HTMLElement} HTML elements
  */
 Xt.createElement = function (str) {
   let div = document.createElement('div');
@@ -463,48 +531,6 @@ Xt.parents = function (element, query) {
 };
 
 /**
- * dataStorage
- * https://stackoverflow.com/questions/29222027/vanilla-alternative-to-jquery-data-function-any-native-javascript-alternati
- * USAGE: Xt.dataStorage.put(element, 'key', value);
- */
-Xt.dataStorage = {
-  _storage: new WeakMap(),
-  put: function (element, key, obj) {
-    // new map if not already there
-    if (!this._storage.has(key)) {
-      this._storage.set(element, new Map());
-    }
-    // if already there return
-    if (this._storage.get(element).get(key)) {
-      return this._storage.get(element).get(key);
-    }
-    // else put
-    this._storage.get(element).set(key, obj);
-    return this._storage.get(element).get(key);
-  },
-  get: function (element, key) {
-    // if no map return null
-    if (!this._storage.get(element)) {
-      return null;
-    }
-    // else get
-    return this._storage.get(element).get(key);
-  },
-  has: function (element, key) {
-    // has
-    return this._storage.get(element).has(key);
-  },
-  remove: function (element, key) {
-    // remove
-    let ret = this._storage.get(element).delete(key);
-    if (!this._storage.get(key).size === false) {
-      this._storage.delete(element);
-    }
-    return ret;
-  }
-};
-
-/**
  * get transition or animation duration
  * @param {Node|HTMLElement} el Element animating
  * @param {Number} timing Force duration
@@ -521,226 +547,6 @@ Xt.animDuration = function (el, timing = null) {
       timing = Math.max(transition, animation);
     }
     return timing * 1000;
-  }
-};
-
-//////////////////////
-// properties
-//////////////////////
-
-// Xt currents based on namespace (so shared between Xt objects)
-
-Xt.currents = {};
-
-//////////////////////
-// init
-//////////////////////
-
-/**
- * init all data-xt classes
- */
-Xt.init = function (containers = document.documentElement) {
-  containers = Xt.arrSingle(containers);
-  for (let container of containers) {
-    // xt
-    for (let el of container.querySelectorAll('[data-xt-toggle]')) {
-      new XtToggle(el);
-    }
-    for (let el of container.querySelectorAll('[data-xt-drop]')) {
-      new XtDrop(el);
-    }
-    for (let el of container.querySelectorAll('[data-xt-overlay]')) {
-      new XtOverlay(el);
-    }
-    for (let el of container.querySelectorAll('[data-xt-slider]')) {
-      new XtSlider(el);
-    }
-    for (let el of container.querySelectorAll('[data-xt-fade]')) {
-      new XtFade(el);
-    }
-    for (let el of container.querySelectorAll('[data-xt-sticky]')) {
-      new XtSticky(el);
-    }
-    for (let el of Array.from(container.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
-      Xt.btnMerge.init(el);
-    }
-  }
-};
-
-// init all
-
-if (document.readyState === "loading") {
-  document.addEventListener('DOMContentLoaded', function () {
-    Xt.init();
-  });
-} else {
-  Xt.requestAnimationFrame.call(window, function () {
-    Xt.init();
-  });
-}
-
-// mutation observer
-
-Xt.initObserver = new MutationObserver(function (mutationsList) {
-  for (let mutation of mutationsList) {
-    if (mutation.type == 'childList') {
-      for (let added of mutation.addedNodes) {
-        if (added.nodeType === 1) {
-          Xt.init(added);
-        }
-      }
-    }
-  }
-});
-Xt.initObserver.observe(document, {characterData: false, attributes: false, childList: true, subtree: true});
-
-//////////////////////
-// btnMerge
-//////////////////////
-
-/**
- * decorate .btn inside [a, button]
- */
-
-Xt.btnMerge = {
-  init: function (el) {
-    if (!el.dataset.xtbtnMergeDone) {
-      el.dataset.xtbtnMergeDone = 'true';
-      el.removeEventListener('mouseenter', Xt.btnMerge.hoverOn);
-      el.addEventListener('mouseenter', Xt.btnMerge.hoverOn);
-      el.removeEventListener('mouseleave', Xt.btnMerge.hoverOff);
-      el.addEventListener('mouseleave', Xt.btnMerge.hoverOff);
-      el.removeEventListener('mousedown', Xt.btnMerge.activeOn);
-      el.addEventListener('mousedown', Xt.btnMerge.activeOn);
-      window.removeEventListener('mouseup', Xt.btnMerge.activeOff.bind(el));
-      window.addEventListener('mouseup', Xt.btnMerge.activeOff.bind(el));
-    }
-  },
-  hoverOn: function () {
-    let els = this.querySelectorAll('.btn');
-    for (let el of els) {
-      el.classList.add('hover');
-    }
-  },
-  hoverOff: function () {
-    let els = this.querySelectorAll('.btn');
-    for (let el of els) {
-      el.classList.remove('hover');
-    }
-  },
-  activeOn: function () {
-    let els = this.querySelectorAll('.btn');
-    for (let el of els) {
-      el.classList.add('active');
-    }
-  },
-  activeOff: function () {
-    let els = this.querySelectorAll('.btn');
-    for (let el of els) {
-      el.classList.remove('active');
-    }
-  }
-};
-
-//////////////////////
-// focus utils
-//////////////////////
-
-/**
- * remember focus
- */
-
-Xt.focus = {
-  block: false,
-  current: null,
-  on: function () {
-    // event key
-    let focusChangeKeyHandler = Xt.dataStorage.put(document, 'focusChangeKeyHandler', Xt.focus.changeKey);
-    document.removeEventListener('keyup', focusChangeKeyHandler);
-    document.addEventListener('keyup', focusChangeKeyHandler);
-    // event mouse
-    let focusChangeMouseHandler = Xt.dataStorage.get(document, 'focusChangeMouseHandler');
-    document.removeEventListener('mousedown', focusChangeMouseHandler);
-    document.removeEventListener('touchstart', focusChangeMouseHandler);
-    document.removeEventListener('pointerdown', focusChangeMouseHandler);
-  },
-  off: function () {
-    // event
-    let focusChangeKeyHandler = Xt.dataStorage.get(document, 'focusChangeKeyHandler');
-    document.removeEventListener('keyup', focusChangeKeyHandler);
-    // event mouse
-    let focusChangeMouseHandler = Xt.dataStorage.put(document, 'focusChangeMouseHandler', Xt.focus.changeMouse);
-    document.addEventListener('mousedown', focusChangeMouseHandler);
-    document.addEventListener('touchstart', focusChangeMouseHandler);
-    document.addEventListener('pointerdown', focusChangeMouseHandler);
-  },
-  changeKey: function (e) {
-    let code = e.keyCode ? e.keyCode : e.which;
-    if (code === 9) {
-      if (!Xt.focus.block) {
-        // remember Xt.focus
-        Xt.focus.current = document.activeElement;
-      }
-      if (!document.documentElement.classList.contains('xt-focus')) {
-        // html.xt-focus
-        document.documentElement.classList.add('xt-focus');
-        // switch mode
-        Xt.focus.off();
-      }
-    }
-  },
-  changeMouse: function (e) {
-    if (!Xt.focus.block) {
-      // remember Xt.focus
-      Xt.focus.current = e.target;
-    }
-    if (document.documentElement.classList.contains('xt-focus')) {
-      // html.xt-focus
-      document.documentElement.classList.remove('xt-focus');
-      // switch mode
-      Xt.focus.on();
-    }
-  }
-};
-
-Xt.focus.on();
-
-/**
- * focus limit inside element
- */
-
-Xt.focusLimit = {
-  on: function (element) {
-    // @FIX Xt.focus when clicking and not used tab before
-    Xt.focus.current = Xt.focus.current ? Xt.focus.current : document.activeElement;
-    // vars
-    let focusable = Array.from(element.querySelectorAll('a, button, details, input, iframe, select, textarea'));
-    focusable = focusable.filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])')); // filter out parent
-    let first = focusable[0];
-    let last = focusable[focusable.length - 1];
-    // event
-    let focusLimitHandler = Xt.dataStorage.put(document, 'focusLimitHandler', Xt.focusLimit.limit.bind(this).bind(this, focusable, first, last));
-    document.removeEventListener('keyup', focusLimitHandler);
-    document.addEventListener('keyup', focusLimitHandler);
-  },
-  off: function () {
-    // event
-    let focusLimitHandler = Xt.dataStorage.get(document, 'focusLimitHandler');
-    document.removeEventListener('keyup', focusLimitHandler);
-  },
-  limit: function (focusable, first, last, e) {
-    let code = e.keyCode ? e.keyCode : e.which;
-    if (code === 9) {
-      if (!focusable.includes(document.activeElement)) {
-        if (e.shiftKey) {
-          last.focus();
-          e.preventDefault();
-        } else {
-          first.focus();
-          e.preventDefault();
-        }
-      }
-    }
   }
 };
 

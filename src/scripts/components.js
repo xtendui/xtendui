@@ -499,7 +499,7 @@ class XtCore {
 
   /**
    * query for inside
-   * @param {Node|HTMLElement|Array} element Element to search from
+   * @param {Node|HTMLElement|NodeList|Array} element Element to search from
    * @param {String} query Query for querySelectorAll
    * @returns {Array}
    */
