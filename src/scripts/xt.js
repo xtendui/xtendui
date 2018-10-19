@@ -550,6 +550,16 @@ Xt.animDuration = function (el, timing = null) {
   }
 };
 
+/**
+ * closeOpened inside Element
+ * @param {Node|HTMLElement} el Element container
+ */
+Xt.closeOpened = function (el) {
+  for (let drop of el.querySelectorAll('.drop-outer.active')) {
+    drop.dispatchEvent(new CustomEvent('off'));
+  }
+};
+
 //////////////////////
 // export
 //////////////////////

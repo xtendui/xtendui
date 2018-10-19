@@ -20,7 +20,7 @@ class Core {
    * @param {String} attr Attribute name with json options
    * @constructor
    */
-  constructor(object, jsOptions = {}, attr) {
+  constructor(object, jsOptions = {}) {
     this.object = object;
     if (this.object && !this.object.dataset.xtCore) {
       this.object.dataset.xtCore = 'true';
@@ -39,7 +39,7 @@ class Core {
       // js options
       this.options = Xt.merge([this.defaults, jsOptions]);
       // markup options
-      let markupOptions = this.object.getAttribute(attr);
+      let markupOptions = this.object.getAttribute('data-xt-' + this.constructor.componentName);
       this.options = Xt.merge([this.options, markupOptions ? JSON.parse(markupOptions) : {}]);
       // classes
       if (this.options.class) {
@@ -73,12 +73,12 @@ class Core {
       this.mode = 'unique';
       this.container = document.documentElement;
       options.max = Infinity;
-      this.namespace = options.targets.toString() + '-' + options.classes.toString();
+      this.namespace = self.constructor.componentName + '-' + options.targets.toString() + '-' + options.classes.toString();
     } else {
       // xtend unique mode
       this.mode = 'multiple';
       this.container = this.object;
-      this.namespace = Xt.getUniqueID();
+      this.namespace = self.constructor.componentName + '-' + Xt.getUniqueID();
     }
     // final namespace
     this.namespace = this.namespace.replace(/^[^a-z]+|[^\w:.-]+/gi, '');
@@ -125,7 +125,7 @@ class Core {
     }
     // @FIX set namespace for next frame
     for (let el of this.elements) {
-      el.setAttribute('data-xt-namespace', self.namespace);
+      el.dataset.xtNamespace = self.namespace;
     }
     // automatic initial currents
     Xt.requestAnimationFrame.call(window, function () {
@@ -169,25 +169,22 @@ class Core {
     if (options.aria) {
       if (this.targets.length) {
         for (let el of this.elements) {
-          // id
           let ariaEls = self.getInside(el, options.ariaControls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
+          // id
           let id = ariaEl.getAttribute('id');
-          el.dataset.namespace = Xt.getUniqueID();
           if (!id) {
-            ariaEl.setAttribute('id', el.dataset.namespace + '-element');
+            ariaEl.setAttribute('id', Xt.getUniqueID());
           }
           // selected
           ariaEl.setAttribute('aria-selected', 'false');
         }
         for (let tr of this.targets) {
+          let els =  this.getElementsFromTarget(tr);
           // id
-          let el = this.getElementsFromTarget(tr)[0];
           let id = tr.getAttribute('id');
-          tr.dataset.namespace = el.dataset.namespace;
           if (!id) {
-            id = tr.dataset.namespace + '-target';
-            tr.setAttribute('id', id);
+            tr.setAttribute('id', Xt.getUniqueID());
           }
           // tabindex
           tr.setAttribute('tabindex', '-1');
@@ -197,10 +194,24 @@ class Core {
             tr.setAttribute('aria-expanded', 'false');
           }
           // depending on el
+          let str = '';
+          for (let el of els) {
+            let ariaEls = self.getInside(el, options.ariaControls);
+            let ariaEl = ariaEls.length ? ariaEls[0] : el;
+            str += ariaEl.getAttribute('id') + ' ';
+          }
+          tr.setAttribute('aria-labelledby', str.slice(0, -1));
+        }
+        for (let el of this.elements) {
+          let trs =  this.getTargets(el);
           let ariaEls = self.getInside(el, options.ariaControls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
-          ariaEl.setAttribute('aria-controls', id);
-          tr.setAttribute('aria-labelledby', ariaEl.getAttribute('id'));
+          // depending on tr
+          let str = '';
+          for (let tr of trs) {
+            str += tr.getAttribute('id') + ' ';
+          }
+          ariaEl.setAttribute('aria-controls', str.slice(0, -1));
         }
       }
     }
@@ -1618,7 +1629,7 @@ class Toggle extends Core {
    * @constructor
    */
   constructor(object, jsOptions = {}) {
-    super(object, jsOptions, 'data-xt-toggle');
+    super(object, jsOptions);
   }
 
   /**
@@ -1653,6 +1664,7 @@ class Toggle extends Core {
 
 // default
 
+Toggle.componentName = 'toggle';
 Toggle.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
@@ -1681,7 +1693,7 @@ class Drop extends Core {
    * @constructor
    */
   constructor(object, jsOptions = {}) {
-    super(object, jsOptions, 'data-xt-drop');
+    super(object, jsOptions);
   }
 
   /**
@@ -1710,6 +1722,7 @@ class Drop extends Core {
 
 // default
 
+Drop.componentName = 'drop';
 Drop.defaults = {
   "targets": ":scope > .drop",
   "elementsInner": ":scope > a, :scope > button",
@@ -1740,7 +1753,7 @@ class Overlay extends Core {
    * @constructor
    */
   constructor(object, jsOptions = {}) {
-    super(object, jsOptions, 'data-xt-overlay');
+    super(object, jsOptions);
   }
 
   /**
@@ -1770,6 +1783,7 @@ class Overlay extends Core {
 
 // default
 
+Overlay.componentName = 'overlay';
 Overlay.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > .overlay-outer",
@@ -1803,7 +1817,7 @@ class Slider extends Core {
    * @constructor
    */
   constructor(object, jsOptions = {}) {
-    super(object, jsOptions, 'data-xt-slider');
+    super(object, jsOptions);
   }
 
   //////////////////////
@@ -1958,6 +1972,7 @@ class Slider extends Core {
 
 // default
 
+Slider.componentName = 'slider';
 Slider.defaults = {
   "elements": ".slide-control",
   "targets": ":scope > .slides > .slide",
@@ -1988,7 +2003,7 @@ class Sticky extends Core {
    * @constructor
    */
   constructor(object, jsOptions = {}) {
-    super(object, jsOptions, 'data-xt-sticky');
+    super(object, jsOptions);
   }
 
   //////////////////////
@@ -2062,10 +2077,9 @@ class Sticky extends Core {
     // listener dispatch initial
     window.dispatchEvent(new CustomEvent('scroll.sticky'));
     // autoClose
-    let autoCloseEl = this.object;
-    let autoCloseHandler = Xt.dataStorage.put(autoCloseEl, 'addHandler', this.autoCloseSticky);
-    autoCloseEl.removeEventListener('hide.sticky', autoCloseHandler);
-    autoCloseEl.addEventListener('hide.sticky', autoCloseHandler);
+    let closeOpenedHandler = Xt.dataStorage.put(this.object, 'closeOpenedHandler', Xt.closeOpened.bind(this, this.object));
+    this.object.removeEventListener('hide.sticky', closeOpenedHandler);
+    this.object.addEventListener('hide.sticky', closeOpenedHandler);
   }
 
   /**
@@ -2075,16 +2089,6 @@ class Sticky extends Core {
   eventStickyHandler(e) {
     if (!e.detail || !e.detail.skip) {
       this.eventScroll(this.object);
-    }
-  }
-
-  /**
-   * autoclose xt components on hide.sticky
-   * @param {Event} e
-   */
-  autoCloseSticky(e) {
-    for (let drop of e.target.querySelectorAll('.drop-outer.active')) {
-      drop.dispatchEvent(new CustomEvent('off'));
     }
   }
 
@@ -2244,8 +2248,8 @@ class Sticky extends Core {
       if (self.detail.addOld !== undefined) {
         el.style[options.position] = rectElTop + 'px';
       }
-      Xt.cancelAnimationFrame.call(window, el.dataset.eventFrame);
-      el.dataset.eventFrame = Xt.requestAnimationFrame.call(window, function () {
+      Xt.cancelAnimationFrame.call(window, el.dataset.xtEventFrame);
+      el.dataset.xtEventFrame = Xt.requestAnimationFrame.call(window, function () {
         el.classList.remove('no-transition');
         el.style[options.position] = add + 'px';
       });
@@ -2337,6 +2341,7 @@ class Sticky extends Core {
 
 // default
 
+Sticky.componentName = 'sticky';
 Sticky.defaults = {
   "class": "active",
   "on": "scroll resize",
@@ -2366,7 +2371,7 @@ class Fade extends Core {
    * @constructor
    */
   constructor(object, jsOptions = {}) {
-    super(object, jsOptions, 'data-xt-fade');
+    super(object, jsOptions);
   }
 
   //////////////////////
@@ -2445,8 +2450,8 @@ class Fade extends Core {
           changed = self.checkOn(el);
           if (changed) {
             currents.push(el);
-            Xt.cancelAnimationFrame.call(window, el.dataset.eventFrame);
-            el.dataset.eventFrame = Xt.requestAnimationFrame.call(window, function () {
+            Xt.cancelAnimationFrame.call(window, el.dataset.xtEventFrame);
+            el.dataset.xtEventFrame = Xt.requestAnimationFrame.call(window, function () {
               current++;
               el.dataset.xtOnCount = current.toString();
               el.dataset.xtOnTot = currents.length.toString();
@@ -2460,8 +2465,8 @@ class Fade extends Core {
           if (changed) {
             el.classList.add('fade-scroll');
             currents.push(el);
-            Xt.cancelAnimationFrame.call(window, el.dataset.eventFrame);
-            el.dataset.eventFrame = Xt.requestAnimationFrame.call(window, function () {
+            Xt.cancelAnimationFrame.call(window, el.dataset.xtEventFrame);
+            el.dataset.xtEventFrame = Xt.requestAnimationFrame.call(window, function () {
               current++;
               el.dataset.xtOffCount = current.toString();
               el.dataset.xtOffTot = currents.length.toString();
@@ -2489,6 +2494,7 @@ class Fade extends Core {
 
 // default
 
+Fade.componentName = 'fade';
 Fade.defaults = {
   "elements": ".fade",
   "class": "active",
