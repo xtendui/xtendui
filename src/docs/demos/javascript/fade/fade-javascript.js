@@ -1,4 +1,4 @@
 
-new XtFade(document.documentElement, {
+new Xt.Fade(document.documentElement, {
   // options
 });

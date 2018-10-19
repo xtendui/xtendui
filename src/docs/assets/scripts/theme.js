@@ -58,7 +58,7 @@ for(let el of document.querySelectorAll('.site-aside-text > .btn:not(.different)
 }
 
 for(let el of document.querySelectorAll('.site-aside-text')) {
-  new XtToggle(el, {
+  new Xt.Toggle(el, {
     "elements": ".site-aside-sub-container",
     "targets": ".site-aside-subsub",
     "on": "mouseenter",
@@ -205,7 +205,7 @@ const populateDemo = function (container, i) {
     // collapse code
     let demoId = 'demo-' + i + k;
     container.setAttribute('id', demoId);
-    new XtToggle(container.querySelectorAll('.btn-show-code')[0], {
+    new Xt.Toggle(container.querySelectorAll('.btn-show-code')[0], {
       "targets": "#" + demoId,
       "targetsInner": ".demo-code"
     });
@@ -269,7 +269,7 @@ const populateInline = function (item, id) {
     }
     */
   }
-  new XtToggle(item, {
+  new Xt.Toggle(item, {
     "elements": ".demo-code-tabs-left .btn",
     "targets": ".demo-code-body-item",
     "min": 1
@@ -324,7 +324,7 @@ function populateIframe(item, iframe) {
   for(let [z, source] of item.querySelectorAll('.demo-source').entries()) {
     populateSources(item, source, z);
   }
-  new XtToggle(item, {
+  new Xt.Toggle(item, {
     "elements": ".demo-code-tabs-left .btn",
     "targets": ".demo-code-body-item",
     "min": 1
@@ -368,7 +368,7 @@ for(let [i, el] of document.querySelectorAll('.demo').entries()) {
   });
   */
   // demo tabs
-  new XtToggle(el, {
+  new Xt.Toggle(el, {
     "elements": ".demo-tabs-left .btn",
     "targets": ".demo-item",
     "min": 1

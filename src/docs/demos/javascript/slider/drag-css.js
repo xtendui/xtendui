@@ -1,7 +1,7 @@
 for (let [i, el] of document.querySelectorAll('.slider').entries()) {
 
   // slider
-  new XtSlider(el, {
+  new Xt.Slider(el, {
     "auto": 6000,
     "autoPause": 6000,
     "drag": true
@@ -102,7 +102,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
           self.goToPrev();
         }
         // reset after animation done
-        let timing = Xt.animationTiming(target);
+        let timing = Xt.animDuration(target);
         clearTimeout(target.dataset.xtDragEndTimeout);
         target.dataset.xtDragEndTimeout = setTimeout(function () {
           target.style.opacity = '0';
