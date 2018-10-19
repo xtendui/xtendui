@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-        
+
     <!-- meta -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -21,16 +21,12 @@
     <!-- styles -->
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/demo.css?v={{ site.version }}" />
     {% if page.less %}<link rel="stylesheet" href="{{ page.name | replace: '.html', '.css' }}?v={{ site.version }}" />{% endif %}
-    
+
     <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script src="{{ site.baseurl }}/assets/scripts/greensock/easing/CustomEase.min.js?v={{ site.version }}"></script>
     <script src="{{ site.baseurl }}/assets/scripts/polyfill.min.js"></script>
     <script src="{{ site.baseurl }}/assets/scripts/xtend.min.js?v={{ site.version }}"></script>
-
-    <!-- demo scripts -->
-    <script src="{{ site.baseurl }}/assets/scripts/ResizeSensor.min.js"></script>
-    <script src="{{ site.baseurl }}/assets/scripts/ElementQueries.min.js"></script>
 
   </head>
   <body class="{% if page.full %}full{% endif %}">
@@ -52,13 +48,6 @@
     <script>
       // add id
       document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
-      // init
-      function initAll() {
-        // https://github.com/marcj/css-element-queries
-        new ResizeSensor(document.getElementById('body-outer'), function() {
-          parent.resizeIframe(window.frameElement.getAttribute('id'));
-        });
-      }
       // init iframe
       window.parent.initIframe(window.name);
     </script>
