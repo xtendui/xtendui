@@ -105,7 +105,7 @@ gulp.task('js', gulp.series('js-theme', function () {
     .pipe(gulp.dest('src/docs/assets/scripts/'));
 }));
 gulp.task('js:watch', function (done) {
-  gulp.watch(['src/docs/assets/scripts/theme.js', 'src/scripts/*.js'], gulp.series('js', 'site-build'));
+  gulp.watch(['src/docs/assets/scripts/theme.js', 'src/docs/assets/scripts/xtend.js', 'src/scripts/*.js'], gulp.series('js', 'site-build'));
   done();
 });
 

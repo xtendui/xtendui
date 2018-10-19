@@ -361,8 +361,7 @@ Xt.checkOutside = function (e, targets) {
  */
 Xt.scrollbarWidth = function (force) {
   if (force || Xt.scrollbarWidthVal === undefined) {
-    let scrollbarWidthHandler = Xt.dataStorage.get(window, 'scrollbarWidthHandler');
-    scrollbarWidthHandler = scrollbarWidthHandler ? scrollbarWidthHandler : Xt.dataStorage.put(window, 'scrollbarWidthHandler', Xt.scrollbarWidth.bind(this, true));
+    let scrollbarWidthHandler = Xt.dataStorage.put(window, 'scrollbarWidthHandler', Xt.scrollbarWidth.bind(this, true));
     window.removeEventListener('resize', scrollbarWidthHandler);
     window.addEventListener('resize', scrollbarWidthHandler);
     // add outer
@@ -471,22 +470,32 @@ Xt.parents = function (element, query) {
 Xt.dataStorage = {
   _storage: new WeakMap(),
   put: function (element, key, obj) {
+    // new map if not already there
     if (!this._storage.has(key)) {
       this._storage.set(element, new Map());
     }
+    // if already there return
+    if (this._storage.get(element).get(key)) {
+      return this._storage.get(element).get(key);
+    }
+    // else put
     this._storage.get(element).set(key, obj);
     return this._storage.get(element).get(key);
   },
   get: function (element, key) {
+    // if no map return null
     if (!this._storage.get(element)) {
       return null;
     }
+    // else get
     return this._storage.get(element).get(key);
   },
   has: function (element, key) {
+    // has
     return this._storage.get(element).has(key);
   },
   remove: function (element, key) {
+    // remove
     let ret = this._storage.get(element).delete(key);
     if (!this._storage.get(key).size === false) {
       this._storage.delete(element);
@@ -559,6 +568,7 @@ Xt.focusLimitOff = function () {
 Xt.focusUtilKey = function (e) {
   let code = e.keyCode ? e.keyCode : e.which;
   if (code === 9) {
+    console.log('cccc');
     if (!Xt.focusBlock) {
       // remember Xt.focus
       Xt.focus = document.activeElement;
@@ -586,20 +596,21 @@ Xt.focusUtilMouse = function (e) {
 
 Xt.focusUtilOn = function () {
   // event key
-  let focusUtilKeyHandler = Xt.dataStorage.put(document, 'focusUtilKeyHandler', Xt.focusUtilKey.bind(this));
+  let focusUtilKeyHandler = Xt.dataStorage.put(document, 'focusUtilKeyHandler', Xt.focusUtilKey);
+  document.removeEventListener('keyup', focusUtilKeyHandler);
   document.addEventListener('keyup', focusUtilKeyHandler);
   // event mouse
-  let focusUtilMouseHandler = Xt.dataStorage.put(document, 'focusUtilMouseHandler', Xt.focusUtilMouse.bind(this));
+  let focusUtilMouseHandler = Xt.dataStorage.get(document, 'focusUtilMouseHandler');
   document.removeEventListener('mousedown', focusUtilMouseHandler);
   document.removeEventListener('touchstart', focusUtilMouseHandler);
   document.removeEventListener('pointerdown', focusUtilMouseHandler);
 };
 Xt.focusUtilOff = function () {
   // event
-  let focusUtilKeyHandler = Xt.dataStorage.put(document, 'focusUtilKeyHandler', Xt.focusUtilKey.bind(this));
+  let focusUtilKeyHandler = Xt.dataStorage.get(document, 'focusUtilKeyHandler');
   document.removeEventListener('keyup', focusUtilKeyHandler);
   // event mouse
-  let focusUtilMouseHandler = Xt.dataStorage.put(document, 'focusUtilMouseHandler', Xt.focusUtilMouse.bind(this));
+  let focusUtilMouseHandler = Xt.dataStorage.put(document, 'focusUtilMouseHandler', Xt.focusUtilMouse);
   document.addEventListener('mousedown', focusUtilMouseHandler);
   document.addEventListener('touchstart', focusUtilMouseHandler);
   document.addEventListener('pointerdown', focusUtilMouseHandler);

@@ -8,8 +8,6 @@
 // Xt
 //////////////////////
 
-import {Xt} from "./xtend";
-
 class XtCore {
 
   /**
@@ -220,18 +218,22 @@ class XtCore {
       if (options.on) {
         let events = [...options.on.split(' ')];
         for (let event of events) {
+          el.removeEventListener(event, onHandler);
           el.addEventListener(event, onHandler);
         }
       }
+      el.removeEventListener('on', onHandler);
       el.addEventListener('on', onHandler);
       // event off
       let offHandler = Xt.dataStorage.put(el, 'offHandler', self.eventOffHandler.bind(self).bind(self, el));
       if (options.off) {
         let events = [...options.off.split(' ')];
         for (let event of events) {
+          el.removeEventListener(event, offHandler);
           el.addEventListener(event, offHandler);
         }
       }
+      el.removeEventListener('off', offHandler);
       el.addEventListener('off', offHandler);
     }
     // listener
@@ -241,7 +243,9 @@ class XtCore {
         // event
         let onHandler = Xt.dataStorage.get(el, 'onHandler');
         let offHandler = Xt.dataStorage.get(el, 'offHandler');
+        tr.removeEventListener('on', onHandler);
         tr.addEventListener('on', onHandler);
+        tr.removeEventListener('off', offHandler);
         tr.addEventListener('off', offHandler);
       }
     }
@@ -249,12 +253,10 @@ class XtCore {
     if (options.auto) {
       this.auto();
       // focus and blur
-      window.addEventListener('focus', function () {
-        self.auto();
-      });
-      window.addEventListener('blur', function () {
-        self.autoStop();
-      });
+      window.removeEventListener('focus', self.auto.bind(self));
+      window.addEventListener('focus', self.auto.bind(self));
+      window.removeEventListener('blur', self.autoStop.bind(self));
+      window.addEventListener('blur', self.autoStop.bind(self));
     }
   }
 
@@ -1431,6 +1433,7 @@ class XtCore {
       Xt.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
           let specialCloseInsideHandler = Xt.dataStorage.put(el, 'specialCloseInsideHandler', self.specialCloseInsideHandler.bind(self).bind(self, closeElement, single));
+          closeElement.removeEventListener('click', specialCloseInsideHandler);
           closeElement.addEventListener('click', specialCloseInsideHandler);
         }
       });
@@ -1441,6 +1444,7 @@ class XtCore {
       Xt.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
           let specialCloseOutsideHandler = Xt.dataStorage.put(el, 'specialCloseOutsideHandler', self.specialCloseOutsideHandler.bind(self).bind(self, el, single));
+          closeElement.removeEventListener('click', specialCloseOutsideHandler);
           closeElement.addEventListener('click', specialCloseOutsideHandler);
         }
       });
@@ -1820,6 +1824,7 @@ class XtSlider extends XtCore {
         let dragStartHandler = Xt.dataStorage.put(tr, 'dragStartHandler', self.eventDragStartHandler.bind(self).bind(self, tr));
         let eventsOn = ['mousedown', 'touchstart'];
         for (let event of eventsOn) {
+          tr.removeEventListener(event, dragStartHandler);
           tr.addEventListener(event, dragStartHandler);
         }
       }
@@ -1855,6 +1860,7 @@ class XtSlider extends XtCore {
       let dragEndHandler = Xt.dataStorage.put(window, 'dragEndHandler', self.eventDragEndHandler.bind(self).bind(self, target));
       let eventsOff = ['mouseup', 'touchend'];
       for (let event of eventsOff) {
+        window.removeEventListener(event, dragEndHandler);
         window.addEventListener(event, dragEndHandler);
       }
       //}
@@ -1905,6 +1911,7 @@ class XtSlider extends XtCore {
     let dragHandler = Xt.dataStorage.put(target, 'dragHandler', self.eventDragHandler.bind(self).bind(self, target));
     let events = ['mousemove', 'touchmove'];
     for (let event of events) {
+      target.removeEventListener(event, dragHandler);
       target.addEventListener(event, dragHandler);
     }
     // listener dispatch
@@ -2048,16 +2055,17 @@ class XtSticky extends XtCore {
     if (options.on) {
       let events = [...options.on.split(' ')];
       for (let event of events) {
+        window.removeEventListener(event, stickyHandler);
         window.addEventListener(event, stickyHandler);
       }
     }
+    window.removeEventListener('scroll.sticky', stickyHandler);
     window.addEventListener('scroll.sticky', stickyHandler);
     // listener dispatch initial
     window.dispatchEvent(new CustomEvent('scroll.sticky'));
     // autoClose
     let autoCloseEl = this.object;
-    let autoCloseHandler = Xt.dataStorage.get(autoCloseEl, 'addHandler');
-    autoCloseHandler = autoCloseHandler ? autoCloseHandler : Xt.dataStorage.put(autoCloseEl, 'addHandler', this.autoCloseSticky);
+    let autoCloseHandler = Xt.dataStorage.put(autoCloseEl, 'addHandler', this.autoCloseSticky);
     autoCloseEl.removeEventListener('hide.sticky', autoCloseHandler);
     autoCloseEl.addEventListener('hide.sticky', autoCloseHandler);
   }
@@ -2379,9 +2387,11 @@ class XtFade extends XtCore {
     if (options.on) {
       let events = [...options.on.split(' ')];
       for (let event of events) {
+        window.removeEventListener(event, fadeHandler);
         window.addEventListener(event, fadeHandler);
       }
     }
+    window.removeEventListener('scroll.fade', fadeHandler);
     window.addEventListener('scroll.fade', fadeHandler);
     // listener dispatch initial
     window.dispatchEvent(new CustomEvent('scroll.fade'));
