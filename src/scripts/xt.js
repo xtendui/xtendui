@@ -160,62 +160,62 @@ Xt.dataStorage = {
 
   /**
    * put key/obj pair on element's map
-   * @param {Node|HTMLElement|Window} element
+   * @param {Node|HTMLElement|Window} el
    * @param {String} key
    * @param {Object|Function} obj
    * @returns {Object|Function}
    */
-  put: function (element, key, obj) {
+  put: function (el, key, obj) {
     // new map if not already there
     if (!this._storage.has(key)) {
-      this._storage.set(element, new Map());
+      this._storage.set(el, new Map());
     }
     // if already there return
-    if (this._storage.get(element).get(key)) {
-      return this._storage.get(element).get(key);
+    if (this._storage.get(el).get(key)) {
+      return this._storage.get(el).get(key);
     }
     // else put
-    this._storage.get(element).set(key, obj);
-    return this._storage.get(element).get(key);
+    this._storage.get(el).set(key, obj);
+    return this._storage.get(el).get(key);
   },
 
   /**
    * get obj from key on element's map
-   * @param {Node|HTMLElement|Window} element
+   * @param {Node|HTMLElement|Window} el
    * @param {String} key
    * @returns {Object|Function}
    */
-  get: function (element, key) {
+  get: function (el, key) {
     // if no map return null
-    if (!this._storage.get(element)) {
+    if (!this._storage.get(el)) {
       return null;
     }
     // else get
-    return this._storage.get(element).get(key);
+    return this._storage.get(el).get(key);
   },
 
   /**
    * has key on element's map
-   * @param {Node|HTMLElement|Window} element
+   * @param {Node|HTMLElement|Window} el
    * @param {String} key
    * @returns {Boolean}
    */
-  has: function (element, key) {
+  has: function (el, key) {
     // has
-    return this._storage.get(element).has(key);
+    return this._storage.get(el).has(key);
   },
 
   /**
    * remove element's map key
-   * @param {Node|HTMLElement|Window} element
+   * @param {Node|HTMLElement|Window} el
    * @param {String} key
    * @returns {Boolean}
    */
-  remove: function (element, key) {
+  remove: function (el, key) {
     // remove
-    let ret = this._storage.get(element).delete(key);
-    if (!this._storage.get(key).size === false) {
-      this._storage.delete(element);
+    let ret = this._storage.get(el).delete(key);
+    if (!this._storage.get(el).size === false) {
+      this._storage.delete(el);
     }
     return ret;
   }
@@ -314,13 +314,13 @@ Xt.focusLimit = {
 
   /**
    * activate focusLimit to an element
-   * @param {Node|HTMLElement} element Element
+   * @param {Node|HTMLElement} el Element
    */
-  on: function (element) {
+  on: function (el) {
     // @FIX Xt.focus when clicking and not used tab before
     Xt.focus.current = Xt.focus.current ? Xt.focus.current : document.activeElement;
     // vars
-    let focusable = Array.from(element.querySelectorAll('a, button, details, input, iframe, select, textarea'));
+    let focusable = Array.from(el.querySelectorAll('a, button, details, input, iframe, select, textarea'));
     focusable = focusable.filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])')); // filter out parent
     let first = focusable[0];
     let last = focusable[focusable.length - 1];
@@ -489,19 +489,19 @@ Xt.merge = function (arr) {
 
 /**
  * Make an array when element is only one
- * @param {Object|Array} element
+ * @param {Object|Array} el
  * @returns {Array}
  */
-Xt.arrSingle = function (element) {
-  if (!element) {
+Xt.arrSingle = function (el) {
+  if (!el) {
     return [];
   }
-  if (element.length === undefined) {
+  if (el.length === undefined) {
     let arr = new Array(1);
-    arr[0] = element;
+    arr[0] = el;
     return arr;
   } else {
-    return element;
+    return el;
   }
 };
 
@@ -518,14 +518,14 @@ Xt.createElement = function (str) {
 
 /**
  * Query element's parents
- * @param {Node|HTMLElement} element Child element
+ * @param {Node|HTMLElement} el Child element
  * @param {String} query Query parents
  * @return {Array} Parents elements by query
  */
-Xt.parents = function (element, query) {
+Xt.parents = function (el, query) {
   let parents = [];
-  while (element = element.parentElement.closest(query)) {
-    parents.push(element);
+  while (el = el.parentElement.closest(query)) {
+    parents.push(el);
   }
   return parents;
 };
