@@ -90,8 +90,8 @@ Xt.btnMerge = {
    * @param {Node|HTMLElement} el Element
    */
   init: function (el) {
-    if (!el.dataset.xtbtnMergeDone) {
-      el.dataset.xtbtnMergeDone = 'true';
+    if (!el.dataset.xtBtnMerge) {
+      el.dataset.xtBtnMerge = 'true';
       el.removeEventListener('mouseenter', Xt.btnMerge.hoverOn);
       el.addEventListener('mouseenter', Xt.btnMerge.hoverOn);
       el.removeEventListener('mouseleave', Xt.btnMerge.hoverOff);

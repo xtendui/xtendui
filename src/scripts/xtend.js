@@ -22,8 +22,8 @@ class Core {
    */
   constructor(object, jsOptions = {}, attr) {
     this.object = object;
-    if (this.object && !this.object.dataset.xtCoreDone) {
-      this.object.dataset.xtCoreDone = 'true';
+    if (this.object && !this.object.dataset.xtCore) {
+      this.object.dataset.xtCore = 'true';
       this.defaults = {
         "onBlock": false,
         "offBlock": false,
