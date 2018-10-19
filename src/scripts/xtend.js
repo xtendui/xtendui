@@ -17,7 +17,6 @@ class Core {
    * constructor
    * @param {Node|HTMLElement} object Base node
    * @param {Object} jsOptions User options
-   * @param {String} attr Attribute name with json options
    * @constructor
    */
   constructor(object, jsOptions = {}) {
@@ -103,8 +102,7 @@ class Core {
       this.elements = Xt.arrSingle(this.object);
       // @FIX on next frame set all elements querying the namespace
       Xt.requestAnimationFrame.call(window, function () {
-        let namespaceQuery = '[data-xt-namespace=' + self.namespace + ']';
-        self.elements = Xt.arrSingle(document.querySelectorAll(namespaceQuery));
+        self.elements = Xt.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']'));
       });
     }
     // targets
@@ -180,7 +178,7 @@ class Core {
           ariaEl.setAttribute('aria-selected', 'false');
         }
         for (let tr of this.targets) {
-          let els =  this.getElementsFromTarget(tr);
+          let els = self.getElementsFromTarget(tr);
           // id
           let id = tr.getAttribute('id');
           if (!id) {
@@ -194,24 +192,26 @@ class Core {
             tr.setAttribute('aria-expanded', 'false');
           }
           // depending on el
-          let str = '';
+          let str = ' ';
+          str += tr.getAttribute('aria-labelledby') || '';
           for (let el of els) {
             let ariaEls = self.getInside(el, options.ariaControls);
             let ariaEl = ariaEls.length ? ariaEls[0] : el;
-            str += ariaEl.getAttribute('id') + ' ';
+            str += ' ' + ariaEl.getAttribute('id');
           }
-          tr.setAttribute('aria-labelledby', str.slice(0, -1));
+          tr.setAttribute('aria-labelledby', str.trim());
         }
         for (let el of this.elements) {
-          let trs =  this.getTargets(el);
+          let trs = self.getTargets(el);
           let ariaEls = self.getInside(el, options.ariaControls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
           // depending on tr
-          let str = '';
+          let str = ' ';
+          str += ariaEl.getAttribute('aria-controls') || '';
           for (let tr of trs) {
-            str += tr.getAttribute('id') + ' ';
+            str += ' ' + tr.getAttribute('id');
           }
-          ariaEl.setAttribute('aria-controls', str.slice(0, -1));
+          ariaEl.setAttribute('aria-controls', str.trim());
         }
       }
     }
