@@ -237,14 +237,9 @@ class Core {
         }
         // @FIX prevents click on touch until clicked two times
         if (events.includes('mouseenter') || events.includes('mousehover')) {
-          // event touchClick
-          let touchClickHandler = Xt.dataStorage.put(el, 'touchClickHandler', self.eventTouchClickHandler.bind(self).bind(self, el));
-          el.removeEventListener('click', touchClickHandler);
-          el.addEventListener('click', touchClickHandler);
-          // event touchReset
-          let touchResetHandler = Xt.dataStorage.put(el, 'touchResetHandler', self.eventTouchResetHandler.bind(self).bind(self, el));
-          el.removeEventListener('off', touchResetHandler);
-          el.addEventListener('off', touchResetHandler);
+          let touchStartHandler = Xt.dataStorage.put(el, 'touchStartHandler', self.eventTouchStartHandler.bind(self).bind(self, el));
+          el.removeEventListener('touchstart', touchStartHandler);
+          el.addEventListener('touchstart', touchStartHandler);
         }
       }
       el.removeEventListener('on', onHandler);
@@ -353,26 +348,44 @@ class Core {
   }
 
   /**
-   * prevents click on touch until clicked two times
-   * @param {Node|HTMLElement} element
+   * init prevents click on touch until clicked two times
+   * @param {Node|HTMLElement} el
    * @param {Event} e
    */
-  eventTouchClickHandler(element, e) {
-    if (!element.dataset.touchClickDone || element.dataset.touchClickDone === 'false') {
-      element.dataset.touchClickDone = 'true';
+  eventTouchStartHandler(el, e) {
+    let self = this;
+    // event touchClick
+    let touchClickHandler = Xt.dataStorage.put(el, 'touchClickHandler', self.eventTouchClickHandler.bind(self).bind(self, el));
+    //console.log(touchClickHandler);
+    el.removeEventListener('click', touchClickHandler);
+    el.addEventListener('click', touchClickHandler);
+    // event touchReset
+    let touchResetHandler = Xt.dataStorage.put(el, 'touchResetHandler', self.eventTouchResetHandler.bind(self).bind(self, el));
+    el.removeEventListener('off', touchResetHandler);
+    el.addEventListener('off', touchResetHandler);
+  }
+
+  /**
+   * prevents click on touch until clicked two times
+   * @param {Node|HTMLElement} el
+   * @param {Event} e
+   */
+  eventTouchClickHandler(el, e) {
+    if (!el.dataset.touchClickDone || el.dataset.touchClickDone === 'false') {
+      el.dataset.touchClickDone = 'true';
       e.preventDefault();
     } else {
-      element.dataset.touchClickDone = 'false';
+      el.dataset.touchClickDone = 'false';
     }
   }
 
   /**
-   * reset prevents click on touch
-   * @param {Node|HTMLElement} element
+   * reset prevents click on touch until clicked two times
+   * @param {Node|HTMLElement} el
    * @param {Event} e
    */
-  eventTouchResetHandler(element, e) {
-    element.dataset.touchClickDone = 'false';
+  eventTouchResetHandler(el, e) {
+    el.dataset.touchClickDone = 'false';
   }
 
   /**

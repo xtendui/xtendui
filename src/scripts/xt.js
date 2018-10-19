@@ -167,7 +167,7 @@ Xt.dataStorage = {
    */
   put: function (el, key, obj) {
     // new map if not already there
-    if (!this._storage.has(key)) {
+    if (!this._storage.has(el)) {
       this._storage.set(el, new Map());
     }
     // if already there return
