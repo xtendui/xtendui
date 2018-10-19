@@ -165,7 +165,7 @@
                       {% assign subsorted = site.[collection.label] | where: 'categories', p.title | sort: 'order' %}
                       {% if subsorted.size > 0 %}
                         <div class="site-breadcrumbs-body-main{% if page.title == p.title or page.categories[0] == p.title %} current{% endif %}">
-                          <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary btn-nodesign">
+                          <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary btn-nodesign{% if p.title == page.title %} active{% endif %}">
                             <span>{{ p.title }}</span>
                           </a>
                           <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
