@@ -13,7 +13,7 @@
 
   <!-- seo -->
   <title>Button • Xtend</title>
-  <meta name="description" content="Links styles and extensible button component with structured theming."/>
+  <meta name="description" content="Extensible button component with structured theming."/>
 
   <!-- icons -->
   <link rel="icon" href="/assets/images/favicon.ico?v=0.5.5"/>
@@ -111,7 +111,7 @@
               
               
               <a href="/" class="btn btn-primary btn-nodesign make-line">
-                <span>Playground</span>
+                <span>Extensions</span>
               </a>
               <a href="/" class="btn btn-primary btn-nodesign make-line">
                 <span>Inspirations</span>
@@ -133,7 +133,7 @@
         <div class="flex flex-auto align-items-center align-content-center justify-content-between">
           <div class="site-hero-text">
             <h1>Button</h1>
-            <p class="font-giant">Links styles and extensible button component with structured theming.</p>
+            <p class="font-giant">Extensible button component with structured theming.</p>
           </div>
           <!--
           <div class="site-hero-img">
@@ -154,7 +154,7 @@
               <div class="site-breadcrumbs-body flex flex-space-none"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave",
-                   "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true}}'>
+                   "instant": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true}}'>
                 
                 
 
@@ -299,6 +299,12 @@
                 
                 
                 
+                
+                
+                
+                
+                
+                
                 <div class="site-breadcrumbs-body-main">
                   <a href="/docs/component/" class="btn btn-primary btn-nodesign">
                     <span>Component</span>
@@ -306,8 +312,16 @@
                   <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
                     <div class="site-breadcrumbs-body-sub-inner">
                       
+                      <a href="/docs/component/general/" class="btn btn-primary btn-nodesign ">
+                        <span>General</span>
+                      </a>
+                      
                       <a href="/docs/component/button/" class="btn btn-primary btn-nodesign active">
                         <span>Button</span>
+                      </a>
+                      
+                      <a href="/docs/component/group/" class="btn btn-primary btn-nodesign ">
+                        <span>Group</span>
                       </a>
                       
                       <a href="/docs/component/drop/" class="btn btn-primary btn-nodesign ">
@@ -325,8 +339,6 @@
                     </div>
                   </div>
                 </div>
-                
-                
                 
                 
                 
@@ -467,11 +479,15 @@
                       
                       
                       
+                      
+                      
+                      
+                      
+                      
+                      
                       <a href="/docs/component/" class="btn btn-primary btn-nodesign">
                         <span>Component</span>
                       </a>
-                      
-                      
                       
                       
                       
@@ -510,12 +526,13 @@
 
               <div class="site-breadcrumbs-meta flex flex-space-none align-items-center">
 
-                <div>
+                <div class="display-none-sm display-block-md">
                   <a href="https://github.com/minimit/xtend-library/releases" target="_blank" class="btn btn-primary btn-icon btn-nodesign">
                     <span><span class="icon-download icon-big"></span></span>
                   </a>
                 </div>
-                <div>
+
+                <div class="display-none-sm display-block-md">
                   <a href="https://github.com/minimit/xtend-library" target="_blank" class="btn btn-primary btn-icon btn-nodesign">
                     <span><span class="icon-github icon-big"></span></span>
                   </a>
@@ -764,95 +781,9 @@
   </div>
 </div>
 
-<h2>Others</h2>
+<h2>Button group</h2>
 
-<h3>Combo</h3>
-
-<p>To combo buttons use a containing <code>a, button</code>. Use <code>font-size: 0;</code> to fix horizontal spacing of
-  btn's <strong>display: inline-block;</strong>.</p>
-
-<p>Elements with <code>a, button</code> tag propagate <code>.hover</code> and <code>.active</code> classes on
-  <code>.btn</code> childs automatically.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="disabled">
-    <div class="demo-text">
-      <div class="content">
-        <code>.hover</code> <code>.active</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div class="list list-space-small align-items-center demo-source-from">
-        <button type="button" style="font-size: 0;">
-          <span class="btn btn-primary btn-squared">Test</span>
-          <span class="btn btn-squared">Test</span>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Disabled</h3>
-
-<p>Disabled attribute or class.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="disabled">
-    <div class="demo-source" data-lang="html">
-      <div class="list list-space-small align-items-center demo-source-from">
-        <button type="button" class="btn btn-primary" disabled>
-          <span>primary</span>
-        </button>
-        <button type="button" class="btn btn-primary-empty" disabled>
-          <span>primary empty</span>
-        </button>
-        <button type="button" class="btn btn-secondary" disabled>
-          <span>secondary</span>
-        </button>
-        <button type="button" class="btn btn-secondary-empty" disabled>
-          <span>secondary empty</span>
-        </button>
-        <button type="button" class="btn btn-link" disabled>
-          <span>link</span>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Links</h3>
-
-<p>On containers use <code>.inverse</code> to have white links.</p>
-
-<p>Use the mixins <code>.link-underline()</code> or <code>.link-none()</code> to add or remove <code>text-decoration:
-  underline;</code> on links and buttons.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="links">
-    <div class="demo-text">
-      <div class="content">
-        <code>a</code> <code>.alink</code> <code>.inverse</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div class="list list-space-small align-items-center demo-source-from">
-        <a href="#">
-          link
-        </a>
-
-        <div class="alink">
-          class
-        </div>
-
-        <div class="inverse" style="padding: 0.5rem 1rem; background: #7367F0;">
-          <a href="#">
-            link
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<p>See <a href="/docs/component/group/#button-group">Button group</a>.</p>
 
           </article>
 
@@ -911,7 +842,7 @@
                       
                     
                     <a href="#" class="btn btn-primary btn-nodesign">
-                      <span>Playground</span>
+                      <span>Extensions</span>
                     </a>
                     <a href="#" class="btn btn-primary btn-nodesign">
                       <span>Inspirations</span>

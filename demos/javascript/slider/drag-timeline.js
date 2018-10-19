@@ -12,7 +12,7 @@ CustomEase.create('easeOut', '.77, 0, .175, 1');
 for (let [i, el] of document.querySelectorAll('.slider').entries()) {
 
   // slider
-  new XtSlider(el, {
+  new Xt.Slider(el, {
     "auto": 6000,
     "autoPause": 6000,
     "drag": true,

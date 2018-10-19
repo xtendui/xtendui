@@ -12,8 +12,8 @@
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
 
   <!-- seo -->
-  <title>Javascript • Xtend</title>
-  <meta name="description" content="Lorem Ipsum"/>
+  <title>General • Xtend</title>
+  <meta name="description" content="General components styles."/>
 
   <!-- icons -->
   <link rel="icon" href="/assets/images/favicon.ico?v=0.5.5"/>
@@ -132,8 +132,8 @@
       <div class="container">
         <div class="flex flex-auto align-items-center align-content-center justify-content-between">
           <div class="site-hero-text">
-            <h1>Javascript</h1>
-            <p class="font-giant">Lorem Ipsum</p>
+            <h1>General</h1>
+            <p class="font-giant">General components styles.</p>
           </div>
           <!--
           <div class="site-hero-img">
@@ -312,7 +312,7 @@
                   <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
                     <div class="site-breadcrumbs-body-sub-inner">
                       
-                      <a href="/docs/component/general/" class="btn btn-primary btn-nodesign ">
+                      <a href="/docs/component/general/" class="btn btn-primary btn-nodesign active">
                         <span>General</span>
                       </a>
                       
@@ -419,7 +419,7 @@
 
                 <div class="site-breadcrumbs-body-main">
                   <button type="button" class="btn btn-primary btn-nodesign">
-                    <span>docs</span>
+                    <span>Component</span>
                   </button>
                   <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
                     <div class="site-breadcrumbs-body-sub-inner">
@@ -574,193 +574,78 @@
         <div class="col col-12 col-9-md">
 
           <article class="site-article default-lists">
-            
-<h2>Table of contents</h2>
+            <h2>Decoration</h2>
 
-<ul>
-  
-    
+<p>To set <strong>text-decoration</strong> use this classes: <code>.link-underline</code> or <code>.link-none</code>.</p>
 
-      
+<div class="alert">
+  <div class="content">
+    Decorations classes are defined inside <code>/theme/_components.less</code>.
+  </div>
+</div>
 
-      
-      
-        <li>
-          <strong>Toggle</strong> <span class="separator separator-arrow"></span>
-          <a href="/docs/javascript/toggle/" class=" ">
-            /docs/javascript/toggle/
+<h2>Links</h2>
+
+<p>On containers use <code>.inverse</code> to have white links.</p>
+
+<p>Use the mixins <code>.link-underline()</code> or <code>.link-none()</code> to add or remove <code>text-decoration:
+  underline;</code> on links and buttons.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="links">
+    <div class="demo-text">
+      <div class="content">
+        <code>a</code> <code>.alink</code> <code>.inverse</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space-small align-items-center demo-source-from">
+        <a href="#">
+          link
+        </a>
+
+        <div class="alink">
+          class
+        </div>
+
+        <div class="inverse" style="padding: 0.5rem 1rem; background: #7367F0;">
+          <a href="#">
+            link
           </a>
-        </li>
-      
-        <li>
-          <strong>Scroll</strong> <span class="separator separator-arrow"></span>
-          <a href="/docs/javascript/scroll/" class=" ">
-            /docs/javascript/scroll/
-          </a>
-        </li>
-      
-        <li>
-          <strong>Slider</strong> <span class="separator separator-arrow"></span>
-          <a href="/docs/javascript/slider/" class=" ">
-            /docs/javascript/slider/
-          </a>
-        </li>
-      
-        <li>
-          <strong>Ajax</strong> <span class="separator separator-arrow"></span>
-          <a href="/docs/javascript/ajax/" class=" ">
-            /docs/javascript/ajax/
-          </a>
-        </li>
-      
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    
-  
-    
-  
-</ul>
+<h2>Disabled</h2>
 
+<p>Disabled attribute or class.</p>
 
-<h2>Polyfill</h2>
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="disabled">
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space-small align-items-center demo-source-from">
+        <button type="button" class="btn btn-primary" disabled>
+          <span>primary</span>
+        </button>
+        <button type="button" class="btn btn-primary-empty" disabled>
+          <span>primary empty</span>
+        </button>
+        <button type="button" class="btn btn-secondary" disabled>
+          <span>secondary</span>
+        </button>
+        <button type="button" class="btn btn-secondary-empty" disabled>
+          <span>secondary empty</span>
+        </button>
+        <button type="button" class="btn btn-link" disabled>
+          <span>link</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>For supporting older browsers you need to add babel's <code>polyfill.js</code>, see <a
-  href="https://babeljs.io/docs/en/babel-polyfill/#usage-in-browser" target="_blank">docs</a>, <a
-  href="https://cdnjs.com/libraries/babel-polyfill" target="_blank">cdn</a>.</p>
-
-<h2>Initialization</h2>
-
-<h3>Attributes</h3>
-
-<p>The document attributes with <code>[data-xt-]</code> gets initialized automatically, also on DOM changes with
-  Mutation Observer.</p>
-
-<p>If you really need, but probably not, you can call yourself the document attributes initializzation.</p>
-
-<pre>
-  <code class="js">
-    Xt.initAll(document.querySelectorAll('.my-container'));
-  </code>
-</pre>
-
-<h3>Toggle</h3>
-
-<p>You can initialize <strong>toggle</strong> by javascript.</p>
-
-<pre>
-  <code class="js">
-    // single
-    Xt.Toggle(document.querySelectorAll('.my-element')[0], {
-      // options
-    });
-
-    // looping
-    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
-      Xt.Toggle(el, {
-        // options
-      });
-    }
-  </code>
-</pre>
-
-<h3>Drop</h3>
-
-<p>You can initialize <strong>drop</strong> by javascript.</p>
-
-<pre>
-  <code class="js">
-    // single
-    Xt.Drop(document.querySelectorAll('.my-element')[0], {
-      // options
-    });
-
-    // looping
-    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
-      Xt.Drop(el, {
-        // options
-      });
-    }
-  </code>
-</pre>
-
-<h3>Overlay</h3>
-
-<p>You can initialize <strong>overlay</strong> by javascript.</p>
-
-<pre>
-  <code class="js">
-    // single
-    Xt.Overlay(document.querySelectorAll('.my-element')[0], {
-      // options
-    });
-
-    // looping
-    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
-      Xt.Overlay(el, {
-        // options
-      });
-    }
-  </code>
-</pre>
-
-<h3>Slider</h3>
-
-<p>You can initialize <strong>overlay</strong> by javascript.</p>
-
-<pre>
-  <code class="js">
-    // single
-    new Xt.Slider(document.querySelectorAll('.my-element')[0], {
-      // options
-    });
-
-    // looping
-    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
-      new Xt.Slider(el, {
-        // options
-      });
-    }
-  </code>
-</pre>
-
-<h3>Sticky</h3>
-
-<p>You can initialize <strong>sticky</strong> by javascript.</p>
-
-<pre>
-  <code class="js">
-    // single
-    Xt.Sticky(document.querySelectorAll('.my-element')[0], {
-      // options
-    });
-
-    // looping
-    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
-      Xt.Sticky(el, {
-        // options
-      });
-    }
-  </code>
-</pre>
-
-<h3>Fade</h3>
-
-<p>You can initialize <strong>fade</strong> by javascript.</p>
-
-<pre>
-  <code class="js">
-    // single
-    new Xt.Fade(document.querySelectorAll('.my-element')[0], {
-      // options
-    });
-
-    // looping
-    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
-      new Xt.Fade(el, {
-        // options
-      });
-    }
-  </code>
-</pre>
           </article>
 
         </div>
@@ -769,9 +654,9 @@
           <aside class="site-aside" data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
 
             <div class="site-aside-text">
-              <a href="/docs/javascript/" class="btn btn-nodesign">
+              <a href="/docs/component/general/" class="btn btn-nodesign">
                 <div class="site-aside-title">
-                  <span>Javascript</span>
+                  <span>General</span>
                 </div>
               </a>
             </div>

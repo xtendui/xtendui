@@ -111,7 +111,7 @@
               
               
               <a href="/" class="btn btn-primary btn-nodesign make-line">
-                <span>Playground</span>
+                <span>Extensions</span>
               </a>
               <a href="/" class="btn btn-primary btn-nodesign make-line">
                 <span>Inspirations</span>
@@ -154,7 +154,7 @@
               <div class="site-breadcrumbs-body flex flex-space-none"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave",
-                   "durationNone": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true}}'>
+                   "instant": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true}}'>
                 
                 
 
@@ -299,6 +299,12 @@
                 
                 
                 
+                
+                
+                
+                
+                
+                
                 <div class="site-breadcrumbs-body-main">
                   <a href="/docs/component/" class="btn btn-primary btn-nodesign">
                     <span>Component</span>
@@ -306,8 +312,16 @@
                   <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
                     <div class="site-breadcrumbs-body-sub-inner">
                       
+                      <a href="/docs/component/general/" class="btn btn-primary btn-nodesign ">
+                        <span>General</span>
+                      </a>
+                      
                       <a href="/docs/component/button/" class="btn btn-primary btn-nodesign ">
                         <span>Button</span>
+                      </a>
+                      
+                      <a href="/docs/component/group/" class="btn btn-primary btn-nodesign ">
+                        <span>Group</span>
                       </a>
                       
                       <a href="/docs/component/drop/" class="btn btn-primary btn-nodesign ">
@@ -325,8 +339,6 @@
                     </div>
                   </div>
                 </div>
-                
-                
                 
                 
                 
@@ -467,11 +479,15 @@
                       
                       
                       
+                      
+                      
+                      
+                      
+                      
+                      
                       <a href="/docs/component/" class="btn btn-primary btn-nodesign">
                         <span>Component</span>
                       </a>
-                      
-                      
                       
                       
                       
@@ -510,12 +526,13 @@
 
               <div class="site-breadcrumbs-meta flex flex-space-none align-items-center">
 
-                <div>
+                <div class="display-none-sm display-block-md">
                   <a href="https://github.com/minimit/xtend-library/releases" target="_blank" class="btn btn-primary btn-icon btn-nodesign">
                     <span><span class="icon-download icon-big"></span></span>
                   </a>
                 </div>
-                <div>
+
+                <div class="display-none-sm display-block-md">
                   <a href="https://github.com/minimit/xtend-library" target="_blank" class="btn btn-primary btn-icon btn-nodesign">
                     <span><span class="icon-github icon-big"></span></span>
                   </a>
@@ -600,7 +617,7 @@ XtToggle.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
   "class": "active",
-  "durationNone": {"elements": true},
+  "instant": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -637,7 +654,7 @@ XtDrop.defaults = {
   "targets": ":scope > .drop",
   "controls": ":scope > a, :scope > button",
   "class": "active",
-  "durationNone": {"elements": true},
+  "instant": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -674,7 +691,7 @@ XtOverlay.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > .overlay-outer",
   "class": "active",
-  "durationNone": {"elements": true},
+  "instant": {"elements": true},
   "on": "click",
   "toggle": true,
   "min": 0,
@@ -1046,14 +1063,15 @@ XtOverlay.defaults = {
   </div>
 </div>
 
-<p>You can start with toggled elements and targets just by adding all of the classes to the <strong>elements</strong>
-  you want activated.</p>
+<p>You can start with toggled elements and targets just by adding all of the classes to the <strong>elements</strong> or
+  <strong>targets</strong> you want activated. Following this activation the <strong>min</strong> option will take
+  effect.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-source" data-lang="html">
       <div class="list list-space-small align-items-center"
-           data-xt-toggle='{"class": "active class-example-1", "min": 2, "max": 3}'>
+           data-xt-toggle='{"class": "active class-example-1", "min": 3, "max": 3}'>
         <button type="button" class="btn" data-group="0">
           <span>Group 0</span>
         </button>
@@ -1092,6 +1110,11 @@ XtOverlay.defaults = {
         <div class="alert toggle-block">
           <div class="content">
             Target 1
+          </div>
+        </div>
+        <div class="alert toggle-block active class-example-1" data-group="1">
+          <div class="content">
+            Group 1
           </div>
         </div>
       </div>
@@ -1382,21 +1405,20 @@ XtOverlay.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="/demos/javascript/toggle/toggle-queue.html"
-       data-name="queue">
+  <div class="demo-item" data-iframe="/demos/javascript/toggle/toggle-delay-fnc.html"
+       data-name="delay fnc">
     <div class="demo-text">
       <div class="content">
-        To add a delay on queue (so on consequential activations) use <code>"queueOn": Milliseconds</code> <code>"queueOff":
-        Milliseconds</code>
+        Complex delay with <code>"delayOn": Function</code> <code>"delayOff": Function</code> return number using
+        <strong>total</strong> and <strong>current</strong>
       </div>
     </div>
   </div>
   <div class="demo-item" data-iframe="/demos/javascript/toggle/toggle-instant.html"
-       data-name="durationNone">
+       data-name="instant">
     <div class="demo-text">
       <div class="content">
-        To disable automatic duration use <code>"durationNone": {"elements": true, "targets": true,
-        "elementsInner": true, "targetsInner": true}</code>
+        To disable queue and duration use <code>"instant": true</code>
       </div>
     </div>
   </div>
@@ -1458,7 +1480,7 @@ XtOverlay.defaults = {
                       
                     
                     <a href="#" class="btn btn-primary btn-nodesign">
-                      <span>Playground</span>
+                      <span>Extensions</span>
                     </a>
                     <a href="#" class="btn btn-primary btn-nodesign">
                       <span>Inspirations</span>

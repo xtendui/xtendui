@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-        
+
     <!-- meta -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -21,16 +21,12 @@
     <!-- styles -->
     <link rel="stylesheet" href="/assets/styles/demo.css?v=0.5.5" />
     
-    
+
     <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.5.5"></script>
     <script src="/assets/scripts/polyfill.min.js"></script>
     <script src="/assets/scripts/xtend.min.js?v=0.5.5"></script>
-
-    <!-- demo scripts -->
-    <script src="/assets/scripts/ResizeSensor.min.js"></script>
-    <script src="/assets/scripts/ElementQueries.min.js"></script>
 
   </head>
   <body class="full">
@@ -129,7 +125,7 @@ CustomEase.create('easeOut', '.77, 0, .175, 1');
 for (let [i, el] of document.querySelectorAll('.slider').entries()) {
 
   // slider
-  new XtSlider(el, {
+  new Xt.Slider(el, {
     "auto": 6000,
     "autoPause": 6000,
     "drag": true,
@@ -275,19 +271,6 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     <script>
       // add id
       document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
-      // init
-      function initAll() {
-        Xt.initAll();
-        // https://github.com/marcj/css-element-queries
-        new ResizeSensor(document.getElementById('body-outer'), function() {
-          parent.resizeIframe(window.frameElement.getAttribute('id'));
-        });
-      }
-      if (document.readyState === "loading") {
-        document.addEventListener('DOMContentLoaded', initAll);
-      } else {
-        initAll();
-      }
       // init iframe
       window.parent.initIframe(window.name);
     </script>
@@ -307,7 +290,7 @@ CustomEase.create('easeOut', '.77, 0, .175, 1');
 for (let [i, el] of document.querySelectorAll('.slider').entries()) {
 
   // slider
-  new XtSlider(el, {
+  new Xt.Slider(el, {
     "auto": 6000,
     "autoPause": 6000,
     "drag": true,

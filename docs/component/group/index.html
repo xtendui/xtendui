@@ -12,8 +12,8 @@
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
 
   <!-- seo -->
-  <title>Javascript • Xtend</title>
-  <meta name="description" content="Lorem Ipsum"/>
+  <title>Group • Xtend</title>
+  <meta name="description" content="Extensible button component with structured theming."/>
 
   <!-- icons -->
   <link rel="icon" href="/assets/images/favicon.ico?v=0.5.5"/>
@@ -132,8 +132,8 @@
       <div class="container">
         <div class="flex flex-auto align-items-center align-content-center justify-content-between">
           <div class="site-hero-text">
-            <h1>Javascript</h1>
-            <p class="font-giant">Lorem Ipsum</p>
+            <h1>Group</h1>
+            <p class="font-giant">Extensible button component with structured theming.</p>
           </div>
           <!--
           <div class="site-hero-img">
@@ -320,7 +320,7 @@
                         <span>Button</span>
                       </a>
                       
-                      <a href="/docs/component/group/" class="btn btn-primary btn-nodesign ">
+                      <a href="/docs/component/group/" class="btn btn-primary btn-nodesign active">
                         <span>Group</span>
                       </a>
                       
@@ -419,7 +419,7 @@
 
                 <div class="site-breadcrumbs-body-main">
                   <button type="button" class="btn btn-primary btn-nodesign">
-                    <span>docs</span>
+                    <span>Component</span>
                   </button>
                   <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
                     <div class="site-breadcrumbs-body-sub-inner">
@@ -574,193 +574,446 @@
         <div class="col col-12 col-9-md">
 
           <article class="site-article default-lists">
-            
-<h2>Table of contents</h2>
+            <h2>Button group</h2>
 
-<ul>
-  
-    
+<h3>Usage</h3>
 
-      
-
-      
-      
-        <li>
-          <strong>Toggle</strong> <span class="separator separator-arrow"></span>
-          <a href="/docs/javascript/toggle/" class=" ">
-            /docs/javascript/toggle/
-          </a>
-        </li>
-      
-        <li>
-          <strong>Scroll</strong> <span class="separator separator-arrow"></span>
-          <a href="/docs/javascript/scroll/" class=" ">
-            /docs/javascript/scroll/
-          </a>
-        </li>
-      
-        <li>
-          <strong>Slider</strong> <span class="separator separator-arrow"></span>
-          <a href="/docs/javascript/slider/" class=" ">
-            /docs/javascript/slider/
-          </a>
-        </li>
-      
-        <li>
-          <strong>Ajax</strong> <span class="separator separator-arrow"></span>
-          <a href="/docs/javascript/ajax/" class=" ">
-            /docs/javascript/ajax/
-          </a>
-        </li>
-      
-
-    
-  
-    
-  
-</ul>
-
-
-<h2>Polyfill</h2>
-
-<p>For supporting older browsers you need to add babel's <code>polyfill.js</code>, see <a
-  href="https://babeljs.io/docs/en/babel-polyfill/#usage-in-browser" target="_blank">docs</a>, <a
-  href="https://cdnjs.com/libraries/babel-polyfill" target="_blank">cdn</a>.</p>
-
-<h2>Initialization</h2>
-
-<h3>Attributes</h3>
-
-<p>The document attributes with <code>[data-xt-]</code> gets initialized automatically, also on DOM changes with
-  Mutation Observer.</p>
-
-<p>If you really need, but probably not, you can call yourself the document attributes initializzation.</p>
+<p>Use this markup to create a button group as line.</p>
 
 <pre>
-  <code class="js">
-    Xt.initAll(document.querySelectorAll('.my-container'));
+  <code class="html">
+    <div class="group">
+
+        <button type="button">
+          <!-- content -->
+        </button>
+
+        <button type="button">
+          <!-- content -->
+        </button>
+
+    </div>
   </code>
 </pre>
 
-<h3>Toggle</h3>
-
-<p>You can initialize <strong>toggle</strong> by javascript.</p>
+<p>Use this markup to create a button group as stack.</p>
 
 <pre>
-  <code class="js">
-    // single
-    Xt.Toggle(document.querySelectorAll('.my-element')[0], {
-      // options
-    });
+  <code class="html">
+    <div class="group">
 
-    // looping
-    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
-      Xt.Toggle(el, {
-        // options
-      });
-    }
+      <span class="group-inner">
+        <button type="button">
+          <!-- content -->
+        </button>
+        <button type="button">
+          <!-- content -->
+        </button>
+      </span>
+
+    </div>
   </code>
 </pre>
 
-<h3>Drop</h3>
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="line">
+    <div class="demo-source" data-lang="html">
+      <div class="group">
+        <div class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 1
+          </button>
+        </div>
+        <div class="group-inner">
+          <button type="button" class="btn btn-primary-empty">
+            btn 2
+          </button>
+        </div>
+        <div class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 3
+          </button>
+        </div>
+        <div class="group-inner">
+          <button type="button" class="btn btn-secondary-empty">
+            btn 4
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="stack">
+    <div class="demo-source" data-lang="html">
+      <div class="group">
+        <div class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 1a
+          </button>
+          <button type="button" class="btn btn-primary-empty">
+            btn 1b
+          </button>
+        </div>
+        <div class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 2a
+          </button>
+          <button type="button" class="btn btn-secondary-empty">
+            btn 2b
+          </button>
+        </div>
+        <div class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 3a
+          </button>
+          <button type="button" class="btn btn-primary-empty">
+            btn 3b
+          </button>
+        </div>
+        <div class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 4a
+          </button>
+          <button type="button" class="btn btn-secondary-empty">
+            btn 4b
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>You can initialize <strong>drop</strong> by javascript.</p>
+<h3>Merge</h3>
+
+<p>Use this markup to merge multiple <code>.btn</code> in one <code>[button]</code> as line.</p>
 
 <pre>
-  <code class="js">
-    // single
-    Xt.Drop(document.querySelectorAll('.my-element')[0], {
-      // options
-    });
+  <code class="html">
+    <button type="button" class="group">
 
-    // looping
-    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
-      Xt.Drop(el, {
-        // options
-      });
-    }
+      <span class="group-inner">
+        <span class="btn">
+          <!-- content -->
+        </span>
+      </span>
+
+      <span class="group-inner">
+        <span class="btn">
+          <!-- content -->
+        </span>
+      </span>
+
+    </button>
   </code>
 </pre>
 
-<h3>Overlay</h3>
-
-<p>You can initialize <strong>overlay</strong> by javascript.</p>
+<p>Use this markup to merge multiple <code>.btn</code> in one <code>[button]</code> as stack.</p>
 
 <pre>
-  <code class="js">
-    // single
-    Xt.Overlay(document.querySelectorAll('.my-element')[0], {
-      // options
-    });
+  <code class="html">
+    <button type="button" class="group">
 
-    // looping
-    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
-      Xt.Overlay(el, {
-        // options
-      });
-    }
+      <span class="group-inner">
+        <span class="btn">
+          <!-- content -->
+        </span>
+        <span class="btn">
+          <!-- content -->
+        </span>
+      </span>
+
+    </button>
   </code>
 </pre>
 
-<h3>Slider</h3>
+<div class="alert">
+  <div class="content">
+    Elements with <code>a, button</code> tag propagate <code>.hover</code> and <code>.active</code> classes on
+    <code>.btn</code> childs automatically.
+  </div>
+</div>
 
-<p>You can initialize <strong>overlay</strong> by javascript.</p>
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="line">
+    <div class="demo-source" data-lang="html">
+      <button type="button" class="group">
+        <span class="group-inner">
+          <span class="btn btn-primary">
+            btn 1
+          </span>
+        </span>
+        <span class="group-inner">
+          <span class="btn btn-primary-empty">
+            btn 2
+          </span>
+        </span>
+        <span class="group-inner">
+          <span class="btn btn-secondary">
+            btn 3
+          </span>
+        </span>
+        <span class="group-inner">
+          <span class="btn btn-secondary-empty">
+            btn 4
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="stack">
+    <div class="demo-source" data-lang="html">
+      <button type="button" class="group">
+        <span class="group-inner">
+          <span class="btn btn-primary">
+            btn 1a
+          </span>
+          <span class="btn btn-primary-empty">
+            btn 1b
+          </span>
+        </span>
+        <span class="group-inner">
+          <span class="btn btn-secondary">
+            btn 2a
+          </span>
+          <span class="btn btn-secondary-empty">
+            btn 2b
+          </span>
+        </span>
+        <span class="group-inner">
+          <span class="btn btn-primary">
+            btn 3a
+          </span>
+          <span class="btn btn-primary-empty">
+            btn 3b
+          </span>
+        </span>
+        <span class="group-inner">
+          <span class="btn btn-secondary">
+            btn 4a
+          </span>
+          <span class="btn btn-secondary-empty">
+            btn 4b
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<h2>Input group</h2>
+
+<h3>Usage</h3>
+
+<p>Use this markup to create a input group as line.</p>
 
 <pre>
-  <code class="js">
-    // single
-    new Xt.Slider(document.querySelectorAll('.my-element')[0], {
-      // options
-    });
+  <code class="html">
+    <div class="group">
 
-    // looping
-    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
-      new Xt.Slider(el, {
-        // options
-      });
-    }
+      <span class="group-inner">
+        <span class="btn">
+          <!-- content -->
+        </span>
+      </span>
+
+      <input type="text" class="input-control">
+
+      <span class="group-inner">
+        <span class="btn">
+          <!-- content -->
+        </span>
+      </span>
+
+    </div>
   </code>
 </pre>
 
-<h3>Sticky</h3>
-
-<p>You can initialize <strong>sticky</strong> by javascript.</p>
+<p>Use this markup to create a input group as stack.</p>
 
 <pre>
-  <code class="js">
-    // single
-    Xt.Sticky(document.querySelectorAll('.my-element')[0], {
-      // options
-    });
+  <code class="html">
+    <div class="group">
 
-    // looping
-    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
-      Xt.Sticky(el, {
-        // options
-      });
-    }
+      <span class="group-inner">
+        <span class="btn">
+          <!-- content -->
+        </span>
+        <span class="btn">
+          <!-- content -->
+        </span>
+      </span>
+
+      <input type="text" class="input-control">
+
+      <span class="group-inner">
+        <span class="btn">
+          <!-- content -->
+        </span>
+        <span class="btn">
+          <!-- content -->
+        </span>
+      </span>
+
+    </div>
   </code>
 </pre>
 
-<h3>Fade</h3>
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="line">
+    <div class="demo-source" data-lang="html">
+      <div class="group">
+        <span class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 1
+          </button>
+        </span>
+        <span class="group-inner">
+          <button type="button" class="btn btn-primary-empty">
+            btn 2
+          </button>
+        </span>
+        <input type="text" class="input-control">
+        <span class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 3
+          </button>
+        </span>
+        <span class="group-inner">
+          <button type="button" class="btn btn-secondary-empty">
+            btn 4
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="stack">
+    <div class="demo-source" data-lang="html">
+      <div class="group">
+        <span class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 1a
+          </button>
+          <button type="button" class="btn btn-primary-empty">
+            btn 1b
+          </button>
+        </span>
+        <span class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 2a
+          </button>
+          <button type="button" class="btn btn-secondary-empty">
+            btn 2b
+          </button>
+        </span>
+        <input type="text" class="input-control">
+        <span class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 3a
+          </button>
+          <button type="button" class="btn btn-primary-empty">
+            btn 3b
+          </button>
+        </span>
+        <span class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 4a
+          </button>
+          <button type="button" class="btn btn-secondary-empty">
+            btn 4b
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>You can initialize <strong>fade</strong> by javascript.</p>
+<h2>Options</h2>
 
-<pre>
-  <code class="js">
-    // single
-    new Xt.Fade(document.querySelectorAll('.my-element')[0], {
-      // options
-    });
+<h3>Variants</h3>
 
-    // looping
-    for (let [i, el] of document.querySelectorAll('.my-element').entries()) {
-      new Xt.Fade(el, {
-        // options
-      });
-    }
-  </code>
-</pre>
+<p>Optional classes for assigning variant.</p>
+
+<div class="alert">
+  <div class="content">
+    Group variants are defined inside <code>/theme/_components.less</code>.
+  </div>
+</div>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="line">
+    <div class="demo-source" data-lang="html">
+      <div class="group group-input">
+        <span class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 1
+          </button>
+        </span>
+        <span class="group-inner">
+          <button type="button" class="btn btn-primary-empty">
+            btn 2
+          </button>
+        </span>
+        <input type="text" class="input-control">
+        <span class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 3
+          </button>
+        </span>
+        <span class="group-inner">
+          <button type="button" class="btn btn-secondary-empty">
+            btn 4
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="stack">
+    <div class="demo-source" data-lang="html">
+      <div class="group group-input">
+        <span class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 1a
+          </button>
+          <button type="button" class="btn btn-primary-empty">
+            btn 1b
+          </button>
+        </span>
+        <span class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 2a
+          </button>
+          <button type="button" class="btn btn-secondary-empty">
+            btn 2b
+          </button>
+        </span>
+        <input type="text" class="input-control">
+        <span class="group-inner">
+          <button type="button" class="btn btn-primary">
+            btn 3a
+          </button>
+          <button type="button" class="btn btn-primary-empty">
+            btn 3b
+          </button>
+        </span>
+        <span class="group-inner">
+          <button type="button" class="btn btn-secondary">
+            btn 4a
+          </button>
+          <button type="button" class="btn btn-secondary-empty">
+            btn 4b
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Extensions</h2>
+
+<h3>Input group number</h3>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="/demos/component/group/group-number.html" data-name="number"></div>
+</div>
           </article>
 
         </div>
@@ -769,9 +1022,9 @@
           <aside class="site-aside" data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
 
             <div class="site-aside-text">
-              <a href="/docs/javascript/" class="btn btn-nodesign">
+              <a href="/docs/component/group/" class="btn btn-nodesign">
                 <div class="site-aside-title">
-                  <span>Javascript</span>
+                  <span>Group</span>
                 </div>
               </a>
             </div>

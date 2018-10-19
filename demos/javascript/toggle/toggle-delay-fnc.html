@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-        
+
     <!-- meta -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -20,105 +20,114 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="/assets/styles/demo.css?v=0.5.5" />
-    <link rel="stylesheet" href="toggle-queue.css?v=0.5.5" />
-    
+    <link rel="stylesheet" href="toggle-delay-fnc.css?v=0.5.5" />
+
     <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.5.5"></script>
     <script src="/assets/scripts/polyfill.min.js"></script>
     <script src="/assets/scripts/xtend.min.js?v=0.5.5"></script>
 
-    <!-- demo scripts -->
-    <script src="/assets/scripts/ResizeSensor.min.js"></script>
-    <script src="/assets/scripts/ElementQueries.min.js"></script>
-
   </head>
   <body class="full">
 
     <div id="body-outer">
 <div id="body-inner" class="demo-source-from">
-<div class="list list-space-small align-items-center" data-xt-toggle='{"queueOn": 500, "queueOff": 500}'>
+<div class="list list-space-small align-items-center"
+     data-xt-toggle='{"delayOn": "return Math.min(current * 75, 300)", "delayOff": "return Math.min((total - current) * 75, 300)"}'>
   <button type="button" class="btn">
     <span>Toggle 0</span>
   </button>
-  <button type="button" class="btn">
-    <span>Toggle 1</span>
+  <button type="button" class="btn" data-group="0">
+    <span>Group 1</span>
   </button>
-  <button type="button" class="btn">
-    <span>Toggle 2</span>
+  <button type="button" class="btn" data-group="1">
+    <span>Group 2</span>
   </button>
   <div class="alert toggle-block">
     <div class="content">
       Target 0
-      <div class="alert toggle-block">
-        <div class="content">
-          Nested not toggled
-        </div>
-      </div>
     </div>
   </div>
-  <div class="alert toggle-block">
+  <div class="alert toggle-block" data-group="0">
     <div class="content">
-      Target 1
-      <div class="alert toggle-block">
-        <div class="content">
-          Nested not toggled
-        </div>
-      </div>
+      Group 0
     </div>
   </div>
-  <div class="alert toggle-block">
+  <div class="alert toggle-block" data-group="1">
     <div class="content">
-      Target 2
-      <div class="alert toggle-block">
-        <div class="content">
-          Nested not toggled
-        </div>
-      </div>
+      Group 1
+    </div>
+  </div>
+  <div class="alert toggle-block" data-group="0">
+    <div class="content">
+      Group 0
+    </div>
+  </div>
+  <div class="alert toggle-block" data-group="0">
+    <div class="content">
+      Group 0
+    </div>
+  </div>
+  <div class="alert toggle-block" data-group="1">
+    <div class="content">
+      Group 1
+    </div>
+  </div>
+  <div class="alert toggle-block" data-group="1">
+    <div class="content">
+      Group 1
     </div>
   </div>
 </div>
 
-<h3>With mouse events</h3>
+<br>
 
-<div class="list list-space-small align-items-center" data-xt-toggle='{"on": "mouseenter", "off": "mouseleave", "queueOn": 500, "queueOff": 500}'>
+<div class="list list-space-small align-items-center"
+     data-xt-toggle='{"on": "mouseenter", "off": "mouseleave",
+     "delayOn": "return Math.min(current * 75, 300)", "delayOff": "return Math.min((total - current) * 75, 300)"}'>
   <button type="button" class="btn">
     <span>Toggle 0</span>
   </button>
-  <button type="button" class="btn">
-    <span>Toggle 1</span>
+  <button type="button" class="btn" data-group="0">
+    <span>Group 1</span>
   </button>
-  <button type="button" class="btn">
-    <span>Toggle 2</span>
+  <button type="button" class="btn" data-group="1">
+    <span>Group 2</span>
   </button>
   <div class="alert toggle-block">
     <div class="content">
       Target 0
-      <div class="alert toggle-block">
-        <div class="content">
-          Nested not toggled
-        </div>
-      </div>
     </div>
   </div>
-  <div class="alert toggle-block">
+  <div class="alert toggle-block" data-group="0">
     <div class="content">
-      Target 1
-      <div class="alert toggle-block">
-        <div class="content">
-          Nested not toggled
-        </div>
-      </div>
+      Group 0
     </div>
   </div>
-  <div class="alert toggle-block">
+  <div class="alert toggle-block" data-group="1">
     <div class="content">
-      Target 2
-      <div class="alert toggle-block">
-        <div class="content">
-          Nested not toggled
-        </div>
-      </div>
+      Group 1
+    </div>
+  </div>
+  <div class="alert toggle-block" data-group="0">
+    <div class="content">
+      Group 0
+    </div>
+  </div>
+  <div class="alert toggle-block" data-group="0">
+    <div class="content">
+      Group 0
+    </div>
+  </div>
+  <div class="alert toggle-block" data-group="1">
+    <div class="content">
+      Group 1
+    </div>
+  </div>
+  <div class="alert toggle-block" data-group="1">
+    <div class="content">
+      Group 1
     </div>
   </div>
 </div>
@@ -148,19 +157,6 @@
     <script>
       // add id
       document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
-      // init
-      function initAll() {
-        Xt.initAll();
-        // https://github.com/marcj/css-element-queries
-        new ResizeSensor(document.getElementById('body-outer'), function() {
-          parent.resizeIframe(window.frameElement.getAttribute('id'));
-        });
-      }
-      if (document.readyState === "loading") {
-        document.addEventListener('DOMContentLoaded', initAll);
-      } else {
-        initAll();
-      }
       // init iframe
       window.parent.initIframe(window.name);
     </script>
