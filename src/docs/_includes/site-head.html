@@ -188,7 +188,7 @@
 
               <div class="site-breadcrumbs-body flex flex-space-none display-none-sm flex-auto"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
-                   "targets": ".site-breadcrumbs-body-sub", "on": "click"}'>
+                   "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
 
                 <div class="site-breadcrumbs-body-main flex-auto">
                   <button type="button" class="btn btn-primary btn-nodesign flex-auto">
@@ -205,7 +205,7 @@
                           {% assign sorted = site.[collection.label] | sort: 'order' %}
                             {% for p in sorted %}
                               {% if p.categories[0] == collection.label %}
-                              <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary btn-nodesign">
+                              <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary btn-nodesign{% if p.title == page.title %} active{% endif %}">
                                 <span>{{ p.title }}</span>
                               </a>
                               {% endif %}

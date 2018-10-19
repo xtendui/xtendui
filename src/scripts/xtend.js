@@ -238,11 +238,11 @@ class Core {
         // @FIX prevents click on touch until clicked two times
         if (events.includes('mouseenter') || events.includes('mousehover')) {
           // event touchClick
-          let touchClickHandler = Xt.dataStorage.put(el, 'touchClickHandler', self.touchClickHandler.bind(self).bind(self, el));
+          let touchClickHandler = Xt.dataStorage.put(el, 'touchClickHandler', self.eventTouchClickHandler.bind(self).bind(self, el));
           el.removeEventListener('click', touchClickHandler);
           el.addEventListener('click', touchClickHandler);
           // event touchReset
-          let touchResetHandler = Xt.dataStorage.put(el, 'touchResetHandler', self.touchResetHandler.bind(self).bind(self, el));
+          let touchResetHandler = Xt.dataStorage.put(el, 'touchResetHandler', self.eventTouchResetHandler.bind(self).bind(self, el));
           el.removeEventListener('off', touchResetHandler);
           el.addEventListener('off', touchResetHandler);
         }
@@ -357,7 +357,7 @@ class Core {
    * @param {Node|HTMLElement} element
    * @param {Event} e
    */
-  touchClickHandler(element, e) {
+  eventTouchClickHandler(element, e) {
     if (!element.dataset.touchClickDone || element.dataset.touchClickDone === 'false') {
       element.dataset.touchClickDone = 'true';
       e.preventDefault();
@@ -371,7 +371,7 @@ class Core {
    * @param {Node|HTMLElement} element
    * @param {Event} e
    */
-  touchResetHandler(element, e) {
+  eventTouchResetHandler(element, e) {
     element.dataset.touchClickDone = 'false';
   }
 
@@ -1480,7 +1480,7 @@ class Core {
       let closeElements = el.querySelectorAll(options.closeInside);
       Xt.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
-          let specialCloseInsideHandler = Xt.dataStorage.put(el, 'specialCloseInsideHandler', self.specialCloseInsideHandler.bind(self).bind(self, closeElement, single));
+          let specialCloseInsideHandler = Xt.dataStorage.put(el, 'specialCloseInsideHandler', self.eventSpecialCloseInsideHandler.bind(self).bind(self, closeElement, single));
           closeElement.removeEventListener('click', specialCloseInsideHandler);
           closeElement.addEventListener('click', specialCloseInsideHandler);
         }
@@ -1491,7 +1491,7 @@ class Core {
       let closeElements = document.querySelectorAll(options.closeOutside);
       Xt.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
-          let specialCloseOutsideHandler = Xt.dataStorage.put(el, 'specialCloseOutsideHandler', self.specialCloseOutsideHandler.bind(self).bind(self, el, single));
+          let specialCloseOutsideHandler = Xt.dataStorage.put(el, 'specialCloseOutsideHandler', self.eventSpecialCloseOutsideHandler.bind(self).bind(self, el, single));
           closeElement.removeEventListener('click', specialCloseOutsideHandler);
           closeElement.addEventListener('click', specialCloseOutsideHandler);
         }
@@ -1530,7 +1530,7 @@ class Core {
    * @param {Node|HTMLElement} single
    * @param {Event} e
    */
-  specialCloseInsideHandler(checkEl, single, e) {
+  eventSpecialCloseInsideHandler(checkEl, single, e) {
     if (Xt.checkInside(e, Xt.arrSingle(checkEl))) {
       this.eventOff(single);
     }
@@ -1542,7 +1542,7 @@ class Core {
    * @param {Node|HTMLElement} single
    * @param {Event} e
    */
-  specialCloseOutsideHandler(checkEl, single, e) {
+  eventSpecialCloseOutsideHandler(checkEl, single, e) {
     if (Xt.checkOutside(e, Xt.arrSingle(checkEl))) {
       this.eventOff(single);
     }
