@@ -228,7 +228,8 @@ class Core {
     // events
     for (let el of this.elements) {
       // event on
-      let onHandler = Xt.dataStorage.put(el, 'onHandler', self.eventOnHandler.bind(self).bind(self, el));
+      let onHandler = Xt.dataStorage.put(el, 'onHandler' + self.namespace,
+        self.eventOnHandler.bind(self).bind(self, el));
       if (options.on) {
         let events = [...options.on.split(' ')];
         for (let event of events) {
@@ -237,7 +238,8 @@ class Core {
         }
         // @FIX prevents click on touch until clicked two times
         if (events.includes('mouseenter') || events.includes('mousehover')) {
-          let touchStartHandler = Xt.dataStorage.put(el, 'touchStartHandler', self.eventTouchStartHandler.bind(self).bind(self, el));
+          let touchStartHandler = Xt.dataStorage.put(el, 'touchStartHandler' + self.namespace,
+            self.eventTouchStartHandler.bind(self).bind(self, el));
           el.removeEventListener('touchstart', touchStartHandler);
           el.addEventListener('touchstart', touchStartHandler);
         }
@@ -245,7 +247,8 @@ class Core {
       el.removeEventListener('on', onHandler);
       el.addEventListener('on', onHandler);
       // event off
-      let offHandler = Xt.dataStorage.put(el, 'offHandler', self.eventOffHandler.bind(self).bind(self, el));
+      let offHandler = Xt.dataStorage.put(el, 'offHandler' + self.namespace,
+        self.eventOffHandler.bind(self).bind(self, el));
       if (options.off) {
         let events = [...options.off.split(' ')];
         for (let event of events) {
@@ -261,8 +264,8 @@ class Core {
       let el = this.getElementsFromTarget(tr)[0];
       if (el) {
         // event
-        let onHandler = Xt.dataStorage.get(el, 'onHandler');
-        let offHandler = Xt.dataStorage.get(el, 'offHandler');
+        let onHandler = Xt.dataStorage.get(el, 'onHandler' + self.namespace);
+        let offHandler = Xt.dataStorage.get(el, 'offHandler' + self.namespace);
         tr.removeEventListener('on', onHandler);
         tr.addEventListener('on', onHandler);
         tr.removeEventListener('off', offHandler);
@@ -355,11 +358,13 @@ class Core {
   eventTouchStartHandler(el, e) {
     let self = this;
     // event touchClick
-    let touchClickHandler = Xt.dataStorage.put(el, 'touchClickHandler', self.eventTouchClickHandler.bind(self).bind(self, el));
+    let touchClickHandler = Xt.dataStorage.put(el, 'touchClickHandler' + self.namespace,
+      self.eventTouchClickHandler.bind(self).bind(self, el));
     el.removeEventListener('click', touchClickHandler);
     el.addEventListener('click', touchClickHandler);
     // event touchReset
-    let touchResetHandler = Xt.dataStorage.put(el, 'touchResetHandler', self.eventTouchResetHandler.bind(self).bind(self, el));
+    let touchResetHandler = Xt.dataStorage.put(el, 'touchResetHandler' + self.namespace,
+      self.eventTouchResetHandler.bind(self).bind(self, el));
     el.removeEventListener('off', touchResetHandler);
     el.addEventListener('off', touchResetHandler);
   }
@@ -1492,7 +1497,8 @@ class Core {
       let closeElements = el.querySelectorAll(options.closeInside);
       Xt.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
-          let specialCloseInsideHandler = Xt.dataStorage.put(el, 'specialCloseInsideHandler', self.eventSpecialCloseInsideHandler.bind(self).bind(self, closeElement, single));
+          let specialCloseInsideHandler = Xt.dataStorage.put(el, 'specialCloseInsideHandler' + self.namespace,
+            self.eventSpecialCloseInsideHandler.bind(self).bind(self, closeElement, single));
           closeElement.removeEventListener('click', specialCloseInsideHandler);
           closeElement.addEventListener('click', specialCloseInsideHandler);
         }
@@ -1503,7 +1509,8 @@ class Core {
       let closeElements = document.querySelectorAll(options.closeOutside);
       Xt.requestAnimationFrame.call(window, function () {
         for (let closeElement of closeElements) {
-          let specialCloseOutsideHandler = Xt.dataStorage.put(el, 'specialCloseOutsideHandler', self.eventSpecialCloseOutsideHandler.bind(self).bind(self, el, single));
+          let specialCloseOutsideHandler = Xt.dataStorage.put(el, 'specialCloseOutsideHandler' + self.namespace,
+            self.eventSpecialCloseOutsideHandler.bind(self).bind(self, el, single));
           closeElement.removeEventListener('click', specialCloseOutsideHandler);
           closeElement.addEventListener('click', specialCloseOutsideHandler);
         }
@@ -1522,7 +1529,7 @@ class Core {
     if (options.closeInside) {
       let closeElements = el.querySelectorAll(options.closeInside);
       for (let closeElement of closeElements) {
-        let specialCloseInsideHandler = Xt.dataStorage.get(el, 'specialCloseInsideHandler');
+        let specialCloseInsideHandler = Xt.dataStorage.get(el, 'specialCloseInsideHandler' + self.namespace);
         closeElement.removeEventListener('click', specialCloseInsideHandler);
       }
     }
@@ -1530,7 +1537,7 @@ class Core {
     if (options.closeOutside) {
       let closeElements = document.querySelectorAll(options.closeOutside);
       for (let closeElement of closeElements) {
-        let specialCloseOutsideHandler = Xt.dataStorage.get(el, 'specialCloseOutsideHandler');
+        let specialCloseOutsideHandler = Xt.dataStorage.get(el, 'specialCloseOutsideHandler' + self.namespace);
         closeElement.removeEventListener('click', specialCloseOutsideHandler);
       }
     }
@@ -1880,7 +1887,8 @@ class Slider extends Core {
     if (options.drag) {
       for (let tr of this.targets) {
         // event on
-        let dragStartHandler = Xt.dataStorage.put(tr, 'dragStartHandler', self.eventDragStartHandler.bind(self).bind(self, tr));
+        let dragStartHandler = Xt.dataStorage.put(tr, 'dragStartHandler' + self.namespace,
+          self.eventDragStartHandler.bind(self).bind(self, tr));
         let eventsOn = ['mousedown', 'touchstart'];
         for (let event of eventsOn) {
           tr.removeEventListener(event, dragStartHandler);
@@ -1916,7 +1924,8 @@ class Slider extends Core {
         this.autoPause();
       }
       // event off
-      let dragEndHandler = Xt.dataStorage.put(window, 'dragEndHandler', self.eventDragEndHandler.bind(self).bind(self, target));
+      let dragEndHandler = Xt.dataStorage.put(window, 'dragEndHandler' + self.namespace,
+        self.eventDragEndHandler.bind(self).bind(self, target));
       let eventsOff = ['mouseup', 'touchend'];
       for (let event of eventsOff) {
         window.removeEventListener(event, dragEndHandler);
@@ -1949,7 +1958,7 @@ class Slider extends Core {
       this.autoPause();
     }
     // event off
-    let dragEndHandler = Xt.dataStorage.get(window, 'dragEndHandler');
+    let dragEndHandler = Xt.dataStorage.get(window, 'dragEndHandler' + self.namespace);
     let eventsOff = ['mouseup', 'touchend'];
     for (let event of eventsOff) {
       window.removeEventListener(event, dragEndHandler);
@@ -1967,7 +1976,8 @@ class Slider extends Core {
     // save event
     this.detail.eCurrent = e;
     // event move
-    let dragHandler = Xt.dataStorage.put(target, 'dragHandler', self.eventDragHandler.bind(self).bind(self, target));
+    let dragHandler = Xt.dataStorage.put(target, 'dragHandler' + self.namespace,
+      self.eventDragHandler.bind(self).bind(self, target));
     let events = ['mousemove', 'touchmove'];
     for (let event of events) {
       target.removeEventListener(event, dragHandler);
@@ -1987,7 +1997,7 @@ class Slider extends Core {
     // save event
     this.detail.eCurrent = e;
     // event move
-    let dragHandler = Xt.dataStorage.get(target, 'dragHandler');
+    let dragHandler = Xt.dataStorage.get(target, 'dragHandler' + self.namespace);
     let events = ['mousemove', 'touchmove'];
     for (let event of events) {
       target.removeEventListener(event, dragHandler);
@@ -2110,7 +2120,8 @@ class Sticky extends Core {
     let self = this;
     let options = self.options;
     // event on
-    let stickyHandler = Xt.dataStorage.put(window, 'stickyHandler', self.eventStickyHandler.bind(self));
+    let stickyHandler = Xt.dataStorage.put(window, 'stickyHandler' + self.namespace,
+      self.eventStickyHandler.bind(self));
     if (options.on) {
       let events = [...options.on.split(' ')];
       for (let event of events) {
@@ -2123,7 +2134,8 @@ class Sticky extends Core {
     // listener dispatch initial
     window.dispatchEvent(new CustomEvent('scroll.sticky'));
     // autoClose
-    let autoCloseHandler = Xt.dataStorage.put(this.object, 'autoCloseHandler', Xt.autoClose.bind(this, this.object));
+    let autoCloseHandler = Xt.dataStorage.put(this.object, 'autoCloseHandler' + self.namespace,
+      Xt.autoClose.bind(this, this.object));
     this.object.removeEventListener('hide.sticky', autoCloseHandler);
     this.object.addEventListener('hide.sticky', autoCloseHandler);
   }
@@ -2430,7 +2442,8 @@ class Fade extends Core {
     let self = this;
     let options = self.options;
     // event on
-    let fadeHandler = Xt.dataStorage.put(window, 'fadeHandler', self.eventFadeHandler.bind(self));
+    let fadeHandler = Xt.dataStorage.put(window, 'fadeHandler' + self.namespace,
+      self.eventFadeHandler.bind(self));
     if (options.on) {
       let events = [...options.on.split(' ')];
       for (let event of events) {

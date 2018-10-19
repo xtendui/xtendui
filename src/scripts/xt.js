@@ -240,7 +240,8 @@ Xt.focus = {
    */
   on: function () {
     // event key
-    let focusChangeKeyHandler = Xt.dataStorage.put(document, 'focusChangeKeyHandler', Xt.focus.changeKey);
+    let focusChangeKeyHandler = Xt.dataStorage.put(document, 'focusChangeKeyHandler',
+      Xt.focus.changeKey);
     document.removeEventListener('keyup', focusChangeKeyHandler);
     document.addEventListener('keyup', focusChangeKeyHandler);
     // event mouse
@@ -258,7 +259,8 @@ Xt.focus = {
     let focusChangeKeyHandler = Xt.dataStorage.get(document, 'focusChangeKeyHandler');
     document.removeEventListener('keyup', focusChangeKeyHandler);
     // event mouse
-    let focusChangeOtherHandler = Xt.dataStorage.put(document, 'focusChangeOtherHandler', Xt.focus.changeOther);
+    let focusChangeOtherHandler = Xt.dataStorage.put(document, 'focusChangeOtherHandler',
+      Xt.focus.changeOther);
     document.addEventListener('mousedown', focusChangeOtherHandler);
     document.addEventListener('touchstart', focusChangeOtherHandler);
     document.addEventListener('pointerdown', focusChangeOtherHandler);
@@ -325,7 +327,8 @@ Xt.focusLimit = {
     let first = focusable[0];
     let last = focusable[focusable.length - 1];
     // event
-    let focusLimitHandler = Xt.dataStorage.put(document, 'focusLimitHandler', Xt.focusLimit.limit.bind(this).bind(this, focusable, first, last));
+    let focusLimitHandler = Xt.dataStorage.put(document, 'focusLimitHandler',
+      Xt.focusLimit.limit.bind(this).bind(this, focusable, first, last));
     document.removeEventListener('keyup', focusLimitHandler);
     document.addEventListener('keyup', focusLimitHandler);
   },
@@ -427,7 +430,8 @@ Xt.checkOutside = function (e, targets) {
  */
 Xt.scrollbarWidth = function (force = false) {
   if (Xt.scrollbarWidthVal === undefined) {
-    let scrollbarWidthHandler = Xt.dataStorage.put(window, 'scrollbarWidthHandler', Xt.scrollbarWidth.bind(this, true));
+    let scrollbarWidthHandler = Xt.dataStorage.put(window, 'scrollbarWidthHandler',
+      Xt.scrollbarWidth.bind(this, true));
     window.removeEventListener('resize', scrollbarWidthHandler);
     window.addEventListener('resize', scrollbarWidthHandler);
   }
