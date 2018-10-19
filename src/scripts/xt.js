@@ -70,6 +70,7 @@ Xt.initObserver = new MutationObserver(function (mutationsList) {
     if (mutation.type == 'childList') {
       for (let added of mutation.addedNodes) {
         if (added.nodeType === 1) {
+          //console.log(added);
           Xt.init(added);
         }
       }
@@ -159,7 +160,7 @@ Xt.dataStorage = {
 
   /**
    * put key/obj pair on element's map
-   * @param {Node|HTMLElement} element
+   * @param {Node|HTMLElement|Window} element
    * @param {String} key
    * @param {Object|Function} obj
    * @returns {Object|Function}
@@ -180,7 +181,7 @@ Xt.dataStorage = {
 
   /**
    * get obj from key on element's map
-   * @param {Node|HTMLElement} element
+   * @param {Node|HTMLElement|Window} element
    * @param {String} key
    * @returns {Object|Function}
    */
@@ -195,7 +196,7 @@ Xt.dataStorage = {
 
   /**
    * has key on element's map
-   * @param {Node|HTMLElement} element
+   * @param {Node|HTMLElement|Window} element
    * @param {String} key
    * @returns {Boolean}
    */
@@ -206,7 +207,7 @@ Xt.dataStorage = {
 
   /**
    * remove element's map key
-   * @param {Node|HTMLElement} element
+   * @param {Node|HTMLElement|Window} element
    * @param {String} key
    * @returns {Boolean}
    */
@@ -424,11 +425,13 @@ Xt.checkOutside = function (e, targets) {
  * @param {Boolean} force Force recalc
  * @returns {Number} Scrollbar width
  */
-Xt.scrollbarWidth = function (force) {
-  if (force || Xt.scrollbarWidthVal === undefined) {
+Xt.scrollbarWidth = function (force = false) {
+  if (Xt.scrollbarWidthVal === undefined) {
     let scrollbarWidthHandler = Xt.dataStorage.put(window, 'scrollbarWidthHandler', Xt.scrollbarWidth.bind(this, true));
     window.removeEventListener('resize', scrollbarWidthHandler);
     window.addEventListener('resize', scrollbarWidthHandler);
+  }
+  if (force || Xt.scrollbarWidthVal === undefined) {
     // add outer
     let outer = document.createElement('div');
     outer.style.visibility = 'hidden';
