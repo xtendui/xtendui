@@ -356,26 +356,35 @@ Xt.checkOutside = function (e, targets) {
 
 /**
  * Get scrollbar width of document
+ * @param {Boolean} force Force recalc
  * @returns {Number} Scrollbar width
  */
-Xt.scrollbarWidth = function () {
-  // add outer
-  let outer = document.createElement('div');
-  outer.style.visibility = 'hidden';
-  outer.style.width = '100px';
-  outer.style.msOverflowStyle = 'scrollbar'; // needed for WinJS apps
-  document.body.appendChild(outer);
-  let widthNoScroll = outer.offsetWidth;
-  // force scrollbars
-  outer.style.overflow = 'scroll';
-  // add inner
-  let inner = document.createElement('div');
-  inner.style.width = '100%';
-  outer.appendChild(inner);
-  let widthWithScroll = inner.offsetWidth;
-  // remove
-  outer.parentNode.removeChild(outer);
-  return widthNoScroll - widthWithScroll;
+Xt.scrollbarWidth = function (force) {
+  if (force || Xt.scrollbarWidthVal === undefined) {
+    let scrollbarWidthHandler = Xt.dataStorage.get(window, 'scrollbarWidthHandler');
+    scrollbarWidthHandler = scrollbarWidthHandler ? scrollbarWidthHandler : Xt.dataStorage.put(window, 'scrollbarWidthHandler', Xt.scrollbarWidth.bind(this, true));
+    window.removeEventListener('resize', scrollbarWidthHandler);
+    window.addEventListener('resize', scrollbarWidthHandler);
+    // add outer
+    let outer = document.createElement('div');
+    outer.style.visibility = 'hidden';
+    outer.style.width = '100px';
+    outer.style.msOverflowStyle = 'scrollbar'; // needed for WinJS apps
+    document.body.appendChild(outer);
+    let widthNoScroll = outer.offsetWidth;
+    // force scrollbars
+    outer.style.overflow = 'scroll';
+    // add inner
+    let inner = document.createElement('div');
+    inner.style.width = '100%';
+    outer.appendChild(inner);
+    let widthWithScroll = inner.offsetWidth;
+    // remove
+    outer.parentNode.removeChild(outer);
+    // return
+    Xt.scrollbarWidthVal = widthNoScroll - widthWithScroll;
+  }
+  return Xt.scrollbarWidthVal;
 };
 
 /**
