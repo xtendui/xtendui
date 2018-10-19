@@ -356,7 +356,6 @@ class Core {
     let self = this;
     // event touchClick
     let touchClickHandler = Xt.dataStorage.put(el, 'touchClickHandler', self.eventTouchClickHandler.bind(self).bind(self, el));
-    //console.log(touchClickHandler);
     el.removeEventListener('click', touchClickHandler);
     el.addEventListener('click', touchClickHandler);
     // event touchReset
@@ -2124,9 +2123,9 @@ class Sticky extends Core {
     // listener dispatch initial
     window.dispatchEvent(new CustomEvent('scroll.sticky'));
     // autoClose
-    let closeOpenedHandler = Xt.dataStorage.put(this.object, 'closeOpenedHandler', Xt.closeOpened.bind(this, this.object));
-    this.object.removeEventListener('hide.sticky', closeOpenedHandler);
-    this.object.addEventListener('hide.sticky', closeOpenedHandler);
+    let autoCloseHandler = Xt.dataStorage.put(this.object, 'autoCloseHandler', Xt.autoClose.bind(this, this.object));
+    this.object.removeEventListener('hide.sticky', autoCloseHandler);
+    this.object.addEventListener('hide.sticky', autoCloseHandler);
   }
 
   /**
@@ -2157,9 +2156,8 @@ class Sticky extends Core {
     let add = 0;
     let addHide = 0;
     let windowHeight = window.innerHeight;
-    let el = self.object;
-    let rectElTop = el.getBoundingClientRect().top;
-    let heightEl = parseFloat(getComputedStyle(el).height);
+    let rectElTop = element.getBoundingClientRect().top;
+    let heightEl = parseFloat(getComputedStyle(element).height);
     let heightTarget = parseFloat(getComputedStyle(self.targets[0]).height);
     let rectContainerTop = self.container[0].getBoundingClientRect().top;
     let scrollingElement = document.scrollingElement;
@@ -2168,12 +2166,12 @@ class Sticky extends Core {
     let scrollTopOld = self.detail.scrollTopOld;
     // direction
     if (scrollTop < scrollTopOld) {
-      el.classList.remove('sticky-down');
-      el.classList.add('sticky-up');
+      element.classList.remove('sticky-down');
+      element.classList.add('sticky-up');
       scrollInverse = true;
     } else {
-      el.classList.add('sticky-down');
-      el.classList.remove('sticky-up');
+      element.classList.add('sticky-down');
+      element.classList.remove('sticky-up');
     }
     // hide
     if (options.hide === 'down') {
@@ -2223,7 +2221,7 @@ class Sticky extends Core {
       }
     }
     // save real add for calculation
-    el.dataset.xtAddSticky = add.toString();
+    element.dataset.xtAddSticky = add.toString();
     // activation
     let checkTop = scrollTop >= top - add + addHide;
     let checkBottom = scrollTop < bottom + add - addHide;
@@ -2239,20 +2237,20 @@ class Sticky extends Core {
       self.eventOff(element);
     }
     // after active
-    if (el.classList.contains('active')) {
+    if (element.classList.contains('active')) {
       // hide
       if (hide) {
         add = -heightEl;
-        if (!el.classList.contains('sticky-hide')) {
-          el.classList.add('sticky-hide');
+        if (!element.classList.contains('sticky-hide')) {
+          element.classList.add('sticky-hide');
           // listener dispatch
-          el.dispatchEvent(new CustomEvent('hide.sticky', {detail: {skip: true, object: self}}));
+          element.dispatchEvent(new CustomEvent('hide.sticky', {detail: {skip: true, object: self}}));
         }
       } else {
-        if (el.classList.contains('sticky-hide')) {
-          el.classList.remove('sticky-hide');
+        if (element.classList.contains('sticky-hide')) {
+          element.classList.remove('sticky-hide');
           // listener dispatch
-          el.dispatchEvent(new CustomEvent('show.sticky', {detail: {skip: true, object: self}}));
+          element.dispatchEvent(new CustomEvent('show.sticky', {detail: {skip: true, object: self}}));
         }
       }
     } else {
@@ -2262,49 +2260,49 @@ class Sticky extends Core {
     }
     // anim
     if (anim && scrollTopOld !== undefined) {
-      if (!el.classList.contains('sticky-anim')) {
-        el.classList.add('sticky-anim');
+      if (!element.classList.contains('sticky-anim')) {
+        element.classList.add('sticky-anim');
       }
     } else {
-      if (el.classList.contains('sticky-anim')) {
-        el.classList.remove('sticky-anim');
+      if (element.classList.contains('sticky-anim')) {
+        element.classList.remove('sticky-anim');
       }
     }
     // top and bottom
     if (!checkTop) {
-      if (!el.classList.contains('sticky-top')) {
-        el.classList.add('sticky-top');
+      if (!element.classList.contains('sticky-top')) {
+        element.classList.add('sticky-top');
       }
     } else {
-      if (el.classList.contains('sticky-top')) {
-        el.classList.remove('sticky-top');
+      if (element.classList.contains('sticky-top')) {
+        element.classList.remove('sticky-top');
       }
     }
     if (!checkBottom) {
-      if (!el.classList.contains('sticky-bottom')) {
-        el.classList.add('sticky-bottom');
+      if (!element.classList.contains('sticky-bottom')) {
+        element.classList.add('sticky-bottom');
       }
     } else {
-      if (el.classList.contains('sticky-bottom')) {
-        el.classList.remove('sticky-bottom');
+      if (element.classList.contains('sticky-bottom')) {
+        element.classList.remove('sticky-bottom');
       }
     }
     // set add
     if (add !== self.detail.addOld) {
-      el.classList.add('no-transition');
+      element.classList.add('no-transition');
       if (self.detail.addOld !== undefined) {
-        el.style[options.position] = rectElTop + 'px';
+        element.style[options.position] = rectElTop + 'px';
       }
-      Xt.cancelAnimationFrame.call(window, el.dataset.xtEventFrame);
-      el.dataset.xtEventFrame = Xt.requestAnimationFrame.call(window, function () {
-        el.classList.remove('no-transition');
-        el.style[options.position] = add + 'px';
+      Xt.cancelAnimationFrame.call(window, element.dataset.xtEventFrame);
+      element.dataset.xtEventFrame = Xt.requestAnimationFrame.call(window, function () {
+        element.classList.remove('no-transition');
+        element.style[options.position] = add + 'px';
       });
     }
     // fix position fixed width 100% of parent
     let width = self.normalizeWidth(self.container[0].clientWidth);
-    if (el.style.width !== width) {
-      el.style.width = width;
+    if (element.style.width !== width) {
+      element.style.width = width;
     }
     // save for direction
     self.detail.addOld = add;

@@ -551,10 +551,10 @@ Xt.animDuration = function (el, timing = null) {
 };
 
 /**
- * closeOpened inside Element
+ * autoClose inside Element
  * @param {Node|HTMLElement} el Element container
  */
-Xt.closeOpened = function (el) {
+Xt.autoClose = function (el) {
   let query = '[data-xt-namespace^="drop-xt-"]';
   for (let drop of el.querySelectorAll(query)) {
     drop.dispatchEvent(new CustomEvent('off'));
