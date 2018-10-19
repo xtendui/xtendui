@@ -1056,8 +1056,8 @@ class XtCore {
         // focus
         if (options.aria) {
           if (options.scrollbar) {
-            Xt.focusBlock = true;
-            Xt.focusLimitOn(el);
+            Xt.focus.block = true;
+            Xt.focusLimit.on(el);
             el.focus();
           }
         }
@@ -1228,9 +1228,9 @@ class XtCore {
         // focus
         if (options.aria) {
           if (options.scrollbar) {
-            Xt.focusBlock = false;
-            Xt.focusLimitOff();
-            Xt.focus.focus();
+            Xt.focus.block = false;
+            Xt.focusLimit.off();
+            Xt.focus.current.focus();
           }
         }
       }
