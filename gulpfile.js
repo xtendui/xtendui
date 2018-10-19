@@ -9,10 +9,9 @@ let source = require('vinyl-source-stream');
 
 let less = require('gulp-less');
 let gutil = require('gulp-util');
-let watch = require('gulp-watch');
 let replace = require('gulp-replace');
 let browserify = require('browserify');
-let uglify = require('gulp-uglify-es').default;
+let terser = require('gulp-terser');
 let cleanCSS = require('gulp-clean-css');
 let sourcemaps = require('gulp-sourcemaps');
 
@@ -62,7 +61,7 @@ gulp.task('js-dist', function () {
     .pipe(replace(/\/\*\![^\*]+\*\//, banner))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(uglify({
+    .pipe(terser({
       output: {
         comments: /^!/
       }
@@ -79,7 +78,7 @@ gulp.task('js-theme', gulp.series('js-dist', function () {
     .pipe(source('theme.min.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(uglify({
+    .pipe(terser({
       output: {
         comments: /^!/
       }
@@ -96,7 +95,7 @@ gulp.task('js', gulp.series('js-theme', function () {
     .pipe(source('xtend.min.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(uglify({
+    .pipe(terser({
       output: {
         comments: /^!/
       }
