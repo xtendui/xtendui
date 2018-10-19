@@ -555,7 +555,8 @@ Xt.animDuration = function (el, timing = null) {
  * @param {Node|HTMLElement} el Element container
  */
 Xt.closeOpened = function (el) {
-  for (let drop of el.querySelectorAll('.drop-outer.active')) {
+  let query = '[data-xt-namespace^="drop-xt-"]';
+  for (let drop of el.querySelectorAll(query)) {
     drop.dispatchEvent(new CustomEvent('off'));
   }
 };
