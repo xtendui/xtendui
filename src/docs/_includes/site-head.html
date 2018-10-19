@@ -105,12 +105,12 @@
             <div class="site-menu-content">
 
               {% for collection in site.collections %}
-              {% if site.[collection.label].size > 0 %}
-              {% assign sorted = site.[collection.label] | sort: 'order' %}
-              <a href="{{ site.baseurl }}{{ sorted[0].url }}" class="btn btn-primary btn-nodesign make-line">
-                <span>{{ collection.label }}</span>
-              </a>
-              {% endif %}
+                {% if site.[collection.label].size > 0 %}
+                  {% assign sorted = site.[collection.label] | sort: 'order' %}
+                  <a href="{{ site.baseurl }}{{ sorted[0].url }}" class="btn btn-primary btn-nodesign make-line">
+                    <span>{{ collection.label }}</span>
+                  </a>
+                {% endif %}
               {% endfor %}
               <a href="{{ site.baseurl }}/" class="btn btn-primary btn-nodesign make-line">
                 <span>Extensions</span>
@@ -153,67 +153,68 @@
           <div class="container">
             <div class="flex flex-auto justify-content-between align-items-start">
 
-              <div class="site-breadcrumbs-body flex flex-space-none"
+              <div class="site-breadcrumbs-body flex flex-space-none display-none display-flex-sm"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
-                   "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave",
-                   "instant": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true}}'>
+                   "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
                 {% for collection in site.collections %}
-                {% if collection.label == page.collection %}
+                  {% if collection.label == page.collection %}
 
-                {% assign sorted = site.[collection.label] | sort: 'order' %}
-                {% for p in sorted %}
-                {% if p.categories[0] == collection.label %}
-                {% assign subsorted = site.[collection.label] | where: 'categories', p.title | sort: 'order' %}
-                {% if subsorted.size > 0 %}
-                <div class="site-breadcrumbs-body-main">
-                  <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary btn-nodesign">
-                    <span>{{ p.title }}</span>
-                  </a>
-                  <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
-                    <div class="site-breadcrumbs-body-sub-inner">
-                      {% for pa in subsorted %}
-                      <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn-primary btn-nodesign {% if pa.title == page.title %}active{% endif %}">
-                        <span>{{ pa.title }}</span>
-                      </a>
-                      {% endfor %}
-                    </div>
-                  </div>
-                </div>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
+                  {% assign sorted = site.[collection.label] | sort: 'order' %}
+                  {% for p in sorted %}
+                    {% if p.categories[0] == collection.label %}
+                      {% assign subsorted = site.[collection.label] | where: 'categories', p.title | sort: 'order' %}
+                      {% if subsorted.size > 0 %}
+                        <div class="site-breadcrumbs-body-main{% if page.title == p.title or page.categories[0] == p.title %} current{% endif %}">
+                          <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary btn-nodesign">
+                            <span>{{ p.title }}</span>
+                          </a>
+                          <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
+                            <div class="site-breadcrumbs-body-sub-inner">
+                              {% for pa in subsorted %}
+                              <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn-primary btn-nodesign{% if pa.title == page.title %} active{% endif %}">
+                                <span>{{ pa.title }}</span>
+                              </a>
+                              {% endfor %}
+                            </div>
+                          </div>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
 
-                {% endif %}
+                  {% endif %}
                 {% endfor %}
               </div>
 
-              <div class="site-breadcrumbs-body site-breadcrumbs-body-mobile flex flex-space-none"
+              <div class="site-breadcrumbs-body flex flex-space-none display-none-sm flex-auto"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
-                   "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave"}'>
+                   "targets": ".site-breadcrumbs-body-sub", "on": "click"}'>
 
-                <div class="site-breadcrumbs-body-main">
-                  <button type="button" class="btn btn-primary btn-nodesign">
-                    <span>{{ page.categories }}</span>
+                <div class="site-breadcrumbs-body-main flex-auto">
+                  <button type="button" class="btn btn-primary btn-nodesign flex-auto">
+                    {% if page.collection == page.categories[0] %}
+                      <span>{{ page.title }}</span>
+                    {% else %}
+                      <span>{{ page.categories[0] }}</span>
+                    {% endif %}
                   </button>
-                  <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
-                    <div class="site-breadcrumbs-body-sub-inner">
-                      {% for collection in site.collections %}
-                      {% if collection.label == page.collection %}
-
-                      {% assign sorted = site.[collection.label] | sort: 'order' %}
-                      {% for p in sorted %}
-                      {% if p.categories[0] == collection.label %}
-                      <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary btn-nodesign">
-                        <span>{{ p.title }}</span>
-                      </a>
-                      {% endif %}
-                      {% endfor %}
-
-                      {% endif %}
-                      {% endfor %}
+                  {% for collection in site.collections %}
+                    {% if collection.label == page.collection %}
+                      <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
+                        <div class="site-breadcrumbs-body-sub-inner">
+                          {% assign sorted = site.[collection.label] | sort: 'order' %}
+                            {% for p in sorted %}
+                              {% if p.categories[0] == collection.label %}
+                              <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn-primary btn-nodesign">
+                                <span>{{ p.title }}</span>
+                              </a>
+                              {% endif %}
+                          {% endfor %}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  {% endif %}
+                {% endfor %}
               </div>
 
               <div class="site-breadcrumbs-meta flex flex-space-none align-items-center">
@@ -235,9 +236,9 @@
                           data-xt-overlay='{"targets": "#site-menu"}'>
                     <span>
                       {% if page.collection %}
-                      {{ page.collection | capitalize }}
+                        {{ page.collection | capitalize }}
                       {% else %}
-                      {{ page.title | capitalize }}
+                        {{ page.title | capitalize }}
                       {% endif %}
                       <span class="icon-menu-custom">
                         <span></span>

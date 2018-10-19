@@ -23,21 +23,6 @@
               </a>
             </div>
 
-            {% for collection in site.collections %}
-              {% if collection.label == page.collection %}
-
-                {% assign sorted = site.[collection.label] | where: 'categories', filter | sort: 'order' %}
-                {% for p in sorted %}
-                  <div class="site-aside-text">
-                    <a href="{{ p.url }}" class="btn btn-nodesign">
-                      <span>{{ p.title }}</span>
-                    </a>
-                  </div>
-                {% endfor %}
-
-              {% endif %}
-            {% endfor %}
-
           </aside>
 
         </div>

@@ -152,23 +152,13 @@
 
 .site-breadcrumbs-inner {
   cursor: default;
-  .padding(top, small);
-  .padding(bottom, medium);
+  .padding(y, small);
+  .padding(bottom, medium, sm);
   background-color: @primary;
   background: @grad-primary;
   color: @white;
   .site-breadcrumbs-body {
     margin-left: -1rem !important;
-    &:not(.site-breadcrumbs-body-mobile) {
-      @media @max-sm {
-        display: none;
-      }
-    }
-    &.site-breadcrumbs-body-mobile {
-      @media @min-sm {
-        display: none;
-      }
-    }
   }
   .site-breadcrumbs-meta {
     //.margin(y, -1rem) !important;

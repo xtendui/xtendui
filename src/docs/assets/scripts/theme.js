@@ -63,7 +63,7 @@ for(let el of document.querySelectorAll('.site-aside-text')) {
     "targets": ".site-aside-subsub",
     "on": "mouseenter",
     "off": "mouseleave",
-    "instant": {"elements": true, "targets": true, "elementsInner": true, "targetsInner": true},
+    "instant": true,
     "min": 0,
     "max": Infinity
   });
