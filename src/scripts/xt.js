@@ -69,7 +69,7 @@ Xt.initObserver = new MutationObserver(function (mutationsList) {
   for (let mutation of mutationsList) {
     if (mutation.type == 'childList') {
       for (let added of mutation.addedNodes) {
-        if (added.nodeType === 1) {
+        if (added.nodeType === 1 && !added.classList.contains('xt-ignore')) {
           //console.log(added);
           Xt.init(added);
         }
@@ -91,8 +91,8 @@ Xt.btnMerge = {
    * @param {Node|HTMLElement} el Element
    */
   init: function (el) {
-    if (!el.dataset.xtBtnMerge) {
-      el.dataset.xtBtnMerge = 'true';
+    if (!el.dataset.xtBtnMergeDone) {
+      el.dataset.xtBtnMergeDone = 'true';
       el.removeEventListener('mouseenter', Xt.btnMerge.hoverOn);
       el.addEventListener('mouseenter', Xt.btnMerge.hoverOn);
       el.removeEventListener('mouseleave', Xt.btnMerge.hoverOff);

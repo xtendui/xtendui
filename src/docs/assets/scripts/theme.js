@@ -308,21 +308,22 @@ window.resizeIframe = function(name) {
 function populateIframe(item, iframe) {
   let html = iframe.contentWindow.document.body.querySelectorAll('#body-outer')[0];
   let less = iframe.contentWindow.document.body.querySelectorAll('less-style')[0];
-  let css = iframe.contentWindow.document.body.querySelectorAll('style[scoped]')[0];
+  //let css = iframe.contentWindow.document.body.querySelectorAll('style[scoped]')[0];
   let js = iframe.contentWindow.document.body.querySelectorAll('js-script')[0];
   // inject code
   if (html) {
-    iframe.append(Xt.createElement('<div class="demo-source" data-lang="html">' + html.innerHTML + '</div>'));
+    iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="html">' + html.innerHTML + '</div>'));
   }
   if (less) {
-    iframe.append(Xt.createElement('<div class="demo-source" data-lang="less">' + less.innerHTML + '</div>'));
+    iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="less">' + less.innerHTML + '</div>'));
   }
   if (js) {
-    iframe.append(Xt.createElement('<div class="demo-source" data-lang="js">' + js.innerHTML + '</div>'));
+    iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="js">' + js.innerHTML + '</div>'));
   }
   // populate
   for(let [z, source] of item.querySelectorAll('.demo-source').entries()) {
     populateSources(item, source, z);
+    source.parentNode.removeChild(source);
   }
   new Xt.Toggle(item, {
     "elements": ".demo-code-tabs-left .btn",

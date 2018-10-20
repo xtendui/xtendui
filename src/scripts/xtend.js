@@ -21,8 +21,8 @@ class Core {
    */
   constructor(object, jsOptions = {}) {
     this.object = object;
-    if (this.object && !this.object.dataset.xtCore) {
-      this.object.dataset.xtCore = 'true';
+    if (this.object && !this.object.dataset.xtCoreDone) {
+      this.object.dataset.xtCoreDone = 'true';
       this.defaults = {
         "onBlock": false,
         "offBlock": false,
@@ -51,6 +51,7 @@ class Core {
       // init
       this.initSetup();
       this.initScope();
+      this.initCurrents();
       this.initEvents();
       this.initAria();
     }
@@ -121,6 +122,14 @@ class Core {
         }
       }
     }
+  }
+
+  /**
+   * init currents
+   */
+  initCurrents() {
+    let self = this;
+    let options = self.options;
     // @FIX set namespace for next frame
     for (let el of this.elements) {
       el.dataset.xtNamespace = self.namespace;
@@ -375,11 +384,11 @@ class Core {
    * @param {Event} e
    */
   eventTouchClickHandler(el, e) {
-    if (!el.dataset.touchClickDone || el.dataset.touchClickDone === 'false') {
+    if (!el.dataset.touchClickDone) {
       el.dataset.touchClickDone = 'true';
       e.preventDefault();
     } else {
-      el.dataset.touchClickDone = 'false';
+      delete el.dataset.touchClickDone;
     }
   }
 
@@ -389,7 +398,7 @@ class Core {
    * @param {Event} e
    */
   eventTouchResetHandler(el, e) {
-    el.dataset.touchClickDone = 'false';
+    delete el.dataset.touchClickDone;
   }
 
   /**
@@ -2085,7 +2094,7 @@ class Sticky extends Core {
     this.targets = this.container[0].querySelectorAll('.xt-clone');
     if (!this.targets.length) {
       this.targets = this.object.cloneNode(true);
-      this.targets.classList.add('xt-clone');
+      this.targets.classList.add('xt-clone', 'xt-ignore');
       for (let elId of this.targets.querySelectorAll('[id]')) {
         elId.setAttribute('id', elId.getAttribute('id') + '-clone');
       }
@@ -2131,8 +2140,14 @@ class Sticky extends Core {
     }
     window.removeEventListener('scroll.sticky', stickyHandler);
     window.addEventListener('scroll.sticky', stickyHandler);
-    // listener dispatch initial
-    window.dispatchEvent(new CustomEvent('scroll.sticky'));
+    // listener dispatch initial only 1 time next frame
+    if (!document.documentElement.dataset.xtStickyDone) {
+      document.documentElement.dataset.xtStickyDone = 'true';
+      Xt.requestAnimationFrame.call(window, function () {
+        window.dispatchEvent(new CustomEvent('scroll.sticky'));
+        delete document.documentElement.dataset.xtStickyDone;
+      });
+    }
     // autoClose
     let autoCloseHandler = Xt.dataStorage.put(this.object, 'autoCloseHandler' + self.namespace,
       Xt.autoClose.bind(this, this.object));
@@ -2453,8 +2468,14 @@ class Fade extends Core {
     }
     window.removeEventListener('scroll.fade', fadeHandler);
     window.addEventListener('scroll.fade', fadeHandler);
-    // listener dispatch initial
-    window.dispatchEvent(new CustomEvent('scroll.fade'));
+    // listener dispatch initial only 1 time next frame
+    if (!document.documentElement.dataset.xtFadeDone) {
+      document.documentElement.dataset.xtFadeDone = 'true';
+      Xt.requestAnimationFrame.call(window, function () {
+        window.dispatchEvent(new CustomEvent('scroll.fade'));
+        delete document.documentElement.dataset.xtFadeDone;
+      });
+    }
   }
 
   /**
