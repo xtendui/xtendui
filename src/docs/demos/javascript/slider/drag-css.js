@@ -26,17 +26,17 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         target.children[0].style.transform = 'translateX(' + xMax + 'px)';
       }
       // initial drag position
-      Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
-      target.dataset.xtDragResetFrame = Xt.requestAnimationFrame.call(window, function () {
+      window.cancelAnimationFrame(parseFloat(target.dataset.xtDragResetFrame));
+      target.dataset.xtDragResetFrame = window.requestAnimationFrame(function () {
         // dragging
         target.classList.remove('dragging');
-        target.dataset.xtDragResetFrame = Xt.requestAnimationFrame.call(window, function () {
+        target.dataset.xtDragResetFrame = window.requestAnimationFrame(function () {
           // reset drag
           target.style.opacity = '1';
           target.style.transform = 'translateX(' + 0 + 'px)';
           target.children[0].style.transform = 'translateX(' + 0 + 'px)';
-        });
-      });
+        }).toString();
+      }).toString();
     });
 
     // off event
@@ -46,7 +46,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       // dragging
       target.classList.remove('dragging');
       // complete drag
-      Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
+      window.cancelAnimationFrame(parseFloat(target.dataset.xtDragResetFrame));
       if (!target.classList.contains('direction-inverse')) {
         target.style.opacity = '0';
         target.style.transform = 'translateX(' + -xMax + 'px)';

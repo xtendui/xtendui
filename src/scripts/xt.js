@@ -58,7 +58,7 @@ if (document.readyState === "loading") {
     Xt.init();
   });
 } else {
-  Xt.requestAnimationFrame.call(window, function () {
+  window.requestAnimationFrame(function () {
     Xt.init();
   });
 }
@@ -369,27 +369,6 @@ Xt.focusLimit = {
 //////////////////////
 // utils
 //////////////////////
-
-/**
- * request animation frame
- * @returns {Number} animationFrameID
- * USAGE: let animationFrame = Xt.requestAnimationFrame.call(window, function () {});
- */
-Xt.requestAnimationFrame = function () {
-  return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
-    window.setTimeout(callback, 1000 / 60);
-  };
-}();
-
-/**
- * cancel animation frame
- * USAGE: Xt.cancelAnimationFrame.call(window, animationFrameID);
- */
-Xt.cancelAnimationFrame = function () {
-  return window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || function (callback) {
-    window.clearTimeout(id);
-  };
-}();
 
 /**
  * Check if event target is inside elements

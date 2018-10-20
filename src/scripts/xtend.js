@@ -102,7 +102,7 @@ class Core {
     if (!this.elements.length) {
       this.elements = Xt.arrSingle(this.object);
       // @FIX on next frame set all elements querying the namespace
-      Xt.requestAnimationFrame.call(window, function () {
+      window.requestAnimationFrame(function () {
         self.elements = Xt.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']'));
       });
     }
@@ -135,7 +135,7 @@ class Core {
       el.dataset.xtNamespace = self.namespace;
     }
     // automatic initial currents
-    Xt.requestAnimationFrame.call(window, function () {
+    window.requestAnimationFrame(function () {
       if (self.elements.length) {
         // elements
         for (let el of self.elements) {
@@ -1421,12 +1421,12 @@ class Core {
       let h = el.clientHeight + 'px';
       let pt = el.style.paddingTop;
       let pb = el.style.paddingBottom;
-      Xt.requestAnimationFrame.call(window, function () {
+     window.requestAnimationFrame(function () {
         el.classList.remove('xt-calculating');
         el.style.height = '0';
         el.style.paddingTop = '0';
         el.style.paddingBottom = '0';
-        Xt.requestAnimationFrame.call(window, function () {
+        window.requestAnimationFrame(function () {
           el.style.height = h;
           el.style.paddingTop = pt;
           el.style.paddingBottom = pb;
@@ -1441,12 +1441,12 @@ class Core {
       let w = el.clientHeight + 'px';
       let pl = el.style.paddingLeft;
       let pr = el.style.paddingRight;
-      Xt.requestAnimationFrame.call(window, function () {
+      window.requestAnimationFrame(function () {
         el.classList.remove('xt-calculating');
         el.style.width = '0';
         el.style.paddingLeft = '0';
         el.style.paddingRight = '0';
-        Xt.requestAnimationFrame.call(window, function () {
+        window.requestAnimationFrame(function () {
           el.style.width = w;
           el.style.paddingLeft = pl;
           el.style.paddingRight = pr;
@@ -1465,11 +1465,11 @@ class Core {
       let h = el.clientHeight + 'px';
       let pt = el.style.paddingTop;
       let pb = el.style.paddingBottom;
-      Xt.requestAnimationFrame.call(window, function () {
+      window.requestAnimationFrame(function () {
         el.style.height = h;
         el.style.paddingTop = pt;
         el.style.paddingBottom = pb;
-        Xt.requestAnimationFrame.call(window, function () {
+        window.requestAnimationFrame(function () {
           el.style.height = '0';
           el.style.paddingTop = '0';
           el.style.paddingBottom = '0';
@@ -1480,11 +1480,11 @@ class Core {
       let w = el.clientWidth + 'px';
       let pl = el.style.paddingLeft;
       let pr = el.style.paddingRight;
-      Xt.requestAnimationFrame.call(window, function () {
+      window.requestAnimationFrame(function () {
         el.style.width = w;
         el.style.paddingLeft = pl;
         el.style.paddingRight = pr;
-        Xt.requestAnimationFrame.call(window, function () {
+        window.requestAnimationFrame(function () {
           el.style.width = '0';
           el.style.paddingLeft = '0';
           el.style.paddingRight = '0';
@@ -1504,7 +1504,7 @@ class Core {
     // closeInside
     if (options.closeInside) {
       let closeElements = el.querySelectorAll(options.closeInside);
-      Xt.requestAnimationFrame.call(window, function () {
+      window.requestAnimationFrame(function () {
         for (let closeElement of closeElements) {
           let specialCloseInsideHandler = Xt.dataStorage.put(el, 'specialCloseInsideHandler' + self.namespace,
             self.eventSpecialCloseInsideHandler.bind(self).bind(self, closeElement, single));
@@ -1516,7 +1516,7 @@ class Core {
     // closeOutside
     if (options.closeOutside) {
       let closeElements = document.querySelectorAll(options.closeOutside);
-      Xt.requestAnimationFrame.call(window, function () {
+      window.requestAnimationFrame(function () {
         for (let closeElement of closeElements) {
           let specialCloseOutsideHandler = Xt.dataStorage.put(el, 'specialCloseOutsideHandler' + self.namespace,
             self.eventSpecialCloseOutsideHandler.bind(self).bind(self, el, single));
@@ -1605,9 +1605,9 @@ class Core {
           let padding = style.paddingRight;
           let str = 'calc(' + padding + ' + ' + width + 'px)';
           element.classList.add('no-transition');
-          Xt.requestAnimationFrame.call(window, function () {
+          window.requestAnimationFrame(function () {
             element.style.paddingRight = str;
-            Xt.requestAnimationFrame.call(window, function () {
+            window.requestAnimationFrame(function () {
               element.classList.remove('no-transition');
             });
           });
@@ -1638,9 +1638,9 @@ class Core {
       elements = document.querySelectorAll('.xt-fixed');
       for (let element of elements) {
         element.classList.add('no-transition');
-        Xt.requestAnimationFrame.call(window, function () {
+        window.requestAnimationFrame(function () {
           element.style.paddingRight = '';
-          Xt.requestAnimationFrame.call(window, function () {
+          window.requestAnimationFrame(function () {
             element.classList.remove('no-transition');
           });
         });
@@ -2143,7 +2143,7 @@ class Sticky extends Core {
     // listener dispatch initial only 1 time next frame
     if (!document.documentElement.dataset.xtStickyDone) {
       document.documentElement.dataset.xtStickyDone = 'true';
-      Xt.requestAnimationFrame.call(window, function () {
+      window.requestAnimationFrame(function () {
         window.dispatchEvent(new CustomEvent('scroll.sticky'));
         delete document.documentElement.dataset.xtStickyDone;
       });
@@ -2320,11 +2320,11 @@ class Sticky extends Core {
       if (self.detail.addOld !== undefined) {
         element.style[options.position] = rectElTop + 'px';
       }
-      Xt.cancelAnimationFrame.call(window, element.dataset.xtEventFrame);
-      element.dataset.xtEventFrame = Xt.requestAnimationFrame.call(window, function () {
+      window.cancelAnimationFrame(parseFloat(element.dataset.xtEventFrame));
+      element.dataset.xtEventFrame = window.requestAnimationFrame(function () {
         element.classList.remove('no-transition');
         element.style[options.position] = add + 'px';
-      });
+      }).toString();
     }
     // fix position fixed width 100% of parent
     let width = self.normalizeWidth(self.container[0].clientWidth);
@@ -2471,7 +2471,7 @@ class Fade extends Core {
     // listener dispatch initial only 1 time next frame
     if (!document.documentElement.dataset.xtFadeDone) {
       document.documentElement.dataset.xtFadeDone = 'true';
-      Xt.requestAnimationFrame.call(window, function () {
+      window.requestAnimationFrame(function () {
         window.dispatchEvent(new CustomEvent('scroll.fade'));
         delete document.documentElement.dataset.xtFadeDone;
       });
@@ -2529,13 +2529,13 @@ class Fade extends Core {
           changed = self.checkOn(el);
           if (changed) {
             currents.push(el);
-            Xt.cancelAnimationFrame.call(window, el.dataset.xtEventFrame);
-            el.dataset.xtEventFrame = Xt.requestAnimationFrame.call(window, function () {
+            window.cancelAnimationFrame(parseFloat(el.dataset.xtEventFrame));
+            el.dataset.xtEventFrame = window.requestAnimationFrame(function () {
               current++;
               el.dataset.xtOnCount = current.toString();
               el.dataset.xtOnTot = currents.length.toString();
               self.eventOn(el);
-            });
+            }).toString();
           }
         } else {
           // outside
@@ -2544,13 +2544,13 @@ class Fade extends Core {
           if (changed) {
             el.classList.add('fade-scroll');
             currents.push(el);
-            Xt.cancelAnimationFrame.call(window, el.dataset.xtEventFrame);
-            el.dataset.xtEventFrame = Xt.requestAnimationFrame.call(window, function () {
+            window.cancelAnimationFrame(parseFloat(el.dataset.xtEventFrame));
+            el.dataset.xtEventFrame = window.requestAnimationFrame(function () {
               current++;
               el.dataset.xtOffCount = current.toString();
               el.dataset.xtOffTot = currents.length.toString();
               self.eventOff(el);
-            });
+            }).toString();
           }
         }
         // direction
