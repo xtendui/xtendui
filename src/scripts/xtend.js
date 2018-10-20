@@ -44,6 +44,9 @@ class Core {
       if (this.options.class) {
         this.options.classes = [...this.options.class.split(' ')];
       }
+      // vars
+      this.elements = [];
+      this.targets = [];
       // internals
       this.detail = {};
       this.detail.queueOn = [];
@@ -95,7 +98,6 @@ class Core {
     let self = this;
     let options = self.options;
     // elements
-    this.elements = [];
     if (options.elements) {
       this.elements = Xt.arrSingle(this.container.querySelectorAll(options.elements));
     }
@@ -107,7 +109,6 @@ class Core {
       });
     }
     // targets
-    this.targets = [];
     if (options.targets) {
       let arr = Array.from(this.container.querySelectorAll(options.targets));
       arr = arr.filter(x => !Xt.parents(x, options.targets).length); // filter out parent
