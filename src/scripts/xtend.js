@@ -247,10 +247,10 @@ class Core {
         }
         // @FIX prevents click on touch until clicked two times
         if (events.includes('mouseenter') || events.includes('mousehover')) {
-          let touchStartHandler = Xt.dataStorage.put(el, 'touchStartHandler' + self.namespace,
-            self.eventTouchStartHandler.bind(self).bind(self, el));
-          el.removeEventListener('touchstart', touchStartHandler);
-          el.addEventListener('touchstart', touchStartHandler);
+          let touchLinksStartHandler = Xt.dataStorage.put(el, 'touchLinksStartHandler' + self.namespace,
+            self.eventTouchLinksStartHandler.bind(self).bind(self, el));
+          el.removeEventListener('touchstart', touchLinksStartHandler);
+          el.addEventListener('touchstart', touchLinksStartHandler);
         }
       }
       el.removeEventListener('on', onHandler);
@@ -364,16 +364,16 @@ class Core {
    * @param {Node|HTMLElement} el
    * @param {Event} e
    */
-  eventTouchStartHandler(el, e) {
+  eventTouchLinksStartHandler(el, e) {
     let self = this;
-    // event touchClick
-    let touchClickHandler = Xt.dataStorage.put(el, 'touchClickHandler' + self.namespace,
-      self.eventTouchClickHandler.bind(self).bind(self, el));
-    el.removeEventListener('click', touchClickHandler);
-    el.addEventListener('click', touchClickHandler);
+    // event touchLinks
+    let touchLinksHandler = Xt.dataStorage.put(el, 'touchLinksHandler' + self.namespace,
+      self.eventTouchLinksHandler.bind(self).bind(self, el));
+    el.removeEventListener('click', touchLinksHandler);
+    el.addEventListener('click', touchLinksHandler);
     // event touchReset
     let touchResetHandler = Xt.dataStorage.put(el, 'touchResetHandler' + self.namespace,
-      self.eventTouchResetHandler.bind(self).bind(self, el));
+      self.eventTouchLinksResetHandler.bind(self).bind(self, el));
     el.removeEventListener('off', touchResetHandler);
     el.addEventListener('off', touchResetHandler);
   }
@@ -383,12 +383,12 @@ class Core {
    * @param {Node|HTMLElement} el
    * @param {Event} e
    */
-  eventTouchClickHandler(el, e) {
-    if (!el.dataset.touchClickDone) {
-      el.dataset.touchClickDone = 'true';
+  eventTouchLinksHandler(el, e) {
+    if (!el.dataset.touchLinksDone) {
+      el.dataset.touchLinksDone = 'true';
       e.preventDefault();
     } else {
-      delete el.dataset.touchClickDone;
+      delete el.dataset.touchLinksDone;
     }
   }
 
@@ -397,8 +397,8 @@ class Core {
    * @param {Node|HTMLElement} el
    * @param {Event} e
    */
-  eventTouchResetHandler(el, e) {
-    delete el.dataset.touchClickDone;
+  eventTouchLinksResetHandler(el, e) {
+    delete el.dataset.touchLinksDone;
   }
 
   /**
