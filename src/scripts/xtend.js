@@ -1507,7 +1507,7 @@ class Core {
       let closeElements = el.querySelectorAll(options.closeInside);
       window.requestAnimationFrame(function () {
         for (let closeElement of closeElements) {
-          let specialCloseInsideHandler = Xt.dataStorage.put(el, 'specialCloseInsideHandler' + self.namespace,
+          let specialCloseInsideHandler = Xt.dataStorage.put(closeElement, 'specialCloseInsideHandler' + self.namespace,
             self.eventSpecialCloseInsideHandler.bind(self).bind(self, closeElement, single));
           closeElement.removeEventListener('click', specialCloseInsideHandler);
           closeElement.addEventListener('click', specialCloseInsideHandler);
@@ -1519,7 +1519,7 @@ class Core {
       let closeElements = document.querySelectorAll(options.closeOutside);
       window.requestAnimationFrame(function () {
         for (let closeElement of closeElements) {
-          let specialCloseOutsideHandler = Xt.dataStorage.put(el, 'specialCloseOutsideHandler' + self.namespace,
+          let specialCloseOutsideHandler = Xt.dataStorage.put(closeElement, 'specialCloseOutsideHandler' + self.namespace,
             self.eventSpecialCloseOutsideHandler.bind(self).bind(self, el, single));
           closeElement.removeEventListener('click', specialCloseOutsideHandler);
           closeElement.addEventListener('click', specialCloseOutsideHandler);
@@ -1539,7 +1539,7 @@ class Core {
     if (options.closeInside) {
       let closeElements = el.querySelectorAll(options.closeInside);
       for (let closeElement of closeElements) {
-        let specialCloseInsideHandler = Xt.dataStorage.get(el, 'specialCloseInsideHandler' + self.namespace);
+        let specialCloseInsideHandler = Xt.dataStorage.get(closeElement, 'specialCloseInsideHandler' + self.namespace);
         closeElement.removeEventListener('click', specialCloseInsideHandler);
       }
     }
@@ -1547,7 +1547,7 @@ class Core {
     if (options.closeOutside) {
       let closeElements = document.querySelectorAll(options.closeOutside);
       for (let closeElement of closeElements) {
-        let specialCloseOutsideHandler = Xt.dataStorage.get(el, 'specialCloseOutsideHandler' + self.namespace);
+        let specialCloseOutsideHandler = Xt.dataStorage.get(closeElement, 'specialCloseOutsideHandler' + self.namespace);
         closeElement.removeEventListener('click', specialCloseOutsideHandler);
       }
     }
