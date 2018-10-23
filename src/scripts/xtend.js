@@ -316,10 +316,10 @@ class Core {
       let eventLimit = self.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
         if (Xt.checkOutside(e, eventLimit)) {
-          self.eventOn(element);
+          self.eventOn(element, e);
         }
       } else {
-        self.eventOn(element);
+        self.eventOn(element, e);
       }
       // auto
       if (self.options.autoPause) {
@@ -352,10 +352,10 @@ class Core {
       let eventLimit = self.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
         if (Xt.checkOutside(e, eventLimit)) {
-          self.eventOff(element);
+          self.eventOff(element, e);
         }
       } else {
-        self.eventOff(element);
+        self.eventOff(element, e);
       }
     }
   }
@@ -712,12 +712,17 @@ class Core {
   /**
    * element on
    * @param {Node|HTMLElement} element To be activated
+   * @param {Event} e
    */
-  eventOn(element) {
+  eventOn(element, e) {
     let self = this;
     let options = self.options;
     // toggle
     if (this.checkOn(element)) {
+      // detail
+      this.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
+      this.eDetail.skip = true;
+      this.eDetail.object = this;
       // on
       this.specialOnActivate = false;
       let groupElements = this.getElements(element);
@@ -789,19 +794,24 @@ class Core {
       }
     } else if (options.toggle) {
       // off
-      this.eventOff(element);
+      this.eventOff(element, e);
     }
   }
 
   /**
    * element off
    * @param {Node|HTMLElement} element To be deactivated
+   * @param {Event} e
    */
-  eventOff(element) {
+  eventOff(element, e) {
     let self = this;
     let options = self.options;
     // toggle
     if (this.checkOff(element)) {
+      // detail
+      this.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
+      this.eDetail.skip = true;
+      this.eDetail.object = this;
       // off
       this.specialOffDeactivate = false;
       this.specialOffAnimate = false;
@@ -1150,7 +1160,7 @@ class Core {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('on', {detail: {skip: true, object: self}}));
+    el.dispatchEvent(new CustomEvent('on', {detail: this.eDetail}));
   }
 
   /**
@@ -1190,7 +1200,7 @@ class Core {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('off', {detail: {skip: true, object: self}}));
+    el.dispatchEvent(new CustomEvent('off', {detail: this.eDetail}));
   }
 
   /**
@@ -1985,6 +1995,10 @@ class Slider extends Core {
     let self = this;
     // save event
     this.detail.eCurrent = e;
+    // detail
+    this.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
+    this.eDetail.skip = true;
+    this.eDetail.object = this;
     // event move
     let dragHandler = Xt.dataStorage.put(target, 'dragHandler' + self.namespace,
       self.eventDragHandler.bind(self).bind(self, target));
@@ -1994,7 +2008,7 @@ class Slider extends Core {
       target.addEventListener(event, dragHandler);
     }
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('dragStart.slider', {detail: {skip: true, object: self}}));
+    target.dispatchEvent(new CustomEvent('dragStart.slider', {detail: this.eDetail}));
   }
 
   /**
@@ -2006,6 +2020,10 @@ class Slider extends Core {
     let self = this;
     // save event
     this.detail.eCurrent = e;
+    // detail
+    this.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
+    this.eDetail.skip = true;
+    this.eDetail.object = this;
     // event move
     let dragHandler = Xt.dataStorage.get(target, 'dragHandler' + self.namespace);
     let events = ['mousemove', 'touchmove'];
@@ -2013,7 +2031,7 @@ class Slider extends Core {
       target.removeEventListener(event, dragHandler);
     }
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('dragEnd.slider', {detail: {skip: true, object: self}}));
+    target.dispatchEvent(new CustomEvent('dragEnd.slider', {detail: this.eDetail}));
   }
 
   /**
@@ -2026,8 +2044,12 @@ class Slider extends Core {
     let options = self.options;
     // save event
     this.detail.eCurrent = e;
+    // detail
+    this.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
+    this.eDetail.skip = true;
+    this.eDetail.object = this;
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('drag.slider', {detail: {skip: true, object: self}}));
+    target.dispatchEvent(new CustomEvent('drag.slider', {detail: this.eDetail}));
     // auto
     if (options.autoPause) {
       this.autoPause();
@@ -2162,7 +2184,7 @@ class Sticky extends Core {
    */
   eventStickyHandler(e) {
     if (!e.detail || !e.detail.skip) {
-      this.eventScroll(this.object);
+      this.eventScroll(this.object, e);
     }
   }
 
@@ -2173,10 +2195,15 @@ class Sticky extends Core {
   /**
    * window scroll
    * @param {Node|HTMLElement} element To be activated or deactivated
+   * @param {Event} e
    */
-  eventScroll(element) {
+  eventScroll(element, e) {
     let self = this;
     let options = self.options;
+    // detail
+    this.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
+    this.eDetail.skip = true;
+    this.eDetail.object = this;
     // vars
     let anim = true;
     let hide = false;
@@ -2272,13 +2299,13 @@ class Sticky extends Core {
         if (!element.classList.contains('sticky-hide')) {
           element.classList.add('sticky-hide');
           // listener dispatch
-          element.dispatchEvent(new CustomEvent('hide.sticky', {detail: {skip: true, object: self}}));
+          element.dispatchEvent(new CustomEvent('hide.sticky', {detail: this.eDetail}));
         }
       } else {
         if (element.classList.contains('sticky-hide')) {
           element.classList.remove('sticky-hide');
           // listener dispatch
-          element.dispatchEvent(new CustomEvent('show.sticky', {detail: {skip: true, object: self}}));
+          element.dispatchEvent(new CustomEvent('show.sticky', {detail: this.eDetail}));
         }
       }
     } else {
