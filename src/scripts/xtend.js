@@ -705,6 +705,16 @@ class Core {
     }
   }
 
+  /**
+   * set eEetail
+   * @param {Event} e
+   */
+  eDetailSet(e) {
+    this.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
+    this.eDetail.skip = true;
+    this.eDetail.object = this;
+  }
+
   //////////////////////
   // events
   //////////////////////
@@ -719,10 +729,8 @@ class Core {
     let options = self.options;
     // toggle
     if (this.checkOn(element)) {
-      // detail
-      this.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
-      this.eDetail.skip = true;
-      this.eDetail.object = this;
+      // eDetail
+      this.eDetailSet(e);
       // on
       this.specialOnActivate = false;
       let groupElements = this.getElements(element);
@@ -792,7 +800,7 @@ class Core {
       for (let type in this.detail.queueOn[0]) {
         self.queueOn(type, 0, true);
       }
-    } else if (options.toggle) {
+    } else if (options.toggle && (!e.detail || !e.detail.skipToggle)) { // not when skipToggle
       // off
       this.eventOff(element, e);
     }
@@ -808,10 +816,8 @@ class Core {
     let options = self.options;
     // toggle
     if (this.checkOff(element)) {
-      // detail
-      this.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
-      this.eDetail.skip = true;
-      this.eDetail.object = this;
+      // eDetail
+      this.eDetailSet(e);
       // off
       this.specialOffDeactivate = false;
       this.specialOffAnimate = false;
@@ -1995,10 +2001,8 @@ class Slider extends Core {
     let self = this;
     // save event
     this.detail.eCurrent = e;
-    // detail
-    this.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
-    this.eDetail.skip = true;
-    this.eDetail.object = this;
+    // eDetail
+    this.eDetailSet(e);
     // event move
     let dragHandler = Xt.dataStorage.put(target, 'dragHandler' + self.namespace,
       self.eventDragHandler.bind(self).bind(self, target));
@@ -2020,10 +2024,8 @@ class Slider extends Core {
     let self = this;
     // save event
     this.detail.eCurrent = e;
-    // detail
-    this.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
-    this.eDetail.skip = true;
-    this.eDetail.object = this;
+    // eDetail
+    this.eDetailSet(e);
     // event move
     let dragHandler = Xt.dataStorage.get(target, 'dragHandler' + self.namespace);
     let events = ['mousemove', 'touchmove'];
@@ -2044,10 +2046,8 @@ class Slider extends Core {
     let options = self.options;
     // save event
     this.detail.eCurrent = e;
-    // detail
-    this.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
-    this.eDetail.skip = true;
-    this.eDetail.object = this;
+    // eDetail
+    this.eDetailSet(e);
     // listener dispatch
     target.dispatchEvent(new CustomEvent('drag.slider', {detail: this.eDetail}));
     // auto
@@ -2200,10 +2200,8 @@ class Sticky extends Core {
   eventScroll(element, e) {
     let self = this;
     let options = self.options;
-    // detail
-    this.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
-    this.eDetail.skip = true;
-    this.eDetail.object = this;
+    // eDetail
+    this.eDetailSet(e);
     // vars
     let anim = true;
     let hide = false;
