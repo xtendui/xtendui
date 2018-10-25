@@ -1,0 +1,60 @@
+@import (reference) "../../../../../dist/styles/xtend.less";
+
+// content
+
+.toggle-cat-title-wrapper {
+  .block();
+  .margin(y, layout) !important;
+  .margin(top, medium);
+  .margin(bottom, tiny);
+  position: relative;
+  .display(flex);
+  .align-items-center();
+  .justify-content-between();
+}
+
+.toggle-cat-title {
+  .h4();
+}
+
+.toggle-cat-list {
+  > li {
+    > button {
+      .btn-caret();
+      .btn-caret.horizontal();
+    }
+    > a, > button {
+      margin-bottom: -1px !important;
+      &@{btn-design} {
+        border-top-color: @grey-300 !important;
+        border-bottom-color: @grey-300 !important;
+      }
+    }
+  }
+}
+
+// toggle
+
+.toggle-cat-body {
+  .block();
+  .toggle-block();
+  // animations
+  .anim-horizontal();
+  animation-duration: @time-small;
+  &.direction-inverse {
+    .anim-horizontal-inverse();
+    animation-duration: @time-small;
+  }
+}
+
+.toggle-cat-tab {
+  .block();
+  .toggle-block();
+  // animations
+  .anim-horizontal();
+  animation-duration: @time-small;
+  &.direction-inverse {
+    .anim-horizontal-inverse();
+    animation-duration: @time-small;
+  }
+}
