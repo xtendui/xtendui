@@ -1,6 +1,10 @@
 @import (reference) "../../../../../dist/styles/xtend.less";
 
-#body-inner { // animate any html children
+//////////////////////
+// xtend extension: overlay classHtml
+//////////////////////
+
+#body-inner { // DO NOT APPLY to selector with descendants with position: fixed;
   .transition-default.out();
   transform: translateX(0);
   html.xt-overlay-left & {
