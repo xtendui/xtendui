@@ -1,14 +1,41 @@
 @import (reference) "../../../../../dist/styles/xtend.less";
 
-.content-head {
-  .list();
-  .list-space(none);
-  .flex-auto();
-  padding: 0 !important;
-  height: 63px;
-  background-color: @primary;
-  > .btn {
-    .display(flex);
-    .align-items-center();
+.overlay-outer {
+  .overlay-inner {
+    > .content.content-menu {
+      .list();
+      .list-space(none);
+      .flex-auto();
+      padding: 0 !important;
+      height: 63px;
+      background-color: @primary;
+      > .btn {
+        .display(flex);
+        .align-items-center();
+      }
+    }
+    > .content.content-title {
+      border-bottom: 1px solid @grey-250;
+    }
+    > .content.content-foot {
+      border-top: 1px solid @grey-250;
+    }
+  }
+  // animations
+  &.active {
+    .overlay-inner {
+      > .content.content-menu {
+        .anim-top.active();
+        animation-delay: @time-small;
+      }
+    }
+  }
+  &.out {
+    .overlay-inner {
+      > .content.content-menu {
+        .anim-top.out();
+        animation-delay: @time-small;
+      }
+    }
   }
 }
