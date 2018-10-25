@@ -1631,7 +1631,7 @@ class Core {
         }
       }
       // backdrop
-      elements = document.querySelectorAll('.xt-backdrop');
+      elements = self.object.querySelectorAll(':scope > .xt-backdrop');
       for (let element of elements) {
         element.style.right = width + 'px';
       }
@@ -1663,7 +1663,7 @@ class Core {
         });
       }
       // backdrop
-      elements = document.querySelectorAll('.xt-backdrop');
+      elements = self.object.querySelectorAll(':scope > .xt-backdrop');
       for (let element of elements) {
         element.style.right = '';
       }
