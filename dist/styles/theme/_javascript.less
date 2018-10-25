@@ -4,24 +4,25 @@
 
 // .xt-backdrop
 
-@backdrop-opacity: .05;
+@backdrop-opacity: .1;
 
 .xt-backdrop {
   // styles
-  background-color: darken(@primary, @perc-lg);
+  background-color: darken(@primary, @perc-xl);
   // animations
-  opacity: 0;
   &.active {
     .animation-default.active();
     animation-name: anim-backdrop-in;
     animation-duration: @time-big;
     animation-fill-mode: forwards;
+    opacity: 0;
   }
   &.out {
     .animation-default.out();
     animation-name: anim-backdrop-out;
     animation-duration: @time-big;
     animation-fill-mode: forwards;
+    opacity: 1;
   }
 }
 

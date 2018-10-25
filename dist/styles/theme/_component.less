@@ -402,8 +402,6 @@ a, .alink {
       > .content {
         .anim-vertical.active();
         animation-delay: @time-small;
-        animation-fill-mode: forwards;
-        opacity: 0;
       }
     }
     .xt-backdrop {
@@ -415,8 +413,6 @@ a, .alink {
       &@{drop-design} {
         .anim-zoom.out();
         animation-delay: @time-small;
-        animation-fill-mode: forwards;
-        opacity: 1;
       }
       > .content {
         .anim-vertical.out();
@@ -612,8 +608,6 @@ a, .alink {
       > .content {
         .anim-vertical.active();
         animation-delay: @time-small;
-        animation-fill-mode: forwards;
-        opacity: 0;
       }
     }
     .xt-backdrop {
@@ -634,8 +628,6 @@ a, .alink {
         > .content {
           .anim-left.active();
           animation-delay: @time-small;
-          animation-fill-mode: forwards;
-          opacity: 0;
         }
       }
     }
@@ -649,8 +641,6 @@ a, .alink {
         > .content {
           .anim-right.active();
           animation-delay: @time-small;
-          animation-fill-mode: forwards;
-          opacity: 0;
         }
       }
     }
@@ -660,8 +650,6 @@ a, .alink {
       &@{overlay-design} {
         .anim-zoom.out();
         animation-delay: @time-small;
-        animation-fill-mode: forwards;
-        opacity: 1;
       }
       > .btn-close,
       > .content {
@@ -676,16 +664,12 @@ a, .alink {
     &.overlay-screen {
       .anim-opacity.out();
       animation-delay: @time-small;
-      animation-fill-mode: forwards;
-      opacity: 1;
     }
     &.overlay-left {
       .overlay-inner {
         &@{overlay-design} {
           .anim-left.out();
           animation-delay: @time-small;
-          animation-fill-mode: forwards;
-          opacity: 1;
         }
         > .btn-close,
         > .content {
@@ -699,8 +683,6 @@ a, .alink {
         &@{overlay-design} {
           .anim-right.out();
           animation-delay: @time-small;
-          animation-fill-mode: forwards;
-          opacity: 1;
         }
         > .btn-close,
         > .content {

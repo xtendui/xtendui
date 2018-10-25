@@ -205,18 +205,14 @@
   &.active {
     .btn {
       .anim-horizontal.active();
-      animation-fill-mode: forwards;
       animation-delay: 250ms; // @start + @child * @increment
       .nth-child(@child:6, @start:100ms, @increment:25ms, @decrement:0ms, {
         @animation-delay(); });
-      opacity: 0;
     }
   }
   &.out {
     .btn {
       .anim-horizontal.out();
-      animation-fill-mode: forwards;
-      opacity: 1;
     }
   }
 }
@@ -352,8 +348,6 @@
       .line-container {
         .anim-left.active();
         animation-delay: 0; // @start + @child * @increment
-        animation-fill-mode: forwards;
-        opacity: 0;
       }
       .nth-child(@child: 6, @start: @time-medium, @increment: 50ms, @decrement: 0ms, { .line-container {
         @animation-delay();
@@ -368,8 +362,6 @@
       .line-container {
         .anim-right.out();
         animation-delay: 120ms; // @start + @child * @increment
-        animation-fill-mode: forwards;
-        opacity: 1;
       }
       .nth-child(@child: 6, @start: 0, @increment: 50ms, @decrement: 0ms, { .line-container {
         @animation-delay();

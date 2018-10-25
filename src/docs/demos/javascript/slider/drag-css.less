@@ -27,8 +27,6 @@
     > .box > .content > * {
       .anim-left.out();
       animation-duration: @time-big;
-      animation-fill-mode: forwards;
-      opacity: 1;
       // delay
       animation-delay: 300ms; // @start + @child * @increment
       .nth-child(@child:2, @start:0ms, @increment:150ms, @decrement:0ms, {
@@ -42,8 +40,6 @@
       > .box > .content > * {
         .anim-right.out();
         animation-duration: @time-big;
-        animation-fill-mode: forwards;
-        opacity: 1;
       }
     }
   }
@@ -54,8 +50,6 @@
       > .box > .content > * {
         .anim-right.active();
         animation-duration: @time-big;
-        animation-fill-mode: forwards;
-        opacity: 0;
       }
     }
     &.direction-inverse {
@@ -65,8 +59,6 @@
         > .box > .content > * {
           .anim-left.active();
           animation-duration: @time-big;
-          animation-fill-mode: forwards;
-          opacity: 0;
         }
       }
     }
