@@ -1,0 +1,18 @@
+@import (reference) "../../../../../dist/styles/xtend.less";
+
+.overlay-outer {
+  &.overlay-left {
+    .overlay-inner {
+      > .btn-close {
+        left: 100% !important;
+      }
+    }
+  }
+  &.overlay-right {
+    .overlay-inner {
+      > .btn-close {
+        right: 100% !important;
+      }
+    }
+  }
+}
