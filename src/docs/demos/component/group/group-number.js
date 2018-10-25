@@ -1,5 +1,5 @@
 //////////////////////
-// xtend group-number
+// xtend extension: group-number
 //////////////////////
 
 function inputNumberValidate(val) {

@@ -1,10 +1,10 @@
 //////////////////////
-// xtend extension: menumobile
+// xtend extension: toggle-levels
 //////////////////////
 
-function initMenumobileReset() {
-  let btnReset = document.querySelectorAll('#toggle-cat-tab-reset')[0];
-  let btns = document.querySelectorAll('.toggle-cat-reset');
+function initToggleLevels() {
+  let btnReset = document.querySelectorAll('#toggle-levels-tab-reset')[0];
+  let btns = document.querySelectorAll('.toggle-levels-reset');
   for (let [i, btn] of btns.entries()) {
     btn.addEventListener('click', function (e) {
       if (!e.detail || !e.detail.skipToggle) {
@@ -14,4 +14,4 @@ function initMenumobileReset() {
   }
 }
 
-initMenumobileReset();
+initToggleLevels();

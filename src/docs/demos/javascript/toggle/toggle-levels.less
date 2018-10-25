@@ -1,8 +1,12 @@
 @import (reference) "../../../../../dist/styles/xtend.less";
 
+//////////////////////
+// xtend extension: toggle-levels
+//////////////////////
+
 // content
 
-.toggle-cat-title-wrapper {
+.toggle-levels-title-wrapper {
   .block();
   .margin(y, layout) !important;
   .margin(top, medium);
@@ -13,11 +17,11 @@
   .justify-content-between();
 }
 
-.toggle-cat-title {
+.toggle-levels-title {
   .h4();
 }
 
-.toggle-cat-list {
+.toggle-levels-list {
   > li {
     > button {
       .btn-caret();
@@ -35,7 +39,7 @@
 
 // toggle
 
-.toggle-cat-body {
+.toggle-levels-body {
   .block();
   .toggle-block();
   // animations
@@ -47,7 +51,7 @@
   }
 }
 
-.toggle-cat-tab {
+.toggle-levels-tab {
   .block();
   .toggle-block();
   // animations
