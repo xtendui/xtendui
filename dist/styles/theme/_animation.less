@@ -230,6 +230,45 @@ opacity: 0;
   }
 }
 
+// anim-horizontal-inverse
+
+.anim-horizontal-inverse {
+  &.active {
+    .animation-default.active();
+    animation-name: anim-horizontal-inverse-in;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+  &.out {
+    .animation-default.out();
+    animation-name: anim-horizontal-inverse-out;
+    animation-fill-mode: forwards;
+    opacity: 1;
+  }
+}
+
+@keyframes anim-horizontal-inverse-in {
+  0% {
+    transform: translateX(@anim-medium);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes anim-horizontal-inverse-out {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-@anim-medium);
+    opacity: 0;
+  }
+}
+
 // anim-top
 
 .anim-top {
