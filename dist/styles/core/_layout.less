@@ -23,10 +23,6 @@
 
 .col(@number, @breakpoint:none) when (@breakpoint = none) {
   @val: (percentage(@number / @columns));
-  // NO BUGS IE11
-  //-webkit-flex-basis: @val;
-  //-ms-flex-preferred-size: @val;
-  //flex-basis: @val;
   max-width: @val;
   width: @val;
 }
@@ -35,10 +31,6 @@
   @query-min: 'min-@{breakpoint}';
   @val: (percentage(@number / @columns));
   @media @@query-min {
-    // NO BUGS IE11
-    //-webkit-flex-basis: @val;
-    //-ms-flex-preferred-size: @val;
-    //flex-basis: @val;
     max-width: @val;
     width: @val;
   }
