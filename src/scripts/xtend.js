@@ -876,6 +876,38 @@ class Core {
   }
 
   /**
+   * queue on
+   * @param {String} type Type of element
+   * @param {Number} index Queue index
+   * @param {Boolean} queueInitial If it's the initial queue
+   */
+  queueOn(type, index, queueInitial = false) {
+    let obj = this.detail.queueOn[index];
+    let objOther = this.detail.queueOff[this.detail.queueOff.length - 1];
+    if (obj && obj[type] && !obj[type].done) {
+      if (!objOther || !objOther[type] || objOther[type].done) {
+        this.queueOnDelay(obj, type, queueInitial);
+      }
+    }
+  }
+
+  /**
+   * queue off
+   * @param {String} type Type of element
+   * @param {Number} index Queue index
+   * @param {Boolean} queueInitial If it's the initial queue
+   */
+  queueOff(type, index, queueInitial = false) {
+    let obj = this.detail.queueOff[index];
+    let objOther = this.detail.queueOn[this.detail.queueOn.length - 1];
+    if (obj && obj[type] && !obj[type].done) {
+      if (!objOther || !objOther[type] || objOther[type].done) {
+        this.queueOffDelay(obj, type, queueInitial);
+      }
+    }
+  }
+
+  /**
    * queue on done
    * @param {Object} obj Queue object
    * @param {String} type Type of element
@@ -988,7 +1020,7 @@ class Core {
         for (let el of obj[type].queueEls) {
           clearTimeout(el.dataset.xtDelayTimeout);
           clearTimeout(el.dataset.xtAnimTimeout);
-          self.queueOnStart(obj, el, type, true);
+          self.queueOnDelayDone(obj, el, type, true);
           self.queueOnAnimDone(obj, el, type, true);
         }
       }
@@ -1008,43 +1040,11 @@ class Core {
         for (let el of obj[type].queueEls) {
           clearTimeout(el.dataset.xtDelayTimeout);
           clearTimeout(el.dataset.xtAnimTimeout);
-          self.queueOffStart(obj, el, type, true);
+          self.queueOffDelayDone(obj, el, type, true);
           self.queueOffAnimDone(obj, el, type, true);
         }
       }
       self.queueOn(type, this.detail.queueOn.length - 1);
-    }
-  }
-
-  /**
-   * queue on
-   * @param {String} type Type of element
-   * @param {Number} index Queue index
-   * @param {Boolean} queueInitial If it's the initial queue
-   */
-  queueOn(type, index, queueInitial = false) {
-    let obj = this.detail.queueOn[index];
-    let objOther = this.detail.queueOff[this.detail.queueOff.length - 1];
-    if (obj && obj[type] && !obj[type].done) {
-      if (!objOther || !objOther[type] || objOther[type].done) {
-        this.queueOnDelay(obj, type, queueInitial);
-      }
-    }
-  }
-
-  /**
-   * queue off
-   * @param {String} type Type of element
-   * @param {Number} index Queue index
-   * @param {Boolean} queueInitial If it's the initial queue
-   */
-  queueOff(type, index, queueInitial = false) {
-    let obj = this.detail.queueOff[index];
-    let objOther = this.detail.queueOn[this.detail.queueOn.length - 1];
-    if (obj && obj[type] && !obj[type].done) {
-      if (!objOther || !objOther[type] || objOther[type].done) {
-        this.queueOffDelay(obj, type, queueInitial);
-      }
     }
   }
 
@@ -1075,10 +1075,10 @@ class Core {
       }
       if (delay) {
         el.dataset.xtDelayTimeout = setTimeout(function () {
-          self.queueOnStart(obj, el, type);
+          self.queueOnDelayDone(obj, el, type);
         }, delay).toString();
       } else {
-        self.queueOnStart(obj, el, type);
+        self.queueOnDelayDone(obj, el, type);
       }
       // queue done
       if (options.instant === true) {
@@ -1116,10 +1116,10 @@ class Core {
       }
       if (delay) {
         el.dataset.xtDelayTimeout = setTimeout(function () {
-          self.queueOffStart(obj, el, type);
+          self.queueOffDelayDone(obj, el, type);
         }, delay).toString();
       } else {
-        self.queueOffStart(obj, el, type);
+        self.queueOffDelayDone(obj, el, type);
       }
       // queue done
       if (options.instant === true) {
@@ -1137,7 +1137,7 @@ class Core {
    * @param {String} type Type of elements
    * @param {Boolean} skipQueue If skip queue
    */
-  queueOnStart(obj, el, type, skipQueue = false) {
+  queueOnDelayDone(obj, el, type, skipQueue = false) {
     let self = this;
     let options = self.options;
     // activate
@@ -1172,8 +1172,8 @@ class Core {
       this.queueOnAnim(obj, el, type);
       // queue done
       let els = obj[type].queueEls;
-      if (typeof options.instant === 'object' && options.instant[type]) {
-        if (el === els[els.length - 1]) { // only if last element
+      if (el === els[els.length - 1]) { // only if last element
+        if (typeof options.instant === 'object' && options.instant[type]) {
           this.queueOnDone(obj, type);
         }
       }
@@ -1189,7 +1189,7 @@ class Core {
    * @param {String} type Type of elements
    * @param {Boolean} skipQueue If skip queue
    */
-  queueOffStart(obj, el, type, skipQueue = false) {
+  queueOffDelayDone(obj, el, type, skipQueue = false) {
     let self = this;
     let options = self.options;
     // deactivate
@@ -1206,8 +1206,8 @@ class Core {
       this.queueOffAnim(obj, el, type);
       // queue done
       let els = obj[type].queueEls;
-      if (typeof options.instant === 'object' && options.instant[type]) {
-        if (el === els[els.length - 1]) { // only if last element
+      if (el === els[els.length - 1]) { // only if last element
+        if (typeof options.instant === 'object' && options.instant[type]) {
           this.queueOffDone(obj, type);
         }
       }
