@@ -1,20 +1,4 @@
 //////////////////////
-// pass focus and blur window events to iframes
-//////////////////////
-
-window.addEventListener('focus', function () {
-  for (let iframe of document.querySelectorAll('iframe')) {
-    iframe.contentWindow.dispatchEvent(new CustomEvent('focus'));
-  }
-});
-
-window.addEventListener('blur', function () {
-  for (let iframe of document.querySelectorAll('iframe')) {
-    iframe.contentWindow.dispatchEvent(new CustomEvent('blur'));
-  }
-});
-
-//////////////////////
 // requestAnimationFrame polyfill
 // https://gist.github.com/paulirish/1579671
 //////////////////////
