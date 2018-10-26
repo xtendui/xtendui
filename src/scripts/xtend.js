@@ -1382,7 +1382,7 @@ class Core {
    */
   specialCenter(el) {
     let style = getComputedStyle(el);
-    if (style.getPropertyValue('--center')) {
+    if (style.getPropertyValue('--xt-center')) {
       let add = this.object.clientWidth;
       let remove = el.clientWidth;
       el.style.left = ((add - remove) / 2) + 'px';
@@ -1395,7 +1395,7 @@ class Core {
    */
   specialMiddle(el) {
     let style = getComputedStyle(el);
-    if (style.getPropertyValue('--middle')) {
+    if (style.getPropertyValue('--xt-middle')) {
       let add = this.object.clientHeight;
       let remove = el.clientHeight;
       el.style.top = ((add - remove) / 2) + 'px';
@@ -1432,7 +1432,7 @@ class Core {
    */
   specialCollapseOnRun(el) {
     let style = getComputedStyle(el);
-    if (style.getPropertyValue('--collapse-height')) {
+    if (style.getPropertyValue('--xt-collapse-height')) {
       el.classList.add('xt-calculating');
       el.style.height = 'auto';
       el.style.paddingTop = '';
@@ -1452,7 +1452,7 @@ class Core {
         });
       });
     }
-    if (style.getPropertyValue('--collapse-width')) {
+    if (style.getPropertyValue('--xt-collapse-width')) {
       el.classList.add('xt-calculating');
       el.style.width = 'auto';
       el.style.paddingLeft = '';
@@ -1480,7 +1480,7 @@ class Core {
    */
   specialCollapseOffRun(el) {
     let style = getComputedStyle(el);
-    if (style.getPropertyValue('--collapse-height')) {
+    if (style.getPropertyValue('--xt-collapse-height')) {
       let h = el.clientHeight + 'px';
       let pt = el.style.paddingTop;
       let pb = el.style.paddingBottom;
@@ -1495,7 +1495,7 @@ class Core {
         });
       });
     }
-    if (style.getPropertyValue('--collapse-width')) {
+    if (style.getPropertyValue('--xt-collapse-width')) {
       let w = el.clientWidth + 'px';
       let pl = el.style.paddingLeft;
       let pr = el.style.paddingRight;
@@ -1519,10 +1519,10 @@ class Core {
   specialCollapseOnReset(el) {
     if (!el.classList.contains('collapse-inverse')) {
       let style = getComputedStyle(el);
-      if (style.getPropertyValue('--collapse-height')) {
+      if (style.getPropertyValue('--xt-collapse-height')) {
         el.style.height = 'auto';
       }
-      if (style.getPropertyValue('--collapse-width')) {
+      if (style.getPropertyValue('--xt-collapse-width')) {
         el.style.width = 'auto';
       }
     }
@@ -1535,10 +1535,10 @@ class Core {
   specialCollapseOffReset(el) {
     if (el.classList.contains('collapse-inverse')) {
       let style = getComputedStyle(el);
-      if (style.getPropertyValue('--collapse-height')) {
+      if (style.getPropertyValue('--xt-collapse-height')) {
         el.style.height = 'auto';
       }
-      if (style.getPropertyValue('--collapse-width')) {
+      if (style.getPropertyValue('--xt-collapse-width')) {
         el.style.width = 'auto';
       }
     }
