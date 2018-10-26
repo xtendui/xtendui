@@ -160,21 +160,20 @@ a, .alink {
 //////////////////////
 
 .group {
+  // styles
   .link-none();
+  border-radius: @border-radius;
 }
 
 // animations
 
 .group {
   // interaction
-  a&, button& {
-    .transition-default.out();
-    transform: scale(1);
-    &:active, &.active {
-      transform: scale(.95);
-      .transition-default.active();
-      transition-duration: @time-small;
-    }
+  .transition-default.out();
+  transition-duration: @time-giant;
+  &:active, &.active {
+    .transition-default.active();
+    box-shadow: 0 1px 4px fade(@black, @perc-xs), 0 2px 8px fade(@black, @perc-sm);
   }
 }
 
@@ -226,18 +225,6 @@ a, .alink {
       .transition-default.active();
     }
   }
-  // interaction
-  a&, button& {
-    &@{btn-design} {
-      transform: scale(1);
-    }
-    &:active, &.active {
-      &@{btn-design} {
-        transform: scale(.95);
-        transition-duration: @time-small;
-      }
-    }
-  }
 }
 
 // variant
@@ -254,6 +241,11 @@ a, .alink {
     &@{btn-design} {
       border-color: @primary;
       background-color: lighten(@primary, @perc-xs);
+    }
+  }
+  &:active, &.active {
+    &@{btn-design} {
+      box-shadow: 0 1px 4px fade(@black, @perc-xs), 0 2px 8px fade(@black, @perc-sm);
     }
   }
 }
@@ -286,6 +278,11 @@ a, .alink {
     &@{btn-design} {
       border-color: darken(@secondary, @perc-sm);
       background-color: darken(@secondary, @perc-xs);
+    }
+  }
+  &:active, &.active {
+    &@{btn-design} {
+      box-shadow: 0 1px 4px fade(@black, @perc-xs), 0 2px 8px fade(@black, @perc-sm);
     }
   }
 }
@@ -378,6 +375,7 @@ a, .alink {
   &@{btn-design} {
     border: 0 !important;
     background-color: transparent !important;
+    box-shadow: none !important;
   }
 }
 
@@ -388,6 +386,7 @@ a, .alink {
     border-left: 0 !important;
     border-right: 0 !important;
     background-color: transparent !important;
+    box-shadow: none !important;
   }
 }
 
@@ -398,6 +397,7 @@ a, .alink {
     border-top: 0 !important;
     border-bottom: 0 !important;
     background-color: transparent !important;
+    box-shadow: none !important;
   }
 }
 
@@ -430,7 +430,7 @@ a, .alink {
       border-width: 1px;
       border-style: solid;
       border-color: transparent;
-      box-shadow: 0 0 4px fade(@black, @perc-xs), 0 6px 10px fade(@black, @perc-sm);
+      box-shadow: 0 1px 4px fade(@black, @perc-xs), 0 2px 8px fade(@black, @perc-sm);
     }
     > .content {
       > .list {
@@ -590,7 +590,7 @@ a, .alink {
       border-width: 1px;
       border-style: solid;
       border-color: transparent;
-      box-shadow: 0 0 30rem fade(@black, @perc-sm);
+      box-shadow: 0 0 10rem fade(@black, @perc-md);
     }
     > .content {
       padding: 3rem;
@@ -614,13 +614,13 @@ a, .alink {
 
 .overlay-screen {
   // styles
-  box-shadow: 0 0 30rem fade(@black, @perc-sm);
   .overlay {
     &@{overlay-design} {
       .design-setup();
       border-width: 1px;
       border-style: solid;
       border-color: transparent;
+      box-shadow: none;
     }
     .overlay-inner {
       &@{overlay-design} {
