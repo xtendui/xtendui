@@ -20,13 +20,9 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="/assets/styles/demo.css?v=0.5.5" />
-    
 
-    <!-- scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.5.5"></script>
-    <script src="/assets/scripts/polyfill.min.js"></script>
-    <script src="/assets/scripts/xtend.min.js?v=0.5.5"></script>
+    <!-- demo styles -->
+    
 
   </head>
   <body class="full">
@@ -108,8 +104,10 @@
 </div>
     </div>
 
+    <!-- demos source less -->
     
 
+    <!-- demos source js -->
     
     <js-script>let time = .6;
 let animSize = 15;
@@ -279,13 +277,13 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
 }</js-script>
     
 
-    <script>
-      // add id
-      document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
-      // init iframe
-      window.parent.initIframe(window.name);
-    </script>
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.5.5"></script>
+    <script src="/assets/scripts/polyfill.min.js"></script>
+    <script src="/assets/scripts/xtend.min.js?v=0.5.5"></script>
 
+    <!-- demo scripts -->
     
     <script>let time = .6;
 let animSize = 15;
@@ -454,6 +452,14 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
 
 }</script>
     
+
+    <!-- demo utils -->
+    <script>
+      // add id
+      document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
+      // init iframe
+      window.parent.initIframe(window.name);
+    </script>
 
   </body>
 </html>

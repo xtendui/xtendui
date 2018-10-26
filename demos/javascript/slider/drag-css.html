@@ -20,13 +20,9 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="/assets/styles/demo.css?v=0.5.5" />
-    <link rel="stylesheet" href="drag-css.css?v=0.5.5" />
 
-    <!-- scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.5.5"></script>
-    <script src="/assets/scripts/polyfill.min.js"></script>
-    <script src="/assets/scripts/xtend.min.js?v=0.5.5"></script>
+    <!-- demo styles -->
+    <link rel="stylesheet" href="drag-css.css?v=0.5.5" />
 
   </head>
   <body class="full">
@@ -108,6 +104,7 @@
 </div>
     </div>
 
+    <!-- demos source less -->
     
     <less-style>@import (reference) "../../../../../dist/styles/xtend.less";
 
@@ -138,8 +135,6 @@
     > .box > .content > * {
       .anim-left.out();
       animation-duration: @time-big;
-      animation-fill-mode: forwards;
-      opacity: 1;
       // delay
       animation-delay: 300ms; // @start + @child * @increment
       .nth-child(@child:2, @start:0ms, @increment:150ms, @decrement:0ms, {
@@ -153,8 +148,6 @@
       > .box > .content > * {
         .anim-right.out();
         animation-duration: @time-big;
-        animation-fill-mode: forwards;
-        opacity: 1;
       }
     }
   }
@@ -165,8 +158,6 @@
       > .box > .content > * {
         .anim-right.active();
         animation-duration: @time-big;
-        animation-fill-mode: forwards;
-        opacity: 0;
       }
     }
     &.direction-inverse {
@@ -176,8 +167,6 @@
         > .box > .content > * {
           .anim-left.active();
           animation-duration: @time-big;
-          animation-fill-mode: forwards;
-          opacity: 0;
         }
       }
     }
@@ -204,6 +193,7 @@
 </less-style>
     
 
+    <!-- demos source js -->
     
     <js-script>for (let [i, el] of document.querySelectorAll('.slider').entries()) {
 
@@ -233,17 +223,17 @@
         target.children[0].style.transform = 'translateX(' + xMax + 'px)';
       }
       // initial drag position
-      Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
-      target.dataset.xtDragResetFrame = Xt.requestAnimationFrame.call(window, function () {
+      window.cancelAnimationFrame(parseFloat(target.dataset.xtDragResetFrame));
+      target.dataset.xtDragResetFrame = window.requestAnimationFrame(function () {
         // dragging
         target.classList.remove('dragging');
-        target.dataset.xtDragResetFrame = Xt.requestAnimationFrame.call(window, function () {
+        target.dataset.xtDragResetFrame = window.requestAnimationFrame(function () {
           // reset drag
           target.style.opacity = '1';
           target.style.transform = 'translateX(' + 0 + 'px)';
           target.children[0].style.transform = 'translateX(' + 0 + 'px)';
-        });
-      });
+        }).toString();
+      }).toString();
     });
 
     // off event
@@ -253,7 +243,7 @@
       // dragging
       target.classList.remove('dragging');
       // complete drag
-      Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
+      window.cancelAnimationFrame(parseFloat(target.dataset.xtDragResetFrame));
       if (!target.classList.contains('direction-inverse')) {
         target.style.opacity = '0';
         target.style.transform = 'translateX(' + -xMax + 'px)';
@@ -329,13 +319,13 @@
 }</js-script>
     
 
-    <script>
-      // add id
-      document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
-      // init iframe
-      window.parent.initIframe(window.name);
-    </script>
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.5.5"></script>
+    <script src="/assets/scripts/polyfill.min.js"></script>
+    <script src="/assets/scripts/xtend.min.js?v=0.5.5"></script>
 
+    <!-- demo scripts -->
     
     <script>for (let [i, el] of document.querySelectorAll('.slider').entries()) {
 
@@ -365,17 +355,17 @@
         target.children[0].style.transform = 'translateX(' + xMax + 'px)';
       }
       // initial drag position
-      Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
-      target.dataset.xtDragResetFrame = Xt.requestAnimationFrame.call(window, function () {
+      window.cancelAnimationFrame(parseFloat(target.dataset.xtDragResetFrame));
+      target.dataset.xtDragResetFrame = window.requestAnimationFrame(function () {
         // dragging
         target.classList.remove('dragging');
-        target.dataset.xtDragResetFrame = Xt.requestAnimationFrame.call(window, function () {
+        target.dataset.xtDragResetFrame = window.requestAnimationFrame(function () {
           // reset drag
           target.style.opacity = '1';
           target.style.transform = 'translateX(' + 0 + 'px)';
           target.children[0].style.transform = 'translateX(' + 0 + 'px)';
-        });
-      });
+        }).toString();
+      }).toString();
     });
 
     // off event
@@ -385,7 +375,7 @@
       // dragging
       target.classList.remove('dragging');
       // complete drag
-      Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
+      window.cancelAnimationFrame(parseFloat(target.dataset.xtDragResetFrame));
       if (!target.classList.contains('direction-inverse')) {
         target.style.opacity = '0';
         target.style.transform = 'translateX(' + -xMax + 'px)';
@@ -460,6 +450,14 @@
 
 }</script>
     
+
+    <!-- demo utils -->
+    <script>
+      // add id
+      document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
+      // init iframe
+      window.parent.initIframe(window.name);
+    </script>
 
   </body>
 </html>

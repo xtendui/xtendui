@@ -20,13 +20,9 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="/assets/styles/demo.css?v=0.5.5" />
-    <link rel="stylesheet" href="sticky-option-position.css?v=0.5.5" />
 
-    <!-- scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.5.5"></script>
-    <script src="/assets/scripts/polyfill.min.js"></script>
-    <script src="/assets/scripts/xtend.min.js?v=0.5.5"></script>
+    <!-- demo styles -->
+    <link rel="stylesheet" href="sticky-option-position.css?v=0.5.5" />
 
   </head>
   <body class="full">
@@ -67,6 +63,7 @@
 
     </div>
 
+    <!-- demos source less -->
     
     <less-style>@import (reference) "../../../../../dist/styles/xtend.less";
 
@@ -75,16 +72,25 @@
 }</less-style>
     
 
+    <!-- demos source js -->
     
 
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.5.5"></script>
+    <script src="/assets/scripts/polyfill.min.js"></script>
+    <script src="/assets/scripts/xtend.min.js?v=0.5.5"></script>
+
+    <!-- demo scripts -->
+    
+
+    <!-- demo utils -->
     <script>
       // add id
       document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
       // init iframe
       window.parent.initIframe(window.name);
     </script>
-
-    
 
   </body>
 </html>

@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="/assets/styles/demo.css?v=0.5.5" />
 
     <!-- demo styles -->
-    <link rel="stylesheet" href="overlay-message.css?v=0.5.5" />
+    <link rel="stylesheet" href="overlay-close-outside.css?v=0.5.5" />
 
   </head>
   <body class="full">
@@ -35,11 +35,6 @@
       <span>left</span>
     </button>
     <div class="overlay-outer overlay-pos overlay-left">
-      <div class="overlay-message">
-        <div class="btn btn-primary btn-small overlay-dismiss">
-          <span>close message</span>
-        </div>
-      </div>
       <div class="overlay">
         <div class="overlay-inner">
           <button type="button" class="btn btn-close"><span>Close</span></button>
@@ -61,11 +56,6 @@
       <span>right</span>
     </button>
     <div class="overlay-outer overlay-pos overlay-right">
-      <div class="overlay-message">
-        <div class="btn btn-primary btn-small overlay-dismiss">
-          <span>close message</span>
-        </div>
-      </div>
       <div class="overlay">
         <div class="overlay-inner">
           <button type="button" class="btn btn-close"><span>Close</span></button>
@@ -91,47 +81,30 @@
     <less-style>@import (reference) "../../../../../dist/styles/xtend.less";
 
 //////////////////////
-// xtend extension: overlay-message
+// xtend extension: overlay close outside
 //////////////////////
 
-.overlay-message {
-  // styles
-  position: fixed;
-  z-index: @index-overlay !important;
-  top: 50%;
-  width: calc(100vw - 510px);
-  text-align: center;
-  @media @max-sm {
-    display: none;
-  }
-  // add box shadow to button
-  .overlay-dismiss {
-    &@{btn-design} {
-      box-shadow: 3px 3px 15px fade(@black, @perc-sm);
+.overlay-outer {
+  &.overlay-left {
+    .overlay-inner {
+      > .btn-close {
+        .btn-primary();
+        .btn-squared();
+        left: 100% !important;
+      }
     }
   }
-  .overlay-left & {
-    right: 0;
-    margin-right: 3rem;
+  &.overlay-right {
+    .overlay-inner {
+      > .btn-close {
+        .btn-primary();
+        .btn-squared();
+        right: 100% !important;
+      }
+    }
   }
-  .overlay-right & {
-    left: 0;
-    margin-left: 3rem;
-  }
-  // animations
-  .overlay-left.active & {
-    .anim-right.active();
-  }
-  .overlay-left.out & {
-    .anim-right.out();
-  }
-  .overlay-right.active & {
-    .anim-left.active();
-  }
-  .overlay-right.out & {
-    .anim-left.out();
-  }
-}</less-style>
+}
+</less-style>
     
 
     <!-- demos source js -->
