@@ -435,9 +435,10 @@ opacity: 0;
 .collapse-width {
   &.active {
     .transition-default.active();
+    transition-delay: @time-small;
   }
   &.out {
     .transition-default.out();
-    transition-delay: @time-small;
+    transition-delay: @time-medium;
   }
 }

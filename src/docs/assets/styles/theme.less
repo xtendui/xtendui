@@ -204,15 +204,33 @@
   }
   &.active {
     .btn {
+      /*
+      .transition-default.active();
+      transform: translateX(0);
+      opacity: 1;
+      transition-delay: @time-small + 150ms; // @start + @child * @increment
+      .nth-child(@child: 6, @start: @time-small, @increment: 25ms, @decrement: 0ms, {
+        @transition-delay(); });
+      */
       .anim-horizontal.active();
-      animation-delay: 250ms; // @start + @child * @increment
-      .nth-child(@child:6, @start:100ms, @increment:25ms, @decrement:0ms, {
+      animation-delay: @time-medium + 150ms; // @start + @child * @increment
+      .nth-child(@child: 6, @start: @time-medium, @increment: 25ms, @decrement: 0ms, {
         @animation-delay(); });
+    }
+    &.direction-inverse {
+      .btn {
+        .anim-horizontal-inverse.active();
+      }
     }
   }
   &.out {
     .btn {
       .anim-horizontal.out();
+    }
+    &.direction-inverse {
+      .btn {
+        .anim-horizontal-inverse.out();
+      }
     }
   }
 }

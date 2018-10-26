@@ -1108,8 +1108,8 @@ class Core {
       // delay
       let delay;
       if (!options.instant || !options.instant[type]) {
-        if (options.delayOn) {
-          if (isNaN(options.delayOn)) {
+        if (options.delayOff) {
+          if (isNaN(options.delayOff)) {
             let count = parseInt(el.dataset.xtOffCount) || obj[type].queueEls.findIndex(x => x === el);
             let tot = parseInt(el.dataset.xtOffTot) || els.length;
             let fnc = new Function('current', 'total', options.delayOff);

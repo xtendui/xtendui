@@ -5,7 +5,7 @@
 /* USAGE:
 animation-delay: 150ms; // @start + @child * @increment
 transition-delay: 150ms; // @start + @child * @increment
-.nth-child(@child:6, @start:0ms, @increment:25ms, @decrement:0ms, {
+.nth-child(@child:6, @start: 0ms, @increment: 25ms, @decrement: 0ms, {
   .optional-nested {
     @animation-delay();
     @transition-delay();
@@ -13,7 +13,7 @@ transition-delay: 150ms; // @start + @child * @increment
 });
 animation-delay: 0ms; // @start - @child * @decrement
 transition-delay: 0ms; // @start - @child * @decrement
-.nth-child(@child:6, @start:150ms, @increment:0ms, @decrement:25ms, {
+.nth-child(@child:6, @start: 150ms, @increment: 0ms, @decrement: 25ms, {
   .optional-nested {
     @animation-delay();
     @transition-delay();
