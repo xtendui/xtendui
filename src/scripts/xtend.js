@@ -883,8 +883,8 @@ class Core {
    */
   queueOn(type, index, queueInitial = false) {
     let obj = this.detail.queueOn[index];
-    let objOther = this.detail.queueOff[this.detail.queueOff.length - 1];
     if (obj && obj[type] && !obj[type].done) {
+      let objOther = this.detail.queueOff[this.detail.queueOff.length - 1];
       if (!objOther || !objOther[type] || objOther[type].done) {
         this.queueOnDelay(obj, type, queueInitial);
       }
@@ -899,8 +899,8 @@ class Core {
    */
   queueOff(type, index, queueInitial = false) {
     let obj = this.detail.queueOff[index];
-    let objOther = this.detail.queueOn[this.detail.queueOn.length - 1];
     if (obj && obj[type] && !obj[type].done) {
+      let objOther = this.detail.queueOn[this.detail.queueOn.length - 1];
       if (!objOther || !objOther[type] || objOther[type].done) {
         this.queueOffDelay(obj, type, queueInitial);
       }
@@ -1060,19 +1060,23 @@ class Core {
     // delay
     let els = obj[type].queueEls;
     for (let el of els) {
-      clearTimeout(el.dataset.xtDelayTimeout);
-      clearTimeout(el.dataset.xtAnimTimeout);
+      // delay
       let delay;
-      if (options.delayOn) {
-        if (isNaN(options.delayOn)) {
-          let count = parseInt(el.dataset.xtOnCount) || obj[type].queueEls.findIndex(x => x === el);
-          let tot = parseInt(el.dataset.xtOnTot) || els.length;
-          let fnc = new Function('current', 'total', options.delayOn);
-          delay = fnc(count, tot - 1).toString();
-        } else {
-          delay = queueInitial ? 0 : options.delayOn;
+      if (!options.instant || !options.instant[type]) {
+        if (options.delayOn) {
+          if (isNaN(options.delayOn)) {
+            let count = parseInt(el.dataset.xtOnCount) || obj[type].queueEls.findIndex(x => x === el);
+            let tot = parseInt(el.dataset.xtOnTot) || els.length;
+            let fnc = new Function('current', 'total', options.delayOn);
+            delay = fnc(count, tot - 1).toString();
+          } else {
+            delay = queueInitial ? 0 : options.delayOn;
+          }
         }
       }
+      // delay fnc
+      clearTimeout(el.dataset.xtDelayTimeout);
+      clearTimeout(el.dataset.xtAnimTimeout);
       if (delay) {
         el.dataset.xtDelayTimeout = setTimeout(function () {
           self.queueOnDelayDone(obj, el, type);
@@ -1101,19 +1105,23 @@ class Core {
     // delay
     let els = obj[type].queueEls;
     for (let el of els) {
-      clearTimeout(el.dataset.xtDelayTimeout);
-      clearTimeout(el.dataset.xtAnimTimeout);
+      // delay
       let delay;
-      if (options.delayOn) {
-        if (isNaN(options.delayOn)) {
-          let count = parseInt(el.dataset.xtOffCount) || obj[type].queueEls.findIndex(x => x === el);
-          let tot = parseInt(el.dataset.xtOffTot) || els.length;
-          let fnc = new Function('current', 'total', options.delayOff);
-          delay = fnc(count, tot - 1).toString();
-        } else {
-          delay = queueInitial ? 0 : options.delayOff;
+      if (!options.instant || !options.instant[type]) {
+        if (options.delayOn) {
+          if (isNaN(options.delayOn)) {
+            let count = parseInt(el.dataset.xtOffCount) || obj[type].queueEls.findIndex(x => x === el);
+            let tot = parseInt(el.dataset.xtOffTot) || els.length;
+            let fnc = new Function('current', 'total', options.delayOff);
+            delay = fnc(count, tot - 1).toString();
+          } else {
+            delay = queueInitial ? 0 : options.delayOff;
+          }
         }
       }
+      // delay fnc
+      clearTimeout(el.dataset.xtDelayTimeout);
+      clearTimeout(el.dataset.xtAnimTimeout);
       if (delay) {
         el.dataset.xtDelayTimeout = setTimeout(function () {
           self.queueOffDelayDone(obj, el, type);
