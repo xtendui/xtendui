@@ -732,7 +732,6 @@ class Core {
       // eDetail
       this.eDetailSet(e);
       // on
-      this.specialOnActivate = false;
       let groupElements = this.getElements(element);
       this.addCurrent(groupElements.single);
       this.setIndexAndDirection(element);
@@ -819,8 +818,6 @@ class Core {
       // eDetail
       this.eDetailSet(e);
       // off
-      this.specialOffDeactivate = false;
-      this.specialOffAnimate = false;
       let groupElements = this.getElements(element);
       this.removeCurrent(groupElements.single);
       let targets = this.getTargets(element);
@@ -888,14 +885,30 @@ class Core {
       // done
       obj[type].done = true;
       this.queueOff(type, this.detail.queueOff.length - 1);
-      // all done
-      let allDone = true;
+      // done
+      let done = 0;
       for (let type in obj) {
-        if (!obj[type].done) {
-          allDone = false;
+        if (obj[type].done) {
+          done++;
         }
       }
-      if (allDone) {
+      // one done
+      if (done === 1) {
+        // special
+        this.specialBackdrop(obj);
+        this.specialClassHtmlOn();
+        this.specialScrollbarOn();
+        // focus
+        if (this.options.scrollbar) {
+          let el = obj['targets'].queueEls[0];
+          Xt.focus.block = true;
+          Xt.focusLimit.on(el);
+          el.focus();
+        }
+      }
+      // all done
+      if (done === Object.entries(obj).length) {
+        // remove queue
         this.detail.queueOn.pop();
       }
     }
@@ -911,14 +924,29 @@ class Core {
       // done
       obj[type].done = true;
       this.queueOn(type, this.detail.queueOn.length - 1);
-      // all done
-      let allDone = true;
+      // done
+      let done = 0;
       for (let type in obj) {
-        if (!obj[type].done) {
-          allDone = false;
+        if (obj[type].done) {
+          done++;
         }
       }
-      if (allDone) {
+      // one done
+      if (done === 1) {
+        // special
+        this.specialClassHtmlOff();
+        // focus
+        if (this.options.scrollbar) {
+          Xt.focus.block = false;
+          Xt.focusLimit.off();
+          Xt.focus.current.focus();
+        }
+      }
+      // all done
+      if (done === Object.entries(obj).length) {
+        // special
+        this.specialScrollbarOff();
+        // remove queue
         this.detail.queueOff.pop();
       }
     }
@@ -1116,9 +1144,15 @@ class Core {
     el.classList.add(...options.classes);
     el.classList.add('in');
     el.classList.remove('out');
-    // additionals
+    // special
+    this.specialCenter(el);
+    this.specialMiddle(el);
+    this.specialCollapseOn(el);
+    if (type === 'targets' || type === 'targetsInner') {
+      this.specialCloseOn(el, obj[type].groupElements.single);
+    }
+    // aria
     if (type === 'elements') {
-      // aria
       if (options.aria) {
         let ariaEls = self.getInside(el, options.ariaControls);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;
@@ -1126,31 +1160,10 @@ class Core {
       }
     }
     if (type === 'targets' || type === 'targetsInner') {
-      // aria
       if (options.aria) {
         let role = el.getAttribute('role');
         if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
           el.setAttribute('aria-expanded', 'true');
-        }
-      }
-      // special
-      this.specialBackdrop(el);
-      this.specialCenter(el);
-      this.specialMiddle(el);
-      this.specialCollapseOn(el);
-      this.specialCloseOn(el, obj[type].groupElements.single);
-      // special one time
-      if (!this.specialOnActivate) {
-        this.specialOnActivate = true;
-        this.specialClassHtmlOn();
-        this.specialScrollbarOn();
-        // focus
-        if (options.aria) {
-          if (options.scrollbar) {
-            Xt.focus.block = true;
-            Xt.focusLimit.on(el);
-            el.focus();
-          }
         }
       }
     }
@@ -1183,16 +1196,10 @@ class Core {
     el.classList.remove(...options.classes);
     el.classList.remove('in');
     el.classList.add('out');
-    // additionals
+    // special
+    this.specialCollapseOff(el);
     if (type === 'targets' || type === 'targetsInner') {
-      // special
-      this.specialCollapseOff(el);
       this.specialCloseOff(el);
-      // special one time
-      if (!this.specialOffDeactivate) {
-        this.specialOffDeactivate = true;
-        this.specialClassHtmlOff();
-      }
     }
     // queue
     if (!skipQueue) {
@@ -1295,9 +1302,8 @@ class Core {
     let options = self.options;
     // reset
     el.classList.remove('out');
-    // additionals
+    // aria
     if (type === 'elements') {
-      // aria
       if (options.aria) {
         let ariaEls = self.getInside(el, options.ariaControls);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;
@@ -1305,24 +1311,10 @@ class Core {
       }
     }
     if (type === 'targets') {
-      // aria
       if (options.aria) {
         let role = el.getAttribute('role');
         if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
           el.setAttribute('aria-expanded', 'false');
-        }
-      }
-      // special one time
-      if (!self.specialOffAnimate) {
-        self.specialOffAnimate = true;
-        self.specialScrollbarOff();
-        // focus
-        if (options.aria) {
-          if (options.scrollbar) {
-            Xt.focus.block = false;
-            Xt.focusLimit.off();
-            Xt.focus.current.focus();
-          }
         }
       }
     }
@@ -1348,7 +1340,7 @@ class Core {
   specialClassHtmlOn() {
     let self = this;
     let options = self.options;
-    //
+    // class on
     if (options.classHtml) {
       let container = document.documentElement;
       container.classList.add(...options.classHtml.split(' '));
@@ -1361,7 +1353,7 @@ class Core {
   specialClassHtmlOff() {
     let self = this;
     let options = self.options;
-    //
+    // class off
     if (options.classHtml) {
       let container = document.documentElement;
       container.classList.remove(...options.classHtml.split(' '));
@@ -1370,24 +1362,14 @@ class Core {
 
   /**
    * backdrop append to element
-   * @param {Node|HTMLElement} el Element
+   * @param {Object} obj Queue object
    */
-  specialBackdrop(el) {
+  specialBackdrop(obj) {
     let self = this;
     let options = self.options;
-    //
+    // backdrop
     if (options.backdrop) {
-      let elements;
-      if (options.backdrop === 'object') {
-        elements = Xt.arrSingle(this.object);
-      } else if (options.backdrop === 'targets') {
-        elements = Xt.arrSingle(el);
-      } else {
-        elements = el.querySelectorAll(options.backdrop);
-        if (!elements.length) {
-          elements = this.object.querySelectorAll(options.backdrop);
-        }
-      }
+      let elements = typeof options.backdrop === 'string' ? Xt.arrSingle(obj[options.backdrop].queueEls) : Xt.arrSingle(this.object);
       for (let element of elements) {
         let backdrop = element.querySelectorAll('.xt-backdrop');
         if (!backdrop.length) {
