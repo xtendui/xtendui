@@ -1271,7 +1271,7 @@ class Core {
     // reset
     el.classList.remove('in');
     // special
-    this.specialCollapseOnReset(el);
+    this.specialCollapseReset(el);
     // queue
     if (!skipQueue) {
       // queue done
@@ -1296,8 +1296,6 @@ class Core {
     let options = self.options;
     // reset
     el.classList.remove('out');
-    // special
-    this.specialCollapseOffReset(el);
     // aria
     if (type === 'elements') {
       if (options.aria) {
@@ -1407,30 +1405,6 @@ class Core {
    * @param {Node|HTMLElement} el Element
    */
   specialCollapseOn(el) {
-    if (!el.classList.contains('collapse-inverse')) {
-      this.specialCollapseOnRun(el);
-    } else {
-      this.specialCollapseOffRun(el);
-    }
-  }
-
-  /**
-   * close collapse on deactivation
-   * @param {Node|HTMLElement} el Element
-   */
-  specialCollapseOff(el) {
-    if (!el.classList.contains('collapse-inverse')) {
-      this.specialCollapseOffRun(el);
-    } else {
-      this.specialCollapseOnRun(el);
-    }
-  }
-
-  /**
-   * open collapse on activation
-   * @param {Node|HTMLElement} el Element
-   */
-  specialCollapseOnRun(el) {
     let style = getComputedStyle(el);
     if (style.getPropertyValue('--xt-collapse-height')) {
       el.classList.add('xt-calculating');
@@ -1478,7 +1452,7 @@ class Core {
    * close collapse on deactivation
    * @param {Node|HTMLElement} el Element
    */
-  specialCollapseOffRun(el) {
+  specialCollapseOff(el) {
     let style = getComputedStyle(el);
     if (style.getPropertyValue('--xt-collapse-height')) {
       let h = el.clientHeight + 'px';
@@ -1516,31 +1490,13 @@ class Core {
    * reset collapse
    * @param {Node|HTMLElement} el Element
    */
-  specialCollapseOnReset(el) {
-    if (!el.classList.contains('collapse-inverse')) {
-      let style = getComputedStyle(el);
-      if (style.getPropertyValue('--xt-collapse-height')) {
-        el.style.height = 'auto';
-      }
-      if (style.getPropertyValue('--xt-collapse-width')) {
-        el.style.width = 'auto';
-      }
+  specialCollapseReset(el) {
+    let style = getComputedStyle(el);
+    if (style.getPropertyValue('--xt-collapse-height')) {
+      el.style.height = 'auto';
     }
-  }
-
-  /**
-   * reset collapse
-   * @param {Node|HTMLElement} el Element
-   */
-  specialCollapseOffReset(el) {
-    if (el.classList.contains('collapse-inverse')) {
-      let style = getComputedStyle(el);
-      if (style.getPropertyValue('--xt-collapse-height')) {
-        el.style.height = 'auto';
-      }
-      if (style.getPropertyValue('--xt-collapse-width')) {
-        el.style.width = 'auto';
-      }
+    if (style.getPropertyValue('--xt-collapse-width')) {
+      el.style.width = 'auto';
     }
   }
 
