@@ -103,7 +103,7 @@ html.xt-scrollbar {
 
 /**
  * .xt-sticky()
- * @param {String} @mode Starting mode be 'absolute' or 'fixed' or 'fixed-always'
+ * @param {String} @mode Starting mode be 'absolute' or 'fixed'
  */
 .xt-sticky(@mode: none) {
   // defaults
@@ -142,15 +142,6 @@ html.xt-scrollbar {
     }
     .xt-container > &:not(.xt-clone):not(.active) {
       position: fixed;
-    }
-  }
-  // fixed-always mode
-  & when (@mode = 'fixed-always') {
-    &.xt-clone:not(.active) {
-      position: relative;
-    }
-    &:not(.xt-clone):not(.active) {
-      position: fixed !important;
     }
   }
   // showhide
