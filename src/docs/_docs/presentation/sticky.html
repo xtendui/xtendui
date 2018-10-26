@@ -1,17 +1,15 @@
 ---
-title: Scroll
-categories: [Javascript]
-order: 200
+title: Sticky
+categories: [Presentation]
+order: 300
 
-description: "Advanced components for scroll interaction: smooth, sticky, fade, parallax"
+description: Lorem ipsum
 ---
 
-<h2>Sticky</h2>
-
-<h3>Usage</h3>
+<h2>Usage</h2>
 
 <p>Use this markup to create a sticky. <code>[data-xt-sticky]</code> must be <a
-  href="{% link _docs/javascript.html %}#initialization">initialized by javascript</a>.</p>
+  href="{% link _docs/introduction/javascript.html %}#initialization">initialized by javascript</a>.</p>
 
 <pre>
   <code class="html">
@@ -25,7 +23,7 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
 
 <div class="alert">
   <div class="content">
-    Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-sticky">sticky
+    Instead of using html arguments you can initialize <a href="{% link _docs/introduction/javascript.html %}#initialization-sticky">sticky
     by javascript</a> using the same options syntax.
   </div>
 </div>
@@ -37,7 +35,7 @@ description: "Advanced components for scroll interaction: smooth, sticky, fade, 
   </div>
 </div>
 
-<h3>Defaults</h3>
+<h2>Defaults</h2>
 
 <p>Here are the defaults options for sticky.</p>
 
@@ -56,6 +54,8 @@ XtSticky.defaults = {
 };
   </code>
 </pre>
+
+<h2>Options</h2>
 
 <h3>Position and Mode</h3>
 
@@ -189,157 +189,3 @@ XtSticky.defaults = {
     </div>
   </div>
 </div>
-
-<h2>Fade</h2>
-
-<div class="alert box-primary">
-  <div class="content">
-    It's recomended to animate the fade elements with <code>animation</code> instead of <code>transition</code> because
-    of <a href="{% link faq.html %}#browsers-bugs-fixed-position">this bug</a>.
-  </div>
-</div>
-
-<h3>Usage</h3>
-
-<p>Use this markup to create a fade. <code>[data-xt-fade]</code> must be <a
-  href="{% link _docs/javascript.html %}#initialization">initialized by javascript</a>.</p>
-
-<pre>
-  <code class="html">
-    <div data-xt-fade>
-      <div class="fade">
-        <!-- content -->
-      </div>
-    </div>
-  </code>
-</pre>
-
-<div class="alert">
-  <div class="content">
-    Instead of using html arguments you can initialize <a href="{% link _docs/javascript.html %}#initialization-fade">fade
-    by javascript</a> using the same options syntax.
-  </div>
-</div>
-
-<h3>Defaults</h3>
-
-<p>Here are the defaults options for fade.</p>
-
-<pre>
-  <code class="js">
-Xt.Fade.defaults = {
-  "elements": ".fade",
-  "class": "in",
-  "on": "scroll resize",
-  "min": 0,
-  "max": Infinity,
-  "distance": 0.2,
-  "delayOn": false,
-  "delayOff": false,
-  "aria": false
-};
-  </code>
-</pre>
-
-<h3>Javascript</h3>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-javascript.html"
-       data-name="javascript">
-    <div class="demo-text">
-      <div class="content">
-        Example initialized by javascript on document
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Mode</h3>
-
-<p>You can set fade mode with <strong>less mixins</strong> (@TODO link less mixins).</p>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-mode-infinite.html"
-       data-name="infinite">
-    <div class="demo-text">
-      <div class="content">
-        Default mode infinite
-      </div>
-    </div>
-  </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-mode-scroll.html"
-       data-name="scroll">
-    <div class="demo-text">
-      <div class="content">
-        <code>&:not(.fade-scroll)</code>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-mode-visible.html"
-       data-name="visible">
-    <div class="demo-text">
-      <div class="content">
-        <code>&:not(.fade-visible)</code>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-mode-responsive.html"
-       data-name="responsive">
-    <div class="demo-text">
-      <div class="content">
-        It's possible to specify different modes with <strong>media query mixins</strong> (@TODO link media queries
-        mixins) for responsive
-      </div>
-    </div>
-  </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-mode-block.html"
-       data-name="block">
-    <div class="demo-text">
-      <div class="content">
-        <code>.fade-block</code>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Direction and Distance</h3>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-direction.html"
-       data-name="direction">
-    <div class="demo-text">
-      <div class="content">
-        <code>.fade-up</code> <code>.fade-down</code>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-distance.html" data-name="distance">
-    <div class="demo-text">
-      <div class="content">
-        <code>"distance": Number</code> is the window's top and bottom activation and deactivation. Factor between 0 and
-        1
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Timing</h3>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/fade/fade-delay.html" data-name="delay">
-    <div class="demo-text">
-      <div class="content">
-        <code>"delayOn": Function</code> <code>"delayOff": Function</code> return number using <strong>total</strong>
-        and <strong>current</strong>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h2>Smooth</h2>
-
-<p>@TODO</p>
-
-<h2>Parallax</h2>
-
-<p>@TODO</p>

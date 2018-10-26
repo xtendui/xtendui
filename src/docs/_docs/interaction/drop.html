@@ -1,7 +1,7 @@
 ---
 title: Drop
-categories: [Component]
-order: 200
+categories: [Interaction]
+order: 300
 
 description: Dropdown component with structured theming that can show anything.
 ---
@@ -9,7 +9,7 @@ description: Dropdown component with structured theming that can show anything.
 <h2>Usage</h2>
 
 <p>Use this markup to create a drop. <code>[data-xt-drop]</code> must be <a
-  href="{% link _docs/javascript.html %}#initialization">initialized by javascript</a>.</p>
+  href="{% link _docs/introduction/javascript.html %}#initialization">initialized by javascript</a>.</p>
 
 <pre>
   <code class="html">
@@ -30,10 +30,40 @@ description: Dropdown component with structured theming that can show anything.
 
 <div class="alert">
   <div class="content">
-    For customizing the interactions read the documentation of <a href="{% link _docs/javascript/toggle.html %}#subcomponents-drop">toggle
+    Instead of using html arguments you can initialize <a href="{% link _docs/introduction/javascript.html %}#initialization-drop">drop
+    by javascript</a> using the same options syntax.
+  </div>
+</div>
+
+<div class="alert">
+  <div class="content">
+    For customizing the interactions read the documentation of <a href="{% link _docs/interaction/toggle.html %}#subcomponents-drop">toggle
     drop</a>.
   </div>
 </div>
+
+<h2>Defaults</h2>
+
+<p>Here are the defaults options for drop.</p>
+
+<pre>
+  <code class="js">
+XtDrop.defaults = {
+  "targets": ":scope > .drop",
+  "controls": ":scope > a, :scope > button",
+  "class": "active",
+  "instant": {"elements": true},
+  "on": "click",
+  "toggle": true,
+  "min": 0,
+  "max": 1,
+  "closeOutside": "body",
+  "aria": true
+};
+  </code>
+</pre>
+
+<h2>Mode</h2>
 
 <h3>Drop of anything</h3>
 
@@ -252,7 +282,7 @@ description: Dropdown component with structured theming that can show anything.
 
 <div class="alert">
   <div class="content">
-    Read the documentation of <a href="{% link _docs/introduction/variables.html %}#component">component's variables</a>.
+    Read the documentation of <a href="{% link _docs/introduction/theming.html %}#component">component's variables</a>.
   </div>
 </div>
 
