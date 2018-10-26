@@ -61,7 +61,7 @@ a, .alink {
   }
 }
 
-// .inverse
+// .text-inverse
 
 .text-inverse {
   // links color
@@ -84,6 +84,75 @@ a, .alink {
 [disabled],
 .disabled {
   opacity: .75;
+}
+
+// caret
+
+.caret {
+  .display(flex) !important;
+  .align-items-center();
+  .justify-content-between();
+  .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-tiny);
+  &::after {
+    .margin(left, 2em);
+  }
+  // activation
+  &.active {
+    .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-tiny);
+    &::after {
+      .anim-bottom.active();
+    }
+  }
+  &.out {
+    &::after {
+      .anim-top.active();
+    }
+  }
+  // inverse
+  &.caret-inverse {
+    .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-tiny);
+    &.active {
+      .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-tiny);
+      &::after {
+        .anim-top.active();
+      }
+    }
+    &.out {
+      &::after {
+        .anim-bottom.active();
+      }
+    }
+  }
+  // horizontal
+  &.caret-horizontal {
+    .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-tiny);
+    &.active {
+      .icon-xt(@content: @icon-xt-chevron-left, @size: @icon-tiny);
+      &::after {
+        .anim-right.active();
+      }
+    }
+    &.out {
+      &::after {
+        .anim-left.active();
+      }
+    }
+    // inverse
+    &.caret-inverse {
+      .icon-xt(@content: @icon-xt-chevron-left, @size: @icon-tiny);
+      &.active {
+        .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-tiny);
+        &::after {
+          .anim-left.active();
+        }
+      }
+      &.out {
+        &::after {
+          .anim-right.active();
+        }
+      }
+    }
+  }
 }
 
 //////////////////////
@@ -340,76 +409,6 @@ a, .alink {
   letter-spacing: 0;
   text-transform: none;
 }
-
-// btn-caret
-
-.btn-caret {
-  .display(flex) !important;
-  .align-items-center();
-  .justify-content-between();
-  .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-tiny);
-  &::after {
-    .margin(left, 2em);
-  }
-  // activation
-  &.active {
-    .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-tiny);
-    &::after {
-      .anim-bottom.active();
-    }
-  }
-  &.out {
-    &::after {
-      .anim-top.active();
-    }
-  }
-  // inverse
-  &.inverse {
-    .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-tiny);
-    &.active {
-      .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-tiny);
-      &::after {
-        .anim-top.active();
-      }
-    }
-    &.out {
-      &::after {
-        .anim-bottom.active();
-      }
-    }
-  }
-  // horizontal
-  &.horizontal {
-    .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-tiny);
-    &.active {
-      .icon-xt(@content: @icon-xt-chevron-left, @size: @icon-tiny);
-      &::after {
-        .anim-right.active();
-      }
-    }
-    &.out {
-      &::after {
-        .anim-left.active();
-      }
-    }
-    // inverse
-    &.inverse {
-      .icon-xt(@content: @icon-xt-chevron-left, @size: @icon-tiny);
-      &.active {
-        .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-tiny);
-        &::after {
-          .anim-left.active();
-        }
-      }
-      &.out {
-        &::after {
-          .anim-right.active();
-        }
-      }
-    }
-  }
-}
-
 // custom
 
 .btn-close {

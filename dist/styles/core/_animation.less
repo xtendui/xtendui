@@ -40,19 +40,20 @@ transition-delay: 0ms; // @start - @child * @decrement
 
 .collapse-height {
   overflow: hidden;
-  height: 0;
-  will-change: height;
+  &:not(.collapse-inverse) {
+    height: 0;
+  }
   // custom property
   --collapse-height: true;
   > * {
     --collapse-height: initial;
   }
 }
-
 .collapse-width {
   overflow: hidden;
-  width: 0;
-  will-change: width;
+  &:not(.collapse-inverse) {
+    width: 0;
+  }
   // custom property
   --collapse-width: true;
   > * {

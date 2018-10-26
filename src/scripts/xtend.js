@@ -1270,14 +1270,8 @@ class Core {
     let options = self.options;
     // reset
     el.classList.remove('in');
-    // collapse-width and collapse-height
-    let style = getComputedStyle(el);
-    if (style.getPropertyValue('--collapse-height')) {
-      el.style.height = 'auto';
-    }
-    if (style.getPropertyValue('--collapse-width')) {
-      el.style.width = 'auto';
-    }
+    // special
+    this.specialCollapseOnReset(el);
     // queue
     if (!skipQueue) {
       // queue done
@@ -1302,6 +1296,8 @@ class Core {
     let options = self.options;
     // reset
     el.classList.remove('out');
+    // special
+    this.specialCollapseOffReset(el);
     // aria
     if (type === 'elements') {
       if (options.aria) {
@@ -1411,6 +1407,30 @@ class Core {
    * @param {Node|HTMLElement} el Element
    */
   specialCollapseOn(el) {
+    if (!el.classList.contains('collapse-inverse')) {
+      this.specialCollapseOnRun(el);
+    } else {
+      this.specialCollapseOffRun(el);
+    }
+  }
+
+  /**
+   * close collapse on deactivation
+   * @param {Node|HTMLElement} el Element
+   */
+  specialCollapseOff(el) {
+    if (!el.classList.contains('collapse-inverse')) {
+      this.specialCollapseOffRun(el);
+    } else {
+      this.specialCollapseOnRun(el);
+    }
+  }
+
+  /**
+   * open collapse on activation
+   * @param {Node|HTMLElement} el Element
+   */
+  specialCollapseOnRun(el) {
     let style = getComputedStyle(el);
     if (style.getPropertyValue('--collapse-height')) {
       el.classList.add('xt-calculating');
@@ -1420,7 +1440,7 @@ class Core {
       let h = el.clientHeight + 'px';
       let pt = el.style.paddingTop;
       let pb = el.style.paddingBottom;
-     window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () {
         el.classList.remove('xt-calculating');
         el.style.height = '0';
         el.style.paddingTop = '0';
@@ -1458,7 +1478,7 @@ class Core {
    * close collapse on deactivation
    * @param {Node|HTMLElement} el Element
    */
-  specialCollapseOff(el) {
+  specialCollapseOffRun(el) {
     let style = getComputedStyle(el);
     if (style.getPropertyValue('--collapse-height')) {
       let h = el.clientHeight + 'px';
@@ -1489,6 +1509,38 @@ class Core {
           el.style.paddingRight = '0';
         });
       });
+    }
+  }
+
+  /**
+   * reset collapse
+   * @param {Node|HTMLElement} el Element
+   */
+  specialCollapseOnReset(el) {
+    if (!el.classList.contains('collapse-inverse')) {
+      let style = getComputedStyle(el);
+      if (style.getPropertyValue('--collapse-height')) {
+        el.style.height = 'auto';
+      }
+      if (style.getPropertyValue('--collapse-width')) {
+        el.style.width = 'auto';
+      }
+    }
+  }
+
+  /**
+   * reset collapse
+   * @param {Node|HTMLElement} el Element
+   */
+  specialCollapseOffReset(el) {
+    if (el.classList.contains('collapse-inverse')) {
+      let style = getComputedStyle(el);
+      if (style.getPropertyValue('--collapse-height')) {
+        el.style.height = 'auto';
+      }
+      if (style.getPropertyValue('--collapse-width')) {
+        el.style.width = 'auto';
+      }
     }
   }
 

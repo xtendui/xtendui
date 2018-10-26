@@ -433,11 +433,23 @@ opacity: 0;
 
 .collapse-height,
 .collapse-width {
-  &.active {
-    .transition-default.active();
+  &:not(.collapse-inverse) {
+    &.active {
+      .transition-default.active();
+    }
+    &.out {
+      .transition-default.out();
+      transition-delay: @time-small;
+    }
   }
-  &.out {
-    .transition-default.out();
-    transition-delay: @time-small;
+  // inverse
+  &.collapse-inverse {
+    &.active {
+      .transition-default.out();
+      transition-delay: @time-small;
+    }
+    &.out {
+      .transition-default.active();
+    }
   }
 }
