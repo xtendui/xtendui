@@ -141,13 +141,13 @@ class Core {
         // elements
         for (let el of self.elements) {
           let found = false;
-          if (el.classList.contains(...options.classes)) {
+          if (el.classList.contains(options.classes[0])) {
             el.classList.remove(...options.classes);
             found = true;
           }
           let targets = self.getTargets(el);
           for (let tr of targets) {
-            if (tr.classList.contains(...options.classes)) {
+            if (tr.classList.contains(options.classes[0])) {
               tr.classList.remove(...options.classes);
               found = true;
             }
@@ -724,7 +724,7 @@ class Core {
    * @param {Node|HTMLElement} element To be activated
    * @param {Event} e
    */
-  eventOn(element, e) {
+  eventOn(element, e = null) {
     let self = this;
     let options = self.options;
     // toggle
@@ -810,7 +810,7 @@ class Core {
    * @param {Node|HTMLElement} element To be deactivated
    * @param {Event} e
    */
-  eventOff(element, e) {
+  eventOff(element, e = null) {
     let self = this;
     let options = self.options;
     // toggle
