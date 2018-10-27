@@ -25,6 +25,7 @@ class Core {
     self.object = object;
     if (self.object && !self.object.dataset.xtCoreDone) {
       self.object.dataset.xtCoreDone = 'true';
+      // defaults
       self.defaults = {
         "onBlock": false,
         "offBlock": false,
@@ -49,7 +50,6 @@ class Core {
       // vars
       self.elements = [];
       self.targets = [];
-      // internals
       self.detail = {};
       self.detail.queueOn = [];
       self.detail.queueOff = [];
