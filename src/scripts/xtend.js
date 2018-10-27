@@ -869,15 +869,12 @@ class Core {
       }
       // if queue too big
       if (self.detail.queueOff.length > options.max) {
-        // remove queue off and  done other queue
-        let removedOff = self.detail.queueOff.shift();
-        self.queueOffEnd(removedOff);
         // remove queue on and done other queue
         let removedOn = self.detail.queueOn.shift();
         self.queueOnEnd(removedOn);
-        //console.log('obj', obj['elements'].groupElements.single);
-        //console.log('off removed', removedOff['elements'].groupElements.single);
-        //console.log('on removed', removedOn['elements'].groupElements.single);
+        // remove queue off and  done other queue
+        let removedOff = self.detail.queueOff.shift();
+        self.queueOffEnd(removedOff);
       }
       // queue run
       for (let type in self.detail.queueOff[0]) {
@@ -896,12 +893,15 @@ class Core {
    */
   queueOnEnd(obj) {
     let self = this;
-    // done other queue
+    // check if done
     for (let type in obj) {
       if (obj[type].done) {
         for (let el of obj[type].queueEls) {
+          // clear timeout and frame
+          window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
           clearTimeout(el.dataset.xtDelayTimeout);
           clearTimeout(el.dataset.xtAnimTimeout);
+          // done other queue
           self.queueOffDelayDone(obj, el, type, true);
           self.queueOffAnimDone(obj, el, type, true);
         }
@@ -915,12 +915,15 @@ class Core {
    */
   queueOffEnd(obj) {
     let self = this;
-    // done other queue
+    // check if done
     for (let type in obj) {
       if (obj[type].done) {
         for (let el of obj[type].queueEls) {
+          // clear timeout and frame
+          window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
           clearTimeout(el.dataset.xtDelayTimeout);
           clearTimeout(el.dataset.xtAnimTimeout);
+          // done other queue
           self.queueOnDelayDone(obj, el, type, true);
           self.queueOnAnimDone(obj, el, type, true);
         }
@@ -932,16 +935,15 @@ class Core {
    * queue on done
    * @param {Object} obj Queue object
    * @param {String} type Type of element
+   * @param {Boolean} skipQueue If skip queue
    */
-  queueOnDone(obj, type) {
+  queueOnDone(obj, type, skipQueue = false) {
     let self = this;
     let options = self.options;
-    // queueOnDone
-    if (obj[type]) {
+    // check
+    if (obj[type] && !skipQueue) {
       // done
       obj[type].done = true;
-      self.queueOff(type, self.detail.queueOff.length - 1);
-      // done
       let done = 0;
       for (let type in obj) {
         if (obj[type].done) {
@@ -962,6 +964,8 @@ class Core {
           el.focus();
         }
       }
+      // queue
+      self.queueOff(type, self.detail.queueOff.length - 1);
       // all done
       if (done === Object.entries(obj).length) {
         // remove queue
@@ -974,16 +978,15 @@ class Core {
    * queue off done
    * @param {Object} obj Queue object
    * @param {String} type Type of element
+   * @param {Boolean} skipQueue If skip queue
    */
-  queueOffDone(obj, type) {
+  queueOffDone(obj, type, skipQueue = false) {
     let self = this;
     let options = self.options;
-    // queueOnDone
-    if (obj[type]) {
+    // check
+    if (obj[type] && !skipQueue) {
       // done
       obj[type].done = true;
-      self.queueOn(type, self.detail.queueOn.length - 1);
-      // done
       let done = 0;
       for (let type in obj) {
         if (obj[type].done) {
@@ -994,6 +997,7 @@ class Core {
       if (done === 1) {
         // special
         self.specialClassHtmlOff();
+        self.specialScrollbarOff();
         // focus
         if (options.scrollbar) {
           Xt.focus.block = false;
@@ -1001,10 +1005,10 @@ class Core {
           Xt.focus.current.focus();
         }
       }
+      // queue
+      self.queueOn(type, self.detail.queueOn.length - 1);
       // all done
       if (done === Object.entries(obj).length) {
-        // special
-        self.specialScrollbarOff();
         // remove queue
         self.detail.queueOff.pop();
       }
@@ -1182,12 +1186,12 @@ class Core {
     // queue
     if (!skipQueue) {
       self.queueOnAnim(obj, el, type);
-      // queue done
+    }
+    // queue done
+    if (typeof options.instant === 'object' && options.instant[type]) {
       let els = obj[type].queueEls;
       if (el === els[els.length - 1]) { // only if last element
-        if (typeof options.instant === 'object' && options.instant[type]) {
-          self.queueOnDone(obj, type);
-        }
+        self.queueOnDone(obj, type, skipQueue);
       }
     }
     // listener dispatch
@@ -1217,12 +1221,12 @@ class Core {
     // queue
     if (!skipQueue) {
       self.queueOffAnim(obj, el, type);
-      // queue done
+    }
+    // queue done
+    if (typeof options.instant === 'object' && options.instant[type]) {
       let els = obj[type].queueEls;
       if (el === els[els.length - 1]) { // only if last element
-        if (typeof options.instant === 'object' && options.instant[type]) {
-          self.queueOffDone(obj, type);
-        }
+        self.queueOffDone(obj, type, skipQueue);
       }
     }
     // listener dispatch
@@ -1285,14 +1289,11 @@ class Core {
     el.classList.remove('in');
     // special
     self.specialCollapseReset(el);
-    // queue
-    if (!skipQueue) {
-      // queue done
+    // queue done
+    if (!options.instant || !options.instant[type]) {
       let els = obj[type].queueEls;
-      if (!options.instant || !options.instant[type]) {
-        if (el === els[els.length - 1]) { // only if last element
-          self.queueOnDone(obj, type);
-        }
+      if (el === els[els.length - 1]) { // only if last element
+        self.queueOnDone(obj, type, skipQueue);
       }
     }
   }
@@ -1325,14 +1326,11 @@ class Core {
         }
       }
     }
-    // queue
-    if (!skipQueue) {
-      // queue done
+    // queue done
+    if (!options.instant || !options.instant[type]) {
       let els = obj[type].queueEls;
-      if (!options.instant || !options.instant[type]) {
-        if (el === els[els.length - 1]) { // only if last element
-          self.queueOffDone(obj, type);
-        }
+      if (el === els[els.length - 1]) { // only if last element
+        self.queueOffDone(obj, type, skipQueue);
       }
     }
   }
@@ -1431,17 +1429,18 @@ class Core {
       let h = el.clientHeight + 'px';
       let pt = el.style.paddingTop;
       let pb = el.style.paddingBottom;
-      window.requestAnimationFrame(function () {
+      window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
+      el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
         el.classList.remove('xt-calculating');
         el.style.height = '0';
         el.style.paddingTop = '0';
         el.style.paddingBottom = '0';
-        window.requestAnimationFrame(function () {
+        el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
           el.style.height = h;
           el.style.paddingTop = pt;
           el.style.paddingBottom = pb;
-        });
-      });
+        }).toString();
+      }).toString();
     }
     if (style.getPropertyValue('--xt-collapse-width')) {
       el.classList.add('xt-calculating');
@@ -1451,17 +1450,18 @@ class Core {
       let w = el.clientHeight + 'px';
       let pl = el.style.paddingLeft;
       let pr = el.style.paddingRight;
-      window.requestAnimationFrame(function () {
+      window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
+      el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
         el.classList.remove('xt-calculating');
         el.style.width = '0';
         el.style.paddingLeft = '0';
         el.style.paddingRight = '0';
-        window.requestAnimationFrame(function () {
+        el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
           el.style.width = w;
           el.style.paddingLeft = pl;
           el.style.paddingRight = pr;
-        });
-      });
+        }).toString();
+      }).toString();
     }
   }
 
@@ -1475,31 +1475,33 @@ class Core {
       let h = el.clientHeight + 'px';
       let pt = el.style.paddingTop;
       let pb = el.style.paddingBottom;
-      window.requestAnimationFrame(function () {
+      window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
+      el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
         el.style.height = h;
         el.style.paddingTop = pt;
         el.style.paddingBottom = pb;
-        window.requestAnimationFrame(function () {
+        el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
           el.style.height = '0';
           el.style.paddingTop = '0';
           el.style.paddingBottom = '0';
-        });
-      });
+        }).toString();
+      }).toString();
     }
     if (style.getPropertyValue('--xt-collapse-width')) {
       let w = el.clientWidth + 'px';
       let pl = el.style.paddingLeft;
       let pr = el.style.paddingRight;
-      window.requestAnimationFrame(function () {
+      window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
+      el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
         el.style.width = w;
         el.style.paddingLeft = pl;
         el.style.paddingRight = pr;
-        window.requestAnimationFrame(function () {
+        el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
           el.style.width = '0';
           el.style.paddingLeft = '0';
           el.style.paddingRight = '0';
-        });
-      });
+        }).toString();
+      }).toString();
     }
   }
 
@@ -1612,20 +1614,23 @@ class Core {
     let options = self.options;
     // scrollbar on
     if (options.scrollbar) {
-      let elements;
       let width = Xt.scrollbarWidth();
+      // scrollbar
+      let container = document.documentElement;
+      container.style.paddingRight = width + 'px';
+      container.classList.add('xt-scrollbar');
       // check fixed
-      elements = document.querySelectorAll('.xt-check-fixed > *');
-      for (let element of elements) {
-        let style = getComputedStyle(element);
+      let checks = document.querySelectorAll('.xt-check-fixed > *');
+      for (let check of checks) {
+        let style = getComputedStyle(check);
         if (style.position === 'fixed') {
-          element.classList.add('xt-fixed');
+          check.classList.add('xt-fixed');
         } else {
-          element.classList.remove('xt-fixed');
+          check.classList.remove('xt-fixed');
         }
       }
       // fixed
-      elements = document.querySelectorAll('.xt-fixed');
+      let elements = document.querySelectorAll('.xt-fixed');
       for (let element of elements) {
         element.style.paddingRight = '';
         if (self.normalizeWidth(element.clientWidth) === '') {
@@ -1642,14 +1647,10 @@ class Core {
         }
       }
       // backdrop
-      elements = self.object.querySelectorAll(':scope > .xt-backdrop');
-      for (let element of elements) {
-        element.style.right = width + 'px';
+      let backdrops = self.object.querySelectorAll(':scope > .xt-backdrop');
+      for (let backdrop of backdrops) {
+        backdrop.style.right = width + 'px';
       }
-      // scroll
-      let container = document.documentElement;
-      container.style.paddingRight = width + 'px';
-      container.classList.add('xt-scrollbar');
     }
   }
 
@@ -1661,9 +1662,12 @@ class Core {
     let options = self.options;
     // scrollbar off
     if (options.scrollbar) {
-      let elements;
+      // scrollbar
+      let container = document.documentElement;
+      container.style.paddingRight = '';
+      container.classList.remove('xt-scrollbar');
       // fixed
-      elements = document.querySelectorAll('.xt-fixed');
+      let elements = document.querySelectorAll('.xt-fixed');
       for (let element of elements) {
         element.classList.add('no-transition');
         window.requestAnimationFrame(function () {
@@ -1674,14 +1678,10 @@ class Core {
         });
       }
       // backdrop
-      elements = self.object.querySelectorAll(':scope > .xt-backdrop');
-      for (let element of elements) {
-        element.style.right = '';
+      let backdrops = self.object.querySelectorAll(':scope > .xt-backdrop');
+      for (let backdrop of backdrops) {
+        backdrop.style.right = '';
       }
-      // scroll
-      let container = document.documentElement;
-      container.style.paddingRight = '';
-      container.classList.remove('xt-scrollbar');
     }
   }
 
