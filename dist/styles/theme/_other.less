@@ -11,8 +11,14 @@
   // animations
   &.active {
     .anim-horizontal.active();
+    &.direction-inverse {
+      .anim-horizontal-inverse.active();
+    }
   }
   &.out {
     .anim-horizontal.out();
+    &.direction-inverse {
+      .anim-horizontal-inverse.out();
+    }
   }
 }

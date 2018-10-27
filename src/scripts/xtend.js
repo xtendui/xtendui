@@ -724,19 +724,15 @@ class Core {
 
   /**
    * set index and direction
-   * @param {Array} all All objects to be decorate
+   * @param {Node|HTMLElement} el Elements to be deactivated
    */
-  decorateDirection(all) {
+  decorateDirection(el) {
     let self = this;
     // decorateDirection
     if (!self.inverseDirection) {
-      for (let el of all) {
-        el.classList.remove('direction-inverse');
-      }
+      el.classList.remove('direction-inverse');
     } else {
-      for (let el of all) {
-        el.classList.add('direction-inverse');
-      }
+      el.classList.add('direction-inverse');
     }
   }
 
@@ -775,7 +771,6 @@ class Core {
       let targets = self.getTargets(element);
       let elementsInner = self.getInside(element, options.elementsInner);
       let targetsInner = self.getInside(targets, options.targetsInner);
-      self.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // if currents > max
       let currents = self.getCurrents();
       if (currents.length > options.max) {
@@ -860,7 +855,6 @@ class Core {
       let targets = self.getTargets(element);
       let elementsInner = self.getInside(element, options.elementsInner);
       let targetsInner = self.getInside(targets, options.targetsInner);
-      self.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // if queue too big // @TODO
       //self.queueOnTodo();
       //self.queueOffTodo();
@@ -1203,6 +1197,7 @@ class Core {
     el.classList.add(...options.classes);
     el.classList.add('in');
     el.classList.remove('out');
+    self.decorateDirection(el);
     // special
     self.specialCenter(el);
     self.specialMiddle(el);
@@ -1255,6 +1250,7 @@ class Core {
     el.classList.remove(...options.classes);
     el.classList.remove('in');
     el.classList.add('out');
+    self.decorateDirection(el);
     // special
     self.specialCollapseOff(el);
     if (type === 'targets' || type === 'targetsInner') {
