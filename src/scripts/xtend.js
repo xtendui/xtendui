@@ -1931,31 +1931,31 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     if (!e.button || e.button !== 2) { // not right click or it gets stuck
-      //if (!this.checkAnim(Xt.arrSingle(target))) { // @TODO
-      // save event
-      this.detail.eInit = e;
-      // logic
-      let eventLimit = this.container.querySelectorAll('.event-limit');
-      if (eventLimit.length) {
-        if (Xt.checkOutside(e, eventLimit)) {
+      if (!this.checkAnim(Xt.arrSingle(target))) { // @TODO
+        // save event
+        this.detail.eInit = e;
+        // logic
+        let eventLimit = this.container.querySelectorAll('.event-limit');
+        if (eventLimit.length) {
+          if (Xt.checkOutside(e, eventLimit)) {
+            this.eventDragStart(target, e);
+          }
+        } else {
           this.eventDragStart(target, e);
         }
-      } else {
-        this.eventDragStart(target, e);
+        // auto
+        if (options.autoPause) {
+          this.autoPause();
+        }
+        // event off
+        let dragEndHandler = Xt.dataStorage.put(window, 'dragEndHandler' + self.namespace,
+          self.eventDragEndHandler.bind(self).bind(self, target));
+        let eventsOff = ['mouseup', 'touchend'];
+        for (let event of eventsOff) {
+          window.removeEventListener(event, dragEndHandler);
+          window.addEventListener(event, dragEndHandler);
+        }
       }
-      // auto
-      if (options.autoPause) {
-        this.autoPause();
-      }
-      // event off
-      let dragEndHandler = Xt.dataStorage.put(window, 'dragEndHandler' + self.namespace,
-        self.eventDragEndHandler.bind(self).bind(self, target));
-      let eventsOff = ['mouseup', 'touchend'];
-      for (let event of eventsOff) {
-        window.removeEventListener(event, dragEndHandler);
-        window.addEventListener(event, dragEndHandler);
-      }
-      //}
     }
   }
 
@@ -1967,27 +1967,27 @@ class Slider extends Core {
   eventDragEndHandler(target, e) {
     let self = this;
     let options = self.options;
-    //if (!this.checkAnim(Xt.arrSingle(target))) { // @TODO
-    // logic
-    let eventLimit = this.container.querySelectorAll('.event-limit');
-    if (eventLimit.length) {
-      if (Xt.checkOutside(e, eventLimit)) {
+    if (!this.checkAnim(Xt.arrSingle(target))) { // @TODO
+      // logic
+      let eventLimit = this.container.querySelectorAll('.event-limit');
+      if (eventLimit.length) {
+        if (Xt.checkOutside(e, eventLimit)) {
+          this.eventDragEnd(target, e);
+        }
+      } else {
         this.eventDragEnd(target, e);
       }
-    } else {
-      this.eventDragEnd(target, e);
+      // auto
+      if (options.autoPause) {
+        this.autoPause();
+      }
+      // event off
+      let dragEndHandler = Xt.dataStorage.get(window, 'dragEndHandler' + self.namespace);
+      let eventsOff = ['mouseup', 'touchend'];
+      for (let event of eventsOff) {
+        window.removeEventListener(event, dragEndHandler);
+      }
     }
-    // auto
-    if (options.autoPause) {
-      this.autoPause();
-    }
-    // event off
-    let dragEndHandler = Xt.dataStorage.get(window, 'dragEndHandler' + self.namespace);
-    let eventsOff = ['mouseup', 'touchend'];
-    for (let event of eventsOff) {
-      window.removeEventListener(event, dragEndHandler);
-    }
-    //}
   }
 
   /**

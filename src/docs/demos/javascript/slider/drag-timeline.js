@@ -16,7 +16,8 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     "auto": 6000,
     "autoPause": 6000,
     "drag": true,
-    "timing": time * 1000
+    "durationOn": time * 1000,
+    "durationOff": time * 1000
   });
 
   // slider items
@@ -85,7 +86,6 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       let target = this;
       let xMax = target.clientWidth;
       // complete drag
-      Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
       if (!target.classList.contains('direction-inverse')) {
         // mask
         TweenMax.to(target, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
