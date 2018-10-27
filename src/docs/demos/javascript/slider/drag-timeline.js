@@ -51,7 +51,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         // content delay inverse
         contents[z].dataset.tlDelayInverse = Math.min(delaycontent * z, delaycontentMax).toString();
       }
-      // pre initial drag position
+      // setup drag position
       TweenMax.set(target, {opacity: 0});
       if (!target.classList.contains('direction-inverse')) {
         // mask
@@ -76,7 +76,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
           window.tl[z].seek('startDelay' + '-=' + content.dataset.tlDelayInverse).tweenTo('middle', {ease: 'easeIn'});
         }
       }
-      // reset drag
+      // drag position
       TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeIn'});
       TweenMax.to(target.children[0], time, {x: 0, ease: 'easeIn'});
     });

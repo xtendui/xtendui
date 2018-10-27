@@ -16,7 +16,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       let xMax = target.clientWidth;
       // dragging
       target.classList.add('dragging');
-      // pre initial drag position
+      // setup drag position
       target.style.opacity = '0';
       if (!target.classList.contains('direction-inverse')) {
         target.style.transform = 'translateX(' + xMax + 'px)';
@@ -25,7 +25,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         target.style.transform = 'translateX(' + (-xMax) + 'px)';
         target.children[0].style.transform = 'translateX(' + xMax + 'px)';
       }
-      // initial drag position
+      // drag position
       window.cancelAnimationFrame(parseFloat(target.dataset.xtDragResetFrame));
       target.dataset.xtDragResetFrame = window.requestAnimationFrame(function () {
         // dragging

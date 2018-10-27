@@ -1107,7 +1107,7 @@ class Core {
     for (let el of els) {
       // delay
       let delay;
-      if (!options.instant || !options.instant[type]) {
+      if (!options.instant || !options.instant[type]) { // @FIX queue instant
         if (options.delayOn) {
           if (isNaN(options.delayOn)) {
             let count = parseInt(el.dataset.xtOnCount) || obj[type].queueEls.findIndex(x => x === el);
@@ -1152,7 +1152,7 @@ class Core {
     for (let el of els) {
       // delay
       let delay;
-      if (!options.instant || !options.instant[type]) {
+      if (!options.instant || !options.instant[type]) { // @FIX queue instant
         if (options.delayOff) {
           if (isNaN(options.delayOff)) {
             let count = parseInt(el.dataset.xtOffCount) || obj[type].queueEls.findIndex(x => x === el);
