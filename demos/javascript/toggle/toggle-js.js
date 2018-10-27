@@ -1,4 +1,5 @@
 let time = .6;
+let delay = .3;
 let animSize = 15;
 
 CustomEase.create('easeIn', '.41, .1, .175, 1');
@@ -10,8 +11,10 @@ for (let [i, el] of document.querySelectorAll('#toggle-0').entries()) {
 
   // toggle
   let toggle = new Xt.Toggle(el, {
-    "durationOn": 1000,
-    "durationOff": 1000
+    "durationOn": time * 1000,
+    "durationOff": time * 1000,
+    "delayOn": delay * 1000,
+    "delayOff": delay * 1000
   });
 
   // toggle items
