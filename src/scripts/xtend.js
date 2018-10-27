@@ -774,18 +774,9 @@ class Core {
       // if currents > max
       let currents = self.getCurrents();
       if (currents.length > options.max) {
-        /*
-        // remove queue and end
-        let removed = self.detail.queueOn.pop();
-        console.log('CURRENTS RESET'); // @TODO
-        self.queueOffEnd(removed);
-        */
         // deactivate old
         self.eventOff(currents[0]);
       }
-      // if queue too big // @TODO
-      //self.queueOnTodo();
-      //self.queueOffTodo();
       // queue obj
       let obj = {};
       if (groupElements.all.length) {
@@ -817,18 +808,6 @@ class Core {
       } else {
         self.detail.queueOn.unshift(obj);
       }
-      // queue remove duplicate // @TODO
-      /*
-      for (let i = 0; i < self.detail.queueOff.length - 1; i++) { // - 1 not the last one running!
-        let check = self.detail.queueOff[i];
-        if (self.detail.queueOn[0]['elements'].groupElements.single === check['elements'].groupElements.single) {
-          let removed = self.detail.queueOff.splice(i, 1);
-          console.log('on removeoff', check['elements'].groupElements.single, self.detail.queueOff, self.detail.queueOn);
-          self.queueOffEnd(check);
-          break;
-        }
-      }
-      */
       // queue run
       for (let type in self.detail.queueOn[0]) {
         self.queueOn(type, 0, true);
@@ -857,9 +836,6 @@ class Core {
       let targets = self.getTargets(element);
       let elementsInner = self.getInside(element, options.elementsInner);
       let targetsInner = self.getInside(targets, options.targetsInner);
-      // if queue too big // @TODO
-      //self.queueOnTodo();
-      //self.queueOffTodo();
       // queue obj
       let obj = {};
       if (groupElements.all.length) {
@@ -891,18 +867,18 @@ class Core {
       } else {
         self.detail.queueOff.unshift(obj);
       }
-      // queue remove duplicate // @TODO
-      /*
-      for (let i = 0; i < self.detail.queueOn.length - 1; i++) { // - 1 not the last one running!
-        let check = self.detail.queueOn[i];
-        if (self.detail.queueOff[0]['elements'].groupElements.single === check['elements'].groupElements.single) {
-          let removed = self.detail.queueOn.splice(i, 1);
-          console.log('off removeon', check['elements'].groupElements.single, self.detail.queueOn, self.detail.queueOff);
-          self.queueOnEnd(check);
-          break;
-        }
+      // if queue too big
+      if (self.detail.queueOff.length > options.max) {
+        // remove queue off and  done other queue
+        let removedOff = self.detail.queueOff.shift();
+        self.queueOffEnd(removedOff);
+        // remove queue on and done other queue
+        let removedOn = self.detail.queueOn.shift();
+        self.queueOnEnd(removedOn);
+        //console.log('obj', obj['elements'].groupElements.single);
+        //console.log('off removed', removedOff['elements'].groupElements.single);
+        //console.log('on removed', removedOn['elements'].groupElements.single);
       }
-      */
       // queue run
       for (let type in self.detail.queueOff[0]) {
         self.queueOff(type, 0, true);
@@ -910,38 +886,44 @@ class Core {
     }
   }
 
+  //////////////////////
+  // queue utils
+  //////////////////////
+
   /**
-   * queue on
-   * @param {String} type Type of element
-   * @param {Number} index Queue index
-   * @param {Boolean} queueInitial If it's the initial queue
+   * queue on end
+   * @param {Object} obj Queue object to end
    */
-  queueOn(type, index, queueInitial = false) {
+  queueOnEnd(obj) {
     let self = this;
-    // queueOn
-    let obj = self.detail.queueOn[index];
-    if (obj && obj[type] && !obj[type].done) {
-      let objOther = self.detail.queueOff[self.detail.queueOff.length - 1];
-      if (!objOther || !objOther[type] || objOther[type].done) {
-        self.queueOnDelay(obj, type, queueInitial);
+    // done other queue
+    for (let type in obj) {
+      if (obj[type].done) {
+        for (let el of obj[type].queueEls) {
+          clearTimeout(el.dataset.xtDelayTimeout);
+          clearTimeout(el.dataset.xtAnimTimeout);
+          self.queueOffDelayDone(obj, el, type, true);
+          self.queueOffAnimDone(obj, el, type, true);
+        }
       }
     }
   }
 
   /**
-   * queue off
-   * @param {String} type Type of element
-   * @param {Number} index Queue index
-   * @param {Boolean} queueInitial If it's the initial queue
+   * queue off end
+   * @param {Object} obj Queue object to end
    */
-  queueOff(type, index, queueInitial = false) {
+  queueOffEnd(obj) {
     let self = this;
-    // queueOff
-    let obj = self.detail.queueOff[index];
-    if (obj && obj[type] && !obj[type].done) {
-      let objOther = self.detail.queueOn[self.detail.queueOn.length - 1];
-      if (!objOther || !objOther[type] || objOther[type].done) {
-        self.queueOffDelay(obj, type, queueInitial);
+    // done other queue
+    for (let type in obj) {
+      if (obj[type].done) {
+        for (let el of obj[type].queueEls) {
+          clearTimeout(el.dataset.xtDelayTimeout);
+          clearTimeout(el.dataset.xtAnimTimeout);
+          self.queueOnDelayDone(obj, el, type, true);
+          self.queueOnAnimDone(obj, el, type, true);
+        }
       }
     }
   }
@@ -1029,71 +1011,43 @@ class Core {
     }
   }
 
-  /**
-   * if queue on too big, end what is still to do
-   */
-  queueOnTodo() {
-    let self = this;
-    let options = self.options;
-    // end what is still to do
-    if (self.detail.queueOn.length > options.max) {
-      // remove queue and end
-      let removed = self.detail.queueOn.shift();
-      self.queueOnEnd(removed);
-    }
-  }
+  //////////////////////
+  // queue
+  //////////////////////
 
   /**
-   * if queue off too big, end what is still to do
+   * queue on
+   * @param {String} type Type of element
+   * @param {Number} index Queue index
+   * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOffTodo() {
+  queueOn(type, index, queueInitial = false) {
     let self = this;
-    let options = self.options;
-    // end what is still to do
-    if (self.detail.queueOff.length > options.max) {
-      // remove queue and end
-      let removed = self.detail.queueOff.shift();
-      self.queueOffEnd(removed);
-    }
-  }
-
-  /**
-   * queue on end
-   * @param {Object} obj Queue object to end
-   */
-  queueOnEnd(obj) {
-    let self = this;
-    // end queue
-    for (let type in obj) {
-      if (!obj[type].done) {
-        for (let el of obj[type].queueEls) {
-          clearTimeout(el.dataset.xtDelayTimeout);
-          clearTimeout(el.dataset.xtAnimTimeout);
-          self.queueOnDelayDone(obj, el, type, true);
-          self.queueOnAnimDone(obj, el, type, true);
-        }
+    // queueOn
+    let obj = self.detail.queueOn[index];
+    if (obj && obj[type] && !obj[type].done) {
+      let objOther = self.detail.queueOff[self.detail.queueOff.length - 1];
+      if (!objOther || !objOther[type] || objOther[type].done) {
+        self.queueOnDelay(obj, type, queueInitial);
       }
-      self.queueOff(type, self.detail.queueOff.length - 1);
     }
   }
 
   /**
-   * queue off end
-   * @param {Object} obj Queue object to end
+   * queue off
+   * @param {String} type Type of element
+   * @param {Number} index Queue index
+   * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOffEnd(obj) {
+  queueOff(type, index, queueInitial = false) {
     let self = this;
-    // end queue
-    for (let type in obj) {
-      if (!obj[type].done) {
-        for (let el of obj[type].queueEls) {
-          clearTimeout(el.dataset.xtDelayTimeout);
-          clearTimeout(el.dataset.xtAnimTimeout);
-          self.queueOffDelayDone(obj, el, type, true);
-          self.queueOffAnimDone(obj, el, type, true);
-        }
+    // queueOff
+    let obj = self.detail.queueOff[index];
+    if (obj && obj[type] && !obj[type].done) {
+      let objOther = self.detail.queueOn[self.detail.queueOn.length - 1];
+      if (!objOther || !objOther[type] || objOther[type].done) {
+        self.queueOffDelay(obj, type, queueInitial);
       }
-      self.queueOn(type, self.detail.queueOn.length - 1);
     }
   }
 
@@ -2405,15 +2359,15 @@ class Sticky extends Core {
     }
     // set add
     if (add !== self.detail.addOld) {
-      element.classList.add('no-transition');
-      if (self.detail.addOld !== undefined) {
-        element.style[options.position] = rectElTop + 'px';
-      }
-      window.cancelAnimationFrame(parseFloat(element.dataset.xtEventFrame));
-      element.dataset.xtEventFrame = window.requestAnimationFrame(function () {
-        element.classList.remove('no-transition');
+      // NO BUGS initial top with requestAnimationFrame
+      // element.classList.add('no-transition');
+      // if (self.detail.addOld !== undefined) {
+      //   element.style[options.position] = rectElTop + 'px';
+      // }
+      // element.dataset.xtEventFrame = window.requestAnimationFrame(function () {
+      //   element.classList.remove('no-transition');
         element.style[options.position] = add + 'px';
-      }).toString();
+      // }).toString();
     }
     // fix position fixed width 100% of parent
     let width = self.normalizeWidth(self.container[0].clientWidth);
