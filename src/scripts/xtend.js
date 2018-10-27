@@ -2156,8 +2156,8 @@ class Sticky extends Core {
       self.object.classList.remove('sticky-hide-up');
     }
     // z-index
-    self.unique = Xt.getUniqueNum();
-    self.object.style.zIndex = '' + (100 - self.unique);
+    self.zIndex = 100 - Xt.getUniqueNum();
+    self.object.style.zIndex = self.zIndex;
   }
 
   /**
