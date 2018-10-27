@@ -20,10 +20,12 @@ class Core {
    * @constructor
    */
   constructor(object, jsOptions = {}) {
-    this.object = object;
-    if (this.object && !this.object.dataset.xtCoreDone) {
-      this.object.dataset.xtCoreDone = 'true';
-      this.defaults = {
+    let self = this;
+    // constructor
+    self.object = object;
+    if (self.object && !self.object.dataset.xtCoreDone) {
+      self.object.dataset.xtCoreDone = 'true';
+      self.defaults = {
         "onBlock": false,
         "offBlock": false,
         "auto": false,
@@ -34,29 +36,29 @@ class Core {
         "durationOn": false,
         "durationOff": false
       };
-      this.defaults = Xt.merge([this.defaults, this.constructor.defaults]);
+      self.defaults = Xt.merge([self.defaults, self.constructor.defaults]);
       // js options
-      this.options = Xt.merge([this.defaults, jsOptions]);
+      self.options = Xt.merge([self.defaults, jsOptions]);
       // markup options
-      let markupOptions = this.object.getAttribute('data-xt-' + this.constructor.componentName);
-      this.options = Xt.merge([this.options, markupOptions ? JSON.parse(markupOptions) : {}]);
+      let markupOptions = self.object.getAttribute('data-xt-' + self.constructor.componentName);
+      self.options = Xt.merge([self.options, markupOptions ? JSON.parse(markupOptions) : {}]);
       // classes
-      if (this.options.class) {
-        this.options.classes = [...this.options.class.split(' ')];
+      if (self.options.class) {
+        self.options.classes = [...self.options.class.split(' ')];
       }
       // vars
-      this.elements = [];
-      this.targets = [];
+      self.elements = [];
+      self.targets = [];
       // internals
-      this.detail = {};
-      this.detail.queueOn = [];
-      this.detail.queueOff = [];
+      self.detail = {};
+      self.detail.queueOn = [];
+      self.detail.queueOff = [];
       // init
-      this.initSetup();
-      this.initScope();
-      this.initCurrents();
-      this.initEvents();
-      this.initAria();
+      self.initSetup();
+      self.initScope();
+      self.initCurrents();
+      self.initEvents();
+      self.initAria();
     }
   }
 
@@ -73,21 +75,21 @@ class Core {
     // setup (based on xtend mode)
     if (options.targets && options.targets.indexOf('#') !== -1) {
       // xtend all mode
-      this.mode = 'unique';
-      this.container = document.documentElement;
+      self.mode = 'unique';
+      self.container = document.documentElement;
       options.max = Infinity;
-      this.namespace = self.constructor.componentName + '-' + options.targets.toString() + '-' + options.classes.toString();
+      self.namespace = self.constructor.componentName + '-' + options.targets.toString() + '-' + options.classes.toString();
     } else {
       // xtend unique mode
-      this.mode = 'multiple';
-      this.container = this.object;
-      this.namespace = self.constructor.componentName + '-' + Xt.getUniqueID();
+      self.mode = 'multiple';
+      self.container = self.object;
+      self.namespace = self.constructor.componentName + '-' + Xt.getUniqueID();
     }
     // final namespace
-    this.namespace = this.namespace.replace(/^[^a-z]+|[^\w:.-]+/gi, '');
+    self.namespace = self.namespace.replace(/^[^a-z]+|[^\w:.-]+/gi, '');
     // currents array based on namespace (so shared between Xt objects)
-    if (!this.getCurrents()) {
-      this.setCurrents([]);
+    if (!self.getCurrents()) {
+      self.setCurrents([]);
     }
   }
 
@@ -99,10 +101,10 @@ class Core {
     let options = self.options;
     // elements
     if (options.elements) {
-      this.elements = Xt.arrSingle(this.container.querySelectorAll(options.elements));
+      self.elements = Xt.arrSingle(self.container.querySelectorAll(options.elements));
     }
-    if (!this.elements.length) {
-      this.elements = Xt.arrSingle(this.object);
+    if (!self.elements.length) {
+      self.elements = Xt.arrSingle(self.object);
       // @FIX on next frame set all elements querying the namespace
       window.requestAnimationFrame(function () {
         self.elements = Xt.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']'));
@@ -110,15 +112,15 @@ class Core {
     }
     // targets
     if (options.targets) {
-      let arr = Array.from(this.container.querySelectorAll(options.targets));
+      let arr = Array.from(self.container.querySelectorAll(options.targets));
       arr = arr.filter(x => !Xt.parents(x, options.targets).length); // filter out parent
-      this.targets = arr;
+      self.targets = arr;
     }
     // appendTo
     if (options.appendTo) {
       let appendToTarget = document.querySelectorAll(options.appendTo);
       if (appendToTarget.length) {
-        for (let el of this.targets) {
+        for (let el of self.targets) {
           appendToTarget[0].appendChild(el);
         }
       }
@@ -132,7 +134,7 @@ class Core {
     let self = this;
     let options = self.options;
     // @FIX set namespace for next frame
-    for (let el of this.elements) {
+    for (let el of self.elements) {
       el.dataset.xtNamespace = self.namespace;
     }
     // automatic initial currents
@@ -175,8 +177,8 @@ class Core {
     let options = self.options;
     // aria
     if (options.aria) {
-      if (this.targets.length) {
-        for (let el of this.elements) {
+      if (self.targets.length) {
+        for (let el of self.elements) {
           let ariaEls = self.getInside(el, options.ariaControls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
           // id
@@ -187,7 +189,7 @@ class Core {
           // selected
           ariaEl.setAttribute('aria-selected', 'false');
         }
-        for (let tr of this.targets) {
+        for (let tr of self.targets) {
           let els = self.getElementsFromTarget(tr);
           // id
           let id = tr.getAttribute('id');
@@ -211,7 +213,7 @@ class Core {
           }
           tr.setAttribute('aria-labelledby', str.trim());
         }
-        for (let el of this.elements) {
+        for (let el of self.elements) {
           let trs = self.getTargets(el);
           let ariaEls = self.getInside(el, options.ariaControls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
@@ -236,7 +238,7 @@ class Core {
     // toggle
     options.toggle = !options.off;
     // events
-    for (let el of this.elements) {
+    for (let el of self.elements) {
       // event on
       let onHandler = Xt.dataStorage.put(el, 'onHandler' + self.namespace,
         self.eventOnHandler.bind(self).bind(self, el));
@@ -270,8 +272,8 @@ class Core {
       el.addEventListener('off', offHandler);
     }
     // listener
-    for (let tr of this.targets) {
-      let el = this.getElementsFromTarget(tr)[0];
+    for (let tr of self.targets) {
+      let el = self.getElementsFromTarget(tr)[0];
       if (el) {
         // event
         let onHandler = Xt.dataStorage.get(el, 'onHandler' + self.namespace);
@@ -284,7 +286,7 @@ class Core {
     }
     // auto
     if (options.auto) {
-      this.autoStart();
+      self.autoStart();
       // focus auto
       window.removeEventListener('focus', self.autoStart.bind(self, false));
       window.addEventListener('focus', self.autoStart.bind(self, false));
@@ -302,6 +304,7 @@ class Core {
   eventOnHandler(element, e) {
     let self = this;
     let options = self.options;
+    // handler
     if (!e.detail || !e.detail.skip) {
       // event block
       if (options.onBlock) {
@@ -322,9 +325,9 @@ class Core {
         self.eventOn(element, e);
       }
       // auto
-      if (self.options.autoPause) {
+      if (options.autoPause) {
         self.autoPause();
-      } else if (self.options.auto) {
+      } else if (options.auto) {
         self.autoStart();
       }
     }
@@ -338,6 +341,7 @@ class Core {
   eventOffHandler(element, e) {
     let self = this;
     let options = self.options;
+    // handler
     if (!e.detail || !e.detail.skip) {
       // event block
       if (options.offBlock) {
@@ -407,8 +411,10 @@ class Core {
    * @param {Number} index
    */
   goToIndex(index) {
-    let current = this.elements[index];
-    this.eventOn(current);
+    let self = this;
+    // goToIndex
+    let current = self.elements[index];
+    self.eventOn(current);
     return current;
   }
 
@@ -416,11 +422,13 @@ class Core {
    * activate next element
    */
   goToNext() {
-    let curentIndex = this.curentIndex !== undefined ? this.curentIndex + 1 : 0;
-    curentIndex = curentIndex > this.elements.length - 1 ? 0 : curentIndex;
-    this.forceNormalDirection = this.curentIndex > curentIndex;
-    let current = this.elements[curentIndex];
-    this.eventOn(current);
+    let self = this;
+    // goToNext
+    let curentIndex = self.curentIndex !== undefined ? self.curentIndex + 1 : 0;
+    curentIndex = curentIndex > self.elements.length - 1 ? 0 : curentIndex;
+    self.forceNormalDirection = self.curentIndex > curentIndex;
+    let current = self.elements[curentIndex];
+    self.eventOn(current);
     return current;
   }
 
@@ -428,11 +436,13 @@ class Core {
    * activate prev element
    */
   goToPrev() {
-    let curentIndex = this.curentIndex !== undefined ? this.curentIndex - 1 : 0;
-    curentIndex = curentIndex < 0 ? this.elements.length - 1 : curentIndex;
-    this.forceInverseDirection = this.curentIndex < curentIndex;
-    let current = this.elements[curentIndex];
-    this.eventOn(current);
+    let self = this;
+    // goToPrev
+    let curentIndex = self.curentIndex !== undefined ? self.curentIndex - 1 : 0;
+    curentIndex = curentIndex < 0 ? self.elements.length - 1 : curentIndex;
+    self.forceInverseDirection = self.curentIndex < curentIndex;
+    let current = self.elements[curentIndex];
+    self.eventOn(current);
     return current;
   }
 
@@ -444,9 +454,9 @@ class Core {
     let self = this;
     let options = self.options;
     // auto
-    this.autoStop();
+    self.autoStop();
     let time = !instant ? options.auto : 0;
-    this.object.dataset.xtAutoStartInterval = setInterval(function () {
+    self.object.dataset.xtAutoStartInterval = setInterval(function () {
       if (options.autoAlways || self.object.offsetParent) { // @FIX offsetParent for :visible
         self.goToNext();
       }
@@ -461,10 +471,10 @@ class Core {
     let self = this;
     let options = self.options;
     // autoPause
-    this.autoStop();
+    self.autoStop();
     let time = !instant ? options.autoPause : 0;
     if (time !== 'stop') {
-      this.object.dataset.xtAutoPauseTimeout = setTimeout(function () {
+      self.object.dataset.xtAutoPauseTimeout = setTimeout(function () {
         self.autoStart(true);
         self.autoStart();
       }, time).toString();
@@ -475,8 +485,10 @@ class Core {
    * stop auto change
    */
   autoStop() {
-    clearInterval(this.object.dataset.xtAutoStartInterval);
-    clearTimeout(this.object.dataset.xtAutoPauseTimeout);
+    let self = this;
+    // autoStop
+    clearInterval(self.object.dataset.xtAutoStartInterval);
+    clearTimeout(self.object.dataset.xtAutoPauseTimeout);
   }
 
   //////////////////////
@@ -489,19 +501,21 @@ class Core {
    * @returns {Object} object.all and object.single
    */
   getElements(element) {
-    if (!this.elements || !this.elements.length) {
+    let self = this;
+    // getElements
+    if (!self.elements || !self.elements.length) {
       return {all: [], single: null};
     }
-    if (this.mode === 'unique') {
+    if (self.mode === 'unique') {
       // choose all elements
-      let final = this.elements;
+      let final = self.elements;
       return {all: Xt.arrSingle(final), single: final.length > 1 ? final[0] : final};
-    } else if (this.mode === 'multiple') {
+    } else if (self.mode === 'multiple') {
       // choose element by group
       let group = element.getAttribute('data-group');
       if (group) {
         // all group elements if group
-        let groupElements = Array.from(this.elements).filter(x => x.getAttribute('data-group') === group);
+        let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-group') === group);
         let final = Xt.arrSingle(groupElements);
         return {all: final, single: final[0]};
       } else {
@@ -518,17 +532,19 @@ class Core {
    * @returns {Array}
    */
   getTargets(element) {
-    if (!this.targets || !this.targets.length) {
+    let self = this;
+    // getTargets
+    if (!self.targets || !self.targets.length) {
       return [];
     }
-    if (this.mode === 'unique') {
+    if (self.mode === 'unique') {
       // choose all targets
-      return this.targets;
-    } else if (this.mode === 'multiple') {
+      return self.targets;
+    } else if (self.mode === 'multiple') {
       // choose only target by group
       let group = element.getAttribute('data-group');
-      let groupElements = Array.from(this.elements).filter(x => x.getAttribute('data-group') === group);
-      let groupTargets = Array.from(this.targets).filter(x => x.getAttribute('data-group') === group);
+      let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-group') === group);
+      let groupTargets = Array.from(self.targets).filter(x => x.getAttribute('data-group') === group);
       let final;
       if (group) {
         // all group targets if group
@@ -548,17 +564,19 @@ class Core {
    * @returns {Array}
    */
   getElementsFromTarget(target) {
-    if (!this.elements || !this.elements.length) {
+    let self = this;
+    // getElementsFromTarget
+    if (!self.elements || !self.elements.length) {
       return [];
     }
-    if (this.mode === 'unique') {
+    if (self.mode === 'unique') {
       // choose all targets
-      return this.elements;
-    } else if (this.mode === 'multiple') {
+      return self.elements;
+    } else if (self.mode === 'multiple') {
       // choose only target by group
       let group = target.getAttribute('data-group');
-      let groupElements = Array.from(this.elements).filter(x => x.getAttribute('data-group') === group);
-      let groupTargets = Array.from(this.targets).filter(x => x.getAttribute('data-group') === group);
+      let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-group') === group);
+      let groupTargets = Array.from(self.targets).filter(x => x.getAttribute('data-group') === group);
       let final;
       if (group) {
         // all group targets if group
@@ -600,7 +618,9 @@ class Core {
    * @returns {Array}
    */
   getCurrents() {
-    return Xt.currents[this.namespace];
+    let self = this;
+    // getCurrents
+    return Xt.currents[self.namespace];
   }
 
   /**
@@ -608,7 +628,9 @@ class Core {
    * @param {Array} arr
    */
   setCurrents(arr) {
-    Xt.currents[this.namespace] = arr;
+    let self = this;
+    // setCurrents
+    Xt.currents[self.namespace] = arr;
   }
 
   /**
@@ -616,7 +638,9 @@ class Core {
    * @param {Node|HTMLElement} element To be added
    */
   addCurrent(element) {
-    let arr = Xt.currents[this.namespace];
+    let self = this;
+    // addCurrent
+    let arr = Xt.currents[self.namespace];
     arr.push(element);
   }
 
@@ -625,7 +649,9 @@ class Core {
    * @param {Node|HTMLElement} element To be removed
    */
   removeCurrent(element) {
-    Xt.currents[this.namespace] = Xt.currents[this.namespace].filter(x => x !== element);
+    let self = this;
+    // removeCurrent
+    Xt.currents[self.namespace] = Xt.currents[self.namespace].filter(x => x !== element);
   }
 
   /**
@@ -633,7 +659,9 @@ class Core {
    * @param {Node|HTMLElement} element To be checked
    */
   hasCurrent(element) {
-    return Xt.currents[this.namespace].filter(x => x === element).length;
+    let self = this;
+    // hasCurrent
+    return Xt.currents[self.namespace].filter(x => x === element).length;
   }
 
   /**
@@ -641,9 +669,10 @@ class Core {
    * @param {Node|HTMLElement} element To be checked
    */
   checkOn(element) {
+    let self = this;
     // check
-    let groupElements = this.getElements(element);
-    return !this.hasCurrent(groupElements.single);
+    let groupElements = self.getElements(element);
+    return !self.hasCurrent(groupElements.single);
   }
 
   /**
@@ -651,13 +680,15 @@ class Core {
    * @param {Node|HTMLElement} element To be checked
    */
   checkOff(element) {
+    let self = this;
+    let options = self.options;
     // skip if min >= currents
-    if (this.options.min - this.getCurrents().length >= 0) {
+    if (options.min - self.getCurrents().length >= 0) {
       return false;
     }
     // check
-    let groupElements = this.getElements(element);
-    return this.hasCurrent(groupElements.single);
+    let groupElements = self.getElements(element);
+    return self.hasCurrent(groupElements.single);
   }
 
   /**
@@ -676,17 +707,19 @@ class Core {
    * @param {Node|HTMLElement} element Current element
    */
   setIndexAndDirection(element) {
+    let self = this;
+    // setIndexAndDirection
     let index = 0;
-    for (let [i, el] of this.elements.entries()) {
+    for (let [i, el] of self.elements.entries()) {
       if (el === element) {
         index = i;
         break;
       }
     }
-    this.inverseDirection = !this.forceNormalDirection && (this.forceInverseDirection || this.curentIndex > index);
-    this.forceNormalDirection = false;
-    this.forceInverseDirection = false;
-    this.curentIndex = index;
+    self.inverseDirection = !self.forceNormalDirection && (self.forceInverseDirection || self.curentIndex > index);
+    self.forceNormalDirection = false;
+    self.forceInverseDirection = false;
+    self.curentIndex = index;
   }
 
   /**
@@ -694,7 +727,9 @@ class Core {
    * @param {Array} all All objects to be decorate
    */
   decorateDirection(all) {
-    if (!this.inverseDirection) {
+    let self = this;
+    // decorateDirection
+    if (!self.inverseDirection) {
       for (let el of all) {
         el.classList.remove('direction-inverse');
       }
@@ -710,9 +745,11 @@ class Core {
    * @param {Event} e
    */
   eDetailSet(e) {
-    this.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
-    this.eDetail.skip = true;
-    this.eDetail.object = this;
+    let self = this;
+    // eDetailSet
+    self.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
+    self.eDetail.skip = true;
+    self.eDetail.object = this;
   }
 
   //////////////////////
@@ -728,32 +765,32 @@ class Core {
     let self = this;
     let options = self.options;
     // toggle
-    if (this.checkOn(element)) {
+    if (self.checkOn(element)) {
       // eDetail
-      this.eDetailSet(e);
+      self.eDetailSet(e);
       // on
-      let groupElements = this.getElements(element);
-      this.addCurrent(groupElements.single);
-      this.setIndexAndDirection(element);
-      let targets = this.getTargets(element);
-      let elementsInner = this.getInside(element, options.elementsInner);
-      let targetsInner = this.getInside(targets, options.targetsInner);
-      this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
+      let groupElements = self.getElements(element);
+      self.addCurrent(groupElements.single);
+      self.setIndexAndDirection(element);
+      let targets = self.getTargets(element);
+      let elementsInner = self.getInside(element, options.elementsInner);
+      let targetsInner = self.getInside(targets, options.targetsInner);
+      self.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // if currents > max
-      let currents = this.getCurrents();
+      let currents = self.getCurrents();
       if (currents.length > options.max) {
         /*
         // remove queue and end
-        let removed = this.detail.queueOn.pop();
+        let removed = self.detail.queueOn.pop();
         console.log('CURRENTS RESET'); // @TODO
-        this.queueOffEnd(removed);
+        self.queueOffEnd(removed);
         */
         // deactivate old
-        this.eventOff(currents[0]);
+        self.eventOff(currents[0]);
       }
       // if queue too big // @TODO
-      //this.queueOnTodo();
-      //this.queueOffTodo();
+      //self.queueOnTodo();
+      //self.queueOffTodo();
       // queue obj
       let obj = {};
       if (groupElements.all.length) {
@@ -781,13 +818,13 @@ class Core {
         };
       }
       if (options.instant === true) {
-        this.detail.queueOn = [obj];
+        self.detail.queueOn = [obj];
       } else {
-        this.detail.queueOn.unshift(obj);
+        self.detail.queueOn.unshift(obj);
       }
       // queue remove duplicate // @TODO
-      // for (let i = 0; i < this.detail.queueOff.length - 1; i++) { // - 1 not the last one running!
-      //   let check = this.detail.queueOff[i];
+      // for (let i = 0; i < self.detail.queueOff.length - 1; i++) { // - 1 not the last one running!
+      //   let check = self.detail.queueOff[i];
       //   if (self.detail.queueOn[0]['elements'].groupElements.single === check['elements'].groupElements.single) {
       //     let removed = self.detail.queueOff.splice(i, 1);
       //     console.log('on removeoff', check['elements'].groupElements.single, self.detail.queueOff, self.detail.queueOn);
@@ -796,12 +833,12 @@ class Core {
       //   }
       // }
       // queue run
-      for (let type in this.detail.queueOn[0]) {
+      for (let type in self.detail.queueOn[0]) {
         self.queueOn(type, 0, true);
       }
     } else if (options.toggle && (!e.detail || !e.detail.skipToggle)) { // not when skipToggle
       // off
-      this.eventOff(element, e);
+      self.eventOff(element, e);
     }
   }
 
@@ -814,19 +851,19 @@ class Core {
     let self = this;
     let options = self.options;
     // toggle
-    if (this.checkOff(element)) {
+    if (self.checkOff(element)) {
       // eDetail
-      this.eDetailSet(e);
+      self.eDetailSet(e);
       // off
-      let groupElements = this.getElements(element);
-      this.removeCurrent(groupElements.single);
-      let targets = this.getTargets(element);
-      let elementsInner = this.getInside(element, options.elementsInner);
-      let targetsInner = this.getInside(targets, options.targetsInner);
-      this.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
+      let groupElements = self.getElements(element);
+      self.removeCurrent(groupElements.single);
+      let targets = self.getTargets(element);
+      let elementsInner = self.getInside(element, options.elementsInner);
+      let targetsInner = self.getInside(targets, options.targetsInner);
+      self.decorateDirection([...groupElements.all, ...targets, ...elementsInner, ...targetsInner]);
       // if queue too big // @TODO
-      //this.queueOnTodo();
-      //this.queueOffTodo();
+      //self.queueOnTodo();
+      //self.queueOffTodo();
       // queue obj
       let obj = {};
       if (groupElements.all.length) {
@@ -854,13 +891,13 @@ class Core {
         };
       }
       if (options.instant === true) {
-        this.detail.queueOff = [obj];
+        self.detail.queueOff = [obj];
       } else {
-        this.detail.queueOff.unshift(obj);
+        self.detail.queueOff.unshift(obj);
       }
       // // queue remove duplicate // @TODO
-      // for (let i = 0; i < this.detail.queueOn.length - 1; i++) { // - 1 not the last one running!
-      //   let check = this.detail.queueOn[i];
+      // for (let i = 0; i < self.detail.queueOn.length - 1; i++) { // - 1 not the last one running!
+      //   let check = self.detail.queueOn[i];
       //   if (self.detail.queueOff[0]['elements'].groupElements.single === check['elements'].groupElements.single) {
       //     let removed = self.detail.queueOn.splice(i, 1);
       //     console.log('off removeon', check['elements'].groupElements.single, self.detail.queueOn, self.detail.queueOff);
@@ -869,7 +906,7 @@ class Core {
       //   }
       // }
       // queue run
-      for (let type in this.detail.queueOff[0]) {
+      for (let type in self.detail.queueOff[0]) {
         self.queueOff(type, 0, true);
       }
     }
@@ -882,11 +919,13 @@ class Core {
    * @param {Boolean} queueInitial If it's the initial queue
    */
   queueOn(type, index, queueInitial = false) {
-    let obj = this.detail.queueOn[index];
+    let self = this;
+    // queueOn
+    let obj = self.detail.queueOn[index];
     if (obj && obj[type] && !obj[type].done) {
-      let objOther = this.detail.queueOff[this.detail.queueOff.length - 1];
+      let objOther = self.detail.queueOff[self.detail.queueOff.length - 1];
       if (!objOther || !objOther[type] || objOther[type].done) {
-        this.queueOnDelay(obj, type, queueInitial);
+        self.queueOnDelay(obj, type, queueInitial);
       }
     }
   }
@@ -898,11 +937,13 @@ class Core {
    * @param {Boolean} queueInitial If it's the initial queue
    */
   queueOff(type, index, queueInitial = false) {
-    let obj = this.detail.queueOff[index];
+    let self = this;
+    // queueOff
+    let obj = self.detail.queueOff[index];
     if (obj && obj[type] && !obj[type].done) {
-      let objOther = this.detail.queueOn[this.detail.queueOn.length - 1];
+      let objOther = self.detail.queueOn[self.detail.queueOn.length - 1];
       if (!objOther || !objOther[type] || objOther[type].done) {
-        this.queueOffDelay(obj, type, queueInitial);
+        self.queueOffDelay(obj, type, queueInitial);
       }
     }
   }
@@ -913,10 +954,13 @@ class Core {
    * @param {String} type Type of element
    */
   queueOnDone(obj, type) {
+    let self = this;
+    let options = self.options;
+    // queueOnDone
     if (obj[type]) {
       // done
       obj[type].done = true;
-      this.queueOff(type, this.detail.queueOff.length - 1);
+      self.queueOff(type, self.detail.queueOff.length - 1);
       // done
       let done = 0;
       for (let type in obj) {
@@ -927,11 +971,11 @@ class Core {
       // one done
       if (done === 1) {
         // special
-        this.specialBackdrop(obj);
-        this.specialClassHtmlOn();
-        this.specialScrollbarOn();
+        self.specialBackdrop(obj);
+        self.specialClassHtmlOn();
+        self.specialScrollbarOn();
         // focus
-        if (this.options.scrollbar) {
+        if (options.scrollbar) {
           let el = obj['targets'].queueEls[0];
           Xt.focus.block = true;
           Xt.focusLimit.on(el);
@@ -941,7 +985,7 @@ class Core {
       // all done
       if (done === Object.entries(obj).length) {
         // remove queue
-        this.detail.queueOn.pop();
+        self.detail.queueOn.pop();
       }
     }
   }
@@ -952,10 +996,13 @@ class Core {
    * @param {String} type Type of element
    */
   queueOffDone(obj, type) {
+    let self = this;
+    let options = self.options;
+    // queueOnDone
     if (obj[type]) {
       // done
       obj[type].done = true;
-      this.queueOn(type, this.detail.queueOn.length - 1);
+      self.queueOn(type, self.detail.queueOn.length - 1);
       // done
       let done = 0;
       for (let type in obj) {
@@ -966,9 +1013,9 @@ class Core {
       // one done
       if (done === 1) {
         // special
-        this.specialClassHtmlOff();
+        self.specialClassHtmlOff();
         // focus
-        if (this.options.scrollbar) {
+        if (options.scrollbar) {
           Xt.focus.block = false;
           Xt.focusLimit.off();
           Xt.focus.current.focus();
@@ -977,9 +1024,9 @@ class Core {
       // all done
       if (done === Object.entries(obj).length) {
         // special
-        this.specialScrollbarOff();
+        self.specialScrollbarOff();
         // remove queue
-        this.detail.queueOff.pop();
+        self.detail.queueOff.pop();
       }
     }
   }
@@ -988,11 +1035,13 @@ class Core {
    * if queue on too big, end what is still to do
    */
   queueOnTodo() {
+    let self = this;
+    let options = self.options;
     // end what is still to do
-    if (this.detail.queueOn.length > this.options.max) {
+    if (self.detail.queueOn.length > options.max) {
       // remove queue and end
-      let removed = this.detail.queueOn.shift();
-      this.queueOnEnd(removed);
+      let removed = self.detail.queueOn.shift();
+      self.queueOnEnd(removed);
     }
   }
 
@@ -1000,11 +1049,13 @@ class Core {
    * if queue off too big, end what is still to do
    */
   queueOffTodo() {
+    let self = this;
+    let options = self.options;
     // end what is still to do
-    if (this.detail.queueOff.length > this.options.max) {
+    if (self.detail.queueOff.length > options.max) {
       // remove queue and end
-      let removed = this.detail.queueOff.shift();
-      this.queueOffEnd(removed);
+      let removed = self.detail.queueOff.shift();
+      self.queueOffEnd(removed);
     }
   }
 
@@ -1024,7 +1075,7 @@ class Core {
           self.queueOnAnimDone(obj, el, type, true);
         }
       }
-      self.queueOff(type, this.detail.queueOff.length - 1);
+      self.queueOff(type, self.detail.queueOff.length - 1);
     }
   }
 
@@ -1044,7 +1095,7 @@ class Core {
           self.queueOffAnimDone(obj, el, type, true);
         }
       }
-      self.queueOn(type, this.detail.queueOn.length - 1);
+      self.queueOn(type, self.detail.queueOn.length - 1);
     }
   }
 
@@ -1153,11 +1204,11 @@ class Core {
     el.classList.add('in');
     el.classList.remove('out');
     // special
-    this.specialCenter(el);
-    this.specialMiddle(el);
-    this.specialCollapseOn(el);
+    self.specialCenter(el);
+    self.specialMiddle(el);
+    self.specialCollapseOn(el);
     if (type === 'targets' || type === 'targetsInner') {
-      this.specialCloseOn(el, obj[type].groupElements.single);
+      self.specialCloseOn(el, obj[type].groupElements.single);
     }
     // aria
     if (type === 'elements') {
@@ -1177,17 +1228,17 @@ class Core {
     }
     // queue
     if (!skipQueue) {
-      this.queueOnAnim(obj, el, type);
+      self.queueOnAnim(obj, el, type);
       // queue done
       let els = obj[type].queueEls;
       if (el === els[els.length - 1]) { // only if last element
         if (typeof options.instant === 'object' && options.instant[type]) {
-          this.queueOnDone(obj, type);
+          self.queueOnDone(obj, type);
         }
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('on', {detail: this.eDetail}));
+    el.dispatchEvent(new CustomEvent('on', {detail: self.eDetail}));
   }
 
   /**
@@ -1205,23 +1256,23 @@ class Core {
     el.classList.remove('in');
     el.classList.add('out');
     // special
-    this.specialCollapseOff(el);
+    self.specialCollapseOff(el);
     if (type === 'targets' || type === 'targetsInner') {
-      this.specialCloseOff(el);
+      self.specialCloseOff(el);
     }
     // queue
     if (!skipQueue) {
-      this.queueOffAnim(obj, el, type);
+      self.queueOffAnim(obj, el, type);
       // queue done
       let els = obj[type].queueEls;
       if (el === els[els.length - 1]) { // only if last element
         if (typeof options.instant === 'object' && options.instant[type]) {
-          this.queueOffDone(obj, type);
+          self.queueOffDone(obj, type);
         }
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('off', {detail: this.eDetail}));
+    el.dispatchEvent(new CustomEvent('off', {detail: self.eDetail}));
   }
 
   /**
@@ -1279,14 +1330,14 @@ class Core {
     // reset
     el.classList.remove('in');
     // special
-    this.specialCollapseReset(el);
+    self.specialCollapseReset(el);
     // queue
     if (!skipQueue) {
       // queue done
       let els = obj[type].queueEls;
       if (!options.instant || !options.instant[type]) {
         if (el === els[els.length - 1]) { // only if last element
-          this.queueOnDone(obj, type);
+          self.queueOnDone(obj, type);
         }
       }
     }
@@ -1326,7 +1377,7 @@ class Core {
       let els = obj[type].queueEls;
       if (!options.instant || !options.instant[type]) {
         if (el === els[els.length - 1]) { // only if last element
-          this.queueOffDone(obj, type);
+          self.queueOffDone(obj, type);
         }
       }
     }
@@ -1371,7 +1422,7 @@ class Core {
     let options = self.options;
     // backdrop
     if (options.backdrop) {
-      let elements = typeof options.backdrop === 'string' ? Xt.arrSingle(obj[options.backdrop].queueEls) : Xt.arrSingle(this.object);
+      let elements = typeof options.backdrop === 'string' ? Xt.arrSingle(obj[options.backdrop].queueEls) : Xt.arrSingle(self.object);
       for (let element of elements) {
         let backdrop = element.querySelectorAll('.xt-backdrop');
         if (!backdrop.length) {
@@ -1387,9 +1438,11 @@ class Core {
    * @param {Node|HTMLElement} el Element
    */
   specialCenter(el) {
+    let self = this;
+    // specialCenter
     let style = getComputedStyle(el);
     if (style.getPropertyValue('--xt-center')) {
-      let add = this.object.clientWidth;
+      let add = self.object.clientWidth;
       let remove = el.clientWidth;
       el.style.left = ((add - remove) / 2) + 'px';
     }
@@ -1400,9 +1453,11 @@ class Core {
    * @param {Node|HTMLElement} el Element
    */
   specialMiddle(el) {
+    let self = this;
+    // specialMiddle
     let style = getComputedStyle(el);
     if (style.getPropertyValue('--xt-middle')) {
-      let add = this.object.clientHeight;
+      let add = self.object.clientHeight;
       let remove = el.clientHeight;
       el.style.top = ((add - remove) / 2) + 'px';
     }
@@ -1574,8 +1629,10 @@ class Core {
    * @param {Event} e
    */
   eventSpecialCloseInsideHandler(checkEl, single, e) {
+    let self = this;
+    // handler
     if (Xt.checkInside(e, Xt.arrSingle(checkEl))) {
-      this.eventOff(single);
+      self.eventOff(single);
     }
   }
 
@@ -1586,8 +1643,10 @@ class Core {
    * @param {Event} e
    */
   eventSpecialCloseOutsideHandler(checkEl, single, e) {
+    let self = this;
+    // handler
     if (Xt.checkOutside(e, Xt.arrSingle(checkEl))) {
-      this.eventOff(single);
+      self.eventOff(single);
     }
   }
 
@@ -1718,18 +1777,18 @@ class Toggle extends Core {
     let options = self.options;
     // aria
     if (options.aria) {
-      if (this.targets.length) {
-        if (this.mode === 'multiple') {
-          this.object.setAttribute('role', 'tablist');
+      if (self.targets.length) {
+        if (self.mode === 'multiple') {
+          self.object.setAttribute('role', 'tablist');
           if (options.max > 1) {
-            this.object.setAttribute('aria-multiselectable', 'true');
+            self.object.setAttribute('aria-multiselectable', 'true');
           }
-          for (let el of this.elements) {
+          for (let el of self.elements) {
             let ariaEls = self.getInside(el, options.ariaControls);
             let ariaEl = ariaEls.length ? ariaEls[0] : el;
             ariaEl.setAttribute('role', 'tab');
           }
-          for (let tr of this.targets) {
+          for (let tr of self.targets) {
             tr.setAttribute('role', 'tabpanel');
           }
         }
@@ -1782,13 +1841,13 @@ class Drop extends Core {
     let options = self.options;
     // aria
     if (options.aria) {
-      if (this.targets.length) {
-        for (let el of this.elements) {
+      if (self.targets.length) {
+        for (let el of self.elements) {
           let ariaEls = self.getInside(el, options.ariaControls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
           ariaEl.setAttribute('aria-haspopup', 'listbox');
         }
-        for (let tr of this.targets) {
+        for (let tr of self.targets) {
           tr.setAttribute('role', 'listbox');
         }
       }
@@ -1842,13 +1901,13 @@ class Overlay extends Core {
     let options = self.options;
     // aria
     if (options.aria) {
-      if (this.targets.length) {
-        for (let el of this.elements) {
+      if (self.targets.length) {
+        for (let el of self.elements) {
           let ariaEls = self.getInside(el, options.ariaControls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
           ariaEl.setAttribute('aria-haspopup', 'dialog');
         }
-        for (let tr of this.targets) {
+        for (let tr of self.targets) {
           tr.setAttribute('role', 'dialog');
           tr.setAttribute('aria-modal', 'true');
         }
@@ -1909,7 +1968,7 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     if (options.drag) {
-      for (let tr of this.targets) {
+      for (let tr of self.targets) {
         // event on
         let dragStartHandler = Xt.dataStorage.put(tr, 'dragStartHandler' + self.namespace,
           self.eventDragStartHandler.bind(self).bind(self, tr));
@@ -1930,22 +1989,23 @@ class Slider extends Core {
   eventDragStartHandler(target, e) {
     let self = this;
     let options = self.options;
+    // handler
     if (!e.button || e.button !== 2) { // not right click or it gets stuck
-      if (!this.checkAnim(Xt.arrSingle(target))) { // @TODO
+      if (!self.checkAnim(Xt.arrSingle(target))) { // @TODO
         // save event
-        this.detail.eInit = e;
+        self.detail.eInit = e;
         // logic
-        let eventLimit = this.container.querySelectorAll('.event-limit');
+        let eventLimit = self.container.querySelectorAll('.event-limit');
         if (eventLimit.length) {
           if (Xt.checkOutside(e, eventLimit)) {
-            this.eventDragStart(target, e);
+            self.eventDragStart(target, e);
           }
         } else {
-          this.eventDragStart(target, e);
+          self.eventDragStart(target, e);
         }
         // auto
         if (options.autoPause) {
-          this.autoPause();
+          self.autoPause();
         }
         // event off
         let dragEndHandler = Xt.dataStorage.put(window, 'dragEndHandler' + self.namespace,
@@ -1967,19 +2027,20 @@ class Slider extends Core {
   eventDragEndHandler(target, e) {
     let self = this;
     let options = self.options;
-    if (!this.checkAnim(Xt.arrSingle(target))) { // @TODO
+    // handler
+    if (!self.checkAnim(Xt.arrSingle(target))) { // @TODO
       // logic
-      let eventLimit = this.container.querySelectorAll('.event-limit');
+      let eventLimit = self.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
         if (Xt.checkOutside(e, eventLimit)) {
-          this.eventDragEnd(target, e);
+          self.eventDragEnd(target, e);
         }
       } else {
-        this.eventDragEnd(target, e);
+        self.eventDragEnd(target, e);
       }
       // auto
       if (options.autoPause) {
-        this.autoPause();
+        self.autoPause();
       }
       // event off
       let dragEndHandler = Xt.dataStorage.get(window, 'dragEndHandler' + self.namespace);
@@ -1998,9 +2059,9 @@ class Slider extends Core {
   eventDragStart(target, e) {
     let self = this;
     // save event
-    this.detail.eCurrent = e;
+    self.detail.eCurrent = e;
     // eDetail
-    this.eDetailSet(e);
+    self.eDetailSet(e);
     // event move
     let dragHandler = Xt.dataStorage.put(target, 'dragHandler' + self.namespace,
       self.eventDragHandler.bind(self).bind(self, target));
@@ -2010,7 +2071,7 @@ class Slider extends Core {
       target.addEventListener(event, dragHandler);
     }
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('dragStart.slider', {detail: this.eDetail}));
+    target.dispatchEvent(new CustomEvent('dragStart.slider', {detail: self.eDetail}));
   }
 
   /**
@@ -2021,9 +2082,9 @@ class Slider extends Core {
   eventDragEnd(target, e) {
     let self = this;
     // save event
-    this.detail.eCurrent = e;
+    self.detail.eCurrent = e;
     // eDetail
-    this.eDetailSet(e);
+    self.eDetailSet(e);
     // event move
     let dragHandler = Xt.dataStorage.get(target, 'dragHandler' + self.namespace);
     let events = ['mousemove', 'touchmove'];
@@ -2031,7 +2092,7 @@ class Slider extends Core {
       target.removeEventListener(event, dragHandler);
     }
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('dragEnd.slider', {detail: this.eDetail}));
+    target.dispatchEvent(new CustomEvent('dragEnd.slider', {detail: self.eDetail}));
   }
 
   /**
@@ -2043,14 +2104,14 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     // save event
-    this.detail.eCurrent = e;
+    self.detail.eCurrent = e;
     // eDetail
-    this.eDetailSet(e);
+    self.eDetailSet(e);
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('drag.slider', {detail: this.eDetail}));
+    target.dispatchEvent(new CustomEvent('drag.slider', {detail: self.eDetail}));
     // auto
     if (options.autoPause) {
-      this.autoPause();
+      self.autoPause();
     }
   }
 
@@ -2101,46 +2162,48 @@ class Sticky extends Core {
    */
   initScope() {
     super.initScope();
+    let self = this;
+    let options = self.options;
     // mode
-    this.mode = 'unique';
+    self.mode = 'unique';
     // container
-    this.container = Xt.parents(this.object, '.xt-container');
-    if (!this.container.length) {
-      this.container = Xt.createElement('<div class="xt-container xt-check-fixed"></div>');
-      this.object.before(this.container);
-      this.container.append(this.object);
-      this.container = Xt.parents(this.object, '.xt-container');
+    self.container = Xt.parents(self.object, '.xt-container');
+    if (!self.container.length) {
+      self.container = Xt.createElement('<div class="xt-container xt-check-fixed"></div>');
+      self.object.before(self.container);
+      self.container.append(self.object);
+      self.container = Xt.parents(self.object, '.xt-container');
     }
     // targets
-    this.targets = this.container[0].querySelectorAll('.xt-clone');
-    if (!this.targets.length) {
-      this.targets = this.object.cloneNode(true);
-      this.targets.classList.add('xt-clone', 'xt-ignore');
-      for (let elId of this.targets.querySelectorAll('[id]')) {
+    self.targets = self.container[0].querySelectorAll('.xt-clone');
+    if (!self.targets.length) {
+      self.targets = self.object.cloneNode(true);
+      self.targets.classList.add('xt-clone', 'xt-ignore');
+      for (let elId of self.targets.querySelectorAll('[id]')) {
         elId.setAttribute('id', elId.getAttribute('id') + '-clone');
       }
-      for (let elName of this.targets.querySelectorAll('[name]')) {
+      for (let elName of self.targets.querySelectorAll('[name]')) {
         elName.setAttribute('name', elName.getAttribute('name') + '-clone');
       }
-      this.container[0].append(this.targets);
+      self.container[0].append(self.targets);
     }
-    this.targets = Xt.arrSingle(this.targets);
+    self.targets = Xt.arrSingle(self.targets);
     // xt-fixed
-    this.object.classList.add('xt-fixed');
+    self.object.classList.add('xt-fixed');
     // hide
-    if (this.options.hide === 'down') {
-      this.object.classList.add('sticky-hide-down');
+    if (options.hide === 'down') {
+      self.object.classList.add('sticky-hide-down');
     } else {
-      this.object.classList.remove('sticky-hide-down');
+      self.object.classList.remove('sticky-hide-down');
     }
-    if (this.options.hide === 'up') {
-      this.object.classList.add('sticky-hide-up');
+    if (options.hide === 'up') {
+      self.object.classList.add('sticky-hide-up');
     } else {
-      this.object.classList.remove('sticky-hide-up');
+      self.object.classList.remove('sticky-hide-up');
     }
     // z-index
-    this.unique = Xt.getUniqueNum();
-    this.object.style.zIndex = '' + (100 - this.unique);
+    self.unique = Xt.getUniqueNum();
+    self.object.style.zIndex = '' + (100 - self.unique);
   }
 
   /**
@@ -2170,10 +2233,10 @@ class Sticky extends Core {
       });
     }
     // autoClose
-    let autoCloseHandler = Xt.dataStorage.put(this.object, 'autoCloseHandler' + self.namespace,
-      Xt.autoClose.bind(this, this.object));
-    this.object.removeEventListener('hide.sticky', autoCloseHandler);
-    this.object.addEventListener('hide.sticky', autoCloseHandler);
+    let autoCloseHandler = Xt.dataStorage.put(self.object, 'autoCloseHandler' + self.namespace,
+      Xt.autoClose.bind(this, self.object));
+    self.object.removeEventListener('hide.sticky', autoCloseHandler);
+    self.object.addEventListener('hide.sticky', autoCloseHandler);
   }
 
   /**
@@ -2181,8 +2244,10 @@ class Sticky extends Core {
    * @param {Event} e
    */
   eventStickyHandler(e) {
+    let self = this;
+    // handler
     if (!e.detail || !e.detail.skip) {
-      this.eventScroll(this.object, e);
+      self.eventScroll(self.object, e);
     }
   }
 
@@ -2199,7 +2264,7 @@ class Sticky extends Core {
     let self = this;
     let options = self.options;
     // eDetail
-    this.eDetailSet(e);
+    self.eDetailSet(e);
     // vars
     let anim = true;
     let hide = false;
@@ -2295,13 +2360,13 @@ class Sticky extends Core {
         if (!element.classList.contains('sticky-hide')) {
           element.classList.add('sticky-hide');
           // listener dispatch
-          element.dispatchEvent(new CustomEvent('hide.sticky', {detail: this.eDetail}));
+          element.dispatchEvent(new CustomEvent('hide.sticky', {detail: self.eDetail}));
         }
       } else {
         if (element.classList.contains('sticky-hide')) {
           element.classList.remove('sticky-hide');
           // listener dispatch
-          element.dispatchEvent(new CustomEvent('show.sticky', {detail: this.eDetail}));
+          element.dispatchEvent(new CustomEvent('show.sticky', {detail: self.eDetail}));
         }
       }
     } else {
@@ -2507,8 +2572,10 @@ class Fade extends Core {
    * @param {Event} e
    */
   eventFadeHandler(e) {
+    let self = this;
+    // handler
     if (!e.detail || !e.detail.skip) {
-      this.eventScroll(this.object);
+      self.eventScroll(self.object);
     }
   }
 
