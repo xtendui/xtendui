@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en"
+      class=" collection-docs">
+<head>
+
+  <!-- meta -->
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+
+  <!-- seo -->
+  <title>Overlay • Xtend</title>
+  <meta name="description" content="Component to show modal elements inside the page."/>
+
+  <!-- icons -->
+  <link rel="icon" href="/assets/images/favicon.ico?v=0.5.5"/>
+  <link rel="apple-touch-icon" sizes="152x152"
+        href="/assets/images/favicon-152x152.png?v=0.5.5"/>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="/assets/icons-theme/style.css?v=0.5.5"/>
+  <link rel="stylesheet" href="/assets/styles/theme.css?v=0.5.5"/>
+
+</head>
+<body>
+
+<div class="site-wrapper">
+
+  <header class="site-header">
+
+    <div class="site-header-top-outer"
+         data-xt-sticky='{"limit": {"top": ".site-hero"}, "contain": {"bottom":".site-breadcrumbs-outer:not(.xt-clone)"}, "hide": "down"}'>
+      <div class="site-header-top">
+        <div class="container">
+
+          <div class="flex flex-auto justify-content-between align-items-center">
+            <div>
+              <a href="/" class="logo" title="Home">
+                <img src="/assets/images/logo.svg" alt="Xtend"/>
+              </a>
+            </div>
+            <div>
+              <button type="button" class="btn btn-primary btn-nodesign btn-menu"
+                      data-xt-overlay='{"targets": "#site-menu"}'>
+                <span>
+                  
+                    Docs
+                  
+                  <span class="icon-menu-custom">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <nav class="site-menu overlay-outer overlay-primary overlay-screen overlay-size-medium collapse-height"
+         id="site-menu">
+      <div class="overlay">
+        <div class="overlay-inner">
+
+          <div class="site-header-top">
+            <div class="container">
+
+              <div class="flex flex-auto justify-content-between align-items-center">
+                <div>
+                  <a href="/" class="logo" title="Home">
+                    <img src="/assets/images/logo.svg" alt="Xtend"/>
+                  </a>
+                </div>
+                <div>
+                  <button type="button" class="btn btn-primary btn-nodesign btn-menu"
+                          data-xt-overlay='{"targets": "#site-menu"}'>
+                    <span>
+                      
+                        Docs
+                      
+                      <span class="icon icon-menu-custom right">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="site-menu-content">
+
+              
+                
+                  
+                  <a href="/docs/" class="btn btn-primary btn-nodesign make-line">
+                    <span>docs</span>
+                  </a>
+                
+              
+                
+              
+              <a href="/" class="btn btn-primary btn-nodesign make-line">
+                <span>Extensions</span>
+              </a>
+              <a href="/" class="btn btn-primary btn-nodesign make-line">
+                <span>Inspirations</span>
+              </a>
+              <a href="/faq/" class="btn btn-primary btn-nodesign make-line">
+                <span>Faq</span>
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+
+    <div class="site-hero">
+
+      <div class="container">
+        <div class="flex flex-auto align-items-center align-content-center justify-content-between">
+          <div class="site-hero-text">
+            <h1>Overlay</h1>
+            <p class="font-giant">Component to show modal elements inside the page.</p>
+          </div>
+          <!--
+          <div class="site-hero-img">
+            <img class="responsive" src="https://placehold.it/330x132/ffffff/00B0FF/?text=ads" />
+          </div>
+          -->
+        </div>
+      </div>
+
+    </div>
+
+    <nav class="site-breadcrumbs-outer" role="navigation" data-xt-sticky>
+      <div class="site-breadcrumbs">
+        <div class="site-breadcrumbs-inner">
+          <div class="container">
+            <div class="flex flex-auto justify-content-between align-items-start">
+
+              <div class="site-breadcrumbs-body flex flex-space-none display-none display-flex-sm"
+                   data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
+                   "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
+                
+                  
+
+                  
+                  
+                    
+                      
+                      
+                        <div class="site-breadcrumbs-body-main">
+                          <a href="/docs/" class="btn btn-primary btn-nodesign">
+                            <span>Introduction</span>
+                          </a>
+                          <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
+                            <div class="site-breadcrumbs-body-sub-inner">
+                              
+                              <a href="/docs/introduction/installation/" class="btn btn-primary btn-nodesign">
+                                <span>Installation</span>
+                              </a>
+                              
+                              <a href="/docs/introduction/javascript/" class="btn btn-primary btn-nodesign">
+                                <span>Javascript</span>
+                              </a>
+                              
+                              <a href="/docs/introduction/theming/" class="btn btn-primary btn-nodesign">
+                                <span>Theming</span>
+                              </a>
+                              
+                              <a href="/docs/introduction/utils/" class="btn btn-primary btn-nodesign">
+                                <span>Utils</span>
+                              </a>
+                              
+                              <a href="/docs/introduction/accessibility/" class="btn btn-primary btn-nodesign">
+                                <span>Accessibility</span>
+                              </a>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      
+                      
+                        <div class="site-breadcrumbs-body-main">
+                          <a href="/docs/content/" class="btn btn-primary btn-nodesign">
+                            <span>Content</span>
+                          </a>
+                          <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
+                            <div class="site-breadcrumbs-body-sub-inner">
+                              
+                              <a href="/docs/content/typography/" class="btn btn-primary btn-nodesign">
+                                <span>Typography</span>
+                              </a>
+                              
+                              <a href="/docs/content/icon/" class="btn btn-primary btn-nodesign">
+                                <span>Icon</span>
+                              </a>
+                              
+                              <a href="/docs/content/table/" class="btn btn-primary btn-nodesign">
+                                <span>Table</span>
+                              </a>
+                              
+                              <a href="/docs/content/form/" class="btn btn-primary btn-nodesign">
+                                <span>Form</span>
+                              </a>
+                              
+                              <a href="/docs/content/group/" class="btn btn-primary btn-nodesign">
+                                <span>Group</span>
+                              </a>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      
+                      
+                        <div class="site-breadcrumbs-body-main">
+                          <a href="/docs/layout/" class="btn btn-primary btn-nodesign">
+                            <span>Layout</span>
+                          </a>
+                          <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
+                            <div class="site-breadcrumbs-body-sub-inner">
+                              
+                              <a href="/docs/layout/grid/" class="btn btn-primary btn-nodesign">
+                                <span>Grid</span>
+                              </a>
+                              
+                              <a href="/docs/layout/flex/" class="btn btn-primary btn-nodesign">
+                                <span>Flex</span>
+                              </a>
+                              
+                              <a href="/docs/layout/list/" class="btn btn-primary btn-nodesign">
+                                <span>List</span>
+                              </a>
+                              
+                              <a href="/docs/layout/box/" class="btn btn-primary btn-nodesign">
+                                <span>Box</span>
+                              </a>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      
+                      
+                        <div class="site-breadcrumbs-body-main current">
+                          <a href="/docs/interaction/" class="btn btn-primary btn-nodesign">
+                            <span>Interaction</span>
+                          </a>
+                          <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
+                            <div class="site-breadcrumbs-body-sub-inner">
+                              
+                              <a href="/docs/interaction/general/" class="btn btn-primary btn-nodesign">
+                                <span>General</span>
+                              </a>
+                              
+                              <a href="/docs/interaction/button/" class="btn btn-primary btn-nodesign">
+                                <span>Button</span>
+                              </a>
+                              
+                              <a href="/docs/interaction/toggle/" class="btn btn-primary btn-nodesign">
+                                <span>Toggle</span>
+                              </a>
+                              
+                              <a href="/docs/interaction/drop/" class="btn btn-primary btn-nodesign">
+                                <span>Drop</span>
+                              </a>
+                              
+                              <a href="/docs/interaction/overlay/" class="btn btn-primary btn-nodesign active">
+                                <span>Overlay</span>
+                              </a>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      
+                      
+                        <div class="site-breadcrumbs-body-main">
+                          <a href="/docs/presentation/" class="btn btn-primary btn-nodesign">
+                            <span>Presentation</span>
+                          </a>
+                          <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
+                            <div class="site-breadcrumbs-body-sub-inner">
+                              
+                              <a href="/docs/presentation/slider/" class="btn btn-primary btn-nodesign">
+                                <span>Slider</span>
+                              </a>
+                              
+                              <a href="/docs/presentation/smooth/" class="btn btn-primary btn-nodesign">
+                                <span>Smooth</span>
+                              </a>
+                              
+                              <a href="/docs/presentation/sticky/" class="btn btn-primary btn-nodesign">
+                                <span>Sticky</span>
+                              </a>
+                              
+                              <a href="/docs/presentation/fade/" class="btn btn-primary btn-nodesign">
+                                <span>Fade</span>
+                              </a>
+                              
+                              <a href="/docs/presentation/parallax/" class="btn btn-primary btn-nodesign">
+                                <span>Parallax</span>
+                              </a>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      
+                    
+                  
+                    
+                      
+                      
+                        <div class="site-breadcrumbs-body-main">
+                          <a href="/docs/others/" class="btn btn-primary btn-nodesign">
+                            <span>Others</span>
+                          </a>
+                          <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
+                            <div class="site-breadcrumbs-body-sub-inner">
+                              
+                              <a href="/docs/others/loader/" class="btn btn-primary btn-nodesign">
+                                <span>Loader</span>
+                              </a>
+                              
+                              <a href="/docs/others/other/" class="btn btn-primary btn-nodesign">
+                                <span>Alert</span>
+                              </a>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      
+                    
+                  
+
+                  
+                
+                  
+                
+              </div>
+
+              <div class="site-breadcrumbs-body flex flex-space-none display-none-sm flex-auto"
+                   data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
+                   "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
+
+                <div class="site-breadcrumbs-body-main flex-auto">
+                  <button type="button" class="btn btn-primary btn-nodesign flex-auto">
+                    
+                      <span>Interaction</span>
+                    
+                  </button>
+                  
+                    
+                      <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
+                        <div class="site-breadcrumbs-body-sub-inner">
+                          
+                            
+                              
+                              <a href="/docs/" class="btn btn-primary btn-nodesign">
+                                <span>Introduction</span>
+                              </a>
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                              <a href="/docs/content/" class="btn btn-primary btn-nodesign">
+                                <span>Content</span>
+                              </a>
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                              <a href="/docs/layout/" class="btn btn-primary btn-nodesign">
+                                <span>Layout</span>
+                              </a>
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                              <a href="/docs/interaction/" class="btn btn-primary btn-nodesign">
+                                <span>Interaction</span>
+                              </a>
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                              <a href="/docs/presentation/" class="btn btn-primary btn-nodesign">
+                                <span>Presentation</span>
+                              </a>
+                              
+                          
+                              
+                              <a href="/docs/others/" class="btn btn-primary btn-nodesign">
+                                <span>Others</span>
+                              </a>
+                              
+                          
+                        </div>
+                      </div>
+                    </div>
+                  
+                
+                    
+                
+              </div>
+
+              <div class="site-breadcrumbs-meta flex flex-space-none align-items-center">
+
+                <div class="display-none-sm display-block-md">
+                  <a href="https://github.com/minimit/xtend-library/releases" target="_blank" class="btn btn-primary btn-icon btn-nodesign">
+                    <span><span class="icon-download icon-big"></span></span>
+                  </a>
+                </div>
+
+                <div class="display-none-sm display-block-md">
+                  <a href="https://github.com/minimit/xtend-library" target="_blank" class="btn btn-primary btn-icon btn-nodesign">
+                    <span><span class="icon-github icon-big"></span></span>
+                  </a>
+                </div>
+
+                <div class="show-sticky">
+                  <button type="button" class="btn btn-primary btn-nodesign btn-menu"
+                          data-xt-overlay='{"targets": "#site-menu"}'>
+                    <span>
+                      
+                        Docs
+                      
+                      <span class="icon-menu-custom">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </span>
+                    </span>
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <div class="site-wrapper-inner">
+
+
+<main class="site-main">
+  <div class="site-main-inner">
+    <div class="container">
+      <div class="flex">
+        <div class="col col-12 col-9-md">
+
+          <article class="site-article default-lists">
+            <h2>Usage</h2>
+
+<p>Use this markup to create a overlay. <code>[data-xt-overlay]</code> must be <a
+  href="/docs/introduction/javascript/#initialization">initialized by javascript</a>.</p>
+
+<pre>
+  <code class="html">
+    <div data-xt-overlay>
+      <button type="button">
+        <span><!-- content --></span>
+      </button>
+      <div class="overlay-outer">
+        <div class="overlay">
+          <div class="overlay-inner">
+            <button type="button" class="btn btn-close"><span>Close</span></button>
+            <div class="content">
+              <!-- content -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </code>
+</pre>
+
+<pre>
+  <code class="html">
+    <button type="button" data-xt-overlay='{"targets": "#overlay-custom"}'>
+      <span><!-- content --></span>
+    </button>
+    <div class="overlay-outer" id="overlay-custom">
+      <div class="overlay">
+        <div class="overlay-inner">
+          <button type="button" class="btn btn-close"><span>Close</span></button>
+          <div class="content">
+            <!-- content -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </code>
+</pre>
+
+<div class="alert">
+  <div class="content">
+    Instead of using html arguments you can initialize <a
+    href="/docs/introduction/javascript/#initialization-overlay">overlay by javascript</a> using the same options
+    syntax.
+  </div>
+</div>
+
+<div class="alert">
+  <div class="content">
+    For customizing the interactions read the documentation of <a href="/docs/interaction/toggle/#subcomponents-overlay">toggle
+    overlay</a>.
+  </div>
+</div>
+
+<div class="alert box-primary">
+  <div class="content">
+    Overlays are moved to <code>body</code> to prevent <strong>z-index</strong> problems.
+  </div>
+</div>
+
+<h2>Defaults</h2>
+
+<p>Here are the defaults options for overlay.</p>
+
+<pre>
+  <code class="js">
+XtOverlay.defaults = {
+  "elements": ":scope > a, :scope > button",
+  "targets": ":scope > .overlay-outer",
+  "class": "active",
+  "instant": {"elements": true},
+  "on": "click",
+  "toggle": true,
+  "min": 0,
+  "max": 1,
+  "appendTo": "body",
+  "backdrop": "targets",
+  "classHtml": "xt-overlay",
+  "closeInside": ".overlay-dismiss, :scope > .xt-backdrop, :scope .overlay-inner > .btn-close",
+  "scrollbar": true,
+  "aria": true
+};
+  </code>
+</pre>
+
+<h2>Variables</h2>
+
+<div class="alert">
+  <div class="content">
+    Read the documentation of <a href="/docs/introduction/theming/#component">component's variables</a>.
+  </div>
+</div>
+
+<h2>Options</h2>
+
+<h3>Variants</h3>
+
+<p>Optional classes for assigning variant.</p>
+
+<p>You can change the default <strong>variant</strong> inside the <code>.overlay</code> selector in <code>/theme/_component.less</code>.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="variants">
+    <div class="demo-text">
+      <div class="content">
+        <code>.overlay-primary</code> <code>.overlay-secondary</code> <code>.overlay-white</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space-small align-items-center demo-source-from">
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            <span>default</span>
+          </button>
+          <div class="overlay-outer">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"><span>Close</span></button>
+                <div class="content">
+                  <h2>Lorem ipsum</h2>
+                  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            <span>primary</span>
+          </button>
+          <div class="overlay-outer overlay-primary">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"><span>Close</span></button>
+                <div class="content">
+                  <h2>Lorem ipsum</h2>
+                  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            <span>secondary</span>
+          </button>
+          <div class="overlay-outer overlay-secondary">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"><span>Close</span></button>
+                <div class="content">
+                  <h2>Lorem ipsum</h2>
+                  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            <span>white</span>
+          </button>
+          <div class="overlay-outer overlay-white">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"><span>Close</span></button>
+                <div class="content">
+                  <h2>Lorem ipsum</h2>
+                  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Sizes</h3>
+
+<p>Optional classes for assigning width.</p>
+
+<p>You can change the default <strong>size</strong> inside the <code>.overlay</code> selector in <code>/theme/_component.less</code>.</p>
+
+<div class="table-scroll">
+  <table class="table table-small">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Syntax</th>
+      <th>Example</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">Class</th>
+      <td><code>.overlay-size-{size}</code></td>
+      <td><code>.overlay-size-small</code></td>
+    </tr>
+    <tr>
+      <th scope="row">Mixin</th>
+      <td><code>.overlay-size({size})</code></td>
+      <td><code>.overlay-size(small)</code></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="alert">
+  <div class="content">
+    You can set overlay's size in the <code>_variables.less</code> file. Read the documentation of <a
+    href="/docs/introduction/theming/#overlay">overlay's variables</a>.
+  </div>
+</div>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="size">
+    <div class="demo-text">
+      <div class="content">
+        <code>.overlay-size-tiny</code> <code>.overlay-size-small</code> <code>.overlay-size-medium</code>
+        <code>.overlay-size-big</code> <code>.overlay-size-giant</code> <code>.overlay-size-full</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space-small align-items-center demo-source-from">
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            <span>default</span>
+          </button>
+          <div class="overlay-outer">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"><span>Close</span></button>
+                <div class="content">
+                  <h2>Lorem ipsum</h2>
+                  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            <span>tiny</span>
+          </button>
+          <div class="overlay-outer overlay-size-tiny">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"><span>Close</span></button>
+                <div class="content">
+                  <h2>Lorem ipsum</h2>
+                  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            <span>small</span>
+          </button>
+          <div class="overlay-outer overlay-size-small">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"><span>Close</span></button>
+                <div class="content">
+                  <h2>Lorem ipsum</h2>
+                  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            <span>medium</span>
+          </button>
+          <div class="overlay-outer overlay-size-medium">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"><span>Close</span></button>
+                <div class="content">
+                  <h2>Lorem ipsum</h2>
+                  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            <span>big</span>
+          </button>
+          <div class="overlay-outer overlay-size-big">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"><span>Close</span></button>
+                <div class="content">
+                  <h2>Lorem ipsum</h2>
+                  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            <span>giant</span>
+          </button>
+          <div class="overlay-outer overlay-size-giant">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"><span>Close</span></button>
+                <div class="content">
+                  <h2>Lorem ipsum</h2>
+                  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            <span>full</span>
+          </button>
+          <div class="overlay-outer overlay-size-full">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"><span>Close</span></button>
+                <div class="content">
+                  <h2>Lorem ipsum</h2>
+                  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Special</h3>
+
+<p>Special optional modifiers classes.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="special">
+    <div class="demo-text">
+      <div class="content">
+        <code>.overlay-squared</code> <code>.overlay-noborder</code> <code>.overlay-none</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space-small align-items-center demo-source-from">
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            <span>squared</span>
+          </button>
+          <div class="overlay-outer overlay-squared">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"><span>Close</span></button>
+                <div class="content">
+                  <h2>Lorem ipsum</h2>
+                  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            <span>noborder</span>
+          </button>
+          <div class="overlay-outer overlay-noborder">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"><span>Close</span></button>
+                <div class="content">
+                  <h2>Lorem ipsum</h2>
+                  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            <span>none</span>
+          </button>
+          <div class="overlay-outer overlay-none">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"><span>Close</span></button>
+                <div class="content">
+                  <h2>Lorem ipsum</h2>
+                  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Addons</h2>
+
+<h3>Screen</h3>
+
+<p>Fullscreen overlay but with usable sizes.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="default">
+    <div class="demo-text">
+      <div class="content">
+        <code>.overlay-screen</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div data-xt-overlay>
+        <button type="button" class="btn btn-primary">
+          <span>Toggle</span>
+        </button>
+        <div class="overlay-outer overlay-screen">
+          <div class="overlay">
+            <div class="overlay-inner">
+              <button type="button" class="btn btn-close"><span>Close</span></button>
+              <div class="content">
+                <h2>Lorem ipsum</h2>
+                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                  ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                  justo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="primary">
+    <div class="demo-text">
+      <div class="content">
+        <code>.overlay-screen</code> <code>.overlay-primary</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div data-xt-overlay>
+        <button type="button" class="btn btn-primary">
+          <span>Toggle</span>
+        </button>
+        <div class="overlay-outer overlay-screen overlay-primary">
+          <div class="overlay">
+            <div class="overlay-inner">
+              <button type="button" class="btn btn-close"><span>Close</span></button>
+              <div class="content">
+                <h2>Lorem ipsum</h2>
+                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                  ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                  justo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="small">
+    <div class="demo-text">
+      <div class="content">
+        <code>.overlay-screen</code> <code>.overlay-size-small</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div data-xt-overlay>
+        <button type="button" class="btn btn-primary">
+          <span>Toggle</span>
+        </button>
+        <div class="overlay-outer overlay-screen overlay-size-small">
+          <div class="overlay">
+            <div class="overlay-inner">
+              <button type="button" class="btn btn-close"><span>Close</span></button>
+              <div class="content">
+                <h2>Lorem ipsum</h2>
+                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                  ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                  justo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="full none">
+    <div class="demo-text">
+      <div class="content">
+        <code>.overlay-screen</code> <code>.overlay-size-full</code> <code>.overlay-none</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div data-xt-overlay>
+        <button type="button" class="btn btn-primary">
+          <span>Toggle</span>
+        </button>
+        <div class="overlay-outer overlay-screen overlay-size-full overlay-none">
+          <div class="overlay">
+            <div class="overlay-inner">
+              <button type="button" class="btn btn-close"><span>Close</span></button>
+              <div class="content">
+                <h2>Lorem ipsum</h2>
+                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                  ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                  justo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Position</h3>
+
+<p>Overlay positioned on the page.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="position">
+    <div class="demo-text">
+      <div class="content">
+        <code>.overlay-left</code> <code>.overlay-right</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space-small align-items-center demo-source-from">
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            <span>left</span>
+          </button>
+          <div class="overlay-outer overlay-pos overlay-left">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"><span>Close</span></button>
+                <div class="content">
+                  <h2>Lorem ipsum</h2>
+                  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-xt-overlay>
+          <button type="button" class="btn btn-primary">
+            <span>right</span>
+          </button>
+          <div class="overlay-outer overlay-pos overlay-right">
+            <div class="overlay">
+              <div class="overlay-inner">
+                <button type="button" class="btn btn-close"><span>Close</span></button>
+                <div class="content">
+                  <h2>Lorem ipsum</h2>
+                  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                    ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                  <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                    justo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Tests</h2>
+
+<p>Here are some content examples and tests inside <strong>overlay</strong>.</p>
+
+<p>@TODO demos</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="content">
+    <div class="demo-source" data-lang="html">
+      <div data-xt-overlay>
+        <button type="button" class="btn btn-primary">
+          <span>Toggle</span>
+        </button>
+        <div class="overlay-outer">
+          <div class="overlay">
+            <div class="overlay-inner">
+
+              <button type="button" class="btn btn-close"><span>Close</span></button>
+
+              <div class="content">
+                <h2>Lorem ipsum</h2>
+                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                  ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                  justo.</p>
+                <div class="drop-outer" data-xt-drop='{"backdrop": true}'>
+                  <button type="button" class="btn btn-primary">
+                    <span>drop backdrop</span>
+                  </button>
+                  <div class="drop drop-bottom drop-left">
+                    <div class="drop-inner">
+                      <div class="content">
+                        <ul class="list list-drop">
+                          <li>
+                            <button type="button">
+                              <span>Lorem ipsum dolor</span>
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button">
+                              <span>Dolor sit</span>
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button">
+                              <span>Amet</span>
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Extensions</h2>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="/demos/component/overlay/overlay-classHtml.html" data-name="classHtml">
+    <div class="demo-text">
+      <div class="content">
+        Change class to add to <code>html</code> element on activation. <code>"classHtml": String</code>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="/demos/component/overlay/overlay-content.html" data-name="content">
+    <div class="demo-text">
+      <div class="content">
+        You can add as many overlay content as you like. <code>.content-menu</code> <code>.content-title</code>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="/demos/component/overlay/overlay-close-outside.html" data-name="close outside">
+    <div class="demo-text">
+      <div class="content">
+        Put <strong>.btn-close</strong> outside.
+      </div>
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="/demos/component/overlay/overlay-message.html" data-name="message">
+    <div class="demo-text">
+      <div class="content">
+        <code>.overlay-message</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </article>
+
+        </div>
+        <div class="col col-12 col-3-md hide show-md">
+
+          <aside class="site-aside" data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
+
+            <div class="site-aside-text">
+              <a href="/docs/interaction/overlay/" class="btn btn-nodesign">
+                <div class="site-aside-title">
+                  <span>Overlay</span>
+                </div>
+              </a>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+        <footer class="site-footer" data-xt-sticky='{"position": "bottom"}'>
+          <div class="site-footer-inner">
+            <div class="container">
+
+              <nav class="site-footer-top display-none display-block-sm" role="navigation">
+                <div class="flex flex-auto justify-content-between">
+
+                  <div class="site-footer-top-links list-space-none">
+                    <a href="/" class="btn btn-primary btn-nodesign">
+                      <span>Home</span>
+                    </a>
+                    
+                      
+                        
+                        <a href="/docs/" class="btn btn-primary btn-nodesign">
+                          <span>docs</span>
+                        </a>
+                      
+                    
+                      
+                    
+                    <a href="#" class="btn btn-primary btn-nodesign">
+                      <span>Extensions</span>
+                    </a>
+                    <a href="#" class="btn btn-primary btn-nodesign">
+                      <span>Inspirations</span>
+                    </a>
+                    <a href="/faq/" class="btn btn-primary btn-nodesign">
+                      <span>Faq</span>
+                    </a>
+                  </div>
+
+                  <div class="site-footer-top-special">
+                    
+                  </div>
+
+                </div>
+              </nav>
+
+              <div class="site-footer-bottom">
+                <div class="flex flex-auto flex-space-tiny justify-content-between">
+                  <div class="site-footer-bottom-license">
+                    Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank">CC BY 3.0</a> <span class="separator separator-dash"></span> Xtend v0.5.5 licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank">MIT</a>
+                  </div>
+                  <div class="site-footer-bottom-copy">
+                    © 2017 – 2018 <span>Riccardo Caroli</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.5.5"></script>
+    <script src="/assets/scripts/polyfill.min.js?v=0.5.5"></script>
+    <script src="/assets/scripts/xtend.min.js?v=0.5.5"></script>
+
+    <!-- theme scripts -->
+    <script src="/assets/scripts/clipboard.min.js?v=0.5.5"></script>
+    <script src="/assets/scripts/highlight.pack.js?v=0.5.5"></script>
+    <script src="/assets/scripts/theme.min.js?v=0.5.5"></script>
+
+  </body>
+</html>

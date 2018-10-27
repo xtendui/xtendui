@@ -16,7 +16,8 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     "auto": 6000,
     "autoPause": 6000,
     "drag": true,
-    "timing": time * 1000
+    "durationOn": time * 1000,
+    "durationOff": time * 1000
   });
 
   // slider items
@@ -50,7 +51,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         // content delay inverse
         contents[z].dataset.tlDelayInverse = Math.min(delaycontent * z, delaycontentMax).toString();
       }
-      // pre initial drag position
+      // setup drag position
       TweenMax.set(target, {opacity: 0});
       if (!target.classList.contains('direction-inverse')) {
         // mask
@@ -75,7 +76,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
           window.tl[z].seek('startDelay' + '-=' + content.dataset.tlDelayInverse).tweenTo('middle', {ease: 'easeIn'});
         }
       }
-      // reset drag
+      // drag position
       TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeIn'});
       TweenMax.to(target.children[0], time, {x: 0, ease: 'easeIn'});
     });
@@ -85,7 +86,6 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       let target = this;
       let xMax = target.clientWidth;
       // complete drag
-      Xt.cancelAnimationFrame.call(window, target.dataset.xtDragResetFrame);
       if (!target.classList.contains('direction-inverse')) {
         // mask
         TweenMax.to(target, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
