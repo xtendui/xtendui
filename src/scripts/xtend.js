@@ -818,15 +818,17 @@ class Core {
         self.detail.queueOn.unshift(obj);
       }
       // queue remove duplicate // @TODO
-      // for (let i = 0; i < self.detail.queueOff.length - 1; i++) { // - 1 not the last one running!
-      //   let check = self.detail.queueOff[i];
-      //   if (self.detail.queueOn[0]['elements'].groupElements.single === check['elements'].groupElements.single) {
-      //     let removed = self.detail.queueOff.splice(i, 1);
-      //     console.log('on removeoff', check['elements'].groupElements.single, self.detail.queueOff, self.detail.queueOn);
-      //     self.queueOffEnd(check);
-      //     break;
-      //   }
-      // }
+      /*
+      for (let i = 0; i < self.detail.queueOff.length - 1; i++) { // - 1 not the last one running!
+        let check = self.detail.queueOff[i];
+        if (self.detail.queueOn[0]['elements'].groupElements.single === check['elements'].groupElements.single) {
+          let removed = self.detail.queueOff.splice(i, 1);
+          console.log('on removeoff', check['elements'].groupElements.single, self.detail.queueOff, self.detail.queueOn);
+          self.queueOffEnd(check);
+          break;
+        }
+      }
+      */
       // queue run
       for (let type in self.detail.queueOn[0]) {
         self.queueOn(type, 0, true);
@@ -889,16 +891,18 @@ class Core {
       } else {
         self.detail.queueOff.unshift(obj);
       }
-      // // queue remove duplicate // @TODO
-      // for (let i = 0; i < self.detail.queueOn.length - 1; i++) { // - 1 not the last one running!
-      //   let check = self.detail.queueOn[i];
-      //   if (self.detail.queueOff[0]['elements'].groupElements.single === check['elements'].groupElements.single) {
-      //     let removed = self.detail.queueOn.splice(i, 1);
-      //     console.log('off removeon', check['elements'].groupElements.single, self.detail.queueOn, self.detail.queueOff);
-      //     self.queueOnEnd(check);
-      //     break;
-      //   }
-      // }
+      // queue remove duplicate // @TODO
+      /*
+      for (let i = 0; i < self.detail.queueOn.length - 1; i++) { // - 1 not the last one running!
+        let check = self.detail.queueOn[i];
+        if (self.detail.queueOff[0]['elements'].groupElements.single === check['elements'].groupElements.single) {
+          let removed = self.detail.queueOn.splice(i, 1);
+          console.log('off removeon', check['elements'].groupElements.single, self.detail.queueOn, self.detail.queueOff);
+          self.queueOnEnd(check);
+          break;
+        }
+      }
+      */
       // queue run
       for (let type in self.detail.queueOff[0]) {
         self.queueOff(type, 0, true);
@@ -1987,7 +1991,7 @@ class Slider extends Core {
     let options = self.options;
     // handler
     if (!e.button || e.button !== 2) { // not right click or it gets stuck
-      if (!self.checkAnim(Xt.arrSingle(target))) { // @TODO
+      if (!self.checkAnim(Xt.arrSingle(target))) {
         // save event
         self.detail.eInit = e;
         // logic
@@ -2024,7 +2028,7 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     // handler
-    if (!self.checkAnim(Xt.arrSingle(target))) { // @TODO
+    if (!self.checkAnim(Xt.arrSingle(target))) {
       // logic
       let eventLimit = self.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
