@@ -40,7 +40,7 @@
     "gulp-clean-css": "^3.0.3",
     "gulp-less": "^4.0.1",
     "gulp-replace": "^0.6.1",
-    "gulp-sourcemaps": "^2.4.1",
+    "gulp-sourcemaps": "^2.6.4",
     "gulp-terser": "^1.1.5",
     "gulp-util": "^3.0.8",
     "vinyl-buffer": "^1.0.1",
