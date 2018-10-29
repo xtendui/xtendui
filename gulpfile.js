@@ -22,7 +22,7 @@ gulp.task('less-dist', function () {
   let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2018 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
   return gulp.src(['dist/styles/*.less', '!dist/styles/_*.less'])
     .pipe(replace(/\/\*\![^\*]+\*\//, banner))
-    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(less())
     .pipe(cleanCSS())
     .pipe(sourcemaps.write(''))
@@ -36,7 +36,7 @@ gulp.task('less-demos', gulp.series('less-dist', function () {
 }));
 gulp.task('less', gulp.series('less-demos', function () {
   return gulp.src(['src/docs/assets/styles/**/*.less', '!src/docs/assets/styles/**/_*.less'])
-    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(less())
     .pipe(cleanCSS())
     .pipe(sourcemaps.write(''))
