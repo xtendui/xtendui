@@ -26,24 +26,51 @@ Xt.currents = {}; // Xt currents based on namespace (so shared between Xt object
 Xt.init = function (containers = document.documentElement) {
   containers = Xt.arrSingle(containers);
   for (let container of containers) {
-    // xt
+    // toggle
+    if (container.getAttribute('data-xt-toggle')) {
+      new Xt.Toggle(container);
+    }
     for (let el of container.querySelectorAll('[data-xt-toggle]')) {
       new Xt.Toggle(el);
+    }
+    // drop
+    if (container.getAttribute('data-xt-drop')) {
+      new Xt.Drop(container);
     }
     for (let el of container.querySelectorAll('[data-xt-drop]')) {
       new Xt.Drop(el);
     }
+    // overlay
+    if (container.getAttribute('data-xt-overlay')) {
+      new Xt.Overlay(container);
+    }
     for (let el of container.querySelectorAll('[data-xt-overlay]')) {
       new Xt.Overlay(el);
+    }
+    // slider
+    if (container.getAttribute('data-xt-slider')) {
+      new Xt.Slider(container);
     }
     for (let el of container.querySelectorAll('[data-xt-slider]')) {
       new Xt.Slider(el);
     }
+    // fade
+    if (container.getAttribute('data-xt-fade')) {
+      new Xt.Fade(container);
+    }
     for (let el of container.querySelectorAll('[data-xt-fade]')) {
       new Xt.Fade(el);
     }
+    // sticky
+    if (container.getAttribute('data-xt-sticky')) {
+      new Xt.Sticky(container);
+    }
     for (let el of container.querySelectorAll('[data-xt-sticky]')) {
       new Xt.Sticky(el);
+    }
+    // btnMerge
+    if (container.tagName === 'a' || container.tagName === 'button') {
+      Xt.btnMerge.init(container);
     }
     for (let el of Array.from(container.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
       Xt.btnMerge.init(el);
@@ -70,8 +97,10 @@ Xt.initObserver = new MutationObserver(function (mutationsList) {
     if (mutation.type == 'childList') {
       for (let added of mutation.addedNodes) {
         if (added.nodeType === 1 && !added.classList.contains('xt-ignore')) {
-          //console.log(added);
+
+          // init
           Xt.init(added);
+
         }
       }
     }
