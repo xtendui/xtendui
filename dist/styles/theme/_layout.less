@@ -184,6 +184,16 @@
   }
 }
 
+.box-error {
+  &@{box-design} {
+    border-color: @error;
+    background-color: @error;
+  }
+  > .content {
+    .text-inverse();
+  }
+}
+
 .box-white {
   &@{box-design} {
     border-color: @white;
@@ -196,37 +206,40 @@
 
 // size
 
+
+// size
+
 .box-tiny {
   > .content {
-    padding: .75em 1em;
+    padding: .25em .75em;
     .font-tiny();
   }
 }
 
 .box-small {
   > .content {
-    padding: 1em 1.25em;
+    padding: .5em 1em;
     .font-small();
   }
 }
 
 .box-medium {
   > .content {
-    padding: 1.25em 1.5em;
+    padding: 1em 1.5em;
     .font-medium();
   }
 }
 
 .box-big {
   > .content {
-    padding: 1.5em 1.75em;
+    padding: 1.5em 2em;
     .font-big();
   }
 }
 
 .box-giant {
   > .content {
-    padding: 2em 2.25em;
+    padding: 1.75em 2.25em;
     .font-giant();
   }
 }

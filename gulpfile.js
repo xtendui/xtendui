@@ -17,6 +17,17 @@ let sourcemaps = require('gulp-sourcemaps');
 
 // compile less
 
+gulp.task('less-demos', function () {
+  return gulp.src(['src/docs/demos/**/*.less', '!src/docs/demos/**/_*.less'])
+    .pipe(less())
+    .pipe(cleanCSS())
+    .pipe(gulp.dest('src/docs/demos/'));
+});
+gulp.task('less-demos:watch', function (done) {
+  gulp.watch(['src/docs/demos/**/*.less'], gulp.series('less', 'site-build'));
+  done();
+});
+
 gulp.task('less-dist', function () {
   const version = JSON.parse(fs.readFileSync('package.json')).version;
   let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2018 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
@@ -28,13 +39,7 @@ gulp.task('less-dist', function () {
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('dist/styles/'));
 });
-gulp.task('less-demos', gulp.series('less-dist', function () {
-  return gulp.src(['src/docs/demos/**/*.less', '!src/docs/demos/**/_*.less'])
-    .pipe(less())
-    .pipe(cleanCSS())
-    .pipe(gulp.dest('src/docs/demos/'));
-}));
-gulp.task('less', gulp.series('less-demos', function () {
+gulp.task('less', gulp.series('less-dist', function () {
   return gulp.src(['src/docs/assets/styles/**/*.less', '!src/docs/assets/styles/**/_*.less'])
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(less())
@@ -43,7 +48,7 @@ gulp.task('less', gulp.series('less-demos', function () {
     .pipe(gulp.dest('src/docs/assets/styles/'));
 }));
 gulp.task('less:watch', function (done) {
-  gulp.watch(['dist/styles/**/*.less', 'src/docs/demos/**/*.less', 'src/docs/assets/styles/**/*.less'], gulp.series('less', 'site-build'));
+  gulp.watch(['dist/styles/**/*.less', 'src/docs/assets/styles/**/*.less'], gulp.series('less', 'site-build'));
   done();
 });
 
@@ -167,7 +172,11 @@ gulp.task('watch',
 );
 
 gulp.task('build',
-  gulp.series('version', gulp.parallel('less', 'js'), 'site-build')
+  gulp.series('version', gulp.parallel('less', 'js'), 'less-demos', 'site-build')
+);
+
+gulp.task('demos',
+  gulp.series('version', gulp.parallel('less-demos:watch'))
 );
 
 gulp.task('default', gulp.series('build'));

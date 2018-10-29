@@ -18,6 +18,7 @@
   "scripts": {
     "build": "gulp build",
     "watch": "gulp watch",
+    "demos": "gulp demos",
     "serve": "bundle exec jekyll serve",
     "deploy": "gh-pages -d docs",
     "version": "npm run build && npm run deploy && git add .",
