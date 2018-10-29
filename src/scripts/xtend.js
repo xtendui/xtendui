@@ -105,7 +105,7 @@ class Core {
     }
     if (!self.elements.length) {
       self.elements = Xt.arrSingle(self.object);
-      // @FIX on next frame set all elements querying the namespace
+      // @FIX set namespace for next frame
       window.requestAnimationFrame(function () {
         self.elements = Xt.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']'));
       });
@@ -812,7 +812,7 @@ class Core {
       for (let type in self.detail.queueOn[0]) {
         self.queueOn(type, 0, true);
       }
-    } else if (options.toggle && (!e.detail || !e.detail.skipToggle)) { // not when skipToggle
+    } else if (options.toggle && (!e || !e.detail || !e.detail.skipToggle)) { // not when skipToggle
       // off
       self.eventOff(element, e);
     }
@@ -958,7 +958,7 @@ class Core {
         self.specialScrollbarOn();
         // focus
         if (options.scrollbar) {
-          let el = obj['targets'].queueEls[0];
+          let el = obj['targets'] ? obj['targets'].queueEls[0] : obj['elements'].queueEls[0];
           Xt.focus.block = true;
           Xt.focusLimit.on(el);
           el.focus();
@@ -1374,7 +1374,7 @@ class Core {
     let options = self.options;
     // backdrop
     if (options.backdrop) {
-      let elements = typeof options.backdrop === 'string' ? Xt.arrSingle(obj[options.backdrop].queueEls) : Xt.arrSingle(self.object);
+      let elements = typeof options.backdrop === 'string' && obj[options.backdrop] ? Xt.arrSingle(obj[options.backdrop].queueEls) : Xt.arrSingle(self.object);
       for (let element of elements) {
         let backdrop = element.querySelectorAll('.xt-backdrop');
         if (!backdrop.length) {
@@ -1795,15 +1795,13 @@ class Drop extends Core {
     let options = self.options;
     // aria
     if (options.aria) {
-      if (self.targets.length) {
-        for (let el of self.elements) {
-          let ariaEls = self.getInside(el, options.ariaControls);
-          let ariaEl = ariaEls.length ? ariaEls[0] : el;
-          ariaEl.setAttribute('aria-haspopup', 'listbox');
-        }
-        for (let tr of self.targets) {
-          tr.setAttribute('role', 'listbox');
-        }
+      for (let el of self.elements) {
+        let ariaEls = self.getInside(el, options.ariaControls);
+        let ariaEl = ariaEls.length ? ariaEls[0] : el;
+        ariaEl.setAttribute('aria-haspopup', 'listbox');
+      }
+      for (let tr of self.targets) {
+        tr.setAttribute('role', 'listbox');
       }
     }
   }
@@ -1864,6 +1862,11 @@ class Overlay extends Core {
         for (let tr of self.targets) {
           tr.setAttribute('role', 'dialog');
           tr.setAttribute('aria-modal', 'true');
+        }
+      } else {
+        for (let el of self.elements) {
+          el.setAttribute('role', 'dialog');
+          el.setAttribute('aria-modal', 'true');
         }
       }
     }

@@ -21,48 +21,48 @@ Xt.currents = {}; // Xt currents based on namespace (so shared between Xt object
 //////////////////////
 
 /**
- * init all data-xt classes
+ * init Xt
  */
 Xt.init = function (containers = document.documentElement) {
   containers = Xt.arrSingle(containers);
   for (let container of containers) {
     // toggle
-    if (container.getAttribute('data-xt-toggle')) {
+    if (container.getAttribute('data-xt-toggle') !== null) {
       new Xt.Toggle(container);
     }
     for (let el of container.querySelectorAll('[data-xt-toggle]')) {
       new Xt.Toggle(el);
     }
     // drop
-    if (container.getAttribute('data-xt-drop')) {
+    if (container.getAttribute('data-xt-drop') !== null) {
       new Xt.Drop(container);
     }
     for (let el of container.querySelectorAll('[data-xt-drop]')) {
       new Xt.Drop(el);
     }
     // overlay
-    if (container.getAttribute('data-xt-overlay')) {
+    if (container.getAttribute('data-xt-overlay') !== null) {
       new Xt.Overlay(container);
     }
     for (let el of container.querySelectorAll('[data-xt-overlay]')) {
       new Xt.Overlay(el);
     }
     // slider
-    if (container.getAttribute('data-xt-slider')) {
+    if (container.getAttribute('data-xt-slider') !== null) {
       new Xt.Slider(container);
     }
     for (let el of container.querySelectorAll('[data-xt-slider]')) {
       new Xt.Slider(el);
     }
     // fade
-    if (container.getAttribute('data-xt-fade')) {
+    if (container.getAttribute('data-xt-fade') !== null) {
       new Xt.Fade(container);
     }
     for (let el of container.querySelectorAll('[data-xt-fade]')) {
       new Xt.Fade(el);
     }
     // sticky
-    if (container.getAttribute('data-xt-sticky')) {
+    if (container.getAttribute('data-xt-sticky') !== null) {
       new Xt.Sticky(container);
     }
     for (let el of container.querySelectorAll('[data-xt-sticky]')) {
@@ -78,21 +78,9 @@ Xt.init = function (containers = document.documentElement) {
   }
 };
 
-// init all
+// observer
 
-if (document.readyState === "loading") {
-  document.addEventListener('DOMContentLoaded', function () {
-    Xt.init();
-  });
-} else {
-  window.requestAnimationFrame(function () {
-    Xt.init();
-  });
-}
-
-// mutation observer
-
-Xt.initObserver = new MutationObserver(function (mutationsList) {
+Xt.observer = new MutationObserver(function (mutationsList) {
   for (let mutation of mutationsList) {
     if (mutation.type == 'childList') {
       for (let added of mutation.addedNodes) {
@@ -106,7 +94,20 @@ Xt.initObserver = new MutationObserver(function (mutationsList) {
     }
   }
 });
-Xt.initObserver.observe(document, {characterData: false, attributes: false, childList: true, subtree: true});
+
+// init Xt and observer
+
+if (document.readyState === "loading") {
+  document.addEventListener('DOMContentLoaded', function () {
+    Xt.init();
+    Xt.observer.observe(document, {characterData: false, attributes: false, childList: true, subtree: true});
+  });
+} else {
+  window.requestAnimationFrame(function () {
+    Xt.init();
+    Xt.observer.observe(document, {characterData: false, attributes: false, childList: true, subtree: true});
+  });
+}
 
 //////////////////////
 // btnMerge

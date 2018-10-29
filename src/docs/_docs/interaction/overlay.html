@@ -13,26 +13,6 @@ description: Component to show modal elements inside the page.
 
 <pre>
   <code class="html">
-    <div data-xt-overlay>
-      <button type="button">
-        <span><!-- content --></span>
-      </button>
-      <div class="overlay-outer">
-        <div class="overlay">
-          <div class="overlay-inner">
-            <button type="button" class="btn btn-close"><span>Close</span></button>
-            <div class="content">
-              <!-- content -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </code>
-</pre>
-
-<pre>
-  <code class="html">
     <button type="button" data-xt-overlay='{"targets": "#overlay-custom"}'>
       <span><!-- content --></span>
     </button>
@@ -69,6 +49,47 @@ description: Component to show modal elements inside the page.
     Overlays are moved to <code>body</code> to prevent <strong>z-index</strong> problems.
   </div>
 </div>
+
+<h3>Alternatives</h3>
+
+<p>You can use this markup to create a overlay with <strong>unique mode</strong>.<p>
+
+<pre>
+  <code class="html">
+    <div class="overlay-outer" data-xt-overlay>
+      <div class="overlay">
+        <div class="overlay-inner">
+          <button type="button" class="btn btn-close"><span>Close</span></button>
+          <div class="content">
+            <!-- content -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </code>
+</pre>
+
+<p>You can use this markup to create a overlay without <strong>id</strong>.<p>
+
+<pre>
+  <code class="html">
+    <div data-xt-overlay>
+      <button type="button">
+        <span><!-- content --></span>
+      </button>
+      <div class="overlay-outer">
+        <div class="overlay">
+          <div class="overlay-inner">
+            <button type="button" class="btn btn-close"><span>Close</span></button>
+            <div class="content">
+              <!-- content -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </code>
+</pre>
 
 <h2>Defaults</h2>
 
