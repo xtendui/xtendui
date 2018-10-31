@@ -1392,8 +1392,7 @@ class Core {
   specialCenter(el) {
     let self = this;
     // specialCenter
-    let style = getComputedStyle(el);
-    if (style.getPropertyValue('--xt-center')) {
+    if (el.classList.contains('drop-center')) {
       let add = self.object.clientWidth;
       let remove = el.clientWidth;
       el.style.left = ((add - remove) / 2) + 'px';
@@ -1407,8 +1406,7 @@ class Core {
   specialMiddle(el) {
     let self = this;
     // specialMiddle
-    let style = getComputedStyle(el);
-    if (style.getPropertyValue('--xt-middle')) {
+    if (el.classList.contains('drop-middle')) {
       let add = self.object.clientHeight;
       let remove = el.clientHeight;
       el.style.top = ((add - remove) / 2) + 'px';
@@ -1420,8 +1418,7 @@ class Core {
    * @param {Node|HTMLElement} el Element
    */
   specialCollapseOn(el) {
-    let style = getComputedStyle(el);
-    if (style.getPropertyValue('--xt-collapse-height')) {
+    if (el.classList.contains('collapse-height')) {
       el.classList.add('xt-calculating');
       el.style.height = 'auto';
       el.style.paddingTop = '';
@@ -1442,7 +1439,7 @@ class Core {
         }).toString();
       }).toString();
     }
-    if (style.getPropertyValue('--xt-collapse-width')) {
+    if (el.classList.contains('collapse-width')) {
       el.classList.add('xt-calculating');
       el.style.width = 'auto';
       el.style.paddingLeft = '';
@@ -1470,8 +1467,7 @@ class Core {
    * @param {Node|HTMLElement} el Element
    */
   specialCollapseOff(el) {
-    let style = getComputedStyle(el);
-    if (style.getPropertyValue('--xt-collapse-height')) {
+    if (el.classList.contains('collapse-height')) {
       let h = el.clientHeight + 'px';
       let pt = el.style.paddingTop;
       let pb = el.style.paddingBottom;
@@ -1487,7 +1483,7 @@ class Core {
         }).toString();
       }).toString();
     }
-    if (style.getPropertyValue('--xt-collapse-width')) {
+    if (el.classList.contains('collapse-width')) {
       let w = el.clientWidth + 'px';
       let pl = el.style.paddingLeft;
       let pr = el.style.paddingRight;
@@ -1510,11 +1506,10 @@ class Core {
    * @param {Node|HTMLElement} el Element
    */
   specialCollapseReset(el) {
-    let style = getComputedStyle(el);
-    if (style.getPropertyValue('--xt-collapse-height')) {
+    if (el.classList.contains('collapse-height')) {
       el.style.height = 'auto';
     }
-    if (style.getPropertyValue('--xt-collapse-width')) {
+    if (el.classList.contains('collapse-width')) {
       el.style.width = 'auto';
     }
   }
