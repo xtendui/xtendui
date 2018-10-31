@@ -2369,7 +2369,7 @@ class Sticky extends Core {
       // }
       // element.dataset.xtEventFrame = window.requestAnimationFrame(function () {
       //   element.classList.remove('no-transition');
-        element.style[options.position] = add + 'px';
+      element.style[options.position] = add + 'px';
       // }).toString();
     }
     // fix position fixed width 100% of parent

@@ -32,15 +32,15 @@ description: Component to show modal elements inside the page.
 <div class="alert">
   <div class="content">
     Instead of using html arguments you can initialize <a
-    href="{% link _docs/introduction/javascript.html %}#initialization-overlay">overlay by javascript</a> using the same options
-    syntax.
+    href="{% link _docs/introduction/javascript.html %}#initialization-overlay">overlay by javascript</a> using the same
+    options syntax.
   </div>
 </div>
 
 <div class="alert">
   <div class="content">
-    For customizing the interactions read the documentation of <a href="{% link _docs/interaction/toggle.html %}#subcomponents-overlay">toggle
-    overlay</a>.
+    For customizing the interactions read the documentation of <a
+    href="{% link _docs/interaction/toggle.html %}#subcomponents-overlay">toggle overlay</a>.
   </div>
 </div>
 
@@ -52,7 +52,8 @@ description: Component to show modal elements inside the page.
 
 <h3>Alternatives</h3>
 
-<p>You can use this markup to create a overlay with <strong>unique mode</strong>.<p>
+<p>You can use this markup to create a overlay with <strong>no toggle</strong>. Be sure to add <code>.content.event-limit</code>.
+<p>
 
 <pre>
   <code class="html">
@@ -60,7 +61,7 @@ description: Component to show modal elements inside the page.
       <div class="overlay">
         <div class="overlay-inner">
           <button type="button" class="btn btn-close"><span>Close</span></button>
-          <div class="content">
+          <div class="content event-limit">
             <!-- content -->
           </div>
         </div>
@@ -69,7 +70,7 @@ description: Component to show modal elements inside the page.
   </code>
 </pre>
 
-<p>You can use this markup to create a overlay without <strong>id</strong>.<p>
+<p>You can use this markup to create a overlay with <strong>no id</strong>.<p>
 
 <pre>
   <code class="html">
@@ -130,7 +131,8 @@ XtOverlay.defaults = {
 
 <p>Optional classes for assigning variant.</p>
 
-<p>You can change the default <strong>variant</strong> inside the <code>.overlay</code> selector in <code>/theme/_component.less</code>.</p>
+<p>You can change the default <strong>variant</strong> inside the <code>.overlay</code> selector in <code>/theme/_component.less</code>.
+</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="variants">
@@ -233,7 +235,8 @@ XtOverlay.defaults = {
 
 <p>Optional classes for assigning width.</p>
 
-<p>You can change the default <strong>size</strong> inside the <code>.overlay</code> selector in <code>/theme/_component.less</code>.</p>
+<p>You can change the default <strong>size</strong> inside the <code>.overlay</code> selector in <code>/theme/_component.less</code>.
+</p>
 
 <div class="table-scroll">
   <table class="table table-small">
@@ -758,28 +761,32 @@ XtOverlay.defaults = {
 <h2>Extensions</h2>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/component/overlay/overlay-classHtml.html" data-name="classHtml">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/component/overlay/overlay-classHtml.html"
+       data-name="classHtml">
     <div class="demo-text">
       <div class="content">
         Change class to add to <code>html</code> element on activation. <code>"classHtml": String</code>
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/component/overlay/overlay-content.html" data-name="content">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/component/overlay/overlay-content.html"
+       data-name="content">
     <div class="demo-text">
       <div class="content">
         You can add as many overlay content as you like. <code>.content-menu</code> <code>.content-title</code>
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/component/overlay/overlay-close-outside.html" data-name="close outside">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/component/overlay/overlay-close-outside.html"
+       data-name="close outside">
     <div class="demo-text">
       <div class="content">
         Put <strong>.btn-close</strong> outside.
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/component/overlay/overlay-message.html" data-name="message">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/component/overlay/overlay-message.html"
+       data-name="message">
     <div class="demo-text">
       <div class="content">
         <code>.overlay-message</code>
