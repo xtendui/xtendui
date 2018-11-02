@@ -380,7 +380,6 @@ for(let [i, el] of document.querySelectorAll('.demo').entries()) {
 // others
 //////////////////////
 
-
 // .demo-cols
 
 for(let element of document.querySelectorAll('.demo-cols')) {
@@ -392,7 +391,7 @@ for(let element of document.querySelectorAll('.demo-cols')) {
 // .demo-cols-nested
 
 for(let element of document.querySelectorAll('.demo-cols-nested .col')) {
-  for(let [i, el] of element.querySelectorAll('.co, .col-customl').entries()) {
+  for(let [i, el] of element.querySelectorAll('.col, .col-custom').entries()) {
     el.setAttribute('data-index', i);
   }
 }

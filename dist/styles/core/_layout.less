@@ -13,15 +13,57 @@
 // grid
 //////////////////////
 
-.col {
+// col
+
+.col(@breakpoint:none) when (@breakpoint = none) {
   -ms-flex-preferred-size: 100%; // fix ie10 overflow
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
 }
 
-.col-custom {
+.col(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex-preferred-size: 100%; // fix ie10 overflow
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
+}
+
+// col-custom
+
+.col-custom(@breakpoint:none) when (@breakpoint = none) {
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+}
+
+.col-custom(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+  }
+}
+
+// col-auto
+
+.col-auto(@breakpoint:none) when (@breakpoint = none) {
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: 100%; // fix ie10 overflow
+  flex-basis: auto;
+  max-width: none;
+  width: auto;
+}
+
+.col-auto(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    -webkit-flex-basis: auto;
+    -ms-flex-preferred-size: 100%; // fix ie10 overflow
+    flex-basis: auto;
+    max-width: none;
+    width: auto;
+  }
 }
 
 // grid

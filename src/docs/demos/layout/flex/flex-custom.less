@@ -1,0 +1,12 @@
+@import (reference) "../../../../../dist/styles/xtend.less";
+
+.col-custom {
+  width: 100px; max-width: 100px;
+}
+
+.col-custom-sm {
+  @media @min-sm and @max-md {
+    width: 100px;
+    max-width: 100px;
+  }
+}

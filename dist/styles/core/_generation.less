@@ -395,14 +395,16 @@
         .list-right() !important;
       }
       // grid
-      .generate-grid(@breakpoint);
-      .col-auto {
-        -webkit-flex-basis: auto;
-        -ms-flex-preferred-size: 100%; // fix ie10 overflow
-        flex-basis: auto;
-        max-width: none;
-        width: auto;
+      .col {
+        .col() !important;
       }
+      .col-custom {
+        .col-custom() !important;
+      }
+      .col-auto {
+        .col-auto() !important;
+      }
+      .generate-grid(@breakpoint);
       // order
       .generate-order(@breakpoint);
       // flex-space
@@ -426,14 +428,16 @@
           .list-right() !important;
         }
         // grid
-        .generate-grid(@breakpoint);
-        .col-auto-@{breakpoint} {
-          -webkit-flex-basis: auto;
-          -ms-flex-preferred-size: 100%; // fix ie10 overflow
-          flex-basis: auto;
-          max-width: none;
-          width: auto;
+        .col-@{breakpoint} {
+          .col() !important;
         }
+        .col-custom-@{breakpoint} {
+          .col-custom() !important;
+        }
+        .col-auto-@{breakpoint} {
+          .col-auto() !important;
+        }
+        .generate-grid(@breakpoint);
         // order
         .generate-order(@breakpoint);
         // flex-space
