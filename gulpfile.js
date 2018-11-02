@@ -23,12 +23,20 @@ gulp.task('less-demos', function () {
     .pipe(cleanCSS())
     .pipe(gulp.dest('src/docs/demos/'));
 });
-gulp.task('less-demos:watch', function (done) {
-  gulp.watch(['src/docs/demos/**/*.less'], gulp.series('less', 'site-build'));
+gulp.task('less-docs', gulp.series('less-demos', function () {
+  return gulp.src(['src/docs/assets/styles/**/*.less', '!src/docs/assets/styles/**/_*.less'])
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(less())
+    .pipe(cleanCSS())
+    .pipe(sourcemaps.write(''))
+    .pipe(gulp.dest('src/docs/assets/styles/'));
+}));
+gulp.task('less-docs:watch', function (done) {
+  gulp.watch(['dist/styles/**/*.less', 'src/docs/assets/styles/**/*.less', 'src/docs/demos/**/*.less'], gulp.series('less', 'less-docs', 'site-build'));
   done();
 });
 
-gulp.task('less-dist', function () {
+gulp.task('less', function () {
   const version = JSON.parse(fs.readFileSync('package.json')).version;
   let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2018 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
   return gulp.src(['dist/styles/*.less', '!dist/styles/_*.less'])
@@ -39,22 +47,53 @@ gulp.task('less-dist', function () {
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('dist/styles/'));
 });
-gulp.task('less', gulp.series('less-dist', function () {
-  return gulp.src(['src/docs/assets/styles/**/*.less', '!src/docs/assets/styles/**/_*.less'])
-    .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(less())
-    .pipe(cleanCSS())
-    .pipe(sourcemaps.write(''))
-    .pipe(gulp.dest('src/docs/assets/styles/'));
-}));
 gulp.task('less:watch', function (done) {
-  gulp.watch(['dist/styles/**/*.less', 'src/docs/assets/styles/**/*.less'], gulp.series('less', 'site-build'));
+  gulp.watch(['dist/styles/**/*.less'], gulp.series('less', 'site-build'));
   done();
 });
 
 // compile js
 
-gulp.task('js-dist', function () {
+gulp.task('js-theme', function () {
+  let b = browserify({
+    entries: 'src/docs/assets/scripts/theme.js',
+    debug: true
+  });
+  return b.bundle()
+    .pipe(source('theme.min.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(terser({
+      output: {
+        comments: /^!/
+      }
+    }))
+    .pipe(sourcemaps.write(''))
+    .pipe(gulp.dest('src/docs/assets/scripts/'));
+});
+gulp.task('js-docs', gulp.series('js-theme', function () {
+  let b = browserify({
+    entries: 'src/docs/assets/scripts/xtend.js',
+    debug: true
+  });
+  return b.bundle()
+    .pipe(source('xtend.min.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(terser({
+      output: {
+        comments: /^!/
+      }
+    }))
+    .pipe(sourcemaps.write(''))
+    .pipe(gulp.dest('src/docs/assets/scripts/'));
+}));
+gulp.task('js-docs:watch', function (done) {
+  gulp.watch(['src/scripts/*.js', 'src/docs/assets/scripts/theme.js', 'src/docs/assets/scripts/xtend.js'], gulp.series('js', 'js-docs', 'site-build'));
+  done();
+});
+
+gulp.task('js', function () {
   let b = browserify({
     entries: 'src/scripts/xtend.js',
     debug: true
@@ -74,42 +113,8 @@ gulp.task('js-dist', function () {
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('dist/scripts/'));
 });
-gulp.task('js-theme', gulp.series('js-dist', function () {
-  let b = browserify({
-    entries: 'src/docs/assets/scripts/theme.js',
-    debug: true
-  });
-  return b.bundle()
-    .pipe(source('theme.min.js'))
-    .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(terser({
-      output: {
-        comments: /^!/
-      }
-    }))
-    .pipe(sourcemaps.write(''))
-    .pipe(gulp.dest('src/docs/assets/scripts/'));
-}));
-gulp.task('js', gulp.series('js-theme', function () {
-  let b = browserify({
-    entries: 'src/docs/assets/scripts/xtend.js',
-    debug: true
-  });
-  return b.bundle()
-    .pipe(source('xtend.min.js'))
-    .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(terser({
-      output: {
-        comments: /^!/
-      }
-    }))
-    .pipe(sourcemaps.write(''))
-    .pipe(gulp.dest('src/docs/assets/scripts/'));
-}));
 gulp.task('js:watch', function (done) {
-  gulp.watch(['src/docs/assets/scripts/theme.js', 'src/docs/assets/scripts/xtend.js', 'src/scripts/*.js'], gulp.series('js', 'site-build'));
+  gulp.watch(['src/scripts/*.js'], gulp.series('js', 'site-build'));
   done();
 });
 
@@ -146,7 +151,6 @@ gulp.task('site-serve', function (callback) {
   callback();
 });
 
-
 // version
 
 gulp.task('version', function () {
@@ -167,16 +171,20 @@ gulp.task('version:watch', function (done) {
 
 // scripts
 
+gulp.task('build',
+  gulp.series('version', gulp.parallel('less', 'js'), 'site-build')
+);
+
+gulp.task('build:docs',
+  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less-docs', 'js-docs'), 'site-build')
+);
+
 gulp.task('watch',
   gulp.series('version', gulp.parallel('less', 'js'), 'site-serve', gulp.parallel('version:watch', 'content:watch', 'less:watch', 'js:watch'))
 );
 
-gulp.task('build',
-  gulp.series('version', gulp.parallel('less', 'js'), 'less-demos', 'site-build')
-);
-
-gulp.task('demos',
-  gulp.series('version', gulp.parallel('less-demos:watch'))
+gulp.task('watch:docs',
+  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less-docs', 'js-docs'), 'site-serve', gulp.parallel('version:watch', 'content:watch', 'less-docs:watch', 'js-docs:watch'))
 );
 
 gulp.task('default', gulp.series('build'));

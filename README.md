@@ -23,7 +23,8 @@ cp -r node_modules/xtend-library/dist/ xtend-library/
 We use gulp to compile and watch files.
 
 * Install required npm packages with `npm install`
-* Use `npm run build` or `npm run watch` (with watch you need also jekyll)
+* Use `npm run build` or `npm run watch` to compile *xtend* css and js
+* Use `npm run build:doc` or `npm run watch:docs` to compile *also docs* css and js
 
 ### Documentation
 

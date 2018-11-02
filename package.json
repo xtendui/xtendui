@@ -18,10 +18,11 @@
   "scripts": {
     "build": "gulp build",
     "watch": "gulp watch",
-    "demos": "gulp demos",
+    "build:docs": "gulp build:docs",
+    "watch:docs": "gulp watch:docs",
     "serve": "bundle exec jekyll serve",
     "deploy": "gh-pages -d docs",
-    "version": "npm run build && npm run deploy && git add .",
+    "version": "npm run build:docs && npm run deploy && git add .",
     "postversion": "git push && git push --tags && npm publish"
   },
   "dependencies": {},
