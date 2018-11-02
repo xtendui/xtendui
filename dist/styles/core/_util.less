@@ -729,7 +729,7 @@
 // flex-auto
 
 .flex-auto(@breakpoint:none) when (@breakpoint = none) {
-  -webkit-box-flex: 1;
+  -ms-flex-preferred-size: 100%; // fix ie10 overflow
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
 }
@@ -737,7 +737,7 @@
 .flex-auto(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    -webkit-box-flex: 1;
+    -ms-flex-preferred-size: 100%; // fix ie10 overflow
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
   }

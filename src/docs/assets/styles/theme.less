@@ -28,38 +28,22 @@
 // sticky footer
 
 .site-wrapper {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-flow: column;
+  .display(flex);
+  .flex-wrap();
+  .flex-column();
   min-height: 100%;
 }
 
 .site-wrapper-inner {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-flow: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
+  .display(flex);
+  .flex-wrap();
+  .flex-column();
+  .flex-auto();
   min-height: 100%;
 }
 
 .site-main {
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
+  .flex-auto();
 }
 
 //////////////////////

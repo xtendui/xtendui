@@ -16,17 +16,13 @@
 // col
 
 .col(@breakpoint:none) when (@breakpoint = none) {
-  -ms-flex-preferred-size: 100%; // fix ie10 overflow
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
+  .flex-auto();
 }
 
 .col(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    -ms-flex-preferred-size: 100%; // fix ie10 overflow
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
+    .flex-auto();
   }
 }
 
