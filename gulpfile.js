@@ -96,6 +96,7 @@ gulp.task('js-docs:watch', function (done) {
 gulp.task('js', function () {
   let b = browserify({
     entries: 'src/scripts/xtend.js',
+    standalone: 'Xt',
     debug: true
   });
   const version = JSON.parse(fs.readFileSync('package.json')).version;

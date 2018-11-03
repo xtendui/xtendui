@@ -2,4 +2,4 @@
 // xtend
 //////////////////////
 
-import {Xt} from '../../../scripts/xtend';
+import Xt from '../../../scripts/xtend';
