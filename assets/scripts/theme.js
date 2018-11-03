@@ -1,3 +1,9 @@
+/* xtend (https://getxtend.com/)
+@copyright (c) 2017 - 2018 Riccardo Caroli
+@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
+
+import Xt from '../../../scripts/xtend';
+
 //////////////////////
 // anchors and sidebar
 //////////////////////
@@ -201,7 +207,7 @@ const populateDemo = function (container, i) {
       item.append(Xt.createElement('<iframe data-src="' + src + '" frameborder="0" name="' + id + '"></iframe>'));
     }
     // tabs
-    item.prepend(Xt.createElement('<div class="demo-code"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-empty btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>'));
+    item.prepend(Xt.createElement('<div class="demo-code collapse-height"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-empty btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>'));
     // collapse code
     let demoId = 'demo-' + i + k;
     container.setAttribute('id', demoId);
@@ -380,7 +386,6 @@ for(let [i, el] of document.querySelectorAll('.demo').entries()) {
 // others
 //////////////////////
 
-
 // .demo-cols
 
 for(let element of document.querySelectorAll('.demo-cols')) {
@@ -392,7 +397,7 @@ for(let element of document.querySelectorAll('.demo-cols')) {
 // .demo-cols-nested
 
 for(let element of document.querySelectorAll('.demo-cols-nested .col')) {
-  for(let [i, el] of element.querySelectorAll('.co, .col-customl').entries()) {
+  for(let [i, el] of element.querySelectorAll('.col, .col-custom').entries()) {
     el.setAttribute('data-index', i);
   }
 }
