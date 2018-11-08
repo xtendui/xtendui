@@ -118,18 +118,18 @@
   }
 }
 
-// block
+// full-width
 
-.block(@breakpoint:none) when (@breakpoint = none) {
-  display: inline-block;
+.full-width(@breakpoint:none) when (@breakpoint = none) {
+  .display(inline-flex);
   vertical-align: top; // fix inline-block spacing
   width: 100%;
 }
 
-.block(@breakpoint:none) when (default()) {
+.full-width(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    display: inline-block;
+    .display(inline-flex);
     vertical-align: top; // fix inline-block spacing
     width: 100%;
   }

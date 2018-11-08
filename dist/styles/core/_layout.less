@@ -89,7 +89,7 @@
 // list
 //////////////////////
 
-.list-base() {
+.list-base {
   .display(flex);
   .reset-list();
   //.flex-auto(); // @FIX flex inside flex take 100% but dont bugs negative margins
@@ -101,7 +101,7 @@
       .flex-auto();
     }
   }
-  .list-btn-all({ .block(); .text-align(left); });
+  .list-btn-all({ .full-width(); .text-align(left); });
   .list-btn-default({ .btn(); });
 }
 

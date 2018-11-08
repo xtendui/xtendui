@@ -183,9 +183,11 @@ a, .alink {
   > .input-control {
     border-color: @grey-300 !important;
   }
-  > .group-inner > .btn {
-    &@{btn-design} {
-      border-color: @grey-300 !important;
+  > .group-inner {
+    > * {
+      &@{btn-design} {
+        border-color: @grey-300 !important;
+      }
     }
   }
 }
@@ -335,6 +337,14 @@ a, .alink {
 .btn-nodesign {
   &@{btn-design} {
     display: none;
+  }
+}
+
+.btn-noeffect {
+  &:active, &.active {
+    &@{btn-design} {
+      box-shadow: none;
+    }
   }
 }
 

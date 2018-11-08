@@ -24,8 +24,10 @@ a, .alink, .btn-link {
 .group {
   .link-none();
   position: relative;
-  .display(flex);
+  .display(inline-flex);
   .flex-nowrap();
+  margin: 0 !important;
+  padding: 0 !important;
   // .input-control
   > .input-control {
     // border
@@ -46,32 +48,50 @@ a, .alink, .btn-link {
 // .group-inner
 
 .group-inner {
-  .display(flex);
+  .display(inline-flex);
   .flex-column();
   .flex-wrap();
+  margin: 0 !important;
   // spacing
-  margin-right: -@input-border-width;
+  margin-left: 0 !important;
+  margin-right: -@input-border-width !important;
   .input-control ~ & {
-    margin-right: 0;
-    margin-left: -@input-border-width;
+    margin-left: -@input-border-width !important;
+    margin-right: 0 !important;
+  }
+  .list & {
+    margin-left: 0 !important;
+    margin-right: -@input-border-width !important;
+    .input-control ~ & {
+      margin-left: -@input-border-width !important;
+      margin-right: 0 !important;
+    }
+  }
+  .list-block & {
+    margin-top: 0 !important;
+    margin-bottom: -@input-border-width !important;
+    .input-control ~ & {
+      margin-top: -@input-border-width !important;
+      margin-bottom: 0 !important;
+    }
   }
   // .btn
-  > .btn {
+  > * {
     .flex-auto();
     .text-align(center);
     white-space: nowrap;
-    & + .btn {
+    + * {
       margin-top: -@btn-border-width;
     }
   }
   .input-control ~ & {
-    > .btn {
+    > * {
       .margin(right, none);
     }
   }
   // border inline
   &:first-child {
-    > .btn {
+    > * {
       &@{btn-design} {
         border-top-right-radius: 0 !important;
         border-bottom-right-radius: 0 !important;
@@ -79,7 +99,7 @@ a, .alink, .btn-link {
     }
   }
   &:last-child {
-    > .btn {
+    > * {
       &@{btn-design} {
         border-top-left-radius: 0 !important;
         border-bottom-left-radius: 0 !important;
@@ -87,7 +107,7 @@ a, .alink, .btn-link {
     }
   }
   &:not(:first-child):not(:last-child) {
-    > .btn {
+    > * {
       &@{btn-design} {
         border-radius: 0 !important;
       }
@@ -95,7 +115,7 @@ a, .alink, .btn-link {
   }
   // border stack
   &:first-child {
-    > .btn {
+    > * {
       &:not(:first-child) {
         &@{btn-design} {
           border-bottom-right-radius: 0 !important;
@@ -119,7 +139,7 @@ a, .alink, .btn-link {
     }
   }
   &:last-child {
-    > .btn {
+    > * {
       &:not(:first-child) {
         &@{btn-design} {
           border-bottom-left-radius: 0 !important;
