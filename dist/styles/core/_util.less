@@ -121,12 +121,25 @@
 // full-width
 
 .full-width(@breakpoint:none) when (@breakpoint = none) {
+  width: 100%;
+}
+
+.full-width(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    width: 100%;
+  }
+}
+
+// block-width
+
+.block-width(@breakpoint:none) when (@breakpoint = none) {
   .display(inline-flex);
   vertical-align: top; // fix inline-block spacing
   width: 100%;
 }
 
-.full-width(@breakpoint:none) when (default()) {
+.block-width(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     .display(inline-flex);
