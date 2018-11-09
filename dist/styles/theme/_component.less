@@ -40,27 +40,6 @@ a, .alink {
   }
 }
 
-.btn-link {
-  .link-underline();
-  // reset text
-  font-family: inherit !important;
-  font-style: inherit !important;
-  font-weight: inherit !important;
-  letter-spacing: inherit !important;
-  text-transform: inherit !important;
-  // reset .btn styles
-  &@{btn-design} {
-    border: 0 !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-  }
-  // styles
-  color: @grey-500;
-  &:hover, &.hover, &:active, &.active {
-    color: darken(@primary, @perc-xs);
-  }
-}
-
 // .text-inverse
 
 .text-inverse {
@@ -217,6 +196,7 @@ a, .alink {
 // animations
 
 .btn {
+  // transition
   .transition-default.out();
   &@{btn-design} {
     .transition-default.out();
@@ -225,6 +205,12 @@ a, .alink {
     .transition-default.active();
     &@{btn-design} {
       .transition-default.active();
+    }
+  }
+  // effect
+  &:active, &.active {
+    &@{btn-design} {
+      box-shadow: 0 1px 4px fade(@black, @perc-xs), 0 2px 8px fade(@black, @perc-sm);
     }
   }
 }
@@ -243,11 +229,6 @@ a, .alink {
     &@{btn-design} {
       border-color: @primary;
       background-color: lighten(@primary, @perc-xs);
-    }
-  }
-  &:active, &.active {
-    &@{btn-design} {
-      box-shadow: 0 1px 4px fade(@black, @perc-xs), 0 2px 8px fade(@black, @perc-sm);
     }
   }
 }
@@ -282,11 +263,6 @@ a, .alink {
       background-color: darken(@secondary, @perc-xs);
     }
   }
-  &:active, &.active {
-    &@{btn-design} {
-      box-shadow: 0 1px 4px fade(@black, @perc-xs), 0 2px 8px fade(@black, @perc-sm);
-    }
-  }
 }
 
 .btn-secondary-empty {
@@ -302,6 +278,28 @@ a, .alink {
       border-color: darken(@secondary, @perc-sm);
       background-color: darken(@secondary, @perc-xs);
     }
+  }
+}
+
+.btn-link {
+  .link-none();
+  .btn-noeffect();
+  // reset text
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  // reset .btn styles
+  &@{btn-design} {
+    border-radius: 0;
+    border-width: 0;
+    background-color: transparent !important;
+  }
+  // styles
+  color: @grey-500;
+  &:hover, &.hover, &:active, &.active {
+    color: darken(@primary, @perc-xs);
   }
 }
 
