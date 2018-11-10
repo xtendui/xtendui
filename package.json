@@ -22,8 +22,7 @@
     "watch:docs": "gulp watch:docs",
     "serve": "bundle exec jekyll serve",
     "deploy": "gh-pages -d docs",
-    "version": "npm run deploy",
-    "publish": "git push && git push --tags && npm publish"
+    "publish": "npm run deploy && git push && git push --tags && npm publish"
   },
   "dependencies": {},
   "devDependencies": {
