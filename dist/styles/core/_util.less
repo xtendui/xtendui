@@ -118,32 +118,30 @@
   }
 }
 
-// full-width
+// full
 
-.full-width(@breakpoint:none) when (@breakpoint = none) {
+.full(@breakpoint:none) when (@breakpoint = none) {
   width: 100%;
 }
 
-.full-width(@breakpoint:none) when (default()) {
+.full(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     width: 100%;
   }
 }
 
-// block-width
+// block
 
-.block-width(@breakpoint:none) when (@breakpoint = none) {
-  .display(inline-flex);
-  vertical-align: top; // fix inline-block spacing
+.block(@breakpoint:none) when (@breakpoint = none) {
+  display: block;
   width: 100%;
 }
 
-.block-width(@breakpoint:none) when (default()) {
+.block(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .display(inline-flex);
-    vertical-align: top; // fix inline-block spacing
+    display: block;
     width: 100%;
   }
 }
