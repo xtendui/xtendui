@@ -491,15 +491,14 @@
 
   .generate-order(@breakpoint:none, @i:length(@orders)) when (@i > 0) {
     .generate-order(@breakpoint, @i - 1);
-    @val: extract(@orders, @i);
     & when (@breakpoint = none) {
-      .order-@{val} {
-        .order(@val) !important;
+      .order-@{i} {
+        .order(@i) !important;
       }
     }
     & when not (@breakpoint = none) {
-      .order-@{val}-@{breakpoint} {
-        .order(@val) !important;
+      .order-@{i}-@{breakpoint} {
+        .order(@i) !important;
       }
     }
   }
