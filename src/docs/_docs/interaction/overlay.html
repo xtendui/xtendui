@@ -698,8 +698,6 @@ XtOverlay.defaults = {
 
 <p>Here are some content examples and tests inside <strong>overlay</strong>.</p>
 
-<p>@TODO demos</p>
-
 <div class="demo">
   <div class="demo-item demo-preview" data-name="content">
     <div class="demo-source" data-lang="html">
@@ -707,7 +705,7 @@ XtOverlay.defaults = {
         <button type="button" class="btn btn-primary">
           <span>Toggle</span>
         </button>
-        <div class="overlay-outer">
+        <div class="overlay-outer overlay-size-big">
           <div class="overlay">
             <div class="overlay-inner">
 
@@ -720,36 +718,60 @@ XtOverlay.defaults = {
                   ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
                 <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
                   justo.</p>
-                <div class="drop-outer" data-xt-drop='{"backdrop": true}'>
+
+                <div data-xt-overlay>
                   <button type="button" class="btn btn-primary">
-                    <span>drop backdrop</span>
+                    <span>Toggle</span>
                   </button>
-                  <div class="drop drop-bottom drop-left">
-                    <div class="drop-inner">
-                      <div class="content">
-                        <ul class="list list-drop">
-                          <li>
-                            <button type="button">
-                              <span>Lorem ipsum dolor</span>
+                  <div class="overlay-outer overlay-size-small">
+                    <div class="overlay">
+                      <div class="overlay-inner">
+
+                        <button type="button" class="btn btn-close"><span>Close</span></button>
+
+                        <div class="content">
+                          <h2>Lorem ipsum</h2>
+                          <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                            ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                          <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                            justo.</p>
+                          <div class="drop-outer" data-xt-drop='{"backdrop": true}'>
+                            <button type="button" class="btn btn-primary">
+                              <span>drop backdrop</span>
                             </button>
-                          </li>
-                          <li>
-                            <button type="button">
-                              <span>Dolor sit</span>
-                            </button>
-                          </li>
-                          <li>
-                            <button type="button">
-                              <span>Amet</span>
-                            </button>
-                          </li>
-                        </ul>
+                            <div class="drop drop-bottom drop-left">
+                              <div class="drop-inner">
+                                <div class="content">
+                                  <ul class="list list-drop">
+                                    <li>
+                                      <button type="button">
+                                        <span>Lorem ipsum dolor</span>
+                                      </button>
+                                    </li>
+                                    <li>
+                                      <button type="button">
+                                        <span>Dolor sit</span>
+                                      </button>
+                                    </li>
+                                    <li>
+                                      <button type="button">
+                                        <span>Amet</span>
+                                      </button>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
+              
             </div>
           </div>
         </div>

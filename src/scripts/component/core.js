@@ -1608,6 +1608,9 @@ class Core {
     let options = self.options;
     // scrollbar on
     if (options.scrollbar) {
+      // checks
+      Xt.scrollbar.add(self.object);
+      // vars
       let width = Xt.scrollbarWidth();
       // scrollbar
       let container = document.documentElement;
@@ -1656,25 +1659,29 @@ class Core {
     let options = self.options;
     // scrollbar off
     if (options.scrollbar) {
-      // scrollbar
-      let container = document.documentElement;
-      container.style.paddingRight = '';
-      container.classList.remove('xt-scrollbar');
-      // fixed
-      let elements = document.querySelectorAll('.xt-fixed');
-      for (let element of elements) {
-        element.classList.add('no-transition');
-        window.requestAnimationFrame(function () {
-          element.style.paddingRight = '';
+      // checks
+      Xt.scrollbar.remove(self.object);
+      if (!Xt.scrollbar.get().length) {
+        // scrollbar
+        let container = document.documentElement;
+        container.style.paddingRight = '';
+        container.classList.remove('xt-scrollbar');
+        // fixed
+        let elements = document.querySelectorAll('.xt-fixed');
+        for (let element of elements) {
+          element.classList.add('no-transition');
           window.requestAnimationFrame(function () {
-            element.classList.remove('no-transition');
+            element.style.paddingRight = '';
+            window.requestAnimationFrame(function () {
+              element.classList.remove('no-transition');
+            });
           });
-        });
-      }
-      // backdrop
-      let backdrops = self.object.querySelectorAll(':scope > .xt-backdrop');
-      for (let backdrop of backdrops) {
-        backdrop.style.right = '';
+        }
+        // backdrop
+        let backdrops = self.object.querySelectorAll(':scope > .xt-backdrop');
+        for (let backdrop of backdrops) {
+          backdrop.style.right = '';
+        }
       }
     }
   }

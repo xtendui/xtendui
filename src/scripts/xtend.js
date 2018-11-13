@@ -274,6 +274,45 @@ Xt.dataStorage = {
 };
 
 //////////////////////
+// scrollbar
+// util to remember scrollbar state
+//////////////////////
+
+Xt.scrollbar = {
+
+  /**
+   * properties
+   */
+  currents: [],
+
+  /**
+   * get scrollbar currents
+   * @returns {Array} Currents
+   */
+  get: function () {
+    return Xt.scrollbar.currents;
+  },
+
+  /**
+   * add scrollbar currents
+   * @param {Node|HTMLElement} el Elements to be deactivated
+   */
+  add: function (el) {
+    Xt.scrollbar.currents.push(el);
+  },
+
+  /**
+   * remove scrollbar currents
+   * @param {Node|HTMLElement} el Elements to be deactivated
+   */
+  remove: function (el) {
+    Xt.scrollbar.currents = Xt.scrollbar.currents.filter(x => x !== el);
+  }
+
+
+};
+
+//////////////////////
 // focus
 // util to remember focus on key or interactions events
 //////////////////////
