@@ -237,12 +237,12 @@
 // order
 
 .order(@i, @breakpoint:none) when (@breakpoint = none) {
-  @val: extract(@orders, @i);
+  @val: extract(@orders, @i + 1);
   order: @val;
 }
 
 .order(@i, @breakpoint:none) when (default()) {
-  @val: extract(@orders, @i);
+  @val: extract(@orders, @i + 1);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     order: @val;
