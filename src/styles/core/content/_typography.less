@@ -35,9 +35,9 @@ ul, ol {
 
 // selectors
 
-.default-lists(@rules) {
+.list_default(@rules) {
   &:not(.list) {
-    &.default-lists, .default-lists & {
+    &.list_default, .list_default & {
       @rules();
     }
   }
@@ -47,9 +47,9 @@ ul, ol {
 // dl
 //////////////////////
 
-// .dl-block
+// .dl--block
 
-dl, .dl-block {
+dl, .dl--block {
   dt {
     clear: none;
     float: none;
@@ -61,9 +61,9 @@ dl, .dl-block {
   }
 }
 
-// .dl-line
+// .dl--line
 
-.dl-line {
+.dl--line {
   .clearfix();
   dt {
     clear: both;

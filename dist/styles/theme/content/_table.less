@@ -12,8 +12,8 @@
 // .table
 
 .table {
-  .font-small();
-  .line-height-tiny();
+  .font--small();
+  .line-height--tiny();
   tr {
     border-bottom: @table-border-width solid @grey--250;
   }
@@ -24,7 +24,7 @@
   }
   td {
     .padding(all, medium);
-    .font-small();
+    .font--small();
   }
   // layout
   &:not(.table-stripe):not(.table-border):not(.table--center) {
@@ -34,7 +34,7 @@
   }
   // data-th for .table--responsive
   td::before {
-    .label-control();
+    .form_label();
   }
   // tfoot
   tfoot {
@@ -73,7 +73,7 @@
 .table-small {
   th {
     .padding(y, small);
-    .font-tiny();
+    .font--tiny();
   }
   td {
     .padding(y, small);
@@ -127,7 +127,7 @@
       .justify-content--center();
     }
     // center label and input
-    .label-control {
+    .form_label {
       width: 100%;
       .justify-content--center();
     }

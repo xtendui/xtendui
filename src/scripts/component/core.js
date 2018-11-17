@@ -1375,9 +1375,9 @@ class Core {
     if (options.backdrop) {
       let elements = typeof options.backdrop === 'string' && obj[options.backdrop] ? Xt.arrSingle(obj[options.backdrop].queueEls) : Xt.arrSingle(self.object);
       for (let element of elements) {
-        let backdrop = element.querySelectorAll('.xt-backdrop');
+        let backdrop = element.querySelectorAll('.xt_backdrop');
         if (!backdrop.length) {
-          backdrop = Xt.createElement('<div class="xt-backdrop"></div>');
+          backdrop = Xt.createElement('<div class="xt_backdrop"></div>');
           element.append(backdrop);
         }
       }
@@ -1644,7 +1644,7 @@ class Core {
         }
       }
       // backdrop
-      let backdrops = self.object.querySelectorAll(':scope > .xt-backdrop');
+      let backdrops = self.object.querySelectorAll(':scope > .xt_backdrop');
       for (let backdrop of backdrops) {
         backdrop.style.right = width + 'px';
       }
@@ -1678,7 +1678,7 @@ class Core {
           });
         }
         // backdrop
-        let backdrops = self.object.querySelectorAll(':scope > .xt-backdrop');
+        let backdrops = self.object.querySelectorAll(':scope > .xt_backdrop');
         for (let backdrop of backdrops) {
           backdrop.style.right = '';
         }

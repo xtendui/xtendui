@@ -9,8 +9,8 @@
   .flex-nowrap();
   margin: 0 !important;
   padding: 0 !important;
-  // .input-control
-  > .input-control {
+  // .form_input
+  > .form_input {
     // border
     &:first-child {
       border-top-right-radius: 0 !important;
@@ -26,9 +26,9 @@
   }
 }
 
-// .group-inner
+// .group_inner
 
-.group-inner {
+.group_inner {
   .display(inline-flex);
   .flex-direction--column();
   .flex-wrap();
@@ -42,7 +42,7 @@
       margin-top: -@btn--border-width;
     }
   }
-  .input-control ~ & {
+  .form_input ~ & {
     > * {
       .margin(right, none);
     }
@@ -122,14 +122,14 @@
   }
 }
 
-// .group-collapse-border
+// .group--collapse
 
-.group-collapse-border {
-  .group-inner {
+.group--collapse {
+  .group_inner {
     margin-left: 0 !important;
     margin-right: -@input--border-width !important;
   }
-  .input-control ~ .group-inner {
+  .form_input ~ .group_inner {
     margin-left: -@input--border-width !important;
     margin-right: 0 !important;
   }

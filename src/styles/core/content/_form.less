@@ -1,45 +1,45 @@
 //////////////////////
-// form-group
+// form_item
 //////////////////////
 
-.form-group {
+.form_item {
   position: relative;
 }
 
 // selectors
 
-.form-groups(@rules) {
-  .form-group {
+.form_items(@rules) {
+  .form_item {
     @rules();
   }
 }
 
 // addons
 
-.form-group-flex {
+.form_item--flex {
   .display(flex);
 }
 
-.form-group-horizontal {
+.form_item--horizontal {
   .display(flex);
-  .label-control {
+  .form_label {
     .margin(all, none);
   }
 }
 
-.form-group-inline {
+.form_item--inline {
   .display(flex);
   .flex-wrap();
-  .input-control {
+  .form_input {
     width: auto;
   }
 }
 
 //////////////////////
-// input-control
+// form_input
 //////////////////////
 
-.input-control {
+.form_input {
   .display(block);
   width: 100%;
   // select arrow
@@ -57,10 +57,10 @@
 }
 
 //////////////////////
-// label-control
+// form_label
 //////////////////////
 
-.label-control {
+.form_label {
   .display(block);
   position: relative;
   cursor: pointer;
@@ -74,7 +74,7 @@
 // label
 
 input[type="checkbox"], input[type="radio"] {
-  & ~ .label-control {
+  & ~ .form_label {
     .label-checkradio();
   }
 }
@@ -84,7 +84,7 @@ input[type="checkbox"], input[type="radio"] {
 input[type="checkbox"].unstyled, input[type="radio"].unstyled {
   display: block;
   float: left;
-  & ~ .label-control {
+  & ~ .form_label {
     display: block;
     overflow: hidden;
   }
@@ -97,7 +97,7 @@ input[type="radio"]:not(.unstyled) {
   position: absolute;
   z-index: -1;
   opacity: 0;
-  & ~ .label-control {
+  & ~ .form_label {
     &::before,
     &::after {
       content: '';

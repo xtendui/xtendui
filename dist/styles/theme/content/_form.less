@@ -8,115 +8,115 @@ fieldset + fieldset {
 
 legend {
   .block();
-  .h4-line();
+  .h4--line();
 }
 
 //////////////////////
 // group
 //////////////////////
 
-.form-group {
+.form_item {
   // options
-  .form-group-medium();
+  .form_item--medium();
 }
 
 // addons
 
-.form-group-flex {
+.form_item--flex {
   .flex_space--x(medium);
 }
 
-.form-group-flex-sm {
+.form_item--flex-sm {
   @media @min-sm {
-    .form-group-flex();
+    .form_item--flex();
   }
 }
 
-.form-group-horizontal {
+.form_item--horizontal {
   .flex_space--x(medium);
   .align-items--center();
   .text-align(right);
 }
 
-.form-group-horizontal-sm {
+.form_item--horizontal-sm {
   @media @min-sm {
-    .form-group-horizontal();
+    .form_item--horizontal();
   }
 }
 
-.form-group-inline {
+.form_item--inline {
   .list_space--x(medium);
   .align-items--baseline();
 }
 
-.form-group-inline-sm {
+.form_item--inline-sm {
   @media @min-sm {
-    .form-group-inline();
+    .form_item--inline();
   }
 }
 
 // size
 
-.form-group-tiny {
+.form_item--tiny {
   .padding(bottom, 1em);
   font-size: 1.1rem;
 }
 
-.form-tiny {
-  .form-groups({ .form-group-tiny() });
+.form--tiny {
+  .form_items({ .form_item--tiny() });
 }
 
-.form-group-small {
+.form_item--small {
   .padding(bottom, 1.25em);
   font-size: 1.2rem;
 }
 
-.form-small {
-  .form-groups({ .form-group-small() });
+.form--small {
+  .form_items({ .form_item--small() });
 }
 
-.form-group-medium {
+.form_item--medium {
   .padding(bottom, 1.5em);
   font-size: 1.3rem;
 }
 
-.form-medium {
-  .form-groups({ .form-group-medium() });
+.form--medium {
+  .form_items({ .form_item--medium() });
 }
 
-.form-group-big {
+.form_item--big {
   .padding(bottom, 1.5em);
   font-size: 1.4rem;
 }
 
-.form-big {
-  .form-groups({ .form-group-big() });
+.form--big {
+  .form_items({ .form_item--big() });
 }
 
-.form-group-giant {
+.form_item--giant {
   .padding(bottom, 1.5em);
   font-size: 1.5rem;
 }
 
-.form-giant {
-  .form-groups({ .form-group-giant() });
+.form--giant {
+  .form_items({ .form_item--giant() });
 }
 
 // special
 
-.form-group-none {
+.form_item--none {
   .padding(all, none);
 }
 
-.form-none {
-  .form-groups({ .form-group-none() });
+.form--none {
+  .form_items({ .form_item--none() });
 }
 
 //////////////////////
 // input
 //////////////////////
 
-.input-control {
+.form_input {
   // styles
   padding: .75em 1.2em;
   border-radius: @input--border-radius;
@@ -124,10 +124,10 @@ legend {
   border-style: solid;
   border-color: transparent;
   .font_sans--regular();
-  font-size: 1em; // from .form-group font size
-  .line-height-tiny();
+  font-size: 1em; // from .form_item font size
+  .line-height--tiny();
   // options
-  .input-control-grey();
+  .form_input-grey();
   // animations
   .transition--default.out();
   &:hover, &.active {
@@ -140,7 +140,7 @@ legend {
 
 // variant
 
-.input-control-grey {
+.form_input-grey {
   // styles
   border-color: @grey--300;
   background-color: @white;
@@ -194,14 +194,14 @@ textarea {
 // label
 //////////////////////
 
-.label-control {
+.form_label {
   // styles
-  .margin(bottom, 1em); // from .form-group font size
+  .margin(bottom, 1em); // from .form_item font size
   .font_sans--semibold();
-  font-size: 1em; // from .form-group font size
+  font-size: 1em; // from .form_item font size
   color: @grey--500;
-  .line-height-tiny();
-  .letter-spacing-small();
+  .line-height--tiny();
+  .letter-spacing--small();
   text-transform: uppercase;
 }
 
@@ -212,13 +212,13 @@ textarea {
 // label
 
 .label-checkradio {
-  .margin(all, none); // reset .label-control
+  .margin(all, none); // reset .form_label
   .padding(left, small); // space from checkbox/radio
   // styles
   .font_sans--regular();
   font-size: 13px;
-  .line-height-tiny();
-  .letter-spacing-none();
+  .line-height--tiny();
+  .letter-spacing--none();
   text-transform: none;
 }
 
@@ -226,7 +226,7 @@ textarea {
 
 input[type="checkbox"]:not(.unstyled),
 input[type="radio"]:not(.unstyled) {
-  & ~ .label-control {
+  & ~ .form_label {
     padding-left: 3rem;
     &::before,
     &::after {
@@ -242,7 +242,7 @@ input[type="radio"]:not(.unstyled) {
     }
   }
   // disabled
-  &:disabled ~ .label-control {
+  &:disabled ~ .form_label {
     &::before {
       .disabled();
     }
@@ -252,7 +252,7 @@ input[type="radio"]:not(.unstyled) {
     }
   }
   // animation
-  & ~ .label-control {
+  & ~ .form_label {
     &::before {
       .transition--default.out();
       transform: scale(.9, .9);
@@ -263,7 +263,7 @@ input[type="radio"]:not(.unstyled) {
       transform: scale(.9, .5);
     }
   }
-  &:checked ~ .label-control {
+  &:checked ~ .form_label {
     &::before {
       .transition--default.active();
       transform: scale(1, 1);
@@ -279,7 +279,7 @@ input[type="radio"]:not(.unstyled) {
 // checkbox styled
 
 input[type="checkbox"]:not(.unstyled) {
-  & ~ .label-control {
+  & ~ .form_label {
     &::before {
       border-radius: @input--border-radius;
     }
@@ -294,7 +294,7 @@ input[type="checkbox"]:not(.unstyled) {
 // radio styled
 
 input[type="radio"]:not(.unstyled) {
-  & ~ .label-control {
+  & ~ .form_label {
     &::before {
       border-radius: 50%;
     }
