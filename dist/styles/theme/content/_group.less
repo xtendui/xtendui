@@ -5,7 +5,8 @@
 .group {
   // styles
   .link-none();
-  border-radius: @border-radius;
+  border-radius: @group-border-radius;
+  border-width: @group-border-width;
 }
 
 // animations
@@ -23,10 +24,11 @@
 // variants
 
 .group-input {
+  .group-collapse-border();
   > .input-control {
     border-color: @grey-300 !important;
   }
-  > .group-inner {
+  .group-inner {
     > * {
       &@{btn-design} {
         border-color: @grey-300 !important;

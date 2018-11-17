@@ -98,9 +98,15 @@
 
 // form
 
+@input-border-radius: 4px;
 @input-border-width: 1px;
 @select-arrow-size: 4px; // in px
 @select-space-size: 24px; // in px
+
+// group
+
+@group-border-radius: 4px;
+@group-border-width: 1px;
 
 //////////////////////
 // layout
@@ -135,26 +141,33 @@
 // box
 
 @box-design: ~'::before'; // selector for design
+@box-border-radius: 4px;
+@box-border-width: 3px;
 
 //////////////////////
 // components
 //////////////////////
 
-@border-radius: 4px;
-
 // btn
 
 @btn-design: ~'::before'; // selector for design
+@btn-border-radius: 4px;
 @btn-border-width: 1px;
 
 // drop
 
 @drop-design: ~'::before'; // selector for design
+@drop-border-radius: 4px;
+@drop-border-width: 1px;
+
 @drop-space: 6px; // space between button and drop
 
 // overlay
 
 @overlay-design: ~':before';
+@overlay-border-radius: 4px;
+@overlay-border-width: 1px;
+
 @overlay-sizes: tiny, small, medium, big, giant, full; // if you change this change also variables names below
 @overlay-size-tiny: @breakpoint-xs - 60;
 @overlay-size-small: @breakpoint-sm - 60;

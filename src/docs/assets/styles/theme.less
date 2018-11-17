@@ -597,8 +597,10 @@
   .margin(y, layout) !important;
   .margin(top, medium);
   .margin(bottom, big);
-  border-radius: @border-radius;
-  border: 3px solid @grey-250;
+  border-radius: @box-border-radius;
+  border-width: @box-border-width;
+  border-style: solid;
+  border-color: @grey-250;
   .demo-tabs {
     .margin-remove(top, 2px); // remove border space
   }

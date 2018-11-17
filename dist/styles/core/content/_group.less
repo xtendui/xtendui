@@ -5,7 +5,7 @@
 .group {
   .link-none();
   position: relative;
-  .display(inline-flex);
+  .display(inline-flex) !important;
   .flex-nowrap();
   margin: 0 !important;
   padding: 0 !important;
@@ -33,29 +33,6 @@
   .flex-column();
   .flex-wrap();
   margin: 0 !important;
-  // spacing
-  margin-left: 0 !important;
-  margin-right: -@input-border-width !important;
-  .input-control ~ & {
-    margin-left: -@input-border-width !important;
-    margin-right: 0 !important;
-  }
-  .list & {
-    margin-left: 0 !important;
-    margin-right: -@input-border-width !important;
-    .input-control ~ & {
-      margin-left: -@input-border-width !important;
-      margin-right: 0 !important;
-    }
-  }
-  .list-block & {
-    margin-top: 0 !important;
-    margin-bottom: -@input-border-width !important;
-    .input-control ~ & {
-      margin-top: -@input-border-width !important;
-      margin-bottom: 0 !important;
-    }
-  }
   // .btn
   > * {
     .flex-auto();
@@ -142,5 +119,18 @@
         }
       }
     }
+  }
+}
+
+// .group-collapse-border
+
+.group-collapse-border {
+  .group-inner {
+    margin-left: 0 !important;
+    margin-right: -@input-border-width !important;
+  }
+  .input-control ~ .group-inner {
+    margin-left: -@input-border-width !important;
+    margin-right: 0 !important;
   }
 }
