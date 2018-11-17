@@ -18,6 +18,8 @@ mkdir -p xtend-library/
 cp -r node_modules/xtend-library/dist/ xtend-library/
 ```
 
+After in `styles/xtend.less` set `@library-path` relative to `node_modules/xtend-library` path, then you can customize the less files inside `styles/`.
+
 ### Compilation
 
 We use gulp to compile and watch files.

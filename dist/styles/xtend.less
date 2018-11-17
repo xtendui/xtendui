@@ -6,7 +6,9 @@
 // xtend
 //////////////////////
 
-@import 'core/__import';
+@library-path: '../../'; // set `@library-path` relative to `node_modules/xtend-library` path
+
+@import '@{library-path}src/styles/core/__import';
 @import 'theme/__import';
 
 //////////////////////
