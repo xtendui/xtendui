@@ -1,0 +1,42 @@
+//////////////////////
+// preload
+//////////////////////
+
+.loader-container {
+  position: absolute;
+  z-index: @index-loader;
+  top: 0;
+  left: 0;
+}
+
+.loader {
+  position: relative;
+  width: 100%;
+}
+
+// addons
+
+.loader-container {
+  width: 100%;
+}
+
+.loader-full {
+  .display(flex);
+  .align-items-center();
+  .justify-content-center();
+  height: 100%;
+}
+
+.loader-relative {
+  position: relative;
+}
+
+.loader-fixed {
+  position: fixed;
+}
+
+.loader-html {
+  html.loaded & {
+    display: none;
+  }
+}

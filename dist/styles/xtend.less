@@ -6,12 +6,16 @@
 // xtend
 //////////////////////
 
-@import 'core/__core';
-@import 'theme/__theme';
+@import 'core/__import';
+@import 'theme/__import';
 
-// set to false to not generate any classes
-// set to true to only generate non responsive classes
-// set to array of breakpoints to generate non responsive classes and responsive classes for those breakpoints
+//////////////////////
+// classes generations
+//////////////////////
+
+// false -> not generate any classes
+// true -> only generate non responsive classes
+// array of breakpoints -> generate non responsive classes and responsive classes for those breakpoints
 
 @classes-icons: true;
 @classes-util: sm, md, lg;

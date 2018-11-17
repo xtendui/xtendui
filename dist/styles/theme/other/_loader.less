@@ -1,0 +1,89 @@
+//////////////////////
+// loader
+//////////////////////
+
+// addons
+
+.loader-background {
+  &::before {
+    .design-setup();
+    background-color: @white;
+  }
+}
+
+.loader-full {
+  .padding(x, 33%) !important;
+}
+
+// variant
+
+.loader {
+  overflow: hidden;
+  height: 2px;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+  &::before {
+    z-index: 2;
+    width: 100%;
+    background-color: @grey-250;
+  }
+  &::after {
+    z-index: 3;
+    width: 0;
+    background-color: @black;
+    // animations
+    animation: anim-loader 1000ms infinite linear;
+  }
+}
+
+@keyframes anim-loader {
+  0% {
+    left: 0;
+    width: 0;
+  }
+  50% {
+    left: 0;
+    width: 100%;
+    animation-timing-function: @bez-out;
+  }
+  100% {
+    left: 100%;
+    width: 0;
+  }
+}
+
+// activation
+
+.loader-container {
+  .anim-opacity.active();
+}
+
+/* USAGE:
+<div class="loader-container loader-html loader-relative">
+    <div class="loader"></div>
+</div>
+<div class="loader-container loader-background loader-full">
+    <div class="loader"></div>
+</div>
+*/
+
+/* USAGE:
+// xt-loader
+document.querySelectorAll('html')[0].classList.add('loaded');
+*/
+
+/* put any selector here you want to loader
+.main-container {
+  visibility: hidden;
+  html.loaded &,
+  html.loader-fade & {
+    visibility: visible;
+  }
+}
+*/

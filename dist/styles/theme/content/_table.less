@@ -110,32 +110,32 @@
     thead, th {
       display: none;
     }
-    
+
     tr {
       .block();
       .padding(y, big);
     }
-    
+
     td {
       .block();
       .padding(x, medium) !important;
       .padding(y, medium);
       text-align: center;
     }
-    
+
     // data-th
     td::before {
       content: attr(data-th);
       width: 100%;
       .justify-content-center();
     }
-    
+
     // center label and input
     .label-control {
       width: 100%;
       .justify-content-center();
     }
-    
+
     .group {
       .justify-content-center();
     }

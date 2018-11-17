@@ -1,0 +1,135 @@
+//////////////////////
+// general
+//////////////////////
+
+// decoration
+
+.link-underline {
+  text-decoration: none;
+  &:hover, &.hover, &:active, &.active {
+    text-decoration: underline;
+    span {
+      text-decoration: underline;
+    }
+  }
+}
+
+.link-none {
+  text-decoration: none;
+  &:hover, &.hover, &:active, &.active {
+    text-decoration: none;
+    span {
+      text-decoration: none;
+    }
+  }
+}
+
+// links
+
+a, .alink {
+  .link-underline();
+  // styles
+  color: @primary;
+  &:hover, &.hover, &:active, &.active {
+    color: darken(@primary, @perc-xs);
+  }
+  // animations
+  .transition-default.out();
+  &:hover, &.hover, &:active, &.active {
+    .transition-default.active();
+  }
+}
+
+// .text-inverse
+
+.text-inverse {
+  // links color
+  a:not(.btn), .alink, .btn-link {
+    color: @text-inverse;
+    text-decoration: underline;
+    &:hover, &.hover, &:active, &.active {
+      color: darken(@text-inverse, @perc-xs);
+    }
+  }
+  // button color
+  .btn-primary-empty,
+  .btn-secondary-empty {
+    color: @text-inverse !important;
+  }
+}
+
+// disabled
+
+[disabled],
+.disabled {
+  opacity: .75;
+}
+
+// caret
+
+.caret {
+  .display(flex) !important;
+  .align-items-center();
+  .justify-content-between();
+  .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-tiny);
+  &::after {
+    .margin(left, 2em);
+  }
+  // activation
+  &.active {
+    .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-tiny);
+    &::after {
+      .anim-bottom.active();
+    }
+  }
+  &.out {
+    &::after {
+      .anim-top.active();
+    }
+  }
+  // inverse
+  &.caret-inverse {
+    .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-tiny);
+    &.active {
+      .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-tiny);
+      &::after {
+        .anim-top.active();
+      }
+    }
+    &.out {
+      &::after {
+        .anim-bottom.active();
+      }
+    }
+  }
+  // horizontal
+  &.caret-horizontal {
+    .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-tiny);
+    &.active {
+      .icon-xt(@content: @icon-xt-chevron-left, @size: @icon-tiny);
+      &::after {
+        .anim-right.active();
+      }
+    }
+    &.out {
+      &::after {
+        .anim-left.active();
+      }
+    }
+    // inverse
+    &.caret-inverse {
+      .icon-xt(@content: @icon-xt-chevron-left, @size: @icon-tiny);
+      &.active {
+        .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-tiny);
+        &::after {
+          .anim-left.active();
+        }
+      }
+      &.out {
+        &::after {
+          .anim-right.active();
+        }
+      }
+    }
+  }
+}

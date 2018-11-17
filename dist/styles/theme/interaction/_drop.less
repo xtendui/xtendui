@@ -1,0 +1,159 @@
+//////////////////////
+// drop
+//////////////////////
+
+.drop {
+  // styles
+  > .drop-inner {
+    &@{drop-design} {
+      .design-setup();
+      border-radius: @border-radius;
+      border-width: 1px;
+      border-style: solid;
+      border-color: transparent;
+      box-shadow: 0 1px 4px fade(@black, @perc-xs), 0 2px 8px fade(@black, @perc-sm);
+    }
+    > .content {
+      > .list {
+        .padding(y, 1.3rem); // vertical space
+        min-width: 18rem;
+        .list-btn-all({ .btn-squared(); padding-left: 2.2rem; padding-right: 2.2rem; white-space: nowrap; }); // not overridable
+      }
+    }
+  }
+  // options
+  .drop-white(); // variant
+  .drop-left(); // position
+  .drop-bottom(); // position
+}
+
+// animations
+
+.drop-outer {
+  &, > .drop {
+    animation-duration: @time-medium + @time-small; // needed for .out animation timing, put max animation time
+  }
+  &.active {
+    > .drop > .drop-inner {
+      &@{drop-design} {
+        .anim-zoom.active();
+      }
+      > .content {
+        .anim-vertical.active();
+        animation-delay: @time-small;
+      }
+    }
+    > .xt-backdrop {
+      .xt-backdrop.active();
+    }
+  }
+  &.out {
+    > .drop > .drop-inner {
+      &@{drop-design} {
+        .anim-zoom.out();
+        animation-delay: @time-small;
+      }
+      > .content {
+        .anim-vertical.out();
+      }
+    }
+    > .xt-backdrop {
+      .xt-backdrop.out();
+    }
+  }
+}
+
+// addons
+
+.drop-disable {
+  // disable custom animation
+  > .drop > .drop-inner {
+    > .content {
+      .no-anim() !important;
+      opacity: 1 !important;
+    }
+  }
+}
+
+.drop-max-height {
+  > .drop-inner > .content {
+    overflow-y: auto;
+    max-height: 25rem;
+    .overflow-style();
+  }
+}
+
+.drop-max-width {
+  > .drop-inner > .content {
+    overflow-x: auto;
+    max-width: 35rem;
+    .overflow-style();
+  }
+}
+
+// variant
+
+.drop-primary {
+  > .drop-inner {
+    color: @text-inverse;
+    &@{drop-design} {
+      border-color: darken(@primary, @perc-xs);
+      background-color: @primary;
+    }
+    > .content > .list-drop {
+      .list-btn-default({ .btn-primary() });
+    }
+  }
+}
+
+.drop-secondary {
+  > .drop-inner {
+    color: @text;
+    &@{drop-design} {
+      border-color: darken(@secondary, @perc-xs);
+      background-color: @secondary;
+    }
+    > .content > .list-drop {
+      .list-btn-default({ .btn-secondary() });
+    }
+  }
+}
+
+.drop-white {
+  > .drop-inner {
+    color: @text;
+    &@{drop-design} {
+      border-color: darken(@white, @perc-xs);
+      background-color: @white;
+    }
+    > .content > .list-drop {
+      .list-btn-default({ .btn-primary-empty() });
+    }
+  }
+}
+
+// special
+
+.drop-nodesign {
+  > .drop-inner {
+    &@{drop-design} {
+      display: none;
+    }
+  }
+}
+
+.drop-squared {
+  > .drop-inner {
+    &@{drop-design} {
+      border-radius: 0;
+    }
+  }
+}
+
+.drop-noborder {
+  > .drop-inner {
+    &@{drop-design} {
+      border: 0;
+    }
+  }
+}

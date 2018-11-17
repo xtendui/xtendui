@@ -1,4 +1,93 @@
 //////////////////////
+// javascript
+//////////////////////
+
+// .xt-calculating
+
+.xt-calculating {
+  position: absolute !important;
+  visibility: hidden !important;
+  .no-anim() !important;
+  opacity: 0 !important;
+}
+
+// .xt-container
+
+.xt-container {
+  position: relative;
+  width: 100%;
+}
+
+// .xt-scrollbar
+
+html.xt-scrollbar {
+  body {
+    overflow-y: hidden;
+  }
+  .overlay-outer {
+    overflow-y: scroll;
+  }
+}
+
+//////////////////////
+// toggle
+//////////////////////
+
+.toggle-block {
+  .display(none) !important;
+  &.active, &.out {
+    .display(block) !important;
+  }
+}
+
+.toggle-flex {
+  .display(none) !important;
+  &.active, &.out {
+    .display(flex) !important;
+  }
+}
+
+.toggle-inline-flex {
+  .display(none) !important;
+  &.active, &.out {
+    .display(inline-flex) !important;
+  }
+}
+
+.toggle-inline {
+  .display(none) !important;
+  &.active, &.out {
+    .display(inline) !important;
+  }
+}
+
+.toggle-inline-block {
+  .display(none) !important;
+  &.active, &.out {
+    .display(inline-block) !important;
+  }
+}
+
+.toggle-none {
+  &.active, &.out {
+    .display(none) !important;
+  }
+}
+
+.toggle-visible {
+  visibility: hidden !important;
+  &.active, &.out {
+    visibility: visible !important;
+  }
+}
+
+.toggle-hidden {
+  &.active, &.out {
+    visibility: hidden !important;
+  }
+}
+
+//////////////////////
 // various
 //////////////////////
 

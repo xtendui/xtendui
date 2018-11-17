@@ -1,0 +1,240 @@
+//////////////////////
+// overlay
+//////////////////////
+
+.overlay {
+  // styles
+  .overlay-inner {
+    &@{overlay-design} {
+      .design-setup();
+      border-radius: @border-radius;
+      border-width: 1px;
+      border-style: solid;
+      border-color: transparent;
+      box-shadow: 0 0 10rem fade(@black, @perc-md);
+    }
+    > .content {
+      padding: 3rem;
+      @media @min-sm {
+        padding: 4rem;
+      }
+    }
+    > .btn-close {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      .btn-giant();
+    }
+  }
+  // options
+  .overlay-white(); // variant
+  .overlay-size(small); // size
+}
+
+// addons
+
+.overlay-screen {
+  // styles
+  .overlay {
+    &@{overlay-design} {
+      .design-setup();
+      border-width: 1px;
+      border-style: solid;
+      border-color: transparent;
+      box-shadow: none;
+    }
+    .overlay-inner {
+      &@{overlay-design} {
+        .display(none);
+      }
+    }
+  }
+  // options
+  .overlay-white(); // variant
+  .overlay-size(giant); // size
+  .overlay-squared();
+  .overlay-noborder();
+}
+
+.overlay-pos {
+  // styles
+  .overlay {
+    .overlay-left& {
+      width: 88% !important;
+      max-width: 500px !important;
+    }
+    .overlay-right& {
+      width: 88% !important;
+      max-width: 500px !important;
+    }
+  }
+  // options
+  .overlay-white(); // variant
+  .overlay-squared();
+  .overlay-noborder();
+}
+
+// animations
+
+.overlay-outer {
+  animation-duration: @time-medium + @time-small; // needed for .out animation timing, put max animation time
+  &.active {
+    .overlay-inner {
+      &@{overlay-design} {
+        .anim-zoom.active();
+      }
+      > .btn-close,
+      > .content {
+        .anim-vertical.active();
+        animation-delay: @time-small;
+      }
+    }
+    > .xt-backdrop {
+      .xt-backdrop.active();
+    }
+    // addons
+    &.overlay-screen {
+      .anim-opacity.active();
+    }
+    &.overlay-left {
+      .overlay-inner {
+        &@{overlay-design} {
+          .anim-left.active();
+        }
+        > .btn-close,
+        > .content {
+          .anim-left.active();
+          animation-delay: @time-small;
+        }
+      }
+    }
+    &.overlay-right {
+      .overlay-inner {
+        &@{overlay-design} {
+          .anim-right.active();
+        }
+        > .btn-close,
+        > .content {
+          .anim-right.active();
+          animation-delay: @time-small;
+        }
+      }
+    }
+  }
+  &.out {
+    .overlay-inner {
+      &@{overlay-design} {
+        .anim-zoom.out();
+        animation-delay: @time-small;
+      }
+      > .btn-close,
+      > .content {
+        .anim-vertical.out();
+      }
+    }
+    > .xt-backdrop {
+      .xt-backdrop.out();
+    }
+    // addons
+    &.overlay-screen {
+      .anim-opacity.out();
+      animation-delay: @time-small;
+    }
+    &.overlay-left {
+      .overlay-inner {
+        &@{overlay-design} {
+          .anim-left.out();
+          animation-delay: @time-small;
+        }
+        > .btn-close,
+        > .content {
+          .anim-left.out();
+        }
+      }
+    }
+    &.overlay-right {
+      .overlay-inner {
+        &@{overlay-design} {
+          .anim-right.out();
+          animation-delay: @time-small;
+        }
+        > .btn-close,
+        > .content {
+          .anim-right.out();
+        }
+      }
+    }
+  }
+}
+
+// variant
+
+.overlay-primary {
+  .overlay-inner,
+  &.overlay-screen .overlay {
+    color: @text-inverse;
+    &@{overlay-design} {
+      border-color: @primary;
+      background-color: @primary;
+    }
+    > .btn-close {
+      .btn-primary();
+    }
+  }
+}
+
+.overlay-secondary {
+  .overlay-inner,
+  &.overlay-screen .overlay {
+    color: @text;
+    &@{overlay-design} {
+      border-color: @secondary;
+      background-color: @secondary;
+    }
+    > .btn-close {
+      .btn-secondary();
+    }
+  }
+}
+
+.overlay-white {
+  .overlay-inner,
+  &.overlay-screen .overlay {
+    color: @text;
+    &@{overlay-design} {
+      border-color: @white;
+      background-color: @white;
+    }
+    > .btn-close {
+      .btn-primary-empty();
+    }
+  }
+}
+
+// special
+
+.overlay-squared {
+  .overlay-inner,
+  &.overlay-screen .overlay {
+    &@{overlay-design} {
+      border-radius: 0;
+    }
+  }
+}
+
+.overlay-noborder {
+  .overlay-inner,
+  &.overlay-screen .overlay {
+    &@{overlay-design} {
+      border: 0;
+    }
+  }
+}
+
+.overlay-none {
+  .overlay-inner {
+    > .content {
+      padding: 0 !important;
+    }
+  }
+}

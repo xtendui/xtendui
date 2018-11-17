@@ -1,0 +1,50 @@
+//////////////////////
+// list
+//////////////////////
+
+.list-base {
+  .display(flex);
+  .reset-list();
+  // list
+  > li {
+    .display(flex);
+    .align-items-start();
+    > * {
+      .flex-auto();
+    }
+  }
+  .list-btn-default({ .btn(); });
+}
+
+// selectors
+
+.list-btn-all(@rules) {
+  > li {
+    > a, > button {
+      @rules();
+    }
+  }
+}
+
+.list-btn-default(@rules) {
+  > li {
+    > a, > button {
+      &:not(.btn) {
+        @rules();
+      }
+    }
+  }
+}
+
+// .list
+
+.list {
+  .list-base();
+  .flex-row();
+  .flex-wrap();
+}
+
+.list-block {
+  .flex-column();
+  .flex-nowrap();
+}

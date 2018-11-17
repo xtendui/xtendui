@@ -1,0 +1,36 @@
+//////////////////////
+// group
+//////////////////////
+
+.group {
+  // styles
+  .link-none();
+  border-radius: @border-radius;
+}
+
+// animations
+
+.group {
+  // interaction
+  .transition-default.out();
+  transition-duration: @time-giant;
+  &:active, &.active {
+    .transition-default.active();
+    box-shadow: 0 1px 4px fade(@black, @perc-xs), 0 2px 8px fade(@black, @perc-sm);
+  }
+}
+
+// variants
+
+.group-input {
+  > .input-control {
+    border-color: @grey-300 !important;
+  }
+  > .group-inner {
+    > * {
+      &@{btn-design} {
+        border-color: @grey-300 !important;
+      }
+    }
+  }
+}

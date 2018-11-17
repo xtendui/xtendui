@@ -1,0 +1,27 @@
+//////////////////////
+// btn
+//////////////////////
+
+.btn {
+  .user-select-none();
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  z-index: @index-base; // fix ::before negative z-index
+  &:hover, &.hover, &:active, &.active {
+    z-index: @index-active;
+  }
+  &.out {
+    z-index: @index-active - 1;
+  }
+  > span {
+    display: inline-block;
+  }
+}
+
+// custom
+
+.btn-close {
+  z-index: @index-btn-close;
+}

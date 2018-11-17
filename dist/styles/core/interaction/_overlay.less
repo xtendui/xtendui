@@ -1,0 +1,75 @@
+//////////////////////
+// overlay
+//////////////////////
+
+.overlay-outer {
+  .toggle-flex();
+  position: fixed;
+  z-index: @index-overlay;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  // scroll
+  overflow: hidden;
+  .overflow-style();
+}
+
+.overlay {
+  .display(flex);
+  .flex-column();
+  .flex-nowrap();
+  .justify-content-center();
+  margin: auto; // @FIX http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
+  width: 100%;
+  min-height: 100vh;
+}
+
+.overlay-inner {
+  position: relative;
+  z-index: @index-overlay;
+  width: 100%;
+  .align-self-center();
+}
+
+// addons
+
+.overlay-screen {
+  .overlay {
+    position: relative;
+    z-index: @index-overlay;
+    max-width: none !important;
+    .padding(all, none) !important;
+    .overlay-inner {
+      position: static;
+    }
+  }
+  > .xt-backdrop {
+    .no-anim() !important;
+    opacity: 0 !important;
+  }
+}
+
+.overlay-pos {
+  .overlay {
+    position: relative;
+    z-index: @index-overlay;
+    .justify-content-start();
+    .padding(all, none) !important;
+    .overlay-inner {
+      position: static;
+    }
+  }
+  .overlay-left& {
+    .overlay {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+  .overlay-right& {
+    .overlay {
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+}
