@@ -178,8 +178,8 @@ a, .alink {
 .btn {
   // styles
   .font-sans-semibold();
-  line-height: 1.25;
-  letter-spacing: .075em;
+  .line-height-tiny();
+  .letter-spacing-medium();
   text-transform: uppercase;
   &@{btn-design} {
     .design-setup();
@@ -414,7 +414,7 @@ a, .alink {
 }
 
 .btn-transform {
-  letter-spacing: 0;
+  .letter-spacing-none();
   text-transform: none;
 }
 // custom

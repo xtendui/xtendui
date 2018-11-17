@@ -5,7 +5,7 @@
 @table-border-width: 1px;
 
 .table, .table-scroll {
-  .margin(y, layout) !important; // no margins :first-child or :last-child
+  .margin(y, layout) !important;
   .margin(bottom, medium);
 }
 
@@ -13,7 +13,7 @@
 
 .table {
   .font-small();
-  line-height: 1.25;
+  .line-height-tiny();
   tr {
     border-bottom: @table-border-width solid @grey-250;
   }
