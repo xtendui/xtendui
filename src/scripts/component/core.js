@@ -1609,7 +1609,7 @@ class Core {
     // scrollbar on
     if (options.scrollbar) {
       // checks
-      Xt.scrollbar.add(self.object);
+      Xt.scrollbar.add(self.namespace);
       // vars
       let width = Xt.scrollbarWidth();
       // scrollbar
@@ -1660,7 +1660,7 @@ class Core {
     // scrollbar off
     if (options.scrollbar) {
       // checks
-      Xt.scrollbar.remove(self.object);
+      Xt.scrollbar.remove(self.namespace);
       if (!Xt.scrollbar.get().length) {
         // scrollbar
         let container = document.documentElement;
