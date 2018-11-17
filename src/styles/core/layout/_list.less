@@ -2,7 +2,7 @@
 // list
 //////////////////////
 
-.list-base {
+.list--base {
   .display(flex);
   .reset-list();
   // list
@@ -13,12 +13,12 @@
       .flex-auto();
     }
   }
-  .list-btn--default({ .btn(); });
+  .list_btn--default({ .btn(); });
 }
 
 // selectors
 
-.list-btn--all(@rules) {
+.list_btn--all(@rules) {
   > li {
     > a, > button {
       @rules();
@@ -26,7 +26,7 @@
   }
 }
 
-.list-btn--default(@rules) {
+.list_btn--default(@rules) {
   > li {
     > a, > button {
       &:not(.btn) {
@@ -39,12 +39,12 @@
 // .list
 
 .list {
-  .list-base();
+  .list--base();
   .flex-row();
   .flex-wrap();
 }
 
-.list-block {
+.list--block {
   .flex-column();
   .flex-nowrap();
 }

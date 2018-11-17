@@ -600,8 +600,8 @@ html.xt-scrollbar {
 
 // flex space
 
-.flex-space-y(@name, @breakpoint:none) when (@breakpoint = none) {
-  @arr: ~"flex-space-@{name}";
+.flex_space--y(@name, @breakpoint:none) when (@breakpoint = none) {
+  @arr: ~"flex_space--@{name}";
   @vertical: extract(@@arr, 1);
   margin-top: -@vertical;
   margin-bottom: -@vertical;
@@ -611,8 +611,8 @@ html.xt-scrollbar {
   }
 }
 
-.flex-space-y(@name, @breakpoint:none) when (default()) {
-  @arr: ~"flex-space-@{name}";
+.flex_space--y(@name, @breakpoint:none) when (default()) {
+  @arr: ~"flex_space--@{name}";
   @vertical: extract(@@arr, 1);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -625,8 +625,8 @@ html.xt-scrollbar {
   }
 }
 
-.flex-space-x(@name, @breakpoint:none) when (@breakpoint = none) {
-  @arr: ~"flex-space-@{name}";
+.flex_space--x(@name, @breakpoint:none) when (@breakpoint = none) {
+  @arr: ~"flex_space--@{name}";
   @horizontal: extract(@@arr, 2);
   margin-left: -@horizontal;
   margin-right: -@horizontal;
@@ -636,8 +636,8 @@ html.xt-scrollbar {
   }
 }
 
-.flex-space-x(@name, @breakpoint:none) when (default()) {
-  @arr: ~"flex-space-@{name}";
+.flex_space--x(@name, @breakpoint:none) when (default()) {
+  @arr: ~"flex_space--@{name}";
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -650,8 +650,8 @@ html.xt-scrollbar {
   }
 }
 
-.flex-space(@name, @breakpoint:none) when (@breakpoint = none) {
-  @arr: ~"flex-space-@{name}";
+.flex_space(@name, @breakpoint:none) when (@breakpoint = none) {
+  @arr: ~"flex_space--@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
   margin: -@vertical -@horizontal;
@@ -660,8 +660,8 @@ html.xt-scrollbar {
   }
 }
 
-.flex-space(@name, @breakpoint:none) when (default()) {
-  @arr: ~"flex-space-@{name}";
+.flex_space(@name, @breakpoint:none) when (default()) {
+  @arr: ~"flex_space--@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
@@ -679,8 +679,8 @@ html.xt-scrollbar {
 
 // list space
 
-.list-space-y(@name, @breakpoint:none) when (@breakpoint = none) {
-  @arr: ~"list-space-@{name}";
+.list_space--y(@name, @breakpoint:none) when (@breakpoint = none) {
+  @arr: ~"list_space--@{name}";
   @vertical: extract(@@arr, 1);
   margin-top: -@vertical;
   margin-bottom: -@vertical;
@@ -690,8 +690,8 @@ html.xt-scrollbar {
   }
 }
 
-.list-space-y(@name, @breakpoint:none) when (default()) {
-  @arr: ~"list-space-@{name}";
+.list_space--y(@name, @breakpoint:none) when (default()) {
+  @arr: ~"list_space--@{name}";
   @vertical: extract(@@arr, 1);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -704,8 +704,8 @@ html.xt-scrollbar {
   }
 }
 
-.list-space-x(@name, @breakpoint:none) when (@breakpoint = none) {
-  @arr: ~"list-space-@{name}";
+.list_space--x(@name, @breakpoint:none) when (@breakpoint = none) {
+  @arr: ~"list_space--@{name}";
   @horizontal: extract(@@arr, 2);
   margin-left: -@horizontal;
   margin-right: -@horizontal;
@@ -715,8 +715,8 @@ html.xt-scrollbar {
   }
 }
 
-.list-space-x(@name, @breakpoint:none) when (default()) {
-  @arr: ~"list-space-@{name}";
+.list_space--x(@name, @breakpoint:none) when (default()) {
+  @arr: ~"list_space--@{name}";
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -729,8 +729,8 @@ html.xt-scrollbar {
   }
 }
 
-.list-space(@name, @breakpoint:none) when (@breakpoint = none) {
-  @arr: ~"list-space-@{name}";
+.list_space(@name, @breakpoint:none) when (@breakpoint = none) {
+  @arr: ~"list_space--@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
   margin: -@vertical -@horizontal;
@@ -739,8 +739,8 @@ html.xt-scrollbar {
   }
 }
 
-.list-space(@name, @breakpoint:none) when (default()) {
-  @arr: ~"list-space-@{name}";
+.list_space(@name, @breakpoint:none) when (default()) {
+  @arr: ~"list_space--@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
@@ -758,36 +758,36 @@ html.xt-scrollbar {
 
 // list alignment
 
-.list-left(@breakpoint:none) when (@breakpoint = none) {
-  .list-btn--all({ .text-align(left); });
+.list--left(@breakpoint:none) when (@breakpoint = none) {
+  .list_btn--all({ .text-align(left); });
 }
 
-.list-left(@breakpoint:none) when (default()) {
+.list--left(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list-btn--all({ .text-align(left); });
+    .list_btn--all({ .text-align(left); });
   }
 }
 
-.list-center(@breakpoint:none) when (@breakpoint = none) {
-  .list-btn--all({ .text-align(center); });
+.list--center(@breakpoint:none) when (@breakpoint = none) {
+  .list_btn--all({ .text-align(center); });
 }
 
-.list-center(@breakpoint:none) when (default()) {
+.list--center(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list-btn--all({ .text-align(center); });
+    .list_btn--all({ .text-align(center); });
   }
 }
 
-.list-right(@breakpoint:none) when (@breakpoint = none) {
-  .list-btn--all({ .text-align(right); });
+.list--right(@breakpoint:none) when (@breakpoint = none) {
+  .list_btn--all({ .text-align(right); });
 }
 
-.list-right(@breakpoint:none) when (default()) {
+.list--right(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list-btn--all({ .text-align(right); });
+    .list_btn--all({ .text-align(right); });
   }
 }
 

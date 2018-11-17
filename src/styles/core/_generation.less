@@ -393,14 +393,14 @@
   .generate-layouts(@breakpoint:none) {
     & when (@breakpoint = none) {
       // list alignment
-      .list-left {
-        .list-left() !important;
+      .list--left {
+        .list--left() !important;
       }
-      .list-center {
-        .list-center() !important;
+      .list--center {
+        .list--center() !important;
       }
-      .list-right {
-        .list-right() !important;
+      .list--right {
+        .list--right() !important;
       }
       // grid
       .col {
@@ -415,9 +415,9 @@
       .generate-grid(@breakpoint);
       // order
       .generate-order(@breakpoint);
-      // flex-space
+      // flex_space
       .generate-flex-space(@breakpoint);
-      // list-space
+      // list_space
       .generate-list-space(@breakpoint);
       // flex util
       .generate-flex-util(@breakpoint);
@@ -426,14 +426,14 @@
       @query-min: 'min-@{breakpoint}';
       @media @@query-min {
         // list alignment
-        .list-left-@{breakpoint} {
-          .list-left() !important;
+        .list--left-@{breakpoint} {
+          .list--left() !important;
         }
-        .list-center-@{breakpoint} {
-          .list-center() !important;
+        .list--center-@{breakpoint} {
+          .list--center() !important;
         }
-        .list-right-@{breakpoint} {
-          .list-right() !important;
+        .list--right-@{breakpoint} {
+          .list--right() !important;
         }
         // grid
         .col-@{breakpoint} {
@@ -448,9 +448,9 @@
         .generate-grid(@breakpoint);
         // order
         .generate-order(@breakpoint);
-        // flex-space
+        // flex_space
         .generate-flex-space(@breakpoint);
-        // list-space
+        // list_space
         .generate-list-space(@breakpoint);
         // flex util
         .generate-flex-util(@breakpoint);
@@ -505,58 +505,58 @@
 
   // generate-flex-space
 
-  .generate-flex-space(@breakpoint:none, @i:length(@flex-spaces)) when (@i > 0) {
+  .generate-flex-space(@breakpoint:none, @i:length(@flex_spaces)) when (@i > 0) {
     .generate-flex-space(@breakpoint, @i - 1);
-    @name: extract(@flex-spaces, @i);
+    @name: extract(@flex_spaces, @i);
     & when (@breakpoint = none) {
-      .flex-space-y-@{name} {
-        .flex-space-y(@name) !important;
+      .flex_space--y-@{name} {
+        .flex_space--y(@name) !important;
       }
-      .flex-space-x-@{name} {
-        .flex-space-x(@name) !important;
+      .flex_space--x-@{name} {
+        .flex_space--x(@name) !important;
       }
-      .flex-space-@{name} {
-        .flex-space(@name) !important;
+      .flex_space--@{name} {
+        .flex_space(@name) !important;
       }
     }
     & when not (@breakpoint = none) {
-      .flex-space-y-@{name}-@{breakpoint} {
-        .flex-space-y(@name) !important;
+      .flex_space--y-@{name}-@{breakpoint} {
+        .flex_space--y(@name) !important;
       }
-      .flex-space-x-@{name}-@{breakpoint} {
-        .flex-space-x(@name) !important;
+      .flex_space--x-@{name}-@{breakpoint} {
+        .flex_space--x(@name) !important;
       }
-      .flex-space-@{name}-@{breakpoint} {
-        .flex-space(@name) !important;
+      .flex_space--@{name}-@{breakpoint} {
+        .flex_space(@name) !important;
       }
     }
   }
 
   // generate-list-space
 
-  .generate-list-space(@breakpoint:none, @i:length(@list-spaces)) when (@i > 0) {
+  .generate-list-space(@breakpoint:none, @i:length(@list_spaces)) when (@i > 0) {
     .generate-list-space(@breakpoint, @i - 1);
-    @name: extract(@list-spaces, @i);
+    @name: extract(@list_spaces, @i);
     & when (@breakpoint = none) {
-      .list-space-y-@{name} {
-        .list-space-y(@name) !important;
+      .list_space--y-@{name} {
+        .list_space--y(@name) !important;
       }
-      .list-space-x-@{name} {
-        .list-space-x(@name) !important;
+      .list_space--x-@{name} {
+        .list_space--x(@name) !important;
       }
-      .list-space-@{name} {
-        .list-space(@name) !important;
+      .list_space--@{name} {
+        .list_space(@name) !important;
       }
     }
     & when not (@breakpoint = none) {
-      .list-space-y-@{name}-@{breakpoint} {
-        .list-space-y(@name) !important;
+      .list_space--y-@{name}-@{breakpoint} {
+        .list_space--y(@name) !important;
       }
-      .list-space-x-@{name}-@{breakpoint} {
-        .list-space-x(@name) !important;
+      .list_space--x-@{name}-@{breakpoint} {
+        .list_space--x(@name) !important;
       }
-      .list-space-@{name}-@{breakpoint} {
-        .list-space(@name) !important;
+      .list_space--@{name}-@{breakpoint} {
+        .list_space(@name) !important;
       }
     }
   }

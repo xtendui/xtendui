@@ -8,7 +8,7 @@ description: List is used to space it's childrens in a column/row layout. Can al
 
 <h2>Usage</h2>
 
-<p>Use <code>.list</code> to create a <strong>row list</strong> or <code>.list.list-block</code> to create a <strong>column
+<p>Use <code>.list</code> to create a <strong>row list</strong> or <code>.list.list--block</code> to create a <strong>column
   list</strong> with flexbox.
 </p>
 
@@ -21,7 +21,7 @@ description: List is used to space it's childrens in a column/row layout. Can al
       <li><!-- content --></li>
       <li><!-- content --></li>
     </ul>
-    <ul class="list list-block">
+    <ul class="list list--block">
       <li><!-- content --></li>
       <li><!-- content --></li>
       <li><!-- content --></li>
@@ -60,9 +60,9 @@ description: List is used to space it's childrens in a column/row layout. Can al
       </ul>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="list-block">
+  <div class="demo-item demo-preview" data-name="list--block">
     <div class="demo-source" data-lang="html">
-      <ul class="list list-block">
+      <ul class="list list--block">
         <li>
           Lorem ipsum dolor sit amet.
         </li>
@@ -77,11 +77,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   </div>
   <div class="demo-item demo-preview" data-name="nested">
     <div class="demo-source" data-lang="html">
-      <ul class="list list-block">
+      <ul class="list list--block">
         <li>
           <ul class="list">
             <li>
-              <ul class="list list-block">
+              <ul class="list list--block">
                 <li>
                   Lorem ipsum dolor sit amet.
                 </li>
@@ -145,9 +145,9 @@ description: List is used to space it's childrens in a column/row layout. Can al
       </ul>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="list-block">
+  <div class="demo-item demo-preview" data-name="list--block">
     <div class="demo-source" data-lang="html">
-      <ul class="list list-block">
+      <ul class="list list--block">
         <li>
           <button type="button" class="btn btn--primary">
             <span>Lorem Ipsum</span>
@@ -168,11 +168,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   </div>
   <div class="demo-item demo-preview" data-name="nested">
     <div class="demo-source" data-lang="html">
-      <ul class="list list-block">
+      <ul class="list list--block">
         <li>
           <ul class="list">
             <li>
-              <ul class="list list-block">
+              <ul class="list list--block">
                 <li>
                   <button type="button" class="btn btn--primary">
                     <span>Lorem Ipsum</span>
@@ -244,7 +244,7 @@ description: List is used to space it's childrens in a column/row layout. Can al
           <div class="drop">
             <div class="drop_inner">
               <div class="content">
-                <ul class="list list-drop">
+                <ul class="list list--drop">
                   <li>
                     <a href="#">
                       <span>Lorem Ipsum</span>
@@ -277,8 +277,8 @@ description: List is used to space it's childrens in a column/row layout. Can al
 
 <div class="alert">
   <div class="content">
-    In theming code use <code>.list-btn--default({});</code> to style <code>a</code> and <code>button</code>. To style also
-    if they have the <code>.btn</code> class use <code>.list-btn--all({});</code>.
+    In theming code use <code>.list_btn--default({});</code> to style <code>a</code> and <code>button</code>. To style also
+    if they have the <code>.btn</code> class use <code>.list_btn--all({});</code>.
   </div>
 </div>
 
@@ -323,7 +323,7 @@ description: List is used to space it's childrens in a column/row layout. Can al
 
 <p>Optional classes for assigning variant.</p>
 
-<p>You can change the default <strong>variant</strong> inside the <code>.list</code> and <code>.list-block</code> selectors in <code>/theme/_layout.less</code>.</p>
+<p>You can change the default <strong>variant</strong> inside the <code>.list</code> and <code>.list--block</code> selectors in <code>/theme/_layout.less</code>.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="default">
@@ -350,11 +350,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="primary">
     <div class="demo-text">
       <div class="content">
-        <code>.list-primary</code>
+        <code>.list--primary</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-primary">
+      <ul class="list list--primary">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -376,11 +376,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="primary-empty">
     <div class="demo-text">
       <div class="content">
-        <code>.list-primary-empty</code>
+        <code>.list--primary-empty</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-primary-empty">
+      <ul class="list list--primary-empty">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -402,11 +402,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="secondary">
     <div class="demo-text">
       <div class="content">
-        <code>.list-secondary</code>
+        <code>.list--secondary</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-secondary">
+      <ul class="list list--secondary">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -428,11 +428,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="secondary-empty">
     <div class="demo-text">
       <div class="content">
-        <code>.list-secondary-empty</code>
+        <code>.list--secondary-empty</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-secondary-empty">
+      <ul class="list list--secondary-empty">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -454,11 +454,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="link">
     <div class="demo-text">
       <div class="content">
-        <code>.list-link</code>
+        <code>.list--link</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-link">
+      <ul class="list list--link">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -496,23 +496,23 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <tbody>
     <tr>
       <th scope="row">Class</th>
-      <td><code>.list-space-{size}</code></td>
-      <td><code>.list-space-small</code></td>
+      <td><code>.list_space--{size}</code></td>
+      <td><code>.list_space--small</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
-      <td><code>.list-space-{size}-{breakpoint}</code></td>
-      <td><code>.list-space-small-sm</code></td>
+      <td><code>.list_space--{size}-{breakpoint}</code></td>
+      <td><code>.list_space--small-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.list-space({size})</code></td>
-      <td><code>.list-space(small)</code></td>
+      <td><code>.list_space({size})</code></td>
+      <td><code>.list_space(small)</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.list-space({size}, {breakpoint})</code></td>
-      <td><code>.list-space(small, sm)</code></td>
+      <td><code>.list_space({size}, {breakpoint})</code></td>
+      <td><code>.list_space(small, sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -529,11 +529,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="none">
     <div class="demo-text">
       <div class="content">
-        <code>.list-space-none</code>
+        <code>.list_space--none</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-space-none">
+      <ul class="list list_space--none">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -555,11 +555,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="tiny">
     <div class="demo-text">
       <div class="content">
-        <code>.list-space-tiny</code>
+        <code>.list_space--tiny</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-space-tiny">
+      <ul class="list list_space--tiny">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -581,11 +581,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="small">
     <div class="demo-text">
       <div class="content">
-        <code>.list-space-small</code>
+        <code>.list_space--small</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-space-small">
+      <ul class="list list_space--small">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -607,11 +607,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="medium">
     <div class="demo-text">
       <div class="content">
-        <code>.list-space-medium</code>
+        <code>.list_space--medium</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-space-medium">
+      <ul class="list list_space--medium">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -633,11 +633,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="big">
     <div class="demo-text">
       <div class="content">
-        <code>.list-space-big</code>
+        <code>.list_space--big</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-space-big">
+      <ul class="list list_space--big">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -659,11 +659,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="giant">
     <div class="demo-text">
       <div class="content">
-        <code>.list-space-giant</code>
+        <code>.list_space--giant</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-space-giant">
+      <ul class="list list_space--giant">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -701,23 +701,23 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <tbody>
     <tr>
       <th scope="row">Class</th>
-      <td><code>.list-left</code></td>
-      <td><code>.list-left</code></td>
+      <td><code>.list--left</code></td>
+      <td><code>.list--left</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
-      <td><code>.list-left-{breakpoint}</code></td>
-      <td><code>.list-left-sm</code></td>
+      <td><code>.list--left-{breakpoint}</code></td>
+      <td><code>.list--left-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.list-left()</code></td>
-      <td><code>.list-left()</code></td>
+      <td><code>.list--left()</code></td>
+      <td><code>.list--left()</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.list-left({breakpoint})</code></td>
-      <td><code>.list-left(sm)</code></td>
+      <td><code>.list--left({breakpoint})</code></td>
+      <td><code>.list--left(sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -727,11 +727,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="left">
     <div class="demo-text">
       <div class="content">
-        <code>.list-left</code>
+        <code>.list--left</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-block list-left">
+      <ul class="list list--block list--left">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -753,11 +753,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="center">
     <div class="demo-text">
       <div class="content">
-        <code>.list-center</code>
+        <code>.list--center</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-block list-center">
+      <ul class="list list--block list--center">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -779,11 +779,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="right">
     <div class="demo-text">
       <div class="content">
-        <code>.list-right</code>
+        <code>.list--right</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-block list-right">
+      <ul class="list list--block list--right">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -808,7 +808,7 @@ description: List is used to space it's childrens in a column/row layout. Can al
 
 <p>Optional classes for assigning size.</p>
 
-<p>You can change the default <strong>size</strong> inside the <code>.list</code> and <code>.list-block</code> selectors in <code>/theme/_layout.less</code>.</p>
+<p>You can change the default <strong>size</strong> inside the <code>.list</code> and <code>.list--block</code> selectors in <code>/theme/_layout.less</code>.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="default">
@@ -835,11 +835,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="tiny">
     <div class="demo-text">
       <div class="content">
-        <code>.list-tiny</code>
+        <code>.list--tiny</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-tiny">
+      <ul class="list list--tiny">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -861,11 +861,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="small">
     <div class="demo-text">
       <div class="content">
-        <code>.list-small</code>
+        <code>.list--small</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-small">
+      <ul class="list list--small">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -887,11 +887,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="medium">
     <div class="demo-text">
       <div class="content">
-        <code>.list-medium</code>
+        <code>.list--medium</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-medium">
+      <ul class="list list--medium">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -913,11 +913,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="big">
     <div class="demo-text">
       <div class="content">
-        <code>.list-big</code>
+        <code>.list--big</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-big">
+      <ul class="list list--big">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -939,11 +939,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="giant">
     <div class="demo-text">
       <div class="content">
-        <code>.list-giant</code>
+        <code>.list--giant</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-giant">
+      <ul class="list list--giant">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -972,11 +972,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="nodesign">
     <div class="demo-text">
       <div class="content">
-        <code>.list-nodesign</code>
+        <code>.list--nodesign</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-nodesign">
+      <ul class="list list--nodesign">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -998,11 +998,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="squared">
     <div class="demo-text">
       <div class="content">
-        <code>.list-squared</code>
+        <code>.list--squared</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-squared">
+      <ul class="list list--squared">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -1024,11 +1024,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="tall">
     <div class="demo-text">
       <div class="content">
-        <code>.list-tall</code>
+        <code>.list--tall</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-tall">
+      <ul class="list list--tall">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -1050,11 +1050,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="short">
     <div class="demo-text">
       <div class="content">
-        <code>.list-short</code>
+        <code>.list--short</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-short">
+      <ul class="list list--short">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -1076,11 +1076,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="wide">
     <div class="demo-text">
       <div class="content">
-        <code>.list-wide</code>
+        <code>.list--wide</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-wide">
+      <ul class="list list--wide">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -1102,11 +1102,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="narrow">
     <div class="demo-text">
       <div class="content">
-        <code>.list-narrow</code>
+        <code>.list--narrow</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-narrow">
+      <ul class="list list--narrow">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -1128,11 +1128,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="icon">
     <div class="demo-text">
       <div class="content">
-        <code>.list-icon</code>
+        <code>.list--icon</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-icon">
+      <ul class="list list--icon">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -1154,11 +1154,11 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="none">
     <div class="demo-text">
       <div class="content">
-        <code>.list-none</code>
+        <code>.list--none</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list-none">
+      <ul class="list list--none">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
