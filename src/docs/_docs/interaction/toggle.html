@@ -25,7 +25,7 @@ description: Many possible behaviour, interactions and animations are possible w
       <button type="button">
         <span><!-- content --></span>
       </button>
-      <div class="toggle-block">
+      <div class="toggle--block">
         <!-- content -->
       </div>
     </div>
@@ -48,7 +48,7 @@ description: Many possible behaviour, interactions and animations are possible w
   <code class="js">
 XtToggle.defaults = {
   "elements": ":scope > a, :scope > button",
-  "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
+  "targets": ":scope > [class^=\"toggle--\"], :scope > [class*=\" toggle--\"]",
   "class": "active",
   "instant": {"elements": true},
   "on": "click",
@@ -95,7 +95,7 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items-center" data-xt-toggle>
+      <div class="list list_space--small align-items--center" data-xt-toggle>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -105,30 +105,30 @@ XtToggle.defaults = {
         <button type="button" class="btn">
           <span>Toggle 2</span>
         </button>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 0
-            <div class="alert toggle-block">
+            <div class="alert toggle--block">
               <div class="content">
                 Nested not toggled
               </div>
             </div>
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 1
-            <div class="alert toggle-block">
+            <div class="alert toggle--block">
               <div class="content">
                 Nested not toggled
               </div>
             </div>
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 2
-            <div class="alert toggle-block">
+            <div class="alert toggle--block">
               <div class="content">
                 Nested not toggled
               </div>
@@ -146,7 +146,7 @@ XtToggle.defaults = {
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"elements": ".test > .btn", "targets": ".test > .example-toggle"}'>
-        <div class="list list_space--small align-items-center test">
+        <div class="list list_space--small align-items--center test">
           <button type="button" class="btn">
             <span>Toggle 0</span>
           </button>
@@ -190,11 +190,11 @@ XtToggle.defaults = {
   <div class="demo-item demo-preview" data-name="toggle">
     <div class="demo-text">
       <div class="content">
-        Custom targets classname that starts with <code>.toggle-</code>
+        Custom targets classname that starts with <code>.toggle--</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items-center" data-xt-toggle>
+      <div class="list list_space--small align-items--center" data-xt-toggle>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -204,17 +204,17 @@ XtToggle.defaults = {
         <button type="button" class="btn">
           <span>Toggle 2</span>
         </button>
-        <div class="alert toggle-custom">
+        <div class="alert toggle--custom">
           <div class="content">
             Target 0
           </div>
         </div>
-        <div class="alert toggle-custom">
+        <div class="alert toggle--custom">
           <div class="content">
             Target 1
           </div>
         </div>
-        <div class="alert toggle-custom">
+        <div class="alert toggle--custom">
           <div class="content">
             Target 2
           </div>
@@ -223,12 +223,12 @@ XtToggle.defaults = {
     </div>
     <div class="demo-source" data-lang="css">
       <style>
-        .toggle-custom {
+        .toggle--custom {
           display: none;
         }
 
-        .toggle-custom.active,
-        .toggle-custom.out {
+        .toggle--custom.active,
+        .toggle--custom.out {
           display: block;
         }
       </style>
@@ -255,7 +255,7 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items-center demo-source-from">
+      <div class="list list_space--small align-items--center demo-source-from">
         <button type="button" class="btn" data-xt-toggle>
           <span>Toggle</span>
         </button>
@@ -272,19 +272,19 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items-center demo-source-from">
+      <div class="list list_space--small align-items--center demo-source-from">
         <button type="button" class="btn" data-xt-toggle='{"targets": "#toggle-unique-0"}'>
           <span>Toggle 0</span>
         </button>
         <button type="button" class="btn" data-xt-toggle='{"targets": "#toggle-unique-1"}'>
           <span>Toggle 1</span>
         </button>
-        <div class="alert toggle-block" id="toggle-unique-0">
+        <div class="alert toggle--block" id="toggle-unique-0">
           <div class="content">
             Target 0
           </div>
         </div>
-        <div class="alert toggle-block" id="toggle-unique-1">
+        <div class="alert toggle--block" id="toggle-unique-1">
           <div class="content">
             Target 1
           </div>
@@ -299,19 +299,19 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items-center demo-source-from">
+      <div class="list list_space--small align-items--center demo-source-from">
         <button type="button" class="btn" data-xt-toggle='{"targets": "#toggle-unique-2, #toggle-unique-3"}'>
           <span>Toggle</span>
         </button>
         <button type="button" class="btn" data-xt-toggle='{"targets": "#toggle-unique-2, #toggle-unique-3"}'>
           <span>Toggle</span>
         </button>
-        <div class="alert toggle-block" id="toggle-unique-2">
+        <div class="alert toggle--block" id="toggle-unique-2">
           <div class="content">
             Target 0
           </div>
         </div>
-        <div class="alert toggle-block" id="toggle-unique-3">
+        <div class="alert toggle--block" id="toggle-unique-3">
           <div class="content">
             Target 1
           </div>
@@ -331,7 +331,7 @@ XtToggle.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="group">
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items-center" data-xt-toggle>
+      <div class="list list_space--small align-items--center" data-xt-toggle>
         <button type="button" class="btn" data-group="0">
           <span>Group 0</span>
         </button>
@@ -350,27 +350,27 @@ XtToggle.defaults = {
         <button type="button" class="btn" data-group="1">
           <span>Group 1</span>
         </button>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 0
           </div>
         </div>
-        <div class="alert toggle-block" data-group="0">
+        <div class="alert toggle--block" data-group="0">
           <div class="content">
             Group 0
           </div>
         </div>
-        <div class="alert toggle-block" data-group="1">
+        <div class="alert toggle--block" data-group="1">
           <div class="content">
             Group 1
           </div>
         </div>
-        <div class="alert toggle-block" data-group="0">
+        <div class="alert toggle--block" data-group="0">
           <div class="content">
             Group 0
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 1
           </div>
@@ -392,11 +392,11 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items-center" data-xt-toggle='{"class": "active class-example-0"}'>
+      <div class="list list_space--small align-items--center" data-xt-toggle='{"class": "active class-example-0"}'>
         <button type="button" class="btn">
           <span>Toggle</span>
         </button>
-        <div class="alert toggle-block" id="alert-example">
+        <div class="alert toggle--block" id="alert-example">
           <div class="content">
             Target
           </div>
@@ -424,7 +424,7 @@ XtToggle.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items-center"
+      <div class="list list_space--small align-items--center"
            data-xt-toggle='{"class": "active class-example-1", "min": 3, "max": 3}'>
         <button type="button" class="btn" data-group="0">
           <span>Group 0</span>
@@ -441,32 +441,32 @@ XtToggle.defaults = {
         <button type="button" class="btn" data-group="1">
           <span>Group 1</span>
         </button>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 0
           </div>
         </div>
-        <div class="alert toggle-block" data-group="0">
+        <div class="alert toggle--block" data-group="0">
           <div class="content">
             Group 0
           </div>
         </div>
-        <div class="alert toggle-block" data-group="1">
+        <div class="alert toggle--block" data-group="1">
           <div class="content">
             Group 1
           </div>
         </div>
-        <div class="alert toggle-block" data-group="0">
+        <div class="alert toggle--block" data-group="0">
           <div class="content">
             Group 0
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 1
           </div>
         </div>
-        <div class="alert toggle-block active class-example-1" data-group="1">
+        <div class="alert toggle--block active class-example-1" data-group="1">
           <div class="content">
             Group 1
           </div>
@@ -502,7 +502,7 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items-center" data-xt-toggle='{"min": 2, "max": 2}'>
+      <div class="list list_space--small align-items--center" data-xt-toggle='{"min": 2, "max": 2}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -515,22 +515,22 @@ XtToggle.defaults = {
         <button type="button" class="btn">
           <span>Toggle 3</span>
         </button>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 0
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 1
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 2
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 3
           </div>
@@ -553,7 +553,7 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items-center"
+      <div class="list list_space--small align-items--center"
            data-xt-toggle='{"min": 1, "on": "mouseenter", "off": "mouseleave"}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
@@ -567,22 +567,22 @@ XtToggle.defaults = {
         <button type="button" class="btn">
           <span>Toggle 3</span>
         </button>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 0
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 1
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 2
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 3
           </div>
@@ -598,7 +598,7 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items-center"
+      <div class="list list_space--small align-items--center"
            data-xt-toggle='{"min": 1, "on": "mouseenter", "off": "mouseleave"}'>
         <a href="#toggle-with-link-0" class="btn">
           <span>Toggle 0</span>
@@ -612,22 +612,22 @@ XtToggle.defaults = {
         <button type="button" class="btn">
           <a href="#toggle-with-link-3" class="link--none">Toggle 3</a>
         </button>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 0
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 1
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 2
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 3
           </div>
@@ -655,7 +655,7 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items-center" data-xt-toggle='{"auto": 2000}'>
+      <div class="list list_space--small align-items--center" data-xt-toggle='{"auto": 2000}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -668,22 +668,22 @@ XtToggle.defaults = {
         <button type="button" class="btn">
           <span>Toggle 3</span>
         </button>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 0
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 1
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 2
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 3
           </div>
@@ -698,7 +698,7 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items-center" data-xt-toggle='{"auto": 2000, "autoPause": 6000}'>
+      <div class="list list_space--small align-items--center" data-xt-toggle='{"auto": 2000, "autoPause": 6000}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -711,22 +711,22 @@ XtToggle.defaults = {
         <button type="button" class="btn">
           <span>Toggle 3</span>
         </button>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 0
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 1
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 2
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 3
           </div>
@@ -736,7 +736,7 @@ XtToggle.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="complex">
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items-center"
+      <div class="list list_space--small align-items--center"
            data-xt-toggle='{"min": 1, "max": 2, "auto": 2000, "autoPause": "stop"}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
@@ -750,22 +750,22 @@ XtToggle.defaults = {
         <button type="button" class="btn">
           <span>Toggle 3</span>
         </button>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 0
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 1
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 2
           </div>
         </div>
-        <div class="alert toggle-block">
+        <div class="alert toggle--block">
           <div class="content">
             Target 3
           </div>
@@ -840,7 +840,7 @@ XtToggle.defaults = {
 <h2>Extensions</h2>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/toggle/toggle-levels.html"
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/javascript/toggle/toggle-multilevel.html"
        data-name="levels">
     <div class="demo-text">
       <div class="content">

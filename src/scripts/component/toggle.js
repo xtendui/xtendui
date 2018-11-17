@@ -60,7 +60,7 @@ class Toggle extends Core {
 Toggle.componentName = 'toggle';
 Toggle.defaults = {
   "elements": ":scope > a, :scope > button",
-  "targets": ":scope > [class^=\"toggle-\"], :scope > [class*=\" toggle-\"]",
+  "targets": ":scope > [class^=\"toggle--\"], :scope > [class*=\" toggle--\"]",
   "class": "active",
   "on": "click",
   "min": 0,

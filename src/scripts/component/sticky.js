@@ -37,18 +37,18 @@ class Sticky extends Core {
     // mode
     self.mode = 'unique';
     // container
-    self.container = Xt.parents(self.object, '.xt-container');
+    self.container = Xt.parents(self.object, '.xt_container');
     if (!self.container.length) {
-      self.container = Xt.createElement('<div class="xt-container xt-check-fixed"></div>');
+      self.container = Xt.createElement('<div class="xt_container xt-check-fixed"></div>');
       self.object.before(self.container);
       self.container.append(self.object);
-      self.container = Xt.parents(self.object, '.xt-container');
+      self.container = Xt.parents(self.object, '.xt_container');
     }
     // targets
-    self.targets = self.container[0].querySelectorAll('.xt-clone');
+    self.targets = self.container[0].querySelectorAll('.xt_clone');
     if (!self.targets.length) {
       self.targets = self.object.cloneNode(true);
-      self.targets.classList.add('xt-clone', 'xt-ignore');
+      self.targets.classList.add('xt_clone', 'xt_ignore');
       for (let elId of self.targets.querySelectorAll('[id]')) {
         elId.setAttribute('id', elId.getAttribute('id') + '-clone');
       }
@@ -276,12 +276,12 @@ class Sticky extends Core {
     // set add
     if (add !== self.detail.addOld) {
       // NO BUGS initial top with requestAnimationFrame
-      // element.classList.add('no-transition');
+      // element.classList.add('transition--none');
       // if (self.detail.addOld !== undefined) {
       //   element.style[options.position] = rectElTop + 'px';
       // }
       // element.dataset.xtEventFrame = window.requestAnimationFrame(function () {
-      //   element.classList.remove('no-transition');
+      //   element.classList.remove('transition--none');
       element.style[options.position] = add + 'px';
       // }).toString();
     }

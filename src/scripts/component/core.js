@@ -1418,7 +1418,7 @@ class Core {
    */
   specialCollapseOn(el) {
     if (el.classList.contains('collapse-height')) {
-      el.classList.add('xt-calculating');
+      el.classList.add('xt_calculating');
       el.style.height = 'auto';
       el.style.paddingTop = '';
       el.style.paddingBottom = '';
@@ -1427,7 +1427,7 @@ class Core {
       let pb = el.style.paddingBottom;
       window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
       el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-        el.classList.remove('xt-calculating');
+        el.classList.remove('xt_calculating');
         el.style.height = '0';
         el.style.paddingTop = '0';
         el.style.paddingBottom = '0';
@@ -1439,7 +1439,7 @@ class Core {
       }).toString();
     }
     if (el.classList.contains('collapse-width')) {
-      el.classList.add('xt-calculating');
+      el.classList.add('xt_calculating');
       el.style.width = 'auto';
       el.style.paddingLeft = '';
       el.style.paddingRight = '';
@@ -1448,7 +1448,7 @@ class Core {
       let pr = el.style.paddingRight;
       window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
       el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-        el.classList.remove('xt-calculating');
+        el.classList.remove('xt_calculating');
         el.style.width = '0';
         el.style.paddingLeft = '0';
         el.style.paddingRight = '0';
@@ -1615,7 +1615,7 @@ class Core {
       // scrollbar
       let container = document.documentElement;
       container.style.paddingRight = width + 'px';
-      container.classList.add('xt-scrollbar');
+      container.classList.add('xt_scrollbar');
       // check fixed
       let checks = document.querySelectorAll('.xt-check-fixed > *');
       for (let check of checks) {
@@ -1634,11 +1634,11 @@ class Core {
           let style = getComputedStyle(element);
           let padding = style.paddingRight;
           let str = 'calc(' + padding + ' + ' + width + 'px)';
-          element.classList.add('no-transition');
+          element.classList.add('transition--none');
           window.requestAnimationFrame(function () {
             element.style.paddingRight = str;
             window.requestAnimationFrame(function () {
-              element.classList.remove('no-transition');
+              element.classList.remove('transition--none');
             });
           });
         }
@@ -1665,15 +1665,15 @@ class Core {
         // scrollbar
         let container = document.documentElement;
         container.style.paddingRight = '';
-        container.classList.remove('xt-scrollbar');
+        container.classList.remove('xt_scrollbar');
         // fixed
         let elements = document.querySelectorAll('.xt-fixed');
         for (let element of elements) {
-          element.classList.add('no-transition');
+          element.classList.add('transition--none');
           window.requestAnimationFrame(function () {
             element.style.paddingRight = '';
             window.requestAnimationFrame(function () {
-              element.classList.remove('no-transition');
+              element.classList.remove('transition--none');
             });
           });
         }

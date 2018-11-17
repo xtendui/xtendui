@@ -1,0 +1,179 @@
+---
+layout: demos
+less: true
+js: true
+full: true
+padding: true
+---
+
+<div data-xt-toggle='{"elements": "#multilevel-tab-reset, .multilevel-tab .multilevel-list button", "targets": ".multilevel-tab", "min": 1}'>
+
+  <nav role="navigation" class="multilevel-tab">
+
+    <div class="multilevel-title-wrapper">
+      <div class="multilevel-title">
+        <span>Products</span>
+      </div>
+      <button type="button" class="btn btn--secondary-empty btn--none multilevel-reset display--none" id="multilevel-tab-reset">
+        <span>Back</span>
+      </button>
+    </div>
+
+    <ul class="list list--block list--secondary-empty list_space--none list--tall list--none-x multilevel-list">
+      <li>
+        <button type="button" data-group="cat-0">
+          Category 0
+        </button>
+      </li>
+      <li>
+        <button type="button" data-group="cat-1">
+          Category 1
+        </button>
+      </li>
+      <li>
+        <a href="#">
+          Link 0
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Link 1
+        </a>
+      </li>
+    </ul>
+
+    <div class="multilevel-title-wrapper">
+      <div class="multilevel-title">
+        <span>About</span>
+      </div>
+    </div>
+    <ul class="list list--block list--secondary-empty list_space--none list--tall list--none-x multilevel-list">
+      <li>
+        <a href="#">
+          Link 0
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Link 1
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+
+  <nav role="navigation" class="multilevel-tab" data-group="cat-0">
+
+    <div class="multilevel-title-wrapper">
+      <div class="multilevel-title">
+        <span>Category 0</span>
+      </div>
+      <button type="button" class="btn btn--secondary-empty btn--none multilevel-reset">
+        <span>Back</span>
+      </button>
+    </div>
+
+    <ul class="list list--block list--secondary-empty list_space--none list--tall list--none-x multilevel-list">
+      <li>
+        <button type="button" data-group="cat-0a">
+          Category 0a
+        </button>
+      </li>
+      <li>
+        <button type="button" data-group="cat-0b">
+          Category 0b
+        </button>
+      </li>
+      <li>
+        <a href="#">
+          Link 0
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Link 1
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+
+  <nav role="navigation" class="multilevel-tab" data-group="cat-0a">
+
+    <div class="multilevel-title-wrapper">
+      <div class="multilevel-title">
+        <span>Category 0a</span>
+      </div>
+      <button type="button" class="btn btn--secondary-empty btn--none multilevel-reset">
+        <span>Back</span>
+      </button>
+    </div>
+
+    <ul class="list list--block list--secondary-empty list_space--none list--tall list--none-x multilevel-list">
+      <li>
+        <a href="#">
+          Link 0
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Link 1
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+
+  <nav role="navigation" class="multilevel-tab" data-group="cat-0b">
+
+    <div class="multilevel-title-wrapper">
+      <div class="multilevel-title">
+        <span>Category 0b</span>
+      </div>
+      <button type="button" class="btn btn--secondary-empty btn--none multilevel-reset">
+        <span>Back</span>
+      </button>
+    </div>
+
+    <ul class="list list--block list--secondary-empty list_space--none list--tall list--none-x multilevel-list">
+      <li>
+        <a href="#">
+          Link 0
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Link 1
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+
+  <nav role="navigation" class="multilevel-tab" data-group="cat-1">
+
+    <div class="multilevel-title-wrapper">
+      <div class="multilevel-title">
+        <span>Category 1</span>
+      </div>
+      <button type="button" class="btn btn--secondary-empty btn--none multilevel-reset">
+        <span>Back</span>
+      </button>
+    </div>
+
+    <ul class="list list--block list--secondary-empty list_space--none list--tall list--none-x multilevel-list">
+      <li>
+        <a href="#">
+          Link 0
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Link 1
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+
+</div>

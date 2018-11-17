@@ -16,13 +16,13 @@
 // col
 
 .col(@breakpoint:none) when (@breakpoint = none) {
-  .flex-auto();
+  .flex--auto();
 }
 
 .col(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .flex-auto();
+    .flex--auto();
   }
 }
 

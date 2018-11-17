@@ -8,9 +8,9 @@
   // list
   > li {
     .display(flex);
-    .align-items-start();
+    .align-items--start();
     > * {
-      .flex-auto();
+      .flex--auto();
     }
   }
   .list_btn--default({ .btn(); });
@@ -40,11 +40,11 @@
 
 .list {
   .list--base();
-  .flex-row();
+  .flex-direction--row();
   .flex-wrap();
 }
 
 .list--block {
-  .flex-column();
+  .flex-direction--column();
   .flex-nowrap();
 }

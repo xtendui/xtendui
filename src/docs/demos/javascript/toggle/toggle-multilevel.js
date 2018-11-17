@@ -1,10 +1,10 @@
 //////////////////////
-// xtend extension: toggle-levels
+// xtend extension: multilevel
 //////////////////////
 
 function initToggleLevels() {
-  let btnReset = document.querySelectorAll('#toggle-levels-tab-reset')[0];
-  let btns = document.querySelectorAll('.toggle-levels-reset');
+  let btnReset = document.querySelectorAll('#multilevel-tab-reset')[0];
+  let btns = document.querySelectorAll('.multilevel-reset');
   for (let [i, btn] of btns.entries()) {
     btn.addEventListener('click', function (e) {
       if (!e.detail || !e.detail.skipToggle) {

@@ -1,27 +1,27 @@
 @import (reference) "../../../../../dist/styles/xtend.less";
 
 //////////////////////
-// xtend extension: toggle-levels
+// xtend extension: multilevel
 //////////////////////
 
 // content
 
-.toggle-levels-title-wrapper {
+.multilevel-title-wrapper {
   .block();
   .margin(y, layout) !important;
   .margin(top, medium);
   .margin(bottom, tiny);
   position: relative;
   .display(flex);
-  .align-items-center();
-  .justify-content-between();
+  .align-items--center();
+  .justify-content--between();
 }
 
-.toggle-levels-title {
+.multilevel-title {
   .h4();
 }
 
-.toggle-levels-list {
+.multilevel-list {
   > li {
     > button {
       .caret();
@@ -39,9 +39,9 @@
 
 // toggle
 
-.toggle-levels-body {
+.multilevel-body {
   .block();
-  .toggle-block();
+  .toggle--block();
   // animations
   .anim--horizontal();
   animation-duration: @time--small;
@@ -51,9 +51,9 @@
   }
 }
 
-.toggle-levels-tab {
+.multilevel-tab {
   .block();
-  .toggle-block();
+  .toggle--block();
   // animations
   .anim--horizontal();
   animation-duration: @time--small;

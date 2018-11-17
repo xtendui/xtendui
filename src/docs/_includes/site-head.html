@@ -32,11 +32,11 @@
   <header class="site-header">
 
     <div class="site-header-top-outer"
-         data-xt-sticky='{"limit": {"top": ".site-hero"}, "contain": {"bottom":".site-breadcrumbs-outer:not(.xt-clone)"}, "hide": "down"}'>
+         data-xt-sticky='{"limit": {"top": ".site-hero"}, "contain": {"bottom":".site-breadcrumbs-outer:not(.xt_clone)"}, "hide": "down"}'>
       <div class="site-header-top">
         <div class="container">
 
-          <div class="flex flex-auto justify-content-between align-items-center">
+          <div class="flex flex--auto justify-content--between align-items--center">
             <div>
               <a href="{{ site.baseurl }}/" class="logo" title="Home">
                 <img src="{{ site.baseurl }}/assets/images/logo.svg" alt="Xtend"/>
@@ -73,7 +73,7 @@
           <div class="site-header-top">
             <div class="container">
 
-              <div class="flex flex-auto justify-content-between align-items-center">
+              <div class="flex flex--auto justify-content--between align-items--center">
                 <div>
                   <a href="{{ site.baseurl }}/" class="logo" title="Home">
                     <img src="{{ site.baseurl }}/assets/images/logo.svg" alt="Xtend"/>
@@ -132,7 +132,7 @@
     <div class="site-hero">
 
       <div class="container">
-        <div class="flex flex-auto align-items-center align-content-center justify-content-between">
+        <div class="flex flex--auto align-items--center align-content--center justify-content--between">
           <div class="site-hero-text">
             <h1>{{ page.title }}</h1>
             <p class="font-giant">{{ page.description }}</p>
@@ -151,9 +151,9 @@
       <div class="site-breadcrumbs">
         <div class="site-breadcrumbs-inner">
           <div class="container">
-            <div class="flex flex-auto justify-content-between align-items-start">
+            <div class="flex flex--auto justify-content--between align-items--start">
 
-              <div class="site-breadcrumbs-body flex flex_space--none display-none display-flex-sm"
+              <div class="site-breadcrumbs-body flex flex_space--none display--none display--flex-sm"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
                 {% for collection in site.collections %}
@@ -168,7 +168,7 @@
                           <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn--primary btn--nodesign{% if p.title == page.title %} active{% endif %}">
                             <span>{{ p.title }}</span>
                           </a>
-                          <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
+                          <div class="site-breadcrumbs-body-sub toggle--visible collapse-height">
                             <div class="site-breadcrumbs-body-sub-inner">
                               {% for pa in subsorted %}
                               <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn--primary btn--nodesign{% if pa.title == page.title %} active{% endif %}">
@@ -186,12 +186,12 @@
                 {% endfor %}
               </div>
 
-              <div class="site-breadcrumbs-body flex flex_space--none display-none-sm flex-auto"
+              <div class="site-breadcrumbs-body flex flex_space--none display--none-sm flex--auto"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
 
-                <div class="site-breadcrumbs-body-main flex-auto">
-                  <button type="button" class="btn btn--primary btn--nodesign flex-auto">
+                <div class="site-breadcrumbs-body-main flex--auto">
+                  <button type="button" class="btn btn--primary btn--nodesign flex--auto">
                     {% if page.collection == page.categories[0] %}
                       <span>{{ page.title }}</span>
                     {% else %}
@@ -200,7 +200,7 @@
                   </button>
                   {% for collection in site.collections %}
                     {% if collection.label == page.collection %}
-                      <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
+                      <div class="site-breadcrumbs-body-sub toggle--visible collapse-height">
                         <div class="site-breadcrumbs-body-sub-inner">
                           {% assign sorted = site.[collection.label] | sort: 'order' %}
                             {% for p in sorted %}
@@ -217,15 +217,15 @@
                 {% endfor %}
               </div>
 
-              <div class="site-breadcrumbs-meta flex flex_space--none align-items-center">
+              <div class="site-breadcrumbs-meta flex flex_space--none align-items--center">
 
-                <div class="display-none-sm display-block-md">
+                <div class="display--none-sm display--block-md">
                   <a href="{{ site.download }}" target="_blank" class="btn btn--primary btn--icon btn--nodesign">
                     <span><span class="icon-download icon-big"></span></span>
                   </a>
                 </div>
 
-                <div class="display-none-sm display-block-md">
+                <div class="display--none-sm display--block-md">
                   <a href="{{ site.github }}" target="_blank" class="btn btn--primary btn--icon btn--nodesign">
                     <span><span class="icon-github icon-big"></span></span>
                   </a>

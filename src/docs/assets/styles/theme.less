@@ -30,20 +30,20 @@
 .site-wrapper {
   .display(flex);
   .flex-wrap();
-  .flex-column();
+  .flex-direction--column();
   min-height: 100%;
 }
 
 .site-wrapper-inner {
   .display(flex);
   .flex-wrap();
-  .flex-column();
-  .flex-auto();
+  .flex-direction--column();
+  .flex--auto();
   min-height: 100%;
 }
 
 .site-main {
-  .flex-auto();
+  .flex--auto();
 }
 
 //////////////////////
@@ -61,7 +61,7 @@
 .logo {
   .link--none();
   .display(flex);
-  .align-items-center();
+  .align-items--center();
   height: 7.25rem;
   opacity: .8;
   img {
@@ -169,7 +169,7 @@
   z-index: 1;
   .site-breadcrumbs-body-sub-inner {
     .display(flex);
-    .flex-column();
+    .flex-direction--column();
     .padding(y, small);
   }
   .btn {
@@ -222,7 +222,7 @@
 
 .btn--menu {
   .display(flex);
-  .align-items-center();
+  .align-items--center();
   margin-top: -.25rem;
   margin-bottom: -.25rem;
   .icon-menu-custom {
@@ -326,7 +326,7 @@
 .site-menu {
   // animations
   &, &@{overlay--design}, .overlay_inner@{overlay--design}, .overlay_inner > .content {
-    .no-animation() !important;
+    .animation--none() !important;
     opacity: 1 !important;
   }
 }
@@ -450,7 +450,7 @@
       & + .site-aside-subsub {
         display: block !important;
         height: auto !important;
-        // fix no xt-calculating
+        // fix no xt_calculating
         position: relative !important;
         visibility: visible !important;
         opacity: 1 !important;
@@ -607,7 +607,7 @@
   // code
   .demo-item {
     position: relative;
-    .toggle-block();
+    .toggle--block();
     iframe {
       width: 100%;
       height: 30rem;
@@ -624,7 +624,7 @@
     }
     &.populated {
       .demo-code-body-item {
-        .toggle-block();
+        .toggle--block();
       }
     }
   }
@@ -646,7 +646,7 @@
     position: relative;
     z-index: 2;
     .display(flex);
-    .justify-content-between();
+    .justify-content--between();
     > * {
       .list();
       .list_space(tiny);
@@ -749,7 +749,7 @@
   .site-breadcrumbs-inner {
     .transition-default.out();
   }
-  &.active:not(.xt-clone) {
+  &.active:not(.xt_clone) {
     .site-breadcrumbs {
       padding: 1rem;
       padding-bottom: 0;
