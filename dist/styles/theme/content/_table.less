@@ -4,7 +4,7 @@
 
 @table-border-width: 1px;
 
-.table, .table-scroll {
+.table, .table--scroll {
   .margin(y, layout) !important;
   .margin(bottom, medium);
 }
@@ -27,12 +27,12 @@
     .font-small();
   }
   // layout
-  &:not(.table-stripe):not(.table-border):not(.table-center) {
+  &:not(.table-stripe):not(.table-border):not(.table--center) {
     th, td {
       .padding(x, layout);
     }
   }
-  // data-th for .table-responsive
+  // data-th for .table--responsive
   td::before {
     .label-control();
   }
@@ -101,56 +101,38 @@
   }
 }
 
-// .table-responsive
+// .table--responsive
 
-.table-responsive {
+.table--responsive {
   @media @max-sm {
     border: @table-border-width solid darken(@grey--250, @perc--xs);
     border-bottom: 0;
     thead, th {
       display: none;
     }
-
     tr {
       .block();
       .padding(y, big);
     }
-
     td {
       .block();
       .padding(x, medium) !important;
       .padding(y, medium);
       text-align: center;
     }
-
     // data-th
     td::before {
       content: attr(data-th);
       width: 100%;
       .justify-content--center();
     }
-
     // center label and input
     .label-control {
       width: 100%;
       .justify-content--center();
     }
-
     .group {
       .justify-content--center();
-    }
-  }
-}
-
-// custom
-
-.card--secondary {
-  table.table {
-    &,
-    tr,
-    tr th,
-    tr td {
-      border-color: darken(@grey--250, @perc--xs) !important;
     }
   }
 }

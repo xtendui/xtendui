@@ -17,36 +17,36 @@
   }
 }
 
-// .table-middle
+// .table--middle
 
-.table-middle {
+.table--middle {
   th,
   td {
     vertical-align: middle;
   }
 }
 
-// .table-center
+// .table--center
 
-.table-center {
+.table--center {
   th,
   td {
     text-align: center;
   }
 }
 
-// .table-right
+// .table--right
 
-.table-right {
+.table--right {
   th:not(:nth-child(1)),
   td:not(:nth-child(1)) {
     text-align: right;
   }
 }
 
-// .table-scroll
+// .table--scroll
 
-.table-scroll {
+.table--scroll {
   .block();
   overflow-x: auto;
   .overflow-style();
@@ -60,8 +60,8 @@
   @breakpoint: extract(@breakpoints, @i);
   @query-max: 'max-@{breakpoint}';
   @media @@query-max {
-    .table-scroll-@{breakpoint} {
-      .table-scroll();
+    .table--scroll-@{breakpoint} {
+      .table--scroll();
     }
   }
 }

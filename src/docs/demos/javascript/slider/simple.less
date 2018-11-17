@@ -17,14 +17,14 @@
   &.active {
     .anim--right.active();
     &:after {
-      .animation-default.active();
+      .animation--default.active();
       animation-name: anim--special-in;
       transform: translateX(-100%);
     }
     &.direction-inverse {
       .anim--left.active();
       &:after {
-        .animation-default.active();
+        .animation--default.active();
         animation-name: anim--special-in-inverse;
         transform: translateX(100%);
       }
@@ -33,14 +33,14 @@
   &.out {
     .anim--left.out();
     &:after {
-      .animation-default.out();
+      .animation--default.out();
       animation-name: anim--special-out;
       transform: translateX(0);
     }
     &.direction-inverse {
       .anim--right.out();
       &:after {
-        .animation-default.out();
+        .animation--default.out();
         animation-name: anim--special-out-inverse;
         transform: translateX(0);
       }

@@ -5,14 +5,14 @@
 //////////////////////
 
 #body-inner { // DO NOT APPLY to selector with descendants with position: fixed;
-  .transition-default.out();
+  .transition--default.out();
   transform: translateX(0);
   html.xt-overlay--left & {
-    .transition-default.active();
+    .transition--default.active();
     transform: translateX(@anim--big);
   }
   html.xt-overlay--right & {
-    .transition-default.active();
+    .transition--default.active();
     transform: translateX(-@anim--big);
   }
 }

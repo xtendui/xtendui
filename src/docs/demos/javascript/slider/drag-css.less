@@ -5,17 +5,17 @@
 .slide {
   // mask
   &:not(.dragging) {
-    .transition-default.out();
+    .transition--default.out();
     transition-duration: @time--big;
     > * {
-      .transition-default.out();
+      .transition--default.out();
       transition-duration: @time--big;
     }
     &.active {
-      .transition-default.active();
+      .transition--default.active();
       transition-duration: @time--big;
       > * {
-        .transition-default.active();
+        .transition--default.active();
         transition-duration: @time--big;
       }
     }

@@ -246,12 +246,12 @@ class Sticky extends Core {
     }
     // anim
     if (anim && scrollTopOld !== undefined) {
-      if (!element.classList.contains('sticky-anim')) {
-        element.classList.add('sticky-anim');
+      if (!element.classList.contains('sticky--moving')) {
+        element.classList.add('sticky--moving');
       }
     } else {
-      if (element.classList.contains('sticky-anim')) {
-        element.classList.remove('sticky-anim');
+      if (element.classList.contains('sticky--moving')) {
+        element.classList.remove('sticky--moving');
       }
     }
     // top and bottom

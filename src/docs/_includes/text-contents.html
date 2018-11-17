@@ -16,7 +16,7 @@
       {% assign sorted = site.[collection.label] | where: 'categories', filter | sort: 'order' %}
       {% for p in sorted %}
         <li>
-          <strong>{{ p.title }}</strong> <span class="separator separator-arrow"></span>
+          <strong>{{ p.title }}</strong> <span class="separator separator--arrow"></span>
           <a href="{{ p.url }}" class="{% if page.title != p.title %} {{ different }}{% endif %}">
             {{ p.url }}
           </a>

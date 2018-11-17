@@ -23,7 +23,7 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 <p>You have to use <a href="{% link _docs/layout/grid.html %}#column">columns</a> inside if you want to specify column
   sizes.</p>
 
-<div class="table-scroll">
+<div class="table--scroll">
   <table class="table table-small">
     <thead>
     <tr>
@@ -40,8 +40,8 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
-      <td><code>.col-{breakpoint}</code></td>
-      <td><code>.col-sm</code></td>
+      <td><code>.col--{breakpoint}</code></td>
+      <td><code>.col--sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
@@ -61,13 +61,13 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="columns">
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-12 col-8-sm"></div>
-        <div class="col col-12 col-4-sm"></div>
-        <div class="col col-2-sm"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--12 col--8-sm"></div>
+        <div class="col col--12 col--4-sm"></div>
+        <div class="col col--2-sm"></div>
         <div class="col"></div>
-        <div class="col col-2-sm col-auto-lg"></div>
+        <div class="col col--2-sm col--auto-lg"></div>
       </div>
     </div>
   </div>
@@ -79,20 +79,20 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols-nested" data-lang="html">
       <div class="flex">
-        <div class="col col-4">
+        <div class="col col--4">
           <div class="flex">
-            <div class="col col-4"></div>
-            <div class="col col-8"></div>
-            <div class="col col-8"></div>
-            <div class="col col-4"></div>
+            <div class="col col--4"></div>
+            <div class="col col--8"></div>
+            <div class="col col--8"></div>
+            <div class="col col--4"></div>
           </div>
         </div>
-        <div class="col col-8">
+        <div class="col col--8">
           <div class="flex">
-            <div class="col col-12 col-8-sm"></div>
-            <div class="col col-12 col-4-sm"></div>
+            <div class="col col--12 col--8-sm"></div>
+            <div class="col col--12 col--4-sm"></div>
             <div class="col"></div>
-            <div class="col col-2-sm col-auto-lg"></div>
+            <div class="col col--2-sm col--auto-lg"></div>
           </div>
         </div>
       </div>
@@ -102,10 +102,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 
 <h3>Custom</h3>
 
-<p>To have custom width columns use <code>.col-custom</code> and <code>width: Value;</code> and <code>max-width:
+<p>To have custom width columns use <code>.col--custom</code> and <code>width: Value;</code> and <code>max-width:
   Value</code>.</p>
 
-<div class="table-scroll">
+<div class="table--scroll">
   <table class="table table-small">
     <thead>
     <tr>
@@ -117,23 +117,23 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     <tbody>
     <tr>
       <th scope="row">Class</th>
-      <td><code>.col-custom</code></td>
+      <td><code>.col--custom</code></td>
       <td></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
-      <td><code>.col-custom-{breakpoint}</code></td>
-      <td><code>.col-custom-sm</code></td>
+      <td><code>.col--custom-{breakpoint}</code></td>
+      <td><code>.col--custom-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.col-custom()</code></td>
+      <td><code>.col--custom()</code></td>
       <td></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.col-custom({breakpoint})</code></td>
-      <td><code>.col-custom(sm)</code></td>
+      <td><code>.col--custom({breakpoint})</code></td>
+      <td><code>.col--custom(sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -159,7 +159,7 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 <p>Flex <strong>automatically</strong> add horizontal and vertical spacing to the contents. You can <strong>specify a
   different one</strong> with this classes/mixins.</p>
 
-<div class="table-scroll">
+<div class="table--scroll">
   <table class="table table-small">
     <thead>
     <tr>
@@ -209,13 +209,13 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex flex_space--none">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-12 col-8-sm"></div>
-        <div class="col col-12 col-4-sm"></div>
-        <div class="col col-2-sm"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--12 col--8-sm"></div>
+        <div class="col col--12 col--4-sm"></div>
+        <div class="col col--2-sm"></div>
         <div class="col"></div>
-        <div class="col col-2-sm col-auto-lg"></div>
+        <div class="col col--2-sm col--auto-lg"></div>
       </div>
     </div>
   </div>
@@ -227,13 +227,13 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex flex_space--tiny">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-12 col-8-sm"></div>
-        <div class="col col-12 col-4-sm"></div>
-        <div class="col col-2-sm"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--12 col--8-sm"></div>
+        <div class="col col--12 col--4-sm"></div>
+        <div class="col col--2-sm"></div>
         <div class="col"></div>
-        <div class="col col-2-sm col-auto-lg"></div>
+        <div class="col col--2-sm col--auto-lg"></div>
       </div>
     </div>
   </div>
@@ -245,13 +245,13 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex flex_space--small">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-12 col-8-sm"></div>
-        <div class="col col-12 col-4-sm"></div>
-        <div class="col col-2-sm"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--12 col--8-sm"></div>
+        <div class="col col--12 col--4-sm"></div>
+        <div class="col col--2-sm"></div>
         <div class="col"></div>
-        <div class="col col-2-sm col-auto-lg"></div>
+        <div class="col col--2-sm col--auto-lg"></div>
       </div>
     </div>
   </div>
@@ -263,13 +263,13 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex flex_space--medium">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-12 col-8-sm"></div>
-        <div class="col col-12 col-4-sm"></div>
-        <div class="col col-2-sm"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--12 col--8-sm"></div>
+        <div class="col col--12 col--4-sm"></div>
+        <div class="col col--2-sm"></div>
         <div class="col"></div>
-        <div class="col col-2-sm col-auto-lg"></div>
+        <div class="col col--2-sm col--auto-lg"></div>
       </div>
     </div>
   </div>
@@ -281,13 +281,13 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex flex_space--big">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-12 col-8-sm"></div>
-        <div class="col col-12 col-4-sm"></div>
-        <div class="col col-2-sm"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--12 col--8-sm"></div>
+        <div class="col col--12 col--4-sm"></div>
+        <div class="col col--2-sm"></div>
         <div class="col"></div>
-        <div class="col col-2-sm col-auto-lg"></div>
+        <div class="col col--2-sm col--auto-lg"></div>
       </div>
     </div>
   </div>
@@ -299,13 +299,13 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex flex_space--giant">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-12 col-8-sm"></div>
-        <div class="col col-12 col-4-sm"></div>
-        <div class="col col-2-sm"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--12 col--8-sm"></div>
+        <div class="col col--12 col--4-sm"></div>
+        <div class="col col--2-sm"></div>
         <div class="col"></div>
-        <div class="col col-2-sm col-auto-lg"></div>
+        <div class="col col--2-sm col--auto-lg"></div>
       </div>
     </div>
   </div>
@@ -319,7 +319,7 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 
 <p>Set children's wrapping inside the flexbox.</p>
 
-<div class="table-scroll">
+<div class="table--scroll">
   <table class="table table-small">
     <thead>
     <tr>
@@ -362,13 +362,13 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex flex-direction--row">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-12 col-8-sm"></div>
-        <div class="col col-12 col-4-sm"></div>
-        <div class="col col-2-sm"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--12 col--8-sm"></div>
+        <div class="col col--12 col--4-sm"></div>
+        <div class="col col--2-sm"></div>
         <div class="col"></div>
-        <div class="col col-2-sm col-auto-lg"></div>
+        <div class="col col--2-sm col--auto-lg"></div>
       </div>
     </div>
   </div>
@@ -380,13 +380,13 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex flex-direction--row-reverse">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-12 col-8-sm"></div>
-        <div class="col col-12 col-4-sm"></div>
-        <div class="col col-2-sm"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--12 col--8-sm"></div>
+        <div class="col col--12 col--4-sm"></div>
+        <div class="col col--2-sm"></div>
         <div class="col"></div>
-        <div class="col col-2-sm col-auto-lg"></div>
+        <div class="col col--2-sm col--auto-lg"></div>
       </div>
     </div>
   </div>
@@ -398,13 +398,13 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex flex-direction--column">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-12 col-8-sm"></div>
-        <div class="col col-12 col-4-sm"></div>
-        <div class="col col-2-sm"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--12 col--8-sm"></div>
+        <div class="col col--12 col--4-sm"></div>
+        <div class="col col--2-sm"></div>
         <div class="col"></div>
-        <div class="col col-2-sm col-auto-lg"></div>
+        <div class="col col--2-sm col--auto-lg"></div>
       </div>
     </div>
   </div>
@@ -416,13 +416,13 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex flex-direction--column-reverse">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-12 col-8-sm"></div>
-        <div class="col col-12 col-4-sm"></div>
-        <div class="col col-2-sm"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--12 col--8-sm"></div>
+        <div class="col col--12 col--4-sm"></div>
+        <div class="col col--2-sm"></div>
         <div class="col"></div>
-        <div class="col col-2-sm col-auto-lg"></div>
+        <div class="col col--2-sm col--auto-lg"></div>
       </div>
     </div>
   </div>
@@ -432,7 +432,7 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 
 <p>Set children's wrapping inside the flexbox.</p>
 
-<div class="table-scroll">
+<div class="table--scroll">
   <table class="table table-small">
     <thead>
     <tr>
@@ -475,13 +475,13 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex flex-wrap">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-12 col-8-sm"></div>
-        <div class="col col-12 col-4-sm"></div>
-        <div class="col col-2-sm"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--12 col--8-sm"></div>
+        <div class="col col--12 col--4-sm"></div>
+        <div class="col col--2-sm"></div>
         <div class="col"></div>
-        <div class="col col-2-sm col-auto-lg"></div>
+        <div class="col col--2-sm col--auto-lg"></div>
       </div>
     </div>
   </div>
@@ -493,13 +493,13 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex flex-wrap--reverse">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-12 col-8-sm"></div>
-        <div class="col col-12 col-4-sm"></div>
-        <div class="col col-2-sm"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--12 col--8-sm"></div>
+        <div class="col col--12 col--4-sm"></div>
+        <div class="col col--2-sm"></div>
         <div class="col"></div>
-        <div class="col col-2-sm col-auto-lg"></div>
+        <div class="col col--2-sm col--auto-lg"></div>
       </div>
     </div>
   </div>
@@ -511,10 +511,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex flex-nowrap">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-12 col-8-sm"></div>
-        <div class="col col-12 col-4-sm"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--12 col--8-sm"></div>
+        <div class="col col--12 col--4-sm"></div>
       </div>
     </div>
   </div>
@@ -524,7 +524,7 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 
 <p>Set children's horizontal alignment inside the flexbox.</p>
 
-<div class="table-scroll">
+<div class="table--scroll">
   <table class="table table-small">
     <thead>
     <tr>
@@ -567,8 +567,8 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex justify-content--start">
-        <div class="col col-2"></div>
-        <div class="col col-4"></div>
+        <div class="col col--2"></div>
+        <div class="col col--4"></div>
       </div>
     </div>
   </div>
@@ -580,8 +580,8 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex justify-content--end">
-        <div class="col col-2"></div>
-        <div class="col col-4"></div>
+        <div class="col col--2"></div>
+        <div class="col col--4"></div>
       </div>
     </div>
   </div>
@@ -593,8 +593,8 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex justify-content--center">
-        <div class="col col-2"></div>
-        <div class="col col-4"></div>
+        <div class="col col--2"></div>
+        <div class="col col--4"></div>
       </div>
     </div>
   </div>
@@ -606,8 +606,8 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex justify-content--between">
-        <div class="col col-2"></div>
-        <div class="col col-4"></div>
+        <div class="col col--2"></div>
+        <div class="col col--4"></div>
       </div>
     </div>
   </div>
@@ -619,8 +619,8 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex justify-content--around">
-        <div class="col col-2"></div>
-        <div class="col col-4"></div>
+        <div class="col col--2"></div>
+        <div class="col col--4"></div>
       </div>
     </div>
   </div>
@@ -630,7 +630,7 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 
 <p>Set children's vertical alignment inside the flexbox.</p>
 
-<div class="table-scroll">
+<div class="table--scroll">
   <table class="table table-small">
     <thead>
     <tr>
@@ -673,10 +673,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex align-items--start" style="height: 125px;">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-8"></div>
-        <div class="col col-4"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--8"></div>
+        <div class="col col--4"></div>
       </div>
     </div>
   </div>
@@ -688,10 +688,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex align-items--end" style="height: 125px;">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-8"></div>
-        <div class="col col-4"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--8"></div>
+        <div class="col col--4"></div>
       </div>
     </div>
   </div>
@@ -703,10 +703,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex align-items--center" style="height: 125px;">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-8"></div>
-        <div class="col col-4"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--8"></div>
+        <div class="col col--4"></div>
       </div>
     </div>
   </div>
@@ -718,10 +718,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex align-items--baseline" style="height: 125px;">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-8"></div>
-        <div class="col col-4"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--8"></div>
+        <div class="col col--4"></div>
       </div>
     </div>
   </div>
@@ -733,10 +733,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex align-items--stretch" style="height: 125px;">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-8"></div>
-        <div class="col col-4"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--8"></div>
+        <div class="col col--4"></div>
       </div>
     </div>
   </div>
@@ -746,7 +746,7 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 
 <p>Set children's vertical alignment inside the flexbox.</p>
 
-<div class="table-scroll">
+<div class="table--scroll">
   <table class="table table-small">
     <thead>
     <tr>
@@ -789,10 +789,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex align-content--start" style="height: 125px;">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-8"></div>
-        <div class="col col-4"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--8"></div>
+        <div class="col col--4"></div>
       </div>
     </div>
   </div>
@@ -804,10 +804,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex align-content--end" style="height: 125px;">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-8"></div>
-        <div class="col col-4"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--8"></div>
+        <div class="col col--4"></div>
       </div>
     </div>
   </div>
@@ -819,10 +819,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex align-content--center" style="height: 125px;">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-8"></div>
-        <div class="col col-4"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--8"></div>
+        <div class="col col--4"></div>
       </div>
     </div>
   </div>
@@ -834,10 +834,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex align-content--between" style="height: 125px;">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-8"></div>
-        <div class="col col-4"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--8"></div>
+        <div class="col col--4"></div>
       </div>
     </div>
   </div>
@@ -849,10 +849,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex align-content--around" style="height: 125px;">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-8"></div>
-        <div class="col col-4"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--8"></div>
+        <div class="col col--4"></div>
       </div>
     </div>
   </div>
@@ -864,10 +864,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex align-content--stretch" style="height: 125px;">
-        <div class="col col-4"></div>
-        <div class="col col-8"></div>
-        <div class="col col-8"></div>
-        <div class="col col-4"></div>
+        <div class="col col--4"></div>
+        <div class="col col--8"></div>
+        <div class="col col--8"></div>
+        <div class="col col--4"></div>
       </div>
     </div>
   </div>
@@ -878,7 +878,7 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 <p>Set item's vertical alignment inside the flexbox. If set to <strong>auto</strong> computes to the parent's <code>align-items</code>
   value.</p>
 
-<div class="table-scroll">
+<div class="table--scroll">
   <table class="table table-small">
     <thead>
     <tr>
@@ -921,10 +921,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex">
-        <div class="col col-4" style="height: 60px;"></div>
-        <div class="col col-8 align-self--start"></div>
-        <div class="col col-8" style="height: 60px;"></div>
-        <div class="col col-4 align-self--start"></div>
+        <div class="col col--4" style="height: 60px;"></div>
+        <div class="col col--8 align-self--start"></div>
+        <div class="col col--8" style="height: 60px;"></div>
+        <div class="col col--4 align-self--start"></div>
       </div>
     </div>
   </div>
@@ -936,10 +936,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex">
-        <div class="col col-4" style="height: 60px;"></div>
-        <div class="col col-8 align-self--end"></div>
-        <div class="col col-8" style="height: 60px;"></div>
-        <div class="col col-4 align-self--end"></div>
+        <div class="col col--4" style="height: 60px;"></div>
+        <div class="col col--8 align-self--end"></div>
+        <div class="col col--8" style="height: 60px;"></div>
+        <div class="col col--4 align-self--end"></div>
       </div>
     </div>
   </div>
@@ -951,10 +951,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex">
-        <div class="col col-4" style="height: 60px;"></div>
-        <div class="col col-8 align-self--center"></div>
-        <div class="col col-8" style="height: 60px;"></div>
-        <div class="col col-4 align-self--center"></div>
+        <div class="col col--4" style="height: 60px;"></div>
+        <div class="col col--8 align-self--center"></div>
+        <div class="col col--8" style="height: 60px;"></div>
+        <div class="col col--4 align-self--center"></div>
       </div>
     </div>
   </div>
@@ -966,10 +966,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex">
-        <div class="col col-4" style="height: 60px;"></div>
-        <div class="col col-8 align-self--baseline"></div>
-        <div class="col col-8" style="height: 60px;"></div>
-        <div class="col col-4 align-self--baseline"></div>
+        <div class="col col--4" style="height: 60px;"></div>
+        <div class="col col--8 align-self--baseline"></div>
+        <div class="col col--8" style="height: 60px;"></div>
+        <div class="col col--4 align-self--baseline"></div>
       </div>
     </div>
   </div>
@@ -981,10 +981,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex">
-        <div class="col col-4" style="height: 60px;"></div>
-        <div class="col col-8 align-self--stretch"></div>
-        <div class="col col-8" style="height: 60px;"></div>
-        <div class="col col-4 align-self--stretch"></div>
+        <div class="col col--4" style="height: 60px;"></div>
+        <div class="col col--8 align-self--stretch"></div>
+        <div class="col col--8" style="height: 60px;"></div>
+        <div class="col col--4 align-self--stretch"></div>
       </div>
     </div>
   </div>
@@ -996,10 +996,10 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex">
-        <div class="col col-4" style="height: 60px;"></div>
-        <div class="col col-8 align-self--auto"></div>
-        <div class="col col-8" style="height: 60px;"></div>
-        <div class="col col-4 align-self--auto"></div>
+        <div class="col col--4" style="height: 60px;"></div>
+        <div class="col col--8 align-self--auto"></div>
+        <div class="col col--8" style="height: 60px;"></div>
+        <div class="col col--4 align-self--auto"></div>
       </div>
     </div>
   </div>
@@ -1009,7 +1009,7 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 
 <p>Set item's order inside the flexbox.</p>
 
-<div class="table-scroll">
+<div class="table--scroll">
   <table class="table table-small">
     <thead>
     <tr>
@@ -1060,13 +1060,13 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="order">
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex">
-        <div class="col col-4 order--4"></div>
-        <div class="col col-8 order--5"></div>
-        <div class="col col-12 col-8-sm order--2-lg"></div>
-        <div class="col col-12 col-4-sm order--1-lg"></div>
-        <div class="col col-2-sm order--3"></div>
+        <div class="col col--4 order--4"></div>
+        <div class="col col--8 order--5"></div>
+        <div class="col col--12 col--8-sm order--2-lg"></div>
+        <div class="col col--12 col--4-sm order--1-lg"></div>
+        <div class="col col--2-sm order--3"></div>
         <div class="col order--5"></div>
-        <div class="col col-2-sm col-auto-lg order--3"></div>
+        <div class="col col--2-sm col--auto-lg order--3"></div>
       </div>
     </div>
   </div>

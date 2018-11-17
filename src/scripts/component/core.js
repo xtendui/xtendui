@@ -1417,7 +1417,7 @@ class Core {
    * @param {Node|HTMLElement} el Element
    */
   specialCollapseOn(el) {
-    if (el.classList.contains('collapse-height')) {
+    if (el.classList.contains('collapse--height')) {
       el.classList.add('xt_calculating');
       el.style.height = 'auto';
       el.style.paddingTop = '';
@@ -1438,7 +1438,7 @@ class Core {
         }).toString();
       }).toString();
     }
-    if (el.classList.contains('collapse-width')) {
+    if (el.classList.contains('collapse--width')) {
       el.classList.add('xt_calculating');
       el.style.width = 'auto';
       el.style.paddingLeft = '';
@@ -1466,7 +1466,7 @@ class Core {
    * @param {Node|HTMLElement} el Element
    */
   specialCollapseOff(el) {
-    if (el.classList.contains('collapse-height')) {
+    if (el.classList.contains('collapse--height')) {
       let h = el.clientHeight + 'px';
       let pt = el.style.paddingTop;
       let pb = el.style.paddingBottom;
@@ -1482,7 +1482,7 @@ class Core {
         }).toString();
       }).toString();
     }
-    if (el.classList.contains('collapse-width')) {
+    if (el.classList.contains('collapse--width')) {
       let w = el.clientWidth + 'px';
       let pl = el.style.paddingLeft;
       let pr = el.style.paddingRight;
@@ -1505,10 +1505,10 @@ class Core {
    * @param {Node|HTMLElement} el Element
    */
   specialCollapseReset(el) {
-    if (el.classList.contains('collapse-height')) {
+    if (el.classList.contains('collapse--height')) {
       el.style.height = 'auto';
     }
-    if (el.classList.contains('collapse-width')) {
+    if (el.classList.contains('collapse--width')) {
       el.style.width = 'auto';
     }
   }

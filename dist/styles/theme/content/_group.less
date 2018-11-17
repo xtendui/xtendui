@@ -13,10 +13,10 @@
 
 .group {
   // interaction
-  .transition-default.out();
+  .transition--default.out();
   transition-duration: @time--giant;
   &:active, &.active {
-    .transition-default.active();
+    .transition--default.active();
     box-shadow: 0 1px 4px fade(@black, @perc--xs), 0 2px 8px fade(@black, @perc--sm);
   }
 }

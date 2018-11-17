@@ -1,4 +1,4 @@
-& when not (@classes-util = false) {
+& when not (@classes--util = false) {
   
   //////////////////////
   // util
@@ -75,12 +75,12 @@
   
   // generate-util-responsive
   
-  & when not (@classes-util = true) {
+  & when not (@classes--util = true) {
     
     .generate-util-responsive();
-    .generate-util-responsive(@i:length(@classes-util)) when (@i > 0) {
+    .generate-util-responsive(@i:length(@classes--util)) when (@i > 0) {
       .generate-util-responsive(@i - 1);
-      @breakpoint: extract(@classes-util, @i);
+      @breakpoint: extract(@classes--util, @i);
       .generate-utils(@breakpoint);
     }
 
@@ -166,7 +166,7 @@
 
 }
 
-& when not (@classes-margin = false) {
+& when not (@classes--margin = false) {
 
   //////////////////////
   // margin
@@ -224,21 +224,21 @@
     @size: extract(@margin, 2);
     & when (@breakpoint = none) {
       & when (@pos = none) {
-        .m-@{name} {
+        .m--@{name} {
           .margin(@pos, @name, @breakpoint) !important;
         }
         & when not (@size = auto) and not (@size = 0) {
-          .m@{name}-remove {
+          .m--@{name}-remove {
             .margin-remove(@pos, @name, @breakpoint) !important;
           }
         }
       }
       & when not (@pos = none) {
-        .m@{pos}-@{name} {
+        .m@{pos}--@{name} {
           .margin(@pos, @name, @breakpoint) !important;
         }
         & when not (@size = auto) and not (@size = 0) {
-          .m@{pos}-@{name}-remove {
+          .m@{pos}--@{name}-remove {
             .margin-remove(@pos, @name, @breakpoint) !important;
           }
         }
@@ -246,21 +246,21 @@
     }
     & when not (@breakpoint = none) {
       & when (@pos = none) {
-        .m-@{name}-@{breakpoint} {
+        .m--@{name}-@{breakpoint} {
           .margin(@pos, @name) !important;
         }
         & when not (@size = auto) and not (@size = 0) {
-          .m-@{name}-@{breakpoint}-remove {
+          .m--@{name}-@{breakpoint}-remove {
             .margin-remove(@pos, @name) !important;
           }
         }
       }
       & when not (@pos = none) {
-        .m@{pos}-@{name}-@{breakpoint} {
+        .m@{pos}--@{name}-@{breakpoint} {
           .margin(@pos, @name) !important;
         }
         & when not (@size = auto) and not (@size = 0) {
-          .m@{pos}-@{name}-@{breakpoint}-remove {
+          .m@{pos}--@{name}-@{breakpoint}-remove {
             .margin-remove(@pos, @name) !important;
           }
         }
@@ -270,12 +270,12 @@
 
   // generate-margin-responsive
 
-  & when not (@classes-margin = true) {
+  & when not (@classes--margin = true) {
 
     .generate-margin-responsive();
-    .generate-margin-responsive(@i:length(@classes-margin)) when (@i > 0) {
+    .generate-margin-responsive(@i:length(@classes--margin)) when (@i > 0) {
       .generate-margin-responsive(@i - 1);
-      @breakpoint: extract(@classes-margin, @i);
+      @breakpoint: extract(@classes--margin, @i);
       .generate-margins(@breakpoint);
     }
 
@@ -285,7 +285,7 @@
 
 }
 
-& when not (@classes-padding = false) {
+& when not (@classes--padding = false) {
 
   //////////////////////
   // padding
@@ -340,24 +340,24 @@
     @size: extract(@padding, 2);
     & when (@breakpoint = none) {
       & when (@pos = none) {
-        .p-@{name} {
+        .p--@{name} {
           .padding(@pos, @name, @breakpoint) !important;
         }
       }
       & when not (@pos = none) {
-        .p@{pos}-@{name} {
+        .p@{pos}--@{name} {
           .padding(@pos, @name, @breakpoint) !important;
         }
       }
     }
     & when not (@breakpoint = none) {
       & when (@pos = none) {
-        .p-@{name}-@{breakpoint} {
+        .p--@{name}-@{breakpoint} {
           .padding(@pos, @name) !important;
         }
       }
       & when not (@pos = none) {
-        .p@{pos}-@{name}-@{breakpoint} {
+        .p@{pos}--@{name}-@{breakpoint} {
           .padding(@pos, @name) !important;
         }
       }
@@ -366,12 +366,12 @@
 
   // generate-padding-responsive
 
-  & when not (@classes-padding = true) {
+  & when not (@classes--padding = true) {
 
     .generate-padding-responsive();
-    .generate-padding-responsive(@i:length(@classes-padding)) when (@i > 0) {
+    .generate-padding-responsive(@i:length(@classes--padding)) when (@i > 0) {
       .generate-padding-responsive(@i - 1);
-      @breakpoint: extract(@classes-padding, @i);
+      @breakpoint: extract(@classes--padding, @i);
       .generate-paddings(@breakpoint);
     }
 
@@ -381,7 +381,7 @@
 
 }
 
-& when not (@classes-layout = false) {
+& when not (@classes--layout = false) {
 
   //////////////////////
   // layout
@@ -406,11 +406,11 @@
       .col {
         .col() !important;
       }
-      .col-custom {
-        .col-custom() !important;
+      .col--custom {
+        .col--custom() !important;
       }
-      .col-auto {
-        .col-auto() !important;
+      .col--auto {
+        .col--auto() !important;
       }
       .generate-grid(@breakpoint);
       // order
@@ -436,14 +436,14 @@
           .list--right() !important;
         }
         // grid
-        .col-@{breakpoint} {
+        .col--@{breakpoint} {
           .col() !important;
         }
-        .col-custom-@{breakpoint} {
-          .col-custom() !important;
+        .col--custom-@{breakpoint} {
+          .col--custom() !important;
         }
-        .col-auto-@{breakpoint} {
-          .col-auto() !important;
+        .col--auto-@{breakpoint} {
+          .col--auto() !important;
         }
         .generate-grid(@breakpoint);
         // order
@@ -460,12 +460,12 @@
 
   // generate-layout-responsive
 
-  & when not (@classes-layout = true) {
+  & when not (@classes--layout = true) {
 
     .generate-layout-responsive();
-    .generate-layout-responsive(@i:length(@classes-layout)) when (@i > 0) {
+    .generate-layout-responsive(@i:length(@classes--layout)) when (@i > 0) {
       .generate-layout-responsive(@i - 1);
-      @breakpoint: extract(@classes-layout, @i);
+      @breakpoint: extract(@classes--layout, @i);
       .generate-layouts(@breakpoint);
     }
 
@@ -476,12 +476,12 @@
   .generate-grid(@breakpoint; @i:1) when (@i =< @columns) {
     .generate-grid(@breakpoint; (@i + 1));
     & when (@breakpoint = none) {
-      .col-@{i} {
+      .col--@{i} {
         .col(@i);
       }
     }
     & when not (@breakpoint = none) {
-      .col-@{i}-@{breakpoint} {
+      .col--@{i}-@{breakpoint} {
         .col(@i);
       }
     }

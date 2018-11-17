@@ -65,7 +65,7 @@
       </div>
     </div>
 
-    <nav class="site-menu overlay_outer overlay--primary overlay--screen overlay--size-medium collapse-height"
+    <nav class="site-menu overlay_outer overlay--primary overlay--screen overlay--size-medium collapse--height"
          id="site-menu">
       <div class="overlay">
         <div class="overlay_inner">
@@ -168,7 +168,7 @@
                           <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn--primary btn--nodesign{% if p.title == page.title %} active{% endif %}">
                             <span>{{ p.title }}</span>
                           </a>
-                          <div class="site-breadcrumbs-body-sub toggle--visible collapse-height">
+                          <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
                             <div class="site-breadcrumbs-body-sub-inner">
                               {% for pa in subsorted %}
                               <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn--primary btn--nodesign{% if pa.title == page.title %} active{% endif %}">
@@ -200,7 +200,7 @@
                   </button>
                   {% for collection in site.collections %}
                     {% if collection.label == page.collection %}
-                      <div class="site-breadcrumbs-body-sub toggle--visible collapse-height">
+                      <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
                         <div class="site-breadcrumbs-body-sub-inner">
                           {% assign sorted = site.[collection.label] | sort: 'order' %}
                             {% for p in sorted %}

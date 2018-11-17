@@ -2,13 +2,13 @@
 // default
 //////////////////////
 
-// .transition-default();
+// .transition--default();
 
 /* USAGE:
-.transition-default.out();
+.transition--default.out();
 opacity: 0;
 &:hover, &.hover, &:active, &.active {
-  .transition-default.active();
+  .transition--default.active();
    opacity: 1;
 }
 */
@@ -16,19 +16,19 @@ opacity: 0;
 /* USAGE:
 &.active {
   .inner {
-    .transition-default.active();
+    .transition--default.active();
     opacity: 1;
   }
 }
 &.out {
   .inner {
-    .transition-default.out();
+    .transition--default.out();
     opacity: 0;
   }
 }
 */
 
-.transition-default() {
+.transition--default() {
   &.active {
     transition-property: all;
     transition-duration: @time--medium;
@@ -41,7 +41,7 @@ opacity: 0;
   }
 }
 
-// .animation-default();
+// .animation--default();
 
 /* USAGE:
 .anim--opacity.active();
@@ -63,7 +63,7 @@ opacity: 0;
 }
 */
 
-.animation-default() {
+.animation--default() {
   &.active {
     animation-duration: @time--medium;
     animation-timing-function: @bez--in;
@@ -82,13 +82,13 @@ opacity: 0;
 
 .anim--opacity {
   &.active {
-    .animation-default.active();
+    .animation--default.active();
     animation-name: anim--opacity-in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation-default.out();
+    .animation--default.out();
     animation-name: anim--opacity-out;
     animation-fill-mode: forwards;
     opacity: 1;
@@ -117,13 +117,13 @@ opacity: 0;
 
 .anim--zoom {
   &.active {
-    .animation-default.active();
+    .animation--default.active();
     animation-name: anim--zoom-in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation-default.out();
+    .animation--default.out();
     animation-name: anim--zoom-out;
     animation-fill-mode: forwards;
     opacity: 1;
@@ -156,13 +156,13 @@ opacity: 0;
 
 .anim--vertical {
   &.active {
-    .animation-default.active();
+    .animation--default.active();
     animation-name: anim--vertical-in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation-default.out();
+    .animation--default.out();
     animation-name: anim--vertical-out;
     animation-fill-mode: forwards;
     opacity: 1;
@@ -195,13 +195,13 @@ opacity: 0;
 
 .anim--horizontal {
   &.active {
-    .animation-default.active();
+    .animation--default.active();
     animation-name: anim--horizontal-in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation-default.out();
+    .animation--default.out();
     animation-name: anim--horizontal-out;
     animation-fill-mode: forwards;
     opacity: 1;
@@ -234,13 +234,13 @@ opacity: 0;
 
 .anim--horizontal-inverse {
   &.active {
-    .animation-default.active();
+    .animation--default.active();
     animation-name: anim--horizontal-inverse-in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation-default.out();
+    .animation--default.out();
     animation-name: anim--horizontal-inverse-out;
     animation-fill-mode: forwards;
     opacity: 1;
@@ -273,13 +273,13 @@ opacity: 0;
 
 .anim--top {
   &.active {
-    .animation-default.active();
+    .animation--default.active();
     animation-name: anim--top-in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation-default.out();
+    .animation--default.out();
     animation-name: anim--top-out;
     animation-fill-mode: forwards;
     opacity: 1;
@@ -312,13 +312,13 @@ opacity: 0;
 
 .anim--bottom {
   &.active {
-    .animation-default.active();
+    .animation--default.active();
     animation-name: anim--bottom-in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation-default.out();
+    .animation--default.out();
     animation-name: anim--bottom-out;
     animation-fill-mode: forwards;
     opacity: 1;
@@ -351,13 +351,13 @@ opacity: 0;
 
 .anim--left {
   &.active {
-    .animation-default.active();
+    .animation--default.active();
     animation-name: anim--left-in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation-default.out();
+    .animation--default.out();
     animation-name: anim--left-out;
     animation-fill-mode: forwards;
     opacity: 1;
@@ -390,13 +390,13 @@ opacity: 0;
 
 .anim--right {
   &.active {
-    .animation-default.active();
+    .animation--default.active();
     animation-name: anim--right-in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation-default.out();
+    .animation--default.out();
     animation-name: anim--right-out;
     animation-fill-mode: forwards;
     opacity: 1;
@@ -431,14 +431,14 @@ opacity: 0;
 
 // collapse
 
-.collapse-height,
-.collapse-width {
+.collapse--height,
+.collapse--width {
   &.active {
-    .transition-default.active();
+    .transition--default.active();
     transition-delay: @time--small;
   }
   &.out {
-    .transition-default.out();
+    .transition--default.out();
     transition-delay: @time--medium;
   }
 }

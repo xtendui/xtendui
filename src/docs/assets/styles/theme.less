@@ -68,9 +68,9 @@
     width: auto;
     height: 2.5rem;
   }
-  .transition-default.out();
+  .transition--default.out();
   &:hover, &.hover, &:active, &.active {
-    .transition-default.active();
+    .transition--default.active();
     opacity: 1;
   }
   &:focus {
@@ -245,7 +245,7 @@
       transform: rotate(0deg);
     }
     span {
-      .transition-default.out();
+      .transition--default.out();
       will-change: top, transform;
     }
     span:nth-child(1) {
@@ -266,7 +266,7 @@
   &.active {
     .icon-menu-custom {
       span {
-        .transition-default.active();
+        .transition--default.active();
       }
       span:nth-child(1) {
         top: 0;
@@ -687,7 +687,7 @@
 // .demo-cols
 
 .demo-cols {
-  .col, .col-custom {
+  .col, .col--custom {
     &::before {
       position: relative;
       float: left;
@@ -712,7 +712,7 @@
 }
 
 .demo-cols-nested {
-  .col, .col-custom {
+  .col, .col--custom {
     .demo-cols();
   }
 }
@@ -744,24 +744,24 @@
   .xt-sticky(@mode:'absolute');
   // animations
   .site-breadcrumbs {
-    .transition-default.out();
+    .transition--default.out();
   }
   .site-breadcrumbs-inner {
-    .transition-default.out();
+    .transition--default.out();
   }
   &.active:not(.xt_clone) {
     .site-breadcrumbs {
       padding: 1rem;
       padding-bottom: 0;
-      .transition-default.active();
+      .transition--default.active();
     }
     .site-breadcrumbs-inner {
       .padding(y, small);
       border-radius: .75rem;
-      .transition-default.active();
+      .transition--default.active();
     }
     .site-breadcrumbs-meta {
-      .animation-default.active();
+      .animation--default.active();
       animation-name: anim--right-in;
     }
   }

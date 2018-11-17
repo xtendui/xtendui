@@ -4,14 +4,14 @@
 
 // addons
 
-.loader-background {
+.loader_background {
   &::before {
     .design-setup();
     background-color: @white;
   }
 }
 
-.loader-full {
+.loader--full {
   .padding(x, 33%) !important;
 }
 
@@ -60,15 +60,15 @@
 
 // activation
 
-.loader-container {
+.loader_container {
   .anim--opacity.active();
 }
 
 /* USAGE:
-<div class="loader-container loader-html loader-relative">
+<div class="loader_container loader--html loader--relative">
     <div class="loader"></div>
 </div>
-<div class="loader-container loader-background loader-full">
+<div class="loader_container loader_background loader--full">
     <div class="loader"></div>
 </div>
 */
@@ -82,7 +82,7 @@ document.querySelectorAll('html')[0].classList.add('loaded');
 .main-container {
   visibility: hidden;
   html.loaded &,
-  html.loader-fade & {
+  html.loader--fade & {
     visibility: visible;
   }
 }

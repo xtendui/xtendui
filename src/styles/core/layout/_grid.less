@@ -26,28 +26,28 @@
   }
 }
 
-// col-custom
+// col--custom
 
-.col-custom(@breakpoint:none) when (@breakpoint = none) {
+.col--custom(@breakpoint:none) when (@breakpoint = none) {
   flex: 1 0 auto;
 }
 
-.col-custom(@breakpoint:none) when (default()) {
+.col--custom(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex: 1 0 auto;
   }
 }
 
-// col-auto
+// col--auto
 
-.col-auto(@breakpoint:none) when (@breakpoint = none) {
+.col--auto(@breakpoint:none) when (@breakpoint = none) {
   flex-basis: auto;
   max-width: none;
   width: auto;
 }
 
-.col-auto(@breakpoint:none) when (default()) {
+.col--auto(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex-basis: auto;

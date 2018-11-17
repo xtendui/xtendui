@@ -2,7 +2,7 @@
 // preload
 //////////////////////
 
-.loader-container {
+.loader_container {
   position: absolute;
   z-index: @index--loader;
   top: 0;
@@ -16,26 +16,26 @@
 
 // addons
 
-.loader-container {
+.loader_container {
   width: 100%;
 }
 
-.loader-full {
+.loader--full {
   .display(flex);
   .align-items--center();
   .justify-content--center();
   height: 100%;
 }
 
-.loader-relative {
+.loader--relative {
   position: relative;
 }
 
-.loader-fixed {
+.loader--fixed {
   position: fixed;
 }
 
-.loader-html {
+.loader--html {
   html.loaded & {
     display: none;
   }
