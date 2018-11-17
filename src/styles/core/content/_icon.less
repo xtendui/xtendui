@@ -2,10 +2,10 @@
 // icon
 //////////////////////
 
-.icon-base() {
+.icon--base() {
   display: inline-block;
   position: relative;
-  font-size: @icon-medium;
+  font-size: @icon--medium;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -17,7 +17,7 @@
   img& {
     top: -.1em;
     width: auto;
-    height: @icon-medium;
+    height: @icon--medium;
   }
 }
 
@@ -27,21 +27,21 @@
 
 // styles
 
-.icon-xt {
-  .icon-base();
-  font-family: @icons-xt-family;
+.icon_xt {
+  .icon--base();
+  font-family: @icons_xt--family;
 }
 
-[class^='icon-xt-'], [class*=' icon-xt-'] {
+[class^='icon_xt--'], [class*=' icon_xt--'] {
   display: inline-block;
   &::before {
-    .icon-xt();
+    .icon_xt();
   }
 }
 
 // mixins
 
-.icon-xt(@content, @size: @icon-medium, @sr-only: false, @position: after) {
+.icon_xt(@content, @size: @icon--medium, @sr-only: false, @position: after) {
   & when (@sr-only = true) {
     > span {
       .sr-only();
@@ -49,14 +49,14 @@
   }
   & when (@position = before) {
     &::before {
-      .icon-xt();
+      .icon_xt();
       content: '@{content}';
       font-size: @size;
     }
   }
   & when (@position = after) {
     &::after {
-      .icon-xt();
+      .icon_xt();
       content: '@{content}';
       font-size: @size;
     }
@@ -68,11 +68,11 @@
 & when (@classes--icons) {
 
   .generate-icons();
-  .generate-icons(@i:length(@icons-xt)) when (@i > 0) {
+  .generate-icons(@i:length(@icons_xt)) when (@i > 0) {
     .generate-icons(@i - 1);
-    @name: extract(@icons-xt, @i);
-    @val: ~"icon-@{name}";
-    .icon-xt-@{name} {
+    @name: extract(@icons_xt, @i);
+    @val: ~"icon_xt--@{name}";
+    .icon_xt--@{name} {
       &::before {
         content: @@val;
       }
@@ -85,19 +85,19 @@
 // icons theme
 //////////////////////
 
-@icons-family: none;
+@icons--family: none;
 @icons: none;
 
 // styles
 
 .icon {
-  & when not (@icons-family = none) {
-    .icon-base();
-    font-family: @icons-family;
+  & when not (@icons--family = none) {
+    .icon--base();
+    font-family: @icons--family;
   }
 }
 
-[class^='icon-'], [class*=' icon-'] {
+[class^='icon--'], [class*=' icon--'] {
   display: inline-block;
   &::before {
     .icon();
@@ -106,7 +106,7 @@
 
 // mixins
 
-.icon(@content, @size: @icon-medium, @sr-only: false, @position: after) {
+.icon(@content, @size: @icon--medium, @sr-only: false, @position: after) {
   & when (@sr-only = true) {
     > span {
       .sr-only();
@@ -130,7 +130,7 @@
 
 // generate icons
 
-& when not (@icons-family = none) {
+& when not (@icons--family = none) {
 
   & when (@classes--icons) {
 
@@ -138,8 +138,8 @@
     .generate-icons(@i:length(@icons)) when (@i > 0) {
       .generate-icons(@i - 1);
       @name: extract(@icons, @i);
-      @val: ~"icon-@{name}";
-      .icon-@{name} {
+      @val: ~"icon--@{name}";
+      .icon--@{name} {
         &::before {
           content: @@val;
         }

@@ -71,13 +71,13 @@ a, .alink {
   .display(flex) !important;
   .align-items--center();
   .justify-content--between();
-  .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-tiny);
+  .icon_xt(@content: @icon_xt--chevron-down, @size: @icon--tiny);
   &::after {
     .margin(left, 2em);
   }
   // activation
   &.active {
-    .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-tiny);
+    .icon_xt(@content: @icon_xt--chevron-up, @size: @icon--tiny);
     &::after {
       .anim--bottom.active();
     }
@@ -89,9 +89,9 @@ a, .alink {
   }
   // inverse
   &.caret--inverse {
-    .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-tiny);
+    .icon_xt(@content: @icon_xt--chevron-up, @size: @icon--tiny);
     &.active {
-      .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-tiny);
+      .icon_xt(@content: @icon_xt--chevron-down, @size: @icon--tiny);
       &::after {
         .anim--top.active();
       }
@@ -104,9 +104,9 @@ a, .alink {
   }
   // horizontal
   &.caret--horizontal {
-    .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-tiny);
+    .icon_xt(@content: @icon_xt--chevron-right, @size: @icon--tiny);
     &.active {
-      .icon-xt(@content: @icon-xt-chevron-left, @size: @icon-tiny);
+      .icon_xt(@content: @icon_xt--chevron-left, @size: @icon--tiny);
       &::after {
         .anim--right.active();
       }
@@ -118,9 +118,9 @@ a, .alink {
     }
     // inverse
     &.caret--inverse {
-      .icon-xt(@content: @icon-xt-chevron-left, @size: @icon-tiny);
+      .icon_xt(@content: @icon_xt--chevron-left, @size: @icon--tiny);
       &.active {
-        .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-tiny);
+        .icon_xt(@content: @icon_xt--chevron-right, @size: @icon--tiny);
         &::after {
           .anim--left.active();
         }

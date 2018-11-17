@@ -172,8 +172,8 @@ const populateDemo = function (container, i) {
   let items = container.querySelectorAll('.demo-item');
   // multiple elements
   container.prepend(Xt.createElement('<div class="demo-tabs"><div class="demo-tabs-left"></div><div class="demo-tabs-right"></div></div>'));
-  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny btn--narrow btn--show-code" data-toggle="tooltip" data-placement="top" title="Show code"><span class="icon-code icon-big"></span></button>'));
-  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny btn--narrow btn--open-full" data-toggle="tooltip" data-placement="top" title="Open full"><span class="icon-maximize icon-big"></span></button>'));
+  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny btn--narrow btn--show-code" data-toggle="tooltip" data-placement="top" title="Show code"><span class="icon-code icon--big"></span></button>'));
+  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny btn--narrow btn--open-full" data-toggle="tooltip" data-placement="top" title="Open full"><span class="icon-maximize icon--big"></span></button>'));
   /*
   append.addEventListener('click', function (e) {
     console.log();
