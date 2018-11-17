@@ -379,33 +379,36 @@ a, .alink {
 }
 
 .btn-none {
+  .btn-noeffect();
+  .btn-squared();
   padding: 0;
   &@{btn-design} {
     border: 0 !important;
     background-color: transparent !important;
-    box-shadow: none !important;
   }
 }
 
 .btn-none-x {
+  .btn-noeffect();
+  .btn-squared();
   padding-left: 0;
   padding-right: 0;
   &@{btn-design} {
     border-left: 0 !important;
     border-right: 0 !important;
     background-color: transparent !important;
-    box-shadow: none !important;
   }
 }
 
 .btn-none-y {
+  .btn-noeffect();
+  .btn-squared();
   padding-top: 0;
   padding-bottom: 0;
   &@{btn-design} {
     border-top: 0 !important;
     border-bottom: 0 !important;
     background-color: transparent !important;
-    box-shadow: none !important;
   }
 }
 
@@ -520,19 +523,6 @@ a, .alink {
 
 // variant
 
-.drop-white {
-  > .drop-inner {
-    color: @text;
-    &@{drop-design} {
-      border-color: darken(@white, @perc-xs);
-      background-color: @white;
-    }
-    > .content > .list-drop {
-      .list-btn-default({ .btn-primary-empty() });
-    }
-  }
-}
-
 .drop-primary {
   > .drop-inner {
     color: @text-inverse;
@@ -555,6 +545,19 @@ a, .alink {
     }
     > .content > .list-drop {
       .list-btn-default({ .btn-secondary() });
+    }
+  }
+}
+
+.drop-white {
+  > .drop-inner {
+    color: @text;
+    &@{drop-design} {
+      border-color: darken(@white, @perc-xs);
+      background-color: @white;
+    }
+    > .content > .list-drop {
+      .list-btn-default({ .btn-primary-empty() });
     }
   }
 }
@@ -756,20 +759,6 @@ a, .alink {
 
 // variant
 
-.overlay-white {
-  .overlay-inner,
-  &.overlay-screen .overlay {
-    color: @text;
-    &@{overlay-design} {
-      border-color: @white;
-      background-color: @white;
-    }
-    > .btn-close {
-      .btn-primary-empty();
-    }
-  }
-}
-
 .overlay-primary {
   .overlay-inner,
   &.overlay-screen .overlay {
@@ -794,6 +783,20 @@ a, .alink {
     }
     > .btn-close {
       .btn-secondary();
+    }
+  }
+}
+
+.overlay-white {
+  .overlay-inner,
+  &.overlay-screen .overlay {
+    color: @text;
+    &@{overlay-design} {
+      border-color: @white;
+      background-color: @white;
+    }
+    > .btn-close {
+      .btn-primary-empty();
     }
   }
 }
