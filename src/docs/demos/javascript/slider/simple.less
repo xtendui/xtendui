@@ -15,40 +15,40 @@
     transform: translateX(0);
   }
   &.active {
-    .anim-right.active();
+    .anim--right.active();
     &:after {
       .animation-default.active();
-      animation-name: anim-special-in;
+      animation-name: anim--special-in;
       transform: translateX(-100%);
     }
     &.direction-inverse {
-      .anim-left.active();
+      .anim--left.active();
       &:after {
         .animation-default.active();
-        animation-name: anim-special-in-inverse;
+        animation-name: anim--special-in-inverse;
         transform: translateX(100%);
       }
     }
   }
   &.out {
-    .anim-left.out();
+    .anim--left.out();
     &:after {
       .animation-default.out();
-      animation-name: anim-special-out;
+      animation-name: anim--special-out;
       transform: translateX(0);
     }
     &.direction-inverse {
-      .anim-right.out();
+      .anim--right.out();
       &:after {
         .animation-default.out();
-        animation-name: anim-special-out-inverse;
+        animation-name: anim--special-out-inverse;
         transform: translateX(0);
       }
     }
   }
 }
 
-@keyframes anim-special-in {
+@keyframes anim--special-in {
   0% {
     transform: translateX(0);
   }
@@ -57,7 +57,7 @@
   }
 }
 
-@keyframes anim-special-in-inverse {
+@keyframes anim--special-in-inverse {
   0% {
     transform: translateX(0);
   }
@@ -66,7 +66,7 @@
   }
 }
 
-@keyframes anim-special-out {
+@keyframes anim--special-out {
   0% {
     transform: translateX(100%);
   }
@@ -75,7 +75,7 @@
   }
 }
 
-@keyframes anim-special-out-inverse {
+@keyframes anim--special-out-inverse {
   0% {
     transform: translateX(-100%);
   }

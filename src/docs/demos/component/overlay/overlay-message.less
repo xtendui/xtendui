@@ -1,13 +1,13 @@
 @import (reference) "../../../../../dist/styles/xtend.less";
 
 //////////////////////
-// xtend extension: overlay-message
+// xtend extension: overlay_message
 //////////////////////
 
-.overlay-message {
+.overlay_message {
   // styles
   position: fixed;
-  z-index: @index-overlay !important;
+  z-index: @index--overlay !important;
   top: 50%;
   width: calc(100vw - 510px);
   text-align: center;
@@ -15,30 +15,30 @@
     display: none;
   }
   // add box shadow to button
-  .overlay-dismiss {
-    &@{btn-design} {
-      box-shadow: 3px 3px 15px fade(@black, @perc-sm);
+  .overlay_dismiss {
+    &@{btn--design} {
+      box-shadow: 3px 3px 15px fade(@black, @perc--sm);
     }
   }
-  .overlay-left & {
+  .overlay--left & {
     right: 0;
     margin-right: 3rem;
   }
-  .overlay-right & {
+  .overlay--right & {
     left: 0;
     margin-left: 3rem;
   }
   // animations
-  .overlay-left.active & {
-    .anim-right.active();
+  .overlay--left.active & {
+    .anim--right.active();
   }
-  .overlay-left.out & {
-    .anim-right.out();
+  .overlay--left.out & {
+    .anim--right.out();
   }
-  .overlay-right.active & {
-    .anim-left.active();
+  .overlay--right.active & {
+    .anim--left.active();
   }
-  .overlay-right.out & {
-    .anim-left.out();
+  .overlay--right.out & {
+    .anim--left.out();
   }
 }

@@ -24,7 +24,7 @@ html.xt-scrollbar {
   body {
     overflow-y: hidden;
   }
-  .overlay-outer {
+  .overlay_outer {
     overflow-y: scroll;
   }
 }
@@ -759,35 +759,35 @@ html.xt-scrollbar {
 // list alignment
 
 .list-left(@breakpoint:none) when (@breakpoint = none) {
-  .list-btn-all({ .text-align(left); });
+  .list-btn--all({ .text-align(left); });
 }
 
 .list-left(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list-btn-all({ .text-align(left); });
+    .list-btn--all({ .text-align(left); });
   }
 }
 
 .list-center(@breakpoint:none) when (@breakpoint = none) {
-  .list-btn-all({ .text-align(center); });
+  .list-btn--all({ .text-align(center); });
 }
 
 .list-center(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list-btn-all({ .text-align(center); });
+    .list-btn--all({ .text-align(center); });
   }
 }
 
 .list-right(@breakpoint:none) when (@breakpoint = none) {
-  .list-btn-all({ .text-align(right); });
+  .list-btn--all({ .text-align(right); });
 }
 
 .list-right(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list-btn-all({ .text-align(right); });
+    .list-btn--all({ .text-align(right); });
   }
 }
 
@@ -1177,9 +1177,9 @@ html.xt-scrollbar {
 // generate-container-space-responsive
 
 .generate-container-space-responsive();
-.generate-container-space-responsive(@i:length(@container-space)) when (@i > 0) {
+.generate-container-space-responsive(@i:length(@container--space)) when (@i > 0) {
   .generate-container-space-responsive(@i - 1);
-  @container: extract(@container-space, @i);
+  @container: extract(@container--space, @i);
   @breakpoint: extract(@container, 1);
   @val: extract(@container, 2);
   & when (@breakpoint = none) {
@@ -1205,32 +1205,32 @@ html.xt-scrollbar {
 
 // size
 
-.overlay-size(@name) {
+.overlay--size(@name) {
   // .by-key(@overlays, @name);
-  @arr: ~"overlay-size-@{name}";
+  @arr: ~"overlay--size-@{name}";
   @val: @@arr;
-  .overlay-inner {
+  .overlay_inner {
     max-width: @val;
   }
 }
 
-// generate-overlay-size
+// generate-overlay--size
 
-.generate-overlay-size();
-.generate-overlay-size(@i:length(@overlay-sizes)) when (@i > 0) {
-  .generate-overlay-size(@i - 1);
-  @name: extract(@overlay-sizes, @i);
-  .overlay-size-@{name} {
-    .overlay-size(@name) !important;
+.generate-overlay--size();
+.generate-overlay--size(@i:length(@overlay--sizes)) when (@i > 0) {
+  .generate-overlay--size(@i - 1);
+  @name: extract(@overlay--sizes, @i);
+  .overlay--size-@{name} {
+    .overlay--size(@name) !important;
   }
 }
 
 // generate-overlay-space-responsive
 
 .generate-overlay-space-responsive();
-.generate-overlay-space-responsive(@i:length(@container-space)) when (@i > 0) {
+.generate-overlay-space-responsive(@i:length(@container--space)) when (@i > 0) {
   .generate-overlay-space-responsive(@i - 1);
-  @overlay: extract(@container-space, @i);
+  @overlay: extract(@container--space, @i);
   @breakpoint: extract(@overlay, 1);
   @val: extract(@overlay, 2);
   & when (@breakpoint = none) {

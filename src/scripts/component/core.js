@@ -1391,7 +1391,7 @@ class Core {
   specialCenter(el) {
     let self = this;
     // specialCenter
-    if (el.classList.contains('drop-center')) {
+    if (el.classList.contains('drop--center')) {
       let add = self.object.clientWidth;
       let remove = el.clientWidth;
       el.style.left = ((add - remove) / 2) + 'px';
@@ -1405,7 +1405,7 @@ class Core {
   specialMiddle(el) {
     let self = this;
     // specialMiddle
-    if (el.classList.contains('drop-middle')) {
+    if (el.classList.contains('drop--middle')) {
       let add = self.object.clientHeight;
       let remove = el.clientHeight;
       el.style.top = ((add - remove) / 2) + 'px';

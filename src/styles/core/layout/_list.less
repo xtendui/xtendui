@@ -13,12 +13,12 @@
       .flex-auto();
     }
   }
-  .list-btn-default({ .btn(); });
+  .list-btn--default({ .btn(); });
 }
 
 // selectors
 
-.list-btn-all(@rules) {
+.list-btn--all(@rules) {
   > li {
     > a, > button {
       @rules();
@@ -26,7 +26,7 @@
   }
 }
 
-.list-btn-default(@rules) {
+.list-btn--default(@rules) {
   > li {
     > a, > button {
       &:not(.btn) {

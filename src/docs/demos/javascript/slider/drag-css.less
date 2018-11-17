@@ -6,27 +6,27 @@
   // mask
   &:not(.dragging) {
     .transition-default.out();
-    transition-duration: @time-big;
+    transition-duration: @time--big;
     > * {
       .transition-default.out();
-      transition-duration: @time-big;
+      transition-duration: @time--big;
     }
     &.active {
       .transition-default.active();
-      transition-duration: @time-big;
+      transition-duration: @time--big;
       > * {
         .transition-default.active();
-        transition-duration: @time-big;
+        transition-duration: @time--big;
       }
     }
   }
   // content
   > * > .content {
-    .anim-left.out();
-    animation-duration: @time-big;
+    .anim--left.out();
+    animation-duration: @time--big;
     > .box > .content > * {
-      .anim-left.out();
-      animation-duration: @time-big;
+      .anim--left.out();
+      animation-duration: @time--big;
       // delay
       animation-delay: 300ms; // @start + @child * @increment
       .nth-child(@child: 2, @start: 0ms, @increment: 150ms, @decrement: 0ms, {
@@ -35,37 +35,37 @@
   }
   &.direction-inverse {
     > * > .content {
-      .anim-right.out();
-      animation-duration: @time-big;
+      .anim--right.out();
+      animation-duration: @time--big;
       > .box > .content > * {
-        .anim-right.out();
-        animation-duration: @time-big;
+        .anim--right.out();
+        animation-duration: @time--big;
       }
     }
   }
   &.active {
     > * > .content {
-      .anim-right.active();
-      animation-duration: @time-big;
+      .anim--right.active();
+      animation-duration: @time--big;
       > .box > .content > * {
-        .anim-right.active();
-        animation-duration: @time-big;
+        .anim--right.active();
+        animation-duration: @time--big;
       }
     }
     &.direction-inverse {
       > * > .content {
-        .anim-left.active();
-        animation-duration: @time-big;
+        .anim--left.active();
+        animation-duration: @time--big;
         > .box > .content > * {
-          .anim-left.active();
-          animation-duration: @time-big;
+          .anim--left.active();
+          animation-duration: @time--big;
         }
       }
     }
   }
 }
 
-@keyframes anim-special-in {
+@keyframes anim--special-in {
   0% {
     transform: translateX(0);
   }
@@ -74,7 +74,7 @@
   }
 }
 
-@keyframes anim-special-in-inverse {
+@keyframes anim--special-in-inverse {
   0% {
     transform: translateX(0);
   }

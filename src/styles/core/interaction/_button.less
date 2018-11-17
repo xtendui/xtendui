@@ -8,12 +8,12 @@
   display: inline-block;
   position: relative;
   vertical-align: middle;
-  z-index: @index-base; // fix ::before negative z-index
+  z-index: @index--base; // fix ::before negative z-index
   &:hover, &.hover, &:active, &.active {
-    z-index: @index-active;
+    z-index: @index--active;
   }
   &.out {
-    z-index: @index-active - 1;
+    z-index: @index--active - 1;
   }
   > span {
     display: inline-block;
@@ -22,6 +22,6 @@
 
 // custom
 
-.btn-close {
-  z-index: @index-btn-close;
+.btn--close {
+  z-index: @index--btn-close;
 }

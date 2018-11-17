@@ -7,40 +7,40 @@
                 <div class="flex flex-auto justify-content-between">
 
                   <div class="site-footer-top-links list-space-none">
-                    <a href="{{ site.baseurl }}/" class="btn btn-primary btn-nodesign">
+                    <a href="{{ site.baseurl }}/" class="btn btn--primary btn--nodesign">
                       <span>Home</span>
                     </a>
                     {% for collection in site.collections %}
                       {% if site.[collection.label].size > 0 %}
                         {% assign sorted = site.[collection.label] | sort: 'order' %}
-                        <a href="{{ sorted[0].url }}" class="btn btn-primary btn-nodesign">
+                        <a href="{{ sorted[0].url }}" class="btn btn--primary btn--nodesign">
                           <span>{{ collection.label }}</span>
                         </a>
                       {% endif %}
                     {% endfor %}
-                    <a href="#" class="btn btn-primary btn-nodesign">
+                    <a href="#" class="btn btn--primary btn--nodesign">
                       <span>Extensions</span>
                     </a>
-                    <a href="#" class="btn btn-primary btn-nodesign">
+                    <a href="#" class="btn btn--primary btn--nodesign">
                       <span>Inspirations</span>
                     </a>
-                    <a href="{{ site.baseurl }}/faq/" class="btn btn-primary btn-nodesign">
+                    <a href="{{ site.baseurl }}/faq/" class="btn btn--primary btn--nodesign">
                       <span>Faq</span>
                     </a>
                   </div>
 
                   <div class="site-footer-top-special">
                     {% comment %}
-                    <button type="button" class="btn btn-primary btn-nodesign">
+                    <button type="button" class="btn btn--primary btn--nodesign">
                       <span><span class="icon-embed2"></span></span>
                     </button>
-                    <a href="#" class="btn btn-primary btn-nodesign">
+                    <a href="#" class="btn btn--primary btn--nodesign">
                       <span>Privacy policy</span>
                     </a>
-                    <a href="#" class="btn btn-primary btn-nodesign">
+                    <a href="#" class="btn btn--primary btn--nodesign">
                       <span>license</span>
                     </a>
-                    <a href="#" class="btn btn-primary btn-nodesign">
+                    <a href="#" class="btn btn--primary btn--nodesign">
                       <span>contact</span>
                     </a>
                     {% endcomment %}

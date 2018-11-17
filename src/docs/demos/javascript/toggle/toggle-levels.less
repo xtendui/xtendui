@@ -25,13 +25,13 @@
   > li {
     > button {
       .caret();
-      .caret.caret-horizontal();
+      .caret.caret--horizontal();
     }
     > a, > button {
       margin-bottom: -1px !important;
-      &@{btn-design} {
-        border-top-color: @grey-300 !important;
-        border-bottom-color: @grey-300 !important;
+      &@{btn--design} {
+        border-top-color: @grey--300 !important;
+        border-bottom-color: @grey--300 !important;
       }
     }
   }
@@ -43,11 +43,11 @@
   .block();
   .toggle-block();
   // animations
-  .anim-horizontal();
-  animation-duration: @time-small;
+  .anim--horizontal();
+  animation-duration: @time--small;
   &.direction-inverse {
-    .anim-horizontal-inverse();
-    animation-duration: @time-small;
+    .anim--horizontal-inverse();
+    animation-duration: @time--small;
   }
 }
 
@@ -55,10 +55,10 @@
   .block();
   .toggle-block();
   // animations
-  .anim-horizontal();
-  animation-duration: @time-small;
+  .anim--horizontal();
+  animation-duration: @time--small;
   &.direction-inverse {
-    .anim-horizontal-inverse();
-    animation-duration: @time-small;
+    .anim--horizontal-inverse();
+    animation-duration: @time--small;
   }
 }

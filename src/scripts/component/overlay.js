@@ -60,7 +60,7 @@ class Overlay extends Core {
 Overlay.componentName = 'overlay';
 Overlay.defaults = {
   "elements": ":scope > a, :scope > button",
-  "targets": ":scope > .overlay-outer",
+  "targets": ":scope > .overlay_outer",
   "class": "active",
   "on": "click",
   "min": 0,
@@ -69,7 +69,7 @@ Overlay.defaults = {
   "appendTo": "body",
   "backdrop": "targets",
   "classHtml": "xt-overlay",
-  "closeInside": ".overlay-dismiss, :scope > .xt-backdrop, :scope .overlay-inner > .btn-close",
+  "closeInside": ".overlay_dismiss, :scope > .xt-backdrop, :scope .overlay_inner > .btn--close",
   "scrollbar": true,
   "aria": true
 };

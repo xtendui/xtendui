@@ -4,10 +4,10 @@
 // xtend extension: overlay content
 //////////////////////
 
-.overlay-outer {
-  .overlay-inner {
-    > .btn-close {
-      .btn-primary();
+.overlay_outer {
+  .overlay_inner {
+    > .btn--close {
+      .btn--primary();
     }
     > .content.content-menu {
       .list();
@@ -22,26 +22,26 @@
       }
     }
     > .content.content-title {
-      border-bottom: 1px solid @grey-250;
+      border-bottom: 1px solid @grey--250;
     }
     > .content.content-foot {
-      border-top: 1px solid @grey-250;
+      border-top: 1px solid @grey--250;
     }
   }
   // animations
   &.active {
-    .overlay-inner {
+    .overlay_inner {
       > .content.content-menu {
-        .anim-top.active();
-        animation-delay: @time-small;
+        .anim--top.active();
+        animation-delay: @time--small;
       }
     }
   }
   &.out {
-    .overlay-inner {
+    .overlay_inner {
       > .content.content-menu {
-        .anim-top.out();
-        animation-delay: @time-small;
+        .anim--top.out();
+        animation-delay: @time--small;
       }
     }
   }

@@ -17,7 +17,7 @@ body {
   overflow-y: scroll;
   .overflow-style();
   background-color: @white;
-  .font-sans-regular();
+  .font_sans--regular();
   .font-medium();
   .line-height-medium();
   color: @text;
@@ -97,7 +97,7 @@ h1, .h1 {
   .margin(y, layout) !important;
   .margin(top, big);
   .margin(bottom, medium);
-  .font-sans-semibold();
+  .font_sans--semibold();
   font-size: 4.5rem;
   .line-height-micro();
   .letter-spacing-none();
@@ -111,7 +111,7 @@ h2, .h2 {
   .margin(y, layout) !important;
   .margin(top, big);
   .margin(bottom, medium);
-  .font-sans-semibold();
+  .font_sans--semibold();
   font-size: 3.5rem;
   .line-height-tiny();
   .letter-spacing-none();
@@ -122,7 +122,7 @@ h3, .h3 {
   .margin(y, layout) !important;
   .margin(top, big);
   .margin(bottom, medium);
-  .font-sans-semibold();
+  .font_sans--semibold();
   font-size: 2.5rem;
   .line-height-tiny();
   .letter-spacing-none();
@@ -133,7 +133,7 @@ h4, .h4 {
   .margin(y, layout) !important;
   .margin(top, big);
   .margin(bottom, medium);
-  .font-sans-semibold();
+  .font_sans--semibold();
   font-size: 2rem;
   .line-height-tiny();
   .letter-spacing-none();
@@ -144,7 +144,7 @@ h5, .h5 {
   .margin(y, layout) !important;
   .margin(top, big);
   .margin(bottom, medium);
-  .font-sans-semibold();
+  .font_sans--semibold();
   font-size: 1.7rem;
   .line-height-tiny();
   .letter-spacing-none();
@@ -170,14 +170,14 @@ h6, .h6 {
   .margin(bottom, big) !important;
   .padding(y, 1.5rem);
   .padding(x, medium);
-  background-color: @grey-250;
+  background-color: @grey--250;
   text-align: center;
 }
 
 .h4-line {
   .h4();
   .padding(bottom, small);
-  border-bottom: 1px solid @grey-250;
+  border-bottom: 1px solid @grey--250;
 }
 
 //////////////////////
@@ -190,7 +190,7 @@ p {
 }
 
 strong {
-  .font-sans-semibold();
+  .font_sans--semibold();
 }
 
 small {
@@ -198,7 +198,7 @@ small {
 }
 
 .muted {
-  color: @grey-500;
+  color: @grey--500;
 }
 
 // code
@@ -207,9 +207,9 @@ code {
   margin: 0 .05em;
   padding: .05em .05em;
   background-color: fade(@black, 6%);
-  .font-monospace();
+  .font_monospace();
   font-size: .9em;
-  color: @grey-750;
+  color: @grey--750;
   .table-stripe tbody tr:nth-of-type(odd) & {
     background-color: fade(@white, 18%);
   }
@@ -230,24 +230,24 @@ pre {
     border-radius: @box-border-radius;
     border-width: @box-border-width;
     border-style: solid;
-    border-color: @grey-250;
-    background-color: @grey-250 !important;
+    border-color: @grey--250;
+    background-color: @grey--250 !important;
     font-size: 12px;
-    color: @grey-750;
+    color: @grey--750;
     line-height: 1.6;
   }
 }
 
-// .text-inverse
+// .text--inverse
 
-.text-inverse {
-  color: @text-inverse;
+.text--inverse {
+  color: @text--inverse;
   h1, h2, h3, h4, h5, h6 {
-    color: @text-inverse;
+    color: @text--inverse;
   }
   code {
     background-color: fade(@white, 18%);
-    color: @text-inverse;
+    color: @text--inverse;
   }
 }
 
@@ -310,10 +310,10 @@ dl {
   .dl-block();
   line-height: 1.6;
   dt {
-    .font-sans-semibold();
+    .font_sans--semibold();
   }
   dd {
-    .font-sans-regular();
+    .font_sans--regular();
   }
 }
 

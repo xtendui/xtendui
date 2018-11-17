@@ -123,7 +123,7 @@ legend {
   border-width: @input-border-width;
   border-style: solid;
   border-color: transparent;
-  .font-sans-regular();
+  .font_sans--regular();
   font-size: 1em; // from .form-group font size
   .line-height-tiny();
   // options
@@ -142,16 +142,16 @@ legend {
 
 .input-control-grey {
   // styles
-  border-color: @grey-300;
+  border-color: @grey--300;
   background-color: @white;
   color: @text;
   &:focus {
-    background-color: darken(@white, @perc-xs);
+    background-color: darken(@white, @perc--xs);
   }
   // select arrow
   select& {
-    @select-arrow-color: darken(@grey-300, @perc-md);
-    @select-space-color: darken(@grey-300, @perc-xs);
+    @select-arrow-color: darken(@grey--300, @perc--md);
+    @select-space-color: darken(@grey--300, @perc--xs);
     background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%),
     linear-gradient(135deg, @select-arrow-color 50%, transparent 50%),
     linear-gradient(to right, @select-space-color, @select-space-color);
@@ -161,27 +161,27 @@ legend {
 // placeholder
 
 :-ms-input-placeholder {
-  color: @grey-500;
+  color: @grey--500;
 }
 
 :-moz-placeholder {
-  color: @grey-500;
+  color: @grey--500;
 }
 
 ::-webkit-input-placeholder {
-  color: @grey-500;
+  color: @grey--500;
 }
 
 ::-ms-input-placeholder {
-  color: @grey-500;
+  color: @grey--500;
 }
 
 ::-moz-placeholder {
-  color: @grey-500;
+  color: @grey--500;
 }
 
 ::placeholder {
-  color: @grey-500;
+  color: @grey--500;
 }
 
 // others
@@ -197,9 +197,9 @@ textarea {
 .label-control {
   // styles
   .margin(bottom, 1em); // from .form-group font size
-  .font-sans-semibold();
+  .font_sans--semibold();
   font-size: 1em; // from .form-group font size
-  color: @grey-500;
+  color: @grey--500;
   .line-height-tiny();
   .letter-spacing-small();
   text-transform: uppercase;
@@ -215,7 +215,7 @@ textarea {
   .margin(all, none); // reset .label-control
   .padding(left, small); // space from checkbox/radio
   // styles
-  .font-sans-regular();
+  .font_sans--regular();
   font-size: 13px;
   .line-height-tiny();
   .letter-spacing-none();
@@ -234,11 +234,11 @@ input[type="radio"]:not(.unstyled) {
       height: 1.8rem;
     }
     &::before {
-      background-color: @grey-250;
-      border: 1px solid darken(@grey-250, @perc-md);
+      background-color: @grey--250;
+      border: 1px solid darken(@grey--250, @perc--md);
     }
     &::after {
-      color: darken(@grey-250, @perc-lg);
+      color: darken(@grey--250, @perc--lg);
     }
   }
   // disabled
@@ -248,7 +248,7 @@ input[type="radio"]:not(.unstyled) {
     }
     &::after {
       .disabled();
-      color: darken(@grey-250, @perc-md);
+      color: darken(@grey--250, @perc--md);
     }
   }
   // animation

@@ -3,7 +3,7 @@
 //////////////////////
 
 .group {
-  .link-none();
+  .link--none();
   position: relative;
   .display(inline-flex) !important;
   .flex-nowrap();
@@ -39,7 +39,7 @@
     .text-align(center);
     white-space: nowrap;
     + * {
-      margin-top: -@btn-border-width;
+      margin-top: -@btn--border-width;
     }
   }
   .input-control ~ & {
@@ -50,7 +50,7 @@
   // border inline
   &:first-child {
     > * {
-      &@{btn-design} {
+      &@{btn--design} {
         border-top-right-radius: 0 !important;
         border-bottom-right-radius: 0 !important;
       }
@@ -58,7 +58,7 @@
   }
   &:last-child {
     > * {
-      &@{btn-design} {
+      &@{btn--design} {
         border-top-left-radius: 0 !important;
         border-bottom-left-radius: 0 !important;
       }
@@ -66,7 +66,7 @@
   }
   &:not(:first-child):not(:last-child) {
     > * {
-      &@{btn-design} {
+      &@{btn--design} {
         border-radius: 0 !important;
       }
     }
@@ -75,21 +75,21 @@
   &:first-child {
     > * {
       &:not(:first-child) {
-        &@{btn-design} {
+        &@{btn--design} {
           border-bottom-right-radius: 0 !important;
           border-top-right-radius: 0 !important;
           border-top-left-radius: 0 !important;
         }
       }
       &:not(:last-child) {
-        &@{btn-design} {
+        &@{btn--design} {
           border-top-right-radius: 0 !important;
           border-bottom-right-radius: 0 !important;
           border-bottom-left-radius: 0 !important;
         }
       }
       &:not(:first-child):not(:last-child) {
-        &@{btn-design} {
+        &@{btn--design} {
           border-top-left-radius: 0 !important;
           border-bottom-left-radius: 0 !important;
         }
@@ -99,21 +99,21 @@
   &:last-child {
     > * {
       &:not(:first-child) {
-        &@{btn-design} {
+        &@{btn--design} {
           border-bottom-left-radius: 0 !important;
           border-top-left-radius: 0 !important;
           border-top-right-radius: 0 !important;
         }
       }
       &:not(:last-child) {
-        &@{btn-design} {
+        &@{btn--design} {
           border-top-left-radius: 0 !important;
           border-bottom-left-radius: 0 !important;
           border-bottom-right-radius: 0 !important;
         }
       }
       &:not(:first-child):not(:last-child) {
-        &@{btn-design} {
+        &@{btn--design} {
           border-top-right-radius: 0 !important;
           border-bottom-right-radius: 0 !important;
         }

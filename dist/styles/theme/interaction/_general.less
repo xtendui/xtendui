@@ -4,7 +4,7 @@
 
 // decoration
 
-.link-underline {
+.link--underline {
   text-decoration: none;
   &:hover, &.hover, &:active, &.active {
     text-decoration: underline;
@@ -14,7 +14,7 @@
   }
 }
 
-.link-none {
+.link--none {
   text-decoration: none;
   &:hover, &.hover, &:active, &.active {
     text-decoration: none;
@@ -27,11 +27,11 @@
 // links
 
 a, .alink {
-  .link-underline();
+  .link--underline();
   // styles
   color: @primary;
   &:hover, &.hover, &:active, &.active {
-    color: darken(@primary, @perc-xs);
+    color: darken(@primary, @perc--xs);
   }
   // animations
   .transition-default.out();
@@ -40,21 +40,21 @@ a, .alink {
   }
 }
 
-// .text-inverse
+// .text--inverse
 
-.text-inverse {
+.text--inverse {
   // links color
-  a:not(.btn), .alink, .btn-link {
-    color: @text-inverse;
+  a:not(.btn), .alink, .btn--link {
+    color: @text--inverse;
     text-decoration: underline;
     &:hover, &.hover, &:active, &.active {
-      color: darken(@text-inverse, @perc-xs);
+      color: darken(@text--inverse, @perc--xs);
     }
   }
   // button color
-  .btn-primary-empty,
-  .btn-secondary-empty {
-    color: @text-inverse !important;
+  .btn--primary-empty,
+  .btn--secondary-empty {
+    color: @text--inverse !important;
   }
 }
 
@@ -79,55 +79,55 @@ a, .alink {
   &.active {
     .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-tiny);
     &::after {
-      .anim-bottom.active();
+      .anim--bottom.active();
     }
   }
   &.out {
     &::after {
-      .anim-top.active();
+      .anim--top.active();
     }
   }
   // inverse
-  &.caret-inverse {
+  &.caret--inverse {
     .icon-xt(@content: @icon-xt-chevron-up, @size: @icon-tiny);
     &.active {
       .icon-xt(@content: @icon-xt-chevron-down, @size: @icon-tiny);
       &::after {
-        .anim-top.active();
+        .anim--top.active();
       }
     }
     &.out {
       &::after {
-        .anim-bottom.active();
+        .anim--bottom.active();
       }
     }
   }
   // horizontal
-  &.caret-horizontal {
+  &.caret--horizontal {
     .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-tiny);
     &.active {
       .icon-xt(@content: @icon-xt-chevron-left, @size: @icon-tiny);
       &::after {
-        .anim-right.active();
+        .anim--right.active();
       }
     }
     &.out {
       &::after {
-        .anim-left.active();
+        .anim--left.active();
       }
     }
     // inverse
-    &.caret-inverse {
+    &.caret--inverse {
       .icon-xt(@content: @icon-xt-chevron-left, @size: @icon-tiny);
       &.active {
         .icon-xt(@content: @icon-xt-chevron-right, @size: @icon-tiny);
         &::after {
-          .anim-left.active();
+          .anim--left.active();
         }
       }
       &.out {
         &::after {
-          .anim-right.active();
+          .anim--right.active();
         }
       }
     }

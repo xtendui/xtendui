@@ -31,18 +31,18 @@
   &::before {
     z-index: 2;
     width: 100%;
-    background-color: @grey-250;
+    background-color: @grey--250;
   }
   &::after {
     z-index: 3;
     width: 0;
     background-color: @black;
     // animations
-    animation: anim-loader 1000ms infinite linear;
+    animation: anim--loader 1000ms infinite linear;
   }
 }
 
-@keyframes anim-loader {
+@keyframes anim--loader {
   0% {
     left: 0;
     width: 0;
@@ -50,7 +50,7 @@
   50% {
     left: 0;
     width: 100%;
-    animation-timing-function: @bez-out;
+    animation-timing-function: @bez--out;
   }
   100% {
     left: 100%;
@@ -61,7 +61,7 @@
 // activation
 
 .loader-container {
-  .anim-opacity.active();
+  .anim--opacity.active();
 }
 
 /* USAGE:

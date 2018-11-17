@@ -6,33 +6,33 @@
 
 @white: #fff;
 @black: #343a40;
-@grey-250: #edf3f6;
-@grey-300: #D9D9D5;
-@grey-500: #626c76;
-@grey-750: #343a40;
+@grey--250: #edf3f6;
+@grey--300: #D9D9D5;
+@grey--500: #626c76;
+@grey--750: #343a40;
 
 // text
 
-@text: @grey-750;
-@text-inverse: @white;
+@text: @grey--750;
+@text--inverse: @white;
 
 // colors
 
 @primary: #7367F0;
-@secondary: @grey-250;
+@secondary: @grey--250;
 @error: #CD1719;
 
 // percents
 
-@perc-xs: 5%;
-@perc-sm: 10%;
-@perc-md: 25%;
-@perc-lg: 50%;
-@perc-xl: 80%;
+@perc--xs: 5%;
+@perc--sm: 10%;
+@perc--md: 25%;
+@perc--lg: 50%;
+@perc--xl: 80%;
 
 // gradients
 
-@grad-primary: linear-gradient(0deg, darken(@primary, 3%) 10%, @primary 100%);
+@grad--primary: linear-gradient(0deg, darken(@primary, 3%) 10%, @primary 100%);
 
 //////////////////////
 // fonts
@@ -40,25 +40,25 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
 
-.font-sans-light() {
+.font_sans--light() {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 300;
 }
 
-.font-sans-regular() {
+.font_sans--regular() {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.font-sans-semibold() {
+.font_sans--semibold() {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-style: normal;
 }
 
-.font-monospace() {
+.font_monospace() {
   font-family: monaco, Consolas, 'Lucida Console', monospace;
   font-weight: normal;
   font-style: normal;
@@ -75,14 +75,14 @@
 
 // z-index
 
-@index-base: 0;
-@index-active: 2;
-@index-loader: 11;
-@index-sticky: 100; // by javascript 100 and decreses with sequential sticky
-@index-backdrop: 130;
-@index-drop: 150;
-@index-overlay: 200;
-@index-btn-close: 300;
+@index--base: 0;
+@index--active: 2;
+@index--loader: 11;
+@index--sticky: 100; // by javascript 100 and decreses with sequential sticky
+@index--backdrop: 130;
+@index--drop: 150;
+@index--overlay: 200;
+@index--btn-close: 300;
 
 //////////////////////
 // content
@@ -150,31 +150,31 @@
 
 // btn
 
-@btn-design: ~'::before'; // selector for design
-@btn-border-radius: 4px;
-@btn-border-width: 1px;
+@btn--design: ~'::before'; // selector for design
+@btn--border-radius: 4px;
+@btn--border-width: 1px;
 
 // drop
 
-@drop-design: ~'::before'; // selector for design
-@drop-border-radius: 4px;
-@drop-border-width: 1px;
+@drop--design: ~'::before'; // selector for design
+@drop--border-radius: 4px;
+@drop--border-width: 1px;
 
-@drop-space: 6px; // space between button and drop
+@drop--space: 6px; // space between button and drop
 
 // overlay
 
-@overlay-design: ~':before';
-@overlay-border-radius: 4px;
-@overlay-border-width: 1px;
+@overlay--design: ~':before';
+@overlay--border-radius: 4px;
+@overlay--border-width: 1px;
 
-@overlay-sizes: tiny, small, medium, big, giant, full; // if you change this change also variables names below
-@overlay-size-tiny: @breakpoint-xs - 60;
-@overlay-size-small: @breakpoint-sm - 60;
-@overlay-size-medium: @breakpoint-md - 60;
-@overlay-size-big: @breakpoint-lg - 60;
-@overlay-size-giant: @breakpoint-xl - 60;
-@overlay-size-full: none;
+@overlay--sizes: tiny, small, medium, big, giant, full; // if you change this change also variables names below
+@overlay--size-tiny: @breakpoint--xs - 60;
+@overlay--size-small: @breakpoint--sm - 60;
+@overlay--size-medium: @breakpoint--md - 60;
+@overlay--size-big: @breakpoint--lg - 60;
+@overlay--size-giant: @breakpoint--xl - 60;
+@overlay--size-full: none;
 
 //////////////////////
 // animations
@@ -182,31 +182,31 @@
 
 // size
 
-@anim-tiny: .5rem;
-@anim-small: .75rem;
-@anim-medium: 1.5rem;
-@anim-big: 3rem;
-@anim-giant: 6rem;
+@anim--tiny: .5rem;
+@anim--small: .75rem;
+@anim--medium: 1.5rem;
+@anim--big: 3rem;
+@anim--giant: 6rem;
 
 // time
 
-@time-tiny: 75ms;
-@time-small: 150ms;
-@time-medium: 300ms;
-@time-big: 600ms;
-@time-giant: 1200ms;
+@time--tiny: 75ms;
+@time--small: 150ms;
+@time--medium: 300ms;
+@time--big: 600ms;
+@time--giant: 1200ms;
 
 // beziers
 
-@bez-in: @bez-cat-in;
-@bez-out: @bez-cat-out;
+@bez--in: @bez--cat-in;
+@bez--out: @bez--cat-out;
 
-@bez-ease: ease; // others at https://easings.net/
-@bez-cat-in: ~'cubic-bezier(.41, .1, .175, 1)';
-@bez-cat-out: ~'cubic-bezier(.77, 0, .175, 1)';
-@bez-frog-in: ~'cubic-bezier(.645, .045, .355, 1.000)';
-@bez-frog-out: ~'cubic-bezier(.550, .055, .675, .190)';
-@bez-tiger: ~'cubic-bezier(.96, .1, .14, .88)';
+@bez--ease: ease; // others at https://easings.net/
+@bez--cat-in: ~'cubic-bezier(.41, .1, .175, 1)';
+@bez--cat-out: ~'cubic-bezier(.77, 0, .175, 1)';
+@bez--frog-in: ~'cubic-bezier(.645, .045, .355, 1.000)';
+@bez--frog-out: ~'cubic-bezier(.550, .055, .675, .190)';
+@bez--tiger: ~'cubic-bezier(.96, .1, .14, .88)';
 
 //////////////////////
 // grid
@@ -217,27 +217,27 @@
 // breakpoints
 
 @breakpoints: xs, sm, md, lg, xl; // if you change this change also variables names below
-@breakpoint-xs: 576px;
-@breakpoint-sm: 768px;
-@breakpoint-md: 992px;
-@breakpoint-lg: 1200px;
-@breakpoint-xl: 1300px;
+@breakpoint--xs: 576px;
+@breakpoint--sm: 768px;
+@breakpoint--md: 992px;
+@breakpoint--lg: 1200px;
+@breakpoint--xl: 1300px;
 
 // container
 
-@container-fluid: 1340px; // max-width
-@container-space: none 15px, xs 15px, sm 20px, md 25px, lg 30px, xl 30px; // container padding
+@container--fluid: 1340px; // max-width
+@container--space: none 15px, xs 15px, sm 20px, md 25px, lg 30px, xl 30px; // container padding
 
 // @media queries
 // USAGE: @media @min-sm and @max-md {}
 
-@min-xs: ~'(min-width:'(@breakpoint-xs)~')';
-@max-xs: ~'(max-width:'(@breakpoint-xs - 1)~')';
-@min-sm: ~'(min-width:'(@breakpoint-sm)~')';
-@max-sm: ~'(max-width:'(@breakpoint-sm - 1)~')';
-@min-md: ~'(min-width:'(@breakpoint-md)~')';
-@max-md: ~'(max-width:'(@breakpoint-md - 1)~')';
-@min-lg: ~'(min-width:'(@breakpoint-lg)~')';
-@max-lg: ~'(max-width:'(@breakpoint-lg - 1)~')';
-@min-xl: ~'(min-width:'(@breakpoint-xl)~')';
-@max-xl: ~'(max-width:'(@breakpoint-xl - 1)~')';
+@min-xs: ~'(min-width:'(@breakpoint--xs)~')';
+@max-xs: ~'(max-width:'(@breakpoint--xs - 1)~')';
+@min-sm: ~'(min-width:'(@breakpoint--sm)~')';
+@max-sm: ~'(max-width:'(@breakpoint--sm - 1)~')';
+@min-md: ~'(min-width:'(@breakpoint--md)~')';
+@max-md: ~'(max-width:'(@breakpoint--md - 1)~')';
+@min-lg: ~'(min-width:'(@breakpoint--lg)~')';
+@max-lg: ~'(max-width:'(@breakpoint--lg - 1)~')';
+@min-xl: ~'(min-width:'(@breakpoint--xl)~')';
+@max-xl: ~'(max-width:'(@breakpoint--xl - 1)~')';
