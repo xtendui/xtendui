@@ -119,8 +119,8 @@ legend {
 .input-control {
   // styles
   padding: .75em 1.2em;
-  border-radius: @input-border-radius;
-  border-width: @input-border-width;
+  border-radius: @input--border-radius;
+  border-width: @input--border-width;
   border-style: solid;
   border-color: transparent;
   .font_sans--regular();
@@ -281,7 +281,7 @@ input[type="radio"]:not(.unstyled) {
 input[type="checkbox"]:not(.unstyled) {
   & ~ .label-control {
     &::before {
-      border-radius: @input-border-radius;
+      border-radius: @input--border-radius;
     }
     &::after {
       .icon-xt();

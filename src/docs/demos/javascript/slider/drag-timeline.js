@@ -29,7 +29,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       let xMax = target.clientWidth;
       // content
       window.tl = [];
-      let contents = target.querySelectorAll(':scope > * > .content > .box > .content > *');
+      let contents = target.querySelectorAll(':scope > * > .content > .card > .content > *');
       for (let [z, content] of contents.entries()) {
         window.tl[z] = new TimelineMax({paused: true});
         window.tl[z].addLabel('start');
@@ -60,7 +60,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.set(target.children[0].children[0], {x: animSize});
         TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .card > .content > *').entries()) {
           TweenMax.set(content, {opacity: 0});
           window.tl[z].seek('endDelay' + '+=' + content.dataset.tlDelay).tweenTo('middle', {ease: 'easeIn'});
         }
@@ -71,7 +71,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.set(target.children[0].children[0], {x: -animSize});
         TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .card > .content > *').entries()) {
           TweenMax.set(content, {opacity: 0});
           window.tl[z].seek('startDelay' + '-=' + content.dataset.tlDelayInverse).tweenTo('middle', {ease: 'easeIn'});
         }
@@ -91,7 +91,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.to(target, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: xMax, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .card > .content > *').entries()) {
           window.tl[z].tweenTo('startDelay' + '-=' + content.dataset.tlDelay, {ease: 'easeOut'});
         }
       } else {
@@ -99,7 +99,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.to(target, time, {x: xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: -xMax, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .card > .content > *').entries()) {
           window.tl[z].tweenTo('endDelay' + '+=' + content.dataset.tlDelay, {ease: 'easeOut'});
         }
       }
@@ -121,12 +121,12 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       TweenMax.set(target.children[0], {x: -xDist});
       // content
       if (xStart - xCurrent > 0) {
-        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .card > .content > *').entries()) {
           let tlPos = durationcontent - (durationcontent - parseFloat(content.dataset.tlDelayInverse)) * ratio;
           window.tl[z].tweenTo(tlPos, {ease: 'easeOut'});
         }
       } else {
-        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .card > .content > *').entries()) {
           let tlPos = durationcontent + (durationcontent - parseFloat(content.dataset.tlDelay)) * ratio;
           window.tl[z].tweenTo(tlPos, {ease: 'easeOut'});
         }
@@ -155,7 +155,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: 0, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .box > .content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .card > .content > *').entries()) {
           window.tl[z].tweenTo('middle', {ease: 'easeOut'});
         }
       }
