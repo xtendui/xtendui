@@ -98,9 +98,9 @@ h1, .h1 {
   .margin(top, big);
   .margin(bottom, medium);
   .font_sans--semibold();
-  font-size: 4.5rem;
   .line-height--micro();
   .letter-spacing--none();
+  font-size: 4.5rem;
   text-transform: none;
   @media @min-sm {
     font-size: 5.5rem;
@@ -112,9 +112,9 @@ h2, .h2 {
   .margin(top, big);
   .margin(bottom, medium);
   .font_sans--semibold();
-  font-size: 3.5rem;
   .line-height--tiny();
   .letter-spacing--none();
+  font-size: 3.5rem;
   text-transform: none;
 }
 
@@ -123,9 +123,9 @@ h3, .h3 {
   .margin(top, big);
   .margin(bottom, medium);
   .font_sans--semibold();
-  font-size: 2.5rem;
   .line-height--tiny();
   .letter-spacing--none();
+  font-size: 2.5rem;
   text-transform: none;
 }
 
@@ -134,9 +134,9 @@ h4, .h4 {
   .margin(top, big);
   .margin(bottom, medium);
   .font_sans--semibold();
-  font-size: 2rem;
   .line-height--tiny();
   .letter-spacing--none();
+  font-size: 2rem;
   text-transform: none;
 }
 
@@ -145,9 +145,9 @@ h5, .h5 {
   .margin(top, big);
   .margin(bottom, medium);
   .font_sans--semibold();
-  font-size: 1.7rem;
   .line-height--tiny();
   .letter-spacing--none();
+  font-size: 1.7rem;
   text-transform: none;
 }
 
@@ -155,29 +155,32 @@ h6, .h6 {
   .margin(y, layout) !important;
   .margin(top, medium);
   .margin(bottom, small);
-  font-size: 1.3rem;
   .line-height--small();
   .letter-spacing--small();
+  font-size: 1.3rem;
   text-transform: uppercase;
 }
 
-//.h7 {} // additional headers
+// additional headers here (ex: .h7)
 
-// custom
+// special
 
-.h5--block {
-  .h5();
-  .margin(bottom, big) !important;
-  .padding(y, 1.5rem);
+.header--line {
+  .margin(y, layout) !important;
+  .margin(top, medium);
+  .margin(bottom, small);
+  .padding(bottom, small);
+  border-bottom: 1px solid @grey--300;
+}
+
+.header--block {
+  .margin(y, layout) !important;
+  .margin(top, medium);
+  .margin(bottom, medium);
+  .padding(y, small);
   .padding(x, medium);
   background-color: @grey--250;
   text-align: center;
-}
-
-.h4--line {
-  .h4();
-  .padding(bottom, small);
-  border-bottom: 1px solid @grey--250;
 }
 
 //////////////////////
