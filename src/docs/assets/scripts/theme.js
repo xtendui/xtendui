@@ -104,10 +104,10 @@ const activateAsideScroll = function (els, scrollTop) {
 window.addEventListener('scroll', function (e) {
   let scrollTop = document.documentElement.scrollTop;
   let sub = Array.from(document.querySelectorAll('.btn--site-aside-sub'));
-  sub = sub.filter(x => !Xt.parents(x, '.xt_clone').length); // filter out parent
+  sub = sub.filter(x => !Xt.parents(x, '.xt-clone').length); // filter out parent
   activateAsideScroll(sub, scrollTop);
   let subsub = Array.from(document.querySelectorAll('.btn--site-aside-sub + .site-aside-subsub .btn--site-aside-subsub'));
-  subsub = subsub.filter(x => !Xt.parents(x, '.xt_clone').length); // filter out parent
+  subsub = subsub.filter(x => !Xt.parents(x, '.xt-clone').length); // filter out parent
   activateAsideScroll(subsub, scrollTop);
 });
 
@@ -318,13 +318,13 @@ function populateIframe(item, iframe) {
   let js = iframe.contentWindow.document.body.querySelectorAll('js-script')[0];
   // inject code
   if (html) {
-    iframe.append(Xt.createElement('<div class="demo-source xt_ignore" data-lang="html">' + html.innerHTML + '</div>'));
+    iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="html">' + html.innerHTML + '</div>'));
   }
   if (less) {
-    iframe.append(Xt.createElement('<div class="demo-source xt_ignore" data-lang="less">' + less.innerHTML + '</div>'));
+    iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="less">' + less.innerHTML + '</div>'));
   }
   if (js) {
-    iframe.append(Xt.createElement('<div class="demo-source xt_ignore" data-lang="js">' + js.innerHTML + '</div>'));
+    iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="js">' + js.innerHTML + '</div>'));
   }
   // populate
   for(let [z, source] of item.querySelectorAll('.demo-source').entries()) {

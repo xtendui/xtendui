@@ -69,7 +69,7 @@ Overlay.defaults = {
   "appendTo": "body",
   "backdrop": "targets",
   "classHtml": "xt-overlay",
-  "closeInside": ".overlay_dismiss, :scope > .xt_backdrop, :scope .overlay_inner > .btn--close",
+  "closeInside": ".overlay_dismiss, :scope > .xt-backdrop, :scope .overlay_inner > .btn--close",
   "scrollbar": true,
   "aria": true
 };

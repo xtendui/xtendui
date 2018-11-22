@@ -113,7 +113,7 @@ Xt.observer = new MutationObserver(function (mutationsList) {
   for (let mutation of mutationsList) {
     if (mutation.type == 'childList') {
       for (let added of mutation.addedNodes) {
-        if (added.nodeType === 1 && !added.classList.contains('xt_ignore')) {
+        if (added.nodeType === 1 && !added.classList.contains('xt-ignore')) {
           Xt.onInit(added);
         }
       }

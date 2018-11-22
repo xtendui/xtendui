@@ -1375,9 +1375,9 @@ class Core {
     if (options.backdrop) {
       let elements = typeof options.backdrop === 'string' && obj[options.backdrop] ? Xt.arrSingle(obj[options.backdrop].queueEls) : Xt.arrSingle(self.object);
       for (let element of elements) {
-        let backdrop = element.querySelectorAll('.xt_backdrop');
+        let backdrop = element.querySelectorAll('.xt-backdrop');
         if (!backdrop.length) {
-          backdrop = Xt.createElement('<div class="xt_backdrop"></div>');
+          backdrop = Xt.createElement('<div class="xt-backdrop"></div>');
           element.append(backdrop);
         }
       }
@@ -1418,7 +1418,7 @@ class Core {
    */
   specialCollapseOn(el) {
     if (el.classList.contains('collapse--height')) {
-      el.classList.add('xt_calculating');
+      el.classList.add('xt-calculating');
       el.style.height = 'auto';
       el.style.paddingTop = '';
       el.style.paddingBottom = '';
@@ -1427,7 +1427,7 @@ class Core {
       let pb = el.style.paddingBottom;
       window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
       el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-        el.classList.remove('xt_calculating');
+        el.classList.remove('xt-calculating');
         el.style.height = '0';
         el.style.paddingTop = '0';
         el.style.paddingBottom = '0';
@@ -1439,7 +1439,7 @@ class Core {
       }).toString();
     }
     if (el.classList.contains('collapse--width')) {
-      el.classList.add('xt_calculating');
+      el.classList.add('xt-calculating');
       el.style.width = 'auto';
       el.style.paddingLeft = '';
       el.style.paddingRight = '';
@@ -1448,7 +1448,7 @@ class Core {
       let pr = el.style.paddingRight;
       window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
       el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-        el.classList.remove('xt_calculating');
+        el.classList.remove('xt-calculating');
         el.style.width = '0';
         el.style.paddingLeft = '0';
         el.style.paddingRight = '0';
@@ -1615,7 +1615,7 @@ class Core {
       // scrollbar
       let container = document.documentElement;
       container.style.paddingRight = width + 'px';
-      container.classList.add('xt_scrollbar');
+      container.classList.add('xt-scrollbar');
       // check fixed
       let checks = document.querySelectorAll('.xt-check-fixed > *');
       for (let check of checks) {
@@ -1644,7 +1644,7 @@ class Core {
         }
       }
       // backdrop
-      let backdrops = self.object.querySelectorAll(':scope > .xt_backdrop');
+      let backdrops = self.object.querySelectorAll(':scope > .xt-backdrop');
       for (let backdrop of backdrops) {
         backdrop.style.right = width + 'px';
       }
@@ -1665,7 +1665,7 @@ class Core {
         // scrollbar
         let container = document.documentElement;
         container.style.paddingRight = '';
-        container.classList.remove('xt_scrollbar');
+        container.classList.remove('xt-scrollbar');
         // fixed
         let elements = document.querySelectorAll('.xt-fixed');
         for (let element of elements) {
@@ -1678,7 +1678,7 @@ class Core {
           });
         }
         // backdrop
-        let backdrops = self.object.querySelectorAll(':scope > .xt_backdrop');
+        let backdrops = self.object.querySelectorAll(':scope > .xt-backdrop');
         for (let backdrop of backdrops) {
           backdrop.style.right = '';
         }

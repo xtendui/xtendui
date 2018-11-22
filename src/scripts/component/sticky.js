@@ -37,18 +37,18 @@ class Sticky extends Core {
     // mode
     self.mode = 'unique';
     // container
-    self.container = Xt.parents(self.object, '.xt_container');
+    self.container = Xt.parents(self.object, '.xt-container');
     if (!self.container.length) {
-      self.container = Xt.createElement('<div class="xt_container xt-check-fixed"></div>');
+      self.container = Xt.createElement('<div class="xt-container xt-check-fixed"></div>');
       self.object.before(self.container);
       self.container.append(self.object);
-      self.container = Xt.parents(self.object, '.xt_container');
+      self.container = Xt.parents(self.object, '.xt-container');
     }
     // targets
-    self.targets = self.container[0].querySelectorAll('.xt_clone');
+    self.targets = self.container[0].querySelectorAll('.xt-clone');
     if (!self.targets.length) {
       self.targets = self.object.cloneNode(true);
-      self.targets.classList.add('xt_clone', 'xt_ignore');
+      self.targets.classList.add('xt-clone', 'xt-ignore');
       for (let elId of self.targets.querySelectorAll('[id]')) {
         elId.setAttribute('id', elId.getAttribute('id') + '-clone');
       }

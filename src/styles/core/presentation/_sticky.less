@@ -8,40 +8,40 @@
  */
 .xt-sticky(@mode: none) {
   // defaults
-  &.xt_clone {
+  &.xt-clone {
     position: relative;
     visibility: hidden;
     top: 0;
   }
-  &:not(.xt_clone) {
+  &:not(.xt-clone) {
     position: relative;
     z-index: @index--sticky;
     width: 100%;
   }
   // normal mode
   & when (@mode = none) {
-    &.xt_clone:not(.active) {
+    &.xt-clone:not(.active) {
       position: absolute;
     }
-    .xt_container > &:not(.xt_clone):not(.active) {
+    .xt-container > &:not(.xt-clone):not(.active) {
       position: relative;
     }
   }
   // absolute mode
   & when (@mode = 'absolute') {
-    &.xt_clone:not(.active) {
+    &.xt-clone:not(.active) {
       position: relative;
     }
-    .xt_container > &:not(.xt_clone):not(.active) {
+    .xt-container > &:not(.xt-clone):not(.active) {
       position: absolute;
     }
   }
   // fixed mode
   & when (@mode = 'fixed') {
-    &.xt_clone:not(.active) {
+    &.xt-clone:not(.active) {
       position: relative;
     }
-    .xt_container > &:not(.xt_clone):not(.active) {
+    .xt-container > &:not(.xt-clone):not(.active) {
       position: fixed;
     }
   }
@@ -52,7 +52,7 @@
   .hide-sticky {
     display: block;
   }
-  &:not(.xt_clone).active {
+  &:not(.xt-clone).active {
     .show-sticky {
       display: block;
     }
@@ -61,7 +61,7 @@
     }
   }
   // activation
-  &:not(.xt_clone).active {
+  &:not(.xt-clone).active {
     position: fixed;
     z-index: @index--sticky;
     width: 100%;
@@ -72,10 +72,10 @@
   position: relative !important;
   top: auto !important;
   bottom: auto !important;
-  &.xt_clone {
+  &.xt-clone {
     position: absolute !important;
   }
-  &:not(.xt_clone) {
+  &:not(.xt-clone) {
     position: relative !important;
   }
 }
