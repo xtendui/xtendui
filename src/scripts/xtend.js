@@ -37,6 +37,14 @@ Xt.Fade = Fade;
 
 Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
 
+Xt.initArr = [];
+Xt.onInit = function(added = document.documentElement) {
+  Xt.init(added);
+  for (let init of Xt.initArr) {
+    init(added);
+  }
+};
+
 //////////////////////
 // init
 //////////////////////
@@ -105,11 +113,8 @@ Xt.observer = new MutationObserver(function (mutationsList) {
   for (let mutation of mutationsList) {
     if (mutation.type == 'childList') {
       for (let added of mutation.addedNodes) {
-        if (added.nodeType === 1 && !added.classList.contains('xt-ignore')) {
-
-          // init
-          Xt.init(added);
-
+        if (added.nodeType === 1 && !added.classList.contains('xt_ignore')) {
+          Xt.onInit(added);
         }
       }
     }
@@ -120,12 +125,12 @@ Xt.observer = new MutationObserver(function (mutationsList) {
 
 if (document.readyState === "loading") {
   document.addEventListener('DOMContentLoaded', function () {
-    Xt.init();
+    Xt.onInit();
     Xt.observer.observe(document, {characterData: false, attributes: false, childList: true, subtree: true});
   });
 } else {
   window.requestAnimationFrame(function () {
-    Xt.init();
+    Xt.onInit();
     Xt.observer.observe(document, {characterData: false, attributes: false, childList: true, subtree: true});
   });
 }
