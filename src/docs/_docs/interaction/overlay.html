@@ -694,12 +694,15 @@ XtOverlay.defaults = {
   </div>
 </div>
 
-<h2>Tests</h2>
-
-<p>Here are some content examples and tests inside <strong>overlay</strong>.</p>
+<h3>Nested and Disable</h3>
 
 <div class="demo">
-  <div class="demo-item demo-preview" data-name="content">
+  <div class="demo-item demo-preview" data-name="nested">
+    <div class="demo-text">
+      <div class="content">
+        For limiting event inside a selector use <code>.event-limit</code>
+      </div>
+    </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-overlay>
         <button type="button" class="btn btn--primary">
@@ -771,10 +774,17 @@ XtOverlay.defaults = {
                   </div>
                 </div>
               </div>
-              
+
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/overlay/overlay-disable.html" data-name="disable">
+    <div class="demo-text">
+      <div class="content">
+        To disable drop use <code>.overlay--disable</code> useful within media queries
       </div>
     </div>
   </div>
@@ -783,7 +793,7 @@ XtOverlay.defaults = {
 <h2>Extensions</h2>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/component/overlay/overlay-classHtml.html"
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/overlay/overlay-classHtml.html"
        data-name="classHtml">
     <div class="demo-text">
       <div class="content">
@@ -791,7 +801,7 @@ XtOverlay.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/component/overlay/overlay-content.html"
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/overlay/overlay-content.html"
        data-name="content">
     <div class="demo-text">
       <div class="content">
@@ -799,7 +809,7 @@ XtOverlay.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/component/overlay/overlay-close-outside.html"
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/overlay/overlay-close-outside.html"
        data-name="close outside">
     <div class="demo-text">
       <div class="content">
@@ -807,7 +817,7 @@ XtOverlay.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/component/overlay/overlay-message.html"
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/overlay/overlay-message.html"
        data-name="message">
     <div class="demo-text">
       <div class="content">

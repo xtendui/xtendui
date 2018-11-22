@@ -64,7 +64,7 @@ class Slider extends Core {
         // logic
         let eventLimit = self.container.querySelectorAll('.event-limit');
         if (eventLimit.length) {
-          if (Xt.checkOutside(e, eventLimit)) {
+          if (!Xt.checkNested(e.target, eventLimit)) {
             self.eventdragstart(target, e);
           }
         } else {
@@ -99,7 +99,7 @@ class Slider extends Core {
       // logic
       let eventLimit = self.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
-        if (Xt.checkOutside(e, eventLimit)) {
+        if (!Xt.checkNested(e.target, eventLimit)) {
           self.eventdragend(target, e);
         }
       } else {

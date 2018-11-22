@@ -467,31 +467,15 @@ Xt.focusLimit = {
 
 /**
  * Check if event target is inside elements
- * @param {Event} e Event to check target
+ * @param {Node|HTMLElement} element Element to check target
  * @param {NodeList|Array} targets Elements to check inside
  * @return {Boolean}
  */
-Xt.checkInside = function (e, targets) {
+Xt.checkNested = function (element, targets) {
   let result = false;
   for (let t of targets) {
-    if (e.target === t || t.contains(e.target)) {
+    if (element === t || t.contains(element)) {
       result = true;
-    }
-  }
-  return result;
-};
-
-/**
- * Check if event target is outside elements
- * @param {Event} e Event to check target
- * @param {NodeList|Array} targets Elements to check Outside
- * @return {Boolean}
- */
-Xt.checkOutside = function (e, targets) {
-  let result = true;
-  for (let t of targets) {
-    if (e.target === t || t.contains(e.target)) {
-      result = false;
     }
   }
   return result;

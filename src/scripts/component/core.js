@@ -52,6 +52,7 @@ class Core {
       self.detail = {};
       self.detail.queueOn = [];
       self.detail.queueOff = [];
+      self.detail.appendOrigin = null;
       // init
       self.initSetup();
       self.initScope();
@@ -114,15 +115,6 @@ class Core {
       let arr = Array.from(self.container.querySelectorAll(options.targets));
       arr = arr.filter(x => !Xt.parents(x, options.targets).length); // filter out parent
       self.targets = arr;
-    }
-    // appendTo
-    if (options.appendTo) {
-      let appendToTarget = document.querySelectorAll(options.appendTo);
-      if (appendToTarget.length) {
-        for (let el of self.targets) {
-          appendToTarget[0].appendChild(el);
-        }
-      }
     }
   }
 
@@ -317,7 +309,7 @@ class Core {
       // on handler
       let eventLimit = self.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
-        if (Xt.checkOutside(e, eventLimit)) {
+        if (!Xt.checkNested(e.target, eventLimit)) {
           self.eventOn(element, e);
         }
       } else {
@@ -354,7 +346,7 @@ class Core {
       // off handler
       let eventLimit = self.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
-        if (Xt.checkOutside(e, eventLimit)) {
+        if (!Xt.checkNested(e.target, eventLimit)) {
           self.eventOff(element, e);
         }
       } else {
@@ -1163,6 +1155,14 @@ class Core {
     self.specialCenter(el);
     self.specialMiddle(el);
     self.specialCollapseOn(el);
+    if (type === 'targets') {
+      // appendTo
+      if (options.appendTo) {
+        let appendToTarget = document.querySelectorAll(options.appendTo);
+        self.detail.appendOrigin = el.parentElement;
+        appendToTarget[0].appendChild(el);
+      }
+    }
     if (type === 'targets' || type === 'targetsInner') {
       self.specialCloseOn(el, obj[type].groupElements.single);
     }
@@ -1309,6 +1309,13 @@ class Core {
     let options = self.options;
     // reset
     el.classList.remove('out');
+    // special
+    if (type === 'targets') {
+      // appendTo
+      if (options.appendTo) {
+        self.detail.appendOrigin.appendChild(el);
+      }
+    }
     // aria
     if (type === 'elements') {
       if (options.aria) {
@@ -1580,8 +1587,12 @@ class Core {
    */
   eventSpecialCloseInsideHandler(checkEl, single, e) {
     let self = this;
+    // prevent closing when nested and moved (ex: overlay)
+    if (!Xt.checkNested(checkEl, self.targets)) {
+      return false;
+    }
     // handler
-    if (Xt.checkInside(e, Xt.arrSingle(checkEl))) {
+    if (Xt.checkNested(e.target, Xt.arrSingle(checkEl))) {
       self.eventOff(single);
     }
   }
@@ -1595,7 +1606,7 @@ class Core {
   eventSpecialCloseOutsideHandler(checkEl, single, e) {
     let self = this;
     // handler
-    if (Xt.checkOutside(e, Xt.arrSingle(checkEl))) {
+    if (!Xt.checkNested(e.target, Xt.arrSingle(checkEl))) {
       self.eventOff(single);
     }
   }
