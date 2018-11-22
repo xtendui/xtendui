@@ -38,6 +38,7 @@
     "gh-pages": "^1.2.0",
     "gulp": "^4.0.0",
     "gulp-browserify": "^0.5.1",
+    "gulp-cached": "^1.1.1",
     "gulp-clean-css": "^3.0.3",
     "gulp-less": "^4.0.1",
     "gulp-replace": "^0.6.1",

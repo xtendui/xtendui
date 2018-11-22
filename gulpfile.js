@@ -9,9 +9,10 @@ let source = require('vinyl-source-stream');
 
 let less = require('gulp-less');
 let gutil = require('gulp-util');
+var cache = require('gulp-cached');
+let terser = require('gulp-terser');
 let replace = require('gulp-replace');
 let browserify = require('browserify');
-let terser = require('gulp-terser');
 let cleanCSS = require('gulp-clean-css');
 let sourcemaps = require('gulp-sourcemaps');
 
@@ -19,6 +20,7 @@ let sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('less-demos', function () {
   return gulp.src(['src/docs/demos/**/*.less', '!src/docs/demos/**/_*.less'])
+    .pipe(cache('cache:less:demos'))
     .pipe(less())
     .pipe(cleanCSS())
     .pipe(gulp.dest('src/docs/demos/'));
