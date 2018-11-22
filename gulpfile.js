@@ -34,7 +34,7 @@ gulp.task('less:docs', gulp.series('less:demos', function () {
     .pipe(gulp.dest('src/docs/assets/styles/'));
 }));
 gulp.task('less:docs:watch', function (done) {
-  gulp.watch(['dist/styles/**/*.less', 'src/docs/assets/styles/**/*.less', 'src/docs/demos/**/*.less'], gulp.series('less', 'less:docs', 'site:build'));
+  gulp.watch(['src/styles/**/*.less', 'dist/styles/**/*.less', 'src/docs/assets/styles/**/*.less', 'src/docs/demos/**/*.less'], gulp.series('less', 'less:docs', 'site:build'));
   done();
 });
 
@@ -50,7 +50,7 @@ gulp.task('less', function () {
     .pipe(gulp.dest('dist/styles/'));
 });
 gulp.task('less:watch', function (done) {
-  gulp.watch(['dist/styles/**/*.less'], gulp.series('less', 'site:build'));
+  gulp.watch(['src/styles/**/*.less', 'dist/styles/**/*.less'], gulp.series('less', 'site:build'));
   done();
 });
 

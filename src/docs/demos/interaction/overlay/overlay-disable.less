@@ -1,5 +1,11 @@
 @import (reference) "../../../../../dist/styles/xtend.less";
 
+.btn--disable-example {
+  @media @min-sm {
+    display: none;
+  }
+}
+
 .overlay--disable-example {
   @media @min-sm {
     .overlay--disable();

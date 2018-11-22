@@ -77,27 +77,33 @@
 // .overlay--disable
 
 .overlay--disable {
-  /*
+  .display(flex) !important;
   position: static;
   z-index: initial;
+  overflow: auto;
   top: auto;
   left: auto;
   bottom: auto;
   right: auto;
-  > a, > button {
-    .display(none) !important;
-  }
-  > .drop {
-    .display(block) !important;
-    position: relative;
-    > .drop_inner {
+  .overlay {
+    padding: 0;
+    width: auto;
+    min-height: auto;
+    > .overlay_inner {
       z-index: initial;
-      min-width: auto;
       &@{drop--design} {
         display: none;
       }
+      > .btn--close {
+        display: none !important;
+      }
+      > .content {
+        padding: 0 !important;
+      }
     }
   }
-  */
+  > .xt-backdrop {
+    display: none !important;
+  }
 }
 
