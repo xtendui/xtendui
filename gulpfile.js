@@ -18,14 +18,14 @@ let sourcemaps = require('gulp-sourcemaps');
 
 // compile less
 
-gulp.task('less-demos', function () {
+gulp.task('less:demos', function () {
   return gulp.src(['src/docs/demos/**/*.less', '!src/docs/demos/**/_*.less'])
     .pipe(cache('cache:less:demos'))
     .pipe(less())
     .pipe(cleanCSS())
     .pipe(gulp.dest('src/docs/demos/'));
 });
-gulp.task('less-docs', gulp.series('less-demos', function () {
+gulp.task('less:docs', gulp.series('less:demos', function () {
   return gulp.src(['src/docs/assets/styles/**/*.less', '!src/docs/assets/styles/**/_*.less'])
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(less())
@@ -33,8 +33,8 @@ gulp.task('less-docs', gulp.series('less-demos', function () {
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/styles/'));
 }));
-gulp.task('less-docs:watch', function (done) {
-  gulp.watch(['dist/styles/**/*.less', 'src/docs/assets/styles/**/*.less', 'src/docs/demos/**/*.less'], gulp.series('less', 'less-docs', 'site-build'));
+gulp.task('less:docs:watch', function (done) {
+  gulp.watch(['dist/styles/**/*.less', 'src/docs/assets/styles/**/*.less', 'src/docs/demos/**/*.less'], gulp.series('less', 'less:docs', 'site:build'));
   done();
 });
 
@@ -50,13 +50,13 @@ gulp.task('less', function () {
     .pipe(gulp.dest('dist/styles/'));
 });
 gulp.task('less:watch', function (done) {
-  gulp.watch(['dist/styles/**/*.less'], gulp.series('less', 'site-build'));
+  gulp.watch(['dist/styles/**/*.less'], gulp.series('less', 'site:build'));
   done();
 });
 
 // compile js
 
-gulp.task('js-docs', function () {
+gulp.task('js:docs', function () {
   let b = browserify({
     entries: 'src/docs/assets/scripts/theme.js',
     debug: true
@@ -76,8 +76,8 @@ gulp.task('js-docs', function () {
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/scripts/'));
 });
-gulp.task('js-docs:watch', function (done) {
-  gulp.watch(['src/scripts/**/*.js', 'src/docs/assets/scripts/theme.js'], gulp.series('js', 'js-docs', 'site-build'));
+gulp.task('js:docs:watch', function (done) {
+  gulp.watch(['src/scripts/**/*.js', 'src/docs/assets/scripts/theme.js'], gulp.series('js', 'js:docs', 'site:build'));
   done();
 });
 
@@ -103,20 +103,20 @@ gulp.task('js', function () {
     .pipe(gulp.dest('dist/scripts/'));
 });
 gulp.task('js:watch', function (done) {
-  gulp.watch(['src/scripts/**/*.js'], gulp.series('js', 'site-build'));
+  gulp.watch(['src/scripts/**/*.js'], gulp.series('js', 'site:build'));
   done();
 });
 
 // html
 
 gulp.task('content:watch', function (done) {
-  gulp.watch(['src/docs/**/*.html', 'src/docs/demos/**/*.js'], gulp.series('site-build'));
+  gulp.watch(['src/docs/**/*.html', 'src/docs/demos/**/*.js'], gulp.series('site:build'));
   done();
 });
 
 // site
 
-gulp.task('site-build', function (callback) {
+gulp.task('site:build', function (callback) {
   let jekyll = child.spawn('bundle', ['exec', 'jekyll', 'build']);
   let jekyllLogger = function (buffer) {
     buffer.toString()
@@ -128,7 +128,7 @@ gulp.task('site-build', function (callback) {
   callback();
 });
 
-gulp.task('site-serve', function (callback) {
+gulp.task('site:serve', function (callback) {
   let jekyll = child.spawn('bundle', ['exec', 'jekyll', 'serve', '--no-watch']);
   let jekyllLogger = function (buffer) {
     buffer.toString()
@@ -150,11 +150,11 @@ gulp.task('version', function () {
     .pipe(replace(/version: (.*)/, 'version: ' + version))
     .pipe(gulp.dest('./'));
 });
-gulp.task('version-changed',
-  gulp.series('version', gulp.parallel('less', 'js'), 'site-build')
+gulp.task('version:changed',
+  gulp.series('version', gulp.parallel('less', 'js'), 'site:build')
 );
 gulp.task('version:watch', function (done) {
-  gulp.watch(['package.json'], gulp.series('version-changed', 'site-build'));
+  gulp.watch(['package.json'], gulp.series('version:changed', 'site:build'));
   done();
 });
 
@@ -165,7 +165,7 @@ gulp.task('build',
 );
 
 gulp.task('build:docs',
-  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less-docs', 'js-docs'), 'site-build')
+  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less:docs', 'js:docs'), 'site:build')
 );
 
 gulp.task('watch',
@@ -173,7 +173,7 @@ gulp.task('watch',
 );
 
 gulp.task('watch:docs',
-  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less-docs', 'js-docs'), 'site-serve', gulp.parallel('version:watch', 'content:watch', 'less-docs:watch', 'js-docs:watch'))
+  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less:docs', 'js:docs'), 'site:serve', gulp.parallel('version:watch', 'content:watch', 'less:docs:watch', 'js:docs:watch'))
 );
 
 gulp.task('default', gulp.series('build'));
