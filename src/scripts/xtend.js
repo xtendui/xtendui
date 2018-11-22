@@ -635,7 +635,7 @@ Xt.animDuration = function (el, timing = null) {
 Xt.autoClose = function (el) {
   let query = '[data-xt-namespace^="drop-xt-"]';
   for (let drop of el.querySelectorAll(query)) {
-    drop.dispatchEvent(new CustomEvent('off'));
+    drop.dispatchEvent(new CustomEvent('off.xt'));
   }
 };
 

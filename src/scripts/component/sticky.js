@@ -92,21 +92,21 @@ class Sticky extends Core {
         window.addEventListener(event, stickyHandler);
       }
     }
-    window.removeEventListener('scroll.sticky', stickyHandler);
-    window.addEventListener('scroll.sticky', stickyHandler);
+    window.removeEventListener('scroll.xt.sticky', stickyHandler);
+    window.addEventListener('scroll.xt.sticky', stickyHandler);
     // listener dispatch initial only 1 time next frame
     if (!document.documentElement.dataset.xtStickyDone) {
       document.documentElement.dataset.xtStickyDone = 'true';
       window.requestAnimationFrame(function () {
-        window.dispatchEvent(new CustomEvent('scroll.sticky'));
+        window.dispatchEvent(new CustomEvent('scroll.xt.sticky'));
         delete document.documentElement.dataset.xtStickyDone;
       });
     }
     // autoClose
     let autoCloseHandler = Xt.dataStorage.put(self.object, 'autoCloseHandler' + self.namespace,
       Xt.autoClose.bind(this, self.object));
-    self.object.removeEventListener('hide.sticky', autoCloseHandler);
-    self.object.addEventListener('hide.sticky', autoCloseHandler);
+    self.object.removeEventListener('hide.xt.sticky', autoCloseHandler);
+    self.object.addEventListener('hide.xt.sticky', autoCloseHandler);
   }
 
   /**
@@ -230,13 +230,13 @@ class Sticky extends Core {
         if (!element.classList.contains('sticky-hide')) {
           element.classList.add('sticky-hide');
           // listener dispatch
-          element.dispatchEvent(new CustomEvent('hide.sticky', {detail: self.eDetail}));
+          element.dispatchEvent(new CustomEvent('hide.xt.sticky', {detail: self.eDetail}));
         }
       } else {
         if (element.classList.contains('sticky-hide')) {
           element.classList.remove('sticky-hide');
           // listener dispatch
-          element.dispatchEvent(new CustomEvent('show.sticky', {detail: self.eDetail}));
+          element.dispatchEvent(new CustomEvent('show.xt.sticky', {detail: self.eDetail}));
         }
       }
     } else {

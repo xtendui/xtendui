@@ -43,13 +43,13 @@ class Fade extends Core {
         window.addEventListener(event, fadeHandler);
       }
     }
-    window.removeEventListener('scroll.fade', fadeHandler);
-    window.addEventListener('scroll.fade', fadeHandler);
+    window.removeEventListener('scroll.xt.fade', fadeHandler);
+    window.addEventListener('scroll.xt.fade', fadeHandler);
     // listener dispatch initial only 1 time next frame
     if (!document.documentElement.dataset.xtFadeDone) {
       document.documentElement.dataset.xtFadeDone = 'true';
       window.requestAnimationFrame(function () {
-        window.dispatchEvent(new CustomEvent('scroll.fade'));
+        window.dispatchEvent(new CustomEvent('scroll.xt.fade'));
         delete document.documentElement.dataset.xtFadeDone;
       });
     }

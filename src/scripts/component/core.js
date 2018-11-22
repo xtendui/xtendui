@@ -255,8 +255,8 @@ class Core {
           el.addEventListener('touchstart', touchLinksStartHandler);
         }
       }
-      el.removeEventListener('on', onHandler);
-      el.addEventListener('on', onHandler);
+      el.removeEventListener('on.xt', onHandler);
+      el.addEventListener('on.xt', onHandler);
       // event off
       let offHandler = Xt.dataStorage.put(el, 'offHandler' + self.namespace,
         self.eventOffHandler.bind(self).bind(self, el));
@@ -267,8 +267,8 @@ class Core {
           el.addEventListener(event, offHandler);
         }
       }
-      el.removeEventListener('off', offHandler);
-      el.addEventListener('off', offHandler);
+      el.removeEventListener('off.xt', offHandler);
+      el.addEventListener('off.xt', offHandler);
     }
     // listener
     for (let tr of self.targets) {
@@ -277,10 +277,10 @@ class Core {
         // event
         let onHandler = Xt.dataStorage.get(el, 'onHandler' + self.namespace);
         let offHandler = Xt.dataStorage.get(el, 'offHandler' + self.namespace);
-        tr.removeEventListener('on', onHandler);
-        tr.addEventListener('on', onHandler);
-        tr.removeEventListener('off', offHandler);
-        tr.addEventListener('off', offHandler);
+        tr.removeEventListener('on.xt', onHandler);
+        tr.addEventListener('on.xt', onHandler);
+        tr.removeEventListener('off.xt', offHandler);
+        tr.addEventListener('off.xt', offHandler);
       }
     }
     // auto
@@ -378,8 +378,8 @@ class Core {
     // event touchReset
     let touchResetHandler = Xt.dataStorage.put(el, 'touchResetHandler' + self.namespace,
       self.eventTouchLinksResetHandler.bind(self).bind(self, el));
-    el.removeEventListener('off', touchResetHandler);
-    el.addEventListener('off', touchResetHandler);
+    el.removeEventListener('off.xt', touchResetHandler);
+    el.addEventListener('off.xt', touchResetHandler);
   }
 
   /**
@@ -1194,7 +1194,7 @@ class Core {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('on', {detail: self.eDetail}));
+    el.dispatchEvent(new CustomEvent('on.xt', {detail: self.eDetail}));
   }
 
   /**
@@ -1229,7 +1229,7 @@ class Core {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('off', {detail: self.eDetail}));
+    el.dispatchEvent(new CustomEvent('off.xt', {detail: self.eDetail}));
   }
 
   /**

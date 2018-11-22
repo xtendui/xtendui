@@ -21,7 +21,7 @@ for (let [i, el] of document.querySelectorAll('#toggle-0').entries()) {
   for (let [i, tr] of toggle.targets.entries()) {
 
     // on event
-    tr.addEventListener('on', function (e) {
+    tr.addEventListener('on.xt', function (e) {
       let target = this;
       // setup
       TweenMax.set(target, {opacity: 0});
@@ -35,7 +35,7 @@ for (let [i, el] of document.querySelectorAll('#toggle-0').entries()) {
     });
 
     // off event
-    tr.addEventListener('off', function (e) {
+    tr.addEventListener('off.xt', function (e) {
       let target = this;
       // animation
       if (!target.classList.contains('direction-inverse')) {
@@ -65,7 +65,7 @@ for (let [i, el] of document.querySelectorAll('#toggle-1').entries()) {
   for (let [i, tr] of toggle.targets.entries()) {
 
     // on event
-    tr.addEventListener('on', function (e) {
+    tr.addEventListener('on.xt', function (e) {
       let target = this;
       // setup
       TweenMax.set(target, {opacity: 0});
@@ -79,7 +79,7 @@ for (let [i, el] of document.querySelectorAll('#toggle-1').entries()) {
     });
 
     // off event
-    tr.addEventListener('off', function (e) {
+    tr.addEventListener('off.xt', function (e) {
       let target = this;
       // animation
       if (!target.classList.contains('direction-inverse')) {

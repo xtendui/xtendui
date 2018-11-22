@@ -11,7 +11,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
   for (let [i, tr] of el.querySelectorAll('.slide').entries()) {
 
     // on event
-    tr.addEventListener('on', function (e) {
+    tr.addEventListener('on.xt', function (e) {
       let target = this;
       let xMax = target.clientWidth;
       // dragging
@@ -40,7 +40,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     });
 
     // off event
-    tr.addEventListener('off', function (e) {
+    tr.addEventListener('off.xt', function (e) {
       let target = this;
       let xMax = target.clientWidth;
       // dragging
@@ -58,15 +58,15 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       }
     });
 
-    // dragStart event
-    tr.addEventListener('dragStart.slider', function (e) {
+    // dragstart event
+    tr.addEventListener('dragstart.xt.slider', function (e) {
       let target = this;
       // dragging
       target.classList.add('dragging');
     });
 
     // drag event
-    tr.addEventListener('drag.slider', function (e) {
+    tr.addEventListener('drag.xt.slider', function (e) {
       let target = this;
       let self = e.detail.object;
       let eInit = self.detail.eInit;
@@ -82,8 +82,8 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       target.children[0].style.transform = 'translateX(' + -xDist + 'px)';
     });
 
-    // dragEnd event
-    tr.addEventListener('dragEnd.slider', function (e) {
+    // dragend event
+    tr.addEventListener('dragend.xt.slider', function (e) {
       let target = this;
       let self = e.detail.object;
       let eInit = self.detail.eInit;
@@ -103,8 +103,8 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         }
         // reset after animation done
         let timing = Xt.animDuration(target);
-        clearTimeout(target.dataset.xtDragEndTimeout);
-        target.dataset.xtDragEndTimeout = setTimeout(function () {
+        clearTimeout(target.dataset.xtdragendTimeout);
+        target.dataset.xtdragendTimeout = setTimeout(function () {
           target.style.opacity = '0';
           target.style.transform = 'translateX(' + 0 + 'px)';
           target.children[0].style.transform = 'translateX(' + 0 + 'px)';

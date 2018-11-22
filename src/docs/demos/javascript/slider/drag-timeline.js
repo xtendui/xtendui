@@ -24,7 +24,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
   for (let [i, tr] of el.querySelectorAll('.slide').entries()) {
 
     // on event
-    tr.addEventListener('on', function (e) {
+    tr.addEventListener('on.xt', function (e) {
       let target = this;
       let xMax = target.clientWidth;
       // content
@@ -82,7 +82,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     });
 
     // off event
-    tr.addEventListener('off', function (e) {
+    tr.addEventListener('off.xt', function (e) {
       let target = this;
       let xMax = target.clientWidth;
       // complete drag
@@ -106,7 +106,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     });
 
     // drag event
-    tr.addEventListener('drag.slider', function (e) {
+    tr.addEventListener('drag.xt.slider', function (e) {
       let target = this;
       let self = e.detail.object;
       let eInit = self.detail.eInit;
@@ -133,8 +133,8 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       }
     });
 
-    // dragEnd event
-    tr.addEventListener('dragEnd.slider', function (e) {
+    // dragend event
+    tr.addEventListener('dragend.xt.slider', function (e) {
       let target = this;
       let self = e.detail.object;
       let eInit = self.detail.eInit;

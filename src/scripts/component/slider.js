@@ -37,12 +37,12 @@ class Slider extends Core {
     if (options.drag) {
       for (let tr of self.targets) {
         // event on
-        let dragStartHandler = Xt.dataStorage.put(tr, 'dragStartHandler' + self.namespace,
-          self.eventDragStartHandler.bind(self).bind(self, tr));
+        let dragstartHandler = Xt.dataStorage.put(tr, 'dragstartHandler' + self.namespace,
+          self.eventdragstartHandler.bind(self).bind(self, tr));
         let eventsOn = ['mousedown', 'touchstart'];
         for (let event of eventsOn) {
-          tr.removeEventListener(event, dragStartHandler);
-          tr.addEventListener(event, dragStartHandler);
+          tr.removeEventListener(event, dragstartHandler);
+          tr.addEventListener(event, dragstartHandler);
         }
       }
     }
@@ -53,7 +53,7 @@ class Slider extends Core {
    * @param {Node|HTMLElement} target
    * @param {Event} e
    */
-  eventDragStartHandler(target, e) {
+  eventdragstartHandler(target, e) {
     let self = this;
     let options = self.options;
     // handler
@@ -65,22 +65,22 @@ class Slider extends Core {
         let eventLimit = self.container.querySelectorAll('.event-limit');
         if (eventLimit.length) {
           if (Xt.checkOutside(e, eventLimit)) {
-            self.eventDragStart(target, e);
+            self.eventdragstart(target, e);
           }
         } else {
-          self.eventDragStart(target, e);
+          self.eventdragstart(target, e);
         }
         // auto
         if (options.autoPause) {
           self.autoPause();
         }
         // event off
-        let dragEndHandler = Xt.dataStorage.put(window, 'dragEndHandler' + self.namespace,
-          self.eventDragEndHandler.bind(self).bind(self, target));
+        let dragendHandler = Xt.dataStorage.put(window, 'dragendHandler' + self.namespace,
+          self.eventdragendHandler.bind(self).bind(self, target));
         let eventsOff = ['mouseup', 'touchend'];
         for (let event of eventsOff) {
-          window.removeEventListener(event, dragEndHandler);
-          window.addEventListener(event, dragEndHandler);
+          window.removeEventListener(event, dragendHandler);
+          window.addEventListener(event, dragendHandler);
         }
       }
     }
@@ -91,7 +91,7 @@ class Slider extends Core {
    * @param {Node|HTMLElement} target
    * @param {Event} e
    */
-  eventDragEndHandler(target, e) {
+  eventdragendHandler(target, e) {
     let self = this;
     let options = self.options;
     // handler
@@ -100,20 +100,20 @@ class Slider extends Core {
       let eventLimit = self.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
         if (Xt.checkOutside(e, eventLimit)) {
-          self.eventDragEnd(target, e);
+          self.eventdragend(target, e);
         }
       } else {
-        self.eventDragEnd(target, e);
+        self.eventdragend(target, e);
       }
       // auto
       if (options.autoPause) {
         self.autoPause();
       }
       // event off
-      let dragEndHandler = Xt.dataStorage.get(window, 'dragEndHandler' + self.namespace);
+      let dragendHandler = Xt.dataStorage.get(window, 'dragendHandler' + self.namespace);
       let eventsOff = ['mouseup', 'touchend'];
       for (let event of eventsOff) {
-        window.removeEventListener(event, dragEndHandler);
+        window.removeEventListener(event, dragendHandler);
       }
     }
   }
@@ -123,7 +123,7 @@ class Slider extends Core {
    * @param {Node|HTMLElement} target
    * @param {Event} e
    */
-  eventDragStart(target, e) {
+  eventdragstart(target, e) {
     let self = this;
     // save event
     self.detail.eCurrent = e;
@@ -138,7 +138,7 @@ class Slider extends Core {
       target.addEventListener(event, dragHandler);
     }
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('dragStart.slider', {detail: self.eDetail}));
+    target.dispatchEvent(new CustomEvent('dragstart.xt.slider', {detail: self.eDetail}));
   }
 
   /**
@@ -146,7 +146,7 @@ class Slider extends Core {
    * @param {Node|HTMLElement} target
    * @param {Event} e
    */
-  eventDragEnd(target, e) {
+  eventdragend(target, e) {
     let self = this;
     // save event
     self.detail.eCurrent = e;
@@ -159,7 +159,7 @@ class Slider extends Core {
       target.removeEventListener(event, dragHandler);
     }
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('dragEnd.slider', {detail: self.eDetail}));
+    target.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
   }
 
   /**
@@ -175,7 +175,7 @@ class Slider extends Core {
     // eDetail
     self.eDetailSet(e);
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('drag.slider', {detail: self.eDetail}));
+    target.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: self.eDetail}));
     // auto
     if (options.autoPause) {
       self.autoPause();

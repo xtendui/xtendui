@@ -241,14 +241,14 @@ const populateDemo = function (container, i) {
         initIframe();
       }
       // listener
-      iframe.parentElement.addEventListener('on', function (e) {
+      iframe.parentElement.addEventListener('on.xt', function (e) {
         if (!item.classList.contains('populated')) {
           initIframe();
         } else {
           iframe.contentDocument.location.reload(true);
         }
       });
-      iframe.parentElement.addEventListener('off', function (e) {
+      iframe.parentElement.addEventListener('off.xt', function (e) {
         iframe.classList.remove('show');
       });
     } else {
