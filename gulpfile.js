@@ -159,7 +159,7 @@ gulp.task('version:watch', function (done) {
 // scripts
 
 gulp.task('build',
-  gulp.series('version', gulp.parallel('less', 'js'), 'site-build')
+  gulp.series('version', gulp.parallel('less', 'js'))
 );
 
 gulp.task('build:docs',
@@ -167,7 +167,7 @@ gulp.task('build:docs',
 );
 
 gulp.task('watch',
-  gulp.series('version', gulp.parallel('less', 'js'), 'site-serve', gulp.parallel('version:watch', 'content:watch', 'less:watch', 'js:watch'))
+  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('version:watch', 'content:watch', 'less:watch', 'js:watch'))
 );
 
 gulp.task('watch:docs',
