@@ -144,7 +144,7 @@ Xt.btnMerge = {
 
   /**
    * init to pass .hover and .active to .btn inside Element
-   * @param {Node|HTMLElement} el Element
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
    */
   init: function (el) {
     if (!el.dataset.xtBtnMergeDone) {
@@ -216,7 +216,7 @@ Xt.dataStorage = {
 
   /**
    * put key/obj pair on element's map
-   * @param {Node|HTMLElement|Window} el
+   * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {String} key
    * @param {Object|Function} obj
    * @returns {Object|Function}
@@ -237,7 +237,7 @@ Xt.dataStorage = {
 
   /**
    * get obj from key on element's map
-   * @param {Node|HTMLElement|Window} el
+   * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {String} key
    * @returns {Object|Function}
    */
@@ -252,7 +252,7 @@ Xt.dataStorage = {
 
   /**
    * has key on element's map
-   * @param {Node|HTMLElement|Window} el
+   * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {String} key
    * @returns {Boolean}
    */
@@ -263,7 +263,7 @@ Xt.dataStorage = {
 
   /**
    * remove element's map key
-   * @param {Node|HTMLElement|Window} el
+   * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {String} key
    * @returns {Boolean}
    */
@@ -300,7 +300,7 @@ Xt.scrollbar = {
 
   /**
    * add scrollbar currents
-   * @param {Node|HTMLElement} el Elements to be deactivated
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
    */
   add: function (el) {
     Xt.scrollbar.currents.push(el);
@@ -308,7 +308,7 @@ Xt.scrollbar = {
 
   /**
    * remove scrollbar currents
-   * @param {Node|HTMLElement} el Elements to be deactivated
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
    */
   remove: function (el) {
     Xt.scrollbar.currents = Xt.scrollbar.currents.filter(x => x !== el);
@@ -411,7 +411,7 @@ Xt.focusLimit = {
 
   /**
    * activate focusLimit to an element
-   * @param {Node|HTMLElement} el Element
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
    */
   on: function (el) {
     // @FIX Xt.focus when clicking and not used tab before
@@ -440,8 +440,8 @@ Xt.focusLimit = {
   /**
    * limit even on focus when activated
    * @param {NodeList|Array} focusable Focusable elements
-   * @param {Node|HTMLElement} first First focusable element
-   * @param {Node|HTMLElement} last Last focusable element
+   * @param {Node|HTMLElement|EventTarget|Window} first First focusable element
+   * @param {Node|HTMLElement|EventTarget|Window} last Last focusable element
    * @param {Event} e Event
    */
   limit: function (focusable, first, last, e) {
@@ -467,7 +467,7 @@ Xt.focusLimit = {
 
 /**
  * Check if event target is inside elements
- * @param {Node|HTMLElement} element Element to check target
+ * @param {Node|HTMLElement|EventTarget|Window} element Element to check target
  * @param {NodeList|Array} targets Elements to check inside
  * @return {Boolean}
  */
@@ -570,7 +570,7 @@ Xt.arrSingle = function (el) {
 /**
  * Create HTML elements from html string
  * @param {String} str Html string (only 1 root html tag)
- * @return {Node|HTMLElement} HTML elements
+ * @return {Node|HTMLElement|EventTarget|Window} HTML elements
  */
 Xt.createElement = function (str) {
   let div = document.createElement('div');
@@ -580,7 +580,7 @@ Xt.createElement = function (str) {
 
 /**
  * Query element's parents
- * @param {Node|HTMLElement} el Child element
+ * @param {Node|HTMLElement|EventTarget|Window} el Child element
  * @param {String} query Query parents
  * @return {Array} Parents elements by query
  */
@@ -594,7 +594,7 @@ Xt.parents = function (el, query) {
 
 /**
  * get transition or animation duration
- * @param {Node|HTMLElement} el Element animating
+ * @param {Node|HTMLElement|EventTarget|Window} el Element animating
  * @param {Number} timing Force duration
  * @returns {Number} Time in milliseconds
  */
@@ -614,7 +614,7 @@ Xt.animDuration = function (el, timing = null) {
 
 /**
  * autoClose inside Element
- * @param {Node|HTMLElement} el Element container
+ * @param {Node|HTMLElement|EventTarget|Window} el Element container
  */
 Xt.autoClose = function (el) {
   let query = '[data-xt-namespace^="drop-xt-"]';

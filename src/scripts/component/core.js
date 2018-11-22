@@ -14,7 +14,7 @@ class Core {
 
   /**
    * constructor
-   * @param {Node|HTMLElement} object Base node
+   * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Object} jsOptions User options
    * @constructor
    */
@@ -289,7 +289,7 @@ class Core {
 
   /**
    * element on handler
-   * @param {Node|HTMLElement} element
+   * @param {Node|HTMLElement|EventTarget|Window} element
    * @param {Event} e
    */
   eventOnHandler(element, e) {
@@ -326,7 +326,7 @@ class Core {
 
   /**
    * element off handler
-   * @param {Node|HTMLElement} element
+   * @param {Node|HTMLElement|EventTarget|Window} element
    * @param {Event} e
    */
   eventOffHandler(element, e) {
@@ -357,7 +357,7 @@ class Core {
 
   /**
    * init prevents click on touch until clicked two times
-   * @param {Node|HTMLElement} el
+   * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
   eventTouchLinksStartHandler(el, e) {
@@ -376,7 +376,7 @@ class Core {
 
   /**
    * prevents click on touch until clicked two times
-   * @param {Node|HTMLElement} el
+   * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
   eventTouchLinksHandler(el, e) {
@@ -390,7 +390,7 @@ class Core {
 
   /**
    * reset prevents click on touch until clicked two times
-   * @param {Node|HTMLElement} el
+   * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
   eventTouchLinksResetHandler(el, e) {
@@ -488,7 +488,7 @@ class Core {
 
   /**
    * choose which elements to activate/deactivate (based on xtend mode and containers)
-   * @param {Node|HTMLElement} element Element that triggered interaction
+   * @param {Node|HTMLElement|EventTarget|Window} element Element that triggered interaction
    * @returns {Object} object.all and object.single
    */
   getElements(element) {
@@ -519,7 +519,7 @@ class Core {
 
   /**
    * choose which targets to activate/deactivate (based on xtend mode and containers)
-   * @param {Node|HTMLElement} element Element that triggered interaction
+   * @param {Node|HTMLElement|EventTarget|Window} element Element that triggered interaction
    * @returns {Array}
    */
   getTargets(element) {
@@ -551,7 +551,7 @@ class Core {
 
   /**
    * choose which elements to activate/deactivate from target (based on xtend mode and containers)
-   * @param {Node|HTMLElement} target Target to trigger interaction on
+   * @param {Node|HTMLElement|EventTarget|Window} target Target to trigger interaction on
    * @returns {Array}
    */
   getElementsFromTarget(target) {
@@ -626,7 +626,7 @@ class Core {
 
   /**
    * add current based on namespace (so shared between Xt objects)
-   * @param {Node|HTMLElement} element To be added
+   * @param {Node|HTMLElement|EventTarget|Window} element To be added
    */
   addCurrent(element) {
     let self = this;
@@ -637,7 +637,7 @@ class Core {
 
   /**
    * remove currents based on namespace (so shared between Xt objects)
-   * @param {Node|HTMLElement} element To be removed
+   * @param {Node|HTMLElement|EventTarget|Window} element To be removed
    */
   removeCurrent(element) {
     let self = this;
@@ -647,7 +647,7 @@ class Core {
 
   /**
    * if element is in current (so shared between Xt objects)
-   * @param {Node|HTMLElement} element To be checked
+   * @param {Node|HTMLElement|EventTarget|Window} element To be checked
    */
   hasCurrent(element) {
     let self = this;
@@ -657,7 +657,7 @@ class Core {
 
   /**
    * check element on
-   * @param {Node|HTMLElement} element To be checked
+   * @param {Node|HTMLElement|EventTarget|Window} element To be checked
    */
   checkOn(element) {
     let self = this;
@@ -668,7 +668,7 @@ class Core {
 
   /**
    * check element off
-   * @param {Node|HTMLElement} element To be checked
+   * @param {Node|HTMLElement|EventTarget|Window} element To be checked
    */
   checkOff(element) {
     let self = this;
@@ -695,7 +695,7 @@ class Core {
 
   /**
    * set index and direction
-   * @param {Node|HTMLElement} element Current element
+   * @param {Node|HTMLElement|EventTarget|Window} element Current element
    */
   setIndexAndDirection(element) {
     let self = this;
@@ -715,7 +715,7 @@ class Core {
 
   /**
    * set index and direction
-   * @param {Node|HTMLElement} el Elements to be deactivated
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
    */
   decorateDirection(el) {
     let self = this;
@@ -745,7 +745,7 @@ class Core {
 
   /**
    * element on
-   * @param {Node|HTMLElement} element To be activated
+   * @param {Node|HTMLElement|EventTarget|Window} element To be activated
    * @param {Event} e
    */
   eventOn(element, e = null) {
@@ -811,7 +811,7 @@ class Core {
 
   /**
    * element off
-   * @param {Node|HTMLElement} element To be deactivated
+   * @param {Node|HTMLElement|EventTarget|Window} element To be deactivated
    * @param {Event} e
    */
   eventOff(element, e = null) {
@@ -1139,7 +1139,7 @@ class Core {
   /**
    * queue on start
    * @param {Object} obj Queue object
-   * @param {Node|HTMLElement} el Elements to be deactivated
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
    * @param {String} type Type of elements
    * @param {Boolean} skipQueue If skip queue
    */
@@ -1200,7 +1200,7 @@ class Core {
   /**
    * queue off start
    * @param {Object} obj Queue object
-   * @param {Node|HTMLElement} el Elements to be deactivated
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
    * @param {String} type Type of elements
    * @param {Boolean} skipQueue If skip queue
    */
@@ -1235,7 +1235,7 @@ class Core {
   /**
    * queue on anim
    * @param {Object} obj Queue object
-   * @param {Node|HTMLElement} el Element to be animated
+   * @param {Node|HTMLElement|EventTarget|Window} el Element to be animated
    * @param {String} type Type of element
    */
   queueOnAnim(obj, el, type) {
@@ -1256,7 +1256,7 @@ class Core {
   /**
    * queue off anim
    * @param {Object} obj Queue object
-   * @param {Node|HTMLElement} el Element to be animated
+   * @param {Node|HTMLElement|EventTarget|Window} el Element to be animated
    * @param {String} type Type of element
    */
   queueOffAnim(obj, el, type) {
@@ -1277,7 +1277,7 @@ class Core {
   /**
    * queue on anim done
    * @param {Object} obj Queue object
-   * @param {Node|HTMLElement} el Element to be animated
+   * @param {Node|HTMLElement|EventTarget|Window} el Element to be animated
    * @param {String} type Type of element
    * @param {Boolean} skipQueue If skip queue
    */
@@ -1300,7 +1300,7 @@ class Core {
   /**
    * queue off anim done
    * @param {Object} obj Queue object
-   * @param {Node|HTMLElement} el Element to be animated
+   * @param {Node|HTMLElement|EventTarget|Window} el Element to be animated
    * @param {String} type Type of element
    * @param {Boolean} skipQueue If skip queue
    */
@@ -1393,7 +1393,7 @@ class Core {
 
   /**
    * center position on activation
-   * @param {Node|HTMLElement} el Element
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
    */
   specialCenter(el) {
     let self = this;
@@ -1407,7 +1407,7 @@ class Core {
 
   /**
    * middle position on activation
-   * @param {Node|HTMLElement} el Element
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
    */
   specialMiddle(el) {
     let self = this;
@@ -1421,7 +1421,7 @@ class Core {
 
   /**
    * open collapse on activation
-   * @param {Node|HTMLElement} el Element
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
    */
   specialCollapseOn(el) {
     if (el.classList.contains('collapse--height')) {
@@ -1470,7 +1470,7 @@ class Core {
 
   /**
    * close collapse on deactivation
-   * @param {Node|HTMLElement} el Element
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
    */
   specialCollapseOff(el) {
     if (el.classList.contains('collapse--height')) {
@@ -1509,7 +1509,7 @@ class Core {
 
   /**
    * reset collapse
-   * @param {Node|HTMLElement} el Element
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
    */
   specialCollapseReset(el) {
     if (el.classList.contains('collapse--height')) {
@@ -1522,8 +1522,8 @@ class Core {
 
   /**
    * add close events on element
-   * @param {Node|HTMLElement} el Element
-   * @param {Node|HTMLElement} single Element to toggle
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
+   * @param {Node|HTMLElement|EventTarget|Window} single Element to toggle
    */
   specialCloseOn(el, single) {
     let self = this;
@@ -1556,7 +1556,7 @@ class Core {
 
   /**
    * remove close events on element
-   * @param {Node|HTMLElement} el Element
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
    */
   specialCloseOff(el) {
     let self = this;
@@ -1581,8 +1581,8 @@ class Core {
 
   /**
    * element on handler
-   * @param {Node|HTMLElement} checkEl
-   * @param {Node|HTMLElement} single
+   * @param {Node|HTMLElement|EventTarget|Window} checkEl
+   * @param {Node|HTMLElement|EventTarget|Window} single
    * @param {Event} e
    */
   eventSpecialCloseInsideHandler(checkEl, single, e) {
@@ -1599,8 +1599,8 @@ class Core {
 
   /**
    * element off handler
-   * @param {Node|HTMLElement} checkEl
-   * @param {Node|HTMLElement} single
+   * @param {Node|HTMLElement|EventTarget|Window} checkEl
+   * @param {Node|HTMLElement|EventTarget|Window} single
    * @param {Event} e
    */
   eventSpecialCloseOutsideHandler(checkEl, single, e) {

@@ -15,7 +15,7 @@ class Sticky extends Core {
 
   /**
    * constructor
-   * @param {Node|HTMLElement} object Base node
+   * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Object} jsOptions User options
    * @constructor
    */
@@ -127,7 +127,7 @@ class Sticky extends Core {
 
   /**
    * window scroll
-   * @param {Node|HTMLElement} element To be activated or deactivated
+   * @param {Node|HTMLElement|EventTarget|Window} element To be activated or deactivated
    * @param {Event} e
    */
   eventScroll(element, e) {

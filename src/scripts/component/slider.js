@@ -15,7 +15,7 @@ class Slider extends Core {
 
   /**
    * constructor
-   * @param {Node|HTMLElement} object Base node
+   * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Object} jsOptions User options
    * @constructor
    */
@@ -50,7 +50,7 @@ class Slider extends Core {
 
   /**
    * element drag on handler
-   * @param {Node|HTMLElement} target
+   * @param {Node|HTMLElement|EventTarget|Window} target
    * @param {Event} e
    */
   eventdragstartHandler(target, e) {
@@ -88,7 +88,7 @@ class Slider extends Core {
 
   /**
    * element drag off handler
-   * @param {Node|HTMLElement} target
+   * @param {Node|HTMLElement|EventTarget|Window} target
    * @param {Event} e
    */
   eventdragendHandler(target, e) {
@@ -120,7 +120,7 @@ class Slider extends Core {
 
   /**
    * element drag on
-   * @param {Node|HTMLElement} target
+   * @param {Node|HTMLElement|EventTarget|Window} target
    * @param {Event} e
    */
   eventdragstart(target, e) {
@@ -143,7 +143,7 @@ class Slider extends Core {
 
   /**
    * element drag off
-   * @param {Node|HTMLElement} target
+   * @param {Node|HTMLElement|EventTarget|Window} target
    * @param {Event} e
    */
   eventdragend(target, e) {
@@ -164,7 +164,7 @@ class Slider extends Core {
 
   /**
    * element drag handler
-   * @param {Node|HTMLElement} target
+   * @param {Node|HTMLElement|EventTarget|Window} target
    * @param {Event} e
    */
   eventDragHandler(target, e) {

@@ -15,7 +15,7 @@ class Fade extends Core {
 
   /**
    * constructor
-   * @param {Node|HTMLElement} object Base node
+   * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Object} jsOptions User options
    * @constructor
    */
