@@ -41,7 +41,7 @@ for(let el of document.querySelectorAll('.site-article > h2, .site-article > h3'
   id += el.textContent.replace(/\s+/g, '-').toLowerCase();
   // make-anchor
   el.setAttribute('id', id);
-  el.innerHTML = '<a href="#' + id + '" tabindex="-1">' + el.innerHTML + '</a>';
+  el.innerHTML = '<a href="#' + id + '" aria-label="Anchor to ' + el.textContent + '" tabindex="-1">' + el.innerHTML + '</a>';
   el.classList.add('make-anchor');
   el.append(Xt.createElement('<span class="site-article-anchor"><div class="btn"><span class="icon-link" aria-hidden="true"></span></div></span>'));
 }
@@ -54,11 +54,11 @@ for(let el of document.querySelectorAll('.site-aside-text > .btn:not(.different)
     if (element.tagName === 'H2') {
       let appendItem = Xt.createElement('<div class="site-aside-sub-container"></div>');
       container.append(appendItem);
-      appendItem.append(Xt.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-nodesign btn-site-aside-sub">' + element.textContent + '</a>'));
-      appendItem.append(Xt.createElement('<div class="site-aside-subsub collapse-height"></div>'));
+      appendItem.append(Xt.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn--nodesign btn--site-aside-sub" aria-label="Anchor to ' + element.textContent + '">' + element.textContent + '</a>'));
+      appendItem.append(Xt.createElement('<div class="site-aside-subsub collapse--height"></div>'));
     } else if (element.tagName === 'H3') {
       let subs = container.querySelectorAll('.site-aside-subsub');
-      subs[subs.length - 1].append(Xt.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn-nodesign btn-site-aside-subsub">' + element.textContent + '</a>'));
+      subs[subs.length - 1].append(Xt.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn--nodesign btn--site-aside-subsub" aria-label="Anchor to ' + element.textContent + '">' + element.textContent + '</a>'));
     }
   }
 }
@@ -103,10 +103,10 @@ const activateAsideScroll = function (els, scrollTop) {
 
 window.addEventListener('scroll', function (e) {
   let scrollTop = document.documentElement.scrollTop;
-  let sub = Array.from(document.querySelectorAll('.btn-site-aside-sub'));
+  let sub = Array.from(document.querySelectorAll('.btn--site-aside-sub'));
   sub = sub.filter(x => !Xt.parents(x, '.xt-clone').length); // filter out parent
   activateAsideScroll(sub, scrollTop);
-  let subsub = Array.from(document.querySelectorAll('.btn-site-aside-sub + .site-aside-subsub .btn-site-aside-subsub'));
+  let subsub = Array.from(document.querySelectorAll('.btn--site-aside-sub + .site-aside-subsub .btn--site-aside-subsub'));
   subsub = subsub.filter(x => !Xt.parents(x, '.xt-clone').length); // filter out parent
   activateAsideScroll(subsub, scrollTop);
 });
@@ -172,8 +172,8 @@ const populateDemo = function (container, i) {
   let items = container.querySelectorAll('.demo-item');
   // multiple elements
   container.prepend(Xt.createElement('<div class="demo-tabs"><div class="demo-tabs-left"></div><div class="demo-tabs-right"></div></div>'));
-  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn-secondary-empty btn-tiny btn-narrow btn-show-code" data-toggle="tooltip" data-placement="top" title="Show code"><span class="icon-code icon-big"></span></button>'));
-  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn-secondary-empty btn-tiny btn-narrow btn-open-full" data-toggle="tooltip" data-placement="top" title="Open full"><span class="icon-maximize icon-big"></span></button>'));
+  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny btn--narrow btn--show-code" data-toggle="tooltip" data-placement="top" aria-label="Show code"><span class="icon-code icon--big"></span></button>'));
+  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny btn--narrow btn--open-full" data-toggle="tooltip" data-placement="top" aria-label="Open full"><span class="icon-maximize icon--big"></span></button>'));
   /*
   append.addEventListener('click', function (e) {
     console.log();
@@ -198,7 +198,7 @@ const populateDemo = function (container, i) {
         name = 'demo #' + k;
       }
     }
-    let btn = container.querySelectorAll('.demo-tabs-left')[0].append(Xt.createElement('<button type="button" class="btn btn-secondary-empty btn-tiny">' + name + '</button>'));
+    let btn = container.querySelectorAll('.demo-tabs-left')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny">' + name + '</button>'));
     btn = container.querySelectorAll('.demo-tabs-left .btn')[k];
     // iframe append
     let src = item.getAttribute('data-iframe');
@@ -207,16 +207,16 @@ const populateDemo = function (container, i) {
       item.append(Xt.createElement('<iframe data-src="' + src + '" frameborder="0" name="' + id + '"></iframe>'));
     }
     // tabs
-    item.prepend(Xt.createElement('<div class="demo-code collapse-height"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn-secondary-empty btn-tiny btn-clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>'));
+    item.prepend(Xt.createElement('<div class="demo-code collapse--height"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn--secondary-empty btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>'));
     // collapse code
     let demoId = 'demo-' + i + k;
     container.setAttribute('id', demoId);
-    new Xt.Toggle(container.querySelectorAll('.btn-show-code')[0], {
+    new Xt.Toggle(container.querySelectorAll('.btn--show-code')[0], {
       "targets": "#" + demoId,
       "targetsInner": ".demo-code"
     });
     // https://github.com/zenorocha/clipboard.js/
-    let clipboard = new Clipboard('.btn-clipboard', {
+    let clipboard = new Clipboard('.btn--clipboard', {
       target: function (trigger) {
         return Xt.parents(trigger, '.demo')[0].querySelectorAll('.demo-item.active .demo-code-body-item.active .hljs')[0];
       }
@@ -241,14 +241,14 @@ const populateDemo = function (container, i) {
         initIframe();
       }
       // listener
-      iframe.parentElement.addEventListener('on', function (e) {
+      iframe.parentElement.addEventListener('on.xt', function (e) {
         if (!item.classList.contains('populated')) {
           initIframe();
         } else {
           iframe.contentDocument.location.reload(true);
         }
       });
-      iframe.parentElement.addEventListener('off', function (e) {
+      iframe.parentElement.addEventListener('off.xt', function (e) {
         iframe.classList.remove('show');
       });
     } else {
@@ -344,7 +344,7 @@ const populateSources = function (item, element, z) {
   let lang = element.getAttribute('data-lang');
   // populate tabs
   item.querySelectorAll('.demo-code-body')[0].append(Xt.createElement('<div class="demo-code-body-item"><pre><code></code></pre></div>'));
-  item.querySelectorAll('.demo-code-tabs-left')[0].append(Xt.createElement('<button type="button" class="btn btn-secondary-empty btn-tiny">' + lang + '</button>'));
+  item.querySelectorAll('.demo-code-tabs-left')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny">' + lang + '</button>'));
   // format code
   let codeInside = item.querySelectorAll('.demo-code-body .demo-code-body-item')[z].querySelectorAll('pre code')[0];
   if (!codeInside.classList.contains('hljs')) {
@@ -389,7 +389,7 @@ for(let [i, el] of document.querySelectorAll('.demo').entries()) {
 // .demo-cols
 
 for(let element of document.querySelectorAll('.demo-cols')) {
-  for(let [i, el] of element.querySelectorAll('.col, .col-custom').entries()) {
+  for(let [i, el] of element.querySelectorAll('.col, .col--custom').entries()) {
     el.setAttribute('data-index', i);
   }
 }
@@ -397,7 +397,7 @@ for(let element of document.querySelectorAll('.demo-cols')) {
 // .demo-cols-nested
 
 for(let element of document.querySelectorAll('.demo-cols-nested .col')) {
-  for(let [i, el] of element.querySelectorAll('.col, .col-custom').entries()) {
+  for(let [i, el] of element.querySelectorAll('.col, .col--custom').entries()) {
     el.setAttribute('data-index', i);
   }
 }
