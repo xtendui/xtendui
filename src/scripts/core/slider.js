@@ -38,9 +38,9 @@ class Slider extends Core {
       for (let tr of self.targets) {
         // event on
         let dragstartHandler = Xt.dataStorage.put(tr, 'dragstartHandler' + self.namespace,
-          self.eventdragstartHandler.bind(self).bind(self, tr));
-        let eventsOn = ['mousedown', 'touchstart'];
-        for (let event of eventsOn) {
+          self.eventDragstartHandler.bind(self).bind(self, tr));
+        let events = ['mousedown', 'touchstart'];
+        for (let event of events) {
           tr.removeEventListener(event, dragstartHandler);
           tr.addEventListener(event, dragstartHandler);
         }
@@ -53,7 +53,7 @@ class Slider extends Core {
    * @param {Node|HTMLElement|EventTarget|Window} target
    * @param {Event} e
    */
-  eventdragstartHandler(target, e) {
+  eventDragstartHandler(target, e) {
     let self = this;
     let options = self.options;
     // handler
@@ -65,20 +65,20 @@ class Slider extends Core {
         let eventLimit = self.container.querySelectorAll('.event-limit');
         if (eventLimit.length) {
           if (!Xt.checkNested(e.target, eventLimit)) {
-            self.eventdragstart(target, e);
+            self.eventDragstart(target, e);
           }
         } else {
-          self.eventdragstart(target, e);
+          self.eventDragstart(target, e);
         }
         // auto
         if (options.autoPause) {
           self.autoPause();
         }
         // event off
-        let dragendHandler = Xt.dataStorage.put(window, 'dragendHandler' + self.namespace,
-          self.eventdragendHandler.bind(self).bind(self, target));
-        let eventsOff = ['mouseup', 'touchend'];
-        for (let event of eventsOff) {
+        let dragendHandler = Xt.dataStorage.put(target, 'dragendHandler' + self.namespace,
+          self.eventDragendHandler.bind(self).bind(self, target));
+        let events = ['mouseup', 'touchend'];
+        for (let event of events) {
           window.removeEventListener(event, dragendHandler);
           window.addEventListener(event, dragendHandler);
         }
@@ -91,7 +91,7 @@ class Slider extends Core {
    * @param {Node|HTMLElement|EventTarget|Window} target
    * @param {Event} e
    */
-  eventdragendHandler(target, e) {
+  eventDragendHandler(target, e) {
     let self = this;
     let options = self.options;
     // handler
@@ -100,19 +100,19 @@ class Slider extends Core {
       let eventLimit = self.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
         if (!Xt.checkNested(e.target, eventLimit)) {
-          self.eventdragend(target, e);
+          self.eventDragend(target, e);
         }
       } else {
-        self.eventdragend(target, e);
+        self.eventDragend(target, e);
       }
       // auto
       if (options.autoPause) {
         self.autoPause();
       }
       // event off
-      let dragendHandler = Xt.dataStorage.get(window, 'dragendHandler' + self.namespace);
-      let eventsOff = ['mouseup', 'touchend'];
-      for (let event of eventsOff) {
+      let dragendHandler = Xt.dataStorage.get(target, 'dragendHandler' + self.namespace);
+      let events = ['mouseup', 'touchend'];
+      for (let event of events) {
         window.removeEventListener(event, dragendHandler);
       }
     }
@@ -123,7 +123,7 @@ class Slider extends Core {
    * @param {Node|HTMLElement|EventTarget|Window} target
    * @param {Event} e
    */
-  eventdragstart(target, e) {
+  eventDragstart(target, e) {
     let self = this;
     // save event
     self.detail.eCurrent = e;
@@ -146,7 +146,7 @@ class Slider extends Core {
    * @param {Node|HTMLElement|EventTarget|Window} target
    * @param {Event} e
    */
-  eventdragend(target, e) {
+  eventDragend(target, e) {
     let self = this;
     // save event
     self.detail.eCurrent = e;
