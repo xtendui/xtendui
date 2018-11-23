@@ -52,7 +52,6 @@ class Core {
       self.detail = {};
       self.detail.queueOn = [];
       self.detail.queueOff = [];
-      self.detail.appendOrigin = null;
       // init
       self.initSetup();
       self.initScope();
@@ -1159,7 +1158,10 @@ class Core {
       // appendTo
       if (options.appendTo) {
         let appendToTarget = document.querySelectorAll(options.appendTo);
-        self.detail.appendOrigin = el.parentElement;
+        let appendOrigin = document.querySelectorAll('[data-xt-origin=' + self.namespace + ']');
+        if (!appendOrigin.length) {
+          el.before(Xt.createElement('<div class="xt-ignore" data-xt-origin=' + self.namespace + '></div>'));
+        }
         appendToTarget[0].appendChild(el);
       }
     }
@@ -1313,7 +1315,8 @@ class Core {
     if (type === 'targets') {
       // appendTo
       if (options.appendTo) {
-        self.detail.appendOrigin.appendChild(el);
+        let appendOrigin = document.querySelectorAll('[data-xt-origin=' + self.namespace + ']');
+        appendOrigin[0].before(el);
       }
     }
     // aria
