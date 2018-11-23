@@ -18,7 +18,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       target.classList.add('dragging');
       // setup drag position
       target.style.opacity = '0';
-      if (!target.classList.contains('direction-inverse')) {
+      if (!target.classList.contains('xt-inverse')) {
         target.style.transform = 'translateX(' + xMax + 'px)';
         target.children[0].style.transform = 'translateX(' + (-xMax) + 'px)';
       } else {
@@ -47,7 +47,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       target.classList.remove('dragging');
       // complete drag
       window.cancelAnimationFrame(parseFloat(target.dataset.xtDragResetFrame));
-      if (!target.classList.contains('direction-inverse')) {
+      if (!target.classList.contains('xt-inverse')) {
         target.style.opacity = '0';
         target.style.transform = 'translateX(' + -xMax + 'px)';
         target.children[0].style.transform = 'translateX(' + xMax + 'px)';

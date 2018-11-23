@@ -25,7 +25,7 @@ for (let [i, el] of document.querySelectorAll('#toggle-0').entries()) {
       let target = this;
       // setup
       TweenMax.set(target, {opacity: 0});
-      if (!target.classList.contains('direction-inverse')) {
+      if (!target.classList.contains('xt-inverse')) {
         TweenMax.set(target, {x: -animSize});
       } else {
         TweenMax.set(target, {x: animSize});
@@ -38,7 +38,7 @@ for (let [i, el] of document.querySelectorAll('#toggle-0').entries()) {
     tr.addEventListener('off.xt', function (e) {
       let target = this;
       // animation
-      if (!target.classList.contains('direction-inverse')) {
+      if (!target.classList.contains('xt-inverse')) {
         TweenMax.to(target, time, {x: animSize, opacity: 0, ease: 'easeOut'});
       } else {
         TweenMax.to(target, time, {x: -animSize, opacity: 0, ease: 'easeOut'});
@@ -69,7 +69,7 @@ for (let [i, el] of document.querySelectorAll('#toggle-1').entries()) {
       let target = this;
       // setup
       TweenMax.set(target, {opacity: 0});
-      if (!target.classList.contains('direction-inverse')) {
+      if (!target.classList.contains('xt-inverse')) {
         TweenMax.set(target, {x: -animSize});
       } else {
         TweenMax.set(target, {x: animSize});
@@ -82,7 +82,7 @@ for (let [i, el] of document.querySelectorAll('#toggle-1').entries()) {
     tr.addEventListener('off.xt', function (e) {
       let target = this;
       // animation
-      if (!target.classList.contains('direction-inverse')) {
+      if (!target.classList.contains('xt-inverse')) {
         TweenMax.to(target, time, {x: animSize, opacity: 0, ease: 'easeOut'});
       } else {
         TweenMax.to(target, time, {x: -animSize, opacity: 0, ease: 'easeOut'});

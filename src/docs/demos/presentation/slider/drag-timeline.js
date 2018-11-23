@@ -53,7 +53,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       }
       // setup drag position
       TweenMax.set(target, {opacity: 0});
-      if (!target.classList.contains('direction-inverse')) {
+      if (!target.classList.contains('xt-inverse')) {
         // mask
         TweenMax.set(target, {x: xMax});
         TweenMax.set(target.children[0], {x: -xMax});
@@ -86,7 +86,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       let target = this;
       let xMax = target.clientWidth;
       // complete drag
-      if (!target.classList.contains('direction-inverse')) {
+      if (!target.classList.contains('xt-inverse')) {
         // mask
         TweenMax.to(target, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: xMax, ease: 'easeOut'});

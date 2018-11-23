@@ -720,9 +720,9 @@ class Core {
     let self = this;
     // decorateDirection
     if (!self.inverseDirection) {
-      el.classList.remove('direction-inverse');
+      el.classList.remove('xt-inverse');
     } else {
-      el.classList.add('direction-inverse');
+      el.classList.add('xt-inverse');
     }
   }
 
