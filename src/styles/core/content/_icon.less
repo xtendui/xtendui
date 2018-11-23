@@ -41,12 +41,7 @@
 
 // mixins
 
-.icon_xt(@content, @size: @icon--medium, @sr-only: false, @position: after) {
-  & when (@sr-only = true) {
-    > span {
-      .sr-only();
-    }
-  }
+.icon_xt(@content, @size: @icon--medium, @position: after) {
   & when (@position = before) {
     &::before {
       .icon_xt();
@@ -106,12 +101,7 @@
 
 // mixins
 
-.icon(@content, @size: @icon--medium, @sr-only: false, @position: after) {
-  & when (@sr-only = true) {
-    > span {
-      .sr-only();
-    }
-  }
+.icon(@content, @size: @icon--medium, @position: after) {
   & when (@position = before) {
     &::before {
       .icon();

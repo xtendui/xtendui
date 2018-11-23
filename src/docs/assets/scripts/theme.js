@@ -41,7 +41,7 @@ for(let el of document.querySelectorAll('.site-article > h2, .site-article > h3'
   id += el.textContent.replace(/\s+/g, '-').toLowerCase();
   // make-anchor
   el.setAttribute('id', id);
-  el.innerHTML = '<a href="#' + id + '" tabindex="-1">' + el.innerHTML + '</a>';
+  el.innerHTML = '<a href="#' + id + '" aria-label="Anchor to ' + el.textContent + '" tabindex="-1">' + el.innerHTML + '</a>';
   el.classList.add('make-anchor');
   el.append(Xt.createElement('<span class="site-article-anchor"><div class="btn"><span class="icon-link" aria-hidden="true"></span></div></span>'));
 }
@@ -54,11 +54,11 @@ for(let el of document.querySelectorAll('.site-aside-text > .btn:not(.different)
     if (element.tagName === 'H2') {
       let appendItem = Xt.createElement('<div class="site-aside-sub-container"></div>');
       container.append(appendItem);
-      appendItem.append(Xt.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn--nodesign btn--site-aside-sub">' + element.textContent + '</a>'));
+      appendItem.append(Xt.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn--nodesign btn--site-aside-sub" aria-label="Anchor to ' + element.textContent + '">' + element.textContent + '</a>'));
       appendItem.append(Xt.createElement('<div class="site-aside-subsub collapse--height"></div>'));
     } else if (element.tagName === 'H3') {
       let subs = container.querySelectorAll('.site-aside-subsub');
-      subs[subs.length - 1].append(Xt.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn--nodesign btn--site-aside-subsub">' + element.textContent + '</a>'));
+      subs[subs.length - 1].append(Xt.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn--nodesign btn--site-aside-subsub" aria-label="Anchor to ' + element.textContent + '">' + element.textContent + '</a>'));
     }
   }
 }
@@ -172,8 +172,8 @@ const populateDemo = function (container, i) {
   let items = container.querySelectorAll('.demo-item');
   // multiple elements
   container.prepend(Xt.createElement('<div class="demo-tabs"><div class="demo-tabs-left"></div><div class="demo-tabs-right"></div></div>'));
-  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny btn--narrow btn--show-code" data-toggle="tooltip" data-placement="top" title="Show code"><span class="icon-code icon--big"></span></button>'));
-  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny btn--narrow btn--open-full" data-toggle="tooltip" data-placement="top" title="Open full"><span class="icon-maximize icon--big"></span></button>'));
+  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny btn--narrow btn--show-code" data-toggle="tooltip" data-placement="top" aria-label="Show code"><span class="icon-code icon--big"></span></button>'));
+  container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny btn--narrow btn--open-full" data-toggle="tooltip" data-placement="top" aria-label="Open full"><span class="icon-maximize icon--big"></span></button>'));
   /*
   append.addEventListener('click', function (e) {
     console.log();
