@@ -325,7 +325,7 @@
 
 .site-menu {
   // animations
-  &, &@{overlay--design}, .overlay_inner@{overlay--design}, .overlay_inner > .content {
+  &, &@{overlay--design}, .overlay_inner@{overlay--design}, .overlay_inner .overlay_content {
     .animation--none() !important;
     opacity: 1 !important;
   }
@@ -669,7 +669,7 @@
   // text
   .demo-text {
     .alert();
-    .card--squared();
+    .alert--small();
     .margin(all, none);
     .margin-remove(top, 2px); // remove border space
   }

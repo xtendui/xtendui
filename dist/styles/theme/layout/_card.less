@@ -19,7 +19,7 @@
 // addons
 
 .card--max-height {
-  > .content {
+  > .card_content {
     overflow-y: auto;
     max-height: 25rem;
     .overflow-style();
@@ -28,7 +28,7 @@
 
 .card--max-width {
   .flex--none();
-  > .content {
+  > .card_content {
     overflow-x: auto;
     max-width: 35rem;
     .overflow-style();
@@ -42,7 +42,7 @@
     border-color: @primary;
     background-color: @primary;
   }
-  > .content {
+  > .card_content {
     .text--inverse();
   }
 }
@@ -52,7 +52,7 @@
     border-color: @secondary;
     background-color: @secondary;
   }
-  > .content {
+  > .card_content {
     color: @text;
   }
 }
@@ -62,7 +62,7 @@
     border-color: @error;
     background-color: @error;
   }
-  > .content {
+  > .card_content {
     .text--inverse();
   }
 }
@@ -72,7 +72,7 @@
     border-color: @white;
     background-color: @white;
   }
-  > .content {
+  > .card_content {
     color: @text;
   }
 }
@@ -80,35 +80,35 @@
 // size
 
 .card--tiny {
-  > .content {
+  > .card_content {
     padding: .25em .75em;
     .font--tiny();
   }
 }
 
 .card--small {
-  > .content {
+  > .card_content {
     padding: .5em 1em;
     .font--small();
   }
 }
 
 .card--medium {
-  > .content {
+  > .card_content {
     padding: 1em 1.5em;
     .font--medium();
   }
 }
 
 .card--big {
-  > .content {
+  > .card_content {
     padding: 1.5em 2em;
     .font--big();
   }
 }
 
 .card--giant {
-  > .content {
+  > .card_content {
     padding: 1.75em 2.25em;
     .font--giant();
   }
@@ -135,48 +135,48 @@
 }
 
 .card--tall {
-  > .content {
+  > .card_content {
     padding-top: 1.75em;
     padding-bottom: 1.75em;
   }
 }
 
 .card--short {
-  > .content {
+  > .card_content {
     padding-top: .75em;
     padding-bottom: .75em;
   }
 }
 
 .card--wide {
-  > .content {
+  > .card_content {
     padding-left: 2em;
     padding-right: 2em;
   }
 }
 
 .card--narrow {
-  > .content {
+  > .card_content {
     padding-left: 1em;
     padding-right: 1em;
   }
 }
 
 .card--none {
-  > .content {
+  > .card_content {
     padding: 0;
   }
 }
 
 .card--none-x {
-  > .content {
+  > .card_content {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 .card--none-y {
-  > .content {
+  > .card_content {
     padding-top: 0;
     padding-bottom: 0;
   }

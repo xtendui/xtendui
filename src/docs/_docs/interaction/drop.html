@@ -19,7 +19,7 @@ description: Dropdown component with structured theming that can show anything.
       </button>
       <div class="drop">
         <div class="drop_inner">
-          <div class="content">
+          <div class="drop_content">
             <!-- content -->
           </div>
         </div>
@@ -29,14 +29,14 @@ description: Dropdown component with structured theming that can show anything.
 </pre>
 
 <div class="alert">
-  <div class="content">
+  <div class="alert_content">
     Instead of using html arguments you can initialize <a href="{% link _docs/introduction/javascript.html %}#initialization-drop">drop
     by javascript</a> using the same options syntax.
   </div>
 </div>
 
 <div class="alert">
-  <div class="content">
+  <div class="alert_content">
     For customizing the interactions read the documentation of <a href="{% link _docs/interaction/toggle.html %}#subcomponents-drop">toggle
     drop</a>.
   </div>
@@ -79,9 +79,9 @@ XtDrop.defaults = {
         </button>
         <div class="drop">
           <div class="drop_inner">
-            <div class="content">
+            <div class="drop_content">
               <div class="card">
-                <div class="content">
+                <div class="card_content">
                   <h6>Card</h6>
                   <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.
                     Sed sit amet leo nunc.</p>
@@ -100,7 +100,7 @@ XtDrop.defaults = {
 <p>The natural way to use drops is to use them <strong>with lists of buttons</strong>.</p>
 
 <div class="alert">
-  <div class="content">
+  <div class="alert_content">
     Read the documentation of <a href="{% link _docs/layout/list.html %}#list-of-buttons">list of buttons</a>.
   </div>
 </div>
@@ -114,7 +114,7 @@ XtDrop.defaults = {
         </button>
         <div class="drop">
           <div class="drop_inner">
-            <div class="content">
+            <div class="drop_content">
               <ul class="list list--drop">
                 <li>
                   <button type="button" class="btn btn--primary">
@@ -146,13 +146,13 @@ XtDrop.defaults = {
   automatically, If you want to customize the buttons use the <code>.btn</code> class instead.</p>
 
 <div class="alert">
-  <div class="content">
+  <div class="alert_content">
     Read the documentation of <a href="{% link _docs/layout/list.html %}#buttons-styles">list's buttons styles</a>.
   </div>
 </div>
 
 <div class="alert">
-  <div class="content">
+  <div class="alert_content">
     In theming code use <code>.list_btn--default({});</code> to style <code>a</code> and <code>button</code>. To style also
     if they have the <code>.btn</code> class use <code>.list_btn--all({});</code>.
   </div>
@@ -161,7 +161,7 @@ XtDrop.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="list--drop">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.list--drop</code>
       </div>
     </div>
@@ -172,7 +172,7 @@ XtDrop.defaults = {
         </button>
         <div class="drop">
           <div class="drop_inner">
-            <div class="content">
+            <div class="drop_content">
               <ul class="list list--drop">
                 <li>
                   <a href="#">
@@ -198,7 +198,7 @@ XtDrop.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="override">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         You can <strong>override</strong> each buttons by using the <code>.btn</code> class
       </div>
     </div>
@@ -209,7 +209,7 @@ XtDrop.defaults = {
         </button>
         <div class="drop">
           <div class="drop_inner">
-            <div class="content">
+            <div class="drop_content">
               <ul class="list list--drop">
                 <li>
                   <a href="#">
@@ -241,7 +241,7 @@ XtDrop.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="custom">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         For custom list style don't use <code>.list--drop</code>
       </div>
     </div>
@@ -252,7 +252,7 @@ XtDrop.defaults = {
         </button>
         <div class="drop">
           <div class="drop_inner">
-            <div class="content">
+            <div class="drop_content">
               <ul class="list list--block list--primary list_space--none list--center list--big list--squared">
                 <li>
                   <button type="button">
@@ -281,7 +281,7 @@ XtDrop.defaults = {
 <h2>Variables</h2>
 
 <div class="alert">
-  <div class="content">
+  <div class="alert_content">
     Read the documentation of <a href="{% link _docs/introduction/theming.html %}#component">component's variables</a>.
   </div>
 </div>
@@ -297,7 +297,7 @@ XtDrop.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="variants">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.drop--primary</code> <code>.drop--secondary</code> <code>.drop--white</code>
       </div>
     </div>
@@ -309,7 +309,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -338,7 +338,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--primary">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -367,7 +367,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--secondary">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -396,7 +396,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--white">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -432,7 +432,7 @@ XtDrop.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="bottom">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.drop--bottom</code> <code>.drop--left</code> <code>.drop--right</code> <code>.drop--center</code>
       </div>
     </div>
@@ -444,7 +444,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--bottom drop--left">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -473,7 +473,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--bottom drop--right">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -502,7 +502,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--bottom drop--center">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -529,7 +529,7 @@ XtDrop.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="top">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.drop--top</code> <code>.drop--left</code> <code>.drop--right</code> <code>.drop--center</code>
       </div>
     </div>
@@ -541,7 +541,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--top drop--left">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -570,7 +570,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--top drop--right">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -599,7 +599,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--top drop--center">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -626,7 +626,7 @@ XtDrop.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="middle">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.drop--left</code> <code>.drop--right</code> <code>.drop--middle</code> <code>.drop--center</code>
       </div>
     </div>
@@ -638,7 +638,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--left drop--middle">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -667,7 +667,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--right drop--middle">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -696,7 +696,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--center drop--middle">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -723,7 +723,7 @@ XtDrop.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="before">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.drop--before</code> <code>.drop--top</code> <code>.drop--bottom</code> <code>.drop--middle</code>
       </div>
     </div>
@@ -735,7 +735,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--before drop--top">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -764,7 +764,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--before drop--bottom">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -793,7 +793,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--before drop--middle">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -820,7 +820,7 @@ XtDrop.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="after">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.drop--after</code> <code>.drop--top</code> <code>.drop--bottom</code> <code>.drop--middle</code>
       </div>
     </div>
@@ -832,7 +832,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--after drop--top">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -861,7 +861,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--after drop--bottom">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -890,7 +890,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--after drop--middle">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -917,7 +917,7 @@ XtDrop.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="others">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.drop--middle-top</code> <code>.drop--middle-bottom</code>
       </div>
     </div>
@@ -929,7 +929,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--right drop--middle drop--middle-bottom">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -958,7 +958,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--right drop--middle drop--middle-top">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -987,7 +987,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--left drop--middle drop--middle-bottom">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1016,7 +1016,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--left drop--middle drop--middle-top">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1045,7 +1045,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--before drop--middle drop--middle-bottom">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1074,7 +1074,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--before drop--middle drop--middle-top">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1103,7 +1103,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--after drop--middle drop--middle-bottom">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1132,7 +1132,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--after drop--middle drop--middle-top">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1166,7 +1166,7 @@ XtDrop.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="special">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.drop--nodesign</code> <code>.drop--squared</code> <code>.drop--noborder</code>
       </div>
     </div>
@@ -1178,7 +1178,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--nodesign">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1207,7 +1207,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--squared">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1236,7 +1236,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--noborder">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1274,7 +1274,7 @@ XtDrop.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="static">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.drop_outer-static</code>
       </div>
     </div>
@@ -1286,7 +1286,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1313,7 +1313,7 @@ XtDrop.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="top">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.drop_outer-static</code> <code>.drop--top</code>
       </div>
     </div>
@@ -1325,7 +1325,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--top">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1352,7 +1352,7 @@ XtDrop.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="middle">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.drop_outer-static</code> <code>.middle</code>
       </div>
     </div>
@@ -1364,7 +1364,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--middle">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1398,7 +1398,7 @@ XtDrop.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="backdrop">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>data-xt-drop='{"backdrop": true}'</code> <code>.over-backdrop</code>
       </div>
     </div>
@@ -1410,7 +1410,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--bottom drop--left">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1439,7 +1439,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--middle drop--center">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1468,7 +1468,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--after drop--middle drop--middle-top">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1503,7 +1503,7 @@ XtDrop.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="event">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>"on": "mouseenter"</code> <code>"off": "mouseleave"</code>
       </div>
     </div>
@@ -1515,7 +1515,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1544,7 +1544,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--bottom drop--left">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1578,7 +1578,7 @@ XtDrop.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="max-height">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.drop--max-height</code>
       </div>
     </div>
@@ -1590,7 +1590,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--max-height">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1672,7 +1672,7 @@ XtDrop.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="max-width">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.drop--max-width</code>
       </div>
     </div>
@@ -1684,7 +1684,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--max-width">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1766,7 +1766,7 @@ XtDrop.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="both">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.drop--max-height</code> <code>.drop--max-width</code>
       </div>
     </div>
@@ -1778,7 +1778,7 @@ XtDrop.defaults = {
           </button>
           <div class="drop drop--max-height drop--max-width">
             <div class="drop_inner">
-              <div class="content">
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <button type="button">
@@ -1865,7 +1865,7 @@ XtDrop.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="nested">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         For limiting event inside a selector use <code>.event-limit</code>
       </div>
     </div>
@@ -1876,7 +1876,7 @@ XtDrop.defaults = {
         </button>
         <div class="drop">
           <div class="drop_inner">
-            <div class="content">
+            <div class="drop_content">
               <ul class="list list--drop">
                 <li>
                   <button type="button">
@@ -1894,7 +1894,7 @@ XtDrop.defaults = {
                   </button>
                   <div class="drop drop--primary drop--after drop--middle">
                     <div class="drop_inner">
-                      <div class="content">
+                      <div class="drop_content">
                         <ul class="list list--drop">
                           <li>
                             <button type="button">
@@ -1912,7 +1912,7 @@ XtDrop.defaults = {
                             </button>
                             <div class="drop drop--secondary drop--center drop--middle">
                               <div class="drop_inner">
-                                <div class="content">
+                                <div class="drop_content">
                                   <ul class="list list--drop">
                                     <li>
                                       <button type="button">
@@ -1948,7 +1948,7 @@ XtDrop.defaults = {
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/drop/drop-disable.html" data-name="disable">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         To disable drop use <code>.drop--disable</code> useful within media queries
       </div>
     </div>

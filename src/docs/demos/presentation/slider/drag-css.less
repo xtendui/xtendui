@@ -21,10 +21,10 @@
     }
   }
   // content
-  > * > .content {
+  > * > .slide_content {
     .anim--left.out();
     animation-duration: @time--big;
-    > .card > .content > * {
+    > .card > .card_content > * {
       .anim--left.out();
       animation-duration: @time--big;
       // delay
@@ -34,29 +34,29 @@
     }
   }
   &.xt-inverse {
-    > * > .content {
+    > * > .slide_content {
       .anim--right.out();
       animation-duration: @time--big;
-      > .card > .content > * {
+      > .card > .card_content > * {
         .anim--right.out();
         animation-duration: @time--big;
       }
     }
   }
   &.active {
-    > * > .content {
+    > * > .slide_content {
       .anim--right.active();
       animation-duration: @time--big;
-      > .card > .content > * {
+      > .card > .card_content > * {
         .anim--right.active();
         animation-duration: @time--big;
       }
     }
     &.xt-inverse {
-      > * > .content {
+      > * > .slide_content {
         .anim--left.active();
         animation-duration: @time--big;
-        > .card > .content > * {
+        > .card > .card_content > * {
           .anim--left.active();
           animation-duration: @time--big;
         }

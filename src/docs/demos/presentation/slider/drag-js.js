@@ -28,7 +28,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       let target = this;
       let xMax = target.clientWidth;
       // content
-      let contents = target.querySelectorAll(':scope > * > .content > .card > .content > *');
+      let contents = target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *');
       for (let [z, content] of contents.entries()) {
         content.dataset.tlDelay = Math.min(delaycontent * z, delaycontentMax).toString();
       }
@@ -41,7 +41,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.set(target.children[0].children[0], {x: animSize});
         TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeIn'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .card > .content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
           TweenMax.set(content, {x: animSize, opacity: 0});
           setTimeout(function () {
             TweenMax.to(content, timecontent, {x: 0, opacity: 1, ease: 'easeIn'});
@@ -54,7 +54,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.set(target.children[0].children[0], {x: -animSize});
         TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeIn'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .card > .content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_contentcontent > *').entries()) {
           TweenMax.set(content, {x: -animSize, opacity: 0});
           setTimeout(function () {
             TweenMax.to(content, timecontent, {x: 0, opacity: 1, ease: 'easeIn'});
@@ -76,7 +76,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.to(target, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: xMax, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .card > .content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
           setTimeout(function () {
             TweenMax.to(content, timecontent, {x: -animSize, opacity: 1, ease: 'easeOut'});
           }, parseFloat(content.dataset.tlDelay) * 1000);
@@ -86,7 +86,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.to(target, time, {x: xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: -xMax, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .card > .content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
           setTimeout(function () {
             TweenMax.to(content, timecontent, {x: animSize, opacity: 1, ease: 'easeOut'});
           }, parseFloat(content.dataset.tlDelay) * 1000);
@@ -110,12 +110,12 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       TweenMax.set(target.children[0], {x: -xDist});
       // content
       if (xStart - xCurrent > 0) {
-        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .card > .content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
           let ratioWithDelay = (durationcontent - parseFloat(content.dataset.tlDelay)) * ratio / timecontent;
           TweenMax.set(content, {x: -animSize * ratioWithDelay, opacity: 1 - ratioWithDelay});
         }
       } else {
-        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .card > .content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
           let ratioWithDelay = (durationcontent - parseFloat(content.dataset.tlDelay)) * ratio / timecontent;
           TweenMax.set(content, {x: animSize * ratioWithDelay, opacity: 1 - ratioWithDelay});
         }
@@ -144,7 +144,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: 0, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .content > .card > .content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
           TweenMax.to(content, timecontent, {x: 0, opacity: 1, ease: 'easeOut'});
         }
       }

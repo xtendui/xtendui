@@ -22,14 +22,14 @@ description: Lorem ipsum
 </pre>
 
 <div class="alert">
-  <div class="content">
+  <div class="alert_content">
     Instead of using html arguments you can initialize <a href="{% link _docs/introduction/javascript.html %}#initialization-sticky">sticky
     by javascript</a> using the same options syntax.
   </div>
 </div>
 
-<div class="alert card--primary">
-  <div class="content">
+<div class="alert alert--primary">
+  <div class="alert_content">
     It's recomended to style and animate a inner div <code>[data-xt-xticky] > div</code> when using <strong>sticky
     component</strong>.
   </div>
@@ -71,7 +71,7 @@ XtSticky.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/sticky/sticky-option-position.html"
        data-name="position">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>"position": "top"</code> <code>"position": "bottom"</code>
       </div>
     </div>
@@ -79,7 +79,7 @@ XtSticky.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/sticky/sticky-option-limit.html"
        data-name="limit">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>"limit": {"top": Element}</code> <code>"limit": {"bottom": Element}</code>
       </div>
     </div>
@@ -87,7 +87,7 @@ XtSticky.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/sticky/sticky-mode-absolute.html"
        data-name="absolute">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         Use <code>@mode: 'absolute'</code> in the less mixin to have absolute position when not sticky
       </div>
     </div>
@@ -95,7 +95,7 @@ XtSticky.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/sticky/sticky-mode-fixed.html"
        data-name="fixed">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         Use <code>@mode: 'fixed'</code> in the less to have fixed position when not sticky
       </div>
     </div>
@@ -103,7 +103,7 @@ XtSticky.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/sticky/sticky-responsive.html"
        data-name="responsive">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         It's possible to disable sticky with <code>.xt-sticky-disable</code>, so also inside <strong>media query
         mixins</strong> (@TODO link media queries mixins) for responsive
       </div>
@@ -117,8 +117,8 @@ XtSticky.defaults = {
   Element}</code> you stack the sticky to a previous element, with <code>"contain": {"bottom": Element}</code> you stack
   the sticky to a next element. The two solutions brings <strong>different stacking effects</strong>.</p>
 
-<div class="alert card--primary">
-  <div class="content">
+<div class="alert alert--primary">
+  <div class="alert_content">
     If contain to <strong>sticky elements</strong> remember to filter out <code>:not(.xt-clone)</code> or filter in
     <code>.xt-clone</code>.
   </div>
@@ -128,7 +128,7 @@ XtSticky.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/sticky/sticky-contain-top.html"
        data-name="top">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>"contain": {"top": Element}</code>
       </div>
     </div>
@@ -136,7 +136,7 @@ XtSticky.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/sticky/sticky-contain-bottom.html"
        data-name="bottom">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>"contain": {"bottom": Element}</code>
       </div>
     </div>
@@ -152,7 +152,7 @@ XtSticky.defaults = {
 <div class="demo">
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/sticky/sticky-hide.html" data-name="hide">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>"hide": "down"</code> <code>"hide": "up"</code>
       </div>
     </div>
@@ -167,7 +167,7 @@ XtSticky.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/sticky/sticky-showhide-top.html"
        data-name="top">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>"contain": {"top": Element}</code>
       </div>
     </div>
@@ -175,7 +175,7 @@ XtSticky.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/sticky/sticky-showhide-bottom.html"
        data-name="bottom">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>"contain": {"bottom": Element}</code>
       </div>
     </div>
@@ -183,7 +183,7 @@ XtSticky.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/sticky/sticky-showhide-hide.html"
        data-name="hide">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.show-sticky</code> <code>.hide-sticky</code>
       </div>
     </div>

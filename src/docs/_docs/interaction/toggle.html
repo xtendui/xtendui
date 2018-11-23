@@ -33,7 +33,7 @@ description: Many possible behaviour, interactions and animations are possible w
 </pre>
 
 <div class="alert">
-  <div class="content">
+  <div class="alert_content">
     Instead of using html arguments you can initialize <a
     href="{% link _docs/introduction/javascript.html %}#initialization-toggle">toggle
     by javascript</a> using the same options syntax.
@@ -67,7 +67,7 @@ XtToggle.defaults = {
 </p>
 
 <div class="alert">
-  <div class="content">
+  <div class="alert_content">
     For toggle utils classes read the documentation of <a href="{% link _docs/introduction/utils.html %}#toggle">toggle
     utils</a>.
   </div>
@@ -79,8 +79,8 @@ XtToggle.defaults = {
   targets must be inside the scope. Check <a href="#defaults">toggle's defaults</a> for the default elements and
   targets.</p>
 
-<div class="alert card--primary">
-  <div class="content">
+<div class="alert alert--primary">
+  <div class="alert_content">
     With <strong>multiple mode</strong> you can't specify targets with <strong>#id</strong>.
   </div>
 </div>
@@ -88,7 +88,7 @@ XtToggle.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="index">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         With multiple <strong>targets</strong>, the ones activated is the one with the same index of the toggled
         <strong>element</strong>.
         Nested <strong>targets</strong> are filtered out
@@ -106,30 +106,30 @@ XtToggle.defaults = {
           <span>Toggle 2</span>
         </button>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 0
             <div class="alert toggle--block">
-              <div class="content">
+              <div class="alert_content">
                 Nested not toggled
               </div>
             </div>
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 1
             <div class="alert toggle--block">
-              <div class="content">
+              <div class="alert_content">
                 Nested not toggled
               </div>
             </div>
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 2
             <div class="alert toggle--block">
-              <div class="content">
+              <div class="alert_content">
                 Nested not toggled
               </div>
             </div>
@@ -140,7 +140,7 @@ XtToggle.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="options">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         Custom <strong>elements</strong> and <strong>targets</strong>
       </div>
     </div>
@@ -157,17 +157,17 @@ XtToggle.defaults = {
             <span>Toggle 2</span>
           </button>
           <div class="alert example-toggle">
-            <div class="content">
+            <div class="alert_content">
               Target 0
             </div>
           </div>
           <div class="alert example-toggle">
-            <div class="content">
+            <div class="alert_content">
               Target 1
             </div>
           </div>
           <div class="alert example-toggle">
-            <div class="content">
+            <div class="alert_content">
               Target 2
             </div>
           </div>
@@ -189,7 +189,7 @@ XtToggle.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="toggle">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         Custom targets classname that starts with <code>.toggle--</code>
       </div>
     </div>
@@ -205,17 +205,17 @@ XtToggle.defaults = {
           <span>Toggle 2</span>
         </button>
         <div class="alert toggle--custom">
-          <div class="content">
+          <div class="alert_content">
             Target 0
           </div>
         </div>
         <div class="alert toggle--custom">
-          <div class="content">
+          <div class="alert_content">
             Target 1
           </div>
         </div>
         <div class="alert toggle--custom">
-          <div class="content">
+          <div class="alert_content">
             Target 2
           </div>
         </div>
@@ -241,8 +241,8 @@ XtToggle.defaults = {
 <p>When you don't specify <strong>elements</strong> the scope becomes global and the element becomes <code>[data-xt-toggle]</code>
   itself.</p>
 
-<div class="alert card--primary">
-  <div class="content">
+<div class="alert alert--primary">
+  <div class="alert_content">
     With <strong>unique mode</strong> you need to specify targets with <strong>#id</strong>.
   </div>
 </div>
@@ -250,7 +250,7 @@ XtToggle.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="self">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         Toggle a single <strong>element</strong> with <code>[data-xt-toggle]</code>
       </div>
     </div>
@@ -267,7 +267,7 @@ XtToggle.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="single target">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         Toggle a single <strong>target</strong> using <code>targets</code> with <strong>#id</strong>
       </div>
     </div>
@@ -280,12 +280,12 @@ XtToggle.defaults = {
           <span>Toggle 1</span>
         </button>
         <div class="alert toggle--block" id="toggle-unique-0">
-          <div class="content">
+          <div class="alert_content">
             Target 0
           </div>
         </div>
         <div class="alert toggle--block" id="toggle-unique-1">
-          <div class="content">
+          <div class="alert_content">
             Target 1
           </div>
         </div>
@@ -294,7 +294,7 @@ XtToggle.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="same targets">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         Toggle same <strong>targets</strong> using <code>targets</code> with <strong>#id</strong>
       </div>
     </div>
@@ -307,12 +307,12 @@ XtToggle.defaults = {
           <span>Toggle</span>
         </button>
         <div class="alert toggle--block" id="toggle-unique-2">
-          <div class="content">
+          <div class="alert_content">
             Target 0
           </div>
         </div>
         <div class="alert toggle--block" id="toggle-unique-3">
-          <div class="content">
+          <div class="alert_content">
             Target 1
           </div>
         </div>
@@ -351,27 +351,27 @@ XtToggle.defaults = {
           <span>Group 1</span>
         </button>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 0
           </div>
         </div>
         <div class="alert toggle--block" data-group="0">
-          <div class="content">
+          <div class="alert_content">
             Group 0
           </div>
         </div>
         <div class="alert toggle--block" data-group="1">
-          <div class="content">
+          <div class="alert_content">
             Group 1
           </div>
         </div>
         <div class="alert toggle--block" data-group="0">
-          <div class="content">
+          <div class="alert_content">
             Group 0
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 1
           </div>
         </div>
@@ -387,7 +387,7 @@ XtToggle.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="class">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         You can specify classes to toggle with <strong>class</strong>
       </div>
     </div>
@@ -397,7 +397,7 @@ XtToggle.defaults = {
           <span>Toggle</span>
         </button>
         <div class="alert toggle--block" id="alert-example">
-          <div class="content">
+          <div class="alert_content">
             Target
           </div>
         </div>
@@ -442,32 +442,32 @@ XtToggle.defaults = {
           <span>Group 1</span>
         </button>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 0
           </div>
         </div>
         <div class="alert toggle--block" data-group="0">
-          <div class="content">
+          <div class="alert_content">
             Group 0
           </div>
         </div>
         <div class="alert toggle--block" data-group="1">
-          <div class="content">
+          <div class="alert_content">
             Group 1
           </div>
         </div>
         <div class="alert toggle--block" data-group="0">
-          <div class="content">
+          <div class="alert_content">
             Group 0
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 1
           </div>
         </div>
         <div class="alert toggle--block active class-example-1" data-group="1">
-          <div class="content">
+          <div class="alert_content">
             Group 1
           </div>
         </div>
@@ -497,7 +497,7 @@ XtToggle.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="custom">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         The required <strong>min</strong> activation is fulfilled on initialization
       </div>
     </div>
@@ -516,22 +516,22 @@ XtToggle.defaults = {
           <span>Toggle 3</span>
         </button>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 0
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 1
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 2
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 3
           </div>
         </div>
@@ -548,7 +548,7 @@ XtToggle.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="event">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>"on": "mouseenter"</code> <code>"off": "mouseleave"</code>
       </div>
     </div>
@@ -568,22 +568,22 @@ XtToggle.defaults = {
           <span>Toggle 3</span>
         </button>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 0
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 1
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 2
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 3
           </div>
         </div>
@@ -592,7 +592,7 @@ XtToggle.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="touch-links">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         If you set in the <code>"on"</code> event <code>mouseenter</code> or <code>mousehover</code>, automatically when
         the <strong>element</strong> have links they get triggered only on double click when using touch devices
       </div>
@@ -613,22 +613,22 @@ XtToggle.defaults = {
           <a href="#toggle-with-link-3" class="link--none">Toggle 3</a>
         </button>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 0
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 1
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 2
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 3
           </div>
         </div>
@@ -650,7 +650,7 @@ XtToggle.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="auto">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>"auto": Milliseconds</code>
       </div>
     </div>
@@ -669,22 +669,22 @@ XtToggle.defaults = {
           <span>Toggle 3</span>
         </button>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 0
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 1
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 2
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 3
           </div>
         </div>
@@ -693,7 +693,7 @@ XtToggle.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="autoPause">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>"autoPause": Milliseconds</code>
       </div>
     </div>
@@ -712,22 +712,22 @@ XtToggle.defaults = {
           <span>Toggle 3</span>
         </button>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 0
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 1
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 2
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 3
           </div>
         </div>
@@ -751,22 +751,22 @@ XtToggle.defaults = {
           <span>Toggle 3</span>
         </button>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 0
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 1
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 2
           </div>
         </div>
         <div class="alert toggle--block">
-          <div class="content">
+          <div class="alert_content">
             Target 3
           </div>
         </div>
@@ -781,7 +781,7 @@ XtToggle.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/toggle-automatic.html"
        data-name="automatic">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         Activation/deactivation automatically waits for the <strong>duration</strong> of animations and transitions on
         <code>.active</code> and <code>.out</code>
       </div>
@@ -790,7 +790,7 @@ XtToggle.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/toggle-duration.html"
        data-name="duration">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         To set duration (if you are animating by js for example) use <code>"durationOn": Milliseconds</code> <code>"durationOff":
         Milliseconds</code>
       </div>
@@ -799,7 +799,7 @@ XtToggle.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/toggle-delay.html"
        data-name="delay">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         To add a delay before duration use <code>"delayOn": Milliseconds</code> <code>"delayOff": Milliseconds</code>
       </div>
     </div>
@@ -807,7 +807,7 @@ XtToggle.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/toggle-delay-fnc.html"
        data-name="delay fnc">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         Complex delay with <code>"delayOn": Function</code> <code>"delayOff": Function</code> return number using
         <strong>total</strong> and <strong>current</strong>
       </div>
@@ -816,7 +816,7 @@ XtToggle.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/toggle-instant.html"
        data-name="instant">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         To disable queue and automatic duration use <code>"instant": true</code>
       </div>
     </div>
@@ -829,7 +829,7 @@ XtToggle.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/toggle-js.html"
        data-name="js">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         You can animate with javascript, just use Xt events and remember to set <code>"durationOn": Milliseconds</code>
         and <code>"durationOff": Milliseconds</code>
       </div>
@@ -843,7 +843,7 @@ XtToggle.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/toggle-multilevel.html"
        data-name="levels">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         Multi level navigation with toggle
       </div>
     </div>

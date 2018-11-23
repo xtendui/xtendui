@@ -20,7 +20,7 @@ description: Component to show modal elements inside the page.
       <div class="overlay">
         <div class="overlay_inner">
           <button type="button" class="btn btn--close" aria-label="Close"></button>
-          <div class="content">
+          <div class="overlay_content">
             <!-- content -->
           </div>
         </div>
@@ -30,7 +30,7 @@ description: Component to show modal elements inside the page.
 </pre>
 
 <div class="alert">
-  <div class="content">
+  <div class="alert_content">
     Instead of using html arguments you can initialize <a
     href="{% link _docs/introduction/javascript.html %}#initialization-overlay">overlay by javascript</a> using the same
     options syntax.
@@ -38,14 +38,14 @@ description: Component to show modal elements inside the page.
 </div>
 
 <div class="alert">
-  <div class="content">
+  <div class="alert_content">
     For customizing the interactions read the documentation of <a
     href="{% link _docs/interaction/toggle.html %}#subcomponents-overlay">toggle overlay</a>.
   </div>
 </div>
 
-<div class="alert card--primary">
-  <div class="content">
+<div class="alert alert--primary">
+  <div class="alert_content">
     Overlays are moved to <code>body</code> to prevent <strong>z-index</strong> problems.
   </div>
 </div>
@@ -61,7 +61,7 @@ description: Component to show modal elements inside the page.
       <div class="overlay">
         <div class="overlay_inner">
           <button type="button" class="btn btn--close" aria-label="Close"></button>
-          <div class="content event-limit">
+          <div class="overlay_content event-limit">
             <!-- content -->
           </div>
         </div>
@@ -82,7 +82,7 @@ description: Component to show modal elements inside the page.
         <div class="overlay">
           <div class="overlay_inner">
             <button type="button" class="btn btn--close" aria-label="Close"></button>
-            <div class="content">
+            <div class="overlay_content">
               <!-- content -->
             </div>
           </div>
@@ -120,7 +120,7 @@ XtOverlay.defaults = {
 <h2>Variables</h2>
 
 <div class="alert">
-  <div class="content">
+  <div class="alert_content">
     Read the documentation of <a href="{% link _docs/introduction/theming.html %}#component">component's variables</a>.
   </div>
 </div>
@@ -137,7 +137,7 @@ XtOverlay.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="variants">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.overlay--primary</code> <code>.overlay--secondary</code> <code>.overlay--white</code>
       </div>
     </div>
@@ -151,7 +151,7 @@ XtOverlay.defaults = {
             <div class="overlay">
               <div class="overlay_inner">
                 <button type="button" class="btn btn--close" aria-label="Close"></button>
-                <div class="content">
+                <div class="overlay_content">
                   <h2>Lorem ipsum</h2>
                   <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -172,7 +172,7 @@ XtOverlay.defaults = {
             <div class="overlay">
               <div class="overlay_inner">
                 <button type="button" class="btn btn--close" aria-label="Close"></button>
-                <div class="content">
+                <div class="overlay_content">
                   <h2>Lorem ipsum</h2>
                   <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -193,7 +193,7 @@ XtOverlay.defaults = {
             <div class="overlay">
               <div class="overlay_inner">
                 <button type="button" class="btn btn--close" aria-label="Close"></button>
-                <div class="content">
+                <div class="overlay_content">
                   <h2>Lorem ipsum</h2>
                   <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -214,7 +214,7 @@ XtOverlay.defaults = {
             <div class="overlay">
               <div class="overlay_inner">
                 <button type="button" class="btn btn--close" aria-label="Close"></button>
-                <div class="content">
+                <div class="overlay_content">
                   <h2>Lorem ipsum</h2>
                   <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -263,7 +263,7 @@ XtOverlay.defaults = {
 </div>
 
 <div class="alert">
-  <div class="content">
+  <div class="alert_content">
     You can set overlay's size in the <code>_variables.less</code> file. Read the documentation of <a
     href="{% link _docs/introduction/theming.html %}#overlay">overlay's variables</a>.
   </div>
@@ -272,7 +272,7 @@ XtOverlay.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="size">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.overlay--size-tiny</code> <code>.overlay--size-small</code> <code>.overlay--size-medium</code>
         <code>.overlay--size-big</code> <code>.overlay--size-giant</code> <code>.overlay--size-full</code>
       </div>
@@ -287,7 +287,7 @@ XtOverlay.defaults = {
             <div class="overlay">
               <div class="overlay_inner">
                 <button type="button" class="btn btn--close" aria-label="Close"></button>
-                <div class="content">
+                <div class="overlay_content">
                   <h2>Lorem ipsum</h2>
                   <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -308,7 +308,7 @@ XtOverlay.defaults = {
             <div class="overlay">
               <div class="overlay_inner">
                 <button type="button" class="btn btn--close" aria-label="Close"></button>
-                <div class="content">
+                <div class="overlay_content">
                   <h2>Lorem ipsum</h2>
                   <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -329,7 +329,7 @@ XtOverlay.defaults = {
             <div class="overlay">
               <div class="overlay_inner">
                 <button type="button" class="btn btn--close" aria-label="Close"></button>
-                <div class="content">
+                <div class="overlay_content">
                   <h2>Lorem ipsum</h2>
                   <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -350,7 +350,7 @@ XtOverlay.defaults = {
             <div class="overlay">
               <div class="overlay_inner">
                 <button type="button" class="btn btn--close" aria-label="Close"></button>
-                <div class="content">
+                <div class="overlay_content">
                   <h2>Lorem ipsum</h2>
                   <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -371,7 +371,7 @@ XtOverlay.defaults = {
             <div class="overlay">
               <div class="overlay_inner">
                 <button type="button" class="btn btn--close" aria-label="Close"></button>
-                <div class="content">
+                <div class="overlay_content">
                   <h2>Lorem ipsum</h2>
                   <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -392,7 +392,7 @@ XtOverlay.defaults = {
             <div class="overlay">
               <div class="overlay_inner">
                 <button type="button" class="btn btn--close" aria-label="Close"></button>
-                <div class="content">
+                <div class="overlay_content">
                   <h2>Lorem ipsum</h2>
                   <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -413,7 +413,7 @@ XtOverlay.defaults = {
             <div class="overlay">
               <div class="overlay_inner">
                 <button type="button" class="btn btn--close" aria-label="Close"></button>
-                <div class="content">
+                <div class="overlay_content">
                   <h2>Lorem ipsum</h2>
                   <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -437,7 +437,7 @@ XtOverlay.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="special">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.overlay--squared</code> <code>.overlay--noborder</code> <code>.overlay--none</code>
       </div>
     </div>
@@ -451,7 +451,7 @@ XtOverlay.defaults = {
             <div class="overlay">
               <div class="overlay_inner">
                 <button type="button" class="btn btn--close" aria-label="Close"></button>
-                <div class="content">
+                <div class="overlay_content">
                   <h2>Lorem ipsum</h2>
                   <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -472,7 +472,7 @@ XtOverlay.defaults = {
             <div class="overlay">
               <div class="overlay_inner">
                 <button type="button" class="btn btn--close" aria-label="Close"></button>
-                <div class="content">
+                <div class="overlay_content">
                   <h2>Lorem ipsum</h2>
                   <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -493,7 +493,7 @@ XtOverlay.defaults = {
             <div class="overlay">
               <div class="overlay_inner">
                 <button type="button" class="btn btn--close" aria-label="Close"></button>
-                <div class="content">
+                <div class="overlay_content">
                   <h2>Lorem ipsum</h2>
                   <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -519,7 +519,7 @@ XtOverlay.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="default">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.overlay--screen</code>
       </div>
     </div>
@@ -532,7 +532,7 @@ XtOverlay.defaults = {
           <div class="overlay">
             <div class="overlay_inner">
               <button type="button" class="btn btn--close" aria-label="Close"></button>
-              <div class="content">
+              <div class="overlay_content">
                 <h2>Lorem ipsum</h2>
                 <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -548,7 +548,7 @@ XtOverlay.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="primary">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.overlay--screen</code> <code>.overlay--primary</code>
       </div>
     </div>
@@ -561,7 +561,7 @@ XtOverlay.defaults = {
           <div class="overlay">
             <div class="overlay_inner">
               <button type="button" class="btn btn--close" aria-label="Close"></button>
-              <div class="content">
+              <div class="overlay_content">
                 <h2>Lorem ipsum</h2>
                 <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -577,7 +577,7 @@ XtOverlay.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="small">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.overlay--screen</code> <code>.overlay--size-small</code>
       </div>
     </div>
@@ -590,7 +590,7 @@ XtOverlay.defaults = {
           <div class="overlay">
             <div class="overlay_inner">
               <button type="button" class="btn btn--close" aria-label="Close"></button>
-              <div class="content">
+              <div class="overlay_content">
                 <h2>Lorem ipsum</h2>
                 <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -606,7 +606,7 @@ XtOverlay.defaults = {
   </div>
   <div class="demo-item demo-preview" data-name="full none">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.overlay--screen</code> <code>.overlay--size-full</code> <code>.overlay--none</code>
       </div>
     </div>
@@ -619,7 +619,7 @@ XtOverlay.defaults = {
           <div class="overlay">
             <div class="overlay_inner">
               <button type="button" class="btn btn--close" aria-label="Close"></button>
-              <div class="content">
+              <div class="overlay_content">
                 <h2>Lorem ipsum</h2>
                 <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -642,7 +642,7 @@ XtOverlay.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="position">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.overlay--left</code> <code>.overlay--right</code>
       </div>
     </div>
@@ -656,7 +656,7 @@ XtOverlay.defaults = {
             <div class="overlay">
               <div class="overlay_inner">
                 <button type="button" class="btn btn--close" aria-label="Close"></button>
-                <div class="content">
+                <div class="overlay_content">
                   <h2>Lorem ipsum</h2>
                   <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -677,7 +677,7 @@ XtOverlay.defaults = {
             <div class="overlay">
               <div class="overlay_inner">
                 <button type="button" class="btn btn--close" aria-label="Close"></button>
-                <div class="content">
+                <div class="overlay_content">
                   <h2>Lorem ipsum</h2>
                   <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -699,7 +699,7 @@ XtOverlay.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="nested">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         For limiting event inside a selector use <code>.event-limit</code>
       </div>
     </div>
@@ -714,7 +714,7 @@ XtOverlay.defaults = {
 
               <button type="button" class="btn btn--close" aria-label="Close"></button>
 
-              <div class="content">
+              <div class="overlay_content">
                 <h2>Lorem ipsum</h2>
                 <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -732,7 +732,7 @@ XtOverlay.defaults = {
 
                         <button type="button" class="btn btn--close" aria-label="Close"></button>
 
-                        <div class="content">
+                        <div class="overlay_content">
                           <h2>Lorem ipsum</h2>
                           <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -745,7 +745,7 @@ XtOverlay.defaults = {
                             </button>
                             <div class="drop drop--bottom drop--left">
                               <div class="drop_inner">
-                                <div class="content">
+                                <div class="drop_content">
                                   <ul class="list list--drop">
                                     <li>
                                       <button type="button">
@@ -783,7 +783,7 @@ XtOverlay.defaults = {
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/overlay/overlay-disable.html" data-name="disable">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         To disable drop use <code>.overlay--disable</code> useful within media queries
       </div>
     </div>
@@ -796,7 +796,7 @@ XtOverlay.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/overlay/overlay-classHtml.html"
        data-name="classHtml">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         Change class to add to <code>html</code> element on activation. <code>"classHtml": String</code>
       </div>
     </div>
@@ -804,15 +804,15 @@ XtOverlay.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/overlay/overlay-content.html"
        data-name="content">
     <div class="demo-text">
-      <div class="content">
-        You can add as many overlay content as you like. <code>.content-menu</code> <code>.content-title</code>
+      <div class="alert_content">
+        You can add as many overlay content as you like. <code>.overlay_content--menu</code> <code>.overlay_content--title</code>
       </div>
     </div>
   </div>
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/overlay/overlay-close-outside.html"
        data-name="close outside">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         Put <strong>.btn--close</strong> outside.
       </div>
     </div>
@@ -820,7 +820,7 @@ XtOverlay.defaults = {
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/overlay/overlay-message.html"
        data-name="message">
     <div class="demo-text">
-      <div class="content">
+      <div class="alert_content">
         <code>.overlay_message</code>
       </div>
     </div>

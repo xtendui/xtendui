@@ -9,11 +9,10 @@
     > .btn--close {
       .btn--primary();
     }
-    > .content.content-menu {
+    .overlay_content--menu {
       .list();
       .list_space(none);
       .flex--auto();
-      padding: 0 !important;
       height: 63px;
       background-color: @primary;
       > .btn {
@@ -21,17 +20,17 @@
         .align-items--center();
       }
     }
-    > .content.content-title {
+    .overlay_content--title {
       border-bottom: 1px solid @grey--250;
     }
-    > .content.content-foot {
+    .overlay_content--foot {
       border-top: 1px solid @grey--250;
     }
   }
   // animations
   &.active {
     .overlay_inner {
-      > .content.content-menu {
+      .overlay_content--menu {
         .anim--top.active();
         animation-delay: @time--small;
       }
@@ -39,7 +38,7 @@
   }
   &.out {
     .overlay_inner {
-      > .content.content-menu {
+      .overlay_content--menu {
         .anim--top.out();
         animation-delay: @time--small;
       }

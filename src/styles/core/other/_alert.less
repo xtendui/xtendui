@@ -4,4 +4,6 @@
 
 .alert {
   .block();
+  position: relative;
+  z-index: @index--base; // fix ::before negative z-index
 }

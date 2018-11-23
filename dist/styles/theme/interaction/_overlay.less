@@ -13,7 +13,7 @@
       border-color: transparent;
      box-shadow: 0 0 10rem fade(@black, @perc--md);
     }
-    > .content {
+    .overlay_content {
       padding: 3rem;
       @media @min-sm {
         padding: 4rem;
@@ -76,12 +76,14 @@
 
 .overlay--disable {
   // disable custom animation
-  .overlay > .overlay_inner {
-    .anim--none() !important;
-    opacity: 1 !important;
-    > .content {
+  .overlay {
+    .overlay_inner {
       .anim--none() !important;
       opacity: 1 !important;
+      .overlay_content {
+        .anim--none() !important;
+        opacity: 1 !important;
+      }
     }
   }
 }
@@ -96,7 +98,7 @@
         .anim--zoom.active();
       }
       > .btn--close,
-      > .content {
+      .overlay_content {
         .anim--vertical.active();
         animation-delay: @time--small;
       }
@@ -114,7 +116,7 @@
           .anim--left.active();
         }
         > .btn--close,
-        > .content {
+        .overlay_content {
           .anim--left.active();
           animation-delay: @time--small;
         }
@@ -126,7 +128,7 @@
           .anim--right.active();
         }
         > .btn--close,
-        > .content {
+        .overlay_content {
           .anim--right.active();
           animation-delay: @time--small;
         }
@@ -140,7 +142,7 @@
         animation-delay: @time--small;
       }
       > .btn--close,
-      > .content {
+      .overlay_content {
         .anim--vertical.out();
       }
     }
@@ -159,7 +161,7 @@
           animation-delay: @time--small;
         }
         > .btn--close,
-        > .content {
+        .overlay_content {
           .anim--left.out();
         }
       }
@@ -171,7 +173,7 @@
           animation-delay: @time--small;
         }
         > .btn--close,
-        > .content {
+        .overlay_content {
           .anim--right.out();
         }
       }
@@ -245,7 +247,7 @@
 
 .overlay--none {
   .overlay_inner {
-    > .content {
+    .overlay_content {
       padding: 0 !important;
     }
   }
