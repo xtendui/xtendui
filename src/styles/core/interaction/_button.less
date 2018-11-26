@@ -15,8 +15,11 @@
   &.out {
     z-index: @index--active - 1;
   }
+  // text overflow
   > span {
-    display: inline-block;
+    .display(inline-flex);
+    .flex-direction--row();
+    .align-items--baseline();
   }
   // non interactive
   div& {
