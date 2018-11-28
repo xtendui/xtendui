@@ -21,14 +21,15 @@
     .flex-direction--row();
     .align-items--baseline();
   }
-  // non interactive
-  div& {
-    cursor: default;
-    pointer-events: none;
-  }
 }
 
 // custom
+
+div.btn {
+  // non interactive when div
+  cursor: default;
+  pointer-events: none;
+}
 
 .btn--close {
   z-index: @index--btn-close;
