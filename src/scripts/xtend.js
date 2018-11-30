@@ -5,13 +5,13 @@
 'use strict';
 
 import './polyfills';
-import Core from './core/core';
-import Toggle from './core/toggle';
-import Drop from './core/drop';
-import Overlay from './core/overlay';
-import Slider from './core/slider';
-import Sticky from './core/sticky';
-import Fade from './core/fade';
+import Core from './core';
+import Toggle from './interaction/toggle';
+import Drop from './interaction/drop';
+import Overlay from './interaction/overlay';
+import Slider from './presentation/slider';
+import Sticky from './presentation/sticky';
+import Fade from './presentation/fade';
 
 //////////////////////
 // constructor

@@ -4,7 +4,7 @@
 
 'use strict';
 
-import Xt from '../xtend';
+import Xt from './xtend';
 
 //////////////////////
 // Core

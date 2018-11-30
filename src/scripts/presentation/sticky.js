@@ -5,7 +5,7 @@
 'use strict';
 
 import Xt from '../xtend';
-import Core from './core';
+import Core from '../core';
 
 //////////////////////
 // Sticky
