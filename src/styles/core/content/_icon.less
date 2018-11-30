@@ -4,6 +4,8 @@
 
 .icon--base() {
   display: inline-block;
+  vertical-align: middle;
+  .align-self--center();
   position: relative;
   font-size: @icon--medium;
   speak: none;
@@ -27,31 +29,33 @@
 
 // styles
 
-.icon_xt {
+.icon-xt {
   .icon--base();
   font-family: @icons_xt--family;
 }
 
-[class^='icon_xt--'], [class*=' icon_xt--'] {
+[class^='icon-xt--'], [class*=' icon-xt--'] {
   display: inline-block;
+  vertical-align: middle;
+  .align-self--center();
   &::before {
-    .icon_xt();
+    .icon-xt();
   }
 }
 
 // mixins
 
-.icon_xt(@content, @size: @icon--medium, @position: after) {
+.icon-xt(@content, @size: @icon--medium, @position: after) {
   & when (@position = before) {
     &::before {
-      .icon_xt();
+      .icon-xt();
       content: '@{content}';
       font-size: @size;
     }
   }
   & when (@position = after) {
     &::after {
-      .icon_xt();
+      .icon-xt();
       content: '@{content}';
       font-size: @size;
     }
@@ -66,8 +70,8 @@
   .generate-icons(@i:length(@icons_xt)) when (@i > 0) {
     .generate-icons(@i - 1);
     @name: extract(@icons_xt, @i);
-    @val: ~"icon_xt--@{name}";
-    .icon_xt--@{name} {
+    @val: ~"icon-xt--@{name}";
+    .icon-xt--@{name} {
       &::before {
         content: @@val;
       }
@@ -94,6 +98,8 @@
 
 [class^='icon--'], [class*=' icon--'] {
   display: inline-block;
+  vertical-align: middle;
+  .align-self--center();
   &::before {
     .icon();
   }
