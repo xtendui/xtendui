@@ -27,8 +27,4 @@ Thumbs.db
 # custom
 node_modules
 vendor
-prepros.cfg
-config.codekit3
-
-# docs
 /docs
