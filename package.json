@@ -17,9 +17,9 @@
   ],
   "scripts": {
     "build": "gulp build",
-    "watch": "gulp watch",
+    "dev": "gulp watch",
     "build:docs": "gulp build:docs",
-    "watch:docs": "gulp watch:docs",
+    "dev:docs": "gulp watch:docs",
     "serve": "bundle exec jekyll serve",
     "deploy": "gh-pages -d docs",
     "publish": "npm run deploy && git push && git push --tags && npm publish"
