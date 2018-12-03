@@ -357,119 +357,157 @@ description: Extensible button component with structured theming.
   </div>
 </div>
 
-<h2>List</h2>
+<h2>Options</h2>
 
-<h3>Usage</h3>
+<h3>Full</h3>
 
-<p>Use this markup to create a list group as line.</p>
-
-<pre>
-  <code class="html">
-    <ul class="list--base list--<variant> group">
-
-      <li class="group_inner">
-        <button type="button">
-          <span><!-- content --></span>
-        </button>
-      </li>
-
-      <li>
-        <button type="button">
-          <span><!-- content --></span>
-        </button>
-      </li>
-
-    </ul>
-  </code>
-</pre>
-
-<p>Use this markup to create a list group as stack.</p>
-
-<pre>
-  <code class="html">
-    <ul class="list--base list--<variant> group">
-
-      <li class="group_inner">
-        <button type="button">
-          <span><!-- content --></span>
-        </button>
-        <button type="button">
-          <span><!-- content --></span>
-        </button>
-      </li>
-
-    </ul>
-  </code>
-</pre>
+<p>Full width groups with <code>.full</code></p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="line">
     <div class="demo-source" data-lang="html">
-      <ul class="list--base list--secondary group">
-        <li class="group_inner">
-          <button type="button">
-            <span>btn 1</span>
+      <div class="group full">
+        <span class="group_inner">
+          <button type="button" class="btn btn--primary">
+            btn 1
           </button>
-        </li>
-        <li class="group_inner">
-          <button type="button">
-            <span>btn 2</span>
+        </span>
+        <span class="group_inner">
+          <button type="button" class="btn btn--primary-empty">
+            btn 2
           </button>
-        </li>
-        <li class="group_inner">
-          <button type="button">
-            <span>btn 3</span>
+        </span>
+        <input type="text" class="form_input">
+        <span class="group_inner">
+          <button type="button" class="btn btn--secondary">
+            btn 3
           </button>
-        </li>
-        <li class="group_inner">
-          <button type="button">
-            <span>btn 4</span>
+        </span>
+        <span class="group_inner">
+          <button type="button" class="btn btn--secondary-empty">
+            btn 4
           </button>
-        </li>
-      </ul>
+        </span>
+      </div>
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="stack">
     <div class="demo-source" data-lang="html">
-      <ul class="list--base list--secondary group">
-        <li class="group_inner">
-          <button type="button">
-            btn 1
+      <div class="group full">
+        <span class="group_inner">
+          <button type="button" class="btn btn--primary">
+            btn 1a
           </button>
-          <button type="button">
-            btn 2
+          <button type="button" class="btn btn--primary-empty">
+            btn 1b
           </button>
-        </li>
-        <li class="group_inner">
-          <button type="button">
-            btn 3
+        </span>
+        <span class="group_inner">
+          <button type="button" class="btn btn--secondary">
+            btn 2a
           </button>
-          <button type="button">
-            btn 4
+          <button type="button" class="btn btn--secondary-empty">
+            btn 2b
           </button>
-        </li>
-        <li class="group_inner">
-          <button type="button">
-            btn 1
+        </span>
+        <input type="text" class="form_input">
+        <span class="group_inner">
+          <button type="button" class="btn btn--primary">
+            btn 3a
           </button>
-          <button type="button">
-            btn 2
+          <button type="button" class="btn btn--primary-empty">
+            btn 3b
           </button>
-        </li>
-        <li class="group_inner">
-          <button type="button">
-            btn 3
+        </span>
+        <span class="group_inner">
+          <button type="button" class="btn btn--secondary">
+            btn 4a
           </button>
-          <button type="button">
-            btn 4
+          <button type="button" class="btn btn--secondary-empty">
+            btn 4b
           </button>
-        </li>
-      </ul>
+        </span>
+      </div>
     </div>
   </div>
 </div>
 
-<h2>Options</h2>
+<h3>List</h3>
+
+<p>Space group elements with <a href="">list's options</a>.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="line">
+    <div class="demo-source" data-lang="html">
+      <div class="group full">
+        <div class="list list_space--medium flex--auto">
+          <span class="group_inner">
+            <button type="button" class="btn btn--primary">
+              btn 1
+            </button>
+          </span>
+          <span class="group_inner">
+            <button type="button" class="btn btn--primary-empty">
+              btn 2
+            </button>
+          </span>
+          <input type="text" class="form_input">
+          <span class="group_inner">
+            <button type="button" class="btn btn--secondary">
+              btn 3
+            </button>
+          </span>
+          <span class="group_inner">
+            <button type="button" class="btn btn--secondary-empty">
+              btn 4
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="stack">
+    <div class="demo-source" data-lang="html">
+      <div class="group full">
+        <div class="list list_space--medium flex--auto">
+          <span class="group_inner">
+            <button type="button" class="btn btn--primary">
+              btn 1a
+            </button>
+            <button type="button" class="btn btn--primary-empty">
+              btn 1b
+            </button>
+          </span>
+          <span class="group_inner">
+            <button type="button" class="btn btn--secondary">
+              btn 2a
+            </button>
+            <button type="button" class="btn btn--secondary-empty">
+              btn 2b
+            </button>
+          </span>
+          <input type="text" class="form_input">
+          <span class="group_inner">
+            <button type="button" class="btn btn--primary">
+              btn 3a
+            </button>
+            <button type="button" class="btn btn--primary-empty">
+              btn 3b
+            </button>
+          </span>
+          <span class="group_inner">
+            <button type="button" class="btn btn--secondary">
+              btn 4a
+            </button>
+            <button type="button" class="btn btn--secondary-empty">
+              btn 4b
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <h3>Variants</h3>
 

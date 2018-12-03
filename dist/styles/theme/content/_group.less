@@ -9,23 +9,11 @@
   border-width: @group-border-width;
 }
 
-// animations
-
-.group {
-  // interaction
-  .transition--default.out();
-  transition-duration: @time--giant;
-  &:active, &.active {
-    .transition--default.active();
-    box-shadow: 0 1px 4px fade(@black, @perc--xs), 0 2px 8px fade(@black, @perc--sm);
-  }
-}
-
 // variants
 
 .group-input {
   .group--collapse();
-  > .form_input {
+  .form_input {
     border-color: @grey--300 !important;
   }
   .group_inner {

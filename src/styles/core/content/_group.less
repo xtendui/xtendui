@@ -4,13 +4,14 @@
 
 .group {
   .link--none();
-  position: relative;
   .display(inline-flex) !important;
   .flex-nowrap();
-  margin: 0 !important;
+  position: relative;
   padding: 0 !important;
   // .form_input
-  > .form_input {
+  .form_input {
+    .flex--auto();
+    width: auto;
     // border
     &:first-child {
       border-top-right-radius: 0 !important;
@@ -32,7 +33,6 @@
   .display(inline-flex);
   .flex-direction--column();
   .flex-wrap();
-  margin: 0 !important;
   // .btn
   > * {
     .flex--auto();
