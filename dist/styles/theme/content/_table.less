@@ -26,12 +26,6 @@
     .padding(all, medium);
     .font--small();
   }
-  // layout
-  &:not(.table-stripe):not(.table-border):not(.table--center) {
-    th, td {
-      .padding(x, layout);
-    }
-  }
   // data-th for .table--responsive
   td::before {
     .form_label();
@@ -68,15 +62,24 @@
   }
 }
 
+// .table-narrow
+
+.table-narrow {
+  th, td {
+    .padding(x, layout);
+    background-color: transparent;
+  }
+}
+
 // .table-small
 
 .table-small {
   th {
-    .padding(y, small);
-    .font--tiny();
+    .padding(all, small);
   }
   td {
-    .padding(y, small);
+    .padding(all, small);
+    .font--tiny();
   }
 }
 
