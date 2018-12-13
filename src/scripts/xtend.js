@@ -574,7 +574,7 @@ Xt.arrSingle = function (el) {
   if (!el) {
     return [];
   }
-  if (el.length === undefined) {
+  if (el.length === undefined || el.tagName === 'FORM') {
     let arr = new Array(1);
     arr[0] = el;
     return arr;

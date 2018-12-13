@@ -1071,7 +1071,7 @@ class Core {
       if (!options.instant || !options.instant[type]) { // @FIX queue instant
         if (options.delayOn) {
           if (isNaN(options.delayOn)) {
-            let count = parseInt(el.dataset.xtOnCount) || obj[type].queueEls.findIndex(x => x === el);
+            let count = parseInt(el.dataset.xtOnCount) || els.findIndex(x => x === el);
             let tot = parseInt(el.dataset.xtOnTot) || els.length;
             let fnc = new Function('current', 'total', options.delayOn);
             delay = fnc(count, tot - 1).toString();
@@ -1116,7 +1116,7 @@ class Core {
       if (!options.instant || !options.instant[type]) { // @FIX queue instant
         if (options.delayOff) {
           if (isNaN(options.delayOff)) {
-            let count = parseInt(el.dataset.xtOffCount) || obj[type].queueEls.findIndex(x => x === el);
+            let count = parseInt(el.dataset.xtOffCount) || els.findIndex(x => x === el);
             let tot = parseInt(el.dataset.xtOffTot) || els.length;
             let fnc = new Function('current', 'total', options.delayOff);
             delay = fnc(count, tot - 1).toString();
