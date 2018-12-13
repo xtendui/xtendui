@@ -38,7 +38,7 @@ Xt.Fade = Fade;
 Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
 
 Xt.initArr = [];
-Xt.onInit = function(added = document.documentElement) {
+Xt.onInit = function (added = document.documentElement) {
   added = Xt.arrSingle(added);
   // init xt
   Xt.init(added);
@@ -655,6 +655,11 @@ window.addEventListener('blur', function () {
 // export
 //////////////////////
 
+if (typeof define === 'function' && define.amd) {
+  define([], Xt);
+} else if (typeof exports === 'object') {
+  module.exports = Xt;
+}
+
 global.Xt = Xt;
-module.exports = Xt;
 export default Xt;
