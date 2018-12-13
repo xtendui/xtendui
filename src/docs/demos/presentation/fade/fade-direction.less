@@ -3,18 +3,18 @@
 .fade {
   opacity: 0;
   &.active {
-    &.fade-up {
+    &.fade--up {
       .anim--top.active();
     }
-    &.fade-down {
+    &.fade--down {
       .anim--bottom.active();
     }
   }
   &.out {
-    &.fade-up {
+    &.fade--up {
       .anim--bottom.out();
     }
-    &.fade-down {
+    &.fade--down {
       .anim--top.out();
     }
   }

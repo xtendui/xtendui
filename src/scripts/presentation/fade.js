@@ -91,7 +91,7 @@ class Fade extends Core {
     }
     // core
     for (let el of self.elements) {
-      if (el.offsetParent && !el.classList.contains('fade-block')) {
+      if (el.offsetParent && !el.classList.contains('fade--block')) {
         // vars
         let rectElTop = el.offsetParent.getBoundingClientRect().top + el.offsetTop; // we use parents to not include transforms animations
         let heightEl = parseFloat(getComputedStyle(el).height);
@@ -119,9 +119,9 @@ class Fade extends Core {
         } else {
           // outside
           changed = self.checkOff(el);
-          el.classList.add('fade-visible');
+          el.classList.add('fade--visible');
           if (changed) {
-            el.classList.add('fade-scroll');
+            el.classList.add('fade--scroll');
             currents.push(el);
             window.cancelAnimationFrame(parseFloat(el.dataset.xtEventFrame));
             el.dataset.xtEventFrame = window.requestAnimationFrame(function () {
@@ -135,11 +135,11 @@ class Fade extends Core {
         // direction
         if (changed) {
           if (scrollInverse) {
-            el.classList.remove('fade-down');
-            el.classList.add('fade-up');
+            el.classList.remove('fade--down');
+            el.classList.add('fade--up');
           } else {
-            el.classList.add('fade-down');
-            el.classList.remove('fade-up');
+            el.classList.add('fade--down');
+            el.classList.remove('fade--up');
           }
         }
       }

@@ -62,14 +62,14 @@ class Sticky extends Core {
     self.object.classList.add('xt-fixed');
     // hide
     if (options.hide === 'down') {
-      self.object.classList.add('sticky-hide-down');
+      self.object.classList.add('sticky--hide-down');
     } else {
-      self.object.classList.remove('sticky-hide-down');
+      self.object.classList.remove('sticky--hide-down');
     }
     if (options.hide === 'up') {
-      self.object.classList.add('sticky-hide-up');
+      self.object.classList.add('sticky--hide-up');
     } else {
-      self.object.classList.remove('sticky-hide-up');
+      self.object.classList.remove('sticky--hide-up');
     }
     // z-index
     self.zIndex = 100 - Xt.getUniqueNum();
@@ -152,12 +152,12 @@ class Sticky extends Core {
     let scrollTopOld = self.detail.scrollTopOld;
     // direction
     if (scrollTop < scrollTopOld) {
-      element.classList.remove('sticky-down');
-      element.classList.add('sticky-up');
+      element.classList.remove('sticky--down');
+      element.classList.add('sticky--up');
       scrollInverse = true;
     } else {
-      element.classList.add('sticky-down');
-      element.classList.remove('sticky-up');
+      element.classList.add('sticky--down');
+      element.classList.remove('sticky--up');
     }
     // hide
     if (options.hide === 'down') {
@@ -227,14 +227,14 @@ class Sticky extends Core {
       // hide
       if (hide) {
         add = -heightEl;
-        if (!element.classList.contains('sticky-hide')) {
-          element.classList.add('sticky-hide');
+        if (!element.classList.contains('sticky--hide')) {
+          element.classList.add('sticky--hide');
           // listener dispatch
           element.dispatchEvent(new CustomEvent('hide.xt.sticky', {detail: self.eDetail}));
         }
       } else {
-        if (element.classList.contains('sticky-hide')) {
-          element.classList.remove('sticky-hide');
+        if (element.classList.contains('sticky--hide')) {
+          element.classList.remove('sticky--hide');
           // listener dispatch
           element.dispatchEvent(new CustomEvent('show.xt.sticky', {detail: self.eDetail}));
         }
@@ -256,21 +256,21 @@ class Sticky extends Core {
     }
     // top and bottom
     if (!checkTop) {
-      if (!element.classList.contains('sticky-top')) {
-        element.classList.add('sticky-top');
+      if (!element.classList.contains('sticky--top')) {
+        element.classList.add('sticky--top');
       }
     } else {
-      if (element.classList.contains('sticky-top')) {
-        element.classList.remove('sticky-top');
+      if (element.classList.contains('sticky--top')) {
+        element.classList.remove('sticky--top');
       }
     }
     if (!checkBottom) {
-      if (!element.classList.contains('sticky-bottom')) {
-        element.classList.add('sticky-bottom');
+      if (!element.classList.contains('sticky--bottom')) {
+        element.classList.add('sticky--bottom');
       }
     } else {
-      if (element.classList.contains('sticky-bottom')) {
-        element.classList.remove('sticky-bottom');
+      if (element.classList.contains('sticky--bottom')) {
+        element.classList.remove('sticky--bottom');
       }
     }
     // set add
@@ -312,7 +312,7 @@ class Sticky extends Core {
         val = 0;
         for (let el of elements) {
           let addSticky = parseFloat(el.dataset.xtAddSticky);
-          if (addSticky) { // if sticky-hide get real add
+          if (addSticky) { // if sticky--hide get real add
             let style = getComputedStyle(el);
             if (style.display !== 'none') {
               val += addSticky;
@@ -349,12 +349,12 @@ class Sticky extends Core {
       let elements = Array.isArray(option) || NodeList.prototype.isPrototypeOf(option) ? option : document.querySelectorAll(option);
       if (elements.length) {
         for (let el of elements) {
-          if (el.classList.contains('sticky-hide-down') && el.classList.contains('active')) {
+          if (el.classList.contains('sticky--hide-down') && el.classList.contains('active')) {
             if (scrollInverse) {
               val += el.clientHeight;
               foundHide = true;
             }
-          } else if (el.classList.contains('sticky-hide-up') && el.classList.contains('active')) {
+          } else if (el.classList.contains('sticky--hide-up') && el.classList.contains('active')) {
             if (!scrollInverse) {
               val += el.clientHeight;
               foundHide = true;
