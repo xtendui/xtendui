@@ -4,27 +4,25 @@
 
 .overlay {
   // styles
-  .overlay_inner {
-    .overlay_design {
-      .design-setup();
-      border-radius: @overlay--border-radius;
-      border-width: @overlay--border-width;
-      border-style: solid;
-      border-color: transparent;
-      box-shadow: 0 0 10rem fade(@black, @perc--md);
+  .overlay_design {
+    .design-setup();
+    border-radius: @overlay--border-radius;
+    border-width: @overlay--border-width;
+    border-style: solid;
+    border-color: transparent;
+    box-shadow: 0 0 10rem fade(@black, @perc--md);
+  }
+  .overlay_content {
+    padding: 3rem;
+    @media @min-sm {
+      padding: 4rem;
     }
-    .overlay_content {
-      padding: 3rem;
-      @media @min-sm {
-        padding: 4rem;
-      }
-    }
-    > .btn--close {
-      position: absolute;
-      top: 2px;
-      right: 2px;
-      .btn--giant();
-    }
+  }
+  .overlay_inner > .btn--close {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    .btn--giant();
   }
   // options
   .overlay--white(); // variant
@@ -62,13 +60,10 @@
 .overlay--disable {
   // disable custom animation
   .overlay {
-    .overlay_inner {
+    .overlay_inner,
+    .overlay_content {
       .anim--none() !important;
       opacity: 1 !important;
-      .overlay_content {
-        .anim--none() !important;
-        opacity: 1 !important;
-      }
     }
   }
 }
@@ -78,15 +73,13 @@
 .overlay_outer {
   animation-duration: @time--medium + @time--small; // needed for .out animation timing, put max animation time
   &.active {
-    .overlay_inner {
-      .overlay_design {
-        .anim--zoom.active();
-      }
-      > .btn--close,
-      .overlay_content {
-        .anim--vertical.active();
-        animation-delay: @time--small;
-      }
+    .overlay_design {
+      .anim--zoom.active();
+    }
+    .overlay_content,
+    .overlay_inner > .btn--close {
+      .anim--vertical.active();
+      animation-delay: @time--small;
     }
     > .xt-backdrop {
       .xt-backdrop.active();
@@ -96,40 +89,34 @@
       .anim--opacity.active();
     }
     &.overlay--left {
-      .overlay_inner {
-        .overlay_design {
-          .anim--left.active();
-        }
-        > .btn--close,
-        .overlay_content {
-          .anim--left.active();
-          animation-delay: @time--small;
-        }
+      .overlay_design {
+        .anim--left.active();
+      }
+      .overlay_content,
+      .overlay_inner > .btn--close {
+        .anim--left.active();
+        animation-delay: @time--small;
       }
     }
     &.overlay--right {
-      .overlay_inner {
-        .overlay_design {
-          .anim--right.active();
-        }
-        > .btn--close,
-        .overlay_content {
-          .anim--right.active();
-          animation-delay: @time--small;
-        }
+      .overlay_design {
+        .anim--right.active();
+      }
+      .overlay_content,
+      .overlay_inner > .btn--close {
+        .anim--right.active();
+        animation-delay: @time--small;
       }
     }
   }
   &.out {
-    .overlay_inner {
-      .overlay_design {
-        .anim--zoom.out();
-        animation-delay: @time--small;
-      }
-      > .btn--close,
-      .overlay_content {
-        .anim--vertical.out();
-      }
+    .overlay_design {
+      .anim--zoom.out();
+      animation-delay: @time--small;
+    }
+    .overlay_content,
+    .overlay_inner > .btn--close {
+      .anim--vertical.out();
     }
     > .xt-backdrop {
       .xt-backdrop.out();
@@ -140,27 +127,23 @@
       animation-delay: @time--small;
     }
     &.overlay--left {
-      .overlay_inner {
-        .overlay_design {
-          .anim--left.out();
-          animation-delay: @time--small;
-        }
-        > .btn--close,
-        .overlay_content {
-          .anim--left.out();
-        }
+      .overlay_design {
+        .anim--left.out();
+        animation-delay: @time--small;
+      }
+      .overlay_content,
+      .overlay_inner > .btn--close {
+        .anim--left.out();
       }
     }
     &.overlay--right {
-      .overlay_inner {
-        .overlay_design {
-          .anim--right.out();
-          animation-delay: @time--small;
-        }
-        > .btn--close,
-        .overlay_content {
-          .anim--right.out();
-        }
+      .overlay_design {
+        .anim--right.out();
+        animation-delay: @time--small;
+      }
+      .overlay_content,
+      .overlay_inner > .btn--close {
+        .anim--right.out();
       }
     }
   }
@@ -169,71 +152,60 @@
 // variant
 
 .overlay--primary {
-  .overlay_inner,
-  &.overlay--screen .overlay {
+  .overlay_design {
+    border-color: @primary;
+    background-color: @primary;
+  }
+  .overlay_content {
     color: @text--inverse;
-    .overlay_design {
-      border-color: @primary;
-      background-color: @primary;
-    }
-    > .btn--close {
-      .btn--primary();
-    }
+  }
+  .overlay_inner > .btn--close {
+    .btn--primary();
   }
 }
 
 .overlay--secondary {
-  .overlay_inner,
-  &.overlay--screen .overlay {
+  .overlay_design {
+    border-color: @secondary;
+    background-color: @secondary;
+  }
+  .overlay_content {
     color: @text;
-    .overlay_design {
-      border-color: @secondary;
-      background-color: @secondary;
-    }
-    > .btn--close {
-      .btn--secondary();
-    }
+  }
+  .overlay_inner > .btn--close {
+    .btn--secondary();
   }
 }
 
 .overlay--white {
-  .overlay_inner,
-  &.overlay--screen .overlay {
+  .overlay_design {
+    border-color: @white;
+    background-color: @white;
+  }
+  .overlay_content {
     color: @text;
-    .overlay_design {
-      border-color: @white;
-      background-color: @white;
-    }
-    > .btn--close {
-      .btn--primary-empty();
-    }
+  }
+  .overlay_inner > .btn--close {
+    .btn--primary-empty();
   }
 }
 
 // special
 
 .overlay--squared {
-  .overlay_inner,
-  &.overlay--screen .overlay {
-    .overlay_design {
-      border-radius: 0;
-    }
+  .overlay_design {
+    border-radius: 0;
   }
 }
 
 .overlay--noborder {
-  .overlay_inner,
-  &.overlay--screen .overlay {
-    .overlay_design {
-      border: 0;
-    }
+  .overlay_design {
+    border: 0;
   }
 }
 
 .overlay--none {
-  .overlay_inner {
-    .overlay_content {
-      padding: 0 !important;
-    }
+  .overlay_content {
+    padding: 0 !important;
   }
 }

@@ -5,43 +5,37 @@
 //////////////////////
 
 .overlay_outer {
-  .overlay_inner {
-    > .btn--close {
-      .btn--primary();
+  .overlay_inner > .btn--close {
+    .btn--primary();
+  }
+  .overlay_content--menu {
+    .list();
+    .list_space(none);
+    .flex--auto();
+    height: 63px;
+    background-color: @primary;
+    > .btn {
+      .display(flex);
+      .align-items--center();
     }
-    .overlay_content--menu {
-      .list();
-      .list_space(none);
-      .flex--auto();
-      height: 63px;
-      background-color: @primary;
-      > .btn {
-        .display(flex);
-        .align-items--center();
-      }
-    }
-    .overlay_content--title {
-      border-bottom: 1px solid @grey--250;
-    }
-    .overlay_content--foot {
-      border-top: 1px solid @grey--250;
-    }
+  }
+  .overlay_content--title {
+    border-bottom: 1px solid @grey--250;
+  }
+  .overlay_content--foot {
+    border-top: 1px solid @grey--250;
   }
   // animations
   &.active {
-    .overlay_inner {
-      .overlay_content--menu {
-        .anim--top.active();
-        animation-delay: @time--small;
-      }
+    .overlay_content--menu {
+      .anim--top.active();
+      animation-delay: @time--small;
     }
   }
   &.out {
-    .overlay_inner {
-      .overlay_content--menu {
-        .anim--top.out();
-        animation-delay: @time--small;
-      }
+    .overlay_content--menu {
+      .anim--top.out();
+      animation-delay: @time--small;
     }
   }
 }
