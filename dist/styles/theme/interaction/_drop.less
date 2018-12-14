@@ -5,7 +5,7 @@
 .drop {
   // styles
   > .drop_inner {
-    &@{drop--design} {
+    > .drop_design {
       .design-setup();
       border-radius: @drop--border-radius;
       border-width: @drop--border-width;
@@ -35,7 +35,7 @@
   }
   &.active {
     > .drop > .drop_inner {
-      &@{drop--design} {
+      > .drop_design {
         .anim--zoom.active();
       }
       > .drop_content {
@@ -49,7 +49,7 @@
   }
   &.out {
     > .drop > .drop_inner {
-      &@{drop--design} {
+      > .drop_design {
         .anim--zoom.out();
         animation-delay: @time--small;
       }
@@ -96,7 +96,7 @@
 .drop--primary {
   > .drop_inner {
     color: @text--inverse;
-    &@{drop--design} {
+    > .drop_design {
       border-color: darken(@primary, @perc--xs);
       background-color: @primary;
     }
@@ -109,7 +109,7 @@
 .drop--secondary {
   > .drop_inner {
     color: @text;
-    &@{drop--design} {
+    > .drop_design {
       border-color: darken(@secondary, @perc--xs);
       background-color: @secondary;
     }
@@ -122,7 +122,7 @@
 .drop--white {
   > .drop_inner {
     color: @text;
-    &@{drop--design} {
+    > .drop_design {
       border-color: darken(@white, @perc--xs);
       background-color: @white;
     }
@@ -136,7 +136,7 @@
 
 .drop--nodesign {
   > .drop_inner {
-    &@{drop--design} {
+    > .drop_design {
       display: none;
     }
   }
@@ -144,7 +144,7 @@
 
 .drop--squared {
   > .drop_inner {
-    &@{drop--design} {
+    > .drop_design {
       border-radius: 0;
     }
   }
@@ -152,7 +152,7 @@
 
 .drop--noborder {
   > .drop_inner {
-    &@{drop--design} {
+    > .drop_design {
       border: 0;
     }
   }
