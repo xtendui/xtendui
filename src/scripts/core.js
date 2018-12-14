@@ -987,7 +987,6 @@ class Core {
       if (done === 1) {
         // special
         self.specialClassHtmlOff();
-        self.specialScrollbarOff();
         // focus
         if (options.scrollbar) {
           Xt.focus.block = false;
@@ -999,6 +998,8 @@ class Core {
       self.queueOn(type, self.detail.queueOn.length - 1);
       // all done
       if (done === Object.entries(obj).length) {
+        // special
+        self.specialScrollbarOff();
         // remove queue
         self.detail.queueOff.pop();
       }

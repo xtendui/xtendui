@@ -5,7 +5,7 @@
 .overlay {
   // styles
   .overlay_inner {
-    > .overlay_design {
+    .overlay_design {
       .design-setup();
       border-radius: @overlay--border-radius;
       border-width: @overlay--border-width;
@@ -79,7 +79,7 @@
   animation-duration: @time--medium + @time--small; // needed for .out animation timing, put max animation time
   &.active {
     .overlay_inner {
-      > .overlay_design {
+      .overlay_design {
         .anim--zoom.active();
       }
       > .btn--close,
@@ -97,7 +97,7 @@
     }
     &.overlay--left {
       .overlay_inner {
-        > .overlay_design {
+        .overlay_design {
           .anim--left.active();
         }
         > .btn--close,
@@ -109,7 +109,7 @@
     }
     &.overlay--right {
       .overlay_inner {
-        > .overlay_design {
+        .overlay_design {
           .anim--right.active();
         }
         > .btn--close,
@@ -122,7 +122,7 @@
   }
   &.out {
     .overlay_inner {
-      > .overlay_design {
+      .overlay_design {
         .anim--zoom.out();
         animation-delay: @time--small;
       }
@@ -141,7 +141,7 @@
     }
     &.overlay--left {
       .overlay_inner {
-        > .overlay_design {
+        .overlay_design {
           .anim--left.out();
           animation-delay: @time--small;
         }
@@ -153,7 +153,7 @@
     }
     &.overlay--right {
       .overlay_inner {
-        > .overlay_design {
+        .overlay_design {
           .anim--right.out();
           animation-delay: @time--small;
         }
@@ -172,7 +172,7 @@
   .overlay_inner,
   &.overlay--screen .overlay {
     color: @text--inverse;
-    > .overlay_design {
+    .overlay_design {
       border-color: @primary;
       background-color: @primary;
     }
@@ -186,7 +186,7 @@
   .overlay_inner,
   &.overlay--screen .overlay {
     color: @text;
-    > .overlay_design {
+    .overlay_design {
       border-color: @secondary;
       background-color: @secondary;
     }
@@ -200,7 +200,7 @@
   .overlay_inner,
   &.overlay--screen .overlay {
     color: @text;
-    > .overlay_design {
+    .overlay_design {
       border-color: @white;
       background-color: @white;
     }
@@ -215,7 +215,7 @@
 .overlay--squared {
   .overlay_inner,
   &.overlay--screen .overlay {
-    > .overlay_design {
+    .overlay_design {
       border-radius: 0;
     }
   }
@@ -224,7 +224,7 @@
 .overlay--noborder {
   .overlay_inner,
   &.overlay--screen .overlay {
-    > .overlay_design {
+    .overlay_design {
       border: 0;
     }
   }
