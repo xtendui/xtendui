@@ -14,19 +14,16 @@
   @media @max-sm {
     display: none;
   }
-  // add box shadow to button
-  .overlay_dismiss {
+  .btn {
     &@{btn--design} {
       box-shadow: 3px 3px 15px fade(@black, @perc--sm);
     }
   }
   .overlay--left & {
     right: 0;
-    margin-right: 3rem;
   }
   .overlay--right & {
     left: 0;
-    margin-left: 3rem;
   }
   // animations
   .overlay--left.active & {

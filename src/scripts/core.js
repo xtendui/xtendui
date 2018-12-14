@@ -1428,44 +1428,48 @@ class Core {
    */
   specialCollapseOn(el) {
     if (el.classList.contains('collapse--height')) {
-      el.classList.add('xt-calculating');
-      el.style.height = 'auto';
-      el.style.paddingTop = '';
-      el.style.paddingBottom = '';
-      let h = el.clientHeight + 'px';
-      let pt = el.style.paddingTop;
-      let pb = el.style.paddingBottom;
       window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
       el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-        el.classList.remove('xt-calculating');
-        el.style.height = '0';
-        el.style.paddingTop = '0';
-        el.style.paddingBottom = '0';
+        el.classList.add('xt-calculating');
+        el.style.height = 'auto';
+        el.style.paddingTop = '';
+        el.style.paddingBottom = '';
+        let h = el.clientHeight + 'px';
+        let pt = el.style.paddingTop;
+        let pb = el.style.paddingBottom;
         el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-          el.style.height = h;
-          el.style.paddingTop = pt;
-          el.style.paddingBottom = pb;
+          el.classList.remove('xt-calculating');
+          el.style.height = '0';
+          el.style.paddingTop = '0';
+          el.style.paddingBottom = '0';
+          el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
+            el.style.height = h;
+            el.style.paddingTop = pt;
+            el.style.paddingBottom = pb;
+          }).toString();
         }).toString();
       }).toString();
     }
     if (el.classList.contains('collapse--width')) {
-      el.classList.add('xt-calculating');
-      el.style.width = 'auto';
-      el.style.paddingLeft = '';
-      el.style.paddingRight = '';
-      let w = el.clientHeight + 'px';
-      let pl = el.style.paddingLeft;
-      let pr = el.style.paddingRight;
       window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
       el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-        el.classList.remove('xt-calculating');
-        el.style.width = '0';
-        el.style.paddingLeft = '0';
-        el.style.paddingRight = '0';
+        el.classList.add('xt-calculating');
+        el.style.width = 'auto';
+        el.style.paddingLeft = '';
+        el.style.paddingRight = '';
+        let w = el.clientHeight + 'px';
+        let pl = el.style.paddingLeft;
+        let pr = el.style.paddingRight;
         el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-          el.style.width = w;
-          el.style.paddingLeft = pl;
-          el.style.paddingRight = pr;
+          el.classList.remove('xt-calculating');
+          el.style.width = '0';
+          el.style.paddingLeft = '0';
+          el.style.paddingRight = '0';
+          el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
+            el.style.width = w;
+            el.style.paddingLeft = pl;
+            el.style.paddingRight = pr;
+          }).toString();
         }).toString();
       }).toString();
     }
@@ -1631,7 +1635,7 @@ class Core {
       container.style.paddingRight = width + 'px';
       container.classList.add('xt-scrollbar');
       // check fixed
-      let checks = document.querySelectorAll('.xt-check-fixed > *');
+      let checks = document.querySelectorAll('.xt-fixed--inner > *');
       for (let check of checks) {
         let style = getComputedStyle(check);
         if (style.position === 'fixed') {
@@ -1644,8 +1648,8 @@ class Core {
       let elements = document.querySelectorAll('.xt-fixed');
       for (let element of elements) {
         element.style.paddingRight = '';
-        if (self.normalizeWidth(element.clientWidth) === '') {
-          let style = getComputedStyle(element);
+        let style = getComputedStyle(element);
+        if (self.normalizeWidth(element.clientWidth) === '') { // only if full width
           let padding = style.paddingRight;
           let str = 'calc(' + padding + ' + ' + width + 'px)';
           element.classList.add('transition--none');
@@ -1658,7 +1662,7 @@ class Core {
         }
       }
       // backdrop
-      let backdrops = self.object.querySelectorAll(':scope > .xt-backdrop');
+      let backdrops = document.querySelectorAll('.xt-backdrop');
       for (let backdrop of backdrops) {
         backdrop.style.right = width + 'px';
       }
