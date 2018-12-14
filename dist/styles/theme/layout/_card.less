@@ -4,7 +4,7 @@
 
 .card {
   // styles
-  &@{card--design} {
+  > .card_design {
     .design-setup();
     border-radius: @card--border-radius;
     border-width: @card--border-width;
@@ -27,7 +27,7 @@
 }
 
 .card--max-width {
-  .flex--none();
+  width: auto;
   > .card_content {
     overflow-x: auto;
     max-width: 35rem;
@@ -38,7 +38,7 @@
 // variant
 
 .card--primary {
-  &@{card--design} {
+  > .card_design {
     border-color: @primary;
     background-color: @primary;
   }
@@ -48,7 +48,7 @@
 }
 
 .card--secondary {
-  &@{card--design} {
+  > .card_design {
     border-color: @secondary;
     background-color: @secondary;
   }
@@ -58,7 +58,7 @@
 }
 
 .card--error {
-  &@{card--design} {
+  > .card_design {
     border-color: @error;
     background-color: @error;
   }
@@ -68,7 +68,7 @@
 }
 
 .card--white {
-  &@{card--design} {
+  > .card_design {
     border-color: @white;
     background-color: @white;
   }
@@ -117,19 +117,19 @@
 // special
 
 .card--nodesign {
-  &@{card--design} {
+  > .card_design {
     display: none;
   }
 }
 
 .card--squared {
-  &@{card--design} {
+  > .card_design {
     border-radius: 0;
   }
 }
 
 .card--noborder {
-  &@{card--design} {
+  > .card_design {
     border: 0;
   }
 }
