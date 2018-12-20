@@ -44,8 +44,7 @@ class Ajax extends Core {
       url = loc.replace(/https?:\/\/[^\/]+/i, '');
     }
     // set pushstate
-    document.title = 'initial';
-    self.pushState(url, 'initial');
+    self.pushState(url, document.title);
   }
 
   /**
@@ -65,10 +64,9 @@ class Ajax extends Core {
   eventPopstateHandler(e) {
     let self = this;
     // handler
-    //console.log(e, history);
     if (!e.detail || !e.detail.skip) {
       if (history.state && history.state.url) {
-        self.ajaxCall(history.state.url, self.targets);
+        self.ajaxCall(history.state.url);
       }
     }
   }
@@ -96,7 +94,7 @@ class Ajax extends Core {
     }
     // ajax on done
     if (done === Object.entries(obj).length) {
-      self.ajaxCall(obj[type].groupElements.single.getAttribute('href'), self.targets);
+      self.ajaxCall(obj[type].groupElements.single.getAttribute('href'));
     }
   }
 
@@ -107,9 +105,8 @@ class Ajax extends Core {
   /**
    * ajax call
    * @param {String} url Url to get
-   * @param {NodeList|Array} targets Targets to replace content
    */
-  ajaxCall(url, targets) {
+  ajaxCall(url) {
     let self = this;
     // make ajax call
     if (url) {
@@ -117,13 +114,13 @@ class Ajax extends Core {
       request.open('GET', url, true);
       request.onload = function() {
         if (request.status >= 200 && request.status < 400) {
-          self.ajaxSuccess(url, targets, request.responseText);
+          self.ajaxSuccess(url, request.responseText);
         } else {
-          self.ajaxError(url, targets, request.responseText);
+          self.ajaxError(url, request.responseText);
         }
       };
       request.onerror = function() {
-        self.ajaxError(url, targets, request.responseText);
+        self.ajaxError(url, request.responseText);
       };
       request.send();
     }
@@ -132,14 +129,13 @@ class Ajax extends Core {
   /**
    * ajax success
    * @param {String} url Url to get
-   * @param {NodeList|Array} targets Targets to replace content
    * @param {String} responseText Html response
    */
-  ajaxSuccess(url, targets, responseText) {
+  ajaxSuccess(url, responseText) {
     let self = this;
     let options = self.options;
     // content
-    let target = targets[0];
+    let target = self.targets[0];
     let html = document.createElement('html');
     html.innerHTML = responseText.trim();
     let replace = html.querySelectorAll(options.targets)[0];
@@ -151,17 +147,15 @@ class Ajax extends Core {
     // populate dom
     target.innerHTML = replace.innerHTML;
     // pushstate
-    console.log(html.title);
-    self.pushState(url, html.title);
+    self.pushState(url, html.querySelectorAll('head title')[0].innerHTML);
   }
 
   /**
    * ajax error
    * @param {String} url Url to get
-   * @param {NodeList|Array} targets Targets to replace content
    * @param {String} responseText Html response
    */
-  ajaxError(url, targets, responseText) {
+  ajaxError(url, responseText) {
     console.log('ajax error error:', responseText);
   }
 
@@ -173,6 +167,8 @@ class Ajax extends Core {
     if (!history.state || !history.state.url || history.state.url !== url) {
       document.title = title;
       history.pushState({'url': url, 'title': title}, title, url);
+    } else {
+      document.title = history.state.title;
     }
   }
 
