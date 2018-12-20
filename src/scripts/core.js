@@ -296,7 +296,7 @@ class Core {
   eventOnHandler(element, e) {
     let self = this;
     let options = self.options;
-    // prevent links
+    // prevent links (needed for xt-ajax)
     if (element.tagName === 'A') {
       e.preventDefault();
     }

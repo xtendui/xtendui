@@ -38,78 +38,94 @@ Xt.Ajax = Ajax;
 //////////////////////
 
 Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
-
 Xt.initArr = [];
-Xt.onInit = function (added = document.documentElement) {
-  // init xt
-  Xt.init(added);
-  // init custom
-  for (let init of Xt.initArr) {
-    init(added);
-  }
-};
 
 //////////////////////
 // init
 //////////////////////
 
 /**
- * init Xt
+ * init
+ * on DOM ready and on content added to DOM
  */
-Xt.init = function (containers) {
+
+Xt.onInit = function (added = document.documentElement) {
+  // init xt
+  Xt.initXt(added);
+  // init extension
+  for (let obj of Xt.initArr) {
+    let els = [];
+    if (added.matches(obj.matches)) {
+      els.push(added);
+    }
+    for (let el of added.querySelectorAll(obj.matches)) {
+      els.push(el);
+    }
+    if (els.length) {
+      for (let [index, el] of els.entries()) {
+        obj.fnc(el, index);
+      }
+    }
+  }
+};
+
+/**
+ * initXt
+ */
+Xt.initXt = function (containers) {
   containers = Xt.arrSingle(containers);
   for (let container of containers) {
     // toggle
-    if (container.getAttribute('data-xt-toggle') !== null) {
+    if (container.matches('[data-xt-toggle]')) {
       new Xt.Toggle(container);
     }
     for (let el of container.querySelectorAll('[data-xt-toggle]')) {
       new Xt.Toggle(el);
     }
     // drop
-    if (container.getAttribute('data-xt-drop') !== null) {
+    if (container.matches('[data-xt-drop]')) {
       new Xt.Drop(container);
     }
     for (let el of container.querySelectorAll('[data-xt-drop]')) {
       new Xt.Drop(el);
     }
     // overlay
-    if (container.getAttribute('data-xt-overlay') !== null) {
+    if (container.matches('[data-xt-overlay]')) {
       new Xt.Overlay(container);
     }
     for (let el of container.querySelectorAll('[data-xt-overlay]')) {
       new Xt.Overlay(el);
     }
     // slider
-    if (container.getAttribute('data-xt-slider') !== null) {
+    if (container.matches('[data-xt-slider]')) {
       new Xt.Slider(container);
     }
     for (let el of container.querySelectorAll('[data-xt-slider]')) {
       new Xt.Slider(el);
     }
     // sticky
-    if (container.getAttribute('data-xt-sticky') !== null) {
+    if (container.matches('[data-xt-sticky]')) {
       new Xt.Sticky(container);
     }
     for (let el of container.querySelectorAll('[data-xt-sticky]')) {
       new Xt.Sticky(el);
     }
     // fade
-    if (container.getAttribute('data-xt-fade') !== null) {
+    if (container.matches('[data-xt-fade]')) {
       new Xt.Fade(container);
     }
     for (let el of container.querySelectorAll('[data-xt-fade]')) {
       new Xt.Fade(el);
     }
     // ajax
-    if (container.getAttribute('data-xt-ajax') !== null) {
+    if (container.matches('[data-xt-ajax]')) {
       new Xt.Ajax(container);
     }
     for (let el of container.querySelectorAll('[data-xt-ajax]')) {
       new Xt.Ajax(el);
     }
     // btnMerge
-    if (container.tagName === 'A' || container.tagName === 'BUTTON') {
+    if (container.matches('a, button')) {
       Xt.btnMerge.init(container);
     }
     for (let el of Array.from(container.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
