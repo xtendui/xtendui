@@ -754,7 +754,7 @@ class Core {
    * set eEetail
    * @param {Event} e
    */
-  eDetailSet(e) {
+  eDetailSet(e = null) {
     let self = this;
     // eDetailSet
     self.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};

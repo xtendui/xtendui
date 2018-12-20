@@ -145,20 +145,23 @@ class Ajax extends Core {
       // keep relative sub
       let id = keep.getAttribute('data-xt-ajax-keep');
       let sub = substitute.querySelectorAll('[data-xt-ajax-keep="' + id + '"]')[0];
-      // loop all childrens
+      // loop all descendants
       let elsKeep = keep.querySelectorAll('*');
       let elsSub = sub.querySelectorAll('*');
       for (let i = 0; i < elsKeep.length; i++) {
         let elKeep = elsKeep[i];
         let elSub = elsSub[i];
-        // check storage for events
-        let storages = Xt.dataStorage.getAll(elKeep);
-        if (storages) {
-          for (let [key, value] of storages) {
-            // copy events
-            let handler = Xt.dataStorage.put(elSub, key, value);
-            elSub.removeEventListener('click', handler);
-            elSub.addEventListener('click', handler);
+        if (elSub) {
+          sub.dataset.xtAjaxKept = url;
+          // check storage for events
+          let storages = Xt.dataStorage.getAll(elKeep);
+          if (storages) {
+            for (let [key, value] of storages) {
+              // copy events
+              let handler = Xt.dataStorage.put(elSub, key, value);
+              elSub.removeEventListener('click', handler);
+              elSub.addEventListener('click', handler);
+            }
           }
         }
       }
@@ -170,6 +173,9 @@ class Ajax extends Core {
     // garbage collector
     html = null;
     substitute = null;
+    // dispatch
+    self.eDetailSet();
+    target.dispatchEvent(new CustomEvent('ajax.xt', {detail: self.eDetail}));
   }
 
   /**

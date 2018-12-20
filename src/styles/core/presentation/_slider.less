@@ -2,16 +2,22 @@
 // slider
 //////////////////////
 
+.slider {
+  position: relative;
+}
+
 .slide {
   .user-select--none();
   position: relative;
+  min-height: 100%;
   overflow: hidden;
-  > .slide_inner {
-    position: relative;
-  }
   // prevent image dragging
   img {
     -webkit-user-drag: none;
     pointer-events: none;
   }
+}
+
+.slide_inner {
+  position: relative;
 }
