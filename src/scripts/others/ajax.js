@@ -32,7 +32,6 @@ class Ajax extends Core {
    */
   initScope() {
     super.initScope();
-    console.log(this.elements, this.targets);
   }
 
   //////////////////////
@@ -48,6 +47,7 @@ class Ajax extends Core {
     let options = self.options;
     // ajax on done
     for (let tr of self.targets) {
+      //console.log(self.elements, self.targets);
       console.log(tr.querySelectorAll('[data-xt-ajax-keep]'));
     }
     /*

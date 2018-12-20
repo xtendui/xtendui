@@ -109,7 +109,7 @@ Xt.init = function (containers) {
       new Xt.Ajax(el);
     }
     // btnMerge
-    if (container.tagName === 'a' || container.tagName === 'button') {
+    if (container.tagName === 'A' || container.tagName === 'BUTTON') {
       Xt.btnMerge.init(container);
     }
     for (let el of Array.from(container.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {

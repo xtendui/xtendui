@@ -294,7 +294,10 @@ class Core {
   eventOnHandler(element, e) {
     let self = this;
     let options = self.options;
-    e.preventDefault();
+    // prevent links
+    if (element.tagName === 'A') {
+      e.preventDefault();
+    }
     // handler
     if (!e.detail || !e.detail.skip) {
       // event block
@@ -332,7 +335,6 @@ class Core {
   eventOffHandler(element, e) {
     let self = this;
     let options = self.options;
-    e.preventDefault();
     // handler
     if (!e.detail || !e.detail.skip) {
       // event block
