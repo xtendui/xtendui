@@ -139,14 +139,14 @@ class Ajax extends Core {
     let html = document.createElement('html');
     html.innerHTML = responseText.trim();
     let subsitute = html.querySelectorAll(options.targets)[0];
+    /* NO IT DOESN'T RETAIN EVENTS
     // data-xt-ajax-keep
     for (let keep of target.querySelectorAll('[data-xt-ajax-keep]')) {
       let id = keep.getAttribute('data-xt-ajax-keep');
       let replace = subsitute.querySelectorAll('[data-xt-ajax-keep="' + id + '"]')[0];
-      //replace.parentNode.replaceChild(keep, replace);
-      //replace.parentNode.appendChild(keep);
-      //console.log(keep);
+      replace.parentNode.replaceChild(keep, replace);
     }
+    */
     // populate dom
     target.innerHTML = subsitute.innerHTML;
     // pushstate

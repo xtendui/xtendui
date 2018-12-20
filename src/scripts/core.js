@@ -123,6 +123,8 @@ class Core {
   initCurrents() {
     let self = this;
     let options = self.options;
+    // initial
+    self.detail.initial = true;
     // @FIX set namespace for next frame
     for (let el of self.elements) {
       el.dataset.xtNamespace = self.namespace;
@@ -980,6 +982,8 @@ class Core {
       self.queueOff(type, self.detail.queueOff.length - 1);
       // all done
       if (done === Object.entries(obj).length) {
+        // initial
+        self.detail.initial = false;
         // remove queue
         self.detail.queueOn.pop();
       }
