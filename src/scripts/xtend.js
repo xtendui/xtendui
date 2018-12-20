@@ -45,13 +45,10 @@ Xt.init = [];
 //////////////////////
 
 /**
- * initAll
+ * initExtensions
  */
 
-Xt.initAll = function (added = document.documentElement) {
-  // init xt
-  Xt.initXt(added);
-  // init extension
+Xt.initExtensions = function (added = document.documentElement) {
   for (let obj of Xt.init) {
     let els = [];
     if (added.matches(obj.matches)) {
@@ -71,63 +68,63 @@ Xt.initAll = function (added = document.documentElement) {
 /**
  * initXt
  */
-Xt.initXt = function (containers) {
-  containers = Xt.arrSingle(containers);
-  for (let container of containers) {
+Xt.initXt = function (added = document.documentElement) {
+  added = Xt.arrSingle(added);
+  for (let element of added) {
     // toggle
-    if (container.matches('[data-xt-toggle]')) {
-      new Xt.Toggle(container);
+    if (element.matches('[data-xt-toggle]')) {
+      new Xt.Toggle(element);
     }
-    for (let el of container.querySelectorAll('[data-xt-toggle]')) {
+    for (let el of element.querySelectorAll('[data-xt-toggle]')) {
       new Xt.Toggle(el);
     }
     // drop
-    if (container.matches('[data-xt-drop]')) {
-      new Xt.Drop(container);
+    if (element.matches('[data-xt-drop]')) {
+      new Xt.Drop(element);
     }
-    for (let el of container.querySelectorAll('[data-xt-drop]')) {
+    for (let el of element.querySelectorAll('[data-xt-drop]')) {
       new Xt.Drop(el);
     }
     // overlay
-    if (container.matches('[data-xt-overlay]')) {
-      new Xt.Overlay(container);
+    if (element.matches('[data-xt-overlay]')) {
+      new Xt.Overlay(element);
     }
-    for (let el of container.querySelectorAll('[data-xt-overlay]')) {
+    for (let el of element.querySelectorAll('[data-xt-overlay]')) {
       new Xt.Overlay(el);
     }
     // slider
-    if (container.matches('[data-xt-slider]')) {
-      new Xt.Slider(container);
+    if (element.matches('[data-xt-slider]')) {
+      new Xt.Slider(element);
     }
-    for (let el of container.querySelectorAll('[data-xt-slider]')) {
+    for (let el of element.querySelectorAll('[data-xt-slider]')) {
       new Xt.Slider(el);
     }
     // sticky
-    if (container.matches('[data-xt-sticky]')) {
-      new Xt.Sticky(container);
+    if (element.matches('[data-xt-sticky]')) {
+      new Xt.Sticky(element);
     }
-    for (let el of container.querySelectorAll('[data-xt-sticky]')) {
+    for (let el of element.querySelectorAll('[data-xt-sticky]')) {
       new Xt.Sticky(el);
     }
     // fade
-    if (container.matches('[data-xt-fade]')) {
-      new Xt.Fade(container);
+    if (element.matches('[data-xt-fade]')) {
+      new Xt.Fade(element);
     }
-    for (let el of container.querySelectorAll('[data-xt-fade]')) {
+    for (let el of element.querySelectorAll('[data-xt-fade]')) {
       new Xt.Fade(el);
     }
     // ajax
-    if (container.matches('[data-xt-ajax]')) {
-      new Xt.Ajax(container);
+    if (element.matches('[data-xt-ajax]')) {
+      new Xt.Ajax(element);
     }
-    for (let el of container.querySelectorAll('[data-xt-ajax]')) {
+    for (let el of element.querySelectorAll('[data-xt-ajax]')) {
       new Xt.Ajax(el);
     }
     // btnMerge
-    if (container.matches('a, button')) {
-      Xt.btnMerge.init(container);
+    if (element.matches('a, button')) {
+      Xt.btnMerge.init(element);
     }
-    for (let el of Array.from(container.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
+    for (let el of Array.from(element.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
       Xt.btnMerge.init(el);
     }
   }
@@ -140,7 +137,8 @@ Xt.observer = new MutationObserver(function (mutationsList) {
     if (mutation.type == 'childList') {
       for (let added of mutation.addedNodes) {
         if (added.nodeType === 1 && !added.classList.contains('xt-ignore')) {
-          Xt.initAll(added);
+          Xt.initExtensions(added);
+          Xt.initXt(added);
         }
       }
     }
@@ -151,12 +149,14 @@ Xt.observer = new MutationObserver(function (mutationsList) {
 
 if (document.readyState === "loading") {
   document.addEventListener('DOMContentLoaded', function () {
-    Xt.initAll();
+    Xt.initExtensions();
+    Xt.initXt();
     Xt.observer.observe(document, {characterData: false, attributes: false, childList: true, subtree: true});
   });
 } else {
   window.requestAnimationFrame(function () {
-    Xt.initAll();
+    Xt.initExtensions();
+    Xt.initXt();
     Xt.observer.observe(document, {characterData: false, attributes: false, childList: true, subtree: true});
   });
 }
