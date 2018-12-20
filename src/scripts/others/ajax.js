@@ -28,57 +28,153 @@ class Ajax extends Core {
   //////////////////////
 
   /**
-   * init elements, targets and currents
+   * init currents
    */
-  initScope() {
-    super.initScope();
-  }
-
-  //////////////////////
-  //
-  //////////////////////
-
-  /**
-   *
-   */
-  queueOnDone(obj, type, skipQueue = false) {
-    super.queueOnDone(obj, type, skipQueue);
+  initCurrents() {
     let self = this;
-    let options = self.options;
-    // ajax on done
-    for (let tr of self.targets) {
-      //console.log(self.elements, self.targets);
-      console.log(tr.querySelectorAll('[data-xt-ajax-keep]'));
-    }
-    /*
-    var url;
-    var found;
+    super.initCurrents();
+    // detect url
+    let url;
     if (history.state && history.state.url) {
       // detect from history
       url = history.state.url;
     } else {
       // detect from url location (absolute url without domain name)
-      var loc = window.location.href.split('#')[0];
+      let loc = window.location.href.split('#')[0];
       url = loc.replace(/https?:\/\/[^\/]+/i, '');
     }
-    settings.$elements.each( function() {
-      if ($(this).attr('href') === url) {
-        found = $(this);
-        return false;
-      }
-    });
-    if (found) {
-      // set ajaxified
-      settings.$targets.attr('data-xt-ajaxified', url);
-      object.pushstate(url, document.title);
-      // then on
-      object.on(found);
-      // api
-      settings.$targets.trigger('ajax.init.xt', [object]);
-    }
-    */
+    // set pushstate
+    document.title = 'initial';
+    self.pushState(url, 'initial');
   }
 
+  /**
+   * init events
+   */
+  initEvents() {
+    let self = this;
+    super.initEvents();
+    // event popstate
+    window.onpopstate = self.eventPopstateHandler.bind(self);
+  }
+
+  /**
+   * element popstate handler
+   * @param {Event} e
+   */
+  eventPopstateHandler(e) {
+    let self = this;
+    // handler
+    //console.log(e, history);
+    if (!e.detail || !e.detail.skip) {
+      if (history.state && history.state.url) {
+        self.ajaxCall(history.state.url, self.targets);
+      }
+    }
+  }
+
+  //////////////////////
+  // queue utils
+  //////////////////////
+
+  /**
+   * queue on done
+   * @param {Object} obj Queue object
+   * @param {String} type Type of element
+   * @param {Boolean} skipQueue If skip queue
+   */
+  queueOnDone(obj, type, skipQueue = false) {
+    let self = this;
+    super.queueOnDone(obj, type, skipQueue);
+    // done
+    obj[type].done = true;
+    let done = 0;
+    for (let type in obj) {
+      if (obj[type].done) {
+        done++;
+      }
+    }
+    // ajax on done
+    if (done === Object.entries(obj).length) {
+      self.ajaxCall(obj[type].groupElements.single.getAttribute('href'), self.targets);
+    }
+  }
+
+  //////////////////////
+  // ajax
+  //////////////////////
+
+  /**
+   * ajax call
+   * @param {String} url Url to get
+   * @param {NodeList|Array} targets Targets to replace content
+   */
+  ajaxCall(url, targets) {
+    let self = this;
+    // make ajax call
+    if (url) {
+      let request = new XMLHttpRequest();
+      request.open('GET', url, true);
+      request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+          self.ajaxSuccess(url, targets, request.responseText);
+        } else {
+          self.ajaxError(url, targets, request.responseText);
+        }
+      };
+      request.onerror = function() {
+        self.ajaxError(url, targets, request.responseText);
+      };
+      request.send();
+    }
+  }
+
+  /**
+   * ajax success
+   * @param {String} url Url to get
+   * @param {NodeList|Array} targets Targets to replace content
+   * @param {String} responseText Html response
+   */
+  ajaxSuccess(url, targets, responseText) {
+    let self = this;
+    let options = self.options;
+    // content
+    let target = targets[0];
+    let html = document.createElement('html');
+    html.innerHTML = responseText.trim();
+    let replace = html.querySelectorAll(options.targets)[0];
+    // replace data-xt-ajax-keep
+    for (let keep of target.querySelectorAll('[data-xt-ajax-keep]')) {
+      let id = keep.getAttribute('data-xt-ajax-keep');
+      replace.querySelectorAll('[data-xt-ajax-keep="' + id + '"]')[0].outerHTML = keep.outerHTML;
+    }
+    // populate dom
+    target.innerHTML = replace.innerHTML;
+    // pushstate
+    console.log(html.title);
+    self.pushState(url, html.title);
+  }
+
+  /**
+   * ajax error
+   * @param {String} url Url to get
+   * @param {NodeList|Array} targets Targets to replace content
+   * @param {String} responseText Html response
+   */
+  ajaxError(url, targets, responseText) {
+    console.log('ajax error error:', responseText);
+  }
+
+  /**
+   * history pushstate
+   */
+  pushState(url, title) {
+    // push object state
+    if (!history.state || !history.state.url || history.state.url !== url) {
+      document.title = title;
+      history.pushState({'url': url, 'title': title}, title, url);
+    }
+  }
 
 }
 
@@ -89,7 +185,7 @@ class Ajax extends Core {
 Ajax.componentName = 'ajax';
 Ajax.defaults = {
   "elements": "a[href^=\"/\"]",
-  "targets": "body",
+  "targets": "body", // MUST BE UNIQUE
   "class": "active",
   "on": "click",
   "min": 0,
