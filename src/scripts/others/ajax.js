@@ -138,19 +138,36 @@ class Ajax extends Core {
     let target = self.targets[0];
     let html = document.createElement('html');
     html.innerHTML = responseText.trim();
-    let subsitute = html.querySelectorAll(options.targets)[0];
-    /* NO IT DOESN'T RETAIN EVENTS
+    let susbtitute = html.querySelectorAll(options.targets)[0];
     // data-xt-ajax-keep
     for (let keep of target.querySelectorAll('[data-xt-ajax-keep]')) {
+      // keep relative sub
       let id = keep.getAttribute('data-xt-ajax-keep');
-      let replace = subsitute.querySelectorAll('[data-xt-ajax-keep="' + id + '"]')[0];
-      replace.parentNode.replaceChild(keep, replace);
+      let sub = susbtitute.querySelectorAll('[data-xt-ajax-keep="' + id + '"]')[0];
+      // loop all childrens
+      let elsKeep = keep.querySelectorAll('*');
+      let elsSub = sub.querySelectorAll('*');
+      for (let i = 0; i < elsKeep.length; i++) {
+        let elKeep = elsKeep[i];
+        let elSub = elsSub[i];
+        // check storage for events
+        let storages = Xt.dataStorage.getAll(elKeep);
+        if (storages) {
+          for (let [key, value] of storages) {
+            // copy events
+            let handler = Xt.dataStorage.put(elSub, key, value);
+            elSub.removeEventListener('click', handler);
+            elSub.addEventListener('click', handler);
+          }
+        }
+      }
     }
-    */
     // populate dom
-    target.innerHTML = subsitute.innerHTML;
+    target.innerHTML = susbtitute.innerHTML;
     // pushstate
     self.pushState(url, html.querySelectorAll('head title')[0].innerHTML);
+    // garbage collector
+    html = null;
   }
 
   /**

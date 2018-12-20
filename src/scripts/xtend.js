@@ -238,7 +238,7 @@ Xt.dataStorage = {
   /**
    * properties
    */
-  _storage: new WeakMap(),
+  _storage: new Map(),
 
   /**
    * put key/obj pair on element's map
@@ -274,6 +274,20 @@ Xt.dataStorage = {
     }
     // else get
     return this._storage.get(el).get(key);
+  },
+
+  /**
+   * get all obj/key on element's map
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @returns {Object|Function}
+   */
+  getAll: function (el) {
+    // if no map return null
+    if (!this._storage.get(el)) {
+      return null;
+    }
+    // else get
+    return this._storage.get(el);
   },
 
   /**
