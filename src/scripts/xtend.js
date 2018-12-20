@@ -38,22 +38,21 @@ Xt.Ajax = Ajax;
 //////////////////////
 
 Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
-Xt.initArr = [];
+Xt.init = [];
 
 //////////////////////
 // init
 //////////////////////
 
 /**
- * init
- * on DOM ready and on content added to DOM
+ * initAll
  */
 
-Xt.onInit = function (added = document.documentElement) {
+Xt.initAll = function (added = document.documentElement) {
   // init xt
   Xt.initXt(added);
   // init extension
-  for (let obj of Xt.initArr) {
+  for (let obj of Xt.init) {
     let els = [];
     if (added.matches(obj.matches)) {
       els.push(added);
@@ -141,7 +140,7 @@ Xt.observer = new MutationObserver(function (mutationsList) {
     if (mutation.type == 'childList') {
       for (let added of mutation.addedNodes) {
         if (added.nodeType === 1 && !added.classList.contains('xt-ignore')) {
-          Xt.onInit(added);
+          Xt.initAll(added);
         }
       }
     }
@@ -152,12 +151,12 @@ Xt.observer = new MutationObserver(function (mutationsList) {
 
 if (document.readyState === "loading") {
   document.addEventListener('DOMContentLoaded', function () {
-    Xt.onInit();
+    Xt.initAll();
     Xt.observer.observe(document, {characterData: false, attributes: false, childList: true, subtree: true});
   });
 } else {
   window.requestAnimationFrame(function () {
-    Xt.onInit();
+    Xt.initAll();
     Xt.observer.observe(document, {characterData: false, attributes: false, childList: true, subtree: true});
   });
 }
