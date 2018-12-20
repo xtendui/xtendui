@@ -294,6 +294,7 @@ class Core {
   eventOnHandler(element, e) {
     let self = this;
     let options = self.options;
+    e.preventDefault();
     // handler
     if (!e.detail || !e.detail.skip) {
       // event block
@@ -331,6 +332,7 @@ class Core {
   eventOffHandler(element, e) {
     let self = this;
     let options = self.options;
+    e.preventDefault();
     // handler
     if (!e.detail || !e.detail.skip) {
       // event block
@@ -374,15 +376,30 @@ class Core {
   }
 
   /**
+   * remove prevents click on touch until clicked two times
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   */
+  eventTouchLinksEndHandler(el) {
+    let self = this;
+    // event touchLinks
+    let touchLinksHandler = Xt.dataStorage.get(el, 'touchLinksHandler' + self.namespace);
+    el.removeEventListener('click', touchLinksHandler);
+    // event touchReset
+    let touchResetHandler = Xt.dataStorage.get(el, 'touchResetHandler' + self.namespace);
+    el.removeEventListener('off.xt', touchResetHandler);
+  }
+
+  /**
    * prevents click on touch until clicked two times
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
   eventTouchLinksHandler(el, e) {
     if (!el.dataset.touchLinksDone) {
-      el.dataset.touchLinksDone = 'true';
       e.preventDefault();
+      el.dataset.touchLinksDone = 'true';
     } else {
+      this.eventTouchLinksEndHandler(el);
       delete el.dataset.touchLinksDone;
     }
   }
@@ -393,6 +410,7 @@ class Core {
    * @param {Event} e
    */
   eventTouchLinksResetHandler(el, e) {
+    this.eventTouchLinksEndHandler(el);
     delete el.dataset.touchLinksDone;
   }
 

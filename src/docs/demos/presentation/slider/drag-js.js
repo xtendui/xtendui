@@ -141,11 +141,11 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         }
       } else {
         // mask
-        TweenMax.to(target, time, {x: 0, opacity: 0, ease: 'easeOut'});
+        TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: 0, ease: 'easeOut'});
         // content
         for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
-          TweenMax.to(content, timecontent, {x: 0, opacity: 0, ease: 'easeOut'});
+          TweenMax.to(content, timecontent, {x: 0, opacity: 1, ease: 'easeOut'});
         }
       }
     });

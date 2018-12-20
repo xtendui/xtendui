@@ -12,6 +12,7 @@ import Overlay from './interaction/overlay';
 import Slider from './presentation/slider';
 import Sticky from './presentation/sticky';
 import Fade from './presentation/fade';
+import Ajax from './others/ajax';
 
 //////////////////////
 // constructor
@@ -30,6 +31,7 @@ Xt.Overlay = Overlay;
 Xt.Slider = Slider;
 Xt.Sticky = Sticky;
 Xt.Fade = Fade;
+Xt.Ajax = Ajax;
 
 //////////////////////
 // properties
@@ -85,6 +87,13 @@ Xt.init = function (containers) {
     for (let el of container.querySelectorAll('[data-xt-slider]')) {
       new Xt.Slider(el);
     }
+    // sticky
+    if (container.getAttribute('data-xt-sticky') !== null) {
+      new Xt.Sticky(container);
+    }
+    for (let el of container.querySelectorAll('[data-xt-sticky]')) {
+      new Xt.Sticky(el);
+    }
     // fade
     if (container.getAttribute('data-xt-fade') !== null) {
       new Xt.Fade(container);
@@ -92,12 +101,12 @@ Xt.init = function (containers) {
     for (let el of container.querySelectorAll('[data-xt-fade]')) {
       new Xt.Fade(el);
     }
-    // sticky
-    if (container.getAttribute('data-xt-sticky') !== null) {
-      new Xt.Sticky(container);
+    // ajax
+    if (container.getAttribute('data-xt-ajax') !== null) {
+      new Xt.Ajax(container);
     }
-    for (let el of container.querySelectorAll('[data-xt-sticky]')) {
-      new Xt.Sticky(el);
+    for (let el of container.querySelectorAll('[data-xt-ajax]')) {
+      new Xt.Ajax(el);
     }
     // btnMerge
     if (container.tagName === 'a' || container.tagName === 'button') {
@@ -656,7 +665,7 @@ window.addEventListener('blur', function () {
 //////////////////////
 
 if (typeof define === 'function' && define.amd) {
-  define([], Xt);
+  define(['xt'], Xt);
 } else if (typeof exports === 'object') {
   module.exports = Xt;
 }
