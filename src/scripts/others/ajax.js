@@ -134,16 +134,17 @@ class Ajax extends Core {
   ajaxSuccess(url, responseText) {
     let self = this;
     let options = self.options;
-    // content
-    let target = self.targets[0];
+    // set substitute
+    let target = self.object;
     let html = document.createElement('html');
     html.innerHTML = responseText.trim();
-    let susbtitute = html.querySelectorAll(options.targets)[0];
+    let title = html.querySelectorAll('head title')[0].innerHTML;
+    let substitute = html.querySelectorAll(options.query)[0];
     // data-xt-ajax-keep
     for (let keep of target.querySelectorAll('[data-xt-ajax-keep]')) {
       // keep relative sub
       let id = keep.getAttribute('data-xt-ajax-keep');
-      let sub = susbtitute.querySelectorAll('[data-xt-ajax-keep="' + id + '"]')[0];
+      let sub = substitute.querySelectorAll('[data-xt-ajax-keep="' + id + '"]')[0];
       // loop all childrens
       let elsKeep = keep.querySelectorAll('*');
       let elsSub = sub.querySelectorAll('*');
@@ -163,11 +164,12 @@ class Ajax extends Core {
       }
     }
     // populate dom
-    target.innerHTML = susbtitute.innerHTML;
+    target.outerHTML = substitute.outerHTML;
     // pushstate
-    self.pushState(url, html.querySelectorAll('head title')[0].innerHTML);
+    self.pushState(url, title);
     // garbage collector
     html = null;
+    substitute = null;
   }
 
   /**
@@ -200,8 +202,8 @@ class Ajax extends Core {
 
 Ajax.componentName = 'ajax';
 Ajax.defaults = {
+  "query": "body", // needs to be unique
   "elements": "a[href^=\"/\"]",
-  "targets": "body", // MUST BE UNIQUE
   "class": "active",
   "on": "click",
   "min": 0,

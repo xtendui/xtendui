@@ -151,13 +151,13 @@ if (document.readyState === "loading") {
   document.addEventListener('DOMContentLoaded', function () {
     Xt.initExtensions();
     Xt.initXt();
-    Xt.observer.observe(document, {characterData: false, attributes: false, childList: true, subtree: true});
+    Xt.observer.observe(document.documentElement, {characterData: false, attributes: false, childList: true, subtree: true});
   });
 } else {
   window.requestAnimationFrame(function () {
     Xt.initExtensions();
     Xt.initXt();
-    Xt.observer.observe(document, {characterData: false, attributes: false, childList: true, subtree: true});
+    Xt.observer.observe(document.documentElement, {characterData: false, attributes: false, childList: true, subtree: true});
   });
 }
 
