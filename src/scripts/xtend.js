@@ -41,7 +41,6 @@ Xt.currents = {}; // Xt currents based on namespace (so shared between Xt object
 
 Xt.initArr = [];
 Xt.onInit = function (added = document.documentElement) {
-  added = Xt.arrSingle(added);
   // init xt
   Xt.init(added);
   // init custom
@@ -58,6 +57,7 @@ Xt.onInit = function (added = document.documentElement) {
  * init Xt
  */
 Xt.init = function (containers) {
+  containers = Xt.arrSingle(containers);
   for (let container of containers) {
     // toggle
     if (container.getAttribute('data-xt-toggle') !== null) {
