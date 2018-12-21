@@ -9,11 +9,16 @@ CustomEase.create('easeOut', '.77, 0, .175, 1');
 
 // #toggle-0
 
-for (let [i, el] of document.querySelectorAll('#toggle-0').entries()) {
+Xt.init.push({ // on DOM ready and on content added to DOM
+  matches: '#toggle-0',
+  fnc: toggle0Init
+});
+
+function toggle0Init(main, index) {
 
   // toggle
 
-  let toggle = new Xt.Toggle(el, {
+  let toggle = new Xt.Toggle(main, {
     "durationOn": time * 1000,
     "durationOff": time * 1000,
     "delayOn": delay * 1000,
@@ -57,11 +62,16 @@ for (let [i, el] of document.querySelectorAll('#toggle-0').entries()) {
 
 // #toggle-1
 
-for (let [i, el] of document.querySelectorAll('#toggle-1').entries()) {
+Xt.init.push({ // on DOM ready and on content added to DOM
+  matches: '#toggle-1',
+  fnc: toggle1Init
+});
+
+function toggle1Init(main, index) {
 
   // toggle
 
-  let toggle = new Xt.Toggle(el, {
+  let toggle = new Xt.Toggle(main, {
     "on": "mouseenter",
     "off": "mouseleave",
     "durationOn": time * 1000,

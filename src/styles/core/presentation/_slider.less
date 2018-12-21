@@ -2,6 +2,8 @@
 // slider
 //////////////////////
 
+// slider
+
 .slider {
   position: relative;
   // @TODO
@@ -13,6 +15,13 @@
   cursor: grab;
   .user-select--none();
 }
+
+.slider--disable {
+  cursor: default;
+  pointer-events: none;
+}
+
+// slide
 
 .slide {
   position: relative;
@@ -29,7 +38,8 @@
   position: relative;
 }
 
-.slider--disable {
-  cursor: default;
-  pointer-events: none;
+.slide_content {
+  .display(flex);
+  .align-items--center();
+  position: relative;
 }

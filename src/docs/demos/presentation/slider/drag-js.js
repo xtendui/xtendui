@@ -1,19 +1,33 @@
-let time = .6;
-let animSize = 15;
+Xt.init.push({ // on DOM ready and on content added to DOM
+  matches: '.slider',
+  fnc: sliderInit
+});
 
-let timecontent = .6;
-let delaycontent = .15;
-let delaycontentMax = delaycontent * 2;
-let durationcontent = timecontent + delaycontentMax;
+function sliderInit(main, index) {
 
-CustomEase.create('easeIn', '.41, .1, .175, 1');
-CustomEase.create('easeOut', '.77, 0, .175, 1');
+  // vars
 
-for (let [i, el] of document.querySelectorAll('.slider').entries()) {
+  let time = .6;
+  let size = 100;
+
+  let timeContent = .6;
+  let delayContent = .15;
+  let sizeContent = 100;
+  let delayContentMax = delayContent * 2;
+  let durationContent = timeContent + delayContentMax;
+
+  let timeDesign = .6;
+  let delayDesign = .15;
+  let sizeDesign = 100;
+  let delayDesignMax = delayDesign * 2;
+  let durationDesign = timeDesign + delayDesignMax;
+
+  CustomEase.create('easeIn', '.41, .1, .175, 1');
+  CustomEase.create('easeOut', '.77, 0, .175, 1');
 
   // slider
 
-  new Xt.Slider(el, {
+  new Xt.Slider(main, {
     "auto": 6000,
     "drag": true,
     "durationOn": time * 1000,
@@ -22,7 +36,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
 
   // slider items
 
-  for (let [i, tr] of el.querySelectorAll('.slide').entries()) {
+  for (let tr of main.querySelectorAll('.slide')) {
 
     // on event
 
@@ -30,9 +44,12 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       let target = this;
       let xMax = target.clientWidth;
       // content
-      let contents = target.querySelectorAll('.card_content > *');
-      for (let [z, content] of contents.entries()) {
-        content.dataset.tlDelay = Math.min(delaycontent * z, delaycontentMax).toString();
+      for (let [i, content] of target.querySelectorAll('.card_content > *').entries()) {
+        content.dataset.tlDelay = Math.min(delayContent * i, delayContentMax).toString();
+      }
+      // design
+      for (let [i, design] of target.querySelectorAll('.card_design').entries()) {
+        design.dataset.tlDelay = Math.min(delayDesign * i, delayDesignMax).toString();
       }
       // if inital stop, don't do animation
       if (e.detail.object.detail.initial) {
@@ -44,27 +61,41 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         // mask
         TweenMax.set(target, {x: xMax});
         TweenMax.set(target.children[0], {x: -xMax});
-        TweenMax.set(target.children[0].children[0], {x: animSize});
+        TweenMax.set(target.children[0].children[0], {x: size});
         TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeIn'});
         // content
-        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
-          TweenMax.set(content, {x: animSize, opacity: 0});
+        for (let content of target.querySelectorAll('.card_content > *')) {
+          TweenMax.set(content, {x: sizeContent, opacity: 0});
           setTimeout(function () {
-            TweenMax.to(content, timecontent, {x: 0, opacity: 1, ease: 'easeIn'});
+            TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeIn'});
           }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+        // design
+        for (let design of target.querySelectorAll('.card_design')) {
+          TweenMax.set(design, {x: sizeDesign, opacity: 0});
+          setTimeout(function () {
+            TweenMax.to(design, timeDesign, {x: 0, opacity: 1, ease: 'easeIn'});
+          }, parseFloat(design.dataset.tlDelay) * 1000);
         }
       } else {
         // mask
         TweenMax.set(target, {x: -xMax});
         TweenMax.set(target.children[0], {x: xMax});
-        TweenMax.set(target.children[0].children[0], {x: -animSize});
+        TweenMax.set(target.children[0].children[0], {x: -size});
         TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeIn'});
         // content
-        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
-          TweenMax.set(content, {x: -animSize, opacity: 0});
+        for (let content of target.querySelectorAll('.card_content > *')) {
+          TweenMax.set(content, {x: -sizeContent, opacity: 0});
           setTimeout(function () {
-            TweenMax.to(content, timecontent, {x: 0, opacity: 1, ease: 'easeIn'});
+            TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeIn'});
           }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+        // design
+        for (let design of target.querySelectorAll('.card_design')) {
+          TweenMax.set(design, {x: -sizeDesign, opacity: 0});
+          setTimeout(function () {
+            TweenMax.to(design, timeDesign, {x: 0, opacity: 1, ease: 'easeIn'});
+          }, parseFloat(design.dataset.tlDelay) * 1000);
         }
       }
       // drag position
@@ -83,20 +114,32 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.to(target, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: xMax, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
+        for (let content of target.querySelectorAll('.card_content > *')) {
           setTimeout(function () {
-            TweenMax.to(content, timecontent, {x: -animSize, opacity: 0, ease: 'easeOut'});
+            TweenMax.to(content, timeContent, {x: -sizeContent, opacity: 0, ease: 'easeOut'});
           }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+        // design
+        for (let design of target.querySelectorAll('.card_design')) {
+          setTimeout(function () {
+            TweenMax.to(design, timeDesign, {x: -sizeDesign, opacity: 0, ease: 'easeOut'});
+          }, parseFloat(design.dataset.tlDelay) * 1000);
         }
       } else {
         // mask
         TweenMax.to(target, time, {x: xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: -xMax, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
+        for (let content of target.querySelectorAll('.card_content > *')) {
           setTimeout(function () {
-            TweenMax.to(content, timecontent, {x: animSize, opacity: 0, ease: 'easeOut'});
+            TweenMax.to(content, timeContent, {x: sizeContent, opacity: 0, ease: 'easeOut'});
           }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+        // design
+        for (let design of target.querySelectorAll('.card_design')) {
+          setTimeout(function () {
+            TweenMax.to(design, timeDesign, {x: sizeDesign, opacity: 0, ease: 'easeOut'});
+          }, parseFloat(design.dataset.tlDelay) * 1000);
         }
       }
     });
@@ -118,14 +161,26 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       TweenMax.set(target.children[0], {x: -xDist});
       // content
       if (xStart - xCurrent > 0) {
-        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
-          let ratioWithDelay = (durationcontent - parseFloat(content.dataset.tlDelay)) * ratio / timecontent;
-          TweenMax.set(content, {x: -animSize * ratioWithDelay, opacity: 1 - ratioWithDelay});
+        for (let content of target.querySelectorAll('.card_content > *')) {
+          let ratioWithDelay = (durationContent - parseFloat(content.dataset.tlDelay)) * ratio / timeContent;
+          TweenMax.set(content, {x: -sizeContent * ratioWithDelay, opacity: 1 - ratioWithDelay});
         }
       } else {
-        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
-          let ratioWithDelay = (durationcontent - parseFloat(content.dataset.tlDelay)) * ratio / timecontent;
-          TweenMax.set(content, {x: animSize * ratioWithDelay, opacity: 1 - ratioWithDelay});
+        for (let content of target.querySelectorAll('.card_content > *')) {
+          let ratioWithDelay = (durationContent - parseFloat(content.dataset.tlDelay)) * ratio / timeContent;
+          TweenMax.set(content, {x: sizeContent * ratioWithDelay, opacity: 1 - ratioWithDelay});
+        }
+      }
+      // design
+      if (xStart - xCurrent > 0) {
+        for (let design of target.querySelectorAll('.card_design')) {
+          let ratioWithDelay = (durationDesign - parseFloat(design.dataset.tlDelay)) * ratio / timeDesign;
+          TweenMax.set(design, {x: -sizeDesign * ratioWithDelay, opacity: 1 - ratioWithDelay});
+        }
+      } else {
+        for (let design of target.querySelectorAll('.card_design')) {
+          let ratioWithDelay = (durationDesign - parseFloat(design.dataset.tlDelay)) * ratio / timeDesign;
+          TweenMax.set(design, {x: sizeDesign * ratioWithDelay, opacity: 1 - ratioWithDelay});
         }
       }
     });
@@ -153,8 +208,12 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: 0, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
-          TweenMax.to(content, timecontent, {x: 0, opacity: 1, ease: 'easeOut'});
+        for (let content of target.querySelectorAll('.card_content > *')) {
+          TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeOut'});
+        }
+        // design
+        for (let design of target.querySelectorAll('.card_design')) {
+          TweenMax.to(design, timeDesign, {x: 0, opacity: 1, ease: 'easeOut'});
         }
       }
     });

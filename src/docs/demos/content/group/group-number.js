@@ -2,11 +2,53 @@
 // xtend extension: group-number
 //////////////////////
 
+Xt.init.push({ // on DOM ready and on content added to DOM
+  matches: '.group-number',
+  fnc: inputNumberInit
+});
+
+function inputNumberInit(main, index) {
+  // init
+  inputNumberChange.bind(main, 0)();
+  // vars
+  let inputEl = main.querySelectorAll('input')[0];
+  let step = parseFloat(inputEl.getAttribute('step')) || 1;
+  // add
+  let addEl = main.querySelectorAll('.group-number-add')[0];
+  let addStep = step;
+  let addHandler = Xt.dataStorage.get(addEl, 'addHandler');
+  addHandler = addHandler ? addHandler : Xt.dataStorage.put(addEl, 'addHandler', inputNumberChange.bind(main, addStep));
+  addEl.removeEventListener('click', addHandler);
+  addEl.addEventListener('click', addHandler);
+  // remove
+  let removeEl = main.querySelectorAll('.group-number-remove')[0];
+  let removeStep = -step;
+  let removeHandler = Xt.dataStorage.get(removeEl, 'removeHandler');
+  removeHandler = removeHandler ? removeHandler : Xt.dataStorage.put(removeEl, 'removeHandler', inputNumberChange.bind(main, removeStep));
+  removeEl.removeEventListener('click', removeHandler);
+  removeEl.addEventListener('click', removeHandler);
+  // change
+  let inputHandler = Xt.dataStorage.get(inputEl, 'inputHandler');
+  inputHandler = inputHandler ? inputHandler : Xt.dataStorage.put(inputEl, 'inputHandler', inputNumberChange.bind(main, 0));
+  inputEl.removeEventListener('change', inputHandler);
+  inputEl.addEventListener('change', inputHandler);
+}
+
+function inputNumberChange(step, e) {
+  if (!e || !e.detail || !e.detail.skip) {
+    let main = this;
+    let input = main.querySelectorAll('input')[0];
+    let val = parseFloat(input.value);
+    val = val + step;
+    inputNumberValidate.bind(main)(val);
+  }
+}
+
 function inputNumberValidate(val) {
-  let group = this;
-  let input = group.querySelectorAll('input')[0];
-  let addEl = group.querySelectorAll('.group-number-add')[0];
-  let removeEl = group.querySelectorAll('.group-number-remove')[0];
+  let main = this;
+  let input = main.querySelectorAll('input')[0];
+  let addEl = main.querySelectorAll('.group-number-add')[0];
+  let removeEl = main.querySelectorAll('.group-number-remove')[0];
   // disabled
   addEl.removeAttribute('disabled');
   removeEl.removeAttribute('disabled');
@@ -25,44 +67,3 @@ function inputNumberValidate(val) {
   input.value = val;
   input.dispatchEvent(new CustomEvent('change', {bubbles: true, detail: {skip: true}}));
 }
-
-function inputNumberChange(step, e) {
-  if (!e || !e.detail || !e.detail.skip) {
-    let group = this;
-    let input = group.querySelectorAll('input')[0];
-    let val = parseFloat(input.value);
-    val = val + step;
-    inputNumberValidate.bind(group)(val);
-  }
-}
-
-function inputNumberInit(container) {
-  for (let [i, group] of container.querySelectorAll('.group-number, .group-number').entries()) {
-    // init
-    inputNumberChange.bind(group, 0)();
-    // vars
-    let inputEl = group.querySelectorAll('input')[0];
-    let step = parseFloat(inputEl.getAttribute('step')) || 1;
-    // add
-    let addEl = group.querySelectorAll('.group-number-add')[0];
-    let addStep = step;
-    let addHandler = Xt.dataStorage.get(addEl, 'addHandler');
-    addHandler = addHandler ? addHandler : Xt.dataStorage.put(addEl, 'addHandler', inputNumberChange.bind(group, addStep));
-    addEl.removeEventListener('click', addHandler);
-    addEl.addEventListener('click', addHandler);
-    // remove
-    let removeEl = group.querySelectorAll('.group-number-remove')[0];
-    let removeStep = -step;
-    let removeHandler = Xt.dataStorage.get(removeEl, 'removeHandler');
-    removeHandler = removeHandler ? removeHandler : Xt.dataStorage.put(removeEl, 'removeHandler', inputNumberChange.bind(group, removeStep));
-    removeEl.removeEventListener('click', removeHandler);
-    removeEl.addEventListener('click', removeHandler);
-    // change
-    let inputHandler = Xt.dataStorage.get(inputEl, 'inputHandler');
-    inputHandler = inputHandler ? inputHandler : Xt.dataStorage.put(inputEl, 'inputHandler', inputNumberChange.bind(group, 0));
-    inputEl.removeEventListener('change', inputHandler);
-    inputEl.addEventListener('change', inputHandler);
-  }
-}
-
-inputNumberInit(document);
