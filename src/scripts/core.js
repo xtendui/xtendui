@@ -570,10 +570,10 @@ class Core {
       return {all: Xt.arrSingle(final), single: final.length > 1 ? final[0] : final};
     } else if (self.mode === 'multiple') {
       // choose element by group
-      let group = element.getAttribute('data-group');
+      let group = element.getAttribute('data-xt-group');
       if (group) {
         // all group elements if group
-        let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-group') === group);
+        let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group);
         let final = Xt.arrSingle(groupElements);
         return {all: final, single: final[0]};
       } else {
@@ -600,9 +600,9 @@ class Core {
       return self.targets;
     } else if (self.mode === 'multiple') {
       // choose only target by group
-      let group = element.getAttribute('data-group');
-      let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-group') === group);
-      let groupTargets = Array.from(self.targets).filter(x => x.getAttribute('data-group') === group);
+      let group = element.getAttribute('data-xt-group');
+      let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group);
+      let groupTargets = Array.from(self.targets).filter(x => x.getAttribute('data-xt-group') === group);
       let final;
       if (group) {
         // all group targets if group
@@ -632,9 +632,9 @@ class Core {
       return self.elements;
     } else if (self.mode === 'multiple') {
       // choose only target by group
-      let group = target.getAttribute('data-group');
-      let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-group') === group);
-      let groupTargets = Array.from(self.targets).filter(x => x.getAttribute('data-group') === group);
+      let group = target.getAttribute('data-xt-group');
+      let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group);
+      let groupTargets = Array.from(self.targets).filter(x => x.getAttribute('data-xt-group') === group);
       let final;
       if (group) {
         // all group targets if group

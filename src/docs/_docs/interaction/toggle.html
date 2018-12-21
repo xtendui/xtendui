@@ -325,29 +325,29 @@ XtToggle.defaults = {
 
 <h3>Groups</h3>
 
-<p>If you need to toggle <strong>multiple targets</strong> assign <code>data-group</code> to <strong>elements</strong>
+<p>If you need to toggle <strong>multiple targets</strong> assign <code>data-xt-group</code> to <strong>elements</strong>
   and the associated targets <strong>targets</strong>. Grouped elements and targets aren't counted for min and max.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="group">
     <div class="demo-source" data-lang="html">
       <div class="list list_space--small align-items--center" data-xt-toggle>
-        <button type="button" class="btn" data-group="0">
+        <button type="button" class="btn" data-xt-group="0">
           <span>Group 0</span>
         </button>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
-        <button type="button" class="btn" data-group="0">
+        <button type="button" class="btn" data-xt-group="0">
           <span>Group 0</span>
         </button>
         <button type="button" class="btn">
           <span>Toggle 1</span>
         </button>
-        <button type="button" class="btn" data-group="1">
+        <button type="button" class="btn" data-xt-group="1">
           <span>Group 1</span>
         </button>
-        <button type="button" class="btn" data-group="1">
+        <button type="button" class="btn" data-xt-group="1">
           <span>Group 1</span>
         </button>
         <div class="alert toggle--block">
@@ -355,17 +355,17 @@ XtToggle.defaults = {
             Target 0
           </div>
         </div>
-        <div class="alert toggle--block" data-group="0">
+        <div class="alert toggle--block" data-xt-group="0">
           <div class="alert_content">
             Group 0
           </div>
         </div>
-        <div class="alert toggle--block" data-group="1">
+        <div class="alert toggle--block" data-xt-group="1">
           <div class="alert_content">
             Group 1
           </div>
         </div>
-        <div class="alert toggle--block" data-group="0">
+        <div class="alert toggle--block" data-xt-group="0">
           <div class="alert_content">
             Group 0
           </div>
@@ -426,19 +426,19 @@ XtToggle.defaults = {
     <div class="demo-source" data-lang="html">
       <div class="list list_space--small align-items--center"
            data-xt-toggle='{"class": "active class-example-1", "min": 3, "max": 3}'>
-        <button type="button" class="btn" data-group="0">
+        <button type="button" class="btn" data-xt-group="0">
           <span>Group 0</span>
         </button>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
-        <button type="button" class="btn" data-group="0">
+        <button type="button" class="btn" data-xt-group="0">
           <span>Group 0</span>
         </button>
         <button type="button" class="btn active class-example-1">
           <span>Toggle 1</span>
         </button>
-        <button type="button" class="btn" data-group="1">
+        <button type="button" class="btn" data-xt-group="1">
           <span>Group 1</span>
         </button>
         <div class="alert toggle--block">
@@ -446,17 +446,17 @@ XtToggle.defaults = {
             Target 0
           </div>
         </div>
-        <div class="alert toggle--block" data-group="0">
+        <div class="alert toggle--block" data-xt-group="0">
           <div class="alert_content">
             Group 0
           </div>
         </div>
-        <div class="alert toggle--block" data-group="1">
+        <div class="alert toggle--block" data-xt-group="1">
           <div class="alert_content">
             Group 1
           </div>
         </div>
-        <div class="alert toggle--block" data-group="0">
+        <div class="alert toggle--block" data-xt-group="0">
           <div class="alert_content">
             Group 0
           </div>
@@ -466,7 +466,7 @@ XtToggle.defaults = {
             Target 1
           </div>
         </div>
-        <div class="alert toggle--block active class-example-1" data-group="1">
+        <div class="alert toggle--block active class-example-1" data-xt-group="1">
           <div class="alert_content">
             Group 1
           </div>
