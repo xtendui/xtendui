@@ -130,12 +130,12 @@ legend {
   // options
   .form_input-grey();
   // animations
-  .transition--default.out();
+  .transition-default.out();
   &:hover, &.active {
-    .transition--default.active();
+    .transition-default.active();
   }
   &:focus {
-    .transition--default.active();
+    .transition-default.active();
   }
 }
 
@@ -255,22 +255,22 @@ input[type="radio"]:not(.unstyled) {
   // animation
   & ~ .form_label {
     &::before {
-      .transition--default.out();
+      .transition-default.out();
       transform: scale(.9, .9);
     }
     &::after {
-      .transition--default.out();
+      .transition-default.out();
       opacity: 0 !important;
       transform: scale(.9, .5);
     }
   }
   &:checked ~ .form_label {
     &::before {
-      .transition--default.active();
+      .transition-default.active();
       transform: scale(1, 1);
     }
     &::after {
-      .transition--default.active();
+      .transition-default.active();
       opacity: 1 !important;
       transform: scale(1, 1);
     }

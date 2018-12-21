@@ -5,27 +5,27 @@
 .slide {
   // mask
   &:not(.dragging) {
-    .transition--default.out();
+    .transition-default.out();
     transition-duration: @time--big;
     > * {
-      .transition--default.out();
+      .transition-default.out();
       transition-duration: @time--big;
     }
     &.active {
-      .transition--default.active();
+      .transition-default.active();
       transition-duration: @time--big;
       > * {
-        .transition--default.active();
+        .transition-default.active();
         transition-duration: @time--big;
       }
     }
   }
   // content
   > * > .slide_content {
-    .anim--left.out();
+    .anim-left.out();
     animation-duration: @time--big;
     > .card > .card_content > * {
-      .anim--left.out();
+      .anim-left.out();
       animation-duration: @time--big;
       // delay
       animation-delay: 300ms; // @start + @child * @increment
@@ -35,29 +35,29 @@
   }
   &.xt-inverse {
     > * > .slide_content {
-      .anim--right.out();
+      .anim-right.out();
       animation-duration: @time--big;
       > .card > .card_content > * {
-        .anim--right.out();
+        .anim-right.out();
         animation-duration: @time--big;
       }
     }
   }
   &.active {
     > * > .slide_content {
-      .anim--right.active();
+      .anim-right.active();
       animation-duration: @time--big;
       > .card > .card_content > * {
-        .anim--right.active();
+        .anim-right.active();
         animation-duration: @time--big;
       }
     }
     &.xt-inverse {
       > * > .slide_content {
-        .anim--left.active();
+        .anim-left.active();
         animation-duration: @time--big;
         > .card > .card_content > * {
-          .anim--left.active();
+          .anim-left.active();
           animation-duration: @time--big;
         }
       }
@@ -65,7 +65,7 @@
   }
 }
 
-@keyframes anim--special-in {
+@keyframes anim-special--in {
   0% {
     transform: translateX(0);
   }
@@ -74,7 +74,7 @@
   }
 }
 
-@keyframes anim--special-in-inverse {
+@keyframes anim-special-in-inverse {
   0% {
     transform: translateX(0);
   }

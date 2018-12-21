@@ -68,9 +68,9 @@
     width: auto;
     height: 2.5rem;
   }
-  .transition--default.out();
+  .transition-default.out();
   &:hover, &.hover, &:active, &.active {
-    .transition--default.active();
+    .transition-default.active();
     opacity: 1;
   }
   &:focus {
@@ -189,24 +189,24 @@
   }
   &.active {
     .btn {
-      .anim--horizontal.active();
+      .anim-horizontal.active();
       animation-delay: @time--medium + 150ms; // @start + @child * @increment
       .nth-child(@child: 6, @start: @time--medium, @increment: 25ms, @decrement: 0ms, {
         @animation-delay(); });
     }
     &.xt-inverse {
       .btn {
-        .anim--horizontal-inverse.active();
+        .anim-horizontal-inverse.active();
       }
     }
   }
   &.out {
     .btn {
-      .anim--horizontal.out();
+      .anim-horizontal.out();
     }
     &.xt-inverse {
       .btn {
-        .anim--horizontal-inverse.out();
+        .anim-horizontal-inverse.out();
       }
     }
   }
@@ -245,7 +245,7 @@
       transform: rotate(0deg);
     }
     span {
-      .transition--default.out();
+      .transition-default.out();
       will-change: top, transform;
     }
     span:nth-child(1) {
@@ -266,7 +266,7 @@
   &.active {
     .icon--menu-custom {
       span {
-        .transition--default.active();
+        .transition-default.active();
       }
       span:nth-child(1) {
         top: 0;
@@ -335,7 +335,7 @@
   .site-menu-content {
     .btn {
       .line-container {
-        .anim--left.active();
+        .anim-left.active();
         animation-delay: 0; // @start + @child * @increment
       }
       .nth-child(@child: 6, @start: @time--medium, @increment: 50ms, @decrement: 0ms, { .line-container {
@@ -349,7 +349,7 @@
   .site-menu-content {
     .btn {
       .line-container {
-        .anim--right.out();
+        .anim-right.out();
         animation-delay: 120ms; // @start + @child * @increment
       }
       .nth-child(@child: 6, @start: 0, @increment: 50ms, @decrement: 0ms, { .line-container {
@@ -518,14 +518,14 @@
       .line::after {
         left: 0;
         width: 100%;
-        animation: anim--opacity-in @time--medium @bez--in, line-in @time--medium @bez--in;
+        animation: anim-opacity--in @time--medium @bez--in, line--in @time--medium @bez--in;
         opacity: 1;
       }
     }
   }
 }
 
-@keyframes line-in {
+@keyframes line--in {
   0% {
     left: 0;
     width: 0;
@@ -555,7 +555,7 @@
   }
   &:hover, &.hover, &:active, &.active {
     .site-article-anchor {
-      animation: anim--opacity-in @time--medium @bez--in;
+      animation: anim-opacity--in @time--medium @bez--in;
       opacity: 1;
     }
   }
@@ -744,25 +744,25 @@
   .xt-sticky(@mode:'absolute');
   // animations
   .site-breadcrumbs {
-    .transition--default.out();
+    .transition-default.out();
   }
   .site-breadcrumbs-inner {
-    .transition--default.out();
+    .transition-default.out();
   }
   &.active:not(.xt-clone) {
     .site-breadcrumbs {
       padding: 1rem;
       padding-bottom: 0;
-      .transition--default.active();
+      .transition-default.active();
     }
     .site-breadcrumbs-inner {
       .padding(y, small);
       border-radius: .75rem;
-      .transition--default.active();
+      .transition-default.active();
     }
     .site-breadcrumbs-meta {
-      .animation--default.active();
-      animation-name: anim--right-in;
+      .animation-default.active();
+      animation-name: anim-right--in;
     }
   }
 }

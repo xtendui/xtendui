@@ -2,13 +2,13 @@
 // default
 //////////////////////
 
-// .transition--default();
+// .transition-default();
 
 /* USAGE:
-.transition--default.out();
+.transition-default.out();
 opacity: 0;
 &:hover, &.hover, &:active, &.active {
-  .transition--default.active();
+  .transition-default.active();
    opacity: 1;
 }
 */
@@ -16,19 +16,19 @@ opacity: 0;
 /* USAGE:
 &.active {
   .inner {
-    .transition--default.active();
+    .transition-default.active();
     opacity: 1;
   }
 }
 &.out {
   .inner {
-    .transition--default.out();
+    .transition-default.out();
     opacity: 0;
   }
 }
 */
 
-.transition--default() {
+.transition-default() {
   &.active {
     transition-property: all;
     transition-duration: @time--medium;
@@ -41,29 +41,29 @@ opacity: 0;
   }
 }
 
-// .animation--default();
+// .animation-default();
 
 /* USAGE:
-.anim--opacity.active();
+.anim-opacity.active();
 &:hover, &.hover, &:active, &.active {
-  .anim--opacity.out();
+  .anim-opacity.out();
 }
 */
 
 /* USAGE:
 &.active {
   .inner {
-    .anim--opacity.active();
+    .anim-opacity.active();
   }
 }
 &.out {
   .inner {
-    .anim--opacity.out();
+    .anim-opacity.out();
   }
 }
 */
 
-.animation--default() {
+.animation-default() {
   &.active {
     animation-duration: @time--medium;
     animation-timing-function: @bez--in;
@@ -78,24 +78,24 @@ opacity: 0;
 // animations
 //////////////////////
 
-// anim--opacity
+// anim-opacity
 
-.anim--opacity {
+.anim-opacity {
   &.active {
-    .animation--default.active();
-    animation-name: anim--opacity-in;
+    .animation-default.active();
+    animation-name: anim-opacity--in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation--default.out();
-    animation-name: anim--opacity-out;
+    .animation-default.out();
+    animation-name: anim-opacity--out;
     animation-fill-mode: forwards;
     opacity: 1;
   }
 }
 
-@keyframes anim--opacity-in {
+@keyframes anim-opacity--in {
   0% {
     opacity: 0;
   }
@@ -104,7 +104,7 @@ opacity: 0;
   }
 }
 
-@keyframes anim--opacity-out {
+@keyframes anim-opacity--out {
   0% {
     opacity: 1;
   }
@@ -113,24 +113,24 @@ opacity: 0;
   }
 }
 
-// anim--zoom
+// anim-zoom
 
-.anim--zoom {
+.anim-zoom {
   &.active {
-    .animation--default.active();
-    animation-name: anim--zoom-in;
+    .animation-default.active();
+    animation-name: anim-zoom--in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation--default.out();
-    animation-name: anim--zoom-out;
+    .animation-default.out();
+    animation-name: anim-zoom--out;
     animation-fill-mode: forwards;
     opacity: 1;
   }
 }
 
-@keyframes anim--zoom-in {
+@keyframes anim-zoom--in {
   0% {
     transform: scale(.9, .5);
     opacity: 0;
@@ -141,7 +141,7 @@ opacity: 0;
   }
 }
 
-@keyframes anim--zoom-out {
+@keyframes anim-zoom--out {
   0% {
     transform: scale(1);
     opacity: 1;
@@ -152,24 +152,24 @@ opacity: 0;
   }
 }
 
-// anim--vertical
+// anim-vertical
 
-.anim--vertical {
+.anim-vertical {
   &.active {
-    .animation--default.active();
-    animation-name: anim--vertical-in;
+    .animation-default.active();
+    animation-name: anim-vertical--in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation--default.out();
-    animation-name: anim--vertical-out;
+    .animation-default.out();
+    animation-name: anim-vertical--out;
     animation-fill-mode: forwards;
     opacity: 1;
   }
 }
 
-@keyframes anim--vertical-in {
+@keyframes anim-vertical--in {
   0% {
     transform: translateY(-@anim--medium);
     opacity: 0;
@@ -180,7 +180,7 @@ opacity: 0;
   }
 }
 
-@keyframes anim--vertical-out {
+@keyframes anim-vertical--out {
   0% {
     transform: translateY(0);
     opacity: 1;
@@ -191,24 +191,24 @@ opacity: 0;
   }
 }
 
-// anim--horizontal
+// anim-horizontal
 
-.anim--horizontal {
+.anim-horizontal {
   &.active {
-    .animation--default.active();
-    animation-name: anim--horizontal-in;
+    .animation-default.active();
+    animation-name: anim-horizontal--in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation--default.out();
-    animation-name: anim--horizontal-out;
+    .animation-default.out();
+    animation-name: anim-horizontal--out;
     animation-fill-mode: forwards;
     opacity: 1;
   }
 }
 
-@keyframes anim--horizontal-in {
+@keyframes anim-horizontal--in {
   0% {
     transform: translateX(-@anim--medium);
     opacity: 0;
@@ -219,7 +219,7 @@ opacity: 0;
   }
 }
 
-@keyframes anim--horizontal-out {
+@keyframes anim-horizontal--out {
   0% {
     transform: translateX(0);
     opacity: 1;
@@ -230,24 +230,24 @@ opacity: 0;
   }
 }
 
-// anim--horizontal-inverse
+// anim-horizontal-inverse
 
-.anim--horizontal-inverse {
+.anim-horizontal-inverse {
   &.active {
-    .animation--default.active();
-    animation-name: anim--horizontal-inverse-in;
+    .animation-default.active();
+    animation-name: anim-horizontal-inverse--in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation--default.out();
-    animation-name: anim--horizontal-inverse-out;
+    .animation-default.out();
+    animation-name: anim-horizontal-inverse--out;
     animation-fill-mode: forwards;
     opacity: 1;
   }
 }
 
-@keyframes anim--horizontal-inverse-in {
+@keyframes anim-horizontal-inverse--in {
   0% {
     transform: translateX(@anim--medium);
     opacity: 0;
@@ -258,7 +258,7 @@ opacity: 0;
   }
 }
 
-@keyframes anim--horizontal-inverse-out {
+@keyframes anim-horizontal-inverse--out {
   0% {
     transform: translateX(0);
     opacity: 1;
@@ -269,24 +269,24 @@ opacity: 0;
   }
 }
 
-// anim--top
+// anim-top
 
-.anim--top {
+.anim-top {
   &.active {
-    .animation--default.active();
-    animation-name: anim--top-in;
+    .animation-default.active();
+    animation-name: anim-top--in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation--default.out();
-    animation-name: anim--top-out;
+    .animation-default.out();
+    animation-name: anim-top--out;
     animation-fill-mode: forwards;
     opacity: 1;
   }
 }
 
-@keyframes anim--top-in {
+@keyframes anim-top--in {
   0% {
     transform: translateY(-@anim--medium);
     opacity: 0;
@@ -297,7 +297,7 @@ opacity: 0;
   }
 }
 
-@keyframes anim--top-out {
+@keyframes anim-top--out {
   0% {
     transform: translateX(0);
     opacity: 1;
@@ -308,24 +308,24 @@ opacity: 0;
   }
 }
 
-// anim--bottom
+// anim-bottom
 
-.anim--bottom {
+.anim-bottom {
   &.active {
-    .animation--default.active();
-    animation-name: anim--bottom-in;
+    .animation-default.active();
+    animation-name: anim-bottom--in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation--default.out();
-    animation-name: anim--bottom-out;
+    .animation-default.out();
+    animation-name: anim-bottom--out;
     animation-fill-mode: forwards;
     opacity: 1;
   }
 }
 
-@keyframes anim--bottom-in {
+@keyframes anim-bottom--in {
   0% {
     transform: translateY(@anim--medium);
     opacity: 0;
@@ -336,7 +336,7 @@ opacity: 0;
   }
 }
 
-@keyframes anim--bottom-out {
+@keyframes anim-bottom--out {
   0% {
     transform: translateX(0);
     opacity: 1;
@@ -347,24 +347,24 @@ opacity: 0;
   }
 }
 
-// anim--left
+// anim-left
 
-.anim--left {
+.anim-left {
   &.active {
-    .animation--default.active();
-    animation-name: anim--left-in;
+    .animation-default.active();
+    animation-name: anim-left--in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation--default.out();
-    animation-name: anim--left-out;
+    .animation-default.out();
+    animation-name: anim-left--out;
     animation-fill-mode: forwards;
     opacity: 1;
   }
 }
 
-@keyframes anim--left-in {
+@keyframes anim-left--in {
   0% {
     transform: translateX(-@anim--medium);
     opacity: 0;
@@ -375,7 +375,7 @@ opacity: 0;
   }
 }
 
-@keyframes anim--left-out {
+@keyframes anim-left--out {
   0% {
     transform: translateY(0);
     opacity: 1;
@@ -386,24 +386,24 @@ opacity: 0;
   }
 }
 
-// anim--right
+// anim-right
 
-.anim--right {
+.anim-right {
   &.active {
-    .animation--default.active();
-    animation-name: anim--right-in;
+    .animation-default.active();
+    animation-name: anim-right--in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation--default.out();
-    animation-name: anim--right-out;
+    .animation-default.out();
+    animation-name: anim-right--out;
     animation-fill-mode: forwards;
     opacity: 1;
   }
 }
 
-@keyframes anim--right-in {
+@keyframes anim-right--in {
   0% {
     transform: translateX(@anim--medium);
     opacity: 0;
@@ -414,7 +414,7 @@ opacity: 0;
   }
 }
 
-@keyframes anim--right-out {
+@keyframes anim-right--out {
   0% {
     transform: translateY(0);
     opacity: 1;
@@ -434,11 +434,11 @@ opacity: 0;
 .collapse--height,
 .collapse--width {
   &.active {
-    .transition--default.active();
+    .transition-default.active();
     transition-delay: @time--small;
   }
   &.out {
-    .transition--default.out();
+    .transition-default.out();
     transition-delay: @time--medium;
   }
 }

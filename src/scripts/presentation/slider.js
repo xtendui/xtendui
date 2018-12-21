@@ -71,9 +71,7 @@ class Slider extends Core {
           self.eventDragstart(target, e);
         }
         // auto
-        if (options.autoPause) {
-          self.autoPause();
-        }
+        self.autoStop();
         // event off
         let dragendHandler = Xt.dataStorage.put(target, 'dragendHandler' + self.namespace,
           self.eventDragendHandler.bind(self).bind(self, target));
@@ -106,8 +104,10 @@ class Slider extends Core {
         self.eventDragend(target, e);
       }
       // auto
-      if (options.autoPause) {
-        self.autoPause();
+      if (options.autoChange) {
+        self.autoChange();
+      } else if (options.auto) {
+        self.autoStart();
       }
       // event off
       let dragendHandler = Xt.dataStorage.get(target, 'dragendHandler' + self.namespace);
@@ -176,10 +176,6 @@ class Slider extends Core {
     self.eDetailSet(e);
     // listener dispatch
     target.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: self.eDetail}));
-    // auto
-    if (options.autoPause) {
-      self.autoPause();
-    }
   }
 
 }

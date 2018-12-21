@@ -36,10 +36,10 @@
   &.active {
     > .drop > .drop_inner {
       > .drop_design {
-        .anim--zoom.active();
+        .anim-zoom.active();
       }
       > .drop_content {
-        .anim--vertical.active();
+        .anim-vertical.active();
         animation-delay: @time--small;
       }
     }
@@ -50,11 +50,11 @@
   &.out {
     > .drop > .drop_inner {
       > .drop_design {
-        .anim--zoom.out();
+        .anim-zoom.out();
         animation-delay: @time--small;
       }
       > .drop_content {
-        .anim--vertical.out();
+        .anim-vertical.out();
       }
     }
     > .xt-backdrop {
@@ -69,7 +69,7 @@
   // disable custom animation
   > .drop > .drop_inner {
     > .drop_content {
-      .anim--none() !important;
+      .anim-none() !important;
       opacity: 1 !important;
     }
   }

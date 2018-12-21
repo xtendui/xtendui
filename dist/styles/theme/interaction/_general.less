@@ -39,9 +39,9 @@ a, .alink {
     color: darken(@primary, @perc--xs);
   }
   // animations
-  .transition--default.out();
+  .transition-default.out();
   &:hover, &.hover, &:active, &.active {
-    .transition--default.active();
+    .transition-default.active();
   }
 }
 
@@ -85,14 +85,14 @@ a, .alink {
     > span {
       .icon-xt(@content: @icon-xt--chevron-up, @size: @icon--tiny);
       &::after {
-        .anim--bottom.active();
+        .anim-bottom.active();
       }
     }
   }
   &.out {
     > span {
       &::after {
-        .anim--top.active();
+        .anim-top.active();
       }
     }
   }
@@ -105,14 +105,14 @@ a, .alink {
       > span {
         .icon-xt(@content: @icon-xt--chevron-down, @size: @icon--tiny);
         &::after {
-          .anim--top.active();
+          .anim-top.active();
         }
       }
     }
     &.out {
       > span {
         &::after {
-          .anim--bottom.active();
+          .anim-bottom.active();
         }
       }
     }
@@ -126,14 +126,14 @@ a, .alink {
       > span {
         .icon-xt(@content: @icon-xt--chevron-left, @size: @icon--tiny);
         &::after {
-          .anim--right.active();
+          .anim-right.active();
         }
       }
     }
     &.out {
       > span {
         &::after {
-          .anim--left.active();
+          .anim-left.active();
         }
       }
     }
@@ -152,14 +152,14 @@ a, .alink {
         > span {
           .icon-xt(@content: @icon-xt--chevron-right, @size: @icon--tiny, @position: before);
           &::before {
-            .anim--left.active();
+            .anim-left.active();
           }
         }
       }
       &.out {
         > span {
           &::before {
-            .anim--right.active();
+            .anim-right.active();
           }
         }
       }

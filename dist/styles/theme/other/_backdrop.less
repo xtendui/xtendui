@@ -12,20 +12,20 @@
   // animations
   opacity: 0;
   &.active {
-    .animation--default.active();
-    animation-name: anim--backdrop-in;
+    .animation-default.active();
+    animation-name: anim-backdrop--in;
     animation-duration: @time--big;
     animation-fill-mode: forwards;
   }
   &.out {
-    .animation--default.out();
-    animation-name: anim--backdrop-out;
+    .animation-default.out();
+    animation-name: anim-backdrop--out;
     animation-duration: @time--big;
     animation-fill-mode: forwards;
   }
 }
 
-@keyframes anim--backdrop-in {
+@keyframes anim-backdrop--in {
   0% {
     opacity: 0;
   }
@@ -34,7 +34,7 @@
   }
 }
 
-@keyframes anim--backdrop-out {
+@keyframes anim-backdrop--out {
   0% {
     opacity: @backdrop--opacity;
   }

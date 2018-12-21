@@ -62,7 +62,7 @@
   .overlay {
     .overlay_inner,
     .overlay_content {
-      .anim--none() !important;
+      .anim-none() !important;
       opacity: 1 !important;
     }
   }
@@ -74,11 +74,11 @@
   animation-duration: @time--medium + @time--small; // needed for .out animation timing, put max animation time
   &.active {
     .overlay_design {
-      .anim--zoom.active();
+      .anim-zoom.active();
     }
     .overlay_content,
     .overlay_inner > .btn--close {
-      .anim--vertical.active();
+      .anim-vertical.active();
       animation-delay: @time--small;
     }
     > .xt-backdrop {
@@ -86,64 +86,64 @@
     }
     // addons
     &.overlay--screen {
-      .anim--opacity.active();
+      .anim-opacity.active();
     }
     &.overlay--left {
       .overlay_design {
-        .anim--left.active();
+        .anim-left.active();
       }
       .overlay_content,
       .overlay_inner > .btn--close {
-        .anim--left.active();
+        .anim-left.active();
         animation-delay: @time--small;
       }
     }
     &.overlay--right {
       .overlay_design {
-        .anim--right.active();
+        .anim-right.active();
       }
       .overlay_content,
       .overlay_inner > .btn--close {
-        .anim--right.active();
+        .anim-right.active();
         animation-delay: @time--small;
       }
     }
   }
   &.out {
     .overlay_design {
-      .anim--zoom.out();
+      .anim-zoom.out();
       animation-delay: @time--small;
     }
     .overlay_content,
     .overlay_inner > .btn--close {
-      .anim--vertical.out();
+      .anim-vertical.out();
     }
     > .xt-backdrop {
       .xt-backdrop.out();
     }
     // addons
     &.overlay--screen {
-      .anim--opacity.out();
+      .anim-opacity.out();
       animation-delay: @time--small;
     }
     &.overlay--left {
       .overlay_design {
-        .anim--left.out();
+        .anim-left.out();
         animation-delay: @time--small;
       }
       .overlay_content,
       .overlay_inner > .btn--close {
-        .anim--left.out();
+        .anim-left.out();
       }
     }
     &.overlay--right {
       .overlay_design {
-        .anim--right.out();
+        .anim-right.out();
         animation-delay: @time--small;
       }
       .overlay_content,
       .overlay_inner > .btn--close {
-        .anim--right.out();
+        .anim-right.out();
       }
     }
   }
