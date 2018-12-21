@@ -142,9 +142,11 @@ class Ajax extends Core {
     let substitute = html.querySelectorAll(options.query)[0];
     // data-xt-ajax-keep
     for (let keep of target.querySelectorAll('[data-xt-ajax-keep]')) {
-      // keep relative sub
+      // keep and sub
       let id = keep.getAttribute('data-xt-ajax-keep');
       let sub = substitute.querySelectorAll('[data-xt-ajax-keep="' + id + '"]')[0];
+      // copy
+      //sub.parentNode.replaceChild(keep, sub);
       // loop all descendants
       let elsKeep = keep.querySelectorAll('*');
       let elsSub = sub.querySelectorAll('*');

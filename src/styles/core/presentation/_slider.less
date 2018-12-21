@@ -4,6 +4,10 @@
 
 .slider {
   position: relative;
+  cursor: grab;
+  // @TODO
+  -ms-touch-action: pan-x;
+  touch-action: pan-x;
 }
 
 .slide {
@@ -20,4 +24,9 @@
 
 .slide_inner {
   position: relative;
+}
+
+.slider--disable {
+  cursor: default;
+  pointer-events: none;
 }
