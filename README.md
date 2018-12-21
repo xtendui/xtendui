@@ -34,7 +34,7 @@ We use jekyll to serve the docs.
 
 * You need to [install jekyll](https://jekyllrb.com/docs/installation/) on your local machine
 * Use `bundle install` to install jekyll's bundles
-* Use `npm run serve`, docs will be served to `http://127.0.0.1:4000/`
+* Use `npm run serve:docs`, docs will be served to `http://127.0.0.1:4000/`
 
 # Acknowledgements
 
