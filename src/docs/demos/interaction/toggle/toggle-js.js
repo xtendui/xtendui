@@ -27,7 +27,7 @@ function toggle0Init(main, index) {
 
   // toggle items
 
-  for (let [i, tr] of toggle.targets.entries()) {
+  for (let tr of toggle.targets) {
 
     // on event
 
@@ -82,7 +82,7 @@ function toggle1Init(main, index) {
 
   // toggle items
 
-  for (let [i, tr] of toggle.targets.entries()) {
+  for (let tr of toggle.targets) {
 
     // on event
 

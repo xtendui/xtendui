@@ -43,12 +43,16 @@ function sliderInit(main, index) {
     tr.addEventListener('on.xt', function (e) {
       let target = this;
       let xMax = target.clientWidth;
+      let mask = target.children[0];
+      let maskInner = target.children[0].children[0];
+      let contents = target.querySelectorAll('.card_content > *');
+      let designs = target.querySelectorAll('.card_design');
       // content
-      for (let [i, content] of target.querySelectorAll('.card_content > *').entries()) {
+      for (let [i, content] of contents.entries()) {
         content.dataset.tlDelay = Math.min(delayContent * i, delayContentMax).toString();
       }
       // design
-      for (let [i, design] of target.querySelectorAll('.card_design').entries()) {
+      for (let [i, design] of designs.entries()) {
         design.dataset.tlDelay = Math.min(delayDesign * i, delayDesignMax).toString();
       }
       // if inital stop, don't do animation
@@ -60,18 +64,18 @@ function sliderInit(main, index) {
       if (!target.classList.contains('xt-inverse')) {
         // mask
         TweenMax.set(target, {x: xMax});
-        TweenMax.set(target.children[0], {x: -xMax});
-        TweenMax.set(target.children[0].children[0], {x: size});
-        TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeIn'});
+        TweenMax.set(mask, {x: -xMax});
+        TweenMax.set(maskInner, {x: size});
+        TweenMax.to(maskInner, time, {x: 0, ease: 'easeIn'});
         // content
-        for (let content of target.querySelectorAll('.card_content > *')) {
+        for (let content of contents) {
           TweenMax.set(content, {x: sizeContent, opacity: 0});
           setTimeout(function () {
             TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeIn'});
           }, parseFloat(content.dataset.tlDelay) * 1000);
         }
         // design
-        for (let design of target.querySelectorAll('.card_design')) {
+        for (let design of designs) {
           TweenMax.set(design, {x: sizeDesign, opacity: 0});
           setTimeout(function () {
             TweenMax.to(design, timeDesign, {x: 0, opacity: 1, ease: 'easeIn'});
@@ -80,18 +84,18 @@ function sliderInit(main, index) {
       } else {
         // mask
         TweenMax.set(target, {x: -xMax});
-        TweenMax.set(target.children[0], {x: xMax});
-        TweenMax.set(target.children[0].children[0], {x: -size});
-        TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeIn'});
+        TweenMax.set(mask, {x: xMax});
+        TweenMax.set(maskInner, {x: -size});
+        TweenMax.to(maskInner, time, {x: 0, ease: 'easeIn'});
         // content
-        for (let content of target.querySelectorAll('.card_content > *')) {
+        for (let content of contents) {
           TweenMax.set(content, {x: -sizeContent, opacity: 0});
           setTimeout(function () {
             TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeIn'});
           }, parseFloat(content.dataset.tlDelay) * 1000);
         }
         // design
-        for (let design of target.querySelectorAll('.card_design')) {
+        for (let design of designs) {
           TweenMax.set(design, {x: -sizeDesign, opacity: 0});
           setTimeout(function () {
             TweenMax.to(design, timeDesign, {x: 0, opacity: 1, ease: 'easeIn'});
@@ -100,7 +104,7 @@ function sliderInit(main, index) {
       }
       // drag position
       TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeIn'});
-      TweenMax.to(target.children[0], time, {x: 0, ease: 'easeIn'});
+      TweenMax.to(mask, time, {x: 0, ease: 'easeIn'});
     });
 
     // off event
@@ -108,19 +112,22 @@ function sliderInit(main, index) {
     tr.addEventListener('off.xt', function (e) {
       let target = this;
       let xMax = target.clientWidth;
+      let mask = target.children[0];
+      let contents = target.querySelectorAll('.card_content > *');
+      let designs = target.querySelectorAll('.card_design');
       // complete drag
       if (!target.classList.contains('xt-inverse')) {
         // mask
         TweenMax.to(target, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
-        TweenMax.to(target.children[0], time, {x: xMax, ease: 'easeOut'});
+        TweenMax.to(mask, time, {x: xMax, ease: 'easeOut'});
         // content
-        for (let content of target.querySelectorAll('.card_content > *')) {
+        for (let content of contents) {
           setTimeout(function () {
             TweenMax.to(content, timeContent, {x: -sizeContent, opacity: 0, ease: 'easeOut'});
           }, parseFloat(content.dataset.tlDelay) * 1000);
         }
         // design
-        for (let design of target.querySelectorAll('.card_design')) {
+        for (let design of designs) {
           setTimeout(function () {
             TweenMax.to(design, timeDesign, {x: -sizeDesign, opacity: 0, ease: 'easeOut'});
           }, parseFloat(design.dataset.tlDelay) * 1000);
@@ -128,15 +135,15 @@ function sliderInit(main, index) {
       } else {
         // mask
         TweenMax.to(target, time, {x: xMax, opacity: 0, ease: 'easeOut'});
-        TweenMax.to(target.children[0], time, {x: -xMax, ease: 'easeOut'});
+        TweenMax.to(mask, time, {x: -xMax, ease: 'easeOut'});
         // content
-        for (let content of target.querySelectorAll('.card_content > *')) {
+        for (let content of contents) {
           setTimeout(function () {
             TweenMax.to(content, timeContent, {x: sizeContent, opacity: 0, ease: 'easeOut'});
           }, parseFloat(content.dataset.tlDelay) * 1000);
         }
         // design
-        for (let design of target.querySelectorAll('.card_design')) {
+        for (let design of designs) {
           setTimeout(function () {
             TweenMax.to(design, timeDesign, {x: sizeDesign, opacity: 0, ease: 'easeOut'});
           }, parseFloat(design.dataset.tlDelay) * 1000);
@@ -156,29 +163,32 @@ function sliderInit(main, index) {
       let xDist = xCurrent - xStart;
       let xMax = target.clientWidth;
       let ratio = Math.abs(xStart - xCurrent) / xMax;
+      let mask = target.children[0];
+      let contents = target.querySelectorAll('.card_content > *');
+      let designs = target.querySelectorAll('.card_design');
       // mask
       TweenMax.set(target, {x: xDist + 'px', opacity: 1 - ratio});
-      TweenMax.set(target.children[0], {x: -xDist});
-      // content
+      TweenMax.set(mask, {x: -xDist});
+      // direction
       if (xStart - xCurrent > 0) {
-        for (let content of target.querySelectorAll('.card_content > *')) {
+        // content
+        for (let content of contents) {
           let ratioWithDelay = (durationContent - parseFloat(content.dataset.tlDelay)) * ratio / timeContent;
           TweenMax.set(content, {x: -sizeContent * ratioWithDelay, opacity: 1 - ratioWithDelay});
         }
-      } else {
-        for (let content of target.querySelectorAll('.card_content > *')) {
-          let ratioWithDelay = (durationContent - parseFloat(content.dataset.tlDelay)) * ratio / timeContent;
-          TweenMax.set(content, {x: sizeContent * ratioWithDelay, opacity: 1 - ratioWithDelay});
-        }
-      }
-      // design
-      if (xStart - xCurrent > 0) {
-        for (let design of target.querySelectorAll('.card_design')) {
+        // design
+        for (let design of designs) {
           let ratioWithDelay = (durationDesign - parseFloat(design.dataset.tlDelay)) * ratio / timeDesign;
           TweenMax.set(design, {x: -sizeDesign * ratioWithDelay, opacity: 1 - ratioWithDelay});
         }
       } else {
-        for (let design of target.querySelectorAll('.card_design')) {
+        // content
+        for (let content of contents) {
+          let ratioWithDelay = (durationContent - parseFloat(content.dataset.tlDelay)) * ratio / timeContent;
+          TweenMax.set(content, {x: sizeContent * ratioWithDelay, opacity: 1 - ratioWithDelay});
+        }
+        // design
+        for (let design of designs) {
           let ratioWithDelay = (durationDesign - parseFloat(design.dataset.tlDelay)) * ratio / timeDesign;
           TweenMax.set(design, {x: sizeDesign * ratioWithDelay, opacity: 1 - ratioWithDelay});
         }
@@ -195,6 +205,9 @@ function sliderInit(main, index) {
       let xStart = eInit.clientX;
       let xCurrent = eCurrent.clientX;
       let xDist = xCurrent - xStart;
+      let mask = target.children[0];
+      let contents = target.querySelectorAll('.card_content > *');
+      let designs = target.querySelectorAll('.card_design');
       // activate or reset
       if (Math.abs(xDist) > self.options.dragThreshold) {
         // direction
@@ -206,13 +219,13 @@ function sliderInit(main, index) {
       } else {
         // mask
         TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeOut'});
-        TweenMax.to(target.children[0], time, {x: 0, ease: 'easeOut'});
+        TweenMax.to(mask, time, {x: 0, ease: 'easeOut'});
         // content
-        for (let content of target.querySelectorAll('.card_content > *')) {
+        for (let content of contents) {
           TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeOut'});
         }
         // design
-        for (let design of target.querySelectorAll('.card_design')) {
+        for (let design of designs) {
           TweenMax.to(design, timeDesign, {x: 0, opacity: 1, ease: 'easeOut'});
         }
       }

@@ -58,8 +58,8 @@ Xt.initExtensions = function (added = document.documentElement) {
       els.push(el);
     }
     if (els.length) {
-      for (let [index, el] of els.entries()) {
-        obj.fnc(el, index);
+      for (let [i, el] of els.entries()) {
+        obj.fnc(el, i);
       }
     }
   }
