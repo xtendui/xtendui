@@ -7,8 +7,10 @@
 .slider {
   position: relative;
   // @TODO
+  /*
   -ms-touch-action: pan-x;
   touch-action: pan-x;
+  */
 }
 
 .slider--drag {
@@ -27,19 +29,9 @@
   position: relative;
   min-height: 100%;
   overflow: hidden;
-  // prevent image dragging
-  img {
-    -webkit-user-drag: none;
-    pointer-events: none;
-  }
 }
 
 .slide_inner {
   position: relative;
 }
 
-.slide_content {
-  .display(flex);
-  .align-items--center();
-  position: relative;
-}

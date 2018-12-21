@@ -36,8 +36,10 @@ a, button, .alink {
   text-decoration: none;
   // enables pointer events
   display: inline-block;
-  // disable browser dragging
+  // prevent browser drag
   -webkit-user-drag: none;
+  -moz-user-select: none;
+  user-drag: none;
 }
 
 button {
@@ -49,6 +51,10 @@ button {
 img {
   display: inline-block;
   vertical-align: top; // fix inline-block spacing
+  // prevent browser drag
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  user-drag: none;
 }
 
 h1, h2, h3, h4, h5, h6, p {
