@@ -29,8 +29,9 @@ class Core {
         "onBlock": false,
         "offBlock": false,
         "auto": false,
-        "autoPause": false,
+        "autoChange": false,
         "autoAlways": false,
+        "autoInverse": false,
         "delayOn": false,
         "delayOff": false,
         "durationOn": false,
@@ -285,6 +286,19 @@ class Core {
       // blur auto
       window.removeEventListener('blur', self.autoStop.bind(self, false));
       window.addEventListener('blur', self.autoStop.bind(self, false));
+      // autoPause
+      for (let el of self.object.querySelectorAll(options.autoPause)) {
+        // pause
+        let autoPauseOnHandler = Xt.dataStorage.put(el, 'autoPauseOnHandler' + self.namespace,
+          self.eventAutoPauseOnHandler.bind(self).bind(self, el));
+        el.removeEventListener('mouseenter', autoPauseOnHandler);
+        el.addEventListener('mouseenter', autoPauseOnHandler);
+        // resume
+        let autoPauseOffHandler = Xt.dataStorage.put(el, 'autoPauseOffHandler' + self.namespace,
+          self.eventAutoPauseOffHandler.bind(self).bind(self, el));
+        el.removeEventListener('mouseleave', autoPauseOffHandler);
+        el.addEventListener('mouseleave', autoPauseOffHandler);
+      }
     }
   }
 
@@ -321,8 +335,8 @@ class Core {
         self.eventOn(element, e);
       }
       // auto
-      if (options.autoPause) {
-        self.autoPause();
+      if (options.autoChange) {
+        self.autoChange();
       } else if (options.auto) {
         self.autoStart();
       }
@@ -453,11 +467,35 @@ class Core {
     let self = this;
     // goToPrev
     let curentIndex = self.curentIndex !== undefined ? self.curentIndex - 1 : 0;
-    curentIndex = curentIndex < 0 ? self.elements.length - 1 : curentIndex;
+    curentIndex = curentIndex <= 0 ? self.elements.length - 1 : curentIndex;
     self.forceInverseDirection = self.curentIndex < curentIndex;
     let current = self.elements[curentIndex];
     self.eventOn(current);
     return current;
+  }
+
+  /**
+   * auto pause on handler
+   * @param {Node|HTMLElement|EventTarget|Window} element
+   * @param {Event} e
+   */
+  eventAutoPauseOnHandler(element, e) {
+    let self = this;
+    if (!e.detail || !e.detail.skip) {
+      self.autoStop();
+    }
+  }
+
+  /**
+   * auto pause off handler
+   * @param {Node|HTMLElement|EventTarget|Window} element
+   * @param {Event} e
+   */
+  eventAutoPauseOffHandler(element, e) {
+    let self = this;
+    if (!e.detail || !e.detail.skip) {
+      self.autoStart();
+    }
   }
 
   /**
@@ -472,23 +510,29 @@ class Core {
     let time = !instant ? options.auto : 0;
     self.object.dataset.xtAutoStartInterval = setInterval(function () {
       if (options.autoAlways || self.object.offsetParent) { // @FIX offsetParent for :visible
-        self.goToNext();
+        if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
+          if (options.autoInverse) {
+            self.goToPrev();
+          } else {
+            self.goToNext();
+          }
+        }
       }
     }, time).toString();
   }
 
   /**
-   * set autoPause change
+   * set autoChange change
    * @param {Boolean} instant
    */
-  autoPause(instant = false) {
+  autoChange(instant = false) {
     let self = this;
     let options = self.options;
-    // autoPause
+    // autoChange
     self.autoStop();
-    let time = !instant ? options.autoPause : 0;
+    let time = !instant ? options.autoChange : 0;
     if (time !== 'stop') {
-      self.object.dataset.xtAutoPauseTimeout = setTimeout(function () {
+      self.object.dataset.xtautoChangeTimeout = setTimeout(function () {
         self.autoStart(true);
         self.autoStart();
       }, time).toString();
@@ -502,7 +546,7 @@ class Core {
     let self = this;
     // autoStop
     clearInterval(self.object.dataset.xtAutoStartInterval);
-    clearTimeout(self.object.dataset.xtAutoPauseTimeout);
+    clearTimeout(self.object.dataset.xtautoChangeTimeout);
   }
 
   //////////////////////
