@@ -467,7 +467,7 @@ class Core {
     let self = this;
     // goToPrev
     let curentIndex = self.curentIndex !== undefined ? self.curentIndex - 1 : 0;
-    curentIndex = curentIndex <= 0 ? self.elements.length - 1 : curentIndex;
+    curentIndex = curentIndex < 0 ? self.elements.length - 1 : curentIndex;
     self.forceInverseDirection = self.curentIndex < curentIndex;
     let current = self.elements[curentIndex];
     self.eventOn(current);

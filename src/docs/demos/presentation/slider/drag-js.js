@@ -12,25 +12,31 @@ CustomEase.create('easeOut', '.77, 0, .175, 1');
 for (let [i, el] of document.querySelectorAll('.slider').entries()) {
 
   // slider
+
   new Xt.Slider(el, {
     "auto": 6000,
-    "autoPause": 6000,
     "drag": true,
     "durationOn": time * 1000,
     "durationOff": time * 1000
   });
 
   // slider items
+
   for (let [i, tr] of el.querySelectorAll('.slide').entries()) {
 
     // on event
+
     tr.addEventListener('on.xt', function (e) {
       let target = this;
       let xMax = target.clientWidth;
       // content
-      let contents = target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *');
+      let contents = target.querySelectorAll('.card_content > *');
       for (let [z, content] of contents.entries()) {
         content.dataset.tlDelay = Math.min(delaycontent * z, delaycontentMax).toString();
+      }
+      // if inital stop, don't do animation
+      if (e.detail.object.detail.initial) {
+        return false;
       }
       // setup drag position
       TweenMax.set(target, {opacity: 0});
@@ -41,7 +47,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.set(target.children[0].children[0], {x: animSize});
         TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeIn'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
           TweenMax.set(content, {x: animSize, opacity: 0});
           setTimeout(function () {
             TweenMax.to(content, timecontent, {x: 0, opacity: 1, ease: 'easeIn'});
@@ -54,7 +60,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.set(target.children[0].children[0], {x: -animSize});
         TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeIn'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_contentcontent > *').entries()) {
+        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
           TweenMax.set(content, {x: -animSize, opacity: 0});
           setTimeout(function () {
             TweenMax.to(content, timecontent, {x: 0, opacity: 1, ease: 'easeIn'});
@@ -67,6 +73,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     });
 
     // off event
+
     tr.addEventListener('off.xt', function (e) {
       let target = this;
       let xMax = target.clientWidth;
@@ -76,7 +83,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.to(target, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: xMax, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
           setTimeout(function () {
             TweenMax.to(content, timecontent, {x: -animSize, opacity: 0, ease: 'easeOut'});
           }, parseFloat(content.dataset.tlDelay) * 1000);
@@ -86,7 +93,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.to(target, time, {x: xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: -xMax, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
           setTimeout(function () {
             TweenMax.to(content, timecontent, {x: animSize, opacity: 0, ease: 'easeOut'});
           }, parseFloat(content.dataset.tlDelay) * 1000);
@@ -95,6 +102,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     });
 
     // drag event
+
     tr.addEventListener('drag.xt.slider', function (e) {
       let target = this;
       let self = e.detail.object;
@@ -110,12 +118,12 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       TweenMax.set(target.children[0], {x: -xDist});
       // content
       if (xStart - xCurrent > 0) {
-        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
           let ratioWithDelay = (durationcontent - parseFloat(content.dataset.tlDelay)) * ratio / timecontent;
           TweenMax.set(content, {x: -animSize * ratioWithDelay, opacity: 1 - ratioWithDelay});
         }
       } else {
-        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
           let ratioWithDelay = (durationcontent - parseFloat(content.dataset.tlDelay)) * ratio / timecontent;
           TweenMax.set(content, {x: animSize * ratioWithDelay, opacity: 1 - ratioWithDelay});
         }
@@ -123,6 +131,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     });
 
     // dragend event
+
     tr.addEventListener('dragend.xt.slider', function (e) {
       let target = this;
       let self = e.detail.object;
@@ -144,7 +153,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: 0, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
           TweenMax.to(content, timecontent, {x: 0, opacity: 1, ease: 'easeOut'});
         }
       }

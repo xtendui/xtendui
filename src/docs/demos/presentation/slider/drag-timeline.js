@@ -12,24 +12,26 @@ CustomEase.create('easeOut', '.77, 0, .175, 1');
 for (let [i, el] of document.querySelectorAll('.slider').entries()) {
 
   // slider
+
   new Xt.Slider(el, {
     "auto": 6000,
-    "autoPause": 6000,
     "drag": true,
     "durationOn": time * 1000,
     "durationOff": time * 1000
   });
 
   // slider items
+
   for (let [i, tr] of el.querySelectorAll('.slide').entries()) {
 
     // on event
+
     tr.addEventListener('on.xt', function (e) {
       let target = this;
       let xMax = target.clientWidth;
       // content
       window.tl = [];
-      let contents = target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *');
+      let contents = target.querySelectorAll('.card_content > *');
       for (let [z, content] of contents.entries()) {
         window.tl[z] = new TimelineMax({paused: true});
         window.tl[z].addLabel('start');
@@ -51,6 +53,10 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         // content delay inverse
         contents[z].dataset.tlDelayInverse = Math.min(delaycontent * z, delaycontentMax).toString();
       }
+      // if inital stop, don't do animation
+      if (e.detail.object.detail.initial) {
+        return false;
+      }
       // setup drag position
       TweenMax.set(target, {opacity: 0});
       if (!target.classList.contains('xt-inverse')) {
@@ -60,7 +66,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.set(target.children[0].children[0], {x: animSize});
         TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
           TweenMax.set(content, {opacity: 0});
           window.tl[z].seek('endDelay' + '+=' + content.dataset.tlDelay).tweenTo('middle', {ease: 'easeIn'});
         }
@@ -71,7 +77,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.set(target.children[0].children[0], {x: -animSize});
         TweenMax.to(target.children[0].children[0], time, {x: 0, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
           TweenMax.set(content, {opacity: 0});
           window.tl[z].seek('startDelay' + '-=' + content.dataset.tlDelayInverse).tweenTo('middle', {ease: 'easeIn'});
         }
@@ -82,6 +88,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     });
 
     // off event
+
     tr.addEventListener('off.xt', function (e) {
       let target = this;
       let xMax = target.clientWidth;
@@ -91,7 +98,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.to(target, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: xMax, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
           window.tl[z].tweenTo('startDelay' + '-=' + content.dataset.tlDelay, {ease: 'easeOut'});
         }
       } else {
@@ -99,13 +106,14 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.to(target, time, {x: xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: -xMax, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
           window.tl[z].tweenTo('endDelay' + '+=' + content.dataset.tlDelay, {ease: 'easeOut'});
         }
       }
     });
 
     // drag event
+
     tr.addEventListener('drag.xt.slider', function (e) {
       let target = this;
       let self = e.detail.object;
@@ -121,12 +129,12 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
       TweenMax.set(target.children[0], {x: -xDist});
       // content
       if (xStart - xCurrent > 0) {
-        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
           let tlPos = durationcontent - (durationcontent - parseFloat(content.dataset.tlDelayInverse)) * ratio;
           window.tl[z].tweenTo(tlPos, {ease: 'easeOut'});
         }
       } else {
-        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
           let tlPos = durationcontent + (durationcontent - parseFloat(content.dataset.tlDelay)) * ratio;
           window.tl[z].tweenTo(tlPos, {ease: 'easeOut'});
         }
@@ -134,6 +142,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     });
 
     // dragend event
+
     tr.addEventListener('dragend.xt.slider', function (e) {
       let target = this;
       let self = e.detail.object;
@@ -155,7 +164,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
         TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeOut'});
         TweenMax.to(target.children[0], time, {x: 0, ease: 'easeOut'});
         // content
-        for (let [z, content] of target.querySelectorAll(':scope > * > .slide_content > .card > .card_content > *').entries()) {
+        for (let [z, content] of target.querySelectorAll('.card_content > *').entries()) {
           window.tl[z].tweenTo('middle', {ease: 'easeOut'});
         }
       }

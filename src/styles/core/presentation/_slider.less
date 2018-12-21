@@ -4,14 +4,17 @@
 
 .slider {
   position: relative;
-  cursor: grab;
   // @TODO
   -ms-touch-action: pan-x;
   touch-action: pan-x;
 }
 
-.slide {
+.slider--drag {
+  cursor: grab;
   .user-select--none();
+}
+
+.slide {
   position: relative;
   min-height: 100%;
   overflow: hidden;

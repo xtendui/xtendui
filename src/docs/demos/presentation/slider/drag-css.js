@@ -1,19 +1,55 @@
-for (let [i, el] of document.querySelectorAll('.slider').entries()) {
+
+// on DOM ready and on content added to DOM
+
+Xt.init.push({
+  matches: '.slider',
+  fnc: initializeSlider
+});
+
+// initializeSlider
+
+function initializeSlider(el, index) {
+
+  // vars
+
+  let time = .6;
+  let animSize = 200;
+
+  let timeContent = .6;
+  let delayContent = .15;
+  let animSizeContent = 200;
+  let delayContentMax = delayContent * 2;
+  let durationContent = timeContent + delayContentMax;
+
+  let timeImg = .6;
+  let delayImg = .15;
+  let animSizeImg = 100;
+  let delayImgMax = delayImg * 2;
+  let durationImg = timeImg + delayImgMax;
+
+  CustomEase.create('easeIn', '.41, .1, .175, 1');
+  CustomEase.create('easeOut', '.77, 0, .175, 1');
 
   // slider
+
   new Xt.Slider(el, {
     "auto": 6000,
-    "autoPause": 6000,
     "drag": true
   });
 
   // slider items
+
   for (let [i, tr] of el.querySelectorAll('.slide').entries()) {
 
     // on event
+
     tr.addEventListener('on.xt', function (e) {
       let target = this;
       let xMax = target.clientWidth;
+      // if inital stop, don't do animation
+      if (e.detail.object.detail.initial) {
+        return false;
+      }
       // dragging
       target.classList.add('dragging');
       // setup drag position
@@ -40,6 +76,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     });
 
     // off event
+
     tr.addEventListener('off.xt', function (e) {
       let target = this;
       let xMax = target.clientWidth;
@@ -59,6 +96,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     });
 
     // dragstart event
+
     tr.addEventListener('dragstart.xt.slider', function (e) {
       let target = this;
       // dragging
@@ -66,6 +104,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     });
 
     // drag event
+
     tr.addEventListener('drag.xt.slider', function (e) {
       let target = this;
       let self = e.detail.object;
@@ -83,6 +122,7 @@ for (let [i, el] of document.querySelectorAll('.slider').entries()) {
     });
 
     // dragend event
+
     tr.addEventListener('dragend.xt.slider', function (e) {
       let target = this;
       let self = e.detail.object;

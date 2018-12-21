@@ -35,6 +35,7 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     if (options.drag) {
+      self.object.classList.add('slider--drag');
       for (let tr of self.targets) {
         // event on
         let dragstartHandler = Xt.dataStorage.put(tr, 'dragstartHandler' + self.namespace,
@@ -55,10 +56,9 @@ class Slider extends Core {
    */
   eventDragstartHandler(target, e) {
     let self = this;
-    let options = self.options;
     // handler
     if (!e.button || e.button !== 2) { // not right click or it gets stuck
-      if (!self.checkAnim(Xt.arrSingle(target))) {
+      if (self.detail.initial || !self.checkAnim(Xt.arrSingle(target))) {
         // save event
         self.detail.eInit = e;
         // logic
@@ -92,29 +92,26 @@ class Slider extends Core {
   eventDragendHandler(target, e) {
     let self = this;
     let options = self.options;
-    // handler
-    if (!self.checkAnim(Xt.arrSingle(target))) {
-      // logic
-      let eventLimit = self.container.querySelectorAll('.event-limit');
-      if (eventLimit.length) {
-        if (!Xt.checkNested(e.target, eventLimit)) {
-          self.eventDragend(target, e);
-        }
-      } else {
+    // logic
+    let eventLimit = self.container.querySelectorAll('.event-limit');
+    if (eventLimit.length) {
+      if (!Xt.checkNested(e.target, eventLimit)) {
         self.eventDragend(target, e);
       }
-      // auto
-      if (options.autoChange) {
-        self.autoChange();
-      } else if (options.auto) {
-        self.autoStart();
-      }
-      // event off
-      let dragendHandler = Xt.dataStorage.get(target, 'dragendHandler' + self.namespace);
-      let events = ['mouseup', 'touchend'];
-      for (let event of events) {
-        window.removeEventListener(event, dragendHandler);
-      }
+    } else {
+      self.eventDragend(target, e);
+    }
+    // auto
+    if (options.autoChange) {
+      self.autoChange();
+    } else if (options.auto) {
+      self.autoStart();
+    }
+    // event off
+    let dragendHandler = Xt.dataStorage.get(target, 'dragendHandler' + self.namespace);
+    let events = ['mouseup', 'touchend'];
+    for (let event of events) {
+      window.removeEventListener(event, dragendHandler);
     }
   }
 
@@ -169,7 +166,6 @@ class Slider extends Core {
    */
   eventDragHandler(target, e) {
     let self = this;
-    let options = self.options;
     // save event
     self.detail.eCurrent = e;
     // eDetail
