@@ -44,14 +44,14 @@
   width: 100%;
   // select arrow
   select& {
-    .padding(right, @select_space--size) !important;
+    .padding(right, @select-space--size) !important;
     white-space: normal;
-    background-position: calc(~'100% - '@select_space--size / 2) 50%,
-    calc(~'100% - ('@select_space--size / 2~') + '@select_arrow--size) 50%,
+    background-position: calc(~'100% - '@select-space--size / 2) 50%,
+    calc(~'100% - ('@select-space--size / 2~') + '@select-arrow--size) 50%,
     100% 0;
-    background-size: @select_arrow--size @select_arrow--size,
-    @select_arrow--size @select_arrow--size,
-    @select_space--size 100%;
+    background-size: @select-arrow--size @select-arrow--size,
+    @select-arrow--size @select-arrow--size,
+    @select-space--size 100%;
     background-repeat: no-repeat;
   }
 }

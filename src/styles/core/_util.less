@@ -607,8 +607,8 @@ html.xt-scrollbar {
 
 // flex space
 
-.flex_space--y(@name, @breakpoint:none) when (@breakpoint = none) {
-  @arr: ~"flex_space--@{name}";
+.flex-space--y(@name, @breakpoint:none) when (@breakpoint = none) {
+  @arr: ~"flex-space--@{name}";
   @vertical: extract(@@arr, 1);
   margin-top: -@vertical;
   margin-bottom: -@vertical;
@@ -618,8 +618,8 @@ html.xt-scrollbar {
   }
 }
 
-.flex_space--y(@name, @breakpoint:none) when (default()) {
-  @arr: ~"flex_space--@{name}";
+.flex-space--y(@name, @breakpoint:none) when (default()) {
+  @arr: ~"flex-space--@{name}";
   @vertical: extract(@@arr, 1);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -632,8 +632,8 @@ html.xt-scrollbar {
   }
 }
 
-.flex_space--x(@name, @breakpoint:none) when (@breakpoint = none) {
-  @arr: ~"flex_space--@{name}";
+.flex-space--x(@name, @breakpoint:none) when (@breakpoint = none) {
+  @arr: ~"flex-space--@{name}";
   @horizontal: extract(@@arr, 2);
   margin-left: -@horizontal;
   margin-right: -@horizontal;
@@ -643,8 +643,8 @@ html.xt-scrollbar {
   }
 }
 
-.flex_space--x(@name, @breakpoint:none) when (default()) {
-  @arr: ~"flex_space--@{name}";
+.flex-space--x(@name, @breakpoint:none) when (default()) {
+  @arr: ~"flex-space--@{name}";
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -657,8 +657,8 @@ html.xt-scrollbar {
   }
 }
 
-.flex_space(@name, @breakpoint:none) when (@breakpoint = none) {
-  @arr: ~"flex_space--@{name}";
+.flex-space(@name, @breakpoint:none) when (@breakpoint = none) {
+  @arr: ~"flex-space--@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
   margin: -@vertical -@horizontal;
@@ -667,8 +667,8 @@ html.xt-scrollbar {
   }
 }
 
-.flex_space(@name, @breakpoint:none) when (default()) {
-  @arr: ~"flex_space--@{name}";
+.flex-space(@name, @breakpoint:none) when (default()) {
+  @arr: ~"flex-space--@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
@@ -686,8 +686,8 @@ html.xt-scrollbar {
 
 // list space
 
-.list_space--y(@name, @breakpoint:none) when (@breakpoint = none) {
-  @arr: ~"list_space--@{name}";
+.list-space--y(@name, @breakpoint:none) when (@breakpoint = none) {
+  @arr: ~"list-space--@{name}";
   @vertical: extract(@@arr, 1);
   margin-top: -@vertical;
   margin-bottom: -@vertical;
@@ -697,8 +697,8 @@ html.xt-scrollbar {
   }
 }
 
-.list_space--y(@name, @breakpoint:none) when (default()) {
-  @arr: ~"list_space--@{name}";
+.list-space--y(@name, @breakpoint:none) when (default()) {
+  @arr: ~"list-space--@{name}";
   @vertical: extract(@@arr, 1);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -711,8 +711,8 @@ html.xt-scrollbar {
   }
 }
 
-.list_space--x(@name, @breakpoint:none) when (@breakpoint = none) {
-  @arr: ~"list_space--@{name}";
+.list-space--x(@name, @breakpoint:none) when (@breakpoint = none) {
+  @arr: ~"list-space--@{name}";
   @horizontal: extract(@@arr, 2);
   margin-left: -@horizontal;
   margin-right: -@horizontal;
@@ -722,8 +722,8 @@ html.xt-scrollbar {
   }
 }
 
-.list_space--x(@name, @breakpoint:none) when (default()) {
-  @arr: ~"list_space--@{name}";
+.list-space--x(@name, @breakpoint:none) when (default()) {
+  @arr: ~"list-space--@{name}";
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -736,8 +736,8 @@ html.xt-scrollbar {
   }
 }
 
-.list_space(@name, @breakpoint:none) when (@breakpoint = none) {
-  @arr: ~"list_space--@{name}";
+.list-space(@name, @breakpoint:none) when (@breakpoint = none) {
+  @arr: ~"list-space--@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
   margin: -@vertical -@horizontal;
@@ -746,8 +746,8 @@ html.xt-scrollbar {
   }
 }
 
-.list_space(@name, @breakpoint:none) when (default()) {
-  @arr: ~"list_space--@{name}";
+.list-space(@name, @breakpoint:none) when (default()) {
+  @arr: ~"list-space--@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
