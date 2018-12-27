@@ -35,12 +35,18 @@
 
     <!-- demos source less -->
     {% if page.less %}
-    <less-style>{% include_relative {{ page.name | replace: '.html', '.less' }} %}</less-style>
+    <less-style>
+
+      {% include_relative {{ page.name | replace: '.html', '.less' }} %}
+    </less-style>
     {% endif %}
 
     <!-- demos source js -->
     {% if page.js %}
-    <js-script>{% include_relative {{ page.name | replace: '.html', '.js' }} %}</js-script>
+    <js-script>
+
+      {% include_relative {{ page.name | replace: '.html', '.js' }} %}
+    </js-script>
     {% endif %}
 
     <!-- scripts -->
