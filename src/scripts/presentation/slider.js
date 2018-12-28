@@ -35,8 +35,9 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     if (options.drag) {
-      self.object.classList.add('slider--drag');
       for (let tr of self.targets) {
+        // grab
+        tr.classList.add('grab');
         // event on
         let dragstartHandler = Xt.dataStorage.put(tr, 'dragstartHandler' + self.namespace,
           self.eventDragstartHandler.bind(self).bind(self, tr));
