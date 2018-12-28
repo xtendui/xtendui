@@ -16,23 +16,10 @@
 // col
 
 .col(@breakpoint:none) when (@breakpoint = none) {
-  .flex--auto();
-}
-
-.col(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    .flex--auto();
-  }
-}
-
-// col--custom
-
-.col--custom(@breakpoint:none) when (@breakpoint = none) {
   flex: 1 0 auto;
 }
 
-.col--custom(@breakpoint:none) when (default()) {
+.col(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex: 1 0 auto;
@@ -60,7 +47,6 @@
 
 .col(@number, @breakpoint:none) when (@breakpoint = none) {
   @val: (percentage(@number / @columns));
-  flex-shrink: 0;
   max-width: @val;
   width: @val;
 }
@@ -69,7 +55,6 @@
   @query-min: 'min-@{breakpoint}';
   @val: (percentage(@number / @columns));
   @media @@query-min {
-    flex-shrink: 0;
     max-width: @val;
     width: @val;
   }

@@ -390,7 +390,7 @@ for(let [i, el] of document.querySelectorAll('.demo').entries()) {
 // .demo-cols
 
 for(let element of document.querySelectorAll('.demo-cols')) {
-  for(let [i, el] of element.querySelectorAll('.col, .col--custom').entries()) {
+  for(let [i, el] of element.querySelectorAll('.col').entries()) {
     el.setAttribute('data-index', i);
   }
 }
@@ -398,7 +398,7 @@ for(let element of document.querySelectorAll('.demo-cols')) {
 // .demo-cols-nested
 
 for(let element of document.querySelectorAll('.demo-cols-nested .col')) {
-  for(let [i, el] of element.querySelectorAll('.col, .col--custom').entries()) {
+  for(let [i, el] of element.querySelectorAll('.col').entries()) {
     el.setAttribute('data-index', i);
   }
 }
