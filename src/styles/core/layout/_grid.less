@@ -60,6 +60,7 @@
 
 .col(@number, @breakpoint:none) when (@breakpoint = none) {
   @val: (percentage(@number / @columns));
+  flex-shrink: 0;
   max-width: @val;
   width: @val;
 }
@@ -68,6 +69,7 @@
   @query-min: 'min-@{breakpoint}';
   @val: (percentage(@number / @columns));
   @media @@query-min {
+    flex-shrink: 0;
     max-width: @val;
     width: @val;
   }
