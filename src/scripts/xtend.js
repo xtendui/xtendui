@@ -151,13 +151,23 @@ if (document.readyState === "loading") {
   document.addEventListener('DOMContentLoaded', function () {
     Xt.initExtensions();
     Xt.initXt();
-    Xt.observer.observe(document.documentElement, {characterData: false, attributes: false, childList: true, subtree: true});
+    Xt.observer.observe(document.documentElement, {
+      characterData: false,
+      attributes: false,
+      childList: true,
+      subtree: true
+    });
   });
 } else {
   window.requestAnimationFrame(function () {
     Xt.initExtensions();
     Xt.initXt();
-    Xt.observer.observe(document.documentElement, {characterData: false, attributes: false, childList: true, subtree: true});
+    Xt.observer.observe(document.documentElement, {
+      characterData: false,
+      attributes: false,
+      childList: true,
+      subtree: true
+    });
   });
 }
 
@@ -504,6 +514,26 @@ Xt.focusLimit = {
 //////////////////////
 // utils
 //////////////////////
+
+/**
+ * Return translate values https://gist.github.com/aderaaij/a6b666bf756b2db1596b366da921755d
+ * @param {Node|HTMLElement|EventTarget|Window} element Element to check target
+ * @return {Array} Values [x, y]
+ */
+Xt.getTranslate = function (element) {
+  let transArr = [];
+  let style = getComputedStyle(element);
+  let transform = style.transform;
+  let mat = transform.match(/^matrix3d\((.+)\)$/);
+  if (mat) {
+    transArr.push(parseFloat(mat[1].split(', ')[13]));
+  } else {
+    mat = transform.match(/^matrix\((.+)\)$/);
+    mat ? transArr.push(parseFloat(mat[1].split(', ')[4])) : transArr.push(0);
+    mat ? transArr.push(parseFloat(mat[1].split(', ')[5])) : transArr.push(0);
+  }
+  return transArr;
+};
 
 /**
  * Check if event target is inside elements

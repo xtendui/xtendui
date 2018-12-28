@@ -1,0 +1,1 @@
+.slides{display:flex;margin:-1rem -1rem;flex-direction:row;flex-wrap:wrap;flex-wrap:nowrap}.slides>*{padding:1rem 1rem}.slides.drag-inertia{transition-property:all;transition-duration:.3s;transition-timing-function:cubic-bezier(.77,0,.175,1)}.slide{flex-shrink:0}

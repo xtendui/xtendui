@@ -1,0 +1,15 @@
+@import (reference) "../../../../../dist/styles/xtend.less";
+
+// animations
+
+.slides {
+  .flex();
+  .flex-nowrap();
+  &.drag-inertia {
+    .transition-default.out();
+  }
+}
+
+.slide {
+  flex-shrink: 0;
+}

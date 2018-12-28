@@ -13,11 +13,6 @@
   */
 }
 
-.slider--drag {
-  cursor: grab;
-  .user-select--none();
-}
-
 .slider--disable {
   cursor: default;
   pointer-events: none;
@@ -29,6 +24,10 @@
   position: relative;
   min-height: 100%;
   overflow: hidden;
+  .slider--drag & {
+    .user-select--none();
+    cursor: grab;
+  }
 }
 
 .slide_inner {
