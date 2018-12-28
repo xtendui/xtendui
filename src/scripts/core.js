@@ -329,10 +329,10 @@ class Core {
       let eventLimit = self.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
         if (!Xt.checkNested(e.target, eventLimit)) {
-          self.eventOn(element, e);
+          self.eventOn(element, false, e);
         }
       } else {
-        self.eventOn(element, e);
+        self.eventOn(element, false, e);
       }
       // auto
       if (options.autoChange) {
@@ -366,10 +366,10 @@ class Core {
       let eventLimit = self.container.querySelectorAll('.event-limit');
       if (eventLimit.length) {
         if (!Xt.checkNested(e.target, eventLimit)) {
-          self.eventOff(element, e);
+          self.eventOff(element, false, e);
         }
       } else {
-        self.eventOff(element, e);
+        self.eventOff(element, false, e);
       }
     }
   }
@@ -437,40 +437,43 @@ class Core {
   /**
    * activate index element
    * @param {Number} index
+   * @param {Boolean} force
    */
-  goToIndex(index) {
+  goToIndex(index, force = false) {
     let self = this;
     // goToIndex
     let current = self.elements[index];
-    self.eventOn(current);
+    self.eventOn(current, force);
     return current;
   }
 
   /**
    * activate next element
+   * @param {Boolean} force
    */
-  goToNext() {
+  goToNext(force = false) {
     let self = this;
     // goToNext
     let curentIndex = self.curentIndex !== undefined ? self.curentIndex + 1 : 0;
     curentIndex = curentIndex > self.elements.length - 1 ? 0 : curentIndex;
     self.forceNormalDirection = self.curentIndex > curentIndex;
     let current = self.elements[curentIndex];
-    self.eventOn(current);
+    self.eventOn(current, force);
     return current;
   }
 
   /**
    * activate prev element
+   * @param {Boolean} force
    */
-  goToPrev() {
+  goToPrev(force = false) {
     let self = this;
     // goToPrev
     let curentIndex = self.curentIndex !== undefined ? self.curentIndex - 1 : 0;
     curentIndex = curentIndex < 0 ? self.elements.length - 1 : curentIndex;
     self.forceInverseDirection = self.curentIndex < curentIndex;
     let current = self.elements[curentIndex];
-    self.eventOn(current);
+    self.eventOn(current, force);
     return current;
   }
 
@@ -815,11 +818,11 @@ class Core {
    * @param {Node|HTMLElement|EventTarget|Window} element To be activated
    * @param {Event} e
    */
-  eventOn(element, e = null) {
+  eventOn(element, force = false, e = null) {
     let self = this;
     let options = self.options;
     // toggle
-    if (self.checkOn(element)) {
+    if (self.checkOn(element) || force) {
       // eDetail
       self.eDetailSet(e);
       // on
@@ -881,11 +884,11 @@ class Core {
    * @param {Node|HTMLElement|EventTarget|Window} element To be deactivated
    * @param {Event} e
    */
-  eventOff(element, e = null) {
+  eventOff(element, force = false, e = null) {
     let self = this;
     let options = self.options;
     // toggle
-    if (self.checkOff(element)) {
+    if (self.checkOff(element) || force) {
       // eDetail
       self.eDetailSet(e);
       // off
