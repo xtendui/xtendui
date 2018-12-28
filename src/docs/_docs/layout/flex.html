@@ -323,23 +323,23 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     <tbody>
     <tr>
       <th scope="row">Class</th>
-      <td><code>.flex-wrap</code></td>
-      <td><code>.flex-wrap</code></td>
+      <td><code>.flex--wrap</code></td>
+      <td><code>.flex--wrap</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
-      <td><code>.flex-wrap-{breakpoint}</code></td>
-      <td><code>.flex-wrap-sm</code></td>
+      <td><code>.flex--wrap-{breakpoint}</code></td>
+      <td><code>.flex--wrap-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.flex-wrap()</code></td>
-      <td><code>.flex-wrap()</code></td>
+      <td><code>.flex--wrap()</code></td>
+      <td><code>.flex--wrap()</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.flex-wrap({breakpoint})</code></td>
-      <td><code>.flex-wrap(sm)</code></td>
+      <td><code>.flex--wrap({breakpoint})</code></td>
+      <td><code>.flex--wrap(sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -349,11 +349,11 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="reverse">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex-wrap</code>
+        <code>.flex--wrap</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex flex-wrap">
+      <div class="flex flex--wrap">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--12 col--8-sm"></div>
@@ -367,11 +367,11 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="reverse">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex-wrap--reverse</code>
+        <code>.flex--wrap-reverse</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex flex-wrap--reverse">
+      <div class="flex flex--wrap-reverse">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--12 col--8-sm"></div>
@@ -385,15 +385,15 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="nowrap">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex-nowrap</code>
+        <code>.flex--nowrap</code> <code>.flex--auto</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex flex-nowrap">
-        <div class="col col--4"></div>
-        <div class="col col--8"></div>
-        <div class="col col--12 col--8-sm"></div>
-        <div class="col col--12 col--4-sm"></div>
+      <div class="flex flex--nowrap">
+        <div class="col col--4 flex--auto"></div>
+        <div class="col col--8 flex--auto"></div>
+        <div class="col col--12 col--8-sm flex--auto"></div>
+        <div class="col col--12 col--4-sm flex--auto"></div>
       </div>
     </div>
   </div>

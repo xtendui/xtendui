@@ -876,33 +876,33 @@ html.xt-scrollbar {
 
 // wrap
 
-.flex-wrap(@breakpoint:none) when (@breakpoint = none) {
+.flex--wrap(@breakpoint:none) when (@breakpoint = none) {
   flex-wrap: wrap;
 }
 
-.flex-wrap(@breakpoint:none) when (default()) {
+.flex--wrap(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex-wrap: wrap;
   }
 }
 
-.flex-wrap--reverse(@breakpoint:none) when (@breakpoint = none) {
+.flex--wrap-reverse(@breakpoint:none) when (@breakpoint = none) {
   flex-wrap: wrap-reverse;
 }
 
-.flex-wrap--reverse(@breakpoint:none) when (default()) {
+.flex--wrap-reverse(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex-wrap: wrap-reverse;
   }
 }
 
-.flex-nowrap(@breakpoint:none) when (@breakpoint = none) {
+.flex--nowrap(@breakpoint:none) when (@breakpoint = none) {
   flex-wrap: nowrap;
 }
 
-.flex-nowrap(@breakpoint:none) when (default()) {
+.flex--nowrap(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex-wrap: nowrap;
