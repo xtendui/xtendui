@@ -1,7 +1,7 @@
 @import (reference) "../../../../../dist/styles/xtend.less";
 
 .slides {
-  &.drag-inertia {
+  &:not(.dragging) {
     .transition-default.out();
   }
 }

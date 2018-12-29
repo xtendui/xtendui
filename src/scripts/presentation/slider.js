@@ -204,7 +204,7 @@ class Slider extends Core {
    */
   logicDragstart(dragger, e) {
     // inertia
-    dragger.classList.remove('drag-inertia');
+    dragger.classList.add('dragging');
     // listener dispatch
     dragger.dispatchEvent(new CustomEvent('dragstart.xt.slider', {detail: self.eDetail}));
   }
@@ -218,7 +218,7 @@ class Slider extends Core {
     let self = this;
     let xCache = self.detail.xCache || 0;
     // inertia
-    dragger.classList.add('drag-inertia');
+    dragger.classList.remove('dragging');
     // activate or reset
     let xPos = Xt.getTranslate(dragger)[0];
     let xDist = xPos - xCache;
@@ -275,8 +275,6 @@ class Slider extends Core {
     if (e.detail.object.detail.initial) {
       return false;
     }
-    // inertia
-    dragger.classList.add('drag-inertia');
     // activation
     self.detail.xCache = self.detail.xPos = dragger.offsetWidth / 2 - slide.offsetLeft - slide.offsetWidth / 2;
   }
