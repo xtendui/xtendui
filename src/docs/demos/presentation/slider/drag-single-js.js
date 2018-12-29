@@ -117,29 +117,9 @@ function sliderInit(main, index) {
       TweenMax.set(slide, {opacity: 0});
       if (!slide.classList.contains('xt-inverse')) {
         // mask
-        TweenMax.set(slide, {x: xMax});
-        TweenMax.set(dragger, {x: -xMax});
-        TweenMax.set(dragger.children[0], {x: size});
-        TweenMax.to(dragger.children[0], time, {x: 0, ease: 'easeIn'});
-        // content
-        for (let content of contents) {
-          TweenMax.set(content, {x: -sizeContent, opacity: 0});
-          setTimeout(function () {
-            TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeIn'});
-          }, parseFloat(content.dataset.tlDelay) * 1000);
-        }
-        // design
-        for (let design of designs) {
-          TweenMax.set(design, {x: -sizeDesign, opacity: 0});
-          setTimeout(function () {
-            TweenMax.to(design, timeDesign, {x: 0, opacity: 1, ease: 'easeIn'});
-          }, parseFloat(design.dataset.tlDelay) * 1000);
-        }
-      } else {
-        // mask
         TweenMax.set(slide, {x: -xMax});
         TweenMax.set(dragger, {x: xMax});
-        TweenMax.set(dragger.children[0], {x: -size});
+        TweenMax.set(dragger.children[0], {x: size});
         TweenMax.to(dragger.children[0], time, {x: 0, ease: 'easeIn'});
         // content
         for (let content of contents) {
@@ -151,6 +131,26 @@ function sliderInit(main, index) {
         // design
         for (let design of designs) {
           TweenMax.set(design, {x: sizeDesign, opacity: 0});
+          setTimeout(function () {
+            TweenMax.to(design, timeDesign, {x: 0, opacity: 1, ease: 'easeIn'});
+          }, parseFloat(design.dataset.tlDelay) * 1000);
+        }
+      } else {
+        // mask
+        TweenMax.set(slide, {x: xMax});
+        TweenMax.set(dragger, {x: -xMax});
+        TweenMax.set(dragger.children[0], {x: -size});
+        TweenMax.to(dragger.children[0], time, {x: 0, ease: 'easeIn'});
+        // content
+        for (let content of contents) {
+          TweenMax.set(content, {x: -sizeContent, opacity: 0});
+          setTimeout(function () {
+            TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeIn'});
+          }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+        // design
+        for (let design of designs) {
+          TweenMax.set(design, {x: -sizeDesign, opacity: 0});
           setTimeout(function () {
             TweenMax.to(design, timeDesign, {x: 0, opacity: 1, ease: 'easeIn'});
           }, parseFloat(design.dataset.tlDelay) * 1000);
@@ -170,22 +170,6 @@ function sliderInit(main, index) {
       // complete drag
       if (!slide.classList.contains('xt-inverse')) {
         // mask
-        TweenMax.to(slide, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
-        TweenMax.to(dragger, time, {x: xMax, ease: 'easeOut'});
-        // content
-        for (let content of contents) {
-          setTimeout(function () {
-            TweenMax.to(content, timeContent, {x: sizeContent, opacity: 0, ease: 'easeOut'});
-          }, parseFloat(content.dataset.tlDelay) * 1000);
-        }
-        // design
-        for (let design of designs) {
-          setTimeout(function () {
-            TweenMax.to(design, timeDesign, {x: sizeDesign, opacity: 0, ease: 'easeOut'});
-          }, parseFloat(design.dataset.tlDelay) * 1000);
-        }
-      } else {
-        // mask
         TweenMax.to(slide, time, {x: xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(dragger, time, {x: -xMax, ease: 'easeOut'});
         // content
@@ -198,6 +182,22 @@ function sliderInit(main, index) {
         for (let design of designs) {
           setTimeout(function () {
             TweenMax.to(design, timeDesign, {x: -sizeDesign, opacity: 0, ease: 'easeOut'});
+          }, parseFloat(design.dataset.tlDelay) * 1000);
+        }
+      } else {
+        // mask
+        TweenMax.to(slide, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
+        TweenMax.to(dragger, time, {x: xMax, ease: 'easeOut'});
+        // content
+        for (let content of contents) {
+          setTimeout(function () {
+            TweenMax.to(content, timeContent, {x: sizeContent, opacity: 0, ease: 'easeOut'});
+          }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+        // design
+        for (let design of designs) {
+          setTimeout(function () {
+            TweenMax.to(design, timeDesign, {x: sizeDesign, opacity: 0, ease: 'easeOut'});
           }, parseFloat(design.dataset.tlDelay) * 1000);
         }
       }

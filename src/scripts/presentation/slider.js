@@ -224,10 +224,10 @@ class Slider extends Core {
     let xDist = xPos - xCache;
     if (Math.abs(xDist) > self.options.dragThreshold) {
       // get nearest
-      let found = 0;
+      let found = self.curentIndex;
       for (let [z, slideCheck] of dragger.querySelectorAll('.slide').entries()) {
         let check = xPos - dragger.offsetWidth / 2 + slideCheck.offsetLeft;
-        if (check < 0) {
+        if (slideCheck.offsetParent && check < 0) { // offsetParent for checking if :visible
           found = z;
         }
       }

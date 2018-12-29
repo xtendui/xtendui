@@ -512,7 +512,7 @@ class Core {
     self.autoStop();
     let time = !instant ? options.auto : 0;
     self.object.dataset.xtAutoStartInterval = setInterval(function () {
-      if (options.autoAlways || self.object.offsetParent) { // @FIX offsetParent for :visible
+      if (options.autoAlways || self.object.offsetParent) { // offsetParent for checking if :visible
         if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
           if (options.autoInverse) {
             self.goToPrev();
