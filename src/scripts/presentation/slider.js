@@ -34,7 +34,9 @@ class Slider extends Core {
     super.initScope();
     let self = this;
     let options = self.options;
-    self.dragger = self.object.querySelectorAll(options.dragger)[0];
+    if (options.drag) {
+      self.dragger = self.object.querySelectorAll(options.drag)[0];
+    }
   }
 
   /**
@@ -165,6 +167,7 @@ class Slider extends Core {
     for (let event of events) {
       dragger.removeEventListener(event, dragHandler);
     }
+    // logic
     // listener dispatch
     dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
   }
@@ -184,6 +187,10 @@ class Slider extends Core {
     dragger.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: self.eDetail}));
   }
 
+  //////////////////////
+  // init
+  //////////////////////
+
 }
 
 //////////////////////
@@ -199,9 +206,8 @@ Slider.defaults = {
   "min": 1,
   "max": 1,
   "instant": {"elements": true},
-  "drag": true,
+  "drag": ":scope > .slides",
   "dragThreshold": 100,
-  "dragger": ":scope > .slides",
   "aria": true
 };
 

@@ -8,7 +8,7 @@ function sliderInit(main, index) {
   // vars
 
   let time = .6;
-  let size = 100;
+  let size = 200;
 
   let timeContent = .6;
   let delayContent = .15;
@@ -18,7 +18,7 @@ function sliderInit(main, index) {
 
   let timeDesign = .6;
   let delayDesign = .15;
-  let sizeDesign = 100;
+  let sizeDesign = 50;
   let delayDesignMax = delayDesign * 2;
   let durationDesign = timeDesign + delayDesignMax;
 
