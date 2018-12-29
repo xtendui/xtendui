@@ -53,6 +53,7 @@ class Core {
       self.detail = {};
       self.detail.queueOn = [];
       self.detail.queueOff = [];
+      self.dragger = [];
       // init
       self.initSetup();
       self.initScope();

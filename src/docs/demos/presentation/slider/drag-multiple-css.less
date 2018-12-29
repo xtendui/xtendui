@@ -1,13 +1,14 @@
 @import (reference) "../../../../../dist/styles/xtend.less";
 
-// animations
+.slides {
+  &.drag-inertia {
+    .transition-default.out();
+  }
+}
 
 .slides_inner {
   .flex();
   .flex--nowrap();
-  &.drag-inertia {
-    .transition-default.out();
-  }
 }
 
 .slide {

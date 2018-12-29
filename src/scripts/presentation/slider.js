@@ -28,6 +28,16 @@ class Slider extends Core {
   //////////////////////
 
   /**
+   * init elements, targets and currents
+   */
+  initScope() {
+    super.initScope();
+    let self = this;
+    let options = self.options;
+    self.dragger = self.object.querySelectorAll(options.dragger)[0];
+  }
+
+  /**
    * init events
    */
   initEvents() {
@@ -35,47 +45,46 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     if (options.drag) {
-      for (let tr of self.targets) {
-        // grab
-        tr.classList.add('grab');
-        // event on
-        let dragstartHandler = Xt.dataStorage.put(tr, 'dragstartHandler' + self.namespace,
-          self.eventDragstartHandler.bind(self).bind(self, tr));
-        let events = ['mousedown', 'touchstart'];
-        for (let event of events) {
-          tr.removeEventListener(event, dragstartHandler);
-          tr.addEventListener(event, dragstartHandler);
-        }
+      let dragger = self.dragger;
+      // grab
+      dragger.classList.add('grab');
+      // event on
+      let dragstartHandler = Xt.dataStorage.put(dragger, 'dragstartHandler' + self.namespace,
+        self.eventDragstartHandler.bind(self).bind(self, dragger));
+      let events = ['mousedown', 'touchstart'];
+      for (let event of events) {
+        dragger.removeEventListener(event, dragstartHandler);
+        dragger.addEventListener(event, dragstartHandler);
       }
     }
   }
 
   /**
    * element drag on handler
-   * @param {Node|HTMLElement|EventTarget|Window} target
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  eventDragstartHandler(target, e) {
+  eventDragstartHandler(dragger, e) {
     let self = this;
     // handler
     if (!e.button || e.button !== 2) { // not right click or it gets stuck
-      if (self.detail.initial || !self.checkAnim(Xt.arrSingle(target))) {
+      if (self.detail.initial || !self.checkAnim(Xt.arrSingle(dragger))) {
         // save event
         self.detail.eInit = e;
         // logic
         let eventLimit = self.container.querySelectorAll('.event-limit');
         if (eventLimit.length) {
           if (!Xt.checkNested(e.target, eventLimit)) {
-            self.eventDragstart(target, e);
+            self.eventDragstart(dragger, e);
           }
         } else {
-          self.eventDragstart(target, e);
+          self.eventDragstart(dragger, e);
         }
         // auto
         self.autoStop();
         // event off
-        let dragendHandler = Xt.dataStorage.put(target, 'dragendHandler' + self.namespace,
-          self.eventDragendHandler.bind(self).bind(self, target));
+        let dragendHandler = Xt.dataStorage.put(dragger, 'dragendHandler' + self.namespace,
+          self.eventDragendHandler.bind(self).bind(self, dragger));
         let events = ['mouseup', 'touchend'];
         for (let event of events) {
           window.removeEventListener(event, dragendHandler);
@@ -87,20 +96,20 @@ class Slider extends Core {
 
   /**
    * element drag off handler
-   * @param {Node|HTMLElement|EventTarget|Window} target
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  eventDragendHandler(target, e) {
+  eventDragendHandler(dragger, e) {
     let self = this;
     let options = self.options;
     // logic
     let eventLimit = self.container.querySelectorAll('.event-limit');
     if (eventLimit.length) {
       if (!Xt.checkNested(e.target, eventLimit)) {
-        self.eventDragend(target, e);
+        self.eventDragend(dragger, e);
       }
     } else {
-      self.eventDragend(target, e);
+      self.eventDragend(dragger, e);
     }
     // auto
     if (options.autoChange) {
@@ -109,7 +118,7 @@ class Slider extends Core {
       self.autoStart();
     }
     // event off
-    let dragendHandler = Xt.dataStorage.get(target, 'dragendHandler' + self.namespace);
+    let dragendHandler = Xt.dataStorage.get(dragger, 'dragendHandler' + self.namespace);
     let events = ['mouseup', 'touchend'];
     for (let event of events) {
       window.removeEventListener(event, dragendHandler);
@@ -118,61 +127,61 @@ class Slider extends Core {
 
   /**
    * element drag on
-   * @param {Node|HTMLElement|EventTarget|Window} target
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  eventDragstart(target, e) {
+  eventDragstart(dragger, e) {
     let self = this;
     // save event
     self.detail.eCurrent = e;
     // eDetail
     self.eDetailSet(e);
     // event move
-    let dragHandler = Xt.dataStorage.put(target, 'dragHandler' + self.namespace,
-      self.eventDragHandler.bind(self).bind(self, target));
+    let dragHandler = Xt.dataStorage.put(dragger, 'dragHandler' + self.namespace,
+      self.eventDragHandler.bind(self).bind(self, dragger));
     let events = ['mousemove', 'touchmove'];
     for (let event of events) {
-      target.removeEventListener(event, dragHandler);
-      target.addEventListener(event, dragHandler);
+      dragger.removeEventListener(event, dragHandler);
+      dragger.addEventListener(event, dragHandler);
     }
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('dragstart.xt.slider', {detail: self.eDetail}));
+    dragger.dispatchEvent(new CustomEvent('dragstart.xt.slider', {detail: self.eDetail}));
   }
 
   /**
    * element drag off
-   * @param {Node|HTMLElement|EventTarget|Window} target
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  eventDragend(target, e) {
+  eventDragend(dragger, e) {
     let self = this;
     // save event
     self.detail.eCurrent = e;
     // eDetail
     self.eDetailSet(e);
     // event move
-    let dragHandler = Xt.dataStorage.get(target, 'dragHandler' + self.namespace);
+    let dragHandler = Xt.dataStorage.get(dragger, 'dragHandler' + self.namespace);
     let events = ['mousemove', 'touchmove'];
     for (let event of events) {
-      target.removeEventListener(event, dragHandler);
+      dragger.removeEventListener(event, dragHandler);
     }
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
+    dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
   }
 
   /**
    * element drag handler
-   * @param {Node|HTMLElement|EventTarget|Window} target
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  eventDragHandler(target, e) {
+  eventDragHandler(dragger, e) {
     let self = this;
     // save event
     self.detail.eCurrent = e;
     // eDetail
     self.eDetailSet(e);
     // listener dispatch
-    target.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: self.eDetail}));
+    dragger.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: self.eDetail}));
   }
 
 }
@@ -192,6 +201,7 @@ Slider.defaults = {
   "instant": {"elements": true},
   "drag": true,
   "dragThreshold": 100,
+  "dragger": ":scope > .slides",
   "aria": true
 };
 

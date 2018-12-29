@@ -1,8 +1,6 @@
 @import (reference) "../../../../../dist/styles/xtend.less";
 
-// animations
-
-.slide {
+.slides {
   // mask
   &:not(.dragging) {
     .transition-default.out();
@@ -11,15 +9,10 @@
       .transition-default.out();
       transition-duration: @time--big;
     }
-    &.active {
-      .transition-default.active();
-      transition-duration: @time--big;
-      > * {
-        .transition-default.active();
-        transition-duration: @time--big;
-      }
-    }
   }
+}
+
+.slide {
   // content
   > * > * {
     .anim-left.out();

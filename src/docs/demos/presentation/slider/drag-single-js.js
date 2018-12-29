@@ -12,7 +12,7 @@ function sliderInit(main, index) {
 
   let timeContent = .6;
   let delayContent = .15;
-  let sizeContent = 100;
+  let sizeContent = 50;
   let delayContentMax = delayContent * 2;
   let durationContent = timeContent + delayContentMax;
 
@@ -27,20 +27,21 @@ function sliderInit(main, index) {
 
   // slider
 
-  new Xt.Slider(main, {
+  let slider = new Xt.Slider(main, {
     "auto": 6000,
     "durationOn": time * 1000,
     "durationOff": time * 1000
   });
 
+  let dragger = slider.dragger;
+
   // slider items
 
-  for (let tr of main.querySelectorAll('.slide')) {
+  for (let slide of slider.targets) {
 
     // on event
 
-    tr.addEventListener('on.xt', function (e) {
-      let slide = this;
+    slide.addEventListener('on.xt', function (e) {
       let xMax = slide.clientWidth;
       let mask = slide.children[0];
       let maskInner = slide.children[0].children[0];
@@ -108,8 +109,7 @@ function sliderInit(main, index) {
 
     // off event
 
-    tr.addEventListener('off.xt', function (e) {
-      let slide = this;
+    slide.addEventListener('off.xt', function (e) {
       let xMax = slide.clientWidth;
       let mask = slide.children[0];
       let contents = slide.querySelectorAll('.card_content > *');
@@ -150,86 +150,86 @@ function sliderInit(main, index) {
       }
     });
 
-    // drag event
-
-    tr.addEventListener('drag.xt.slider', function (e) {
-      let slide = this;
-      let self = e.detail.object;
-      let eInit = self.detail.eInit;
-      let eCurrent = self.detail.eCurrent;
-      let xStart = eInit.clientX;
-      let xCurrent = eCurrent.clientX;
-      let xDist = xCurrent - xStart;
-      let xMax = slide.clientWidth;
-      let ratio = Math.abs(xStart - xCurrent) / xMax;
-      let mask = slide.children[0];
-      let contents = slide.querySelectorAll('.card_content > *');
-      let designs = slide.querySelectorAll('.card_design');
-      // mask
-      TweenMax.set(slide, {x: xDist + 'px', opacity: 1 - ratio});
-      TweenMax.set(mask, {x: -xDist});
-      // direction
-      if (xStart - xCurrent > 0) {
-        // content
-        for (let content of contents) {
-          let ratioWithDelay = (durationContent - parseFloat(content.dataset.tlDelay)) * ratio / timeContent;
-          TweenMax.set(content, {x: -sizeContent * ratioWithDelay, opacity: 1 - ratioWithDelay});
-        }
-        // design
-        for (let design of designs) {
-          let ratioWithDelay = (durationDesign - parseFloat(design.dataset.tlDelay)) * ratio / timeDesign;
-          TweenMax.set(design, {x: -sizeDesign * ratioWithDelay, opacity: 1 - ratioWithDelay});
-        }
-      } else {
-        // content
-        for (let content of contents) {
-          let ratioWithDelay = (durationContent - parseFloat(content.dataset.tlDelay)) * ratio / timeContent;
-          TweenMax.set(content, {x: sizeContent * ratioWithDelay, opacity: 1 - ratioWithDelay});
-        }
-        // design
-        for (let design of designs) {
-          let ratioWithDelay = (durationDesign - parseFloat(design.dataset.tlDelay)) * ratio / timeDesign;
-          TweenMax.set(design, {x: sizeDesign * ratioWithDelay, opacity: 1 - ratioWithDelay});
-        }
-      }
-    });
-
-    // dragend event
-
-    tr.addEventListener('dragend.xt.slider', function (e) {
-      let slide = this;
-      let self = e.detail.object;
-      let eInit = self.detail.eInit;
-      let eCurrent = self.detail.eCurrent;
-      let xStart = eInit.clientX;
-      let xCurrent = eCurrent.clientX;
-      let xDist = xCurrent - xStart;
-      let mask = slide.children[0];
-      let contents = slide.querySelectorAll('.card_content > *');
-      let designs = slide.querySelectorAll('.card_design');
-      // activate or reset
-      if (Math.abs(xDist) > self.options.dragThreshold) {
-        // direction
-        if (Math.sign(xDist) < 0) {
-          self.goToNext();
-        } else {
-          self.goToPrev();
-        }
-      } else {
-        // mask
-        TweenMax.to(slide, time, {x: 0, opacity: 1, ease: 'easeOut'});
-        TweenMax.to(mask, time, {x: 0, ease: 'easeOut'});
-        // content
-        for (let content of contents) {
-          TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeOut'});
-        }
-        // design
-        for (let design of designs) {
-          TweenMax.to(design, timeDesign, {x: 0, opacity: 1, ease: 'easeOut'});
-        }
-      }
-    });
-
   }
+
+  // drag event
+
+  dragger.addEventListener('drag.xt.slider', function (e) {
+    let slide = slider.targets.filter(x => x.classList.contains('active'))[0];
+    let self = e.detail.object;
+    let eInit = self.detail.eInit;
+    let eCurrent = self.detail.eCurrent;
+    let xStart = eInit.clientX;
+    let xCurrent = eCurrent.clientX;
+    let xDist = xCurrent - xStart;
+    let xMax = slide.clientWidth;
+    let ratio = Math.abs(xStart - xCurrent) / xMax;
+    let mask = slide.children[0];
+    let contents = slide.querySelectorAll('.card_content > *');
+    let designs = slide.querySelectorAll('.card_design');
+    // mask
+    TweenMax.set(slide, {x: xDist + 'px', opacity: 1 - ratio});
+    TweenMax.set(mask, {x: -xDist});
+    // direction
+    if (xStart - xCurrent > 0) {
+      // content
+      for (let content of contents) {
+        let ratioWithDelay = (durationContent - parseFloat(content.dataset.tlDelay)) * ratio / timeContent;
+        TweenMax.set(content, {x: -sizeContent * ratioWithDelay, opacity: 1 - ratioWithDelay});
+      }
+      // design
+      for (let design of designs) {
+        let ratioWithDelay = (durationDesign - parseFloat(design.dataset.tlDelay)) * ratio / timeDesign;
+        TweenMax.set(design, {x: -sizeDesign * ratioWithDelay, opacity: 1 - ratioWithDelay});
+      }
+    } else {
+      // content
+      for (let content of contents) {
+        let ratioWithDelay = (durationContent - parseFloat(content.dataset.tlDelay)) * ratio / timeContent;
+        TweenMax.set(content, {x: sizeContent * ratioWithDelay, opacity: 1 - ratioWithDelay});
+      }
+      // design
+      for (let design of designs) {
+        let ratioWithDelay = (durationDesign - parseFloat(design.dataset.tlDelay)) * ratio / timeDesign;
+        TweenMax.set(design, {x: sizeDesign * ratioWithDelay, opacity: 1 - ratioWithDelay});
+      }
+    }
+  });
+
+  // dragend event
+
+  dragger.addEventListener('dragend.xt.slider', function (e) {
+    let slide = slider.targets.filter(x => x.classList.contains('active'))[0];
+    let self = e.detail.object;
+    let eInit = self.detail.eInit;
+    let eCurrent = self.detail.eCurrent;
+    let xStart = eInit.clientX;
+    let xCurrent = eCurrent.clientX;
+    let xDist = xCurrent - xStart;
+    let mask = slide.children[0];
+    let contents = slide.querySelectorAll('.card_content > *');
+    let designs = slide.querySelectorAll('.card_design');
+    // activate or reset
+    if (Math.abs(xDist) > self.options.dragThreshold) {
+      // direction
+      if (Math.sign(xDist) < 0) {
+        self.goToNext();
+      } else {
+        self.goToPrev();
+      }
+    } else {
+      // mask
+      TweenMax.to(slide, time, {x: 0, opacity: 1, ease: 'easeOut'});
+      TweenMax.to(mask, time, {x: 0, ease: 'easeOut'});
+      // content
+      for (let content of contents) {
+        TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeOut'});
+      }
+      // design
+      for (let design of designs) {
+        TweenMax.to(design, timeDesign, {x: 0, opacity: 1, ease: 'easeOut'});
+      }
+    }
+  });
 
 }
