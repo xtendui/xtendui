@@ -240,7 +240,7 @@ class Slider extends Core {
         }
       } else {
         // goToIndex
-        self.goToIndex(found, true);
+        self.goToIndex(found);
       }
     } else {
       // listener dispatch

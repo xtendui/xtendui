@@ -435,44 +435,42 @@ class Core {
   }
 
   /**
-   * activate index element
-   * @param {Number} index
-   * @param {Boolean} force
-   */
-  goToIndex(index, force = false) {
-    let self = this;
-    // goToIndex
-    let current = self.elements[index];
-    self.eventOn(current, force);
-    return current;
-  }
-
-  /**
    * activate next element
-   * @param {Boolean} force
    */
-  goToNext(force = false) {
+  goToNext() {
     let self = this;
     // goToNext
     let curentIndex = self.curentIndex !== undefined ? self.curentIndex + 1 : 0;
     curentIndex = curentIndex > self.elements.length - 1 ? 0 : curentIndex;
     self.forceNormalDirection = self.curentIndex > curentIndex;
     let current = self.elements[curentIndex];
-    self.eventOn(current, force);
+    self.eventOn(current);
     return current;
   }
 
   /**
    * activate prev element
-   * @param {Boolean} force
    */
-  goToPrev(force = false) {
+  goToPrev() {
     let self = this;
     // goToPrev
     let curentIndex = self.curentIndex !== undefined ? self.curentIndex - 1 : 0;
     curentIndex = curentIndex < 0 ? self.elements.length - 1 : curentIndex;
     self.forceInverseDirection = self.curentIndex < curentIndex;
     let current = self.elements[curentIndex];
+    self.eventOn(current);
+    return current;
+  }
+
+  /**
+   * activate index element
+   * @param {Number} index
+   * @param {Boolean} force
+   */
+  goToIndex(index, force = true) {
+    let self = this;
+    // goToIndex
+    let current = self.elements[index];
     self.eventOn(current, force);
     return current;
   }

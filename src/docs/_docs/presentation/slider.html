@@ -39,36 +39,38 @@ description: Lorem Ipsum
 
 <div class="alert">
   <div class="alert_content">
-    Instead of using html arguments you can initialize <a href="{% link _docs/introduction/javascript.html %}#initialization-slider">slider
+    Instead of using html arguments you can initialize <a
+    href="{% link _docs/introduction/javascript.html %}#initialization-slider">slider
     by javascript</a> using the same options syntax.
   </div>
 </div>
 
-<h2>Modes</h2>
-
-<h3>Simple</h3>
-
-<p>Simple slider with css animations on activation.</p>
+<h3>Css only</h3>
 
 <div class="demo">
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/simple.html"
-       data-name="simple"></div>
+       data-name="simple">
+    <div class="demo-text">
+      <div class="alert_content">
+        Simple slider with css animations on activation, no javascript
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert--primary">
+  <div class="alert_content">
+    From now on we use javascript animations with
+    <a href="https://greensock.com/tweenlite" target="_blank" rel="noopener">tweenlite</a> and
+    <a href="https://greensock.com/customease" target="_blank" rel="noopener">customease</a>
+  </div>
 </div>
 
 <h2>Options</h2>
 
-<p>Drag with tweenmax js.</p>
+<h3>Drag</h3>
 
-<h3>XXXX</h3>
-
-<h2>Playground</h2>
-
-<p>Drag with mask.</p>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/drag-mask.html"
-       data-name="js"></div>
-</div>
+<h3>Multiple</h3>
 
 <p>Drag multiple items centered orizzontally with loop.</p>
 
@@ -81,4 +83,13 @@ description: Lorem Ipsum
       </div>
     </div>
   </div>
+</div>
+
+<h2>Playground</h2>
+
+<p>Drag with mask.</p>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/drag-mask.html"
+       data-name="js"></div>
 </div>
