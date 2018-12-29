@@ -48,8 +48,7 @@ function sliderInit(main, index) {
     TweenMax.set(dragger, {x: self.detail.xDist});
     // content
     for (let content of contents) {
-      let ratioWithDelay = (durationContent - parseFloat(content.dataset.tlDelay)) * ratio / timeContent;
-      TweenMax.set(content, {x: sizeContent * ratioWithDelay * direction, opacity: 1});
+      TweenMax.set(content, {x: sizeContent * ratio * direction, opacity: 1});
     }
   });
 
@@ -76,10 +75,6 @@ function sliderInit(main, index) {
     slide.addEventListener('on.xt', function (e) {
       let xMax = slide.clientWidth;
       let contents = slide.querySelectorAll('.card_content > *');
-      // content
-      for (let [i, content] of contents.entries()) {
-        content.dataset.tlDelay = Math.min(delayContent * i, delayContentMax).toString();
-      }
       // direction
       let direction = 1;
       if (slide.classList.contains('xt-inverse')) {
@@ -97,9 +92,7 @@ function sliderInit(main, index) {
       // content
       for (let content of contents) {
         TweenMax.set(content, {x: sizeContent * direction, opacity: 0});
-        setTimeout(function () {
-          TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeIn'});
-        }, parseFloat(content.dataset.tlDelay) * 1000);
+        TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeIn'});
       }
     });
 
@@ -118,9 +111,7 @@ function sliderInit(main, index) {
       TweenMax.to(dragger, timeMask, {x: -xMax * direction, ease: 'easeOut'});
       // content
       for (let content of contents) {
-        setTimeout(function () {
-          TweenMax.to(content, timeContent, {x: -sizeContent * direction, opacity: 0, ease: 'easeOut'});
-        }, parseFloat(content.dataset.tlDelay) * 1000);
+        TweenMax.to(content, timeContent, {x: -sizeContent * direction, opacity: 0, ease: 'easeOut'});
       }
     });
 
