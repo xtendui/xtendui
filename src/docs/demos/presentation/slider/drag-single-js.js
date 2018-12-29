@@ -35,143 +35,19 @@ function sliderInit(main, index) {
 
   let dragger = slider.dragger;
 
-  // slider items
-
-  for (let slide of slider.targets) {
-
-    // on event
-
-    slide.addEventListener('on.xt', function (e) {
-      let xMax = slide.clientWidth;
-      let mask = slide.children[0];
-      let maskInner = slide.children[0].children[0];
-      let contents = slide.querySelectorAll('.card_content > *');
-      let designs = slide.querySelectorAll('.card_design');
-      // content
-      for (let [i, content] of contents.entries()) {
-        content.dataset.tlDelay = Math.min(delayContent * i, delayContentMax).toString();
-      }
-      // design
-      for (let [i, design] of designs.entries()) {
-        design.dataset.tlDelay = Math.min(delayDesign * i, delayDesignMax).toString();
-      }
-      // if inital stop, don't do animation
-      if (e.detail.object.detail.initial) {
-        return false;
-      }
-      // setup drag position
-      TweenMax.set(slide, {opacity: 0});
-      if (!slide.classList.contains('xt-inverse')) {
-        // mask
-        TweenMax.set(slide, {x: xMax});
-        TweenMax.set(mask, {x: -xMax});
-        TweenMax.set(maskInner, {x: size});
-        TweenMax.to(maskInner, time, {x: 0, ease: 'easeIn'});
-        // content
-        for (let content of contents) {
-          TweenMax.set(content, {x: sizeContent, opacity: 0});
-          setTimeout(function () {
-            TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeIn'});
-          }, parseFloat(content.dataset.tlDelay) * 1000);
-        }
-        // design
-        for (let design of designs) {
-          TweenMax.set(design, {x: sizeDesign, opacity: 0});
-          setTimeout(function () {
-            TweenMax.to(design, timeDesign, {x: 0, opacity: 1, ease: 'easeIn'});
-          }, parseFloat(design.dataset.tlDelay) * 1000);
-        }
-      } else {
-        // mask
-        TweenMax.set(slide, {x: -xMax});
-        TweenMax.set(mask, {x: xMax});
-        TweenMax.set(maskInner, {x: -size});
-        TweenMax.to(maskInner, time, {x: 0, ease: 'easeIn'});
-        // content
-        for (let content of contents) {
-          TweenMax.set(content, {x: -sizeContent, opacity: 0});
-          setTimeout(function () {
-            TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeIn'});
-          }, parseFloat(content.dataset.tlDelay) * 1000);
-        }
-        // design
-        for (let design of designs) {
-          TweenMax.set(design, {x: -sizeDesign, opacity: 0});
-          setTimeout(function () {
-            TweenMax.to(design, timeDesign, {x: 0, opacity: 1, ease: 'easeIn'});
-          }, parseFloat(design.dataset.tlDelay) * 1000);
-        }
-      }
-      // drag position
-      TweenMax.to(slide, time, {x: 0, opacity: 1, ease: 'easeIn'});
-      TweenMax.to(mask, time, {x: 0, ease: 'easeIn'});
-    });
-
-    // off event
-
-    slide.addEventListener('off.xt', function (e) {
-      let xMax = slide.clientWidth;
-      let mask = slide.children[0];
-      let contents = slide.querySelectorAll('.card_content > *');
-      let designs = slide.querySelectorAll('.card_design');
-      // complete drag
-      if (!slide.classList.contains('xt-inverse')) {
-        // mask
-        TweenMax.to(slide, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
-        TweenMax.to(mask, time, {x: xMax, ease: 'easeOut'});
-        // content
-        for (let content of contents) {
-          setTimeout(function () {
-            TweenMax.to(content, timeContent, {x: -sizeContent, opacity: 0, ease: 'easeOut'});
-          }, parseFloat(content.dataset.tlDelay) * 1000);
-        }
-        // design
-        for (let design of designs) {
-          setTimeout(function () {
-            TweenMax.to(design, timeDesign, {x: -sizeDesign, opacity: 0, ease: 'easeOut'});
-          }, parseFloat(design.dataset.tlDelay) * 1000);
-        }
-      } else {
-        // mask
-        TweenMax.to(slide, time, {x: xMax, opacity: 0, ease: 'easeOut'});
-        TweenMax.to(mask, time, {x: -xMax, ease: 'easeOut'});
-        // content
-        for (let content of contents) {
-          setTimeout(function () {
-            TweenMax.to(content, timeContent, {x: sizeContent, opacity: 0, ease: 'easeOut'});
-          }, parseFloat(content.dataset.tlDelay) * 1000);
-        }
-        // design
-        for (let design of designs) {
-          setTimeout(function () {
-            TweenMax.to(design, timeDesign, {x: sizeDesign, opacity: 0, ease: 'easeOut'});
-          }, parseFloat(design.dataset.tlDelay) * 1000);
-        }
-      }
-    });
-
-  }
-
   // drag event
 
   dragger.addEventListener('drag.xt.slider', function (e) {
-    let slide = slider.targets.filter(x => x.classList.contains('active'))[0];
     let self = e.detail.object;
-    let eInit = self.detail.eInit;
-    let eCurrent = self.detail.eCurrent;
-    let xStart = eInit.clientX;
-    let xCurrent = eCurrent.clientX;
-    let xDist = xCurrent - xStart;
-    let xMax = slide.clientWidth;
-    let ratio = Math.abs(xStart - xCurrent) / xMax;
-    let mask = slide.children[0];
+    let slide = slider.targets.filter(x => x.classList.contains('active'))[0];
     let contents = slide.querySelectorAll('.card_content > *');
     let designs = slide.querySelectorAll('.card_design');
+    let ratio = Math.abs(self.detail.xStart - self.detail.xCurrent) / slide.clientWidth;
     // mask
-    TweenMax.set(slide, {x: xDist + 'px', opacity: 1 - ratio});
-    TweenMax.set(mask, {x: -xDist});
+    TweenMax.set(slide, {x: -self.detail.xDist + 'px', opacity: 1 - ratio});
+    TweenMax.set(dragger, {x: self.detail.xDist});
     // direction
-    if (xStart - xCurrent > 0) {
+    if (self.detail.xStart - self.detail.xCurrent > 0) {
       // content
       for (let content of contents) {
         let ratioWithDelay = (durationContent - parseFloat(content.dataset.tlDelay)) * ratio / timeContent;
@@ -200,36 +76,133 @@ function sliderInit(main, index) {
 
   dragger.addEventListener('dragend.xt.slider', function (e) {
     let slide = slider.targets.filter(x => x.classList.contains('active'))[0];
-    let self = e.detail.object;
-    let eInit = self.detail.eInit;
-    let eCurrent = self.detail.eCurrent;
-    let xStart = eInit.clientX;
-    let xCurrent = eCurrent.clientX;
-    let xDist = xCurrent - xStart;
-    let mask = slide.children[0];
     let contents = slide.querySelectorAll('.card_content > *');
     let designs = slide.querySelectorAll('.card_design');
-    // activate or reset
-    if (Math.abs(xDist) > self.options.dragThreshold) {
-      // direction
-      if (Math.sign(xDist) < 0) {
-        self.goToNext();
-      } else {
-        self.goToPrev();
-      }
-    } else {
-      // mask
-      TweenMax.to(slide, time, {x: 0, opacity: 1, ease: 'easeOut'});
-      TweenMax.to(mask, time, {x: 0, ease: 'easeOut'});
-      // content
-      for (let content of contents) {
-        TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeOut'});
-      }
-      // design
-      for (let design of designs) {
-        TweenMax.to(design, timeDesign, {x: 0, opacity: 1, ease: 'easeOut'});
-      }
+    // mask
+    TweenMax.to(slide, time, {x: 0, opacity: 1, ease: 'easeOut'});
+    TweenMax.to(dragger, time, {x: 0, ease: 'easeOut'});
+    // content
+    for (let content of contents) {
+      TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeOut'});
+    }
+    // design
+    for (let design of designs) {
+      TweenMax.to(design, timeDesign, {x: 0, opacity: 1, ease: 'easeOut'});
     }
   });
+
+  // slider items
+
+  for (let slide of slider.targets) {
+
+    // on event
+
+    slide.addEventListener('on.xt', function (e) {
+      let xMax = slide.clientWidth;
+      let contents = slide.querySelectorAll('.card_content > *');
+      let designs = slide.querySelectorAll('.card_design');
+      // content
+      for (let [i, content] of contents.entries()) {
+        content.dataset.tlDelay = Math.min(delayContent * i, delayContentMax).toString();
+      }
+      // design
+      for (let [i, design] of designs.entries()) {
+        design.dataset.tlDelay = Math.min(delayDesign * i, delayDesignMax).toString();
+      }
+      // if inital stop, don't do animation
+      if (e.detail.object.detail.initial) {
+        return false;
+      }
+      // setup drag position
+      TweenMax.set(slide, {opacity: 0});
+      if (!slide.classList.contains('xt-inverse')) {
+        // mask
+        TweenMax.set(slide, {x: xMax});
+        TweenMax.set(dragger, {x: -xMax});
+        TweenMax.set(dragger.children[0], {x: size});
+        TweenMax.to(dragger.children[0], time, {x: 0, ease: 'easeIn'});
+        // content
+        for (let content of contents) {
+          TweenMax.set(content, {x: -sizeContent, opacity: 0});
+          setTimeout(function () {
+            TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeIn'});
+          }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+        // design
+        for (let design of designs) {
+          TweenMax.set(design, {x: -sizeDesign, opacity: 0});
+          setTimeout(function () {
+            TweenMax.to(design, timeDesign, {x: 0, opacity: 1, ease: 'easeIn'});
+          }, parseFloat(design.dataset.tlDelay) * 1000);
+        }
+      } else {
+        // mask
+        TweenMax.set(slide, {x: -xMax});
+        TweenMax.set(dragger, {x: xMax});
+        TweenMax.set(dragger.children[0], {x: -size});
+        TweenMax.to(dragger.children[0], time, {x: 0, ease: 'easeIn'});
+        // content
+        for (let content of contents) {
+          TweenMax.set(content, {x: sizeContent, opacity: 0});
+          setTimeout(function () {
+            TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeIn'});
+          }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+        // design
+        for (let design of designs) {
+          TweenMax.set(design, {x: sizeDesign, opacity: 0});
+          setTimeout(function () {
+            TweenMax.to(design, timeDesign, {x: 0, opacity: 1, ease: 'easeIn'});
+          }, parseFloat(design.dataset.tlDelay) * 1000);
+        }
+      }
+      // drag position
+      TweenMax.to(slide, time, {x: 0, opacity: 1, ease: 'easeIn'});
+      TweenMax.to(dragger, time, {x: 0, ease: 'easeIn'});
+    });
+
+    // off event
+
+    slide.addEventListener('off.xt', function (e) {
+      let xMax = slide.clientWidth;
+      let contents = slide.querySelectorAll('.card_content > *');
+      let designs = slide.querySelectorAll('.card_design');
+      // complete drag
+      if (!slide.classList.contains('xt-inverse')) {
+        // mask
+        TweenMax.to(slide, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
+        TweenMax.to(dragger, time, {x: xMax, ease: 'easeOut'});
+        // content
+        for (let content of contents) {
+          setTimeout(function () {
+            TweenMax.to(content, timeContent, {x: sizeContent, opacity: 0, ease: 'easeOut'});
+          }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+        // design
+        for (let design of designs) {
+          setTimeout(function () {
+            TweenMax.to(design, timeDesign, {x: sizeDesign, opacity: 0, ease: 'easeOut'});
+          }, parseFloat(design.dataset.tlDelay) * 1000);
+        }
+      } else {
+        // mask
+        TweenMax.to(slide, time, {x: xMax, opacity: 0, ease: 'easeOut'});
+        TweenMax.to(dragger, time, {x: -xMax, ease: 'easeOut'});
+        // content
+        for (let content of contents) {
+          setTimeout(function () {
+            TweenMax.to(content, timeContent, {x: -sizeContent, opacity: 0, ease: 'easeOut'});
+          }, parseFloat(content.dataset.tlDelay) * 1000);
+        }
+        // design
+        for (let design of designs) {
+          setTimeout(function () {
+            TweenMax.to(design, timeDesign, {x: -sizeDesign, opacity: 0, ease: 'easeOut'});
+          }, parseFloat(design.dataset.tlDelay) * 1000);
+        }
+      }
+    });
+
+  }
 
 }

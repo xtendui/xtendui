@@ -50,13 +50,20 @@ class Slider extends Core {
       let dragger = self.dragger;
       // grab
       dragger.classList.add('grab');
-      // event on
+      // drag on
       let dragstartHandler = Xt.dataStorage.put(dragger, 'dragstartHandler' + self.namespace,
         self.eventDragstartHandler.bind(self).bind(self, dragger));
       let events = ['mousedown', 'touchstart'];
       for (let event of events) {
         dragger.removeEventListener(event, dragstartHandler);
         dragger.addEventListener(event, dragstartHandler);
+      }
+      // slide on
+      for (let slide of self.targets) {
+        let slideOnHandler = Xt.dataStorage.put(slide, 'slideOnHandler' + self.namespace,
+          self.slideOn.bind(self).bind(self, dragger));
+        slide.removeEventListener('on.xt', slideOnHandler);
+        slide.addEventListener('on.xt', slideOnHandler);
       }
     }
   }
@@ -146,8 +153,8 @@ class Slider extends Core {
       dragger.removeEventListener(event, dragHandler);
       dragger.addEventListener(event, dragHandler);
     }
-    // listener dispatch
-    dragger.dispatchEvent(new CustomEvent('dragstart.xt.slider', {detail: self.eDetail}));
+    // logic
+    self.logicDragstart(dragger, e);
   }
 
   /**
@@ -168,8 +175,7 @@ class Slider extends Core {
       dragger.removeEventListener(event, dragHandler);
     }
     // logic
-    // listener dispatch
-    dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
+    self.logicDragend(dragger, e);
   }
 
   /**
@@ -183,13 +189,97 @@ class Slider extends Core {
     self.detail.eCurrent = e;
     // eDetail
     self.eDetailSet(e);
+    // logic
+    self.logicDrag(dragger, e);
+  }
+
+  //////////////////////
+  // logic
+  //////////////////////
+
+  /**
+   * element drag on logic
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Event} e
+   */
+  logicDragstart(dragger, e) {
+    // inertia
+    dragger.classList.remove('drag-inertia');
+    // listener dispatch
+    dragger.dispatchEvent(new CustomEvent('dragstart.xt.slider', {detail: self.eDetail}));
+  }
+
+  /**
+   * element drag off logic
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Event} e
+   */
+  logicDragend(dragger, e) {
+    let self = this;
+    let xCache = self.detail.xCache || 0;
+    // inertia
+    dragger.classList.add('drag-inertia');
+    // activate or reset
+    let xPos = Xt.getTranslate(dragger)[0];
+    let xDist = xPos - xCache;
+    if (Math.abs(xDist) > self.options.dragThreshold) {
+      // get nearest
+      let found = 0;
+      for (let [z, slideCheck] of dragger.querySelectorAll('.slide').entries()) {
+        let check = xPos - dragger.offsetWidth / 2 + slideCheck.offsetLeft;
+        if (check < 0) {
+          found = z;
+        }
+      }
+      if (found === self.curentIndex) {
+        // change at least one
+        if (Math.sign(xDist) < 0) {
+          self.goToNext();
+        } else {
+          self.goToPrev();
+        }
+      } else {
+        // goToIndex
+        self.goToIndex(found, true);
+      }
+    } else {
+      // listener dispatch
+      dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
+    }
+  }
+
+  /**
+   * element drag logic
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Event} e
+   */
+  logicDrag(dragger, e) {
+    let self = this;
+    let xCache = self.detail.xCache || 0;
+    self.detail.xStart = self.detail.eInit.clientX;
+    self.detail.xCurrent = self.detail.eCurrent.clientX;
+    self.detail.xDist = xCache + self.detail.xCurrent - self.detail.xStart;
     // listener dispatch
     dragger.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: self.eDetail}));
   }
 
-  //////////////////////
-  // init
-  //////////////////////
+  /**
+   * targets on logic
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Event} e
+   */
+  slideOn(dragger, e) {
+    let self = this;
+    let slide = e.target;
+    // if inital stop, don't do animation
+    if (e.detail.object.detail.initial) {
+      return false;
+    }
+    // inertia
+    dragger.classList.add('drag-inertia');
+    // activation
+    self.detail.xCache = self.detail.xPos = dragger.offsetWidth / 2 - slide.offsetLeft - slide.offsetWidth / 2;
+  }
 
 }
 
