@@ -291,6 +291,7 @@ Slider.defaults = {
   "targets": ":scope > .slides > .slides_inner > .slide",
   "class": "active",
   "on": "click",
+  "toggle": false,
   "min": 1,
   "max": 1,
   "instant": {"elements": true},

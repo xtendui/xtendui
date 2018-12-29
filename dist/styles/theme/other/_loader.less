@@ -7,7 +7,7 @@
 .loader_background {
   &::before {
     .design-setup();
-    background-color: @white;
+    background: @white;
   }
 }
 
@@ -31,12 +31,12 @@
   &::before {
     z-index: 2;
     width: 100%;
-    background-color: @grey--250;
+    background: @grey--250;
   }
   &::after {
     z-index: 3;
     width: 0;
-    background-color: @black;
+    background: @black;
     // animations
     animation: anim-loader 1000ms infinite linear;
   }

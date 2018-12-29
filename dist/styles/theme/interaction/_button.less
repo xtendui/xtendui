@@ -49,13 +49,13 @@
   color: fade(@text--inverse, @perc--xl);
   &@{btn--design} {
     border-color: @primary;
-    background-color: @primary;
+    background: @primary;
   }
   &:hover, &.hover, &:active, &.active {
     color: @text--inverse;
     &@{btn--design} {
       border-color: @primary;
-      background-color: lighten(@primary, @perc--xs);
+      background: lighten(@primary, @perc--xs);
     }
   }
 }
@@ -65,13 +65,13 @@
   color: @primary;
   &@{btn--design} {
     border-color: transparent;
-    background-color: transparent;
+    background: transparent;
   }
   &:hover, &.hover, &:active, &.active {
     color: @text--inverse;
     &@{btn--design} {
       border-color: @primary;
-      background-color: lighten(@primary, @perc--xs);
+      background: lighten(@primary, @perc--xs);
     }
   }
 }
@@ -81,13 +81,13 @@
   color: fade(@text, @perc--xl);
   &@{btn--design} {
     border-color: @secondary;
-    background-color: @secondary;
+    background: @secondary;
   }
   &:hover, &.hover, &:active, &.active {
     color: @text;
     &@{btn--design} {
       border-color: darken(@secondary, @perc--sm);
-      background-color: darken(@secondary, @perc--xs);
+      background: darken(@secondary, @perc--xs);
     }
   }
 }
@@ -97,13 +97,13 @@
   color: fade(@text, @perc--xl);
   &@{btn--design} {
     border-color: transparent;
-    background-color: transparent;
+    background: transparent;
   }
   &:hover, &.hover, &:active, &.active {
     color: @text;
     &@{btn--design} {
       border-color: darken(@secondary, @perc--sm);
-      background-color: darken(@secondary, @perc--xs);
+      background: darken(@secondary, @perc--xs);
     }
   }
 }
@@ -121,7 +121,7 @@
   &@{btn--design} {
     border-radius: 0;
     border-width: 0;
-    background-color: transparent !important;
+    background: transparent !important;
   }
   // styles
   color: @grey--500;
@@ -211,7 +211,7 @@
   padding: 0;
   &@{btn--design} {
     border: 0 !important;
-    background-color: transparent !important;
+    background: transparent !important;
   }
 }
 
@@ -223,7 +223,7 @@
   &@{btn--design} {
     border-left: 0 !important;
     border-right: 0 !important;
-    background-color: transparent !important;
+    background: transparent !important;
   }
 }
 
@@ -235,7 +235,7 @@
   &@{btn--design} {
     border-top: 0 !important;
     border-bottom: 0 !important;
-    background-color: transparent !important;
+    background: transparent !important;
   }
 }
 

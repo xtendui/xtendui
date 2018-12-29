@@ -32,7 +32,8 @@
 
 // gradients
 
-@grad--primary: linear-gradient(0deg, darken(@primary, 3%) 10%, @primary 100%);
+@grad--primary: linear-gradient(90deg, @primary 10%, darken(@primary, 5%) 100%);
+@grad--secondary: linear-gradient(90deg, @secondary 10%, darken(@secondary, 5%) 100%);
 
 //////////////////////
 // fonts
@@ -140,8 +141,8 @@
 
 // card
 
-@card--border-radius: 4px;
-@card--border-width: 3px;
+@card--border-radius: .75rem;
+@card--border-width: 0;
 
 //////////////////////
 // components
@@ -188,18 +189,18 @@
 // time
 
 @time--tiny: 75ms;
-@time--small: 150ms;
-@time--medium: 300ms;
-@time--big: 600ms;
-@time--giant: 1200ms;
+@time--small: 200ms;
+@time--medium: 400ms;
+@time--big: 800ms;
+@time--giant: 1000ms;
 
 // beziers
 
-@bez--in: @bez-cat--in ;
+@bez--in: @bez-cat--in;
 @bez--out: @bez-cat--out;
 
 @bez--ease: ease; // others at https://easings.net/
-@bez-cat--in : ~'cubic-bezier(.41, .1, .175, 1)';
+@bez-cat--in: ~'cubic-bezier(.41, .1, .175, 1)';
 @bez-cat--out: ~'cubic-bezier(.77, 0, .175, 1)';
 @bez-frog--in: ~'cubic-bezier(.645, .045, .355, 1.000)';
 @bez-frog--out: ~'cubic-bezier(.550, .055, .675, .190)';

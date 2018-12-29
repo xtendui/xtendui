@@ -16,7 +16,7 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   .overflow-style();
-  background-color: @white;
+  background: @white;
   .font-sans--regular();
   .font--medium();
   .line-height--medium();
@@ -179,7 +179,7 @@ h6, .h6 {
   .margin(bottom, medium);
   .padding(y, small);
   .padding(x, medium);
-  background-color: @grey--250;
+  background: @grey--250;
   text-align: center;
 }
 
@@ -209,12 +209,12 @@ small {
 code {
   margin: 0 .05em;
   padding: .05em .05em;
-  background-color: fade(@black, 6%);
+  background: fade(@black, 6%);
   .font-monospace();
   font-size: .9em;
   color: @grey--750;
   .table-stripe tbody tr:nth-of-type(odd) & {
-    background-color: fade(@white, 18%);
+    background: fade(@white, 18%);
   }
 }
 
@@ -234,7 +234,7 @@ pre {
     border-width: @card--border-width;
     border-style: solid;
     border-color: @grey--250;
-    background-color: @grey--250 !important;
+    background: @grey--250 !important;
     font-size: 12px;
     color: @grey--750;
     line-height: 1.6;
@@ -249,7 +249,7 @@ pre {
     color: @text--inverse;
   }
   code {
-    background-color: fade(@white, 18%);
+    background: fade(@white, 18%);
     color: @text--inverse;
   }
 }

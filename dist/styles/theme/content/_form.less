@@ -144,10 +144,10 @@ legend {
 .form_input-grey {
   // styles
   border-color: @grey--300;
-  background-color: @white;
+  background: @white;
   color: @text;
   &:focus {
-    background-color: darken(@white, @perc--xs);
+    background: darken(@white, @perc--xs);
   }
   // select arrow
   select& {
@@ -235,7 +235,7 @@ input[type="radio"]:not(.unstyled) {
       height: 1.8rem;
     }
     &::before {
-      background-color: @grey--250;
+      background: @grey--250;
       border: 1px solid darken(@grey--250, @perc--md);
     }
     &::after {

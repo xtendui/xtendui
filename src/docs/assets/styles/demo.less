@@ -13,7 +13,7 @@ js-script {
   display: none;
 }
 body {
-  background-color: transparent;
+  background: transparent;
 }
 body:not(.full) {
   overflow: hidden;
@@ -30,7 +30,7 @@ body:not(.full) {
       height: 22px;
       min-height: 100%;
       border: 1px solid lighten(@primary, @perc--md);
-      background-color: lighten(@primary, @perc--md);
+      background: lighten(@primary, @perc--md);
       content: attr(data-index);
       .font-sans--semibold();
       font-size: 12px;
@@ -40,7 +40,7 @@ body:not(.full) {
     }
     .col {
       &::before {
-        background-color: @primary;
+        background: @primary;
       }
     }
   }

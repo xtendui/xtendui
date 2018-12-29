@@ -229,7 +229,7 @@ class Core {
     let self = this;
     let options = self.options;
     // toggle
-    options.toggle = !options.off;
+    options.toggle = options.toggle !== undefined ? options.toggle : !options.off;
     // events
     for (let el of self.elements) {
       // event on
@@ -816,6 +816,7 @@ class Core {
   /**
    * element on
    * @param {Node|HTMLElement|EventTarget|Window} element To be activated
+   * @param {Boolean} force
    * @param {Event} e
    */
   eventOn(element, force = false, e = null) {
@@ -882,6 +883,7 @@ class Core {
   /**
    * element off
    * @param {Node|HTMLElement|EventTarget|Window} element To be deactivated
+   * @param {Boolean} force
    * @param {Event} e
    */
   eventOff(element, force = false, e = null) {

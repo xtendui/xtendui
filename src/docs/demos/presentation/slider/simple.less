@@ -1,6 +1,7 @@
 @import (reference) "../../../../../dist/styles/xtend.less";
 
 .slide {
+  .toggle--block();
   &:after {
     content: '';
     position: absolute;
@@ -9,37 +10,45 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: @white;
+    background: @white;
     transform: translateX(0);
   }
   &.active {
     .anim-right.active();
+    animation-duration: @time--big;
     &:after {
       .animation-default.active();
       animation-name: anim-special--in;
+      animation-duration: @time--big;
       transform: translateX(-100%);
     }
     &.xt-inverse {
       .anim-left.active();
+      animation-duration: @time--big;
       &:after {
         .animation-default.active();
         animation-name: anim-special-in-inverse;
+        animation-duration: @time--big;
         transform: translateX(100%);
       }
     }
   }
   &.out {
     .anim-left.out();
+    animation-duration: @time--big;
     &:after {
       .animation-default.out();
       animation-name: anim-special--out;
+      animation-duration: @time--big;
       transform: translateX(0);
     }
     &.xt-inverse {
       .anim-right.out();
+      animation-duration: @time--big;
       &:after {
         .animation-default.out();
         animation-name: anim-special-out-inverse;
+        animation-duration: @time--big;
         transform: translateX(0);
       }
     }

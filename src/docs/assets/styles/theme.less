@@ -53,7 +53,7 @@
 // .site-header
 
 .site-header {
-  background-color: @primary;
+  background: @primary;
 }
 
 // .logo
@@ -82,7 +82,7 @@
 
 .site-header-top {
   .display(flex);
-  background-color: fade(@primary, @perc--xl);
+  background: fade(@primary, @perc--xl);
   color: @white;
   .site-menu & {
     position: absolute;
@@ -138,8 +138,8 @@
   cursor: default;
   .padding(y, small);
   .padding(bottom, medium, sm);
-  background-color: @primary;
-  background: @grad--primary;
+  background: @primary;
+  background: linear-gradient(0deg, darken(@primary, 3%) 10%, @primary 100%);
   color: @white;
   .site-breadcrumbs-body {
     margin-left: -1rem !important;
@@ -239,7 +239,7 @@
       position: absolute;
       height: @button-menu-pixels;
       width: 100%;
-      background-color: fade(@white, @perc--xl);
+      background: fade(@white, @perc--xl);
       border-radius: 0;
       left: 0;
       transform: rotate(0deg);
@@ -287,7 +287,7 @@
   &:hover, &.hover, &:active, &.active {
     .icon--menu-custom {
       span {
-        background-color: @white;
+        background: @white;
       }
     }
   }
@@ -309,7 +309,7 @@
     @media @max-sm {
       .padding(x, tiny) !important;
     }
-    background-color: transparent !important;
+    background: transparent !important;
     .font-sans--light();
     font-size: 4rem !important;
     text-align: left;
@@ -367,7 +367,7 @@
 
 .site-footer-inner {
   .padding(y, big);
-  background-color: @primary;
+  background: @primary;
 }
 
 // .site-footer-top
@@ -404,7 +404,7 @@
 .site-main-inner {
   .block();
   .float(left);
-  background-color: @white;
+  background: @white;
 }
 
 // .site-article
@@ -487,9 +487,9 @@
       .link--none();
       display: inline-block;
       padding-right: 15px;
-      background-color: @white;
+      background: @white;
       .site-menu & {
-        background-color: @primary;
+        background: @primary;
       }
     }
     .line::after {
@@ -500,9 +500,9 @@
       left: 0;
       width: 100%;
       height: 1px;
-      background-color: fade(@primary, @perc--lg);
+      background: fade(@primary, @perc--lg);
       .site-menu & {
-        background-color: fade(@white, @perc--lg);
+        background: fade(@white, @perc--lg);
       }
     }
   }
@@ -581,7 +581,7 @@
     &@{btn--design} {
       border-radius: 50%;
       border-color: @white !important;
-      background-color: @white !important;
+      background: @white !important;
     }
     &:hover, &.hover, &:active, &.active {
       color: @primary;
@@ -641,7 +641,7 @@
   .demo-tabs,
   .demo-code-tabs,
   .demo-code-body {
-    background-color: @grey--250;
+    background: @grey--250;
   }
   .demo-tabs,
   .demo-code-tabs {
@@ -660,7 +660,7 @@
         color: @text;
         &@{btn--design} {
           border-color: @white;
-          background-color: @white;
+          background: @white;
         }
       }
     }
@@ -697,7 +697,7 @@
       height: 22px;
       min-height: 100%;
       border: 1px solid lighten(@primary, @perc--md);
-      background-color: lighten(@primary, @perc--md);
+      background: lighten(@primary, @perc--md);
       content: attr(data-index);
       .font-sans--semibold();
       font-size: 12px;
@@ -707,7 +707,7 @@
     }
     .col {
       &::before {
-        background-color: @primary;
+        background: @primary;
       }
     }
   }
@@ -759,7 +759,7 @@
     }
     .site-breadcrumbs-inner {
       .padding(y, small);
-      border-radius: .75rem;
+      border-radius: @card--border-radius;
       .transition-default.active();
     }
     .site-breadcrumbs-meta {

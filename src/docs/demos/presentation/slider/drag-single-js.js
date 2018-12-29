@@ -7,16 +7,16 @@ function sliderInit(main, index) {
 
   // vars
 
-  let time = .6;
+  let time = .8;
   let size = 200;
 
-  let timeContent = .6;
+  let timeContent = .8;
   let delayContent = .15;
-  let sizeContent = 50;
+  let sizeContent = 100;
   let delayContentMax = delayContent * 2;
   let durationContent = timeContent + delayContentMax;
 
-  let timeDesign = .6;
+  let timeDesign = .8;
   let delayDesign = .15;
   let sizeDesign = 50;
   let delayDesignMax = delayDesign * 2;
@@ -44,30 +44,30 @@ function sliderInit(main, index) {
     let designs = slide.querySelectorAll('.card_design');
     let ratio = Math.abs(self.detail.xStart - self.detail.xCurrent) / slide.clientWidth;
     // mask
-    TweenMax.set(slide, {x: -self.detail.xDist + 'px', opacity: 1 - ratio});
+    TweenMax.set(slide, {x: -self.detail.xDist + 'px', opacity: 1});
     TweenMax.set(dragger, {x: self.detail.xDist});
     // direction
     if (self.detail.xStart - self.detail.xCurrent > 0) {
       // content
       for (let content of contents) {
         let ratioWithDelay = (durationContent - parseFloat(content.dataset.tlDelay)) * ratio / timeContent;
-        TweenMax.set(content, {x: -sizeContent * ratioWithDelay, opacity: 1 - ratioWithDelay});
+        TweenMax.set(content, {x: -sizeContent * ratioWithDelay, opacity: 1});
       }
       // design
       for (let design of designs) {
         let ratioWithDelay = (durationDesign - parseFloat(design.dataset.tlDelay)) * ratio / timeDesign;
-        TweenMax.set(design, {x: -sizeDesign * ratioWithDelay, opacity: 1 - ratioWithDelay});
+        TweenMax.set(design, {x: -sizeDesign * ratioWithDelay, opacity: 1});
       }
     } else {
       // content
       for (let content of contents) {
         let ratioWithDelay = (durationContent - parseFloat(content.dataset.tlDelay)) * ratio / timeContent;
-        TweenMax.set(content, {x: sizeContent * ratioWithDelay, opacity: 1 - ratioWithDelay});
+        TweenMax.set(content, {x: sizeContent * ratioWithDelay, opacity: 1});
       }
       // design
       for (let design of designs) {
         let ratioWithDelay = (durationDesign - parseFloat(design.dataset.tlDelay)) * ratio / timeDesign;
-        TweenMax.set(design, {x: sizeDesign * ratioWithDelay, opacity: 1 - ratioWithDelay});
+        TweenMax.set(design, {x: sizeDesign * ratioWithDelay, opacity: 1});
       }
     }
   });

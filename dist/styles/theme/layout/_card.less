@@ -40,7 +40,8 @@
 .card--primary {
   > .card_design {
     border-color: @primary;
-    background-color: @primary;
+    background: @primary;
+    background: @grad--primary;
   }
   > .card_content {
     .text--inverse();
@@ -50,27 +51,18 @@
 .card--secondary {
   > .card_design {
     border-color: @secondary;
-    background-color: @secondary;
+    background: @secondary;
+    background: @grad--secondary;
   }
   > .card_content {
     color: @text;
   }
 }
 
-.card--error {
-  > .card_design {
-    border-color: @error;
-    background-color: @error;
-  }
-  > .card_content {
-    .text--inverse();
-  }
-}
-
 .card--white {
   > .card_design {
     border-color: @white;
-    background-color: @white;
+    background: @white;
   }
   > .card_content {
     color: @text;
@@ -180,4 +172,12 @@
     padding-top: 0;
     padding-bottom: 0;
   }
+}
+
+// presets
+
+.card--slider {
+  .card--secondary();
+  .card--big();
+  .text-align(center);
 }
