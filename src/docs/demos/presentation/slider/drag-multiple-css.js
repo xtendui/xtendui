@@ -13,13 +13,13 @@ function sliderInit(main, index) {
 
   // slider items
 
-  for (let slide of main.querySelectorAll('.slide')) {
+  for (let tr of main.querySelectorAll('.slide')) {
 
     // on event
 
-    slide.addEventListener('on.xt', function (e) {
+    tr.addEventListener('on.xt', function (e) {
       let slide = this;
-      let slides = Xt.parents(slide, '.slides')[0];
+      let slides = Xt.parents(slide, '.slides_inner')[0];
       let self = e.detail.object;
       // if inital stop, don't do animation
       if (e.detail.object.detail.initial) {
@@ -33,18 +33,18 @@ function sliderInit(main, index) {
 
     // dragstart event
 
-    slide.addEventListener('dragstart.xt.slider', function (e) {
+    tr.addEventListener('dragstart.xt.slider', function (e) {
       let slide = this;
-      let slides = Xt.parents(slide, '.slides')[0];
+      let slides = Xt.parents(slide, '.slides_inner')[0];
       // inertia
       slides.classList.remove('drag-inertia');
     });
 
     // drag event
 
-    slide.addEventListener('drag.xt.slider', function (e) {
+    tr.addEventListener('drag.xt.slider', function (e) {
       let slide = this;
-      let slides = Xt.parents(slide, '.slides')[0];
+      let slides = Xt.parents(slide, '.slides_inner')[0];
       let self = e.detail.object;
       let eInit = self.detail.eInit;
       let eCurrent = self.detail.eCurrent;
@@ -58,9 +58,9 @@ function sliderInit(main, index) {
 
     // dragend event
 
-    slide.addEventListener('dragend.xt.slider', function (e) {
+    tr.addEventListener('dragend.xt.slider', function (e) {
       let slide = this;
-      let slides = Xt.parents(slide, '.slides')[0];
+      let slides = Xt.parents(slide, '.slides_inner')[0];
       let self = e.detail.object;
       let xCache =  self.detail.xCache || 0;
       // inertia

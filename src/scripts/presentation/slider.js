@@ -184,7 +184,7 @@ class Slider extends Core {
 Slider.componentName = 'slider';
 Slider.defaults = {
   "elements": ".slide-control",
-  "targets": ":scope > .slides > .slide",
+  "targets": ":scope > .slides > .slides_inner > .slide",
   "class": "active",
   "on": "click",
   "min": 1,

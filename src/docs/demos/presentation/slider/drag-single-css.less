@@ -21,7 +21,7 @@
     }
   }
   // content
-  > * > .slide_content {
+  > * > * {
     .anim-left.out();
     animation-duration: @time--big;
     > .card > .card_content > * {
@@ -34,7 +34,7 @@
     }
   }
   &.xt-inverse {
-    > * > .slide_content {
+    > * > * {
       .anim-right.out();
       animation-duration: @time--big;
       > .card > .card_content > * {
@@ -44,7 +44,7 @@
     }
   }
   &.active {
-    > * > .slide_content {
+    > * > * {
       .anim-right.active();
       animation-duration: @time--big;
       > .card > .card_content > * {
@@ -53,7 +53,7 @@
       }
     }
     &.xt-inverse {
-      > * > .slide_content {
+      > * > * {
         .anim-left.active();
         animation-duration: @time--big;
         > .card > .card_content > * {

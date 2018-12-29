@@ -2,10 +2,14 @@
 
 // animations
 
-.slides {
+.slides_inner {
   .flex();
   .flex--nowrap();
   &.drag-inertia {
     .transition-default.out();
   }
+}
+
+.slide {
+  .col(6);
 }

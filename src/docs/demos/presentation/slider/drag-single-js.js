@@ -41,12 +41,12 @@ function sliderInit(main, index) {
     // on event
 
     tr.addEventListener('on.xt', function (e) {
-      let target = this;
-      let xMax = target.clientWidth;
-      let mask = target.children[0];
-      let maskInner = target.children[0].children[0];
-      let contents = target.querySelectorAll('.card_content > *');
-      let designs = target.querySelectorAll('.card_design');
+      let slide = this;
+      let xMax = slide.clientWidth;
+      let mask = slide.children[0];
+      let maskInner = slide.children[0].children[0];
+      let contents = slide.querySelectorAll('.card_content > *');
+      let designs = slide.querySelectorAll('.card_design');
       // content
       for (let [i, content] of contents.entries()) {
         content.dataset.tlDelay = Math.min(delayContent * i, delayContentMax).toString();
@@ -60,10 +60,10 @@ function sliderInit(main, index) {
         return false;
       }
       // setup drag position
-      TweenMax.set(target, {opacity: 0});
-      if (!target.classList.contains('xt-inverse')) {
+      TweenMax.set(slide, {opacity: 0});
+      if (!slide.classList.contains('xt-inverse')) {
         // mask
-        TweenMax.set(target, {x: xMax});
+        TweenMax.set(slide, {x: xMax});
         TweenMax.set(mask, {x: -xMax});
         TweenMax.set(maskInner, {x: size});
         TweenMax.to(maskInner, time, {x: 0, ease: 'easeIn'});
@@ -83,7 +83,7 @@ function sliderInit(main, index) {
         }
       } else {
         // mask
-        TweenMax.set(target, {x: -xMax});
+        TweenMax.set(slide, {x: -xMax});
         TweenMax.set(mask, {x: xMax});
         TweenMax.set(maskInner, {x: -size});
         TweenMax.to(maskInner, time, {x: 0, ease: 'easeIn'});
@@ -103,22 +103,22 @@ function sliderInit(main, index) {
         }
       }
       // drag position
-      TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeIn'});
+      TweenMax.to(slide, time, {x: 0, opacity: 1, ease: 'easeIn'});
       TweenMax.to(mask, time, {x: 0, ease: 'easeIn'});
     });
 
     // off event
 
     tr.addEventListener('off.xt', function (e) {
-      let target = this;
-      let xMax = target.clientWidth;
-      let mask = target.children[0];
-      let contents = target.querySelectorAll('.card_content > *');
-      let designs = target.querySelectorAll('.card_design');
+      let slide = this;
+      let xMax = slide.clientWidth;
+      let mask = slide.children[0];
+      let contents = slide.querySelectorAll('.card_content > *');
+      let designs = slide.querySelectorAll('.card_design');
       // complete drag
-      if (!target.classList.contains('xt-inverse')) {
+      if (!slide.classList.contains('xt-inverse')) {
         // mask
-        TweenMax.to(target, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
+        TweenMax.to(slide, time, {x: -xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(mask, time, {x: xMax, ease: 'easeOut'});
         // content
         for (let content of contents) {
@@ -134,7 +134,7 @@ function sliderInit(main, index) {
         }
       } else {
         // mask
-        TweenMax.to(target, time, {x: xMax, opacity: 0, ease: 'easeOut'});
+        TweenMax.to(slide, time, {x: xMax, opacity: 0, ease: 'easeOut'});
         TweenMax.to(mask, time, {x: -xMax, ease: 'easeOut'});
         // content
         for (let content of contents) {
@@ -154,20 +154,20 @@ function sliderInit(main, index) {
     // drag event
 
     tr.addEventListener('drag.xt.slider', function (e) {
-      let target = this;
+      let slide = this;
       let self = e.detail.object;
       let eInit = self.detail.eInit;
       let eCurrent = self.detail.eCurrent;
       let xStart = eInit.clientX;
       let xCurrent = eCurrent.clientX;
       let xDist = xCurrent - xStart;
-      let xMax = target.clientWidth;
+      let xMax = slide.clientWidth;
       let ratio = Math.abs(xStart - xCurrent) / xMax;
-      let mask = target.children[0];
-      let contents = target.querySelectorAll('.card_content > *');
-      let designs = target.querySelectorAll('.card_design');
+      let mask = slide.children[0];
+      let contents = slide.querySelectorAll('.card_content > *');
+      let designs = slide.querySelectorAll('.card_design');
       // mask
-      TweenMax.set(target, {x: xDist + 'px', opacity: 1 - ratio});
+      TweenMax.set(slide, {x: xDist + 'px', opacity: 1 - ratio});
       TweenMax.set(mask, {x: -xDist});
       // direction
       if (xStart - xCurrent > 0) {
@@ -198,16 +198,16 @@ function sliderInit(main, index) {
     // dragend event
 
     tr.addEventListener('dragend.xt.slider', function (e) {
-      let target = this;
+      let slide = this;
       let self = e.detail.object;
       let eInit = self.detail.eInit;
       let eCurrent = self.detail.eCurrent;
       let xStart = eInit.clientX;
       let xCurrent = eCurrent.clientX;
       let xDist = xCurrent - xStart;
-      let mask = target.children[0];
-      let contents = target.querySelectorAll('.card_content > *');
-      let designs = target.querySelectorAll('.card_design');
+      let mask = slide.children[0];
+      let contents = slide.querySelectorAll('.card_content > *');
+      let designs = slide.querySelectorAll('.card_design');
       // activate or reset
       if (Math.abs(xDist) > self.options.dragThreshold) {
         // direction
@@ -218,7 +218,7 @@ function sliderInit(main, index) {
         }
       } else {
         // mask
-        TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeOut'});
+        TweenMax.to(slide, time, {x: 0, opacity: 1, ease: 'easeOut'});
         TweenMax.to(mask, time, {x: 0, ease: 'easeOut'});
         // content
         for (let content of contents) {
