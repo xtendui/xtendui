@@ -13,10 +13,7 @@ function sliderInit(main, index) {
   let sizeMask = 200;
 
   let timeContent = .8;
-  let delayContent = .15;
   let sizeContent = 100;
-  let delayContentMax = delayContent * 2;
-  let durationContent = timeContent + delayContentMax;
 
   CustomEase.create('easeIn', '.41, .1, .175, 1');
   CustomEase.create('easeOut', '.77, 0, .175, 1');
