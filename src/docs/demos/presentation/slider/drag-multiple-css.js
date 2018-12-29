@@ -8,7 +8,6 @@ function sliderInit(main, index) {
   // slider
 
   new Xt.Slider(main, {
-    "drag": true
   });
 
   // slider items
@@ -76,7 +75,6 @@ function sliderInit(main, index) {
           if (check < 0) {
             found = z;
           }
-          //console.log(check, z, found); // @TODO ora se passa la metà esatta cambia, di dovrebbe fare quando pass il dragThreshold cambia di almeno uno
         }
         if (found === self.curentIndex) {
           // change at least one

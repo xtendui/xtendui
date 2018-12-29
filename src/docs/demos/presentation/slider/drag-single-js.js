@@ -29,7 +29,6 @@ function sliderInit(main, index) {
 
   new Xt.Slider(main, {
     "auto": 6000,
-    "drag": true,
     "durationOn": time * 1000,
     "durationOff": time * 1000
   });

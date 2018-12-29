@@ -190,7 +190,7 @@ Slider.defaults = {
   "min": 1,
   "max": 1,
   "instant": {"elements": true},
-  "drag": false,
+  "drag": true,
   "dragThreshold": 100,
   "aria": true
 };
