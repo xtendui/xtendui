@@ -271,9 +271,9 @@ class Slider extends Core {
   slideOn(dragger, e) {
     let self = this;
     let slide = e.target;
-    // if inital stop, don't do animation
+    // if inital stop, don't execute custom on.xt events
     if (e.detail.object.detail.initial) {
-      return false;
+      e.stopImmediatePropagation();
     }
     // activation
     self.detail.xCache = self.detail.xPos = dragger.offsetWidth / 2 - slide.offsetLeft - slide.offsetWidth / 2;
