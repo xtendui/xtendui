@@ -274,6 +274,7 @@ class Slider extends Core {
    */
   logicDrag(dragger, e, friction = false) {
     let self = this;
+    let options = self.options;
     let xCache = self.detail.xCache || 0;
     // drag
     if (friction) {
@@ -289,7 +290,7 @@ class Slider extends Core {
       self.detail.xCurrent = self.detail.eCurrent.clientX;
       self.detail.xPos = xCache + self.detail.xCurrent - self.detail.xStart;
       self.detail.xVelocity = self.detail.xPos - xPosOld;
-      self.detail.xVelocity += xVelocityOld * 0.5; // keep some velocity
+      self.detail.xVelocity += xVelocityOld * options.dragVelocityFriction; // keep some velocity
     }
     // listener dispatch
     dragger.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: self.eDetail}));
@@ -346,10 +347,11 @@ Slider.defaults = {
   "instant": true,
   "drag": ":scope > .slides",
   "dragThreshold": 100,
-  "dragFriction": .85,
+  "dragFriction": .75,
   "dragFrictionThreshold": 5,
-  "dragAlig": "center",
+  "dragVelocityFriction": .33,
   "dragInitial": true,
+  "dragAlig": "center",
   "aria": true
 };
 
