@@ -19,7 +19,7 @@ function sliderInit(main, index) {
   dragger.addEventListener('drag.xt.slider', function (e) {
     let self = e.detail.object;
     // drag
-    dragger.style.transform = 'translateX(' + self.detail.xDist + 'px)';
+    dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
   });
 
   // dragend event
@@ -27,7 +27,7 @@ function sliderInit(main, index) {
   dragger.addEventListener('dragend.xt.slider', function (e) {
     let self = e.detail.object;
     // reset
-    dragger.style.transform = 'translateX(' + self.detail.xCache + 'px)';
+    dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
   });
 
   // slider items

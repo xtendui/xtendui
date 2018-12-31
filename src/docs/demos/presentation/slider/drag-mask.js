@@ -42,8 +42,8 @@ function sliderInit(main, index) {
       direction = -1;
     }
     // mask
-    TweenMax.set(slide, {x: -self.detail.xDist + 'px', opacity: 1});
-    TweenMax.set(dragger, {x: self.detail.xDist});
+    TweenMax.set(slide, {x: -self.detail.xPos + 'px', opacity: 1});
+    TweenMax.set(dragger, {x: self.detail.xPos});
     // content
     for (let content of contents) {
       TweenMax.set(content, {x: sizeContent * ratio * direction, opacity: 1});

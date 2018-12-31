@@ -720,8 +720,10 @@ class Core {
   addCurrent(element) {
     let self = this;
     // addCurrent
-    let arr = Xt.currents[self.namespace];
-    arr.push(element);
+    if (!self.hasCurrent(element)) {
+      let arr = Xt.currents[self.namespace];
+      arr.push(element);
+    }
   }
 
   /**

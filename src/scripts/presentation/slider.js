@@ -175,7 +175,7 @@ class Slider extends Core {
       dragger.removeEventListener(event, dragHandler);
     }
     // logic
-    self.logicDragend(dragger, e);
+    self.logicDragfriction(dragger, e);
   }
 
   /**
@@ -216,7 +216,6 @@ class Slider extends Core {
    */
   logicDragend(dragger, e) {
     let self = this;
-    let options = self.options;
     let xCache = self.detail.xCache || 0;
     // inertia
     dragger.classList.remove('dragging');
@@ -250,16 +249,48 @@ class Slider extends Core {
   }
 
   /**
-   * element drag logic
+   * element drag friction logic
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  logicDrag(dragger, e) {
+  logicDragfriction(dragger, e) {
+    let self = this;
+    let options = self.options;
+    // friction
+    self.detail.xVelocity *= options.dragFriction;
+    if (Math.abs(self.detail.xVelocity) > options.dragFrictionThreshold) {
+      self.logicDrag(dragger, e, true);
+      window.requestAnimationFrame(self.logicDragfriction.bind(self).bind(e, dragger));
+    } else {
+      self.logicDragend(dragger, e);
+    }
+  }
+
+  /**
+   * element drag logic
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Event} e
+   * @param {Boolean} friction
+   */
+  logicDrag(dragger, e, friction = false) {
     let self = this;
     let xCache = self.detail.xCache || 0;
-    self.detail.xStart = self.detail.eInit.clientX;
-    self.detail.xCurrent = self.detail.eCurrent.clientX;
-    self.detail.xDist = xCache + self.detail.xCurrent - self.detail.xStart;
+    // drag
+    if (friction) {
+      // on friction
+      self.detail.xPos = self.detail.xPos + self.detail.xVelocity;
+      self.detail.xStart = self.detail.eInit.clientX;
+      self.detail.xCurrent = self.detail.xPos + self.detail.xStart - xCache;
+    } else {
+      // on normal drag
+      let xPosOld = self.detail.xPos;
+      let xVelocityOld = self.detail.xVelocity || 0;
+      self.detail.xStart = self.detail.eInit.clientX;
+      self.detail.xCurrent = self.detail.eCurrent.clientX;
+      self.detail.xPos = xCache + self.detail.xCurrent - self.detail.xStart;
+      self.detail.xVelocity = self.detail.xPos - xPosOld;
+      self.detail.xVelocity += xVelocityOld * 0.5; // keep some velocity
+    }
     // listener dispatch
     dragger.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: self.eDetail}));
   }
@@ -315,6 +346,8 @@ Slider.defaults = {
   "instant": true,
   "drag": ":scope > .slides",
   "dragThreshold": 100,
+  "dragFriction": .85,
+  "dragFrictionThreshold": 5,
   "dragAlig": "center",
   "dragInitial": true,
   "aria": true
