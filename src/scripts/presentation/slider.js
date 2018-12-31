@@ -216,6 +216,7 @@ class Slider extends Core {
    */
   logicDragend(dragger, e) {
     let self = this;
+    let options = self.options;
     let xCache = self.detail.xCache || 0;
     // inertia
     dragger.classList.remove('dragging');
@@ -234,13 +235,13 @@ class Slider extends Core {
       if (found === self.curentIndex) {
         // change at least one
         if (Math.sign(xDist) < 0) {
-          self.goToNext();
+          self.goToNext(true);
         } else {
-          self.goToPrev();
+          self.goToPrev(true);
         }
       } else {
         // goToIndex
-        self.goToIndex(found);
+        self.goToIndex(found, true);
       }
     } else {
       // listener dispatch

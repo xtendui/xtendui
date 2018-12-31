@@ -32,6 +32,7 @@ class Core {
         "autoChange": false,
         "autoAlways": false,
         "autoInverse": false,
+        "loop": true,
         "delayOn": false,
         "delayOff": false,
         "durationOn": false,
@@ -436,29 +437,49 @@ class Core {
 
   /**
    * activate next element
+   * @param {Boolean} force
    */
-  goToNext() {
+  goToNext(force = false) {
     let self = this;
+    let options = self.options;
     // goToNext
     let curentIndex = self.curentIndex !== undefined ? self.curentIndex + 1 : 0;
-    curentIndex = curentIndex > self.elements.length - 1 ? 0 : curentIndex;
+    if (curentIndex > self.elements.length - 1) {
+      if (options.loop) {
+        curentIndex = 0;
+      } else if (force) {
+        curentIndex = self.elements.length - 1;
+      } else {
+        return false;
+      }
+    }
     self.forceNormalDirection = self.curentIndex > curentIndex;
     let current = self.elements[curentIndex];
-    self.eventOn(current);
+    self.eventOn(current, force);
     return current;
   }
 
   /**
    * activate prev element
+   * @param {Boolean} force
    */
-  goToPrev() {
+  goToPrev(force = false) {
     let self = this;
+    let options = self.options;
     // goToPrev
     let curentIndex = self.curentIndex !== undefined ? self.curentIndex - 1 : 0;
-    curentIndex = curentIndex < 0 ? self.elements.length - 1 : curentIndex;
+    if (curentIndex < 0) {
+      if (options.loop) {
+        curentIndex = self.elements.length - 1;
+      } else if (force) {
+        curentIndex = 0;
+      } else {
+        return false;
+      }
+    }
     self.forceInverseDirection = self.curentIndex < curentIndex;
     let current = self.elements[curentIndex];
-    self.eventOn(current);
+    self.eventOn(current, force);
     return current;
   }
 
@@ -467,7 +488,7 @@ class Core {
    * @param {Number} index
    * @param {Boolean} force
    */
-  goToIndex(index, force = true) {
+  goToIndex(index, force = false) {
     let self = this;
     // goToIndex
     let current = self.elements[index];
@@ -821,7 +842,7 @@ class Core {
     let self = this;
     let options = self.options;
     // toggle
-    if (self.checkOn(element) || force) {
+    if (force || self.checkOn(element)) {
       // eDetail
       self.eDetailSet(e);
       // on
@@ -888,7 +909,7 @@ class Core {
     let self = this;
     let options = self.options;
     // toggle
-    if (self.checkOff(element) || force) {
+    if (force || self.checkOff(element)) {
       // eDetail
       self.eDetailSet(e);
       // off
