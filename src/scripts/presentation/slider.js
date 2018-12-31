@@ -270,13 +270,30 @@ class Slider extends Core {
    */
   slideOn(dragger, e) {
     let self = this;
+    let options = self.options;
     let slide = e.target;
-    // if inital stop, don't execute custom on.xt events
-    if (e.detail.object.detail.initial) {
-      e.stopImmediatePropagation();
+    // aligment
+    let pos;
+    if (options.dragAlig === 'center') {
+      pos = dragger.offsetWidth / 2 - slide.offsetLeft - slide.offsetWidth / 2;
+    } else if (options.dragAlig === 'left') {
+      pos = dragger.offsetWidth / 2 - slide.offsetLeft - slide.offsetWidth;
+    } else if (options.dragAlig === 'right') {
+      pos = dragger.offsetWidth / 2 - slide.offsetLeft;
     }
-    // activation
-    self.detail.xCache = self.detail.xPos = dragger.offsetWidth / 2 - slide.offsetLeft - slide.offsetWidth / 2;
+    self.detail.xCache = self.detail.xPos = pos;
+    // if inital
+    if (e.detail.object.detail.initial) {
+      // stop, don't execute custom on.xt events
+      if (!options.dragInitial) {
+        e.stopImmediatePropagation();
+      }
+      // prevent alignment animation
+      self.dragger.classList.add('anim-none');
+      window.requestAnimationFrame(function () {
+        self.dragger.classList.remove('anim-none');
+      });
+    }
   }
 
 }
@@ -294,9 +311,11 @@ Slider.defaults = {
   "toggle": false,
   "min": 1,
   "max": 1,
-  "instant": {"elements": true},
+  "instant": true,
   "drag": ":scope > .slides",
   "dragThreshold": 100,
+  "dragAlig": "center",
+  "dragInitial": true,
   "aria": true
 };
 

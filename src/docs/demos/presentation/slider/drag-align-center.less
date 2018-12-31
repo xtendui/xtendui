@@ -14,4 +14,13 @@
 
 .slide {
   .col(6);
+  // animations
+  .transition-default.out();
+  transition-duration: @time--big;
+  opacity: .5;
+  &.active {
+    .transition-default.active();
+    transition-duration: @time--big;
+    opacity: 1;
+  }
 }

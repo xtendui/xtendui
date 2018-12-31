@@ -8,7 +8,6 @@ function sliderInit(main, index) {
   // slider
 
   let slider = new Xt.Slider(main, {
-    "auto": 6000
   });
 
   let dragger = slider.dragger;
