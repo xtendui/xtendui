@@ -243,6 +243,7 @@ class Slider extends Core {
         self.goToIndex(found, true);
       }
     } else {
+      self.detail.xPos = self.detail.xCache;
       // listener dispatch
       dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
     }
