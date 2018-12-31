@@ -24,7 +24,7 @@ function sliderInit(main, index) {
     "durationOn": timeTotal * 1000,
     "durationOff": timeTotal * 1000,
     "instant": false,
-    "dragInitial": false
+    "initial": false
   });
 
   let dragger = slider.dragger;

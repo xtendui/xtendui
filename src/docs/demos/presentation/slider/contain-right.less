@@ -1,0 +1,24 @@
+@import (reference) "../../../../../dist/styles/xtend.less";
+
+.slides_inner {
+  .flex();
+  .flex--nowrap();
+  // animations
+  &:not(.dragging) {
+    .transition-default.out();
+    transition-duration: @time--big;
+  }
+}
+
+.slide {
+  .col(4);
+  // animations
+  .transition-default.out();
+  transition-duration: @time--big;
+  opacity: .5;
+  &.active {
+    .transition-default.active();
+    transition-duration: @time--big;
+    opacity: 1;
+  }
+}

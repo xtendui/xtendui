@@ -307,18 +307,24 @@ class Slider extends Core {
     let slide = e.target;
     // aligment
     let pos;
-    if (options.dragAlig === 'center') {
+    if (options.align === 'center') {
       pos = dragger.offsetWidth / 2 - slide.offsetLeft - slide.offsetWidth / 2;
-    } else if (options.dragAlig === 'left') {
-      pos = dragger.offsetWidth / 2 - slide.offsetLeft - slide.offsetWidth;
-    } else if (options.dragAlig === 'right') {
-      pos = dragger.offsetWidth / 2 - slide.offsetLeft;
+    } else if (options.align === 'left') {
+      pos = - slide.offsetLeft;
+    } else if (options.align === 'right') {
+      pos = - slide.offsetLeft + dragger.offsetWidth - slide.offsetWidth;
+    }
+    if (options.contain) {
+      let min = 0;
+      let max = - dragger.offsetWidth + slide.offsetWidth;
+      pos = pos > min ? min : pos;
+      pos = pos < max ? max : pos;
     }
     self.detail.xCache = self.detail.xPos = pos;
     // if inital
     if (e.detail.object.detail.initial) {
       // stop, don't execute custom on.xt events
-      if (!options.dragInitial) {
+      if (!options.initial) {
         e.stopImmediatePropagation();
       }
       // prevent alignment animation
@@ -345,13 +351,14 @@ Slider.defaults = {
   "min": 1,
   "max": 1,
   "instant": true,
-  "drag": ":scope > .slides",
+  "initial": true,
+  "contain": true,
+  "align": "center",
+  "drag": ":scope > .slides > .slides_inner",
   "dragThreshold": 100,
   "dragFriction": .75,
   "dragFrictionThreshold": 5,
   "dragVelocityFriction": .33,
-  "dragInitial": true,
-  "dragAlig": "center",
   "aria": true
 };
 

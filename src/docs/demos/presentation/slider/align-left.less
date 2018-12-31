@@ -1,19 +1,17 @@
 @import (reference) "../../../../../dist/styles/xtend.less";
 
-.slides {
+.slides_inner {
+  .flex();
+  .flex--nowrap();
+  // animations
   &:not(.dragging) {
     .transition-default.out();
     transition-duration: @time--big;
   }
 }
 
-.slides_inner {
-  .flex();
-  .flex--nowrap();
-}
-
 .slide {
-  .col(6);
+  .col(4);
   // animations
   .transition-default.out();
   transition-duration: @time--big;

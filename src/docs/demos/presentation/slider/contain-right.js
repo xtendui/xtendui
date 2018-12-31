@@ -8,7 +8,8 @@ function sliderInit(main, index) {
   // slider
 
   let slider = new Xt.Slider(main, {
-    "dragAlig": "center"
+    "align": "right",
+    "contain": false
   });
 
   let dragger = slider.dragger;
