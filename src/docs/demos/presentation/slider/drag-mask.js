@@ -21,7 +21,6 @@ function sliderInit(main, index) {
   // slider
 
   let slider = new Xt.Slider(main, {
-    "auto": 6000,
     "durationOn": timeTotal * 1000,
     "durationOff": timeTotal * 1000,
     "instant": false,
