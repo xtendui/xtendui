@@ -39,20 +39,11 @@ class Slider extends Core {
     if (options.drag) {
       self.dragger = self.object.querySelectorAll(options.drag)[0];
     }
-    // che ck if autoGroup is possible
-    if (options.autoGroup) {
-      for (let [i, target] of self.targets.entries()) {
-        if (target.offsetWidth === 0) { // don't do autoGroup if dislay none
-          options.autoGroup = false;
-          break;
-        }
-      }
-    }
     // automatic group
     if (options.autoGroup) {
       // generate groups
       self.autoGroup = [];
-      let draggerWidth = self.dragger.offsetWidth;
+      let draggerWidth = options.drag ? self.dragger.offsetWidth : self.object.offsetWidth;
       let currentCount = draggerWidth;
       let create = true;
       for (let [i, target] of self.targets.entries()) {
@@ -65,6 +56,14 @@ class Slider extends Core {
         let currentGroup = self.autoGroup.length - 1;
         // calculate
         let targetWidth = target.offsetWidth;
+        if (targetWidth === 0) { // when display none
+          let container = target.parentNode;
+          let clone = target.cloneNode(true);
+          clone.classList.add('xt-calculating-block');
+          let el = container.appendChild(clone);
+          targetWidth = el.offsetWidth;
+          container.removeChild(clone)
+        }
         currentCount -= targetWidth;
         // assign group
         // @TODO REFACTOR
@@ -74,7 +73,7 @@ class Slider extends Core {
         } else {
           create = true;
           currentCount = draggerWidth;
-          if (targetWidth < draggerWidth) {
+          if (targetWidth <= draggerWidth) {
             currentCount -= targetWidth;
             self.autoGroup[currentGroup].push(target);
             target.setAttribute('data-xt-group', self.namespace + '-' + currentGroup);
