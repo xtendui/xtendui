@@ -60,8 +60,8 @@ class Slider extends Core {
           let container = target.parentNode;
           let clone = target.cloneNode(true);
           clone.classList.add('xt-calculating-block');
-          let el = container.appendChild(clone);
-          targetWidth = el.offsetWidth;
+          container.append(clone);
+          targetWidth = clone.offsetWidth;
           container.removeChild(clone)
         }
         currentCount -= targetWidth;
