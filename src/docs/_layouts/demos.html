@@ -64,10 +64,12 @@
 
     <!-- demo utils -->
     <script>
-      // add id
-      document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
-      // init iframe
-      window.parent.initIframe(window.name);
+      if (window.self !== window.top) {
+        // add id
+        document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
+        // init iframe
+        window.parent.initIframe(window.name);
+      }
     </script>
 
   </body>

@@ -69,22 +69,12 @@ padding: true
     </div>
   </div>
 
-  <div class="list list-space--small align-items--center" style="margin-top: 1rem !important;">
-    <button type="button" class="btn slide-control">
-      <span>0</span>
-    </button>
-    <button type="button" class="btn slide-control">
-      <span>1</span>
-    </button>
-    <button type="button" class="btn slide-control">
-      <span>2</span>
-    </button>
-    <button type="button" class="btn slide-control">
-      <span>3</span>
-    </button>
-    <button type="button" class="btn slide-control">
-      <span>4</span>
-    </button>
+  <div class="slider_pagination">
+    <div class="list list-space--small align-items--center">
+      <button type="button" class="btn slider_pagination_item">
+        {% raw %}<span>{{num}}</span>{% endraw %}
+      </button>
+    </div>
   </div>
 
 </div>

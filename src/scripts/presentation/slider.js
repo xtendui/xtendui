@@ -31,12 +31,36 @@ class Slider extends Core {
    * init elements, targets and currents
    */
   initScope() {
-    super.initScope();
     let self = this;
     let options = self.options;
+    // dragger
     if (options.drag) {
       self.dragger = self.object.querySelectorAll(options.drag)[0];
     }
+    // assign groups
+    // generate elements (pagination)
+    let pags = self.object.querySelectorAll(options.pagination);
+    if (pags.length) {
+      for (let pag of pags) {
+        let clones = pag.querySelectorAll('.slider_pagination_item');
+        if (clones.length) {
+          for (let clone of clones) {
+            let items = [];
+            let container = clone.parentNode;
+            for (let i = 0; i < options.targets.length - 1; i++) {
+              items[i] = clone.cloneNode(true);
+              let item = items[i];
+              let html = item.innerHTML.replace(new RegExp('{{num}}', 'ig'), i.toString());
+              item.innerHTML = html;
+              item.classList.remove('slider_pagination_item');
+              container.append(item);
+            }
+          }
+        }
+      }
+    }
+    // super
+    super.initScope();
   }
 
   /**
@@ -344,7 +368,7 @@ class Slider extends Core {
 
 Slider.componentName = 'slider';
 Slider.defaults = {
-  "elements": ".slide-control",
+  "elements": ":scope > .slider_pagination button:not(.slider_pagination_item)",
   "targets": ".slide",
   "class": "active",
   "on": "click",
@@ -355,6 +379,7 @@ Slider.defaults = {
   "initial": true,
   "contain": true,
   "align": "center",
+  "pagination": ":scope > .slider_pagination",
   "drag": ":scope > .slides > .slides_inner",
   "dragThreshold": 100,
   "dragFriction": .75,
