@@ -33,34 +33,93 @@ class Slider extends Core {
   initScope() {
     let self = this;
     let options = self.options;
+    // targets
+    self.initScopeTargets();
     // dragger
     if (options.drag) {
       self.dragger = self.object.querySelectorAll(options.drag)[0];
     }
-    // assign groups
-    // generate elements (pagination)
-    let pags = self.object.querySelectorAll(options.pagination);
-    if (pags.length) {
-      for (let pag of pags) {
-        let clones = pag.querySelectorAll('.slider_pagination_item');
-        if (clones.length) {
-          for (let clone of clones) {
-            let items = [];
-            let container = clone.parentNode;
-            for (let i = 0; i < options.targets.length - 1; i++) {
-              items[i] = clone.cloneNode(true);
-              let item = items[i];
-              let html = item.innerHTML.replace(new RegExp('{{num}}', 'ig'), i.toString());
-              item.innerHTML = html;
-              item.classList.remove('slider_pagination_item');
-              container.append(item);
+    // che ck if autoGroup is possible
+    if (options.autoGroup) {
+      for (let [i, target] of self.targets.entries()) {
+        if (target.offsetWidth === 0) { // don't do autoGroup if dislay none
+          options.autoGroup = false;
+          break;
+        }
+      }
+    }
+    // automatic group
+    if (options.autoGroup) {
+      // generate groups
+      self.autoGroup = [];
+      let draggerWidth = self.dragger.offsetWidth;
+      let currentCount = draggerWidth;
+      let create = true;
+      for (let [i, target] of self.targets.entries()) {
+        // create
+        if (create) {
+          self.autoGroup.push([]);
+          create = false;
+        }
+        // currentGroup
+        let currentGroup = self.autoGroup.length - 1;
+        // calculate
+        let targetWidth = target.offsetWidth;
+        currentCount -= targetWidth;
+        // assign group
+        // @TODO REFACTOR
+        if (currentCount > 0) {
+          self.autoGroup[currentGroup].push(target);
+          target.setAttribute('data-xt-group', self.namespace + '-' + currentGroup);
+        } else {
+          create = true;
+          currentCount = draggerWidth;
+          if (targetWidth < draggerWidth) {
+            currentCount -= targetWidth;
+            self.autoGroup[currentGroup].push(target);
+            target.setAttribute('data-xt-group', self.namespace + '-' + currentGroup);
+          }
+        }
+      }
+    }
+    // generate elements
+    if (options.pagination) {
+      let pags = self.object.querySelectorAll(options.pagination);
+      if (pags.length) {
+        for (let pag of pags) {
+          let clones = pag.querySelectorAll('.slider_pagination_item');
+          if (clones.length) {
+            for (let clone of clones) {
+              let items = [];
+              let container = clone.parentNode;
+              // @TODO REFACTOR
+              if (options.autoGroup) {
+                for (let [i, group] of self.autoGroup.entries()) {
+                  items[i] = clone.cloneNode(true);
+                  let item = items[i];
+                  let html = item.innerHTML.replace(new RegExp('{{num}}', 'ig'), i.toString());
+                  item.innerHTML = html;
+                  item.classList.remove('slider_pagination_item');
+                  item.setAttribute('data-xt-group', self.namespace + '-' + i);
+                  container.append(item);
+                }
+              } else {
+                for (let [i, target] of self.targets.entries()) {
+                  items[i] = clone.cloneNode(true);
+                  let item = items[i];
+                  let html = item.innerHTML.replace(new RegExp('{{num}}', 'ig'), i.toString());
+                  item.innerHTML = html;
+                  item.classList.remove('slider_pagination_item');
+                  container.append(item);
+                }
+              }
             }
           }
         }
       }
     }
-    // super
-    super.initScope();
+    // elements
+    self.initScopeElements();
   }
 
   /**
@@ -240,6 +299,7 @@ class Slider extends Core {
    */
   logicDragend(dragger, e) {
     let self = this;
+    let options = self.options;
     let xCache = self.detail.xCache || 0;
     // inertia
     dragger.classList.remove('dragging');
@@ -249,12 +309,27 @@ class Slider extends Core {
     if (Math.abs(xDist) > self.options.dragThreshold) {
       // get nearest
       let found = self.curentIndex;
-      for (let [z, slideCheck] of dragger.querySelectorAll('.slide').entries()) {
-        let check = xPos - dragger.offsetWidth / 2 + slideCheck.offsetLeft;
-        if (slideCheck.offsetParent && check < 0) { // offsetParent for checking if :visible
-          found = z;
+
+      // @TODO REFACTOR
+      if (options.autoGroup) {
+        self.autoGroup = [];
+        for (let [i, group] of self.autoGroup.entries()) {
+          for (let [z, slideCheck] of group.entries()) {
+            let check = xPos - dragger.offsetWidth / 2 + slideCheck.offsetLeft;
+            if (slideCheck.offsetParent && check < 0) { // offsetParent for checking if :visible
+              found = i;
+            }
+          }
+        }
+      } else {
+        for (let [z, slideCheck] of self.targets.entries()) {
+          let check = xPos - dragger.offsetWidth / 2 + slideCheck.offsetLeft;
+          if (slideCheck.offsetParent && check < 0) { // offsetParent for checking if :visible
+            found = z;
+          }
         }
       }
+
       if (found === self.curentIndex) {
         // change at least one
         if (Math.sign(xDist) < 0) {
@@ -329,22 +404,37 @@ class Slider extends Core {
   slideOn(dragger, e) {
     let self = this;
     let options = self.options;
+    // vars
     let slide = e.target;
+    let slideLeft = slide.offsetLeft;
+    let slideWidth = slide.offsetWidth;
+    let slideWidthReal = slideWidth;
+    // group
+    if (slide.getAttribute('data-xt-group')) {
+      let targets = self.getTargets(slide);
+      slideLeft = Infinity;
+      slideWidth = 0;
+      for (let slide of targets) {
+        slideLeft = slide.offsetLeft < slideLeft ? slide.offsetLeft : slideLeft;
+        slideWidth += slide.offsetWidth;
+      }
+    }
     // aligment
     let pos;
     if (options.align === 'center') {
-      pos = dragger.offsetWidth / 2 - slide.offsetLeft - slide.offsetWidth / 2;
+      pos = dragger.offsetWidth / 2 - slideLeft - slideWidth / 2;
     } else if (options.align === 'left') {
-      pos = - slide.offsetLeft;
+      pos = - slideLeft;
     } else if (options.align === 'right') {
-      pos = - slide.offsetLeft + dragger.offsetWidth - slide.offsetWidth;
+      pos = - slideLeft + dragger.offsetWidth - slideWidth;
     }
     if (options.contain) {
       let min = 0;
-      let max = - dragger.offsetWidth + slide.offsetWidth;
+      let max = - dragger.offsetWidth + slideWidthReal;
       pos = pos > min ? min : pos;
       pos = pos < max ? max : pos;
     }
+    // val
     self.detail.xCache = self.detail.xPos = pos;
     // if inital
     if (e.detail.object.detail.initial) {
@@ -379,6 +469,7 @@ Slider.defaults = {
   "initial": true,
   "contain": true,
   "align": "center",
+  "autoGroup": true,
   "pagination": ":scope > .slider_pagination",
   "drag": ":scope > .slides > .slides_inner",
   "dragThreshold": 100,

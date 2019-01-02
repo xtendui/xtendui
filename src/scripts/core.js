@@ -99,6 +99,17 @@ class Core {
    */
   initScope() {
     let self = this;
+    // elements
+    self.initScopeElements();
+    // targets
+    self.initScopeTargets();
+  }
+
+  /**
+   * init elements
+   */
+  initScopeElements() {
+    let self = this;
     let options = self.options;
     // elements
     if (options.elements) {
@@ -111,6 +122,14 @@ class Core {
         self.elements = Xt.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']'));
       });
     }
+  }
+
+  /**
+   * init targets
+   */
+  initScopeTargets() {
+    let self = this;
+    let options = self.options;
     // targets
     if (options.targets) {
       let arr = Array.from(self.container.querySelectorAll(options.targets));
