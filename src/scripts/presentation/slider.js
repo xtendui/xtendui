@@ -37,13 +37,13 @@ class Slider extends Core {
     self.initScopeTargets();
     // dragger
     if (options.drag) {
-      self.dragger = self.object.querySelectorAll(options.drag)[0];
+      self.dragger = self.object.querySelectorAll(options.drag.dragger)[0];
     }
     // automatic group
     if (options.autoGroup) {
       // generate groups
       self.autoGroup = [];
-      let draggerWidth = options.drag ? self.dragger.offsetWidth : self.object.offsetWidth;
+      let draggerWidth = self.dragger ? self.dragger.offsetWidth : self.object.offsetWidth;
       let currentCount = draggerWidth;
       let create = true;
       for (let [i, target] of self.targets.entries()) {
@@ -62,7 +62,7 @@ class Slider extends Core {
           clone.classList.add('xt-calculating-block');
           container.append(clone);
           targetWidth = clone.offsetWidth;
-          container.removeChild(clone)
+          container.removeChild(clone);
         }
         currentCount -= targetWidth;
         // assign group
@@ -127,9 +127,8 @@ class Slider extends Core {
   initEvents() {
     super.initEvents();
     let self = this;
-    let options = self.options;
-    if (options.drag) {
-      let dragger = self.dragger;
+    let dragger = self.dragger;
+    if (dragger) {
       // grab
       dragger.classList.add('grab');
       // drag on
@@ -305,7 +304,7 @@ class Slider extends Core {
     // activate or reset
     let xPos = Xt.getTranslate(dragger)[0];
     let xDist = xPos - xCache;
-    if (Math.abs(xDist) > self.options.dragThreshold) {
+    if (Math.abs(xDist) > options.drag.threshold) {
       // get nearest
       let found = self.curentIndex;
 
@@ -356,8 +355,8 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     // friction
-    self.detail.xVelocity *= options.dragFriction;
-    if (Math.abs(self.detail.xVelocity) > options.dragFrictionThreshold) {
+    self.detail.xVelocity *= options.drag.friction;
+    if (Math.abs(self.detail.xVelocity) > options.drag.frictionThreshold) {
       self.logicDrag(dragger, e, true);
       window.requestAnimationFrame(self.logicDragfriction.bind(self).bind(e, dragger));
     } else {
@@ -389,7 +388,7 @@ class Slider extends Core {
       self.detail.xCurrent = self.detail.eCurrent.clientX;
       self.detail.xPos = xCache + self.detail.xCurrent - self.detail.xStart;
       self.detail.xVelocity = self.detail.xPos - xPosOld;
-      self.detail.xVelocity += xVelocityOld * options.dragVelocityFriction; // keep some velocity
+      self.detail.xVelocity += xVelocityOld * options.drag.velocityFriction; // keep some velocity
     }
     // listener dispatch
     dragger.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: self.eDetail}));
@@ -470,11 +469,13 @@ Slider.defaults = {
   "align": "center",
   "autoGroup": true,
   "pagination": ":scope > .slider_pagination",
-  "drag": ":scope > .slides > .slides_inner",
-  "dragThreshold": 100,
-  "dragFriction": .75,
-  "dragFrictionThreshold": 5,
-  "dragVelocityFriction": .33,
+  "drag": {
+    "dragger": ":scope > .slides > .slides_inner",
+    "threshold": 100,
+    "friction": .75,
+    "frictionThreshold": 5,
+    "velocityFriction": .33,
+  },
   "aria": true
 };
 
