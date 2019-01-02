@@ -40,7 +40,7 @@ gulp.task('less:docs:watch', function (done) {
 
 gulp.task('less', function () {
   const version = JSON.parse(fs.readFileSync('package.json')).version;
-  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2018 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
+  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
   return gulp.src(['dist/styles/*.less', '!dist/styles/_*.less'])
     .pipe(replace(/\/\*\![^\*]+\*\//, banner))
     .pipe(sourcemaps.init({loadMaps: true}))
@@ -62,7 +62,7 @@ gulp.task('js:docs', function () {
     debug: true
   });
   const version = JSON.parse(fs.readFileSync('package.json')).version;
-  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2018 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
+  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
   return b.bundle()
     .pipe(source('theme.min.js'))
     .pipe(replace(/\/\*\![^\*]+\*\//, banner))
@@ -88,7 +88,7 @@ gulp.task('js', function () {
     debug: true
   });
   const version = JSON.parse(fs.readFileSync('package.json')).version;
-  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2018 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
+  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
   return b.bundle()
     .pipe(source('xtend.js'))
     .pipe(replace(/\/\*\![^\*]+\*\//, banner))
