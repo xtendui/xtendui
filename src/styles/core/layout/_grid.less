@@ -43,6 +43,24 @@
   }
 }
 
+// col--custom
+
+.col--custom(@val, @breakpoint:none) when (@breakpoint = none) {
+  flex-shrink: 0;
+  max-width: @val;
+  width: @val;
+}
+
+.col--custom(@val, @breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    flex-shrink: 0;
+    max-width: @val;
+    width: @val;
+  }
+}
+
+
 // grid
 
 .col(@number, @breakpoint:none) when (@breakpoint = none) {

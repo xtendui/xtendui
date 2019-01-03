@@ -464,7 +464,7 @@ class Slider extends Core {
     }
     if (options.contain) {
       let min = 0;
-      let max = -dragger.offsetWidth + slideWidthReal;
+      let max = - dragger.offsetWidth - slideWidthReal;
       pos = pos > min ? min : pos;
       pos = pos < max ? max : pos;
     }
@@ -502,8 +502,7 @@ Slider.defaults = {
   "instant": true,
   "initial": true,
   "loop": true,
-  //"autoGroup": true,
-  "autoGroup": {"available": 0.8},
+  "autoGroup": true,
   "contain": false,
   "align": "center",
   "pagination": ":scope > .slider_pagination",

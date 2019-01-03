@@ -471,12 +471,12 @@
     .generate-grid(@breakpoint; (@i + 1));
     & when (@breakpoint = none) {
       .col--@{i} {
-        .col(@i);
+        .col(@i) !important;
       }
     }
     & when not (@breakpoint = none) {
       .col--@{i}-@{breakpoint} {
-        .col(@i);
+        .col(@i) !important;
       }
     }
   }

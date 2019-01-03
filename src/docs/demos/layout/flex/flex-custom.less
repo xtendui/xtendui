@@ -1,13 +1,9 @@
 @import (reference) "../../../../../dist/styles/xtend.less";
 
-.custom-width {
-  width: 100px;
-  max-width: 100px;
+.custom-width-percent {
+  .col--custom(20%, sm);
 }
 
-.custom-width-responsive {
-  @media @min-sm and @max-md {
-    width: 100px;
-    max-width: 100px;
-  }
+.custom-width-px {
+  .col--custom(100px);
 }

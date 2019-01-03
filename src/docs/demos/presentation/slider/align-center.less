@@ -13,6 +13,9 @@
 .slide {
   .col(6);
   .col(4, sm);
+  &:nth-child(1) {
+    .col--custom(80%);
+  }
   // animations
   > * {
     .transition-default.out();

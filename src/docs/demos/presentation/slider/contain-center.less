@@ -11,8 +11,11 @@
 }
 
 .slide {
-  .col(6);
+  .col(12);
   .col(4, sm);
+  &:nth-child(1) {
+    .col--custom(100%);
+  }
   // animations
   > * {
     .transition-default.out();

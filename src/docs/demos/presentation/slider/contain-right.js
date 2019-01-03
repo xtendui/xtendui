@@ -9,6 +9,7 @@ function sliderInit(main, index) {
 
   let slider = new Xt.Slider(main, {
     "align": "right",
+    "autoGroup": {"available": 0.8},
     "contain": true
   });
 
