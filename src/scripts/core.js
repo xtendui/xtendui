@@ -45,7 +45,7 @@ class Core {
       "onBlock": false,
       "offBlock": false,
       "auto": false,
-      "autoChange": false,
+      "eventAutoChange": false,
       "autoAlways": false,
       "autoInverse": false,
       "loop": true,
@@ -310,13 +310,13 @@ class Core {
     }
     // auto
     if (options.auto) {
-      self.autoStart();
+      self.eventAutoStart();
       // focus auto
-      window.removeEventListener('focus', self.autoStart.bind(self, false));
-      window.addEventListener('focus', self.autoStart.bind(self, false));
+      window.removeEventListener('focus', self.eventAutoStart.bind(self, false));
+      window.addEventListener('focus', self.eventAutoStart.bind(self, false));
       // blur auto
-      window.removeEventListener('blur', self.autoStop.bind(self, false));
-      window.addEventListener('blur', self.autoStop.bind(self, false));
+      window.removeEventListener('blur', self.eventAutoStop.bind(self, false));
+      window.addEventListener('blur', self.eventAutoStop.bind(self, false));
       // autoPause
       for (let el of self.object.querySelectorAll(options.autoPause)) {
         // pause
@@ -332,6 +332,10 @@ class Core {
       }
     }
   }
+
+  //////////////////////
+  // handlers
+  //////////////////////
 
   /**
    * element on handler
@@ -366,10 +370,10 @@ class Core {
         self.eventOn(element, false, e);
       }
       // auto
-      if (options.autoChange) {
-        self.autoChange();
+      if (options.eventAutoChange) {
+        self.eventAutoChange();
       } else if (options.auto) {
-        self.autoStart();
+        self.eventAutoStart();
       }
     }
   }
@@ -466,6 +470,34 @@ class Core {
   }
 
   /**
+   * auto pause on handler
+   * @param {Node|HTMLElement|EventTarget|Window} element
+   * @param {Event} e
+   */
+  eventAutoPauseOnHandler(element, e) {
+    let self = this;
+    if (!e.detail || !e.detail.skip) {
+      self.eventAutoStop();
+    }
+  }
+
+  /**
+   * auto pause off handler
+   * @param {Node|HTMLElement|EventTarget|Window} element
+   * @param {Event} e
+   */
+  eventAutoPauseOffHandler(element, e) {
+    let self = this;
+    if (!e.detail || !e.detail.skip) {
+      self.eventAutoStart();
+    }
+  }
+
+  //////////////////////
+  // events utils
+  //////////////////////
+
+  /**
    * activate next element
    * @param {Boolean} force
    */
@@ -525,85 +557,6 @@ class Core {
     self.eventOn(current, force);
     return current;
   }
-
-  /**
-   * auto pause on handler
-   * @param {Node|HTMLElement|EventTarget|Window} element
-   * @param {Event} e
-   */
-  eventAutoPauseOnHandler(element, e) {
-    let self = this;
-    if (!e.detail || !e.detail.skip) {
-      self.autoStop();
-    }
-  }
-
-  /**
-   * auto pause off handler
-   * @param {Node|HTMLElement|EventTarget|Window} element
-   * @param {Event} e
-   */
-  eventAutoPauseOffHandler(element, e) {
-    let self = this;
-    if (!e.detail || !e.detail.skip) {
-      self.autoStart();
-    }
-  }
-
-  /**
-   * set auto change
-   * @param {Boolean} instant
-   */
-  autoStart(instant = false) {
-    let self = this;
-    let options = self.options;
-    // auto
-    self.autoStop();
-    let time = !instant ? options.auto : 0;
-    self.object.dataset.xtAutoStartInterval = setInterval(function () {
-      if (options.autoAlways || self.object.offsetParent) { // offsetParent for checking if :visible
-        if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
-          if (options.autoInverse) {
-            self.goToPrev();
-          } else {
-            self.goToNext();
-          }
-        }
-      }
-    }, time).toString();
-  }
-
-  /**
-   * set autoChange change
-   * @param {Boolean} instant
-   */
-  autoChange(instant = false) {
-    let self = this;
-    let options = self.options;
-    // autoChange
-    self.autoStop();
-    let time = !instant ? options.autoChange : 0;
-    if (time !== 'stop') {
-      self.object.dataset.xtAutoChangeTimeout = setTimeout(function () {
-        self.autoStart(true);
-        self.autoStart();
-      }, time).toString();
-    }
-  }
-
-  /**
-   * stop auto change
-   */
-  autoStop() {
-    let self = this;
-    // autoStop
-    clearInterval(self.object.dataset.xtAutoStartInterval);
-    clearTimeout(self.object.dataset.xtAutoChangeTimeout);
-  }
-
-  //////////////////////
-  // events utils
-  //////////////////////
 
   /**
    * choose which elements to activate/deactivate (based on xtend mode and containers)
@@ -995,6 +948,57 @@ class Core {
         self.queueOff(type, 0, true);
       }
     }
+  }
+
+  /**
+   * set auto change
+   * @param {Boolean} instant
+   */
+  eventAutoStart(instant = false) {
+    let self = this;
+    let options = self.options;
+    // auto
+    self.eventAutoStop();
+    let time = !instant ? options.auto : 0;
+    self.object.dataset.xtAutoStartInterval = setInterval(function () {
+      if (options.autoAlways || self.object.offsetParent) { // offsetParent for checking if :visible
+        if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
+          if (options.autoInverse) {
+            self.goToPrev();
+          } else {
+            self.goToNext();
+          }
+        }
+      }
+    }, time).toString();
+  }
+
+  /**
+   * set eventAutoChange change
+   * @param {Boolean} instant
+   */
+  eventAutoChange(instant = false) {
+    let self = this;
+    let options = self.options;
+    // eventAutoChange
+    self.eventAutoStop();
+    let time = !instant ? options.eventAutoChange : 0;
+    if (time !== 'stop') {
+      self.object.dataset.xtAutoChangeTimeout = setTimeout(function () {
+        self.eventAutoStart(true);
+        self.eventAutoStart();
+      }, time).toString();
+    }
+  }
+
+  /**
+   * stop auto change
+   */
+  eventAutoStop() {
+    let self = this;
+    // eventAutoStop
+    clearInterval(self.object.dataset.xtAutoStartInterval);
+    clearTimeout(self.object.dataset.xtAutoChangeTimeout);
   }
 
   //////////////////////

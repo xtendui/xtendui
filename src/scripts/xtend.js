@@ -39,7 +39,7 @@ Xt.Ajax = Ajax;
 
 Xt.init = [];
 Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
-Xt.resizeEventDelay = 100;
+Xt.resizeDelay = 100;
 
 //////////////////////
 // init
@@ -569,7 +569,7 @@ Xt.resizeEvent = function (e, element, func) {
       element.dataset.xtSliderResizeTimeout = setTimeout( function() {
         // func
         func();
-      }, Xt.resizeEventDelay).toString();
+      }, Xt.resizeDelay).toString();
     }
     element.dataset.windowWidth = windowWidth.toString();
     element.dataset.windowHeight = windowHeight.toString();

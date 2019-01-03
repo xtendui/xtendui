@@ -149,15 +149,19 @@ class Slider extends Core {
       // slide on
       for (let slide of self.targets) {
         let slideOnHandler = Xt.dataStorage.put(slide, 'slideOnHandler' + self.namespace,
-          self.slideOn.bind(self).bind(self, dragger));
+          self.eventSlideOnHandler.bind(self).bind(self, dragger));
         slide.removeEventListener('on.xt', slideOnHandler);
         slide.addEventListener('on.xt', slideOnHandler);
       }
     }
   }
 
+  //////////////////////
+  // init
+  //////////////////////
+
   /**
-   * element slider resize
+   * slider resize handler
    * @param {Event} e
    */
   eventSliderResizeHandler(e) {
@@ -168,6 +172,17 @@ class Slider extends Core {
         self.init();
       });
     }
+  }
+
+  /**
+   * slide on handler
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Event} e
+   */
+  eventSlideOnHandler(dragger, e) {
+    let self = this;
+    // handler
+    self.eventSlideOn(dragger, e);
   }
 
   /**
@@ -192,7 +207,7 @@ class Slider extends Core {
           self.eventDragstart(dragger, e);
         }
         // auto
-        self.autoStop();
+        self.eventAutoStop();
         // event off
         let dragendHandler = Xt.dataStorage.put(dragger, 'dragendHandler' + self.namespace,
           self.eventDragendHandler.bind(self).bind(self, dragger));
@@ -223,10 +238,10 @@ class Slider extends Core {
       self.eventDragend(dragger, e);
     }
     // auto
-    if (options.autoChange) {
-      self.autoChange();
+    if (options.eventAutoChange) {
+      self.eventAutoChange();
     } else if (options.auto) {
-      self.autoStart();
+      self.eventAutoStart();
     }
     // event off
     let dragendHandler = Xt.dataStorage.get(dragger, 'dragendHandler' + self.namespace);
@@ -416,11 +431,11 @@ class Slider extends Core {
   }
 
   /**
-   * targets on logic
+   * slide on
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  slideOn(dragger, e) {
+  eventSlideOn(dragger, e) {
     let self = this;
     let options = self.options;
     // vars
