@@ -41,19 +41,16 @@ class Slider extends Core {
     }
     // automatic group
     if (options.autoGroup) {
+      // width
+      let draggerWidth = self.dragger ? self.dragger.offsetWidth : self.object.offsetWidth;
+      if (options.autoGroup.available) {
+        draggerWidth *= options.autoGroup.available;
+      }
       // generate groups
       self.autoGroup = [];
-      let draggerWidth = self.dragger ? self.dragger.offsetWidth : self.object.offsetWidth;
+      self.autoGroup.push([]);
       let currentCount = draggerWidth;
-      let create = true;
       for (let [i, target] of self.targets.entries()) {
-        // create
-        if (create) {
-          self.autoGroup.push([]);
-          create = false;
-        }
-        // currentGroup
-        let currentGroup = self.autoGroup.length - 1;
         // calculate
         let targetWidth = target.offsetWidth;
         if (targetWidth === 0) { // when display none
@@ -65,20 +62,17 @@ class Slider extends Core {
           container.removeChild(clone);
         }
         currentCount -= targetWidth;
-        // assign group
-        // @TODO REFACTOR
-        if (currentCount > 0) {
-          self.autoGroup[currentGroup].push(target);
-          target.setAttribute('data-xt-group', self.namespace + '-' + currentGroup);
-        } else {
-          create = true;
+        // overflow
+        let currentGroup = self.autoGroup.length - 1;
+        if (currentCount < 0 && self.autoGroup[currentGroup].length) {
+          self.autoGroup.push([]);
+          currentGroup = self.autoGroup.length - 1;
           currentCount = draggerWidth;
-          if (targetWidth <= draggerWidth) {
-            currentCount -= targetWidth;
-            self.autoGroup[currentGroup].push(target);
-            target.setAttribute('data-xt-group', self.namespace + '-' + currentGroup);
-          }
+          currentCount -= targetWidth;
         }
+        // assign group
+        self.autoGroup[currentGroup].push(target);
+        target.setAttribute('data-xt-group', self.namespace + '-' + currentGroup);
       }
     }
     // generate elements
@@ -422,13 +416,13 @@ class Slider extends Core {
     if (options.align === 'center') {
       pos = dragger.offsetWidth / 2 - slideLeft - slideWidth / 2;
     } else if (options.align === 'left') {
-      pos = - slideLeft;
+      pos = -slideLeft;
     } else if (options.align === 'right') {
-      pos = - slideLeft + dragger.offsetWidth - slideWidth;
+      pos = -slideLeft + dragger.offsetWidth - slideWidth;
     }
     if (options.contain) {
       let min = 0;
-      let max = - dragger.offsetWidth + slideWidthReal;
+      let max = -dragger.offsetWidth + slideWidthReal;
       pos = pos > min ? min : pos;
       pos = pos < max ? max : pos;
     }
@@ -465,9 +459,11 @@ Slider.defaults = {
   "max": 1,
   "instant": true,
   "initial": true,
-  "contain": true,
+  "loop": true,
+  //"autoGroup": true,
+  "autoGroup": {"available": 0.8},
+  "contain": false,
   "align": "center",
-  "autoGroup": true,
   "pagination": ":scope > .slider_pagination",
   "drag": {
     "dragger": ":scope > .slides > .slides_inner",

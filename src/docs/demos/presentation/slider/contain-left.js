@@ -9,7 +9,7 @@ function sliderInit(main, index) {
 
   let slider = new Xt.Slider(main, {
     "align": "left",
-    "contain": false
+    "contain": true
   });
 
   let dragger = slider.dragger;

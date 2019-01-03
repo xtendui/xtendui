@@ -74,6 +74,27 @@ description: Lorem Ipsum
   </div>
 </div>
 
+<h3>autoGroup</h3>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/autogroup-available.html"
+       data-name="available">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>"autoGroup": {"available": Number}</code> a number from 0 to 1 to set the available width factor for autoGroup
+      </div>
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/autogroup-disable.html"
+       data-name="disable">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>"autoGroup": false</code> to disable automatic grouping of slides
+      </div>
+    </div>
+  </div>
+</div>
+
 <h3>Auto</h3>
 
 <div class="demo">
@@ -89,7 +110,20 @@ description: Lorem Ipsum
   </div>
 </div>
 
-<h3>Alignment</h3>
+<h3>Loop</h3>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/loop.html"
+       data-name="loop">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>"loop": false</code> to disable loop (also on auto)
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Align</h3>
 
 <div class="demo">
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/align-center.html"
@@ -120,14 +154,14 @@ description: Lorem Ipsum
 
 <h3>Contain</h3>
 
-<p>Contain is by default <code>true</code>, set to <code>false</code> to not contain the slider.</p>
+<p>Use <code>"contain": true</code> to contain the slides.</p>
 
 <div class="demo">
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/contain-center.html"
        data-name="center">
     <div class="demo-text">
       <div class="alert_content">
-        <code>"contain": false</code> <code>"align": "center"</code>
+        <code>"contain": true</code> <code>"align": "center"</code>
       </div>
     </div>
   </div>
@@ -135,7 +169,7 @@ description: Lorem Ipsum
        data-name="left">
     <div class="demo-text">
       <div class="alert_content">
-        <code>"contain": false</code> <code>"align": "left"</code>
+        <code>"contain": true</code> <code>"align": "left"</code>
       </div>
     </div>
   </div>
@@ -143,20 +177,7 @@ description: Lorem Ipsum
        data-name="right">
     <div class="demo-text">
       <div class="alert_content">
-        <code>"contain": false</code> <code>"align": "right"</code>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Loop</h3>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/loop.html"
-       data-name="loop">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>"loop": false</code> to disable loop (also on automatic)
+        <code>"contain": true</code> <code>"align": "right"</code>
       </div>
     </div>
   </div>

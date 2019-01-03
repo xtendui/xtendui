@@ -10,7 +10,7 @@ function sliderInit(main, index) {
   let slider = new Xt.Slider(main, {
     "auto": 2000,
     "autoChange": 6000,
-    "autoPause": ".slide-control",
+    "autoPause": ".slide, :scope > .slider_pagination",
     "autoInverse": true
   });
 

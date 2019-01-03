@@ -8,8 +8,8 @@ function sliderInit(main, index) {
   // slider
 
   let slider = new Xt.Slider(main, {
-    "align": "center",
-    "contain": true
+    "auto": 6000,
+    "autoGroup": false
   });
 
   let dragger = slider.dragger;
