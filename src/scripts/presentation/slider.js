@@ -458,13 +458,17 @@ class Slider extends Core {
     if (options.align === 'center') {
       pos = dragger.offsetWidth / 2 - slideLeft - slideWidth / 2;
     } else if (options.align === 'left') {
-      pos = -slideLeft;
+      pos = - slideLeft;
+      pos = pos > 0 ? 0 : pos; // @FIX initial value sometimes is wrong
     } else if (options.align === 'right') {
-      pos = -slideLeft + dragger.offsetWidth - slideWidth;
+      pos = - slideLeft + dragger.offsetWidth - slideWidth;
     }
     if (options.contain) {
       let min = 0;
-      let max = - dragger.offsetWidth - slideWidthReal;
+      let slideLast = self.targets[self.targets.length - 1];
+      let slideLastLeft = slideLast.offsetLeft;
+      let slideLastWidth = slideLast.offsetWidth;
+      let max = - slideLastLeft + dragger.offsetWidth - slideLastWidth;
       pos = pos > min ? min : pos;
       pos = pos < max ? max : pos;
     }
