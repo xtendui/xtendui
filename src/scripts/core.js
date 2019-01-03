@@ -834,6 +834,11 @@ class Core {
     let options = self.options;
     // toggle
     if (force || self.checkOff(element)) {
+      // if currents === min
+      let currents = self.getCurrents();
+      if (currents.length === options.min) {
+        return false;
+      }
       // eDetail
       self.eDetailSet(e);
       // off

@@ -279,7 +279,7 @@ const populateInline = function (item, id) {
   new Xt.Toggle(item, {
     "elements": ".demo-code-tabs-left .btn",
     "targets": ".demo-code-body-item",
-    "min": 1
+    "min": 1,
   });
 };
 
