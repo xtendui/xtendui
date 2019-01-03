@@ -21,51 +21,62 @@ class Core {
   constructor(object, jsOptions = {}) {
     let self = this;
     // constructor
-    self.object = object;
-    if (self.object && !self.object.dataset.xtCoreDone) {
-      self.object.dataset.xtCoreDone = 'true';
-      // defaults
-      self.defaults = {
-        "onBlock": false,
-        "offBlock": false,
-        "auto": false,
-        "autoChange": false,
-        "autoAlways": false,
-        "autoInverse": false,
-        "loop": true,
-        "delayOn": false,
-        "delayOff": false,
-        "durationOn": false,
-        "durationOff": false
-      };
-      self.defaults = Xt.merge([self.defaults, self.constructor.defaults]);
-      // js options
-      self.options = Xt.merge([self.defaults, jsOptions]);
-      // markup options
-      let markupOptions = self.object.getAttribute('data-xt-' + self.constructor.componentName);
-      self.options = Xt.merge([self.options, markupOptions ? JSON.parse(markupOptions) : {}]);
-      // classes
-      if (self.options.class) {
-        self.options.classes = [...self.options.class.split(' ')];
-      }
-      // vars
-      self.elements = [];
-      self.targets = [];
-      self.detail = {};
-      self.detail.queueOn = [];
-      self.detail.queueOff = [];
+    if (object && !object.dataset.xtCoreDone) {
+      object.dataset.xtCoreDone = 'true';
       // init
-      self.initSetup();
-      self.initScope();
-      self.initCurrents();
-      self.initEvents();
-      self.initAria();
+      self.object = object;
+      self.jsOptions = jsOptions;
+      self.init();
     }
   }
 
   //////////////////////
   // init
   //////////////////////
+
+  /**
+   * setup
+   */
+  init() {
+    let self = this;
+    let jsOptions = self.jsOptions;
+    // defaults
+    self.defaults = {
+      "onBlock": false,
+      "offBlock": false,
+      "auto": false,
+      "autoChange": false,
+      "autoAlways": false,
+      "autoInverse": false,
+      "loop": true,
+      "delayOn": false,
+      "delayOff": false,
+      "durationOn": false,
+      "durationOff": false
+    };
+    self.defaults = Xt.merge([self.defaults, self.constructor.defaults]);
+    // js options
+    self.options = Xt.merge([self.defaults, jsOptions]);
+    // markup options
+    let markupOptions = self.object.getAttribute('data-xt-' + self.constructor.componentName);
+    self.options = Xt.merge([self.options, markupOptions ? JSON.parse(markupOptions) : {}]);
+    // classes
+    if (self.options.class) {
+      self.options.classes = [...self.options.class.split(' ')];
+    }
+    // vars
+    self.elements = [];
+    self.targets = [];
+    self.detail = {};
+    self.detail.queueOn = [];
+    self.detail.queueOff = [];
+    // init
+    self.initSetup();
+    self.initScope();
+    self.initCurrents();
+    self.initEvents();
+    self.initAria();
+  }
 
   /**
    * setup namespace, container and options
@@ -573,7 +584,7 @@ class Core {
     self.autoStop();
     let time = !instant ? options.autoChange : 0;
     if (time !== 'stop') {
-      self.object.dataset.xtautoChangeTimeout = setTimeout(function () {
+      self.object.dataset.xtAutoChangeTimeout = setTimeout(function () {
         self.autoStart(true);
         self.autoStart();
       }, time).toString();
@@ -587,7 +598,7 @@ class Core {
     let self = this;
     // autoStop
     clearInterval(self.object.dataset.xtAutoStartInterval);
-    clearTimeout(self.object.dataset.xtautoChangeTimeout);
+    clearTimeout(self.object.dataset.xtAutoChangeTimeout);
   }
 
   //////////////////////

@@ -117,7 +117,9 @@ class Sticky extends Core {
     let self = this;
     // handler
     if (!e.detail || !e.detail.skip) {
-      self.eventScroll(self.object, e);
+      Xt.resizeEvent(e, self.object, function() {
+        self.eventScroll(self.object, e);
+      });
     }
   }
 

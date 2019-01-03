@@ -79,33 +79,40 @@ class Slider extends Core {
     if (options.pagination) {
       let pags = self.object.querySelectorAll(options.pagination);
       if (pags.length) {
+        // remove old
+        self.pags = self.pags ? self.pags : [];
+        for (let pags of self.pags) {
+          for (let pag of pags) {
+            let container = pag.parentNode;
+            container.removeChild(pag);
+          }
+        }
+        // add new
+        self.pags = [];
         for (let pag of pags) {
-          let clones = pag.querySelectorAll('.slider_pagination_item');
-          if (clones.length) {
-            for (let clone of clones) {
-              let items = [];
-              let container = clone.parentNode;
-              // @TODO REFACTOR
-              if (options.autoGroup) {
-                for (let [i, group] of self.autoGroup.entries()) {
-                  items[i] = clone.cloneNode(true);
-                  let item = items[i];
-                  let html = item.innerHTML.replace(new RegExp('{{num}}', 'ig'), i.toString());
-                  item.innerHTML = html;
-                  item.classList.remove('slider_pagination_item');
-                  item.setAttribute('data-xt-group', self.namespace + '-' + i);
-                  container.append(item);
-                }
-              } else {
-                for (let [i, target] of self.targets.entries()) {
-                  items[i] = clone.cloneNode(true);
-                  let item = items[i];
-                  let html = item.innerHTML.replace(new RegExp('{{num}}', 'ig'), i.toString());
-                  item.innerHTML = html;
-                  item.classList.remove('slider_pagination_item');
-                  container.append(item);
-                }
-              }
+          self.pags.push([]);
+          let currentPags = self.pags[self.pags.length - 1];
+          let clone = pag.querySelectorAll('.slider_pagination_item')[0];
+          let container = clone.parentNode;
+          // @TODO REFACTOR
+          if (options.autoGroup) {
+            for (let [i, group] of self.autoGroup.entries()) {
+              currentPags[i] = clone.cloneNode(true);
+              let item = currentPags[i];
+              let html = item.innerHTML.replace(new RegExp('{{num}}', 'ig'), i.toString());
+              item.innerHTML = html;
+              item.classList.remove('slider_pagination_item');
+              item.setAttribute('data-xt-group', self.namespace + '-' + i);
+              container.append(item);
+            }
+          } else {
+            for (let [i, target] of self.targets.entries()) {
+              currentPags[i] = clone.cloneNode(true);
+              let item = currentPags[i];
+              let html = item.innerHTML.replace(new RegExp('{{num}}', 'ig'), i.toString());
+              item.innerHTML = html;
+              item.classList.remove('slider_pagination_item');
+              container.append(item);
             }
           }
         }
@@ -121,6 +128,12 @@ class Slider extends Core {
   initEvents() {
     super.initEvents();
     let self = this;
+    // resize
+    let sliderResizeHandler = Xt.dataStorage.put(window, 'sliderResizeHandler' + self.namespace,
+      self.eventSliderResizeHandler.bind(self));
+    window.removeEventListener('resize', sliderResizeHandler);
+    window.addEventListener('resize', sliderResizeHandler);
+    // dragger
     let dragger = self.dragger;
     if (dragger) {
       // grab
@@ -140,6 +153,20 @@ class Slider extends Core {
         slide.removeEventListener('on.xt', slideOnHandler);
         slide.addEventListener('on.xt', slideOnHandler);
       }
+    }
+  }
+
+  /**
+   * element slider resize
+   * @param {Event} e
+   */
+  eventSliderResizeHandler(e) {
+    let self = this;
+    // handler
+    if (!e.detail || !e.detail.skip) {
+      Xt.resizeEvent(e, self.object, function() {
+        self.init();
+      });
     }
   }
 

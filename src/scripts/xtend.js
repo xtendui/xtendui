@@ -34,11 +34,12 @@ Xt.Fade = Fade;
 Xt.Ajax = Ajax;
 
 //////////////////////
-// properties
+// vars
 //////////////////////
 
-Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
 Xt.init = [];
+Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
+Xt.resizeEventDelay = 100;
 
 //////////////////////
 // init
@@ -549,6 +550,33 @@ Xt.checkNested = function (element, targets) {
     }
   }
   return result;
+};
+
+/**
+ * Fix resize event multiple calls and adds delay
+ * @param {Event} e Event
+ * @param {Node|HTMLElement|EventTarget|Window} element Element to save timeout
+ * @param {Function} func Function to execute
+ */
+Xt.resizeEvent = function (e, element, func) {
+  if (e.type === 'resize') {
+    // multiple calls
+    let windowWidth = window.innerWidth;
+    let windowHeight = window.innerHeight;
+    if (windowWidth !== parseFloat(element.dataset.windowWidth) || windowHeight !== parseFloat(element.dataset.windowHeight)) {
+      // delay
+      clearTimeout(parseFloat(element.dataset.xtSliderResizeTimeout));
+      element.dataset.xtSliderResizeTimeout = setTimeout( function() {
+        // func
+        func();
+      }, Xt.resizeEventDelay).toString();
+    }
+    element.dataset.windowWidth = windowWidth.toString();
+    element.dataset.windowHeight = windowHeight.toString();
+  } else {
+    // func
+    func();
+  }
 };
 
 /**

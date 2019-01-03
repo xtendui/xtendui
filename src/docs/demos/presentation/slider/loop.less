@@ -11,14 +11,19 @@
 }
 
 .slide {
-  .col(4);
+  .col(6);
+  .col(4, sm);
   // animations
-  .transition-default.out();
-  transition-duration: @time--big;
-  opacity: .5;
-  &.active {
-    .transition-default.active();
+  > * {
+    .transition-default.out();
     transition-duration: @time--big;
-    opacity: 1;
+    opacity: .5;
+  }
+  &.active {
+    > * {
+      .transition-default.active();
+      transition-duration: @time--big;
+      opacity: 1;
+    }
   }
 }
