@@ -1,101 +1,4 @@
 //////////////////////
-// toggle
-//////////////////////
-
-.toggle--block {
-  .display(none) !important;
-  &.active, &.out {
-    .display(block) !important;
-  }
-}
-
-.toggle--flex {
-  .display(none) !important;
-  &.active, &.out {
-    .display(flex) !important;
-  }
-}
-
-.toggle--inline-flex {
-  .display(none) !important;
-  &.active, &.out {
-    .display(inline-flex) !important;
-  }
-}
-
-.toggle--inline {
-  .display(none) !important;
-  &.active, &.out {
-    .display(inline) !important;
-  }
-}
-
-.toggle--inline-block {
-  .display(none) !important;
-  &.active, &.out {
-    .display(inline-block) !important;
-  }
-}
-
-.toggle--none {
-  &.active, &.out {
-    .display(none) !important;
-  }
-}
-
-.toggle--visible {
-  visibility: hidden !important;
-  &.active, &.out {
-    visibility: visible !important;
-  }
-}
-
-.toggle--hidden {
-  &.active, &.out {
-    visibility: hidden !important;
-  }
-}
-//////////////////////
-// javascript
-//////////////////////
-
-// .xt-calculating
-
-.xt-calculating {
-  position: absolute !important;
-  visibility: hidden !important;
-  .anim-none() !important;
-  opacity: 0 !important;
-}
-
-// .xt-calculating-block
-
-.xt-calculating-block {
-  display: block !important;
-  visibility: hidden !important;
-  .anim-none() !important;
-  opacity: 0 !important;
-}
-
-// .xt-container
-
-.xt-container {
-  position: relative;
-  width: 100%;
-}
-
-// .xt-scrollbar
-
-html.xt-scrollbar {
-  body {
-    overflow-y: hidden;
-  }
-  .overlay_outer {
-    overflow-y: scroll;
-  }
-}
-
-//////////////////////
 // various
 //////////////////////
 
@@ -163,6 +66,66 @@ html.xt-scrollbar {
   height: 1px;
   border: 0;
   clip: rect(0, 0, 0, 0);
+}
+
+//////////////////////
+// utils
+//////////////////////
+
+// toggle
+
+.toggle--block() {
+  .display(none);
+  &.active, &.out {
+    .display(block);
+  }
+}
+
+.toggle--flex() {
+  .display(none);
+  &.active, &.out {
+    .display(flex);
+  }
+}
+
+.toggle--inline-flex() {
+  .display(none);
+  &.active, &.out {
+    .display(inline-flex);
+  }
+}
+
+.toggle--inline() {
+  .display(none);
+  &.active, &.out {
+    .display(inline);
+  }
+}
+
+.toggle--inline-block() {
+  .display(none);
+  &.active, &.out {
+    .display(inline-block);
+  }
+}
+
+.toggle--none() {
+  &.active, &.out {
+    .display(none);
+  }
+}
+
+.toggle--visible() {
+  visibility: hidden;
+  &.active, &.out {
+    visibility: visible;
+  }
+}
+
+.toggle--hidden() {
+  &.active, &.out {
+    visibility: hidden;
+  }
 }
 
 // animation

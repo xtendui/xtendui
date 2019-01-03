@@ -9,6 +9,31 @@
   .generate-utils();
   .generate-utils(@breakpoint:none) {
     & when (@breakpoint = none) {
+      // toggle
+      .toggle--block {
+        .toggle--block() !important;
+      }
+      .toggle--flex {
+        .toggle--flex() !important;
+      }
+      .toggle--inline-flex {
+        .toggle--inline-flex() !important;
+      }
+      .toggle--inline {
+        .toggle--inline() !important;
+      }
+      .toggle--inline-block {
+        .toggle--inline-block() !important;
+      }
+      .toggle--none {
+        .toggle--none() !important;
+      }
+      .toggle--visible {
+        .toggle--visible() !important;
+      }
+      .toggle--hidden {
+        .toggle--hidden() !important;
+      }
       // animation
       .transition--none {
         .transition--none() !important;
