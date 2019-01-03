@@ -109,6 +109,10 @@ class Sticky extends Core {
     self.object.addEventListener('hide.xt.sticky', autoCloseHandler);
   }
 
+  //////////////////////
+  // handler
+  //////////////////////
+
   /**
    * element on handler
    * @param {Event} e
@@ -124,7 +128,7 @@ class Sticky extends Core {
   }
 
   //////////////////////
-  // events
+  // event
   //////////////////////
 
   /**
@@ -137,7 +141,7 @@ class Sticky extends Core {
     let options = self.options;
     // eDetail
     self.eDetailSet(e);
-    // vars
+    // var
     let anim = true;
     let hide = false;
     let scrollInverse = false;
@@ -335,6 +339,10 @@ class Sticky extends Core {
     }
     return val;
   }
+
+  //////////////////////
+  // event util
+  //////////////////////
 
   /**
    * get height of option

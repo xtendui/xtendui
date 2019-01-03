@@ -55,6 +55,10 @@ class Fade extends Core {
     }
   }
 
+  //////////////////////
+  // handler
+  //////////////////////
+
   /**
    * element on handler
    * @param {Event} e
@@ -70,7 +74,7 @@ class Fade extends Core {
   }
 
   //////////////////////
-  // events
+  // event
   //////////////////////
 
   /**
@@ -79,7 +83,7 @@ class Fade extends Core {
   eventScroll() {
     let self = this;
     let options = self.options;
-    // vars
+    // var
     let current = 0;
     let currents = [];
     let scrollInverse = false;
@@ -94,7 +98,7 @@ class Fade extends Core {
     // core
     for (let el of self.elements) {
       if (el.offsetParent && !el.classList.contains('fade--block')) {
-        // vars
+        // var
         let rectElTop = el.offsetParent.getBoundingClientRect().top + el.offsetTop; // we use parents to not include transforms animations
         let heightEl = parseFloat(getComputedStyle(el).height);
         // scroll

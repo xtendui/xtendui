@@ -57,6 +57,10 @@ class Ajax extends Core {
     window.onpopstate = self.eventPopstateHandler.bind(self);
   }
 
+  //////////////////////
+  // handler
+  //////////////////////
+
   /**
    * element popstate handler
    * @param {Event} e
@@ -72,7 +76,7 @@ class Ajax extends Core {
   }
 
   //////////////////////
-  // queue utils
+  // queue util
   //////////////////////
 
   /**
@@ -99,7 +103,7 @@ class Ajax extends Core {
   }
 
   //////////////////////
-  // ajax
+  // special
   //////////////////////
 
   /**

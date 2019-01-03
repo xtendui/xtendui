@@ -157,7 +157,7 @@ class Slider extends Core {
   }
 
   //////////////////////
-  // init
+  // handler
   //////////////////////
 
   /**
@@ -311,7 +311,7 @@ class Slider extends Core {
   }
 
   //////////////////////
-  // logic
+  // event
   //////////////////////
 
   /**
@@ -438,7 +438,7 @@ class Slider extends Core {
   eventSlideOn(dragger, e) {
     let self = this;
     let options = self.options;
-    // vars
+    // var
     let slide = e.target;
     let slideLeft = slide.offsetLeft;
     let slideWidth = slide.offsetWidth;

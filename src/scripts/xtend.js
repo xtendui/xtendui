@@ -34,7 +34,7 @@ Xt.Fade = Fade;
 Xt.Ajax = Ajax;
 
 //////////////////////
-// vars
+// var
 //////////////////////
 
 Xt.init = [];
@@ -467,7 +467,7 @@ Xt.focusLimit = {
   on: function (el) {
     // @FIX Xt.focus when clicking and not used tab before
     Xt.focus.current = Xt.focus.current ? Xt.focus.current : document.activeElement;
-    // vars
+    // var
     let focusable = Array.from(el.querySelectorAll('a, button, details, input, iframe, select, textarea'));
     focusable = focusable.filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])')); // filter out parent
     let first = focusable[0];

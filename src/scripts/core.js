@@ -64,7 +64,7 @@ class Core {
     if (self.options.class) {
       self.options.classes = [...self.options.class.split(' ')];
     }
-    // vars
+    // var
     self.elements = [];
     self.targets = [];
     self.detail = {};
@@ -261,7 +261,7 @@ class Core {
     let options = self.options;
     // toggle
     options.toggle = options.toggle !== undefined ? options.toggle : !options.off;
-    // events
+    // event
     for (let el of self.elements) {
       // event on
       let onHandler = Xt.dataStorage.put(el, 'onHandler' + self.namespace,
@@ -334,7 +334,7 @@ class Core {
   }
 
   //////////////////////
-  // handlers
+  // handler
   //////////////////////
 
   /**
@@ -494,69 +494,8 @@ class Core {
   }
 
   //////////////////////
-  // events utils
+  // event util
   //////////////////////
-
-  /**
-   * activate next element
-   * @param {Boolean} force
-   */
-  goToNext(force = false) {
-    let self = this;
-    let options = self.options;
-    // goToNext
-    let curentIndex = self.curentIndex !== undefined ? self.curentIndex + 1 : 0;
-    if (curentIndex > self.elements.length - 1) {
-      if (options.loop) {
-        curentIndex = 0;
-      } else if (force) {
-        curentIndex = self.elements.length - 1;
-      } else {
-        return false;
-      }
-    }
-    self.forceNormalDirection = self.curentIndex > curentIndex;
-    let current = self.elements[curentIndex];
-    self.eventOn(current, force);
-    return current;
-  }
-
-  /**
-   * activate prev element
-   * @param {Boolean} force
-   */
-  goToPrev(force = false) {
-    let self = this;
-    let options = self.options;
-    // goToPrev
-    let curentIndex = self.curentIndex !== undefined ? self.curentIndex - 1 : 0;
-    if (curentIndex < 0) {
-      if (options.loop) {
-        curentIndex = self.elements.length - 1;
-      } else if (force) {
-        curentIndex = 0;
-      } else {
-        return false;
-      }
-    }
-    self.forceInverseDirection = self.curentIndex < curentIndex;
-    let current = self.elements[curentIndex];
-    self.eventOn(current, force);
-    return current;
-  }
-
-  /**
-   * activate index element
-   * @param {Number} index
-   * @param {Boolean} force
-   */
-  goToIndex(index, force = false) {
-    let self = this;
-    // goToIndex
-    let current = self.elements[index];
-    self.eventOn(current, force);
-    return current;
-  }
 
   /**
    * choose which elements to activate/deactivate (based on xtend mode and containers)
@@ -814,7 +753,7 @@ class Core {
   }
 
   //////////////////////
-  // events
+  // event
   //////////////////////
 
   /**
@@ -1002,7 +941,7 @@ class Core {
   }
 
   //////////////////////
-  // queue utils
+  // queue util
   //////////////////////
 
   /**
@@ -1476,7 +1415,7 @@ class Core {
   }
 
   //////////////////////
-  // activation specials
+  // special
   //////////////////////
 
   /**
@@ -1759,7 +1698,7 @@ class Core {
     if (options.scrollbar) {
       // checks
       Xt.scrollbar.add(self.namespace);
-      // vars
+      // var
       let width = Xt.scrollbarWidth();
       // scrollbar
       let container = document.documentElement;
@@ -1848,6 +1787,71 @@ class Core {
       width += 'px';
     }
     return width;
+  }
+
+  //////////////////////
+  // goto
+  //////////////////////
+
+  /**
+   * activate next element
+   * @param {Boolean} force
+   */
+  goToNext(force = false) {
+    let self = this;
+    let options = self.options;
+    // goToNext
+    let curentIndex = self.curentIndex !== undefined ? self.curentIndex + 1 : 0;
+    if (curentIndex > self.elements.length - 1) {
+      if (options.loop) {
+        curentIndex = 0;
+      } else if (force) {
+        curentIndex = self.elements.length - 1;
+      } else {
+        return false;
+      }
+    }
+    self.forceNormalDirection = self.curentIndex > curentIndex;
+    let current = self.elements[curentIndex];
+    self.eventOn(current, force);
+    return current;
+  }
+
+  /**
+   * activate prev element
+   * @param {Boolean} force
+   */
+  goToPrev(force = false) {
+    let self = this;
+    let options = self.options;
+    // goToPrev
+    let curentIndex = self.curentIndex !== undefined ? self.curentIndex - 1 : 0;
+    if (curentIndex < 0) {
+      if (options.loop) {
+        curentIndex = self.elements.length - 1;
+      } else if (force) {
+        curentIndex = 0;
+      } else {
+        return false;
+      }
+    }
+    self.forceInverseDirection = self.curentIndex < curentIndex;
+    let current = self.elements[curentIndex];
+    self.eventOn(current, force);
+    return current;
+  }
+
+  /**
+   * activate index element
+   * @param {Number} index
+   * @param {Boolean} force
+   */
+  goToIndex(index, force = false) {
+    let self = this;
+    // goToIndex
+    let current = self.elements[index];
+    self.eventOn(current, force);
+    return current;
   }
 
 }
