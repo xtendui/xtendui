@@ -36,9 +36,7 @@ class Slider extends Core {
     // targets
     self.initScopeTargets();
     // dragger
-    if (options.drag) {
-      self.dragger = self.object.querySelectorAll(options.drag.dragger)[0];
-    }
+    self.dragger = self.object.querySelectorAll(options.dragger)[0];
     // autoHeight
     if (options.autoHeight) {
       self.autoHeight = self.object.querySelectorAll(options.autoHeight)[0];
@@ -132,14 +130,29 @@ class Slider extends Core {
   initEvents() {
     super.initEvents();
     let self = this;
+    let options = self.options;
+    let dragger = self.dragger;
     // resize
     let sliderResizeHandler = Xt.dataStorage.put(window, 'sliderResizeHandler' + self.namespace,
       self.eventSliderResizeHandler.bind(self));
     window.removeEventListener('resize', sliderResizeHandler);
     window.addEventListener('resize', sliderResizeHandler);
+    // slide on
+    for (let slide of self.targets) {
+      let slideOnHandler = Xt.dataStorage.put(slide, 'slideOnHandler' + self.namespace,
+        self.eventSlideOnHandler.bind(self).bind(self, dragger));
+      slide.removeEventListener('on.xt', slideOnHandler);
+      slide.addEventListener('on.xt', slideOnHandler);
+    }
+    // slide off
+    for (let slide of self.targets) {
+      let slideOffHandler = Xt.dataStorage.put(slide, 'slideOffHandler' + self.namespace,
+        self.eventSlideOffHandler.bind(self).bind(self, dragger));
+      slide.removeEventListener('on.xt', slideOffHandler);
+      slide.addEventListener('on.xt', slideOffHandler);
+    }
     // dragger
-    let dragger = self.dragger;
-    if (dragger) {
+    if (options.drag) {
       // grab
       dragger.classList.add('grab');
       // drag on
@@ -149,20 +162,6 @@ class Slider extends Core {
       for (let event of events) {
         dragger.removeEventListener(event, dragstartHandler);
         dragger.addEventListener(event, dragstartHandler);
-      }
-      // slide on
-      for (let slide of self.targets) {
-        let slideOnHandler = Xt.dataStorage.put(slide, 'slideOnHandler' + self.namespace,
-          self.eventSlideOnHandler.bind(self).bind(self, dragger));
-        slide.removeEventListener('on.xt', slideOnHandler);
-        slide.addEventListener('on.xt', slideOnHandler);
-      }
-      // slide off
-      for (let slide of self.targets) {
-        let slideOffHandler = Xt.dataStorage.put(slide, 'slideOffHandler' + self.namespace,
-          self.eventSlideOffHandler.bind(self).bind(self, dragger));
-        slide.removeEventListener('on.xt', slideOffHandler);
-        slide.addEventListener('on.xt', slideOffHandler);
       }
     }
   }
@@ -337,6 +336,97 @@ class Slider extends Core {
   //////////////////////
 
   /**
+   * slide off
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Event} e
+   */
+  eventSlideOff(dragger, e) {
+    let slide = e.target;
+    // group
+    let group = slide.getAttribute('data-xt-group');
+    if (group) {
+      // only one call per group
+      slide.dataset.xtSlideOnDone = 'false';
+    }
+  }
+
+  /**
+   * slide on
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Event} e
+   */
+  eventSlideOn(dragger, e) {
+    let self = this;
+    let options = self.options;
+    // if inital
+    if (e.detail.object.detail.initial) {
+      // stop, don't execute custom on.xt events
+      if (!options.initial) {
+        e.stopImmediatePropagation();
+        return false;
+      }
+      // prevent alignment animation
+      self.dragger.classList.add('anim-none');
+      window.requestAnimationFrame(function () {
+        self.dragger.classList.remove('anim-none');
+      });
+    }
+    // var
+    let slide = e.target;
+    let slideLeft = slide.offsetLeft;
+    let slideWidth = slide.offsetWidth;
+    let slideHeight = slide.offsetHeight;
+    // group
+    let group = slide.getAttribute('data-xt-group');
+    if (group) {
+      // only one call per group
+      if (slide.dataset.xtSlideOnDone === 'true') {
+        return false;
+      }
+      // vars
+      let targets = self.getTargets(slide);
+      slideLeft = Infinity;
+      slideWidth = 0;
+      slideHeight = 0;
+      for (let slide of targets) {
+        slideLeft = slide.offsetLeft < slideLeft ? slide.offsetLeft : slideLeft;
+        slideWidth += slide.offsetWidth;
+        let h = slide.offsetHeight;
+        slideHeight = h > slideHeight ? h : slideHeight;
+        // only one call per group
+        slide.dataset.xtSlideOnDone = 'true';
+      }
+    }
+    // autoHeight
+    if (self.autoHeight) {
+      self.autoHeight.style.height = slideHeight + 'px';
+    }
+    // aligment
+    let pos;
+    if (options.align === 'center') {
+      pos = dragger.offsetWidth / 2 - slideLeft - slideWidth / 2;
+    } else if (options.align === 'left') {
+      pos = - slideLeft;
+      pos = pos > 0 ? 0 : pos; // @FIX initial value sometimes is wrong
+    } else if (options.align === 'right') {
+      pos = - slideLeft + dragger.offsetWidth - slideWidth;
+    }
+    if (options.contain) {
+      let min = 0;
+      let slideLast = self.targets[self.targets.length - 1];
+      let slideLastLeft = slideLast.offsetLeft;
+      let slideLastWidth = slideLast.offsetWidth;
+      let max = - slideLastLeft + dragger.offsetWidth - slideLastWidth;
+      pos = pos > min ? min : pos;
+      pos = pos < max ? max : pos;
+    }
+    // val
+    self.detail.xCache = self.detail.xPos = pos;
+    // drag position
+    dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
+  }
+
+  /**
    * element drag on logic
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
@@ -456,97 +546,6 @@ class Slider extends Core {
     dragger.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: self.eDetail}));
   }
 
-  /**
-   * slide off
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
-   * @param {Event} e
-   */
-  eventSlideOff(dragger, e) {
-    let slide = e.target;
-    // group
-    let group = slide.getAttribute('data-xt-group');
-    if (group) {
-      // only one call per group
-      slide.dataset.xtSlideOnDone = 'false';
-    }
-  }
-
-  /**
-   * slide on
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
-   * @param {Event} e
-   */
-  eventSlideOn(dragger, e) {
-    let self = this;
-    let options = self.options;
-    // if inital
-    if (e.detail.object.detail.initial) {
-      // stop, don't execute custom on.xt events
-      if (!options.initial) {
-        e.stopImmediatePropagation();
-        return false;
-      }
-      // prevent alignment animation
-      self.dragger.classList.add('anim-none');
-      window.requestAnimationFrame(function () {
-        self.dragger.classList.remove('anim-none');
-      });
-    }
-    // var
-    let slide = e.target;
-    let slideLeft = slide.offsetLeft;
-    let slideWidth = slide.offsetWidth;
-    let slideHeight = slide.offsetHeight;
-    // group
-    let group = slide.getAttribute('data-xt-group');
-    if (group) {
-      // only one call per group
-      if (slide.dataset.xtSlideOnDone === 'true') {
-        return false;
-      }
-      // vars
-      let targets = self.getTargets(slide);
-      slideLeft = Infinity;
-      slideWidth = 0;
-      slideHeight = 0;
-      for (let slide of targets) {
-        slideLeft = slide.offsetLeft < slideLeft ? slide.offsetLeft : slideLeft;
-        slideWidth += slide.offsetWidth;
-        let h = slide.offsetHeight;
-        slideHeight = h > slideHeight ? h : slideHeight;
-        // only one call per group
-        slide.dataset.xtSlideOnDone = 'true';
-      }
-    }
-    // autoHeight
-    if (self.autoHeight) {
-      self.autoHeight.style.height = slideHeight + 'px';
-    }
-    // aligment
-    let pos;
-    if (options.align === 'center') {
-      pos = dragger.offsetWidth / 2 - slideLeft - slideWidth / 2;
-    } else if (options.align === 'left') {
-      pos = - slideLeft;
-      pos = pos > 0 ? 0 : pos; // @FIX initial value sometimes is wrong
-    } else if (options.align === 'right') {
-      pos = - slideLeft + dragger.offsetWidth - slideWidth;
-    }
-    if (options.contain) {
-      let min = 0;
-      let slideLast = self.targets[self.targets.length - 1];
-      let slideLastLeft = slideLast.offsetLeft;
-      let slideLastWidth = slideLast.offsetWidth;
-      let max = - slideLastLeft + dragger.offsetWidth - slideLastWidth;
-      pos = pos > min ? min : pos;
-      pos = pos < max ? max : pos;
-    }
-    // val
-    self.detail.xCache = self.detail.xPos = pos;
-    // drag position
-    dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
-  }
-
 }
 
 //////////////////////
@@ -568,10 +567,10 @@ Slider.defaults = {
   "autoGroup": true,
   "contain": false,
   "align": "center",
-  "autoHeight": ":scope > .slides",
-  "pagination": ":scope > .slider_pagination",
+  "dragger": ".slides_inner",
+  "autoHeight": ".slides",
+  "pagination": ".slider_pagination",
   "drag": {
-    "dragger": ":scope > .slides > .slides_inner",
     "threshold": 100,
     "friction": .75,
     "frictionThreshold": 5,
