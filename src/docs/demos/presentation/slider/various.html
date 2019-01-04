@@ -7,7 +7,15 @@ padding: true
 ---
 
 <div class="slider"
-     data-xt-slider='{"auto": 6000, "loop": false}'>
+     data-xt-slider='{
+      "auto": 2000,
+      "autoChange": 6000,
+      "autoPause": ".slide, :scope > .slider_pagination",
+      "autoInverse": true,
+      "loop": false,
+      "jump": false,
+      "drag": false
+     }'>
 
   <div class="slides">
     <div class="slides_inner">
@@ -56,7 +64,7 @@ padding: true
         </div>
       </div>
 
-      <div class="slide">
+      <div class="slide active">
         <div class="slide_inner">
           <div class="card card--slider">
             <div class="card_design"></div>

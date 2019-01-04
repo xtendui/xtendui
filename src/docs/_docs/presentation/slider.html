@@ -61,32 +61,6 @@ description: Lorem Ipsum
 
 <h2>Options</h2>
 
-<h3>Drag</h3>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/drag-disable.html"
-       data-name="disable">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>"drag": false</code> to disable drag
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Initial</h3>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/initial.html"
-       data-name="initial">
-    <div class="demo-text">
-      <div class="alert_content">
-        Just assign the activation class on any target
-      </div>
-    </div>
-  </div>
-</div>
-
 <h3>autoGroup</h3>
 
 <p>With <code>"autoGroup": {MediaQuery: Number}</code> you can set a decimal number from 0 to 1 for the available width
@@ -108,34 +82,6 @@ description: Lorem Ipsum
     <div class="demo-text">
       <div class="alert_content">
         <code>"autoGroup": false</code> to disable automatic grouping of slides
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Auto</h3>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/auto.html"
-       data-name="auto">
-    <div class="demo-text">
-      <div class="alert_content">
-        see <a href="{% link _docs/interaction/toggle.html %}#options-auto">toggle auto</a>
-        <code>"auto": Milliseconds</code> <code>"autoChange": Milliseconds</code> <code>"autoPause": String</code>
-        <code>"autoInverse": Boolean</code>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Loop</h3>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/loop.html"
-       data-name="loop">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>"loop": false</code> to disable loop (also on auto)
       </div>
     </div>
   </div>
@@ -199,6 +145,23 @@ description: Lorem Ipsum
       </div>
     </div>
   </div>
+</div>
+
+<h3>Various</h3>
+
+<p>Just assign the activation class on any target to start with that slide.</p>
+
+<p>For auto options see <a href="{% link _docs/interaction/toggle.html %}#options-auto">toggle auto</a>.</p>
+
+<p><code>"loop": false</code> to disable loop (also on auto).</p>
+
+<p><code>"jump": false</code> to disable clicking on disabled .slides to jump to them.</p>
+
+<p><code>"drag": false</code> to disable drag.</p>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/various.html"
+       data-name="various"></div>
 </div>
 
 <h2>Playground</h2>

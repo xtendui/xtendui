@@ -159,11 +159,19 @@ class Slider extends Core {
       slide.removeEventListener('on.xt', slideOffHandler);
       slide.addEventListener('on.xt', slideOffHandler);
     }
+    // jump
+    if (options.jump) {
+      for (let slide of self.targets) {
+        let slideJumpHandler = Xt.dataStorage.put(slide, 'slideJumpHandler' + self.namespace,
+          self.eventSlideJumpHandler.bind(self).bind(self, slide));
+        slide.removeEventListener('click', slideJumpHandler);
+        slide.addEventListener('click', slideJumpHandler);
+        // jump
+        slide.classList.add('jump');
+      }
+    }
     // dragger
     if (options.drag) {
-      // grab
-      dragger.classList.add('grab');
-      // drag on
       let dragstartHandler = Xt.dataStorage.put(dragger, 'dragstartHandler' + self.namespace,
         self.eventDragstartHandler.bind(self).bind(self, dragger));
       let events = ['mousedown', 'touchstart'];
@@ -171,6 +179,8 @@ class Slider extends Core {
         dragger.removeEventListener(event, dragstartHandler);
         dragger.addEventListener(event, dragstartHandler);
       }
+      // grab
+      dragger.classList.add('grab');
     }
   }
 
@@ -212,6 +222,17 @@ class Slider extends Core {
     let self = this;
     // handler
     self.eventSlideOff(dragger, e);
+  }
+
+  /**
+   * slide jump handler
+   * @param {Node|HTMLElement|EventTarget|Window} slide
+   * @param {Event} e
+   */
+  eventSlideJumpHandler(slide, e) {
+    let self = this;
+    // handler
+    self.eventSlideJump(slide, e);
   }
 
   /**
@@ -344,21 +365,6 @@ class Slider extends Core {
   //////////////////////
 
   /**
-   * slide off
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
-   * @param {Event} e
-   */
-  eventSlideOff(dragger, e) {
-    let slide = e.target;
-    // group
-    let group = slide.getAttribute('data-xt-group');
-    if (group) {
-      // only one call per group
-      slide.dataset.xtSlideOnDone = 'false';
-    }
-  }
-
-  /**
    * slide on
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
@@ -432,6 +438,34 @@ class Slider extends Core {
     self.detail.xCache = self.detail.xPos = pos;
     // drag position
     dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
+  }
+
+  /**
+   * slide off
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Event} e
+   */
+  eventSlideOff(dragger, e) {
+    let slide = e.target;
+    // group
+    let group = slide.getAttribute('data-xt-group');
+    if (group) {
+      // only one call per group
+      slide.dataset.xtSlideOnDone = 'false';
+    }
+  }
+
+  /**
+   * slide jump
+   * @param {Node|HTMLElement|EventTarget|Window} slide
+   * @param {Event} e
+   */
+  eventSlideJump(slide, e) {
+    let self = this;
+    // jump
+    if (self.checkOn(slide)) {
+      self.eventOn(slide);
+    }
   }
 
   /**
@@ -571,10 +605,11 @@ Slider.defaults = {
   "max": 1,
   "instant": true,
   "initial": true,
-  "loop": true,
   "autoGroup": {"all": 0.8},
   "contain": false,
   "align": "center",
+  "loop": true,
+  "jump": true,
   "dragger": ".slides_inner",
   "autoHeight": ".slides",
   "pagination": ".slider_pagination",
