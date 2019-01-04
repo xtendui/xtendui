@@ -377,6 +377,8 @@ class Slider extends Core {
       }
     } else {
       self.detail.xPos = self.detail.xCache;
+      // drag position
+      dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
       // listener dispatch
       dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
     }
@@ -410,7 +412,7 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     let xCache = self.detail.xCache || 0;
-    // drag
+    // calculate
     if (friction) {
       // on friction
       self.detail.xPos = self.detail.xPos + self.detail.xVelocity;
@@ -426,6 +428,8 @@ class Slider extends Core {
       self.detail.xVelocity = self.detail.xPos - xPosOld;
       self.detail.xVelocity += xVelocityOld * options.drag.velocityFriction; // keep some velocity
     }
+    // drag position
+    dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
     // listener dispatch
     dragger.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: self.eDetail}));
   }
@@ -438,11 +442,23 @@ class Slider extends Core {
   eventSlideOn(dragger, e) {
     let self = this;
     let options = self.options;
+    // if inital
+    if (e.detail.object.detail.initial) {
+      // stop, don't execute custom on.xt events
+      if (!options.initial) {
+        e.stopImmediatePropagation();
+        return false;
+      }
+      // prevent alignment animation
+      self.dragger.classList.add('anim-none');
+      window.requestAnimationFrame(function () {
+        self.dragger.classList.remove('anim-none');
+      });
+    }
     // var
     let slide = e.target;
     let slideLeft = slide.offsetLeft;
     let slideWidth = slide.offsetWidth;
-    let slideWidthReal = slideWidth;
     // group
     if (slide.getAttribute('data-xt-group')) {
       let targets = self.getTargets(slide);
@@ -474,18 +490,8 @@ class Slider extends Core {
     }
     // val
     self.detail.xCache = self.detail.xPos = pos;
-    // if inital
-    if (e.detail.object.detail.initial) {
-      // stop, don't execute custom on.xt events
-      if (!options.initial) {
-        e.stopImmediatePropagation();
-      }
-      // prevent alignment animation
-      self.dragger.classList.add('anim-none');
-      window.requestAnimationFrame(function () {
-        self.dragger.classList.remove('anim-none');
-      });
-    }
+    // drag position
+    dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
   }
 
 }

@@ -7,22 +7,18 @@ function sliderInit(main, index) {
 
   // vars
 
-  let timeTotal = .8;
-
+  let time = .8;
   let timeMask = .8;
-  let sizeMask = 200;
-
   let timeContent = .8;
   let sizeContent = 100;
-
   CustomEase.create('easeIn', '.41, .1, .175, 1');
   CustomEase.create('easeOut', '.77, 0, .175, 1');
 
   // slider
 
   let slider = new Xt.Slider(main, {
-    "durationOn": timeTotal * 1000,
-    "durationOff": timeTotal * 1000,
+    "durationOn": time * 1000,
+    "durationOff": time * 1000,
     "instant": false,
     "initial": false
   });
@@ -85,8 +81,6 @@ function sliderInit(main, index) {
       TweenMax.to(slide, timeMask, {x: 0, opacity: 1, ease: 'easeIn'});
       TweenMax.set(dragger, {x: xMax * direction});
       TweenMax.to(dragger, timeMask, {x: 0, ease: 'easeIn'});
-      TweenMax.set(dragger.children[0], {x: sizeMask * direction});
-      TweenMax.to(dragger.children[0], timeMask, {x: 0, ease: 'easeIn'});
       // content
       for (let content of contents) {
         TweenMax.set(content, {x: sizeContent * direction, opacity: 0});
