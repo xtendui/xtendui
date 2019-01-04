@@ -67,7 +67,7 @@ class Fade extends Core {
     let self = this;
     // handler
     if (!e.detail || !e.detail.skip) {
-      Xt.resizeEvent(e, self.object, function() {
+      Xt.eventDelay(e, self.object, function() {
         self.eventScroll();
       });
     }

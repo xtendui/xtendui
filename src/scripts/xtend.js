@@ -40,6 +40,7 @@ Xt.Ajax = Ajax;
 Xt.init = [];
 Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
 Xt.resizeDelay = 100;
+Xt.scrollDelay = false;
 
 //////////////////////
 // init
@@ -553,33 +554,6 @@ Xt.checkNested = function (element, targets) {
 };
 
 /**
- * Fix resize event multiple calls and adds delay
- * @param {Event} e Event
- * @param {Node|HTMLElement|EventTarget|Window} element Element to save timeout
- * @param {Function} func Function to execute
- */
-Xt.resizeEvent = function (e, element, func) {
-  if (e.type === 'resize') {
-    // multiple calls
-    let windowWidth = window.innerWidth;
-    let windowHeight = window.innerHeight;
-    if (windowWidth !== parseFloat(element.dataset.windowWidth) || windowHeight !== parseFloat(element.dataset.windowHeight)) {
-      // delay
-      clearTimeout(parseFloat(element.dataset.xtSliderResizeTimeout));
-      element.dataset.xtSliderResizeTimeout = setTimeout( function() {
-        // func
-        func();
-      }, Xt.resizeDelay).toString();
-    }
-    element.dataset.windowWidth = windowWidth.toString();
-    element.dataset.windowHeight = windowHeight.toString();
-  } else {
-    // func
-    func();
-  }
-};
-
-/**
  * Get scrollbar width of document
  * @param {Boolean} force Force recalc
  * @returns {Number} Scrollbar width
@@ -718,6 +692,42 @@ Xt.autoClose = function (el) {
   let query = '[data-xt-namespace^="drop-xt-"]';
   for (let drop of el.querySelectorAll(query)) {
     drop.dispatchEvent(new CustomEvent('off.xt'));
+  }
+};
+
+/**
+ * Fix resize event multiple calls and adds delay on resize and scroll events
+ * @param {Event} e Event
+ * @param {Node|HTMLElement|EventTarget|Window} element Element to save timeout
+ * @param {Function} func Function to execute
+ */
+Xt.eventDelay = function (e, element, func) {
+  if (e.type === 'resize' || e.type === 'scroll') {
+    let delay = Xt[e.type + 'Delay'];
+    if (delay === false) {
+      // func
+      func();
+      return false;
+    }
+    if (e.type === 'resize') {
+      // multiple calls
+      let windowWidth = window.innerWidth;
+      let windowHeight = window.innerHeight;
+      if (windowWidth === parseFloat(element.dataset.windowWidth) && windowHeight === parseFloat(element.dataset.windowHeight)) {
+        return false;
+      }
+      element.dataset.windowWidth = windowWidth.toString();
+      element.dataset.windowHeight = windowHeight.toString();
+    }
+    // delay
+    clearTimeout(parseFloat(element.dataset.xtSliderResizeTimeout));
+    element.dataset.xtSliderResizeTimeout = setTimeout( function() {
+      // func
+      func();
+    }, delay).toString();
+  } else {
+    // func
+    func();
   }
 };
 
