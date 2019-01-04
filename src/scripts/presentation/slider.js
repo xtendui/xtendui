@@ -153,6 +153,13 @@ class Slider extends Core {
         slide.removeEventListener('on.xt', slideOnHandler);
         slide.addEventListener('on.xt', slideOnHandler);
       }
+      // slide off
+      for (let slide of self.targets) {
+        let slideOffHandler = Xt.dataStorage.put(slide, 'slideOffHandler' + self.namespace,
+          self.eventSlideOffHandler.bind(self).bind(self, dragger));
+        slide.removeEventListener('on.xt', slideOffHandler);
+        slide.addEventListener('on.xt', slideOffHandler);
+      }
     }
   }
 
@@ -183,6 +190,17 @@ class Slider extends Core {
     let self = this;
     // handler
     self.eventSlideOn(dragger, e);
+  }
+
+  /**
+   * slide off handler
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Event} e
+   */
+  eventSlideOffHandler(dragger, e) {
+    let self = this;
+    // handler
+    self.eventSlideOff(dragger, e);
   }
 
   /**
@@ -435,6 +453,21 @@ class Slider extends Core {
   }
 
   /**
+   * slide off
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Event} e
+   */
+  eventSlideOff(dragger, e) {
+    let slide = e.target;
+    // group
+    let group = slide.getAttribute('data-xt-group');
+    if (group) {
+      // only one call per group
+      slide.dataset.xtSlideOnDone = 'false';
+    }
+  }
+
+  /**
    * slide on
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
@@ -460,13 +493,21 @@ class Slider extends Core {
     let slideLeft = slide.offsetLeft;
     let slideWidth = slide.offsetWidth;
     // group
-    if (slide.getAttribute('data-xt-group')) {
+    let group = slide.getAttribute('data-xt-group');
+    if (group) {
+      // only one call per group
+      if (slide.dataset.xtSlideOnDone === 'true') {
+        return false;
+      }
+      // vars
       let targets = self.getTargets(slide);
       slideLeft = Infinity;
       slideWidth = 0;
       for (let slide of targets) {
         slideLeft = slide.offsetLeft < slideLeft ? slide.offsetLeft : slideLeft;
         slideWidth += slide.offsetWidth;
+        // only one call per group
+        slide.dataset.xtSlideOnDone = 'true';
       }
     }
     // aligment

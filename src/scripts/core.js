@@ -95,14 +95,13 @@ class Core {
       // xtend unique mode
       self.mode = 'multiple';
       self.container = self.object;
-      self.namespace = self.constructor.componentName + '-' + Xt.getUniqueID();
+      self.container.dataset.uniqueID = self.container.dataset.uniqueID ? self.container.dataset.uniqueID : Xt.getUniqueID();
+      self.namespace = self.constructor.componentName + '-' + self.container.dataset.uniqueID;
     }
     // final namespace
     self.namespace = self.namespace.replace(/^[^a-z]+|[^\w:.-]+/gi, '');
     // currents array based on namespace (so shared between Xt objects)
-    if (!self.getCurrents()) {
-      self.setCurrents([]);
-    }
+    self.setCurrents([]);
   }
 
   /**
