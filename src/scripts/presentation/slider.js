@@ -463,8 +463,9 @@ class Slider extends Core {
   eventSlideJump(slide, e) {
     let self = this;
     // jump
-    if (self.checkOn(slide)) {
-      self.eventOn(slide);
+    let element = self.getElementsFromTarget(slide)[0];
+    if (self.checkOn(element)) {
+      self.eventOn(element);
     }
   }
 
@@ -497,12 +498,10 @@ class Slider extends Core {
     if (Math.abs(xDist) > options.drag.threshold) {
       // get nearest
       let found = self.curentIndex;
-
-      // @TODO REFACTOR
       if (options.autoGroup) {
         self.autoGroup = [];
         for (let [i, group] of self.autoGroup.entries()) {
-          for (let [z, slideCheck] of group.entries()) {
+          for (let slideCheck of group) {
             let check = xPos - dragger.offsetWidth / 2 + slideCheck.offsetLeft;
             if (slideCheck.offsetParent && check < 0) { // offsetParent for checking if :visible
               found = i;
@@ -510,14 +509,13 @@ class Slider extends Core {
           }
         }
       } else {
-        for (let [z, slideCheck] of self.targets.entries()) {
+        for (let [i, slideCheck] of self.targets.entries()) {
           let check = xPos - dragger.offsetWidth / 2 + slideCheck.offsetLeft;
           if (slideCheck.offsetParent && check < 0) { // offsetParent for checking if :visible
-            found = z;
+            found = i;
           }
         }
       }
-
       if (found === self.curentIndex) {
         // change at least one
         if (Math.sign(xDist) < 0) {
