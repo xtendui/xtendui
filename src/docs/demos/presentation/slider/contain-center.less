@@ -1,20 +1,24 @@
 @import (reference) "../../../../../dist/styles/xtend.less";
 
+// slides
+
 .slides_inner {
   .flex();
+  .flex-space--y(none);
   .flex--nowrap();
-  // animations
-  &:not(.dragging) {
-    .transition-default.out();
-    transition-duration: @time--big;
-  }
+  .align-items--start();
 }
 
 .slide {
-  .col(12);
+  .col(6);
   .col(4, sm);
   &:nth-child(1) {
     .col--custom(80%);
+  }
+  &:nth-child(3) {
+    .slide_inner > * {
+      .padding(y, medium);
+    }
   }
   // animations
   > * {
@@ -29,4 +33,12 @@
       opacity: 1;
     }
   }
+}
+
+// card
+
+.card--slider {
+  .card--secondary();
+  .card--big();
+  .text-align(center);
 }

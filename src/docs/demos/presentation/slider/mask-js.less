@@ -1,9 +1,29 @@
 @import (reference) "../../../../../dist/styles/xtend.less";
 
+// slides
+
 .slides_inner {
   overflow: hidden;
 }
 
+.slides_inner {
+  // dragger animations
+  .transition--none() !important;
+}
+
 .slide {
   .toggle--block();
+  &:nth-child(3) {
+    .slide_inner > * {
+      .padding(y, medium);
+    }
+  }
+}
+
+// card
+
+.card--slider {
+  .card--secondary();
+  .card--big();
+  .text-align(center);
 }

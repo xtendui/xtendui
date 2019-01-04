@@ -1,1 +1,1 @@
-.slides_inner{overflow:hidden}.slide{display:none}.slide.active,.slide.out{display:block}
+.slides_inner{overflow:hidden}.slides_inner{transition:initial!important}.slide{display:none}.slide.active,.slide.out{display:block}.slide:nth-child(3) .slide_inner>*{padding-top:2rem;padding-bottom:2rem}.card--slider{text-align:center}.card--slider>.card_design{border-color:#edf3f6;background:#edf3f6;background:linear-gradient(135deg,#edf3f6 33%,#dce8ee 100%)}.card--slider>.card_content{color:#343a40}.card--slider>.card_content{padding:1.5em 2em;font-size:1.5rem}

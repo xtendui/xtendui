@@ -39,6 +39,10 @@ class Slider extends Core {
     if (options.drag) {
       self.dragger = self.object.querySelectorAll(options.drag.dragger)[0];
     }
+    // autoHeight
+    if (options.autoHeight) {
+      self.autoHeight = self.object.querySelectorAll(options.autoHeight)[0];
+    }
     // automatic group
     if (options.autoGroup) {
       // width
@@ -492,6 +496,7 @@ class Slider extends Core {
     let slide = e.target;
     let slideLeft = slide.offsetLeft;
     let slideWidth = slide.offsetWidth;
+    let slideHeight = slide.offsetHeight;
     // group
     let group = slide.getAttribute('data-xt-group');
     if (group) {
@@ -503,12 +508,19 @@ class Slider extends Core {
       let targets = self.getTargets(slide);
       slideLeft = Infinity;
       slideWidth = 0;
+      slideHeight = 0;
       for (let slide of targets) {
         slideLeft = slide.offsetLeft < slideLeft ? slide.offsetLeft : slideLeft;
         slideWidth += slide.offsetWidth;
+        let h = slide.offsetHeight;
+        slideHeight = h > slideHeight ? h : slideHeight;
         // only one call per group
         slide.dataset.xtSlideOnDone = 'true';
       }
+    }
+    // autoHeight
+    if (self.autoHeight) {
+      self.autoHeight.style.height = slideHeight + 'px';
     }
     // aligment
     let pos;
@@ -556,6 +568,7 @@ Slider.defaults = {
   "autoGroup": true,
   "contain": false,
   "align": "center",
+  "autoHeight": ":scope > .slides",
   "pagination": ":scope > .slider_pagination",
   "drag": {
     "dragger": ":scope > .slides > .slides_inner",
