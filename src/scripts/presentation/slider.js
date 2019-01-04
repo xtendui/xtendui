@@ -570,14 +570,14 @@ class Slider extends Core {
     if (friction) {
       // on friction
       self.detail.xPos = self.detail.xPos + self.detail.xVelocity;
-      self.detail.xStart = self.detail.eInit.clientX;
+      self.detail.xStart = self.detail.eInit.clientX || self.detail.eInit.touches[0].clientX;
       self.detail.xCurrent = self.detail.xPos + self.detail.xStart - xCache;
     } else {
       // on normal drag
-      let xPosOld = self.detail.xPos;
+      let xPosOld = self.detail.xPos || 0;
       let xVelocityOld = self.detail.xVelocity || 0;
-      self.detail.xStart = self.detail.eInit.clientX;
-      self.detail.xCurrent = self.detail.eCurrent.clientX;
+      self.detail.xStart = self.detail.eInit.clientX || self.detail.eInit.touches[0].clientX;
+      self.detail.xCurrent = self.detail.eCurrent.clientX || self.detail.eCurrent.touches[0].clientX;
       self.detail.xPos = xCache + self.detail.xCurrent - self.detail.xStart;
       self.detail.xVelocity = self.detail.xPos - xPosOld;
       self.detail.xVelocity += xVelocityOld * options.drag.velocityFriction; // keep some velocity
