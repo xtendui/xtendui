@@ -42,12 +42,20 @@ class Slider extends Core {
       self.autoHeight = self.object.querySelectorAll(options.autoHeight)[0];
     }
     // automatic group
+    let draggerWidthTemp;
     if (options.autoGroup) {
       // width
       let draggerWidth = self.dragger ? self.dragger.offsetWidth : self.object.offsetWidth;
-      if (options.autoGroup.available) {
-        draggerWidth *= options.autoGroup.available;
+      // autoGroup media
+      let mqs = Object.entries(options.autoGroup);
+      if (mqs.length) {
+        for (let [key, value] of mqs) {
+          if (window.matchMedia(key).matches) {
+            draggerWidthTemp = draggerWidth * value;
+          }
+        }
       }
+      draggerWidth = draggerWidthTemp;
       // generate groups
       self.autoGroup = [];
       self.autoGroup.push([]);
@@ -564,7 +572,7 @@ Slider.defaults = {
   "instant": true,
   "initial": true,
   "loop": true,
-  "autoGroup": true,
+  "autoGroup": {"all": 0.8},
   "contain": false,
   "align": "center",
   "dragger": ".slides_inner",
@@ -572,9 +580,9 @@ Slider.defaults = {
   "pagination": ".slider_pagination",
   "drag": {
     "threshold": 100,
-    "friction": .75,
+    "friction": 0.75,
     "frictionThreshold": 5,
-    "velocityFriction": .33,
+    "velocityFriction": 0.33,
   },
   "aria": true
 };

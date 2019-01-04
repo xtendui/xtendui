@@ -89,11 +89,12 @@ description: Lorem Ipsum
 
 <h3>autoGroup</h3>
 
-<p>With <code>"autoGroup": {"available": Number}</code> you can set a decimal number from 0 to 1 for the available width
+<p>With <code>"autoGroup": {"all": Number}</code> you can set a decimal number from 0 to 1 for the available width
   factor for autoGroup.</p>
+<p>You can also set autoGroup with media queries like this: <code>"autoGroup": {"(min-width: 0px)": 0.8, "(min-width:
+  768px)": 1}</code></p>
 <p>If a slide is bigger, it takes up a single slide anyway.</p>
-<p>it's based on the current slides visible inside the slider, it get recalculated also on
-  responsive.</p>
+<p>it's based on the current slides visible inside the slider, it get recalculated also on responsive.</p>
 
 <div class="demo">
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/autogroup-available.html"
