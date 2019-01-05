@@ -179,10 +179,6 @@ class Core {
     for (let el of self.elements) {
       el.dataset.xtNamespace = self.namespace;
     }
-    // @FIX set namespace for checks
-    for (let tr of self.targets) {
-      tr.dataset.xtTarget = self.namespace;
-    }
     // automatic initial currents
     window.requestAnimationFrame(function () {
       let elements = self.getElementsSingle();
