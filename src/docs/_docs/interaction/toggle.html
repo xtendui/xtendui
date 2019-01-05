@@ -644,66 +644,6 @@ XtToggle.defaults = {
   </div>
 </div>
 
-<h3>Navigation</h3>
-
-<p>You can add navigation with the <em>navigation</em> option, set the amount to add to the current activation with
-  <code>data-xt-nav="value"</code></p>
-
-<p>Use <code>"loop": false</code> to disable loop.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="navigation">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>"navigation": Query</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"navigation": "[data-xt-nav]"}'>
-        <button type="button" class="btn">
-          <span>Toggle 0</span>
-        </button>
-        <button type="button" class="btn">
-          <span>Toggle 1</span>
-        </button>
-        <button type="button" class="btn">
-          <span>Toggle 2</span>
-        </button>
-        <button type="button" class="btn">
-          <span>Toggle 3</span>
-        </button>
-        <button type="button" class="btn" data-xt-nav="-1">
-          <span class="icon-xt--chevron-left icon--small"></span>
-        </button>
-        <button type="button" class="btn" data-xt-nav="1">
-          <span class="icon-xt--chevron-right icon--small"></span>
-        </button>
-        <div class="alert toggle--block">
-          <div class="alert_content">
-            Target 0
-          </div>
-        </div>
-        <div class="alert toggle--block">
-          <div class="alert_content">
-            Target 1
-          </div>
-        </div>
-        <div class="alert toggle--block">
-          <div class="alert_content">
-            Target 2
-          </div>
-        </div>
-        <div class="alert toggle--block">
-          <div class="alert_content">
-            Target 3
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <h3>Auto</h3>
 
 <p>You can set automatic activation with <code>"auto": Milliseconds</code> and <code>"autoChange": Milliseconds</code>
@@ -949,6 +889,77 @@ XtToggle.defaults = {
         </button>
         <button type="button" class="btn">
           <span>Toggle 3</span>
+        </button>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 0
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 1
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 2
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Jump</h3>
+
+<p>By default if you click on a <strong>target</strong> not active, it will jump to it.</p>
+
+<p>Use <code>"jump": false</code> to disable clicking on a <strong>target</strong> to jump to them.</p>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/toggle-jump.html"
+       data-name="jump">
+</div>
+
+<h3>Navigation</h3>
+
+<p>You can add navigation with the <strong>navigation</strong> option, set the amount to add to the current activation with
+  <code>data-xt-nav="value"</code></p>
+
+<p>Use <code>"loop": false</code> to disable loop.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="navigation">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>"navigation": Query</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space--small align-items--center"
+           data-xt-toggle='{"navigation": "[data-xt-nav]"}'>
+        <button type="button" class="btn">
+          <span>Toggle 0</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 1</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 2</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 3</span>
+        </button>
+        <button type="button" class="btn" data-xt-nav="-1">
+          <span class="icon-xt--chevron-left icon--small"></span>
+        </button>
+        <button type="button" class="btn" data-xt-nav="1">
+          <span class="icon-xt--chevron-right icon--small"></span>
         </button>
         <div class="alert toggle--block">
           <div class="alert_content">

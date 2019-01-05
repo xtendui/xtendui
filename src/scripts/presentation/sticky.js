@@ -282,12 +282,12 @@ class Sticky extends Core {
     // set add
     if (add !== self.detail.addOld) {
       // NO BUGS initial top with requestAnimationFrame
-      // element.classList.add('transition--none');
+      // element.classList.add('transition-none');
       // if (self.detail.addOld !== undefined) {
       //   element.style[options.position] = rectElTop + 'px';
       // }
       // element.dataset.xtEventFrame = window.requestAnimationFrame(function () {
-      //   element.classList.remove('transition--none');
+      //   element.classList.remove('transition-none');
       element.style[options.position] = add + 'px';
       // }).toString();
     }

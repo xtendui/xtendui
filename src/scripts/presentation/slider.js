@@ -157,17 +157,6 @@ class Slider extends Core {
       slide.removeEventListener('on.xt', slideOffHandler);
       slide.addEventListener('on.xt', slideOffHandler);
     }
-    // jump
-    if (options.jump) {
-      for (let slide of self.targets) {
-        let slideJumpHandler = Xt.dataStorage.put(slide, 'slideJumpHandler' + self.namespace,
-          self.eventSlideJumpHandler.bind(self).bind(self, slide));
-        slide.removeEventListener('click', slideJumpHandler);
-        slide.addEventListener('click', slideJumpHandler);
-        // jump
-        slide.classList.add('jump');
-      }
-    }
     // dragger
     if (options.drag) {
       let dragstartHandler = Xt.dataStorage.put(dragger, 'dragstartHandler' + self.namespace,
@@ -220,19 +209,6 @@ class Slider extends Core {
     let self = this;
     // handler
     self.eventSlideOff(dragger, e);
-  }
-
-  /**
-   * slide jump handler
-   * @param {Node|HTMLElement|EventTarget|Window} slide
-   * @param {Event} e
-   */
-  eventSlideJumpHandler(slide, e) {
-    let self = this;
-    // prevent propagation (needed when elements are inside targets)
-    e.stopPropagation();
-    // handler
-    self.eventSlideJump(slide, e);
   }
 
   /**
@@ -456,20 +432,6 @@ class Slider extends Core {
   }
 
   /**
-   * slide jump
-   * @param {Node|HTMLElement|EventTarget|Window} slide
-   * @param {Event} e
-   */
-  eventSlideJump(slide, e) {
-    let self = this;
-    // jump
-    let element = self.getElementsFromTarget(slide)[0];
-    if (self.checkOn(element)) {
-      self.eventOn(element);
-    }
-  }
-
-  /**
    * element drag on logic
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
@@ -606,7 +568,6 @@ Slider.defaults = {
   "autoGroup": {"all": 0.8},
   "contain": false,
   "align": "center",
-  "jump": true,
   "dragger": ".slides_inner",
   "autoHeight": ".slides",
   "pagination": ".slider_pagination",

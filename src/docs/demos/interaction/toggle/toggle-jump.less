@@ -1,0 +1,14 @@
+@import (reference) "../../../../../dist/styles/xtend.less";
+
+.toggle--custom {
+  .animation-none() !important; // disable default animation
+  // animations
+  .transition-default.out();
+  transition-duration: @time--big;
+  opacity: .5 !important;
+  &.active {
+    .transition-default.active();
+    transition-duration: @time--big;
+    opacity: 1 !important;
+  }
+}

@@ -35,7 +35,7 @@
     }
   }
   &.out {
-    .anim-horizontal.out();
+    .anim-horizontal-inverse.out();
     animation-duration: @time--big;
     &:after {
       .animation-default.out();
@@ -44,7 +44,7 @@
       transform: translateX(0);
     }
     &.xt-inverse {
-      .anim-horizontal-inverse.out();
+      .anim-horizontal.out();
       animation-duration: @time--big;
       &:after {
         .animation-default.out();

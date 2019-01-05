@@ -50,6 +50,7 @@ class Core {
       "autoInverse": false,
       "autoLoop": true,
       "loop": true,
+      "jump": true,
       "delayOn": false,
       "delayOff": false,
       "durationOn": false,
@@ -361,6 +362,17 @@ class Core {
         el.addEventListener('mouseleave', autoPauseOffHandler);
       }
     }
+    // jump
+    if (options.jump) {
+      for (let jump of self.targets) {
+        let jumpHandler = Xt.dataStorage.put(jump, 'jumpHandler' + self.namespace,
+          self.eventJumpHandler.bind(self).bind(self, jump));
+        jump.removeEventListener('click', jumpHandler);
+        jump.addEventListener('click', jumpHandler);
+        // jump
+        jump.classList.add('jump');
+      }
+    }
     // navigation
     if (options.navigation) {
       let navs = self.object.querySelectorAll(options.navigation);
@@ -540,7 +552,20 @@ class Core {
   }
 
   /**
-   * slider nav handler
+   * jump handler
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Event} e
+   */
+  eventJumpHandler(el, e) {
+    let self = this;
+    // prevent propagation (needed when elements are inside targets)
+    e.stopPropagation();
+    // handler
+    self.eventJump(el, e);
+  }
+
+  /**
+   * nav handler
    * @param {Node|HTMLElement|EventTarget|Window} nav
    * @param {Event} e
    */
@@ -1041,7 +1066,21 @@ class Core {
   }
 
   /**
-   * slider nav
+   * jump
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Event} e
+   */
+  eventJump(el, e) {
+    let self = this;
+    // jump
+    let element = self.getElementsFromTarget(el)[0];
+    if (self.checkOn(element)) {
+      self.eventOn(element);
+    }
+  }
+
+  /**
+   * nav
    * @param {Node|HTMLElement|EventTarget|Window} nav
    * @param {Event} e
    */
@@ -1837,11 +1876,11 @@ class Core {
         if (self.normalizeWidth(element.clientWidth) === '') { // only if full width
           let padding = style.paddingRight;
           let str = 'calc(' + padding + ' + ' + width + 'px)';
-          element.classList.add('transition--none');
+          element.classList.add('transition-none');
           window.requestAnimationFrame(function () {
             element.style.paddingRight = str;
             window.requestAnimationFrame(function () {
-              element.classList.remove('transition--none');
+              element.classList.remove('transition-none');
             });
           });
         }
@@ -1872,11 +1911,11 @@ class Core {
         // fixed
         let elements = document.querySelectorAll('.xt-fixed');
         for (let element of elements) {
-          element.classList.add('transition--none');
+          element.classList.add('transition-none');
           window.requestAnimationFrame(function () {
             element.style.paddingRight = '';
             window.requestAnimationFrame(function () {
-              element.classList.remove('transition--none');
+              element.classList.remove('transition-none');
             });
           });
         }
