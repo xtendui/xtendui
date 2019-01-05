@@ -18,7 +18,7 @@ function sliderInit(main, index) {
   // progress event
 
   slider.addEventListener('auto.xt', function (e) {
-    console.log(self.detail.autoTime);
+    //console.log(self.detail.autoTime);
   });
 
 }

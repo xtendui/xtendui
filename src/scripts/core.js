@@ -349,6 +349,8 @@ class Core {
   eventOnHandler(element, e) {
     let self = this;
     let options = self.options;
+    // prevent propagation (needed for slider pagination when elements are inside targets)
+    e.stopPropagation();
     // prevent links (needed for xt-ajax)
     if (element.tagName === 'A') {
       e.preventDefault();
@@ -390,6 +392,8 @@ class Core {
   eventOffHandler(element, e) {
     let self = this;
     let options = self.options;
+    // prevent propagation (needed for slider pagination when elements are inside targets)
+    e.stopPropagation();
     // handler
     if (!e.detail || !e.detail.skip) {
       // event block

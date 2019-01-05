@@ -594,7 +594,7 @@ class Slider extends Core {
 
 Slider.componentName = 'slider';
 Slider.defaults = {
-  "elements": ":scope > .slider_pagination button",
+  "elements": ".slider_pagination button",
   "targets": ".slide",
   "class": "active",
   "on": "click",
