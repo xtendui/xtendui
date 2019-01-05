@@ -66,6 +66,7 @@ class Core {
     }
     // var
     self.elements = [];
+    self.elementsSingle = [];
     self.targets = [];
     self.detail = {};
     self.detail.queueOn = [];
@@ -127,13 +128,18 @@ class Core {
       arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
       self.elements = arr;
     }
-    if (!self.elements.length) {
+    if (self.elements.length) {
+      // elementsSingle
+      self.elementsSingle = self.getElementsSingle();
+    } else {
       self.elements = Xt.arrSingle(self.object);
       // @FIX set namespace for next frame
       window.requestAnimationFrame(function () {
         let arr = Array.from(Xt.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']')));
         arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
         self.elements = arr;
+        // elementsSingle
+        self.elementsSingle = self.getElementsSingle();
       });
     }
   }
@@ -335,6 +341,18 @@ class Core {
         el.addEventListener('mouseleave', autoPauseOffHandler);
       }
     }
+    // navigation
+    if (options.navigation) {
+      let navs = self.object.querySelectorAll(options.navigation);
+      if (navs.length) {
+        for (let nav of navs) {
+          let navHandler = Xt.dataStorage.put(nav, 'navHandler' + self.namespace,
+            self.eventNavHandler.bind(self).bind(self, nav));
+          nav.removeEventListener('click', navHandler);
+          nav.addEventListener('click', navHandler);
+        }
+      }
+    }
   }
 
   //////////////////////
@@ -349,7 +367,7 @@ class Core {
   eventOnHandler(element, e) {
     let self = this;
     let options = self.options;
-    // prevent propagation (needed for slider pagination when elements are inside targets)
+    // prevent propagation (needed when elements are inside targets)
     e.stopPropagation();
     // prevent links (needed for xt-ajax)
     if (element.tagName === 'A') {
@@ -392,7 +410,7 @@ class Core {
   eventOffHandler(element, e) {
     let self = this;
     let options = self.options;
-    // prevent propagation (needed for slider pagination when elements are inside targets)
+    // prevent propagation (needed when elements are inside targets)
     e.stopPropagation();
     // handler
     if (!e.detail || !e.detail.skip) {
@@ -501,9 +519,45 @@ class Core {
     }
   }
 
+  /**
+   * slider nav handler
+   * @param {Node|HTMLElement|EventTarget|Window} nav
+   * @param {Event} e
+   */
+  eventNavHandler(nav, e) {
+    let self = this;
+    // prevent propagation (needed when elements are inside targets)
+    e.stopPropagation();
+    // handler
+    self.eventNav(nav, e);
+  }
+
   //////////////////////
   // event util
   //////////////////////
+
+  /**
+   * get elements array single (one element per group)
+   * @returns {Array} array of elements
+   */
+  getElementsSingle() {
+    let self = this;
+    // groups
+    let groups = [];
+    for (let element of self.elements) {
+      // choose element by group
+      let group = element.getAttribute('data-xt-group');
+      if (group) {
+        let found = Array.from(groups).filter(x => x.getAttribute('data-xt-group') === group);
+        if (!found.length) {
+          groups.push(element);
+        }
+      } else {
+        groups.push(element);
+      }
+    }
+    return groups;
+  }
 
   /**
    * choose which elements to activate/deactivate (based on xtend mode and containers)
@@ -917,9 +971,9 @@ class Core {
         if (options.autoAlways || self.object.offsetParent) { // offsetParent for checking if :visible
           if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
             if (options.autoInverse) {
-              self.goToPrev(true, options.autoLoop);
+              self.goToPrev(1, true, options.autoLoop);
             } else {
-              self.goToNext(true, options.autoLoop);
+              self.goToNext(1, true, options.autoLoop);
             }
           }
           // listener dispatch
@@ -964,6 +1018,21 @@ class Core {
     // eventAutoStop
     clearInterval(self.object.dataset.xtAutoStartInterval);
     clearTimeout(self.object.dataset.xtAutoChangeTimeout);
+  }
+
+  /**
+   * slider nav
+   * @param {Node|HTMLElement|EventTarget|Window} nav
+   * @param {Event} e
+   */
+  eventNav(nav, e) {
+    let self = this;
+    // nav
+    let index = 0;
+    if (self.curentIndex !== undefined) {
+      index = self.curentIndex + parseFloat(nav.getAttribute('data-xt-nav'));
+    }
+    self.goToIndex(index, true);
   }
 
   //////////////////////
@@ -1821,65 +1890,65 @@ class Core {
 
   /**
    * activate next element
+   * @param {Number} amount
    * @param {Boolean} force
    * @param {Boolean} loop
    */
-  goToNext(force = false, loop) {
+  goToNext(amount = 1, force = false, loop) {
     let self = this;
-    let options = self.options;
-    // goToNext
-    let curentIndex = self.curentIndex !== undefined ? self.curentIndex + 1 : 0;
-    if (curentIndex > self.elements.length - 1) {
-      if (loop || options.loop) {
-        curentIndex = 0;
-      } else if (force) {
-        curentIndex = self.elements.length - 1;
-      } else {
-        return false;
-      }
+    // goToIndex
+    let index = 0;
+    if (self.curentIndex !== undefined) {
+      index = self.curentIndex + amount;
     }
-    self.forceNormalDirection = self.curentIndex > curentIndex;
-    let current = self.elements[curentIndex];
-    self.eventOn(current, force);
-    return current;
+    self.goToIndex(index, force, loop);
   }
 
   /**
    * activate prev element
+   * @param {Number} amount
    * @param {Boolean} force
    * @param {Boolean} loop
    */
-  goToPrev(force = false, loop) {
+  goToPrev(amount = 1, force = false, loop) {
     let self = this;
-    let options = self.options;
-    // goToPrev
-    let curentIndex = self.curentIndex !== undefined ? self.curentIndex - 1 : 0;
-    if (curentIndex < 0) {
-      if (loop || options.loop) {
-        curentIndex = self.elements.length - 1;
-      } else if (force) {
-        curentIndex = 0;
-      } else {
-        return false;
-      }
+    // goToIndex
+    let index = self.elementsSingle.length - 1;
+    if (self.curentIndex !== undefined) {
+      index = self.curentIndex - amount;
     }
-    self.forceInverseDirection = self.curentIndex < curentIndex;
-    let current = self.elements[curentIndex];
-    self.eventOn(current, force);
-    return current;
+    self.goToIndex(index, force, loop);
   }
 
   /**
    * activate index element
    * @param {Number} index
    * @param {Boolean} force
+   * @param {Boolean} loop
    */
-  goToIndex(index, force = false) {
+  goToIndex(index, force = false, loop) {
     let self = this;
-    // goToIndex
+    let options = self.options;
+    // check
+    let max = self.elementsSingle.length - 1;
+    if (index > max) {
+      if (loop || options.loop) {
+        index = index - max - 1;
+      } else {
+        index = max;
+      }
+    } else if (index < 0) {
+      if (loop || options.loop) {
+        index = max - index - 1;
+      } else {
+        index = 0;
+      }
+    }
+    // set
+    self.curentIndex = index;
+    // go
     let current = self.elements[index];
     self.eventOn(current, force);
-    return current;
   }
 
 }

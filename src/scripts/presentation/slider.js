@@ -88,43 +88,41 @@ class Slider extends Core {
     // generate elements
     if (options.pagination) {
       let pags = self.object.querySelectorAll(options.pagination);
-      if (pags.length) {
-        // remove old
-        self.pags = self.pags ? self.pags : [];
-        for (let pags of self.pags) {
-          for (let pag of pags) {
-            let container = pag.parentNode;
-            container.removeChild(pag);
-          }
-        }
-        // add new
-        self.pags = [];
+      // remove old
+      self.pags = self.pags ? self.pags : [];
+      for (let pags of self.pags) {
         for (let pag of pags) {
-          self.pags.push([]);
-          // vars
-          let currentPags = self.pags[self.pags.length - 1];
-          let clone = pag.querySelectorAll('.xt-clone')[0];
-          let container = clone.parentNode;
-          let arr;
+          let container = pag.parentNode;
+          container.removeChild(pag);
+        }
+      }
+      // add new
+      self.pags = [];
+      for (let pag of pags) {
+        self.pags.push([]);
+        // vars
+        let currentPags = self.pags[self.pags.length - 1];
+        let clone = pag.querySelectorAll('.xt-clone')[0];
+        let container = clone.parentNode;
+        let arr;
+        if (options.autoGroup) {
+          arr = self.autoGroup;
+        } else {
+          arr = self.targets;
+        }
+        // populate
+        for (let [i, group] of arr.entries()) {
+          currentPags[i] = clone.cloneNode(true);
+          let item = currentPags[i];
+          let html = item.innerHTML;
+          html = html.replace(new RegExp('{{num}}', 'ig'), (i + 1).toString());
+          html = html.replace(new RegExp('{{tot}}', 'ig'), arr.length.toString());
+          item.innerHTML = html;
+          item.classList.remove('xt-clone');
           if (options.autoGroup) {
-            arr = self.autoGroup;
-          } else {
-            arr = self.targets;
+            item.setAttribute('data-xt-group', self.namespace + '-' + i);
           }
-          // populate
-          for (let [i, group] of arr.entries()) {
-            currentPags[i] = clone.cloneNode(true);
-            let item = currentPags[i];
-            let html = item.innerHTML;
-            html = html.replace(new RegExp('{{num}}', 'ig'), (i + 1).toString());
-            html = html.replace(new RegExp('{{tot}}', 'ig'), arr.length.toString());
-            item.innerHTML = html;
-            item.classList.remove('xt-clone');
-            if (options.autoGroup) {
-              item.setAttribute('data-xt-group', self.namespace + '-' + i);
-            }
-            container.append(item);
-          }
+          container.insertBefore(item, clone);
         }
       }
     }
@@ -231,6 +229,8 @@ class Slider extends Core {
    */
   eventSlideJumpHandler(slide, e) {
     let self = this;
+    // prevent propagation (needed when elements are inside targets)
+    e.stopPropagation();
     // handler
     self.eventSlideJump(slide, e);
   }
@@ -519,9 +519,9 @@ class Slider extends Core {
       if (found === self.curentIndex) {
         // change at least one
         if (Math.sign(xDist) < 0) {
-          self.goToNext(true);
+          self.goToNext(1, true);
         } else {
-          self.goToPrev(true);
+          self.goToPrev(1, true);
         }
       } else {
         // goToIndex
@@ -594,7 +594,7 @@ class Slider extends Core {
 
 Slider.componentName = 'slider';
 Slider.defaults = {
-  "elements": ".slider_pagination button",
+  "elements": ".slider_pagination_item",
   "targets": ".slide",
   "class": "active",
   "on": "click",
@@ -611,6 +611,7 @@ Slider.defaults = {
   "dragger": ".slides_inner",
   "autoHeight": ".slides",
   "pagination": ".slider_pagination",
+  "navigation": ".slider_navigation_item",
   "drag": {
     "threshold": 100,
     "friction": 0.75,
