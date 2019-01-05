@@ -45,7 +45,7 @@ class Core {
       "onBlock": false,
       "offBlock": false,
       "auto": false,
-      "eventAutoChange": false,
+      "autoChange": false,
       "autoAlways": false,
       "autoInverse": false,
       "autoLoop": true,
@@ -374,7 +374,7 @@ class Core {
         self.eventOn(element, false, e);
       }
       // auto
-      if (options.eventAutoChange) {
+      if (options.autoChange) {
         self.eventAutoChange();
       } else if (options.auto) {
         self.eventAutoStart();
@@ -919,10 +919,14 @@ class Core {
         }
       }
     }, time).toString();
+    // listener dispatch
+    self.eDetailSet();
+    self.eDetail.autoTime = time;
+    self.object.dispatchEvent(new CustomEvent('auto.xt', {detail: self.eDetail}));
   }
 
   /**
-   * set eventAutoChange change
+   * set autoChange change
    * @param {Boolean} instant
    */
   eventAutoChange(instant = false) {
@@ -930,13 +934,17 @@ class Core {
     let options = self.options;
     // eventAutoChange
     self.eventAutoStop();
-    let time = !instant ? options.eventAutoChange : 0;
-    if (time !== 'stop') {
+    let time = !instant ? options.autoChange : 0;
+    if (isFinite(time)) {
       self.object.dataset.xtAutoChangeTimeout = setTimeout(function () {
         self.eventAutoStart(true);
         self.eventAutoStart();
       }, time).toString();
     }
+    // listener dispatch
+    self.eDetailSet();
+    self.eDetail.autoTime = time;
+    self.object.dispatchEvent(new CustomEvent('auto.xt', {detail: self.eDetail}));
   }
 
   /**
@@ -947,6 +955,10 @@ class Core {
     // eventAutoStop
     clearInterval(self.object.dataset.xtAutoStartInterval);
     clearTimeout(self.object.dataset.xtAutoChangeTimeout);
+    // listener dispatch
+    self.eDetailSet();
+    self.eDetail.autoTime = Infinity;
+    self.object.dispatchEvent(new CustomEvent('auto.xt', {detail: self.eDetail}));
   }
 
   //////////////////////

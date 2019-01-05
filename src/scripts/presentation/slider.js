@@ -288,7 +288,7 @@ class Slider extends Core {
       self.eventDragend(dragger, e);
     }
     // auto
-    if (options.eventAutoChange) {
+    if (options.autoChange) {
       self.eventAutoChange();
     } else if (options.auto) {
       self.eventAutoStart();

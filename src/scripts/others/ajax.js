@@ -219,7 +219,7 @@ Ajax.defaults = {
   "class": "active",
   "on": "click",
   "min": 0,
-  "max": Infinity
+  "max": "Infinity"
 };
 
 //////////////////////

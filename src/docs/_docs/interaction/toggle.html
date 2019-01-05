@@ -648,8 +648,6 @@ XtToggle.defaults = {
 <p>You can set automatic activation with <code>"auto": Milliseconds</code> and <code>"autoChange": Milliseconds</code> on
   user interaction. At the end it automatically loops.</p>
 
-<p>Use <code>"autoChange": "stop"</code> for stopping on interaction.</p>
-
 <p>Use <code>"autoAlways": true</code> to execute auto always, by default it only execute auto if the initialized
   selector is visible in the DOM.</p>
 
@@ -701,7 +699,7 @@ XtToggle.defaults = {
   <div class="demo-item demo-preview" data-name="autoChange">
     <div class="demo-text">
       <div class="alert_content">
-        <code>"autoChange": Milliseconds</code> or <code>"autoChange": "stop"</code>
+        <code>"autoChange": Milliseconds</code> or <code>"autoChange": "Infinity"</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
@@ -877,7 +875,7 @@ XtToggle.defaults = {
   <div class="demo-item demo-preview" data-name="complex">
     <div class="demo-source" data-lang="html">
       <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"min": 1, "max": 2, "auto": 2000, "autoChange": "stop"}'>
+           data-xt-toggle='{"min": 1, "max": 2, "auto": 2000, "autoChange": "Infinity"}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -885,55 +883,6 @@ XtToggle.defaults = {
           <span>Toggle 1</span>
         </button>
         <button type="button" class="btn active">
-          <span>Toggle 2</span>
-        </button>
-        <button type="button" class="btn">
-          <span>Toggle 3</span>
-        </button>
-        <div class="alert toggle--block">
-          <div class="alert_content">
-            Target 0
-          </div>
-        </div>
-        <div class="alert toggle--block">
-          <div class="alert_content">
-            Target 1
-          </div>
-        </div>
-        <div class="alert toggle--block">
-          <div class="alert_content">
-            Target 2
-          </div>
-        </div>
-        <div class="alert toggle--block">
-          <div class="alert_content">
-            Target 3
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Loop</h3>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="autoInverse">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>"loop": false</code> to disable loop (also on automatic)
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"auto": 2000, "loop": false}'>
-        <button type="button" class="btn">
-          <span>Toggle 0</span>
-        </button>
-        <button type="button" class="btn">
-          <span>Toggle 1</span>
-        </button>
-        <button type="button" class="btn">
           <span>Toggle 2</span>
         </button>
         <button type="button" class="btn">

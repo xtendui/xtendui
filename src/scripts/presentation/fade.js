@@ -166,7 +166,7 @@ Fade.defaults = {
   "class": "active",
   "on": "scroll resize",
   "min": 0,
-  "max": Infinity,
+  "max": "Infinity",
   "instant": true,
   "distance": 0.2,
   "aria": false

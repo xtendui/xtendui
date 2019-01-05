@@ -72,7 +72,7 @@ for(let el of document.querySelectorAll('.site-aside-text')) {
     "off": "mouseleave",
     "instant": true,
     "min": 0,
-    "max": Infinity
+    "max": "Infinity"
   });
 }
 

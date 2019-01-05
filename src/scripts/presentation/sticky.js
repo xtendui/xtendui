@@ -389,9 +389,9 @@ Sticky.defaults = {
   "class": "active",
   "on": "scroll resize",
   "min": 0,
-  "max": Infinity,
+  "max": "Infinity",
   "position": "top",
-  "limit": {"bottom": Infinity},
+  "limit": {"bottom": "Infinity"},
   "contain": false,
   "hide": false,
   "aria": false
