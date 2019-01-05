@@ -173,23 +173,37 @@ class Core {
     }
     // automatic initial currents
     window.requestAnimationFrame(function () {
-      if (self.elements.length) {
-        // elements
-        for (let el of self.elements) {
+      let elements = self.getElementsSingle();
+      if (elements.length) {
+        for (let element of elements) {
           let found = false;
-          if (el.classList.contains(options.classes[0])) {
-            el.classList.remove(...options.classes);
-            found = true;
+          // elements
+          let group = element.getAttribute('data-xt-group');
+          if (group) {
+            let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group);
+            for (let el of groupElements) {
+              if (el.classList.contains(options.classes[0])) {
+                el.classList.remove(...options.classes);
+                found = true;
+              }
+            }
+          } else {
+            if (element.classList.contains(options.classes[0])) {
+              element.classList.remove(...options.classes);
+              found = true;
+            }
           }
-          let targets = self.getTargets(el);
+          // targets
+          let targets = self.getTargets(element);
           for (let tr of targets) {
             if (tr.classList.contains(options.classes[0])) {
               tr.classList.remove(...options.classes);
               found = true;
             }
           }
+          // found
           if (found) {
-            self.eventOn(el);
+            self.eventOn(element);
           }
         }
         // if currents < min
@@ -548,7 +562,7 @@ class Core {
       // choose element by group
       let group = element.getAttribute('data-xt-group');
       if (group) {
-        let found = Array.from(groups).filter(x => x.getAttribute('data-xt-group') === group);
+        let found = groups.filter(x => x.getAttribute('data-xt-group') === group);
         if (!found.length) {
           groups.push(element);
         }
@@ -1934,12 +1948,14 @@ class Core {
     if (index > max) {
       if (loop || options.loop) {
         index = index - max - 1;
+        index = index > max ? max : index; // prevent overflow
       } else {
         index = max;
       }
     } else if (index < 0) {
       if (loop || options.loop) {
-        index = max - index - 1;
+        index = index + max + 1;
+        index = index < 0 ? 0 : index; // prevent overflow
       } else {
         index = 0;
       }
