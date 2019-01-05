@@ -104,11 +104,11 @@ const activateAsideScroll = function (els, scrollTop) {
 
 window.addEventListener('scroll', function (e) {
   let scrollTop = document.documentElement.scrollTop;
-  let sub = Array.from(document.querySelectorAll('.btn--site-aside-sub'));
-  sub = sub.filter(x => !Xt.parents(x, '.xt-clone').length); // filter out parent
+  let sub = document.querySelectorAll('.btn--site-aside-sub');
+  sub = Array.from(sub).filter(x => !Xt.parents(x, '.xt-clone').length); // filter out parent
   activateAsideScroll(sub, scrollTop);
-  let subsub = Array.from(document.querySelectorAll('.btn--site-aside-sub + .site-aside-subsub .btn--site-aside-subsub'));
-  subsub = subsub.filter(x => !Xt.parents(x, '.xt-clone').length); // filter out parent
+  let subsub = document.querySelectorAll('.btn--site-aside-sub + .site-aside-subsub .btn--site-aside-subsub');
+  subsub = Array.from(subsub).filter(x => !Xt.parents(x, '.xt-clone').length); // filter out parent
   activateAsideScroll(subsub, scrollTop);
 });
 
@@ -119,8 +119,8 @@ window.addEventListener('scroll', function (e) {
 // formatCode
 
 const formatCode = function (source, lang) {
-  let inner = Array.from(source.querySelectorAll('.demo-source-from'));
-  inner = inner.filter(x => !x.querySelectorAll('.demo-source-from').length); // filter out nested
+  let inner = source.querySelectorAll('.demo-source-from');
+  inner = Array.from(inner).filter(x => !x.querySelectorAll('.demo-source-from').length); // filter out nested
   if (inner.length) {
     source = inner[0];
   }
@@ -175,11 +175,6 @@ const populateDemo = function (container, i) {
   container.prepend(Xt.createElement('<div class="demo-tabs"><div class="demo-tabs-left"></div><div class="demo-tabs-right"></div></div>'));
   container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny btn--narrow btn--show-code" data-toggle="tooltip" data-placement="top" aria-label="Show code"><span class="icon-code icon--big"></span></button>'));
   container.querySelectorAll('.demo-tabs-right')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny btn--narrow btn--open-full" data-toggle="tooltip" data-placement="top" aria-label="Open full"><span class="icon-maximize icon--big"></span></button>'));
-  /*
-  append.addEventListener('click', function (e) {
-    console.log();
-  });
-  */
   // don't show tabs on single
   /*
   if (items.length === 1) {
@@ -209,13 +204,6 @@ const populateDemo = function (container, i) {
     }
     // tabs
     item.prepend(Xt.createElement('<div class="demo-code collapse--height"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn--secondary-empty btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>'));
-    // collapse code
-    let demoId = 'demo-' + i + k;
-    container.setAttribute('id', demoId);
-    new Xt.Toggle(container.querySelectorAll('.btn--show-code')[0], {
-      "targets": "#" + demoId,
-      "targetsInner": ".demo-code"
-    });
     // https://github.com/zenorocha/clipboard.js/
     let clipboard = new Clipboard('.btn--clipboard', {
       target: function (trigger) {
@@ -258,6 +246,37 @@ const populateDemo = function (container, i) {
       item.classList.add('populated');
     }
   }
+  // demo tabs
+  new Xt.Toggle(container, {
+    "elements": ".demo-tabs-left .btn",
+    "targets": ".demo-item",
+    "min": 1
+  });
+  // loop items
+  for(let [k, item] of items.entries()) {
+    // collapse code
+    let demoId = 'demo-' + i + k;
+    container.setAttribute('id', demoId);
+    new Xt.Toggle(container.querySelectorAll('.btn--show-code')[0], {
+      "targets": "#" + demoId,
+      "targetsInner": ".demo-code",
+      "aria": false
+    });
+  }
+  // enable fullscreen
+  /*
+  element.find('.demo-tabs-left .button').on('on', function(e, obj) {
+    let $fullscreen = $(this).parents('.demo').find('.button__fullscreen');
+    let iframe = $(this).parents('.demo').find('.demo-item.active').attr('data-iframe');
+    if (iframe) {
+      $fullscreen.css('display', 'block');
+      $fullscreen.off('click');
+      $fullscreen.on('click', function() {
+        window.open(iframe, '_blank');
+      });
+    }
+  });
+  */
 };
 
 // populateInline
@@ -267,7 +286,7 @@ const populateInline = function (item, id) {
   for(let [z, el] of els.entries()) {
     populateSources(item, el, z);
     if (!item.classList.contains('demo-preview')) {
-      el.style.display = none;
+      el.style.display = 'none';
     }
     /*
     // don't show tabs on single
@@ -279,7 +298,7 @@ const populateInline = function (item, id) {
   new Xt.Toggle(item, {
     "elements": ".demo-code-tabs-left .btn",
     "targets": ".demo-code-body-item",
-    "min": 1,
+    "min": 1
   });
 };
 
@@ -361,26 +380,6 @@ const populateSources = function (item, element, z) {
 
 for(let [i, el] of document.querySelectorAll('.demo').entries()) {
   populateDemo(el, i);
-  // enable fullscreen
-  /*
-  element.find('.demo-tabs-left .button').on('on', function(e, obj) {
-    let $fullscreen = $(this).parents('.demo').find('.button__fullscreen');
-    let iframe = $(this).parents('.demo').find('.demo-item.active').attr('data-iframe');
-    if (iframe) {
-      $fullscreen.css('display', 'block');
-      $fullscreen.off('click');
-      $fullscreen.on('click', function() {
-        window.open(iframe, '_blank');
-      });
-    }
-  });
-  */
-  // demo tabs
-  new Xt.Toggle(el, {
-    "elements": ".demo-tabs-left .btn",
-    "targets": ".demo-item",
-    "min": 1
-  });
 }
 
 //////////////////////

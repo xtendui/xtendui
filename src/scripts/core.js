@@ -51,7 +51,7 @@ class Core {
       "autoInverse": false,
       "autoLoop": true,
       "loop": true,
-      "jump": true,
+      "jump": false,
       "delayOn": false,
       "delayOff": false,
       "durationOn": false,
@@ -253,7 +253,10 @@ class Core {
             tr.setAttribute('id', Xt.getUniqueID());
           }
           // tabindex
-          tr.setAttribute('tabindex', '-1');
+          let focusables = tr.querySelectorAll(Xt.focusables);
+          for (let focusable of focusables) {
+            focusable.setAttribute('tabindex', '-1');
+          }
           // expanded
           let role = tr.getAttribute('role');
           if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
@@ -400,8 +403,6 @@ class Core {
   eventOnHandler(element, e) {
     let self = this;
     let options = self.options;
-    // prevent propagation (needed when elements are inside targets)
-    e.stopPropagation();
     // prevent links (needed for xt-ajax)
     if (element.tagName === 'A') {
       e.preventDefault();
@@ -443,8 +444,6 @@ class Core {
   eventOffHandler(element, e) {
     let self = this;
     let options = self.options;
-    // prevent propagation (needed when elements are inside targets)
-    e.stopPropagation();
     // handler
     if (!e.detail || !e.detail.skip) {
       // event block
@@ -559,8 +558,11 @@ class Core {
    */
   eventJumpHandler(el, e) {
     let self = this;
-    // prevent propagation (needed when elements are inside targets)
-    e.stopPropagation();
+    // stop when clicking disabled focusable inside targets
+    let check = e.target;
+    if (check.getAttribute('tabindex') === '-1' || Xt.parents(check, '[tabindex="-1"]').length) {
+      return false;
+    }
     // handler
     self.eventJump(el, e);
   }
@@ -572,8 +574,6 @@ class Core {
    */
   eventNavHandler(nav, e) {
     let self = this;
-    // prevent propagation (needed when elements are inside targets)
-    e.stopPropagation();
     // handler
     self.eventNav(nav, e);
   }
@@ -1394,15 +1394,15 @@ class Core {
       self.specialCloseOn(el, obj[type].groupElements.single);
     }
     // aria
-    if (type === 'elements') {
-      if (options.aria) {
+    if (options.aria) {
+      if (type === 'elements') {
+        // selected
         let ariaEls = self.getInside(el, options.ariaControls);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;
         ariaEl.setAttribute('aria-selected', 'true');
       }
-    }
-    if (type === 'targets' || type === 'targetsInner') {
-      if (options.aria) {
+      if (type === 'targets') {
+        // expanded
         let role = el.getAttribute('role');
         if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
           el.setAttribute('aria-expanded', 'true');
@@ -1515,6 +1515,16 @@ class Core {
     el.classList.remove('in');
     // special
     self.specialCollapseReset(el);
+    // aria
+    if (options.aria) {
+      // tabindex
+      if (type === 'targets') {
+        let focusables = el.querySelectorAll(Xt.focusables);
+        for (let focusable of focusables) {
+          focusable.removeAttribute('tabindex');
+        }
+      }
+    }
     // queue done
     if (!options.instant || !options.instant[type]) {
       let els = obj[type].queueEls;
@@ -1545,18 +1555,24 @@ class Core {
       }
     }
     // aria
-    if (type === 'elements') {
-      if (options.aria) {
+    if (options.aria) {
+      // selected
+      if (type === 'elements') {
         let ariaEls = self.getInside(el, options.ariaControls);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;
         ariaEl.setAttribute('aria-selected', 'false');
       }
-    }
-    if (type === 'targets') {
-      if (options.aria) {
+      if (type === 'targets') {
+        // expanded
         let role = el.getAttribute('role');
         if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
           el.setAttribute('aria-expanded', 'false');
+        }
+        // tabindex
+        let focusables = el.querySelectorAll(Xt.focusables);
+        for (let focusable of focusables) {
+          focusable.setAttribute('tabindex', '-1');
+          focusable.blur();
         }
       }
     }

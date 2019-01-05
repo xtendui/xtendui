@@ -41,6 +41,7 @@ Xt.init = [];
 Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
 Xt.resizeDelay = 100;
 Xt.scrollDelay = false;
+Xt.focusables = 'a, button, details, input, iframe, select, textarea';
 
 //////////////////////
 // init
@@ -469,15 +470,17 @@ Xt.focusLimit = {
     // @FIX Xt.focus when clicking and not used tab before
     Xt.focus.current = Xt.focus.current ? Xt.focus.current : document.activeElement;
     // var
-    let focusable = Array.from(el.querySelectorAll('a, button, details, input, iframe, select, textarea'));
-    focusable = focusable.filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])')); // filter out parent
-    let first = focusable[0];
-    let last = focusable[focusable.length - 1];
-    // event
-    let focusLimitHandler = Xt.dataStorage.put(document, 'focusLimitHandler',
-      Xt.focusLimit.limit.bind(this).bind(this, focusable, first, last));
-    document.removeEventListener('keyup', focusLimitHandler);
-    document.addEventListener('keyup', focusLimitHandler);
+    let focusables = el.querySelectorAll(Xt.focusables);
+    focusables = Array.from(focusables).filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])')); // filter out parent
+    if (focusables.length) {
+      let first = focusables[0];
+      let last = focusables[focusables.length - 1];
+      // event
+      let focusLimitHandler = Xt.dataStorage.put(document, 'focusLimitHandler',
+        Xt.focusLimit.limit.bind(this).bind(this, focusables, first, last));
+      document.removeEventListener('keyup', focusLimitHandler);
+      document.addEventListener('keyup', focusLimitHandler);
+    }
   },
 
   /**
@@ -491,15 +494,15 @@ Xt.focusLimit = {
 
   /**
    * limit even on focus when activated
-   * @param {NodeList|Array} focusable Focusable elements
+   * @param {NodeList|Array} focusables Focusables elements
    * @param {Node|HTMLElement|EventTarget|Window} first First focusable element
    * @param {Node|HTMLElement|EventTarget|Window} last Last focusable element
    * @param {Event} e Event
    */
-  limit: function (focusable, first, last, e) {
+  limit: function (focusables, first, last, e) {
     let code = e.keyCode ? e.keyCode : e.which;
     if (code === 9) {
-      if (!focusable.includes(document.activeElement)) {
+      if (!focusables.includes(document.activeElement)) {
         if (e.shiftKey) {
           last.focus();
           e.preventDefault();

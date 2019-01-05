@@ -565,6 +565,7 @@ Slider.defaults = {
   "max": 1,
   "instant": true,
   "initial": true,
+  "jump": true,
   "autoGroup": {"all": 0.8},
   "contain": false,
   "align": "center",
