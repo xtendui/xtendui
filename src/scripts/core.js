@@ -179,6 +179,10 @@ class Core {
     for (let el of self.elements) {
       el.dataset.xtNamespace = self.namespace;
     }
+    // @FIX set namespace for checks
+    for (let tr of self.targets) {
+      tr.dataset.xtTarget = self.namespace;
+    }
     // automatic initial currents
     window.requestAnimationFrame(function () {
       let elements = self.getElementsSingle();
@@ -372,7 +376,7 @@ class Core {
         let jumpHandler = Xt.dataStorage.put(jump, 'jumpHandler' + self.namespace,
           self.eventJumpHandler.bind(self).bind(self, jump));
         jump.removeEventListener('click', jumpHandler);
-        jump.addEventListener('click', jumpHandler);
+        jump.addEventListener('click', jumpHandler, true); // @FIX useCapture: true or it gets the click from elements inside the target
         // jump
         jump.classList.add('jump');
       }
@@ -558,11 +562,6 @@ class Core {
    */
   eventJumpHandler(el, e) {
     let self = this;
-    // stop when clicking disabled focusable inside targets
-    let check = e.target;
-    if (check.getAttribute('tabindex') === '-1' || Xt.parents(check, '[tabindex="-1"]').length) {
-      return false;
-    }
     // handler
     self.eventJump(el, e);
   }
