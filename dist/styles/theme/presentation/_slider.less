@@ -23,3 +23,55 @@
 .slider_pagination {
   .margin(top, small);
 }
+
+// preset
+
+.slider--multiple {
+  .slides_inner {
+    .flex();
+    .flex-space--y(none);
+    .flex--nowrap();
+    .align-items--start();
+  }
+  .slide {
+    .col(6);
+    .col(4, sm);
+    &:nth-child(1) {
+      .col--custom(80%);
+    }
+    &:nth-child(3) {
+      .slide_inner > * {
+        .padding(y, medium);
+      }
+    }
+    // animations
+    > * {
+      .transition-default.out();
+      transition-duration: @time--big;
+      opacity: .5;
+    }
+    &.active {
+      > * {
+        .transition-default.active();
+        transition-duration: @time--big;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.slider--toggle {
+  .slides_inner {
+    overflow: hidden;
+    // dragger animations
+    .transition--none() !important;
+  }
+  .slide {
+    .toggle--block();
+    &:nth-child(3) {
+      .slide_inner > * {
+        .padding(y, medium);
+      }
+    }
+  }
+}
