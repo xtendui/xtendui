@@ -90,21 +90,21 @@
     }
     &.overlay--left {
       .overlay_design {
-        .anim-left.active();
+        .anim-horizontal.active();
       }
       .overlay_content,
       .overlay_inner > .btn--close {
-        .anim-left.active();
+        .anim-horizontal.active();
         animation-delay: @time--small;
       }
     }
     &.overlay--right {
       .overlay_design {
-        .anim-right.active();
+        .anim-horizontal-inverse.active();
       }
       .overlay_content,
       .overlay_inner > .btn--close {
-        .anim-right.active();
+        .anim-horizontal-inverse.active();
         animation-delay: @time--small;
       }
     }
@@ -128,22 +128,22 @@
     }
     &.overlay--left {
       .overlay_design {
-        .anim-left.out();
+        .anim-horizontal-inverse.out();
         animation-delay: @time--small;
       }
       .overlay_content,
       .overlay_inner > .btn--close {
-        .anim-left.out();
+        .anim-horizontal-inverse.out();
       }
     }
     &.overlay--right {
       .overlay_design {
-        .anim-right.out();
+        .anim-horizontal.out();
         animation-delay: @time--small;
       }
       .overlay_content,
       .overlay_inner > .btn--close {
-        .anim-right.out();
+        .anim-horizontal.out();
       }
     }
   }

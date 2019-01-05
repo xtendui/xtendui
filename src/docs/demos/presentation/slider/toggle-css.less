@@ -15,7 +15,7 @@
     transform: translateX(0);
   }
   &.active {
-    .anim-right.active();
+    .anim-horizontal-inverse.active();
     animation-duration: @time--big;
     &:after {
       .animation-default.active();
@@ -24,7 +24,7 @@
       transform: translateX(-100%);
     }
     &.xt-inverse {
-      .anim-left.active();
+      .anim-horizontal.active();
       animation-duration: @time--big;
       &:after {
         .animation-default.active();
@@ -35,7 +35,7 @@
     }
   }
   &.out {
-    .anim-left.out();
+    .anim-horizontal.out();
     animation-duration: @time--big;
     &:after {
       .animation-default.out();
@@ -44,7 +44,7 @@
       transform: translateX(0);
     }
     &.xt-inverse {
-      .anim-right.out();
+      .anim-horizontal-inverse.out();
       animation-duration: @time--big;
       &:after {
         .animation-default.out();

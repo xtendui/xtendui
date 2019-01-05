@@ -333,7 +333,7 @@
   .site-menu-content {
     .btn {
       .line-container {
-        .anim-left.active();
+        .anim-horizontal.active();
         animation-delay: 0; // @start + @child * @increment
       }
       .nth-child(@child: 6, @start: @time--medium, @increment: 50ms, @decrement: 0ms, { .line-container {
@@ -347,7 +347,7 @@
   .site-menu-content {
     .btn {
       .line-container {
-        .anim-right.out();
+        .anim-horizontal.out();
         animation-delay: 120ms; // @start + @child * @increment
       }
       .nth-child(@child: 6, @start: 0, @increment: 50ms, @decrement: 0ms, { .line-container {
@@ -766,7 +766,7 @@
     }
     .site-breadcrumbs-meta {
       .animation-default.active();
-      animation-name: anim-right--in;
+      animation-name: anim-horizontal-inverse--in;
     }
   }
 }
