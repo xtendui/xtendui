@@ -919,10 +919,12 @@ class Core {
             }
           }
           // listener dispatch
+          self.eDetailSet();
           self.object.dispatchEvent(new CustomEvent('auto.xt', {detail: self.eDetail}));
         }
       }, time).toString();
       // listener dispatch
+      self.eDetailSet();
       self.detail.autoTime = time;
       self.object.dispatchEvent(new CustomEvent('auto.xt', {detail: self.eDetail}));
     }
@@ -945,6 +947,7 @@ class Core {
       }, time).toString();
     }
     // listener dispatch
+    self.eDetailSet();
     self.detail.autoTime = time;
     self.object.dispatchEvent(new CustomEvent('auto.xt', {detail: self.eDetail}));
   }
