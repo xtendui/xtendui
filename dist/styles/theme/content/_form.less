@@ -128,7 +128,7 @@ legend {
   font-size: 1em; // from .form_item font size
   .line-height--tiny();
   // options
-  .form_input-grey();
+  .form_input-gray();
   // animations
   .transition-default.out();
   &:hover, &.active {
@@ -141,9 +141,9 @@ legend {
 
 // variant
 
-.form_input-grey {
+.form_input-gray {
   // styles
-  border-color: @grey--300;
+  border-color: @gray--300;
   background: @white;
   color: @text;
   &:focus {
@@ -151,8 +151,8 @@ legend {
   }
   // select arrow
   select& {
-    @select-arrow-color: darken(@grey--300, @perc--md);
-    @select-space-color: darken(@grey--300, @perc--xs);
+    @select-arrow-color: darken(@gray--300, @perc--md);
+    @select-space-color: darken(@gray--300, @perc--xs);
     background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%),
     linear-gradient(135deg, @select-arrow-color 50%, transparent 50%),
     linear-gradient(to right, @select-space-color, @select-space-color);
@@ -162,27 +162,27 @@ legend {
 // placeholder
 
 :-ms-input-placeholder {
-  color: @grey--500;
+  color: @gray--500;
 }
 
 :-moz-placeholder {
-  color: @grey--500;
+  color: @gray--500;
 }
 
 ::-webkit-input-placeholder {
-  color: @grey--500;
+  color: @gray--500;
 }
 
 ::-ms-input-placeholder {
-  color: @grey--500;
+  color: @gray--500;
 }
 
 ::-moz-placeholder {
-  color: @grey--500;
+  color: @gray--500;
 }
 
 ::placeholder {
-  color: @grey--500;
+  color: @gray--500;
 }
 
 // others
@@ -200,7 +200,7 @@ textarea {
   .margin(bottom, 1em); // from .form_item font size
   .font-sans--semibold();
   font-size: 1em; // from .form_item font size
-  color: @grey--500;
+  color: @gray--500;
   .line-height--tiny();
   .letter-spacing--small();
   text-transform: uppercase;
@@ -235,11 +235,11 @@ input[type="radio"]:not(.unstyled) {
       height: 1.8rem;
     }
     &::before {
-      background: @grey--250;
-      border: 1px solid darken(@grey--250, @perc--md);
+      background: @gray--250;
+      border: 1px solid darken(@gray--250, @perc--md);
     }
     &::after {
-      color: darken(@grey--250, @perc--lg);
+      color: darken(@gray--250, @perc--lg);
     }
   }
   // disabled
@@ -249,7 +249,7 @@ input[type="radio"]:not(.unstyled) {
     }
     &::after {
       .disabled();
-      color: darken(@grey--250, @perc--md);
+      color: darken(@gray--250, @perc--md);
     }
   }
   // animation
