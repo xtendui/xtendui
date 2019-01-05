@@ -123,13 +123,17 @@ class Core {
     let options = self.options;
     // elements
     if (options.elements) {
-      self.elements = Xt.arrSingle(self.container.querySelectorAll(options.elements));
+      let arr = Array.from(Xt.arrSingle(self.container.querySelectorAll(options.elements)));
+      arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
+      self.elements = arr;
     }
     if (!self.elements.length) {
       self.elements = Xt.arrSingle(self.object);
       // @FIX set namespace for next frame
       window.requestAnimationFrame(function () {
-        self.elements = Xt.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']'));
+        let arr = Array.from(Xt.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']')));
+        arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
+        self.elements = arr;
       });
     }
   }
@@ -144,6 +148,7 @@ class Core {
     if (options.targets) {
       let arr = Array.from(self.container.querySelectorAll(options.targets));
       arr = arr.filter(x => !Xt.parents(x, options.targets).length); // filter out parent
+      arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
       self.targets = arr;
     }
   }

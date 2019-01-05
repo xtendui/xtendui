@@ -103,7 +103,7 @@ class Slider extends Core {
           self.pags.push([]);
           // vars
           let currentPags = self.pags[self.pags.length - 1];
-          let clone = pag.querySelectorAll('.slider_pagination_clone')[0];
+          let clone = pag.querySelectorAll('.xt-clone')[0];
           let container = clone.parentNode;
           let arr;
           if (options.autoGroup) {
@@ -119,7 +119,7 @@ class Slider extends Core {
             html = html.replace(new RegExp('{{num}}', 'ig'), (i + 1).toString());
             html = html.replace(new RegExp('{{tot}}', 'ig'), arr.length.toString());
             item.innerHTML = html;
-            item.classList.remove('slider_pagination_clone');
+            item.classList.remove('xt-clone');
             if (options.autoGroup) {
               item.setAttribute('data-xt-group', self.namespace + '-' + i);
             }
@@ -594,7 +594,7 @@ class Slider extends Core {
 
 Slider.componentName = 'slider';
 Slider.defaults = {
-  "elements": ":scope > .slider_pagination button:not(.slider_pagination_clone)",
+  "elements": ":scope > .slider_pagination button",
   "targets": ".slide",
   "class": "active",
   "on": "click",
