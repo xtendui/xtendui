@@ -147,29 +147,24 @@ description: Lorem Ipsum
   </div>
 </div>
 
-<h3>Pagination</h3>
-
-<p>Pagination is essential to the functioning of the slider, so if you don't want to show it add
-  <code>.display--none</code> to <code>.slider_pagination</code>.</p>
-
-<p>You can have multiple paginations, also inside the slides.</p>
-
-<p>You use <code>.xt-clone</code> to generate the pagination, inside you can use this variables: <code>{{num}}</code>
-  <code>{{tot}}</code>.</p>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/pagination.html"
-       data-name="pagination"></div>
-</div>
-
-<h3>Navigation</h3>
+<h3>Navigation and Pagination</h3>
 
 <p>You can add navigation with <code>[data-xt-nav]</code>, set the amount to add to the current activation
-  with <code>data-xt-nav="value"</code></p>
+  with <code>[data-xt-nav="Number"]</code></p>
+
+<p>Use <code>.xt-clone</code> to generate the pagination, inside it you can use this variables: <code>{{num}}</code>
+  <code>{{tot}}</code>.</p>
+
+<div class="alert alert--primary">
+  <div class="alert_content">
+    Pagination is essential to the functioning of the slider, so if you don't want to show it add
+    <code>.display--none</code> to <code>.slider_pagination</code>.
+  </div>
+</div>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/navigation.html"
-       data-name="navigation"></div>
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/nav-pag.html"
+       data-name="pagination"></div>
 </div>
 
 <h3>Progress</h3>
