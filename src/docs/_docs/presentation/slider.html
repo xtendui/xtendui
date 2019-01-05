@@ -147,33 +147,18 @@ description: Lorem Ipsum
   </div>
 </div>
 
-<h3>Others</h3>
+<h3>Drag and toggle</h3>
 
-<p>Just assign the activation class on any target to start with that slide.</p>
+<p>Use <code>"drag": false</code> to disable drag.</p>
 
-<p>For auto options see <a href="{% link _docs/interaction/toggle.html %}#options-auto">toggle auto</a>.</p>
-
-<p><code>"loop": false</code> to disable loop (also on auto).</p>
-
-<p><code>"jump": false</code> to disable clicking on disabled .slides to jump to them.</p>
-
-<p><code>"drag": false</code> to disable drag.</p>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/others.html"
-       data-name="others"></div>
-</div>
-
-<h2>Playground</h2>
-
-<h3>Mask</h3>
+<p>You can use the slider in <em>toggle mode</em>, so with <code>.toogle--block</code> on the slides.</p>
 
 <div class="demo">
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/mask-css.html"
        data-name="css">
     <div class="demo-text">
       <div class="alert_content">
-        <code>"drag": false</code>
+        Toggle slider with css animation
       </div>
     </div>
   </div>
@@ -181,8 +166,24 @@ description: Lorem Ipsum
        data-name="js">
     <div class="demo-text">
       <div class="alert_content">
-        Custom dragger with tweenmax
+        Toggle slider with tweenmax animation
       </div>
     </div>
   </div>
 </div>
+
+<h3>Others</h3>
+
+<p>Just assign the activation class on any target to start with that slide.</p>
+
+<p>For auto options see <a href="{% link _docs/interaction/toggle.html %}#options-auto">toggle auto</a>.</p>
+
+<p><code>"loop": false</code> to disable loop.</p>
+
+<p><code>"jump": false</code> to disable clicking on disabled .slides to jump to them.</p>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/others.html"
+       data-name="others"></div>
+</div>
+

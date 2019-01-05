@@ -48,7 +48,7 @@ class Core {
       "eventAutoChange": false,
       "autoAlways": false,
       "autoInverse": false,
-      "loop": true,
+      "autoLoop": true,
       "delayOn": false,
       "delayOff": false,
       "durationOn": false,
@@ -907,9 +907,9 @@ class Core {
       if (options.autoAlways || self.object.offsetParent) { // offsetParent for checking if :visible
         if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
           if (options.autoInverse) {
-            self.goToPrev();
+            self.goToPrev(true, options.autoLoop);
           } else {
-            self.goToNext();
+            self.goToNext(true, options.autoLoop);
           }
         }
       }
@@ -1800,14 +1800,15 @@ class Core {
   /**
    * activate next element
    * @param {Boolean} force
+   * @param {Boolean} loop
    */
-  goToNext(force = false) {
+  goToNext(force = false, loop) {
     let self = this;
     let options = self.options;
     // goToNext
     let curentIndex = self.curentIndex !== undefined ? self.curentIndex + 1 : 0;
     if (curentIndex > self.elements.length - 1) {
-      if (options.loop) {
+      if (loop || options.loop) {
         curentIndex = 0;
       } else if (force) {
         curentIndex = self.elements.length - 1;
@@ -1824,14 +1825,15 @@ class Core {
   /**
    * activate prev element
    * @param {Boolean} force
+   * @param {Boolean} loop
    */
-  goToPrev(force = false) {
+  goToPrev(force = false, loop) {
     let self = this;
     let options = self.options;
     // goToPrev
     let curentIndex = self.curentIndex !== undefined ? self.curentIndex - 1 : 0;
     if (curentIndex < 0) {
-      if (options.loop) {
+      if (loop || options.loop) {
         curentIndex = self.elements.length - 1;
       } else if (force) {
         curentIndex = 0;
