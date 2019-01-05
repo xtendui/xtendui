@@ -101,29 +101,29 @@ class Slider extends Core {
         self.pags = [];
         for (let pag of pags) {
           self.pags.push([]);
+          // vars
           let currentPags = self.pags[self.pags.length - 1];
-          let clone = pag.querySelectorAll('.slider_pagination_item')[0];
+          let clone = pag.querySelectorAll('.slider_pagination_clone')[0];
           let container = clone.parentNode;
-          // @TODO REFACTOR
+          let arr;
           if (options.autoGroup) {
-            for (let [i, group] of self.autoGroup.entries()) {
-              currentPags[i] = clone.cloneNode(true);
-              let item = currentPags[i];
-              let html = item.innerHTML.replace(new RegExp('{{num}}', 'ig'), i.toString());
-              item.innerHTML = html;
-              item.classList.remove('slider_pagination_item');
-              item.setAttribute('data-xt-group', self.namespace + '-' + i);
-              container.append(item);
-            }
+            arr = self.autoGroup;
           } else {
-            for (let [i, target] of self.targets.entries()) {
-              currentPags[i] = clone.cloneNode(true);
-              let item = currentPags[i];
-              let html = item.innerHTML.replace(new RegExp('{{num}}', 'ig'), i.toString());
-              item.innerHTML = html;
-              item.classList.remove('slider_pagination_item');
-              container.append(item);
+            arr = self.targets;
+          }
+          // populate
+          for (let [i, group] of arr.entries()) {
+            currentPags[i] = clone.cloneNode(true);
+            let item = currentPags[i];
+            let html = item.innerHTML;
+            html = html.replace(new RegExp('{{num}}', 'ig'), (i + 1).toString());
+            html = html.replace(new RegExp('{{tot}}', 'ig'), arr.length.toString());
+            item.innerHTML = html;
+            item.classList.remove('slider_pagination_clone');
+            if (options.autoGroup) {
+              item.setAttribute('data-xt-group', self.namespace + '-' + i);
             }
+            container.append(item);
           }
         }
       }
@@ -594,7 +594,7 @@ class Slider extends Core {
 
 Slider.componentName = 'slider';
 Slider.defaults = {
-  "elements": ":scope > .slider_pagination button:not(.slider_pagination_item)",
+  "elements": ":scope > .slider_pagination button:not(.slider_pagination_clone)",
   "targets": ".slide",
   "class": "active",
   "on": "click",
