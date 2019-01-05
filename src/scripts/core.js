@@ -45,6 +45,7 @@ class Core {
       "onBlock": false,
       "offBlock": false,
       "auto": false,
+      "autoStep": 1,
       "autoChange": false,
       "autoAlways": false,
       "autoInverse": false,
@@ -1016,9 +1017,9 @@ class Core {
         if (options.autoAlways || self.object.offsetParent) { // offsetParent for checking if :visible
           if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
             if (options.autoInverse) {
-              self.goToPrev(1, true, options.autoLoop);
+              self.goToPrev(options.autoStep, true, options.autoLoop);
             } else {
-              self.goToNext(1, true, options.autoLoop);
+              self.goToNext(options.autoStep, true, options.autoLoop);
             }
           }
           // listener dispatch
