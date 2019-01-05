@@ -594,7 +594,7 @@ class Slider extends Core {
 
 Slider.componentName = 'slider';
 Slider.defaults = {
-  "elements": ".slider_pagination_item",
+  "elements": "[data-xt-pag]",
   "targets": ".slide",
   "class": "active",
   "on": "click",
@@ -606,12 +606,11 @@ Slider.defaults = {
   "autoGroup": {"all": 0.8},
   "contain": false,
   "align": "center",
-  "loop": true,
   "jump": true,
   "dragger": ".slides_inner",
   "autoHeight": ".slides",
   "pagination": ".slider_pagination",
-  "navigation": ".slider_navigation_item",
+  "navigation": "[data-xt-nav]",
   "drag": {
     "threshold": 100,
     "friction": 0.75,

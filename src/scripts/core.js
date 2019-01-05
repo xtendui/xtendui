@@ -49,6 +49,7 @@ class Core {
       "autoAlways": false,
       "autoInverse": false,
       "autoLoop": true,
+      "loop": true,
       "delayOn": false,
       "delayOff": false,
       "durationOn": false,
@@ -71,6 +72,9 @@ class Core {
     self.detail = {};
     self.detail.queueOn = [];
     self.detail.queueOff = [];
+    self.detail.inverseDirection = false;
+    self.detail.forceNormalDirection = false;
+    self.detail.forceInverseDirection = false;
     // init
     self.initSetup();
     self.initScope();
@@ -126,6 +130,7 @@ class Core {
     if (options.elements) {
       let arr = Array.from(Xt.arrSingle(self.container.querySelectorAll(options.elements)));
       arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
+      arr = arr.filter(x => !x.getAttribute('data-xt-nav')); // filter out nav
       self.elements = arr;
     }
     if (self.elements.length) {
@@ -137,6 +142,7 @@ class Core {
       window.requestAnimationFrame(function () {
         let arr = Array.from(Xt.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']')));
         arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
+        arr = arr.filter(x => !x.getAttribute('data-xt-nav')); // filter out nav
         self.elements = arr;
         // elementsSingle
         self.elementsSingle = self.getElementsSingle();
@@ -796,9 +802,9 @@ class Core {
         break;
       }
     }
-    self.inverseDirection = !self.forceNormalDirection && (self.forceInverseDirection || self.curentIndex > index);
-    self.forceNormalDirection = false;
-    self.forceInverseDirection = false;
+    self.detail.inverseDirection = !self.detail.forceNormalDirection && (self.detail.forceInverseDirection || self.curentIndex > index);
+    self.detail.forceNormalDirection = false;
+    self.detail.forceInverseDirection = false;
     self.curentIndex = index;
   }
 
@@ -809,7 +815,7 @@ class Core {
   decorateDirection(el) {
     let self = this;
     // decorateDirection
-    if (!self.inverseDirection) {
+    if (!self.detail.inverseDirection) {
       el.classList.remove('xt-inverse');
     } else {
       el.classList.add('xt-inverse');
