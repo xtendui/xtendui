@@ -907,22 +907,25 @@ class Core {
     let options = self.options;
     // auto
     self.eventAutoStop();
-    let time = !instant ? options.auto : 0;
-    self.object.dataset.xtAutoStartInterval = setInterval(function () {
-      if (options.autoAlways || self.object.offsetParent) { // offsetParent for checking if :visible
-        if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
-          if (options.autoInverse) {
-            self.goToPrev(true, options.autoLoop);
-          } else {
-            self.goToNext(true, options.autoLoop);
+    if (!self.detail.autoTime || isFinite(self.detail.autoTime)) { // not when stopped by eventAutoChange
+      let time = !instant ? options.auto : 0;
+      self.object.dataset.xtAutoStartInterval = setInterval(function () {
+        if (options.autoAlways || self.object.offsetParent) { // offsetParent for checking if :visible
+          if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
+            if (options.autoInverse) {
+              self.goToPrev(true, options.autoLoop);
+            } else {
+              self.goToNext(true, options.autoLoop);
+            }
           }
+          // listener dispatch
+          self.object.dispatchEvent(new CustomEvent('auto.xt', {detail: self.eDetail}));
         }
-      }
-    }, time).toString();
-    // listener dispatch
-    self.eDetailSet();
-    self.eDetail.autoTime = time;
-    self.object.dispatchEvent(new CustomEvent('auto.xt', {detail: self.eDetail}));
+      }, time).toString();
+      // listener dispatch
+      self.detail.autoTime = time;
+      self.object.dispatchEvent(new CustomEvent('auto.xt', {detail: self.eDetail}));
+    }
   }
 
   /**
@@ -942,8 +945,7 @@ class Core {
       }, time).toString();
     }
     // listener dispatch
-    self.eDetailSet();
-    self.eDetail.autoTime = time;
+    self.detail.autoTime = time;
     self.object.dispatchEvent(new CustomEvent('auto.xt', {detail: self.eDetail}));
   }
 
@@ -955,10 +957,6 @@ class Core {
     // eventAutoStop
     clearInterval(self.object.dataset.xtAutoStartInterval);
     clearTimeout(self.object.dataset.xtAutoChangeTimeout);
-    // listener dispatch
-    self.eDetailSet();
-    self.eDetail.autoTime = Infinity;
-    self.object.dispatchEvent(new CustomEvent('auto.xt', {detail: self.eDetail}));
   }
 
   //////////////////////

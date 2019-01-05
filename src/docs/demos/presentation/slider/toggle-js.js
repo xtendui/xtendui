@@ -16,20 +16,19 @@ function sliderInit(main, index) {
 
   // slider
 
-  let slider = new Xt.Slider(main, {
+  let self = new Xt.Slider(main, {
     "durationOn": time * 1000,
     "durationOff": time * 1000,
     "instant": false,
     "initial": false
   });
 
-  let dragger = slider.dragger;
+  let dragger = self.dragger;
 
   // drag event
 
   dragger.addEventListener('drag.xt.slider', function (e) {
-    let self = e.detail.object;
-    let slide = slider.targets.filter(x => x.classList.contains('active'))[0];
+    let slide = self.targets.filter(x => x.classList.contains('active'))[0];
     let contents = slide.querySelectorAll('.card_content > *');
     let ratio = Math.abs(self.detail.xStart - self.detail.xCurrent) / slide.clientWidth;
     // direction
@@ -49,7 +48,7 @@ function sliderInit(main, index) {
   // dragend event
 
   dragger.addEventListener('dragend.xt.slider', function (e) {
-    let slide = slider.targets.filter(x => x.classList.contains('active'))[0];
+    let slide = self.targets.filter(x => x.classList.contains('active'))[0];
     let contents = slide.querySelectorAll('.card_content > *');
     // mask
     TweenMax.to(slide, timeMask, {x: 0, opacity: 1, ease: 'easeOut'});
@@ -62,7 +61,7 @@ function sliderInit(main, index) {
 
   // slider items
 
-  for (let slide of slider.targets) {
+  for (let slide of self.targets) {
 
     // on event
 
