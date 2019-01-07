@@ -1001,7 +1001,7 @@ class Core {
           groupElements: groupElements
         };
       }
-      if (options.instant === true) {
+      if (typeof options.instant !== 'object' && options.instant === true) {
         self.detail.queueOn = [obj];
       } else {
         self.detail.queueOn.unshift(obj);
@@ -1077,7 +1077,7 @@ class Core {
           groupElements: groupElements
         };
       }
-      if (options.instant === true) {
+      if (typeof options.instant !== 'object' && options.instant === true) {
         self.detail.queueOff = [obj];
       } else {
         self.detail.queueOff.unshift(obj);
@@ -1125,8 +1125,6 @@ class Core {
             } else {
               self.goToNext(options.auto.step, true, options.auto.loop);
             }
-            // listener dispatch
-            self.object.dispatchEvent(new CustomEvent('auto.xt.start', {detail: self.eDetail}));
           }
         }
       }, time).toString();
@@ -1370,7 +1368,7 @@ class Core {
     for (let el of els) {
       // delay
       let delay;
-      if (!options.instant || !options.instant[type]) { // @FIX queue instant
+      if (options.instant === false || (typeof options.instant === 'object' && !options.instant[type])) { // @FIX queue instant
         if (options.delayOn) {
           if (isNaN(options.delayOn)) {
             let count = parseInt(el.dataset.xtOnCount) || els.findIndex(x => x === el);
@@ -1393,7 +1391,7 @@ class Core {
         self.queueOnDelayDone(obj, el, type);
       }
       // queue done
-      if (options.instant === true) {
+      if (typeof options.instant !== 'object' && options.instant === true) {
         if (el === els[0]) { // only if first element
           self.queueOnDone(obj, type);
         }
@@ -1415,7 +1413,7 @@ class Core {
     for (let el of els) {
       // delay
       let delay;
-      if (!options.instant || !options.instant[type]) { // @FIX queue instant
+      if (options.instant === false || (typeof options.instant === 'object' && !options.instant[type])) { // @FIX queue instant
         if (options.delayOff) {
           if (isNaN(options.delayOff)) {
             let count = parseInt(el.dataset.xtOffCount) || els.findIndex(x => x === el);
@@ -1438,7 +1436,7 @@ class Core {
         self.queueOffDelayDone(obj, el, type);
       }
       // queue done
-      if (options.instant === true) {
+      if (typeof options.instant !== 'object' && options.instant === true) {
         if (el === els[0]) { // only if first element
           self.queueOffDone(obj, type);
         }
@@ -1614,7 +1612,7 @@ class Core {
       }
     }
     // queue done
-    if (!options.instant || !options.instant[type]) {
+    if (options.instant === false || (typeof options.instant === 'object' && !options.instant[type])) {
       let els = obj[type].queueEls;
       if (el === els[els.length - 1]) { // only if last element
         self.queueOnDone(obj, type, skipQueue);
@@ -1667,7 +1665,7 @@ class Core {
       }
     }
     // queue done
-    if (!options.instant || !options.instant[type]) {
+    if (options.instant === false || (typeof options.instant === 'object' && !options.instant[type])) {
       let els = obj[type].queueEls;
       if (el === els[els.length - 1]) { // only if last element
         self.queueOffDone(obj, type, skipQueue);
