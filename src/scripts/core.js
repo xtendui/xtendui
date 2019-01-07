@@ -58,7 +58,8 @@ class Core {
       "durationOff": false,
       "aria": {
         "tabindex": true,
-        "id": true
+        "controls": true,
+        "labelledby": true
       },
       "keyboard": false
     };
@@ -243,7 +244,7 @@ class Core {
           let ariaEls = self.getInside(el, options.ariaControls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
           // id
-          if (options.aria === true || options.aria.id) {
+          if (options.aria === true || options.aria.labelledby || options.aria.controls) {
             let id = ariaEl.getAttribute('id');
             if (!id) {
               ariaEl.setAttribute('id', Xt.getUniqueID());
@@ -267,12 +268,14 @@ class Core {
             }
           }
           // id
-          if (options.aria === true || options.aria.id) {
+          if (options.aria === true || options.aria.labelledby || options.aria.controls) {
             let id = tr.getAttribute('id');
             if (!id) {
               tr.setAttribute('id', Xt.getUniqueID());
             }
-            // labelledby
+          }
+          // labelledby
+          if (options.aria === true || options.aria.labelledby) {
             let str = ' ';
             str += tr.getAttribute('aria-labelledby') || '';
             for (let el of els) {
@@ -283,7 +286,7 @@ class Core {
             tr.setAttribute('aria-labelledby', str.trim());
           }
         }
-        if (options.aria === true || options.aria.id) {
+        if (options.aria === true || options.aria.controls) {
           for (let el of self.elements) {
             let trs = self.getTargets(el);
             let ariaEls = self.getInside(el, options.ariaControls);

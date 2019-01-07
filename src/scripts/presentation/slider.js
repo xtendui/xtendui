@@ -580,7 +580,7 @@ Slider.defaults = {
     "velocityFriction": 0.33,
   },
   "aria": {
-    "id": false,
+    "labelledby": false
   },
   "keyboard": {
     "focus": ".slides"

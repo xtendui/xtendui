@@ -617,8 +617,14 @@ Xt.getUniqueNum = function () {
 Xt.merge = function (arr) {
   let final = {};
   for (let obj of arr) {
-    for (let [key, value] of Object.entries(obj)) {
-      final[key] = value;
+    if (obj) {
+      for (let [key, value] of Object.entries(obj)) {
+        if (typeof value === 'object') {
+          final[key] = Xt.merge([final[key], value]);
+        } else {
+          final[key] = value;
+        }
+      }
     }
   }
   return final;
