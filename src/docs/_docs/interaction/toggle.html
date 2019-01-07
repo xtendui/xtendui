@@ -958,7 +958,8 @@ description: Many possible behaviour, interactions and animations are possible w
 
 <h3>Navigation</h3>
 
-<p>You can add navigation with the <strong>navigation</strong> option, set the amount to add to the current activation with
+<p>You can add navigation with the <strong>navigation</strong> option, set the amount to add to the current activation
+  with
   <code>data-xt-nav="value"</code></p>
 
 <p>Use <code>"loop": false</code> to disable loop.</p>
@@ -1077,6 +1078,101 @@ description: Many possible behaviour, interactions and animations are possible w
     </div>
   </div>
 </div>
+
+<h2>Aria</h2>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="disable">
+    <div class="demo-text">
+      <div class="alert_content">
+        Use <code>"aria": false</code> to disable aria generation, or granularly see @TODO core link
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space--small align-items--center"
+           data-xt-toggle='{"aria": false}'>
+        <button type="button" class="btn">
+          <span>Toggle 0</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 1</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 2</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 3</span>
+        </button>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 0
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 1
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 2
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="keyboard">
+    <div class="demo-text">
+      <div class="alert_content">
+        Use <strong>"keyboard": true</strong> to enable aria keyboard navigation on focus (see @TODO core link)
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space--small align-items--center"
+           data-xt-toggle='{"keyboard": true}'>
+        <button type="button" class="btn">
+          <span>Toggle 0</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 1</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 2</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 3</span>
+        </button>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 0
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 1
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 2
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Options</h3>
 
 <h2>Extensions</h2>
 

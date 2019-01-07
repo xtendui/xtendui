@@ -56,7 +56,11 @@ class Core {
       "delayOff": false,
       "durationOn": false,
       "durationOff": false,
-      "aria": {"tabindex": true, "id": true}
+      "aria": {
+        "tabindex": true,
+        "id": true
+      },
+      "keyboard": false
     };
     self.defaults = Xt.merge([self.defaults, self.constructor.defaults]);
     // js options
@@ -293,6 +297,23 @@ class Core {
             ariaEl.setAttribute('aria-controls', str.trim());
           }
         }
+        // keyboard
+        if (options.keyboard) {
+          let keyboards = options.keyboard.focus ? self.object.querySelectorAll(options.keyboard.focus) : Xt.arrSingle(self.object);
+          for (let keyboard of keyboards) {
+            keyboard.setAttribute('tabindex', '0');
+            // event focus
+            let ariaFocusHandler = Xt.dataStorage.put(keyboard, 'ariaFocusHandler',
+              self.eventAriaFocusHandler.bind(self).bind(self, keyboard));
+            keyboard.removeEventListener('focus', ariaFocusHandler);
+            keyboard.addEventListener('focus', ariaFocusHandler);
+            // event blur
+            let ariaBlurHandler = Xt.dataStorage.put(keyboard, 'ariaBlurHandler',
+              self.eventAriaBlurHandler.bind(self).bind(self, keyboard));
+            keyboard.removeEventListener('blur', ariaBlurHandler);
+            keyboard.addEventListener('blur', ariaBlurHandler);
+          }
+        }
       }
     }
   }
@@ -403,6 +424,66 @@ class Core {
   //////////////////////
   // handler
   //////////////////////
+
+  /**
+   * aria focus handler
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Event} e
+   */
+  eventAriaFocusHandler(el, e) {
+    let self = this;
+    // event key
+    let ariaKeyHandler = Xt.dataStorage.put(document, 'ariaKeyHandler',
+      self.eventAriaKeyHandler.bind(self));
+    document.removeEventListener('keyup', ariaKeyHandler);
+    document.addEventListener('keyup', ariaKeyHandler);
+  }
+
+  /**
+   * aria blur handler
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Event} e
+   */
+  eventAriaBlurHandler(el, e) {
+    // event key
+    let ariaKeyHandler = Xt.dataStorage.get(document, 'ariaKeyHandler');
+    document.removeEventListener('keyup', ariaKeyHandler);
+  }
+
+  /**
+   * aria focus handler
+   * @param {Event} e
+   */
+  eventAriaKeyHandler(e) {
+    let self = this;
+    let options = self.options;
+    // key
+    let code = e.keyCode ? e.keyCode : e.which;
+    let prev;
+    let next;
+    if (options.keyboard.vertical) {
+      if (options.keyboard.inverse) {
+        prev = 40;
+        next = 38;
+      } else {
+        prev = 38;
+        next = 40;
+      }
+    } else {
+      if (options.keyboard.inverse) {
+        prev = 39;
+        next = 37;
+      } else {
+        prev = 37;
+        next = 39;
+      }
+    }
+    if (code === prev) {
+      self.goToPrev(1);
+    } else if (code === next) {
+      self.goToNext(1);
+    }
+  }
 
   /**
    * element on handler
@@ -1978,7 +2059,7 @@ class Core {
    * @param {Boolean} force
    * @param {Boolean} loop
    */
-  goToNext(amount = 1, force = false, loop) {
+  goToNext(amount = 1, force = false, loop = false) {
     let self = this;
     // goToIndex
     let index = 0;
@@ -1994,7 +2075,7 @@ class Core {
    * @param {Boolean} force
    * @param {Boolean} loop
    */
-  goToPrev(amount = 1, force = false, loop) {
+  goToPrev(amount = 1, force = false, loop = false) {
     let self = this;
     // goToIndex
     let index = self.elementsSingle.length - 1;
@@ -2035,6 +2116,10 @@ class Core {
     // go
     let current = self.elements[index];
     self.eventOn(current, force);
+    // auto
+    if (options.auto) {
+      self.eventAutoStart();
+    }
   }
 
 }
