@@ -459,7 +459,7 @@ class Slider extends Core {
     let xDist = xPos - xCache;
     if (Math.abs(xDist) > options.drag.threshold) {
       // get nearest
-      let found = self.curentIndex;
+      let found = self.currentIndex;
       if (options.autoGroup) {
         self.autoGroup = [];
         for (let [i, group] of self.autoGroup.entries()) {
@@ -478,7 +478,7 @@ class Slider extends Core {
           }
         }
       }
-      if (found === self.curentIndex) {
+      if (found === self.currentIndex) {
         // change at least one
         if (Math.sign(xDist) < 0) {
           self.goToNext(1, true);

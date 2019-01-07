@@ -44,18 +44,21 @@ class Core {
     self.defaults = {
       "onBlock": false,
       "offBlock": false,
-      "auto": false,
-      "autoStep": 1,
-      "autoChange": false,
-      "autoAlways": false,
-      "autoInverse": false,
-      "autoLoop": true,
       "loop": true,
       "jump": false,
       "delayOn": false,
       "delayOff": false,
       "durationOn": false,
       "durationOff": false,
+      "auto": {
+        "time": false,
+        "step": 1,
+        "initial": true,
+        "hidden": false,
+        "loop": true,
+        "inverse": false,
+        "pause": false
+      },
       "aria": {
         "tabindex": true,
         "controls": true,
@@ -223,8 +226,14 @@ class Core {
         // if currents < min
         let todo = options.min - self.getCurrents().length;
         if (todo) {
+          // activate
           for (let i = 0; i < todo; i++) {
             self.eventOn(self.elements[i]);
+          }
+        } else {
+          // auto
+          if (options.auto && options.auto.time && options.auto.initial) {
+            self.eventAutoStart();
           }
         }
       }
@@ -302,7 +311,7 @@ class Core {
         }
         // keyboard
         if (options.keyboard) {
-          let keyboards = options.keyboard.focus ? self.object.querySelectorAll(options.keyboard.focus) : Xt.arrSingle(self.object);
+          let keyboards = options.keyboard.selector ? self.object.querySelectorAll(options.keyboard.selector) : Xt.arrSingle(self.object);
           for (let keyboard of keyboards) {
             keyboard.setAttribute('tabindex', '0');
             // event focus
@@ -377,8 +386,7 @@ class Core {
       }
     }
     // auto
-    if (options.auto) {
-      self.eventAutoStart();
+    if (options.auto && options.auto.time) {
       // focus auto
       window.removeEventListener('focus', self.eventAutoStart.bind(self, false));
       window.addEventListener('focus', self.eventAutoStart.bind(self, false));
@@ -386,7 +394,7 @@ class Core {
       window.removeEventListener('blur', self.eventAutoStop.bind(self, false));
       window.addEventListener('blur', self.eventAutoStop.bind(self, false));
       // autoPause
-      for (let el of self.object.querySelectorAll(options.autoPause)) {
+      for (let el of self.object.querySelectorAll(options.auto.pause)) {
         // pause
         let autoPauseOnHandler = Xt.dataStorage.put(el, 'autoPauseOnHandler' + self.namespace,
           self.eventAutoPauseOnHandler.bind(self).bind(self, el));
@@ -519,12 +527,6 @@ class Core {
         }
       } else {
         self.eventOn(element, false, e);
-      }
-      // auto
-      if (options.autoChange) {
-        self.eventAutoChange();
-      } else if (options.auto) {
-        self.eventAutoStart();
       }
     }
   }
@@ -916,10 +918,10 @@ class Core {
         break;
       }
     }
-    self.detail.inverseDirection = !self.detail.forceNormalDirection && (self.detail.forceInverseDirection || self.curentIndex > index);
+    self.detail.inverseDirection = !self.detail.forceNormalDirection && (self.detail.forceInverseDirection || self.currentIndex > index);
     self.detail.forceNormalDirection = false;
     self.detail.forceInverseDirection = false;
-    self.curentIndex = index;
+    self.currentIndex = index;
   }
 
   /**
@@ -957,6 +959,7 @@ class Core {
    * @param {Node|HTMLElement|EventTarget|Window} element To be activated
    * @param {Boolean} force
    * @param {Event} e
+   * @returns {Boolean} If activated
    */
   eventOn(element, force = false, e = null) {
     let self = this;
@@ -1013,10 +1016,14 @@ class Core {
       for (let type in self.detail.queueOn[0]) {
         self.queueOn(type, 0, true);
       }
+      // activated
+      return true;
     } else if (options.toggle && (!e || !e.detail || !e.detail.skipToggle)) { // not when skipToggle
       // off
       self.eventOff(element, e);
     }
+    // activated
+    return false;
   }
 
   /**
@@ -1024,6 +1031,7 @@ class Core {
    * @param {Node|HTMLElement|EventTarget|Window} element To be deactivated
    * @param {Boolean} force
    * @param {Event} e
+   * @returns {Boolean} If deactivated
    */
   eventOff(element, force = false, e = null) {
     let self = this;
@@ -1031,8 +1039,7 @@ class Core {
     // toggle
     if (force || self.checkOff(element)) {
       // if currents === min
-      let currents = self.getCurrents();
-      if (currents.length === options.min) {
+      if (self.getCurrents().length === options.min) {
         return false;
       }
       // eDetail
@@ -1040,9 +1047,16 @@ class Core {
       // off
       let groupElements = self.getElements(element);
       self.removeCurrent(groupElements.single);
+      if (self.getCurrents().length === 0) {
+        self.currentIndex = null;
+      }
       let targets = self.getTargets(element);
       let elementsInner = self.getInside(element, options.elementsInner);
       let targetsInner = self.getInside(targets, options.targetsInner);
+      // auto
+      if (!self.getCurrents().length) {
+        self.eventAutoStop();
+      }
       // queue obj
       let obj = {};
       if (groupElements.all.length) {
@@ -1087,11 +1101,15 @@ class Core {
       for (let type in self.detail.queueOff[0]) {
         self.queueOff(type, 0, true);
       }
+      // deactivated
+      return true;
     }
+    // deactivated
+    return false;
   }
 
   /**
-   * set auto change
+   * auto start
    * @param {Boolean} instant
    */
   eventAutoStart(instant = false) {
@@ -1099,15 +1117,16 @@ class Core {
     let options = self.options;
     // auto
     self.eventAutoStop();
-    if (!self.detail.autoTime || isFinite(self.detail.autoTime)) { // not when stopped by eventAutoChange
-      let time = !instant ? options.auto : 0;
+    if (self.currentIndex !== null &&  // not when nothing activated
+      !self.detail.initial || options.auto.initial) { // not when initial
+      let time = !instant ? options.auto.time : 0;
       self.object.dataset.xtAutoStartInterval = setInterval(function () {
-        if (options.autoAlways || self.object.offsetParent) { // offsetParent for checking if :visible
+        if (options.auto.hidden || self.object.offsetParent) { // offsetParent for checking if :visible
           if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
-            if (options.autoInverse) {
-              self.goToPrev(options.autoStep, true, options.autoLoop);
+            if (options.auto.inverse) {
+              self.goToPrev(options.auto.step, true, options.auto.loop);
             } else {
-              self.goToNext(options.autoStep, true, options.autoLoop);
+              self.goToNext(options.auto.step, true, options.auto.loop);
             }
           }
           // listener dispatch
@@ -1117,41 +1136,17 @@ class Core {
       }, time).toString();
       // listener dispatch
       self.eDetailSet();
-      self.detail.autoTime = time;
       self.object.dispatchEvent(new CustomEvent('auto.xt', {detail: self.eDetail}));
     }
   }
 
   /**
-   * set autoChange change
-   * @param {Boolean} instant
-   */
-  eventAutoChange(instant = false) {
-    let self = this;
-    let options = self.options;
-    // eventAutoChange
-    self.eventAutoStop();
-    let time = !instant ? options.autoChange : 0;
-    if (isFinite(time)) {
-      self.object.dataset.xtAutoChangeTimeout = setTimeout(function () {
-        self.eventAutoStart(true);
-        self.eventAutoStart();
-      }, time).toString();
-    }
-    // listener dispatch
-    self.eDetailSet();
-    self.detail.autoTime = time;
-    self.object.dispatchEvent(new CustomEvent('auto.xt', {detail: self.eDetail}));
-  }
-
-  /**
-   * stop auto change
+   * auto stop
    */
   eventAutoStop() {
     let self = this;
     // eventAutoStop
     clearInterval(self.object.dataset.xtAutoStartInterval);
-    clearTimeout(self.object.dataset.xtAutoChangeTimeout);
   }
 
   /**
@@ -1177,8 +1172,8 @@ class Core {
     let self = this;
     // nav
     let index = 0;
-    if (self.curentIndex !== undefined) {
-      index = self.curentIndex + parseFloat(nav.getAttribute('data-xt-nav'));
+    if (self.currentIndex !== undefined) {
+      index = self.currentIndex + parseFloat(nav.getAttribute('data-xt-nav'));
     }
     self.goToIndex(index, true);
   }
@@ -1270,6 +1265,10 @@ class Core {
       if (done === Object.entries(obj).length) {
         // initial
         self.detail.initial = false;
+        // auto
+        if (options.auto && options.auto.time) {
+          self.eventAutoStart();
+        }
         // remove queue
         self.detail.queueOn.pop();
       }
@@ -2062,12 +2061,12 @@ class Core {
    * @param {Boolean} force
    * @param {Boolean} loop
    */
-  goToNext(amount = 1, force = false, loop = false) {
+  goToNext(amount = 1, force = false, loop) {
     let self = this;
     // goToIndex
     let index = 0;
-    if (self.curentIndex !== undefined) {
-      index = self.curentIndex + amount;
+    if (self.currentIndex !== undefined) {
+      index = self.currentIndex + amount;
     }
     self.goToIndex(index, force, loop);
   }
@@ -2078,12 +2077,12 @@ class Core {
    * @param {Boolean} force
    * @param {Boolean} loop
    */
-  goToPrev(amount = 1, force = false, loop = false) {
+  goToPrev(amount = 1, force = false, loop) {
     let self = this;
     // goToIndex
     let index = self.elementsSingle.length - 1;
-    if (self.curentIndex !== undefined) {
-      index = self.curentIndex - amount;
+    if (self.currentIndex !== undefined) {
+      index = self.currentIndex - amount;
     }
     self.goToIndex(index, force, loop);
   }
@@ -2100,14 +2099,14 @@ class Core {
     // check
     let max = self.elementsSingle.length - 1;
     if (index > max) {
-      if (loop || options.loop) {
+      if (loop || (loop == undefined && options.loop)) {
         index = index - max - 1;
         index = index > max ? max : index; // prevent overflow
       } else {
         index = max;
       }
     } else if (index < 0) {
-      if (loop || options.loop) {
+      if (loop || (loop == undefined && options.loop)) {
         index = index + max + 1;
         index = index < 0 ? 0 : index; // prevent overflow
       } else {
@@ -2115,14 +2114,10 @@ class Core {
       }
     }
     // set
-    self.curentIndex = index;
+    self.currentIndex = index;
     // go
     let current = self.elements[index];
     self.eventOn(current, force);
-    // auto
-    if (options.auto) {
-      self.eventAutoStart();
-    }
   }
 
 }

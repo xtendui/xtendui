@@ -8,9 +8,10 @@ padding: true
 
 <div class="slider slider--multiple"
      data-xt-slider='{
-      "auto": 2000,
-      "autoChange": 6000,
-      "autoPause": ".slide, :scope > .slider_pagination",
+      "auto": {
+        "time": 2000,
+        "pause": ".slide, .slider_pagination"
+      },
       "loop": false,
       "jump": false
      }'>

@@ -635,22 +635,16 @@ description: Many possible behaviour, interactions and animations are possible w
 
 <h3>Auto</h3>
 
-<p>You can set automatic activation with <code>"auto": Milliseconds</code> and <code>"autoChange": Milliseconds</code>
-  on user interaction. At the end it automatically loops.</p>
-
-<p>Use <code>"autoAlways": true</code> to execute auto always, by default it only execute auto if the initialized
-  selector is visible in the DOM.</p>
-
 <div class="demo">
-  <div class="demo-item demo-preview" data-name="auto">
+  <div class="demo-item demo-preview" data-name="time">
     <div class="demo-text">
       <div class="alert_content">
-        <code>"auto": Milliseconds</code>
+        <code>"auto": {"time": Milliseconds}</code> <code>"auto": {"step": Number}</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"auto": 2000}'>
+           data-xt-toggle='{"auto": {"time": 2000}}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -686,15 +680,15 @@ description: Many possible behaviour, interactions and animations are possible w
       </div>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="autoStep">
+  <div class="demo-item demo-preview" data-name="step">
     <div class="demo-text">
       <div class="alert_content">
-        <code>"autoStep": Number</code>
+        <code>"auto": {"step": Number}</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"auto": 2000, "autoStep": 3}'>
+           data-xt-toggle='{"auto": {"time": 2000, "step": 3}}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -730,15 +724,15 @@ description: Many possible behaviour, interactions and animations are possible w
       </div>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="autoChange">
+  <div class="demo-item demo-preview" data-name="initial">
     <div class="demo-text">
       <div class="alert_content">
-        <code>"autoChange": Milliseconds</code> or <code>"autoChange": "Infinity"</code>
+        <code>"auto": {"initial": Boolean}</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"auto": 2000, "autoChange": 6000}'>
+           data-xt-toggle='{"auto": {"time": 2000, "initial": false}}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -774,15 +768,15 @@ description: Many possible behaviour, interactions and animations are possible w
       </div>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="autoPause">
+  <div class="demo-item demo-preview" data-name="loop">
     <div class="demo-text">
       <div class="alert_content">
-        pause on mouseenter, resume on mouseleave with <code>"autoPause": String</code> querySelectorAll inside object
+        <code>"auto": {"loop": Boolean}</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"auto": 2000, "autoChange": 6000, "autoPause": ":scope > button, .toggle--block"}'>
+           data-xt-toggle='{"auto": {"time": 2000, "loop": false}}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -818,15 +812,15 @@ description: Many possible behaviour, interactions and animations are possible w
       </div>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="autoLoop">
+  <div class="demo-item demo-preview" data-name="pause">
     <div class="demo-text">
       <div class="alert_content">
-        <code>"autoLoop": Boolean</code>
+        pause on mouseenter, resume on mouseleave with <code>"auto": {"pause": Query}</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"auto": 2000, "autoChange": 6000, "autoLoop": false}'>
+           data-xt-toggle='{"auto": {"time": 2000, "pause": ":scope > button, .toggle--block"}}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -862,15 +856,15 @@ description: Many possible behaviour, interactions and animations are possible w
       </div>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="autoInverse">
+  <div class="demo-item demo-preview" data-name="inverse">
     <div class="demo-text">
       <div class="alert_content">
-        <code>"autoInverse": Boolean</code>
+        <code>"auto": {"inverse": Boolean}</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"auto": 2000, "autoChange": 6000, "autoInverse": true}'>
+           data-xt-toggle='{"auto": {"time": 2000, "inverse": true}}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -909,7 +903,7 @@ description: Many possible behaviour, interactions and animations are possible w
   <div class="demo-item demo-preview" data-name="complex">
     <div class="demo-source" data-lang="html">
       <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"min": 1, "max": 2, "auto": 2000, "autoChange": "Infinity", "autoPause": ":scope > button, .toggle--block"}'>
+           data-xt-toggle='{"min": 1, "max": 2, "auto": {"time": 2000, "pause": ":scope > button, .toggle--block"}}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>

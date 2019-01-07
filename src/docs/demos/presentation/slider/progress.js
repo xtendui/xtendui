@@ -8,9 +8,11 @@ function sliderInit(main, index) {
   // slider
 
   let self = new Xt.Slider(main, {
-    "auto": 2000,
-    "autoChange": Infinity,
-    "autoPause": ".slide, :scope > .slider_pagination"
+    "auto": {
+      "time": 2000,
+      "pause": ".slide, .slider_pagination",
+      "progress": ".progress"
+    }
   });
 
   let slider = self.object;
