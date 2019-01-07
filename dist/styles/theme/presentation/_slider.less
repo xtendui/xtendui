@@ -53,3 +53,24 @@
     font-size: 9px;
   }
 }
+
+// progress @TODO refactor
+
+.loader_container {
+  overflow: hidden;
+  // same as slider pagination
+  border-radius: 2rem;
+  border-width: @btn--border-width;
+}
+
+.progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: @primary;
+  .slider_pagination & {
+    height: 100%;
+  }
+}
