@@ -84,8 +84,6 @@ class Core {
     self.detail.queueOn = [];
     self.detail.queueOff = [];
     self.detail.inverseDirection = false;
-    self.detail.forceNormalDirection = false;
-    self.detail.forceInverseDirection = false;
     // init
     self.initSetup();
     self.initScope();
@@ -916,9 +914,7 @@ class Core {
         break;
       }
     }
-    self.detail.inverseDirection = !self.detail.forceNormalDirection && (self.detail.forceInverseDirection || self.currentIndex > index);
-    self.detail.forceNormalDirection = false;
-    self.detail.forceInverseDirection = false;
+    self.detail.inverseDirection = self.currentIndex > index;
     self.currentIndex = index;
   }
 
@@ -1112,27 +1108,32 @@ class Core {
   eventAutoStart() {
     let self = this;
     let options = self.options;
-    // auto
+    // auto stop
     self.eventAutoStop();
+    // auto
+    let time = options.auto.time;
     if (self.currentIndex !== null &&  // not when nothing activated
       !self.detail.initial || options.auto.initial) { // not when initial
       self.object.dataset.xtAutoStartInterval = setInterval(function () {
         if (options.auto.hidden || self.object.offsetParent) { // offsetParent for checking if :visible
+          // listener dispatch
+          self.object.dispatchEvent(new CustomEvent('auto.xt.end', {detail: self.eDetail}));
+          // auto
           if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
             if (options.auto.inverse) {
               self.goToPrev(options.auto.step, true, options.auto.loop);
             } else {
               self.goToNext(options.auto.step, true, options.auto.loop);
             }
+            // listener dispatch
+            self.object.dispatchEvent(new CustomEvent('auto.xt.start', {detail: self.eDetail}));
           }
-          // listener dispatch
-          self.eDetailSet();
-          self.object.dispatchEvent(new CustomEvent('auto.xt', {detail: self.eDetail}));
         }
-      }, options.auto.time).toString();
+      }, time).toString();
       // listener dispatch
       self.eDetailSet();
-      self.object.dispatchEvent(new CustomEvent('auto.xt', {detail: self.eDetail}));
+      self.eDetail.autoTime = time;
+      self.object.dispatchEvent(new CustomEvent('auto.xt.start', {detail: self.eDetail}));
     }
   }
 
@@ -1141,8 +1142,10 @@ class Core {
    */
   eventAutoStop() {
     let self = this;
-    // eventAutoStop
+    // auto stop
     clearInterval(self.object.dataset.xtAutoStartInterval);
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent('auto.xt.end', {detail: self.eDetail}));
   }
 
   /**
@@ -2109,8 +2112,6 @@ class Core {
         index = 0;
       }
     }
-    // set
-    self.currentIndex = index;
     // go
     let current = self.elements[index];
     self.eventOn(current, force);
