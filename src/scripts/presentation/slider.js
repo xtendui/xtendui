@@ -167,7 +167,7 @@ class Slider extends Core {
         dragger.addEventListener(event, dragstartHandler);
       }
       // grab
-      dragger.classList.add('grab');
+      dragger.classList.add('xt-grab');
     }
   }
 

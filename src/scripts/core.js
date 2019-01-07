@@ -374,7 +374,7 @@ class Core {
         jump.removeEventListener('click', jumpHandler);
         jump.addEventListener('click', jumpHandler, true); // @FIX useCapture: true or it gets the click from elements inside the target
         // jump
-        jump.classList.add('jump');
+        jump.classList.add('xt-jump');
       }
     }
     // navigation
