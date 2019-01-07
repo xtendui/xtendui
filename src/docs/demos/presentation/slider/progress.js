@@ -10,24 +10,30 @@ function sliderInit(main, index) {
   let self = new Xt.Slider(main, {
     "auto": {
       "time": 2000,
-      "pause": ".slide, .slider_pagination"
+      "pause": ".slide, [data-xt-pag]"
     }
   });
 
   let slider = self.object;
 
   // progress event
-
   slider.addEventListener('auto.xt.start', function (e) {
-    console.log('start');
+    //console.log('start');
     // on slider
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
       let progresses = element.querySelectorAll('.progress');
       for (let progress of progresses) {
-        TweenMax.set(progress, {x: 0});
-        TweenMax.to(progress, e.detail.autoTime / 1000, {width: '100%'});
+        let tweens = TweenMax.getTweensOf(progress);
+        if (tweens.length) {
+          for (let tween of tweens) {
+            tween.resume(0);
+          }
+        } else {
+          TweenMax.set(progress, {width: 0, left: '0%'});
+          TweenMax.to(progress, e.detail.autoTime / 1000, {width: '100%'});
+        }
       }
     }
     // on targets
@@ -35,21 +41,29 @@ function sliderInit(main, index) {
     for (let target of targets) {
       let progresses = target.querySelectorAll('.progress');
       for (let progress of progresses) {
-        TweenMax.set(progress, {x: 0});
-        TweenMax.to(progress, e.detail.autoTime / 1000, {width: '100%'});
+        let tweens = TweenMax.getTweensOf(progress);
+        if (tweens.length) {
+          for (let tween of tweens) {
+            tween.resume(0);
+          }
+        } else {
+          TweenMax.set(progress, {width: 0, left: '0%'});
+          TweenMax.to(progress, e.detail.autoTime / 1000, {width: '100%'});
+        }
       }
     }
   });
 
-  slider.addEventListener('auto.xt.end', function (e) {
-    console.log('end');
+  slider.addEventListener('auto.xt.stop', function (e) {
+    //console.log('stop');
     // on slider
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
       let progresses = element.querySelectorAll('.progress');
       for (let progress of progresses) {
-        TweenMax.to(progress, e.detail.autoTime / 1000, {width: 0, x: '100%'});
+        //TweenMax.set(progress, {width: '100%', left: '0%'});
+        //TweenMax.to(progress, e.detail.autoTime / 1000, {width: 0, left: '100%'});
       }
     }
     // on targets
@@ -57,7 +71,35 @@ function sliderInit(main, index) {
     for (let target of targets) {
       let progresses = target.querySelectorAll('.progress');
       for (let progress of progresses) {
-        TweenMax.to(progress, e.detail.autoTime / 1000, {width: 0, x: '100%'});
+        //TweenMax.set(progress, {width: '100%', left: '0%'});
+        //TweenMax.to(progress, e.detail.autoTime / 1000, {width: 0, left: '100%'});
+      }
+    }
+  });
+
+  slider.addEventListener('auto.xt.pause', function (e) {
+    //console.log('pause');
+    // on slider
+    // on elements
+    let elements = self.elements.filter(x => x.classList.contains('active'));
+    for (let element of elements) {
+      let progresses = element.querySelectorAll('.progress');
+      for (let progress of progresses) {
+        let tweens = TweenMax.getTweensOf(progress);
+        for (let tween of tweens) {
+          tween.paused(true);
+        }
+      }
+    }
+    // on targets
+    let targets = self.targets.filter(x => x.classList.contains('active'));
+    for (let target of targets) {
+      let progresses = target.querySelectorAll('.progress');
+      for (let progress of progresses) {
+        let tweens = TweenMax.getTweensOf(progress);
+        for (let tween of tweens) {
+          tween.paused(true);
+        }
       }
     }
   });

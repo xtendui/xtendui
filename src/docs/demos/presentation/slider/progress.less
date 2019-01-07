@@ -20,7 +20,7 @@
         .padding(y, medium);
       }
     }
-    // animations
+    // animation
     > * {
       .transition-default.out();
       transition-duration: @time--big;
@@ -54,6 +54,8 @@
   border-color: transparent;
   overflow: hidden;
   border-radius: @btn--border-radius;
+  // animation
+  //transform-origin: center left;
 }
 .progress {
   position: absolute;
@@ -62,4 +64,6 @@
   width: 0;
   height: 4px;
   background: @primary;
+  // animation
+  //transform-origin: center left;
 }

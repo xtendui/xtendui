@@ -386,23 +386,23 @@ class Core {
     // auto
     if (options.auto && options.auto.time) {
       // focus auto
-      window.removeEventListener('focus', self.eventAutoStartHandler.bind(self));
-      window.addEventListener('focus', self.eventAutoStartHandler.bind(self));
+      window.removeEventListener('focus', self.eventAutoResumeHandler.bind(self));
+      window.addEventListener('focus', self.eventAutoResumeHandler.bind(self));
       // blur auto
-      window.removeEventListener('blur', self.eventAutoStopHandler.bind(self, false));
-      window.addEventListener('blur', self.eventAutoStopHandler.bind(self, false));
+      window.removeEventListener('blur', self.eventAutoPauseHandler.bind(self));
+      window.addEventListener('blur', self.eventAutoPauseHandler.bind(self));
       // autoPause
       for (let el of self.object.querySelectorAll(options.auto.pause)) {
         // pause
-        let autoStartOnHandler = Xt.dataStorage.put(el, 'autoStartOnHandler' + self.namespace,
-          self.eventAutoStopHandler.bind(self));
-        el.removeEventListener('mouseenter', autoStartOnHandler);
-        el.addEventListener('mouseenter', autoStartOnHandler);
+        let autoPauseOnHandler = Xt.dataStorage.put(el, 'autoPauseOnHandler' + self.namespace,
+          self.eventAutoPauseHandler.bind(self));
+        el.removeEventListener('mouseenter', autoPauseOnHandler);
+        el.addEventListener('mouseenter', autoPauseOnHandler);
         // resume
-        let autoStopOnHandler = Xt.dataStorage.put(el, 'autoStopOnHandler' + self.namespace,
-          self.eventAutoStartHandler.bind(self));
-        el.removeEventListener('mouseleave', autoStopOnHandler);
-        el.addEventListener('mouseleave', autoStopOnHandler);
+        let autoResumeOnHandler = Xt.dataStorage.put(el, 'autoResumeOnHandler' + self.namespace,
+          self.eventAutoResumeHandler.bind(self));
+        el.removeEventListener('mouseleave', autoResumeOnHandler);
+        el.addEventListener('mouseleave', autoResumeOnHandler);
       }
     }
     // jump
@@ -621,24 +621,24 @@ class Core {
   }
 
   /**
-   * auto start handler
+   * auto pause handler
    * @param {Event} e
    */
-  eventAutoStartHandler(e) {
+  eventAutoPauseHandler(e) {
     let self = this;
     if (!e.detail || !e.detail.skip) {
-      self.eventAutoStart();
+      self.eventAutoPause();
     }
   }
 
   /**
-   * auto stop handler
+   * auto resume handler
    * @param {Event} e
    */
-  eventAutoStopHandler(e) {
+  eventAutoResumeHandler(e) {
     let self = this;
     if (!e.detail || !e.detail.skip) {
-      self.eventAutoStop();
+      self.eventAutoStart(true);
     }
   }
 
@@ -1104,20 +1104,23 @@ class Core {
 
   /**
    * auto start
+   * @param {Boolean} resume
    */
-  eventAutoStart() {
+  eventAutoStart(resume = false) {
     let self = this;
     let options = self.options;
-    // auto stop
-    self.eventAutoStop();
+    // clear
+    if (resume) {
+      clearInterval(self.object.dataset.xtAutoStartInterval);
+    } else {
+      self.eventAutoStop();
+    }
     // auto
     let time = options.auto.time;
     if (self.currentIndex !== null &&  // not when nothing activated
       !self.detail.initial || options.auto.initial) { // not when initial
-      self.object.dataset.xtAutoStartInterval = setInterval(function () {
+      self.object.dataset.xtAutoStartInterval = setInterval(function () { // needs to be interval because elements can become :visible
         if (options.auto.hidden || self.object.offsetParent) { // offsetParent for checking if :visible
-          // listener dispatch
-          self.object.dispatchEvent(new CustomEvent('auto.xt.end', {detail: self.eDetail}));
           // auto
           if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
             if (options.auto.inverse) {
@@ -1140,10 +1143,21 @@ class Core {
    */
   eventAutoStop() {
     let self = this;
-    // auto stop
+    // clear
     clearInterval(self.object.dataset.xtAutoStartInterval);
     // listener dispatch
-    self.object.dispatchEvent(new CustomEvent('auto.xt.end', {detail: self.eDetail}));
+    self.object.dispatchEvent(new CustomEvent('auto.xt.stop', {detail: self.eDetail}));
+  }
+
+  /**
+   * auto stop
+   */
+  eventAutoPause() {
+    let self = this;
+    // clear
+    clearInterval(self.object.dataset.xtAutoStartInterval);
+    // listener dispatch
+    self.object.dispatchEvent(new CustomEvent('auto.xt.pause', {detail: self.eDetail}));
   }
 
   /**

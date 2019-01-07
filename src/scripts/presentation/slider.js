@@ -233,7 +233,7 @@ class Slider extends Core {
           self.eventDragstart(dragger, e);
         }
         // auto
-        self.eventAutoStop();
+        self.eventAutoPause();
         // event off
         let dragendHandler = Xt.dataStorage.put(dragger, 'dragendHandler' + self.namespace,
           self.eventDragendHandler.bind(self).bind(self, dragger));
@@ -253,7 +253,6 @@ class Slider extends Core {
    */
   eventDragendHandler(dragger, e) {
     let self = this;
-    let options = self.options;
     // logic
     let eventLimit = self.container.querySelectorAll('.event-limit');
     if (eventLimit.length) {
@@ -262,10 +261,6 @@ class Slider extends Core {
       }
     } else {
       self.eventDragend(dragger, e);
-    }
-    // auto
-    if (options.auto && options.auto.time) {
-      self.eventAutoStart();
     }
     // event off
     let dragendHandler = Xt.dataStorage.get(dragger, 'dragendHandler' + self.namespace);
