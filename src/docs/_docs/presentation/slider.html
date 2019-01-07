@@ -61,27 +61,27 @@ description: Lorem Ipsum
 
 <h2>Options</h2>
 
-<h3>autoGroup</h3>
+<h3>Group</h3>
 
-<p>With <code>"autoGroup": {MediaQuery: Number}</code> you can set a decimal number from 0 to 1 for the available width
-  factor for autoGroup. You can also set multiple with media queries.</p>
+<p>With <code>"groupMq": {MediaQuery: Number}</code> you can set a decimal number from 0 to 1 for the available width
+  factor for groupMq. You can also set multiple with media queries.</p>
 <p>If a slide is bigger, it takes up a single slide anyway.</p>
 <p>it's based on the current slides visible inside the slider, it get recalculated also on responsive.</p>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/autogroup-available.html"
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/group-available.html"
        data-name="available">
     <div class="demo-text">
       <div class="alert_content">
-        <code>"autoGroup": {MediaQuery: Number}</code>
+        <code>"groupMq": {MediaQuery: Number}</code>
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/autogroup-disable.html"
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/group-disable.html"
        data-name="disable">
     <div class="demo-text">
       <div class="alert_content">
-        <code>"autoGroup": false</code> to disable automatic grouping of slides
+        <code>"groupMq": false</code> to disable automatic grouping of slides
       </div>
     </div>
   </div>

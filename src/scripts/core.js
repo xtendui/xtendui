@@ -388,23 +388,23 @@ class Core {
     // auto
     if (options.auto && options.auto.time) {
       // focus auto
-      window.removeEventListener('focus', self.eventAutoStart.bind(self, false));
-      window.addEventListener('focus', self.eventAutoStart.bind(self, false));
+      window.removeEventListener('focus', self.eventAutoStartHandler.bind(self));
+      window.addEventListener('focus', self.eventAutoStartHandler.bind(self));
       // blur auto
-      window.removeEventListener('blur', self.eventAutoStop.bind(self, false));
-      window.addEventListener('blur', self.eventAutoStop.bind(self, false));
+      window.removeEventListener('blur', self.eventAutoStopHandler.bind(self, false));
+      window.addEventListener('blur', self.eventAutoStopHandler.bind(self, false));
       // autoPause
       for (let el of self.object.querySelectorAll(options.auto.pause)) {
         // pause
-        let autoPauseOnHandler = Xt.dataStorage.put(el, 'autoPauseOnHandler' + self.namespace,
-          self.eventAutoPauseOnHandler.bind(self).bind(self, el));
-        el.removeEventListener('mouseenter', autoPauseOnHandler);
-        el.addEventListener('mouseenter', autoPauseOnHandler);
+        let autoStartOnHandler = Xt.dataStorage.put(el, 'autoStartOnHandler' + self.namespace,
+          self.eventAutoStopHandler.bind(self));
+        el.removeEventListener('mouseenter', autoStartOnHandler);
+        el.addEventListener('mouseenter', autoStartOnHandler);
         // resume
-        let autoPauseOffHandler = Xt.dataStorage.put(el, 'autoPauseOffHandler' + self.namespace,
-          self.eventAutoPauseOffHandler.bind(self).bind(self, el));
-        el.removeEventListener('mouseleave', autoPauseOffHandler);
-        el.addEventListener('mouseleave', autoPauseOffHandler);
+        let autoStopOnHandler = Xt.dataStorage.put(el, 'autoStopOnHandler' + self.namespace,
+          self.eventAutoStartHandler.bind(self));
+        el.removeEventListener('mouseleave', autoStopOnHandler);
+        el.addEventListener('mouseleave', autoStopOnHandler);
       }
     }
     // jump
@@ -623,26 +623,24 @@ class Core {
   }
 
   /**
-   * auto pause on handler
-   * @param {Node|HTMLElement|EventTarget|Window} element
+   * auto start handler
    * @param {Event} e
    */
-  eventAutoPauseOnHandler(element, e) {
+  eventAutoStartHandler(e) {
     let self = this;
     if (!e.detail || !e.detail.skip) {
-      self.eventAutoStop();
+      self.eventAutoStart();
     }
   }
 
   /**
-   * auto pause off handler
-   * @param {Node|HTMLElement|EventTarget|Window} element
+   * auto stop handler
    * @param {Event} e
    */
-  eventAutoPauseOffHandler(element, e) {
+  eventAutoStopHandler(e) {
     let self = this;
     if (!e.detail || !e.detail.skip) {
-      self.eventAutoStart();
+      self.eventAutoStop();
     }
   }
 
@@ -1110,16 +1108,14 @@ class Core {
 
   /**
    * auto start
-   * @param {Boolean} instant
    */
-  eventAutoStart(instant = false) {
+  eventAutoStart() {
     let self = this;
     let options = self.options;
     // auto
     self.eventAutoStop();
     if (self.currentIndex !== null &&  // not when nothing activated
       !self.detail.initial || options.auto.initial) { // not when initial
-      let time = !instant ? options.auto.time : 0;
       self.object.dataset.xtAutoStartInterval = setInterval(function () {
         if (options.auto.hidden || self.object.offsetParent) { // offsetParent for checking if :visible
           if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
@@ -1133,7 +1129,7 @@ class Core {
           self.eDetailSet();
           self.object.dispatchEvent(new CustomEvent('auto.xt', {detail: self.eDetail}));
         }
-      }, time).toString();
+      }, options.auto.time).toString();
       // listener dispatch
       self.eDetailSet();
       self.object.dispatchEvent(new CustomEvent('auto.xt', {detail: self.eDetail}));

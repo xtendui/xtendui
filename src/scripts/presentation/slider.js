@@ -43,11 +43,11 @@ class Slider extends Core {
     }
     // automatic group
     let draggerWidthTemp;
-    if (options.autoGroup) {
+    if (options.groupMq) {
       // width
       let draggerWidth = self.dragger ? self.dragger.offsetWidth : self.object.offsetWidth;
-      // autoGroup media
-      let mqs = Object.entries(options.autoGroup);
+      // groupMq media
+      let mqs = Object.entries(options.groupMq);
       if (mqs.length) {
         for (let [key, value] of mqs) {
           if (window.matchMedia(key).matches) {
@@ -57,8 +57,8 @@ class Slider extends Core {
       }
       draggerWidth = draggerWidthTemp;
       // generate groups
-      self.autoGroup = [];
-      self.autoGroup.push([]);
+      self.groupMq = [];
+      self.groupMq.push([]);
       let currentCount = draggerWidth;
       for (let [i, target] of self.targets.entries()) {
         // calculate
@@ -73,15 +73,15 @@ class Slider extends Core {
         }
         currentCount -= targetWidth;
         // overflow
-        let currentGroup = self.autoGroup.length - 1;
-        if (currentCount < 0 && self.autoGroup[currentGroup].length) {
-          self.autoGroup.push([]);
-          currentGroup = self.autoGroup.length - 1;
+        let currentGroup = self.groupMq.length - 1;
+        if (currentCount < 0 && self.groupMq[currentGroup].length) {
+          self.groupMq.push([]);
+          currentGroup = self.groupMq.length - 1;
           currentCount = draggerWidth;
           currentCount -= targetWidth;
         }
         // assign group
-        self.autoGroup[currentGroup].push(target);
+        self.groupMq[currentGroup].push(target);
         target.setAttribute('data-xt-group', self.namespace + '-' + currentGroup);
       }
     }
@@ -105,8 +105,8 @@ class Slider extends Core {
         let clone = pag.querySelectorAll('.xt-clone')[0];
         let container = clone.parentNode;
         let arr;
-        if (options.autoGroup) {
-          arr = self.autoGroup;
+        if (options.groupMq) {
+          arr = self.groupMq;
         } else {
           arr = self.targets;
         }
@@ -119,7 +119,7 @@ class Slider extends Core {
           html = html.replace(new RegExp('{{tot}}', 'ig'), arr.length.toString());
           item.innerHTML = html;
           item.classList.remove('xt-clone');
-          if (options.autoGroup) {
+          if (options.groupMq) {
             item.setAttribute('data-xt-group', self.namespace + '-' + i);
           }
           container.insertBefore(item, clone);
@@ -264,9 +264,7 @@ class Slider extends Core {
       self.eventDragend(dragger, e);
     }
     // auto
-    if (options.autoChange) {
-      self.eventAutoChange();
-    } else if (options.auto) {
+    if (options.auto && options.auto.time) {
       self.eventAutoStart();
     }
     // event off
@@ -460,9 +458,9 @@ class Slider extends Core {
     if (Math.abs(xDist) > options.drag.threshold) {
       // get nearest
       let found = self.currentIndex;
-      if (options.autoGroup) {
-        self.autoGroup = [];
-        for (let [i, group] of self.autoGroup.entries()) {
+      if (options.groupMq) {
+        self.groupMq = [];
+        for (let [i, group] of self.groupMq.entries()) {
           for (let slideCheck of group) {
             let check = xPos - dragger.offsetWidth / 2 + slideCheck.offsetLeft;
             if (slideCheck.offsetParent && check < 0) { // offsetParent for checking if :visible
@@ -566,24 +564,25 @@ Slider.defaults = {
   "instant": true,
   "initial": true,
   "jump": true,
-  "autoGroup": {"all": 0.8},
-  "contain": false,
-  "align": "center",
-  "dragger": ".slides_inner",
-  "autoHeight": ".slides",
-  "pagination": ".slider_pagination",
   "navigation": "[data-xt-nav]",
-  "drag": {
-    "threshold": 100,
-    "friction": 0.75,
-    "frictionThreshold": 5,
-    "velocityFriction": 0.33,
-  },
   "aria": {
     "labelledby": false
   },
   "keyboard": {
     "focus": ".slides"
+  },
+  // slider only
+  "autoHeight": ".slides",
+  "groupMq": {"all": 0.8},
+  "align": "center",
+  "contain": false,
+  "pagination": ".slider_pagination",
+  "dragger": ".slides_inner",
+  "drag": {
+    "threshold": 100,
+    "friction": 0.75,
+    "frictionThreshold": 5,
+    "velocityFriction": 0.33,
   }
 };
 
