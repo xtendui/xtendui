@@ -65,8 +65,7 @@ Toggle.defaults = {
   "on": "click",
   "min": 0,
   "max": 1,
-  "instant": {"elements": true},
-  "aria": true
+  "instant": {"elements": true}
 };
 
 //////////////////////

@@ -55,7 +55,8 @@ class Core {
       "delayOn": false,
       "delayOff": false,
       "durationOn": false,
-      "durationOff": false
+      "durationOff": false,
+      "aria": {"tabindex": true, "id": true}
     };
     self.defaults = Xt.merge([self.defaults, self.constructor.defaults]);
     // js options
@@ -238,51 +239,59 @@ class Core {
           let ariaEls = self.getInside(el, options.ariaControls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
           // id
-          let id = ariaEl.getAttribute('id');
-          if (!id) {
-            ariaEl.setAttribute('id', Xt.getUniqueID());
+          if (options.aria === true || options.aria.id) {
+            let id = ariaEl.getAttribute('id');
+            if (!id) {
+              ariaEl.setAttribute('id', Xt.getUniqueID());
+            }
           }
           // selected
           ariaEl.setAttribute('aria-selected', 'false');
         }
         for (let tr of self.targets) {
           let els = self.getElementsFromTarget(tr);
-          // id
-          let id = tr.getAttribute('id');
-          if (!id) {
-            tr.setAttribute('id', Xt.getUniqueID());
-          }
-          // tabindex
-          let focusables = tr.querySelectorAll(Xt.focusables);
-          for (let focusable of focusables) {
-            focusable.setAttribute('tabindex', '-1');
-          }
           // expanded
           let role = tr.getAttribute('role');
           if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
             tr.setAttribute('aria-expanded', 'false');
           }
-          // depending on el
-          let str = ' ';
-          str += tr.getAttribute('aria-labelledby') || '';
-          for (let el of els) {
+          // tabindex
+          if (options.aria === true || options.aria.tabindex) {
+            let focusables = tr.querySelectorAll(Xt.focusables);
+            for (let focusable of focusables) {
+              focusable.setAttribute('tabindex', '-1');
+            }
+          }
+          // id
+          if (options.aria === true || options.aria.id) {
+            let id = tr.getAttribute('id');
+            if (!id) {
+              tr.setAttribute('id', Xt.getUniqueID());
+            }
+            // labelledby
+            let str = ' ';
+            str += tr.getAttribute('aria-labelledby') || '';
+            for (let el of els) {
+              let ariaEls = self.getInside(el, options.ariaControls);
+              let ariaEl = ariaEls.length ? ariaEls[0] : el;
+              str += ' ' + ariaEl.getAttribute('id');
+            }
+            tr.setAttribute('aria-labelledby', str.trim());
+          }
+        }
+        if (options.aria === true || options.aria.id) {
+          for (let el of self.elements) {
+            let trs = self.getTargets(el);
             let ariaEls = self.getInside(el, options.ariaControls);
             let ariaEl = ariaEls.length ? ariaEls[0] : el;
-            str += ' ' + ariaEl.getAttribute('id');
+            // controls
+            let str = ' ';
+            str += ariaEl.getAttribute('aria-controls') || '';
+            for (let tr of trs) {
+              str += ' ' + tr.getAttribute('id');
+            }
+            ariaEl.setAttribute('aria-controls', str.trim());
           }
-          tr.setAttribute('aria-labelledby', str.trim());
-        }
-        for (let el of self.elements) {
-          let trs = self.getTargets(el);
-          let ariaEls = self.getInside(el, options.ariaControls);
-          let ariaEl = ariaEls.length ? ariaEls[0] : el;
-          // depending on tr
-          let str = ' ';
-          str += ariaEl.getAttribute('aria-controls') || '';
-          for (let tr of trs) {
-            str += ' ' + tr.getAttribute('id');
-          }
-          ariaEl.setAttribute('aria-controls', str.trim());
         }
       }
     }
@@ -1513,10 +1522,12 @@ class Core {
     // aria
     if (options.aria) {
       // tabindex
-      if (type === 'targets') {
-        let focusables = el.querySelectorAll(Xt.focusables);
-        for (let focusable of focusables) {
-          focusable.removeAttribute('tabindex');
+      if (options.aria === true || options.aria.tabindex) {
+        if (type === 'targets') {
+          let focusables = el.querySelectorAll(Xt.focusables);
+          for (let focusable of focusables) {
+            focusable.removeAttribute('tabindex');
+          }
         }
       }
     }
@@ -1564,10 +1575,12 @@ class Core {
           el.setAttribute('aria-expanded', 'false');
         }
         // tabindex
-        let focusables = el.querySelectorAll(Xt.focusables);
-        for (let focusable of focusables) {
-          focusable.setAttribute('tabindex', '-1');
-          focusable.blur();
+        if (options.aria === true || options.aria.tabindex) {
+          let focusables = el.querySelectorAll(Xt.focusables);
+          for (let focusable of focusables) {
+            focusable.setAttribute('tabindex', '-1');
+            focusable.blur();
+          }
         }
       }
     }

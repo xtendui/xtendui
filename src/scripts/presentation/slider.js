@@ -579,7 +579,9 @@ Slider.defaults = {
     "frictionThreshold": 5,
     "velocityFriction": 0.33,
   },
-  "aria": true
+  "aria": {
+    "id": false
+  }
 };
 
 //////////////////////

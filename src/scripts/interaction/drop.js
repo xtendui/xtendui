@@ -59,7 +59,6 @@ Drop.defaults = {
   "max": 1,
   "instant": {"elementsInner": true},
   "closeOutside": "body",
-  "aria": true,
   "ariaControls": ":scope > a, :scope > button"
 };
 

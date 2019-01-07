@@ -70,8 +70,7 @@ Overlay.defaults = {
   "backdrop": "targets",
   "classHtml": "xt-overlay",
   "closeInside": ".overlay_dismiss, :scope > .xt-backdrop",
-  "scrollbar": true,
-  "aria": true
+  "scrollbar": true
 };
 
 //////////////////////
