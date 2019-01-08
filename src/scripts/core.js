@@ -1115,28 +1115,26 @@ class Core {
     // clear
     clearInterval(self.object.dataset.xtAutoStartInterval);
     // auto
-    window.requestAnimationFrame(function () {
-      let time = options.auto.time;
-      if (self.currentIndex !== null &&  // not when nothing activated
-        !self.detail.initial || options.auto.initial) { // not when initial
-        self.object.dataset.xtAutoStartInterval = setInterval(function () { // needs to be interval because elements can become :visible
-          if (options.auto.hidden || self.object.offsetParent) { // offsetParent for checking if :visible
-            // auto
-            if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
-              if (options.auto.inverse) {
-                self.goToPrev(options.auto.step, true, options.auto.loop);
-              } else {
-                self.goToNext(options.auto.step, true, options.auto.loop);
-              }
+    let time = options.auto.time;
+    if (self.currentIndex !== null &&  // not when nothing activated
+      !self.detail.initial || options.auto.initial) { // not when initial
+      self.object.dataset.xtAutoStartInterval = setInterval(function () { // needs to be interval because elements can become :visible
+        if (options.auto.hidden || self.object.offsetParent) { // offsetParent for checking if :visible
+          // auto
+          if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
+            if (options.auto.inverse) {
+              self.goToPrev(options.auto.step, true, options.auto.loop);
+            } else {
+              self.goToNext(options.auto.step, true, options.auto.loop);
             }
           }
-        }, time).toString();
-        // listener dispatch
-        self.eDetailSet();
-        self.eDetail.autoTime = time;
-        self.object.dispatchEvent(new CustomEvent('auto.xt.start', {detail: self.eDetail}));
-      }
-    });
+        }
+      }, time).toString();
+      // listener dispatch
+      self.eDetailSet();
+      self.eDetail.autoTime = time;
+      self.object.dispatchEvent(new CustomEvent('auto.xt.start', {detail: self.eDetail}));
+    }
   }
 
   /**
@@ -1413,7 +1411,7 @@ class Core {
       }
       // queue done
       if (typeof options.instant !== 'object' && options.instant === true) {
-        if (el === els[0]) { // only if first element
+        if (el === els[els.length - 1]) { // only if last element
           self.queueOnDone(obj, type);
         }
       }
@@ -1458,7 +1456,7 @@ class Core {
       }
       // queue done
       if (typeof options.instant !== 'object' && options.instant === true) {
-        if (el === els[0]) { // only if first element
+        if (el === els[els.length - 1]) { // only if last element
           self.queueOffDone(obj, type);
         }
       }
