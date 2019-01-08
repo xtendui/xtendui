@@ -1775,48 +1775,42 @@ class Core {
    */
   specialCollapseOn(el) {
     if (el.classList.contains('collapse--height')) {
-      window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
+      el.classList.add('xt-calculating');
+      el.style.height = 'auto';
+      el.style.paddingTop = '';
+      el.style.paddingBottom = '';
+      let h = el.clientHeight + 'px';
+      let pt = el.style.paddingTop;
+      let pb = el.style.paddingBottom;
       el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-        el.classList.add('xt-calculating');
-        el.style.height = 'auto';
-        el.style.paddingTop = '';
-        el.style.paddingBottom = '';
-        let h = el.clientHeight + 'px';
-        let pt = el.style.paddingTop;
-        let pb = el.style.paddingBottom;
+        el.classList.remove('xt-calculating');
+        el.style.height = '0';
+        el.style.paddingTop = '0';
+        el.style.paddingBottom = '0';
         el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-          el.classList.remove('xt-calculating');
-          el.style.height = '0';
-          el.style.paddingTop = '0';
-          el.style.paddingBottom = '0';
-          el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-            el.style.height = h;
-            el.style.paddingTop = pt;
-            el.style.paddingBottom = pb;
-          }).toString();
+          el.style.height = h;
+          el.style.paddingTop = pt;
+          el.style.paddingBottom = pb;
         }).toString();
       }).toString();
     }
     if (el.classList.contains('collapse--width')) {
-      window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
+      el.classList.add('xt-calculating');
+      el.style.width = 'auto';
+      el.style.paddingLeft = '';
+      el.style.paddingRight = '';
+      let w = el.clientHeight + 'px';
+      let pl = el.style.paddingLeft;
+      let pr = el.style.paddingRight;
       el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-        el.classList.add('xt-calculating');
-        el.style.width = 'auto';
-        el.style.paddingLeft = '';
-        el.style.paddingRight = '';
-        let w = el.clientHeight + 'px';
-        let pl = el.style.paddingLeft;
-        let pr = el.style.paddingRight;
+        el.classList.remove('xt-calculating');
+        el.style.width = '0';
+        el.style.paddingLeft = '0';
+        el.style.paddingRight = '0';
         el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-          el.classList.remove('xt-calculating');
-          el.style.width = '0';
-          el.style.paddingLeft = '0';
-          el.style.paddingRight = '0';
-          el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-            el.style.width = w;
-            el.style.paddingLeft = pl;
-            el.style.paddingRight = pr;
-          }).toString();
+          el.style.width = w;
+          el.style.paddingLeft = pl;
+          el.style.paddingRight = pr;
         }).toString();
       }).toString();
     }
