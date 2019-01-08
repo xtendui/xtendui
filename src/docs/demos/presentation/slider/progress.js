@@ -19,7 +19,7 @@ function sliderInit(main, index) {
   // progress event
   slider.addEventListener('auto.xt.start', function (e) {
     // on slider
-    let progress = slider.querySelector('.progress_slider #circle');
+    let progress = slider.querySelector('.progress_slider .circle--progress');
     let tweens = TweenMax.getTweensOf(progress);
     if (tweens.length) {
       for (let tween of tweens) {
@@ -70,7 +70,7 @@ function sliderInit(main, index) {
 
   slider.addEventListener('auto.xt.stop', function (e) {
     // on slider
-    let progress = slider.querySelector('.progress_slider #circle');
+    let progress = slider.querySelector('.progress_slider .circle--progress');
     //TweenMax.set(progress, {strokeDashoffset: 1});
     TweenMax.set(progress, {strokeDashoffset: '0.4%'});
     // on elements
@@ -95,7 +95,7 @@ function sliderInit(main, index) {
 
   slider.addEventListener('auto.xt.pause', function (e) {
     // on slider
-    let progress = slider.querySelector('.progress_slider #circle');
+    let progress = slider.querySelector('.progress_slider .circle--progress');
     let tweens = TweenMax.getTweensOf(progress);
     for (let tween of tweens) {
       TweenMax.to(tween, .5, {timeScale: 0});
