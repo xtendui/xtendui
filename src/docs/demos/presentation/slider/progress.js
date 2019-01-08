@@ -18,6 +18,20 @@ function sliderInit(main, index) {
 
   // progress event
   slider.addEventListener('auto.xt.start', function (e) {
+    // on slider
+    let progress = slider.querySelector('.progress_slider #circle');
+    let tweens = TweenMax.getTweensOf(progress);
+    if (tweens.length) {
+      for (let tween of tweens) {
+        let t = (e.detail.autoTime - tween.time() * 1000) / e.detail.autoTime;
+        TweenMax.to(tween, .5, {timeScale: t});
+      }
+    } else {
+      //TweenMax.set(progress, {strokeDashoffset: 1});
+      //TweenMax.to(progress, e.detail.autoTime / 1000, {strokeDashoffset: 0});
+      TweenMax.set(progress, {strokeDashoffset: '0.4%'});
+      TweenMax.to(progress, e.detail.autoTime / 1000, {strokeDashoffset: '0%'});
+    }
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
@@ -55,6 +69,10 @@ function sliderInit(main, index) {
   });
 
   slider.addEventListener('auto.xt.stop', function (e) {
+    // on slider
+    let progress = slider.querySelector('.progress_slider #circle');
+    //TweenMax.set(progress, {strokeDashoffset: 1});
+    TweenMax.set(progress, {strokeDashoffset: '0.4%'});
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
@@ -76,6 +94,12 @@ function sliderInit(main, index) {
   });
 
   slider.addEventListener('auto.xt.pause', function (e) {
+    // on slider
+    let progress = slider.querySelector('.progress_slider #circle');
+    let tweens = TweenMax.getTweensOf(progress);
+    for (let tween of tweens) {
+      TweenMax.to(tween, .5, {timeScale: 0});
+    }
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
