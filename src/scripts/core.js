@@ -638,7 +638,7 @@ class Core {
   eventAutoResumeHandler(e) {
     let self = this;
     if (!e.detail || !e.detail.skip) {
-      self.eventAutoStart(true);
+      self.eventAutoStart();
     }
   }
 
@@ -962,6 +962,10 @@ class Core {
     if (force || self.checkOn(element)) {
       // eDetail
       self.eDetailSet(e);
+      // auto
+      if (options.auto && options.auto.time) {
+        self.eventAutoStop();
+      }
       // on
       let groupElements = self.getElements(element);
       self.addCurrent(groupElements.single);
@@ -1104,38 +1108,35 @@ class Core {
 
   /**
    * auto start
-   * @param {Boolean} resume
    */
-  eventAutoStart(resume = false) {
+  eventAutoStart() {
     let self = this;
     let options = self.options;
     // clear
-    if (resume) {
-      clearInterval(self.object.dataset.xtAutoStartInterval);
-    } else {
-      self.eventAutoStop();
-    }
+    clearInterval(self.object.dataset.xtAutoStartInterval);
     // auto
-    let time = options.auto.time;
-    if (self.currentIndex !== null &&  // not when nothing activated
-      !self.detail.initial || options.auto.initial) { // not when initial
-      self.object.dataset.xtAutoStartInterval = setInterval(function () { // needs to be interval because elements can become :visible
-        if (options.auto.hidden || self.object.offsetParent) { // offsetParent for checking if :visible
-          // auto
-          if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
-            if (options.auto.inverse) {
-              self.goToPrev(options.auto.step, true, options.auto.loop);
-            } else {
-              self.goToNext(options.auto.step, true, options.auto.loop);
+    window.requestAnimationFrame(function () {
+      let time = options.auto.time;
+      if (self.currentIndex !== null &&  // not when nothing activated
+        !self.detail.initial || options.auto.initial) { // not when initial
+        self.object.dataset.xtAutoStartInterval = setInterval(function () { // needs to be interval because elements can become :visible
+          if (options.auto.hidden || self.object.offsetParent) { // offsetParent for checking if :visible
+            // auto
+            if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
+              if (options.auto.inverse) {
+                self.goToPrev(options.auto.step, true, options.auto.loop);
+              } else {
+                self.goToNext(options.auto.step, true, options.auto.loop);
+              }
             }
           }
-        }
-      }, time).toString();
-      // listener dispatch
-      self.eDetailSet();
-      self.eDetail.autoTime = time;
-      self.object.dispatchEvent(new CustomEvent('auto.xt.start', {detail: self.eDetail}));
-    }
+        }, time).toString();
+        // listener dispatch
+        self.eDetailSet();
+        self.eDetail.autoTime = time;
+        self.object.dispatchEvent(new CustomEvent('auto.xt.start', {detail: self.eDetail}));
+      }
+    });
   }
 
   /**
@@ -1143,9 +1144,12 @@ class Core {
    */
   eventAutoStop() {
     let self = this;
+    let options = self.options;
     // clear
     clearInterval(self.object.dataset.xtAutoStartInterval);
     // listener dispatch
+    self.eDetailSet();
+    self.eDetail.autoTime = options.auto.time;
     self.object.dispatchEvent(new CustomEvent('auto.xt.stop', {detail: self.eDetail}));
   }
 
@@ -1154,9 +1158,12 @@ class Core {
    */
   eventAutoPause() {
     let self = this;
+    let options = self.options;
     // clear
     clearInterval(self.object.dataset.xtAutoStartInterval);
     // listener dispatch
+    self.eDetailSet();
+    self.eDetail.autoTime = options.auto.time;
     self.object.dispatchEvent(new CustomEvent('auto.xt.pause', {detail: self.eDetail}));
   }
 

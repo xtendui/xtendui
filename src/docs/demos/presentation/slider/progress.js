@@ -18,7 +18,6 @@ function sliderInit(main, index) {
 
   // progress event
   slider.addEventListener('auto.xt.start', function (e) {
-    //console.log('start');
     // on slider
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
@@ -57,23 +56,14 @@ function sliderInit(main, index) {
   });
 
   slider.addEventListener('auto.xt.stop', function (e) {
-    //console.log('stop');
     // on slider
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
       let progresses = element.querySelectorAll('.progress');
       for (let progress of progresses) {
-        let tweens = TweenMax.getTweensOf(progress);
-        if (tweens.length) {
-          for (let tween of tweens) {
-            tween.kill();
-          }
-        } else {
-          TweenMax.set(progress, {width: 0, left: '0%'});
-          //TweenMax.set(progress, {width: '100%', left: '0%'});
-          //TweenMax.to(progress, e.detail.autoTime / 1000, {width: 0, left: '100%'});
-        }
+        TweenMax.set(progress, {width: '100%', left: '0%'});
+        TweenMax.to(progress, 0.5, {width: 0, left: '100%'});
       }
     }
     // on targets
@@ -81,22 +71,13 @@ function sliderInit(main, index) {
     for (let target of targets) {
       let progresses = target.querySelectorAll('.progress');
       for (let progress of progresses) {
-        let tweens = TweenMax.getTweensOf(progress);
-        if (tweens.length) {
-          for (let tween of tweens) {
-            tween.kill();
-          }
-        } else {
-          TweenMax.set(progress, {width: 0, left: '0%'});
-          //TweenMax.set(progress, {width: '100%', left: '0%'});
-          //TweenMax.to(progress, e.detail.autoTime / 1000, {width: 0, left: '100%'});
-        }
+        TweenMax.set(progress, {width: '100%', left: '0%'});
+        TweenMax.to(progress, 0.5, {width: 0, left: '100%'});
       }
     }
   });
 
   slider.addEventListener('auto.xt.pause', function (e) {
-    //console.log('pause');
     // on slider
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
