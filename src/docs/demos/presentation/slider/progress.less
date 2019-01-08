@@ -47,26 +47,39 @@
 // @TODO refactor
 
 .progress_slider {
-  width: 20px;
-  height: 20px;
-  svg {
-    width: 100%;
-    height: 100%;
-    .circle {
-      fill: none;
-      stroke-width: 28;
-      transform: rotateY(180deg) rotateZ(-90deg);
-      transform-origin: center center;
-    }
-    .circle--progress {
-      stroke: @primary;
-    }
-    .circle--background {
+  position: absolute;
+  z-index: @index--loader;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  // activation
+  pointer-events: none;
+  .transition-default.out();
+  transition-property: opacity;
+  visibility: hidden;
+  opacity: 0;
+  &.active {
+    .transition-default.active();
+    transition-property: opacity;
+    visibility: visible;
+    opacity: 1;
+  }
+  // circle
+  circle {
+    fill: none;
+    stroke-width: 25;
+    transform: rotateY(180deg) rotateZ(-90deg);
+    transform-origin: center center;
+    &:nth-child(1) {
       position: absolute;
       top: 0;
       left: 0;
       stroke: @gray--250;
       stroke-dashoffset: 0;
+    }
+    &:nth-child(2) {
+      stroke: @primary;
     }
   }
 }

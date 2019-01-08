@@ -16,10 +16,11 @@ function sliderInit(main, index) {
 
   let slider = self.object;
 
-  // progress event
+  // auto start
+
   slider.addEventListener('auto.xt.start', function (e) {
     // on slider
-    let progress = slider.querySelector('.progress_slider .circle--progress');
+    let progress = slider.querySelector('.progress_slider circle:nth-child(2)');
     let tweens = TweenMax.getTweensOf(progress);
     if (tweens.length) {
       for (let tween of tweens) {
@@ -68,9 +69,11 @@ function sliderInit(main, index) {
     }
   });
 
+  // auto stop
+
   slider.addEventListener('auto.xt.stop', function (e) {
     // on slider
-    let progress = slider.querySelector('.progress_slider .circle--progress');
+    let progress = slider.querySelector('.progress_slider circle:nth-child(2)');
     //TweenMax.set(progress, {strokeDashoffset: 1});
     TweenMax.set(progress, {strokeDashoffset: '0.4%'});
     // on elements
@@ -93,9 +96,11 @@ function sliderInit(main, index) {
     }
   });
 
+  // auto pause
+
   slider.addEventListener('auto.xt.pause', function (e) {
     // on slider
-    let progress = slider.querySelector('.progress_slider .circle--progress');
+    let progress = slider.querySelector('.progress_slider circle:nth-child(2)');
     let tweens = TweenMax.getTweensOf(progress);
     for (let tween of tweens) {
       TweenMax.to(tween, .5, {timeScale: 0});
@@ -123,5 +128,27 @@ function sliderInit(main, index) {
       }
     }
   });
+
+  // @TODO xt-magnet
+
+  let progress = slider.querySelector('.progress_slider');
+
+  function mousemove(e) {
+    progress.classList.add('active');
+    let rect = progress.getBoundingClientRect();
+    let top = e.clientY - rect.height / 2 - 21; // 18 for exaclty center
+    let left = e.clientX - rect.width / 2 - 21; // 18 for exaclty center
+    progress.style.top = top + 'px';
+    progress.style.left = left + 'px';
+  }
+
+  function mouseleave(e) {
+    progress.classList.remove('active');
+  }
+
+  slider.removeEventListener('mousemove', mousemove);
+  slider.addEventListener('mousemove', mousemove);
+  slider.removeEventListener('mouseleave', mouseleave);
+  slider.addEventListener('mouseleave', mouseleave);
 
 }

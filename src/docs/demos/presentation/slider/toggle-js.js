@@ -25,7 +25,7 @@ function sliderInit(main, index) {
 
   let dragger = self.dragger;
 
-  // drag event
+  // drag
 
   dragger.addEventListener('drag.xt.slider', function (e) {
     let target = self.targets.filter(x => x.classList.contains('active'))[0];
@@ -45,7 +45,7 @@ function sliderInit(main, index) {
     }
   });
 
-  // dragend event
+  // dragend
 
   dragger.addEventListener('dragend.xt.slider', function (e) {
     let target = self.targets.filter(x => x.classList.contains('active'))[0];
@@ -63,7 +63,7 @@ function sliderInit(main, index) {
 
   for (let target of self.targets) {
 
-    // on event
+    // on
 
     target.addEventListener('on.xt', function (e) {
       let xMax = target.clientWidth;
@@ -87,7 +87,7 @@ function sliderInit(main, index) {
       }
     });
 
-    // off event
+    // off
 
     target.addEventListener('off.xt', function (e) {
       let xMax = target.clientWidth;
