@@ -11,8 +11,9 @@ function sliderInit(main, index) {
   let timeMask = .8;
   let timeContent = .8;
   let sizeContent = 100;
-  CustomEase.create('easeIn', '.41, .1, .175, 1');
-  CustomEase.create('easeOut', '.77, 0, .175, 1');
+  CustomEase.create('easeIn', '.41,.1,.175,1');
+  CustomEase.create('easeOut', '.77,0,.175,1');
+  CustomEase.create('easeInOut', '.77,.0,.17,1');
 
   // slider
 

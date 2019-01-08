@@ -129,25 +129,72 @@ function sliderInit(main, index) {
     }
   });
 
-  // @TODO xt-magnet
+  // progress follow mouse
 
+  let time = .8;
+  CustomEase.create('easeIn', '.41,.1,.175,1');
+  CustomEase.create('easeOut', '.77,0,.175,1');
+  CustomEase.create('easeInOut', '.77,.0,.17,1');
   let progress = slider.querySelector('.progress_slider');
 
   function mousemove(e) {
-    progress.classList.add('active');
+    // vars
     let rect = progress.getBoundingClientRect();
-    let top = e.clientY - rect.height / 2 - 21; // 21 for exaclty center
-    let left = e.clientX - rect.width / 2 - 21; // 21 for exaclty center
-    progress.style.top = top + 'px';
-    progress.style.left = left + 'px';
+    let top = e.clientY + rect.height / 2 - 20; // 20 for exaclty center
+    let left = e.clientX - rect.width / 2 - 20; // 20 for exaclty center
+    // tween
+    let tweens = TweenMax.getTweensOf(progress);
+    if (tweens.length) {
+      for (let tween of tweens) {
+        let time = tween.time();
+        let css = tween.vars.css;
+        if (css) {
+          css.top = top;
+          css.left = left;
+          tween.seek(0).invalidate().seek(time);
+        }
+      }
+    } else {
+      progress.style.top = top + 'px';
+      progress.style.left = left + 'px';
+    }
+  }
+
+  function mouseenter(e) {
+    progress.classList.add('active');
+    // vars
+    let rect = progress.getBoundingClientRect();
+    let top = e.clientY + rect.height / 2 - 20; // 20 for exaclty center
+    let left = e.clientX - rect.width / 2 - 20; // 20 for exaclty center
+    // tween
+    let tweens = TweenMax.getTweensOf(progress);
+    if (tweens.length) {
+      for (let tween of tweens) {
+        tween.kill();
+      }
+    }
+    TweenMax.to(progress, time, {top: top, left: left, ease: 'easeInOut'});
   }
 
   function mouseleave(e) {
+    // vars
     progress.classList.remove('active');
+    let top = '100%';
+    let left = 0;
+    // tween
+    let tweens = TweenMax.getTweensOf(progress);
+    if (tweens.length) {
+      for (let tween of tweens) {
+        tween.kill();
+      }
+    }
+    TweenMax.to(progress, time, {top: top, left: left, ease: 'easeInOut'});
   }
 
   slider.removeEventListener('mousemove', mousemove);
   slider.addEventListener('mousemove', mousemove);
+  slider.removeEventListener('mouseenter', mouseenter);
+  slider.addEventListener('mouseenter', mouseenter);
   slider.removeEventListener('mouseleave', mouseleave);
   slider.addEventListener('mouseleave', mouseleave);
 
