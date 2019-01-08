@@ -129,13 +129,13 @@ function sliderInit(main, index) {
     }
   });
 
-  // progress follow mouse
+  // follow mouse
 
+  let progress = slider.querySelector('.progress_slider');
   let time = .8;
   CustomEase.create('easeIn', '.41,.1,.175,1');
   CustomEase.create('easeOut', '.77,0,.175,1');
   CustomEase.create('easeInOut', '.77,.0,.17,1');
-  let progress = slider.querySelector('.progress_slider');
 
   function mousemove(e) {
     // vars
@@ -177,8 +177,8 @@ function sliderInit(main, index) {
   }
 
   function mouseleave(e) {
-    // vars
     progress.classList.remove('active');
+    // vars
     let top = '100%';
     let left = 0;
     // tween
