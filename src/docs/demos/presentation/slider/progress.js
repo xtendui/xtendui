@@ -18,7 +18,6 @@ function sliderInit(main, index) {
 
   // progress event
   slider.addEventListener('auto.xt.start', function (e) {
-    // on slider
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
@@ -56,7 +55,6 @@ function sliderInit(main, index) {
   });
 
   slider.addEventListener('auto.xt.stop', function (e) {
-    // on slider
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
@@ -78,7 +76,6 @@ function sliderInit(main, index) {
   });
 
   slider.addEventListener('auto.xt.pause', function (e) {
-    // on slider
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
