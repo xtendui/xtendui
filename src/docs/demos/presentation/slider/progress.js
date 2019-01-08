@@ -16,6 +16,10 @@ function sliderInit(main, index) {
 
   let slider = self.object;
 
+  // vars
+
+  CSSPlugin.suffixMap.strokeDashoffset = "";
+
   // auto start
 
   slider.addEventListener('auto.xt.start', function (e) {
@@ -28,10 +32,8 @@ function sliderInit(main, index) {
         TweenMax.to(tween, .5, {timeScale: t});
       }
     } else {
-      //TweenMax.set(progress, {strokeDashoffset: 1});
-      //TweenMax.to(progress, e.detail.autoTime / 1000, {strokeDashoffset: 0});
-      TweenMax.set(progress, {strokeDashoffset: '0.4%'});
-      TweenMax.to(progress, e.detail.autoTime / 1000, {strokeDashoffset: '0%'});
+      TweenMax.set(progress, {strokeDashoffset: 1});
+      TweenMax.to(progress, e.detail.autoTime / 1000, {strokeDashoffset: 0});
     }
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
@@ -74,8 +76,7 @@ function sliderInit(main, index) {
   slider.addEventListener('auto.xt.stop', function (e) {
     // on slider
     let progress = slider.querySelector('.progress_slider circle:nth-child(2)');
-    //TweenMax.set(progress, {strokeDashoffset: 1});
-    TweenMax.set(progress, {strokeDashoffset: '0.4%'});
+    TweenMax.set(progress, {strokeDashoffset: 1});
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
