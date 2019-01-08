@@ -46,6 +46,37 @@
 
 // @TODO refactor
 
+.loader_container {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  &.loader_slide {
+    height: 3px;
+    // same as .card
+    border-width: @card--border-width;
+    border-bottom-left-radius: @card--border-radius;
+    border-bottom-right-radius: @card--border-radius;
+  }
+  &.loader_pagination {
+    .loader--full();
+    // same as .slider_pagination
+    border-radius: 2rem;
+    border-width: @btn--border-width;
+  }
+}
+
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: @primary;
+}
+
+// @TODO refactor
+
 .progress_slider {
   position: absolute;
   z-index: @index--loader;
@@ -69,7 +100,7 @@
   circle {
     fill: none;
     stroke-width: 25;
-    transform: rotateY(180deg) rotateZ(-90deg);
+    transform: rotateZ(-90deg);
     transform-origin: center center;
     &:nth-child(1) {
       position: absolute;

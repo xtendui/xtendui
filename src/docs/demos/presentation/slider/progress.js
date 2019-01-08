@@ -45,7 +45,7 @@ function sliderInit(main, index) {
             TweenMax.to(tween, .5, {timeScale: t});
           }
         } else {
-          TweenMax.set(progress, {width: 0, left: '0%'});
+          TweenMax.set(progress, {width: 0, left: 0});
           TweenMax.to(progress, e.detail.autoTime / 1000, {width: '100%'});
         }
       }
@@ -62,7 +62,7 @@ function sliderInit(main, index) {
             TweenMax.to(tween, .5, {timeScale: t});
           }
         } else {
-          TweenMax.set(progress, {width: 0, left: '0%'});
+          TweenMax.set(progress, {width: 0, left: 0});
           TweenMax.to(progress, e.detail.autoTime / 1000, {width: '100%'});
         }
       }
@@ -81,7 +81,7 @@ function sliderInit(main, index) {
     for (let element of elements) {
       let progresses = element.querySelectorAll('.progress');
       for (let progress of progresses) {
-        TweenMax.set(progress, {width: '100%', left: '0%'});
+        TweenMax.set(progress, {width: '100%', left: 0});
         TweenMax.to(progress, 0.5, {width: 0, left: '100%'});
       }
     }
@@ -90,7 +90,7 @@ function sliderInit(main, index) {
     for (let target of targets) {
       let progresses = target.querySelectorAll('.progress');
       for (let progress of progresses) {
-        TweenMax.set(progress, {width: '100%', left: '0%'});
+        TweenMax.set(progress, {width: '100%', left: 0});
         TweenMax.to(progress, 0.5, {width: 0, left: '100%'});
       }
     }
@@ -136,8 +136,8 @@ function sliderInit(main, index) {
   function mousemove(e) {
     progress.classList.add('active');
     let rect = progress.getBoundingClientRect();
-    let top = e.clientY - rect.height / 2 - 21; // 18 for exaclty center
-    let left = e.clientX - rect.width / 2 - 21; // 18 for exaclty center
+    let top = e.clientY - rect.height / 2 - 21; // 21 for exaclty center
+    let left = e.clientX - rect.width / 2 - 21; // 21 for exaclty center
     progress.style.top = top + 'px';
     progress.style.left = left + 'px';
   }
