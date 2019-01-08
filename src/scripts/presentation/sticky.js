@@ -148,7 +148,6 @@ class Sticky extends Core {
     let add = 0;
     let addHide = 0;
     let windowHeight = window.innerHeight;
-    let rectElTop = element.getBoundingClientRect().top;
     let heightEl = parseFloat(getComputedStyle(element).height);
     let heightTarget = parseFloat(getComputedStyle(self.targets[0]).height);
     let rectContainerTop = self.container[0].getBoundingClientRect().top;
@@ -281,15 +280,7 @@ class Sticky extends Core {
     }
     // set add
     if (add !== self.detail.addOld) {
-      // NO BUGS initial top with requestAnimationFrame
-      // element.classList.add('transition-none');
-      // if (self.detail.addOld !== undefined) {
-      //   element.style[options.position] = rectElTop + 'px';
-      // }
-      // element.dataset.xtEventFrame = window.requestAnimationFrame(function () {
-      //   element.classList.remove('transition-none');
       element.style[options.position] = add + 'px';
-      // }).toString();
     }
     // fix position fixed width 100% of parent
     let width = self.normalizeWidth(self.container[0].clientWidth);
@@ -390,6 +381,7 @@ Sticky.defaults = {
   "on": "scroll resize",
   "min": 0,
   "max": "Infinity",
+  "instant": true,
   "position": "top",
   "limit": {"bottom": "Infinity"},
   "contain": false,
