@@ -54,7 +54,6 @@ class Core {
         "time": false,
         "step": 1,
         "initial": true,
-        "hidden": false,
         "loop": true,
         "inverse": false,
         "pause": false
@@ -1118,8 +1117,8 @@ class Core {
     let time = options.auto.time;
     if (self.currentIndex !== null &&  // not when nothing activated
       !self.detail.initial || options.auto.initial) { // not when initial
-      self.object.dataset.xtAutoStartInterval = setInterval(function () { // needs to be interval because elements can become :visible
-        if (options.auto.hidden || self.object.offsetParent) { // offsetParent for checking if :visible
+      self.object.dataset.xtAutoStartInterval = setInterval(function () { // interval because can become :visible
+        if (self.object.offsetParent) { // offsetParent for checking if :visible
           // auto
           if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
             if (options.auto.inverse) {
