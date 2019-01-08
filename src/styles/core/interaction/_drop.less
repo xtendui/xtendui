@@ -33,6 +33,13 @@
   > .drop_inner {
     position: relative;
     z-index: @index--base; // fix ::before negative z-index
+    > .drop_design, > .drop_content {
+      border-radius: @drop--border-radius;
+      border-width: @drop--border-width;
+    }
+    > .drop_design {
+      .design-setup();
+    }
   }
   // others
   &.out {

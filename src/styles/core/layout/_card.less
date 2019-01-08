@@ -6,4 +6,16 @@
   .block();
   position: relative;
   z-index: @index--base; // fix ::before negative z-index
+  // styles
+  > .card_design, > .card_content {
+    border-radius: @card--border-radius;
+    border-width: @card--border-width;
+  }
+  > .card_design {
+    .design-setup();
+  }
+  > .card_content {
+    position: relative;
+    overflow: hidden;
+  }
 }

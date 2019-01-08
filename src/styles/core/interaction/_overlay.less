@@ -23,6 +23,14 @@
   margin: auto; // @FIX http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
   width: 100%;
   min-height: 100vh;
+  // styles
+  .overlay_design, .overlay_content {
+    border-radius: @overlay--border-radius;
+    border-width: @overlay--border-width;
+  }
+  .overlay_design {
+    .design-setup();
+  }
 }
 
 .overlay_inner {

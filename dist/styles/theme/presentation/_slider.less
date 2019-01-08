@@ -29,14 +29,18 @@
   // content
   [data-xt-pag] {
     .btn();
-    &@{btn--design} {
+    .btn--tiny();
+    &@{btn--design}, > span {
       border-radius: 2rem;
     }
-    padding: .5em 1em;
-    font-size: 9px;
+    > span {
+      padding: .5em 1.15em;
+      min-height: 2.2rem;
+    }
     &.active {
-      padding-left: 1.75em;
-      padding-right: 1.75em;
+      > span {
+        padding: .5em 2em;
+      }
     }
   }
 }
@@ -46,10 +50,16 @@
 .slider {
   [data-xt-nav] {
     .btn();
-    &@{btn--design} {
+    .btn--tiny();
+    &@{btn--design}, > span {
       border-radius: 2rem;
     }
-    padding: .5em 1em;
-    font-size: 9px;
+    > span {
+      padding: .5em 1.15em;
+      min-height: 2.2rem;
+    }
+    [class^='icon-'], [class*=' icon-'] {
+      .icon--small();
+    }
   }
 }

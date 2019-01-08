@@ -1,35 +1,65 @@
 //////////////////////
-// preload
+// loader
 //////////////////////
 
-/*
-
-.loader_container {
+.loader {
   position: absolute;
   z-index: @index--loader;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
 }
 
-.loader {
+// direction
+
+.loader--x {
+  .progress {
+    > span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.loader--y {
+  .progress {
+    > span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+
+// js
+
+.loader--js {
+  .progress {
+    > span {
+      .anim-none() !important;
+    }
+  }
+}
+
+/*
+
+.preload {
   position: relative;
   width: 100%;
 }
 
 // addons
 
-.loader_container {
+.loader {
   width: 100%;
 }
 
 */
-
-.loader--full {
-  .display(inline-flex);
-  //.align-items--center();
-  //.justify-content--center();
-  height: 100%;
-}
 
 /*
 .loader--relative {

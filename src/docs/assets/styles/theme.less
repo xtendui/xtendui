@@ -151,12 +151,16 @@
   }
   .site-breadcrumbs-body-main {
     > .btn {
-      .padding(left, small);
-      .padding(right, medium);
+      > span {
+        .padding(left, small);
+        .padding(right, medium);
+      }
       @media @min-sm and @max-md {
-        .btn--small();
-        .padding(left, tiny);
-        .padding(right, small);
+        > span {
+          .btn--small();
+          .padding(left, tiny);
+          .padding(right, small);
+        }
       }
     }
   }
@@ -172,9 +176,13 @@
   }
   .btn {
     .btn--tiny();
-    .padding(x, small);
+    > span {
+      .padding(x, small);
+    }
     @media @min-sm and @max-md {
-      .padding(x, tiny);
+      > span {
+        .padding(x, tiny);
+      }
     }
   }
 }
@@ -303,18 +311,23 @@
   }
   .site-menu-content .btn {
     .block();
-    .padding(y, tiny) !important;
-    @media @max-sm {
-      .padding(x, tiny) !important;
+    > span {
+      .padding(x, none) !important;
+      .padding(y, tiny) !important;
+      .font-sans--light();
+      font-size: 4rem !important;
+      text-align: left;
+      text-transform: capitalize;
     }
-    background: transparent !important;
-    .font-sans--light();
-    font-size: 4rem !important;
-    text-align: left;
-    text-transform: capitalize;
+    @media @max-sm {
+      > span {
+        .padding(x, tiny) !important;
+      }
+    }
     &:hover, &.hover, &:active, &.active {
-      color: @white;
-      opacity: 1;
+      > span {
+        color: @white;
+      }
     }
   }
 }
@@ -374,8 +387,10 @@
   .site-footer-top-links {
     margin-left: -1rem !important;
     .btn {
-      .padding(x, small);
       .btn--nodesign();
+      > span {
+        .padding(x, small);
+      }
     }
   }
 }
@@ -423,7 +438,6 @@
 }
 
 .site-aside-text {
-  .line-height--none();
   .btn {
     .btn--link();
     .link--none();
@@ -432,7 +446,9 @@
     .btn--short();
     width: 100%;
     &:hover, &.hover, &:active, &.active {
-      color: @text !important;
+      > span {
+        color: @text !important;
+      }
     }
   }
   > .btn:first-child {
@@ -443,7 +459,9 @@
     color: @text;
   }
   .btn--site-aside-sub {
-    color: fade(@text, @perc--lg);
+    > span {
+      color: fade(@text, @perc--lg);
+    }
     &.open {
       & + .site-aside-subsub {
         display: block !important;
@@ -464,7 +482,9 @@
     .btn--site-aside-subsub {
       .btn--small();
       .btn--short();
-      color: fade(@text, @perc--lg);
+      > span {
+        color: fade(@text, @perc--lg);
+      }
     }
   }
 }
@@ -491,7 +511,7 @@
       content: "";
       position: absolute;
       z-index: -1;
-      bottom: .5em;
+      bottom: .6em;
       left: 0;
       width: 100%;
       height: 1px;
@@ -539,6 +559,7 @@
   position: relative;
   width: 100%;
   a {
+    display: block;
     .link--none();
     color: @text !important;
   }
@@ -567,16 +588,18 @@
     bottom: 3px;
   }
   .btn {
-    padding: 7px;
-    width: 30px;
-    height: 30px;
-    font-size: 17px;
-    color: @primary;
-    .line-height--micro();
     &@{btn--design} {
       border-radius: 50%;
       border-color: @white !important;
       background: @white !important;
+    }
+    > span {
+      padding: 7px;
+      width: 30px;
+      height: 30px;
+      font-size: 17px;
+      color: @primary;
+      .line-height--micro();
     }
     &:hover, &.hover, &:active, &.active {
       color: @primary;
@@ -655,10 +678,12 @@
     .padding(x, small);
     .btn {
       &:hover, &.hover, &:active, &.active {
-        color: @text;
         &@{btn--design} {
           border-color: @white;
           background: @white;
+        }
+        > span {
+          color: @text;
         }
       }
     }

@@ -8,6 +8,7 @@
   display: inline-block;
   position: relative;
   vertical-align: middle;
+  padding: 0;
   z-index: @index--base; // fix ::before negative z-index
   &:hover, &.hover, &:active, &.active {
     z-index: @index--active;
@@ -15,9 +16,21 @@
   &.out {
     z-index: @index--active - 1;
   }
+  // styles
+  &@{btn--design}, > span {
+    border-radius: @btn--border-radius;
+    border-width: @btn--border-width;
+  }
+  &@{btn--design} {
+    .design-setup();
+  }
+  > span {
+    position: relative;
+    overflow: hidden;
+  }
   // text overflow
   > span {
-    .display(inline-flex);
+    .display(flex);
     .flex-direction--row();
     .align-items--baseline();
     width: 100%;

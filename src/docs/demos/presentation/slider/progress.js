@@ -36,7 +36,7 @@ function sliderInit(main, index) {
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
-      let progresses = element.querySelectorAll('.progress');
+      let progresses = element.querySelectorAll('.progress > span:nth-child(2)');
       for (let progress of progresses) {
         let tweens = TweenMax.getTweensOf(progress);
         if (tweens.length) {
@@ -45,15 +45,15 @@ function sliderInit(main, index) {
             TweenMax.to(tween, .5, {timeScale: t});
           }
         } else {
-          TweenMax.set(progress, {width: 0, left: 0});
-          TweenMax.to(progress, e.detail.autoTime / 1000, {width: '100%'});
+          TweenMax.set(progress, {height: 0, top: 0});
+          TweenMax.to(progress, e.detail.autoTime / 1000, {height: '100%'});
         }
       }
     }
     // on targets
     let targets = self.targets.filter(x => x.classList.contains('active'));
     for (let target of targets) {
-      let progresses = target.querySelectorAll('.progress');
+      let progresses = target.querySelectorAll('.progress > span:nth-child(2)');
       for (let progress of progresses) {
         let tweens = TweenMax.getTweensOf(progress);
         if (tweens.length) {
@@ -79,16 +79,16 @@ function sliderInit(main, index) {
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
-      let progresses = element.querySelectorAll('.progress');
+      let progresses = element.querySelectorAll('.progress > span:nth-child(2)');
       for (let progress of progresses) {
-        TweenMax.set(progress, {width: '100%', left: 0});
-        TweenMax.to(progress, 0.5, {width: 0, left: '100%'});
+        TweenMax.set(progress, {height: '100%', top: 0});
+        TweenMax.to(progress, 0.5, {height: 0, top: '100%'});
       }
     }
     // on targets
     let targets = self.targets.filter(x => x.classList.contains('active'));
     for (let target of targets) {
-      let progresses = target.querySelectorAll('.progress');
+      let progresses = target.querySelectorAll('.progress > span:nth-child(2)');
       for (let progress of progresses) {
         TweenMax.set(progress, {width: '100%', left: 0});
         TweenMax.to(progress, 0.5, {width: 0, left: '100%'});
@@ -108,7 +108,7 @@ function sliderInit(main, index) {
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
-      let progresses = element.querySelectorAll('.progress');
+      let progresses = element.querySelectorAll('.progress > span:nth-child(2)');
       for (let progress of progresses) {
         let tweens = TweenMax.getTweensOf(progress);
         for (let tween of tweens) {
@@ -119,7 +119,7 @@ function sliderInit(main, index) {
     // on targets
     let targets = self.targets.filter(x => x.classList.contains('active'));
     for (let target of targets) {
-      let progresses = target.querySelectorAll('.progress');
+      let progresses = target.querySelectorAll('.progress > span:nth-child(2)');
       for (let progress of progresses) {
         let tweens = TweenMax.getTweensOf(progress);
         for (let tween of tweens) {
@@ -141,7 +141,7 @@ function sliderInit(main, index) {
     // vars
     let rect = progress.getBoundingClientRect();
     let top = e.clientY + rect.height / 2 - 20; // 20 for exaclty center
-    let left = e.clientX - rect.width / 2 - 20; // 20 for exaclty center
+    let left = e.clientX + rect.width / 2 - 20; // 20 for exaclty center
     // tween
     let tweens = TweenMax.getTweensOf(progress);
     if (tweens.length) {
@@ -180,7 +180,7 @@ function sliderInit(main, index) {
     progress.classList.remove('active');
     // vars
     let top = '100%';
-    let left = 0;
+    let left = '100%';
     // tween
     let tweens = TweenMax.getTweensOf(progress);
     if (tweens.length) {

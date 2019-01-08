@@ -15,8 +15,8 @@ for(let el of document.querySelectorAll('.site-article > h2, .site-article > h3'
   el.classList.add('make-line');
 }
 for(let el of document.querySelectorAll('.make-line')) {
-  el.innerHTML = '<div class="line">' + el.innerHTML + '</div>';
-  el.innerHTML = '<div class="line-container">' + el.innerHTML + '</div>';
+  el.innerHTML = '<span class="line">' + el.innerHTML + '</span>';
+  el.innerHTML = '<span class="line-container">' + el.innerHTML + '</span>';
 }
 
 // .make-anchor
@@ -44,7 +44,7 @@ for(let el of document.querySelectorAll('.site-article > h2, .site-article > h3'
   el.setAttribute('id', id);
   el.innerHTML = '<a href="#' + id + '" aria-label="Anchor to ' + el.textContent + '" tabindex="-1">' + el.innerHTML + '</a>';
   el.classList.add('make-anchor');
-  el.append(Xt.createElement('<span class="site-article-anchor"><div class="btn"><span class="icon-link" aria-hidden="true"></span></div></span>'));
+  el.append(Xt.createElement('<span class="site-article-anchor"><span class="btn"><span class="icon-link" aria-hidden="true"></span></span></span>'));
 }
 
 // .site-aside-text
@@ -55,11 +55,11 @@ for(let el of document.querySelectorAll('.site-aside-text > .btn:not(.different)
     if (element.tagName === 'H2') {
       let appendItem = Xt.createElement('<div class="site-aside-sub-container"></div>');
       container.append(appendItem);
-      appendItem.append(Xt.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn--nodesign btn--site-aside-sub" aria-label="Anchor to ' + element.textContent + '">' + element.textContent + '</a>'));
+      appendItem.append(Xt.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn--nodesign btn--site-aside-sub" aria-label="Anchor to ' + element.textContent + '"><span>' + element.textContent + '</span></a>'));
       appendItem.append(Xt.createElement('<div class="site-aside-subsub collapse--height"></div>'));
     } else if (element.tagName === 'H3') {
       let subs = container.querySelectorAll('.site-aside-subsub');
-      subs[subs.length - 1].append(Xt.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn--nodesign btn--site-aside-subsub" aria-label="Anchor to ' + element.textContent + '">' + element.textContent + '</a>'));
+      subs[subs.length - 1].append(Xt.createElement('<a href="#' + element.getAttribute('id') + '" class="btn btn--nodesign btn--site-aside-subsub" aria-label="Anchor to ' + element.textContent + '"><span>' + element.textContent + '</span></a>'));
     }
   }
 }
@@ -194,7 +194,7 @@ const populateDemo = function (container, i) {
         name = 'demo #' + k;
       }
     }
-    let btn = container.querySelectorAll('.demo-tabs-left')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny">' + name + '</button>'));
+    let btn = container.querySelectorAll('.demo-tabs-left')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny"><span>' + name + '</span></button>'));
     btn = container.querySelectorAll('.demo-tabs-left .btn')[k];
     // iframe append
     let src = item.getAttribute('data-iframe');
@@ -203,7 +203,7 @@ const populateDemo = function (container, i) {
       item.append(Xt.createElement('<iframe data-src="' + src + '" frameborder="0" name="' + id + '"></iframe>'));
     }
     // tabs
-    item.prepend(Xt.createElement('<div class="demo-code collapse--height"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn--secondary-empty btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo-code-body"></div></div>'));
+    item.prepend(Xt.createElement('<div class="demo-code collapse--height"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn--secondary-empty btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard"><span>copy</span></button></div></div><div class="demo-code-body"></div></div>'));
     // https://github.com/zenorocha/clipboard.js/
     let clipboard = new Clipboard('.btn--clipboard', {
       target: function (trigger) {
@@ -364,7 +364,7 @@ const populateSources = function (item, element, z) {
   let lang = element.getAttribute('data-lang');
   // populate tabs
   item.querySelectorAll('.demo-code-body')[0].append(Xt.createElement('<div class="demo-code-body-item"><pre><code></code></pre></div>'));
-  item.querySelectorAll('.demo-code-tabs-left')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny">' + lang + '</button>'));
+  item.querySelectorAll('.demo-code-tabs-left')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny"><span>' + lang + '</span></button>'));
   // format code
   let codeInside = item.querySelectorAll('.demo-code-body .demo-code-body-item')[z].querySelectorAll('pre code')[0];
   if (!codeInside.classList.contains('hljs')) {
