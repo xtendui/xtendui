@@ -15,11 +15,11 @@ function loaderInit(main, index) {
   // progress
 
   function progress() {
-    let progress = main.querySelector('.progress > span:nth-child(2)');
-    TweenMax.set(progress, {width: 0});
-    TweenMax.to(progress, time / 1000, {width: '100%', ease: 'easeInOut'});
+    let el = main.querySelector('.progress > span:nth-child(2)');
+    TweenMax.set(el, {width: 0});
+    TweenMax.to(el, time / 1000, {width: '100%', ease: 'easeInOut'});
+    setTimeout(progress, time);
   }
-  setInterval(progress, time);
   progress();
 
 }

@@ -19,7 +19,7 @@
       stroke: @gray--250;
     }
     &:nth-child(2) {
-      stroke: @primary;
+      stroke: fade(@primary, @perc--xl);
       animation: anim-spinner @time--giant infinite @bez--in;
     }
   }
@@ -50,7 +50,7 @@
     background: @gray--250;
   }
   span:nth-child(2) {
-    background: @primary;
+    background: fade(@primary, @perc--xl);
     box-shadow: 0 .1em 1em fade(@primary, @perc--md), 0 .2em 2em fade(@primary, @perc--lg);
   }
 }
@@ -124,7 +124,7 @@
 // background
 
 .loader--background {
-  background: fade(@white, 80%);
+  background: fade(@white, @perc--xl);
 }
 
 // js

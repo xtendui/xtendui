@@ -16,11 +16,11 @@ function loaderInit(main, index) {
   // spinner
 
   function spinner() {
-    let spinner = main.querySelector('.spinner circle:nth-child(2)');
-    TweenMax.set(spinner, {strokeDashoffset: 1});
-    TweenMax.to(spinner, time / 1000, {strokeDashoffset: 0, ease: 'easeInOut'});
+    let el = main.querySelector('.spinner circle:nth-child(2)');
+    TweenMax.set(el, {strokeDashoffset: 1});
+    TweenMax.to(el, time / 1000, {strokeDashoffset: 0, ease: 'easeInOut'});
+    setTimeout(spinner, time);
   }
-  setInterval(spinner, time);
   spinner();
 
 }

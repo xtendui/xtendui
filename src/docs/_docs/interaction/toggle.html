@@ -644,7 +644,7 @@ description: Many possible behaviour, interactions and animations are possible w
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"auto": {"time": 4000}}'>
+           data-xt-toggle='{"auto": {"time": 2000}}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -688,7 +688,7 @@ description: Many possible behaviour, interactions and animations are possible w
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"auto": {"time": 4000, "step": 3}}'>
+           data-xt-toggle='{"auto": {"time": 2000, "step": 3}}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -732,7 +732,7 @@ description: Many possible behaviour, interactions and animations are possible w
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"auto": {"time": 4000, "initial": false}}'>
+           data-xt-toggle='{"auto": {"time": 2000, "initial": false}}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -776,7 +776,7 @@ description: Many possible behaviour, interactions and animations are possible w
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"auto": {"time": 4000, "loop": false}}'>
+           data-xt-toggle='{"auto": {"time": 2000, "loop": false}}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -820,7 +820,7 @@ description: Many possible behaviour, interactions and animations are possible w
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"auto": {"time": 4000, "pause": ":scope > button, .toggle--block"}}'>
+           data-xt-toggle='{"auto": {"time": 2000, "pause": ":scope > button, .toggle--block"}}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -864,7 +864,7 @@ description: Many possible behaviour, interactions and animations are possible w
     </div>
     <div class="demo-source" data-lang="html">
       <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"auto": {"time": 4000, "inverse": true}}'>
+           data-xt-toggle='{"auto": {"time": 2000, "inverse": true}}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -900,10 +900,17 @@ description: Many possible behaviour, interactions and animations are possible w
       </div>
     </div>
   </div>
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/progress.html"
+       data-name="progress">
+    <div class="demo-text">
+      <div class="alert_content">
+      </div>
+    </div>
+  </div>
   <div class="demo-item demo-preview" data-name="complex">
     <div class="demo-source" data-lang="html">
       <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"min": 1, "max": 2, "auto": {"time": 4000, "pause": ":scope > button, .toggle--block"}}'>
+           data-xt-toggle='{"min": 1, "max": 2, "auto": {"time": 2000, "pause": ":scope > button, .toggle--block"}}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -946,7 +953,7 @@ description: Many possible behaviour, interactions and animations are possible w
 <p>Use <code>"jump": true</code> to enable clicking on a <strong>target</strong> to jump to them.</p>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/toggle-jump.html"
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/jump.html"
        data-name="jump"></div>
 </div>
 
@@ -1014,7 +1021,7 @@ description: Many possible behaviour, interactions and animations are possible w
 <h3>Timing</h3>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/toggle-automatic.html"
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/automatic.html"
        data-name="automatic">
     <div class="demo-text">
       <div class="alert_content">
@@ -1023,7 +1030,7 @@ description: Many possible behaviour, interactions and animations are possible w
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/toggle-duration.html"
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/duration.html"
        data-name="duration">
     <div class="demo-text">
       <div class="alert_content">
@@ -1032,7 +1039,7 @@ description: Many possible behaviour, interactions and animations are possible w
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/toggle-delay.html"
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/delay.html"
        data-name="delay">
     <div class="demo-text">
       <div class="alert_content">
@@ -1040,7 +1047,7 @@ description: Many possible behaviour, interactions and animations are possible w
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/toggle-delay-fnc.html"
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/delay-fnc.html"
        data-name="delay fnc">
     <div class="demo-text">
       <div class="alert_content">
@@ -1049,7 +1056,7 @@ description: Many possible behaviour, interactions and animations are possible w
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/toggle-instant.html"
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/instant.html"
        data-name="instant">
     <div class="demo-text">
       <div class="alert_content">
@@ -1062,7 +1069,7 @@ description: Many possible behaviour, interactions and animations are possible w
 <h3>Javascript</h3>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/toggle-js.html"
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/javascript.html"
        data-name="js">
     <div class="demo-text">
       <div class="alert_content">
@@ -1171,7 +1178,7 @@ description: Many possible behaviour, interactions and animations are possible w
 <h2>Extensions</h2>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/toggle-multilevel.html"
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/multilevel.html"
        data-name="levels">
     <div class="demo-text">
       <div class="alert_content">
