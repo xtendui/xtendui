@@ -11,15 +11,25 @@
   right: 0;
 }
 
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
 // direction
 
 .loader--x {
   .progress {
     > span {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
+      height: 100%;
     }
   }
 }
@@ -27,14 +37,64 @@
 .loader--y {
   .progress {
     > span {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      width: 100%;
     }
   }
 }
 
+// size
+
+.loader--size-top {
+  &:not(.loader--background) {
+    bottom: auto;
+  }
+  .progress {
+    bottom: auto;
+    > span {
+      top: 0;
+      width: 0;
+    }
+  }
+}
+
+.loader--size-bottom {
+  &:not(.loader--background) {
+    top: auto;
+  }
+  .progress {
+    top: auto;
+    > span {
+      bottom: 0;
+      width: 0;
+    }
+  }
+}
+
+.loader--size-left {
+  &:not(.loader--background) {
+    right: auto;
+  }
+  .progress {
+    right: auto;
+    > span {
+      left: 0;
+      height: 0;
+    }
+  }
+}
+
+.loader--size-right {
+  &:not(.loader--background) {
+    left: auto;
+  }
+  .progress {
+    left: auto;
+    > span {
+      right: 0;
+      height: 0;
+    }
+  }
+}
 
 // js
 

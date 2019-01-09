@@ -8,32 +8,7 @@
   }
   > span:nth-child(2) {
     background: @primary;
-  }
-}
-
-// size
-
-.loader--size-x {
-  .progress {
-    > span {
-      top: auto;
-      height: 3px;
-    }
-  }
-  &:not(.loader--background) {
-    top: auto;
-  }
-}
-
-.loader--size-y {
-  .progress {
-    > span {
-      left: auto;
-      width: 3px;
-    }
-  }
-  &:not(.loader--background) {
-    left: auto;
+    box-shadow: 0 .1em 1em fade(@primary, @perc--md), 0 .2em 2em fade(@primary, @perc--lg);
   }
 }
 
@@ -84,6 +59,22 @@
   100% {
     top: 100%;
     height: 0;
+  }
+}
+
+// size
+
+.loader--size-top,
+.loader--size-bottom {
+  .progress {
+    height: 3px;
+  }
+}
+
+.loader--size-right,
+.loader--size-left {
+  .progress {
+    width: 3px;
   }
 }
 
