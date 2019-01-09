@@ -38,7 +38,7 @@ function sliderInit(main, index) {
       direction = -1;
     }
     // mask
-    TweenMax.set(target, {x: -self.detail.xPos + 'px', opacity: 1});
+    TweenMax.set(target, {x: - self.detail.xPos + 'px', opacity: 1});
     TweenMax.set(dragger, {x: self.detail.xPos});
     // content
     for (let content of contents) {
@@ -72,12 +72,12 @@ function sliderInit(main, index) {
       // direction
       let direction = 1;
       if (target.classList.contains('xt-inverse')) {
-        direction = -1;
+        direction = - 1;
       }
       // setup
       TweenMax.set(target, {opacity: 0});
       // mask
-      TweenMax.set(target, {x: -xMax * direction});
+      TweenMax.set(target, {x: - xMax * direction});
       TweenMax.to(target, timeMask, {x: 0, opacity: 1, ease: 'easeIn'});
       TweenMax.set(dragger, {x: xMax * direction});
       TweenMax.to(dragger, timeMask, {x: 0, ease: 'easeIn'});
@@ -100,10 +100,10 @@ function sliderInit(main, index) {
       }
       // mask
       TweenMax.to(target, timeMask, {x: xMax * direction, opacity: 0, ease: 'easeOut'});
-      TweenMax.to(dragger, timeMask, {x: -xMax * direction, ease: 'easeOut'});
+      TweenMax.to(dragger, timeMask, {x: - xMax * direction, ease: 'easeOut'});
       // content
       for (let content of contents) {
-        TweenMax.to(content, timeContent, {x: -sizeContent * direction, opacity: 0, ease: 'easeOut'});
+        TweenMax.to(content, timeContent, {x: - sizeContent * direction, opacity: 0, ease: 'easeOut'});
       }
     });
 

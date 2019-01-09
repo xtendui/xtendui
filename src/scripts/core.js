@@ -913,7 +913,8 @@ class Core {
         break;
       }
     }
-    self.detail.inverseDirection = self.currentIndex > index;
+    self.detail.inverseDirection = self.detail.inverseDirectionForce !== null ? self.detail.inverseDirectionForce : self.currentIndex > index;
+    self.detail.inverseDirectionForce = null;
     self.currentIndex = index;
   }
 
@@ -2077,6 +2078,7 @@ class Core {
     if (self.currentIndex !== undefined) {
       index = self.currentIndex + amount;
     }
+    self.detail.inverseDirectionForce = false;
     self.goToIndex(index, force, loop);
   }
 
@@ -2093,6 +2095,7 @@ class Core {
     if (self.currentIndex !== undefined) {
       index = self.currentIndex - amount;
     }
+    self.detail.inverseDirectionForce = true;
     self.goToIndex(index, force, loop);
   }
 
