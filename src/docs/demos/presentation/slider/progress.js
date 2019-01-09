@@ -68,7 +68,7 @@ function sliderInit(main, index) {
           }
         } else {
           TweenMax.set(progress, {width: 0, left: 0});
-          TweenMax.to(progress, e.detail.autoTime / 1000, {width: '100%', ease: 'easeInOut'});
+          TweenMax.to(progress, e.detail.autoTime / 1000, {width: '100%', left: 0, ease: 'easeInOut'});
         }
       }
     }
@@ -85,8 +85,7 @@ function sliderInit(main, index) {
     for (let element of elements) {
       let progresses = element.querySelectorAll('.progress span:nth-child(2)');
       for (let progress of progresses) {
-        TweenMax.set(progress, {height: '100%', top: 0});
-        TweenMax.to(progress, 0.5, {height: 0, ease: 'easeInOut'});
+        TweenMax.to(progress, 0.5, {height: 0, top: 0, ease: 'easeInOut'});
       }
     }
     // on targets
@@ -94,7 +93,6 @@ function sliderInit(main, index) {
     for (let target of targets) {
       let progresses = target.querySelectorAll('.progress span:nth-child(2)');
       for (let progress of progresses) {
-        TweenMax.set(progress, {width: '100%', left: 0});
         TweenMax.to(progress, 0.5, {width: 0, left: '100%', ease: 'easeInOut'});
       }
     }
