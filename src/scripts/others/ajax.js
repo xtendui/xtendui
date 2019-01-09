@@ -86,19 +86,21 @@ class Ajax extends Core {
    * @param {Boolean} skipQueue If skip queue
    */
   queueOnDone(obj, type, skipQueue = false) {
-    let self = this;
     super.queueOnDone(obj, type, skipQueue);
-    // done
-    obj[type].done = true;
-    let done = 0;
-    for (let type in obj) {
-      if (obj[type].done) {
-        done++;
+    let self = this;
+    // check
+    if (obj[type] && !skipQueue) {
+      // done
+      let done = 0;
+      for (let type in obj) {
+        if (obj[type].done) {
+          done++;
+        }
       }
-    }
-    // ajax on done
-    if (done === Object.entries(obj).length) {
-      self.ajaxCall(obj[type].groupElements.single.getAttribute('href'));
+      // ajax on done
+      if (done === Object.entries(obj).length) {
+        self.ajaxCall(obj[type].groupElements.single.getAttribute('href'));
+      }
     }
   }
 
@@ -219,7 +221,8 @@ Ajax.defaults = {
   "class": "active",
   "on": "click",
   "min": 0,
-  "max": "Infinity"
+  "max": "Infinity",
+  "aria": false
 };
 
 //////////////////////

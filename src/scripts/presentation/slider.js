@@ -154,8 +154,8 @@ class Slider extends Core {
     for (let slide of self.targets) {
       let slideOffHandler = Xt.dataStorage.put(slide, 'slideOffHandler' + self.namespace,
         self.eventSlideOffHandler.bind(self).bind(self, dragger));
-      slide.removeEventListener('on.xt', slideOffHandler);
-      slide.addEventListener('on.xt', slideOffHandler);
+      slide.removeEventListener('off.xt', slideOffHandler);
+      slide.addEventListener('off.xt', slideOffHandler);
     }
     // dragger
     if (options.drag) {

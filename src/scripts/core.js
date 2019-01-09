@@ -42,6 +42,7 @@ class Core {
     let jsOptions = self.jsOptions;
     // defaults
     self.defaults = {
+      "instant": false,
       "onBlock": false,
       "offBlock": false,
       "loop": true,
@@ -410,7 +411,7 @@ class Core {
         let jumpHandler = Xt.dataStorage.put(jump, 'jumpHandler' + self.namespace,
           self.eventJumpHandler.bind(self).bind(self, jump));
         jump.removeEventListener('click', jumpHandler);
-        jump.addEventListener('click', jumpHandler, true); // @FIX useCapture: true or it gets the click from elements inside the target
+        jump.addEventListener('click', jumpHandler, true); // useCapture or it gets the click from elements inside the target
         // jump
         jump.classList.add('xt-jump');
       }
