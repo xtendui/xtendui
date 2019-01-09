@@ -73,7 +73,7 @@
     }
     .overlay_content,
     .overlay_inner > .btn--close {
-      .anim-vertical.active();
+      .anim-y.active();
       animation-delay: @time--small;
     }
     > .xt-backdrop {
@@ -85,21 +85,21 @@
     }
     &.overlay--left {
       .overlay_design {
-        .anim-horizontal.active();
+        .anim-x.active();
       }
       .overlay_content,
       .overlay_inner > .btn--close {
-        .anim-horizontal.active();
+        .anim-x.active();
         animation-delay: @time--small;
       }
     }
     &.overlay--right {
       .overlay_design {
-        .anim-horizontal-inverse.active();
+        .anim-x-inverse.active();
       }
       .overlay_content,
       .overlay_inner > .btn--close {
-        .anim-horizontal-inverse.active();
+        .anim-x-inverse.active();
         animation-delay: @time--small;
       }
     }
@@ -111,7 +111,7 @@
     }
     .overlay_content,
     .overlay_inner > .btn--close {
-      .anim-vertical.out();
+      .anim-y.out();
     }
     > .xt-backdrop {
       .xt-backdrop.out();
@@ -123,22 +123,22 @@
     }
     &.overlay--left {
       .overlay_design {
-        .anim-horizontal-inverse.out();
+        .anim-x-inverse.out();
         animation-delay: @time--small;
       }
       .overlay_content,
       .overlay_inner > .btn--close {
-        .anim-horizontal-inverse.out();
+        .anim-x-inverse.out();
       }
     }
     &.overlay--right {
       .overlay_design {
-        .anim-horizontal.out();
+        .anim-x.out();
         animation-delay: @time--small;
       }
       .overlay_content,
       .overlay_inner > .btn--close {
-        .anim-horizontal.out();
+        .anim-x.out();
       }
     }
   }

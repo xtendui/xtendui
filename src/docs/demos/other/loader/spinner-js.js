@@ -5,6 +5,8 @@ Xt.init.push({ // on DOM ready and on content added to DOM
 
 function loaderInit(main, index) {
 
+  let loader = main;
+
   // vars
 
   let time = 2000;
@@ -13,14 +15,22 @@ function loaderInit(main, index) {
   CustomEase.create('easeInOut', '.77,.0,.17,1');
   CSSPlugin.suffixMap.strokeDashoffset = "";
 
-  // spinner
+  // loader
 
-  function spinner() {
-    let el = main.querySelector('.spinner circle:nth-child(2)');
-    TweenMax.set(el, {strokeDashoffset: 1});
-    TweenMax.to(el, time / 1000, {strokeDashoffset: 0, ease: 'easeInOut'});
-    setTimeout(spinner, time);
+  function loaderTimeout() {
+    let progress = main.querySelector('.spinner circle:nth-child(2)');
+    loader.dataset.loaderActive = loader.dataset.loaderActive === 'true' ? 'false' : 'true';
+    if (loader.dataset.loaderActive === 'true') {
+      loader.classList.add('active');
+      loader.classList.remove('out');
+      TweenMax.set(progress, {strokeDashoffset: 1});
+      TweenMax.to(progress, time / 1000, {strokeDashoffset: 0, ease: 'easeInOut'});
+    } else {
+      loader.classList.remove('active');
+      loader.classList.add('out');
+    }
+    setTimeout(loaderTimeout, time);
   }
-  spinner();
+  loaderTimeout();
 
 }

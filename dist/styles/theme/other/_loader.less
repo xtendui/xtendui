@@ -143,16 +143,35 @@
   background: fade(@white, @perc--xl);
 }
 
-// js
+// animations
 
-.progress--js {
-  span {
-    .anim-none() !important;
+.loader {
+  &.active {
+    .anim-opacity.active();
+    .spinner, .progress {
+      .anim-x.active();
+      animation-delay: @time--medium;
+    }
+  }
+  &.out {
+    .anim-opacity.out();
+    animation-delay: @time--medium;
+    .spinner, .progress {
+      .anim-x.out();
+    }
   }
 }
 
-.spinner--js {
-  circle {
-    .anim-none() !important;
+.loader--js {
+  // disable animations
+  .spinner {
+    circle {
+      .anim-none() !important;
+    }
+  }
+  .progress {
+    span {
+      .anim-none() !important;
+    }
   }
 }

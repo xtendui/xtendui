@@ -199,24 +199,24 @@
   }
   &.active {
     .btn {
-      .anim-horizontal.active();
+      .anim-x.active();
       animation-delay: @time--medium + 150ms; // @start + @child * @increment
       .nth-child(@child: 6, @start: @time--medium, @increment: 25ms, @decrement: 0ms, {
         @animation-delay(); });
     }
     &.xt-inverse {
       .btn {
-        .anim-horizontal-inverse.active();
+        .anim-x-inverse.active();
       }
     }
   }
   &.out {
     .btn {
-      .anim-horizontal.out();
+      .anim-x.out();
     }
     &.xt-inverse {
       .btn {
-        .anim-horizontal-inverse.out();
+        .anim-x-inverse.out();
       }
     }
   }
@@ -350,7 +350,7 @@
   .site-menu-content {
     .btn {
       .line-container {
-        .anim-horizontal.active();
+        .anim-x.active();
         animation-delay: 0; // @start + @child * @increment
       }
       .nth-child(@child: 6, @start: @time--medium, @increment: 50ms, @decrement: 0ms, { .line-container {
@@ -364,7 +364,7 @@
   .site-menu-content {
     .btn {
       .line-container {
-        .anim-horizontal.out();
+        .anim-x.out();
         animation-delay: 120ms; // @start + @child * @increment
       }
       .nth-child(@child: 6, @start: 0, @increment: 50ms, @decrement: 0ms, { .line-container {
@@ -802,7 +802,7 @@
     }
     .site-breadcrumbs-meta {
       .animation-default.active();
-      animation-name: anim-horizontal-inverse--in;
+      animation-name: anim-x-inverse--in;
     }
   }
 }

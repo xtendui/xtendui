@@ -41,7 +41,7 @@
     transform: translateX(0);
   }
   &.active {
-    .anim-horizontal-inverse.active();
+    .anim-x-inverse.active();
     animation-duration: @time--big;
     &:after {
       .animation-default.active();
@@ -50,7 +50,7 @@
       transform: translateX(-100%);
     }
     &.xt-inverse {
-      .anim-horizontal.active();
+      .anim-x.active();
       animation-duration: @time--big;
       &:after {
         .animation-default.active();
@@ -61,7 +61,7 @@
     }
   }
   &.out {
-    .anim-horizontal-inverse.out();
+    .anim-x-inverse.out();
     animation-duration: @time--big;
     &:after {
       .animation-default.out();
@@ -70,7 +70,7 @@
       transform: translateX(0);
     }
     &.xt-inverse {
-      .anim-horizontal.out();
+      .anim-x.out();
       animation-duration: @time--big;
       &:after {
         .animation-default.out();

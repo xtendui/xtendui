@@ -5,6 +5,8 @@ Xt.init.push({ // on DOM ready and on content added to DOM
 
 function loaderInit(main, index) {
 
+  let loader = main;
+
   // vars
 
   let time = 2000;
@@ -12,14 +14,22 @@ function loaderInit(main, index) {
   CustomEase.create('easeOut', '.77,0,.175,1');
   CustomEase.create('easeInOut', '.77,.0,.17,1');
 
-  // progress
+  // loader
 
-  function progress() {
-    let el = main.querySelector('.progress > span:nth-child(2)');
-    TweenMax.set(el, {width: 0});
-    TweenMax.to(el, time / 1000, {width: '100%', ease: 'easeInOut'});
-    setTimeout(progress, time);
+  function loaderTimeout() {
+    let progress = main.querySelector('.progress span:nth-child(2)');
+    loader.dataset.loaderActive = loader.dataset.loaderActive === 'true' ? 'false' : 'true';
+    if (loader.dataset.loaderActive === 'true') {
+      loader.classList.add('active');
+      loader.classList.remove('out');
+      TweenMax.set(progress, {width: 0});
+      TweenMax.to(progress, time / 1000, {width: '100%', ease: 'easeInOut'});
+    } else {
+      loader.classList.remove('active');
+      loader.classList.add('out');
+    }
+    setTimeout(loaderTimeout, time);
   }
-  progress();
+  loaderTimeout();
 
 }

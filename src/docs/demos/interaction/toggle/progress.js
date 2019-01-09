@@ -29,7 +29,7 @@ function toggleInit(main, index) {
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
-      let progresses = element.querySelectorAll('.progress > span:nth-child(2)');
+      let progresses = element.querySelectorAll('.progress span:nth-child(2)');
       for (let progress of progresses) {
         let tweens = TweenMax.getTweensOf(progress);
         if (tweens.length) {
@@ -46,7 +46,7 @@ function toggleInit(main, index) {
     // on targets
     let targets = self.targets.filter(x => x.classList.contains('active'));
     for (let target of targets) {
-      let progresses = target.querySelectorAll('.progress > span:nth-child(2)');
+      let progresses = target.querySelectorAll('.progress span:nth-child(2)');
       for (let progress of progresses) {
         let tweens = TweenMax.getTweensOf(progress);
         if (tweens.length) {
@@ -68,7 +68,7 @@ function toggleInit(main, index) {
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
-      let progresses = element.querySelectorAll('.progress > span:nth-child(2)');
+      let progresses = element.querySelectorAll('.progress span:nth-child(2)');
       for (let progress of progresses) {
         TweenMax.set(progress, {height: '100%', top: 0});
         TweenMax.to(progress, 0.5, {height: 0, top: '100%', ease: 'easeInOut'});
@@ -77,7 +77,7 @@ function toggleInit(main, index) {
     // on targets
     let targets = self.targets.filter(x => x.classList.contains('active'));
     for (let target of targets) {
-      let progresses = target.querySelectorAll('.progress > span:nth-child(2)');
+      let progresses = target.querySelectorAll('.progress span:nth-child(2)');
       for (let progress of progresses) {
         TweenMax.set(progress, {width: '100%', left: 0});
         TweenMax.to(progress, 0.5, {width: 0, left: '100%', ease: 'easeInOut'});
@@ -91,7 +91,7 @@ function toggleInit(main, index) {
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
-      let progresses = element.querySelectorAll('.progress > span:nth-child(2)');
+      let progresses = element.querySelectorAll('.progress span:nth-child(2)');
       for (let progress of progresses) {
         let tweens = TweenMax.getTweensOf(progress);
         for (let tween of tweens) {
@@ -102,7 +102,7 @@ function toggleInit(main, index) {
     // on targets
     let targets = self.targets.filter(x => x.classList.contains('active'));
     for (let target of targets) {
-      let progresses = target.querySelectorAll('.progress > span:nth-child(2)');
+      let progresses = target.querySelectorAll('.progress span:nth-child(2)');
       for (let progress of progresses) {
         let tweens = TweenMax.getTweensOf(progress);
         for (let tween of tweens) {
