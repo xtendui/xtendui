@@ -19,9 +19,9 @@
     <link rel="apple-touch-icon" sizes="152x152" href="{{ site.baseurl }}/assets/images/favicon-152x152.png" />
 
     <!-- styles -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/demo.css?v={{ site.version }}" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/demos.css?v={{ site.version }}" />
 
-    <!-- demo styles -->
+    <!-- demos styles -->
     {% if page.less %}<link rel="stylesheet" href="{{ page.name | replace: '.html', '.css' }}?v={{ site.version }}" />{% endif %}
 
   </head>
@@ -54,15 +54,15 @@
     <script src="{{ site.baseurl }}/assets/scripts/greensock/easing/CustomEase.min.js?v={{ site.version }}"></script>
     <script src="{{ site.baseurl }}/assets/scripts/polyfill.min.js?v={{ site.version }}"></script>
 
-    <!-- theme scripts -->
-    <script src="{{ site.baseurl }}/assets/scripts/theme.min.js?v={{ site.version }}"></script>
+    <!-- demos scripts -->
+    <script src="{{ site.baseurl }}/assets/scripts/demos.min.js?v={{ site.version }}"></script>
 
-    <!-- demo scripts -->
+    <!-- demos scripts -->
     {% if page.js %}
     <script>{% include_relative {{ page.name | replace: '.html', '.js' }} %}</script>
     {% endif %}
 
-    <!-- demo utils -->
+    <!-- demos utils -->
     <script>
       if (window.self !== window.top) {
         // add id

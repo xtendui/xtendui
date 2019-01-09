@@ -11,17 +11,17 @@ import Xt from '../../../scripts/xtend';
 
 // .make-line
 
-for(let el of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
+for (let el of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
   el.classList.add('make-line');
 }
-for(let el of document.querySelectorAll('.make-line')) {
+for (let el of document.querySelectorAll('.make-line')) {
   el.innerHTML = '<span class="line">' + el.innerHTML + '</span>';
   el.innerHTML = '<span class="line-container">' + el.innerHTML + '</span>';
 }
 
 // .make-anchor
 
-for(let el of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
+for (let el of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
   el.classList.add('make-line');
   // previous h2 if h3
   let prevElement;
@@ -49,9 +49,9 @@ for(let el of document.querySelectorAll('.site-article > h2, .site-article > h3'
 
 // .site-aside-text
 
-for(let el of document.querySelectorAll('.site-aside-text > .btn:not(.different)')) {
+for (let el of document.querySelectorAll('.site-aside-text > .btn:not(.different)')) {
   let container = Xt.parents(el, '.site-aside-text')[0];
-  for(let element of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
+  for (let element of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
     if (element.tagName === 'H2') {
       let appendItem = Xt.createElement('<div class="site-aside-sub-container"></div>');
       container.append(appendItem);
@@ -64,7 +64,7 @@ for(let el of document.querySelectorAll('.site-aside-text > .btn:not(.different)
   }
 }
 
-for(let el of document.querySelectorAll('.site-aside-text')) {
+for (let el of document.querySelectorAll('.site-aside-text')) {
   new Xt.Toggle(el, {
     "elements": ".site-aside-sub-container",
     "targets": ".site-aside-subsub",
@@ -80,7 +80,7 @@ for(let el of document.querySelectorAll('.site-aside-text')) {
 
 const activateAsideScroll = function (els, scrollTop) {
   const dist = window.innerHeight / 5;
-  for(let el of els) {
+  for (let el of els) {
     let href = el.getAttribute('href');
     if (href) {
       let target = document.querySelectorAll(href);
@@ -160,7 +160,7 @@ const formatCode = function (source, lang) {
 
 // highlight
 
-for(let el of document.querySelectorAll('pre code')) {
+for (let el of document.querySelectorAll('pre code')) {
   let lang = el.className;
   // set text
   el.innerHTML = formatCode(el, lang);
@@ -182,7 +182,7 @@ const populateDemo = function (container, i) {
   }
   */
   // loop items
-  for(let [k, item] of items.entries()) {
+  for (let [k, item] of items.entries()) {
     // populate tabs
     let name = item.getAttribute('data-name');
     if (items.length === 1) {
@@ -220,7 +220,7 @@ const populateDemo = function (container, i) {
     // inject iframe
     if (item.getAttribute('data-iframe')) {
       let iframe = item.querySelectorAll('iframe')[0];
-      let initIframe = function() {
+      let initIframe = function () {
         if (!iframe.getAttribute('src')) {
           item.classList.add('demo-iframe');
           iframe.setAttribute('src', iframe.getAttribute('data-src'));
@@ -253,7 +253,7 @@ const populateDemo = function (container, i) {
     "min": 1
   });
   // loop items
-  for(let [k, item] of items.entries()) {
+  for (let [k, item] of items.entries()) {
     // collapse code
     let demoId = 'demo-' + i + k;
     container.setAttribute('id', demoId);
@@ -283,7 +283,7 @@ const populateDemo = function (container, i) {
 
 const populateInline = function (item, id) {
   let els = item.querySelectorAll('.demo-source');
-  for(let [z, el] of els.entries()) {
+  for (let [z, el] of els.entries()) {
     populateSources(item, el, z);
     if (!item.classList.contains('demo-preview')) {
       el.style.display = 'none';
@@ -304,7 +304,7 @@ const populateInline = function (item, id) {
 
 // populateIframe
 
-window.initIframe = function(name) {
+window.initIframe = function (name) {
   let src = 'iframe[name="' + name + '"]';
   let iframe = document.querySelectorAll(src)[0];
   iframe.classList.add('show');
@@ -316,7 +316,7 @@ window.initIframe = function(name) {
   }
 };
 
-window.resizeIframe = function(name) {
+window.resizeIframe = function (name) {
   let src = 'iframe[name="' + name + '"]';
   let iframe = document.querySelectorAll(src)[0];
   if (iframe) {
@@ -347,7 +347,7 @@ function populateIframe(item, iframe) {
     iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="js">' + js.innerHTML + '</div>'));
   }
   // populate
-  for(let [z, source] of item.querySelectorAll('.demo-source').entries()) {
+  for (let [z, source] of item.querySelectorAll('.demo-source').entries()) {
     populateSources(item, source, z);
     source.parentNode.removeChild(source);
   }
@@ -378,7 +378,7 @@ const populateSources = function (item, element, z) {
 
 // init demos
 
-for(let [i, el] of document.querySelectorAll('.demo').entries()) {
+for (let [i, el] of document.querySelectorAll('.demo').entries()) {
   populateDemo(el, i);
 }
 
@@ -388,16 +388,16 @@ for(let [i, el] of document.querySelectorAll('.demo').entries()) {
 
 // .demo-cols
 
-for(let element of document.querySelectorAll('.demo-cols')) {
-  for(let [i, el] of element.querySelectorAll('.col').entries()) {
+for (let element of document.querySelectorAll('.demo-cols')) {
+  for (let [i, el] of element.querySelectorAll('.col').entries()) {
     el.setAttribute('data-index', i);
   }
 }
 
 // .demo-cols-nested
 
-for(let element of document.querySelectorAll('.demo-cols-nested .col')) {
-  for(let [i, el] of element.querySelectorAll('.col').entries()) {
+for (let element of document.querySelectorAll('.demo-cols-nested .col')) {
+  for (let [i, el] of element.querySelectorAll('.col').entries()) {
     el.setAttribute('data-index', i);
   }
 }

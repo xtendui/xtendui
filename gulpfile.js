@@ -25,6 +25,11 @@ gulp.task('less:demos', function () {
     .pipe(cleanCSS())
     .pipe(gulp.dest('src/docs/demos/'));
 });
+gulp.task('less:demos:watch', function (done) {
+  gulp.watch(['src/styles/**/*.less', 'dist/styles/**/*.less', 'src/docs/demos/**/*.less'], gulp.series('less', 'less:demos', 'site:build'));
+  done();
+});
+
 gulp.task('less:docs', gulp.series('less:demos', function () {
   return gulp.src(['src/docs/assets/styles/**/*.less', '!src/docs/assets/styles/**/_*.less'])
     .pipe(sourcemaps.init({loadMaps: true}))
@@ -34,7 +39,7 @@ gulp.task('less:docs', gulp.series('less:demos', function () {
     .pipe(gulp.dest('src/docs/assets/styles/'));
 }));
 gulp.task('less:docs:watch', function (done) {
-  gulp.watch(['src/styles/**/*.less', 'dist/styles/**/*.less', 'src/docs/assets/styles/**/*.less', 'src/docs/demos/**/*.less'], gulp.series('less', 'less:docs', 'site:build'));
+  gulp.watch(['src/styles/**/*.less', 'dist/styles/**/*.less', 'src/docs/assets/styles/**/*.less'], gulp.series('less', 'less:docs', 'site:build'));
   done();
 });
 
@@ -55,6 +60,31 @@ gulp.task('less:watch', function (done) {
 });
 
 // compile js
+
+gulp.task('js:demos', function () {
+  let b = browserify({
+    entries: 'src/docs/assets/scripts/demos.js',
+    debug: true
+  });
+  const version = JSON.parse(fs.readFileSync('package.json')).version;
+  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
+  return b.bundle()
+    .pipe(source('demos.min.js'))
+    .pipe(replace(/\/\*\![^\*]+\*\//, banner))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(terser({
+      output: {
+        comments: /^!/
+      }
+    }))
+    .pipe(sourcemaps.write(''))
+    .pipe(gulp.dest('src/docs/assets/scripts/'));
+});
+gulp.task('js:demos:watch', function (done) {
+  gulp.watch(['src/scripts/**/*.js', 'src/docs/assets/scripts/demos.js'], gulp.series('js', 'js:demos', 'site:build'));
+  done();
+});
 
 gulp.task('js:docs', function () {
   let b = browserify({
@@ -165,7 +195,7 @@ gulp.task('build',
 );
 
 gulp.task('build:docs',
-  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less:docs', 'js:docs'), 'site:build')
+  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less:docs', 'less:demos', 'js:docs', 'js:demos'), 'site:build')
 );
 
 gulp.task('watch',
@@ -173,7 +203,7 @@ gulp.task('watch',
 );
 
 gulp.task('watch:docs',
-  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less:docs', 'js:docs'), 'site:serve', gulp.parallel('version:watch', 'content:watch', 'less:docs:watch', 'js:docs:watch'))
+  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less:docs', 'less:demos', 'js:docs', 'js:demos'), 'site:serve', gulp.parallel('version:watch', 'content:watch', 'less:docs:watch', 'less:demos:watch', 'js:docs:watch', 'js:demos:watch'))
 );
 
 gulp.task('default', gulp.series('build'));
