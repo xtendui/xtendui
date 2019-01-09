@@ -107,6 +107,7 @@
 
 // size
 
+.loader--size-x,
 .loader--size-top,
 .loader--size-bottom {
   .progress {
@@ -114,10 +115,25 @@
   }
 }
 
-.loader--size-right,
-.loader--size-left {
+.loader--size-y,
+.loader--size-left,
+.loader--size-right {
   .progress {
     width: 3px;
+  }
+}
+
+.loader--size-x {
+  .progress {
+    left: 25%;
+    right: 25%;
+  }
+}
+
+.loader--size-y {
+  .progress {
+    top: 25%;
+    bottom: 25%;
   }
 }
 
