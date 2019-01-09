@@ -50,8 +50,8 @@ function sliderInit(main, index) {
             TweenMax.to(tween, .5, {timeScale: t});
           }
         } else {
-          TweenMax.set(progress, {height: 0, top: 0});
-          TweenMax.to(progress, e.detail.autoTime / 1000, {height: '100%', ease: 'easeInOut'});
+          TweenMax.set(progress, {height: 0, top: '100%'});
+          TweenMax.to(progress, e.detail.autoTime / 1000, {height: '100%', top: 0, ease: 'easeInOut'});
         }
       }
     }
@@ -86,7 +86,7 @@ function sliderInit(main, index) {
       let progresses = element.querySelectorAll('.progress span:nth-child(2)');
       for (let progress of progresses) {
         TweenMax.set(progress, {height: '100%', top: 0});
-        TweenMax.to(progress, 0.5, {height: 0, top: '100%', ease: 'easeInOut'});
+        TweenMax.to(progress, 0.5, {height: 0, ease: 'easeInOut'});
       }
     }
     // on targets
