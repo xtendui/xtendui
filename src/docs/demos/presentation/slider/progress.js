@@ -9,7 +9,7 @@ function sliderInit(main, index) {
 
   let self = new Xt.Slider(main, {
     "auto": {
-      "time": 2000,
+      "time": 4000,
       "pause": ".slide, [data-xt-pag]"
     }
   });
@@ -19,21 +19,24 @@ function sliderInit(main, index) {
   // vars
 
   CSSPlugin.suffixMap.strokeDashoffset = "";
+  CustomEase.create('easeIn', '.41,.1,.175,1');
+  CustomEase.create('easeOut', '.77,0,.175,1');
+  CustomEase.create('easeInOut', '.77,.0,.17,1');
 
   // auto start
 
   slider.addEventListener('auto.xt.start', function (e) {
     // on slider
-    let progress = slider.querySelector('.spinner circle:nth-child(2)');
-    let tweens = TweenMax.getTweensOf(progress);
+    let spinner = slider.querySelector('.spinner circle:nth-child(2)');
+    let tweens = TweenMax.getTweensOf(spinner);
     if (tweens.length) {
       for (let tween of tweens) {
         let t = (e.detail.autoTime - tween.time() * 1000) / e.detail.autoTime;
         TweenMax.to(tween, .5, {timeScale: t});
       }
     } else {
-      TweenMax.set(progress, {strokeDashoffset: 1});
-      TweenMax.to(progress, e.detail.autoTime / 1000, {strokeDashoffset: 0});
+      TweenMax.set(spinner, {strokeDashoffset: 1});
+      TweenMax.to(spinner, e.detail.autoTime / 1000, {strokeDashoffset: 0, ease: 'easeInOut'});
     }
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
@@ -48,7 +51,7 @@ function sliderInit(main, index) {
           }
         } else {
           TweenMax.set(progress, {height: 0, top: 0});
-          TweenMax.to(progress, e.detail.autoTime / 1000, {height: '100%'});
+          TweenMax.to(progress, e.detail.autoTime / 1000, {height: '100%', ease: 'easeInOut'});
         }
       }
     }
@@ -65,7 +68,7 @@ function sliderInit(main, index) {
           }
         } else {
           TweenMax.set(progress, {width: 0, left: 0});
-          TweenMax.to(progress, e.detail.autoTime / 1000, {width: '100%'});
+          TweenMax.to(progress, e.detail.autoTime / 1000, {width: '100%', ease: 'easeInOut'});
         }
       }
     }
@@ -75,15 +78,15 @@ function sliderInit(main, index) {
 
   slider.addEventListener('auto.xt.stop', function (e) {
     // on slider
-    let progress = slider.querySelector('.spinner circle:nth-child(2)');
-    TweenMax.set(progress, {strokeDashoffset: 1});
+    let spinner = slider.querySelector('.spinner circle:nth-child(2)');
+    TweenMax.set(spinner, {strokeDashoffset: 1});
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
       let progresses = element.querySelectorAll('.progress > span:nth-child(2)');
       for (let progress of progresses) {
         TweenMax.set(progress, {height: '100%', top: 0});
-        TweenMax.to(progress, 0.5, {height: 0, top: '100%'});
+        TweenMax.to(progress, 0.5, {height: 0, top: '100%', ease: 'easeInOut'});
       }
     }
     // on targets
@@ -92,7 +95,7 @@ function sliderInit(main, index) {
       let progresses = target.querySelectorAll('.progress > span:nth-child(2)');
       for (let progress of progresses) {
         TweenMax.set(progress, {width: '100%', left: 0});
-        TweenMax.to(progress, 0.5, {width: 0, left: '100%'});
+        TweenMax.to(progress, 0.5, {width: 0, left: '100%', ease: 'easeInOut'});
       }
     }
   });
@@ -101,8 +104,8 @@ function sliderInit(main, index) {
 
   slider.addEventListener('auto.xt.pause', function (e) {
     // on slider
-    let progress = slider.querySelector('.spinner circle:nth-child(2)');
-    let tweens = TweenMax.getTweensOf(progress);
+    let spinner = slider.querySelector('.spinner circle:nth-child(2)');
+    let tweens = TweenMax.getTweensOf(spinner);
     for (let tween of tweens) {
       TweenMax.to(tween, .5, {timeScale: 0});
     }
@@ -132,19 +135,16 @@ function sliderInit(main, index) {
 
   // follow mouse
 
-  let progress = slider.querySelector('.spinner');
+  let spinner = slider.querySelector('.spinner');
   let time = .8;
-  CustomEase.create('easeIn', '.41,.1,.175,1');
-  CustomEase.create('easeOut', '.77,0,.175,1');
-  CustomEase.create('easeInOut', '.77,.0,.17,1');
 
   function mousemove(e) {
     // vars
-    let rect = progress.getBoundingClientRect();
+    let rect = spinner.getBoundingClientRect();
     let top = e.clientY + rect.height / 2 - 20; // 20 for exaclty center
     let left = e.clientX + rect.width / 2 - 20; // 20 for exaclty center
     // tween
-    let tweens = TweenMax.getTweensOf(progress);
+    let tweens = TweenMax.getTweensOf(spinner);
     if (tweens.length) {
       for (let tween of tweens) {
         let time = tween.time();
@@ -156,40 +156,40 @@ function sliderInit(main, index) {
         }
       }
     } else {
-      progress.style.top = top + 'px';
-      progress.style.left = left + 'px';
+      spinner.style.top = top + 'px';
+      spinner.style.left = left + 'px';
     }
   }
 
   function mouseenter(e) {
-    progress.classList.add('active');
+    spinner.classList.add('active');
     // vars
-    let rect = progress.getBoundingClientRect();
+    let rect = spinner.getBoundingClientRect();
     let top = e.clientY + rect.height / 2 - 20; // 20 for exaclty center
     let left = e.clientX - rect.width / 2 - 20; // 20 for exaclty center
     // tween
-    let tweens = TweenMax.getTweensOf(progress);
+    let tweens = TweenMax.getTweensOf(spinner);
     if (tweens.length) {
       for (let tween of tweens) {
         tween.kill();
       }
     }
-    TweenMax.to(progress, time, {top: top, left: left, ease: 'easeInOut'});
+    TweenMax.to(spinner, time, {top: top, left: left, ease: 'easeInOut'});
   }
 
   function mouseleave(e) {
-    progress.classList.remove('active');
+    spinner.classList.remove('active');
     // vars
     let top = '100%';
     let left = '100%';
     // tween
-    let tweens = TweenMax.getTweensOf(progress);
+    let tweens = TweenMax.getTweensOf(spinner);
     if (tweens.length) {
       for (let tween of tweens) {
         tween.kill();
       }
     }
-    TweenMax.to(progress, time, {top: top, left: left, ease: 'easeInOut'});
+    TweenMax.to(spinner, time, {top: top, left: left, ease: 'easeInOut'});
   }
 
   slider.removeEventListener('mousemove', mousemove);
