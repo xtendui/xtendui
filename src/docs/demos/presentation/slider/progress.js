@@ -24,7 +24,7 @@ function sliderInit(main, index) {
 
   slider.addEventListener('auto.xt.start', function (e) {
     // on slider
-    let progress = slider.querySelector('.progress_slider circle:nth-child(2)');
+    let progress = slider.querySelector('.spinner circle:nth-child(2)');
     let tweens = TweenMax.getTweensOf(progress);
     if (tweens.length) {
       for (let tween of tweens) {
@@ -75,7 +75,7 @@ function sliderInit(main, index) {
 
   slider.addEventListener('auto.xt.stop', function (e) {
     // on slider
-    let progress = slider.querySelector('.progress_slider circle:nth-child(2)');
+    let progress = slider.querySelector('.spinner circle:nth-child(2)');
     TweenMax.set(progress, {strokeDashoffset: 1});
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
@@ -101,7 +101,7 @@ function sliderInit(main, index) {
 
   slider.addEventListener('auto.xt.pause', function (e) {
     // on slider
-    let progress = slider.querySelector('.progress_slider circle:nth-child(2)');
+    let progress = slider.querySelector('.spinner circle:nth-child(2)');
     let tweens = TweenMax.getTweensOf(progress);
     for (let tween of tweens) {
       TweenMax.to(tween, .5, {timeScale: 0});
@@ -132,7 +132,7 @@ function sliderInit(main, index) {
 
   // follow mouse
 
-  let progress = slider.querySelector('.progress_slider');
+  let progress = slider.querySelector('.spinner');
   let time = .8;
   CustomEase.create('easeIn', '.41,.1,.175,1');
   CustomEase.create('easeOut', '.77,0,.175,1');

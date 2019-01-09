@@ -11,17 +11,33 @@
   right: 0;
 }
 
+// progress
+
 .progress {
   position: absolute;
+  z-index: @index--loader;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+  margin: auto;
   > span {
     position: absolute;
     top: 0;
     left: 0;
   }
+}
+
+// spinner
+
+.spinner {
+  position: absolute;
+  z-index: @index--loader;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
 }
 
 // direction
@@ -96,44 +112,9 @@
   }
 }
 
-// js
-
-.loader--js {
-  .progress {
-    > span {
-      .anim-none() !important;
-    }
-  }
-}
-
-/*
-
-.preload {
-  position: relative;
-  width: 100%;
-}
-
-// addons
-
-.loader {
-  width: 100%;
-}
-
-*/
-
-/*
-.loader--relative {
-  position: relative;
-}
+// fixed
 
 .loader--fixed {
   position: fixed;
   z-index: @index--loader + 1;
 }
-
-.loader--html {
-  html.loaded & {
-    display: none;
-  }
-}
-*/

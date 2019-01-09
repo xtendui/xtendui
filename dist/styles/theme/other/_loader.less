@@ -2,6 +2,49 @@
 // loader
 //////////////////////
 
+// spinner
+
+.spinner {
+  width: 2.5rem;
+  height: 2.5rem;
+  circle {
+    fill: none;
+    stroke-width: 25;
+    transform: rotateY(0deg) rotateZ(-90deg);
+    transform-origin: center center;
+    &:nth-child(1) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      stroke: @gray--250;
+    }
+    &:nth-child(2) {
+      stroke: @primary;
+      animation: anim-spinner @time--giant infinite @bez--in;
+    }
+  }
+}
+
+@keyframes anim-spinner {
+  0% {
+    stroke-dashoffset: 1;
+    transform: rotateY(0deg) rotateZ(-90deg);
+  }
+  50% {
+    stroke-dashoffset: 0;
+    animation-timing-function: @bez--out;
+    transform: rotateY(0deg) rotateZ(-90deg);
+  }
+  51% {
+    transform: rotateY(180deg) rotateZ(-90deg);
+  }
+  100% {
+    transform: rotateY(180deg) rotateZ(-90deg);
+  }
+}
+
+// progress
+
 .progress {
   > span:nth-child(1) {
     background: @gray--250;
@@ -17,7 +60,7 @@
 .loader--x {
   .progress {
     > span:nth-child(2) {
-      animation: anim-progress--x @time--giant infinite linear;
+      animation: anim-loader--x @time--giant infinite @bez--in;
     }
   }
 }
@@ -25,12 +68,12 @@
 .loader--y {
   .progress {
     > span:nth-child(2) {
-      animation: anim-progress--y @time--giant infinite linear;
+      animation: anim-loader--y @time--giant infinite @bez--in;
     }
   }
 }
 
-@keyframes anim-progress--x {
+@keyframes anim-loader--x {
   0% {
     left: 0;
     width: 0;
@@ -46,7 +89,7 @@
   }
 }
 
-@keyframes anim-progress--y {
+@keyframes anim-loader--y {
   0% {
     top: 0;
     height: 0;
@@ -84,117 +127,16 @@
   background: fade(@white, 80%);
 }
 
+// js
 
+.progress--js {
+  > span {
+    .anim-none() !important;
+  }
+}
 
-
-
-
-
-.progress_slider {
-  position: absolute;
-  z-index: @index--loader;
-  // circle
+.spinner--js {
   circle {
-    fill: none;
-    stroke-width: 25;
-    transform: rotateZ(-90deg);
-    transform-origin: center center;
-    &:nth-child(1) {
-      position: absolute;
-      top: 0;
-      left: 0;
-      stroke: @gray--250;
-      stroke-dashoffset: 0;
-    }
-    &:nth-child(2) {
-      stroke: @primary;
-    }
+    .anim-none() !important;
   }
 }
-
-// addons
-/*
-.loader_background {
-  &::before {
-    .design-setup();
-    background: @white;
-  }
-}
-
-.loader--full {
-  .padding(x, 33%) !important;
-}
-
-// variant
-
-.preload {
-  overflow: hidden;
-  height: 2px;
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-  }
-  &::before {
-    z-index: 2;
-    width: 100%;
-    background: @gray--250;
-  }
-  &::after {
-    z-index: 3;
-    width: 0;
-    background: @black;
-    // animation
-    animation: anim-loader 1000ms infinite linear;
-  }
-}
-
-@keyframes anim-loader {
-  0% {
-    left: 0;
-    width: 0;
-  }
-  50% {
-    left: 0;
-    width: 100%;
-    animation-timing-function: @bez--out;
-  }
-  100% {
-    left: 100%;
-    width: 0;
-  }
-}
-
-// activation
-
-.loader {
-  .anim-opacity.active();
-}
-*/
-
-/* USAGE:
-<div class="loader loader--html loader--relative">
-    <div class="preload"></div>
-</div>
-<div class="loader loader_background loader--full">
-    <div class="preload"></div>
-</div>
-*/
-
-/* USAGE:
-// loader
-document.querySelectorAll('html')[0].classList.add('loaded');
-*/
-
-/* put any selector here you want to loader
-.main-container {
-  visibility: hidden;
-  html.loaded &,
-  html.loader--fade & {
-    visibility: visible;
-  }
-}
-*/
