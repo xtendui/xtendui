@@ -24,11 +24,12 @@ function loaderInit(main, index) {
       loader.classList.remove('out');
       TweenMax.set(progress, {width: 0});
       TweenMax.to(progress, time / 1000, {width: '100%', ease: 'easeInOut'});
+      setTimeout(loaderTimeout, time);
     } else {
       loader.classList.remove('active');
       loader.classList.add('out');
+      setTimeout(loaderTimeout, Xt.animDuration(loader));
     }
-    setTimeout(loaderTimeout, time);
   }
   loaderTimeout();
 

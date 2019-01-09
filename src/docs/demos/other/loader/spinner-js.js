@@ -25,11 +25,12 @@ function loaderInit(main, index) {
       loader.classList.remove('out');
       TweenMax.set(progress, {strokeDashoffset: 1});
       TweenMax.to(progress, time / 1000, {strokeDashoffset: 0, ease: 'easeInOut'});
+      setTimeout(loaderTimeout, time);
     } else {
       loader.classList.remove('active');
       loader.classList.add('out');
+      setTimeout(loaderTimeout, Xt.animDuration(loader));
     }
-    setTimeout(loaderTimeout, time);
   }
   loaderTimeout();
 
