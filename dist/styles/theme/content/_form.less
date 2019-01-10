@@ -221,8 +221,8 @@ textarea {
 
 // styled
 
-.checkbox-styled,
-.radio-styled {
+.checkbox,
+.radio {
   padding-left: 3rem;
   &::before,
   &::after {
@@ -259,7 +259,7 @@ textarea {
   }
 }
 
-.checkbox-styled {
+.checkbox {
   &::before {
     border-radius: @input--border-radius;
   }
@@ -270,7 +270,7 @@ textarea {
   }
 }
 
-.radio-styled {
+.radio {
   &::before {
     border-radius: 50%;
   }
@@ -290,7 +290,7 @@ input[type="checkbox"]:not(.unstyled) {
   }
   // animation
   &:checked ~ .form_label {
-    .checkbox-styled.active();
+    .checkbox.active();
   }
 }
 
@@ -301,6 +301,6 @@ input[type="radio"]:not(.unstyled) {
   }
   // animation
   &:checked ~ .form_label {
-    .radio-styled.active();
+    .radio.active();
   }
 }

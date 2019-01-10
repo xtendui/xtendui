@@ -76,8 +76,8 @@
 // check and radio
 //////////////////////
 
-.checkbox-styled,
-.radio-styled {
+.checkbox,
+.radio {
   position: relative;
   &:not(.disabled) {
     cursor: pointer;
@@ -114,13 +114,13 @@ input[type="radio"]:not(.unstyled) {
 
 input[type="checkbox"]:not(.unstyled) {
   & ~ .form_label {
-    .checkbox-styled();
+    .checkbox();
   }
 }
 
 input[type="radio"]:not(.unstyled) {
   & ~ .form_label {
-    .radio-styled();
+    .radio();
   }
 }
 
