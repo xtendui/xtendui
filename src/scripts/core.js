@@ -21,7 +21,10 @@ class Core {
   constructor(object, jsOptions = {}) {
     let self = this;
     // constructor
-    if (object && !object.dataset.xtCoreDone) {
+    if (object
+      && !object.dataset.xtCoreDone // not when already initialized
+      && !object.dataset.xtAjaxKept // not when ajax-kept
+    ) {
       object.dataset.xtCoreDone = 'true';
       // init
       self.object = object;
