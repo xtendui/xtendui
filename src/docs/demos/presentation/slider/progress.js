@@ -26,7 +26,7 @@ function sliderInit(main, index) {
 
   slider.addEventListener('auto.xt.start', function (e) {
     // on slider
-    let spinner = slider.querySelector('.spinner circle:nth-child(2)');
+    let spinner = slider.querySelectorAll('.spinner circle:nth-child(2)');
     let tweens = TweenMax.getTweensOf(spinner);
     if (tweens.length) {
       for (let tween of tweens) {
@@ -77,7 +77,7 @@ function sliderInit(main, index) {
 
   slider.addEventListener('auto.xt.stop', function (e) {
     // on slider
-    let spinner = slider.querySelector('.spinner circle:nth-child(2)');
+    let spinner = slider.querySelectorAll('.spinner circle:nth-child(2)');
     TweenMax.set(spinner, {strokeDashoffset: 1});
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
@@ -101,7 +101,7 @@ function sliderInit(main, index) {
 
   slider.addEventListener('auto.xt.pause', function (e) {
     // on slider
-    let spinner = slider.querySelector('.spinner circle:nth-child(2)');
+    let spinner = slider.querySelectorAll('.spinner circle:nth-child(2)');
     let tweens = TweenMax.getTweensOf(spinner);
     for (let tween of tweens) {
       TweenMax.to(tween, .5, {timeScale: 0});
@@ -132,7 +132,7 @@ function sliderInit(main, index) {
 
   // follow mouse
 
-  let spinner = slider.querySelector('.spinner');
+  let spinner = slider.querySelectorAll('.spinner');
   let time = .8;
 
   function mousemove(e) {
