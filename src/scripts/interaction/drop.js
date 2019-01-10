@@ -52,14 +52,14 @@ class Drop extends Core {
 Drop.componentName = 'drop';
 Drop.defaults = {
   "targets": ":scope > .drop",
-  "elementsInner": ":scope > a, :scope > button",
+  "elementsInner": ":scope > button",
   "class": "active",
   "on": "click",
   "min": 0,
   "max": 1,
   "instant": {"elementsInner": true},
   "closeOutside": "body",
-  "ariaControls": ":scope > a, :scope > button"
+  "ariaControls": ":scope > button"
 };
 
 //////////////////////
