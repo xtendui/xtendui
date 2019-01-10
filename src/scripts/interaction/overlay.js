@@ -59,7 +59,7 @@ class Overlay extends Core {
 
 Overlay.componentName = 'overlay';
 Overlay.defaults = {
-  "elements": ":scope > button",
+  "elements": ":scope > a, :scope > button",
   "targets": ":scope > .overlay_outer",
   "class": "active",
   "on": "click",
