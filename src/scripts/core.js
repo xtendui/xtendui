@@ -21,10 +21,7 @@ class Core {
   constructor(object, jsOptions = {}) {
     let self = this;
     // constructor
-    if (object
-      && !object.dataset.xtCoreDone // not when already initialized
-      && !object.dataset.xtAjaxKept // not when ajax-kept
-    ) {
+    if (object && !object.dataset.xtCoreDone) {
       object.dataset.xtCoreDone = 'true';
       // init
       self.object = object;
@@ -918,7 +915,6 @@ class Core {
         break;
       }
     }
-    console.log();
     self.detail.inverseDirection = self.detail.inverseDirectionForce !== null ? self.detail.inverseDirectionForce : self.currentIndex > index;
     self.detail.inverseDirectionForce = null;
     self.currentIndex = index;

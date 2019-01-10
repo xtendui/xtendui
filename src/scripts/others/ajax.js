@@ -147,6 +147,9 @@ class Ajax extends Core {
     let title = html.querySelectorAll('head title')[0].innerHTML;
     let replace = html.querySelectorAll(options.query)[0];
     // data-xt-ajax-keep
+    /*
+    // NEEDS constructor && !object.dataset.xtAjaxKept // not when ajax-kept
+    //DOES NOT WORK it doesn't copy the events..
     for (let tr of target.querySelectorAll('[data-xt-ajax-keep]')) {
       // replace
       let trId = tr.getAttribute('data-xt-ajax-keep');
@@ -154,31 +157,35 @@ class Ajax extends Core {
       if (rep.length) {
         rep = rep[0];
         if (tr.dataset.xtAjaxKept !== url) {
-          // copy
           tr.dataset.xtAjaxKept = url;
-          rep.parentNode.replaceChild(tr, rep);
+          // copy
+          let changed = rep.parentNode.replaceChild(tr, rep);
           // copy events
-          let elsRep = rep.querySelectorAll('*');
-          let elsTr = tr.querySelectorAll('*');
-          for (let i = 0; i < elsRep.length; i++) {
-            let elRep = elsRep[i];
+          let elsTr = Array.from(rep.querySelectorAll('*'));
+          elsTr.push(rep);
+          let elsCh = Array.from(changed.querySelectorAll('*'));
+          elsCh.push(changed);
+          for (let i = 0; i < elsTr.length; i++) {
             let elTr = elsTr[i];
-            if (elTr) {
+            let elCh = elsCh[i];
+            if (elCh) {
               // check storage for events
-              let storages = Xt.dataStorage.getAll(elRep);
+              let storages = Xt.dataStorage.getAll(elTr);
               if (storages) {
                 for (let [key, value] of storages) {
                   // copy events
-                  let handler = Xt.dataStorage.put(elTr, key, value);
-                  elTr.removeEventListener('click', handler);
-                  elTr.addEventListener('click', handler);
+                  let handler = Xt.dataStorage.put(elCh, key, value);
+                  elCh.removeEventListener('click', handler);
+                  elCh.addEventListener('click', handler);
                 }
               }
             }
           }
+
         }
       }
     }
+    */
     // populate dom
     target.outerHTML = replace.outerHTML;
     // pushstate
