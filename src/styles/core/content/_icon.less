@@ -31,7 +31,7 @@
 
 .icon-xt {
   .icon--base();
-  font-family: @icons_xt--family;
+  font-family: @icons-xt--family;
 }
 
 [class^='icon-xt--'], [class*=' icon-xt--'] {
@@ -67,9 +67,9 @@
 & when (@classes--icons) {
 
   .generate-icons();
-  .generate-icons(@i:length(@icons_xt)) when (@i > 0) {
+  .generate-icons(@i:length(@icons-xt)) when (@i > 0) {
     .generate-icons(@i - 1);
-    @name: extract(@icons_xt, @i);
+    @name: extract(@icons-xt, @i);
     @val: ~"icon-xt--@{name}";
     .icon-xt--@{name} {
       &::before {

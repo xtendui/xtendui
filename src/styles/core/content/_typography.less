@@ -18,12 +18,12 @@ body {
 //////////////////////
 
 ul, ol {
-  .reset-list();
+  .list-reset();
 }
 
-// .reset-list()
+// .list-reset()
 
-.reset-list() {
+.list-reset() {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -35,9 +35,9 @@ ul, ol {
 
 // selectors
 
-.list_default(@rules) {
+.list-default(@rules) {
   &:not(.list):not(.group) {
-    &.list_default, .list_default & {
+    &.list-default, .list-default & {
       @rules();
     }
   }
