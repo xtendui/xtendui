@@ -20,8 +20,7 @@ function sliderInit(main, index) {
   let self = new Xt.Slider(main, {
     "durationOn": time * 1000,
     "durationOff": time * 1000,
-    "instant": false,
-    "initial": false
+    "instant": false
   });
 
   let dragger = self.dragger;

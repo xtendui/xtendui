@@ -219,7 +219,7 @@ class Core {
           }
           // found
           if (found) {
-            self.eventOn(element);
+            self.eventOn(element, true);
           }
         }
         // if currents < min
@@ -227,7 +227,7 @@ class Core {
         if (todo) {
           // activate
           for (let i = 0; i < todo; i++) {
-            self.eventOn(self.elements[i]);
+            self.eventOn(self.elements[i], true);
           }
         } else {
           // auto
@@ -1526,11 +1526,7 @@ class Core {
       }
     }
     // listener dispatch
-    if (self.detail.initial) {
-      el.dispatchEvent(new CustomEvent('on.initial.xt', {detail: self.eDetail}));
-    } else {
-      el.dispatchEvent(new CustomEvent('on.xt', {detail: self.eDetail}));
-    }
+    el.dispatchEvent(new CustomEvent('on.xt', {detail: self.eDetail}));
   }
 
   /**
@@ -1565,11 +1561,7 @@ class Core {
       }
     }
     // listener dispatch
-    if (self.detail.initial) {
-      el.dispatchEvent(new CustomEvent('off.initial.xt', {detail: self.eDetail}));
-    } else {
-      el.dispatchEvent(new CustomEvent('off.xt', {detail: self.eDetail}));
-    }
+    el.dispatchEvent(new CustomEvent('off.xt', {detail: self.eDetail}));
   }
 
   /**

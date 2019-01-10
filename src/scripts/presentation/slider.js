@@ -148,14 +148,14 @@ class Slider extends Core {
       let slideOnHandler = Xt.dataStorage.put(slide, 'slideOnHandler' + self.namespace,
         self.eventSlideOnHandler.bind(self).bind(self, dragger));
       slide.removeEventListener('on.xt', slideOnHandler);
-      slide.addEventListener('on.xt', slideOnHandler);
+      slide.addEventListener('on.xt', slideOnHandler, true); // useCapture or custom events gets executed first
     }
     // slide off
     for (let slide of self.targets) {
       let slideOffHandler = Xt.dataStorage.put(slide, 'slideOffHandler' + self.namespace,
         self.eventSlideOffHandler.bind(self).bind(self, dragger));
       slide.removeEventListener('off.xt', slideOffHandler);
-      slide.addEventListener('off.xt', slideOffHandler);
+      slide.addEventListener('off.xt', slideOffHandler, true); // useCapture or custom events gets executed first
     }
     // dragger
     if (options.drag) {
@@ -184,6 +184,11 @@ class Slider extends Core {
     // handler
     if (!e.detail || !e.detail.skip) {
       Xt.eventDelay(e, self.object, function() {
+        // reset done
+        for (let slide of self.targets) {
+          slide.dataset.xtSlideOnDone = 'false';
+        }
+        // init
         self.detail.initial = true;
         self.init();
       });
@@ -342,19 +347,6 @@ class Slider extends Core {
   eventSlideOn(dragger, e) {
     let self = this;
     let options = self.options;
-    // if inital
-    if (e.detail.object.detail.initial) {
-      // stop, don't execute custom on.xt events
-      if (!options.initial) {
-        e.stopImmediatePropagation();
-        return false;
-      }
-      // prevent alignment animation
-      self.dragger.classList.add('anim-none');
-      window.requestAnimationFrame(function () {
-        self.dragger.classList.remove('anim-none');
-      });
-    }
     // var
     let slide = e.target;
     let slideLeft = slide.offsetLeft;
@@ -408,6 +400,11 @@ class Slider extends Core {
     self.detail.xCache = self.detail.xPos = pos;
     // drag position
     dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
+    // initial or resizing
+    if (self.detail.initial) {
+      // don't execute custom on.xt events
+      e.stopImmediatePropagation();
+    }
   }
 
   /**
@@ -558,7 +555,6 @@ Slider.defaults = {
   "min": 1,
   "max": 1,
   "instant": true,
-  "initial": true,
   "jump": true,
   "navigation": "[data-xt-nav]",
   "aria": {
