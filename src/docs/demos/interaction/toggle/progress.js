@@ -14,7 +14,7 @@ function toggleInit(main, index) {
     }
   });
 
-  let toggle = self.object;
+  let object = self.object;
 
   // vars
 
@@ -24,7 +24,7 @@ function toggleInit(main, index) {
 
   // auto start
 
-  toggle.addEventListener('auto.xt.start', function (e) {
+  object.addEventListener('auto.xt.start', function (e) {
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
@@ -63,7 +63,7 @@ function toggleInit(main, index) {
 
   // auto stop
 
-  toggle.addEventListener('auto.xt.stop', function (e) {
+  object.addEventListener('auto.xt.stop', function (e) {
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
@@ -84,7 +84,7 @@ function toggleInit(main, index) {
 
   // auto pause
 
-  toggle.addEventListener('auto.xt.pause', function (e) {
+  object.addEventListener('auto.xt.pause', function (e) {
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {

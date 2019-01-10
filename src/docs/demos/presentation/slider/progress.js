@@ -14,7 +14,7 @@ function sliderInit(main, index) {
     }
   });
 
-  let slider = self.object;
+  let object = self.object;
 
   // vars
 
@@ -24,9 +24,9 @@ function sliderInit(main, index) {
 
   // auto start
 
-  slider.addEventListener('auto.xt.start', function (e) {
-    // on slider
-    let spinner = slider.querySelectorAll('.spinner circle:nth-child(2)');
+  object.addEventListener('auto.xt.start', function (e) {
+    // on object
+    let spinner = object.querySelectorAll('.spinner circle:nth-child(2)');
     let tweens = TweenMax.getTweensOf(spinner);
     if (tweens.length) {
       for (let tween of tweens) {
@@ -75,9 +75,9 @@ function sliderInit(main, index) {
 
   // auto stop
 
-  slider.addEventListener('auto.xt.stop', function (e) {
-    // on slider
-    let spinner = slider.querySelectorAll('.spinner circle:nth-child(2)');
+  object.addEventListener('auto.xt.stop', function (e) {
+    // on object
+    let spinner = object.querySelectorAll('.spinner circle:nth-child(2)');
     TweenMax.set(spinner, {strokeDashoffset: 1});
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
@@ -99,9 +99,9 @@ function sliderInit(main, index) {
 
   // auto pause
 
-  slider.addEventListener('auto.xt.pause', function (e) {
-    // on slider
-    let spinner = slider.querySelectorAll('.spinner circle:nth-child(2)');
+  object.addEventListener('auto.xt.pause', function (e) {
+    // on object
+    let spinner = object.querySelectorAll('.spinner circle:nth-child(2)');
     let tweens = TweenMax.getTweensOf(spinner);
     for (let tween of tweens) {
       TweenMax.to(tween, .5, {timeScale: 0});
@@ -132,7 +132,7 @@ function sliderInit(main, index) {
 
   // follow mouse
 
-  let spinner = slider.querySelectorAll('.spinner');
+  let spinner = object.querySelectorAll('.spinner')[0];
   let time = .8;
 
   function mousemove(e) {
@@ -189,11 +189,11 @@ function sliderInit(main, index) {
     TweenMax.to(spinner, time, {top: top, left: left, ease: 'easeInOut'});
   }
 
-  slider.removeEventListener('mousemove', mousemove);
-  slider.addEventListener('mousemove', mousemove);
-  slider.removeEventListener('mouseenter', mouseenter);
-  slider.addEventListener('mouseenter', mouseenter);
-  slider.removeEventListener('mouseleave', mouseleave);
-  slider.addEventListener('mouseleave', mouseleave);
+  object.removeEventListener('mousemove', mousemove);
+  object.addEventListener('mousemove', mousemove);
+  object.removeEventListener('mouseenter', mouseenter);
+  object.addEventListener('mouseenter', mouseenter);
+  object.removeEventListener('mouseleave', mouseleave);
+  object.addEventListener('mouseleave', mouseleave);
 
 }
