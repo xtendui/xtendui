@@ -398,13 +398,18 @@ class Slider extends Core {
     }
     // val
     self.detail.xCache = self.detail.xPos = pos;
-    // drag position
-    dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
+    // prevent alignment animation
+    self.dragger.classList.add('anim-none');
+    window.requestAnimationFrame(function () {
+      self.dragger.classList.remove('anim-none');
+    });
     // initial or resizing
     if (self.detail.initial) {
       // don't execute custom on.xt events
       e.stopImmediatePropagation();
     }
+    // drag position
+    dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
   }
 
   /**
