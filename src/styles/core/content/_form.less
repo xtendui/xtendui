@@ -76,47 +76,65 @@
 // check and radio
 //////////////////////
 
-// label
-
-input[type="checkbox"], input[type="radio"] {
-  & ~ .form_label {
-    .label-checkradio();
+.checkbox-styled,
+.radio-styled {
+  position: relative;
+  &:not(.disabled) {
+    cursor: pointer;
+  }
+  // label
+  .form_label();
+  .label-checkradio();
+  // check and radio styled design
+  &::before,
+  &::after {
+    content: '';
+    position: absolute !important;
+    top: 0;
+    left: 0;
+  }
+  &::before {
+    pointer-events: none;
+  }
+  &::after {
+    .display(flex) !important;
+    .align-items--center();
+    .justify-content--center();
   }
 }
 
-// unstyled
-
-input[type="checkbox"].unstyled, input[type="radio"].unstyled {
-  display: block;
-  float: left;
-  & ~ .form_label {
-    display: block;
-    overflow: hidden;
-  }
-}
-
-// check and radio design
+// styled
 
 input[type="checkbox"]:not(.unstyled),
 input[type="radio"]:not(.unstyled) {
   position: absolute;
   z-index: -1;
   opacity: 0;
+}
+
+input[type="checkbox"]:not(.unstyled) {
   & ~ .form_label {
-    &::before,
-    &::after {
-      content: '';
-      position: absolute !important;
-      top: 0;
-      left: 0;
-    }
-    &::before {
-      pointer-events: none;
-    }
-    &::after {
-      .display(flex) !important;
-      .align-items--center();
-      .justify-content--center();
-    }
+    .checkbox-styled();
+  }
+}
+
+input[type="radio"]:not(.unstyled) {
+  & ~ .form_label {
+    .radio-styled();
+  }
+}
+
+// unstyled
+
+input[type="checkbox"].unstyled,
+input[type="radio"].unstyled {
+  display: block;
+  float: left;
+  & ~ .form_label {
+    display: block;
+    overflow: hidden;
+  }
+  & ~ .form_label {
+    .label-checkradio();
   }
 }
