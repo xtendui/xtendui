@@ -18,7 +18,6 @@ function sliderInit(main, index) {
 
   // vars
 
-  CSSPlugin.suffixMap.strokeDashoffset = "";
   CustomEase.create('easeIn', '.41,.1,.175,1');
   CustomEase.create('easeOut', '.77,0,.175,1');
   CustomEase.create('easeInOut', '.77,.0,.17,1');
@@ -36,7 +35,7 @@ function sliderInit(main, index) {
       }
     } else {
       TweenMax.set(spinner, {strokeDashoffset: 1});
-      TweenMax.to(spinner, e.detail.autoTime / 1000, {strokeDashoffset: 0, ease: 'easeInOut'});
+      TweenMax.to(spinner, e.detail.autoTime / 1000, {strokeDashoffset: 0, ease: 'easeInOut', autoRound:false});
     }
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));

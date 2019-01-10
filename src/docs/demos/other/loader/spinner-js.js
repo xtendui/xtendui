@@ -13,7 +13,6 @@ function loaderInit(main, index) {
   CustomEase.create('easeIn', '.41,.1,.175,1');
   CustomEase.create('easeOut', '.77,0,.175,1');
   CustomEase.create('easeInOut', '.77,.0,.17,1');
-  CSSPlugin.suffixMap.strokeDashoffset = "";
 
   // loader
 
@@ -24,7 +23,7 @@ function loaderInit(main, index) {
       loader.classList.add('active');
       loader.classList.remove('out');
       TweenMax.set(progress, {strokeDashoffset: 1});
-      TweenMax.to(progress, time / 1000, {strokeDashoffset: 0, ease: 'easeInOut'});
+      TweenMax.to(progress, time / 1000, {strokeDashoffset: 0, ease: 'easeInOut', autoRound:false});
       setTimeout(loaderTimeout, time);
     } else {
       loader.classList.remove('active');

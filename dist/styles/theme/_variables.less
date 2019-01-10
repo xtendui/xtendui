@@ -36,6 +36,40 @@
 @grad--secondary: @secondary 33%, darken(@secondary, 5%) 100%;
 
 //////////////////////
+// animation
+//////////////////////
+
+// size
+
+@anim--tiny: .5rem;
+@anim--small: .75rem;
+@anim--medium: 1.5rem;
+@anim--big: 3rem;
+@anim--giant: 6rem;
+
+// time
+
+@time--tiny: 75ms;
+@time--small: 200ms;
+@time--medium: 400ms;
+@time--big: 800ms;
+@time--giant: 2000ms;
+
+// beziers
+
+@bez--in: @bez-cat--in;
+@bez--out: @bez-cat--out;
+@bez--in-out: @bez-cat--in-out;
+
+@bez--ease: ease; // others at https://easings.net/
+@bez-cat--in: ~'cubic-bezier(.41,.1,.175,1)';
+@bez-cat--out: ~'cubic-bezier(.77,0,.175,1)';
+@bez-cat--in-out: ~'cubic-bezier(.77,.0,.17,1)';
+@bez-frog--in: ~'cubic-bezier(.645,.045,.355,1.000)';
+@bez-frog--out: ~'cubic-bezier(.550,.055,.675,.190)';
+@bez-tiger: ~'cubic-bezier(.96,.1,.14,.88)';
+
+//////////////////////
 // fonts
 //////////////////////
 
@@ -85,6 +119,10 @@
 @index--overlay: 200;
 @index--btn-close: 300;
 
+// order
+
+@orders: -3, -2, -1, 0, 1, 2, 3;
+
 //////////////////////
 // content
 //////////////////////
@@ -112,10 +150,6 @@
 //////////////////////
 // layout
 //////////////////////
-
-// order
-
-@orders: -3, -2, -1, 0, 1, 2, 3;
 
 // flex
 
@@ -145,7 +179,7 @@
 @card--border-width: 0;
 
 //////////////////////
-// components
+// interaction
 //////////////////////
 
 // btn
@@ -173,40 +207,6 @@
 @overlay--size-big: @breakpoint--lg - 60;
 @overlay--size-giant: @breakpoint--xl - 60;
 @overlay--size-full: none;
-
-//////////////////////
-// animation
-//////////////////////
-
-// size
-
-@anim--tiny: .5rem;
-@anim--small: .75rem;
-@anim--medium: 1.5rem;
-@anim--big: 3rem;
-@anim--giant: 6rem;
-
-// time
-
-@time--tiny: 75ms;
-@time--small: 200ms;
-@time--medium: 400ms;
-@time--big: 800ms;
-@time--giant: 2000ms;
-
-// beziers
-
-@bez--in: @bez-cat--in;
-@bez--out: @bez-cat--out;
-@bez--in-out: @bez-cat--in-out;
-
-@bez--ease: ease; // others at https://easings.net/
-@bez-cat--in: ~'cubic-bezier(.41,.1,.175,1)';
-@bez-cat--out: ~'cubic-bezier(.77,0,.175,1)';
-@bez-cat--in-out: ~'cubic-bezier(.77,.0,.17,1)';
-@bez-frog--in: ~'cubic-bezier(.645,.045,.355,1.000)';
-@bez-frog--out: ~'cubic-bezier(.550,.055,.675,.190)';
-@bez-tiger: ~'cubic-bezier(.96,.1,.14,.88)';
 
 //////////////////////
 // grid
