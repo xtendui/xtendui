@@ -78,8 +78,9 @@ class Core {
     }
     // var
     self.elements = [];
-    self.elementsSingle = [];
     self.targets = [];
+    self.elementsSingle = [];
+    self.currentIndex = null;
     self.detail = {};
     self.detail.queueOn = [];
     self.detail.queueOff = [];
@@ -914,6 +915,7 @@ class Core {
         break;
       }
     }
+    console.log();
     self.detail.inverseDirection = self.detail.inverseDirectionForce !== null ? self.detail.inverseDirectionForce : self.currentIndex > index;
     self.detail.inverseDirectionForce = null;
     self.currentIndex = index;
@@ -1189,7 +1191,7 @@ class Core {
     let self = this;
     // nav
     let index = 0;
-    if (self.currentIndex !== undefined) {
+    if (self.currentIndex !== null) {
       index = self.currentIndex + parseFloat(nav.getAttribute('data-xt-nav'));
     }
     self.goToIndex(index, true);
@@ -1525,7 +1527,11 @@ class Core {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('on.xt', {detail: self.eDetail}));
+    if (self.detail.initial) {
+      el.dispatchEvent(new CustomEvent('on.initial.xt', {detail: self.eDetail}));
+    } else {
+      el.dispatchEvent(new CustomEvent('on.xt', {detail: self.eDetail}));
+    }
   }
 
   /**
@@ -1560,7 +1566,11 @@ class Core {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('off.xt', {detail: self.eDetail}));
+    if (self.detail.initial) {
+      el.dispatchEvent(new CustomEvent('off.initial.xt', {detail: self.eDetail}));
+    } else {
+      el.dispatchEvent(new CustomEvent('off.xt', {detail: self.eDetail}));
+    }
   }
 
   /**
@@ -2076,7 +2086,7 @@ class Core {
     let self = this;
     // goToIndex
     let index = 0;
-    if (self.currentIndex !== undefined) {
+    if (self.currentIndex !== null) {
       index = self.currentIndex + amount;
     }
     self.detail.inverseDirectionForce = false;
@@ -2093,7 +2103,7 @@ class Core {
     let self = this;
     // goToIndex
     let index = self.elementsSingle.length - 1;
-    if (self.currentIndex !== undefined) {
+    if (self.currentIndex !== null) {
       index = self.currentIndex - amount;
     }
     self.detail.inverseDirectionForce = true;
@@ -2112,7 +2122,7 @@ class Core {
     // check
     let max = self.elementsSingle.length - 1;
     if (index > max) {
-      if (loop || (loop == undefined && options.loop)) {
+      if (loop || (loop === undefined && options.loop)) {
         index = index - max - 1;
         index = index > max ? max : index; // prevent overflow
       } else {

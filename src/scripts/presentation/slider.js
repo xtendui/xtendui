@@ -184,6 +184,7 @@ class Slider extends Core {
     // handler
     if (!e.detail || !e.detail.skip) {
       Xt.eventDelay(e, self.object, function() {
+        self.detail.initial = true;
         self.init();
       });
     }
