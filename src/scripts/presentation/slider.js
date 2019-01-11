@@ -398,8 +398,6 @@ class Slider extends Core {
     }
     // val
     self.detail.xCache = self.detail.xPos = pos;
-    // drag position
-    dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
     // initial or resizing
     if (self.detail.initial) {
       // don't execute custom on.xt events
@@ -411,6 +409,8 @@ class Slider extends Core {
         self.dragger.classList.remove('anim-none');
       });
     }
+    // drag position
+    dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
   }
 
   /**
