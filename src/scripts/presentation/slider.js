@@ -151,12 +151,12 @@ class Slider extends Core {
       let slideOnHandler = Xt.dataStorage.put(slide, 'slideOnHandler' + self.namespace,
         self.eventSlideOnHandler.bind(self).bind(self, dragger));
       slide.removeEventListener('on.xt', slideOnHandler);
-      slide.addEventListener('on.xt', slideOnHandler);
+      slide.addEventListener('on.xt', slideOnHandler, true); // useCapture @FIX custom events order (slider resize)
       // slide off
       let slideOffHandler = Xt.dataStorage.put(slide, 'slideOffHandler' + self.namespace,
         self.eventSlideOffHandler.bind(self).bind(self, dragger));
       slide.removeEventListener('off.xt', slideOffHandler);
-      slide.addEventListener('off.xt', slideOffHandler);
+      slide.addEventListener('off.xt', slideOffHandler, true); // useCapture @FIX custom events order (slider resize)
     }
     // dragger
     if (options.drag) {
@@ -403,9 +403,6 @@ class Slider extends Core {
     self.detail.xCache = self.detail.xPos = pos;
     // initial or resizing
     if (self.detail.initial) {
-      // don't execute custom on.xt events
-      e.stopImmediatePropagation();
-      e.target.dispatchEvent(new CustomEvent('on.xt.initial', {detail: self.eDetail}));
       // prevent alignment animation
       self.dragger.classList.add('anim-none');
       window.requestAnimationFrame(function () {
@@ -482,7 +479,7 @@ class Slider extends Core {
           }
         }
       }
-      window.requestAnimationFrame(function () { // @FIX options.jump order
+      window.requestAnimationFrame(function () { // @FIX jump event order (slider drag single)
         if (found === self.currentIndex) {
           // change at least one
           if (Math.sign(xDist) < 0) {
@@ -592,7 +589,7 @@ Slider.defaults = {
   "pagination": ".slider_pagination",
   "dragger": ".slides_inner",
   "drag": {
-    "threshold": 50,
+    "threshold": 100,
     "friction": 0.75,
     "frictionThreshold": 5,
     "velocityFriction": 0.33,
