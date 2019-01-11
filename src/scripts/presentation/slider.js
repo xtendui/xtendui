@@ -143,15 +143,16 @@ class Slider extends Core {
       self.eventSliderResizeHandler.bind(self));
     window.removeEventListener('resize', sliderResizeHandler);
     window.addEventListener('resize', sliderResizeHandler);
-    // slide on
+    // targets
     for (let slide of self.targets) {
+      // disable links
+      slide.classList.add('link-none');
+      // slide on
       let slideOnHandler = Xt.dataStorage.put(slide, 'slideOnHandler' + self.namespace,
         self.eventSlideOnHandler.bind(self).bind(self, dragger));
       slide.removeEventListener('on.xt', slideOnHandler);
       slide.addEventListener('on.xt', slideOnHandler);
-    }
-    // slide off
-    for (let slide of self.targets) {
+      // slide off
       let slideOffHandler = Xt.dataStorage.put(slide, 'slideOffHandler' + self.namespace,
         self.eventSlideOffHandler.bind(self).bind(self, dragger));
       slide.removeEventListener('off.xt', slideOffHandler);
@@ -352,6 +353,8 @@ class Slider extends Core {
     let slideLeft = slide.offsetLeft;
     let slideWidth = slide.offsetWidth;
     let slideHeight = slide.offsetHeight;
+    // disable links
+    slide.classList.remove('link-none');
     // group
     let group = slide.getAttribute('data-xt-group');
     if (group) {
@@ -420,6 +423,8 @@ class Slider extends Core {
    */
   eventSlideOff(dragger, e) {
     let slide = e.target;
+    // disable links
+    slide.classList.add('link-none');
     // group
     let group = slide.getAttribute('data-xt-group');
     if (group) {
@@ -451,8 +456,8 @@ class Slider extends Core {
     let xCache = self.detail.xCache || 0;
     // inertia
     dragger.classList.remove('dragging');
-    // prevent links
-    dragger.classList.remove('disable--links');
+    // disable links
+    dragger.classList.remove('link-none');
     // activate or reset
     let xPos = Xt.getTranslate(dragger)[0];
     let xDist = xPos - xCache;
@@ -543,11 +548,11 @@ class Slider extends Core {
     }
     // drag position
     dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
-    // prevent links
+    // disable links
     if (Math.abs(self.detail.xPos) > self.options.drag.threshold) {
-      dragger.classList.add('disable--links');
+      dragger.classList.add('link-none');
     } else {
-      dragger.classList.remove('disable--links');
+      dragger.classList.remove('link-none');
     }
     // listener dispatch
     dragger.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: self.eDetail}));
