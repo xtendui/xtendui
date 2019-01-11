@@ -184,7 +184,7 @@ class Slider extends Core {
     let self = this;
     // handler
     if (!e.detail || !e.detail.skip) {
-      Xt.eventDelay(e, self.object, function() {
+      Xt.eventDelay(e, self.object, function () {
         // reset done
         for (let slide of self.targets) {
           delete slide.dataset.xtSlideOnDone;
@@ -385,17 +385,17 @@ class Slider extends Core {
     if (options.align === 'center') {
       pos = dragger.offsetWidth / 2 - slideLeft - slideWidth / 2;
     } else if (options.align === 'left') {
-      pos = - slideLeft;
+      pos = -slideLeft;
       pos = pos > 0 ? 0 : pos; // @FIX initial value sometimes is wrong
     } else if (options.align === 'right') {
-      pos = - slideLeft + dragger.offsetWidth - slideWidth;
+      pos = -slideLeft + dragger.offsetWidth - slideWidth;
     }
     if (options.contain) {
       let min = 0;
       let slideLast = self.targets[self.targets.length - 1];
       let slideLastLeft = slideLast.offsetLeft;
       let slideLastWidth = slideLast.offsetWidth;
-      let max = - slideLastLeft + dragger.offsetWidth - slideLastWidth;
+      let max = -slideLastLeft + dragger.offsetWidth - slideLastWidth;
       pos = pos > min ? min : pos;
       pos = pos < max ? max : pos;
     }
@@ -482,17 +482,19 @@ class Slider extends Core {
           }
         }
       }
-      if (found === self.currentIndex) {
-        // change at least one
-        if (Math.sign(xDist) < 0) {
-          self.goToNext(1, true);
+      window.requestAnimationFrame(function () { // @FIX options.jump order
+        if (found === self.currentIndex) {
+          // change at least one
+          if (Math.sign(xDist) < 0) {
+            self.goToNext(1, true);
+          } else {
+            self.goToPrev(1, true);
+          }
         } else {
-          self.goToPrev(1, true);
+          // goToIndex
+          self.goToIndex(found, true);
         }
-      } else {
-        // goToIndex
-        self.goToIndex(found, true);
-      }
+      });
     } else {
       self.detail.xPos = self.detail.xCache;
       // drag position
@@ -590,7 +592,7 @@ Slider.defaults = {
   "pagination": ".slider_pagination",
   "dragger": ".slides_inner",
   "drag": {
-    "threshold": 100,
+    "threshold": 50,
     "friction": 0.75,
     "frictionThreshold": 5,
     "velocityFriction": 0.33,

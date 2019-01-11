@@ -504,9 +504,7 @@ class Core {
     let self = this;
     let options = self.options;
     // prevent links (needed for xt-ajax to go to links and propagate event if inside targets)
-    if (element.tagName === 'A') {
-      e.preventDefault();
-    }
+    e.preventDefault();
     // handler
     if (!e.detail || !e.detail.skip) {
       // event block
@@ -2073,7 +2071,7 @@ class Core {
    * @param {Boolean} force
    * @param {Boolean} loop
    */
-  goToNext(amount = 1, force = false, loop) {
+  goToNext(amount = 1, force = false, loop = null) {
     let self = this;
     // goToIndex
     let index = 0;
@@ -2090,7 +2088,7 @@ class Core {
    * @param {Boolean} force
    * @param {Boolean} loop
    */
-  goToPrev(amount = 1, force = false, loop) {
+  goToPrev(amount = 1, force = false, loop = null) {
     let self = this;
     // goToIndex
     let index = self.elementsSingle.length - 1;
@@ -2107,20 +2105,20 @@ class Core {
    * @param {Boolean} force
    * @param {Boolean} loop
    */
-  goToIndex(index, force = false, loop) {
+  goToIndex(index, force = false, loop = null) {
     let self = this;
     let options = self.options;
     // check
     let max = self.elementsSingle.length - 1;
     if (index > max) {
-      if (loop || (loop === undefined && options.loop)) {
+      if (loop || (loop === null && options.loop)) {
         index = index - max - 1;
         index = index > max ? max : index; // prevent overflow
       } else {
         index = max;
       }
     } else if (index < 0) {
-      if (loop || (loop == undefined && options.loop)) {
+      if (loop || (loop == null && options.loop)) {
         index = index + max + 1;
         index = index < 0 ? 0 : index; // prevent overflow
       } else {
