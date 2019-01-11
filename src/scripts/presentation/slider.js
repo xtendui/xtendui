@@ -404,6 +404,7 @@ class Slider extends Core {
     if (self.detail.initial) {
       // don't execute custom on.xt events
       e.stopImmediatePropagation();
+      e.target.dispatchEvent(new CustomEvent('on.xt.initial', {detail: self.eDetail}));
       // prevent alignment animation
       self.dragger.classList.add('anim-none');
       window.requestAnimationFrame(function () {
