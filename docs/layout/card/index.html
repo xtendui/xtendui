@@ -8,15 +8,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <!-- seo -->
-  <title>Card • Xtend</title>
+  <title>Card — Xtend</title>
   <meta name="description" content="Lorem ipsum"/>
 
   <!-- icons -->
-  <link rel="icon" href="/assets/images/favicon.ico?v=0.6.4"/>
+  <link rel="icon" href="/assets/images/favicon.png?v=0.6.4"/>
   <link rel="apple-touch-icon" sizes="152x152"
         href="/assets/images/favicon-152x152.png?v=0.6.4"/>
 
@@ -67,6 +66,7 @@
          id="site-menu">
       <div class="overlay">
         <div class="overlay_inner">
+          <div class="overlay_design"></div>
 
           <div class="site-header-top">
             <div class="container">
@@ -151,7 +151,7 @@
           <div class="container">
             <div class="flex flex--auto justify-content--between align-items--start">
 
-              <div class="site-breadcrumbs-body flex flex_space--none display--none display--flex-sm"
+              <div class="site-breadcrumbs-body flex flex-space--none display--none display--flex-sm"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
                 
@@ -391,17 +391,17 @@
                       
                       
                         <div class="site-breadcrumbs-body-main">
-                          <a href="/docs/others/" class="btn btn--primary btn--nodesign">
-                            <span>Others</span>
+                          <a href="/docs/other/" class="btn btn--primary btn--nodesign">
+                            <span>Other</span>
                           </a>
                           <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
                             <div class="site-breadcrumbs-body-sub-inner">
                               
-                              <a href="/docs/others/alert/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/other/alert/" class="btn btn--primary btn--nodesign">
                                 <span>Alert</span>
                               </a>
                               
-                              <a href="/docs/others/loader/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/other/loader/" class="btn btn--primary btn--nodesign">
                                 <span>Loader</span>
                               </a>
                               
@@ -418,7 +418,7 @@
                 
               </div>
 
-              <div class="site-breadcrumbs-body flex flex_space--none display--none-sm flex--auto"
+              <div class="site-breadcrumbs-body flex flex-space--none display--none-sm flex--auto"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
 
@@ -517,8 +517,8 @@
                               
                           
                               
-                              <a href="/docs/others/" class="btn btn--primary btn--nodesign">
-                                <span>Others</span>
+                              <a href="/docs/other/" class="btn btn--primary btn--nodesign">
+                                <span>Other</span>
                               </a>
                               
                           
@@ -531,7 +531,7 @@
                 
               </div>
 
-              <div class="site-breadcrumbs-meta flex flex_space--none align-items--center">
+              <div class="site-breadcrumbs-meta flex flex-space--none align-items--center">
 
                 <div class="display--none-sm display--block-md">
                   <a href="https://github.com/minimit/xtend-library/releases" target="_blank" rel="noopener" class="btn btn--primary btn--icon btn--nodesign" aria-label="Download">
@@ -580,7 +580,7 @@
       <div class="flex">
         <div class="col col--12 col--9-md">
 
-          <article class="site-article list_default">
+          <article class="site-article list-default">
             <h2>Usage</h2>
 
 <p>Use <code>.flex</code> to create a column/row layout with flexbox.</p>
@@ -588,6 +588,7 @@
 <pre>
   <code class="html">
     <div class="card">
+      <div class="card_design"></div>
       <div class="card_content">
         <!-- content -->
       </div>
@@ -615,6 +616,7 @@
   <div class="demo-item demo-preview" data-name="default">
     <div class="demo-source" data-lang="html">
       <div class="card">
+        <div class="card_design"></div>
         <div class="card_content">
           <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
         </div>
@@ -629,6 +631,7 @@
     </div>
     <div class="demo-source" data-lang="html">
       <div class="card card--primary">
+        <div class="card_design"></div>
         <div class="card_content">
           <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
         </div>
@@ -643,6 +646,7 @@
     </div>
     <div class="demo-source" data-lang="html">
       <div class="card card--secondary">
+        <div class="card_design"></div>
         <div class="card_content">
           <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
         </div>
@@ -657,6 +661,7 @@
     </div>
     <div class="demo-source" data-lang="html">
       <div class="card card--error">
+        <div class="card_design"></div>
         <div class="card_content">
           <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
         </div>
@@ -665,12 +670,11 @@
   </div>
   <div class="demo-item demo-preview" data-name="white">
     <div class="demo-text">
-      <div class="card_content">
-        <code>.card--white</code>
-      </div>
+      <code>.card--white</code>
     </div>
     <div class="demo-source" data-lang="html">
       <div class="card card--white">
+        <div class="card_design"></div>
         <div class="card_content">
           <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
         </div>
@@ -696,6 +700,7 @@
   <div class="demo-item demo-preview" data-name="default">
     <div class="demo-source" data-lang="html">
       <div class="card">
+        <div class="card_design"></div>
         <div class="card_content">
           <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
         </div>
@@ -710,6 +715,7 @@
     </div>
     <div class="demo-source" data-lang="html">
       <div class="card card--tiny">
+        <div class="card_design"></div>
         <div class="card_content">
           <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
         </div>
@@ -724,6 +730,7 @@
     </div>
     <div class="demo-source" data-lang="html">
       <div class="card card--small">
+        <div class="card_design"></div>
         <div class="card_content">
           <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
         </div>
@@ -738,6 +745,7 @@
     </div>
     <div class="demo-source" data-lang="html">
       <div class="card card--medium">
+        <div class="card_design"></div>
         <div class="card_content">
           <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
         </div>
@@ -752,6 +760,7 @@
     </div>
     <div class="demo-source" data-lang="html">
       <div class="card card--big">
+        <div class="card_design"></div>
         <div class="card_content">
           <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
         </div>
@@ -766,6 +775,7 @@
     </div>
     <div class="demo-source" data-lang="html">
       <div class="card card--giant">
+        <div class="card_design"></div>
         <div class="card_content">
           <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
         </div>
@@ -788,8 +798,9 @@
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center demo-source-from">
+      <div class="list list-space--small align-items--center demo-source-from">
         <div class="card card--nodesign">
+          <div class="card_design"></div>
           <div class="card_content">
             <h6>nodesign</h6>
             <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
@@ -797,6 +808,7 @@
         </div>
 
         <div class="card card--squared">
+          <div class="card_design"></div>
           <div class="card_content">
             <h6>squared</h6>
             <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
@@ -804,6 +816,7 @@
         </div>
 
         <div class="card card--noborder">
+          <div class="card_design"></div>
           <div class="card_content">
             <h6>noborder</h6>
             <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
@@ -811,6 +824,7 @@
         </div>
 
         <div class="card card--tall">
+          <div class="card_design"></div>
           <div class="card_content">
             <h6>tall</h6>
             <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
@@ -818,6 +832,7 @@
         </div>
 
         <div class="card card--short">
+          <div class="card_design"></div>
           <div class="card_content">
             <h6>short</h6>
             <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
@@ -825,6 +840,7 @@
         </div>
 
         <div class="card card--wide">
+          <div class="card_design"></div>
           <div class="card_content">
             <h6>wide</h6>
             <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
@@ -832,6 +848,7 @@
         </div>
 
         <div class="card card--narrow">
+          <div class="card_design"></div>
           <div class="card_content">
             <h6>narrow</h6>
             <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
@@ -839,6 +856,7 @@
         </div>
 
         <div class="card card--none">
+          <div class="card_design"></div>
           <div class="card_content">
             <h6>none</h6>
             <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
@@ -846,6 +864,7 @@
         </div>
 
         <div class="card card--none-x">
+          <div class="card_design"></div>
           <div class="card_content">
             <h6>none-x</h6>
             <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
@@ -853,6 +872,7 @@
         </div>
 
         <div class="card card--none-y">
+          <div class="card_design"></div>
           <div class="card_content">
             <h6>none-y</h6>
             <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.</p>
@@ -878,8 +898,9 @@
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center demo-source-from">
+      <div class="list list-space--small align-items--center demo-source-from">
         <div class="card card--max-height">
+          <div class="card_design"></div>
           <div class="card_content">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est. Etiam egestas efficitur semper. Donec imperdiet eget justo at pellentesque. Proin a ultricies orci. Vivamus ut scelerisque lorem. Suspendisse lobortis consequat magna ut ultricies. Duis consequat vitae justo nec commodo. Vestibulum id eros eu sapien aliquam feugiat. Aenean id accumsan orci, nec elementum ex. Fusce a dolor in lacus facilisis vulputate vitae vitae nunc. Phasellus odio quam, semper in finibus at, consequat quis lacus. Sed varius sem commodo tellus pretium, posuere pharetra mauris elementum. Nunc et aliquam velit, quis suscipit justo. Ut ac pretium massa. Aenean ullamcorper mollis urna eu pharetra.</p>
             <p>Proin eget lectus pharetra, pretium nunc sed, pulvinar nibh. Quisque ac tellus ac mi posuere tristique. Ut dictum elit sed facilisis rutrum. In sagittis ac ante at blandit. Sed at felis fermentum, semper lorem sed, sagittis lacus. Cras justo massa, molestie sit amet lacinia a, luctus ac velit. Cras tristique, urna in hendrerit laoreet, nisi sem interdum urna, rutrum elementum nisl turpis id est.</p>
@@ -898,8 +919,9 @@
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center demo-source-from">
+      <div class="list list-space--small align-items--center demo-source-from">
         <div class="card card--max-width">
+          <div class="card_design"></div>
           <div class="card_content" style="white-space: nowrap;">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est. Etiam egestas efficitur semper. Donec imperdiet eget justo at pellentesque. Proin a ultricies orci. Vivamus ut scelerisque lorem. Suspendisse lobortis consequat magna ut ultricies. Duis consequat vitae justo nec commodo. Vestibulum id eros eu sapien aliquam feugiat. Aenean id accumsan orci, nec elementum ex. Fusce a dolor in lacus facilisis vulputate vitae vitae nunc. Phasellus odio quam, semper in finibus at, consequat quis lacus. Sed varius sem commodo tellus pretium, posuere pharetra mauris elementum. Nunc et aliquam velit, quis suscipit justo. Ut ac pretium massa. Aenean ullamcorper mollis urna eu pharetra.</p>
             <p>Proin eget lectus pharetra, pretium nunc sed, pulvinar nibh. Quisque ac tellus ac mi posuere tristique. Ut dictum elit sed facilisis rutrum. In sagittis ac ante at blandit. Sed at felis fermentum, semper lorem sed, sagittis lacus. Cras justo massa, molestie sit amet lacinia a, luctus ac velit. Cras tristique, urna in hendrerit laoreet, nisi sem interdum urna, rutrum elementum nisl turpis id est.</p>
@@ -918,8 +940,9 @@
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center demo-source-from">
+      <div class="list list-space--small align-items--center demo-source-from">
         <div class="card card--max-height card--max-width">
+          <div class="card_design"></div>
           <div class="card_content" style="white-space: nowrap;">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est. Etiam egestas efficitur semper. Donec imperdiet eget justo at pellentesque. Proin a ultricies orci. Vivamus ut scelerisque lorem. Suspendisse lobortis consequat magna ut ultricies. Duis consequat vitae justo nec commodo. Vestibulum id eros eu sapien aliquam feugiat. Aenean id accumsan orci, nec elementum ex. Fusce a dolor in lacus facilisis vulputate vitae vitae nunc. Phasellus odio quam, semper in finibus at, consequat quis lacus. Sed varius sem commodo tellus pretium, posuere pharetra mauris elementum. Nunc et aliquam velit, quis suscipit justo. Ut ac pretium massa. Aenean ullamcorper mollis urna eu pharetra.</p>
             <p>Proin eget lectus pharetra, pretium nunc sed, pulvinar nibh. Quisque ac tellus ac mi posuere tristique. Ut dictum elit sed facilisis rutrum. In sagittis ac ante at blandit. Sed at felis fermentum, semper lorem sed, sagittis lacus. Cras justo massa, molestie sit amet lacinia a, luctus ac velit. Cras tristique, urna in hendrerit laoreet, nisi sem interdum urna, rutrum elementum nisl turpis id est.</p>
@@ -942,7 +965,8 @@
         </div>
         <div class="col col--12 col--3-md hide show-md">
 
-          <aside class="site-aside" data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
+          <aside class="site-aside"
+                 data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
 
             <div class="site-aside-text">
               <a href="/docs/layout/card/" class="btn btn--nodesign">
@@ -961,14 +985,15 @@
 </main>
 
 
-        <footer class="site-footer" data-xt-sticky='{"position": "bottom"}'>
+        <footer class="site-footer"
+                data-xt-sticky='{"position": "bottom"}'>
           <div class="site-footer-inner">
             <div class="container">
 
               <nav class="site-footer-top display--none display--block-sm" role="navigation">
                 <div class="flex flex--auto justify-content--between">
 
-                  <div class="site-footer-top-links list_space--none">
+                  <div class="site-footer-top-links list-space--none">
                     <a href="/" class="btn btn--primary btn--nodesign">
                       <span>Home</span>
                     </a>
@@ -1001,12 +1026,12 @@
               </nav>
 
               <div class="site-footer-bottom">
-                <div class="flex flex--auto flex_space--tiny justify-content--between">
+                <div class="flex flex--auto flex-space--tiny justify-content--between">
                   <div class="site-footer-bottom-license">
                     Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator--dash"></span> Xtend v0.6.4 licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a>
                   </div>
                   <div class="site-footer-bottom-copy">
-                    © 2017 – 2018 <span>Riccardo Caroli</span>
+                    © 2017 – 2019 <span>Riccardo Caroli</span>
                   </div>
                 </div>
               </div>

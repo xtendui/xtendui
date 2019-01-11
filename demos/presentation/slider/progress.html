@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- seo -->
+    <title>Demo — Xtend</title>
+    <meta name="description" content="Xtend demo" />
+
+    <!-- icons -->
+    <link rel="icon" href="/assets/images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/styles/demos.css?v=0.6.4" />
+
+    <!-- demos styles -->
+    <link rel="stylesheet" href="progress.css?v=0.6.4" />
+
+  </head>
+  <body class="full">
+
+    <div id="body-outer">
+<div id="body-inner" class="demo-source-from">
+<div class="slider">
+
+  <div class="loader--js">
+    <span class="spinner">
+      <svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet">
+        <circle cx='120' cy='120' r='100' stroke-dasharray="0" stroke-dashoffset="1" pathLength="1"/>
+        <circle cx='120' cy='120' r='100' stroke-dasharray="1" stroke-dashoffset="1" pathLength="1"/>
+      </svg>
+    </span>
+  </div>
+
+  <div class="slides">
+    <div class="slides_inner">
+
+      <div class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>1</h1>
+              <div class="loader loader--x loader--size-bottom loader--js">
+                <div class="progress">
+                  <span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>2</h1>
+              <div class="loader loader--x loader--size-bottom loader--js">
+                <div class="progress">
+                  <span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>3</h1>
+              <div class="loader loader--x loader--size-bottom loader--js">
+                <div class="progress">
+                  <span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>4</h1>
+              <div class="loader loader--x loader--size-bottom loader--js">
+                <div class="progress">
+                  <span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>5</h1>
+              <div class="loader loader--x loader--size-bottom loader--js">
+                <div class="progress">
+                  <span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="slider_pagination">
+    <button type="button" class="xt-clone" data-xt-pag>
+      <span>
+        <span class="loader loader--y loader--js">
+          <span class="progress">
+            <span></span><span></span>
+          </span>
+        </span>
+      </span>
+    </button>
+  </div>
+
+</div>
+
+
+</div>
+    </div>
+
+    <!-- demos source less -->
+    
+    <less-style>
+
+      @import (reference) "../../../../../dist/styles/xtend.less";
+
+// slider
+
+.slider {
+  .slides_inner {
+    .flex();
+    .flex-space--y(none);
+    .flex--nowrap();
+    .align-items--start();
+  }
+  .slide {
+    .col(6);
+    .col(4, sm);
+    &:nth-child(1) {
+      .col--custom(80%);
+    }
+    &:nth-child(3) {
+      .card_content {
+        .padding(y, big);
+      }
+    }
+    // animation
+    > * {
+      .transition-default.out();
+      transition-duration: @time--big;
+      opacity: .5;
+    }
+    &.active {
+      > * {
+        .transition-default.active();
+        transition-duration: @time--big;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// card
+
+.card {
+  .card--secondary();
+  .card--big();
+  .text-align(center);
+}
+
+// spinner
+
+.spinner {
+  pointer-events: none;
+  top: 100%;
+  left: 100%;
+  margin-top: -2.5rem;
+  margin-left: -2.5rem;
+  // disable on mobile
+  @media @max-sm {
+    top: 100% !important;
+    left: 100% !important;
+  }
+}
+    </less-style>
+    
+
+    <!-- demos source js -->
+    
+    <js-script>
+
+      Xt.init.push({ // on DOM ready and on content added to DOM
+  matches: '.slider',
+  fnc: sliderInit
+});
+
+function sliderInit(main, index) {
+
+  // slider
+
+  let self = new Xt.Slider(main, {
+    "auto": {
+      "time": 4000,
+      "pause": ".slide, [data-xt-pag]"
+    }
+  });
+
+  let object = self.object;
+
+  // vars
+
+  CustomEase.create('easeIn', '.41,.1,.175,1');
+  CustomEase.create('easeOut', '.77,0,.175,1');
+  CustomEase.create('easeInOut', '.77,.0,.17,1');
+
+  // auto start
+
+  object.addEventListener('auto.xt.start', function (e) {
+    // on object
+    let spinner = object.querySelectorAll('.spinner circle:nth-child(2)');
+    let tweens = TweenMax.getTweensOf(spinner);
+    if (tweens.length) {
+      for (let tween of tweens) {
+        let t = (e.detail.autoTime - tween.time() * 1000) / e.detail.autoTime;
+        TweenMax.to(tween, .5, {timeScale: t});
+      }
+    } else {
+      TweenMax.set(spinner, {strokeDashoffset: 1});
+      TweenMax.to(spinner, e.detail.autoTime / 1000, {strokeDashoffset: 0, ease: 'easeInOut', autoRound:false});
+    }
+    // on elements
+    let elements = self.elements.filter(x => x.classList.contains('active'));
+    for (let element of elements) {
+      let progresses = element.querySelectorAll('.progress span:nth-child(2)');
+      for (let progress of progresses) {
+        let tweens = TweenMax.getTweensOf(progress);
+        if (tweens.length) {
+          for (let tween of tweens) {
+            let t = (e.detail.autoTime - tween.time() * 1000) / e.detail.autoTime;
+            TweenMax.to(tween, .5, {timeScale: t});
+          }
+        } else {
+          TweenMax.set(progress, {height: 0, top: '100%'});
+          TweenMax.to(progress, e.detail.autoTime / 1000, {height: '100%', top: 0, ease: 'easeInOut'});
+        }
+      }
+    }
+    // on targets
+    let targets = self.targets.filter(x => x.classList.contains('active'));
+    for (let target of targets) {
+      let progresses = target.querySelectorAll('.progress span:nth-child(2)');
+      for (let progress of progresses) {
+        let tweens = TweenMax.getTweensOf(progress);
+        if (tweens.length) {
+          for (let tween of tweens) {
+            let t = (e.detail.autoTime - tween.time() * 1000) / e.detail.autoTime;
+            TweenMax.to(tween, .5, {timeScale: t});
+          }
+        } else {
+          TweenMax.set(progress, {width: 0, left: 0});
+          TweenMax.to(progress, e.detail.autoTime / 1000, {width: '100%', left: 0, ease: 'easeInOut'});
+        }
+      }
+    }
+  });
+
+  // auto stop
+
+  object.addEventListener('auto.xt.stop', function (e) {
+    // on object
+    let spinner = object.querySelectorAll('.spinner circle:nth-child(2)');
+    TweenMax.set(spinner, {strokeDashoffset: 1});
+    // on elements
+    let elements = self.elements.filter(x => x.classList.contains('active'));
+    for (let element of elements) {
+      let progresses = element.querySelectorAll('.progress span:nth-child(2)');
+      for (let progress of progresses) {
+        TweenMax.to(progress, 0.5, {height: 0, top: 0, ease: 'easeInOut'});
+      }
+    }
+    // on targets
+    let targets = self.targets.filter(x => x.classList.contains('active'));
+    for (let target of targets) {
+      let progresses = target.querySelectorAll('.progress span:nth-child(2)');
+      for (let progress of progresses) {
+        TweenMax.to(progress, 0.5, {width: 0, left: '100%', ease: 'easeInOut'});
+      }
+    }
+  });
+
+  // auto pause
+
+  object.addEventListener('auto.xt.pause', function (e) {
+    // on object
+    let spinner = object.querySelectorAll('.spinner circle:nth-child(2)');
+    let tweens = TweenMax.getTweensOf(spinner);
+    for (let tween of tweens) {
+      TweenMax.to(tween, .5, {timeScale: 0});
+    }
+    // on elements
+    let elements = self.elements.filter(x => x.classList.contains('active'));
+    for (let element of elements) {
+      let progresses = element.querySelectorAll('.progress span:nth-child(2)');
+      for (let progress of progresses) {
+        let tweens = TweenMax.getTweensOf(progress);
+        for (let tween of tweens) {
+          TweenMax.to(tween, .5, {timeScale: 0});
+        }
+      }
+    }
+    // on targets
+    let targets = self.targets.filter(x => x.classList.contains('active'));
+    for (let target of targets) {
+      let progresses = target.querySelectorAll('.progress span:nth-child(2)');
+      for (let progress of progresses) {
+        let tweens = TweenMax.getTweensOf(progress);
+        for (let tween of tweens) {
+          TweenMax.to(tween, .5, {timeScale: 0});
+        }
+      }
+    }
+  });
+
+  // follow mouse
+
+  let spinner = object.querySelectorAll('.spinner')[0];
+  let time = .8;
+
+  function mousemove(e) {
+    // vars
+    let rect = spinner.getBoundingClientRect();
+    let top = e.clientY + rect.height / 2 - 20; // 20 for exaclty center
+    let left = e.clientX + rect.width / 2 - 20; // 20 for exaclty center
+    // tween
+    let tweens = TweenMax.getTweensOf(spinner);
+    if (tweens.length) {
+      for (let tween of tweens) {
+        let time = tween.time();
+        let css = tween.vars.css;
+        if (css) {
+          css.top = top;
+          css.left = left;
+          tween.seek(0).invalidate().seek(time);
+        }
+      }
+    } else {
+      spinner.style.top = top + 'px';
+      spinner.style.left = left + 'px';
+    }
+  }
+
+  function mouseenter(e) {
+    spinner.classList.add('active');
+    // vars
+    let rect = spinner.getBoundingClientRect();
+    let top = e.clientY + rect.height / 2 - 20; // 20 for exaclty center
+    let left = e.clientX - rect.width / 2 - 20; // 20 for exaclty center
+    // tween
+    let tweens = TweenMax.getTweensOf(spinner);
+    if (tweens.length) {
+      for (let tween of tweens) {
+        tween.kill();
+      }
+    }
+    TweenMax.to(spinner, time, {top: top, left: left, ease: 'easeInOut'});
+  }
+
+  function mouseleave(e) {
+    spinner.classList.remove('active');
+    // vars
+    let top = '100%';
+    let left = '100%';
+    // tween
+    let tweens = TweenMax.getTweensOf(spinner);
+    if (tweens.length) {
+      for (let tween of tweens) {
+        tween.kill();
+      }
+    }
+    TweenMax.to(spinner, time, {top: top, left: left, ease: 'easeInOut'});
+  }
+
+  object.removeEventListener('mousemove', mousemove);
+  object.addEventListener('mousemove', mousemove);
+  object.removeEventListener('mouseenter', mouseenter);
+  object.addEventListener('mouseenter', mouseenter);
+  object.removeEventListener('mouseleave', mouseleave);
+  object.addEventListener('mouseleave', mouseleave);
+
+}
+    </js-script>
+    
+
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.6.4"></script>
+    <script src="/assets/scripts/polyfill.min.js?v=0.6.4"></script>
+
+    <!-- demos scripts -->
+    <script src="/assets/scripts/demos.min.js?v=0.6.4"></script>
+
+    <!-- demos scripts -->
+    
+    <script>Xt.init.push({ // on DOM ready and on content added to DOM
+  matches: '.slider',
+  fnc: sliderInit
+});
+
+function sliderInit(main, index) {
+
+  // slider
+
+  let self = new Xt.Slider(main, {
+    "auto": {
+      "time": 4000,
+      "pause": ".slide, [data-xt-pag]"
+    }
+  });
+
+  let object = self.object;
+
+  // vars
+
+  CustomEase.create('easeIn', '.41,.1,.175,1');
+  CustomEase.create('easeOut', '.77,0,.175,1');
+  CustomEase.create('easeInOut', '.77,.0,.17,1');
+
+  // auto start
+
+  object.addEventListener('auto.xt.start', function (e) {
+    // on object
+    let spinner = object.querySelectorAll('.spinner circle:nth-child(2)');
+    let tweens = TweenMax.getTweensOf(spinner);
+    if (tweens.length) {
+      for (let tween of tweens) {
+        let t = (e.detail.autoTime - tween.time() * 1000) / e.detail.autoTime;
+        TweenMax.to(tween, .5, {timeScale: t});
+      }
+    } else {
+      TweenMax.set(spinner, {strokeDashoffset: 1});
+      TweenMax.to(spinner, e.detail.autoTime / 1000, {strokeDashoffset: 0, ease: 'easeInOut', autoRound:false});
+    }
+    // on elements
+    let elements = self.elements.filter(x => x.classList.contains('active'));
+    for (let element of elements) {
+      let progresses = element.querySelectorAll('.progress span:nth-child(2)');
+      for (let progress of progresses) {
+        let tweens = TweenMax.getTweensOf(progress);
+        if (tweens.length) {
+          for (let tween of tweens) {
+            let t = (e.detail.autoTime - tween.time() * 1000) / e.detail.autoTime;
+            TweenMax.to(tween, .5, {timeScale: t});
+          }
+        } else {
+          TweenMax.set(progress, {height: 0, top: '100%'});
+          TweenMax.to(progress, e.detail.autoTime / 1000, {height: '100%', top: 0, ease: 'easeInOut'});
+        }
+      }
+    }
+    // on targets
+    let targets = self.targets.filter(x => x.classList.contains('active'));
+    for (let target of targets) {
+      let progresses = target.querySelectorAll('.progress span:nth-child(2)');
+      for (let progress of progresses) {
+        let tweens = TweenMax.getTweensOf(progress);
+        if (tweens.length) {
+          for (let tween of tweens) {
+            let t = (e.detail.autoTime - tween.time() * 1000) / e.detail.autoTime;
+            TweenMax.to(tween, .5, {timeScale: t});
+          }
+        } else {
+          TweenMax.set(progress, {width: 0, left: 0});
+          TweenMax.to(progress, e.detail.autoTime / 1000, {width: '100%', left: 0, ease: 'easeInOut'});
+        }
+      }
+    }
+  });
+
+  // auto stop
+
+  object.addEventListener('auto.xt.stop', function (e) {
+    // on object
+    let spinner = object.querySelectorAll('.spinner circle:nth-child(2)');
+    TweenMax.set(spinner, {strokeDashoffset: 1});
+    // on elements
+    let elements = self.elements.filter(x => x.classList.contains('active'));
+    for (let element of elements) {
+      let progresses = element.querySelectorAll('.progress span:nth-child(2)');
+      for (let progress of progresses) {
+        TweenMax.to(progress, 0.5, {height: 0, top: 0, ease: 'easeInOut'});
+      }
+    }
+    // on targets
+    let targets = self.targets.filter(x => x.classList.contains('active'));
+    for (let target of targets) {
+      let progresses = target.querySelectorAll('.progress span:nth-child(2)');
+      for (let progress of progresses) {
+        TweenMax.to(progress, 0.5, {width: 0, left: '100%', ease: 'easeInOut'});
+      }
+    }
+  });
+
+  // auto pause
+
+  object.addEventListener('auto.xt.pause', function (e) {
+    // on object
+    let spinner = object.querySelectorAll('.spinner circle:nth-child(2)');
+    let tweens = TweenMax.getTweensOf(spinner);
+    for (let tween of tweens) {
+      TweenMax.to(tween, .5, {timeScale: 0});
+    }
+    // on elements
+    let elements = self.elements.filter(x => x.classList.contains('active'));
+    for (let element of elements) {
+      let progresses = element.querySelectorAll('.progress span:nth-child(2)');
+      for (let progress of progresses) {
+        let tweens = TweenMax.getTweensOf(progress);
+        for (let tween of tweens) {
+          TweenMax.to(tween, .5, {timeScale: 0});
+        }
+      }
+    }
+    // on targets
+    let targets = self.targets.filter(x => x.classList.contains('active'));
+    for (let target of targets) {
+      let progresses = target.querySelectorAll('.progress span:nth-child(2)');
+      for (let progress of progresses) {
+        let tweens = TweenMax.getTweensOf(progress);
+        for (let tween of tweens) {
+          TweenMax.to(tween, .5, {timeScale: 0});
+        }
+      }
+    }
+  });
+
+  // follow mouse
+
+  let spinner = object.querySelectorAll('.spinner')[0];
+  let time = .8;
+
+  function mousemove(e) {
+    // vars
+    let rect = spinner.getBoundingClientRect();
+    let top = e.clientY + rect.height / 2 - 20; // 20 for exaclty center
+    let left = e.clientX + rect.width / 2 - 20; // 20 for exaclty center
+    // tween
+    let tweens = TweenMax.getTweensOf(spinner);
+    if (tweens.length) {
+      for (let tween of tweens) {
+        let time = tween.time();
+        let css = tween.vars.css;
+        if (css) {
+          css.top = top;
+          css.left = left;
+          tween.seek(0).invalidate().seek(time);
+        }
+      }
+    } else {
+      spinner.style.top = top + 'px';
+      spinner.style.left = left + 'px';
+    }
+  }
+
+  function mouseenter(e) {
+    spinner.classList.add('active');
+    // vars
+    let rect = spinner.getBoundingClientRect();
+    let top = e.clientY + rect.height / 2 - 20; // 20 for exaclty center
+    let left = e.clientX - rect.width / 2 - 20; // 20 for exaclty center
+    // tween
+    let tweens = TweenMax.getTweensOf(spinner);
+    if (tweens.length) {
+      for (let tween of tweens) {
+        tween.kill();
+      }
+    }
+    TweenMax.to(spinner, time, {top: top, left: left, ease: 'easeInOut'});
+  }
+
+  function mouseleave(e) {
+    spinner.classList.remove('active');
+    // vars
+    let top = '100%';
+    let left = '100%';
+    // tween
+    let tweens = TweenMax.getTweensOf(spinner);
+    if (tweens.length) {
+      for (let tween of tweens) {
+        tween.kill();
+      }
+    }
+    TweenMax.to(spinner, time, {top: top, left: left, ease: 'easeInOut'});
+  }
+
+  object.removeEventListener('mousemove', mousemove);
+  object.addEventListener('mousemove', mousemove);
+  object.removeEventListener('mouseenter', mouseenter);
+  object.addEventListener('mouseenter', mouseenter);
+  object.removeEventListener('mouseleave', mouseleave);
+  object.addEventListener('mouseleave', mouseleave);
+
+}</script>
+    
+
+    <!-- demos utils -->
+    <script>
+      if (window.self !== window.top) {
+        // add id
+        document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
+        // init iframe
+        window.parent.initIframe(window.name);
+      }
+    </script>
+
+  </body>
+</html>

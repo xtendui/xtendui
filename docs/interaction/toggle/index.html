@@ -8,15 +8,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <!-- seo -->
-  <title>Toggle • Xtend</title>
+  <title>Toggle — Xtend</title>
   <meta name="description" content="Many possible behaviour, interactions and animations are possible with this toggle scripts."/>
 
   <!-- icons -->
-  <link rel="icon" href="/assets/images/favicon.ico?v=0.6.4"/>
+  <link rel="icon" href="/assets/images/favicon.png?v=0.6.4"/>
   <link rel="apple-touch-icon" sizes="152x152"
         href="/assets/images/favicon-152x152.png?v=0.6.4"/>
 
@@ -67,6 +66,7 @@
          id="site-menu">
       <div class="overlay">
         <div class="overlay_inner">
+          <div class="overlay_design"></div>
 
           <div class="site-header-top">
             <div class="container">
@@ -151,7 +151,7 @@
           <div class="container">
             <div class="flex flex--auto justify-content--between align-items--start">
 
-              <div class="site-breadcrumbs-body flex flex_space--none display--none display--flex-sm"
+              <div class="site-breadcrumbs-body flex flex-space--none display--none display--flex-sm"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
                 
@@ -391,17 +391,17 @@
                       
                       
                         <div class="site-breadcrumbs-body-main">
-                          <a href="/docs/others/" class="btn btn--primary btn--nodesign">
-                            <span>Others</span>
+                          <a href="/docs/other/" class="btn btn--primary btn--nodesign">
+                            <span>Other</span>
                           </a>
                           <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
                             <div class="site-breadcrumbs-body-sub-inner">
                               
-                              <a href="/docs/others/alert/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/other/alert/" class="btn btn--primary btn--nodesign">
                                 <span>Alert</span>
                               </a>
                               
-                              <a href="/docs/others/loader/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/other/loader/" class="btn btn--primary btn--nodesign">
                                 <span>Loader</span>
                               </a>
                               
@@ -418,7 +418,7 @@
                 
               </div>
 
-              <div class="site-breadcrumbs-body flex flex_space--none display--none-sm flex--auto"
+              <div class="site-breadcrumbs-body flex flex-space--none display--none-sm flex--auto"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
 
@@ -517,8 +517,8 @@
                               
                           
                               
-                              <a href="/docs/others/" class="btn btn--primary btn--nodesign">
-                                <span>Others</span>
+                              <a href="/docs/other/" class="btn btn--primary btn--nodesign">
+                                <span>Other</span>
                               </a>
                               
                           
@@ -531,7 +531,7 @@
                 
               </div>
 
-              <div class="site-breadcrumbs-meta flex flex_space--none align-items--center">
+              <div class="site-breadcrumbs-meta flex flex-space--none align-items--center">
 
                 <div class="display--none-sm display--block-md">
                   <a href="https://github.com/minimit/xtend-library/releases" target="_blank" rel="noopener" class="btn btn--primary btn--icon btn--nodesign" aria-label="Download">
@@ -580,7 +580,7 @@
       <div class="flex">
         <div class="col col--12 col--9-md">
 
-          <article class="site-article list_default">
+          <article class="site-article list-default">
             <h2>Usage</h2>
 
 <p>Use this markup to create a toggle. <code>[data-xt-toggle]</code> must be <a
@@ -621,17 +621,6 @@
 
 <pre>
   <code class="js">
-XtToggle.defaults = {
-  "elements": ":scope > a, :scope > button",
-  "targets": ":scope > [class^=\"toggle--\"], :scope > [class*=\" toggle--\"]",
-  "class": "active",
-  "instant": {"elements": true},
-  "on": "click",
-  "toggle": true,
-  "min": 0,
-  "max": 1,
-  "aria": true
-};
   </code>
 </pre>
 
@@ -670,7 +659,7 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center" data-xt-toggle>
+      <div class="list list-space--small align-items--center" data-xt-toggle>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -721,7 +710,7 @@ XtToggle.defaults = {
     </div>
     <div class="demo-source" data-lang="html">
       <div data-xt-toggle='{"elements": ".test > .btn", "targets": ".test > .example-toggle"}'>
-        <div class="list list_space--small align-items--center test">
+        <div class="list list-space--small align-items--center test">
           <button type="button" class="btn">
             <span>Toggle 0</span>
           </button>
@@ -769,7 +758,7 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center" data-xt-toggle>
+      <div class="list list-space--small align-items--center" data-xt-toggle>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -830,7 +819,7 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center demo-source-from">
+      <div class="list list-space--small align-items--center demo-source-from">
         <button type="button" class="btn" data-xt-toggle>
           <span>Toggle</span>
         </button>
@@ -847,11 +836,13 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center demo-source-from">
-        <button type="button" class="btn" data-xt-toggle='{"targets": "#toggle-unique-0"}'>
+      <div class="list list-space--small align-items--center demo-source-from">
+        <button type="button" class="btn"
+                data-xt-toggle='{"targets": "#toggle-unique-0"}'>
           <span>Toggle 0</span>
         </button>
-        <button type="button" class="btn" data-xt-toggle='{"targets": "#toggle-unique-1"}'>
+        <button type="button" class="btn"
+                data-xt-toggle='{"targets": "#toggle-unique-1"}'>
           <span>Toggle 1</span>
         </button>
         <div class="alert toggle--block" id="toggle-unique-0">
@@ -874,11 +865,13 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center demo-source-from">
-        <button type="button" class="btn" data-xt-toggle='{"targets": "#toggle-unique-2, #toggle-unique-3"}'>
+      <div class="list list-space--small align-items--center demo-source-from">
+        <button type="button" class="btn"
+                data-xt-toggle='{"targets": "#toggle-unique-2, #toggle-unique-3"}'>
           <span>Toggle</span>
         </button>
-        <button type="button" class="btn" data-xt-toggle='{"targets": "#toggle-unique-2, #toggle-unique-3"}'>
+        <button type="button" class="btn"
+                data-xt-toggle='{"targets": "#toggle-unique-2, #toggle-unique-3"}'>
           <span>Toggle</span>
         </button>
         <div class="alert toggle--block" id="toggle-unique-2">
@@ -900,29 +893,30 @@ XtToggle.defaults = {
 
 <h3>Groups</h3>
 
-<p>If you need to toggle <strong>multiple targets</strong> assign <code>data-group</code> to <strong>elements</strong>
+<p>If you need to toggle <strong>multiple targets</strong> assign <code>data-xt-group</code> to
+  <strong>elements</strong>
   and the associated targets <strong>targets</strong>. Grouped elements and targets aren't counted for min and max.</p>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="group">
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center" data-xt-toggle>
-        <button type="button" class="btn" data-group="0">
+      <div class="list list-space--small align-items--center" data-xt-toggle>
+        <button type="button" class="btn" data-xt-group="0">
           <span>Group 0</span>
         </button>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
-        <button type="button" class="btn" data-group="0">
+        <button type="button" class="btn" data-xt-group="0">
           <span>Group 0</span>
         </button>
         <button type="button" class="btn">
           <span>Toggle 1</span>
         </button>
-        <button type="button" class="btn" data-group="1">
+        <button type="button" class="btn" data-xt-group="1">
           <span>Group 1</span>
         </button>
-        <button type="button" class="btn" data-group="1">
+        <button type="button" class="btn" data-xt-group="1">
           <span>Group 1</span>
         </button>
         <div class="alert toggle--block">
@@ -930,17 +924,17 @@ XtToggle.defaults = {
             Target 0
           </div>
         </div>
-        <div class="alert toggle--block" data-group="0">
+        <div class="alert toggle--block" data-xt-group="0">
           <div class="alert_content">
             Group 0
           </div>
         </div>
-        <div class="alert toggle--block" data-group="1">
+        <div class="alert toggle--block" data-xt-group="1">
           <div class="alert_content">
             Group 1
           </div>
         </div>
-        <div class="alert toggle--block" data-group="0">
+        <div class="alert toggle--block" data-xt-group="0">
           <div class="alert_content">
             Group 0
           </div>
@@ -967,7 +961,8 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center" data-xt-toggle='{"class": "active class-example-0"}'>
+      <div class="list list-space--small align-items--center"
+           data-xt-toggle='{"class": "active class-example-0"}'>
         <button type="button" class="btn">
           <span>Toggle</span>
         </button>
@@ -999,21 +994,21 @@ XtToggle.defaults = {
 <div class="demo">
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center"
+      <div class="list list-space--small align-items--center"
            data-xt-toggle='{"class": "active class-example-1", "min": 3, "max": 3}'>
-        <button type="button" class="btn" data-group="0">
+        <button type="button" class="btn" data-xt-group="0">
           <span>Group 0</span>
         </button>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
-        <button type="button" class="btn" data-group="0">
+        <button type="button" class="btn" data-xt-group="0">
           <span>Group 0</span>
         </button>
         <button type="button" class="btn active class-example-1">
           <span>Toggle 1</span>
         </button>
-        <button type="button" class="btn" data-group="1">
+        <button type="button" class="btn" data-xt-group="1">
           <span>Group 1</span>
         </button>
         <div class="alert toggle--block">
@@ -1021,17 +1016,17 @@ XtToggle.defaults = {
             Target 0
           </div>
         </div>
-        <div class="alert toggle--block" data-group="0">
+        <div class="alert toggle--block" data-xt-group="0">
           <div class="alert_content">
             Group 0
           </div>
         </div>
-        <div class="alert toggle--block" data-group="1">
+        <div class="alert toggle--block" data-xt-group="1">
           <div class="alert_content">
             Group 1
           </div>
         </div>
-        <div class="alert toggle--block" data-group="0">
+        <div class="alert toggle--block" data-xt-group="0">
           <div class="alert_content">
             Group 0
           </div>
@@ -1041,7 +1036,7 @@ XtToggle.defaults = {
             Target 1
           </div>
         </div>
-        <div class="alert toggle--block active class-example-1" data-group="1">
+        <div class="alert toggle--block active class-example-1" data-xt-group="1">
           <div class="alert_content">
             Group 1
           </div>
@@ -1077,7 +1072,8 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center" data-xt-toggle='{"min": 2, "max": 2}'>
+      <div class="list list-space--small align-items--center"
+           data-xt-toggle='{"min": 2, "max": 2}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -1128,7 +1124,7 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center"
+      <div class="list list-space--small align-items--center"
            data-xt-toggle='{"min": 1, "on": "mouseenter", "off": "mouseleave"}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
@@ -1173,7 +1169,7 @@ XtToggle.defaults = {
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center"
+      <div class="list list-space--small align-items--center"
            data-xt-toggle='{"min": 1, "on": "mouseenter", "off": "mouseleave"}'>
         <a href="#toggle-with-link-0" class="btn">
           <span>Toggle 0</span>
@@ -1182,10 +1178,10 @@ XtToggle.defaults = {
           <span>Toggle 1</span>
         </a>
         <button type="button" class="btn">
-          <a href="#toggle-with-link-2" class="link--none">Toggle 2</a>
+          <span><a href="#toggle-with-link-2" class="link--none">Toggle 2</a></span>
         </button>
         <button type="button" class="btn">
-          <a href="#toggle-with-link-3" class="link--none">Toggle 3</a>
+          <span><a href="#toggle-with-link-3" class="link--none">Toggle 3</a></span>
         </button>
         <div class="alert toggle--block">
           <div class="alert_content">
@@ -1214,23 +1210,16 @@ XtToggle.defaults = {
 
 <h3>Auto</h3>
 
-<p>You can set automatic activation with <code>"auto": Milliseconds</code> and <code>"autoPause": Milliseconds</code> on
-  user interaction. At the end it automatically loops.</p>
-
-<p>Use <code>"autoPause": "stop"</code> for stopping on interaction.</p>
-
-<p>Use <code>"autoAlways": true</code> to execute auto always, by default it only execute auto if the initialized
-  selector is visible in the DOM.</p>
-
 <div class="demo">
-  <div class="demo-item demo-preview" data-name="auto">
+  <div class="demo-item demo-preview" data-name="time">
     <div class="demo-text">
       <div class="alert_content">
-        <code>"auto": Milliseconds</code>
+        <code>"auto": {"time": Milliseconds}</code> <code>"auto": {"step": Number}</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center" data-xt-toggle='{"auto": 2000}'>
+      <div class="list list-space--small align-items--center"
+           data-xt-toggle='{"auto": {"time": 2000}}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -1266,14 +1255,15 @@ XtToggle.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="autoPause">
+  <div class="demo-item demo-preview" data-name="step">
     <div class="demo-text">
       <div class="alert_content">
-        <code>"autoPause": Milliseconds</code>
+        <code>"auto": {"step": Number}</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center" data-xt-toggle='{"auto": 2000, "autoPause": 6000}'>
+      <div class="list list-space--small align-items--center"
+           data-xt-toggle='{"auto": {"time": 2000, "step": 3}}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -1309,10 +1299,194 @@ XtToggle.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="complex">
+  <div class="demo-item demo-preview" data-name="initial">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>"auto": {"initial": Boolean}</code>
+      </div>
+    </div>
     <div class="demo-source" data-lang="html">
-      <div class="list list_space--small align-items--center"
-           data-xt-toggle='{"min": 1, "max": 2, "auto": 2000, "autoPause": "stop"}'>
+      <div class="list list-space--small align-items--center"
+           data-xt-toggle='{"auto": {"time": 2000, "initial": false}}'>
+        <button type="button" class="btn">
+          <span>Toggle 0</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 1</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 2</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 3</span>
+        </button>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 0
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 1
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 2
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="loop">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>"auto": {"loop": Boolean}</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space--small align-items--center"
+           data-xt-toggle='{"auto": {"time": 2000, "loop": false}}'>
+        <button type="button" class="btn">
+          <span>Toggle 0</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 1</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 2</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 3</span>
+        </button>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 0
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 1
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 2
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="pause">
+    <div class="demo-text">
+      <div class="alert_content">
+        pause on mouseenter, resume on mouseleave with <code>"auto": {"pause": Query}</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space--small align-items--center"
+           data-xt-toggle='{"auto": {"time": 2000, "pause": ":scope > button, .toggle--block"}}'>
+        <button type="button" class="btn">
+          <span>Toggle 0</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 1</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 2</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 3</span>
+        </button>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 0
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 1
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 2
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="inverse">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>"auto": {"inverse": Boolean}</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space--small align-items--center"
+           data-xt-toggle='{"auto": {"time": 2000, "inverse": true}}'>
+        <button type="button" class="btn">
+          <span>Toggle 0</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 1</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 2</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 3</span>
+        </button>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 0
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 1
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 2
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="/demos/interaction/toggle/progress.html"
+       data-name="progress">
+    <div class="demo-text">
+      <div class="alert_content">
+        Use events <code>'auto.xt.start'</code> <code>'auto.xt.stop'</code> <code>'auto.xt.pause'</code>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="multi">
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space--small align-items--center"
+           data-xt-toggle='{"min": 1, "max": 2, "auto": {"time": 2000}}'>
         <button type="button" class="btn">
           <span>Toggle 0</span>
         </button>
@@ -1350,10 +1524,80 @@ XtToggle.defaults = {
   </div>
 </div>
 
+<h3>Jump</h3>
+
+<p>Use <code>"jump": true</code> to enable clicking on a <strong>target</strong> to jump to them.</p>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="/demos/interaction/toggle/jump.html"
+       data-name="jump"></div>
+</div>
+
+<h3>Navigation</h3>
+
+<p>You can add navigation with the <strong>navigation</strong> option, set the amount to add to the current activation
+  with
+  <code>data-xt-nav="value"</code></p>
+
+<p>Use <code>"loop": false</code> to disable loop.</p>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="navigation">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>"navigation": Query</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space--small align-items--center"
+           data-xt-toggle='{"navigation": "[data-xt-nav]"}'>
+        <button type="button" class="btn">
+          <span>Toggle 0</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 1</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 2</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 3</span>
+        </button>
+        <button type="button" class="btn" data-xt-nav="-1">
+          <span class="icon-xt--chevron-left"></span>
+        </button>
+        <button type="button" class="btn" data-xt-nav="1">
+          <span class="icon-xt--chevron-right"></span>
+        </button>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 0
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 1
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 2
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <h3>Timing</h3>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="/demos/interaction/toggle/toggle-automatic.html"
+  <div class="demo-item" data-iframe="/demos/interaction/toggle/automatic.html"
        data-name="automatic">
     <div class="demo-text">
       <div class="alert_content">
@@ -1362,7 +1606,7 @@ XtToggle.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="/demos/interaction/toggle/toggle-duration.html"
+  <div class="demo-item" data-iframe="/demos/interaction/toggle/duration.html"
        data-name="duration">
     <div class="demo-text">
       <div class="alert_content">
@@ -1371,7 +1615,7 @@ XtToggle.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="/demos/interaction/toggle/toggle-delay.html"
+  <div class="demo-item" data-iframe="/demos/interaction/toggle/delay.html"
        data-name="delay">
     <div class="demo-text">
       <div class="alert_content">
@@ -1379,7 +1623,7 @@ XtToggle.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="/demos/interaction/toggle/toggle-delay-fnc.html"
+  <div class="demo-item" data-iframe="/demos/interaction/toggle/delay-fnc.html"
        data-name="delay fnc">
     <div class="demo-text">
       <div class="alert_content">
@@ -1388,7 +1632,7 @@ XtToggle.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="/demos/interaction/toggle/toggle-instant.html"
+  <div class="demo-item" data-iframe="/demos/interaction/toggle/instant.html"
        data-name="instant">
     <div class="demo-text">
       <div class="alert_content">
@@ -1401,7 +1645,7 @@ XtToggle.defaults = {
 <h3>Javascript</h3>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="/demos/interaction/toggle/toggle-js.html"
+  <div class="demo-item" data-iframe="/demos/interaction/toggle/javascript.html"
        data-name="js">
     <div class="demo-text">
       <div class="alert_content">
@@ -1412,10 +1656,105 @@ XtToggle.defaults = {
   </div>
 </div>
 
+<h2>Aria</h2>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="disable">
+    <div class="demo-text">
+      <div class="alert_content">
+        Use <code>"aria": false</code> to disable aria generation, or granularly see @TODO core link
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space--small align-items--center"
+           data-xt-toggle='{"aria": false}'>
+        <button type="button" class="btn">
+          <span>Toggle 0</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 1</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 2</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 3</span>
+        </button>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 0
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 1
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 2
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="keyboard">
+    <div class="demo-text">
+      <div class="alert_content">
+        Use <strong>"keyboard": true</strong> to enable aria keyboard navigation on focus (see @TODO core link)
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="list list-space--small align-items--center"
+           data-xt-toggle='{"keyboard": true}'>
+        <button type="button" class="btn">
+          <span>Toggle 0</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 1</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 2</span>
+        </button>
+        <button type="button" class="btn">
+          <span>Toggle 3</span>
+        </button>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 0
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 1
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 2
+          </div>
+        </div>
+        <div class="alert toggle--block">
+          <div class="alert_content">
+            Target 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Options</h3>
+
 <h2>Extensions</h2>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="/demos/interaction/toggle/toggle-multilevel.html"
+  <div class="demo-item" data-iframe="/demos/interaction/toggle/multilevel.html"
        data-name="levels">
     <div class="demo-text">
       <div class="alert_content">
@@ -1430,7 +1769,8 @@ XtToggle.defaults = {
         </div>
         <div class="col col--12 col--3-md hide show-md">
 
-          <aside class="site-aside" data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
+          <aside class="site-aside"
+                 data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
 
             <div class="site-aside-text">
               <a href="/docs/interaction/toggle/" class="btn btn--nodesign">
@@ -1449,14 +1789,15 @@ XtToggle.defaults = {
 </main>
 
 
-        <footer class="site-footer" data-xt-sticky='{"position": "bottom"}'>
+        <footer class="site-footer"
+                data-xt-sticky='{"position": "bottom"}'>
           <div class="site-footer-inner">
             <div class="container">
 
               <nav class="site-footer-top display--none display--block-sm" role="navigation">
                 <div class="flex flex--auto justify-content--between">
 
-                  <div class="site-footer-top-links list_space--none">
+                  <div class="site-footer-top-links list-space--none">
                     <a href="/" class="btn btn--primary btn--nodesign">
                       <span>Home</span>
                     </a>
@@ -1489,12 +1830,12 @@ XtToggle.defaults = {
               </nav>
 
               <div class="site-footer-bottom">
-                <div class="flex flex--auto flex_space--tiny justify-content--between">
+                <div class="flex flex--auto flex-space--tiny justify-content--between">
                   <div class="site-footer-bottom-license">
                     Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator--dash"></span> Xtend v0.6.4 licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a>
                   </div>
                   <div class="site-footer-bottom-copy">
-                    © 2017 – 2018 <span>Riccardo Caroli</span>
+                    © 2017 – 2019 <span>Riccardo Caroli</span>
                   </div>
                 </div>
               </div>

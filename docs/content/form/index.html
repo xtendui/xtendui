@@ -8,15 +8,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <!-- seo -->
-  <title>Form • Xtend</title>
+  <title>Form — Xtend</title>
   <meta name="description" content="Lorem ipsum"/>
 
   <!-- icons -->
-  <link rel="icon" href="/assets/images/favicon.ico?v=0.6.4"/>
+  <link rel="icon" href="/assets/images/favicon.png?v=0.6.4"/>
   <link rel="apple-touch-icon" sizes="152x152"
         href="/assets/images/favicon-152x152.png?v=0.6.4"/>
 
@@ -67,6 +66,7 @@
          id="site-menu">
       <div class="overlay">
         <div class="overlay_inner">
+          <div class="overlay_design"></div>
 
           <div class="site-header-top">
             <div class="container">
@@ -151,7 +151,7 @@
           <div class="container">
             <div class="flex flex--auto justify-content--between align-items--start">
 
-              <div class="site-breadcrumbs-body flex flex_space--none display--none display--flex-sm"
+              <div class="site-breadcrumbs-body flex flex-space--none display--none display--flex-sm"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
                 
@@ -391,17 +391,17 @@
                       
                       
                         <div class="site-breadcrumbs-body-main">
-                          <a href="/docs/others/" class="btn btn--primary btn--nodesign">
-                            <span>Others</span>
+                          <a href="/docs/other/" class="btn btn--primary btn--nodesign">
+                            <span>Other</span>
                           </a>
                           <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
                             <div class="site-breadcrumbs-body-sub-inner">
                               
-                              <a href="/docs/others/alert/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/other/alert/" class="btn btn--primary btn--nodesign">
                                 <span>Alert</span>
                               </a>
                               
-                              <a href="/docs/others/loader/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/other/loader/" class="btn btn--primary btn--nodesign">
                                 <span>Loader</span>
                               </a>
                               
@@ -418,7 +418,7 @@
                 
               </div>
 
-              <div class="site-breadcrumbs-body flex flex_space--none display--none-sm flex--auto"
+              <div class="site-breadcrumbs-body flex flex-space--none display--none-sm flex--auto"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
 
@@ -517,8 +517,8 @@
                               
                           
                               
-                              <a href="/docs/others/" class="btn btn--primary btn--nodesign">
-                                <span>Others</span>
+                              <a href="/docs/other/" class="btn btn--primary btn--nodesign">
+                                <span>Other</span>
                               </a>
                               
                           
@@ -531,7 +531,7 @@
                 
               </div>
 
-              <div class="site-breadcrumbs-meta flex flex_space--none align-items--center">
+              <div class="site-breadcrumbs-meta flex flex-space--none align-items--center">
 
                 <div class="display--none-sm display--block-md">
                   <a href="https://github.com/minimit/xtend-library/releases" target="_blank" rel="noopener" class="btn btn--primary btn--icon btn--nodesign" aria-label="Download">
@@ -580,7 +580,7 @@
       <div class="flex">
         <div class="col col--12 col--9-md">
 
-          <article class="site-article list_default">
+          <article class="site-article list-default">
             <h2>Form group</h2>
 
 <div class="demo">
@@ -589,147 +589,147 @@
       <form>
 
         <legend>Test normal</legend>
-        <div class="form_item">
-          <label class="form_label">
+        <div class="form-item">
+          <label class="form-label">
             Lorem
           </label>
-          <input type="text" class="form_input">
+          <input type="text" class="form-input">
         </div>
-        <div class="form_item">
-          <label class="form_label">
+        <div class="form-item">
+          <label class="form-label">
             Lorem Ipsum
           </label>
-          <input type="text" class="form_input">
+          <input type="text" class="form-input">
         </div>
 
         <legend>Test flex</legend>
-        <div class="form_item--flex-sm">
+        <div class="form-item--flex-sm">
           <div class="col--12 col--3-sm">
-            <div class="form_item">
-              <label class="form_label">
+            <div class="form-item">
+              <label class="form-label">
                 Lorem
               </label>
-              <input type="text" class="form_input">
+              <input type="text" class="form-input">
             </div>
           </div>
           <div class="col--12 col--9-sm">
-            <div class="form_item">
-              <label class="form_label">
+            <div class="form-item">
+              <label class="form-label">
                 Lorem Ipsum
               </label>
-              <input type="text" class="form_input">
+              <input type="text" class="form-input">
             </div>
           </div>
         </div>
-        <div class="form_item--flex-sm">
+        <div class="form-item--flex-sm">
           <div class="col--12 col--3-sm">
-            <div class="form_item">
-              <label class="form_label">
+            <div class="form-item">
+              <label class="form-label">
                 Lorem
               </label>
-              <input type="text" class="form_input">
+              <input type="text" class="form-input">
             </div>
           </div>
           <div class="col--12 col--9-sm">
-            <div class="form_item">
-              <label class="form_label">
+            <div class="form-item">
+              <label class="form-label">
                 Lorem Ipsum
               </label>
-              <input type="text" class="form_input">
+              <input type="text" class="form-input">
             </div>
           </div>
         </div>
 
         <legend>Test horizontal</legend>
-        <div class="form_item">
-          <div class="form_item--horizontal-sm">
+        <div class="form-item">
+          <div class="form-item--horizontal-sm">
             <div class="col--12 col--3-sm">
-              <label class="form_label">
+              <label class="form-label">
                 Lorem
               </label>
             </div>
             <div class="col--12 col--9-sm">
-              <input type="text" class="form_input">
+              <input type="text" class="form-input">
             </div>
           </div>
         </div>
-        <div class="form_item">
-          <div class="form_item--horizontal-sm">
+        <div class="form-item">
+          <div class="form-item--horizontal-sm">
             <div class="col--12 col--3-sm">
-              <label class="form_label">
+              <label class="form-label">
                 Lorem Ipsum
               </label>
             </div>
             <div class="col--12 col--9-sm">
-              <input type="text" class="form_input">
+              <input type="text" class="form-input">
             </div>
           </div>
         </div>
 
         <legend>Test inline input</legend>
-        <div class="form_item--inline-sm">
-          <div class="form_item">
-            <label class="form_label">
+        <div class="form-item--inline-sm">
+          <div class="form-item">
+            <label class="form-label">
               Lorem
             </label>
-            <input type="text" class="form_input">
+            <input type="text" class="form-input">
           </div>
-          <div class="form_item">
-            <label class="form_label">
+          <div class="form-item">
+            <label class="form-label">
               Lorem Ipsum
             </label>
-            <input type="text" class="form_input">
+            <input type="text" class="form-input">
           </div>
         </div>
-        <div class="form_item--inline-sm">
-          <div class="form_item">
-            <label class="form_label">
+        <div class="form-item--inline-sm">
+          <div class="form-item">
+            <label class="form-label">
               Lorem
             </label>
-            <input type="text" class="form_input">
+            <input type="text" class="form-input">
           </div>
-          <div class="form_item">
-            <label class="form_label">
+          <div class="form-item">
+            <label class="form-label">
               Lorem Ipsum
             </label>
-            <input type="text" class="form_input">
+            <input type="text" class="form-input">
           </div>
         </div>
 
         <legend>Test inline input and label</legend>
-        <div class="form_item--inline-sm">
-          <div class="form_item">
-            <div class="form_item--inline-sm">
-              <label class="form_label">
+        <div class="form-item--inline-sm">
+          <div class="form-item">
+            <div class="form-item--inline-sm">
+              <label class="form-label">
                 Lorem
               </label>
-              <input type="text" class="form_input">
+              <input type="text" class="form-input">
             </div>
           </div>
-          <div class="form_item">
-            <div class="form_item--inline-sm">
-              <label class="form_label">
+          <div class="form-item">
+            <div class="form-item--inline-sm">
+              <label class="form-label">
                 Lorem Ipsum
               </label>
-              <input type="text" class="form_input">
+              <input type="text" class="form-input">
             </div>
           </div>
         </div>
-        <div class="form_item--inline-sm">
-          <div class="form_item">
-            <div class="form_item--inline-sm">
-              <label class="form_label">
+        <div class="form-item--inline-sm">
+          <div class="form-item">
+            <div class="form-item--inline-sm">
+              <label class="form-label">
                 Lorem
               </label>
-              <input type="text" class="form_input">
+              <input type="text" class="form-input">
             </div>
           </div>
-          <div class="form_item">
-            <div class="form_item--inline-sm">
-              <label class="form_label">
+          <div class="form-item">
+            <div class="form-item--inline-sm">
+              <label class="form-label">
                 Lorem Ipsum
               </label>
-              <input type="text" class="form_input">
+              <input type="text" class="form-input">
             </div>
           </div>
         </div>
@@ -738,87 +738,87 @@
 
         <legend>Test combo</legend>
 
-        <div class="form_item">
-          <label class="form_label">
+        <div class="form-item">
+          <label class="form-label">
             Lorem
           </label>
-          <input type="text" class="form_input">
+          <input type="text" class="form-input">
         </div>
 
-        <div class="form_item--flex-sm">
+        <div class="form-item--flex-sm">
           <div class="col--12 col--3-sm">
-            <div class="form_item">
-              <label class="form_label">
+            <div class="form-item">
+              <label class="form-label">
                 Lorem
               </label>
-              <input type="text" class="form_input">
+              <input type="text" class="form-input">
             </div>
           </div>
           <div class="col--12 col--9-sm">
-            <div class="form_item">
-              <label class="form_label">
+            <div class="form-item">
+              <label class="form-label">
                 Lorem Ipsum
               </label>
-              <input type="text" class="form_input">
+              <input type="text" class="form-input">
             </div>
           </div>
         </div>
 
-        <div class="form_item">
-          <div class="form_item--horizontal-sm">
+        <div class="form-item">
+          <div class="form-item--horizontal-sm">
             <div class="col--12 col--3-sm">
-              <label class="form_label">
+              <label class="form-label">
                 Lorem
               </label>
             </div>
             <div class="col--12 col--9-sm">
-              <input type="text" class="form_input">
+              <input type="text" class="form-input">
             </div>
           </div>
         </div>
 
-        <div class="form_item--inline-sm">
-          <div class="form_item">
-            <label class="form_label">
+        <div class="form-item--inline-sm">
+          <div class="form-item">
+            <label class="form-label">
               Lorem
             </label>
-            <input type="text" class="form_input">
+            <input type="text" class="form-input">
           </div>
-          <div class="form_item">
-            <label class="form_label">
+          <div class="form-item">
+            <label class="form-label">
               Lorem Ipsum
             </label>
-            <input type="text" class="form_input">
+            <input type="text" class="form-input">
           </div>
         </div>
 
-        <div class="form_item--inline-sm">
-          <div class="form_item">
-            <div class="form_item--inline-sm">
-              <label class="form_label">
+        <div class="form-item--inline-sm">
+          <div class="form-item">
+            <div class="form-item--inline-sm">
+              <label class="form-label">
                 Lorem
               </label>
-              <input type="text" class="form_input">
+              <input type="text" class="form-input">
             </div>
           </div>
-          <div class="form_item">
-            <div class="form_item--inline-sm">
-              <label class="form_label">
+          <div class="form-item">
+            <div class="form-item--inline-sm">
+              <label class="form-label">
                 Lorem Ipsum
               </label>
-              <input type="text" class="form_input">
+              <input type="text" class="form-input">
             </div>
           </div>
         </div>
 
-        <div class="form_item">
-          <label class="form_label">
+        <div class="form-item">
+          <label class="form-label">
             Lorem Ipsum
           </label>
-          <textarea class="form_input"></textarea>
+          <textarea class="form-input"></textarea>
         </div>
 
-        <div class="form_item">
+        <div class="form-item">
           <button type="submit" class="btn btn--primary btn--sm">
             <span>Submit</span>
           </button>
@@ -831,123 +831,27 @@
 
 <h2>Checkbox and radio</h2>
 
-<h3>Usage</h3>
+<h3>Unstyled</h3>
 
-<p>Use this markup to create a checkbox or radio.</p>
+<p>Use this markup to create a checkbox or radio <strong>unstyled</strong>.</p>
 
 <pre>
   <code class="html">
-    <div class="form_item">
-      <input type="checkbox" id="checkbox-0">
-      <label class="form_label" for="checkbox-0">
+    <div class="form-item">
+      <input type="checkbox" id="checkbox-unstyled" class="unstyled">
+      <label class="form-label" for="checkbox-unstyled">
         <!-- content -->
       </label>
     </div>
 
-    <div class="form_item">
-      <input type="radio" id="radio-0" name="radio">
-      <label class="form_label" for="radio-0">
+    <div class="form-item">
+      <input type="radio" id="radio-unstyled" name="radio-unstyled" class="unstyled">
+      <label class="form-label" for="radio-unstyled">
         <!-- content -->
       </label>
     </div>
   </code>
 </pre>
-
-<h3>Styled</h3>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="default">
-    <div class="demo-text">
-      <div class="alert_content">
-        Check and radio design
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div class="form_item">
-        <input type="checkbox" id="checkbox-block" checked>
-        <label class="form_label" for="checkbox-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-        </label>
-      </div>
-
-      <div class="form_item">
-        <input type="radio" id="radio-block-0" name="radio-block" checked>
-        <label class="form_label" for="radio-block-0">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-        </label>
-      </div>
-
-      <div class="form_item">
-        <input type="radio" id="radio-block-1" name="radio-block">
-        <label class="form_label" for="radio-block-1">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="inline">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.form_item--inline</code> (@TODO link to form group)
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div class="form_item--inline">
-        <div class="form_item">
-          <input type="checkbox" id="checkbox-inline" checked>
-          <label class="form_label" for="checkbox-inline">
-            Lorem ipsum dolor
-          </label>
-        </div>
-
-        <div class="form_item">
-          <input type="radio" id="radio-inline-0" name="radio-inline" checked>
-          <label class="form_label" for="radio-inline-0">
-            Lorem ipsum dolor
-          </label>
-        </div>
-
-        <div class="form_item">
-          <input type="radio" id="radio-inline-1" name="radio-inline">
-          <label class="form_label" for="radio-inline-1">
-            Lorem ipsum dolor
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="disabled">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>[disabled]</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div class="form_item">
-        <input type="checkbox" id="checkbox-disabled" disabled checked>
-        <label class="form_label" for="checkbox-disabled">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-        </label>
-      </div>
-
-      <div class="form_item">
-        <input type="radio" id="radio-disabled-0" name="radio-disabled" disabled checked>
-        <label class="form_label" for="radio-block-0">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-        </label>
-      </div>
-
-      <div class="form_item">
-        <input type="radio" id="radio-disabled-1" name="radio-disabled" disabled>
-        <label class="form_label" for="radio-disabled-1">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-        </label>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Unstyled</h3>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="block">
@@ -957,23 +861,23 @@
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="form_item">
+      <div class="form-item">
         <input type="checkbox" class="unstyled" id="checkbox-block-unstyled" checked>
-        <label class="form_label" for="checkbox-block-unstyled">
+        <label class="form-label" for="checkbox-block-unstyled">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
         </label>
       </div>
 
-      <div class="form_item">
+      <div class="form-item">
         <input type="radio" class="unstyled" id="radio-block-unstyled-0" name="radio-block-unstyled" checked>
-        <label class="form_label" for="radio-block-unstyled-0">
+        <label class="form-label" for="radio-block-unstyled-0">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
         </label>
       </div>
 
-      <div class="form_item">
+      <div class="form-item">
         <input type="radio" class="unstyled" id="radio-block-unstyled-1" name="radio-block-unstyled">
-        <label class="form_label" for="radio-block-unstyled-1">
+        <label class="form-label" for="radio-block-unstyled-1">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
         </label>
       </div>
@@ -982,28 +886,28 @@
   <div class="demo-item demo-preview" data-name="inline">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.form_item--inline .unstyled</code> (@TODO link to form group)
+        <code>.form-item--inline .unstyled</code> (@TODO link to form group)
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="form_item--inline-sm">
-        <div class="form_item">
+      <div class="form-item--inline-sm">
+        <div class="form-item">
           <input type="checkbox" class="unstyled" id="checkbox-inline-unstyled" checked>
-          <label class="form_label" for="checkbox-inline-unstyled">
+          <label class="form-label" for="checkbox-inline-unstyled">
             Lorem ipsum dolor
           </label>
         </div>
 
-        <div class="form_item">
+        <div class="form-item">
           <input type="radio" class="unstyled" id="radio-inline-unstyled-0" name="radio-inline-unstyled" checked>
-          <label class="form_label" for="radio-inline-unstyled-0">
+          <label class="form-label" for="radio-inline-unstyled-0">
             Lorem ipsum dolor
           </label>
         </div>
 
-        <div class="form_item">
+        <div class="form-item">
           <input type="radio" class="unstyled" id="radio-inline-unstyled-1" name="radio-inline-unstyled">
-          <label class="form_label" for="radio-inline-unstyled-1">
+          <label class="form-label" for="radio-inline-unstyled-1">
             Lorem ipsum dolor
           </label>
         </div>
@@ -1017,25 +921,248 @@
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="form_item">
+      <div class="form-item">
         <input type="checkbox" class="unstyled" id="checkbox-disabled-unstyled" disabled checked>
-        <label class="form_label" for="checkbox-disabled-unstyled">
+        <label class="form-label" for="checkbox-disabled-unstyled">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
         </label>
       </div>
 
-      <div class="form_item">
+      <div class="form-item">
         <input type="radio" class="unstyled" id="radio-disabled-unstyled-0" name="radio-disabled-unstyled" disabled checked>
-        <label class="form_label" for="radio-disabled-unstyled-0">
+        <label class="form-label" for="radio-disabled-unstyled-0">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
         </label>
       </div>
 
-      <div class="form_item">
+      <div class="form-item">
         <input type="radio" class="unstyled" id="radio-disabled-unstyled-1" name="radio-disabled-unstyled" disabled>
-        <label class="form_label" for="radio-disabled-unstyled-1">
+        <label class="form-label" for="radio-disabled-unstyled-1">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
         </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Styled</h3>
+
+<p>Use this markup to create a checkbox or radio <strong>styled</strong>.</p>
+
+<pre>
+  <code class="html">
+    <div class="form-item">
+      <input type="checkbox" id="checkbox-styled">
+      <label class="form-label" for="checkbox-styled">
+        <!-- content -->
+      </label>
+    </div>
+
+    <div class="form-item">
+      <input type="radio" id="radio-styled" name="radio-styled">
+      <label class="form-label" for="radio-styled">
+        <!-- content -->
+      </label>
+    </div>
+  </code>
+</pre>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="default">
+    <div class="demo-text">
+      <div class="alert_content">
+        Check and radio design
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="form-item">
+        <input type="checkbox" id="checkbox-block" checked>
+        <label class="form-label" for="checkbox-block">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+        </label>
+      </div>
+
+      <div class="form-item">
+        <input type="radio" id="radio-block-0" name="radio-block" checked>
+        <label class="form-label" for="radio-block-0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+        </label>
+      </div>
+
+      <div class="form-item">
+        <input type="radio" id="radio-block-1" name="radio-block">
+        <label class="form-label" for="radio-block-1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="inline">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>.form-item--inline</code> (@TODO link to form group)
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="form-item--inline">
+        <div class="form-item">
+          <input type="checkbox" id="checkbox-inline" checked>
+          <label class="form-label" for="checkbox-inline">
+            Lorem ipsum dolor
+          </label>
+        </div>
+
+        <div class="form-item">
+          <input type="radio" id="radio-inline-0" name="radio-inline" checked>
+          <label class="form-label" for="radio-inline-0">
+            Lorem ipsum dolor
+          </label>
+        </div>
+
+        <div class="form-item">
+          <input type="radio" id="radio-inline-1" name="radio-inline">
+          <label class="form-label" for="radio-inline-1">
+            Lorem ipsum dolor
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="disabled">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>[disabled]</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="form-item">
+        <input type="checkbox" id="checkbox-disabled" disabled checked>
+        <label class="form-label" for="checkbox-disabled">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+        </label>
+      </div>
+
+      <div class="form-item">
+        <input type="radio" id="radio-disabled-0" name="radio-disabled" disabled checked>
+        <label class="form-label" for="radio-block-0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+        </label>
+      </div>
+
+      <div class="form-item">
+        <input type="radio" id="radio-disabled-1" name="radio-disabled" disabled>
+        <label class="form-label" for="radio-disabled-1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Fake</h3>
+
+<p>Use this markup to create a <strong>fake</strong> checkbox or radio <strong>styled</strong>.</p>
+
+<pre>
+  <code class="html">
+    <div class="form-item">
+      <div class="checkbox-styled">
+        <!-- content -->
+      </div>
+    </div>
+
+    <div class="form-item">
+      <div class="radio-styled">
+        <!-- content -->
+      </div>
+    </div>
+  </code>
+</pre>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="default">
+    <div class="demo-text">
+      <div class="alert_content">
+        Check and radio design
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div data-xt-toggle='{"elements": ".radio", "min": 1}'>
+        <div class="form-item">
+          <div class="checkbox active" data-xt-toggle='{"elements": false}'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+          </div>
+        </div>
+
+        <div class="form-item">
+          <div class="radio active">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+          </div>
+        </div>
+
+        <div class="form-item">
+          <div class="radio">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="inline">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>.form-item--inline</code> (@TODO link to form group)
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div data-xt-toggle='{"elements": ".radio", "min": 1}'>
+        <div class="form-item--inline">
+          <div class="form-item">
+            <div class="checkbox active" data-xt-toggle='{"elements": false}'>
+              Lorem ipsum dolor
+            </div>
+          </div>
+
+          <div class="form-item">
+            <div class="radio active">
+              Lorem ipsum dolor
+            </div>
+          </div>
+
+          <div class="form-item">
+            <div class="radio">
+              Lorem ipsum dolor
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="disabled">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>[disabled]</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div data-xt-toggle='{"elements": ".radio", "min": 1}'>
+        <div class="form-item">
+          <div class="checkbox active disabled" data-xt-toggle='{"elements": false}'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+          </div>
+        </div>
+
+        <div class="form-item">
+          <div class="radio active disabled">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+          </div>
+        </div>
+
+        <div class="form-item">
+          <div class="radio disabled">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1050,7 +1177,8 @@
         </div>
         <div class="col col--12 col--3-md hide show-md">
 
-          <aside class="site-aside" data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
+          <aside class="site-aside"
+                 data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
 
             <div class="site-aside-text">
               <a href="/docs/content/form/" class="btn btn--nodesign">
@@ -1069,14 +1197,15 @@
 </main>
 
 
-        <footer class="site-footer" data-xt-sticky='{"position": "bottom"}'>
+        <footer class="site-footer"
+                data-xt-sticky='{"position": "bottom"}'>
           <div class="site-footer-inner">
             <div class="container">
 
               <nav class="site-footer-top display--none display--block-sm" role="navigation">
                 <div class="flex flex--auto justify-content--between">
 
-                  <div class="site-footer-top-links list_space--none">
+                  <div class="site-footer-top-links list-space--none">
                     <a href="/" class="btn btn--primary btn--nodesign">
                       <span>Home</span>
                     </a>
@@ -1109,12 +1238,12 @@
               </nav>
 
               <div class="site-footer-bottom">
-                <div class="flex flex--auto flex_space--tiny justify-content--between">
+                <div class="flex flex--auto flex-space--tiny justify-content--between">
                   <div class="site-footer-bottom-license">
                     Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator--dash"></span> Xtend v0.6.4 licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a>
                   </div>
                   <div class="site-footer-bottom-copy">
-                    © 2017 – 2018 <span>Riccardo Caroli</span>
+                    © 2017 – 2019 <span>Riccardo Caroli</span>
                   </div>
                 </div>
               </div>

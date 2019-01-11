@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- seo -->
+    <title>Demo — Xtend</title>
+    <meta name="description" content="Xtend demo" />
+
+    <!-- icons -->
+    <link rel="icon" href="/assets/images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/styles/demos.css?v=0.6.4" />
+
+    <!-- demos styles -->
+    <link rel="stylesheet" href="number.css?v=0.6.4" />
+
+  </head>
+  <body class="full">
+
+    <div id="body-outer">
+<div id="body-inner" class="demo-source-from">
+<h4>Line</h4>
+<div class="group group-number group-number-line">
+    <span class="group_inner">
+      <button type="button" class="btn group-number-remove">
+        <span>-</span>
+      </button>
+    </span>
+  <input type="number" class="form-input" value="3" data-min="1" data-max="100">
+  <span class="group_inner">
+      <button type="button" class="btn group-number-add">
+        <span>+</span>
+      </button>
+    </span>
+</div>
+
+<h4>Stack</h4>
+<div class="group group-number group-number-stack">
+  <input type="number" class="form-input" value="3" data-min="1" data-max="100">
+  <span class="group_inner">
+      <button type="button" class="btn btn--short btn--narrow group-number-add">
+        <span>+</span>
+      </button>
+      <button type="button" class="btn btn--short btn--narrow group-number-remove">
+        <span>-</span>
+      </button>
+    </span>
+</div>
+
+</div>
+    </div>
+
+    <!-- demos source less -->
+    
+    <less-style>
+
+      @import (reference) "../../../../../dist/styles/xtend.less";
+
+//////////////////////
+// xtend extension: group-number
+//////////////////////
+
+.group-number-line {
+  .group-input();
+  .form-input {
+    width: 5.5rem;
+  }
+}
+
+.group-number-stack {
+  .group-input();
+  .form-input {
+    width: 5.5rem;
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+    </less-style>
+    
+
+    <!-- demos source js -->
+    
+    <js-script>
+
+      //////////////////////
+// xtend extension: group-number
+//////////////////////
+
+Xt.init.push({ // on DOM ready and on content added to DOM
+  matches: '.group-number',
+  fnc: inputNumberInit
+});
+
+function inputNumberInit(main, index) {
+  // init
+  inputNumberChange.bind(main, 0)();
+  // vars
+  let inputEl = main.querySelectorAll('input')[0];
+  let step = parseFloat(inputEl.getAttribute('step')) || 1;
+  // add
+  let addEl = main.querySelectorAll('.group-number-add')[0];
+  let addStep = step;
+  let addHandler = Xt.dataStorage.get(addEl, 'addHandler');
+  addHandler = addHandler ? addHandler : Xt.dataStorage.put(addEl, 'addHandler', inputNumberChange.bind(main, addStep));
+  addEl.removeEventListener('click', addHandler);
+  addEl.addEventListener('click', addHandler);
+  // remove
+  let removeEl = main.querySelectorAll('.group-number-remove')[0];
+  let removeStep = -step;
+  let removeHandler = Xt.dataStorage.get(removeEl, 'removeHandler');
+  removeHandler = removeHandler ? removeHandler : Xt.dataStorage.put(removeEl, 'removeHandler', inputNumberChange.bind(main, removeStep));
+  removeEl.removeEventListener('click', removeHandler);
+  removeEl.addEventListener('click', removeHandler);
+  // change
+  let inputHandler = Xt.dataStorage.get(inputEl, 'inputHandler');
+  inputHandler = inputHandler ? inputHandler : Xt.dataStorage.put(inputEl, 'inputHandler', inputNumberChange.bind(main, 0));
+  inputEl.removeEventListener('change', inputHandler);
+  inputEl.addEventListener('change', inputHandler);
+}
+
+function inputNumberChange(step, e) {
+  if (!e || !e.detail || !e.detail.skip) {
+    let main = this;
+    let input = main.querySelectorAll('input')[0];
+    let val = parseFloat(input.value);
+    val = val + step;
+    inputNumberValidate.bind(main)(val);
+  }
+}
+
+function inputNumberValidate(val) {
+  let main = this;
+  let input = main.querySelectorAll('input')[0];
+  let addEl = main.querySelectorAll('.group-number-add')[0];
+  let removeEl = main.querySelectorAll('.group-number-remove')[0];
+  // disabled
+  addEl.removeAttribute('disabled');
+  removeEl.removeAttribute('disabled');
+  // check min and max
+  let inputMin = parseFloat(input.getAttribute('min')) || 1;
+  let inputMax = parseFloat(input.getAttribute('max')) || Infinity;
+  if (val <= inputMin) {
+    val = inputMin;
+    removeEl.setAttribute('disabled', 'disabled');
+  }
+  if (val >= inputMax) {
+    val = inputMax;
+    addEl.setAttribute('disabled', 'disabled');
+  }
+  // set value
+  input.value = val;
+  input.dispatchEvent(new CustomEvent('change', {bubbles: true, detail: {skip: true}}));
+}
+
+    </js-script>
+    
+
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.6.4"></script>
+    <script src="/assets/scripts/polyfill.min.js?v=0.6.4"></script>
+
+    <!-- demos scripts -->
+    <script src="/assets/scripts/demos.min.js?v=0.6.4"></script>
+
+    <!-- demos scripts -->
+    
+    <script>//////////////////////
+// xtend extension: group-number
+//////////////////////
+
+Xt.init.push({ // on DOM ready and on content added to DOM
+  matches: '.group-number',
+  fnc: inputNumberInit
+});
+
+function inputNumberInit(main, index) {
+  // init
+  inputNumberChange.bind(main, 0)();
+  // vars
+  let inputEl = main.querySelectorAll('input')[0];
+  let step = parseFloat(inputEl.getAttribute('step')) || 1;
+  // add
+  let addEl = main.querySelectorAll('.group-number-add')[0];
+  let addStep = step;
+  let addHandler = Xt.dataStorage.get(addEl, 'addHandler');
+  addHandler = addHandler ? addHandler : Xt.dataStorage.put(addEl, 'addHandler', inputNumberChange.bind(main, addStep));
+  addEl.removeEventListener('click', addHandler);
+  addEl.addEventListener('click', addHandler);
+  // remove
+  let removeEl = main.querySelectorAll('.group-number-remove')[0];
+  let removeStep = -step;
+  let removeHandler = Xt.dataStorage.get(removeEl, 'removeHandler');
+  removeHandler = removeHandler ? removeHandler : Xt.dataStorage.put(removeEl, 'removeHandler', inputNumberChange.bind(main, removeStep));
+  removeEl.removeEventListener('click', removeHandler);
+  removeEl.addEventListener('click', removeHandler);
+  // change
+  let inputHandler = Xt.dataStorage.get(inputEl, 'inputHandler');
+  inputHandler = inputHandler ? inputHandler : Xt.dataStorage.put(inputEl, 'inputHandler', inputNumberChange.bind(main, 0));
+  inputEl.removeEventListener('change', inputHandler);
+  inputEl.addEventListener('change', inputHandler);
+}
+
+function inputNumberChange(step, e) {
+  if (!e || !e.detail || !e.detail.skip) {
+    let main = this;
+    let input = main.querySelectorAll('input')[0];
+    let val = parseFloat(input.value);
+    val = val + step;
+    inputNumberValidate.bind(main)(val);
+  }
+}
+
+function inputNumberValidate(val) {
+  let main = this;
+  let input = main.querySelectorAll('input')[0];
+  let addEl = main.querySelectorAll('.group-number-add')[0];
+  let removeEl = main.querySelectorAll('.group-number-remove')[0];
+  // disabled
+  addEl.removeAttribute('disabled');
+  removeEl.removeAttribute('disabled');
+  // check min and max
+  let inputMin = parseFloat(input.getAttribute('min')) || 1;
+  let inputMax = parseFloat(input.getAttribute('max')) || Infinity;
+  if (val <= inputMin) {
+    val = inputMin;
+    removeEl.setAttribute('disabled', 'disabled');
+  }
+  if (val >= inputMax) {
+    val = inputMax;
+    addEl.setAttribute('disabled', 'disabled');
+  }
+  // set value
+  input.value = val;
+  input.dispatchEvent(new CustomEvent('change', {bubbles: true, detail: {skip: true}}));
+}
+</script>
+    
+
+    <!-- demos utils -->
+    <script>
+      if (window.self !== window.top) {
+        // add id
+        document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
+        // init iframe
+        window.parent.initIframe(window.name);
+      }
+    </script>
+
+  </body>
+</html>

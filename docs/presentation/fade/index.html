@@ -8,15 +8,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <!-- seo -->
-  <title>Fade • Xtend</title>
+  <title>Fade — Xtend</title>
   <meta name="description" content="Lorem ipsum"/>
 
   <!-- icons -->
-  <link rel="icon" href="/assets/images/favicon.ico?v=0.6.4"/>
+  <link rel="icon" href="/assets/images/favicon.png?v=0.6.4"/>
   <link rel="apple-touch-icon" sizes="152x152"
         href="/assets/images/favicon-152x152.png?v=0.6.4"/>
 
@@ -67,6 +66,7 @@
          id="site-menu">
       <div class="overlay">
         <div class="overlay_inner">
+          <div class="overlay_design"></div>
 
           <div class="site-header-top">
             <div class="container">
@@ -151,7 +151,7 @@
           <div class="container">
             <div class="flex flex--auto justify-content--between align-items--start">
 
-              <div class="site-breadcrumbs-body flex flex_space--none display--none display--flex-sm"
+              <div class="site-breadcrumbs-body flex flex-space--none display--none display--flex-sm"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
                 
@@ -391,17 +391,17 @@
                       
                       
                         <div class="site-breadcrumbs-body-main">
-                          <a href="/docs/others/" class="btn btn--primary btn--nodesign">
-                            <span>Others</span>
+                          <a href="/docs/other/" class="btn btn--primary btn--nodesign">
+                            <span>Other</span>
                           </a>
                           <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
                             <div class="site-breadcrumbs-body-sub-inner">
                               
-                              <a href="/docs/others/alert/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/other/alert/" class="btn btn--primary btn--nodesign">
                                 <span>Alert</span>
                               </a>
                               
-                              <a href="/docs/others/loader/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/other/loader/" class="btn btn--primary btn--nodesign">
                                 <span>Loader</span>
                               </a>
                               
@@ -418,7 +418,7 @@
                 
               </div>
 
-              <div class="site-breadcrumbs-body flex flex_space--none display--none-sm flex--auto"
+              <div class="site-breadcrumbs-body flex flex-space--none display--none-sm flex--auto"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
 
@@ -517,8 +517,8 @@
                               
                           
                               
-                              <a href="/docs/others/" class="btn btn--primary btn--nodesign">
-                                <span>Others</span>
+                              <a href="/docs/other/" class="btn btn--primary btn--nodesign">
+                                <span>Other</span>
                               </a>
                               
                           
@@ -531,7 +531,7 @@
                 
               </div>
 
-              <div class="site-breadcrumbs-meta flex flex_space--none align-items--center">
+              <div class="site-breadcrumbs-meta flex flex-space--none align-items--center">
 
                 <div class="display--none-sm display--block-md">
                   <a href="https://github.com/minimit/xtend-library/releases" target="_blank" rel="noopener" class="btn btn--primary btn--icon btn--nodesign" aria-label="Download">
@@ -580,7 +580,7 @@
       <div class="flex">
         <div class="col col--12 col--9-md">
 
-          <article class="site-article list_default">
+          <article class="site-article list-default">
             <h2>Usage</h2>
 
 <p>Use this markup to create a fade. <code>[data-xt-fade]</code> must be <a
@@ -613,8 +613,8 @@
 <h3>Javascript</h3>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="/demos/presentation/fade/fade-javascript.html"
-       data-name="javascript">
+  <div class="demo-item" data-iframe="/demos/presentation/fade/javascript.html"
+       data-name="js">
     <div class="demo-text">
       <div class="alert_content">
         Example initialized by javascript on document
@@ -629,17 +629,6 @@
 
 <pre>
   <code class="js">
-Xt.Fade.defaults = {
-  "elements": ".fade",
-  "class": "in",
-  "on": "scroll resize",
-  "min": 0,
-  "max": Infinity,
-  "distance": 0.2,
-  "delayOn": false,
-  "delayOff": false,
-  "aria": false
-};
   </code>
 </pre>
 
@@ -650,7 +639,7 @@ Xt.Fade.defaults = {
 <p>You can set fade mode with <strong>less mixins</strong> (@TODO link less mixins).</p>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="/demos/presentation/fade/fade-mode-infinite.html"
+  <div class="demo-item" data-iframe="/demos/presentation/fade/mode-infinite.html"
        data-name="infinite">
     <div class="demo-text">
       <div class="alert_content">
@@ -658,23 +647,23 @@ Xt.Fade.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="/demos/presentation/fade/fade-mode-scroll.html"
+  <div class="demo-item" data-iframe="/demos/presentation/fade/mode-scroll.html"
        data-name="scroll">
     <div class="demo-text">
       <div class="alert_content">
-        <code>&:not(.fade-scroll)</code>
+        <code>&:not(.fade--scroll)</code>
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="/demos/presentation/fade/fade-mode-visible.html"
+  <div class="demo-item" data-iframe="/demos/presentation/fade/mode-visible.html"
        data-name="visible">
     <div class="demo-text">
       <div class="alert_content">
-        <code>&:not(.fade-visible)</code>
+        <code>&:not(.fade--visible)</code>
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="/demos/presentation/fade/fade-mode-responsive.html"
+  <div class="demo-item" data-iframe="/demos/presentation/fade/mode-responsive.html"
        data-name="responsive">
     <div class="demo-text">
       <div class="alert_content">
@@ -683,11 +672,11 @@ Xt.Fade.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="/demos/presentation/fade/fade-mode-block.html"
+  <div class="demo-item" data-iframe="/demos/presentation/fade/mode-block.html"
        data-name="block">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.fade-block</code>
+        <code>.fade--block</code>
       </div>
     </div>
   </div>
@@ -696,15 +685,15 @@ Xt.Fade.defaults = {
 <h3>Direction and Distance</h3>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="/demos/presentation/fade/fade-direction.html"
+  <div class="demo-item" data-iframe="/demos/presentation/fade/direction.html"
        data-name="direction">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.fade-up</code> <code>.fade-down</code>
+        <code>.fade--up</code> <code>.fade--down</code>
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="/demos/presentation/fade/fade-distance.html" data-name="distance">
+  <div class="demo-item" data-iframe="/demos/presentation/fade/distance.html" data-name="distance">
     <div class="demo-text">
       <div class="alert_content">
         <code>"distance": Number</code> is the window's top and bottom activation and deactivation. Factor between 0 and
@@ -717,7 +706,7 @@ Xt.Fade.defaults = {
 <h3>Timing</h3>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="/demos/presentation/fade/fade-delay.html" data-name="delay">
+  <div class="demo-item" data-iframe="/demos/presentation/fade/delay.html" data-name="delay">
     <div class="demo-text">
       <div class="alert_content">
         <code>"delayOn": Function</code> <code>"delayOff": Function</code> return number using <strong>total</strong>
@@ -732,7 +721,8 @@ Xt.Fade.defaults = {
         </div>
         <div class="col col--12 col--3-md hide show-md">
 
-          <aside class="site-aside" data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
+          <aside class="site-aside"
+                 data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
 
             <div class="site-aside-text">
               <a href="/docs/presentation/fade/" class="btn btn--nodesign">
@@ -751,14 +741,15 @@ Xt.Fade.defaults = {
 </main>
 
 
-        <footer class="site-footer" data-xt-sticky='{"position": "bottom"}'>
+        <footer class="site-footer"
+                data-xt-sticky='{"position": "bottom"}'>
           <div class="site-footer-inner">
             <div class="container">
 
               <nav class="site-footer-top display--none display--block-sm" role="navigation">
                 <div class="flex flex--auto justify-content--between">
 
-                  <div class="site-footer-top-links list_space--none">
+                  <div class="site-footer-top-links list-space--none">
                     <a href="/" class="btn btn--primary btn--nodesign">
                       <span>Home</span>
                     </a>
@@ -791,12 +782,12 @@ Xt.Fade.defaults = {
               </nav>
 
               <div class="site-footer-bottom">
-                <div class="flex flex--auto flex_space--tiny justify-content--between">
+                <div class="flex flex--auto flex-space--tiny justify-content--between">
                   <div class="site-footer-bottom-license">
                     Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator--dash"></span> Xtend v0.6.4 licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a>
                   </div>
                   <div class="site-footer-bottom-copy">
-                    © 2017 – 2018 <span>Riccardo Caroli</span>
+                    © 2017 – 2019 <span>Riccardo Caroli</span>
                   </div>
                 </div>
               </div>

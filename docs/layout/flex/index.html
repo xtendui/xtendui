@@ -8,15 +8,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <!-- seo -->
-  <title>Flex • Xtend</title>
+  <title>Flex — Xtend</title>
   <meta name="description" content="Flex is used to place it's childrens in a column/row layout. You can set and all the flex's properties using utils classes/mixins."/>
 
   <!-- icons -->
-  <link rel="icon" href="/assets/images/favicon.ico?v=0.6.4"/>
+  <link rel="icon" href="/assets/images/favicon.png?v=0.6.4"/>
   <link rel="apple-touch-icon" sizes="152x152"
         href="/assets/images/favicon-152x152.png?v=0.6.4"/>
 
@@ -67,6 +66,7 @@
          id="site-menu">
       <div class="overlay">
         <div class="overlay_inner">
+          <div class="overlay_design"></div>
 
           <div class="site-header-top">
             <div class="container">
@@ -151,7 +151,7 @@
           <div class="container">
             <div class="flex flex--auto justify-content--between align-items--start">
 
-              <div class="site-breadcrumbs-body flex flex_space--none display--none display--flex-sm"
+              <div class="site-breadcrumbs-body flex flex-space--none display--none display--flex-sm"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
                 
@@ -391,17 +391,17 @@
                       
                       
                         <div class="site-breadcrumbs-body-main">
-                          <a href="/docs/others/" class="btn btn--primary btn--nodesign">
-                            <span>Others</span>
+                          <a href="/docs/other/" class="btn btn--primary btn--nodesign">
+                            <span>Other</span>
                           </a>
                           <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
                             <div class="site-breadcrumbs-body-sub-inner">
                               
-                              <a href="/docs/others/alert/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/other/alert/" class="btn btn--primary btn--nodesign">
                                 <span>Alert</span>
                               </a>
                               
-                              <a href="/docs/others/loader/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/other/loader/" class="btn btn--primary btn--nodesign">
                                 <span>Loader</span>
                               </a>
                               
@@ -418,7 +418,7 @@
                 
               </div>
 
-              <div class="site-breadcrumbs-body flex flex_space--none display--none-sm flex--auto"
+              <div class="site-breadcrumbs-body flex flex-space--none display--none-sm flex--auto"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
 
@@ -517,8 +517,8 @@
                               
                           
                               
-                              <a href="/docs/others/" class="btn btn--primary btn--nodesign">
-                                <span>Others</span>
+                              <a href="/docs/other/" class="btn btn--primary btn--nodesign">
+                                <span>Other</span>
                               </a>
                               
                           
@@ -531,7 +531,7 @@
                 
               </div>
 
-              <div class="site-breadcrumbs-meta flex flex_space--none align-items--center">
+              <div class="site-breadcrumbs-meta flex flex-space--none align-items--center">
 
                 <div class="display--none-sm display--block-md">
                   <a href="https://github.com/minimit/xtend-library/releases" target="_blank" rel="noopener" class="btn btn--primary btn--icon btn--nodesign" aria-label="Download">
@@ -580,7 +580,7 @@
       <div class="flex">
         <div class="col col--12 col--9-md">
 
-          <article class="site-article list_default">
+          <article class="site-article list-default">
             <h2>Usage</h2>
 
 <p>Use <code>.flex</code> to create a column/row layout with flexbox.</p>
@@ -593,131 +593,10 @@
   </code>
 </pre>
 
-<h3>Column</h3>
+<h2>Column</h2>
 
 <p>You have to use <a href="/docs/layout/grid/#column">columns</a> inside if you want to specify column
   sizes.</p>
-
-<div class="table--scroll">
-  <table class="table table-small">
-    <thead>
-    <tr>
-      <th></th>
-      <th>Syntax</th>
-      <th>Example</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <th scope="row">Class</th>
-      <td><code>.col</code></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">Class responsive</th>
-      <td><code>.col--{breakpoint}</code></td>
-      <td><code>.col--sm</code></td>
-    </tr>
-    <tr>
-      <th scope="row">Mixin</th>
-      <td><code>.col()</code></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">Mixin responsive</th>
-      <td><code>.col({breakpoint})</code></td>
-      <td><code>.col(sm)</code></td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="columns">
-    <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex">
-        <div class="col col--4"></div>
-        <div class="col col--8"></div>
-        <div class="col col--12 col--8-sm"></div>
-        <div class="col col--12 col--4-sm"></div>
-        <div class="col col--2-sm"></div>
-        <div class="col"></div>
-        <div class="col col--2-sm col--auto-lg"></div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="nested">
-    <div class="demo-text">
-      <div class="alert_content">
-        You can nest <code>.flex</code>, but a flex children can't be a flex itself
-      </div>
-    </div>
-    <div class="demo-source demo-cols-nested" data-lang="html">
-      <div class="flex">
-        <div class="col col--4">
-          <div class="flex">
-            <div class="col col--4"></div>
-            <div class="col col--8"></div>
-            <div class="col col--8"></div>
-            <div class="col col--4"></div>
-          </div>
-        </div>
-        <div class="col col--8">
-          <div class="flex">
-            <div class="col col--12 col--8-sm"></div>
-            <div class="col col--12 col--4-sm"></div>
-            <div class="col"></div>
-            <div class="col col--2-sm col--auto-lg"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Custom</h3>
-
-<p>To have custom width columns use <code>.col--custom</code> and <code>width: Value;</code> and <code>max-width:
-  Value</code>.</p>
-
-<div class="table--scroll">
-  <table class="table table-small">
-    <thead>
-    <tr>
-      <th></th>
-      <th>Syntax</th>
-      <th>Example</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <th scope="row">Class</th>
-      <td><code>.col--custom</code></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">Class responsive</th>
-      <td><code>.col--custom-{breakpoint}</code></td>
-      <td><code>.col--custom-sm</code></td>
-    </tr>
-    <tr>
-      <th scope="row">Mixin</th>
-      <td><code>.col--custom()</code></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">Mixin responsive</th>
-      <td><code>.col--custom({breakpoint})</code></td>
-      <td><code>.col--custom(sm)</code></td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="/demos/layout/flex/flex-custom.html" data-name="custom">
-  </div>
-</div>
 
 <h2>Variables</h2>
 
@@ -746,23 +625,23 @@
     <tbody>
     <tr>
       <th scope="row">Class</th>
-      <td><code>.flex_space--{size}</code></td>
-      <td><code>.flex_space--small</code></td>
+      <td><code>.flex-space--{size}</code></td>
+      <td><code>.flex-space--small</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
-      <td><code>.flex_space--{size}-{breakpoint}</code></td>
-      <td><code>.flex_space--small-sm</code></td>
+      <td><code>.flex-space--{size}-{breakpoint}</code></td>
+      <td><code>.flex-space--small-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.flex_space({size})</code></td>
-      <td><code>.flex_space(small)</code></td>
+      <td><code>.flex-space({size})</code></td>
+      <td><code>.flex-space(small)</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.flex_space({size}, {breakpoint})</code></td>
-      <td><code>.flex_space(small, sm)</code></td>
+      <td><code>.flex-space({size}, {breakpoint})</code></td>
+      <td><code>.flex-space(small, sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -779,11 +658,11 @@
   <div class="demo-item demo-preview" data-name="none">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex_space--none</code>
+        <code>.flex-space--none</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex flex_space--none">
+      <div class="flex flex-space--none">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--12 col--8-sm"></div>
@@ -797,11 +676,11 @@
   <div class="demo-item demo-preview" data-name="tiny">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex_space--tiny</code>
+        <code>.flex-space--tiny</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex flex_space--tiny">
+      <div class="flex flex-space--tiny">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--12 col--8-sm"></div>
@@ -815,11 +694,11 @@
   <div class="demo-item demo-preview" data-name="medium">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex_space--small</code>
+        <code>.flex-space--small</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex flex_space--small">
+      <div class="flex flex-space--small">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--12 col--8-sm"></div>
@@ -833,11 +712,11 @@
   <div class="demo-item demo-preview" data-name="medium">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex_space--medium</code>
+        <code>.flex-space--medium</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex flex_space--medium">
+      <div class="flex flex-space--medium">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--12 col--8-sm"></div>
@@ -851,11 +730,11 @@
   <div class="demo-item demo-preview" data-name="big">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex_space--big</code>
+        <code>.flex-space--big</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex flex_space--big">
+      <div class="flex flex-space--big">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--12 col--8-sm"></div>
@@ -869,11 +748,11 @@
   <div class="demo-item demo-preview" data-name="giant">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex_space--giant</code>
+        <code>.flex-space--giant</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex flex_space--giant">
+      <div class="flex flex-space--giant">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--12 col--8-sm"></div>
@@ -1019,23 +898,23 @@
     <tbody>
     <tr>
       <th scope="row">Class</th>
-      <td><code>.flex-wrap</code></td>
-      <td><code>.flex-wrap</code></td>
+      <td><code>.flex--wrap</code></td>
+      <td><code>.flex--wrap</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
-      <td><code>.flex-wrap-{breakpoint}</code></td>
-      <td><code>.flex-wrap-sm</code></td>
+      <td><code>.flex--wrap-{breakpoint}</code></td>
+      <td><code>.flex--wrap-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.flex-wrap()</code></td>
-      <td><code>.flex-wrap()</code></td>
+      <td><code>.flex--wrap()</code></td>
+      <td><code>.flex--wrap()</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.flex-wrap({breakpoint})</code></td>
-      <td><code>.flex-wrap(sm)</code></td>
+      <td><code>.flex--wrap({breakpoint})</code></td>
+      <td><code>.flex--wrap(sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -1045,11 +924,11 @@
   <div class="demo-item demo-preview" data-name="reverse">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex-wrap</code>
+        <code>.flex--wrap</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex flex-wrap">
+      <div class="flex flex--wrap">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--12 col--8-sm"></div>
@@ -1063,11 +942,11 @@
   <div class="demo-item demo-preview" data-name="reverse">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex-wrap--reverse</code>
+        <code>.flex--wrap-reverse</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex flex-wrap--reverse">
+      <div class="flex flex--wrap-reverse">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--12 col--8-sm"></div>
@@ -1081,15 +960,15 @@
   <div class="demo-item demo-preview" data-name="nowrap">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex-nowrap</code>
+        <code>.flex--nowrap</code> <code>.flex--auto</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex flex-nowrap">
-        <div class="col col--4"></div>
-        <div class="col col--8"></div>
-        <div class="col col--12 col--8-sm"></div>
-        <div class="col col--12 col--4-sm"></div>
+      <div class="flex flex--nowrap">
+        <div class="col col--4 flex--auto"></div>
+        <div class="col col--8 flex--auto"></div>
+        <div class="col col--12 col--8-sm flex--auto"></div>
+        <div class="col col--12 col--4-sm flex--auto"></div>
       </div>
     </div>
   </div>
@@ -1652,7 +1531,8 @@
         </div>
         <div class="col col--12 col--3-md hide show-md">
 
-          <aside class="site-aside" data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
+          <aside class="site-aside"
+                 data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
 
             <div class="site-aside-text">
               <a href="/docs/layout/flex/" class="btn btn--nodesign">
@@ -1671,14 +1551,15 @@
 </main>
 
 
-        <footer class="site-footer" data-xt-sticky='{"position": "bottom"}'>
+        <footer class="site-footer"
+                data-xt-sticky='{"position": "bottom"}'>
           <div class="site-footer-inner">
             <div class="container">
 
               <nav class="site-footer-top display--none display--block-sm" role="navigation">
                 <div class="flex flex--auto justify-content--between">
 
-                  <div class="site-footer-top-links list_space--none">
+                  <div class="site-footer-top-links list-space--none">
                     <a href="/" class="btn btn--primary btn--nodesign">
                       <span>Home</span>
                     </a>
@@ -1711,12 +1592,12 @@
               </nav>
 
               <div class="site-footer-bottom">
-                <div class="flex flex--auto flex_space--tiny justify-content--between">
+                <div class="flex flex--auto flex-space--tiny justify-content--between">
                   <div class="site-footer-bottom-license">
                     Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator--dash"></span> Xtend v0.6.4 licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a>
                   </div>
                   <div class="site-footer-bottom-copy">
-                    © 2017 – 2018 <span>Riccardo Caroli</span>
+                    © 2017 – 2019 <span>Riccardo Caroli</span>
                   </div>
                 </div>
               </div>

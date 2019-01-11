@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- seo -->
+    <title>Demo — Xtend</title>
+    <meta name="description" content="Xtend demo" />
+
+    <!-- icons -->
+    <link rel="icon" href="/assets/images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/styles/demos.css?v=0.6.4" />
+
+    <!-- demos styles -->
+    <link rel="stylesheet" href="toggle-js.css?v=0.6.4" />
+
+  </head>
+  <body class="full">
+
+    <div id="body-outer">
+<div id="body-inner" class="demo-source-from">
+<div class="slider">
+
+  <div class="slides">
+    <div class="slides_inner">
+
+      <div class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>1</h1>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>2</h1>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>3</h1>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>4</h1>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>5</h1>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="slider_pagination">
+    <div class="list list-space--small align-items--center">
+      <button type="button" class="xt-clone" data-xt-pag>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
+</div>
+    </div>
+
+    <!-- demos source less -->
+    
+    <less-style>
+
+      @import (reference) "../../../../../dist/styles/xtend.less";
+
+// slider
+
+.slider {
+  .slides_inner {
+    overflow: hidden;
+    // dragger animations
+    .transition-none() !important;
+  }
+  .slide {
+    .toggle--block();
+    &:nth-child(3) {
+      .card_content {
+        .padding(y, big);
+      }
+    }
+  }
+}
+
+// card
+
+.card {
+  .card--secondary();
+  .card--big();
+  .text-align(center);
+}
+    </less-style>
+    
+
+    <!-- demos source js -->
+    
+    <js-script>
+
+      Xt.init.push({ // on DOM ready and on content added to DOM
+  matches: '.slider',
+  fnc: sliderInit
+});
+
+function sliderInit(main, index) {
+
+  // vars
+
+  let time = .8;
+  let timeMask = .8;
+  let timeContent = .8;
+  let sizeContent = 100;
+  CustomEase.create('easeIn', '.41,.1,.175,1');
+  CustomEase.create('easeOut', '.77,0,.175,1');
+  CustomEase.create('easeInOut', '.77,.0,.17,1');
+
+  // slider
+
+  let self = new Xt.Slider(main, {
+    "durationOn": time * 1000,
+    "durationOff": time * 1000,
+    "instant": false
+  });
+
+  let dragger = self.dragger;
+
+  // drag
+
+  dragger.addEventListener('drag.xt.slider', function (e) {
+    let target = self.targets.filter(x => x.classList.contains('active'))[0];
+    let contents = target.querySelectorAll('.card_content > *');
+    let ratio = Math.abs(self.detail.xStart - self.detail.xCurrent) / target.clientWidth;
+    // direction
+    let direction = 1;
+    if (self.detail.xStart - self.detail.xCurrent > 0) {
+      direction = -1;
+    }
+    // mask
+    TweenMax.set(target, {x: - self.detail.xPos + 'px', opacity: 1});
+    TweenMax.set(dragger, {x: self.detail.xPos});
+    // content
+    for (let content of contents) {
+      TweenMax.set(content, {x: sizeContent * ratio * direction, opacity: 1});
+    }
+  });
+
+  // dragend
+
+  dragger.addEventListener('dragend.xt.slider', function (e) {
+    let target = self.targets.filter(x => x.classList.contains('active'))[0];
+    let contents = target.querySelectorAll('.card_content > *');
+    // mask
+    TweenMax.to(target, timeMask, {x: 0, opacity: 1, ease: 'easeOut'});
+    TweenMax.to(dragger, timeMask, {x: 0, ease: 'easeOut'});
+    // content
+    for (let content of contents) {
+      TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeOut'});
+    }
+  });
+
+  // targets
+
+  for (let target of self.targets) {
+
+    // on
+
+    target.addEventListener('on.xt', function (e) {
+      let xMax = target.clientWidth;
+      let contents = target.querySelectorAll('.card_content > *');
+      // direction
+      let direction = 1;
+      if (target.classList.contains('xt-inverse')) {
+        direction = - 1;
+      }
+      // setup
+      TweenMax.set(target, {opacity: 0});
+      // mask
+      TweenMax.set(target, {x: - xMax * direction});
+      TweenMax.to(target, timeMask, {x: 0, opacity: 1, ease: 'easeIn'});
+      TweenMax.set(dragger, {x: xMax * direction});
+      TweenMax.to(dragger, timeMask, {x: 0, ease: 'easeIn'});
+      // content
+      for (let content of contents) {
+        TweenMax.set(content, {x: sizeContent * direction, opacity: 0});
+        TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeIn'});
+      }
+    });
+
+    // off
+
+    target.addEventListener('off.xt', function (e) {
+      let xMax = target.clientWidth;
+      let contents = target.querySelectorAll('.card_content > *');
+      // direction
+      let direction = 1;
+      if (target.classList.contains('xt-inverse')) {
+        direction = -1;
+      }
+      // mask
+      TweenMax.to(target, timeMask, {x: xMax * direction, opacity: 0, ease: 'easeOut'});
+      TweenMax.to(dragger, timeMask, {x: - xMax * direction, ease: 'easeOut'});
+      // content
+      for (let content of contents) {
+        TweenMax.to(content, timeContent, {x: - sizeContent * direction, opacity: 0, ease: 'easeOut'});
+      }
+    });
+
+  }
+
+}
+    </js-script>
+    
+
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.6.4"></script>
+    <script src="/assets/scripts/polyfill.min.js?v=0.6.4"></script>
+
+    <!-- demos scripts -->
+    <script src="/assets/scripts/demos.min.js?v=0.6.4"></script>
+
+    <!-- demos scripts -->
+    
+    <script>Xt.init.push({ // on DOM ready and on content added to DOM
+  matches: '.slider',
+  fnc: sliderInit
+});
+
+function sliderInit(main, index) {
+
+  // vars
+
+  let time = .8;
+  let timeMask = .8;
+  let timeContent = .8;
+  let sizeContent = 100;
+  CustomEase.create('easeIn', '.41,.1,.175,1');
+  CustomEase.create('easeOut', '.77,0,.175,1');
+  CustomEase.create('easeInOut', '.77,.0,.17,1');
+
+  // slider
+
+  let self = new Xt.Slider(main, {
+    "durationOn": time * 1000,
+    "durationOff": time * 1000,
+    "instant": false
+  });
+
+  let dragger = self.dragger;
+
+  // drag
+
+  dragger.addEventListener('drag.xt.slider', function (e) {
+    let target = self.targets.filter(x => x.classList.contains('active'))[0];
+    let contents = target.querySelectorAll('.card_content > *');
+    let ratio = Math.abs(self.detail.xStart - self.detail.xCurrent) / target.clientWidth;
+    // direction
+    let direction = 1;
+    if (self.detail.xStart - self.detail.xCurrent > 0) {
+      direction = -1;
+    }
+    // mask
+    TweenMax.set(target, {x: - self.detail.xPos + 'px', opacity: 1});
+    TweenMax.set(dragger, {x: self.detail.xPos});
+    // content
+    for (let content of contents) {
+      TweenMax.set(content, {x: sizeContent * ratio * direction, opacity: 1});
+    }
+  });
+
+  // dragend
+
+  dragger.addEventListener('dragend.xt.slider', function (e) {
+    let target = self.targets.filter(x => x.classList.contains('active'))[0];
+    let contents = target.querySelectorAll('.card_content > *');
+    // mask
+    TweenMax.to(target, timeMask, {x: 0, opacity: 1, ease: 'easeOut'});
+    TweenMax.to(dragger, timeMask, {x: 0, ease: 'easeOut'});
+    // content
+    for (let content of contents) {
+      TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeOut'});
+    }
+  });
+
+  // targets
+
+  for (let target of self.targets) {
+
+    // on
+
+    target.addEventListener('on.xt', function (e) {
+      let xMax = target.clientWidth;
+      let contents = target.querySelectorAll('.card_content > *');
+      // direction
+      let direction = 1;
+      if (target.classList.contains('xt-inverse')) {
+        direction = - 1;
+      }
+      // setup
+      TweenMax.set(target, {opacity: 0});
+      // mask
+      TweenMax.set(target, {x: - xMax * direction});
+      TweenMax.to(target, timeMask, {x: 0, opacity: 1, ease: 'easeIn'});
+      TweenMax.set(dragger, {x: xMax * direction});
+      TweenMax.to(dragger, timeMask, {x: 0, ease: 'easeIn'});
+      // content
+      for (let content of contents) {
+        TweenMax.set(content, {x: sizeContent * direction, opacity: 0});
+        TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeIn'});
+      }
+    });
+
+    // off
+
+    target.addEventListener('off.xt', function (e) {
+      let xMax = target.clientWidth;
+      let contents = target.querySelectorAll('.card_content > *');
+      // direction
+      let direction = 1;
+      if (target.classList.contains('xt-inverse')) {
+        direction = -1;
+      }
+      // mask
+      TweenMax.to(target, timeMask, {x: xMax * direction, opacity: 0, ease: 'easeOut'});
+      TweenMax.to(dragger, timeMask, {x: - xMax * direction, ease: 'easeOut'});
+      // content
+      for (let content of contents) {
+        TweenMax.to(content, timeContent, {x: - sizeContent * direction, opacity: 0, ease: 'easeOut'});
+      }
+    });
+
+  }
+
+}</script>
+    
+
+    <!-- demos utils -->
+    <script>
+      if (window.self !== window.top) {
+        // add id
+        document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
+        // init iframe
+        window.parent.initIframe(window.name);
+      }
+    </script>
+
+  </body>
+</html>

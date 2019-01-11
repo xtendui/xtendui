@@ -8,15 +8,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <!-- seo -->
-  <title>Sticky • Xtend</title>
+  <title>Sticky — Xtend</title>
   <meta name="description" content="Lorem ipsum"/>
 
   <!-- icons -->
-  <link rel="icon" href="/assets/images/favicon.ico?v=0.6.4"/>
+  <link rel="icon" href="/assets/images/favicon.png?v=0.6.4"/>
   <link rel="apple-touch-icon" sizes="152x152"
         href="/assets/images/favicon-152x152.png?v=0.6.4"/>
 
@@ -67,6 +66,7 @@
          id="site-menu">
       <div class="overlay">
         <div class="overlay_inner">
+          <div class="overlay_design"></div>
 
           <div class="site-header-top">
             <div class="container">
@@ -151,7 +151,7 @@
           <div class="container">
             <div class="flex flex--auto justify-content--between align-items--start">
 
-              <div class="site-breadcrumbs-body flex flex_space--none display--none display--flex-sm"
+              <div class="site-breadcrumbs-body flex flex-space--none display--none display--flex-sm"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
                 
@@ -391,17 +391,17 @@
                       
                       
                         <div class="site-breadcrumbs-body-main">
-                          <a href="/docs/others/" class="btn btn--primary btn--nodesign">
-                            <span>Others</span>
+                          <a href="/docs/other/" class="btn btn--primary btn--nodesign">
+                            <span>Other</span>
                           </a>
                           <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
                             <div class="site-breadcrumbs-body-sub-inner">
                               
-                              <a href="/docs/others/alert/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/other/alert/" class="btn btn--primary btn--nodesign">
                                 <span>Alert</span>
                               </a>
                               
-                              <a href="/docs/others/loader/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/other/loader/" class="btn btn--primary btn--nodesign">
                                 <span>Loader</span>
                               </a>
                               
@@ -418,7 +418,7 @@
                 
               </div>
 
-              <div class="site-breadcrumbs-body flex flex_space--none display--none-sm flex--auto"
+              <div class="site-breadcrumbs-body flex flex-space--none display--none-sm flex--auto"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
 
@@ -517,8 +517,8 @@
                               
                           
                               
-                              <a href="/docs/others/" class="btn btn--primary btn--nodesign">
-                                <span>Others</span>
+                              <a href="/docs/other/" class="btn btn--primary btn--nodesign">
+                                <span>Other</span>
                               </a>
                               
                           
@@ -531,7 +531,7 @@
                 
               </div>
 
-              <div class="site-breadcrumbs-meta flex flex_space--none align-items--center">
+              <div class="site-breadcrumbs-meta flex flex-space--none align-items--center">
 
                 <div class="display--none-sm display--block-md">
                   <a href="https://github.com/minimit/xtend-library/releases" target="_blank" rel="noopener" class="btn btn--primary btn--icon btn--nodesign" aria-label="Download">
@@ -580,7 +580,7 @@
       <div class="flex">
         <div class="col col--12 col--9-md">
 
-          <article class="site-article list_default">
+          <article class="site-article list-default">
             <h2>Usage</h2>
 
 <p>Use this markup to create a sticky. <code>[data-xt-sticky]</code> must be <a
@@ -616,17 +616,6 @@
 
 <pre>
   <code class="js">
-XtSticky.defaults = {
-  "class": "active",
-  "on": "scroll resize",
-  "min": 0,
-  "max": Infinity,
-  "position": "top",
-  "limit": {"bottom": Infinity},
-  "contain": false,
-  "hide": false,
-  "aria": false
-};
   </code>
 </pre>
 
@@ -643,7 +632,7 @@ XtSticky.defaults = {
   position when the sticky is not activated.</p>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="/demos/presentation/sticky/sticky-option-position.html"
+  <div class="demo-item" data-iframe="/demos/presentation/sticky/option-position.html"
        data-name="position">
     <div class="demo-text">
       <div class="alert_content">
@@ -651,7 +640,7 @@ XtSticky.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="/demos/presentation/sticky/sticky-option-limit.html"
+  <div class="demo-item" data-iframe="/demos/presentation/sticky/option-limit.html"
        data-name="limit">
     <div class="demo-text">
       <div class="alert_content">
@@ -659,7 +648,7 @@ XtSticky.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="/demos/presentation/sticky/sticky-mode-absolute.html"
+  <div class="demo-item" data-iframe="/demos/presentation/sticky/mode-absolute.html"
        data-name="absolute">
     <div class="demo-text">
       <div class="alert_content">
@@ -667,7 +656,7 @@ XtSticky.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="/demos/presentation/sticky/sticky-mode-fixed.html"
+  <div class="demo-item" data-iframe="/demos/presentation/sticky/mode-fixed.html"
        data-name="fixed">
     <div class="demo-text">
       <div class="alert_content">
@@ -675,11 +664,11 @@ XtSticky.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="/demos/presentation/sticky/sticky-responsive.html"
+  <div class="demo-item" data-iframe="/demos/presentation/sticky/responsive.html"
        data-name="responsive">
     <div class="demo-text">
       <div class="alert_content">
-        It's possible to disable sticky with <code>.xt-sticky-disable</code>, so also inside <strong>media query
+        It's possible to disable sticky with <code>.xt-sticky--disable</code>, so also inside <strong>media query
         mixins</strong> (@TODO link media queries mixins) for responsive
       </div>
     </div>
@@ -700,7 +689,7 @@ XtSticky.defaults = {
 </div>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="/demos/presentation/sticky/sticky-contain-top.html"
+  <div class="demo-item" data-iframe="/demos/presentation/sticky/contain-top.html"
        data-name="top">
     <div class="demo-text">
       <div class="alert_content">
@@ -708,7 +697,7 @@ XtSticky.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="/demos/presentation/sticky/sticky-contain-bottom.html"
+  <div class="demo-item" data-iframe="/demos/presentation/sticky/contain-bottom.html"
        data-name="bottom">
     <div class="demo-text">
       <div class="alert_content">
@@ -721,11 +710,10 @@ XtSticky.defaults = {
 <h3>Hide</h3>
 
 <p>To hide the sticky when scrolling down or up use <code>"hide": "down"</code> or <code>"hide": "up"</code>. Here's a
-  complex
-  example with hide behaviour.</p>
+  complex example with hide behaviour.</p>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="/demos/presentation/sticky/sticky-hide.html" data-name="hide">
+  <div class="demo-item" data-iframe="/demos/presentation/sticky/hide.html" data-name="hide">
     <div class="demo-text">
       <div class="alert_content">
         <code>"hide": "down"</code> <code>"hide": "up"</code>
@@ -739,7 +727,7 @@ XtSticky.defaults = {
 <p>To show or hide content when sticky activates use <code>.show-sticky</code> or <code>.hide-sticky</code>.</p>
 
 <div class="demo">
-  <div class="demo-item" data-iframe="/demos/presentation/sticky/sticky-showhide-top.html"
+  <div class="demo-item" data-iframe="/demos/presentation/sticky/showhide-top.html"
        data-name="top">
     <div class="demo-text">
       <div class="alert_content">
@@ -747,7 +735,7 @@ XtSticky.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="/demos/presentation/sticky/sticky-showhide-bottom.html"
+  <div class="demo-item" data-iframe="/demos/presentation/sticky/showhide-bottom.html"
        data-name="bottom">
     <div class="demo-text">
       <div class="alert_content">
@@ -755,7 +743,7 @@ XtSticky.defaults = {
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="/demos/presentation/sticky/sticky-showhide-hide.html"
+  <div class="demo-item" data-iframe="/demos/presentation/sticky/showhide-hide.html"
        data-name="hide">
     <div class="demo-text">
       <div class="alert_content">
@@ -770,7 +758,8 @@ XtSticky.defaults = {
         </div>
         <div class="col col--12 col--3-md hide show-md">
 
-          <aside class="site-aside" data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
+          <aside class="site-aside"
+                 data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
 
             <div class="site-aside-text">
               <a href="/docs/presentation/sticky/" class="btn btn--nodesign">
@@ -789,14 +778,15 @@ XtSticky.defaults = {
 </main>
 
 
-        <footer class="site-footer" data-xt-sticky='{"position": "bottom"}'>
+        <footer class="site-footer"
+                data-xt-sticky='{"position": "bottom"}'>
           <div class="site-footer-inner">
             <div class="container">
 
               <nav class="site-footer-top display--none display--block-sm" role="navigation">
                 <div class="flex flex--auto justify-content--between">
 
-                  <div class="site-footer-top-links list_space--none">
+                  <div class="site-footer-top-links list-space--none">
                     <a href="/" class="btn btn--primary btn--nodesign">
                       <span>Home</span>
                     </a>
@@ -829,12 +819,12 @@ XtSticky.defaults = {
               </nav>
 
               <div class="site-footer-bottom">
-                <div class="flex flex--auto flex_space--tiny justify-content--between">
+                <div class="flex flex--auto flex-space--tiny justify-content--between">
                   <div class="site-footer-bottom-license">
                     Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator--dash"></span> Xtend v0.6.4 licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a>
                   </div>
                   <div class="site-footer-bottom-copy">
-                    © 2017 – 2018 <span>Riccardo Caroli</span>
+                    © 2017 – 2019 <span>Riccardo Caroli</span>
                   </div>
                 </div>
               </div>

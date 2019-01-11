@@ -8,15 +8,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <!-- seo -->
-  <title>List • Xtend</title>
+  <title>List — Xtend</title>
   <meta name="description" content="List is used to space it's childrens in a column/row layout. Can also be used to automatically style lists of buttons."/>
 
   <!-- icons -->
-  <link rel="icon" href="/assets/images/favicon.ico?v=0.6.4"/>
+  <link rel="icon" href="/assets/images/favicon.png?v=0.6.4"/>
   <link rel="apple-touch-icon" sizes="152x152"
         href="/assets/images/favicon-152x152.png?v=0.6.4"/>
 
@@ -67,6 +66,7 @@
          id="site-menu">
       <div class="overlay">
         <div class="overlay_inner">
+          <div class="overlay_design"></div>
 
           <div class="site-header-top">
             <div class="container">
@@ -151,7 +151,7 @@
           <div class="container">
             <div class="flex flex--auto justify-content--between align-items--start">
 
-              <div class="site-breadcrumbs-body flex flex_space--none display--none display--flex-sm"
+              <div class="site-breadcrumbs-body flex flex-space--none display--none display--flex-sm"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
                 
@@ -391,17 +391,17 @@
                       
                       
                         <div class="site-breadcrumbs-body-main">
-                          <a href="/docs/others/" class="btn btn--primary btn--nodesign">
-                            <span>Others</span>
+                          <a href="/docs/other/" class="btn btn--primary btn--nodesign">
+                            <span>Other</span>
                           </a>
                           <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
                             <div class="site-breadcrumbs-body-sub-inner">
                               
-                              <a href="/docs/others/alert/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/other/alert/" class="btn btn--primary btn--nodesign">
                                 <span>Alert</span>
                               </a>
                               
-                              <a href="/docs/others/loader/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/other/loader/" class="btn btn--primary btn--nodesign">
                                 <span>Loader</span>
                               </a>
                               
@@ -418,7 +418,7 @@
                 
               </div>
 
-              <div class="site-breadcrumbs-body flex flex_space--none display--none-sm flex--auto"
+              <div class="site-breadcrumbs-body flex flex-space--none display--none-sm flex--auto"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
 
@@ -517,8 +517,8 @@
                               
                           
                               
-                              <a href="/docs/others/" class="btn btn--primary btn--nodesign">
-                                <span>Others</span>
+                              <a href="/docs/other/" class="btn btn--primary btn--nodesign">
+                                <span>Other</span>
                               </a>
                               
                           
@@ -531,7 +531,7 @@
                 
               </div>
 
-              <div class="site-breadcrumbs-meta flex flex_space--none align-items--center">
+              <div class="site-breadcrumbs-meta flex flex-space--none align-items--center">
 
                 <div class="display--none-sm display--block-md">
                   <a href="https://github.com/minimit/xtend-library/releases" target="_blank" rel="noopener" class="btn btn--primary btn--icon btn--nodesign" aria-label="Download">
@@ -580,7 +580,7 @@
       <div class="flex">
         <div class="col col--12 col--9-md">
 
-          <article class="site-article list_default">
+          <article class="site-article list-default">
             <h2>Usage</h2>
 
 <p>Use <code>.list</code> to create a <strong>row list</strong> or <code>.list.list--block</code> to create a <strong>column
@@ -818,7 +818,8 @@
           </button>
           <div class="drop">
             <div class="drop_inner">
-              <div class="alert_content">
+              <div class="drop_design"></div>
+              <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
                     <a href="#">
@@ -1071,23 +1072,23 @@
     <tbody>
     <tr>
       <th scope="row">Class</th>
-      <td><code>.list_space--{size}</code></td>
-      <td><code>.list_space--small</code></td>
+      <td><code>.list-space--{size}</code></td>
+      <td><code>.list-space--small</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
-      <td><code>.list_space--{size}-{breakpoint}</code></td>
-      <td><code>.list_space--small-sm</code></td>
+      <td><code>.list-space--{size}-{breakpoint}</code></td>
+      <td><code>.list-space--small-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.list_space({size})</code></td>
-      <td><code>.list_space(small)</code></td>
+      <td><code>.list-space({size})</code></td>
+      <td><code>.list-space(small)</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.list_space({size}, {breakpoint})</code></td>
-      <td><code>.list_space(small, sm)</code></td>
+      <td><code>.list-space({size}, {breakpoint})</code></td>
+      <td><code>.list-space(small, sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -1104,11 +1105,11 @@
   <div class="demo-item demo-preview" data-name="none">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.list_space--none</code>
+        <code>.list-space--none</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list_space--none">
+      <ul class="list list-space--none">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -1130,11 +1131,11 @@
   <div class="demo-item demo-preview" data-name="tiny">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.list_space--tiny</code>
+        <code>.list-space--tiny</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list_space--tiny">
+      <ul class="list list-space--tiny">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -1156,11 +1157,11 @@
   <div class="demo-item demo-preview" data-name="small">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.list_space--small</code>
+        <code>.list-space--small</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list_space--small">
+      <ul class="list list-space--small">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -1182,11 +1183,11 @@
   <div class="demo-item demo-preview" data-name="medium">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.list_space--medium</code>
+        <code>.list-space--medium</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list_space--medium">
+      <ul class="list list-space--medium">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -1208,11 +1209,11 @@
   <div class="demo-item demo-preview" data-name="big">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.list_space--big</code>
+        <code>.list-space--big</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list_space--big">
+      <ul class="list list-space--big">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -1234,11 +1235,11 @@
   <div class="demo-item demo-preview" data-name="giant">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.list_space--giant</code>
+        <code>.list-space--giant</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list list_space--giant">
+      <ul class="list list-space--giant">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -1919,23 +1920,23 @@
     <tbody>
     <tr>
       <th scope="row">Class</th>
-      <td><code>.flex-wrap</code></td>
-      <td><code>.flex-wrap</code></td>
+      <td><code>.flex--wrap</code></td>
+      <td><code>.flex--wrap</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
-      <td><code>.flex-wrap-{breakpoint}</code></td>
-      <td><code>.flex-wrap-sm</code></td>
+      <td><code>.flex--wrap-{breakpoint}</code></td>
+      <td><code>.flex--wrap-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.flex-wrap()</code></td>
-      <td><code>.flex-wrap()</code></td>
+      <td><code>.flex--wrap()</code></td>
+      <td><code>.flex--wrap()</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.flex-wrap({breakpoint})</code></td>
-      <td><code>.flex-wrap(sm)</code></td>
+      <td><code>.flex--wrap({breakpoint})</code></td>
+      <td><code>.flex--wrap(sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -1945,11 +1946,11 @@
   <div class="demo-item demo-preview" data-name="reverse">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex-wrap</code>
+        <code>.flex--wrap</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list flex-wrap">
+      <ul class="list flex--wrap">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -2001,11 +2002,11 @@
   <div class="demo-item demo-preview" data-name="reverse">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex-wrap--reverse</code>
+        <code>.flex--wrap-reverse</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list flex-wrap--reverse">
+      <ul class="list flex--wrap-reverse">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -2057,11 +2058,11 @@
   <div class="demo-item demo-preview" data-name="nowrap">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex-nowrap</code>
+        <code>.flex--nowrap</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list flex-nowrap">
+      <ul class="list flex--nowrap">
         <li>
           <button type="button">
             <span>Lorem Ipsum</span>
@@ -3253,7 +3254,8 @@
         </div>
         <div class="col col--12 col--3-md hide show-md">
 
-          <aside class="site-aside" data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
+          <aside class="site-aside"
+                 data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
 
             <div class="site-aside-text">
               <a href="/docs/layout/list/" class="btn btn--nodesign">
@@ -3272,14 +3274,15 @@
 </main>
 
 
-        <footer class="site-footer" data-xt-sticky='{"position": "bottom"}'>
+        <footer class="site-footer"
+                data-xt-sticky='{"position": "bottom"}'>
           <div class="site-footer-inner">
             <div class="container">
 
               <nav class="site-footer-top display--none display--block-sm" role="navigation">
                 <div class="flex flex--auto justify-content--between">
 
-                  <div class="site-footer-top-links list_space--none">
+                  <div class="site-footer-top-links list-space--none">
                     <a href="/" class="btn btn--primary btn--nodesign">
                       <span>Home</span>
                     </a>
@@ -3312,12 +3315,12 @@
               </nav>
 
               <div class="site-footer-bottom">
-                <div class="flex flex--auto flex_space--tiny justify-content--between">
+                <div class="flex flex--auto flex-space--tiny justify-content--between">
                   <div class="site-footer-bottom-license">
                     Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator--dash"></span> Xtend v0.6.4 licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a>
                   </div>
                   <div class="site-footer-bottom-copy">
-                    © 2017 – 2018 <span>Riccardo Caroli</span>
+                    © 2017 – 2019 <span>Riccardo Caroli</span>
                   </div>
                 </div>
               </div>
