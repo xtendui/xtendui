@@ -450,6 +450,8 @@ class Slider extends Core {
     let xCache = self.detail.xCache || 0;
     // inertia
     dragger.classList.remove('dragging');
+    // prevent links
+    dragger.classList.remove('disable--links');
     // activate or reset
     let xPos = Xt.getTranslate(dragger)[0];
     let xDist = xPos - xCache;
@@ -540,6 +542,12 @@ class Slider extends Core {
     }
     // drag position
     dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
+    // prevent links
+    if (Math.abs(self.detail.xPos) > self.options.drag.threshold) {
+      dragger.classList.add('disable--links');
+    } else {
+      dragger.classList.remove('disable--links');
+    }
     // listener dispatch
     dragger.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: self.eDetail}));
   }
