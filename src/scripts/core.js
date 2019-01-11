@@ -503,7 +503,7 @@ class Core {
   eventOnHandler(element, e) {
     let self = this;
     let options = self.options;
-    // prevent links (needed for xt-ajax)
+    // prevent links (needed for xt-ajax to go to links and propagate event if inside targets)
     if (element.tagName === 'A') {
       e.preventDefault();
     }
