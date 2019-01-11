@@ -1574,7 +1574,7 @@ class Core {
     let self = this;
     let options = self.options;
     // anim
-    let duration = Xt.animDuration(el, options.durationOn);
+    let duration = Xt.animTime(el, options.durationOn);
     clearTimeout(el.dataset.xtAnimTimeout);
     if (!duration) {
       self.queueOnAnimDone(obj, el, type);
@@ -1595,7 +1595,7 @@ class Core {
     let self = this;
     let options = self.options;
     // anim
-    let duration = Xt.animDuration(el, options.durationOff);
+    let duration = Xt.animTime(el, options.durationOff);
     clearTimeout(el.dataset.xtAnimTimeout);
     if (!duration) {
       self.queueOffAnimDone(obj, el, type);

@@ -186,7 +186,7 @@ class Slider extends Core {
       Xt.eventDelay(e, self.object, function() {
         // reset done
         for (let slide of self.targets) {
-          slide.dataset.xtSlideOnDone = 'false';
+          delete slide.dataset.xtSlideOnDone;
         }
         // init
         self.detail.initial = true;
@@ -424,7 +424,7 @@ class Slider extends Core {
     let group = slide.getAttribute('data-xt-group');
     if (group) {
       // only one call per group
-      slide.dataset.xtSlideOnDone = 'false';
+      delete slide.dataset.xtSlideOnDone;
     }
   }
 

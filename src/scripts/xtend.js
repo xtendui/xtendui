@@ -674,12 +674,12 @@ Xt.parents = function (el, query) {
 };
 
 /**
- * get transition or animation duration
+ * get transition or animation time
  * @param {Node|HTMLElement|EventTarget|Window} el Element animating
  * @param {Number} timing Force duration
  * @returns {Number} Time in milliseconds
  */
-Xt.animDuration = function (el, timing = null) {
+Xt.animTime = function (el, timing = null) {
   if (timing) {
     return timing;
   } else {
@@ -691,6 +691,16 @@ Xt.animDuration = function (el, timing = null) {
     }
     return timing * 1000;
   }
+};
+
+/**
+ * execute function after transition or animation
+ * @param {Node|HTMLElement|EventTarget|Window} el Element animating
+ * @param {Function} func Function to execute after transition or animation
+ */
+Xt.animTimeout = function (el, func) {
+  clearTimeout(parseFloat(el.dataset.xtAnimTimeout));
+  el.dataset.xtAnimTimeout = setTimeout(func, Xt.animTime(el)).toString();
 };
 
 /**

@@ -28,7 +28,7 @@ function loaderInit(main, index) {
     } else {
       loader.classList.remove('active');
       loader.classList.add('out');
-      setTimeout(loaderTimeout, Xt.animDuration(loader));
+      Xt.animTimeout(loader, loaderTimeout);
     }
   }
   loaderTimeout();
