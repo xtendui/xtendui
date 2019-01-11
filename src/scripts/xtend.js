@@ -595,7 +595,7 @@ Xt.scrollbarWidth = function (force = false) {
  * Get unique id
  * @returns {String} Unique id
  */
-Xt.getUniqueID = function () {
+Xt.getuniqueId = function () {
   Xt.uid = Xt.uid !== undefined ? Xt.uid : 0;
   return 'xt-' + (Xt.uid++);
 };

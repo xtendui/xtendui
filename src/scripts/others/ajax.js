@@ -141,7 +141,7 @@ class Ajax extends Core {
     let self = this;
     let options = self.options;
     // set substitute
-    let target = self.object;
+    let target = self.object.querySelectorAll(options.query)[0] || self.object;
     let html = document.createElement('html');
     html.innerHTML = responseText.trim();
     let title = html.querySelectorAll('head title')[0].innerHTML;

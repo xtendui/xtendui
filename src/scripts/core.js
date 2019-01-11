@@ -110,8 +110,8 @@ class Core {
       // xtend unique mode
       self.mode = 'multiple';
       self.container = self.object;
-      self.container.dataset.uniqueID = self.container.dataset.uniqueID ? self.container.dataset.uniqueID : Xt.getUniqueID();
-      self.namespace = self.constructor.componentName + '-' + self.container.dataset.uniqueID;
+      self.container.dataset.uniqueId = self.container.dataset.uniqueId ? self.container.dataset.uniqueId : Xt.getuniqueId();
+      self.namespace = self.constructor.componentName + '-' + self.container.dataset.uniqueId;
     }
     // final namespace
     self.namespace = self.namespace.replace(/^[^a-z]+|[^\w:.-]+/gi, '');
@@ -255,7 +255,7 @@ class Core {
           if (options.aria === true || options.aria.labelledby || options.aria.controls) {
             let id = ariaEl.getAttribute('id');
             if (!id) {
-              ariaEl.setAttribute('id', Xt.getUniqueID());
+              ariaEl.setAttribute('id', Xt.getuniqueId());
             }
           }
           // selected
@@ -279,7 +279,7 @@ class Core {
           if (options.aria === true || options.aria.labelledby || options.aria.controls) {
             let id = tr.getAttribute('id');
             if (!id) {
-              tr.setAttribute('id', Xt.getUniqueID());
+              tr.setAttribute('id', Xt.getuniqueId());
             }
           }
           // labelledby
