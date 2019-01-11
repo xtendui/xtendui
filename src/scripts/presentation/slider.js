@@ -149,14 +149,14 @@ class Slider extends Core {
       slide.classList.add('link-none');
       // slide on
       let slideOnHandler = Xt.dataStorage.put(slide, 'slideOnHandler' + self.namespace,
-        self.eventSlideOnHandler.bind(self).bind(self, dragger));
+        self.eventSlideOnHandler.bind(self).bind(self, dragger, slide));
       slide.removeEventListener('on.xt', slideOnHandler);
-      slide.addEventListener('on.xt', slideOnHandler, true); // useCapture @FIX custom events order (slider resize)
+      slide.addEventListener('on.xt', slideOnHandler, true); // @FIX event.xt: useCapture for custom events order on re-init(
       // slide off
       let slideOffHandler = Xt.dataStorage.put(slide, 'slideOffHandler' + self.namespace,
-        self.eventSlideOffHandler.bind(self).bind(self, dragger));
+        self.eventSlideOffHandler.bind(self).bind(self, dragger, slide));
       slide.removeEventListener('off.xt', slideOffHandler);
-      slide.addEventListener('off.xt', slideOffHandler, true); // useCapture @FIX custom events order (slider resize)
+      slide.addEventListener('off.xt', slideOffHandler, true); // @FIX event.xt: useCapture for custom events order on re-init(
     }
     // dragger
     if (options.drag) {
@@ -199,23 +199,29 @@ class Slider extends Core {
   /**
    * slide on handler
    * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Node|HTMLElement|EventTarget|Window} slide
    * @param {Event} e
    */
-  eventSlideOnHandler(dragger, e) {
+  eventSlideOnHandler(dragger, slide, e) {
     let self = this;
     // handler
-    self.eventSlideOn(dragger, e);
+    if (e.target === slide) { // @FIX event.xt: handler triggered by child xt events
+      self.eventSlideOn(dragger, e);
+    }
   }
 
   /**
    * slide off handler
    * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Node|HTMLElement|EventTarget|Window} slide
    * @param {Event} e
    */
-  eventSlideOffHandler(dragger, e) {
+  eventSlideOffHandler(dragger, slide, e) {
     let self = this;
     // handler
-    self.eventSlideOff(dragger, e);
+    if (e.target === slide) { // @FIX event.xt: handler triggered by child xt events
+      self.eventSlideOff(dragger, e);
+    }
   }
 
   /**
