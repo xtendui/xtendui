@@ -170,11 +170,6 @@ class Slider extends Core {
       }
       // grab
       dragger.classList.add('xt-grab');
-      // @FIX wrong dragger values on init
-      dragger.classList.add('dragging');
-      window.requestAnimationFrame(function () {
-        dragger.classList.remove('dragging');
-      });
     }
   }
 
