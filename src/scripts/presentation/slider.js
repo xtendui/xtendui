@@ -160,6 +160,7 @@ class Slider extends Core {
     }
     // dragger
     if (options.drag) {
+      // drag
       let dragstartHandler = Xt.dataStorage.put(dragger, 'dragstartHandler' + self.namespace,
         self.eventDragstartHandler.bind(self).bind(self, dragger));
       let events = ['mousedown', 'touchstart'];
@@ -169,6 +170,11 @@ class Slider extends Core {
       }
       // grab
       dragger.classList.add('xt-grab');
+      // @FIX wrong dragger values on init
+      dragger.classList.add('dragging');
+      window.requestAnimationFrame(function () {
+        dragger.classList.remove('dragging');
+      });
     }
   }
 
