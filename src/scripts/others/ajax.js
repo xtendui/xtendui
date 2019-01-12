@@ -114,18 +114,32 @@ class Ajax extends Core {
    */
   ajaxCall(url) {
     let self = this;
+    // check url
+    let index = function (url) {
+      let found;
+      found = url.indexOf('//') !== -1;
+      return found;
+    };
+    let domain = function (url) {
+      return url.replace('http://', '').replace('https://', '').replace('//', '').split('/')[0];
+    };
+    if (index(url)) {
+      if (domain(location.href) !== domain(url)) {
+        return false;
+      }
+    }
     // make ajax call
     if (url) {
       let request = new XMLHttpRequest();
       request.open('GET', url, true);
-      request.onload = function() {
+      request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
           self.ajaxSuccess(url, request.responseText);
         } else {
           self.ajaxError(url, request.responseText);
         }
       };
-      request.onerror = function() {
+      request.onerror = function () {
         self.ajaxError(url, request.responseText);
       };
       request.send();
@@ -229,7 +243,7 @@ class Ajax extends Core {
 Ajax.componentName = 'ajax';
 Ajax.defaults = {
   "query": "body", // needs to be unique
-  "elements": "a[href^=\"/\"]",
+  "elements": "a[href]",
   "class": "active",
   "on": "click",
   "min": 0,
