@@ -11,15 +11,19 @@
     width: 1.5rem;
     height: 1.5rem;
   }
+  svg {
+    filter: drop-shadow(0 .1rem .2rem fade(@black, @perc--md)) drop-shadow(0 .2rem .4rem fade(@black, @perc--lg));
+  }
   circle {
     fill: none;
-    stroke-width: 25;
+    stroke-width: 30;
     transform: rotateY(0deg) rotateZ(-90deg);
     transform-origin: center center;
     .btn & {
-      stroke-width: 35;
+      stroke-width: 40;
     }
     &:nth-child(1) {
+      display: none;
       position: absolute;
       top: 0;
       left: 0;
@@ -43,9 +47,11 @@
     animation-timing-function: @bez--out;
   }
   51% {
+    stroke-dashoffset: 0;
     transform: rotateY(180deg) rotateZ(90deg);
   }
   100% {
+    stroke-dashoffset: 1;
     transform: rotateY(180deg) rotateZ(-90deg);
   }
 }

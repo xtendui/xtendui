@@ -133,7 +133,7 @@ function sliderInit(main, index) {
   // follow mouse
 
   let spinner = object.querySelectorAll('.spinner')[0];
-  let time = .8;
+  let spinnerTime = .8;
 
   function mousemove(e) {
     // vars
@@ -171,7 +171,7 @@ function sliderInit(main, index) {
         tween.kill();
       }
     }
-    TweenMax.to(spinner, time, {top: top, left: left, ease: 'easeInOut'});
+    TweenMax.to(spinner, spinnerTime, {top: top, left: left, ease: 'easeInOut'});
   }
 
   function mouseleave(e) {
@@ -186,7 +186,7 @@ function sliderInit(main, index) {
         tween.kill();
       }
     }
-    TweenMax.to(spinner, time, {top: top, left: left, ease: 'easeInOut'});
+    TweenMax.to(spinner, spinnerTime, {top: top, left: left, ease: 'easeInOut'});
   }
 
   object.removeEventListener('mousemove', mousemove);
