@@ -35,7 +35,7 @@ function sliderInit(main, index) {
       }
     } else {
       TweenMax.set(spinner, {strokeDashoffset: 1});
-      TweenMax.to(spinner, e.detail.autoTime / 1000, {strokeDashoffset: 0, ease: 'easeInOut', autoRound:false});
+      TweenMax.to(spinner, e.detail.autoTime / 1000, {strokeDashoffset: 0, ease: 'easeInOut', autoRound: false});
     }
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
