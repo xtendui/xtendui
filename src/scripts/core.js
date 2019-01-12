@@ -1782,15 +1782,16 @@ class Core {
    */
   specialCollapseOn(el) {
     if (el.classList.contains('collapse--height')) {
-      el.classList.add('xt-calculating');
+      el.classList.add('xt-hide');
       el.style.height = 'auto';
       el.style.paddingTop = '';
       el.style.paddingBottom = '';
       let h = el.clientHeight + 'px';
       let pt = el.style.paddingTop;
       let pb = el.style.paddingBottom;
+      window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
       el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-        el.classList.remove('xt-calculating');
+        el.classList.remove('xt-hide');
         el.style.height = '0';
         el.style.paddingTop = '0';
         el.style.paddingBottom = '0';
@@ -1802,15 +1803,16 @@ class Core {
       }).toString();
     }
     if (el.classList.contains('collapse--width')) {
-      el.classList.add('xt-calculating');
+      el.classList.add('xt-hide');
       el.style.width = 'auto';
       el.style.paddingLeft = '';
       el.style.paddingRight = '';
       let w = el.clientHeight + 'px';
       let pl = el.style.paddingLeft;
       let pr = el.style.paddingRight;
+      window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
       el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-        el.classList.remove('xt-calculating');
+        el.classList.remove('xt-hide');
         el.style.width = '0';
         el.style.paddingLeft = '0';
         el.style.paddingRight = '0';
@@ -1869,9 +1871,13 @@ class Core {
   specialCollapseReset(el) {
     if (el.classList.contains('collapse--height')) {
       el.style.height = 'auto';
+      el.style.paddingTop = '';
+      el.style.paddingBottom = '';
     }
     if (el.classList.contains('collapse--width')) {
       el.style.width = 'auto';
+      el.style.paddingLeft = '';
+      el.style.paddingRight = '';
     }
   }
 
