@@ -89,7 +89,7 @@ class Sticky extends Core {
       let events = [...options.on.split(' ')];
       for (let event of events) {
         window.removeEventListener(event, stickyHandler);
-        window.addEventListener(event, stickyHandler);
+        window.addEventListener(event, stickyHandler, Xt.passiveSupported ? {passive: true} : false);
       }
     }
     window.removeEventListener('scroll.xt.sticky', stickyHandler);

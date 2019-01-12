@@ -674,6 +674,17 @@ Xt.parents = function (el, query) {
 };
 
 /**
+ * autoClose inside Element
+ * @param {Node|HTMLElement|EventTarget|Window} el Element container
+ */
+Xt.autoClose = function (el) {
+  let query = '[data-xt-namespace^="drop-xt-"]';
+  for (let drop of el.querySelectorAll(query)) {
+    drop.dispatchEvent(new CustomEvent('off.xt'));
+  }
+};
+
+/**
  * get transition or animation time
  * @param {Node|HTMLElement|EventTarget|Window} el Element animating
  * @param {Number} timing Force duration
@@ -701,17 +712,6 @@ Xt.animTime = function (el, timing = null) {
 Xt.animTimeout = function (el, func) {
   clearTimeout(parseFloat(el.dataset.xtAnimTimeout));
   el.dataset.xtAnimTimeout = setTimeout(func, Xt.animTime(el)).toString();
-};
-
-/**
- * autoClose inside Element
- * @param {Node|HTMLElement|EventTarget|Window} el Element container
- */
-Xt.autoClose = function (el) {
-  let query = '[data-xt-namespace^="drop-xt-"]';
-  for (let drop of el.querySelectorAll(query)) {
-    drop.dispatchEvent(new CustomEvent('off.xt'));
-  }
 };
 
 /**
@@ -749,6 +749,24 @@ Xt.eventDelay = function (e, element, func) {
     func();
   }
 };
+
+/**
+ * passive events
+ * https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Safely_detecting_option_support
+ */
+
+Xt.passiveSupported = false;
+try {
+  let options = {
+    get passive() {
+      Xt.passiveSupported = true;
+    }
+  };
+  window.addEventListener('test', options, options);
+  window.removeEventListener('test', options, options);
+} catch(err) {
+  Xt.passiveSupported = false;
+}
 
 //////////////////////
 // utils

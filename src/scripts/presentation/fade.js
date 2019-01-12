@@ -40,7 +40,7 @@ class Fade extends Core {
       let events = [...options.on.split(' ')];
       for (let event of events) {
         window.removeEventListener(event, fadeHandler);
-        window.addEventListener(event, fadeHandler);
+        window.addEventListener(event, fadeHandler, Xt.passiveSupported ? {passive: true} : false);
       }
     }
     window.removeEventListener('scroll.xt.fade', fadeHandler);
@@ -67,7 +67,7 @@ class Fade extends Core {
     let self = this;
     // handler
     if (!e.detail || !e.detail.skip) {
-      Xt.eventDelay(e, self.object, function() {
+      Xt.eventDelay(e, self.object, function () {
         self.eventScroll();
       });
     }
