@@ -308,23 +308,6 @@ class Core {
             ariaEl.setAttribute('aria-controls', str.trim());
           }
         }
-        // keyboard
-        if (options.keyboard) {
-          let keyboards = options.keyboard.selector ? self.object.querySelectorAll(options.keyboard.selector) : Xt.arrSingle(self.object);
-          for (let keyboard of keyboards) {
-            keyboard.setAttribute('tabindex', '0');
-            // event focus
-            let ariaFocusHandler = Xt.dataStorage.put(keyboard, 'ariaFocusHandler',
-              self.eventAriaFocusHandler.bind(self).bind(self, keyboard));
-            keyboard.removeEventListener('focus', ariaFocusHandler);
-            keyboard.addEventListener('focus', ariaFocusHandler);
-            // event blur
-            let ariaBlurHandler = Xt.dataStorage.put(keyboard, 'ariaBlurHandler',
-              self.eventAriaBlurHandler.bind(self).bind(self, keyboard));
-            keyboard.removeEventListener('blur', ariaBlurHandler);
-            keyboard.addEventListener('blur', ariaBlurHandler);
-          }
-        }
       }
     }
   }
@@ -435,71 +418,28 @@ class Core {
         }
       }
     }
+    // keyboard
+    if (options.keyboard) {
+      let keyboards = options.keyboard.selector ? self.object.querySelectorAll(options.keyboard.selector) : Xt.arrSingle(self.object);
+      for (let keyboard of keyboards) {
+        keyboard.setAttribute('tabindex', '0');
+        // event focus
+        let keyboardFocusHandler = Xt.dataStorage.put(keyboard, 'keyboardFocusHandler',
+          self.eventKeyboardFocusHandler.bind(self).bind(self, keyboard));
+        keyboard.removeEventListener('focus', keyboardFocusHandler);
+        keyboard.addEventListener('focus', keyboardFocusHandler);
+        // event blur
+        let keyboardBlurHandler = Xt.dataStorage.put(keyboard, 'keyboardBlurHandler',
+          self.eventKeyboardBlurHandler.bind(self).bind(self, keyboard));
+        keyboard.removeEventListener('blur', keyboardBlurHandler);
+        keyboard.addEventListener('blur', keyboardBlurHandler);
+      }
+    }
   }
 
   //////////////////////
   // handler
   //////////////////////
-
-  /**
-   * aria focus handler
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Event} e
-   */
-  eventAriaFocusHandler(el, e) {
-    let self = this;
-    // event key
-    let ariaKeyHandler = Xt.dataStorage.put(document, 'ariaKeyHandler',
-      self.eventAriaKeyHandler.bind(self));
-    document.removeEventListener('keyup', ariaKeyHandler);
-    document.addEventListener('keyup', ariaKeyHandler);
-  }
-
-  /**
-   * aria blur handler
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Event} e
-   */
-  eventAriaBlurHandler(el, e) {
-    // event key
-    let ariaKeyHandler = Xt.dataStorage.get(document, 'ariaKeyHandler');
-    document.removeEventListener('keyup', ariaKeyHandler);
-  }
-
-  /**
-   * aria focus handler
-   * @param {Event} e
-   */
-  eventAriaKeyHandler(e) {
-    let self = this;
-    let options = self.options;
-    // key
-    let code = e.keyCode ? e.keyCode : e.which;
-    let prev;
-    let next;
-    if (options.keyboard.vertical) {
-      if (options.keyboard.inverse) {
-        prev = 40;
-        next = 38;
-      } else {
-        prev = 38;
-        next = 40;
-      }
-    } else {
-      if (options.keyboard.inverse) {
-        prev = 39;
-        next = 37;
-      } else {
-        prev = 37;
-        next = 39;
-      }
-    }
-    if (code === prev) {
-      self.goToPrev(1);
-    } else if (code === next) {
-      self.goToNext(1);
-    }
-  }
 
   /**
    * element on handler
@@ -667,6 +607,66 @@ class Core {
     let self = this;
     // handler
     self.eventNav(nav, e);
+  }
+
+  /**
+   * aria focus handler
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Event} e
+   */
+  eventKeyboardFocusHandler(el, e) {
+    let self = this;
+    // event key
+    let keyboardHandler = Xt.dataStorage.put(document, 'keyboardHandler',
+      self.eventKeyboardHandler.bind(self));
+    document.removeEventListener('keyup', keyboardHandler);
+    document.addEventListener('keyup', keyboardHandler);
+  }
+
+  /**
+   * aria blur handler
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Event} e
+   */
+  eventKeyboardBlurHandler(el, e) {
+    // event key
+    let keyboardHandler = Xt.dataStorage.get(document, 'keyboardHandler');
+    document.removeEventListener('keyup', keyboardHandler);
+  }
+
+  /**
+   * aria focus handler
+   * @param {Event} e
+   */
+  eventKeyboardHandler(e) {
+    let self = this;
+    let options = self.options;
+    // key
+    let code = e.keyCode ? e.keyCode : e.which;
+    let prev;
+    let next;
+    if (options.keyboard.vertical) {
+      if (options.keyboard.inverse) {
+        prev = 40;
+        next = 38;
+      } else {
+        prev = 38;
+        next = 40;
+      }
+    } else {
+      if (options.keyboard.inverse) {
+        prev = 39;
+        next = 37;
+      } else {
+        prev = 37;
+        next = 39;
+      }
+    }
+    if (code === prev) {
+      self.goToPrev(1);
+    } else if (code === next) {
+      self.goToNext(1);
+    }
   }
 
   //////////////////////

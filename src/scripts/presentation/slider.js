@@ -585,8 +585,11 @@ Slider.defaults = {
   "aria": {
     "labelledby": false
   },
+  "wheel": {
+    "selector": ".slides_inner",
+  },
   "keyboard": {
-    "focus": ".slides"
+    "selector": ".slides"
   },
   // slider only
   "autoHeight": ".slides",
