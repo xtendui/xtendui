@@ -397,13 +397,19 @@ class Core {
         // pause
         let autoPauseOnHandler = Xt.dataStorage.put(el, 'autoPauseOnHandler' + self.namespace,
           self.eventAutoPauseHandler.bind(self));
-        el.removeEventListener('mouseenter', autoPauseOnHandler);
-        el.addEventListener('mouseenter', autoPauseOnHandler);
+        let eventsPause = ['mouseenter', 'focus'];
+        for (let event of eventsPause) {
+          el.removeEventListener(event, autoPauseOnHandler);
+          el.addEventListener(event, autoPauseOnHandler);
+        }
         // resume
         let autoResumeOnHandler = Xt.dataStorage.put(el, 'autoResumeOnHandler' + self.namespace,
           self.eventAutoResumeHandler.bind(self));
-        el.removeEventListener('mouseleave', autoResumeOnHandler);
-        el.addEventListener('mouseleave', autoResumeOnHandler);
+        let eventsResume = ['mouseleave', 'blur'];
+        for (let event of eventsResume) {
+          el.removeEventListener(event, autoResumeOnHandler);
+          el.addEventListener(event, autoResumeOnHandler);
+        }
       }
     }
     // jump
