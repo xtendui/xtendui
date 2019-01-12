@@ -51,6 +51,13 @@ class Core {
       "delayOff": false,
       "durationOn": false,
       "durationOff": false,
+      "wheel": {
+        "selector": false,
+        "block": 500
+      },
+      "keyboard": {
+        "selector": false
+      },
       "auto": {
         "time": false,
         "step": 1,
@@ -63,8 +70,7 @@ class Core {
         "tabindex": true,
         "controls": true,
         "labelledby": true
-      },
-      "keyboard": false
+      }
     };
     self.defaults = Xt.merge([self.defaults, self.constructor.defaults]);
     // js options
@@ -419,16 +425,28 @@ class Core {
       }
     }
     // keyboard
-    if (options.keyboard) {
-      let keyboards = options.keyboard.selector ? self.object.querySelectorAll(options.keyboard.selector) : Xt.arrSingle(self.object);
+    if (options.wheel && options.wheel.selector) {
+      let wheels = options.wheel.selector === 'object' ? Xt.arrSingle(self.object) : self.object.querySelectorAll(options.wheel.selector);
+      for (let wheel of wheels) {
+        // wheel
+        let eventWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
+        let wheelHandler = Xt.dataStorage.put(wheel, 'wheelHandler',
+          self.eventWheelHandler.bind(self).bind(self, wheel));
+        wheel.removeEventListener(eventWheel, wheelHandler);
+        wheel.addEventListener(eventWheel, wheelHandler);
+      }
+    }
+    // keyboard
+    if (options.keyboard && options.keyboard.selector) {
+      let keyboards = options.keyboard.selector === 'object' ? Xt.arrSingle(self.object) : self.object.querySelectorAll(options.keyboard.selector);
       for (let keyboard of keyboards) {
         keyboard.setAttribute('tabindex', '0');
-        // event focus
+        // focus
         let keyboardFocusHandler = Xt.dataStorage.put(keyboard, 'keyboardFocusHandler',
           self.eventKeyboardFocusHandler.bind(self).bind(self, keyboard));
         keyboard.removeEventListener('focus', keyboardFocusHandler);
         keyboard.addEventListener('focus', keyboardFocusHandler);
-        // event blur
+        // blur
         let keyboardBlurHandler = Xt.dataStorage.put(keyboard, 'keyboardBlurHandler',
           self.eventKeyboardBlurHandler.bind(self).bind(self, keyboard));
         keyboard.removeEventListener('blur', keyboardBlurHandler);
@@ -610,13 +628,42 @@ class Core {
   }
 
   /**
-   * aria focus handler
+   * wheel handler
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Event} e
+   */
+  eventWheelHandler(el, e) {
+    let self = this;
+    let options = self.options;
+    // handler
+    e.preventDefault(); // prevent default scrolling
+    // block
+    if (!el.dataset.xtWheelBlock) {
+      if (options.wheel.block) {
+        el.dataset.xtWheelBlock = 'true';
+        clearTimeout(parseFloat(el.dataset.xtWheelTimeout));
+        el.dataset.xtWheelTimeout = setTimeout(function(){
+          delete el.dataset.xtWheelBlock;
+        }, options.wheel.block).toString();
+      }
+      // wheel
+      let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY;
+      if (delta < 0) {
+        self.goToNext(1);
+      } else if (delta > 0) {
+        self.goToPrev(1);
+      }
+    }
+  }
+
+  /**
+   * keyboard focus handler
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
   eventKeyboardFocusHandler(el, e) {
     let self = this;
-    // event key
+    // handler
     let keyboardHandler = Xt.dataStorage.put(document, 'keyboardHandler',
       self.eventKeyboardHandler.bind(self));
     document.removeEventListener('keyup', keyboardHandler);
@@ -624,18 +671,18 @@ class Core {
   }
 
   /**
-   * aria blur handler
+   * keyboard blur handler
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
   eventKeyboardBlurHandler(el, e) {
-    // event key
+    // handler
     let keyboardHandler = Xt.dataStorage.get(document, 'keyboardHandler');
     document.removeEventListener('keyup', keyboardHandler);
   }
 
   /**
-   * aria focus handler
+   * keyboard handler
    * @param {Event} e
    */
   eventKeyboardHandler(e) {

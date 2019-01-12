@@ -582,14 +582,11 @@ Slider.defaults = {
   "instant": true,
   "jump": true,
   "navigation": "[data-xt-nav]",
-  "aria": {
-    "labelledby": false
-  },
-  "wheel": {
-    "selector": ".slides_inner",
-  },
   "keyboard": {
     "selector": ".slides"
+  },
+  "aria": {
+    "labelledby": false
   },
   // slider only
   "autoHeight": ".slides",
