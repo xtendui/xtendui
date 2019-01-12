@@ -7,11 +7,18 @@
 .spinner {
   width: 2.5rem;
   height: 2.5rem;
+  .btn & {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
   circle {
     fill: none;
     stroke-width: 25;
     transform: rotateY(0deg) rotateZ(-90deg);
     transform-origin: center center;
+    .btn & {
+      stroke-width: 35;
+    }
     &:nth-child(1) {
       position: absolute;
       top: 0;
