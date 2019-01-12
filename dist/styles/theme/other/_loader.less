@@ -13,27 +13,31 @@
   }
   svg {
     filter: drop-shadow(0 .1rem .2rem fade(@black, @perc--sm)) drop-shadow(0 .2rem .4rem fade(@black, @perc--md));
-  }
-  circle {
-    fill: none;
-    stroke-width: 30;
-    transform: rotateY(0deg) rotateZ(-90deg);
-    transform-origin: center center;
-    .btn & {
-      stroke-width: 40;
+    circle {
+      fill: none;
+      stroke-width: 30;
+      transform: rotateY(0deg) rotateZ(-90deg);
+      transform-origin: center center;
+      .btn & {
+        stroke-width: 40;
+      }
     }
     &:nth-child(1) {
-      display: none;
       position: absolute;
-      top: 0;
-      left: 0;
-      stroke: fade(@white, 25%);
-      stroke-dashoffset: 0;
+      circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        stroke: fade(@white, 50%);
+        stroke-dashoffset: 0;
+      }
     }
     &:nth-child(2) {
-      stroke: fade(@primary, @perc--xl);
-      stroke-dashoffset: 1;
-      animation: anim-spinner @time--giant infinite @bez--in;
+      circle {
+        stroke: fade(@primary, @perc--xl);
+        stroke-dashoffset: 1;
+        animation: anim-spinner @time--giant infinite @bez--in;
+      }
     }
   }
 }

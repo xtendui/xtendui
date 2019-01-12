@@ -26,7 +26,7 @@ function sliderInit(main, index) {
 
   object.addEventListener('auto.xt.start', function (e) {
     // on object
-    let spinner = object.querySelectorAll('.spinner circle:nth-child(2)');
+    let spinner = object.querySelectorAll('.spinner svg:nth-child(2) circle');
     let tweens = TweenMax.getTweensOf(spinner);
     if (tweens.length) {
       for (let tween of tweens) {
@@ -77,7 +77,7 @@ function sliderInit(main, index) {
 
   object.addEventListener('auto.xt.stop', function (e) {
     // on object
-    let spinner = object.querySelectorAll('.spinner circle:nth-child(2)');
+    let spinner = object.querySelectorAll('.spinner svg:nth-child(2) circle');
     TweenMax.set(spinner, {strokeDashoffset: 1});
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
@@ -101,7 +101,7 @@ function sliderInit(main, index) {
 
   object.addEventListener('auto.xt.pause', function (e) {
     // on object
-    let spinner = object.querySelectorAll('.spinner circle:nth-child(2)');
+    let spinner = object.querySelectorAll('.spinner svg:nth-child(2) circle');
     let tweens = TweenMax.getTweensOf(spinner);
     for (let tween of tweens) {
       TweenMax.to(tween, .5, {timeScale: 0});

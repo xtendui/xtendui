@@ -17,7 +17,7 @@ function loaderInit(main, index) {
   // loader
 
   function loaderTimeout() {
-    let progress = main.querySelectorAll('.spinner circle:nth-child(2)');
+    let progress = main.querySelectorAll('.spinner svg:nth-child(2) circle');
     loader.dataset.loaderActive = loader.dataset.loaderActive === 'true' ? 'false' : 'true';
     if (loader.dataset.loaderActive === 'true') {
       loader.classList.add('active');
