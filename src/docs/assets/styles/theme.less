@@ -776,6 +776,15 @@
 
 .site-header-top-outer[data-xt-sticky] {
   .xt-sticky(@mode:'fixed');
+  .site-header-top {
+    .transition-default.out();
+  }
+  &.active {
+    .site-header-top {
+      background: fade(@primary, @perc--lg);
+      .transition-default.active();
+    }
+  }
 }
 
 // .site-breadcrumbs
