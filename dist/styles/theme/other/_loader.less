@@ -27,10 +27,12 @@
       position: absolute;
       top: 0;
       left: 0;
-      stroke: @gray--250;
+      stroke: fade(@white, 25%);
+      stroke-dashoffset: 0;
     }
     &:nth-child(2) {
       stroke: fade(@primary, @perc--xl);
+      stroke-dashoffset: 1;
       animation: anim-spinner @time--giant infinite @bez--in;
     }
   }
