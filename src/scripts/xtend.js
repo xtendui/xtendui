@@ -62,7 +62,7 @@ Xt.initExtensions = function (added = document.documentElement) {
     }
     if (els.length) {
       for (let [i, el] of els.entries()) {
-        obj.fnc(el, i);
+        obj.fnc(el, i, obj.matches);
       }
     }
   }

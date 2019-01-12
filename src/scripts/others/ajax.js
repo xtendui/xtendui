@@ -28,11 +28,39 @@ class Ajax extends Core {
   //////////////////////
 
   /**
+   * init elements
+   */
+  initScopeElements() {
+    super.initScopeElements();
+    let self = this;
+    // generate groups
+    self.groupLink = [];
+    for (let element of self.elements) {
+      // populate
+      let link = element.getAttribute('href').split('#')[0];
+      if (!self.groupLink[link]) {
+        self.groupLink[link] = [];
+      }
+      self.groupLink[link].push(element);
+      // assign group
+      element.setAttribute('data-xt-group', self.namespace + '-' + link);
+    }
+  }
+
+  /**
    * init currents
    */
   initCurrents() {
     let self = this;
-    super.initCurrents();
+    let options = self.options;
+    // automatic initial currents
+    for (let element of self.elements) {
+      let loc = location.pathname + location.search
+      let url = options.relativeUrl + element.pathname + element.search;
+      if (url !== '' && loc === url) {
+        element.classList.add(...options.classes);
+      }
+    }
     // detect url
     let url;
     if (history.state && history.state.url) {
@@ -40,11 +68,12 @@ class Ajax extends Core {
       url = history.state.url;
     } else {
       // detect from url location (absolute url without domain name)
-      let loc = window.location.href.split('#')[0];
-      url = loc.replace(/https?:\/\/[^\/]+/i, '');
+      url = location.pathname;
     }
     // set pushstate
     self.pushState(url, document.title);
+    // super
+    super.initCurrents();
   }
 
   /**
@@ -76,32 +105,27 @@ class Ajax extends Core {
   }
 
   //////////////////////
-  // queue util
+  // special util
   //////////////////////
 
   /**
-   * queue on done
-   * @param {Object} obj Queue object
-   * @param {String} type Type of element
-   * @param {Boolean} skipQueue If skip queue
+   * check if an url contains host
+   * @param {String} url Url to check
+   * @returns {Boolean} If url has host
    */
-  queueOnDone(obj, type, skipQueue = false) {
-    super.queueOnDone(obj, type, skipQueue);
-    let self = this;
-    // check
-    if (obj[type] && !skipQueue) {
-      // done
-      let done = 0;
-      for (let type in obj) {
-        if (obj[type].done) {
-          done++;
-        }
-      }
-      // ajax on done
-      if (done === Object.entries(obj).length) {
-        self.ajaxCall(obj[type].groupElements.single.getAttribute('href'));
-      }
-    }
+  urlHasHost(url) {
+    let found;
+    found = url.indexOf('//') !== -1;
+    return found;
+  }
+
+  /**
+   * Remove host from an url
+   * @param {String} url Url to get
+   * @returns {String} Url without host
+   */
+  urlWithoutHost(url) {
+    return url.replace('http://', '').replace('https://', '').replace('//', '').split('/')[0];
   }
 
   //////////////////////
@@ -115,34 +139,28 @@ class Ajax extends Core {
   ajaxCall(url) {
     let self = this;
     // check url
-    let index = function (url) {
-      let found;
-      found = url.indexOf('//') !== -1;
-      return found;
-    };
-    let domain = function (url) {
-      return url.replace('http://', '').replace('https://', '').replace('//', '').split('/')[0];
-    };
-    if (index(url)) {
-      if (domain(location.href) !== domain(url)) {
-        return false;
-      }
-    }
-    // make ajax call
-    if (url) {
-      let request = new XMLHttpRequest();
-      request.open('GET', url, true);
-      request.onload = function () {
-        if (request.status >= 200 && request.status < 400) {
-          self.ajaxSuccess(url, request.responseText);
-        } else {
-          self.ajaxError(url, request.responseText);
+    if (!self.detail.initial) {
+      if (self.urlHasHost(url)) {
+        if (location.pathname !== self.urlWithoutHost(url)) {
+          return false;
         }
-      };
-      request.onerror = function () {
-        self.ajaxError(url, request.responseText);
-      };
-      request.send();
+      }
+      // make ajax call
+      if (url) {
+        let request = new XMLHttpRequest();
+        request.open('GET', url, true);
+        request.onload = function () {
+          if (request.status >= 200 && request.status < 400) {
+            self.ajaxSuccess(url, request.responseText);
+          } else {
+            self.ajaxError(url, request.responseText);
+          }
+        };
+        request.onerror = function () {
+          self.ajaxError(url, request.responseText);
+        };
+        request.send();
+      }
     }
   }
 
@@ -243,9 +261,11 @@ class Ajax extends Core {
 Ajax.componentName = 'ajax';
 Ajax.defaults = {
   "query": "body", // needs to be unique
+  "relativeUrl": "",
   "elements": "a[href]",
   "class": "active",
   "on": "click",
+  "toggle": false,
   "min": 0,
   "max": "Infinity",
   "aria": false

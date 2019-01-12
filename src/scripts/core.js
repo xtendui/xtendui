@@ -225,17 +225,31 @@ class Core {
           }
           // found
           if (found) {
+            // initial
+            self.detail.initial = true;
+            // activate
             self.eventOn(element, true);
+          } else {
+            // initial
+            window.requestAnimationFrame(function () { // @FIX ajax http://127.0.0.1:4000/docs/ init TRY WITHOUT
+              //self.detail.initial = false;
+            });
           }
         }
         // if currents < min
         let todo = options.min - self.getCurrents().length;
         if (todo) {
+          // initial
+          self.detail.initial = true;
           // activate
           for (let i = 0; i < todo; i++) {
             self.eventOn(self.elements[i], true);
           }
         } else {
+          // initial
+          window.requestAnimationFrame(function () { // @FIX ajax http://127.0.0.1:4000/docs/ init TRY WITHOUT
+            //self.detail.initial = false;
+          });
           // auto
           if (options.auto && options.auto.time && options.auto.initial) {
             self.eventAutoStart();
@@ -1332,14 +1346,19 @@ class Core {
       self.queueOff(type, self.detail.queueOff.length - 1);
       // all done
       if (done === Object.entries(obj).length) {
-        // initial
-        self.detail.initial = false;
         // auto
         if (options.auto && options.auto.time) {
           self.eventAutoStart();
         }
+        // @TODO refactor
+        if (self.ajaxCall) {
+          console.log(obj[type].groupElements.single, self.detail.initial);
+          self.ajaxCall(obj[type].groupElements.single.getAttribute('href').split('#')[0]);
+        }
         // remove queue
         self.detail.queueOn.pop();
+        // initial
+        self.detail.initial = false;
       }
     }
   }
