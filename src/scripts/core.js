@@ -231,9 +231,7 @@ class Core {
             self.eventOn(element, true);
           } else {
             // initial
-            window.requestAnimationFrame(function () { // @FIX ajax http://127.0.0.1:4000/docs/ init TRY WITHOUT
-              //self.detail.initial = false;
-            });
+            self.detail.initial = false;
           }
         }
         // if currents < min
@@ -247,9 +245,7 @@ class Core {
           }
         } else {
           // initial
-          window.requestAnimationFrame(function () { // @FIX ajax http://127.0.0.1:4000/docs/ init TRY WITHOUT
-            //self.detail.initial = false;
-          });
+          self.detail.initial = false;
           // auto
           if (options.auto && options.auto.time && options.auto.initial) {
             self.eventAutoStart();
@@ -1352,7 +1348,6 @@ class Core {
         }
         // @TODO refactor
         if (self.ajaxCall) {
-          console.log(obj[type].groupElements.single, self.detail.initial);
           self.ajaxCall(obj[type].groupElements.single.getAttribute('href').split('#')[0]);
         }
         // remove queue
