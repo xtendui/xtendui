@@ -10,7 +10,7 @@ function sliderInit(main, index) {
   let self = new Xt.Slider(main, {
     "auto": {
       "time": 4000,
-      "pause": ".slide, [data-xt-pag]"
+      "pause": "[data-xt-pag]"
     }
   });
 

@@ -257,6 +257,8 @@ class Slider extends Core {
     } else {
       self.eventDragend(dragger, e);
     }
+    // auto
+    self.eventAutoStart();
     // event off
     let dragendHandler = Xt.dataStorage.get(dragger, 'dragendHandler' + self.namespace);
     let events = ['mouseup', 'touchend'];
