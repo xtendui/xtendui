@@ -1,7 +1,8 @@
 @import (reference) "../../../../../dist/styles/xtend.less";
 
-.drop--disable-example {
+[data-xt-sticky] {
+  .sticky();
   @media @min-sm {
-    .drop--disable();
+    .sticky--disabled();
   }
 }

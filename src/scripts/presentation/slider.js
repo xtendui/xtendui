@@ -126,6 +126,10 @@ class Slider extends Core {
         }
       }
     }
+    // reset only one call per group
+    for (let slide of self.targets) {
+      delete slide.dataset.xtSlideOnDone;
+    }
     // elements
     self.initScopeElements();
   }
@@ -138,11 +142,6 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     let dragger = self.dragger;
-    // resize
-    let sliderResizeHandler = Xt.dataStorage.put(window, 'sliderResizeHandler' + self.namespace,
-      self.eventSliderResizeHandler.bind(self));
-    window.removeEventListener('resize', sliderResizeHandler);
-    window.addEventListener('resize', sliderResizeHandler);
     // targets
     for (let slide of self.targets) {
       // disable links
@@ -169,33 +168,15 @@ class Slider extends Core {
         dragger.addEventListener(event, dragstartHandler);
       }
       // grab
-      dragger.classList.add('xt-grab');
+      if (!self.detail.disabled) {
+        dragger.classList.add('xt-grab');
+      }
     }
   }
 
   //////////////////////
   // handler
   //////////////////////
-
-  /**
-   * slider resize handler
-   * @param {Event} e
-   */
-  eventSliderResizeHandler(e) {
-    let self = this;
-    // handler
-    if (!e.detail || !e.detail.skip) {
-      Xt.eventDelay(e, self.object, function () {
-        // reset done
-        for (let slide of self.targets) {
-          delete slide.dataset.xtSlideOnDone;
-        }
-        // init
-        self.detail.initial = true;
-        self.init();
-      });
-    }
-  }
 
   /**
    * slide on handler
@@ -348,6 +329,19 @@ class Slider extends Core {
   //////////////////////
 
   /**
+   * resize
+   */
+  eventResize() {
+    let self = this;
+    super.eventResize();
+    // reinit
+    if (!self.detail.initial) {
+      self.detail.initial = true;
+      self.init();
+    }
+  }
+
+  /**
    * slide on
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
@@ -355,6 +349,10 @@ class Slider extends Core {
   eventSlideOn(dragger, e) {
     let self = this;
     let options = self.options;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // var
     let slide = e.target;
     let slideLeft = slide.offsetLeft;
@@ -366,7 +364,7 @@ class Slider extends Core {
     let group = slide.getAttribute('data-xt-group');
     if (group) {
       // only one call per group
-      if (slide.dataset.xtSlideOnDone === 'true') {
+      if (slide.dataset.xtSlideOnDone) {
         return false;
       }
       // vars
@@ -426,7 +424,12 @@ class Slider extends Core {
    * @param {Event} e
    */
   eventSlideOff(dragger, e) {
+    let self = this;
     let slide = e.target;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // disable links
     slide.classList.add('link-none');
     // group
@@ -443,6 +446,11 @@ class Slider extends Core {
    * @param {Event} e
    */
   logicDragstart(dragger, e) {
+    let self = this;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // inertia
     dragger.classList.add('dragging');
     // listener dispatch
@@ -458,6 +466,10 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     let xCache = self.detail.xCache || 0;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // inertia
     dragger.classList.remove('dragging');
     // disable links
@@ -516,6 +528,10 @@ class Slider extends Core {
   logicDragfriction(dragger, e) {
     let self = this;
     let options = self.options;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // friction
     self.detail.xVelocity *= options.drag.friction;
     if (Math.abs(self.detail.xVelocity) > options.drag.frictionThreshold) {
@@ -536,6 +552,10 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     let xCache = self.detail.xCache || 0;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // calculate
     if (friction) {
       // on friction

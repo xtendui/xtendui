@@ -3,10 +3,10 @@
 //////////////////////
 
 /**
- * .xt-sticky()
+ * .sticky()
  * @param {String} @mode Starting mode be 'absolute' or 'fixed'
  */
-.xt-sticky(@mode: none) {
+.sticky(@mode: none) {
   // defaults
   &.xt-clone {
     position: relative;
@@ -68,7 +68,8 @@
   }
 }
 
-.xt-sticky--disable {
+.sticky--disabled {
+  .xt-disabled();
   position: relative !important;
   top: auto !important;
   bottom: auto !important;

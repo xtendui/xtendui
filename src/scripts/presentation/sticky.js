@@ -122,7 +122,7 @@ class Sticky extends Core {
     // handler
     if (!e.detail || !e.detail.skip) {
       Xt.eventDelay(e, self.object, function() {
-        self.eventScroll(self.object, e);
+        self.eventSticky(self.object, e);
       });
     }
   }
@@ -136,9 +136,13 @@ class Sticky extends Core {
    * @param {Node|HTMLElement|EventTarget|Window} element To be activated or deactivated
    * @param {Event} e
    */
-  eventScroll(element, e) {
+  eventSticky(element, e) {
     let self = this;
     let options = self.options;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // eDetail
     self.eDetailSet(e);
     // var
@@ -176,8 +180,8 @@ class Sticky extends Core {
       }
     }
     // scroll
-    let top = self.eventScrollPos(options.limit['top'] || self.targets, scrollTop, rectContainerTop);
-    let bottom = self.eventScrollPos(options.limit['bottom'], scrollTop, Infinity);
+    let top = self.eventStickyPos(options.limit['top'] || self.targets, scrollTop, rectContainerTop);
+    let bottom = self.eventStickyPos(options.limit['bottom'], scrollTop, Infinity);
     if (options.position === 'top') {
       bottom -= heightTarget;
     }
@@ -190,7 +194,7 @@ class Sticky extends Core {
     let addBottom = 0;
     if (options.contain) {
       if (options.contain['top']) {
-        let addTopObj = self.eventScrollHeight(options.contain['top'], scrollInverse);
+        let addTopObj = self.eventStickyHeight(options.contain['top'], scrollInverse);
         addTop = addTopObj.val;
         if (addTop !== null && addTop > rectContainerTop) {
           add = addTop;
@@ -202,7 +206,7 @@ class Sticky extends Core {
         }
       }
       if (options.contain['bottom']) {
-        addBottom = self.eventScrollPos(options.contain['bottom']);
+        addBottom = self.eventStickyPos(options.contain['bottom']);
         if (addBottom !== null && addBottom < heightEl + addTop) {
           add = addBottom - heightEl;
           anim = false;
@@ -299,7 +303,7 @@ class Sticky extends Core {
    * @param {Number} scrollTop Window's scrollTop
    * @returns {Number} value Option's position (px)
    */
-  eventScrollPos(option, scrollTop = 0, val = null) {
+  eventStickyPos(option, scrollTop = 0, val = null) {
     if (!isNaN(parseFloat(option))) {
       val = option;
     } else {
@@ -342,7 +346,7 @@ class Sticky extends Core {
    * @param {Number} val Default value
    * @returns {Object} obj Option's height (px) and if found hide element
    */
-  eventScrollHeight(option, scrollInverse, val = null) {
+  eventStickyHeight(option, scrollInverse, val = null) {
     let foundHide = false;
     if (!isNaN(parseFloat(option))) {
       val = option;

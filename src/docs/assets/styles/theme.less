@@ -514,7 +514,7 @@
       }
     }
     .line::after {
-      content: "";
+      content: '';
       position: absolute;
       z-index: -1;
       bottom: .5em;
@@ -775,7 +775,7 @@
 // .site-header-top
 
 .site-header-top-outer[data-xt-sticky] {
-  .xt-sticky(@mode:'fixed');
+  .sticky(@mode:'fixed');
   .site-header-top {
     .trans-default.out();
   }
@@ -790,7 +790,7 @@
 // .site-breadcrumbs
 
 .site-breadcrumbs-outer[data-xt-sticky] {
-  .xt-sticky(@mode:'absolute');
+  .sticky(@mode:'absolute');
   // animation
   .site-breadcrumbs {
     .trans-default.out();
@@ -819,11 +819,11 @@
 // .site-aside
 
 .site-aside[data-xt-sticky] {
-  .xt-sticky();
+  .sticky();
 }
 
 // .site-footer
 
 .site-footer {
-  .xt-sticky(@mode:'fixed');
+  .sticky(@mode:'fixed');
 }

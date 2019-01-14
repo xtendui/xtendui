@@ -21,3 +21,18 @@
 .slide_inner {
   position: relative;
 }
+
+// .slider--disabled
+
+.slider--disabled {
+  .xt-disabled();
+  .slide:not(.active) {
+    .trans-anim-none();
+    opacity: 0;
+  }
+  .slider_pagination,
+  [data-xt-nav],
+  .loader, .progress, .spinner {
+    display: none !important;
+  }
+}

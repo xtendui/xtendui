@@ -88,6 +88,7 @@ class Core {
     self.elementsSingle = [];
     self.currentIndex = null;
     self.detail = {};
+    self.detail.disabled = false;
     self.detail.queueOn = [];
     self.detail.queueOff = [];
     self.detail.inverseDirection = false;
@@ -95,8 +96,10 @@ class Core {
     self.initSetup();
     self.initScope();
     self.initCurrents();
+    self.initCheck();
     self.initEvents();
     self.initAria();
+    self.eventResize();
   }
 
   /**
@@ -329,6 +332,18 @@ class Core {
   }
 
   /**
+   * init check
+   */
+  initCheck() {
+    let self = this;
+    // resize
+    let checkHandler = Xt.dataStorage.put(window, 'checkHandler' + self.namespace,
+      self.eventCheckHandler.bind(self).bind(self));
+    window.removeEventListener('resize', checkHandler);
+    window.addEventListener('resize', checkHandler);
+  }
+
+  /**
    * init events
    */
   initEvents() {
@@ -419,7 +434,9 @@ class Core {
         jump.removeEventListener('click', jumpHandler);
         jump.addEventListener('click', jumpHandler, true); // useCapture or it gets the click from elements inside the target
         // jump
-        jump.classList.add('xt-jump');
+        if (!self.detail.disabled) {
+          jump.classList.add('xt-jump');
+        }
       }
     }
     // navigation
@@ -468,6 +485,19 @@ class Core {
   //////////////////////
   // handler
   //////////////////////
+
+  /**
+   * check handler
+   * @param {Event} e
+   */
+  eventCheckHandler(e = null) {
+    let self = this;
+    if (!e.detail || !e.detail.skip) {
+      Xt.eventDelay(e, self.object, function () {
+        self.eventResize();
+      });
+    }
+  }
 
   /**
    * element on handler
@@ -645,6 +675,10 @@ class Core {
   eventWheelHandler(el, e) {
     let self = this;
     let options = self.options;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // handler
     e.preventDefault(); // prevent default scrolling
     // block
@@ -652,7 +686,7 @@ class Core {
       if (options.wheel.block) {
         el.dataset.xtWheelBlock = 'true';
         clearTimeout(parseFloat(el.dataset.xtWheelTimeout));
-        el.dataset.xtWheelTimeout = setTimeout(function(){
+        el.dataset.xtWheelTimeout = setTimeout(function () {
           delete el.dataset.xtWheelBlock;
         }, options.wheel.block).toString();
       }
@@ -1012,6 +1046,19 @@ class Core {
   //////////////////////
 
   /**
+   * resize
+   */
+  eventResize() {
+    let self = this;
+    // check disabled
+    if (getComputedStyle(self.object, '::before').getPropertyValue('content') === '"xt-disabled"') {
+      self.disable();
+    } else if (self.detail.disabled) {
+      self.enable();
+    }
+  }
+
+  /**
    * element on
    * @param {Node|HTMLElement|EventTarget|Window} element To be activated
    * @param {Boolean} force
@@ -1021,6 +1068,10 @@ class Core {
   eventOn(element, force = false, e = null) {
     let self = this;
     let options = self.options;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // toggle
     if (force || self.checkOn(element)) {
       // eDetail
@@ -1097,6 +1148,10 @@ class Core {
   eventOff(element, force = false, e = null) {
     let self = this;
     let options = self.options;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // toggle
     if (force || self.checkOff(element)) {
       // if currents === min
@@ -1175,6 +1230,10 @@ class Core {
   eventAutoStart() {
     let self = this;
     let options = self.options;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // clear
     clearInterval(self.object.dataset.xtAutoStartInterval);
     // auto
@@ -1206,6 +1265,10 @@ class Core {
   eventAutoStop() {
     let self = this;
     let options = self.options;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // clear
     clearInterval(self.object.dataset.xtAutoStartInterval);
     // listener dispatch
@@ -1220,6 +1283,10 @@ class Core {
   eventAutoPause() {
     let self = this;
     let options = self.options;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // clear
     clearInterval(self.object.dataset.xtAutoStartInterval);
     // listener dispatch
@@ -1235,6 +1302,10 @@ class Core {
    */
   eventJump(el, e) {
     let self = this;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // jump
     let element = self.getElementsFromTarget(el)[0];
     if (self.checkOn(element)) {
@@ -1249,6 +1320,10 @@ class Core {
    */
   eventNav(nav, e) {
     let self = this;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // nav
     let index = 0;
     if (self.currentIndex !== null) {
@@ -2181,6 +2256,10 @@ class Core {
   goToIndex(index, force = false, loop = null) {
     let self = this;
     let options = self.options;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // check
     let max = self.elementsSingle.length - 1;
     if (index > max) {
@@ -2201,6 +2280,30 @@ class Core {
     // go
     let current = self.elements[index];
     self.eventOn(current, force);
+  }
+
+  //////////////////////
+  // status
+  //////////////////////
+
+  /**
+   * disable
+   */
+  disable() {
+    let self = this;
+    // disable
+    self.detail.disabled = true;
+    self.object.classList.add('xt-disabled');
+  }
+
+  /**
+   * disable
+   */
+  enable() {
+    let self = this;
+    // enable
+    self.detail.disabled = false;
+    self.object.classList.remove('xt-disabled');
   }
 
 }

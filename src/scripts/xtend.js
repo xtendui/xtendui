@@ -720,7 +720,7 @@ Xt.animTimeout = function (el, func) {
  * @param {Node|HTMLElement|EventTarget|Window} element Element to save timeout
  * @param {Function} func Function to execute
  */
-Xt.eventDelay = function (e, element, func) {
+Xt.eventDelay = function (e, element, func, prefix = null) {
   if (e.type === 'resize' || e.type === 'scroll') {
     let delay = Xt[e.type + 'Delay'];
     if (delay === false) {

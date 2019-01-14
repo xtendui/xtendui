@@ -68,7 +68,7 @@ class Fade extends Core {
     // handler
     if (!e.detail || !e.detail.skip) {
       Xt.eventDelay(e, self.object, function () {
-        self.eventScroll();
+        self.eventFade();
       });
     }
   }
@@ -80,9 +80,13 @@ class Fade extends Core {
   /**
    * window scroll
    */
-  eventScroll() {
+  eventFade() {
     let self = this;
     let options = self.options;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // var
     let current = 0;
     let currents = [];
