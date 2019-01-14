@@ -2067,11 +2067,11 @@ class Core {
         if (self.normalizeWidth(element.clientWidth) === '') { // only if full width
           let padding = style.paddingRight;
           let str = 'calc(' + padding + ' + ' + width + 'px)';
-          element.classList.add('transition-none');
+          element.classList.add('trans-none');
           window.requestAnimationFrame(function () {
             element.style.paddingRight = str;
             window.requestAnimationFrame(function () {
-              element.classList.remove('transition-none');
+              element.classList.remove('trans-none');
             });
           });
         }
@@ -2102,11 +2102,11 @@ class Core {
         // fixed
         let elements = document.querySelectorAll('.xt-fixed');
         for (let element of elements) {
-          element.classList.add('transition-none');
+          element.classList.add('trans-none');
           window.requestAnimationFrame(function () {
             element.style.paddingRight = '';
             window.requestAnimationFrame(function () {
-              element.classList.remove('transition-none');
+              element.classList.remove('trans-none');
             });
           });
         }

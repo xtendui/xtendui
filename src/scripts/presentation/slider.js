@@ -411,9 +411,9 @@ class Slider extends Core {
     // initial or resizing
     if (self.detail.initial) {
       // prevent alignment animation
-      self.dragger.classList.add('anim-none');
+      self.dragger.classList.add('trans-anim-none');
       window.requestAnimationFrame(function () {
-        self.dragger.classList.remove('anim-none');
+        self.dragger.classList.remove('trans-anim-none');
       });
     }
     // drag position

@@ -6,7 +6,7 @@
   .slides_inner {
     overflow: hidden;
     // dragger animations
-    .transition-none() !important;
+    .trans-none() !important;
   }
   .slide {
     .toggle--block();
@@ -44,7 +44,7 @@
     .anim-x-inverse.active();
     animation-duration: @time--big;
     &:after {
-      .animation-default.active();
+      .anim-default.active();
       animation-name: anim-special--in;
       animation-duration: @time--big;
       transform: translateX(-100%);
@@ -53,7 +53,7 @@
       .anim-x.active();
       animation-duration: @time--big;
       &:after {
-        .animation-default.active();
+        .anim-default.active();
         animation-name: anim-special-in-inverse;
         animation-duration: @time--big;
         transform: translateX(100%);
@@ -64,7 +64,7 @@
     .anim-x-inverse.out();
     animation-duration: @time--big;
     &:after {
-      .animation-default.out();
+      .anim-default.out();
       animation-name: anim-special--out;
       animation-duration: @time--big;
       transform: translateX(0);
@@ -73,7 +73,7 @@
       .anim-x.out();
       animation-duration: @time--big;
       &:after {
-        .animation-default.out();
+        .anim-default.out();
         animation-name: anim-special-out-inverse;
         animation-duration: @time--big;
         transform: translateX(0);

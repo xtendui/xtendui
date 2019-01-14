@@ -2,13 +2,13 @@
 // default
 //////////////////////
 
-// .transition-default();
+// .trans-default();
 
 /* USAGE:
-.transition-default.out();
+.trans-default.out();
 opacity: 0;
 &:hover, &.hover, &:active, &.active {
-  .transition-default.active();
+  .trans-default.active();
    opacity: 1;
 }
 */
@@ -16,19 +16,19 @@ opacity: 0;
 /* USAGE:
 &.active {
   .inner {
-    .transition-default.active();
+    .trans-default.active();
     opacity: 1;
   }
 }
 &.out {
   .inner {
-    .transition-default.out();
+    .trans-default.out();
     opacity: 0;
   }
 }
 */
 
-.transition-default() {
+.trans-default() {
   &.active {
     transition-property: all;
     transition-duration: @time--medium;
@@ -41,7 +41,7 @@ opacity: 0;
   }
 }
 
-// .animation-default();
+// .anim-default();
 
 /* USAGE:
 .anim-opacity.active();
@@ -63,7 +63,7 @@ opacity: 0;
 }
 */
 
-.animation-default() {
+.anim-default() {
   &.active {
     animation-duration: @time--medium;
     animation-timing-function: @bez--in;
@@ -82,13 +82,13 @@ opacity: 0;
 
 .anim-opacity {
   &.active {
-    .animation-default.active();
+    .anim-default.active();
     animation-name: anim-opacity--in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation-default.out();
+    .anim-default.out();
     animation-name: anim-opacity--out;
     animation-fill-mode: forwards;
     opacity: 1;
@@ -117,13 +117,13 @@ opacity: 0;
 
 .anim-zoom {
   &.active {
-    .animation-default.active();
+    .anim-default.active();
     animation-name: anim-zoom--in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation-default.out();
+    .anim-default.out();
     animation-name: anim-zoom--out;
     animation-fill-mode: forwards;
     opacity: 1;
@@ -156,13 +156,13 @@ opacity: 0;
 
 .anim-y {
   &.active {
-    .animation-default.active();
+    .anim-default.active();
     animation-name: anim-y--in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation-default.out();
+    .anim-default.out();
     animation-name: anim-y--out;
     animation-fill-mode: forwards;
     opacity: 1;
@@ -195,13 +195,13 @@ opacity: 0;
 
 .anim-y-inverse {
   &.active {
-    .animation-default.active();
+    .anim-default.active();
     animation-name: anim-y-inverse--in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation-default.out();
+    .anim-default.out();
     animation-name: anim-y-inverse--out;
     animation-fill-mode: forwards;
     opacity: 1;
@@ -234,13 +234,13 @@ opacity: 0;
 
 .anim-x {
   &.active {
-    .animation-default.active();
+    .anim-default.active();
     animation-name: anim-x--in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation-default.out();
+    .anim-default.out();
     animation-name: anim-x--out;
     animation-fill-mode: forwards;
     opacity: 1;
@@ -273,13 +273,13 @@ opacity: 0;
 
 .anim-x-inverse {
   &.active {
-    .animation-default.active();
+    .anim-default.active();
     animation-name: anim-x-inverse--in;
     animation-fill-mode: forwards;
     opacity: 0;
   }
   &.out {
-    .animation-default.out();
+    .anim-default.out();
     animation-name: anim-x-inverse--out;
     animation-fill-mode: forwards;
     opacity: 1;
@@ -317,11 +317,11 @@ opacity: 0;
 .collapse--height,
 .collapse--width {
   &.active {
-    .transition-default.active();
+    .trans-default.active();
     transition-delay: @time--small;
   }
   &.out {
-    .transition-default.out();
+    .trans-default.out();
     transition-delay: @time--medium;
   }
 }

@@ -126,12 +126,12 @@ legend {
   // options
   .form-input--gray();
   // animation
-  .transition-default.out();
+  .trans-default.out();
   &:hover, &.active {
-    .transition-default.active();
+    .trans-default.active();
   }
   &:focus {
-    .transition-default.active();
+    .trans-default.active();
   }
 }
 
@@ -238,21 +238,21 @@ textarea {
   }
   // animation
   &::before {
-    .transition-default.out();
+    .trans-default.out();
     transform: scale(.9, .9);
   }
   &::after {
-    .transition-default.out();
+    .trans-default.out();
     opacity: 0 !important;
     transform: scale(.9, .5);
   }
   &.active {
     &::before {
-      .transition-default.active();
+      .trans-default.active();
       transform: scale(1, 1);
     }
     &::after {
-      .transition-default.active();
+      .trans-default.active();
       opacity: 1 !important;
       transform: scale(1, 1);
     }
