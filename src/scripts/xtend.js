@@ -739,8 +739,8 @@ Xt.eventDelay = function (e, element, func, prefix = null) {
       element.dataset.windowHeight = windowHeight.toString();
     }
     // delay
-    clearTimeout(parseFloat(element.dataset.xtSliderResizeTimeout));
-    element.dataset.xtSliderResizeTimeout = setTimeout( function() {
+    clearTimeout(parseFloat(element.dataset['xt' + e.type + 'Timeout']));
+    element.dataset['xt' + e.type + 'Timeout'] = setTimeout( function() {
       // func
       func();
     }, delay).toString();

@@ -333,9 +333,9 @@ class Slider extends Core {
   /**
    * resize
    */
-  eventResize() {
+  eventCheck() {
     let self = this;
-    super.eventResize();
+    super.eventCheck();
     // reinit
     if (!self.detail.initial) {
       self.detail.initial = true;

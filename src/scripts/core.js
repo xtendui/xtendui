@@ -99,7 +99,7 @@ class Core {
     self.initCheck();
     self.initEvents();
     self.initAria();
-    self.eventResize();
+    self.eventCheck();
   }
 
   /**
@@ -494,7 +494,7 @@ class Core {
     let self = this;
     if (!e.detail || !e.detail.skip) {
       Xt.eventDelay(e, self.object, function () {
-        self.eventResize();
+        self.eventCheck();
       });
     }
   }
@@ -1048,7 +1048,7 @@ class Core {
   /**
    * resize
    */
-  eventResize() {
+  eventCheck() {
     let self = this;
     // check disabled
     if (getComputedStyle(self.object, '::before').getPropertyValue('content') === '"xt-disabled"') {
