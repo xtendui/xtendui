@@ -492,6 +492,7 @@ class Core {
    */
   eventCheckHandler(e = null) {
     let self = this;
+    // handler
     if (!e.detail || !e.detail.skip) {
       Xt.eventDelay(e, self.object, function () {
         self.eventCheck();
@@ -510,7 +511,7 @@ class Core {
     // prevent links (needed for xt-ajax to go to links and propagate event if inside targets)
     e.preventDefault();
     // handler
-    if (!e.detail || !e.detail.skip) {
+    if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
       // event block
       if (options.onBlock) {
         let now = new Date().getTime();
@@ -541,7 +542,7 @@ class Core {
     let self = this;
     let options = self.options;
     // handler
-    if (!e.detail || !e.detail.skip) {
+    if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
       // event block
       if (options.offBlock) {
         let now = new Date().getTime();
@@ -629,7 +630,7 @@ class Core {
    */
   eventAutoPauseHandler(e) {
     let self = this;
-    if (!e.detail || !e.detail.skip) {
+    if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
       self.eventAutoPause();
     }
   }
@@ -640,7 +641,7 @@ class Core {
    */
   eventAutoResumeHandler(e) {
     let self = this;
-    if (!e.detail || !e.detail.skip) {
+    if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
       self.eventAutoStart();
     }
   }
@@ -1051,7 +1052,7 @@ class Core {
   eventCheck() {
     let self = this;
     // check disabled
-    if (getComputedStyle(self.object, '::before').getPropertyValue('content') === '"xt-disabled"') {
+    if (getComputedStyle(self.object, '::before').getPropertyValue('content') === '"xt-disable"') {
       self.disable();
     } else if (self.detail.disabled) {
       self.enable();

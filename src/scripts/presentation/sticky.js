@@ -120,7 +120,7 @@ class Sticky extends Core {
   eventStickyHandler(e) {
     let self = this;
     // handler
-    if (!e.detail || !e.detail.skip) {
+    if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
       Xt.eventDelay(e, self.object, function() {
         self.eventSticky(self.object, e);
       });

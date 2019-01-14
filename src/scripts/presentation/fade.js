@@ -66,7 +66,7 @@ class Fade extends Core {
   eventFadeHandler(e) {
     let self = this;
     // handler
-    if (!e.detail || !e.detail.skip) {
+    if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
       Xt.eventDelay(e, self.object, function () {
         self.eventFade();
       });

@@ -97,10 +97,8 @@ class Ajax extends Core {
   eventPopstateHandler(e) {
     let self = this;
     // handler
-    if (!e.detail || !e.detail.skip) {
-      if (history.state && history.state.url) {
-        self.ajaxCall(history.state.url);
-      }
+    if (history.state && history.state.url) {
+      self.ajaxCall(history.state.url);
     }
   }
 
