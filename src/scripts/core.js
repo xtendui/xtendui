@@ -250,7 +250,7 @@ class Core {
           // initial
           self.detail.initial = false;
           // auto
-          if (options.auto && options.auto.time && options.auto.initial) {
+          if (options.auto && options.auto.initial) {
             self.eventAutoStart();
           }
         }
@@ -1230,32 +1230,34 @@ class Core {
   eventAutoStart() {
     let self = this;
     let options = self.options;
-    // disabled
-    if (self.detail.disabled && !self.detail.initial) {
-      return false;
-    }
-    // clear
-    clearInterval(self.object.dataset.xtAutoStartInterval);
-    // auto
-    let time = options.auto.time;
-    if (self.currentIndex !== null &&  // not when nothing activated
-      !self.detail.initial || options.auto.initial) { // not when initial
-      self.object.dataset.xtAutoStartInterval = setInterval(function () { // interval because can become :visible
-        if (self.object.offsetParent) { // offsetParent for checking if :visible
-          // auto
-          if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
-            if (options.auto.inverse) {
-              self.goToPrev(options.auto.step, true, options.auto.loop);
-            } else {
-              self.goToNext(options.auto.step, true, options.auto.loop);
+    if (options.auto && options.auto.time) {
+      // disabled
+      if (self.detail.disabled && !self.detail.initial) {
+        return false;
+      }
+      // clear
+      clearInterval(self.object.dataset.xtAutoStartInterval);
+      // auto
+      let time = options.auto.time;
+      if (self.currentIndex !== null &&  // not when nothing activated
+        !self.detail.initial || options.auto.initial) { // not when initial
+        self.object.dataset.xtAutoStartInterval = setInterval(function () { // interval because can become :visible
+          if (self.object.offsetParent) { // offsetParent for checking if :visible
+            // auto
+            if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
+              if (options.auto.inverse) {
+                self.goToPrev(options.auto.step, true, options.auto.loop);
+              } else {
+                self.goToNext(options.auto.step, true, options.auto.loop);
+              }
             }
           }
-        }
-      }, time).toString();
-      // listener dispatch
-      self.eDetailSet();
-      self.eDetail.autoTime = time;
-      self.object.dispatchEvent(new CustomEvent('auto.xt.start', {detail: self.eDetail}));
+        }, time).toString();
+        // listener dispatch
+        self.eDetailSet();
+        self.eDetail.autoTime = time;
+        self.object.dispatchEvent(new CustomEvent('auto.xt.start', {detail: self.eDetail}));
+      }
     }
   }
 
@@ -1265,16 +1267,18 @@ class Core {
   eventAutoStop() {
     let self = this;
     let options = self.options;
-    // disabled
-    if (self.detail.disabled && !self.detail.initial) {
-      return false;
+    if (options.auto && options.auto.time) {
+      // disabled
+      if (self.detail.disabled && !self.detail.initial) {
+        return false;
+      }
+      // clear
+      clearInterval(self.object.dataset.xtAutoStartInterval);
+      // listener dispatch
+      self.eDetailSet();
+      self.eDetail.autoTime = options.auto.time;
+      self.object.dispatchEvent(new CustomEvent('auto.xt.stop', {detail: self.eDetail}));
     }
-    // clear
-    clearInterval(self.object.dataset.xtAutoStartInterval);
-    // listener dispatch
-    self.eDetailSet();
-    self.eDetail.autoTime = options.auto.time;
-    self.object.dispatchEvent(new CustomEvent('auto.xt.stop', {detail: self.eDetail}));
   }
 
   /**
@@ -1283,16 +1287,18 @@ class Core {
   eventAutoPause() {
     let self = this;
     let options = self.options;
-    // disabled
-    if (self.detail.disabled && !self.detail.initial) {
-      return false;
+    if (options.auto && options.auto.time) {
+      // disabled
+      if (self.detail.disabled && !self.detail.initial) {
+        return false;
+      }
+      // clear
+      clearInterval(self.object.dataset.xtAutoStartInterval);
+      // listener dispatch
+      self.eDetailSet();
+      self.eDetail.autoTime = options.auto.time;
+      self.object.dispatchEvent(new CustomEvent('auto.xt.pause', {detail: self.eDetail}));
     }
-    // clear
-    clearInterval(self.object.dataset.xtAutoStartInterval);
-    // listener dispatch
-    self.eDetailSet();
-    self.eDetail.autoTime = options.auto.time;
-    self.object.dispatchEvent(new CustomEvent('auto.xt.pause', {detail: self.eDetail}));
   }
 
   /**
