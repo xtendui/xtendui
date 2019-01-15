@@ -101,16 +101,18 @@ function ajaxInit(main, index, query) {
       let href = el.getAttribute('href');
       if (href) {
         let target = document.querySelectorAll(href);
-        let rect = target[0].getBoundingClientRect();
-        let top = rect.top + scrollTop;
-        let bottom = Infinity;
-        if (scrollTop >= top - dist && scrollTop < bottom - dist) {
-          if (!el.classList.contains('active')) {
-            for (let element of els) {
-              if (element === el) {
-                element.classList.add('active', 'open');
-              } else {
-                element.classList.remove('active', 'open');
+        if (target.length) {
+          let rect = target[0].getBoundingClientRect();
+          let top = rect.top + scrollTop;
+          let bottom = Infinity;
+          if (scrollTop >= top - dist && scrollTop < bottom - dist) {
+            if (!el.classList.contains('active')) {
+              for (let element of els) {
+                if (element === el) {
+                  element.classList.add('active', 'open');
+                } else {
+                  element.classList.remove('active', 'open');
+                }
               }
             }
           }
