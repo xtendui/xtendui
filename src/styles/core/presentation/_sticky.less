@@ -45,6 +45,15 @@
       position: fixed;
     }
   }
+  // fixed mode
+  & when (@mode = 'fixed-always') {
+    &.xt-clone {
+      position: absolute;
+    }
+    &:not(.xt-clone) {
+      position: fixed;
+    }
+  }
   // showhide
   .show-sticky {
     display: none;
