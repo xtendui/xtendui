@@ -97,9 +97,9 @@ class Core {
     self.initScope();
     self.initCurrents();
     self.initCheck();
+    self.eventCheck();
     self.initEvents();
     self.initAria();
-    self.eventCheck();
   }
 
   /**
@@ -436,6 +436,8 @@ class Core {
         // jump
         if (!self.detail.disabled) {
           jump.classList.add('xt-jump');
+        } else {
+          jump.classList.remove('xt-jump');
         }
       }
     }

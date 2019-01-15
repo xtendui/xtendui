@@ -170,6 +170,8 @@ class Slider extends Core {
       // grab
       if (!self.detail.disabled) {
         dragger.classList.add('xt-grab');
+      } else {
+        dragger.classList.remove('xt-grab');
       }
     }
   }
