@@ -138,8 +138,9 @@ function sliderInit(main, index) {
   function mousemove(e) {
     // vars
     let rect = spinner.getBoundingClientRect();
-    let top = e.clientY + rect.height / 2 - 20; // 20 for exaclty center
-    let left = e.clientX + rect.width / 2 - 20; // 20 for exaclty center
+    let rectParent = spinner.offsetParent.getBoundingClientRect();
+    let top = e.clientY - rectParent.top + rect.height / 2 - 20; // 20 for exaclty center
+    let left = e.clientX - rectParent.left + rect.width / 2 - 20; // 20 for exaclty center
     // tween
     let tweens = TweenMax.getTweensOf(spinner);
     if (tweens.length) {
@@ -162,8 +163,9 @@ function sliderInit(main, index) {
     spinner.classList.add('active');
     // vars
     let rect = spinner.getBoundingClientRect();
-    let top = e.clientY + rect.height / 2 - 20; // 20 for exaclty center
-    let left = e.clientX - rect.width / 2 - 20; // 20 for exaclty center
+    let rectParent = spinner.offsetParent.getBoundingClientRect();
+    let top = e.clientY - rectParent.top + rect.height / 2 - 20; // 20 for exaclty center
+    let left = e.clientX - rectParent.left - rect.width / 2 - 20; // 20 for exaclty center
     // tween
     let tweens = TweenMax.getTweensOf(spinner);
     if (tweens.length) {
