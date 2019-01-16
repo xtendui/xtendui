@@ -357,6 +357,11 @@ class Slider extends Core {
     if (self.detail.disabled && !self.detail.initial) {
       return false;
     }
+    // animating
+    dragger.classList.add('xt-disable--events');
+    Xt.animTimeout(dragger, function() {
+      dragger.classList.remove('xt-disable--events');
+    });
     // var
     let slide = e.target;
     let slideLeft = slide.offsetLeft;
@@ -455,6 +460,10 @@ class Slider extends Core {
     if (self.detail.disabled && !self.detail.initial) {
       return false;
     }
+    // animating
+    if (dragger.classList.contains('xt-disable--events')) {
+      return false;
+    }
     // inertia
     dragger.classList.add('dragging');
     // listener dispatch
@@ -472,6 +481,10 @@ class Slider extends Core {
     let xCache = self.detail.xCache || 0;
     // disabled
     if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
+    // animating
+    if (dragger.classList.contains('xt-disable--events')) {
       return false;
     }
     // inertia
@@ -535,6 +548,10 @@ class Slider extends Core {
     if (self.detail.disabled && !self.detail.initial) {
       return false;
     }
+    // animating
+    if (dragger.classList.contains('xt-disable--events')) {
+      return false;
+    }
     // friction
     self.detail.xVelocity *= options.drag.friction;
     if (Math.abs(self.detail.xVelocity) > options.drag.frictionThreshold) {
@@ -557,6 +574,10 @@ class Slider extends Core {
     let xCache = self.detail.xCache || 0;
     // disabled
     if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
+    // animating
+    if (dragger.classList.contains('xt-disable--events')) {
       return false;
     }
     // calculate
