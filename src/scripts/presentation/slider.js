@@ -498,7 +498,6 @@ class Slider extends Core {
       // get nearest
       let found = self.currentIndex;
       if (options.groupMq) {
-        self.groupMq = [];
         for (let [i, group] of self.groupMq.entries()) {
           for (let slideCheck of group) {
             let check = xPos - dragger.offsetWidth / 2 + slideCheck.offsetLeft;
@@ -592,7 +591,7 @@ class Slider extends Core {
       let xVelocityOld = self.detail.xVelocity || 0;
       self.detail.xStart = self.detail.eInit.clientX || self.detail.eInit.touches[0].clientX;
       self.detail.xCurrent = self.detail.eCurrent.clientX || self.detail.eCurrent.touches[0].clientX;
-      self.detail.xPos = xCache + self.detail.xCurrent - self.detail.xStart;
+      self.detail.xPos = xCache + (self.detail.xCurrent - self.detail.xStart) * self.options.drag.factor;
       self.detail.xVelocity = self.detail.xPos - xPosOld;
       self.detail.xVelocity += xVelocityOld * options.drag.velocityFriction; // keep some velocity
     }
@@ -641,8 +640,9 @@ Slider.defaults = {
   "dragger": ".slides_inner",
   "drag": {
     "threshold": 100,
-    "friction": 0.75,
-    "frictionThreshold": 5,
+    "factor": 1,
+    "friction": 0.9,
+    "frictionThreshold": 3,
     "velocityFriction": 0.33,
   }
 };

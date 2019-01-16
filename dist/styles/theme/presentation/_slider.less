@@ -6,14 +6,15 @@
 
 .slides {
   // autoHeight animations
-  .trans-default.out();
+  transition-property: height;
   transition-duration: @time--big;
+  transition-timing-function: @bez--in-out;
 }
 
 .slides_inner {
   // dragger animations
   &:not(.dragging) { // not when dragging
-    .trans-default.out();
+    .trans-default.active();
     transition-duration: @time--big;
   }
 }
