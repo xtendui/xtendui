@@ -13,10 +13,9 @@
 
 .slides_inner {
   // dragger animations
-  &:not(.dragging) { // not when dragging
-    .trans-default.active();
-    transition-duration: @time--big;
-  }
+  transition-property: transform;
+  transition-duration: @time--big;
+  transition-timing-function: @bez--in;
 }
 
 // pagination

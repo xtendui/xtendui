@@ -464,8 +464,8 @@ class Slider extends Core {
     if (dragger.classList.contains('xt-disable--events')) {
       return false;
     }
-    // inertia
-    dragger.classList.add('dragging');
+    // prevent dragging animation
+    self.dragger.classList.add('trans-anim-none');
     // listener dispatch
     dragger.dispatchEvent(new CustomEvent('dragstart.xt.slider', {detail: self.eDetail}));
   }
@@ -487,8 +487,8 @@ class Slider extends Core {
     if (dragger.classList.contains('xt-disable--events')) {
       return false;
     }
-    // inertia
-    dragger.classList.remove('dragging');
+    // prevent dragging animation
+    self.dragger.classList.remove('trans-anim-none');
     // disable links
     dragger.classList.remove('link-none');
     // activate or reset
