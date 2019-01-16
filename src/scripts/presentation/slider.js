@@ -516,9 +516,8 @@ class Slider extends Core {
         }
       });
     } else {
-      self.detail.xPos = self.detail.xCache;
       // drag position
-      dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
+      dragger.style.transform = 'translateX(' + self.detail.xCache + 'px)';
       // listener dispatch
       dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
     }
