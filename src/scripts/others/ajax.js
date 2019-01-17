@@ -55,7 +55,7 @@ class Ajax extends Core {
     let options = self.options;
     // automatic initial currents
     for (let element of self.elements) {
-      let loc = location.pathname + location.search
+      let loc = location.pathname + location.search;
       let url = options.relativeUrl + element.pathname + element.search;
       if (url !== '' && loc === url) {
         element.classList.add(...options.classes);
@@ -278,7 +278,7 @@ Ajax.componentName = 'ajax';
 Ajax.defaults = {
   "query": "body", // needs to be unique
   "relativeUrl": "",
-  "elements": "a[href]",
+  "elements": "a[href]:not([href^='#'])",
   "class": "active",
   "on": "click",
   "toggle": false,
