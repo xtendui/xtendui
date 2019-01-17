@@ -142,7 +142,9 @@
 }
 
 .btn--link {
-  .link--none();
+  > span {
+    .link--none();
+  }
   // reset
   &@{btn--design} {
     border-radius: 0;
