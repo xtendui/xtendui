@@ -309,6 +309,8 @@ class Slider extends Core {
     for (let event of events) {
       dragger.removeEventListener(event, dragHandler);
     }
+    // animating
+    dragger.classList.add('xt-disable--events');
     // logic
     self.logicDragfriction(dragger, e);
   }
@@ -479,14 +481,8 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     let xCache = self.detail.xCache || 0;
-    // disabled
-    if (self.detail.disabled && !self.detail.initial) {
-      return false;
-    }
     // animating
-    if (dragger.classList.contains('xt-disable--events')) {
-      return false;
-    }
+    dragger.classList.remove('xt-disable--events');
     // prevent dragging animation
     self.dragger.classList.remove('trans-anim-none');
     // disable links
@@ -543,20 +539,14 @@ class Slider extends Core {
   logicDragfriction(dragger, e) {
     let self = this;
     let options = self.options;
-    // disabled
-    if (self.detail.disabled && !self.detail.initial) {
-      return false;
-    }
-    // animating
-    if (dragger.classList.contains('xt-disable--events')) {
-      return false;
-    }
     // friction
     self.detail.xVelocity *= options.drag.friction;
     if (Math.abs(self.detail.xVelocity) > options.drag.frictionThreshold) {
+      // logic
       self.logicDrag(dragger, e, true);
       window.requestAnimationFrame(self.logicDragfriction.bind(self).bind(e, dragger));
     } else {
+      // logic
       self.logicDragend(dragger, e);
     }
   }
@@ -571,14 +561,6 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     let xCache = self.detail.xCache || 0;
-    // disabled
-    if (self.detail.disabled && !self.detail.initial) {
-      return false;
-    }
-    // animating
-    if (dragger.classList.contains('xt-disable--events')) {
-      return false;
-    }
     // calculate
     if (friction) {
       // on friction
