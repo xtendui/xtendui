@@ -1639,6 +1639,7 @@ class Core {
         if (!appendOrigin.length) {
           el.before(Xt.createElement('<div class="xt-ignore" data-xt-origin=' + self.namespace + '></div>'));
         }
+        el.classList.add('xt-ignore'); // don't trigger Xt.observer
         appendToTarget[0].appendChild(el);
       }
     }
