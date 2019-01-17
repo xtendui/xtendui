@@ -91,6 +91,24 @@ class Ajax extends Core {
   //////////////////////
 
   /**
+   * element on handler
+   * @param {Node|HTMLElement|EventTarget|Window} element
+   * @param {Event} e
+   */
+  eventOnHandler(element, e) {
+    if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
+      // not when opening in new tab
+      if (e.metaKey || e.ctrlKey) {
+        return false;
+      }
+      // prevent links (needed for xt-ajax to go to links and propagate event if inside targets)
+      e.preventDefault();
+    }
+    // super
+    super.eventOnHandler(element, e);
+  }
+
+  /**
    * element popstate handler
    * @param {Event} e
    */

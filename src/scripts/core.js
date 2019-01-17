@@ -510,8 +510,6 @@ class Core {
   eventOnHandler(element, e) {
     let self = this;
     let options = self.options;
-    // prevent links (needed for xt-ajax to go to links and propagate event if inside targets)
-    e.preventDefault();
     // handler
     if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
       // event block
