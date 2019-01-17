@@ -561,6 +561,10 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     let xCache = self.detail.xCache || 0;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
     // calculate
     if (friction) {
       // on friction

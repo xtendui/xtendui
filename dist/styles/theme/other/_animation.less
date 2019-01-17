@@ -318,10 +318,10 @@ opacity: 0;
 .collapse--width {
   &.active {
     .trans-default.active();
-    transition-duration: @time--small;
+    transition-timing-function: @bez--in-out;
   }
   &.out {
     .trans-default.out();
-    transition-duration: @time--small;
+    transition-timing-function: @bez--in-out;
   }
 }
