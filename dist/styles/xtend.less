@@ -58,7 +58,7 @@
 @icon-xt--circle: '\e906';
 
 //////////////////////
-// icons theme
+// icons theme (fonts)
 //////////////////////
 
 /*
@@ -87,4 +87,27 @@
 
 @icon--menu: '\e609';
 @icon--search: '\e615';
+*/
+
+//////////////////////
+// icons theme (css)
+//////////////////////
+
+/*
+@import url(../icons/style.css);
+
+// font-face
+
+@icons--family: 'icomoon';
+
+// icons
+// USAGE LESS: .icon(@content: @icon--menu, @size: @icon--small, @sr-only: false, @position: after);
+// USAGE MARKUP: <span class="icon-social-facebook"></span>
+
+@icons: social-facebook, social-instagram, social-linkedin, social-twitter; // this will generate classes .icon-{name}
+
+@icon--social-facebook: '\e900';
+@icon--social-instagram: '\e901';
+@icon--social-linkedin: '\e902';
+@icon--social-twitter: '\e903';
 */
