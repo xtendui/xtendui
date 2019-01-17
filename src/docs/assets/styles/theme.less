@@ -200,8 +200,8 @@
   &.active {
     .btn {
       .anim-x.active();
-      animation-delay: @time--medium + 150ms; // @start + @child * @increment
-      .nth-child(@child: 6, @start: @time--medium, @increment: 25ms, @decrement: 0ms, {
+      animation-delay: @time--tiny + 150ms; // @start + @child * @increment
+      .nth-child(@child: 6, @start: @time--tiny, @increment: 25ms, @decrement: 0ms, {
         @animation-delay(); });
     }
     &.xt-inverse {
@@ -213,6 +213,7 @@
   &.out {
     .btn {
       .anim-x.out();
+      animation-delay: initial !important;
     }
     &.xt-inverse {
       .btn {
@@ -340,6 +341,12 @@
 
 .site-menu {
   // animation
+  &.active {
+    transition-duration: @time--medium;
+  }
+  &.out {
+    transition-duration: @time--medium;
+  }
   &, .overlay_design, .overlay_content {
     .anim-none() !important;
     opacity: 1 !important;
@@ -350,10 +357,10 @@
   .site-menu-content {
     .btn {
       .line-container {
-        .anim-x.active();
+        .anim-opacity.active();
         animation-delay: 0; // @start + @child * @increment
       }
-      .nth-child(@child: 6, @start: @time--medium, @increment: 50ms, @decrement: 0ms, { .line-container {
+      .nth-child(@child: 6, @start: @time--small, @increment: 50ms, @decrement: 0ms, { .line-container {
         @animation-delay();
       } });
     }
@@ -364,7 +371,7 @@
   .site-menu-content {
     .btn {
       .line-container {
-        .anim-x.out();
+        .anim-opacity.out();
         animation-delay: 120ms; // @start + @child * @increment
       }
       .nth-child(@child: 6, @start: 0, @increment: 50ms, @decrement: 0ms, { .line-container {
@@ -797,23 +804,28 @@
   &:not(.xt-clone) {
     .site-breadcrumbs {
       .trans-default.out();
+      transition-duration: @time--small;
     }
     .site-breadcrumbs-inner {
       .trans-default.out();
+      transition-duration: @time--small;
     }
     &.active {
       .site-breadcrumbs {
         padding: 1rem;
         padding-bottom: 0;
         .trans-default.active();
+        transition-duration: @time--small;
       }
       .site-breadcrumbs-inner {
         .padding(y, small);
         border-radius: @card--border-radius;
         .trans-default.active();
+        transition-duration: @time--small;
       }
       .site-breadcrumbs-meta {
         .anim-default.active();
+        animation-duration: @time--small;
         animation-name: anim-x-inverse--in;
       }
     }
