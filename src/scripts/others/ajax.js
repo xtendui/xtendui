@@ -55,10 +55,12 @@ class Ajax extends Core {
     let options = self.options;
     // automatic initial currents
     for (let element of self.elements) {
-      let loc = location.pathname + location.search;
-      let url = options.relativeUrl + element.pathname + element.search;
-      if (url !== '' && loc === url) {
-        element.classList.add(...options.classes);
+      if (location.hostname === element.hostname) {
+        let loc = location.pathname + location.search;
+        let url = options.relativeUrl + element.pathname + element.search;
+        if (url !== '' && loc === url) {
+          element.classList.add(...options.classes);
+        }
       }
     }
     // detect url
