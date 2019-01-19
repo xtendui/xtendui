@@ -1,4 +1,11 @@
 //////////////////////
+// variables
+//////////////////////
+
+@card--border-radius: .75rem;
+@card--border-width: 0;
+
+//////////////////////
 // card
 //////////////////////
 
@@ -63,38 +70,24 @@
 
 // size
 
-.card--tiny {
-  > .card_content {
-    padding: .25em .75em;
-    .font--tiny();
-  }
-}
-
 .card--small {
   > .card_content {
     padding: .5em 1em;
-    .font--small();
+    font-size: 1.3rem;
   }
 }
 
 .card--medium {
   > .card_content {
     padding: 1em 1.5em;
-    .font--medium();
+    font-size: 1.4rem;
   }
 }
 
 .card--big {
   > .card_content {
     padding: 1.5em 2em;
-    .font--big();
-  }
-}
-
-.card--giant {
-  > .card_content {
-    padding: 1.75em 2.25em;
-    .font--giant();
+    font-size: 1.5rem;
   }
 }
 

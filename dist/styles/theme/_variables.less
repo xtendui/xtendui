@@ -99,6 +99,28 @@
 }
 
 //////////////////////
+// document
+//////////////////////
+
+html {
+  // base font size for rem
+  // 100% is 16px
+  // value(%) = desired(px) * 100 / 16
+  font-size: 56.25%; // 9px
+  @media @min-lg {
+    font-size: 62.5%; // 10px
+  }
+}
+
+body {
+  background: @white;
+  .font-sans--regular();
+  font-size: 1.4rem;
+  color: @text;
+  line-height: 1.6;
+}
+
+//////////////////////
 // util
 //////////////////////
 
@@ -121,91 +143,6 @@
 // order
 
 @orders: -3, -2, -1, 0, 1, 2, 3;
-
-//////////////////////
-// content
-//////////////////////
-
-// icon
-
-@icon--tiny: .5em;
-@icon--small: .75em;
-@icon--medium: 1em;
-@icon--big: 1.25em;
-@icon--giant: 1.5em;
-
-// form
-
-@input--border-radius: 4px;
-@input--border-width: 1px;
-@select-arrow--size: 4px; // in px
-@select-space--size: 24px; // in px
-
-// group
-
-@group-border-radius: 4px;
-@group-border-width: 1px;
-
-//////////////////////
-// layout
-//////////////////////
-
-// flex
-
-@flex-spaces: none, micro, tiny, small, medium, big, giant; // if you change this change also variables names below
-@flex-space--none: 0 0; // vertical horizontal
-@flex-space--micro: .125rem .125rem;
-@flex-space--tiny: .25rem .25rem;
-@flex-space--small: .5rem .5rem;
-@flex-space--medium: 1rem 1rem;
-@flex-space--big: 2rem 2rem;
-@flex-space--giant: 4rem 4rem;
-
-// list
-
-@list-spaces: none, micro, tiny, small, medium, big, giant; // if you change this change also variables names below
-@list-space--none: 0 0; // vertical horizontal
-@list-space--micro: .125rem .125rem;
-@list-space--tiny: .25rem .25rem;
-@list-space--small: .5rem .5rem;
-@list-space--medium: 1rem 1rem;
-@list-space--big: 2rem 2rem;
-@list-space--giant: 4rem 4rem;
-
-// card
-
-@card--border-radius: .75rem;
-@card--border-width: 0;
-
-//////////////////////
-// interaction
-//////////////////////
-
-// btn
-
-@btn--design: ~'::before'; // selector for design
-@btn--border-radius: 4px;
-@btn--border-width: 1px;
-
-// drop
-
-@drop--border-radius: 4px;
-@drop--border-width: 1px;
-
-@drop--space: 6px; // space between button and drop
-
-// overlay
-
-@overlay--border-radius: 4px;
-@overlay--border-width: 1px;
-
-@overlay--sizes: tiny, small, medium, big, giant, full; // if you change this change also variables names below
-@overlay--size-tiny: @breakpoint--xs - 60;
-@overlay--size-small: @breakpoint--sm - 60;
-@overlay--size-medium: @breakpoint--md - 60;
-@overlay--size-big: @breakpoint--lg - 60;
-@overlay--size-giant: @breakpoint--xl - 60;
-@overlay--size-full: none;
 
 //////////////////////
 // grid
