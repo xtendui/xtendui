@@ -525,6 +525,8 @@ Xt.focusLimit = {
  * @param {Node|HTMLElement|EventTarget|Window} element Element to check target
  * @return {Array} Values [x, y]
  */
+/*
+USAGE: Xt.getTranslate(dragger)[0]; // for translateX
 Xt.getTranslate = function (element) {
   let transArr = [];
   let style = getComputedStyle(element);
@@ -539,7 +541,7 @@ Xt.getTranslate = function (element) {
   }
   return transArr;
 };
-
+*/
 /**
  * Check if event target is inside elements
  * @param {Node|HTMLElement|EventTarget|Window} element Element to check target
@@ -740,7 +742,7 @@ Xt.eventDelay = function (e, element, func, prefix = null) {
     }
     // delay
     clearTimeout(parseFloat(element.dataset['xt' + e.type + 'Timeout']));
-    element.dataset['xt' + e.type + 'Timeout'] = setTimeout( function() {
+    element.dataset['xt' + e.type + 'Timeout'] = setTimeout(function () {
       // func
       func();
     }, delay).toString();
@@ -764,13 +766,20 @@ try {
   };
   window.addEventListener('test', options, options);
   window.removeEventListener('test', options, options);
-} catch(err) {
+} catch (err) {
   Xt.passiveSupported = false;
 }
 
 //////////////////////
 // utils
 //////////////////////
+
+// Math.nthroot
+// https://stackoverflow.com/questions/7308627/javascript-calculate-the-nth-root-of-a-number
+
+Math.nthroot = function (x, n) {
+  return this.exp((1 / n) * this.log(x));
+};
 
 // save window width and height
 
