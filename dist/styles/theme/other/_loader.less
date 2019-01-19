@@ -5,13 +5,13 @@
 // spinner
 
 .spinner {
-  .line-height--none();
   width: 25px;
   height: 25px;
   .btn & {
     width: 1em;
     height: 1em;
   }
+  line-height: 0;
   svg {
     filter: drop-shadow(0 .1rem .2rem fade(@black, @perc--sm)) drop-shadow(0 .2rem .4rem fade(@black, @perc--md));
     circle {
