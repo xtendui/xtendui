@@ -36,39 +36,6 @@
 @grad--secondary: @secondary 33%, darken(@secondary, 5%) 100%;
 
 //////////////////////
-// animation
-//////////////////////
-
-// size
-
-@anim--tiny: .5rem;
-@anim--small: .75rem;
-@anim--medium: 1.5rem;
-@anim--big: 3rem;
-@anim--giant: 6rem;
-
-// time
-
-@time--tiny: 100ms;
-@time--small: 250ms;
-@time--medium: 500ms;
-@time--big: 1000ms;
-@time--giant: 2000ms;
-
-// beziers
-
-@bez--in: @bez-penguin--in;
-@bez--out: @bez-penguin--out;
-@bez--in-out: @bez-penguin--in-out;
-
-@bez--ease: ease; // others at https://easings.net/
-@bez-tiger: ~'cubic-bezier(.96,.1,.14,.88)';
-@bez-cat: ~'cubic-bezier(.77,.0,.17,1)';
-@bez-penguin--in: ~'cubic-bezier(.36,0,0,1)';
-@bez-penguin--out: ~'cubic-bezier(1,0,.64,1)';
-@bez-penguin--in-out: ~'cubic-bezier(.51,.12,.24,.89)';
-
-//////////////////////
 // fonts
 //////////////////////
 
@@ -177,3 +144,16 @@ body {
 @max-lg: ~'(max-width:'(@breakpoint--lg - 1)~')';
 @min-xl: ~'(min-width:'(@breakpoint--xl)~')';
 @max-xl: ~'(max-width:'(@breakpoint--xl - 1)~')';
+
+//////////////////////
+// classes generation: generate classes to use in markup
+// false -> not generate any classes
+// true -> only generate non responsive classes
+// array of breakpoints -> generate non responsive classes and responsive classes for those breakpoints
+//////////////////////
+
+@classes--icons: true;
+@classes--util: sm, md, lg;
+@classes--margin: false;
+@classes--padding: false;
+@classes--layout: sm, md, lg;
