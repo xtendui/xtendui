@@ -18,7 +18,7 @@ mkdir -p xtend-library/
 cp -r node_modules/xtend-library/dist/ xtend-library/
 ```
 
-After in `styles/xtend.less` set `@library-path` relative to `node_modules/xtend-library` path, then you can customize the less files inside `styles/`.
+After in `styles/xtend.less` set `@theme-path` (usually `theme/`) and `@core-path` (usually `../../node_modules/xtend-library/src/styles/core`).
 
 ### Compilation
 

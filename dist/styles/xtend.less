@@ -6,10 +6,14 @@
 // xtend
 //////////////////////
 
-@library--path: '../../'; // set `@library-path` relative to `node_modules/xtend-library` path
+// set '@theme-path' to 'theme/' relative to xtend.less (usually 'theme/')
+@theme--path: 'theme/';
 
-@import '@{library--path}src/styles/core/__import';
-@import 'theme/__import';
+// set '@core-path' to 'node_modules/xtend-library/src/styles/core/' relative to xtend.less (usually '../../node_modules/xtend-library/src/styles/core/')
+@core--path: '../../src/styles/core/';
+
+// import
+@import '__import';
 
 //////////////////////
 // icons xt
