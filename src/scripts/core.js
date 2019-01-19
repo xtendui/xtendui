@@ -1052,7 +1052,7 @@ class Core {
   eventCheck() {
     let self = this;
     // check disabled
-    if (getComputedStyle(self.object, '::before').getPropertyValue('content') === '"xt-disable"') {
+    if (self.object instanceof HTMLElement && getComputedStyle(self.object, '::after').getPropertyValue('content') === '"xt-disable"') {
       self.disable();
     } else if (self.detail.disabled) {
       self.enable();
@@ -1628,9 +1628,11 @@ class Core {
     el.classList.remove('out');
     self.decorateDirection(el);
     // special
-    self.specialCenter(el);
-    self.specialMiddle(el);
-    self.specialCollapseOn(el);
+    let before = getComputedStyle(el, '::before');
+    let after = getComputedStyle(el, '::after');
+    self.specialCenter(el, before, after);
+    self.specialMiddle(el, before, after);
+    self.specialCollapseOn(el, before, after);
     if (type === 'targets') {
       // appendTo
       if (options.appendTo) {
@@ -1693,7 +1695,9 @@ class Core {
     el.classList.add('out');
     self.decorateDirection(el);
     // special
-    self.specialCollapseOff(el);
+    let before = getComputedStyle(el, '::before');
+    let after = getComputedStyle(el, '::after');
+    self.specialCollapseOff(el, before, after);
     if (type === 'targets' || type === 'targetsInner') {
       self.specialCloseOff(el);
     }
@@ -1767,7 +1771,9 @@ class Core {
     // reset
     el.classList.remove('in');
     // special
-    self.specialCollapseReset(el);
+    let before = getComputedStyle(el, '::before');
+    let after = getComputedStyle(el, '::after');
+    self.specialCollapseReset(el, before, after);
     // aria
     if (options.aria) {
       // tabindex
@@ -1895,11 +1901,14 @@ class Core {
   /**
    * center position on activation
    * @param {Node|HTMLElement|EventTarget|Window} el Element
+   * @param {CSSStyleDeclaration} before Before style
+   * @param {CSSStyleDeclaration} after After style
    */
-  specialCenter(el) {
+  specialCenter(el, before, after) {
     let self = this;
     // specialCenter
-    if (el.classList.contains('drop--center')) {
+    let content = before.getPropertyValue('content');
+    if (content === '"xt-drop--center"') {
       let add = self.object.clientWidth;
       let remove = el.clientWidth;
       el.style.left = ((add - remove) / 2) + 'px';
@@ -1909,11 +1918,14 @@ class Core {
   /**
    * middle position on activation
    * @param {Node|HTMLElement|EventTarget|Window} el Element
+   * @param {CSSStyleDeclaration} before Before style
+   * @param {CSSStyleDeclaration} after After style
    */
-  specialMiddle(el) {
+  specialMiddle(el, before, after) {
     let self = this;
     // specialMiddle
-    if (el.classList.contains('drop--middle')) {
+    let content = after.getPropertyValue('content');
+    if (content === '"xt-drop--middle"') {
       let add = self.object.clientHeight;
       let remove = el.clientHeight;
       el.style.top = ((add - remove) / 2) + 'px';
@@ -1923,105 +1935,117 @@ class Core {
   /**
    * open collapse on activation
    * @param {Node|HTMLElement|EventTarget|Window} el Element
+   * @param {CSSStyleDeclaration} before Before style
+   * @param {CSSStyleDeclaration} after After style
    */
-  specialCollapseOn(el) {
-    if (el.classList.contains('collapse--height')) {
-      el.classList.add('xt-hide');
-      el.style.height = 'auto';
-      el.style.paddingTop = '';
-      el.style.paddingBottom = '';
-      let h = el.clientHeight + 'px';
-      let pt = el.style.paddingTop;
-      let pb = el.style.paddingBottom;
-      window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
-      el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-        el.classList.remove('xt-hide');
-        el.style.height = '0';
-        el.style.paddingTop = '0';
-        el.style.paddingBottom = '0';
+  specialCollapseOn(el, before, after) {
+    if (el instanceof HTMLElement) {
+      if (before.getPropertyValue('content') === '"xt-collapse--height"') {
+        el.classList.add('xt-hide');
+        el.style.height = 'auto';
+        el.style.paddingTop = '';
+        el.style.paddingBottom = '';
+        let h = el.clientHeight + 'px';
+        let pt = el.style.paddingTop;
+        let pb = el.style.paddingBottom;
+        window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
         el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-          el.style.height = h;
-          el.style.paddingTop = pt;
-          el.style.paddingBottom = pb;
+          el.classList.remove('xt-hide');
+          el.style.height = '0';
+          el.style.paddingTop = '0';
+          el.style.paddingBottom = '0';
+          el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
+            el.style.height = h;
+            el.style.paddingTop = pt;
+            el.style.paddingBottom = pb;
+          }).toString();
         }).toString();
-      }).toString();
-    }
-    if (el.classList.contains('collapse--width')) {
-      el.classList.add('xt-hide');
-      el.style.width = 'auto';
-      el.style.paddingLeft = '';
-      el.style.paddingRight = '';
-      let w = el.clientHeight + 'px';
-      let pl = el.style.paddingLeft;
-      let pr = el.style.paddingRight;
-      window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
-      el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-        el.classList.remove('xt-hide');
-        el.style.width = '0';
-        el.style.paddingLeft = '0';
-        el.style.paddingRight = '0';
+      }
+      if (after.getPropertyValue('content') === '"xt-collapse--width"') {
+        el.classList.add('xt-hide');
+        el.style.width = 'auto';
+        el.style.paddingLeft = '';
+        el.style.paddingRight = '';
+        let w = el.clientHeight + 'px';
+        let pl = el.style.paddingLeft;
+        let pr = el.style.paddingRight;
+        window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
         el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-          el.style.width = w;
-          el.style.paddingLeft = pl;
-          el.style.paddingRight = pr;
+          el.classList.remove('xt-hide');
+          el.style.width = '0';
+          el.style.paddingLeft = '0';
+          el.style.paddingRight = '0';
+          el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
+            el.style.width = w;
+            el.style.paddingLeft = pl;
+            el.style.paddingRight = pr;
+          }).toString();
         }).toString();
-      }).toString();
+      }
     }
   }
 
   /**
    * close collapse on deactivation
    * @param {Node|HTMLElement|EventTarget|Window} el Element
+   * @param {CSSStyleDeclaration} before Before style
+   * @param {CSSStyleDeclaration} after After style
    */
-  specialCollapseOff(el) {
-    if (el.classList.contains('collapse--height')) {
-      let h = el.clientHeight + 'px';
-      let pt = el.style.paddingTop;
-      let pb = el.style.paddingBottom;
-      window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
-      el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-        el.style.height = h;
-        el.style.paddingTop = pt;
-        el.style.paddingBottom = pb;
+  specialCollapseOff(el, before, after) {
+    if (el instanceof HTMLElement) {
+      if (before.getPropertyValue('content') === '"xt-collapse--height"') {
+        let h = el.clientHeight + 'px';
+        let pt = el.style.paddingTop;
+        let pb = el.style.paddingBottom;
+        window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
         el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-          el.style.height = '0';
-          el.style.paddingTop = '0';
-          el.style.paddingBottom = '0';
+          el.style.height = h;
+          el.style.paddingTop = pt;
+          el.style.paddingBottom = pb;
+          el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
+            el.style.height = '0';
+            el.style.paddingTop = '0';
+            el.style.paddingBottom = '0';
+          }).toString();
         }).toString();
-      }).toString();
-    }
-    if (el.classList.contains('collapse--width')) {
-      let w = el.clientWidth + 'px';
-      let pl = el.style.paddingLeft;
-      let pr = el.style.paddingRight;
-      window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
-      el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-        el.style.width = w;
-        el.style.paddingLeft = pl;
-        el.style.paddingRight = pr;
+      }
+      if (after.getPropertyValue('content') === '"xt-collapse--width"') {
+        let w = el.clientWidth + 'px';
+        let pl = el.style.paddingLeft;
+        let pr = el.style.paddingRight;
+        window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
         el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
-          el.style.width = '0';
-          el.style.paddingLeft = '0';
-          el.style.paddingRight = '0';
+          el.style.width = w;
+          el.style.paddingLeft = pl;
+          el.style.paddingRight = pr;
+          el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
+            el.style.width = '0';
+            el.style.paddingLeft = '0';
+            el.style.paddingRight = '0';
+          }).toString();
         }).toString();
-      }).toString();
+      }
     }
   }
 
   /**
    * reset collapse
    * @param {Node|HTMLElement|EventTarget|Window} el Element
+   * @param {CSSStyleDeclaration} before Before style
+   * @param {CSSStyleDeclaration} after After style
    */
-  specialCollapseReset(el) {
-    if (el.classList.contains('collapse--height')) {
-      el.style.height = 'auto';
-      el.style.paddingTop = '';
-      el.style.paddingBottom = '';
-    }
-    if (el.classList.contains('collapse--width')) {
-      el.style.width = 'auto';
-      el.style.paddingLeft = '';
-      el.style.paddingRight = '';
+  specialCollapseReset(el, before, after) {
+    if (el instanceof HTMLElement) {
+      if (before.getPropertyValue('content') === '"xt-collapse--height"') {
+        el.style.height = 'auto';
+        el.style.paddingTop = '';
+        el.style.paddingBottom = '';
+      }
+      if (after.getPropertyValue('content') === '"xt-collapse--width"') {
+        el.style.width = 'auto';
+        el.style.paddingLeft = '';
+        el.style.paddingRight = '';
+      }
     }
   }
 
