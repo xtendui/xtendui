@@ -153,22 +153,26 @@
   .drop--middle() !important;
 }
 
-.drop--middle-bottom() {
+// contain
+
+.drop--contain-bottom() {
+  .drop--middle();
   top: auto;
   bottom: 0;
 }
 
-.drop.drop--middle-bottom {
-  .drop--middle-bottom() !important;
+.drop.drop--contain-bottom {
+  .drop--contain-bottom() !important;
 }
 
-.drop--middle-top() {
+.drop--contain-top() {
+  .drop--middle();
   top: 0;
   bottom: auto;
 }
 
-.drop.drop--middle-top {
-  .drop--middle-top() !important;
+.drop.drop--contain-top {
+  .drop--contain-top() !important;
 }
 
 // .drop--disabled
