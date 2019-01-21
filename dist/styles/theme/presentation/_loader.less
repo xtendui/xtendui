@@ -29,7 +29,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        stroke: fade(@primary, @perc--md);
+        stroke: fade(@primary, @perc--xs);
         stroke-dashoffset: 0;
       }
     }
@@ -37,7 +37,7 @@
       circle {
         stroke: @primary;
         stroke-dashoffset: 1;
-        animation: anim-spinner @time--giant infinite @bez--in;
+        animation: anim-spinner @time--big * 2 infinite @bez--in;
       }
     }
   }
@@ -68,13 +68,13 @@
 .loader--x {
   .progress {
     span:nth-child(1) {
-      background: fade(@primary, @perc--md);
+      background: fade(@primary, @perc--xs);
     }
     span:nth-child(2) {
       width: 0;
       background: linear-gradient(90deg, @grad--primary);
       box-shadow: 0 .1rem 1rem fade(@primary, @perc--md), 0 .2rem 2rem fade(@primary, @perc--lg);
-      animation: anim-loader--x @time--giant infinite @bez--in;
+      animation: anim-loader--x @time--big * 2 infinite @bez--in;
     }
   }
 }
@@ -82,13 +82,13 @@
 .loader--y {
   .progress {
     span:nth-child(1) {
-      background: fade(@primary, @perc--md);
+      background: fade(@primary, @perc--xs);
     }
     span:nth-child(2) {
       height: 0;
       background: linear-gradient(0deg, @grad--primary);
       box-shadow: 0 .1rem 1rem fade(@primary, @perc--md), 0 .2rem 2rem fade(@primary, @perc--lg);
-      animation: anim-loader--y @time--giant infinite @bez--in;
+      animation: anim-loader--y @time--big * 2 infinite @bez--in;
     }
   }
 }
