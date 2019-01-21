@@ -202,31 +202,8 @@ class Core {
       let elements = self.getElementsSingle();
       if (elements.length) {
         for (let element of elements) {
-          let found = false;
-          // elements
-          let group = element.getAttribute('data-xt-group');
-          if (group) {
-            let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group);
-            for (let el of groupElements) {
-              if (el.classList.contains(options.classes[0])) {
-                el.classList.remove(...options.classes);
-                found = true;
-              }
-            }
-          } else {
-            if (element.classList.contains(options.classes[0])) {
-              element.classList.remove(...options.classes);
-              found = true;
-            }
-          }
-          // targets
-          let targets = self.getTargets(element);
-          for (let tr of targets) {
-            if (tr.classList.contains(options.classes[0])) {
-              tr.classList.remove(...options.classes);
-              found = true;
-            }
-          }
+          // remove activations
+          let found = self.initReset(element);
           // found
           if (found) {
             // initial
@@ -255,8 +232,74 @@ class Core {
             self.eventAutoStart();
           }
         }
+        self.detail.initialCurrents = self.getCurrents();
       }
     }).toString();
+  }
+
+  /**
+   * restart activation
+   */
+  initRestart() {
+    let self = this;
+    let options = self.options;
+    // initial
+    self.detail.initial = true;
+    // reset
+    let elements = self.getElementsSingle();
+    for (let element of elements) {
+      // remove activations
+      self.initReset(element);
+    }
+    // restart
+    let currents = self.detail.initialCurrents;
+    if (currents.length) {
+      for (let current of currents) {
+        self.eventOn(current, true);
+      }
+    } else {
+      self.detail.initial = false;
+    }
+    // auto
+    if (options.auto && options.auto.initial) {
+      self.eventAutoStart();
+    }
+  }
+
+  /**
+   * init reset activation
+   * @param {Node|HTMLElement|EventTarget|Window} element Element to check and reset
+   * @returns {Boolean} if element was activated
+   */
+  initReset(element) {
+    let self = this;
+    let options = self.options;
+    let found = false;
+    // elements
+    let group = element.getAttribute('data-xt-group');
+    if (group) {
+      let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group);
+      for (let el of groupElements) {
+        if (el.classList.contains(options.classes[0])) {
+          el.classList.remove(...options.classes);
+          found = true;
+        }
+      }
+    } else {
+      if (element.classList.contains(options.classes[0])) {
+        element.classList.remove(...options.classes);
+        found = true;
+      }
+    }
+    // targets
+    let targets = self.getTargets(element);
+    for (let tr of targets) {
+      if (tr.classList.contains(options.classes[0])) {
+        tr.classList.remove(...options.classes);
+        found = true;
+      }
+    }
+    return found;
   }
 
   /**
