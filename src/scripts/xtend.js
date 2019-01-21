@@ -689,11 +689,11 @@ Xt.autoClose = function (el) {
 /**
  * get transition or animation time
  * @param {Node|HTMLElement|EventTarget|Window} el Element animating
- * @param {Number} timing Force duration
+ * @param {Number} timing Force duration in milliseconds
  * @returns {Number} Time in milliseconds
  */
 Xt.animTime = function (el, timing = null) {
-  if (timing) {
+  if (timing !== null) {
     return timing;
   } else {
     let style = getComputedStyle(el);
@@ -702,7 +702,7 @@ Xt.animTime = function (el, timing = null) {
     if (transition || animation) {
       timing = Math.max(transition, animation);
     }
-    return timing * 1000;
+    return timing;
   }
 };
 
@@ -710,10 +710,11 @@ Xt.animTime = function (el, timing = null) {
  * execute function after transition or animation
  * @param {Node|HTMLElement|EventTarget|Window} el Element animating
  * @param {Function} func Function to execute after transition or animation
+ * @param {Number} timing Force duration in milliseconds
  */
-Xt.animTimeout = function (el, func) {
+Xt.animTimeout = function (el, func, timing = null) {
   clearTimeout(parseFloat(el.dataset.xtAnimTimeout));
-  el.dataset.xtAnimTimeout = setTimeout(func, Xt.animTime(el)).toString();
+  el.dataset.xtAnimTimeout = setTimeout(func, timing !== null ? timing : Xt.animTime(el)).toString();
 };
 
 /**
