@@ -75,43 +75,43 @@
 // toggle
 
 .toggle--block() {
-  .display(none);
+  display: none;
   &.active, &.out {
-    .display(block);
+    display: block;
   }
 }
 
 .toggle--flex() {
-  .display(none);
+  display: none;
   &.active, &.out {
-    .display(flex);
+    display: flex;
   }
 }
 
 .toggle--inline-flex() {
-  .display(none);
+  display: none;
   &.active, &.out {
-    .display(inline-flex);
+    display: inline-flex;
   }
 }
 
 .toggle--inline() {
-  .display(none);
+  display: none;
   &.active, &.out {
-    .display(inline);
+    display: inline;
   }
 }
 
 .toggle--inline-block() {
-  .display(none);
+  display: none;
   &.active, &.out {
-    .display(inline-block);
+    display: inline-block;
   }
 }
 
 .toggle--none() {
   &.active, &.out {
-    .display(none);
+    display: none;
   }
 }
 
@@ -842,22 +842,12 @@
 
 .align-items(@val, @breakpoint:none) when (@breakpoint = none) {
   align-items: @val;
-  & when (@val = stretch) {
-    > * {
-      align-items: @val;
-    }
-  }
 }
 
 .align-items(@val, @breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     align-items: @val;
-    & when (@val = stretch) {
-      > * {
-        align-items: @val;
-      }
-    }
   }
 }
 
@@ -865,22 +855,12 @@
 
 .align-content(@val, @breakpoint:none) when (@breakpoint = none) {
   align-content: @val;
-  & when (@val = stretch) {
-    > * {
-      align-items: @val;
-    }
-  }
 }
 
 .align-content(@val, @breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     align-content: @val;
-    & when (@val = stretch) {
-      > * {
-        align-items: @val;
-      }
-    }
   }
 }
 
@@ -888,22 +868,12 @@
 
 .align-self(@val, @breakpoint:none) when (@breakpoint = none) {
   align-self: @val;
-  & when (@val = stretch) {
-    > * {
-      align-items: @val;
-    }
-  }
 }
 
 .align-self(@val, @breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     align-self: @val;
-    & when (@val = stretch) {
-      > * {
-        align-items: @val;
-      }
-    }
   }
 }
 

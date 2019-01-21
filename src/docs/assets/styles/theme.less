@@ -28,14 +28,14 @@
 // sticky footer
 
 .site-wrapper {
-  .display(flex);
+  display: flex;
   .flex-wrap(wrap);
   .flex-direction(column);
   min-height: 100%;
 }
 
 .site-wrapper-inner {
-  .display(flex);
+  display: flex;
   .flex-wrap(wrap);
   .flex-direction(column);
   .flex--auto();
@@ -60,7 +60,7 @@
 
 .logo {
   .link--none();
-  .display(flex);
+  display: flex;
   .align-items(center);
   height: 7.25rem;
   opacity: .8;
@@ -82,7 +82,7 @@
 // .site-header-top
 
 .site-header-top {
-  .display(flex);
+  display: flex;
   color: @white;
   .site-menu & {
     position: absolute;
@@ -175,7 +175,7 @@
   position: relative;
   z-index: 1;
   .site-breadcrumbs-body-sub-inner {
-    .display(flex);
+    display: flex;
     .flex-direction(column);
     .padding(y, small);
   }
@@ -236,7 +236,7 @@
 @button-menu-pixels: 1px;
 
 .btn--menu {
-  .display(flex);
+  display: flex;
   .align-items(center);
   .icon--menu-custom {
     display: inline-block;
@@ -692,7 +692,7 @@
   .demo-code-tabs {
     position: relative;
     z-index: 2;
-    .display(flex);
+    display: flex;
     .justify-content(space-between);
     > * {
       .list();
@@ -776,7 +776,7 @@
 /*
 .demo-drops {
   .drop {
-    .display(block) !important;
+    display: block !important;
     position: relative !important;
   }
 }

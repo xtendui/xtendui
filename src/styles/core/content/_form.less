@@ -17,18 +17,18 @@
 // addons
 
 .form-item--flex {
-  .display(flex);
+  display: flex;
 }
 
 .form-item--horizontal {
-  .display(flex);
+  display: flex;
   .form-label {
     .margin(all, none);
   }
 }
 
 .form-item--inline {
-  .display(flex);
+  display: flex;
   .flex-wrap(nowrap);
   .form-input {
     width: auto;
@@ -40,7 +40,7 @@
 //////////////////////
 
 .form-input {
-  .display(block);
+  display: block;
   width: 100%;
   // styles
   border-radius: @input--border-radius;
@@ -66,7 +66,7 @@
 //////////////////////
 
 .form-label {
-  .display(block);
+  display: block;
   position: relative;
   cursor: pointer;
   .user-select--none();
@@ -97,7 +97,7 @@
     pointer-events: none;
   }
   &::after {
-    .display(flex) !important;
+    display: flex !important;
     .align-items(center);
     .justify-content(center);
   }
