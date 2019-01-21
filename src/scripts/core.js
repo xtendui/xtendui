@@ -239,7 +239,7 @@ class Core {
         }
         // if currents < min
         let todo = options.min - self.getCurrents().length;
-        if (todo) {
+        if (todo > 0) {
           // initial
           self.detail.initial = true;
           // activate
