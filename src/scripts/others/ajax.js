@@ -74,8 +74,6 @@ class Ajax extends Core {
     }
     // set pushstate
     self.pushState(url, document.title);
-    // super
-    super.initCurrents();
   }
 
   /**

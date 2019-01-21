@@ -693,7 +693,7 @@ Xt.autoClose = function (el) {
  * @returns {Number} Time in milliseconds
  */
 Xt.animTime = function (el, timing = null) {
-  if (timing !== null) {
+  if (timing || timing === 0) {
     return timing;
   } else {
     let style = getComputedStyle(el);
@@ -702,7 +702,7 @@ Xt.animTime = function (el, timing = null) {
     if (transition || animation) {
       timing = Math.max(transition, animation);
     }
-    return timing;
+    return timing * 1000;
   }
 };
 
@@ -714,7 +714,7 @@ Xt.animTime = function (el, timing = null) {
  */
 Xt.animTimeout = function (el, func, timing = null) {
   clearTimeout(parseFloat(el.dataset.xtAnimTimeout));
-  el.dataset.xtAnimTimeout = setTimeout(func, timing !== null ? timing : Xt.animTime(el)).toString();
+  el.dataset.xtAnimTimeout = setTimeout(func, timing || timing === 0 ? timing : Xt.animTime(el)).toString();
 };
 
 /**

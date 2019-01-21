@@ -197,7 +197,8 @@ class Core {
       el.dataset.xtNamespace = self.namespace;
     }
     // automatic initial currents
-    window.requestAnimationFrame(function () {
+    window.cancelAnimationFrame(parseFloat(self.object.dataset.xtCurrentsFrame));
+    self.object.dataset.xtCurrentsFrame = window.requestAnimationFrame(function () {
       let elements = self.getElementsSingle();
       if (elements.length) {
         for (let element of elements) {
@@ -255,7 +256,7 @@ class Core {
           }
         }
       }
-    });
+    }).toString();
   }
 
   /**
