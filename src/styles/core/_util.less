@@ -154,7 +154,7 @@
   // fix ie11 bug responsive
   min-height: 2px;
   // fix chrome bug responsive
-  .align-self--center();
+  .align-self(center);
   */
 }
 
@@ -801,350 +801,109 @@
 
 // direction
 
-.flex-direction--row(@breakpoint:none) when (@breakpoint = none) {
-  flex-direction: row;
+.flex-direction(@val, @breakpoint:none) when (@breakpoint = none) {
+  flex-direction: @val;
 }
 
-.flex-direction--row(@breakpoint:none) when (default()) {
+.flex-direction(@val, @breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    flex-direction: row;
-  }
-}
-
-.flex-direction--row-reverse(@breakpoint:none) when (@breakpoint = none) {
-  flex-direction: row-reverse;
-}
-
-.flex-direction--row-reverse(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    flex-direction: row-reverse;
-  }
-}
-
-.flex-direction--column(@breakpoint:none) when (@breakpoint = none) {
-  flex-direction: column;
-}
-
-.flex-direction--column(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    flex-direction: column;
-  }
-}
-
-.flex-direction--column-reverse(@breakpoint:none) when (@breakpoint = none) {
-  flex-direction: column-reverse;
-}
-
-.flex-direction--column-reverse(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    flex-direction: column-reverse;
+    flex-direction: @val;
   }
 }
 
 // wrap
 
-.flex--wrap(@breakpoint:none) when (@breakpoint = none) {
-  flex-wrap: wrap;
+.flex-wrap(@val, @breakpoint:none) when (@breakpoint = none) {
+  flex-wrap: @val;
 }
 
-.flex--wrap(@breakpoint:none) when (default()) {
+.flex-wrap(@val, @breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    flex-wrap: wrap;
-  }
-}
-
-.flex--wrap-reverse(@breakpoint:none) when (@breakpoint = none) {
-  flex-wrap: wrap-reverse;
-}
-
-.flex--wrap-reverse(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    flex-wrap: wrap-reverse;
-  }
-}
-
-.flex--nowrap(@breakpoint:none) when (@breakpoint = none) {
-  flex-wrap: nowrap;
-}
-
-.flex--nowrap(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    flex-wrap: nowrap;
+    flex-wrap: @val;
   }
 }
 
 // justify-content
 
-.justify-content--start(@breakpoint:none) when (@breakpoint = none) {
-  justify-content: flex-start;
+.justify-content(@val, @breakpoint:none) when (@breakpoint = none) {
+  justify-content: @val;
 }
 
-.justify-content--start(@breakpoint:none) when (default()) {
+.justify-content(@val, @breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    justify-content: flex-start;
-  }
-}
-
-.justify-content--end(@breakpoint:none) when (@breakpoint = none) {
-  justify-content: flex-end;
-}
-
-.justify-content--end(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    justify-content: flex-end;
-  }
-}
-
-.justify-content--center(@breakpoint:none) when (@breakpoint = none) {
-  justify-content: center;
-}
-
-.justify-content--center(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    justify-content: center;
-  }
-}
-
-.justify-content--between(@breakpoint:none) when (@breakpoint = none) {
-  justify-content: space-between;
-}
-
-.justify-content--between(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    justify-content: space-between;
-  }
-}
-
-.justify-content--around(@breakpoint:none) when (@breakpoint = none) {
-  justify-content: space-around;
-}
-
-.justify-content--around(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    justify-content: space-around;
+    justify-content: @val;
   }
 }
 
 // align-items
 
-.align-items--start(@breakpoint:none) when (@breakpoint = none) {
-  align-items: flex-start;
-}
-
-.align-items--start(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    align-items: flex-start;
-  }
-}
-
-.align-items--end(@breakpoint:none) when (@breakpoint = none) {
-  align-items: flex-end;
-}
-
-.align-items--end(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    align-items: flex-end;
-  }
-}
-
-.align-items--center(@breakpoint:none) when (@breakpoint = none) {
-  align-items: center;
-}
-
-.align-items--center(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    align-items: center;
-  }
-}
-
-.align-items--baseline(@breakpoint:none) when (@breakpoint = none) {
-  align-items: baseline;
-}
-
-.align-items--baseline(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    align-items: baseline;
-  }
-}
-
-.align-items--stretch(@breakpoint:none) when (@breakpoint = none) {
-  align-items: stretch;
-  > * {
-    align-items: stretch;
-  }
-}
-
-.align-items--stretch(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    align-items: stretch;
+.align-items(@val, @breakpoint:none) when (@breakpoint = none) {
+  align-items: @val;
+  & when (@val = stretch) {
     > * {
-      align-items: stretch;
+      align-items: @val;
+    }
+  }
+}
+
+.align-items(@val, @breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    align-items: @val;
+    & when (@val = stretch) {
+      > * {
+        align-items: @val;
+      }
     }
   }
 }
 
 // align-content
 
-.align-content--start(@breakpoint:none) when (@breakpoint = none) {
-  align-content: flex-start;
-}
-
-.align-content--start(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    align-content: flex-start;
-  }
-}
-
-.align-content--end(@breakpoint:none) when (@breakpoint = none) {
-  align-content: flex-end;
-}
-
-.align-content--end(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    align-content: flex-end;
-  }
-}
-
-.align-content--center(@breakpoint:none) when (@breakpoint = none) {
-  align-content: center;
-}
-
-.align-content--center(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    align-content: center;
-  }
-}
-
-.align-content--between(@breakpoint:none) when (@breakpoint = none) {
-  align-content: space-between;
-}
-
-.align-content--between(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    align-content: space-between;
-  }
-}
-
-.align-content--around(@breakpoint:none) when (@breakpoint = none) {
-  align-content: space-around;
-}
-
-.align-content--around(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    align-content: space-around;
-  }
-}
-
-.align-content--stretch(@breakpoint:none) when (@breakpoint = none) {
-  align-content: stretch;
-  > * {
-    align-items: stretch;
-  }
-}
-
-.align-content--stretch(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    align-content: stretch;
+.align-content(@val, @breakpoint:none) when (@breakpoint = none) {
+  align-content: @val;
+  & when (@val = stretch) {
     > * {
-      align-items: stretch;
+      align-items: @val;
+    }
+  }
+}
+
+.align-content(@val, @breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    align-content: @val;
+    & when (@val = stretch) {
+      > * {
+        align-items: @val;
+      }
     }
   }
 }
 
 // align-self
 
-.align-self--start(@breakpoint:none) when (@breakpoint = none) {
-  align-self: flex-start;
-}
-
-.align-self--start(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    align-self: flex-start;
-  }
-}
-
-.align-self--end(@breakpoint:none) when (@breakpoint = none) {
-  align-self: flex-end;
-}
-
-.align-self--end(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    align-self: flex-end;
-  }
-}
-
-.align-self--center(@breakpoint:none) when (@breakpoint = none) {
-  align-self: center;
-}
-
-.align-self--center(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    align-self: center;
-  }
-}
-
-.align-self--baseline(@breakpoint:none) when (@breakpoint = none) {
-  align-self: baseline;
-}
-
-.align-self--baseline(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    align-self: baseline;
-  }
-}
-
-.align-self--stretch(@breakpoint:none) when (@breakpoint = none) {
-  align-self: stretch;
-  > * {
-    align-items: stretch;
-  }
-}
-
-.align-self--stretch(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    align-self: stretch;
+.align-self(@val, @breakpoint:none) when (@breakpoint = none) {
+  align-self: @val;
+  & when (@val = stretch) {
     > * {
-      align-items: stretch;
+      align-items: @val;
     }
   }
 }
 
-.align-self--auto(@breakpoint:none) when (@breakpoint = none) {
-  align-self: auto;
-}
-
-.align-self--auto(@breakpoint:none) when (default()) {
+.align-self(@val, @breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    align-self: auto;
+    align-self: @val;
+    & when (@val = stretch) {
+      > * {
+        align-items: @val;
+      }
+    }
   }
 }
 

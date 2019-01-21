@@ -196,7 +196,7 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
 
 <h3>Direction</h3>
 
-<p>Set children's wrapping inside the flexbox.</p>
+<p>Set children's direction inside the flexbox.</p>
 
 <div class="table--scroll">
   <table class="table table-small">
@@ -210,23 +210,23 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     <tbody>
     <tr>
       <th scope="row">Class</th>
-      <td><code>.flex-{type}</code></td>
+      <td><code>.flex-direction--{type}</code></td>
       <td><code>.flex-direction--row</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
-      <td><code>.flex-{type}-{breakpoint}</code></td>
+      <td><code>.flex-direction--{type}-{breakpoint}</code></td>
       <td><code>.flex-direction--row-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.flex-{type}()</code></td>
-      <td><code>.flex-direction--row()</code></td>
+      <td><code>.flex-direction({type})</code></td>
+      <td><code>.flex-direction(row)</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.flex-{type}({breakpoint})</code></td>
-      <td><code>.flex-direction--row(sm)</code></td>
+      <td><code>.flex-direction({type}, {breakpoint})</code></td>
+      <td><code>.flex-direction(row, sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -323,23 +323,23 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     <tbody>
     <tr>
       <th scope="row">Class</th>
-      <td><code>.flex--wrap</code></td>
-      <td><code>.flex--wrap</code></td>
+      <td><code>.flex-wrap--{val}</code></td>
+      <td><code>.flex-wrap--wrap</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
-      <td><code>.flex--wrap-{breakpoint}</code></td>
-      <td><code>.flex--wrap-sm</code></td>
+      <td><code>.flex-wrap--{val}-{breakpoint}</code></td>
+      <td><code>.flex-wrap--wrap-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.flex--wrap()</code></td>
-      <td><code>.flex--wrap()</code></td>
+      <td><code>.flex-wrap({val})</code></td>
+      <td><code>.flex-wrap(wrap)</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.flex--wrap({breakpoint})</code></td>
-      <td><code>.flex--wrap(sm)</code></td>
+      <td><code>.flex-wrap({val}, {breakpoint})</code></td>
+      <td><code>.flex-wrap(wrap, sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -349,11 +349,11 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="reverse">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex--wrap</code>
+        <code>.flex-wrap--wrap</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex flex--wrap">
+      <div class="flex flex-wrap--wrap">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--12 col--8-sm"></div>
@@ -367,11 +367,11 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="reverse">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex--wrap-reverse</code>
+        <code>.flex-wrap--wrap-reverse</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex flex--wrap-reverse">
+      <div class="flex flex-wrap--wrap-reverse">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--12 col--8-sm"></div>
@@ -385,11 +385,11 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="nowrap">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex--nowrap</code> <code>.flex--auto</code>
+        <code>.flex-wrap--nowrap</code> <code>.flex--auto</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex flex--nowrap">
+      <div class="flex flex-wrap--nowrap">
         <div class="col col--4 flex--auto"></div>
         <div class="col col--8 flex--auto"></div>
         <div class="col col--12 col--8-sm flex--auto"></div>
@@ -416,22 +416,22 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     <tr>
       <th scope="row">Class</th>
       <td><code>.justify-content--{type}</code></td>
-      <td><code>.justify-content--start</code></td>
+      <td><code>.justify-content--flex-start</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
       <td><code>.justify-content--{type}-{breakpoint}</code></td>
-      <td><code>.justify-content--start-sm</code></td>
+      <td><code>.justify-content--flex-start-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.justify-content--{type}()</code></td>
-      <td><code>.justify-content--start()</code></td>
+      <td><code>.justify-content({type})</code></td>
+      <td><code>.justify-content(start)</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.justify-content--{type}({breakpoint})</code></td>
-      <td><code>.justify-content--start(sm)</code></td>
+      <td><code>.justify-content({type}, {breakpoint})</code></td>
+      <td><code>.justify-content(start, sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -441,11 +441,11 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.justify-content--start</code>
+        <code>.justify-content--flex-start</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex justify-content--start">
+      <div class="flex justify-content--flex-start">
         <div class="col col--2"></div>
         <div class="col col--4"></div>
       </div>
@@ -454,11 +454,11 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="end">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.justify-content--end</code>
+        <code>.justify-content--flex-end</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex justify-content--end">
+      <div class="flex justify-content--flex-end">
         <div class="col col--2"></div>
         <div class="col col--4"></div>
       </div>
@@ -480,11 +480,11 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="between">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.justify-content--between</code>
+        <code>.justify-content--space-between</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex justify-content--between">
+      <div class="flex justify-content--space-between">
         <div class="col col--2"></div>
         <div class="col col--4"></div>
       </div>
@@ -493,11 +493,11 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="around">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.justify-content--around</code>
+        <code>.justify-content--space-around</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex justify-content--around">
+      <div class="flex justify-content--space-around">
         <div class="col col--2"></div>
         <div class="col col--4"></div>
       </div>
@@ -522,22 +522,22 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     <tr>
       <th scope="row">Class</th>
       <td><code>.align-items--{type}</code></td>
-      <td><code>.align-items--start</code></td>
+      <td><code>.align-items--flex-start</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
       <td><code>.align-items--{type}-{breakpoint}</code></td>
-      <td><code>.align-items--start-sm</code></td>
+      <td><code>.align-items--flex-start-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.align-items--{type}()</code></td>
-      <td><code>.align-items--start()</code></td>
+      <td><code>.align-items({type})</code></td>
+      <td><code>.align-items(start)</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.align-items--{type}({breakpoint})</code></td>
-      <td><code>.align-items--start(sm)</code></td>
+      <td><code>.align-items({type}, {breakpoint})</code></td>
+      <td><code>.align-items(start, sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -547,11 +547,11 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-items--start</code>
+        <code>.align-items--flex-start</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex align-items--start" style="height: 125px;">
+      <div class="flex align-items--flex-start" style="height: 125px;">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--8"></div>
@@ -562,11 +562,11 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="end">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-items--end</code>
+        <code>.align-items--flex-end</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex align-items--end" style="height: 125px;">
+      <div class="flex align-items--flex-end" style="height: 125px;">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--8"></div>
@@ -638,22 +638,22 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     <tr>
       <th scope="row">Class</th>
       <td><code>.align-content--{type}</code></td>
-      <td><code>.align-content--start</code></td>
+      <td><code>.align-content--flex-start</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
       <td><code>.align-content--{type}-{breakpoint}</code></td>
-      <td><code>.align-content--start-sm</code></td>
+      <td><code>.align-content--flex-start-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.align-content--{type}()</code></td>
-      <td><code>.align-content--start()</code></td>
+      <td><code>.align-content({type})</code></td>
+      <td><code>.align-content(start)</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.align-content--{type}({breakpoint})</code></td>
-      <td><code>.align-content--start(sm)</code></td>
+      <td><code>.align-content({type}, {breakpoint})</code></td>
+      <td><code>.align-content(start, sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -663,11 +663,11 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-content--start</code>
+        <code>.align-content--flex-start</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex align-content--start" style="height: 125px;">
+      <div class="flex align-content--flex-start" style="height: 125px;">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--8"></div>
@@ -678,11 +678,11 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="end">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-content--end</code>
+        <code>.align-content--flex-end</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex align-content--end" style="height: 125px;">
+      <div class="flex align-content--flex-end" style="height: 125px;">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--8"></div>
@@ -708,11 +708,11 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="between">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-content--between</code>
+        <code>.align-content--space-between</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex align-content--between" style="height: 125px;">
+      <div class="flex align-content--space-between" style="height: 125px;">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--8"></div>
@@ -723,11 +723,11 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="around">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-content--around</code>
+        <code>.align-content--space-around</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
-      <div class="flex align-content--around" style="height: 125px;">
+      <div class="flex align-content--space-around" style="height: 125px;">
         <div class="col col--4"></div>
         <div class="col col--8"></div>
         <div class="col col--8"></div>
@@ -770,22 +770,22 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
     <tr>
       <th scope="row">Class</th>
       <td><code>.align-self--{type}</code></td>
-      <td><code>.align-self--start</code></td>
+      <td><code>.align-self--flex-start</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
       <td><code>.align-self--{type}-{breakpoint}</code></td>
-      <td><code>.align-self--start-sm</code></td>
+      <td><code>.align-self--flex-start-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.align-self--{type}()</code></td>
-      <td><code>.align-self--start()</code></td>
+      <td><code>.align-self({type})</code></td>
+      <td><code>.align-self(start)</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.align-self--{type}({breakpoint})</code></td>
-      <td><code>.align-self--start(sm)</code></td>
+      <td><code>.align-self({type}, {breakpoint})</code></td>
+      <td><code>.align-self(start, sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -795,30 +795,30 @@ description: Flex is used to place it's childrens in a column/row layout. You ca
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-self--start</code>
+        <code>.align-self--flex-start</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex">
         <div class="col col--4" style="height: 60px;"></div>
-        <div class="col col--8 align-self--start"></div>
+        <div class="col col--8 align-self--flex-start"></div>
         <div class="col col--8" style="height: 60px;"></div>
-        <div class="col col--4 align-self--start"></div>
+        <div class="col col--4 align-self--flex-start"></div>
       </div>
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="end">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-self--end</code>
+        <code>.align-self--flex-end</code>
       </div>
     </div>
     <div class="demo-source demo-cols" data-lang="html">
       <div class="flex">
         <div class="col col--4" style="height: 60px;"></div>
-        <div class="col col--8 align-self--end"></div>
+        <div class="col col--8 align-self--flex-end"></div>
         <div class="col col--8" style="height: 60px;"></div>
-        <div class="col col--4 align-self--end"></div>
+        <div class="col col--4 align-self--flex-end"></div>
       </div>
     </div>
   </div>

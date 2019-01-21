@@ -8,7 +8,7 @@
   // list
   > li {
     .display(flex);
-    .align-items--start();
+    .align-items(flex-start);
     > * {
       .flex--auto();
     }
@@ -40,11 +40,11 @@
 
 .list {
   .list--base();
-  .flex-direction--row();
-  .flex--wrap();
+  .flex-direction(row);
+  .flex-wrap(wrap);
 }
 
 .list--block {
-  .flex-direction--column();
-  .flex--nowrap();
+  .flex-direction(column);
+  .flex-wrap(nowrap);
 }
