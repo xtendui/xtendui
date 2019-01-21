@@ -17,7 +17,7 @@ function loaderInit(main, index) {
   // loader
 
   function loaderTimeout() {
-    let progress = main.querySelectorAll('.progress span:nth-child(2)');
+    let progress = loader.querySelectorAll('.progress span:nth-child(2)');
     loader.dataset.loaderActive = loader.dataset.loaderActive === 'true' ? 'false' : 'true';
     if (loader.dataset.loaderActive === 'true') {
       loader.classList.add('active');

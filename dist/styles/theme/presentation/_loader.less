@@ -29,7 +29,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        stroke: fade(@white, 50%);
+        stroke: fade(@primary, @perc--md);
         stroke-dashoffset: 0;
       }
     }
@@ -68,7 +68,7 @@
 .loader--x {
   .progress {
     span:nth-child(1) {
-      background: @gray--250;
+      background: fade(@primary, @perc--md);
     }
     span:nth-child(2) {
       background: linear-gradient(90deg, @grad--primary);
@@ -81,7 +81,7 @@
 .loader--y {
   .progress {
     span:nth-child(1) {
-      background: @gray--250;
+      background: fade(@primary, @perc--md);
     }
     span:nth-child(2) {
       background: linear-gradient(0deg, @grad--primary);
