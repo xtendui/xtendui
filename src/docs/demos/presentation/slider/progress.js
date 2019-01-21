@@ -136,26 +136,29 @@ function sliderInit(main, index) {
   let spinnerTime = .8;
 
   function mousemove(e) {
-    // vars
-    let rect = spinner.getBoundingClientRect();
-    let top = e.clientY + rect.height / 2 - 20; // 20 for exaclty center
-    let left = e.clientX + rect.width / 2 - 20; // 20 for exaclty center
-    // tween
-    let tweens = TweenMax.getTweensOf(spinner);
-    if (tweens.length) {
-      for (let tween of tweens) {
-        let time = tween.time();
-        let css = tween.vars.css;
-        if (css) {
-          css.top = top;
-          css.left = left;
-          tween.seek(0).invalidate().seek(time);
+    cancelAnimationFrame(parseFloat(spinner.dataset.xtSpinnerFrame));
+    spinner.dataset.xtSpinnerFrame = window.requestAnimationFrame( function() {
+      // vars
+      let rect = spinner.getBoundingClientRect();
+      let top = e.clientY + rect.height / 2 - 20; // 20 for exaclty center
+      let left = e.clientX + rect.width / 2 - 20; // 20 for exaclty center
+      // tween
+      let tweens = TweenMax.getTweensOf(spinner);
+      if (tweens.length) {
+        for (let tween of tweens) {
+          let time = tween.time();
+          let css = tween.vars.css;
+          if (css) {
+            css.top = top;
+            css.left = left;
+            tween.seek(0).invalidate().seek(time);
+          }
         }
+      } else {
+        spinner.style.top = top + 'px';
+        spinner.style.left = left + 'px';
       }
-    } else {
-      spinner.style.top = top + 'px';
-      spinner.style.left = left + 'px';
-    }
+    }).toString();
   }
 
   function mouseenter(e) {
