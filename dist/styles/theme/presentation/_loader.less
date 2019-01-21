@@ -35,7 +35,7 @@
     }
     &:nth-child(2) {
       circle {
-        stroke: fade(@primary, @perc--xl);
+        stroke: @primary;
         stroke-dashoffset: 1;
         animation: anim-spinner @time--giant infinite @bez--in;
       }
@@ -71,6 +71,7 @@
       background: fade(@primary, @perc--md);
     }
     span:nth-child(2) {
+      width: 0;
       background: linear-gradient(90deg, @grad--primary);
       box-shadow: 0 .1rem 1rem fade(@primary, @perc--md), 0 .2rem 2rem fade(@primary, @perc--lg);
       animation: anim-loader--x @time--giant infinite @bez--in;
@@ -84,6 +85,7 @@
       background: fade(@primary, @perc--md);
     }
     span:nth-child(2) {
+      height: 0;
       background: linear-gradient(0deg, @grad--primary);
       box-shadow: 0 .1rem 1rem fade(@primary, @perc--md), 0 .2rem 2rem fade(@primary, @perc--lg);
       animation: anim-loader--y @time--giant infinite @bez--in;
