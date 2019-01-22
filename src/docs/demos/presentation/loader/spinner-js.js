@@ -17,13 +17,13 @@ function loaderInit(main, index) {
   // loader
 
   function loaderTimeout() {
-    let progress = loader.querySelectorAll('.spinner svg:nth-child(2) circle');
+    let spinner = loader.querySelectorAll('.spinner svg:nth-child(2) circle');
     loader.dataset.loaderActive = loader.dataset.loaderActive === 'true' ? 'false' : 'true';
     if (loader.dataset.loaderActive === 'true') {
       loader.classList.add('active');
       loader.classList.remove('out');
-      TweenMax.set(progress, {strokeDashoffset: 1});
-      TweenMax.to(progress, time / 1000, {strokeDashoffset: 0, ease: 'easeInOut', autoRound:false});
+      TweenMax.set(spinner, {strokeDashoffset: 1});
+      TweenMax.to(spinner, time / 1000, {strokeDashoffset: 0, ease: 'easeInOut', autoRound:false});
       setTimeout(loaderTimeout, time);
     } else {
       loader.classList.remove('active');

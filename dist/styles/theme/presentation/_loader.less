@@ -66,7 +66,7 @@
 // direction
 
 .loader--x {
-  .progress {
+  .filler {
     span:nth-child(1) {
       background: fade(@primary, @perc--xs);
     }
@@ -80,7 +80,7 @@
 }
 
 .loader--y {
-  .progress {
+  .filler {
     span:nth-child(1) {
       background: fade(@primary, @perc--xs);
     }
@@ -130,7 +130,7 @@
 .loader--size-x,
 .loader--size-top,
 .loader--size-bottom {
-  .progress {
+  .filler {
     height: 3px;
   }
 }
@@ -138,20 +138,20 @@
 .loader--size-y,
 .loader--size-left,
 .loader--size-right {
-  .progress {
+  .filler {
     width: 3px;
   }
 }
 
 .loader--size-x {
-  .progress {
+  .filler {
     left: 25%;
     right: 25%;
   }
 }
 
 .loader--size-y {
-  .progress {
+  .filler {
     top: 25%;
     bottom: 25%;
   }
@@ -178,7 +178,7 @@
   &.active {
     .anim-opacity.active();
     opacity: 0;
-    .spinner, .progress {
+    .spinner, .filler {
       .anim-y.active();
       animation-delay: @time--medium;
       opacity: 0;
@@ -188,7 +188,7 @@
     .anim-opacity.out();
     animation-delay: @time--medium;
     opacity: 1;
-    .spinner, .progress {
+    .spinner, .filler {
       .anim-y-inverse.out();
       opacity: 1;
     }
@@ -202,7 +202,7 @@
       .trans-anim-none() !important;
     }
   }
-  .progress {
+  .filler {
     span {
       .trans-anim-none() !important;
     }

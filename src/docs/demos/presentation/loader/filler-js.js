@@ -17,13 +17,13 @@ function loaderInit(main, index) {
   // loader
 
   function loaderTimeout() {
-    let progress = loader.querySelectorAll('.progress span:nth-child(2)');
+    let filler = loader.querySelectorAll('.filler span:nth-child(2)');
     loader.dataset.loaderActive = loader.dataset.loaderActive === 'true' ? 'false' : 'true';
     if (loader.dataset.loaderActive === 'true') {
       loader.classList.add('active');
       loader.classList.remove('out');
-      TweenMax.set(progress, {width: 0});
-      TweenMax.to(progress, time / 1000, {width: '100%', ease: 'easeInOut'});
+      TweenMax.set(filler, {width: 0});
+      TweenMax.to(filler, time / 1000, {width: '100%', ease: 'easeInOut'});
       setTimeout(loaderTimeout, time);
     } else {
       loader.classList.remove('active');
