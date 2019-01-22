@@ -1096,7 +1096,8 @@ class Core {
   eventCheck() {
     let self = this;
     // check disabled
-    if (self.object instanceof HTMLElement && getComputedStyle(self.object, '::after').getPropertyValue('content') === '"xt-disable"') {
+    if (self.object instanceof HTMLElement // not on window
+      && getComputedStyle(self.object, '::after').getPropertyValue('content').replace(/['"]+/g, '') === 'xt-disable') {
       self.disable();
     } else if (self.detail.disabled) {
       self.enable();
@@ -1672,8 +1673,8 @@ class Core {
     el.classList.remove('out');
     self.decorateDirection(el);
     // special
-    let before = getComputedStyle(el, '::before');
-    let after = getComputedStyle(el, '::after');
+    let before = getComputedStyle(el, '::before').getPropertyValue('content').replace(/['"]+/g, '');
+    let after = getComputedStyle(el, '::after').getPropertyValue('content').replace(/['"]+/g, '');
     self.specialCenter(el, before, after);
     self.specialMiddle(el, before, after);
     self.specialCollapseOn(el, before, after);
@@ -1739,8 +1740,8 @@ class Core {
     el.classList.add('out');
     self.decorateDirection(el);
     // special
-    let before = getComputedStyle(el, '::before');
-    let after = getComputedStyle(el, '::after');
+    let before = getComputedStyle(el, '::before').getPropertyValue('content').replace(/['"]+/g, '');
+    let after = getComputedStyle(el, '::after').getPropertyValue('content').replace(/['"]+/g, '');
     self.specialCollapseOff(el, before, after);
     if (type === 'targets' || type === 'targetsInner') {
       self.specialCloseOff(el);
@@ -1815,8 +1816,8 @@ class Core {
     // reset
     el.classList.remove('in');
     // special
-    let before = getComputedStyle(el, '::before');
-    let after = getComputedStyle(el, '::after');
+    let before = getComputedStyle(el, '::before').getPropertyValue('content').replace(/['"]+/g, '');
+    let after = getComputedStyle(el, '::after').getPropertyValue('content').replace(/['"]+/g, '');
     self.specialCollapseReset(el, before, after);
     // aria
     if (options.aria) {
@@ -1945,14 +1946,13 @@ class Core {
   /**
    * center position on activation
    * @param {Node|HTMLElement|EventTarget|Window} el Element
-   * @param {CSSStyleDeclaration} before Before style
-   * @param {CSSStyleDeclaration} after After style
+   * @param {String} before Before content
+   * @param {String} after After content
    */
   specialCenter(el, before, after) {
     let self = this;
     // specialCenter
-    let content = before.getPropertyValue('content');
-    if (content === '"xt-drop--center"') {
+    if (before === 'xt-drop--center') {
       let add = self.object.clientWidth;
       let remove = el.clientWidth;
       el.style.left = ((add - remove) / 2) + 'px';
@@ -1962,14 +1962,13 @@ class Core {
   /**
    * middle position on activation
    * @param {Node|HTMLElement|EventTarget|Window} el Element
-   * @param {CSSStyleDeclaration} before Before style
-   * @param {CSSStyleDeclaration} after After style
+   * @param {String} before Before content
+   * @param {String} after After content
    */
   specialMiddle(el, before, after) {
     let self = this;
     // specialMiddle
-    let content = after.getPropertyValue('content');
-    if (content === '"xt-drop--middle"') {
+    if (after === 'xt-drop--middle') {
       let add = self.object.clientHeight;
       let remove = el.clientHeight;
       el.style.top = ((add - remove) / 2) + 'px';
@@ -1979,12 +1978,12 @@ class Core {
   /**
    * open collapse on activation
    * @param {Node|HTMLElement|EventTarget|Window} el Element
-   * @param {CSSStyleDeclaration} before Before style
-   * @param {CSSStyleDeclaration} after After style
+   * @param {String} before Before content
+   * @param {String} after After content
    */
   specialCollapseOn(el, before, after) {
     if (el instanceof HTMLElement) {
-      if (before.getPropertyValue('content') === '"xt-collapse--height"') {
+      if (before === 'xt-collapse--height') {
         el.classList.add('xt-hide');
         el.style.height = 'auto';
         el.style.paddingTop = '';
@@ -2005,7 +2004,7 @@ class Core {
           }).toString();
         }).toString();
       }
-      if (after.getPropertyValue('content') === '"xt-collapse--width"') {
+      if (after === 'xt-collapse--width') {
         el.classList.add('xt-hide');
         el.style.width = 'auto';
         el.style.paddingLeft = '';
@@ -2032,12 +2031,12 @@ class Core {
   /**
    * close collapse on deactivation
    * @param {Node|HTMLElement|EventTarget|Window} el Element
-   * @param {CSSStyleDeclaration} before Before style
-   * @param {CSSStyleDeclaration} after After style
+   * @param {String} before Before content
+   * @param {String} after After content
    */
   specialCollapseOff(el, before, after) {
     if (el instanceof HTMLElement) {
-      if (before.getPropertyValue('content') === '"xt-collapse--height"') {
+      if (before === 'xt-collapse--height') {
         let h = el.clientHeight + 'px';
         let pt = el.style.paddingTop;
         let pb = el.style.paddingBottom;
@@ -2053,7 +2052,7 @@ class Core {
           }).toString();
         }).toString();
       }
-      if (after.getPropertyValue('content') === '"xt-collapse--width"') {
+      if (after === 'xt-collapse--width') {
         let w = el.clientWidth + 'px';
         let pl = el.style.paddingLeft;
         let pr = el.style.paddingRight;
@@ -2075,17 +2074,17 @@ class Core {
   /**
    * reset collapse
    * @param {Node|HTMLElement|EventTarget|Window} el Element
-   * @param {CSSStyleDeclaration} before Before style
-   * @param {CSSStyleDeclaration} after After style
+   * @param {String} before Before content
+   * @param {String} after After content
    */
   specialCollapseReset(el, before, after) {
     if (el instanceof HTMLElement) {
-      if (before.getPropertyValue('content') === '"xt-collapse--height"') {
+      if (before === 'xt-collapse--height') {
         el.style.height = 'auto';
         el.style.paddingTop = '';
         el.style.paddingBottom = '';
       }
-      if (after.getPropertyValue('content') === '"xt-collapse--width"') {
+      if (after === 'xt-collapse--width') {
         el.style.width = 'auto';
         el.style.paddingLeft = '';
         el.style.paddingRight = '';
