@@ -269,31 +269,30 @@
 // display
 
 .display(@val, @breakpoint:none) when (@breakpoint = none) {
-  & when not (@val = flex), not (@val = inline-flex) {
-    display: @val;
-  }
-  & when (@val = flex) {
-    display: flex;
-  }
-  & when (@val = inline-flex) {
-    display: inline-flex;
-  }
+  display: @val;
 }
 
 .display(@val, @breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    & when not (@val = flex), not (@val = inline-flex) {
-      display: @val;
-    }
-    
-    & when (@val = flex) {
-      display: flex;
-    }
-    
-    & when (@val = inline-flex) {
-      display: inline-flex;
-    }
+    display: @val;
+  }
+}
+
+//////////////////////
+// visibility
+//////////////////////
+
+// visibility
+
+.visibility(@val, @breakpoint:none) when (@breakpoint = none) {
+  visibility: @val;
+}
+
+.visibility(@val, @breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    visibility: @val;
   }
 }
 

@@ -187,6 +187,25 @@
     }
   }
 
+  // generate-display
+
+  @visibility--arr: hidden, visible;
+
+  .generate-display(@breakpoint:none, @i:length(@visibility--arr)) when (@i > 0) {
+    .generate-display(@breakpoint, @i - 1);
+    @val: extract(@visibility--arr, @i);
+    & when (@breakpoint = none) {
+      .visibility--@{val} {
+        .visibility(@val) !important;
+      }
+    }
+    & when not (@breakpoint = none) {
+      .visibility--@{val}-@{breakpoint} {
+        .visibility(@val) !important;
+      }
+    }
+  }
+
   //////////////////////
 
 }
