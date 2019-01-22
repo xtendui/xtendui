@@ -34,7 +34,7 @@ function sliderInit(main, index) {
         TweenMax.to(tween, .5, {timeScale: t});
       }
     } else {
-      TweenMax.set(spinner, {strokeDashoffset: 1});
+      TweenMax.set(spinner, {strokeDashoffset: 628});
       TweenMax.to(spinner, e.detail.autoTime / 1000, {strokeDashoffset: 0, ease: 'easeInOut', autoRound: false});
     }
     // on elements
@@ -78,7 +78,7 @@ function sliderInit(main, index) {
   object.addEventListener('auto.xt.stop', function (e) {
     // on object
     let spinner = object.querySelectorAll('.spinner svg:nth-child(2) circle');
-    TweenMax.set(spinner, {strokeDashoffset: 1});
+    TweenMax.set(spinner, {strokeDashoffset: 628});
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {

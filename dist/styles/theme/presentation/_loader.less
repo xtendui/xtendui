@@ -36,7 +36,7 @@
     &:nth-child(2) {
       circle {
         stroke: @primary;
-        stroke-dashoffset: 1;
+        stroke-dashoffset: 628;
         animation: anim-spinner @time--big * 2 infinite @bez--in;
       }
     }
@@ -45,7 +45,7 @@
 
 @keyframes anim-spinner {
   0% {
-    stroke-dashoffset: 1;
+    stroke-dashoffset: 628;
     transform: rotateY(0deg) rotateZ(-90deg);
   }
   50% {
@@ -58,7 +58,7 @@
     transform: rotateY(180deg) rotateZ(90deg);
   }
   100% {
-    stroke-dashoffset: 1;
+    stroke-dashoffset: 628;
     transform: rotateY(180deg) rotateZ(-90deg);
   }
 }
@@ -202,7 +202,7 @@
       .trans-anim-none() !important;
     }
   }
-  .progress {
+  .filler {
     span {
       .trans-anim-none() !important;
     }

@@ -22,7 +22,7 @@ function loaderInit(main, index) {
     if (loader.dataset.loaderActive === 'true') {
       loader.classList.add('active');
       loader.classList.remove('out');
-      TweenMax.set(spinner, {strokeDashoffset: 1});
+      TweenMax.set(spinner, {strokeDashoffset: 628});
       TweenMax.to(spinner, time / 1000, {strokeDashoffset: 0, ease: 'easeInOut', autoRound:false});
       setTimeout(loaderTimeout, time);
     } else {
