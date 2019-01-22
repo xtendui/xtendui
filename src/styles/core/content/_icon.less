@@ -84,24 +84,24 @@
 // icons theme
 //////////////////////
 
-@icons--family: none;
-@icons: none;
+@icons-theme--family: none;
+@icons-theme: none;
 
 // styles
 
-.icon {
-  & when not (@icons--family = none) {
+.icon-theme {
+  & when not (@icons-theme--family = none) {
     .icon--base();
-    font-family: @icons--family;
+    font-family: @icons-theme--family;
   }
 }
 
-[class^='icon--'], [class*=' icon--'] {
+[class^='icon-theme--'], [class*=' icon-theme--'] {
   display: inline-block;
   vertical-align: middle;
   .align-self(center);
   &::before {
-    .icon();
+    .icon-theme();
   }
 }
 
@@ -110,14 +110,14 @@
 .icon(@content, @size: @icon--medium, @position: after) {
   & when (@position = before) {
     &::before {
-      .icon();
+      .icon-theme();
       content: '@{content}';
       font-size: @size;
     }
   }
   & when (@position = after) {
     &::after {
-      .icon();
+      .icon-theme();
       content: '@{content}';
       font-size: @size;
     }
@@ -126,15 +126,15 @@
 
 // generate icons
 
-& when not (@icons--family = none) {
+& when not (@icons-theme--family = none) {
 
   & when (@classes--icons) {
 
     .generate-icons();
-    .generate-icons(@i:length(@icons)) when (@i > 0) {
+    .generate-icons(@i:length(@icons-theme)) when (@i > 0) {
       .generate-icons(@i - 1);
-      @name: extract(@icons, @i);
-      @val: ~"icon--@{name}";
+      @name: extract(@icons-theme, @i);
+      @val: ~"icon-theme--@{name}";
       .icon--@{name} {
         &::before {
           content: @@val;
