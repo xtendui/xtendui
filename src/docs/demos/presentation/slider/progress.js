@@ -167,5 +167,6 @@ function sliderInit(main, index) {
   container.addEventListener('mouseenter', mouseenter);
   container.removeEventListener('mouseleave', mouseleave);
   container.addEventListener('mouseleave', mouseleave);
+  container.dispatchEvent(new CustomEvent('mouseenter')); // fix when mouse is not moving
 
 }
