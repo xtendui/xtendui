@@ -132,6 +132,7 @@ function sliderInit(main, index) {
 
   // follow mouse
 
+  let container = object;
   let loader = object.querySelectorAll('.loader--mouse')[0];
 
   function mousemove(e) {
@@ -160,11 +161,11 @@ function sliderInit(main, index) {
     loader.classList.add('out');
   }
 
-  object.removeEventListener('mousemove', mousemove);
-  object.addEventListener('mousemove', mousemove);
-  object.removeEventListener('mouseenter', mouseenter);
-  object.addEventListener('mouseenter', mouseenter);
-  object.removeEventListener('mouseleave', mouseleave);
-  object.addEventListener('mouseleave', mouseleave);
+  container.removeEventListener('mousemove', mousemove);
+  container.addEventListener('mousemove', mousemove);
+  container.removeEventListener('mouseenter', mouseenter);
+  container.addEventListener('mouseenter', mouseenter);
+  container.removeEventListener('mouseleave', mouseleave);
+  container.addEventListener('mouseleave', mouseleave);
 
 }
