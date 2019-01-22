@@ -132,64 +132,32 @@ function sliderInit(main, index) {
 
   // follow mouse
 
-  let spinner = object.querySelectorAll('.spinner')[0];
-  let spinnerTime = .8;
+  let loader = object.querySelectorAll('.loader--mouse')[0];
 
   function mousemove(e) {
-    cancelAnimationFrame(parseFloat(spinner.dataset.xtSpinnerFrame));
-    spinner.dataset.xtSpinnerFrame = window.requestAnimationFrame( function() {
-      // vars
-      let rect = spinner.getBoundingClientRect();
-      let top = e.clientY + rect.height / 2 - 20; // 20 for exaclty center
-      let left = e.clientX + rect.width / 2 - 20; // 20 for exaclty center
-      // tween
-      let tweens = TweenMax.getTweensOf(spinner);
-      if (tweens.length) {
-        for (let tween of tweens) {
-          let time = tween.time();
-          let css = tween.vars.css;
-          if (css) {
-            css.top = top;
-            css.left = left;
-            tween.seek(0).invalidate().seek(time);
-          }
-        }
-      } else {
-        spinner.style.top = top + 'px';
-        spinner.style.left = left + 'px';
-      }
+    cancelAnimationFrame(parseFloat(loader.dataset.xtLoaderFrame));
+    loader.dataset.xtLoaderFrame = window.requestAnimationFrame( function() {
+      let rect = loader.getBoundingClientRect();
+      let top = e.clientY + rect.height / 2;
+      let left = e.clientX + rect.width / 2;
+      loader.style.top = top + 'px';
+      loader.style.left = left + 'px';
     }).toString();
   }
 
   function mouseenter(e) {
-    spinner.classList.add('active');
-    // vars
-    let rect = spinner.getBoundingClientRect();
-    let top = e.clientY + rect.height / 2 - 20; // 20 for exaclty center
-    let left = e.clientX - rect.width / 2 - 20; // 20 for exaclty center
-    // tween
-    let tweens = TweenMax.getTweensOf(spinner);
-    if (tweens.length) {
-      for (let tween of tweens) {
-        tween.kill();
-      }
-    }
-    TweenMax.to(spinner, spinnerTime, {top: top, left: left, ease: 'easeInOut'});
+    loader.classList.add('active');
+    loader.classList.remove('out');
+    let rect = loader.getBoundingClientRect();
+    let top = e.clientY + rect.height / 2;
+    let left = e.clientX + rect.width / 2;
+    loader.style.top = top + 'px';
+    loader.style.left = left + 'px';
   }
 
   function mouseleave(e) {
-    spinner.classList.remove('active');
-    // vars
-    let top = '100%';
-    let left = '100%';
-    // tween
-    let tweens = TweenMax.getTweensOf(spinner);
-    if (tweens.length) {
-      for (let tween of tweens) {
-        tween.kill();
-      }
-    }
-    TweenMax.to(spinner, spinnerTime, {top: top, left: left, ease: 'easeInOut'});
+    loader.classList.remove('active');
+    loader.classList.add('out');
   }
 
   object.removeEventListener('mousemove', mousemove);

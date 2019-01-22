@@ -11,11 +11,19 @@
   right: 0;
 }
 
+.loader--mouse {
+  pointer-events: none;
+  position: fixed;
+  top: initial;
+  left: initial;
+  bottom: initial;
+  right: initial;
+}
+
 // progress
 
 .progress {
   position: absolute;
-  z-index: @index--loader;
   top: 0;
   left: 0;
   bottom: 0;
@@ -32,7 +40,6 @@
 
 .spinner {
   position: absolute;
-  z-index: @index--loader;
   top: 0;
   left: 0;
   bottom: 0;

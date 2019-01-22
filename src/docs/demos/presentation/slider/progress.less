@@ -44,17 +44,14 @@
   .text-align(center);
 }
 
-// spinner
-
-.spinner {
-  pointer-events: none;
-  top: 100%;
-  left: 100%;
-  margin-top: -25px; // same as spinner height
-  margin-left: -25px; // same as spinner width
+.loader--mouse {
   // disable on mobile
   @media @max-sm {
-    top: 100% !important;
-    left: 100% !important;
+    .loader.active() !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
   }
 }

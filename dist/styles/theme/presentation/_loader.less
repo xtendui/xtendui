@@ -163,21 +163,34 @@
   background: fade(@white, @perc--xl);
 }
 
+// mouse
+
+.loader--mouse {
+  margin-top: -25px; // same as spinner height
+  margin-left: -25px; // same as spinner width
+  // activation
+  opacity: 0;
+}
+
 // animations
 
 .loader {
   &.active {
     .anim-opacity.active();
+    opacity: 0;
     .spinner, .progress {
-      .anim-x.active();
+      .anim-y.active();
       animation-delay: @time--medium;
+      opacity: 0;
     }
   }
   &.out {
     .anim-opacity.out();
     animation-delay: @time--medium;
+    opacity: 1;
     .spinner, .progress {
-      .anim-x.out();
+      .anim-y-inverse.out();
+      opacity: 1;
     }
   }
 }
