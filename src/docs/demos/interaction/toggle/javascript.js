@@ -10,7 +10,7 @@ CustomEase.create('easeInOut', '.77,.0,.17,1');
 
 // #toggle-0
 
-Xt.init.push({ // on DOM ready and on content added to DOM
+Xt.observe.push({
   matches: '#toggle-0',
   fnc: toggle0Init
 });
@@ -63,7 +63,7 @@ function toggle0Init(main, index, query) {
 
 // #toggle-1
 
-Xt.init.push({ // on DOM ready and on content added to DOM
+Xt.observe.push({
   matches: '#toggle-1',
   fnc: toggle1Init
 });

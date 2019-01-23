@@ -2,7 +2,7 @@
 // xtend extension: group-number
 //////////////////////
 
-Xt.init.push({ // on DOM ready and on content added to DOM
+Xt.observe.push({
   matches: '.group-number',
   fnc: inputNumberInit
 });

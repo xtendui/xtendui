@@ -37,7 +37,7 @@ Xt.Ajax = Ajax;
 // var
 //////////////////////
 
-Xt.init = [];
+Xt.observe = [];
 Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
 Xt.resizeDelay = 100;
 Xt.scrollDelay = false;
@@ -46,27 +46,6 @@ Xt.focusables = 'a, button, details, input, iframe, select, textarea';
 //////////////////////
 // init
 //////////////////////
-
-/**
- * initExtensions
- */
-
-Xt.initExtensions = function (added = document.documentElement) {
-  for (let obj of Xt.init) {
-    let els = [];
-    if (added.matches(obj.matches)) {
-      els.push(added);
-    }
-    for (let el of added.querySelectorAll(obj.matches)) {
-      els.push(el);
-    }
-    if (els.length) {
-      for (let [i, el] of els.entries()) {
-        obj.fnc(el, i, obj.matches);
-      }
-    }
-  }
-};
 
 /**
  * initXt
@@ -133,14 +112,37 @@ Xt.initXt = function (added = document.documentElement) {
   }
 };
 
-// observer
+/**
+ * initObserve
+ */
+
+Xt.initObserve = function (added = document.documentElement) {
+  for (let obj of Xt.observe) {
+    let els = [];
+    if (added.matches(obj.matches)) {
+      els.push(added);
+    }
+    for (let el of added.querySelectorAll(obj.matches)) {
+      els.push(el);
+    }
+    if (els.length) {
+      for (let [i, el] of els.entries()) {
+        obj.fnc(el, i, obj.matches);
+      }
+    }
+  }
+};
+
+/**
+ * observer
+ */
 
 Xt.observer = new MutationObserver(function (mutationsList) {
   for (let mutation of mutationsList) {
     if (mutation.type == 'childList') {
       for (let added of mutation.addedNodes) {
         if (added.nodeType === 1 && !added.classList.contains('xt-ignore')) {
-          Xt.initExtensions(added);
+          Xt.initObserve(added);
           Xt.initXt(added);
         }
       }
@@ -148,11 +150,14 @@ Xt.observer = new MutationObserver(function (mutationsList) {
   }
 });
 
-// init Xt and observer
 
-if (document.readyState === "loading") {
+/**
+ * document ready
+ */
+
+if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', function () {
-    Xt.initExtensions();
+    Xt.initObserve();
     Xt.initXt();
     Xt.observer.observe(document.documentElement, {
       characterData: false,
@@ -163,7 +168,7 @@ if (document.readyState === "loading") {
   });
 } else {
   window.requestAnimationFrame(function () {
-    Xt.initExtensions();
+    Xt.initObserve();
     Xt.initXt();
     Xt.observer.observe(document.documentElement, {
       characterData: false,

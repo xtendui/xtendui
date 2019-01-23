@@ -9,7 +9,7 @@ import Xt from '../../../scripts/xtend';
 // ajax
 //////////////////////
 
-Xt.init.push({ // on DOM ready and on content added to DOM
+Xt.observe.push({
   matches: 'body',
   fnc: ajaxInit
 });

@@ -1,4 +1,4 @@
-Xt.init.push({ // on DOM ready and on content added to DOM
+Xt.observe.push({
   matches: '.list',
   fnc: toggleInit
 });

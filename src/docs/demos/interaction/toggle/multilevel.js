@@ -2,7 +2,7 @@
 // xtend extension: multilevel
 //////////////////////
 
-Xt.init.push({ // on DOM ready and on content added to DOM
+Xt.observe.push({
   matches: '.multilevel',
   fnc: multilevelInit
 });
