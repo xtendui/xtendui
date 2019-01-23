@@ -3,7 +3,7 @@ Xt.init.push({ // on DOM ready and on content added to DOM
   fnc: sliderInit
 });
 
-function sliderInit(main, index) {
+function sliderInit(main, index, query) {
 
   // vars
 

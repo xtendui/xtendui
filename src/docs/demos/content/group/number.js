@@ -7,7 +7,7 @@ Xt.init.push({ // on DOM ready and on content added to DOM
   fnc: inputNumberInit
 });
 
-function inputNumberInit(main, index) {
+function inputNumberInit(main, index, query) {
   // init
   inputNumberChange.bind(main, 0)();
   // vars

@@ -7,7 +7,7 @@ Xt.init.push({ // on DOM ready and on content added to DOM
   fnc: multilevelInit
 });
 
-function multilevelInit(main, index) {
+function multilevelInit(main, index, query) {
   let btnReset = main.querySelectorAll('#multilevel-tab-reset')[0];
   let btns = main.querySelectorAll('.multilevel-reset');
   for (let btn of btns) {

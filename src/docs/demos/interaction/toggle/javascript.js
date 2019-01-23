@@ -15,7 +15,7 @@ Xt.init.push({ // on DOM ready and on content added to DOM
   fnc: toggle0Init
 });
 
-function toggle0Init(main, index) {
+function toggle0Init(main, index, query) {
 
   // toggle
 
@@ -68,7 +68,7 @@ Xt.init.push({ // on DOM ready and on content added to DOM
   fnc: toggle1Init
 });
 
-function toggle1Init(main, index) {
+function toggle1Init(main, index, query) {
 
   // toggle
 

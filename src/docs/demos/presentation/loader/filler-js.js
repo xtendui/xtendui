@@ -3,7 +3,7 @@ Xt.init.push({ // on DOM ready and on content added to DOM
   fnc: loaderInit
 });
 
-function loaderInit(main, index) {
+function loaderInit(main, index, query) {
 
   let loader = main;
 

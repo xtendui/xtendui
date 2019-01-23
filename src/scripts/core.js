@@ -1838,6 +1838,8 @@ class Core {
         self.queueOnDone(obj, type, skipQueue);
       }
     }
+    // listener dispatch
+    el.dispatchEvent(new CustomEvent('on.xt.done', {detail: self.eDetail}));
   }
 
   /**
@@ -1891,6 +1893,8 @@ class Core {
         self.queueOffDone(obj, type, skipQueue);
       }
     }
+    // listener dispatch
+    el.dispatchEvent(new CustomEvent('off.xt.done', {detail: self.eDetail}));
   }
 
   //////////////////////
