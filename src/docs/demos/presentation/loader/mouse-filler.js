@@ -9,13 +9,15 @@ function loaderInit(main, index, query) {
 
   let loader = main;
   let container = document.documentElement;
+  let rect = loader.getBoundingClientRect();
+  let width = rect.width;
+  let height = rect.height;
 
   function mousemove(e) {
     cancelAnimationFrame(parseFloat(loader.dataset.xtLoaderFrame));
     loader.dataset.xtLoaderFrame = window.requestAnimationFrame( function() {
-      let rect = loader.getBoundingClientRect();
-      let top = e.clientY + rect.height / 2;
-      let left = e.clientX + rect.width / 2;
+      let top = e.clientY + height / 2;
+      let left = e.clientX + width / 2;
       loader.style.top = top + 'px';
       loader.style.left = left + 'px';
     }).toString();
@@ -24,9 +26,8 @@ function loaderInit(main, index, query) {
   function mouseenter(e) {
     loader.classList.add('active');
     loader.classList.remove('out');
-    let rect = loader.getBoundingClientRect();
-    let top = e.clientY + rect.height / 2;
-    let left = e.clientX + rect.width / 2;
+    let top = e.clientY + height / 2;
+    let left = e.clientX + width / 2;
     loader.style.top = top + 'px';
     loader.style.left = left + 'px';
   }

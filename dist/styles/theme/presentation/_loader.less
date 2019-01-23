@@ -189,8 +189,17 @@
 // mouse
 
 .loader--mouse {
+  // spinner
   margin-top: -45px;
   margin-left: -45px;
+  // size-x
+  .loader--size-x& {
+    margin-top: -20px;
+    margin-left: -75px;
+    .filler {
+      width: 60px;
+    }
+  }
   // animations
   opacity: 0;
   &.active {
