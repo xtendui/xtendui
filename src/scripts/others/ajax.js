@@ -280,7 +280,7 @@ Ajax.defaults = {
   "relativeUrl": "",
   "elements": "a[href]:not([href^='#'])",
   "class": "active",
-  "on": "click",
+  "on": "click touchend",
   "toggle": false,
   "min": 0,
   "max": "Infinity",
