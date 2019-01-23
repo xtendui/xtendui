@@ -101,7 +101,8 @@ class Fade extends Core {
     }
     // core
     for (let el of self.elements) {
-      if (el.offsetParent && !el.classList.contains('fade--block')) {
+      if (!el.classList.contains('fade--block')
+        && (el.offsetWidth || el.offsetHeight || el.getClientRects().length)) { // :visible
         // var
         let rectElTop = el.offsetParent.getBoundingClientRect().top + el.offsetTop; // we use parents to not include transforms animations
         let heightEl = parseFloat(getComputedStyle(el).height);

@@ -1288,7 +1288,7 @@ class Core {
       if (self.currentIndex !== null &&  // not when nothing activated
         !self.detail.initial || options.auto.initial) { // not when initial
         self.object.dataset.xtAutoStartInterval = setInterval(function () { // interval because can become :visible
-          if (self.object.offsetParent) { // offsetParent for checking if :visible
+          if (self.object.offsetWidth || self.object.offsetHeight || self.object.getClientRects().length) { // :visible
             // auto
             if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
               if (options.auto.inverse) {
