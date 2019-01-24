@@ -2,17 +2,21 @@
 // various
 //////////////////////
 
+.pointer-events--none {
+  pointer-events: none;
+}
+
+.links--none {
+  a&, a {
+    pointer-events: none;
+  }
+}
+
 .text-capitalize {
   display: inline-block;
   text-transform: lowercase;
   &:first-letter {
     text-transform: uppercase;
-  }
-}
-
-.link-none {
-  a&, a {
-    pointer-events: none;
   }
 }
 

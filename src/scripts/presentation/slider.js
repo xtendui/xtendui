@@ -148,7 +148,7 @@ class Slider extends Core {
     // targets
     for (let slide of self.targets) {
       // disable links
-      slide.classList.add('link-none');
+      slide.classList.add('links--none');
       // slide on
       let slideOnHandler = Xt.dataStorage.put(slide, 'slideOnHandler' + self.namespace,
         self.eventSlideOnHandler.bind(self).bind(self, dragger, slide));
@@ -379,7 +379,7 @@ class Slider extends Core {
    * @param {Event} e
    */
   eventDragend(dragger, e) {
-    let self = this;
+  let self = this;
     // save event
     self.detail.eCurrent = e;
     // eDetail
@@ -391,7 +391,9 @@ class Slider extends Core {
       dragger.removeEventListener(event, dragHandler);
     }
     // animating
-    dragger.classList.add('xt-disable--events');
+    window.requestAnimationFrame(function () { // needed to execute touch click
+      dragger.classList.add('pointer-events--none');
+    });
     // logic
     self.logicDragfriction(dragger, e);
   }
@@ -441,12 +443,14 @@ class Slider extends Core {
       return false;
     }
     // animating
-    dragger.classList.add('xt-disable--events');
-    Xt.animTimeout(dragger, function () {
-      dragger.classList.remove('xt-disable--events');
+    window.requestAnimationFrame(function () { // needed to execute touch click
+      dragger.classList.add('pointer-events--none');
+      Xt.animTimeout(dragger, function () {
+        dragger.classList.remove('pointer-events--none');
+      });
     });
     // disable links
-    slide.classList.remove('link-none');
+    slide.classList.remove('links--none');
     // only one call per group
     if (slide.dataset.xtSlideOnDone) {
       return false;
@@ -492,7 +496,7 @@ class Slider extends Core {
       return false;
     }
     // disable links
-    slide.classList.add('link-none');
+    slide.classList.add('links--none');
     // only one call per group
     let group = slide.getAttribute('data-xt-group');
     if (group) {
@@ -516,7 +520,7 @@ class Slider extends Core {
       return false;
     }
     // animating
-    if (dragger.classList.contains('xt-disable--events')) {
+    if (dragger.classList.contains('pointer-events--none')) {
       return false;
     }
     // prevent dragging animation
@@ -537,7 +541,7 @@ class Slider extends Core {
     // prevent dragging animation
     self.dragger.classList.remove('trans-anim-none');
     // disable links
-    dragger.classList.remove('link-none');
+    dragger.classList.remove('links--none');
     // only one call per group
     let currents = self.getCurrents();
     for (let current of currents) {
@@ -588,16 +592,20 @@ class Slider extends Core {
         }
       });
       // animating
-      dragger.classList.remove('xt-disable--events');
+      window.requestAnimationFrame(function () { // needed to execute touch click
+        dragger.classList.remove('pointer-events--none');
+      });
     } else {
       // drag position
       dragger.style.transform = 'translateX(' + self.detail.xPosCurrent + 'px)';
       // listener dispatch
       dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
       // animating
-      dragger.classList.add('xt-disable--events');
-      Xt.animTimeout(dragger, function () {
-        dragger.classList.remove('xt-disable--events');
+      window.requestAnimationFrame(function () { // needed to execute touch click
+        dragger.classList.add('pointer-events--none');
+        Xt.animTimeout(dragger, function () {
+          dragger.classList.remove('pointer-events--none');
+        });
       });
     }
   }
@@ -656,9 +664,9 @@ class Slider extends Core {
     self.detail.xPosReal = pos;
     // disable links
     if (Math.abs(self.detail.xPos) > options.drag.threshold) {
-      dragger.classList.add('link-none');
+      dragger.classList.add('links--none');
     } else {
-      dragger.classList.remove('link-none');
+      dragger.classList.remove('links--none');
     }
     // overflow
     let first = self.targets[0];

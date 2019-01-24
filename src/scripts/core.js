@@ -410,8 +410,8 @@ class Core {
         if (events.includes('mouseenter') || events.includes('mousehover')) {
           let touchLinksStartHandler = Xt.dataStorage.put(el, 'touchLinksStartHandler' + self.namespace,
             self.eventTouchLinksStartHandler.bind(self).bind(self, el));
-          el.removeEventListener('touchstart', touchLinksStartHandler);
-          el.addEventListener('touchstart', touchLinksStartHandler);
+          el.removeEventListener('touchend', touchLinksStartHandler);
+          el.addEventListener('touchend', touchLinksStartHandler);
         }
       }
       el.removeEventListener('on.xt', onHandler);
