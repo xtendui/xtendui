@@ -227,6 +227,17 @@ textarea {
   line-height: 1.2;
   letter-spacing: 0;
   text-transform: none;
+  // disabled
+  &.disabled {
+    opacity: 1;
+    &::before {
+      background: @gray--250 !important;
+      border: 1px solid @gray--300 !important;
+    }
+    &::after {
+      color: darken(@gray--300, @perc--md) !important;
+    }
+  }
 }
 
 // styled
@@ -294,23 +305,23 @@ textarea {
 // pseudo
 
 input[type="checkbox"]:not(.unstyled) {
-  // disabled
-  &:disabled ~ .form-label {
-    .disabled();
-  }
-  // animation
+  // active
   &:checked ~ .form-label {
     .checkbox.active();
+  }
+  // disabled
+  &:disabled ~ .form-label {
+    .checkradio-label.disabled();
   }
 }
 
 input[type="radio"]:not(.unstyled) {
-  // disabled
-  &:disabled ~ .form-label {
-    .disabled();
-  }
-  // animation
+  // active
   &:checked ~ .form-label {
     .radio.active();
+  }
+  // disabled
+  &:disabled ~ .form-label {
+    .checkradio-label.disabled();
   }
 }
