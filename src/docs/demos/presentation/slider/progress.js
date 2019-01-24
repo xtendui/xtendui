@@ -18,6 +18,7 @@ function sliderInit(main, index, query) {
 
   // vars
 
+  let timeHide = .33;
   CustomEase.create('easeIn', '.36,0,0,1');
   CustomEase.create('easeOut', '1,0,.64,1');
   CustomEase.create('easeInOut', '.68,.13,.25,1');
@@ -27,16 +28,8 @@ function sliderInit(main, index, query) {
   object.addEventListener('auto.xt.start', function (e) {
     // on object
     let spinner = object.querySelectorAll('.spinner svg:nth-child(2) circle');
-    let tweens = TweenMax.getTweensOf(spinner);
-    if (tweens.length) {
-      for (let tween of tweens) {
-        let t = (e.detail.autoTime - tween.time() * 1000) / e.detail.autoTime;
-        TweenMax.to(tween, .5, {timeScale: t});
-      }
-    } else {
-      TweenMax.set(spinner, {strokeDashoffset: 628});
-      TweenMax.to(spinner, e.detail.autoTime / 1000, {strokeDashoffset: 0, ease: 'easeInOut', autoRound: false});
-    }
+    TweenMax.set(spinner, {strokeDashoffset: 628});
+    TweenMax.to(spinner, e.detail.autoTime / 1000, {strokeDashoffset: 0, ease: 'easeInOut', autoRound: false});
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
@@ -78,7 +71,7 @@ function sliderInit(main, index, query) {
   object.addEventListener('auto.xt.stop', function (e) {
     // on object
     let spinner = object.querySelectorAll('.spinner svg:nth-child(2) circle');
-    TweenMax.set(spinner, {strokeDashoffset: 628});
+    TweenMax.to(spinner, timeHide, {strokeDashoffset: 628, ease: 'easeInOut', autoRound: false});
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
@@ -102,10 +95,7 @@ function sliderInit(main, index, query) {
   object.addEventListener('auto.xt.pause', function (e) {
     // on object
     let spinner = object.querySelectorAll('.spinner svg:nth-child(2) circle');
-    let tweens = TweenMax.getTweensOf(spinner);
-    for (let tween of tweens) {
-      TweenMax.to(tween, .5, {timeScale: 0});
-    }
+    TweenMax.to(spinner, timeHide, {strokeDashoffset: 628, ease: 'easeInOut', autoRound: false});
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
@@ -168,6 +158,5 @@ function sliderInit(main, index, query) {
   container.addEventListener('mouseenter', mouseenter);
   container.removeEventListener('mouseleave', mouseleave);
   container.addEventListener('mouseleave', mouseleave);
-  container.dispatchEvent(new CustomEvent('mouseenter')); // fix when mouse is not moving
 
 }
