@@ -5,13 +5,19 @@
 //////////////////////
 
 #body-inner { // DO NOT APPLY to selector with descendants with position: fixed;
-  .trans-default.out();
+  transition-property: transform;
+  transition-duration: @time--medium;
+  transition-timing-function: @bez--out;
   html.xt-overlay--left & {
-    .trans-default.active();
     transform: translateX(3rem);
+    transition-property: transform;
+    transition-duration: @time--medium;
+    transition-timing-function: @bez--in;
   }
   html.xt-overlay--right & {
-    .trans-default.active();
     transform: translateX(-3rem);
+    transition-property: transform;
+    transition-duration: @time--medium;
+    transition-timing-function: @bez--in;
   }
 }

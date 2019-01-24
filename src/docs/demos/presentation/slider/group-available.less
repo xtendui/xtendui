@@ -22,15 +22,17 @@
     }
     // animation
     > * {
-      .trans-default.out();
-      transition-duration: @time--big;
       opacity: .5;
+      transition-property: opacity;
+      transition-duration: @time--big;
+      transition-timing-function: @bez--out;
     }
     &.active {
       > * {
-        .trans-default.active();
-        transition-duration: @time--big;
         opacity: 1;
+        transition-property: opacity;
+        transition-duration: @time--big;
+        transition-timing-function: @bez--in;
       }
     }
   }

@@ -167,21 +167,21 @@
 
 .loader {
   &.active {
-    .anim-opacity.active();
     opacity: 0;
+    .anim-opacity.active();
     .spinner, .filler {
+      opacity: 0;
       .anim-zoom.active();
       animation-delay: @time--medium;
-      opacity: 0;
     }
   }
   &.out {
+    opacity: 1;
     .anim-opacity.out();
     animation-delay: @time--medium;
-    opacity: 1;
     .spinner, .filler {
-      .anim-zoom.out();
       opacity: 1;
+      .anim-zoom.out();
     }
   }
 }
@@ -205,21 +205,21 @@
   // animations
   opacity: 0;
   &.active {
+    opacity: 0;
     .anim-zoom.active();
     animation-delay: initial;
-    opacity: 0;
     .spinner, .filler {
-      .trans-anim-none() !important;
       opacity: 1 !important;
+      .trans-anim-none() !important;
     }
   }
   &.out {
+    opacity: 1;
     .anim-zoom.out();
     animation-delay: initial;
-    opacity: 1;
     .spinner, .filler {
-      .trans-anim-none() !important;
       opacity: 1 !important;
+      .trans-anim-none() !important;
     }
   }
 }
@@ -230,14 +230,14 @@
   // disable animations
   .spinner {
     circle {
-      .trans-anim-none() !important;
       opacity: 1 !important;
+      .trans-anim-none() !important;
     }
   }
   .filler {
     span {
-      .anim-none() !important;
       opacity: 1 !important;
+      .anim-none() !important;
     }
   }
 }

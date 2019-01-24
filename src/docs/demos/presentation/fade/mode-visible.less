@@ -2,8 +2,8 @@
 
 .fade {
   &:not(.fade--visible) {
-    .trans-none() !important; // fix animation on links
     opacity: 0;
+    .trans-none() !important; // fix animation on links
     &.active {
       .anim-x.active();
     }

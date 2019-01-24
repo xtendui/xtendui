@@ -3,12 +3,14 @@
 .toggle--custom {
   .anim-none() !important; // disable default animation
   // animation
-  .trans-default.out();
-  transition-duration: @time--big;
   opacity: .5 !important;
+  transition-property: opacity;
+  transition-duration: @time--big;
+  transition-timing-function: @bez--out;
   &.active {
-    .trans-default.active();
-    transition-duration: @time--big;
     opacity: 1 !important;
+    transition-property: opacity;
+    transition-duration: @time--big;
+    transition-timing-function: @bez--in;
   }
 }

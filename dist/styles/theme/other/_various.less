@@ -12,15 +12,15 @@
   // animation
   opacity: 0;
   &.active {
-    .anim-default.active();
     animation-name: anim-backdrop--in;
     animation-duration: @time--big;
+    animation-timing-function: @bez--in;
     animation-fill-mode: forwards;
   }
   &.out {
-    .anim-default.out();
     animation-name: anim-backdrop--out;
     animation-duration: @time--big;
+    animation-timing-function: @bez--out;
     animation-fill-mode: forwards;
   }
 }

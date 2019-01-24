@@ -24,49 +24,31 @@
 @bez-penguin--in-out: ~'cubic-bezier(.66,0,.17,1)';
 
 //////////////////////
-// default
+// transition
 //////////////////////
 
-// .trans-default();
-
 /* USAGE:
-.trans-default.out();
 opacity: 0;
+transform: translateX(-1.5rem);
+transition-property: all;
+transition-duration: @time--medium;
+transition-timing-function: @bez--out;
 &:hover, &.hover, &:active, &.active {
-  .trans-default.active();
-   opacity: 1;
+  opacity: 1;
+  transform: translateX(0);
+  transition-property: all;
+  transition-duration: @time--medium;
+  transition-timing-function: @bez--in;
 }
 */
+
+//////////////////////
+// animation
+//////////////////////
 
 /* USAGE:
-&.active {
-  .inner {
-    .trans-default.active();
-    opacity: 1;
-  }
-}
-&.out {
-  .inner {
-    .trans-default.out();
-    opacity: 0;
-  }
-}
+.anim-opacity();
 */
-
-.trans-default() {
-  &.active {
-    transition-property: all;
-    transition-duration: @time--medium;
-    transition-timing-function: @bez--in;
-  }
-  &.out {
-    transition-property: all;
-    transition-duration: @time--medium;
-    transition-timing-function: @bez--out;
-  }
-}
-
-// .anim-default();
 
 /* USAGE:
 .anim-opacity.active();
@@ -88,35 +70,22 @@ opacity: 0;
 }
 */
 
-.anim-default() {
-  &.active {
-    animation-duration: @time--medium;
-    animation-timing-function: @bez--in;
-  }
-  &.out {
-    animation-duration: @time--medium;
-    animation-timing-function: @bez--out;
-  }
-}
-
-//////////////////////
-// animation
-//////////////////////
-
 // anim-opacity
 
 .anim-opacity {
   &.active {
-    .anim-default.active();
-    animation-name: anim-opacity--in;
-    animation-fill-mode: forwards;
     opacity: 0;
+    animation-name: anim-opacity--in;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--in;
+    animation-fill-mode: forwards;
   }
   &.out {
-    .anim-default.out();
-    animation-name: anim-opacity--out;
-    animation-fill-mode: forwards;
     opacity: 1;
+    animation-name: anim-opacity--out;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--out;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -142,38 +111,40 @@ opacity: 0;
 
 .anim-zoom {
   &.active {
-    .anim-default.active();
-    animation-name: anim-zoom--in;
-    animation-fill-mode: forwards;
     opacity: 0;
+    animation-name: anim-zoom--in;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--in;
+    animation-fill-mode: forwards;
   }
   &.out {
-    .anim-default.out();
-    animation-name: anim-zoom--out;
-    animation-fill-mode: forwards;
     opacity: 1;
+    animation-name: anim-zoom--out;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--out;
+    animation-fill-mode: forwards;
   }
 }
 
 @keyframes anim-zoom--in {
   0% {
-    transform: scale(.75, .75);
     opacity: 0;
+    transform: scale(.75, .75);
   }
   100% {
-    transform: scale(1);
     opacity: 1;
+    transform: scale(1);
   }
 }
 
 @keyframes anim-zoom--out {
   0% {
-    transform: scale(1);
     opacity: 1;
+    transform: scale(1);
   }
   100% {
-    transform: scale(.75, .75);
     opacity: 0;
+    transform: scale(.75, .75);
   }
 }
 
@@ -181,38 +152,40 @@ opacity: 0;
 
 .anim-y {
   &.active {
-    .anim-default.active();
-    animation-name: anim-y--in;
-    animation-fill-mode: forwards;
     opacity: 0;
+    animation-name: anim-y--in;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--in;
+    animation-fill-mode: forwards;
   }
   &.out {
-    .anim-default.out();
-    animation-name: anim-y--out;
-    animation-fill-mode: forwards;
     opacity: 1;
+    animation-name: anim-y--out;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--out;
+    animation-fill-mode: forwards;
   }
 }
 
 @keyframes anim-y--in {
   0% {
-    transform: translateY(-1.5rem);
     opacity: 0;
+    transform: translateY(-1.5rem);
   }
   100% {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes anim-y--out {
   0% {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
   100% {
-    transform: translateY(1.5rem);
     opacity: 0;
+    transform: translateY(1.5rem);
   }
 }
 
@@ -220,38 +193,40 @@ opacity: 0;
 
 .anim-y-inverse {
   &.active {
-    .anim-default.active();
-    animation-name: anim-y-inverse--in;
-    animation-fill-mode: forwards;
     opacity: 0;
+    animation-name: anim-y-inverse--in;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--in;
+    animation-fill-mode: forwards;
   }
   &.out {
-    .anim-default.out();
-    animation-name: anim-y-inverse--out;
-    animation-fill-mode: forwards;
     opacity: 1;
+    animation-name: anim-y-inverse--out;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--out;
+    animation-fill-mode: forwards;
   }
 }
 
 @keyframes anim-y-inverse--in {
   0% {
-    transform: translateY(1.5rem);
     opacity: 0;
+    transform: translateY(1.5rem);
   }
   100% {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes anim-y-inverse--out {
   0% {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
   100% {
-    transform: translateY(-1.5rem);
     opacity: 0;
+    transform: translateY(-1.5rem);
   }
 }
 
@@ -259,38 +234,40 @@ opacity: 0;
 
 .anim-x {
   &.active {
-    .anim-default.active();
-    animation-name: anim-x--in;
-    animation-fill-mode: forwards;
     opacity: 0;
+    animation-name: anim-x--in;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--in;
+    animation-fill-mode: forwards;
   }
   &.out {
-    .anim-default.out();
-    animation-name: anim-x--out;
-    animation-fill-mode: forwards;
     opacity: 1;
+    animation-name: anim-x--out;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--out;
+    animation-fill-mode: forwards;
   }
 }
 
 @keyframes anim-x--in {
   0% {
-    transform: translateX(-1.5rem);
     opacity: 0;
+    transform: translateX(-1.5rem);
   }
   100% {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateX(0);
   }
 }
 
 @keyframes anim-x--out {
   0% {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(1.5rem);
     opacity: 0;
+    transform: translateX(1.5rem);
   }
 }
 
@@ -298,38 +275,40 @@ opacity: 0;
 
 .anim-x-inverse {
   &.active {
-    .anim-default.active();
-    animation-name: anim-x-inverse--in;
-    animation-fill-mode: forwards;
     opacity: 0;
+    animation-name: anim-x-inverse--in;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--in;
+    animation-fill-mode: forwards;
   }
   &.out {
-    .anim-default.out();
-    animation-name: anim-x-inverse--out;
-    animation-fill-mode: forwards;
     opacity: 1;
+    animation-name: anim-x-inverse--out;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--out;
+    animation-fill-mode: forwards;
   }
 }
 
 @keyframes anim-x-inverse--in {
   0% {
-    transform: translateX(1.5rem);
     opacity: 0;
+    transform: translateX(1.5rem);
   }
   100% {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateX(0);
   }
 }
 
 @keyframes anim-x-inverse--out {
   0% {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-1.5rem);
     opacity: 0;
+    transform: translateX(-1.5rem);
   }
 }
 
@@ -342,11 +321,15 @@ opacity: 0;
 .collapse--height,
 .collapse--width {
   &.active {
-    .trans-default.active();
-    transition-timing-function: @bez--in-out;
+    transition-property: all;
+    transition-duration: @time--medium;
+    transition-timing-function: @bez--in;
+    transition-delay: @time--small;
   }
   &.out {
-    .trans-default.out();
-    transition-timing-function: @bez--in-out;
+    transition-property: all;
+    transition-duration: @time--medium;
+    transition-timing-function: @bez--in;
+    transition-delay: @time--medium;
   }
 }

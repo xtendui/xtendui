@@ -28,17 +28,25 @@
 .btn {
   // transition
   &@{btn--design} {
-    .trans-default.out();
+    transition-property: all;
+    transition-duration: @time--medium;
+    transition-timing-function: @bez--out;
   }
   > span {
-    .trans-default.out();
+    transition-property: color;
+    transition-duration: @time--medium;
+    transition-timing-function: @bez--out;
   }
   &:active, &.active {
     &@{btn--design} {
-      .trans-default.active();
+      transition-property: all;
+      transition-duration: @time--medium;
+      transition-timing-function: @bez--in;
     }
     > span {
-      .trans-default.active();
+      transition-property: color;
+      transition-duration: @time--medium;
+      transition-timing-function: @bez--in;
     }
   }
 }

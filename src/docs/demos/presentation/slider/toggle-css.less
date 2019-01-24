@@ -44,18 +44,18 @@
     .anim-x-inverse.active();
     animation-duration: @time--big;
     &:after {
-      .anim-default.active();
       animation-name: anim-special--in;
       animation-duration: @time--big;
+      animation-timing-function: @bez--in;
       transform: translateX(-100%);
     }
     &.xt-inverse {
       .anim-x.active();
       animation-duration: @time--big;
       &:after {
-        .anim-default.active();
         animation-name: anim-special-in-inverse;
         animation-duration: @time--big;
+        animation-timing-function: @bez--in;
         transform: translateX(100%);
       }
     }
@@ -64,18 +64,18 @@
     .anim-x-inverse.out();
     animation-duration: @time--big;
     &:after {
-      .anim-default.out();
       animation-name: anim-special--out;
       animation-duration: @time--big;
+      animation-timing-function: @bez--out;
       transform: translateX(0);
     }
     &.xt-inverse {
       .anim-x.out();
       animation-duration: @time--big;
       &:after {
-        .anim-default.out();
         animation-name: anim-special-out-inverse;
         animation-duration: @time--big;
+        animation-timing-function: @bez--out;
         transform: translateX(0);
       }
     }

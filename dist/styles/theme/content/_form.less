@@ -136,12 +136,18 @@ legend {
   // options
   .form-input--gray();
   // animation
-  .trans-default.out();
+  transition-property: all;
+  transition-duration: @time--medium;
+  transition-timing-function: @bez--out;
   &:hover, &.active {
-    .trans-default.active();
+    transition-property: all;
+    transition-duration: @time--medium;
+    transition-timing-function: @bez--in;
   }
   &:focus {
-    .trans-default.active();
+    transition-property: all;
+    transition-duration: @time--medium;
+    transition-timing-function: @bez--in;
   }
 }
 
@@ -259,23 +265,31 @@ textarea {
   }
   // animation
   &::before {
-    .trans-default.out();
     transform: scale(.9, .9);
+    transition-property: transform;
+    transition-duration: @time--medium;
+    transition-timing-function: @bez--out;
   }
   &::after {
-    .trans-default.out();
     opacity: 0 !important;
     transform: scale(.9, .5);
+    transition-property: all;
+    transition-duration: @time--medium;
+    transition-timing-function: @bez--out;
   }
   &.active {
     &::before {
-      .trans-default.active();
       transform: scale(1, 1);
+      transition-property: transform;
+      transition-duration: @time--medium;
+      transition-timing-function: @bez--in;
     }
     &::after {
-      .trans-default.active();
       opacity: 1 !important;
       transform: scale(1, 1);
+      transition-property: all;
+      transition-duration: @time--medium;
+      transition-timing-function: @bez--in;
     }
   }
 }
