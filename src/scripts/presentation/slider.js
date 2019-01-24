@@ -620,7 +620,7 @@ class Slider extends Core {
     let options = self.options;
     // friction
     self.detail.xVelocity *= options.drag.friction;
-    if (Math.abs(self.detail.xVelocity) > options.drag.frictionThreshold) {
+    if (Math.abs(self.detail.xVelocity) > options.drag.limit) {
       // logic
       self.logicDrag(dragger, e, true);
       window.requestAnimationFrame(self.logicDragfriction.bind(self).bind(e, dragger));
@@ -659,7 +659,7 @@ class Slider extends Core {
       self.detail.xCurrent = self.detail.eCurrent.clientX || self.detail.eCurrent.touches[0].clientX;
       pos = xPosCurrent + (self.detail.xCurrent - self.detail.xStart) * options.drag.factor;
       self.detail.xVelocity = pos - xPosOld;
-      self.detail.xVelocity += xVelocityOld * options.drag.velocityFriction; // keep some velocity
+      self.detail.xVelocity += xVelocityOld * options.drag.momentum; // momentum keeps some velocity
     }
     self.detail.xPosReal = pos;
     // disable links
@@ -675,10 +675,10 @@ class Slider extends Core {
     let max = parseFloat(last.dataset.groupPos);
     if (pos > min) {
       let overflow = pos - min;
-      pos = min + Math.nthroot(overflow, options.drag.overflowRoot);
+      pos = min + Math.nthroot(overflow, options.drag.overflow);
     } else if (pos < max) {
       let overflow = pos - max;
-      pos = max - Math.nthroot(- overflow, options.drag.overflowRoot);
+      pos = max - Math.nthroot(- overflow, options.drag.overflow);
     }
     self.detail.xPos = pos;
     // drag position
@@ -722,9 +722,9 @@ Slider.defaults = {
     "threshold": 100,
     "factor": 1,
     "friction": 0.9,
-    "frictionThreshold": 3,
-    "velocityFriction": 0.33,
-    "overflowRoot": 1.4
+    "momentum": 0.5,
+    "limit": 2.5,
+    "overflow": 1.4
   }
 };
 

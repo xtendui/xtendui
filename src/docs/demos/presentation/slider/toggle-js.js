@@ -11,9 +11,9 @@ function sliderInit(main, index, query) {
   let timeMask = .8;
   let timeContent = .8;
   let sizeContent = 100;
-  CustomEase.create('easeIn', '.41,.1,.175,1');
-  CustomEase.create('easeOut', '.77,0,.175,1');
-  CustomEase.create('easeInOut', '.77,.0,.17,1');
+  CustomEase.create('easeIn', '.36,0,0,1');
+  CustomEase.create('easeOut', '1,0,.64,1');
+  CustomEase.create('easeInOut', '.68,.13,.25,1');
 
   // slider
 
@@ -50,12 +50,12 @@ function sliderInit(main, index, query) {
   dragger.addEventListener('dragend.xt.slider', function (e) {
     let target = self.targets.filter(x => x.classList.contains('active'))[0];
     // mask
-    TweenMax.to(target, timeMask, {x: 0, opacity: 1, ease: 'easeIn'});
+    TweenMax.to(target, timeMask, {x: 0, opacity: 1, ease: 'easeInOut'});
     TweenMax.to(dragger, timeMask, {x: 0, ease: 'easeOut'});
     // content
     let contents = target.querySelectorAll('.card_content > *');
     for (let content of contents) {
-      TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeIn'});
+      TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeInOut'});
     }
   });
 
@@ -77,14 +77,14 @@ function sliderInit(main, index, query) {
         TweenMax.set(target, {opacity: 0});
         // mask
         TweenMax.set(target, {x: -xMax * direction});
-        TweenMax.to(target, timeMask, {x: 0, opacity: 1, ease: 'easeIn'});
+        TweenMax.to(target, timeMask, {x: 0, opacity: 1, ease: 'easeInOut'});
         TweenMax.set(dragger, {x: xMax * direction});
-        TweenMax.to(dragger, timeMask, {x: 0, ease: 'easeIn'});
+        TweenMax.to(dragger, timeMask, {x: 0, ease: 'easeInOut'});
         // content
         let contents = target.querySelectorAll('.card_content > *');
         for (let content of contents) {
           TweenMax.set(content, {x: sizeContent * direction, opacity: 0});
-          TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeIn'});
+          TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: 'easeInOut'});
         }
       }
     });
@@ -99,12 +99,12 @@ function sliderInit(main, index, query) {
         direction = -1;
       }
       // mask
-      TweenMax.to(target, timeMask, {x: xMax * direction, opacity: 0, ease: 'easeOut'});
-      TweenMax.to(dragger, timeMask, {x: -xMax * direction, ease: 'easeOut'});
+      TweenMax.to(target, timeMask, {x: xMax * direction, opacity: 0, ease: 'easeInOut'});
+      TweenMax.to(dragger, timeMask, {x: -xMax * direction, ease: 'easeInOut'});
       // content
       let contents = target.querySelectorAll('.card_content > *');
       for (let content of contents) {
-        TweenMax.to(content, timeContent, {x: -sizeContent * direction, opacity: 0, ease: 'easeOut'});
+        TweenMax.to(content, timeContent, {x: -sizeContent * direction, opacity: 0, ease: 'easeInOut'});
       }
     });
 

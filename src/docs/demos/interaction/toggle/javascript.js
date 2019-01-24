@@ -4,9 +4,9 @@ let time = .6;
 let delay = 0;
 let size = 15;
 
-CustomEase.create('easeIn', '.41,.1,.175,1');
-CustomEase.create('easeOut', '.77,0,.175,1');
-CustomEase.create('easeInOut', '.77,.0,.17,1');
+CustomEase.create('easeIn', '.36,0,0,1');
+CustomEase.create('easeOut', '1,0,.64,1');
+CustomEase.create('easeInOut', '.68,.13,.25,1');
 
 // #toggle-0
 
