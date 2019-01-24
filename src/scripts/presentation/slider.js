@@ -379,7 +379,7 @@ class Slider extends Core {
    * @param {Event} e
    */
   eventDragend(dragger, e) {
-  let self = this;
+    let self = this;
     // save event
     self.detail.eCurrent = e;
     // eDetail
@@ -390,8 +390,8 @@ class Slider extends Core {
     for (let event of events) {
       dragger.removeEventListener(event, dragHandler);
     }
-    // animating
-    window.requestAnimationFrame(function () { // needed to execute touch click
+    // disable drag
+    window.requestAnimationFrame(function () {
       dragger.classList.add('pointer-events--none');
     });
     // logic
@@ -442,15 +442,13 @@ class Slider extends Core {
     if (self.detail.disabled && !self.detail.initial) {
       return false;
     }
-    // animating
-    window.requestAnimationFrame(function () { // needed to execute touch click
-      dragger.classList.add('pointer-events--none');
-      Xt.animTimeout(dragger, function () {
-        dragger.classList.remove('pointer-events--none');
-      });
-    });
     // disable links
     slide.classList.remove('links--none');
+    // disable drag
+    dragger.classList.add('pointer-events--none');
+    Xt.animTimeout(dragger, function () {
+      dragger.classList.remove('pointer-events--none');
+    });
     // only one call per group
     if (slide.dataset.xtSlideOnDone) {
       return false;
@@ -519,10 +517,6 @@ class Slider extends Core {
     if (self.detail.disabled && !self.detail.initial) {
       return false;
     }
-    // animating
-    if (dragger.classList.contains('pointer-events--none')) {
-      return false;
-    }
     // prevent dragging animation
     self.dragger.classList.add('trans-anim-none');
     // listener dispatch
@@ -538,10 +532,10 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     let xPosCurrent = self.detail.xPosCurrent || 0;
-    // prevent dragging animation
-    self.dragger.classList.remove('trans-anim-none');
     // disable links
     dragger.classList.remove('links--none');
+    // prevent dragging animation
+    self.dragger.classList.remove('trans-anim-none');
     // only one call per group
     let currents = self.getCurrents();
     for (let current of currents) {
@@ -591,22 +585,15 @@ class Slider extends Core {
           self.goToIndex(found, true);
         }
       });
-      // animating
-      window.requestAnimationFrame(function () { // needed to execute touch click
+    } else {
+      // disable drag
+      Xt.animTimeout(dragger, function () {
         dragger.classList.remove('pointer-events--none');
       });
-    } else {
       // drag position
       dragger.style.transform = 'translateX(' + self.detail.xPosCurrent + 'px)';
       // listener dispatch
       dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
-      // animating
-      window.requestAnimationFrame(function () { // needed to execute touch click
-        dragger.classList.add('pointer-events--none');
-        Xt.animTimeout(dragger, function () {
-          dragger.classList.remove('pointer-events--none');
-        });
-      });
     }
   }
 
@@ -621,12 +608,12 @@ class Slider extends Core {
     // friction
     self.detail.xVelocity *= options.drag.friction;
     if (Math.abs(self.detail.xVelocity) > options.drag.limit) {
-      // logic
+      // drag
       self.logicDrag(dragger, e, true);
       window.requestAnimationFrame(self.logicDragfriction.bind(self).bind(e, dragger));
     } else {
-      // logic
-      self.logicDragend(dragger, e);
+      // dragend
+      window.requestAnimationFrame(self.logicDragend.bind(self).bind(e, dragger));
     }
   }
 
