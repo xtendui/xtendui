@@ -2,6 +2,14 @@
 // various
 //////////////////////
 
+.text-capitalize {
+  display: inline-block;
+  text-transform: lowercase;
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+
 .link-none {
   a&, a {
     pointer-events: none;
