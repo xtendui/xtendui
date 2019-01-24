@@ -5,7 +5,7 @@
 .group {
   .link--none();
   display: inline-flex !important;
-  .flex-wrap(nowrap);
+  flex-wrap: nowrap;
   position: relative;
   padding: 0 !important;
   // styles
@@ -36,12 +36,12 @@
 
 .group_inner {
   display: inline-flex;
-  .flex-direction(column);
-  .flex-wrap(nowrap);
+  flex-wrap: nowrap;
+  flex-direction: column;
   // .btn
   > * {
     .flex--auto();
-    .text-align(center);
+    text-align: center;
     white-space: nowrap;
     + * {
       margin-top: -@btn--border-width;
