@@ -238,9 +238,9 @@ class Core {
   }
 
   /**
-   * restart activation
+   * restart
    */
-  initRestart() {
+  restart() {
     let self = this;
     let options = self.options;
     // initial
