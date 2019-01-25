@@ -48,7 +48,7 @@ class Fade extends Core {
     // listener dispatch initial only 1 time next frame
     if (!document.documentElement.dataset.xtFadeDone) {
       document.documentElement.dataset.xtFadeDone = 'true';
-      window.requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
         window.dispatchEvent(new CustomEvent('scroll.xt.fade'));
         delete document.documentElement.dataset.xtFadeDone;
       });
@@ -119,8 +119,8 @@ class Fade extends Core {
           changed = self.checkOn(el);
           if (changed) {
             currents.push(el);
-            window.cancelAnimationFrame(parseFloat(el.dataset.xtEventFrame));
-            el.dataset.xtEventFrame = window.requestAnimationFrame(function () {
+            cancelAnimationFrame(parseFloat(el.dataset.xtEventFrame));
+            el.dataset.xtEventFrame = requestAnimationFrame(function () {
               current++;
               el.dataset.xtOnCount = current.toString();
               el.dataset.xtOnTot = currents.length.toString();
@@ -134,8 +134,8 @@ class Fade extends Core {
           if (changed) {
             el.classList.add('fade--scroll');
             currents.push(el);
-            window.cancelAnimationFrame(parseFloat(el.dataset.xtEventFrame));
-            el.dataset.xtEventFrame = window.requestAnimationFrame(function () {
+            cancelAnimationFrame(parseFloat(el.dataset.xtEventFrame));
+            el.dataset.xtEventFrame = requestAnimationFrame(function () {
               current++;
               el.dataset.xtOffCount = current.toString();
               el.dataset.xtOffTot = currents.length.toString();

@@ -391,7 +391,7 @@ class Slider extends Core {
       dragger.removeEventListener(event, dragHandler);
     }
     // disable drag
-    window.requestAnimationFrame(function () {
+    requestAnimationFrame(function () {
       dragger.classList.add('pointer-events--none');
     });
     // logic
@@ -473,7 +473,7 @@ class Slider extends Core {
     if (self.detail.initial) {
       // prevent alignment animation
       self.dragger.classList.add('trans-anim-none');
-      window.requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
         self.dragger.classList.remove('trans-anim-none');
       });
     }
@@ -572,7 +572,7 @@ class Slider extends Core {
         }
       }
       // goTo with force
-      window.requestAnimationFrame(function () { // @FIX jump event order (slider drag single)
+      requestAnimationFrame(function () { // @FIX jump event order (slider drag single)
         if (found === self.currentIndex) {
           // change at least one
           if (Math.sign(xDist) < 0) {
@@ -610,10 +610,10 @@ class Slider extends Core {
     if (Math.abs(self.detail.xVelocity) > options.drag.limit) {
       // drag
       self.logicDrag(dragger, e, true);
-      window.requestAnimationFrame(self.logicDragfriction.bind(self).bind(e, dragger));
+      requestAnimationFrame(self.logicDragfriction.bind(self).bind(e, dragger));
     } else {
       // dragend
-      window.requestAnimationFrame(self.logicDragend.bind(self).bind(e, dragger));
+      requestAnimationFrame(self.logicDragend.bind(self).bind(e, dragger));
     }
   }
 

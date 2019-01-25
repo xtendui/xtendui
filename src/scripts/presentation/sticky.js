@@ -97,7 +97,7 @@ class Sticky extends Core {
     // listener dispatch initial only 1 time next frame
     if (!document.documentElement.dataset.xtStickyDone) {
       document.documentElement.dataset.xtStickyDone = 'true';
-      window.requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
         window.dispatchEvent(new CustomEvent('scroll.xt.sticky'));
         delete document.documentElement.dataset.xtStickyDone;
       });

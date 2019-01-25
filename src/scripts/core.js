@@ -158,7 +158,7 @@ class Core {
     } else {
       self.elements = Xt.arrSingle(self.object);
       // @FIX set namespace for next frame
-      window.requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
         let arr = Array.from(Xt.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']')));
         arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
         arr = arr.filter(x => !x.getAttribute('data-xt-nav')); // filter out nav
@@ -197,8 +197,8 @@ class Core {
       el.dataset.xtNamespace = self.namespace;
     }
     // automatic initial currents
-    window.cancelAnimationFrame(parseFloat(self.object.dataset.xtCurrentsFrame));
-    self.object.dataset.xtCurrentsFrame = window.requestAnimationFrame(function () {
+    cancelAnimationFrame(parseFloat(self.object.dataset.xtCurrentsFrame));
+    self.object.dataset.xtCurrentsFrame = requestAnimationFrame(function () {
       let elements = self.getElementsSingle();
       if (elements.length) {
         for (let element of elements) {
@@ -1399,7 +1399,7 @@ class Core {
       if (obj[type].done) {
         for (let el of obj[type].queueEls) {
           // clear timeout and frame
-          window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
+          cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
           clearTimeout(el.dataset.xtDelayTimeout);
           clearTimeout(el.dataset.xtAnimTimeout);
           // done other queue
@@ -1421,7 +1421,7 @@ class Core {
       if (obj[type].done) {
         for (let el of obj[type].queueEls) {
           // clear timeout and frame
-          window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
+          cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
           clearTimeout(el.dataset.xtDelayTimeout);
           clearTimeout(el.dataset.xtAnimTimeout);
           // done other queue
@@ -1995,13 +1995,13 @@ class Core {
         let h = el.clientHeight + 'px';
         let pt = el.style.paddingTop;
         let pb = el.style.paddingBottom;
-        window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
-        el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
+        cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
+        el.dataset.xtCollapseFrame = requestAnimationFrame(function () {
           el.classList.remove('xt-hide');
           el.style.height = '0';
           el.style.paddingTop = '0';
           el.style.paddingBottom = '0';
-          el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
+          el.dataset.xtCollapseFrame = requestAnimationFrame(function () {
             el.style.height = h;
             el.style.paddingTop = pt;
             el.style.paddingBottom = pb;
@@ -2016,13 +2016,13 @@ class Core {
         let w = el.clientHeight + 'px';
         let pl = el.style.paddingLeft;
         let pr = el.style.paddingRight;
-        window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
-        el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
+        cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
+        el.dataset.xtCollapseFrame = requestAnimationFrame(function () {
           el.classList.remove('xt-hide');
           el.style.width = '0';
           el.style.paddingLeft = '0';
           el.style.paddingRight = '0';
-          el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
+          el.dataset.xtCollapseFrame = requestAnimationFrame(function () {
             el.style.width = w;
             el.style.paddingLeft = pl;
             el.style.paddingRight = pr;
@@ -2044,12 +2044,12 @@ class Core {
         let h = el.clientHeight + 'px';
         let pt = el.style.paddingTop;
         let pb = el.style.paddingBottom;
-        window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
-        el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
+        cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
+        el.dataset.xtCollapseFrame = requestAnimationFrame(function () {
           el.style.height = h;
           el.style.paddingTop = pt;
           el.style.paddingBottom = pb;
-          el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
+          el.dataset.xtCollapseFrame = requestAnimationFrame(function () {
             el.style.height = '0';
             el.style.paddingTop = '0';
             el.style.paddingBottom = '0';
@@ -2060,12 +2060,12 @@ class Core {
         let w = el.clientWidth + 'px';
         let pl = el.style.paddingLeft;
         let pr = el.style.paddingRight;
-        window.cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
-        el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
+        cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
+        el.dataset.xtCollapseFrame = requestAnimationFrame(function () {
           el.style.width = w;
           el.style.paddingLeft = pl;
           el.style.paddingRight = pr;
-          el.dataset.xtCollapseFrame = window.requestAnimationFrame(function () {
+          el.dataset.xtCollapseFrame = requestAnimationFrame(function () {
             el.style.width = '0';
             el.style.paddingLeft = '0';
             el.style.paddingRight = '0';
@@ -2107,7 +2107,7 @@ class Core {
     // closeInside
     if (options.closeInside) {
       let closeElements = el.querySelectorAll(options.closeInside);
-      window.requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
         for (let closeElement of closeElements) {
           let specialCloseInsideHandler = Xt.dataStorage.put(closeElement, 'specialCloseInsideHandler' + self.namespace,
             self.eventSpecialCloseInsideHandler.bind(self).bind(self, closeElement, single));
@@ -2119,7 +2119,7 @@ class Core {
     // closeOutside
     if (options.closeOutside) {
       let closeElements = document.querySelectorAll(options.closeOutside);
-      window.requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
         for (let closeElement of closeElements) {
           let specialCloseOutsideHandler = Xt.dataStorage.put(closeElement, 'specialCloseOutsideHandler' + self.namespace,
             self.eventSpecialCloseOutsideHandler.bind(self).bind(self, el, single));
@@ -2222,9 +2222,9 @@ class Core {
           let padding = style.paddingRight;
           let str = 'calc(' + padding + ' + ' + width + 'px)';
           element.classList.add('trans-none');
-          window.requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
             element.style.paddingRight = str;
-            window.requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
               element.classList.remove('trans-none');
             });
           });
@@ -2257,9 +2257,9 @@ class Core {
         let elements = document.querySelectorAll('.xt-fixed');
         for (let element of elements) {
           element.classList.add('trans-none');
-          window.requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
             element.style.paddingRight = '';
-            window.requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
               element.classList.remove('trans-none');
             });
           });

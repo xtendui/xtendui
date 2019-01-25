@@ -130,7 +130,7 @@ function sliderInit(main, index, query) {
 
   function mousemove(e) {
     cancelAnimationFrame(parseFloat(loader.dataset.xtLoaderFrame));
-    loader.dataset.xtLoaderFrame = window.requestAnimationFrame( function() {
+    loader.dataset.xtLoaderFrame = requestAnimationFrame( function() {
       let top = e.clientY + height / 2;
       let left = e.clientX + width / 2;
       loader.style.top = top + 'px';

@@ -167,7 +167,7 @@ if (document.readyState === 'loading') {
     });
   });
 } else {
-  window.requestAnimationFrame(function () {
+  requestAnimationFrame(function () {
     Xt.initObserve();
     Xt.initXt();
     Xt.observer.observe(document.documentElement, {
