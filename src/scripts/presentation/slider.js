@@ -390,12 +390,8 @@ class Slider extends Core {
     for (let event of events) {
       dragger.removeEventListener(event, dragHandler);
     }
-    // disable drag
-    requestAnimationFrame(function () {
-      dragger.classList.add('pointer-events--none');
-    });
     // logic
-    self.logicDragfriction(dragger, e);
+    self.logicDragend(dragger, e);
   }
 
   /**
@@ -442,13 +438,14 @@ class Slider extends Core {
     if (self.detail.disabled && !self.detail.initial) {
       return false;
     }
-    // disable links
-    slide.classList.remove('links--none');
     // disable drag
     dragger.classList.add('pointer-events--none');
     Xt.animTimeout(dragger, function () {
       dragger.classList.remove('pointer-events--none');
     });
+    // disable links
+    slide.classList.remove('links--none');
+    dragger.classList.remove('xt-jump--none');
     // only one call per group
     if (slide.dataset.xtSlideOnDone) {
       return false;
@@ -467,8 +464,10 @@ class Slider extends Core {
       }
       self.autoHeight.style.height = slideHeight + 'px';
     }
-    // alignment
-    self.detail.xPosCurrent = self.detail.xPos = self.detail.xPosReal = parseFloat(slide.dataset.groupPos);
+    // val
+    self.detail.xPos = self.detail.xPosCurrent = self.detail.xPosReal = parseFloat(slide.dataset.groupPos);
+    // prevent alignment animation
+    self.dragger.classList.remove('trans-anim-none');
     // initial or resizing
     if (self.detail.initial) {
       // prevent alignment animation
@@ -530,12 +529,112 @@ class Slider extends Core {
    */
   logicDragend(dragger, e) {
     let self = this;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
+    // disable drag
+    requestAnimationFrame(function () {
+      dragger.classList.add('pointer-events--none');
+    });
+    // disable links
+    //requestAnimationFrame(function () {
+      dragger.classList.remove('links--none');
+      dragger.classList.remove('xt-jump--none');
+    //});
+    // logic
+    self.logicDragfriction(dragger, e);
+  }
+
+  /**
+   * element drag friction logic
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Event} e
+   */
+  logicDragfriction(dragger, e) {
+    let self = this;
+    let options = self.options;
+    // friction
+    self.detail.xVelocity *= options.drag.friction;
+    if (Math.abs(self.detail.xVelocity) > options.drag.limit) {
+      // drag
+      self.logicDrag(dragger, e, true);
+      requestAnimationFrame(self.logicDragfriction.bind(self).bind(e, dragger));
+    } else {
+      // dragend
+      requestAnimationFrame(self.logicDragfrictionend.bind(self).bind(e, dragger));
+    }
+  }
+
+  /**
+   * element drag logic
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Event} e
+   * @param {Boolean} friction
+   */
+  logicDrag(dragger, e, friction = false) {
+    let self = this;
     let options = self.options;
     let xPosCurrent = self.detail.xPosCurrent || 0;
+    // disabled
+    if (self.detail.disabled && !self.detail.initial) {
+      return false;
+    }
+    // calculate
+    let pos = self.detail.xPosReal;
+    if (friction) {
+      // on friction
+      pos = pos + self.detail.xVelocity;
+      self.detail.xStart = self.detail.eInit.clientX || self.detail.eInit.touches[0].clientX;
+      self.detail.xCurrent = pos + self.detail.xStart - xPosCurrent;
+    } else {
+      // on normal drag
+      let xPosOld = pos || 0;
+      let xVelocityOld = self.detail.xVelocity || 0;
+      self.detail.xStart = self.detail.eInit.clientX || self.detail.eInit.touches[0].clientX;
+      self.detail.xCurrent = self.detail.eCurrent.clientX || self.detail.eCurrent.touches[0].clientX;
+      pos = xPosCurrent + (self.detail.xCurrent - self.detail.xStart) * options.drag.factor;
+      self.detail.xVelocity = pos - xPosOld;
+      //self.detail.xVelocity += xVelocityOld * options.drag.momentum; // momentum keeps some velocity
+    }
+    self.detail.xPosReal = pos;
     // disable links
-    dragger.classList.remove('links--none');
-    // prevent dragging animation
-    self.dragger.classList.remove('trans-anim-none');
+    if (Math.abs(self.detail.xPos) > options.drag.threshold) {
+      dragger.classList.add('links--none');
+      dragger.classList.add('xt-jump--none');
+    } else {
+      dragger.classList.remove('links--none');
+      dragger.classList.remove('xt-jump--none');
+    }
+    // overflow
+    let first = self.targets[0];
+    let last = self.targets[self.targets.length - 1];
+    let min = parseFloat(first.dataset.groupPos);
+    let max = parseFloat(last.dataset.groupPos);
+    if (pos > min) {
+      let overflow = pos - min;
+      pos = min + Math.nthroot(overflow, options.drag.overflow);
+    } else if (pos < max) {
+      let overflow = pos - max;
+      pos = max - Math.nthroot(-overflow, options.drag.overflow);
+    }
+    // val
+    self.detail.xPos = pos;
+    // drag position
+    dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
+    // listener dispatch
+    dragger.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: self.eDetail}));
+  }
+
+  /**
+   * element drag friction off logic
+   * @param {Node|HTMLElement|EventTarget|Window} dragger
+   * @param {Event} e
+   */
+  logicDragfrictionend(dragger, e) {
+    let self = this;
+    let options = self.options;
+    let xPosCurrent = self.detail.xPosCurrent || 0;
     // only one call per group
     let currents = self.getCurrents();
     for (let current of currents) {
@@ -590,88 +689,15 @@ class Slider extends Core {
       Xt.animTimeout(dragger, function () {
         dragger.classList.remove('pointer-events--none');
       });
+      // prevent dragging animation
+      self.dragger.classList.remove('trans-anim-none');
+      // val
+      self.detail.xPos = self.detail.xPosCurrent;
       // drag position
       dragger.style.transform = 'translateX(' + self.detail.xPosCurrent + 'px)';
       // listener dispatch
       dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
     }
-  }
-
-  /**
-   * element drag friction logic
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
-   * @param {Event} e
-   */
-  logicDragfriction(dragger, e) {
-    let self = this;
-    let options = self.options;
-    // friction
-    self.detail.xVelocity *= options.drag.friction;
-    if (Math.abs(self.detail.xVelocity) > options.drag.limit) {
-      // drag
-      self.logicDrag(dragger, e, true);
-      requestAnimationFrame(self.logicDragfriction.bind(self).bind(e, dragger));
-    } else {
-      // dragend
-      requestAnimationFrame(self.logicDragend.bind(self).bind(e, dragger));
-    }
-  }
-
-  /**
-   * element drag logic
-   * @param {Node|HTMLElement|EventTarget|Window} dragger
-   * @param {Event} e
-   * @param {Boolean} friction
-   */
-  logicDrag(dragger, e, friction = false) {
-    let self = this;
-    let options = self.options;
-    let xPosCurrent = self.detail.xPosCurrent || 0;
-    // disabled
-    if (self.detail.disabled && !self.detail.initial) {
-      return false;
-    }
-    // calculate
-    let pos = self.detail.xPosReal;
-    if (friction) {
-      // on friction
-      pos = pos + self.detail.xVelocity;
-      self.detail.xStart = self.detail.eInit.clientX || self.detail.eInit.touches[0].clientX;
-      self.detail.xCurrent = pos + self.detail.xStart - xPosCurrent;
-    } else {
-      // on normal drag
-      let xPosOld = pos || 0;
-      let xVelocityOld = self.detail.xVelocity || 0;
-      self.detail.xStart = self.detail.eInit.clientX || self.detail.eInit.touches[0].clientX;
-      self.detail.xCurrent = self.detail.eCurrent.clientX || self.detail.eCurrent.touches[0].clientX;
-      pos = xPosCurrent + (self.detail.xCurrent - self.detail.xStart) * options.drag.factor;
-      self.detail.xVelocity = pos - xPosOld;
-      self.detail.xVelocity += xVelocityOld * options.drag.momentum; // momentum keeps some velocity
-    }
-    self.detail.xPosReal = pos;
-    // disable links
-    if (Math.abs(self.detail.xPos) > options.drag.threshold) {
-      dragger.classList.add('links--none');
-    } else {
-      dragger.classList.remove('links--none');
-    }
-    // overflow
-    let first = self.targets[0];
-    let last = self.targets[self.targets.length - 1];
-    let min = parseFloat(first.dataset.groupPos);
-    let max = parseFloat(last.dataset.groupPos);
-    if (pos > min) {
-      let overflow = pos - min;
-      pos = min + Math.nthroot(overflow, options.drag.overflow);
-    } else if (pos < max) {
-      let overflow = pos - max;
-      pos = max - Math.nthroot(- overflow, options.drag.overflow);
-    }
-    self.detail.xPos = pos;
-    // drag position
-    dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
-    // listener dispatch
-    dragger.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: self.eDetail}));
   }
 
 }

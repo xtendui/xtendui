@@ -51,7 +51,7 @@ function sliderInit(main, index, query) {
     let target = self.targets.filter(x => x.classList.contains('active'))[0];
     // mask
     TweenMax.to(target, timeMask, {x: 0, opacity: 1, ease: 'easeInOut'});
-    TweenMax.to(dragger, timeMask, {x: 0, ease: 'easeOut'});
+    TweenMax.to(dragger, timeMask, {x: 0, ease: 'easeInOut'});
     // content
     let contents = target.querySelectorAll('.card_content > *');
     for (let content of contents) {

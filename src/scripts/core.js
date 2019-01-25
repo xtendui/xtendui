@@ -1360,6 +1360,9 @@ class Core {
     }
     // jump
     let element = self.getElementsFromTarget(el)[0];
+    if (element.classList.contains('xt-jump--none') || Xt.parents(element, '.xt-jump--none').length) {
+      return false;
+    }
     if (self.checkOn(element)) {
       self.eventOn(element);
     }
