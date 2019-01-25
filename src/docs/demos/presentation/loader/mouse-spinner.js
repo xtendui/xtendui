@@ -14,13 +14,10 @@ function loaderInit(main, index, query) {
   let height = rect.height;
 
   function mousemove(e) {
-    cancelAnimationFrame(parseFloat(loader.dataset.xtLoaderFrame));
-    loader.dataset.xtLoaderFrame = requestAnimationFrame( function() {
-      let top = e.clientY + height / 2;
-      let left = e.clientX + width / 2;
-      loader.style.top = top + 'px';
-      loader.style.left = left + 'px';
-    }).toString();
+    let top = e.clientY + height / 2;
+    let left = e.clientX + width / 2;
+    loader.style.top = top + 'px';
+    loader.style.left = left + 'px';
   }
 
   function mouseenter(e) {
