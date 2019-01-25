@@ -468,6 +468,7 @@ class Slider extends Core {
       self.autoHeight.style.height = slideHeight + 'px';
     }
     // val
+    self.detail.xPosOld = self.detail.xPos;
     self.detail.xPos = self.detail.xPosCurrent = self.detail.xPosReal = parseFloat(slide.dataset.groupPos);
     // prevent alignment animation
     self.dragger.classList.remove('trans-anim-none');
@@ -600,6 +601,7 @@ class Slider extends Core {
       self.detail.xVelocity = pos - xPosOld;
       //self.detail.xVelocity += xVelocityOld * options.drag.momentum; // momentum keeps some velocity
     }
+    // val
     self.detail.xPosReal = pos;
     // overflow
     let first = self.targets[0];
@@ -614,6 +616,7 @@ class Slider extends Core {
       pos = max - Math.nthroot(-overflow, options.drag.overflow);
     }
     // val
+    self.detail.xPosOld = self.detail.xPos;
     self.detail.xPos = pos;
     // drag position
     dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
@@ -687,6 +690,7 @@ class Slider extends Core {
       // prevent dragging animation
       self.dragger.classList.remove('trans-anim-none');
       // val
+      self.detail.xPosOld = self.detail.xPos;
       self.detail.xPos = self.detail.xPosCurrent;
       // drag position
       dragger.style.transform = 'translateX(' + self.detail.xPosCurrent + 'px)';

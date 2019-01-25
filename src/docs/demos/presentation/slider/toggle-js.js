@@ -50,7 +50,9 @@ function sliderInit(main, index, query) {
   dragger.addEventListener('dragend.xt.slider', function (e) {
     let target = self.targets.filter(x => x.classList.contains('active'))[0];
     // mask
+    TweenMax.set(target, {x: -self.detail.xPosOld + 'px'});
     TweenMax.to(target, timeMask, {x: 0, opacity: 1, ease: 'easeInOut'});
+    TweenMax.set(dragger, {x: self.detail.xPosOld});
     TweenMax.to(dragger, timeMask, {x: 0, ease: 'easeInOut'});
     // content
     let contents = target.querySelectorAll('.card_content > *');
