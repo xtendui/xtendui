@@ -24,7 +24,7 @@ function toggleInit(main, index, query) {
 
   // auto start
 
-  object.addEventListener('auto.xt.start', function (e) {
+  object.addEventListener('start.xt.auto', function (e) {
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
@@ -63,7 +63,7 @@ function toggleInit(main, index, query) {
 
   // auto stop
 
-  object.addEventListener('auto.xt.stop', function (e) {
+  object.addEventListener('stop.xt.auto', function (e) {
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
@@ -84,7 +84,7 @@ function toggleInit(main, index, query) {
 
   // auto pause
 
-  object.addEventListener('auto.xt.pause', function (e) {
+  object.addEventListener('pause.xt.auto', function (e) {
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {

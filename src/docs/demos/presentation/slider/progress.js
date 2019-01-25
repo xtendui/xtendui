@@ -25,7 +25,7 @@ function sliderInit(main, index, query) {
 
   // auto start
 
-  object.addEventListener('auto.xt.start', function (e) {
+  object.addEventListener('start.xt.auto', function (e) {
     // on object
     let spinner = object.querySelectorAll('.spinner svg:nth-child(2) circle');
     TweenMax.set(spinner, {strokeDashoffset: 628});
@@ -68,7 +68,7 @@ function sliderInit(main, index, query) {
 
   // auto stop
 
-  object.addEventListener('auto.xt.stop', function (e) {
+  object.addEventListener('stop.xt.auto', function (e) {
     // on object
     let spinner = object.querySelectorAll('.spinner svg:nth-child(2) circle');
     TweenMax.to(spinner, timeHide, {strokeDashoffset: 628, ease: 'easeInOut', autoRound: false});
@@ -92,7 +92,7 @@ function sliderInit(main, index, query) {
 
   // auto pause
 
-  object.addEventListener('auto.xt.pause', function (e) {
+  object.addEventListener('pause.xt.auto', function (e) {
     // on object
     let spinner = object.querySelectorAll('.spinner svg:nth-child(2) circle');
     TweenMax.to(spinner, timeHide, {strokeDashoffset: 628, ease: 'easeInOut', autoRound: false});

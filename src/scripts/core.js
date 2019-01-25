@@ -1302,7 +1302,7 @@ class Core {
         // listener dispatch
         self.eDetailSet();
         self.eDetail.autoTime = time;
-        self.object.dispatchEvent(new CustomEvent('auto.xt.start', {detail: self.eDetail}));
+        self.object.dispatchEvent(new CustomEvent('start.xt.auto', {detail: self.eDetail}));
       }
     }
   }
@@ -1323,7 +1323,7 @@ class Core {
       // listener dispatch
       self.eDetailSet();
       self.eDetail.autoTime = options.auto.time;
-      self.object.dispatchEvent(new CustomEvent('auto.xt.stop', {detail: self.eDetail}));
+      self.object.dispatchEvent(new CustomEvent('stop.xt.auto', {detail: self.eDetail}));
     }
   }
 
@@ -1343,7 +1343,7 @@ class Core {
       // listener dispatch
       self.eDetailSet();
       self.eDetail.autoTime = options.auto.time;
-      self.object.dispatchEvent(new CustomEvent('auto.xt.pause', {detail: self.eDetail}));
+      self.object.dispatchEvent(new CustomEvent('pause.xt.auto', {detail: self.eDetail}));
     }
   }
 
@@ -1839,7 +1839,7 @@ class Core {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('on.xt.done', {detail: self.eDetail}));
+    el.dispatchEvent(new CustomEvent('ondone.xt', {detail: self.eDetail}));
   }
 
   /**
@@ -1894,7 +1894,7 @@ class Core {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('off.xt.done', {detail: self.eDetail}));
+    el.dispatchEvent(new CustomEvent('offdone.xt', {detail: self.eDetail}));
   }
 
   //////////////////////
