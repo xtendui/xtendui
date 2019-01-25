@@ -33,6 +33,9 @@ class Ajax extends Core {
   initScopeElements() {
     super.initScopeElements();
     let self = this;
+    let options = self.options;
+    // queryElement
+    self.queryElement = self.object.querySelectorAll(options.query)[0] || self.object;
     // generate groups
     self.groupLink = [];
     for (let element of self.elements) {
@@ -188,7 +191,6 @@ class Ajax extends Core {
   ajaxSuccess(url, responseText) {
     let self = this;
     let options = self.options;
-    let target = self.object.querySelectorAll(options.query)[0] || self.object;
     // set substitute
     let html = document.createElement('html');
     html.innerHTML = responseText.trim();
@@ -198,7 +200,7 @@ class Ajax extends Core {
     /*
     // NEEDS constructor && !object.dataset.xtAjaxKept // not when ajax-kept
     //DOES NOT WORK it doesn't copy the events..
-    for (let tr of target.querySelectorAll('[data-xt-ajax-keep]')) {
+    for (let tr of self.queryElement.querySelectorAll('[data-xt-ajax-keep]')) {
       // replace
       let trId = tr.getAttribute('data-xt-ajax-keep');
       let rep = replace.querySelectorAll('[data-xt-ajax-keep="' + trId + '"]');
@@ -235,7 +237,7 @@ class Ajax extends Core {
     }
     */
     // populate dom
-    target.outerHTML = replace.outerHTML;
+    self.queryElement.outerHTML = replace.outerHTML;
     // pushstate
     self.pushState(url, title);
     // garbage collector
@@ -243,7 +245,7 @@ class Ajax extends Core {
     replace = null;
     // dispatch
     self.eDetailSet();
-    target.dispatchEvent(new CustomEvent('success.xt.ajax', {detail: self.eDetail}));
+    self.queryElement.dispatchEvent(new CustomEvent('success.xt.ajax', {detail: self.eDetail}));
   }
 
   /**
@@ -253,11 +255,9 @@ class Ajax extends Core {
    */
   ajaxError(url, responseText) {
     let self = this;
-    let options = self.options;
-    let target = self.object.querySelectorAll(options.query)[0] || self.object;
     // dispatch
     self.eDetailSet();
-    target.dispatchEvent(new CustomEvent('error.xt.ajax', {detail: self.eDetail}));
+    self.queryElement.dispatchEvent(new CustomEvent('error.xt.ajax', {detail: self.eDetail}));
     console.log('ajax error error:', responseText);
   }
 
