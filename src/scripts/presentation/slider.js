@@ -401,6 +401,9 @@ class Slider extends Core {
    */
   eventDragHandler(dragger, e) {
     let self = this;
+    // disable links
+    dragger.classList.add('links--none');
+    dragger.classList.add('xt-jump--none');
     // save event
     self.detail.eCurrent = e;
     // eDetail
@@ -534,14 +537,14 @@ class Slider extends Core {
       return false;
     }
     // disable drag
-    requestAnimationFrame(function () {
+    requestAnimationFrame(function () { // needed for touch links triggering before logicDragend
       dragger.classList.add('pointer-events--none');
     });
     // disable links
-    //requestAnimationFrame(function () {
+    requestAnimationFrame(function () {
       dragger.classList.remove('links--none');
       dragger.classList.remove('xt-jump--none');
-    //});
+    });
     // logic
     self.logicDragfriction(dragger, e);
   }
@@ -598,14 +601,6 @@ class Slider extends Core {
       //self.detail.xVelocity += xVelocityOld * options.drag.momentum; // momentum keeps some velocity
     }
     self.detail.xPosReal = pos;
-    // disable links
-    if (Math.abs(self.detail.xPos) > options.drag.threshold) {
-      dragger.classList.add('links--none');
-      dragger.classList.add('xt-jump--none');
-    } else {
-      dragger.classList.remove('links--none');
-      dragger.classList.remove('xt-jump--none');
-    }
     // overflow
     let first = self.targets[0];
     let last = self.targets[self.targets.length - 1];

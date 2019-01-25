@@ -1358,11 +1358,12 @@ class Core {
     if (self.detail.disabled && !self.detail.initial) {
       return false;
     }
-    // jump
-    let element = self.getElementsFromTarget(el)[0];
-    if (element.classList.contains('xt-jump--none') || Xt.parents(element, '.xt-jump--none').length) {
+    // check disabled
+    if (el.classList.contains('xt-jump--none') || Xt.parents(el, '.xt-jump--none').length) {
       return false;
     }
+    // jump
+    let element = self.getElementsFromTarget(el)[0];
     if (self.checkOn(element)) {
       self.eventOn(element);
     }
