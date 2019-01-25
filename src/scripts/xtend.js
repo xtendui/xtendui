@@ -805,7 +805,7 @@ Math.nthroot = function (x, n) {
 
 addEventListener('focus', function () {
   for (let iframe of document.querySelectorAll('iframe')) {
-    iframe.contentdispatchEvent(new CustomEvent('focus'));
+    iframe.contentWindow.dispatchEvent(new CustomEvent('focus'));
   }
 });
 
@@ -813,13 +813,13 @@ addEventListener('focus', function () {
 
 addEventListener('focus', function () {
   for (let iframe of document.querySelectorAll('iframe')) {
-    iframe.contentdispatchEvent(new CustomEvent('focus'));
+    iframe.contentWindow.dispatchEvent(new CustomEvent('focus'));
   }
 });
 
 addEventListener('blur', function () {
   for (let iframe of document.querySelectorAll('iframe')) {
-    iframe.contentdispatchEvent(new CustomEvent('blur'));
+    iframe.contentWindow.dispatchEvent(new CustomEvent('blur'));
   }
 });
 
