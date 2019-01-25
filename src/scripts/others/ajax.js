@@ -188,8 +188,8 @@ class Ajax extends Core {
   ajaxSuccess(url, responseText) {
     let self = this;
     let options = self.options;
-    // set substitute
     let target = self.object.querySelectorAll(options.query)[0] || self.object;
+    // set substitute
     let html = document.createElement('html');
     html.innerHTML = responseText.trim();
     let title = html.querySelectorAll('head title')[0].innerHTML;
@@ -243,7 +243,7 @@ class Ajax extends Core {
     replace = null;
     // dispatch
     self.eDetailSet();
-    target.dispatchEvent(new CustomEvent('ajax.xt', {detail: self.eDetail}));
+    target.dispatchEvent(new CustomEvent('success.xt.ajax', {detail: self.eDetail}));
   }
 
   /**
@@ -252,6 +252,12 @@ class Ajax extends Core {
    * @param {String} responseText Html response
    */
   ajaxError(url, responseText) {
+    let self = this;
+    let options = self.options;
+    let target = self.object.querySelectorAll(options.query)[0] || self.object;
+    // dispatch
+    self.eDetailSet();
+    target.dispatchEvent(new CustomEvent('error.xt.ajax', {detail: self.eDetail}));
     console.log('ajax error error:', responseText);
   }
 
