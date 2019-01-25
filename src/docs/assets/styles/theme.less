@@ -205,8 +205,9 @@
   &.active {
     .btn {
       .anim-x.active();
-      animation-delay: @time--tiny + 150ms; // @start + @child * @increment
-      .nth-child(@child: 6, @start: @time--tiny, @increment: 25ms, @decrement: 0ms, {
+      animation-duration: @time--small;
+      animation-delay: @time--medium + 180ms; // @start + @child * @increment
+      .nth-child(@child: 6, @start: @time--medium, @increment: 30ms, @decrement: 0ms, {
         @animation-delay(); });
     }
     &.xt-inverse {
@@ -219,8 +220,8 @@
     .btn {
       .anim-x.out();
       animation-duration: @time--small;
-      animation-delay: 30ms; // @start + @child * @increment
-      .nth-child(@child: 6, @start: 30ms, @increment: 0, @decrement: 5ms, {
+      animation-delay: 0 + 180ms; // @start + @child * @increment
+      .nth-child(@child: 6, @start: 0, @increment: 30ms, @decrement: 0ms, {
         @animation-delay(); });
     }
     &.xt-inverse {
