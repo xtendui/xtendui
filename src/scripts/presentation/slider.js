@@ -317,8 +317,8 @@ class Slider extends Core {
           self.eventDragendHandler.bind(self).bind(self, dragger));
         let events = ['mouseup', 'touchend'];
         for (let event of events) {
-          window.removeEventListener(event, dragendHandler);
-          window.addEventListener(event, dragendHandler);
+          removeEventListener(event, dragendHandler);
+          addEventListener(event, dragendHandler);
         }
       }
     }
@@ -346,7 +346,7 @@ class Slider extends Core {
     let dragendHandler = Xt.dataStorage.get(dragger, 'dragendHandler' + self.namespace);
     let events = ['mouseup', 'touchend'];
     for (let event of events) {
-      window.removeEventListener(event, dragendHandler);
+      removeEventListener(event, dragendHandler);
     }
   }
 

@@ -121,7 +121,7 @@ function ajaxInit(main, index, query) {
     }
   };
 
-  window.addEventListener('scroll', function (e) {
+  addEventListener('scroll', function (e) {
     let scrollTop = document.documentElement.scrollTop;
     let sub = document.querySelectorAll('.btn--site-aside-sub');
     sub = Array.from(sub).filter(x => !Xt.parents(x, '.xt-clone').length); // filter out parent

@@ -39,17 +39,17 @@ class Fade extends Core {
     if (options.on) {
       let events = [...options.on.split(' ')];
       for (let event of events) {
-        window.removeEventListener(event, fadeHandler);
-        window.addEventListener(event, fadeHandler, Xt.passiveSupported ? {passive: true} : false);
+        removeEventListener(event, fadeHandler);
+        addEventListener(event, fadeHandler, Xt.passiveSupported ? {passive: true} : false);
       }
     }
-    window.removeEventListener('scroll.xt.fade', fadeHandler);
-    window.addEventListener('scroll.xt.fade', fadeHandler);
+    removeEventListener('scroll.xt.fade', fadeHandler);
+    addEventListener('scroll.xt.fade', fadeHandler);
     // listener dispatch initial only 1 time next frame
     if (!document.documentElement.dataset.xtFadeDone) {
       document.documentElement.dataset.xtFadeDone = 'true';
       requestAnimationFrame(function () {
-        window.dispatchEvent(new CustomEvent('scroll.xt.fade'));
+        dispatchEvent(new CustomEvent('scroll.xt.fade'));
         delete document.documentElement.dataset.xtFadeDone;
       });
     }

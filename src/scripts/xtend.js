@@ -199,8 +199,8 @@ Xt.btnMerge = {
       el.addEventListener('mouseleave', Xt.btnMerge.hoverOff);
       el.removeEventListener('mousedown', Xt.btnMerge.activeOn);
       el.addEventListener('mousedown', Xt.btnMerge.activeOn);
-      window.removeEventListener('mouseup', Xt.btnMerge.activeOff.bind(el));
-      window.addEventListener('mouseup', Xt.btnMerge.activeOff.bind(el));
+      removeEventListener('mouseup', Xt.btnMerge.activeOff.bind(el));
+      addEventListener('mouseup', Xt.btnMerge.activeOff.bind(el));
     }
   },
 
@@ -572,8 +572,8 @@ Xt.scrollbarWidth = function (force = false) {
   if (Xt.scrollbarWidthVal === undefined) {
     let scrollbarWidthHandler = Xt.dataStorage.put(window, 'scrollbarWidthHandler',
       Xt.scrollbarWidth.bind(this, true));
-    window.removeEventListener('resize', scrollbarWidthHandler);
-    window.addEventListener('resize', scrollbarWidthHandler);
+    removeEventListener('resize', scrollbarWidthHandler);
+    addEventListener('resize', scrollbarWidthHandler);
   }
   if (force || Xt.scrollbarWidthVal === undefined) {
     // add outer
@@ -770,8 +770,8 @@ try {
       Xt.passiveSupported = true;
     }
   };
-  window.addEventListener('test', options, options);
-  window.removeEventListener('test', options, options);
+  addEventListener('test', options, options);
+  removeEventListener('test', options, options);
 } catch (err) {
   Xt.passiveSupported = false;
 }
@@ -791,7 +791,7 @@ function setVh() {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', vh + 'px');
 }
-window.addEventListener('resize', setVh);
+addEventListener('resize', setVh);
 setVh();
 
 // Math.nthroot
@@ -803,23 +803,23 @@ Math.nthroot = function (x, n) {
 
 // save window width and height
 
-window.addEventListener('focus', function () {
+addEventListener('focus', function () {
   for (let iframe of document.querySelectorAll('iframe')) {
-    iframe.contentWindow.dispatchEvent(new CustomEvent('focus'));
+    iframe.contentdispatchEvent(new CustomEvent('focus'));
   }
 });
 
 // pass focus and blur window events to iframes
 
-window.addEventListener('focus', function () {
+addEventListener('focus', function () {
   for (let iframe of document.querySelectorAll('iframe')) {
-    iframe.contentWindow.dispatchEvent(new CustomEvent('focus'));
+    iframe.contentdispatchEvent(new CustomEvent('focus'));
   }
 });
 
-window.addEventListener('blur', function () {
+addEventListener('blur', function () {
   for (let iframe of document.querySelectorAll('iframe')) {
-    iframe.contentWindow.dispatchEvent(new CustomEvent('blur'));
+    iframe.contentdispatchEvent(new CustomEvent('blur'));
   }
 });
 

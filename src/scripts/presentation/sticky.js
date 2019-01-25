@@ -88,17 +88,17 @@ class Sticky extends Core {
     if (options.on) {
       let events = [...options.on.split(' ')];
       for (let event of events) {
-        window.removeEventListener(event, stickyHandler);
-        window.addEventListener(event, stickyHandler, Xt.passiveSupported ? {passive: true} : false);
+        removeEventListener(event, stickyHandler);
+        addEventListener(event, stickyHandler, Xt.passiveSupported ? {passive: true} : false);
       }
     }
-    window.removeEventListener('scroll.xt.sticky', stickyHandler);
-    window.addEventListener('scroll.xt.sticky', stickyHandler);
+    removeEventListener('scroll.xt.sticky', stickyHandler);
+    addEventListener('scroll.xt.sticky', stickyHandler);
     // listener dispatch initial only 1 time next frame
     if (!document.documentElement.dataset.xtStickyDone) {
       document.documentElement.dataset.xtStickyDone = 'true';
       requestAnimationFrame(function () {
-        window.dispatchEvent(new CustomEvent('scroll.xt.sticky'));
+        dispatchEvent(new CustomEvent('scroll.xt.sticky'));
         delete document.documentElement.dataset.xtStickyDone;
       });
     }

@@ -383,8 +383,8 @@ class Core {
     // resize
     let checkHandler = Xt.dataStorage.put(window, 'checkHandler' + self.namespace,
       self.eventCheckHandler.bind(self).bind(self));
-    window.removeEventListener('resize', checkHandler);
-    window.addEventListener('resize', checkHandler);
+    removeEventListener('resize', checkHandler);
+    addEventListener('resize', checkHandler);
   }
 
   /**
@@ -445,11 +445,11 @@ class Core {
     // auto
     if (options.auto && options.auto.time) {
       // focus auto
-      window.removeEventListener('focus', self.eventAutoResumeHandler.bind(self));
-      window.addEventListener('focus', self.eventAutoResumeHandler.bind(self));
+      removeEventListener('focus', self.eventAutoResumeHandler.bind(self));
+      addEventListener('focus', self.eventAutoResumeHandler.bind(self));
       // blur auto
-      window.removeEventListener('blur', self.eventAutoPauseHandler.bind(self));
-      window.addEventListener('blur', self.eventAutoPauseHandler.bind(self));
+      removeEventListener('blur', self.eventAutoPauseHandler.bind(self));
+      addEventListener('blur', self.eventAutoPauseHandler.bind(self));
       // autoPause
       for (let el of self.object.querySelectorAll(options.auto.pause)) {
         // pause
