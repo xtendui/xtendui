@@ -41,7 +41,6 @@ We use jekyll to serve the docs.
 * Documentation with [jekyll](https://jekyllrb.com/)
 * Javascript with [babel](https://babeljs.io/)
 * Polyfills:
-  * [requestAnimationFrame](https://gist.github.com/paulirish/1579671)
   * [closest](https://github.com/jonathantneal/closest/)
   * [:scope](https://github.com/jonathantneal/element-qsa-scope/)
   * [prepend](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend)
