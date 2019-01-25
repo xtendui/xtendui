@@ -172,9 +172,9 @@ class Slider extends Core {
       }
       // grab
       if (!self.detail.disabled) {
-        dragger.classList.add('xt-grab');
+        dragger.classList.add('grab');
       } else {
-        dragger.classList.remove('xt-grab');
+        dragger.classList.remove('grab');
       }
     }
   }
@@ -403,7 +403,7 @@ class Slider extends Core {
     let self = this;
     // disable links
     dragger.classList.add('links--none');
-    dragger.classList.add('xt-jump--none');
+    dragger.classList.add('jumps--none');
     // save event
     self.detail.eCurrent = e;
     // eDetail
@@ -448,7 +448,7 @@ class Slider extends Core {
     });
     // disable links
     slide.classList.remove('links--none');
-    dragger.classList.remove('xt-jump--none');
+    dragger.classList.remove('jumps--none');
     // only one call per group
     if (slide.dataset.xtSlideOnDone) {
       return false;
@@ -544,7 +544,7 @@ class Slider extends Core {
     // disable links
     requestAnimationFrame(function () {
       dragger.classList.remove('links--none');
-      dragger.classList.remove('xt-jump--none');
+      dragger.classList.remove('jumps--none');
     });
     // logic
     self.logicDragfriction(dragger, e);

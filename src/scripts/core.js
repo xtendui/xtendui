@@ -479,9 +479,9 @@ class Core {
         jump.addEventListener('click', jumpHandler, true); // useCapture or it gets the click from elements inside the target
         // jump
         if (!self.detail.disabled) {
-          jump.classList.add('xt-jump');
+          jump.classList.add('jump');
         } else {
-          jump.classList.remove('xt-jump');
+          jump.classList.remove('jump');
         }
       }
     }
@@ -1359,7 +1359,7 @@ class Core {
       return false;
     }
     // check disabled
-    if (el.classList.contains('xt-jump--none') || Xt.parents(el, '.xt-jump--none').length) {
+    if (el.classList.contains('jumps--none') || Xt.parents(el, '.jumps--none').length) {
       return false;
     }
     // jump
