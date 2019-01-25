@@ -36,7 +36,7 @@ function toggle0Init(main, index, query) {
       let target = this;
       // setup
       TweenMax.set(target, {opacity: 0});
-      if (!target.classList.contains('xt-inverse')) {
+      if (!target.classList.contains('inverse')) {
         TweenMax.set(target, {x: -size});
       } else {
         TweenMax.set(target, {x: size});
@@ -50,7 +50,7 @@ function toggle0Init(main, index, query) {
     tr.addEventListener('off.xt', function (e) {
       let target = this;
       // animation
-      if (!target.classList.contains('xt-inverse')) {
+      if (!target.classList.contains('inverse')) {
         TweenMax.to(target, time, {x: size, opacity: 0, ease: 'easeOut'});
       } else {
         TweenMax.to(target, time, {x: -size, opacity: 0, ease: 'easeOut'});
@@ -91,7 +91,7 @@ function toggle1Init(main, index, query) {
       let target = this;
       // setup
       TweenMax.set(target, {opacity: 0});
-      if (!target.classList.contains('xt-inverse')) {
+      if (!target.classList.contains('inverse')) {
         TweenMax.set(target, {x: -size});
       } else {
         TweenMax.set(target, {x: size});
@@ -105,7 +105,7 @@ function toggle1Init(main, index, query) {
     tr.addEventListener('off.xt', function (e) {
       let target = this;
       // animation
-      if (!target.classList.contains('xt-inverse')) {
+      if (!target.classList.contains('inverse')) {
         TweenMax.to(target, time, {x: size, opacity: 0, ease: 'easeOut'});
       } else {
         TweenMax.to(target, time, {x: -size, opacity: 0, ease: 'easeOut'});

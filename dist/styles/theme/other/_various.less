@@ -2,24 +2,24 @@
 // various
 //////////////////////
 
-// .xt-backdrop
+// .backdrop
 
 @backdrop--opacity: .1;
 
-.xt-backdrop {
+.backdrop {
   // styles
   background: darken(@primary, @perc--xl);
   // animation
   opacity: 0;
   &.active {
     animation-name: anim-backdrop--in;
-    animation-duration: @time--big;
+    animation-duration: inherit;
     animation-timing-function: @bez--in;
     animation-fill-mode: forwards;
   }
   &.out {
     animation-name: anim-backdrop--out;
-    animation-duration: @time--big;
+    animation-duration: inherit;
     animation-timing-function: @bez--out;
     animation-fill-mode: forwards;
   }

@@ -70,7 +70,7 @@ function sliderInit(main, index, query) {
         let xMax = target.clientWidth;
         // direction
         let direction = 1;
-        if (target.classList.contains('xt-inverse')) {
+        if (target.classList.contains('inverse')) {
           direction = -1;
         }
         // setup
@@ -95,7 +95,7 @@ function sliderInit(main, index, query) {
       let xMax = target.clientWidth;
       // direction
       let direction = 1;
-      if (target.classList.contains('xt-inverse')) {
+      if (target.classList.contains('inverse')) {
         direction = -1;
       }
       // mask

@@ -1068,9 +1068,9 @@ class Core {
     let self = this;
     // decorateDirection
     if (!self.detail.inverseDirection) {
-      el.classList.remove('xt-inverse');
+      el.classList.remove('inverse');
     } else {
-      el.classList.add('xt-inverse');
+      el.classList.add('inverse');
     }
   }
 
@@ -1938,9 +1938,9 @@ class Core {
     if (options.backdrop) {
       let elements = typeof options.backdrop === 'string' && obj[options.backdrop] ? Xt.arrSingle(obj[options.backdrop].queueEls) : Xt.arrSingle(self.object);
       for (let element of elements) {
-        let backdrop = element.querySelectorAll('.xt-backdrop');
+        let backdrop = element.querySelectorAll('.backdrop');
         if (!backdrop.length) {
-          backdrop = Xt.createElement('<div class="xt-backdrop"></div>');
+          backdrop = Xt.createElement('<div class="backdrop"></div>');
           element.append(backdrop);
         }
       }
@@ -2231,7 +2231,7 @@ class Core {
         }
       }
       // backdrop
-      let backdrops = document.querySelectorAll('.xt-backdrop');
+      let backdrops = document.querySelectorAll('.backdrop');
       for (let backdrop of backdrops) {
         backdrop.style.right = width + 'px';
       }
@@ -2265,7 +2265,7 @@ class Core {
           });
         }
         // backdrop
-        let backdrops = self.object.querySelectorAll(':scope > .xt-backdrop');
+        let backdrops = self.object.querySelectorAll(':scope > .backdrop');
         for (let backdrop of backdrops) {
           backdrop.style.right = '';
         }
