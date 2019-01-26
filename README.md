@@ -9,7 +9,7 @@ You can install with one of the following:
 * [yarn](https://yarnpkg.com/): `yarn add xtend-library --save`
 * [npm](https://www.npmjs.com/): `npm install xtend-library --save`
 
-# Theming
+# Css
 
 You need to copy xtend-library **/dist** to customize the files.
 
@@ -20,7 +20,7 @@ cp -r node_modules/xtend-library/dist/ xtend-library/
 
 After in `styles/xtend.less` set `@theme-path` (usually `theme/`) and `@core-path` (usually `../../node_modules/xtend-library/src/styles/core`).
 
-# Import
+# Js
 
 #### Polyfill
 
@@ -38,7 +38,7 @@ With [cdn](https://cdnjs.com/libraries/babel-polyfill):
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js"></script>
 ```
 
-#### Js animation
+#### Animation
 
 This library uses [tweenmax](https://greensock.com/tweenmax) for javascript animations.
 
