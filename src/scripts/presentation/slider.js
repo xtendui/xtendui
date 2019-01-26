@@ -607,7 +607,6 @@ class Slider extends Core {
       clearInterval(parseFloat(dragger.dataset.xtVelocityInterval));
       dragger.dataset.xtVelocityInterval = setInterval(function () {
         self.detail.xVelocity *= options.drag.friction;
-        //console.log(self.detail.xVelocity);
         if (Math.abs(self.detail.xVelocity) < options.drag.limit) {
           clearInterval(parseFloat(dragger.dataset.xtVelocityInterval));
         }
@@ -620,12 +619,22 @@ class Slider extends Core {
     let last = self.targets[self.targets.length - 1];
     let min = parseFloat(first.dataset.groupPos);
     let max = parseFloat(last.dataset.groupPos);
-    if (pos > min) {
-      let overflow = pos - min;
-      pos = min + Math.nthroot(overflow, options.drag.overflow);
-    } else if (pos < max) {
-      let overflow = pos - max;
-      pos = max - Math.nthroot(-overflow, options.drag.overflow);
+    if (friction) {
+      if (pos > min) {
+        self.detail.xVelocity = Math.nthroot(self.detail.xVelocity, options.drag.overflow);
+      } else if (pos < max) {
+        self.detail.xVelocity = Math.nthroot(self.detail.xVelocity, options.drag.overflow);
+      }
+    } else {
+      if (pos > min) {
+        self.detail.xVelocity = 0;
+        let overflow = pos - min;
+        pos = min + Math.nthroot(overflow, options.drag.overflow);
+      } else if (pos < max) {
+        self.detail.xVelocity = 0;
+        let overflow = pos - max;
+        pos = max - Math.nthroot(-overflow, options.drag.overflow);
+      }
     }
     // val
     self.detail.xPosOld = self.detail.xPos;
@@ -748,7 +757,7 @@ Slider.defaults = {
     "friction": 0.92,
     "momentum": 0.92,
     "limit": 2.5,
-    "overflow": 1.4
+    "overflow": 1.2
   }
 };
 
