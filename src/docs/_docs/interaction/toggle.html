@@ -8,8 +8,7 @@ description: Many possible behaviour, interactions and animations are possible w
 
 <h2>Usage</h2>
 
-<p>Use this markup to create a toggle. <code>[data-xt-toggle]</code> must be <a
-  href="{% link _docs/introduction/javascript.html %}#initialization">initialized by javascript</a>.</p>
+<p>Use this markup to create a toggle.</p>
 
 <pre>
   <code class="html">
@@ -32,20 +31,21 @@ description: Many possible behaviour, interactions and animations are possible w
   </code>
 </pre>
 
-<div class="alert">
-  <div class="alert_content">
-    Instead of using html arguments you can initialize <a
-    href="{% link _docs/introduction/javascript.html %}#initialization-toggle">toggle
-    by javascript</a> using the same options syntax.
-  </div>
-</div>
-
-<h2>Defaults</h2>
-
-<p>Here are the defaults options for toggle.</p>
+<p>You can initialize <strong>toggle</strong> by javascript omitting <code>[data-xt-toggle]</code>.</p>
 
 <pre>
   <code class="js">
+    // single
+    Xt.Toggle(document.querySelectorAll('.my-element')[0], {
+      // options
+    });
+
+    // looping
+    for (let el of document.querySelectorAll('.my-element')) {
+      Xt.Toggle(el, {
+        // options
+      });
+    }
   </code>
 </pre>
 

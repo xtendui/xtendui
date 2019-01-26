@@ -8,8 +8,7 @@ description: Lorem Ipsum
 
 <h2>Usage</h2>
 
-<p>Use this markup to create a drop. <code>[data-xt-drop]</code> must be <a
-  href="{% link _docs/introduction/javascript.html %}#initialization">initialized by javascript</a>.</p>
+<p>Use this markup to create a drop.</p>
 
 <pre>
   <code class="html">
@@ -43,14 +42,25 @@ description: Lorem Ipsum
   </code>
 </pre>
 
-<div class="alert">
-  <div class="alert_content">
-    Instead of using html arguments you can initialize <a
-    href="{% link _docs/introduction/javascript.html %}#initialization-slider">slider
-    by javascript</a> using the same options syntax.
-  </div>
-</div>
+<p>You can initialize <strong>slider</strong> by javascript omitting <code>[data-xt-slider]</code>.</p>
 
+<pre>
+  <code class="js">
+    // single
+    new Xt.Slider(document.querySelectorAll('.my-element')[0], {
+      // options
+    });
+
+    // looping
+    for (let el of document.querySelectorAll('.my-element')) {
+      new Xt.Slider(el, {
+        // options
+      });
+    }
+  </code>
+</pre>
+
+<pre>
 <div class="alert alert--primary">
   <div class="alert_content">
     We use javascript animations with

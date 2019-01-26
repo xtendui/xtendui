@@ -9,7 +9,7 @@ You can install with one of the following:
 * [yarn](https://yarnpkg.com/): `yarn add xtend-library --save`
 * [npm](https://www.npmjs.com/): `npm install xtend-library --save`
 
-### Theming
+# Theming
 
 You need to copy xtend-library **/dist** to customize the files.
 
@@ -20,15 +20,65 @@ cp -r node_modules/xtend-library/dist/ xtend-library/
 
 After in `styles/xtend.less` set `@theme-path` (usually `theme/`) and `@core-path` (usually `../../node_modules/xtend-library/src/styles/core`).
 
-### Compilation
+# Import
+
+#### Polyfill
+
+For supporting older browsers you need to add babel's [polyfill](https://babeljs.io/docs/en/babel-polyfill/)
+
+With [npm](https://www.npmjs.com/package/@babel/polyfill):
+
+```
+import '@babel/polyfill/dist/polyfill';
+```
+
+With [cdn](https://cdnjs.com/libraries/babel-polyfill):
+
+```
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js"></script>
+```
+
+#### Js animation
+
+This library uses [tweenmax](https://greensock.com/tweenmax) for javascript animations.
+
+With [npm](https://www.npmjs.com/package/gsap):
+
+```
+import 'gsap/TweenMax';
+import 'gsap/ScrollToPlugin';
+```
+
+With [cdn](https://cdnjs.com/libraries/gsap):
+
+```
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js"></script>
+```
+
+#### Library
+
+With [npm](https://www.npmjs.com/package/xtend-library):
+
+```
+import 'xtend-library';
+```
+
+With **script**:
+
+```
+<script src="xtend-library/scripts/xtend.js"></script>
+```
+
+# Compilation
 
 We use gulp to compile and watch files.
 
 * Install required npm packages with `npm install`
-* Use `npm run build` or `npm run watch` to compile *xtend* css and js
-* Use `npm run build:doc` or `npm run watch:docs` to compile *also docs* css and js
+* Use `npm run build` or `npm run dev` to compile **xtend** css and js
+* Use `npm run build:doc` or `npm run dev:docs` to compile **also docs** css and js
 
-### Documentation
+# Documentation
 
 We use jekyll to serve the docs.
 
@@ -40,6 +90,7 @@ We use jekyll to serve the docs.
 
 * Documentation with [jekyll](https://jekyllrb.com/)
 * Javascript with [babel](https://babeljs.io/)
+* Icons with [feather icons](https://github.com/feathericons/feather)
 * Polyfills:
   * [closest](https://github.com/jonathantneal/closest/)
   * [:scope](https://github.com/jonathantneal/element-qsa-scope/)
@@ -49,9 +100,6 @@ We use jekyll to serve the docs.
   * [findIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
   * [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent)
   * [scrollingElement](https://github.com/yangg/scrolling-element)
-<!--
-* Icons by [feather icons](https://github.com/feathericons/feather)
--->
 
 # Copyright
 

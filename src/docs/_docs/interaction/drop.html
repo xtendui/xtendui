@@ -8,8 +8,7 @@ description: Dropdown component with structured theming that can show anything.
 
 <h2>Usage</h2>
 
-<p>Use this markup to create a drop. <code>[data-xt-drop]</code> must be <a
-  href="{% link _docs/introduction/javascript.html %}#initialization">initialized by javascript</a>.</p>
+<p>Use this markup to create a drop.</p>
 
 <pre>
   <code class="html">
@@ -29,30 +28,23 @@ description: Dropdown component with structured theming that can show anything.
   </code>
 </pre>
 
-<div class="alert">
-  <div class="alert_content">
-    Instead of using html arguments you can initialize <a href="{% link _docs/introduction/javascript.html %}#initialization-drop">drop
-    by javascript</a> using the same options syntax.
-  </div>
-</div>
-
-<div class="alert">
-  <div class="alert_content">
-    For customizing the interactions read the documentation of <a href="{% link _docs/interaction/toggle.html %}#subcomponents-drop">toggle
-    drop</a>.
-  </div>
-</div>
-
-<h2>Defaults</h2>
-
-<p>Here are the defaults options for drop.</p>
+<p>You can initialize <strong>drop</strong> by javascript omitting <code>[data-xt-drop]</code>.</p>
 
 <pre>
   <code class="js">
+    // single
+    Xt.Overlay(document.querySelectorAll('.my-element')[0], {
+      // options
+    });
+
+    // looping
+    for (let el of document.querySelectorAll('.my-element')) {
+      Xt.Overlay(el, {
+        // options
+      });
+    }
   </code>
 </pre>
-
-<h2>Mode</h2>
 
 <h3>Drop of anything</h3>
 

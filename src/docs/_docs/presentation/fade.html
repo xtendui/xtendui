@@ -8,8 +8,7 @@ description: Lorem ipsum
 
 <h2>Usage</h2>
 
-<p>Use this markup to create a fade. <code>[data-xt-fade]</code> must be <a
-  href="{% link _docs/introduction/javascript.html %}#initialization">initialized by javascript</a>.</p>
+<p>Use this markup to create a fade.</p>
 
 <pre>
   <code class="html">
@@ -21,12 +20,23 @@ description: Lorem ipsum
   </code>
 </pre>
 
-<div class="alert">
-  <div class="alert_content">
-    Instead of using html arguments you can initialize <a href="{% link _docs/introduction/javascript.html %}#initialization-fade">fade
-    by javascript</a> using the same options syntax.
-  </div>
-</div>
+<p>You can initialize <strong>fade</strong> by javascript omitting <code>[data-xt-fade]</code>.</p>
+
+<pre>
+  <code class="js">
+    // single
+    new Xt.Fade(document.querySelectorAll('.my-element')[0], {
+      // options
+    });
+
+    // looping
+    for (let el of document.querySelectorAll('.my-element')) {
+      new Xt.Fade(el, {
+        // options
+      });
+    }
+  </code>
+</pre>
 
 <div class="alert alert--primary">
   <div class="alert_content">
@@ -34,28 +44,6 @@ description: Lorem ipsum
     of <a href="{% link faq.html %}#browsers-bugs-fixed-position">this bug</a>.
   </div>
 </div>
-
-<h3>Javascript</h3>
-
-<div class="demo">
-  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/fade/javascript.html"
-       data-name="js">
-    <div class="demo-text">
-      <div class="alert_content">
-        Example initialized by javascript on document
-      </div>
-    </div>
-  </div>
-</div>
-
-<h2>Defaults</h2>
-
-<p>Here are the defaults options for fade.</p>
-
-<pre>
-  <code class="js">
-  </code>
-</pre>
 
 <h2>Options</h2>
 

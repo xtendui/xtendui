@@ -8,8 +8,7 @@ description: Component to show modal elements inside the page.
 
 <h2>Usage</h2>
 
-<p>Use this markup to create a overlay. <code>[data-xt-overlay]</code> must be <a
-  href="{% link _docs/introduction/javascript.html %}#initialization">initialized by javascript</a>.</p>
+<p>Use this markup to create a overlay.</p>
 
 <pre>
   <code class="html">
@@ -30,44 +29,13 @@ description: Component to show modal elements inside the page.
   </code>
 </pre>
 
-<div class="alert">
-  <div class="alert_content">
-    Instead of using html arguments you can initialize <a
-    href="{% link _docs/introduction/javascript.html %}#initialization-overlay">overlay by javascript</a> using the same
-    options syntax.
-  </div>
-</div>
-
-<div class="alert">
-  <div class="alert_content">
-    For customizing the interactions read the documentation of <a
-    href="{% link _docs/interaction/toggle.html %}#subcomponents-overlay">toggle overlay</a>.
-  </div>
-</div>
-
-<div class="alert alert--primary">
-  <div class="alert_content">
-    Overlays are moved to <code>body</code> to prevent <strong>z-index</strong> problems.
-  </div>
-</div>
-
-<h3>Alternatives</h3>
-
-<p>You can use this markup to create a overlay with <strong>no toggle</strong>. Be sure to add <code>.content.event-limit</code>.
-<p>
+<p>You can use this markup to create a overlay with <strong>no toggle</strong>. Be sure to add
+  <code>.overlay_content.event-limit</code>.<p>
 
 <pre>
   <code class="html">
     <div class="overlay_outer" data-xt-overlay>
-      <div class="overlay">
-        <div class="overlay_inner">
-          <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
-          <div class="overlay_content event-limit">
-            <!-- content -->
-          </div>
-        </div>
-      </div>
+       <!-- content with markup -->
     </div>
   </code>
 </pre>
@@ -81,28 +49,35 @@ description: Component to show modal elements inside the page.
         <span><!-- content --></span>
       </button>
       <div class="overlay_outer">
-        <div class="overlay">
-          <div class="overlay_inner">
-            <div class="overlay_design"></div>
-            <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
-            <div class="overlay_content">
-              <!-- content -->
-            </div>
-          </div>
-        </div>
+       <!-- content with markup -->
       </div>
     </div>
   </code>
 </pre>
 
-<h2>Defaults</h2>
-
-<p>Here are the defaults options for overlay.</p>
+<p>You can initialize <strong>overlay</strong> by javascript omitting <code>[data-xt-overlay]</code>.</p>
 
 <pre>
   <code class="js">
+    // single
+    Xt.Overlay(document.querySelectorAll('.my-element')[0], {
+      // options
+    });
+
+    // looping
+    for (let el of document.querySelectorAll('.my-element')) {
+      Xt.Overlay(el, {
+        // options
+      });
+    }
   </code>
 </pre>
+
+<div class="alert alert--primary">
+  <div class="alert_content">
+    Overlays are moved to <code>body</code> to prevent <strong>z-index</strong> problems.
+  </div>
+</div>
 
 <h2>Variables</h2>
 
@@ -738,14 +713,17 @@ description: Component to show modal elements inside the page.
                       <div class="overlay_inner">
 
                         <div class="overlay_design"></div>
-                        <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+                        <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span>
+                        </button>
 
                         <div class="overlay_content">
                           <h2>Lorem ipsum</h2>
                           <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare
+                            volutpat,
                             ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-                          <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                          <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui
+                            sem id
                             justo.</p>
                           <div class="drop_outer" data-xt-drop='{"backdrop": true}'>
                             <button type="button" class="btn btn--primary">
