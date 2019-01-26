@@ -441,14 +441,6 @@ class Slider extends Core {
     if (self.detail.disabled && !self.detail.initial) {
       return false;
     }
-    // disable drag
-    dragger.classList.add('pointer-events--none');
-    Xt.animTimeout(dragger, function () {
-      dragger.classList.remove('pointer-events--none');
-    });
-    // disable links
-    slide.classList.remove('links--none');
-    dragger.classList.remove('jumps--none');
     // only one call per group
     if (slide.dataset.xtSlideOnDone) {
       return false;
@@ -482,6 +474,14 @@ class Slider extends Core {
     }
     // drag position
     dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
+    // disable drag
+    dragger.classList.add('pointer-events--none');
+    Xt.animTimeout(dragger, function () {
+      dragger.classList.remove('pointer-events--none');
+    });
+    // disable links
+    slide.classList.remove('links--none');
+    dragger.classList.remove('jumps--none');
   }
 
   /**
@@ -559,12 +559,11 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     // friction
-    self.detail.xVelocity *= options.drag.friction;
     if (Math.abs(self.detail.xVelocity) > options.drag.limit) {
       // drag
       self.logicDrag(dragger, e, true);
       // loop
-      requestAnimationFrame(function() {
+      requestAnimationFrame(function () {
         self.logicDragfriction(dragger, e);
       });
     } else {
@@ -583,6 +582,7 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     let xPosCurrent = self.detail.xPosCurrent || 0;
+    let xVelocityOld = self.detail.xVelocity || 0;
     // disabled
     if (self.detail.disabled && !self.detail.initial) {
       return false;
@@ -597,12 +597,21 @@ class Slider extends Core {
     } else {
       // on normal drag
       let xPosOld = pos || 0;
-      let xVelocityOld = self.detail.xVelocity || 0;
       self.detail.xStart = self.detail.eInit.clientX || self.detail.eInit.touches[0].clientX;
       self.detail.xCurrent = self.detail.eCurrent.clientX || self.detail.eCurrent.touches[0].clientX;
       pos = xPosCurrent + (self.detail.xCurrent - self.detail.xStart) * options.drag.factor;
-      self.detail.xVelocity = pos - xPosOld;
-      //self.detail.xVelocity += xVelocityOld * options.drag.momentum; // momentum keeps some velocity
+      // velocity
+      let xVelocity = pos - xPosOld;
+      self.detail.xVelocity = Math.abs(xVelocity) > Math.abs(xVelocityOld) ? xVelocity : xVelocityOld * options.drag.friction;
+      // velocity decreases with time
+      clearInterval(parseFloat(dragger.dataset.xtVelocityInterval));
+      dragger.dataset.xtVelocityInterval = setInterval(function () {
+        self.detail.xVelocity *= options.drag.friction;
+        //console.log(self.detail.xVelocity);
+        if (Math.abs(self.detail.xVelocity) < options.drag.limit) {
+          clearInterval(parseFloat(dragger.dataset.xtVelocityInterval));
+        }
+      }, 10).toString();
     }
     // val
     self.detail.xPosReal = pos;
@@ -686,17 +695,17 @@ class Slider extends Core {
         }
       });
     } else {
+      // val
+      self.detail.xPosOld = self.detail.xPos;
+      self.detail.xPos = self.detail.xPosCurrent;
+      // drag position
+      dragger.style.transform = 'translateX(' + self.detail.xPosCurrent + 'px)';
       // disable drag
       Xt.animTimeout(dragger, function () {
         dragger.classList.remove('pointer-events--none');
       });
       // prevent dragging animation
       self.dragger.classList.remove('trans-anim-none');
-      // val
-      self.detail.xPosOld = self.detail.xPos;
-      self.detail.xPos = self.detail.xPosCurrent;
-      // drag position
-      dragger.style.transform = 'translateX(' + self.detail.xPosCurrent + 'px)';
       // listener dispatch
       dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
     }
@@ -736,8 +745,8 @@ Slider.defaults = {
   "drag": {
     "threshold": 100,
     "factor": 1,
-    "friction": 0.9,
-    "momentum": 0.5,
+    "friction": 0.92,
+    "momentum": 0.92,
     "limit": 2.5,
     "overflow": 1.4
   }
