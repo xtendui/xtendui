@@ -1,7 +1,6 @@
+# Setup
 
-# Under development
-
-# Installation
+## Installation
 
 You can install with one of the following:
 * download: [latest release](https://github.com/minimit/xtend-library/releases/latest)
@@ -9,7 +8,7 @@ You can install with one of the following:
 * [yarn](https://yarnpkg.com/): `yarn add xtend-library --save`
 * [npm](https://www.npmjs.com/): `npm install xtend-library --save`
 
-# Css
+## Css
 
 You need to copy xtend-library **/dist** to customize the files.
 
@@ -20,9 +19,9 @@ $ cp -r node_modules/xtend-library/dist/ xtend-library/
 
 After in `styles/xtend.less` set `@theme-path` (usually `theme/`) and `@core-path` (usually `../../node_modules/xtend-library/src/styles/core`).
 
-# Js
+## Js
 
-## Polyfill
+### Polyfill
 
 For supporting older browsers you need to add [babel polyfill](https://babeljs.io/docs/en/babel-polyfill/)
 
@@ -42,7 +41,7 @@ With cdn include [babel polyfill](https://cdnjs.com/libraries/babel-polyfill):
 <script src="//cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js"></script>
 ```
 
-## Animation
+### Animation
 
 This library uses [gsap](https://github.com/greensock/GreenSock-JS) and [bezier-easing](https://github.com/gre/bezier-easing) for javascript animations.
 
@@ -67,7 +66,7 @@ With cdn include [cdn](https://cdnjs.com/libraries/gsap) and [bezier-easing](htt
 <script src="//cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js"></script>
 ```
 
-## Library
+### Library
 
 With npm import [xtend-library](https://www.npmjs.com/package/xtend-library):
 
