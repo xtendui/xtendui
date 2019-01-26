@@ -3,7 +3,7 @@
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
 //////////////////////
-// imports
+// import
 //////////////////////
 
 //import '../../../../dist/scripts/xtend';

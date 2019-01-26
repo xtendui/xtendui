@@ -563,7 +563,10 @@ class Slider extends Core {
     if (Math.abs(self.detail.xVelocity) > options.drag.limit) {
       // drag
       self.logicDrag(dragger, e, true);
-      requestAnimationFrame(self.logicDragfriction.bind(self).bind(e, dragger));
+      // loop
+      requestAnimationFrame(function() {
+        self.logicDragfriction(dragger, e);
+      });
     } else {
       // dragend
       requestAnimationFrame(self.logicDragfrictionend.bind(self).bind(e, dragger));

@@ -164,8 +164,13 @@ class Ajax extends Core {
           return false;
         }
       }
-      // make ajax call
+      // ajax call
       if (url) {
+        // dispatch
+        self.eDetailSet();
+        self.queryElement.dispatchEvent(new CustomEvent('request.xt.ajax', {detail: self.eDetail}));
+        // call
+        setTimeout(function(){
         let request = new XMLHttpRequest();
         request.open('GET', url, true);
         request.onload = function () {
@@ -179,6 +184,7 @@ class Ajax extends Core {
           self.ajaxError(url, request.responseText);
         };
         request.send();
+        }, 2000);
       }
     }
   }
@@ -245,6 +251,7 @@ class Ajax extends Core {
     replace = null;
     // dispatch
     self.eDetailSet();
+    self.queryElement.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
     self.queryElement.dispatchEvent(new CustomEvent('success.xt.ajax', {detail: self.eDetail}));
   }
 
@@ -257,6 +264,7 @@ class Ajax extends Core {
     let self = this;
     // dispatch
     self.eDetailSet();
+    self.queryElement.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
     self.queryElement.dispatchEvent(new CustomEvent('error.xt.ajax', {detail: self.eDetail}));
     console.log('ajax error error:', responseText);
   }
