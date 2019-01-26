@@ -36,7 +36,7 @@ $ npm install @babel/polyfill
 import '@babel/polyfill/dist/polyfill';
 ```
 
-With [cdn](https://cdnjs.com/libraries/babel-polyfill):
+With cdn include [babel polyfill](https://cdnjs.com/libraries/babel-polyfill):
 
 ```
 <script src="//cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js"></script>
@@ -44,9 +44,9 @@ With [cdn](https://cdnjs.com/libraries/babel-polyfill):
 
 #### Animation
 
-This library uses [tweenmax](https://greensock.com/tweenmax) and [bezier-easing](https://github.com/gre/bezier-easing) for javascript animations.
+This library uses [gsap](https://github.com/greensock/GreenSock-JS) and [bezier-easing](https://github.com/gre/bezier-easing) for javascript animations.
 
-With npm install and import [tweenmax](https://www.npmjs.com/package/gsap) and [bezier-easing](https://www.npmjs.com/package/bezier-easing):
+With npm install and import [gsap](https://www.npmjs.com/package/gsap) and [bezier-easing](https://www.npmjs.com/package/bezier-easing):
 
 ```
 $ npm install gsap
@@ -59,7 +59,7 @@ import 'gsap/ScrollToPlugin';
 import 'bezier-easing';
 ```
 
-With [cdn](https://cdnjs.com/libraries/gsap):
+With cdn include [cdn](https://cdnjs.com/libraries/gsap) and [bezier-easing](https://www.jsdelivr.com/package/npm/bezier-easing):
 
 ```
 <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
@@ -75,7 +75,7 @@ With npm import [xtend-library](https://www.npmjs.com/package/xtend-library):
 import 'xtend-library';
 ```
 
-With **script**:
+With **script** include **xtend.js**:
 
 ```
 <script src="xtend-library/scripts/xtend.js"></script>
