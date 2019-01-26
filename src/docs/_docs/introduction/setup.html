@@ -26,9 +26,9 @@ description: Lorem ipsum
 <p>You need to copy xtend-library <strong>/dist</strong> to customize the files.</p>
 
 <pre>
-  <code>
-    mkdir -p xtend-library/
-    cp -r node_modules/xtend-library/dist/ xtend-library/
+  <code class="shell">
+    $ mkdir -p xtend-library/
+    $ cp -r node_modules/xtend-library/dist/ xtend-library/
   </code>
 </pre>
 
@@ -39,10 +39,18 @@ description: Lorem ipsum
 
 <h3>Polyfill</h3>
 
-<p>For supporting older browsers you need to add babel's
-  <a href="https://babeljs.io/docs/en/babel-polyfill/" target="_blank" rel="noopener">polyfill</a>.</p>
+<p>For supporting older browsers you need to add
+  <a href="https://babeljs.io/docs/en/babel-polyfill/" target="_blank" rel="noopener">babel polyfill</a>.</p>
 
-<p>With <a href="https://www.npmjs.com/package/@babel/polyfill" target="_blank" rel="noopener">npm</a>:</p>
+<p>With npm install and import <a href="https://www.npmjs.com/package/@babel/polyfill" target="_blank" rel="noopener">babel
+  polyfill</a>:
+</p>
+
+<pre>
+  <code class="shell">
+    $ npm install @babel/polyfill
+  </code>
+</pre>
 
 <pre>
   <code class="js">
@@ -54,16 +62,25 @@ description: Lorem ipsum
 
 <pre>
   <code class="html">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js"></script>
   </code>
 </pre>
 
 <h3>Animation</h3>
 
 <p>This library uses <a href="https://greensock.com/tweenmax" target="_blank" rel="noopener">tweenmax</a>
-  for javascript animations.</p>
+  and <a href="https://github.com/gre/bezier-easing" target="_blank" rel="noopener">bezier-easing</a> for javascript
+  animations.</p>
 
-<p>With <a href="https://www.npmjs.com/package/gsap" target="_blank" rel="noopener">npm</a>:</p>
+<p>With npm install and import <a href="https://www.npmjs.com/package/gsap" target="_blank" rel="noopener">tweenmax</a>
+  and <a href="https://www.npmjs.com/package/bezier-easing" target="_blank" rel="noopener">bezier-easing</a>:</p>
+
+<pre>
+  <code class="shell">
+    $ npm install gsap
+    $ npm install bezier-easing
+  </code>
+</pre>
 
 <pre>
   <code class="js">
@@ -76,14 +93,14 @@ description: Lorem ipsum
 
 <pre>
   <code class="html">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js"></script>
   </code>
 </pre>
 
 <h3>Library</h3>
 
-<p>With <a href="https://www.npmjs.com/package/xtend-library" target="_blank" rel="noopener">npm</a>:</p>
+<p>With npm import <a href="https://www.npmjs.com/package/xtend-library" target="_blank" rel="noopener">xtend-library</a>:</p>
 
 <pre>
   <code class="js">

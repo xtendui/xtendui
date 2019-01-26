@@ -26,7 +26,9 @@
     "dep:docs": "gh-pages -d docs",
     "publish": "npm run dep && git push && git push --tags && npm publish"
   },
-  "dependencies": {},
+  "dependencies": {
+    "bezier-easing": "^2.1.0"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",

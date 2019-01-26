@@ -4,9 +4,9 @@ let time = .6;
 let delay = 0;
 let size = 15;
 
-CustomEase.create('easeIn', '.36,0,0,1');
-CustomEase.create('easeOut', '1,0,.64,1');
-CustomEase.create('easeInOut', '.68,.13,.25,1');
+let easeIn = new Ease(BezierEasing(.36,0,0,1));
+let easeOut = new Ease(BezierEasing(1,0,.64,1));
+let easeInOut = new Ease(BezierEasing(.68,.13,.25,1));
 
 // #toggle-0
 
@@ -42,7 +42,7 @@ function toggle0Init(main, index, query) {
         TweenMax.set(target, {x: size});
       }
       // animation
-      TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeIn'});
+      TweenMax.to(target, time, {x: 0, opacity: 1, ease: easeIn});
     });
 
     // off event
@@ -51,9 +51,9 @@ function toggle0Init(main, index, query) {
       let target = this;
       // animation
       if (!target.classList.contains('inverse')) {
-        TweenMax.to(target, time, {x: size, opacity: 0, ease: 'easeOut'});
+        TweenMax.to(target, time, {x: size, opacity: 0, ease: easeOut});
       } else {
-        TweenMax.to(target, time, {x: -size, opacity: 0, ease: 'easeOut'});
+        TweenMax.to(target, time, {x: -size, opacity: 0, ease: easeOut});
       }
     });
 
@@ -97,7 +97,7 @@ function toggle1Init(main, index, query) {
         TweenMax.set(target, {x: size});
       }
       // animation
-      TweenMax.to(target, time, {x: 0, opacity: 1, ease: 'easeIn'});
+      TweenMax.to(target, time, {x: 0, opacity: 1, ease: easeIn});
     });
 
     // off event
@@ -106,9 +106,9 @@ function toggle1Init(main, index, query) {
       let target = this;
       // animation
       if (!target.classList.contains('inverse')) {
-        TweenMax.to(target, time, {x: size, opacity: 0, ease: 'easeOut'});
+        TweenMax.to(target, time, {x: size, opacity: 0, ease: easeOut});
       } else {
-        TweenMax.to(target, time, {x: -size, opacity: 0, ease: 'easeOut'});
+        TweenMax.to(target, time, {x: -size, opacity: 0, ease: easeOut});
       }
     });
 

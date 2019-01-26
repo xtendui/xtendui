@@ -14,8 +14,8 @@ You can install with one of the following:
 You need to copy xtend-library **/dist** to customize the files.
 
 ```
-mkdir -p xtend-library/
-cp -r node_modules/xtend-library/dist/ xtend-library/
+$ mkdir -p xtend-library/
+$ cp -r node_modules/xtend-library/dist/ xtend-library/
 ```
 
 After in `styles/xtend.less` set `@theme-path` (usually `theme/`) and `@core-path` (usually `../../node_modules/xtend-library/src/styles/core`).
@@ -24,9 +24,13 @@ After in `styles/xtend.less` set `@theme-path` (usually `theme/`) and `@core-pat
 
 #### Polyfill
 
-For supporting older browsers you need to add babel's [polyfill](https://babeljs.io/docs/en/babel-polyfill/)
+For supporting older browsers you need to add [babel polyfill](https://babeljs.io/docs/en/babel-polyfill/)
 
-With [npm](https://www.npmjs.com/package/@babel/polyfill):
+With npm install and import [babel polyfill](https://www.npmjs.com/package/@babel/polyfill):
+
+```
+$ npm install @babel/polyfill
+```
 
 ```
 import '@babel/polyfill/dist/polyfill';
@@ -35,30 +39,36 @@ import '@babel/polyfill/dist/polyfill';
 With [cdn](https://cdnjs.com/libraries/babel-polyfill):
 
 ```
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js"></script>
 ```
 
 #### Animation
 
-This library uses [tweenmax](https://greensock.com/tweenmax) for javascript animations.
+This library uses [tweenmax](https://greensock.com/tweenmax) and [bezier-easing](https://github.com/gre/bezier-easing) for javascript animations.
 
-With [npm](https://www.npmjs.com/package/gsap):
+With npm install and import [tweenmax](https://www.npmjs.com/package/gsap) and [bezier-easing](https://www.npmjs.com/package/bezier-easing):
+
+```
+$ npm install gsap
+$ npm install bezier-easing
+```
 
 ```
 import 'gsap/TweenMax';
 import 'gsap/ScrollToPlugin';
+import 'bezier-easing';
 ```
 
 With [cdn](https://cdnjs.com/libraries/gsap):
 
 ```
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js"></script>
 ```
 
 #### Library
 
-With [npm](https://www.npmjs.com/package/xtend-library):
+With npm import [xtend-library](https://www.npmjs.com/package/xtend-library):
 
 ```
 import 'xtend-library';
