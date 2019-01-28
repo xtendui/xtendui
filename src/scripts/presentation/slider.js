@@ -36,7 +36,7 @@ class Slider extends Core {
     // targets
     self.initScopeTargets();
     // dragger
-    self.dragger = self.object.querySelectorAll(options.dragger)[0];
+    self.dragger = self.object.querySelectorAll(options.drag.dragger)[0];
     // autoHeight
     if (options.autoHeight) {
       self.autoHeight = self.object.querySelectorAll(options.autoHeight)[0];
@@ -758,8 +758,8 @@ Slider.defaults = {
   "align": "center",
   "contain": false,
   "pagination": ".slider_pagination",
-  "dragger": ".slides_inner",
   "drag": {
+    "dragger": ".slides_inner",
     "threshold": 100,
     "factor": 1,
     "friction": 0.9,
