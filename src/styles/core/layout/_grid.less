@@ -13,6 +13,7 @@
 // grid
 //////////////////////
 
+/*
 // col
 
 .col(@breakpoint:none) when (@breakpoint = none) {
@@ -25,10 +26,13 @@
     flex: 1 0 auto;
   }
 }
+*/
 
 // col--auto
 
 .col--auto(@breakpoint:none) when (@breakpoint = none) {
+  flex-shrink: 1;
+  flex-grow: 1;
   flex-basis: auto;
   max-width: none;
   width: auto;
@@ -37,6 +41,8 @@
 .col--auto(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
+    flex-shrink: 1;
+    flex-grow: 1;
     flex-basis: auto;
     max-width: none;
     width: auto;
@@ -47,6 +53,7 @@
 
 .col--custom(@val, @breakpoint:none) when (@breakpoint = none) {
   flex-shrink: 0;
+  flex-grow: 0;
   max-width: @val;
   width: @val;
 }
@@ -55,6 +62,7 @@
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex-shrink: 0;
+    flex-grow: 0;
     max-width: @val;
     width: @val;
   }
@@ -66,6 +74,7 @@
 .col(@number, @breakpoint:none) when (@breakpoint = none) {
   @val: (percentage(@number / @columns));
   flex-shrink: 0;
+  flex-grow: 0;
   max-width: @val;
   width: @val;
 }
@@ -75,6 +84,7 @@
   @val: (percentage(@number / @columns));
   @media @@query-min {
     flex-shrink: 0;
+    flex-grow: 0;
     max-width: @val;
     width: @val;
   }

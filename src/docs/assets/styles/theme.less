@@ -750,7 +750,7 @@
 // .demo-cols
 
 .demo-cols {
-  .col {
+  [class^='col--'], [class*=' col--'] {
     &::before {
       position: relative;
       float: left;
@@ -766,7 +766,7 @@
       line-height: 1.8;
       text-align: center;
     }
-    .col {
+    [class^='col--'], [class*=' col--'] {
       &::before {
         background: @primary;
       }
@@ -775,7 +775,7 @@
 }
 
 .demo-cols-nested {
-  .col {
+  [class^='col--'], [class*=' col--'] {
     .demo-cols();
   }
 }

@@ -24,15 +24,15 @@ window.easeInOut = new Ease(BezierEasing(.68,.13,.25,1));
 // .demo-cols
 
 for (let element of document.querySelectorAll('.demo-cols')) {
-  for (let [i, el] of element.querySelectorAll('.col').entries()) {
+  for (let [i, el] of element.querySelectorAll('[class^=\'col--\'], [class*=\' col--\']').entries()) {
     el.setAttribute('data-index', i);
   }
 }
 
 // .demo-cols-nested
 
-for (let element of document.querySelectorAll('.demo-cols-nested .col')) {
-  for (let [i, el] of element.querySelectorAll('.col').entries()) {
+for (let element of document.querySelectorAll('.demo-cols-nested [class^=\'col--\'], .demo-cols-nested [class*=\' col--\']')) {
+  for (let [i, el] of element.querySelectorAll('[class^=\'col--\'], [class*=\' col--\']').entries()) {
     el.setAttribute('data-index', i);
   }
 }

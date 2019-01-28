@@ -22,7 +22,7 @@ body:not(.full) {
 // .demo-cols
 
 .demo-cols {
-  .col {
+  [class^='col--'], [class*=' col--'] {
     &::before {
       position: relative;
       float: left;
@@ -38,7 +38,7 @@ body:not(.full) {
       line-height: 1.8;
       text-align: center;
     }
-    .col {
+    [class^='col--'], [class*=' col--'] {
       &::before {
         background: @primary;
       }
@@ -47,7 +47,7 @@ body:not(.full) {
 }
 
 .demo-cols-nested {
-  .col {
+  [class^='col--'], [class*=' col--'] {
     .demo-cols();
   }
 }
