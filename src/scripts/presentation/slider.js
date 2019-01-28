@@ -88,6 +88,9 @@ class Slider extends Core {
     // generate elements
     if (options.pagination) {
       let pags = self.object.querySelectorAll(options.pagination);
+      if (!pags.length) {
+        console.error('Error: Xt.Slider pagination not found for', self.object); // Xt check
+      }
       // remove old
       self.pags = self.pags ? self.pags : [];
       for (let pags of self.pags) {
