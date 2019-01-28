@@ -157,8 +157,8 @@
 
 // responsive
 
-.responsive(@breakpoint:none) when (@breakpoint = none) {
-  max-width: 100%;
+.responsive-x(@breakpoint:none) when (@breakpoint = none) {
+  width: 100%;
   height: auto;
   // fix ie11 images inside flex
   flex-shrink: 0;
@@ -170,10 +170,10 @@
   */
 }
 
-.responsive(@breakpoint:none) when (default()) {
+.responsive-x(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     // fix ie11 images inside flex
     flex-shrink: 0;
@@ -181,7 +181,7 @@
 }
 
 .responsive-y(@breakpoint:none) when (@breakpoint = none) {
-  max-height: 100%;
+  height: 100%;
   width: auto;
   // fix ie11 images inside flex
   flex-shrink: 0;
@@ -190,7 +190,7 @@
 .responsive-y(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    max-height: 100%;
+    height: 100%;
     width: auto;
     // fix ie11 images inside flex
     flex-shrink: 0;
