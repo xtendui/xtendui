@@ -13,21 +13,6 @@
 // grid
 //////////////////////
 
-/*
-// col
-
-.col(@breakpoint:none) when (@breakpoint = none) {
-  flex: 1 0 auto;
-}
-
-.col(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    flex: 1 0 auto;
-  }
-}
-*/
-
 // col--auto
 
 .col--auto(@breakpoint:none) when (@breakpoint = none) {
@@ -35,7 +20,7 @@
   flex-grow: 1;
   flex-basis: auto;
   max-width: none;
-  width: auto;
+  width: 0;
 }
 
 .col--auto(@breakpoint:none) when (default()) {
@@ -45,7 +30,7 @@
     flex-grow: 1;
     flex-basis: auto;
     max-width: none;
-    width: auto;
+    width: 0;
   }
 }
 
