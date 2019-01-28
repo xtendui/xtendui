@@ -582,7 +582,6 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     let xPosCurrent = self.detail.xPosCurrent || 0;
-    let xVelocityOld = self.detail.xVelocity || 0;
     // disabled
     if (self.detail.disabled && !self.detail.initial) {
       return false;
@@ -590,27 +589,33 @@ class Slider extends Core {
     // calculate
     let pos = self.detail.xPosReal;
     if (friction) {
+      // momentum
+      if (self.detail.xDate) {
+        let dateDiff = new Date() - self.detail.xDate;
+        self.detail.xDate = null;
+        if (dateDiff < 150) {
+          let dateFactor = dateDiff / 10;
+          self.detail.xVelocity *= options.drag.friction / dateFactor;
+        } else {
+          self.detail.xVelocity = 0;
+        }
+      } else {
+        self.detail.xVelocity *= options.drag.friction;
+      }
       // on friction
       pos = pos + self.detail.xVelocity;
       self.detail.xStart = self.detail.eInit.clientX || self.detail.eInit.touches[0].clientX;
       self.detail.xCurrent = pos + self.detail.xStart - xPosCurrent;
     } else {
+      // momentum
+      self.detail.xDate = new Date();
       // on normal drag
       let xPosOld = pos || 0;
       self.detail.xStart = self.detail.eInit.clientX || self.detail.eInit.touches[0].clientX;
       self.detail.xCurrent = self.detail.eCurrent.clientX || self.detail.eCurrent.touches[0].clientX;
       pos = xPosCurrent + (self.detail.xCurrent - self.detail.xStart) * options.drag.factor;
       // velocity
-      let xVelocity = pos - xPosOld;
-      self.detail.xVelocity = Math.abs(xVelocity) > Math.abs(xVelocityOld) ? xVelocity : xVelocityOld * options.drag.friction;
-      // velocity decreases with time
-      clearInterval(parseFloat(dragger.dataset.xtVelocityInterval));
-      dragger.dataset.xtVelocityInterval = setInterval(function () {
-        self.detail.xVelocity *= options.drag.friction;
-        if (Math.abs(self.detail.xVelocity) < options.drag.limit) {
-          clearInterval(parseFloat(dragger.dataset.xtVelocityInterval));
-        }
-      }, 10).toString();
+      self.detail.xVelocity = pos - xPosOld;
     }
     // val
     self.detail.xPosReal = pos;
@@ -754,8 +759,7 @@ Slider.defaults = {
   "drag": {
     "threshold": 100,
     "factor": 1,
-    "friction": 0.92,
-    "momentum": 0.92,
+    "friction": 0.9,
     "limit": 2.5,
     "overflow": 1.2
   }
