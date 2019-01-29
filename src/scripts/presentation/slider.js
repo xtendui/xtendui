@@ -584,13 +584,13 @@ class Slider extends Core {
   logicDrag(dragger, e, friction = false) {
     let self = this;
     let options = self.options;
-    let xPosCurrent = self.detail.xPosCurrent || 0;
     // disabled
     if (self.detail.disabled && !self.detail.initial) {
       return false;
     }
     // calculate
     let pos = self.detail.xPosReal;
+    let xPosCurrent = self.detail.xPosCurrent || 0;
     if (friction) {
       // momentum
       if (self.detail.xDate) {
@@ -618,7 +618,8 @@ class Slider extends Core {
       self.detail.xCurrent = self.detail.eCurrent.clientX || self.detail.eCurrent.touches[0].clientX;
       pos = xPosCurrent + (self.detail.xCurrent - self.detail.xStart) * options.drag.factor;
       // velocity
-      self.detail.xVelocity = pos - xPosOld;
+      let xVelocity = pos - xPosOld;
+      self.detail.xVelocity = ((self.detail.xVelocity || xVelocity) + xVelocity) / 2; // keep some velocity with median value
     }
     // val
     self.detail.xPosReal = pos;
