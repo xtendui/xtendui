@@ -36,7 +36,9 @@ class Slider extends Core {
     // targets
     self.initScopeTargets();
     // dragger
-    self.dragger = self.object.querySelectorAll(options.drag.dragger)[0];
+    if (options.drag && options.drag.dragger) {
+      self.dragger = self.object.querySelectorAll(options.drag.dragger)[0];
+    }
     // autoHeight
     if (options.autoHeight) {
       self.autoHeight = self.object.querySelectorAll(options.autoHeight)[0];
@@ -453,7 +455,9 @@ class Slider extends Core {
       target.dataset.xtSlideOnDone = 'true';
     }
     // reinit if needed
-    self.initDraggerSlide(slide);
+    if (self.dragger) {
+      self.initDraggerSlide(slide);
+    }
     // autoHeight
     if (self.autoHeight) {
       let slideHeight = slide.offsetHeight;
@@ -465,26 +469,30 @@ class Slider extends Core {
     // val
     self.detail.xPosOld = self.detail.xPos;
     self.detail.xPos = self.detail.xPosCurrent = self.detail.xPosReal = parseFloat(slide.dataset.groupPos);
-    // prevent alignment animation
-    self.dragger.classList.remove('trans-anim-none');
-    // initial or resizing
-    if (self.detail.initial) {
+    // dragger
+    if (self.dragger) {
       // prevent alignment animation
-      self.dragger.classList.add('trans-anim-none');
-      requestAnimationFrame(function () {
-        self.dragger.classList.remove('trans-anim-none');
+      self.dragger.classList.remove('trans-anim-none');
+      // initial or resizing
+      if (self.detail.initial) {
+        // prevent alignment animation
+        self.dragger.classList.add('trans-anim-none');
+        requestAnimationFrame(function () {
+          self.dragger.classList.remove('trans-anim-none');
+        });
+      }
+      // drag position
+      dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
+      // disable drag
+      dragger.classList.add('pointer-events--none');
+      Xt.animTimeout(dragger, function () {
+        dragger.classList.remove('pointer-events--none');
       });
+      // disable links
+      dragger.classList.remove('jumps--none');
     }
-    // drag position
-    dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
-    // disable drag
-    dragger.classList.add('pointer-events--none');
-    Xt.animTimeout(dragger, function () {
-      dragger.classList.remove('pointer-events--none');
-    });
     // disable links
     slide.classList.remove('links--none');
-    dragger.classList.remove('jumps--none');
   }
 
   /**

@@ -1083,7 +1083,7 @@ class Core {
     // eDetailSet
     self.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
     self.eDetail.skip = true;
-    self.eDetail.object = this;
+    self.eDetail.self = this;
   }
 
   //////////////////////

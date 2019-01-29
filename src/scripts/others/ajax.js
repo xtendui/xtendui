@@ -168,6 +168,9 @@ class Ajax extends Core {
       if (url) {
         // dispatch
         self.eDetailSet();
+        self.detail.location = {};
+        self.detail.location.pathname = location.pathname;
+        self.detail.location.search = location.search;
         self.queryElement.dispatchEvent(new CustomEvent('request.xt.ajax', {detail: self.eDetail}));
         // call
         setTimeout(function(){
@@ -291,7 +294,7 @@ class Ajax extends Core {
 Ajax.componentName = 'ajax';
 Ajax.defaults = {
   "query": "body", // needs to be unique
-  "baseUrl": "",
+  "baseUrl": "/",
   "elements": "a[href]:not([href^='#'])",
   "class": "active",
   "on": "click",
