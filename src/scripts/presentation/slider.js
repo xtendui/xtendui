@@ -158,12 +158,12 @@ class Slider extends Core {
       let slideOnHandler = Xt.dataStorage.put(slide, 'slideOnHandler' + self.namespace,
         self.eventSlideOnHandler.bind(self).bind(self, dragger, slide));
       slide.removeEventListener('on.xt', slideOnHandler);
-      slide.addEventListener('on.xt', slideOnHandler, true); // @FIX event.xt: useCapture for custom events order on re-init(
+      slide.addEventListener('on.xt', slideOnHandler, true); // @FIX event.xt: useCapture for custom events order on re-init
       // slide off
       let slideOffHandler = Xt.dataStorage.put(slide, 'slideOffHandler' + self.namespace,
         self.eventSlideOffHandler.bind(self).bind(self, dragger, slide));
       slide.removeEventListener('off.xt', slideOffHandler);
-      slide.addEventListener('off.xt', slideOffHandler, true); // @FIX event.xt: useCapture for custom events order on re-init(
+      slide.addEventListener('off.xt', slideOffHandler, true); // @FIX event.xt: useCapture for custom events order on re-init
     }
     // dragger
     if (options.drag) {
@@ -460,11 +460,17 @@ class Slider extends Core {
     }
     // autoHeight
     if (self.autoHeight) {
-      let slideHeight = slide.offsetHeight;
-      if (slide.getAttribute('data-xt-group')) {
-        slideHeight = parseFloat(slide.dataset.groupHeight);
+      self.eventAutoHeight(slide);
+      // images
+      let images = slide.querySelectorAll('img');
+      for (let image of images) {
+        if (!image.complete) {
+          let imageLoadHandler = Xt.dataStorage.put(image, 'imageLoadHandler' + self.namespace,
+            self.eventAutoHeight.bind(self).bind(self, slide));
+          image.removeEventListener('load', imageLoadHandler);
+          image.addEventListener('load', imageLoadHandler);
+        }
       }
-      self.autoHeight.style.height = slideHeight + 'px';
     }
     // val
     self.detail.xPosOld = self.detail.xPos;
@@ -514,6 +520,22 @@ class Slider extends Core {
     if (group) {
       delete slide.dataset.xtSlideOnDone;
     }
+  }
+
+  /**
+   * slide resize
+   * @param {Node|HTMLElement|EventTarget|Window} slide
+   * @param {Event} e
+   */
+  eventAutoHeight(slide, e = null) {
+    let self = this;
+    // resize
+    let slideHeight = slide.offsetHeight;
+    if (slide.getAttribute('data-xt-group')) {
+      let groupHeight = parseFloat(slide.dataset.groupHeight);
+      slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight;
+    }
+    self.autoHeight.style.height = slideHeight + 'px';
   }
 
   //////////////////////
