@@ -59,8 +59,7 @@ class Smooth {
   initStart() {
     let self = this;
     // vars
-    self.detail.moving = false;
-    self.detail.scrollTop = self.object.scrollTop;
+    self.detail.scrollTopInitial = self.detail.scrollTopFinal = self.object.scrollTop;
     // handler
     let eWheel = 'onwheel' in self.object ? 'wheel' : self.object.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
     self.object = self.object ? self.object : document.documentElement; // polyfill document.scrollingElement
@@ -68,39 +67,6 @@ class Smooth {
     self.object.addEventListener(eWheel, self.eventWheel.bind(self));
     self.scrollElement.removeEventListener('scroll', self.eventScroll.bind(self));
     self.scrollElement.addEventListener('scroll', self.eventScroll.bind(self));
-  }
-
-  //////////////////////
-  // event util
-  //////////////////////
-
-  /**
-   * friction
-   */
-  friction() {
-    let self = this;
-    let options = self.options;
-    // vars
-    self.detail.moving = true;
-    let scrollCurrent = self.object.scrollTop;
-    // set
-    let delta = (self.detail.scrollTop - scrollCurrent) / options.friction;
-    let scrollFinal = scrollCurrent + delta;
-    if (delta < 0) { // fix math on direction to stop loop
-      scrollFinal = Math.floor(scrollFinal);
-    } else if (delta > 0) {
-      scrollFinal = Math.ceil(scrollFinal);
-    }
-    self.object.scrollTop = scrollFinal;
-    // loop
-    if (Math.abs(delta) >= options.delta.min) {
-      cancelAnimationFrame(window.smoothFrame);
-      window.smoothFrame = requestAnimationFrame(function () {
-        self.friction();
-      });
-    } else {
-      self.detail.moving = false;
-    }
   }
 
   //////////////////////
@@ -112,11 +78,10 @@ class Smooth {
    */
   eventScroll() {
     let self = this;
-    // scroll
-    if (!self.detail.moving) {
-      // save scroll position for eventWheel
-      self.detail.scrollTop = self.object.scrollTop;
-    }
+    // save scroll position for eventWheel
+    self.detail.scrollTopInitial = self.object.scrollTop;
+    // dispatch
+    self.object.dispatchEvent(new CustomEvent('scroll.xt.smooth', {detail: self.eDetail}));
   }
 
   /**
@@ -146,12 +111,10 @@ class Smooth {
       delta *= self.object.clientHeight;
     }
     // set
-    self.detail.scrollTop -= delta;
-    self.detail.scrollTop = Math.max(0, Math.min(self.detail.scrollTop, scrollMax)); // scroll limit
-    // friction
-    if (!self.detail.moving) {
-      self.friction();
-    }
+    self.detail.scrollTopFinal -= delta;
+    self.detail.scrollTopFinal = Math.max(0, Math.min(self.detail.scrollTopFinal, scrollMax)); // scroll limit
+    // dispatch
+    self.object.dispatchEvent(new CustomEvent('wheel.xt.smooth', {detail: self.eDetail}));
   }
 
 }
@@ -162,11 +125,7 @@ class Smooth {
 
 Smooth.componentName = 'smooth';
 Smooth.defaults = {
-  "scrollElement": window,
-  "friction": 9,
-  "delta": {
-    "min": .5
-  }
+  "scrollElement": window
 };
 
 //////////////////////
