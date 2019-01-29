@@ -5,6 +5,7 @@
 'use strict';
 
 import './polyfills';
+
 import Core from './core';
 import Toggle from './interaction/toggle';
 import Drop from './interaction/drop';
@@ -13,6 +14,7 @@ import Slider from './presentation/slider';
 import Sticky from './presentation/sticky';
 import Fade from './presentation/fade';
 import Ajax from './others/ajax';
+import Smooth from './others/smooth';
 
 //////////////////////
 // constructor
@@ -32,6 +34,7 @@ Xt.Slider = Slider;
 Xt.Sticky = Sticky;
 Xt.Fade = Fade;
 Xt.Ajax = Ajax;
+Xt.Smooth = Smooth;
 
 //////////////////////
 // var
@@ -626,7 +629,9 @@ Xt.merge = function (arr) {
   for (let obj of arr) {
     if (obj) {
       for (let [key, value] of Object.entries(obj)) {
-        if (typeof value === 'object') {
+        if (typeof value === 'object'
+          && !value.nodeName // not HTML element
+          && value !== window) { // not window
           final[key] = Xt.merge([final[key], value]);
         } else {
           final[key] = value;
@@ -777,7 +782,7 @@ try {
 }
 
 //////////////////////
-// utils
+// root
 //////////////////////
 
 // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/

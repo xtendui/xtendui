@@ -39,7 +39,6 @@ class Core {
    */
   init() {
     let self = this;
-    let jsOptions = self.jsOptions;
     // defaults
     self.defaults = {
       "instant": false,
@@ -74,7 +73,7 @@ class Core {
     };
     self.defaults = Xt.merge([self.defaults, self.constructor.defaults]);
     // js options
-    self.options = Xt.merge([self.defaults, jsOptions]);
+    self.options = Xt.merge([self.defaults, self.jsOptions]);
     // markup options
     let markupOptions = self.object.getAttribute('data-xt-' + self.constructor.componentName);
     self.options = Xt.merge([self.options, markupOptions ? JSON.parse(markupOptions) : {}]);
