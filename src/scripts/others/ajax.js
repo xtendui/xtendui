@@ -73,7 +73,7 @@ class Ajax extends Core {
       url = history.state.url;
     } else {
       // detect from url location (absolute url without domain name)
-      url = location.pathname;
+      url = location.pathname + location.search;
     }
     // set pushstate
     self.pushState(url, document.title);
