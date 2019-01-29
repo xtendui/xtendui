@@ -58,7 +58,7 @@ class Smooth {
    */
   initStart() {
     let self = this;
-    // vars
+    // save scroll position for eventWheel
     self.detail.scrollTopInitial = self.detail.scrollTopFinal = self.object.scrollTop;
     // handler
     let eWheel = 'onwheel' in self.object ? 'wheel' : self.object.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
@@ -76,12 +76,18 @@ class Smooth {
   /**
    * event scroll
    */
-  eventScroll() {
+  eventScroll(e) {
     let self = this;
-    // save scroll position for eventWheel
-    self.detail.scrollTopInitial = self.object.scrollTop;
-    // dispatch
-    self.object.dispatchEvent(new CustomEvent('scroll.xt.smooth', {detail: self.eDetail}));
+    if (self.detail.scrollTopInitial !== self.object.scrollTop) {
+      // after finished scrolling
+      clearTimeout(parseFloat(self.object.dataset.xtSmoothScrollTimeout));
+      self.object.dataset.xtSmoothScrollTimeout = setTimeout(function() {
+        // save scroll position for eventWheel
+        self.detail.scrollTopInitial = self.detail.scrollTopFinal = self.object.scrollTop;
+        // dispatch
+        self.object.dispatchEvent(new CustomEvent('scroll.xt.smooth', {detail: self.eDetail}));
+      }, 50).toString();
+    }
   }
 
   /**
