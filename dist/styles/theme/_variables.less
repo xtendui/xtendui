@@ -2,7 +2,7 @@
 // colors
 //////////////////////
 
-// grays
+// gray
 
 @white: #fff;
 @black: #343a40;
@@ -16,13 +16,13 @@
 @text: @gray--750;
 @text--inverse: @white;
 
-// colors
+// color
 
 @primary: #7367F0;
 @secondary: @gray--250;
 @error: #CD1719;
 
-// percents
+// percent
 
 @perc--xs: 5%;
 @perc--sm: 10%;
@@ -30,13 +30,13 @@
 @perc--lg: 40%;
 @perc--xl: 80%;
 
-// gradients
+// gradient
 
 @grad--primary: @primary 33%, darken(@primary, 5%) 100%;
 @grad--secondary: @secondary 33%, darken(@secondary, 5%) 100%;
 
 //////////////////////
-// fonts
+// font
 //////////////////////
 
 @import (css) url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
@@ -69,6 +69,8 @@
 // document
 //////////////////////
 
+// rem
+
 html {
   // base font size for rem
   // 100% is 16px
@@ -78,6 +80,8 @@ html {
     font-size: 62.5%; // 10px
   }
 }
+
+// body
 
 body {
   background: @white;
@@ -91,9 +95,12 @@ body {
 // util
 //////////////////////
 
-// margins and paddings
+// margin
 
 @margins: auto auto, none 0, micro .25rem, tiny .5rem, small 1rem, medium 2rem, big 4rem, giant 8rem;
+
+// padding
+
 @paddings: auto auto, none 0, micro .25rem, tiny .5rem, small 1rem, medium 2rem, big 4rem, giant 8rem;
 
 // z-index
@@ -146,13 +153,13 @@ body {
 @max-xl: ~'(max-width:'(@breakpoint--xl - 1)~')';
 
 //////////////////////
-// classes generation: generate classes to use in markup
+// classes generation
 // false -> not generate any classes
 // true -> only generate non responsive classes
 // array of breakpoints -> generate non responsive classes and responsive classes for those breakpoints
 //////////////////////
 
-@classes--icons: true;
+@classes--icons: true; // only true or false
 @classes--util: sm, md, lg;
 @classes--margin: false;
 @classes--padding: false;
