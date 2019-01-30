@@ -925,7 +925,7 @@
 
 .overlay--size(@name) {
   // .by-key(@overlays, @name);
-  @arr: ~"overlay--size-@{name}";
+  @arr: ~"overlay--@{name}";
   @val: @@arr;
   .overlay_inner {
     max-width: @val;
@@ -935,10 +935,10 @@
 // generate-overlay--size
 
 .generate-overlay--size();
-.generate-overlay--size(@i:length(@overlay--sizes)) when (@i > 0) {
+.generate-overlay--size(@i:length(@overlays)) when (@i > 0) {
   .generate-overlay--size(@i - 1);
-  @name: extract(@overlay--sizes, @i);
-  .overlay--size-@{name} {
+  @name: extract(@overlays, @i);
+  .overlay--@{name} {
     .overlay--size(@name) !important;
   }
 }
