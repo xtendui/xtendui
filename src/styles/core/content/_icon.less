@@ -64,7 +64,7 @@
 
 // generate icons
 
-& when (@classes--icons) {
+& when (@classes--icon) {
 
   .generate-icons();
   .generate-icons(@i:length(@icons-xt)) when (@i > 0) {
@@ -128,7 +128,7 @@
 
 & when not (@icons-theme--family = none) {
 
-  & when (@classes--icons) {
+  & when (@classes--icon) {
 
     .generate-icons();
     .generate-icons(@i:length(@icons-theme)) when (@i > 0) {

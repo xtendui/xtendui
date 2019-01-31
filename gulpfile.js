@@ -9,8 +9,9 @@ let source = require('vinyl-source-stream');
 
 let less = require('gulp-less');
 let gutil = require('gulp-util');
-var cache = require('gulp-cached');
+let cache = require('gulp-cached');
 let terser = require('gulp-terser');
+let rename = require('gulp-rename');
 let replace = require('gulp-replace');
 let browserify = require('browserify');
 let cleanCSS = require('gulp-clean-css');
@@ -43,17 +44,30 @@ gulp.task('less:docs:watch', function (done) {
   done();
 });
 
-gulp.task('less', function () {
+gulp.task('lessmin', function () {
+  const version = JSON.parse(fs.readFileSync('package.json')).version;
+  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
+  return gulp.src(['dist/styles/*.less', '!dist/styles/_*.less'])
+    .pipe(replace(/\/\*\![^\*]+\*\//, banner))
+    .pipe(less())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(cleanCSS())
+    .pipe(sourcemaps.write(''))
+    .pipe(gulp.dest('dist/styles/'));
+});
+gulp.task('less', gulp.series('lessmin', function () {
   const version = JSON.parse(fs.readFileSync('package.json')).version;
   let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
   return gulp.src(['dist/styles/*.less', '!dist/styles/_*.less'])
     .pipe(replace(/\/\*\![^\*]+\*\//, banner))
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(less())
-    .pipe(cleanCSS())
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('dist/styles/'));
-});
+}));
 gulp.task('less:watch', function (done) {
   gulp.watch(['src/styles/**/*.less', 'dist/styles/**/*.less'], gulp.series('less', 'site:build'));
   done();
