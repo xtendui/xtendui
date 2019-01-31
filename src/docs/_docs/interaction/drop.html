@@ -82,8 +82,6 @@ description: Dropdown component with structured theming that can show anything.
 
 <h3>Drop of lists</h3>
 
-<p>The natural way to use drops is to use them <strong>with lists of buttons</strong>.</p>
-
 <div class="alert">
   <div class="alert_content">
     Read the documentation of <a href="{% link _docs/layout/list.html %}#list-of-buttons">list of buttons</a>.
@@ -91,64 +89,10 @@ description: Dropdown component with structured theming that can show anything.
 </div>
 
 <div class="demo">
-  <div class="demo-item demo-preview" data-name="list">
-    <div class="demo-source" data-lang="html">
-      <div class="drop_outer" data-xt-drop>
-        <button type="button" class="btn btn--primary">
-          <span>Toggle</span>
-        </button>
-        <div class="drop">
-          <div class="drop_inner">
-            <div class="drop_design"></div>
-            <div class="drop_content">
-              <ul class="list list--drop">
-                <li>
-                  <button type="button" class="btn btn--primary">
-                    <span>Lorem ipsum dolor</span>
-                  </button>
-                </li>
-                <li>
-                  <button type="button" class="btn btn--secondary">
-                    <span>Dolor sit</span>
-                  </button>
-                </li>
-                <li>
-                  <button type="button" class="btn btn--secondary btn--tiny">
-                    <span>Amet</span>
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Buttons styles</h3>
-
-<p><code>.list--drop > li > a</code> and <code>.list--drop > li > button</code> are styled
-  automatically, If you want to customize the buttons use the <code>.btn</code> class instead.</p>
-
-<div class="alert">
-  <div class="alert_content">
-    Read the documentation of <a href="{% link _docs/layout/list.html %}#buttons-styles">list's buttons styles</a>.
-  </div>
-</div>
-
-<div class="alert">
-  <div class="alert_content">
-    In theming code use <code>.list_btn--default({});</code> to style <code>a</code> and <code>button</code>. To style also
-    if they have the <code>.btn</code> class use <code>.list_btn--all({});</code>.
-  </div>
-</div>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="list--drop">
+  <div class="demo-item demo-preview" data-name="custom">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.list--drop</code>
+        <code>li.custom</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
@@ -162,60 +106,17 @@ description: Dropdown component with structured theming that can show anything.
             <div class="drop_content">
               <ul class="list list--drop">
                 <li>
-                  <a href="#">
+                  <a href="#" class="btn">
                     <span>Lorem Ipsum</span>
                   </a>
                 </li>
                 <li>
-                  <button type="button">
+                  <!-- this options don't works you need to use li.custom -->
+                  <button type="button" class="btn btn--primary btn--tiny">
                     <span>Dolor sit</span>
                   </button>
                 </li>
-                <li>
-                  <button type="button">
-                    <span>Amet</span>
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="override">
-    <div class="demo-text">
-      <div class="alert_content">
-        You can <strong>override</strong> each buttons by using the <code>.btn</code> class
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div class="drop_outer" data-xt-drop>
-        <button type="button" class="btn btn--primary">
-          <span>Toggle</span>
-        </button>
-        <div class="drop">
-          <div class="drop_inner">
-            <div class="drop_design"></div>
-            <div class="drop_content">
-              <ul class="list list--drop">
-                <li>
-                  <a href="#">
-                    <span>Lorem Ipsum</span>
-                  </a>
-                </li>
-                <li>
-                  <button type="button">
-                    <span>Dolor sit</span>
-                  </button>
-                </li>
-                <li>
-                  <!-- this options don't works you need to use .btn -->
-                  <button type="button" class="btn--primary btn--tiny">
-                    <span>Amet</span>
-                  </button>
-                </li>
-                <li>
+                <li class="custom">
                   <button type="button" class="btn btn--primary btn--tiny">
                     <span>Amet</span>
                   </button>
@@ -227,10 +128,10 @@ description: Dropdown component with structured theming that can show anything.
       </div>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="custom">
+  <div class="demo-item demo-preview" data-name="custom list">
     <div class="demo-text">
       <div class="alert_content">
-        For custom list style don't use <code>.list--drop</code>
+        For custom lists don't use <code>.list--drop</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
@@ -244,17 +145,17 @@ description: Dropdown component with structured theming that can show anything.
             <div class="drop_content">
               <ul class="list list--block list--primary list-space--none list--center list--big list--squared">
                 <li>
-                  <button type="button">
+                  <button type="button" class="btn">
                     <span>Lorem ipsum dolor</span>
                   </button>
                 </li>
                 <li>
-                  <button type="button">
+                  <button type="button" class="btn">
                     <span>Dolor sit</span>
                   </button>
                 </li>
                 <li>
-                  <button type="button">
+                  <button type="button" class="btn">
                     <span>Amet</span>
                   </button>
                 </li>
@@ -264,14 +165,6 @@ description: Dropdown component with structured theming that can show anything.
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-<h2>Variables</h2>
-
-<div class="alert">
-  <div class="alert_content">
-    Read the documentation of <a href="{% link _docs/introduction/theming.html %}#component">component's variables</a>.
   </div>
 </div>
 
@@ -302,17 +195,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -332,17 +225,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -362,17 +255,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -392,17 +285,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -441,17 +334,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -471,17 +364,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -501,17 +394,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -541,17 +434,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -571,17 +464,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -601,17 +494,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -641,17 +534,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -671,17 +564,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -701,17 +594,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -741,17 +634,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -771,17 +664,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -801,17 +694,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -841,17 +734,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -871,17 +764,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -901,17 +794,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -941,17 +834,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -971,17 +864,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -1001,17 +894,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -1031,17 +924,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -1061,17 +954,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -1091,17 +984,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -1121,17 +1014,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -1151,124 +1044,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
-                      <span>Amet</span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Special</h3>
-
-<p>Special optional modifiers classes.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="special">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.drop--nodesign</code> <code>.drop--squared</code> <code>.drop--noborder</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div class="list list-space--small align-items--center demo-source-from">
-        <div class="drop_outer" data-xt-drop>
-          <button type="button" class="btn btn--primary">
-            <span>nodesign</span>
-          </button>
-          <div class="drop drop--nodesign">
-            <div class="drop_inner">
-              <div class="drop_design"></div>
-              <div class="drop_content">
-                <ul class="list list--drop">
-                  <li>
-                    <button type="button">
-                      <span>Lorem ipsum dolor</span>
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button">
-                      <span>Dolor sit</span>
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button">
-                      <span>Amet</span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop_outer" data-xt-drop>
-          <button type="button" class="btn btn--primary">
-            <span>squared</span>
-          </button>
-          <div class="drop drop--squared">
-            <div class="drop_inner">
-              <div class="drop_design"></div>
-              <div class="drop_content">
-                <ul class="list list--drop">
-                  <li>
-                    <button type="button">
-                      <span>Lorem ipsum dolor</span>
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button">
-                      <span>Dolor sit</span>
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button">
-                      <span>Amet</span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="drop_outer" data-xt-drop>
-          <button type="button" class="btn btn--primary">
-            <span>noborder</span>
-          </button>
-          <div class="drop drop--noborder">
-            <div class="drop_inner">
-              <div class="drop_design"></div>
-              <div class="drop_content">
-                <ul class="list list--drop">
-                  <li>
-                    <button type="button">
-                      <span>Lorem ipsum dolor</span>
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button">
-                      <span>Dolor sit</span>
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -1309,17 +1095,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li class="event-limit">
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>event-limit</span>
                     </button>
                   </li>
@@ -1349,17 +1135,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li class="event-limit">
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>event-limit</span>
                     </button>
                   </li>
@@ -1389,17 +1175,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li class="event-limit">
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>event-limit</span>
                     </button>
                   </li>
@@ -1436,17 +1222,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -1466,17 +1252,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -1496,17 +1282,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -1544,17 +1330,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -1574,17 +1360,17 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Dolor sit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -1621,72 +1407,72 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
@@ -1716,72 +1502,72 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
@@ -1811,72 +1597,72 @@ description: Dropdown component with structured theming that can show anything.
               <div class="drop_content">
                 <ul class="list list--drop">
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
                   <li>
-                    <button type="button">
+                    <button type="button" class="btn">
                       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                     </button>
                   </li>
@@ -1910,17 +1696,17 @@ description: Dropdown component with structured theming that can show anything.
             <div class="drop_content">
               <ul class="list list--drop">
                 <li>
-                  <button type="button">
+                  <button type="button" class="btn">
                     <span>Lorem ipsum dolor</span>
                   </button>
                 </li>
                 <li>
-                  <button type="button">
+                  <button type="button" class="btn">
                     <span>Dolor sit</span>
                   </button>
                 </li>
                 <li class="drop_outer event-limit" data-xt-drop>
-                  <button type="button">
+                  <button type="button" class="btn">
                     <span>Toggle</span>
                   </button>
                   <div class="drop drop--primary drop--after drop--middle">
@@ -1929,17 +1715,17 @@ description: Dropdown component with structured theming that can show anything.
                       <div class="drop_content">
                         <ul class="list list--drop">
                           <li>
-                            <button type="button">
+                            <button type="button" class="btn">
                               <span>Lorem ipsum dolor</span>
                             </button>
                           </li>
                           <li>
-                            <button type="button">
+                            <button type="button" class="btn">
                               <span>Dolor sit</span>
                             </button>
                           </li>
                           <li class="drop_outer event-limit" data-xt-drop>
-                            <button type="button">
+                            <button type="button" class="btn">
                               <span>Toggle</span>
                             </button>
                             <div class="drop drop--secondary drop--center drop--middle">
@@ -1948,17 +1734,17 @@ description: Dropdown component with structured theming that can show anything.
                                 <div class="drop_content">
                                   <ul class="list list--drop">
                                     <li>
-                                      <button type="button">
+                                      <button type="button" class="btn">
                                         <span>Lorem ipsum dolor</span>
                                       </button>
                                     </li>
                                     <li>
-                                      <button type="button">
+                                      <button type="button" class="btn">
                                         <span>Dolor sit</span>
                                       </button>
                                     </li>
                                     <li>
-                                      <button type="button">
+                                      <button type="button" class="btn">
                                         <span>Amet</span>
                                       </button>
                                     </li>

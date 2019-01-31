@@ -854,8 +854,7 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
 .list--base > li > * {
   flex: 1 1 auto;
 }
-.list--base > li > a:not(.btn),
-.list--base > li > button:not(.btn) {
+.list--base > li:not(.custom) > .btn {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -868,28 +867,20 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
   z-index: 0;
   text-decoration: none;
 }
-.list--base > li > a:not(.btn):hover,
-.list--base > li > button:not(.btn):hover,
-.list--base > li > a:not(.btn).hover,
-.list--base > li > button:not(.btn).hover,
-.list--base > li > a:not(.btn):active,
-.list--base > li > button:not(.btn):active,
-.list--base > li > a:not(.btn).active,
-.list--base > li > button:not(.btn).active {
+.list--base > li:not(.custom) > .btn:hover,
+.list--base > li:not(.custom) > .btn.hover,
+.list--base > li:not(.custom) > .btn:active,
+.list--base > li:not(.custom) > .btn.active {
   z-index: 2;
 }
-.list--base > li > a:not(.btn).out,
-.list--base > li > button:not(.btn).out {
+.list--base > li:not(.custom) > .btn.out {
   z-index: 1;
 }
-.list--base > li > a:not(.btn)::before,
-.list--base > li > button:not(.btn)::before,
-.list--base > li > a:not(.btn) > span,
-.list--base > li > button:not(.btn) > span {
+.list--base > li:not(.custom) > .btn::before,
+.list--base > li:not(.custom) > .btn > span {
   border-radius: 4px;
 }
-.list--base > li > a:not(.btn)::before,
-.list--base > li > button:not(.btn)::before {
+.list--base > li:not(.custom) > .btn::before {
   content: '';
   overflow: hidden;
   position: absolute;
@@ -902,20 +893,17 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
   border-style: solid;
   border-color: transparent;
 }
-.list--base > li > a:not(.btn) > span,
-.list--base > li > button:not(.btn) > span {
+.list--base > li:not(.custom) > .btn > span {
   position: relative;
   overflow: hidden;
 }
-.list--base > li > a:not(.btn) > span,
-.list--base > li > button:not(.btn) > span {
+.list--base > li:not(.custom) > .btn > span {
   display: flex;
   flex-direction: row;
   align-items: baseline;
   min-width: 100%;
 }
-.list--base > li > a:not(.btn) > span,
-.list--base > li > button:not(.btn) > span {
+.list--base > li:not(.custom) > .btn > span {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -923,91 +911,64 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
   letter-spacing: 0.075em;
   text-transform: uppercase;
 }
-.list--base > li > a:not(.btn):hover,
-.list--base > li > button:not(.btn):hover,
-.list--base > li > a:not(.btn).hover,
-.list--base > li > button:not(.btn).hover,
-.list--base > li > a:not(.btn):active,
-.list--base > li > button:not(.btn):active,
-.list--base > li > a:not(.btn).active,
-.list--base > li > button:not(.btn).active {
+.list--base > li:not(.custom) > .btn:hover,
+.list--base > li:not(.custom) > .btn.hover,
+.list--base > li:not(.custom) > .btn:active,
+.list--base > li:not(.custom) > .btn.active {
   text-decoration: none;
 }
-.list--base > li > a:not(.btn):hover span,
-.list--base > li > button:not(.btn):hover span,
-.list--base > li > a:not(.btn).hover span,
-.list--base > li > button:not(.btn).hover span,
-.list--base > li > a:not(.btn):active span,
-.list--base > li > button:not(.btn):active span,
-.list--base > li > a:not(.btn).active span,
-.list--base > li > button:not(.btn).active span {
+.list--base > li:not(.custom) > .btn:hover span,
+.list--base > li:not(.custom) > .btn.hover span,
+.list--base > li:not(.custom) > .btn:active span,
+.list--base > li:not(.custom) > .btn.active span {
   text-decoration: none;
 }
-.list--base > li > a:not(.btn)::before,
-.list--base > li > button:not(.btn)::before {
+.list--base > li:not(.custom) > .btn::before {
   border-color: #edf3f6;
   background: #edf3f6;
 }
-.list--base > li > a:not(.btn) > span,
-.list--base > li > button:not(.btn) > span {
+.list--base > li:not(.custom) > .btn > span {
   color: rgba(52, 58, 64, 0.8);
 }
-.list--base > li > a:not(.btn):hover::before,
-.list--base > li > button:not(.btn):hover::before,
-.list--base > li > a:not(.btn).hover::before,
-.list--base > li > button:not(.btn).hover::before,
-.list--base > li > a:not(.btn):active::before,
-.list--base > li > button:not(.btn):active::before,
-.list--base > li > a:not(.btn).active::before,
-.list--base > li > button:not(.btn).active::before {
+.list--base > li:not(.custom) > .btn:hover::before,
+.list--base > li:not(.custom) > .btn.hover::before,
+.list--base > li:not(.custom) > .btn:active::before,
+.list--base > li:not(.custom) > .btn.active::before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
-.list--base > li > a:not(.btn):hover > span,
-.list--base > li > button:not(.btn):hover > span,
-.list--base > li > a:not(.btn).hover > span,
-.list--base > li > button:not(.btn).hover > span,
-.list--base > li > a:not(.btn):active > span,
-.list--base > li > button:not(.btn):active > span,
-.list--base > li > a:not(.btn).active > span,
-.list--base > li > button:not(.btn).active > span {
+.list--base > li:not(.custom) > .btn:hover > span,
+.list--base > li:not(.custom) > .btn.hover > span,
+.list--base > li:not(.custom) > .btn:active > span,
+.list--base > li:not(.custom) > .btn.active > span {
   color: #343a40;
 }
-.list--base > li > a:not(.btn):active::before,
-.list--base > li > button:not(.btn):active::before,
-.list--base > li > a:not(.btn).active::before,
-.list--base > li > button:not(.btn).active::before {
+.list--base > li:not(.custom) > .btn:active::before,
+.list--base > li:not(.custom) > .btn.active::before {
   box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
 }
-.list--base > li > a:not(.btn) > span,
-.list--base > li > button:not(.btn) > span {
+.list--base > li:not(.custom) > .btn > span {
   padding: 0.6em 1.2em;
   font-size: 1.325rem;
 }
-.list--base > li > a:not(.btn)::before,
-.list--base > li > button:not(.btn)::before {
+.list--base > li:not(.custom) > .btn::before {
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(1, 0, .64, 1);
 }
-.list--base > li > a:not(.btn) > span,
-.list--base > li > button:not(.btn) > span {
+.list--base > li:not(.custom) > .btn > span {
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(1, 0, .64, 1);
 }
-.list--base > li > a:not(.btn):active::before,
-.list--base > li > button:not(.btn):active::before,
-.list--base > li > a:not(.btn).active::before,
-.list--base > li > button:not(.btn).active::before {
+.list--base > li:not(.custom) > .btn:active::before,
+.list--base > li:not(.custom) > .btn.active::before {
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36, 0, 0, 1);
 }
-.list--base > li > a:not(.btn):active > span,
-.list--base > li > button:not(.btn):active > span,
-.list--base > li > a:not(.btn).active > span,
-.list--base > li > button:not(.btn).active > span {
+.list--base > li:not(.custom) > .btn:active > span,
+.list--base > li:not(.custom) > .btn.active > span {
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36, 0, 0, 1);
@@ -1028,8 +989,7 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
 .list > li > * {
   flex: 1 1 auto;
 }
-.list > li > a:not(.btn),
-.list > li > button:not(.btn) {
+.list > li:not(.custom) > .btn {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1042,28 +1002,20 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
   z-index: 0;
   text-decoration: none;
 }
-.list > li > a:not(.btn):hover,
-.list > li > button:not(.btn):hover,
-.list > li > a:not(.btn).hover,
-.list > li > button:not(.btn).hover,
-.list > li > a:not(.btn):active,
-.list > li > button:not(.btn):active,
-.list > li > a:not(.btn).active,
-.list > li > button:not(.btn).active {
+.list > li:not(.custom) > .btn:hover,
+.list > li:not(.custom) > .btn.hover,
+.list > li:not(.custom) > .btn:active,
+.list > li:not(.custom) > .btn.active {
   z-index: 2;
 }
-.list > li > a:not(.btn).out,
-.list > li > button:not(.btn).out {
+.list > li:not(.custom) > .btn.out {
   z-index: 1;
 }
-.list > li > a:not(.btn)::before,
-.list > li > button:not(.btn)::before,
-.list > li > a:not(.btn) > span,
-.list > li > button:not(.btn) > span {
+.list > li:not(.custom) > .btn::before,
+.list > li:not(.custom) > .btn > span {
   border-radius: 4px;
 }
-.list > li > a:not(.btn)::before,
-.list > li > button:not(.btn)::before {
+.list > li:not(.custom) > .btn::before {
   content: '';
   overflow: hidden;
   position: absolute;
@@ -1076,20 +1028,17 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
   border-style: solid;
   border-color: transparent;
 }
-.list > li > a:not(.btn) > span,
-.list > li > button:not(.btn) > span {
+.list > li:not(.custom) > .btn > span {
   position: relative;
   overflow: hidden;
 }
-.list > li > a:not(.btn) > span,
-.list > li > button:not(.btn) > span {
+.list > li:not(.custom) > .btn > span {
   display: flex;
   flex-direction: row;
   align-items: baseline;
   min-width: 100%;
 }
-.list > li > a:not(.btn) > span,
-.list > li > button:not(.btn) > span {
+.list > li:not(.custom) > .btn > span {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -1097,91 +1046,64 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
   letter-spacing: 0.075em;
   text-transform: uppercase;
 }
-.list > li > a:not(.btn):hover,
-.list > li > button:not(.btn):hover,
-.list > li > a:not(.btn).hover,
-.list > li > button:not(.btn).hover,
-.list > li > a:not(.btn):active,
-.list > li > button:not(.btn):active,
-.list > li > a:not(.btn).active,
-.list > li > button:not(.btn).active {
+.list > li:not(.custom) > .btn:hover,
+.list > li:not(.custom) > .btn.hover,
+.list > li:not(.custom) > .btn:active,
+.list > li:not(.custom) > .btn.active {
   text-decoration: none;
 }
-.list > li > a:not(.btn):hover span,
-.list > li > button:not(.btn):hover span,
-.list > li > a:not(.btn).hover span,
-.list > li > button:not(.btn).hover span,
-.list > li > a:not(.btn):active span,
-.list > li > button:not(.btn):active span,
-.list > li > a:not(.btn).active span,
-.list > li > button:not(.btn).active span {
+.list > li:not(.custom) > .btn:hover span,
+.list > li:not(.custom) > .btn.hover span,
+.list > li:not(.custom) > .btn:active span,
+.list > li:not(.custom) > .btn.active span {
   text-decoration: none;
 }
-.list > li > a:not(.btn)::before,
-.list > li > button:not(.btn)::before {
+.list > li:not(.custom) > .btn::before {
   border-color: #edf3f6;
   background: #edf3f6;
 }
-.list > li > a:not(.btn) > span,
-.list > li > button:not(.btn) > span {
+.list > li:not(.custom) > .btn > span {
   color: rgba(52, 58, 64, 0.8);
 }
-.list > li > a:not(.btn):hover::before,
-.list > li > button:not(.btn):hover::before,
-.list > li > a:not(.btn).hover::before,
-.list > li > button:not(.btn).hover::before,
-.list > li > a:not(.btn):active::before,
-.list > li > button:not(.btn):active::before,
-.list > li > a:not(.btn).active::before,
-.list > li > button:not(.btn).active::before {
+.list > li:not(.custom) > .btn:hover::before,
+.list > li:not(.custom) > .btn.hover::before,
+.list > li:not(.custom) > .btn:active::before,
+.list > li:not(.custom) > .btn.active::before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
-.list > li > a:not(.btn):hover > span,
-.list > li > button:not(.btn):hover > span,
-.list > li > a:not(.btn).hover > span,
-.list > li > button:not(.btn).hover > span,
-.list > li > a:not(.btn):active > span,
-.list > li > button:not(.btn):active > span,
-.list > li > a:not(.btn).active > span,
-.list > li > button:not(.btn).active > span {
+.list > li:not(.custom) > .btn:hover > span,
+.list > li:not(.custom) > .btn.hover > span,
+.list > li:not(.custom) > .btn:active > span,
+.list > li:not(.custom) > .btn.active > span {
   color: #343a40;
 }
-.list > li > a:not(.btn):active::before,
-.list > li > button:not(.btn):active::before,
-.list > li > a:not(.btn).active::before,
-.list > li > button:not(.btn).active::before {
+.list > li:not(.custom) > .btn:active::before,
+.list > li:not(.custom) > .btn.active::before {
   box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
 }
-.list > li > a:not(.btn) > span,
-.list > li > button:not(.btn) > span {
+.list > li:not(.custom) > .btn > span {
   padding: 0.6em 1.2em;
   font-size: 1.325rem;
 }
-.list > li > a:not(.btn)::before,
-.list > li > button:not(.btn)::before {
+.list > li:not(.custom) > .btn::before {
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(1, 0, .64, 1);
 }
-.list > li > a:not(.btn) > span,
-.list > li > button:not(.btn) > span {
+.list > li:not(.custom) > .btn > span {
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(1, 0, .64, 1);
 }
-.list > li > a:not(.btn):active::before,
-.list > li > button:not(.btn):active::before,
-.list > li > a:not(.btn).active::before,
-.list > li > button:not(.btn).active::before {
+.list > li:not(.custom) > .btn:active::before,
+.list > li:not(.custom) > .btn.active::before {
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36, 0, 0, 1);
 }
-.list > li > a:not(.btn):active > span,
-.list > li > button:not(.btn):active > span,
-.list > li > a:not(.btn).active > span,
-.list > li > button:not(.btn).active > span {
+.list > li:not(.custom) > .btn:active > span,
+.list > li:not(.custom) > .btn.active > span {
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36, 0, 0, 1);
@@ -1418,8 +1340,7 @@ div.btn {
   display: none;
   content: 'xt-disable';
 }
-.drop--disabled > a,
-.drop--disabled > button {
+.drop--disabled > .btn {
   display: none !important;
 }
 .drop--disabled > .drop {
@@ -1897,6 +1818,62 @@ a.links--none,
     padding: 30px;
   }
 }
+/*
+  //////////////////////
+  // grid
+  //////////////////////
+
+  // generate-grid
+
+  .generate-grid(@breakpoint:none; @i:1) when (@i =< @columns) {
+    .generate-grid(@breakpoint; (@i + 1));
+    & when (@breakpoint = none) {
+      .col--@{i} {
+        .col(@i) !important;
+      }
+    }
+    & when not (@breakpoint = none) {
+      .col--@{i}-@{breakpoint} {
+        .col(@i) !important;
+      }
+    }
+  }
+
+  // generate-grids
+
+  .generate-grids();
+  .generate-grids(@breakpoint:none) {
+    & when (@breakpoint = none) {
+      // grid
+      .col--auto {
+        .col--auto() !important;
+      }
+      .generate-grid() !important;
+    }
+    & when not (@breakpoint = none) {
+      @query-min: 'min-@{breakpoint}';
+      @media @@query-min {
+        // grid
+        .col--auto-@{breakpoint} {
+          .col--auto() !important;
+        }
+        .generate-grid(@breakpoint) !important;
+      }
+    }
+  }
+
+  // generate-grid-responsive
+
+  & when not (@classes--grid = true) {
+
+    .generate-grid-responsive();
+    .generate-grid-responsive(@i:length(@classes--grid)) when (@i > 0) {
+      .generate-grid-responsive(@i - 1);
+      @breakpoint: extract(@classes--grid, @i);
+      .generate-grids(@breakpoint);
+    }
+
+  }*/
 .toggle--block {
   display: none !important;
 }
@@ -2014,1544 +1991,254 @@ a.links--none,
 .display--none {
   display: none !important;
 }
-.visibility--hidden {
-  visibility: hidden !important;
-}
 .display--block {
   display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
 }
 .display--inline-block {
   display: inline-block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.visibility--extract(hidden, visible, 4) {
-  visibility: extract(hidden, visible, 4) !important;
-}
-.display--table {
-  display: table !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.display--inline-block {
-  display: inline-block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.visibility--extract(hidden, visible, 4) {
-  visibility: extract(hidden, visible, 4) !important;
-}
-.visibility--extract(hidden, visible, 5) {
-  visibility: extract(hidden, visible, 5) !important;
-}
-.display--table-row {
-  display: table-row !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.display--inline-block {
-  display: inline-block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.visibility--extract(hidden, visible, 4) {
-  visibility: extract(hidden, visible, 4) !important;
-}
-.display--table {
-  display: table !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.display--inline-block {
-  display: inline-block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.visibility--extract(hidden, visible, 4) {
-  visibility: extract(hidden, visible, 4) !important;
-}
-.visibility--extract(hidden, visible, 5) {
-  visibility: extract(hidden, visible, 5) !important;
-}
-.visibility--extract(hidden, visible, 6) {
-  visibility: extract(hidden, visible, 6) !important;
-}
-.display--table-cell {
-  display: table-cell !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.display--inline-block {
-  display: inline-block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.visibility--extract(hidden, visible, 4) {
-  visibility: extract(hidden, visible, 4) !important;
-}
-.display--table {
-  display: table !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.display--inline-block {
-  display: inline-block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.visibility--extract(hidden, visible, 4) {
-  visibility: extract(hidden, visible, 4) !important;
-}
-.visibility--extract(hidden, visible, 5) {
-  visibility: extract(hidden, visible, 5) !important;
-}
-.display--table-row {
-  display: table-row !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.display--inline-block {
-  display: inline-block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.visibility--extract(hidden, visible, 4) {
-  visibility: extract(hidden, visible, 4) !important;
-}
-.display--table {
-  display: table !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.display--inline-block {
-  display: inline-block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.visibility--extract(hidden, visible, 4) {
-  visibility: extract(hidden, visible, 4) !important;
-}
-.visibility--extract(hidden, visible, 5) {
-  visibility: extract(hidden, visible, 5) !important;
-}
-.visibility--extract(hidden, visible, 6) {
-  visibility: extract(hidden, visible, 6) !important;
-}
-.visibility--extract(hidden, visible, 7) {
-  visibility: extract(hidden, visible, 7) !important;
 }
 .display--flex {
   display: flex !important;
 }
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.display--inline-block {
-  display: inline-block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.visibility--extract(hidden, visible, 4) {
-  visibility: extract(hidden, visible, 4) !important;
-}
-.display--table {
-  display: table !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.display--inline-block {
-  display: inline-block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.visibility--extract(hidden, visible, 4) {
-  visibility: extract(hidden, visible, 4) !important;
-}
-.visibility--extract(hidden, visible, 5) {
-  visibility: extract(hidden, visible, 5) !important;
-}
-.display--table-row {
-  display: table-row !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.display--inline-block {
-  display: inline-block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.visibility--extract(hidden, visible, 4) {
-  visibility: extract(hidden, visible, 4) !important;
-}
-.display--table {
-  display: table !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.display--inline-block {
-  display: inline-block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.visibility--extract(hidden, visible, 4) {
-  visibility: extract(hidden, visible, 4) !important;
-}
-.visibility--extract(hidden, visible, 5) {
-  visibility: extract(hidden, visible, 5) !important;
-}
-.visibility--extract(hidden, visible, 6) {
-  visibility: extract(hidden, visible, 6) !important;
-}
-.display--table-cell {
-  display: table-cell !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.display--inline-block {
-  display: inline-block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.visibility--extract(hidden, visible, 4) {
-  visibility: extract(hidden, visible, 4) !important;
-}
-.display--table {
-  display: table !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.display--inline-block {
-  display: inline-block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.visibility--extract(hidden, visible, 4) {
-  visibility: extract(hidden, visible, 4) !important;
-}
-.visibility--extract(hidden, visible, 5) {
-  visibility: extract(hidden, visible, 5) !important;
-}
-.display--table-row {
-  display: table-row !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.display--inline-block {
-  display: inline-block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.visibility--extract(hidden, visible, 4) {
-  visibility: extract(hidden, visible, 4) !important;
-}
-.display--table {
-  display: table !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.display--inline-block {
-  display: inline-block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.display--inline {
-  display: inline !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.display--block {
-  display: block !important;
-}
-.display--none {
-  display: none !important;
-}
-.visibility--hidden {
-  visibility: hidden !important;
-}
-.visibility--visible {
-  visibility: visible !important;
-}
-.visibility--extract(hidden, visible, 3) {
-  visibility: extract(hidden, visible, 3) !important;
-}
-.visibility--extract(hidden, visible, 4) {
-  visibility: extract(hidden, visible, 4) !important;
-}
-.visibility--extract(hidden, visible, 5) {
-  visibility: extract(hidden, visible, 5) !important;
-}
-.visibility--extract(hidden, visible, 6) {
-  visibility: extract(hidden, visible, 6) !important;
-}
-.visibility--extract(hidden, visible, 7) {
-  visibility: extract(hidden, visible, 7) !important;
-}
-.visibility--extract(hidden, visible, 8) {
-  visibility: extract(hidden, visible, 8) !important;
-}
 .display--inline-flex {
   display: inline-flex !important;
 }
-.display--none {
-  display: none !important;
-}
 .visibility--hidden {
   visibility: hidden !important;
 }
 .visibility--visible {
   visibility: visible !important;
+}
+@media (min-width: 768px ) {
+  .responsive-x-sm {
+    width: 100% !important;
+    height: auto !important;
+    flex-shrink: 0 !important;
+    /*
+  // fix ie11 bug responsive
+  min-height: 2px;
+  // fix chrome bug responsive
+  .align-self(center);
+  */
+  }
+  .responsive-y-sm {
+    height: 100% !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+  }
+  .full-sm {
+    width: 100% !important;
+  }
+  .block-sm {
+    display: inline-block !important;
+    vertical-align: top !important;
+    width: 100% !important;
+  }
+  .text-transform--uppercase-sm {
+    text-transform: uppercase !important;
+  }
+  .text-transform--lowercase-sm {
+    text-transform: lowercase !important;
+  }
+  .text-transform--capitalize-sm {
+    text-transform: capitalize !important;
+  }
+  .text-transform--nowrap-sm {
+    text-transform: nowrap !important;
+  }
+  .text-align--left-sm {
+    text-align: left !important;
+  }
+  .text-align--right-sm {
+    text-align: right !important;
+  }
+  .text-align--center-sm {
+    text-align: center !important;
+  }
+  .float--left-sm {
+    float: left !important;
+  }
+  .float--right-sm {
+    float: right !important;
+  }
+  .float--none-sm {
+    float: none !important;
+  }
+  .display--none-sm {
+    display: none !important;
+  }
+  .display--block-sm {
+    display: block !important;
+  }
+  .display--inline-block-sm {
+    display: inline-block !important;
+  }
+  .display--flex-sm {
+    display: flex !important;
+  }
+  .display--inline-flex-sm {
+    display: inline-flex !important;
+  }
+  .visibility--hidden-sm {
+    visibility: hidden !important;
+  }
+  .visibility--visible-sm {
+    visibility: visible !important;
+  }
+}
+@media (min-width: 992px ) {
+  .responsive-x-md {
+    width: 100% !important;
+    height: auto !important;
+    flex-shrink: 0 !important;
+    /*
+  // fix ie11 bug responsive
+  min-height: 2px;
+  // fix chrome bug responsive
+  .align-self(center);
+  */
+  }
+  .responsive-y-md {
+    height: 100% !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+  }
+  .full-md {
+    width: 100% !important;
+  }
+  .block-md {
+    display: inline-block !important;
+    vertical-align: top !important;
+    width: 100% !important;
+  }
+  .text-transform--uppercase-md {
+    text-transform: uppercase !important;
+  }
+  .text-transform--lowercase-md {
+    text-transform: lowercase !important;
+  }
+  .text-transform--capitalize-md {
+    text-transform: capitalize !important;
+  }
+  .text-transform--nowrap-md {
+    text-transform: nowrap !important;
+  }
+  .text-align--left-md {
+    text-align: left !important;
+  }
+  .text-align--right-md {
+    text-align: right !important;
+  }
+  .text-align--center-md {
+    text-align: center !important;
+  }
+  .float--left-md {
+    float: left !important;
+  }
+  .float--right-md {
+    float: right !important;
+  }
+  .float--none-md {
+    float: none !important;
+  }
+  .display--none-md {
+    display: none !important;
+  }
+  .display--block-md {
+    display: block !important;
+  }
+  .display--inline-block-md {
+    display: inline-block !important;
+  }
+  .display--flex-md {
+    display: flex !important;
+  }
+  .display--inline-flex-md {
+    display: inline-flex !important;
+  }
+  .visibility--hidden-md {
+    visibility: hidden !important;
+  }
+  .visibility--visible-md {
+    visibility: visible !important;
+  }
+}
+@media (min-width: 1200px ) {
+  .responsive-x-lg {
+    width: 100% !important;
+    height: auto !important;
+    flex-shrink: 0 !important;
+    /*
+  // fix ie11 bug responsive
+  min-height: 2px;
+  // fix chrome bug responsive
+  .align-self(center);
+  */
+  }
+  .responsive-y-lg {
+    height: 100% !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+  }
+  .full-lg {
+    width: 100% !important;
+  }
+  .block-lg {
+    display: inline-block !important;
+    vertical-align: top !important;
+    width: 100% !important;
+  }
+  .text-transform--uppercase-lg {
+    text-transform: uppercase !important;
+  }
+  .text-transform--lowercase-lg {
+    text-transform: lowercase !important;
+  }
+  .text-transform--capitalize-lg {
+    text-transform: capitalize !important;
+  }
+  .text-transform--nowrap-lg {
+    text-transform: nowrap !important;
+  }
+  .text-align--left-lg {
+    text-align: left !important;
+  }
+  .text-align--right-lg {
+    text-align: right !important;
+  }
+  .text-align--center-lg {
+    text-align: center !important;
+  }
+  .float--left-lg {
+    float: left !important;
+  }
+  .float--right-lg {
+    float: right !important;
+  }
+  .float--none-lg {
+    float: none !important;
+  }
+  .display--none-lg {
+    display: none !important;
+  }
+  .display--block-lg {
+    display: block !important;
+  }
+  .display--inline-block-lg {
+    display: inline-block !important;
+  }
+  .display--flex-lg {
+    display: flex !important;
+  }
+  .display--inline-flex-lg {
+    display: inline-flex !important;
+  }
+  .visibility--hidden-lg {
+    visibility: hidden !important;
+  }
+  .visibility--visible-lg {
+    visibility: visible !important;
+  }
 }
 .col--auto {
   flex-shrink: 1 !important;
@@ -3875,17 +2562,14 @@ a.links--none,
     width: 8.33333333% !important;
   }
 }
-.list--left > li > a,
-.list--left > li > button {
-  text-align: left !important;
+.list--left > li > .btn > span {
+  justify-content: flex-start !important;
 }
-.list--center > li > a,
-.list--center > li > button {
-  text-align: center !important;
+.list--center > li > .btn > span {
+  justify-content: center !important;
 }
-.list--right > li > a,
-.list--right > li > button {
-  text-align: right !important;
+.list--right > li > .btn > span {
+  justify-content: flex-end !important;
 }
 .order--0 {
   order: -3 !important;
@@ -5346,68 +4030,46 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label::after {
 .list > * {
   margin: 0.5rem 0.5rem;
 }
-.list > li > a,
-.list > li > button {
-  text-align: left;
+.list > li > .btn > span {
+  justify-content: flex-start;
 }
-.list > li > a:not(.btn),
-.list > li > button:not(.btn) {
+.list > li:not(.custom) > .btn {
   text-decoration: none;
 }
-.list > li > a:not(.btn):hover,
-.list > li > button:not(.btn):hover,
-.list > li > a:not(.btn).hover,
-.list > li > button:not(.btn).hover,
-.list > li > a:not(.btn):active,
-.list > li > button:not(.btn):active,
-.list > li > a:not(.btn).active,
-.list > li > button:not(.btn).active {
+.list > li:not(.custom) > .btn:hover,
+.list > li:not(.custom) > .btn.hover,
+.list > li:not(.custom) > .btn:active,
+.list > li:not(.custom) > .btn.active {
   text-decoration: none;
 }
-.list > li > a:not(.btn):hover span,
-.list > li > button:not(.btn):hover span,
-.list > li > a:not(.btn).hover span,
-.list > li > button:not(.btn).hover span,
-.list > li > a:not(.btn):active span,
-.list > li > button:not(.btn):active span,
-.list > li > a:not(.btn).active span,
-.list > li > button:not(.btn).active span {
+.list > li:not(.custom) > .btn:hover span,
+.list > li:not(.custom) > .btn.hover span,
+.list > li:not(.custom) > .btn:active span,
+.list > li:not(.custom) > .btn.active span {
   text-decoration: none;
 }
-.list > li > a:not(.btn)::before,
-.list > li > button:not(.btn)::before {
+.list > li:not(.custom) > .btn::before {
   border-color: #edf3f6;
   background: #edf3f6;
 }
-.list > li > a:not(.btn) > span,
-.list > li > button:not(.btn) > span {
+.list > li:not(.custom) > .btn > span {
   color: rgba(52, 58, 64, 0.8);
 }
-.list > li > a:not(.btn):hover::before,
-.list > li > button:not(.btn):hover::before,
-.list > li > a:not(.btn).hover::before,
-.list > li > button:not(.btn).hover::before,
-.list > li > a:not(.btn):active::before,
-.list > li > button:not(.btn):active::before,
-.list > li > a:not(.btn).active::before,
-.list > li > button:not(.btn).active::before {
+.list > li:not(.custom) > .btn:hover::before,
+.list > li:not(.custom) > .btn.hover::before,
+.list > li:not(.custom) > .btn:active::before,
+.list > li:not(.custom) > .btn.active::before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
-.list > li > a:not(.btn):hover > span,
-.list > li > button:not(.btn):hover > span,
-.list > li > a:not(.btn).hover > span,
-.list > li > button:not(.btn).hover > span,
-.list > li > a:not(.btn):active > span,
-.list > li > button:not(.btn):active > span,
-.list > li > a:not(.btn).active > span,
-.list > li > button:not(.btn).active > span {
+.list > li:not(.custom) > .btn:hover > span,
+.list > li:not(.custom) > .btn.hover > span,
+.list > li:not(.custom) > .btn:active > span,
+.list > li:not(.custom) > .btn.active > span {
   color: #343a40;
 }
-.list > li > a:not(.btn):active::before,
-.list > li > button:not(.btn):active::before,
-.list > li > a:not(.btn).active::before,
-.list > li > button:not(.btn).active::before {
+.list > li:not(.custom) > .btn:active::before,
+.list > li:not(.custom) > .btn.active::before {
   box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
 }
 .list--block {
@@ -5416,64 +4078,43 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label::after {
 .list--block > * {
   margin: 0.5rem 0.5rem;
 }
-.list--block > li > a:not(.btn),
-.list--block > li > button:not(.btn) {
+.list--block > li:not(.custom) > .btn {
   text-decoration: none;
 }
-.list--block > li > a:not(.btn):hover,
-.list--block > li > button:not(.btn):hover,
-.list--block > li > a:not(.btn).hover,
-.list--block > li > button:not(.btn).hover,
-.list--block > li > a:not(.btn):active,
-.list--block > li > button:not(.btn):active,
-.list--block > li > a:not(.btn).active,
-.list--block > li > button:not(.btn).active {
+.list--block > li:not(.custom) > .btn:hover,
+.list--block > li:not(.custom) > .btn.hover,
+.list--block > li:not(.custom) > .btn:active,
+.list--block > li:not(.custom) > .btn.active {
   text-decoration: none;
 }
-.list--block > li > a:not(.btn):hover span,
-.list--block > li > button:not(.btn):hover span,
-.list--block > li > a:not(.btn).hover span,
-.list--block > li > button:not(.btn).hover span,
-.list--block > li > a:not(.btn):active span,
-.list--block > li > button:not(.btn):active span,
-.list--block > li > a:not(.btn).active span,
-.list--block > li > button:not(.btn).active span {
+.list--block > li:not(.custom) > .btn:hover span,
+.list--block > li:not(.custom) > .btn.hover span,
+.list--block > li:not(.custom) > .btn:active span,
+.list--block > li:not(.custom) > .btn.active span {
   text-decoration: none;
 }
-.list--block > li > a:not(.btn)::before,
-.list--block > li > button:not(.btn)::before {
+.list--block > li:not(.custom) > .btn::before {
   border-color: #edf3f6;
   background: #edf3f6;
 }
-.list--block > li > a:not(.btn) > span,
-.list--block > li > button:not(.btn) > span {
+.list--block > li:not(.custom) > .btn > span {
   color: rgba(52, 58, 64, 0.8);
 }
-.list--block > li > a:not(.btn):hover::before,
-.list--block > li > button:not(.btn):hover::before,
-.list--block > li > a:not(.btn).hover::before,
-.list--block > li > button:not(.btn).hover::before,
-.list--block > li > a:not(.btn):active::before,
-.list--block > li > button:not(.btn):active::before,
-.list--block > li > a:not(.btn).active::before,
-.list--block > li > button:not(.btn).active::before {
+.list--block > li:not(.custom) > .btn:hover::before,
+.list--block > li:not(.custom) > .btn.hover::before,
+.list--block > li:not(.custom) > .btn:active::before,
+.list--block > li:not(.custom) > .btn.active::before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
-.list--block > li > a:not(.btn):hover > span,
-.list--block > li > button:not(.btn):hover > span,
-.list--block > li > a:not(.btn).hover > span,
-.list--block > li > button:not(.btn).hover > span,
-.list--block > li > a:not(.btn):active > span,
-.list--block > li > button:not(.btn):active > span,
-.list--block > li > a:not(.btn).active > span,
-.list--block > li > button:not(.btn).active > span {
+.list--block > li:not(.custom) > .btn:hover > span,
+.list--block > li:not(.custom) > .btn.hover > span,
+.list--block > li:not(.custom) > .btn:active > span,
+.list--block > li:not(.custom) > .btn.active > span {
   color: #343a40;
 }
-.list--block > li > a:not(.btn):active::before,
-.list--block > li > button:not(.btn):active::before,
-.list--block > li > a:not(.btn).active::before,
-.list--block > li > button:not(.btn).active::before {
+.list--block > li:not(.custom) > .btn:active::before,
+.list--block > li:not(.custom) > .btn.active::before {
   box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
 }
 .list--drop {
@@ -5484,440 +4125,9 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label::after {
 .list--drop > * {
   margin: 0 0;
 }
-.list--drop > li > a:not(.btn) > span,
-.list--drop > li > button:not(.btn) > span {
+.list--drop > li:not(.custom) > .btn > span {
   padding: 0.6em 1.2em;
   font-size: 1.2rem;
-}
-.list--primary > li > a:not(.btn),
-.list--primary > li > button:not(.btn) {
-  text-decoration: none;
-}
-.list--primary > li > a:not(.btn):hover,
-.list--primary > li > button:not(.btn):hover,
-.list--primary > li > a:not(.btn).hover,
-.list--primary > li > button:not(.btn).hover,
-.list--primary > li > a:not(.btn):active,
-.list--primary > li > button:not(.btn):active,
-.list--primary > li > a:not(.btn).active,
-.list--primary > li > button:not(.btn).active {
-  text-decoration: none;
-}
-.list--primary > li > a:not(.btn):hover span,
-.list--primary > li > button:not(.btn):hover span,
-.list--primary > li > a:not(.btn).hover span,
-.list--primary > li > button:not(.btn).hover span,
-.list--primary > li > a:not(.btn):active span,
-.list--primary > li > button:not(.btn):active span,
-.list--primary > li > a:not(.btn).active span,
-.list--primary > li > button:not(.btn).active span {
-  text-decoration: none;
-}
-.list--primary > li > a:not(.btn)::before,
-.list--primary > li > button:not(.btn)::before {
-  border-color: #7367F0;
-  background: #7367F0;
-}
-.list--primary > li > a:not(.btn) > span,
-.list--primary > li > button:not(.btn) > span {
-  color: rgba(255, 255, 255, 0.8);
-}
-.list--primary > li > a:not(.btn):hover::before,
-.list--primary > li > button:not(.btn):hover::before,
-.list--primary > li > a:not(.btn).hover::before,
-.list--primary > li > button:not(.btn).hover::before,
-.list--primary > li > a:not(.btn):active::before,
-.list--primary > li > button:not(.btn):active::before,
-.list--primary > li > a:not(.btn).active::before,
-.list--primary > li > button:not(.btn).active::before {
-  border-color: #7367F0;
-  background: #887ef2;
-}
-.list--primary > li > a:not(.btn):hover > span,
-.list--primary > li > button:not(.btn):hover > span,
-.list--primary > li > a:not(.btn).hover > span,
-.list--primary > li > button:not(.btn).hover > span,
-.list--primary > li > a:not(.btn):active > span,
-.list--primary > li > button:not(.btn):active > span,
-.list--primary > li > a:not(.btn).active > span,
-.list--primary > li > button:not(.btn).active > span {
-  color: #fff;
-}
-.list--primary > li > a:not(.btn):active::before,
-.list--primary > li > button:not(.btn):active::before,
-.list--primary > li > a:not(.btn).active::before,
-.list--primary > li > button:not(.btn).active::before {
-  box-shadow: 0 0.1rem 1rem rgba(115, 103, 240, 0.25), 0 0.2rem 2rem rgba(115, 103, 240, 0.4);
-}
-.list--primary-empty > li > a:not(.btn),
-.list--primary-empty > li > button:not(.btn) {
-  text-decoration: none;
-}
-.list--primary-empty > li > a:not(.btn):hover,
-.list--primary-empty > li > button:not(.btn):hover,
-.list--primary-empty > li > a:not(.btn).hover,
-.list--primary-empty > li > button:not(.btn).hover,
-.list--primary-empty > li > a:not(.btn):active,
-.list--primary-empty > li > button:not(.btn):active,
-.list--primary-empty > li > a:not(.btn).active,
-.list--primary-empty > li > button:not(.btn).active {
-  text-decoration: none;
-}
-.list--primary-empty > li > a:not(.btn):hover span,
-.list--primary-empty > li > button:not(.btn):hover span,
-.list--primary-empty > li > a:not(.btn).hover span,
-.list--primary-empty > li > button:not(.btn).hover span,
-.list--primary-empty > li > a:not(.btn):active span,
-.list--primary-empty > li > button:not(.btn):active span,
-.list--primary-empty > li > a:not(.btn).active span,
-.list--primary-empty > li > button:not(.btn).active span {
-  text-decoration: none;
-}
-.list--primary-empty > li > a:not(.btn)::before,
-.list--primary-empty > li > button:not(.btn)::before {
-  border-color: transparent;
-  background: transparent;
-}
-.list--primary-empty > li > a:not(.btn) > span,
-.list--primary-empty > li > button:not(.btn) > span {
-  color: #7367F0;
-}
-.list--primary-empty > li > a:not(.btn):hover::before,
-.list--primary-empty > li > button:not(.btn):hover::before,
-.list--primary-empty > li > a:not(.btn).hover::before,
-.list--primary-empty > li > button:not(.btn).hover::before,
-.list--primary-empty > li > a:not(.btn):active::before,
-.list--primary-empty > li > button:not(.btn):active::before,
-.list--primary-empty > li > a:not(.btn).active::before,
-.list--primary-empty > li > button:not(.btn).active::before {
-  border-color: #7367F0;
-  background: #887ef2;
-}
-.list--primary-empty > li > a:not(.btn):hover > span,
-.list--primary-empty > li > button:not(.btn):hover > span,
-.list--primary-empty > li > a:not(.btn).hover > span,
-.list--primary-empty > li > button:not(.btn).hover > span,
-.list--primary-empty > li > a:not(.btn):active > span,
-.list--primary-empty > li > button:not(.btn):active > span,
-.list--primary-empty > li > a:not(.btn).active > span,
-.list--primary-empty > li > button:not(.btn).active > span {
-  color: #fff;
-}
-.list--primary-empty > li > a:not(.btn):active::before,
-.list--primary-empty > li > button:not(.btn):active::before,
-.list--primary-empty > li > a:not(.btn).active::before,
-.list--primary-empty > li > button:not(.btn).active::before {
-  box-shadow: 0 0.1rem 1rem rgba(115, 103, 240, 0.25), 0 0.2rem 2rem rgba(115, 103, 240, 0.4);
-}
-.list--secondary > li > a:not(.btn),
-.list--secondary > li > button:not(.btn) {
-  text-decoration: none;
-}
-.list--secondary > li > a:not(.btn):hover,
-.list--secondary > li > button:not(.btn):hover,
-.list--secondary > li > a:not(.btn).hover,
-.list--secondary > li > button:not(.btn).hover,
-.list--secondary > li > a:not(.btn):active,
-.list--secondary > li > button:not(.btn):active,
-.list--secondary > li > a:not(.btn).active,
-.list--secondary > li > button:not(.btn).active {
-  text-decoration: none;
-}
-.list--secondary > li > a:not(.btn):hover span,
-.list--secondary > li > button:not(.btn):hover span,
-.list--secondary > li > a:not(.btn).hover span,
-.list--secondary > li > button:not(.btn).hover span,
-.list--secondary > li > a:not(.btn):active span,
-.list--secondary > li > button:not(.btn):active span,
-.list--secondary > li > a:not(.btn).active span,
-.list--secondary > li > button:not(.btn).active span {
-  text-decoration: none;
-}
-.list--secondary > li > a:not(.btn)::before,
-.list--secondary > li > button:not(.btn)::before {
-  border-color: #edf3f6;
-  background: #edf3f6;
-}
-.list--secondary > li > a:not(.btn) > span,
-.list--secondary > li > button:not(.btn) > span {
-  color: rgba(52, 58, 64, 0.8);
-}
-.list--secondary > li > a:not(.btn):hover::before,
-.list--secondary > li > button:not(.btn):hover::before,
-.list--secondary > li > a:not(.btn).hover::before,
-.list--secondary > li > button:not(.btn).hover::before,
-.list--secondary > li > a:not(.btn):active::before,
-.list--secondary > li > button:not(.btn):active::before,
-.list--secondary > li > a:not(.btn).active::before,
-.list--secondary > li > button:not(.btn).active::before {
-  border-color: #cbdce5;
-  background: #dce8ee;
-}
-.list--secondary > li > a:not(.btn):hover > span,
-.list--secondary > li > button:not(.btn):hover > span,
-.list--secondary > li > a:not(.btn).hover > span,
-.list--secondary > li > button:not(.btn).hover > span,
-.list--secondary > li > a:not(.btn):active > span,
-.list--secondary > li > button:not(.btn):active > span,
-.list--secondary > li > a:not(.btn).active > span,
-.list--secondary > li > button:not(.btn).active > span {
-  color: #343a40;
-}
-.list--secondary > li > a:not(.btn):active::before,
-.list--secondary > li > button:not(.btn):active::before,
-.list--secondary > li > a:not(.btn).active::before,
-.list--secondary > li > button:not(.btn).active::before {
-  box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
-}
-.list--secondary-empty > li > a:not(.btn),
-.list--secondary-empty > li > button:not(.btn) {
-  text-decoration: none;
-}
-.list--secondary-empty > li > a:not(.btn):hover,
-.list--secondary-empty > li > button:not(.btn):hover,
-.list--secondary-empty > li > a:not(.btn).hover,
-.list--secondary-empty > li > button:not(.btn).hover,
-.list--secondary-empty > li > a:not(.btn):active,
-.list--secondary-empty > li > button:not(.btn):active,
-.list--secondary-empty > li > a:not(.btn).active,
-.list--secondary-empty > li > button:not(.btn).active {
-  text-decoration: none;
-}
-.list--secondary-empty > li > a:not(.btn):hover span,
-.list--secondary-empty > li > button:not(.btn):hover span,
-.list--secondary-empty > li > a:not(.btn).hover span,
-.list--secondary-empty > li > button:not(.btn).hover span,
-.list--secondary-empty > li > a:not(.btn):active span,
-.list--secondary-empty > li > button:not(.btn):active span,
-.list--secondary-empty > li > a:not(.btn).active span,
-.list--secondary-empty > li > button:not(.btn).active span {
-  text-decoration: none;
-}
-.list--secondary-empty > li > a:not(.btn)::before,
-.list--secondary-empty > li > button:not(.btn)::before {
-  border-color: transparent;
-  background: transparent;
-}
-.list--secondary-empty > li > a:not(.btn) > span,
-.list--secondary-empty > li > button:not(.btn) > span {
-  color: rgba(52, 58, 64, 0.8);
-}
-.list--secondary-empty > li > a:not(.btn):hover::before,
-.list--secondary-empty > li > button:not(.btn):hover::before,
-.list--secondary-empty > li > a:not(.btn).hover::before,
-.list--secondary-empty > li > button:not(.btn).hover::before,
-.list--secondary-empty > li > a:not(.btn):active::before,
-.list--secondary-empty > li > button:not(.btn):active::before,
-.list--secondary-empty > li > a:not(.btn).active::before,
-.list--secondary-empty > li > button:not(.btn).active::before {
-  border-color: #cbdce5;
-  background: #dce8ee;
-}
-.list--secondary-empty > li > a:not(.btn):hover > span,
-.list--secondary-empty > li > button:not(.btn):hover > span,
-.list--secondary-empty > li > a:not(.btn).hover > span,
-.list--secondary-empty > li > button:not(.btn).hover > span,
-.list--secondary-empty > li > a:not(.btn):active > span,
-.list--secondary-empty > li > button:not(.btn):active > span,
-.list--secondary-empty > li > a:not(.btn).active > span,
-.list--secondary-empty > li > button:not(.btn).active > span {
-  color: #343a40;
-}
-.list--secondary-empty > li > a:not(.btn):active::before,
-.list--secondary-empty > li > button:not(.btn):active::before,
-.list--secondary-empty > li > a:not(.btn).active::before,
-.list--secondary-empty > li > button:not(.btn).active::before {
-  box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
-}
-.list--link > li > a:not(.btn),
-.list--link > li > button:not(.btn) {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-}
-.list--link > li > a:not(.btn) > span,
-.list--link > li > button:not(.btn) > span {
-  text-decoration: none;
-}
-.list--link > li > a:not(.btn) > span:hover,
-.list--link > li > button:not(.btn) > span:hover,
-.list--link > li > a:not(.btn) > span.hover,
-.list--link > li > button:not(.btn) > span.hover,
-.list--link > li > a:not(.btn) > span:active,
-.list--link > li > button:not(.btn) > span:active,
-.list--link > li > a:not(.btn) > span.active,
-.list--link > li > button:not(.btn) > span.active {
-  text-decoration: none;
-}
-.list--link > li > a:not(.btn) > span:hover span,
-.list--link > li > button:not(.btn) > span:hover span,
-.list--link > li > a:not(.btn) > span.hover span,
-.list--link > li > button:not(.btn) > span.hover span,
-.list--link > li > a:not(.btn) > span:active span,
-.list--link > li > button:not(.btn) > span:active span,
-.list--link > li > a:not(.btn) > span.active span,
-.list--link > li > button:not(.btn) > span.active span {
-  text-decoration: none;
-}
-.list--link > li > a:not(.btn)::before,
-.list--link > li > button:not(.btn)::before {
-  border-radius: 0;
-  border-width: 0;
-  background: transparent !important;
-}
-.list--link > li > a:not(.btn) > span,
-.list--link > li > button:not(.btn) > span {
-  font-family: inherit;
-  font-style: inherit;
-  font-weight: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
-}
-.list--link > li > a:not(.btn) > span,
-.list--link > li > button:not(.btn) > span {
-  color: #626c76;
-}
-.list--link > li > a:not(.btn):hover > span,
-.list--link > li > button:not(.btn):hover > span,
-.list--link > li > a:not(.btn).hover > span,
-.list--link > li > button:not(.btn).hover > span,
-.list--link > li > a:not(.btn):active > span,
-.list--link > li > button:not(.btn):active > span,
-.list--link > li > a:not(.btn).active > span,
-.list--link > li > button:not(.btn).active > span {
-  color: #5e50ee;
-}
-.list--link > li > a:not(.btn):active::before,
-.list--link > li > button:not(.btn):active::before,
-.list--link > li > a:not(.btn).active::before,
-.list--link > li > button:not(.btn).active::before {
-  box-shadow: none;
-}
-.list--tiny > li > a:not(.btn) > span,
-.list--tiny > li > button:not(.btn) > span {
-  padding: 0.5em 1em;
-  font-size: 10px;
-}
-.list--small > li > a:not(.btn) > span,
-.list--small > li > button:not(.btn) > span {
-  padding: 0.6em 1.2em;
-  font-size: 1.2rem;
-}
-.list--medium > li > a:not(.btn) > span,
-.list--medium > li > button:not(.btn) > span {
-  padding: 0.6em 1.2em;
-  font-size: 1.325rem;
-}
-.list--big > li > a:not(.btn) > span,
-.list--big > li > button:not(.btn) > span {
-  padding: 0.6em 1.2em;
-  font-size: 1.4rem;
-}
-.list--giant > li > a:not(.btn) > span,
-.list--giant > li > button:not(.btn) > span {
-  padding: 0.6em 1.2em;
-  font-size: 1.525rem;
-}
-.list--nodesign > li > a:not(.btn)::before,
-.list--nodesign > li > button:not(.btn)::before {
-  display: none;
-}
-.list--squared > li > a:not(.btn)::before,
-.list--squared > li > button:not(.btn)::before {
-  border-radius: 0;
-}
-.list--tall > li > a:not(.btn) > span,
-.list--tall > li > button:not(.btn) > span {
-  padding-top: 0.9em;
-  padding-bottom: 0.9em;
-}
-.list--short > li > a:not(.btn) > span,
-.list--short > li > button:not(.btn) > span {
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
-}
-.list--wide > li > a:not(.btn) > span,
-.list--wide > li > button:not(.btn) > span {
-  padding-left: 1.8em;
-  padding-right: 1.8em;
-}
-.list--narrow > li > a:not(.btn) > span,
-.list--narrow > li > button:not(.btn) > span {
-  padding-left: 0.6em;
-  padding-right: 0.6em;
-}
-.list--icon > li > a:not(.btn) > span,
-.list--icon > li > button:not(.btn) > span {
-  padding: 0.6em 0.8em;
-}
-.list--none > li > a:not(.btn):active::before,
-.list--none > li > button:not(.btn):active::before,
-.list--none > li > a:not(.btn).active::before,
-.list--none > li > button:not(.btn).active::before {
-  box-shadow: none;
-}
-.list--none > li > a:not(.btn)::before,
-.list--none > li > button:not(.btn)::before {
-  border-radius: 0;
-}
-.list--none > li > a:not(.btn)::before,
-.list--none > li > button:not(.btn)::before {
-  border: 0 !important;
-  background: transparent !important;
-}
-.list--none > li > a:not(.btn) > span,
-.list--none > li > button:not(.btn) > span {
-  padding: 0;
-}
-.list--none-x > li > a:not(.btn):active::before,
-.list--none-x > li > button:not(.btn):active::before,
-.list--none-x > li > a:not(.btn).active::before,
-.list--none-x > li > button:not(.btn).active::before {
-  box-shadow: none;
-}
-.list--none-x > li > a:not(.btn)::before,
-.list--none-x > li > button:not(.btn)::before {
-  border-radius: 0;
-}
-.list--none-x > li > a:not(.btn)::before,
-.list--none-x > li > button:not(.btn)::before {
-  border-left: 0 !important;
-  border-right: 0 !important;
-  background: transparent !important;
-}
-.list--none-x > li > a:not(.btn) > span,
-.list--none-x > li > button:not(.btn) > span {
-  padding-left: 0;
-  padding-right: 0;
-}
-.list--none-y > li > a:not(.btn):active::before,
-.list--none-y > li > button:not(.btn):active::before,
-.list--none-y > li > a:not(.btn).active::before,
-.list--none-y > li > button:not(.btn).active::before {
-  box-shadow: none;
-}
-.list--none-y > li > a:not(.btn)::before,
-.list--none-y > li > button:not(.btn)::before {
-  border-radius: 0;
-}
-.list--none-y > li > a:not(.btn)::before,
-.list--none-y > li > button:not(.btn)::before {
-  border-top: 0 !important;
-  border-bottom: 0 !important;
-  background: transparent !important;
-}
-.list--none-y > li > a:not(.btn) > span,
-.list--none-y > li > button:not(.btn) > span {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-.list--transform > li > a:not(.btn) > span,
-.list--transform > li > button:not(.btn) > span {
-  letter-spacing: 0;
-  text-transform: none;
 }
 .card > .card_content {
   padding: 1.5em 2em;
@@ -6083,6 +4293,30 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label::after {
 .link--none.active span {
   text-decoration: none;
 }
+.text--inverse a:not(.btn),
+.text--inverse .alink,
+.text--inverse .btn--link {
+  color: #fff;
+  text-decoration: underline;
+}
+.text--inverse a:not(.btn):hover,
+.text--inverse .alink:hover,
+.text--inverse .btn--link:hover,
+.text--inverse a:not(.btn).hover,
+.text--inverse .alink.hover,
+.text--inverse .btn--link.hover,
+.text--inverse a:not(.btn):active,
+.text--inverse .alink:active,
+.text--inverse .btn--link:active,
+.text--inverse a:not(.btn).active,
+.text--inverse .alink.active,
+.text--inverse .btn--link.active {
+  color: #f2f2f2;
+}
+.text--inverse .btn--primary-empty,
+.text--inverse .btn--secondary-empty {
+  color: #fff !important;
+}
 a,
 .alink {
   text-decoration: none;
@@ -6132,30 +4366,6 @@ a.active,
   transition-property: color;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36, 0, 0, 1);
-}
-.text--inverse a:not(.btn),
-.text--inverse .alink,
-.text--inverse .btn--link {
-  color: #fff;
-  text-decoration: underline;
-}
-.text--inverse a:not(.btn):hover,
-.text--inverse .alink:hover,
-.text--inverse .btn--link:hover,
-.text--inverse a:not(.btn).hover,
-.text--inverse .alink.hover,
-.text--inverse .btn--link.hover,
-.text--inverse a:not(.btn):active,
-.text--inverse .alink:active,
-.text--inverse .btn--link:active,
-.text--inverse a:not(.btn).active,
-.text--inverse .alink.active,
-.text--inverse .btn--link.active {
-  color: #f2f2f2;
-}
-.text--inverse .btn--primary-empty,
-.text--inverse .btn--secondary-empty {
-  color: #fff !important;
 }
 [disabled],
 .disabled {
@@ -6863,16 +5073,13 @@ img.btn--close > span::after {
   padding-bottom: 1.3rem;
   min-width: 18rem;
 }
-.drop > .drop_inner > .drop_content > .list > li > a,
-.drop > .drop_inner > .drop_content > .list > li > button {
+.drop > .drop_inner > .drop_content > .list > li > .btn {
   white-space: nowrap;
 }
-.drop > .drop_inner > .drop_content > .list > li > a::before,
-.drop > .drop_inner > .drop_content > .list > li > button::before {
+.drop > .drop_inner > .drop_content > .list > li > .btn::before {
   border-radius: 0;
 }
-.drop > .drop_inner > .drop_content > .list > li > a > span,
-.drop > .drop_inner > .drop_content > .list > li > button > span {
+.drop > .drop_inner > .drop_content > .list > li > .btn > span {
   padding-left: 2.2rem;
   padding-right: 2.2rem;
 }
@@ -6883,64 +5090,43 @@ img.btn--close > span::after {
   border-color: #f2f2f2;
   background: #fff;
 }
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn),
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn) {
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn {
   text-decoration: none;
 }
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):hover,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):hover,
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).hover,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).hover,
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active,
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active {
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active {
   text-decoration: none;
 }
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):hover span,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):hover span,
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).hover span,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).hover span,
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active span,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active span,
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active span,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active span {
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover span,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover span,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active span,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active span {
   text-decoration: none;
 }
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn)::before,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn)::before {
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn::before {
   border-color: transparent;
   background: transparent;
 }
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn) > span,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn) > span {
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn > span {
   color: #7367F0;
 }
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):hover::before,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):hover::before,
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).hover::before,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).hover::before,
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active::before,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active::before,
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active::before,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active::before {
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover::before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover::before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active::before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active::before {
   border-color: #7367F0;
   background: #887ef2;
 }
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):hover > span,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):hover > span,
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).hover > span,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).hover > span,
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active > span,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active > span,
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active > span,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active > span {
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover > span,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover > span,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active > span,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active > span {
   color: #fff;
 }
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active::before,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active::before,
-.drop > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active::before,
-.drop > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active::before {
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active::before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active::before {
   box-shadow: 0 0.1rem 1rem rgba(115, 103, 240, 0.25), 0 0.2rem 2rem rgba(115, 103, 240, 0.4);
 }
 .drop_outer,
@@ -7013,64 +5199,43 @@ img.btn--close > span::after {
   border-color: #5e50ee;
   background: #7367F0;
 }
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn),
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn) {
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn {
   text-decoration: none;
 }
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):hover,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):hover,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).hover,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).hover,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active {
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active {
   text-decoration: none;
 }
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):hover span,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):hover span,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).hover span,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).hover span,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active span,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active span,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active span,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active span {
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover span,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover span,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active span,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active span {
   text-decoration: none;
 }
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn)::before,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn)::before {
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn::before {
   border-color: #7367F0;
   background: #7367F0;
 }
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn) > span,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn) > span {
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn > span {
   color: rgba(255, 255, 255, 0.8);
 }
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):hover::before,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):hover::before,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).hover::before,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).hover::before,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active::before,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active::before,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active::before,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active::before {
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover::before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover::before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active::before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active::before {
   border-color: #7367F0;
   background: #887ef2;
 }
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):hover > span,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):hover > span,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).hover > span,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).hover > span,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active > span,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active > span,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active > span,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active > span {
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover > span,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover > span,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active > span,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active > span {
   color: #fff;
 }
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active::before,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active::before,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active::before,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active::before {
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active::before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active::before {
   box-shadow: 0 0.1rem 1rem rgba(115, 103, 240, 0.25), 0 0.2rem 2rem rgba(115, 103, 240, 0.4);
 }
 .drop--secondary > .drop_inner {
@@ -7080,64 +5245,43 @@ img.btn--close > span::after {
   border-color: #dce8ee;
   background: #edf3f6;
 }
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn),
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn) {
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn {
   text-decoration: none;
 }
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):hover,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):hover,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).hover,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).hover,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active {
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active {
   text-decoration: none;
 }
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):hover span,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):hover span,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).hover span,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).hover span,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active span,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active span,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active span,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active span {
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover span,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover span,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active span,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active span {
   text-decoration: none;
 }
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn)::before,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn)::before {
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn::before {
   border-color: #edf3f6;
   background: #edf3f6;
 }
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn) > span,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn) > span {
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn > span {
   color: rgba(52, 58, 64, 0.8);
 }
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):hover::before,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):hover::before,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).hover::before,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).hover::before,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active::before,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active::before,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active::before,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active::before {
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover::before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover::before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active::before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active::before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):hover > span,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):hover > span,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).hover > span,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).hover > span,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active > span,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active > span,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active > span,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active > span {
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover > span,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover > span,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active > span,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active > span {
   color: #343a40;
 }
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active::before,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active::before,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active::before,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active::before {
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active::before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active::before {
   box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
 }
 .drop--white > .drop_inner {
@@ -7147,74 +5291,44 @@ img.btn--close > span::after {
   border-color: #f2f2f2;
   background: #fff;
 }
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn),
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn) {
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn {
   text-decoration: none;
 }
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):hover,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):hover,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).hover,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).hover,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active {
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active {
   text-decoration: none;
 }
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):hover span,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):hover span,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).hover span,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).hover span,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active span,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active span,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active span,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active span {
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover span,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover span,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active span,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active span {
   text-decoration: none;
 }
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn)::before,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn)::before {
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn::before {
   border-color: transparent;
   background: transparent;
 }
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn) > span,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn) > span {
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn > span {
   color: #7367F0;
 }
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):hover::before,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):hover::before,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).hover::before,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).hover::before,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active::before,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active::before,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active::before,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active::before {
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover::before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover::before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active::before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active::before {
   border-color: #7367F0;
   background: #887ef2;
 }
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):hover > span,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):hover > span,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).hover > span,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).hover > span,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active > span,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active > span,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active > span,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active > span {
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover > span,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover > span,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active > span,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active > span {
   color: #fff;
 }
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn):active::before,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn):active::before,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > a:not(.btn).active::before,
-.drop--white > .drop_inner > .drop_content > .list--drop > li > button:not(.btn).active::before {
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active::before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active::before {
   box-shadow: 0 0.1rem 1rem rgba(115, 103, 240, 0.25), 0 0.2rem 2rem rgba(115, 103, 240, 0.4);
-}
-.drop--nodesign > .drop_inner > .drop_design {
-  display: none;
-}
-.drop--squared > .drop_inner > .drop_design {
-  border-radius: 0;
-}
-.drop--noborder > .drop_inner > .drop_design {
-  border: 0;
 }
 .overlay .overlay_design {
   box-shadow: 0 0 10rem rgba(52, 58, 64, 0.25);
@@ -7709,8 +5823,7 @@ img.btn--close > span::after {
 .slider_pagination > li > * {
   flex: 1 1 auto;
 }
-.slider_pagination > li > a:not(.btn),
-.slider_pagination > li > button:not(.btn) {
+.slider_pagination > li:not(.custom) > .btn {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -7723,28 +5836,20 @@ img.btn--close > span::after {
   z-index: 0;
   text-decoration: none;
 }
-.slider_pagination > li > a:not(.btn):hover,
-.slider_pagination > li > button:not(.btn):hover,
-.slider_pagination > li > a:not(.btn).hover,
-.slider_pagination > li > button:not(.btn).hover,
-.slider_pagination > li > a:not(.btn):active,
-.slider_pagination > li > button:not(.btn):active,
-.slider_pagination > li > a:not(.btn).active,
-.slider_pagination > li > button:not(.btn).active {
+.slider_pagination > li:not(.custom) > .btn:hover,
+.slider_pagination > li:not(.custom) > .btn.hover,
+.slider_pagination > li:not(.custom) > .btn:active,
+.slider_pagination > li:not(.custom) > .btn.active {
   z-index: 2;
 }
-.slider_pagination > li > a:not(.btn).out,
-.slider_pagination > li > button:not(.btn).out {
+.slider_pagination > li:not(.custom) > .btn.out {
   z-index: 1;
 }
-.slider_pagination > li > a:not(.btn)::before,
-.slider_pagination > li > button:not(.btn)::before,
-.slider_pagination > li > a:not(.btn) > span,
-.slider_pagination > li > button:not(.btn) > span {
+.slider_pagination > li:not(.custom) > .btn::before,
+.slider_pagination > li:not(.custom) > .btn > span {
   border-radius: 4px;
 }
-.slider_pagination > li > a:not(.btn)::before,
-.slider_pagination > li > button:not(.btn)::before {
+.slider_pagination > li:not(.custom) > .btn::before {
   content: '';
   overflow: hidden;
   position: absolute;
@@ -7757,20 +5862,17 @@ img.btn--close > span::after {
   border-style: solid;
   border-color: transparent;
 }
-.slider_pagination > li > a:not(.btn) > span,
-.slider_pagination > li > button:not(.btn) > span {
+.slider_pagination > li:not(.custom) > .btn > span {
   position: relative;
   overflow: hidden;
 }
-.slider_pagination > li > a:not(.btn) > span,
-.slider_pagination > li > button:not(.btn) > span {
+.slider_pagination > li:not(.custom) > .btn > span {
   display: flex;
   flex-direction: row;
   align-items: baseline;
   min-width: 100%;
 }
-.slider_pagination > li > a:not(.btn) > span,
-.slider_pagination > li > button:not(.btn) > span {
+.slider_pagination > li:not(.custom) > .btn > span {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -7778,91 +5880,64 @@ img.btn--close > span::after {
   letter-spacing: 0.075em;
   text-transform: uppercase;
 }
-.slider_pagination > li > a:not(.btn):hover,
-.slider_pagination > li > button:not(.btn):hover,
-.slider_pagination > li > a:not(.btn).hover,
-.slider_pagination > li > button:not(.btn).hover,
-.slider_pagination > li > a:not(.btn):active,
-.slider_pagination > li > button:not(.btn):active,
-.slider_pagination > li > a:not(.btn).active,
-.slider_pagination > li > button:not(.btn).active {
+.slider_pagination > li:not(.custom) > .btn:hover,
+.slider_pagination > li:not(.custom) > .btn.hover,
+.slider_pagination > li:not(.custom) > .btn:active,
+.slider_pagination > li:not(.custom) > .btn.active {
   text-decoration: none;
 }
-.slider_pagination > li > a:not(.btn):hover span,
-.slider_pagination > li > button:not(.btn):hover span,
-.slider_pagination > li > a:not(.btn).hover span,
-.slider_pagination > li > button:not(.btn).hover span,
-.slider_pagination > li > a:not(.btn):active span,
-.slider_pagination > li > button:not(.btn):active span,
-.slider_pagination > li > a:not(.btn).active span,
-.slider_pagination > li > button:not(.btn).active span {
+.slider_pagination > li:not(.custom) > .btn:hover span,
+.slider_pagination > li:not(.custom) > .btn.hover span,
+.slider_pagination > li:not(.custom) > .btn:active span,
+.slider_pagination > li:not(.custom) > .btn.active span {
   text-decoration: none;
 }
-.slider_pagination > li > a:not(.btn)::before,
-.slider_pagination > li > button:not(.btn)::before {
+.slider_pagination > li:not(.custom) > .btn::before {
   border-color: #edf3f6;
   background: #edf3f6;
 }
-.slider_pagination > li > a:not(.btn) > span,
-.slider_pagination > li > button:not(.btn) > span {
+.slider_pagination > li:not(.custom) > .btn > span {
   color: rgba(52, 58, 64, 0.8);
 }
-.slider_pagination > li > a:not(.btn):hover::before,
-.slider_pagination > li > button:not(.btn):hover::before,
-.slider_pagination > li > a:not(.btn).hover::before,
-.slider_pagination > li > button:not(.btn).hover::before,
-.slider_pagination > li > a:not(.btn):active::before,
-.slider_pagination > li > button:not(.btn):active::before,
-.slider_pagination > li > a:not(.btn).active::before,
-.slider_pagination > li > button:not(.btn).active::before {
+.slider_pagination > li:not(.custom) > .btn:hover::before,
+.slider_pagination > li:not(.custom) > .btn.hover::before,
+.slider_pagination > li:not(.custom) > .btn:active::before,
+.slider_pagination > li:not(.custom) > .btn.active::before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
-.slider_pagination > li > a:not(.btn):hover > span,
-.slider_pagination > li > button:not(.btn):hover > span,
-.slider_pagination > li > a:not(.btn).hover > span,
-.slider_pagination > li > button:not(.btn).hover > span,
-.slider_pagination > li > a:not(.btn):active > span,
-.slider_pagination > li > button:not(.btn):active > span,
-.slider_pagination > li > a:not(.btn).active > span,
-.slider_pagination > li > button:not(.btn).active > span {
+.slider_pagination > li:not(.custom) > .btn:hover > span,
+.slider_pagination > li:not(.custom) > .btn.hover > span,
+.slider_pagination > li:not(.custom) > .btn:active > span,
+.slider_pagination > li:not(.custom) > .btn.active > span {
   color: #343a40;
 }
-.slider_pagination > li > a:not(.btn):active::before,
-.slider_pagination > li > button:not(.btn):active::before,
-.slider_pagination > li > a:not(.btn).active::before,
-.slider_pagination > li > button:not(.btn).active::before {
+.slider_pagination > li:not(.custom) > .btn:active::before,
+.slider_pagination > li:not(.custom) > .btn.active::before {
   box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
 }
-.slider_pagination > li > a:not(.btn) > span,
-.slider_pagination > li > button:not(.btn) > span {
+.slider_pagination > li:not(.custom) > .btn > span {
   padding: 0.6em 1.2em;
   font-size: 1.325rem;
 }
-.slider_pagination > li > a:not(.btn)::before,
-.slider_pagination > li > button:not(.btn)::before {
+.slider_pagination > li:not(.custom) > .btn::before {
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(1, 0, .64, 1);
 }
-.slider_pagination > li > a:not(.btn) > span,
-.slider_pagination > li > button:not(.btn) > span {
+.slider_pagination > li:not(.custom) > .btn > span {
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(1, 0, .64, 1);
 }
-.slider_pagination > li > a:not(.btn):active::before,
-.slider_pagination > li > button:not(.btn):active::before,
-.slider_pagination > li > a:not(.btn).active::before,
-.slider_pagination > li > button:not(.btn).active::before {
+.slider_pagination > li:not(.custom) > .btn:active::before,
+.slider_pagination > li:not(.custom) > .btn.active::before {
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36, 0, 0, 1);
 }
-.slider_pagination > li > a:not(.btn):active > span,
-.slider_pagination > li > button:not(.btn):active > span,
-.slider_pagination > li > a:not(.btn).active > span,
-.slider_pagination > li > button:not(.btn).active > span {
+.slider_pagination > li:not(.custom) > .btn:active > span,
+.slider_pagination > li:not(.custom) > .btn.active > span {
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36, 0, 0, 1);
@@ -7870,68 +5945,46 @@ img.btn--close > span::after {
 .slider_pagination > * {
   margin: 0.5rem 0.5rem;
 }
-.slider_pagination > li > a,
-.slider_pagination > li > button {
-  text-align: left;
+.slider_pagination > li > .btn > span {
+  justify-content: flex-start;
 }
-.slider_pagination > li > a:not(.btn),
-.slider_pagination > li > button:not(.btn) {
+.slider_pagination > li:not(.custom) > .btn {
   text-decoration: none;
 }
-.slider_pagination > li > a:not(.btn):hover,
-.slider_pagination > li > button:not(.btn):hover,
-.slider_pagination > li > a:not(.btn).hover,
-.slider_pagination > li > button:not(.btn).hover,
-.slider_pagination > li > a:not(.btn):active,
-.slider_pagination > li > button:not(.btn):active,
-.slider_pagination > li > a:not(.btn).active,
-.slider_pagination > li > button:not(.btn).active {
+.slider_pagination > li:not(.custom) > .btn:hover,
+.slider_pagination > li:not(.custom) > .btn.hover,
+.slider_pagination > li:not(.custom) > .btn:active,
+.slider_pagination > li:not(.custom) > .btn.active {
   text-decoration: none;
 }
-.slider_pagination > li > a:not(.btn):hover span,
-.slider_pagination > li > button:not(.btn):hover span,
-.slider_pagination > li > a:not(.btn).hover span,
-.slider_pagination > li > button:not(.btn).hover span,
-.slider_pagination > li > a:not(.btn):active span,
-.slider_pagination > li > button:not(.btn):active span,
-.slider_pagination > li > a:not(.btn).active span,
-.slider_pagination > li > button:not(.btn).active span {
+.slider_pagination > li:not(.custom) > .btn:hover span,
+.slider_pagination > li:not(.custom) > .btn.hover span,
+.slider_pagination > li:not(.custom) > .btn:active span,
+.slider_pagination > li:not(.custom) > .btn.active span {
   text-decoration: none;
 }
-.slider_pagination > li > a:not(.btn)::before,
-.slider_pagination > li > button:not(.btn)::before {
+.slider_pagination > li:not(.custom) > .btn::before {
   border-color: #edf3f6;
   background: #edf3f6;
 }
-.slider_pagination > li > a:not(.btn) > span,
-.slider_pagination > li > button:not(.btn) > span {
+.slider_pagination > li:not(.custom) > .btn > span {
   color: rgba(52, 58, 64, 0.8);
 }
-.slider_pagination > li > a:not(.btn):hover::before,
-.slider_pagination > li > button:not(.btn):hover::before,
-.slider_pagination > li > a:not(.btn).hover::before,
-.slider_pagination > li > button:not(.btn).hover::before,
-.slider_pagination > li > a:not(.btn):active::before,
-.slider_pagination > li > button:not(.btn):active::before,
-.slider_pagination > li > a:not(.btn).active::before,
-.slider_pagination > li > button:not(.btn).active::before {
+.slider_pagination > li:not(.custom) > .btn:hover::before,
+.slider_pagination > li:not(.custom) > .btn.hover::before,
+.slider_pagination > li:not(.custom) > .btn:active::before,
+.slider_pagination > li:not(.custom) > .btn.active::before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
-.slider_pagination > li > a:not(.btn):hover > span,
-.slider_pagination > li > button:not(.btn):hover > span,
-.slider_pagination > li > a:not(.btn).hover > span,
-.slider_pagination > li > button:not(.btn).hover > span,
-.slider_pagination > li > a:not(.btn):active > span,
-.slider_pagination > li > button:not(.btn):active > span,
-.slider_pagination > li > a:not(.btn).active > span,
-.slider_pagination > li > button:not(.btn).active > span {
+.slider_pagination > li:not(.custom) > .btn:hover > span,
+.slider_pagination > li:not(.custom) > .btn.hover > span,
+.slider_pagination > li:not(.custom) > .btn:active > span,
+.slider_pagination > li:not(.custom) > .btn.active > span {
   color: #343a40;
 }
-.slider_pagination > li > a:not(.btn):active::before,
-.slider_pagination > li > button:not(.btn):active::before,
-.slider_pagination > li > a:not(.btn).active::before,
-.slider_pagination > li > button:not(.btn).active::before {
+.slider_pagination > li:not(.custom) > .btn:active::before,
+.slider_pagination > li:not(.custom) > .btn.active::before {
   box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
 }
 .slider_pagination > * {

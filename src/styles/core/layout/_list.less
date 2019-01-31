@@ -13,25 +13,23 @@
       .flex--auto();
     }
   }
-  .list_btn--default({ .btn(); });
+  .list_btn({ .btn(); });
 }
 
 // selectors
 
 .list_btn--all(@rules) {
   > li {
-    > a, > button {
+    > .btn {
       @rules();
     }
   }
 }
 
-.list_btn--default(@rules) {
-  > li {
-    > a, > button {
-      &:not(.btn) {
-        @rules();
-      }
+.list_btn(@rules) {
+  > li:not(.custom) {
+    > .btn {
+      @rules();
     }
   }
 }

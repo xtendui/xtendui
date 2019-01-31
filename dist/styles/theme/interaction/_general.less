@@ -1,8 +1,6 @@
 //////////////////////
-// general
-//////////////////////
-
 // decoration
+//////////////////////
 
 .link--underline {
   text-decoration: none;
@@ -24,7 +22,29 @@
   }
 }
 
-// links
+//////////////////////
+// text--inverse
+//////////////////////
+
+.text--inverse {
+  // links color
+  a:not(.btn), .alink, .btn--link {
+    color: @text--inverse;
+    text-decoration: underline;
+    &:hover, &.hover, &:active, &.active {
+      color: darken(@text--inverse, @perc--xs);
+    }
+  }
+  // button color
+  .btn--primary-empty,
+  .btn--secondary-empty {
+    color: @text--inverse !important;
+  }
+}
+
+//////////////////////
+// link
+//////////////////////
 
 a, .alink {
   .link--underline();
@@ -44,32 +64,18 @@ a, .alink {
   }
 }
 
-// .text--inverse
-
-.text--inverse {
-  // links color
-  a:not(.btn), .alink, .btn--link {
-    color: @text--inverse;
-    text-decoration: underline;
-    &:hover, &.hover, &:active, &.active {
-      color: darken(@text--inverse, @perc--xs);
-    }
-  }
-  // button color
-  .btn--primary-empty,
-  .btn--secondary-empty {
-    color: @text--inverse !important;
-  }
-}
-
+//////////////////////
 // disabled
+//////////////////////
 
-[disabled],
-.disabled {
+
+[disabled], .disabled {
   opacity: .75;
 }
 
+//////////////////////
 // caret
+//////////////////////
 
 .caret {
   > span {

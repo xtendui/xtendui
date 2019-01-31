@@ -584,6 +584,57 @@
 }
 
 //////////////////////
+// btn alignment
+//////////////////////
+
+// btn alignment
+
+.btn--left(@breakpoint:none) when (@breakpoint = none) {
+  > span {
+    justify-content: flex-start;
+  }
+}
+
+.btn--left(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    > span {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.btn--center(@breakpoint:none) when (@breakpoint = none) {
+  > span {
+    justify-content: center;
+  }
+}
+
+.btn--center(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    > span {
+      justify-content: center;
+    }
+  }
+}
+
+.btn--right(@breakpoint:none) when (@breakpoint = none) {
+  > span {
+    justify-content: flex-end;
+  }
+}
+
+.btn--right(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    > span {
+      justify-content: flex-end;
+    }
+  }
+}
+
+//////////////////////
 // flex space
 //////////////////////
 
@@ -748,35 +799,35 @@
 // list alignment
 
 .list--left(@breakpoint:none) when (@breakpoint = none) {
-  .list_btn--all({ text-align: left;; });
+  .list_btn--all({ .btn--left(); });
 }
 
 .list--left(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list_btn--all({ text-align: left;; });
+    .list_btn--all({ .btn--left(); });
   }
 }
 
 .list--center(@breakpoint:none) when (@breakpoint = none) {
-  .list_btn--all({ text-align: center; });
+  .list_btn--all({ .btn--center(); });
 }
 
 .list--center(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list_btn--all({ text-align: center; });
+    .list_btn--all({ .btn--center(); });
   }
 }
 
 .list--right(@breakpoint:none) when (@breakpoint = none) {
-  .list_btn--all({ text-align: right;; });
+  .list_btn--all({ .btn--right(); });
 }
 
 .list--right(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list_btn--all({ text-align: right;; });
+    .list_btn--all({ .btn--right(); });
   }
 }
 

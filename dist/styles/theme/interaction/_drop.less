@@ -112,7 +112,7 @@
       background: @primary;
     }
     > .drop_content > .list--drop {
-      .list_btn--default({ .btn--primary() });
+      .list_btn({ .btn--primary() });
     }
   }
 }
@@ -125,7 +125,7 @@
       background: @secondary;
     }
     > .drop_content > .list--drop {
-      .list_btn--default({ .btn--secondary() });
+      .list_btn({ .btn--secondary() });
     }
   }
 }
@@ -138,33 +138,7 @@
       background: @white;
     }
     > .drop_content > .list--drop {
-      .list_btn--default({ .btn--primary-empty() });
-    }
-  }
-}
-
-// special
-
-.drop--nodesign {
-  > .drop_inner {
-    > .drop_design {
-      display: none;
-    }
-  }
-}
-
-.drop--squared {
-  > .drop_inner {
-    > .drop_design {
-      border-radius: 0;
-    }
-  }
-}
-
-.drop--noborder {
-  > .drop_inner {
-    > .drop_design {
-      border: 0;
+      .list_btn({ .btn--primary-empty() });
     }
   }
 }

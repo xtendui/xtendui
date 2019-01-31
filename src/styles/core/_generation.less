@@ -1,5 +1,61 @@
 & when not (@classes--util = false) {
-  
+
+  /*
+  //////////////////////
+  // grid
+  //////////////////////
+
+  // generate-grid
+
+  .generate-grid(@breakpoint:none; @i:1) when (@i =< @columns) {
+    .generate-grid(@breakpoint; (@i + 1));
+    & when (@breakpoint = none) {
+      .col--@{i} {
+        .col(@i) !important;
+      }
+    }
+    & when not (@breakpoint = none) {
+      .col--@{i}-@{breakpoint} {
+        .col(@i) !important;
+      }
+    }
+  }
+
+  // generate-grids
+
+  .generate-grids();
+  .generate-grids(@breakpoint:none) {
+    & when (@breakpoint = none) {
+      // grid
+      .col--auto {
+        .col--auto() !important;
+      }
+      .generate-grid() !important;
+    }
+    & when not (@breakpoint = none) {
+      @query-min: 'min-@{breakpoint}';
+      @media @@query-min {
+        // grid
+        .col--auto-@{breakpoint} {
+          .col--auto() !important;
+        }
+        .generate-grid(@breakpoint) !important;
+      }
+    }
+  }
+
+  // generate-grid-responsive
+
+  & when not (@classes--grid = true) {
+
+    .generate-grid-responsive();
+    .generate-grid-responsive(@i:length(@classes--grid)) when (@i > 0) {
+      .generate-grid-responsive(@i - 1);
+      @breakpoint: extract(@classes--grid, @i);
+      .generate-grids(@breakpoint);
+    }
+
+  }*/
   //////////////////////
   // util
   //////////////////////
@@ -67,6 +123,8 @@
       .generate-float(@breakpoint);
       // display
       .generate-display(@breakpoint);
+      // visibility
+      .generate-visibility(@breakpoint);
     }
     & when not (@breakpoint = none) {
       @query-min: 'min-@{breakpoint}';
@@ -94,6 +152,8 @@
         .generate-float(@breakpoint);
         // display
         .generate-display(@breakpoint);
+        // visibility
+        .generate-visibility(@breakpoint);
       }
     }
   }
@@ -170,7 +230,7 @@
 
   // generate-display
 
-  @display--arr: none, block, inline, inline-block, table, table-row, table-cell, flex, inline-flex;
+  @display--arr: none, block, inline-block, flex, inline-flex;
 
   .generate-display(@breakpoint:none, @i:length(@display--arr)) when (@i > 0) {
     .generate-display(@breakpoint, @i - 1);
@@ -187,12 +247,12 @@
     }
   }
 
-  // generate-display
+  // generate-visibility
 
   @visibility--arr: hidden, visible;
 
-  .generate-display(@breakpoint:none, @i:length(@visibility--arr)) when (@i > 0) {
-    .generate-display(@breakpoint, @i - 1);
+  .generate-visibility(@breakpoint:none, @i:length(@visibility--arr)) when (@i > 0) {
+    .generate-visibility(@breakpoint, @i - 1);
     @val: extract(@visibility--arr, @i);
     & when (@breakpoint = none) {
       .visibility--@{val} {

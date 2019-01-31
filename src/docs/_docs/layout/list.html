@@ -9,10 +9,8 @@ description: List is used to space it's childrens in a column/row layout. Can al
 <h2>Usage</h2>
 
 <p>Use <code>.list</code> to create a <strong>row list</strong> or <code>.list.list--block</code> to create a <strong>column
-  list</strong> with flexbox.
+  list</strong>.
 </p>
-
-<p>Every list should have the <code>ul</code> tags, with <code>li</code> childrens.</p>
 
 <pre>
   <code class="html">
@@ -28,16 +26,6 @@ description: List is used to space it's childrens in a column/row layout. Can al
     </ul>
   </code>
 </pre>
-
-<h2>Variables</h2>
-
-<div class="alert">
-  <div class="alert_content">
-    Read the documentation of <a href="{% link _docs/introduction/theming.html %}#layout">layout's variables</a>.
-  </div>
-</div>
-
-<h2>Mode</h2>
 
 <h3>List of anything</h3>
 
@@ -60,7 +48,7 @@ description: List is used to space it's childrens in a column/row layout. Can al
       </ul>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="list--block">
+  <div class="demo-item demo-preview" data-name="block">
     <div class="demo-source" data-lang="html">
       <ul class="list list--block">
         <li>
@@ -121,23 +109,58 @@ description: List is used to space it's childrens in a column/row layout. Can al
 
 <h3>List of buttons</h3>
 
-<p>The natural way to use lists is to use them <strong>to space buttons</strong>.</p>
+<p>List's buttons are styled automatically, but if you want to customize the buttons use the class
+  <code>li.custom</code>.</p>
+
+<div class="alert alert--primary">
+  <div class="alert_content">
+    In theming code use <code>.list_btn--all({});</code> to style all <code>.list > li > .btn</code> or <code>.list_btn({});</code>
+    to style all <code>.list:not(.custom) > li > .btn</code>.
+  </div>
+</div>
 
 <div class="demo">
-  <div class="demo-item demo-preview" data-name="list">
+  <div class="demo-item demo-preview" data-name="custom">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>li.custom</code>
+      </div>
+    </div>
     <div class="demo-source" data-lang="html">
       <ul class="list">
         <li>
+          <a href="#" class="btn">
+            <span>Lorem Ipsum</span>
+          </a>
+        </li>
+        <li>
+          <!-- this options don't works you need to use li.custom -->
+          <button type="button" class="btn btn--primary btn--tiny">
+            <span>Dolor sit</span>
+          </button>
+        </li>
+        <li class="custom">
+          <button type="button" class="btn btn--primary btn--tiny">
+            <span>Amet</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="list">
+    <div class="demo-source" data-lang="html">
+      <ul class="list">
+        <li class="custom">
           <button type="button" class="btn btn--primary">
             <span>Lorem Ipsum</span>
           </button>
         </li>
-        <li>
+        <li class="custom">
           <button type="button" class="btn btn--secondary">
             <span>Dolor sit</span>
           </button>
         </li>
-        <li>
+        <li class="custom">
           <button type="button" class="btn btn--secondary-empty btn--tiny">
             <span>Amet</span>
           </button>
@@ -145,20 +168,20 @@ description: List is used to space it's childrens in a column/row layout. Can al
       </ul>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="list--block">
+  <div class="demo-item demo-preview" data-name="block">
     <div class="demo-source" data-lang="html">
       <ul class="list list--block">
-        <li>
+        <li class="custom">
           <button type="button" class="btn btn--primary">
             <span>Lorem Ipsum</span>
           </button>
         </li>
-        <li>
+        <li class="custom">
           <button type="button" class="btn btn--secondary">
             <span>Dolor sit</span>
           </button>
         </li>
-        <li>
+        <li class="custom">
           <button type="button" class="btn btn--secondary-empty btn--tiny">
             <span>Amet</span>
           </button>
@@ -173,29 +196,29 @@ description: List is used to space it's childrens in a column/row layout. Can al
           <ul class="list">
             <li>
               <ul class="list list--block">
-                <li>
+                <li class="custom">
                   <button type="button" class="btn btn--primary">
                     <span>Lorem Ipsum</span>
                   </button>
                 </li>
-                <li>
+                <li class="custom">
                   <button type="button" class="btn btn--secondary">
                     <span>Dolor sit</span>
                   </button>
                 </li>
-                <li>
+                <li class="custom">
                   <button type="button" class="btn btn--secondary-empty btn--tiny">
                     <span>Amet</span>
                   </button>
                 </li>
               </ul>
             </li>
-            <li>
+            <li class="custom">
               <button type="button" class="btn btn--secondary">
                 <span>Dolor sit</span>
               </button>
             </li>
-            <li>
+            <li class="custom">
               <button type="button" class="btn btn--secondary-empty btn--tiny">
                 <span>Amet</span>
               </button>
@@ -204,17 +227,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
         </li>
         <li>
           <ul class="list">
-            <li>
+            <li class="custom">
               <button type="button" class="btn btn--primary">
                 <span>Lorem Ipsum</span>
               </button>
             </li>
-            <li>
+            <li class="custom">
               <button type="button" class="btn btn--secondary">
                 <span>Dolor sit</span>
               </button>
             </li>
-            <li>
+            <li class="custom">
               <button type="button" class="btn btn--secondary-empty btn--tiny">
                 <span>Amet</span>
               </button>
@@ -232,7 +255,7 @@ description: List is used to space it's childrens in a column/row layout. Can al
     </div>
     <div class="demo-source" data-lang="html">
       <ul class="list">
-        <li>
+        <li class="custom">
           <button type="button" class="btn btn--primary">
             <span>Lorem Ipsum</span>
           </button>
@@ -246,18 +269,18 @@ description: List is used to space it's childrens in a column/row layout. Can al
               <div class="drop_design"></div>
               <div class="drop_content">
                 <ul class="list list--drop">
-                  <li>
-                    <a href="#">
+                  <li class="custom">
+                    <button type="button" class="btn btn--primary">
                       <span>Lorem Ipsum</span>
-                    </a>
+                    </button>
                   </li>
-                  <li>
-                    <button type="button">
+                  <li class="custom">
+                    <button type="button" class="btn btn--secondary">
                       <span>Dolor sit</span>
                     </button>
                   </li>
-                  <li>
-                    <button type="button">
+                  <li class="custom">
+                    <button type="button" class="btn btn--secondary-empty btn--tiny">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -271,214 +294,7 @@ description: List is used to space it's childrens in a column/row layout. Can al
   </div>
 </div>
 
-<h3>Buttons styles</h3>
-
-<p><code>.list > li > a</code> and <code>.list > li > button</code> are styled automatically, If you
-  want to customize the buttons use the <code>.btn</code> class instead.</p>
-
-<div class="alert">
-  <div class="alert_content">
-    In theming code use <code>.list_btn--default({});</code> to style <code>a</code> and <code>button</code>. To style also
-    if they have the <code>.btn</code> class use <code>.list_btn--all({});</code>.
-  </div>
-</div>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="default">
-    <div class="demo-text">
-      <div class="alert_content">
-        You can <strong>override</strong> each buttons by using the <code>.btn</code> class
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list">
-        <li>
-          <a href="#">
-            <span>Lorem Ipsum</span>
-          </a>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <!-- this options don't works you need to use .btn -->
-          <button type="button" class="btn--primary btn--tiny">
-            <span>Amet</span>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="btn btn--primary btn--tiny">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-
 <h2>Options</h2>
-
-<h3>Variants</h3>
-
-<p>Optional classes for assigning variant.</p>
-
-<p>You can change the default <strong>variant</strong> inside the <code>.list</code> and <code>.list--block</code> selectors in <code>/theme/_layout.less</code>.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="default">
-    <div class="demo-source" data-lang="html">
-      <ul class="list">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="primary">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--primary</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--primary">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="primary-empty">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--primary-empty</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--primary-empty">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="secondary">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--secondary</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--secondary">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="secondary-empty">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--secondary-empty</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--secondary-empty">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="link">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--link</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--link">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
 
 <h3>Space</h3>
 
@@ -536,17 +352,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list list-space--none">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -562,17 +378,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list list-space--tiny">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -588,17 +404,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list list-space--small">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -614,17 +430,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list list-space--medium">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -640,17 +456,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list list-space--big">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -666,17 +482,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list list-space--giant">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -687,8 +503,10 @@ description: List is used to space it's childrens in a column/row layout. Can al
 
 <h3>Alignment</h3>
 
-<p>Lists <strong>automatically</strong> add left aligment. You can <strong>specify a different one</strong> with this
+<p>Lists <strong>automatically</strong> has left aligment. You can <strong>specify a different one</strong> with this
   classes/mixins.</p>
+
+<p>You can also set others flex alignments like <code>.list_btn({ > span { justify-content: space-between; } });</code>.</p>
 
 <div class="table--scroll">
   <table class="table table-small">
@@ -734,17 +552,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list list--block list--left">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -760,17 +578,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list list--block list--center">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -786,392 +604,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list list--block list--right">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<h3>Sizes</h3>
-
-<p>Optional classes for assigning size.</p>
-
-<p>You can change the default <strong>size</strong> inside the <code>.list</code> and <code>.list--block</code> selectors in <code>/theme/_layout.less</code>.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="default">
-    <div class="demo-source" data-lang="html">
-      <ul class="list">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="tiny">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--tiny</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--tiny">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="small">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--small</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--small">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="medium">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--medium</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--medium">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="big">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--big</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--big">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="giant">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--giant</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--giant">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<h3>Special</h3>
-
-<p>Special optional modifiers classes.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="nodesign">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--nodesign</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--nodesign">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="squared">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--squared</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--squared">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="tall">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--tall</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--tall">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="short">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--short</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--short">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="wide">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--wide</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--wide">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="narrow">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--narrow</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--narrow">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="icon">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--icon</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--icon">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="none">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--none</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--none">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1232,17 +675,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list flex-direction--row">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1258,17 +701,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list flex-direction--row-reverse">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1284,17 +727,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list flex-direction--column">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1310,17 +753,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list flex-direction--column-reverse">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1377,47 +820,47 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list flex-wrap--wrap">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1433,47 +876,47 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list flex-wrap--wrap-reverse">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1489,47 +932,47 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list flex-wrap--nowrap">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1586,17 +1029,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list justify-content--flex-start">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1612,17 +1055,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list justify-content--flex-end">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1638,17 +1081,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list justify-content--center">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1664,17 +1107,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list justify-content--space-between">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1690,17 +1133,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list justify-content--space-around">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1757,47 +1200,47 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list align-items--flex-start" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1813,47 +1256,47 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list align-items--flex-end" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1869,47 +1312,47 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list align-items--center" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1925,47 +1368,47 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list align-items--baseline" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1975,53 +1418,53 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="stretch">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-items--stretch</code>
+        <code>.align-items--stretch</code> <code>.align-self--stretch</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
       <ul class="list align-items--stretch" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Amet</span>
           </button>
         </li>
@@ -2078,47 +1521,47 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list align-content--flex-start" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2134,47 +1577,47 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list align-content--flex-end" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2190,47 +1633,47 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list align-content--center" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2246,47 +1689,47 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list align-content--space-between" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2302,47 +1745,47 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list align-content--space-around" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2352,53 +1795,53 @@ description: List is used to space it's childrens in a column/row layout. Can al
   <div class="demo-item demo-preview" data-name="stretch">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-content--stretch</code>
+        <code>.align-content--stretch</code> <code>.align-self--stretch</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
       <ul class="list align-content--stretch" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Amet</span>
           </button>
         </li>
@@ -2456,17 +1899,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list">
         <li>
-          <button type="button" style="height: 60px;">
+          <button type="button" class="btn" style="height: 60px;">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--flex-start">
+          <button type="button" class="btn align-self--flex-start">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--flex-start">
+          <button type="button" class="btn align-self--flex-start">
             <span>Amet</span>
           </button>
         </li>
@@ -2482,17 +1925,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list">
         <li>
-          <button type="button" style="height: 60px;">
+          <button type="button" class="btn" style="height: 60px;">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--flex-end">
+          <button type="button" class="btn align-self--flex-end">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--flex-end">
+          <button type="button" class="btn align-self--flex-end">
             <span>Amet</span>
           </button>
         </li>
@@ -2508,17 +1951,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list">
         <li>
-          <button type="button" style="height: 60px;">
+          <button type="button" class="btn" style="height: 60px;">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--center">
+          <button type="button" class="btn align-self--center">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--center">
+          <button type="button" class="btn align-self--center">
             <span>Amet</span>
           </button>
         </li>
@@ -2534,17 +1977,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list">
         <li>
-          <button type="button" style="height: 60px;">
+          <button type="button" class="btn" style="height: 60px;">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--baseline">
+          <button type="button" class="btn align-self--baseline">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--baseline">
+          <button type="button" class="btn align-self--baseline">
             <span>Amet</span>
           </button>
         </li>
@@ -2560,17 +2003,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list">
         <li>
-          <button type="button" style="height: 60px;">
+          <button type="button" class="btn" style="height: 60px;">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--stretch">
+          <button type="button" class="btn align-self--stretch">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--stretch">
+          <button type="button" class="btn align-self--stretch">
             <span>Amet</span>
           </button>
         </li>
@@ -2586,17 +2029,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list">
         <li>
-          <button type="button" style="height: 60px;">
+          <button type="button" class="btn" style="height: 60px;">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--auto">
+          <button type="button" class="btn align-self--auto">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--auto">
+          <button type="button" class="btn align-self--auto">
             <span>Amet</span>
           </button>
         </li>
@@ -2655,17 +2098,17 @@ description: List is used to space it's childrens in a column/row layout. Can al
     <div class="demo-source" data-lang="html">
       <ul class="list">
         <li class="order--2">
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
-        <li class="order--1-lg">
-          <button type="button">
+        <li class="order--1">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
-        <li class="order--0-lg">
-          <button type="button">
+        <li class="order--0 order--3-sm">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>

@@ -26,17 +26,25 @@
 }
 
 .multilevel-list {
+  // btn
+  .list_btn({
+    .btn--secondary-empty();
+    .btn--tall();
+    .btn--none-x();
+    margin-bottom: -1px !important;
+    &@{btn--design} {
+      border-top-color: @gray--300 !important;
+      border-bottom-color: @gray--300 !important;
+    }
+    > span {
+      justify-content: space-between;
+    }
+  });
+  // caret
   > li {
     > button {
       .caret();
       .caret.caret--horizontal();
-    }
-    > a, > button {
-      margin-bottom: -1px !important;
-      &@{btn--design} {
-        border-top-color: @gray--300 !important;
-        border-bottom-color: @gray--300 !important;
-      }
     }
   }
 }
