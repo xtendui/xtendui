@@ -80,7 +80,7 @@ class Ajax extends Core {
       url = location.pathname + location.search;
     }
     // set pushstate
-    self.detail.location = new URL(url, location);
+    self.detail.locationFrom = new URL(url, location);
     self.pushState(url, document.title);
   }
 
@@ -169,9 +169,10 @@ class Ajax extends Core {
     }
     // check url
     if (!self.detail.initial) {
+      // location
+      self.detail.locationTo = new URL(url, location);
       // dispatch
       self.eDetailSet();
-      self.detail.locationTo = new URL(url, location);
       self.queryElement.dispatchEvent(new CustomEvent('request.xt.ajax', {detail: self.eDetail}));
       // duration
       self.detail.requestDate = new Date();
@@ -222,9 +223,6 @@ class Ajax extends Core {
     html.innerHTML = responseText.trim();
     let title = html.querySelectorAll('head title')[0].innerHTML;
     let replace = html.querySelectorAll(options.query)[0];
-    // dispatch
-    self.eDetailSet();
-    self.queryElement.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
     // data-xt-ajax-keep
     /*
     // NEEDS constructor && !object.dataset.xtAjaxKept // not when ajax-kept
@@ -292,7 +290,6 @@ class Ajax extends Core {
     // dispatch
     self.eDetailSet();
     self.eDetail.error = true;
-    self.queryElement.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
     self.queryElement.dispatchEvent(new CustomEvent('done.xt.ajax', {detail: self.eDetail}));
   }
 
@@ -304,7 +301,7 @@ class Ajax extends Core {
     // push object state
     if (!history.state || !history.state.url || history.state.url !== url) {
       document.title = title;
-      self.detail.location = new URL(url, location);
+      self.detail.locationFrom = new URL(location);
       history.pushState({'url': url, 'title': title}, title, url);
     } else {
       document.title = history.state.title;
