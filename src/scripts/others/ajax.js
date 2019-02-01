@@ -206,7 +206,7 @@ class Ajax extends Core {
     // dispatch
     self.eDetailSet();
     self.queryElement.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
-    // after time
+    // duration
     clearTimeout(parseFloat(self.object.dataset.xtAjaxTimeout));
     self.object.dataset.xtAjaxTimeout = setTimeout(function () {
       // data-xt-ajax-keep
