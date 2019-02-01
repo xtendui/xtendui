@@ -1420,6 +1420,7 @@ div.btn {
 }
 .overlay--screen > .backdrop {
   transition: initial !important;
+  transform: none !important;
   animation: initial !important;
   opacity: 0 !important;
 }
@@ -1492,6 +1493,7 @@ div.btn {
 }
 .slider--disabled .slide:not(.active) {
   transition: initial;
+  transform: none;
   animation: initial;
   opacity: 0;
 }
@@ -1929,12 +1931,14 @@ a.links--none,
 }
 .trans-none {
   transition: initial !important;
+  transform: none !important;
 }
 .anim-none {
   animation: initial !important;
 }
 .trans-anim-none {
   transition: initial !important;
+  transform: none !important;
   animation: initial !important;
 }
 .responsive-x {
@@ -3008,6 +3012,7 @@ a.links--none,
   display: block !important;
   visibility: hidden !important;
   transition: initial !important;
+  transform: none !important;
   animation: initial !important;
   opacity: 0 !important;
 }
@@ -5196,6 +5201,7 @@ img.btn--close > span::after {
 .drop--disabled > .drop > .drop_inner > .drop_content {
   opacity: 1 !important;
   transition: initial !important;
+  transform: none !important;
   animation: initial !important;
 }
 .drop--max-height > .drop_inner > .drop_content {
@@ -5536,6 +5542,7 @@ img.btn--close > span::after {
 .overlay--disabled .overlay .overlay_content {
   opacity: 1 !important;
   transition: initial !important;
+  transform: none !important;
   animation: initial !important;
 }
 .overlay_outer {
@@ -6353,6 +6360,7 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
 .loader--mouse.active .filler {
   opacity: 1 !important;
   transition: initial !important;
+  transform: none !important;
   animation: initial !important;
 }
 .loader--mouse.out {
@@ -6367,11 +6375,13 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
 .loader--mouse.out .filler {
   opacity: 1 !important;
   transition: initial !important;
+  transform: none !important;
   animation: initial !important;
 }
 .loader--js .spinner circle {
   opacity: 1 !important;
   transition: initial !important;
+  transform: none !important;
   animation: initial !important;
 }
 .loader--js .filler span {
