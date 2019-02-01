@@ -6176,7 +6176,7 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
 .sticky--moving {
   transition-property: top;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.68, .13, .25, 1);
 }
 .spinner {
   width: 25px;
