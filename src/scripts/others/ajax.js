@@ -33,9 +33,6 @@ class Ajax extends Core {
   initScopeElements() {
     super.initScopeElements();
     let self = this;
-    let options = self.options;
-    // queryElement
-    self.queryElement = self.object.querySelectorAll(options.query)[0] || self.object;
     // remove external links
     for (let element of self.elements) {
       if (location.hostname !== element.hostname) {
@@ -164,6 +161,9 @@ class Ajax extends Core {
   ajaxCall(element, url) {
     let self = this;
     let options = self.options;
+    // queryElement
+    self.queryElement = self.object.querySelectorAll(options.query)[0] || self.object;
+    // url
     if (element) {
       url = element.getAttribute('href').split('#')[0];
     }
@@ -173,7 +173,7 @@ class Ajax extends Core {
       self.detail.locationTo = new URL(url, location);
       // dispatch
       self.eDetailSet();
-      self.queryElement.dispatchEvent(new CustomEvent('request.xt.ajax', {detail: self.eDetail}));
+      self.object.dispatchEvent(new CustomEvent('request.xt.ajax', {detail: self.eDetail}));
       // duration
       self.detail.requestDate = new Date();
       clearTimeout(parseFloat(self.object.dataset.xtAjaxDurationTimeout));
@@ -186,7 +186,7 @@ class Ajax extends Core {
           if (request.status >= 200 && request.status < 400) {
             // dispatch
             self.eDetailSet();
-            self.queryElement.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
+            self.object.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
             // duration
             self.detail.requestDuration -= new Date() - self.detail.requestDate;
             clearTimeout(parseFloat(self.object.dataset.xtAjaxDurationTimeout));
@@ -203,7 +203,7 @@ class Ajax extends Core {
             // dispatch
             self.eDetailSet();
             self.eDetail.error = true;
-            self.queryElement.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
+            self.object.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
             // error
             self.ajaxError(element, url, request.responseText);
           }
@@ -279,7 +279,7 @@ class Ajax extends Core {
     replace = null;
     // dispatch
     self.eDetailSet();
-    self.queryElement.dispatchEvent(new CustomEvent('done.xt.ajax', {detail: self.eDetail}));
+    self.object.dispatchEvent(new CustomEvent('done.xt.ajax', {detail: self.eDetail}));
   }
 
   /**
@@ -297,7 +297,7 @@ class Ajax extends Core {
     // dispatch
     self.eDetailSet();
     self.eDetail.error = true;
-    self.queryElement.dispatchEvent(new CustomEvent('done.xt.ajax', {detail: self.eDetail}));
+    self.object.dispatchEvent(new CustomEvent('done.xt.ajax', {detail: self.eDetail}));
   }
 
   /**
