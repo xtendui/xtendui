@@ -112,13 +112,6 @@ description: List is used to space it's childrens in a column/row layout. Can al
 <p>List's buttons are styled automatically, but if you want to customize the buttons use the class
   <code>li.custom</code>.</p>
 
-<div class="alert alert--primary">
-  <div class="alert_content">
-    In theming code use <code>.list_btn--all({});</code> to style all <code>.list > li > .btn</code> or <code>.list_btn({});</code>
-    to style all <code>.list:not(.custom) > li > .btn</code>.
-  </div>
-</div>
-
 <div class="demo">
   <div class="demo-item demo-preview" data-name="custom">
     <div class="demo-text">
@@ -295,6 +288,22 @@ description: List is used to space it's childrens in a column/row layout. Can al
 </div>
 
 <h2>Options</h2>
+
+<h3>Custom</h3>
+
+<p>In theming code use <code>.list_btn--all({});</code> to style all <code>.list > li > .btn</code> or <code>.list_btn({});</code>
+  to style all <code>.list:not(.custom) > li > .btn</code>.</p>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/layout/list/custom.html"
+       data-name="custom">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>.list_btn({});</code> <code>.list_btn--all({});</code>
+      </div>
+    </div>
+  </div>
+</div>
 
 <h3>Space</h3>
 
@@ -506,7 +515,8 @@ description: List is used to space it's childrens in a column/row layout. Can al
 <p>Lists <strong>automatically</strong> has left aligment. You can <strong>specify a different one</strong> with this
   classes/mixins.</p>
 
-<p>You can also set others flex alignments like <code>.list_btn({ > span { justify-content: space-between; } });</code>.</p>
+<p>You can also set others flex alignments like <code>.list_btn({ > span { justify-content: space-between; } });</code>.
+</p>
 
 <div class="table--scroll">
   <table class="table table-small">

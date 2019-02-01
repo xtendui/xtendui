@@ -1,0 +1,14 @@
+@import (reference) "../../../../../dist/styles/xtend.less";
+
+.list.list--custom {
+  .list_btn--all({
+    .btn--secondary-empty();
+  });
+  .list_btn({
+    .btn--small();
+    .btn--wide();
+    > span {
+      color: red;
+    }
+  });
+}
