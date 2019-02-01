@@ -163,6 +163,7 @@ class Ajax extends Core {
    */
   ajaxCall(element, url) {
     let self = this;
+    let options = self.options;
     if (element) {
       url = element.getAttribute('href').split('#')[0];
     }
@@ -172,20 +173,38 @@ class Ajax extends Core {
       self.eDetailSet();
       self.detail.locationTo = new URL(url, location);
       self.queryElement.dispatchEvent(new CustomEvent('request.xt.ajax', {detail: self.eDetail}));
-      // call
-      let request = new XMLHttpRequest();
-      request.open('GET', url, true);
-      request.onload = function () {
-        if (request.status >= 200 && request.status < 400) {
-          self.ajaxSuccess(element, url, request.responseText);
-        } else {
+      // duration
+      self.detail.requestDate = new Date();
+      clearTimeout(parseFloat(self.object.dataset.xtAjaxDurationTimeout));
+      requestAnimationFrame( function() {
+        self.detail.requestDuration = options.duration || Xt.animTime(self.queryElement);
+        // call
+        let request = new XMLHttpRequest();
+        request.open('GET', url, true);
+        request.onload = function () {
+          if (request.status >= 200 && request.status < 400) {
+            // duration
+            self.detail.requestDuration -= new Date() - self.detail.requestDate;
+            clearTimeout(parseFloat(self.object.dataset.xtAjaxDurationTimeout));
+            if (self.detail.requestDuration > 0) {
+              self.object.dataset.xtAjaxDurationTimeout = setTimeout( function() {
+                // success
+                self.ajaxSuccess(element, url, request.responseText);
+              }, self.detail.requestDuration).toString();
+            } else {
+              // success
+              self.ajaxSuccess(element, url, request.responseText);
+            }
+          } else {
+            // error
+            self.ajaxError(element, url, request.responseText);
+          }
+        };
+        request.onerror = function () {
           self.ajaxError(element, url, request.responseText);
-        }
-      };
-      request.onerror = function () {
-        self.ajaxError(element, url, request.responseText);
-      };
-      request.send();
+        };
+        request.send();
+      });
     }
   }
 
@@ -206,60 +225,56 @@ class Ajax extends Core {
     // dispatch
     self.eDetailSet();
     self.queryElement.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
-    // duration
-    clearTimeout(parseFloat(self.object.dataset.xtAjaxTimeout));
-    self.object.dataset.xtAjaxTimeout = setTimeout(function () {
-      // data-xt-ajax-keep
-      /*
-      // NEEDS constructor && !object.dataset.xtAjaxKept // not when ajax-kept
-      //DOES NOT WORK it doesn't copy the events..
-      for (let tr of self.queryElement.querySelectorAll('[data-xt-ajax-keep]')) {
-        // replace
-        let trId = tr.getAttribute('data-xt-ajax-keep');
-        let rep = replace.querySelectorAll('[data-xt-ajax-keep="' + trId + '"]');
-        if (rep.length) {
-          rep = rep[0];
-          if (tr.dataset.xtAjaxKept !== url) {
-            tr.dataset.xtAjaxKept = url;
-            // copy
-            let changed = rep.parentNode.replaceChild(tr, rep);
-            // copy events
-            let elsTr = Array.from(rep.querySelectorAll('*'));
-            elsTr.push(rep);
-            let elsCh = Array.from(changed.querySelectorAll('*'));
-            elsCh.push(changed);
-            for (let i = 0; i < elsTr.length; i++) {
-              let elTr = elsTr[i];
-              let elCh = elsCh[i];
-              if (elCh) {
-                // check storage for events
-                let storages = Xt.dataStorage.getAll(elTr);
-                if (storages) {
-                  for (let [key, value] of storages) {
-                    // copy events
-                    let handler = Xt.dataStorage.put(elCh, key, value);
-                    elCh.removeEventListener('click', handler);
-                    elCh.addEventListener('click', handler);
-                  }
+    // data-xt-ajax-keep
+    /*
+    // NEEDS constructor && !object.dataset.xtAjaxKept // not when ajax-kept
+    //DOES NOT WORK it doesn't copy the events..
+    for (let tr of self.queryElement.querySelectorAll('[data-xt-ajax-keep]')) {
+      // replace
+      let trId = tr.getAttribute('data-xt-ajax-keep');
+      let rep = replace.querySelectorAll('[data-xt-ajax-keep="' + trId + '"]');
+      if (rep.length) {
+        rep = rep[0];
+        if (tr.dataset.xtAjaxKept !== url) {
+          tr.dataset.xtAjaxKept = url;
+          // copy
+          let changed = rep.parentNode.replaceChild(tr, rep);
+          // copy events
+          let elsTr = Array.from(rep.querySelectorAll('*'));
+          elsTr.push(rep);
+          let elsCh = Array.from(changed.querySelectorAll('*'));
+          elsCh.push(changed);
+          for (let i = 0; i < elsTr.length; i++) {
+            let elTr = elsTr[i];
+            let elCh = elsCh[i];
+            if (elCh) {
+              // check storage for events
+              let storages = Xt.dataStorage.getAll(elTr);
+              if (storages) {
+                for (let [key, value] of storages) {
+                  // copy events
+                  let handler = Xt.dataStorage.put(elCh, key, value);
+                  elCh.removeEventListener('click', handler);
+                  elCh.addEventListener('click', handler);
                 }
               }
             }
-
           }
+
         }
       }
-      */
-      // populate dom
-      self.queryElement.outerHTML = replace.outerHTML;
-      // pushstate
-      self.pushState(url, title);
-      // garbage collector
-      html = null;
-      replace = null;
-      // dispatch
-      self.eDetailSet();
-      self.queryElement.dispatchEvent(new CustomEvent('done.xt.ajax', {detail: self.eDetail}));
-    }, options.duration).toString();
+    }
+    */
+    // populate dom
+    self.queryElement.outerHTML = replace.outerHTML;
+    // pushstate
+    self.pushState(url, title);
+    // garbage collector
+    html = null;
+    replace = null;
+    // dispatch
+    self.eDetailSet();
+    self.queryElement.dispatchEvent(new CustomEvent('done.xt.ajax', {detail: self.eDetail}));
   }
 
   /**
@@ -306,7 +321,7 @@ Ajax.componentName = 'ajax';
 Ajax.defaults = {
   "query": "body", // needs to be unique
   "baseUrl": "/",
-  "duration": 0,
+  "duration": false,
   "elements": "a[href]:not([href^='#'])",
   "class": "active",
   "on": "click",
