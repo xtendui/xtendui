@@ -184,6 +184,9 @@ class Ajax extends Core {
         request.open('GET', url, true);
         request.onload = function () {
           if (request.status >= 200 && request.status < 400) {
+            // dispatch
+            self.eDetailSet();
+            self.queryElement.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
             // duration
             self.detail.requestDuration -= new Date() - self.detail.requestDate;
             clearTimeout(parseFloat(self.object.dataset.xtAjaxDurationTimeout));
@@ -197,6 +200,10 @@ class Ajax extends Core {
               self.ajaxSuccess(element, url, request.responseText);
             }
           } else {
+            // dispatch
+            self.eDetailSet();
+            self.eDetail.error = true;
+            self.queryElement.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
             // error
             self.ajaxError(element, url, request.responseText);
           }
