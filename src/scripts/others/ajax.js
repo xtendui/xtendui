@@ -80,6 +80,7 @@ class Ajax extends Core {
       url = location.pathname + location.search;
     }
     // set pushstate
+    self.detail.location = new URL(url, location);
     self.pushState(url, document.title);
   }
 
@@ -169,12 +170,9 @@ class Ajax extends Core {
     if (!self.detail.initial) {
       // dispatch
       self.eDetailSet();
-      self.detail.location = {};
-      self.detail.location.pathname = location.pathname;
-      self.detail.location.search = location.search;
+      self.detail.locationTo = new URL(url, location);
       self.queryElement.dispatchEvent(new CustomEvent('request.xt.ajax', {detail: self.eDetail}));
       // call
-      setTimeout(function(){
       let request = new XMLHttpRequest();
       request.open('GET', url, true);
       request.onload = function () {
@@ -188,7 +186,6 @@ class Ajax extends Core {
         self.ajaxError(element, url, request.responseText);
       };
       request.send();
-      }, 2000);
     }
   }
 
@@ -206,56 +203,63 @@ class Ajax extends Core {
     html.innerHTML = responseText.trim();
     let title = html.querySelectorAll('head title')[0].innerHTML;
     let replace = html.querySelectorAll(options.query)[0];
-    // data-xt-ajax-keep
-    /*
-    // NEEDS constructor && !object.dataset.xtAjaxKept // not when ajax-kept
-    //DOES NOT WORK it doesn't copy the events..
-    for (let tr of self.queryElement.querySelectorAll('[data-xt-ajax-keep]')) {
-      // replace
-      let trId = tr.getAttribute('data-xt-ajax-keep');
-      let rep = replace.querySelectorAll('[data-xt-ajax-keep="' + trId + '"]');
-      if (rep.length) {
-        rep = rep[0];
-        if (tr.dataset.xtAjaxKept !== url) {
-          tr.dataset.xtAjaxKept = url;
-          // copy
-          let changed = rep.parentNode.replaceChild(tr, rep);
-          // copy events
-          let elsTr = Array.from(rep.querySelectorAll('*'));
-          elsTr.push(rep);
-          let elsCh = Array.from(changed.querySelectorAll('*'));
-          elsCh.push(changed);
-          for (let i = 0; i < elsTr.length; i++) {
-            let elTr = elsTr[i];
-            let elCh = elsCh[i];
-            if (elCh) {
-              // check storage for events
-              let storages = Xt.dataStorage.getAll(elTr);
-              if (storages) {
-                for (let [key, value] of storages) {
-                  // copy events
-                  let handler = Xt.dataStorage.put(elCh, key, value);
-                  elCh.removeEventListener('click', handler);
-                  elCh.addEventListener('click', handler);
-                }
-              }
-            }
-          }
-
-        }
-      }
-    }
-    */
-    // populate dom
-    self.queryElement.outerHTML = replace.outerHTML;
-    // pushstate
-    self.pushState(url, title);
-    // garbage collector
-    html = null;
-    replace = null;
     // dispatch
     self.eDetailSet();
     self.queryElement.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
+    // after time
+    clearTimeout(parseFloat(self.object.dataset.xtAjaxTimeout));
+    self.object.dataset.xtAjaxTimeout = setTimeout(function () {
+      // data-xt-ajax-keep
+      /*
+      // NEEDS constructor && !object.dataset.xtAjaxKept // not when ajax-kept
+      //DOES NOT WORK it doesn't copy the events..
+      for (let tr of self.queryElement.querySelectorAll('[data-xt-ajax-keep]')) {
+        // replace
+        let trId = tr.getAttribute('data-xt-ajax-keep');
+        let rep = replace.querySelectorAll('[data-xt-ajax-keep="' + trId + '"]');
+        if (rep.length) {
+          rep = rep[0];
+          if (tr.dataset.xtAjaxKept !== url) {
+            tr.dataset.xtAjaxKept = url;
+            // copy
+            let changed = rep.parentNode.replaceChild(tr, rep);
+            // copy events
+            let elsTr = Array.from(rep.querySelectorAll('*'));
+            elsTr.push(rep);
+            let elsCh = Array.from(changed.querySelectorAll('*'));
+            elsCh.push(changed);
+            for (let i = 0; i < elsTr.length; i++) {
+              let elTr = elsTr[i];
+              let elCh = elsCh[i];
+              if (elCh) {
+                // check storage for events
+                let storages = Xt.dataStorage.getAll(elTr);
+                if (storages) {
+                  for (let [key, value] of storages) {
+                    // copy events
+                    let handler = Xt.dataStorage.put(elCh, key, value);
+                    elCh.removeEventListener('click', handler);
+                    elCh.addEventListener('click', handler);
+                  }
+                }
+              }
+            }
+
+          }
+        }
+      }
+      */
+      // populate dom
+      self.queryElement.outerHTML = replace.outerHTML;
+      // pushstate
+      self.pushState(url, title);
+      // garbage collector
+      html = null;
+      replace = null;
+      // dispatch
+      self.eDetailSet();
+      self.queryElement.dispatchEvent(new CustomEvent('done.xt.ajax', {detail: self.eDetail}));
+    }, options.duration).toString();
   }
 
   /**
@@ -274,15 +278,18 @@ class Ajax extends Core {
     self.eDetailSet();
     self.eDetail.error = true;
     self.queryElement.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
+    self.queryElement.dispatchEvent(new CustomEvent('done.xt.ajax', {detail: self.eDetail}));
   }
 
   /**
    * history pushstate
    */
   pushState(url, title) {
+    let self = this;
     // push object state
     if (!history.state || !history.state.url || history.state.url !== url) {
       document.title = title;
+      self.detail.location = new URL(url, location);
       history.pushState({'url': url, 'title': title}, title, url);
     } else {
       document.title = history.state.title;
@@ -299,6 +306,7 @@ Ajax.componentName = 'ajax';
 Ajax.defaults = {
   "query": "body", // needs to be unique
   "baseUrl": "/",
+  "duration": 0,
   "elements": "a[href]:not([href^='#'])",
   "class": "active",
   "on": "click",
