@@ -293,7 +293,7 @@ class Ajax extends Core {
 Ajax.componentName = 'ajax';
 Ajax.defaults = {
   "query": "body", // needs to be unique
-  "baseUrl": "",
+  "baseUrl": "/",
   "elements": "a[href]:not([href^='#'])",
   "class": "active",
   "on": "click",
