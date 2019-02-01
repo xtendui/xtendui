@@ -1478,7 +1478,7 @@ class Core {
         }
         // @TODO refactor
         if (self.ajaxCall) {
-          self.ajaxCall(obj[type].groupElements.single.getAttribute('href').split('#')[0]);
+          self.ajaxCall(obj[type].groupElements.single);
         }
         // remove queue
         self.detail.queueOn.pop();
