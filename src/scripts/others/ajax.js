@@ -36,17 +36,27 @@ class Ajax extends Core {
     let options = self.options;
     // queryElement
     self.queryElement = self.object.querySelectorAll(options.query)[0] || self.object;
+    // remove external links
+    for (let element of self.elements) {
+      let url = element.getAttribute('href').split('#')[0];
+      if (self.urlHasHost(url)) {
+        if (location.pathname !== self.urlWithoutHost(url)) {
+          let els = Array.from(self.elements).filter(x => x !== element);
+          self.elements = els;
+        }
+      }
+    }
     // generate groups
-    self.groupLink = [];
+    self.groupUrl = [];
     for (let element of self.elements) {
       // populate
-      let link = element.getAttribute('href').split('#')[0];
-      if (!self.groupLink[link]) {
-        self.groupLink[link] = [];
+      let url = element.getAttribute('href').split('#')[0];
+      if (!self.groupUrl[url]) {
+        self.groupUrl[url] = [];
       }
-      self.groupLink[link].push(element);
+      self.groupUrl[url].push(element);
       // assign group
-      element.setAttribute('data-xt-group', self.namespace + '-' + link);
+      element.setAttribute('data-xt-group', self.namespace + '-' + url);
     }
   }
 
@@ -159,11 +169,6 @@ class Ajax extends Core {
     let self = this;
     // check url
     if (!self.detail.initial) {
-      if (self.urlHasHost(url)) {
-        if (location.pathname !== self.urlWithoutHost(url)) {
-          return false;
-        }
-      }
       // ajax call
       if (url) {
         // dispatch
