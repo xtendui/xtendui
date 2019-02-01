@@ -728,6 +728,14 @@ Xt.animTimeout = function (el, func, timing = null) {
 };
 
 /**
+ * clear animTimeout
+ * @param {Node|HTMLElement|EventTarget|Window} el Element animating
+ */
+Xt.animTimeoutClear = function (el) {
+  clearTimeout(parseFloat(el.dataset.xtAnimTimeout));
+};
+
+/**
  * Fix resize event multiple calls and adds delay on resize and scroll events
  * @param {Event} e Event
  * @param {Node|HTMLElement|EventTarget|Window} element Element to save timeout
