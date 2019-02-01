@@ -945,7 +945,7 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
 }
 .list--base > li:not(.custom) > .btn:active::before,
 .list--base > li:not(.custom) > .btn.active::before {
-  box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
 }
 .list--base > li:not(.custom) > .btn > span {
   padding: 0.6em 1.2em;
@@ -1080,7 +1080,7 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
 }
 .list > li:not(.custom) > .btn:active::before,
 .list > li:not(.custom) > .btn.active::before {
-  box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
 }
 .list > li:not(.custom) > .btn > span {
   padding: 0.6em 1.2em;
@@ -3222,7 +3222,7 @@ small {
 code {
   margin: 0 0.05em;
   padding: 0.05em 0.05em;
-  background: rgba(52, 58, 64, 0.06);
+  background: rgba(0, 0, 0, 0.06);
   font-family: monaco, Consolas, 'Lucida Console', monospace;
   font-weight: normal;
   font-style: normal;
@@ -4073,7 +4073,7 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label::after {
 }
 .list > li:not(.custom) > .btn:active::before,
 .list > li:not(.custom) > .btn.active::before {
-  box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
 }
 .list--block {
   margin: -0.5rem -0.5rem;
@@ -4118,7 +4118,7 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label::after {
 }
 .list--block > li:not(.custom) > .btn:active::before,
 .list--block > li:not(.custom) > .btn.active::before {
-  box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
 }
 .list--drop {
   flex-wrap: nowrap;
@@ -4686,7 +4686,7 @@ img.caret.caret--horizontal.caret--inverse.active > span::before {
 }
 .btn:active::before,
 .btn.active::before {
-  box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
 }
 .btn > span {
   padding: 0.6em 1.2em;
@@ -4829,7 +4829,7 @@ img.caret.caret--horizontal.caret--inverse.active > span::before {
 }
 .btn--secondary:active::before,
 .btn--secondary.active::before {
-  box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
 }
 .btn--secondary-empty {
   text-decoration: none;
@@ -4868,7 +4868,7 @@ img.caret.caret--horizontal.caret--inverse.active > span::before {
 }
 .btn--secondary-empty:active::before,
 .btn--secondary-empty.active::before {
-  box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
 }
 .btn--link > span {
   text-decoration: none;
@@ -5084,7 +5084,7 @@ img.btn--close > span::after {
   bottom: auto;
 }
 .drop > .drop_inner > .drop_design {
-  box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
 }
 .drop > .drop_inner > .drop_content > .list {
   padding-top: 1.3rem;
@@ -5300,7 +5300,7 @@ img.btn--close > span::after {
 }
 .drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active::before,
 .drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active::before {
-  box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
 }
 .drop--white > .drop_inner {
   color: #343a40;
@@ -5349,7 +5349,7 @@ img.btn--close > span::after {
   box-shadow: 0 0.1rem 1rem rgba(115, 103, 240, 0.25), 0 0.2rem 2rem rgba(115, 103, 240, 0.4);
 }
 .overlay .overlay_design {
-  box-shadow: 0 0 10rem rgba(52, 58, 64, 0.25);
+  box-shadow: 0 0 10rem rgba(0, 0, 0, 0.25);
 }
 .overlay .overlay_content {
   padding: 3rem;
@@ -5754,7 +5754,7 @@ img.btn--close > span::after {
 }
 .overlay--secondary .overlay_inner > .btn--close:active::before,
 .overlay--secondary .overlay_inner > .btn--close.active::before {
-  box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
 }
 .overlay--white .overlay_design {
   border-color: #fff;
@@ -5932,7 +5932,7 @@ img.btn--close > span::after {
 }
 .slider_pagination > li:not(.custom) > .btn:active::before,
 .slider_pagination > li:not(.custom) > .btn.active::before {
-  box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
 }
 .slider_pagination > li:not(.custom) > .btn > span {
   padding: 0.6em 1.2em;
@@ -6003,7 +6003,7 @@ img.btn--close > span::after {
 }
 .slider_pagination > li:not(.custom) > .btn:active::before,
 .slider_pagination > li:not(.custom) > .btn.active::before {
-  box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
 }
 .slider_pagination > * {
   margin: 0.5rem 0.5rem;
@@ -6099,7 +6099,7 @@ img.btn--close > span::after {
 }
 .slider_pagination [data-xt-pag]:active::before,
 .slider_pagination [data-xt-pag].active::before {
-  box-shadow: 0 0.1rem 1rem rgba(52, 58, 64, 0.05), 0 0.2rem 2rem rgba(52, 58, 64, 0.1);
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
 }
 .slider_pagination [data-xt-pag] > span {
   padding: 0.6em 1.2em;
@@ -6181,7 +6181,7 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   height: 1em;
 }
 .spinner svg {
-  filter: drop-shadow(0 0.1rem 0.2rem rgba(52, 58, 64, 0.1)) drop-shadow(0 0.2rem 0.4rem rgba(52, 58, 64, 0.25));
+  filter: drop-shadow(0 0.1rem 0.2rem rgba(0, 0, 0, 0.1)) drop-shadow(0 0.2rem 0.4rem rgba(0, 0, 0, 0.25));
 }
 .spinner svg circle {
   fill: none;

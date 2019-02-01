@@ -38,11 +38,8 @@ class Ajax extends Core {
     self.queryElement = self.object.querySelectorAll(options.query)[0] || self.object;
     // remove external links
     for (let element of self.elements) {
-      let url = element.getAttribute('href').split('#')[0];
-      if (self.urlHasHost(url)) {
-        if (location.pathname !== self.urlWithoutHost(url)) {
-          self.elements = Array.from(self.elements).filter(x => x !== element);
-        }
+      if (location.hostname !== element.hostname) {
+        self.elements = Array.from(self.elements).filter(x => x !== element);
       }
     }
     // generate groups
@@ -67,12 +64,10 @@ class Ajax extends Core {
     let options = self.options;
     // automatic initial currents
     for (let element of self.elements) {
-      if (location.hostname === element.hostname) {
-        let loc = location.pathname + location.search;
-        let url = element.pathname + element.search;
-        if (url !== '' && loc === url) {
-          element.classList.add(...options.classes);
-        }
+      let loc = location.pathname + location.search;
+      let url = element.pathname + element.search;
+      if (url !== '' && loc === url) {
+        element.classList.add(...options.classes);
       }
     }
     // detect url
