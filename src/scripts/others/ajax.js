@@ -41,8 +41,7 @@ class Ajax extends Core {
       let url = element.getAttribute('href').split('#')[0];
       if (self.urlHasHost(url)) {
         if (location.pathname !== self.urlWithoutHost(url)) {
-          let els = Array.from(self.elements).filter(x => x !== element);
-          self.elements = els;
+          self.elements = Array.from(self.elements).filter(x => x !== element);
         }
       }
     }
@@ -70,7 +69,7 @@ class Ajax extends Core {
     for (let element of self.elements) {
       if (location.hostname === element.hostname) {
         let loc = location.pathname + location.search;
-        let url = options.baseUrl + element.pathname + element.search;
+        let url = element.pathname + element.search;
         if (url !== '' && loc === url) {
           element.classList.add(...options.classes);
         }
@@ -299,7 +298,7 @@ class Ajax extends Core {
 Ajax.componentName = 'ajax';
 Ajax.defaults = {
   "query": "body", // needs to be unique
-  "baseUrl": "/",
+  "baseUrl": "",
   "elements": "a[href]:not([href^='#'])",
   "class": "active",
   "on": "click",

@@ -1155,6 +1155,9 @@ a,
   cursor: default;
   pointer-events: none;
 }
+a[href]:not([href^='#']).active {
+  pointer-events: none;
+}
 .btn {
   -webkit-user-select: none;
   -moz-user-select: none;

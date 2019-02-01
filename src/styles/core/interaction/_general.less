@@ -2,7 +2,7 @@
 // general
 //////////////////////
 
-// links
+// link
 
 a, .alink, .btn--link {
   .user-select--none();
@@ -15,4 +15,12 @@ a, .alink, .btn--link {
 [disabled], .disabled {
   cursor: default;
   pointer-events: none;
+}
+
+// link active (xt-ajax)
+
+a[href]:not([href^='#']) {
+  &.active {
+    pointer-events: none;
+  }
 }
