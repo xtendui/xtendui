@@ -14,9 +14,9 @@ function toggleInit(main, index, query) {
     }
   });
 
-  let object = self.object;
-
   // vars
+
+  let object = self.object;
 
   let easeIn = new Ease(BezierEasing(.36, 0, 0, 1));
   let easeOut = new Ease(BezierEasing(1, 0, .64, 1));
