@@ -127,6 +127,7 @@ class Ajax extends Core {
     let self = this;
     // handler
     if (history.state && history.state.url) {
+      self.initCurrents();
       self.ajaxCall(null, history.state.url);
     }
   }
