@@ -58,6 +58,17 @@ class Ajax extends Core {
    */
   initCurrents() {
     let self = this;
+    // init links
+    self.initCurrentsLinks();
+    // super
+    super.initCurrents();
+  }
+
+  /**
+   * init currents
+   */
+  initCurrentsLinks() {
+    let self = this;
     let options = self.options;
     // automatic initial currents
     for (let element of self.elements) {
@@ -83,8 +94,6 @@ class Ajax extends Core {
     // set pushstate
     self.detail.locationFrom = new URL(url, location);
     self.pushState(url, document.title);
-    // super
-    super.initCurrents();
   }
 
   /**
@@ -127,7 +136,9 @@ class Ajax extends Core {
     let self = this;
     // handler
     if (history.state && history.state.url) {
-      self.initCurrents();
+      // init links
+      self.initCurrentsLinks();
+      // ajax
       self.ajaxCall(null, history.state.url);
     }
   }
@@ -287,6 +298,11 @@ class Ajax extends Core {
     // dispatch
     self.eDetailSet();
     self.object.dispatchEvent(new CustomEvent('done.xt.ajax', {detail: self.eDetail}));
+    // reinit
+    if (!self.detail.initial) {
+      self.detail.initial = true;
+      self.init();
+    }
   }
 
   /**
