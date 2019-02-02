@@ -63,8 +63,12 @@ class Ajax extends Core {
     for (let element of self.elements) {
       let loc = location.pathname + location.search;
       let url = element.pathname + element.search;
-      if (url !== '' && loc === url) {
-        element.classList.add(...options.classes);
+      if (url !== '') {
+        if (loc === url) {
+          element.classList.add(...options.classes);
+        } else {
+          element.classList.remove(...options.classes);
+        }
       }
     }
     // detect url
@@ -79,6 +83,8 @@ class Ajax extends Core {
     // set pushstate
     self.detail.locationFrom = new URL(url, location);
     self.pushState(url, document.title);
+    // super
+    super.initCurrents();
   }
 
   /**
@@ -331,7 +337,8 @@ Ajax.defaults = {
   "on": "click",
   "toggle": false,
   "min": 0,
-  "max": "Infinity",
+  "max": 1,
+  "instant": true,
   "aria": false
 };
 
