@@ -49,7 +49,7 @@ class Drop extends Core {
 // defaults
 //////////////////////
 
-Drop.componentName = 'drop';
+Drop.componentName = 'xt-drop';
 Drop.defaults = {
   "targets": ":scope > .drop",
   "elementsInner": ":scope > a, :scope > button",

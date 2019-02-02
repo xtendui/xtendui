@@ -57,7 +57,7 @@ class Toggle extends Core {
 // defaults
 //////////////////////
 
-Toggle.componentName = 'toggle';
+Toggle.componentName = 'xt-toggle';
 Toggle.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > [class^=\"toggle--\"], :scope > [class*=\" toggle--\"]",

@@ -23,6 +23,8 @@ class Core {
     // constructor
     if (object && !object.dataset.xtCoreDone) {
       object.dataset.xtCoreDone = 'true';
+      // set component to element
+      Xt.set('xt-slider', object, self);
       // init
       self.object = object;
       self.jsOptions = jsOptions;
@@ -75,7 +77,7 @@ class Core {
     // js options
     self.options = Xt.merge([self.defaults, self.jsOptions]);
     // markup options
-    let markupOptions = self.object.getAttribute('data-xt-' + self.constructor.componentName);
+    let markupOptions = self.object.getAttribute('data-' + self.constructor.componentName);
     self.options = Xt.merge([self.options, markupOptions ? JSON.parse(markupOptions) : {}]);
     // classes
     if (self.options.class) {

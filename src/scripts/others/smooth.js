@@ -44,7 +44,7 @@ class Smooth {
     // js options
     self.options = Xt.merge([self.defaults, self.jsOptions]);
     // markup options
-    let markupOptions = self.object.getAttribute('data-xt-' + self.constructor.componentName);
+    let markupOptions = self.object.getAttribute('data-' + self.constructor.componentName);
     self.options = Xt.merge([self.options, markupOptions ? JSON.parse(markupOptions) : {}]);
     // var
     self.scrollElement = self.options.scrollElement;
@@ -172,7 +172,7 @@ class Smooth {
 // defaults
 //////////////////////
 
-Smooth.componentName = 'smooth';
+Smooth.componentName = 'xt-smooth';
 Smooth.defaults = {
   "scrollElement": window,
   "friction": 9,

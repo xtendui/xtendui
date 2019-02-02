@@ -57,7 +57,7 @@ class Overlay extends Core {
 // defaults
 //////////////////////
 
-Overlay.componentName = 'overlay';
+Overlay.componentName = 'xt-overlay';
 Overlay.defaults = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > .overlay_outer",

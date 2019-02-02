@@ -348,7 +348,7 @@ class Ajax extends Core {
 // defaults
 //////////////////////
 
-Ajax.componentName = 'ajax';
+Ajax.componentName = 'xt-ajax';
 Ajax.defaults = {
   "query": "body", // needs to be unique
   "baseUrl": "/",

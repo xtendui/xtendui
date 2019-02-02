@@ -183,6 +183,29 @@ if (document.readyState === 'loading') {
 }
 
 //////////////////////
+// component
+//////////////////////
+
+/**
+ * set component to element
+ * @param {String} name Component's name
+ * @param {Node|HTMLElement|EventTarget|Window} object Component's object
+ * @param {Object} self Component' self
+ */
+Xt.set = function (name, object, self) {
+  Xt.dataStorage.put(object, name, self);
+};
+
+/**
+ * get component from element
+ * @param {String} name Component name
+ * @param {Node|HTMLElement|EventTarget|Window} object Component's object
+ */
+Xt.get = function (name, object) {
+  return Xt.dataStorage.get(object, name);
+};
+
+//////////////////////
 // btnMerge
 // pass .hover and .active classes to .btn inside
 //////////////////////
@@ -550,6 +573,7 @@ Xt.getTranslate = function (element) {
   return transArr;
 };
 */
+
 /**
  * Check if event target is inside elements
  * @param {Node|HTMLElement|EventTarget|Window} element Element to check target
@@ -790,11 +814,10 @@ try {
 }
 
 //////////////////////
-// root
+// root utils
 //////////////////////
 
 // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
-
 /* USAGE:
 height: 100vh;
 height: calc(var(--vh, 1vh) * 100);

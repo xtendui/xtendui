@@ -165,7 +165,7 @@ class Fade extends Core {
 // defaults
 //////////////////////
 
-Fade.componentName = 'fade';
+Fade.componentName = 'xt-fade';
 Fade.defaults = {
   "elements": ".fade",
   "class": "active",

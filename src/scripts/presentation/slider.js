@@ -765,7 +765,7 @@ class Slider extends Core {
 // defaults
 //////////////////////
 
-Slider.componentName = 'slider';
+Slider.componentName = 'xt-slider';
 Slider.defaults = {
   "elements": "[data-xt-pag]",
   "targets": ".slide",
