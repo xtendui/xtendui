@@ -1480,7 +1480,9 @@ class Core {
         }
         // request @TODO refactor
         if (self.ajaxRequest) {
-          self.ajaxRequest(obj[type].groupElements.single);
+          if (!self.detail.initial) {
+            self.ajaxRequest(obj[type].groupElements.single);
+          }
         }
         // remove queue
         self.detail.queueOn.pop();

@@ -62,27 +62,17 @@ class Ajax extends Core {
    */
   initCurrents() {
     let self = this;
-    // init links
-    self.initCurrentsLinks();
-    // super
-    super.initCurrents();
-  }
-
-  /**
-   * init currents
-   */
-  initCurrentsLinks() {
-    let self = this;
-    let options = self.options;
+    // initial
+    self.detail.initial = true;
     // automatic initial currents
     for (let element of self.elements) {
       let loc = location.pathname + location.search;
       let url = element.pathname + element.search;
       if (url !== '') {
         if (loc === url) {
-          element.classList.add(...options.classes);
+          self.eventOn(element, false);
         } else {
-          element.classList.remove(...options.classes);
+          self.eventOff(element, false);
         }
       }
     }
@@ -140,8 +130,8 @@ class Ajax extends Core {
     let self = this;
     // handler
     if (history.state && history.state.url) {
-      // init links
-      self.initCurrentsLinks();
+      // reinit currents
+      self.initCurrents();
       // request set
       self.ajaxRequest(null, history.state.url);
     }
@@ -323,8 +313,12 @@ class Ajax extends Core {
    */
   ajaxError(element, url, request) {
     let self = this;
-    // request reset
-    self.ajaxRequest(null, history.state.url);
+    // reinit currents
+    self.initCurrents();
+    // dispatch
+    self.eDetailSet();
+    self.eDetail.request = request;
+    self.object.dispatchEvent(new CustomEvent('duration.xt.ajax', {detail: self.eDetail}));
   }
 
   /**
