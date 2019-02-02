@@ -142,8 +142,8 @@ class Ajax extends Core {
     if (history.state && history.state.url) {
       // init links
       self.initCurrentsLinks();
-      // ajax
-      self.ajaxCall(null, history.state.url);
+      // request set
+      self.ajaxRequest(null, history.state.url);
     }
   }
 
@@ -176,11 +176,11 @@ class Ajax extends Core {
   //////////////////////
 
   /**
-   * ajax call
+   * ajax request
    * @param {Node|HTMLElement|EventTarget|Window} element Base node
    * @param {String} url Url to get
    */
-  ajaxCall(element, url) {
+  ajaxRequest(element, url) {
     let self = this;
     let options = self.options;
     // queryElement
@@ -205,33 +205,10 @@ class Ajax extends Core {
         let request = new XMLHttpRequest();
         request.open('GET', url, true);
         request.onload = function () {
-          if (request.status >= 200 && request.status < 400) {
-            // dispatch
-            self.eDetailSet();
-            self.object.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
-            // duration
-            self.detail.requestDuration -= new Date() - self.detail.requestDate;
-            clearTimeout(parseFloat(self.object.dataset.xtAjaxDurationTimeout));
-            if (self.detail.requestDuration > 0) {
-              self.object.dataset.xtAjaxDurationTimeout = setTimeout( function() {
-                // success
-                self.ajaxSuccess(element, url, request.responseText);
-              }, self.detail.requestDuration).toString();
-            } else {
-              // success
-              self.ajaxSuccess(element, url, request.responseText);
-            }
-          } else {
-            // dispatch
-            self.eDetailSet();
-            self.eDetail.error = true;
-            self.object.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
-            // error
-            self.ajaxError(element, url, request.responseText);
-          }
+          self.ajaxResponse(element, url, request);
         };
         request.onerror = function () {
-          self.ajaxError(element, url, request.responseText);
+          self.ajaxResponse(element, url, request);
         };
         request.send();
       });
@@ -239,17 +216,45 @@ class Ajax extends Core {
   }
 
   /**
+   * ajax response
+   * @param {Node|HTMLElement|EventTarget|Window} element Base node
+   * @param {String} url Url to get
+   * @param {XMLHttpRequest} request Html response
+   */
+  ajaxResponse(element, url, request) {
+    let self = this;
+    // dispatch
+    self.eDetailSet();
+    self.eDetail.request = request;
+    self.object.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
+    // request
+    if (request.status >= 200 && request.status < 400) {
+      // duration
+      self.detail.requestDuration -= new Date() - self.detail.requestDate;
+      if (self.detail.requestDuration > 0) {
+        self.object.dataset.xtAjaxDurationTimeout = setTimeout( function() {
+          self.ajaxSuccess(element, url, request);
+        }, self.detail.requestDuration).toString();
+      } else {
+        self.ajaxSuccess(element, url, request);
+      }
+    } else {
+      self.ajaxError(element, url, request);
+    }
+  }
+
+  /**
    * ajax success
    * @param {Node|HTMLElement|EventTarget|Window} element Base node
    * @param {String} url Url to get
-   * @param {String} responseText Html response
+   * @param {XMLHttpRequest} request Html response
    */
-  ajaxSuccess(element, url, responseText) {
+  ajaxSuccess(element, url, request) {
     let self = this;
     let options = self.options;
     // set substitute
     let html = document.createElement('html');
-    html.innerHTML = responseText.trim();
+    html.innerHTML = request.responseText.trim();
     let title = html.querySelectorAll('head title')[0].innerHTML;
     let replace = html.querySelectorAll(options.query)[0];
     // data-xt-ajax-keep
@@ -301,7 +306,8 @@ class Ajax extends Core {
     replace = null;
     // dispatch
     self.eDetailSet();
-    self.object.dispatchEvent(new CustomEvent('animated.xt.ajax', {detail: self.eDetail}));
+    self.eDetail.request = request;
+    self.object.dispatchEvent(new CustomEvent('duration.xt.ajax', {detail: self.eDetail}));
     // reinit
     if (!self.detail.initial) {
       self.detail.initial = true;
@@ -313,18 +319,12 @@ class Ajax extends Core {
    * ajax error
    * @param {Node|HTMLElement|EventTarget|Window} element Base node
    * @param {String} url Url to get
-   * @param {String} responseText Html response
+   * @param {XMLHttpRequest} request Html response
    */
-  ajaxError(element, url, responseText) {
+  ajaxError(element, url, request) {
     let self = this;
-    // off element
-    if (element) {
-      self.eventOff(element);
-    }
-    // dispatch
-    self.eDetailSet();
-    self.eDetail.error = true;
-    self.object.dispatchEvent(new CustomEvent('animated.xt.ajax', {detail: self.eDetail}));
+    // request reset
+    self.ajaxRequest(null, history.state.url);
   }
 
   /**

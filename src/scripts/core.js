@@ -1478,9 +1478,9 @@ class Core {
         if (options.auto && options.auto.time) {
           self.eventAutoStart();
         }
-        // @TODO refactor
-        if (self.ajaxCall) {
-          self.ajaxCall(obj[type].groupElements.single);
+        // request @TODO refactor
+        if (self.ajaxRequest) {
+          self.ajaxRequest(obj[type].groupElements.single);
         }
         // remove queue
         self.detail.queueOn.pop();
