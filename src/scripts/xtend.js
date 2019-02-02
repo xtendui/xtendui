@@ -807,21 +807,6 @@ function setVh() {
 addEventListener('resize', setVh);
 setVh();
 
-// Math.nthroot
-// https://stackoverflow.com/questions/7308627/javascript-calculate-the-nth-root-of-a-number
-
-Math.nthroot = function (x, n) {
-  return this.exp((1 / n) * this.log(x));
-};
-
-// save window width and height
-
-addEventListener('focus', function () {
-  for (let iframe of document.querySelectorAll('iframe')) {
-    iframe.contentWindow.dispatchEvent(new CustomEvent('focus'));
-  }
-});
-
 // pass focus and blur window events to iframes
 
 addEventListener('focus', function () {
@@ -835,6 +820,13 @@ addEventListener('blur', function () {
     iframe.contentWindow.dispatchEvent(new CustomEvent('blur'));
   }
 });
+
+// Math.nthroot
+// https://stackoverflow.com/questions/7308627/javascript-calculate-the-nth-root-of-a-number
+
+Math.nthroot = function (x, n) {
+  return this.exp((1 / n) * this.log(x));
+};
 
 //////////////////////
 // export

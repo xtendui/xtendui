@@ -21,6 +21,10 @@ class Ajax extends Core {
    */
   constructor(object, jsOptions = {}) {
     super(object, jsOptions);
+    // prevent scroll on popstate
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
   }
 
   //////////////////////
@@ -297,7 +301,7 @@ class Ajax extends Core {
     replace = null;
     // dispatch
     self.eDetailSet();
-    self.object.dispatchEvent(new CustomEvent('done.xt.ajax', {detail: self.eDetail}));
+    self.object.dispatchEvent(new CustomEvent('animated.xt.ajax', {detail: self.eDetail}));
     // reinit
     if (!self.detail.initial) {
       self.detail.initial = true;
@@ -320,7 +324,7 @@ class Ajax extends Core {
     // dispatch
     self.eDetailSet();
     self.eDetail.error = true;
-    self.object.dispatchEvent(new CustomEvent('done.xt.ajax', {detail: self.eDetail}));
+    self.object.dispatchEvent(new CustomEvent('animated.xt.ajax', {detail: self.eDetail}));
   }
 
   /**
