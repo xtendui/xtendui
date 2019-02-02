@@ -5,6 +5,12 @@ Xt.observe.push({
 
 function toggleInit(main, index, query) {
 
+  // vars
+
+  let easeIn = new Ease(BezierEasing(.36, 0, 0, 1));
+  let easeOut = new Ease(BezierEasing(1, 0, .64, 1));
+  let easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
+
   // toggle
 
   let self = new Xt.Toggle(main, {
@@ -14,17 +20,11 @@ function toggleInit(main, index, query) {
     }
   });
 
-  // vars
-
-  let object = self.object;
-
-  let easeIn = new Ease(BezierEasing(.36, 0, 0, 1));
-  let easeOut = new Ease(BezierEasing(1, 0, .64, 1));
-  let easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
+  let slider = self.object;
 
   // auto start
 
-  object.addEventListener('start.xt.auto', function (e) {
+  slider.addEventListener('start.xt.auto', function (e) {
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
@@ -63,7 +63,7 @@ function toggleInit(main, index, query) {
 
   // auto stop
 
-  object.addEventListener('stop.xt.auto', function (e) {
+  slider.addEventListener('stop.xt.auto', function (e) {
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
@@ -84,7 +84,7 @@ function toggleInit(main, index, query) {
 
   // auto pause
 
-  object.addEventListener('pause.xt.auto', function (e) {
+  slider.addEventListener('pause.xt.auto', function (e) {
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {

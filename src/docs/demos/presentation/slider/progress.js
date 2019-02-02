@@ -5,6 +5,13 @@ Xt.observe.push({
 
 function sliderInit(main, index, query) {
 
+  // vars
+
+  let timeHide = .33;
+  let easeIn = new Ease(BezierEasing(.36, 0, 0, 1));
+  let easeOut = new Ease(BezierEasing(1, 0, .64, 1));
+  let easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
+
   // slider
 
   let self = new Xt.Slider(main, {
@@ -14,19 +21,13 @@ function sliderInit(main, index, query) {
     }
   });
 
-  // vars
-
-  let object = self.object;
-  let timeHide = .33;
-  let easeIn = new Ease(BezierEasing(.36, 0, 0, 1));
-  let easeOut = new Ease(BezierEasing(1, 0, .64, 1));
-  let easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
+  let slider = self.object;
 
   // auto start
 
-  object.addEventListener('start.xt.auto', function (e) {
-    // on object
-    let spinner = object.querySelectorAll('.spinner svg:nth-child(2) circle');
+  slider.addEventListener('start.xt.auto', function (e) {
+    // on slider
+    let spinner = slider.querySelectorAll('.spinner svg:nth-child(2) circle');
     TweenMax.set(spinner, {strokeDashoffset: 628});
     TweenMax.to(spinner, e.detail.autoTime / 1000, {strokeDashoffset: 0, ease: easeInOut, autoRound: false});
     // on elements
@@ -67,9 +68,9 @@ function sliderInit(main, index, query) {
 
   // auto stop
 
-  object.addEventListener('stop.xt.auto', function (e) {
-    // on object
-    let spinner = object.querySelectorAll('.spinner svg:nth-child(2) circle');
+  slider.addEventListener('stop.xt.auto', function (e) {
+    // on slider
+    let spinner = slider.querySelectorAll('.spinner svg:nth-child(2) circle');
     TweenMax.to(spinner, timeHide, {strokeDashoffset: 628, ease: easeInOut, autoRound: false});
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
@@ -91,9 +92,9 @@ function sliderInit(main, index, query) {
 
   // auto pause
 
-  object.addEventListener('pause.xt.auto', function (e) {
-    // on object
-    let spinner = object.querySelectorAll('.spinner svg:nth-child(2) circle');
+  slider.addEventListener('pause.xt.auto', function (e) {
+    // on slider
+    let spinner = slider.querySelectorAll('.spinner svg:nth-child(2) circle');
     TweenMax.to(spinner, timeHide, {strokeDashoffset: 628, ease: easeInOut, autoRound: false});
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
@@ -121,8 +122,8 @@ function sliderInit(main, index, query) {
 
   // follow mouse
 
-  let container = object;
-  let loader = object.querySelectorAll('.loader--mouse')[0];
+  let container = slider;
+  let loader = container.querySelectorAll('.loader--mouse')[0];
   let rect = loader.getBoundingClientRect();
   let width = rect.width;
   let height = rect.height;
