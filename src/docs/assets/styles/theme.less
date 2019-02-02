@@ -247,7 +247,7 @@
     display: inline-block;
     position: relative;
     vertical-align: top;
-    top: .1rem;
+    top: .4rem;
     margin-left: .75em;
     width: 1.25em;
     height: 1em;
@@ -263,8 +263,7 @@
       transform: rotate(0deg);
     }
     span {
-      will-change: top, transform;
-      transition-property: top, transform;
+      transition-property: all;
       transition-duration: @time--medium;
       transition-timing-function: @bez--out;
     }
@@ -296,7 +295,7 @@
         transform: rotate(45deg);
       }
       span:nth-child(2) {
-        width: 0%;
+        width: 0;
         opacity: 0;
       }
       span:nth-child(3) {
@@ -363,7 +362,7 @@
   }
   &, .overlay_design, .overlay_content {
     opacity: 1 !important;
-    .anim-none() !important;
+    .animation-none() !important;
   }
 }
 
@@ -792,13 +791,15 @@
     .site-header-top {
       transition-property: background;
       transition-duration: @time--medium;
+      transition-delay: @time--small;
       transition-timing-function: @bez--out;
     }
     &.active {
       .site-header-top {
-        background: fade(@primary, @perc--lg);
+        background: fade(darken(@primary, 5%), @perc--lg);
         transition-property: background;
         transition-duration: @time--medium;
+        transition-delay: @time--small;
         transition-timing-function: @bez--in;
       }
     }

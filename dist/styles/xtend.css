@@ -1927,19 +1927,18 @@ a.links--none,
 .toggle--hidden.out {
   visibility: hidden !important;
 }
-.trans-none {
+.transition-none {
   transition: initial !important;
 }
-.anim-none {
+.animation-none {
   animation: initial !important;
 }
-.trans-anim-none {
+.duration-none {
   transition: initial !important;
   animation: initial !important;
 }
 .transform-none {
   transform: initial !important;
-  animation: initial !important;
 }
 .responsive-x {
   width: 100% !important;

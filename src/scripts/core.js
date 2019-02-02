@@ -2228,11 +2228,11 @@ class Core {
         if (self.normalizeWidth(element.clientWidth) === '') { // only if full width
           let padding = style.paddingRight;
           let str = 'calc(' + padding + ' + ' + width + 'px)';
-          element.classList.add('trans-none');
+          element.classList.add('transition-none');
           requestAnimationFrame(function () {
             element.style.paddingRight = str;
             requestAnimationFrame(function () {
-              element.classList.remove('trans-none');
+              element.classList.remove('transition-none');
             });
           });
         }
@@ -2263,11 +2263,11 @@ class Core {
         // fixed
         let elements = document.querySelectorAll('.xt-fixed');
         for (let element of elements) {
-          element.classList.add('trans-none');
+          element.classList.add('transition-none');
           requestAnimationFrame(function () {
             element.style.paddingRight = '';
             requestAnimationFrame(function () {
-              element.classList.remove('trans-none');
+              element.classList.remove('transition-none');
             });
           });
         }

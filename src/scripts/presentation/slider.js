@@ -137,7 +137,9 @@ class Slider extends Core {
       delete slide.dataset.xtSlideOnDone;
     }
     // initDragger
-    self.initDragger();
+    if (self.dragger) {
+      self.initDragger();
+    }
     // elements
     self.initScopeElements();
   }
@@ -478,13 +480,13 @@ class Slider extends Core {
     // dragger
     if (self.dragger) {
       // prevent alignment animation
-      self.dragger.classList.remove('trans-anim-none');
+      self.dragger.classList.remove('duration-none');
       // initial or resizing
       if (self.detail.initial) {
         // prevent alignment animation
-        self.dragger.classList.add('trans-anim-none');
+        self.dragger.classList.add('duration-none');
         requestAnimationFrame(function () {
-          self.dragger.classList.remove('trans-anim-none');
+          self.dragger.classList.remove('duration-none');
         });
       }
       // drag position
@@ -554,7 +556,7 @@ class Slider extends Core {
       return false;
     }
     // prevent dragging animation
-    self.dragger.classList.add('trans-anim-none');
+    self.dragger.classList.add('duration-none');
     // listener dispatch
     dragger.dispatchEvent(new CustomEvent('dragstart.xt.slider', {detail: self.eDetail}));
   }
@@ -753,7 +755,7 @@ class Slider extends Core {
         dragger.classList.remove('pointer-events--none');
       });
       // prevent dragging animation
-      self.dragger.classList.remove('trans-anim-none');
+      self.dragger.classList.remove('duration-none');
       // listener dispatch
       dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
     }
