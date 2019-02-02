@@ -254,7 +254,7 @@ class Core {
     }
     // restart
     let currents = self.detail.initialCurrents;
-    if (currents.length) {
+    if (currents && currents.length) {
       for (let current of currents) {
         self.eventOn(current, true);
       }
