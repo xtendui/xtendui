@@ -39,11 +39,9 @@ class Fade extends Core {
     if (options.on) {
       let events = [...options.on.split(' ')];
       for (let event of events) {
-        removeEventListener(event, fadeHandler);
         addEventListener(event, fadeHandler, Xt.passiveSupported ? {passive: true} : false);
       }
     }
-    removeEventListener('scroll.xt.fade', fadeHandler);
     addEventListener('scroll.xt.fade', fadeHandler);
     // listener dispatch initial only 1 time next frame
     if (!document.documentElement.dataset.xtFadeDone) {

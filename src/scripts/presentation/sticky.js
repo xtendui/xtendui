@@ -88,11 +88,9 @@ class Sticky extends Core {
     if (options.on) {
       let events = [...options.on.split(' ')];
       for (let event of events) {
-        removeEventListener(event, stickyHandler);
         addEventListener(event, stickyHandler, Xt.passiveSupported ? {passive: true} : false);
       }
     }
-    removeEventListener('scroll.xt.sticky', stickyHandler);
     addEventListener('scroll.xt.sticky', stickyHandler);
     // listener dispatch initial only 1 time next frame
     if (!document.documentElement.dataset.xtStickyDone) {
@@ -105,7 +103,6 @@ class Sticky extends Core {
     // autoClose
     let autoCloseHandler = Xt.dataStorage.put(self.object, 'hide' + '.' + self.namespace,
       Xt.autoClose.bind(this, self.object));
-    self.object.removeEventListener('hide.xt.sticky', autoCloseHandler);
     self.object.addEventListener('hide.xt.sticky', autoCloseHandler);
   }
 

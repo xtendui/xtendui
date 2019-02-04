@@ -276,7 +276,6 @@ class Ajax extends Core {
                 for (let [key, value] of storages) {
                   // copy events
                   let handler = Xt.dataStorage.put(elCh, key, value);
-                  elCh.removeEventListener('click', handler);
                   elCh.addEventListener('click', handler);
                 }
               }

@@ -263,13 +263,9 @@ Xt.btnMerge = {
   init: function (el) {
     if (!el.dataset.xtBtnMergeDone) {
       el.dataset.xtBtnMergeDone = 'true';
-      el.removeEventListener('mouseenter', Xt.btnMerge.hoverOn);
       el.addEventListener('mouseenter', Xt.btnMerge.hoverOn);
-      el.removeEventListener('mouseleave', Xt.btnMerge.hoverOff);
       el.addEventListener('mouseleave', Xt.btnMerge.hoverOff);
-      el.removeEventListener('mousedown', Xt.btnMerge.activeOn);
       el.addEventListener('mousedown', Xt.btnMerge.activeOn);
-      removeEventListener('mouseup', Xt.btnMerge.activeOff.bind(el));
       addEventListener('mouseup', Xt.btnMerge.activeOff.bind(el));
     }
   },
@@ -474,7 +470,6 @@ Xt.focus = {
     // event key
     let focusChangeKeyHandler = Xt.dataStorage.put(document, 'keyup.focus',
       Xt.focus.changeKey);
-    document.removeEventListener('keyup', focusChangeKeyHandler);
     document.addEventListener('keyup', focusChangeKeyHandler);
     // event mouse
     let focusChangeOtherHandler = Xt.dataStorage.get(document, 'mousedown touchstart pointerdown.focus');
@@ -562,7 +557,6 @@ Xt.focusLimit = {
       // event
       let focusLimitHandler = Xt.dataStorage.put(document, 'keyup.focusLimit',
         Xt.focusLimit.limit.bind(this).bind(this, focusables, first, last));
-      document.removeEventListener('keyup', focusLimitHandler);
       document.addEventListener('keyup', focusLimitHandler);
     }
   },
@@ -652,7 +646,6 @@ Xt.scrollbarWidth = function (force = false) {
   if (Xt.scrollbarWidthVal === undefined) {
     let scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize.scrollbar',
       Xt.scrollbarWidth.bind(this, true));
-    removeEventListener('resize', scrollbarWidthHandler);
     addEventListener('resize', scrollbarWidthHandler);
   }
   if (force || Xt.scrollbarWidthVal === undefined) {

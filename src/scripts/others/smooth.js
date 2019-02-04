@@ -79,9 +79,7 @@ class Smooth {
     // handler
     let eWheel = 'onwheel' in self.object ? 'wheel' : self.object.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
     self.object = self.object ? self.object : document.documentElement; // polyfill document.scrollingElement
-    self.object.removeEventListener(eWheel, self.eventWheel.bind(self));
     self.object.addEventListener(eWheel, self.eventWheel.bind(self));
-    self.scrollElement.removeEventListener('scroll', self.eventScroll.bind(self));
     self.scrollElement.addEventListener('scroll', self.eventScroll.bind(self), Xt.passiveSupported ? {passive: true} : false);
   }
 

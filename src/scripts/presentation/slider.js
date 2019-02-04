@@ -159,12 +159,10 @@ class Slider extends Core {
       // slide on
       let slideOnHandler = Xt.dataStorage.put(slide, 'on' + '.' + self.namespace,
         self.eventSlideOnHandler.bind(self).bind(self, dragger, slide));
-      slide.removeEventListener('on.xt', slideOnHandler);
       slide.addEventListener('on.xt', slideOnHandler, true); // @FIX event.xt: useCapture for custom events order on re-init
       // slide off
       let slideOffHandler = Xt.dataStorage.put(slide, 'off' + '.' + self.namespace,
         self.eventSlideOffHandler.bind(self).bind(self, dragger, slide));
-      slide.removeEventListener('off.xt', slideOffHandler);
       slide.addEventListener('off.xt', slideOffHandler, true); // @FIX event.xt: useCapture for custom events order on re-init
     }
     // dragger
@@ -174,7 +172,6 @@ class Slider extends Core {
         self.eventDragstartHandler.bind(self).bind(self, dragger));
       let events = ['mousedown', 'touchstart'];
       for (let event of events) {
-        dragger.removeEventListener(event, dragstartHandler);
         dragger.addEventListener(event, dragstartHandler, Xt.passiveSupported ? {passive: true} : false);
       }
       // grab
@@ -187,7 +184,6 @@ class Slider extends Core {
     // resize
     let resizeHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace,
       self.eventResizeHandler.bind(self).bind(self));
-    removeEventListener('resize', resizeHandler);
     addEventListener('resize', resizeHandler);
   }
 
@@ -329,7 +325,6 @@ class Slider extends Core {
           self.eventDragendHandler.bind(self).bind(self, dragger));
         let events = ['mouseup', 'touchend'];
         for (let event of events) {
-          removeEventListener(event, dragendHandler);
           addEventListener(event, dragendHandler);
         }
       }
@@ -378,7 +373,6 @@ class Slider extends Core {
       self.eventDragHandler.bind(self).bind(self, dragger));
     let events = ['mousemove', 'touchmove'];
     for (let event of events) {
-      dragger.removeEventListener(event, dragHandler);
       dragger.addEventListener(event, dragHandler);
     }
     // logic
@@ -472,7 +466,6 @@ class Slider extends Core {
         if (!image.complete) {
           let imageLoadHandler = Xt.dataStorage.put(image, 'load' + '.' + self.namespace,
             self.eventAutoHeight.bind(self).bind(self, slide));
-          image.removeEventListener('load', imageLoadHandler);
           image.addEventListener('load', imageLoadHandler);
         }
       }

@@ -366,9 +366,8 @@ class Core {
   initCheck() {
     let self = this;
     // resize
-    let checkHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace,
+    let checkHandler = Xt.dataStorage.put(window, 'resize.check' + '.' + self.namespace,
       self.eventCheckHandler.bind(self).bind(self));
-    removeEventListener('resize', checkHandler);
     addEventListener('resize', checkHandler);
   }
 
@@ -388,18 +387,15 @@ class Core {
       if (options.on) {
         let events = [...options.on.split(' ')];
         for (let event of events) {
-          el.removeEventListener(event, onHandler);
           el.addEventListener(event, onHandler);
         }
         // @FIX prevents click on touch until clicked two times
         if (events.includes('mouseenter') || events.includes('mousehover')) {
           let touchLinksStartHandler = Xt.dataStorage.put(el, 'touchend.touchfix' + '.' + self.namespace,
             self.eventTouchLinksStartHandler.bind(self).bind(self, el));
-          el.removeEventListener('touchend', touchLinksStartHandler);
           el.addEventListener('touchend', touchLinksStartHandler);
         }
       }
-      el.removeEventListener('on.xt', onHandler);
       el.addEventListener('on.xt', onHandler);
       // event off
       let offHandler = Xt.dataStorage.put(el, options.off + '.' + self.namespace,
@@ -407,11 +403,9 @@ class Core {
       if (options.off) {
         let events = [...options.off.split(' ')];
         for (let event of events) {
-          el.removeEventListener(event, offHandler);
           el.addEventListener(event, offHandler);
         }
       }
-      el.removeEventListener('off.xt', offHandler);
       el.addEventListener('off.xt', offHandler);
     }
     // listener
@@ -420,20 +414,16 @@ class Core {
       if (el) {
         // event
         let onHandler = Xt.dataStorage.get(el, options.on + '.' + self.namespace);
-        tr.removeEventListener('on.xt', onHandler);
         tr.addEventListener('on.xt', onHandler);
         let offHandler = Xt.dataStorage.get(el, options.off + '.' + self.namespace);
-        tr.removeEventListener('off.xt', offHandler);
         tr.addEventListener('off.xt', offHandler);
       }
     }
     // auto
     if (options.auto && options.auto.time) {
       // focus auto
-      removeEventListener('focus', self.eventAutoResumeHandler.bind(self));
       addEventListener('focus', self.eventAutoResumeHandler.bind(self));
       // blur auto
-      removeEventListener('blur', self.eventAutoPauseHandler.bind(self));
       addEventListener('blur', self.eventAutoPauseHandler.bind(self));
       // autoPause
       for (let el of self.object.querySelectorAll(options.auto.pause)) {
@@ -442,7 +432,6 @@ class Core {
           self.eventAutoPauseHandler.bind(self));
         let eventsPause = ['mouseenter', 'focus'];
         for (let event of eventsPause) {
-          el.removeEventListener(event, autoPauseOnHandler);
           el.addEventListener(event, autoPauseOnHandler);
         }
         // resume
@@ -450,7 +439,6 @@ class Core {
           self.eventAutoResumeHandler.bind(self));
         let eventsResume = ['mouseleave', 'blur'];
         for (let event of eventsResume) {
-          el.removeEventListener(event, autoResumeOnHandler);
           el.addEventListener(event, autoResumeOnHandler);
         }
       }
@@ -460,7 +448,6 @@ class Core {
       for (let jump of self.targets) {
         let jumpHandler = Xt.dataStorage.put(jump, 'click.jump' + '.' + self.namespace,
           self.eventJumpHandler.bind(self).bind(self, jump));
-        jump.removeEventListener('click', jumpHandler);
         jump.addEventListener('click', jumpHandler, true); // useCapture or it gets the click from elements inside the target
         // jump
         if (!self.detail.disabled) {
@@ -477,7 +464,6 @@ class Core {
         for (let nav of navs) {
           let navHandler = Xt.dataStorage.put(nav, 'click.nav' + '.' + self.namespace,
             self.eventNavHandler.bind(self).bind(self, nav));
-          nav.removeEventListener('click', navHandler);
           nav.addEventListener('click', navHandler);
         }
       }
@@ -490,7 +476,6 @@ class Core {
         let eventWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
         let wheelHandler = Xt.dataStorage.put(wheel, eventWheel + '.' + self.namespace,
           self.eventWheelHandler.bind(self).bind(self, wheel));
-        wheel.removeEventListener(eventWheel, wheelHandler);
         wheel.addEventListener(eventWheel, wheelHandler);
       }
     }
@@ -502,12 +487,10 @@ class Core {
         // focus
         let keyboardFocusHandler = Xt.dataStorage.put(keyboard, 'focus.keyboard' + '.' + self.namespace,
           self.eventKeyboardFocusHandler.bind(self).bind(self, keyboard));
-        keyboard.removeEventListener('focus', keyboardFocusHandler);
         keyboard.addEventListener('focus', keyboardFocusHandler);
         // blur
         let keyboardBlurHandler = Xt.dataStorage.put(keyboard, 'blur.keyboard' + '.' + self.namespace,
           self.eventKeyboardBlurHandler.bind(self).bind(self, keyboard));
-        keyboard.removeEventListener('blur', keyboardBlurHandler);
         keyboard.addEventListener('blur', keyboardBlurHandler);
       }
     }
@@ -515,11 +498,9 @@ class Core {
     if (options.autoClose) {
       let autoCloseHandler = Xt.dataStorage.put(window, 'autoClose' + '.' + self.namespace,
         self.eventAutoCloseHandler.bind(self));
-      removeEventListener('autoClose.xt', autoCloseHandler);
       addEventListener('autoClose.xt', autoCloseHandler);
       let autoCloseFixHandler = Xt.dataStorage.put(window, 'autoCloseFix' + '.' + self.namespace,
         self.eventAutoCloseFixHandler.bind(self));
-      removeEventListener('autoCloseFix.xt', autoCloseFixHandler);
       addEventListener('autoCloseFix.xt', autoCloseFixHandler);
     }
   }
@@ -612,12 +593,10 @@ class Core {
     // event touchLinks
     let touchLinksHandler = Xt.dataStorage.put(el, 'click.touchfix' + '.' + self.namespace,
       self.eventTouchLinksHandler.bind(self).bind(self, el));
-    el.removeEventListener('click', touchLinksHandler);
     el.addEventListener('click', touchLinksHandler);
     // event touchReset
     let touchResetHandler = Xt.dataStorage.put(el, 'off.touchfix' + '.' + self.namespace,
       self.eventTouchLinksResetHandler.bind(self).bind(self, el));
-    el.removeEventListener('off.xt', touchResetHandler);
     el.addEventListener('off.xt', touchResetHandler);
   }
 
@@ -749,7 +728,6 @@ class Core {
     // handler
     let keyboardHandler = Xt.dataStorage.put(document, 'keyup.keyboard' + '.' + self.namespace,
       self.eventKeyboardHandler.bind(self));
-    document.removeEventListener('keyup', keyboardHandler);
     document.addEventListener('keyup', keyboardHandler);
   }
 
@@ -2116,7 +2094,6 @@ class Core {
         for (let closeElement of closeElements) {
           let specialCloseInsideHandler = Xt.dataStorage.put(closeElement, 'click.close' + '.' + self.namespace,
             self.eventSpecialCloseInsideHandler.bind(self).bind(self, closeElement, single));
-          closeElement.removeEventListener('click', specialCloseInsideHandler);
           closeElement.addEventListener('click', specialCloseInsideHandler);
         }
       });
@@ -2128,7 +2105,6 @@ class Core {
         for (let closeElement of closeElements) {
           let specialCloseOutsideHandler = Xt.dataStorage.put(closeElement, 'click.close' + '.' + self.namespace,
             self.eventSpecialCloseOutsideHandler.bind(self).bind(self, el, single));
-          closeElement.removeEventListener('click', specialCloseOutsideHandler);
           closeElement.addEventListener('click', specialCloseOutsideHandler);
         }
       });
