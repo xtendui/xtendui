@@ -44,6 +44,7 @@ class Core {
     // defaults
     self.defaults = {
       "instant": false,
+      "autoClose": false,
       "onBlock": false,
       "offBlock": false,
       "loop": true,

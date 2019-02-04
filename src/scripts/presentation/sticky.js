@@ -239,7 +239,7 @@ class Sticky extends Core {
         if (!element.classList.contains('sticky--hide')) {
           element.classList.add('sticky--hide');
           // autoClose
-          dispatchEvent(new CustomEvent('autoClose.xt'));
+          self.object.dispatchEvent(new CustomEvent('autoClose.xt'));
           // listener dispatch
           element.dispatchEvent(new CustomEvent('hide.xt.sticky', {detail: self.eDetail}));
         }
