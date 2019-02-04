@@ -232,12 +232,14 @@ class Sticky extends Core {
       self.eventOff(element);
     }
     // after active
-    if (element.classList.contains('active')) {
+    if (element.classList.contains(...options.classes)) {
       // hide
       if (hide) {
         add = -heightEl;
         if (!element.classList.contains('sticky--hide')) {
           element.classList.add('sticky--hide');
+          // autoClose
+          dispatchEvent(new CustomEvent('autoClose.xt'));
           // listener dispatch
           element.dispatchEvent(new CustomEvent('hide.xt.sticky', {detail: self.eDetail}));
         }
@@ -347,6 +349,9 @@ class Sticky extends Core {
    * @returns {Object} obj Option's height (px) and if found hide element
    */
   eventStickyHeight(option, scrollInverse, val = null) {
+    let self = this;
+    let options = self.options;
+    // logic
     let foundHide = false;
     if (!isNaN(parseFloat(option))) {
       val = option;
@@ -354,12 +359,12 @@ class Sticky extends Core {
       let elements = Array.isArray(option) || NodeList.prototype.isPrototypeOf(option) ? option : document.querySelectorAll(option);
       if (elements.length) {
         for (let el of elements) {
-          if (el.classList.contains('sticky-hide--down') && el.classList.contains('active')) {
+          if (el.classList.contains('sticky-hide--down') && el.classList.contains(...options.classes)) {
             if (scrollInverse) {
               val += el.clientHeight;
               foundHide = true;
             }
-          } else if (el.classList.contains('sticky-hide--up') && el.classList.contains('active')) {
+          } else if (el.classList.contains('sticky-hide--up') && el.classList.contains(...options.classes)) {
             if (!scrollInverse) {
               val += el.clientHeight;
               foundHide = true;

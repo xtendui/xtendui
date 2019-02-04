@@ -23,6 +23,10 @@ class Drop extends Core {
     super(object, jsOptions);
   }
 
+  //////////////////////
+  // init
+  //////////////////////
+
   /**
    * init aria
    */
@@ -58,6 +62,7 @@ Drop.defaults = {
   "min": 0,
   "max": 1,
   "instant": {"elementsInner": true},
+  "autoClose": true,
   "closeOutside": "body",
   "ariaControls": ":scope > a, :scope > button"
 };

@@ -23,6 +23,10 @@ class Overlay extends Core {
     super(object, jsOptions);
   }
 
+  //////////////////////
+  // init
+  //////////////////////
+
   /**
    * init aria
    */
@@ -66,6 +70,7 @@ Overlay.defaults = {
   "min": 0,
   "max": 1,
   "instant": {"elements": true},
+  "autoClose": true,
   "appendTo": "body",
   "backdrop": "targets",
   "classHtml": "xt-overlay",

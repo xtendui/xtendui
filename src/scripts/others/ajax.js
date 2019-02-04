@@ -183,6 +183,8 @@ class Ajax extends Core {
     if (!self.detail.initial) {
       // location
       self.detail.locationTo = new URL(url, location);
+      // autoClose
+      dispatchEvent(new CustomEvent('autoClose.xt'));
       // dispatch
       self.eDetailSet();
       self.object.dispatchEvent(new CustomEvent('request.xt.ajax', {detail: self.eDetail}));

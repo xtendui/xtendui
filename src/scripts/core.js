@@ -527,6 +527,13 @@ class Core {
         keyboard.addEventListener('blur', keyboardBlurHandler);
       }
     }
+    // autoClose
+    if (options.autoClose) {
+      let autoCloseHandler = Xt.dataStorage.put(window, 'autoCloseHandler' + self.namespace,
+        self.eventAutoCloseHandler.bind(self));
+      removeEventListener('autoClose.xt', autoCloseHandler);
+      addEventListener('autoClose.xt', autoCloseHandler);
+    }
   }
 
   //////////////////////
@@ -803,6 +810,19 @@ class Core {
       self.goToPrev(1);
     } else if (code === next) {
       self.goToNext(1);
+    }
+  }
+
+  /**
+   * autoClose handler
+   * @param {Event} e
+   */
+  eventAutoCloseHandler(e) {
+    let self = this;
+    // restart
+    let currents = self.getCurrents();
+    for (let current of currents) {
+      self.eventOff(current);
     }
   }
 

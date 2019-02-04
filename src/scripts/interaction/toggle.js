@@ -23,6 +23,10 @@ class Toggle extends Core {
     super(object, jsOptions);
   }
 
+  //////////////////////
+  // init
+  //////////////////////
+
   /**
    * init aria
    */
