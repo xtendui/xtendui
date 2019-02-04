@@ -20,14 +20,12 @@ class Smooth {
    */
   constructor(object, jsOptions = {}) {
     let self = this;
-    // constructor
-    if (object && !object.dataset.xtSmoothDone) {
-      object.dataset.xtSmoothDone = 'true';
-      // init
-      self.object = object;
-      self.jsOptions = jsOptions;
-      self.init();
-    }
+    // var
+    self.componentName = self.constructor.componentName;
+    self.object = object;
+    self.jsOptions = jsOptions;
+    // init
+    self.init();
   }
 
   //////////////////////
@@ -39,18 +37,35 @@ class Smooth {
    */
   init() {
     let self = this;
+    // var
+    self.detail = {};
+    // destroy if already done
+    if (self.object.getAttribute('data-' + self.componentName + '-done')) {
+      self.destroy();
+    }
+    // setup
+    self.object.setAttribute('data-' + self.componentName + '-done', 'true');
+    // set component to element
+    Xt.set(self.object, self.componentName, self);
+    // init
+    self.initDefaults();
+    self.initStart();
+  }
+
+  /**
+   * init defaults
+   */
+  initDefaults() {
+    let self = this;
     // defaults
     self.defaults = self.constructor.defaults;
     // js options
     self.options = Xt.merge([self.defaults, self.jsOptions]);
     // markup options
-    let markupOptions = self.object.getAttribute('data-' + self.constructor.componentName);
+    let markupOptions = self.object.getAttribute('data-' + self.componentName);
     self.options = Xt.merge([self.options, markupOptions ? JSON.parse(markupOptions) : {}]);
     // var
     self.scrollElement = self.options.scrollElement;
-    self.detail = {};
-    // init
-    self.initStart();
   }
 
   /**
@@ -65,9 +80,9 @@ class Smooth {
     let eWheel = 'onwheel' in self.object ? 'wheel' : self.object.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
     self.object = self.object ? self.object : document.documentElement; // polyfill document.scrollingElement
     self.object.removeEventListener(eWheel, self.eventWheel.bind(self));
-    self.object.addEventListener(eWheel, self.eventWheel.bind(self));
+    self.object.addEventListener(eWheel, self.eventWheel.bind(self), Xt.passiveSupported ? {passive: true} : false);
     self.scrollElement.removeEventListener('scroll', self.eventScroll.bind(self));
-    self.scrollElement.addEventListener('scroll', self.eventScroll.bind(self));
+    self.scrollElement.addEventListener('scroll', self.eventScroll.bind(self), Xt.passiveSupported ? {passive: true} : false);
   }
 
   //////////////////////

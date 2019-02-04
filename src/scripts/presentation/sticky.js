@@ -83,7 +83,7 @@ class Sticky extends Core {
     let self = this;
     let options = self.options;
     // event on
-    let stickyHandler = Xt.dataStorage.put(window, 'stickyHandler' + self.namespace,
+    let stickyHandler = Xt.dataStorage.put(window, options.on + '.xt.sticky' + self.namespace,
       self.eventStickyHandler.bind(self));
     if (options.on) {
       let events = [...options.on.split(' ')];
@@ -103,7 +103,7 @@ class Sticky extends Core {
       });
     }
     // autoClose
-    let autoCloseHandler = Xt.dataStorage.put(self.object, 'autoCloseHandler' + self.namespace,
+    let autoCloseHandler = Xt.dataStorage.put(self.object, 'hide.xt.sticky' + self.namespace,
       Xt.autoClose.bind(this, self.object));
     self.object.removeEventListener('hide.xt.sticky', autoCloseHandler);
     self.object.addEventListener('hide.xt.sticky', autoCloseHandler);

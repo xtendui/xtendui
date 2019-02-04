@@ -157,12 +157,12 @@ class Slider extends Core {
       // disable links
       slide.classList.add('links--none');
       // slide on
-      let slideOnHandler = Xt.dataStorage.put(slide, 'slideOnHandler' + self.namespace,
+      let slideOnHandler = Xt.dataStorage.put(slide, 'on.xt.slider' + self.namespace,
         self.eventSlideOnHandler.bind(self).bind(self, dragger, slide));
       slide.removeEventListener('on.xt', slideOnHandler);
       slide.addEventListener('on.xt', slideOnHandler, true); // @FIX event.xt: useCapture for custom events order on re-init
       // slide off
-      let slideOffHandler = Xt.dataStorage.put(slide, 'slideOffHandler' + self.namespace,
+      let slideOffHandler = Xt.dataStorage.put(slide, 'off.xt.slider' + self.namespace,
         self.eventSlideOffHandler.bind(self).bind(self, dragger, slide));
       slide.removeEventListener('off.xt', slideOffHandler);
       slide.addEventListener('off.xt', slideOffHandler, true); // @FIX event.xt: useCapture for custom events order on re-init
@@ -170,12 +170,12 @@ class Slider extends Core {
     // dragger
     if (options.drag) {
       // drag
-      let dragstartHandler = Xt.dataStorage.put(dragger, 'dragstartHandler' + self.namespace,
+      let dragstartHandler = Xt.dataStorage.put(dragger, 'mousedown touchstart.xt.slider' + self.namespace,
         self.eventDragstartHandler.bind(self).bind(self, dragger));
       let events = ['mousedown', 'touchstart'];
       for (let event of events) {
         dragger.removeEventListener(event, dragstartHandler);
-        dragger.addEventListener(event, dragstartHandler);
+        dragger.addEventListener(event, dragstartHandler, Xt.passiveSupported ? {passive: true} : false);
       }
       // grab
       if (!self.detail.disabled) {
@@ -184,6 +184,11 @@ class Slider extends Core {
         dragger.classList.remove('grab');
       }
     }
+    // resize
+    let resizeHandler = Xt.dataStorage.put(window, 'resize.xt.slider' + self.namespace,
+      self.eventResizeHandler.bind(self).bind(self));
+    removeEventListener('resize', resizeHandler);
+    addEventListener('resize', resizeHandler);
   }
 
   /**
@@ -320,12 +325,12 @@ class Slider extends Core {
         // auto
         self.eventAutoPause();
         // event off
-        let dragendHandler = Xt.dataStorage.put(dragger, 'dragendHandler' + self.namespace,
+        let dragendHandler = Xt.dataStorage.put(dragger, 'mouseup touchend.xt.slider' + self.namespace,
           self.eventDragendHandler.bind(self).bind(self, dragger));
         let events = ['mouseup', 'touchend'];
         for (let event of events) {
-          removeEventListener(event, dragendHandler);
-          addEventListener(event, dragendHandler);
+          window.removeEventListener(event, dragendHandler);
+          window.addEventListener(event, dragendHandler);
         }
       }
     }
@@ -350,10 +355,10 @@ class Slider extends Core {
     // auto
     self.eventAutoStart();
     // event off
-    let dragendHandler = Xt.dataStorage.get(dragger, 'dragendHandler' + self.namespace);
+    let dragendHandler = Xt.dataStorage.get(dragger, 'mouseup touchend.xt.slider' + self.namespace);
     let events = ['mouseup', 'touchend'];
     for (let event of events) {
-      removeEventListener(event, dragendHandler);
+      window.removeEventListener(event, dragendHandler);
     }
   }
 
@@ -369,7 +374,7 @@ class Slider extends Core {
     // eDetail
     self.eDetailSet(e);
     // event move
-    let dragHandler = Xt.dataStorage.put(dragger, 'dragHandler' + self.namespace,
+    let dragHandler = Xt.dataStorage.put(dragger, 'mousemove touchmove.xt.slider' + self.namespace,
       self.eventDragHandler.bind(self).bind(self, dragger));
     let events = ['mousemove', 'touchmove'];
     for (let event of events) {
@@ -392,7 +397,7 @@ class Slider extends Core {
     // eDetail
     self.eDetailSet(e);
     // event move
-    let dragHandler = Xt.dataStorage.get(dragger, 'dragHandler' + self.namespace);
+    let dragHandler = Xt.dataStorage.get(dragger, 'mousemove touchmove.xt.slider' + self.namespace);
     let events = ['mousemove', 'touchmove'];
     for (let event of events) {
       dragger.removeEventListener(event, dragHandler);
@@ -425,14 +430,16 @@ class Slider extends Core {
 
   /**
    * resize
+   * @param {Event} e
    */
-  eventCheck() {
+  eventResizeHandler(e) {
     let self = this;
-    super.eventCheck();
     // reinit
     if (!self.detail.initial) {
-      self.detail.initial = true;
-      self.init();
+      Xt.eventDelay(e, self.object, function () {
+        self.detail.initial = true;
+        self.init();
+      }, 'Init');
     }
   }
 
@@ -444,10 +451,6 @@ class Slider extends Core {
   eventSlideOn(dragger, e) {
     let self = this;
     let slide = e.target;
-    // disabled
-    if (self.detail.disabled && !self.detail.initial) {
-      return false;
-    }
     // only one call per group
     if (slide.dataset.xtSlideOnDone) {
       return false;
@@ -467,7 +470,7 @@ class Slider extends Core {
       let images = slide.querySelectorAll('img');
       for (let image of images) {
         if (!image.complete) {
-          let imageLoadHandler = Xt.dataStorage.put(image, 'imageLoadHandler' + self.namespace,
+          let imageLoadHandler = Xt.dataStorage.put(image, 'load.xt.slider' + self.namespace,
             self.eventAutoHeight.bind(self).bind(self, slide));
           image.removeEventListener('load', imageLoadHandler);
           image.addEventListener('load', imageLoadHandler);
@@ -511,10 +514,6 @@ class Slider extends Core {
   eventSlideOff(dragger, e) {
     let self = this;
     let slide = e.target;
-    // disabled
-    if (self.detail.disabled && !self.detail.initial) {
-      return false;
-    }
     // disable links
     slide.classList.add('links--none');
     // only one call per group

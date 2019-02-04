@@ -20,16 +20,12 @@ class Core {
    */
   constructor(object, jsOptions = {}) {
     let self = this;
-    // constructor
-    if (object && !object.dataset.xtCoreDone) {
-      object.dataset.xtCoreDone = 'true';
-      // set component to element
-      Xt.set('xt-slider', object, self);
-      // init
-      self.object = object;
-      self.jsOptions = jsOptions;
-      self.init();
-    }
+    // var
+    self.componentName = self.constructor.componentName;
+    self.object = object;
+    self.jsOptions = jsOptions;
+    // init
+    self.init();
   }
 
   //////////////////////
@@ -37,9 +33,43 @@ class Core {
   //////////////////////
 
   /**
-   * setup
+   * init
    */
   init() {
+    let self = this;
+    // var
+    self.elements = [];
+    self.targets = [];
+    self.elementsSingle = [];
+    self.currentIndex = null;
+    self.detail = {};
+    self.detail.disabled = false;
+    self.detail.queueOn = [];
+    self.detail.queueOff = [];
+    self.detail.inverseDirection = false;
+    // destroy if already done
+    if (self.object.getAttribute('data-' + self.componentName + '-done')) {
+      self.destroy();
+    }
+    // setup
+    self.object.setAttribute('data-' + self.componentName + '-done', 'true');
+    // set component to element
+    Xt.set(self.object, self.componentName, self);
+    // init
+    self.initDefaults();
+    self.initSetup();
+    self.initScope();
+    self.initCurrents();
+    self.initCheck();
+    self.eventCheck();
+    self.initEvents();
+    self.initAria();
+  }
+
+  /**
+   * init defaults
+   */
+  initDefaults() {
     let self = this;
     // defaults
     self.defaults = {
@@ -78,34 +108,16 @@ class Core {
     // js options
     self.options = Xt.merge([self.defaults, self.jsOptions]);
     // markup options
-    let markupOptions = self.object.getAttribute('data-' + self.constructor.componentName);
+    let markupOptions = self.object.getAttribute('data-' + self.componentName);
     self.options = Xt.merge([self.options, markupOptions ? JSON.parse(markupOptions) : {}]);
     // classes
     if (self.options.class) {
       self.options.classes = [...self.options.class.split(' ')];
     }
-    // var
-    self.elements = [];
-    self.targets = [];
-    self.elementsSingle = [];
-    self.currentIndex = null;
-    self.detail = {};
-    self.detail.disabled = false;
-    self.detail.queueOn = [];
-    self.detail.queueOff = [];
-    self.detail.inverseDirection = false;
-    // init
-    self.initSetup();
-    self.initScope();
-    self.initCurrents();
-    self.initCheck();
-    self.eventCheck();
-    self.initEvents();
-    self.initAria();
   }
 
   /**
-   * setup namespace, container and options
+   * init namespace, container and options
    */
   initSetup() {
     let self = this;
@@ -116,13 +128,13 @@ class Core {
       self.mode = 'unique';
       self.container = document.documentElement;
       options.max = Infinity;
-      self.namespace = self.constructor.componentName + '-' + options.targets.toString() + '-' + options.classes.toString();
+      self.namespace = self.componentName + '-' + options.targets.toString() + '-' + options.classes.toString();
     } else {
       // xtend unique mode
       self.mode = 'multiple';
       self.container = self.object;
       self.container.dataset.uniqueId = self.container.dataset.uniqueId ? self.container.dataset.uniqueId : Xt.getuniqueId();
-      self.namespace = self.constructor.componentName + '-' + self.container.dataset.uniqueId;
+      self.namespace = self.componentName + '-' + self.container.dataset.uniqueId;
     }
     // final namespace
     self.namespace = self.namespace.replace(/^[^a-z]+|[^\w:.-]+/gi, '');
@@ -240,35 +252,6 @@ class Core {
   }
 
   /**
-   * restart
-   */
-  restart() {
-    let self = this;
-    let options = self.options;
-    // initial
-    self.detail.initial = true;
-    // reset
-    let elements = self.getElementsSingle();
-    for (let element of elements) {
-      // remove activations
-      self.initReset(element);
-    }
-    // restart
-    let currents = self.detail.initialCurrents;
-    if (currents && currents.length) {
-      for (let current of currents) {
-        self.eventOn(current, true);
-      }
-    } else {
-      self.detail.initial = false;
-    }
-    // auto
-    if (options.auto && options.auto.initial) {
-      self.eventAutoStart();
-    }
-  }
-
-  /**
    * init reset activation
    * @param {Node|HTMLElement|EventTarget|Window} element Element to check and reset
    * @returns {Boolean} if element was activated
@@ -383,7 +366,7 @@ class Core {
   initCheck() {
     let self = this;
     // resize
-    let checkHandler = Xt.dataStorage.put(window, 'checkHandler' + self.namespace,
+    let checkHandler = Xt.dataStorage.put(window, 'resize.xt.check' + self.namespace,
       self.eventCheckHandler.bind(self).bind(self));
     removeEventListener('resize', checkHandler);
     addEventListener('resize', checkHandler);
@@ -400,7 +383,7 @@ class Core {
     // event
     for (let el of self.elements) {
       // event on
-      let onHandler = Xt.dataStorage.put(el, 'onHandler' + self.namespace,
+      let onHandler = Xt.dataStorage.put(el, options.on + '.xt.core' + self.namespace,
         self.eventOnHandler.bind(self).bind(self, el));
       if (options.on) {
         let events = [...options.on.split(' ')];
@@ -410,7 +393,7 @@ class Core {
         }
         // @FIX prevents click on touch until clicked two times
         if (events.includes('mouseenter') || events.includes('mousehover')) {
-          let touchLinksStartHandler = Xt.dataStorage.put(el, 'touchLinksStartHandler' + self.namespace,
+          let touchLinksStartHandler = Xt.dataStorage.put(el, 'touchend.xt.touchfix' + self.namespace,
             self.eventTouchLinksStartHandler.bind(self).bind(self, el));
           el.removeEventListener('touchend', touchLinksStartHandler);
           el.addEventListener('touchend', touchLinksStartHandler);
@@ -419,7 +402,7 @@ class Core {
       el.removeEventListener('on.xt', onHandler);
       el.addEventListener('on.xt', onHandler);
       // event off
-      let offHandler = Xt.dataStorage.put(el, 'offHandler' + self.namespace,
+      let offHandler = Xt.dataStorage.put(el, options.off + '.xt.core' + self.namespace,
         self.eventOffHandler.bind(self).bind(self, el));
       if (options.off) {
         let events = [...options.off.split(' ')];
@@ -436,10 +419,10 @@ class Core {
       let el = self.getElementsFromTarget(tr)[0];
       if (el) {
         // event
-        let onHandler = Xt.dataStorage.get(el, 'onHandler' + self.namespace);
-        let offHandler = Xt.dataStorage.get(el, 'offHandler' + self.namespace);
+        let onHandler = Xt.dataStorage.get(el, options.on + '.xt.core' + self.namespace);
         tr.removeEventListener('on.xt', onHandler);
         tr.addEventListener('on.xt', onHandler);
+        let offHandler = Xt.dataStorage.get(el, options.off + '.xt.core' + self.namespace);
         tr.removeEventListener('off.xt', offHandler);
         tr.addEventListener('off.xt', offHandler);
       }
@@ -451,11 +434,11 @@ class Core {
       addEventListener('focus', self.eventAutoResumeHandler.bind(self));
       // blur auto
       removeEventListener('blur', self.eventAutoPauseHandler.bind(self));
-      addEventListener('blur', self.eventAutoPauseHandler.bind(self));
+      window.addEventListener('blur', self.eventAutoPauseHandler.bind(self));
       // autoPause
       for (let el of self.object.querySelectorAll(options.auto.pause)) {
         // pause
-        let autoPauseOnHandler = Xt.dataStorage.put(el, 'autoPauseOnHandler' + self.namespace,
+        let autoPauseOnHandler = Xt.dataStorage.put(el, 'mouseenter focus.xt.core' + self.namespace,
           self.eventAutoPauseHandler.bind(self));
         let eventsPause = ['mouseenter', 'focus'];
         for (let event of eventsPause) {
@@ -463,7 +446,7 @@ class Core {
           el.addEventListener(event, autoPauseOnHandler);
         }
         // resume
-        let autoResumeOnHandler = Xt.dataStorage.put(el, 'autoResumeOnHandler' + self.namespace,
+        let autoResumeOnHandler = Xt.dataStorage.put(el, 'mouseleave blur.xt.core' + self.namespace,
           self.eventAutoResumeHandler.bind(self));
         let eventsResume = ['mouseleave', 'blur'];
         for (let event of eventsResume) {
@@ -475,7 +458,7 @@ class Core {
     // jump
     if (options.jump) {
       for (let jump of self.targets) {
-        let jumpHandler = Xt.dataStorage.put(jump, 'jumpHandler' + self.namespace,
+        let jumpHandler = Xt.dataStorage.put(jump, 'click.xt.jump' + self.namespace,
           self.eventJumpHandler.bind(self).bind(self, jump));
         jump.removeEventListener('click', jumpHandler);
         jump.addEventListener('click', jumpHandler, true); // useCapture or it gets the click from elements inside the target
@@ -492,7 +475,7 @@ class Core {
       let navs = self.object.querySelectorAll(options.navigation);
       if (navs.length) {
         for (let nav of navs) {
-          let navHandler = Xt.dataStorage.put(nav, 'navHandler' + self.namespace,
+          let navHandler = Xt.dataStorage.put(nav, 'click.xt.nav' + self.namespace,
             self.eventNavHandler.bind(self).bind(self, nav));
           nav.removeEventListener('click', navHandler);
           nav.addEventListener('click', navHandler);
@@ -505,10 +488,10 @@ class Core {
       for (let wheel of wheels) {
         // wheel
         let eventWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
-        let wheelHandler = Xt.dataStorage.put(wheel, 'wheelHandler',
+        let wheelHandler = Xt.dataStorage.put(wheel, eventWheel + '.xt.wheel' + self.namespace,
           self.eventWheelHandler.bind(self).bind(self, wheel));
         wheel.removeEventListener(eventWheel, wheelHandler);
-        wheel.addEventListener(eventWheel, wheelHandler);
+        wheel.addEventListener(eventWheel, wheelHandler, Xt.passiveSupported ? {passive: true} : false);
       }
     }
     // keyboard
@@ -517,12 +500,12 @@ class Core {
       for (let keyboard of keyboards) {
         keyboard.setAttribute('tabindex', '0');
         // focus
-        let keyboardFocusHandler = Xt.dataStorage.put(keyboard, 'keyboardFocusHandler',
+        let keyboardFocusHandler = Xt.dataStorage.put(keyboard, 'focus.xt.keyboard' + self.namespace,
           self.eventKeyboardFocusHandler.bind(self).bind(self, keyboard));
         keyboard.removeEventListener('focus', keyboardFocusHandler);
         keyboard.addEventListener('focus', keyboardFocusHandler);
         // blur
-        let keyboardBlurHandler = Xt.dataStorage.put(keyboard, 'keyboardBlurHandler',
+        let keyboardBlurHandler = Xt.dataStorage.put(keyboard, 'blur.xt.keyboard' + self.namespace,
           self.eventKeyboardBlurHandler.bind(self).bind(self, keyboard));
         keyboard.removeEventListener('blur', keyboardBlurHandler);
         keyboard.addEventListener('blur', keyboardBlurHandler);
@@ -530,10 +513,10 @@ class Core {
     }
     // autoClose
     if (options.autoClose) {
-      let autoCloseHandler = Xt.dataStorage.put(window, 'autoCloseHandler' + self.namespace,
+      let autoCloseHandler = Xt.dataStorage.put(window, 'autoClose.xt.core' + self.namespace,
         self.eventAutoCloseHandler.bind(self));
       removeEventListener('autoClose.xt', autoCloseHandler);
-      addEventListener('autoClose.xt', autoCloseHandler);
+      window.addEventListener('autoClose.xt', autoCloseHandler);
     }
   }
 
@@ -548,11 +531,9 @@ class Core {
   eventCheckHandler(e = null) {
     let self = this;
     // handler
-    if (!e.detail || !e.detail.skip) {
-      Xt.eventDelay(e, self.object, function () {
-        self.eventCheck();
-      });
-    }
+    Xt.eventDelay(e, self.object, function () {
+      self.eventCheck();
+    });
   }
 
   /**
@@ -625,12 +606,12 @@ class Core {
   eventTouchLinksStartHandler(el, e) {
     let self = this;
     // event touchLinks
-    let touchLinksHandler = Xt.dataStorage.put(el, 'touchLinksHandler' + self.namespace,
+    let touchLinksHandler = Xt.dataStorage.put(el, 'click.xt.touchfix' + self.namespace,
       self.eventTouchLinksHandler.bind(self).bind(self, el));
     el.removeEventListener('click', touchLinksHandler);
     el.addEventListener('click', touchLinksHandler);
     // event touchReset
-    let touchResetHandler = Xt.dataStorage.put(el, 'touchResetHandler' + self.namespace,
+    let touchResetHandler = Xt.dataStorage.put(el, 'off.xt.touchfix' + self.namespace,
       self.eventTouchLinksResetHandler.bind(self).bind(self, el));
     el.removeEventListener('off.xt', touchResetHandler);
     el.addEventListener('off.xt', touchResetHandler);
@@ -643,10 +624,10 @@ class Core {
   eventTouchLinksEndHandler(el) {
     let self = this;
     // event touchLinks
-    let touchLinksHandler = Xt.dataStorage.get(el, 'touchLinksHandler' + self.namespace);
+    let touchLinksHandler = Xt.dataStorage.get(el, 'click.xt.touchfix' + self.namespace);
     el.removeEventListener('click', touchLinksHandler);
     // event touchReset
-    let touchResetHandler = Xt.dataStorage.get(el, 'touchResetHandler' + self.namespace);
+    let touchResetHandler = Xt.dataStorage.get(el, 'off.xt.touchfix' + self.namespace);
     el.removeEventListener('off.xt', touchResetHandler);
   }
 
@@ -762,7 +743,7 @@ class Core {
   eventKeyboardFocusHandler(el, e) {
     let self = this;
     // handler
-    let keyboardHandler = Xt.dataStorage.put(document, 'keyboardHandler',
+    let keyboardHandler = Xt.dataStorage.put(document, 'keyup.xt.keyboard',
       self.eventKeyboardHandler.bind(self));
     document.removeEventListener('keyup', keyboardHandler);
     document.addEventListener('keyup', keyboardHandler);
@@ -775,7 +756,7 @@ class Core {
    */
   eventKeyboardBlurHandler(el, e) {
     // handler
-    let keyboardHandler = Xt.dataStorage.get(document, 'keyboardHandler');
+    let keyboardHandler = Xt.dataStorage.get(document, 'keyup.xt.keyboard');
     document.removeEventListener('keyup', keyboardHandler);
   }
 
@@ -1299,10 +1280,6 @@ class Core {
     let self = this;
     let options = self.options;
     if (options.auto && options.auto.time) {
-      // disabled
-      if (self.detail.disabled && !self.detail.initial) {
-        return false;
-      }
       // clear
       clearInterval(self.object.dataset.xtAutoStartInterval);
       // auto
@@ -1336,10 +1313,6 @@ class Core {
     let self = this;
     let options = self.options;
     if (options.auto && options.auto.time) {
-      // disabled
-      if (self.detail.disabled && !self.detail.initial) {
-        return false;
-      }
       // clear
       clearInterval(self.object.dataset.xtAutoStartInterval);
       // listener dispatch
@@ -1356,10 +1329,6 @@ class Core {
     let self = this;
     let options = self.options;
     if (options.auto && options.auto.time) {
-      // disabled
-      if (self.detail.disabled && !self.detail.initial) {
-        return false;
-      }
       // clear
       clearInterval(self.object.dataset.xtAutoStartInterval);
       // listener dispatch
@@ -1376,10 +1345,6 @@ class Core {
    */
   eventJump(el, e) {
     let self = this;
-    // disabled
-    if (self.detail.disabled && !self.detail.initial) {
-      return false;
-    }
     // check disabled
     if (el.classList.contains('jumps--none') || Xt.parents(el, '.jumps--none').length) {
       return false;
@@ -1398,10 +1363,6 @@ class Core {
    */
   eventNav(nav, e) {
     let self = this;
-    // disabled
-    if (self.detail.disabled && !self.detail.initial) {
-      return false;
-    }
     // nav
     let index = 0;
     if (self.currentIndex !== null) {
@@ -1887,7 +1848,9 @@ class Core {
       // appendTo
       if (options.appendTo) {
         let appendOrigin = document.querySelectorAll('[data-xt-origin=' + self.namespace + ']');
-        appendOrigin[0].before(el);
+        if (appendOrigin) {
+          appendOrigin[0].before(el);
+        }
       }
     }
     // aria
@@ -2137,7 +2100,7 @@ class Core {
       let closeElements = el.querySelectorAll(options.closeInside);
       requestAnimationFrame(function () {
         for (let closeElement of closeElements) {
-          let specialCloseInsideHandler = Xt.dataStorage.put(closeElement, 'specialCloseInsideHandler' + self.namespace,
+          let specialCloseInsideHandler = Xt.dataStorage.put(closeElement, 'click.xt.close' + self.namespace,
             self.eventSpecialCloseInsideHandler.bind(self).bind(self, closeElement, single));
           closeElement.removeEventListener('click', specialCloseInsideHandler);
           closeElement.addEventListener('click', specialCloseInsideHandler);
@@ -2149,7 +2112,7 @@ class Core {
       let closeElements = document.querySelectorAll(options.closeOutside);
       requestAnimationFrame(function () {
         for (let closeElement of closeElements) {
-          let specialCloseOutsideHandler = Xt.dataStorage.put(closeElement, 'specialCloseOutsideHandler' + self.namespace,
+          let specialCloseOutsideHandler = Xt.dataStorage.put(closeElement, 'click.xt.close' + self.namespace,
             self.eventSpecialCloseOutsideHandler.bind(self).bind(self, el, single));
           closeElement.removeEventListener('click', specialCloseOutsideHandler);
           closeElement.addEventListener('click', specialCloseOutsideHandler);
@@ -2169,7 +2132,7 @@ class Core {
     if (options.closeInside) {
       let closeElements = el.querySelectorAll(options.closeInside);
       for (let closeElement of closeElements) {
-        let specialCloseInsideHandler = Xt.dataStorage.get(closeElement, 'specialCloseInsideHandler' + self.namespace);
+        let specialCloseInsideHandler = Xt.dataStorage.get(closeElement, 'click.xt.close' + self.namespace);
         closeElement.removeEventListener('click', specialCloseInsideHandler);
       }
     }
@@ -2177,7 +2140,7 @@ class Core {
     if (options.closeOutside) {
       let closeElements = document.querySelectorAll(options.closeOutside);
       for (let closeElement of closeElements) {
-        let specialCloseOutsideHandler = Xt.dataStorage.get(closeElement, 'specialCloseOutsideHandler' + self.namespace);
+        let specialCloseOutsideHandler = Xt.dataStorage.get(closeElement, 'click.xt.close' + self.namespace);
         closeElement.removeEventListener('click', specialCloseOutsideHandler);
       }
     }
@@ -2363,10 +2326,6 @@ class Core {
   goToIndex(index, force = false, loop = null) {
     let self = this;
     let options = self.options;
-    // disabled
-    if (self.detail.disabled && !self.detail.initial) {
-      return false;
-    }
     // check
     let max = self.elementsSingle.length - 1;
     if (index > max) {
@@ -2411,6 +2370,38 @@ class Core {
     // enable
     self.detail.disabled = false;
     self.object.classList.remove('xt-disabled');
+  }
+
+  //////////////////////
+  // destroy
+  //////////////////////
+
+  /**
+   * destroy
+   */
+  destroy() {
+    let self = this;
+    // setup
+    self.object.removeAttribute('data-' + self.componentName + '-done');
+    Xt.remove(self.object, self.componentName);
+    // remove events
+    let elements = [window, ...self.object, ...self.elements, ...self.targets];
+    for (let element of elements) {
+      let storages = Xt.dataStorage.getAll(element);
+      if (storages) {
+        for (let [key, storage] of storages) {
+          if (key.endsWith(self.namespace)) {
+            let handler = Xt.dataStorage.get(element, key);
+            let events = key.split('.')[0].split(' ');
+            for (let event of events) {
+              element.removeEventListener(event, handler);
+            }
+          }
+        }
+      }
+    }
+    // destroy
+    delete this;
   }
 
 }

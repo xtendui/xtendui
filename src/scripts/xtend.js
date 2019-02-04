@@ -47,15 +47,54 @@ Xt.scrollDelay = false;
 Xt.focusables = 'a, button, details, input, iframe, select, textarea';
 
 //////////////////////
+// set and get
+//////////////////////
+
+/**
+ * set component to element
+ * @param {Node|HTMLElement|EventTarget|Window} object Component's object
+ * @param {String} name Component's name
+ * @param {Object} self Component' self
+ */
+Xt.set = function (object, name, self) {
+  Xt.dataStorage.put(object, name, self);
+};
+
+/**
+ * get component from element
+ * @param {Node|HTMLElement|EventTarget|Window} object Component's object
+ * @param {String} name Component name
+ */
+Xt.get = function (object, name) {
+  return Xt.dataStorage.get(object, name);
+};
+
+/**
+ * get component from element
+ * @param {Node|HTMLElement|EventTarget|Window} object Component's object
+ * @param {String} name Component name
+ */
+Xt.remove = function (object, name) {
+  return Xt.dataStorage.remove(object, name);
+};
+
+//////////////////////
 // init
 //////////////////////
 
 /**
- * initXt
+ * init component
  */
-Xt.initXt = function (added = document.documentElement) {
+Xt.init = function (added = document.documentElement) {
   added = Xt.arrSingle(added);
   for (let element of added) {
+    // core
+    if (element.matches('[data-xt-core]')) {
+      new Xt.Core(element);
+    }
+    for (let el of element.querySelectorAll('[data-xt-core]')) {
+      new Xt.Core(el);
+    }
     // toggle
     if (element.matches('[data-xt-toggle]')) {
       new Xt.Toggle(element);
@@ -116,6 +155,28 @@ Xt.initXt = function (added = document.documentElement) {
 };
 
 /**
+ * destroy component
+ */
+Xt.destroy = function (removed = document.documentElement) {
+  removed = Xt.arrSingle(removed);
+  for (let element of removed) {
+    // slider
+    if (element.matches('[data-xt-slider-done]')) {
+      let self = Xt.get(element, 'xt-slider');
+      if (self) {
+        self.destroy()
+      }
+    }
+    for (let el of element.querySelectorAll('[data-xt-slider-done]')) {
+      let self = Xt.get(el, 'xt-slider');
+      if (self) {
+        self.destroy()
+      }
+    }
+  }
+};
+
+/**
  * initObserve
  */
 
@@ -142,17 +203,23 @@ Xt.initObserve = function (added = document.documentElement) {
 
 Xt.observer = new MutationObserver(function (mutationsList) {
   for (let mutation of mutationsList) {
-    if (mutation.type == 'childList') {
+    if (mutation.type === 'childList') {
+      // removed
+      for (let removed of mutation.removedNodes) {
+        if (removed.nodeType === 1 && !removed.classList.contains('xt-ignore')) {
+          Xt.destroy(removed);
+        }
+      }
+      // added
       for (let added of mutation.addedNodes) {
         if (added.nodeType === 1 && !added.classList.contains('xt-ignore')) {
+          Xt.init(added);
           Xt.initObserve(added);
-          Xt.initXt(added);
         }
       }
     }
   }
 });
-
 
 /**
  * document ready
@@ -160,8 +227,8 @@ Xt.observer = new MutationObserver(function (mutationsList) {
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', function () {
+    Xt.init();
     Xt.initObserve();
-    Xt.initXt();
     Xt.observer.observe(document.documentElement, {
       characterData: false,
       attributes: false,
@@ -171,8 +238,8 @@ if (document.readyState === 'loading') {
   });
 } else {
   requestAnimationFrame(function () {
+    Xt.init();
     Xt.initObserve();
-    Xt.initXt();
     Xt.observer.observe(document.documentElement, {
       characterData: false,
       attributes: false,
@@ -181,29 +248,6 @@ if (document.readyState === 'loading') {
     });
   });
 }
-
-//////////////////////
-// component
-//////////////////////
-
-/**
- * set component to element
- * @param {String} name Component's name
- * @param {Node|HTMLElement|EventTarget|Window} object Component's object
- * @param {Object} self Component' self
- */
-Xt.set = function (name, object, self) {
-  Xt.dataStorage.put(object, name, self);
-};
-
-/**
- * get component from element
- * @param {String} name Component name
- * @param {Node|HTMLElement|EventTarget|Window} object Component's object
- */
-Xt.get = function (name, object) {
-  return Xt.dataStorage.get(object, name);
-};
 
 //////////////////////
 // btnMerge
@@ -296,13 +340,15 @@ Xt.dataStorage = {
     if (!this._storage.has(el)) {
       this._storage.set(el, new Map());
     }
-    // if already there return
-    if (this._storage.get(el).get(key)) {
-      return this._storage.get(el).get(key);
+    // return
+    let getEl = this._storage.get(el);
+    let getKey = getEl.get(key);
+    if (getKey) {
+      return getKey;
     }
-    // else put
-    this._storage.get(el).set(key, obj);
-    return this._storage.get(el).get(key);
+    // put
+    getEl.set(key, obj);
+    return getEl.get(key);
   },
 
   /**
@@ -312,12 +358,13 @@ Xt.dataStorage = {
    * @returns {Object|Function}
    */
   get: function (el, key) {
+    let getEl = this._storage.get(el);
     // if no map return null
-    if (!this._storage.get(el)) {
+    if (!getEl) {
       return null;
     }
-    // else get
-    return this._storage.get(el).get(key);
+    // get
+    return getEl.get(key);
   },
 
   /**
@@ -326,12 +373,13 @@ Xt.dataStorage = {
    * @returns {Object|Function}
    */
   getAll: function (el) {
+    let getEl = this._storage.get(el);
     // if no map return null
-    if (!this._storage.get(el)) {
+    if (!getEl) {
       return null;
     }
-    // else get
-    return this._storage.get(el);
+    // get all
+    return getEl;
   },
 
   /**
@@ -352,9 +400,14 @@ Xt.dataStorage = {
    * @returns {Boolean}
    */
   remove: function (el, key) {
+    let getEl = this._storage.get(el);
+    // if no map return null
+    if (!getEl) {
+      return null;
+    }
     // remove
-    let ret = this._storage.get(el).delete(key);
-    if (!this._storage.get(el).size === false) {
+    let ret = getEl.delete(key);
+    if (!getEl.size === false) {
       this._storage.delete(el);
     }
     return ret;
@@ -419,12 +472,12 @@ Xt.focus = {
    */
   on: function () {
     // event key
-    let focusChangeKeyHandler = Xt.dataStorage.put(document, 'focusChangeKeyHandler',
+    let focusChangeKeyHandler = Xt.dataStorage.put(document, 'keyup.xt.focus',
       Xt.focus.changeKey);
     document.removeEventListener('keyup', focusChangeKeyHandler);
     document.addEventListener('keyup', focusChangeKeyHandler);
     // event mouse
-    let focusChangeOtherHandler = Xt.dataStorage.get(document, 'focusChangeOtherHandler');
+    let focusChangeOtherHandler = Xt.dataStorage.get(document, 'mousedown touchstart pointerdown.xt.focus');
     document.removeEventListener('mousedown', focusChangeOtherHandler);
     document.removeEventListener('touchstart', focusChangeOtherHandler);
     document.removeEventListener('pointerdown', focusChangeOtherHandler);
@@ -435,14 +488,14 @@ Xt.focus = {
    */
   off: function () {
     // event
-    let focusChangeKeyHandler = Xt.dataStorage.get(document, 'focusChangeKeyHandler');
+    let focusChangeKeyHandler = Xt.dataStorage.get(document, 'keyup.xt.focus');
     document.removeEventListener('keyup', focusChangeKeyHandler);
     // event mouse
-    let focusChangeOtherHandler = Xt.dataStorage.put(document, 'focusChangeOtherHandler',
+    let focusChangeOtherHandler = Xt.dataStorage.put(document, 'mousedown touchstart pointerdown.xt.focus',
       Xt.focus.changeOther);
     document.addEventListener('mousedown', focusChangeOtherHandler);
-    document.addEventListener('touchstart', focusChangeOtherHandler);
-    document.addEventListener('pointerdown', focusChangeOtherHandler);
+    document.addEventListener('touchstart', focusChangeOtherHandler, Xt.passiveSupported ? {passive: true} : false);
+    document.addEventListener('pointerdown', focusChangeOtherHandler, Xt.passiveSupported ? {passive: true} : false);
   },
 
   /**
@@ -507,7 +560,7 @@ Xt.focusLimit = {
       let first = focusables[0];
       let last = focusables[focusables.length - 1];
       // event
-      let focusLimitHandler = Xt.dataStorage.put(document, 'focusLimitHandler',
+      let focusLimitHandler = Xt.dataStorage.put(document, 'keyup.xt.focusLimit',
         Xt.focusLimit.limit.bind(this).bind(this, focusables, first, last));
       document.removeEventListener('keyup', focusLimitHandler);
       document.addEventListener('keyup', focusLimitHandler);
@@ -519,7 +572,7 @@ Xt.focusLimit = {
    */
   off: function () {
     // event
-    let focusLimitHandler = Xt.dataStorage.get(document, 'focusLimitHandler');
+    let focusLimitHandler = Xt.dataStorage.get(document, 'keyup.xt.focusLimit');
     document.removeEventListener('keyup', focusLimitHandler);
   },
 
@@ -597,7 +650,7 @@ Xt.checkNested = function (element, targets) {
  */
 Xt.scrollbarWidth = function (force = false) {
   if (Xt.scrollbarWidthVal === undefined) {
-    let scrollbarWidthHandler = Xt.dataStorage.put(window, 'scrollbarWidthHandler',
+    let scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize.xt.scrollbar',
       Xt.scrollbarWidth.bind(this, true));
     removeEventListener('resize', scrollbarWidthHandler);
     addEventListener('resize', scrollbarWidthHandler);
@@ -764,34 +817,36 @@ Xt.animTimeoutClear = function (el) {
  * @param {Event} e Event
  * @param {Node|HTMLElement|EventTarget|Window} element Element to save timeout
  * @param {Function} func Function to execute
+ * @param {String} prefix Timeout prefix
  */
-Xt.eventDelay = function (e, element, func, prefix = null) {
+Xt.eventDelay = function (e, element, func, prefix = '') {
   if (e.type === 'resize' || e.type === 'scroll') {
     let delay = Xt[e.type + 'Delay'];
     if (delay === false) {
       // func
-      func();
+      func(e);
       return false;
     }
     if (e.type === 'resize') {
       // multiple calls
       let windowWidth = window.innerWidth;
       let windowHeight = window.innerHeight;
-      if (windowWidth === parseFloat(element.dataset.windowWidth) && windowHeight === parseFloat(element.dataset.windowHeight)) {
+      if (windowWidth === parseFloat(element.dataset['windowWidth' + prefix])
+        && windowHeight === parseFloat(element.dataset['windowHeight' + prefix])) {
         return false;
       }
-      element.dataset.windowWidth = windowWidth.toString();
-      element.dataset.windowHeight = windowHeight.toString();
+      element.dataset['windowWidth' + prefix] = windowWidth.toString();
+      element.dataset['windowHeight' + prefix] = windowHeight.toString();
     }
     // delay
-    clearTimeout(parseFloat(element.dataset['xt' + e.type + 'Timeout']));
-    element.dataset['xt' + e.type + 'Timeout'] = setTimeout(function () {
+    clearTimeout(parseFloat(element.dataset['xt' + e.type + prefix + 'Timeout']));
+    element.dataset['xt' + e.type + prefix + 'Timeout'] = setTimeout(function () {
       // func
-      func();
+      func(e);
     }, delay).toString();
   } else {
     // func
-    func();
+    func(e);
   }
 };
 
@@ -827,6 +882,7 @@ function setVh() {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', vh + 'px');
 }
+
 addEventListener('resize', setVh);
 setVh();
 
@@ -850,6 +906,12 @@ addEventListener('blur', function () {
 Math.nthroot = function (x, n) {
   return this.exp((1 / n) * this.log(x));
 };
+
+// prevent scroll on popstate
+
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
 
 //////////////////////
 // export

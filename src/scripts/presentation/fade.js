@@ -34,7 +34,7 @@ class Fade extends Core {
     let self = this;
     let options = self.options;
     // event on
-    let fadeHandler = Xt.dataStorage.put(window, 'fadeHandler' + self.namespace,
+    let fadeHandler = Xt.dataStorage.put(window, options.on + '.xt.fade' + self.namespace,
       self.eventFadeHandler.bind(self));
     if (options.on) {
       let events = [...options.on.split(' ')];
