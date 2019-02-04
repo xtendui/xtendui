@@ -157,12 +157,12 @@ class Slider extends Core {
       // disable links
       slide.classList.add('links--none');
       // slide on
-      let slideOnHandler = Xt.dataStorage.put(slide, 'on.xt.slider' + self.namespace,
+      let slideOnHandler = Xt.dataStorage.put(slide, 'on' + '.' + self.namespace,
         self.eventSlideOnHandler.bind(self).bind(self, dragger, slide));
       slide.removeEventListener('on.xt', slideOnHandler);
       slide.addEventListener('on.xt', slideOnHandler, true); // @FIX event.xt: useCapture for custom events order on re-init
       // slide off
-      let slideOffHandler = Xt.dataStorage.put(slide, 'off.xt.slider' + self.namespace,
+      let slideOffHandler = Xt.dataStorage.put(slide, 'off' + '.' + self.namespace,
         self.eventSlideOffHandler.bind(self).bind(self, dragger, slide));
       slide.removeEventListener('off.xt', slideOffHandler);
       slide.addEventListener('off.xt', slideOffHandler, true); // @FIX event.xt: useCapture for custom events order on re-init
@@ -170,7 +170,7 @@ class Slider extends Core {
     // dragger
     if (options.drag) {
       // drag
-      let dragstartHandler = Xt.dataStorage.put(dragger, 'mousedown touchstart.xt.slider' + self.namespace,
+      let dragstartHandler = Xt.dataStorage.put(dragger, 'mousedown touchstart' + '.' + self.namespace,
         self.eventDragstartHandler.bind(self).bind(self, dragger));
       let events = ['mousedown', 'touchstart'];
       for (let event of events) {
@@ -185,7 +185,7 @@ class Slider extends Core {
       }
     }
     // resize
-    let resizeHandler = Xt.dataStorage.put(window, 'resize.xt.slider' + self.namespace,
+    let resizeHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace,
       self.eventResizeHandler.bind(self).bind(self));
     removeEventListener('resize', resizeHandler);
     addEventListener('resize', resizeHandler);
@@ -325,12 +325,12 @@ class Slider extends Core {
         // auto
         self.eventAutoPause();
         // event off
-        let dragendHandler = Xt.dataStorage.put(dragger, 'mouseup touchend.xt.slider' + self.namespace,
+        let dragendHandler = Xt.dataStorage.put(dragger, 'mouseup touchend' + '.' + self.namespace,
           self.eventDragendHandler.bind(self).bind(self, dragger));
         let events = ['mouseup', 'touchend'];
         for (let event of events) {
-          window.removeEventListener(event, dragendHandler);
-          window.addEventListener(event, dragendHandler);
+          removeEventListener(event, dragendHandler);
+          addEventListener(event, dragendHandler);
         }
       }
     }
@@ -355,10 +355,10 @@ class Slider extends Core {
     // auto
     self.eventAutoStart();
     // event off
-    let dragendHandler = Xt.dataStorage.get(dragger, 'mouseup touchend.xt.slider' + self.namespace);
+    let dragendHandler = Xt.dataStorage.get(dragger, 'mouseup touchend' + '.' + self.namespace);
     let events = ['mouseup', 'touchend'];
     for (let event of events) {
-      window.removeEventListener(event, dragendHandler);
+      removeEventListener(event, dragendHandler);
     }
   }
 
@@ -374,7 +374,7 @@ class Slider extends Core {
     // eDetail
     self.eDetailSet(e);
     // event move
-    let dragHandler = Xt.dataStorage.put(dragger, 'mousemove touchmove.xt.slider' + self.namespace,
+    let dragHandler = Xt.dataStorage.put(dragger, 'mousemove touchmove' + '.' + self.namespace,
       self.eventDragHandler.bind(self).bind(self, dragger));
     let events = ['mousemove', 'touchmove'];
     for (let event of events) {
@@ -397,7 +397,7 @@ class Slider extends Core {
     // eDetail
     self.eDetailSet(e);
     // event move
-    let dragHandler = Xt.dataStorage.get(dragger, 'mousemove touchmove.xt.slider' + self.namespace);
+    let dragHandler = Xt.dataStorage.get(dragger, 'mousemove touchmove' + '.' + self.namespace);
     let events = ['mousemove', 'touchmove'];
     for (let event of events) {
       dragger.removeEventListener(event, dragHandler);
@@ -470,7 +470,7 @@ class Slider extends Core {
       let images = slide.querySelectorAll('img');
       for (let image of images) {
         if (!image.complete) {
-          let imageLoadHandler = Xt.dataStorage.put(image, 'load.xt.slider' + self.namespace,
+          let imageLoadHandler = Xt.dataStorage.put(image, 'load' + '.' + self.namespace,
             self.eventAutoHeight.bind(self).bind(self, slide));
           image.removeEventListener('load', imageLoadHandler);
           image.addEventListener('load', imageLoadHandler);

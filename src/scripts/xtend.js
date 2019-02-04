@@ -472,12 +472,12 @@ Xt.focus = {
    */
   on: function () {
     // event key
-    let focusChangeKeyHandler = Xt.dataStorage.put(document, 'keyup.xt.focus',
+    let focusChangeKeyHandler = Xt.dataStorage.put(document, 'keyup.focus',
       Xt.focus.changeKey);
     document.removeEventListener('keyup', focusChangeKeyHandler);
     document.addEventListener('keyup', focusChangeKeyHandler);
     // event mouse
-    let focusChangeOtherHandler = Xt.dataStorage.get(document, 'mousedown touchstart pointerdown.xt.focus');
+    let focusChangeOtherHandler = Xt.dataStorage.get(document, 'mousedown touchstart pointerdown.focus');
     document.removeEventListener('mousedown', focusChangeOtherHandler);
     document.removeEventListener('touchstart', focusChangeOtherHandler);
     document.removeEventListener('pointerdown', focusChangeOtherHandler);
@@ -488,10 +488,10 @@ Xt.focus = {
    */
   off: function () {
     // event
-    let focusChangeKeyHandler = Xt.dataStorage.get(document, 'keyup.xt.focus');
+    let focusChangeKeyHandler = Xt.dataStorage.get(document, 'keyup.focus');
     document.removeEventListener('keyup', focusChangeKeyHandler);
     // event mouse
-    let focusChangeOtherHandler = Xt.dataStorage.put(document, 'mousedown touchstart pointerdown.xt.focus',
+    let focusChangeOtherHandler = Xt.dataStorage.put(document, 'mousedown touchstart pointerdown.focus',
       Xt.focus.changeOther);
     document.addEventListener('mousedown', focusChangeOtherHandler);
     document.addEventListener('touchstart', focusChangeOtherHandler, Xt.passiveSupported ? {passive: true} : false);
@@ -560,7 +560,7 @@ Xt.focusLimit = {
       let first = focusables[0];
       let last = focusables[focusables.length - 1];
       // event
-      let focusLimitHandler = Xt.dataStorage.put(document, 'keyup.xt.focusLimit',
+      let focusLimitHandler = Xt.dataStorage.put(document, 'keyup.focusLimit',
         Xt.focusLimit.limit.bind(this).bind(this, focusables, first, last));
       document.removeEventListener('keyup', focusLimitHandler);
       document.addEventListener('keyup', focusLimitHandler);
@@ -572,7 +572,7 @@ Xt.focusLimit = {
    */
   off: function () {
     // event
-    let focusLimitHandler = Xt.dataStorage.get(document, 'keyup.xt.focusLimit');
+    let focusLimitHandler = Xt.dataStorage.get(document, 'keyup.focusLimit');
     document.removeEventListener('keyup', focusLimitHandler);
   },
 
@@ -650,7 +650,7 @@ Xt.checkNested = function (element, targets) {
  */
 Xt.scrollbarWidth = function (force = false) {
   if (Xt.scrollbarWidthVal === undefined) {
-    let scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize.xt.scrollbar',
+    let scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize.scrollbar',
       Xt.scrollbarWidth.bind(this, true));
     removeEventListener('resize', scrollbarWidthHandler);
     addEventListener('resize', scrollbarWidthHandler);

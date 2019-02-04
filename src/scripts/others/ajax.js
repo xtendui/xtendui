@@ -240,6 +240,8 @@ class Ajax extends Core {
   ajaxSuccess(element, url, request) {
     let self = this;
     let options = self.options;
+    // autoClose
+    dispatchEvent(new CustomEvent('autoCloseFix.xt'));
     // set substitute
     let html = document.createElement('html');
     html.innerHTML = request.responseText.trim();
@@ -295,7 +297,7 @@ class Ajax extends Core {
     // dispatch
     self.eDetailSet();
     self.eDetail.request = request;
-    self.object.dispatchEvent(new CustomEvent('duration.xt.ajax', {detail: self.eDetail}));
+    self.object.dispatchEvent(new CustomEvent('replace.xt.ajax', {detail: self.eDetail}));
     // reinit
     if (!self.detail.initial) {
       self.detail.initial = true;
@@ -316,7 +318,7 @@ class Ajax extends Core {
     // dispatch
     self.eDetailSet();
     self.eDetail.request = request;
-    self.object.dispatchEvent(new CustomEvent('duration.xt.ajax', {detail: self.eDetail}));
+    self.object.dispatchEvent(new CustomEvent('replace.xt.ajax', {detail: self.eDetail}));
   }
 
   /**
