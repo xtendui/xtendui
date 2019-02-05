@@ -47,6 +47,7 @@ class Core {
     self.detail.queueOn = [];
     self.detail.queueOff = [];
     self.detail.inverseDirection = false;
+    self.detail.autoPaused = false;
     // destroy if already done
     if (self.object.getAttribute('data-' + self.componentName + '-done')) {
       self.destroy();
@@ -648,7 +649,11 @@ class Core {
   eventAutoPauseHandler(e) {
     let self = this;
     if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
-      self.eventAutoPause();
+      if (!self.detail.autoPaused) {
+        self.eventAutoPause();
+        // paused
+        self.detail.autoPaused = true;
+      }
     }
   }
 
@@ -659,7 +664,11 @@ class Core {
   eventAutoResumeHandler(e) {
     let self = this;
     if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
-      self.eventAutoStart();
+      if (self.detail.autoPaused) {
+        self.eventAutoStart();
+        // paused
+        self.detail.autoPaused = false;
+      }
     }
   }
 
@@ -1272,6 +1281,8 @@ class Core {
     let self = this;
     let options = self.options;
     if (options.auto && options.auto.time) {
+      // paused
+      self.detail.autoPaused = false;
       // clear
       clearInterval(self.object.dataset.xtAutoStartInterval);
       // auto

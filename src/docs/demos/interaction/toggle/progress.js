@@ -17,7 +17,7 @@ function toggleInit(main, index, query) {
   let self = new Xt.Toggle(main, {
     "auto": {
       "time": 2000,
-      "pause": ":scope > button, .toggle--block"
+      "pause": ":scope > button"
     }
   });
 
@@ -31,9 +31,8 @@ function toggleInit(main, index, query) {
     for (let element of elements) {
       let fillers = element.querySelectorAll('.filler span:nth-child(2)');
       for (let filler of fillers) {
-        let timeline = new TimelineMax();
-        timeline.to(filler, timeHide / 1000, {height: 0, top: '100%', ease: easeInOut});
-        timeline.to(filler, (e.detail.autoTime / 1000) - (timeHide / 1000), {height: '100%', top: 0, ease: easeInOut});
+        TweenMax.set(filler, {height: 0, top: '100%', ease: easeInOut});
+        TweenMax.to(filler, e.detail.autoTime / 1000, {height: '100%', top: 0, ease: easeInOut});
       }
     }
     // on targets
@@ -41,9 +40,8 @@ function toggleInit(main, index, query) {
     for (let target of targets) {
       let fillers = target.querySelectorAll('.filler span:nth-child(2)');
       for (let filler of fillers) {
-        let timeline = new TimelineMax();
-        timeline.to(filler, timeHide / 1000, {width: 0, left: 0, ease: easeInOut});
-        timeline.to(filler, (e.detail.autoTime / 1000) - (timeHide / 1000), {width: '100%', left: 0, ease: easeInOut});
+        TweenMax.set(filler, {width: 0, left: 0, ease: easeInOut});
+        TweenMax.to(filler, e.detail.autoTime / 1000, {width: '100%', left: 0, ease: easeInOut});
       }
     }
   });
