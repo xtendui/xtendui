@@ -39,7 +39,7 @@ class Ajax extends Core {
     let self = this;
     // remove external links
     for (let element of self.elements) {
-      if (location.hostname !== element.hostname) {
+      if (location.hostname !== element.hostname || element.getAttribute('href').split('#')[0] === '') {
         self.elements = Array.from(self.elements).filter(x => x !== element);
       }
     }
