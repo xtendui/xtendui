@@ -298,6 +298,7 @@ class Ajax extends Core {
     self.object.dispatchEvent(new CustomEvent('replace.xt.ajax', {detail: self.eDetail}));
     // reinit
     if (!self.detail.initial) {
+      self.detail.initial = true;
       self.init();
     }
   }
