@@ -31,11 +31,21 @@ gulp.task('less:demos:watch', function (done) {
   done();
 });
 
-gulp.task('less:docs', gulp.series('less:demos', function () {
+gulp.task('lessmin:docs', gulp.series('less:demos', function () {
   return gulp.src(['src/docs/assets/styles/**/*.less', '!src/docs/assets/styles/**/_*.less'])
-    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(sourcemaps.init())
     .pipe(less())
+    .pipe(rename({
+      suffix: '.min'
+    }))
     .pipe(cleanCSS())
+    .pipe(sourcemaps.write(''))
+    .pipe(gulp.dest('src/docs/assets/styles/'));
+}));
+gulp.task('less:docs', gulp.series('lessmin:docs', function () {
+  return gulp.src(['src/docs/assets/styles/**/*.less', '!src/docs/assets/styles/**/_*.less'])
+    .pipe(sourcemaps.init())
+    .pipe(less())
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/styles/'));
 }));
@@ -49,11 +59,11 @@ gulp.task('lessmin', function () {
   let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
   return gulp.src(['dist/styles/*.less', '!dist/styles/_*.less'])
     .pipe(replace(/\/\*\![^\*]+\*\//, banner))
+    .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(cleanCSS())
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('dist/styles/'));
@@ -63,7 +73,7 @@ gulp.task('less', gulp.series('lessmin', function () {
   let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
   return gulp.src(['dist/styles/*.less', '!dist/styles/_*.less'])
     .pipe(replace(/\/\*\![^\*]+\*\//, banner))
-    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('dist/styles/'));
