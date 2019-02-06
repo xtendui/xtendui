@@ -5,12 +5,13 @@
 'use strict';
 
 import Xt from '../xtend';
+import Core from '../core';
 
 //////////////////////
 // smooth
 //////////////////////
 
-class Smooth {
+class Smooth extends Core {
 
   /**
    * constructor
@@ -19,13 +20,7 @@ class Smooth {
    * @constructor
    */
   constructor(object, jsOptions = {}) {
-    let self = this;
-    // var
-    self.componentName = self.constructor.componentName;
-    self.object = object;
-    self.jsOptions = jsOptions;
-    // init
-    self.init();
+    super(object, jsOptions);
   }
 
   //////////////////////
@@ -195,38 +190,6 @@ class Smooth {
     } else {
       self.detail.moving = false;
     }
-  }
-
-  //////////////////////
-  // destroy
-  //////////////////////
-
-  /**
-   * destroy
-   */
-  destroy() {
-    let self = this;
-    // remove events
-    let elements = self.destroyElements;
-    for (let element of elements) {
-      let storages = Xt.dataStorage.getAll(element);
-      if (storages) {
-        for (let [key, storage] of storages) {
-          if (key.endsWith(self.namespace)) {
-            let handler = Xt.dataStorage.get(element, key);
-            let events = key.split('.')[0].split(' ');
-            for (let event of events) {
-              element.removeEventListener(event, handler);
-            }
-          }
-        }
-      }
-    }
-    // remove setup
-    self.object.removeAttribute('data-' + self.componentName + '-done');
-    Xt.remove(self.object, self.componentName);
-    // destroy
-    delete this;
   }
 
 
