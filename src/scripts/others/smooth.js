@@ -39,6 +39,7 @@ class Smooth {
     let self = this;
     // var
     self.detail = {};
+    self.destroyElements = [self.object];
     // destroy if already done
     if (self.object.getAttribute('data-' + self.componentName + '-done')) {
       self.destroy();
@@ -49,7 +50,8 @@ class Smooth {
     Xt.set(self.object, self.componentName, self);
     // init
     self.initDefaults();
-    self.initStart();
+    self.initSetup();
+    self.initEvents();
   }
 
   /**
@@ -66,21 +68,39 @@ class Smooth {
     self.options = Xt.merge([self.options, markupOptions ? JSON.parse(markupOptions) : {}]);
     // var
     self.scrollElement = self.options.scrollElement;
+    self.destroyElements.push(self.scrollElement);
   }
 
   /**
-   * init start
+   * init namespace, container and options
    */
-  initStart() {
+  initSetup() {
+    let self = this;
+    // namespace
+    self.container = self.object;
+    self.container.dataset.uniqueId = self.container.dataset.uniqueId ? self.container.dataset.uniqueId : Xt.getuniqueId();
+    self.namespace = self.componentName + '-' + self.container.dataset.uniqueId;
+  }
+
+  /**
+   * init events
+   */
+  initEvents() {
     let self = this;
     // save scroll position for eventWheel
     self.detail.moving = false;
     self.detail.scrollTop = self.detail.scrollTopInitial = self.object.scrollTop;
-    // handler
+    // vars
     let eWheel = 'onwheel' in self.object ? 'wheel' : self.object.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
     self.object = self.object ? self.object : document.documentElement; // polyfill document.scrollingElement
-    self.object.addEventListener(eWheel, self.eventWheel.bind(self));
-    self.scrollElement.addEventListener('scroll', self.eventScroll.bind(self), Xt.passiveSupported ? {passive: true} : false);
+    // wheel
+    let wheelHandler = Xt.dataStorage.put(self.object, eWheel + '.' + self.namespace,
+      self.eventWheel.bind(self));
+    self.object.addEventListener(eWheel, wheelHandler);
+    // scroll
+    let scrollHandler = Xt.dataStorage.put(self.scrollElement, 'scroll' + '.' + self.namespace,
+      self.eventScroll.bind(self));
+    self.scrollElement.addEventListener('scroll', scrollHandler, Xt.passiveSupported ? {passive: true} : false);
   }
 
   //////////////////////
@@ -177,6 +197,37 @@ class Smooth {
     }
   }
 
+  //////////////////////
+  // destroy
+  //////////////////////
+
+  /**
+   * destroy
+   */
+  destroy() {
+    let self = this;
+    // remove events
+    let elements = self.destroyElements;
+    for (let element of elements) {
+      let storages = Xt.dataStorage.getAll(element);
+      if (storages) {
+        for (let [key, storage] of storages) {
+          if (key.endsWith(self.namespace)) {
+            let handler = Xt.dataStorage.get(element, key);
+            let events = key.split('.')[0].split(' ');
+            for (let event of events) {
+              element.removeEventListener(event, handler);
+            }
+          }
+        }
+      }
+    }
+    // remove setup
+    self.object.removeAttribute('data-' + self.componentName + '-done');
+    Xt.remove(self.object, self.componentName);
+    // destroy
+    delete this;
+  }
 
 
 }

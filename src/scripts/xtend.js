@@ -45,6 +45,16 @@ Xt.currents = {}; // Xt currents based on namespace (so shared between Xt object
 Xt.resizeDelay = 100;
 Xt.scrollDelay = false;
 Xt.focusables = 'a, button, details, input, iframe, select, textarea';
+Xt.components = [
+  {'name': 'xt-core', 'class': Xt.Core},
+  {'name': 'xt-toggle', 'class': Xt.Toggle},
+  {'name': 'xt-drop', 'class': Xt.Drop},
+  {'name': 'xt-overlay', 'class': Xt.Overlay},
+  {'name': 'xt-slider', 'class': Xt.Slider},
+  {'name': 'xt-sticky', 'class': Xt.Sticky},
+  {'name': 'xt-fade', 'class': Xt.Fade},
+  {'name': 'xt-ajax', 'class': Xt.Ajax}
+];
 
 //////////////////////
 // set and get
@@ -88,61 +98,14 @@ Xt.remove = function (object, name) {
 Xt.init = function (added = document.documentElement) {
   added = Xt.arrSingle(added);
   for (let element of added) {
-    // core
-    if (element.matches('[data-xt-core]')) {
-      new Xt.Core(element);
-    }
-    for (let el of element.querySelectorAll('[data-xt-core]')) {
-      new Xt.Core(el);
-    }
-    // toggle
-    if (element.matches('[data-xt-toggle]')) {
-      new Xt.Toggle(element);
-    }
-    for (let el of element.querySelectorAll('[data-xt-toggle]')) {
-      new Xt.Toggle(el);
-    }
-    // drop
-    if (element.matches('[data-xt-drop]')) {
-      new Xt.Drop(element);
-    }
-    for (let el of element.querySelectorAll('[data-xt-drop]')) {
-      new Xt.Drop(el);
-    }
-    // overlay
-    if (element.matches('[data-xt-overlay]')) {
-      new Xt.Overlay(element);
-    }
-    for (let el of element.querySelectorAll('[data-xt-overlay]')) {
-      new Xt.Overlay(el);
-    }
-    // slider
-    if (element.matches('[data-xt-slider]')) {
-      new Xt.Slider(element);
-    }
-    for (let el of element.querySelectorAll('[data-xt-slider]')) {
-      new Xt.Slider(el);
-    }
-    // sticky
-    if (element.matches('[data-xt-sticky]')) {
-      new Xt.Sticky(element);
-    }
-    for (let el of element.querySelectorAll('[data-xt-sticky]')) {
-      new Xt.Sticky(el);
-    }
-    // fade
-    if (element.matches('[data-xt-fade]')) {
-      new Xt.Fade(element);
-    }
-    for (let el of element.querySelectorAll('[data-xt-fade]')) {
-      new Xt.Fade(el);
-    }
-    // ajax
-    if (element.matches('[data-xt-ajax]')) {
-      new Xt.Ajax(element);
-    }
-    for (let el of element.querySelectorAll('[data-xt-ajax]')) {
-      new Xt.Ajax(el);
+    // components
+    for (let component of Xt.components) {
+      if (element.matches('[data-' + component.name + ']')) {
+        new component.class(element);
+      }
+      for (let el of element.querySelectorAll('[data-' + component.name + ']')) {
+        new component.class(el);
+      }
     }
     // btnMerge
     if (element.matches('a, button')) {
@@ -160,17 +123,19 @@ Xt.init = function (added = document.documentElement) {
 Xt.destroy = function (removed = document.documentElement) {
   removed = Xt.arrSingle(removed);
   for (let element of removed) {
-    // slider
-    if (element.matches('[data-xt-slider-done]')) {
-      let self = Xt.get(element, 'xt-slider');
-      if (self) {
-        self.destroy()
+    // components
+    for (let component of Xt.components) {
+      if (element.matches('[data-' + component.name + '-done]')) {
+        let self = Xt.get(element, component.name);
+        if (self) {
+          self.destroy();
+        }
       }
-    }
-    for (let el of element.querySelectorAll('[data-xt-slider-done]')) {
-      let self = Xt.get(el, 'xt-slider');
-      if (self) {
-        self.destroy()
+      for (let el of element.querySelectorAll('[data-' + component.name + '-done]')) {
+        let self = Xt.get(el, component.name);
+        if (self) {
+          self.destroy();
+        }
       }
     }
   }

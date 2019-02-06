@@ -48,6 +48,7 @@ class Core {
     self.detail.queueOff = [];
     self.detail.inverseDirection = false;
     self.detail.autoPaused = false;
+    self.destroyElements = [document, window, self.object];
     // destroy if already done
     if (self.object.getAttribute('data-' + self.componentName + '-done')) {
       self.destroy();
@@ -166,6 +167,7 @@ class Core {
       arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
       arr = arr.filter(x => !x.getAttribute('data-xt-nav')); // filter out nav
       self.elements = arr;
+      self.destroyElements.push(...self.elements);
     }
     if (self.elements.length) {
       // elementsSingle
@@ -178,6 +180,7 @@ class Core {
         arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
         arr = arr.filter(x => !x.getAttribute('data-xt-nav')); // filter out nav
         self.elements = arr;
+        self.destroyElements.push(...self.elements);
         // elementsSingle
         self.elementsSingle = self.getElementsSingle();
       });
@@ -196,6 +199,7 @@ class Core {
       arr = arr.filter(x => !Xt.parents(x, options.targets).length); // filter out parent
       arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
       self.targets = arr;
+      self.destroyElements.push(...self.targets);
     }
   }
 
@@ -462,6 +466,7 @@ class Core {
     if (options.navigation) {
       let navs = self.object.querySelectorAll(options.navigation);
       if (navs.length) {
+        self.destroyElements.push(...navs);
         for (let nav of navs) {
           let navHandler = Xt.dataStorage.put(nav, 'click.nav' + '.' + self.namespace,
             self.eventNavHandler.bind(self).bind(self, nav));
@@ -472,6 +477,7 @@ class Core {
     // keyboard
     if (options.wheel && options.wheel.selector) {
       let wheels = options.wheel.selector === 'object' ? Xt.arrSingle(self.object) : self.object.querySelectorAll(options.wheel.selector);
+      self.destroyElements.push(...wheels);
       for (let wheel of wheels) {
         // wheel
         let eventWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
@@ -483,6 +489,7 @@ class Core {
     // keyboard
     if (options.keyboard && options.keyboard.selector) {
       let keyboards = options.keyboard.selector === 'object' ? Xt.arrSingle(self.object) : self.object.querySelectorAll(options.keyboard.selector);
+      self.destroyElements.push(...keyboards);
       for (let keyboard of keyboards) {
         keyboard.setAttribute('tabindex', '0');
         // focus
@@ -2382,11 +2389,8 @@ class Core {
    */
   destroy() {
     let self = this;
-    // setup
-    self.object.removeAttribute('data-' + self.componentName + '-done');
-    Xt.remove(self.object, self.componentName);
     // remove events
-    let elements = [window, ...self.object, ...self.elements, ...self.targets];
+    let elements = self.destroyElements;
     for (let element of elements) {
       let storages = Xt.dataStorage.getAll(element);
       if (storages) {
@@ -2401,11 +2405,20 @@ class Core {
         }
       }
     }
+    // remove setup
+    self.object.removeAttribute('data-' + self.componentName + '-done');
+    Xt.remove(self.object, self.componentName);
     // destroy
     delete this;
   }
 
 }
+
+//////////////////////
+// defaults
+//////////////////////
+
+Core.componentName = 'xt-core';
 
 //////////////////////
 // export

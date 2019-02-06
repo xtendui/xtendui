@@ -138,6 +138,7 @@ class Slider extends Core {
     }
     // initDragger
     if (self.dragger) {
+      self.destroyElements.push(self.dragger);
       self.initDragger();
     }
     // elements
@@ -462,6 +463,7 @@ class Slider extends Core {
       self.eventAutoHeight(slide);
       // images
       let images = slide.querySelectorAll('img');
+      self.destroyElements.push(images);
       for (let image of images) {
         if (!image.complete) {
           let imageLoadHandler = Xt.dataStorage.put(image, 'load' + '.' + self.namespace,
