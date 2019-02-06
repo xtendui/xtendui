@@ -1,1 +1,1 @@
-.alert{transition-duration:0s!important;animation-duration:0s!important}.in>*{color:green!important}.out>*{color:red!important}
+.alert{transition:initial!important;animation:initial!important}.in>*{color:green!important}.out>*{color:red!important}

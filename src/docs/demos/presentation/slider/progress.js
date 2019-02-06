@@ -54,9 +54,6 @@ function sliderInit(main, index, query) {
   // auto stop
 
   slider.addEventListener('stop.xt.auto', function (e) {
-    // on slider
-    let spinner = slider.querySelectorAll('.spinner svg:nth-child(2) circle');
-    TweenMax.to(spinner, timeHide / 1000, {strokeDashoffset: 628, ease: easeInOut, autoRound: false});
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {

@@ -687,6 +687,8 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     let xPosCurrent = self.detail.xPosCurrent || 0;
+    // prevent dragging animation
+    self.dragger.classList.remove('duration-none');
     // only one call per group
     let currents = self.getCurrents();
     for (let current of currents) {
@@ -746,8 +748,6 @@ class Slider extends Core {
       Xt.animTimeout(dragger, function () {
         dragger.classList.remove('pointer-events--none');
       });
-      // prevent dragging animation
-      self.dragger.classList.remove('duration-none');
       // listener dispatch
       dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
     }
