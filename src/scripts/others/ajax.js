@@ -65,16 +65,28 @@ class Ajax extends Core {
     // initial
     self.detail.initial = true;
     // automatic initial currents
-    for (let element of self.elements) {
-      let loc = location.pathname + location.search;
-      let url = element.pathname + element.search;
-      if (url !== '') {
-        if (loc === url) {
-          self.eventOn(element, false);
-        } else {
-          self.eventOff(element, false);
+    let elements = self.elements;
+    if (elements.length) {
+      let found = false;
+      for (let element of self.elements) {
+        let loc = location.pathname + location.search;
+        let url = element.pathname + element.search;
+        if (url !== '') {
+          if (loc === url) {
+            found = true;
+            self.eventOn(element, false);
+          } else {
+            self.eventOff(element, false);
+          }
         }
       }
+      if (!found) {
+        // initial
+        self.detail.initial = false;
+      }
+    } else {
+      // initial
+      self.detail.initial = false;
     }
     // detect url
     let url;
@@ -133,32 +145,10 @@ class Ajax extends Core {
       // reinit currents
       self.initCurrents();
       // request set
-      self.ajaxRequest(null, history.state.url);
+      requestAnimationFrame(function () {
+        self.ajaxRequest(null, history.state.url);
+      });
     }
-  }
-
-  //////////////////////
-  // special util
-  //////////////////////
-
-  /**
-   * check if an url contains host
-   * @param {String} url Url to check
-   * @returns {Boolean} If url has host
-   */
-  urlHasHost(url) {
-    let found;
-    found = url.indexOf('//') !== -1;
-    return found;
-  }
-
-  /**
-   * Remove host from an url
-   * @param {String} url Url to get
-   * @returns {String} Url without host
-   */
-  urlWithoutHost(url) {
-    return url.replace('http://', '').replace('https://', '').replace('//', '').split('/')[0];
   }
 
   //////////////////////
@@ -219,19 +209,24 @@ class Ajax extends Core {
     self.eDetailSet();
     self.eDetail.request = request;
     self.object.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
-    // request
-    if (request.status >= 200 && request.status < 400) {
-      // duration
-      self.detail.requestDuration -= new Date() - self.detail.requestDate;
-      if (self.detail.requestDuration > 0) {
-        self.object.dataset.xtAjaxDurationTimeout = setTimeout( function() {
+    // duration
+    self.detail.requestDuration -= new Date() - self.detail.requestDate;
+    if (self.detail.requestDuration > 0) {
+      self.object.dataset.xtAjaxDurationTimeout = setTimeout( function() {
+        // request
+        if (request.status >= 200 && request.status < 400) {
           self.ajaxSuccess(element, url, request);
-        }, self.detail.requestDuration).toString();
-      } else {
-        self.ajaxSuccess(element, url, request);
-      }
+        } else {
+          self.ajaxError(element, url, request);
+        }
+      }, self.detail.requestDuration).toString();
     } else {
-      self.ajaxError(element, url, request);
+      // request
+      if (request.status >= 200 && request.status < 400) {
+        self.ajaxSuccess(element, url, request);
+      } else {
+        self.ajaxError(element, url, request);
+      }
     }
   }
 
@@ -303,7 +298,6 @@ class Ajax extends Core {
     self.object.dispatchEvent(new CustomEvent('replace.xt.ajax', {detail: self.eDetail}));
     // reinit
     if (!self.detail.initial) {
-      self.detail.initial = true;
       self.init();
     }
   }
