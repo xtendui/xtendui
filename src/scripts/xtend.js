@@ -108,7 +108,7 @@ Xt.init = function (added = document.documentElement) {
       }
     }
     // btnMerge
-    if (element.matches('a, button')) {
+    if (element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
       Xt.btnMerge.init(element);
     }
     for (let el of Array.from(element.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
@@ -137,6 +137,13 @@ Xt.destroy = function (removed = document.documentElement) {
           self.destroy();
         }
       }
+    }
+    // btnMerge
+    if (element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
+      Xt.btnMerge.destroy(element);
+    }
+    for (let el of Array.from(element.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
+      Xt.btnMerge.destroy(el);
     }
   }
 };
@@ -213,69 +220,6 @@ if (document.readyState === 'loading') {
     });
   });
 }
-
-//////////////////////
-// btnMerge
-// pass .hover and .active classes to .btn inside
-//////////////////////
-
-Xt.btnMerge = {
-
-  /**
-   * init to pass .hover and .active to .btn inside Element
-   * @param {Node|HTMLElement|EventTarget|Window} el Element
-   */
-  init: function (el) {
-    if (!el.dataset.xtBtnMergeDone) {
-      el.dataset.xtBtnMergeDone = 'true';
-      el.addEventListener('mouseenter', Xt.btnMerge.hoverOn);
-      el.addEventListener('mouseleave', Xt.btnMerge.hoverOff);
-      el.addEventListener('mousedown', Xt.btnMerge.activeOn);
-      addEventListener('mouseup', Xt.btnMerge.activeOff.bind(el));
-    }
-  },
-
-  /**
-   * event hover on
-   */
-  hoverOn: function () {
-    let els = this.querySelectorAll('.btn');
-    for (let el of els) {
-      el.classList.add('hover');
-    }
-  },
-
-  /**
-   * event hover off
-   */
-  hoverOff: function () {
-    let els = this.querySelectorAll('.btn');
-    for (let el of els) {
-      el.classList.remove('hover');
-    }
-  },
-
-  /**
-   * event active on
-   */
-  activeOn: function () {
-    let els = this.querySelectorAll('.btn');
-    for (let el of els) {
-      el.classList.add('active');
-    }
-  },
-
-  /**
-   * event active off
-   */
-  activeOff: function () {
-    let els = this.querySelectorAll('.btn');
-    for (let el of els) {
-      el.classList.remove('active');
-    }
-  }
-
-};
 
 //////////////////////
 // dataStorage
@@ -554,6 +498,83 @@ Xt.focusLimit = {
           e.preventDefault();
         }
       }
+    }
+  }
+
+};
+
+//////////////////////
+// btnMerge
+// pass .hover and .active classes to .btn inside
+//////////////////////
+
+Xt.btnMerge = {
+
+  /**
+   * init to pass .hover and .active to .btn inside Element
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
+   */
+  init: function (el) {
+    if (!el.dataset.xtBtnMergeDone) {
+      el.dataset.xtBtnMergeDone = 'true';
+      el.addEventListener('mouseenter', Xt.btnMerge.hoverOn);
+      el.addEventListener('mouseleave', Xt.btnMerge.hoverOff);
+      el.addEventListener('mousedown', Xt.btnMerge.activeOn);
+      addEventListener('mouseup', Xt.btnMerge.activeOff.bind(el));
+    }
+  },
+
+  /**
+   * destroy
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
+   */
+  destroy: function (el) {
+    if (el.dataset.xtBtnMergeDone) {
+      delete el.dataset.xtBtnMergeDone;
+      el.removeEventListener('mouseenter', Xt.btnMerge.hoverOn);
+      el.removeEventListener('mouseleave', Xt.btnMerge.hoverOff);
+      el.removeEventListener('mousedown', Xt.btnMerge.activeOn);
+      removeEventListener('mouseup', Xt.btnMerge.activeOff.bind(el));
+    }
+  },
+
+  /**
+   * event hover on
+   */
+  hoverOn: function () {
+    let els = this.querySelectorAll('.btn');
+    for (let el of els) {
+      el.classList.add('hover');
+    }
+  },
+
+  /**
+   * event hover off
+   */
+  hoverOff: function () {
+    let els = this.querySelectorAll('.btn');
+    for (let el of els) {
+      el.classList.remove('hover');
+    }
+  },
+
+  /**
+   * event active on
+   */
+  activeOn: function () {
+    let els = this.querySelectorAll('.btn');
+    for (let el of els) {
+      el.classList.add('active');
+    }
+  },
+
+  /**
+   * event active off
+   */
+  activeOff: function () {
+    let els = this.querySelectorAll('.btn');
+    for (let el of els) {
+      el.classList.remove('active');
     }
   }
 
