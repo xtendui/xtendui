@@ -21,6 +21,10 @@ class Ajax extends Core {
    */
   constructor(object, jsOptions = {}) {
     super(object, jsOptions);
+    // prevent scroll on popstate
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
   }
 
   //////////////////////

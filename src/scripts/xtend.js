@@ -886,12 +886,6 @@ Math.nthroot = function (x, n) {
   return this.exp((1 / n) * this.log(x));
 };
 
-// prevent scroll on popstate
-
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual';
-}
-
 //////////////////////
 // export
 //////////////////////
