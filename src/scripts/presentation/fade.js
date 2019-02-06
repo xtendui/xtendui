@@ -44,8 +44,8 @@ class Fade extends Core {
     }
     addEventListener('scroll.xt.fade', fadeHandler);
     // listener dispatch initial only 1 time next frame
-    if (!document.documentElement.dataset.xtFadeDone) {
-      document.documentElement.dataset.xtFadeDone = 'true';
+    if (!document.documentElement.dataset.xtFadeInitialDone) {
+      document.documentElement.dataset.xtFadeInitialDone = 'true';
       requestAnimationFrame(function () {
         dispatchEvent(new CustomEvent('scroll.xt.fade'));
         delete document.documentElement.dataset.xtFadeDone;

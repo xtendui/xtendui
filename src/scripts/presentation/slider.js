@@ -133,7 +133,7 @@ class Slider extends Core {
     }
     // only one call per group
     for (let slide of self.targets) {
-      delete slide.dataset.xtinitDraggerDone;
+      delete slide.dataset.xtDraggerInitialDone;
       delete slide.dataset.xtSlideOnDone;
     }
     // initDragger
@@ -206,7 +206,7 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     // save vars
-    if (!slide.dataset.xtinitDraggerDone
+    if (!slide.dataset.xtDraggerInitialDone
       && (slide.offsetWidth || slide.offsetHeight || slide.getClientRects().length)) { // :visible
       // vars
       let targets = self.getTargets(slide);
@@ -216,7 +216,7 @@ class Slider extends Core {
       // group
       let group = slide.getAttribute('data-xt-group');
       if (group) {
-        if (!slide.dataset.xtinitDraggerDone) {
+        if (!slide.dataset.xtDraggerInitialDone) {
           // vars
           slideLeft = Infinity;
           slideWidth = 0;
@@ -228,12 +228,12 @@ class Slider extends Core {
             slideHeight = h > slideHeight ? h : slideHeight;
           }
           for (let target of targets) {
-            target.dataset.xtinitDraggerDone = 'true';
+            target.dataset.xtDraggerInitialDone = 'true';
             target.dataset.groupHeight = slideHeight.toString();
           }
         }
       } else {
-        slide.dataset.xtinitDraggerDone = 'true';
+        slide.dataset.xtDraggerInitialDone = 'true';
       }
       // pos with alignment
       let pos;

@@ -629,12 +629,12 @@ class Core {
    */
   eventTouchLinksHandler(el, e) {
     let self = this;
-    if (!el.dataset.touchLinksDone) {
+    if (!el.dataset.xtTouchLinksDone) {
       e.preventDefault();
-      el.dataset.touchLinksDone = 'true';
+      el.dataset.xtTouchLinksDone = 'true';
     } else {
       self.eventTouchLinksEndHandler(el);
-      delete el.dataset.touchLinksDone;
+      delete el.dataset.xtTouchLinksDone;
     }
   }
 
@@ -646,7 +646,7 @@ class Core {
   eventTouchLinksResetHandler(el, e) {
     let self = this;
     self.eventTouchLinksEndHandler(el);
-    delete el.dataset.touchLinksDone;
+    delete el.dataset.xtTouchLinksDone;
   }
 
   /**
