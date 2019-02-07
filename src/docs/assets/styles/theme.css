@@ -1502,7 +1502,9 @@ div.btn {
 }
 .overlay--screen > .backdrop {
   transition: initial !important;
+  transition-delay: initial !important;
   animation: initial !important;
+  animation-delay: initial !important;
   opacity: 0 !important;
 }
 .overlay--pos .overlay {
@@ -1574,7 +1576,9 @@ div.btn {
 }
 .slider--disabled .slide:not(.active) {
   transition: initial;
+  transition-delay: initial;
   animation: initial;
+  animation-delay: initial;
   opacity: 0;
 }
 .slider--disabled .slider_pagination,
@@ -2011,13 +2015,17 @@ a.links--none,
 }
 .transition-none {
   transition: initial !important;
+  transition-delay: initial !important;
 }
 .animation-none {
   animation: initial !important;
+  animation-delay: initial !important;
 }
 .duration-none {
   transition: initial !important;
+  transition-delay: initial !important;
   animation: initial !important;
+  animation-delay: initial !important;
 }
 .transform-none {
   transform: initial !important;
@@ -3093,7 +3101,9 @@ a.links--none,
   display: block !important;
   visibility: hidden !important;
   transition: initial !important;
+  transition-delay: initial !important;
   animation: initial !important;
+  animation-delay: initial !important;
   opacity: 0 !important;
 }
 .xt-container {
@@ -5281,7 +5291,9 @@ img.btn--close > span::after {
 .drop--disabled > .drop > .drop_inner > .drop_content {
   opacity: 1 !important;
   transition: initial !important;
+  transition-delay: initial !important;
   animation: initial !important;
+  animation-delay: initial !important;
 }
 .drop--max-height > .drop_inner > .drop_content {
   overflow-y: auto;
@@ -5621,7 +5633,9 @@ img.btn--close > span::after {
 .overlay--disabled .overlay .overlay_content {
   opacity: 1 !important;
   transition: initial !important;
+  transition-delay: initial !important;
   animation: initial !important;
+  animation-delay: initial !important;
 }
 .overlay_outer {
   animation-duration: 750ms;
@@ -6443,7 +6457,9 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
 .loader--mouse.active .filler {
   opacity: 1 !important;
   transition: initial !important;
+  transition-delay: initial !important;
   animation: initial !important;
+  animation-delay: initial !important;
 }
 .loader--mouse.out {
   opacity: 1;
@@ -6457,16 +6473,21 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
 .loader--mouse.out .filler {
   opacity: 1 !important;
   transition: initial !important;
+  transition-delay: initial !important;
   animation: initial !important;
+  animation-delay: initial !important;
 }
 .loader--js .spinner circle {
   opacity: 1 !important;
   transition: initial !important;
+  transition-delay: initial !important;
   animation: initial !important;
+  animation-delay: initial !important;
 }
 .loader--js .filler span {
   opacity: 1 !important;
   animation: initial !important;
+  animation-delay: initial !important;
 }
 /* USAGE:
 opacity: 0;
@@ -7357,6 +7378,7 @@ transition-timing-function: @bez--out;
 .site-menu .overlay_content {
   opacity: 1 !important;
   animation: initial !important;
+  animation-delay: initial !important;
 }
 .site-menu.active .site-menu-content .btn .line-container {
   opacity: 0;
