@@ -6338,15 +6338,6 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   animation-duration: 500ms;
   animation-timing-function: cubic-bezier(1, 0, .64, 1);
   animation-fill-mode: forwards;
-  animation-delay: 250ms;
-}
-.loader.out .spinner,
-.loader.out .filler {
-  opacity: 1;
-  animation-name: anim-zoom--out;
-  animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
-  animation-fill-mode: forwards;
   animation-duration: 250ms;
 }
 .loader--mouse {
