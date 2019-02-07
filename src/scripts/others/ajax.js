@@ -287,6 +287,8 @@ class Ajax extends Core {
     */
     // populate dom
     self.queryElement.outerHTML = replace.outerHTML;
+    // queryElement
+    self.queryElement = self.object.querySelectorAll(options.query)[0] || self.object;
     // pushstate
     self.pushState(url, title);
     // garbage collector
