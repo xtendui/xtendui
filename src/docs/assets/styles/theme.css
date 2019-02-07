@@ -6271,7 +6271,6 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
 .spinner svg circle {
   fill: none;
   stroke-width: 30;
-  transform: rotateY(0deg) rotateZ(-90deg);
   transform-origin: center center;
 }
 .btn .spinner svg circle {
@@ -6279,36 +6278,36 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
 }
 .spinner svg:nth-child(1) {
   position: absolute;
-}
-.spinner svg:nth-child(1) circle {
-  position: absolute;
   top: 0;
   left: 0;
+}
+.spinner svg:nth-child(1) circle {
   stroke: rgba(115, 103, 240, 0.05);
   stroke-dashoffset: 0;
 }
 .spinner svg:nth-child(2) circle {
   stroke: #7367F0;
   stroke-dashoffset: 628;
+  transform: rotateY(0deg) rotateZ(-90deg);
   animation: anim-spinner 2000ms infinite cubic-bezier(.36, 0, 0, 1);
 }
 @keyframes anim-spinner {
   0% {
-    stroke-dashoffset: 628;
     transform: rotateY(0deg) rotateZ(-90deg);
+    transform-origin: 48% 48%;
   }
   50% {
-    stroke-dashoffset: 0;
     transform: rotateY(0deg) rotateZ(90deg);
     animation-timing-function: cubic-bezier(1, 0, .64, 1);
+    transform-origin: 48% 48%;
   }
   50.0001% {
-    stroke-dashoffset: 0;
     transform: rotateY(180deg) rotateZ(90deg);
+    transform-origin: center center;
   }
   100% {
-    stroke-dashoffset: 628;
     transform: rotateY(180deg) rotateZ(-90deg);
+    transform-origin: 46% 50%;
   }
 }
 .loader--x .filler span:nth-child(1) {
