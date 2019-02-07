@@ -176,19 +176,21 @@
   &.active {
     opacity: 0;
     .anim-opacity.active();
+    animation-duration: @time--small;
     .spinner, .filler {
       opacity: 0;
       .anim-zoom.active();
-      animation-delay: @time--medium;
+      animation-delay: @time--small;
     }
   }
   &.out {
     opacity: 1;
     .anim-opacity.out();
-    animation-delay: @time--medium;
+    animation-delay: @time--small;
     .spinner, .filler {
       opacity: 1;
       .anim-zoom.out();
+      animation-duration: @time--small;
     }
   }
 }
