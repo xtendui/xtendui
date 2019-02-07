@@ -32,6 +32,17 @@ class Ajax extends Core {
   //////////////////////
 
   /**
+   * init namespace, container and options
+   */
+  initSetup() {
+    super.initSetup();
+    let self = this;
+    let options = self.options;
+    // queryElement
+    self.queryElement = self.object.querySelectorAll(options.query)[0] || self.object;
+  }
+
+  /**
    * init elements
    */
   initScopeElements() {
@@ -163,8 +174,6 @@ class Ajax extends Core {
   ajaxRequest(element, url) {
     let self = this;
     let options = self.options;
-    // queryElement
-    self.queryElement = self.object.querySelectorAll(options.query)[0] || self.object;
     // url
     if (element) {
       url = element.getAttribute('href').split('#')[0];
