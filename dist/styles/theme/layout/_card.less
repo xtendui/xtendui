@@ -1,15 +1,15 @@
 //////////////////////
-// variables
-//////////////////////
-
-@card--border-radius: .75rem;
-@card--border-width: 0;
-
-//////////////////////
 // card
 //////////////////////
 
 .card {
+  // styles
+  > .card_design, > .card_content {
+    border-radius: .75rem;
+    border-width: 0;
+    border-style: solid;
+    border-color: transparent;
+  }
   // options
   .card--big(); // size
   .card--secondary(); // variant

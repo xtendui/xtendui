@@ -1,5 +1,5 @@
 //////////////////////
-// form-item
+// group
 //////////////////////
 
 .form-item {
@@ -36,17 +36,23 @@
 }
 
 //////////////////////
-// form-input
+// label
+//////////////////////
+
+.form-label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  .user-select--none();
+}
+
+//////////////////////
+// input
 //////////////////////
 
 .form-input {
   display: block;
   width: 100%;
-  // styles
-  border-radius: @input--border-radius;
-  border-width: @input--border-width;
-  border-style: solid;
-  border-color: transparent;
   // select arrow
   select& {
     .padding(right, @select-space--size) !important;
@@ -59,17 +65,6 @@
     @select-space--size 100%;
     background-repeat: no-repeat;
   }
-}
-
-//////////////////////
-// form-label
-//////////////////////
-
-.form-label {
-  display: block;
-  position: relative;
-  cursor: pointer;
-  .user-select--none();
 }
 
 //////////////////////

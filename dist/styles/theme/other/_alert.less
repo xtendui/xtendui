@@ -3,16 +3,14 @@
 //////////////////////
 
 @alert--design: ~'::before'; // selector for design
-@alert--border-radius: 4px;
-@alert--border-width: 3px;
 
 .alert {
   // styles
   .margin(y, medium);
   &@{alert--design} {
     .design-setup();
-    border-radius: @alert--border-radius;
-    border-width: @alert--border-width;
+    border-radius: 4px;
+    border-width: 3px;
     border-style: solid;
     border-color: transparent;
   }

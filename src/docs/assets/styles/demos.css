@@ -366,6 +366,15 @@ img[class*=' icon-xt--']::before {
 .form-item--inline .form-input {
   width: auto;
 }
+.form-label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 .form-input {
   display: block;
   width: 100%;
@@ -380,15 +389,6 @@ select.form-input {
   background-position: calc(100% -  24px / 2) 50%, calc(100% - ( 24px / 2 ) +  4px) 50%, 100% 0;
   background-size: 4px 4px, 4px 4px, 24px 100%;
   background-repeat: no-repeat;
-}
-.form-label {
-  display: block;
-  position: relative;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 .checkbox,
 .radio {
@@ -3804,6 +3804,17 @@ legend:last-child {
 .form--none .form-item {
   padding: 0;
 }
+.form-label {
+  margin-bottom: 1em;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1em;
+  color: #626c76;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
 .form-input {
   padding: 0.75em 1.2em;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -3866,17 +3877,6 @@ select.form-input--gray {
 }
 textarea {
   height: 100px !important;
-}
-.form-label {
-  margin-bottom: 1em;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 1em;
-  color: #626c76;
-  line-height: 1.2;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
 }
 .checkradio-label {
   margin: 0;

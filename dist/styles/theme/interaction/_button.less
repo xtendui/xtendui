@@ -3,8 +3,6 @@
 //////////////////////
 
 @btn--design: ~'::before'; // selector for design
-@btn--border-radius: 4px;
-@btn--border-width: 1px;
 
 //////////////////////
 // button
@@ -17,6 +15,15 @@
     line-height: 1.2;
     letter-spacing: .075em;
     text-transform: uppercase;
+  }
+  &@{btn--design} {
+    .design-setup();
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+  }
+  &@{btn--design}, > span {
+    border-radius: 4px;
   }
   // options
   .btn--secondary(); // variant

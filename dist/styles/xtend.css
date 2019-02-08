@@ -366,21 +366,6 @@ img[class*=' icon-xt--']::before {
 .form-item--inline .form-input {
   width: auto;
 }
-.form-input {
-  display: block;
-  width: 100%;
-  border-radius: 4px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-}
-select.form-input {
-  padding-right: 24px !important;
-  white-space: normal;
-  background-position: calc(100% -  24px / 2) 50%, calc(100% - ( 24px / 2 ) +  4px) 50%, 100% 0;
-  background-size: 4px 4px, 4px 4px, 24px 100%;
-  background-repeat: no-repeat;
-}
 .form-label {
   display: block;
   position: relative;
@@ -389,6 +374,17 @@ select.form-input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.form-input {
+  display: block;
+  width: 100%;
+}
+select.form-input {
+  padding-right: 24px !important;
+  white-space: normal;
+  background-position: calc(100% -  24px / 2) 50%, calc(100% - ( 24px / 2 ) +  4px) 50%, 100% 0;
+  background-size: 4px 4px, 4px 4px, 24px 100%;
+  background-repeat: no-repeat;
 }
 .checkbox,
 .radio {
@@ -732,10 +728,6 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
   flex-wrap: nowrap;
   position: relative;
   padding: 0 !important;
-  border-radius: 4px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
 }
 .group:hover,
 .group.hover,
@@ -876,23 +868,6 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
 .list--base > li:not(.custom) > .btn.out {
   z-index: 1;
 }
-.list--base > li:not(.custom) > .btn::before,
-.list--base > li:not(.custom) > .btn > span {
-  border-radius: 4px;
-}
-.list--base > li:not(.custom) > .btn::before {
-  content: '';
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-}
 .list--base > li:not(.custom) > .btn > span {
   position: relative;
   overflow: hidden;
@@ -910,6 +885,23 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
   line-height: 1.2;
   letter-spacing: 0.075em;
   text-transform: uppercase;
+}
+.list--base > li:not(.custom) > .btn::before {
+  content: '';
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}
+.list--base > li:not(.custom) > .btn::before,
+.list--base > li:not(.custom) > .btn > span {
+  border-radius: 4px;
 }
 .list--base > li:not(.custom) > .btn:hover,
 .list--base > li:not(.custom) > .btn.hover,
@@ -1011,23 +1003,6 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
 .list > li:not(.custom) > .btn.out {
   z-index: 1;
 }
-.list > li:not(.custom) > .btn::before,
-.list > li:not(.custom) > .btn > span {
-  border-radius: 4px;
-}
-.list > li:not(.custom) > .btn::before {
-  content: '';
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-}
 .list > li:not(.custom) > .btn > span {
   position: relative;
   overflow: hidden;
@@ -1045,6 +1020,23 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
   line-height: 1.2;
   letter-spacing: 0.075em;
   text-transform: uppercase;
+}
+.list > li:not(.custom) > .btn::before {
+  content: '';
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}
+.list > li:not(.custom) > .btn::before,
+.list > li:not(.custom) > .btn > span {
+  border-radius: 4px;
 }
 .list > li:not(.custom) > .btn:hover,
 .list > li:not(.custom) > .btn.hover,
@@ -1119,13 +1111,6 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
   position: relative;
   z-index: 0;
 }
-.card > .card_design,
-.card > .card_content {
-  border-radius: 0.75rem;
-  border-width: 0;
-  border-style: solid;
-  border-color: transparent;
-}
 .card > .card_design {
   content: '';
   overflow: hidden;
@@ -1179,23 +1164,6 @@ a[href]:not([href^='#']).active {
 .btn.out {
   z-index: 1;
 }
-.btn::before,
-.btn > span {
-  border-radius: 4px;
-}
-.btn::before {
-  content: '';
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-}
 .btn > span {
   position: relative;
   overflow: hidden;
@@ -1241,13 +1209,6 @@ div.btn {
 .drop > .drop_inner {
   position: relative;
   z-index: 0;
-}
-.drop > .drop_inner > .drop_design,
-.drop > .drop_inner > .drop_content {
-  border-radius: 4px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
 }
 .drop > .drop_inner > .drop_design {
   content: '';
@@ -1385,13 +1346,6 @@ div.btn {
   margin: auto;
   width: 100%;
   min-height: 100vh;
-}
-.overlay .overlay_design,
-.overlay .overlay_content {
-  border-radius: 4px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
 }
 .overlay .overlay_design {
   content: '';
@@ -3804,7 +3758,22 @@ legend:last-child {
 .form--none .form-item {
   padding: 0;
 }
+.form-label {
+  margin-bottom: 1em;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1em;
+  color: #626c76;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
 .form-input {
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
   padding: 0.75em 1.2em;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -3866,17 +3835,6 @@ select.form-input--gray {
 }
 textarea {
   height: 100px !important;
-}
-.form-label {
-  margin-bottom: 1em;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 1em;
-  color: #626c76;
-  line-height: 1.2;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
 }
 .checkradio-label {
   margin: 0;
@@ -4047,6 +4005,12 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label::before {
 input[type="radio"]:not(.unstyled):disabled ~ .form-label::after {
   color: #9c9c92 !important;
 }
+.group {
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}
 .group-input .group_inner {
   margin-left: 0 !important;
   margin-right: -1px !important;
@@ -4189,6 +4153,13 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label::after {
   .list_btn({ .btn--wide(); });
 }
 */
+.card > .card_design,
+.card > .card_content {
+  border-radius: 0.75rem;
+  border-width: 0;
+  border-style: solid;
+  border-color: transparent;
+}
 .card > .card_content {
   padding: 1.5em 2em;
   font-size: 1.5rem;
@@ -4694,6 +4665,23 @@ img.caret.caret--horizontal.caret--inverse.active > span::before {
   letter-spacing: 0.075em;
   text-transform: uppercase;
 }
+.btn::before {
+  content: '';
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}
+.btn::before,
+.btn > span {
+  border-radius: 4px;
+}
 .btn:hover,
 .btn.hover,
 .btn:active,
@@ -5143,6 +5131,13 @@ img.btn--close > span::after {
   padding-left: 2.2rem;
   padding-right: 2.2rem;
 }
+.drop > .drop_inner > .drop_design,
+.drop > .drop_inner > .drop_content {
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}
 .drop > .drop_inner {
   color: #343a40;
 }
@@ -5402,6 +5397,13 @@ img.btn--close > span::after {
   .overlay .overlay_content {
     padding: 4rem;
   }
+}
+.overlay .overlay_design,
+.overlay .overlay_content {
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
 }
 .overlay .overlay_inner > .btn--close {
   position: absolute;
@@ -5909,23 +5911,6 @@ img.btn--close > span::after {
 .slider_pagination > li:not(.custom) > .btn.out {
   z-index: 1;
 }
-.slider_pagination > li:not(.custom) > .btn::before,
-.slider_pagination > li:not(.custom) > .btn > span {
-  border-radius: 4px;
-}
-.slider_pagination > li:not(.custom) > .btn::before {
-  content: '';
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-}
 .slider_pagination > li:not(.custom) > .btn > span {
   position: relative;
   overflow: hidden;
@@ -5943,6 +5928,23 @@ img.btn--close > span::after {
   line-height: 1.2;
   letter-spacing: 0.075em;
   text-transform: uppercase;
+}
+.slider_pagination > li:not(.custom) > .btn::before {
+  content: '';
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}
+.slider_pagination > li:not(.custom) > .btn::before,
+.slider_pagination > li:not(.custom) > .btn > span {
+  border-radius: 4px;
 }
 .slider_pagination > li:not(.custom) > .btn:hover,
 .slider_pagination > li:not(.custom) > .btn.hover,
@@ -6076,23 +6078,6 @@ img.btn--close > span::after {
 .slider_pagination [data-xt-pag].out {
   z-index: 1;
 }
-.slider_pagination [data-xt-pag]::before,
-.slider_pagination [data-xt-pag] > span {
-  border-radius: 4px;
-}
-.slider_pagination [data-xt-pag]::before {
-  content: '';
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-}
 .slider_pagination [data-xt-pag] > span {
   position: relative;
   overflow: hidden;
@@ -6110,6 +6095,23 @@ img.btn--close > span::after {
   line-height: 1.2;
   letter-spacing: 0.075em;
   text-transform: uppercase;
+}
+.slider_pagination [data-xt-pag]::before {
+  content: '';
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}
+.slider_pagination [data-xt-pag]::before,
+.slider_pagination [data-xt-pag] > span {
+  border-radius: 4px;
 }
 .slider_pagination [data-xt-pag]:hover,
 .slider_pagination [data-xt-pag].hover,
