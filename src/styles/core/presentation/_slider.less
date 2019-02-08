@@ -36,3 +36,20 @@
     display: none !important;
   }
 }
+
+// .slider--expand
+
+.slider--expand {
+  .slider--disabled();
+  .slides {
+    overflow: visible;
+    height: auto !important;
+  }
+  .slides_inner {
+    .transform-none() !important;
+    .flex-wrap(wrap);
+  }
+  .slide:not(.active) {
+    opacity: 1;
+  }
+}

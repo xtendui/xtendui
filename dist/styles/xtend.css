@@ -1506,6 +1506,35 @@ div.btn {
 .slider--disabled .spinner {
   display: none !important;
 }
+.slider--expand::after {
+  display: none;
+  content: 'xt-disable';
+}
+.slider--expand .slide:not(.active) {
+  transition: initial;
+  transition-delay: initial;
+  animation: initial;
+  animation-delay: initial;
+  opacity: 0;
+}
+.slider--expand .slider_pagination,
+.slider--expand [data-xt-nav],
+.slider--expand .loader,
+.slider--expand .filler,
+.slider--expand .spinner {
+  display: none !important;
+}
+.slider--expand .slides {
+  overflow: visible;
+  height: auto !important;
+}
+.slider--expand .slides_inner {
+  transform: initial !important;
+  flex-wrap: wrap;
+}
+.slider--expand .slide:not(.active) {
+  opacity: 1;
+}
 /**
  * .sticky()
  * @param {String} @mode Starting mode be 'absolute' or 'fixed'
