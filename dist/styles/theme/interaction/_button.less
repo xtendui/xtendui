@@ -10,19 +10,17 @@
 
 .btn {
   // styles
-  > span {
-    .font-sans--semibold();
-    line-height: 1.2;
-    letter-spacing: .075em;
-    text-transform: uppercase;
-  }
+  .font-sans--semibold();
+  line-height: 1.2;
+  letter-spacing: .075em;
+  text-transform: uppercase;
   &@{btn--design} {
     .design-setup();
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
   }
-  &@{btn--design}, > span {
+  &, &@{btn--design} {
     border-radius: 4px;
   }
   // options
@@ -34,23 +32,19 @@
 
 .btn {
   // transition
+  transition-property: all;
+  transition-duration: @time--medium;
+  transition-timing-function: @bez--out;
   &@{btn--design} {
     transition-property: all;
     transition-duration: @time--medium;
     transition-timing-function: @bez--out;
   }
-  > span {
+  &:active, &.active {
     transition-property: all;
     transition-duration: @time--medium;
-    transition-timing-function: @bez--out;
-  }
-  &:active, &.active {
+    transition-timing-function: @bez--in;
     &@{btn--design} {
-      transition-property: all;
-      transition-duration: @time--medium;
-      transition-timing-function: @bez--in;
-    }
-    > span {
       transition-property: all;
       transition-duration: @time--medium;
       transition-timing-function: @bez--in;
@@ -62,20 +56,16 @@
 
 .btn--primary {
   .link--none();
+  color: fade(@text--inverse, @perc--xl);
   &@{btn--design} {
     border-color: @primary;
     background: @primary;
   }
-  > span {
-    color: fade(@text--inverse, @perc--xl);
-  }
   &:hover, &.hover, &:active, &.active {
+    color: @text--inverse;
     &@{btn--design} {
       border-color: @primary;
       background: lighten(@primary, @perc--xs);
-    }
-    > span {
-      color: @text--inverse;
     }
   }
   // effect
@@ -88,20 +78,16 @@
 
 .btn--primary-empty {
   .link--none();
+  color: @primary;
   &@{btn--design} {
     border-color: transparent;
     background: transparent;
   }
-  > span {
-    color: @primary;
-  }
   &:hover, &.hover, &:active, &.active {
+    color: @text--inverse;
     &@{btn--design} {
       border-color: @primary;
       background: lighten(@primary, @perc--xs);
-    }
-    > span {
-      color: @text--inverse;
     }
   }
   // effect
@@ -114,20 +100,16 @@
 
 .btn--secondary {
   .link--none();
+  color: fade(@text, @perc--xl);
   &@{btn--design} {
     border-color: @secondary;
     background: @secondary;
   }
-  > span {
-    color: fade(@text, @perc--xl);
-  }
   &:hover, &.hover, &:active, &.active {
+    color: @text;
     &@{btn--design} {
       border-color: darken(@secondary, @perc--sm);
       background: darken(@secondary, @perc--xs);
-    }
-    > span {
-      color: @text;
     }
   }
   // effect
@@ -140,20 +122,16 @@
 
 .btn--secondary-empty {
   .link--none();
+  color: fade(@text, @perc--xl);
   &@{btn--design} {
     border-color: transparent;
     background: transparent;
   }
-  > span {
-    color: fade(@text, @perc--xl);
-  }
   &:hover, &.hover, &:active, &.active {
+    color: @text;
     &@{btn--design} {
       border-color: darken(@secondary, @perc--sm);
       background: darken(@secondary, @perc--xs);
-    }
-    > span {
-      color: @text;
     }
   }
   // effect
@@ -165,30 +143,22 @@
 }
 
 .btn--link {
-  > span {
-    .link--none();
-  }
+  .link--none();
   // reset
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
   &@{btn--design} {
     border-radius: 0;
     border-width: 0;
     background: transparent !important;
   }
-  > span {
-    font-family: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-    letter-spacing: inherit;
-    text-transform: inherit;
-  }
   // styles
-  > span {
-    color: @gray--500;
-  }
+  color: @gray--500;
   &:hover, &.hover, &:active, &.active {
-    > span {
-      color: darken(@primary, @perc--xs);
-    }
+    color: darken(@primary, @perc--xs);
   }
   // effect
   .btn--noeffect();
@@ -197,38 +167,28 @@
 // size
 
 .btn--tiny {
-  > span {
-    padding: .5em 1em;
-    font-size: 10px;
-  }
+  padding: .5em 1em;
+  font-size: 10px;
 }
 
 .btn--small {
-  > span {
-    padding: .6em 1.2em;
-    font-size: 1.2rem;
-  }
+  padding: .6em 1.2em;
+  font-size: 1.2rem;
 }
 
 .btn--medium {
-  > span {
-    padding: .6em 1.2em;
-    font-size: 1.325rem; // @FIX odd rem with .025 added
-  }
+  padding: .6em 1.2em;
+  font-size: 1.325rem; // @FIX odd rem with .025 added
 }
 
 .btn--big {
-  > span {
-    padding: .6em 1.2em;
-    font-size: 1.4rem;
-  }
+  padding: .6em 1.2em;
+  font-size: 1.4rem;
 }
 
 .btn--giant {
-  > span {
-    padding: .6em 1.2em;
-    font-size: 1.525rem; // @FIX odd rem with .025 added
-  }
+  padding: .6em 1.2em;
+  font-size: 1.525rem; // @FIX odd rem with .025 added
 }
 
 // special
@@ -260,84 +220,66 @@
 }
 
 .btn--tall {
-  > span {
-    padding-top: .9em;
-    padding-bottom: .9em;
-  }
+  padding-top: .9em;
+  padding-bottom: .9em;
 }
 
 .btn--short {
-  > span {
-    padding-top: .3em;
-    padding-bottom: .3em;
-  }
+  padding-top: .3em;
+  padding-bottom: .3em;
 }
 
 .btn--wide {
-  > span {
-    padding-left: 1.8em;
-    padding-right: 1.8em;
-  }
+  padding-left: 1.8em;
+  padding-right: 1.8em;
 }
 
 .btn--narrow {
-  > span {
-    padding-left: .6em;
-    padding-right: .6em;
-  }
+  padding-left: .6em;
+  padding-right: .6em;
 }
 
 .btn--none {
   .btn--noeffect();
   .btn--squared();
+  padding: 0;
   &@{btn--design} {
     border: 0 !important;
     background: transparent !important;
-  }
-  > span {
-    padding: 0;
   }
 }
 
 .btn--none-x {
   .btn--noeffect();
   .btn--squared();
+  padding-left: 0;
+  padding-right: 0;
   &@{btn--design} {
     border-left: 0 !important;
     border-right: 0 !important;
     background: transparent !important;
-  }
-  > span {
-    padding-left: 0;
-    padding-right: 0;
   }
 }
 
 .btn--none-y {
   .btn--noeffect();
   .btn--squared();
+  padding-top: 0;
+  padding-bottom: 0;
   &@{btn--design} {
     border-top: 0 !important;
     border-bottom: 0 !important;
     background: transparent !important;
   }
-  > span {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
 }
 
 .btn--icon {
-  > span {
-    padding: .6em .8em;
-  }
+  padding: .6em .8em;
 }
 
 .btn--transform {
-  > span {
-    letter-spacing: 0;
-    text-transform: none;
-  }
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 // custom
