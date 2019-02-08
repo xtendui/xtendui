@@ -1888,7 +1888,7 @@ a.links--none,
   animation: initial !important;
   animation-delay: initial !important;
 }
-.duration-none {
+.trans-anim-none {
   transition: initial !important;
   transition-delay: initial !important;
   animation: initial !important;
@@ -1896,6 +1896,12 @@ a.links--none,
 }
 .transform-none {
   transform: initial !important;
+}
+.duration-none {
+  transition-duration: initial !important;
+  transition-delay: initial !important;
+  animation-duration: initial !important;
+  animation-delay: initial !important;
 }
 .responsive-x {
   width: 100% !important;
