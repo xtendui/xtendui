@@ -15,7 +15,10 @@
     "plugin",
     "theme"
   ],
-  "main": "src/scripts/xtend.js",
+  "main": "dist/scripts/xtend.js",
+  "module": "src/scripts/xtend.js",
+  "umd:main": "dist/scripts/xtend.min.js",
+  "umd:name": "xtend",
   "scripts": {
     "build": "gulp build",
     "dev": "gulp watch",
