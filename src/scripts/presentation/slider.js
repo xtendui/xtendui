@@ -577,6 +577,8 @@ class Slider extends Core {
     });
     // logic
     self.logicDragfriction(dragger, e);
+    // listener dispatch
+    dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
   }
 
   /**
@@ -751,7 +753,7 @@ class Slider extends Core {
         dragger.classList.remove('pointer-events--none');
       });
       // listener dispatch
-      dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
+      dragger.dispatchEvent(new CustomEvent('dragreset.xt.slider', {detail: self.eDetail}));
     }
   }
 

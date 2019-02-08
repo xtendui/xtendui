@@ -47,7 +47,7 @@ function sliderInit(main, index, query) {
 
   // dragend
 
-  dragger.addEventListener('dragend.xt.slider', function (e) {
+  dragger.addEventListener('dragreset.xt.slider', function (e) {
     let target = self.targets.filter(x => x.classList.contains('active'))[0];
     // mask
     TweenMax.set(target, {x: -self.detail.xPosOld + 'px'});
