@@ -155,12 +155,12 @@ legend {
   transition-property: all;
   transition-duration: @time--medium;
   transition-timing-function: @bez--out;
-  &:hover, &.active {
+  &:hover {
     transition-property: all;
     transition-duration: @time--medium;
     transition-timing-function: @bez--in;
   }
-  &:focus {
+  &:focus, &.active {
     transition-property: all;
     transition-duration: @time--medium;
     transition-timing-function: @bez--in;
@@ -174,7 +174,7 @@ legend {
   border-color: @gray--300;
   background: @white;
   color: @text;
-  &:focus {
+  &:focus, &.active {
     background: darken(@white, @perc--xs);
   }
   // select arrow
