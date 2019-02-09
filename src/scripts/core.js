@@ -75,6 +75,8 @@ class Core {
     let self = this;
     // defaults
     self.defaults = {
+      "classIn": "in",
+      "classOut": "out",
       "instant": false,
       "autoClose": false,
       "onBlock": false,
@@ -1047,8 +1049,10 @@ class Core {
    * @returns {Boolean} If elements are animating
    */
   checkAnim(elements) {
+    let self = this;
+    let options = self.options;
     // check
-    elements = elements.filter(x => x.classList.contains('in') || x.classList.contains('out'));
+    elements = elements.filter(x => x.classList.contains(options.classIn) || x.classList.contains(options.classOut));
     return elements.length > 0;
   }
 
@@ -1670,8 +1674,8 @@ class Core {
     let options = self.options;
     // activate
     el.classList.add(...options.classes);
-    el.classList.add('in');
-    el.classList.remove('out');
+    el.classList.add(options.classIn);
+    el.classList.remove(options.classOut);
     self.decorateDirection(el);
     // special
     let before = getComputedStyle(el, '::before').getPropertyValue('content').replace(/['"]+/g, '');
@@ -1737,8 +1741,8 @@ class Core {
     let options = self.options;
     // deactivate
     el.classList.remove(...options.classes);
-    el.classList.remove('in');
-    el.classList.add('out');
+    el.classList.remove(options.classIn);
+    el.classList.add(options.classOut);
     self.decorateDirection(el);
     // special
     let before = getComputedStyle(el, '::before').getPropertyValue('content').replace(/['"]+/g, '');
@@ -1815,7 +1819,7 @@ class Core {
     let self = this;
     let options = self.options;
     // reset
-    el.classList.remove('in');
+    el.classList.remove(options.classIn);
     // special
     let before = getComputedStyle(el, '::before').getPropertyValue('content').replace(/['"]+/g, '');
     let after = getComputedStyle(el, '::after').getPropertyValue('content').replace(/['"]+/g, '');
@@ -1854,7 +1858,7 @@ class Core {
     let self = this;
     let options = self.options;
     // reset
-    el.classList.remove('out');
+    el.classList.remove(options.classOut);
     // special
     if (type === 'targets') {
       // appendTo
