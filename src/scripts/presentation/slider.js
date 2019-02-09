@@ -551,6 +551,9 @@ class Slider extends Core {
     }
     // prevent dragging animation
     self.dragger.classList.add('duration-none');
+    // logic
+    self.detail.xVelocity = null;
+    self.detail.xVelocityNext = null;
     // listener dispatch
     dragger.dispatchEvent(new CustomEvent('dragstart.xt.slider', {detail: self.eDetail}));
   }
@@ -625,7 +628,9 @@ class Slider extends Core {
         let dateDiff = new Date() - self.detail.xDate;
         self.detail.xDate = null;
         if (dateDiff < 150) {
-          let dateFactor = dateDiff / 10;
+          let dateFactor = dateDiff / 25;
+          dateFactor = dateFactor < 1 ? 1 : dateFactor;
+          // decrease velocity with time
           self.detail.xVelocity *= options.drag.friction / dateFactor;
         } else {
           self.detail.xVelocity = 0;
@@ -645,9 +650,9 @@ class Slider extends Core {
       self.detail.xStart = self.detail.eInit.clientX || self.detail.eInit.touches[0].clientX;
       self.detail.xCurrent = self.detail.eCurrent.clientX || self.detail.eCurrent.touches[0].clientX;
       pos = xPosCurrent + (self.detail.xCurrent - self.detail.xStart) * options.drag.factor;
-      // velocity
-      let xVelocity = pos - xPosOld;
-      self.detail.xVelocity = ((self.detail.xVelocity || xVelocity) + xVelocity) / 2; // keep some velocity with median value
+      // keep some velocity (median value of previous frame and not current frame)
+      self.detail.xVelocity = (self.detail.xVelocity + self.detail.xVelocityNext) / 2;
+      self.detail.xVelocityNext = pos - xPosOld;
     }
     // val
     self.detail.xPosReal = pos;
@@ -791,7 +796,7 @@ Slider.defaults = {
     "dragger": ".slides_inner",
     "threshold": 100,
     "factor": 1,
-    "friction": 0.9,
+    "friction": 0.88,
     "limit": 2.5,
     "overflow": 1.2
   }
