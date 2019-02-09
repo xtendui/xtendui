@@ -591,7 +591,7 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     // friction
-    if (Math.abs(self.detail.xVelocity) > options.drag.limit) {
+    if (Math.abs(self.detail.xVelocity) > options.drag.frictionLimit) {
       // drag
       self.logicDrag(dragger, e, true);
       // loop
@@ -632,7 +632,7 @@ class Slider extends Core {
       if (self.detail.xDate) {
         let dateDiff = new Date() - self.detail.xDate;
         self.detail.xDate = null;
-        if (dateDiff > 150) {
+        if (dateDiff > options.drag.timeLimit) {
           self.detail.xVelocity = 0;
         }
       }
@@ -798,7 +798,8 @@ Slider.defaults = {
     "dragger": ".slides_inner",
     "threshold": 100,
     "factor": 1,
-    "limit": 2.5,
+    "timeLimit": 25,
+    "frictionLimit": 2.5,
     "friction": "return Math.pow(velocity, 0.95)",
     "overflow": "return Math.pow(overflow, 0.73)"
   }
