@@ -1580,16 +1580,17 @@ class Core {
     for (let el of els) {
       // delay
       let delay;
-      if (options.instant === false || (typeof options.instant === 'object' && !options.instant[type])) { // @FIX queue instant
-        if (options.delayOn) {
-          if (isNaN(options.delayOn)) {
-            let count = parseInt(el.dataset.xtOnCount) || els.findIndex(x => x === el);
-            let tot = parseInt(el.dataset.xtOnTot) || els.length;
-            let fnc = new Function('current', 'total', options.delayOn);
-            delay = fnc(count, tot - 1).toString();
-          } else {
-            delay = queueInitial ? 0 : options.delayOn;
+      if (options.delayOn) {
+        if (isNaN(options.delayOn)) {
+          let count = parseInt(el.dataset.xtOnCount) || els.findIndex(x => x === el);
+          let tot = parseInt(el.dataset.xtOnTot) || els.length;
+          let fnc = options.delayOn;
+          if (typeof fnc === 'string') {
+            fnc = new Function('current', 'total', options.delayOn);
           }
+          delay = fnc(count, tot - 1).toString();
+        } else {
+          delay = queueInitial ? 0 : options.delayOn;
         }
       }
       // delay fnc
@@ -1625,16 +1626,17 @@ class Core {
     for (let el of els) {
       // delay
       let delay;
-      if (options.instant === false || (typeof options.instant === 'object' && !options.instant[type])) { // @FIX queue instant
-        if (options.delayOff) {
-          if (isNaN(options.delayOff)) {
-            let count = parseInt(el.dataset.xtOffCount) || els.findIndex(x => x === el);
-            let tot = parseInt(el.dataset.xtOffTot) || els.length;
-            let fnc = new Function('current', 'total', options.delayOff);
-            delay = fnc(count, tot - 1).toString();
-          } else {
-            delay = queueInitial ? 0 : options.delayOff;
+      if (options.delayOff) {
+        if (isNaN(options.delayOff)) {
+          let count = parseInt(el.dataset.xtOffCount) || els.findIndex(x => x === el);
+          let tot = parseInt(el.dataset.xtOffTot) || els.length;
+          let fnc = options.delayOff;
+          if (typeof fnc === 'string') {
+            fnc = new Function('current', 'total', options.delayOff);
           }
+          delay = fnc(count, tot - 1).toString();
+        } else {
+          delay = queueInitial ? 0 : options.delayOff;
         }
       }
       // delay fnc

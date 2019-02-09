@@ -1052,8 +1052,9 @@ description: Many possible behaviour, interactions and animations are possible w
        data-name="delay fnc">
     <div class="demo-text">
       <div class="alert_content">
-        Complex delay with <code>"delayOn": Function</code> <code>"delayOff": Function</code> return number using
-        <strong>total</strong> and <strong>current</strong>
+        You can use a function for <code>"delayOn"</code> and <code>"delayOff"</code> like this:
+        <code>function(current, total) {return current * 75}</code>. You can also use a string
+        <code>"return current * 75"</code>.
       </div>
     </div>
   </div>
