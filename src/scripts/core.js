@@ -1588,7 +1588,7 @@ class Core {
           let tot = parseInt(el.dataset.xtOnTot) || els.length;
           let fnc = options.delayOn;
           if (typeof fnc === 'string') {
-            fnc = new Function('current', 'total', options.delayOn);
+            fnc = new Function('current', 'total', fnc);
           }
           delay = fnc(count, tot - 1).toString();
         } else {
@@ -1634,7 +1634,7 @@ class Core {
           let tot = parseInt(el.dataset.xtOffTot) || els.length;
           let fnc = options.delayOff;
           if (typeof fnc === 'string') {
-            fnc = new Function('current', 'total', options.delayOff);
+            fnc = new Function('current', 'total', fnc);
           }
           delay = fnc(count, tot - 1).toString();
         } else {

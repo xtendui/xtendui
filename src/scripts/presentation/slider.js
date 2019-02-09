@@ -620,21 +620,21 @@ class Slider extends Core {
     // calculate
     let pos = self.detail.xPosReal;
     let xPosCurrent = self.detail.xPosCurrent || 0;
+    let sign = Math.sign(self.detail.xVelocity);
     if (friction) {
       // momentum
+      let fncFriction = options.drag.friction;
+      if (typeof fncFriction === 'string') {
+        fncFriction = new Function('velocity', fncFriction);
+      }
+      self.detail.xVelocity = fncFriction(Math.abs(self.detail.xVelocity)) * sign;
+      // no momentum when stopping
       if (self.detail.xDate) {
         let dateDiff = new Date() - self.detail.xDate;
         self.detail.xDate = null;
-        if (dateDiff < 150) {
-          let dateFactor = dateDiff / 25;
-          dateFactor = dateFactor < 1 ? 1 : dateFactor;
-          // decrease velocity with time
-          self.detail.xVelocity *= options.drag.friction / dateFactor;
-        } else {
+        if (dateDiff > 150) {
           self.detail.xVelocity = 0;
         }
-      } else {
-        self.detail.xVelocity *= options.drag.friction;
       }
       // on friction
       pos = pos + self.detail.xVelocity;
@@ -659,19 +659,25 @@ class Slider extends Core {
     let last = self.targets[self.targets.length - 1];
     let min = parseFloat(first.dataset.groupPos);
     let max = parseFloat(last.dataset.groupPos);
+    let fncOverflow = options.drag.overflow;
+    if (typeof fncOverflow === 'string') {
+      fncOverflow = new Function('overflow', fncOverflow);
+    }
     if (friction) {
       if (pos > min || pos < max) {
-        self.detail.xVelocity = Math.pow(self.detail.xVelocity, options.drag.overflow);
+        self.detail.xVelocity = fncOverflow(Math.abs(self.detail.xVelocity)) * sign;
       }
     } else {
       if (pos > min) {
         self.detail.xVelocity = 0;
         let overflow = pos - min;
-        pos = min + Math.pow(overflow, options.drag.overflow);
+        //pos = min + Math.pow(overflow, options.drag.overflow);
+        pos = min + fncOverflow(overflow);
       } else if (pos < max) {
         self.detail.xVelocity = 0;
         let overflow = pos - max;
-        pos = max - Math.pow(-overflow, options.drag.overflow);
+        //pos = max - Math.pow(-overflow, options.drag.overflow);
+        pos = max - fncOverflow(-overflow);
       }
     }
     // val
@@ -792,9 +798,9 @@ Slider.defaults = {
     "dragger": ".slides_inner",
     "threshold": 100,
     "factor": 1,
-    "friction": 0.88,
     "limit": 2.5,
-    "overflow": 0.73
+    "friction": "return Math.pow(velocity, 0.95)",
+    "overflow": "return Math.pow(overflow, 0.73)"
   }
 };
 
