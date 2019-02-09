@@ -662,20 +662,18 @@ class Slider extends Core {
     let min = parseFloat(first.dataset.groupPos);
     let max = parseFloat(last.dataset.groupPos);
     if (friction) {
-      if (pos > min) {
-        self.detail.xVelocity = Math.nthroot(self.detail.xVelocity, options.drag.overflow);
-      } else if (pos < max) {
-        self.detail.xVelocity = Math.nthroot(self.detail.xVelocity, options.drag.overflow);
+      if (pos > min || pos < max) {
+        self.detail.xVelocity = Math.pow(self.detail.xVelocity, options.drag.overflow);
       }
     } else {
       if (pos > min) {
         self.detail.xVelocity = 0;
         let overflow = pos - min;
-        pos = min + Math.nthroot(overflow, options.drag.overflow);
+        pos = min + Math.pow(overflow, options.drag.overflow);
       } else if (pos < max) {
         self.detail.xVelocity = 0;
         let overflow = pos - max;
-        pos = max - Math.nthroot(-overflow, options.drag.overflow);
+        pos = max - Math.pow(-overflow, options.drag.overflow);
       }
     }
     // val
@@ -798,7 +796,7 @@ Slider.defaults = {
     "factor": 1,
     "friction": 0.88,
     "limit": 2.5,
-    "overflow": 1.2
+    "overflow": 0.73
   }
 };
 
