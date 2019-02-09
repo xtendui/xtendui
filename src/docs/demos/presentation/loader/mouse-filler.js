@@ -4,13 +4,13 @@ Xt.observe.push({
 
     // follow mouse
 
-    let loader = main;
-    let container = document.documentElement;
-    let rect = loader.getBoundingClientRect();
-    let width = rect.width;
-    let height = rect.height;
+    let loader = document.querySelectorAll('.loader--mouse')[0];
+    let container = Xt.parents(main, '.card')[0];
+    let width;
+    let height;
 
     function mousemove(e) {
+      // position
       let top = e.clientY + height / 2;
       let left = e.clientX + width / 2;
       loader.style.top = top + 'px';
@@ -18,8 +18,14 @@ Xt.observe.push({
     }
 
     function mouseenter(e) {
+      // size
+      let rect = loader.getBoundingClientRect();
+      width = rect.width;
+      height = rect.height;
+      // class
       loader.classList.add('active');
       loader.classList.remove('out');
+      // position
       let top = e.clientY + height / 2;
       let left = e.clientX + width / 2;
       loader.style.top = top + 'px';
@@ -27,6 +33,7 @@ Xt.observe.push({
     }
 
     function mouseleave(e) {
+      // class
       loader.classList.remove('active');
       loader.classList.add('out');
     }
