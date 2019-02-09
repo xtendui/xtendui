@@ -2,10 +2,7 @@
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
-'use strict';
-
-import './polyfills';
-
+import './polyfill';
 import Core from './core';
 import Toggle from './interaction/toggle';
 import Drop from './interaction/drop';
@@ -199,6 +196,7 @@ Xt.observer = new MutationObserver(function (mutationsList) {
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', function () {
+    setVh();
     Xt.init();
     Xt.initObserve();
     Xt.observer.observe(document.documentElement, {
@@ -210,6 +208,7 @@ if (document.readyState === 'loading') {
   });
 } else {
   requestAnimationFrame(function () {
+    setVh();
     Xt.init();
     Xt.initObserve();
     Xt.observer.observe(document.documentElement, {
@@ -852,6 +851,7 @@ try {
 //////////////////////
 
 // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+
 /* USAGE:
 height: 100vh;
 height: calc(var(--vh, 1vh) * 100);
@@ -861,9 +861,7 @@ function setVh() {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', vh + 'px');
 }
-
 addEventListener('resize', setVh);
-setVh();
 
 // pass focus and blur window events to iframes
 
@@ -878,13 +876,6 @@ addEventListener('blur', function () {
     iframe.contentWindow.dispatchEvent(new CustomEvent('blur'));
   }
 });
-
-// Math.nthroot
-// https://stackoverflow.com/questions/7308627/javascript-calculate-the-nth-root-of-a-number
-
-Math.nthroot = function (x, n) {
-  return this.exp((1 / n) * this.log(x));
-};
 
 //////////////////////
 // export

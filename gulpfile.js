@@ -1,5 +1,3 @@
-'use strict';
-
 let fs = require('fs');
 let gulp = require('gulp');
 let log = require('fancy-log');

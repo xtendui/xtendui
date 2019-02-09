@@ -2,8 +2,6 @@
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
-'use strict';
-
 import Xt from '../xtend';
 import Core from '../core';
 
