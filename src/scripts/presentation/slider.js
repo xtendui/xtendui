@@ -453,15 +453,10 @@ class Slider extends Core {
     // autoHeight
     if (self.autoHeight) {
       self.eventAutoHeight(slide);
-      // images
-      let images = slide.querySelectorAll('img');
-      self.destroyElements.push(...images);
-      for (let image of images) {
-        if (!image.complete) {
-          let imageLoadHandler = Xt.dataStorage.put(image, 'load' + '.' + self.namespace,
-            self.eventAutoHeight.bind(self).bind(self, slide));
-          image.addEventListener('load', imageLoadHandler);
-        }
+      for (let tr of self.targets) {
+        let eventAutoHeightHandler = Xt.dataStorage.put(tr, 'autoHeight' + '.' + self.namespace,
+          self.eventAutoHeight.bind(self).bind(self, tr));
+        tr.addEventListener('imageLoaded.xt', eventAutoHeightHandler, true); // @FIX event.xt: useCapture for custom events order on re-init
       }
     }
     // val
@@ -524,6 +519,9 @@ class Slider extends Core {
       slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight;
     }
     self.autoHeight.style.height = slideHeight + 'px';
+    // listener dispatch
+    let detail = self.eDetailSet(e);
+    slide.dispatchEvent(new CustomEvent('autoHeight.xt', {detail: detail}));
   }
 
   //////////////////////

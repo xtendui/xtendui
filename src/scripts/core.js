@@ -515,6 +515,41 @@ class Core {
         self.eventAutoCloseFixHandler.bind(self));
       addEventListener('autoCloseFix.xt', autoCloseFixHandler);
     }
+    // images
+    for (let el of self.elements) {
+      let images = el.querySelectorAll('img');
+      self.destroyElements.push(...images);
+      let imageLoaded = 0;
+      for (let image of images) {
+        if (!image.complete) {
+          let imageLoadHandler = Xt.dataStorage.put(image, 'load' + '.' + self.namespace,
+            self.eventImageLoaded.bind(self).bind(self, el));
+          image.addEventListener('load', imageLoadHandler);
+        } else {
+          imageLoaded++;
+        }
+      }
+      if (imageLoaded === images.length) {
+        requestAnimationFrame(self.eventImageLoaded.bind(self).bind(self, el));
+      }
+    }
+    for (let tr of self.targets) {
+      let images = tr.querySelectorAll('img');
+      self.destroyElements.push(...images);
+      let imageLoaded = 0;
+      for (let image of images) {
+        if (!image.complete) {
+          let imageLoadHandler = Xt.dataStorage.put(image, 'load' + '.' + self.namespace,
+            self.eventImageLoaded.bind(self).bind(self, tr));
+          image.addEventListener('load', imageLoadHandler);
+        } else {
+          imageLoaded++;
+        }
+      }
+      if (imageLoaded === images.length) {
+        requestAnimationFrame(self.eventImageLoaded.bind(self).bind(self, tr));
+      }
+    }
   }
 
   //////////////////////
@@ -818,6 +853,18 @@ class Core {
     let self = this;
     // special @TODO refactor
     self.specialScrollbarOff();
+  }
+
+  /**
+   * imageLoaded
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Event} e
+   */
+  eventImageLoaded(el, e = null) {
+    let self = this;
+    // listener dispatch
+    let detail = self.eDetailSet(e);
+    el.dispatchEvent(new CustomEvent('imageLoaded.xt', {detail: detail}));
   }
 
   //////////////////////
