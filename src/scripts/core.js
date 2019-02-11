@@ -517,37 +517,43 @@ class Core {
     }
     // images
     for (let el of self.elements) {
-      let images = el.querySelectorAll('img');
-      self.destroyElements.push(...images);
-      let imageLoaded = 0;
-      for (let image of images) {
-        if (!image.complete) {
-          let imageLoadHandler = Xt.dataStorage.put(image, 'load' + '.' + self.namespace,
-            self.eventImageLoaded.bind(self).bind(self, el));
-          image.addEventListener('load', imageLoadHandler);
+      let imgs = el.querySelectorAll('img');
+      let imgsLoaded = 0;
+      for (let img of imgs) {
+        if (!img.complete) {
+          let imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
+            self.eventImgLoaded.bind(self).bind(self, el, img));
+          img.addEventListener('load', imgLoadHandler);
+          // @FIX srcset: call only one time
+          img.addEventListener('load', function(e) {
+            img.removeEventListener('load', imgLoadHandler);
+          });
         } else {
-          imageLoaded++;
+          imgsLoaded++;
         }
       }
-      if (imageLoaded === images.length) {
-        requestAnimationFrame(self.eventImageLoaded.bind(self).bind(self, el));
+      if (imgs.length > 0 && imgsLoaded === imgs.length) {
+        requestAnimationFrame(self.eventImgLoaded.bind(self).bind(self, el));
       }
     }
     for (let tr of self.targets) {
-      let images = tr.querySelectorAll('img');
-      self.destroyElements.push(...images);
-      let imageLoaded = 0;
-      for (let image of images) {
-        if (!image.complete) {
-          let imageLoadHandler = Xt.dataStorage.put(image, 'load' + '.' + self.namespace,
-            self.eventImageLoaded.bind(self).bind(self, tr));
-          image.addEventListener('load', imageLoadHandler);
+      let imgs = tr.querySelectorAll('img');
+      let imgsLoaded = 0;
+      for (let img of imgs) {
+        if (!img.complete) {
+          let imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
+            self.eventImgLoaded.bind(self).bind(self, tr, img));
+          img.addEventListener('load', imgLoadHandler);
+          // @FIX srcset: call only one time
+          img.addEventListener('load', function(e) {
+            img.removeEventListener('load', imgLoadHandler);
+          });
         } else {
-          imageLoaded++;
+          imgsLoaded++;
         }
       }
-      if (imageLoaded === images.length) {
-        requestAnimationFrame(self.eventImageLoaded.bind(self).bind(self, tr));
+      if (imgs.length > 0 && imgsLoaded === imgs.length) {
+        requestAnimationFrame(self.eventImgLoaded.bind(self).bind(self, tr));
       }
     }
   }
@@ -858,9 +864,10 @@ class Core {
   /**
    * imageLoaded
    * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Node|HTMLElement|EventTarget|Window} img
    * @param {Event} e
    */
-  eventImageLoaded(el, e = null) {
+  eventImgLoaded(el, img = null, e = null) {
     let self = this;
     // listener dispatch
     let detail = self.eDetailSet(e);

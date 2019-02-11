@@ -450,15 +450,6 @@ class Slider extends Core {
     if (self.dragger) {
       self.initDraggerSlide(slide);
     }
-    // autoHeight
-    if (self.autoHeight) {
-      self.eventAutoHeight(slide);
-      for (let tr of self.targets) {
-        let eventAutoHeightHandler = Xt.dataStorage.put(tr, 'autoHeight' + '.' + self.namespace,
-          self.eventAutoHeight.bind(self).bind(self, tr));
-        tr.addEventListener('imageLoaded.xt', eventAutoHeightHandler, true); // @FIX event.xt: useCapture for custom events order on re-init
-      }
-    }
     // val
     self.detail.xPosOld = self.detail.xPos;
     self.detail.xPos = self.detail.xPosCurrent = self.detail.xPosReal = parseFloat(slide.dataset.groupPos);
@@ -502,6 +493,20 @@ class Slider extends Core {
     let group = slide.getAttribute('data-xt-group');
     if (group) {
       delete slide.dataset.xtSlideOnDone;
+    }
+  }
+
+  /**
+   * imageLoaded
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Event} e
+   */
+  eventImageLoaded(el, e = null) {
+    let self = this;
+    super.eventImageLoaded(el, e);
+    // autoHeight
+    if (self.autoHeight) {
+      self.eventAutoHeight(el);
     }
   }
 
