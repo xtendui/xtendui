@@ -72,7 +72,7 @@ class Ajax extends Core {
   initCurrents() {
     let self = this;
     // initial
-    self.detail.initial = true;
+    self.initial = true;
     // automatic initial currents
     let elements = self.elements;
     if (elements.length) {
@@ -91,11 +91,11 @@ class Ajax extends Core {
       }
       if (!found) {
         // initial
-        self.detail.initial = false;
+        self.initial = false;
       }
     } else {
       // initial
-      self.detail.initial = false;
+      self.initial = false;
     }
     // detect url
     let url;
@@ -177,7 +177,7 @@ class Ajax extends Core {
       url = element.getAttribute('href').split('#')[0];
     }
     // check url
-    if (!self.detail.initial) {
+    if (!self.initial) {
       // location
       self.detail.locationTo = new URL(url, location);
       // autoClose
@@ -214,7 +214,7 @@ class Ajax extends Core {
     let self = this;
     // dispatch
     let detail = self.eDetailSet();
-    detail.request = request;
+    self.detail.request = request;
     self.object.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: detail}));
     // duration
     self.detail.requestDuration -= new Date() - self.detail.requestDate;
@@ -303,11 +303,11 @@ class Ajax extends Core {
     replace = null;
     // dispatch
     let detail = self.eDetailSet();
-    detail.request = request;
+    self.detail.request = request;
     self.object.dispatchEvent(new CustomEvent('replace.xt.ajax', {detail: detail}));
     // reinit
-    if (!self.detail.initial) {
-      self.detail.initial = true;
+    if (!self.initial) {
+      self.initial = true;
       self.init();
     }
   }
@@ -324,7 +324,7 @@ class Ajax extends Core {
     self.initCurrents();
     // dispatch
     let detail = self.eDetailSet();
-    detail.request = request;
+    self.detail.request = request;
     self.object.dispatchEvent(new CustomEvent('replace.xt.ajax', {detail: detail}));
   }
 

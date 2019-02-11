@@ -65,7 +65,7 @@ Xt.observe.push({
       // on
 
       target.addEventListener('on.xt', function (e) {
-        if (!self.detail.initial) {
+        if (!self.initial) {
           let xMax = target.clientWidth;
           // direction
           let direction = 1;

@@ -43,7 +43,7 @@ class Core {
     self.targets = [];
     self.currentIndex = null;
     self.detail = {};
-    self.detail.disabled = false;
+    self.disabled = false;
     self.detail.queueOn = [];
     self.detail.queueOff = [];
     self.detail.inverseDirection = false;
@@ -213,7 +213,7 @@ class Core {
     let self = this;
     let options = self.options;
     // initial
-    self.detail.initial = true;
+    self.initial = true;
     // @FIX set namespace for next frame
     for (let el of self.elements) {
       el.dataset.xtNamespace = self.namespace;
@@ -229,32 +229,32 @@ class Core {
           // found
           if (found) {
             // initial
-            self.detail.initial = true;
+            self.initial = true;
             // activate
             self.eventOn(element, true);
           } else {
             // initial
-            self.detail.initial = false;
+            self.initial = false;
           }
         }
         // if currents < min
         let todo = options.min - self.getCurrents().length;
         if (todo > 0) {
           // initial
-          self.detail.initial = true;
+          self.initial = true;
           // activate
           for (let i = 0; i < todo; i++) {
             self.eventOn(self.elements[i], true);
           }
         } else {
           // initial
-          self.detail.initial = false;
+          self.initial = false;
           // auto
           if (options.auto && options.auto.initial) {
             self.eventAutoStart();
           }
         }
-        self.detail.initialCurrents = self.getCurrents();
+        self.initialCurrents = self.getCurrents();
       }
     }).toString();
   }
@@ -458,7 +458,7 @@ class Core {
           self.eventJumpHandler.bind(self).bind(self, jump));
         jump.addEventListener('click', jumpHandler, true); // useCapture or it gets the click from elements inside the target
         // jump
-        if (!self.detail.disabled) {
+        if (!self.disabled) {
           jump.classList.add('jump');
         } else {
           jump.classList.remove('jump');
@@ -713,7 +713,7 @@ class Core {
     let self = this;
     let options = self.options;
     // disabled
-    if (self.detail.disabled && !self.detail.initial) {
+    if (self.disabled && !self.initial) {
       return false;
     }
     // handler
@@ -1114,7 +1114,7 @@ class Core {
     if (self.object instanceof HTMLElement // not on window
       && getComputedStyle(self.object, '::after').getPropertyValue('content').replace(/['"]+/g, '') === 'xt-disable') {
       self.disable();
-    } else if (self.detail.disabled) {
+    } else if (self.disabled) {
       self.enable();
     }
   }
@@ -1130,7 +1130,7 @@ class Core {
     let self = this;
     let options = self.options;
     // disabled
-    if (self.detail.disabled && !self.detail.initial) {
+    if (self.disabled && !self.initial) {
       return false;
     }
     // toggle
@@ -1214,7 +1214,7 @@ class Core {
     let self = this;
     let options = self.options;
     // disabled
-    if (self.detail.disabled && !self.detail.initial) {
+    if (self.disabled && !self.initial) {
       return false;
     }
     // toggle
@@ -1307,7 +1307,7 @@ class Core {
       // auto
       let time = options.auto.time;
       if (self.currentIndex !== null &&  // not when nothing activated
-        !self.detail.initial || options.auto.initial) { // not when initial
+        !self.initial || options.auto.initial) { // not when initial
         self.object.dataset.xtAutoStartInterval = setInterval(function () { // interval because can become :visible
           if (self.object.offsetWidth || self.object.offsetHeight || self.object.getClientRects().length) { // :visible
             // auto
@@ -1322,7 +1322,6 @@ class Core {
         }, time).toString();
         // listener dispatch
         let detail = self.eDetailSet();
-        detail.autoTime = time;
         self.object.dispatchEvent(new CustomEvent('start.xt.auto', {detail: detail}));
       }
     }
@@ -1339,7 +1338,6 @@ class Core {
       clearInterval(self.object.dataset.xtAutoStartInterval);
       // listener dispatch
       let detail = self.eDetailSet();
-      detail.autoTime = options.auto.time;
       self.object.dispatchEvent(new CustomEvent('stop.xt.auto', {detail: detail}));
     }
   }
@@ -1355,7 +1353,6 @@ class Core {
       clearInterval(self.object.dataset.xtAutoStartInterval);
       // listener dispatch
       let detail = self.eDetailSet();
-      detail.autoTime = options.auto.time;
       self.object.dispatchEvent(new CustomEvent('pause.xt.auto', {detail: detail}));
     }
   }
@@ -1484,14 +1481,14 @@ class Core {
         }
         // request @TODO refactor
         if (self.ajaxRequest) {
-          if (!self.detail.initial) {
+          if (!self.initial) {
             self.ajaxRequest(obj[type].groupElements.single);
           }
         }
         // remove queue
         self.detail.queueOn.pop();
         // initial
-        self.detail.initial = false;
+        self.initial = false;
       }
     }
   }
@@ -2380,7 +2377,7 @@ class Core {
   disable() {
     let self = this;
     // disable
-    self.detail.disabled = true;
+    self.disabled = true;
     self.object.classList.add('xt-disabled');
   }
 
@@ -2390,7 +2387,7 @@ class Core {
   enable() {
     let self = this;
     // enable
-    self.detail.disabled = false;
+    self.disabled = false;
     self.object.classList.remove('xt-disabled');
   }
 

@@ -80,7 +80,7 @@ class Fade extends Core {
     let self = this;
     let options = self.options;
     // disabled
-    if (self.detail.disabled && !self.detail.initial) {
+    if (self.disabled && !self.initial) {
       return false;
     }
     // var

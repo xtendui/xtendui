@@ -174,7 +174,7 @@ class Slider extends Core {
         dragger.addEventListener(event, dragstartHandler, Xt.passiveSupported ? {passive: true} : false);
       }
       // grab
-      if (!self.detail.disabled) {
+      if (!self.disabled) {
         dragger.classList.add('grab');
       } else {
         dragger.classList.remove('grab');
@@ -305,9 +305,9 @@ class Slider extends Core {
     let self = this;
     // handler
     if (!e.button || e.button !== 2) { // not right click or it gets stuck
-      if (self.detail.initial || !self.checkAnim(Xt.arrSingle(dragger))) {
+      if (self.initial || !self.checkAnim(Xt.arrSingle(dragger))) {
         // save event
-        self.detail.eInit = e;
+        self.detail.eDragstart = e;
         // logic
         let eventLimit = self.object.querySelectorAll('.event-limit');
         if (eventLimit.length) {
@@ -422,9 +422,9 @@ class Slider extends Core {
   eventResizeHandler(e) {
     let self = this;
     // reinit
-    if (!self.detail.initial) {
+    if (!self.initial) {
       Xt.eventDelay(e, self.object, function () {
-        self.detail.initial = true;
+        self.initial = true;
         self.init();
       }, 'Init');
     }
@@ -472,7 +472,7 @@ class Slider extends Core {
       // prevent alignment animation
       self.dragger.classList.remove('duration-none');
       // initial or resizing
-      if (self.detail.initial) {
+      if (self.initial) {
         // prevent alignment animation
         self.dragger.classList.add('duration-none');
         requestAnimationFrame(function () {
@@ -538,7 +538,7 @@ class Slider extends Core {
   logicDragstart(dragger, e) {
     let self = this;
     // disabled
-    if (self.detail.disabled && !self.detail.initial) {
+    if (self.disabled && !self.initial) {
       return false;
     }
     // prevent dragging animation
@@ -559,7 +559,7 @@ class Slider extends Core {
   logicDragend(dragger, e) {
     let self = this;
     // disabled
-    if (self.detail.disabled && !self.detail.initial) {
+    if (self.disabled && !self.initial) {
       return false;
     }
     // disable drag
@@ -610,7 +610,7 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     // disabled
-    if (self.detail.disabled && !self.detail.initial) {
+    if (self.disabled && !self.initial) {
       return false;
     }
     // calculate
@@ -625,23 +625,23 @@ class Slider extends Core {
       }
       self.detail.xVelocity = fncFriction(Math.abs(self.detail.xVelocity)) * sign;
       // no momentum when stopping
-      if (self.detail.xDate) {
-        let dateDiff = new Date() - self.detail.xDate;
-        self.detail.xDate = null;
+      if (self.detail.dragDate) {
+        let dateDiff = new Date() - self.detail.dragDate;
+        self.detail.dragDate = null;
         if (dateDiff > options.drag.timeLimit) {
           self.detail.xVelocity = 0;
         }
       }
       // on friction
       pos = pos + self.detail.xVelocity;
-      self.detail.xStart = self.detail.eInit.clientX || self.detail.eInit.touches[0].clientX;
+      self.detail.xStart = self.detail.eDragstart.clientX || self.detail.eDragstart.touches[0].clientX;
       self.detail.xCurrent = pos + self.detail.xStart - xPosCurrent;
     } else {
       // momentum
-      self.detail.xDate = new Date();
+      self.detail.dragDate = new Date();
       // on normal drag
       let xPosOld = pos || 0;
-      self.detail.xStart = self.detail.eInit.clientX || self.detail.eInit.touches[0].clientX;
+      self.detail.xStart = self.detail.eDragstart.clientX || self.detail.eDragstart.touches[0].clientX;
       self.detail.xCurrent = self.detail.eCurrent.clientX || self.detail.eCurrent.touches[0].clientX;
       pos = xPosCurrent + (self.detail.xCurrent - self.detail.xStart) * options.drag.factor;
       // keep some velocity (median value of previous frame and not current frame)
