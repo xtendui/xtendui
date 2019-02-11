@@ -857,9 +857,12 @@ height: 100vh;
 height: calc(var(--vh, 1vh) * 100);
 */
 
-function setVh() {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', vh + 'px');
+function setVh(e = null) {
+  e = e ? e : {type: 'resize'};
+  Xt.eventDelay(e, document.documentElement, function () {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', vh + 'px');
+  }, 'vh.xt');
 }
 addEventListener('resize', setVh);
 
