@@ -365,8 +365,6 @@ class Slider extends Core {
     let self = this;
     // save event
     self.detail.eCurrent = e;
-    // eDetail
-    self.eDetailSet(e);
     // event move
     let dragHandler = Xt.dataStorage.put(dragger, 'mousemove touchmove' + '.' + self.namespace,
       self.eventDragHandler.bind(self).bind(self, dragger));
@@ -387,8 +385,6 @@ class Slider extends Core {
     let self = this;
     // save event
     self.detail.eCurrent = e;
-    // eDetail
-    self.eDetailSet(e);
     // event move
     let dragHandler = Xt.dataStorage.get(dragger, 'mousemove touchmove' + '.' + self.namespace);
     let events = ['mousemove', 'touchmove'];
@@ -411,8 +407,6 @@ class Slider extends Core {
     dragger.classList.add('jumps--none');
     // save event
     self.detail.eCurrent = e;
-    // eDetail
-    self.eDetailSet(e);
     // logic
     self.logicDrag(dragger, e);
   }
@@ -553,7 +547,8 @@ class Slider extends Core {
     self.detail.xVelocity = null;
     self.detail.xVelocityNext = null;
     // listener dispatch
-    dragger.dispatchEvent(new CustomEvent('dragstart.xt.slider', {detail: self.eDetail}));
+    let detail = self.eDetailSet(e);
+    dragger.dispatchEvent(new CustomEvent('dragstart.xt.slider', {detail: detail}));
   }
 
   /**
@@ -579,7 +574,8 @@ class Slider extends Core {
     // logic
     self.logicDragfriction(dragger, e);
     // listener dispatch
-    dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: self.eDetail}));
+    let detail = self.eDetailSet(e);
+    dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: detail}));
   }
 
   /**
@@ -686,7 +682,8 @@ class Slider extends Core {
     // drag position
     dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
     // listener dispatch
-    dragger.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: self.eDetail}));
+    let detail = self.eDetailSet(e);
+    dragger.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: detail}));
   }
 
   /**
@@ -760,7 +757,8 @@ class Slider extends Core {
         dragger.classList.remove('pointer-events--none');
       });
       // listener dispatch
-      dragger.dispatchEvent(new CustomEvent('dragreset.xt.slider', {detail: self.eDetail}));
+      let detail = self.eDetailSet(e);
+      dragger.dispatchEvent(new CustomEvent('dragreset.xt.slider', {detail: detail}));
     }
   }
 

@@ -138,8 +138,6 @@ class Sticky extends Core {
     if (self.detail.disabled && !self.detail.initial) {
       return false;
     }
-    // eDetail
-    self.eDetailSet(e);
     // var
     let anim = true;
     let hide = false;
@@ -236,13 +234,15 @@ class Sticky extends Core {
           // autoClose
           dispatchEvent(new CustomEvent('autoClose.xt'));
           // listener dispatch
-          element.dispatchEvent(new CustomEvent('hide.xt.sticky', {detail: self.eDetail}));
+          let detail = self.eDetailSet(e);
+          element.dispatchEvent(new CustomEvent('hide.xt.sticky', {detail: detail}));
         }
       } else {
         if (element.classList.contains('sticky--hide')) {
           element.classList.remove('sticky--hide');
           // listener dispatch
-          element.dispatchEvent(new CustomEvent('show.xt.sticky', {detail: self.eDetail}));
+          let detail = self.eDetailSet(e);
+          element.dispatchEvent(new CustomEvent('show.xt.sticky', {detail: detail}));
         }
       }
     } else {

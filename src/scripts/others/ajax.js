@@ -183,8 +183,8 @@ class Ajax extends Core {
       // autoClose
       dispatchEvent(new CustomEvent('autoClose.xt'));
       // dispatch
-      self.eDetailSet();
-      self.object.dispatchEvent(new CustomEvent('request.xt.ajax', {detail: self.eDetail}));
+      let detail = self.eDetailSet();
+      self.object.dispatchEvent(new CustomEvent('request.xt.ajax', {detail: detail}));
       // duration
       self.detail.requestDate = new Date();
       clearTimeout(parseFloat(self.object.dataset.xtAjaxDurationTimeout));
@@ -213,9 +213,9 @@ class Ajax extends Core {
   ajaxResponse(element, url, request) {
     let self = this;
     // dispatch
-    self.eDetailSet();
-    self.eDetail.request = request;
-    self.object.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: self.eDetail}));
+    let detail = self.eDetailSet();
+    detail.request = request;
+    self.object.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: detail}));
     // duration
     self.detail.requestDuration -= new Date() - self.detail.requestDate;
     if (self.detail.requestDuration > 0) {
@@ -302,9 +302,9 @@ class Ajax extends Core {
     html = null;
     replace = null;
     // dispatch
-    self.eDetailSet();
-    self.eDetail.request = request;
-    self.object.dispatchEvent(new CustomEvent('replace.xt.ajax', {detail: self.eDetail}));
+    let detail = self.eDetailSet();
+    detail.request = request;
+    self.object.dispatchEvent(new CustomEvent('replace.xt.ajax', {detail: detail}));
     // reinit
     if (!self.detail.initial) {
       self.detail.initial = true;
@@ -323,9 +323,9 @@ class Ajax extends Core {
     // reinit currents
     self.initCurrents();
     // dispatch
-    self.eDetailSet();
-    self.eDetail.request = request;
-    self.object.dispatchEvent(new CustomEvent('replace.xt.ajax', {detail: self.eDetail}));
+    let detail = self.eDetailSet();
+    detail.request = request;
+    self.object.dispatchEvent(new CustomEvent('replace.xt.ajax', {detail: detail}));
   }
 
   /**

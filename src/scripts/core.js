@@ -1091,15 +1091,14 @@ class Core {
   }
 
   /**
-   * set eEetail
+   * set e detail
    * @param {Event} e
    */
   eDetailSet(e = null) {
-    let self = this;
-    // eDetailSet
-    self.eDetail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
-    self.eDetail.skip = true;
-    self.eDetail.self = this;
+    let detail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
+    detail.skip = true;
+    detail.self = this;
+    return detail;
   }
 
   //////////////////////
@@ -1136,8 +1135,6 @@ class Core {
     }
     // toggle
     if (force || self.checkOn(element)) {
-      // eDetail
-      self.eDetailSet(e);
       // auto
       if (options.auto && options.auto.time) {
         self.eventAutoStop();
@@ -1155,28 +1152,34 @@ class Core {
         // deactivate old
         self.eventOff(currents[0]);
       }
+      // detail
+      let detail = self.eDetailSet(e);
       // queue obj
       let obj = {};
       if (groupElements.all.length) {
         obj['elements'] = {
+          detail: detail,
           queueEls: groupElements.all,
           groupElements: groupElements
         };
       }
       if (targets.length) {
         obj['targets'] = {
+          detail: detail,
           queueEls: targets,
           groupElements: groupElements
         };
       }
       if (elementsInner.length) {
         obj['elementsInner'] = {
+          detail: detail,
           queueEls: elementsInner,
           groupElements: groupElements
         };
       }
       if (targetsInner.length) {
         obj['targetsInner'] = {
+          detail: detail,
           queueEls: targetsInner,
           groupElements: groupElements
         };
@@ -1220,8 +1223,6 @@ class Core {
       if (self.getCurrents().length === options.min) {
         return false;
       }
-      // eDetail
-      self.eDetailSet(e);
       // off
       let groupElements = self.getElements(element);
       self.removeCurrent(groupElements.single);
@@ -1235,28 +1236,34 @@ class Core {
       if (!self.getCurrents().length) {
         self.eventAutoStop();
       }
+      // detail
+      let detail = self.eDetailSet(e);
       // queue obj
       let obj = {};
       if (groupElements.all.length) {
         obj['elements'] = {
+          detail: detail,
           queueEls: groupElements.all,
           groupElements: groupElements
         };
       }
       if (targets.length) {
         obj['targets'] = {
+          detail: detail,
           queueEls: targets,
           groupElements: groupElements
         };
       }
       if (elementsInner.length) {
         obj['elementsInner'] = {
+          detail: detail,
           queueEls: elementsInner,
           groupElements: groupElements
         };
       }
       if (targetsInner.length) {
         obj['targetsInner'] = {
+          detail: detail,
           queueEls: targetsInner,
           groupElements: groupElements
         };
@@ -1314,9 +1321,9 @@ class Core {
           }
         }, time).toString();
         // listener dispatch
-        self.eDetailSet();
-        self.eDetail.autoTime = time;
-        self.object.dispatchEvent(new CustomEvent('start.xt.auto', {detail: self.eDetail}));
+        let detail = self.eDetailSet();
+        detail.autoTime = time;
+        self.object.dispatchEvent(new CustomEvent('start.xt.auto', {detail: detail}));
       }
     }
   }
@@ -1331,9 +1338,9 @@ class Core {
       // clear
       clearInterval(self.object.dataset.xtAutoStartInterval);
       // listener dispatch
-      self.eDetailSet();
-      self.eDetail.autoTime = options.auto.time;
-      self.object.dispatchEvent(new CustomEvent('stop.xt.auto', {detail: self.eDetail}));
+      let detail = self.eDetailSet();
+      detail.autoTime = options.auto.time;
+      self.object.dispatchEvent(new CustomEvent('stop.xt.auto', {detail: detail}));
     }
   }
 
@@ -1347,9 +1354,9 @@ class Core {
       // clear
       clearInterval(self.object.dataset.xtAutoStartInterval);
       // listener dispatch
-      self.eDetailSet();
-      self.eDetail.autoTime = options.auto.time;
-      self.object.dispatchEvent(new CustomEvent('pause.xt.auto', {detail: self.eDetail}));
+      let detail = self.eDetailSet();
+      detail.autoTime = options.auto.time;
+      self.object.dispatchEvent(new CustomEvent('pause.xt.auto', {detail: detail}));
     }
   }
 
@@ -1727,7 +1734,7 @@ class Core {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('on.xt', {detail: self.eDetail}));
+    el.dispatchEvent(new CustomEvent('on.xt', {detail: obj[type].detail}));
   }
 
   /**
@@ -1764,7 +1771,7 @@ class Core {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('off.xt', {detail: self.eDetail}));
+    el.dispatchEvent(new CustomEvent('off.xt', {detail: obj[type].detail}));
   }
 
   /**
@@ -1845,7 +1852,7 @@ class Core {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('ondone.xt', {detail: self.eDetail}));
+    el.dispatchEvent(new CustomEvent('ondone.xt', {detail: obj[type].detail}));
   }
 
   /**
@@ -1902,7 +1909,7 @@ class Core {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('offdone.xt', {detail: self.eDetail}));
+    el.dispatchEvent(new CustomEvent('offdone.xt', {detail: obj[type].detail}));
   }
 
   //////////////////////
