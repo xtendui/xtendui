@@ -66,6 +66,7 @@ class Core {
     self.eventCheck();
     self.initEvents();
     self.initAria();
+    console.log(self);
   }
 
   /**
