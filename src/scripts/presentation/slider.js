@@ -450,6 +450,10 @@ class Slider extends Core {
     if (self.dragger) {
       self.initDraggerSlide(slide);
     }
+    // autoHeight
+    if (self.autoHeight) {
+      self.eventAutoHeight(slide);
+    }
     // val
     self.detail.xPosOld = self.detail.xPos;
     self.detail.xPos = self.detail.xPosCurrent = self.detail.xPosReal = parseFloat(slide.dataset.groupPos);
