@@ -42,6 +42,7 @@ class Core {
     self.elements = [];
     self.targets = [];
     self.currentIndex = null;
+    self.initialCurrents = [];
     self.detail = {};
     self.disabled = false;
     self.detail.queueOn = [];
