@@ -227,7 +227,7 @@ class Sticky extends Core {
       self.eventOff(element);
     }
     // after active
-    if (element.classList.contains(...options.classes)) {
+    if (element.classList.contains(...self.classes)) {
       // hide
       if (hide) {
         add = -heightEl;
@@ -354,12 +354,12 @@ class Sticky extends Core {
       let elements = Array.isArray(option) || NodeList.prototype.isPrototypeOf(option) ? option : document.querySelectorAll(option);
       if (elements.length) {
         for (let el of elements) {
-          if (el.classList.contains('sticky-hide--down') && el.classList.contains(...options.classes)) {
+          if (el.classList.contains('sticky-hide--down') && el.classList.contains(...self.classes)) {
             if (scrollInverse) {
               val += el.clientHeight;
               foundHide = true;
             }
-          } else if (el.classList.contains('sticky-hide--up') && el.classList.contains(...options.classes)) {
+          } else if (el.classList.contains('sticky-hide--up') && el.classList.contains(...self.classes)) {
             if (!scrollInverse) {
               val += el.clientHeight;
               foundHide = true;

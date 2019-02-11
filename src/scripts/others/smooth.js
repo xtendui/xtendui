@@ -42,15 +42,15 @@ class Smooth extends Core {
     // set component to element
     Xt.set(self.object, self.componentName, self);
     // init
-    self.initDefaults();
+    self.initVars();
     self.initSetup();
     self.initEvents();
   }
 
   /**
-   * init defaults
+   * init vars
    */
-  initDefaults() {
+  initVars() {
     let self = this;
     // defaults
     self.defaults = self.constructor.defaults;

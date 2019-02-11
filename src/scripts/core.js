@@ -36,6 +36,9 @@ class Core {
   init() {
     let self = this;
     // var
+    self.classes = [];
+    self.classesIn = [];
+    self.classesOut = [];
     self.elements = [];
     self.targets = [];
     self.elementsSingle = [];
@@ -56,7 +59,7 @@ class Core {
     // set component to element
     Xt.set(self.object, self.componentName, self);
     // init
-    self.initDefaults();
+    self.initVars();
     self.initSetup();
     self.initScope();
     self.initCurrents();
@@ -67,9 +70,9 @@ class Core {
   }
 
   /**
-   * init defaults
+   * init vars
    */
-  initDefaults() {
+  initVars() {
     let self = this;
     // defaults
     self.defaults = {
@@ -113,9 +116,9 @@ class Core {
     let markupOptions = self.object.getAttribute('data-' + self.componentName);
     self.options = Xt.merge([self.options, markupOptions ? JSON.parse(markupOptions) : {}]);
     // classes
-    if (self.options.class) {
-      self.options.classes = [...self.options.class.split(' ')];
-    }
+    self.classes = [...self.options.class.split(' ')];
+    self.classesIn = [...self.options.classIn.split(' ')];
+    self.classesOut = [...self.options.classOut.split(' ')];
   }
 
   /**
@@ -130,7 +133,7 @@ class Core {
       self.mode = 'unique';
       self.container = document.documentElement;
       options.max = Infinity;
-      self.namespace = self.componentName + '-' + options.targets.toString() + '-' + options.classes.toString();
+      self.namespace = self.componentName + '-' + options.targets.toString() + '-' + self.classes.toString();
     } else {
       // xtend unique mode
       self.mode = 'multiple';
@@ -270,22 +273,22 @@ class Core {
     if (group) {
       let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group);
       for (let el of groupElements) {
-        if (el.classList.contains(options.classes[0])) {
-          el.classList.remove(...options.classes);
+        if (el.classList.contains(self.classes[0])) {
+          el.classList.remove(...self.classes);
           found = true;
         }
       }
     } else {
-      if (element.classList.contains(options.classes[0])) {
-        element.classList.remove(...options.classes);
+      if (element.classList.contains(self.classes[0])) {
+        element.classList.remove(...self.classes);
         found = true;
       }
     }
     // targets
     let targets = self.getTargets(element);
     for (let tr of targets) {
-      if (tr.classList.contains(options.classes[0])) {
-        tr.classList.remove(...options.classes);
+      if (tr.classList.contains(self.classes[0])) {
+        tr.classList.remove(...self.classes);
         found = true;
       }
     }
@@ -1050,7 +1053,7 @@ class Core {
     let self = this;
     let options = self.options;
     // check
-    elements = elements.filter(x => x.classList.contains(options.classIn) || x.classList.contains(options.classOut));
+    elements = elements.filter(x => x.classList.contains(...self.classesIn) || x.classList.contains(...self.classesOut));
     return elements.length > 0;
   }
 
@@ -1671,9 +1674,9 @@ class Core {
     let self = this;
     let options = self.options;
     // activate
-    el.classList.add(...options.classes);
-    el.classList.add(options.classIn);
-    el.classList.remove(options.classOut);
+    el.classList.add(...self.classes);
+    el.classList.add(...self.classesIn);
+    el.classList.remove(...self.classesOut);
     self.decorateDirection(el);
     // special
     let before = getComputedStyle(el, '::before').getPropertyValue('content').replace(/['"]+/g, '');
@@ -1738,9 +1741,9 @@ class Core {
     let self = this;
     let options = self.options;
     // deactivate
-    el.classList.remove(...options.classes);
-    el.classList.remove(options.classIn);
-    el.classList.add(options.classOut);
+    el.classList.remove(...self.classes);
+    el.classList.remove(...self.classesIn);
+    el.classList.add(...self.classesOut);
     self.decorateDirection(el);
     // special
     let before = getComputedStyle(el, '::before').getPropertyValue('content').replace(/['"]+/g, '');
@@ -1817,7 +1820,7 @@ class Core {
     let self = this;
     let options = self.options;
     // reset
-    el.classList.remove(options.classIn);
+    el.classList.remove(...self.classesIn);
     // special
     let before = getComputedStyle(el, '::before').getPropertyValue('content').replace(/['"]+/g, '');
     let after = getComputedStyle(el, '::after').getPropertyValue('content').replace(/['"]+/g, '');
@@ -1856,7 +1859,7 @@ class Core {
     let self = this;
     let options = self.options;
     // reset
-    el.classList.remove(options.classOut);
+    el.classList.remove(...self.classesOut);
     // special
     if (type === 'targets') {
       // appendTo
