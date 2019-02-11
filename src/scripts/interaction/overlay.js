@@ -14,11 +14,11 @@ class Overlay extends Core {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
-   * @param {Object} jsOptions User options
+   * @param {Object} optionsJs User options
    * @constructor
    */
-  constructor(object, jsOptions = {}) {
-    super(object, jsOptions);
+  constructor(object, optionsJs = {}) {
+    super(object, optionsJs);
   }
 
   //////////////////////
@@ -56,11 +56,11 @@ class Overlay extends Core {
 }
 
 //////////////////////
-// defaults
+// option
 //////////////////////
 
 Overlay.componentName = 'xt-overlay';
-Overlay.defaults = {
+Overlay.optionsDefault = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > .overlay_outer",
   "class": "active",

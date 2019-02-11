@@ -14,11 +14,11 @@ class Ajax extends Core {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
-   * @param {Object} jsOptions User options
+   * @param {Object} optionsJs User options
    * @constructor
    */
-  constructor(object, jsOptions = {}) {
-    super(object, jsOptions);
+  constructor(object, optionsJs = {}) {
+    super(object, optionsJs);
     // prevent scroll on popstate
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
@@ -30,7 +30,7 @@ class Ajax extends Core {
   //////////////////////
 
   /**
-   * init namespace, container and options
+   * init setup
    */
   initSetup() {
     super.initSetup();
@@ -346,11 +346,11 @@ class Ajax extends Core {
 }
 
 //////////////////////
-// defaults
+// option
 //////////////////////
 
 Ajax.componentName = 'xt-ajax';
-Ajax.defaults = {
+Ajax.optionsDefault = {
   "query": "body", // needs to be unique
   "baseUrl": "/",
   "duration": false,

@@ -14,11 +14,11 @@ class Fade extends Core {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
-   * @param {Object} jsOptions User options
+   * @param {Object} optionsJs User options
    * @constructor
    */
-  constructor(object, jsOptions = {}) {
-    super(object, jsOptions);
+  constructor(object, optionsJs = {}) {
+    super(object, optionsJs);
   }
 
   //////////////////////
@@ -158,11 +158,11 @@ class Fade extends Core {
 }
 
 //////////////////////
-// defaults
+// option
 //////////////////////
 
 Fade.componentName = 'xt-fade';
-Fade.defaults = {
+Fade.optionsDefault = {
   "elements": ".fade",
   "class": "active",
   "on": "scroll resize",

@@ -14,11 +14,11 @@ class Slider extends Core {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
-   * @param {Object} jsOptions User options
+   * @param {Object} optionsJs User options
    * @constructor
    */
-  constructor(object, jsOptions = {}) {
-    super(object, jsOptions);
+  constructor(object, optionsJs = {}) {
+    super(object, optionsJs);
   }
 
   //////////////////////
@@ -309,7 +309,7 @@ class Slider extends Core {
         // save event
         self.detail.eInit = e;
         // logic
-        let eventLimit = self.container.querySelectorAll('.event-limit');
+        let eventLimit = self.object.querySelectorAll('.event-limit');
         if (eventLimit.length) {
           if (!Xt.checkNested(e.target, eventLimit)) {
             self.eventDragstart(dragger, e);
@@ -338,7 +338,7 @@ class Slider extends Core {
   eventDragendHandler(dragger, e) {
     let self = this;
     // logic
-    let eventLimit = self.container.querySelectorAll('.event-limit');
+    let eventLimit = self.object.querySelectorAll('.event-limit');
     if (eventLimit.length) {
       if (!Xt.checkNested(e.target, eventLimit)) {
         self.eventDragend(dragger, e);
@@ -765,11 +765,11 @@ class Slider extends Core {
 }
 
 //////////////////////
-// defaults
+// option
 //////////////////////
 
 Slider.componentName = 'xt-slider';
-Slider.defaults = {
+Slider.optionsDefault = {
   "elements": "[data-xt-pag]",
   "targets": ".slide",
   "class": "active",

@@ -14,11 +14,11 @@ class Sticky extends Core {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
-   * @param {Object} jsOptions User options
+   * @param {Object} optionsJs User options
    * @constructor
    */
-  constructor(object, jsOptions = {}) {
-    super(object, jsOptions);
+  constructor(object, optionsJs = {}) {
+    super(object, optionsJs);
   }
 
   //////////////////////
@@ -376,11 +376,11 @@ class Sticky extends Core {
 }
 
 //////////////////////
-// defaults
+// option
 //////////////////////
 
 Sticky.componentName = 'xt-sticky';
-Sticky.defaults = {
+Sticky.optionsDefault = {
   "class": "active",
   "on": "scroll resize",
   "min": 0,

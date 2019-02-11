@@ -14,11 +14,11 @@ class Smooth extends Core {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
-   * @param {Object} jsOptions User options
+   * @param {Object} optionsJs User options
    * @constructor
    */
-  constructor(object, jsOptions = {}) {
-    super(object, jsOptions);
+  constructor(object, optionsJs = {}) {
+    super(object, optionsJs);
   }
 
   //////////////////////
@@ -50,29 +50,12 @@ class Smooth extends Core {
   /**
    * init vars
    */
-  initVars() {
-    let self = this;
-    // defaults
-    self.defaults = self.constructor.defaults;
-    // js options
-    self.options = Xt.merge([self.defaults, self.jsOptions]);
-    // markup options
-    let markupOptions = self.object.getAttribute('data-' + self.componentName);
-    self.options = Xt.merge([self.options, markupOptions ? JSON.parse(markupOptions) : {}]);
-    // var
-    self.scrollElement = self.options.scrollElement;
-    self.destroyElements.push(self.scrollElement);
-  }
-
-  /**
-   * init namespace, container and options
-   */
   initSetup() {
     let self = this;
-    // namespace
-    self.container = self.object;
-    self.container.dataset.uniqueId = self.container.dataset.uniqueId ? self.container.dataset.uniqueId : Xt.getuniqueId();
-    self.namespace = self.componentName + '-' + self.container.dataset.uniqueId;
+    super.initSetup();
+    // scrollElement
+    self.scrollElement = self.options.scrollElement;
+    self.destroyElements.push(self.scrollElement);
   }
 
   /**
@@ -194,11 +177,11 @@ class Smooth extends Core {
 }
 
 //////////////////////
-// defaults
+// option
 //////////////////////
 
 Smooth.componentName = 'xt-smooth';
-Smooth.defaults = {
+Smooth.optionsDefault = {
   "scrollElement": window,
   "friction": 9,
   "delta": {

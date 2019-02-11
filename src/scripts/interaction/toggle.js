@@ -14,11 +14,11 @@ class Toggle extends Core {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
-   * @param {Object} jsOptions User options
+   * @param {Object} optionsJs User options
    * @constructor
    */
-  constructor(object, jsOptions = {}) {
-    super(object, jsOptions);
+  constructor(object, optionsJs = {}) {
+    super(object, optionsJs);
   }
 
   //////////////////////
@@ -56,11 +56,11 @@ class Toggle extends Core {
 }
 
 //////////////////////
-// defaults
+// option
 //////////////////////
 
 Toggle.componentName = 'xt-toggle';
-Toggle.defaults = {
+Toggle.optionsDefault = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > [class^=\"toggle--\"], :scope > [class*=\" toggle--\"]",
   "class": "active",

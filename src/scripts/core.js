@@ -13,15 +13,15 @@ class Core {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
-   * @param {Object} jsOptions User options
+   * @param {Object} optionsJs User options
    * @constructor
    */
-  constructor(object, jsOptions = {}) {
+  constructor(object, optionsJs = {}) {
     let self = this;
     // var
     self.componentName = self.constructor.componentName;
     self.object = object;
-    self.jsOptions = jsOptions;
+    self.optionsJs = optionsJs;
     // init
     self.init();
   }
@@ -41,7 +41,6 @@ class Core {
     self.classesOut = [];
     self.elements = [];
     self.targets = [];
-    self.elementsSingle = [];
     self.currentIndex = null;
     self.detail = {};
     self.detail.disabled = false;
@@ -74,8 +73,8 @@ class Core {
    */
   initVars() {
     let self = this;
-    // defaults
-    self.defaults = {
+    // option
+    self.optionsDefault = {
       "classIn": "in",
       "classOut": "out",
       "instant": false,
@@ -109,20 +108,26 @@ class Core {
         "labelledby": true
       }
     };
-    self.defaults = Xt.merge([self.defaults, self.constructor.defaults]);
+    self.optionsDefault = Xt.merge([self.optionsDefault, self.constructor.optionsDefault]);
     // js options
-    self.options = Xt.merge([self.defaults, self.jsOptions]);
+    self.options = Xt.merge([self.optionsDefault, self.optionsJs]);
     // markup options
     let markupOptions = self.object.getAttribute('data-' + self.componentName);
     self.options = Xt.merge([self.options, markupOptions ? JSON.parse(markupOptions) : {}]);
     // classes
-    self.classes = [...self.options.class.split(' ')];
-    self.classesIn = [...self.options.classIn.split(' ')];
-    self.classesOut = [...self.options.classOut.split(' ')];
+    if (self.classes) {
+      self.classes = [...self.options.class.split(' ')];
+    }
+    if (self.classesIn) {
+      self.classesIn = [...self.options.classIn.split(' ')];
+    }
+    if (self.classesOut) {
+      self.classesOut = [...self.options.classOut.split(' ')];
+    }
   }
 
   /**
-   * init namespace, container and options
+   * init setup
    */
   initSetup() {
     let self = this;
@@ -172,10 +177,7 @@ class Core {
       self.elements = arr;
       self.destroyElements.push(...self.elements);
     }
-    if (self.elements.length) {
-      // elementsSingle
-      self.elementsSingle = self.getElementsSingle();
-    } else {
+    if (!self.elements.length) {
       self.elements = Xt.arrSingle(self.object);
       // @FIX set namespace for next frame
       requestAnimationFrame(function () {
@@ -184,8 +186,6 @@ class Core {
         arr = arr.filter(x => !x.getAttribute('data-xt-nav')); // filter out nav
         self.elements = arr;
         self.destroyElements.push(...self.elements);
-        // elementsSingle
-        self.elementsSingle = self.getElementsSingle();
       });
     }
   }
@@ -2331,7 +2331,7 @@ class Core {
   goToPrev(amount = 1, force = false, loop = null) {
     let self = this;
     // goToIndex
-    let index = self.elementsSingle.length - 1;
+    let index = self.getElementsSingle().length - 1;
     if (self.currentIndex !== null) {
       index = self.currentIndex - amount;
     }
@@ -2349,7 +2349,7 @@ class Core {
     let self = this;
     let options = self.options;
     // check
-    let max = self.elementsSingle.length - 1;
+    let max = self.getElementsSingle().length - 1;
     if (index > max) {
       if (loop || (loop === null && options.loop)) {
         index = index - max - 1;
@@ -2429,7 +2429,7 @@ class Core {
 }
 
 //////////////////////
-// defaults
+// option
 //////////////////////
 
 Core.componentName = 'xt-core';

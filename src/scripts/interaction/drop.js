@@ -14,11 +14,11 @@ class Drop extends Core {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
-   * @param {Object} jsOptions User options
+   * @param {Object} optionsJs User options
    * @constructor
    */
-  constructor(object, jsOptions = {}) {
-    super(object, jsOptions);
+  constructor(object, optionsJs = {}) {
+    super(object, optionsJs);
   }
 
   //////////////////////
@@ -48,11 +48,11 @@ class Drop extends Core {
 }
 
 //////////////////////
-// defaults
+// option
 //////////////////////
 
 Drop.componentName = 'xt-drop';
-Drop.defaults = {
+Drop.optionsDefault = {
   "targets": ":scope > .drop",
   "elementsInner": ":scope > a, :scope > button",
   "class": "active",
