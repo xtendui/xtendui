@@ -798,7 +798,7 @@ Xt.animTimeoutClear = function (el) {
  * @param {String} prefix Timeout prefix
  */
 Xt.eventDelay = function (e, element, func, prefix = '') {
-  if (e.type === 'resize' || e.type === 'scroll') {
+  if (e && e.type && (e.type === 'resize' || e.type === 'scroll')) {
     let delay = Xt[e.type + 'Delay'];
     if (delay === false) {
       // func
