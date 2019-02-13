@@ -18,12 +18,11 @@ class Core {
    */
   constructor(object, optionsJs = {}) {
     let self = this;
-    // var
-    self.componentName = self.constructor.componentName;
     self.object = object;
     self.optionsJs = optionsJs;
+    self.componentName = self.constructor.componentName;
     // init
-    self.init();
+    self.init(object, optionsJs);
   }
 
   //////////////////////
@@ -33,8 +32,10 @@ class Core {
   /**
    * init
    */
-  init() {
+  init(object = false, optionsJs = false) {
     let self = this;
+    self.object = object || self.object;
+    self.optionsJs = optionsJs || self.optionsJs;
     // var
     self.classes = [];
     self.classesIn = [];

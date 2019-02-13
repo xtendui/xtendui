@@ -28,7 +28,7 @@ class Smooth extends Core {
   /**
    * init
    */
-  init() {
+  init(object = false, optionsJs = false) {
     let self = this;
     // var
     self.subject = null;
