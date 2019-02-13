@@ -153,17 +153,25 @@ class Smooth extends Core {
     // vars
     self.detail.moving = true;
     let scrollCurrent = self.object.scrollTop;
-    // set
-    let delta = (self.detail.scrollTop - scrollCurrent) / options.friction;
+    let delta = self.detail.scrollTop - scrollCurrent;
+    let sign = Math.sign(delta);
+    // momentum
+    let fncFriction = options.wheel.friction;
+    if (typeof fncFriction === 'string') {
+      fncFriction = new Function('delta', fncFriction);
+    }
+    delta = fncFriction(Math.abs(delta)) * sign;
     let scrollFinal = scrollCurrent + delta;
-    if (delta < 0) { // fix math on direction to stop loop
+    // fix math on direction to stop loop
+    if (delta < 0) {
       scrollFinal = Math.floor(scrollFinal);
     } else if (delta > 0) {
       scrollFinal = Math.ceil(scrollFinal);
     }
+    // set
     self.object.scrollTop = scrollFinal;
     // loop
-    if (Math.abs(delta) >= options.delta.min) {
+    if (Math.abs(delta) >= options.wheel.limit) {
       cancelAnimationFrame(window.smoothFrame);
       window.smoothFrame = requestAnimationFrame(function () {
         self.friction();
@@ -183,9 +191,9 @@ class Smooth extends Core {
 Smooth.componentName = 'xt-smooth';
 Smooth.optionsDefault = {
   "scrollElement": window,
-  "friction": 9,
-  "delta": {
-    "min": .5
+  "wheel": {
+    "limit": .5,
+    "friction": "return delta / 9"
   }
 };
 
