@@ -2151,12 +2151,12 @@ class Core {
   specialCollapseReset(el, before, after) {
     if (el instanceof HTMLElement) {
       if (before === 'xt-collapse--height') {
-        el.style.height = 'auto';
+        el.style.height = 'inherit';
         el.style.paddingTop = '';
         el.style.paddingBottom = '';
       }
       if (after === 'xt-collapse--width') {
-        el.style.width = 'auto';
+        el.style.width = 'inherit';
         el.style.paddingLeft = '';
         el.style.paddingRight = '';
       }
