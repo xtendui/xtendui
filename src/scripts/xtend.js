@@ -798,6 +798,7 @@ Xt.animTimeoutClear = function (el) {
  * @param {String} prefix Timeout prefix
  */
 Xt.eventDelay = function (e, element, func, prefix = '') {
+  let container = document.documentElement;
   if (e && e.type && (e.type === 'resize' || e.type === 'scroll')) {
     let delay = Xt[e.type + 'Delay'];
     if (delay === false) {
@@ -806,15 +807,15 @@ Xt.eventDelay = function (e, element, func, prefix = '') {
       return false;
     }
     if (e.type === 'resize') {
-      // multiple calls
-      let windowWidth = window.innerWidth;
-      let windowHeight = window.innerHeight;
-      if (windowWidth === parseFloat(element.dataset['windowWidth' + prefix])
-        && windowHeight === parseFloat(element.dataset['windowHeight' + prefix])) {
+      // multiple calls check
+      if (window.innerWidth === parseFloat(container.dataset['xtEventDelay'])) { // only width no height because it changes on scroll on mobile
         return false;
       }
-      element.dataset['windowWidth' + prefix] = windowWidth.toString();
-      element.dataset['windowHeight' + prefix] = windowHeight.toString();
+      // save after a frame to execute all eventDelay
+      cancelAnimationFrame(parseFloat(container.dataset.xtEventDelayFrame));
+      container.dataset.xtEventDelayFrame = requestAnimationFrame( function() {
+        container.dataset['xtEventDelay'] = window.innerWidth.toString();
+      }).toString();
     }
     // delay
     clearTimeout(parseFloat(element.dataset['xt' + e.type + prefix + 'Timeout']));
@@ -827,6 +828,8 @@ Xt.eventDelay = function (e, element, func, prefix = '') {
     func(e);
   }
 };
+
+document.documentElement.dataset['xtEventDelay'] = window.innerWidth.toString();
 
 /**
  * passive events

@@ -118,7 +118,7 @@ class Sticky extends Core {
     if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
       Xt.eventDelay(e, self.object, function() {
         self.eventSticky(self.object, e);
-      });
+      }, 'resize.xt.sticky');
     }
   }
 

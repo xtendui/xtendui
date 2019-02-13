@@ -65,7 +65,7 @@ class Fade extends Core {
     if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
       Xt.eventDelay(e, self.object, function () {
         self.eventFade();
-      });
+      }, 'resize.xt.fade');
     }
   }
 

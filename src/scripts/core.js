@@ -571,7 +571,7 @@ class Core {
     // handler
     Xt.eventDelay(e, self.object, function () {
       self.eventCheck();
-    });
+    }, 'resize.xt.core');
   }
 
   /**

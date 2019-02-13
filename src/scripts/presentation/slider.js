@@ -426,7 +426,7 @@ class Slider extends Core {
       Xt.eventDelay(e, self.object, function () {
         self.initial = true;
         self.init();
-      }, 'Init');
+      }, 'resize.xt.slider');
     }
   }
 
