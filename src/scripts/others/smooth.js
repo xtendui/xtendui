@@ -31,6 +31,7 @@ class Smooth extends Core {
   init() {
     let self = this;
     // var
+    self.subject = null;
     self.detail = {};
     self.destroyElements = [self.object];
     // destroy if already done
@@ -68,7 +69,7 @@ class Smooth extends Core {
     self.detail.scrollTop = self.detail.scrollTopInitial = self.object.scrollTop;
     // vars
     let eWheel = 'onwheel' in self.object ? 'wheel' : self.object.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
-    self.object = self.object ? self.object : document.documentElement; // polyfill document.scrollingElement
+    self.object = self.object ? self.object : document.documentElement; // document.scrollingElement
     // wheel
     let wheelHandler = Xt.dataStorage.put(self.object, eWheel + '.' + self.namespace,
       self.eventWheel.bind(self));
@@ -109,15 +110,23 @@ class Smooth extends Core {
    */
   eventWheel(e) {
     let self = this;
+    // subject
+    self.subject = null;
+    for (let el of e.path) {
+      if (getComputedStyle(el).overflowY === 'scroll') {
+        self.subject = el;
+        break;
+      }
+    }
+    if (!self.subject) {
+      return false;
+    } else if (self.subject === document.body) {
+      self.subject = self.object; // document.scrollingElement
+    }
     // prevent default scrolling
     e.preventDefault();
-    // not when overflow hidden
-    if (getComputedStyle(self.object).overflow.split(' ')[0] === 'hidden'
-      || (self.object === document.documentElement && getComputedStyle(self.object.querySelectorAll('body')[0]).overflowY === 'hidden')) { // fix when using document.scrollingElement
-      return false;
-    }
     // vars
-    let scrollMax = self.object.scrollHeight - self.object.clientHeight - 1;
+    let scrollMax = self.subject.scrollHeight - self.subject.clientHeight - 1;
     let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY;
     if (delta === 0) {
       return;
@@ -127,7 +136,7 @@ class Smooth extends Core {
       delta *= 30;
     } else if (e.deltaMode === 2) {
       // deltaMode 2: by pages
-      delta *= self.object.clientHeight;
+      delta *= self.subject.clientHeight;
     }
     // set
     self.detail.scrollTop -= delta;
@@ -152,7 +161,7 @@ class Smooth extends Core {
     let options = self.options;
     // vars
     self.detail.moving = true;
-    let scrollCurrent = self.object.scrollTop;
+    let scrollCurrent = self.subject.scrollTop;
     let delta = self.detail.scrollTop - scrollCurrent;
     let sign = Math.sign(delta);
     // momentum
@@ -169,7 +178,7 @@ class Smooth extends Core {
       scrollFinal = Math.ceil(scrollFinal);
     }
     // set
-    self.object.scrollTop = scrollFinal;
+    self.subject.scrollTop = scrollFinal;
     // loop
     if (Math.abs(delta) >= options.wheel.limit) {
       cancelAnimationFrame(window.smoothFrame);
