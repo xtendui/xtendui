@@ -110,7 +110,8 @@ We use jekyll to serve the docs.
   * [findIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
   * [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent)
   * [scrollingElement](https://github.com/yangg/scrolling-element)
-
+  * [composedPath](https://github.com/DieterHolvoet/event-propagation-path)
+  
 # Copyright
 
 Licensed under [MIT license](https://github.com/minimit/xtend-library/blob/master/LICENSE).

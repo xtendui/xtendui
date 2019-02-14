@@ -31,7 +31,7 @@
 })(window.Element.prototype);
 
 //////////////////////
-// scope polyfill
+// :scope polyfill
 // https://github.com/jonathantneal/element-qsa-scope
 // USAGE: querySelectorAll(':scope > .selector');
 //////////////////////
@@ -268,7 +268,7 @@ if (!Array.prototype.findIndex) {
 })();
 
 //////////////////////
-// event.composedPath polyfill
+// composedPath polyfill
 // https://github.com/DieterHolvoet/event-propagation-path
 //////////////////////
 
