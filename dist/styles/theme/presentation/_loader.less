@@ -174,19 +174,32 @@
 
 .loader {
   &.active {
-    opacity: 0;
-    .anim-opacity.active();
-    animation-duration: @time--small;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: @time--small;
+    transition-timing-function: @bez--in;
     .spinner, .filler {
-      opacity: 0;
-      .anim-zoom.active();
-      animation-delay: @time--small;
+      opacity: 1;
+      transform: scale(1);
+      transition-property: opacity, transform;
+      transition-duration: @time--small;
+      transition-delay: @time--small;
+      transition-timing-function: @bez--in;
     }
   }
   &.out {
-    opacity: 1;
-    .anim-opacity.out();
-    animation-duration: @time--small;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: @time--small;
+    transition-delay: @time--small;
+    transition-timing-function: @bez--out;
+    .spinner, .filler {
+      opacity: 0;
+      transform: scale(.75, .75);
+      transition-property: opacity, transform;
+      transition-duration: @time--small;
+      transition-timing-function: @bez--out;
+    }
   }
 }
 
@@ -207,25 +220,7 @@
     }
   }
   // animations
-  opacity: 0;
-  &.active {
-    opacity: 0;
-    .anim-zoom.active();
-    animation-delay: initial;
-    .spinner, .filler {
-      opacity: 1 !important;
-      .trans-anim-none() !important;
-    }
-  }
-  &.out {
-    opacity: 1;
-    .anim-zoom.out();
-    animation-delay: initial;
-    .spinner, .filler {
-      opacity: 1 !important;
-      .trans-anim-none() !important;
-    }
-  }
+  .loader.out();
 }
 
 // js

@@ -6093,32 +6093,41 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   background: rgba(255, 255, 255, 0.8);
 }
 .loader.active {
-  opacity: 0;
-  animation-name: anim-opacity--in;
-  animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
-  animation-fill-mode: forwards;
-  animation-duration: 250ms;
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
 }
 .loader.active .spinner,
 .loader.active .filler {
-  opacity: 0;
-  animation-name: anim-zoom--in;
-  animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
-  animation-fill-mode: forwards;
-  animation-delay: 250ms;
+  opacity: 1;
+  transform: scale(1);
+  transition-property: opacity, transform;
+  transition-duration: 250ms;
+  transition-delay: 250ms;
+  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
 }
 .loader.out {
-  opacity: 1;
-  animation-name: anim-opacity--out;
-  animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
-  animation-fill-mode: forwards;
-  animation-duration: 250ms;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 250ms;
+  transition-delay: 250ms;
+  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+}
+.loader.out .spinner,
+.loader.out .filler {
+  opacity: 0;
+  transform: scale(0.75, 0.75);
+  transition-property: opacity, transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(1, 0, .64, 1);
 }
 .loader--mouse {
   opacity: 0;
+  transition-property: opacity;
+  transition-duration: 250ms;
+  transition-delay: 250ms;
+  transition-timing-function: cubic-bezier(1, 0, .64, 1);
 }
 .loader--spinner.loader--mouse {
   margin-top: -30px;
@@ -6131,37 +6140,13 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
 .loader--x.loader--mouse .filler {
   width: 60px;
 }
-.loader--mouse.active {
+.loader--mouse .spinner,
+.loader--mouse .filler {
   opacity: 0;
-  animation-name: anim-zoom--in;
-  animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
-  animation-fill-mode: forwards;
-  animation-delay: initial;
-}
-.loader--mouse.active .spinner,
-.loader--mouse.active .filler {
-  opacity: 1 !important;
-  transition: initial !important;
-  transition-delay: initial !important;
-  animation: initial !important;
-  animation-delay: initial !important;
-}
-.loader--mouse.out {
-  opacity: 1;
-  animation-name: anim-zoom--out;
-  animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
-  animation-fill-mode: forwards;
-  animation-delay: initial;
-}
-.loader--mouse.out .spinner,
-.loader--mouse.out .filler {
-  opacity: 1 !important;
-  transition: initial !important;
-  transition-delay: initial !important;
-  animation: initial !important;
-  animation-delay: initial !important;
+  transform: scale(0.75, 0.75);
+  transition-property: opacity, transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(1, 0, .64, 1);
 }
 .loader--js .spinner circle {
   opacity: 1 !important;
