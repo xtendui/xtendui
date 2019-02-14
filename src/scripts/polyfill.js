@@ -266,3 +266,30 @@ if (!Array.prototype.findIndex) {
     get: scrollingElement
   })
 })();
+
+//////////////////////
+// event.composedPath polyfill
+// https://github.com/DieterHolvoet/event-propagation-path
+//////////////////////
+
+if (!Event.prototype.composedPath) {
+  Event.prototype.composedPath = function () {
+    let polyfill = function () {
+      let element = this.target || null;
+      let pathArr = [element];
+
+      if (!element || !element.parentElement) {
+        return [];
+      }
+
+      while (element.parentElement) {
+        element = element.parentElement;
+        pathArr.unshift(element);
+      }
+
+      return pathArr;
+    }.bind(this);
+
+    return this.path || (this.composedPath && this.composedPath()) || polyfill();
+  };
+}

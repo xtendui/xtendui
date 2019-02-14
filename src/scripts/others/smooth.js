@@ -112,7 +112,7 @@ class Smooth extends Core {
     let self = this;
     // subject
     self.subject = null;
-    for (let el of e.path) {
+    for (let el of e.composedPath()) {
       if (getComputedStyle(el).overflowY === 'scroll') {
         self.subject = el;
         break;
