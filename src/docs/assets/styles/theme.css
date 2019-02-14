@@ -6177,7 +6177,7 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
 .loader.active {
   opacity: 1;
   transition-property: opacity;
-  transition-duration: 250ms;
+  transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36, 0, 0, 1);
 }
 .loader.active .spinner,
@@ -6185,14 +6185,14 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   opacity: 1;
   transform: scale(1);
   transition-property: opacity, transform;
-  transition-duration: 250ms;
+  transition-duration: 500ms;
   transition-delay: 250ms;
   transition-timing-function: cubic-bezier(.36, 0, 0, 1);
 }
 .loader.out {
   opacity: 0;
   transition-property: opacity;
-  transition-duration: 250ms;
+  transition-duration: 500ms;
   transition-delay: 250ms;
   transition-timing-function: cubic-bezier(1, 0, .64, 1);
 }
@@ -6201,13 +6201,13 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   opacity: 0;
   transform: scale(0.75, 0.75);
   transition-property: opacity, transform;
-  transition-duration: 250ms;
+  transition-duration: 500ms;
   transition-timing-function: cubic-bezier(1, 0, .64, 1);
 }
 .loader--mouse {
   opacity: 0;
   transition-property: opacity;
-  transition-duration: 250ms;
+  transition-duration: 500ms;
   transition-delay: 250ms;
   transition-timing-function: cubic-bezier(1, 0, .64, 1);
 }
@@ -6227,7 +6227,7 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   opacity: 0;
   transform: scale(0.75, 0.75);
   transition-property: opacity, transform;
-  transition-duration: 250ms;
+  transition-duration: 500ms;
   transition-timing-function: cubic-bezier(1, 0, .64, 1);
 }
 .loader--js .spinner circle {
