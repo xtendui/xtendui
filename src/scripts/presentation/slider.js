@@ -506,8 +506,8 @@ class Slider extends Core {
    * @param {Event} e
    */
   eventImageLoaded(el, e = null) {
-    let self = this;
     super.eventImageLoaded(el, e);
+    let self = this;
     // autoHeight
     if (self.autoHeight) {
       self.eventAutoHeight(el);

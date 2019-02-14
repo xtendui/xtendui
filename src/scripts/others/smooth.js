@@ -52,8 +52,8 @@ class Smooth extends Core {
    * init vars
    */
   initSetup() {
-    let self = this;
     super.initSetup();
+    let self = this;
     // scrollElement
     self.scrollElement = self.options.scrollElement;
     self.destroyElements.push(self.scrollElement);

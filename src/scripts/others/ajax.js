@@ -30,6 +30,18 @@ class Ajax extends Core {
   //////////////////////
 
   /**
+   * init
+   */
+  init(object = false, optionsJs = false) {
+    let self = this;
+    // var
+    self.locationFrom = self.locationTo || null; // fix popstate
+    self.locationTo = null;
+    // super
+    super.init();
+  }
+
+  /**
    * init setup
    */
   initSetup() {
@@ -107,7 +119,9 @@ class Ajax extends Core {
       url = location.pathname + location.search;
     }
     // set pushstate
-    self.detail.locationFrom = new URL(url, location);
+    if (!self.locationFrom) {
+      self.locationFrom = new URL(url, location);
+    }
     self.pushState(url, document.title);
   }
 
@@ -115,8 +129,8 @@ class Ajax extends Core {
    * init events
    */
   initEvents() {
-    let self = this;
     super.initEvents();
+    let self = this;
     // event popstate
     window.onpopstate = self.eventPopstateHandler.bind(self);
   }
@@ -176,32 +190,29 @@ class Ajax extends Core {
     if (element) {
       url = element.getAttribute('href').split('#')[0];
     }
-    // check url
-    if (!self.initial) {
-      // location
-      self.detail.locationTo = new URL(url, location);
-      // autoClose
-      dispatchEvent(new CustomEvent('autoClose.xt'));
-      // dispatch
-      let detail = self.eDetailSet();
-      self.object.dispatchEvent(new CustomEvent('request.xt.ajax', {detail: detail}));
-      // duration
-      self.detail.requestDate = new Date();
-      clearTimeout(parseFloat(self.object.dataset.xtAjaxDurationTimeout));
-      requestAnimationFrame( function() {
-        self.detail.requestDuration = options.duration || Xt.animTime(self.queryElement);
-        // call
-        let request = new XMLHttpRequest();
-        request.open('GET', url, true);
-        request.onload = function () {
-          self.ajaxResponse(element, url, request);
-        };
-        request.onerror = function () {
-          self.ajaxResponse(element, url, request);
-        };
-        request.send();
-      });
-    }
+    // location
+    self.locationTo = new URL(url, location);
+    // autoClose
+    dispatchEvent(new CustomEvent('autoClose.xt'));
+    // dispatch
+    let detail = self.eDetailSet();
+    self.object.dispatchEvent(new CustomEvent('request.xt.ajax', {detail: detail}));
+    // duration
+    self.detail.requestDate = new Date();
+    clearTimeout(parseFloat(self.object.dataset.xtAjaxDurationTimeout));
+    requestAnimationFrame( function() {
+      self.detail.requestDuration = options.duration || Xt.animTime(self.queryElement);
+      // call
+      let request = new XMLHttpRequest();
+      request.open('GET', url, true);
+      request.onload = function () {
+        self.ajaxResponse(element, url, request);
+      };
+      request.onerror = function () {
+        self.ajaxResponse(element, url, request);
+      };
+      request.send();
+    });
   }
 
   /**
@@ -332,11 +343,9 @@ class Ajax extends Core {
    * history pushstate
    */
   pushState(url, title) {
-    let self = this;
     // push object state
     if (!history.state || !history.state.url || history.state.url !== url) {
       document.title = title;
-      self.detail.locationFrom = new URL(location);
       history.pushState({'url': url, 'title': title}, title, url);
     } else {
       document.title = history.state.title;
