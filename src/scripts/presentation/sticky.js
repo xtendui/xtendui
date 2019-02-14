@@ -255,7 +255,7 @@ class Sticky extends Core {
       if (!element.classList.contains('sticky--moving')) {
         element.classList.add('sticky--moving');
       }
-    } else {
+    } else if (element.classList.contains(...self.classes)) {
       if (element.classList.contains('sticky--moving')) {
         element.classList.remove('sticky--moving');
       }
