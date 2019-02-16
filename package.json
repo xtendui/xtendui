@@ -69,6 +69,7 @@
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       "@semantic-release/changelog",
+      "@semantic-release/npm",
       [
         "@semantic-release/exec",
         {
@@ -80,6 +81,7 @@
         {
           "assets": [
             "package.json",
+            "CHANGELOG.md",
             "dist/**/*.*",
             "src/**/*.*",
             "src/docs/assets/**/*.*"
