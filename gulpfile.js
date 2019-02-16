@@ -191,7 +191,7 @@ gulp.task('site:watch', function (done) {
 
 gulp.task('version', function () {
   const version = JSON.parse(fs.readFileSync('package.json')).version;
-  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
+  let banner = "/*!\n" + " * Xtend v" + version + " (https://getxtend.com/)\n" + " * @copyright (c) 2017 - 2019 Riccardo Caroli\n" + " * @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE)\n" + " */";
   log('package.json version: ' + version);
   // replace less
   gulp.src(['dist/styles/*.less',])
