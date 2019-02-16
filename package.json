@@ -1,6 +1,6 @@
 {
   "name": "xtend-library",
-  "version": "0.7.0",
+  "version": "0.7.3",
   "description": "Frontend library",
   "homepage": "http://getxtend.com/",
   "license": "MIT",
@@ -57,6 +57,14 @@
     "standard-version": "^5.0.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
+  },
+  "standard-version": {
+    "skip": {
+      "tag": true
+    },
+    "scripts": {
+      "postbump": "npm run build:docs"
+    }
   },
   "browserify": {
     "transform": [

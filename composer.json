@@ -1,5 +1,6 @@
 {
   "name": "minimit/xtend-library",
+  "version": "0.7.3",
   "description": "Frontend library",
   "type": "library",
   "license": [
