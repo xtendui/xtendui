@@ -27,6 +27,7 @@
     "serve:docs": "bundle exec jekyll serve",
     "dep": "npm run dep:docs",
     "dep:docs": "gh-pages -d docs",
+    "version": "gulp version",
     "release": "standard-version",
     "publish": "npm run dep && git push && git push --tags && npm publish"
   },
@@ -49,6 +50,7 @@
     "gulp-cached": "^1.1.1",
     "gulp-clean-css": "^3.0.3",
     "gulp-less": "^4.0.1",
+    "gulp-minify": "^3.1.0",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^0.6.1",
     "gulp-sourcemaps": "^2.6.4",
@@ -63,7 +65,7 @@
       "tag": true
     },
     "scripts": {
-      "postbump": "npm run build:docs"
+      "postbump": "npm run version && npm run build:docs && git add ."
     }
   },
   "browserify": {

@@ -8,7 +8,7 @@ let source = require('vinyl-source-stream');
 let less = require('gulp-less');
 let gutil = require('gulp-util');
 let cache = require('gulp-cached');
-let terser = require('gulp-terser');
+let minify = require('gulp-minify');
 let rename = require('gulp-rename');
 let replace = require('gulp-replace');
 let browserify = require('browserify');
@@ -88,17 +88,16 @@ gulp.task('js:demos', function () {
     entries: 'src/docs/assets/scripts/demos.js',
     debug: true
   });
-  const version = JSON.parse(fs.readFileSync('package.json')).version;
-  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
   return b.bundle()
-    .pipe(source('demos.min.js'))
-    .pipe(replace(/\/\*\![^\*]+\*\//, banner))
+    .pipe(source('demos.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(terser({
-      output: {
-        comments: /^!/
-      }
+    .pipe(minify({
+      noSource: true,
+      ext: {
+        min: '.min.js'
+      },
+      preserveComments: 'some'
     }))
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/scripts/'));
@@ -113,17 +112,16 @@ gulp.task('js:docs', function () {
     entries: 'src/docs/assets/scripts/theme.js',
     debug: true
   });
-  const version = JSON.parse(fs.readFileSync('package.json')).version;
-  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
   return b.bundle()
-    .pipe(source('theme.min.js'))
-    .pipe(replace(/\/\*\![^\*]+\*\//, banner))
+    .pipe(source('theme.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(terser({
-      output: {
-        comments: /^!/
-      }
+    .pipe(minify({
+      noSource: true,
+      ext: {
+        min: '.min.js'
+      },
+      preserveComments: 'some'
     }))
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/scripts/'));
@@ -139,17 +137,16 @@ gulp.task('js', function () {
     standalone: 'Xt',
     debug: true
   });
-  const version = JSON.parse(fs.readFileSync('package.json')).version;
-  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
   return b.bundle()
     .pipe(source('xtend.js'))
-    .pipe(replace(/\/\*\![^\*]+\*\//, banner))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(terser({
-      output: {
-        comments: /^!/
-      }
+    .pipe(minify({
+      ext: {
+        src: '.js',
+        min: '.min.js'
+      },
+      preserveComments: 'some'
     }))
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('dist/scripts/'));
@@ -194,19 +191,25 @@ gulp.task('site:watch', function (done) {
 
 gulp.task('version', function () {
   const version = JSON.parse(fs.readFileSync('package.json')).version;
+  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
   log('package.json version: ' + version);
+  // replace less
+  gulp.src(['dist/styles/*.less',])
+    .pipe(replace(/\/\*\![^\*]+\*\//, banner))
+    .pipe(gulp.dest('dist/styles/'));
+  // replace js
+  gulp.src(['src/scripts/**/*.js'])
+    .pipe(replace(/\/\*\![^\*]+\*\//, banner))
+    .pipe(gulp.dest('src/scripts/'));
   // replace _config.yml
   return gulp.src('_config.yml', {base: './'})
     .pipe(replace(/version: (.*)/, 'version: ' + version))
     .pipe(gulp.dest('./'));
 });
+
 gulp.task('version:changed',
   gulp.series('version', gulp.parallel('less', 'js'), 'site:build')
 );
-gulp.task('version:watch', function (done) {
-  gulp.watch(['package.json'], gulp.series('version:changed', 'site:build'));
-  done();
-});
 
 // scripts
 
@@ -219,11 +222,11 @@ gulp.task('build:docs',
 );
 
 gulp.task('watch',
-  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('version:watch', 'less:watch', 'js:watch'))
+  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less:watch', 'js:watch'))
 );
 
 gulp.task('watch:docs',
-  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less:docs', 'less:demos', 'js:docs', 'js:demos'), 'site:serve', gulp.parallel('version:watch', 'site:watch', 'less:docs:watch', 'less:demos:watch', 'js:docs:watch', 'js:demos:watch'))
+  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less:docs', 'less:demos', 'js:docs', 'js:demos'), 'site:serve', gulp.parallel('site:watch', 'less:docs:watch', 'less:demos:watch', 'js:docs:watch', 'js:demos:watch'))
 );
 
 gulp.task('default', gulp.series('build'));

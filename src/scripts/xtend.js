@@ -1,5 +1,5 @@
-/*! xtend (https://getxtend.com/)
-@copyright (c) 2017 - 2018 Riccardo Caroli
+/*! xtend v0.7.3 (https://getxtend.com/)
+@copyright (c) 2017 - 2019 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
 import './polyfill';
