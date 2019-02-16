@@ -2,7 +2,6 @@
 // import
 //////////////////////
 
-//import '../../../../dist/scripts/xtend';
 import Xt from '../../../scripts/xtend';
 
 //////////////////////

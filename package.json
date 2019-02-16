@@ -18,6 +18,11 @@
   "main": "dist/scripts/xtend.min.js",
   "umd:main": "dist/scripts/xtend.min.js",
   "umd:name": "xt",
+  "files": [
+    "dist/**/*.*",
+    "src/scripts/**/*.*",
+    "src/styles/**/*.*"
+  ],
   "scripts": {
     "version": "gulp version",
     "build": "gulp build",
@@ -56,11 +61,10 @@
     "gulp-cached": "^1.1.1",
     "gulp-clean-css": "^3.0.3",
     "gulp-less": "^4.0.1",
-    "gulp-minify": "^3.1.0",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^0.6.1",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-terser": "^1.1.5",
+    "gulp-terser": "^1.1.7",
     "gulp-util": "^3.0.8",
     "semantic-release": "^15.13.3",
     "vinyl-buffer": "^1.0.1",

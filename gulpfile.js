@@ -8,7 +8,7 @@ let source = require('vinyl-source-stream');
 let less = require('gulp-less');
 let gutil = require('gulp-util');
 let cache = require('gulp-cached');
-let minify = require('gulp-minify');
+let terser = require('gulp-terser');
 let rename = require('gulp-rename');
 let replace = require('gulp-replace');
 let browserify = require('browserify');
@@ -89,15 +89,13 @@ gulp.task('js:demos', function () {
     debug: true
   });
   return b.bundle()
-    .pipe(source('demos.js'))
+    .pipe(source('demos.min.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(minify({
-      noSource: true,
-      ext: {
-        min: '.min.js'
-      },
-      preserveComments: 'some'
+    .pipe(terser({
+      output: {
+        comments: /^!/
+      }
     }))
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/scripts/'));
@@ -113,15 +111,13 @@ gulp.task('js:docs', function () {
     debug: true
   });
   return b.bundle()
-    .pipe(source('theme.js'))
+    .pipe(source('theme.min.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(minify({
-      noSource: true,
-      ext: {
-        min: '.min.js'
-      },
-      preserveComments: 'some'
+    .pipe(terser({
+      output: {
+        comments: /^!/
+      }
     }))
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/scripts/'));
@@ -141,12 +137,10 @@ gulp.task('js', function () {
     .pipe(source('xtend.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(minify({
-      ext: {
-        src: '.js',
-        min: '.min.js'
-      },
-      preserveComments: 'some'
+    .pipe(terser({
+      output: {
+        comments: /^!/
+      }
     }))
     .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('dist/scripts/'));
@@ -222,7 +216,7 @@ gulp.task('build:docs',
 );
 
 gulp.task('watch:docs',
-  gulp.series(gulp.parallel('build:docs'), 'site:serve', gulp.parallel('site:watch', 'less:docs:watch', 'less:demos:watch', 'js:docs:watch', 'js:demos:watch'))
+  gulp.series(gulp.parallel('build:docs'), gulp.parallel('site:watch', 'less:docs:watch', 'less:demos:watch', 'js:docs:watch', 'js:demos:watch'), 'site:serve')
 );
 
 gulp.task('default', gulp.series('build'));
