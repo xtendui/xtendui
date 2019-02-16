@@ -27,8 +27,7 @@
     "dep": "npm run dep:docs",
     "dep:docs": "gh-pages -d docs",
     "version": "gulp version",
-    "release": "standard-version",
-    "publish": "npm run dep && git push && git push --tags && npm publish"
+    "release": "standard-version"
   },
   "dependencies": {
     "bezier-easing": "^2.1.0"
@@ -64,7 +63,7 @@
       "tag": true
     },
     "scripts": {
-      "postbump": "npm run version && npm run build:docs && git add . && git commit -m 'chore(release): compile'"
+      "postbump": "npm run version && npm run build:docs && git add . && git commit -m 'chore(release): compile' && npm run dep"
     }
   },
   "browserify": {
