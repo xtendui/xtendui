@@ -44,6 +44,7 @@
     "@semantic-release/commit-analyzer": "^6.1.0",
     "@semantic-release/exec": "^3.3.2",
     "@semantic-release/git": "^7.0.8",
+    "@semantic-release/github": "^5.2.10",
     "@semantic-release/release-notes-generator": "^7.1.4",
     "babelify": "^10.0.0",
     "browserify": "^16.2.3",
@@ -90,7 +91,8 @@
           ],
           "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }
-      ]
+      ],
+      "@semantic-release/github"
     ]
   },
   "browserify": {
