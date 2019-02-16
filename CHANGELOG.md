@@ -1,3 +1,11 @@
+## [0.8.2](https://github.com/minimit/xtend-library/compare/v0.8.1...v0.8.2) (2019-02-16)
+
+
+### Bug Fixes
+
+* **build:** sematic-release ([e66f649](https://github.com/minimit/xtend-library/commit/e66f649))
+* **build:** sematic-release ([3744cf6](https://github.com/minimit/xtend-library/commit/3744cf6))
+
 ## [0.8.1](https://github.com/minimit/xtend-library/compare/v0.8.0...v0.8.1) (2019-02-16)
 
 
