@@ -159,13 +159,6 @@ gulp.task('js:watch', function (done) {
   done();
 });
 
-// html
-
-gulp.task('content:watch', function (done) {
-  gulp.watch(['src/docs/**/*.html', 'src/docs/demos/**/*.js'], gulp.series('site:build'));
-  done();
-});
-
 // site
 
 gulp.task('site:build', function (callback) {
@@ -190,6 +183,11 @@ gulp.task('site:serve', function (callback) {
   jekyll.stdout.on('data', jekyllLogger);
   jekyll.stderr.on('data', jekyllLogger);
   callback();
+});
+
+gulp.task('site:watch', function (done) {
+  gulp.watch(['src/docs/**/*.*'], gulp.series('site:build'));
+  done();
 });
 
 // version
@@ -221,11 +219,11 @@ gulp.task('build:docs',
 );
 
 gulp.task('watch',
-  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('version:watch', 'content:watch', 'less:watch', 'js:watch'))
+  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('version:watch', 'less:watch', 'js:watch'))
 );
 
 gulp.task('watch:docs',
-  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less:docs', 'less:demos', 'js:docs', 'js:demos'), 'site:serve', gulp.parallel('version:watch', 'content:watch', 'less:docs:watch', 'less:demos:watch', 'js:docs:watch', 'js:demos:watch'))
+  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less:docs', 'less:demos', 'js:docs', 'js:demos'), 'site:serve', gulp.parallel('version:watch', 'site:watch', 'less:docs:watch', 'less:demos:watch', 'js:docs:watch', 'js:demos:watch'))
 );
 
 gulp.task('default', gulp.series('build'));
