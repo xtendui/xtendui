@@ -70,6 +70,12 @@
       "@semantic-release/release-notes-generator",
       "@semantic-release/changelog",
       [
+        "@semantic-release/exec",
+        {
+          "prepareCmd": "npm run version && npm run build:docs"
+        }
+      ],
+      [
         "@semantic-release/git",
         {
           "assets": [
@@ -79,12 +85,6 @@
             "src/docs/assets/**/*.*"
           ],
           "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-        }
-      ],
-      [
-        "@semantic-release/exec",
-        {
-          "prepareCmd": "npm run version && npm run build:docs"
         }
       ]
     ]
