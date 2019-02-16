@@ -207,26 +207,22 @@ gulp.task('version', function () {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('version:changed',
-  gulp.series('version', gulp.parallel('less', 'js'), 'site:build')
-);
-
 // scripts
 
 gulp.task('build',
-  gulp.series('version', gulp.parallel('less', 'js'))
-);
-
-gulp.task('build:docs',
-  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less:docs', 'less:demos', 'js:docs', 'js:demos'), 'site:build')
+  gulp.series(gulp.parallel('less', 'js'))
 );
 
 gulp.task('watch',
-  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less:watch', 'js:watch'))
+  gulp.series(gulp.parallel('build'), gulp.parallel('less:watch', 'js:watch'))
+);
+
+gulp.task('build:docs',
+  gulp.series(gulp.parallel('build'), gulp.parallel('less:docs', 'less:demos', 'js:docs', 'js:demos'), 'site:build')
 );
 
 gulp.task('watch:docs',
-  gulp.series('version', gulp.parallel('less', 'js'), gulp.parallel('less:docs', 'less:demos', 'js:docs', 'js:demos'), 'site:serve', gulp.parallel('site:watch', 'less:docs:watch', 'less:demos:watch', 'js:docs:watch', 'js:demos:watch'))
+  gulp.series(gulp.parallel('build:docs'), 'site:serve', gulp.parallel('site:watch', 'less:docs:watch', 'less:demos:watch', 'js:docs:watch', 'js:demos:watch'))
 );
 
 gulp.task('default', gulp.series('build'));
