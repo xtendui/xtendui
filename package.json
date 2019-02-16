@@ -81,6 +81,8 @@
         {
           "assets": [
             "package.json",
+            "package-lock.json",
+            "_config.yml",
             "CHANGELOG.md",
             "dist/**/*.*",
             "src/**/*.*",
