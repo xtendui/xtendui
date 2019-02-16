@@ -27,7 +27,7 @@
     "serve:docs": "bundle exec jekyll serve",
     "dep": "npm run dep:docs",
     "dep:docs": "gh-pages -d docs",
-    "release": "release-it",
+    "release": "standard-version",
     "publish": "npm run dep && git push && git push --tags && npm publish"
   },
   "dependencies": {
@@ -54,7 +54,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-terser": "^1.1.5",
     "gulp-util": "^3.0.8",
-    "release-it": "^10.1.0",
+    "standard-version": "^5.0.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   },
