@@ -17,18 +17,19 @@
   ],
   "main": "dist/scripts/xtend.min.js",
   "umd:main": "dist/scripts/xtend.min.js",
-  "umd:name": "xtend",
+  "umd:name": "xt",
   "scripts": {
+    "version": "gulp version",
     "build": "gulp build",
-    "dev": "gulp watch",
     "build:docs": "gulp build:docs",
+    "dev": "gulp watch",
     "dev:docs": "gulp watch:docs",
+    "serve": "npm run serve:docs",
     "serve:docs": "bundle exec jekyll serve",
     "dep": "npm run dep:docs",
     "dep:docs": "gh-pages -d docs",
-    "version": "gulp version",
     "release": "npx semantic-release --no-ci",
-    "release:test": "npx semantic-release --dry-run"
+    "release:dry": "npx semantic-release --dry-run"
   },
   "dependencies": {
     "bezier-easing": "^2.1.0"
@@ -74,7 +75,8 @@
       [
         "@semantic-release/exec",
         {
-          "prepareCmd": "npm run version && npm run build:docs"
+          "prepareCmd": "npm run version && npm run build:docs",
+          "successCmd": "git pull"
         }
       ],
       [
