@@ -15,13 +15,13 @@
   <meta name="description" content="List is used to space it's childrens in a column/row layout. Can also be used to automatically style lists of buttons."/>
 
   <!-- icons -->
-  <link rel="icon" href="/assets/images/favicon.png?v=0.6.4"/>
+  <link rel="icon" href="/assets/images/favicon.png?v=0.7.0"/>
   <link rel="apple-touch-icon" sizes="152x152"
-        href="/assets/images/favicon-152x152.png?v=0.6.4"/>
+        href="/assets/images/favicon-152x152.png?v=0.7.0"/>
 
   <!-- styles -->
-  <link rel="stylesheet" href="/assets/icons-theme/style.css?v=0.6.4"/>
-  <link rel="stylesheet" href="/assets/styles/theme.css?v=0.6.4"/>
+  <link rel="stylesheet" href="/assets/icons-theme/style.css?v=0.7.0"/>
+  <link rel="stylesheet" href="/assets/styles/theme.min.css?v=0.7.0"/>
 
 </head>
 <body>
@@ -35,7 +35,7 @@
       <div class="site-header-top">
         <div class="container">
 
-          <div class="flex flex--auto justify-content--between align-items--center">
+          <div class="flex flex--auto justify-content--space-between align-items--center">
             <div>
               <a href="/" class="logo" aria-label="Home">
                 <img src="/assets/images/logo.svg" alt="Xtend"/>
@@ -62,7 +62,7 @@
       </div>
     </div>
 
-    <nav class="site-menu overlay_outer overlay--primary overlay--screen overlay--size-medium collapse--height"
+    <nav class="site-menu overlay_outer overlay--primary overlay--screen overlay--medium"
          id="site-menu">
       <div class="overlay">
         <div class="overlay_inner">
@@ -71,7 +71,7 @@
           <div class="site-header-top">
             <div class="container">
 
-              <div class="flex flex--auto justify-content--between align-items--center">
+              <div class="flex flex--auto justify-content--space-between align-items--center">
                 <div>
                   <a href="/" class="logo" aria-label="Home">
                     <img src="/assets/images/logo.svg" alt="Xtend"/>
@@ -130,14 +130,14 @@
     <div class="site-hero">
 
       <div class="container">
-        <div class="flex flex--auto align-items--center align-content--center justify-content--between">
+        <div class="flex flex--auto align-items--center align-content--center justify-content--space-between">
           <div class="site-hero-text">
             <h1>List</h1>
-            <p class="font--giant">List is used to space it's childrens in a column/row layout. Can also be used to automatically style lists of buttons.</p>
+            <p>List is used to space it's childrens in a column/row layout. Can also be used to automatically style lists of buttons.</p>
           </div>
           <!--
           <div class="site-hero-img">
-            <img class="responsive" src="https://placehold.it/330x132/ffffff/00B0FF/?text=ads" />
+            <img class="responsive-x" src="https://placehold.it/330x132/ffffff/00B0FF/?text=ads" />
           </div>
           -->
         </div>
@@ -149,7 +149,7 @@
       <div class="site-breadcrumbs">
         <div class="site-breadcrumbs-inner">
           <div class="container">
-            <div class="flex flex--auto justify-content--between align-items--start">
+            <div class="flex flex--auto justify-content--space-between align-items--flex-start">
 
               <div class="site-breadcrumbs-body flex flex-space--none display--none display--flex-sm"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
@@ -169,12 +169,8 @@
                           <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
                             <div class="site-breadcrumbs-body-sub-inner">
                               
-                              <a href="/docs/introduction/installation/" class="btn btn--primary btn--nodesign">
-                                <span>Installation</span>
-                              </a>
-                              
-                              <a href="/docs/introduction/javascript/" class="btn btn--primary btn--nodesign">
-                                <span>Javascript</span>
+                              <a href="/docs/introduction/setup/" class="btn btn--primary btn--nodesign">
+                                <span>Setup</span>
                               </a>
                               
                               <a href="/docs/introduction/theming/" class="btn btn--primary btn--nodesign">
@@ -193,10 +189,6 @@
                           </div>
                         </div>
                       
-                    
-                  
-                    
-                  
                     
                   
                     
@@ -245,16 +237,6 @@
                           </div>
                         </div>
                       
-                    
-                  
-                    
-                  
-                    
-                  
-                    
-                  
-                    
-                  
                     
                   
                     
@@ -352,6 +334,14 @@
                     
                   
                     
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
                       
                       
                         <div class="site-breadcrumbs-body-main">
@@ -369,39 +359,15 @@
                                 <span>Smooth</span>
                               </a>
                               
-                              <a href="/docs/presentation/sticky/" class="btn btn--primary btn--nodesign">
-                                <span>Sticky</span>
-                              </a>
-                              
                               <a href="/docs/presentation/fade/" class="btn btn--primary btn--nodesign">
                                 <span>Fade</span>
                               </a>
                               
-                              <a href="/docs/presentation/parallax/" class="btn btn--primary btn--nodesign">
-                                <span>Parallax</span>
+                              <a href="/docs/presentation/sticky/" class="btn btn--primary btn--nodesign">
+                                <span>Sticky</span>
                               </a>
                               
-                            </div>
-                          </div>
-                        </div>
-                      
-                    
-                  
-                    
-                      
-                      
-                        <div class="site-breadcrumbs-body-main">
-                          <a href="/docs/other/" class="btn btn--primary btn--nodesign">
-                            <span>Other</span>
-                          </a>
-                          <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
-                            <div class="site-breadcrumbs-body-sub-inner">
-                              
-                              <a href="/docs/other/alert/" class="btn btn--primary btn--nodesign">
-                                <span>Alert</span>
-                              </a>
-                              
-                              <a href="/docs/other/loader/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/presentation/loader/" class="btn btn--primary btn--nodesign">
                                 <span>Loader</span>
                               </a>
                               
@@ -453,23 +419,9 @@
                               
                           
                               
-                          
-                              
-                          
-                              
                               <a href="/docs/content/" class="btn btn--primary btn--nodesign">
                                 <span>Content</span>
                               </a>
-                              
-                          
-                              
-                          
-                              
-                          
-                              
-                          
-                              
-                          
                               
                           
                               
@@ -511,14 +463,16 @@
                               
                           
                               
-                              <a href="/docs/presentation/" class="btn btn--primary btn--nodesign">
-                                <span>Presentation</span>
-                              </a>
+                          
                               
                           
                               
-                              <a href="/docs/other/" class="btn btn--primary btn--nodesign">
-                                <span>Other</span>
+                          
+                              
+                          
+                              
+                              <a href="/docs/presentation/" class="btn btn--primary btn--nodesign">
+                                <span>Presentation</span>
                               </a>
                               
                           
@@ -578,16 +532,14 @@
   <div class="site-main-inner">
     <div class="container">
       <div class="flex">
-        <div class="col col--12 col--9-md">
+        <div class="col--12 col--9-md">
 
           <article class="site-article list-default">
             <h2>Usage</h2>
 
 <p>Use <code>.list</code> to create a <strong>row list</strong> or <code>.list.list--block</code> to create a <strong>column
-  list</strong> with flexbox.
+  list</strong>.
 </p>
-
-<p>Every list should have the <code>ul</code> tags, with <code>li</code> childrens.</p>
 
 <pre>
   <code class="html">
@@ -603,16 +555,6 @@
     </ul>
   </code>
 </pre>
-
-<h2>Variables</h2>
-
-<div class="alert">
-  <div class="alert_content">
-    Read the documentation of <a href="/docs/introduction/theming/#layout">layout's variables</a>.
-  </div>
-</div>
-
-<h2>Mode</h2>
 
 <h3>List of anything</h3>
 
@@ -635,7 +577,7 @@
       </ul>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="list--block">
+  <div class="demo-item demo-preview" data-name="block">
     <div class="demo-source" data-lang="html">
       <ul class="list list--block">
         <li>
@@ -696,23 +638,51 @@
 
 <h3>List of buttons</h3>
 
-<p>The natural way to use lists is to use them <strong>to space buttons</strong>.</p>
+<p>List's buttons are styled automatically, but if you want to customize the buttons use the class
+  <code>li.custom</code>.</p>
 
 <div class="demo">
-  <div class="demo-item demo-preview" data-name="list">
+  <div class="demo-item demo-preview" data-name="custom">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>li.custom</code>
+      </div>
+    </div>
     <div class="demo-source" data-lang="html">
       <ul class="list">
         <li>
+          <a href="#" class="btn">
+            <span>Lorem Ipsum</span>
+          </a>
+        </li>
+        <li>
+          <!-- this options don't works you need to use li.custom -->
+          <button type="button" class="btn btn--primary btn--tiny">
+            <span>Dolor sit</span>
+          </button>
+        </li>
+        <li class="custom">
+          <button type="button" class="btn btn--primary btn--tiny">
+            <span>Amet</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="list">
+    <div class="demo-source" data-lang="html">
+      <ul class="list">
+        <li class="custom">
           <button type="button" class="btn btn--primary">
             <span>Lorem Ipsum</span>
           </button>
         </li>
-        <li>
+        <li class="custom">
           <button type="button" class="btn btn--secondary">
             <span>Dolor sit</span>
           </button>
         </li>
-        <li>
+        <li class="custom">
           <button type="button" class="btn btn--secondary-empty btn--tiny">
             <span>Amet</span>
           </button>
@@ -720,20 +690,20 @@
       </ul>
     </div>
   </div>
-  <div class="demo-item demo-preview" data-name="list--block">
+  <div class="demo-item demo-preview" data-name="block">
     <div class="demo-source" data-lang="html">
       <ul class="list list--block">
-        <li>
+        <li class="custom">
           <button type="button" class="btn btn--primary">
             <span>Lorem Ipsum</span>
           </button>
         </li>
-        <li>
+        <li class="custom">
           <button type="button" class="btn btn--secondary">
             <span>Dolor sit</span>
           </button>
         </li>
-        <li>
+        <li class="custom">
           <button type="button" class="btn btn--secondary-empty btn--tiny">
             <span>Amet</span>
           </button>
@@ -748,29 +718,29 @@
           <ul class="list">
             <li>
               <ul class="list list--block">
-                <li>
+                <li class="custom">
                   <button type="button" class="btn btn--primary">
                     <span>Lorem Ipsum</span>
                   </button>
                 </li>
-                <li>
+                <li class="custom">
                   <button type="button" class="btn btn--secondary">
                     <span>Dolor sit</span>
                   </button>
                 </li>
-                <li>
+                <li class="custom">
                   <button type="button" class="btn btn--secondary-empty btn--tiny">
                     <span>Amet</span>
                   </button>
                 </li>
               </ul>
             </li>
-            <li>
+            <li class="custom">
               <button type="button" class="btn btn--secondary">
                 <span>Dolor sit</span>
               </button>
             </li>
-            <li>
+            <li class="custom">
               <button type="button" class="btn btn--secondary-empty btn--tiny">
                 <span>Amet</span>
               </button>
@@ -779,17 +749,17 @@
         </li>
         <li>
           <ul class="list">
-            <li>
+            <li class="custom">
               <button type="button" class="btn btn--primary">
                 <span>Lorem Ipsum</span>
               </button>
             </li>
-            <li>
+            <li class="custom">
               <button type="button" class="btn btn--secondary">
                 <span>Dolor sit</span>
               </button>
             </li>
-            <li>
+            <li class="custom">
               <button type="button" class="btn btn--secondary-empty btn--tiny">
                 <span>Amet</span>
               </button>
@@ -807,7 +777,7 @@
     </div>
     <div class="demo-source" data-lang="html">
       <ul class="list">
-        <li>
+        <li class="custom">
           <button type="button" class="btn btn--primary">
             <span>Lorem Ipsum</span>
           </button>
@@ -821,18 +791,18 @@
               <div class="drop_design"></div>
               <div class="drop_content">
                 <ul class="list list--drop">
-                  <li>
-                    <a href="#">
+                  <li class="custom">
+                    <button type="button" class="btn btn--primary">
                       <span>Lorem Ipsum</span>
-                    </a>
+                    </button>
                   </li>
-                  <li>
-                    <button type="button">
+                  <li class="custom">
+                    <button type="button" class="btn btn--secondary">
                       <span>Dolor sit</span>
                     </button>
                   </li>
-                  <li>
-                    <button type="button">
+                  <li class="custom">
+                    <button type="button" class="btn btn--secondary-empty btn--tiny">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -846,211 +816,20 @@
   </div>
 </div>
 
-<h3>Buttons styles</h3>
-
-<p><code>.list > li > a</code> and <code>.list > li > button</code> are styled automatically, If you
-  want to customize the buttons use the <code>.btn</code> class instead.</p>
-
-<div class="alert">
-  <div class="alert_content">
-    In theming code use <code>.list_btn--default({});</code> to style <code>a</code> and <code>button</code>. To style also
-    if they have the <code>.btn</code> class use <code>.list_btn--all({});</code>.
-  </div>
-</div>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="default">
-    <div class="demo-text">
-      <div class="alert_content">
-        You can <strong>override</strong> each buttons by using the <code>.btn</code> class
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list">
-        <li>
-          <a href="#">
-            <span>Lorem Ipsum</span>
-          </a>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <!-- this options don't works you need to use .btn -->
-          <button type="button" class="btn--primary btn--tiny">
-            <span>Amet</span>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="btn btn--primary btn--tiny">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-
 <h2>Options</h2>
 
-<h3>Variants</h3>
+<h3>Custom</h3>
 
-<p>Optional classes for assigning variant.</p>
-
-<p>You can change the default <strong>variant</strong> inside the <code>.list</code> and <code>.list--block</code> selectors in <code>/theme/_layout.less</code>.</p>
+<p>In theming code use <code>.list_btn--all({});</code> to style all <code>.list > li > .btn</code> or <code>.list_btn({});</code>
+  to style all <code>.list:not(.custom) > li > .btn</code>.</p>
 
 <div class="demo">
-  <div class="demo-item demo-preview" data-name="default">
-    <div class="demo-source" data-lang="html">
-      <ul class="list">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="primary">
+  <div class="demo-item" data-iframe="/demos/layout/list/custom.html"
+       data-name="custom">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.list--primary</code>
+        <code>.list_btn({});</code> <code>.list_btn--all({});</code>
       </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--primary">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="primary-empty">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--primary-empty</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--primary-empty">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="secondary">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--secondary</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--secondary">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="secondary-empty">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--secondary-empty</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--secondary-empty">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="link">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--link</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--link">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
     </div>
   </div>
 </div>
@@ -1111,17 +890,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list list-space--none">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1137,17 +916,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list list-space--tiny">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1163,17 +942,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list list-space--small">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1189,17 +968,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list list-space--medium">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1215,17 +994,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list list-space--big">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1241,17 +1020,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list list-space--giant">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1262,8 +1041,11 @@
 
 <h3>Alignment</h3>
 
-<p>Lists <strong>automatically</strong> add left aligment. You can <strong>specify a different one</strong> with this
+<p>Lists <strong>automatically</strong> has left aligment. You can <strong>specify a different one</strong> with this
   classes/mixins.</p>
+
+<p>You can also set others flex alignments like <code>.list_btn({ > span { justify-content: space-between; } });</code>.
+</p>
 
 <div class="table--scroll">
   <table class="table table-small">
@@ -1309,17 +1091,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list list--block list--left">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1335,17 +1117,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list list--block list--center">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1361,392 +1143,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list list--block list--right">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<h3>Sizes</h3>
-
-<p>Optional classes for assigning size.</p>
-
-<p>You can change the default <strong>size</strong> inside the <code>.list</code> and <code>.list--block</code> selectors in <code>/theme/_layout.less</code>.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="default">
-    <div class="demo-source" data-lang="html">
-      <ul class="list">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="tiny">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--tiny</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--tiny">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="small">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--small</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--small">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="medium">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--medium</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--medium">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="big">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--big</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--big">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="giant">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--giant</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--giant">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<h3>Special</h3>
-
-<p>Special optional modifiers classes.</p>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="nodesign">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--nodesign</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--nodesign">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="squared">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--squared</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--squared">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="tall">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--tall</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--tall">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="short">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--short</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--short">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="wide">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--wide</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--wide">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="narrow">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--narrow</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--narrow">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="icon">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--icon</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--icon">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Amet</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="none">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.list--none</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <ul class="list list--none">
-        <li>
-          <button type="button">
-            <span>Lorem Ipsum</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <span>Dolor sit</span>
-          </button>
-        </li>
-        <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1761,7 +1168,7 @@
 
 <h3>Direction</h3>
 
-<p>Set children's wrapping inside the flexbox.</p>
+<p>Set children's direction inside the flexbox.</p>
 
 <div class="table--scroll">
   <table class="table table-small">
@@ -1775,23 +1182,23 @@
     <tbody>
     <tr>
       <th scope="row">Class</th>
-      <td><code>.flex-{type}</code></td>
+      <td><code>.flex-direction--{type}</code></td>
       <td><code>.flex-direction--row</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
-      <td><code>.flex-{type}-{breakpoint}</code></td>
+      <td><code>.flex-direction--{type}-{breakpoint}</code></td>
       <td><code>.flex-direction--row-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.flex-{type}()</code></td>
-      <td><code>.flex-direction--row()</code></td>
+      <td><code>.flex-direction({type})</code></td>
+      <td><code>.flex-direction(row)</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.flex-{type}({breakpoint})</code></td>
-      <td><code>.flex-direction--row(sm)</code></td>
+      <td><code>.flex-direction({type}, {breakpoint})</code></td>
+      <td><code>.flex-direction(row, sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -1807,17 +1214,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list flex-direction--row">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1833,17 +1240,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list flex-direction--row-reverse">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1859,17 +1266,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list flex-direction--column">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1885,17 +1292,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list flex-direction--column-reverse">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -1920,23 +1327,23 @@
     <tbody>
     <tr>
       <th scope="row">Class</th>
-      <td><code>.flex--wrap</code></td>
-      <td><code>.flex--wrap</code></td>
+      <td><code>.flex-wrap--{val}</code></td>
+      <td><code>.flex-wrap--wrap</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
-      <td><code>.flex--wrap-{breakpoint}</code></td>
-      <td><code>.flex--wrap-sm</code></td>
+      <td><code>.flex-wrap--{val}-{breakpoint}</code></td>
+      <td><code>.flex-wrap--wrap-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.flex--wrap()</code></td>
-      <td><code>.flex--wrap()</code></td>
+      <td><code>.flex-wrap({val})</code></td>
+      <td><code>.flex-wrap(wrap)</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.flex--wrap({breakpoint})</code></td>
-      <td><code>.flex--wrap(sm)</code></td>
+      <td><code>.flex-wrap({val}, {breakpoint})</code></td>
+      <td><code>.flex-wrap(wrap, sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -1946,53 +1353,53 @@
   <div class="demo-item demo-preview" data-name="reverse">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex--wrap</code>
+        <code>.flex-wrap--wrap</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list flex--wrap">
+      <ul class="list flex-wrap--wrap">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2002,53 +1409,53 @@
   <div class="demo-item demo-preview" data-name="reverse">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex--wrap-reverse</code>
+        <code>.flex-wrap--wrap-reverse</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list flex--wrap-reverse">
+      <ul class="list flex-wrap--wrap-reverse">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2058,53 +1465,53 @@
   <div class="demo-item demo-preview" data-name="nowrap">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.flex--nowrap</code>
+        <code>.flex-wrap--nowrap</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list flex--nowrap">
+      <ul class="list flex-wrap--nowrap">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2130,22 +1537,22 @@
     <tr>
       <th scope="row">Class</th>
       <td><code>.justify-content--{type}</code></td>
-      <td><code>.justify-content--start</code></td>
+      <td><code>.justify-content--flex-start</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
       <td><code>.justify-content--{type}-{breakpoint}</code></td>
-      <td><code>.justify-content--start-sm</code></td>
+      <td><code>.justify-content--flex-start-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.justify-content--{type}()</code></td>
-      <td><code>.justify-content--start()</code></td>
+      <td><code>.justify-content({type})</code></td>
+      <td><code>.justify-content(start)</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.justify-content--{type}({breakpoint})</code></td>
-      <td><code>.justify-content--start(sm)</code></td>
+      <td><code>.justify-content({type}, {breakpoint})</code></td>
+      <td><code>.justify-content(start, sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -2155,23 +1562,23 @@
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.justify-content--start</code>
+        <code>.justify-content--flex-start</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list justify-content--start">
+      <ul class="list justify-content--flex-start">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2181,23 +1588,23 @@
   <div class="demo-item demo-preview" data-name="end">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.justify-content--end</code>
+        <code>.justify-content--flex-end</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list justify-content--end">
+      <ul class="list justify-content--flex-end">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2213,17 +1620,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list justify-content--center">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2233,23 +1640,23 @@
   <div class="demo-item demo-preview" data-name="between">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.justify-content--between</code>
+        <code>.justify-content--space-between</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list justify-content--between">
+      <ul class="list justify-content--space-between">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2259,23 +1666,23 @@
   <div class="demo-item demo-preview" data-name="around">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.justify-content--around</code>
+        <code>.justify-content--space-around</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list justify-content--around">
+      <ul class="list justify-content--space-around">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2301,22 +1708,22 @@
     <tr>
       <th scope="row">Class</th>
       <td><code>.align-items--{type}</code></td>
-      <td><code>.align-items--start</code></td>
+      <td><code>.align-items--flex-start</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
       <td><code>.align-items--{type}-{breakpoint}</code></td>
-      <td><code>.align-items--start-sm</code></td>
+      <td><code>.align-items--flex-start-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.align-items--{type}()</code></td>
-      <td><code>.align-items--start()</code></td>
+      <td><code>.align-items({type})</code></td>
+      <td><code>.align-items(start)</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.align-items--{type}({breakpoint})</code></td>
-      <td><code>.align-items--start(sm)</code></td>
+      <td><code>.align-items({type}, {breakpoint})</code></td>
+      <td><code>.align-items(start, sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -2326,53 +1733,53 @@
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-items--start</code>
+        <code>.align-items--flex-start</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list align-items--start" style="height: 125px;">
+      <ul class="list align-items--flex-start" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2382,53 +1789,53 @@
   <div class="demo-item demo-preview" data-name="end">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-items--end</code>
+        <code>.align-items--flex-end</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list align-items--end" style="height: 125px;">
+      <ul class="list align-items--flex-end" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2444,47 +1851,47 @@
     <div class="demo-source" data-lang="html">
       <ul class="list align-items--center" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2500,47 +1907,47 @@
     <div class="demo-source" data-lang="html">
       <ul class="list align-items--baseline" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2550,53 +1957,53 @@
   <div class="demo-item demo-preview" data-name="stretch">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-items--stretch</code>
+        <code>.align-items--stretch</code> <code>.align-self--stretch</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
       <ul class="list align-items--stretch" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Amet</span>
           </button>
         </li>
@@ -2622,22 +2029,22 @@
     <tr>
       <th scope="row">Class</th>
       <td><code>.align-content--{type}</code></td>
-      <td><code>.align-content--start</code></td>
+      <td><code>.align-content--flex-start</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
       <td><code>.align-content--{type}-{breakpoint}</code></td>
-      <td><code>.align-content--start-sm</code></td>
+      <td><code>.align-content--flex-start-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.align-content--{type}()</code></td>
-      <td><code>.align-content--start()</code></td>
+      <td><code>.align-content({type})</code></td>
+      <td><code>.align-content(start)</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.align-content--{type}({breakpoint})</code></td>
-      <td><code>.align-content--start(sm)</code></td>
+      <td><code>.align-content({type}, {breakpoint})</code></td>
+      <td><code>.align-content(start, sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -2647,53 +2054,53 @@
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-content--start</code>
+        <code>.align-content--flex-start</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list align-content--start" style="height: 125px;">
+      <ul class="list align-content--flex-start" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2703,53 +2110,53 @@
   <div class="demo-item demo-preview" data-name="end">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-content--end</code>
+        <code>.align-content--flex-end</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list align-content--end" style="height: 125px;">
+      <ul class="list align-content--flex-end" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2765,47 +2172,47 @@
     <div class="demo-source" data-lang="html">
       <ul class="list align-content--center" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2815,53 +2222,53 @@
   <div class="demo-item demo-preview" data-name="between">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-content--between</code>
+        <code>.align-content--space-between</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list align-content--between" style="height: 125px;">
+      <ul class="list align-content--space-between" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2871,53 +2278,53 @@
   <div class="demo-item demo-preview" data-name="around">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-content--around</code>
+        <code>.align-content--space-around</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <ul class="list align-content--around" style="height: 125px;">
+      <ul class="list align-content--space-around" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -2927,53 +2334,53 @@
   <div class="demo-item demo-preview" data-name="stretch">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-content--stretch</code>
+        <code>.align-content--stretch</code> <code>.align-self--stretch</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
       <ul class="list align-content--stretch" style="height: 125px;">
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Amet</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button">
+          <button type="button" class="btn align-self--stretch">
             <span>Amet</span>
           </button>
         </li>
@@ -3000,22 +2407,22 @@
     <tr>
       <th scope="row">Class</th>
       <td><code>.align-self--{type}</code></td>
-      <td><code>.align-self--start</code></td>
+      <td><code>.align-self--flex-start</code></td>
     </tr>
     <tr>
       <th scope="row">Class responsive</th>
       <td><code>.align-self--{type}-{breakpoint}</code></td>
-      <td><code>.align-self--start-sm</code></td>
+      <td><code>.align-self--flex-start-sm</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin</th>
-      <td><code>.align-self--{type}()</code></td>
-      <td><code>.align-self--start()</code></td>
+      <td><code>.align-self({type})</code></td>
+      <td><code>.align-self(start)</code></td>
     </tr>
     <tr>
       <th scope="row">Mixin responsive</th>
-      <td><code>.align-self--{type}({breakpoint})</code></td>
-      <td><code>.align-self--start(sm)</code></td>
+      <td><code>.align-self({type}, {breakpoint})</code></td>
+      <td><code>.align-self(start, sm)</code></td>
     </tr>
     </tbody>
   </table>
@@ -3025,23 +2432,23 @@
   <div class="demo-item demo-preview" data-name="start">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-self--start</code>
+        <code>.align-self--flex-start</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
       <ul class="list">
         <li>
-          <button type="button" style="height: 60px;">
+          <button type="button" class="btn" style="height: 60px;">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--start">
+          <button type="button" class="btn align-self--flex-start">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--start">
+          <button type="button" class="btn align-self--flex-start">
             <span>Amet</span>
           </button>
         </li>
@@ -3051,23 +2458,23 @@
   <div class="demo-item demo-preview" data-name="end">
     <div class="demo-text">
       <div class="alert_content">
-        <code>.align-self--end</code>
+        <code>.align-self--flex-end</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
       <ul class="list">
         <li>
-          <button type="button" style="height: 60px;">
+          <button type="button" class="btn" style="height: 60px;">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--end">
+          <button type="button" class="btn align-self--flex-end">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--end">
+          <button type="button" class="btn align-self--flex-end">
             <span>Amet</span>
           </button>
         </li>
@@ -3083,17 +2490,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list">
         <li>
-          <button type="button" style="height: 60px;">
+          <button type="button" class="btn" style="height: 60px;">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--center">
+          <button type="button" class="btn align-self--center">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--center">
+          <button type="button" class="btn align-self--center">
             <span>Amet</span>
           </button>
         </li>
@@ -3109,17 +2516,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list">
         <li>
-          <button type="button" style="height: 60px;">
+          <button type="button" class="btn" style="height: 60px;">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--baseline">
+          <button type="button" class="btn align-self--baseline">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--baseline">
+          <button type="button" class="btn align-self--baseline">
             <span>Amet</span>
           </button>
         </li>
@@ -3135,17 +2542,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list">
         <li>
-          <button type="button" style="height: 60px;">
+          <button type="button" class="btn" style="height: 60px;">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--stretch">
+          <button type="button" class="btn align-self--stretch">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--stretch">
+          <button type="button" class="btn align-self--stretch">
             <span>Amet</span>
           </button>
         </li>
@@ -3161,17 +2568,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list">
         <li>
-          <button type="button" style="height: 60px;">
+          <button type="button" class="btn" style="height: 60px;">
             <span>Lorem Ipsum</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--auto">
+          <button type="button" class="btn align-self--auto">
             <span>Dolor sit</span>
           </button>
         </li>
         <li>
-          <button type="button" class="align-self--auto">
+          <button type="button" class="btn align-self--auto">
             <span>Amet</span>
           </button>
         </li>
@@ -3230,17 +2637,17 @@
     <div class="demo-source" data-lang="html">
       <ul class="list">
         <li class="order--2">
-          <button type="button">
+          <button type="button" class="btn">
             <span>Lorem Ipsum</span>
           </button>
         </li>
-        <li class="order--1-lg">
-          <button type="button">
+        <li class="order--1">
+          <button type="button" class="btn">
             <span>Dolor sit</span>
           </button>
         </li>
-        <li class="order--0-lg">
-          <button type="button">
+        <li class="order--0 order--3-sm">
+          <button type="button" class="btn">
             <span>Amet</span>
           </button>
         </li>
@@ -3252,7 +2659,7 @@
           </article>
 
         </div>
-        <div class="col col--12 col--3-md hide show-md">
+        <div class="col--12 col--3-md hide show-md">
 
           <aside class="site-aside"
                  data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
@@ -3280,7 +2687,7 @@
             <div class="container">
 
               <nav class="site-footer-top display--none display--block-sm" role="navigation">
-                <div class="flex flex--auto justify-content--between">
+                <div class="flex flex--auto justify-content--space-between">
 
                   <div class="site-footer-top-links list-space--none">
                     <a href="/" class="btn btn--primary btn--nodesign">
@@ -3315,9 +2722,9 @@
               </nav>
 
               <div class="site-footer-bottom">
-                <div class="flex flex--auto flex-space--tiny justify-content--between">
+                <div class="flex flex--auto flex-space--tiny justify-content--space-between">
                   <div class="site-footer-bottom-license">
-                    Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator--dash"></span> Xtend v0.6.4 licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a>
+                    Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator--dash"></span> Xtend v0.7.0 licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a>
                   </div>
                   <div class="site-footer-bottom-copy">
                     © 2017 – 2019 <span>Riccardo Caroli</span>
@@ -3333,14 +2740,15 @@
     </div>
 
     <!-- scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js" defer></script>
-    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.6.4" defer></script>
-    <script src="/assets/scripts/polyfill.min.js?v=0.6.4" defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js" defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js" defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js" defer></script>
 
     <!-- theme scripts -->
-    <script src="/assets/scripts/clipboard.min.js?v=0.6.4" defer></script>
-    <script src="/assets/scripts/highlight.pack.js?v=0.6.4" defer></script>
-    <script src="/assets/scripts/theme.min.js?v=0.6.4" defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js" defer></script>
+    <script src="/assets/scripts/clipboard.min.js?v=0.7.0" defer></script>
+    <script src="/assets/scripts/theme.min.js?v=0.7.0" defer></script>
 
   </body>
 </html>

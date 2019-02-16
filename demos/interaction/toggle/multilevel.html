@@ -19,10 +19,10 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
 
     <!-- styles -->
-    <link rel="stylesheet" href="/assets/styles/demos.css?v=0.6.4" />
+    <link rel="stylesheet" href="/assets/styles/demos.min.css?v=0.7.0" />
 
     <!-- demos styles -->
-    <link rel="stylesheet" href="multilevel.css?v=0.6.4" />
+    <link rel="stylesheet" href="multilevel.css?v=0.7.0" />
 
   </head>
   <body class="full">
@@ -43,24 +43,24 @@
       </button>
     </div>
 
-    <ul class="list list--block list--secondary-empty list-space--none list--tall list--none-x multilevel-list">
+    <ul class="list list--block list-space--none multilevel-list">
       <li>
-        <button type="button" data-xt-group="cat-0">
+        <button type="button" class="btn" data-xt-group="cat-0">
           <span>Category 0</span>
         </button>
       </li>
       <li>
-        <button type="button" data-xt-group="cat-1">
+        <button type="button" class="btn" data-xt-group="cat-1">
           <span>Category 1</span>
         </button>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="btn">
           <span>Link 0</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="btn">
           <span>Link 1</span>
         </a>
       </li>
@@ -71,14 +71,14 @@
         <span>About</span>
       </div>
     </div>
-    <ul class="list list--block list--secondary-empty list-space--none list--tall list--none-x multilevel-list">
+    <ul class="list list--block list-space--none multilevel-list">
       <li>
-        <a href="#">
+        <a href="#" class="btn">
           <span>Link 0</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="btn">
           <span>Link 1</span>
         </a>
       </li>
@@ -97,24 +97,24 @@
       </button>
     </div>
 
-    <ul class="list list--block list--secondary-empty list-space--none list--tall list--none-x multilevel-list">
+    <ul class="list list--block list-space--none multilevel-list">
       <li>
-        <button type="button" data-xt-group="cat-0a">
+        <button type="button" class="btn" data-xt-group="cat-0a">
           <span>Category 0a</span>
         </button>
       </li>
       <li>
-        <button type="button" data-xt-group="cat-0b">
+        <button type="button" class="btn" data-xt-group="cat-0b">
           <span>Category 0b</span>
         </button>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="btn">
           <span>Link 0</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="btn">
           <span>Link 1</span>
         </a>
       </li>
@@ -133,14 +133,14 @@
       </button>
     </div>
 
-    <ul class="list list--block list--secondary-empty list-space--none list--tall list--none-x multilevel-list">
+    <ul class="list list--block list-space--none multilevel-list">
       <li>
-        <a href="#">
+        <a href="#" class="btn">
           <span>Link 0</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="btn">
           <span>Link 1</span>
         </a>
       </li>
@@ -159,14 +159,14 @@
       </button>
     </div>
 
-    <ul class="list list--block list--secondary-empty list-space--none list--tall list--none-x multilevel-list">
+    <ul class="list list--block list-space--none multilevel-list">
       <li>
-        <a href="#">
+        <a href="#" class="btn">
           <span>Link 0</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="btn">
           <span>Link 1</span>
         </a>
       </li>
@@ -185,14 +185,14 @@
       </button>
     </div>
 
-    <ul class="list list--block list--secondary-empty list-space--none list--tall list--none-x multilevel-list">
+    <ul class="list list--block list-space--none multilevel-list">
       <li>
-        <a href="#">
+        <a href="#" class="btn">
           <span>Link 0</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="btn">
           <span>Link 1</span>
         </a>
       </li>
@@ -222,9 +222,9 @@
   .margin(top, medium);
   .margin(bottom, tiny);
   position: relative;
-  .display(flex);
-  .align-items--center();
-  .justify-content--between();
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .multilevel-title {
@@ -236,17 +236,25 @@
 }
 
 .multilevel-list {
+  // btn
+  .list_btn({
+    .btn--secondary-empty();
+    .btn--tall();
+    .btn--none-x();
+    margin-bottom: -1px !important;
+    &@{btn--design} {
+      border-top-color: @gray--300 !important;
+      border-bottom-color: @gray--300 !important;
+    }
+    > span {
+      justify-content: space-between;
+    }
+  });
+  // caret
   > li {
     > button {
       .caret();
       .caret.caret--horizontal();
-    }
-    > a, > button {
-      margin-bottom: -1px !important;
-      &@{btn--design} {
-        border-top-color: @gray--300 !important;
-        border-bottom-color: @gray--300 !important;
-      }
     }
   }
 }
@@ -259,7 +267,7 @@
   // animation
   .anim-x();
   animation-duration: @time--small;
-  &.xt-inverse {
+  &.inverse {
     .anim-x-inverse();
     animation-duration: @time--small;
   }
@@ -271,12 +279,11 @@
   // animation
   .anim-x();
   animation-duration: @time--small;
-  &.xt-inverse {
+  &.inverse {
     .anim-x-inverse();
     animation-duration: @time--small;
   }
 }
-
     </less-style>
     
 
@@ -288,33 +295,36 @@
 // xtend extension: multilevel
 //////////////////////
 
-Xt.init.push({ // on DOM ready and on content added to DOM
+Xt.observe.push({
   matches: '.multilevel',
-  fnc: multilevelInit
+  fnc: function (main, index, query) {
+
+    let btnReset = main.querySelectorAll('#multilevel-tab-reset')[0];
+    let btns = main.querySelectorAll('.multilevel-reset');
+    for (let btn of btns) {
+      btn.addEventListener('click', function (e) {
+        if (!e.detail || !e.detail.skipToggle) {
+          btnReset.dispatchEvent(new CustomEvent('on.xt', {detail: {skipToggle: true}}));
+        }
+      });
+    }
+
+  }
 });
 
-function multilevelInit(main, index) {
-  let btnReset = main.querySelectorAll('#multilevel-tab-reset')[0];
-  let btns = main.querySelectorAll('.multilevel-reset');
-  for (let btn of btns) {
-    btn.addEventListener('click', function (e) {
-      if (!e.detail || !e.detail.skipToggle) {
-        btnReset.dispatchEvent(new CustomEvent('on.xt', {detail: {skipToggle: true}}));
-      }
-    });
-  }
-}
+
 
     </js-script>
     
 
     <!-- scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.6.4"></script>
-    <script src="/assets/scripts/polyfill.min.js?v=0.6.4"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js"></script>
 
     <!-- demos scripts -->
-    <script src="/assets/scripts/demos.min.js?v=0.6.4"></script>
+    <script src="/assets/scripts/demos.min.js?v=0.7.0"></script>
 
     <!-- demos scripts -->
     
@@ -322,22 +332,24 @@ function multilevelInit(main, index) {
 // xtend extension: multilevel
 //////////////////////
 
-Xt.init.push({ // on DOM ready and on content added to DOM
+Xt.observe.push({
   matches: '.multilevel',
-  fnc: multilevelInit
+  fnc: function (main, index, query) {
+
+    let btnReset = main.querySelectorAll('#multilevel-tab-reset')[0];
+    let btns = main.querySelectorAll('.multilevel-reset');
+    for (let btn of btns) {
+      btn.addEventListener('click', function (e) {
+        if (!e.detail || !e.detail.skipToggle) {
+          btnReset.dispatchEvent(new CustomEvent('on.xt', {detail: {skipToggle: true}}));
+        }
+      });
+    }
+
+  }
 });
 
-function multilevelInit(main, index) {
-  let btnReset = main.querySelectorAll('#multilevel-tab-reset')[0];
-  let btns = main.querySelectorAll('.multilevel-reset');
-  for (let btn of btns) {
-    btn.addEventListener('click', function (e) {
-      if (!e.detail || !e.detail.skipToggle) {
-        btnReset.dispatchEvent(new CustomEvent('on.xt', {detail: {skipToggle: true}}));
-      }
-    });
-  }
-}
+
 </script>
     
 

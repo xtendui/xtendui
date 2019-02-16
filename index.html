@@ -15,13 +15,13 @@
   <meta name="description" content="Extensible frontend library ideal for custom themes."/>
 
   <!-- icons -->
-  <link rel="icon" href="/assets/images/favicon.png?v=0.6.4"/>
+  <link rel="icon" href="/assets/images/favicon.png?v=0.7.0"/>
   <link rel="apple-touch-icon" sizes="152x152"
-        href="/assets/images/favicon-152x152.png?v=0.6.4"/>
+        href="/assets/images/favicon-152x152.png?v=0.7.0"/>
 
   <!-- styles -->
-  <link rel="stylesheet" href="/assets/icons-theme/style.css?v=0.6.4"/>
-  <link rel="stylesheet" href="/assets/styles/theme.css?v=0.6.4"/>
+  <link rel="stylesheet" href="/assets/icons-theme/style.css?v=0.7.0"/>
+  <link rel="stylesheet" href="/assets/styles/theme.min.css?v=0.7.0"/>
 
 </head>
 <body>
@@ -35,7 +35,7 @@
       <div class="site-header-top">
         <div class="container">
 
-          <div class="flex flex--auto justify-content--between align-items--center">
+          <div class="flex flex--auto justify-content--space-between align-items--center">
             <div>
               <a href="/" class="logo" aria-label="Home">
                 <img src="/assets/images/logo.svg" alt="Xtend"/>
@@ -62,7 +62,7 @@
       </div>
     </div>
 
-    <nav class="site-menu overlay_outer overlay--primary overlay--screen overlay--size-medium collapse--height"
+    <nav class="site-menu overlay_outer overlay--primary overlay--screen overlay--medium"
          id="site-menu">
       <div class="overlay">
         <div class="overlay_inner">
@@ -71,7 +71,7 @@
           <div class="site-header-top">
             <div class="container">
 
-              <div class="flex flex--auto justify-content--between align-items--center">
+              <div class="flex flex--auto justify-content--space-between align-items--center">
                 <div>
                   <a href="/" class="logo" aria-label="Home">
                     <img src="/assets/images/logo.svg" alt="Xtend"/>
@@ -130,14 +130,14 @@
     <div class="site-hero">
 
       <div class="container">
-        <div class="flex flex--auto align-items--center align-content--center justify-content--between">
+        <div class="flex flex--auto align-items--center align-content--center justify-content--space-between">
           <div class="site-hero-text">
             <h1>Home</h1>
-            <p class="font--giant">Extensible frontend library ideal for custom themes.</p>
+            <p>Extensible frontend library ideal for custom themes.</p>
           </div>
           <!--
           <div class="site-hero-img">
-            <img class="responsive" src="https://placehold.it/330x132/ffffff/00B0FF/?text=ads" />
+            <img class="responsive-x" src="https://placehold.it/330x132/ffffff/00B0FF/?text=ads" />
           </div>
           -->
         </div>
@@ -149,7 +149,7 @@
       <div class="site-breadcrumbs">
         <div class="site-breadcrumbs-inner">
           <div class="container">
-            <div class="flex flex--auto justify-content--between align-items--start">
+            <div class="flex flex--auto justify-content--space-between align-items--flex-start">
 
               <div class="site-breadcrumbs-body flex flex-space--none display--none display--flex-sm"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
@@ -244,7 +244,7 @@
             <div class="container">
 
               <nav class="site-footer-top display--none display--block-sm" role="navigation">
-                <div class="flex flex--auto justify-content--between">
+                <div class="flex flex--auto justify-content--space-between">
 
                   <div class="site-footer-top-links list-space--none">
                     <a href="/" class="btn btn--primary btn--nodesign">
@@ -279,9 +279,9 @@
               </nav>
 
               <div class="site-footer-bottom">
-                <div class="flex flex--auto flex-space--tiny justify-content--between">
+                <div class="flex flex--auto flex-space--tiny justify-content--space-between">
                   <div class="site-footer-bottom-license">
-                    Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator--dash"></span> Xtend v0.6.4 licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a>
+                    Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator--dash"></span> Xtend v0.7.0 licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a>
                   </div>
                   <div class="site-footer-bottom-copy">
                     © 2017 – 2019 <span>Riccardo Caroli</span>
@@ -297,14 +297,15 @@
     </div>
 
     <!-- scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js" defer></script>
-    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.6.4" defer></script>
-    <script src="/assets/scripts/polyfill.min.js?v=0.6.4" defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js" defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js" defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js" defer></script>
 
     <!-- theme scripts -->
-    <script src="/assets/scripts/clipboard.min.js?v=0.6.4" defer></script>
-    <script src="/assets/scripts/highlight.pack.js?v=0.6.4" defer></script>
-    <script src="/assets/scripts/theme.min.js?v=0.6.4" defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js" defer></script>
+    <script src="/assets/scripts/clipboard.min.js?v=0.7.0" defer></script>
+    <script src="/assets/scripts/theme.min.js?v=0.7.0" defer></script>
 
   </body>
 </html>

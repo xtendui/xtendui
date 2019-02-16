@@ -2,8 +2,20 @@
 @copyright (c) 2017 - 2018 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
+//////////////////////
+// import
+//////////////////////
+
 //import '../../../../dist/scripts/xtend';
 import Xt from '../../../scripts/xtend';
+
+//////////////////////
+// vars
+//////////////////////
+
+window.easeIn = new Ease(BezierEasing(.36, 0, 0, 1));
+window.easeOut = new Ease(BezierEasing(1, 0, .64, 1));
+window.easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
 
 //////////////////////
 // anchors and sidebar
@@ -84,16 +96,18 @@ const activateAsideScroll = function (els, scrollTop) {
     let href = el.getAttribute('href');
     if (href) {
       let target = document.querySelectorAll(href);
-      let rect = target[0].getBoundingClientRect();
-      let top = rect.top + scrollTop;
-      let bottom = Infinity;
-      if (scrollTop >= top - dist && scrollTop < bottom - dist) {
-        if (!el.classList.contains('active')) {
-          for (let element of els) {
-            if (element === el) {
-              element.classList.add('active', 'open');
-            } else {
-              element.classList.remove('active', 'open');
+      if (target.length) {
+        let rect = target[0].getBoundingClientRect();
+        let top = rect.top + scrollTop;
+        let bottom = Infinity;
+        if (scrollTop >= top - dist && scrollTop < bottom - dist) {
+          if (!el.classList.contains('active')) {
+            for (let element of els) {
+              if (element === el) {
+                element.classList.add('active', 'open');
+              } else {
+                element.classList.remove('active', 'open');
+              }
             }
           }
         }
@@ -102,7 +116,7 @@ const activateAsideScroll = function (els, scrollTop) {
   }
 };
 
-window.addEventListener('scroll', function (e) {
+addEventListener('scroll', function (e) {
   let scrollTop = document.documentElement.scrollTop;
   let sub = document.querySelectorAll('.btn--site-aside-sub');
   sub = Array.from(sub).filter(x => !Xt.parents(x, '.xt-clone').length); // filter out parent
@@ -389,15 +403,15 @@ for (let [i, el] of document.querySelectorAll('.demo').entries()) {
 // .demo-cols
 
 for (let element of document.querySelectorAll('.demo-cols')) {
-  for (let [i, el] of element.querySelectorAll('.col').entries()) {
+  for (let [i, el] of element.querySelectorAll('[class^=\'col--\'], [class*=\' col--\']').entries()) {
     el.setAttribute('data-index', i);
   }
 }
 
 // .demo-cols-nested
 
-for (let element of document.querySelectorAll('.demo-cols-nested .col')) {
-  for (let [i, el] of element.querySelectorAll('.col').entries()) {
+for (let element of document.querySelectorAll('.demo-cols-nested [class^=\'col--\'], .demo-cols-nested [class*=\' col--\']')) {
+  for (let [i, el] of element.querySelectorAll('[class^=\'col--\'], [class*=\' col--\']').entries()) {
     el.setAttribute('data-index', i);
   }
 }

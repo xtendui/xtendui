@@ -19,10 +19,10 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
 
     <!-- styles -->
-    <link rel="stylesheet" href="/assets/styles/demos.css?v=0.6.4" />
+    <link rel="stylesheet" href="/assets/styles/demos.min.css?v=0.7.0" />
 
     <!-- demos styles -->
-    <link rel="stylesheet" href="auto.css?v=0.6.4" />
+    <link rel="stylesheet" href="auto.css?v=0.7.0" />
 
   </head>
   <body class="full">
@@ -30,12 +30,12 @@
     <div id="body-outer">
 <div id="body-inner" class="demo-source-from">
 <div class="slider"
-     data-xt-slider='{"auto": {"time": 2000, "pause": ".slide, .slider_pagination"}}'>
+     data-xt-slider='{"wheel": {"selector": ".slides"}, "auto": {"time": 2000, "pause": ".slide, .slider_pagination"}}'>
 
   <div class="slides">
-    <div class="slides_inner">
+    <ul class="slides_inner">
 
-      <div class="slide">
+      <li class="slide">
         <div class="slide_inner">
 
           <div class="card">
@@ -46,9 +46,9 @@
           </div>
 
         </div>
-      </div>
+      </li>
 
-      <div class="slide">
+      <li class="slide">
         <div class="slide_inner">
 
           <div class="card">
@@ -59,9 +59,9 @@
           </div>
 
         </div>
-      </div>
+      </li>
 
-      <div class="slide">
+      <li class="slide">
         <div class="slide_inner">
 
           <div class="card">
@@ -72,9 +72,9 @@
           </div>
 
         </div>
-      </div>
+      </li>
 
-      <div class="slide">
+      <li class="slide">
         <div class="slide_inner">
 
           <div class="card">
@@ -85,9 +85,9 @@
           </div>
 
         </div>
-      </div>
+      </li>
 
-      <div class="slide">
+      <li class="slide">
         <div class="slide_inner">
 
           <div class="card">
@@ -98,18 +98,18 @@
           </div>
 
         </div>
-      </div>
+      </li>
 
-    </div>
+    </ul>
   </div>
 
-  <div class="slider_pagination">
+  <nav class="slider_pagination">
     <div class="list list-space--small align-items--center">
       <button type="button" class="xt-clone" data-xt-pag>
         <span></span>
       </button>
     </div>
-  </div>
+  </nav>
 
 </div>
 
@@ -123,14 +123,22 @@
 
       @import (reference) "../../../../../dist/styles/xtend.less";
 
+// disabled
+
+.slider {
+  @media @max-sm {
+    .slider--disabled();
+  }
+}
+
 // slider
 
 .slider {
   .slides_inner {
     .flex();
     .flex-space--y(none);
-    .flex--nowrap();
-    .align-items--start();
+    flex-wrap: nowrap;
+    align-items: flex-start;
   }
   .slide {
     .col(6);
@@ -145,15 +153,17 @@
     }
     // animation
     > * {
-      .transition-default.out();
-      transition-duration: @time--big;
       opacity: .5;
+      transition-property: opacity;
+      transition-duration: @time--big;
+      transition-timing-function: @bez--out;
     }
     &.active {
       > * {
-        .transition-default.active();
-        transition-duration: @time--big;
         opacity: 1;
+        transition-property: opacity;
+        transition-duration: @time--big;
+        transition-timing-function: @bez--in;
       }
     }
   }
@@ -164,7 +174,7 @@
 .card {
   .card--secondary();
   .card--big();
-  .text-align(center);
+  text-align: center;
 }
     </less-style>
     
@@ -173,12 +183,13 @@
     
 
     <!-- scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.6.4"></script>
-    <script src="/assets/scripts/polyfill.min.js?v=0.6.4"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js"></script>
 
     <!-- demos scripts -->
-    <script src="/assets/scripts/demos.min.js?v=0.6.4"></script>
+    <script src="/assets/scripts/demos.min.js?v=0.7.0"></script>
 
     <!-- demos scripts -->
     

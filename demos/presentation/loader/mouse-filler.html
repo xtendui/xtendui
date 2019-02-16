@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- seo -->
+    <title>Demo — Xtend</title>
+    <meta name="description" content="Xtend demo" />
+
+    <!-- icons -->
+    <link rel="icon" href="/assets/images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/styles/demos.min.css?v=0.7.0" />
+
+    <!-- demos styles -->
+    
+
+  </head>
+  <body class="full">
+
+    <div id="body-outer">
+<div id="body-inner" class="demo-source-from">
+<div class="list list-space--small align-items--center justify-content--center demo-source-from">
+  <div class="card card--secondary">
+    <div class="card_design"></div>
+    <div class="card_content">
+      <h3>Lorem ipsum dolor sit amet</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
+      <span class="loader loader--x loader--size-x loader--mouse">
+        <span class="filler">
+          <span></span><span></span>
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+</div>
+    </div>
+
+    <!-- demos source less -->
+    
+
+    <!-- demos source js -->
+    
+    <js-script>
+
+      Xt.observe.push({
+  matches: '.loader',
+  fnc: function (main, index, query) {
+
+    // follow mouse
+
+    let loader = document.querySelectorAll('.loader--mouse')[0];
+    let container = Xt.parents(main, '.card')[0];
+    let width;
+    let height;
+
+    function mousemove(e) {
+      requestAnimationFrame(function () {
+        // fix initial
+        if (width === undefined) {
+          mouseenter(e);
+        }
+        // position
+        let top = e.clientY + height / 2;
+        let left = e.clientX + width / 2;
+        loader.style.top = top + 'px';
+        loader.style.left = left + 'px';
+      });
+    }
+
+    function mouseenter(e) {
+      requestAnimationFrame(function () {
+        // size
+        let rect = loader.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
+        // class
+        loader.classList.add('active');
+        loader.classList.remove('out');
+        // position
+        let top = e.clientY + height / 2;
+        let left = e.clientX + width / 2;
+        loader.style.top = top + 'px';
+        loader.style.left = left + 'px';
+      });
+    }
+
+    function mouseleave(e) {
+      requestAnimationFrame(function () {
+        // class
+        loader.classList.remove('active');
+        loader.classList.add('out');
+      });
+    }
+
+    container.removeEventListener('mousemove', mousemove);
+    container.addEventListener('mousemove', mousemove);
+    container.removeEventListener('mouseenter', mouseenter);
+    container.addEventListener('mouseenter', mouseenter);
+    container.removeEventListener('mouseleave', mouseleave);
+    container.addEventListener('mouseleave', mouseleave);
+
+  }
+});
+
+    </js-script>
+    
+
+    <!-- scripts -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js"></script>
+
+    <!-- demos scripts -->
+    <script src="/assets/scripts/demos.min.js?v=0.7.0"></script>
+
+    <!-- demos scripts -->
+    
+    <script>Xt.observe.push({
+  matches: '.loader',
+  fnc: function (main, index, query) {
+
+    // follow mouse
+
+    let loader = document.querySelectorAll('.loader--mouse')[0];
+    let container = Xt.parents(main, '.card')[0];
+    let width;
+    let height;
+
+    function mousemove(e) {
+      requestAnimationFrame(function () {
+        // fix initial
+        if (width === undefined) {
+          mouseenter(e);
+        }
+        // position
+        let top = e.clientY + height / 2;
+        let left = e.clientX + width / 2;
+        loader.style.top = top + 'px';
+        loader.style.left = left + 'px';
+      });
+    }
+
+    function mouseenter(e) {
+      requestAnimationFrame(function () {
+        // size
+        let rect = loader.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
+        // class
+        loader.classList.add('active');
+        loader.classList.remove('out');
+        // position
+        let top = e.clientY + height / 2;
+        let left = e.clientX + width / 2;
+        loader.style.top = top + 'px';
+        loader.style.left = left + 'px';
+      });
+    }
+
+    function mouseleave(e) {
+      requestAnimationFrame(function () {
+        // class
+        loader.classList.remove('active');
+        loader.classList.add('out');
+      });
+    }
+
+    container.removeEventListener('mousemove', mousemove);
+    container.addEventListener('mousemove', mousemove);
+    container.removeEventListener('mouseenter', mouseenter);
+    container.addEventListener('mouseenter', mouseenter);
+    container.removeEventListener('mouseleave', mouseleave);
+    container.addEventListener('mouseleave', mouseleave);
+
+  }
+});
+</script>
+    
+
+    <!-- demos utils -->
+    <script>
+      if (window.self !== window.top) {
+        // add id
+        document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
+        // init iframe
+        window.parent.initIframe(window.name);
+      }
+    </script>
+
+  </body>
+</html>

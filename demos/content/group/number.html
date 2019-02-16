@@ -19,10 +19,10 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
 
     <!-- styles -->
-    <link rel="stylesheet" href="/assets/styles/demos.css?v=0.6.4" />
+    <link rel="stylesheet" href="/assets/styles/demos.min.css?v=0.7.0" />
 
     <!-- demos styles -->
-    <link rel="stylesheet" href="number.css?v=0.6.4" />
+    <link rel="stylesheet" href="number.css?v=0.7.0" />
 
   </head>
   <body class="full">
@@ -102,38 +102,6 @@ input[type=number]::-webkit-outer-spin-button {
 // xtend extension: group-number
 //////////////////////
 
-Xt.init.push({ // on DOM ready and on content added to DOM
-  matches: '.group-number',
-  fnc: inputNumberInit
-});
-
-function inputNumberInit(main, index) {
-  // init
-  inputNumberChange.bind(main, 0)();
-  // vars
-  let inputEl = main.querySelectorAll('input')[0];
-  let step = parseFloat(inputEl.getAttribute('step')) || 1;
-  // add
-  let addEl = main.querySelectorAll('.group-number-add')[0];
-  let addStep = step;
-  let addHandler = Xt.dataStorage.get(addEl, 'addHandler');
-  addHandler = addHandler ? addHandler : Xt.dataStorage.put(addEl, 'addHandler', inputNumberChange.bind(main, addStep));
-  addEl.removeEventListener('click', addHandler);
-  addEl.addEventListener('click', addHandler);
-  // remove
-  let removeEl = main.querySelectorAll('.group-number-remove')[0];
-  let removeStep = -step;
-  let removeHandler = Xt.dataStorage.get(removeEl, 'removeHandler');
-  removeHandler = removeHandler ? removeHandler : Xt.dataStorage.put(removeEl, 'removeHandler', inputNumberChange.bind(main, removeStep));
-  removeEl.removeEventListener('click', removeHandler);
-  removeEl.addEventListener('click', removeHandler);
-  // change
-  let inputHandler = Xt.dataStorage.get(inputEl, 'inputHandler');
-  inputHandler = inputHandler ? inputHandler : Xt.dataStorage.put(inputEl, 'inputHandler', inputNumberChange.bind(main, 0));
-  inputEl.removeEventListener('change', inputHandler);
-  inputEl.addEventListener('change', inputHandler);
-}
-
 function inputNumberChange(step, e) {
   if (!e || !e.detail || !e.detail.skip) {
     let main = this;
@@ -168,16 +136,49 @@ function inputNumberValidate(val) {
   input.dispatchEvent(new CustomEvent('change', {bubbles: true, detail: {skip: true}}));
 }
 
+Xt.observe.push({
+  matches: '.group-number',
+  fnc: function (main, index, query) {
+
+    // init
+    inputNumberChange.bind(main, 0)();
+    // vars
+    let inputEl = main.querySelectorAll('input')[0];
+    let step = parseFloat(inputEl.getAttribute('step')) || 1;
+    // add
+    let addEl = main.querySelectorAll('.group-number-add')[0];
+    let addStep = step;
+    let addHandler = Xt.dataStorage.get(addEl, 'addHandler');
+    addHandler = addHandler ? addHandler : Xt.dataStorage.put(addEl, 'addHandler', inputNumberChange.bind(main, addStep));
+    addEl.removeEventListener('click', addHandler);
+    addEl.addEventListener('click', addHandler);
+    // remove
+    let removeEl = main.querySelectorAll('.group-number-remove')[0];
+    let removeStep = -step;
+    let removeHandler = Xt.dataStorage.get(removeEl, 'removeHandler');
+    removeHandler = removeHandler ? removeHandler : Xt.dataStorage.put(removeEl, 'removeHandler', inputNumberChange.bind(main, removeStep));
+    removeEl.removeEventListener('click', removeHandler);
+    removeEl.addEventListener('click', removeHandler);
+    // change
+    let inputHandler = Xt.dataStorage.get(inputEl, 'inputHandler');
+    inputHandler = inputHandler ? inputHandler : Xt.dataStorage.put(inputEl, 'inputHandler', inputNumberChange.bind(main, 0));
+    inputEl.removeEventListener('change', inputHandler);
+    inputEl.addEventListener('change', inputHandler);
+  }
+
+});
+
     </js-script>
     
 
     <!-- scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.6.4"></script>
-    <script src="/assets/scripts/polyfill.min.js?v=0.6.4"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js"></script>
 
     <!-- demos scripts -->
-    <script src="/assets/scripts/demos.min.js?v=0.6.4"></script>
+    <script src="/assets/scripts/demos.min.js?v=0.7.0"></script>
 
     <!-- demos scripts -->
     
@@ -185,38 +186,6 @@ function inputNumberValidate(val) {
 // xtend extension: group-number
 //////////////////////
 
-Xt.init.push({ // on DOM ready and on content added to DOM
-  matches: '.group-number',
-  fnc: inputNumberInit
-});
-
-function inputNumberInit(main, index) {
-  // init
-  inputNumberChange.bind(main, 0)();
-  // vars
-  let inputEl = main.querySelectorAll('input')[0];
-  let step = parseFloat(inputEl.getAttribute('step')) || 1;
-  // add
-  let addEl = main.querySelectorAll('.group-number-add')[0];
-  let addStep = step;
-  let addHandler = Xt.dataStorage.get(addEl, 'addHandler');
-  addHandler = addHandler ? addHandler : Xt.dataStorage.put(addEl, 'addHandler', inputNumberChange.bind(main, addStep));
-  addEl.removeEventListener('click', addHandler);
-  addEl.addEventListener('click', addHandler);
-  // remove
-  let removeEl = main.querySelectorAll('.group-number-remove')[0];
-  let removeStep = -step;
-  let removeHandler = Xt.dataStorage.get(removeEl, 'removeHandler');
-  removeHandler = removeHandler ? removeHandler : Xt.dataStorage.put(removeEl, 'removeHandler', inputNumberChange.bind(main, removeStep));
-  removeEl.removeEventListener('click', removeHandler);
-  removeEl.addEventListener('click', removeHandler);
-  // change
-  let inputHandler = Xt.dataStorage.get(inputEl, 'inputHandler');
-  inputHandler = inputHandler ? inputHandler : Xt.dataStorage.put(inputEl, 'inputHandler', inputNumberChange.bind(main, 0));
-  inputEl.removeEventListener('change', inputHandler);
-  inputEl.addEventListener('change', inputHandler);
-}
-
 function inputNumberChange(step, e) {
   if (!e || !e.detail || !e.detail.skip) {
     let main = this;
@@ -250,6 +219,38 @@ function inputNumberValidate(val) {
   input.value = val;
   input.dispatchEvent(new CustomEvent('change', {bubbles: true, detail: {skip: true}}));
 }
+
+Xt.observe.push({
+  matches: '.group-number',
+  fnc: function (main, index, query) {
+
+    // init
+    inputNumberChange.bind(main, 0)();
+    // vars
+    let inputEl = main.querySelectorAll('input')[0];
+    let step = parseFloat(inputEl.getAttribute('step')) || 1;
+    // add
+    let addEl = main.querySelectorAll('.group-number-add')[0];
+    let addStep = step;
+    let addHandler = Xt.dataStorage.get(addEl, 'addHandler');
+    addHandler = addHandler ? addHandler : Xt.dataStorage.put(addEl, 'addHandler', inputNumberChange.bind(main, addStep));
+    addEl.removeEventListener('click', addHandler);
+    addEl.addEventListener('click', addHandler);
+    // remove
+    let removeEl = main.querySelectorAll('.group-number-remove')[0];
+    let removeStep = -step;
+    let removeHandler = Xt.dataStorage.get(removeEl, 'removeHandler');
+    removeHandler = removeHandler ? removeHandler : Xt.dataStorage.put(removeEl, 'removeHandler', inputNumberChange.bind(main, removeStep));
+    removeEl.removeEventListener('click', removeHandler);
+    removeEl.addEventListener('click', removeHandler);
+    // change
+    let inputHandler = Xt.dataStorage.get(inputEl, 'inputHandler');
+    inputHandler = inputHandler ? inputHandler : Xt.dataStorage.put(inputEl, 'inputHandler', inputNumberChange.bind(main, 0));
+    inputEl.removeEventListener('change', inputHandler);
+    inputEl.addEventListener('change', inputHandler);
+  }
+
+});
 </script>
     
 

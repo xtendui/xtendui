@@ -1,199 +1,155 @@
-Xt.init.push({ // on DOM ready and on content added to DOM
+Xt.observe.push({
   matches: '.slider',
-  fnc: sliderInit
+  fnc: function (main, index, query) {
+
+    // vars
+
+    let timeHide = 300;
+    let easeIn = new Ease(BezierEasing(.36, 0, 0, 1));
+    let easeOut = new Ease(BezierEasing(1, 0, .64, 1));
+    let easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
+
+    // slider
+
+    let self = new Xt.Slider(main, {
+      "auto": {
+        "time": 4000,
+        "pause": "[data-xt-pag]"
+      }
+    });
+
+    let slider = self.object;
+
+    // auto start
+
+    slider.addEventListener('start.xt.auto', function (e) {
+      // on slider
+      let spinner = slider.querySelectorAll('.spinner svg:nth-child(2) circle');
+      let timeline = new TimelineMax();
+      timeline.to(spinner, timeHide / 1000, {strokeDashoffset: 628, ease: easeInOut, autoRound: false});
+      timeline.to(spinner, (self.options.auto.time / 1000) - (timeHide / 1000), {
+        strokeDashoffset: 0,
+        ease: easeInOut,
+        autoRound: false
+      });
+      // on elements
+      let elements = self.elements.filter(x => x.classList.contains('active'));
+      for (let element of elements) {
+        let fillers = element.querySelectorAll('.filler span:nth-child(2)');
+        for (let filler of fillers) {
+          TweenMax.set(filler, {height: 0, top: '100%', ease: easeInOut});
+          TweenMax.to(filler, self.options.auto.time / 1000, {height: '100%', top: 0, ease: easeInOut});
+        }
+      }
+      // on targets
+      let targets = self.targets.filter(x => x.classList.contains('active'));
+      for (let target of targets) {
+        let fillers = target.querySelectorAll('.filler span:nth-child(2)');
+        for (let filler of fillers) {
+          TweenMax.set(filler, {width: 0, left: 0, ease: easeInOut});
+          TweenMax.to(filler, self.options.auto.time / 1000, {width: '100%', left: 0, ease: easeInOut});
+        }
+      }
+    });
+
+    // auto stop
+
+    slider.addEventListener('stop.xt.auto', function (e) {
+      // on elements
+      let elements = self.elements.filter(x => x.classList.contains('active'));
+      for (let element of elements) {
+        let fillers = element.querySelectorAll('.filler span:nth-child(2)');
+        for (let filler of fillers) {
+          TweenMax.to(filler, timeHide / 1000, {height: 0, top: 0, ease: easeInOut});
+        }
+      }
+      // on targets
+      let targets = self.targets.filter(x => x.classList.contains('active'));
+      for (let target of targets) {
+        let fillers = target.querySelectorAll('.filler span:nth-child(2)');
+        for (let filler of fillers) {
+          TweenMax.to(filler, timeHide / 1000, {width: 0, left: '100%', ease: easeInOut});
+        }
+      }
+    });
+
+    // auto pause
+
+    slider.addEventListener('pause.xt.auto', function (e) {
+      // on slider
+      let spinner = slider.querySelectorAll('.spinner svg:nth-child(2) circle');
+      TweenMax.to(spinner, timeHide / 1000, {strokeDashoffset: 628, ease: easeInOut, autoRound: false});
+      // on elements
+      let elements = self.elements.filter(x => x.classList.contains('active'));
+      for (let element of elements) {
+        let fillers = element.querySelectorAll('.filler span:nth-child(2)');
+        for (let filler of fillers) {
+          TweenMax.to(filler, timeHide / 1000, {height: 0, top: '100%', ease: easeInOut});
+        }
+      }
+      // on targets
+      let targets = self.targets.filter(x => x.classList.contains('active'));
+      for (let target of targets) {
+        let fillers = target.querySelectorAll('.filler span:nth-child(2)');
+        for (let filler of fillers) {
+          TweenMax.to(filler, timeHide / 1000, {width: 0, left: 0, ease: easeInOut});
+        }
+      }
+    });
+
+    // follow mouse
+
+    let loader = document.querySelectorAll('.loader--mouse')[0];
+    let container = main;
+    let width;
+    let height;
+
+    function mousemove(e) {
+      requestAnimationFrame(function () {
+        // fix initial
+        if (width === undefined) {
+          mouseenter(e);
+        }
+        // position
+        let top = e.clientY + height / 2;
+        let left = e.clientX + width / 2;
+        loader.style.top = top + 'px';
+        loader.style.left = left + 'px';
+      });
+    }
+
+    function mouseenter(e) {
+      requestAnimationFrame(function () {
+        // size
+        let rect = loader.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
+        // class
+        loader.classList.add('active');
+        loader.classList.remove('out');
+        // position
+        let top = e.clientY + height / 2;
+        let left = e.clientX + width / 2;
+        loader.style.top = top + 'px';
+        loader.style.left = left + 'px';
+      });
+    }
+
+    function mouseleave(e) {
+      requestAnimationFrame(function () {
+        // class
+        loader.classList.remove('active');
+        loader.classList.add('out');
+      });
+    }
+
+    container.removeEventListener('mousemove', mousemove);
+    container.addEventListener('mousemove', mousemove);
+    container.removeEventListener('mouseenter', mouseenter);
+    container.addEventListener('mouseenter', mouseenter);
+    container.removeEventListener('mouseleave', mouseleave);
+    container.addEventListener('mouseleave', mouseleave);
+
+  }
 });
 
-function sliderInit(main, index) {
-
-  // slider
-
-  let self = new Xt.Slider(main, {
-    "auto": {
-      "time": 4000,
-      "pause": ".slide, [data-xt-pag]"
-    }
-  });
-
-  let object = self.object;
-
-  // vars
-
-  CustomEase.create('easeIn', '.41,.1,.175,1');
-  CustomEase.create('easeOut', '.77,0,.175,1');
-  CustomEase.create('easeInOut', '.77,.0,.17,1');
-
-  // auto start
-
-  object.addEventListener('auto.xt.start', function (e) {
-    // on object
-    let spinner = object.querySelectorAll('.spinner circle:nth-child(2)');
-    let tweens = TweenMax.getTweensOf(spinner);
-    if (tweens.length) {
-      for (let tween of tweens) {
-        let t = (e.detail.autoTime - tween.time() * 1000) / e.detail.autoTime;
-        TweenMax.to(tween, .5, {timeScale: t});
-      }
-    } else {
-      TweenMax.set(spinner, {strokeDashoffset: 1});
-      TweenMax.to(spinner, e.detail.autoTime / 1000, {strokeDashoffset: 0, ease: 'easeInOut', autoRound:false});
-    }
-    // on elements
-    let elements = self.elements.filter(x => x.classList.contains('active'));
-    for (let element of elements) {
-      let progresses = element.querySelectorAll('.progress span:nth-child(2)');
-      for (let progress of progresses) {
-        let tweens = TweenMax.getTweensOf(progress);
-        if (tweens.length) {
-          for (let tween of tweens) {
-            let t = (e.detail.autoTime - tween.time() * 1000) / e.detail.autoTime;
-            TweenMax.to(tween, .5, {timeScale: t});
-          }
-        } else {
-          TweenMax.set(progress, {height: 0, top: '100%'});
-          TweenMax.to(progress, e.detail.autoTime / 1000, {height: '100%', top: 0, ease: 'easeInOut'});
-        }
-      }
-    }
-    // on targets
-    let targets = self.targets.filter(x => x.classList.contains('active'));
-    for (let target of targets) {
-      let progresses = target.querySelectorAll('.progress span:nth-child(2)');
-      for (let progress of progresses) {
-        let tweens = TweenMax.getTweensOf(progress);
-        if (tweens.length) {
-          for (let tween of tweens) {
-            let t = (e.detail.autoTime - tween.time() * 1000) / e.detail.autoTime;
-            TweenMax.to(tween, .5, {timeScale: t});
-          }
-        } else {
-          TweenMax.set(progress, {width: 0, left: 0});
-          TweenMax.to(progress, e.detail.autoTime / 1000, {width: '100%', left: 0, ease: 'easeInOut'});
-        }
-      }
-    }
-  });
-
-  // auto stop
-
-  object.addEventListener('auto.xt.stop', function (e) {
-    // on object
-    let spinner = object.querySelectorAll('.spinner circle:nth-child(2)');
-    TweenMax.set(spinner, {strokeDashoffset: 1});
-    // on elements
-    let elements = self.elements.filter(x => x.classList.contains('active'));
-    for (let element of elements) {
-      let progresses = element.querySelectorAll('.progress span:nth-child(2)');
-      for (let progress of progresses) {
-        TweenMax.to(progress, 0.5, {height: 0, top: 0, ease: 'easeInOut'});
-      }
-    }
-    // on targets
-    let targets = self.targets.filter(x => x.classList.contains('active'));
-    for (let target of targets) {
-      let progresses = target.querySelectorAll('.progress span:nth-child(2)');
-      for (let progress of progresses) {
-        TweenMax.to(progress, 0.5, {width: 0, left: '100%', ease: 'easeInOut'});
-      }
-    }
-  });
-
-  // auto pause
-
-  object.addEventListener('auto.xt.pause', function (e) {
-    // on object
-    let spinner = object.querySelectorAll('.spinner circle:nth-child(2)');
-    let tweens = TweenMax.getTweensOf(spinner);
-    for (let tween of tweens) {
-      TweenMax.to(tween, .5, {timeScale: 0});
-    }
-    // on elements
-    let elements = self.elements.filter(x => x.classList.contains('active'));
-    for (let element of elements) {
-      let progresses = element.querySelectorAll('.progress span:nth-child(2)');
-      for (let progress of progresses) {
-        let tweens = TweenMax.getTweensOf(progress);
-        for (let tween of tweens) {
-          TweenMax.to(tween, .5, {timeScale: 0});
-        }
-      }
-    }
-    // on targets
-    let targets = self.targets.filter(x => x.classList.contains('active'));
-    for (let target of targets) {
-      let progresses = target.querySelectorAll('.progress span:nth-child(2)');
-      for (let progress of progresses) {
-        let tweens = TweenMax.getTweensOf(progress);
-        for (let tween of tweens) {
-          TweenMax.to(tween, .5, {timeScale: 0});
-        }
-      }
-    }
-  });
-
-  // follow mouse
-
-  let spinner = object.querySelectorAll('.spinner')[0];
-  let time = .8;
-
-  function mousemove(e) {
-    // vars
-    let rect = spinner.getBoundingClientRect();
-    let top = e.clientY + rect.height / 2 - 20; // 20 for exaclty center
-    let left = e.clientX + rect.width / 2 - 20; // 20 for exaclty center
-    // tween
-    let tweens = TweenMax.getTweensOf(spinner);
-    if (tweens.length) {
-      for (let tween of tweens) {
-        let time = tween.time();
-        let css = tween.vars.css;
-        if (css) {
-          css.top = top;
-          css.left = left;
-          tween.seek(0).invalidate().seek(time);
-        }
-      }
-    } else {
-      spinner.style.top = top + 'px';
-      spinner.style.left = left + 'px';
-    }
-  }
-
-  function mouseenter(e) {
-    spinner.classList.add('active');
-    // vars
-    let rect = spinner.getBoundingClientRect();
-    let top = e.clientY + rect.height / 2 - 20; // 20 for exaclty center
-    let left = e.clientX - rect.width / 2 - 20; // 20 for exaclty center
-    // tween
-    let tweens = TweenMax.getTweensOf(spinner);
-    if (tweens.length) {
-      for (let tween of tweens) {
-        tween.kill();
-      }
-    }
-    TweenMax.to(spinner, time, {top: top, left: left, ease: 'easeInOut'});
-  }
-
-  function mouseleave(e) {
-    spinner.classList.remove('active');
-    // vars
-    let top = '100%';
-    let left = '100%';
-    // tween
-    let tweens = TweenMax.getTweensOf(spinner);
-    if (tweens.length) {
-      for (let tween of tweens) {
-        tween.kill();
-      }
-    }
-    TweenMax.to(spinner, time, {top: top, left: left, ease: 'easeInOut'});
-  }
-
-  object.removeEventListener('mousemove', mousemove);
-  object.addEventListener('mousemove', mousemove);
-  object.removeEventListener('mouseenter', mouseenter);
-  object.addEventListener('mouseenter', mouseenter);
-  object.removeEventListener('mouseleave', mouseleave);
-  object.addEventListener('mouseleave', mouseleave);
-
-}
