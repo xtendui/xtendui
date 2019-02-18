@@ -47,13 +47,13 @@ description: Lorem Ipsum
 <pre>
   <code class="js">
     // single
-    new Xt.Slider(document.querySelectorAll('.my-element')[0], {
+    Xt.init('xt-slider', document.querySelectorAll('.my-element')[0], {
       // option
     });
 
     // looping
     for (let el of document.querySelectorAll('.my-element')) {
-      new Xt.Slider(el, {
+      Xt.init('xt-slider', el, {
         // option
       });
     }

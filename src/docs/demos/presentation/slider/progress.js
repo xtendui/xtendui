@@ -11,7 +11,7 @@ Xt.observe.push({
 
     // slider
 
-    let self = new Xt.Slider(main, {
+    let self = Xt.init('xt-slider', main, {
       "auto": {
         "time": 4000,
         "pause": "[data-xt-pag]"

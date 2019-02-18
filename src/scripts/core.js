@@ -52,13 +52,11 @@ class Core {
     self.detail.autoPaused = false;
     self.destroyElements = [document, window, self.object];
     // destroy if already done
-    if (self.object.getAttribute('data-' + self.componentName + '-done')) {
+    if (self.object.getAttribute('data-' + self.componentName + '-inited')) {
       self.destroy();
     }
     // setup
-    self.object.setAttribute('data-' + self.componentName + '-done', 'true');
-    // set component to element
-    Xt.set(self.object, self.componentName, self);
+    self.object.setAttribute('data-' + self.componentName + '-inited', 'true');
     // init
     self.initVars();
     self.initSetup();
@@ -432,24 +430,34 @@ class Core {
     // auto
     if (options.auto && options.auto.time) {
       // focus auto
-      addEventListener('focus', self.eventAutoResumeHandler.bind(self));
+      let focusHandler = Xt.dataStorage.put(window, 'focus' + '.' + self.namespace,
+        self.eventAutoResumeHandler.bind(self));
+      addEventListener('focus', focusHandler);
       // blur auto
-      addEventListener('blur', self.eventAutoPauseHandler.bind(self));
+      let blurHandler = Xt.dataStorage.put(window, 'blur' + '.' + self.namespace,
+        self.eventAutoPauseHandler.bind(self));
+      addEventListener('blur', blurHandler);
       // autoPause
-      for (let el of self.object.querySelectorAll(options.auto.pause)) {
-        // pause
-        let autoPauseOnHandler = Xt.dataStorage.put(el, 'mouseenter focus' + '.' + self.namespace,
-          self.eventAutoPauseHandler.bind(self));
-        let eventsPause = ['mouseenter', 'focus'];
-        for (let event of eventsPause) {
-          el.addEventListener(event, autoPauseOnHandler);
-        }
-        // resume
-        let autoResumeOnHandler = Xt.dataStorage.put(el, 'mouseleave blur' + '.' + self.namespace,
-          self.eventAutoResumeHandler.bind(self));
-        let eventsResume = ['mouseleave', 'blur'];
-        for (let event of eventsResume) {
-          el.addEventListener(event, autoResumeOnHandler);
+      if (options.auto && options.auto.pause) {
+        let autoPauseEls = self.object.querySelectorAll(options.auto.pause);
+        if (autoPauseEls.length) {
+          self.destroyElements.push(...autoPauseEls);
+          for (let el of autoPauseEls) {
+            // pause
+            let autoPauseOnHandler = Xt.dataStorage.put(el, 'mouseenter focus' + '.' + self.namespace,
+              self.eventAutoPauseHandler.bind(self));
+            let eventsPause = ['mouseenter', 'focus'];
+            for (let event of eventsPause) {
+              el.addEventListener(event, autoPauseOnHandler);
+            }
+            // resume
+            let autoResumeOnHandler = Xt.dataStorage.put(el, 'mouseleave blur' + '.' + self.namespace,
+              self.eventAutoResumeHandler.bind(self));
+            let eventsResume = ['mouseleave', 'blur'];
+            for (let event of eventsResume) {
+              el.addEventListener(event, autoResumeOnHandler);
+            }
+          }
         }
       }
     }
@@ -2456,6 +2464,8 @@ class Core {
    */
   destroy() {
     let self = this;
+    // stop auto
+    clearInterval(self.object.dataset.xtAutoStartInterval);
     // remove events
     let elements = self.destroyElements;
     for (let element of elements) {
@@ -2473,10 +2483,12 @@ class Core {
       }
     }
     // remove setup
-    self.object.removeAttribute('data-' + self.componentName + '-done');
-    Xt.remove(self.object, self.componentName);
+    self.object.removeAttribute('data-' + self.componentName + '-inited');
+    // remove component
+    Xt.destroy(self.componentName, self.object, true);
     // destroy
     delete this;
+    return null;
   }
 
 }

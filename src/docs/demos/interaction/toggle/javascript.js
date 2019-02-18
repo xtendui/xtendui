@@ -16,7 +16,7 @@ Xt.observe.push({
 
     // toggle
 
-    let toggle = new Xt.Toggle(main, {
+    let toggle = Xt.init('xt-toggle', main, {
       "durationOn": time * 1000,
       "durationOff": time * 1000,
       "delayOn": delay * 1000,
@@ -67,7 +67,7 @@ Xt.observe.push({
 
     // toggle
 
-    let toggle = new Xt.Toggle(main, {
+    let toggle = Xt.init('xt-toggle', main, {
       "on": "mouseenter",
       "off": "mouseleave",
       "durationOn": time * 1000,

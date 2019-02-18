@@ -11,7 +11,7 @@ Xt.observe.push({
 
     // toggle
 
-    let self = new Xt.Toggle(main, {
+    let self = Xt.init('xt-toggle', main, {
       "auto": {
         "time": 2000,
         "pause": ":scope > button"

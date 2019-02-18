@@ -14,7 +14,7 @@ Xt.observe.push({
 
     // slider
 
-    let self = new Xt.Slider(main, {
+    let self = Xt.init('xt-slider', main, {
       "durationOn": time * 1000,
       "durationOff": time * 1000,
       "instant": false

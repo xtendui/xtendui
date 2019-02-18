@@ -54,60 +54,100 @@ Xt.components = [
   {'name': 'xt-drop', 'class': Xt.Drop},
   {'name': 'xt-overlay', 'class': Xt.Overlay},
   {'name': 'xt-slider', 'class': Xt.Slider},
+  {'name': 'xt-smooth', 'class': Xt.Smooth},
   {'name': 'xt-sticky', 'class': Xt.Sticky},
   {'name': 'xt-fade', 'class': Xt.Fade},
   {'name': 'xt-ajax', 'class': Xt.Ajax}
 ];
 
 //////////////////////
-// set and get
-//////////////////////
-
-/**
- * set component to element
- * @param {Node|HTMLElement|EventTarget|Window} object Component's object
- * @param {String} name Component's name
- * @param {Object} self Component' self
- */
-Xt.set = function (object, name, self) {
-  Xt.dataStorage.put(object, name, self);
-};
-
-/**
- * get component from element
- * @param {Node|HTMLElement|EventTarget|Window} object Component's object
- * @param {String} name Component name
- */
-Xt.get = function (object, name) {
-  return Xt.dataStorage.get(object, name);
-};
-
-/**
- * get component from element
- * @param {Node|HTMLElement|EventTarget|Window} object Component's object
- * @param {String} name Component name
- */
-Xt.remove = function (object, name) {
-  return Xt.dataStorage.remove(object, name);
-};
-
-//////////////////////
-// init
+// component
 //////////////////////
 
 /**
  * init component
+ * @param {String} name Component name
+ * @param {Node|HTMLElement|EventTarget|Window} element Component's element
+ * @param {Object} optionsJs User options
  */
-Xt.init = function (added = document.documentElement) {
+
+Xt.init = function (name, element, optionsJs = {}) {
+  for (let component of Xt.components) {
+    if (name === component.name) {
+      // constructor
+      let self = new component.class(element, optionsJs);
+      // set component
+      Xt.set(name, element, self);
+      // return
+      return self;
+    }
+  }
+};
+
+/**
+ * destroy component
+ * @param {String} name Component name
+ * @param {Node|HTMLElement|EventTarget|Window} element Component's element
+ * @param {Boolean} skipCall If skip call destroy component
+ */
+
+Xt.destroy = function (name, element, skipCall = false) {
+  let self = Xt.get(name, element);
+  if (self) {
+    // destroy
+    if (!skipCall) {
+      self.destroy();
+    }
+    // remove component
+    return Xt.remove(name, element);
+  }
+};
+
+/**
+ * get component
+ * @param {String} name Component name
+ * @param {Node|HTMLElement|EventTarget|Window} element Component's element
+ */
+Xt.get = function (name, element) {
+  return Xt.dataStorage.get(element, name);
+};
+
+/**
+ * set component
+ * @param {String} name Component name
+ * @param {Node|HTMLElement|EventTarget|Window} element Component's element
+ * @param {Object} self Component' self
+ */
+Xt.set = function (name, element, self) {
+  Xt.dataStorage.put(element, name, self);
+};
+
+/**
+ * remove datastorage
+ * @param {String} name Component name
+ * @param {Node|HTMLElement|EventTarget|Window} element Component's element
+ */
+Xt.remove = function (name, element) {
+  return Xt.dataStorage.remove(element, name);
+};
+
+//////////////////////
+// element
+//////////////////////
+
+/**
+ * init element
+ */
+Xt.initElement = function (added = document.documentElement) {
   added = Xt.arrSingle(added);
   for (let element of added) {
     // components
     for (let component of Xt.components) {
       if (element.matches('[data-' + component.name + ']')) {
-        new component.class(element);
+        Xt.init(component.name, element);
       }
       for (let el of element.querySelectorAll('[data-' + component.name + ']')) {
-        new component.class(el);
+        Xt.init(component.name, el);
       }
     }
     // btnMerge
@@ -121,24 +161,18 @@ Xt.init = function (added = document.documentElement) {
 };
 
 /**
- * destroy component
+ * destroy element
  */
-Xt.destroy = function (removed = document.documentElement) {
+Xt.destroyElement = function (removed = document.documentElement) {
   removed = Xt.arrSingle(removed);
   for (let element of removed) {
     // components
     for (let component of Xt.components) {
-      if (element.matches('[data-' + component.name + '-done]')) {
-        let self = Xt.get(element, component.name);
-        if (self) {
-          self.destroy();
-        }
+      if (element.matches('[data-' + component.name + '-inited]')) {
+        Xt.destroy(component.name, element);
       }
-      for (let el of element.querySelectorAll('[data-' + component.name + '-done]')) {
-        let self = Xt.get(el, component.name);
-        if (self) {
-          self.destroy();
-        }
+      for (let el of element.querySelectorAll('[data-' + component.name + '-inited]')) {
+        Xt.destroy(component.name, el);
       }
     }
     // btnMerge
@@ -182,13 +216,13 @@ Xt.observer = new MutationObserver(function (mutationsList) {
       // removed
       for (let removed of mutation.removedNodes) {
         if (removed.nodeType === 1 && !removed.classList.contains('xt-ignore')) {
-          Xt.destroy(removed);
+          Xt.destroyElement(removed);
         }
       }
       // added
       for (let added of mutation.addedNodes) {
         if (added.nodeType === 1 && !added.classList.contains('xt-ignore')) {
-          Xt.init(added);
+          Xt.initElement(added);
           Xt.initObserve(added);
         }
       }
@@ -203,7 +237,7 @@ Xt.observer = new MutationObserver(function (mutationsList) {
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', function () {
     setVh();
-    Xt.init();
+    Xt.initElement();
     Xt.initObserve();
     Xt.observer.observe(document.documentElement, {
       characterData: false,
@@ -215,7 +249,7 @@ if (document.readyState === 'loading') {
 } else {
   requestAnimationFrame(function () {
     setVh();
-    Xt.init();
+    Xt.initElement();
     Xt.initObserve();
     Xt.observer.observe(document.documentElement, {
       characterData: false,

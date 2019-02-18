@@ -35,13 +35,11 @@ class Smooth extends Core {
     self.detail = {};
     self.destroyElements = [self.object];
     // destroy if already done
-    if (self.object.getAttribute('data-' + self.componentName + '-done')) {
+    if (self.object.getAttribute('data-' + self.componentName + '-inited')) {
       self.destroy();
     }
     // setup
-    self.object.setAttribute('data-' + self.componentName + '-done', 'true');
-    // set component to element
-    Xt.set(self.object, self.componentName, self);
+    self.object.setAttribute('data-' + self.componentName + '-inited', 'true');
     // init
     self.initVars();
     self.initSetup();

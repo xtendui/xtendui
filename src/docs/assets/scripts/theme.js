@@ -72,7 +72,7 @@ for (let el of document.querySelectorAll('.site-aside-text > .btn:not(.different
 }
 
 for (let el of document.querySelectorAll('.site-aside-text')) {
-  new Xt.Toggle(el, {
+  Xt.init('xt-toggle', el, {
     "elements": ".site-aside-sub-container",
     "targets": ".site-aside-subsub",
     "on": "mouseenter",
@@ -256,7 +256,7 @@ const populateDemo = function (container, i) {
     }
   }
   // demo tabs
-  new Xt.Toggle(container, {
+  Xt.init('xt-toggle', container, {
     "elements": ".demo-tabs-left .btn",
     "targets": ".demo-item",
     "min": 1
@@ -266,7 +266,7 @@ const populateDemo = function (container, i) {
     // collapse code
     let demoId = 'demo-' + i + k;
     container.setAttribute('id', demoId);
-    new Xt.Toggle(container.querySelectorAll('.btn--show-code')[0], {
+    Xt.init('xt-toggle', container.querySelectorAll('.btn--show-code')[0], {
       "targets": "#" + demoId,
       "targetsInner": ".demo-code",
       "aria": false
@@ -304,7 +304,7 @@ const populateInline = function (item, id) {
     }
     */
   }
-  new Xt.Toggle(item, {
+  Xt.init('xt-toggle', item, {
     "elements": ".demo-code-tabs-left .btn",
     "targets": ".demo-code-body-item",
     "min": 1
@@ -360,7 +360,7 @@ function populateIframe(item, iframe) {
     populateSources(item, source, z);
     source.parentNode.removeChild(source);
   }
-  new Xt.Toggle(item, {
+  Xt.init('xt-toggle', item, {
     "elements": ".demo-code-tabs-left .btn",
     "targets": ".demo-code-body-item",
     "min": 1

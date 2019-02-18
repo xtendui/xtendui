@@ -25,13 +25,13 @@ description: Lorem ipsum
 <pre>
   <code class="js">
     // single
-    new Xt.Fade(document.querySelectorAll('.my-element')[0], {
+    Xt.init('xt-fade', document.querySelectorAll('.my-element')[0], {
       // option
     });
 
     // looping
     for (let el of document.querySelectorAll('.my-element')) {
-      new Xt.Fade(el, {
+      Xt.init('xt-fade', el, {
         // option
       });
     }
