@@ -15,6 +15,9 @@ let browserify = require('browserify');
 let cleanCSS = require('gulp-clean-css');
 let sourcemaps = require('gulp-sourcemaps');
 
+const version = JSON.parse(fs.readFileSync('package.json')).version;
+const banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
+
 // compile less
 
 gulp.task('less:demos', function () {
@@ -53,8 +56,6 @@ gulp.task('less:docs:watch', function (done) {
 });
 
 gulp.task('lessmin', function () {
-  const version = JSON.parse(fs.readFileSync('package.json')).version;
-  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
   return gulp.src(['dist/styles/*.less', '!dist/styles/_*.less'])
     .pipe(replace(/\/\*\![^\*]+\*\//, banner))
     .pipe(sourcemaps.init())
@@ -67,8 +68,6 @@ gulp.task('lessmin', function () {
     .pipe(gulp.dest('dist/styles/'));
 });
 gulp.task('less', gulp.series('lessmin', function () {
-  const version = JSON.parse(fs.readFileSync('package.json')).version;
-  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
   return gulp.src(['dist/styles/*.less', '!dist/styles/_*.less'])
     .pipe(replace(/\/\*\![^\*]+\*\//, banner))
     .pipe(sourcemaps.init())
@@ -128,8 +127,6 @@ gulp.task('js:docs:watch', function (done) {
 });
 
 gulp.task('js', function () {
-  const version = JSON.parse(fs.readFileSync('package.json')).version;
-  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
   let b = browserify({
     entries: 'src/scripts/xtend.js',
     standalone: 'Xt',
@@ -187,7 +184,6 @@ gulp.task('site:watch', function (done) {
 // version
 
 gulp.task('version', function () {
-  const version = JSON.parse(fs.readFileSync('package.json')).version;
   // replace _config.yml
   return gulp.src('_config.yml', {base: './'})
     .pipe(replace(/version: (.*)/, 'version: ' + version))
