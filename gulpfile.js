@@ -128,6 +128,8 @@ gulp.task('js:docs:watch', function (done) {
 });
 
 gulp.task('js', function () {
+  const version = JSON.parse(fs.readFileSync('package.json')).version;
+  let banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
   let b = browserify({
     entries: 'src/scripts/xtend.js',
     standalone: 'Xt',
@@ -135,6 +137,7 @@ gulp.task('js', function () {
   });
   return b.bundle()
     .pipe(source('xtend.js'))
+    .pipe(replace(/\/\*\![^\*]+\*\//, banner))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(terser({
@@ -185,16 +188,6 @@ gulp.task('site:watch', function (done) {
 
 gulp.task('version', function () {
   const version = JSON.parse(fs.readFileSync('package.json')).version;
-  let banner = "/*! " + "Xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE)" + " */";
-  log('package.json version: ' + version);
-  // replace less
-  gulp.src(['dist/styles/*.less',])
-    .pipe(replace(/\/\*\![^\*]+\*\//, banner))
-    .pipe(gulp.dest('dist/styles/'));
-  // replace js
-  gulp.src(['src/scripts/**/*.js'])
-    .pipe(replace(/\/\*\![^\*]+\*\//, banner))
-    .pipe(gulp.dest('src/scripts/'));
   // replace _config.yml
   return gulp.src('_config.yml', {base: './'})
     .pipe(replace(/version: (.*)/, 'version: ' + version))

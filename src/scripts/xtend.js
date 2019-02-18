@@ -1,7 +1,3 @@
-/*! Xtend v0.7.6 (https://getxtend.com/)
-@copyright (c) 2017 - 2019 Riccardo Caroli
-@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
-
 //////////////////////
 // import
 //////////////////////
@@ -21,7 +17,13 @@ import Smooth from './others/smooth';
 // constructor
 //////////////////////
 
-const Xt = {};
+const Xt = {
+
+/*! Xtend (https://getxtend.com/)
+@copyright (c) 2017 - 2019 Riccardo Caroli
+@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
+
+};
 
 //////////////////////
 // components
