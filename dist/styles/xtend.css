@@ -109,13 +109,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-ul,
-ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  cursor: default;
-}
 dl dt,
 .dl--block dt {
   clear: none;
@@ -1401,6 +1394,12 @@ div.btn {
 }
 .slides {
   overflow: hidden;
+}
+.slides_inner {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  cursor: default;
 }
 .slide {
   position: relative;
