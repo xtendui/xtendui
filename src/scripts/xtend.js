@@ -94,22 +94,8 @@ Xt.init = function (name, element, optionsJs = {}) {
 Xt.destroy = function (name, element, skipCall = false) {
   let self = Xt.get(name, element);
   if (self) {
-    // destroy
-    if (!skipCall) {
-      self.destroy();
-    }
-    // remove component
-    return Xt.remove(name, element);
+    self.destroy();
   }
-};
-
-/**
- * get component
- * @param {String} name Component name
- * @param {Node|HTMLElement|EventTarget|Window} element Component's element
- */
-Xt.get = function (name, element) {
-  return Xt.dataStorage.get(element, name);
 };
 
 /**
@@ -123,12 +109,12 @@ Xt.set = function (name, element, self) {
 };
 
 /**
- * remove datastorage
+ * get component
  * @param {String} name Component name
  * @param {Node|HTMLElement|EventTarget|Window} element Component's element
  */
-Xt.remove = function (name, element) {
-  return Xt.dataStorage.remove(element, name);
+Xt.get = function (name, element) {
+  return Xt.dataStorage.get(element, name);
 };
 
 //////////////////////

@@ -17,12 +17,13 @@ Xt.observe.push({
         "pause": ":scope > button"
       }
     });
-
-    let slider = self.object;
+    self.unmount = function() {
+      self = null;
+    };
 
     // auto start
 
-    slider.addEventListener('start.xt.auto', function (e) {
+    self.object.addEventListener('start.xt.auto', function (e) {
       // on elements
       let elements = self.elements.filter(x => x.classList.contains('active'));
       for (let element of elements) {
@@ -45,7 +46,7 @@ Xt.observe.push({
 
     // auto stop
 
-    slider.addEventListener('stop.xt.auto', function (e) {
+    self.object.addEventListener('stop.xt.auto', function (e) {
       // on elements
       let elements = self.elements.filter(x => x.classList.contains('active'));
       for (let element of elements) {
@@ -66,7 +67,7 @@ Xt.observe.push({
 
     // auto pause
 
-    slider.addEventListener('pause.xt.auto', function (e) {
+    self.object.addEventListener('pause.xt.auto', function (e) {
       // on elements
       let elements = self.elements.filter(x => x.classList.contains('active'));
       for (let element of elements) {

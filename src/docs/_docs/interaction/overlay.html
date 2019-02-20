@@ -59,17 +59,12 @@ description: Component to show modal elements inside the page.
 
 <pre>
   <code class="js">
-    // single
-    Xt.Overlay(document.querySelectorAll('.my-element')[0], {
+    let self = Xt.Overlay(document.querySelectorAll('.my-element')[0], {
       // option
     });
-
-    // looping
-    for (let el of document.querySelectorAll('.my-element')) {
-      Xt.Overlay(el, {
-        // option
-      });
-    }
+    self.unmount = function() {
+      self = null;
+    };
   </code>
 </pre>
 

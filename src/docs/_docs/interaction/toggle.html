@@ -35,17 +35,12 @@ description: Many possible behaviour, interactions and animations are possible w
 
 <pre>
   <code class="js">
-    // single
-    Xt.Toggle(document.querySelectorAll('.my-element')[0], {
+    let self = Xt.Toggle(document.querySelectorAll('.my-element')[0], {
       // option
     });
-
-    // looping
-    for (let el of document.querySelectorAll('.my-element')) {
-      Xt.Toggle(el, {
-        // option
-      });
-    }
+    self.unmount = function() {
+      self = null;
+    };
   </code>
 </pre>
 

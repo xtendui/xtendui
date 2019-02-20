@@ -17,14 +17,15 @@ Xt.observe.push({
         "pause": "[data-xt-pag]"
       }
     });
-
-    let slider = self.object;
+    self.unmount = function() {
+      self = null;
+    };
 
     // auto start
 
-    slider.addEventListener('start.xt.auto', function (e) {
+    self.object.addEventListener('start.xt.auto', function (e) {
       // on slider
-      let spinner = slider.querySelectorAll('.spinner svg:nth-child(2) circle');
+      let spinner = self.object.querySelectorAll('.spinner svg:nth-child(2) circle');
       let timeline = new TimelineMax();
       timeline.to(spinner, timeHide / 1000, {strokeDashoffset: 628, ease: easeInOut, autoRound: false});
       timeline.to(spinner, (self.options.auto.time / 1000) - (timeHide / 1000), {
@@ -54,7 +55,7 @@ Xt.observe.push({
 
     // auto stop
 
-    slider.addEventListener('stop.xt.auto', function (e) {
+    self.object.addEventListener('stop.xt.auto', function (e) {
       // on elements
       let elements = self.elements.filter(x => x.classList.contains('active'));
       for (let element of elements) {
@@ -75,9 +76,9 @@ Xt.observe.push({
 
     // auto pause
 
-    slider.addEventListener('pause.xt.auto', function (e) {
+    self.object.addEventListener('pause.xt.auto', function (e) {
       // on slider
-      let spinner = slider.querySelectorAll('.spinner svg:nth-child(2) circle');
+      let spinner = self.object.querySelectorAll('.spinner svg:nth-child(2) circle');
       TweenMax.to(spinner, timeHide / 1000, {strokeDashoffset: 628, ease: easeInOut, autoRound: false});
       // on elements
       let elements = self.elements.filter(x => x.classList.contains('active'));

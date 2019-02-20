@@ -36,6 +36,10 @@ class Core {
     let self = this;
     self.object = object || self.object;
     self.optionsJs = optionsJs || self.optionsJs;
+    // destroy if already done
+    if (self.object.getAttribute('data-' + self.componentName + '-inited')) {
+      self.destroy(true);
+    }
     // var
     self.classes = [];
     self.classesIn = [];
@@ -51,12 +55,6 @@ class Core {
     self.detail.inverseDirection = false;
     self.detail.autoPaused = false;
     self.destroyElements = [document, window, self.object];
-    // destroy if already done
-    if (self.object.getAttribute('data-' + self.componentName + '-inited')) {
-      self.destroy();
-    }
-    // setup
-    self.object.setAttribute('data-' + self.componentName + '-inited', 'true');
     // init
     self.initVars();
     self.initSetup();
@@ -66,6 +64,8 @@ class Core {
     self.eventCheck();
     self.initEvents();
     self.initAria();
+    // setup
+    self.object.setAttribute('data-' + self.componentName + '-inited', 'true');
   }
 
   /**
@@ -390,13 +390,14 @@ class Core {
     // event
     for (let el of self.elements) {
       // event on
-      let onHandler = Xt.dataStorage.put(el, options.on + '.' + self.namespace,
-        self.eventOnHandler.bind(self).bind(self, el));
       if (options.on) {
+        let onHandler = Xt.dataStorage.put(el, options.on + '.' + self.namespace,
+          self.eventOnHandler.bind(self).bind(self, el));
         let events = [...options.on.split(' ')];
         for (let event of events) {
           el.addEventListener(event, onHandler);
         }
+        el.addEventListener('on.xt', onHandler);
         // @FIX prevents click on touch until clicked two times
         if (events.includes('mouseenter') || events.includes('mousehover')) {
           let touchLinksStartHandler = Xt.dataStorage.put(el, 'touchend.touchfix' + '.' + self.namespace,
@@ -404,17 +405,16 @@ class Core {
           el.addEventListener('touchend', touchLinksStartHandler);
         }
       }
-      el.addEventListener('on.xt', onHandler);
       // event off
-      let offHandler = Xt.dataStorage.put(el, options.off + '.' + self.namespace,
-        self.eventOffHandler.bind(self).bind(self, el));
       if (options.off) {
+        let offHandler = Xt.dataStorage.put(el, options.off + '.' + self.namespace,
+          self.eventOffHandler.bind(self).bind(self, el));
         let events = [...options.off.split(' ')];
         for (let event of events) {
           el.addEventListener(event, offHandler);
         }
+        el.addEventListener('off.xt', offHandler);
       }
-      el.addEventListener('off.xt', offHandler);
     }
     // listener
     for (let tr of self.targets) {
@@ -534,7 +534,7 @@ class Core {
             self.eventImgLoaded.bind(self).bind(self, el, img));
           img.addEventListener('load', imgLoadHandler);
           // @FIX srcset: call only one time
-          img.addEventListener('load', function(e) {
+          img.addEventListener('load', function (e) {
             img.removeEventListener('load', imgLoadHandler);
           });
         } else {
@@ -554,7 +554,7 @@ class Core {
             self.eventImgLoaded.bind(self).bind(self, tr, img));
           img.addEventListener('load', imgLoadHandler);
           // @FIX srcset: call only one time
-          img.addEventListener('load', function(e) {
+          img.addEventListener('load', function (e) {
             img.removeEventListener('load', imgLoadHandler);
           });
         } else {
@@ -1367,7 +1367,7 @@ class Core {
       // paused
       self.detail.autoPaused = false;
       // clear
-      clearInterval(self.object.dataset.xtAutoStartInterval);
+      clearInterval(parseFloat(self.object.dataset.xtAutoStartInterval));
       // auto
       let time = options.auto.time;
       if (self.currentIndex !== null &&  // not when nothing activated
@@ -1399,7 +1399,7 @@ class Core {
     let options = self.options;
     if (options.auto && options.auto.time) {
       // clear
-      clearInterval(self.object.dataset.xtAutoStartInterval);
+      clearInterval(parseFloat(self.object.dataset.xtAutoStartInterval));
       // listener dispatch
       let detail = self.eDetailSet();
       self.object.dispatchEvent(new CustomEvent('stop.xt.auto', {detail: detail}));
@@ -1414,7 +1414,7 @@ class Core {
     let options = self.options;
     if (options.auto && options.auto.time) {
       // clear
-      clearInterval(self.object.dataset.xtAutoStartInterval);
+      clearInterval(parseFloat(self.object.dataset.xtAutoStartInterval));
       // listener dispatch
       let detail = self.eDetailSet();
       self.object.dispatchEvent(new CustomEvent('pause.xt.auto', {detail: detail}));
@@ -2462,10 +2462,10 @@ class Core {
   /**
    * destroy
    */
-  destroy() {
+  destroy(weak = false) {
     let self = this;
     // stop auto
-    clearInterval(self.object.dataset.xtAutoStartInterval);
+    clearInterval(parseFloat(self.object.dataset.xtAutoStartInterval));
     // remove events
     let elements = self.destroyElements;
     for (let element of elements) {
@@ -2477,6 +2477,8 @@ class Core {
             let events = key.split('.')[0].split(' ');
             for (let event of events) {
               element.removeEventListener(event, handler);
+              element.removeEventListener(event, handler, true);
+              element.removeEventListener(event, handler, {passive: true});
             }
           }
         }
@@ -2484,11 +2486,15 @@ class Core {
     }
     // remove setup
     self.object.removeAttribute('data-' + self.componentName + '-inited');
-    // remove component
-    Xt.destroy(self.componentName, self.object, true);
-    // destroy
-    delete this;
-    return null;
+    // not weak destroy
+    if (!weak) {
+      // unmount
+      if (self.unmount) {
+        self.unmount();
+      }
+      // destroy
+      delete this;
+    }
   }
 
 }

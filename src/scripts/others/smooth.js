@@ -30,14 +30,14 @@ class Smooth extends Core {
    */
   init(object = false, optionsJs = false) {
     let self = this;
+    // destroy if already done
+    if (self.object.getAttribute('data-' + self.componentName + '-inited')) {
+      self.destroy(true);
+    }
     // var
     self.subject = null;
     self.detail = {};
     self.destroyElements = [self.object];
-    // destroy if already done
-    if (self.object.getAttribute('data-' + self.componentName + '-inited')) {
-      self.destroy();
-    }
     // setup
     self.object.setAttribute('data-' + self.componentName + '-inited', 'true');
     // init

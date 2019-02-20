@@ -19,12 +19,13 @@ Xt.observe.push({
       "durationOff": time * 1000,
       "instant": false
     });
-
-    let dragger = self.dragger;
+    self.unmount = function() {
+      self = null;
+    };
 
     // drag
 
-    dragger.addEventListener('drag.xt.slider', function (e) {
+    self.dragger.addEventListener('drag.xt.slider', function (e) {
       let target = self.targets.filter(x => x.classList.contains('active'))[0];
       let ratio = Math.abs(self.detail.xStart - self.detail.xCurrent) / target.clientWidth;
       // direction
@@ -34,7 +35,7 @@ Xt.observe.push({
       }
       // mask
       TweenMax.set(target, {x: -self.detail.xPos + 'px', opacity: 1});
-      TweenMax.set(dragger, {x: self.detail.xPos});
+      TweenMax.set(self.dragger, {x: self.detail.xPos});
       // content
       let contents = target.querySelectorAll('.card_content > *');
       for (let content of contents) {
@@ -44,13 +45,13 @@ Xt.observe.push({
 
     // dragend
 
-    dragger.addEventListener('dragreset.xt.slider', function (e) {
+    self.dragger.addEventListener('dragreset.xt.slider', function (e) {
       let target = self.targets.filter(x => x.classList.contains('active'))[0];
       // mask
       TweenMax.set(target, {x: -self.detail.xPosOld + 'px'});
       TweenMax.to(target, timeMask, {x: 0, opacity: 1, ease: easeInOut});
-      TweenMax.set(dragger, {x: self.detail.xPosOld});
-      TweenMax.to(dragger, timeMask, {x: 0, ease: easeInOut});
+      TweenMax.set(self.dragger, {x: self.detail.xPosOld});
+      TweenMax.to(self.dragger, timeMask, {x: 0, ease: easeInOut});
       // content
       let contents = target.querySelectorAll('.card_content > *');
       for (let content of contents) {
@@ -77,8 +78,8 @@ Xt.observe.push({
           // mask
           TweenMax.set(target, {x: -xMax * direction});
           TweenMax.to(target, timeMask, {x: 0, opacity: 1, ease: easeInOut});
-          TweenMax.set(dragger, {x: xMax * direction});
-          TweenMax.to(dragger, timeMask, {x: 0, ease: easeInOut});
+          TweenMax.set(self.dragger, {x: xMax * direction});
+          TweenMax.to(self.dragger, timeMask, {x: 0, ease: easeInOut});
           // content
           let contents = target.querySelectorAll('.card_content > *');
           for (let content of contents) {
@@ -99,7 +100,7 @@ Xt.observe.push({
         }
         // mask
         TweenMax.to(target, timeMask, {x: xMax * direction, opacity: 0, ease: easeInOut});
-        TweenMax.to(dragger, timeMask, {x: -xMax * direction, ease: easeInOut});
+        TweenMax.to(self.dragger, timeMask, {x: -xMax * direction, ease: easeInOut});
         // content
         let contents = target.querySelectorAll('.card_content > *');
         for (let content of contents) {

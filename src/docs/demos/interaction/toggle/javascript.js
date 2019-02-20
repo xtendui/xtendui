@@ -16,16 +16,19 @@ Xt.observe.push({
 
     // toggle
 
-    let toggle = Xt.init('xt-toggle', main, {
+    let self = Xt.init('xt-toggle', main, {
       "durationOn": time * 1000,
       "durationOff": time * 1000,
       "delayOn": delay * 1000,
       "delayOff": delay * 1000
     });
+    self.unmount = function() {
+      self = null;
+    };
 
     // toggle items
 
-    for (let tr of toggle.targets) {
+    for (let tr of self.targets) {
 
       // on event
 
@@ -67,7 +70,7 @@ Xt.observe.push({
 
     // toggle
 
-    let toggle = Xt.init('xt-toggle', main, {
+    let self = Xt.init('xt-toggle', main, {
       "on": "mouseenter",
       "off": "mouseleave",
       "durationOn": time * 1000,
@@ -75,10 +78,13 @@ Xt.observe.push({
       "delayOn": delay * 1000,
       "delayOff": delay * 1000
     });
+    self.unmount = function() {
+      self = null;
+    };
 
     // toggle items
 
-    for (let tr of toggle.targets) {
+    for (let tr of self.targets) {
 
       // on event
 

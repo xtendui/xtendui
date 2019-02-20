@@ -24,17 +24,12 @@ description: Lorem ipsum
 
 <pre>
   <code class="js">
-    // single
-    Xt.Sticky(document.querySelectorAll('.my-element')[0], {
+    let self = Xt.Sticky(document.querySelectorAll('.my-element')[0], {
       // option
     });
-
-    // looping
-    for (let el of document.querySelectorAll('.my-element')) {
-      Xt.Sticky(el, {
-        // option
-      });
-    }
+    self.unmount = function() {
+      self = null;
+    };
   </code>
 </pre>
 
