@@ -17,29 +17,6 @@ body {
 }
 
 //////////////////////
-// ul ol
-//////////////////////
-
-// .list-reset()
-
-.list-reset() {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  cursor: default;
-}
-
-// selectors
-
-.list-default(@rules) {
-  &:not(.list):not(.group) {
-    &.list-default, .list-default & {
-      @rules();
-    }
-  }
-}
-
-//////////////////////
 // dl
 //////////////////////
 

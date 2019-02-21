@@ -903,10 +903,14 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
 }
 .list--base {
   display: flex;
+  cursor: default;
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
-  cursor: default;
+}
+.list--base > li {
+  margin: 0;
+  padding: 0;
 }
 .list--base > li {
   display: flex;
@@ -1022,12 +1026,16 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
 }
 .list {
   display: flex;
+  cursor: default;
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
-  cursor: default;
   flex-wrap: wrap;
   flex-direction: row;
+}
+.list > li {
+  margin: 0;
+  padding: 0;
 }
 .list > li {
   display: flex;
@@ -1478,10 +1486,14 @@ div.btn {
   overflow: hidden;
 }
 .slides_inner {
+  cursor: default;
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
-  cursor: default;
+}
+.slides_inner > li {
+  margin: 0;
+  padding: 0;
 }
 .slide {
   position: relative;
@@ -3355,56 +3367,40 @@ pre code {
   color: inherit !important;
   line-height: inherit !important;
 }
-ul:not(.list):not(.group).list-default,
-ol:not(.list):not(.group).list-default,
-.list-default ul:not(.list):not(.group),
-.list-default ol:not(.list):not(.group) {
+ul,
+ol {
   margin-bottom: 1rem;
   padding-left: 2rem;
 }
-ul:not(.list):not(.group).list-default:first-child,
-ol:not(.list):not(.group).list-default:first-child,
-.list-default ul:not(.list):not(.group):first-child,
-.list-default ol:not(.list):not(.group):first-child {
+ul:first-child,
+ol:first-child {
   margin-top: 0 !important;
 }
-ul:not(.list):not(.group).list-default:last-child,
-ol:not(.list):not(.group).list-default:last-child,
-.list-default ul:not(.list):not(.group):last-child,
-.list-default ol:not(.list):not(.group):last-child {
+ul:last-child,
+ol:last-child {
   margin-bottom: 0 !important;
 }
-ul:not(.list):not(.group).list-default > li,
-ol:not(.list):not(.group).list-default > li,
-.list-default ul:not(.list):not(.group) > li,
-.list-default ol:not(.list):not(.group) > li {
+ul > li,
+ol > li {
   margin-bottom: 1rem;
 }
-ul:not(.list):not(.group).list-default > ul,
-ol:not(.list):not(.group).list-default > ul,
-.list-default ul:not(.list):not(.group) > ul,
-.list-default ol:not(.list):not(.group) > ul,
-ul:not(.list):not(.group).list-default > ol,
-ol:not(.list):not(.group).list-default > ol,
-.list-default ul:not(.list):not(.group) > ol,
-.list-default ol:not(.list):not(.group) > ol {
+ul > ul,
+ol > ul,
+ul > ol,
+ol > ol {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-ul:not(.list):not(.group).list-default,
-.list-default ul:not(.list):not(.group) {
+ul {
   list-style: disc;
 }
-ul:not(.list):not(.group).list-default ul,
-.list-default ul:not(.list):not(.group) ul {
+ul ul {
   list-style: circle;
 }
-ol:not(.list):not(.group).list-default,
-.list-default ol:not(.list):not(.group) {
+ol {
   list-style-type: decimal;
 }
-ol:not(.list):not(.group).list-default ol,
-.list-default ol:not(.list):not(.group) ol {
+ol ol {
   list-style-type: lower-alpha;
 }
 dl {
@@ -5760,16 +5756,20 @@ img.btn--close > span::after {
 }
 .slider_pagination {
   display: flex;
+  cursor: default;
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
-  cursor: default;
   flex-wrap: wrap;
   flex-direction: row;
   margin: -0.5rem -0.5rem;
   align-items: center;
   justify-content: center;
   padding-top: 2rem;
+}
+.slider_pagination > li {
+  margin: 0;
+  padding: 0;
 }
 .slider_pagination > li {
   display: flex;
@@ -7538,14 +7538,19 @@ h2 .site-article-anchor {
 .demo .demo-tabs > *,
 .demo .demo-code-tabs > * {
   display: flex;
+  cursor: default;
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
-  cursor: default;
   flex-wrap: wrap;
   flex-direction: row;
   margin: -0.5rem -0.5rem;
   margin: -0.25rem -0.25rem;
+}
+.demo .demo-tabs > * > li,
+.demo .demo-code-tabs > * > li {
+  margin: 0;
+  padding: 0;
 }
 .demo .demo-tabs > * > li,
 .demo .demo-code-tabs > * > li {

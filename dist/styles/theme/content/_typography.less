@@ -191,34 +191,44 @@ pre {
 
 ul,
 ol {
-  .list-default({
-    .margin(y, layout) !important;
+  .margin(y, layout) !important;
+  .margin(bottom, small);
+  padding-left: 2rem;
+  > li {
     .margin(bottom, small);
-    padding-left: 2rem;
-    > li {
-      .margin(bottom, small);
-    }
-    > ul,
-    > ol {
-      .margin(y, small);
-    }
-  });
+  }
+  > ul,
+  > ol {
+    .margin(y, small);
+  }
 }
+
 ul {
-  .list-default({
-    list-style: disc;
-    ul {
-      list-style: circle;
-    }
-  });
+  list-style: disc;
+  ul {
+    list-style: circle;
+  }
 }
+
 ol {
-  .list-default({
-    list-style-type: decimal;
-    ol {
-      list-style-type: lower-alpha;
-    }
-  });
+  list-style-type: decimal;
+  ol {
+    list-style-type: lower-alpha;
+  }
+}
+
+// .list-reset
+// use this mixin to reset styles on xtend ul.list ul.slides_inner etc..
+
+.list-reset() {
+  cursor: default;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  > li {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 //////////////////////
