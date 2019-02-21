@@ -136,6 +136,13 @@ Xt.initElement = function (added = document.documentElement) {
         Xt.init(component.name, el);
       }
     }
+    // textareaAutosize
+    if (element.matches('textarea')) {
+      Xt.textareaAutosize.init(element);
+    }
+    for (let el of element.querySelectorAll('textarea')) {
+      Xt.textareaAutosize.init(el);
+    }
     // btnMerge
     if (element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
       Xt.btnMerge.init(element);
@@ -160,6 +167,13 @@ Xt.destroyElement = function (removed = document.documentElement) {
       for (let el of element.querySelectorAll('[data-' + component.name + '-inited]')) {
         Xt.destroy(component.name, el);
       }
+    }
+    // textareaAutosize
+    if (element.matches('textarea')) {
+      Xt.textareaAutosize.destroy(element);
+    }
+    for (let el of element.querySelectorAll('textarea')) {
+      Xt.textareaAutosize.destroy(el);
     }
     // btnMerge
     if (element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
@@ -522,6 +536,50 @@ Xt.focusLimit = {
         }
       }
     }
+  }
+
+};
+
+//////////////////////
+// textareaAutosize
+/////////////////////
+
+Xt.textareaAutosize = {
+
+  /**
+   * init
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
+   */
+  init: function (el) {
+    if (!el.dataset.xtTextareaAutosizeDone) {
+      el.dataset.xtTextareaAutosizeDone = 'true';
+      el.addEventListener('keydown', Xt.textareaAutosize.keychange.bind(el));
+      el.addEventListener('keyup', Xt.textareaAutosize.keychange.bind(el));
+    }
+  },
+
+  /**
+   * destroy
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
+   */
+  destroy: function (el) {
+    if (el.dataset.xtTextareaAutosizeDone) {
+      delete el.dataset.xtTextareaAutosizeDone;
+      el.removeEventListener('keydown', Xt.textareaAutosize.keychange.bind(el));
+      el.removeEventListener('keyup', Xt.textareaAutosize.keychange.bind(el));
+    }
+  },
+
+  /**
+   * event keychange
+   */
+  keychange: function () {
+    let el = this;
+    el.style.height = '5px';
+    el.style.height = (el.scrollHeight) + 'px';
+    requestAnimationFrame(function () {
+      el.style.height = (el.scrollHeight) + 'px';
+    });
   }
 
 };

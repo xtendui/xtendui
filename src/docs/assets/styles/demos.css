@@ -83,9 +83,6 @@ select {
 select::-ms-expand {
   display: none;
 }
-textarea {
-  resize: vertical;
-}
 html:not(.xt-focus) :focus {
   outline: 0;
 }
@@ -378,6 +375,10 @@ select.form-input {
   background-position: calc(100% -  24px / 2) 50%, calc(100% - ( 24px / 2 ) +  4px) 50%, 100% 0;
   background-size: 4px 4px, 4px 4px, 24px 100%;
   background-repeat: no-repeat;
+}
+textarea {
+  overflow: hidden;
+  resize: none;
 }
 .checkbox,
 .radio {
@@ -3859,9 +3860,6 @@ select.form-input--gray {
 }
 ::placeholder {
   color: #626c76;
-}
-textarea.form-input {
-  height: 100px !important;
 }
 .checkradio-label {
   margin: 0;
