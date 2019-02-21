@@ -59,9 +59,7 @@ class Core {
     self.initVars();
     self.initSetup();
     self.initScope();
-    self.initCurrents();
-    self.initCheck();
-    self.eventCheck();
+    self.initRestart();
     self.initEvents();
     self.initAria();
     // setup
@@ -207,6 +205,34 @@ class Core {
   }
 
   /**
+   * init restart
+   */
+  initRestart() {
+    let self = this;
+    // restart
+    if (self.initialCurrents.length) {
+      // elements
+      for (let el of self.elements) {
+        if (el.classList.contains(self.classes[0])) {
+          el.classList.remove(...self.classes);
+        }
+      }
+      // targets
+      for (let tr of self.targets) {
+        if (tr.classList.contains(self.classes[0])) {
+          tr.classList.remove(...self.classes);
+        }
+      }
+      // currents
+      for (let el of self.initialCurrents) {
+        el.classList.add(...self.classes);
+      }
+    }
+    // continue
+    self.initCurrents();
+  }
+
+  /**
    * init currents
    */
   initCurrents() {
@@ -260,13 +286,12 @@ class Core {
   }
 
   /**
-   * init reset activation
+   * init reset element activation
    * @param {Node|HTMLElement|EventTarget|Window} element Element to check and reset
    * @returns {Boolean} if element was activated
    */
   initReset(element) {
     let self = this;
-    let options = self.options;
     let found = false;
     // elements
     let group = element.getAttribute('data-xt-group');
@@ -369,17 +394,6 @@ class Core {
   }
 
   /**
-   * init check
-   */
-  initCheck() {
-    let self = this;
-    // resize
-    let checkHandler = Xt.dataStorage.put(window, 'resize.check' + '.' + self.namespace,
-      self.eventCheckHandler.bind(self).bind(self));
-    addEventListener('resize', checkHandler);
-  }
-
-  /**
    * init events
    */
   initEvents() {
@@ -387,6 +401,11 @@ class Core {
     let options = self.options;
     // toggle
     options.toggle = options.toggle !== undefined ? options.toggle : !options.off;
+    // status
+    let checkHandler = Xt.dataStorage.put(window, 'resize.check' + '.' + self.namespace,
+      self.eventStatusHandler.bind(self).bind(self));
+    addEventListener('resize', checkHandler);
+    self.eventStatusHandler();
     // event
     for (let el of self.elements) {
       // event on
@@ -570,18 +589,6 @@ class Core {
   //////////////////////
   // handler
   //////////////////////
-
-  /**
-   * check handler
-   * @param {Event} e
-   */
-  eventCheckHandler(e = null) {
-    let self = this;
-    // handler
-    Xt.eventDelay(e, self.object, function () {
-      self.eventCheck();
-    }, 'resize.xt.core');
-  }
 
   /**
    * element on handler
@@ -1168,20 +1175,6 @@ class Core {
   //////////////////////
   // event
   //////////////////////
-
-  /**
-   * resize
-   */
-  eventCheck() {
-    let self = this;
-    // check disabled
-    if (self.object instanceof HTMLElement // not on window
-      && getComputedStyle(self.object, '::after').getPropertyValue('content').replace(/['"]+/g, '') === 'xt-disable') {
-      self.disable();
-    } else if (self.disabled) {
-      self.enable();
-    }
-  }
 
   /**
    * element on
@@ -2436,6 +2429,32 @@ class Core {
   //////////////////////
 
   /**
+   * status handler
+   * @param {Event} e
+   */
+  eventStatusHandler(e = null) {
+    let self = this;
+    // handler
+    Xt.eventDelay(e, self.object, function () {
+      self.eventStatus();
+    }, 'resize.xt.core');
+  }
+
+  /**
+   * status
+   */
+  eventStatus() {
+    let self = this;
+    // check disabled
+    if (self.object instanceof HTMLElement // not on window
+      && getComputedStyle(self.object, '::after').getPropertyValue('content').replace(/['"]+/g, '') === 'xt-disable') {
+      self.disable();
+    } else if (self.disabled) {
+      self.enable();
+    }
+  }
+
+  /**
    * disable
    */
   disable() {
@@ -2467,18 +2486,19 @@ class Core {
     // stop auto
     clearInterval(parseFloat(self.object.dataset.xtAutoStartInterval));
     // remove events
-    let elements = self.destroyElements;
-    for (let element of elements) {
-      let storages = Xt.dataStorage.getAll(element);
-      if (storages) {
-        for (let [key, storage] of storages) {
-          if (key.endsWith(self.namespace)) {
-            let handler = Xt.dataStorage.get(element, key);
-            let events = key.split('.')[0].split(' ');
-            for (let event of events) {
-              element.removeEventListener(event, handler);
-              element.removeEventListener(event, handler, true);
-              element.removeEventListener(event, handler, {passive: true});
+    if (self.destroyElements) {
+      for (let element of self.destroyElements) {
+        let storages = Xt.dataStorage.getAll(element);
+        if (storages) {
+          for (let [key, storage] of storages) {
+            if (key.endsWith(self.namespace)) {
+              let handler = Xt.dataStorage.get(element, key);
+              let events = key.split('.')[0].split(' ');
+              for (let event of events) {
+                element.removeEventListener(event, handler);
+                element.removeEventListener(event, handler, true);
+                element.removeEventListener(event, handler, {passive: true});
+              }
             }
           }
         }
