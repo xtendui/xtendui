@@ -90,14 +90,7 @@ class Sticky extends Core {
       }
     }
     addEventListener('scroll.xt.sticky', stickyHandler);
-    // listener dispatch initial only 1 time next frame
-    if (!document.documentElement.dataset.xtStickyInitialDone) {
-      document.documentElement.dataset.xtStickyInitialDone = 'true';
-      requestAnimationFrame(function () {
-        dispatchEvent(new CustomEvent('scroll.xt.sticky'));
-        delete document.documentElement.dataset.xtStickyDone;
-      });
-    }
+    self.eventStickyHandler();
     // autoClose
     let autoCloseHandler = Xt.dataStorage.put(self.object, 'hide' + '.' + self.namespace,
       Xt.autoClose.bind(this, self.object));
@@ -112,7 +105,7 @@ class Sticky extends Core {
    * element on handler
    * @param {Event} e
    */
-  eventStickyHandler(e) {
+  eventStickyHandler(e = {}) {
     let self = this;
     // handler
     if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event

@@ -505,7 +505,7 @@ class Slider extends Core {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventImageLoaded(el, e = null) {
+  eventImageLoaded(el, e = {}) {
     super.eventImageLoaded(el, e);
     let self = this;
     // autoHeight
@@ -519,7 +519,7 @@ class Slider extends Core {
    * @param {Node|HTMLElement|EventTarget|Window} slide
    * @param {Event} e
    */
-  eventAutoHeight(slide, e = null) {
+  eventAutoHeight(slide, e = {}) {
     let self = this;
     // resize
     let slideHeight = slide.offsetHeight;

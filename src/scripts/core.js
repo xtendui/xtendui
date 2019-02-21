@@ -883,7 +883,7 @@ class Core {
    * @param {Node|HTMLElement|EventTarget|Window} img
    * @param {Event} e
    */
-  eventImgLoaded(el, img = null, e = null) {
+  eventImgLoaded(el, img = null, e = {}) {
     let self = this;
     // listener dispatch
     let detail = self.eDetailSet(e);
@@ -1165,7 +1165,7 @@ class Core {
    * set e detail
    * @param {Event} e
    */
-  eDetailSet(e = null) {
+  eDetailSet(e = {}) {
     let detail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
     detail.skip = true;
     detail.self = this;
@@ -1183,7 +1183,7 @@ class Core {
    * @param {Event} e
    * @returns {Boolean} If activated
    */
-  eventOn(element, force = false, e = null) {
+  eventOn(element, force = false, e = {}) {
     let self = this;
     let options = self.options;
     // disabled
@@ -1267,7 +1267,7 @@ class Core {
    * @param {Event} e
    * @returns {Boolean} If deactivated
    */
-  eventOff(element, force = false, e = null) {
+  eventOff(element, force = false, e = {}) {
     let self = this;
     let options = self.options;
     // disabled
@@ -2432,7 +2432,7 @@ class Core {
    * status handler
    * @param {Event} e
    */
-  eventStatusHandler(e = null) {
+  eventStatusHandler(e = {}) {
     let self = this;
     // handler
     Xt.eventDelay(e, self.object, function () {

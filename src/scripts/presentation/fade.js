@@ -41,14 +41,7 @@ class Fade extends Core {
       }
     }
     addEventListener('scroll.xt.fade', fadeHandler);
-    // listener dispatch initial only 1 time next frame
-    if (!document.documentElement.dataset.xtFadeInitialDone) {
-      document.documentElement.dataset.xtFadeInitialDone = 'true';
-      requestAnimationFrame(function () {
-        dispatchEvent(new CustomEvent('scroll.xt.fade'));
-        delete document.documentElement.dataset.xtFadeDone;
-      });
-    }
+    self.eventFadeHandler();
   }
 
   //////////////////////
@@ -59,7 +52,7 @@ class Fade extends Core {
    * element on handler
    * @param {Event} e
    */
-  eventFadeHandler(e) {
+  eventFadeHandler(e = {}) {
     let self = this;
     // handler
     if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event

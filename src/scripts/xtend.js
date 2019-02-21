@@ -886,7 +886,7 @@ height: 100vh;
 height: calc(var(--vh, 1vh) * 100);
 */
 
-function setVh(e = null) {
+function setVh(e = {}) {
   e = e ? e : {type: 'resize'};
   Xt.eventDelay(e, document.documentElement, function () {
     Xt.vh = window.innerHeight * 0.01;
