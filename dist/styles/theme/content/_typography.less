@@ -8,13 +8,27 @@
 }
 
 //////////////////////
+// spacing
+//////////////////////
+
+.spacing--medium {
+  .margin(top, medium) !important;
+  .margin(bottom, small) !important;
+  .margin(y, layout) !important;
+}
+
+.spacing--big {
+  .margin(top, big) !important;
+  .margin(bottom, medium) !important;
+  .margin(y, layout) !important;
+}
+
+//////////////////////
 // headers
 //////////////////////
 
 h1, .h1 {
-  .margin(y, layout) !important;
-  .margin(top, big);
-  .margin(bottom, medium);
+  .spacing--big();
   .font-sans--semibold();
   font-size: 4.5rem;
   line-height: 1;
@@ -26,9 +40,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  .margin(y, layout) !important;
-  .margin(top, big);
-  .margin(bottom, medium);
+  .spacing--big();
   .font-sans--semibold();
   font-size: 3.5rem;
   line-height: 1.2;
@@ -37,9 +49,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  .margin(y, layout) !important;
-  .margin(top, big);
-  .margin(bottom, medium);
+  .spacing--big();
   .font-sans--semibold();
   font-size: 2.5rem;
   line-height: 1.2;
@@ -48,9 +58,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  .margin(y, layout) !important;
-  .margin(top, medium);
-  .margin(bottom, small);
+  .spacing--medium();
   .font-sans--semibold();
   font-size: 2rem;
   line-height: 1.2;
@@ -59,9 +67,7 @@ h4, .h4 {
 }
 
 h5, .h5 {
-  .margin(y, layout) !important;
-  .margin(top, medium);
-  .margin(bottom, small);
+  .spacing--medium();
   .font-sans--semibold();
   font-size: 1.7rem;
   line-height: 1.2;
@@ -70,9 +76,7 @@ h5, .h5 {
 }
 
 h6, .h6 {
-  .margin(y, layout) !important;
-  .margin(top, medium);
-  .margin(bottom, small);
+  .spacing--medium();
   font-size: 1.3rem;
   line-height: 1.4;
   letter-spacing: .05em;
@@ -84,17 +88,13 @@ h6, .h6 {
 // special
 
 .header--line {
-  .margin(y, layout) !important;
-  .margin(top, big);
-  .margin(bottom, medium);
+  .spacing--big();
   .padding(bottom, small);
   border-bottom: 1px solid @gray--300;
 }
 
 .header--block {
-  .margin(y, layout) !important;
-  .margin(top, big);
-  .margin(bottom, medium);
+  .spacing--big();
   .padding(y, small);
   .padding(x, medium);
   background: @gray--250;

@@ -3015,10 +3015,30 @@ body {
   font-size: 1.4rem;
   line-height: 1.6;
 }
+.spacing--medium {
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+.spacing--medium:first-child {
+  margin-top: 0 !important;
+}
+.spacing--medium:last-child {
+  margin-bottom: 0 !important;
+}
+.spacing--big {
+  margin-top: 4rem !important;
+  margin-bottom: 2rem !important;
+}
+.spacing--big:first-child {
+  margin-top: 0 !important;
+}
+.spacing--big:last-child {
+  margin-bottom: 0 !important;
+}
 h1,
 .h1 {
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-top: 4rem !important;
+  margin-bottom: 2rem !important;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -3043,8 +3063,8 @@ h1:last-child,
 }
 h2,
 .h2 {
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-top: 4rem !important;
+  margin-bottom: 2rem !important;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -3063,8 +3083,8 @@ h2:last-child,
 }
 h3,
 .h3 {
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-top: 4rem !important;
+  margin-bottom: 2rem !important;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -3083,8 +3103,8 @@ h3:last-child,
 }
 h4,
 .h4 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -3103,8 +3123,8 @@ h4:last-child,
 }
 h5,
 .h5 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -3123,8 +3143,8 @@ h5:last-child,
 }
 h6,
 .h6 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
   font-size: 1.3rem;
   line-height: 1.4;
   letter-spacing: 0.05em;
@@ -3139,8 +3159,8 @@ h6:last-child,
   margin-bottom: 0 !important;
 }
 .header--line {
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-top: 4rem !important;
+  margin-bottom: 2rem !important;
   padding-bottom: 1rem;
   border-bottom: 1px solid #D9D9D5;
 }
@@ -3151,8 +3171,8 @@ h6:last-child,
   margin-bottom: 0 !important;
 }
 .header--block {
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-top: 4rem !important;
+  margin-bottom: 2rem !important;
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 2rem;
@@ -3434,8 +3454,8 @@ img.icon--giant {
 }
 .table th {
   padding: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
   font-size: 1.3rem;
   line-height: 1.4;
   letter-spacing: 0.05em;
@@ -3583,8 +3603,8 @@ legend {
   display: inline-block;
   vertical-align: top;
   width: 100%;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -3592,8 +3612,8 @@ legend {
   line-height: 1.2;
   letter-spacing: 0;
   text-transform: none;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-top: 4rem !important;
+  margin-bottom: 2rem !important;
   padding-bottom: 1rem;
   border-bottom: 1px solid #D9D9D5;
 }
