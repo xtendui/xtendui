@@ -222,7 +222,6 @@ Xt.observer = new MutationObserver(function (mutationsList) {
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', function () {
-    setVh();
     Xt.initElement();
     Xt.initObserve();
     Xt.observer.observe(document.documentElement, {
@@ -234,7 +233,6 @@ if (document.readyState === 'loading') {
   });
 } else {
   requestAnimationFrame(function () {
-    setVh();
     Xt.initElement();
     Xt.initObserve();
     Xt.observer.observe(document.documentElement, {
@@ -878,22 +876,6 @@ try {
 //////////////////////
 // root utils
 //////////////////////
-
-// https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
-
-/* USAGE:
-height: 100vh;
-height: calc(var(--vh, 1vh) * 100);
-*/
-
-function setVh(e = {}) {
-  e = e ? e : {type: 'resize'};
-  Xt.eventDelay(e, document.documentElement, function () {
-    Xt.vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', Xt.vh + 'px');
-  }, 'vh.xt');
-}
-addEventListener('resize', setVh);
 
 // pass focus and blur window events to iframes
 
