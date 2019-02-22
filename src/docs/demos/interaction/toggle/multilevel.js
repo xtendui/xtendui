@@ -10,7 +10,7 @@ Xt.observe.push({
     let btns = main.querySelectorAll('.multilevel-reset');
     for (let btn of btns) {
       btn.addEventListener('click', function (e) {
-        if (!e.detail || !e.detail.skipToggle) {
+        if (!e || !e.detail || !e.detail.skipToggle) {
           btnReset.dispatchEvent(new CustomEvent('on.xt', {detail: {skipToggle: true}}));
         }
       });

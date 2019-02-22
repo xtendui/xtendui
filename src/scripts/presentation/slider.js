@@ -489,7 +489,6 @@ class Slider extends Core {
    * @param {Event} e
    */
   eventSlideOff(dragger, e) {
-    let self = this;
     let slide = e.target;
     // disable links
     slide.classList.add('links--none');
@@ -505,8 +504,8 @@ class Slider extends Core {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventImageLoaded(el, e = {}) {
-    super.eventImageLoaded(el, e);
+  eventImgLoaded(el, e = null) {
+    super.eventImgLoaded(el, e);
     let self = this;
     // autoHeight
     if (self.autoHeight) {
@@ -519,7 +518,7 @@ class Slider extends Core {
    * @param {Node|HTMLElement|EventTarget|Window} slide
    * @param {Event} e
    */
-  eventAutoHeight(slide, e = {}) {
+  eventAutoHeight(slide, e = null) {
     let self = this;
     // resize
     let slideHeight = slide.offsetHeight;

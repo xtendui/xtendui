@@ -145,7 +145,7 @@ class Ajax extends Core {
    * @param {Event} e
    */
   eventOnHandler(element, e) {
-    if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
+    if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
       // not when opening in new tab
       if (e.metaKey || e.ctrlKey) {
         return false;

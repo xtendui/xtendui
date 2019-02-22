@@ -52,10 +52,10 @@ class Fade extends Core {
    * element on handler
    * @param {Event} e
    */
-  eventFadeHandler(e = {}) {
+  eventFadeHandler(e = null) {
     let self = this;
     // handler
-    if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
+    if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
       Xt.eventDelay(e, self.object, function () {
         self.eventFade();
       }, 'resize.xt.fade');

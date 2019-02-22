@@ -599,7 +599,7 @@ class Core {
     let self = this;
     let options = self.options;
     // handler
-    if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
+    if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
       // event block
       if (options.onBlock) {
         let now = new Date().getTime();
@@ -630,7 +630,7 @@ class Core {
     let self = this;
     let options = self.options;
     // handler
-    if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
+    if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
       // event block
       if (options.offBlock) {
         let now = new Date().getTime();
@@ -716,7 +716,7 @@ class Core {
    */
   eventAutoPauseHandler(e) {
     let self = this;
-    if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
+    if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
       if (!self.detail.autoPaused) {
         self.eventAutoPause();
         // paused
@@ -731,7 +731,7 @@ class Core {
    */
   eventAutoResumeHandler(e) {
     let self = this;
-    if (!e.detail || !e.detail.skip) { // needed because we trigger .xt event
+    if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
       if (self.detail.autoPaused) {
         self.eventAutoStart();
         // paused
@@ -883,7 +883,7 @@ class Core {
    * @param {Node|HTMLElement|EventTarget|Window} img
    * @param {Event} e
    */
-  eventImgLoaded(el, img = null, e = {}) {
+  eventImgLoaded(el, img = null, e = null) {
     let self = this;
     // listener dispatch
     let detail = self.eDetailSet(e);
@@ -1165,7 +1165,7 @@ class Core {
    * set e detail
    * @param {Event} e
    */
-  eDetailSet(e = {}) {
+  eDetailSet(e = null) {
     let detail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
     detail.skip = true;
     detail.self = this;
@@ -1183,7 +1183,7 @@ class Core {
    * @param {Event} e
    * @returns {Boolean} If activated
    */
-  eventOn(element, force = false, e = {}) {
+  eventOn(element, force = false, e = null) {
     let self = this;
     let options = self.options;
     // disabled
@@ -1267,7 +1267,7 @@ class Core {
    * @param {Event} e
    * @returns {Boolean} If deactivated
    */
-  eventOff(element, force = false, e = {}) {
+  eventOff(element, force = false, e = null) {
     let self = this;
     let options = self.options;
     // disabled
@@ -2444,7 +2444,7 @@ class Core {
    * status handler
    * @param {Event} e
    */
-  eventStatusHandler(e = {}) {
+  eventStatusHandler(e = null) {
     let self = this;
     // handler
     Xt.eventDelay(e, self.object, function () {
