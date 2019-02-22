@@ -111,7 +111,8 @@ class Smooth extends Core {
     // subject
     self.subject = null;
     for (let el of e.composedPath()) {
-      if (getComputedStyle(el).overflowY === 'scroll') {
+      if (el === document.scrollingElement // always when scrollingElement
+        || getComputedStyle(el).overflowY === 'scroll') {
         self.subject = el;
         break;
       }
