@@ -1356,6 +1356,10 @@ class Core {
   eventAutoStart() {
     let self = this;
     let options = self.options;
+    // disabled
+    if (self.disabled && !self.initial) {
+      return false;
+    }
     if (options.auto && options.auto.time) {
       // paused
       self.detail.autoPaused = false;
@@ -1421,6 +1425,10 @@ class Core {
    */
   eventJump(el, e) {
     let self = this;
+    // disabled
+    if (self.disabled && !self.initial) {
+      return false;
+    }
     // check disabled
     if (el.classList.contains('jumps--none') || Xt.parents(el, '.jumps--none').length) {
       return false;
@@ -1439,6 +1447,10 @@ class Core {
    */
   eventNav(nav, e) {
     let self = this;
+    // disabled
+    if (self.disabled && !self.initial) {
+      return false;
+    }
     // nav
     let index = 0;
     if (self.currentIndex !== null) {
