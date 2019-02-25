@@ -179,6 +179,12 @@ class Slider extends Core {
       } else {
         dragger.classList.remove('grab');
       }
+      // wheelstart.xt
+      dragger.addEventListener('wheelstart.xt', self.logicDragstart.bind(self).bind(self, dragger));
+      // wheel.xt
+      dragger.addEventListener('wheel.xt', self.logicDrag.bind(self).bind(self, dragger));
+      // wheelend.xt
+      dragger.addEventListener('wheelend.xt', self.logicDragend.bind(self).bind(self, dragger));
     }
     // resize
     let resizeHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace,
@@ -306,8 +312,6 @@ class Slider extends Core {
     // handler
     if (!e.button || e.button !== 2) { // not right click or it gets stuck
       if (self.initial || !self.checkAnim(Xt.arrSingle(dragger))) {
-        // save event
-        self.detail.eDragstart = e;
         // logic
         let eventLimit = self.object.querySelectorAll('.event-limit');
         if (eventLimit.length) {
@@ -317,8 +321,6 @@ class Slider extends Core {
         } else {
           self.eventDragstart(dragger, e);
         }
-        // auto
-        self.eventAutoPause();
         // event off
         let dragendHandler = Xt.dataStorage.put(dragger, 'mouseup touchend' + '.' + self.namespace,
           self.eventDragendHandler.bind(self).bind(self, dragger));
@@ -346,8 +348,6 @@ class Slider extends Core {
     } else {
       self.eventDragend(dragger, e);
     }
-    // auto
-    self.eventAutoStart();
     // event off
     let dragendHandler = Xt.dataStorage.get(dragger, 'mouseup touchend' + '.' + self.namespace);
     let events = ['mouseup', 'touchend'];
@@ -363,8 +363,6 @@ class Slider extends Core {
    */
   eventDragstart(dragger, e) {
     let self = this;
-    // save event
-    self.detail.eCurrent = e;
     // event move
     let dragHandler = Xt.dataStorage.put(dragger, 'mousemove touchmove' + '.' + self.namespace,
       self.eventDragHandler.bind(self).bind(self, dragger));
@@ -383,8 +381,6 @@ class Slider extends Core {
    */
   eventDragend(dragger, e) {
     let self = this;
-    // save event
-    self.detail.eCurrent = e;
     // event move
     let dragHandler = Xt.dataStorage.get(dragger, 'mousemove touchmove' + '.' + self.namespace);
     let events = ['mousemove', 'touchmove'];
@@ -405,8 +401,6 @@ class Slider extends Core {
     // disable links
     dragger.classList.add('links--none');
     dragger.classList.add('jumps--none');
-    // save event
-    self.detail.eCurrent = e;
     // logic
     self.logicDrag(dragger, e);
   }
@@ -502,10 +496,11 @@ class Slider extends Core {
   /**
    * imageLoaded
    * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Node|HTMLElement|EventTarget|Window} img
    * @param {Event} e
    */
-  eventImgLoaded(el, e = null) {
-    super.eventImgLoaded(el, e);
+  eventImgLoadedHandler(el, img = null, e = null) {
+    super.eventImgLoadedHandler(el, img, e);
     let self = this;
     // autoHeight
     if (self.autoHeight) {
@@ -547,6 +542,10 @@ class Slider extends Core {
     if (self.disabled && !self.initial) {
       return false;
     }
+    // save event
+    self.detail.eDragstart = e;
+    // auto
+    self.eventAutoPause();
     // prevent dragging animation
     self.dragger.classList.add('duration-none');
     // logic
@@ -568,6 +567,10 @@ class Slider extends Core {
     if (self.disabled && !self.initial) {
       return false;
     }
+    // save event
+    self.detail.eCurrent = e;
+    // auto
+    self.eventAutoStart();
     // disable drag
     requestAnimationFrame(function () { // needed for touch links triggering before logicDragend
       dragger.classList.add('pointer-events--none');
@@ -619,6 +622,8 @@ class Slider extends Core {
     if (self.disabled && !self.initial) {
       return false;
     }
+    // save event
+    self.detail.eCurrent = e;
     // calculate
     let pos = self.detail.xPosReal;
     let xPosCurrent = self.detail.xPosCurrent || 0;
@@ -640,15 +645,29 @@ class Slider extends Core {
       }
       // on friction
       pos = pos + self.detail.xVelocity;
-      self.detail.xStart = self.detail.eDragstart.clientX || self.detail.eDragstart.touches[0].clientX;
+      if (self.detail.eDragstart.detail.wheelX !== undefined) {
+        self.detail.xStart = self.detail.eDragstart.detail.wheelX;
+      } else if (self.detail.eDragstart.clientX !== undefined) {
+        self.detail.xStart = self.detail.eDragstart.clientX;
+      } else if (self.detail.eDragstart.touches !== undefined) {
+        self.detail.xStart = self.detail.eDragstart.touches[0].clientX;
+      }
       self.detail.xCurrent = pos + self.detail.xStart - xPosCurrent;
     } else {
       // momentum
       self.detail.dragDate = new Date();
       // on normal drag
       let xPosOld = pos || 0;
-      self.detail.xStart = self.detail.eDragstart.clientX || self.detail.eDragstart.touches[0].clientX;
-      self.detail.xCurrent = self.detail.eCurrent.clientX || self.detail.eCurrent.touches[0].clientX;
+      if (self.detail.eDragstart.detail.wheelX !== undefined) {
+        self.detail.xStart = self.detail.eDragstart.detail.wheelX;
+        self.detail.xCurrent = self.detail.eCurrent.detail.wheelX;
+      } else if (self.detail.eDragstart.clientX !== undefined) {
+        self.detail.xStart = self.detail.eDragstart.clientX;
+        self.detail.xCurrent = self.detail.eCurrent.clientX;
+      } else if (self.detail.eDragstart.touches !== undefined) {
+        self.detail.xStart = self.detail.eDragstart.touches[0].clientX;
+        self.detail.xCurrent = self.detail.eCurrent.touches[0].clientX;
+      }
       pos = xPosCurrent + (self.detail.xCurrent - self.detail.xStart) * options.drag.factor;
       // keep some velocity (median value of previous frame and not current frame)
       self.detail.xVelocity = (self.detail.xVelocity + self.detail.xVelocityNext) / 2;
@@ -673,12 +692,10 @@ class Slider extends Core {
       if (pos > min) {
         self.detail.xVelocity = 0;
         let overflow = pos - min;
-        //pos = min + Math.pow(overflow, options.drag.overflow);
         pos = min + fncOverflow(overflow);
       } else if (pos < max) {
         self.detail.xVelocity = 0;
         let overflow = pos - max;
-        //pos = max - Math.pow(-overflow, options.drag.overflow);
         pos = max - fncOverflow(-overflow);
       }
     }
@@ -786,6 +803,13 @@ Slider.optionsDefault = {
   "instant": true,
   "jump": true,
   "navigation": "[data-xt-nav]",
+  "wheel": {
+    "selector": false,
+    "transform": true,
+    "horizontal": true,
+    "limit": .5,
+    "friction": "return delta / 9"
+  },
   "keyboard": {
     "selector": ".slides"
   },

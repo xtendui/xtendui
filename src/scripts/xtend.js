@@ -19,9 +19,9 @@ import Smooth from './others/smooth';
 
 const Xt = {
 
-/*! Xtend (https://getxtend.com/)
-@copyright (c) 2017 - 2019 Riccardo Caroli
-@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
+  /*! Xtend (https://getxtend.com/)
+  @copyright (c) 2017 - 2019 Riccardo Caroli
+  @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
 };
 
@@ -662,7 +662,234 @@ Xt.btnMerge = {
 };
 
 //////////////////////
-// utils
+// xt wheel util
+//////////////////////
+
+/**
+ * event scroll smooth for Xt
+ * @param {Object} self Xt object
+ * @param {Node|HTMLElement|EventTarget|Window} el
+ * @param {Event} e
+ */
+
+Xt.eventScrollSmooth = function (self, el, e) {
+  /*
+  let options = self.options;
+  // vars
+  let scrollCurrent;
+  if (!options.wheel.transform) {
+    if (options.wheel.horizontal) {
+      scrollCurrent = el.scrollLeft;
+    } else {
+      scrollCurrent = el.scrollTop;
+    }
+  } else {
+    if (options.wheel.horizontal) {
+      scrollCurrent = -Xt.getTranslate(el)[0];
+    } else {
+      scrollCurrent = -Xt.getTranslate(el)[1];
+    }
+  }
+  if (self.detail.wheelScrollInitial !== scrollCurrent) {
+    // after finished scrolling
+    clearTimeout(parseFloat(el.dataset.xtSmoothScrollTimeout));
+    el.dataset.xtSmoothScrollTimeout = setTimeout(function () {
+      // scroll
+      if (!self.detail.wheelMoving) {
+        // save scroll position for eventWheel
+        self.detail.wheelScroll = self.detail.wheelScrollInitial = scrollCurrent;
+      }
+      // dispatch
+      el.dispatchEvent(new CustomEvent('scroll.xt', {detail: self.eDetail}));
+    }, 50).toString();
+  }
+  */
+};
+
+/**
+ * event wheel smooth for Xt
+ * @param {Object} self Xt object
+ * @param {Node|HTMLElement|EventTarget|Window} el
+ * @param {Event} e
+ */
+
+Xt.eventWheelSmooth = function (self, el, e) {
+  let options = self.options;
+  // wheelScrollElement
+  if (self.detail.wheelScrollElement) {
+    let elFinal;
+    for (let composed of e.composedPath()) {
+      if (composed === document.scrollingElement // always when scrollingElement
+        || getComputedStyle(composed).overflowY === 'scroll') {
+        elFinal = composed;
+        break;
+      }
+    }
+    if (!elFinal) {
+      return false;
+    } else if (elFinal === document.body) {
+      elFinal = self.object; // document.scrollingElement
+    }
+    el = elFinal;
+  }
+  // prevent default scrolling
+  e.preventDefault();
+  // save position
+  if (!options.wheel.transform) {
+    if (options.wheel.horizontal) {
+      self.detail.wheelScroll = self.detail.wheelScrollInitial = el.scrollLeft;
+    } else {
+      self.detail.wheelScroll = self.detail.wheelScrollInitial = el.scrollTop;
+    }
+  } else {
+    if (options.wheel.horizontal) {
+      self.detail.wheelScroll = self.detail.wheelScrollInitial = -Xt.getTranslate(el)[0];
+    } else {
+      self.detail.wheelScroll = self.detail.wheelScrollInitial = -Xt.getTranslate(el)[1];
+    }
+  }
+  // scroll limit
+  let min = self.detail.wheelMin || 0;
+  let max = self.detail.wheelMax;
+  if (!self.detail.wheelMax) {
+    if (!options.wheel.transform) {
+      if (options.wheel.horizontal) {
+        max = el.scrollWidth - el.offsetWidth - 1;
+      } else {
+        max = el.scrollHeight - el.offsetHeight - 1;
+      }
+    } else {
+      let full = 0;
+      if (options.wheel.horizontal) {
+        for (let child of el.children) {
+          full += child.offsetWidth;
+        }
+        max = full - el.offsetWidth - 1;
+      } else {
+        for (let child of el.children) {
+          full += child.offsetHeight;
+        }
+        max = full - el.offsetHeight - 1;
+      }
+    }
+  }
+  // moving
+  if (!self.detail.wheelMoving) {
+    // wheelstart.xt
+    el.dispatchEvent(new CustomEvent('wheelstart.xt', {detail: {skip: true, wheelX: -self.detail.wheelScroll}}));
+  }
+  self.detail.wheelMoving = false;
+  // friction
+  if (!self.detail.wheelMoving) {
+    // delta
+    let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY;
+    if (delta === 0) {
+      return;
+    }
+    if (e.deltaMode === 1) {
+      // deltaMode 1: by lines
+      delta *= 30;
+    } else if (e.deltaMode === 2) {
+      // deltaMode 2: by pages
+      if (options.wheel.horizontal) {
+        delta *= el.offsetWidth;
+      } else {
+        delta *= el.offsetHeight;
+      }
+    }
+    // friction
+    cancelAnimationFrame(parseFloat(el.dataset.smoothFrame));
+    el.dataset.smoothFrame = requestAnimationFrame(function () {
+      Xt.eventFrictionSmooth(self, el, e, min, max, delta);
+    }).toString();
+  }
+};
+
+/**
+ * event friction smooth for Xt
+ * @param {Object} self Xt object
+ * @param {Node|HTMLElement|EventTarget|Window} el
+ * @param {Event} e
+ * @param {Number} min Minimum value
+ * @param {Number} max Maximum value
+ * @param {Number|Boolean} deltaInit Initial trigger delta
+ */
+
+Xt.eventFrictionSmooth = function (self, el, e, min, max, deltaInit) {
+  let options = self.options;
+  // moving
+  self.detail.wheelMoving = true;
+  // vars
+  let scrollCurrent;
+  if (deltaInit) {
+    scrollCurrent = self.detail.wheelScroll;
+    self.detail.wheelScroll -= deltaInit;
+    if (!options.wheel.transform) {
+      self.detail.wheelScroll = Math.max(min, Math.min(self.detail.wheelScroll, max));
+    }
+  } else {
+    if (!options.wheel.transform) {
+      if (options.wheel.horizontal) {
+        scrollCurrent = el.scrollLeft;
+      } else {
+        scrollCurrent = el.scrollTop;
+      }
+    } else {
+      if (options.wheel.horizontal) {
+        scrollCurrent = -Xt.getTranslate(el)[0];
+      } else {
+        scrollCurrent = -Xt.getTranslate(el)[1];
+      }
+    }
+  }
+  let delta = self.detail.wheelScroll - scrollCurrent;
+  let sign = Math.sign(delta);
+  // momentum
+  let fncFriction = options.wheel.friction;
+  if (typeof fncFriction === 'string') {
+    fncFriction = new Function('delta', fncFriction);
+  }
+  delta = fncFriction(Math.abs(delta)) * sign;
+  let scrollFinal = scrollCurrent + delta;
+  // fix math on direction to stop loop
+  if (delta < 0) {
+    scrollFinal = Math.floor(scrollFinal);
+  } else if (delta > 0) {
+    scrollFinal = Math.ceil(scrollFinal);
+  }
+  // set
+  if (!options.wheel.transform) {
+    if (options.wheel.horizontal) {
+      el.scrollLeft = scrollFinal;
+    } else {
+      el.scrollTop = scrollFinal;
+    }
+  } else {
+    if (options.wheel.horizontal) {
+      el.style.transform = 'translateX(' + (-scrollFinal) + 'px)';
+    } else {
+      el.style.transform = 'translateY(' + (-scrollFinal) + 'px)';
+    }
+  }
+  // loop
+  if (scrollFinal > min && scrollFinal < max && // scroll limit
+    Math.abs(self.detail.wheelScroll - scrollCurrent) >= options.wheel.limit) { // friction
+    cancelAnimationFrame(parseFloat(el.dataset.smoothFrame));
+    el.dataset.smoothFrame = requestAnimationFrame(function () {
+      Xt.eventFrictionSmooth(self, el, e, min, max, false);
+    }).toString();
+    // wheelstart.xt
+    el.dispatchEvent(new CustomEvent('wheel.xt', {detail: {skip: true, wheelX: -scrollFinal}}));
+  } else {
+    // moving
+    self.detail.wheelMoving = false;
+    // wheelend.xt
+    el.dispatchEvent(new CustomEvent('wheelend.xt', {detail: {skip: true, wheelX: -scrollFinal}}));
+  }
+};
+
+//////////////////////
+// util
 //////////////////////
 
 /**
@@ -671,7 +898,11 @@ Xt.btnMerge = {
  * @return {Array} Values [x, y]
  */
 /*
-USAGE: Xt.getTranslate(dragger)[0]; // for translateX
+USAGE:
+Xt.getTranslate(el)[0]; // for translateX
+Xt.getTranslate(el)[1]; // for translateY
+*/
+
 Xt.getTranslate = function (element) {
   let transArr = [];
   let style = getComputedStyle(element);
@@ -686,7 +917,6 @@ Xt.getTranslate = function (element) {
   }
   return transArr;
 };
-*/
 
 /**
  * Check if event target is inside elements
@@ -895,7 +1125,7 @@ Xt.eventDelay = function (e, element, func, prefix = '') {
       }
       // save after a frame to execute all eventDelay
       cancelAnimationFrame(parseFloat(container.dataset.xtEventDelayFrame));
-      container.dataset.xtEventDelayFrame = requestAnimationFrame( function() {
+      container.dataset.xtEventDelayFrame = requestAnimationFrame(function () {
         container.dataset['xtEventDelay'] = window.innerWidth.toString();
       }).toString();
     }

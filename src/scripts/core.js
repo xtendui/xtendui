@@ -85,10 +85,6 @@ class Core {
       "delayOff": false,
       "durationOn": false,
       "durationOff": false,
-      "wheel": {
-        "selector": false,
-        "block": 500
-      },
       "keyboard": {
         "selector": false
       },
@@ -507,18 +503,6 @@ class Core {
       }
     }
     // keyboard
-    if (options.wheel && options.wheel.selector) {
-      let wheels = options.wheel.selector === 'object' ? Xt.arrSingle(self.object) : self.object.querySelectorAll(options.wheel.selector);
-      self.destroyElements.push(...wheels);
-      for (let wheel of wheels) {
-        // wheel
-        let eventWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
-        let wheelHandler = Xt.dataStorage.put(wheel, eventWheel + '.' + self.namespace,
-          self.eventWheelHandler.bind(self).bind(self, wheel));
-        wheel.addEventListener(eventWheel, wheelHandler);
-      }
-    }
-    // keyboard
     if (options.keyboard && options.keyboard.selector) {
       let keyboards = options.keyboard.selector === 'object' ? Xt.arrSingle(self.object) : self.object.querySelectorAll(options.keyboard.selector);
       self.destroyElements.push(...keyboards);
@@ -550,7 +534,7 @@ class Core {
       for (let img of imgs) {
         if (!img.complete) {
           let imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
-            self.eventImgLoaded.bind(self).bind(self, el, img));
+            self.eventImgLoadedHandler.bind(self).bind(self, el, img));
           img.addEventListener('load', imgLoadHandler);
           // @FIX srcset: call only one time
           img.addEventListener('load', function (e) {
@@ -561,7 +545,7 @@ class Core {
         }
       }
       if (imgs.length > 0 && imgsLoaded === imgs.length) {
-        requestAnimationFrame(self.eventImgLoaded.bind(self).bind(self, el));
+        requestAnimationFrame(self.eventImgLoadedHandler.bind(self).bind(self, el));
       }
     }
     for (let tr of self.targets) {
@@ -570,7 +554,7 @@ class Core {
       for (let img of imgs) {
         if (!img.complete) {
           let imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
-            self.eventImgLoaded.bind(self).bind(self, tr, img));
+            self.eventImgLoadedHandler.bind(self).bind(self, tr, img));
           img.addEventListener('load', imgLoadHandler);
           // @FIX srcset: call only one time
           img.addEventListener('load', function (e) {
@@ -581,7 +565,30 @@ class Core {
         }
       }
       if (imgs.length > 0 && imgsLoaded === imgs.length) {
-        requestAnimationFrame(self.eventImgLoaded.bind(self).bind(self, tr));
+        requestAnimationFrame(self.eventImgLoadedHandler.bind(self).bind(self, tr));
+      }
+    }
+    // wheel
+    if (options.wheel && options.wheel.selector) {
+      // min and max
+      let first = self.targets[0];
+      let last = self.targets[self.targets.length - 1];
+      self.detail.wheelMin = -parseFloat(first.dataset.groupPos);
+      self.detail.wheelMax = -parseFloat(last.dataset.groupPos);
+      // vars
+      self.detail.wheels = options.wheel.selector === 'object' ? Xt.arrSingle(self.object) : self.object.querySelectorAll(options.wheel.selector);
+      self.destroyElements.push(...self.detail.wheels);
+      for (let wheel of self.detail.wheels) {
+        self.destroyElements.push(wheel);
+        // wheel
+        let eWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
+        let wheelHandler = Xt.dataStorage.put(wheel, eWheel + '.' + self.namespace,
+          self.eventWheelHandler.bind(self).bind(self, wheel));
+        wheel.addEventListener(eWheel, wheelHandler);
+        // scroll wheel
+        let scrollHandler = Xt.dataStorage.put(wheel, 'scrollWheel' + '.' + self.namespace,
+          self.eventScrollWheelHandler.bind(self).bind(self, wheel));
+        wheel.addEventListener('scroll', scrollHandler, Xt.passiveSupported ? {passive: true} : false);
       }
     }
   }
@@ -763,39 +770,6 @@ class Core {
   }
 
   /**
-   * wheel handler
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Event} e
-   */
-  eventWheelHandler(el, e) {
-    let self = this;
-    let options = self.options;
-    // disabled
-    if (self.disabled && !self.initial) {
-      return false;
-    }
-    // handler
-    e.preventDefault(); // prevent default scrolling
-    // block
-    if (!el.dataset.xtWheelBlock) {
-      if (options.wheel.block) {
-        el.dataset.xtWheelBlock = 'true';
-        clearTimeout(parseFloat(el.dataset.xtWheelTimeout));
-        el.dataset.xtWheelTimeout = setTimeout(function () {
-          delete el.dataset.xtWheelBlock;
-        }, options.wheel.block).toString();
-      }
-      // wheel
-      let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY;
-      if (delta < 0) {
-        self.goToNext(1);
-      } else if (delta > 0) {
-        self.goToPrev(1);
-      }
-    }
-  }
-
-  /**
    * keyboard focus handler
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
@@ -883,11 +857,31 @@ class Core {
    * @param {Node|HTMLElement|EventTarget|Window} img
    * @param {Event} e
    */
-  eventImgLoaded(el, img = null, e = null) {
+  eventImgLoadedHandler(el, img = null, e = null) {
     let self = this;
     // listener dispatch
     let detail = self.eDetailSet(e);
     el.dispatchEvent(new CustomEvent('imageLoaded.xt', {detail: detail}));
+  }
+
+  /**
+   * wheel handler
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Event} e
+   */
+  eventWheelHandler(el, e) {
+    let self = this;
+    Xt.eventWheelSmooth(self, el, e);
+  }
+
+  /**
+   * scroll wheel handler
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Event} e
+   */
+  eventScrollWheelHandler(el, e) {
+    let self = this;
+    Xt.eventScrollSmooth(self, el, e);
   }
 
   //////////////////////
