@@ -568,29 +568,6 @@ class Core {
         requestAnimationFrame(self.eventImgLoadedHandler.bind(self).bind(self, tr));
       }
     }
-    // wheel
-    if (options.wheel && options.wheel.selector) {
-      // min and max
-      let first = self.targets[0];
-      let last = self.targets[self.targets.length - 1];
-      self.detail.wheelMin = -parseFloat(first.dataset.groupPos);
-      self.detail.wheelMax = -parseFloat(last.dataset.groupPos);
-      // vars
-      self.detail.wheels = options.wheel.selector === 'object' ? Xt.arrSingle(self.object) : self.object.querySelectorAll(options.wheel.selector);
-      self.destroyElements.push(...self.detail.wheels);
-      for (let wheel of self.detail.wheels) {
-        self.destroyElements.push(wheel);
-        // wheel
-        let eWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
-        let wheelHandler = Xt.dataStorage.put(wheel, eWheel + '.' + self.namespace,
-          self.eventWheelHandler.bind(self).bind(self, wheel));
-        wheel.addEventListener(eWheel, wheelHandler);
-        // scroll wheel
-        let scrollHandler = Xt.dataStorage.put(wheel, 'scrollWheel' + '.' + self.namespace,
-          self.eventScrollWheelHandler.bind(self).bind(self, wheel));
-        wheel.addEventListener('scroll', scrollHandler, Xt.passiveSupported ? {passive: true} : false);
-      }
-    }
   }
 
   //////////////////////
@@ -862,26 +839,6 @@ class Core {
     // listener dispatch
     let detail = self.eDetailSet(e);
     el.dispatchEvent(new CustomEvent('imageLoaded.xt', {detail: detail}));
-  }
-
-  /**
-   * wheel handler
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Event} e
-   */
-  eventWheelHandler(el, e) {
-    let self = this;
-    Xt.eventWheelSmooth(self, el, e);
-  }
-
-  /**
-   * scroll wheel handler
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Event} e
-   */
-  eventScrollWheelHandler(el, e) {
-    let self = this;
-    Xt.eventScrollSmooth(self, el, e);
   }
 
   //////////////////////

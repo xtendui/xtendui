@@ -666,47 +666,6 @@ Xt.btnMerge = {
 //////////////////////
 
 /**
- * event scroll smooth for Xt
- * @param {Object} self Xt object
- * @param {Node|HTMLElement|EventTarget|Window} el
- * @param {Event} e
- */
-
-Xt.eventScrollSmooth = function (self, el, e) {
-  /*
-  let options = self.options;
-  // vars
-  let scrollCurrent;
-  if (!options.wheel.transform) {
-    if (options.wheel.horizontal) {
-      scrollCurrent = el.scrollLeft;
-    } else {
-      scrollCurrent = el.scrollTop;
-    }
-  } else {
-    if (options.wheel.horizontal) {
-      scrollCurrent = -Xt.getTranslate(el)[0];
-    } else {
-      scrollCurrent = -Xt.getTranslate(el)[1];
-    }
-  }
-  if (self.detail.wheelScrollInitial !== scrollCurrent) {
-    // after finished scrolling
-    clearTimeout(parseFloat(el.dataset.xtSmoothScrollTimeout));
-    el.dataset.xtSmoothScrollTimeout = setTimeout(function () {
-      // scroll
-      if (!self.detail.wheelMoving) {
-        // save scroll position for eventWheel
-        self.detail.wheelScroll = self.detail.wheelScrollInitial = scrollCurrent;
-      }
-      // dispatch
-      el.dispatchEvent(new CustomEvent('scroll.xt', {detail: self.eDetail}));
-    }, 50).toString();
-  }
-  */
-};
-
-/**
  * event wheel smooth for Xt
  * @param {Object} self Xt object
  * @param {Node|HTMLElement|EventTarget|Window} el
@@ -715,6 +674,10 @@ Xt.eventScrollSmooth = function (self, el, e) {
 
 Xt.eventWheelSmooth = function (self, el, e) {
   let options = self.options;
+  // disabled
+  if (self.disabled && !self.initial) {
+    return false;
+  }
   // wheelScrollElement
   if (self.detail.wheelScrollElement) {
     let elFinal;
@@ -817,6 +780,10 @@ Xt.eventWheelSmooth = function (self, el, e) {
 
 Xt.eventFrictionSmooth = function (self, el, e, min, max, deltaInit) {
   let options = self.options;
+  // disabled
+  if (self.disabled && !self.initial) {
+    return false;
+  }
   // moving
   self.detail.wheelMoving = true;
   // vars

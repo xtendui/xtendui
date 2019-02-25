@@ -144,55 +144,6 @@ class Slider extends Core {
   }
 
   /**
-   * init events
-   */
-  initEvents() {
-    super.initEvents();
-    let self = this;
-    let options = self.options;
-    let dragger = self.dragger;
-    // targets
-    for (let slide of self.targets) {
-      // disable links
-      slide.classList.add('links--none');
-      // slide on
-      let slideOnHandler = Xt.dataStorage.put(slide, 'on' + '.' + self.namespace,
-        self.eventSlideOnHandler.bind(self).bind(self, dragger, slide));
-      slide.addEventListener('on.xt', slideOnHandler, true); // @FIX event.xt: useCapture for custom events order on re-init
-      // slide off
-      let slideOffHandler = Xt.dataStorage.put(slide, 'off' + '.' + self.namespace,
-        self.eventSlideOffHandler.bind(self).bind(self, dragger, slide));
-      slide.addEventListener('off.xt', slideOffHandler, true); // @FIX event.xt: useCapture for custom events order on re-init
-    }
-    // dragger
-    if (options.drag) {
-      // drag
-      let dragstartHandler = Xt.dataStorage.put(dragger, 'mousedown touchstart' + '.' + self.namespace,
-        self.eventDragstartHandler.bind(self).bind(self, dragger));
-      let events = ['mousedown', 'touchstart'];
-      for (let event of events) {
-        dragger.addEventListener(event, dragstartHandler, Xt.passiveSupported ? {passive: true} : false);
-      }
-      // grab
-      if (!self.disabled) {
-        dragger.classList.add('grab');
-      } else {
-        dragger.classList.remove('grab');
-      }
-      // wheelstart.xt
-      dragger.addEventListener('wheelstart.xt', self.logicDragstart.bind(self).bind(self, dragger));
-      // wheel.xt
-      dragger.addEventListener('wheel.xt', self.logicDrag.bind(self).bind(self, dragger));
-      // wheelend.xt
-      dragger.addEventListener('wheelend.xt', self.logicDragend.bind(self).bind(self, dragger));
-    }
-    // resize
-    let resizeHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace,
-      self.eventResizeHandler.bind(self).bind(self));
-    addEventListener('resize', resizeHandler);
-  }
-
-  /**
    * init dragger
    */
   initDragger() {
@@ -268,6 +219,74 @@ class Slider extends Core {
         slide.dataset.groupPos = pos.toString();
       }
     }
+  }
+
+  /**
+   * init events
+   */
+  initEvents() {
+    super.initEvents();
+    let self = this;
+    let options = self.options;
+    let dragger = self.dragger;
+    // targets
+    for (let slide of self.targets) {
+      // disable links
+      slide.classList.add('links--none');
+      // slide on
+      let slideOnHandler = Xt.dataStorage.put(slide, 'on' + '.' + self.namespace,
+        self.eventSlideOnHandler.bind(self).bind(self, dragger, slide));
+      slide.addEventListener('on.xt', slideOnHandler, true); // @FIX event.xt: useCapture for custom events order on re-init
+      // slide off
+      let slideOffHandler = Xt.dataStorage.put(slide, 'off' + '.' + self.namespace,
+        self.eventSlideOffHandler.bind(self).bind(self, dragger, slide));
+      slide.addEventListener('off.xt', slideOffHandler, true); // @FIX event.xt: useCapture for custom events order on re-init
+    }
+    // dragger
+    if (options.drag) {
+      // drag
+      let dragstartHandler = Xt.dataStorage.put(dragger, 'mousedown touchstart' + '.' + self.namespace,
+        self.eventDragstartHandler.bind(self).bind(self, dragger));
+      let events = ['mousedown', 'touchstart'];
+      for (let event of events) {
+        dragger.addEventListener(event, dragstartHandler, Xt.passiveSupported ? {passive: true} : false);
+      }
+      // grab
+      if (!self.disabled) {
+        dragger.classList.add('grab');
+      } else {
+        dragger.classList.remove('grab');
+      }
+      // wheelstart.xt
+      dragger.addEventListener('wheelstart.xt', self.logicDragstart.bind(self).bind(self, dragger));
+      // wheel.xt
+      dragger.addEventListener('wheel.xt', self.logicDrag.bind(self).bind(self, dragger));
+      // wheelend.xt
+      dragger.addEventListener('wheelend.xt', self.logicDragend.bind(self).bind(self, dragger));
+    }
+    // wheel
+    if (options.wheel && options.wheel.selector) {
+      // min and max
+      let first = self.targets[0];
+      let last = self.targets[self.targets.length - 1];
+      self.detail.wheelMin = -parseFloat(first.dataset.groupPos);
+      self.detail.wheelMax = -parseFloat(last.dataset.groupPos);
+      // vars
+      self.detail.wheels = options.wheel.selector === 'object' ? Xt.arrSingle(self.object) : self.object.querySelectorAll(options.wheel.selector);
+      self.destroyElements.push(...self.detail.wheels);
+      for (let wheel of self.detail.wheels) {
+        self.destroyElements.push(wheel);
+        // wheel
+        let eWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
+        let wheelHandler = Xt.dataStorage.put(wheel, eWheel + '.' + self.namespace,
+          self.eventWheelHandler.bind(self).bind(self, wheel));
+        wheel.addEventListener(eWheel, wheelHandler);
+      }
+    }
+    // resize
+    let resizeHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace,
+      self.eventResizeHandler.bind(self).bind(self));
+    addEventListener('resize', resizeHandler);
   }
 
   //////////////////////
@@ -405,10 +424,6 @@ class Slider extends Core {
     self.logicDrag(dragger, e);
   }
 
-  //////////////////////
-  // event
-  //////////////////////
-
   /**
    * resize
    * @param {Event} e
@@ -423,6 +438,35 @@ class Slider extends Core {
       }, 'resize.xt.slider');
     }
   }
+
+  /**
+   * imageLoaded
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Node|HTMLElement|EventTarget|Window} img
+   * @param {Event} e
+   */
+  eventImgLoadedHandler(el, img = null, e = null) {
+    super.eventImgLoadedHandler(el, img, e);
+    let self = this;
+    // autoHeight
+    if (self.autoHeight) {
+      self.eventAutoHeight(el);
+    }
+  }
+
+  /**
+   * wheel handler
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Event} e
+   */
+  eventWheelHandler(el, e) {
+    let self = this;
+    Xt.eventWheelSmooth(self, el, e);
+  }
+
+  //////////////////////
+  // event
+  //////////////////////
 
   /**
    * slide on
@@ -449,7 +493,6 @@ class Slider extends Core {
       self.eventAutoHeight(slide);
     }
     // val
-    self.detail.xPosOld = self.detail.xPos;
     self.detail.xPos = self.detail.xPosCurrent = self.detail.xPosReal = parseFloat(slide.dataset.groupPos);
     // dragger
     if (self.dragger) {
@@ -490,21 +533,6 @@ class Slider extends Core {
     let group = slide.getAttribute('data-xt-group');
     if (group) {
       delete slide.dataset.xtSlideOnDone;
-    }
-  }
-
-  /**
-   * imageLoaded
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Node|HTMLElement|EventTarget|Window} img
-   * @param {Event} e
-   */
-  eventImgLoadedHandler(el, img = null, e = null) {
-    super.eventImgLoadedHandler(el, img, e);
-    let self = this;
-    // autoHeight
-    if (self.autoHeight) {
-      self.eventAutoHeight(el);
     }
   }
 
@@ -756,19 +784,17 @@ class Slider extends Core {
         }
       }
       // goTo with force
-      requestAnimationFrame(function () { // @FIX jump event order (slider drag single)
-        if (found === self.currentIndex) {
-          // change at least one
-          if (Math.sign(xDist) < 0) {
-            self.goToNext(1, true);
-          } else {
-            self.goToPrev(1, true);
-          }
+      if (found === self.currentIndex) {
+        // change at least one
+        if (Math.sign(xDist) < 0) {
+          self.goToNext(1, true);
         } else {
-          // goToIndex
-          self.goToIndex(found, true);
+          self.goToPrev(1, true);
         }
-      });
+      } else {
+        // goToIndex
+        self.goToIndex(found, true);
+      }
     } else {
       // val
       self.detail.xPosOld = self.detail.xPos;

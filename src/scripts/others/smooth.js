@@ -71,11 +71,6 @@ class Smooth extends Core {
       let wheelHandler = Xt.dataStorage.put(self.detail.wheelScrollElement, eWheel + '.' + self.namespace,
         self.eventWheelHandler.bind(self).bind(self, self.detail.wheelScrollElement));
       self.detail.wheelScrollElement.addEventListener(eWheel, wheelHandler);
-      // scroll wheel
-      self.destroyElements.push(wheel);
-      let scrollHandler = Xt.dataStorage.put(wheel, 'scrollWheel' + '.' + self.namespace,
-        self.eventScrollWheelHandler.bind(self).bind(self, wheel));
-      wheel.addEventListener('scroll', scrollHandler, Xt.passiveSupported ? {passive: true} : false);
     }
   }
 
@@ -87,16 +82,6 @@ class Smooth extends Core {
   eventWheelHandler(el, e) {
     let self = this;
     Xt.eventWheelSmooth(self, el, e);
-  }
-
-  /**
-   * scroll wheel handler
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Event} e
-   */
-  eventScrollWheelHandler(el, e) {
-    let self = this;
-    Xt.eventScrollSmooth(self, el, e);
   }
 
 }
