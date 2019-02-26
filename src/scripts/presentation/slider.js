@@ -264,25 +264,6 @@ class Slider extends Core {
       // wheelend.xt
       dragger.addEventListener('wheelend.xt', self.logicDragend.bind(self).bind(self, dragger));
     }
-    // wheel
-    if (options.wheel && options.wheel.selector) {
-      // min and max
-      let first = self.targets[0];
-      let last = self.targets[self.targets.length - 1];
-      self.detail.wheelMin = -parseFloat(first.dataset.groupPos);
-      self.detail.wheelMax = -parseFloat(last.dataset.groupPos);
-      // vars
-      self.detail.wheels = options.wheel.selector === 'object' ? Xt.arrSingle(self.object) : self.object.querySelectorAll(options.wheel.selector);
-      self.destroyElements.push(...self.detail.wheels);
-      for (let wheel of self.detail.wheels) {
-        self.destroyElements.push(wheel);
-        // wheel
-        let eWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
-        let wheelHandler = Xt.dataStorage.put(wheel, eWheel + '.' + self.namespace,
-          self.eventWheelHandler.bind(self).bind(self, wheel));
-        wheel.addEventListener(eWheel, wheelHandler);
-      }
-    }
     // resize
     let resizeHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace,
       self.eventResizeHandler.bind(self).bind(self));
@@ -452,16 +433,6 @@ class Slider extends Core {
     if (self.autoHeight) {
       self.eventAutoHeight(el);
     }
-  }
-
-  /**
-   * wheel handler
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Event} e
-   */
-  eventWheelHandler(el, e) {
-    let self = this;
-    Xt.eventWheelSmooth(self, el, e);
   }
 
   //////////////////////
@@ -726,6 +697,11 @@ class Slider extends Core {
         let overflow = pos - max;
         pos = max - fncOverflow(-overflow);
       }
+    }
+    // wheel
+    if (options.wheel && options.wheel.selector) {
+      self.detail.wheelMin = -min;
+      self.detail.wheelMax = -max;
     }
     // val
     self.detail.xPosOld = self.detail.xPos;

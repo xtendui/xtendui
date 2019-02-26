@@ -109,13 +109,13 @@ class Core {
     let markupOptions = self.object.getAttribute('data-' + self.componentName);
     self.options = Xt.merge([self.options, markupOptions ? JSON.parse(markupOptions) : {}]);
     // classes
-    if (self.classes) {
+    if (self.options.class) {
       self.classes = [...self.options.class.split(' ')];
     }
-    if (self.classesIn) {
+    if (self.options.classIn) {
       self.classesIn = [...self.options.classIn.split(' ')];
     }
-    if (self.classesOut) {
+    if (self.options.classOut) {
       self.classesOut = [...self.options.classOut.split(' ')];
     }
   }
@@ -566,6 +566,21 @@ class Core {
       }
       if (imgs.length > 0 && imgsLoaded === imgs.length) {
         requestAnimationFrame(self.eventImgLoadedHandler.bind(self).bind(self, tr));
+      }
+    }
+    // wheel
+    if (options.wheel && options.wheel.selector) {
+      self.detail.wheels = options.wheel.selector === 'object' ? Xt.arrSingle(self.object) :
+        options.wheel.selector === 'scrollingElement' ? Xt.arrSingle(document.scrollingElement) :
+        self.object.querySelectorAll(options.wheel.selector);
+      self.destroyElements.push(...self.detail.wheels);
+      console.log(options.wheel.selector, self.detail.wheels);
+      for (let wheel of self.detail.wheels) {
+        // wheel
+        let eWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
+        let wheelHandler = Xt.dataStorage.put(wheel, eWheel + '.' + self.namespace,
+          self.eventWheelHandler.bind(self).bind(self, wheel));
+        wheel.addEventListener(eWheel, wheelHandler);
       }
     }
   }
@@ -1927,6 +1942,210 @@ class Core {
     }
     // listener dispatch
     el.dispatchEvent(new CustomEvent('offdone.xt', {detail: obj[type].detail}));
+  }
+
+  //////////////////////
+  // wheel
+  //////////////////////
+
+  /**
+   * wheel handler
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Event} e
+   */
+  eventWheelHandler(el, e) {
+    let self = this;
+    self.eventWheelSmooth(el, e);
+  }
+
+  /**
+   * event wheel smooth for Xt
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Event} e
+   */
+
+  eventWheelSmooth(el, e) {
+    let self = this;
+    let options = self.options;
+    // disabled
+    if (self.disabled && !self.initial) {
+      return false;
+    }
+    // if document.scrollingElement scroll current overflow scroll
+    if (el === document.scrollingElement) {
+      let elFinal;
+      for (let composed of e.composedPath()) {
+        if (composed === document.scrollingElement // always when scrollingElement
+          || getComputedStyle(composed).overflowY === 'scroll') {
+          elFinal = composed;
+          break;
+        }
+      }
+      if (!elFinal) {
+        return false;
+      } else if (elFinal === document.body) {
+        elFinal = self.object; // document.scrollingElement
+      }
+      el = elFinal;
+    }
+    // prevent default scrolling
+    e.preventDefault();
+    // save position
+    if (!options.wheel.transform) {
+      if (options.wheel.horizontal) {
+        self.detail.wheelScroll = self.detail.wheelScrollInitial = el.scrollLeft;
+      } else {
+        self.detail.wheelScroll = self.detail.wheelScrollInitial = el.scrollTop;
+      }
+    } else {
+      if (options.wheel.horizontal) {
+        self.detail.wheelScroll = self.detail.wheelScrollInitial = -Xt.getTranslate(el)[0];
+      } else {
+        self.detail.wheelScroll = self.detail.wheelScrollInitial = -Xt.getTranslate(el)[1];
+      }
+    }
+    // scroll limit
+    let min = self.detail.wheelMin || 0;
+    let max = self.detail.wheelMax;
+    if (!self.detail.wheelMax) {
+      if (!options.wheel.transform) {
+        if (options.wheel.horizontal) {
+          max = el.scrollWidth - el.offsetWidth;
+        } else {
+          max = el.scrollHeight - el.offsetHeight;
+        }
+      } else {
+        let full = 0;
+        if (options.wheel.horizontal) {
+          for (let child of el.children) {
+            full += child.offsetWidth;
+          }
+          max = full - el.offsetWidth;
+        } else {
+          for (let child of el.children) {
+            full += child.offsetHeight;
+          }
+          max = full - el.offsetHeight;
+        }
+      }
+    }
+    // moving
+    if (!self.detail.wheelMoving) {
+      // wheelstart.xt
+      el.dispatchEvent(new CustomEvent('wheelstart.xt', {detail: {skip: true, wheelX: -self.detail.wheelScroll}}));
+    }
+    self.detail.wheelMoving = false;
+    // friction
+    if (!self.detail.wheelMoving) {
+      // delta
+      let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY;
+      if (delta === 0) {
+        return;
+      }
+      if (e.deltaMode === 1) {
+        // deltaMode 1: by lines
+        delta *= 30;
+      } else if (e.deltaMode === 2) {
+        // deltaMode 2: by pages
+        if (options.wheel.horizontal) {
+          delta *= el.offsetWidth;
+        } else {
+          delta *= el.offsetHeight;
+        }
+      }
+      // friction
+      cancelAnimationFrame(parseFloat(el.dataset.smoothFrame));
+      el.dataset.smoothFrame = requestAnimationFrame(function () {
+        self.eventFrictionSmooth(el, e, min, max, delta);
+      }).toString();
+    }
+  }
+
+  /**
+   * event friction smooth for Xt
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Event} e
+   * @param {Number} min Minimum value
+   * @param {Number} max Maximum value
+   * @param {Number|Boolean} deltaInit Initial trigger delta
+   */
+
+  eventFrictionSmooth(el, e, min, max, deltaInit) {
+    let self = this;
+    let options = self.options;
+    // disabled
+    if (self.disabled && !self.initial) {
+      return false;
+    }
+    // moving
+    self.detail.wheelMoving = true;
+    // vars
+    let scrollCurrent;
+    if (deltaInit) {
+      scrollCurrent = self.detail.wheelScroll;
+      self.detail.wheelScroll -= deltaInit;
+      if (!options.wheel.transform) {
+        self.detail.wheelScroll = Math.max(min, Math.min(self.detail.wheelScroll, max));
+      }
+    } else {
+      if (!options.wheel.transform) {
+        if (options.wheel.horizontal) {
+          scrollCurrent = el.scrollLeft;
+        } else {
+          scrollCurrent = el.scrollTop;
+        }
+      } else {
+        if (options.wheel.horizontal) {
+          scrollCurrent = -Xt.getTranslate(el)[0];
+        } else {
+          scrollCurrent = -Xt.getTranslate(el)[1];
+        }
+      }
+    }
+    let delta = self.detail.wheelScroll - scrollCurrent;
+    let sign = Math.sign(delta);
+    // momentum
+    let fncFriction = options.wheel.friction;
+    if (typeof fncFriction === 'string') {
+      fncFriction = new Function('delta', fncFriction);
+    }
+    delta = fncFriction(Math.abs(delta)) * sign;
+    let scrollFinal = scrollCurrent + delta;
+    // fix math on round to stop loop
+    if (delta < 0) {
+      scrollFinal = Math.floor(scrollFinal);
+    } else if (delta > 0) {
+      scrollFinal = Math.ceil(scrollFinal);
+    }
+    // set
+    if (!options.wheel.transform) {
+      if (options.wheel.horizontal) {
+        el.scrollLeft = scrollFinal;
+      } else {
+        el.scrollTop = scrollFinal;
+      }
+    } else {
+      if (options.wheel.horizontal) {
+        el.style.transform = 'translateX(' + (-scrollFinal) + 'px)';
+      } else {
+        el.style.transform = 'translateY(' + (-scrollFinal) + 'px)';
+      }
+    }
+    // loop
+    if (scrollFinal > min && scrollFinal < max && // scroll limit
+      Math.abs(self.detail.wheelScroll - scrollFinal) >= options.wheel.limit) { // friction
+      cancelAnimationFrame(parseFloat(el.dataset.smoothFrame));
+      el.dataset.smoothFrame = requestAnimationFrame(function () {
+        self.eventFrictionSmooth(el, e, min, max, false);
+      }).toString();
+      // wheelstart.xt
+      el.dispatchEvent(new CustomEvent('wheel.xt', {detail: {skip: true, wheelX: -scrollFinal}}));
+    } else {
+      // moving
+      self.detail.wheelMoving = false;
+      // wheelend.xt
+      el.dispatchEvent(new CustomEvent('wheelend.xt', {detail: {skip: true, wheelX: -scrollFinal}}));
+    }
   }
 
   //////////////////////
