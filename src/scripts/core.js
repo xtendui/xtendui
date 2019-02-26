@@ -1970,6 +1970,9 @@ class Core {
     if (self.disabled && !self.initial) {
       return false;
     }
+    // prevent default and stop propagation
+    e.preventDefault();
+    e.stopPropagation();
     // if document.scrollingElement scroll current overflow scroll
     if (el === document.scrollingElement) {
       let elFinal;
@@ -1987,8 +1990,6 @@ class Core {
       }
       el = elFinal;
     }
-    // prevent default scrolling
-    e.preventDefault();
     // save position
     if (!options.wheel.transform) {
       if (options.wheel.horizontal) {
