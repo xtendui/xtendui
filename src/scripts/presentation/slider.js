@@ -545,9 +545,6 @@ class Slider extends Core {
     self.eventAutoPause();
     // prevent dragging animation
     self.dragger.classList.add('duration-none');
-    // disable links
-    dragger.classList.add('links--none');
-    dragger.classList.add('jumps--none');
     // logic
     self.detail.xVelocity = null;
     self.detail.xVelocityNext = null;
@@ -625,7 +622,7 @@ class Slider extends Core {
     // save event
     self.detail.eCurrent = e;
     // calculate
-    let pos = self.detail.xPosReal;
+    let xPos = self.detail.xPosReal;
     let xPosCurrent = self.detail.xPosCurrent || 0;
     let sign = Math.sign(self.detail.xVelocity);
     if (friction) {
@@ -644,7 +641,7 @@ class Slider extends Core {
         }
       }
       // on friction
-      pos = pos + self.detail.xVelocity;
+      xPos = xPos + self.detail.xVelocity;
       if (self.detail.eDragstart.detail.wheelX !== undefined) {
         self.detail.xStart = self.detail.eDragstart.detail.wheelX;
       } else if (self.detail.eDragstart.clientX !== undefined) {
@@ -652,12 +649,12 @@ class Slider extends Core {
       } else if (self.detail.eDragstart.touches !== undefined) {
         self.detail.xStart = self.detail.eDragstart.touches[0].clientX;
       }
-      self.detail.xCurrent = pos + self.detail.xStart - xPosCurrent;
+      self.detail.xCurrent = xPos + self.detail.xStart - xPosCurrent;
     } else {
       // momentum
       self.detail.dragDate = new Date();
       // on normal drag
-      let xPosOld = pos || 0;
+      let xPosOld = xPos || 0;
       if (self.detail.eDragstart.detail.wheelX !== undefined) {
         self.detail.xStart = self.detail.eDragstart.detail.wheelX;
         self.detail.xCurrent = self.detail.eCurrent.detail.wheelX;
@@ -668,13 +665,20 @@ class Slider extends Core {
         self.detail.xStart = self.detail.eDragstart.touches[0].clientX;
         self.detail.xCurrent = self.detail.eCurrent.touches[0].clientX;
       }
-      pos = xPosCurrent + (self.detail.xCurrent - self.detail.xStart) * options.drag.factor;
+      xPos = xPosCurrent + (self.detail.xCurrent - self.detail.xStart) * options.drag.factor;
       // keep some velocity (median value of previous frame and not current frame)
       self.detail.xVelocity = (self.detail.xVelocity + self.detail.xVelocityNext) / 2;
-      self.detail.xVelocityNext = pos - xPosOld;
+      self.detail.xVelocityNext = xPos - xPosOld;
     }
     // val
-    self.detail.xPosReal = pos;
+    self.detail.xPosReal = xPos;
+    // check
+    let xDist = xPos - xPosCurrent;
+    if (Math.abs(xDist) > options.drag.linkThreshold) {
+      // disable links
+      dragger.classList.add('links--none');
+      dragger.classList.add('jumps--none');
+    }
     // overflow
     let first = self.targets[0];
     let last = self.targets[self.targets.length - 1];
@@ -685,23 +689,23 @@ class Slider extends Core {
       fncOverflow = new Function('overflow', fncOverflow);
     }
     if (friction) {
-      if (pos > min || pos < max) {
+      if (xPos > min || xPos < max) {
         self.detail.xVelocity = fncOverflow(Math.abs(self.detail.xVelocity)) * sign;
       }
     } else {
-      if (pos > min) {
+      if (xPos > min) {
         self.detail.xVelocity = 0;
-        let overflow = pos - min;
-        pos = min + fncOverflow(overflow);
-      } else if (pos < max) {
+        let overflow = xPos - min;
+        xPos = min + fncOverflow(overflow);
+      } else if (xPos < max) {
         self.detail.xVelocity = 0;
-        let overflow = pos - max;
-        pos = max - fncOverflow(-overflow);
+        let overflow = xPos - max;
+        xPos = max - fncOverflow(-overflow);
       }
     }
     // val
     self.detail.xPosOld = self.detail.xPos;
-    self.detail.xPos = pos;
+    self.detail.xPos = xPos;
     // drag position
     dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
     // listener dispatch
@@ -824,6 +828,7 @@ Slider.optionsDefault = {
   "drag": {
     "dragger": ".slides_inner",
     "threshold": 100,
+    "linkThreshold": 25,
     "factor": 1,
     "friction": "return Math.pow(velocity, 0.95)",
     "frictionLimit": 2.5,
