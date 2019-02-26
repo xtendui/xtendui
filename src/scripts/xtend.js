@@ -717,9 +717,9 @@ Xt.eventWheelSmooth = function (self, el, e) {
   if (!self.detail.wheelMax) {
     if (!options.wheel.transform) {
       if (options.wheel.horizontal) {
-        max = el.scrollWidth - el.offsetWidth - 1;
+        max = el.scrollWidth - el.offsetWidth;
       } else {
-        max = el.scrollHeight - el.offsetHeight - 1;
+        max = el.scrollHeight - el.offsetHeight;
       }
     } else {
       let full = 0;
@@ -727,12 +727,12 @@ Xt.eventWheelSmooth = function (self, el, e) {
         for (let child of el.children) {
           full += child.offsetWidth;
         }
-        max = full - el.offsetWidth - 1;
+        max = full - el.offsetWidth;
       } else {
         for (let child of el.children) {
           full += child.offsetHeight;
         }
-        max = full - el.offsetHeight - 1;
+        max = full - el.offsetHeight;
       }
     }
   }
@@ -818,7 +818,7 @@ Xt.eventFrictionSmooth = function (self, el, e, min, max, deltaInit) {
   }
   delta = fncFriction(Math.abs(delta)) * sign;
   let scrollFinal = scrollCurrent + delta;
-  // fix math on direction to stop loop
+  // fix math on round to stop loop
   if (delta < 0) {
     scrollFinal = Math.floor(scrollFinal);
   } else if (delta > 0) {
@@ -840,7 +840,7 @@ Xt.eventFrictionSmooth = function (self, el, e, min, max, deltaInit) {
   }
   // loop
   if (scrollFinal > min && scrollFinal < max && // scroll limit
-    Math.abs(self.detail.wheelScroll - scrollCurrent) >= options.wheel.limit) { // friction
+    Math.abs(self.detail.wheelScroll - scrollFinal) >= options.wheel.limit) { // friction
     cancelAnimationFrame(parseFloat(el.dataset.smoothFrame));
     el.dataset.smoothFrame = requestAnimationFrame(function () {
       Xt.eventFrictionSmooth(self, el, e, min, max, false);
