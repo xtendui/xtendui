@@ -137,21 +137,19 @@ class Slider extends Core {
     // initDragger
     if (self.dragger) {
       self.destroyElements.push(self.dragger);
-      self.initDragger();
+      for (let targets of self.targets) {
+        self.initDraggerSlide(targets);
+      }
+    }
+    // wheel
+    if (options.wheel && options.wheel.selector) {
+      let first = self.targets[0];
+      let last = self.targets[self.targets.length - 1];
+      self.detail.wheelMin = -parseFloat(first.dataset.groupPos);
+      self.detail.wheelMax = -parseFloat(last.dataset.groupPos);
     }
     // elements
     self.initScopeElements();
-  }
-
-  /**
-   * init dragger
-   */
-  initDragger() {
-    let self = this;
-    // init slides
-    for (let targets of self.targets) {
-      self.initDraggerSlide(targets);
-    }
   }
 
   /**
@@ -257,12 +255,14 @@ class Slider extends Core {
       } else {
         dragger.classList.remove('grab');
       }
-      // wheelstart.xt
-      dragger.addEventListener('wheelstart.xt', self.logicDragstart.bind(self).bind(self, dragger));
-      // wheel.xt
-      dragger.addEventListener('wheel.xt', self.logicDrag.bind(self).bind(self, dragger));
-      // wheelend.xt
-      dragger.addEventListener('wheelend.xt', self.logicDragend.bind(self).bind(self, dragger));
+      // wheel
+      if (options.wheel && options.wheel.selector) {
+        for (let wheel of self.detail.wheels) {
+          wheel.addEventListener('wheelstart.xt', self.logicDragstart.bind(self).bind(self, dragger));
+          wheel.addEventListener('wheel.xt', self.logicDrag.bind(self).bind(self, dragger));
+          wheel.addEventListener('wheelend.xt', self.logicDragend.bind(self).bind(self, dragger));
+        }
+      }
     }
     // resize
     let resizeHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace,
@@ -697,11 +697,6 @@ class Slider extends Core {
         let overflow = pos - max;
         pos = max - fncOverflow(-overflow);
       }
-    }
-    // wheel
-    if (options.wheel && options.wheel.selector) {
-      self.detail.wheelMin = -min;
-      self.detail.wheelMax = -max;
     }
     // val
     self.detail.xPosOld = self.detail.xPos;

@@ -574,7 +574,6 @@ class Core {
         options.wheel.selector === 'scrollingElement' ? Xt.arrSingle(document.scrollingElement) :
         self.object.querySelectorAll(options.wheel.selector);
       self.destroyElements.push(...self.detail.wheels);
-      console.log(options.wheel.selector, self.detail.wheels);
       for (let wheel of self.detail.wheels) {
         // wheel
         let eWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
@@ -2031,7 +2030,7 @@ class Core {
     }
     // moving
     if (!self.detail.wheelMoving) {
-      // wheelstart.xt
+      // dispatch
       el.dispatchEvent(new CustomEvent('wheelstart.xt', {detail: {skip: true, wheelX: -self.detail.wheelScroll}}));
     }
     self.detail.wheelMoving = false;
@@ -2056,7 +2055,7 @@ class Core {
       // friction
       cancelAnimationFrame(parseFloat(el.dataset.smoothFrame));
       el.dataset.smoothFrame = requestAnimationFrame(function () {
-        self.eventFrictionSmooth(el, e, min, max, delta);
+        self.eventFrictionSmooth(el, min, max, delta);
       }).toString();
     }
   }
@@ -2064,13 +2063,12 @@ class Core {
   /**
    * event friction smooth for Xt
    * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Event} e
    * @param {Number} min Minimum value
    * @param {Number} max Maximum value
    * @param {Number|Boolean} deltaInit Initial trigger delta
    */
 
-  eventFrictionSmooth(el, e, min, max, deltaInit) {
+  eventFrictionSmooth(el, min, max, deltaInit) {
     let self = this;
     let options = self.options;
     // disabled
@@ -2136,14 +2134,14 @@ class Core {
       Math.abs(self.detail.wheelScroll - scrollFinal) >= options.wheel.limit) { // friction
       cancelAnimationFrame(parseFloat(el.dataset.smoothFrame));
       el.dataset.smoothFrame = requestAnimationFrame(function () {
-        self.eventFrictionSmooth(el, e, min, max, false);
+        self.eventFrictionSmooth(el, min, max, false);
       }).toString();
-      // wheelstart.xt
+      // dispatch
       el.dispatchEvent(new CustomEvent('wheel.xt', {detail: {skip: true, wheelX: -scrollFinal}}));
     } else {
       // moving
       self.detail.wheelMoving = false;
-      // wheelend.xt
+      // dispatch
       el.dispatchEvent(new CustomEvent('wheelend.xt', {detail: {skip: true, wheelX: -scrollFinal}}));
     }
   }
