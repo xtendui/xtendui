@@ -34,7 +34,7 @@ class Ajax extends Core {
    */
   init(object = false, optionsJs = false) {
     let self = this;
-    // var
+    // vars
     self.locationFrom = self.locationTo || null; // fix popstate
     self.locationTo = null;
     // super

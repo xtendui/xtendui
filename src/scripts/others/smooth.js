@@ -31,10 +31,11 @@ Smooth.componentName = 'xt-smooth';
 Smooth.optionsDefault = {
   "wheel": {
     "selector": "scrollingElement",
-    "horizontal": false,
+    "limit": true,
     "transform": false,
-    "limit": .5,
-    "friction": "return delta / 9"
+    "horizontal": false,
+    "friction": "return delta / 9",
+    "frictionLimit": 0.5
   }
 };
 

@@ -40,7 +40,7 @@ class Core {
     if (self.object.getAttribute('data-' + self.componentName + '-inited')) {
       self.destroy(true);
     }
-    // var
+    // vars
     self.classes = [];
     self.classesIn = [];
     self.classesOut = [];
@@ -1990,21 +1990,21 @@ class Core {
       }
       el = elFinal;
     }
-    // save position
+    // vars
     if (!options.wheel.transform) {
       if (options.wheel.horizontal) {
-        self.detail.wheelScroll = self.detail.wheelScrollInitial = el.scrollLeft;
+        self.detail.wheelCurrent = el.scrollLeft;
       } else {
-        self.detail.wheelScroll = self.detail.wheelScrollInitial = el.scrollTop;
+        self.detail.wheelCurrent = el.scrollTop;
       }
     } else {
       if (options.wheel.horizontal) {
-        self.detail.wheelScroll = self.detail.wheelScrollInitial = -Xt.getTranslate(el)[0];
+        self.detail.wheelCurrent = -Xt.getTranslate(el)[0];
       } else {
-        self.detail.wheelScroll = self.detail.wheelScrollInitial = -Xt.getTranslate(el)[1];
+        self.detail.wheelCurrent = -Xt.getTranslate(el)[1];
       }
     }
-    // scroll limit
+    // limit
     let min = self.detail.wheelMin || 0;
     let max = self.detail.wheelMax;
     if (!self.detail.wheelMax) {
@@ -2029,35 +2029,43 @@ class Core {
         }
       }
     }
+    // delta
+    let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY;
+    if (delta === 0) {
+      return;
+    }
+    if (e.deltaMode === 1) {
+      // deltaMode 1: by lines
+      delta *= 30;
+    } else if (e.deltaMode === 2) {
+      // deltaMode 2: by pages
+      if (options.wheel.horizontal) {
+        delta *= el.offsetWidth;
+      } else {
+        delta *= el.offsetHeight;
+      }
+    }
+    // vars
+    if (self.detail.wheelEnd) {
+      self.detail.wheelEnd = self.detail.wheelEnd - delta;
+    } else {
+      self.detail.wheelEnd = self.detail.wheelCurrent - delta;
+    }
+    if (options.wheel.limit) {
+      // friction to limit
+      self.detail.wheelEnd = Math.max(min, Math.min(self.detail.wheelEnd, max));
+    }
+    // friction
+    cancelAnimationFrame(parseFloat(el.dataset.smoothFrame));
+    el.dataset.smoothFrame = requestAnimationFrame(function () {
+      self.eventFrictionSmooth(el, min, max);
+    }).toString();
     // moving
     if (!self.detail.wheelMoving) {
+      // moving
+      self.detail.wheelMoving = true;
       // dispatch
-      el.dispatchEvent(new CustomEvent('wheelstart.xt', {detail: {skip: true, wheelX: -self.detail.wheelScroll}}));
-    }
-    self.detail.wheelMoving = false;
-    // friction
-    if (!self.detail.wheelMoving) {
-      // delta
-      let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY;
-      if (delta === 0) {
-        return;
-      }
-      if (e.deltaMode === 1) {
-        // deltaMode 1: by lines
-        delta *= 30;
-      } else if (e.deltaMode === 2) {
-        // deltaMode 2: by pages
-        if (options.wheel.horizontal) {
-          delta *= el.offsetWidth;
-        } else {
-          delta *= el.offsetHeight;
-        }
-      }
-      // friction
-      cancelAnimationFrame(parseFloat(el.dataset.smoothFrame));
-      el.dataset.smoothFrame = requestAnimationFrame(function () {
-        self.eventFrictionSmooth(el, min, max, delta);
-      }).toString();
+      el.dispatchEvent(new CustomEvent('wheelstart.xt', {detail: {skip: true, wheelX: -self.detail.wheelCurrent}}));
     }
   }
 
@@ -2066,84 +2074,61 @@ class Core {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Number} min Minimum value
    * @param {Number} max Maximum value
-   * @param {Number|Boolean} deltaInit Initial trigger delta
    */
 
-  eventFrictionSmooth(el, min, max, deltaInit) {
+  eventFrictionSmooth(el, min, max) {
     let self = this;
     let options = self.options;
     // disabled
     if (self.disabled && !self.initial) {
       return false;
     }
-    // moving
-    self.detail.wheelMoving = true;
     // vars
-    let scrollCurrent;
-    if (deltaInit) {
-      scrollCurrent = self.detail.wheelScroll;
-      self.detail.wheelScroll -= deltaInit;
-      if (!options.wheel.transform) {
-        self.detail.wheelScroll = Math.max(min, Math.min(self.detail.wheelScroll, max));
-      }
-    } else {
-      if (!options.wheel.transform) {
-        if (options.wheel.horizontal) {
-          scrollCurrent = el.scrollLeft;
-        } else {
-          scrollCurrent = el.scrollTop;
-        }
-      } else {
-        if (options.wheel.horizontal) {
-          scrollCurrent = -Xt.getTranslate(el)[0];
-        } else {
-          scrollCurrent = -Xt.getTranslate(el)[1];
-        }
-      }
-    }
-    let delta = self.detail.wheelScroll - scrollCurrent;
+    let delta = self.detail.wheelEnd - self.detail.wheelCurrent;
     let sign = Math.sign(delta);
     // momentum
     let fncFriction = options.wheel.friction;
     if (typeof fncFriction === 'string') {
       fncFriction = new Function('delta', fncFriction);
     }
-    delta = fncFriction(Math.abs(delta)) * sign;
-    let scrollFinal = scrollCurrent + delta;
+    self.detail.wheelCurrent = self.detail.wheelCurrent + fncFriction(Math.abs(delta)) * sign;
     // fix math on round to stop loop
     if (delta < 0) {
-      scrollFinal = Math.floor(scrollFinal);
+      self.detail.wheelCurrent = Math.floor(self.detail.wheelCurrent);
     } else if (delta > 0) {
-      scrollFinal = Math.ceil(scrollFinal);
+      self.detail.wheelCurrent = Math.ceil(self.detail.wheelCurrent);
     }
     // set
     if (!options.wheel.transform) {
       if (options.wheel.horizontal) {
-        el.scrollLeft = scrollFinal;
+        el.scrollLeft = self.detail.wheelCurrent;
       } else {
-        el.scrollTop = scrollFinal;
+        el.scrollTop = self.detail.wheelCurrent;
       }
     } else {
       if (options.wheel.horizontal) {
-        el.style.transform = 'translateX(' + (-scrollFinal) + 'px)';
+        el.style.transform = 'translateX(' + (-self.detail.wheelCurrent) + 'px)';
       } else {
-        el.style.transform = 'translateY(' + (-scrollFinal) + 'px)';
+        el.style.transform = 'translateY(' + (-self.detail.wheelCurrent) + 'px)';
       }
     }
     // loop
-    if (scrollFinal > min && scrollFinal < max && // scroll limit
-      Math.abs(self.detail.wheelScroll - scrollFinal) >= options.wheel.limit) { // friction
+    if (self.detail.wheelCurrent > min && self.detail.wheelCurrent < max && // limit
+      Math.abs(delta) >= options.wheel.frictionLimit) { // frictionLimit
+      // friction
       cancelAnimationFrame(parseFloat(el.dataset.smoothFrame));
       el.dataset.smoothFrame = requestAnimationFrame(function () {
-        self.eventFrictionSmooth(el, min, max, false);
+        self.eventFrictionSmooth(el, min, max);
       }).toString();
       // dispatch
-      el.dispatchEvent(new CustomEvent('wheel.xt', {detail: {skip: true, wheelX: -scrollFinal}}));
+      el.dispatchEvent(new CustomEvent('wheel.xt', {detail: {skip: true, wheelX: -self.detail.wheelCurrent}}));
     } else {
       // moving
       self.detail.wheelMoving = false;
+      // vars
+      self.detail.wheelEnd = false;
       // dispatch
-      el.dispatchEvent(new CustomEvent('wheelend.xt', {detail: {skip: true, wheelX: -scrollFinal}}));
+      el.dispatchEvent(new CustomEvent('wheelend.xt', {detail: {skip: true, wheelX: -self.detail.wheelCurrent}}));
     }
   }
 
@@ -2445,7 +2430,7 @@ class Core {
     if (options.scrollbar) {
       // checks
       Xt.scrollbar.add(self.namespace);
-      // var
+      // vars
       let width = Xt.scrollbarWidth();
       // scrollbar
       let container = document.documentElement;

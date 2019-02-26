@@ -76,7 +76,7 @@ class Fade extends Core {
     if (self.disabled && !self.initial) {
       return false;
     }
-    // var
+    // vars
     let current = 0;
     let currents = [];
     let scrollInverse = false;
@@ -92,7 +92,7 @@ class Fade extends Core {
     for (let el of self.elements) {
       if (!el.classList.contains('fade--block') && el.offsetParent
         && (el.offsetWidth || el.offsetHeight || el.getClientRects().length)) { // :visible
-        // var
+        // vars
         let rectElTop = el.offsetParent.getBoundingClientRect().top + el.offsetTop; // we use parents to not include transforms animations
         let heightEl = parseFloat(getComputedStyle(el).height);
         // scroll

@@ -40,7 +40,7 @@ Xt.Ajax = Ajax;
 Xt.Smooth = Smooth;
 
 //////////////////////
-// var
+// vars
 //////////////////////
 
 Xt.observe = [];
@@ -494,7 +494,7 @@ Xt.focusLimit = {
   on: function (el) {
     // @FIX Xt.focus when clicking and not used tab before
     Xt.focus.current = Xt.focus.current ? Xt.focus.current : document.activeElement;
-    // var
+    // vars
     let focusables = el.querySelectorAll(Xt.focusables);
     focusables = Array.from(focusables).filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])')); // filter out parent
     if (focusables.length) {

@@ -261,6 +261,7 @@ class Slider extends Core {
           wheel.addEventListener('wheelstart.xt', self.logicDragstart.bind(self).bind(self, dragger));
           wheel.addEventListener('wheel.xt', self.logicDrag.bind(self).bind(self, dragger));
           wheel.addEventListener('wheelend.xt', self.logicDragend.bind(self).bind(self, dragger));
+          wheel.addEventListener('wheelend.xt', self.logicDragfrictionend.bind(self).bind(self, dragger));
         }
       }
     }
@@ -398,9 +399,6 @@ class Slider extends Core {
    */
   eventDragHandler(dragger, e) {
     let self = this;
-    // disable links
-    dragger.classList.add('links--none');
-    dragger.classList.add('jumps--none');
     // logic
     self.logicDrag(dragger, e);
   }
@@ -547,6 +545,9 @@ class Slider extends Core {
     self.eventAutoPause();
     // prevent dragging animation
     self.dragger.classList.add('duration-none');
+    // disable links
+    dragger.classList.add('links--none');
+    dragger.classList.add('jumps--none');
     // logic
     self.detail.xVelocity = null;
     self.detail.xVelocityNext = null;
@@ -595,7 +596,7 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     // friction
-    if (Math.abs(self.detail.xVelocity) > options.drag.limit) {
+    if (Math.abs(self.detail.xVelocity) > options.drag.frictionLimit) {
       // drag
       self.logicDrag(dragger, e, true);
       // loop
@@ -802,10 +803,11 @@ Slider.optionsDefault = {
   "navigation": "[data-xt-nav]",
   "wheel": {
     "selector": false,
+    "limit": false,
     "transform": true,
     "horizontal": true,
-    "limit": .5,
-    "friction": "return delta / 9"
+    "friction": "return delta / 9",
+    "frictionLimit": 0.5
   },
   "keyboard": {
     "selector": ".slides"
@@ -823,8 +825,8 @@ Slider.optionsDefault = {
     "dragger": ".slides_inner",
     "threshold": 100,
     "factor": 1,
-    "limit": 2.5,
     "friction": "return Math.pow(velocity, 0.95)",
+    "frictionLimit": 2.5,
     "overflow": "return Math.pow(overflow, 0.73)",
     "timeLimit": 25
   }
