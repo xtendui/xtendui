@@ -570,16 +570,24 @@ class Core {
     }
     // wheel
     if (options.wheel && options.wheel.selector) {
+      // wheel
       self.detail.wheels = options.wheel.selector === 'object' ? Xt.arrSingle(self.object) :
         options.wheel.selector === 'scrollingElement' ? Xt.arrSingle(document.scrollingElement) :
         self.object.querySelectorAll(options.wheel.selector);
       self.destroyElements.push(...self.detail.wheels);
       for (let wheel of self.detail.wheels) {
-        // wheel
         let eWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
         let wheelHandler = Xt.dataStorage.put(wheel, eWheel + '.' + self.namespace,
           self.eventWheelHandler.bind(self).bind(self, wheel));
         wheel.addEventListener(eWheel, wheelHandler);
+      }
+      // block
+      let blocks = self.object.querySelectorAll(options.wheel.block);
+      for (let block of blocks) {
+        let eWheel = 'onwheel' in block ? 'wheel' : block.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
+        let wheelBlockHandler = Xt.dataStorage.put(block, eWheel + '.' + self.namespace,
+          self.eventWheelBlockHandler.bind(self));
+        block.addEventListener(eWheel, wheelBlockHandler);
       }
     }
   }
@@ -689,8 +697,9 @@ class Core {
   eventTouchLinksHandler(el, e) {
     let self = this;
     if (!el.dataset.xtTouchLinksDone) {
-      e.preventDefault();
       el.dataset.xtTouchLinksDone = 'true';
+      // prevent default
+      e.preventDefault();
     } else {
       self.eventTouchLinksEndHandler(el);
       delete el.dataset.xtTouchLinksDone;
@@ -1958,6 +1967,22 @@ class Core {
   }
 
   /**
+   * wheel block handler
+   * @param {Event} e
+   */
+  eventWheelBlockHandler(e) {
+    let self = this;
+    // prevent default if not loop
+    let max = self.getElementsSingle().length - 1;
+    let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY;
+    if ((delta > 0 && self.currentIndex > 0) || (delta < 0 && self.currentIndex < max)) {
+      // prevent wheel
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }
+
+  /**
    * event wheel smooth for Xt
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
@@ -1970,9 +1995,8 @@ class Core {
     if (self.disabled && !self.initial) {
       return false;
     }
-    // prevent default and stop propagation
+    // prevent wheel
     e.preventDefault();
-    e.stopPropagation();
     // if document.scrollingElement scroll current overflow scroll
     if (el === document.scrollingElement) {
       let elFinal;

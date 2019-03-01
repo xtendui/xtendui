@@ -31,6 +31,7 @@ Smooth.componentName = 'xt-smooth';
 Smooth.optionsDefault = {
   "wheel": {
     "selector": "scrollingElement",
+    "block": false,
     "limit": true,
     "transform": false,
     "horizontal": false,

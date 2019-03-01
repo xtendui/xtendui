@@ -816,6 +816,7 @@ Slider.optionsDefault = {
   "navigation": "[data-xt-nav]",
   "wheel": {
     "selector": false,
+    "block": false,
     "limit": false,
     "transform": true,
     "horizontal": true,
