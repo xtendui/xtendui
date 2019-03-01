@@ -810,6 +810,7 @@ Slider.optionsDefault = {
     "limit": false,
     "transform": true,
     "horizontal": true,
+    "factor": 1,
     "friction": "return delta / 9",
     "frictionLimit": 0.5
   },

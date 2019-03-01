@@ -34,6 +34,7 @@ Smooth.optionsDefault = {
     "limit": true,
     "transform": false,
     "horizontal": false,
+    "factor": 1,
     "friction": "return delta / 9",
     "frictionLimit": 0.5
   }

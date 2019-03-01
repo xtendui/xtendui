@@ -2045,6 +2045,8 @@ class Core {
         delta *= el.offsetHeight;
       }
     }
+    // factor
+    delta *= options.wheel.factor;
     // vars
     if (self.detail.wheelEnd) {
       self.detail.wheelEnd = self.detail.wheelEnd - delta;
