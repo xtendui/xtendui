@@ -137,16 +137,9 @@ class Slider extends Core {
     // initDragger
     if (self.dragger) {
       self.destroyElements.push(self.dragger);
-      for (let targets of self.targets) {
-        self.initDraggerSlide(targets);
+      for (let [i, targets] of self.targets.entries()) {
+        self.initDraggerSlide(targets, i);
       }
-    }
-    // wheel
-    if (options.wheel && options.wheel.selector) {
-      let first = self.targets[0];
-      let last = self.targets[self.targets.length - 1];
-      self.detail.wheelMin = -parseFloat(first.dataset.groupPos);
-      self.detail.wheelMax = -parseFloat(last.dataset.groupPos);
     }
     // elements
     self.initScopeElements();
@@ -154,8 +147,10 @@ class Slider extends Core {
 
   /**
    * init dragger slide
+   * @param {Node|HTMLElement|EventTarget|Window} slide
+   * @param {Number} index
    */
-  initDraggerSlide(slide) {
+  initDraggerSlide(slide, index = null) {
     let self = this;
     let options = self.options;
     // save vars
@@ -174,11 +169,18 @@ class Slider extends Core {
           slideLeft = Infinity;
           slideWidth = 0;
           slideHeight = 0;
-          for (let target of targets) {
+          for (let [i, target] of targets.entries()) {
             slideLeft = target.offsetLeft < slideLeft ? slide.offsetLeft : slideLeft;
             slideWidth += target.offsetWidth;
             let h = target.offsetHeight;
             slideHeight = h > slideHeight ? h : slideHeight;
+            // fix position with negative margin on initial render
+            if (i === 0 && index === 0 && slideLeft < 0) {
+              self.detail.fixNegativeMargin = target.offsetLeft;
+            }
+            if (i === 0 && self.detail.fixNegativeMargin) {
+              slideLeft -= self.detail.fixNegativeMargin;
+            }
           }
           for (let target of targets) {
             target.dataset.xtDraggerInitialDone = 'true';
@@ -215,6 +217,13 @@ class Slider extends Core {
         }
       } else {
         slide.dataset.groupPos = pos.toString();
+      }
+      // wheel
+      if (options.wheel && options.wheel.selector) {
+        let first = self.targets[0];
+        let last = self.targets[self.targets.length - 1];
+        self.detail.wheelMin = -parseFloat(first.dataset.groupPos);
+        self.detail.wheelMax = -parseFloat(last.dataset.groupPos);
       }
     }
   }
@@ -454,7 +463,7 @@ class Slider extends Core {
       target.dataset.xtSlideOnDone = 'true';
     }
     // reinit if needed
-    if (self.dragger) {
+    if (self.dragger && !self.initial) {
       self.initDraggerSlide(slide);
     }
     // autoHeight

@@ -877,7 +877,7 @@ Xt.animTimeoutClear = function (el) {
 
 /**
  * Fix resize event multiple calls and adds delay on resize and scroll events
- * @param {Event} e Event
+ * @param {Event|Object} e Event
  * @param {Node|HTMLElement|EventTarget|Window} element Element to save timeout
  * @param {Function} func Function to execute
  * @param {String} prefix Timeout prefix
