@@ -570,24 +570,23 @@ class Core {
     }
     // wheel
     if (options.wheel && options.wheel.selector) {
-      // wheel
       self.detail.wheels = options.wheel.selector === 'object' ? Xt.arrSingle(self.object) :
         options.wheel.selector === 'scrollingElement' ? Xt.arrSingle(document.scrollingElement) :
         self.object.querySelectorAll(options.wheel.selector);
       self.destroyElements.push(...self.detail.wheels);
       for (let wheel of self.detail.wheels) {
         let eWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
+        // wheel
         let wheelHandler = Xt.dataStorage.put(wheel, eWheel + '.' + self.namespace,
           self.eventWheelHandler.bind(self).bind(self, wheel));
         wheel.addEventListener(eWheel, wheelHandler);
-      }
-      // block
-      let blocks = self.object.querySelectorAll(options.wheel.block);
-      for (let block of blocks) {
-        let eWheel = 'onwheel' in block ? 'wheel' : block.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
-        let wheelBlockHandler = Xt.dataStorage.put(block, eWheel + '.' + self.namespace,
-          self.eventWheelBlockHandler.bind(self));
-        block.addEventListener(eWheel, wheelBlockHandler);
+        // block
+        if (options.wheel.block) {
+          let block = wheel.parentNode;
+          let wheelBlockHandler = Xt.dataStorage.put(block, eWheel + '.' + self.namespace,
+            self.eventWheelBlockHandler.bind(self));
+          block.addEventListener(eWheel, wheelBlockHandler);
+        }
       }
     }
   }
