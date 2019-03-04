@@ -99,7 +99,13 @@ class Fade extends Core {
         let changed = false;
         let top = rectElTop + scrollTop;
         let bottom = top + heightEl;
-        let dist = windowHeight * options.distance;
+        let dist = options.distance;
+        if (typeof dist == 'string' || dist instanceof String) {
+          let posPercent = dist.indexOf('%');
+          if (posPercent !== -1) {
+            dist = windowHeight * parseFloat(dist) / 100;
+          }
+        }
         // activation
         let checkTop = scrollTop + windowHeight >= top + dist;
         let checkBottom = scrollTop < bottom - dist;
@@ -162,7 +168,7 @@ Fade.optionsDefault = {
   "min": 0,
   "max": "Infinity",
   "instant": true,
-  "distance": 0.2,
+  "distance": "20%",
   "aria": false
 };
 
