@@ -2080,6 +2080,16 @@ class Core {
       // friction to limit
       self.detail.wheelEnd = Math.max(min, Math.min(self.detail.wheelEnd, max));
     }
+    // instant
+    if (options.wheel.instant) {
+      // wheel
+      if (delta < 0) {
+        self.goToNext(1);
+      } else if (delta > 0) {
+        self.goToPrev(1);
+      }
+      return false;
+    }
     // friction
     cancelAnimationFrame(parseFloat(el.dataset.smoothFrame));
     el.dataset.smoothFrame = requestAnimationFrame(function () {

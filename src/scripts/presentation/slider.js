@@ -818,6 +818,7 @@ Slider.optionsDefault = {
     "selector": false,
     "block": true,
     "limit": false,
+    "instant": false,
     "transform": true,
     "horizontal": true,
     "factor": 1,
