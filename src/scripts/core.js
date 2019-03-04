@@ -2116,7 +2116,7 @@ class Core {
     if (typeof fncFriction === 'string') {
       fncFriction = new Function('delta', fncFriction);
     }
-    self.detail.wheelCurrent = self.detail.wheelCurrent + fncFriction(Math.abs(delta)) * sign;
+    self.detail.wheelCurrent += fncFriction(Math.abs(delta)) * sign;
     // fix math on round to stop loop
     if (delta < 0) {
       self.detail.wheelCurrent = Math.floor(self.detail.wheelCurrent);
