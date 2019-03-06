@@ -111,3 +111,13 @@ html.xt-focus {
     }
   }
 }
+
+input, select, textarea {
+  // autofill
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    transition-property: background-color, color;
+    transition-delay: 10000000s;
+  }
+}

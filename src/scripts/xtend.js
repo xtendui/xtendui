@@ -943,6 +943,7 @@ try {
 // root utils
 //////////////////////
 
+/*
 // pass focus and blur window events to iframes
 
 addEventListener('focus', function () {
@@ -956,6 +957,7 @@ addEventListener('blur', function () {
     iframe.contentWindow.dispatchEvent(new CustomEvent('blur'));
   }
 });
+*/
 
 //////////////////////
 // export
