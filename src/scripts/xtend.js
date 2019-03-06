@@ -47,6 +47,7 @@ Xt.observe = [];
 Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
 Xt.resizeDelay = 100;
 Xt.scrollDelay = false;
+Xt.enableFocus = true;
 Xt.focusables = 'a, button, details, input, iframe, select, textarea';
 Xt.components = [
   {'name': 'xt-core', 'class': Xt.Core},
@@ -478,7 +479,11 @@ Xt.focus = {
 
 };
 
-Xt.focus.on();
+requestAnimationFrame( function() {
+  if (Xt.enableFocus) {
+    Xt.focus.on();
+  }
+});
 
 //////////////////////
 // focusLimit
