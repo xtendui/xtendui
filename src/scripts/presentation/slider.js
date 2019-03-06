@@ -462,10 +462,6 @@ class Slider extends Core {
     for (let target of targets) {
       target.dataset.xtSlideOnDone = 'true';
     }
-    // reinit if needed
-    if (self.dragger && !self.initial) {
-      self.initDraggerSlide(slide);
-    }
     // autoHeight
     if (self.autoHeight) {
       self.eventAutoHeight(slide);
