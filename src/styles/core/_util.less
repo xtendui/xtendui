@@ -1,18 +1,20 @@
 //////////////////////
-// various
+// util
 //////////////////////
 
-.pointer-events--none {
+// various
+
+.pointer-events--none() {
   pointer-events: none;
 }
 
-.links--none {
+.links--none() {
   a&, a {
     pointer-events: none;
   }
 }
 
-.text-capitalize {
+.text-capitalize() {
   display: inline-block;
   text-transform: lowercase;
   &:first-letter {
@@ -20,12 +22,12 @@
   }
 }
 
-.overflow-style {
+.overflow-style() {
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
-.design-setup {
+.design-setup() {
   content: '';
   overflow: hidden;
   position: absolute;
@@ -36,7 +38,7 @@
   right: 0;
 }
 
-.clearfix {
+.clearfix() {
   &::before,
   &::after {
     content: ' ';
@@ -47,21 +49,21 @@
   }
 }
 
-.user-select--none {
+.user-select--none() {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-.user-select--text {
+.user-select--text() {
   -webkit-user-select: text;
   -moz-user-select: text;
   -ms-user-select: text;
   user-select: text;
 }
 
-.accelerate {
+.accelerate() {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000;
@@ -69,7 +71,7 @@
   transform: translateZ(0);
 }
 
-.sr-only {
+.sr-only() {
   position: absolute;
   overflow: hidden;
   margin: -1px;
@@ -79,10 +81,6 @@
   border: 0;
   clip: rect(0, 0, 0, 0);
 }
-
-//////////////////////
-// util
-//////////////////////
 
 // toggle
 
