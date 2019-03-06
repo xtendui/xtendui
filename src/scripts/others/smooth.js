@@ -33,7 +33,6 @@ Smooth.optionsDefault = {
     "selector": "scrollingElement",
     "block": false,
     "limit": true,
-    "instant": false,
     "transform": false,
     "horizontal": false,
     "factor": 1,

@@ -2081,7 +2081,7 @@ class Core {
       self.detail.wheelEnd = Math.max(min, Math.min(self.detail.wheelEnd, max));
     }
     // instant
-    if (options.wheel.instant) {
+    if (!options.wheel.friction) {
       // wheel
       if (delta < 0) {
         self.goToNext(1);
