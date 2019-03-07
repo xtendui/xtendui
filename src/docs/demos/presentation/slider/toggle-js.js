@@ -8,9 +8,9 @@ Xt.observe.push({
     let timeMask = .8;
     let timeContent = .8;
     let sizeContent = 100;
-    let easeIn = new Ease(BezierEasing(.36, 0, 0, 1));
-    let easeOut = new Ease(BezierEasing(1, 0, .64, 1));
-    let easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
+    let easeIn = new Ease(BezierEasing(.36,0,0,1));
+    let easeOut = new Ease(BezierEasing(1,0,.64,1));
+    let easeInOut = new Ease(BezierEasing(.68,.13,.25,1));
 
     // slider
 

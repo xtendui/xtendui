@@ -530,27 +530,27 @@ input[type="checkbox"]:not(.unstyled) ~ .form-label::before {
   transform: scale(0.9, 0.9);
   transition-property: transform;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 input[type="checkbox"]:not(.unstyled) ~ .form-label::after {
   opacity: 0 !important;
   transform: scale(0.9, 0.5);
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 input[type="checkbox"]:not(.unstyled) ~ .form-label.active::before {
   transform: scale(1, 1);
   transition-property: transform;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 input[type="checkbox"]:not(.unstyled) ~ .form-label.active::after {
   opacity: 1 !important;
   transform: scale(1, 1);
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 input[type="checkbox"]:not(.unstyled) ~ .form-label::before {
   border-radius: 4px;
@@ -648,27 +648,27 @@ input[type="radio"]:not(.unstyled) ~ .form-label::before {
   transform: scale(0.9, 0.9);
   transition-property: transform;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 input[type="radio"]:not(.unstyled) ~ .form-label::after {
   opacity: 0 !important;
   transform: scale(0.9, 0.5);
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 input[type="radio"]:not(.unstyled) ~ .form-label.active::before {
   transform: scale(1, 1);
   transition-property: transform;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 input[type="radio"]:not(.unstyled) ~ .form-label.active::after {
   opacity: 1 !important;
   transform: scale(1, 1);
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 input[type="radio"]:not(.unstyled) ~ .form-label::before {
   border-radius: 50%;
@@ -877,7 +877,7 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
   font-size: 1.325rem;
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 .list--base > li:not(.custom) > .btn:hover,
 .list--base > li:not(.custom) > .btn.hover,
@@ -944,19 +944,19 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
 .list--base > li:not(.custom) > .btn::before {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 .list--base > li:not(.custom) > .btn:active,
 .list--base > li:not(.custom) > .btn.active {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .list--base > li:not(.custom) > .btn:active::before,
 .list--base > li:not(.custom) > .btn.active::before {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .list {
   display: flex;
@@ -1002,7 +1002,7 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
   font-size: 1.325rem;
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 .list > li:not(.custom) > .btn:hover,
 .list > li:not(.custom) > .btn.hover,
@@ -1069,19 +1069,19 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
 .list > li:not(.custom) > .btn::before {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 .list > li:not(.custom) > .btn:active,
 .list > li:not(.custom) > .btn.active {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .list > li:not(.custom) > .btn:active::before,
 .list > li:not(.custom) > .btn.active::before {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .list--block {
   flex-wrap: nowrap;
@@ -3826,7 +3826,7 @@ legend:last-child {
   color: #343a40;
   transition-property: color, border, background;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 .form-input:focus,
 .form-input.active {
@@ -3838,13 +3838,13 @@ select.form-input {
 .form-input:hover {
   transition-property: color, border, background;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .form-input:focus,
 .form-input.active {
   transition-property: color, border, background;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .form-input--gray {
   border-color: #D9D9D5;
@@ -3922,7 +3922,7 @@ select.form-input--gray {
   transform: scale(0.9, 0.9);
   transition-property: transform;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 .checkbox::after,
 .radio::after {
@@ -3930,14 +3930,14 @@ select.form-input--gray {
   transform: scale(0.9, 0.5);
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 .checkbox.active::before,
 .radio.active::before {
   transform: scale(1, 1);
   transition-property: transform;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .checkbox.active::after,
 .radio.active::after {
@@ -3945,7 +3945,7 @@ select.form-input--gray {
   transform: scale(1, 1);
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .checkbox::before {
   border-radius: 4px;
@@ -4003,14 +4003,14 @@ input[type="checkbox"]:not(.unstyled):checked ~ .form-label::before {
   transform: scale(1, 1);
   transition-property: transform;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 input[type="checkbox"]:not(.unstyled):checked ~ .form-label::after {
   opacity: 1 !important;
   transform: scale(1, 1);
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 input[type="checkbox"]:not(.unstyled):disabled ~ .form-label {
   opacity: 1;
@@ -4026,14 +4026,14 @@ input[type="radio"]:not(.unstyled):checked ~ .form-label::before {
   transform: scale(1, 1);
   transition-property: transform;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 input[type="radio"]:not(.unstyled):checked ~ .form-label::after {
   opacity: 1 !important;
   transform: scale(1, 1);
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 input[type="radio"]:not(.unstyled):disabled ~ .form-label {
   opacity: 1;
@@ -4369,7 +4369,7 @@ a,
   color: #7367F0;
   transition-property: color;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 a:hover,
 .alink:hover,
@@ -4401,7 +4401,7 @@ a.active,
 .alink.active {
   transition-property: color;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 [disabled],
 .disabled {
@@ -4463,14 +4463,14 @@ img.caret.active > span::after {
   opacity: 0;
   animation-name: anim-y-inverse--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .caret.out > span::after {
   opacity: 0;
   animation-name: anim-y--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .caret.caret--inverse > span::after {
@@ -4523,14 +4523,14 @@ img.caret.caret--inverse.active > span::after {
   opacity: 0;
   animation-name: anim-y--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .caret.caret--inverse.out > span::after {
   opacity: 0;
   animation-name: anim-y-inverse--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .caret.caret--horizontal > span::after {
@@ -4583,14 +4583,14 @@ img.caret.caret--horizontal.active > span::after {
   opacity: 0;
   animation-name: anim-x-inverse--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .caret.caret--horizontal.out > span::after {
   opacity: 0;
   animation-name: anim-x--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .caret.caret--horizontal.caret--inverse > span::before {
@@ -4649,14 +4649,14 @@ img.caret.caret--horizontal.caret--inverse.active > span::before {
   opacity: 0;
   animation-name: anim-x--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .caret.caret--horizontal.caret--inverse.out > span::before {
   opacity: 0;
   animation-name: anim-x-inverse--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .btn {
@@ -4718,24 +4718,24 @@ img.caret.caret--horizontal.caret--inverse.active > span::before {
 .btn {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 .btn::before {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 .btn:active,
 .btn.active {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .btn:active::before,
 .btn.active::before {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .btn--primary {
   text-decoration: none;
@@ -5123,28 +5123,28 @@ img.btn--close > span::after {
   opacity: 0;
   animation-name: anim-zoom--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .drop_outer.active > .drop > .drop_inner > .drop_content {
   opacity: 0;
   animation-name: anim-y--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
   animation-delay: 250ms;
 }
 .drop_outer.active > .backdrop {
   animation-name: anim-backdrop--in;
   animation-duration: inherit;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .drop_outer.out > .drop > .drop_inner > .drop_design {
   opacity: 1;
   animation-name: anim-zoom--out;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
   animation-delay: 250ms;
 }
@@ -5152,13 +5152,13 @@ img.btn--close > span::after {
   opacity: 1;
   animation-name: anim-y--out;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
 }
 .drop_outer.out > .backdrop {
   animation-name: anim-backdrop--out;
   animation-duration: inherit;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
 }
 .drop--disabled > .drop > .drop_inner > .drop_content {
@@ -5474,7 +5474,7 @@ img.btn--close > span::after {
   opacity: 0;
   animation-name: anim-zoom--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .overlay_outer.active .overlay_content,
@@ -5482,28 +5482,28 @@ img.btn--close > span::after {
   opacity: 0;
   animation-name: anim-y--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
   animation-delay: 250ms;
 }
 .overlay_outer.active > .backdrop {
   animation-name: anim-backdrop--in;
   animation-duration: inherit;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .overlay_outer.active.overlay--screen {
   opacity: 0;
   animation-name: anim-opacity--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .overlay_outer.active.overlay--left .overlay_design {
   opacity: 0;
   animation-name: anim-x--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .overlay_outer.active.overlay--left .overlay_content,
@@ -5511,7 +5511,7 @@ img.btn--close > span::after {
   opacity: 0;
   animation-name: anim-x--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
   animation-delay: 250ms;
 }
@@ -5519,7 +5519,7 @@ img.btn--close > span::after {
   opacity: 0;
   animation-name: anim-x-inverse--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .overlay_outer.active.overlay--right .overlay_content,
@@ -5527,7 +5527,7 @@ img.btn--close > span::after {
   opacity: 0;
   animation-name: anim-x-inverse--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
   animation-delay: 250ms;
 }
@@ -5535,7 +5535,7 @@ img.btn--close > span::after {
   opacity: 1;
   animation-name: anim-zoom--out;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
   animation-delay: 250ms;
 }
@@ -5544,20 +5544,20 @@ img.btn--close > span::after {
   opacity: 1;
   animation-name: anim-y--out;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
 }
 .overlay_outer.out > .backdrop {
   animation-name: anim-backdrop--out;
   animation-duration: inherit;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
 }
 .overlay_outer.out.overlay--screen {
   opacity: 1;
   animation-name: anim-opacity--out;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
   animation-delay: 250ms;
 }
@@ -5565,7 +5565,7 @@ img.btn--close > span::after {
   opacity: 1;
   animation-name: anim-x-inverse--out;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
   animation-delay: 250ms;
 }
@@ -5574,14 +5574,14 @@ img.btn--close > span::after {
   opacity: 1;
   animation-name: anim-x-inverse--out;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
 }
 .overlay_outer.out.overlay--right .overlay_design {
   opacity: 1;
   animation-name: anim-x--out;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
   animation-delay: 250ms;
 }
@@ -5590,7 +5590,7 @@ img.btn--close > span::after {
   opacity: 1;
   animation-name: anim-x--out;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
 }
 .overlay--primary .overlay_design {
@@ -5719,12 +5719,12 @@ img.btn--close > span::after {
 .slides {
   transition-property: height;
   transition-duration: 1000ms;
-  transition-timing-function: cubic-bezier(.68, .13, .25, 1);
+  transition-timing-function: cubic-bezier(.68,.13,.25,1);
 }
 .slides_inner {
   transition-property: transform;
   transition-duration: 1000ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .slider_pagination {
   display: flex;
@@ -5774,7 +5774,7 @@ img.btn--close > span::after {
   font-size: 1.325rem;
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 .slider_pagination > li:not(.custom) > .btn:hover,
 .slider_pagination > li:not(.custom) > .btn.hover,
@@ -5841,19 +5841,19 @@ img.btn--close > span::after {
 .slider_pagination > li:not(.custom) > .btn::before {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 .slider_pagination > li:not(.custom) > .btn:active,
 .slider_pagination > li:not(.custom) > .btn.active {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .slider_pagination > li:not(.custom) > .btn:active::before,
 .slider_pagination > li:not(.custom) > .btn.active::before {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .slider_pagination > * {
   margin: 0.5rem 0.5rem;
@@ -5919,7 +5919,7 @@ img.btn--close > span::after {
   font-size: 1.325rem;
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
   padding: 0.5em 1em;
   font-size: 10px;
   padding: 0.5em 1.15em;
@@ -5990,19 +5990,19 @@ img.btn--close > span::after {
 .slider_pagination [data-xt-pag]::before {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 .slider_pagination [data-xt-pag]:active,
 .slider_pagination [data-xt-pag].active {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .slider_pagination [data-xt-pag]:active::before,
 .slider_pagination [data-xt-pag].active::before {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .slider_pagination [data-xt-pag],
 .slider_pagination [data-xt-pag]::before {
@@ -6036,7 +6036,7 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
 .sticky--moving {
   transition-property: top;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.68, .13, .25, 1);
+  transition-timing-function: cubic-bezier(.68,.13,.25,1);
 }
 .spinner {
   width: 25px;
@@ -6071,7 +6071,7 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   stroke: #7367F0;
   stroke-dashoffset: 628;
   transform: rotateY(0deg) rotateZ(-90deg);
-  animation: anim-spinner 2000ms infinite cubic-bezier(.36, 0, 0, 1);
+  animation: anim-spinner 2000ms infinite cubic-bezier(.36,0,0,1);
 }
 @keyframes anim-spinner {
   0% {
@@ -6082,7 +6082,7 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   50% {
     stroke-dashoffset: 0;
     transform: rotateY(0deg) rotateZ(90deg);
-    animation-timing-function: cubic-bezier(1, 0, .64, 1);
+    animation-timing-function: cubic-bezier(1,0,.64,1);
     transform-origin: 48% 48%;
   }
   50.0001% {
@@ -6103,7 +6103,7 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   width: 0;
   background: linear-gradient(90deg, #7367F0 33%, #5e50ee 100%);
   box-shadow: 0 0.1rem 1rem rgba(115, 103, 240, 0.25), 0 0.2rem 2rem rgba(115, 103, 240, 0.4);
-  animation: anim-loader--x 2000ms infinite cubic-bezier(.36, 0, 0, 1);
+  animation: anim-loader--x 2000ms infinite cubic-bezier(.36,0,0,1);
 }
 .loader--y .filler span:nth-child(1) {
   background: rgba(115, 103, 240, 0.05);
@@ -6112,7 +6112,7 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   height: 0;
   background: linear-gradient(0deg, #7367F0 33%, #5e50ee 100%);
   box-shadow: 0 0.1rem 1rem rgba(115, 103, 240, 0.25), 0 0.2rem 2rem rgba(115, 103, 240, 0.4);
-  animation: anim-loader--y 2000ms infinite cubic-bezier(.36, 0, 0, 1);
+  animation: anim-loader--y 2000ms infinite cubic-bezier(.36,0,0,1);
 }
 @keyframes anim-loader--x {
   0% {
@@ -6122,7 +6122,7 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   50% {
     left: 0;
     width: 100%;
-    animation-timing-function: cubic-bezier(1, 0, .64, 1);
+    animation-timing-function: cubic-bezier(1,0,.64,1);
   }
   100% {
     left: 100%;
@@ -6137,7 +6137,7 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   50% {
     top: 0;
     height: 100%;
-    animation-timing-function: cubic-bezier(1, 0, .64, 1);
+    animation-timing-function: cubic-bezier(1,0,.64,1);
   }
   100% {
     top: 0;
@@ -6169,7 +6169,7 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   opacity: 1;
   transition-property: opacity;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .loader.active .spinner,
 .loader.active .filler {
@@ -6178,14 +6178,14 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   transition-property: opacity, transform;
   transition-duration: 500ms;
   transition-delay: 250ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .loader.out {
   opacity: 0;
   transition-property: opacity;
   transition-duration: 500ms;
   transition-delay: 250ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 .loader.out .spinner,
 .loader.out .filler {
@@ -6193,14 +6193,14 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   transform: scale(0.75, 0.75);
   transition-property: opacity, transform;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 .loader--mouse {
   opacity: 0;
   transition-property: opacity;
   transition-duration: 500ms;
   transition-delay: 250ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 .loader--spinner.loader--mouse {
   margin-top: -30px;
@@ -6219,7 +6219,7 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   transform: scale(0.75, 0.75);
   transition-property: opacity, transform;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1, 0, .64, 1);
+  transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 .loader--js .spinner circle {
   opacity: 1 !important;
@@ -6272,14 +6272,14 @@ transition-timing-function: @bez--out;
   opacity: 0;
   animation-name: anim-opacity--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .anim-opacity.out {
   opacity: 1;
   animation-name: anim-opacity--out;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
 }
 @keyframes anim-opacity--in {
@@ -6302,14 +6302,14 @@ transition-timing-function: @bez--out;
   opacity: 0;
   animation-name: anim-zoom--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .anim-zoom.out {
   opacity: 1;
   animation-name: anim-zoom--out;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
 }
 @keyframes anim-zoom--in {
@@ -6336,14 +6336,14 @@ transition-timing-function: @bez--out;
   opacity: 0;
   animation-name: anim-y--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .anim-y.out {
   opacity: 1;
   animation-name: anim-y--out;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
 }
 @keyframes anim-y--in {
@@ -6370,14 +6370,14 @@ transition-timing-function: @bez--out;
   opacity: 0;
   animation-name: anim-y-inverse--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .anim-y-inverse.out {
   opacity: 1;
   animation-name: anim-y-inverse--out;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
 }
 @keyframes anim-y-inverse--in {
@@ -6404,14 +6404,14 @@ transition-timing-function: @bez--out;
   opacity: 0;
   animation-name: anim-x--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .anim-x.out {
   opacity: 1;
   animation-name: anim-x--out;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
 }
 @keyframes anim-x--in {
@@ -6438,14 +6438,14 @@ transition-timing-function: @bez--out;
   opacity: 0;
   animation-name: anim-x-inverse--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .anim-x-inverse.out {
   opacity: 1;
   animation-name: anim-x-inverse--out;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
 }
 @keyframes anim-x-inverse--in {
@@ -6472,14 +6472,14 @@ transition-timing-function: @bez--out;
 .collapse--width.active {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
   transition-delay: 250ms;
 }
 .collapse--height.out,
 .collapse--width.out {
   transition-property: all;
   transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36, 0, 0, 1);
+  transition-timing-function: cubic-bezier(.36,0,0,1);
   transition-delay: 500ms;
 }
 .separator {
@@ -6535,28 +6535,28 @@ transition-timing-function: @bez--out;
   opacity: 0;
   animation-name: anim-x--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .alert.active.inverse {
   opacity: 0;
   animation-name: anim-x-inverse--in;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .alert.out {
   opacity: 1;
   animation-name: anim-x--out;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
 }
 .alert.out.inverse {
   opacity: 1;
   animation-name: anim-x-inverse--out;
   animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
 }
 .alert--primary::before {
@@ -6675,13 +6675,13 @@ transition-timing-function: @bez--out;
 .backdrop.active {
   animation-name: anim-backdrop--in;
   animation-duration: inherit;
-  animation-timing-function: cubic-bezier(.36, 0, 0, 1);
+  animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
 }
 .backdrop.out {
   animation-name: anim-backdrop--out;
   animation-duration: inherit;
-  animation-timing-function: cubic-bezier(1, 0, .64, 1);
+  animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
 }
 @keyframes anim-backdrop--in {
