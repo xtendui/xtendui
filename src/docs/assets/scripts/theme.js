@@ -2,7 +2,7 @@
 // import
 //////////////////////
 
-import Xt from '../../../scripts/xtend';
+import '../../../scripts/xtend';
 
 //////////////////////
 // vars
