@@ -16,29 +16,24 @@
 // col--auto
 
 .col--auto(@breakpoint:none) when (@breakpoint = none) {
-  flex-shrink: 1;
-  flex-grow: 1;
-  flex-basis: auto;
+  flex: 1 1 0; // flex-grow flex-shrink flex-basis
   max-width: none;
-  width: 0;
+  width: auto;
 }
 
 .col--auto(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    flex-shrink: 1;
-    flex-grow: 1;
-    flex-basis: auto;
+    flex: 1 1 0; // flex-grow flex-shrink flex-basis
     max-width: none;
-    width: 0;
+    width: auto;
   }
 }
 
 // col--custom
 
 .col--custom(@val, @breakpoint:none) when (@breakpoint = none) {
-  flex-shrink: 0;
-  flex-grow: 0;
+  flex: 0 0 auto; // flex-grow flex-shrink flex-basis
   max-width: @val;
   width: @val;
 }
@@ -46,8 +41,7 @@
 .col--custom(@val, @breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    flex-shrink: 0;
-    flex-grow: 0;
+    flex: 0 0 auto; // flex-grow flex-shrink flex-basis
     max-width: @val;
     width: @val;
   }
@@ -58,8 +52,7 @@
 
 .col(@number, @breakpoint:none) when (@breakpoint = none) {
   @val: (percentage(@number / @columns));
-  flex-shrink: 0;
-  flex-grow: 0;
+  flex: 0 0 auto; // flex-grow flex-shrink flex-basis
   max-width: @val;
   width: @val;
 }
@@ -68,9 +61,20 @@
   @query-min: 'min-@{breakpoint}';
   @val: (percentage(@number / @columns));
   @media @@query-min {
-    flex-shrink: 0;
-    flex-grow: 0;
+    flex: 0 0 auto; // flex-grow flex-shrink flex-basis
     max-width: @val;
     width: @val;
   }
+}
+
+//////////////////////
+// row
+//////////////////////
+
+.row {
+  display: flex;
+}
+.row-inline {
+  display: inline-flex;
+  width: 100%;
 }

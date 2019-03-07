@@ -16,6 +16,20 @@
   .list_btn({ .btn(); });
 }
 
+// .list
+
+.list {
+  .list--base();
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.list--block {
+  .list--base();
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
 // selectors
 
 .list_btn--all(@rules) {
@@ -32,17 +46,4 @@
       @rules();
     }
   }
-}
-
-// .list
-
-.list {
-  .list--base();
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-.list--block {
-  flex-wrap: nowrap;
-  flex-direction: column;
 }

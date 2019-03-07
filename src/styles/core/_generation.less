@@ -608,8 +608,8 @@
       }
       // order
       .generate-order(@breakpoint);
-      // flex-space
-      .generate-flex-space(@breakpoint);
+      // row-space
+      .generate-row-space(@breakpoint);
       // list-space
       .generate-list-space(@breakpoint);
       // flex util
@@ -630,8 +630,8 @@
         }
         // order
         .generate-order(@breakpoint);
-        // flex-space
-        .generate-flex-space(@breakpoint);
+        // row-space
+        .generate-row-space(@breakpoint);
         // list-space
         .generate-list-space(@breakpoint);
         // flex util
@@ -670,31 +670,31 @@
     }
   }
 
-  // generate-flex-space
+  // generate-row-space
 
-  .generate-flex-space(@breakpoint:none, @i:length(@flex-spaces)) when (@i > 0) {
-    .generate-flex-space(@breakpoint, @i - 1);
-    @name: extract(@flex-spaces, @i);
+  .generate-row-space(@breakpoint:none, @i:length(@row-spaces)) when (@i > 0) {
+    .generate-row-space(@breakpoint, @i - 1);
+    @name: extract(@row-spaces, @i);
     & when (@breakpoint = none) {
-      .flex-space--y-@{name} {
-        .flex-space--y(@name) !important;
+      .row-space--y-@{name} {
+        .row-space--y(@name) !important;
       }
-      .flex-space--x-@{name} {
-        .flex-space--x(@name) !important;
+      .row-space--x-@{name} {
+        .row-space--x(@name) !important;
       }
-      .flex-space--@{name} {
-        .flex-space(@name) !important;
+      .row-space--@{name} {
+        .row-space(@name) !important;
       }
     }
     & when not (@breakpoint = none) {
-      .flex-space--y-@{name}-@{breakpoint} {
-        .flex-space--y(@name) !important;
+      .row-space--y-@{name}-@{breakpoint} {
+        .row-space--y(@name) !important;
       }
-      .flex-space--x-@{name}-@{breakpoint} {
-        .flex-space--x(@name) !important;
+      .row-space--x-@{name}-@{breakpoint} {
+        .row-space--x(@name) !important;
       }
-      .flex-space--@{name}-@{breakpoint} {
-        .flex-space(@name) !important;
+      .row-space--@{name}-@{breakpoint} {
+        .row-space(@name) !important;
       }
     }
   }
