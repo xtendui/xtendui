@@ -558,8 +558,11 @@ Xt.textareaAutosize = {
   init: function (el) {
     if (!el.dataset.xtTextareaAutosizeDone) {
       el.dataset.xtTextareaAutosizeDone = 'true';
+      // key
       el.addEventListener('keydown', Xt.textareaAutosize.keychange.bind(el));
       el.addEventListener('keyup', Xt.textareaAutosize.keychange.bind(el));
+      // initial
+      Xt.textareaAutosize.keychange.bind(el)();
     }
   },
 
@@ -570,6 +573,7 @@ Xt.textareaAutosize = {
   destroy: function (el) {
     if (el.dataset.xtTextareaAutosizeDone) {
       delete el.dataset.xtTextareaAutosizeDone;
+      // key
       el.removeEventListener('keydown', Xt.textareaAutosize.keychange.bind(el));
       el.removeEventListener('keyup', Xt.textareaAutosize.keychange.bind(el));
     }
@@ -582,7 +586,7 @@ Xt.textareaAutosize = {
     let el = this;
     el.style.height = '5px';
     el.style.height = (el.scrollHeight) + 'px';
-    requestAnimationFrame(function () {
+    requestAnimationFrame(function () { // fix safari
       el.style.height = (el.scrollHeight) + 'px';
     });
   }
