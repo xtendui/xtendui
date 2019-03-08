@@ -93,6 +93,21 @@ select {
   }
 }
 
+button, input, select, textarea {
+  // safari margin
+  margin: 0;
+}
+
+input, select, textarea {
+  // autofill
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    transition-property: background-color, color;
+    transition-delay: 10000000s;
+  }
+}
+
 html:not(.xt-focus) {
   // focus disable
   :focus {
@@ -109,15 +124,5 @@ html.xt-focus {
       outline-style: auto;
       outline-width: 5px;
     }
-  }
-}
-
-input, select, textarea {
-  // autofill
-  &:-webkit-autofill,
-  &:-webkit-autofill:hover,
-  &:-webkit-autofill:focus {
-    transition-property: background-color, color;
-    transition-delay: 10000000s;
   }
 }

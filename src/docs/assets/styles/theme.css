@@ -165,15 +165,11 @@ select {
 select::-ms-expand {
   display: none;
 }
-html:not(.xt-focus) :focus {
-  outline: 0;
-}
-html.xt-focus input[type="checkbox"]:focus ~ .form-label::before,
-html.xt-focus input[type="radio"]:focus ~ .form-label::before {
-  outline-color: #4d90fe;
-  outline-offset: -2px;
-  outline-style: auto;
-  outline-width: 5px;
+button,
+input,
+select,
+textarea {
+  margin: 0;
 }
 input:-webkit-autofill,
 select:-webkit-autofill,
@@ -186,6 +182,16 @@ select:-webkit-autofill:focus,
 textarea:-webkit-autofill:focus {
   transition-property: background-color, color;
   transition-delay: 10000000s;
+}
+html:not(.xt-focus) :focus {
+  outline: 0;
+}
+html.xt-focus input[type="checkbox"]:focus ~ .form-label::before,
+html.xt-focus input[type="radio"]:focus ~ .form-label::before {
+  outline-color: #4d90fe;
+  outline-offset: -2px;
+  outline-style: auto;
+  outline-width: 5px;
 }
 html {
   -webkit-text-size-adjust: 100%;
