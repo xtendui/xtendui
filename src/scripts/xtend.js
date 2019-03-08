@@ -561,6 +561,11 @@ Xt.textareaAutosize = {
       // key
       el.addEventListener('keydown', Xt.textareaAutosize.keychange.bind(el));
       el.addEventListener('keyup', Xt.textareaAutosize.keychange.bind(el));
+      // form
+      let form = Xt.parents(el, 'form')[0];
+      if (form) {
+        form.addEventListener('reset', Xt.textareaAutosize.keychange.bind(el));
+      }
       // initial
       Xt.textareaAutosize.keychange.bind(el)();
     }
@@ -576,6 +581,11 @@ Xt.textareaAutosize = {
       // key
       el.removeEventListener('keydown', Xt.textareaAutosize.keychange.bind(el));
       el.removeEventListener('keyup', Xt.textareaAutosize.keychange.bind(el));
+      // form
+      let form = Xt.parents(el, 'form')[0];
+      if (form) {
+        form.removeEventListener('reset', Xt.textareaAutosize.keychange.bind(el));
+      }
     }
   },
 
@@ -585,8 +595,9 @@ Xt.textareaAutosize = {
   keychange: function () {
     let el = this;
     el.style.height = '5px';
-    el.style.height = (el.scrollHeight) + 'px';
-    requestAnimationFrame(function () { // fix safari
+    el.style.height = (el.scrollHeight) + 'px'; // fix safari instant
+    requestAnimationFrame(function () {
+      el.style.height = '5px'; // fix safari instant
       el.style.height = (el.scrollHeight) + 'px';
     });
   }
