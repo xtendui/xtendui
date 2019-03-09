@@ -595,9 +595,9 @@ Xt.textareaAutosize = {
   keychange: function () {
     let el = this;
     el.style.height = '5px';
-    el.style.height = (el.scrollHeight) + 'px'; // fix safari instant
+    el.style.height = (el.scrollHeight) + 'px'; // fixes both safari RAF and form reset
     requestAnimationFrame(function () {
-      el.style.height = '5px'; // fix safari instant
+      el.style.height = '5px'; // fixes both safari RAF and form reset
       el.style.height = (el.scrollHeight) + 'px';
     });
   }
