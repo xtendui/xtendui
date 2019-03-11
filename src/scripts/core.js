@@ -1971,6 +1971,10 @@ class Core {
    */
   eventWheelBlockHandler(e) {
     let self = this;
+    // disabled
+    if (self.disabled && !self.initial) {
+      return false;
+    }
     // prevent default if not loop
     let max = self.getElementsSingle().length - 1;
     let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY;
