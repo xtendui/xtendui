@@ -171,7 +171,7 @@
                           <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
                             <div class="site-breadcrumbs-body-sub-inner">
                               {% for pa in subsorted %}
-                              <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn--primary btn--nodesign{% if pa.title == page.title %} active{% endif %}">
+                              <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn--left btn--primary btn--nodesign{% if pa.title == page.title %} active{% endif %}">
                                 <span>{{ pa.title }}</span>
                               </a>
                               {% endfor %}
@@ -205,7 +205,7 @@
                           {% assign sorted = site.[collection.label] | sort: 'order' %}
                             {% for p in sorted %}
                               {% if p.categories[0] == collection.label %}
-                              <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn--primary btn--nodesign{% if p.title == page.title %} active{% endif %}">
+                              <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn--left btn--primary btn--nodesign{% if p.title == page.title %} active{% endif %}">
                                 <span>{{ p.title }}</span>
                               </a>
                               {% endif %}

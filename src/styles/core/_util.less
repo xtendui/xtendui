@@ -339,262 +339,6 @@
 }
 
 //////////////////////
-// margin
-//////////////////////
-
-// margin
-
-.margin(@pos:all, @size, @breakpoint:none) when (@breakpoint = none) {
-  & when (isnumber(@size)) {
-    .print-margin(@pos, @size, @breakpoint);
-  }
-  & when not (isnumber(@size)) {
-    .loop-margin(@pos, @size, @breakpoint);
-  }
-  // layout
-  & when (@size = layout) and (@pos = y) {
-    &:first-child {
-      margin-top: 0;
-    }
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  & when (@size = layout) and (@pos = x) {
-    &:first-child {
-      margin-left: 0;
-    }
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-  & when (@size = layout) and (@pos = top) {
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-  & when (@size = layout) and (@pos = bottom) {
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  & when (@size = layout) and (@pos = left) {
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-  & when (@size = layout) and (@pos = right) {
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-}
-
-.margin(@pos:all, @size, @breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    & when (isnumber(@size)) {
-      .print-margin(@pos, @size, @breakpoint);
-    }
-    
-    & when not (isnumber(@size)) {
-      .loop-margin(@pos, @size, @breakpoint);
-    }
-  }
-}
-
-.loop-margin(@pos:all, @size, @breakpoint:none, @i:length(@margins)) when (@i > 0) {
-  .loop-margin(@pos, @size, @breakpoint:none, @i - 1);
-  @margin: extract(@margins, @i);
-  @name: extract(@margin, 1);
-  @val: extract(@margin, 2);
-  & when (@name = @size) {
-    .print-margin(@pos, @val, @breakpoint);
-  }
-}
-
-.print-margin(@pos, @val, @breakpoint) when (@pos = all) {
-  margin: @val;
-}
-.print-margin(@pos, @val, @breakpoint) when (@pos = y) {
-  margin-top: @val;
-  margin-bottom: @val;
-}
-.print-margin(@pos, @val, @breakpoint) when (@pos = x) {
-  margin-left: @val;
-  margin-right: @val;
-}
-.print-margin(@pos, @val, @breakpoint) when (@pos = top) {
-  margin-top: @val;
-}
-.print-margin(@pos, @val, @breakpoint) when (@pos = bottom) {
-  margin-bottom: @val;
-}
-.print-margin(@pos, @val, @breakpoint) when (@pos = left) {
-  margin-left: @val;
-}
-.print-margin(@pos, @val, @breakpoint) when (@pos = right) {
-  margin-right: @val;
-}
-
-// margin-remove
-
-.margin-remove(@pos:all, @size, @breakpoint:none) when (@breakpoint = none) {
-  & when (isnumber(@size)) {
-    .print-margin-remove(@pos, @size, @breakpoint);
-  }
-  & when not (isnumber(@size)) {
-    .loop-margin-remove(@pos, @size, @breakpoint);
-  }
-}
-
-.margin-remove(@pos:all, @size, @breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    & when (isnumber(@size)) {
-      .print-margin-remove(@pos, @size, @breakpoint);
-    }
-    
-    & when not (isnumber(@size)) {
-      .loop-margin-remove(@pos, @size, @breakpoint);
-    }
-  }
-}
-
-.loop-margin-remove(@pos:all, @size, @breakpoint:none, @i:length(@margins)) when (@i > 0) {
-  .loop-margin-remove(@pos, @size, @breakpoint:none, @i - 1);
-  @margin: extract(@margins, @i);
-  @name: extract(@margin, 1);
-  @val: extract(@margin, 2);
-  & when (@name = @size) {
-    .print-margin-remove(@pos, @val, @breakpoint);
-  }
-}
-
-.print-margin-remove(@pos, @val, @breakpoint) when (@pos = all) {
-  margin: -@val;
-}
-.print-margin-remove(@pos, @val, @breakpoint) when (@pos = y) {
-  margin-top: -@val;
-  margin-bottom: -@val;
-}
-.print-margin-remove(@pos, @val, @breakpoint) when (@pos = x) {
-  margin-left: -@val;
-  margin-right: -@val;
-}
-.print-margin-remove(@pos, @val, @breakpoint) when (@pos = top) {
-  margin-top: -@val;
-}
-.print-margin-remove(@pos, @val, @breakpoint) when (@pos = bottom) {
-  margin-bottom: -@val;
-}
-.print-margin-remove(@pos, @val, @breakpoint) when (@pos = left) {
-  margin-left: -@val;
-}
-.print-margin-remove(@pos, @val, @breakpoint) when (@pos = right) {
-  margin-right: -@val;
-}
-
-//////////////////////
-// padding
-//////////////////////
-
-// padding
-
-.padding(@pos:all, @size, @breakpoint:none) when (@breakpoint = none) {
-  & when (isnumber(@size)) {
-    .print-padding(@pos, @size, @breakpoint);
-  }
-  & when not (isnumber(@size)) {
-    .loop-padding(@pos, @size, @breakpoint);
-  }
-  // layout
-  & when (@size = layout) and (@pos = y) {
-    &:first-child {
-      padding-top: 0;
-    }
-    &:last-child {
-      padding-bottom: 0;
-    }
-  }
-  & when (@size = layout) and (@pos = x) {
-    &:first-child {
-      padding-left: 0;
-    }
-    &:last-child {
-      padding-right: 0;
-    }
-  }
-  & when (@size = layout) and (@pos = top) {
-    &:first-child {
-      padding-top: 0;
-    }
-  }
-  & when (@size = layout) and (@pos = bottom) {
-    &:last-child {
-      padding-bottom: 0;
-    }
-  }
-  & when (@size = layout) and (@pos = left) {
-    &:first-child {
-      padding-left: 0;
-    }
-  }
-  & when (@size = layout) and (@pos = right) {
-    &:last-child {
-      padding-right: 0;
-    }
-  }
-}
-
-.padding(@pos:all, @size, @breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    & when (isnumber(@size)) {
-      .print-padding(@pos, @size, @breakpoint);
-    }
-    
-    & when not (isnumber(@size)) {
-      .loop-padding(@pos, @size, @breakpoint);
-    }
-  }
-}
-
-.loop-padding(@pos:all, @size, @breakpoint:none, @i:length(@paddings)) when (@i > 0) {
-  .loop-padding(@pos, @size, @breakpoint:none, @i - 1);
-  @padding: extract(@paddings, @i);
-  @name: extract(@padding, 1);
-  @val: extract(@padding, 2);
-  & when (@name = @size) {
-    .print-padding(@pos, @val, @breakpoint);
-  }
-}
-
-.print-padding(@pos, @val, @breakpoint) when (@pos = all) {
-  padding: @val;
-}
-.print-padding(@pos, @val, @breakpoint) when (@pos = y) {
-  padding-top: @val;
-  padding-bottom: @val;
-}
-.print-padding(@pos, @val, @breakpoint) when (@pos = x) {
-  padding-left: @val;
-  padding-right: @val;
-}
-.print-padding(@pos, @val, @breakpoint) when (@pos = top) {
-  padding-top: @val;
-}
-.print-padding(@pos, @val, @breakpoint) when (@pos = bottom) {
-  padding-bottom: @val;
-}
-.print-padding(@pos, @val, @breakpoint) when (@pos = left) {
-  padding-left: @val;
-}
-.print-padding(@pos, @val, @breakpoint) when (@pos = right) {
-  padding-right: @val;
-}
-
-//////////////////////
 // btn alignment
 //////////////////////
 
@@ -642,6 +386,45 @@
     > span {
       justify-content: flex-end;
     }
+  }
+}
+
+//////////////////////
+// list alignment
+//////////////////////
+
+// list alignment
+
+.list--left(@breakpoint:none) when (@breakpoint = none) {
+  .list_btn--all({ .btn--left(); });
+}
+
+.list--left(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    .list_btn--all({ .btn--left(); });
+  }
+}
+
+.list--center(@breakpoint:none) when (@breakpoint = none) {
+  .list_btn--all({ .btn--center(); });
+}
+
+.list--center(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    .list_btn--all({ .btn--center(); });
+  }
+}
+
+.list--right(@breakpoint:none) when (@breakpoint = none) {
+  .list_btn--all({ .btn--right(); });
+}
+
+.list--right(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    .list_btn--all({ .btn--right(); });
   }
 }
 
@@ -800,45 +583,6 @@
     > * {
       margin: @vertical @horizontal;
     }
-  }
-}
-
-//////////////////////
-// list alignment
-//////////////////////
-
-// list alignment
-
-.list--left(@breakpoint:none) when (@breakpoint = none) {
-  .list_btn--all({ .btn--left(); });
-}
-
-.list--left(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    .list_btn--all({ .btn--left(); });
-  }
-}
-
-.list--center(@breakpoint:none) when (@breakpoint = none) {
-  .list_btn--all({ .btn--center(); });
-}
-
-.list--center(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    .list_btn--all({ .btn--center(); });
-  }
-}
-
-.list--right(@breakpoint:none) when (@breakpoint = none) {
-  .list_btn--all({ .btn--right(); });
-}
-
-.list--right(@breakpoint:none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    .list_btn--all({ .btn--right(); });
   }
 }
 
@@ -1026,4 +770,260 @@
       }
     }
   }
+}
+
+//////////////////////
+// margin
+//////////////////////
+
+// margin
+
+.margin(@pos:all, @size, @breakpoint:none) when (@breakpoint = none) {
+  & when (isnumber(@size)) {
+    .print-margin(@pos, @size, @breakpoint);
+  }
+  & when not (isnumber(@size)) {
+    .loop-margin(@pos, @size, @breakpoint);
+  }
+  // layout
+  & when (@size = layout) and (@pos = y) {
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = x) {
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = top) {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = bottom) {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = left) {
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = right) {
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.margin(@pos:all, @size, @breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    & when (isnumber(@size)) {
+      .print-margin(@pos, @size, @breakpoint);
+    }
+
+    & when not (isnumber(@size)) {
+      .loop-margin(@pos, @size, @breakpoint);
+    }
+  }
+}
+
+.loop-margin(@pos:all, @size, @breakpoint:none, @i:length(@margins)) when (@i > 0) {
+  .loop-margin(@pos, @size, @breakpoint:none, @i - 1);
+  @margin: extract(@margins, @i);
+  @name: extract(@margin, 1);
+  @val: extract(@margin, 2);
+  & when (@name = @size) {
+    .print-margin(@pos, @val, @breakpoint);
+  }
+}
+
+.print-margin(@pos, @val, @breakpoint) when (@pos = all) {
+  margin: @val;
+}
+.print-margin(@pos, @val, @breakpoint) when (@pos = y) {
+  margin-top: @val;
+  margin-bottom: @val;
+}
+.print-margin(@pos, @val, @breakpoint) when (@pos = x) {
+  margin-left: @val;
+  margin-right: @val;
+}
+.print-margin(@pos, @val, @breakpoint) when (@pos = top) {
+  margin-top: @val;
+}
+.print-margin(@pos, @val, @breakpoint) when (@pos = bottom) {
+  margin-bottom: @val;
+}
+.print-margin(@pos, @val, @breakpoint) when (@pos = left) {
+  margin-left: @val;
+}
+.print-margin(@pos, @val, @breakpoint) when (@pos = right) {
+  margin-right: @val;
+}
+
+// margin-remove
+
+.margin-remove(@pos:all, @size, @breakpoint:none) when (@breakpoint = none) {
+  & when (isnumber(@size)) {
+    .print-margin-remove(@pos, @size, @breakpoint);
+  }
+  & when not (isnumber(@size)) {
+    .loop-margin-remove(@pos, @size, @breakpoint);
+  }
+}
+
+.margin-remove(@pos:all, @size, @breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    & when (isnumber(@size)) {
+      .print-margin-remove(@pos, @size, @breakpoint);
+    }
+
+    & when not (isnumber(@size)) {
+      .loop-margin-remove(@pos, @size, @breakpoint);
+    }
+  }
+}
+
+.loop-margin-remove(@pos:all, @size, @breakpoint:none, @i:length(@margins)) when (@i > 0) {
+  .loop-margin-remove(@pos, @size, @breakpoint:none, @i - 1);
+  @margin: extract(@margins, @i);
+  @name: extract(@margin, 1);
+  @val: extract(@margin, 2);
+  & when (@name = @size) {
+    .print-margin-remove(@pos, @val, @breakpoint);
+  }
+}
+
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = all) {
+  margin: -@val;
+}
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = y) {
+  margin-top: -@val;
+  margin-bottom: -@val;
+}
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = x) {
+  margin-left: -@val;
+  margin-right: -@val;
+}
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = top) {
+  margin-top: -@val;
+}
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = bottom) {
+  margin-bottom: -@val;
+}
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = left) {
+  margin-left: -@val;
+}
+.print-margin-remove(@pos, @val, @breakpoint) when (@pos = right) {
+  margin-right: -@val;
+}
+
+//////////////////////
+// padding
+//////////////////////
+
+// padding
+
+.padding(@pos:all, @size, @breakpoint:none) when (@breakpoint = none) {
+  & when (isnumber(@size)) {
+    .print-padding(@pos, @size, @breakpoint);
+  }
+  & when not (isnumber(@size)) {
+    .loop-padding(@pos, @size, @breakpoint);
+  }
+  // layout
+  & when (@size = layout) and (@pos = y) {
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = x) {
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = top) {
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = bottom) {
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = left) {
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+  & when (@size = layout) and (@pos = right) {
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.padding(@pos:all, @size, @breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    & when (isnumber(@size)) {
+      .print-padding(@pos, @size, @breakpoint);
+    }
+
+    & when not (isnumber(@size)) {
+      .loop-padding(@pos, @size, @breakpoint);
+    }
+  }
+}
+
+.loop-padding(@pos:all, @size, @breakpoint:none, @i:length(@paddings)) when (@i > 0) {
+  .loop-padding(@pos, @size, @breakpoint:none, @i - 1);
+  @padding: extract(@paddings, @i);
+  @name: extract(@padding, 1);
+  @val: extract(@padding, 2);
+  & when (@name = @size) {
+    .print-padding(@pos, @val, @breakpoint);
+  }
+}
+
+.print-padding(@pos, @val, @breakpoint) when (@pos = all) {
+  padding: @val;
+}
+.print-padding(@pos, @val, @breakpoint) when (@pos = y) {
+  padding-top: @val;
+  padding-bottom: @val;
+}
+.print-padding(@pos, @val, @breakpoint) when (@pos = x) {
+  padding-left: @val;
+  padding-right: @val;
+}
+.print-padding(@pos, @val, @breakpoint) when (@pos = top) {
+  padding-top: @val;
+}
+.print-padding(@pos, @val, @breakpoint) when (@pos = bottom) {
+  padding-bottom: @val;
+}
+.print-padding(@pos, @val, @breakpoint) when (@pos = left) {
+  padding-left: @val;
+}
+.print-padding(@pos, @val, @breakpoint) when (@pos = right) {
+  padding-right: @val;
 }
