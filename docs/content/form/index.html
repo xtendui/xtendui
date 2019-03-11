@@ -8,20 +8,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
 
   <!-- seo -->
-  <title>Form — Xtend</title>
+  <title>Form • Xtend</title>
   <meta name="description" content="Lorem ipsum"/>
 
   <!-- icons -->
-  <link rel="icon" href="/assets/images/favicon.png?v=0.7.6"/>
+  <link rel="icon" href="/assets/images/favicon.ico?v=0.6.5"/>
   <link rel="apple-touch-icon" sizes="152x152"
-        href="/assets/images/favicon-152x152.png?v=0.7.6"/>
+        href="/assets/images/favicon-152x152.png?v=0.6.5"/>
 
   <!-- styles -->
-  <link rel="stylesheet" href="/assets/icons-theme/style.css?v=0.7.6"/>
-  <link rel="stylesheet" href="/assets/styles/theme.min.css?v=0.7.6"/>
+  <link rel="stylesheet" href="/assets/icons-theme/style.css?v=0.6.5"/>
+  <link rel="stylesheet" href="/assets/styles/theme.css?v=0.6.5"/>
 
 </head>
 <body>
@@ -35,20 +36,20 @@
       <div class="site-header-top">
         <div class="container">
 
-          <div class="flex flex--auto justify-content--space-between align-items--center">
+          <div class="flex flex-auto justify-content-between align-items-center">
             <div>
-              <a href="/" class="logo" aria-label="Home">
+              <a href="/" class="logo" title="Home">
                 <img src="/assets/images/logo.svg" alt="Xtend"/>
               </a>
             </div>
             <div>
-              <button type="button" class="btn btn--primary btn--nodesign btn--menu"
+              <button type="button" class="btn btn-primary btn-nodesign btn-menu"
                       data-xt-overlay='{"targets": "#site-menu"}'>
                 <span>
                   
                     Docs
                   
-                  <span class="icon--menu-custom">
+                  <span class="icon-menu-custom">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -62,29 +63,28 @@
       </div>
     </div>
 
-    <nav class="site-menu overlay_outer overlay--primary overlay--screen overlay--medium"
+    <nav class="site-menu overlay-outer overlay-primary overlay-screen overlay-size-medium collapse-height"
          id="site-menu">
       <div class="overlay">
-        <div class="overlay_inner">
-          <div class="overlay_design"></div>
+        <div class="overlay-inner">
 
           <div class="site-header-top">
             <div class="container">
 
-              <div class="flex flex--auto justify-content--space-between align-items--center">
+              <div class="flex flex-auto justify-content-between align-items-center">
                 <div>
-                  <a href="/" class="logo" aria-label="Home">
+                  <a href="/" class="logo" title="Home">
                     <img src="/assets/images/logo.svg" alt="Xtend"/>
                   </a>
                 </div>
                 <div>
-                  <button type="button" class="btn btn--primary btn--nodesign btn--menu"
+                  <button type="button" class="btn btn-primary btn-nodesign btn-menu"
                           data-xt-overlay='{"targets": "#site-menu"}'>
                     <span>
                       
                         Docs
                       
-                      <span class="icon icon--menu-custom right">
+                      <span class="icon icon-menu-custom right">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -97,26 +97,26 @@
             </div>
           </div>
 
-          <div class="overlay_content">
+          <div class="content">
             <div class="site-menu-content">
 
               
                 
                   
-                  <a href="/docs/" class="btn btn--primary btn--nodesign make-line">
+                  <a href="/docs/" class="btn btn-primary btn-nodesign make-line">
                     <span>docs</span>
                   </a>
                 
               
                 
               
-              <a href="/" class="btn btn--primary btn--nodesign make-line">
+              <a href="/" class="btn btn-primary btn-nodesign make-line">
                 <span>Extensions</span>
               </a>
-              <a href="/" class="btn btn--primary btn--nodesign make-line">
+              <a href="/" class="btn btn-primary btn-nodesign make-line">
                 <span>Inspirations</span>
               </a>
-              <a href="/faq/" class="btn btn--primary btn--nodesign make-line">
+              <a href="/faq/" class="btn btn-primary btn-nodesign make-line">
                 <span>Faq</span>
               </a>
 
@@ -130,14 +130,14 @@
     <div class="site-hero">
 
       <div class="container">
-        <div class="flex flex--auto align-items--center align-content--center justify-content--space-between">
+        <div class="flex flex-auto align-items-center align-content-center justify-content-between">
           <div class="site-hero-text">
             <h1>Form</h1>
-            <p>Lorem ipsum</p>
+            <p class="font-giant">Lorem ipsum</p>
           </div>
           <!--
           <div class="site-hero-img">
-            <img class="responsive-x" src="https://placehold.it/330x132/ffffff/00B0FF/?text=ads" />
+            <img class="responsive" src="https://placehold.it/330x132/ffffff/00B0FF/?text=ads" />
           </div>
           -->
         </div>
@@ -149,9 +149,9 @@
       <div class="site-breadcrumbs">
         <div class="site-breadcrumbs-inner">
           <div class="container">
-            <div class="flex flex--auto justify-content--space-between align-items--flex-start">
+            <div class="flex flex-auto justify-content-between align-items-start">
 
-              <div class="site-breadcrumbs-body flex flex-space--none display--none display--flex-sm"
+              <div class="site-breadcrumbs-body flex flex-space-none display-none display-flex-sm"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
                 
@@ -163,25 +163,29 @@
                       
                       
                         <div class="site-breadcrumbs-body-main">
-                          <a href="/docs/" class="btn btn--primary btn--nodesign">
+                          <a href="/docs/" class="btn btn-primary btn-nodesign">
                             <span>Introduction</span>
                           </a>
-                          <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
+                          <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
                             <div class="site-breadcrumbs-body-sub-inner">
                               
-                              <a href="/docs/introduction/setup/" class="btn btn--primary btn--nodesign">
-                                <span>Setup</span>
+                              <a href="/docs/introduction/installation/" class="btn btn-primary btn-nodesign">
+                                <span>Installation</span>
                               </a>
                               
-                              <a href="/docs/introduction/theming/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/introduction/javascript/" class="btn btn-primary btn-nodesign">
+                                <span>Javascript</span>
+                              </a>
+                              
+                              <a href="/docs/introduction/theming/" class="btn btn-primary btn-nodesign">
                                 <span>Theming</span>
                               </a>
                               
-                              <a href="/docs/introduction/utils/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/introduction/utils/" class="btn btn-primary btn-nodesign">
                                 <span>Utils</span>
                               </a>
                               
-                              <a href="/docs/introduction/accessibility/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/introduction/accessibility/" class="btn btn-primary btn-nodesign">
                                 <span>Accessibility</span>
                               </a>
                               
@@ -204,32 +208,36 @@
                     
                   
                     
+                  
+                    
+                  
+                    
                       
                       
                         <div class="site-breadcrumbs-body-main current">
-                          <a href="/docs/content/" class="btn btn--primary btn--nodesign">
+                          <a href="/docs/content/" class="btn btn-primary btn-nodesign">
                             <span>Content</span>
                           </a>
-                          <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
+                          <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
                             <div class="site-breadcrumbs-body-sub-inner">
                               
-                              <a href="/docs/content/typography/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/content/typography/" class="btn btn-primary btn-nodesign">
                                 <span>Typography</span>
                               </a>
                               
-                              <a href="/docs/content/icon/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/content/icon/" class="btn btn-primary btn-nodesign">
                                 <span>Icon</span>
                               </a>
                               
-                              <a href="/docs/content/table/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/content/table/" class="btn btn-primary btn-nodesign">
                                 <span>Table</span>
                               </a>
                               
-                              <a href="/docs/content/form/" class="btn btn--primary btn--nodesign active">
+                              <a href="/docs/content/form/" class="btn btn-primary btn-nodesign active">
                                 <span>Form</span>
                               </a>
                               
-                              <a href="/docs/content/group/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/content/group/" class="btn btn-primary btn-nodesign">
                                 <span>Group</span>
                               </a>
                               
@@ -248,29 +256,39 @@
                     
                   
                     
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
                       
                       
                         <div class="site-breadcrumbs-body-main">
-                          <a href="/docs/layout/" class="btn btn--primary btn--nodesign">
+                          <a href="/docs/layout/" class="btn btn-primary btn-nodesign">
                             <span>Layout</span>
                           </a>
-                          <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
+                          <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
                             <div class="site-breadcrumbs-body-sub-inner">
                               
-                              <a href="/docs/layout/grid/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/layout/grid/" class="btn btn-primary btn-nodesign">
                                 <span>Grid</span>
                               </a>
                               
-                              <a href="/docs/layout/flex/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/layout/flex/" class="btn btn-primary btn-nodesign">
                                 <span>Flex</span>
                               </a>
                               
-                              <a href="/docs/layout/list/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/layout/list/" class="btn btn-primary btn-nodesign">
                                 <span>List</span>
                               </a>
                               
-                              <a href="/docs/layout/card/" class="btn btn--primary btn--nodesign">
-                                <span>Card</span>
+                              <a href="/docs/layout/box/" class="btn btn-primary btn-nodesign">
+                                <span>Box</span>
                               </a>
                               
                             </div>
@@ -291,29 +309,29 @@
                       
                       
                         <div class="site-breadcrumbs-body-main">
-                          <a href="/docs/interaction/" class="btn btn--primary btn--nodesign">
+                          <a href="/docs/interaction/" class="btn btn-primary btn-nodesign">
                             <span>Interaction</span>
                           </a>
-                          <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
+                          <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
                             <div class="site-breadcrumbs-body-sub-inner">
                               
-                              <a href="/docs/interaction/general/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/interaction/general/" class="btn btn-primary btn-nodesign">
                                 <span>General</span>
                               </a>
                               
-                              <a href="/docs/interaction/button/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/interaction/button/" class="btn btn-primary btn-nodesign">
                                 <span>Button</span>
                               </a>
                               
-                              <a href="/docs/interaction/toggle/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/interaction/toggle/" class="btn btn-primary btn-nodesign">
                                 <span>Toggle</span>
                               </a>
                               
-                              <a href="/docs/interaction/drop/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/interaction/drop/" class="btn btn-primary btn-nodesign">
                                 <span>Drop</span>
                               </a>
                               
-                              <a href="/docs/interaction/overlay/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/interaction/overlay/" class="btn btn-primary btn-nodesign">
                                 <span>Overlay</span>
                               </a>
                               
@@ -334,41 +352,57 @@
                     
                   
                     
-                  
-                    
-                  
-                    
-                  
+                      
+                      
+                        <div class="site-breadcrumbs-body-main">
+                          <a href="/docs/presentation/" class="btn btn-primary btn-nodesign">
+                            <span>Presentation</span>
+                          </a>
+                          <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
+                            <div class="site-breadcrumbs-body-sub-inner">
+                              
+                              <a href="/docs/presentation/slider/" class="btn btn-primary btn-nodesign">
+                                <span>Slider</span>
+                              </a>
+                              
+                              <a href="/docs/presentation/smooth/" class="btn btn-primary btn-nodesign">
+                                <span>Smooth</span>
+                              </a>
+                              
+                              <a href="/docs/presentation/sticky/" class="btn btn-primary btn-nodesign">
+                                <span>Sticky</span>
+                              </a>
+                              
+                              <a href="/docs/presentation/fade/" class="btn btn-primary btn-nodesign">
+                                <span>Fade</span>
+                              </a>
+                              
+                              <a href="/docs/presentation/parallax/" class="btn btn-primary btn-nodesign">
+                                <span>Parallax</span>
+                              </a>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      
                     
                   
                     
                       
                       
                         <div class="site-breadcrumbs-body-main">
-                          <a href="/docs/presentation/" class="btn btn--primary btn--nodesign">
-                            <span>Presentation</span>
+                          <a href="/docs/others/" class="btn btn-primary btn-nodesign">
+                            <span>Others</span>
                           </a>
-                          <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
+                          <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
                             <div class="site-breadcrumbs-body-sub-inner">
                               
-                              <a href="/docs/presentation/slider/" class="btn btn--primary btn--nodesign">
-                                <span>Slider</span>
-                              </a>
-                              
-                              <a href="/docs/presentation/smooth/" class="btn btn--primary btn--nodesign">
-                                <span>Smooth</span>
-                              </a>
-                              
-                              <a href="/docs/presentation/fade/" class="btn btn--primary btn--nodesign">
-                                <span>Fade</span>
-                              </a>
-                              
-                              <a href="/docs/presentation/sticky/" class="btn btn--primary btn--nodesign">
-                                <span>Sticky</span>
-                              </a>
-                              
-                              <a href="/docs/presentation/loader/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/others/loader/" class="btn btn-primary btn-nodesign">
                                 <span>Loader</span>
+                              </a>
+                              
+                              <a href="/docs/others/other/" class="btn btn-primary btn-nodesign">
+                                <span>Alert</span>
                               </a>
                               
                             </div>
@@ -384,24 +418,24 @@
                 
               </div>
 
-              <div class="site-breadcrumbs-body flex flex-space--none display--none-sm flex--auto"
+              <div class="site-breadcrumbs-body flex flex-space-none display-none-sm flex-auto"
                    data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                    "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
 
-                <div class="site-breadcrumbs-body-main flex--auto">
-                  <button type="button" class="btn btn--primary btn--nodesign flex--auto">
+                <div class="site-breadcrumbs-body-main flex-auto">
+                  <button type="button" class="btn btn-primary btn-nodesign flex-auto">
                     
                       <span>Content</span>
                     
                   </button>
                   
                     
-                      <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
+                      <div class="site-breadcrumbs-body-sub toggle-visible collapse-height">
                         <div class="site-breadcrumbs-body-sub-inner">
                           
                             
                               
-                              <a href="/docs/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/" class="btn btn-primary btn-nodesign">
                                 <span>Introduction</span>
                               </a>
                               
@@ -419,7 +453,11 @@
                               
                           
                               
-                              <a href="/docs/content/" class="btn btn--primary btn--nodesign">
+                          
+                              
+                          
+                              
+                              <a href="/docs/content/" class="btn btn-primary btn-nodesign">
                                 <span>Content</span>
                               </a>
                               
@@ -433,7 +471,17 @@
                               
                           
                               
-                              <a href="/docs/layout/" class="btn btn--primary btn--nodesign">
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                          
+                              
+                              <a href="/docs/layout/" class="btn btn-primary btn-nodesign">
                                 <span>Layout</span>
                               </a>
                               
@@ -447,7 +495,7 @@
                               
                           
                               
-                              <a href="/docs/interaction/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/interaction/" class="btn btn-primary btn-nodesign">
                                 <span>Interaction</span>
                               </a>
                               
@@ -463,16 +511,14 @@
                               
                           
                               
-                          
-                              
-                          
-                              
-                          
-                              
-                          
-                              
-                              <a href="/docs/presentation/" class="btn btn--primary btn--nodesign">
+                              <a href="/docs/presentation/" class="btn btn-primary btn-nodesign">
                                 <span>Presentation</span>
+                              </a>
+                              
+                          
+                              
+                              <a href="/docs/others/" class="btn btn-primary btn-nodesign">
+                                <span>Others</span>
                               </a>
                               
                           
@@ -485,28 +531,28 @@
                 
               </div>
 
-              <div class="site-breadcrumbs-meta flex flex-space--none align-items--center">
+              <div class="site-breadcrumbs-meta flex flex-space-none align-items-center">
 
-                <div class="display--none-sm display--block-md">
-                  <a href="https://github.com/minimit/xtend-library/releases" target="_blank" rel="noopener" class="btn btn--primary btn--icon btn--nodesign" aria-label="Download">
-                    <span><span class="icon-download icon--big"></span></span>
+                <div class="display-none-sm display-block-md">
+                  <a href="https://github.com/minimit/xtend-library/releases" target="_blank" class="btn btn-primary btn-icon btn-nodesign">
+                    <span><span class="icon-download icon-big"></span></span>
                   </a>
                 </div>
 
-                <div class="display--none-sm display--block-md">
-                  <a href="https://github.com/minimit/xtend-library" target="_blank" rel="noopener" class="btn btn--primary btn--icon btn--nodesign" aria-label="Github">
-                    <span><span class="icon-github icon--big"></span></span>
+                <div class="display-none-sm display-block-md">
+                  <a href="https://github.com/minimit/xtend-library" target="_blank" class="btn btn-primary btn-icon btn-nodesign">
+                    <span><span class="icon-github icon-big"></span></span>
                   </a>
                 </div>
 
                 <div class="show-sticky">
-                  <button type="button" class="btn btn--primary btn--nodesign btn--menu"
+                  <button type="button" class="btn btn-primary btn-nodesign btn-menu"
                           data-xt-overlay='{"targets": "#site-menu"}'>
                     <span>
                       
                         Docs
                       
-                      <span class="icon--menu-custom">
+                      <span class="icon-menu-custom">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -532,9 +578,9 @@
   <div class="site-main-inner">
     <div class="container">
       <div class="flex">
-        <div class="col--12 col--9-md">
+        <div class="col col-12 col-9-md">
 
-          <article class="site-article list-default">
+          <article class="site-article default-lists">
             <h2>Form group</h2>
 
 <div class="demo">
@@ -543,147 +589,147 @@
       <form>
 
         <legend>Test normal</legend>
-        <div class="form-item">
-          <label class="form-label">
+        <div class="form-group">
+          <label class="label-control">
             Lorem
           </label>
-          <input type="text" class="form-input">
+          <input type="text" class="input-control">
         </div>
-        <div class="form-item">
-          <label class="form-label">
+        <div class="form-group">
+          <label class="label-control">
             Lorem Ipsum
           </label>
-          <input type="text" class="form-input">
+          <input type="text" class="input-control">
         </div>
 
         <legend>Test flex</legend>
-        <div class="form-item--flex-sm">
-          <div class="col--12 col--3-sm">
-            <div class="form-item">
-              <label class="form-label">
+        <div class="form-group-flex-sm">
+          <div class="col-12 col-3-sm">
+            <div class="form-group">
+              <label class="label-control">
                 Lorem
               </label>
-              <input type="text" class="form-input">
+              <input type="text" class="input-control">
             </div>
           </div>
-          <div class="col--12 col--9-sm">
-            <div class="form-item">
-              <label class="form-label">
+          <div class="col-12 col-9-sm">
+            <div class="form-group">
+              <label class="label-control">
                 Lorem Ipsum
               </label>
-              <input type="text" class="form-input">
+              <input type="text" class="input-control">
             </div>
           </div>
         </div>
-        <div class="form-item--flex-sm">
-          <div class="col--12 col--3-sm">
-            <div class="form-item">
-              <label class="form-label">
+        <div class="form-group-flex-sm">
+          <div class="col-12 col-3-sm">
+            <div class="form-group">
+              <label class="label-control">
                 Lorem
               </label>
-              <input type="text" class="form-input">
+              <input type="text" class="input-control">
             </div>
           </div>
-          <div class="col--12 col--9-sm">
-            <div class="form-item">
-              <label class="form-label">
+          <div class="col-12 col-9-sm">
+            <div class="form-group">
+              <label class="label-control">
                 Lorem Ipsum
               </label>
-              <input type="text" class="form-input">
+              <input type="text" class="input-control">
             </div>
           </div>
         </div>
 
         <legend>Test horizontal</legend>
-        <div class="form-item">
-          <div class="form-item--horizontal-sm">
-            <div class="col--12 col--3-sm">
-              <label class="form-label">
+        <div class="form-group">
+          <div class="form-group-horizontal-sm">
+            <div class="col-12 col-3-sm">
+              <label class="label-control">
                 Lorem
               </label>
             </div>
-            <div class="col--12 col--9-sm">
-              <input type="text" class="form-input">
+            <div class="col-12 col-9-sm">
+              <input type="text" class="input-control">
             </div>
           </div>
         </div>
-        <div class="form-item">
-          <div class="form-item--horizontal-sm">
-            <div class="col--12 col--3-sm">
-              <label class="form-label">
+        <div class="form-group">
+          <div class="form-group-horizontal-sm">
+            <div class="col-12 col-3-sm">
+              <label class="label-control">
                 Lorem Ipsum
               </label>
             </div>
-            <div class="col--12 col--9-sm">
-              <input type="text" class="form-input">
+            <div class="col-12 col-9-sm">
+              <input type="text" class="input-control">
             </div>
           </div>
         </div>
 
         <legend>Test inline input</legend>
-        <div class="form-item--inline-sm">
-          <div class="form-item">
-            <label class="form-label">
+        <div class="form-group-inline-sm">
+          <div class="form-group">
+            <label class="label-control">
               Lorem
             </label>
-            <input type="text" class="form-input">
+            <input type="text" class="input-control">
           </div>
-          <div class="form-item">
-            <label class="form-label">
+          <div class="form-group">
+            <label class="label-control">
               Lorem Ipsum
             </label>
-            <input type="text" class="form-input">
+            <input type="text" class="input-control">
           </div>
         </div>
-        <div class="form-item--inline-sm">
-          <div class="form-item">
-            <label class="form-label">
+        <div class="form-group-inline-sm">
+          <div class="form-group">
+            <label class="label-control">
               Lorem
             </label>
-            <input type="text" class="form-input">
+            <input type="text" class="input-control">
           </div>
-          <div class="form-item">
-            <label class="form-label">
+          <div class="form-group">
+            <label class="label-control">
               Lorem Ipsum
             </label>
-            <input type="text" class="form-input">
+            <input type="text" class="input-control">
           </div>
         </div>
 
         <legend>Test inline input and label</legend>
-        <div class="form-item--inline-sm">
-          <div class="form-item">
-            <div class="form-item--inline-sm">
-              <label class="form-label">
+        <div class="form-group-inline-sm">
+          <div class="form-group">
+            <div class="form-group-inline-sm">
+              <label class="label-control">
                 Lorem
               </label>
-              <input type="text" class="form-input">
+              <input type="text" class="input-control">
             </div>
           </div>
-          <div class="form-item">
-            <div class="form-item--inline-sm">
-              <label class="form-label">
+          <div class="form-group">
+            <div class="form-group-inline-sm">
+              <label class="label-control">
                 Lorem Ipsum
               </label>
-              <input type="text" class="form-input">
+              <input type="text" class="input-control">
             </div>
           </div>
         </div>
-        <div class="form-item--inline-sm">
-          <div class="form-item">
-            <div class="form-item--inline-sm">
-              <label class="form-label">
+        <div class="form-group-inline-sm">
+          <div class="form-group">
+            <div class="form-group-inline-sm">
+              <label class="label-control">
                 Lorem
               </label>
-              <input type="text" class="form-input">
+              <input type="text" class="input-control">
             </div>
           </div>
-          <div class="form-item">
-            <div class="form-item--inline-sm">
-              <label class="form-label">
+          <div class="form-group">
+            <div class="form-group-inline-sm">
+              <label class="label-control">
                 Lorem Ipsum
               </label>
-              <input type="text" class="form-input">
+              <input type="text" class="input-control">
             </div>
           </div>
         </div>
@@ -692,88 +738,88 @@
 
         <legend>Test combo</legend>
 
-        <div class="form-item">
-          <label class="form-label">
+        <div class="form-group">
+          <label class="label-control">
             Lorem
           </label>
-          <input type="text" class="form-input">
+          <input type="text" class="input-control">
         </div>
 
-        <div class="form-item--flex-sm">
-          <div class="col--12 col--3-sm">
-            <div class="form-item">
-              <label class="form-label">
+        <div class="form-group-flex-sm">
+          <div class="col-12 col-3-sm">
+            <div class="form-group">
+              <label class="label-control">
                 Lorem
               </label>
-              <input type="text" class="form-input">
+              <input type="text" class="input-control">
             </div>
           </div>
-          <div class="col--12 col--9-sm">
-            <div class="form-item">
-              <label class="form-label">
+          <div class="col-12 col-9-sm">
+            <div class="form-group">
+              <label class="label-control">
                 Lorem Ipsum
               </label>
-              <input type="text" class="form-input">
+              <input type="text" class="input-control">
             </div>
           </div>
         </div>
 
-        <div class="form-item">
-          <div class="form-item--horizontal-sm">
-            <div class="col--12 col--3-sm">
-              <label class="form-label">
+        <div class="form-group">
+          <div class="form-group-horizontal-sm">
+            <div class="col-12 col-3-sm">
+              <label class="label-control">
                 Lorem
               </label>
             </div>
-            <div class="col--12 col--9-sm">
-              <input type="text" class="form-input">
+            <div class="col-12 col-9-sm">
+              <input type="text" class="input-control">
             </div>
           </div>
         </div>
 
-        <div class="form-item--inline-sm">
-          <div class="form-item">
-            <label class="form-label">
+        <div class="form-group-inline-sm">
+          <div class="form-group">
+            <label class="label-control">
               Lorem
             </label>
-            <input type="text" class="form-input">
+            <input type="text" class="input-control">
           </div>
-          <div class="form-item">
-            <label class="form-label">
+          <div class="form-group">
+            <label class="label-control">
               Lorem Ipsum
             </label>
-            <input type="text" class="form-input">
+            <input type="text" class="input-control">
           </div>
         </div>
 
-        <div class="form-item--inline-sm">
-          <div class="form-item">
-            <div class="form-item--inline-sm">
-              <label class="form-label">
+        <div class="form-group-inline-sm">
+          <div class="form-group">
+            <div class="form-group-inline-sm">
+              <label class="label-control">
                 Lorem
               </label>
-              <input type="text" class="form-input">
+              <input type="text" class="input-control">
             </div>
           </div>
-          <div class="form-item">
-            <div class="form-item--inline-sm">
-              <label class="form-label">
+          <div class="form-group">
+            <div class="form-group-inline-sm">
+              <label class="label-control">
                 Lorem Ipsum
               </label>
-              <input type="text" class="form-input">
+              <input type="text" class="input-control">
             </div>
           </div>
         </div>
 
-        <div class="form-item">
-          <label class="form-label">
+        <div class="form-group">
+          <label class="label-control">
             Lorem Ipsum
           </label>
-          <textarea class="form-input"></textarea>
+          <textarea class="input-control"></textarea>
         </div>
 
-        <div class="form-item">
-          <button type="submit" class="btn btn--primary btn--sm">
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-sm">
             <span>Submit</span>
           </button>
         </div>
@@ -785,83 +831,179 @@
 
 <h2>Checkbox and radio</h2>
 
-<h3>Unstyled</h3>
+<h3>Usage</h3>
 
-<p>Use this markup to create a checkbox or radio <strong>unstyled</strong>.</p>
+<p>Use this markup to create a checkbox or radio.</p>
 
 <pre>
   <code class="html">
-    <div class="form-item">
-      <input type="checkbox" id="checkbox-unstyled" class="unstyled">
-      <label class="form-label" for="checkbox-unstyled">
+    <div class="form-group">
+      <input type="checkbox" id="checkbox-0">
+      <label class="label-control" for="checkbox-0">
         <!-- content -->
       </label>
     </div>
 
-    <div class="form-item">
-      <input type="radio" id="radio-unstyled" name="radio-unstyled" class="unstyled">
-      <label class="form-label" for="radio-unstyled">
+    <div class="form-group">
+      <input type="radio" id="radio-0" name="radio">
+      <label class="label-control" for="radio-0">
         <!-- content -->
       </label>
     </div>
   </code>
 </pre>
+
+<h3>Styled</h3>
+
+<div class="demo">
+  <div class="demo-item demo-preview" data-name="default">
+    <div class="demo-text">
+      <div class="content">
+        Check and radio design
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="form-group">
+        <input type="checkbox" id="checkbox-block" checked>
+        <label class="label-control" for="checkbox-block">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="radio" id="radio-block-0" name="radio-block" checked>
+        <label class="label-control" for="radio-block-0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="radio" id="radio-block-1" name="radio-block">
+        <label class="label-control" for="radio-block-1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="inline">
+    <div class="demo-text">
+      <div class="content">
+        <code>.form-group-inline</code> (@TODO link to form group)
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="form-group-inline">
+        <div class="form-group">
+          <input type="checkbox" id="checkbox-inline" checked>
+          <label class="label-control" for="checkbox-inline">
+            Lorem ipsum dolor
+          </label>
+        </div>
+
+        <div class="form-group">
+          <input type="radio" id="radio-inline-0" name="radio-inline" checked>
+          <label class="label-control" for="radio-inline-0">
+            Lorem ipsum dolor
+          </label>
+        </div>
+
+        <div class="form-group">
+          <input type="radio" id="radio-inline-1" name="radio-inline">
+          <label class="label-control" for="radio-inline-1">
+            Lorem ipsum dolor
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item demo-preview" data-name="disabled">
+    <div class="demo-text">
+      <div class="content">
+        <code>[disabled]</code>
+      </div>
+    </div>
+    <div class="demo-source" data-lang="html">
+      <div class="form-group">
+        <input type="checkbox" id="checkbox-disabled" disabled checked>
+        <label class="label-control" for="checkbox-disabled">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="radio" id="radio-disabled-0" name="radio-disabled" disabled checked>
+        <label class="label-control" for="radio-block-0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="radio" id="radio-disabled-1" name="radio-disabled" disabled>
+        <label class="label-control" for="radio-disabled-1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Unstyled</h3>
 
 <div class="demo">
   <div class="demo-item demo-preview" data-name="block">
     <div class="demo-text">
-      <div class="alert_content">
+      <div class="content">
         <code>.unstyled</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="form-item">
+      <div class="form-group">
         <input type="checkbox" class="unstyled" id="checkbox-block-unstyled" checked>
-        <label class="form-label" for="checkbox-block-unstyled">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+        <label class="label-control" for="checkbox-block-unstyled">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
         </label>
       </div>
 
-      <div class="form-item">
+      <div class="form-group">
         <input type="radio" class="unstyled" id="radio-block-unstyled-0" name="radio-block-unstyled" checked>
-        <label class="form-label" for="radio-block-unstyled-0">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+        <label class="label-control" for="radio-block-unstyled-0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
         </label>
       </div>
 
-      <div class="form-item">
+      <div class="form-group">
         <input type="radio" class="unstyled" id="radio-block-unstyled-1" name="radio-block-unstyled">
-        <label class="form-label" for="radio-block-unstyled-1">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+        <label class="label-control" for="radio-block-unstyled-1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
         </label>
       </div>
     </div>
   </div>
   <div class="demo-item demo-preview" data-name="inline">
     <div class="demo-text">
-      <div class="alert_content">
-        <code>.form-item--inline .unstyled</code> (@TODO link to form group)
+      <div class="content">
+        <code>.form-group-inline .unstyled</code> (@TODO link to form group)
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="form-item--inline-sm">
-        <div class="form-item">
+      <div class="form-group-inline-sm">
+        <div class="form-group">
           <input type="checkbox" class="unstyled" id="checkbox-inline-unstyled" checked>
-          <label class="form-label" for="checkbox-inline-unstyled">
+          <label class="label-control" for="checkbox-inline-unstyled">
             Lorem ipsum dolor
           </label>
         </div>
 
-        <div class="form-item">
+        <div class="form-group">
           <input type="radio" class="unstyled" id="radio-inline-unstyled-0" name="radio-inline-unstyled" checked>
-          <label class="form-label" for="radio-inline-unstyled-0">
+          <label class="label-control" for="radio-inline-unstyled-0">
             Lorem ipsum dolor
           </label>
         </div>
 
-        <div class="form-item">
+        <div class="form-group">
           <input type="radio" class="unstyled" id="radio-inline-unstyled-1" name="radio-inline-unstyled">
-          <label class="form-label" for="radio-inline-unstyled-1">
+          <label class="label-control" for="radio-inline-unstyled-1">
             Lorem ipsum dolor
           </label>
         </div>
@@ -870,253 +1012,30 @@
   </div>
   <div class="demo-item demo-preview" data-name="disabled">
     <div class="demo-text">
-      <div class="alert_content">
+      <div class="content">
         <code>.unstyled[disabled]</code>
       </div>
     </div>
     <div class="demo-source" data-lang="html">
-      <div class="form-item">
+      <div class="form-group">
         <input type="checkbox" class="unstyled" id="checkbox-disabled-unstyled" disabled checked>
-        <label class="form-label" for="checkbox-disabled-unstyled">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+        <label class="label-control" for="checkbox-disabled-unstyled">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
         </label>
       </div>
 
-      <div class="form-item">
+      <div class="form-group">
         <input type="radio" class="unstyled" id="radio-disabled-unstyled-0" name="radio-disabled-unstyled" disabled checked>
-        <label class="form-label" for="radio-disabled-unstyled-0">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+        <label class="label-control" for="radio-disabled-unstyled-0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
         </label>
       </div>
 
-      <div class="form-item">
+      <div class="form-group">
         <input type="radio" class="unstyled" id="radio-disabled-unstyled-1" name="radio-disabled-unstyled" disabled>
-        <label class="form-label" for="radio-disabled-unstyled-1">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
+        <label class="label-control" for="radio-disabled-unstyled-1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#" target="_blank">sales conditions</a> and the <a href="#" target="_blank">privacy policy</a>
         </label>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Styled</h3>
-
-<p>Use this markup to create a checkbox or radio <strong>styled</strong>.</p>
-
-<pre>
-  <code class="html">
-    <div class="form-item">
-      <input type="checkbox" id="checkbox-styled">
-      <label class="form-label" for="checkbox-styled">
-        <!-- content -->
-      </label>
-    </div>
-
-    <div class="form-item">
-      <input type="radio" id="radio-styled" name="radio-styled">
-      <label class="form-label" for="radio-styled">
-        <!-- content -->
-      </label>
-    </div>
-  </code>
-</pre>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="default">
-    <div class="demo-text">
-      <div class="alert_content">
-        Check and radio design
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div class="form-item">
-        <input type="checkbox" id="checkbox-block" checked>
-        <label class="form-label" for="checkbox-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-        </label>
-      </div>
-
-      <div class="form-item">
-        <input type="radio" id="radio-block-0" name="radio-block" checked>
-        <label class="form-label" for="radio-block-0">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-        </label>
-      </div>
-
-      <div class="form-item">
-        <input type="radio" id="radio-block-1" name="radio-block">
-        <label class="form-label" for="radio-block-1">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="inline">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.form-item--inline</code> (@TODO link to form group)
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div class="form-item--inline">
-        <div class="form-item">
-          <input type="checkbox" id="checkbox-inline" checked>
-          <label class="form-label" for="checkbox-inline">
-            Lorem ipsum dolor
-          </label>
-        </div>
-
-        <div class="form-item">
-          <input type="radio" id="radio-inline-0" name="radio-inline" checked>
-          <label class="form-label" for="radio-inline-0">
-            Lorem ipsum dolor
-          </label>
-        </div>
-
-        <div class="form-item">
-          <input type="radio" id="radio-inline-1" name="radio-inline">
-          <label class="form-label" for="radio-inline-1">
-            Lorem ipsum dolor
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="disabled">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>[disabled]</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div class="form-item">
-        <input type="checkbox" id="checkbox-disabled" disabled checked>
-        <label class="form-label" for="checkbox-disabled">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-        </label>
-      </div>
-
-      <div class="form-item">
-        <input type="radio" id="radio-disabled-0" name="radio-disabled" disabled checked>
-        <label class="form-label" for="radio-block-0">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-        </label>
-      </div>
-
-      <div class="form-item">
-        <input type="radio" id="radio-disabled-1" name="radio-disabled" disabled>
-        <label class="form-label" for="radio-disabled-1">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-        </label>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h3>Fake</h3>
-
-<p>Use this markup to create a <strong>fake</strong> checkbox or radio <strong>styled</strong>.</p>
-
-<pre>
-  <code class="html">
-    <div class="form-item">
-      <div class="checkbox-styled">
-        <!-- content -->
-      </div>
-    </div>
-
-    <div class="form-item">
-      <div class="radio-styled">
-        <!-- content -->
-      </div>
-    </div>
-  </code>
-</pre>
-
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="default">
-    <div class="demo-text">
-      <div class="alert_content">
-        Check and radio design
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div data-xt-toggle='{"elements": ".radio", "min": 1}'>
-        <div class="form-item">
-          <div class="checkbox active" data-xt-toggle='{"elements": false}'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-          </div>
-        </div>
-
-        <div class="form-item">
-          <div class="radio active">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-          </div>
-        </div>
-
-        <div class="form-item">
-          <div class="radio">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="inline">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.form-item--inline</code> (@TODO link to form group)
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div data-xt-toggle='{"elements": ".radio", "min": 1}'>
-        <div class="form-item--inline">
-          <div class="form-item">
-            <div class="checkbox active" data-xt-toggle='{"elements": false}'>
-              Lorem ipsum dolor
-            </div>
-          </div>
-
-          <div class="form-item">
-            <div class="radio active">
-              Lorem ipsum dolor
-            </div>
-          </div>
-
-          <div class="form-item">
-            <div class="radio">
-              Lorem ipsum dolor
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="demo-item demo-preview" data-name="disabled">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>[disabled]</code>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="html">
-      <div data-xt-toggle='{"elements": ".radio", "min": 1}'>
-        <div class="form-item">
-          <div class="checkbox active disabled" data-xt-toggle='{"elements": false}'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-          </div>
-        </div>
-
-        <div class="form-item">
-          <div class="radio active disabled">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-          </div>
-        </div>
-
-        <div class="form-item">
-          <div class="radio disabled">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -1129,13 +1048,12 @@
           </article>
 
         </div>
-        <div class="col--12 col--3-md hide show-md">
+        <div class="col col-12 col-3-md hide show-md">
 
-          <aside class="site-aside"
-                 data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
+          <aside class="site-aside" data-xt-sticky='{"contain": {"top": ".site-breadcrumbs-outer:not(.xt-clone)", "bottom": ".site-footer.xt-clone"}}'>
 
             <div class="site-aside-text">
-              <a href="/docs/content/form/" class="btn btn--nodesign">
+              <a href="/docs/content/form/" class="btn btn-nodesign">
                 <div class="site-aside-title">
                   <span>Form</span>
                 </div>
@@ -1151,35 +1069,34 @@
 </main>
 
 
-        <footer class="site-footer"
-                data-xt-sticky='{"position": "bottom"}'>
+        <footer class="site-footer" data-xt-sticky='{"position": "bottom"}'>
           <div class="site-footer-inner">
             <div class="container">
 
-              <nav class="site-footer-top display--none display--block-sm" role="navigation">
-                <div class="flex flex--auto justify-content--space-between">
+              <nav class="site-footer-top display-none display-block-sm" role="navigation">
+                <div class="flex flex-auto justify-content-between">
 
-                  <div class="site-footer-top-links list-space--none">
-                    <a href="/" class="btn btn--primary btn--nodesign">
+                  <div class="site-footer-top-links list-space-none">
+                    <a href="/" class="btn btn-primary btn-nodesign">
                       <span>Home</span>
                     </a>
                     
                       
                         
-                        <a href="/docs/" class="btn btn--primary btn--nodesign">
+                        <a href="/docs/" class="btn btn-primary btn-nodesign">
                           <span>docs</span>
                         </a>
                       
                     
                       
                     
-                    <a href="#" class="btn btn--primary btn--nodesign">
+                    <a href="#" class="btn btn-primary btn-nodesign">
                       <span>Extensions</span>
                     </a>
-                    <a href="#" class="btn btn--primary btn--nodesign">
+                    <a href="#" class="btn btn-primary btn-nodesign">
                       <span>Inspirations</span>
                     </a>
-                    <a href="/faq/" class="btn btn--primary btn--nodesign">
+                    <a href="/faq/" class="btn btn-primary btn-nodesign">
                       <span>Faq</span>
                     </a>
                   </div>
@@ -1192,9 +1109,9 @@
               </nav>
 
               <div class="site-footer-bottom">
-                <div class="flex flex--auto flex-space--tiny justify-content--space-between">
+                <div class="flex flex-auto flex-space-tiny justify-content-between">
                   <div class="site-footer-bottom-license">
-                    Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank" rel="noopener">CC BY 3.0</a> <span class="separator separator--dash"></span> Xtend v0.7.6 licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a>
+                    Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS" target="_blank">CC BY 3.0</a> <span class="separator separator-dash"></span> Xtend v0.6.5 licensed <a href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank">MIT</a>
                   </div>
                   <div class="site-footer-bottom-copy">
                     © 2017 – 2019 <span>Riccardo Caroli</span>
@@ -1210,15 +1127,14 @@
     </div>
 
     <!-- scripts -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js" defer></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js" defer></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js" defer></script>
-    <script src="//cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.6.5"></script>
+    <script src="/assets/scripts/polyfill.min.js?v=0.6.5"></script>
 
     <!-- theme scripts -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js" defer></script>
-    <script src="/assets/scripts/clipboard.min.js?v=0.7.6" defer></script>
-    <script src="/assets/scripts/theme.min.js?v=0.7.6" defer></script>
+    <script src="/assets/scripts/clipboard.min.js?v=0.6.5"></script>
+    <script src="/assets/scripts/highlight.pack.js?v=0.6.5"></script>
+    <script src="/assets/scripts/theme.min.js?v=0.6.5"></script>
 
   </body>
 </html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- seo -->
+    <title>Xtend demo</title>
+    <meta name="description" content="Xtend demo" />
+
+    <!-- icons -->
+    <link rel="icon" href="/assets/images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/styles/demo.css?v=0.6.5" />
+
+    <!-- demo styles -->
+    <link rel="stylesheet" href="drop-disable.css?v=0.6.5" />
+
+  </head>
+  <body class="full">
+
+    <div id="body-outer">
+<div id="body-inner" class="demo-source-from">
+<div class="drop-outer drop-disable" data-xt-drop>
+  <button type="button" class="btn btn-primary">
+    <span>Toggle</span>
+  </button>
+  <div class="drop">
+    <div class="drop-inner">
+      <div class="content">
+        <ul class="list list-drop">
+          <li>
+            <button type="button">
+              <span>Lorem ipsum dolor</span>
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <span>Dolor sit</span>
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <span>Amet</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="drop-outer drop-disable-example" data-xt-drop>
+  <button type="button" class="btn btn-primary">
+    <span>Toggle</span>
+  </button>
+  <div class="drop">
+    <div class="drop-inner">
+      <div class="content">
+        <ul class="list list-drop">
+          <li>
+            <button type="button">
+              <span>Lorem ipsum dolor</span>
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <span>Dolor sit</span>
+            </button>
+          </li>
+          <li class="drop-outer event-limit" data-xt-drop>
+            <button type="button">
+              <span>Toggle</span>
+            </button>
+            <div class="drop drop-secondary drop-after drop-middle">
+              <div class="drop-inner">
+                <div class="content">
+                  <ul class="list list-drop">
+                    <li>
+                      <button type="button">
+                        <span>Lorem ipsum dolor</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button">
+                        <span>Dolor sit</span>
+                      </button>
+                    </li>
+                    <li class="drop-outer event-limit" data-xt-drop>
+                      <button type="button">
+                        <span>Toggle</span>
+                      </button>
+                      <div class="drop drop-primary drop-center drop-middle">
+                        <div class="drop-inner">
+                          <div class="content">
+                            <ul class="list list-drop">
+                              <li>
+                                <button type="button">
+                                  <span>Lorem ipsum dolor</span>
+                                </button>
+                              </li>
+                              <li>
+                                <button type="button">
+                                  <span>Dolor sit</span>
+                                </button>
+                              </li>
+                              <li>
+                                <button type="button">
+                                  <span>Amet</span>
+                                </button>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+    </div>
+
+    <!-- demos source less -->
+    
+    <less-style>@import (reference) "../../../../../dist/styles/xtend.less";
+
+.drop-disable-example {
+  @media @min-sm {
+    .drop-disable();
+  }
+}</less-style>
+    
+
+    <!-- demos source js -->
+    
+
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="/assets/scripts/greensock/easing/CustomEase.min.js?v=0.6.5"></script>
+    <script src="/assets/scripts/polyfill.min.js"></script>
+
+    <!-- theme scripts -->
+    <script src="/assets/scripts/theme.min.js?v=0.6.5"></script>
+
+    <!-- demo scripts -->
+    
+
+    <!-- demo utils -->
+    <script>
+      // add id
+      document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
+      // init iframe
+      window.parent.initIframe(window.name);
+    </script>
+
+  </body>
+</html>
