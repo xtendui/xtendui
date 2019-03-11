@@ -1001,6 +1001,9 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
 .list--base > li:not(.custom) > .btn::before {
   border-radius: 4px;
 }
+.list--base > li:not(.custom) > .btn > span {
+  justify-content: center;
+}
 .list--base > li:not(.custom) > .btn:hover,
 .list--base > li:not(.custom) > .btn.hover,
 .list--base > li:not(.custom) > .btn:active,
@@ -1125,6 +1128,9 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
 .list > li:not(.custom) > .btn::before {
   border-radius: 4px;
 }
+.list > li:not(.custom) > .btn > span {
+  justify-content: center;
+}
 .list > li:not(.custom) > .btn:hover,
 .list > li:not(.custom) > .btn.hover,
 .list > li:not(.custom) > .btn:active,
@@ -1248,6 +1254,9 @@ input[type="radio"].unstyled ~ .form-label.disabled::after {
 .list--block > li:not(.custom) > .btn,
 .list--block > li:not(.custom) > .btn::before {
   border-radius: 4px;
+}
+.list--block > li:not(.custom) > .btn > span {
+  justify-content: center;
 }
 .list--block > li:not(.custom) > .btn:hover,
 .list--block > li:not(.custom) > .btn.hover,
@@ -4271,6 +4280,9 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label::after {
 .list--block > * {
   margin: 0.5rem 0.5rem;
 }
+.list--block > li > .btn > span {
+  justify-content: flex-start;
+}
 .list--block > li:not(.custom) > .btn {
   text-decoration: none;
   color: rgba(52, 58, 64, 0.8);
@@ -4836,6 +4848,9 @@ img.caret.caret--horizontal.caret--inverse.active > span::before {
 .btn,
 .btn::before {
   border-radius: 4px;
+}
+.btn > span {
+  justify-content: center;
 }
 .btn:hover,
 .btn.hover,
@@ -5959,6 +5974,9 @@ img.btn--close > span::after {
 .slider_pagination > li:not(.custom) > .btn::before {
   border-radius: 4px;
 }
+.slider_pagination > li:not(.custom) > .btn > span {
+  justify-content: center;
+}
 .slider_pagination > li:not(.custom) > .btn:hover,
 .slider_pagination > li:not(.custom) > .btn.hover,
 .slider_pagination > li:not(.custom) > .btn:active,
@@ -6107,6 +6125,9 @@ img.btn--close > span::after {
 .slider_pagination [data-xt-pag],
 .slider_pagination [data-xt-pag]::before {
   border-radius: 4px;
+}
+.slider_pagination [data-xt-pag] > span {
+  justify-content: center;
 }
 .slider_pagination [data-xt-pag]:hover,
 .slider_pagination [data-xt-pag].hover,
@@ -7751,6 +7772,10 @@ h2 .site-article-anchor {
 .demo .demo-tabs > * > li:not(.custom) > .btn::before,
 .demo .demo-code-tabs > * > li:not(.custom) > .btn::before {
   border-radius: 4px;
+}
+.demo .demo-tabs > * > li:not(.custom) > .btn > span,
+.demo .demo-code-tabs > * > li:not(.custom) > .btn > span {
+  justify-content: center;
 }
 .demo .demo-tabs > * > li:not(.custom) > .btn:hover,
 .demo .demo-code-tabs > * > li:not(.custom) > .btn:hover,
