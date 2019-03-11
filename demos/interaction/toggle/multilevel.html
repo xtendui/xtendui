@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- seo -->
+    <title>Demo — Xtend</title>
+    <meta name="description" content="Xtend demo" />
+
+    <!-- icons -->
+    <link rel="icon" href="/assets/images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/styles/demos.min.css?v=0.8.2" />
+
+    <!-- demos styles -->
+    <link rel="stylesheet" href="multilevel.css?v=0.8.2" />
+
+  </head>
+  <body class="full">
+
+    <div id="body-outer">
+<div id="body-inner" class="demo-source-from">
+<div class="multilevel"
+     data-xt-toggle='{"elements": "#multilevel-tab-reset, .multilevel-tab .multilevel-list button", "targets": ".multilevel-tab", "min": 1}'>
+
+  <nav role="navigation" class="multilevel-tab">
+
+    <div class="multilevel-title-wrapper">
+      <div class="multilevel-title">
+        <span>Products</span>
+      </div>
+      <button type="button" class="btn btn--secondary-empty btn--none multilevel-reset display--none" id="multilevel-tab-reset">
+        <span>Back</span>
+      </button>
+    </div>
+
+    <ul class="list--block list-space--none multilevel-list">
+      <li>
+        <button type="button" class="btn" data-xt-group="cat-0">
+          <span>Category 0</span>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="btn" data-xt-group="cat-1">
+          <span>Category 1</span>
+        </button>
+      </li>
+      <li>
+        <a href="#" class="btn">
+          <span>Link 0</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="btn">
+          <span>Link 1</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="multilevel-title-wrapper">
+      <div class="multilevel-title">
+        <span>About</span>
+      </div>
+    </div>
+    <ul class="list--block list-space--none multilevel-list">
+      <li>
+        <a href="#" class="btn">
+          <span>Link 0</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="btn">
+          <span>Link 1</span>
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+
+  <nav role="navigation" class="multilevel-tab" data-xt-group="cat-0">
+
+    <div class="multilevel-title-wrapper">
+      <div class="multilevel-title">
+        <span>Category 0</span>
+      </div>
+      <button type="button" class="btn btn--secondary-empty btn--none multilevel-reset">
+        <span>Back</span>
+      </button>
+    </div>
+
+    <ul class="list--block list-space--none multilevel-list">
+      <li>
+        <button type="button" class="btn" data-xt-group="cat-0a">
+          <span>Category 0a</span>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="btn" data-xt-group="cat-0b">
+          <span>Category 0b</span>
+        </button>
+      </li>
+      <li>
+        <a href="#" class="btn">
+          <span>Link 0</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="btn">
+          <span>Link 1</span>
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+
+  <nav role="navigation" class="multilevel-tab" data-xt-group="cat-0a">
+
+    <div class="multilevel-title-wrapper">
+      <div class="multilevel-title">
+        <span>Category 0a</span>
+      </div>
+      <button type="button" class="btn btn--secondary-empty btn--none multilevel-reset">
+        <span>Back</span>
+      </button>
+    </div>
+
+    <ul class="list--block list-space--none multilevel-list">
+      <li>
+        <a href="#" class="btn">
+          <span>Link 0</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="btn">
+          <span>Link 1</span>
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+
+  <nav role="navigation" class="multilevel-tab" data-xt-group="cat-0b">
+
+    <div class="multilevel-title-wrapper">
+      <div class="multilevel-title">
+        <span>Category 0b</span>
+      </div>
+      <button type="button" class="btn btn--secondary-empty btn--none multilevel-reset">
+        <span>Back</span>
+      </button>
+    </div>
+
+    <ul class="list--block list-space--none multilevel-list">
+      <li>
+        <a href="#" class="btn">
+          <span>Link 0</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="btn">
+          <span>Link 1</span>
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+
+  <nav role="navigation" class="multilevel-tab" data-xt-group="cat-1">
+
+    <div class="multilevel-title-wrapper">
+      <div class="multilevel-title">
+        <span>Category 1</span>
+      </div>
+      <button type="button" class="btn btn--secondary-empty btn--none multilevel-reset">
+        <span>Back</span>
+      </button>
+    </div>
+
+    <ul class="list--block list-space--none multilevel-list">
+      <li>
+        <a href="#" class="btn">
+          <span>Link 0</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="btn">
+          <span>Link 1</span>
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+
+</div>
+</div>
+    </div>
+
+    <!-- demos source less -->
+    
+    <less-style>
+
+      @import (reference) "../../../../../dist/styles/xtend.less";
+
+//////////////////////
+// xtend extension: multilevel
+//////////////////////
+
+// content
+
+.multilevel-title-wrapper {
+  .block();
+  .margin(y, layout) !important;
+  .margin(top, medium);
+  .margin(bottom, tiny);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.multilevel-title {
+  .h4();
+}
+
+.multilevel-reset {
+  .caret.caret--horizontal.caret--inverse();
+}
+
+.multilevel-list {
+  // btn
+  .list_btn({
+    .btn--secondary-empty();
+    .btn--tall();
+    .btn--none-x();
+    margin-bottom: -1px !important;
+    &@{btn--design} {
+      border-top-color: @gray--300 !important;
+      border-bottom-color: @gray--300 !important;
+    }
+    > span {
+      justify-content: space-between;
+    }
+  });
+  // caret
+  > li {
+    > button {
+      .caret();
+      .caret.caret--horizontal();
+    }
+  }
+}
+
+// toggle
+
+.multilevel-body {
+  .block();
+  .toggle--block();
+  // animation
+  .anim-x();
+  animation-duration: @time--small;
+  &.inverse {
+    .anim-x-inverse();
+    animation-duration: @time--small;
+  }
+}
+
+.multilevel-tab {
+  .block();
+  .toggle--block();
+  // animation
+  .anim-x();
+  animation-duration: @time--small;
+  &.inverse {
+    .anim-x-inverse();
+    animation-duration: @time--small;
+  }
+}
+    </less-style>
+    
+
+    <!-- demos source js -->
+    
+    <js-script>
+
+      //////////////////////
+// xtend extension: multilevel
+//////////////////////
+
+Xt.observe.push({
+  matches: '.multilevel',
+  fnc: function (main, index, query) {
+
+    let btnReset = main.querySelectorAll('#multilevel-tab-reset')[0];
+    let btns = main.querySelectorAll('.multilevel-reset');
+    for (let btn of btns) {
+      btn.addEventListener('click', function (e) {
+        if (!e || !e.detail || !e.detail.skipToggle) {
+          btnReset.dispatchEvent(new CustomEvent('on.xt', {detail: {skipToggle: true}}));
+        }
+      });
+    }
+
+  }
+});
+
+
+
+    </js-script>
+    
+
+    <!-- scripts -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js"></script>
+
+    <!-- demos scripts -->
+    <script src="/assets/scripts/demos.min.js?v=0.8.2"></script>
+
+    <!-- demos scripts -->
+    
+    <script>//////////////////////
+// xtend extension: multilevel
+//////////////////////
+
+Xt.observe.push({
+  matches: '.multilevel',
+  fnc: function (main, index, query) {
+
+    let btnReset = main.querySelectorAll('#multilevel-tab-reset')[0];
+    let btns = main.querySelectorAll('.multilevel-reset');
+    for (let btn of btns) {
+      btn.addEventListener('click', function (e) {
+        if (!e || !e.detail || !e.detail.skipToggle) {
+          btnReset.dispatchEvent(new CustomEvent('on.xt', {detail: {skipToggle: true}}));
+        }
+      });
+    }
+
+  }
+});
+
+
+</script>
+    
+
+    <!-- demos utils -->
+    <script>
+      if (window.self !== window.top) {
+        // add id
+        document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0]);
+        // init iframe
+        window.parent.initIframe(window.name);
+      }
+    </script>
+
+  </body>
+</html>
