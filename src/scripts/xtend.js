@@ -955,26 +955,6 @@ try {
 }
 
 //////////////////////
-// root utils
-//////////////////////
-
-/*
-// pass focus and blur window events to iframes
-
-addEventListener('focus', function () {
-  for (let iframe of document.querySelectorAll('iframe')) {
-    iframe.contentWindow.dispatchEvent(new CustomEvent('focus'));
-  }
-});
-
-addEventListener('blur', function () {
-  for (let iframe of document.querySelectorAll('iframe')) {
-    iframe.contentWindow.dispatchEvent(new CustomEvent('blur'));
-  }
-});
-*/
-
-//////////////////////
 // export
 //////////////////////
 
