@@ -2131,12 +2131,6 @@ class Core {
       fncFriction = new Function('delta', fncFriction);
     }
     self.detail.wheelCurrent += fncFriction(Math.abs(delta)) * sign;
-    // fix math on round to stop loop
-    if (delta < 0) {
-      self.detail.wheelCurrent = Math.floor(self.detail.wheelCurrent);
-    } else if (delta > 0) {
-      self.detail.wheelCurrent = Math.ceil(self.detail.wheelCurrent);
-    }
     // set
     if (!options.wheel.transform) {
       if (options.wheel.horizontal) {

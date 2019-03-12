@@ -818,7 +818,7 @@ Slider.optionsDefault = {
     "horizontal": true,
     "factor": 1,
     "friction": "return delta / 9",
-    "frictionLimit": 0.5
+    "frictionLimit": 2.5
   },
   "keyboard": {
     "selector": ".slides"

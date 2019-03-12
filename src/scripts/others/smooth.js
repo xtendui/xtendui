@@ -37,7 +37,7 @@ Smooth.optionsDefault = {
     "horizontal": false,
     "factor": 1,
     "friction": "return delta / 9",
-    "frictionLimit": 0.5
+    "frictionLimit": 2.5
   }
 };
 
