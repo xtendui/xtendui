@@ -38,7 +38,7 @@
   display: inline-block;
   vertical-align: middle;
   .align-self(center);
-  &::before {
+  &:before {
     .icon-xt();
   }
 }
@@ -47,14 +47,14 @@
 
 .icon-xt(@content, @size: @icon--medium, @position: after) {
   & when (@position = before) {
-    &::before {
+    &:before {
       .icon-xt();
       content: '@{content}';
       font-size: @size;
     }
   }
   & when (@position = after) {
-    &::after {
+    &:after {
       .icon-xt();
       content: '@{content}';
       font-size: @size;
@@ -72,7 +72,7 @@
     @name: extract(@icons-xt, @i);
     @val: ~"icon-xt--@{name}";
     .icon-xt--@{name} {
-      &::before {
+      &:before {
         content: @@val;
       }
     }
@@ -100,7 +100,7 @@
   display: inline-block;
   vertical-align: middle;
   .align-self(center);
-  &::before {
+  &:before {
     .icon-theme();
   }
 }
@@ -109,14 +109,14 @@
 
 .icon(@content, @size: @icon--medium, @position: after) {
   & when (@position = before) {
-    &::before {
+    &:before {
       .icon-theme();
       content: '@{content}';
       font-size: @size;
     }
   }
   & when (@position = after) {
-    &::after {
+    &:after {
       .icon-theme();
       content: '@{content}';
       font-size: @size;
@@ -136,7 +136,7 @@
       @name: extract(@icons-theme, @i);
       @val: ~"icon-theme--@{name}";
       .icon--@{name} {
-        &::before {
+        &:before {
           content: @@val;
         }
       }

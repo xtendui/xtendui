@@ -23,7 +23,7 @@ body:not(.full) {
 
 .demo-cols {
   [class^='col--'], [class*=' col--'] {
-    &::before {
+    &:before {
       position: relative;
       float: left;
       width: 100%;
@@ -39,7 +39,7 @@ body:not(.full) {
       text-align: center;
     }
     [class^='col--'], [class*=' col--'] {
-      &::before {
+      &:before {
         background: @primary;
       }
     }

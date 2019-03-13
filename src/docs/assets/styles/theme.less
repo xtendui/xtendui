@@ -515,7 +515,7 @@
         background: @primary;
       }
     }
-    .line::after {
+    .line:after {
       content: '';
       position: absolute;
       z-index: -1;
@@ -534,7 +534,7 @@
   }
   // animation
   .line-container {
-    .line::after {
+    .line:after {
       left: 100%;
       width: 0;
       opacity: 0;
@@ -543,7 +543,7 @@
   }
   &:hover, &:active {
     .line-container {
-      .line::after {
+      .line:after {
         left: 0;
         width: 100%;
         opacity: 1;
@@ -726,7 +726,7 @@
 
 .demo-cols {
   [class^='col--'], [class*=' col--'] {
-    &::before {
+    &:before {
       position: relative;
       float: left;
       width: 100%;
@@ -742,7 +742,7 @@
       text-align: center;
     }
     [class^='col--'], [class*=' col--'] {
-      &::before {
+      &:before {
         background: @primary;
       }
     }

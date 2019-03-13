@@ -75,7 +75,7 @@ a, .alink {
   > span {
     justify-content: space-between;
     .icon-xt(@content: @icon-xt--chevron-down, @size: @icon--tiny);
-    &::after {
+    &:after {
       .icon--right();
     }
   }
@@ -83,14 +83,14 @@ a, .alink {
   &.active {
     > span {
       .icon-xt(@content: @icon-xt--chevron-up, @size: @icon--tiny);
-      &::after {
+      &:after {
         .anim-y-inverse.active();
       }
     }
   }
   &.out {
     > span {
-      &::after {
+      &:after {
         .anim-y.active();
       }
     }
@@ -103,14 +103,14 @@ a, .alink {
     &.active {
       > span {
         .icon-xt(@content: @icon-xt--chevron-down, @size: @icon--tiny);
-        &::after {
+        &:after {
           .anim-y.active();
         }
       }
     }
     &.out {
       > span {
-        &::after {
+        &:after {
           .anim-y-inverse.active();
         }
       }
@@ -124,14 +124,14 @@ a, .alink {
     &.active {
       > span {
         .icon-xt(@content: @icon-xt--chevron-left, @size: @icon--tiny);
-        &::after {
+        &:after {
           .anim-x-inverse.active();
         }
       }
     }
     &.out {
       > span {
-        &::after {
+        &:after {
           .anim-x.active();
         }
       }
@@ -140,24 +140,24 @@ a, .alink {
     &.caret--inverse {
       > span {
         .icon-xt(@content: @icon-xt--chevron-left, @size: @icon--tiny, @position: before);
-        &::after {
+        &:after {
           content: '';
         }
-        &::before {
+        &:before {
           .icon--left();
         }
       }
       &.active {
         > span {
           .icon-xt(@content: @icon-xt--chevron-right, @size: @icon--tiny, @position: before);
-          &::before {
+          &:before {
             .anim-x.active();
           }
         }
       }
       &.out {
         > span {
-          &::before {
+          &:before {
             .anim-x-inverse.active();
           }
         }

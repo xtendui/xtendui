@@ -18,8 +18,8 @@ body {
 }
 
 *,
-*::before,
-*::after {
+*:before,
+*:after {
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
@@ -118,7 +118,7 @@ html:not(.xt-focus) {
 html.xt-focus {
   // focus chrome style
   input[type="checkbox"], input[type="radio"] {
-    &:focus ~ .form-label::before {
+    &:focus ~ .form-label:before {
       outline-color: rgb(77, 144, 254);
       outline-offset: -2px;
       outline-style: auto;

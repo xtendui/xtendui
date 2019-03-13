@@ -1725,8 +1725,8 @@ class Core {
     el.classList.remove(...self.classesOut);
     self.decorateDirection(el);
     // special
-    let before = getComputedStyle(el, '::before').getPropertyValue('content').replace(/['"]+/g, '');
-    let after = getComputedStyle(el, '::after').getPropertyValue('content').replace(/['"]+/g, '');
+    let before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '');
+    let after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '');
     self.specialCenter(el, before, after);
     self.specialMiddle(el, before, after);
     self.specialCollapseOn(el, before, after);
@@ -1792,8 +1792,8 @@ class Core {
     el.classList.add(...self.classesOut);
     self.decorateDirection(el);
     // special
-    let before = getComputedStyle(el, '::before').getPropertyValue('content').replace(/['"]+/g, '');
-    let after = getComputedStyle(el, '::after').getPropertyValue('content').replace(/['"]+/g, '');
+    let before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '');
+    let after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '');
     self.specialCollapseOff(el, before, after);
     if (type === 'targets' || type === 'targetsInner') {
       self.specialCloseOff(el);
@@ -1868,8 +1868,8 @@ class Core {
     // reset
     el.classList.remove(...self.classesIn);
     // special
-    let before = getComputedStyle(el, '::before').getPropertyValue('content').replace(/['"]+/g, '');
-    let after = getComputedStyle(el, '::after').getPropertyValue('content').replace(/['"]+/g, '');
+    let before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '');
+    let after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '');
     self.specialCollapseReset(el, before, after);
     // aria
     if (options.aria) {
@@ -2646,7 +2646,7 @@ class Core {
     let self = this;
     // check disabled
     if (self.object instanceof HTMLElement // not on window
-      && getComputedStyle(self.object, '::after').getPropertyValue('content').replace(/['"]+/g, '') === 'xt-disable') {
+      && getComputedStyle(self.object, ':after').getPropertyValue('content').replace(/['"]+/g, '') === 'xt-disable') {
       self.disable();
     } else if (self.disabled) {
       self.enable();

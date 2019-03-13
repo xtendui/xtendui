@@ -32,7 +32,7 @@
   position: absolute;
   > .drop_inner {
     position: relative;
-    z-index: @index--base; // fix ::before negative z-index
+    z-index: @index--base; // fix :before negative z-index
     > .drop_design {
       .design-setup();
     }
@@ -122,7 +122,7 @@
 // center
 
 .drop--center() {
-  &::before {
+  &:before {
     display: none;
     content: 'xt-drop--center';
   }
@@ -137,7 +137,7 @@
 .drop--middle() {
   padding-top: 0;
   padding-bottom: 0;
-  &::after {
+  &:after {
     display: none;
     content: 'xt-drop--middle';
   }
