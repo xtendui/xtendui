@@ -2113,21 +2113,27 @@ a.links--none,
 }
 .btn--left > span {
   justify-content: flex-start !important;
+  text-align: left !important;
 }
 .btn--center > span {
   justify-content: center !important;
+  text-align: center !important;
 }
 .btn--right > span {
   justify-content: flex-end !important;
+  text-align: right !important;
 }
 .list--left > li:not(.custom) > .btn > span {
   justify-content: flex-start !important;
+  text-align: left !important;
 }
 .list--center > li:not(.custom) > .btn > span {
   justify-content: center !important;
+  text-align: center !important;
 }
 .list--right > li:not(.custom) > .btn > span {
   justify-content: flex-end !important;
+  text-align: right !important;
 }
 .order--0 {
   order: -3 !important;
@@ -3911,7 +3917,8 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
   margin: 0.5rem 0.5rem;
 }
 .list > li:not(.custom) > .btn > span {
-  justify-content: flex-start !important;
+  justify-content: flex-start;
+  text-align: left;
 }
 .list > li:not(.custom) > .btn {
   text-decoration: none;
@@ -4488,6 +4495,7 @@ img.caret.caret--horizontal.caret--inverse.active > span:before {
 }
 .btn > span {
   justify-content: center;
+  text-align: center;
 }
 .btn:hover,
 .btn.hover,
@@ -5552,7 +5560,8 @@ img.btn--close > span:after {
   margin: 0.5rem 0.5rem;
 }
 .slider_pagination > li:not(.custom) > .btn > span {
-  justify-content: flex-start !important;
+  justify-content: flex-start;
+  text-align: left;
 }
 .slider_pagination > li:not(.custom) > .btn {
   text-decoration: none;
@@ -5655,6 +5664,7 @@ img.btn--close > span:after {
 }
 .slider_pagination [data-xt-pag] > span {
   justify-content: center;
+  text-align: center;
 }
 .slider_pagination [data-xt-pag]:hover,
 .slider_pagination [data-xt-pag].hover,
@@ -6940,6 +6950,7 @@ transition-timing-function: @bez--out;
 }
 .site-aside-text .btn > span {
   justify-content: flex-start;
+  text-align: left;
 }
 .site-aside-text .btn:hover,
 .site-aside-text .btn.hover,
@@ -7240,7 +7251,8 @@ h2 .site-article-anchor {
 }
 .demo .demo-tabs > * > li:not(.custom) > .btn > span,
 .demo .demo-code-tabs > * > li:not(.custom) > .btn > span {
-  justify-content: flex-start !important;
+  justify-content: flex-start;
+  text-align: left;
 }
 .demo .demo-tabs > * > li:not(.custom) > .btn,
 .demo .demo-code-tabs > * > li:not(.custom) > .btn {
