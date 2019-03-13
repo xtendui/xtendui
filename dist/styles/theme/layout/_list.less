@@ -18,15 +18,12 @@
 .list {
   // option
   .list-space(small); // space
-  .list--left(); // alignment
+  .list--left() !important; // alignment
   .list_btn({ .btn--secondary() }); // variant
 }
 
 .list--block {
   // option
-  .list-space(small); // space
-  .list--left(); // alignment
-  .list_btn({ .btn--secondary() }); // variant
 }
 
 // addons
@@ -35,7 +32,7 @@
   flex-wrap: nowrap;
   flex-direction: column;
   .list-space(none); // space
-  .list_btn({ .btn--small() }); // size
+  .list_btn({ .btn--small(); .btn--squared(); padding-left: 2.2rem; padding-right: 2.2rem; white-space: nowrap; }); // all buttons
 }
 
 // variant

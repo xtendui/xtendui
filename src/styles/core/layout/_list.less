@@ -13,7 +13,6 @@
       .flex--auto();
     }
   }
-  .list_btn({ .btn(); });
 }
 
 // .list
@@ -25,23 +24,22 @@
 }
 
 .list--block {
-  .list--base();
   flex-wrap: nowrap;
   flex-direction: column;
 }
 
 // selectors
 
-.list_btn--all(@rules) {
-  > li {
+.list_btn(@rules) {
+  > li:not(.custom) {
     > .btn {
       @rules();
     }
   }
 }
 
-.list_btn(@rules) {
-  > li:not(.custom) {
+.list_btn--all(@rules) {
+  > li {
     > .btn {
       @rules();
     }
