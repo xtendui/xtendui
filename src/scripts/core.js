@@ -579,13 +579,13 @@ class Core {
         // wheel
         let wheelHandler = Xt.dataStorage.put(wheel, eWheel + '.' + self.namespace,
           self.eventWheelHandler.bind(self).bind(self, wheel));
-        wheel.addEventListener(eWheel, wheelHandler);
+        wheel.addEventListener(eWheel, wheelHandler, Xt.passiveSupported ? {passive: false} : false);
         // block
         if (options.wheel.block) {
           let block = wheel.parentNode;
           let wheelBlockHandler = Xt.dataStorage.put(block, eWheel + '.' + self.namespace,
             self.eventWheelBlockHandler.bind(self));
-          block.addEventListener(eWheel, wheelBlockHandler);
+          block.addEventListener(eWheel, wheelBlockHandler, Xt.passiveSupported ? {passive: false} : false);
         }
       }
     }
