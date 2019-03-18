@@ -269,27 +269,24 @@ if (!Array.prototype.findIndex) {
 
 //////////////////////
 // composedPath polyfill
-// https://github.com/DieterHolvoet/event-propagation-path
+// https://gist.github.com/rockinghelvetica/00b9f7b5c97a16d3de75ba99192ff05c
 //////////////////////
 
-if (!Event.prototype.composedPath) {
-  Event.prototype.composedPath = function () {
-    let polyfill = function () {
-      let element = this.target || null;
-      let pathArr = [element];
-
-      if (!element || !element.parentElement) {
-        return [];
+(function(E, d, w) {
+  if(!E.composedPath) {
+    E.composedPath = function() {
+      if (this.path) {
+        return this.path;
       }
+      var target = this.target;
 
-      while (element.parentElement) {
-        element = element.parentElement;
-        pathArr.unshift(element);
+      this.path = [];
+      while (target.parentNode !== null) {
+        this.path.push(target);
+        target = target.parentNode;
       }
-
-      return pathArr;
-    }.bind(this);
-
-    return this.path || (this.composedPath && this.composedPath()) || polyfill();
-  };
-}
+      this.path.push(d, w);
+      return this.path;
+    }
+  }
+})(Event.prototype, document, window);
