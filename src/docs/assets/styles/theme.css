@@ -5905,11 +5905,6 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   transition-timing-function: cubic-bezier(1,0,.64,1);
 }
 .loader--mouse {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  perspective: 1000;
-  transform: translateZ(0);
   opacity: 0;
   transition-property: opacity;
   transition-duration: 250ms;
