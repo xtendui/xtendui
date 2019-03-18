@@ -5447,11 +5447,6 @@ img.btn--close > span:after {
   transition-timing-function: cubic-bezier(.68,.13,.25,1);
 }
 .slides_inner {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  perspective: 1000;
-  transform: translateZ(0);
   transition-property: transform;
   transition-duration: 1000ms;
   transition-timing-function: cubic-bezier(.36,0,0,1);
