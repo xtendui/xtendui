@@ -134,12 +134,9 @@ class Slider extends Core {
       delete slide.dataset.xtDraggerInitialDone;
       delete slide.dataset.xtSlideOnDone;
     }
-    // initDragger
+    // dragger
     if (self.dragger) {
       self.destroyElements.push(self.dragger);
-      for (let [i, targets] of self.targets.entries()) {
-        self.initDraggerSlide(targets, i);
-      }
     }
     // elements
     self.initScopeElements();
@@ -148,9 +145,8 @@ class Slider extends Core {
   /**
    * init dragger slide
    * @param {Node|HTMLElement|EventTarget|Window} slide
-   * @param {Number} index
    */
-  initDraggerSlide(slide, index = null) {
+  initDraggerSlide(slide) {
     let self = this;
     let options = self.options;
     // save vars
@@ -164,28 +160,26 @@ class Slider extends Core {
       // group
       let group = slide.getAttribute('data-xt-group');
       if (group) {
-        if (!slide.dataset.xtDraggerInitialDone) {
-          // vars
-          slideLeft = Infinity;
-          slideWidth = 0;
-          slideHeight = 0;
-          for (let [i, target] of targets.entries()) {
-            slideLeft = target.offsetLeft < slideLeft ? slide.offsetLeft : slideLeft;
-            slideWidth += target.offsetWidth;
-            let h = target.offsetHeight;
-            slideHeight = h > slideHeight ? h : slideHeight;
-            // fix position with negative margin on initial render
-            if (i === 0 && index === 0 && slideLeft < 0) {
-              self.detail.fixNegativeMargin = target.offsetLeft;
-            }
-            if (i === 0 && self.detail.fixNegativeMargin) {
-              slideLeft -= self.detail.fixNegativeMargin;
-            }
+        // vars
+        slideLeft = Infinity;
+        slideWidth = 0;
+        slideHeight = 0;
+        for (let [i, target] of targets.entries()) {
+          slideLeft = target.offsetLeft < slideLeft ? slide.offsetLeft : slideLeft;
+          slideWidth += target.offsetWidth;
+          let h = target.offsetHeight;
+          slideHeight = h > slideHeight ? h : slideHeight;
+          // fix position with negative margin on initial render
+          if (i === 0 && slideLeft < 0) {
+            self.detail.fixNegativeMargin = target.offsetLeft;
           }
-          for (let target of targets) {
-            target.dataset.xtDraggerInitialDone = 'true';
-            target.dataset.groupHeight = slideHeight.toString();
+          if (i === 0 && self.detail.fixNegativeMargin) {
+            slideLeft -= self.detail.fixNegativeMargin;
           }
+        }
+        for (let target of targets) {
+          target.dataset.xtDraggerInitialDone = 'true';
+          target.dataset.groupHeight = slideHeight.toString();
         }
       } else {
         slide.dataset.xtDraggerInitialDone = 'true';
@@ -461,6 +455,11 @@ class Slider extends Core {
     let targets = self.getTargets(slide);
     for (let target of targets) {
       target.dataset.xtSlideOnDone = 'true';
+    }
+    // initDraggerSlide
+    if (self.dragger) {
+      delete slide.dataset.xtDraggerInitialDone;
+      self.initDraggerSlide(slide);
     }
     // autoHeight
     if (self.autoHeight) {
