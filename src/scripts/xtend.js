@@ -479,7 +479,7 @@ Xt.focus = {
 
 };
 
-requestAnimationFrame( function() {
+requestAnimationFrame(function () {
   if (Xt.enableFocus) {
     Xt.focus.on();
   }
@@ -679,6 +679,37 @@ Xt.btnMerge = {
     }
   }
 
+};
+
+//////////////////////
+// friction
+// util to friction values
+//////////////////////
+
+Xt.friction = function (el, obj) {
+  let xCurrent = Xt.getTranslate(el)[0];
+  let yCurrent = Xt.getTranslate(el)[1];
+  let xDist = obj.x - xCurrent;
+  let yDist = obj.y - yCurrent;
+  // momentum
+  let fncFriction = obj.friction || "return delta / 9";
+  if (typeof fncFriction === 'string') {
+    fncFriction = new Function('delta', fncFriction);
+  }
+  xCurrent += fncFriction(Math.abs(xDist)) * Math.sign(xDist);
+  yCurrent += fncFriction(Math.abs(yDist)) * Math.sign(yDist);
+  // set
+  el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)';
+  // loop
+  let frictionLimit = obj.frictionLimit || 1.5;
+  xDist = obj.x - xCurrent;
+  yDist = obj.y - yCurrent;
+  cancelAnimationFrame(parseFloat(el.dataset.frictionFrame));
+  if (Math.abs(xDist) >= frictionLimit || Math.abs(yDist >= frictionLimit)) {
+    el.dataset.frictionFrame = requestAnimationFrame(function () {
+      Xt.friction(el, obj);
+    }).toString();
+  }
 };
 
 //////////////////////

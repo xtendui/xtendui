@@ -817,7 +817,7 @@ Slider.optionsDefault = {
     "horizontal": true,
     "factor": 1,
     "friction": "return delta / 9",
-    "frictionLimit": 2.5
+    "frictionLimit": 1.5
   },
   "keyboard": {
     "selector": ".slides"
@@ -837,7 +837,7 @@ Slider.optionsDefault = {
     "linkThreshold": 25,
     "factor": 1,
     "friction": "return Math.pow(velocity, 0.95)",
-    "frictionLimit": 2.5,
+    "frictionLimit": 1.5,
     "overflow": "return Math.pow(overflow, 0.73)",
     "timeLimit": 25
   }

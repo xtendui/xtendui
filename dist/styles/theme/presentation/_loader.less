@@ -176,28 +176,26 @@
   &.active {
     opacity: 1;
     transition-property: opacity;
-    transition-duration: @time--medium;
+    transition-duration: @time--small;
     transition-timing-function: @bez--in;
     .spinner, .filler {
       opacity: 1;
       transform: scale(1);
       transition-property: opacity, transform;
-      transition-duration: @time--medium;
-      transition-delay: @time--small;
+      transition-duration: @time--small;
       transition-timing-function: @bez--in;
     }
   }
   &.out {
     opacity: 0;
     transition-property: opacity;
-    transition-duration: @time--medium;
-    transition-delay: @time--small;
+    transition-duration: @time--small;
     transition-timing-function: @bez--out;
     .spinner, .filler {
       opacity: 0;
       transform: scale(.75, .75);
       transition-property: opacity, transform;
-      transition-duration: @time--medium;
+      transition-duration: @time--small;
       transition-timing-function: @bez--out;
     }
   }
@@ -206,6 +204,7 @@
 // mouse
 
 .loader--mouse {
+  .accelerate();
   // spinner
   .loader--spinner& {
     margin-top: -30px;
