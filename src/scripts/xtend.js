@@ -144,6 +144,13 @@ Xt.initElement = function (added = document.documentElement) {
     for (let el of element.querySelectorAll('textarea')) {
       Xt.textareaAutosize.init(el);
     }
+    // media
+    if (element.matches('.media')) {
+      Xt.media.init(element);
+    }
+    for (let el of element.querySelectorAll('.media')) {
+      Xt.media.init(el);
+    }
     // btnMerge
     if (element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
       Xt.btnMerge.init(element);
@@ -175,6 +182,13 @@ Xt.destroyElement = function (removed = document.documentElement) {
     }
     for (let el of element.querySelectorAll('textarea')) {
       Xt.textareaAutosize.destroy(el);
+    }
+    // media
+    if (element.matches('.media')) {
+      Xt.media.destroy(element);
+    }
+    for (let el of element.querySelectorAll('.media')) {
+      Xt.media.destroy(el);
     }
     // btnMerge
     if (element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
@@ -600,6 +614,66 @@ Xt.textareaAutosize = {
       el.style.height = '5px'; // fixes both safari RAF and form reset
       el.style.height = (el.scrollHeight) + 'px';
     });
+  }
+
+};
+
+//////////////////////
+// media
+/////////////////////
+
+Xt.media = {
+
+  /**
+   * init
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
+   */
+  init: function (el) {
+    el.classList.remove('media-loaded');
+    // img
+    let img = el.querySelectorAll('img')[0];
+    if (img) {
+      if (img.complete) {
+        Xt.media.load.bind(img).bind(img, el)();
+      } else {
+        img.addEventListener('load', Xt.media.load.bind(img).bind(img, el));
+      }
+    }
+    // video
+    let video = el.querySelectorAll('video')[0];
+    if (video) {
+      if (video.readyState >= 3) {
+        Xt.media.load.bind(video).bind(video, el)();
+      } else {
+        video.addEventListener('loadeddata', Xt.media.load.bind(video).bind(video, el));
+      }
+    }
+  },
+
+  /**
+   * destroy
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
+   */
+  destroy: function (el) {
+    // img
+    let img = el.querySelectorAll('img')[0];
+    if (img) {
+      img.removeEventListener('load', Xt.media.load.bind(img).bind(img, el));
+    }
+    // video
+    let video = el.querySelectorAll('video')[0];
+    if (video) {
+      video.removeEventListener('loadeddata', Xt.media.load.bind(video).bind(video, el));
+    }
+  },
+
+  /**
+   * event load
+   * @param {Node|HTMLElement|EventTarget|Window} el Element container
+   * @param {Event|Object} e Event
+   */
+  load: function (el, e) {
+    el.classList.add('media-loaded');
   }
 
 };
