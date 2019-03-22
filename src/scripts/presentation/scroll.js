@@ -26,6 +26,47 @@ class Scroll extends Core {
   //////////////////////
 
   /**
+   * init elements, targets and currents
+   */
+  initScope() {
+    super.initScope();
+    let self = this;
+    let options = self.options;
+    // loop
+    self.targets = [];
+    for (let el of self.elements) {
+      if (!options.sticky) {
+        self.targets.push(el);
+      } else {
+        // xt-fixed
+        el.classList.add('xt-fixed');
+        // sticky container
+        let container = Xt.parents(el, '.xt-container');
+        if (!container.length) {
+          container = Xt.createElement('<div class="xt-container xt-fixed--inner"></div>');
+          el.before(container);
+          container.append(el);
+          container = Xt.parents(self.object, '.xt-container')[0];
+        }
+        // sticky clone
+        let target = container.querySelectorAll('.xt-clone');
+        if (!target.length) {
+          target = el.cloneNode(true);
+          target.classList.add('xt-clone', 'xt-ignore');
+          for (let elId of target.querySelectorAll('[id]')) {
+            elId.setAttribute('id', elId.getAttribute('id') + '-clone');
+          }
+          for (let elName of target.querySelectorAll('[name]')) {
+            elName.setAttribute('name', elName.getAttribute('name') + '-clone');
+          }
+          container.append(target);
+        }
+        self.targets.push(target);
+      }
+    }
+  }
+
+  /**
    * init events
    */
   initEvents() {
@@ -90,12 +131,13 @@ class Scroll extends Core {
       scrollInverse = true;
     }
     // core
-    for (let el of self.elements) {
-      if (!el.classList.contains('scroll--block') && el.offsetParent
+    for (let tr of self.targets) {
+      let el = self.getElementsFromTarget(tr)[0];
+      if (!el.classList.contains('scroll--block')
         && (el.offsetWidth || el.offsetHeight || el.getClientRects().length)) { // :visible
         // vars
-        let elTop = el.offsetParent.getBoundingClientRect().top + el.offsetTop; // we use parents to not include transforms animations
-        let elHeight = el.offsetHeight;
+        let elTop = tr.offsetParent.getBoundingClientRect().top + tr.offsetTop; // we use parents to not include transforms animations
+        let elHeight = tr.offsetHeight;
         // scroll
         let changed = false;
         let top = elTop + scrollTop;

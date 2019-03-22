@@ -40,10 +40,10 @@ class Sticky extends Core {
       self.container = Xt.createElement('<div class="xt-container xt-fixed--inner"></div>');
       self.object.before(self.container);
       self.container.append(self.object);
-      self.container = Xt.parents(self.object, '.xt-container');
+      self.container = Xt.parents(self.object, '.xt-container')[0];
     }
     // targets
-    self.targets = self.container[0].querySelectorAll('.xt-clone');
+    self.targets = self.container.querySelectorAll('.xt-clone');
     if (!self.targets.length) {
       self.targets = self.object.cloneNode(true);
       self.targets.classList.add('xt-clone', 'xt-ignore');
@@ -53,7 +53,7 @@ class Sticky extends Core {
       for (let elName of self.targets.querySelectorAll('[name]')) {
         elName.setAttribute('name', elName.getAttribute('name') + '-clone');
       }
-      self.container[0].append(self.targets);
+      self.container.append(self.targets);
     }
     self.targets = Xt.arrSingle(self.targets);
     // xt-fixed
@@ -69,9 +69,8 @@ class Sticky extends Core {
     } else {
       self.object.classList.remove('sticky-hide--up');
     }
-    // z-index
-    self.zIndex = 100 - Xt.getUniqueNum();
-    self.object.style.zIndex = self.zIndex;
+    // @index--sticky by javascript 100 and decreses with sequential sticky
+    self.object.style.zIndex = 100 - Xt.getUniqueNum();
   }
 
   /**
@@ -140,7 +139,7 @@ class Sticky extends Core {
     let windowHeight = window.innerHeight;
     let heightEl = parseFloat(getComputedStyle(element).height);
     let heightTarget = parseFloat(getComputedStyle(self.targets[0]).height);
-    let rectContainerTop = self.container[0].getBoundingClientRect().top;
+    let rectContainerTop = self.container.getBoundingClientRect().top;
     let scrollingElement = document.scrollingElement;
     let scrollHeight = scrollingElement.scrollHeight;
     let scrollTop = scrollingElement.scrollTop;
@@ -277,7 +276,7 @@ class Sticky extends Core {
       element.style[options.position] = add + 'px';
     }
     // fix position fixed width 100% of parent
-    let width = self.normalizeWidth(self.container[0].clientWidth);
+    let width = self.normalizeWidth(self.container.clientWidth);
     if (element.style.width !== width) {
       element.style.width = width;
     }
