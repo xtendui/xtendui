@@ -90,7 +90,7 @@ class Sticky extends Core {
       }
     }
     addEventListener('scroll.xt.sticky', stickyHandler);
-    self.eventStickyHandler();
+    requestAnimationFrame(self.eventStickyHandler.bind(self));
     // autoClose
     let autoCloseHandler = Xt.dataStorage.put(self.object, 'hide' + '.' + self.namespace,
       Xt.autoClose.bind(this, self.object));

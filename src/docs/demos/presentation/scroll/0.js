@@ -48,11 +48,7 @@ Xt.observe.push({
 
       el.addEventListener('change.xt.scroll', function (e) {
         if (el.getAttribute('id') === 'test') {
-          /*
-          let topDist = e.detail.bottom - e.detail.scrollTop;
-          let bottomDist = e.detail.scrollTop - e.detail.scrollHeight + e.detail.top;
-          console.log(el, topDist, bottomDist);
-          */
+          TweenMax.set(el, {y: 100 * e.detail.ratio});
         }
       });
 

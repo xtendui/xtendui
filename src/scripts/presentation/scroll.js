@@ -41,7 +41,7 @@ class Scroll extends Core {
       }
     }
     addEventListener('scroll.xt.scroll', scrollHandler);
-    self.eventScrollHandler();
+    requestAnimationFrame(self.eventScrollHandler.bind(self));
   }
 
   //////////////////////
@@ -81,13 +81,13 @@ class Scroll extends Core {
     let currentOff = 0;
     let currentsOn = [];
     let currentsOff = [];
-    let yInverse = false;
+    let scrollInverse = false;
     let scrollHeight = window.innerHeight;
     let scrollingElement = document.scrollingElement;
     let scrollTop = scrollingElement.scrollTop;
     // direction
     if (scrollTop < self.detail.scrollTopOld) {
-      yInverse = true;
+      scrollInverse = true;
     }
     // core
     for (let el of self.elements) {
@@ -108,9 +108,9 @@ class Scroll extends Core {
           }
         }
         // activation
-        let checkTop = scrollTop + scrollHeight >= top + dist;
-        let checkBottom = scrollTop < bottom - dist;
-        if (checkTop && checkBottom) {
+        let topDist = top - scrollTop - scrollHeight + dist;
+        let bottomDist = bottom - scrollTop - dist;
+        if (topDist <= 0 && bottomDist >= 0) {
           // inside
           changed = self.checkOn(el);
           if (changed) {
@@ -141,7 +141,7 @@ class Scroll extends Core {
         }
         // direction
         if (changed) {
-          if (yInverse) {
+          if (scrollInverse) {
             el.classList.remove('scroll--down');
             el.classList.add('scroll--up');
           } else {
@@ -149,9 +149,16 @@ class Scroll extends Core {
             el.classList.remove('scroll--up');
           }
         }
+        // ratio
+        let totalDist = bottomDist - topDist;
+        let ratio = -topDist / totalDist;
+        ratio -= options.ratio;
+        if (ratio < -options.ratio || ratio > 1 - options.ratio) {
+          continue;
+        }
         // dispatch
         let detail = self.eDetailSet();
-        detail.yInverse = yInverse;
+        detail.scrollInverse = scrollInverse;
         detail.scrollingElement = scrollingElement;
         detail.scrollHeight = scrollHeight;
         detail.scrollTop = scrollTop;
@@ -162,8 +169,10 @@ class Scroll extends Core {
         detail.top = top;
         detail.bottom = bottom;
         detail.dist = dist;
-        detail.checkTop = checkTop;
-        detail.checkBottom = checkBottom;
+        detail.topDist = topDist;
+        detail.bottomDist = bottomDist;
+        detail.totalDist = totalDist;
+        detail.ratio = ratio;
         el.dispatchEvent(new CustomEvent('change.xt.scroll', {detail: detail}));
       }
     }
@@ -189,6 +198,7 @@ Scroll.optionsDefault = {
   "max": "Infinity",
   "instant": true,
   "distance": "20%",
+  "ratio": 0.5,
   "aria": false
 };
 

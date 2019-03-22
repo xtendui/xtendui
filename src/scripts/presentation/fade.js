@@ -41,7 +41,7 @@ class Fade extends Core {
       }
     }
     addEventListener('scroll.xt.fade', fadeHandler);
-    self.eventFadeHandler();
+    requestAnimationFrame(self.eventFadeHandler.bind(self));
   }
 
   //////////////////////
