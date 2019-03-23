@@ -158,73 +158,23 @@ class Scroll extends Core {
             dist = scrollHeight * parseFloat(dist) / 100;
           }
         }
-        // dist
-        let topDist = top - scrollHeight + dist;
-        let bottomDist = bottom - dist;
-        let totalDist = bottomDist - topDist;
         // position
         let trigger = scrollHeight * options.trigger;
-        let start = scrollHeight * options.start;
-        let end = scrollHeight * options.end;
-        let ratio = scrollTop / (end - start);
-        if (el.classList.contains('scroll-indicator')) {
-          console.log(start, end, ratio);
-        }
-        if (ratio >= 0 || ratio <= 1) {
-          // inside
-          changed = self.checkOn(el);
-          if (changed) {
-            currentsOn.push(el);
-            cancelAnimationFrame(parseFloat(el.dataset.xtEventFrame));
-            el.dataset.xtEventFrame = requestAnimationFrame(function () {
-              currentOn++;
-              el.dataset.xtOnCount = currentOn.toString();
-              el.dataset.xtOnTot = currentsOn.length.toString();
-              self.eventOn(el);
-            }).toString();
-          }
-        } else {
-          // outside
-          changed = self.checkOff(el);
-          el.classList.add('scroll--visible');
-          if (changed) {
-            el.classList.add('scroll--scroll');
-            currentsOff.push(el);
-            cancelAnimationFrame(parseFloat(el.dataset.xtEventFrame));
-            el.dataset.xtEventFrame = requestAnimationFrame(function () {
-              currentOff++;
-              el.dataset.xtOffCount = currentOff.toString();
-              el.dataset.xtOffTot = currentsOff.length.toString();
-              self.eventOff(el);
-            }).toString();
-          }
-        }
-        /*
-        let trigger = top + scrollHeight * options.trigger;
-        let start = top - scrollHeight + dist;
-        let end = bottom - dist;
-        //let start = top + scrollHeight * options.start;
-        //let end = top + scrollHeight * options.end;
-        if (options.sticky || el.getAttribute('id') === 'test') {
-          console.log(trigger, start, end);
-        }*/
-        //topDist = topDist > 0 ? topDist : 0;
-        //let topDist = top - trigger + dist;
-        //let bottomDist = bottom - dist;
-        /*
-        // trigger
-        let trigger = scrollHeight * options.trigger;
-        let start = trigger + topDist;
-        start = start > 0 ? start : 0;
-        let end = trigger + bottomDist;
-        */
+        let start = elTop + scrollTop - scrollHeight + scrollHeight * options.start;
+        let end = elTop + scrollTop + scrollHeight * options.end;
+        // min and max limit
+        let min = trigger;
+        let max = scrollingElement.scrollHeight - trigger;
+        start = start < min ? min : start;
+        end = end > max ? max : end;
+        // ratio
+        let current = scrollTop + trigger - start;
+        let total = end - start;
+        let ratio = Math.max(0, current) / total;
+        ratio = ratio > 0 ? ratio : 0;
+        ratio = ratio < 1 ? ratio : 1;
         // activation
-        //let topDist = top - scrollHeight + dist;
-        //let bottomDist = bottom - dist;
-        //topDist = topDist > 0 ? topDist : 0;
-        //bottomDist = bottomDist < 0 ? bottomDist : 0;
-        /*
-        if (topDist <= 0 && bottomDist >= 0) {
+        if (current >= 0 && current <= total) {
           // inside
           changed = self.checkOn(el);
           if (changed) {
@@ -253,7 +203,6 @@ class Scroll extends Core {
             }).toString();
           }
         }
-        */
         // direction
         if (changed) {
           if (scrollInverse) {
@@ -264,16 +213,6 @@ class Scroll extends Core {
             el.classList.remove('scroll--up');
           }
         }
-        // ratio
-        ratio = ratio > 0 ? ratio : 0;
-        ratio = ratio < 1 ? ratio : 1;
-        /*
-        ratio -= options.trigger;
-        if (parseFloat(el.dataset.xtRatio) === ratio) {
-          continue;
-        }
-        */
-        el.dataset.xtRatio = ratio.toString();
         // indicator
         if (el.classList.contains('scroll-indicator')) {
           let triggerEl = document.body.querySelectorAll('.xt-indicator--trigger')[0];
@@ -282,25 +221,10 @@ class Scroll extends Core {
           startEl.style.top = (start - scrollTop) + 'px';
           let endEl = document.body.querySelectorAll('.xt-indicator--end')[0];
           endEl.style.top = (end - scrollTop) + 'px';
+          console.log(el, 'ratio: ' + ratio, 'current: ' + current, 'total: ' + total);
         }
         // dispatch
         let detail = self.eDetailSet();
-        /*
-        detail.scrollInverse = scrollInverse;
-        detail.scrollingElement = scrollingElement;
-        detail.scrollHeight = scrollHeight;
-        detail.scrollTop = scrollTop;
-        detail.currentsOn = currentsOn;
-        detail.currentsOff = currentsOff;
-        detail.elTop = elTop;
-        detail.elHeight = elHeight;
-        detail.top = top;
-        detail.bottom = bottom;
-        detail.dist = dist;
-        detail.topDist = topDist;
-        detail.bottomDist = bottomDist;
-        detail.totalDist = totalDist;
-        */
         detail.ratio = ratio;
         el.dispatchEvent(new CustomEvent('change.xt.scroll', {detail: detail}));
       }
