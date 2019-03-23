@@ -11,7 +11,6 @@ import Smooth from './others/smooth';
 import Slider from './presentation/slider';
 import Scroll from './presentation/scroll';
 import Sticky from './presentation/sticky';
-import Fade from './presentation/fade';
 import Ajax from './others/ajax';
 
 //////////////////////
@@ -38,7 +37,6 @@ Xt.Smooth = Smooth;
 Xt.Slider = Slider;
 Xt.Scroll = Scroll;
 Xt.Sticky = Sticky;
-Xt.Fade = Fade;
 Xt.Ajax = Ajax;
 
 //////////////////////
@@ -60,7 +58,6 @@ Xt.components = [
   {'name': 'xt-slider', 'class': Xt.Slider},
   {'name': 'xt-scroll', 'class': Xt.Scroll},
   {'name': 'xt-sticky', 'class': Xt.Sticky},
-  {'name': 'xt-fade', 'class': Xt.Fade},
   {'name': 'xt-ajax', 'class': Xt.Ajax}
 ];
 

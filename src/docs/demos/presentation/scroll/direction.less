@@ -1,20 +1,20 @@
 @import (reference) "../../../../../dist/styles/xtend.less";
 
-.fade {
+.scroll {
   opacity: 0;
   &.active {
-    &.fade--up {
+    &.scroll--up {
       .anim-y.active();
     }
-    &.fade--down {
+    &.scroll--down {
       .anim-y-inverse.active();
     }
   }
   &.out {
-    &.fade--up {
+    &.scroll--up {
       .anim-y.out();
     }
-    &.fade--down {
+    &.scroll--down {
       .anim-y-inverse.out();
     }
   }

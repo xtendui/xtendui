@@ -144,7 +144,9 @@ class Scroll extends Core {
     // core
     for (let tr of self.targets) {
       let el = self.getElementsFromTarget(tr)[0];
+      el = el ? el : tr; // for not sticky: el is the same as tr
       if (!el.classList.contains('scroll--block')
+        && tr.offsetParent // filter out document.documentElement
         && (el.offsetWidth || el.offsetHeight || el.getClientRects().length)) { // :visible
         // vars
         let changed = false;
@@ -216,6 +218,8 @@ class Scroll extends Core {
         // dispatch
         let detail = self.eDetailSet();
         detail.ratio = ratio;
+        detail.ratioInverse = 1 - ratio;
+        detail.ratioDouble = 1 - Math.abs((ratio - 0.5) * 2);
         el.dispatchEvent(new CustomEvent('change.xt.scroll', {detail: detail}));
       }
     }
@@ -237,8 +241,6 @@ Scroll.optionsDefault = {
   "elements": ".scroll",
   "class": "active",
   "on": "scroll resize",
-  "min": 0,
-  "max": "Infinity",
   "instant": true,
   "distance": 0,
   "trigger": "50%",

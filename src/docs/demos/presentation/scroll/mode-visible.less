@@ -1,7 +1,7 @@
 @import (reference) "../../../../../dist/styles/xtend.less";
 
-.fade {
-  &:not(.fade--scroll) {
+.scroll {
+  &:not(.scroll--visible) {
     opacity: 0;
     .transition-none() !important; // fix animation on links
     &.active {
