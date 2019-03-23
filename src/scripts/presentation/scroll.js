@@ -36,9 +36,10 @@ class Scroll extends Core {
     self.targets = [];
     for (let el of self.elements) {
       if (!options.sticky) {
+        // not sticky
         self.targets.push(el);
       } else {
-        // xt-fixed
+        // sticky
         el.classList.add('xt-fixed');
         // sticky container
         let container = Xt.parents(el, '.xt-container');
@@ -62,6 +63,15 @@ class Scroll extends Core {
           container.append(target);
         }
         self.targets.push(target);
+      }
+      // indicator
+      if (el.classList.contains('scroll-indicator')) {
+        let indicatorTrigger = Xt.createElement('<div class="xt-indicator xt-indicator--trigger"></div>');
+        document.body.append(indicatorTrigger);
+        let indicatorStart = Xt.createElement('<div class="xt-indicator xt-indicator--start"></div>');
+        document.body.append(indicatorStart);
+        let indicatorEnd = Xt.createElement('<div class="xt-indicator xt-indicator--end"></div>');
+        document.body.append(indicatorEnd);
       }
     }
   }
@@ -138,9 +148,8 @@ class Scroll extends Core {
         // vars
         let elTop = tr.offsetParent.getBoundingClientRect().top + tr.offsetTop; // we use parents to not include transforms animations
         let elHeight = tr.offsetHeight;
-        // scroll
         let changed = false;
-        let top = elTop + scrollTop;
+        let top = elTop;
         let bottom = top + elHeight;
         let dist = options.distance;
         if (typeof dist == 'string' || dist instanceof String) {
@@ -149,9 +158,72 @@ class Scroll extends Core {
             dist = scrollHeight * parseFloat(dist) / 100;
           }
         }
+        // dist
+        let topDist = top - scrollHeight + dist;
+        let bottomDist = bottom - dist;
+        let totalDist = bottomDist - topDist;
+        // position
+        let trigger = scrollHeight * options.trigger;
+        let start = scrollHeight * options.start;
+        let end = scrollHeight * options.end;
+        let ratio = scrollTop / (end - start);
+        if (el.classList.contains('scroll-indicator')) {
+          console.log(start, end, ratio);
+        }
+        if (ratio >= 0 || ratio <= 1) {
+          // inside
+          changed = self.checkOn(el);
+          if (changed) {
+            currentsOn.push(el);
+            cancelAnimationFrame(parseFloat(el.dataset.xtEventFrame));
+            el.dataset.xtEventFrame = requestAnimationFrame(function () {
+              currentOn++;
+              el.dataset.xtOnCount = currentOn.toString();
+              el.dataset.xtOnTot = currentsOn.length.toString();
+              self.eventOn(el);
+            }).toString();
+          }
+        } else {
+          // outside
+          changed = self.checkOff(el);
+          el.classList.add('scroll--visible');
+          if (changed) {
+            el.classList.add('scroll--scroll');
+            currentsOff.push(el);
+            cancelAnimationFrame(parseFloat(el.dataset.xtEventFrame));
+            el.dataset.xtEventFrame = requestAnimationFrame(function () {
+              currentOff++;
+              el.dataset.xtOffCount = currentOff.toString();
+              el.dataset.xtOffTot = currentsOff.length.toString();
+              self.eventOff(el);
+            }).toString();
+          }
+        }
+        /*
+        let trigger = top + scrollHeight * options.trigger;
+        let start = top - scrollHeight + dist;
+        let end = bottom - dist;
+        //let start = top + scrollHeight * options.start;
+        //let end = top + scrollHeight * options.end;
+        if (options.sticky || el.getAttribute('id') === 'test') {
+          console.log(trigger, start, end);
+        }*/
+        //topDist = topDist > 0 ? topDist : 0;
+        //let topDist = top - trigger + dist;
+        //let bottomDist = bottom - dist;
+        /*
+        // trigger
+        let trigger = scrollHeight * options.trigger;
+        let start = trigger + topDist;
+        start = start > 0 ? start : 0;
+        let end = trigger + bottomDist;
+        */
         // activation
-        let topDist = top - scrollTop - scrollHeight + dist;
-        let bottomDist = bottom - scrollTop - dist;
+        //let topDist = top - scrollHeight + dist;
+        //let bottomDist = bottom - dist;
+        //topDist = topDist > 0 ? topDist : 0;
+        //bottomDist = bottomDist < 0 ? bottomDist : 0;
+        /*
         if (topDist <= 0 && bottomDist >= 0) {
           // inside
           changed = self.checkOn(el);
@@ -181,6 +253,7 @@ class Scroll extends Core {
             }).toString();
           }
         }
+        */
         // direction
         if (changed) {
           if (scrollInverse) {
@@ -192,14 +265,27 @@ class Scroll extends Core {
           }
         }
         // ratio
-        let totalDist = bottomDist - topDist;
-        let ratio = -topDist / totalDist;
-        ratio -= options.ratio;
-        if (ratio < -options.ratio || ratio > 1 - options.ratio) {
+        ratio = ratio > 0 ? ratio : 0;
+        ratio = ratio < 1 ? ratio : 1;
+        /*
+        ratio -= options.trigger;
+        if (parseFloat(el.dataset.xtRatio) === ratio) {
           continue;
+        }
+        */
+        el.dataset.xtRatio = ratio.toString();
+        // indicator
+        if (el.classList.contains('scroll-indicator')) {
+          let triggerEl = document.body.querySelectorAll('.xt-indicator--trigger')[0];
+          triggerEl.style.top = trigger + 'px';
+          let startEl = document.body.querySelectorAll('.xt-indicator--start')[0];
+          startEl.style.top = (start - scrollTop) + 'px';
+          let endEl = document.body.querySelectorAll('.xt-indicator--end')[0];
+          endEl.style.top = (end - scrollTop) + 'px';
         }
         // dispatch
         let detail = self.eDetailSet();
+        /*
         detail.scrollInverse = scrollInverse;
         detail.scrollingElement = scrollingElement;
         detail.scrollHeight = scrollHeight;
@@ -214,6 +300,7 @@ class Scroll extends Core {
         detail.topDist = topDist;
         detail.bottomDist = bottomDist;
         detail.totalDist = totalDist;
+        */
         detail.ratio = ratio;
         el.dispatchEvent(new CustomEvent('change.xt.scroll', {detail: detail}));
       }
@@ -240,7 +327,10 @@ Scroll.optionsDefault = {
   "max": "Infinity",
   "instant": true,
   "distance": "20%",
-  "ratio": 0.5,
+  "trigger": 0.5,
+  "start": 0.5,
+  "end": 1,
+  "sticky": false,
   "aria": false
 };
 

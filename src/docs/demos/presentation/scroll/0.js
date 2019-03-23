@@ -47,8 +47,9 @@ Xt.observe.push({
       // scroll change
 
       el.addEventListener('change.xt.scroll', function (e) {
-        if (el.getAttribute('id') === 'test') {
-          TweenMax.set(el, {y: 100 * e.detail.ratio});
+        if (el.classList.contains('scroll-indicator')) {
+          let ratio = e.detail.ratio - .5;
+          TweenMax.set(el, {y: 100 * ratio});
         }
       });
 

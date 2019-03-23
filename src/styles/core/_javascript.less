@@ -56,3 +56,46 @@ html.xt-scrollbar {
 [data-xt-nav] {
   cursor: pointer;
 }
+
+// .xt-indicator
+
+.xt-indicator {
+  position: fixed;
+  right: 0;
+  width: 100px;
+  height: 2px;
+  z-index: @index--indicator;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: right;
+  &:before {
+    display: inline-block;
+    position: relative;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+}
+
+.xt-indicator--trigger {
+  background-color: purple;
+  &:before {
+    content: 'trigger';
+    color: purple;
+  }
+}
+
+.xt-indicator--start {
+  background-color: red;
+  &:before {
+    content: 'start';
+    color: red;
+  }
+}
+
+.xt-indicator--end {
+  background-color: blue;
+  &:before {
+    content: 'end';
+    color: blue;
+  }
+}
