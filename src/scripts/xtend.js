@@ -1004,6 +1004,20 @@ Xt.animTimeoutClear = function (el) {
 };
 
 /**
+ * return window percent if percent string
+ * @param {Number|String} num Number to check
+ * @returns {Number}
+ */
+Xt.windowPercent = function (num) {
+  if (typeof num == 'string' || num instanceof String) {
+    if (num.indexOf('%') !== -1) {
+      num = window.innerHeight * parseFloat(num) / 100;
+    }
+  }
+  return num;
+};
+
+/**
  * Fix resize event multiple calls and adds delay on resize and scroll events
  * @param {Event|Object} e Event
  * @param {Node|HTMLElement|EventTarget|Window} element Element to save timeout

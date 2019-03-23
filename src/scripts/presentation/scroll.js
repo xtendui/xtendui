@@ -133,9 +133,10 @@ class Scroll extends Core {
     let currentsOn = [];
     let currentsOff = [];
     let scrollInverse = false;
-    let scrollHeight = window.innerHeight;
     let scrollingElement = document.scrollingElement;
+    let scrollHeight = scrollingElement.scrollHeight;
     let scrollTop = scrollingElement.scrollTop;
+    let windowHeight = window.innerHeight;
     // direction
     if (scrollTop < self.detail.scrollTopOld) {
       scrollInverse = true;
@@ -146,27 +147,16 @@ class Scroll extends Core {
       if (!el.classList.contains('scroll--block')
         && (el.offsetWidth || el.offsetHeight || el.getClientRects().length)) { // :visible
         // vars
-        let elTop = tr.offsetParent.getBoundingClientRect().top + tr.offsetTop; // we use parents to not include transforms animations
-        let elHeight = tr.offsetHeight;
         let changed = false;
-        let top = elTop;
-        let bottom = top + elHeight;
-        let dist = options.distance;
-        if (typeof dist == 'string' || dist instanceof String) {
-          let posPercent = dist.indexOf('%');
-          if (posPercent !== -1) {
-            dist = scrollHeight * parseFloat(dist) / 100;
-          }
-        }
+        let elTop = tr.offsetParent.getBoundingClientRect().top + tr.offsetTop + scrollTop; // we use parents to not include transforms animations
+        let elHeight = tr.offsetHeight;
         // position
-        let trigger = scrollHeight * options.trigger;
-        let start = elTop + scrollTop - scrollHeight + scrollHeight * options.start;
-        let end = elTop + scrollTop + scrollHeight * options.end;
-        // min and max limit
-        let min = trigger;
-        let max = scrollingElement.scrollHeight - trigger;
-        start = start < min ? min : start;
-        end = end > max ? max : end;
+        let distance = Xt.windowPercent(options.distance);
+        let trigger = Xt.windowPercent(options.trigger);
+        let start = elTop - windowHeight + Xt.windowPercent(options.start) + distance;
+        start = start < trigger ? trigger : start; // limit start (fixes activation on page top)
+        let end = options.end ? start + Xt.windowPercent(options.end) - distance : elTop + trigger + elHeight - distance;
+        end = end > scrollHeight - trigger ? scrollHeight - trigger : end; // limit end (fixes deactivation on page bottom)
         // ratio
         let current = scrollTop + trigger - start;
         let total = end - start;
@@ -221,7 +211,7 @@ class Scroll extends Core {
           startEl.style.top = (start - scrollTop) + 'px';
           let endEl = document.body.querySelectorAll('.xt-indicator--end')[0];
           endEl.style.top = (end - scrollTop) + 'px';
-          console.log(el, 'ratio: ' + ratio, 'current: ' + current, 'total: ' + total);
+          console.log('start: ' + start, 'end: ' + end, 'ratio: ' + ratio, 'current: ' + current, 'total: ' + total);
         }
         // dispatch
         let detail = self.eDetailSet();
@@ -250,10 +240,10 @@ Scroll.optionsDefault = {
   "min": 0,
   "max": "Infinity",
   "instant": true,
-  "distance": "20%",
-  "trigger": 0.5,
-  "start": 0.5,
-  "end": 1,
+  "distance": 0,
+  "trigger": "50%",
+  "start": "50%",
+  "end": false,
   "sticky": false,
   "aria": false
 };
