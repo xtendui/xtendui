@@ -42,16 +42,15 @@ class Scroll extends Core {
         // sticky
         el.classList.add('xt-fixed');
         // sticky container
-        let container = Xt.parents(el, '.xt-container');
-        if (!container.length) {
+        let container = Xt.parents(el, '.xt-container')[0];
+        if (!container) {
           container = Xt.createElement('<div class="xt-container xt-fixed--inner"></div>');
           el.before(container);
           container.append(el);
-          container = Xt.parents(self.object, '.xt-container')[0];
         }
         // sticky clone
-        let target = container.querySelectorAll('.xt-clone');
-        if (!target.length) {
+        let target = container.querySelectorAll('.xt-clone')[0];
+        if (!target) {
           target = el.cloneNode(true);
           target.classList.add('xt-clone', 'xt-ignore');
           for (let elId of target.querySelectorAll('[id]')) {

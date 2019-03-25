@@ -2873,6 +2873,7 @@ html.xt-scrollbar .overlay_outer {
   margin-right: 10px;
 }
 .xt-indicator--trigger {
+  right: 100px;
   background-color: purple;
 }
 .xt-indicator--trigger:before {
@@ -7518,7 +7519,6 @@ h2 .site-article-anchor {
 }
 .site-header-top-outer[data-xt-sticky]:not(.xt-clone) {
   position: relative;
-  z-index: 100;
   width: 100%;
 }
 .site-header-top-outer[data-xt-sticky].xt-clone:not(.active) {
@@ -7565,7 +7565,6 @@ h2 .site-article-anchor {
 }
 .site-breadcrumbs-outer[data-xt-sticky]:not(.xt-clone) {
   position: relative;
-  z-index: 100;
   width: 100%;
 }
 .site-breadcrumbs-outer[data-xt-sticky].xt-clone:not(.active) {
@@ -7629,7 +7628,6 @@ h2 .site-article-anchor {
 }
 .site-aside[data-xt-sticky]:not(.xt-clone) {
   position: relative;
-  z-index: 100;
   width: 100%;
 }
 .site-aside[data-xt-sticky].xt-clone:not(.active) {
@@ -7663,7 +7661,6 @@ h2 .site-article-anchor {
 }
 .site-footer:not(.xt-clone) {
   position: relative;
-  z-index: 100;
   width: 100%;
 }
 .site-footer.xt-clone:not(.active) {

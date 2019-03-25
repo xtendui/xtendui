@@ -2791,6 +2791,7 @@ html.xt-scrollbar .overlay_outer {
   margin-right: 10px;
 }
 .xt-indicator--trigger {
+  right: 100px;
   background-color: purple;
 }
 .xt-indicator--trigger:before {
