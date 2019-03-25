@@ -1,11 +1,16 @@
+//////////////////////
+// .parallax_title
+//////////////////////
+
 Xt.observe.push({
-  matches: '#scroll-parallax',
+  matches: '.parallax_title',
   fnc: function (main, index, query) {
 
-    // slider
+    // scroll
 
     let self = Xt.init('xt-scroll', main, {
-      "elements": ":scope > *"
+      "end": 350,
+      "sticky": true
     });
     self.unmount = function () {
       self = null;
@@ -19,7 +24,74 @@ Xt.observe.push({
 
       el.addEventListener('change.xt.scroll', function (e) {
         TweenMax.set(el, {transformOrigin: 'left center'});
-        TweenMax.set(el, {opacity: e.detail.ratioDouble, scale: .9 + .2 * e.detail.ratioDouble});
+        TweenMax.set(el, {opacity: e.detail.ratioInverse, scale: .9 + .1 * e.detail.ratioInverse});
+      });
+
+    }
+
+  }
+});
+
+//////////////////////
+// .parallax_img
+//////////////////////
+
+Xt.observe.push({
+  matches: '.parallax_img',
+  fnc: function (main, index, query) {
+
+    // scroll
+
+    let self = Xt.init('xt-scroll', main, {
+      "end": 350,
+      "sticky": true
+    });
+    self.unmount = function () {
+      self = null;
+    };
+
+    // event
+
+    for (let el of self.elements) {
+
+      // scroll change
+
+      el.addEventListener('change.xt.scroll', function (e) {
+        TweenMax.set(el, {y: 100 * e.detail.ratio, opacity: e.detail.ratioInverse});
+      });
+
+    }
+
+  }
+});
+
+//////////////////////
+// .parallax_footer
+//////////////////////
+
+Xt.observe.push({
+  matches: '.parallax_footer',
+  fnc: function (main, index, query) {
+
+    // scroll
+
+    let self = Xt.init('xt-scroll', main, {
+      "trigger": "0%",
+      "start": "50%",
+      "end": "50%"
+    });
+    self.unmount = function () {
+      self = null;
+    };
+
+    // event
+
+    for (let el of self.elements) {
+
+      // scroll change
+
+      el.addEventListener('change.xt.scroll', function (e) {
+        TweenMax.set(el, {opacity: e.detail.ratio, scale: .9 + .1 * e.detail.ratio});
       });
 
     }
