@@ -762,7 +762,6 @@
 // .site-header-top
 
 .site-header-top-outer[data-xt-sticky] {
-  .sticky(@mode:'fixed');
   &:not(.xt-clone) {
     .site-header-top {
       transition-property: background;
@@ -785,7 +784,6 @@
 // .site-breadcrumbs
 
 .site-breadcrumbs-outer[data-xt-sticky] {
-  .sticky(@mode:'absolute');
   // animation
   &:not(.xt-clone) {
     .site-breadcrumbs {
@@ -820,16 +818,4 @@
       }
     }
   }
-}
-
-// .site-aside
-
-.site-aside[data-xt-sticky] {
-  .sticky();
-}
-
-// .site-footer
-
-.site-footer {
-  .sticky(@mode:'fixed');
 }

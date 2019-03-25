@@ -1,13 +1,13 @@
 ---
 layout: demos
-less: true
+less: false
 js: false
 full: true
 padding: false
 ---
 
 <div class="sticky-0"
-     data-xt-sticky='{"limit": {"top": ".sticky-0-start"}, "hide": "down"}'>
+     data-xt-sticky='{"sticky": "fixed", "limit": {"top": ".sticky-0-start"}, "hide": "down"}'>
   <div class="card card--squared card--primary">
     <div class="card_design"></div>
     <div class="card_content">
@@ -19,7 +19,7 @@ padding: false
 <div class="sticky-0-start"></div>
 
 <div class="sticky-1"
-     data-xt-sticky='{"contain": {"top": ".sticky-0:not(.xt-clone)"}}'>
+     data-xt-sticky='{"sticky": "absolute", "contain": {"top": ".sticky-0:not(.xt-clone)"}}'>
   <div class="card card--squared card--secondary">
     <div class="card_design"></div>
     <div class="card_content">

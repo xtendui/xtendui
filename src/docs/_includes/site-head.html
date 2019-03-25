@@ -107,18 +107,18 @@
               {% for collection in site.collections %}
                 {% if site.[collection.label].size > 0 %}
                   {% assign sorted = site.[collection.label] | sort: 'order' %}
-                  <a href="{{ site.baseurl }}{{ sorted[0].url }}" class="btn btn--primary btn--nodesign make-line">
+                  <a href="{{ site.baseurl }}{{ sorted[0].url }}" class="btn btn--primary btn--left btn--nodesign make-line">
                     <span>{{ collection.label }}</span>
                   </a>
                 {% endif %}
               {% endfor %}
-              <a href="{{ site.baseurl }}/" class="btn btn--primary btn--nodesign make-line">
+              <a href="{{ site.baseurl }}/" class="btn btn--primary btn--nodesign btn--left make-line">
                 <span>Extensions</span>
               </a>
-              <a href="{{ site.baseurl }}/" class="btn btn--primary btn--nodesign make-line">
+              <a href="{{ site.baseurl }}/" class="btn btn--primary btn--nodesign btn--left make-line">
                 <span>Inspirations</span>
               </a>
-              <a href="{{ site.baseurl }}/faq/" class="btn btn--primary btn--nodesign make-line">
+              <a href="{{ site.baseurl }}/faq/" class="btn btn--primary btn--nodesign btn--left make-line">
                 <span>Faq</span>
               </a>
 
@@ -147,7 +147,7 @@
 
     </div>
 
-    <nav class="site-breadcrumbs-outer" role="navigation" data-xt-sticky>
+    <nav class="site-breadcrumbs-outer" role="navigation" data-xt-sticky='{"sticky": "absolute"}'>
       <div class="site-breadcrumbs">
         <div class="site-breadcrumbs-inner">
           <div class="container">
@@ -171,7 +171,7 @@
                           <div class="site-breadcrumbs-body-sub toggle--visible collapse--height">
                             <div class="site-breadcrumbs-body-sub-inner">
                               {% for pa in subsorted %}
-                              <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn--left btn--primary btn--nodesign{% if pa.title == page.title %} active{% endif %}">
+                              <a href="{{ site.baseurl }}{{ pa.url }}" class="btn btn--primary btn--nodesign btn--left{% if pa.title == page.title %} active{% endif %}">
                                 <span>{{ pa.title }}</span>
                               </a>
                               {% endfor %}
@@ -205,7 +205,7 @@
                           {% assign sorted = site.[collection.label] | sort: 'order' %}
                             {% for p in sorted %}
                               {% if p.categories[0] == collection.label %}
-                              <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn--left btn--primary btn--nodesign{% if p.title == page.title %} active{% endif %}">
+                              <a href="{{ site.baseurl }}{{ p.url }}" class="btn btn--primary btn--nodesign btn--left{% if p.title == page.title %} active{% endif %}">
                                 <span>{{ p.title }}</span>
                               </a>
                               {% endif %}

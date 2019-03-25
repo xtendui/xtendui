@@ -39,8 +39,6 @@ class Scroll extends Core {
         // not sticky
         self.targets.push(el);
       } else {
-        // sticky
-        el.classList.add('xt-fixed');
         // sticky container
         let container = Xt.parents(el, '.xt-container')[0];
         if (!container) {
@@ -62,9 +60,28 @@ class Scroll extends Core {
           container.append(target);
         }
         self.targets.push(target);
+        // sticky
+        el.classList.add('xt-fixed', 'xt-sticky');
+        if (options.sticky === 'absolute') {
+          el.classList.add('xt-sticky--absolute');
+        } else if (options.sticky === 'fixed') {
+          el.classList.add('xt-sticky--fixed');
+        } else if (options.sticky === 'fixed-always') {
+          el.classList.add('xt-sticky--fixed-always');
+        }
+        if (target) {
+          target.classList.add('xt-fixed', 'xt-sticky');
+          if (options.sticky === 'absolute') {
+            target.classList.add('xt-sticky--absolute');
+          } else if (options.sticky === 'fixed') {
+            target.classList.add('xt-sticky--fixed');
+          } else if (options.sticky === 'fixed-always') {
+            target.classList.add('xt-sticky--fixed-always');
+          }
+        }
       }
       // indicator
-      if (el.classList.contains('scroll-indicator')) {
+      if (el.classList.contains('indicator')) {
         let indicatorTrigger = Xt.createElement('<div class="xt-indicator xt-indicator--trigger"></div>');
         document.body.append(indicatorTrigger);
         let indicatorStart = Xt.createElement('<div class="xt-indicator xt-indicator--start"></div>');
@@ -205,7 +222,7 @@ class Scroll extends Core {
           }
         }
         // indicator
-        if (el.classList.contains('scroll-indicator')) {
+        if (el.classList.contains('indicator')) {
           let triggerEl = document.body.querySelectorAll('.xt-indicator--trigger')[0];
           triggerEl.style.top = trigger + 'px';
           let startEl = document.body.querySelectorAll('.xt-indicator--start')[0];
@@ -241,11 +258,11 @@ Scroll.optionsDefault = {
   "class": "active",
   "on": "scroll resize",
   "instant": true,
+  "sticky": false,
   "distance": 0,
   "trigger": "50%",
   "start": "50%",
   "end": false,
-  "sticky": false,
   "aria": false
 };
 

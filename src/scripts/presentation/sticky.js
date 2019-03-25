@@ -34,42 +34,61 @@ class Sticky extends Core {
     let options = self.options;
     // mode
     self.mode = 'unique';
-    // container
-    self.container = Xt.parents(self.object, '.xt-container')[0];
-    if (!self.container) {
-      self.container = Xt.createElement('<div class="xt-container xt-fixed--inner"></div>');
-      self.object.before(self.container);
-      self.container.append(self.object);
-    }
-    // targets
-    self.targets = self.container.querySelectorAll('.xt-clone')[0];
-    if (!self.targets) {
-      self.targets = self.object.cloneNode(true);
-      self.targets.classList.add('xt-clone', 'xt-ignore');
-      for (let elId of self.targets.querySelectorAll('[id]')) {
-        elId.setAttribute('id', elId.getAttribute('id') + '-clone');
+    // sticky container
+    for (let el of self.elements) {
+      self.container = Xt.parents(el, '.xt-container')[0];
+      if (!self.container) {
+        self.container = Xt.createElement('<div class="xt-container xt-fixed--inner"></div>');
+        el.before(self.container);
+        self.container.append(el);
       }
-      for (let elName of self.targets.querySelectorAll('[name]')) {
-        elName.setAttribute('name', elName.getAttribute('name') + '-clone');
+      // sticky clone
+      let target = self.container.querySelectorAll('.xt-clone')[0];
+      if (!target) {
+        target = el.cloneNode(true);
+        target.classList.add('xt-clone', 'xt-ignore');
+        for (let elId of target.querySelectorAll('[id]')) {
+          elId.setAttribute('id', elId.getAttribute('id') + '-clone');
+        }
+        for (let elName of target.querySelectorAll('[name]')) {
+          elName.setAttribute('name', elName.getAttribute('name') + '-clone');
+        }
+        self.container.append(target);
       }
-      self.container.append(self.targets);
+      self.targets.push(target);
+      // sticky
+      el.classList.add('xt-fixed', 'xt-sticky');
+      if (options.sticky === 'absolute') {
+        el.classList.add('xt-sticky--absolute');
+      } else if (options.sticky === 'fixed') {
+        el.classList.add('xt-sticky--fixed');
+      } else if (options.sticky === 'fixed-always') {
+        el.classList.add('xt-sticky--fixed-always');
+      }
+      if (target) {
+        target.classList.add('xt-fixed', 'xt-sticky');
+        if (options.sticky === 'absolute') {
+          target.classList.add('xt-sticky--absolute');
+        } else if (options.sticky === 'fixed') {
+          target.classList.add('xt-sticky--fixed');
+        } else if (options.sticky === 'fixed-always') {
+          target.classList.add('xt-sticky--fixed-always');
+        }
+      }
+      // hide
+      if (options.hide === 'down') {
+        el.classList.add('sticky-hide--down');
+      } else {
+        el.classList.remove('sticky-hide--down');
+      }
+      if (options.hide === 'up') {
+        el.classList.add('sticky-hide--up');
+      } else {
+        el.classList.remove('sticky-hide--up');
+      }
+      // @index--sticky by javascript 100 and decreses with sequential sticky
+      el.style.zIndex = 100 - Xt.getUniqueNum();
     }
-    self.targets = Xt.arrSingle(self.targets);
-    // xt-fixed
-    self.object.classList.add('xt-fixed');
-    // hide
-    if (options.hide === 'down') {
-      self.object.classList.add('sticky-hide--down');
-    } else {
-      self.object.classList.remove('sticky-hide--down');
-    }
-    if (options.hide === 'up') {
-      self.object.classList.add('sticky-hide--up');
-    } else {
-      self.object.classList.remove('sticky-hide--up');
-    }
-    // @index--sticky by javascript 100 and decreses with sequential sticky
-    self.object.style.zIndex = 100 - Xt.getUniqueNum();
   }
 
   /**
@@ -243,12 +262,12 @@ class Sticky extends Core {
     }
     // anim
     if (anim && scrollTopOld !== undefined) {
-      if (!element.classList.contains('sticky--moving')) {
-        element.classList.add('sticky--moving');
+      if (!element.classList.contains('xt-sticky--moving')) {
+        element.classList.add('xt-sticky--moving');
       }
     } else if (element.classList.contains(...self.classes)) {
-      if (element.classList.contains('sticky--moving')) {
-        element.classList.remove('sticky--moving');
+      if (element.classList.contains('xt-sticky--moving')) {
+        element.classList.remove('xt-sticky--moving');
       }
     }
     // top and bottom
@@ -377,6 +396,7 @@ Sticky.optionsDefault = {
   "min": 0,
   "max": "Infinity",
   "instant": true,
+  "sticky": true,
   "position": "top",
   "limit": {"bottom": "Infinity"},
   "contain": false,

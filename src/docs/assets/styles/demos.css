@@ -1275,23 +1275,70 @@ div.btn {
 .slider--expand .slide:not(.active) {
   opacity: 1;
 }
-/**
- * .sticky()
- * @param {String} @mode Starting mode be 'absolute' or 'fixed'
- */
-.sticky--disabled {
+.xt-sticky.xt-clone {
+  position: relative;
+  visibility: hidden;
+  top: 0;
+  width: 100%;
+}
+.xt-sticky:not(.xt-clone) {
+  position: relative;
+  width: 100%;
+}
+.xt-sticky.xt-clone:not(.active) {
+  position: absolute;
+}
+.xt-container > .xt-sticky:not(.xt-clone):not(.active) {
+  position: relative;
+}
+.xt-sticky .show-sticky {
+  display: none;
+}
+.xt-sticky .hide-sticky {
+  display: block;
+}
+.xt-sticky:not(.xt-clone).active .show-sticky {
+  display: block;
+}
+.xt-sticky:not(.xt-clone).active .hide-sticky {
+  display: none;
+}
+.xt-sticky:not(.xt-clone).active {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+.xt-sticky--absolute.xt-clone:not(.active) {
+  position: relative;
+}
+.xt-container > .xt-sticky--absolute:not(.xt-clone):not(.active) {
+  position: absolute;
+}
+.xt-sticky--fixed.xt-clone:not(.active) {
+  position: relative;
+}
+.xt-container > .xt-sticky--fixed:not(.xt-clone):not(.active) {
+  position: fixed;
+}
+.xt-sticky--fixed-always.xt-clone {
+  position: absolute;
+}
+.xt-container > .xt-sticky--fixed-always:not(.xt-clone):not(.active) {
+  position: fixed;
+}
+.xt-sticky--disabled {
   position: relative !important;
   top: auto !important;
   bottom: auto !important;
 }
-.sticky--disabled:after {
+.xt-sticky--disabled:after {
   display: none;
   content: 'xt-disable';
 }
-.sticky--disabled.xt-clone {
+.xt-sticky--disabled.xt-clone {
   position: absolute !important;
 }
-.sticky--disabled:not(.xt-clone) {
+.xt-sticky--disabled:not(.xt-clone) {
   position: relative !important;
 }
 .loader {
@@ -5699,7 +5746,7 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   width: auto;
   height: 0.75em;
 }
-.sticky--moving {
+.xt-sticky--moving {
   transition-property: top;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.68,.13,.25,1);

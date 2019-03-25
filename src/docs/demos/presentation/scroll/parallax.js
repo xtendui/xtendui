@@ -9,8 +9,8 @@ Xt.observe.push({
     // scroll
 
     let self = Xt.init('xt-scroll', main, {
-      "end": 350,
-      "sticky": true
+      "sticky": "fixed",
+      "end": 350
     });
     self.unmount = function () {
       self = null;
@@ -43,8 +43,8 @@ Xt.observe.push({
     // scroll
 
     let self = Xt.init('xt-scroll', main, {
-      "end": 350,
-      "sticky": true
+      "sticky": "fixed",
+      "end": 350
     });
     self.unmount = function () {
       self = null;
