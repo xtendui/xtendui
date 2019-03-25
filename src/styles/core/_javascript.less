@@ -60,19 +60,20 @@ html.xt-scrollbar {
 // .xt-indicator
 
 .xt-indicator {
+  pointer-events: none;
   position: fixed;
   right: 0;
   width: 100px;
   height: 2px;
   z-index: @index--indicator;
-  font-size: 18px;
-  text-transform: uppercase;
   text-align: right;
   &:before {
     display: inline-block;
     position: relative;
-    margin-top: 10px;
-    margin-right: 10px;
+    top: -23px;
+    padding: 3px 6px;
+    font-size: 12px;
+    text-transform: uppercase;
   }
 }
 
@@ -81,7 +82,8 @@ html.xt-scrollbar {
   background-color: purple;
   &:before {
     content: 'trigger';
-    color: purple;
+    color: white;
+    background-color: purple;
   }
 }
 
@@ -89,7 +91,8 @@ html.xt-scrollbar {
   background-color: red;
   &:before {
     content: 'start';
-    color: red;
+    color: white;
+    background-color: red;
   }
 }
 
@@ -97,6 +100,7 @@ html.xt-scrollbar {
   background-color: blue;
   &:before {
     content: 'end';
-    color: blue;
+    color: white;
+    background-color: blue;
   }
 }

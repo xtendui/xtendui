@@ -2857,20 +2857,21 @@ html.xt-scrollbar .overlay_outer {
   cursor: pointer;
 }
 .xt-indicator {
+  pointer-events: none;
   position: fixed;
   right: 0;
   width: 100px;
   height: 2px;
   z-index: 110;
-  font-size: 18px;
-  text-transform: uppercase;
   text-align: right;
 }
 .xt-indicator:before {
   display: inline-block;
   position: relative;
-  margin-top: 10px;
-  margin-right: 10px;
+  top: -23px;
+  padding: 3px 6px;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 .xt-indicator--trigger {
   right: 100px;
@@ -2878,21 +2879,24 @@ html.xt-scrollbar .overlay_outer {
 }
 .xt-indicator--trigger:before {
   content: 'trigger';
-  color: purple;
+  color: white;
+  background-color: purple;
 }
 .xt-indicator--start {
   background-color: red;
 }
 .xt-indicator--start:before {
   content: 'start';
-  color: red;
+  color: white;
+  background-color: red;
 }
 .xt-indicator--end {
   background-color: blue;
 }
 .xt-indicator--end:before {
   content: 'end';
-  color: blue;
+  color: white;
+  background-color: blue;
 }
 html {
   font-size: 56.25%;

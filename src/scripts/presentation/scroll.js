@@ -157,7 +157,7 @@ class Scroll extends Core {
         let start = elTop - windowHeight + Xt.windowPercent(options.start) + distance;
         start = start < trigger ? trigger : start; // limit start (fixes activation on page top)
         let end = options.end ? start + Xt.windowPercent(options.end) - distance : elTop + trigger + elHeight - distance;
-        end = end > scrollHeight - trigger ? scrollHeight - trigger : end; // limit end (fixes deactivation on page bottom)
+        end = end > scrollHeight - windowHeight ? scrollHeight - windowHeight : end; // limit end (fixes deactivation on page bottom)
         // ratio
         let current = scrollTop + trigger - start;
         let total = end - start;
@@ -237,7 +237,7 @@ class Scroll extends Core {
 
 Scroll.componentName = 'xt-scroll';
 Scroll.optionsDefault = {
-  "elements": ".scroll",
+  "elements": false,
   "class": "active",
   "on": "scroll resize",
   "instant": true,

@@ -1,11 +1,11 @@
 Xt.observe.push({
-  matches: '#scroll-0',
+  matches: '#scroll-parallax',
   fnc: function (main, index, query) {
 
     // slider
 
     let self = Xt.init('xt-scroll', main, {
-      "elements": ".scroll-0"
+      "elements": ":scope > *"
     });
     self.unmount = function () {
       self = null;
