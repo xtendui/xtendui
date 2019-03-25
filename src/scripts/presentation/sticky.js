@@ -154,7 +154,7 @@ class Sticky extends Core {
     let scrollInverse = false;
     let add = 0;
     let addHide = 0;
-    let windowHeight = window.innerHeight;
+    let windowHeight = Xt.windowHeight;
     let heightEl = parseFloat(getComputedStyle(element).height);
     let heightTarget = parseFloat(getComputedStyle(self.targets[0]).height);
     let rectContainerTop = self.container.getBoundingClientRect().top;
@@ -262,12 +262,12 @@ class Sticky extends Core {
     }
     // anim
     if (anim && scrollTopOld !== undefined) {
-      if (!element.classList.contains('xt-sticky--moving')) {
-        element.classList.add('xt-sticky--moving');
+      if (!element.classList.contains('sticky--moving')) {
+        element.classList.add('sticky--moving');
       }
     } else if (element.classList.contains(...self.classes)) {
-      if (element.classList.contains('xt-sticky--moving')) {
-        element.classList.remove('xt-sticky--moving');
+      if (element.classList.contains('sticky--moving')) {
+        element.classList.remove('sticky--moving');
       }
     }
     // top and bottom

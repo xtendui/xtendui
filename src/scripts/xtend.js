@@ -1008,7 +1008,7 @@ Xt.animTimeoutClear = function (el) {
 Xt.windowPercent = function (num) {
   if (typeof num == 'string' || num instanceof String) {
     if (num.indexOf('%') !== -1) {
-      num = window.innerHeight * parseFloat(num) / 100;
+      num = Xt.windowHeight * parseFloat(num) / 100;
     }
   }
   return num;
@@ -1020,16 +1020,12 @@ Xt.windowPercent = function (num) {
  * @param {Node|HTMLElement|EventTarget|Window} element Element to save timeout
  * @param {Function} func Function to execute
  * @param {String} prefix Timeout prefix
+ * @param {Boolean} instant If instant
  */
-Xt.eventDelay = function (e, element, func, prefix = '') {
+Xt.eventDelay = function (e, element, func, prefix = '', instant = false) {
   let container = document.documentElement;
   if (e && e.type && (e.type === 'resize' || e.type === 'scroll')) {
-    let delay = Xt[e.type + 'Delay'];
-    if (delay === false) {
-      // func
-      func(e);
-      return false;
-    }
+    let delay = instant ? false : Xt[e.type + 'Delay'];
     if (e.type === 'resize') {
       // multiple calls check
       if (window.innerWidth === parseFloat(container.dataset['xtEventDelay'])) { // only width no height because it changes on scroll on mobile
@@ -1042,11 +1038,16 @@ Xt.eventDelay = function (e, element, func, prefix = '') {
       }).toString();
     }
     // delay
-    clearTimeout(parseFloat(element.dataset['xt' + e.type + prefix + 'Timeout']));
-    element.dataset['xt' + e.type + prefix + 'Timeout'] = setTimeout(function () {
+    if (delay === false) {
       // func
       func(e);
-    }, delay).toString();
+    } else {
+      clearTimeout(parseFloat(element.dataset['xt' + e.type + prefix + 'Timeout']));
+      element.dataset['xt' + e.type + prefix + 'Timeout'] = setTimeout(function () {
+        // func
+        func(e);
+      }, delay).toString();
+    }
   } else {
     // func
     func(e);
@@ -1054,6 +1055,18 @@ Xt.eventDelay = function (e, element, func, prefix = '') {
 };
 
 document.documentElement.dataset['xtEventDelay'] = window.innerWidth.toString();
+
+/**
+ * Xt.windowHeight
+ * vindow height value only on width resize to fix mobile window height changes
+ */
+addEventListener('resize', function(e) {
+  Xt.eventDelay(e, document.documentElement, function () {
+    Xt.windowHeight = window.innerHeight;
+  }, 'resize.xt.windowHeight', true);
+});
+
+Xt.windowHeight = window.innerHeight;
 
 /**
  * passive events

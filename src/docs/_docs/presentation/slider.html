@@ -164,18 +164,37 @@ description: Lorem Ipsum
        data-name="pagination"></div>
 </div>
 
-<h3>Wheel, auto and disabled</h3>
+<h3>Wheel, auto</h3>
 
 <p>Use <code>"wheel": {"selector": "object"}</code> or <code>"wheel": {"selector": Query}</code> to enable mousewheel
   navigation.</p>
 
 <p>For auto options see <a href="{% link _docs/interaction/toggle.html %}#options-auto">toggle auto</a>.</p>
 
-<p>To disable slider use <code>.slider--disabled</code> useful within media queries.</p>
-
 <div class="demo">
   <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/auto.html"
        data-name="auto"></div>
+</div>
+
+<h3>Disable and expand</h3>
+
+<div class="demo">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/disable.html"
+       data-name="disable">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>To disable slider use <code>.slider--disable</code> also within media queries</code>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/presentation/slider/expand.html"
+       data-name="expand">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>To disable and expand a slider use <code>.slider--expand</code> also within media queries</code>
+      </div>
+    </div>
+  </div>
 </div>
 
 <h3>Progress</h3>

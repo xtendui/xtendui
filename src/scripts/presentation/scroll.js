@@ -152,7 +152,7 @@ class Scroll extends Core {
     let scrollingElement = document.scrollingElement;
     let scrollHeight = scrollingElement.scrollHeight;
     let scrollTop = scrollingElement.scrollTop;
-    let windowHeight = window.innerHeight;
+    let windowHeight = Xt.windowHeight;
     // direction
     if (scrollTop < self.detail.scrollTopOld) {
       scrollInverse = true;
@@ -174,7 +174,8 @@ class Scroll extends Core {
         let start = elTop - windowHeight + Xt.windowPercent(options.start) + distance;
         start = start < trigger ? trigger : start; // limit start (fixes activation on page top)
         let end = options.end ? start + Xt.windowPercent(options.end) - distance : elTop + trigger + elHeight - distance;
-        end = end > scrollHeight - windowHeight ? scrollHeight - windowHeight : end; // limit end (fixes deactivation on page bottom)
+        end = end > scrollHeight - window.innerHeight ? scrollHeight - window.innerHeight : end; // limit end (fixes deactivation on page bottom)
+        start = start > end ? end : start; // limit end (fixes deactivation on page bottom)
         // ratio
         let current = scrollTop + trigger - start;
         let total = end - start;

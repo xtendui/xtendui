@@ -1151,7 +1151,7 @@ div.btn {
   display: none !important;
   content: 'xt-drop--middle' !important;
 }
-.drop--disabled {
+.drop--disable {
   position: static;
   z-index: initial;
   top: auto;
@@ -1159,25 +1159,25 @@ div.btn {
   bottom: auto;
   right: auto;
 }
-.drop--disabled:after {
+.drop--disable:after {
   display: none;
   content: 'xt-disable';
 }
-.drop--disabled > .btn {
+.drop--disable > .btn {
   display: none !important;
 }
-.drop--disabled > .drop {
+.drop--disable > .drop {
   display: block !important;
   position: relative;
 }
-.drop--disabled > .drop > .drop_inner {
+.drop--disable > .drop > .drop_inner {
   z-index: initial;
   min-width: auto;
 }
-.drop--disabled > .drop > .drop_inner > .drop_design {
+.drop--disable > .drop > .drop_inner > .drop_design {
   display: none;
 }
-.drop--disabled > .drop > .drop_inner > .drop_content {
+.drop--disable > .drop > .drop_inner > .drop_content {
   max-width: none;
   max-height: none;
 }
@@ -1255,7 +1255,7 @@ div.btn {
   margin-left: auto;
   margin-right: 0;
 }
-.overlay--disabled {
+.overlay--disable {
   display: flex !important;
   overflow: auto !important;
   position: static;
@@ -1265,28 +1265,28 @@ div.btn {
   bottom: auto;
   right: auto;
 }
-.overlay--disabled:after {
+.overlay--disable:after {
   display: none;
   content: 'xt-disable';
 }
-.overlay--disabled .overlay {
+.overlay--disable .overlay {
   padding: 0;
   width: auto;
   min-height: auto;
 }
-.overlay--disabled .overlay .overlay_inner {
+.overlay--disable .overlay .overlay_inner {
   z-index: initial;
 }
-.overlay--disabled .overlay .overlay_inner .overlay_design {
+.overlay--disable .overlay .overlay_inner .overlay_design {
   display: none;
 }
-.overlay--disabled .overlay .overlay_inner > .btn--close {
+.overlay--disable .overlay .overlay_inner > .btn--close {
   display: none !important;
 }
-.overlay--disabled .overlay .overlay_inner .overlay_content {
+.overlay--disable .overlay .overlay_inner .overlay_content {
   padding: 0 !important;
 }
-.overlay--disabled > .backdrop {
+.overlay--disable > .backdrop {
   display: none !important;
 }
 .slider {
@@ -1310,34 +1310,44 @@ div.btn {
 .slide_inner {
   position: relative;
 }
-.slider--disabled:after {
+.slider--disable:after {
   display: none;
   content: 'xt-disable';
 }
-.slider--disabled .slide:not(.active) {
-  transition: initial;
-  transition-delay: initial;
-  animation: initial;
-  animation-delay: initial;
-  opacity: 0;
+.slider--disable .slide:not(.active) {
+  transition: initial !important;
+  transition-delay: initial !important;
+  animation: initial !important;
+  animation-delay: initial !important;
+  opacity: 0 !important;
 }
-.slider--disabled .slider_pagination,
-.slider--disabled [data-xt-nav],
-.slider--disabled .loader,
-.slider--disabled .filler,
-.slider--disabled .spinner {
+.slider--disable .slider_pagination,
+.slider--disable [data-xt-nav],
+.slider--disable .loader,
+.slider--disable .filler,
+.slider--disable .spinner {
   display: none !important;
 }
 .slider--expand:after {
   display: none;
   content: 'xt-disable';
 }
+.slider--expand .slides {
+  overflow: visible;
+  height: auto !important;
+}
+.slider--expand .slides_inner {
+  transition: initial !important;
+  transition-delay: initial !important;
+  animation: initial !important;
+  animation-delay: initial !important;
+  transform: initial !important;
+}
+.slider--expand .slides_inner {
+  flex-wrap: wrap !important;
+}
 .slider--expand .slide:not(.active) {
-  transition: initial;
-  transition-delay: initial;
-  animation: initial;
-  animation-delay: initial;
-  opacity: 0;
+  opacity: 1 !important;
 }
 .slider--expand .slider_pagination,
 .slider--expand [data-xt-nav],
@@ -1345,17 +1355,6 @@ div.btn {
 .slider--expand .filler,
 .slider--expand .spinner {
   display: none !important;
-}
-.slider--expand .slides {
-  overflow: visible;
-  height: auto !important;
-}
-.slider--expand .slides_inner {
-  transform: initial !important;
-  flex-wrap: wrap;
-}
-.slider--expand .slide:not(.active) {
-  opacity: 1;
 }
 .xt-sticky.xt-clone {
   position: relative;
@@ -1408,19 +1407,19 @@ div.btn {
 .xt-container > .xt-sticky--fixed-always:not(.xt-clone):not(.active) {
   position: fixed;
 }
-.xt-sticky--disabled {
+.sticky--disable {
   position: relative !important;
   top: auto !important;
   bottom: auto !important;
 }
-.xt-sticky--disabled:after {
+.sticky--disable:after {
   display: none;
   content: 'xt-disable';
 }
-.xt-sticky--disabled.xt-clone {
+.sticky--disable.xt-clone {
   position: absolute !important;
 }
-.xt-sticky--disabled:not(.xt-clone) {
+.sticky--disable:not(.xt-clone) {
   position: relative !important;
 }
 .loader {
@@ -5057,7 +5056,7 @@ img.btn--close > span:after {
   animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
 }
-.drop--disabled > .drop > .drop_inner > .drop_content {
+.drop--disable > .drop > .drop_inner > .drop_content {
   opacity: 1 !important;
   transition: initial !important;
   transition-delay: initial !important;
@@ -5355,8 +5354,8 @@ img.btn--close > span:after {
 .overlay--pos .overlay_design {
   border: 0;
 }
-.overlay--disabled .overlay .overlay_inner,
-.overlay--disabled .overlay .overlay_content {
+.overlay--disable .overlay .overlay_inner,
+.overlay--disable .overlay .overlay_content {
   opacity: 1 !important;
   transition: initial !important;
   transition-delay: initial !important;
@@ -5618,9 +5617,21 @@ img.btn--close > span:after {
   transition-timing-function: cubic-bezier(.68,.13,.25,1);
 }
 .slides_inner {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: -1rem -1rem;
+  flex-wrap: nowrap;
+  align-items: flex-start;
   transition-property: transform;
   transition-duration: 1000ms;
   transition-timing-function: cubic-bezier(.36,0,0,1);
+}
+.slides_inner > * {
+  padding: 1rem 1rem;
+}
+.slides_inner > * {
+  padding: 1rem 1rem;
 }
 .slider_pagination {
   display: flex;
@@ -5828,7 +5839,7 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   width: auto;
   height: 0.75em;
 }
-.xt-sticky--moving {
+.sticky--moving {
   transition-property: top;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.68,.13,.25,1);

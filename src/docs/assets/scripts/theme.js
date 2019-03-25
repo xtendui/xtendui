@@ -86,7 +86,7 @@ for (let el of document.querySelectorAll('.site-aside-text')) {
 // activateAsideScroll
 
 const activateAsideScroll = function (els, scrollTop) {
-  const dist = window.innerHeight / 5;
+  const dist = Xt.windowHeight / 5;
   for (let el of els) {
     let href = el.getAttribute('href');
     if (href) {

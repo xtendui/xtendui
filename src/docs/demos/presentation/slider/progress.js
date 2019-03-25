@@ -118,7 +118,7 @@ Xt.observe.push({
     }
 
     function mouseenter(e) {
-      if (!loader.classList.contains('loader--disabled') || loader.classList.contains('loader--js')) {
+      if (!loader.classList.contains('loader--disable') || loader.classList.contains('loader--js')) {
         // size
         let rect = loader.getBoundingClientRect();
         width = rect.width;
@@ -130,7 +130,7 @@ Xt.observe.push({
     }
 
     function mouseleave(e) {
-      if (!loader.classList.contains('loader--disabled') || loader.classList.contains('loader--js')) {
+      if (!loader.classList.contains('loader--disable') || loader.classList.contains('loader--js')) {
         // class
         loader.classList.remove('active');
         loader.classList.add('out');
