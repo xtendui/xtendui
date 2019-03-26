@@ -232,7 +232,7 @@ class Ajax extends Core {
     if (self.detail.requestDuration > 0) {
       self.object.dataset.xtAjaxDurationTimeout = setTimeout( function() {
         // request
-        if (request.status >= 200 && request.status < 400) {
+        if (request.status >= 200 && request.status <= 300) {
           self.ajaxSuccess(element, url, request);
         } else {
           self.ajaxError(element, url, request);
@@ -240,7 +240,7 @@ class Ajax extends Core {
       }, self.detail.requestDuration).toString();
     } else {
       // request
-      if (request.status >= 200 && request.status < 400) {
+      if (request.status >= 200 && request.status <= 300) {
         self.ajaxSuccess(element, url, request);
       } else {
         self.ajaxError(element, url, request);
