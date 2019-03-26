@@ -188,8 +188,8 @@ class Scroll extends Core {
           changed = self.checkOn(el);
           if (changed) {
             currentsOn.push(el);
-            cancelAnimationFrame(parseFloat(el.dataset.xtEventFrame));
-            el.dataset.xtEventFrame = requestAnimationFrame(function () {
+            cancelAnimationFrame(parseFloat(el.dataset.xtScrollFrame));
+            el.dataset.xtScrollFrame = requestAnimationFrame(function () {
               currentOn++;
               el.dataset.xtOnCount = currentOn.toString();
               el.dataset.xtOnTot = currentsOn.length.toString();
@@ -203,8 +203,8 @@ class Scroll extends Core {
           if (changed) {
             el.classList.add('scroll--scroll');
             currentsOff.push(el);
-            cancelAnimationFrame(parseFloat(el.dataset.xtEventFrame));
-            el.dataset.xtEventFrame = requestAnimationFrame(function () {
+            cancelAnimationFrame(parseFloat(el.dataset.xtScrollFrame));
+            el.dataset.xtScrollFrame = requestAnimationFrame(function () {
               currentOff++;
               el.dataset.xtOffCount = currentOff.toString();
               el.dataset.xtOffTot = currentsOff.length.toString();
@@ -241,8 +241,8 @@ class Scroll extends Core {
       }
     }
     // save for direction
-    cancelAnimationFrame(parseFloat(self.object.dataset.xtEventFrame));
-    self.object.dataset.xtEventFrame = requestAnimationFrame(function () {
+    cancelAnimationFrame(parseFloat(self.object.dataset.xtScrollObjectFrame));
+    self.object.dataset.xtScrollObjectFrame = requestAnimationFrame(function () {
       self.detail.scrollTopOld = scrollTop;
     }).toString();
   }
