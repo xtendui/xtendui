@@ -261,11 +261,11 @@ class Sticky extends Core {
       anim = false;
     }
     // anim
-    if (anim && scrollTopOld !== undefined) {
+    if (anim && (addTop || !addBottom) && scrollTopOld !== undefined) {
       if (!element.classList.contains('sticky--moving')) {
         element.classList.add('sticky--moving');
       }
-    } else if (element.classList.contains(...self.classes)) {
+    } else {
       if (element.classList.contains('sticky--moving')) {
         element.classList.remove('sticky--moving');
       }
