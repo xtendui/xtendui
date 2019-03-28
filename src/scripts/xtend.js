@@ -251,7 +251,9 @@ Xt.observer = new MutationObserver(function (mutationsList) {
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', function () {
+    Xt.windowHeightSet();
     Xt.initElement();
+    Xt.initObserve();
     Xt.initObserve();
     Xt.observer.observe(document.documentElement, {
       characterData: false,
@@ -262,6 +264,7 @@ if (document.readyState === 'loading') {
   });
 } else {
   requestAnimationFrame(function () {
+    Xt.windowHeightSet();
     Xt.initElement();
     Xt.initObserve();
     Xt.observer.observe(document.documentElement, {
@@ -1062,11 +1065,13 @@ document.documentElement.dataset['xtEventDelay'] = window.innerWidth.toString();
  */
 addEventListener('resize', function(e) {
   Xt.eventDelay(e, document.documentElement, function () {
-    Xt.windowHeight = window.innerHeight;
+    Xt.windowHeightSet();
   }, 'resize.xt.windowHeight', true);
 });
 
-Xt.windowHeight = window.innerHeight;
+Xt.windowHeightSet = function() {
+  Xt.windowHeight = window.innerHeight;
+};
 
 /**
  * passive events
