@@ -2479,7 +2479,7 @@ class Core {
       container.style.paddingRight = width + 'px';
       container.classList.add('xt-scrollbar');
       // check fixed
-      let checks = document.querySelectorAll('.xt-fixed--inner > *');
+      let checks = document.querySelectorAll('.xt-fixed--check > *');
       for (let check of checks) {
         let style = getComputedStyle(check);
         if (style.position === 'fixed') {

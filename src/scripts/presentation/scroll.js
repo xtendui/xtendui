@@ -42,7 +42,7 @@ class Scroll extends Core {
         // sticky container
         let container = Xt.parents(el, '.xt-container')[0];
         if (!container) {
-          container = Xt.createElement('<div class="xt-container xt-fixed--inner"></div>');
+          container = Xt.createElement('<div class="xt-container xt-fixed--check"></div>');
           el.before(container);
           container.append(el);
         }

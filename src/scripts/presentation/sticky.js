@@ -38,7 +38,7 @@ class Sticky extends Core {
     for (let el of self.elements) {
       self.container = Xt.parents(el, '.xt-container')[0];
       if (!self.container) {
-        self.container = Xt.createElement('<div class="xt-container xt-fixed--inner"></div>');
+        self.container = Xt.createElement('<div class="xt-container xt-fixed--check"></div>');
         el.before(self.container);
         self.container.append(el);
       }
