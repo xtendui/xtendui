@@ -108,7 +108,9 @@ class Scroll extends Core {
       }
     }
     addEventListener('scroll.xt.scroll', scrollHandler);
-    requestAnimationFrame(self.eventScrollHandler.bind(self));
+    requestAnimationFrame(function () {
+      self.eventScrollHandler(null, true);
+    });
   }
 
   //////////////////////
@@ -118,14 +120,15 @@ class Scroll extends Core {
   /**
    * element on handler
    * @param {Event} e
+   * @param {Boolean} isInit
    */
-  eventScrollHandler(e = null) {
+  eventScrollHandler(e = null, isInit = false) {
     let self = this;
     // handler
     if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
       Xt.eventDelay(e, self.object, function () {
-        self.eventScroll();
-      }, 'resize.xt.scroll');
+        self.eventScroll(isInit);
+      }, self.namespaceComponent + 'Resize');
     }
   }
 
@@ -135,8 +138,9 @@ class Scroll extends Core {
 
   /**
    * window scroll
+   * @param {Boolean} isInit
    */
-  eventScroll() {
+  eventScroll(isInit) {
     let self = this;
     let options = self.options;
     // disabled
@@ -188,11 +192,16 @@ class Scroll extends Core {
           changed = self.checkOn(el);
           if (changed) {
             currentsOn.push(el);
-            cancelAnimationFrame(parseFloat(el.dataset.xtScrollFrame));
-            el.dataset.xtScrollFrame = requestAnimationFrame(function () {
+            cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'ScrollFrame']));
+            el.dataset[self.namespaceComponent + 'ScrollFrame'] = requestAnimationFrame(function () {
               currentOn++;
-              el.dataset.xtOnCount = currentOn.toString();
-              el.dataset.xtOnTot = currentsOn.length.toString();
+              el.dataset[self.namespaceComponent + 'OnCount'] = currentOn.toString();
+              el.dataset[self.namespaceComponent + 'OnTot'] = currentsOn.length.toString();
+              if (isInit) {
+                self.initial = true;
+              } else {
+                self.initial = false;
+              }
               self.eventOn(el);
             }).toString();
           }
@@ -203,11 +212,11 @@ class Scroll extends Core {
           if (changed) {
             el.classList.add('scroll--scroll');
             currentsOff.push(el);
-            cancelAnimationFrame(parseFloat(el.dataset.xtScrollFrame));
-            el.dataset.xtScrollFrame = requestAnimationFrame(function () {
+            cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'ScrollFrame']));
+            el.dataset[self.namespaceComponent + 'ScrollFrame'] = requestAnimationFrame(function () {
               currentOff++;
-              el.dataset.xtOffCount = currentOff.toString();
-              el.dataset.xtOffTot = currentsOff.length.toString();
+              el.dataset[self.namespaceComponent + 'OffCount'] = currentOff.toString();
+              el.dataset[self.namespaceComponent + 'OffTot'] = currentsOff.length.toString();
               self.eventOff(el);
             }).toString();
           }
@@ -241,8 +250,8 @@ class Scroll extends Core {
       }
     }
     // save for direction
-    cancelAnimationFrame(parseFloat(self.object.dataset.xtScrollObjectFrame));
-    self.object.dataset.xtScrollObjectFrame = requestAnimationFrame(function () {
+    cancelAnimationFrame(parseFloat(self.object.dataset[self.namespaceComponent + 'ScrollObjectFrame']));
+    self.object.dataset[self.namespaceComponent + 'ScrollObjectFrame'] = requestAnimationFrame(function () {
       self.detail.scrollTopOld = scrollTop;
     }).toString();
   }

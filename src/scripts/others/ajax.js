@@ -79,9 +79,10 @@ class Ajax extends Core {
   }
 
   /**
-   * init currents
+   * init start
+   * @param {Boolean} saveCurrents
    */
-  initCurrents() {
+  initStart(saveCurrents) {
     let self = this;
     // initial
     self.initial = true;
@@ -123,6 +124,8 @@ class Ajax extends Core {
       self.locationFrom = new URL(url, location);
     }
     self.pushState(url, document.title);
+    // init events
+    self.initEvents();
   }
 
   /**
@@ -166,7 +169,7 @@ class Ajax extends Core {
     // handler
     if (history.state && history.state.url) {
       // reinit currents
-      self.initCurrents();
+      self.initStart();
       // request set
       requestAnimationFrame(function () {
         self.ajaxRequest(null, history.state.url);
@@ -199,7 +202,7 @@ class Ajax extends Core {
     self.object.dispatchEvent(new CustomEvent('request.xt.ajax', {detail: detail}));
     // duration
     self.detail.requestDate = new Date();
-    clearTimeout(parseFloat(self.object.dataset.xtAjaxDurationTimeout));
+    clearTimeout(parseFloat(self.object.dataset[self.namespaceComponent + 'AjaxDurationTimeout']));
     requestAnimationFrame( function() {
       self.detail.requestDuration = options.duration || Xt.animTime(self.queryElement);
       // call
@@ -230,7 +233,7 @@ class Ajax extends Core {
     // duration
     self.detail.requestDuration -= new Date() - self.detail.requestDate;
     if (self.detail.requestDuration > 0) {
-      self.object.dataset.xtAjaxDurationTimeout = setTimeout( function() {
+      self.object.dataset[self.namespaceComponent + 'AjaxDurationTimeout'] = setTimeout( function() {
         // request
         if (request.status >= 200 && request.status <= 300) {
           self.ajaxSuccess(element, url, request);
@@ -264,45 +267,6 @@ class Ajax extends Core {
     html.innerHTML = request.responseText.trim();
     let title = html.querySelectorAll('head title')[0].innerHTML;
     let replace = html.querySelectorAll(options.query)[0];
-    // data-xt-ajax-keep
-    /*
-    // NEEDS constructor && !object.dataset.xtAjaxKept // not when ajax-kept
-    //DOES NOT WORK it doesn't copy the events..
-    for (let tr of self.queryElement.querySelectorAll('[data-xt-ajax-keep]')) {
-      // replace
-      let trId = tr.getAttribute('data-xt-ajax-keep');
-      let rep = replace.querySelectorAll('[data-xt-ajax-keep="' + trId + '"]');
-      if (rep.length) {
-        rep = rep[0];
-        if (tr.dataset.xtAjaxKept !== url) {
-          tr.dataset.xtAjaxKept = url;
-          // copy
-          let changed = rep.parentNode.replaceChild(tr, rep);
-          // copy events
-          let elsTr = Array.from(rep.querySelectorAll('*'));
-          elsTr.push(rep);
-          let elsCh = Array.from(changed.querySelectorAll('*'));
-          elsCh.push(changed);
-          for (let i = 0; i < elsTr.length; i++) {
-            let elTr = elsTr[i];
-            let elCh = elsCh[i];
-            if (elCh) {
-              // check storage for events
-              let storages = Xt.dataStorage.getAll(elTr);
-              if (storages) {
-                for (let [key, value] of storages) {
-                  // copy events
-                  let handler = Xt.dataStorage.put(elCh, key, value);
-                  elCh.addEventListener('click', handler);
-                }
-              }
-            }
-          }
-
-        }
-      }
-    }
-    */
     // populate dom
     self.queryElement.outerHTML = replace.outerHTML;
     // queryElement
@@ -332,7 +296,7 @@ class Ajax extends Core {
   ajaxError(element, url, request) {
     let self = this;
     // reinit currents
-    self.initCurrents();
+    self.initStart();
     // dispatch
     let detail = self.eDetailSet();
     self.detail.request = request;

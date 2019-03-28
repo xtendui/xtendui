@@ -254,7 +254,6 @@ if (document.readyState === 'loading') {
     Xt.windowHeightSet();
     Xt.initElement();
     Xt.initObserve();
-    Xt.initObserve();
     Xt.observer.observe(document.documentElement, {
       characterData: false,
       attributes: false,
@@ -991,8 +990,8 @@ Xt.animTime = function (el, timing = null) {
  * @param {Number} timing Force duration in milliseconds
  */
 Xt.animTimeout = function (el, func, timing = null) {
-  clearTimeout(parseFloat(el.dataset.xtAnimTimeout));
-  el.dataset.xtAnimTimeout = setTimeout(func, timing || timing === 0 ? timing : Xt.animTime(el)).toString();
+  clearTimeout(parseFloat(el.dataset['xt' + 'AnimTimeout']));
+  el.dataset['xt' + 'AnimTimeout'] = setTimeout(func, timing || timing === 0 ? timing : Xt.animTime(el)).toString();
 };
 
 /**
@@ -1000,7 +999,7 @@ Xt.animTimeout = function (el, func, timing = null) {
  * @param {Node|HTMLElement|EventTarget|Window} el Element animating
  */
 Xt.animTimeoutClear = function (el) {
-  clearTimeout(parseFloat(el.dataset.xtAnimTimeout));
+  clearTimeout(parseFloat(el.dataset['xt' + 'AnimTimeout']));
 };
 
 /**
@@ -1066,7 +1065,7 @@ document.documentElement.dataset['xtEventDelay'] = window.innerWidth.toString();
 addEventListener('resize', function(e) {
   Xt.eventDelay(e, document.documentElement, function () {
     Xt.windowHeightSet();
-  }, 'resize.xt.windowHeight', true);
+  }, 'xtWindowHeight' + 'Resize', true);
 });
 
 Xt.windowHeightSet = function() {

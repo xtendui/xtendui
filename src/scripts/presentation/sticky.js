@@ -128,7 +128,7 @@ class Sticky extends Core {
     if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
       Xt.eventDelay(e, self.object, function() {
         self.eventSticky(self.object, e);
-      }, 'resize.xt.sticky');
+      }, self.namespaceComponent + 'Resize');
     }
   }
 
@@ -219,7 +219,7 @@ class Sticky extends Core {
       }
     }
     // save real add for calculation
-    element.dataset.xtAddSticky = add.toString();
+    element.dataset[self.namespaceComponent + 'AddSticky'] = add.toString();
     // activation
     let checkTop = scrollTop >= top - add + addHide;
     let checkBottom = scrollTop < bottom + add - addHide;
@@ -319,7 +319,7 @@ class Sticky extends Core {
         let found = false;
         val = 0;
         for (let el of elements) {
-          let addSticky = parseFloat(el.dataset.xtAddSticky);
+          let addSticky = parseFloat(el.dataset[self.namespaceComponent + 'AddSticky']);
           if (addSticky) { // if sticky--hide get real add
             let style = getComputedStyle(el);
             if (style.display !== 'none') {

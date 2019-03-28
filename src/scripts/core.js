@@ -59,9 +59,8 @@ class Core {
     self.initVars();
     self.initSetup();
     self.initScope();
-    self.initRestart();
-    self.initEvents();
     self.initAria();
+    self.initStart(true);
     // setup
     self.object.setAttribute('data-' + self.componentName + '-inited', 'true');
   }
@@ -141,7 +140,8 @@ class Core {
       self.namespace = self.componentName + '-' + self.container.dataset.uniqueId;
     }
     // final namespace
-    self.namespace = self.namespace.replace(/^[^a-z]+|[^\w:.-]+/gi, '');
+    self.namespace = self.namespace.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '');
+    self.namespaceComponent = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '');
     // currents array based on namespace (so shared between Xt objects)
     self.setCurrents([]);
   }
@@ -201,116 +201,119 @@ class Core {
   }
 
   /**
-   * init restart
+   * init start
+   * @param {Boolean} saveCurrents
    */
-  initRestart() {
-    let self = this;
-    // restart
-    if (self.initialCurrents.length) {
-      // elements
-      for (let el of self.elements) {
-        if (el.classList.contains(self.classes[0])) {
-          el.classList.remove(...self.classes);
-        }
-      }
-      // targets
-      for (let tr of self.targets) {
-        if (tr.classList.contains(self.classes[0])) {
-          tr.classList.remove(...self.classes);
-        }
-      }
-      // currents
-      for (let el of self.initialCurrents) {
-        el.classList.add(...self.classes);
-      }
-    }
-    // continue
-    self.initCurrents();
-  }
-
-  /**
-   * init currents
-   */
-  initCurrents() {
+  initStart(saveCurrents = false) {
     let self = this;
     let options = self.options;
     // initial
+    let currents = 0;
     self.initial = true;
+    self.currentIndex = null;
     // @FIX set namespace for next frame
     for (let el of self.elements) {
       el.dataset.xtNamespace = self.namespace;
     }
     // automatic initial currents
-    cancelAnimationFrame(parseFloat(self.object.dataset.xtCurrentsFrame));
-    self.object.dataset.xtCurrentsFrame = requestAnimationFrame(function () {
-      let elements = self.getElementsSingle();
-      if (elements.length) {
-        for (let element of elements) {
-          // remove activations
-          let found = self.initReset(element);
-          // found
-          if (found) {
-            // initial
-            self.initial = true;
+    let elements = self.getElementsSingle();
+    if (elements.length) {
+      // check elements
+      for (let element of elements) {
+        // reset
+        let found = self.initReset(element, saveCurrents);
+        if (found) {
+          // initial
+          currents++;
+          // reactivate
+          requestAnimationFrame(function () {
             // activate
             self.eventOn(element, true);
-          } else {
-            // initial
-            self.initial = false;
-          }
+          });
         }
-        // if currents < min
-        let todo = options.min - self.getCurrents().length;
-        if (todo > 0) {
-          // initial
-          self.initial = true;
-          // activate
+      }
+      // if currents < min
+      let todo = options.min - currents;
+      if (todo > 0) {
+        // initial
+        currents++;
+        // activate
+        requestAnimationFrame(function () {
           for (let i = 0; i < todo; i++) {
             self.eventOn(self.elements[i], true);
           }
-        } else {
-          // initial
-          self.initial = false;
-          // auto
-          if (options.auto && options.auto.initial) {
-            self.eventAutoStart();
-          }
-        }
-        self.initialCurrents = self.getCurrents();
+        });
       }
-    }).toString();
+      // initial
+      self.setCurrents([]);
+      if (saveCurrents) {
+        requestAnimationFrame(function () {
+          self.initialCurrents = self.getCurrents().slice(0);
+        });
+      }
+      if (currents === 0) {
+        self.initial = false;
+        if (options.auto && options.auto.initial) {
+          self.eventAutoStart();
+        }
+      }
+    }
+    // init events
+    self.initEvents();
   }
 
   /**
    * init reset element activation
-   * @param {Node|HTMLElement|EventTarget|Window} element Element to check and reset
+   * @param {Node|HTMLElement|EventTarget|Window} el Element to check and reset
    * @returns {Boolean} if element was activated
+   * @param {Boolean} saveCurrents
    */
-  initReset(element) {
+  initReset(el, saveCurrents) {
     let self = this;
     let found = false;
     // elements
-    let group = element.getAttribute('data-xt-group');
+    let group = el.getAttribute('data-xt-group');
     if (group) {
-      let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group);
-      for (let el of groupElements) {
-        if (el.classList.contains(self.classes[0])) {
-          el.classList.remove(...self.classes);
+      let groupEls = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group);
+      for (let groupEl of groupEls) {
+        if (groupEl.classList.contains(self.classes[0])) {
+          groupEl.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, 'init');
+          if (saveCurrents) {
+            found = true;
+          }
+          // listener dispatch
+          let detail = self.eDetailSet();
+          groupEl.dispatchEvent(new CustomEvent('off.xt', {detail: detail}));
+        }
+        if (!saveCurrents && self.initialCurrents.includes(groupEl)) {
           found = true;
         }
       }
     } else {
-      if (element.classList.contains(self.classes[0])) {
-        element.classList.remove(...self.classes);
+      if (el.classList.contains(self.classes[0])) {
+        el.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, 'init');
+        if (saveCurrents) {
+          found = true;
+        }
+        // listener dispatch
+        let detail = self.eDetailSet();
+        el.dispatchEvent(new CustomEvent('off.xt', {detail: detail}));
+      }
+      if (!saveCurrents && self.initialCurrents.includes(el)) {
         found = true;
       }
     }
     // targets
-    let targets = self.getTargets(element);
+    let targets = self.getTargets(el);
     for (let tr of targets) {
       if (tr.classList.contains(self.classes[0])) {
-        tr.classList.remove(...self.classes);
-        found = true;
+        tr.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, 'init');
+        if (saveCurrents) {
+          found = true;
+        }
+        // listener dispatch
+        let detail = self.eDetailSet();
+        tr.dispatchEvent(new CustomEvent('off.xt', {detail: detail}));
       }
     }
     return found;
@@ -608,8 +611,8 @@ class Core {
       // event block
       if (options.onBlock) {
         let now = new Date().getTime();
-        let old = parseFloat(element.dataset['xtEventBlock' + e.type]) || 0;
-        element.dataset['xtEventBlock' + e.type] = now.toString();
+        let old = parseFloat(element.dataset[self.namespaceComponent + 'EventBlock' + e.type]) || 0;
+        element.dataset[self.namespaceComponent + 'EventBlock' + e.type] = now.toString();
         if (now - old < options.onBlock) {
           return false;
         }
@@ -639,8 +642,8 @@ class Core {
       // event block
       if (options.offBlock) {
         let now = new Date().getTime();
-        let old = parseFloat(element.dataset['xtEventBlock' + e.type]) || 0;
-        element.dataset['xtEventBlock' + e.type] = now.toString();
+        let old = parseFloat(element.dataset[self.namespaceComponent + 'EventBlock' + e.type]) || 0;
+        element.dataset[self.namespaceComponent + 'EventBlock' + e.type] = now.toString();
         if (now - old < options.offBlock) {
           return false;
         }
@@ -695,13 +698,13 @@ class Core {
    */
   eventTouchLinksHandler(el, e) {
     let self = this;
-    if (!el.dataset.xtTouchLinksDone) {
-      el.dataset.xtTouchLinksDone = 'true';
+    if (!el.dataset[self.namespaceComponent + 'TouchLinksDone']) {
+      el.dataset[self.namespaceComponent + 'TouchLinksDone'] = 'true';
       // prevent default
       e.preventDefault();
     } else {
       self.eventTouchLinksEndHandler(el);
-      delete el.dataset.xtTouchLinksDone;
+      delete el.dataset[self.namespaceComponent + 'TouchLinksDone'];
     }
   }
 
@@ -713,7 +716,7 @@ class Core {
   eventTouchLinksResetHandler(el, e) {
     let self = this;
     self.eventTouchLinksEndHandler(el);
-    delete el.dataset.xtTouchLinksDone;
+    delete el.dataset[self.namespaceComponent + 'TouchLinksDone'];
   }
 
   /**
@@ -1337,12 +1340,12 @@ class Core {
       // paused
       self.detail.autoPaused = false;
       // clear
-      clearInterval(parseFloat(self.object.dataset.xtAutoStartInterval));
+      clearInterval(parseFloat(self.object.dataset[self.namespaceComponent + 'AutoStartInterval']));
       // auto
       let time = options.auto.time;
       if (self.currentIndex !== null &&  // not when nothing activated
         !self.initial || options.auto.initial) { // not when initial
-        self.object.dataset.xtAutoStartInterval = setInterval(function () { // interval because can become :visible
+        self.object.dataset[self.namespaceComponent + 'AutoStartInterval'] = setInterval(function () { // interval because can become :visible
           if (self.object.offsetWidth || self.object.offsetHeight || self.object.getClientRects().length) { // :visible
             // auto
             if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
@@ -1369,7 +1372,7 @@ class Core {
     let options = self.options;
     if (options.auto && options.auto.time) {
       // clear
-      clearInterval(parseFloat(self.object.dataset.xtAutoStartInterval));
+      clearInterval(parseFloat(self.object.dataset[self.namespaceComponent + 'AutoStartInterval']));
       // listener dispatch
       let detail = self.eDetailSet();
       self.object.dispatchEvent(new CustomEvent('stop.xt.auto', {detail: detail}));
@@ -1384,7 +1387,7 @@ class Core {
     let options = self.options;
     if (options.auto && options.auto.time) {
       // clear
-      clearInterval(parseFloat(self.object.dataset.xtAutoStartInterval));
+      clearInterval(parseFloat(self.object.dataset[self.namespaceComponent + 'AutoStartInterval']));
       // listener dispatch
       let detail = self.eDetailSet();
       self.object.dispatchEvent(new CustomEvent('pause.xt.auto', {detail: detail}));
@@ -1447,9 +1450,9 @@ class Core {
       if (obj[type].done) {
         for (let el of obj[type].queueEls) {
           // clear timeout and frame
-          cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
-          clearTimeout(el.dataset.xtDelayTimeout);
-          clearTimeout(el.dataset.xtAnimTimeout);
+          cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'CollapseFrame']));
+          clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'DelayTimeout']));
+          clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'AnimTimeout']));
           // done other queue
           self.queueOffDelayDone(obj, el, type, true);
           self.queueOffAnimDone(obj, el, type, true);
@@ -1469,9 +1472,9 @@ class Core {
       if (obj[type].done) {
         for (let el of obj[type].queueEls) {
           // clear timeout and frame
-          cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
-          clearTimeout(el.dataset.xtDelayTimeout);
-          clearTimeout(el.dataset.xtAnimTimeout);
+          cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'CollapseFrame']));
+          clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'DelayTimeout']));
+          clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'AnimTimeout']));
           // done other queue
           self.queueOnDelayDone(obj, el, type, true);
           self.queueOnAnimDone(obj, el, type, true);
@@ -1633,8 +1636,8 @@ class Core {
       let delay;
       if (options.delayOn) {
         if (isNaN(options.delayOn)) {
-          let count = parseInt(el.dataset.xtOnCount) || els.findIndex(x => x === el);
-          let tot = parseInt(el.dataset.xtOnTot) || els.length;
+          let count = parseInt(el.dataset[self.namespaceComponent + 'OnCount']) || els.findIndex(x => x === el);
+          let tot = parseInt(el.dataset[self.namespaceComponent + 'OnTot']) || els.length;
           let fnc = options.delayOn;
           if (typeof fnc === 'string') {
             fnc = new Function('current', 'total', fnc);
@@ -1645,10 +1648,10 @@ class Core {
         }
       }
       // delay fnc
-      clearTimeout(el.dataset.xtDelayTimeout);
-      clearTimeout(el.dataset.xtAnimTimeout);
+      clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'DelayTimeout']));
+      clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'AnimTimeout']));
       if (delay) {
-        el.dataset.xtDelayTimeout = setTimeout(function () {
+        el.dataset[self.namespaceComponent + 'DelayTimeout'] = setTimeout(function () {
           self.queueOnDelayDone(obj, el, type);
         }, delay).toString();
       } else {
@@ -1679,8 +1682,8 @@ class Core {
       let delay;
       if (options.delayOff) {
         if (isNaN(options.delayOff)) {
-          let count = parseInt(el.dataset.xtOffCount) || els.findIndex(x => x === el);
-          let tot = parseInt(el.dataset.xtOffTot) || els.length;
+          let count = parseInt(el.dataset[self.namespaceComponent + 'OffCount']) || els.findIndex(x => x === el);
+          let tot = parseInt(el.dataset[self.namespaceComponent + 'OffTot']) || els.length;
           let fnc = options.delayOff;
           if (typeof fnc === 'string') {
             fnc = new Function('current', 'total', fnc);
@@ -1691,10 +1694,10 @@ class Core {
         }
       }
       // delay fnc
-      clearTimeout(el.dataset.xtDelayTimeout);
-      clearTimeout(el.dataset.xtAnimTimeout);
+      clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'DelayTimeout']));
+      clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'AnimTimeout']));
       if (delay) {
-        el.dataset.xtDelayTimeout = setTimeout(function () {
+        el.dataset[self.namespaceComponent + 'DelayTimeout'] = setTimeout(function () {
           self.queueOffDelayDone(obj, el, type);
         }, delay).toString();
       } else {
@@ -1720,6 +1723,9 @@ class Core {
     let self = this;
     let options = self.options;
     // activate
+    if (self.initial) {
+      el.classList.add('init');
+    }
     el.classList.add(...self.classes);
     el.classList.add(...self.classesIn);
     el.classList.remove(...self.classesOut);
@@ -1787,6 +1793,9 @@ class Core {
     let self = this;
     let options = self.options;
     // deactivate
+    if (!self.initial) {
+      el.classList.remove('init');
+    }
     el.classList.remove(...self.classes);
     el.classList.remove(...self.classesIn);
     el.classList.add(...self.classesOut);
@@ -1824,11 +1833,11 @@ class Core {
     let options = self.options;
     // anim
     let duration = Xt.animTime(el, options.durationOn);
-    clearTimeout(el.dataset.xtAnimTimeout);
+    clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'AnimTimeout']));
     if (!duration) {
       self.queueOnAnimDone(obj, el, type);
     } else {
-      el.dataset.xtAnimTimeout = setTimeout(function () {
+      el.dataset[self.namespaceComponent + 'AnimTimeout'] = setTimeout(function () {
         self.queueOnAnimDone(obj, el, type);
       }, duration).toString();
     }
@@ -1845,11 +1854,11 @@ class Core {
     let options = self.options;
     // anim
     let duration = Xt.animTime(el, options.durationOff);
-    clearTimeout(el.dataset.xtAnimTimeout);
+    clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'AnimTimeout']));
     if (!duration) {
       self.queueOffAnimDone(obj, el, type);
     } else {
-      el.dataset.xtAnimTimeout = setTimeout(function () {
+      el.dataset[self.namespaceComponent + 'AnimTimeout'] = setTimeout(function () {
         self.queueOffAnimDone(obj, el, type);
       }, duration).toString();
     }
@@ -2095,8 +2104,8 @@ class Core {
       return false;
     }
     // friction
-    cancelAnimationFrame(parseFloat(el.dataset.smoothFrame));
-    el.dataset.smoothFrame = requestAnimationFrame(function () {
+    cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'SmoothFrame']));
+    el.dataset[self.namespaceComponent + 'SmoothFrame'] = requestAnimationFrame(function () {
       self.eventFrictionSmooth(el, min, max);
     }).toString();
     // moving
@@ -2149,8 +2158,8 @@ class Core {
     if (self.detail.wheelCurrent > min && self.detail.wheelCurrent < max && // limit
       Math.abs(delta) >= options.wheel.frictionLimit) { // frictionLimit
       // friction
-      cancelAnimationFrame(parseFloat(el.dataset.smoothFrame));
-      el.dataset.smoothFrame = requestAnimationFrame(function () {
+      cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'SmoothFrame']));
+      el.dataset[self.namespaceComponent + 'SmoothFrame'] = requestAnimationFrame(function () {
         self.eventFrictionSmooth(el, min, max);
       }).toString();
       // dispatch
@@ -2263,13 +2272,13 @@ class Core {
         let h = el.clientHeight + 'px';
         let pt = el.style.paddingTop;
         let pb = el.style.paddingBottom;
-        cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
-        el.dataset.xtCollapseFrame = requestAnimationFrame(function () {
+        cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'CollapseFrame']));
+        el.dataset[self.namespaceComponent + 'CollapseFrame'] = requestAnimationFrame(function () {
           el.classList.remove('xt-hide');
           el.style.height = '0';
           el.style.paddingTop = '0';
           el.style.paddingBottom = '0';
-          el.dataset.xtCollapseFrame = requestAnimationFrame(function () {
+          el.dataset[self.namespaceComponent + 'CollapseFrame'] = requestAnimationFrame(function () {
             el.style.height = h;
             el.style.paddingTop = pt;
             el.style.paddingBottom = pb;
@@ -2284,13 +2293,13 @@ class Core {
         let w = el.clientHeight + 'px';
         let pl = el.style.paddingLeft;
         let pr = el.style.paddingRight;
-        cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
-        el.dataset.xtCollapseFrame = requestAnimationFrame(function () {
+        cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'CollapseFrame']));
+        el.dataset[self.namespaceComponent + 'CollapseFrame'] = requestAnimationFrame(function () {
           el.classList.remove('xt-hide');
           el.style.width = '0';
           el.style.paddingLeft = '0';
           el.style.paddingRight = '0';
-          el.dataset.xtCollapseFrame = requestAnimationFrame(function () {
+          el.dataset[self.namespaceComponent + 'CollapseFrame'] = requestAnimationFrame(function () {
             el.style.width = w;
             el.style.paddingLeft = pl;
             el.style.paddingRight = pr;
@@ -2312,12 +2321,12 @@ class Core {
         let h = el.clientHeight + 'px';
         let pt = el.style.paddingTop;
         let pb = el.style.paddingBottom;
-        cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
-        el.dataset.xtCollapseFrame = requestAnimationFrame(function () {
+        cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'CollapseFrame']));
+        el.dataset[self.namespaceComponent + 'CollapseFrame'] = requestAnimationFrame(function () {
           el.style.height = h;
           el.style.paddingTop = pt;
           el.style.paddingBottom = pb;
-          el.dataset.xtCollapseFrame = requestAnimationFrame(function () {
+          el.dataset[self.namespaceComponent + 'CollapseFrame'] = requestAnimationFrame(function () {
             el.style.height = '0';
             el.style.paddingTop = '0';
             el.style.paddingBottom = '0';
@@ -2328,12 +2337,12 @@ class Core {
         let w = el.clientWidth + 'px';
         let pl = el.style.paddingLeft;
         let pr = el.style.paddingRight;
-        cancelAnimationFrame(parseFloat(el.dataset.xtCollapseFrame));
-        el.dataset.xtCollapseFrame = requestAnimationFrame(function () {
+        cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'CollapseFrame']));
+        el.dataset[self.namespaceComponent + 'CollapseFrame'] = requestAnimationFrame(function () {
           el.style.width = w;
           el.style.paddingLeft = pl;
           el.style.paddingRight = pr;
-          el.dataset.xtCollapseFrame = requestAnimationFrame(function () {
+          el.dataset[self.namespaceComponent + 'CollapseFrame'] = requestAnimationFrame(function () {
             el.style.width = '0';
             el.style.paddingLeft = '0';
             el.style.paddingRight = '0';
@@ -2636,7 +2645,7 @@ class Core {
     // handler
     Xt.eventDelay(e, self.object, function () {
       self.eventStatus();
-    }, 'resize.xt.core');
+    }, self.namespaceComponent + 'Resize');
   }
 
   /**
@@ -2683,7 +2692,7 @@ class Core {
   destroy(weak = false) {
     let self = this;
     // stop auto
-    clearInterval(parseFloat(self.object.dataset.xtAutoStartInterval));
+    clearInterval(parseFloat(self.object.dataset[self.namespaceComponent + 'AutoStartInterval']));
     // remove events
     if (self.destroyElements) {
       for (let element of self.destroyElements) {

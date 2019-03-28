@@ -108,6 +108,7 @@ We use jekyll to serve the docs.
   * [append](https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append)
   * [before](https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/before)
   * [findIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+  * [includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
   * [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent)
   * [scrollingElement](https://github.com/yangg/scrolling-element)
   * [composedPath](https://gist.github.com/rockinghelvetica/00b9f7b5c97a16d3de75ba99192ff05c)

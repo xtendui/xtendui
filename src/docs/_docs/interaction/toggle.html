@@ -411,69 +411,11 @@ description: Many possible behaviour, interactions and animations are possible w
   <strong>targets</strong> you want activated. Following this activation the <strong>min</strong> option will take
   effect.</p>
 
-<div class="demo">
-  <div class="demo-item demo-preview" data-name="start">
-    <div class="demo-source" data-lang="html">
-      <div class="list list-space--small align-items--center"
-           data-xt-toggle='{"class": "active class-example-1", "min": 3, "max": 3}'>
-        <button type="button" class="btn" data-xt-group="0">
-          <span>Group 0</span>
-        </button>
-        <button type="button" class="btn">
-          <span>Toggle 0</span>
-        </button>
-        <button type="button" class="btn" data-xt-group="0">
-          <span>Group 0</span>
-        </button>
-        <button type="button" class="btn active class-example-1">
-          <span>Toggle 1</span>
-        </button>
-        <button type="button" class="btn" data-xt-group="1">
-          <span>Group 1</span>
-        </button>
-        <div class="alert toggle--block">
-          <div class="alert_content">
-            Target 0
-          </div>
-        </div>
-        <div class="alert toggle--block" data-xt-group="0">
-          <div class="alert_content">
-            Group 0
-          </div>
-        </div>
-        <div class="alert toggle--block" data-xt-group="1">
-          <div class="alert_content">
-            Group 1
-          </div>
-        </div>
-        <div class="alert toggle--block" data-xt-group="0">
-          <div class="alert_content">
-            Group 0
-          </div>
-        </div>
-        <div class="alert toggle--block">
-          <div class="alert_content">
-            Target 1
-          </div>
-        </div>
-        <div class="alert toggle--block active class-example-1" data-xt-group="1">
-          <div class="alert_content">
-            Group 1
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="demo-source" data-lang="css">
-      <style>
-        .btn.class-example-1 {
-          color: red;
-        }
+<p>If you want to restart the component with the initial starting element use <code>self.initStart();</code></p>
 
-        .alert.class-example-1 > .content {
-          color: red;
-        }
-      </style>
-    </div>
+<div class="demo">
+  <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/toggle/start.html"
+       data-name="start and restart"></div>
   </div>
 </div>
 
