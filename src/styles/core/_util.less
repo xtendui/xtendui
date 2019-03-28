@@ -168,7 +168,7 @@
 
 // responsive
 
-.responsive-x(@breakpoint:none) when (@breakpoint = none) {
+.responsive(@breakpoint:none) when (@breakpoint = none) {
   width: 100%;
   height: auto;
   // fix ie11 images inside flex
@@ -181,7 +181,7 @@
   */
 }
 
-.responsive-x(@breakpoint:none) when (default()) {
+.responsive(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     width: 100%;
