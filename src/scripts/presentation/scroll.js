@@ -120,14 +120,14 @@ class Scroll extends Core {
   /**
    * element on handler
    * @param {Event} e
-   * @param {Boolean} isInit
+   * @param {Boolean} initial
    */
-  eventScrollHandler(e = null, isInit = false) {
+  eventScrollHandler(e = null, initial = false) {
     let self = this;
     // handler
     if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
       Xt.eventDelay(e, self.object, function () {
-        self.eventScroll(isInit);
+        self.eventScroll(e, initial);
       }, self.namespaceComponent + 'Resize');
     }
   }
@@ -138,9 +138,10 @@ class Scroll extends Core {
 
   /**
    * window scroll
-   * @param {Boolean} isInit
+   * @param {Event} e
+   * @param {Boolean} initial
    */
-  eventScroll(isInit) {
+  eventScroll(e, initial) {
     let self = this;
     let options = self.options;
     // disabled
@@ -178,7 +179,7 @@ class Scroll extends Core {
         let start = elTop - windowHeight + Xt.windowPercent(options.start) + distance;
         start = start < trigger ? trigger : start; // limit start (fixes activation on page top)
         let end = options.end ? start + Xt.windowPercent(options.end) - distance : elTop + trigger + elHeight - distance;
-        end = end > scrollHeight - window.innerHeight ? scrollHeight - window.innerHeight : end; // limit end (fixes deactivation on page bottom)
+        end = end > trigger + scrollHeight - window.innerHeight ? trigger + scrollHeight - window.innerHeight : end; // limit end (fixes deactivation on page bottom)
         start = start > end ? end : start; // limit end (fixes deactivation on page bottom)
         // ratio
         let current = scrollTop + trigger - start;
@@ -192,16 +193,17 @@ class Scroll extends Core {
           changed = self.checkOn(el);
           if (changed) {
             currentsOn.push(el);
-            cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'ScrollFrame']));
             el.dataset[self.namespaceComponent + 'ScrollFrame'] = requestAnimationFrame(function () {
-              currentOn++;
+              // initial
+              if (initial) {
+                el.dataset[self.namespaceComponent + 'Initial'] = 'true';
+              } else {
+                delete el.dataset[self.namespaceComponent + 'Initial'];
+              }
+              // activate
               el.dataset[self.namespaceComponent + 'OnCount'] = currentOn.toString();
               el.dataset[self.namespaceComponent + 'OnTot'] = currentsOn.length.toString();
-              if (isInit) {
-                self.initial = true;
-              } else {
-                self.initial = false;
-              }
+              currentOn++;
               self.eventOn(el);
             }).toString();
           }
@@ -214,9 +216,16 @@ class Scroll extends Core {
             currentsOff.push(el);
             cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'ScrollFrame']));
             el.dataset[self.namespaceComponent + 'ScrollFrame'] = requestAnimationFrame(function () {
-              currentOff++;
+              // initial
+              if (initial) {
+                el.dataset[self.namespaceComponent + 'Initial'] = 'true';
+              } else {
+                delete el.dataset[self.namespaceComponent + 'Initial'];
+              }
+              // deactivate
               el.dataset[self.namespaceComponent + 'OffCount'] = currentOff.toString();
               el.dataset[self.namespaceComponent + 'OffTot'] = currentsOff.length.toString();
+              currentOff++;
               self.eventOff(el);
             }).toString();
           }

@@ -107,7 +107,9 @@ class Sticky extends Core {
       }
     }
     addEventListener('scroll.xt.sticky', stickyHandler);
-    requestAnimationFrame(self.eventStickyHandler.bind(self));
+    requestAnimationFrame(function () {
+      self.eventStickyHandler(null, true);
+    });
     // autoClose
     let autoCloseHandler = Xt.dataStorage.put(self.object, 'hide' + '.' + self.namespace,
       Xt.autoClose.bind(this, self.object));
@@ -121,13 +123,14 @@ class Sticky extends Core {
   /**
    * element on handler
    * @param {Event} e
+   * @param {Boolean} initial
    */
-  eventStickyHandler(e = null) {
+  eventStickyHandler(e = null, initial = false) {
     let self = this;
     // handler
     if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
       Xt.eventDelay(e, self.object, function() {
-        self.eventSticky(self.object, e);
+        self.eventSticky(self.object, e, initial);
       }, self.namespaceComponent + 'Resize');
     }
   }
@@ -140,8 +143,9 @@ class Sticky extends Core {
    * window scroll
    * @param {Node|HTMLElement|EventTarget|Window} element To be activated or deactivated
    * @param {Event} e
+   * @param {Boolean} initial
    */
-  eventSticky(element, e) {
+  eventSticky(element, e, initial) {
     let self = this;
     let options = self.options;
     // disabled
@@ -224,6 +228,12 @@ class Sticky extends Core {
     let checkTop = scrollTop >= top - add + addHide;
     let checkBottom = scrollTop < bottom + add - addHide;
     if (checkTop && checkBottom) {
+      // initial
+      if (initial) {
+        element.dataset[self.namespaceComponent + 'Initial'] = 'true';
+      } else {
+        delete element.dataset[self.namespaceComponent + 'Initial'];
+      }
       // inside
       self.eventOn(element);
       // hide
@@ -231,6 +241,12 @@ class Sticky extends Core {
         hide = true;
       }
     } else {
+      // initial
+      if (initial) {
+        element.dataset[self.namespaceComponent + 'Initial'] = 'true';
+      } else {
+        delete element.dataset[self.namespaceComponent + 'Initial'];
+      }
       // outside
       self.eventOff(element);
     }

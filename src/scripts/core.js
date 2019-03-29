@@ -277,7 +277,8 @@ class Core {
       let groupEls = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group);
       for (let groupEl of groupEls) {
         if (groupEl.classList.contains(self.classes[0])) {
-          groupEl.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, 'init');
+          groupEl.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, 'initial');
+          delete groupEl.dataset[self.namespaceComponent + 'Initial'];
           if (saveCurrents) {
             found = true;
           }
@@ -291,7 +292,8 @@ class Core {
       }
     } else {
       if (el.classList.contains(self.classes[0])) {
-        el.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, 'init');
+        el.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, 'initial');
+        delete el.dataset[self.namespaceComponent + 'Initial'];
         if (saveCurrents) {
           found = true;
         }
@@ -307,7 +309,8 @@ class Core {
     let targets = self.getTargets(el);
     for (let tr of targets) {
       if (tr.classList.contains(self.classes[0])) {
-        tr.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, 'init');
+        tr.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, 'initial');
+        delete tr.dataset[self.namespaceComponent + 'Initial'];
         if (saveCurrents) {
           found = true;
         }
@@ -1723,8 +1726,8 @@ class Core {
     let self = this;
     let options = self.options;
     // activate
-    if (self.initial) {
-      el.classList.add('init');
+    if (self.initial || el.dataset[self.namespaceComponent + 'Initial']) {
+      el.classList.add('initial');
     }
     el.classList.add(...self.classes);
     el.classList.add(...self.classesIn);
@@ -1793,8 +1796,8 @@ class Core {
     let self = this;
     let options = self.options;
     // deactivate
-    if (!self.initial) {
-      el.classList.remove('init');
+    if (!self.initial && !el.dataset[self.namespaceComponent + 'Initial']) {
+      el.classList.remove('initial');
     }
     el.classList.remove(...self.classes);
     el.classList.remove(...self.classesIn);
