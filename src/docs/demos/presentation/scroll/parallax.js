@@ -26,7 +26,7 @@ Xt.observe.push({
 
       el.addEventListener('change.xt.scroll', function (e) {
         TweenMax.set(el, {transformOrigin: 'left center'});
-        TweenMax.set(el, {opacity: e.detail.ratioInverse, scale: .9 + .1 * e.detail.ratioInverse});
+        TweenMax.set(el, {opacity: self.detail.ratioInverse, scale: .9 + .1 * self.detail.ratioInverse});
       });
 
     }
@@ -61,7 +61,7 @@ Xt.observe.push({
       // scroll change
 
       el.addEventListener('change.xt.scroll', function (e) {
-        TweenMax.set(el, {y: 100 * e.detail.ratio, opacity: e.detail.ratioInverse});
+        TweenMax.set(el, {y: 100 * self.detail.ratio, opacity: self.detail.ratioInverse});
       });
 
     }
@@ -96,7 +96,7 @@ Xt.observe.push({
       // scroll change
 
       el.addEventListener('change.xt.scroll', function (e) {
-        TweenMax.set(el, {opacity: e.detail.ratio, scale: .9 + .1 * e.detail.ratio});
+        TweenMax.set(el, {opacity: self.detail.ratio, scale: .9 + .1 * self.detail.ratio});
       });
 
     }

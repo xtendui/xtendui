@@ -173,20 +173,22 @@ class Scroll extends Core {
         let elTop = tr.offsetParent.getBoundingClientRect().top + tr.offsetTop + scrollTop; // we use parents to not include transforms animations
         let elHeight = tr.offsetHeight;
         // position
-        let distance = Xt.windowPercent(options.scroll.distance);
-        let trigger = Xt.windowPercent(options.scroll.trigger);
-        let start = elTop - windowHeight + Xt.windowPercent(options.scroll.start) + distance;
-        start = start < trigger ? trigger : start; // limit fixes activation on page top
-        let end = options.scroll.end ? start + Xt.windowPercent(options.scroll.end) - distance : elTop + elHeight + trigger - distance;
-        end = end > trigger + scrollHeight - window.innerHeight ? trigger + scrollHeight - window.innerHeight : end; // limit fixes deactivation on page bottom
-        let startMin = end - Xt.windowPercent(options.scroll.min);
-        start = start > startMin ? startMin : start; // limit fixes deactivation on page bottom
+        self.detail.distance = Xt.windowPercent(options.scroll.distance);
+        self.detail.trigger = Xt.windowPercent(options.scroll.trigger);
+        self.detail.start = elTop - windowHeight + Xt.windowPercent(options.scroll.start) + self.detail.distance;
+        self.detail.start = self.detail.start < self.detail.trigger ? self.detail.trigger : self.detail.start; // limit fixes activation on page top
+        self.detail.end = options.scroll.end ? self.detail.start + Xt.windowPercent(options.scroll.end) - self.detail.distance : elTop + elHeight + self.detail.trigger - self.detail.distance;
+        self.detail.end = self.detail.end > self.detail.trigger + scrollHeight - window.innerHeight ? self.detail.trigger + scrollHeight - window.innerHeight : self.detail.end; // limit fixes deactivation on page bottom
+        self.detail.min = self.detail.end - Xt.windowPercent(options.scroll.min);
+        self.detail.start = self.detail.start > self.detail.min ? self.detail.min : self.detail.start; // limit fixes deactivation on page bottom
         // ratio
-        let current = scrollTop + trigger - start;
-        let total = end - start;
-        let ratio = Math.max(0, current) / total;
-        ratio = ratio > 0 ? ratio : 0;
-        ratio = ratio < 1 ? ratio : 1;
+        let current = scrollTop + self.detail.trigger - self.detail.start;
+        let total = self.detail.end - self.detail.start;
+        self.detail.ratio = Math.max(0, current) / total;
+        self.detail.ratio = self.detail.ratio > 0 ? self.detail.ratio : 0;
+        self.detail.ratio = self.detail.ratio < 1 ? self.detail.ratio : 1;
+        self.detail.ratioInverse = 1 - self.detail.ratio;
+        self.detail.ratioDouble = 1 - Math.abs((self.detail.ratio - 0.5) * 2);
         // activation
         if (current >= 0 && current <= total) {
           // inside
@@ -243,18 +245,15 @@ class Scroll extends Core {
         // indicator
         if (el.classList.contains('indicator')) {
           let triggerEl = document.body.querySelectorAll('.xt-indicator--trigger')[0];
-          triggerEl.style.top = trigger + 'px';
+          triggerEl.style.top = self.detail.trigger + 'px';
           let startEl = document.body.querySelectorAll('.xt-indicator--start')[0];
-          startEl.style.top = (start - scrollTop) + 'px';
+          startEl.style.top = (self.detail.start - scrollTop) + 'px';
           let endEl = document.body.querySelectorAll('.xt-indicator--end')[0];
-          endEl.style.top = (end - scrollTop) + 'px';
-          console.log('start: ' + start, 'end: ' + end, 'ratio: ' + ratio, 'current: ' + current, 'total: ' + total);
+          endEl.style.top = (self.detail.end - scrollTop) + 'px';
+          console.log('start: ' + self.detail.start, 'end: ' + self.detail.end, 'ratio: ' + self.detail.ratio, 'ratioInverse: ' + self.detail.ratioInverse, 'ratioDouble: ' + self.detail.ratioDouble);
         }
         // dispatch
         let detail = self.eDetailSet();
-        detail.ratio = ratio;
-        detail.ratioInverse = 1 - ratio;
-        detail.ratioDouble = 1 - Math.abs((ratio - 0.5) * 2);
         el.dispatchEvent(new CustomEvent('change.xt.scroll', {detail: detail}));
       }
     }
