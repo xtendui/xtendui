@@ -177,10 +177,11 @@ class Scroll extends Core {
         let distance = Xt.windowPercent(options.distance);
         let trigger = Xt.windowPercent(options.trigger);
         let start = elTop - windowHeight + Xt.windowPercent(options.start) + distance;
-        start = start < trigger ? trigger : start; // limit start (fixes activation on page top)
-        let end = options.end ? start + Xt.windowPercent(options.end) - distance : elTop + trigger + elHeight - distance;
-        end = end > trigger + scrollHeight - window.innerHeight ? trigger + scrollHeight - window.innerHeight : end; // limit end (fixes deactivation on page bottom)
-        start = start > end ? end : start; // limit end (fixes deactivation on page bottom)
+        start = start < trigger ? trigger : start; // limit fixes activation on page top
+        let end = options.end ? start + Xt.windowPercent(options.end) - distance : elTop + elHeight + trigger - distance;
+        end = end > trigger + scrollHeight - window.innerHeight ? trigger + scrollHeight - window.innerHeight : end; // limit fixes deactivation on page bottom
+        let startMin = end - Xt.windowPercent(options.end);
+        start = start > startMin ? startMin : start; // limit fixes deactivation on page bottom
         // ratio
         let current = scrollTop + trigger - start;
         let total = end - start;
@@ -278,8 +279,8 @@ Scroll.optionsDefault = {
   "instant": true,
   "sticky": false,
   "distance": 0,
-  "trigger": "50%",
-  "start": "50%",
+  "trigger": "100%",
+  "start": "100%",
   "end": false,
   "aria": false
 };
