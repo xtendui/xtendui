@@ -66,7 +66,7 @@ class Slider extends Core {
         if (targetWidth === 0) { // when display none
           let container = target.parentNode;
           let clone = target.cloneNode(true);
-          clone.classList.add('xt-calculating');
+          clone.classList.add('xt-calculating', 'xt-ignore');
           container.append(clone);
           targetWidth = clone.offsetWidth;
           container.removeChild(clone);

@@ -124,6 +124,7 @@ Xt.get = function (name, element) {
 
 /**
  * init element
+ * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} added
  */
 Xt.initElement = function (added = document.documentElement) {
   added = Xt.arrSingle(added);
@@ -163,6 +164,7 @@ Xt.initElement = function (added = document.documentElement) {
 
 /**
  * destroy element
+ * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} removed
  */
 Xt.destroyElement = function (removed = document.documentElement) {
   removed = Xt.arrSingle(removed);
@@ -202,6 +204,7 @@ Xt.destroyElement = function (removed = document.documentElement) {
 
 /**
  * initObserve
+ * @param {Node|HTMLElement|EventTarget|Window} added
  */
 
 Xt.initObserve = function (added = document.documentElement) {
@@ -237,6 +240,9 @@ Xt.observer = new MutationObserver(function (mutationsList) {
       // added
       for (let added of mutation.addedNodes) {
         if (added.nodeType === 1 && !added.classList.contains('xt-ignore')) {
+          if (added.classList.contains('parallax_title')) {
+            console.log(added, added.classList.contains('xt-ignore'));
+          }
           Xt.initElement(added);
           Xt.initObserve(added);
         }
@@ -851,6 +857,7 @@ Xt.scrollbarWidth = function (force = false) {
     outer.style.visibility = 'hidden';
     outer.style.width = '100px';
     outer.style.msOverflowStyle = 'scrollbar'; // needed for WinJS apps
+    outer.classList.add('xt-ignore');
     document.body.appendChild(outer);
     let widthNoScroll = outer.offsetWidth;
     // force scrollbars
@@ -858,6 +865,7 @@ Xt.scrollbarWidth = function (force = false) {
     // add inner
     let inner = document.createElement('div');
     inner.style.width = '100%';
+    inner.classList.add('xt-ignore');
     outer.appendChild(inner);
     let widthWithScroll = inner.offsetWidth;
     // remove
@@ -911,8 +919,8 @@ Xt.merge = function (arr) {
 
 /**
  * Make an array when element is only one
- * @param {Object|Array} el
- * @returns {Array}
+ * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} el
+ * @returns {NodeList|Array}
  */
 Xt.arrSingle = function (el) {
   if (!el) {
@@ -930,7 +938,7 @@ Xt.arrSingle = function (el) {
 /**
  * Create HTML elements from html string
  * @param {String} str Html string (only 1 root html tag)
- * @return {Node|HTMLElement|EventTarget|Window} HTML elements
+ * @return {Node} HTML elements
  */
 Xt.createElement = function (str) {
   let div = document.createElement('div');

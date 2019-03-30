@@ -38,8 +38,9 @@ class Sticky extends Core {
     for (let el of self.elements) {
       self.container = Xt.parents(el, '.xt-container')[0];
       if (!self.container) {
-        self.container = Xt.createElement('<div class="xt-container xt-fixed--check"></div>');
+        self.container = Xt.createElement('<div class="xt-container xt-ignore xt-fixed--check"></div>');
         el.before(self.container);
+        el.classList.add('xt-ignore');
         self.container.append(el);
       }
       // sticky clone
@@ -98,18 +99,17 @@ class Sticky extends Core {
     let self = this;
     let options = self.options;
     // event on
-    let stickyHandler = Xt.dataStorage.put(window, options.on + '.' + self.namespace,
-      self.eventStickyHandler.bind(self));
     if (options.on) {
+      let stickyHandler = Xt.dataStorage.put(window, options.on + '.' + self.namespace,
+        self.eventStickyHandler.bind(self));
       let events = [...options.on.split(' ')];
       for (let event of events) {
         addEventListener(event, stickyHandler, Xt.passiveSupported ? {passive: true} : false);
       }
+      requestAnimationFrame(function () {
+        self.eventStickyHandler(null, true);
+      });
     }
-    addEventListener('scroll.xt.sticky', stickyHandler);
-    requestAnimationFrame(function () {
-      self.eventStickyHandler(null, true);
-    });
     // autoClose
     let autoCloseHandler = Xt.dataStorage.put(self.object, 'hide' + '.' + self.namespace,
       Xt.autoClose.bind(this, self.object));
@@ -314,6 +314,9 @@ class Sticky extends Core {
     if (element.style.width !== width) {
       element.style.width = width;
     }
+    // dispatch
+    let detail = self.eDetailSet();
+    element.dispatchEvent(new CustomEvent('change.xt.sticky', {detail: detail}));
     // save for direction
     self.detail.addOld = add;
     self.detail.scrollTopOld = scrollTop;

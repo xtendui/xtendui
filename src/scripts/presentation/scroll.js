@@ -42,8 +42,9 @@ class Scroll extends Core {
         // sticky container
         let container = Xt.parents(el, '.xt-container')[0];
         if (!container) {
-          container = Xt.createElement('<div class="xt-container xt-fixed--check"></div>');
+          container = Xt.createElement('<div class="xt-container xt-ignore xt-fixed--check"></div>');
           el.before(container);
+          el.classList.add('xt-ignore');
           container.append(el);
         }
         // sticky clone
@@ -82,11 +83,11 @@ class Scroll extends Core {
       }
       // indicator
       if (el.classList.contains('indicator')) {
-        let indicatorTrigger = Xt.createElement('<div class="xt-indicator xt-indicator--trigger"></div>');
+        let indicatorTrigger = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator--trigger"></div>');
         document.body.append(indicatorTrigger);
-        let indicatorStart = Xt.createElement('<div class="xt-indicator xt-indicator--start"></div>');
+        let indicatorStart = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator--start"></div>');
         document.body.append(indicatorStart);
-        let indicatorEnd = Xt.createElement('<div class="xt-indicator xt-indicator--end"></div>');
+        let indicatorEnd = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator--end"></div>');
         document.body.append(indicatorEnd);
       }
     }
@@ -99,18 +100,17 @@ class Scroll extends Core {
     let self = this;
     let options = self.options;
     // event on
-    let scrollHandler = Xt.dataStorage.put(window, options.on + '.' + self.namespace,
-      self.eventScrollHandler.bind(self));
     if (options.on) {
+      let scrollHandler = Xt.dataStorage.put(window, options.on + '.' + self.namespace,
+        self.eventScrollHandler.bind(self));
       let events = [...options.on.split(' ')];
       for (let event of events) {
         addEventListener(event, scrollHandler, Xt.passiveSupported ? {passive: true} : false);
       }
+      requestAnimationFrame(function () {
+        self.eventScrollHandler(null, true);
+      });
     }
-    addEventListener('scroll.xt.scroll', scrollHandler);
-    requestAnimationFrame(function () {
-      self.eventScrollHandler(null, true);
-    });
   }
 
   //////////////////////
@@ -253,8 +253,11 @@ class Scroll extends Core {
           console.log('start: ' + self.detail.start, 'end: ' + self.detail.end, 'ratio: ' + self.detail.ratio, 'ratioInverse: ' + self.detail.ratioInverse, 'ratioDouble: ' + self.detail.ratioDouble);
         }
         // dispatch
-        let detail = self.eDetailSet();
-        el.dispatchEvent(new CustomEvent('change.xt.scroll', {detail: detail}));
+        cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'ScrollDispatchFrame']));
+        el.dataset[self.componentNamespace + 'ScrollDispatchFrame'] = requestAnimationFrame(function () {
+          let detail = self.eDetailSet();
+          el.dispatchEvent(new CustomEvent('change.xt.scroll', {detail: detail}));
+        }).toString();
       }
     }
     // save for direction

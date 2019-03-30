@@ -210,15 +210,15 @@
   }
   &.out {
     .btn {
-      .anim-x.out();
-      animation-duration: @time--small;
-      animation-delay: 0 + 180ms; // @start + @child * @increment
-      .nth-child(@child: 6, @start: 0, @increment: 30ms, @decrement: 0ms, {
+      .anim-x-inverse.out();
+      animation-duration: @time--tiny;
+      animation-delay: 0; // @start + @child * @increment
+      .nth-child(@child: 6, @start: 90ms, @increment: 0ms, @decrement: 15ms, {
         @animation-delay(); });
     }
     &.inverse {
       .btn {
-        .anim-x-inverse.out();
+        .anim-x.out();
       }
     }
   }

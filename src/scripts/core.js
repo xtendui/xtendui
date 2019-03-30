@@ -55,7 +55,7 @@ class Core {
     self.disabled = false;
     self.detail.queueOn = [];
     self.detail.queueOff = [];
-    self.detail.inverseDirection = false;
+    self.detail.inverse = false;
     self.detail.autoPaused = false;
     self.destroyElements = [document, window, self.object];
     // init
@@ -1122,8 +1122,8 @@ class Core {
         break;
       }
     }
-    self.detail.inverseDirection = self.detail.inverseDirectionForce !== null ? self.detail.inverseDirectionForce : self.currentIndex > index;
-    self.detail.inverseDirectionForce = null;
+    self.detail.inverse = self.detail.inverseForce !== null ? self.detail.inverseForce : self.currentIndex > index;
+    self.detail.inverseForce = null;
     self.currentIndex = index;
   }
 
@@ -1249,12 +1249,15 @@ class Core {
       // off
       let groupElements = self.getElements(element);
       self.removeCurrent(groupElements.single);
-      if (self.getCurrents().length === 0) {
-        self.currentIndex = null;
-      }
       let targets = self.getTargets(element);
       let elementsInner = self.getInside(element, options.elementsInner);
       let targetsInner = self.getInside(targets, options.targetsInner);
+      // currentIndex after a frame for sequential events
+      requestAnimationFrame( function() {
+        if (self.getCurrents().length === 0) {
+          self.currentIndex = null;
+        }
+      });
       // auto
       if (!self.getCurrents().length) {
         self.eventAutoStop();
@@ -1719,7 +1722,7 @@ class Core {
     if (self.initial || el.dataset[self.componentNamespace + 'Initial']) {
       el.classList.add(...self.classesInitial);
     }
-    if (!self.detail.inverseDirection) {
+    if (!self.detail.inverse) {
       el.classList.remove(...self.classesInverse);
     } else {
       el.classList.add(...self.classesInverse);
@@ -1793,7 +1796,7 @@ class Core {
     if (!self.initial && !el.dataset[self.componentNamespace + 'Initial']) {
       el.classList.remove(...self.classesInitial);
     }
-    if (!self.detail.inverseDirection) {
+    if (!self.detail.inverse) {
       el.classList.remove(...self.classesInverse);
     } else {
       el.classList.add(...self.classesInverse);
@@ -2215,7 +2218,7 @@ class Core {
       for (let element of elements) {
         let backdrop = element.querySelectorAll('.backdrop');
         if (!backdrop.length) {
-          backdrop = Xt.createElement('<div class="backdrop"></div>');
+          backdrop = Xt.createElement('<div class="backdrop xt-ignore"></div>');
           element.append(backdrop);
         }
       }
@@ -2264,43 +2267,51 @@ class Core {
     if (el instanceof HTMLElement) {
       if (before === 'xt-collapse--height') {
         el.classList.add('xt-hide');
-        el.style.height = 'auto';
-        el.style.paddingTop = '';
-        el.style.paddingBottom = '';
-        let h = el.clientHeight + 'px';
-        let pt = el.style.paddingTop;
-        let pb = el.style.paddingBottom;
         cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
         el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
-          el.classList.remove('xt-hide');
-          el.style.height = '0';
-          el.style.paddingTop = '0';
-          el.style.paddingBottom = '0';
+          el.style.height = 'auto';
+          el.style.paddingTop = '';
+          el.style.paddingBottom = '';
+          let h = el.clientHeight + 'px';
+          let pt = el.style.paddingTop;
+          let pb = el.style.paddingBottom;
+          cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
           el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
-            el.style.height = h;
-            el.style.paddingTop = pt;
-            el.style.paddingBottom = pb;
+            el.classList.remove('xt-hide');
+            el.style.height = '0';
+            el.style.paddingTop = '0';
+            el.style.paddingBottom = '0';
+            cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
+            el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
+              el.style.height = h;
+              el.style.paddingTop = pt;
+              el.style.paddingBottom = pb;
+            }).toString();
           }).toString();
         }).toString();
       }
       if (after === 'xt-collapse--width') {
         el.classList.add('xt-hide');
-        el.style.width = 'auto';
-        el.style.paddingLeft = '';
-        el.style.paddingRight = '';
-        let w = el.clientHeight + 'px';
-        let pl = el.style.paddingLeft;
-        let pr = el.style.paddingRight;
         cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
         el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
-          el.classList.remove('xt-hide');
-          el.style.width = '0';
-          el.style.paddingLeft = '0';
-          el.style.paddingRight = '0';
+          el.style.width = 'auto';
+          el.style.paddingLeft = '';
+          el.style.paddingRight = '';
+          let w = el.clientHeight + 'px';
+          let pl = el.style.paddingLeft;
+          let pr = el.style.paddingRight;
+          cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
           el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
-            el.style.width = w;
-            el.style.paddingLeft = pl;
-            el.style.paddingRight = pr;
+            el.classList.remove('xt-hide');
+            el.style.width = '0';
+            el.style.paddingLeft = '0';
+            el.style.paddingRight = '0';
+            cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
+            el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
+              el.style.width = w;
+              el.style.paddingLeft = pl;
+              el.style.paddingRight = pr;
+            }).toString();
           }).toString();
         }).toString();
       }
@@ -2316,6 +2327,7 @@ class Core {
   specialCollapseOff(el, before, after) {
     if (el instanceof HTMLElement) {
       if (before === 'xt-collapse--height') {
+        el.classList.remove('xt-hide');
         let h = el.offsetHeight + 'px';
         let pt = el.style.paddingTop;
         let pb = el.style.paddingBottom;
@@ -2324,6 +2336,7 @@ class Core {
           el.style.height = h;
           el.style.paddingTop = pt;
           el.style.paddingBottom = pb;
+          cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
           el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
             el.style.height = '0';
             el.style.paddingTop = '0';
@@ -2332,6 +2345,7 @@ class Core {
         }).toString();
       }
       if (after === 'xt-collapse--width') {
+        el.classList.remove('xt-hide');
         let w = el.offsetWidth + 'px';
         let pl = el.style.paddingLeft;
         let pr = el.style.paddingRight;
@@ -2340,6 +2354,7 @@ class Core {
           el.style.width = w;
           el.style.paddingLeft = pl;
           el.style.paddingRight = pr;
+          cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
           el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
             el.style.width = '0';
             el.style.paddingLeft = '0';
@@ -2578,7 +2593,7 @@ class Core {
     if (self.currentIndex !== null) {
       index = self.currentIndex + amount;
     }
-    self.detail.inverseDirectionForce = false;
+    self.detail.inverseForce = false;
     self.goToIndex(index, force, loop);
   }
 
@@ -2595,7 +2610,7 @@ class Core {
     if (self.currentIndex !== null) {
       index = self.currentIndex - amount;
     }
-    self.detail.inverseDirectionForce = true;
+    self.detail.inverseForce = true;
     self.goToIndex(index, force, loop);
   }
 

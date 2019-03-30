@@ -2792,6 +2792,7 @@ a.links--none,
   content: 'xt-disable';
 }
 .xt-hide {
+  position: absolute !important;
   visibility: hidden !important;
   opacity: 0 !important;
 }
@@ -6213,6 +6214,7 @@ transition-timing-function: @bez--out;
 .collapse--width.out {
   transition-property: all;
   transition-duration: 500ms;
+  transition-delay: 250ms;
   transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .separator {
