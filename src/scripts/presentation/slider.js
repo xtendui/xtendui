@@ -498,13 +498,14 @@ class Slider extends Core {
    * @param {Event} e
    */
   eventSlideOff(dragger, e) {
+    let self = this;
     let slide = e.target;
     // disable links
     slide.classList.add('links--none');
     // only one call per group
-    let group = slide.getAttribute('data-xt-group');
-    if (group) {
-      delete slide.dataset[self.namespaceComponent + 'SlideOnDone'];
+    let targets = self.getTargets(slide);
+    for (let target of targets) {
+      delete target.dataset[self.namespaceComponent + 'SlideOnDone'];
     }
   }
 
@@ -628,7 +629,7 @@ class Slider extends Core {
     let xPos = self.detail.xPosReal;
     let xPosCurrent = self.detail.xPosCurrent || 0;
     let sign = Math.sign(self.detail.xVelocity);
-    if (friction) {
+    if (friction && options.drag.friction) {
       // momentum
       let fncFriction = options.drag.friction;
       if (typeof fncFriction === 'string') {
@@ -687,23 +688,25 @@ class Slider extends Core {
     let last = self.targets[self.targets.length - 1];
     let min = parseFloat(first.dataset[self.namespaceComponent + 'GroupPos']);
     let max = parseFloat(last.dataset[self.namespaceComponent + 'GroupPos']);
-    let fncOverflow = options.drag.overflow;
-    if (typeof fncOverflow === 'string') {
-      fncOverflow = new Function('overflow', fncOverflow);
-    }
-    if (friction) {
-      if (xPos > min || xPos < max) {
-        self.detail.xVelocity = fncOverflow(Math.abs(self.detail.xVelocity)) * sign;
+    if (options.drag.overflow) {
+      let fncOverflow = options.drag.overflow;
+      if (typeof fncOverflow === 'string') {
+        fncOverflow = new Function('overflow', fncOverflow);
       }
-    } else {
-      if (xPos > min) {
-        self.detail.xVelocity = 0;
-        let overflow = xPos - min;
-        xPos = min + fncOverflow(overflow);
-      } else if (xPos < max) {
-        self.detail.xVelocity = 0;
-        let overflow = xPos - max;
-        xPos = max - fncOverflow(-overflow);
+      if (friction) {
+        if (xPos > min || xPos < max) {
+          self.detail.xVelocity = fncOverflow(Math.abs(self.detail.xVelocity)) * sign;
+        }
+      } else {
+        if (xPos > min) {
+          self.detail.xVelocity = 0;
+          let overflow = xPos - min;
+          xPos = min + fncOverflow(overflow);
+        } else if (xPos < max) {
+          self.detail.xVelocity = 0;
+          let overflow = xPos - max;
+          xPos = max - fncOverflow(-overflow);
+        }
       }
     }
     // val
