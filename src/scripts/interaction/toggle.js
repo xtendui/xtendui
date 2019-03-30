@@ -63,7 +63,6 @@ Toggle.componentName = 'xt-toggle';
 Toggle.optionsDefault = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > [class^=\"toggle--\"], :scope > [class*=\" toggle--\"]",
-  "class": "active",
   "on": "click",
   "min": 0,
   "max": 1,

@@ -274,7 +274,6 @@ class Scroll extends Core {
 Scroll.componentName = 'xt-scroll';
 Scroll.optionsDefault = {
   "elements": false,
-  "class": "active",
   "on": "scroll resize",
   "instant": true,
   "sticky": false,

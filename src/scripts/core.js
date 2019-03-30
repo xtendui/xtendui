@@ -44,6 +44,8 @@ class Core {
     self.classes = [];
     self.classesIn = [];
     self.classesOut = [];
+    self.classesInitial = [];
+    self.classesInverse = [];
     self.elements = [];
     self.targets = [];
     self.currentIndex = null;
@@ -72,8 +74,11 @@ class Core {
     let self = this;
     // option
     self.optionsDefault = {
+      "class": "active",
       "classIn": "in",
       "classOut": "out",
+      "classInitial": "initial",
+      "classInverse": "inverse",
       "instant": false,
       "autoClose": false,
       "onBlock": false,
@@ -108,15 +113,11 @@ class Core {
     let markupOptions = self.object.getAttribute('data-' + self.componentName);
     self.options = Xt.merge([self.options, markupOptions ? JSON.parse(markupOptions) : {}]);
     // classes
-    if (self.options.class) {
-      self.classes = [...self.options.class.split(' ')];
-    }
-    if (self.options.classIn) {
-      self.classesIn = [...self.options.classIn.split(' ')];
-    }
-    if (self.options.classOut) {
-      self.classesOut = [...self.options.classOut.split(' ')];
-    }
+    self.classes = [...self.options.class.split(' ')];
+    self.classesIn = [...self.options.classIn.split(' ')];
+    self.classesOut = [...self.options.classOut.split(' ')];
+    self.classesInitial = [...self.options.classInitial.split(' ')];
+    self.classesInverse = [...self.options.classInverse.split(' ')];
   }
 
   /**
@@ -277,7 +278,7 @@ class Core {
       let groupEls = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group);
       for (let groupEl of groupEls) {
         if (groupEl.classList.contains(self.classes[0])) {
-          groupEl.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, 'initial');
+          groupEl.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial);
           delete groupEl.dataset[self.namespaceComponent + 'Initial'];
           if (saveCurrents) {
             found = true;
@@ -292,7 +293,7 @@ class Core {
       }
     } else {
       if (el.classList.contains(self.classes[0])) {
-        el.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, 'initial');
+        el.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial);
         delete el.dataset[self.namespaceComponent + 'Initial'];
         if (saveCurrents) {
           found = true;
@@ -309,7 +310,7 @@ class Core {
     let targets = self.getTargets(el);
     for (let tr of targets) {
       if (tr.classList.contains(self.classes[0])) {
-        tr.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, 'initial');
+        tr.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial);
         delete tr.dataset[self.namespaceComponent + 'Initial'];
         if (saveCurrents) {
           found = true;
@@ -1127,20 +1128,6 @@ class Core {
   }
 
   /**
-   * set index and direction
-   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
-   */
-  decorateDirection(el) {
-    let self = this;
-    // decorateDirection
-    if (!self.detail.inverseDirection) {
-      el.classList.remove('inverse');
-    } else {
-      el.classList.add('inverse');
-    }
-  }
-
-  /**
    * set e detail
    * @param {Event} e
    */
@@ -1726,13 +1713,17 @@ class Core {
     let self = this;
     let options = self.options;
     // activate
-    if (self.initial || el.dataset[self.namespaceComponent + 'Initial']) {
-      el.classList.add('initial');
-    }
     el.classList.add(...self.classes);
     el.classList.add(...self.classesIn);
     el.classList.remove(...self.classesOut);
-    self.decorateDirection(el);
+    if (self.initial || el.dataset[self.namespaceComponent + 'Initial']) {
+      el.classList.add(...self.classesInitial);
+    }
+    if (!self.detail.inverseDirection) {
+      el.classList.remove(...self.classesInverse);
+    } else {
+      el.classList.add(...self.classesInverse);
+    }
     // special
     let before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '');
     let after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '');
@@ -1796,13 +1787,17 @@ class Core {
     let self = this;
     let options = self.options;
     // deactivate
-    if (!self.initial && !el.dataset[self.namespaceComponent + 'Initial']) {
-      el.classList.remove('initial');
-    }
     el.classList.remove(...self.classes);
     el.classList.remove(...self.classesIn);
     el.classList.add(...self.classesOut);
-    self.decorateDirection(el);
+    if (!self.initial && !el.dataset[self.namespaceComponent + 'Initial']) {
+      el.classList.remove(...self.classesInitial);
+    }
+    if (!self.detail.inverseDirection) {
+      el.classList.remove(...self.classesInverse);
+    } else {
+      el.classList.add(...self.classesInverse);
+    }
     // special
     let before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '');
     let after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '');

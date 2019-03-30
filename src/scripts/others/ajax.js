@@ -328,7 +328,6 @@ Ajax.optionsDefault = {
   "baseUrl": "/",
   "duration": false,
   "elements": "a[href]:not([href^='#'])",
-  "class": "active",
   "on": "click",
   "toggle": false,
   "min": 0,

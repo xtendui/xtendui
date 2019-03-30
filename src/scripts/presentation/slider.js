@@ -801,7 +801,6 @@ Slider.componentName = 'xt-slider';
 Slider.optionsDefault = {
   "elements": "[data-xt-pag]",
   "targets": ".slide",
-  "class": "active",
   "on": "click",
   "toggle": false,
   "min": 1,

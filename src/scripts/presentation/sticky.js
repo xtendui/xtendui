@@ -407,7 +407,6 @@ class Sticky extends Core {
 
 Sticky.componentName = 'xt-sticky';
 Sticky.optionsDefault = {
-  "class": "active",
   "on": "scroll resize",
   "min": 0,
   "max": "Infinity",

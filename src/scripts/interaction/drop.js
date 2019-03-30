@@ -55,7 +55,6 @@ Drop.componentName = 'xt-drop';
 Drop.optionsDefault = {
   "targets": ":scope > .drop",
   "elementsInner": ":scope > a, :scope > button",
-  "class": "active",
   "on": "click",
   "min": 0,
   "max": 1,

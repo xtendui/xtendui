@@ -29,6 +29,7 @@ class Smooth extends Core {
 
 Smooth.componentName = 'xt-smooth';
 Smooth.optionsDefault = {
+  "class": "",
   "wheel": {
     "selector": "scrollingElement",
     "block": false,

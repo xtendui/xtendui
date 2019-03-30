@@ -63,7 +63,6 @@ Overlay.componentName = 'xt-overlay';
 Overlay.optionsDefault = {
   "elements": ":scope > a, :scope > button",
   "targets": ":scope > .overlay_outer",
-  "class": "active",
   "on": "click",
   "min": 0,
   "max": 1,
