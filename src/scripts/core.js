@@ -21,6 +21,7 @@ class Core {
     self.object = object;
     self.optionsJs = optionsJs;
     self.componentName = self.constructor.componentName;
+    self.componentNamespace = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '');
     // init
     self.init(object, optionsJs);
   }
@@ -142,7 +143,6 @@ class Core {
     }
     // final namespace
     self.namespace = self.namespace.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '');
-    self.namespaceComponent = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '');
     // currents array based on namespace (so shared between Xt objects)
     self.setCurrents([]);
   }
@@ -279,7 +279,7 @@ class Core {
       for (let groupEl of groupEls) {
         if (groupEl.classList.contains(self.classes[0])) {
           groupEl.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial);
-          delete groupEl.dataset[self.namespaceComponent + 'Initial'];
+          delete groupEl.dataset[self.componentNamespace + 'Initial'];
           if (saveCurrents) {
             found = true;
           }
@@ -294,7 +294,7 @@ class Core {
     } else {
       if (el.classList.contains(self.classes[0])) {
         el.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial);
-        delete el.dataset[self.namespaceComponent + 'Initial'];
+        delete el.dataset[self.componentNamespace + 'Initial'];
         if (saveCurrents) {
           found = true;
         }
@@ -311,7 +311,7 @@ class Core {
     for (let tr of targets) {
       if (tr.classList.contains(self.classes[0])) {
         tr.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial);
-        delete tr.dataset[self.namespaceComponent + 'Initial'];
+        delete tr.dataset[self.componentNamespace + 'Initial'];
         if (saveCurrents) {
           found = true;
         }
@@ -615,8 +615,8 @@ class Core {
       // event block
       if (options.onBlock) {
         let now = new Date().getTime();
-        let old = parseFloat(element.dataset[self.namespaceComponent + 'EventBlock' + e.type]) || 0;
-        element.dataset[self.namespaceComponent + 'EventBlock' + e.type] = now.toString();
+        let old = parseFloat(element.dataset[self.componentNamespace + 'EventBlock' + e.type]) || 0;
+        element.dataset[self.componentNamespace + 'EventBlock' + e.type] = now.toString();
         if (now - old < options.onBlock) {
           return false;
         }
@@ -646,8 +646,8 @@ class Core {
       // event block
       if (options.offBlock) {
         let now = new Date().getTime();
-        let old = parseFloat(element.dataset[self.namespaceComponent + 'EventBlock' + e.type]) || 0;
-        element.dataset[self.namespaceComponent + 'EventBlock' + e.type] = now.toString();
+        let old = parseFloat(element.dataset[self.componentNamespace + 'EventBlock' + e.type]) || 0;
+        element.dataset[self.componentNamespace + 'EventBlock' + e.type] = now.toString();
         if (now - old < options.offBlock) {
           return false;
         }
@@ -702,13 +702,13 @@ class Core {
    */
   eventTouchLinksHandler(el, e) {
     let self = this;
-    if (!el.dataset[self.namespaceComponent + 'TouchLinksDone']) {
-      el.dataset[self.namespaceComponent + 'TouchLinksDone'] = 'true';
+    if (!el.dataset[self.componentNamespace + 'TouchLinksDone']) {
+      el.dataset[self.componentNamespace + 'TouchLinksDone'] = 'true';
       // prevent default
       e.preventDefault();
     } else {
       self.eventTouchLinksEndHandler(el);
-      delete el.dataset[self.namespaceComponent + 'TouchLinksDone'];
+      delete el.dataset[self.componentNamespace + 'TouchLinksDone'];
     }
   }
 
@@ -720,7 +720,7 @@ class Core {
   eventTouchLinksResetHandler(el, e) {
     let self = this;
     self.eventTouchLinksEndHandler(el);
-    delete el.dataset[self.namespaceComponent + 'TouchLinksDone'];
+    delete el.dataset[self.componentNamespace + 'TouchLinksDone'];
   }
 
   /**
@@ -1330,12 +1330,12 @@ class Core {
       // paused
       self.detail.autoPaused = false;
       // clear
-      clearInterval(parseFloat(self.object.dataset[self.namespaceComponent + 'AutoStartInterval']));
+      clearInterval(parseFloat(self.object.dataset[self.componentNamespace + 'AutoStartInterval']));
       // auto
       let time = options.auto.time;
       if (self.currentIndex !== null &&  // not when nothing activated
         !self.initial || options.auto.initial) { // not when initial
-        self.object.dataset[self.namespaceComponent + 'AutoStartInterval'] = setInterval(function () { // interval because can become :visible
+        self.object.dataset[self.componentNamespace + 'AutoStartInterval'] = setInterval(function () { // interval because can become :visible
           if (Xt.visible(self.object)) {
             // auto
             if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
@@ -1362,7 +1362,7 @@ class Core {
     let options = self.options;
     if (options.auto && options.auto.time) {
       // clear
-      clearInterval(parseFloat(self.object.dataset[self.namespaceComponent + 'AutoStartInterval']));
+      clearInterval(parseFloat(self.object.dataset[self.componentNamespace + 'AutoStartInterval']));
       // listener dispatch
       let detail = self.eDetailSet();
       self.object.dispatchEvent(new CustomEvent('stop.xt.auto', {detail: detail}));
@@ -1377,7 +1377,7 @@ class Core {
     let options = self.options;
     if (options.auto && options.auto.time) {
       // clear
-      clearInterval(parseFloat(self.object.dataset[self.namespaceComponent + 'AutoStartInterval']));
+      clearInterval(parseFloat(self.object.dataset[self.componentNamespace + 'AutoStartInterval']));
       // listener dispatch
       let detail = self.eDetailSet();
       self.object.dispatchEvent(new CustomEvent('pause.xt.auto', {detail: detail}));
@@ -1440,9 +1440,9 @@ class Core {
       if (obj[type].done) {
         for (let el of obj[type].queueEls) {
           // clear timeout and frame
-          cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'CollapseFrame']));
-          clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'DelayTimeout']));
-          clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'AnimTimeout']));
+          cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
+          clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'DelayTimeout']));
+          clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'AnimTimeout']));
           // done other queue
           self.queueOffDelayDone(obj, el, type, true);
           self.queueOffAnimDone(obj, el, type, true);
@@ -1462,9 +1462,9 @@ class Core {
       if (obj[type].done) {
         for (let el of obj[type].queueEls) {
           // clear timeout and frame
-          cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'CollapseFrame']));
-          clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'DelayTimeout']));
-          clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'AnimTimeout']));
+          cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
+          clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'DelayTimeout']));
+          clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'AnimTimeout']));
           // done other queue
           self.queueOnDelayDone(obj, el, type, true);
           self.queueOnAnimDone(obj, el, type, true);
@@ -1626,8 +1626,8 @@ class Core {
       let delay;
       if (options.delayOn) {
         if (isNaN(options.delayOn)) {
-          let count = parseInt(el.dataset[self.namespaceComponent + 'OnCount']) || els.findIndex(x => x === el);
-          let tot = parseInt(el.dataset[self.namespaceComponent + 'OnTot']) || els.length;
+          let count = parseInt(el.dataset[self.componentNamespace + 'OnCount']) || els.findIndex(x => x === el);
+          let tot = parseInt(el.dataset[self.componentNamespace + 'OnTot']) || els.length;
           let fnc = options.delayOn;
           if (typeof fnc === 'string') {
             fnc = new Function('current', 'total', fnc);
@@ -1638,10 +1638,10 @@ class Core {
         }
       }
       // delay fnc
-      clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'DelayTimeout']));
-      clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'AnimTimeout']));
+      clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'DelayTimeout']));
+      clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'AnimTimeout']));
       if (delay) {
-        el.dataset[self.namespaceComponent + 'DelayTimeout'] = setTimeout(function () {
+        el.dataset[self.componentNamespace + 'DelayTimeout'] = setTimeout(function () {
           self.queueOnDelayDone(obj, el, type);
         }, delay).toString();
       } else {
@@ -1672,8 +1672,8 @@ class Core {
       let delay;
       if (options.delayOff) {
         if (isNaN(options.delayOff)) {
-          let count = parseInt(el.dataset[self.namespaceComponent + 'OffCount']) || els.findIndex(x => x === el);
-          let tot = parseInt(el.dataset[self.namespaceComponent + 'OffTot']) || els.length;
+          let count = parseInt(el.dataset[self.componentNamespace + 'OffCount']) || els.findIndex(x => x === el);
+          let tot = parseInt(el.dataset[self.componentNamespace + 'OffTot']) || els.length;
           let fnc = options.delayOff;
           if (typeof fnc === 'string') {
             fnc = new Function('current', 'total', fnc);
@@ -1684,10 +1684,10 @@ class Core {
         }
       }
       // delay fnc
-      clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'DelayTimeout']));
-      clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'AnimTimeout']));
+      clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'DelayTimeout']));
+      clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'AnimTimeout']));
       if (delay) {
-        el.dataset[self.namespaceComponent + 'DelayTimeout'] = setTimeout(function () {
+        el.dataset[self.componentNamespace + 'DelayTimeout'] = setTimeout(function () {
           self.queueOffDelayDone(obj, el, type);
         }, delay).toString();
       } else {
@@ -1716,7 +1716,7 @@ class Core {
     el.classList.add(...self.classes);
     el.classList.add(...self.classesIn);
     el.classList.remove(...self.classesOut);
-    if (self.initial || el.dataset[self.namespaceComponent + 'Initial']) {
+    if (self.initial || el.dataset[self.componentNamespace + 'Initial']) {
       el.classList.add(...self.classesInitial);
     }
     if (!self.detail.inverseDirection) {
@@ -1790,7 +1790,7 @@ class Core {
     el.classList.remove(...self.classes);
     el.classList.remove(...self.classesIn);
     el.classList.add(...self.classesOut);
-    if (!self.initial && !el.dataset[self.namespaceComponent + 'Initial']) {
+    if (!self.initial && !el.dataset[self.componentNamespace + 'Initial']) {
       el.classList.remove(...self.classesInitial);
     }
     if (!self.detail.inverseDirection) {
@@ -1831,11 +1831,11 @@ class Core {
     let options = self.options;
     // anim
     let duration = Xt.animTime(el, options.durationOn);
-    clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'AnimTimeout']));
+    clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'AnimTimeout']));
     if (!duration) {
       self.queueOnAnimDone(obj, el, type);
     } else {
-      el.dataset[self.namespaceComponent + 'AnimTimeout'] = setTimeout(function () {
+      el.dataset[self.componentNamespace + 'AnimTimeout'] = setTimeout(function () {
         self.queueOnAnimDone(obj, el, type);
       }, duration).toString();
     }
@@ -1852,11 +1852,11 @@ class Core {
     let options = self.options;
     // anim
     let duration = Xt.animTime(el, options.durationOff);
-    clearTimeout(parseFloat(el.dataset[self.namespaceComponent + 'AnimTimeout']));
+    clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'AnimTimeout']));
     if (!duration) {
       self.queueOffAnimDone(obj, el, type);
     } else {
-      el.dataset[self.namespaceComponent + 'AnimTimeout'] = setTimeout(function () {
+      el.dataset[self.componentNamespace + 'AnimTimeout'] = setTimeout(function () {
         self.queueOffAnimDone(obj, el, type);
       }, duration).toString();
     }
@@ -2102,8 +2102,8 @@ class Core {
       return false;
     }
     // friction
-    cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'SmoothFrame']));
-    el.dataset[self.namespaceComponent + 'SmoothFrame'] = requestAnimationFrame(function () {
+    cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'SmoothFrame']));
+    el.dataset[self.componentNamespace + 'SmoothFrame'] = requestAnimationFrame(function () {
       self.eventFrictionSmooth(el, min, max);
     }).toString();
     // moving
@@ -2156,8 +2156,8 @@ class Core {
     if (self.detail.wheelCurrent > min && self.detail.wheelCurrent < max && // limit
       Math.abs(delta) >= options.wheel.frictionLimit) { // frictionLimit
       // friction
-      cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'SmoothFrame']));
-      el.dataset[self.namespaceComponent + 'SmoothFrame'] = requestAnimationFrame(function () {
+      cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'SmoothFrame']));
+      el.dataset[self.componentNamespace + 'SmoothFrame'] = requestAnimationFrame(function () {
         self.eventFrictionSmooth(el, min, max);
       }).toString();
       // dispatch
@@ -2270,13 +2270,13 @@ class Core {
         let h = el.clientHeight + 'px';
         let pt = el.style.paddingTop;
         let pb = el.style.paddingBottom;
-        cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'CollapseFrame']));
-        el.dataset[self.namespaceComponent + 'CollapseFrame'] = requestAnimationFrame(function () {
+        cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
+        el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
           el.classList.remove('xt-hide');
           el.style.height = '0';
           el.style.paddingTop = '0';
           el.style.paddingBottom = '0';
-          el.dataset[self.namespaceComponent + 'CollapseFrame'] = requestAnimationFrame(function () {
+          el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
             el.style.height = h;
             el.style.paddingTop = pt;
             el.style.paddingBottom = pb;
@@ -2291,13 +2291,13 @@ class Core {
         let w = el.clientHeight + 'px';
         let pl = el.style.paddingLeft;
         let pr = el.style.paddingRight;
-        cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'CollapseFrame']));
-        el.dataset[self.namespaceComponent + 'CollapseFrame'] = requestAnimationFrame(function () {
+        cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
+        el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
           el.classList.remove('xt-hide');
           el.style.width = '0';
           el.style.paddingLeft = '0';
           el.style.paddingRight = '0';
-          el.dataset[self.namespaceComponent + 'CollapseFrame'] = requestAnimationFrame(function () {
+          el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
             el.style.width = w;
             el.style.paddingLeft = pl;
             el.style.paddingRight = pr;
@@ -2319,12 +2319,12 @@ class Core {
         let h = el.clientHeight + 'px';
         let pt = el.style.paddingTop;
         let pb = el.style.paddingBottom;
-        cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'CollapseFrame']));
-        el.dataset[self.namespaceComponent + 'CollapseFrame'] = requestAnimationFrame(function () {
+        cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
+        el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
           el.style.height = h;
           el.style.paddingTop = pt;
           el.style.paddingBottom = pb;
-          el.dataset[self.namespaceComponent + 'CollapseFrame'] = requestAnimationFrame(function () {
+          el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
             el.style.height = '0';
             el.style.paddingTop = '0';
             el.style.paddingBottom = '0';
@@ -2335,12 +2335,12 @@ class Core {
         let w = el.clientWidth + 'px';
         let pl = el.style.paddingLeft;
         let pr = el.style.paddingRight;
-        cancelAnimationFrame(parseFloat(el.dataset[self.namespaceComponent + 'CollapseFrame']));
-        el.dataset[self.namespaceComponent + 'CollapseFrame'] = requestAnimationFrame(function () {
+        cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
+        el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
           el.style.width = w;
           el.style.paddingLeft = pl;
           el.style.paddingRight = pr;
-          el.dataset[self.namespaceComponent + 'CollapseFrame'] = requestAnimationFrame(function () {
+          el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
             el.style.width = '0';
             el.style.paddingLeft = '0';
             el.style.paddingRight = '0';
@@ -2643,7 +2643,7 @@ class Core {
     // handler
     Xt.eventDelay(e, self.object, function () {
       self.eventStatus();
-    }, self.namespaceComponent + 'Resize');
+    }, self.componentNamespace + 'Resize');
   }
 
   /**

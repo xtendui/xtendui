@@ -131,7 +131,7 @@ class Sticky extends Core {
     if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
       Xt.eventDelay(e, self.object, function() {
         self.eventSticky(self.object, e, initial);
-      }, self.namespaceComponent + 'Resize');
+      }, self.componentNamespace + 'Resize');
     }
   }
 
@@ -223,16 +223,16 @@ class Sticky extends Core {
       }
     }
     // save real add for calculation
-    element.dataset[self.namespaceComponent + 'AddSticky'] = add.toString();
+    element.dataset[self.componentNamespace + 'AddSticky'] = add.toString();
     // activation
     let checkTop = scrollTop >= top - add + addHide;
     let checkBottom = scrollTop < bottom + add - addHide;
     if (checkTop && checkBottom) {
       // initial
       if (initial) {
-        element.dataset[self.namespaceComponent + 'Initial'] = 'true';
+        element.dataset[self.componentNamespace + 'Initial'] = 'true';
       } else {
-        delete element.dataset[self.namespaceComponent + 'Initial'];
+        delete element.dataset[self.componentNamespace + 'Initial'];
       }
       // inside
       self.eventOn(element);
@@ -243,9 +243,9 @@ class Sticky extends Core {
     } else {
       // initial
       if (initial) {
-        element.dataset[self.namespaceComponent + 'Initial'] = 'true';
+        element.dataset[self.componentNamespace + 'Initial'] = 'true';
       } else {
-        delete element.dataset[self.namespaceComponent + 'Initial'];
+        delete element.dataset[self.componentNamespace + 'Initial'];
       }
       // outside
       self.eventOff(element);
@@ -335,7 +335,7 @@ class Sticky extends Core {
         let found = false;
         val = 0;
         for (let el of elements) {
-          let addSticky = parseFloat(el.dataset[self.namespaceComponent + 'AddSticky']);
+          let addSticky = parseFloat(el.dataset[self.componentNamespace + 'AddSticky']);
           if (addSticky) { // if sticky--hide get real add
             let style = getComputedStyle(el);
             if (style.display !== 'none') {

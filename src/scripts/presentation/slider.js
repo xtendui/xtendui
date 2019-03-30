@@ -131,8 +131,8 @@ class Slider extends Core {
     }
     // only one call per group
     for (let slide of self.targets) {
-      delete slide.dataset[self.namespaceComponent + 'DraggerInitialDone'];
-      delete slide.dataset[self.namespaceComponent + 'SlideOnDone'];
+      delete slide.dataset[self.componentNamespace + 'DraggerInitialDone'];
+      delete slide.dataset[self.componentNamespace + 'SlideOnDone'];
     }
     // dragger
     if (self.dragger) {
@@ -150,7 +150,7 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     // save vars
-    if (!slide.dataset[self.namespaceComponent + 'DraggerInitialDone'] && Xt.visible(slide)) {
+    if (!slide.dataset[self.componentNamespace + 'DraggerInitialDone'] && Xt.visible(slide)) {
       // vars
       let targets = self.getTargets(slide);
       let slideLeft = slide.offsetLeft;
@@ -177,11 +177,11 @@ class Slider extends Core {
           }
         }
         for (let target of targets) {
-          target.dataset[self.namespaceComponent + 'DraggerInitialDone'] = 'true';
+          target.dataset[self.componentNamespace + 'DraggerInitialDone'] = 'true';
           target.dataset.groupHeight = slideHeight.toString();
         }
       } else {
-        slide.dataset[self.namespaceComponent + 'DraggerInitialDone'] = 'true';
+        slide.dataset[self.componentNamespace + 'DraggerInitialDone'] = 'true';
       }
       // pos with alignment
       let pos;
@@ -206,17 +206,17 @@ class Slider extends Core {
       // save pos
       if (group) {
         for (let target of targets) {
-          target.dataset[self.namespaceComponent + 'GroupPos'] = pos.toString();
+          target.dataset[self.componentNamespace + 'GroupPos'] = pos.toString();
         }
       } else {
-        slide.dataset[self.namespaceComponent + 'GroupPos'] = pos.toString();
+        slide.dataset[self.componentNamespace + 'GroupPos'] = pos.toString();
       }
       // wheel
       if (options.wheel && options.wheel.selector) {
         let first = self.targets[0];
         let last = self.targets[self.targets.length - 1];
-        self.detail.wheelMin = -parseFloat(first.dataset[self.namespaceComponent + 'GroupPos']);
-        self.detail.wheelMax = -parseFloat(last.dataset[self.namespaceComponent + 'GroupPos']);
+        self.detail.wheelMin = -parseFloat(first.dataset[self.componentNamespace + 'GroupPos']);
+        self.detail.wheelMax = -parseFloat(last.dataset[self.componentNamespace + 'GroupPos']);
       }
     }
   }
@@ -416,7 +416,7 @@ class Slider extends Core {
       Xt.eventDelay(e, self.object, function () {
         self.initial = true;
         self.init();
-      }, self.namespaceComponent + 'Resize');
+      }, self.componentNamespace + 'Resize');
     }
   }
 
@@ -448,16 +448,16 @@ class Slider extends Core {
     let self = this;
     let slide = e.target;
     // only one call per group
-    if (slide.dataset[self.namespaceComponent + 'SlideOnDone']) {
+    if (slide.dataset[self.componentNamespace + 'SlideOnDone']) {
       return false;
     }
     let targets = self.getTargets(slide);
     for (let target of targets) {
-      target.dataset[self.namespaceComponent + 'SlideOnDone'] = 'true';
+      target.dataset[self.componentNamespace + 'SlideOnDone'] = 'true';
     }
     // initDraggerSlide
     if (self.dragger) {
-      delete slide.dataset[self.namespaceComponent + 'DraggerInitialDone'];
+      delete slide.dataset[self.componentNamespace + 'DraggerInitialDone'];
       self.initDraggerSlide(slide);
     }
     // autoHeight
@@ -465,7 +465,7 @@ class Slider extends Core {
       self.eventAutoHeight(slide);
     }
     // val
-    self.detail.xPos = self.detail.xPosCurrent = self.detail.xPosReal = parseFloat(slide.dataset[self.namespaceComponent + 'GroupPos']);
+    self.detail.xPos = self.detail.xPosCurrent = self.detail.xPosReal = parseFloat(slide.dataset[self.componentNamespace + 'GroupPos']);
     // dragger
     if (self.dragger) {
       // prevent alignment animation
@@ -505,7 +505,7 @@ class Slider extends Core {
     // only one call per group
     let targets = self.getTargets(slide);
     for (let target of targets) {
-      delete target.dataset[self.namespaceComponent + 'SlideOnDone'];
+      delete target.dataset[self.componentNamespace + 'SlideOnDone'];
     }
   }
 
@@ -686,7 +686,7 @@ class Slider extends Core {
     // overflow
     let first = self.targets[0];
     let last = self.targets[self.targets.length - 1];
-    let min = parseFloat(first.dataset[self.namespaceComponent + 'GroupPos']);
+    let min = parseFloat(first.dataset[self.componentNamespace + 'GroupPos']);
     let max = parseFloat(last.dataset[self.namespaceComponent + 'GroupPos']);
     if (options.drag.overflow) {
       let fncOverflow = options.drag.overflow;
