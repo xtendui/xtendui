@@ -35,7 +35,7 @@ class Scroll extends Core {
     // loop
     self.targets = [];
     for (let el of self.elements) {
-      if (!options.sticky) {
+      if (!options.scroll.sticky) {
         // not sticky
         self.targets.push(el);
       } else {
@@ -62,20 +62,20 @@ class Scroll extends Core {
         self.targets.push(target);
         // sticky
         el.classList.add('xt-fixed', 'xt-sticky');
-        if (options.sticky === 'absolute') {
+        if (options.scroll.sticky === 'absolute') {
           el.classList.add('xt-sticky--absolute');
-        } else if (options.sticky === 'fixed') {
+        } else if (options.scroll.sticky === 'fixed') {
           el.classList.add('xt-sticky--fixed');
-        } else if (options.sticky === 'fixed-always') {
+        } else if (options.scroll.sticky === 'fixed-always') {
           el.classList.add('xt-sticky--fixed-always');
         }
         if (target) {
           target.classList.add('xt-fixed', 'xt-sticky');
-          if (options.sticky === 'absolute') {
+          if (options.scroll.sticky === 'absolute') {
             target.classList.add('xt-sticky--absolute');
-          } else if (options.sticky === 'fixed') {
+          } else if (options.scroll.sticky === 'fixed') {
             target.classList.add('xt-sticky--fixed');
-          } else if (options.sticky === 'fixed-always') {
+          } else if (options.scroll.sticky === 'fixed-always') {
             target.classList.add('xt-sticky--fixed-always');
           }
         }
@@ -174,13 +174,13 @@ class Scroll extends Core {
         let elTop = tr.offsetParent.getBoundingClientRect().top + tr.offsetTop + scrollTop; // we use parents to not include transforms animations
         let elHeight = tr.offsetHeight;
         // position
-        let distance = Xt.windowPercent(options.distance);
-        let trigger = Xt.windowPercent(options.trigger);
-        let start = elTop - windowHeight + Xt.windowPercent(options.start) + distance;
+        let distance = Xt.windowPercent(options.scroll.distance);
+        let trigger = Xt.windowPercent(options.scroll.trigger);
+        let start = elTop - windowHeight + Xt.windowPercent(options.scroll.start) + distance;
         start = start < trigger ? trigger : start; // limit fixes activation on page top
-        let end = options.end ? start + Xt.windowPercent(options.end) - distance : elTop + elHeight + trigger - distance;
+        let end = options.scroll.end ? start + Xt.windowPercent(options.scroll.end) - distance : elTop + elHeight + trigger - distance;
         end = end > trigger + scrollHeight - window.innerHeight ? trigger + scrollHeight - window.innerHeight : end; // limit fixes deactivation on page bottom
-        let startMin = end - Xt.windowPercent(options.end);
+        let startMin = end - Xt.windowPercent(options.scroll.min);
         start = start > startMin ? startMin : start; // limit fixes deactivation on page bottom
         // ratio
         let current = scrollTop + trigger - start;
@@ -277,11 +277,14 @@ Scroll.optionsDefault = {
   "elements": false,
   "on": "scroll resize",
   "instant": true,
-  "sticky": false,
-  "distance": 0,
-  "trigger": "100%",
-  "start": "100%",
-  "end": false,
+  "scroll": {
+    "sticky": false,
+    "distance": 0,
+    "trigger": "100%",
+    "start": "100%",
+    "end": false,
+    "min": 100
+  },
   "aria": false
 };
 
