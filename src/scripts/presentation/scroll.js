@@ -195,6 +195,7 @@ class Scroll extends Core {
           changed = self.checkOn(el);
           if (changed) {
             currentsOn.push(el);
+            cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'ScrollFrame']));
             el.dataset[self.componentNamespace + 'ScrollFrame'] = requestAnimationFrame(function () {
               // initial
               if (initial) {
