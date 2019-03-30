@@ -687,13 +687,13 @@ class Slider extends Core {
     let first = self.targets[0];
     let last = self.targets[self.targets.length - 1];
     let min = parseFloat(first.dataset[self.componentNamespace + 'GroupPos']);
-    let max = parseFloat(last.dataset[self.namespaceComponent + 'GroupPos']);
+    let max = parseFloat(last.dataset[self.componentNamespace + 'GroupPos']);
     if (options.drag.overflow) {
       let fncOverflow = options.drag.overflow;
       if (typeof fncOverflow === 'string') {
         fncOverflow = new Function('overflow', fncOverflow);
       }
-      if (friction) {
+      if (friction && options.drag.friction) {
         if (xPos > min || xPos < max) {
           self.detail.xVelocity = fncOverflow(Math.abs(self.detail.xVelocity)) * sign;
         }
@@ -736,7 +736,7 @@ class Slider extends Core {
       let group = current.getAttribute('data-xt-group');
       if (group) {
         for (let target of self.getTargets(current)) {
-          delete target.dataset[self.namespaceComponent + 'SlideOnDone'];
+          delete target.dataset[self.componentNamespace + 'SlideOnDone'];
         }
       }
     }

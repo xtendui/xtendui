@@ -2705,7 +2705,7 @@ class Core {
   destroy(weak = false) {
     let self = this;
     // stop auto
-    clearInterval(parseFloat(self.object.dataset[self.namespaceComponent + 'AutoStartInterval']));
+    clearInterval(parseFloat(self.object.dataset[self.componentNamespace + 'AutoStartInterval']));
     // remove events
     if (self.destroyElements) {
       for (let element of self.destroyElements) {

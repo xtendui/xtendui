@@ -81,7 +81,7 @@ Xt.observe.push({
 
     let self = Xt.init('xt-scroll', main, {
       "scroll": {
-        "sticky": "fixed",
+        "sticky": true,
         "start": "125%"
       }
     });
