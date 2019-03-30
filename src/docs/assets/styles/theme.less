@@ -198,8 +198,8 @@
     .btn {
       .anim-x.active();
       animation-duration: @time--small;
-      animation-delay: @time--medium + 180ms; // @start + @child * @increment
-      .nth-child(@child: 6, @start: @time--medium, @increment: 30ms, @decrement: 0ms, {
+      animation-delay: @time--small + 180ms; // @start + @child * @increment
+      .nth-child(@child: 6, @start: @time--small, @increment: 30ms, @decrement: 0ms, {
         @animation-delay(); });
     }
     &.inverse {

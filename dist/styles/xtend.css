@@ -6208,14 +6208,12 @@ transition-timing-function: @bez--out;
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36,0,0,1);
-  transition-delay: 250ms;
 }
 .collapse--height.out,
 .collapse--width.out {
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36,0,0,1);
-  transition-delay: 500ms;
 }
 .separator {
   display: inline-block;

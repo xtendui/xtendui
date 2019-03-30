@@ -6290,14 +6290,12 @@ transition-timing-function: @bez--out;
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36,0,0,1);
-  transition-delay: 250ms;
 }
 .collapse--height.out,
 .collapse--width.out {
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36,0,0,1);
-  transition-delay: 500ms;
 }
 .separator {
   display: inline-block;
@@ -6737,25 +6735,25 @@ transition-timing-function: @bez--out;
   animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
   animation-duration: 250ms;
-  animation-delay: 680ms;
+  animation-delay: 430ms;
 }
 .site-breadcrumbs-body-sub.active .btn:nth-child(1) {
-  animation-delay: 500ms;
+  animation-delay: 250ms;
 }
 .site-breadcrumbs-body-sub.active .btn:nth-child(2) {
-  animation-delay: 530ms;
+  animation-delay: 280ms;
 }
 .site-breadcrumbs-body-sub.active .btn:nth-child(3) {
-  animation-delay: 560ms;
+  animation-delay: 310ms;
 }
 .site-breadcrumbs-body-sub.active .btn:nth-child(4) {
-  animation-delay: 590ms;
+  animation-delay: 340ms;
 }
 .site-breadcrumbs-body-sub.active .btn:nth-child(5) {
-  animation-delay: 620ms;
+  animation-delay: 370ms;
 }
 .site-breadcrumbs-body-sub.active .btn:nth-child(6) {
-  animation-delay: 650ms;
+  animation-delay: 400ms;
 }
 .site-breadcrumbs-body-sub.active.inverse .btn {
   opacity: 0;
@@ -6878,13 +6876,11 @@ transition-timing-function: @bez--out;
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36,0,0,1);
-  transition-delay: 250ms;
 }
 .site-menu.out {
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36,0,0,1);
-  transition-delay: 500ms;
 }
 .site-menu .site-menu-content {
   padding-top: 52px;

@@ -2316,7 +2316,7 @@ class Core {
   specialCollapseOff(el, before, after) {
     if (el instanceof HTMLElement) {
       if (before === 'xt-collapse--height') {
-        let h = el.clientHeight + 'px';
+        let h = el.offsetHeight + 'px';
         let pt = el.style.paddingTop;
         let pb = el.style.paddingBottom;
         cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
@@ -2332,7 +2332,7 @@ class Core {
         }).toString();
       }
       if (after === 'xt-collapse--width') {
-        let w = el.clientWidth + 'px';
+        let w = el.offsetWidth + 'px';
         let pl = el.style.paddingLeft;
         let pr = el.style.paddingRight;
         cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
