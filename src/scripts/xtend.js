@@ -904,7 +904,7 @@ Xt.merge = function (arr) {
   for (let obj of arr) {
     if (obj) {
       for (let [key, value] of Object.entries(obj)) {
-        if (typeof value === 'object'
+        if (value !== null && typeof value === 'object'
           && !value.nodeName // not HTML element
           && value !== window) { // not window
           final[key] = Xt.merge([final[key], value]);

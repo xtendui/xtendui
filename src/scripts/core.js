@@ -1132,9 +1132,12 @@ class Core {
    * @param {Event} e
    */
   eDetailSet(e = null) {
+    // e.detail
     let detail = e && e.detail && typeof e.detail === 'object' ? e.detail : {};
-    detail.skip = true;
+    // detail
     detail.self = this;
+    detail.skip = true;
+    // return
     return detail;
   }
 
@@ -2114,7 +2117,9 @@ class Core {
       // moving
       self.detail.wheelMoving = true;
       // dispatch
-      el.dispatchEvent(new CustomEvent('wheelstart.xt', {detail: {skip: true, wheelX: -self.detail.wheelCurrent}}));
+      let detail = self.eDetailSet();
+      detail.wheelX = -self.detail.wheelCurrent;
+      el.dispatchEvent(new CustomEvent('wheelstart.xt', {detail: detail}));
     }
   }
 
@@ -2164,14 +2169,18 @@ class Core {
         self.eventFrictionSmooth(el, min, max);
       }).toString();
       // dispatch
-      el.dispatchEvent(new CustomEvent('wheel.xt', {detail: {skip: true, wheelX: -self.detail.wheelCurrent}}));
+      let detail = self.eDetailSet();
+      detail.wheelX = -self.detail.wheelCurrent;
+      el.dispatchEvent(new CustomEvent('wheel.xt', {detail: detail}));
     } else {
       // moving
       self.detail.wheelMoving = false;
       // vars
       self.detail.wheelEnd = false;
       // dispatch
-      el.dispatchEvent(new CustomEvent('wheelend.xt', {detail: {skip: true, wheelX: -self.detail.wheelCurrent}}));
+      let detail = self.eDetailSet();
+      detail.wheelX = -self.detail.wheelCurrent;
+      el.dispatchEvent(new CustomEvent('wheelend.xt', {detail: detail}));
     }
   }
 

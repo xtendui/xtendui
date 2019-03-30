@@ -278,7 +278,6 @@ class Ajax extends Core {
     replace = null;
     // dispatch
     let detail = self.eDetailSet();
-    self.detail.request = request;
     self.object.dispatchEvent(new CustomEvent('replace.xt.ajax', {detail: detail}));
     // reinit
     if (!self.initial) {
@@ -299,7 +298,6 @@ class Ajax extends Core {
     self.initStart();
     // dispatch
     let detail = self.eDetailSet();
-    self.detail.request = request;
     self.object.dispatchEvent(new CustomEvent('replace.xt.ajax', {detail: detail}));
   }
 
