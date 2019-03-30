@@ -1017,6 +1017,15 @@ Xt.windowPercent = function (num) {
 };
 
 /**
+ * check element visibility
+ * @param {Node|HTMLElement|EventTarget|Window} el Element animating
+ * @returns {Boolean}
+ */
+Xt.visible = function (el) {
+  return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+};
+
+/**
  * Fix resize event multiple calls and adds delay on resize and scroll events
  * @param {Event|Object} e Event
  * @param {Node|HTMLElement|EventTarget|Window} element Element to save timeout

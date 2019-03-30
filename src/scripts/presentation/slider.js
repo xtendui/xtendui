@@ -150,8 +150,7 @@ class Slider extends Core {
     let self = this;
     let options = self.options;
     // save vars
-    if (!slide.dataset[self.namespaceComponent + 'DraggerInitialDone']
-      && (slide.offsetWidth || slide.offsetHeight || slide.getClientRects().length)) { // :visible
+    if (!slide.dataset[self.namespaceComponent + 'DraggerInitialDone'] && Xt.visible(slide)) {
       // vars
       let targets = self.getTargets(slide);
       let slideLeft = slide.offsetLeft;
@@ -748,8 +747,7 @@ class Slider extends Core {
         for (let [i, group] of self.groupMq.entries()) {
           for (let slideCheck of group) {
             let check = xPos - dragger.offsetWidth / 2 + slideCheck.offsetLeft;
-            if (check < 0
-              && (slideCheck.offsetWidth || slideCheck.offsetHeight || slideCheck.getClientRects().length)) { // :visible
+            if (check < 0 && Xt.visible(slideCheck)) {
               found = i;
             }
           }
@@ -757,8 +755,7 @@ class Slider extends Core {
       } else {
         for (let [i, slideCheck] of self.targets.entries()) {
           let check = xPos - dragger.offsetWidth / 2 + slideCheck.offsetLeft;
-          if (check < 0
-            && (slideCheck.offsetWidth || slideCheck.offsetHeight || slideCheck.getClientRects().length)) { // :visible
+          if (check < 0 && Xt.visible(slideCheck)) {
             found = i;
           }
         }

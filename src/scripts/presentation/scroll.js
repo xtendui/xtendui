@@ -166,9 +166,8 @@ class Scroll extends Core {
     for (let tr of self.targets) {
       let el = self.getElementsFromTarget(tr)[0];
       el = el ? el : tr; // for not sticky: el is the same as tr
-      if (!el.classList.contains('scroll--block')
-        && tr.offsetParent // filter out document.documentElement
-        && (el.offsetWidth || el.offsetHeight || el.getClientRects().length)) { // :visible
+      if (!el.classList.contains('scroll--block') && Xt.visible(el)
+        && tr.offsetParent) { // filter out document.documentElement
         // vars
         let changed = false;
         let elTop = tr.offsetParent.getBoundingClientRect().top + tr.offsetTop + scrollTop; // we use parents to not include transforms animations

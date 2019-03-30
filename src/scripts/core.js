@@ -1336,7 +1336,7 @@ class Core {
       if (self.currentIndex !== null &&  // not when nothing activated
         !self.initial || options.auto.initial) { // not when initial
         self.object.dataset[self.namespaceComponent + 'AutoStartInterval'] = setInterval(function () { // interval because can become :visible
-          if (self.object.offsetWidth || self.object.offsetHeight || self.object.getClientRects().length) { // :visible
+          if (Xt.visible(self.object)) {
             // auto
             if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
               if (options.auto.inverse) {
