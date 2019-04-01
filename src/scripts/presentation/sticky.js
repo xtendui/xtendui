@@ -287,6 +287,7 @@ class Sticky extends Core {
       }
     }
     // top and bottom
+    /*
     if (!checkTop) {
       if (!element.classList.contains('sticky--top')) {
         element.classList.add('sticky--top');
@@ -305,6 +306,7 @@ class Sticky extends Core {
         element.classList.remove('sticky--bottom');
       }
     }
+    */
     // set add
     if (add !== self.detail.addOld) {
       element.style[options.position] = add + 'px';

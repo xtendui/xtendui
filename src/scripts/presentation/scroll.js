@@ -153,14 +153,14 @@ class Scroll extends Core {
     let currentOff = 0;
     let currentsOn = [];
     let currentsOff = [];
-    let scrollInverse = false;
     let scrollingElement = document.scrollingElement;
     let scrollHeight = scrollingElement.scrollHeight;
     let scrollTop = scrollingElement.scrollTop;
     let windowHeight = Xt.windowHeight;
     // direction
+    self.detail.inverseForce = false;
     if (scrollTop < self.detail.scrollTopOld) {
-      scrollInverse = true;
+      self.detail.inverseForce = true;
     }
     // core
     for (let tr of self.targets) {
@@ -215,7 +215,7 @@ class Scroll extends Core {
           changed = self.checkOff(el);
           el.classList.add('scroll--visible');
           if (changed) {
-            el.classList.add('scroll--scroll');
+            el.classList.add('scroll--once');
             currentsOff.push(el);
             cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'ScrollFrame']));
             el.dataset[self.componentNamespace + 'ScrollFrame'] = requestAnimationFrame(function () {
@@ -235,12 +235,10 @@ class Scroll extends Core {
         }
         // direction
         if (changed) {
-          if (scrollInverse) {
-            el.classList.remove('scroll--down');
-            el.classList.add('scroll--up');
+          if (self.detail.inverseForce) {
+            el.classList.add('inverse');
           } else {
-            el.classList.add('scroll--down');
-            el.classList.remove('scroll--up');
+            el.classList.remove('inverse');
           }
         }
         // indicator
