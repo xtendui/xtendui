@@ -64,16 +64,18 @@ html.xt-scrollbar {
   pointer-events: none;
   position: fixed;
   right: 0;
+  margin-top: -9px;
   width: 100px;
-  height: 2px;
+  height: 18px;
   z-index: @index--indicator;
+  line-height: 0;
   text-align: right;
   &:before {
     display: inline-block;
     position: relative;
-    top: -23px;
     padding: 3px 6px;
     font-size: 12px;
+    line-height: 1;
     text-transform: uppercase;
   }
 }
@@ -101,6 +103,28 @@ html.xt-scrollbar {
   background-color: blue;
   &:before {
     content: 'end';
+    color: white;
+    background-color: blue;
+  }
+}
+
+.xt-indicator--start-real {
+  background-color: red;
+  opacity: .3;
+  z-index: @index--indicator - 1;
+  &:before {
+    content: 'start real';
+    color: white;
+    background-color: red;
+  }
+}
+
+.xt-indicator--end-real {
+  background-color: blue;
+  opacity: .3;
+  z-index: @index--indicator - 1;
+  &:before {
+    content: 'end real';
     color: white;
     background-color: blue;
   }

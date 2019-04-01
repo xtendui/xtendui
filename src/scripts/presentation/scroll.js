@@ -89,6 +89,10 @@ class Scroll extends Core {
         document.body.append(indicatorStart);
         let indicatorEnd = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator--end"></div>');
         document.body.append(indicatorEnd);
+        let indicatorStartReal = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator--start-real"></div>');
+        document.body.append(indicatorStartReal);
+        let indicatorEndReal = Xt.createElement('<div class="xt-ignore xt-indicator xt-indicator--end-real"></div>');
+        document.body.append(indicatorEndReal);
       }
     }
   }
@@ -175,9 +179,9 @@ class Scroll extends Core {
         // position
         self.detail.distance = Xt.windowPercent(options.scroll.distance);
         self.detail.trigger = Xt.windowPercent(options.scroll.trigger);
-        self.detail.start = elTop - windowHeight + Xt.windowPercent(options.scroll.start) + self.detail.distance;
+        self.detail.start  = self.detail.startReal = elTop - windowHeight + Xt.windowPercent(options.scroll.start) + self.detail.distance;
         self.detail.start = self.detail.start < self.detail.trigger ? self.detail.trigger : self.detail.start; // limit fixes activation on page top
-        self.detail.end = options.scroll.end ? self.detail.start + Xt.windowPercent(options.scroll.end) - self.detail.distance : elTop + elHeight + self.detail.trigger - self.detail.distance;
+        self.detail.end = self.detail.endReal = options.scroll.end ? self.detail.start + Xt.windowPercent(options.scroll.end) - self.detail.distance : elTop + elHeight + self.detail.trigger - self.detail.distance;
         self.detail.end = self.detail.end > self.detail.trigger + scrollHeight - window.innerHeight ? self.detail.trigger + scrollHeight - window.innerHeight : self.detail.end; // limit fixes deactivation on page bottom
         self.detail.min = self.detail.end - Xt.windowPercent(options.scroll.min);
         self.detail.start = self.detail.start > self.detail.min ? self.detail.min : self.detail.start; // limit fixes deactivation on page bottom
@@ -249,7 +253,10 @@ class Scroll extends Core {
           startEl.style.top = (self.detail.start - scrollTop) + 'px';
           let endEl = document.body.querySelectorAll('.xt-indicator--end')[0];
           endEl.style.top = (self.detail.end - scrollTop) + 'px';
-          console.log('start: ' + self.detail.start, 'end: ' + self.detail.end, 'ratio: ' + self.detail.ratio, 'ratioInverse: ' + self.detail.ratioInverse, 'ratioDouble: ' + self.detail.ratioDouble);
+          let startRealEl = document.body.querySelectorAll('.xt-indicator--start-real')[0];
+          startRealEl.style.top = (self.detail.startReal - scrollTop) + 'px';
+          let endRealEl = document.body.querySelectorAll('.xt-indicator--end-real')[0];
+          endRealEl.style.top = (self.detail.endReal - scrollTop) + 'px';
         }
         // dispatch
         cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'ScrollDispatchFrame']));
