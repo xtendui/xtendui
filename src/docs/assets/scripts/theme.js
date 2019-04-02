@@ -2,6 +2,7 @@
 // import
 //////////////////////
 
+import ClipboardJS from 'clipboard';
 import Xt from '../../../scripts/xtend';
 
 //////////////////////
@@ -214,7 +215,7 @@ const populateDemo = function (container, i) {
     // tabs
     item.prepend(Xt.createElement('<div class="demo-code collapse--height"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn--secondary-empty btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard"><span>copy</span></button></div></div><div class="demo-code-body"></div></div>'));
     // https://github.com/zenorocha/clipboard.js/
-    let clipboard = new Clipboard('.btn--clipboard', {
+    let clipboard = new ClipboardJS('.btn--clipboard', {
       target: function (trigger) {
         return Xt.parents(trigger, '.demo')[0].querySelectorAll('.demo-item.active .demo-code-body-item.active .hljs')[0];
       }
