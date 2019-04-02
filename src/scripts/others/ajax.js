@@ -202,7 +202,7 @@ class Ajax extends Core {
     self.object.dispatchEvent(new CustomEvent('request.xt.ajax', {detail: detail}));
     // duration
     self.detail.requestDate = new Date();
-    clearTimeout(parseFloat(self.object.dataset[self.componentNamespace + 'AjaxDurationTimeout']));
+    clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AjaxDurationTimeout'));
     requestAnimationFrame( function() {
       self.detail.requestDuration = options.duration || Xt.animTime(self.queryElement);
       // call
@@ -234,14 +234,14 @@ class Ajax extends Core {
     // duration
     self.detail.requestDuration -= new Date() - self.detail.requestDate;
     if (self.detail.requestDuration > 0) {
-      self.object.dataset[self.componentNamespace + 'AjaxDurationTimeout'] = setTimeout( function() {
+      Xt.dataStorage.put(self.object, self.componentNamespace + 'AjaxDurationTimeout', setTimeout( function() {
         // request
         if (request.status >= 200 && request.status <= 300) {
           self.ajaxSuccess(element, url, request);
         } else {
           self.ajaxError(element, url, request);
         }
-      }, self.detail.requestDuration).toString();
+      }, self.detail.requestDuration));
     } else {
       // request
       if (request.status >= 200 && request.status <= 300) {

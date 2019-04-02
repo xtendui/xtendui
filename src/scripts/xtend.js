@@ -302,6 +302,24 @@ Xt.dataStorage = {
     if (!this._storage.has(el)) {
       this._storage.set(el, new Map());
     }
+    // set
+    let getEl = this._storage.get(el);
+    getEl.set(key, obj);
+    return getEl.get(key);
+  },
+
+  /**
+   * set key/obj pair on element's map, return old if exist already
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {String} key
+   * @param {Object|Function} obj
+   * @returns {Object|Function}
+   */
+  set: function (el, key, obj) {
+    // new map if not already there
+    if (!this._storage.has(el)) {
+      this._storage.set(el, new Map());
+    }
     // return
     let getEl = this._storage.get(el);
     let getKey = getEl.get(key);
@@ -434,7 +452,7 @@ Xt.focus = {
    */
   on: function () {
     // event key
-    let focusChangeKeyHandler = Xt.dataStorage.put(document, 'keyup.focus',
+    let focusChangeKeyHandler = Xt.dataStorage.set(document, 'keyup.focus',
       Xt.focus.changeKey);
     document.addEventListener('keyup', focusChangeKeyHandler);
     // event mouse
@@ -452,7 +470,7 @@ Xt.focus = {
     let focusChangeKeyHandler = Xt.dataStorage.get(document, 'keyup.focus');
     document.removeEventListener('keyup', focusChangeKeyHandler);
     // event mouse
-    let focusChangeOtherHandler = Xt.dataStorage.put(document, 'mousedown touchstart pointerdown.focus',
+    let focusChangeOtherHandler = Xt.dataStorage.set(document, 'mousedown touchstart pointerdown.focus',
       Xt.focus.changeOther);
     document.addEventListener('mousedown', focusChangeOtherHandler);
     document.addEventListener('touchstart', focusChangeOtherHandler, Xt.passiveSupported ? {passive: true} : false);
@@ -525,7 +543,7 @@ Xt.focusLimit = {
       let first = focusables[0];
       let last = focusables[focusables.length - 1];
       // event
-      let focusLimitHandler = Xt.dataStorage.put(document, 'keyup.focusLimit',
+      let focusLimitHandler = Xt.dataStorage.set(document, 'keyup.focusLimit',
         Xt.focusLimit.limit.bind(this).bind(this, focusables, first, last));
       document.addEventListener('keyup', focusLimitHandler);
     }
@@ -575,8 +593,8 @@ Xt.textareaAutosize = {
    * @param {Node|HTMLElement|EventTarget|Window} el Element
    */
   init: function (el) {
-    if (!el.dataset.xtTextareaAutosizeDone) {
-      el.dataset.xtTextareaAutosizeDone = 'true';
+    if (!Xt.dataStorage.get(el, 'xtTextareaAutosizeDone')) {
+      Xt.dataStorage.put(el, 'xtTextareaAutosizeDone', true);
       // key
       el.addEventListener('keydown', Xt.textareaAutosize.keychange.bind(el));
       el.addEventListener('keyup', Xt.textareaAutosize.keychange.bind(el));
@@ -595,8 +613,8 @@ Xt.textareaAutosize = {
    * @param {Node|HTMLElement|EventTarget|Window} el Element
    */
   destroy: function (el) {
-    if (el.dataset.xtTextareaAutosizeDone) {
-      delete el.dataset.xtTextareaAutosizeDone;
+    if (Xt.dataStorage.get(el, 'xtTextareaAutosizeDone')) {
+      Xt.dataStorage.remove(el, 'xtTextareaAutosizeDone');
       // key
       el.removeEventListener('keydown', Xt.textareaAutosize.keychange.bind(el));
       el.removeEventListener('keyup', Xt.textareaAutosize.keychange.bind(el));
@@ -695,8 +713,8 @@ Xt.btnMerge = {
    * @param {Node|HTMLElement|EventTarget|Window} el Element
    */
   init: function (el) {
-    if (!el.dataset.xtBtnMergeDone) {
-      el.dataset.xtBtnMergeDone = 'true';
+    if (!Xt.dataStorage.get(el, 'xtBtnMergeDone')) {
+      Xt.dataStorage.put(el, 'xtBtnMergeDone', true);
       el.addEventListener('mouseenter', Xt.btnMerge.hoverOn);
       el.addEventListener('mouseleave', Xt.btnMerge.hoverOff);
       el.addEventListener('mousedown', Xt.btnMerge.activeOn);
@@ -709,8 +727,8 @@ Xt.btnMerge = {
    * @param {Node|HTMLElement|EventTarget|Window} el Element
    */
   destroy: function (el) {
-    if (el.dataset.xtBtnMergeDone) {
-      delete el.dataset.xtBtnMergeDone;
+    if (Xt.dataStorage.get(el, 'xtBtnMergeDone')) {
+      Xt.dataStorage.remove(el, 'xtBtnMergeDone');
       el.removeEventListener('mouseenter', Xt.btnMerge.hoverOn);
       el.removeEventListener('mouseleave', Xt.btnMerge.hoverOff);
       el.removeEventListener('mousedown', Xt.btnMerge.activeOn);
@@ -783,11 +801,11 @@ Xt.friction = function (el, obj) {
   let frictionLimit = obj.frictionLimit || 1.5;
   xDist = obj.x - xCurrent;
   yDist = obj.y - yCurrent;
-  cancelAnimationFrame(parseFloat(el.dataset.frictionFrame));
+  cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionFrame'));
   if (Math.abs(xDist) >= frictionLimit || Math.abs(yDist >= frictionLimit)) {
-    el.dataset.frictionFrame = requestAnimationFrame(function () {
+    Xt.dataStorage.put(el, 'xtFrictionFrame', requestAnimationFrame(function () {
       Xt.friction(el, obj);
-    }).toString();
+    }));
   }
 };
 
@@ -844,7 +862,7 @@ Xt.checkNested = function (element, targets) {
  */
 Xt.scrollbarWidth = function (force = false) {
   if (Xt.scrollbarWidthVal === undefined) {
-    let scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize.scrollbar',
+    let scrollbarWidthHandler = Xt.dataStorage.set(window, 'resize.scrollbar',
       Xt.scrollbarWidth.bind(this, true));
     addEventListener('resize', scrollbarWidthHandler);
   }
@@ -995,8 +1013,8 @@ Xt.animTime = function (el, timing = null) {
  * @param {Number} timing Force duration in milliseconds
  */
 Xt.animTimeout = function (el, func, timing = null) {
-  clearTimeout(parseFloat(el.dataset['xt' + 'AnimTimeout']));
-  el.dataset['xt' + 'AnimTimeout'] = setTimeout(func, timing || timing === 0 ? timing : Xt.animTime(el)).toString();
+  clearTimeout(Xt.dataStorage.get(el, 'xtAnimTimeout'));
+  Xt.dataStorage.put(el, 'xtAnimTimeout', setTimeout(func, timing || timing === 0 ? timing : Xt.animTime(el)));
 };
 
 /**
@@ -1004,7 +1022,7 @@ Xt.animTimeout = function (el, func, timing = null) {
  * @param {Node|HTMLElement|EventTarget|Window} el Element animating
  */
 Xt.animTimeoutClear = function (el) {
-  clearTimeout(parseFloat(el.dataset['xt' + 'AnimTimeout']));
+  clearTimeout(Xt.dataStorage.get(el, 'xtAnimTimeout'));
 };
 
 /**
@@ -1044,25 +1062,25 @@ Xt.eventDelay = function (e, element, func, prefix = '', instant = false) {
     let delay = instant ? false : Xt[e.type + 'Delay'];
     if (e.type === 'resize') {
       // multiple calls check
-      if (window.innerWidth === parseFloat(container.dataset['xtEventDelay'])) { // only width no height because it changes on scroll on mobile
+      if (window.innerWidth === Xt.dataStorage.get(container, 'xtEventDelay')) { // only width no height because it changes on scroll on mobile
         return false;
       }
       // save after a frame to execute all eventDelay
-      cancelAnimationFrame(parseFloat(container.dataset.xtEventDelayFrame));
-      container.dataset.xtEventDelayFrame = requestAnimationFrame(function () {
-        container.dataset['xtEventDelay'] = window.innerWidth.toString();
-      }).toString();
+      cancelAnimationFrame(Xt.dataStorage.get(container, 'xtEventDelayFrame'));
+      Xt.dataStorage.put(container, 'xtEventDelayFrame', requestAnimationFrame(function () {
+        Xt.dataStorage.put(container, 'xtEventDelay', window.innerWidth);
+      }));
     }
     // delay
     if (delay === false) {
       // func
       func(e);
     } else {
-      clearTimeout(parseFloat(element.dataset['xt' + e.type + prefix + 'Timeout']));
-      element.dataset['xt' + e.type + prefix + 'Timeout'] = setTimeout(function () {
+      clearTimeout(Xt.dataStorage.get(element, 'xt' + e.type + prefix + 'Timeout'));
+      Xt.dataStorage.put(element, 'xt' + e.type + prefix + 'Timeout',  setTimeout(function () {
         // func
         func(e);
-      }, delay).toString();
+      }, delay))
     }
   } else {
     // func
@@ -1070,7 +1088,7 @@ Xt.eventDelay = function (e, element, func, prefix = '', instant = false) {
   }
 };
 
-document.documentElement.dataset['xtEventDelay'] = window.innerWidth.toString();
+Xt.dataStorage.put(document.documentElement, 'xtEventDelay', window.innerWidth);
 
 /**
  * Xt.windowHeight

@@ -138,8 +138,9 @@ class Core {
       // xtend unique mode
       self.mode = 'multiple';
       self.container = self.object;
-      self.container.dataset.uniqueId = self.container.dataset.uniqueId ? self.container.dataset.uniqueId : Xt.getuniqueId();
-      self.namespace = self.componentName + '-' + self.container.dataset.uniqueId;
+      let uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId');
+      Xt.dataStorage.put(self.container, 'xtUniqueId', uniqueId ? uniqueId : Xt.getuniqueId());
+      self.namespace = self.componentName + '-' + Xt.dataStorage.get(self.container, 'xtUniqueId');
     }
     // final namespace
     self.namespace = self.namespace.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '');
@@ -214,7 +215,7 @@ class Core {
     self.currentIndex = null;
     // @FIX set namespace for next frame
     for (let el of self.elements) {
-      el.dataset.xtNamespace = self.namespace;
+      el.setAttribute('data-xt-namespace', self.namespace);
     }
     // automatic initial currents
     let elements = self.getElementsSingle();
@@ -279,7 +280,7 @@ class Core {
       for (let groupEl of groupEls) {
         if (groupEl.classList.contains(self.classes[0])) {
           groupEl.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial);
-          delete groupEl.dataset[self.componentNamespace + 'Initial'];
+          Xt.dataStorage.remove(groupEl, self.componentNamespace + 'Initial');
           if (saveCurrents) {
             found = true;
           }
@@ -294,7 +295,7 @@ class Core {
     } else {
       if (el.classList.contains(self.classes[0])) {
         el.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial);
-        delete el.dataset[self.componentNamespace + 'Initial'];
+        Xt.dataStorage.remove(el, self.componentNamespace + 'Initial');
         if (saveCurrents) {
           found = true;
         }
@@ -311,7 +312,7 @@ class Core {
     for (let tr of targets) {
       if (tr.classList.contains(self.classes[0])) {
         tr.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial);
-        delete tr.dataset[self.componentNamespace + 'Initial'];
+        Xt.dataStorage.remove(tr, self.componentNamespace + 'Initial');
         if (saveCurrents) {
           found = true;
         }
@@ -405,7 +406,7 @@ class Core {
     // toggle
     options.toggle = options.toggle !== undefined ? options.toggle : !options.off;
     // status
-    let checkHandler = Xt.dataStorage.put(window, 'resize.check' + '.' + self.namespace,
+    let checkHandler = Xt.dataStorage.set(window, 'resize.check' + '.' + self.namespace,
       self.eventStatusHandler.bind(self).bind(self));
     addEventListener('resize', checkHandler);
     self.eventStatusHandler();
@@ -413,7 +414,7 @@ class Core {
     for (let el of self.elements) {
       // event on
       if (options.on) {
-        let onHandler = Xt.dataStorage.put(el, options.on + '.' + self.namespace,
+        let onHandler = Xt.dataStorage.set(el, options.on + '.' + self.namespace,
           self.eventOnHandler.bind(self).bind(self, el));
         let events = [...options.on.split(' ')];
         for (let event of events) {
@@ -422,14 +423,14 @@ class Core {
         el.addEventListener('on.xt', onHandler);
         // @FIX prevents click on touch until clicked two times
         if (events.includes('mouseenter') || events.includes('mousehover')) {
-          let touchLinksStartHandler = Xt.dataStorage.put(el, 'touchend.touchfix' + '.' + self.namespace,
+          let touchLinksStartHandler = Xt.dataStorage.set(el, 'touchend.touchfix' + '.' + self.namespace,
             self.eventTouchLinksStartHandler.bind(self).bind(self, el));
           el.addEventListener('touchend', touchLinksStartHandler);
         }
       }
       // event off
       if (options.off) {
-        let offHandler = Xt.dataStorage.put(el, options.off + '.' + self.namespace,
+        let offHandler = Xt.dataStorage.set(el, options.off + '.' + self.namespace,
           self.eventOffHandler.bind(self).bind(self, el));
         let events = [...options.off.split(' ')];
         for (let event of events) {
@@ -452,11 +453,11 @@ class Core {
     // auto
     if (options.auto && options.auto.time) {
       // focus auto
-      let focusHandler = Xt.dataStorage.put(window, 'focus' + '.' + self.namespace,
+      let focusHandler = Xt.dataStorage.set(window, 'focus' + '.' + self.namespace,
         self.eventAutoResumeHandler.bind(self));
       addEventListener('focus', focusHandler);
       // blur auto
-      let blurHandler = Xt.dataStorage.put(window, 'blur' + '.' + self.namespace,
+      let blurHandler = Xt.dataStorage.set(window, 'blur' + '.' + self.namespace,
         self.eventAutoPauseHandler.bind(self));
       addEventListener('blur', blurHandler);
       // autoPause
@@ -466,14 +467,14 @@ class Core {
           self.destroyElements.push(...autoPauseEls);
           for (let el of autoPauseEls) {
             // pause
-            let autoPauseOnHandler = Xt.dataStorage.put(el, 'mouseenter focus' + '.' + self.namespace,
+            let autoPauseOnHandler = Xt.dataStorage.set(el, 'mouseenter focus' + '.' + self.namespace,
               self.eventAutoPauseHandler.bind(self));
             let eventsPause = ['mouseenter', 'focus'];
             for (let event of eventsPause) {
               el.addEventListener(event, autoPauseOnHandler);
             }
             // resume
-            let autoResumeOnHandler = Xt.dataStorage.put(el, 'mouseleave blur' + '.' + self.namespace,
+            let autoResumeOnHandler = Xt.dataStorage.set(el, 'mouseleave blur' + '.' + self.namespace,
               self.eventAutoResumeHandler.bind(self));
             let eventsResume = ['mouseleave', 'blur'];
             for (let event of eventsResume) {
@@ -486,7 +487,7 @@ class Core {
     // jump
     if (options.jump) {
       for (let jump of self.targets) {
-        let jumpHandler = Xt.dataStorage.put(jump, 'click.jump' + '.' + self.namespace,
+        let jumpHandler = Xt.dataStorage.set(jump, 'click.jump' + '.' + self.namespace,
           self.eventJumpHandler.bind(self).bind(self, jump));
         jump.addEventListener('click', jumpHandler, true); // useCapture or it gets the click from elements inside the target
         // jump
@@ -503,7 +504,7 @@ class Core {
       if (navs.length) {
         self.destroyElements.push(...navs);
         for (let nav of navs) {
-          let navHandler = Xt.dataStorage.put(nav, 'click.nav' + '.' + self.namespace,
+          let navHandler = Xt.dataStorage.set(nav, 'click.nav' + '.' + self.namespace,
             self.eventNavHandler.bind(self).bind(self, nav));
           nav.addEventListener('click', navHandler);
         }
@@ -516,21 +517,21 @@ class Core {
       for (let keyboard of keyboards) {
         keyboard.setAttribute('tabindex', '0');
         // focus
-        let keyboardFocusHandler = Xt.dataStorage.put(keyboard, 'focus.keyboard' + '.' + self.namespace,
+        let keyboardFocusHandler = Xt.dataStorage.set(keyboard, 'focus.keyboard' + '.' + self.namespace,
           self.eventKeyboardFocusHandler.bind(self).bind(self, keyboard));
         keyboard.addEventListener('focus', keyboardFocusHandler);
         // blur
-        let keyboardBlurHandler = Xt.dataStorage.put(keyboard, 'blur.keyboard' + '.' + self.namespace,
+        let keyboardBlurHandler = Xt.dataStorage.set(keyboard, 'blur.keyboard' + '.' + self.namespace,
           self.eventKeyboardBlurHandler.bind(self).bind(self, keyboard));
         keyboard.addEventListener('blur', keyboardBlurHandler);
       }
     }
     // autoClose
     if (options.autoClose) {
-      let autoCloseHandler = Xt.dataStorage.put(window, 'autoClose' + '.' + self.namespace,
+      let autoCloseHandler = Xt.dataStorage.set(window, 'autoClose' + '.' + self.namespace,
         self.eventAutoCloseHandler.bind(self));
       addEventListener('autoClose.xt', autoCloseHandler);
-      let autoCloseFixHandler = Xt.dataStorage.put(window, 'autoCloseFix' + '.' + self.namespace,
+      let autoCloseFixHandler = Xt.dataStorage.set(window, 'autoCloseFix' + '.' + self.namespace,
         self.eventAutoCloseFixHandler.bind(self));
       addEventListener('autoCloseFix.xt', autoCloseFixHandler);
     }
@@ -540,7 +541,7 @@ class Core {
       let imgsLoaded = 0;
       for (let img of imgs) {
         if (!img.complete) {
-          let imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
+          let imgLoadHandler = Xt.dataStorage.set(img, 'load' + '.' + self.namespace,
             self.eventImgLoadedHandler.bind(self).bind(self, el, img));
           img.addEventListener('load', imgLoadHandler);
           // @FIX srcset: call only one time
@@ -560,7 +561,7 @@ class Core {
       let imgsLoaded = 0;
       for (let img of imgs) {
         if (!img.complete) {
-          let imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
+          let imgLoadHandler = Xt.dataStorage.set(img, 'load' + '.' + self.namespace,
             self.eventImgLoadedHandler.bind(self).bind(self, tr, img));
           img.addEventListener('load', imgLoadHandler);
           // @FIX srcset: call only one time
@@ -584,13 +585,13 @@ class Core {
       for (let wheel of self.detail.wheels) {
         let eWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
         // wheel
-        let wheelHandler = Xt.dataStorage.put(wheel, eWheel + '.' + self.namespace,
+        let wheelHandler = Xt.dataStorage.set(wheel, eWheel + '.' + self.namespace,
           self.eventWheelHandler.bind(self).bind(self, wheel));
         wheel.addEventListener(eWheel, wheelHandler, Xt.passiveSupported ? {passive: false} : false);
         // block
         if (options.wheel.block) {
           let block = wheel.parentNode;
-          let wheelBlockHandler = Xt.dataStorage.put(block, eWheel + '.' + self.namespace,
+          let wheelBlockHandler = Xt.dataStorage.set(block, eWheel + '.' + self.namespace,
             self.eventWheelBlockHandler.bind(self));
           block.addEventListener(eWheel, wheelBlockHandler, Xt.passiveSupported ? {passive: false} : false);
         }
@@ -615,8 +616,8 @@ class Core {
       // event block
       if (options.onBlock) {
         let now = new Date().getTime();
-        let old = parseFloat(element.dataset[self.componentNamespace + 'EventBlock' + e.type]) || 0;
-        element.dataset[self.componentNamespace + 'EventBlock' + e.type] = now.toString();
+        let old = Xt.dataStorage.get(element, self.componentNamespace + 'EventBlock' + e.type) || 0;
+        Xt.dataStorage.put(element, self.componentNamespace + 'EventBlock' + e.type, now);
         if (now - old < options.onBlock) {
           return false;
         }
@@ -646,8 +647,8 @@ class Core {
       // event block
       if (options.offBlock) {
         let now = new Date().getTime();
-        let old = parseFloat(element.dataset[self.componentNamespace + 'EventBlock' + e.type]) || 0;
-        element.dataset[self.componentNamespace + 'EventBlock' + e.type] = now.toString();
+        let old = Xt.dataStorage.get(element, self.componentNamespace + 'EventBlock' + e.type) || 0;
+        Xt.dataStorage.put(element, self.componentNamespace + 'EventBlock' + e.type, now);
         if (now - old < options.offBlock) {
           return false;
         }
@@ -672,11 +673,11 @@ class Core {
   eventTouchLinksStartHandler(el, e) {
     let self = this;
     // event touchLinks
-    let touchLinksHandler = Xt.dataStorage.put(el, 'click.touchfix' + '.' + self.namespace,
+    let touchLinksHandler = Xt.dataStorage.set(el, 'click.touchfix' + '.' + self.namespace,
       self.eventTouchLinksHandler.bind(self).bind(self, el));
     el.addEventListener('click', touchLinksHandler);
     // event touchReset
-    let touchResetHandler = Xt.dataStorage.put(el, 'off.touchfix' + '.' + self.namespace,
+    let touchResetHandler = Xt.dataStorage.set(el, 'off.touchfix' + '.' + self.namespace,
       self.eventTouchLinksResetHandler.bind(self).bind(self, el));
     el.addEventListener('off.xt', touchResetHandler);
   }
@@ -702,13 +703,13 @@ class Core {
    */
   eventTouchLinksHandler(el, e) {
     let self = this;
-    if (!el.dataset[self.componentNamespace + 'TouchLinksDone']) {
-      el.dataset[self.componentNamespace + 'TouchLinksDone'] = 'true';
+    if (!Xt.dataStorage.get(el, self.componentNamespace + 'TouchLinksDone')) {
+      Xt.dataStorage.put(el, self.componentNamespace + 'TouchLinksDone', true);
       // prevent default
       e.preventDefault();
     } else {
       self.eventTouchLinksEndHandler(el);
-      delete el.dataset[self.componentNamespace + 'TouchLinksDone'];
+      Xt.dataStorage.remove(el, self.componentNamespace + 'TouchLinksDone');
     }
   }
 
@@ -720,7 +721,7 @@ class Core {
   eventTouchLinksResetHandler(el, e) {
     let self = this;
     self.eventTouchLinksEndHandler(el);
-    delete el.dataset[self.componentNamespace + 'TouchLinksDone'];
+    Xt.dataStorage.remove(el, self.componentNamespace + 'TouchLinksDone');
   }
 
   /**
@@ -783,7 +784,7 @@ class Core {
   eventKeyboardFocusHandler(el, e) {
     let self = this;
     // handler
-    let keyboardHandler = Xt.dataStorage.put(document, 'keyup.keyboard' + '.' + self.namespace,
+    let keyboardHandler = Xt.dataStorage.set(document, 'keyup.keyboard' + '.' + self.namespace,
       self.eventKeyboardHandler.bind(self));
     document.addEventListener('keyup', keyboardHandler);
   }
@@ -1336,12 +1337,12 @@ class Core {
       // paused
       self.detail.autoPaused = false;
       // clear
-      clearInterval(parseFloat(self.object.dataset[self.componentNamespace + 'AutoStartInterval']));
+      clearInterval(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoStartInterval'));
       // auto
       let time = options.auto.time;
       if (self.currentIndex !== null &&  // not when nothing activated
         !self.initial || options.auto.initial) { // not when initial
-        self.object.dataset[self.componentNamespace + 'AutoStartInterval'] = setInterval(function () { // interval because can become :visible
+        Xt.dataStorage.put(self.object, self.componentNamespace + 'AutoStartInterval', setInterval(function () { // interval because can become :visible
           if (Xt.visible(self.object)) {
             // auto
             if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
@@ -1352,7 +1353,7 @@ class Core {
               }
             }
           }
-        }, time).toString();
+        }, time));
         // listener dispatch
         let detail = self.eDetailSet();
         self.object.dispatchEvent(new CustomEvent('start.xt.auto', {detail: detail}));
@@ -1368,7 +1369,7 @@ class Core {
     let options = self.options;
     if (options.auto && options.auto.time) {
       // clear
-      clearInterval(parseFloat(self.object.dataset[self.componentNamespace + 'AutoStartInterval']));
+      clearInterval(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoStartInterval'));
       // listener dispatch
       let detail = self.eDetailSet();
       self.object.dispatchEvent(new CustomEvent('stop.xt.auto', {detail: detail}));
@@ -1383,7 +1384,7 @@ class Core {
     let options = self.options;
     if (options.auto && options.auto.time) {
       // clear
-      clearInterval(parseFloat(self.object.dataset[self.componentNamespace + 'AutoStartInterval']));
+      clearInterval(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoStartInterval'));
       // listener dispatch
       let detail = self.eDetailSet();
       self.object.dispatchEvent(new CustomEvent('pause.xt.auto', {detail: detail}));
@@ -1446,9 +1447,9 @@ class Core {
       if (obj[type].done) {
         for (let el of obj[type].queueEls) {
           // clear timeout and frame
-          cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
-          clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'DelayTimeout']));
-          clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'AnimTimeout']));
+          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
+          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
           // done other queue
           self.queueOffDelayDone(obj, el, type, true);
           self.queueOffAnimDone(obj, el, type, true);
@@ -1468,9 +1469,9 @@ class Core {
       if (obj[type].done) {
         for (let el of obj[type].queueEls) {
           // clear timeout and frame
-          cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
-          clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'DelayTimeout']));
-          clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'AnimTimeout']));
+          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
+          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
           // done other queue
           self.queueOnDelayDone(obj, el, type, true);
           self.queueOnAnimDone(obj, el, type, true);
@@ -1632,8 +1633,8 @@ class Core {
       let delay;
       if (options.delayOn) {
         if (isNaN(options.delayOn)) {
-          let count = parseInt(el.dataset[self.componentNamespace + 'OnCount']) || els.findIndex(x => x === el);
-          let tot = parseInt(el.dataset[self.componentNamespace + 'OnTot']) || els.length;
+          let count = Xt.dataStorage.get(el, self.componentNamespace + 'OnCount') || els.findIndex(x => x === el);
+          let tot = Xt.dataStorage.get(el, self.componentNamespace + 'OnTot') || els.length;
           let fnc = options.delayOn;
           if (typeof fnc === 'string') {
             fnc = new Function('current', 'total', fnc);
@@ -1644,12 +1645,12 @@ class Core {
         }
       }
       // delay fnc
-      clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'DelayTimeout']));
-      clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'AnimTimeout']));
+      clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
+      clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
       if (delay) {
-        el.dataset[self.componentNamespace + 'DelayTimeout'] = setTimeout(function () {
+        Xt.dataStorage.put(el, self.componentNamespace + 'DelayTimeout', setTimeout(function () {
           self.queueOnDelayDone(obj, el, type);
-        }, delay).toString();
+        }, delay));
       } else {
         self.queueOnDelayDone(obj, el, type);
       }
@@ -1678,8 +1679,8 @@ class Core {
       let delay;
       if (options.delayOff) {
         if (isNaN(options.delayOff)) {
-          let count = parseInt(el.dataset[self.componentNamespace + 'OffCount']) || els.findIndex(x => x === el);
-          let tot = parseInt(el.dataset[self.componentNamespace + 'OffTot']) || els.length;
+          let count = Xt.dataStorage.get(el, self.componentNamespace + 'OffCount') || els.findIndex(x => x === el);
+          let tot = Xt.dataStorage.get(el, self.componentNamespace + 'OffTot') || els.length;
           let fnc = options.delayOff;
           if (typeof fnc === 'string') {
             fnc = new Function('current', 'total', fnc);
@@ -1690,12 +1691,12 @@ class Core {
         }
       }
       // delay fnc
-      clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'DelayTimeout']));
-      clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'AnimTimeout']));
+      clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
+      clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
       if (delay) {
-        el.dataset[self.componentNamespace + 'DelayTimeout'] = setTimeout(function () {
+        Xt.dataStorage.put(el, self.componentNamespace + 'DelayTimeout', setTimeout(function () {
           self.queueOffDelayDone(obj, el, type);
-        }, delay).toString();
+        }, delay));
       } else {
         self.queueOffDelayDone(obj, el, type);
       }
@@ -1722,7 +1723,7 @@ class Core {
     el.classList.add(...self.classes);
     el.classList.add(...self.classesIn);
     el.classList.remove(...self.classesOut);
-    if (self.initial || el.dataset[self.componentNamespace + 'Initial']) {
+    if (self.initial || Xt.dataStorage.get(el, self.componentNamespace + 'Initial')) {
       el.classList.add(...self.classesInitial);
     }
     if (!self.detail.inverse) {
@@ -1796,7 +1797,7 @@ class Core {
     el.classList.remove(...self.classes);
     el.classList.remove(...self.classesIn);
     el.classList.add(...self.classesOut);
-    if (!self.initial && !el.dataset[self.componentNamespace + 'Initial']) {
+    if (!self.initial && !Xt.dataStorage.get(el, self.componentNamespace + 'Initial')) {
       el.classList.remove(...self.classesInitial);
     }
     if (!self.detail.inverse) {
@@ -1837,13 +1838,13 @@ class Core {
     let options = self.options;
     // anim
     let duration = Xt.animTime(el, options.durationOn);
-    clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'AnimTimeout']));
+    clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
     if (!duration) {
       self.queueOnAnimDone(obj, el, type);
     } else {
-      el.dataset[self.componentNamespace + 'AnimTimeout'] = setTimeout(function () {
+      Xt.dataStorage.put(el, self.componentNamespace + 'AnimTimeout', setTimeout(function () {
         self.queueOnAnimDone(obj, el, type);
-      }, duration).toString();
+      }, duration));
     }
   }
 
@@ -1858,13 +1859,13 @@ class Core {
     let options = self.options;
     // anim
     let duration = Xt.animTime(el, options.durationOff);
-    clearTimeout(parseFloat(el.dataset[self.componentNamespace + 'AnimTimeout']));
+    clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
     if (!duration) {
       self.queueOffAnimDone(obj, el, type);
     } else {
-      el.dataset[self.componentNamespace + 'AnimTimeout'] = setTimeout(function () {
+      Xt.dataStorage.put(el, self.componentNamespace + 'AnimTimeout', setTimeout(function () {
         self.queueOffAnimDone(obj, el, type);
-      }, duration).toString();
+      }, duration));
     }
   }
 
@@ -2108,10 +2109,10 @@ class Core {
       return false;
     }
     // friction
-    cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'SmoothFrame']));
-    el.dataset[self.componentNamespace + 'SmoothFrame'] = requestAnimationFrame(function () {
+    cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'WheelSmoothInitFrame'));
+    Xt.dataStorage.put(el, self.componentNamespace + 'WheelSmoothInitFrame', requestAnimationFrame(function () {
       self.eventFrictionSmooth(el, min, max);
-    }).toString();
+    }));
     // moving
     if (!self.detail.wheelMoving) {
       // moving
@@ -2164,10 +2165,10 @@ class Core {
     if (self.detail.wheelCurrent > min && self.detail.wheelCurrent < max && // limit
       Math.abs(delta) >= options.wheel.frictionLimit) { // frictionLimit
       // friction
-      cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'SmoothFrame']));
-      el.dataset[self.componentNamespace + 'SmoothFrame'] = requestAnimationFrame(function () {
+      cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'SmoothFrame'));
+      Xt.dataStorage.put(el, self.componentNamespace + 'SmoothFrame', requestAnimationFrame(function () {
         self.eventFrictionSmooth(el, min, max);
-      }).toString();
+      }));
       // dispatch
       let detail = self.eDetailSet();
       detail.wheelX = -self.detail.wheelCurrent;
@@ -2276,53 +2277,53 @@ class Core {
     if (el instanceof HTMLElement) {
       if (before === 'xt-collapse--height') {
         el.classList.add('xt-hide');
-        cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
-        el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
+        cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+        Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
           el.style.height = 'auto';
           el.style.paddingTop = '';
           el.style.paddingBottom = '';
           let h = el.clientHeight + 'px';
           let pt = el.style.paddingTop;
           let pb = el.style.paddingBottom;
-          cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
-          el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
+          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+          Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
             el.classList.remove('xt-hide');
             el.style.height = '0';
             el.style.paddingTop = '0';
             el.style.paddingBottom = '0';
-            cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
-            el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
+            cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+            Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
               el.style.height = h;
               el.style.paddingTop = pt;
               el.style.paddingBottom = pb;
-            }).toString();
-          }).toString();
-        }).toString();
+            }));
+          }));
+        }));
       }
       if (after === 'xt-collapse--width') {
         el.classList.add('xt-hide');
-        cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
-        el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
+        cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+        Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
           el.style.width = 'auto';
           el.style.paddingLeft = '';
           el.style.paddingRight = '';
           let w = el.clientHeight + 'px';
           let pl = el.style.paddingLeft;
           let pr = el.style.paddingRight;
-          cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
-          el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
+          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+          Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
             el.classList.remove('xt-hide');
             el.style.width = '0';
             el.style.paddingLeft = '0';
             el.style.paddingRight = '0';
-            cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
-            el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
+            cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+            Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
               el.style.width = w;
               el.style.paddingLeft = pl;
               el.style.paddingRight = pr;
-            }).toString();
-          }).toString();
-        }).toString();
+            })).toString();
+          }));
+        }));
       }
     }
   }
@@ -2340,36 +2341,36 @@ class Core {
         let h = el.offsetHeight + 'px';
         let pt = el.style.paddingTop;
         let pb = el.style.paddingBottom;
-        cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
-        el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
+        cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+        Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
           el.style.height = h;
           el.style.paddingTop = pt;
           el.style.paddingBottom = pb;
-          cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
-          el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
+          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+          Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
             el.style.height = '0';
             el.style.paddingTop = '0';
             el.style.paddingBottom = '0';
-          }).toString();
-        }).toString();
+          }));
+        }));
       }
       if (after === 'xt-collapse--width') {
         el.classList.remove('xt-hide');
         let w = el.offsetWidth + 'px';
         let pl = el.style.paddingLeft;
         let pr = el.style.paddingRight;
-        cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
-        el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
+        cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+        Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
           el.style.width = w;
           el.style.paddingLeft = pl;
           el.style.paddingRight = pr;
-          cancelAnimationFrame(parseFloat(el.dataset[self.componentNamespace + 'CollapseFrame']));
-          el.dataset[self.componentNamespace + 'CollapseFrame'] = requestAnimationFrame(function () {
+          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+          Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
             el.style.width = '0';
             el.style.paddingLeft = '0';
             el.style.paddingRight = '0';
-          }).toString();
-        }).toString();
+          }));
+        }));
       }
     }
   }
@@ -2408,7 +2409,7 @@ class Core {
       let closeElements = el.querySelectorAll(options.closeInside);
       requestAnimationFrame(function () {
         for (let closeElement of closeElements) {
-          let specialCloseInsideHandler = Xt.dataStorage.put(closeElement, 'click.close' + '.' + self.namespace,
+          let specialCloseInsideHandler = Xt.dataStorage.set(closeElement, 'click.close' + '.' + self.namespace,
             self.eventSpecialCloseInsideHandler.bind(self).bind(self, closeElement, single));
           closeElement.addEventListener('click', specialCloseInsideHandler);
         }
@@ -2419,7 +2420,7 @@ class Core {
       let closeElements = document.querySelectorAll(options.closeOutside);
       requestAnimationFrame(function () {
         for (let closeElement of closeElements) {
-          let specialCloseOutsideHandler = Xt.dataStorage.put(closeElement, 'click.close' + '.' + self.namespace,
+          let specialCloseOutsideHandler = Xt.dataStorage.set(closeElement, 'click.close' + '.' + self.namespace,
             self.eventSpecialCloseOutsideHandler.bind(self).bind(self, el, single));
           closeElement.addEventListener('click', specialCloseOutsideHandler);
         }
@@ -2714,7 +2715,7 @@ class Core {
   destroy(weak = false) {
     let self = this;
     // stop auto
-    clearInterval(parseFloat(self.object.dataset[self.componentNamespace + 'AutoStartInterval']));
+    clearInterval(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoStartInterval'));
     // remove events
     if (self.destroyElements) {
       for (let element of self.destroyElements) {

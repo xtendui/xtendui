@@ -100,7 +100,7 @@ class Sticky extends Core {
     let options = self.options;
     // event on
     if (options.on) {
-      let stickyHandler = Xt.dataStorage.put(window, options.on + '.' + self.namespace,
+      let stickyHandler = Xt.dataStorage.set(window, options.on + '.' + self.namespace,
         self.eventStickyHandler.bind(self));
       let events = [...options.on.split(' ')];
       for (let event of events) {
@@ -111,7 +111,7 @@ class Sticky extends Core {
       });
     }
     // autoClose
-    let autoCloseHandler = Xt.dataStorage.put(self.object, 'hide' + '.' + self.namespace,
+    let autoCloseHandler = Xt.dataStorage.set(self.object, 'hide' + '.' + self.namespace,
       Xt.autoClose.bind(this, self.object));
     self.object.addEventListener('hide.xt.sticky', autoCloseHandler);
   }
@@ -222,16 +222,16 @@ class Sticky extends Core {
         }
       }
       // save real add for calculation
-      el.dataset[self.componentNamespace + 'Add'] = add.toString();
+      Xt.dataStorage.put(el, self.componentNamespace + 'Add', add);
       // activation
       let checkTop = scrollTop >= top - add + addHide;
       let checkBottom = scrollTop < bottom + add - addHide;
       if (checkTop && checkBottom) {
         // initial
         if (initial) {
-          el.dataset[self.componentNamespace + 'Initial'] = 'true';
+          Xt.dataStorage.put(el, self.componentNamespace + 'Initial', true);
         } else {
-          delete el.dataset[self.componentNamespace + 'Initial'];
+          Xt.dataStorage.remove(el, self.componentNamespace + 'Initial');
         }
         // inside
         self.eventOn(el);
@@ -242,9 +242,9 @@ class Sticky extends Core {
       } else {
         // initial
         if (initial) {
-          el.dataset[self.componentNamespace + 'Initial'] = 'true';
+          Xt.dataStorage.put(el, self.componentNamespace + 'Initial', true);
         } else {
-          delete el.dataset[self.componentNamespace + 'Initial'];
+          Xt.dataStorage.remove(el, self.componentNamespace + 'Initial');
         }
         // outside
         self.eventOff(el);
@@ -307,7 +307,7 @@ class Sticky extends Core {
       }
       */
       // set add
-      if (add !== parseFloat(el.dataset[self.componentNamespace + 'AddOld'])) {
+      if (add !== Xt.dataStorage.get(el, self.componentNamespace + 'AddOld')) {
         el.style[options.position] = add + 'px';
       }
       // fix position fixed width 100% of parent
@@ -319,7 +319,7 @@ class Sticky extends Core {
       let detail = self.eDetailSet();
       el.dispatchEvent(new CustomEvent('change.xt.sticky', {detail: detail}));
       // save for direction
-      el.dataset[self.componentNamespace + 'AddOld'] = add.toString();
+      Xt.dataStorage.put(el, self.componentNamespace + 'AddOld', add);
     }
     // save for direction
     self.detail.scrollTopOld = scrollTop;
@@ -341,7 +341,7 @@ class Sticky extends Core {
         let found = false;
         val = 0;
         for (let el of elements) {
-          let add = parseFloat(el.dataset[self.componentNamespace + 'Add']);
+          let add = Xt.dataStorage.get(el, self.componentNamespace + 'Add');
           if (add) { // if sticky--hide get real add
             let style = getComputedStyle(el);
             if (style.display !== 'none') {
