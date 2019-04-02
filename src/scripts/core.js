@@ -2276,7 +2276,7 @@ class Core {
   specialCollapseOn(el, before, after) {
     if (el instanceof HTMLElement) {
       if (before === 'xt-collapse--height') {
-        el.classList.add('xt-hide');
+        el.classList.add('xt-hide', 'trans-anim-none');
         cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
         Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
           el.style.height = 'auto';
@@ -2285,23 +2285,20 @@ class Core {
           let h = el.clientHeight + 'px';
           let pt = el.style.paddingTop;
           let pb = el.style.paddingBottom;
+          el.style.height = '0';
+          el.style.paddingTop = '0';
+          el.style.paddingBottom = '0';
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
           Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-            el.classList.remove('xt-hide');
-            el.style.height = '0';
-            el.style.paddingTop = '0';
-            el.style.paddingBottom = '0';
-            cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-            Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-              el.style.height = h;
-              el.style.paddingTop = pt;
-              el.style.paddingBottom = pb;
-            }));
+            el.classList.remove('xt-hide', 'trans-anim-none');
+            el.style.height = h;
+            el.style.paddingTop = pt;
+            el.style.paddingBottom = pb;
           }));
         }));
       }
       if (after === 'xt-collapse--width') {
-        el.classList.add('xt-hide');
+        el.classList.add('xt-hide', 'trans-anim-none');
         cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
         Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
           el.style.width = 'auto';
@@ -2310,19 +2307,16 @@ class Core {
           let w = el.clientHeight + 'px';
           let pl = el.style.paddingLeft;
           let pr = el.style.paddingRight;
+          el.style.width = '0';
+          el.style.paddingLeft = '0';
+          el.style.paddingRight = '0';
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
           Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-            el.classList.remove('xt-hide');
-            el.style.width = '0';
-            el.style.paddingLeft = '0';
-            el.style.paddingRight = '0';
-            cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-            Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-              el.style.width = w;
-              el.style.paddingLeft = pl;
-              el.style.paddingRight = pr;
-            })).toString();
-          }));
+            el.classList.remove('xt-hide', 'trans-anim-none');
+            el.style.width = w;
+            el.style.paddingLeft = pl;
+            el.style.paddingRight = pr;
+          })).toString();
         }));
       }
     }
@@ -2337,7 +2331,7 @@ class Core {
   specialCollapseOff(el, before, after) {
     if (el instanceof HTMLElement) {
       if (before === 'xt-collapse--height') {
-        el.classList.remove('xt-hide');
+        el.classList.remove('xt-hide', 'trans-anim-none');
         let h = el.offsetHeight + 'px';
         let pt = el.style.paddingTop;
         let pb = el.style.paddingBottom;
@@ -2355,17 +2349,17 @@ class Core {
         }));
       }
       if (after === 'xt-collapse--width') {
-        el.classList.remove('xt-hide');
+        el.classList.remove('xt-hide', 'trans-anim-none');
         let w = el.offsetWidth + 'px';
         let pl = el.style.paddingLeft;
         let pr = el.style.paddingRight;
         cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-        Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+        Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
           el.style.width = w;
           el.style.paddingLeft = pl;
           el.style.paddingRight = pr;
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-          Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+          Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
             el.style.width = '0';
             el.style.paddingLeft = '0';
             el.style.paddingRight = '0';

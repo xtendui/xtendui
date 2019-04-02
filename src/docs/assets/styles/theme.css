@@ -2878,6 +2878,11 @@ a.links--none,
   visibility: hidden !important;
   opacity: 0 !important;
 }
+.xt-show {
+  position: relative !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
 .xt-calculating {
   display: block !important;
   visibility: hidden !important;
@@ -6610,7 +6615,7 @@ transition-timing-function: @bez--out;
   text-decoration: none;
   display: flex;
   align-items: center;
-  height: 7.25rem;
+  height: 6.85rem;
   opacity: 0.8;
   transition-property: opacity;
   transition-duration: 500ms;
@@ -6624,7 +6629,7 @@ transition-timing-function: @bez--out;
 }
 .logo img {
   width: auto;
-  height: 2.5rem;
+  height: 2rem;
 }
 .logo:hover,
 .logo.hover,
@@ -6647,19 +6652,6 @@ transition-timing-function: @bez--out;
   top: 0;
   left: 0;
   width: 100%;
-}
-.site-header-top .btn--menu {
-  margin-right: -1rem !important;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
-}
-.site-header-top .btn--menu:before {
-  display: none;
-}
-@media (min-width: 1300px ) {
-  .site-header-top .btn--menu {
-    margin-right: -2rem !important;
-  }
 }
 .site-hero {
   color: #fff;
@@ -6788,7 +6780,7 @@ transition-timing-function: @bez--out;
 }
 .site-breadcrumbs-body-sub.out .btn {
   opacity: 1;
-  animation-name: anim-x-inverse--out;
+  animation-name: anim-x--out;
   animation-duration: 500ms;
   animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
@@ -6815,7 +6807,7 @@ transition-timing-function: @bez--out;
 }
 .site-breadcrumbs-body-sub.out.inverse .btn {
   opacity: 1;
-  animation-name: anim-x--out;
+  animation-name: anim-x-inverse--out;
   animation-duration: 500ms;
   animation-timing-function: cubic-bezier(1,0,.64,1);
   animation-fill-mode: forwards;
@@ -6823,6 +6815,23 @@ transition-timing-function: @bez--out;
 .btn--menu {
   display: flex;
   align-items: center;
+}
+.site-header-top .btn--menu {
+  margin-right: 0.55rem !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+.site-header-top .btn--menu:before {
+  display: none;
+}
+@media (min-width: 1300px ) {
+  .site-header-top .btn--menu {
+    margin-right: -0.375rem !important;
+  }
+}
+.site-breadcrumbs .btn--menu {
+  margin-top: -2px;
+  margin-bottom: -2px;
 }
 .btn--menu .icon--menu-custom {
   display: inline-block;
@@ -7145,10 +7154,11 @@ transition-timing-function: @bez--out;
   color: rgba(52, 58, 64, 0.4);
 }
 .site-aside-text .btn--site-aside-sub.open + .site-aside-subsub {
+  position: relative !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   display: block !important;
   height: auto !important;
-  position: relative !important;
-  opacity: 1 !important;
 }
 .site-aside-text .site-aside-subsub > .btn:first-child {
   margin-top: 0.5rem;
