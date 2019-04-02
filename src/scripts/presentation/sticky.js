@@ -36,15 +36,15 @@ class Sticky extends Core {
     self.mode = 'unique';
     // sticky container
     for (let el of self.elements) {
-      self.container = Xt.parents(el, '.xt-container')[0];
-      if (!self.container) {
-        self.container = Xt.createElement('<div class="xt-container xt-ignore xt-fixed--check"></div>');
-        el.before(self.container);
+      let container = Xt.parents(el, '.xt-container')[0];
+      if (!container) {
+        container = Xt.createElement('<div class="xt-container xt-ignore xt-fixed--check"></div>');
+        el.before(container);
         el.classList.add('xt-ignore');
-        self.container.append(el);
+        container.append(el);
       }
       // sticky clone
-      let target = self.container.querySelectorAll('.xt-clone')[0];
+      let target = container.querySelectorAll('.xt-clone')[0];
       if (!target) {
         target = el.cloneNode(true);
         target.classList.add('xt-clone', 'xt-ignore');
@@ -54,7 +54,7 @@ class Sticky extends Core {
         for (let elName of target.querySelectorAll('[name]')) {
           elName.setAttribute('name', elName.getAttribute('name') + '-clone');
         }
-        self.container.append(target);
+        container.append(target);
       }
       self.targets.push(target);
       // sticky
@@ -129,8 +129,8 @@ class Sticky extends Core {
     let self = this;
     // handler
     if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
-      Xt.eventDelay(e, self.object, function() {
-        self.eventSticky(self.object, e, initial);
+      Xt.eventDelay(e, self.object, function () {
+        self.eventSticky(e, initial);
       }, self.componentNamespace + 'Resize');
     }
   }
@@ -141,11 +141,10 @@ class Sticky extends Core {
 
   /**
    * window scroll
-   * @param {Node|HTMLElement|EventTarget|Window} element To be activated or deactivated
    * @param {Event} e
    * @param {Boolean} initial
    */
-  eventSticky(element, e, initial) {
+  eventSticky(e, initial) {
     let self = this;
     let options = self.options;
     // disabled
@@ -155,172 +154,174 @@ class Sticky extends Core {
     // var
     let anim = true;
     let hide = false;
-    let scrollInverse = false;
     let add = 0;
     let addHide = 0;
     let windowHeight = Xt.windowHeight;
-    let heightEl = parseFloat(getComputedStyle(element).height);
-    let heightTarget = parseFloat(getComputedStyle(self.targets[0]).height);
-    let rectContainerTop = self.container.getBoundingClientRect().top;
     let scrollingElement = document.scrollingElement;
     let scrollHeight = scrollingElement.scrollHeight;
     let scrollTop = scrollingElement.scrollTop;
-    let scrollTopOld = self.detail.scrollTopOld;
+
     // direction
-    if (scrollTop < scrollTopOld) {
-      element.classList.remove('sticky--down');
-      element.classList.add('sticky--up');
-      scrollInverse = true;
-    } else {
-      element.classList.add('sticky--down');
-      element.classList.remove('sticky--up');
+    self.detail.inverseForce = false;
+    if (scrollTop < self.detail.scrollTopOld) {
+      self.detail.inverseForce = true;
     }
-    // hide
-    if (options.hide === 'down') {
-      if (!scrollInverse) {
-        addHide = heightTarget;
+    // loop
+    for (let tr of self.targets) {
+      let el = self.getElementsFromTarget(tr)[0];
+      el = el ? el : tr; // for not sticky: el is the same as tr
+      // vars
+      let heightEl = parseFloat(getComputedStyle(el).height);
+      let heightTr = parseFloat(getComputedStyle(tr).height);
+      let topTr = tr.getBoundingClientRect().top;
+      // hide
+      if (options.hide === 'down') {
+        if (!self.detail.inverseForce) {
+          addHide = heightTr;
+        }
       }
-    }
-    if (options.hide === 'up') {
-      if (scrollInverse) {
-        addHide = heightTarget;
+      if (options.hide === 'up') {
+        if (self.detail.inverseForce) {
+          addHide = heightTr;
+        }
       }
-    }
-    // scroll
-    let top = self.eventStickyPos(options.limit['top'] || self.targets, scrollTop, rectContainerTop);
-    let bottom = self.eventStickyPos(options.limit['bottom'], scrollTop, Infinity);
-    if (options.position === 'top') {
-      bottom -= heightTarget;
-    }
-    if (options.position === 'bottom') {
-      top -= windowHeight - heightTarget;
-      bottom = Math.abs(scrollHeight - windowHeight - bottom);
-    }
-    // contain and add
-    let addTop = 0;
-    let addBottom = 0;
-    if (options.contain) {
-      if (options.contain['top']) {
-        let addTopObj = self.eventStickyHeight(options.contain['top'], scrollInverse);
-        addTop = addTopObj.val;
-        if (addTop !== null && addTop > rectContainerTop) {
-          add = addTop;
-          if (!addTopObj.foundHide) {
+      // scroll
+      let top = self.eventStickyPos(options.limit['top'] || self.targets, scrollTop, topTr);
+      let bottom = self.eventStickyPos(options.limit['bottom'], scrollTop, Infinity);
+      if (options.position === 'top') {
+        bottom -= heightTr;
+      }
+      if (options.position === 'bottom') {
+        top -= windowHeight - heightTr;
+        bottom = Math.abs(scrollHeight - windowHeight - bottom);
+      }
+      // contain and add
+      let addTop = 0;
+      let addBottom = 0;
+      if (options.contain) {
+        if (options.contain['top']) {
+          let addTopObj = self.eventStickyHeight(options.contain['top']);
+          addTop = addTopObj.val;
+          if (addTop !== null && addTop > topTr) {
+            add = addTop;
+            if (!addTopObj.foundHide) {
+              anim = false;
+            }
+          } else {
+            addTop = null;
+          }
+        }
+        if (options.contain['bottom']) {
+          addBottom = self.eventStickyPos(options.contain['bottom']);
+          if (addBottom !== null && addBottom < heightEl + addTop) {
+            add = addBottom - heightEl;
             anim = false;
+          } else {
+            addBottom = null;
+          }
+        }
+      }
+      // save real add for calculation
+      el.dataset[self.componentNamespace + 'Add'] = add.toString();
+      // activation
+      let checkTop = scrollTop >= top - add + addHide;
+      let checkBottom = scrollTop < bottom + add - addHide;
+      if (checkTop && checkBottom) {
+        // initial
+        if (initial) {
+          el.dataset[self.componentNamespace + 'Initial'] = 'true';
+        } else {
+          delete el.dataset[self.componentNamespace + 'Initial'];
+        }
+        // inside
+        self.eventOn(el);
+        // hide
+        if (addHide) {
+          hide = true;
+        }
+      } else {
+        // initial
+        if (initial) {
+          el.dataset[self.componentNamespace + 'Initial'] = 'true';
+        } else {
+          delete el.dataset[self.componentNamespace + 'Initial'];
+        }
+        // outside
+        self.eventOff(el);
+      }
+      // after active
+      if (el.classList.contains(...self.classes)) {
+        // hide
+        if (hide) {
+          add = -heightEl;
+          if (!el.classList.contains('sticky--hide')) {
+            el.classList.add('sticky--hide');
+            // autoClose
+            dispatchEvent(new CustomEvent('autoClose.xt'));
+            // listener dispatch
+            let detail = self.eDetailSet(e);
+            el.dispatchEvent(new CustomEvent('hide.xt.sticky', {detail: detail}));
           }
         } else {
-          addTop = null;
-        }
-      }
-      if (options.contain['bottom']) {
-        addBottom = self.eventStickyPos(options.contain['bottom']);
-        if (addBottom !== null && addBottom < heightEl + addTop) {
-          add = addBottom - heightEl;
-          anim = false;
-        } else {
-          addBottom = null;
-        }
-      }
-    }
-    // save real add for calculation
-    element.dataset[self.componentNamespace + 'AddSticky'] = add.toString();
-    // activation
-    let checkTop = scrollTop >= top - add + addHide;
-    let checkBottom = scrollTop < bottom + add - addHide;
-    if (checkTop && checkBottom) {
-      // initial
-      if (initial) {
-        element.dataset[self.componentNamespace + 'Initial'] = 'true';
-      } else {
-        delete element.dataset[self.componentNamespace + 'Initial'];
-      }
-      // inside
-      self.eventOn(element);
-      // hide
-      if (addHide) {
-        hide = true;
-      }
-    } else {
-      // initial
-      if (initial) {
-        element.dataset[self.componentNamespace + 'Initial'] = 'true';
-      } else {
-        delete element.dataset[self.componentNamespace + 'Initial'];
-      }
-      // outside
-      self.eventOff(element);
-    }
-    // after active
-    if (element.classList.contains(...self.classes)) {
-      // hide
-      if (hide) {
-        add = -heightEl;
-        if (!element.classList.contains('sticky--hide')) {
-          element.classList.add('sticky--hide');
-          // autoClose
-          dispatchEvent(new CustomEvent('autoClose.xt'));
-          // listener dispatch
-          let detail = self.eDetailSet(e);
-          element.dispatchEvent(new CustomEvent('hide.xt.sticky', {detail: detail}));
+          if (el.classList.contains('sticky--hide')) {
+            el.classList.remove('sticky--hide');
+            // listener dispatch
+            let detail = self.eDetailSet(e);
+            el.dispatchEvent(new CustomEvent('show.xt.sticky', {detail: detail}));
+          }
         }
       } else {
-        if (element.classList.contains('sticky--hide')) {
-          element.classList.remove('sticky--hide');
-          // listener dispatch
-          let detail = self.eDetailSet(e);
-          element.dispatchEvent(new CustomEvent('show.xt.sticky', {detail: detail}));
+        // reset
+        add = 0;
+        anim = false;
+      }
+      // anim
+      if (anim && (addTop || !addBottom) && self.detail.scrollTopOld !== undefined) {
+        if (!el.classList.contains('sticky--moving')) {
+          el.classList.add('sticky--moving');
+        }
+      } else {
+        if (el.classList.contains('sticky--moving')) {
+          el.classList.remove('sticky--moving');
         }
       }
-    } else {
-      // reset
-      add = 0;
-      anim = false;
-    }
-    // anim
-    if (anim && (addTop || !addBottom) && scrollTopOld !== undefined) {
-      if (!element.classList.contains('sticky--moving')) {
-        element.classList.add('sticky--moving');
+      // top and bottom
+      /*
+      if (!checkTop) {
+        if (!el.classList.contains('sticky--top')) {
+          el.classList.add('sticky--top');
+        }
+      } else {
+        if (el.classList.contains('sticky--top')) {
+          el.classList.remove('sticky--top');
+        }
       }
-    } else {
-      if (element.classList.contains('sticky--moving')) {
-        element.classList.remove('sticky--moving');
+      if (!checkBottom) {
+        if (!el.classList.contains('sticky--bottom')) {
+          el.classList.add('sticky--bottom');
+        }
+      } else {
+        if (el.classList.contains('sticky--bottom')) {
+          el.classList.remove('sticky--bottom');
+        }
       }
-    }
-    // top and bottom
-    /*
-    if (!checkTop) {
-      if (!element.classList.contains('sticky--top')) {
-        element.classList.add('sticky--top');
+      */
+      // set add
+      if (add !== parseFloat(el.dataset[self.componentNamespace + 'AddOld'])) {
+        el.style[options.position] = add + 'px';
       }
-    } else {
-      if (element.classList.contains('sticky--top')) {
-        element.classList.remove('sticky--top');
+      // fix position fixed width 100% of parent
+      let width = self.normalizeWidth(tr.clientWidth);
+      if (el.style.width !== width) {
+        el.style.width = width;
       }
+      // dispatch
+      let detail = self.eDetailSet();
+      el.dispatchEvent(new CustomEvent('change.xt.sticky', {detail: detail}));
+      // save for direction
+      el.dataset[self.componentNamespace + 'AddOld'] = add.toString();
     }
-    if (!checkBottom) {
-      if (!element.classList.contains('sticky--bottom')) {
-        element.classList.add('sticky--bottom');
-      }
-    } else {
-      if (element.classList.contains('sticky--bottom')) {
-        element.classList.remove('sticky--bottom');
-      }
-    }
-    */
-    // set add
-    if (add !== self.detail.addOld) {
-      element.style[options.position] = add + 'px';
-    }
-    // fix position fixed width 100% of parent
-    let width = self.normalizeWidth(self.container.clientWidth);
-    if (element.style.width !== width) {
-      element.style.width = width;
-    }
-    // dispatch
-    let detail = self.eDetailSet();
-    element.dispatchEvent(new CustomEvent('change.xt.sticky', {detail: detail}));
     // save for direction
-    self.detail.addOld = add;
     self.detail.scrollTopOld = scrollTop;
   }
 
@@ -340,11 +341,11 @@ class Sticky extends Core {
         let found = false;
         val = 0;
         for (let el of elements) {
-          let addSticky = parseFloat(el.dataset[self.componentNamespace + 'AddSticky']);
-          if (addSticky) { // if sticky--hide get real add
+          let add = parseFloat(el.dataset[self.componentNamespace + 'Add']);
+          if (add) { // if sticky--hide get real add
             let style = getComputedStyle(el);
             if (style.display !== 'none') {
-              val += addSticky;
+              val += add;
               found = true;
             }
           } else {
@@ -370,11 +371,10 @@ class Sticky extends Core {
   /**
    * get height of option
    * @param {String|Number|Element} option
-   * @param {Boolean} scrollInverse
    * @param {Number} val Default value
    * @returns {Object} obj Option's height (px) and if found hide element
    */
-  eventStickyHeight(option, scrollInverse, val = null) {
+  eventStickyHeight(option, val = null) {
     let self = this;
     let options = self.options;
     // logic
@@ -386,12 +386,12 @@ class Sticky extends Core {
       if (elements.length) {
         for (let el of elements) {
           if (el.classList.contains('sticky-hide--down') && el.classList.contains(...self.classes)) {
-            if (scrollInverse) {
+            if (self.detail.inverseForce) {
               val += el.clientHeight;
               foundHide = true;
             }
           } else if (el.classList.contains('sticky-hide--up') && el.classList.contains(...self.classes)) {
-            if (!scrollInverse) {
+            if (!self.detail.inverseForce) {
               val += el.clientHeight;
               foundHide = true;
             }

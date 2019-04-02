@@ -35,7 +35,7 @@ class Scroll extends Core {
     // loop
     self.targets = [];
     for (let el of self.elements) {
-      if (!options.scroll.sticky) {
+      if (!options.sticky) {
         // not sticky
         self.targets.push(el);
       } else {
@@ -63,20 +63,20 @@ class Scroll extends Core {
         self.targets.push(target);
         // sticky
         el.classList.add('xt-fixed', 'xt-sticky');
-        if (options.scroll.sticky === 'absolute') {
+        if (options.sticky === 'absolute') {
           el.classList.add('xt-sticky--absolute');
-        } else if (options.scroll.sticky === 'fixed') {
+        } else if (options.sticky === 'fixed') {
           el.classList.add('xt-sticky--fixed');
-        } else if (options.scroll.sticky === 'fixed-always') {
+        } else if (options.sticky === 'fixed-always') {
           el.classList.add('xt-sticky--fixed-always');
         }
         if (target) {
           target.classList.add('xt-fixed', 'xt-sticky');
-          if (options.scroll.sticky === 'absolute') {
+          if (options.sticky === 'absolute') {
             target.classList.add('xt-sticky--absolute');
-          } else if (options.scroll.sticky === 'fixed') {
+          } else if (options.sticky === 'fixed') {
             target.classList.add('xt-sticky--fixed');
-          } else if (options.scroll.sticky === 'fixed-always') {
+          } else if (options.sticky === 'fixed-always') {
             target.classList.add('xt-sticky--fixed-always');
           }
         }
@@ -166,7 +166,7 @@ class Scroll extends Core {
     if (scrollTop < self.detail.scrollTopOld) {
       self.detail.inverseForce = true;
     }
-    // core
+    // loop
     for (let tr of self.targets) {
       let el = self.getElementsFromTarget(tr)[0];
       el = el ? el : tr; // for not sticky: el is the same as tr
@@ -176,6 +176,10 @@ class Scroll extends Core {
         let changed = false;
         let elTop = tr.offsetParent.getBoundingClientRect().top + tr.offsetTop + scrollTop; // we use parents to not include transforms animations
         let elHeight = tr.offsetHeight;
+        // size fix when position fixed
+        if (options.sticky) {
+          el.style.width = tr.offsetWidth + 'px';
+        }
         // position
         self.detail.distance = Xt.windowPercent(options.scroll.distance);
         self.detail.trigger = Xt.windowPercent(options.scroll.trigger);
@@ -284,8 +288,8 @@ Scroll.optionsDefault = {
   "elements": false,
   "on": "scroll resize",
   "instant": true,
+  "sticky": false,
   "scroll": {
-    "sticky": false,
     "distance": 0,
     "trigger": "100%",
     "start": "100%",
