@@ -240,9 +240,6 @@ Xt.observer = new MutationObserver(function (mutationsList) {
       // added
       for (let added of mutation.addedNodes) {
         if (added.nodeType === 1 && !added.classList.contains('xt-ignore')) {
-          if (added.classList.contains('parallax_title')) {
-            console.log(added, added.classList.contains('xt-ignore'));
-          }
           Xt.initElement(added);
           Xt.initObserve(added);
         }

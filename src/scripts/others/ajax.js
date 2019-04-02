@@ -214,6 +214,7 @@ class Ajax extends Core {
       request.onerror = function () {
         self.ajaxResponse(element, url, request);
       };
+      console.debug('xt-ajax request:', url);
       request.send();
     });
   }
