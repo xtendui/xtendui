@@ -463,10 +463,6 @@ class Slider extends Core {
     for (let target of targets) {
       Xt.dataStorage.put(target, self.componentNamespace + 'SlideOnDone', true);
     }
-    // initSliderPos
-    if (self.dragger) {
-      self.initSliderPos();
-    }
     // autoHeight
     if (self.autoHeight) {
       self.eventAutoHeight(slide);
