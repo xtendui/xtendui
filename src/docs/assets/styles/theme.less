@@ -72,7 +72,7 @@
   transition-property: opacity;
   transition-duration: @time--medium;
   transition-timing-function: @bez--out;
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active, &:focus {
     opacity: 1;
     transition-property: opacity;
     transition-duration: @time--medium;
@@ -302,7 +302,7 @@
     }
   }
   // animation
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active, &:focus {
     .icon--menu-custom {
       span {
         background: @white;
@@ -334,7 +334,7 @@
       .padding(x, tiny) !important;
     }
     // animation
-    &:hover, &.hover, &:active, &.active {
+    &:hover, &.hover, &:active, &.active, &:focus {
       color: @white;
     }
   }
@@ -418,7 +418,7 @@
   a {
     color: @white;
     // animation
-    &:hover, &.hover, &:active, &.active {
+    &:hover, &.hover, &:active, &.active, &:focus {
       color: @white;
       text-decoration: underline;
     }
@@ -463,7 +463,7 @@
     .btn--nodesign();
     width: 100%;
     // animation
-    &:hover, &.hover, &:active, &.active {
+    &:hover, &.hover, &:active, &.active, &:focus {
       color: @text !important;
     }
   }
@@ -543,7 +543,7 @@
       transition: all @time--medium @bez--out;
     }
   }
-  &:hover, &:active {
+  &:hover, &.hover, &:active, &.active, &:focus {
     .line-container {
       .line:after {
         left: 0;
@@ -584,7 +584,7 @@
     opacity: 0;
     transition: all @time--medium @bez--out;
   }
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active, &:focus {
     .site-article-anchor {
       opacity: 1;
       animation: anim-opacity--in @time--medium @bez--in;
@@ -613,7 +613,7 @@
       background: @white !important;
     }
     // animation
-    &:hover, &.hover, &:active, &.active {
+    &:hover, &.hover, &:active, &.active, &:focus {
       color: @primary;
     }
   }
@@ -690,7 +690,7 @@
     .padding(x, small);
     .btn {
       // animation
-      &:hover, &.hover, &:active, &.active {
+      &:hover, &.hover, &:active, &.active, &:focus {
         color: @text;
         &@{btn--design} {
           border-color: @white;

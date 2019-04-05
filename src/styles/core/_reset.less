@@ -43,7 +43,9 @@ a, button, .alink {
 
 button {
   border: 0;
+  padding: 0;
   background: transparent;
+  .reset-text();
   text-align: left;
 }
 
@@ -108,23 +110,14 @@ input, select, textarea {
   }
 }
 
-html:not(.xt-focus) {
+html:not(.xt-focus), html.xt-focus--disable {
   // focus disable
   :focus {
     outline: 0;
   }
 }
 
-html.xt-focus--disable-forms {
-  input, select, textarea {
-    // focus disable
-    &:focus {
-      outline: 0;
-    }
-  }
-}
-
-html.xt-focus:not(.xt-focus--disable-forms) {
+html.xt-focus:not(.xt-focus--disable) {
   // focus chrome style
   input[type="checkbox"], input[type="radio"] {
     &:focus ~ .form-label:before {

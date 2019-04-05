@@ -34,7 +34,7 @@ transform: translateX(-1.5rem);
 transition-property: all;
 transition-duration: @time--medium;
 transition-timing-function: @bez--out;
-&:hover, &.hover, &:active, &.active {
+&:hover, &.hover, &:active, &.active, &:focus {
   opacity: 1;
   transform: translateX(0);
   transition-property: all;
@@ -53,7 +53,7 @@ transition-timing-function: @bez--out;
 
 /* USAGE:
 .anim-opacity.active();
-&:hover, &.hover, &:active, &.active {
+&:hover, &.hover, &:active, &.active, &:focus {
   .anim-opacity.out();
 }
 */

@@ -36,7 +36,16 @@ button,
 }
 button {
   border: 0;
+  padding: 0;
   background: transparent;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
   text-align: left;
 }
 img {
@@ -101,16 +110,12 @@ textarea:-webkit-autofill:focus {
   transition-property: background-color, color;
   transition-delay: 10000000s;
 }
-html:not(.xt-focus) :focus {
+html:not(.xt-focus) :focus,
+html.xt-focus--disable :focus {
   outline: 0;
 }
-html.xt-focus--disable-forms input:focus,
-html.xt-focus--disable-forms select:focus,
-html.xt-focus--disable-forms textarea:focus {
-  outline: 0;
-}
-html.xt-focus:not(.xt-focus--disable-forms) input[type="checkbox"]:focus ~ .form-label:before,
-html.xt-focus:not(.xt-focus--disable-forms) input[type="radio"]:focus ~ .form-label:before {
+html.xt-focus:not(.xt-focus--disable) input[type="checkbox"]:focus ~ .form-label:before,
+html.xt-focus:not(.xt-focus--disable) input[type="radio"]:focus ~ .form-label:before {
   outline-color: #4d90fe;
   outline-offset: -2px;
   outline-style: auto;
@@ -760,7 +765,8 @@ input[type="radio"].unstyled ~ .form-label.disabled:after {
 .group:hover,
 .group.hover,
 .group:active,
-.group.active {
+.group.active,
+.group:focus {
   text-decoration: none;
 }
 .group .form-input {
@@ -949,7 +955,8 @@ a[href]:not([href^='#']).active {
 .btn:hover,
 .btn.hover,
 .btn:active,
-.btn.active {
+.btn.active,
+.btn:focus {
   z-index: 2;
 }
 .btn.out {
@@ -1644,6 +1651,16 @@ transition-delay: 0ms; // @start - @child * @decrement
     }
 
   }*/
+.reset-text {
+  font-family: inherit !important;
+  font-style: inherit !important;
+  font-weight: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+  font-size: inherit !important;
+  color: inherit !important;
+  line-height: inherit !important;
+}
 .pointer-events--none {
   pointer-events: none !important;
 }
@@ -3210,16 +3227,6 @@ pre code {
   background: rgba(255, 255, 255, 0.18);
   color: #fff;
 }
-.reset-text {
-  font-family: inherit !important;
-  font-style: inherit !important;
-  font-weight: inherit !important;
-  letter-spacing: inherit !important;
-  text-transform: inherit !important;
-  font-size: inherit !important;
-  color: inherit !important;
-  line-height: inherit !important;
-}
 ul,
 ol {
   margin-bottom: 1rem;
@@ -3427,14 +3434,14 @@ img.icon--giant {
   background: #edf3f6;
 }
 .table tfoot th {
-  font-family: inherit !important;
-  font-style: inherit !important;
-  font-weight: inherit !important;
-  letter-spacing: inherit !important;
-  text-transform: inherit !important;
-  font-size: inherit !important;
-  color: inherit !important;
-  line-height: inherit !important;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
 }
 .table tfoot tr {
   border: 0;
@@ -3986,7 +3993,8 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
 .list > li:not(.custom) > .btn:hover,
 .list > li:not(.custom) > .btn.hover,
 .list > li:not(.custom) > .btn:active,
-.list > li:not(.custom) > .btn.active {
+.list > li:not(.custom) > .btn.active,
+.list > li:not(.custom) > .btn:focus {
   text-decoration: none;
 }
 .list > li:not(.custom) > .btn:before {
@@ -3996,13 +4004,15 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
 .list > li:not(.custom) > .btn:hover,
 .list > li:not(.custom) > .btn.hover,
 .list > li:not(.custom) > .btn:active,
-.list > li:not(.custom) > .btn.active {
+.list > li:not(.custom) > .btn.active,
+.list > li:not(.custom) > .btn:focus {
   color: #343a40;
 }
 .list > li:not(.custom) > .btn:hover:before,
 .list > li:not(.custom) > .btn.hover:before,
 .list > li:not(.custom) > .btn:active:before,
-.list > li:not(.custom) > .btn.active:before {
+.list > li:not(.custom) > .btn.active:before,
+.list > li:not(.custom) > .btn:focus:before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
@@ -4115,7 +4125,10 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
 .card--primary > .card_content .btn--link:active,
 .card--primary > .card_content a:not(.btn).active,
 .card--primary > .card_content .alink.active,
-.card--primary > .card_content .btn--link.active {
+.card--primary > .card_content .btn--link.active,
+.card--primary > .card_content a:not(.btn):focus,
+.card--primary > .card_content .alink:focus,
+.card--primary > .card_content .btn--link:focus {
   color: #f2f2f2;
 }
 .card--primary > .card_content .btn--primary-empty,
@@ -4191,7 +4204,8 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
 .link--underline:hover,
 .link--underline.hover,
 .link--underline:active,
-.link--underline.active {
+.link--underline.active,
+.link--underline:focus {
   text-decoration: underline;
 }
 .link--none {
@@ -4200,7 +4214,8 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
 .link--none:hover,
 .link--none.hover,
 .link--none:active,
-.link--none.active {
+.link--none.active,
+.link--none:focus {
   text-decoration: none;
 }
 .text--inverse a:not(.btn),
@@ -4220,7 +4235,10 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
 .text--inverse .btn--link:active,
 .text--inverse a:not(.btn).active,
 .text--inverse .alink.active,
-.text--inverse .btn--link.active {
+.text--inverse .btn--link.active,
+.text--inverse a:not(.btn):focus,
+.text--inverse .alink:focus,
+.text--inverse .btn--link:focus {
   color: #f2f2f2;
 }
 .text--inverse .btn--primary-empty,
@@ -4242,7 +4260,9 @@ a.hover,
 a:active,
 .alink:active,
 a.active,
-.alink.active {
+.alink.active,
+a:focus,
+.alink:focus {
   text-decoration: underline;
 }
 a:hover,
@@ -4252,7 +4272,9 @@ a.hover,
 a:active,
 .alink:active,
 a.active,
-.alink.active {
+.alink.active,
+a:focus,
+.alink:focus {
   color: #5e50ee;
 }
 a:hover,
@@ -4262,7 +4284,9 @@ a.hover,
 a:active,
 .alink:active,
 a.active,
-.alink.active {
+.alink.active,
+a:focus,
+.alink:focus {
   transition-property: color;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36,0,0,1);
@@ -4559,7 +4583,8 @@ img.caret.caret--horizontal.caret--inverse.active > span:before {
 .btn:hover,
 .btn.hover,
 .btn:active,
-.btn.active {
+.btn.active,
+.btn:focus {
   text-decoration: none;
 }
 .btn:before {
@@ -4569,13 +4594,15 @@ img.caret.caret--horizontal.caret--inverse.active > span:before {
 .btn:hover,
 .btn.hover,
 .btn:active,
-.btn.active {
+.btn.active,
+.btn:focus {
   color: #343a40;
 }
 .btn:hover:before,
 .btn.hover:before,
 .btn:active:before,
-.btn.active:before {
+.btn.active:before,
+.btn:focus:before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
@@ -4612,7 +4639,8 @@ img.caret.caret--horizontal.caret--inverse.active > span:before {
 .btn--primary:hover,
 .btn--primary.hover,
 .btn--primary:active,
-.btn--primary.active {
+.btn--primary.active,
+.btn--primary:focus {
   text-decoration: none;
 }
 .btn--primary:before {
@@ -4622,13 +4650,15 @@ img.caret.caret--horizontal.caret--inverse.active > span:before {
 .btn--primary:hover,
 .btn--primary.hover,
 .btn--primary:active,
-.btn--primary.active {
+.btn--primary.active,
+.btn--primary:focus {
   color: #fff;
 }
 .btn--primary:hover:before,
 .btn--primary.hover:before,
 .btn--primary:active:before,
-.btn--primary.active:before {
+.btn--primary.active:before,
+.btn--primary:focus:before {
   border-color: #7367F0;
   background: #887ef2;
 }
@@ -4643,7 +4673,8 @@ img.caret.caret--horizontal.caret--inverse.active > span:before {
 .btn--primary-empty:hover,
 .btn--primary-empty.hover,
 .btn--primary-empty:active,
-.btn--primary-empty.active {
+.btn--primary-empty.active,
+.btn--primary-empty:focus {
   text-decoration: none;
 }
 .btn--primary-empty:before {
@@ -4653,13 +4684,15 @@ img.caret.caret--horizontal.caret--inverse.active > span:before {
 .btn--primary-empty:hover,
 .btn--primary-empty.hover,
 .btn--primary-empty:active,
-.btn--primary-empty.active {
+.btn--primary-empty.active,
+.btn--primary-empty:focus {
   color: #fff;
 }
 .btn--primary-empty:hover:before,
 .btn--primary-empty.hover:before,
 .btn--primary-empty:active:before,
-.btn--primary-empty.active:before {
+.btn--primary-empty.active:before,
+.btn--primary-empty:focus:before {
   border-color: #7367F0;
   background: #887ef2;
 }
@@ -4674,7 +4707,8 @@ img.caret.caret--horizontal.caret--inverse.active > span:before {
 .btn--secondary:hover,
 .btn--secondary.hover,
 .btn--secondary:active,
-.btn--secondary.active {
+.btn--secondary.active,
+.btn--secondary:focus {
   text-decoration: none;
 }
 .btn--secondary:before {
@@ -4684,13 +4718,15 @@ img.caret.caret--horizontal.caret--inverse.active > span:before {
 .btn--secondary:hover,
 .btn--secondary.hover,
 .btn--secondary:active,
-.btn--secondary.active {
+.btn--secondary.active,
+.btn--secondary:focus {
   color: #343a40;
 }
 .btn--secondary:hover:before,
 .btn--secondary.hover:before,
 .btn--secondary:active:before,
-.btn--secondary.active:before {
+.btn--secondary.active:before,
+.btn--secondary:focus:before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
@@ -4705,7 +4741,8 @@ img.caret.caret--horizontal.caret--inverse.active > span:before {
 .btn--secondary-empty:hover,
 .btn--secondary-empty.hover,
 .btn--secondary-empty:active,
-.btn--secondary-empty.active {
+.btn--secondary-empty.active,
+.btn--secondary-empty:focus {
   text-decoration: none;
 }
 .btn--secondary-empty:before {
@@ -4715,13 +4752,15 @@ img.caret.caret--horizontal.caret--inverse.active > span:before {
 .btn--secondary-empty:hover,
 .btn--secondary-empty.hover,
 .btn--secondary-empty:active,
-.btn--secondary-empty.active {
+.btn--secondary-empty.active,
+.btn--secondary-empty:focus {
   color: #343a40;
 }
 .btn--secondary-empty:hover:before,
 .btn--secondary-empty.hover:before,
 .btn--secondary-empty:active:before,
-.btn--secondary-empty.active:before {
+.btn--secondary-empty.active:before,
+.btn--secondary-empty:focus:before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
@@ -4741,7 +4780,8 @@ img.caret.caret--horizontal.caret--inverse.active > span:before {
 .btn--link:hover,
 .btn--link.hover,
 .btn--link:active,
-.btn--link.active {
+.btn--link.active,
+.btn--link:focus {
   text-decoration: none;
 }
 .btn--link:before {
@@ -4752,7 +4792,8 @@ img.caret.caret--horizontal.caret--inverse.active > span:before {
 .btn--link:hover,
 .btn--link.hover,
 .btn--link:active,
-.btn--link.active {
+.btn--link.active,
+.btn--link:focus {
   color: #5e50ee;
 }
 .btn--link:active:before,
@@ -4875,7 +4916,8 @@ img.caret.caret--horizontal.caret--inverse.active > span:before {
 .btn--close:hover,
 .btn--close.hover,
 .btn--close:active,
-.btn--close.active {
+.btn--close.active,
+.btn--close:focus {
   text-decoration: none;
 }
 .btn--close:before {
@@ -4885,13 +4927,15 @@ img.caret.caret--horizontal.caret--inverse.active > span:before {
 .btn--close:hover,
 .btn--close.hover,
 .btn--close:active,
-.btn--close.active {
+.btn--close.active,
+.btn--close:focus {
   color: #fff;
 }
 .btn--close:hover:before,
 .btn--close.hover:before,
 .btn--close:active:before,
-.btn--close.active:before {
+.btn--close.active:before,
+.btn--close:focus:before {
   border-color: #7367F0;
   background: #887ef2;
 }
@@ -4957,7 +5001,8 @@ img.btn--close > span:after {
 .drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
 .drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
 .drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active {
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus {
   text-decoration: none;
 }
 .drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:before {
@@ -4967,13 +5012,15 @@ img.btn--close > span:after {
 .drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
 .drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
 .drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active {
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus {
   color: #fff;
 }
 .drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover:before,
 .drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover:before,
 .drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active:before,
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active:before {
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active:before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus:before {
   border-color: #7367F0;
   background: #887ef2;
 }
@@ -5060,7 +5107,8 @@ img.btn--close > span:after {
 .drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
 .drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
 .drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active {
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus {
   text-decoration: none;
 }
 .drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:before {
@@ -5070,13 +5118,15 @@ img.btn--close > span:after {
 .drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
 .drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
 .drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active {
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus {
   color: #fff;
 }
 .drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover:before,
 .drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover:before,
 .drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active:before,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active:before {
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active:before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus:before {
   border-color: #7367F0;
   background: #887ef2;
 }
@@ -5098,7 +5148,8 @@ img.btn--close > span:after {
 .drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
 .drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
 .drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active {
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus {
   text-decoration: none;
 }
 .drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:before {
@@ -5108,13 +5159,15 @@ img.btn--close > span:after {
 .drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
 .drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
 .drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active {
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus {
   color: #343a40;
 }
 .drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover:before,
 .drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover:before,
 .drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active:before,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active:before {
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active:before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus:before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
@@ -5136,7 +5189,8 @@ img.btn--close > span:after {
 .drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
 .drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
 .drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active {
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus {
   text-decoration: none;
 }
 .drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:before {
@@ -5146,13 +5200,15 @@ img.btn--close > span:after {
 .drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
 .drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
 .drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active {
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus {
   color: #fff;
 }
 .drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover:before,
 .drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover:before,
 .drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active:before,
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active:before {
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active:before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus:before {
   border-color: #7367F0;
   background: #887ef2;
 }
@@ -5199,7 +5255,8 @@ img.btn--close > span:after {
 .overlay .overlay_inner > .btn--close:hover,
 .overlay .overlay_inner > .btn--close.hover,
 .overlay .overlay_inner > .btn--close:active,
-.overlay .overlay_inner > .btn--close.active {
+.overlay .overlay_inner > .btn--close.active,
+.overlay .overlay_inner > .btn--close:focus {
   text-decoration: none;
 }
 .overlay .overlay_inner > .btn--close:before {
@@ -5209,13 +5266,15 @@ img.btn--close > span:after {
 .overlay .overlay_inner > .btn--close:hover,
 .overlay .overlay_inner > .btn--close.hover,
 .overlay .overlay_inner > .btn--close:active,
-.overlay .overlay_inner > .btn--close.active {
+.overlay .overlay_inner > .btn--close.active,
+.overlay .overlay_inner > .btn--close:focus {
   color: #fff;
 }
 .overlay .overlay_inner > .btn--close:hover:before,
 .overlay .overlay_inner > .btn--close.hover:before,
 .overlay .overlay_inner > .btn--close:active:before,
-.overlay .overlay_inner > .btn--close.active:before {
+.overlay .overlay_inner > .btn--close.active:before,
+.overlay .overlay_inner > .btn--close:focus:before {
   border-color: #7367F0;
   background: #887ef2;
 }
@@ -5240,7 +5299,8 @@ img.btn--close > span:after {
 .overlay--screen .overlay_inner > .btn--close:hover,
 .overlay--screen .overlay_inner > .btn--close.hover,
 .overlay--screen .overlay_inner > .btn--close:active,
-.overlay--screen .overlay_inner > .btn--close.active {
+.overlay--screen .overlay_inner > .btn--close.active,
+.overlay--screen .overlay_inner > .btn--close:focus {
   text-decoration: none;
 }
 .overlay--screen .overlay_inner > .btn--close:before {
@@ -5250,13 +5310,15 @@ img.btn--close > span:after {
 .overlay--screen .overlay_inner > .btn--close:hover,
 .overlay--screen .overlay_inner > .btn--close.hover,
 .overlay--screen .overlay_inner > .btn--close:active,
-.overlay--screen .overlay_inner > .btn--close.active {
+.overlay--screen .overlay_inner > .btn--close.active,
+.overlay--screen .overlay_inner > .btn--close:focus {
   color: #fff;
 }
 .overlay--screen .overlay_inner > .btn--close:hover:before,
 .overlay--screen .overlay_inner > .btn--close.hover:before,
 .overlay--screen .overlay_inner > .btn--close:active:before,
-.overlay--screen .overlay_inner > .btn--close.active:before {
+.overlay--screen .overlay_inner > .btn--close.active:before,
+.overlay--screen .overlay_inner > .btn--close:focus:before {
   border-color: #7367F0;
   background: #887ef2;
 }
@@ -5295,7 +5357,8 @@ img.btn--close > span:after {
 .overlay--pos .overlay_inner > .btn--close:hover,
 .overlay--pos .overlay_inner > .btn--close.hover,
 .overlay--pos .overlay_inner > .btn--close:active,
-.overlay--pos .overlay_inner > .btn--close.active {
+.overlay--pos .overlay_inner > .btn--close.active,
+.overlay--pos .overlay_inner > .btn--close:focus {
   text-decoration: none;
 }
 .overlay--pos .overlay_inner > .btn--close:before {
@@ -5305,13 +5368,15 @@ img.btn--close > span:after {
 .overlay--pos .overlay_inner > .btn--close:hover,
 .overlay--pos .overlay_inner > .btn--close.hover,
 .overlay--pos .overlay_inner > .btn--close:active,
-.overlay--pos .overlay_inner > .btn--close.active {
+.overlay--pos .overlay_inner > .btn--close.active,
+.overlay--pos .overlay_inner > .btn--close:focus {
   color: #fff;
 }
 .overlay--pos .overlay_inner > .btn--close:hover:before,
 .overlay--pos .overlay_inner > .btn--close.hover:before,
 .overlay--pos .overlay_inner > .btn--close:active:before,
-.overlay--pos .overlay_inner > .btn--close.active:before {
+.overlay--pos .overlay_inner > .btn--close.active:before,
+.overlay--pos .overlay_inner > .btn--close:focus:before {
   border-color: #7367F0;
   background: #887ef2;
 }
@@ -5473,7 +5538,8 @@ img.btn--close > span:after {
 .overlay--primary .overlay_inner > .btn--close:hover,
 .overlay--primary .overlay_inner > .btn--close.hover,
 .overlay--primary .overlay_inner > .btn--close:active,
-.overlay--primary .overlay_inner > .btn--close.active {
+.overlay--primary .overlay_inner > .btn--close.active,
+.overlay--primary .overlay_inner > .btn--close:focus {
   text-decoration: none;
 }
 .overlay--primary .overlay_inner > .btn--close:before {
@@ -5483,13 +5549,15 @@ img.btn--close > span:after {
 .overlay--primary .overlay_inner > .btn--close:hover,
 .overlay--primary .overlay_inner > .btn--close.hover,
 .overlay--primary .overlay_inner > .btn--close:active,
-.overlay--primary .overlay_inner > .btn--close.active {
+.overlay--primary .overlay_inner > .btn--close.active,
+.overlay--primary .overlay_inner > .btn--close:focus {
   color: #fff;
 }
 .overlay--primary .overlay_inner > .btn--close:hover:before,
 .overlay--primary .overlay_inner > .btn--close.hover:before,
 .overlay--primary .overlay_inner > .btn--close:active:before,
-.overlay--primary .overlay_inner > .btn--close.active:before {
+.overlay--primary .overlay_inner > .btn--close.active:before,
+.overlay--primary .overlay_inner > .btn--close:focus:before {
   border-color: #7367F0;
   background: #887ef2;
 }
@@ -5511,7 +5579,8 @@ img.btn--close > span:after {
 .overlay--secondary .overlay_inner > .btn--close:hover,
 .overlay--secondary .overlay_inner > .btn--close.hover,
 .overlay--secondary .overlay_inner > .btn--close:active,
-.overlay--secondary .overlay_inner > .btn--close.active {
+.overlay--secondary .overlay_inner > .btn--close.active,
+.overlay--secondary .overlay_inner > .btn--close:focus {
   text-decoration: none;
 }
 .overlay--secondary .overlay_inner > .btn--close:before {
@@ -5521,13 +5590,15 @@ img.btn--close > span:after {
 .overlay--secondary .overlay_inner > .btn--close:hover,
 .overlay--secondary .overlay_inner > .btn--close.hover,
 .overlay--secondary .overlay_inner > .btn--close:active,
-.overlay--secondary .overlay_inner > .btn--close.active {
+.overlay--secondary .overlay_inner > .btn--close.active,
+.overlay--secondary .overlay_inner > .btn--close:focus {
   color: #343a40;
 }
 .overlay--secondary .overlay_inner > .btn--close:hover:before,
 .overlay--secondary .overlay_inner > .btn--close.hover:before,
 .overlay--secondary .overlay_inner > .btn--close:active:before,
-.overlay--secondary .overlay_inner > .btn--close.active:before {
+.overlay--secondary .overlay_inner > .btn--close.active:before,
+.overlay--secondary .overlay_inner > .btn--close:focus:before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
@@ -5549,7 +5620,8 @@ img.btn--close > span:after {
 .overlay--white .overlay_inner > .btn--close:hover,
 .overlay--white .overlay_inner > .btn--close.hover,
 .overlay--white .overlay_inner > .btn--close:active,
-.overlay--white .overlay_inner > .btn--close.active {
+.overlay--white .overlay_inner > .btn--close.active,
+.overlay--white .overlay_inner > .btn--close:focus {
   text-decoration: none;
 }
 .overlay--white .overlay_inner > .btn--close:before {
@@ -5559,13 +5631,15 @@ img.btn--close > span:after {
 .overlay--white .overlay_inner > .btn--close:hover,
 .overlay--white .overlay_inner > .btn--close.hover,
 .overlay--white .overlay_inner > .btn--close:active,
-.overlay--white .overlay_inner > .btn--close.active {
+.overlay--white .overlay_inner > .btn--close.active,
+.overlay--white .overlay_inner > .btn--close:focus {
   color: #fff;
 }
 .overlay--white .overlay_inner > .btn--close:hover:before,
 .overlay--white .overlay_inner > .btn--close.hover:before,
 .overlay--white .overlay_inner > .btn--close:active:before,
-.overlay--white .overlay_inner > .btn--close.active:before {
+.overlay--white .overlay_inner > .btn--close.active:before,
+.overlay--white .overlay_inner > .btn--close:focus:before {
   border-color: #7367F0;
   background: #887ef2;
 }
@@ -5641,7 +5715,8 @@ img.btn--close > span:after {
 .slider_pagination > li:not(.custom) > .btn:hover,
 .slider_pagination > li:not(.custom) > .btn.hover,
 .slider_pagination > li:not(.custom) > .btn:active,
-.slider_pagination > li:not(.custom) > .btn.active {
+.slider_pagination > li:not(.custom) > .btn.active,
+.slider_pagination > li:not(.custom) > .btn:focus {
   text-decoration: none;
 }
 .slider_pagination > li:not(.custom) > .btn:before {
@@ -5651,13 +5726,15 @@ img.btn--close > span:after {
 .slider_pagination > li:not(.custom) > .btn:hover,
 .slider_pagination > li:not(.custom) > .btn.hover,
 .slider_pagination > li:not(.custom) > .btn:active,
-.slider_pagination > li:not(.custom) > .btn.active {
+.slider_pagination > li:not(.custom) > .btn.active,
+.slider_pagination > li:not(.custom) > .btn:focus {
   color: #343a40;
 }
 .slider_pagination > li:not(.custom) > .btn:hover:before,
 .slider_pagination > li:not(.custom) > .btn.hover:before,
 .slider_pagination > li:not(.custom) > .btn:active:before,
-.slider_pagination > li:not(.custom) > .btn.active:before {
+.slider_pagination > li:not(.custom) > .btn.active:before,
+.slider_pagination > li:not(.custom) > .btn:focus:before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
@@ -5701,7 +5778,8 @@ img.btn--close > span:after {
 .slider_pagination [data-xt-pag]:hover,
 .slider_pagination [data-xt-pag].hover,
 .slider_pagination [data-xt-pag]:active,
-.slider_pagination [data-xt-pag].active {
+.slider_pagination [data-xt-pag].active,
+.slider_pagination [data-xt-pag]:focus {
   z-index: 2;
 }
 .slider_pagination [data-xt-pag].out {
@@ -5740,7 +5818,8 @@ img.btn--close > span:after {
 .slider_pagination [data-xt-pag]:hover,
 .slider_pagination [data-xt-pag].hover,
 .slider_pagination [data-xt-pag]:active,
-.slider_pagination [data-xt-pag].active {
+.slider_pagination [data-xt-pag].active,
+.slider_pagination [data-xt-pag]:focus {
   text-decoration: none;
 }
 .slider_pagination [data-xt-pag]:before {
@@ -5750,13 +5829,15 @@ img.btn--close > span:after {
 .slider_pagination [data-xt-pag]:hover,
 .slider_pagination [data-xt-pag].hover,
 .slider_pagination [data-xt-pag]:active,
-.slider_pagination [data-xt-pag].active {
+.slider_pagination [data-xt-pag].active,
+.slider_pagination [data-xt-pag]:focus {
   color: #343a40;
 }
 .slider_pagination [data-xt-pag]:hover:before,
 .slider_pagination [data-xt-pag].hover:before,
 .slider_pagination [data-xt-pag]:active:before,
-.slider_pagination [data-xt-pag].active:before {
+.slider_pagination [data-xt-pag].active:before,
+.slider_pagination [data-xt-pag]:focus:before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
@@ -6027,7 +6108,7 @@ transform: translateX(-1.5rem);
 transition-property: all;
 transition-duration: @time--medium;
 transition-timing-function: @bez--out;
-&:hover, &.hover, &:active, &.active {
+&:hover, &.hover, &:active, &.active, &:focus {
   opacity: 1;
   transform: translateX(0);
   transition-property: all;
@@ -6040,7 +6121,7 @@ transition-timing-function: @bez--out;
 */
 /* USAGE:
 .anim-opacity.active();
-&:hover, &.hover, &:active, &.active {
+&:hover, &.hover, &:active, &.active, &:focus {
   .anim-opacity.out();
 }
 */
@@ -6382,7 +6463,10 @@ transition-timing-function: @bez--out;
 .alert--primary > .alert_content .btn--link:active,
 .alert--primary > .alert_content a:not(.btn).active,
 .alert--primary > .alert_content .alink.active,
-.alert--primary > .alert_content .btn--link.active {
+.alert--primary > .alert_content .btn--link.active,
+.alert--primary > .alert_content a:not(.btn):focus,
+.alert--primary > .alert_content .alink:focus,
+.alert--primary > .alert_content .btn--link:focus {
   color: #f2f2f2;
 }
 .alert--primary > .alert_content .btn--primary-empty,
@@ -6432,7 +6516,10 @@ transition-timing-function: @bez--out;
 .alert--error > .alert_content .btn--link:active,
 .alert--error > .alert_content a:not(.btn).active,
 .alert--error > .alert_content .alink.active,
-.alert--error > .alert_content .btn--link.active {
+.alert--error > .alert_content .btn--link.active,
+.alert--error > .alert_content a:not(.btn):focus,
+.alert--error > .alert_content .alink:focus,
+.alert--error > .alert_content .btn--link:focus {
   color: #f2f2f2;
 }
 .alert--error > .alert_content .btn--primary-empty,

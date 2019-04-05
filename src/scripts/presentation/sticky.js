@@ -140,7 +140,7 @@ class Sticky extends Core {
   }
 
   /**
-   * element on handler
+   * element focusin handler
    * @param {Event} e
    */
   eventFocusInHandler(e) {
@@ -149,11 +149,14 @@ class Sticky extends Core {
     // handler
     for (let tr of self.targets) {
       let el = self.getElementsFromTarget(tr)[0];
-      let active = el.contains(e.target);
-      if (active) {
-        el.style[options.position] = '0px';
-      } else {
-        el.style[options.position] = Xt.dataStorage.get(el, self.componentNamespace + 'AddOld') + 'px';
+      // show element if is hiding on focus
+      if (el.classList.contains('sticky--hide')) {
+        let active = el.contains(e.target);
+        if (active) {
+          el.style[options.position] = '0px';
+        } else {
+          el.style[options.position] = Xt.dataStorage.get(el, self.componentNamespace + 'AddOld') + 'px';
+        }
       }
     }
   }

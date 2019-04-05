@@ -66,6 +66,9 @@
   .generate-utils(@breakpoint:none) {
     & when (@breakpoint = none) {
       // various
+      .reset-text {
+        .reset-text() !important;
+      }
       .pointer-events--none {
         .pointer-events--none() !important;
       }

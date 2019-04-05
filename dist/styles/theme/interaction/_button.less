@@ -62,7 +62,7 @@
     border-color: @primary;
     background: @primary;
   }
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active, &:focus {
     color: @text--inverse;
     &@{btn--design} {
       border-color: @primary;
@@ -84,7 +84,7 @@
     border-color: transparent;
     background: transparent;
   }
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active, &:focus {
     color: @text--inverse;
     &@{btn--design} {
       border-color: @primary;
@@ -106,7 +106,7 @@
     border-color: @secondary;
     background: @secondary;
   }
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active, &:focus {
     color: @text;
     &@{btn--design} {
       border-color: darken(@secondary, @perc--sm);
@@ -128,7 +128,7 @@
     border-color: transparent;
     background: transparent;
   }
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active, &:focus {
     color: @text;
     &@{btn--design} {
       border-color: darken(@secondary, @perc--sm);
@@ -158,7 +158,7 @@
   }
   // styles
   color: @gray--500;
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active, &:focus {
     color: darken(@primary, @perc--xs);
   }
   // effect

@@ -4,14 +4,14 @@
 
 .link--underline {
   text-decoration: none;
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active, &:focus {
     text-decoration: underline;
   }
 }
 
 .link--none {
   text-decoration: none;
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active, &:focus {
     text-decoration: none;
   }
 }
@@ -25,7 +25,7 @@
   a:not(.btn), .alink, .btn--link {
     color: @text--inverse;
     text-decoration: underline;
-    &:hover, &.hover, &:active, &.active {
+    &:hover, &.hover, &:active, &.active, &:focus {
       color: darken(@text--inverse, @perc--xs);
     }
   }
@@ -44,14 +44,14 @@ a, .alink {
   .link--underline();
   // styles
   color: @primary;
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active, &:focus {
     color: darken(@primary, @perc--xs);
   }
   // animation
   transition-property: color;
   transition-duration: @time--medium;
   transition-timing-function: @bez--out;
-  &:hover, &.hover, &:active, &.active {
+  &:hover, &.hover, &:active, &.active, &:focus {
     transition-property: color;
     transition-duration: @time--medium;
     transition-timing-function: @bez--in;
