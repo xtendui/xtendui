@@ -131,93 +131,101 @@ class Slider extends Core {
     }
     // only one call per group
     for (let slide of self.targets) {
-      Xt.dataStorage.remove(slide, self.componentNamespace + 'DraggerInitialDone');
       Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideOnDone');
     }
     // dragger
     if (self.dragger) {
       self.destroyElements.push(self.dragger);
     }
+    // initSliderPos
+    if (self.dragger) {
+      self.initSliderPos();
+    }
     // elements
     self.initScopeElements();
   }
 
   /**
-   * init dragger slide
-   * @param {Node|HTMLElement|EventTarget|Window} slide
+   * init slider group positions
    */
-  initDraggerSlide(slide) {
+  initSliderPos() {
     let self = this;
     let options = self.options;
-    // save vars
-    if (!Xt.dataStorage.get(slide, self.componentNamespace + 'DraggerInitialDone') && Xt.visible(slide)) {
-      // vars
-      let targets = self.getTargets(slide);
-      let slideLeft = slide.offsetLeft;
-      let slideWidth = slide.offsetWidth;
-      let slideHeight = slide.offsetHeight;
-      // group
-      let group = slide.getAttribute('data-xt-group');
-      if (group) {
+    // reset
+    for (let slide of self.targets) {
+      Xt.dataStorage.remove(slide, self.componentNamespace + 'GroupPosDone');
+    }
+    // set
+    for (let slide of self.targets) {
+      if (!Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPosDone') && Xt.visible(slide)) {
         // vars
-        slideLeft = Infinity;
-        slideWidth = 0;
-        slideHeight = 0;
-        for (let [i, target] of targets.entries()) {
-          slideLeft = target.offsetLeft < slideLeft ? slide.offsetLeft : slideLeft;
-          slideWidth += target.offsetWidth;
-          let h = target.offsetHeight;
-          slideHeight = h > slideHeight ? h : slideHeight;
-          // fix position with negative margin on initial render
-          if (i === 0 && slideLeft < 0) {
-            self.detail.fixNegativeMargin = target.offsetLeft;
+        let targets = self.getTargets(slide);
+        let slideLeft = slide.offsetLeft;
+        let slideWidth = slide.offsetWidth;
+        let slideHeight = slide.offsetHeight;
+        // group
+        let group = slide.getAttribute('data-xt-group');
+        if (group) {
+          // vars
+          slideLeft = Infinity;
+          slideWidth = 0;
+          slideHeight = 0;
+          for (let [i, target] of targets.entries()) {
+            slideLeft = target.offsetLeft < slideLeft ? slide.offsetLeft : slideLeft;
+            slideWidth += target.offsetWidth;
+            let h = target.offsetHeight;
+            slideHeight = h > slideHeight ? h : slideHeight;
+            // fix position with negative margin on initial render
+            if (i === 0 && slideLeft < 0) {
+              self.detail.fixNegativeMargin = target.offsetLeft;
+            }
+            if (i === 0 && self.detail.fixNegativeMargin) {
+              slideLeft -= self.detail.fixNegativeMargin;
+            }
           }
-          if (i === 0 && self.detail.fixNegativeMargin) {
-            slideLeft -= self.detail.fixNegativeMargin;
+          for (let target of targets) {
+            Xt.dataStorage.put(target, self.componentNamespace + 'GroupPosDone', true);
+            Xt.dataStorage.put(target, self.componentNamespace + 'groupHeight', slideHeight);
           }
+        } else {
+          Xt.dataStorage.put(slide, self.componentNamespace + 'GroupPosDone', true);
         }
-        for (let target of targets) {
-          Xt.dataStorage.put(target, self.componentNamespace + 'DraggerInitialDone', true);
-          Xt.dataStorage.put(target, self.componentNamespace + 'groupHeight', slideHeight);
+        // pos with alignment
+        let pos;
+        if (options.align === 'center') {
+          pos = self.dragger.offsetWidth / 2 - slideLeft - slideWidth / 2;
+        } else if (options.align === 'left') {
+          pos = -slideLeft;
+          pos = pos > 0 ? 0 : pos; // @FIX initial value sometimes is wrong
+        } else if (options.align === 'right') {
+          pos = -slideLeft + self.dragger.offsetWidth - slideWidth;
         }
-      } else {
-        Xt.dataStorage.put(slide, self.componentNamespace + 'DraggerInitialDone', true);
-      }
-      // pos with alignment
-      let pos;
-      if (options.align === 'center') {
-        pos = self.dragger.offsetWidth / 2 - slideLeft - slideWidth / 2;
-      } else if (options.align === 'left') {
-        pos = -slideLeft;
-        pos = pos > 0 ? 0 : pos; // @FIX initial value sometimes is wrong
-      } else if (options.align === 'right') {
-        pos = -slideLeft + self.dragger.offsetWidth - slideWidth;
-      }
-      // pos with contain
-      if (options.contain) {
-        let min = 0;
-        let slideLast = self.targets[self.targets.length - 1];
-        let slideLastLeft = slideLast.offsetLeft;
-        let slideLastWidth = slideLast.offsetWidth;
-        let max = -slideLastLeft + self.dragger.offsetWidth - slideLastWidth;
-        pos = pos > min ? min : pos;
-        pos = pos < max ? max : pos;
-      }
-      // save pos
-      if (group) {
-        for (let target of targets) {
-          Xt.dataStorage.put(target, self.componentNamespace + 'GroupPos', pos);
+        // pos with contain
+        if (options.contain) {
+          let min = 0;
+          let slideLast = self.targets[self.targets.length - 1];
+          let slideLastLeft = slideLast.offsetLeft;
+          let slideLastWidth = slideLast.offsetWidth;
+          let max = -slideLastLeft + self.dragger.offsetWidth - slideLastWidth;
+          pos = pos > min ? min : pos;
+          pos = pos < max ? max : pos;
         }
-      } else {
-        Xt.dataStorage.put(slide, self.componentNamespace + 'GroupPos', pos);
+        // save pos
+        if (group) {
+          for (let target of targets) {
+            target.dataset['groupPos'] = pos.toString();
+          }
+        } else {
+          slide.dataset['groupPos'] = pos.toString();
+        }
       }
-      // wheel
-      if (options.wheel && options.wheel.selector) {
-        let first = self.targets[0];
-        let last = self.targets[self.targets.length - 1];
-        self.detail.wheelMin = -Xt.dataStorage.get(first, self.componentNamespace + 'GroupPos');
-        self.detail.wheelMax = -Xt.dataStorage.get(last, self.componentNamespace + 'GroupPos');
-      }
+    }
+    // wheel
+    if (options.wheel && options.wheel.selector) {
+      let first = self.targets[0];
+      let last = self.targets[self.targets.length - 1];
+      self.detail.wheelMin = -parseFloat(first.dataset['groupPos']);
+      self.detail.wheelMax = -parseFloat(last.dataset['groupPos']);
     }
   }
 
@@ -455,17 +463,16 @@ class Slider extends Core {
     for (let target of targets) {
       Xt.dataStorage.put(target, self.componentNamespace + 'SlideOnDone', true);
     }
-    // initDraggerSlide
-    if (dragger) {
-      Xt.dataStorage.remove(slide, self.componentNamespace + 'DraggerInitialDone');
-      self.initDraggerSlide(slide);
+    // initSliderPos
+    if (self.dragger) {
+      self.initSliderPos();
     }
     // autoHeight
     if (self.autoHeight) {
       self.eventAutoHeight(slide);
     }
     // val
-    self.detail.xPos = self.detail.xPosCurrent = self.detail.xPosReal = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPos');
+    self.detail.xPos = self.detail.xPosCurrent = self.detail.xPosReal = parseFloat(slide.dataset['groupPos']);
     // dragger
     if (dragger) {
       // prevent alignment animation
@@ -503,9 +510,6 @@ class Slider extends Core {
     let slide = e.target;
     // disable links not active slide
     slide.classList.add('links--none');
-    // disable links
-    dragger.classList.add('links--none');
-    dragger.classList.add('jumps--none');
     // only one call per group
     let targets = self.getTargets(slide);
     for (let target of targets) {
@@ -692,11 +696,12 @@ class Slider extends Core {
       dragger.classList.add('jumps--none');
     }
     // overflow
-    let first = self.targets[0];
-    let last = self.targets[self.targets.length - 1];
-    let min = Xt.dataStorage.get(first, self.componentNamespace + 'GroupPos');
-    let max = Xt.dataStorage.get(last, self.componentNamespace + 'GroupPos');
     if (options.drag.overflow) {
+      let first = self.targets[0];
+      let last = self.targets[self.targets.length - 1];
+      let min = parseFloat(first.dataset['groupPos']);
+      let max = parseFloat(last.dataset['groupPos']);
+      // overflow
       let fncOverflow = options.drag.overflow;
       if (typeof fncOverflow === 'string') {
         fncOverflow = new Function('overflow', fncOverflow);

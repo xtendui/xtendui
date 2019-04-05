@@ -178,13 +178,13 @@ class Scroll extends Core {
           el.style.width = tr.offsetWidth + 'px';
         }
         // position
-        self.detail.distance = Xt.windowPercent(options.scroll.distance);
-        self.detail.trigger = Xt.windowPercent(options.scroll.trigger);
-        self.detail.start  = self.detail.startReal = elTop - windowHeight + Xt.windowPercent(options.scroll.start) + self.detail.distance;
+        self.detail.distance = Xt.windowPercent(options.distance);
+        self.detail.trigger = Xt.windowPercent(options.trigger);
+        self.detail.start  = self.detail.startReal = elTop - windowHeight + Xt.windowPercent(options.start) + self.detail.distance;
         self.detail.start = self.detail.start < self.detail.trigger ? self.detail.trigger : self.detail.start; // limit fixes activation on page top
-        self.detail.end = self.detail.endReal = options.scroll.end ? self.detail.start + Xt.windowPercent(options.scroll.end) - self.detail.distance : elTop + elHeight + self.detail.trigger - self.detail.distance;
+        self.detail.end = self.detail.endReal = options.end ? self.detail.start + Xt.windowPercent(options.end) - self.detail.distance : elTop + elHeight + self.detail.trigger - self.detail.distance;
         self.detail.end = self.detail.end > self.detail.trigger + scrollHeight - window.innerHeight ? self.detail.trigger + scrollHeight - window.innerHeight : self.detail.end; // limit fixes deactivation on page bottom
-        self.detail.min = self.detail.end - Xt.windowPercent(options.scroll.min);
+        self.detail.fallback = self.detail.end - Xt.windowPercent(options.fallback);
         self.detail.start = self.detail.start > self.detail.min ? self.detail.min : self.detail.start; // limit fixes deactivation on page bottom
         // ratio
         let current = scrollTop + self.detail.trigger - self.detail.start;
@@ -286,13 +286,11 @@ Scroll.optionsDefault = {
   "on": "scroll resize",
   "instant": true,
   "sticky": false,
-  "scroll": {
-    "distance": 0,
-    "trigger": "100%",
-    "start": "100%",
-    "end": false,
-    "min": 100
-  },
+  "distance": 0,
+  "trigger": "100%",
+  "start": "100%",
+  "end": false,
+  "fallback": 100,
   "aria": false
 };
 

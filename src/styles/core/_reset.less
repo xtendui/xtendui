@@ -36,8 +36,11 @@ a, button, .alink {
   // enables pointer events
   display: inline-block;
   // prevent browser drag
+  -webkit-user-select: none;
   -webkit-user-drag: none;
   -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   user-drag: none;
 }
 
@@ -53,8 +56,11 @@ img {
   display: inline-block;
   vertical-align: top; // fix inline-block spacing
   // prevent browser drag
+  -webkit-user-select: none;
   -webkit-user-drag: none;
   -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   user-drag: none;
 }
 

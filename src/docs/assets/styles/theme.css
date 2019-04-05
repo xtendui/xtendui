@@ -112,8 +112,11 @@ button,
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
+  -webkit-user-select: none;
   -webkit-user-drag: none;
   -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   user-drag: none;
 }
 button {
@@ -133,8 +136,11 @@ button {
 img {
   display: inline-block;
   vertical-align: top;
+  -webkit-user-select: none;
   -webkit-user-drag: none;
   -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   user-drag: none;
 }
 h1,

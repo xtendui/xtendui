@@ -2043,21 +2043,35 @@ class Core {
       }
       el = elFinal;
     }
-    // vars
-    if (!options.wheel.transform) {
+    // delta
+    let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY;
+    if (delta === 0) {
+      return;
+    }
+    if (e.deltaMode === 1) {
+      // deltaMode 1: by lines
+      delta *= 30;
+    } else if (e.deltaMode === 2) {
+      // deltaMode 2: by pages
       if (options.wheel.horizontal) {
-        self.detail.wheelCurrent = el.scrollLeft;
+        delta *= el.offsetWidth;
       } else {
-        self.detail.wheelCurrent = el.scrollTop;
-      }
-    } else {
-      if (options.wheel.horizontal) {
-        self.detail.wheelCurrent = -Xt.getTranslate(el)[0];
-      } else {
-        self.detail.wheelCurrent = -Xt.getTranslate(el)[1];
+        delta *= el.offsetHeight;
       }
     }
-    // limit
+    // factor
+    delta *= options.wheel.factor;
+    // instant
+    if (!options.wheel.friction) {
+      // wheel
+      if (delta < 0) {
+        self.goToNext(1);
+      } else if (delta > 0) {
+        self.goToPrev(1);
+      }
+      return false;
+    }
+    // calculate limit
     let min = self.detail.wheelMin || 0;
     let max = self.detail.wheelMax;
     if (!self.detail.wheelMax) {
@@ -2082,57 +2096,42 @@ class Core {
         }
       }
     }
-    // delta
-    let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY;
-    if (delta === 0) {
-      return;
-    }
-    if (e.deltaMode === 1) {
-      // deltaMode 1: by lines
-      delta *= 30;
-    } else if (e.deltaMode === 2) {
-      // deltaMode 2: by pages
-      if (options.wheel.horizontal) {
-        delta *= el.offsetWidth;
+    // calculate end
+    if (!self.detail.wheelMoving) {
+      // get current
+      if (!options.wheel.transform) {
+        if (options.wheel.horizontal) {
+          self.detail.wheelCurrent = el.scrollLeft;
+        } else {
+          self.detail.wheelCurrent = el.scrollTop;
+        }
       } else {
-        delta *= el.offsetHeight;
+        if (options.wheel.horizontal) {
+          self.detail.wheelCurrent = -Xt.getTranslate(el)[0];
+        } else {
+          self.detail.wheelCurrent = -Xt.getTranslate(el)[1];
+        }
       }
-    }
-    // factor
-    delta *= options.wheel.factor;
-    // vars
-    if (self.detail.wheelEnd) {
-      self.detail.wheelEnd = self.detail.wheelEnd - delta;
-    } else {
+      // set end
       self.detail.wheelEnd = self.detail.wheelCurrent - delta;
+    } else {
+      // set end
+      self.detail.wheelEnd = self.detail.wheelEnd - delta;
     }
+    // friction to limit
     if (options.wheel.limit) {
-      // friction to limit
+      // limit
       self.detail.wheelEnd = Math.max(min, Math.min(self.detail.wheelEnd, max));
     }
-    // instant
-    if (!options.wheel.friction) {
-      // wheel
-      if (delta < 0) {
-        self.goToNext(1);
-      } else if (delta > 0) {
-        self.goToPrev(1);
-      }
-      return false;
-    }
-    // friction
-    cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'WheelSmoothInitFrame'));
-    Xt.dataStorage.put(el, self.componentNamespace + 'WheelSmoothInitFrame', requestAnimationFrame(function () {
-      self.eventFrictionSmooth(el, min, max);
-    }));
     // moving
     if (!self.detail.wheelMoving) {
-      // moving
       self.detail.wheelMoving = true;
       // dispatch
       let detail = self.eDetailSet();
       detail.wheelX = -self.detail.wheelCurrent;
       el.dispatchEvent(new CustomEvent('wheelstart.xt', {detail: detail}));
+      // friction
+      self.eventFrictionSmooth(el, min, max);
     }
   }
 
@@ -2177,8 +2176,8 @@ class Core {
     if (self.detail.wheelCurrent > min && self.detail.wheelCurrent < max && // limit
       Math.abs(delta) >= options.wheel.frictionLimit) { // frictionLimit
       // friction
-      cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'SmoothFrame'));
-      Xt.dataStorage.put(el, self.componentNamespace + 'SmoothFrame', requestAnimationFrame(function () {
+      cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'WheelSmoothFrame'));
+      Xt.dataStorage.put(el, self.componentNamespace + 'WheelSmoothFrame', requestAnimationFrame(function () {
         self.eventFrictionSmooth(el, min, max);
       }));
       // dispatch
