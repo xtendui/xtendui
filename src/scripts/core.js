@@ -1334,6 +1334,7 @@ class Core {
     if (self.disabled && !self.initial) {
       return false;
     }
+    // start
     if (options.auto && options.auto.time) {
       // paused
       self.detail.autoPaused = false;
@@ -1368,6 +1369,11 @@ class Core {
   eventAutoStop() {
     let self = this;
     let options = self.options;
+    // disabled
+    if (self.disabled && !self.initial) {
+      return false;
+    }
+    // stop
     if (options.auto && options.auto.time) {
       // clear
       clearInterval(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoStartInterval'));
@@ -1383,6 +1389,11 @@ class Core {
   eventAutoPause() {
     let self = this;
     let options = self.options;
+    // disabled
+    if (self.disabled && !self.initial) {
+      return false;
+    }
+    // pause
     if (options.auto && options.auto.time) {
       // clear
       clearInterval(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoStartInterval'));
