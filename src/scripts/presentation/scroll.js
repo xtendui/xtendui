@@ -162,10 +162,7 @@ class Scroll extends Core {
     let scrollTop = scrollingElement.scrollTop;
     let windowHeight = Xt.windowHeight;
     // direction
-    self.detail.inverseForce = false;
-    if (scrollTop < self.detail.scrollTopOld) {
-      self.detail.inverseForce = true;
-    }
+    self.detail.inverseForce = scrollTop < self.detail.scrollTopOld;
     // loop
     for (let tr of self.targets) {
       let el = self.getElementsFromTarget(tr)[0];

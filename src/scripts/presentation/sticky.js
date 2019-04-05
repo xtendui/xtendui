@@ -114,6 +114,10 @@ class Sticky extends Core {
     let autoCloseHandler = Xt.dataStorage.set(self.object, 'hide' + '.' + self.namespace,
       Xt.autoClose.bind(this, self.object));
     self.object.addEventListener('hide.xt.sticky', autoCloseHandler);
+    // focusin
+    let focusInHandler = Xt.dataStorage.set(document, 'focusin' + '.' + self.namespace,
+      self.eventFocusInHandler.bind(self));
+    document.addEventListener('focusin', focusInHandler, Xt.passiveSupported ? {passive: true} : false);
   }
 
   //////////////////////
@@ -132,6 +136,25 @@ class Sticky extends Core {
       Xt.eventDelay(e, self.object, function () {
         self.eventSticky(e, initial);
       }, self.componentNamespace + 'Resize');
+    }
+  }
+
+  /**
+   * element on handler
+   * @param {Event} e
+   */
+  eventFocusInHandler(e) {
+    let self = this;
+    let options = self.options;
+    // handler
+    for (let tr of self.targets) {
+      let el = self.getElementsFromTarget(tr)[0];
+      let active = el.contains(e.target);
+      if (active) {
+        el.style[options.position] = '0px';
+      } else {
+        el.style[options.position] = Xt.dataStorage.get(el, self.componentNamespace + 'AddOld') + 'px';
+      }
     }
   }
 
@@ -160,12 +183,8 @@ class Sticky extends Core {
     let scrollingElement = document.scrollingElement;
     let scrollHeight = scrollingElement.scrollHeight;
     let scrollTop = scrollingElement.scrollTop;
-
     // direction
-    self.detail.inverseForce = false;
-    if (scrollTop < self.detail.scrollTopOld) {
-      self.detail.inverseForce = true;
-    }
+    self.detail.inverseForce = scrollTop < self.detail.scrollTopOld;
     // loop
     for (let tr of self.targets) {
       let el = self.getElementsFromTarget(tr)[0];

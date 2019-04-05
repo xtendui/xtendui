@@ -115,7 +115,16 @@ html:not(.xt-focus) {
   }
 }
 
-html.xt-focus {
+html.xt-focus--disable-forms {
+  input, select, textarea {
+    // focus disable
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+html.xt-focus:not(.xt-focus--disable-forms) {
   // focus chrome style
   input[type="checkbox"], input[type="radio"] {
     &:focus ~ .form-label:before {

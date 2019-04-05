@@ -104,8 +104,13 @@ textarea:-webkit-autofill:focus {
 html:not(.xt-focus) :focus {
   outline: 0;
 }
-html.xt-focus input[type="checkbox"]:focus ~ .form-label:before,
-html.xt-focus input[type="radio"]:focus ~ .form-label:before {
+html.xt-focus--disable-forms input:focus,
+html.xt-focus--disable-forms select:focus,
+html.xt-focus--disable-forms textarea:focus {
+  outline: 0;
+}
+html.xt-focus:not(.xt-focus--disable-forms) input[type="checkbox"]:focus ~ .form-label:before,
+html.xt-focus:not(.xt-focus--disable-forms) input[type="radio"]:focus ~ .form-label:before {
   outline-color: #4d90fe;
   outline-offset: -2px;
   outline-style: auto;
@@ -545,6 +550,10 @@ input[type="checkbox"]:not(.unstyled) ~ .form-label:after {
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(1,0,.64,1);
 }
+input[type="checkbox"]:not(.unstyled) ~ .form-label.focus:before,
+input[type="checkbox"]:not(.unstyled) ~ .form-label:focus:before {
+  border: 1px solid #343a40;
+}
 input[type="checkbox"]:not(.unstyled) ~ .form-label.active:before {
   transform: scale(1, 1);
   transition-property: transform;
@@ -662,6 +671,10 @@ input[type="radio"]:not(.unstyled) ~ .form-label:after {
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(1,0,.64,1);
+}
+input[type="radio"]:not(.unstyled) ~ .form-label.focus:before,
+input[type="radio"]:not(.unstyled) ~ .form-label:focus:before {
+  border: 1px solid #343a40;
 }
 input[type="radio"]:not(.unstyled) ~ .form-label.active:before {
   transform: scale(1, 1);
@@ -3800,6 +3813,12 @@ select.form-input--gray {
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(1,0,.64,1);
 }
+.checkbox.focus:before,
+.radio.focus:before,
+.checkbox:focus:before,
+.radio:focus:before {
+  border: 1px solid #343a40;
+}
 .checkbox.active:before,
 .radio.active:before {
   transform: scale(1, 1);
@@ -3867,6 +3886,9 @@ img.radio:after {
   width: auto;
   height: 1em;
 }
+input[type="checkbox"]:not(.unstyled):focus ~ .form-label:before {
+  border: 1px solid #343a40;
+}
 input[type="checkbox"]:not(.unstyled):checked ~ .form-label:before {
   transform: scale(1, 1);
   transition-property: transform;
@@ -3889,6 +3911,9 @@ input[type="checkbox"]:not(.unstyled):disabled ~ .form-label:before {
 }
 input[type="checkbox"]:not(.unstyled):disabled ~ .form-label:after {
   color: #9c9c92 !important;
+}
+input[type="radio"]:not(.unstyled):focus ~ .form-label:before {
+  border: 1px solid #343a40;
 }
 input[type="radio"]:not(.unstyled):checked ~ .form-label:before {
   transform: scale(1, 1);

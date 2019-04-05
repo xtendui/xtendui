@@ -272,6 +272,11 @@ legend {
     transition-duration: @time--medium;
     transition-timing-function: @bez--out;
   }
+  &.focus, &:focus {
+    &:before {
+      border: 1px solid @gray--750;
+    }
+  }
   &.active {
     &:before {
       transform: scale(1, 1);
@@ -314,6 +319,10 @@ legend {
 // pseudo
 
 input[type="checkbox"]:not(.unstyled) {
+  // focus
+  &:focus ~ .form-label {
+    .checkbox.focus();
+  }
   // active
   &:checked ~ .form-label {
     .checkbox.active();
@@ -325,6 +334,10 @@ input[type="checkbox"]:not(.unstyled) {
 }
 
 input[type="radio"]:not(.unstyled) {
+  // focus
+  &:focus ~ .form-label {
+    .radio.focus();
+  }
   // active
   &:checked ~ .form-label {
     .radio.active();
