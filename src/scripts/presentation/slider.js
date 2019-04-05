@@ -231,7 +231,7 @@ class Slider extends Core {
     let dragger = self.dragger;
     // targets
     for (let slide of self.targets) {
-      // disable links
+      // disable links not active slide
       slide.classList.add('links--none');
       // slide on
       let slideOnHandler = Xt.dataStorage.set(slide, 'on' + '.' + self.namespace,
@@ -456,7 +456,7 @@ class Slider extends Core {
       Xt.dataStorage.put(target, self.componentNamespace + 'SlideOnDone', true);
     }
     // initDraggerSlide
-    if (self.dragger) {
+    if (dragger) {
       Xt.dataStorage.remove(slide, self.componentNamespace + 'DraggerInitialDone');
       self.initDraggerSlide(slide);
     }
@@ -467,15 +467,15 @@ class Slider extends Core {
     // val
     self.detail.xPos = self.detail.xPosCurrent = self.detail.xPosReal = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPos');
     // dragger
-    if (self.dragger) {
+    if (dragger) {
       // prevent alignment animation
-      self.dragger.classList.remove('duration-none');
+      dragger.classList.remove('duration-none');
       // initial or resizing
       if (self.initial) {
         // prevent alignment animation
-        self.dragger.classList.add('duration-none');
+        dragger.classList.add('duration-none');
         requestAnimationFrame(function () {
-          self.dragger.classList.remove('duration-none');
+          dragger.classList.remove('duration-none');
         });
       }
       // drag position
@@ -487,8 +487,9 @@ class Slider extends Core {
       });
       // disable links
       dragger.classList.remove('jumps--none');
+      dragger.classList.remove('links--none');
     }
-    // disable links
+    // disable links not active slide
     slide.classList.remove('links--none');
   }
 
@@ -500,8 +501,11 @@ class Slider extends Core {
   eventSlideOff(dragger, e) {
     let self = this;
     let slide = e.target;
-    // disable links
+    // disable links not active slide
     slide.classList.add('links--none');
+    // disable links
+    dragger.classList.add('links--none');
+    dragger.classList.add('jumps--none');
     // only one call per group
     let targets = self.getTargets(slide);
     for (let target of targets) {
@@ -548,7 +552,7 @@ class Slider extends Core {
     // auto
     self.eventAutoPause();
     // prevent dragging animation
-    self.dragger.classList.add('duration-none');
+    dragger.classList.add('duration-none');
     // logic
     self.detail.xVelocity = null;
     self.detail.xVelocityNext = null;
@@ -733,7 +737,7 @@ class Slider extends Core {
     let options = self.options;
     let xPosCurrent = self.detail.xPosCurrent || 0;
     // prevent dragging animation
-    self.dragger.classList.remove('duration-none');
+    dragger.classList.remove('duration-none');
     // only one call per group
     let currents = self.getCurrents();
     for (let current of currents) {
@@ -785,8 +789,9 @@ class Slider extends Core {
       self.detail.xPos = self.detail.xPosCurrent;
       // drag position
       dragger.style.transform = 'translateX(' + self.detail.xPosCurrent + 'px)';
-      // disable drag
+      // disable drag and links
       Xt.animTimeout(dragger, function () {
+        // disable drag
         dragger.classList.remove('pointer-events--none');
       });
       // listener dispatch
@@ -837,7 +842,7 @@ Slider.optionsDefault = {
   "drag": {
     "dragger": ".slides_inner",
     "threshold": 100,
-    "linkThreshold": 25,
+    "linkThreshold": 50,
     "factor": 1,
     "friction": "return Math.pow(velocity, 0.95)",
     "frictionLimit": 1.5,
