@@ -1099,6 +1099,11 @@ addEventListener('resize', function(e) {
 
 Xt.windowHeightSet = function() {
   Xt.windowHeight = window.innerHeight;
+  /* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+   * height: 100vh;
+   * height: calc(var(--vh, 1vh) * 100);
+   */
+  document.documentElement.style.setProperty('--vh', (Xt.windowHeight * 0.01) + 'px');
 };
 
 /**
