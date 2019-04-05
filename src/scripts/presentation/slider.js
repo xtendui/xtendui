@@ -650,7 +650,7 @@ class Slider extends Core {
         self.detail.xStart = self.detail.eDragstart.detail.wheelX;
       } else if (self.detail.eDragstart.clientX !== undefined) {
         self.detail.xStart = self.detail.eDragstart.clientX;
-      } else if (self.detail.eDragstart.touches !== undefined) {
+      } else if (self.detail.eDragstart.touches.length) {
         self.detail.xStart = self.detail.eDragstart.touches[0].clientX;
       }
       self.detail.xCurrent = xPos + self.detail.xStart - xPosCurrent;
@@ -661,12 +661,16 @@ class Slider extends Core {
       let xPosOld = xPos || 0;
       if (self.detail.eDragstart.detail.wheelX !== undefined) {
         self.detail.xStart = self.detail.eDragstart.detail.wheelX;
-        self.detail.xCurrent = self.detail.eCurrent.detail.wheelX;
       } else if (self.detail.eDragstart.clientX !== undefined) {
         self.detail.xStart = self.detail.eDragstart.clientX;
-        self.detail.xCurrent = self.detail.eCurrent.clientX;
-      } else if (self.detail.eDragstart.touches !== undefined) {
+      } else if (self.detail.eDragstart.touches.length) {
         self.detail.xStart = self.detail.eDragstart.touches[0].clientX;
+      }
+      if (self.detail.eCurrent.detail.wheelX !== undefined) {
+        self.detail.xCurrent = self.detail.eCurrent.detail.wheelX;
+      } else if (self.detail.eCurrent.clientX !== undefined) {
+        self.detail.xCurrent = self.detail.eCurrent.clientX;
+      } else if (self.detail.eCurrent.touches.length) {
         self.detail.xCurrent = self.detail.eCurrent.touches[0].clientX;
       }
       xPos = xPosCurrent + (self.detail.xCurrent - self.detail.xStart) * options.drag.factor;
