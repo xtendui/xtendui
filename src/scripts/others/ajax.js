@@ -82,7 +82,7 @@ class Ajax extends Core {
    * init start
    * @param {Boolean} saveCurrents
    */
-  initStart(saveCurrents) {
+  initStart(saveCurrents = false) {
     let self = this;
     // initial
     self.initial = true;

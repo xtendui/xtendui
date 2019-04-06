@@ -1128,11 +1128,8 @@ try {
 // export
 //////////////////////
 
-if (typeof define === 'function' && define.amd) {
-  define(['xt'], Xt);
-} else if (typeof exports === 'object') {
-  module.exports = Xt;
-}
-
+typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = Xt :
+typeof define === 'function' && define.amd ? define(['xt'], Xt) :
 global.Xt = Xt;
+
 export default Xt;

@@ -3,7 +3,6 @@
 //////////////////////
 
 import ClipboardJS from 'clipboard';
-import Xt from '../../../scripts/xtend';
 
 //////////////////////
 // vars
