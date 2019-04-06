@@ -202,13 +202,6 @@ html:not(.xt-focus) :focus,
 html.xt-focus--disable :focus {
   outline: 0;
 }
-html.xt-focus:not(.xt-focus--disable) input[type="checkbox"]:focus ~ .form-label:before,
-html.xt-focus:not(.xt-focus--disable) input[type="radio"]:focus ~ .form-label:before {
-  outline-color: #4d90fe;
-  outline-offset: -2px;
-  outline-style: auto;
-  outline-width: 5px;
-}
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4634,6 +4627,16 @@ img.caret.caret--horizontal.caret--inverse.active > span:before {
   animation-duration: 500ms;
   animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
+}
+html.xt-focus:not(.xt-focus--disable) :focus {
+  outline-color: #4d90fe;
+}
+html.xt-focus:not(.xt-focus--disable) input[type="checkbox"]:focus ~ .form-label:before,
+html.xt-focus:not(.xt-focus--disable) input[type="radio"]:focus ~ .form-label:before {
+  outline-color: #4d90fe;
+  outline-offset: -2px;
+  outline-style: auto;
+  outline-width: 5px;
 }
 .btn {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
