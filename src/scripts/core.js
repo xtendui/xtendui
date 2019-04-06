@@ -580,7 +580,7 @@ class Core {
     if (options.wheel && options.wheel.selector) {
       self.detail.wheels = options.wheel.selector === 'object' ? Xt.arrSingle(self.object) :
         options.wheel.selector === 'scrollingElement' ? Xt.arrSingle(document.scrollingElement) :
-        self.object.querySelectorAll(options.wheel.selector);
+          self.object.querySelectorAll(options.wheel.selector);
       self.destroyElements.push(...self.detail.wheels);
       for (let wheel of self.detail.wheels) {
         let eWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
@@ -1258,7 +1258,7 @@ class Core {
       let targetsInner = self.getInside(targets, options.targetsInner);
       element.blur(); // fix :focus styles
       // currentIndex after a frame for sequential events
-      requestAnimationFrame( function() {
+      requestAnimationFrame(function () {
         if (self.getCurrents().length === 0) {
           self.currentIndex = null;
         }

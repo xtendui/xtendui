@@ -1074,7 +1074,7 @@ Xt.eventDelay = function (e, element, func, prefix = '', instant = false) {
       func(e);
     } else {
       clearTimeout(Xt.dataStorage.get(element, 'xt' + e.type + prefix + 'Timeout'));
-      Xt.dataStorage.put(element, 'xt' + e.type + prefix + 'Timeout',  setTimeout(function () {
+      Xt.dataStorage.put(element, 'xt' + e.type + prefix + 'Timeout', setTimeout(function () {
         // func
         func(e);
       }, delay))
@@ -1091,13 +1091,13 @@ Xt.dataStorage.put(document.documentElement, 'xtEventDelay', window.innerWidth);
  * Xt.windowHeight
  * vindow height value only on width resize to fix mobile window height changes
  */
-addEventListener('resize', function(e) {
+addEventListener('resize', function (e) {
   Xt.eventDelay(e, document.documentElement, function () {
     Xt.windowHeightSet();
   }, 'xtWindowHeight' + 'Resize', true);
 });
 
-Xt.windowHeightSet = function() {
+Xt.windowHeightSet = function () {
   Xt.windowHeight = window.innerHeight;
   /* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
    * height: 100vh;

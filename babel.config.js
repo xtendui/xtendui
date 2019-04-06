@@ -3,7 +3,7 @@ module.exports = {
     ['@babel/preset-env',
       {
         modules: 'commonjs',
-        targets: {browsers: ['>0.25%', 'Explorer 11', 'not op_mini all' ]}
+        targets: {browsers: ['>0.25%', 'Explorer 11', 'not op_mini all']}
       }
     ]
   ],
