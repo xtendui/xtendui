@@ -194,6 +194,7 @@ class Ajax extends Core {
       url = element.getAttribute('href').split('#')[0];
     }
     // location
+    self.locationFrom = self.locationTo || self.locationFrom; // fix fast change page
     self.locationTo = new URL(url, location);
     // autoClose
     dispatchEvent(new CustomEvent('autoClose.xt'));
@@ -203,19 +204,21 @@ class Ajax extends Core {
     // duration
     self.detail.requestDate = new Date();
     clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AjaxDurationTimeout'));
+    if (self.detail.request) { self.detail.request.abort(); } // fix fast change page
     requestAnimationFrame( function() {
       self.detail.requestDuration = options.duration || Xt.animTime(self.queryElement);
       // call
       let request = new XMLHttpRequest();
       request.open('GET', url, true);
       request.onload = function () {
-        self.ajaxResponse(element, url, request);
+        self.ajaxResponse(element, url, request, self.detail.requestDate);
       };
       request.onerror = function () {
-        self.ajaxResponse(element, url, request);
+        self.ajaxResponse(element, url, request, self.detail.requestDate);
       };
       console.debug('xt-ajax request:', url);
       request.send();
+      self.detail.request = request;
     });
   }
 
@@ -224,20 +227,20 @@ class Ajax extends Core {
    * @param {Node|HTMLElement|EventTarget|Window} element Base node
    * @param {String} url Url to get
    * @param {XMLHttpRequest} request Html response
+   * @param {Date} date Html response
    */
-  ajaxResponse(element, url, request) {
+  ajaxResponse(element, url, request, date) {
     let self = this;
     // dispatch
     let detail = self.eDetailSet();
-    self.detail.request = request;
     self.object.dispatchEvent(new CustomEvent('response.xt.ajax', {detail: detail}));
     // duration
-    self.detail.requestDuration -= new Date() - self.detail.requestDate;
+    self.detail.requestDuration -= new Date() - date;
     if (self.detail.requestDuration > 0) {
       Xt.dataStorage.put(self.object, self.componentNamespace + 'AjaxDurationTimeout', setTimeout( function() {
         // request
         if (request.status >= 200 && request.status <= 300) {
-          self.ajaxSuccess(element, url, request);
+          self.ajaxSuccess(element, url, request, date);
         } else {
           self.ajaxError(element, url, request);
         }
@@ -245,7 +248,7 @@ class Ajax extends Core {
     } else {
       // request
       if (request.status >= 200 && request.status <= 300) {
-        self.ajaxSuccess(element, url, request);
+        self.ajaxSuccess(element, url, request, date);
       } else {
         self.ajaxError(element, url, request);
       }
@@ -257,8 +260,9 @@ class Ajax extends Core {
    * @param {Node|HTMLElement|EventTarget|Window} element Base node
    * @param {String} url Url to get
    * @param {XMLHttpRequest} request Html response
+   * @param {Date} date Html response
    */
-  ajaxSuccess(element, url, request) {
+  ajaxSuccess(element, url, request, date) {
     let self = this;
     let options = self.options;
     // autoClose
@@ -281,7 +285,8 @@ class Ajax extends Core {
     let detail = self.eDetailSet();
     self.object.dispatchEvent(new CustomEvent('replace.xt.ajax', {detail: detail}));
     // reinit
-    if (!self.initial) {
+    if (!self.initial
+      && date === self.detail.requestDate) { // fix fast change page
       self.initial = true;
       self.init();
     }
