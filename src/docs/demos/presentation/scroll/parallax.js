@@ -78,7 +78,6 @@ Xt.observe.push({
     let self = Xt.init('xt-scroll', main, {
       "sticky": true,
       "start": "125%"
-      }
     });
     self.unmount = function () {
       self = null;

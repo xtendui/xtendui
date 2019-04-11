@@ -105,7 +105,7 @@ Xt.destroy = function (name, element, skipCall = false) {
  * @param {Object} self Component' self
  */
 Xt.set = function (name, element, self) {
-  Xt.dataStorage.put(element, name, self);
+  Xt.dataStorage.set(element, name, self);
 };
 
 /**
@@ -290,25 +290,7 @@ Xt.dataStorage = {
   _storage: new Map(),
 
   /**
-   * put key/obj pair on element's map
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {String} key
-   * @param {Object|Function} obj
-   * @returns {Object|Function}
-   */
-  put: function (el, key, obj) {
-    // new map if not already there
-    if (!this._storage.has(el)) {
-      this._storage.set(el, new Map());
-    }
-    // set
-    let getEl = this._storage.get(el);
-    getEl.set(key, obj);
-    return getEl.get(key);
-  },
-
-  /**
-   * set key/obj pair on element's map, return old if exist already
+   * set key/obj pair on element's map
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {String} key
    * @param {Object|Function} obj
@@ -319,14 +301,34 @@ Xt.dataStorage = {
     if (!this._storage.has(el)) {
       this._storage.set(el, new Map());
     }
+    // set
+    let getEl = this._storage.get(el);
+    getEl.set(key, obj);
     // return
+    return getEl.get(key);
+  },
+
+  /**
+   * put key/obj pair on element's map, return old if exist already
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {String} key
+   * @param {Object|Function} obj
+   * @returns {Object|Function}
+   */
+  put: function (el, key, obj) {
+    // new map if not already there
+    if (!this._storage.has(el)) {
+      this._storage.set(el, new Map());
+    }
+    // return if already set
     let getEl = this._storage.get(el);
     let getKey = getEl.get(key);
     if (getKey) {
       return getKey;
     }
-    // put
+    // set
     getEl.set(key, obj);
+    // return
     return getEl.get(key);
   },
 
@@ -338,11 +340,11 @@ Xt.dataStorage = {
    */
   get: function (el, key) {
     let getEl = this._storage.get(el);
-    // if no map return null
+    // null if empty
     if (!getEl) {
       return null;
     }
-    // get
+    // return
     return getEl.get(key);
   },
 
@@ -353,11 +355,11 @@ Xt.dataStorage = {
    */
   getAll: function (el) {
     let getEl = this._storage.get(el);
-    // if no map return null
+    // null if empty
     if (!getEl) {
       return null;
     }
-    // get all
+    // return
     return getEl;
   },
 
@@ -368,7 +370,7 @@ Xt.dataStorage = {
    * @returns {Boolean}
    */
   has: function (el, key) {
-    // has
+    // return
     return this._storage.get(el).has(key);
   },
 
@@ -380,15 +382,17 @@ Xt.dataStorage = {
    */
   remove: function (el, key) {
     let getEl = this._storage.get(el);
-    // if no map return null
+    // null if empty
     if (!getEl) {
       return null;
     }
     // remove
     let ret = getEl.delete(key);
-    if (!getEl.size === false) {
+    // remove storage if empty
+    if (getEl.size === false) {
       this._storage.delete(el);
     }
+    // return
     return ret;
   }
 
@@ -451,7 +455,7 @@ Xt.focus = {
    */
   on: function () {
     // event key
-    let focusChangeKeyHandler = Xt.dataStorage.set(document, 'keyup.focus',
+    let focusChangeKeyHandler = Xt.dataStorage.put(document, 'keyup.focus',
       Xt.focus.changeKey);
     document.addEventListener('keyup', focusChangeKeyHandler);
     // event mouse
@@ -469,7 +473,7 @@ Xt.focus = {
     let focusChangeKeyHandler = Xt.dataStorage.get(document, 'keyup.focus');
     document.removeEventListener('keyup', focusChangeKeyHandler);
     // event mouse
-    let focusChangeOtherHandler = Xt.dataStorage.set(document, 'mousedown touchstart pointerdown.focus',
+    let focusChangeOtherHandler = Xt.dataStorage.put(document, 'mousedown touchstart pointerdown.focus',
       Xt.focus.changeOther);
     document.addEventListener('mousedown', focusChangeOtherHandler);
     document.addEventListener('touchstart', focusChangeOtherHandler, Xt.passiveSupported ? {passive: true} : false);
@@ -540,7 +544,7 @@ Xt.focusLimit = {
       let first = focusables[0];
       let last = focusables[focusables.length - 1];
       // event
-      let focusLimitHandler = Xt.dataStorage.set(document, 'keyup.focusLimit',
+      let focusLimitHandler = Xt.dataStorage.put(document, 'keyup.focusLimit',
         Xt.focusLimit.limit.bind(this).bind(this, focusables, first, last));
       document.addEventListener('keyup', focusLimitHandler);
     }
@@ -591,7 +595,7 @@ Xt.textareaAutosize = {
    */
   init: function (el) {
     if (!Xt.dataStorage.get(el, 'xtTextareaAutosizeDone')) {
-      Xt.dataStorage.put(el, 'xtTextareaAutosizeDone', true);
+      Xt.dataStorage.set(el, 'xtTextareaAutosizeDone', true);
       // key
       el.addEventListener('keydown', Xt.textareaAutosize.keychange.bind(el));
       el.addEventListener('keyup', Xt.textareaAutosize.keychange.bind(el));
@@ -711,7 +715,7 @@ Xt.btnMerge = {
    */
   init: function (el) {
     if (!Xt.dataStorage.get(el, 'xtBtnMergeDone')) {
-      Xt.dataStorage.put(el, 'xtBtnMergeDone', true);
+      Xt.dataStorage.set(el, 'xtBtnMergeDone', true);
       el.addEventListener('mouseenter', Xt.btnMerge.hoverOn);
       el.addEventListener('mouseleave', Xt.btnMerge.hoverOff);
       el.addEventListener('mousedown', Xt.btnMerge.activeOn);
@@ -800,7 +804,7 @@ Xt.friction = function (el, obj) {
   yDist = obj.y - yCurrent;
   cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionFrame'));
   if (Math.abs(xDist) >= frictionLimit || Math.abs(yDist >= frictionLimit)) {
-    Xt.dataStorage.put(el, 'xtFrictionFrame', requestAnimationFrame(function () {
+    Xt.dataStorage.set(el, 'xtFrictionFrame', requestAnimationFrame(function () {
       Xt.friction(el, obj);
     }));
   }
@@ -859,7 +863,7 @@ Xt.checkNested = function (element, targets) {
  */
 Xt.scrollbarWidth = function (force = false) {
   if (Xt.scrollbarWidthVal === undefined) {
-    let scrollbarWidthHandler = Xt.dataStorage.set(window, 'resize.scrollbar',
+    let scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize.scrollbar',
       Xt.scrollbarWidth.bind(this, true));
     addEventListener('resize', scrollbarWidthHandler);
   }
@@ -1011,7 +1015,7 @@ Xt.animTime = function (el, timing = null) {
  */
 Xt.animTimeout = function (el, func, timing = null) {
   clearTimeout(Xt.dataStorage.get(el, 'xtAnimTimeout'));
-  Xt.dataStorage.put(el, 'xtAnimTimeout', setTimeout(func, timing || timing === 0 ? timing : Xt.animTime(el)));
+  Xt.dataStorage.set(el, 'xtAnimTimeout', setTimeout(func, timing || timing === 0 ? timing : Xt.animTime(el)));
 };
 
 /**
@@ -1064,8 +1068,8 @@ Xt.eventDelay = function (e, element, func, prefix = '', instant = false) {
       }
       // save after a frame to execute all eventDelay
       cancelAnimationFrame(Xt.dataStorage.get(container, 'xtEventDelayFrame'));
-      Xt.dataStorage.put(container, 'xtEventDelayFrame', requestAnimationFrame(function () {
-        Xt.dataStorage.put(container, 'xtEventDelay', window.innerWidth);
+      Xt.dataStorage.set(container, 'xtEventDelayFrame', requestAnimationFrame(function () {
+        Xt.dataStorage.set(container, 'xtEventDelay', window.innerWidth);
       }));
     }
     // delay
@@ -1074,7 +1078,7 @@ Xt.eventDelay = function (e, element, func, prefix = '', instant = false) {
       func(e);
     } else {
       clearTimeout(Xt.dataStorage.get(element, 'xt' + e.type + prefix + 'Timeout'));
-      Xt.dataStorage.put(element, 'xt' + e.type + prefix + 'Timeout', setTimeout(function () {
+      Xt.dataStorage.set(element, 'xt' + e.type + prefix + 'Timeout', setTimeout(function () {
         // func
         func(e);
       }, delay))
@@ -1085,7 +1089,7 @@ Xt.eventDelay = function (e, element, func, prefix = '', instant = false) {
   }
 };
 
-Xt.dataStorage.put(document.documentElement, 'xtEventDelay', window.innerWidth);
+Xt.dataStorage.set(document.documentElement, 'xtEventDelay', window.innerWidth);
 
 /**
  * Xt.windowHeight

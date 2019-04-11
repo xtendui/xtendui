@@ -105,7 +105,7 @@ class Scroll extends Core {
     let options = self.options;
     // event on
     if (options.on) {
-      let scrollHandler = Xt.dataStorage.set(window, options.on + '.' + self.namespace,
+      let scrollHandler = Xt.dataStorage.put(window, options.on + '.' + self.namespace,
         self.eventScrollHandler.bind(self));
       let events = [...options.on.split(' ')];
       for (let event of events) {
@@ -201,16 +201,16 @@ class Scroll extends Core {
           if (changed) {
             currentsOn.push(el);
             cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'ScrollFrame'));
-            Xt.dataStorage.put(el, self.componentNamespace + 'ScrollFrame', requestAnimationFrame(function () {
+            Xt.dataStorage.set(el, self.componentNamespace + 'ScrollFrame', requestAnimationFrame(function () {
               // initial
               if (initial) {
-                Xt.dataStorage.put(el, self.componentNamespace + 'Initial', true);
+                Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true);
               } else {
                 Xt.dataStorage.remove(el, self.componentNamespace + 'Initial');
               }
               // activate
-              Xt.dataStorage.put(el, self.componentNamespace + 'OnCount', currentOff);
-              Xt.dataStorage.put(el, self.componentNamespace + 'OnTot', currentsOff.length);
+              Xt.dataStorage.set(el, self.componentNamespace + 'OnCount', currentOff);
+              Xt.dataStorage.set(el, self.componentNamespace + 'OnTot', currentsOff.length);
               currentOn++;
               self.eventOn(el);
             }));
@@ -223,16 +223,16 @@ class Scroll extends Core {
             el.classList.add('scroll--once');
             currentsOff.push(el);
             cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'ScrollFrame'));
-            Xt.dataStorage.put(el, self.componentNamespace + 'ScrollFrame', requestAnimationFrame(function () {
+            Xt.dataStorage.set(el, self.componentNamespace + 'ScrollFrame', requestAnimationFrame(function () {
               // initial
               if (initial) {
-                Xt.dataStorage.put(el, self.componentNamespace + 'Initial', true);
+                Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true);
               } else {
                 Xt.dataStorage.remove(el, self.componentNamespace + 'Initial');
               }
               // deactivate
-              Xt.dataStorage.put(el, self.componentNamespace + 'OffCount', currentOff);
-              Xt.dataStorage.put(el, self.componentNamespace + 'OffTot', currentsOff.length);
+              Xt.dataStorage.set(el, self.componentNamespace + 'OffCount', currentOff);
+              Xt.dataStorage.set(el, self.componentNamespace + 'OffTot', currentsOff.length);
               currentOff++;
               self.eventOff(el);
             }));
@@ -261,7 +261,7 @@ class Scroll extends Core {
         }
         // dispatch
         cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'ScrollDispatchFrame'));
-        Xt.dataStorage.put(el, self.componentNamespace + 'ScrollDispatchFrame', requestAnimationFrame(function () {
+        Xt.dataStorage.set(el, self.componentNamespace + 'ScrollDispatchFrame', requestAnimationFrame(function () {
           let detail = self.eDetailSet();
           el.dispatchEvent(new CustomEvent('change.xt.scroll', {detail: detail}));
         }));
@@ -269,7 +269,7 @@ class Scroll extends Core {
     }
     // save for direction
     cancelAnimationFrame(Xt.dataStorage.get(self.object, self.componentNamespace + 'ScrollObjectFrame'));
-    Xt.dataStorage.put(self.object, self.componentNamespace + 'ScrollDispatchFrame', requestAnimationFrame(function () {
+    Xt.dataStorage.set(self.object, self.componentNamespace + 'ScrollDispatchFrame', requestAnimationFrame(function () {
       self.detail.scrollTopOld = scrollTop;
     }));
   }

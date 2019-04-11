@@ -100,7 +100,7 @@ class Sticky extends Core {
     let options = self.options;
     // event on
     if (options.on) {
-      let stickyHandler = Xt.dataStorage.set(window, options.on + '.' + self.namespace,
+      let stickyHandler = Xt.dataStorage.put(window, options.on + '.' + self.namespace,
         self.eventStickyHandler.bind(self));
       let events = [...options.on.split(' ')];
       for (let event of events) {
@@ -111,11 +111,11 @@ class Sticky extends Core {
       });
     }
     // autoClose
-    let autoCloseHandler = Xt.dataStorage.set(self.object, 'hide' + '.' + self.namespace,
+    let autoCloseHandler = Xt.dataStorage.put(self.object, 'hide' + '.' + self.namespace,
       Xt.autoClose.bind(this, self.object));
     self.object.addEventListener('hide.xt.sticky', autoCloseHandler);
     // focusin
-    let focusInHandler = Xt.dataStorage.set(document, 'focusin' + '.' + self.namespace,
+    let focusInHandler = Xt.dataStorage.put(document, 'focusin' + '.' + self.namespace,
       self.eventFocusInHandler.bind(self));
     document.addEventListener('focusin', focusInHandler, Xt.passiveSupported ? {passive: true} : false);
   }
@@ -244,14 +244,14 @@ class Sticky extends Core {
         }
       }
       // save real add for calculation
-      Xt.dataStorage.put(el, self.componentNamespace + 'Add', add);
+      Xt.dataStorage.set(el, self.componentNamespace + 'Add', add);
       // activation
       let checkTop = scrollTop >= top - add + addHide;
       let checkBottom = scrollTop < bottom + add - addHide;
       if (checkTop && checkBottom) {
         // initial
         if (initial) {
-          Xt.dataStorage.put(el, self.componentNamespace + 'Initial', true);
+          Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true);
         } else {
           Xt.dataStorage.remove(el, self.componentNamespace + 'Initial');
         }
@@ -264,7 +264,7 @@ class Sticky extends Core {
       } else {
         // initial
         if (initial) {
-          Xt.dataStorage.put(el, self.componentNamespace + 'Initial', true);
+          Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true);
         } else {
           Xt.dataStorage.remove(el, self.componentNamespace + 'Initial');
         }
@@ -341,7 +341,7 @@ class Sticky extends Core {
       let detail = self.eDetailSet();
       el.dispatchEvent(new CustomEvent('change.xt.sticky', {detail: detail}));
       // save for direction
-      Xt.dataStorage.put(el, self.componentNamespace + 'AddOld', add);
+      Xt.dataStorage.set(el, self.componentNamespace + 'AddOld', add);
     }
     // save for direction
     self.detail.scrollTopOld = scrollTop;

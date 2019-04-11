@@ -184,11 +184,11 @@ class Slider extends Core {
             }
           }
           for (let target of targets) {
-            Xt.dataStorage.put(target, self.componentNamespace + 'GroupPosDone', true);
-            Xt.dataStorage.put(target, self.componentNamespace + 'groupHeight', slideHeight);
+            Xt.dataStorage.set(target, self.componentNamespace + 'GroupPosDone', true);
+            Xt.dataStorage.set(target, self.componentNamespace + 'groupHeight', slideHeight);
           }
         } else {
-          Xt.dataStorage.put(slide, self.componentNamespace + 'GroupPosDone', true);
+          Xt.dataStorage.set(slide, self.componentNamespace + 'GroupPosDone', true);
         }
         // pos with alignment
         let pos;
@@ -213,10 +213,11 @@ class Slider extends Core {
         // save pos
         if (group) {
           for (let target of targets) {
-            target.dataset['groupPos'] = pos.toString();
+            Xt.dataStorage.set(target, self.componentNamespace + 'GroupPos', pos);
+            //console.log(target, self.componentNamespace + 'GroupPos', pos);
           }
         } else {
-          slide.dataset['groupPos'] = pos.toString();
+          Xt.dataStorage.set(slide, self.componentNamespace + 'GroupPos', pos);
         }
       }
     }
@@ -224,8 +225,8 @@ class Slider extends Core {
     if (options.wheel && options.wheel.selector) {
       let first = self.targets[0];
       let last = self.targets[self.targets.length - 1];
-      self.detail.wheelMin = -parseFloat(first.dataset['groupPos']);
-      self.detail.wheelMax = -parseFloat(last.dataset['groupPos']);
+      self.detail.wheelMin = -Xt.dataStorage.get(first, self.componentNamespace + 'GroupPos');
+      self.detail.wheelMax = -Xt.dataStorage.get(last, self.componentNamespace + 'GroupPos');
     }
   }
 
@@ -242,18 +243,18 @@ class Slider extends Core {
       // disable links not active slide
       slide.classList.add('links--none');
       // slide on
-      let slideOnHandler = Xt.dataStorage.set(slide, 'on' + '.' + self.namespace,
+      let slideOnHandler = Xt.dataStorage.put(slide, 'on' + '.' + self.namespace,
         self.eventSlideOnHandler.bind(self).bind(self, dragger, slide));
       slide.addEventListener('on.xt', slideOnHandler, true); // @FIX event.xt: useCapture for custom events order on re-init
       // slide off
-      let slideOffHandler = Xt.dataStorage.set(slide, 'off' + '.' + self.namespace,
+      let slideOffHandler = Xt.dataStorage.put(slide, 'off' + '.' + self.namespace,
         self.eventSlideOffHandler.bind(self).bind(self, dragger, slide));
       slide.addEventListener('off.xt', slideOffHandler, true); // @FIX event.xt: useCapture for custom events order on re-init
     }
     // dragger
     if (options.drag) {
       // drag
-      let dragstartHandler = Xt.dataStorage.set(dragger, 'mousedown touchstart' + '.' + self.namespace,
+      let dragstartHandler = Xt.dataStorage.put(dragger, 'mousedown touchstart' + '.' + self.namespace,
         self.eventDragstartHandler.bind(self).bind(self, dragger));
       let events = ['mousedown', 'touchstart'];
       for (let event of events) {
@@ -276,7 +277,7 @@ class Slider extends Core {
       }
     }
     // resize
-    let resizeHandler = Xt.dataStorage.set(window, 'resize' + '.' + self.namespace,
+    let resizeHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace,
       self.eventResizeHandler.bind(self).bind(self));
     addEventListener('resize', resizeHandler);
   }
@@ -333,7 +334,7 @@ class Slider extends Core {
           self.eventDragstart(dragger, e);
         }
         // event off
-        let dragendHandler = Xt.dataStorage.set(dragger, 'mouseup touchend' + '.' + self.namespace,
+        let dragendHandler = Xt.dataStorage.put(dragger, 'mouseup touchend' + '.' + self.namespace,
           self.eventDragendHandler.bind(self).bind(self, dragger));
         let events = ['mouseup', 'touchend'];
         for (let event of events) {
@@ -375,7 +376,7 @@ class Slider extends Core {
   eventDragstart(dragger, e) {
     let self = this;
     // event move
-    let dragHandler = Xt.dataStorage.set(dragger, 'mousemove touchmove' + '.' + self.namespace,
+    let dragHandler = Xt.dataStorage.put(dragger, 'mousemove touchmove' + '.' + self.namespace,
       self.eventDragHandler.bind(self).bind(self, dragger));
     let events = ['mousemove', 'touchmove'];
     for (let event of events) {
@@ -461,14 +462,15 @@ class Slider extends Core {
     }
     let targets = self.getTargets(slide);
     for (let target of targets) {
-      Xt.dataStorage.put(target, self.componentNamespace + 'SlideOnDone', true);
+      Xt.dataStorage.set(target, self.componentNamespace + 'SlideOnDone', true);
     }
+    //console.log(slide);
     // autoHeight
     if (self.autoHeight) {
       self.eventAutoHeight(slide);
     }
     // val
-    self.detail.xPos = self.detail.xPosCurrent = self.detail.xPosReal = parseFloat(slide.dataset['groupPos']);
+    self.detail.xPos = self.detail.xPosCurrent = self.detail.xPosReal = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPos');
     // dragger
     if (dragger) {
       // prevent alignment animation
@@ -695,8 +697,8 @@ class Slider extends Core {
     if (options.drag.overflow) {
       let first = self.targets[0];
       let last = self.targets[self.targets.length - 1];
-      let min = parseFloat(first.dataset['groupPos']);
-      let max = parseFloat(last.dataset['groupPos']);
+      let min = Xt.dataStorage.get(first, self.componentNamespace + 'GroupPos');
+      let max = Xt.dataStorage.get(last, self.componentNamespace + 'GroupPos');
       // overflow
       let fncOverflow = options.drag.overflow;
       if (typeof fncOverflow === 'string') {

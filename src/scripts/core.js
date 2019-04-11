@@ -139,7 +139,7 @@ class Core {
       self.mode = 'multiple';
       self.container = self.object;
       let uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId');
-      Xt.dataStorage.put(self.container, 'xtUniqueId', uniqueId ? uniqueId : Xt.getuniqueId());
+      Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId ? uniqueId : Xt.getuniqueId());
       self.namespace = self.componentName + '-' + Xt.dataStorage.get(self.container, 'xtUniqueId');
     }
     // final namespace
@@ -406,7 +406,7 @@ class Core {
     // toggle
     options.toggle = options.toggle !== undefined ? options.toggle : !options.off;
     // status
-    let checkHandler = Xt.dataStorage.set(window, 'resize.check' + '.' + self.namespace,
+    let checkHandler = Xt.dataStorage.put(window, 'resize.check' + '.' + self.namespace,
       self.eventStatusHandler.bind(self).bind(self));
     addEventListener('resize', checkHandler);
     self.eventStatusHandler();
@@ -414,7 +414,7 @@ class Core {
     for (let el of self.elements) {
       // event on
       if (options.on) {
-        let onHandler = Xt.dataStorage.set(el, options.on + '.' + self.namespace,
+        let onHandler = Xt.dataStorage.put(el, options.on + '.' + self.namespace,
           self.eventOnHandler.bind(self).bind(self, el));
         let events = [...options.on.split(' ')];
         for (let event of events) {
@@ -423,14 +423,14 @@ class Core {
         el.addEventListener('on.xt', onHandler);
         // @FIX prevents click on touch until clicked two times
         if (events.includes('mouseenter') || events.includes('mousehover')) {
-          let touchLinksStartHandler = Xt.dataStorage.set(el, 'touchend.touchfix' + '.' + self.namespace,
+          let touchLinksStartHandler = Xt.dataStorage.put(el, 'touchend.touchfix' + '.' + self.namespace,
             self.eventTouchLinksStartHandler.bind(self).bind(self, el));
           el.addEventListener('touchend', touchLinksStartHandler);
         }
       }
       // event off
       if (options.off) {
-        let offHandler = Xt.dataStorage.set(el, options.off + '.' + self.namespace,
+        let offHandler = Xt.dataStorage.put(el, options.off + '.' + self.namespace,
           self.eventOffHandler.bind(self).bind(self, el));
         let events = [...options.off.split(' ')];
         for (let event of events) {
@@ -453,11 +453,11 @@ class Core {
     // auto
     if (options.auto && options.auto.time) {
       // focus auto
-      let focusHandler = Xt.dataStorage.set(window, 'focus' + '.' + self.namespace,
+      let focusHandler = Xt.dataStorage.put(window, 'focus' + '.' + self.namespace,
         self.eventAutoResumeHandler.bind(self));
       addEventListener('focus', focusHandler);
       // blur auto
-      let blurHandler = Xt.dataStorage.set(window, 'blur' + '.' + self.namespace,
+      let blurHandler = Xt.dataStorage.put(window, 'blur' + '.' + self.namespace,
         self.eventAutoPauseHandler.bind(self));
       addEventListener('blur', blurHandler);
       // autoPause
@@ -467,14 +467,14 @@ class Core {
           self.destroyElements.push(...autoPauseEls);
           for (let el of autoPauseEls) {
             // pause
-            let autoPauseOnHandler = Xt.dataStorage.set(el, 'mouseenter focus' + '.' + self.namespace,
+            let autoPauseOnHandler = Xt.dataStorage.put(el, 'mouseenter focus' + '.' + self.namespace,
               self.eventAutoPauseHandler.bind(self));
             let eventsPause = ['mouseenter', 'focus'];
             for (let event of eventsPause) {
               el.addEventListener(event, autoPauseOnHandler);
             }
             // resume
-            let autoResumeOnHandler = Xt.dataStorage.set(el, 'mouseleave blur' + '.' + self.namespace,
+            let autoResumeOnHandler = Xt.dataStorage.put(el, 'mouseleave blur' + '.' + self.namespace,
               self.eventAutoResumeHandler.bind(self));
             let eventsResume = ['mouseleave', 'blur'];
             for (let event of eventsResume) {
@@ -487,7 +487,7 @@ class Core {
     // jump
     if (options.jump) {
       for (let jump of self.targets) {
-        let jumpHandler = Xt.dataStorage.set(jump, 'click.jump' + '.' + self.namespace,
+        let jumpHandler = Xt.dataStorage.put(jump, 'click.jump' + '.' + self.namespace,
           self.eventJumpHandler.bind(self).bind(self, jump));
         jump.addEventListener('click', jumpHandler, true); // useCapture or it gets the click from elements inside the target
         // jump
@@ -504,7 +504,7 @@ class Core {
       if (navs.length) {
         self.destroyElements.push(...navs);
         for (let nav of navs) {
-          let navHandler = Xt.dataStorage.set(nav, 'click.nav' + '.' + self.namespace,
+          let navHandler = Xt.dataStorage.put(nav, 'click.nav' + '.' + self.namespace,
             self.eventNavHandler.bind(self).bind(self, nav));
           nav.addEventListener('click', navHandler);
         }
@@ -517,21 +517,21 @@ class Core {
       for (let keyboard of keyboards) {
         keyboard.setAttribute('tabindex', '0');
         // focus
-        let keyboardFocusHandler = Xt.dataStorage.set(keyboard, 'focus.keyboard' + '.' + self.namespace,
+        let keyboardFocusHandler = Xt.dataStorage.put(keyboard, 'focus.keyboard' + '.' + self.namespace,
           self.eventKeyboardFocusHandler.bind(self).bind(self, keyboard));
         keyboard.addEventListener('focus', keyboardFocusHandler);
         // blur
-        let keyboardBlurHandler = Xt.dataStorage.set(keyboard, 'blur.keyboard' + '.' + self.namespace,
+        let keyboardBlurHandler = Xt.dataStorage.put(keyboard, 'blur.keyboard' + '.' + self.namespace,
           self.eventKeyboardBlurHandler.bind(self).bind(self, keyboard));
         keyboard.addEventListener('blur', keyboardBlurHandler);
       }
     }
     // autoClose
     if (options.autoClose) {
-      let autoCloseHandler = Xt.dataStorage.set(window, 'autoClose' + '.' + self.namespace,
+      let autoCloseHandler = Xt.dataStorage.put(window, 'autoClose' + '.' + self.namespace,
         self.eventAutoCloseHandler.bind(self));
       addEventListener('autoClose.xt', autoCloseHandler);
-      let autoCloseFixHandler = Xt.dataStorage.set(window, 'autoCloseFix' + '.' + self.namespace,
+      let autoCloseFixHandler = Xt.dataStorage.put(window, 'autoCloseFix' + '.' + self.namespace,
         self.eventAutoCloseFixHandler.bind(self));
       addEventListener('autoCloseFix.xt', autoCloseFixHandler);
     }
@@ -541,7 +541,7 @@ class Core {
       let imgsLoaded = 0;
       for (let img of imgs) {
         if (!img.complete) {
-          let imgLoadHandler = Xt.dataStorage.set(img, 'load' + '.' + self.namespace,
+          let imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
             self.eventImgLoadedHandler.bind(self).bind(self, el, img));
           img.addEventListener('load', imgLoadHandler);
           // @FIX srcset: call only one time
@@ -561,7 +561,7 @@ class Core {
       let imgsLoaded = 0;
       for (let img of imgs) {
         if (!img.complete) {
-          let imgLoadHandler = Xt.dataStorage.set(img, 'load' + '.' + self.namespace,
+          let imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
             self.eventImgLoadedHandler.bind(self).bind(self, tr, img));
           img.addEventListener('load', imgLoadHandler);
           // @FIX srcset: call only one time
@@ -585,13 +585,13 @@ class Core {
       for (let wheel of self.detail.wheels) {
         let eWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
         // wheel
-        let wheelHandler = Xt.dataStorage.set(wheel, eWheel + '.' + self.namespace,
+        let wheelHandler = Xt.dataStorage.put(wheel, eWheel + '.' + self.namespace,
           self.eventWheelHandler.bind(self).bind(self, wheel));
         wheel.addEventListener(eWheel, wheelHandler, Xt.passiveSupported ? {passive: false} : false);
         // block
         if (options.wheel.block) {
           let block = wheel.parentNode;
-          let wheelBlockHandler = Xt.dataStorage.set(block, eWheel + '.' + self.namespace,
+          let wheelBlockHandler = Xt.dataStorage.put(block, eWheel + '.' + self.namespace,
             self.eventWheelBlockHandler.bind(self));
           block.addEventListener(eWheel, wheelBlockHandler, Xt.passiveSupported ? {passive: false} : false);
         }
@@ -617,7 +617,7 @@ class Core {
       if (options.onBlock) {
         let now = new Date().getTime();
         let old = Xt.dataStorage.get(element, self.componentNamespace + 'EventBlock' + e.type) || 0;
-        Xt.dataStorage.put(element, self.componentNamespace + 'EventBlock' + e.type, now);
+        Xt.dataStorage.set(element, self.componentNamespace + 'EventBlock' + e.type, now);
         if (now - old < options.onBlock) {
           return false;
         }
@@ -648,7 +648,7 @@ class Core {
       if (options.offBlock) {
         let now = new Date().getTime();
         let old = Xt.dataStorage.get(element, self.componentNamespace + 'EventBlock' + e.type) || 0;
-        Xt.dataStorage.put(element, self.componentNamespace + 'EventBlock' + e.type, now);
+        Xt.dataStorage.set(element, self.componentNamespace + 'EventBlock' + e.type, now);
         if (now - old < options.offBlock) {
           return false;
         }
@@ -673,11 +673,11 @@ class Core {
   eventTouchLinksStartHandler(el, e) {
     let self = this;
     // event touchLinks
-    let touchLinksHandler = Xt.dataStorage.set(el, 'click.touchfix' + '.' + self.namespace,
+    let touchLinksHandler = Xt.dataStorage.put(el, 'click.touchfix' + '.' + self.namespace,
       self.eventTouchLinksHandler.bind(self).bind(self, el));
     el.addEventListener('click', touchLinksHandler);
     // event touchReset
-    let touchResetHandler = Xt.dataStorage.set(el, 'off.touchfix' + '.' + self.namespace,
+    let touchResetHandler = Xt.dataStorage.put(el, 'off.touchfix' + '.' + self.namespace,
       self.eventTouchLinksResetHandler.bind(self).bind(self, el));
     el.addEventListener('off.xt', touchResetHandler);
   }
@@ -704,7 +704,7 @@ class Core {
   eventTouchLinksHandler(el, e) {
     let self = this;
     if (!Xt.dataStorage.get(el, self.componentNamespace + 'TouchLinksDone')) {
-      Xt.dataStorage.put(el, self.componentNamespace + 'TouchLinksDone', true);
+      Xt.dataStorage.set(el, self.componentNamespace + 'TouchLinksDone', true);
       // prevent default
       e.preventDefault();
     } else {
@@ -784,7 +784,7 @@ class Core {
   eventKeyboardFocusHandler(el, e) {
     let self = this;
     // handler
-    let keyboardHandler = Xt.dataStorage.set(document, 'keyup.keyboard' + '.' + self.namespace,
+    let keyboardHandler = Xt.dataStorage.put(document, 'keyup.keyboard' + '.' + self.namespace,
       self.eventKeyboardHandler.bind(self));
     document.addEventListener('keyup', keyboardHandler);
   }
@@ -1344,7 +1344,7 @@ class Core {
       let time = options.auto.time;
       if (self.currentIndex !== null &&  // not when nothing activated
         !self.initial || options.auto.initial) { // not when initial
-        Xt.dataStorage.put(self.object, self.componentNamespace + 'AutoStartInterval', setInterval(function () { // interval because can become :visible
+        Xt.dataStorage.set(self.object, self.componentNamespace + 'AutoStartInterval', setInterval(function () { // interval because can become :visible
           if (Xt.visible(self.object)) {
             // auto
             if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
@@ -1660,7 +1660,7 @@ class Core {
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
       if (delay) {
-        Xt.dataStorage.put(el, self.componentNamespace + 'DelayTimeout', setTimeout(function () {
+        Xt.dataStorage.set(el, self.componentNamespace + 'DelayTimeout', setTimeout(function () {
           self.queueOnDelayDone(obj, el, type);
         }, delay));
       } else {
@@ -1706,7 +1706,7 @@ class Core {
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
       if (delay) {
-        Xt.dataStorage.put(el, self.componentNamespace + 'DelayTimeout', setTimeout(function () {
+        Xt.dataStorage.set(el, self.componentNamespace + 'DelayTimeout', setTimeout(function () {
           self.queueOffDelayDone(obj, el, type);
         }, delay));
       } else {
@@ -1854,7 +1854,7 @@ class Core {
     if (!duration) {
       self.queueOnAnimDone(obj, el, type);
     } else {
-      Xt.dataStorage.put(el, self.componentNamespace + 'AnimTimeout', setTimeout(function () {
+      Xt.dataStorage.set(el, self.componentNamespace + 'AnimTimeout', setTimeout(function () {
         self.queueOnAnimDone(obj, el, type);
       }, duration));
     }
@@ -1875,7 +1875,7 @@ class Core {
     if (!duration) {
       self.queueOffAnimDone(obj, el, type);
     } else {
-      Xt.dataStorage.put(el, self.componentNamespace + 'AnimTimeout', setTimeout(function () {
+      Xt.dataStorage.set(el, self.componentNamespace + 'AnimTimeout', setTimeout(function () {
         self.queueOffAnimDone(obj, el, type);
       }, duration));
     }
@@ -2177,7 +2177,7 @@ class Core {
       Math.abs(delta) >= options.wheel.frictionLimit) { // frictionLimit
       // friction
       cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'WheelSmoothFrame'));
-      Xt.dataStorage.put(el, self.componentNamespace + 'WheelSmoothFrame', requestAnimationFrame(function () {
+      Xt.dataStorage.set(el, self.componentNamespace + 'WheelSmoothFrame', requestAnimationFrame(function () {
         self.eventFrictionSmooth(el, min, max);
       }));
       // dispatch
@@ -2289,7 +2289,7 @@ class Core {
       if (before === 'xt-collapse--height') {
         el.classList.add('xt-hide', 'trans-anim-none');
         cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-        Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+        Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
           el.style.height = 'auto';
           el.style.paddingTop = '';
           el.style.paddingBottom = '';
@@ -2300,7 +2300,7 @@ class Core {
           el.style.paddingTop = '0';
           el.style.paddingBottom = '0';
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-          Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+          Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
             el.classList.remove('xt-hide', 'trans-anim-none');
             el.style.height = h;
             el.style.paddingTop = pt;
@@ -2311,7 +2311,7 @@ class Core {
       if (after === 'xt-collapse--width') {
         el.classList.add('xt-hide', 'trans-anim-none');
         cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-        Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+        Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
           el.style.width = 'auto';
           el.style.paddingLeft = '';
           el.style.paddingRight = '';
@@ -2322,7 +2322,7 @@ class Core {
           el.style.paddingLeft = '0';
           el.style.paddingRight = '0';
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-          Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+          Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
             el.classList.remove('xt-hide', 'trans-anim-none');
             el.style.width = w;
             el.style.paddingLeft = pl;
@@ -2347,12 +2347,12 @@ class Core {
         let pt = el.style.paddingTop;
         let pb = el.style.paddingBottom;
         cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-        Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+        Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
           el.style.height = h;
           el.style.paddingTop = pt;
           el.style.paddingBottom = pb;
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-          Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+          Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
             el.style.height = '0';
             el.style.paddingTop = '0';
             el.style.paddingBottom = '0';
@@ -2365,12 +2365,12 @@ class Core {
         let pl = el.style.paddingLeft;
         let pr = el.style.paddingRight;
         cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-        Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+        Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
           el.style.width = w;
           el.style.paddingLeft = pl;
           el.style.paddingRight = pr;
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-          Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+          Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
             el.style.width = '0';
             el.style.paddingLeft = '0';
             el.style.paddingRight = '0';
@@ -2414,7 +2414,7 @@ class Core {
       let closeElements = el.querySelectorAll(options.closeInside);
       requestAnimationFrame(function () {
         for (let closeElement of closeElements) {
-          let specialCloseInsideHandler = Xt.dataStorage.set(closeElement, 'click.close' + '.' + self.namespace,
+          let specialCloseInsideHandler = Xt.dataStorage.put(closeElement, 'click.close' + '.' + self.namespace,
             self.eventSpecialCloseInsideHandler.bind(self).bind(self, closeElement, single));
           closeElement.addEventListener('click', specialCloseInsideHandler);
         }
@@ -2425,7 +2425,7 @@ class Core {
       let closeElements = document.querySelectorAll(options.closeOutside);
       requestAnimationFrame(function () {
         for (let closeElement of closeElements) {
-          let specialCloseOutsideHandler = Xt.dataStorage.set(closeElement, 'click.close' + '.' + self.namespace,
+          let specialCloseOutsideHandler = Xt.dataStorage.put(closeElement, 'click.close' + '.' + self.namespace,
             self.eventSpecialCloseOutsideHandler.bind(self).bind(self, el, single));
           closeElement.addEventListener('click', specialCloseOutsideHandler);
         }
@@ -2734,6 +2734,7 @@ class Core {
                 element.removeEventListener(event, handler);
                 element.removeEventListener(event, handler, true);
                 element.removeEventListener(event, handler, {passive: true});
+                Xt.dataStorage.remove(element, key);
               }
             }
           }

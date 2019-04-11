@@ -237,7 +237,7 @@ class Ajax extends Core {
     // duration
     self.detail.requestDuration -= new Date() - date;
     if (self.detail.requestDuration > 0) {
-      Xt.dataStorage.put(self.object, self.componentNamespace + 'AjaxDurationTimeout', setTimeout( function() {
+      Xt.dataStorage.set(self.object, self.componentNamespace + 'AjaxDurationTimeout', setTimeout( function() {
         // request
         if (request.status >= 200 && request.status <= 300) {
           self.ajaxSuccess(element, url, request, date);
