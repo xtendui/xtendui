@@ -8,9 +8,9 @@ import ClipboardJS from 'clipboard';
 // vars
 //////////////////////
 
-window.easeIn = new Ease(BezierEasing(.36,0,0,1));
-window.easeOut = new Ease(BezierEasing(1,0,.64,1));
-window.easeInOut = new Ease(BezierEasing(.68,.13,.25,1));
+window.easeIn = new Ease(BezierEasing(.36, 0, 0, 1));
+window.easeOut = new Ease(BezierEasing(1, 0, .64, 1));
+window.easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
 
 //////////////////////
 // anchors and sidebar
@@ -205,6 +205,23 @@ const populateDemo = function (container, i) {
     }
     let btn = container.querySelectorAll('.demo-tabs-left')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny"><span>' + name + '</span></button>'));
     btn = container.querySelectorAll('.demo-tabs-left .btn')[k];
+    /* DOES NOT EXECUTE JAVASCRIPT INSIDE
+    // demo shadow
+    let shadowSrc = item.getAttribute('data-shadow');
+    if (shadowSrc) {
+      let request = new XMLHttpRequest();
+      let populateShadow = function() {
+        let shadowRoot = item.attachShadow({mode: 'open'});
+        let html = document.createElement('html');
+        html.innerHTML = request.responseText.trim();
+        shadowRoot.appendChild(html);
+      };
+      request.open('GET', shadowSrc, true);
+      request.onload = populateShadow;
+      request.onerror = populateShadow;
+      request.send();
+    }
+    */
     // iframe append
     let src = item.getAttribute('data-iframe');
     let id = 'iframe' + i + k;

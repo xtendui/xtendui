@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/demos.min.css?v={{ site.version }}" />
 
     <!-- demos styles -->
-    {% if page.less %}<link rel="stylesheet" href="{{ page.name | replace: '.html', '.css' }}?v={{ site.version }}" />{% endif %}
+    {% if page.less %}<link rel="stylesheet" href="{{ page.dir | append:page.name | replace: '.html', '.css' }}?v={{ site.version }}" />{% endif %}
 
   </head>
   <body class="{% if page.full %}full{% endif %}">
@@ -36,16 +36,14 @@
     <!-- demos source less -->
     {% if page.less %}
     <less-style>
-
-      {% include_relative {{ page.name | replace: '.html', '.less' }} %}
+      {% include {{ page.dir | append:page.name | replace: '.html', '.less' }} %}
     </less-style>
     {% endif %}
 
     <!-- demos source js -->
     {% if page.js %}
     <js-script>
-
-      {% include_relative {{ page.name | replace: '.html', '.js' }} %}
+      {% include {{ page.dir | append:page.name | replace: '.html', '.js' }} %}
     </js-script>
     {% endif %}
 
@@ -61,7 +59,7 @@
 
     <!-- demos scripts -->
     {% if page.js %}
-    <script>{% include_relative {{ page.name | replace: '.html', '.js' }} %}</script>
+    <script>{% include {{ page.dir | append:page.name | replace: '.html', '.js' }} %}</script>
     {% endif %}
 
     <!-- demos utils -->
