@@ -211,10 +211,40 @@ const populateDemo = function (container, i) {
     if (shadowSrc) {
       let request = new XMLHttpRequest();
       let populateShadow = function() {
-        let shadowRoot = item.attachShadow({mode: 'open'});
-        let html = document.createElement('html');
-        html.innerHTML = request.responseText.trim();
-        shadowRoot.appendChild(html);
+        let source = Xt.createElement('<div class="demo-shadow xt-ignore" data-lang="html">');
+        item.classList.add('demo-iframe');
+        item.append(source);
+        let shadowRoot = source.attachShadow({mode: 'closed'});
+        let template = document.createElement('html');
+        template.innerHTML = request.responseText.trim();
+        //shadowRoot.appendChild(html);
+        let templateNew = document.adoptNode(template);
+        // script
+        let bodyNew = templateNew.querySelector('body');
+        for (let script of template.querySelectorAll('script')) {
+          let scriptNew = document.createElement('script');
+          scriptNew.textContent = script.innerHTML;
+          let scriptSrc = script.getAttribute('src');
+          if (scriptSrc) {
+            scriptNew.src = scriptSrc;
+            script.defer = true;
+          }
+          bodyNew.appendChild(scriptNew);
+          script.remove();
+        }
+        // @TODO REFACTOR
+        console.log(templateNew);
+        Xt.initElement(templateNew);
+        Xt.initObserve(templateNew);
+        Xt.observer.observe(templateNew, {
+          characterData: false,
+          attributes: false,
+          childList: true,
+          subtree: true
+        });
+        // append
+        shadowRoot.appendChild(templateNew);
+        item.classList.add('populated');
       };
       request.open('GET', shadowSrc, true);
       request.onload = populateShadow;
