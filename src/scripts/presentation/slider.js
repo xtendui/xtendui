@@ -35,11 +35,11 @@ class Slider extends Core {
     self.initScopeTargets();
     // dragger
     if (options.drag && options.drag.dragger) {
-      self.dragger = self.object.querySelectorAll(options.drag.dragger)[0];
+      self.dragger = self.object.querySelector(options.drag.dragger);
     }
     // autoHeight
     if (options.autoHeight) {
-      self.autoHeight = self.object.querySelectorAll(options.autoHeight)[0];
+      self.autoHeight = self.object.querySelector(options.autoHeight);
     }
     // automatic group
     let draggerWidthTemp;
@@ -105,7 +105,7 @@ class Slider extends Core {
         self.pags.push([]);
         // vars
         let currentPags = self.pags[self.pags.length - 1];
-        let clone = pag.querySelectorAll('.xt-clone')[0];
+        let clone = pag.querySelector('.xt-clone');
         let container = clone.parentNode;
         let arr;
         if (options.groupMq) {

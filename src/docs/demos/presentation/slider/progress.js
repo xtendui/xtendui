@@ -108,7 +108,7 @@ let easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
 
     // follow mouse
 
-    let loader = document.querySelectorAll('.loader--mouse')[0];
+    let loader = document.querySelector('.loader--mouse');
     let container = slider;
     let width;
     let height;

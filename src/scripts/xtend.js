@@ -658,7 +658,7 @@ Xt.media = {
   init: function (el) {
     el.classList.remove('media-loaded');
     // img
-    let img = el.querySelectorAll('img')[0];
+    let img = el.querySelector('img');
     if (img) {
       if (img.complete) {
         Xt.media.load.bind(img).bind(img, el)();
@@ -667,7 +667,7 @@ Xt.media = {
       }
     }
     // video
-    let video = el.querySelectorAll('video')[0];
+    let video = el.querySelector('video');
     if (video) {
       if (video.readyState >= 3) {
         Xt.media.load.bind(video).bind(video, el)();
@@ -683,12 +683,12 @@ Xt.media = {
    */
   destroy: function (el) {
     // img
-    let img = el.querySelectorAll('img')[0];
+    let img = el.querySelector('img');
     if (img) {
       img.removeEventListener('load', Xt.media.load.bind(img).bind(img, el));
     }
     // video
-    let video = el.querySelectorAll('video')[0];
+    let video = el.querySelector('video');
     if (video) {
       video.removeEventListener('loadeddata', Xt.media.load.bind(video).bind(video, el));
     }

@@ -9,7 +9,7 @@
   function inputNumberChange(step, e) {
     if (!e || !e.detail || !e.detail.skip) {
       let main = this;
-      let input = main.querySelectorAll('input')[0];
+      let input = main.querySelector('input');
       let val = parseFloat(input.value);
       val = val + step;
       inputNumberValidate.bind(main)(val);
@@ -18,9 +18,9 @@
 
   function inputNumberValidate(val) {
     let main = this;
-    let input = main.querySelectorAll('input')[0];
-    let addEl = main.querySelectorAll('.group-number-add')[0];
-    let removeEl = main.querySelectorAll('.group-number-remove')[0];
+    let input = main.querySelector('input');
+    let addEl = main.querySelector('.group-number-add');
+    let removeEl = main.querySelector('.group-number-remove');
     // disabled
     addEl.removeAttribute('disabled');
     removeEl.removeAttribute('disabled');
@@ -51,12 +51,12 @@
 
     // vars
 
-    let inputEl = groupNumber.querySelectorAll('input')[0];
+    let inputEl = groupNumber.querySelector('input');
     let step = parseFloat(inputEl.getAttribute('step')) || 1;
 
     // add
 
-    let addEl = groupNumber.querySelectorAll('.group-number-add')[0];
+    let addEl = groupNumber.querySelector('.group-number-add');
     let addStep = step;
     let addHandler = Xt.dataStorage.get(addEl, 'addHandler');
     addHandler = addHandler ? addHandler : Xt.dataStorage.set(addEl, 'addHandler', inputNumberChange.bind(groupNumber, addStep));
@@ -65,7 +65,7 @@
 
     // remove
 
-    let removeEl = groupNumber.querySelectorAll('.group-number-remove')[0];
+    let removeEl = groupNumber.querySelector('.group-number-remove');
     let removeStep = -step;
     let removeHandler = Xt.dataStorage.get(removeEl, 'removeHandler');
     removeHandler = removeHandler ? removeHandler : Xt.dataStorage.set(removeEl, 'removeHandler', inputNumberChange.bind(groupNumber, removeStep));

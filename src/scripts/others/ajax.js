@@ -49,7 +49,7 @@ class Ajax extends Core {
     let self = this;
     let options = self.options;
     // queryElement
-    self.queryElement = self.object.querySelectorAll(options.query)[0] || self.object;
+    self.queryElement = self.object.querySelector(options.query) || self.object;
   }
 
   /**
@@ -270,12 +270,12 @@ class Ajax extends Core {
     // set substitute
     let html = document.createElement('html');
     html.innerHTML = request.responseText.trim();
-    let title = html.querySelectorAll('head title')[0].innerHTML;
-    let replace = html.querySelectorAll(options.query)[0];
+    let title = html.querySelector('head title').innerHTML;
+    let replace = html.querySelector(options.query);
     // populate dom
     self.queryElement.outerHTML = replace.outerHTML;
     // queryElement
-    self.queryElement = self.object.querySelectorAll(options.query)[0] || self.object;
+    self.queryElement = self.object.querySelector(options.query) || self.object;
     // pushstate
     self.pushState(url, title);
     // garbage collector

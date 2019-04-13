@@ -120,9 +120,6 @@ button,
   user-drag: none;
 }
 button {
-  border: 0;
-  padding: 0;
-  background: transparent;
   font-family: inherit;
   font-style: inherit;
   font-weight: inherit;
@@ -131,6 +128,9 @@ button {
   font-size: inherit;
   color: inherit;
   line-height: inherit;
+  border: 0;
+  padding: 0;
+  background: transparent;
   text-align: left;
 }
 img {
@@ -1007,6 +1007,10 @@ a,
 }
 [disabled],
 .disabled {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   cursor: default;
   pointer-events: none;
 }

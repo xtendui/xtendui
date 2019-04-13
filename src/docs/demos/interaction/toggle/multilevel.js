@@ -12,7 +12,7 @@
 
     // btnReset
 
-    let btnReset = multilevel.querySelectorAll('#multilevel-tab-reset')[0];
+    let btnReset = multilevel.querySelector('#multilevel-tab-reset');
     let btns = multilevel.querySelectorAll('.multilevel-reset');
     for (let btn of btns) {
       btn.addEventListener('click', function (e) {

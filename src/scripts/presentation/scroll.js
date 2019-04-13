@@ -48,7 +48,7 @@ class Scroll extends Core {
           container.append(el);
         }
         // sticky clone
-        let target = container.querySelectorAll('.xt-clone')[0];
+        let target = container.querySelector('.xt-clone');
         if (!target) {
           target = el.cloneNode(true);
           target.classList.add('xt-clone', 'xt-ignore');
@@ -248,15 +248,15 @@ class Scroll extends Core {
         }
         // indicator
         if (el.classList.contains('indicator')) {
-          let triggerEl = document.body.querySelectorAll('.xt-indicator--trigger')[0];
+          let triggerEl = document.body.querySelector('.xt-indicator--trigger');
           triggerEl.style.top = self.detail.trigger + 'px';
-          let startEl = document.body.querySelectorAll('.xt-indicator--start')[0];
+          let startEl = document.body.querySelector('.xt-indicator--start');
           startEl.style.top = (self.detail.start - scrollTop) + 'px';
-          let endEl = document.body.querySelectorAll('.xt-indicator--end')[0];
+          let endEl = document.body.querySelector('.xt-indicator--end');
           endEl.style.top = (self.detail.end - scrollTop) + 'px';
-          let startRealEl = document.body.querySelectorAll('.xt-indicator--start-real')[0];
+          let startRealEl = document.body.querySelector('.xt-indicator--start-real');
           startRealEl.style.top = (self.detail.startReal - scrollTop) + 'px';
-          let endRealEl = document.body.querySelectorAll('.xt-indicator--end-real')[0];
+          let endRealEl = document.body.querySelector('.xt-indicator--end-real');
           endRealEl.style.top = (self.detail.endReal - scrollTop) + 'px';
         }
         // dispatch

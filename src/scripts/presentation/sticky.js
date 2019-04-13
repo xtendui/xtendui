@@ -44,7 +44,7 @@ class Sticky extends Core {
         container.append(el);
       }
       // sticky clone
-      let target = container.querySelectorAll('.xt-clone')[0];
+      let target = container.querySelector('.xt-clone');
       if (!target) {
         target = el.cloneNode(true);
         target.classList.add('xt-clone', 'xt-ignore');
