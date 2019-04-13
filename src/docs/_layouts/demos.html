@@ -21,11 +21,16 @@
     <!-- styles -->
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/demos.min.css?v={{ site.version }}" />
 
-    <!-- demos styles -->
-    {% if page.less %}<link rel="stylesheet" href="{{ page.dir | append:page.name | replace: '.html', '.css' }}?v={{ site.version }}" />{% endif %}
-
   </head>
   <body class="{% if page.full %}full{% endif %}">
+
+    <!-- demos styles -->
+    {% if page.less %}
+    <style>
+
+      {% include {{ page.dir | append:page.name | replace: '.html', '.css' }} %}
+    </style>
+    {% endif %}
 
     <div id="body-outer">
 {% if page.padding %}<div id="body-inner" class="demo-source-from">{% endif %}

@@ -216,11 +216,11 @@ const populateDemo = function (container, i) {
         let shadowRoot = source.attachShadow({mode: 'open'});
         let template = document.createElement('html');
         template.innerHTML = request.responseText.trim();
-        //shadowRoot.appendChild(html);
         let shadowTemplate = document.adoptNode(template);
         // script
         let shadowBody = shadowTemplate.querySelector('body');
-        for (let script of template.querySelectorAll('script:not([src])')) {
+        let scripts = template.querySelectorAll('script:not([src])');
+        for (let script of scripts) {
           let scriptNew = document.createElement('script');
           scriptNew.textContent = script.innerHTML;
           /*
@@ -233,12 +233,20 @@ const populateDemo = function (container, i) {
           shadowBody.appendChild(scriptNew);
           script.remove();
         }
+        // style
+        let styles = template.querySelectorAll('link[rel="stylesheet"]');
+        let stylesLoaded = 0;
+        for (let style of styles) {
+          style.addEventListener('load', function() {
+            stylesLoaded++;
+            if (stylesLoaded === styles.length) {
+              Xt.load(shadowTemplate);
+            }
+          });
+        }
         // append
         shadowRoot.appendChild(shadowTemplate);
         initShadow(source, shadowRoot);
-        // load
-        //Xt.load(shadowTemplate);
-        Xt.load(shadowRoot);
       };
       request.open('GET', shadowSrc, true);
       request.onload = populateShadow;
