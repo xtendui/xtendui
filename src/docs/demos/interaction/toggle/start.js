@@ -1,13 +1,22 @@
+/**
+ * #toggle-restart
+ */
 
-let btn = document.querySelectorAll('#toggle-restart')[0];
+(function () {
 
-btn.addEventListener('click', function (e) {
+  // vars
 
-  // restart
-  let toggles = document.querySelectorAll('[data-xt-toggle]');
-  for (let toggle of toggles) {
-    let self = Xt.get('xt-toggle', toggle);
-    self.initStart();
-  }
+  let btn = document.querySelector('#toggle-restart');
 
-});
+  // event
+
+  btn.addEventListener('click', function (e) {
+    // restart
+    let toggles = document.querySelectorAll('[data-xt-toggle]');
+    for (let toggle of toggles) {
+      let self = Xt.get('xt-toggle', toggle);
+      self.initStart();
+    }
+  });
+
+})();

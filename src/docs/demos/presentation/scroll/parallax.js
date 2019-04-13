@@ -1,14 +1,18 @@
-//////////////////////
-// .parallax_title
-//////////////////////
+/**
+ * .parallax_title
+ */
 
-Xt.observe.push({
-  matches: '.parallax_title',
-  fnc: function (main, index, query) {
+(function () {
 
-    // scroll
+  // vars
 
-    let self = Xt.init('xt-scroll', main, {
+  let parallaxTitles = document.querySelectorAll('.parallax_title');
+
+  for (let parallaxTitle of parallaxTitles) {
+
+    // xt-scroll
+
+    let self = Xt.init('xt-scroll', parallaxTitle, {
       "sticky": "fixed",
       "end": 350
     });
@@ -30,19 +34,24 @@ Xt.observe.push({
     }
 
   }
-});
 
-//////////////////////
-// .parallax_img
-//////////////////////
+})();
 
-Xt.observe.push({
-  matches: '.parallax_img',
-  fnc: function (main, index, query) {
+/**
+ * .parallax_img
+ */
 
-    // scroll
+(function () {
 
-    let self = Xt.init('xt-scroll', main, {
+  // vars
+
+  let parallaxImgs = document.querySelectorAll('.parallax_img');
+
+  for (let parallaxImg of parallaxImgs) {
+
+    // xt-scroll
+
+    let self = Xt.init('xt-scroll', parallaxImg, {
       "sticky": "fixed",
       "end": 350
     });
@@ -63,19 +72,25 @@ Xt.observe.push({
     }
 
   }
-});
 
-//////////////////////
-// .parallax_footer
-//////////////////////
+})();
 
-Xt.observe.push({
-  matches: '.parallax_footer',
-  fnc: function (main, index, query) {
 
-    // scroll
+/**
+ * .parallax_footer
+ */
 
-    let self = Xt.init('xt-scroll', main, {
+(function () {
+
+  // vars
+
+  let parallaxFooters = document.querySelectorAll('.parallax_footer');
+
+  for (let parallaxFooter of parallaxFooters) {
+
+    // xt-scroll
+
+    let self = Xt.init('xt-scroll', parallaxFooter, {
       "sticky": true,
       "start": "125%"
     });
@@ -96,4 +111,5 @@ Xt.observe.push({
     }
 
   }
-});
+
+})();

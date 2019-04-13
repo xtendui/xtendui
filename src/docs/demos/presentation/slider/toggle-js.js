@@ -1,25 +1,33 @@
-Xt.observe.push({
-  matches: '.slider',
-  fnc: function (main, index, query) {
+// vars
 
-    // vars
+let time = .8;
+let timeMask = .8;
+let timeContent = .8;
+let sizeContent = 100;
+let easeIn = new Ease(BezierEasing(.36, 0, 0, 1));
+let easeOut = new Ease(BezierEasing(1, 0, .64, 1));
+let easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
 
-    let time = .8;
-    let timeMask = .8;
-    let timeContent = .8;
-    let sizeContent = 100;
-    let easeIn = new Ease(BezierEasing(.36,0,0,1));
-    let easeOut = new Ease(BezierEasing(1,0,.64,1));
-    let easeInOut = new Ease(BezierEasing(.68,.13,.25,1));
+/**
+ * .slider
+ */
 
-    // slider
+(function () {
 
-    let self = Xt.init('xt-slider', main, {
+  // vars
+
+  let sliders = document.querySelectorAll('.slider');
+
+  for (let slider of sliders) {
+
+    // xt-slider
+
+    let self = Xt.init('xt-slider', slider, {
       "durationOn": time * 1000,
       "durationOff": time * 1000,
       "instant": false
     });
-    self.unmount = function() {
+    self.unmount = function () {
       self = null;
     };
 
@@ -111,4 +119,5 @@ Xt.observe.push({
     }
 
   }
-});
+
+})();

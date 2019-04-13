@@ -1,23 +1,31 @@
-Xt.observe.push({
-  matches: '.list',
-  fnc: function (main, index, query) {
+// vars
 
-    // vars
+let timeHide = 300;
+let easeIn = new Ease(BezierEasing(.36, 0, 0, 1));
+let easeOut = new Ease(BezierEasing(1, 0, .64, 1));
+let easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
 
-    let timeHide = 300;
-    let easeIn = new Ease(BezierEasing(.36,0,0,1));
-    let easeOut = new Ease(BezierEasing(1,0,.64,1));
-    let easeInOut = new Ease(BezierEasing(.68,.13,.25,1));
+/**
+ * .list
+ */
 
-    // toggle
+(function () {
 
-    let self = Xt.init('xt-toggle', main, {
+  // vars
+
+  let lists = document.querySelectorAll('.list');
+
+  for (let list of lists) {
+
+    // xt-toggle
+
+    let self = Xt.init('xt-toggle', list, {
       "auto": {
         "time": 2000,
         "pause": ":scope > button"
       }
     });
-    self.unmount = function() {
+    self.unmount = function () {
       self = null;
     };
 
@@ -87,4 +95,5 @@ Xt.observe.push({
     });
 
   }
-});
+
+})();

@@ -1,23 +1,31 @@
-Xt.observe.push({
-  matches: '.slider',
-  fnc: function (main, index, query) {
+// vars
 
-    // vars
+let timeHide = 300;
+let easeIn = new Ease(BezierEasing(.36, 0, 0, 1));
+let easeOut = new Ease(BezierEasing(1, 0, .64, 1));
+let easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
 
-    let timeHide = 300;
-    let easeIn = new Ease(BezierEasing(.36,0,0,1));
-    let easeOut = new Ease(BezierEasing(1,0,.64,1));
-    let easeInOut = new Ease(BezierEasing(.68,.13,.25,1));
+/**
+ * .slider
+ */
 
-    // slider
+(function () {
 
-    let self = Xt.init('xt-slider', main, {
+  // vars
+
+  let sliders = document.querySelectorAll('.slider');
+
+  for (let slider of sliders) {
+
+    // xt-slider
+
+    let self = Xt.init('xt-slider', slider, {
       "auto": {
         "time": 4000,
         "pause": "[data-xt-pag]"
       }
     });
-    self.unmount = function() {
+    self.unmount = function () {
       self = null;
     };
 
@@ -101,7 +109,7 @@ Xt.observe.push({
     // follow mouse
 
     let loader = document.querySelectorAll('.loader--mouse')[0];
-    let container = main;
+    let container = slider;
     let width;
     let height;
 
@@ -145,5 +153,6 @@ Xt.observe.push({
     container.addEventListener('mouseleave', mouseleave);
 
   }
-});
+
+})();
 

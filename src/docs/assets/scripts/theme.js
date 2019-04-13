@@ -211,10 +211,13 @@ const populateDemo = function (container, i) {
     if (shadowSrc) {
       let request = new XMLHttpRequest();
       let populateShadow = function() {
+
+        /* SHADOW DOM BETTER
+        // source
         let source = Xt.createElement('<div class="demo-shadow" data-lang="html">');
-        item.classList.add('demo-iframe');
         item.append(source);
-        let shadowRoot = source.attachShadow({mode: 'open'});
+        // shadowRoot
+        let shadowRoot = source.attachShadow({mode: 'closed'});
         let template = document.createElement('html');
         template.innerHTML = request.responseText.trim();
         let shadowTemplate = document.adoptNode(template);
@@ -241,15 +244,59 @@ const populateDemo = function (container, i) {
             style.addEventListener('load', function() {
               stylesLoaded++;
               if (stylesLoaded === styles.length) {
-                // check when link[rel="stylesheet"] are loaded
-                Xt.load(shadowTemplate); // Xt.load
+                // when all link[rel="stylesheet"] are loaded
+                Xt.load(shadowTemplate);
               }
             });
           }
         }
-        // append
+        // shadowRoot
         shadowRoot.appendChild(shadowTemplate);
         initShadow(source, shadowRoot);
+        */
+
+        /* HTMLElement WORSE
+        let shadowRoot = source.attachShadow({mode: 'closed'});
+        let proto = Object.create(HTMLElement.prototype);
+        proto.attachedCallback = function() {
+          this.innerHTML = request.responseText.trim();
+          // if shadow dom supported
+          if (document.head.attachShadow) {
+            // remove unsupported shadow dom elements
+            let removes = this.querySelectorAll('link:not([rel="stylesheet"])');
+            for (let remove of removes) {
+              remove.remove();
+            }
+            // script
+            let shadowBody = this;
+            let scripts = this.querySelectorAll('script:not([src])');
+            for (let script of scripts) {
+              let scriptNew = document.createElement('script');
+              scriptNew.textContent = script.innerHTML;
+              shadowBody.appendChild(scriptNew);
+              script.remove();
+            }
+            // style
+            let styles = this.querySelectorAll('link[rel="stylesheet"]');
+            let stylesLoaded = 0;
+            for (let style of styles) {
+              style.addEventListener('load', function() {
+                stylesLoaded++;
+                if (stylesLoaded === styles.length) {
+                  // when all link[rel="stylesheet"] are loaded
+                  Xt.load(this);
+                  console.log('cccc');
+                }
+              });
+            }
+          }
+        };
+        let DemoShadow = document.registerElement('demo-shadow', { prototype: proto });
+        let demoShadow = new DemoShadow();
+        shadowRoot.appendChild(demoShadow);
+        initShadow(source, shadowRoot);
+        */
+
       };
       request.open('GET', shadowSrc, true);
       request.onload = populateShadow;
@@ -282,7 +329,6 @@ const populateDemo = function (container, i) {
       let iframe = item.querySelectorAll('iframe')[0];
       let initIframe = function () {
         if (!iframe.getAttribute('src')) {
-          item.classList.add('demo-iframe');
           iframe.setAttribute('src', iframe.getAttribute('data-src'));
         }
       };
@@ -374,11 +420,10 @@ window.initShadow = function (source, shadowRoot) {
 };
 
 function populateShadow(item, shadowRoot) {
-  let body = shadowRoot.querySelector('body');
-  let html = body.querySelectorAll('#body-outer')[0];
-  let less = body.querySelectorAll('less-style')[0];
-  //let css = body.querySelectorAll('style[scoped]')[0];
-  let js = body.querySelectorAll('js-script')[0];
+  let html = shadowRoot.querySelectorAll('#body-outer')[0];
+  let less = shadowRoot.querySelectorAll('less-style')[0];
+  //let css = shadowRoot.querySelectorAll('style[scoped]')[0];
+  let js = shadowRoot.querySelectorAll('js-script')[0];
   // inject code
   if (html) {
     item.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="html">' + html.innerHTML + '</div>'));

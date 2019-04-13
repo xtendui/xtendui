@@ -1,23 +1,26 @@
-//////////////////////
-// xtend extension: jumptocontent
-//////////////////////
+/**
+ * xtend extension: jumptocontent
+ */
 
-Xt.observe.push({
-  matches: '.jumptocontent',
-  fnc: function (main, index, query) {
+(function () {
 
-    document.addEventListener('focusin', function(e) {
-      let active = main.contains(e.target);
-      if (active) {
-        main.classList.remove('sr-only');
-        main.classList.add('active');
-      } else {
-        main.classList.remove('active');
-        Xt.animTimeout(main, function () {
-          main.classList.add('sr-only');
-        });
-      }
-    });
+  // vars
 
-  }
-});
+  let jumptocontent = document.querySelector('.jumptocontent');
+
+  // toggle
+
+  document.addEventListener('focusin', function (e) {
+    let active = jumptocontent.contains(e.target);
+    if (active) {
+      jumptocontent.classList.remove('sr-only');
+      jumptocontent.classList.add('active');
+    } else {
+      jumptocontent.classList.remove('active');
+      Xt.animTimeout(jumptocontent, function () {
+        jumptocontent.classList.add('sr-only');
+      });
+    }
+  });
+
+})();

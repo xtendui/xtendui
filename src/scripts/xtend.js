@@ -208,6 +208,7 @@ Xt.destroyElement = function (removed = document.documentElement) {
 
 Xt.initObserve = function (added = document.documentElement) {
   for (let obj of Xt.observe) {
+    // populate elements
     let els = [];
     if (added.nodeType === 1 && added.matches(obj.matches)) {
       els.push(added);
@@ -215,6 +216,7 @@ Xt.initObserve = function (added = document.documentElement) {
     for (let el of added.querySelectorAll(obj.matches)) {
       els.push(el);
     }
+    // call
     if (els.length) {
       for (let [i, el] of els.entries()) {
         obj.fnc(el, i, obj.matches);

@@ -1,3 +1,7 @@
+/**
+ * .scroll--block
+ */
+
 // test .scroll--block after 2 seconds
 
 setTimeout( function() {
