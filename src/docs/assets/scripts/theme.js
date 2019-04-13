@@ -218,13 +218,13 @@ const populateDemo = function (container, i) {
         let template = document.createElement('html');
         template.innerHTML = request.responseText.trim();
         let shadowTemplate = document.adoptNode(template);
-        // remove unsupported shadow dom elements
-        let removes = template.querySelectorAll('link:not([rel="stylesheet"])');
-        for (let remove of removes) {
-          remove.remove();
-        }
         // if shadow dom supported
         if (document.head.attachShadow) {
+          // remove unsupported shadow dom elements
+          let removes = template.querySelectorAll('link:not([rel="stylesheet"])');
+          for (let remove of removes) {
+            remove.remove();
+          }
           // script
           let shadowBody = shadowTemplate.querySelector('body');
           let scripts = template.querySelectorAll('script:not([src])');
