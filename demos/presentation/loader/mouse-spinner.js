@@ -10,21 +10,19 @@ Xt.observe.push({
     let height;
 
     function mousemove(e) {
-      requestAnimationFrame(function () {
-        // fix initial
-        if (width === undefined) {
-          mouseenter(e);
-        }
-        // position
-        let top = e.clientY + height / 2;
-        let left = e.clientX + width / 2;
-        loader.style.top = top + 'px';
-        loader.style.left = left + 'px';
+      // fix initial
+      if (width === undefined) {
+        mouseenter(e);
+      }
+      // position
+      Xt.friction(loader, {
+        "x": e.clientX + width / 2,
+        "y": e.clientY + height / 2
       });
     }
 
     function mouseenter(e) {
-      requestAnimationFrame(function () {
+      if (!loader.classList.contains('loader--disable') || loader.classList.contains('loader--js')) {
         // size
         let rect = loader.getBoundingClientRect();
         width = rect.width;
@@ -32,20 +30,15 @@ Xt.observe.push({
         // class
         loader.classList.add('active');
         loader.classList.remove('out');
-        // position
-        let top = e.clientY + height / 2;
-        let left = e.clientX + width / 2;
-        loader.style.top = top + 'px';
-        loader.style.left = left + 'px';
-      });
+      }
     }
 
     function mouseleave(e) {
-      requestAnimationFrame(function () {
+      if (!loader.classList.contains('loader--disable') || loader.classList.contains('loader--js')) {
         // class
         loader.classList.remove('active');
         loader.classList.add('out');
-      });
+      }
     }
 
     container.removeEventListener('mousemove', mousemove);

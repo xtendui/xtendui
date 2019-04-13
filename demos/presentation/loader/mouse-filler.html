@@ -19,7 +19,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
 
     <!-- styles -->
-    <link rel="stylesheet" href="/assets/styles/demos.min.css?v=0.8.2" />
+    <link rel="stylesheet" href="/assets/styles/demos.min.css?v=0.9.0" />
 
     <!-- demos styles -->
     
@@ -65,21 +65,19 @@
     let height;
 
     function mousemove(e) {
-      requestAnimationFrame(function () {
-        // fix initial
-        if (width === undefined) {
-          mouseenter(e);
-        }
-        // position
-        let top = e.clientY + height / 2;
-        let left = e.clientX + width / 2;
-        loader.style.top = top + 'px';
-        loader.style.left = left + 'px';
+      // fix initial
+      if (width === undefined) {
+        mouseenter(e);
+      }
+      // position
+      Xt.friction(loader, {
+        "x": e.clientX + width / 2,
+        "y": e.clientY + height / 2
       });
     }
 
     function mouseenter(e) {
-      requestAnimationFrame(function () {
+      if (!loader.classList.contains('loader--disable') || loader.classList.contains('loader--js')) {
         // size
         let rect = loader.getBoundingClientRect();
         width = rect.width;
@@ -87,20 +85,15 @@
         // class
         loader.classList.add('active');
         loader.classList.remove('out');
-        // position
-        let top = e.clientY + height / 2;
-        let left = e.clientX + width / 2;
-        loader.style.top = top + 'px';
-        loader.style.left = left + 'px';
-      });
+      }
     }
 
     function mouseleave(e) {
-      requestAnimationFrame(function () {
+      if (!loader.classList.contains('loader--disable') || loader.classList.contains('loader--js')) {
         // class
         loader.classList.remove('active');
         loader.classList.add('out');
-      });
+      }
     }
 
     container.removeEventListener('mousemove', mousemove);
@@ -123,7 +116,8 @@
     <script src="//cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js"></script>
 
     <!-- demos scripts -->
-    <script src="/assets/scripts/demos.min.js?v=0.8.2"></script>
+    <script src="/assets/scripts/xtend.min.js?v=0.9.0"></script>
+    <script src="/assets/scripts/demos.min.js?v=0.9.0"></script>
 
     <!-- demos scripts -->
     
@@ -139,21 +133,19 @@
     let height;
 
     function mousemove(e) {
-      requestAnimationFrame(function () {
-        // fix initial
-        if (width === undefined) {
-          mouseenter(e);
-        }
-        // position
-        let top = e.clientY + height / 2;
-        let left = e.clientX + width / 2;
-        loader.style.top = top + 'px';
-        loader.style.left = left + 'px';
+      // fix initial
+      if (width === undefined) {
+        mouseenter(e);
+      }
+      // position
+      Xt.friction(loader, {
+        "x": e.clientX + width / 2,
+        "y": e.clientY + height / 2
       });
     }
 
     function mouseenter(e) {
-      requestAnimationFrame(function () {
+      if (!loader.classList.contains('loader--disable') || loader.classList.contains('loader--js')) {
         // size
         let rect = loader.getBoundingClientRect();
         width = rect.width;
@@ -161,20 +153,15 @@
         // class
         loader.classList.add('active');
         loader.classList.remove('out');
-        // position
-        let top = e.clientY + height / 2;
-        let left = e.clientX + width / 2;
-        loader.style.top = top + 'px';
-        loader.style.left = left + 'px';
-      });
+      }
     }
 
     function mouseleave(e) {
-      requestAnimationFrame(function () {
+      if (!loader.classList.contains('loader--disable') || loader.classList.contains('loader--js')) {
         // class
         loader.classList.remove('active');
         loader.classList.add('out');
-      });
+      }
     }
 
     container.removeEventListener('mousemove', mousemove);

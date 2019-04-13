@@ -19,10 +19,10 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
 
     <!-- styles -->
-    <link rel="stylesheet" href="/assets/styles/demos.min.css?v=0.8.2" />
+    <link rel="stylesheet" href="/assets/styles/demos.min.css?v=0.9.0" />
 
     <!-- demos styles -->
-    <link rel="stylesheet" href="disabled.css?v=0.8.2" />
+    <link rel="stylesheet" href="/demos/interaction/overlay/disabled.css?v=0.9.0" />
 
   </head>
   <body class="full">
@@ -30,10 +30,10 @@
     <div id="body-outer">
 <div id="body-inner" class="demo-source-from">
 <div data-xt-overlay>
-  <button type="button" class="btn btn--primary btn--disabled-example">
+  <button type="button" class="btn btn--primary btn--disable-example">
     <span>Toggle</span>
   </button>
-  <div class="overlay_outer overlay--big overlay--disabled-example">
+  <div class="overlay_outer overlay--big overlay--disable-example">
     <div class="overlay">
       <div class="overlay_inner">
 
@@ -118,15 +118,15 @@
 
       @import (reference) "../../../../../dist/styles/xtend.less";
 
-.btn--disabled-example {
+.btn--disable-example {
   @media @min-sm {
     display: none;
   }
 }
 
-.overlay--disabled-example {
+.overlay--disable-example {
   @media @min-sm {
-    .overlay--disabled();
+    .overlay--disable();
   }
 }
     </less-style>
@@ -142,7 +142,8 @@
     <script src="//cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js"></script>
 
     <!-- demos scripts -->
-    <script src="/assets/scripts/demos.min.js?v=0.8.2"></script>
+    <script src="/assets/scripts/xtend.min.js?v=0.9.0"></script>
+    <script src="/assets/scripts/demos.min.js?v=0.9.0"></script>
 
     <!-- demos scripts -->
     

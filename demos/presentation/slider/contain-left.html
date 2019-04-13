@@ -19,10 +19,10 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon-152x152.png" />
 
     <!-- styles -->
-    <link rel="stylesheet" href="/assets/styles/demos.min.css?v=0.8.2" />
+    <link rel="stylesheet" href="/assets/styles/demos.min.css?v=0.9.0" />
 
     <!-- demos styles -->
-    <link rel="stylesheet" href="contain-left.css?v=0.8.2" />
+    <link rel="stylesheet" href="/demos/presentation/slider/contain-left.css?v=0.9.0" />
 
   </head>
   <body class="full">
@@ -129,16 +129,10 @@
 // slider
 
 .slider {
-  .slides_inner {
-    .row();
-    .row-space--y(none);
-    flex-wrap: nowrap;
-    align-items: flex-start;
-  }
   .slide {
     .col(6);
     .col(4, sm);
-    &:nth-child(1) {
+    &:nth-child(5) {
       .col--custom(80%);
     }
     &:nth-child(3) {
@@ -147,19 +141,15 @@
       }
     }
     // animation
-    > * {
-      opacity: .5;
+    opacity: .5;
+    transition-property: opacity;
+    transition-duration: @time--big;
+    transition-timing-function: @bez--out;
+    &.active {
+      opacity: 1;
       transition-property: opacity;
       transition-duration: @time--big;
-      transition-timing-function: @bez--out;
-    }
-    &.active {
-      > * {
-        opacity: 1;
-        transition-property: opacity;
-        transition-duration: @time--big;
-        transition-timing-function: @bez--in;
-      }
+      transition-timing-function: @bez--in;
     }
   }
 }
@@ -184,7 +174,8 @@
     <script src="//cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js"></script>
 
     <!-- demos scripts -->
-    <script src="/assets/scripts/demos.min.js?v=0.8.2"></script>
+    <script src="/assets/scripts/xtend.min.js?v=0.9.0"></script>
+    <script src="/assets/scripts/demos.min.js?v=0.9.0"></script>
 
     <!-- demos scripts -->
     

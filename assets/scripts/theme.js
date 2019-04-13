@@ -2,15 +2,15 @@
 // import
 //////////////////////
 
-import '../../../scripts/xtend';
+import ClipboardJS from 'clipboard';
 
 //////////////////////
 // vars
 //////////////////////
 
-window.easeIn = new Ease(BezierEasing(.36,0,0,1));
-window.easeOut = new Ease(BezierEasing(1,0,.64,1));
-window.easeInOut = new Ease(BezierEasing(.68,.13,.25,1));
+window.easeIn = new Ease(BezierEasing(.36, 0, 0, 1));
+window.easeOut = new Ease(BezierEasing(1, 0, .64, 1));
+window.easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
 
 //////////////////////
 // anchors and sidebar
@@ -86,7 +86,7 @@ for (let el of document.querySelectorAll('.site-aside-text')) {
 // activateAsideScroll
 
 const activateAsideScroll = function (els, scrollTop) {
-  const dist = window.innerHeight / 5;
+  const dist = Xt.windowHeight / 5;
   for (let el of els) {
     let href = el.getAttribute('href');
     if (href) {
@@ -205,6 +205,53 @@ const populateDemo = function (container, i) {
     }
     let btn = container.querySelectorAll('.demo-tabs-left')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny"><span>' + name + '</span></button>'));
     btn = container.querySelectorAll('.demo-tabs-left .btn')[k];
+    /* DOES NOT EXECUTE JAVASCRIPT INSIDE
+    // demo shadow
+    let shadowSrc = item.getAttribute('data-shadow');
+    if (shadowSrc) {
+      let request = new XMLHttpRequest();
+      let populateShadow = function() {
+        let source = Xt.createElement('<div class="demo-shadow xt-ignore" data-lang="html">');
+        item.classList.add('demo-iframe');
+        item.append(source);
+        let shadowRoot = source.attachShadow({mode: 'closed'});
+        let template = document.createElement('html');
+        template.innerHTML = request.responseText.trim();
+        //shadowRoot.appendChild(html);
+        let templateNew = document.adoptNode(template);
+        // script
+        let bodyNew = templateNew.querySelector('body');
+        for (let script of template.querySelectorAll('script')) {
+          let scriptNew = document.createElement('script');
+          scriptNew.textContent = script.innerHTML;
+          let scriptSrc = script.getAttribute('src');
+          if (scriptSrc) {
+            scriptNew.src = scriptSrc;
+            script.defer = true;
+          }
+          bodyNew.appendChild(scriptNew);
+          script.remove();
+        }
+        // @TODO REFACTOR
+        console.log(templateNew);
+        Xt.initElement(templateNew);
+        Xt.initObserve(templateNew);
+        Xt.observer.observe(templateNew, {
+          characterData: false,
+          attributes: false,
+          childList: true,
+          subtree: true
+        });
+        // append
+        shadowRoot.appendChild(templateNew);
+        item.classList.add('populated');
+      };
+      request.open('GET', shadowSrc, true);
+      request.onload = populateShadow;
+      request.onerror = populateShadow;
+      request.send();
+    }
+    */
     // iframe append
     let src = item.getAttribute('data-iframe');
     let id = 'iframe' + i + k;
@@ -214,7 +261,7 @@ const populateDemo = function (container, i) {
     // tabs
     item.prepend(Xt.createElement('<div class="demo-code collapse--height"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn--secondary-empty btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard"><span>copy</span></button></div></div><div class="demo-code-body"></div></div>'));
     // https://github.com/zenorocha/clipboard.js/
-    let clipboard = new Clipboard('.btn--clipboard', {
+    let clipboard = new ClipboardJS('.btn--clipboard', {
       target: function (trigger) {
         return Xt.parents(trigger, '.demo')[0].querySelectorAll('.demo-item.active .demo-code-body-item.active .hljs')[0];
       }
