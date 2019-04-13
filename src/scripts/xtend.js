@@ -886,7 +886,7 @@ Xt.scrollbarWidth = function (force = false) {
     outer.appendChild(inner);
     let widthWithScroll = inner.offsetWidth;
     // remove
-    outer.parentNode.removeChild(outer);
+    outer.remove();
     // return
     Xt.scrollbarWidthVal = widthNoScroll - widthWithScroll;
   }

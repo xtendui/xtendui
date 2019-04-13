@@ -129,7 +129,6 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -277,7 +276,6 @@ img[class*=' icon-xt--']:before {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 @media (max-width: 575px ) {
   .table--scroll-xs {
@@ -286,7 +284,6 @@ img[class*=' icon-xt--']:before {
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
     margin-bottom: 2rem;
   }
   .table--scroll-xs:first-child {
@@ -303,7 +300,6 @@ img[class*=' icon-xt--']:before {
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
     margin-bottom: 2rem;
   }
   .table--scroll-sm:first-child {
@@ -320,7 +316,6 @@ img[class*=' icon-xt--']:before {
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
     margin-bottom: 2rem;
   }
   .table--scroll-md:first-child {
@@ -337,7 +332,6 @@ img[class*=' icon-xt--']:before {
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
     margin-bottom: 2rem;
   }
   .table--scroll-lg:first-child {
@@ -354,7 +348,6 @@ img[class*=' icon-xt--']:before {
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
     margin-bottom: 2rem;
   }
   .table--scroll-xl:first-child {
@@ -1128,7 +1121,6 @@ div.btn {
   height: 100vh;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 .overlay_outer.active,
 .overlay_outer.out {
@@ -1676,7 +1668,6 @@ a.links--none,
 }
 .overflow-style {
   -webkit-overflow-scrolling: touch !important;
-  -ms-overflow-style: -ms-autohiding-scrollbar !important;
 }
 .design-setup {
   content: '' !important;
@@ -3186,7 +3177,6 @@ pre {
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
   margin-top: 2rem;
   margin-bottom: 2rem;
   width: 100%;
@@ -4076,7 +4066,6 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
   overflow-y: auto;
   max-height: 25rem;
   -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 .card--max-width {
   width: auto;
@@ -4085,7 +4074,6 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
   overflow-x: auto;
   max-width: 35rem;
   -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 .card--primary > .card_design {
   border-color: #7367F0;
@@ -5094,13 +5082,11 @@ img.btn--close > span:after {
   overflow-y: auto;
   max-height: 25rem;
   -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 .drop--max-width > .drop_inner > .drop_content {
   overflow-x: auto;
   max-width: 35rem;
   -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 .drop--primary > .drop_inner {
   color: #fff;

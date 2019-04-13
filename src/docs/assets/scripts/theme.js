@@ -2,6 +2,7 @@
 // import
 //////////////////////
 
+import '@webcomponents/shadydom';
 import ClipboardJS from 'clipboard';
 
 //////////////////////
@@ -217,32 +218,34 @@ const populateDemo = function (container, i) {
         let template = document.createElement('html');
         template.innerHTML = request.responseText.trim();
         let shadowTemplate = document.adoptNode(template);
-        // script
-        let shadowBody = shadowTemplate.querySelector('body');
-        let scripts = template.querySelectorAll('script:not([src])');
-        for (let script of scripts) {
-          let scriptNew = document.createElement('script');
-          scriptNew.textContent = script.innerHTML;
-          /*
-          let scriptSrc = script.getAttribute('src');
-          if (scriptSrc) {
-            scriptNew.src = scriptSrc;
-            script.defer = true;
-          }
-          */
-          shadowBody.appendChild(scriptNew);
-          script.remove();
+        // remove unsupported shadow dom elements
+        let removes = template.querySelectorAll('link:not([rel="stylesheet"])');
+        for (let remove of removes) {
+          remove.remove();
         }
-        // style
-        let styles = template.querySelectorAll('link[rel="stylesheet"]');
-        let stylesLoaded = 0;
-        for (let style of styles) {
-          style.addEventListener('load', function() {
-            stylesLoaded++;
-            if (stylesLoaded === styles.length) {
-              Xt.load(shadowTemplate);
-            }
-          });
+        // if shadow dom supported
+        if (document.head.attachShadow) {
+          // script
+          let shadowBody = shadowTemplate.querySelector('body');
+          let scripts = template.querySelectorAll('script:not([src])');
+          for (let script of scripts) {
+            let scriptNew = document.createElement('script');
+            scriptNew.textContent = script.innerHTML;
+            shadowBody.appendChild(scriptNew);
+            script.remove();
+          }
+          // style
+          let styles = template.querySelectorAll('link[rel="stylesheet"]');
+          let stylesLoaded = 0;
+          for (let style of styles) {
+            style.addEventListener('load', function() {
+              stylesLoaded++;
+              if (stylesLoaded === styles.length) {
+                // check when link[rel="stylesheet"] are loaded
+                Xt.load(shadowTemplate); // Xt.load
+              }
+            });
+          }
         }
         // append
         shadowRoot.appendChild(shadowTemplate);
@@ -389,7 +392,7 @@ function populateShadow(item, shadowRoot) {
   // populate
   for (let [z, source] of item.querySelectorAll('.demo-source').entries()) {
     populateSources(item, source, z);
-    source.parentNode.removeChild(source);
+    source.remove();
   }
   Xt.init('xt-toggle', item, {
     "elements": ".demo-code-tabs-left .btn",
@@ -445,7 +448,7 @@ function populateIframe(item, iframe) {
   // populate
   for (let [z, source] of item.querySelectorAll('.demo-source').entries()) {
     populateSources(item, source, z);
-    source.parentNode.removeChild(source);
+    source.remove();
   }
   Xt.init('xt-toggle', item, {
     "elements": ".demo-code-tabs-left .btn",

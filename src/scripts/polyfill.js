@@ -1,5 +1,5 @@
 //////////////////////
-// closest polyfill
+// closest
 // https://github.com/jonathantneal/closest
 // USAGE: element.closest(query);
 //////////////////////
@@ -31,7 +31,7 @@
 })(window.Element.prototype);
 
 //////////////////////
-// :scope polyfill
+// :scope
 // https://github.com/jonathantneal/element-qsa-scope
 // USAGE: querySelectorAll(':scope > .selector');
 //////////////////////
@@ -94,8 +94,30 @@
 })(Element.prototype);
 
 //////////////////////
-// prepend polyfill
-// https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend
+// remove
+// https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/remove()/remove().md
+// USAGE: element.remove();
+//////////////////////
+
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('remove')) {
+      return;
+    }
+    Object.defineProperty(item, 'remove', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function remove() {
+        this.parentNode.removeChild(this);
+      }
+    });
+  });
+})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+
+//////////////////////
+// prepend
+// https://github.com/jserz/js_piece/blob/master/DOM/ParentNode/prepend()/prepend().md
 //////////////////////
 
 (function (arr) {
@@ -123,8 +145,8 @@
 })([Element.prototype, Document.prototype, DocumentFragment.prototype]);
 
 //////////////////////
-// append polyfill
-// https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append
+// append
+// https://github.com/jserz/js_piece/blob/master/DOM/ParentNode/append()/append().md
 //////////////////////
 
 (function (arr) {
@@ -152,8 +174,8 @@
 })([Element.prototype, Document.prototype, DocumentFragment.prototype]);
 
 //////////////////////
-// before polyfill
-// https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/before
+// before
+// https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/before()/before().md
 //////////////////////
 
 (function (arr) {
@@ -181,8 +203,8 @@
 })([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
 
 //////////////////////
-// findIndex polyfill
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+// findIndex
+// https://tc39.github.io/ecma262/#sec-array.prototype.findindex
 //////////////////////
 
 if (!Array.prototype.findIndex) {
@@ -213,8 +235,8 @@ if (!Array.prototype.findIndex) {
 }
 
 //////////////////////
-// includes polyfill
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+// includes
+// https://tc39.github.io/ecma262/#sec-array.prototype.includes
 //////////////////////
 
 if (!Array.prototype.includes) {
@@ -269,7 +291,7 @@ if (!Array.prototype.includes) {
 }
 
 //////////////////////
-// CustomEvent polyfill
+// CustomEvent
 // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
 //////////////////////
 
@@ -290,7 +312,7 @@ if (!Array.prototype.includes) {
 })();
 
 //////////////////////
-// scrollingElement polyfill
+// scrollingElement
 // https://github.com/yangg/scrolling-element
 //////////////////////
 
@@ -324,7 +346,7 @@ if (!Array.prototype.includes) {
 })();
 
 //////////////////////
-// composedPath polyfill
+// composedPath
 // https://gist.github.com/rockinghelvetica/00b9f7b5c97a16d3de75ba99192ff05c
 //////////////////////
 

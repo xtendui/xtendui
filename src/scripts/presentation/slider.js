@@ -69,7 +69,7 @@ class Slider extends Core {
           clone.classList.add('xt-calculating', 'xt-ignore');
           container.append(clone);
           targetWidth = clone.offsetWidth;
-          container.removeChild(clone);
+          clone.remove();
         }
         currentCount -= targetWidth;
         // overflow
@@ -96,7 +96,7 @@ class Slider extends Core {
       for (let pags of self.pags) {
         for (let pag of pags) {
           let container = pag.parentNode;
-          container.removeChild(pag);
+          pag.remove();
         }
       }
       // add new
