@@ -214,10 +214,11 @@ class Slider extends Core {
         if (group) {
           for (let target of targets) {
             Xt.dataStorage.set(target, self.componentNamespace + 'GroupPos', pos);
-            //console.log(target, self.componentNamespace + 'GroupPos', pos);
+            console.log(pos);
           }
         } else {
           Xt.dataStorage.set(slide, self.componentNamespace + 'GroupPos', pos);
+          console.log(pos);
         }
       }
     }

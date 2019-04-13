@@ -36,6 +36,7 @@
     <!-- demos source less -->
     {% if page.less %}
     <less-style>
+
       {% include {{ page.dir | append:page.name | replace: '.html', '.less' }} %}
     </less-style>
     {% endif %}
@@ -43,6 +44,7 @@
     <!-- demos source js -->
     {% if page.js %}
     <js-script>
+
       {% include {{ page.dir | append:page.name | replace: '.html', '.js' }} %}
     </js-script>
     {% endif %}

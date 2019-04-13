@@ -205,53 +205,46 @@ const populateDemo = function (container, i) {
     }
     let btn = container.querySelectorAll('.demo-tabs-left')[0].append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny"><span>' + name + '</span></button>'));
     btn = container.querySelectorAll('.demo-tabs-left .btn')[k];
-    /* DOES NOT EXECUTE JAVASCRIPT INSIDE
     // demo shadow
     let shadowSrc = item.getAttribute('data-shadow');
     if (shadowSrc) {
       let request = new XMLHttpRequest();
       let populateShadow = function() {
-        let source = Xt.createElement('<div class="demo-shadow xt-ignore" data-lang="html">');
+        let source = Xt.createElement('<div class="demo-shadow" data-lang="html">');
         item.classList.add('demo-iframe');
         item.append(source);
-        let shadowRoot = source.attachShadow({mode: 'closed'});
+        let shadowRoot = source.attachShadow({mode: 'open'});
         let template = document.createElement('html');
         template.innerHTML = request.responseText.trim();
         //shadowRoot.appendChild(html);
-        let templateNew = document.adoptNode(template);
+        let shadowTemplate = document.adoptNode(template);
         // script
-        let bodyNew = templateNew.querySelector('body');
-        for (let script of template.querySelectorAll('script')) {
+        let shadowBody = shadowTemplate.querySelector('body');
+        for (let script of template.querySelectorAll('script:not([src])')) {
           let scriptNew = document.createElement('script');
           scriptNew.textContent = script.innerHTML;
+          /*
           let scriptSrc = script.getAttribute('src');
           if (scriptSrc) {
             scriptNew.src = scriptSrc;
             script.defer = true;
           }
-          bodyNew.appendChild(scriptNew);
+          */
+          shadowBody.appendChild(scriptNew);
           script.remove();
         }
-        // @TODO REFACTOR
-        console.log(templateNew);
-        Xt.initElement(templateNew);
-        Xt.initObserve(templateNew);
-        Xt.observer.observe(templateNew, {
-          characterData: false,
-          attributes: false,
-          childList: true,
-          subtree: true
-        });
         // append
-        shadowRoot.appendChild(templateNew);
-        item.classList.add('populated');
+        shadowRoot.appendChild(shadowTemplate);
+        initShadow(source, shadowRoot);
+        // load
+        //Xt.load(shadowTemplate);
+        Xt.load(shadowRoot);
       };
       request.open('GET', shadowSrc, true);
       request.onload = populateShadow;
       request.onerror = populateShadow;
       request.send();
     }
-    */
     // iframe append
     let src = item.getAttribute('data-iframe');
     let id = 'iframe' + i + k;
@@ -296,7 +289,7 @@ const populateDemo = function (container, i) {
       iframe.parentElement.addEventListener('off.xt', function (e) {
         iframe.classList.remove('show');
       });
-    } else {
+    } else if (!item.getAttribute('data-shadow')) {
       populateInline(item, id);
       // .populated fix scroll
       item.classList.add('populated');
@@ -357,6 +350,45 @@ const populateInline = function (item, id) {
     "min": 1
   });
 };
+
+// populateShadow
+
+window.initShadow = function (source, shadowRoot) {
+  source.classList.add('show');
+  let item = Xt.parents(source, '.demo-item')[0];
+  if (!item.classList.contains('populated')) {
+    populateShadow(item, shadowRoot);
+    item.classList.add('populated');
+  }
+};
+
+function populateShadow(item, shadowRoot) {
+  let body = shadowRoot.querySelector('body');
+  let html = body.querySelectorAll('#body-outer')[0];
+  let less = body.querySelectorAll('less-style')[0];
+  //let css = body.querySelectorAll('style[scoped]')[0];
+  let js = body.querySelectorAll('js-script')[0];
+  // inject code
+  if (html) {
+    item.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="html">' + html.innerHTML + '</div>'));
+  }
+  if (less) {
+    item.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="less">' + less.innerHTML + '</div>'));
+  }
+  if (js) {
+    item.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="js">' + js.innerHTML + '</div>'));
+  }
+  // populate
+  for (let [z, source] of item.querySelectorAll('.demo-source').entries()) {
+    populateSources(item, source, z);
+    source.parentNode.removeChild(source);
+  }
+  Xt.init('xt-toggle', item, {
+    "elements": ".demo-code-tabs-left .btn",
+    "targets": ".demo-code-body-item",
+    "min": 1
+  });
+}
 
 // populateIframe
 

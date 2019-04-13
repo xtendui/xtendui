@@ -130,7 +130,7 @@ Xt.initElement = function (added = document.documentElement) {
   for (let element of added) {
     // components
     for (let component of Xt.components) {
-      if (element.matches('[data-' + component.name + ']')) {
+      if (element.nodeType === 1 && element.matches('[data-' + component.name + ']')) {
         Xt.init(component.name, element);
       }
       for (let el of element.querySelectorAll('[data-' + component.name + ']')) {
@@ -138,21 +138,21 @@ Xt.initElement = function (added = document.documentElement) {
       }
     }
     // textareaAutosize
-    if (element.matches('textarea')) {
+    if (element.nodeType === 1 && element.matches('textarea')) {
       Xt.textareaAutosize.init(element);
     }
     for (let el of element.querySelectorAll('textarea')) {
       Xt.textareaAutosize.init(el);
     }
     // media
-    if (element.matches('.media')) {
+    if (element.nodeType === 1 && element.matches('.media')) {
       Xt.media.init(element);
     }
     for (let el of element.querySelectorAll('.media')) {
       Xt.media.init(el);
     }
     // btnMerge
-    if (element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
+    if (element.nodeType === 1 && element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
       Xt.btnMerge.init(element);
     }
     for (let el of Array.from(element.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
@@ -170,7 +170,7 @@ Xt.destroyElement = function (removed = document.documentElement) {
   for (let element of removed) {
     // components
     for (let component of Xt.components) {
-      if (element.matches('[data-' + component.name + '-inited]')) {
+      if (element.nodeType === 1 && element.matches('[data-' + component.name + '-inited]')) {
         Xt.destroy(component.name, element);
       }
       for (let el of element.querySelectorAll('[data-' + component.name + '-inited]')) {
@@ -178,21 +178,21 @@ Xt.destroyElement = function (removed = document.documentElement) {
       }
     }
     // textareaAutosize
-    if (element.matches('textarea')) {
+    if (element.nodeType === 1 && element.matches('textarea')) {
       Xt.textareaAutosize.destroy(element);
     }
     for (let el of element.querySelectorAll('textarea')) {
       Xt.textareaAutosize.destroy(el);
     }
     // media
-    if (element.matches('.media')) {
+    if (element.nodeType === 1 && element.matches('.media')) {
       Xt.media.destroy(element);
     }
     for (let el of element.querySelectorAll('.media')) {
       Xt.media.destroy(el);
     }
     // btnMerge
-    if (element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
+    if (element.nodeType === 1 && element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
       Xt.btnMerge.destroy(element);
     }
     for (let el of Array.from(element.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
@@ -209,7 +209,7 @@ Xt.destroyElement = function (removed = document.documentElement) {
 Xt.initObserve = function (added = document.documentElement) {
   for (let obj of Xt.observe) {
     let els = [];
-    if (added.matches(obj.matches)) {
+    if (added.nodeType === 1 && added.matches(obj.matches)) {
       els.push(added);
     }
     for (let el of added.querySelectorAll(obj.matches)) {
@@ -248,33 +248,34 @@ Xt.observer = new MutationObserver(function (mutationsList) {
 });
 
 /**
- * document ready
+ * load
+ * @param {Node|HTMLElement|EventTarget|Window} container Component's element
+ */
+
+Xt.load = function (container = document.documentElement) {
+  requestAnimationFrame(function () {
+    Xt.windowHeightSet();
+    Xt.initElement(container);
+    Xt.initObserve(container);
+    Xt.observer.observe(container, {
+      characterData: false,
+      attributes: false,
+      childList: true,
+      subtree: true
+    });
+  });
+};
+
+/**
+ * document ready load
  */
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', function () {
-    Xt.windowHeightSet();
-    Xt.initElement();
-    Xt.initObserve();
-    Xt.observer.observe(document.documentElement, {
-      characterData: false,
-      attributes: false,
-      childList: true,
-      subtree: true
-    });
+    Xt.load();
   });
 } else {
-  requestAnimationFrame(function () {
-    Xt.windowHeightSet();
-    Xt.initElement();
-    Xt.initObserve();
-    Xt.observer.observe(document.documentElement, {
-      characterData: false,
-      attributes: false,
-      childList: true,
-      subtree: true
-    });
-  });
+  Xt.load();
 }
 
 //////////////////////
