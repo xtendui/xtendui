@@ -209,18 +209,16 @@ const populateDemo = function (container, i) {
     // demo shadow
     let shadowSrc = item.getAttribute('data-shadow');
     if (shadowSrc) {
+      /*
       let request = new XMLHttpRequest();
-      let populateShadow = function() {
-
-        // PROBLEM SHADOW DOM
-        // shadow dom js is not encapsulated: document.queryselector is parent document and doesn't even query inside shadow doms
-
-        /* SHADOW DOM BETTER
+      let populateShadow = function () {
         // source
         let source = Xt.createElement('<div class="demo-shadow" data-lang="html">');
         item.append(source);
         // shadowRoot
-        let shadowRoot = source.attachShadow({mode: 'closed'});
+        let shadowRoot = source.attachShadow({mode: 'open'});
+        let shadowId = 'shadow-root-' + i + k;
+        source.setAttribute('id', shadowId);
         let template = document.createElement('html');
         template.innerHTML = request.responseText.trim();
         let shadowTemplate = document.adoptNode(template);
@@ -236,7 +234,7 @@ const populateDemo = function (container, i) {
           let scripts = template.querySelectorAll('script:not([src])');
           for (let script of scripts) {
             let scriptNew = document.createElement('script');
-            scriptNew.textContent = script.innerHTML;
+            scriptNew.textContent = script.innerHTML.replace(/(?=.*\s)(document\.)/g, 'document.querySelector("#' + shadowId + '").shadowRoot.'); // replace document. with a query inside shadow dom
             shadowBody.appendChild(scriptNew);
             script.remove();
           }
@@ -244,7 +242,7 @@ const populateDemo = function (container, i) {
           let styles = template.querySelectorAll('link[rel="stylesheet"]');
           let stylesLoaded = 0;
           for (let style of styles) {
-            style.addEventListener('load', function() {
+            style.addEventListener('load', function () {
               stylesLoaded++;
               if (stylesLoaded === styles.length) {
                 // when all link[rel="stylesheet"] are loaded
@@ -256,55 +254,12 @@ const populateDemo = function (container, i) {
         // shadowRoot
         shadowRoot.appendChild(shadowTemplate);
         initShadow(source, shadowRoot);
-        */
-
-        /* HTMLElement WORSE
-        let shadowRoot = source.attachShadow({mode: 'closed'});
-        let proto = Object.create(HTMLElement.prototype);
-        proto.attachedCallback = function() {
-          this.innerHTML = request.responseText.trim();
-          // if shadow dom supported
-          if (document.head.attachShadow) {
-            // remove unsupported shadow dom elements
-            let removes = this.querySelectorAll('link:not([rel="stylesheet"])');
-            for (let remove of removes) {
-              remove.remove();
-            }
-            // script
-            let shadowBody = this;
-            let scripts = this.querySelectorAll('script:not([src])');
-            for (let script of scripts) {
-              let scriptNew = document.createElement('script');
-              scriptNew.textContent = script.innerHTML;
-              shadowBody.appendChild(scriptNew);
-              script.remove();
-            }
-            // style
-            let styles = this.querySelectorAll('link[rel="stylesheet"]');
-            let stylesLoaded = 0;
-            for (let style of styles) {
-              style.addEventListener('load', function() {
-                stylesLoaded++;
-                if (stylesLoaded === styles.length) {
-                  // when all link[rel="stylesheet"] are loaded
-                  Xt.load(this);
-                  console.log('cccc');
-                }
-              });
-            }
-          }
-        };
-        let DemoShadow = document.registerElement('demo-shadow', { prototype: proto });
-        let demoShadow = new DemoShadow();
-        shadowRoot.appendChild(demoShadow);
-        initShadow(source, shadowRoot);
-        */
-
       };
       request.open('GET', shadowSrc, true);
       request.onload = populateShadow;
       request.onerror = populateShadow;
       request.send();
+      */
     }
     // iframe append
     let src = item.getAttribute('data-iframe');
