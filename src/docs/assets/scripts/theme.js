@@ -212,6 +212,9 @@ const populateDemo = function (container, i) {
       let request = new XMLHttpRequest();
       let populateShadow = function() {
 
+        // PROBLEM SHADOW DOM
+        // shadow dom js is not encapsulated: document.queryselector is parent document and doesn't even query inside shadow doms
+
         /* SHADOW DOM BETTER
         // source
         let source = Xt.createElement('<div class="demo-shadow" data-lang="html">');
