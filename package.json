@@ -27,7 +27,7 @@
   "scripts": {
     "version": "gulp version",
     "build": "gulp build",
-    "build:docs": "gulp build:docs & gatsby build",
+    "build:docs": "gulp build:docs && gatsby build",
     "dev": "gulp watch",
     "dev:docs": "gulp watch:docs & gatsby develop",
     "serve": "npm run serve:docs",
@@ -39,14 +39,15 @@
     "lint": "eslint src/scripts src/docs/assets/scripts"
   },
   "dependencies": {
-    "bezier-easing": "^2.1.0"
+    "@babel/polyfill": "^7.4.3",
+    "bezier-easing": "^2.1.0",
+    "gsap": "^2.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
     "@babel/plugin-transform-arrow-functions": "^7.2.0",
     "@babel/plugin-transform-for-of": "^7.0.0",
-    "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/commit-analyzer": "^6.1.0",
@@ -67,6 +68,7 @@
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-page-creator": "^2.0.12",
     "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-sharp": "^2.0.32",
     "gatsby-source-filesystem": "^2.0.29",
     "gatsby-transformer-sharp": "^2.1.17",

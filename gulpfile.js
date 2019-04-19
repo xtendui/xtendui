@@ -18,15 +18,31 @@ let sourcemaps = require('gulp-sourcemaps');
 
 const version = JSON.parse(fs.readFileSync('package.json')).version;
 const banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
+const babelifyOptions = {
+  presets: [
+    ['@babel/preset-env',
+      {
+        modules: 'commonjs',
+        targets: {browsers: ['>0.25%', 'Explorer 11', 'not op_mini all']}
+      }
+    ]
+  ],
+  plugins: [
+    ['@babel/plugin-transform-for-of'],
+    ['@babel/plugin-transform-arrow-functions'],
+    ['@babel/plugin-proposal-object-rest-spread']
+  ]
+};
 
 // compile less
 
-gulp.task('less:demos', function () {
-  return gulp.src(['src/docs/demos/**/*.less', '!src/docs/demos/**/_*.less'])
-    .pipe(cache('cache:less:demos'))
-    .pipe(less())
-    .pipe(cleanCSS())
-    .pipe(gulp.dest('src/docs/demos/'));
+gulp.task('less:demos', function (done) {
+  done();
+  // return gulp.src(['src/docs/demos/**/*.less', '!src/docs/demos/**/_*.less'])
+  //   .pipe(cache('cache:less:demos'))
+  //   .pipe(less())
+  //   .pipe(cleanCSS())
+  //   .pipe(gulp.dest('src/docs/demos/'));
 });
 gulp.task('less:demos:watch', function (done) {
   gulp.watch(['src/styles/**/*.less', 'dist/styles/**/*.less', 'src/docs/demos/**/*.less'], gulp.series('less', 'less:demos'));
@@ -34,7 +50,7 @@ gulp.task('less:demos:watch', function (done) {
 });
 
 gulp.task('lessmin:docs', gulp.series('less:demos', function () {
-  return gulp.src(['src/docs/assets/styles/**/*.less', '!src/docs/assets/styles/**/_*.less'])
+  return gulp.src(['src/gatsby/assets/styles/**/*.less', '!src/gatsby/assets/styles/**/_*.less'])
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(rename({
@@ -42,17 +58,17 @@ gulp.task('lessmin:docs', gulp.series('less:demos', function () {
     }))
     .pipe(cleanCSS())
     .pipe(sourcemaps.write(''))
-    .pipe(gulp.dest('src/docs/assets/styles/'));
+    .pipe(gulp.dest('src/gatsby/assets/styles/'));
 }));
 gulp.task('less:docs', gulp.series('lessmin:docs', function () {
-  return gulp.src(['src/docs/assets/styles/**/*.less', '!src/docs/assets/styles/**/_*.less'])
+  return gulp.src(['src/gatsby/assets/styles/**/*.less', '!src/gatsby/assets/styles/**/_*.less'])
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(sourcemaps.write(''))
-    .pipe(gulp.dest('src/docs/assets/styles/'));
+    .pipe(gulp.dest('src/gatsby/assets/styles/'));
 }));
 gulp.task('less:docs:watch', function (done) {
-  gulp.watch(['src/styles/**/*.less', 'dist/styles/**/*.less', 'src/docs/assets/styles/**/*.less'], gulp.series('less', 'less:docs'));
+  gulp.watch(['src/styles/**/*.less', 'dist/styles/**/*.less', 'src/gatsby/assets/styles/**/*.less'], gulp.series('less', 'less:docs'));
   done();
 });
 
@@ -85,23 +101,9 @@ gulp.task('less:watch', function (done) {
 
 gulp.task('js:demos', function () {
   let b = browserify({
-    entries: 'src/docs/assets/scripts/demos.js',
+    entries: 'src/gatsby/assets/scripts/demos.js',
     debug: true
-  }).transform(babelify, {
-    presets: [
-      ['@babel/preset-env',
-        {
-          modules: 'commonjs',
-          targets: {browsers: ['>0.25%', 'Explorer 11', 'not op_mini all']}
-        }
-      ]
-    ],
-    plugins: [
-      ['@babel/plugin-transform-for-of'],
-      ['@babel/plugin-transform-arrow-functions'],
-      ['@babel/plugin-proposal-object-rest-spread']
-    ]
-  });
+  }).transform(babelify, babelifyOptions);
   return b.bundle()
     .pipe(source('demos.min.js'))
     .pipe(buffer())
@@ -112,32 +114,18 @@ gulp.task('js:demos', function () {
       }
     }))
     .pipe(sourcemaps.write(''))
-    .pipe(gulp.dest('src/docs/assets/scripts/'));
+    .pipe(gulp.dest('src/gatsby/assets/scripts/'));
 });
 gulp.task('js:demos:watch', function (done) {
-  gulp.watch(['src/scripts/**/*.js', 'src/docs/assets/scripts/demos.js'], gulp.series('js', 'js:demos'));
+  gulp.watch(['src/scripts/**/*.js', 'src/gatsby/assets/scripts/demos.js'], gulp.series('js', 'js:demos'));
   done();
 });
 
 gulp.task('js:docs', function () {
   let b = browserify({
-    entries: 'src/docs/assets/scripts/theme.js',
+    entries: 'src/gatsby/assets/scripts/theme.js',
     debug: true
-  }).transform(babelify, {
-    presets: [
-      ['@babel/preset-env',
-        {
-          modules: 'commonjs',
-          targets: {browsers: ['>0.25%', 'Explorer 11', 'not op_mini all']}
-        }
-      ]
-    ],
-    plugins: [
-      ['@babel/plugin-transform-for-of'],
-      ['@babel/plugin-transform-arrow-functions'],
-      ['@babel/plugin-proposal-object-rest-spread']
-    ]
-  });
+  }).transform(babelify, babelifyOptions);
   return b.bundle()
     .pipe(source('theme.min.js'))
     .pipe(buffer())
@@ -148,10 +136,10 @@ gulp.task('js:docs', function () {
       }
     }))
     .pipe(sourcemaps.write(''))
-    .pipe(gulp.dest('src/docs/assets/scripts/'));
+    .pipe(gulp.dest('src/gatsby/assets/scripts/'));
 });
 gulp.task('js:docs:watch', function (done) {
-  gulp.watch(['src/scripts/**/*.js', 'src/docs/assets/scripts/theme.js'], gulp.series('js', 'js:docs'));
+  gulp.watch(['src/scripts/**/*.js', 'src/gatsby/assets/scripts/theme.js'], gulp.series('js', 'js:docs'));
   done();
 });
 
@@ -160,21 +148,7 @@ gulp.task('js', function () {
     entries: 'src/scripts/xtend.js',
     standalone: 'Xt',
     debug: true
-  }).transform(babelify, {
-    presets: [
-      ['@babel/preset-env',
-        {
-          modules: 'commonjs',
-          targets: {browsers: ['>0.25%', 'Explorer 11', 'not op_mini all']}
-        }
-      ]
-    ],
-    plugins: [
-      ['@babel/plugin-transform-for-of'],
-      ['@babel/plugin-transform-arrow-functions'],
-      ['@babel/plugin-proposal-object-rest-spread']
-    ]
-  });
+  }).transform(babelify, babelifyOptions);
   return b.bundle()
     .pipe(source('xtend.min.js'))
     .pipe(replace(/\/\*\![^\*]+\*\//, banner))
@@ -186,8 +160,7 @@ gulp.task('js', function () {
       }
     }))
     .pipe(sourcemaps.write(''))
-    .pipe(gulp.dest('dist/scripts/'))
-    .pipe(gulp.dest('src/docs/assets/scripts/'));
+    .pipe(gulp.dest('dist/scripts/'));
 });
 gulp.task('js:watch', function (done) {
   gulp.watch(['src/scripts/**/*.js'], gulp.series('js'));

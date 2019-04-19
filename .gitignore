@@ -69,5 +69,6 @@ yarn-error.log
 .yarn-integrity
 
 # custom
+.DS_Store
 .idea
 /docs
