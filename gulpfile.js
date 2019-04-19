@@ -11,6 +11,7 @@ let cache = require('gulp-cached');
 let terser = require('gulp-terser');
 let rename = require('gulp-rename');
 let replace = require('gulp-replace');
+let babelify = require('babelify');
 let browserify = require('browserify');
 let cleanCSS = require('gulp-clean-css');
 let sourcemaps = require('gulp-sourcemaps');
@@ -86,6 +87,20 @@ gulp.task('js:demos', function () {
   let b = browserify({
     entries: 'src/docs/assets/scripts/demos.js',
     debug: true
+  }).transform(babelify, {
+    presets: [
+      ['@babel/preset-env',
+        {
+          modules: 'commonjs',
+          targets: {browsers: ['>0.25%', 'Explorer 11', 'not op_mini all']}
+        }
+      ]
+    ],
+    plugins: [
+      ['@babel/plugin-transform-for-of'],
+      ['@babel/plugin-transform-arrow-functions'],
+      ['@babel/plugin-proposal-object-rest-spread']
+    ]
   });
   return b.bundle()
     .pipe(source('demos.min.js'))
@@ -108,6 +123,20 @@ gulp.task('js:docs', function () {
   let b = browserify({
     entries: 'src/docs/assets/scripts/theme.js',
     debug: true
+  }).transform(babelify, {
+    presets: [
+      ['@babel/preset-env',
+        {
+          modules: 'commonjs',
+          targets: {browsers: ['>0.25%', 'Explorer 11', 'not op_mini all']}
+        }
+      ]
+    ],
+    plugins: [
+      ['@babel/plugin-transform-for-of'],
+      ['@babel/plugin-transform-arrow-functions'],
+      ['@babel/plugin-proposal-object-rest-spread']
+    ]
   });
   return b.bundle()
     .pipe(source('theme.min.js'))
@@ -131,6 +160,20 @@ gulp.task('js', function () {
     entries: 'src/scripts/xtend.js',
     standalone: 'Xt',
     debug: true
+  }).transform(babelify, {
+    presets: [
+      ['@babel/preset-env',
+        {
+          modules: 'commonjs',
+          targets: {browsers: ['>0.25%', 'Explorer 11', 'not op_mini all']}
+        }
+      ]
+    ],
+    plugins: [
+      ['@babel/plugin-transform-for-of'],
+      ['@babel/plugin-transform-arrow-functions'],
+      ['@babel/plugin-proposal-object-rest-spread']
+    ]
   });
   return b.bundle()
     .pipe(source('xtend.min.js'))
@@ -148,37 +191,6 @@ gulp.task('js', function () {
 });
 gulp.task('js:watch', function (done) {
   gulp.watch(['src/scripts/**/*.js'], gulp.series('js'));
-  done();
-});
-
-// site
-
-gulp.task('site:build', function (callback) {
-  let jekyll = child.spawn('bundle', ['exec', 'jekyll', 'build']);
-  let jekyllLogger = function (buffer) {
-    buffer.toString()
-      .split(/\n/)
-      .forEach((message) => gutil.log('Jekyll: ' + message));
-  };
-  jekyll.stdout.on('data', jekyllLogger);
-  jekyll.stderr.on('data', jekyllLogger);
-  callback();
-});
-
-gulp.task('site:serve', function (callback) {
-  let jekyll = child.spawn('bundle', ['exec', 'jekyll', 'serve', '--no-watch']);
-  let jekyllLogger = function (buffer) {
-    buffer.toString()
-      .split(/\n/)
-      .forEach((message) => gutil.log('Jekyll: ' + message));
-  };
-  jekyll.stdout.on('data', jekyllLogger);
-  jekyll.stderr.on('data', jekyllLogger);
-  callback();
-});
-
-gulp.task('site:watch', function (done) {
-  gulp.watch(['src/docs/**/*.*'], gulp.series('site:build'));
   done();
 });
 
@@ -202,11 +214,11 @@ gulp.task('watch',
 );
 
 gulp.task('build:docs',
-  gulp.series(gulp.parallel('build'), gulp.parallel('less:docs', 'less:demos', 'js:docs', 'js:demos'), gulp.parallel('site:build'))
+  gulp.series(gulp.parallel('build'), gulp.parallel('less:docs', 'less:demos', 'js:docs', 'js:demos'))
 );
 
 gulp.task('watch:docs',
-  gulp.series(gulp.parallel('build:docs'), gulp.parallel('site:watch', 'less:docs:watch', 'less:demos:watch', 'js:docs:watch', 'js:demos:watch'), gulp.parallel('site:serve'))
+  gulp.series(gulp.parallel('build:docs'), gulp.parallel('less:docs:watch', 'less:demos:watch', 'js:docs:watch', 'js:demos:watch'))
 );
 
 gulp.task('default', gulp.series('build'));
