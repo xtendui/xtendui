@@ -643,11 +643,39 @@
   .demo-item {
     position: relative;
     .toggle--block();
-    iframe {
-      width: 100%;
-      height: 30rem;
-      &:not(.show) {
-        visibility: hidden;
+    &[data-iframe] {
+      &:not(.loaded) {
+        .demo-item-wrapper {
+          height: 30rem;
+        }
+        iframe {
+          display: none;
+        }
+      }
+      &.loaded {
+        .demo-item-wrapper + .loader {
+          display: none;
+        }
+      }
+      iframe {
+        display: block;
+        width: 100%;
+        height: 30rem;
+      }
+    }
+    &[data-shadow] {
+      &:not(.loaded) {
+        .demo-item-wrapper {
+          height: 30rem;
+        }
+        .demo-shadow {
+          display: none;
+        }
+      }
+      &.loaded {
+        .demo-item-wrapper + .loader {
+          display: none;
+        }
       }
     }
     &:not(.populated) {

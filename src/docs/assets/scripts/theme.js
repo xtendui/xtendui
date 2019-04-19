@@ -206,67 +206,6 @@ const populateDemo = function (container, i) {
     }
     let btn = container.querySelector('.demo-tabs-left').append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny"><span>' + name + '</span></button>'));
     btn = container.querySelectorAll('.demo-tabs-left .btn')[k];
-    // demo shadow
-    let shadowSrc = item.getAttribute('data-shadow');
-    if (shadowSrc) {
-      /*
-      let request = new XMLHttpRequest();
-      let populateShadow = function () {
-        // source
-        let source = Xt.createElement('<div class="demo-shadow" data-lang="html">');
-        item.append(source);
-        // shadowRoot
-        let shadowRoot = source.attachShadow({mode: 'open'});
-        let shadowId = 'shadow-root-' + i + k;
-        source.setAttribute('id', shadowId);
-        let template = document.createElement('html');
-        template.innerHTML = request.responseText.trim();
-        let shadowTemplate = document.adoptNode(template);
-        // if shadow dom supported
-        if (document.head.attachShadow) {
-          // remove unsupported shadow dom elements
-          let removes = template.querySelectorAll('link:not([rel="stylesheet"])');
-          for (let remove of removes) {
-            remove.remove();
-          }
-          // script
-          let shadowBody = shadowTemplate.querySelector('body');
-          let scripts = template.querySelectorAll('script:not([src])');
-          for (let script of scripts) {
-            let scriptNew = document.createElement('script');
-            scriptNew.textContent = script.innerHTML.replace(/(?=.*\s)(document\.)/g, 'document.querySelector("#' + shadowId + '").shadowRoot.'); // replace document. with a query inside shadow dom
-            shadowBody.appendChild(scriptNew);
-            script.remove();
-          }
-          // style
-          let styles = template.querySelectorAll('link[rel="stylesheet"]');
-          let stylesLoaded = 0;
-          for (let style of styles) {
-            style.addEventListener('load', function () {
-              stylesLoaded++;
-              if (stylesLoaded === styles.length) {
-                // when all link[rel="stylesheet"] are loaded
-                Xt.load(shadowTemplate);
-              }
-            });
-          }
-        }
-        // shadowRoot
-        shadowRoot.appendChild(shadowTemplate);
-        initShadow(source, shadowRoot);
-      };
-      request.open('GET', shadowSrc, true);
-      request.onload = populateShadow;
-      request.onerror = populateShadow;
-      request.send();
-      */
-    }
-    // iframe append
-    let src = item.getAttribute('data-iframe');
-    let id = 'iframe' + i + k;
-    if (src) {
-      item.append(Xt.createElement('<iframe data-src="' + src + '" frameborder="0" name="' + id + '"></iframe>'));
-    }
     // tabs
     item.prepend(Xt.createElement('<div class="demo-code collapse--height"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn--secondary-empty btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard"><span>copy</span></button></div></div><div class="demo-code-body"></div></div>'));
     // https://github.com/zenorocha/clipboard.js/
@@ -284,28 +223,63 @@ const populateDemo = function (container, i) {
     });
     // inject iframe
     if (item.getAttribute('data-iframe')) {
+      // iframe append
+      let src = item.getAttribute('data-iframe');
+      let id = 'iframe' + i + k;
+      if (src) {
+        item.append(Xt.createElement('<div class="demo-item-wrapper"><iframe data-src="' + src + '" frameborder="0" name="' + id + '"></iframe></div>'));
+        item.append(Xt.createElement('\n' +
+          '    <div class="loader loader--spinner">\n' +
+          '      <div class="spinner">\n' +
+          '        <svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
+          '      </div>\n' +
+          '    </div>\n' +
+          '  </div>'));
+      }
+      // load
       let iframe = item.querySelector('iframe');
-      let initIframe = function () {
-        if (!iframe.getAttribute('src')) {
-          iframe.setAttribute('src', iframe.getAttribute('data-src'));
-        }
-      };
       if (k === 0) {
-        initIframe();
+        loadIframe(iframe);
       }
       // listener
-      iframe.parentElement.addEventListener('on.xt', function (e) {
+      item.addEventListener('on.xt', function (e) {
         if (!item.classList.contains('populated')) {
-          initIframe();
+          loadIframe(iframe);
         } else {
           iframe.contentDocument.location.reload(true);
         }
       });
-      iframe.parentElement.addEventListener('off.xt', function (e) {
-        iframe.classList.remove('show');
+      item.addEventListener('off.xt', function (e) {
+        item.classList.remove('loaded');
       });
-    } else if (!item.getAttribute('data-shadow')) {
-      populateInline(item, id);
+    } else if (item.getAttribute('data-shadow')) {
+      // demo shadow
+      let shadowId = 'shadow-root-' + i + k;
+      let shadowSrc = item.getAttribute('data-shadow');
+      item.append(Xt.createElement('<div class="demo-item-wrapper"><div class="demo-shadow" data-lang="html"></div></div>'));
+      item.append(Xt.createElement('\n' +
+        '    <div class="loader loader--spinner">\n' +
+        '      <div class="spinner">\n' +
+        '        <svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
+        '      </div>\n' +
+        '    </div>\n' +
+        '  </div>'));
+      let source = item.querySelector('.demo-shadow');
+      let shadowRoot = source.attachShadow({mode: 'open'});
+      // load
+      if (k === 0) {
+        loadShadow(shadowRoot, shadowSrc, source, shadowId, item);
+        item.classList.add('inited');
+      }
+      // listener
+      item.addEventListener('on.xt', function (e) {
+        if (!item.classList.contains('inited')) {
+          loadShadow(shadowRoot, shadowSrc, source, shadowId, item);
+          item.classList.add('inited');
+        }
+      });
+    } else {
+      populateInline(item);
       // .populated fix scroll
       item.classList.add('populated');
     }
@@ -345,7 +319,7 @@ const populateDemo = function (container, i) {
 
 // populateInline
 
-const populateInline = function (item, id) {
+const populateInline = function (item) {
   let els = item.querySelectorAll('.demo-source');
   for (let [z, el] of els.entries()) {
     populateSources(item, el, z);
@@ -368,8 +342,58 @@ const populateInline = function (item, id) {
 
 // populateShadow
 
+function loadShadow(shadowRoot, shadowSrc, source, shadowId, item) {
+  let request = new XMLHttpRequest();
+  let populateShadow = function () {
+    // shadowRoot
+    source.setAttribute('id', shadowId);
+    let template = document.createElement('html');
+    template.innerHTML = request.responseText.trim();
+    let shadowTemplate = document.adoptNode(template);
+    // if shadow dom supported
+    // PROBLEM querySelectorAll inside Xtend javascript doesn't query inside shadowRoot
+    if (document.head.attachShadow) {
+      // remove unsupported shadow dom elements
+      let removes = template.querySelectorAll('link:not([rel="stylesheet"])');
+      for (let remove of removes) {
+        remove.remove();
+      }
+      // style
+      let styles = template.querySelectorAll('link[rel="stylesheet"]');
+      let stylesLoaded = 0;
+      for (let style of styles) {
+        style.addEventListener('load', function () {
+          stylesLoaded++;
+          if (stylesLoaded === styles.length) {
+            // when all link[rel="stylesheet"] are loaded
+            Xt.load(shadowTemplate);
+            item.classList.add('loaded');
+            // script
+            let shadowBody = shadowTemplate.querySelector('body');
+            let scripts = template.querySelectorAll('script:not([src])');
+            for (let script of scripts) {
+              let scriptNew = document.createElement('script');
+              scriptNew.textContent = script.innerHTML.replace(/(?=.*\s)(document\.)/g, 'document.querySelector("#' + shadowId + '").shadowRoot.'); // replace document. with a query inside shadow dom
+              shadowBody.appendChild(scriptNew);
+              script.remove();
+            }
+          }
+        });
+      }
+    }
+    // shadowRoot
+    shadowRoot.appendChild(shadowTemplate);
+    initShadow(source, shadowRoot);
+  };
+  request.open('GET', shadowSrc, true);
+  request.onload = populateShadow;
+  request.onerror = function() {
+    console.error('Error loading demo', request);
+  };
+  request.send();
+}
+
 window.initShadow = function (source, shadowRoot) {
-  source.classList.add('show');
   let item = Xt.parents(source, '.demo-item')[0];
   if (!item.classList.contains('populated')) {
     populateShadow(item, shadowRoot);
@@ -406,11 +430,15 @@ function populateShadow(item, shadowRoot) {
 
 // populateIframe
 
+function loadIframe(iframe) {
+  iframe.setAttribute('src', iframe.getAttribute('data-src'));
+}
+
 window.initIframe = function (name) {
   let src = 'iframe[name="' + name + '"]';
   let iframe = document.querySelector(src);
-  iframe.classList.add('show');
   let item = Xt.parents(iframe, '.demo-item')[0];
+  item.classList.add('loaded');
   if (!item.classList.contains('populated')) {
     populateIframe(item, iframe);
     window.resizeIframe(name);

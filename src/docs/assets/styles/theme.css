@@ -7448,12 +7448,28 @@ h2 .site-article-anchor {
 .demo .demo-item.out {
   display: block;
 }
-.demo .demo-item iframe {
+.demo .demo-item[data-iframe]:not(.loaded) .demo-item-wrapper {
+  height: 30rem;
+}
+.demo .demo-item[data-iframe]:not(.loaded) iframe {
+  display: none;
+}
+.demo .demo-item[data-iframe].loaded .demo-item-wrapper + .loader {
+  display: none;
+}
+.demo .demo-item[data-iframe] iframe {
+  display: block;
   width: 100%;
   height: 30rem;
 }
-.demo .demo-item iframe:not(.show) {
-  visibility: hidden;
+.demo .demo-item[data-shadow]:not(.loaded) .demo-item-wrapper {
+  height: 30rem;
+}
+.demo .demo-item[data-shadow]:not(.loaded) .demo-shadow {
+  display: none;
+}
+.demo .demo-item[data-shadow].loaded .demo-item-wrapper + .loader {
+  display: none;
 }
 .demo .demo-item:not(.populated) .demo-code-body {
   width: 100%;
