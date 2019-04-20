@@ -3,10 +3,9 @@ import React from "react"
 import SEO from "components/seo"
 import Layout from "components/layout"
 
-const title = "404";
-const description = "Not Found";
-
 const NotFoundPage = () => {
+  const title = "404";
+  const description = "Not Found";
   return (
     <Layout title={title} description={description}>
       <SEO title={title + ' — ' + description}/>

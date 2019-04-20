@@ -40,14 +40,26 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'doc',
+        path: `${__dirname}/src/gatsby/docs`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `templates`,
+        path: `${__dirname}/src/gatsby/templates/`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
         path: `${__dirname}/src/gatsby/pages/`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -66,5 +78,6 @@ module.exports = {
         path: `${__dirname}/src/gatsby/pages`,
       },
     },
+    `gatsby-transformer-remark`,
   ],
 }

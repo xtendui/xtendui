@@ -5,7 +5,6 @@ import {Link} from "gatsby"
 import logo from 'assets/images/logo.svg'
 
 const Header = ({title, description, data}) => {
-  console.log(data)
   return (
     <header className="site-header">
 
@@ -119,15 +118,6 @@ const Header = ({title, description, data}) => {
                 <div className="site-breadcrumbs-body row row-space--none display--none display--flex-sm"
                      data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                      "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
-
-                  {data.allFile.edges.map(({node}, index) => (
-                    <div key={index}
-                      className="site-breadcrumbs-body-main">
-                      <Link to={node.fields.slug} className="btn btn--primary btn--nodesign">
-                        <div>{node.fields.name}</div>
-                      </Link>
-                    </div>
-                  ))}
 
                 </div>
 

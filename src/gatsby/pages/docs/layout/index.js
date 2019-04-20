@@ -4,10 +4,9 @@ import {Link} from "gatsby"
 import SEO from "components/seo"
 import Layout from "components/layout"
 
-const title = "Layout";
-const description = "Description";
-
 const Page = () => {
+  const title = "Layout";
+  const description = "Description";
   return (
     <Layout title={title} description={description}>
       <SEO title={title + ' — ' + description}/>

@@ -23,20 +23,6 @@ const Layout = ({title, description, children}) => {
               download
             }
           }
-          allFile(filter: {
-              sourceInstanceName: { eq: "pages" },
-              name: {eq: "index"},
-              relativeDirectory: {regex: "/docs//"}
-            }) {
-            edges {
-              node {
-                fields{
-                  slug
-                  name
-                }
-              }
-            }
-          }
         }
       `}
       render={data => (
