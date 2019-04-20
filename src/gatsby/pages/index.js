@@ -1,17 +1,24 @@
 import React from "react"
-import { Link } from "gatsby"
+import {Link} from "gatsby"
 
-import Layout from "components/layout"
 import SEO from "components/seo"
+import Layout from "components/layout"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const title = "Home";
+const description = "Description";
+
+const IndexPage = () => {
+  return (
+    <Layout title={title} description={description}>
+      <SEO title={title + ' — ' + description}/>
+      <Link to="/docs/">docs</Link>
+      <Link to="/docs/content/">content</Link>
+      <Link to="/docs/interaction/">interaction</Link>
+      <Link to="/docs/introduction/">introduction</Link>
+      <Link to="/docs/layout/">layout</Link>
+      <Link to="/docs/presentation/">presentation</Link>
+    </Layout>
+  )
+}
 
 export default IndexPage
