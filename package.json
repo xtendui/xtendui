@@ -41,7 +41,8 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.3",
     "bezier-easing": "^2.1.0",
-    "gsap": "^2.1.2"
+    "gsap": "^2.1.2",
+    "rehype-react": "^3.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",

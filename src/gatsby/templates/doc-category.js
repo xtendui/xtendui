@@ -1,33 +1,36 @@
 import React from "react"
 import PropTypes from "prop-types"
 import {Link, graphql} from "gatsby"
+import kebabCase from "lodash/kebabCase"
 
 import SEO from "components/seo"
 import Layout from "components/layout"
 
-import kebabCase from "lodash/kebabCase"
-
-const Template = ({data, pageContext}) => {
-  const title = 'Categories';
-  const description = 'Description';
-  console.log(data, pageContext);
-  return (
-    <Layout title={title} description={description}>
-      <SEO title={title + ' — ' + description}/>
-      {data.categories.group.map((node, index) => (
-        <div key={index}>
-          <Link to={`/categories/${kebabCase(node.fieldValue)}/`}>
-            {node.fieldValue} ({node.totalCount})
-          </Link>
-        </div>
-      ))}
-      {data.posts.edges.map(({node}, index) => (
-        <div key={index}>
-          {node.frontmatter.title}
-        </div>
-      ))}
-    </Layout>
-  )
+class Template extends React.Component {
+  render() {
+    const {data, pageContext} = this.props;
+    const title = 'Categories';
+    const description = 'Description';
+    return (
+      <Layout title={title} description={description}>
+        <SEO title={title + ' — ' + description}/>
+        {data.categories.group.map((node, index) => (
+          <div key={index}>
+            <Link to={`/categories/${kebabCase(node.fieldValue)}/`}>
+              {node.fieldValue} ({node.totalCount})
+            </Link>
+          </div>
+        ))}
+        {data.posts.edges.map(({node}, index) => (
+          <div key={index}>
+            <Link to={node.frontmatter.path}>
+              {node.frontmatter.title}
+            </Link>
+          </div>
+        ))}
+      </Layout>
+    )
+  }
 }
 
 Template.propTypes = {

@@ -133,11 +133,14 @@ if (typeof window !== 'undefined') {
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} added
    */
   Xt.initElement = function (added = document.documentElement) {
+    if (added.classList.contains('xt-ignore')) {
+      return false;
+    }
     added = Xt.arrSingle(added);
     for (let element of added) {
       // components
       for (let component of Xt.components) {
-        if (element.nodeType === 1 && element.matches('[data-' + component.name + ']')) {
+        if (!element.classList.contains('xt-ignore') && element.matches('[data-' + component.name + ']')) {
           Xt.init(component.name, element);
         }
         for (let el of element.querySelectorAll('[data-' + component.name + ']')) {
@@ -145,21 +148,21 @@ if (typeof window !== 'undefined') {
         }
       }
       // textareaAutosize
-      if (element.nodeType === 1 && element.matches('textarea')) {
+      if (!element.classList.contains('xt-ignore') && element.matches('textarea')) {
         Xt.textareaAutosize.init(element);
       }
       for (let el of element.querySelectorAll('textarea')) {
         Xt.textareaAutosize.init(el);
       }
       // media
-      if (element.nodeType === 1 && element.matches('.media')) {
+      if (!element.classList.contains('xt-ignore') && element.matches('.media')) {
         Xt.media.init(element);
       }
       for (let el of element.querySelectorAll('.media')) {
         Xt.media.init(el);
       }
       // btnMerge
-      if (element.nodeType === 1 && element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
+      if (!element.classList.contains('xt-ignore') && element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
         Xt.btnMerge.init(element);
       }
       for (let el of Array.from(element.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
@@ -173,11 +176,14 @@ if (typeof window !== 'undefined') {
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} removed
    */
   Xt.destroyElement = function (removed = document.documentElement) {
+    if (removed.classList.contains('xt-ignore')) {
+      return false;
+    }
     removed = Xt.arrSingle(removed);
     for (let element of removed) {
       // components
       for (let component of Xt.components) {
-        if (element.nodeType === 1 && element.matches('[data-' + component.name + '-inited]')) {
+        if (!element.classList.contains('xt-ignore') && element.matches('[data-' + component.name + '-inited]')) {
           Xt.destroy(component.name, element);
         }
         for (let el of element.querySelectorAll('[data-' + component.name + '-inited]')) {
@@ -185,21 +191,21 @@ if (typeof window !== 'undefined') {
         }
       }
       // textareaAutosize
-      if (element.nodeType === 1 && element.matches('textarea')) {
+      if (!element.classList.contains('xt-ignore') && element.matches('textarea')) {
         Xt.textareaAutosize.destroy(element);
       }
       for (let el of element.querySelectorAll('textarea')) {
         Xt.textareaAutosize.destroy(el);
       }
       // media
-      if (element.nodeType === 1 && element.matches('.media')) {
+      if (!element.classList.contains('xt-ignore') && element.matches('.media')) {
         Xt.media.destroy(element);
       }
       for (let el of element.querySelectorAll('.media')) {
         Xt.media.destroy(el);
       }
       // btnMerge
-      if (element.nodeType === 1 && element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
+      if (!element.classList.contains('xt-ignore') && element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
         Xt.btnMerge.destroy(element);
       }
       for (let el of Array.from(element.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
@@ -214,14 +220,19 @@ if (typeof window !== 'undefined') {
    */
 
   Xt.initObserve = function (added = document.documentElement) {
+    if (added.classList.contains('xt-ignore')) {
+      return false;
+    }
     for (let obj of Xt.observe) {
-      // populate elements
       let els = [];
-      if (added.nodeType === 1 && added.matches(obj.matches)) {
-        els.push(added);
+      // populate elements
+      for (let element of added.querySelectorAll(obj.matches)) {
+        if (!element.classList.contains('xt-ignore')) {
+          els.push(element);
+        }
       }
-      for (let el of added.querySelectorAll(obj.matches)) {
-        els.push(el);
+      if (added.matches(obj.matches)) {
+        els.push(added);
       }
       // call
       if (els.length) {
@@ -241,13 +252,13 @@ if (typeof window !== 'undefined') {
       if (mutation.type === 'childList') {
         // removed
         for (let removed of mutation.removedNodes) {
-          if (removed.nodeType === 1 && !removed.classList.contains('xt-ignore')) {
+          if (removed.nodeType === 1) {
             Xt.destroyElement(removed);
           }
         }
         // added
         for (let added of mutation.addedNodes) {
-          if (added.nodeType === 1 && !added.classList.contains('xt-ignore')) {
+          if (added.nodeType === 1) {
             Xt.initElement(added);
             Xt.initObserve(added);
           }
@@ -1149,7 +1160,7 @@ if (typeof window !== 'undefined') {
 //////////////////////
 
 typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = Xt :
-typeof define === 'function' && define.amd ? define(Xt) :
-global.Xt = Xt;
+  typeof define === 'function' && define.amd ? define(Xt) :
+    global.Xt = Xt;
 
 export default Xt;

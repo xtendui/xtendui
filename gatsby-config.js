@@ -40,10 +40,10 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'doc',
-        path: `${__dirname}/src/gatsby/docs`,
+        name: `pages`,
+        path: `${__dirname}/src/gatsby/pages/`,
       },
     },
     {
@@ -54,10 +54,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/gatsby/pages/`,
+        name: 'doc',
+        path: `${__dirname}/src/gatsby/docs/`,
       },
     },
     {

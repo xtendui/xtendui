@@ -9,10 +9,12 @@ import "assets/icons-theme/style.css"
 import "assets/styles/theme.min.css"
 import "assets/scripts/theme.min.js"
 
-const Layout = ({title, description, children}) => {
-  return (
-    <StaticQuery
-      query={graphql`
+class Layout extends React.Component {
+  render() {
+    const {title, description, children} = this.props;
+    return (
+      <StaticQuery
+        query={graphql`
         query {
           site {
             siteMetadata {
@@ -25,39 +27,40 @@ const Layout = ({title, description, children}) => {
           }
         }
       `}
-      render={data => (
-        <>
-          <div className="site-wrapper">
+        render={data => (
+          <>
+            <div className="site-wrapper">
 
-            <Header title={title} description={description} data={data}/>
+              <Header title={title} description={description} data={data}/>
 
-            <div className="site-wrapper-inner">
+              <div className="site-wrapper-inner">
 
-              <main className="site-main">
-                <div className="site-main-inner">
-                  <div className="container">
-                    <div className="row">
-                      <div className="column">
+                <main className="site-main">
+                  <div className="site-main-inner">
+                    <div className="container">
+                      <div className="row">
+                        <div className="col--12">
 
-                        <article className="site-article">
-                          {children}
-                        </article>
+                          <article className="site-article">
+                            {children}
+                          </article>
 
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </main>
+                </main>
 
-              <Footer data={data}/>
+                <Footer data={data}/>
+
+              </div>
 
             </div>
-
-          </div>
-        </>
-      )}
-    />
-  )
+          </>
+        )}
+      />
+    )
+  }
 }
 
 Layout.propTypes = {

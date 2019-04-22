@@ -40,7 +40,6 @@ class Sticky extends Core {
       if (!container) {
         container = Xt.createElement('<div class="xt-container xt-ignore xt-fixed--check"></div>');
         el.before(container);
-        el.classList.add('xt-ignore');
         container.append(el);
       }
       // sticky clone

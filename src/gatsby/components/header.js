@@ -115,20 +115,6 @@ const Header = ({title, description, data}) => {
             <div className="container">
               <div className="row flex--auto justify-content--space-between align-items--flex-start">
 
-                <div className="site-breadcrumbs-body row row-space--none display--none display--flex-sm"
-                     data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
-                     "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
-
-                </div>
-
-                <div className="site-breadcrumbs-body row row-space--none display--none-sm flex--auto"
-                     data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
-                     "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
-
-                  /*
-                  */
-                </div>
-
                 <div className="site-breadcrumbs-meta row row-space--none align-items--center">
 
                   <div className="display--none-sm display--block-md">
