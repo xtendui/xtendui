@@ -6,12 +6,12 @@ import Header from "components/header"
 import Footer from "components/footer"
 
 import "assets/icons-theme/style.css"
-import "assets/styles/theme.min.css"
-import "assets/scripts/theme.min.js"
+import "assets/styles/theme.less"
+import "assets/scripts/theme.js"
 
 class Layout extends React.Component {
   render() {
-    const {title, description, children} = this.props;
+    const {title, description, children} = this.props
     return (
       <StaticQuery
         query={graphql`

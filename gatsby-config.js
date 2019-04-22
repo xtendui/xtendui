@@ -16,6 +16,7 @@ module.exports = {
     download: `https://github.com/minimit/xtend-library/releases`,
   },
   plugins: [
+    `gatsby-plugin-less`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-root-import',

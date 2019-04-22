@@ -2,7 +2,7 @@
 path: "/test"
 type: "doc"
 date: "2017-11-07"
-title: "Test"
+title: "Title"
 description: "Description"
 tags: ["app", "design"]
 categories: ["UI/UX Design", "Brand Design"]
@@ -282,7 +282,7 @@ Lorem Ipsum
 
 <demo>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="{{ site.baseurl }}/demos/interaction/drop/disabled.html" data-name="disable">
+    <div class="demo-item" data-iframe="/demos/interaction/drop/disabled" data-name="disable">
       <div class="demo-text">
         <div class="alert_content">
           To disable drop use <code>.drop--disable</code> useful within media queries

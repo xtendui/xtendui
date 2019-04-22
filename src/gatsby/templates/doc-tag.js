@@ -8,9 +8,9 @@ import Layout from "components/layout"
 
 class Template extends React.Component {
   render() {
-    const {data, pageContext} = this.props;
-    const title = 'Categories';
-    const description = 'Description';
+    const {data, pageContext} = this.props
+    const title = 'Categories'
+    const description = 'Description'
     return (
       <Layout title={title} description={description}>
         <SEO title={title + ' — ' + description}/>

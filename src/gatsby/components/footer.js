@@ -4,7 +4,7 @@ import {Link} from "gatsby"
 
 class Footer extends React.Component {
   render() {
-    const {data} = this.props;
+    const {data} = this.props
     return (
       <footer className="site-footer"
               data-xt-sticky='{"position": "bottom"}'>

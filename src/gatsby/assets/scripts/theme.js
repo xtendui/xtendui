@@ -1,6 +1,3 @@
-//////////////////////
-// import
-//////////////////////
 /*
 import "@babel/polyfill";
 import "gsap/TweenMax";

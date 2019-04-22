@@ -5,8 +5,8 @@ import Layout from "components/layout"
 
 class Page extends React.Component {
   render() {
-    const title = "404";
-    const description = "Not Found";
+    const title = "404"
+    const description = "Not Found"
     return (
       <Layout title={title} description={description}>
         <SEO title={title + ' — ' + description}/>
