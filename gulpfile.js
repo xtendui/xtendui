@@ -90,13 +90,11 @@ gulp.task('js:demos', function () {
   return b.bundle()
     .pipe(source('demos.min.js'))
     .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(terser({
       output: {
         comments: /^!/
       }
     }))
-    .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('src/docs/assets/scripts/'));
 });
 gulp.task('js:demos:watch', function (done) {

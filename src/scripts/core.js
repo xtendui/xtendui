@@ -180,8 +180,10 @@ class Core {
         let arr = Array.from(Xt.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']')));
         arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
         arr = arr.filter(x => !x.getAttribute('data-xt-nav')); // filter out nav
-        self.elements = arr;
-        self.destroyElements.push(...self.elements);
+        if (arr.length) { // fix when using shadow dom doesn't query deep
+          self.elements = arr;
+          self.destroyElements.push(...self.elements);
+        }
       });
     }
   }
