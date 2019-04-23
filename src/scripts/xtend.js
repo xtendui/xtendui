@@ -287,16 +287,25 @@ if (typeof window !== 'undefined') {
   };
 
   /**
+   * ready
+   * @param {Function} fnc Function to execute on dom ready
+   */
+
+  Xt.ready = function(fnc) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () {
+        fnc();
+      });
+    } else {
+      fnc();
+    }
+  };
+
+  /**
    * document ready load
    */
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
-      Xt.load();
-    });
-  } else {
-    Xt.load();
-  }
+  Xt.ready(Xt.load);
 
   //////////////////////
   // dataStorage

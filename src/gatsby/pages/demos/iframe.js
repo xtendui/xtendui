@@ -4,11 +4,15 @@ import SEO from "components/seo"
 import Layout from "components/demo-layout"
 
 import cssSource from "!!raw-loader!./iframe.source.less"
-import "./iframe.source.less"
 import jsSource from "!!raw-loader!./iframe.source.js"
-import "./iframe.source.js"
 
 class Page extends React.Component {
+  componentWillMount() {
+    require("./iframe.source.less")
+  }
+  componentDidMount() {
+    require("./iframe.source.js")
+  }
   render() {
     const title = "Demo"
     let htmlSource = `

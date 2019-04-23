@@ -1,3 +1,4 @@
+import "@webcomponents/shadydom";
 import ClipboardJS from "clipboard";
 import Xt from "../../../../src/scripts/xtend";
 
@@ -134,7 +135,6 @@ const populateDemo = function (container, i) {
         item.classList.remove('loaded');
       });
     } else if (item.getAttribute('data-shadow')) {
-      //import "@webcomponents/shadydom";
       // demo shadow
       let shadowId = 'shadow-root-' + i + k;
       let shadowSrc = item.getAttribute('data-shadow');
@@ -225,6 +225,7 @@ const populateInline = function (item) {
 // populateShadow
 
 const loadShadow = function (shadowRoot, shadowSrc, source, shadowId, item) {
+  /*
   let request = new XMLHttpRequest();
   let populateShadow = function () {
     // shadowRoot
@@ -273,6 +274,7 @@ const loadShadow = function (shadowRoot, shadowSrc, source, shadowId, item) {
     console.error('Error loading demo', request);
   };
   request.send();
+  */
 }
 
 window.initShadow = function (source, shadowRoot) {
