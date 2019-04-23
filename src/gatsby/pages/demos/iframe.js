@@ -3,12 +3,10 @@ import React from "react"
 import SEO from "components/seo"
 import Layout from "components/demo-layout"
 
-//const cssSource = null
-import cssSource from "!!raw-loader!./disabled.source.less"
-import "./disabled.source.less"
-//const jsSource = null
-import jsSource from "!!raw-loader!./disabled.source.js"
-import "./disabled.source.js"
+import cssSource from "!!raw-loader!./iframe.source.less"
+import "./iframe.source.less"
+import jsSource from "!!raw-loader!./iframe.source.js"
+import "./iframe.source.js"
 
 class Page extends React.Component {
   render() {

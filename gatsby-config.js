@@ -77,8 +77,19 @@ module.exports = {
       resolve: `gatsby-plugin-page-creator`,
       options: {
         path: `${__dirname}/src/gatsby/pages`,
+        ignore: [`**/*.source.js?(x)`],
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-component",
+            options: { components: ["demo"] },
+          },
+        ],
+      },
+    },
   ],
 }

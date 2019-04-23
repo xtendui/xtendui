@@ -282,12 +282,16 @@ Lorem Ipsum
 
 <demo>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/interaction/drop/disabled" data-name="disable">
+    <div class="demo-item" data-iframe="/demos/iframe" data-name="iframe">
       <div class="demo-text">
         <div class="alert_content">
           To disable drop use <code>.drop--disable</code> useful within media queries
         </div>
       </div>
+    </div>
+  </div>
+  <div class="demo-inner">
+    <div class="demo-item" data-iframe="/demos/react" data-name="react">
     </div>
   </div>
 </demo>
