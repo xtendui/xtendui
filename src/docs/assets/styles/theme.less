@@ -362,9 +362,9 @@
       .line-container {
         .anim-opacity.active();
         animation-duration: @time--big;
-        animation-delay: @time--medium + 300ms; // @start + @child * @increment
+        animation-delay: @time--small + 300ms; // @start + @child * @increment
       }
-      .nth-child(@child: 6, @start: @time--medium, @increment: 50ms, @decrement: 0ms, { .line-container {
+      .nth-child(@child: 6, @start: @time--small, @increment: 50ms, @decrement: 0ms, { .line-container {
         @animation-delay();
       } });
     }

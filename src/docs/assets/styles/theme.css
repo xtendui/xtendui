@@ -7081,25 +7081,25 @@ transition-timing-function: @bez--out;
   animation-timing-function: cubic-bezier(.36,0,0,1);
   animation-fill-mode: forwards;
   animation-duration: 1000ms;
-  animation-delay: 800ms;
-}
-.site-menu.active .site-menu-content .btn:nth-child(1) .line-container {
-  animation-delay: 500ms;
-}
-.site-menu.active .site-menu-content .btn:nth-child(2) .line-container {
   animation-delay: 550ms;
 }
+.site-menu.active .site-menu-content .btn:nth-child(1) .line-container {
+  animation-delay: 250ms;
+}
+.site-menu.active .site-menu-content .btn:nth-child(2) .line-container {
+  animation-delay: 300ms;
+}
 .site-menu.active .site-menu-content .btn:nth-child(3) .line-container {
-  animation-delay: 600ms;
+  animation-delay: 350ms;
 }
 .site-menu.active .site-menu-content .btn:nth-child(4) .line-container {
-  animation-delay: 650ms;
+  animation-delay: 400ms;
 }
 .site-menu.active .site-menu-content .btn:nth-child(5) .line-container {
-  animation-delay: 700ms;
+  animation-delay: 450ms;
 }
 .site-menu.active .site-menu-content .btn:nth-child(6) .line-container {
-  animation-delay: 750ms;
+  animation-delay: 500ms;
 }
 .site-menu.out .site-menu-content .btn .line-container {
   opacity: 1;
