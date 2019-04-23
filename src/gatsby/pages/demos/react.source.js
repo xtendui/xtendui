@@ -1,5 +1,5 @@
 // @PROBLEM js gets executed instantly (dom not ready) and also on root app
 
 setTimeout ( function() {
-  console.log('aaa', document, document.querySelectorAll('.drop--disable'))
+  console.log('bbb', document, document.querySelectorAll('.drop--disable'))
 }, 1000)

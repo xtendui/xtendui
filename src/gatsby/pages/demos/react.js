@@ -3,8 +3,10 @@ import React from "react"
 import SEO from "components/seo"
 import Layout from "components/demo-layout"
 
-const cssSource = null
-const jsSource = null
+import cssSource from "!!raw-loader!./react.source.less"
+import "./react.source.less"
+import jsSource from "!!raw-loader!./react.source.js"
+import "./react.source.js"
 
 class Page extends React.Component {
   render() {
