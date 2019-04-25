@@ -646,6 +646,20 @@
   .demo-item {
     position: relative;
     .toggle--block();
+    .demo-code {
+      position: absolute;
+      z-index: 4;
+      width: 100%;
+      box-shadow: 0 .1rem 1rem fade(@black, @perc--xs), 0 .2rem 2rem fade(@black, @perc--sm);
+      .demo-code-inner {
+        display: flex;
+        flex-flow: column;
+        height: 30rem;
+      }
+      &.active {
+        z-index: 5;
+      }
+    }
     &[data-iframe] {
       &:not(.loaded) {
         .demo-item-wrapper {

@@ -6336,15 +6336,24 @@ transition-timing-function: @bez--out;
     transform: translateX(-1.5rem);
   }
 }
-.collapse--height.active,
-.collapse--width.active {
-  transition-property: all;
+.collapse--height.active {
+  transition-property: height;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36,0,0,1);
 }
-.collapse--height.out,
+.collapse--height.out {
+  transition-property: height;
+  transition-duration: 500ms;
+  transition-delay: 250ms;
+  transition-timing-function: cubic-bezier(.36,0,0,1);
+}
+.collapse--width.active {
+  transition-property: width;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(.36,0,0,1);
+}
 .collapse--width.out {
-  transition-property: all;
+  transition-property: heiwidthght;
   transition-duration: 500ms;
   transition-delay: 250ms;
   transition-timing-function: cubic-bezier(.36,0,0,1);

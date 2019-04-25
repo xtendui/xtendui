@@ -3,21 +3,22 @@ import React from "react"
 import SEO from "components/seo"
 import Layout from "components/demo-layout"
 
-import cssSource from "!!raw-loader!./react.source.less"
-import jsSource from "!!raw-loader!./react.source.js"
-
-import Component from "./react.source.js"
+const demoName = 'react'
 
 class Page extends React.Component {
   render() {
-    const title = "Demo"
+    const title = demoName.charAt(0).toUpperCase() + demoName.slice(1)
+    const description = "Demo"
     let htmlSource = null
+    let cssSource = require("!!raw-loader!./" + demoName + ".source.less").default
+    let jsSource = require("!!raw-loader!./" + demoName + ".source.js").default
+    let Component = require("./" + demoName + ".source.js").default
     return (
-      <Layout title={title} htmlSource={htmlSource} cssSource={cssSource} jsSource={jsSource}>
-        <SEO title={title}/>
+      <Layout title={title} description={description} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}>
+        <SEO title={title + ' — ' + description}/>
         <div id="body-outer">
           <div id="body-inner" className="demo-source-from">
-            <Component></Component>
+            <Component demoName={demoName}></Component>
           </div>
         </div>
       </Layout>

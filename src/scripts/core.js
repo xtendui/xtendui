@@ -429,12 +429,14 @@ class Core {
         }
       }
       // event off
-      if (options.off) {
+      if (options.off || (options.on && options.toggle)) {
         let offHandler = Xt.dataStorage.put(el, options.off + '.' + self.namespace,
           self.eventOffHandler.bind(self).bind(self, el));
-        let events = [...options.off.split(' ')];
-        for (let event of events) {
-          el.addEventListener(event, offHandler);
+        if (options.off) {
+          let events = [...options.off.split(' ')];
+          for (let event of events) {
+            el.addEventListener(event, offHandler);
+          }
         }
         el.addEventListener('off.xt', offHandler);
       }

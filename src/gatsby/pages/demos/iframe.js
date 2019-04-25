@@ -3,18 +3,18 @@ import React from "react"
 import SEO from "components/seo"
 import Layout from "components/demo-layout"
 
-import cssSource from "!!raw-loader!./iframe.source.less"
-import jsSource from "!!raw-loader!./iframe.source.js"
+const demoName = 'iframe'
 
 class Page extends React.Component {
   componentWillMount() {
-    require("./iframe.source.less")
+    require("./" + demoName + ".source.less")
   }
   componentDidMount() {
-    require("./iframe.source.js")
+    require("./" + demoName + ".source.js")
   }
   render() {
-    const title = "Demo"
+    const title = demoName.charAt(0).toUpperCase() + demoName.slice(1)
+    const description = "Demo"
     let htmlSource = `
 <div class="drop_outer drop--disable" data-xt-drop>
   <button type="button" class="btn btn--primary">
@@ -124,9 +124,11 @@ class Page extends React.Component {
   </div>
 </div>
     `
+    let cssSource = require("!!raw-loader!./" + demoName + ".source.less").default
+    let jsSource = require("!!raw-loader!./" + demoName + ".source.js").default
     return (
-      <Layout title={title} htmlSource={htmlSource} cssSource={cssSource} jsSource={jsSource}>
-        <SEO title={title}/>
+      <Layout title={title} description={description} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}>
+        <SEO title={title + ' — ' + description}/>
         <div id="body-outer">
           <div id="body-inner" className="demo-source-from" dangerouslySetInnerHTML={{__html: htmlSource}} />
         </div>

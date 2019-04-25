@@ -15,26 +15,14 @@ const formatCode = function (source, lang) {
     source = inner[0];
   }
   let text = source.innerHTML;
-  if (lang === 'css' || lang === 'js') {
-    // remove <style> or <script> tag
-    if (text.search(/<[^>]*>/g) !== -1) {
-      text = text.replace(/<[^>]*>/g, '');
-      text = text.substring(1);
-    }
-    // replace entities
-    text = text.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-  } else if (lang === 'html') {
-    if (text.match(/[&<>]/g)) {
-      // replace quote entities
-      text = text.replace(/&quot;/g, '"');
-      // replace entities
-      text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-      // replace json quotes
-      text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'');
-      // replace empty quotes
-      text = text.replace(/=""/g, '');
-    }
-  }
+  // replace quote entities
+  text = text.replace(/&quot;/g, '"');
+  // replace entities
+  text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  // replace json quotes
+  text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'');
+  // replace empty quotes
+  text = text.replace(/=""/g, '');
   // remove tabs
   let arr = text.split('\n');
   if (arr[1]) {
@@ -89,7 +77,7 @@ const populateDemo = function (container, i) {
     let btn = container.querySelector('.demo-tabs-left').append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny"><span>' + name + '</span></button>'));
     btn = container.querySelectorAll('.demo-tabs-left .btn')[k];
     // tabs
-    item.prepend(Xt.createElement('<div class="demo-code collapse--height"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn--secondary-empty btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard"><span>copy</span></button></div></div><div class="demo-code-body"></div></div>'));
+    item.prepend(Xt.createElement('<div class="demo-code collapse--height"><div class="demo-code-inner"><div class="demo-code-tabs"><div class="demo-code-tabs-left"></div><div class="demo-code-tabs-right"><button type="button" class="btn btn--secondary-empty btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard"><span>copy</span></button></div></div><div class="demo-code-body"></div></div></div>'));
     // https://github.com/zenorocha/clipboard.js/
     let clipboard = new ClipboardJS('.btn--clipboard', {
       target: function (trigger) {
@@ -172,18 +160,26 @@ const populateDemo = function (container, i) {
     "targets": ".demo-item",
     "min": 1
   });
-  // loop items
-  for (let [k, item] of items.entries()) {
-    // collapse code
-    let demoId = 'demo-' + i + k;
-    container.setAttribute('id', demoId);
-    Xt.init('xt-toggle', container.querySelector('.btn--show-code'), {
-      "targets": "#" + demoId,
-      "targetsInner": ".demo-code",
-      "aria": false
+  // toggle code
+  let demoId = 'demo-' + i;
+  container.setAttribute('id', demoId);
+  Xt.init('xt-toggle', container.querySelector('.btn--show-code'), {
+    "targets": "#" + demoId,
+    "targetsInner": ".demo-code",
+    "aria": false
+  });
+  let codes = container.querySelectorAll('.btn--show-code');
+  for (let code of codes) {
+    code.addEventListener('on.xt', function () {
+      let btns = document.querySelectorAll('.btn--show-code.active');
+      for (let btn of btns) {
+        if (btn !== code) {
+          btn.dispatchEvent(new CustomEvent('off.xt'));
+        }
+      }
     });
   }
-  // enable fullscreen
+  // toggle fullscreen
   /*
   element.find('.demo-tabs-left .button').on('on', function(e, obj) {
     let $fullscreen = $(this).parents('.demo').find('.button__fullscreen');
@@ -287,18 +283,18 @@ window.initShadow = function (source, shadowRoot) {
 
 const populateShadow = function (item, shadowRoot) {
   let html = shadowRoot.querySelector('#body-outer');
+  let js = shadowRoot.querySelector('js-script');
   let less = shadowRoot.querySelector('less-style');
   //let css = shadowRoot.querySelector('style[scoped]');
-  let js = shadowRoot.querySelector('js-script');
   // inject code
   if (html) {
     item.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="html">' + html.innerHTML + '</div>'));
   }
-  if (less) {
-    item.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="less">' + less.innerHTML + '</div>'));
-  }
   if (js) {
     item.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="js">' + js.innerHTML + '</div>'));
+  }
+  if (less) {
+    item.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="less">' + less.innerHTML + '</div>'));
   }
   // populate
   for (let [z, source] of item.querySelectorAll('.demo-source').entries()) {
@@ -318,13 +314,13 @@ const loadIframe = function (iframe) {
   iframe.setAttribute('src', iframe.getAttribute('data-src'));
 }
 
-window.initIframe = function (name, htmlSource, cssSource, jsSource) {
+window.initIframe = function (name, htmlSource, jsSource, cssSource) {
   let src = 'iframe[name="' + name + '"]';
   let iframe = document.querySelector(src);
   let item = Xt.parents(iframe, '.demo-item')[0];
   item.classList.add('loaded');
   if (!item.classList.contains('populated')) {
-    populateIframe(item, iframe, htmlSource, cssSource, jsSource);
+    populateIframe(item, iframe, htmlSource, jsSource, cssSource);
     //window.resizeIframe(name);
     item.classList.add('populated');
   }
@@ -345,16 +341,16 @@ window.resizeIframe = function (name) {
   }
 };
 
-const populateIframe = function (item, iframe, htmlSource, cssSource, jsSource) {
+const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) {
   // inject code
   if (htmlSource) {
     iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="html">' + htmlSource + '</div>'));
   }
-  if (cssSource) {
-    iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="less">' + cssSource + '</div>'));
-  }
   if (jsSource) {
     iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="js">' + jsSource + '</div>'));
+  }
+  if (cssSource) {
+    iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="less">' + cssSource + '</div>'));
   }
   // populate
   for (let [z, source] of item.querySelectorAll('.demo-source').entries()) {

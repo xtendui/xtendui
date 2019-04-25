@@ -319,15 +319,28 @@ transition-timing-function: @bez--out;
 
 // collapse
 
-.collapse--height,
-.collapse--width {
+.collapse--height {
   &.active {
-    transition-property: all;
+    transition-property: height;
     transition-duration: @time--medium;
     transition-timing-function: @bez--in;
   }
   &.out {
-    transition-property: all;
+    transition-property: height;
+    transition-duration: @time--medium;
+    transition-delay: @time--small;
+    transition-timing-function: @bez--in;
+  }
+}
+
+.collapse--width {
+  &.active {
+    transition-property: width;
+    transition-duration: @time--medium;
+    transition-timing-function: @bez--in;
+  }
+  &.out {
+    transition-property: heiwidthght;
     transition-duration: @time--medium;
     transition-delay: @time--small;
     transition-timing-function: @bez--in;
