@@ -81,12 +81,12 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-component",
-            options: { components: ["demo"] },
+            resolve: `gatsby-remark-component`,
+            options: {components: [`demo`]},
           },
         ],
       },

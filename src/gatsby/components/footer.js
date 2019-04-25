@@ -38,10 +38,10 @@ class Footer extends React.Component {
             <div className="site-footer-bottom">
               <div className="row flex--auto row-space--tiny justify-content--space-between">
                 <div className="site-footer-bottom-license">
-                  Site and docs licensed <Link to="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS"
-                                               target="_blank" rel="noopener">CC BY 3.0</Link> <span
-                  className="separator separator--dash"></span> {data.site.siteMetadata.title} v{data.site.siteMetadata.version} licensed <Link
-                  to="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</Link>
+                  Site and docs licensed <a href="https://github.com/minimit/xtend-library/blob/master/LICENSE-DOCS"
+                                            target="_blank" rel="noopener">CC BY 3.0</a> <span
+                  className="separator separator--dash"></span> {data.site.siteMetadata.title} v{data.site.siteMetadata.version} licensed <a
+                  href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a>
                 </div>
                 <div className="site-footer-bottom-copy">
                   © 2017 – {new Date().getFullYear()} <span>{data.site.siteMetadata.author}</span>

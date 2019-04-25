@@ -2,13 +2,18 @@ import "@webcomponents/shadydom";
 import ClipboardJS from "clipboard";
 import Xt from "../../../../src/scripts/xtend";
 
+import Prism from "prismjs";
+require("prismjs/components/prism-jsx.min");
+require("prismjs/themes/prism.css");
+Prism.manual = true;
+
 /**
  * demo
  */
 
 // formatCode
 
-const formatCode = function (source, lang) {
+const formatCode = function (source) {
   let inner = source.querySelectorAll('.demo-source-from');
   inner = Array.from(inner).filter(x => !x.querySelectorAll('.demo-source-from').length); // filter out nested
   if (inner.length) {
@@ -38,13 +43,17 @@ const formatCode = function (source, lang) {
   return text;
 };
 
-// highlight
+// populateBlock
 
-for (let el of document.querySelectorAll('pre code')) {
-  let lang = el.className;
-  // set text
-  el.innerHTML = formatCode(el, lang);
-  //window.hljs.highlightBlock(el); // @TODO highlight
+const populateBlock = function () {
+  for (let el of document.querySelectorAll('pre code')) {
+    // set text
+    if (el.classList.contains('language-markup')) {
+      console.log(el.innerHTML);
+    }
+    el.innerHTML = formatCode(el);
+    Prism.highlightElement(el);
+  }
 }
 
 // populateDemo
@@ -373,15 +382,19 @@ const populateSources = function (item, element, z) {
   item.querySelector('.demo-code-tabs-left').append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny"><span>' + lang + '</span></button>'));
   // format code
   let codeInside = item.querySelectorAll('.demo-code-body .demo-code-body-item')[z].querySelector('pre code');
-  if (!codeInside.classList.contains('hljs')) {
-    let text = formatCode(element, lang);
-    // set text
-    codeInside.innerHTML = text;
-    codeInside.classList.add(lang);
-    //window.hljs.highlightBlock(codeInside); // @TODO highlight
+  // set text
+  if (lang === 'html') {
+    lang = 'language-markup';
+  } else if (lang === 'js') {
+    lang = 'language-jsx';
+  } else if (lang === 'less') {
+    lang = 'language-css';
   }
+  codeInside.innerHTML = formatCode(element);
+  codeInside.classList.add(lang);
+  Prism.highlightElement(codeInside);
 };
 
 // export
 
-export default populateDemo;
+export {populateBlock, populateDemo};

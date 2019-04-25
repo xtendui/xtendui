@@ -5,11 +5,15 @@ import {StaticQuery, graphql} from "gatsby"
 import Header from "components/header"
 import Footer from "components/footer"
 
+import {populateBlock} from "assets/scripts/demo.js"
 import "../../../src/scripts/xtend";
 import "assets/icons-theme/style.css"
 import "assets/styles/theme.less"
 
 class Layout extends React.Component {
+  componentDidMount() {
+    populateBlock();
+  }
   render() {
     const {title, description, children} = this.props
     return (

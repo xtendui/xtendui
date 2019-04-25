@@ -3183,9 +3183,15 @@ pre {
   -webkit-overflow-scrolling: touch;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  padding: 2rem !important;
   width: 100%;
   max-height: 30rem;
-  line-height: 0;
+  border-radius: 0.75rem;
+  border-width: 0;
+  border-style: solid;
+  border-color: #edf3f6;
+  background: #edf3f6 !important;
+  line-height: 0 !important;
 }
 pre:first-child {
   margin-top: 0 !important;
@@ -3194,16 +3200,10 @@ pre:last-child {
   margin-bottom: 0 !important;
 }
 pre code {
-  padding: 2rem !important;
   width: 100%;
-  border-radius: 0.75rem;
-  border-width: 0;
-  border-style: solid;
-  border-color: #edf3f6;
-  background: #edf3f6 !important;
-  font-size: 12px;
-  color: #343a40;
-  line-height: 1.6;
+  font-size: 12px !important;
+  color: #343a40 !important;
+  line-height: 1.6 !important;
 }
 .text--inverse {
   color: #fff;

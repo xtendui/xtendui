@@ -87,6 +87,7 @@
     "gulp-util": "^3.0.8",
     "less": "^3.9.0",
     "lodash.kebabcase": "^4.1.1",
+    "prismjs": "^1.16.0",
     "prop-types": "^15.7.2",
     "raw-loader": "^2.0.0",
     "react": "^16.8.6",
