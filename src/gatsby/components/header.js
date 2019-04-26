@@ -10,34 +10,36 @@ class Header extends React.Component {
     return (
       <header className="site-header">
 
-        <div className="site-header-top-outer"
-             data-xt-sticky='{"sticky": "fixed", "limit": {"top": ".site-hero"}, "contain": {"bottom":".site-breadcrumbs-outer:not(.xt-clone)"}, "hide": "down"}'>
-          <div className="site-header-top">
-            <div className="container">
+        <div> {/* @FIX append bug in production */}
+          <nav className="site-header-top-outer"
+               data-xt-sticky='{"sticky": "fixed", "limit": {"top": ".site-hero"}, "contain": {"bottom":".site-breadcrumbs-outer:not(.xt-clone)"}, "hide": "down"}'>
+            <div className="site-header-top">
+              <div className="container">
 
-              <div className="row flex--auto justify-content--space-between align-items--center">
-                <div>
-                  <Link to="/" className="logo" aria-label="Home">
-                    <img src={logo} alt={data.site.siteMetadata.title}/>
-                  </Link>
-                </div>
-                <div>
-                  <button type="button" className="btn btn--primary btn--nodesign btn--menu"
-                          data-xt-overlay='{"targets": "#site-menu"}'>
-                    <span>
-                      {title}
-                      <span className="icon--menu-custom">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                <div className="row flex--auto justify-content--space-between align-items--center">
+                  <div>
+                    <Link to="/" className="logo" aria-label="Home">
+                      <img src={logo} alt={data.site.siteMetadata.title}/>
+                    </Link>
+                  </div>
+                  <div>
+                    <button type="button" className="btn btn--primary btn--nodesign btn--menu"
+                            data-xt-overlay='{"targets": "#site-menu"}'>
+                      <span>
+                        {title}
+                        <span className="icon--menu-custom">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </span>
                       </span>
-                    </span>
-                  </button>
+                    </button>
+                  </div>
                 </div>
-              </div>
 
+              </div>
             </div>
-          </div>
+          </nav>
         </div>
 
         <nav className="site-menu overlay_outer overlay--primary overlay--screen overlay--medium"
@@ -58,14 +60,14 @@ class Header extends React.Component {
                     <div>
                       <button type="button" className="btn btn--primary btn--nodesign btn--menu"
                               data-xt-overlay='{"targets": "#site-menu"}'>
-                      <span>
-                        {title}
-                        <span className="icon icon--menu-custom right">
-                          <span></span>
-                          <span></span>
-                          <span></span>
+                        <span>
+                          {title}
+                          <span className="icon icon--menu-custom right">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </span>
                         </span>
-                      </span>
                       </button>
                     </div>
                   </div>
