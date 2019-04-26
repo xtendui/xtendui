@@ -5,9 +5,6 @@ import {StaticQuery, graphql} from "gatsby"
 import Header from "components/header"
 import Footer from "components/footer"
 
-import "assets/icons-theme/style.css"
-import "assets/styles/theme.less"
-import "@babel/polyfill";
 import "../../../src/scripts/xtend";
 import {populateBlock} from "assets/scripts/demo.js"
 import {makeDocument} from "assets/scripts/theme.js"
@@ -45,15 +42,11 @@ class Layout extends React.Component {
                 <main className="site-main">
                   <div className="site-main-inner">
                     <div className="container">
-                      <div className="row">
-                        <div className="col--12">
 
-                          <article className="site-article">
-                            {children}
-                          </article>
+                      <article className="site-article">
+                        {children}
+                      </article>
 
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </main>

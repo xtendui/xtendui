@@ -4,8 +4,13 @@ import SEO from "components/seo"
 import Layout from "components/demo-layout"
 
 const demoName = 'react'
+const title = demoName.charAt(0).toUpperCase() + demoName.slice(1)
 
 class Page extends React.Component {
+  componentDidMount() {
+    document.querySelector('html').classList.add('demo' + title)
+    require("./" + demoName + ".source.less")
+  }
   render() {
     const title = demoName.charAt(0).toUpperCase() + demoName.slice(1)
     const description = "Demo"

@@ -11,7 +11,7 @@ class Header extends React.Component {
       <header className="site-header">
 
         <div className="site-header-top-outer"
-             data-xt-sticky='{"sticky": "fixed-always", "limit": {"top": ".site-hero"}, "contain": {"bottom":".site-breadcrumbs-outer:not(.xt-clone)"}, "hide": "down"}'>
+             data-xt-sticky='{"sticky": "fixed", "limit": {"top": ".site-hero"}, "contain": {"bottom":".site-breadcrumbs-outer:not(.xt-clone)"}, "hide": "down"}'>
           <div className="site-header-top">
             <div className="container">
 
@@ -24,14 +24,14 @@ class Header extends React.Component {
                 <div>
                   <button type="button" className="btn btn--primary btn--nodesign btn--menu"
                           data-xt-overlay='{"targets": "#site-menu"}'>
-                  <span>
-                    {title}
-                    <span className="icon--menu-custom">
-                      <span></span>
-                      <span></span>
-                      <span></span>
+                    <span>
+                      {title}
+                      <span className="icon--menu-custom">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </span>
                     </span>
-                  </span>
                   </button>
                 </div>
               </div>
@@ -136,14 +136,14 @@ class Header extends React.Component {
                     <div className="show-sticky">
                       <button type="button" className="btn btn--primary btn--nodesign btn--menu"
                               data-xt-overlay='{"targets": "#site-menu"}'>
-                      <span>
-                        {title}
-                        <span className="icon--menu-custom">
-                          <span></span>
-                          <span></span>
-                          <span></span>
+                        <span>
+                          {title}
+                          <span className="icon--menu-custom">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </span>
                         </span>
-                      </span>
                       </button>
                     </div>
 

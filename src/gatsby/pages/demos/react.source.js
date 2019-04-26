@@ -4,8 +4,6 @@ import Xt from "../../../../src/scripts/xtend";
 
 class Component extends React.Component {
   componentDidMount() {
-    const {demoName} = this.props
-    require("./" + demoName + ".source.less")
     console.log('bbb', Xt, document, document.querySelectorAll('.drop--disable'))
   }
   render() {

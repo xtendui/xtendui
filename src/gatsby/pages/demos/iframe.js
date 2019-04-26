@@ -4,14 +4,15 @@ import SEO from "components/seo"
 import Layout from "components/demo-layout"
 
 const demoName = 'iframe'
+const title = demoName.charAt(0).toUpperCase() + demoName.slice(1)
 
 class Page extends React.Component {
   componentDidMount() {
+    document.querySelector('html').classList.add('demo' + title)
     require("./" + demoName + ".source.less")
     require("./" + demoName + ".source.js")
   }
   render() {
-    const title = demoName.charAt(0).toUpperCase() + demoName.slice(1)
     const description = "Demo"
     let htmlSource = `
 <div class="drop_outer drop--disable" data-xt-drop>
