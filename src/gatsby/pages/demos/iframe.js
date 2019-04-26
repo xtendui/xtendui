@@ -6,10 +6,8 @@ import Layout from "components/demo-layout"
 const demoName = 'iframe'
 
 class Page extends React.Component {
-  componentWillMount() {
-    require("./" + demoName + ".source.less")
-  }
   componentDidMount() {
+    require("./" + demoName + ".source.less")
     require("./" + demoName + ".source.js")
   }
   render() {

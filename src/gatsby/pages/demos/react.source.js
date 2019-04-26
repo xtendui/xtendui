@@ -1,12 +1,14 @@
 import React from "react"
 
+import Xt from "../../../../src/scripts/xtend";
+
 class Component extends React.Component {
   componentDidMount() {
+    const {demoName} = this.props
+    require("./" + demoName + ".source.less")
     console.log('bbb', Xt, document, document.querySelectorAll('.drop--disable'))
   }
   render() {
-    const {demoName} = this.props
-    require("./" + demoName + ".source.less")
     return (
       <div>
         <div className="drop_outer drop--disable" data-xt-drop>

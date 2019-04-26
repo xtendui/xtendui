@@ -1320,7 +1320,6 @@ div.btn {
 .xt-sticky:not(.xt-clone).active {
   position: fixed;
   z-index: 100;
-  width: 100%;
 }
 .xt-sticky--absolute.xt-clone:not(.active) {
   position: relative;

@@ -397,7 +397,6 @@ class Sticky extends Core {
    */
   eventStickyHeight(option, val = null) {
     let self = this;
-    let options = self.options;
     // logic
     let foundHide = false;
     if (!isNaN(parseFloat(option))) {

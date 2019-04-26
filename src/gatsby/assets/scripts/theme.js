@@ -1,31 +1,11 @@
-/*
-import "@babel/polyfill";
-import "gsap/TweenMax";
-import "gsap/ScrollToPlugin";
-import "bezier-easing";
 import Xt from "../../../../src/scripts/xtend";
 
 //////////////////////
-// call only if in browser mode
-// https://www.gatsbyjs.org/docs/debugging-html-builds/#how-to-check-if-code-classlanguage-textwindowcode-is-defined
+// anchors and sidebar
 //////////////////////
 
-if (typeof window !== 'undefined') {
-
-  //////////////////////
-  // vars
-  //////////////////////
-
-  window.easeIn = new Ease(BezierEasing(.36, 0, 0, 1));
-  window.easeOut = new Ease(BezierEasing(1, 0, .64, 1));
-  window.easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
-
-  //////////////////////
-  // anchors and sidebar
-  //////////////////////
-
+const makeDocument = function () {
   // .make-line
-
   for (let el of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
     el.classList.add('make-line');
   }
@@ -33,9 +13,7 @@ if (typeof window !== 'undefined') {
     el.innerHTML = '<span class="line">' + el.innerHTML + '</span>';
     el.innerHTML = '<span class="line-container">' + el.innerHTML + '</span>';
   }
-
   // .make-anchor
-
   for (let el of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
     el.classList.add('make-line');
     // previous h2 if h3
@@ -61,9 +39,7 @@ if (typeof window !== 'undefined') {
     el.classList.add('make-anchor');
     el.append(Xt.createElement('<span class="site-article-anchor"><span class="btn"><span class="icon-link" aria-hidden="true"></span></span></span>'));
   }
-
   // .site-aside-text
-
   for (let el of document.querySelectorAll('.site-aside-text > .btn:not(.different)')) {
     let container = Xt.parents(el, '.site-aside-text')[0];
     for (let element of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
@@ -78,7 +54,6 @@ if (typeof window !== 'undefined') {
       }
     }
   }
-
   for (let el of document.querySelectorAll('.site-aside-text')) {
     Xt.init('xt-toggle', el, {
       "elements": ".site-aside-sub-container",
@@ -90,9 +65,7 @@ if (typeof window !== 'undefined') {
       "max": "Infinity"
     });
   }
-
   // activateAsideScroll
-
   const activateAsideScroll = function (els, scrollTop) {
     const dist = Xt.windowHeight / 5;
     for (let el of els) {
@@ -118,7 +91,6 @@ if (typeof window !== 'undefined') {
       }
     }
   };
-
   addEventListener('scroll', function (e) {
     let scrollTop = document.documentElement.scrollTop;
     let sub = document.querySelectorAll('.btn--site-aside-sub');
@@ -128,28 +100,24 @@ if (typeof window !== 'undefined') {
     subsub = Array.from(subsub).filter(x => !Xt.parents(x, '.xt-clone').length); // filter out parent
     activateAsideScroll(subsub, scrollTop);
   });
+}
 
-  //////////////////////
-  // others
-  //////////////////////
+export {makeDocument};
 
-  // .demo-cols
+/*
+// .demo-cols
 
-  for (let element of document.querySelectorAll('.demo-cols')) {
-    for (let [i, el] of element.querySelectorAll('[class^=\'col--\'], [class*=\' col--\']').entries()) {
-      el.setAttribute('data-index', i);
-    }
+for (let element of document.querySelectorAll('.demo-cols')) {
+  for (let [i, el] of element.querySelectorAll('[class^=\'col--\'], [class*=\' col--\']').entries()) {
+    el.setAttribute('data-index', i);
   }
+}
 
-  // .demo-cols-nested
+// .demo-cols-nested
 
-  for (let element of document.querySelectorAll('.demo-cols-nested [class^=\'col--\'], .demo-cols-nested [class*=\' col--\']')) {
-    for (let [i, el] of element.querySelectorAll('[class^=\'col--\'], [class*=\' col--\']').entries()) {
-      el.setAttribute('data-index', i);
-    }
+for (let element of document.querySelectorAll('.demo-cols-nested [class^=\'col--\'], .demo-cols-nested [class*=\' col--\']')) {
+  for (let [i, el] of element.querySelectorAll('[class^=\'col--\'], [class*=\' col--\']').entries()) {
+    el.setAttribute('data-index', i);
   }
-
-  //////////////////////
-
 }
 */

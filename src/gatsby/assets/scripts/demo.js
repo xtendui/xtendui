@@ -1,6 +1,8 @@
-import "@webcomponents/shadydom";
 import ClipboardJS from "clipboard";
 import Xt from "../../../../src/scripts/xtend";
+if (typeof window !== 'undefined') {
+  require("@webcomponents/shadydom");
+}
 
 import Prism from "prismjs";
 require("prismjs/components/prism-jsx.min");
@@ -48,9 +50,6 @@ const formatCode = function (source) {
 const populateBlock = function () {
   for (let el of document.querySelectorAll('pre code')) {
     // set text
-    if (el.classList.contains('language-markup')) {
-      console.log(el.innerHTML);
-    }
     el.innerHTML = formatCode(el);
     Prism.highlightElement(el);
   }
@@ -282,13 +281,15 @@ const loadShadow = function (shadowRoot, shadowSrc, source, shadowId, item) {
   */
 }
 
-window.initShadow = function (source, shadowRoot) {
-  let item = Xt.parents(source, '.demo-item')[0];
-  if (!item.classList.contains('populated')) {
-    populateShadow(item, shadowRoot);
-    item.classList.add('populated');
-  }
-};
+if (typeof window !== 'undefined') {
+  window.initShadow = function (source, shadowRoot) {
+    let item = Xt.parents(source, '.demo-item')[0];
+    if (!item.classList.contains('populated')) {
+      populateShadow(item, shadowRoot);
+      item.classList.add('populated');
+    }
+  };
+}
 
 const populateShadow = function (item, shadowRoot) {
   let html = shadowRoot.querySelector('#body-outer');
@@ -323,19 +324,21 @@ const loadIframe = function (iframe) {
   iframe.setAttribute('src', iframe.getAttribute('data-src'));
 }
 
-window.initIframe = function (name, htmlSource, jsSource, cssSource) {
-  let src = 'iframe[name="' + name + '"]';
-  let iframe = document.querySelector(src);
-  let item = Xt.parents(iframe, '.demo-item')[0];
-  item.classList.add('loaded');
-  if (!item.classList.contains('populated')) {
-    populateIframe(item, iframe, htmlSource, jsSource, cssSource);
-    //window.resizeIframe(name);
-    item.classList.add('populated');
-  }
-};
+if (typeof window !== 'undefined') {
+  window.initIframe = function (name, htmlSource, jsSource, cssSource) {
+    let src = 'iframe[name="' + name + '"]';
+    let iframe = document.querySelector(src);
+    let item = Xt.parents(iframe, '.demo-item')[0];
+    item.classList.add('loaded');
+    if (!item.classList.contains('populated')) {
+      populateIframe(item, iframe, htmlSource, jsSource, cssSource);
+      //window.resizeIframe(name);
+      item.classList.add('populated');
+    }
+  };
+}
 
-window.resizeIframe = function (name) {
+const resizeIframe = function (name) {
   let src = 'iframe[name="' + name + '"]';
   let iframe = document.querySelector(src);
   if (iframe) {

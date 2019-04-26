@@ -1168,8 +1168,7 @@ if (typeof window !== 'undefined') {
 // export
 //////////////////////
 
-typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = Xt :
-  typeof define === 'function' && define.amd ? define(Xt) :
-    global.Xt = Xt;
+typeof define === 'function' && define.amd ? define(Xt) :
+  global.Xt = Xt;
 
 export default Xt;

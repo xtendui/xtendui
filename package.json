@@ -27,11 +27,11 @@
   "scripts": {
     "version": "gulp version",
     "build": "gulp build",
-    "build:docs": "gulp build && gatsby build",
+    "build:docs": "gulp build && gatsby clean && gatsby build",
     "dev": "gulp watch",
     "dev:docs": "gulp watch & gatsby develop",
     "serve": "npm run serve:docs",
-    "serve:docs": "gatsby serve -p 8000",
+    "serve:docs": "gatsby clean && gatsby build && gatsby serve -p 8000",
     "dep": "npm run dep:docs",
     "dep:docs": "gh-pages -d docs",
     "release": "npx semantic-release --no-ci",

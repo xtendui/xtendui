@@ -4,10 +4,10 @@ import PropTypes from "prop-types"
 class Layout extends React.Component {
   render() {
     const {htmlSource, jsSource, cssSource, children} = this.props
-    // init iframe
-    if (window.self !== window.top) {
-      document.body.setAttribute('id', document.location.href.match(/[^\/]+$/)[0])
-      window.parent.initIframe(window.name, htmlSource, jsSource, cssSource)
+    if (typeof window !== 'undefined') {
+      if (window.self !== window.top) {
+        window.parent.initIframe(window.name, htmlSource, jsSource, cssSource)
+      }
     }
     return (
       <>

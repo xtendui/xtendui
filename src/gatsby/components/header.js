@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import {Link} from "gatsby"
 
-import logo from 'assets/images/logo.svg'
+import logo from "assets/images/logo.svg"
 
 class Header extends React.Component {
   render() {
@@ -11,7 +11,7 @@ class Header extends React.Component {
       <header className="site-header">
 
         <div className="site-header-top-outer"
-             data-xt-sticky='{"limit": {"top": ".site-hero"}, "contain": {"bottom":".site-breadcrumbs-outer:not(.xt-clone)"}, "hide": "down"}'>
+             data-xt-sticky='{"sticky": "fixed-always", "limit": {"top": ".site-hero"}, "contain": {"bottom":".site-breadcrumbs-outer:not(.xt-clone)"}, "hide": "down"}'>
           <div className="site-header-top">
             <div className="container">
 
