@@ -3,13 +3,12 @@ import React from "react"
 import SEO from "components/seo"
 import Layout from "components/demo-layout"
 
-const demoName = 'iframe'
-const title = demoName.charAt(0).toUpperCase() + demoName.slice(1)
+const demoName = 'iframe-test'
+require("./" + demoName + ".source.less")
 
 class Page extends React.Component {
   componentDidMount() {
-    document.querySelector('html').classList.add('demo' + title)
-    require("./" + demoName + ".source.less")
+    document.querySelector('html').classList.add('demo-' + demoName)
     require("./" + demoName + ".source.js")
   }
   render() {
@@ -125,6 +124,7 @@ class Page extends React.Component {
     `
     let cssSource = require("!!raw-loader!./" + demoName + ".source.less").default
     let jsSource = require("!!raw-loader!./" + demoName + ".source.js").default
+    const title = demoName
     return (
       <Layout title={title} description={description} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}>
         <SEO title={title + ' — ' + description}/>

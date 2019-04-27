@@ -6,7 +6,7 @@
 
 // https://github.com/gatsbyjs/gatsby/issues/11934
 
-exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
+exports.onCreateWebpackConfig = ({getConfig, stage}) => {
   const config = getConfig()
   if (stage.startsWith('develop') && config.resolve) {
     config.resolve.alias = {

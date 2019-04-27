@@ -1,6 +1,6 @@
 import React from "react"
 
-import Xt from "../../../../src/scripts/xtend";
+import Xt from "xtend-library";
 
 class Component extends React.Component {
   componentDidMount() {

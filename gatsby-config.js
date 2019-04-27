@@ -16,14 +16,15 @@ module.exports = {
     download: `https://github.com/minimit/xtend-library/releases`,
   },
   plugins: [
-    `gatsby-plugin-less`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-less`,
     {
-      resolve: 'gatsby-plugin-root-import',
+      resolve: `gatsby-plugin-root-import`,
       options: {
-        assets: path.join(__dirname, 'src/gatsby/assets'),
-        components: path.join(__dirname, 'src/gatsby/components'),
-        pages: path.join(__dirname, 'src/gatsby/pages'),
+        "xtend-library": path.join(__dirname, `src/scripts/xtend.js`),
+        assets: path.join(__dirname, `src/gatsby/assets`),
+        components: path.join(__dirname, `src/gatsby/components`),
+        pages: path.join(__dirname, `src/gatsby/pages`),
       },
     },
     {
@@ -55,9 +56,9 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'doc',
+        name: `doc`,
         path: `${__dirname}/src/gatsby/docs/`,
       },
     },

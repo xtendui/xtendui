@@ -5,7 +5,7 @@ import {StaticQuery, graphql} from "gatsby"
 import Header from "components/header"
 import Footer from "components/footer"
 
-import Xt from "../../../src/scripts/xtend";
+import Xt from "xtend-library";
 import {populateBlock} from "assets/scripts/demo.js"
 import {makeDocument} from "assets/scripts/theme.js"
 

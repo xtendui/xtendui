@@ -54,9 +54,9 @@ categories: ["UI/UX Design", "Brand Design"]
 
 <demo>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/iframe" data-name="iframe">
+    <div class="demo-item" data-iframe="/demos/iframe-test" data-name="iframe">
     </div>
-    <div class="demo-item" data-iframe="/demos/react" data-name="react">
+    <div class="demo-item" data-iframe="/demos/react-test" data-name="react">
     </div>
   </div>
 </demo>

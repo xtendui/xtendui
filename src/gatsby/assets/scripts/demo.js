@@ -162,12 +162,6 @@ const populateDemo = function (container, i) {
       item.classList.add('populated');
     }
   }
-  // demo tabs
-  Xt.init('xt-toggle', container, {
-    "elements": ".demo-tabs-left .btn",
-    "targets": ".demo-item",
-    "min": 1
-  });
   // toggle code
   let demoId = 'demo-' + i;
   container.setAttribute('id', demoId);
@@ -201,6 +195,17 @@ const populateDemo = function (container, i) {
     }
   });
   */
+  // demo tabs
+  Xt.init('xt-toggle', container, {
+    "elements": ".demo-tabs-left .btn",
+    "targets": ".demo-item",
+    "min": 1
+  });
+  for (let btn of container.querySelectorAll('.demo-tabs-left .btn')) {
+    btn.addEventListener('off.xt', function (e) {
+      container.querySelector('.btn--show-code').dispatchEvent(new CustomEvent('off.xt'));
+    });
+  }
 };
 
 // populateInline
