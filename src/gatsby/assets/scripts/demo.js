@@ -30,6 +30,11 @@ const formatCode = function (source) {
   text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'');
   // replace empty quotes
   text = text.replace(/=""/g, '');
+  // filter meta
+  let meta = text.match(/\/\/##START([\S\s]*?)\/\/##END/);
+  if (meta) {
+    text = meta[1];
+  }
   // remove tabs
   let arr = text.split('\n');
   if (arr[1]) {
