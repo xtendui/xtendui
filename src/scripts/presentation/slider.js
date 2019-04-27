@@ -95,7 +95,6 @@ class Slider extends Core {
       self.pags = self.pags ? self.pags : [];
       for (let pags of self.pags) {
         for (let pag of pags) {
-          let container = pag.parentNode;
           pag.remove();
         }
       }

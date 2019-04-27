@@ -10,7 +10,6 @@ class Header extends React.Component {
     return (
       <header className="site-header">
 
-        <div> {/* @FIX append bug in production */}
           <nav className="site-header-top-outer"
                data-xt-sticky='{"sticky": "fixed", "limit": {"top": ".site-hero"}, "contain": {"bottom":".site-breadcrumbs-outer:not(.xt-clone)"}, "hide": "down"}'>
             <div className="site-header-top">
@@ -40,7 +39,6 @@ class Header extends React.Component {
               </div>
             </div>
           </nav>
-        </div>
 
         <nav className="site-menu overlay_outer overlay--primary overlay--screen overlay--medium"
              id="site-menu">

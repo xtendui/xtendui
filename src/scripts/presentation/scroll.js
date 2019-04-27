@@ -44,6 +44,7 @@ class Scroll extends Core {
         if (!container) {
           container = Xt.createElement('<div class="xt-container xt-ignore xt-fixed--check"></div>');
           el.before(container);
+          el.classList.add('xt-ignore'); // @FIX don't trigger Xt.observer
           container.append(el);
         }
         // sticky clone

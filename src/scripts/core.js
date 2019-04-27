@@ -37,6 +37,10 @@ class Core {
     let self = this;
     self.object = object || self.object;
     self.optionsJs = optionsJs || self.optionsJs;
+    // @FIX don't trigger with xt-ignore
+    if (self.object.classList.contains('xt-ignore') || Xt.parents(self.object, '.xt-ignore').length) {
+      return false;
+    }
     // destroy if already done
     if (self.object.getAttribute('data-' + self.componentName + '-inited')) {
       self.destroy(true);

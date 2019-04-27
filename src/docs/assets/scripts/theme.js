@@ -343,6 +343,7 @@ const populateInline = function (item) {
 // populateShadow
 
 function loadShadow(shadowRoot, shadowSrc, source, shadowId, item) {
+  /*
   let request = new XMLHttpRequest();
   let populateShadow = function () {
     // shadowRoot
@@ -391,6 +392,7 @@ function loadShadow(shadowRoot, shadowSrc, source, shadowId, item) {
     console.error('Error loading demo', request);
   };
   request.send();
+  */
 }
 
 window.initShadow = function (source, shadowRoot) {

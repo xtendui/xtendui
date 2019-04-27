@@ -5,12 +5,13 @@ import {StaticQuery, graphql} from "gatsby"
 import Header from "components/header"
 import Footer from "components/footer"
 
-import "../../../src/scripts/xtend";
+import Xt from "../../../src/scripts/xtend";
 import {populateBlock} from "assets/scripts/demo.js"
 import {makeDocument} from "assets/scripts/theme.js"
 
 class Layout extends React.Component {
   componentDidMount() {
+    Xt.ready(Xt.load);
     makeDocument();
     populateBlock();
   }

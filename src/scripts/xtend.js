@@ -133,14 +133,14 @@ if (typeof window !== 'undefined') {
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} added
    */
   Xt.initElement = function (added = document.documentElement) {
-    if (added.classList.contains('xt-ignore')) {
+    if (added.classList.contains('xt-ignore') || Xt.parents(added, '.xt-ignore').length) {
       return false;
     }
     added = Xt.arrSingle(added);
     for (let element of added) {
       // components
       for (let component of Xt.components) {
-        if (!element.classList.contains('xt-ignore') && element.matches('[data-' + component.name + ']')) {
+        if (element.matches('[data-' + component.name + ']')) {
           Xt.init(component.name, element);
         }
         for (let el of element.querySelectorAll('[data-' + component.name + ']')) {
@@ -148,21 +148,21 @@ if (typeof window !== 'undefined') {
         }
       }
       // textareaAutosize
-      if (!element.classList.contains('xt-ignore') && element.matches('textarea')) {
+      if (element.matches('textarea')) {
         Xt.textareaAutosize.init(element);
       }
       for (let el of element.querySelectorAll('textarea')) {
         Xt.textareaAutosize.init(el);
       }
       // media
-      if (!element.classList.contains('xt-ignore') && element.matches('.media')) {
+      if (element.matches('.media')) {
         Xt.media.init(element);
       }
       for (let el of element.querySelectorAll('.media')) {
         Xt.media.init(el);
       }
       // btnMerge
-      if (!element.classList.contains('xt-ignore') && element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
+      if (element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
         Xt.btnMerge.init(element);
       }
       for (let el of Array.from(element.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
@@ -176,14 +176,14 @@ if (typeof window !== 'undefined') {
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} removed
    */
   Xt.destroyElement = function (removed = document.documentElement) {
-    if (removed.classList.contains('xt-ignore')) {
+    if (removed.classList.contains('xt-ignore') || Xt.parents(removed, '.xt-ignore').length) {
       return false;
     }
     removed = Xt.arrSingle(removed);
     for (let element of removed) {
       // components
       for (let component of Xt.components) {
-        if (!element.classList.contains('xt-ignore') && element.matches('[data-' + component.name + '-inited]')) {
+        if (element.matches('[data-' + component.name + '-inited]')) {
           Xt.destroy(component.name, element);
         }
         for (let el of element.querySelectorAll('[data-' + component.name + '-inited]')) {
@@ -191,21 +191,21 @@ if (typeof window !== 'undefined') {
         }
       }
       // textareaAutosize
-      if (!element.classList.contains('xt-ignore') && element.matches('textarea')) {
+      if (element.matches('textarea')) {
         Xt.textareaAutosize.destroy(element);
       }
       for (let el of element.querySelectorAll('textarea')) {
         Xt.textareaAutosize.destroy(el);
       }
       // media
-      if (!element.classList.contains('xt-ignore') && element.matches('.media')) {
+      if (element.matches('.media')) {
         Xt.media.destroy(element);
       }
       for (let el of element.querySelectorAll('.media')) {
         Xt.media.destroy(el);
       }
       // btnMerge
-      if (!element.classList.contains('xt-ignore') && element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
+      if (element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
         Xt.btnMerge.destroy(element);
       }
       for (let el of Array.from(element.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
@@ -220,16 +220,14 @@ if (typeof window !== 'undefined') {
    */
 
   Xt.initObserve = function (added = document.documentElement) {
-    if (added.classList.contains('xt-ignore')) {
+    if (added.classList.contains('xt-ignore') || Xt.parents(added, '.xt-ignore').length) {
       return false;
     }
     for (let obj of Xt.observe) {
       let els = [];
       // populate elements
       for (let element of added.querySelectorAll(obj.matches)) {
-        if (!element.classList.contains('xt-ignore')) {
-          els.push(element);
-        }
+        els.push(element);
       }
       if (added.matches(obj.matches)) {
         els.push(added);
@@ -291,7 +289,7 @@ if (typeof window !== 'undefined') {
    * @param {Function} fnc Function to execute on dom ready
    */
 
-  Xt.ready = function(fnc) {
+  Xt.ready = function (fnc) {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function () {
         fnc();
@@ -301,11 +299,7 @@ if (typeof window !== 'undefined') {
     }
   };
 
-  /**
-   * document ready load
-   */
-
-  Xt.ready(Xt.load);
+  //Xt.ready(Xt.load); // PUT THIS ON JS or ssr bugs
 
   //////////////////////
   // dataStorage
@@ -624,6 +618,11 @@ if (typeof window !== 'undefined') {
      * @param {Node|HTMLElement|EventTarget|Window} el Element
      */
     init: function (el) {
+      // @FIX don't trigger with xt-ignore
+      if (el.classList.contains('xt-ignore') || Xt.parents(el, '.xt-ignore').length) {
+        return false;
+      }
+      // init
       if (!Xt.dataStorage.get(el, 'xtTextareaAutosizeDone')) {
         Xt.dataStorage.set(el, 'xtTextareaAutosizeDone', true);
         // key
@@ -683,6 +682,11 @@ if (typeof window !== 'undefined') {
      * @param {Node|HTMLElement|EventTarget|Window} el Element
      */
     init: function (el) {
+      // @FIX don't trigger with xt-ignore
+      if (el.classList.contains('xt-ignore') || Xt.parents(el, '.xt-ignore').length) {
+        return false;
+      }
+      // init
       el.classList.remove('media-loaded');
       // img
       let img = el.querySelector('img');
@@ -744,6 +748,11 @@ if (typeof window !== 'undefined') {
      * @param {Node|HTMLElement|EventTarget|Window} el Element
      */
     init: function (el) {
+      // @FIX don't trigger with xt-ignore
+      if (el.classList.contains('xt-ignore') || Xt.parents(el, '.xt-ignore').length) {
+        return false;
+      }
+      // init
       if (!Xt.dataStorage.get(el, 'xtBtnMergeDone')) {
         Xt.dataStorage.set(el, 'xtBtnMergeDone', true);
         el.addEventListener('mouseenter', Xt.btnMerge.hoverOn);
@@ -1000,6 +1009,9 @@ if (typeof window !== 'undefined') {
    */
   Xt.parents = function (el, query) {
     let parents = [];
+    if (!el.parentElement) {
+      return parents;
+    }
     while (el = el.parentElement.closest(query)) {
       parents.push(el);
     }
