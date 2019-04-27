@@ -18,7 +18,7 @@ class Layout extends React.Component {
 }
 
 Layout.propTypes = {
-  htmlSource: PropTypes.string,
+  htmlSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   jsSource: PropTypes.string,
   cssSource: PropTypes.string,
   children: PropTypes.node.isRequired,
