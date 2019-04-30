@@ -4,5 +4,10 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-import "assets/icons-theme/style.css"
-import "assets/styles/theme.less"
+require("assets/icons-theme/style.css")
+require("assets/styles/theme.less")
+
+exports.onPreRouteUpdate = ({ location, prevLocation }) => {
+  // autoClose xt
+  window.dispatchEvent(new CustomEvent('autoClose.xt'));
+}
