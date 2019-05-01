@@ -34,7 +34,7 @@ export const query = graphql`
   query($path: String!) {
     categories: allMarkdownRemark(limit: 2000) {
       group(field: frontmatter___categories) {
-        name: fieldValue
+        title: fieldValue
         posts: edges {
           post: node {
             frontmatter {
@@ -66,7 +66,7 @@ Template.propTypes = {
     categories: PropTypes.shape({
       group: PropTypes.arrayOf(
         PropTypes.shape({
-          name: PropTypes.string.isRequired,
+          title: PropTypes.string.isRequired,
           posts: PropTypes.arrayOf(
             PropTypes.shape({
               post: PropTypes.shape({

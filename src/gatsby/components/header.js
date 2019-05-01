@@ -126,10 +126,10 @@ class Header extends React.Component {
                         <div key={i}>
                           <div
                             className={`site-breadcrumbs-body-main
-                          ${categoriesCurrent.includes(category.name) ? 'current' : null}`}>
-                            <Link to={`/categories/${kebabCase(category.name)}/`}
+                          ${categoriesCurrent.includes(category.title) ? 'current' : null}`}>
+                            <Link to={`/categories/${kebabCase(category.title)}/`}
                                   className="btn btn--primary btn--nodesign">
-                              <span>{category.name}</span>
+                              <span>{category.title}</span>
                             </Link>
                             <div className="site-breadcrumbs-body-sub toggle--visible collapse--height">
                               <div className="site-breadcrumbs-body-sub-inner">
@@ -147,6 +147,34 @@ class Header extends React.Component {
                           </div>
                         </div>
                       ))}
+                    </div>
+                    : null
+                  }
+
+                  { categories ?
+                    <div className="site-breadcrumbs-body row row-space--none display--none-sm flex--auto"
+                         data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
+                   "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
+                      <div
+                        className="site-breadcrumbs-body-main flex--auto">
+                        <button type="button"
+                              className="btn btn--primary btn--nodesign flex--auto">
+                          <span>{title}</span>
+                        </button>
+                        {categories.group.map((category, i) => (
+                          <div key={i}>
+                            <div className="site-breadcrumbs-body-sub toggle--visible collapse--height">
+                              <div className="site-breadcrumbs-body-sub-inner">
+                                <Link to={`/categories/${kebabCase(category.title)}/`}
+                                      className={`btn btn--primary btn--nodesign btn--left
+                                        ${title === category.title ? 'active' : null}`}>
+                                  <span>{category.title}</span>
+                                </Link>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                     : null
                   }

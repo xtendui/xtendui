@@ -16,8 +16,8 @@ class Template extends React.Component {
         <SEO title={title + ' — ' + description}/>
         {data.categories.group.map((category, index) => (
           <div key={index}>
-            <Link to={`/categories/${kebabCase(category.name)}/`}>
-              {category.name}
+            <Link to={`/categories/${kebabCase(category.title)}/`}>
+              {category.title}
             </Link>
           </div>
         ))}
@@ -38,7 +38,7 @@ Template.propTypes = {
     categories: PropTypes.shape({
       group: PropTypes.arrayOf(
         PropTypes.shape({
-          name: PropTypes.string.isRequired,
+          title: PropTypes.string.isRequired,
         }).isRequired
       ),
     }),
@@ -65,7 +65,7 @@ export const query = graphql`
   query ($category: String!) {
     categories: allMarkdownRemark(limit: 2000) {
       group(field: frontmatter___categories) {
-        name: fieldValue
+        title: fieldValue
       }
     }
     allMarkdownRemark(filter: {frontmatter: { categories: { eq: $category } }}) {
