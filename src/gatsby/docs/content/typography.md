@@ -4,5 +4,5 @@ type: "docs"
 date: "2019-01-01"
 title: "Typography"
 description: "Description"
-categories: ["Content"]
+categories: ["100-Content"]
 ---

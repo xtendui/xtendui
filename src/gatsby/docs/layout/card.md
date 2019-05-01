@@ -4,5 +4,5 @@ type: "docs"
 date: "2019-03-01"
 title: "Card"
 description: "Description"
-categories: ["Layout"]
+categories: ["200-Layout"]
 ---

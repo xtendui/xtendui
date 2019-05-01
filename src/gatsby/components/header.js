@@ -77,13 +77,13 @@ class Header extends React.Component {
               <div className="overlay_content">
                 <div className="site-menu-content">
 
+                  <Link to='/' className="btn btn--primary btn--nodesign btn--left make-line">
+                    <span>Home</span>
+                  </Link>
                   {data.categories.type.map((type, i) => (
-                    <div key={i}>
-                      <Link to={`/${kebabCase(type.title)}/`}
-                            className="btn btn--primary btn--nodesign btn--left make-line">
-                        <span>{type.title}</span>
-                      </Link>
-                    </div>
+                    <Link key={i} to={`/${kebabCase(type.title)}/`} className="btn btn--primary btn--nodesign btn--left make-line">
+                      <span>{type.title}</span>
+                    </Link>
                   ))}
 
                 </div>
@@ -118,27 +118,23 @@ class Header extends React.Component {
                     <div className="site-breadcrumbs-body row row-space--none display--none display--flex-sm"
                          data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                          "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
-                      {page.categories.group.map((category, i) => (
-                        <div key={i}>
-                          <div className={`site-breadcrumbs-body-main
-                          ${page.post.frontmatter.categories.includes(category.title) ? 'current' : null}`}>
-                            <Link to={`/docs/${kebabCase(category.title)}/`}
-                                  className={`btn btn--primary btn--nodesign
-                                  ${page.post.frontmatter.title === category.title ? 'active' : null}`}>
-                              <span>{category.title}</span>
-                            </Link>
-                            <div className="site-breadcrumbs-body-sub toggle--visible collapse--height">
-                              <div className="site-breadcrumbs-body-sub-inner">
-                                {category.posts.map(({post}, z) => (
-                                  <div key={z}>
-                                    <Link to={post.frontmatter.path}
-                                          className={`btn btn--primary btn--nodesign btn--left
-                                        ${page.post.frontmatter.title === post.frontmatter.title ? 'active' : null}`}>
-                                      <span>{post.frontmatter.title}</span>
-                                    </Link>
-                                  </div>
-                                ))}
-                              </div>
+                      {page.categories.category.map((category, i) => (
+                        <div key={i} className={`site-breadcrumbs-body-main
+                        ${page.post.frontmatter.categories.includes(category.title.split('-').pop()) ? 'current' : null}`}>
+                          <Link to={`/docs/${kebabCase(category.title.split('-').pop())}/`}
+                                className={`btn btn--primary btn--nodesign
+                                ${page.post.frontmatter.title === category.title.split('-').pop() ? 'active' : null}`}>
+                            <span>{category.title.split('-').pop()}</span>
+                          </Link>
+                          <div className="site-breadcrumbs-body-sub toggle--visible collapse--height">
+                            <div className="site-breadcrumbs-body-sub-inner">
+                              {category.posts.map(({post}, z) => (
+                                <Link key={z} to={post.frontmatter.path}
+                                      className={`btn btn--primary btn--nodesign btn--left
+                                    ${page.post.frontmatter.title === post.frontmatter.title ? 'active' : null}`}>
+                                  <span>{post.frontmatter.title}</span>
+                                </Link>
+                              ))}
                             </div>
                           </div>
                         </div>
@@ -152,16 +148,14 @@ class Header extends React.Component {
                         <button type="button" className="btn btn--primary btn--nodesign flex--auto">
                           <span>{page.post.frontmatter.title}</span>
                         </button>
-                        {page.categories.group.map((category, i) => (
-                          <div key={i}>
-                            <div className="site-breadcrumbs-body-sub toggle--visible collapse--height">
-                              <div className="site-breadcrumbs-body-sub-inner">
-                                <Link to={`/docs/${kebabCase(category.title)}/`}
-                                      className={`btn btn--primary btn--nodesign btn--left
-                                    ${page.post.frontmatter.title === category.title ? 'active' : null}`}>
-                                  <span>{category.title}</span>
-                                </Link>
-                              </div>
+                        {page.categories.category.map((category, i) => (
+                          <div key={i} className="site-breadcrumbs-body-sub toggle--visible collapse--height">
+                            <div className="site-breadcrumbs-body-sub-inner">
+                              <Link to={`/docs/${kebabCase(category.title.split('-').pop())}/`}
+                                    className={`btn btn--primary btn--nodesign btn--left
+                                  ${page.post.frontmatter.title === category.title.split('-').pop() ? 'active' : null}`}>
+                                <span>{category.title.split('-').pop()}</span>
+                              </Link>
                             </div>
                           </div>
                         ))}

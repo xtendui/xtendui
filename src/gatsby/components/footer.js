@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import {Link} from "gatsby"
+import kebabCase from "lodash/kebabCase"
 
 class Footer extends React.Component {
   render() {
@@ -15,21 +16,16 @@ class Footer extends React.Component {
               <div className="row flex--auto justify-content--space-between">
 
                 <div className="site-footer-top-links list-space--none">
-                  <Link to="/" className="btn btn--primary btn--nodesign">
+
+                  <Link to='/' className="btn btn--primary btn--nodesign">
                     <span>Home</span>
                   </Link>
-                  <Link to="/docs/" className="btn btn--primary btn--nodesign">
-                    <span>Docs</span>
-                  </Link>
-                  <Link to="/extensions/" className="btn btn--primary btn--nodesign">
-                    <span>Extensions</span>
-                  </Link>
-                  <Link to="/inspiration/" className="btn btn--primary btn--nodesign">
-                    <span>Inspirations</span>
-                  </Link>
-                  <Link to="/faq/" className="btn btn--primary btn--nodesign">
-                    <span>Faq</span>
-                  </Link>
+                  {data.categories.type.map((type, i) => (
+                    <Link key={i} to={`/${kebabCase(type.title)}/`} className="btn btn--primary btn--nodesign">
+                      <span>{type.title}</span>
+                    </Link>
+                  ))}
+
                 </div>
 
               </div>

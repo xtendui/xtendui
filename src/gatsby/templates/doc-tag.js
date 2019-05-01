@@ -16,7 +16,7 @@ class Template extends React.Component {
     return (
       <Layout page={data}>
         <SEO title={page.title + ' — ' + page.description}/>
-        {data.tags.group.map((category, index) => (
+        {data.tags.tag.map((category, index) => (
           <div key={index}>
             <Link to={`/tags/${kebabCase(category.title)}/`}>
               {category.title}
@@ -38,7 +38,7 @@ class Template extends React.Component {
 Template.propTypes = {
   data: PropTypes.shape({
     tags: PropTypes.shape({
-      group: PropTypes.arrayOf(
+      tag: PropTypes.arrayOf(
         PropTypes.shape({
           title: PropTypes.string.isRequired,
         }).isRequired
@@ -66,7 +66,7 @@ export default Template
 export const query = graphql`
   query($tag: String!) {
     tags: allMarkdownRemark(sort: {fields: [frontmatter___date], order: ASC}) {
-      group(field: frontmatter___tags) {
+      tag: group(field: frontmatter___tags) {
         title: fieldValue
       }
     }

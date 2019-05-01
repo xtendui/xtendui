@@ -4,5 +4,5 @@ type: "docs"
 date: "2019-02-01"
 title: "Icon"
 description: "Description"
-categories: ["Content"]
+categories: ["100-Content"]
 ---

@@ -30,7 +30,7 @@ class Template extends React.Component {
 export const query = graphql`
   query($path: String!) {
     categories: allMarkdownRemark(sort: {fields: [frontmatter___date], order: ASC}) {
-      group(field: frontmatter___categories) {
+      category: group(field: frontmatter___categories) {
         title: fieldValue
         posts: edges {
           post: node {

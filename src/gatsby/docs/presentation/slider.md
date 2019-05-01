@@ -4,5 +4,5 @@ type: "docs"
 date: "2019-02-01"
 title: "Slider"
 description: "Description"
-categories: ["Presentation"]
+categories: ["400-Presentation"]
 ---
