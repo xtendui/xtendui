@@ -1,10 +1,10 @@
 ---
-path: "/docs/introduction"
-type: "docs"
+path: "/faq"
+type: "faq"
 date: "2019-01-01"
-title: "Introduction"
+title: "Faq"
 description: "Description"
-categories: ["Introduction"]
+categories: []
 ---
 
 <h2>Test shell</h2>

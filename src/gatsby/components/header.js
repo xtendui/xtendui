@@ -7,7 +7,7 @@ import logo from "assets/images/logo.svg"
 
 class Header extends React.Component {
   render() {
-    const {title, description, typeCurrent, categoriesCurrent, categories, data} = this.props
+    const {page, data} = this.props
     return (
       <header className="site-header">
 
@@ -26,7 +26,7 @@ class Header extends React.Component {
                   <button type="button" className="btn btn--primary btn--nodesign btn--menu"
                           data-xt-overlay='{"targets": "#site-menu"}'>
                       <span>
-                        {typeCurrent || title}
+                        {page.post ? page.post.frontmatter.type : page.title}
                         <span className="icon--menu-custom">
                           <span></span>
                           <span></span>
@@ -60,7 +60,7 @@ class Header extends React.Component {
                       <button type="button" className="btn btn--primary btn--nodesign btn--menu"
                               data-xt-overlay='{"targets": "#site-menu"}'>
                         <span>
-                          {typeCurrent || title}
+                          {page.post ? page.post.frontmatter.type : page.title}
                           <span className="icon icon--menu-custom right">
                             <span></span>
                             <span></span>
@@ -77,18 +77,14 @@ class Header extends React.Component {
               <div className="overlay_content">
                 <div className="site-menu-content">
 
-                  <Link to="/docs/introduction" className="btn btn--primary btn--nodesign btn--left make-line">
-                    <span>Docs</span>
-                  </Link>
-                  <Link to="/extensions/" className="btn btn--primary btn--nodesign btn--left make-line">
-                    <span>Extensions</span>
-                  </Link>
-                  <Link to="/inspiration/" className="btn btn--primary btn--nodesign btn--left make-line">
-                    <span>Inspirations</span>
-                  </Link>
-                  <Link to="/faq/" className="btn btn--primary btn--nodesign btn--left make-line">
-                    <span>Faq</span>
-                  </Link>
+                  {data.categories.type.map((type, i) => (
+                    <div key={i}>
+                      <Link to={`/${kebabCase(type.title)}/`}
+                            className="btn btn--primary btn--nodesign btn--left make-line">
+                        <span>{type.title}</span>
+                      </Link>
+                    </div>
+                  ))}
 
                 </div>
               </div>
@@ -102,8 +98,8 @@ class Header extends React.Component {
           <div className="container">
             <div className="row flex--auto align-items--center align-content--center justify-content--space-between">
               <div className="site-hero-text">
-                <h1>{title}</h1>
-                <p>{description}</p>
+                <h1>{page.post ? page.post.frontmatter.title : page.title}</h1>
+                <p>{page.post ? page.post.frontmatter.description : page.description}</p>
               </div>
               <div className="site-hero-img">
               </div>
@@ -112,23 +108,23 @@ class Header extends React.Component {
 
         </div>
 
-        <nav className="site-breadcrumbs-outer" role="navigation" data-xt-sticky='{"sticky": "absolute"}'>
-          <div className="site-breadcrumbs">
-            <div className="site-breadcrumbs-inner">
-              <div className="container">
-                <div className="row flex--auto justify-content--space-between align-items--flex-start">
+        { page && page.categories ?
+          <nav className="site-breadcrumbs-outer" role="navigation" data-xt-sticky='{"sticky": "absolute"}'>
+            <div className="site-breadcrumbs">
+              <div className="site-breadcrumbs-inner">
+                <div className="container">
+                  <div className="row flex--auto justify-content--space-between align-items--flex-start">
 
-                  { categories ?
                     <div className="site-breadcrumbs-body row row-space--none display--none display--flex-sm"
                          data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
                          "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
-                      {categories.group.map((category, i) => (
+                      {page.categories.group.map((category, i) => (
                         <div key={i}>
                           <div className={`site-breadcrumbs-body-main
-                          ${categoriesCurrent.includes(category.title) ? 'current' : null}`}>
+                          ${page.post.frontmatter.categories.includes(category.title) ? 'current' : null}`}>
                             <Link to={`/docs/${kebabCase(category.title)}/`}
                                   className={`btn btn--primary btn--nodesign
-                                  ${title === category.title ? 'active' : null}`}>
+                                  ${page.post.frontmatter.title === category.title ? 'active' : null}`}>
                               <span>{category.title}</span>
                             </Link>
                             <div className="site-breadcrumbs-body-sub toggle--visible collapse--height">
@@ -137,7 +133,7 @@ class Header extends React.Component {
                                   <div key={z}>
                                     <Link to={post.frontmatter.path}
                                           className={`btn btn--primary btn--nodesign btn--left
-                                        ${title === post.frontmatter.title ? 'active' : null}`}>
+                                        ${page.post.frontmatter.title === post.frontmatter.title ? 'active' : null}`}>
                                       <span>{post.frontmatter.title}</span>
                                     </Link>
                                   </div>
@@ -148,24 +144,21 @@ class Header extends React.Component {
                         </div>
                       ))}
                     </div>
-                    : null
-                  }
 
-                  { categories ?
                     <div className="site-breadcrumbs-body row row-space--none display--none-sm flex--auto"
                          data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
-                         "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
+                       "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
                       <div className="site-breadcrumbs-body-main flex--auto">
                         <button type="button" className="btn btn--primary btn--nodesign flex--auto">
-                          <span>{title}</span>
+                          <span>{page.post.frontmatter.title}</span>
                         </button>
-                        {categories.group.map((category, i) => (
+                        {page.categories.group.map((category, i) => (
                           <div key={i}>
                             <div className="site-breadcrumbs-body-sub toggle--visible collapse--height">
                               <div className="site-breadcrumbs-body-sub-inner">
                                 <Link to={`/docs/${kebabCase(category.title)}/`}
                                       className={`btn btn--primary btn--nodesign btn--left
-                                      ${title === category.title ? 'active' : null}`}>
+                                    ${page.post.frontmatter.title === category.title ? 'active' : null}`}>
                                   <span>{category.title}</span>
                                 </Link>
                               </div>
@@ -174,46 +167,42 @@ class Header extends React.Component {
                         ))}
                       </div>
                     </div>
-                    : null
-                  }
 
-                  <div className="site-breadcrumbs-meta row row-space--none align-items--center">
-
-                    <div className="display--none-sm display--block-md">
-                      <a href={data.site.siteMetadata.download} target="_blank" rel="noopener"
-                         className="btn btn--primary btn--icon btn--nodesign" aria-label="Download">
-                        <span><span className="icon-download icon--big"></span></span>
-                      </a>
-                    </div>
-
-                    <div className="display--none-sm display--block-md">
-                      <a href={data.site.siteMetadata.github} target="_blank" rel="noopener"
-                         className="btn btn--primary btn--icon btn--nodesign" aria-label="Github">
-                        <span><span className="icon-github icon--big"></span></span>
-                      </a>
-                    </div>
-
-                    <div className="show-sticky">
-                      <button type="button" className="btn btn--primary btn--nodesign btn--menu"
-                              data-xt-overlay='{"targets": "#site-menu"}'>
-                        <span>
-                          {title}
-                          <span className="icon--menu-custom">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                    <div className="site-breadcrumbs-meta row row-space--none align-items--center">
+                      <div className="display--none-sm display--block-md">
+                        <a href={data.site.siteMetadata.download} target="_blank" rel="noopener"
+                           className="btn btn--primary btn--icon btn--nodesign" aria-label="Download">
+                          <span><span className="icon-download icon--big"></span></span>
+                        </a>
+                      </div>
+                      <div className="display--none-sm display--block-md">
+                        <a href={data.site.siteMetadata.github} target="_blank" rel="noopener"
+                           className="btn btn--primary btn--icon btn--nodesign" aria-label="Github">
+                          <span><span className="icon-github icon--big"></span></span>
+                        </a>
+                      </div>
+                      <div className="show-sticky">
+                        <button type="button" className="btn btn--primary btn--nodesign btn--menu"
+                                data-xt-overlay='{"targets": "#site-menu"}'>
+                          <span>
+                            {page.post ? page.post.frontmatter.title : page.title}
+                            <span className="icon--menu-custom">
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                            </span>
                           </span>
-                        </span>
-                      </button>
+                        </button>
+                      </div>
                     </div>
 
                   </div>
-
                 </div>
               </div>
             </div>
-          </div>
-        </nav>
+          </nav>
+          : null
+        }
 
       </header>
     )

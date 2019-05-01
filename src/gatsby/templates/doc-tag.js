@@ -10,11 +10,12 @@ import Layout from "components/layout"
 class Template extends React.Component {
   render() {
     const {data, pageContext} = this.props
-    const title = 'Tags'
-    const description = 'Description'
+    const page = {};
+    page.title = 'Tags'
+    page.description = 'Description'
     return (
-      <Layout title={title} description={description}>
-        <SEO title={title + ' — ' + description}/>
+      <Layout page={data}>
+        <SEO title={page.title + ' — ' + page.description}/>
         {data.tags.group.map((category, index) => (
           <div key={index}>
             <Link to={`/tags/${kebabCase(category.title)}/`}>

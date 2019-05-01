@@ -1,19 +1,16 @@
 import React from "react"
-import {Link} from "gatsby"
 
 import SEO from "components/seo"
 import Layout from "components/layout"
 
 class Page extends React.Component {
   render() {
-    const title = "Home"
-    const description = "Description"
+    const page = {};
+    page.title = "Home"
+    page.description = "Description"
     return (
-      <Layout title={title} description={description}>
-        <SEO title={title + ' — ' + description}/>
-        <Link to="/test/">test</Link>
-        <br/>
-        <Link to="/duplicate/">duplicate</Link>
+      <Layout page={page}>
+        <SEO title={page.title + ' — ' + page.description}/>
       </Layout>
     )
   }

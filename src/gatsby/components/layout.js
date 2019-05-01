@@ -17,7 +17,7 @@ class Layout extends React.Component {
   }
 
   render() {
-    const {title, description, typeCurrent, categoriesCurrent, categories, children} = this.props
+    const {page, children} = this.props
     return (
       <StaticQuery
         query={graphql`
@@ -31,14 +31,18 @@ class Layout extends React.Component {
               download
             }
           }
+          categories: allMarkdownRemark {
+            type: group(field: frontmatter___type) {
+              title: fieldValue
+            }
+          }
         }
       `}
         render={data => (
           <>
             <div className="site-wrapper">
 
-              <Header title={title} description={description} typeCurrent={typeCurrent}
-                      categoriesCurrent={categoriesCurrent} categories={categories} data={data}/>
+              <Header data={data} page={page}/>
 
               <div className="site-wrapper-inner">
 

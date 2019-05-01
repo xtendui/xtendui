@@ -23,6 +23,7 @@ const kebabCase = require('lodash.kebabcase');
 
 exports.createPages = ({actions, graphql}) => {
   const {createPage} = actions
+  const faqTemplate = path.resolve(`src/gatsby/templates/faq.js`)
   const docTemplate = path.resolve(`src/gatsby/templates/doc.js`)
   /* COMMENTED CATEGORIES AND TAGS
   const tagTemplate = path.resolve(`src/gatsby/templates/doc-tag.js`)
@@ -41,7 +42,6 @@ exports.createPages = ({actions, graphql}) => {
             frontmatter {
               path
               type
-              tags
               categories
             }
           }
@@ -53,7 +53,13 @@ exports.createPages = ({actions, graphql}) => {
       return Promise.reject(result.errors)
     }
     result.data.allMarkdownRemark.edges.forEach(({node}) => {
-      if (node.frontmatter.type === 'docs') {
+      if (node.frontmatter.type === 'faq') {
+        createPage({
+          path: node.frontmatter.path,
+          component: faqTemplate,
+          context: {},
+        })
+      } else if (node.frontmatter.type === 'docs') {
         createPage({
           path: node.frontmatter.path,
           component: docTemplate,

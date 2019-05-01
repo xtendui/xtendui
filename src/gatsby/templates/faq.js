@@ -29,20 +29,6 @@ class Template extends React.Component {
 
 export const query = graphql`
   query($path: String!) {
-    categories: allMarkdownRemark(sort: {fields: [frontmatter___date], order: ASC}) {
-      group(field: frontmatter___categories) {
-        title: fieldValue
-        posts: edges {
-          post: node {
-            frontmatter {
-              date(formatString: "MMMM DD, YYYY")
-              path
-              title
-            }
-          }
-        }
-      }
-    }
     post: markdownRemark(frontmatter: {path: {eq: $path}}) {
       htmlAst
       frontmatter {
@@ -60,24 +46,6 @@ export default Template
 
 Template.propTypes = {
   data: PropTypes.shape({
-    categories: PropTypes.shape({
-      group: PropTypes.arrayOf(
-        PropTypes.shape({
-          title: PropTypes.string.isRequired,
-          posts: PropTypes.arrayOf(
-            PropTypes.shape({
-              post: PropTypes.shape({
-                frontmatter: PropTypes.shape({
-                  date: PropTypes.string.isRequired,
-                  path: PropTypes.string.isRequired,
-                  title: PropTypes.string.isRequired,
-                }).isRequired,
-              }).isRequired,
-            }).isRequired,
-          ),
-        }).isRequired
-      ),
-    }),
     post: PropTypes.shape({
       htmlAst: PropTypes.object.isRequired,
       frontmatter: PropTypes.shape({

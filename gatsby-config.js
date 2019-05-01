@@ -28,6 +28,36 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#000000`,
+        theme_color: `#000000`,
+        display: `minimal-ui`,
+        icon: `src/gatsby/assets/images/favicon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/gatsby/pages`,
+        ignore: [`**/*.source.js?(x)`],
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-component`,
+            options: {components: [`demo`]},
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
@@ -63,33 +93,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/gatsby/assets/images/favicon.png`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-page-creator`,
-      options: {
-        path: `${__dirname}/src/gatsby/pages`,
-        ignore: [`**/*.source.js?(x)`],
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-component`,
-            options: {components: [`demo`]},
-          },
-        ],
+        name: `faq`,
+        path: `${__dirname}/src/gatsby/faq/`,
       },
     },
   ],
