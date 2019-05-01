@@ -1,8 +1,8 @@
 ---
-path: "/docs/content/typography"
+path: "/docs/content/table"
 type: "docs"
-date: "2019-01-01"
-title: "Typography"
+date: "2019-03-01"
+title: "Table"
 description: "Description"
 categories: ["Content"]
 ---

@@ -20,8 +20,9 @@ class Template extends React.Component {
     const title = frontmatter.title
     const description = frontmatter.description
     const categoriesCurrent = frontmatter.categories
+    const typeCurrent = frontmatter.type
     return (
-      <Layout title={title} description={description} categoriesCurrent={categoriesCurrent}
+      <Layout title={title} description={description} typeCurrent={typeCurrent} categoriesCurrent={categoriesCurrent}
               categories={data.categories}>
         <SEO title={title + ' — ' + description}/>
         <div>{renderAst(htmlAst)}</div>
@@ -32,7 +33,7 @@ class Template extends React.Component {
 
 export const query = graphql`
   query($path: String!) {
-    categories: allMarkdownRemark(limit: 2000) {
+    categories: allMarkdownRemark(sort: {fields: [frontmatter___date], order: ASC}) {
       group(field: frontmatter___categories) {
         title: fieldValue
         posts: edges {
@@ -46,11 +47,11 @@ export const query = graphql`
         }
       }
     }
-    post: markdownRemark(frontmatter: { path: { eq: $path } }) {
+    post: markdownRemark(frontmatter: {path: {eq: $path}}) {
       htmlAst
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
-        path
+        type
         title
         description
         categories
@@ -85,7 +86,7 @@ Template.propTypes = {
       htmlAst: PropTypes.object.isRequired,
       frontmatter: PropTypes.shape({
         date: PropTypes.string.isRequired,
-        path: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         categories: PropTypes.array.isRequired,

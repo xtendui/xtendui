@@ -24,10 +24,12 @@ const kebabCase = require('lodash.kebabcase');
 exports.createPages = ({actions, graphql}) => {
   const {createPage} = actions
   const docTemplate = path.resolve(`src/gatsby/templates/doc.js`)
+  /* COMMENTED CATEGORIES AND TAGS
   const tagTemplate = path.resolve(`src/gatsby/templates/doc-tag.js`)
   const categoryTemplate = path.resolve(`src/gatsby/templates/doc-category.js`)
   const tagSet = new Set()
   const categorySet = new Set()
+  */
   return graphql(`
     {
       allMarkdownRemark(
@@ -51,12 +53,13 @@ exports.createPages = ({actions, graphql}) => {
       return Promise.reject(result.errors)
     }
     result.data.allMarkdownRemark.edges.forEach(({node}) => {
-      if (node.frontmatter.type === 'doc') {
+      if (node.frontmatter.type === 'docs') {
         createPage({
           path: node.frontmatter.path,
           component: docTemplate,
           context: {},
         })
+        /* COMMENTED CATEGORIES AND TAGS
         if (node.frontmatter.tags) {
           node.frontmatter.tags.forEach(tag => {
             tagSet.add(tag)
@@ -80,13 +83,14 @@ exports.createPages = ({actions, graphql}) => {
         const categoryList = Array.from(categorySet)
         categoryList.forEach(category => {
           createPage({
-            path: `/categories/${kebabCase(category)}/`,
+            path: `/docs/${kebabCase(category)}/`,
             component: categoryTemplate,
             context: {
               category
             }
           })
         })
+        */
       }
     })
   })

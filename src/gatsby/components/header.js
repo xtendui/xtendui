@@ -7,7 +7,7 @@ import logo from "assets/images/logo.svg"
 
 class Header extends React.Component {
   render() {
-    const {title, description, categoriesCurrent, categories, data} = this.props
+    const {title, description, typeCurrent, categoriesCurrent, categories, data} = this.props
     return (
       <header className="site-header">
 
@@ -26,7 +26,7 @@ class Header extends React.Component {
                   <button type="button" className="btn btn--primary btn--nodesign btn--menu"
                           data-xt-overlay='{"targets": "#site-menu"}'>
                       <span>
-                        {title}
+                        {typeCurrent || title}
                         <span className="icon--menu-custom">
                           <span></span>
                           <span></span>
@@ -60,7 +60,7 @@ class Header extends React.Component {
                       <button type="button" className="btn btn--primary btn--nodesign btn--menu"
                               data-xt-overlay='{"targets": "#site-menu"}'>
                         <span>
-                          {title}
+                          {typeCurrent || title}
                           <span className="icon icon--menu-custom right">
                             <span></span>
                             <span></span>
@@ -77,7 +77,7 @@ class Header extends React.Component {
               <div className="overlay_content">
                 <div className="site-menu-content">
 
-                  <Link to="/docs/" className="btn btn--primary btn--nodesign btn--left make-line">
+                  <Link to="/docs/introduction" className="btn btn--primary btn--nodesign btn--left make-line">
                     <span>Docs</span>
                   </Link>
                   <Link to="/extensions/" className="btn btn--primary btn--nodesign btn--left make-line">
@@ -121,14 +121,14 @@ class Header extends React.Component {
                   { categories ?
                     <div className="site-breadcrumbs-body row row-space--none display--none display--flex-sm"
                          data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
-                   "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
+                         "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
                       {categories.group.map((category, i) => (
                         <div key={i}>
-                          <div
-                            className={`site-breadcrumbs-body-main
+                          <div className={`site-breadcrumbs-body-main
                           ${categoriesCurrent.includes(category.title) ? 'current' : null}`}>
-                            <Link to={`/categories/${kebabCase(category.title)}/`}
-                                  className="btn btn--primary btn--nodesign">
+                            <Link to={`/docs/${kebabCase(category.title)}/`}
+                                  className={`btn btn--primary btn--nodesign
+                                  ${title === category.title ? 'active' : null}`}>
                               <span>{category.title}</span>
                             </Link>
                             <div className="site-breadcrumbs-body-sub toggle--visible collapse--height">
@@ -154,20 +154,18 @@ class Header extends React.Component {
                   { categories ?
                     <div className="site-breadcrumbs-body row row-space--none display--none-sm flex--auto"
                          data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
-                   "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
-                      <div
-                        className="site-breadcrumbs-body-main flex--auto">
-                        <button type="button"
-                              className="btn btn--primary btn--nodesign flex--auto">
+                         "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
+                      <div className="site-breadcrumbs-body-main flex--auto">
+                        <button type="button" className="btn btn--primary btn--nodesign flex--auto">
                           <span>{title}</span>
                         </button>
                         {categories.group.map((category, i) => (
                           <div key={i}>
                             <div className="site-breadcrumbs-body-sub toggle--visible collapse--height">
                               <div className="site-breadcrumbs-body-sub-inner">
-                                <Link to={`/categories/${kebabCase(category.title)}/`}
+                                <Link to={`/docs/${kebabCase(category.title)}/`}
                                       className={`btn btn--primary btn--nodesign btn--left
-                                        ${title === category.title ? 'active' : null}`}>
+                                      ${title === category.title ? 'active' : null}`}>
                                   <span>{category.title}</span>
                                 </Link>
                               </div>

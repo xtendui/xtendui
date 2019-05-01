@@ -1,3 +1,4 @@
+/* COMMENTED CATEGORIES AND TAGS
 import React from "react"
 import PropTypes from "prop-types"
 import {Link, graphql} from "gatsby"
@@ -16,7 +17,7 @@ class Template extends React.Component {
         <SEO title={title + ' — ' + description}/>
         {data.categories.group.map((category, index) => (
           <div key={index}>
-            <Link to={`/categories/${kebabCase(category.title)}/`}>
+            <Link to={`/docs/${kebabCase(category.title)}/`}>
               {category.title}
             </Link>
           </div>
@@ -62,13 +63,13 @@ Template.propTypes = {
 export default Template
 
 export const query = graphql`
-  query ($category: String!) {
-    categories: allMarkdownRemark(limit: 2000) {
+  query($category: String!) {
+    categories: allMarkdownRemark(sort: {fields: [frontmatter___date], order: ASC}) {
       group(field: frontmatter___categories) {
         title: fieldValue
       }
     }
-    allMarkdownRemark(filter: {frontmatter: { categories: { eq: $category } }}) {
+    allMarkdownRemark(filter: {frontmatter: {categories: {eq: $category}}}) {
       posts: edges {
         post: node {
           frontmatter {
@@ -82,3 +83,4 @@ export const query = graphql`
     }
   }
 `
+*/

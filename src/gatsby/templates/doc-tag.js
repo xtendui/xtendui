@@ -1,3 +1,4 @@
+/* COMMENTED CATEGORIES AND TAGS
 import React from "react"
 import PropTypes from "prop-types"
 import {Link, graphql} from "gatsby"
@@ -62,13 +63,13 @@ Template.propTypes = {
 export default Template
 
 export const query = graphql`
-  query ($tag: String!) {
-    tags: allMarkdownRemark(limit: 2000) {
+  query($tag: String!) {
+    tags: allMarkdownRemark(sort: {fields: [frontmatter___date], order: ASC}) {
       group(field: frontmatter___tags) {
         title: fieldValue
       }
     }
-    allMarkdownRemark(filter: {frontmatter: { tags: { eq: $tag } }}) {
+    allMarkdownRemark(filter: {frontmatter: {tags: {eq: $tag}}}) {
       posts: edges {
         post: node {
           frontmatter {
@@ -82,3 +83,4 @@ export const query = graphql`
     }
   }
 `
+*/

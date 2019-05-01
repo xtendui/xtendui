@@ -1,11 +1,10 @@
 ---
-path: "/test"
-type: "doc"
-date: "2017-11-07"
-title: "Title"
+path: "/docs/introduction"
+type: "docs"
+date: "2019-01-01"
+title: "Introduction"
 description: "Description"
-categories: ["Test"]
-tags: ["app", "design"]
+categories: ["Introduction"]
 ---
 
 <h2>Test shell</h2>
