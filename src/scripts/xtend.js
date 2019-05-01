@@ -618,7 +618,7 @@ if (typeof window !== 'undefined') {
      * @param {Node|HTMLElement|EventTarget|Window} el Element
      */
     init: function (el) {
-      // @FIX don't trigger with xt-ignore
+      // @FIX ignore
       if (el.classList.contains('xt-ignore') || Xt.parents(el, '.xt-ignore').length) {
         return false;
       }
@@ -682,7 +682,7 @@ if (typeof window !== 'undefined') {
      * @param {Node|HTMLElement|EventTarget|Window} el Element
      */
     init: function (el) {
-      // @FIX don't trigger with xt-ignore
+      // @FIX ignore
       if (el.classList.contains('xt-ignore') || Xt.parents(el, '.xt-ignore').length) {
         return false;
       }
@@ -748,7 +748,7 @@ if (typeof window !== 'undefined') {
      * @param {Node|HTMLElement|EventTarget|Window} el Element
      */
     init: function (el) {
-      // @FIX don't trigger with xt-ignore
+      // @FIX ignore
       if (el.classList.contains('xt-ignore') || Xt.parents(el, '.xt-ignore').length) {
         return false;
       }

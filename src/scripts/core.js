@@ -37,7 +37,7 @@ class Core {
     let self = this;
     self.object = object || self.object;
     self.optionsJs = optionsJs || self.optionsJs;
-    // @FIX don't trigger with xt-ignore
+    // @FIX ignore
     if (self.object.classList.contains('xt-ignore') || Xt.parents(self.object, '.xt-ignore').length) {
       return false;
     }
@@ -172,8 +172,8 @@ class Core {
     // elements
     if (options.elements) {
       let arr = Array.from(Xt.arrSingle(self.container.querySelectorAll(options.elements)));
-      arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
       arr = arr.filter(x => !x.getAttribute('data-xt-nav')); // filter out nav
+      arr = arr.filter(x => !x.classList.contains('xt-ignore') && !Xt.parents(x, '.xt-ignore').length); // filter out ignore
       self.elements = arr;
       self.destroyElements.push(...self.elements);
     }
@@ -182,8 +182,8 @@ class Core {
       // @FIX set namespace for next frame
       requestAnimationFrame(function () {
         let arr = Array.from(Xt.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']')));
-        arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
         arr = arr.filter(x => !x.getAttribute('data-xt-nav')); // filter out nav
+        arr = arr.filter(x => !x.classList.contains('xt-ignore') && !Xt.parents(x, '.xt-ignore').length); // filter out ignore
         self.elements = arr;
         self.destroyElements.push(...self.elements);
       });
@@ -200,7 +200,7 @@ class Core {
     if (options.targets) {
       let arr = Array.from(self.container.querySelectorAll(options.targets));
       arr = arr.filter(x => !Xt.parents(x, options.targets).length); // filter out parent
-      arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
+      arr = arr.filter(x => !x.classList.contains('xt-ignore') && !Xt.parents(x, '.xt-ignore').length); // filter out ignore
       self.targets = arr;
       self.destroyElements.push(...self.targets);
     }
@@ -1758,13 +1758,13 @@ class Core {
     if (type === 'targets') {
       // appendTo
       if (options.appendTo) {
-        let appendToTarget = document.querySelectorAll(options.appendTo);
-        let appendOrigin = document.querySelectorAll('[data-xt-origin=' + self.namespace + ']');
-        if (!appendOrigin.length) {
+        let appendToTarget = document.querySelector(options.appendTo);
+        let appendOrigin = document.querySelector('[data-xt-origin=' + self.namespace + ']');
+        if (!appendOrigin) {
           el.before(Xt.createElement('<div class="xt-ignore" data-xt-origin=' + self.namespace + '></div>'));
         }
-        el.classList.add('xt-ignore'); // don't trigger Xt.observer
-        appendToTarget[0].appendChild(el);
+        el.classList.add('xt-ignore'); // @FIX ignore Xt.observer and init
+        appendToTarget.appendChild(el);
       }
     }
     if (type === 'targets' || type === 'targetsInner') {
@@ -1942,9 +1942,15 @@ class Core {
     if (type === 'targets') {
       // appendTo
       if (options.appendTo) {
-        let appendOrigin = document.querySelectorAll('[data-xt-origin=' + self.namespace + ']');
-        if (appendOrigin.length) {
-          appendOrigin[0].before(el);
+        let appendOrigin = document.querySelector('[data-xt-origin=' + self.namespace + ']');
+        if (appendOrigin) {
+          appendOrigin.before(el);
+          appendOrigin.remove();
+          requestAnimationFrame( function() {
+            el.classList.remove('xt-ignore'); // @FIX ignore Xt.observer and init
+          });
+        } else {
+          el.remove();
         }
       }
     }

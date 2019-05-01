@@ -7,7 +7,6 @@
 require("assets/icons-theme/style.css")
 require("assets/styles/theme.less")
 
-exports.onPreRouteUpdate = ({ location, prevLocation }) => {
-  // autoClose xt
-  window.dispatchEvent(new CustomEvent('autoClose.xt'));
+exports.onPreRouteUpdate = ({location, prevLocation}) => {
+  window.dispatchEvent(new CustomEvent('autoClose.xt')); // autoClose xt
 }
