@@ -1,10 +1,10 @@
 ---
-path: "/test"
+path: "/content/typography"
 type: "doc"
 date: "2017-11-07"
-title: "Title"
+title: "Typography"
 description: "Description"
-categories: ["Test"]
+categories: ["Content"]
 tags: ["app", "design"]
 ---
 

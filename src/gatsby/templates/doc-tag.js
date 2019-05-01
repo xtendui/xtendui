@@ -9,22 +9,22 @@ import Layout from "components/layout"
 class Template extends React.Component {
   render() {
     const {data, pageContext} = this.props
-    const title = 'Categories'
+    const title = 'Tags'
     const description = 'Description'
     return (
       <Layout title={title} description={description}>
         <SEO title={title + ' — ' + description}/>
-        {data.tags.group.map((node, index) => (
+        {data.tags.group.map((category, index) => (
           <div key={index}>
-            <Link to={`/tags/${kebabCase(node.fieldValue)}/`}>
-              {node.fieldValue} ({node.totalCount})
+            <Link to={`/tags/${kebabCase(category.fieldValue)}/`}>
+              {category.fieldValue}
             </Link>
           </div>
         ))}
-        {data.posts.edges.map(({node}, index) => (
+        {data.allMarkdownRemark.posts.map(({post}, index) => (
           <div key={index}>
-            <Link to={node.frontmatter.path}>
-              {node.frontmatter.title}
+            <Link to={post.frontmatter.path}>
+              {post.frontmatter.title}
             </Link>
           </div>
         ))}
@@ -39,14 +39,13 @@ Template.propTypes = {
       group: PropTypes.arrayOf(
         PropTypes.shape({
           fieldValue: PropTypes.string.isRequired,
-          totalCount: PropTypes.number.isRequired,
         }).isRequired
       ),
     }),
-    posts: PropTypes.shape({
-      edges: PropTypes.arrayOf(
+    allMarkdownRemark: PropTypes.shape({
+      posts: PropTypes.arrayOf(
         PropTypes.shape({
-          node: PropTypes.shape({
+          post: PropTypes.shape({
             frontmatter: PropTypes.shape({
               date: PropTypes.string.isRequired,
               path: PropTypes.string.isRequired,
@@ -67,12 +66,11 @@ export const query = graphql`
     tags: allMarkdownRemark(limit: 2000) {
       group(field: frontmatter___tags) {
         fieldValue
-        totalCount
       }
     }
-    posts: allMarkdownRemark(filter: {frontmatter: { tags: { eq: $tag } }}) {
-      edges {
-        node {
+    allMarkdownRemark(filter: {frontmatter: { tags: { eq: $tag } }}) {
+      posts: edges {
+        post: node {
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             path

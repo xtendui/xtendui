@@ -19,8 +19,10 @@ class Template extends React.Component {
     const {frontmatter, htmlAst} = post
     const title = frontmatter.title
     const description = frontmatter.description
+    const categoriesCurrent = frontmatter.categories
     return (
-      <Layout title={title} description={description}>
+      <Layout title={title} description={description} categoriesCurrent={categoriesCurrent}
+              categories={data.categories}>
         <SEO title={title + ' — ' + description}/>
         <div>{renderAst(htmlAst)}</div>
       </Layout>
@@ -30,6 +32,20 @@ class Template extends React.Component {
 
 export const query = graphql`
   query($path: String!) {
+    categories: allMarkdownRemark(limit: 2000) {
+      group(field: frontmatter___categories) {
+        name: fieldValue
+        posts: edges {
+          post: node {
+            frontmatter {
+              date(formatString: "MMMM DD, YYYY")
+              path
+              title
+            }
+          }
+        }
+      }
+    }
     post: markdownRemark(frontmatter: { path: { eq: $path } }) {
       htmlAst
       frontmatter {
@@ -37,6 +53,7 @@ export const query = graphql`
         path
         title
         description
+        categories
       }
     }
   }
@@ -46,20 +63,33 @@ export default Template
 
 Template.propTypes = {
   data: PropTypes.shape({
-    post: PropTypes.shape({
-      edges: PropTypes.arrayOf(
+    categories: PropTypes.shape({
+      group: PropTypes.arrayOf(
         PropTypes.shape({
-          node: PropTypes.shape({
-            htmlAst: PropTypes.string.isRequired,
-            frontmatter: PropTypes.shape({
-              date: PropTypes.string.isRequired,
-              path: PropTypes.string.isRequired,
-              title: PropTypes.string.isRequired,
-              description: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+          posts: PropTypes.arrayOf(
+            PropTypes.shape({
+              post: PropTypes.shape({
+                frontmatter: PropTypes.shape({
+                  date: PropTypes.string.isRequired,
+                  path: PropTypes.string.isRequired,
+                  title: PropTypes.string.isRequired,
+                }).isRequired,
+              }).isRequired,
             }).isRequired,
-          }).isRequired,
-        }).isRequired,
+          ),
+        }).isRequired
       ),
+    }),
+    post: PropTypes.shape({
+      htmlAst: PropTypes.object.isRequired,
+      frontmatter: PropTypes.shape({
+        date: PropTypes.string.isRequired,
+        path: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        categories: PropTypes.array.isRequired,
+      }).isRequired,
     }).isRequired,
   }).isRequired,
 }

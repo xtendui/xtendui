@@ -16,7 +16,7 @@ class Layout extends React.Component {
     populateBlock();
   }
   render() {
-    const {title, description, children} = this.props
+    const {title, description, categoriesCurrent, categories, children} = this.props
     return (
       <StaticQuery
         query={graphql`
@@ -36,7 +36,7 @@ class Layout extends React.Component {
           <>
             <div className="site-wrapper">
 
-              <Header title={title} description={description} data={data}/>
+              <Header title={title} description={description} categoriesCurrent={categoriesCurrent} categories={categories} data={data}/>
 
               <div className="site-wrapper-inner">
 

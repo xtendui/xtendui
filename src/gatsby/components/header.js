@@ -1,29 +1,30 @@
 import React from "react"
 import PropTypes from "prop-types"
 import {Link} from "gatsby"
+import kebabCase from "lodash/kebabCase"
 
 import logo from "assets/images/logo.svg"
 
 class Header extends React.Component {
   render() {
-    const {title, description, data} = this.props
+    const {title, description, categoriesCurrent, categories, data} = this.props
     return (
       <header className="site-header">
 
-          <nav className="site-header-top-outer"
-               data-xt-sticky='{"sticky": "fixed", "limit": {"top": ".site-hero"}, "contain": {"bottom":".site-breadcrumbs-outer:not(.xt-clone)"}, "hide": "down"}'>
-            <div className="site-header-top">
-              <div className="container">
+        <nav className="site-header-top-outer"
+             data-xt-sticky='{"sticky": "fixed", "limit": {"top": ".site-hero"}, "contain": {"bottom":".site-breadcrumbs-outer:not(.xt-clone)"}, "hide": "down"}'>
+          <div className="site-header-top">
+            <div className="container">
 
-                <div className="row flex--auto justify-content--space-between align-items--center">
-                  <div>
-                    <Link to="/" className="logo" aria-label="Home">
-                      <img src={logo} alt={data.site.siteMetadata.title}/>
-                    </Link>
-                  </div>
-                  <div>
-                    <button type="button" className="btn btn--primary btn--nodesign btn--menu"
-                            data-xt-overlay='{"targets": "#site-menu"}'>
+              <div className="row flex--auto justify-content--space-between align-items--center">
+                <div>
+                  <Link to="/" className="logo" aria-label="Home">
+                    <img src={logo} alt={data.site.siteMetadata.title}/>
+                  </Link>
+                </div>
+                <div>
+                  <button type="button" className="btn btn--primary btn--nodesign btn--menu"
+                          data-xt-overlay='{"targets": "#site-menu"}'>
                       <span>
                         {title}
                         <span className="icon--menu-custom">
@@ -32,13 +33,13 @@ class Header extends React.Component {
                           <span></span>
                         </span>
                       </span>
-                    </button>
-                  </div>
+                  </button>
                 </div>
-
               </div>
+
             </div>
-          </nav>
+          </div>
+        </nav>
 
         <nav className="site-menu overlay_outer overlay--primary overlay--screen overlay--medium"
              id="site-menu">
@@ -116,6 +117,39 @@ class Header extends React.Component {
             <div className="site-breadcrumbs-inner">
               <div className="container">
                 <div className="row flex--auto justify-content--space-between align-items--flex-start">
+
+                  { categories ?
+                    <div className="site-breadcrumbs-body row row-space--none display--none display--flex-sm"
+                         data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
+                   "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
+                      {categories.group.map((category, i) => (
+                        <div key={i}>
+                          <div
+                            className={`site-breadcrumbs-body-main
+                          ${categoriesCurrent.includes(category.name) ? 'current' : null}`}>
+                            <Link to={`/categories/${kebabCase(category.name)}/`}
+                                  className="btn btn--primary btn--nodesign">
+                              <span>{category.name}</span>
+                            </Link>
+                            <div className="site-breadcrumbs-body-sub toggle--visible collapse--height">
+                              <div className="site-breadcrumbs-body-sub-inner">
+                                {category.posts.map(({post}, z) => (
+                                  <div key={z}>
+                                    <Link to={post.frontmatter.path}
+                                          className={`btn btn--primary btn--nodesign btn--left
+                                        ${title === post.frontmatter.title ? 'active' : null}`}>
+                                      <span>{post.frontmatter.title}</span>
+                                    </Link>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    : null
+                  }
 
                   <div className="site-breadcrumbs-meta row row-space--none align-items--center">
 
