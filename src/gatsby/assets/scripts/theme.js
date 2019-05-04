@@ -6,7 +6,7 @@ import Xt from "../../../../src/scripts/xtend";
 
 const makeDocument = function () {
   // .make-line
-  for (let el of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
+  for (let el of document.querySelectorAll('.site-article h2, .site-article h3')) {
     el.classList.add('make-line');
   }
   for (let el of document.querySelectorAll('.make-line')) {
@@ -14,7 +14,7 @@ const makeDocument = function () {
     el.innerHTML = '<span class="line-container">' + el.innerHTML + '</span>';
   }
   // .make-anchor
-  for (let el of document.querySelectorAll('.site-article > h2, .site-article > h3')) {
+  for (let el of document.querySelectorAll('.site-article h2, .site-article h3')) {
     el.classList.add('make-line');
     // previous h2 if h3
     let prevElement;

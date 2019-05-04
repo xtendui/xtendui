@@ -77,11 +77,15 @@ class Header extends React.Component {
               <div className="overlay_content">
                 <div className="site-menu-content">
 
-                  <Link to='/' className="btn btn--primary btn--nodesign btn--left make-line">
+                  <Link to='/'
+                        className={`btn btn--primary btn--nodesign btn--left make-line
+                                    ${page.title ? page.title.toLowerCase() === 'home' ? 'active' : '' : null}`}>
                     <span>Home</span>
                   </Link>
                   {data.categories.type.map((type, i) => (
-                    <Link key={i} to={`/${kebabCase(type.title)}/`} className="btn btn--primary btn--nodesign btn--left make-line">
+                    <Link key={i} to={`/${kebabCase(type.title)}/`}
+                          className={`btn btn--primary btn--nodesign btn--left make-line
+                                    ${page.post ? page.post.frontmatter.title.toLowerCase() === type.title ? 'active' : '' : null}`}>
                       <span>{type.title}</span>
                     </Link>
                   ))}
@@ -123,7 +127,7 @@ class Header extends React.Component {
                         ${page.post.frontmatter.categories.includes(category.title.split('-').pop()) ? 'current' : null}`}>
                           <Link to={`/docs/${kebabCase(category.title.split('-').pop())}/`}
                                 className={`btn btn--primary btn--nodesign
-                                ${page.post.frontmatter.title === category.title.split('-').pop() ? 'active' : null}`}>
+                                ${page.post.frontmatter.title === category.title.split('-').pop() ? 'active' : ''}`}>
                             <span>{category.title.split('-').pop()}</span>
                           </Link>
                           <div className="site-breadcrumbs-body-sub toggle--visible collapse--height">
@@ -131,7 +135,7 @@ class Header extends React.Component {
                               {category.posts.map(({post}, z) => (
                                 <Link key={z} to={post.frontmatter.path}
                                       className={`btn btn--primary btn--nodesign btn--left
-                                    ${page.post.frontmatter.title === post.frontmatter.title ? 'active' : null}`}>
+                                    ${page.post.frontmatter.title === post.frontmatter.title ? 'active' : ''}`}>
                                   <span>{post.frontmatter.title}</span>
                                 </Link>
                               ))}
@@ -153,7 +157,7 @@ class Header extends React.Component {
                             <div className="site-breadcrumbs-body-sub-inner">
                               <Link to={`/docs/${kebabCase(category.title.split('-').pop())}/`}
                                     className={`btn btn--primary btn--nodesign btn--left
-                                  ${page.post.frontmatter.title === category.title.split('-').pop() ? 'active' : null}`}>
+                                  ${page.post.frontmatter.title === category.title.split('-').pop() ? 'active' : ''}`}>
                                 <span>{category.title.split('-').pop()}</span>
                               </Link>
                             </div>
