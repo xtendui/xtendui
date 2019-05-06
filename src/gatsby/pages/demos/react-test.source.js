@@ -6,6 +6,7 @@ class Component extends React.Component {
   componentDidMount() {
     console.log('bbb', Xt, document, document.querySelectorAll('.drop--disable'))
   }
+
   render() {
     return (
       <div>

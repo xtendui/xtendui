@@ -2,8 +2,8 @@
  * https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
-const fs = require('fs')
-const path = require('path')
+const fs = require("fs")
+const path = require("path")
 const version = JSON.parse(fs.readFileSync('package.json')).version
 
 module.exports = {

@@ -4,10 +4,76 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// https://github.com/gatsbyjs/gatsby/issues/11934
+// webpack config
+
+/*
+const webpack = require('webpack')
+exports.onCreateWebpackConfig = ({getConfig, actions}) => {
+  const config = getConfig()
+  // disable HotModuleReplacementPlugin
+  console.log(config);
+  const found = config.plugins.find(
+    plugin => plugin instanceof webpack.HotModuleReplacementPlugin
+  )
+  if (found) {
+    found.options = {
+      requestTimeout: 99999999
+    }
+  }
+  const extraConfig = {
+    devServer: {
+      disableHostCheck: true,
+      hotOnly: false,
+      hot: false,
+      inline: false,
+    },
+  };
+  actions.replaceWebpackConfig(merge(config, extraConfig));
+}
+*/
+/*
+exports.onCreateWebpackConfig = ({plugins, actions}) => {
+  const {setWebpackConfig} = actions;
+  setWebpackConfig({
+    plugins: [
+      plugins.define({
+        hotModuleReplacement: false
+      })
+    ]
+  });
+  console.log(plugins);
+};
+*/
+/*
+exports.onCreateWebpackConfig = ({getConfig, actions}) => {
+  const config = getConfig()
+  const extraConfig = {
+    devServer: {
+      disableHostCheck: true,
+      hotOnly: false,
+      hot: false,
+      inline: false,
+    },
+  };
+  actions.replaceWebpackConfig(merge(config, extraConfig));
+  console.log(getConfig());
+}
+*/
+/*
+exports.onCreateWebpackConfig = ({getConfig, stage}) => {
+  const config = getConfig()
+  // https://github.com/gatsbyjs/gatsby/issues/8102 // FIX hot reload when using iframe
+  config.devServer = {
+    ...config.devServer,
+    hot: false,
+    inline: false
+  }
+}
+*/
 
 exports.onCreateWebpackConfig = ({getConfig, stage}) => {
   const config = getConfig()
+  // https://github.com/gatsbyjs/gatsby/issues/11934
   if (stage.startsWith('develop') && config.resolve) {
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -56,8 +122,7 @@ exports.createPages = ({actions, graphql}) => {
         createPage({
           path: node.frontmatter.path,
           component: faqTemplate,
-          context: {
-          }
+          context: {}
         })
       } else if (node.frontmatter.type === 'docs') {
         createPage({

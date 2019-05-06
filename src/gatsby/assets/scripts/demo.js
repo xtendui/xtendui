@@ -248,6 +248,7 @@ const loadShadow = function (shadowRoot, shadowSrc, source, shadowId, item) {
     template.innerHTML = request.responseText.trim();
     let shadowTemplate = document.adoptNode(template);
     // if shadow dom supported
+    // PROBLEM react doesn't initialize inside shadow dom
     // PROBLEM querySelectorAll inside Xtend javascript doesn't query inside shadowRoot
     if (document.head.attachShadow) {
       // remove unsupported shadow dom elements
@@ -255,27 +256,35 @@ const loadShadow = function (shadowRoot, shadowSrc, source, shadowId, item) {
       for (let remove of removes) {
         remove.remove();
       }
+      item.classList.add('loaded');
       // style
+      let onStylesLoaded = function() {
+        // when all link[rel="stylesheet"] are loaded
+        Xt.load(shadowTemplate);
+        item.classList.add('loaded');
+        // script
+        let shadowBody = shadowTemplate.querySelector('body');
+        let scripts = template.querySelectorAll('script:not([src])');
+        for (let script of scripts) {
+          let scriptNew = document.createElement('script');
+          scriptNew.textContent = script.innerHTML.replace(/(?=.*\s)(document\.)/g, 'document.querySelector("#' + shadowId + '").shadowRoot.'); // replace document. with a query inside shadow dom
+          shadowBody.appendChild(scriptNew);
+          script.remove();
+        }
+      }
       let styles = template.querySelectorAll('link[rel="stylesheet"]');
       let stylesLoaded = 0;
       for (let style of styles) {
-        style.addEventListener('load', function () {
-          stylesLoaded++;
-          if (stylesLoaded === styles.length) {
-            // when all link[rel="stylesheet"] are loaded
-            Xt.load(shadowTemplate);
-            item.classList.add('loaded');
-            // script
-            let shadowBody = shadowTemplate.querySelector('body');
-            let scripts = template.querySelectorAll('script:not([src])');
-            for (let script of scripts) {
-              let scriptNew = document.createElement('script');
-              scriptNew.textContent = script.innerHTML.replace(/(?=.*\s)(document\.)/g, 'document.querySelector("#' + shadowId + '").shadowRoot.'); // replace document. with a query inside shadow dom
-              shadowBody.appendChild(scriptNew);
-              script.remove();
+        if (styles.length === 0) {
+          onStylesLoaded();
+        } else {
+          style.addEventListener('load', function () {
+            stylesLoaded++;
+            if (stylesLoaded === styles.length) {
+              onStylesLoaded();
             }
-          }
-        });
+          });
+        }
       }
     }
     // shadowRoot

@@ -31,6 +31,6 @@ export default DemoIframe
 DemoIframe.propTypes = {
   demoName: PropTypes.string.isRequired,
   htmlSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  jsSource: PropTypes.string.isRequired,
-  cssSource: PropTypes.string.isRequired,
+  jsSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  cssSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
 }
