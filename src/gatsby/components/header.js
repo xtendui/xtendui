@@ -112,7 +112,7 @@ class Header extends React.Component {
 
         </div>
 
-        { page && page.categories ?
+        {page && page.categories ?
           <nav className="site-breadcrumbs-outer" role="navigation" data-xt-sticky='{"sticky": "absolute"}'>
             <div className="site-breadcrumbs">
               <div className="site-breadcrumbs-inner">
@@ -124,7 +124,7 @@ class Header extends React.Component {
                          "targets": ".site-breadcrumbs-body-sub", "on": "mouseenter", "off": "mouseleave", "instant": true}'>
                       {page.categories.category.map((category, i) => (
                         <div key={i} className={`site-breadcrumbs-body-main
-                        ${page.post.frontmatter.categories.includes(category.title.split('-').pop()) ? 'current' : null}`}>
+                        ${page.post.frontmatter.categories ? page.post.frontmatter.categories.includes(category.title.split('-').pop()) ? 'current' : null: null}`}>
                           <Link to={`/docs/${kebabCase(category.title.split('-').pop())}/`}
                                 className={`btn btn--primary btn--nodesign
                                 ${page.post.frontmatter.title === category.title.split('-').pop() ? 'active' : ''}`}>
@@ -133,37 +133,18 @@ class Header extends React.Component {
                           <div className="site-breadcrumbs-body-sub toggle--visible collapse--height">
                             <div className="site-breadcrumbs-body-sub-inner">
                               {category.posts.map(({post}, z) => (
-                                <Link key={z} to={post.frontmatter.path}
-                                      className={`btn btn--primary btn--nodesign btn--left
+                                !post.frontmatter.categories ?
+                                  <Link key={z} to={post.frontmatter.path}
+                                        className={`btn btn--primary btn--nodesign btn--left
                                     ${page.post.frontmatter.title === post.frontmatter.title ? 'active' : ''}`}>
-                                  <span>{post.frontmatter.title}</span>
-                                </Link>
+                                    <span>{post.frontmatter.title}</span>
+                                  </Link>
+                                  : null
                               ))}
                             </div>
                           </div>
                         </div>
                       ))}
-                    </div>
-
-                    <div className="site-breadcrumbs-body row row-space--none display--none-sm flex--auto"
-                         data-xt-toggle='{"elements": ".site-breadcrumbs-body-main", "controls": ":scope > a, :scope > button",
-                       "targets": ".site-breadcrumbs-body-sub", "on": "click", "closeOutside": "body"}'>
-                      <div className="site-breadcrumbs-body-main flex--auto">
-                        <button type="button" className="btn btn--primary btn--nodesign flex--auto">
-                          <span>{page.post.frontmatter.title}</span>
-                        </button>
-                        {page.categories.category.map((category, i) => (
-                          <div key={i} className="site-breadcrumbs-body-sub toggle--visible collapse--height">
-                            <div className="site-breadcrumbs-body-sub-inner">
-                              <Link to={`/docs/${kebabCase(category.title.split('-').pop())}/`}
-                                    className={`btn btn--primary btn--nodesign btn--left
-                                  ${page.post.frontmatter.title === category.title.split('-').pop() ? 'active' : ''}`}>
-                                <span>{category.title.split('-').pop()}</span>
-                              </Link>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
                     </div>
 
                     <div className="site-breadcrumbs-meta row row-space--none align-items--center">

@@ -5,6 +5,7 @@ date: "2019-01-01"
 title: "Docs"
 description: "Description"
 categories: []
+parent: ""
 ---
 
 <h2>Test shell</h2>

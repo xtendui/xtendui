@@ -53,7 +53,7 @@ Template.propTypes = {
         type: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
-        categories: PropTypes.array.isRequired,
+        categories: PropTypes.array,
       }).isRequired,
     }).isRequired,
   }).isRequired,

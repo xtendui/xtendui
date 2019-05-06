@@ -28,7 +28,7 @@ class Template extends React.Component {
 }
 
 export const query = graphql`
-  query($path: String!) {
+  query($path: String!, $parent: String) {
     categories: allMarkdownRemark(sort: {fields: [frontmatter___date], order: ASC}) {
       category: group(field: frontmatter___categories) {
         title: fieldValue
@@ -38,7 +38,19 @@ export const query = graphql`
               date(formatString: "MMMM DD, YYYY")
               path
               title
+              parent
             }
+          }
+        }
+      }
+    }
+    adiacentPosts:allMarkdownRemark(filter: {frontmatter: {parent: {eq: $parent}}}) {
+      posts: edges {
+        post: node {
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            path
+            title
           }
         }
       }
@@ -71,6 +83,7 @@ Template.propTypes = {
                   date: PropTypes.string.isRequired,
                   path: PropTypes.string.isRequired,
                   title: PropTypes.string.isRequired,
+                  parent: PropTypes.string,
                 }).isRequired,
               }).isRequired,
             }).isRequired,
@@ -78,6 +91,19 @@ Template.propTypes = {
         }).isRequired
       ),
     }),
+    adiacentPosts: PropTypes.shape({
+      posts: PropTypes.arrayOf(
+        PropTypes.shape({
+          post: PropTypes.shape({
+            frontmatter: PropTypes.shape({
+              date: PropTypes.string.isRequired,
+              path: PropTypes.string.isRequired,
+              title: PropTypes.string.isRequired,
+            }).isRequired,
+          }).isRequired,
+        }).isRequired,
+      ),
+    }).isRequired,
     post: PropTypes.shape({
       htmlAst: PropTypes.object.isRequired,
       frontmatter: PropTypes.shape({
@@ -85,7 +111,7 @@ Template.propTypes = {
         type: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
-        categories: PropTypes.array.isRequired,
+        categories: PropTypes.array,
       }).isRequired,
     }).isRequired,
   }).isRequired,

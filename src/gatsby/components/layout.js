@@ -4,6 +4,7 @@ import {StaticQuery, graphql} from "gatsby"
 
 import Header from "components/header"
 import Footer from "components/footer"
+import Sidebar from "components/sidebar"
 
 import Xt from "xtend-library";
 import {populateBlock} from "assets/scripts/demo.js"
@@ -50,9 +51,21 @@ class Layout extends React.Component {
                   <div className="site-main-inner">
                     <div className="container">
 
-                      <article className="site-article">
-                        {children}
-                      </article>
+                      {page && page.adiacentPosts ?
+                        <div class="row">
+                          <div className="col--12 col--9-md">
+                            <article className="site-article">
+                              {children}
+                            </article>
+                          </div>
+                          <div className="col--12 col--3-md">
+                            <Sidebar page={page}/>
+                          </div>
+                        </div>
+                        :
+                        <article className="site-article">
+                          {children}
+                        </article>}
 
                     </div>
                   </div>

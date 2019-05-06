@@ -19,7 +19,7 @@ exports.onCreateWebpackConfig = ({getConfig, stage}) => {
 // markdown
 
 const path = require("path")
-const kebabCase = require('lodash.kebabcase');
+//const kebabCase = require('lodash.kebabcase');
 
 exports.createPages = ({actions, graphql}) => {
   const {createPage} = actions
@@ -35,14 +35,13 @@ exports.createPages = ({actions, graphql}) => {
     {
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
       ) {
         edges {
           node {
             frontmatter {
               path
               type
-              categories
+              parent
             }
           }
         }
@@ -57,13 +56,16 @@ exports.createPages = ({actions, graphql}) => {
         createPage({
           path: node.frontmatter.path,
           component: faqTemplate,
-          context: {},
+          context: {
+          }
         })
       } else if (node.frontmatter.type === 'docs') {
         createPage({
           path: node.frontmatter.path,
           component: docTemplate,
-          context: {},
+          context: {
+            parent: node.frontmatter.parent // for query($parent: String) { // put also parent on return graphql
+          }
         })
         /* COMMENTED CATEGORIES AND TAGS
         if (node.frontmatter.tags) {
