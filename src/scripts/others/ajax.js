@@ -287,8 +287,10 @@ class Ajax extends Core {
     // reinit
     if (!self.initial
       && date === self.detail.requestDate) { // fix fast change page
-      self.initial = true;
-      self.init();
+      requestAnimationFrame( function() {
+        self.initial = true;
+        self.init();
+      });
     }
   }
 
