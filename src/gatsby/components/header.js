@@ -7,7 +7,7 @@ import logo from "assets/images/logo.svg"
 
 class Header extends React.Component {
   render() {
-    const {page, data} = this.props
+    const {site, seo, page} = this.props
     return (
       <header className="site-header">
 
@@ -19,14 +19,14 @@ class Header extends React.Component {
               <div className="row flex--auto justify-content--space-between align-items--center">
                 <div>
                   <Link to="/" className="logo" aria-label="Home">
-                    <img src={logo} alt={data.site.siteMetadata.title}/>
+                    <img src={logo} alt={site.site.siteMetadata.title}/>
                   </Link>
                 </div>
                 <div>
                   <button type="button" className="btn btn--primary btn--nodesign btn--menu"
                           data-xt-overlay='{"targets": "#site-menu"}'>
                       <span>
-                        {page.post ? page.post.frontmatter.type : page.title}
+                        {seo.title}
                         <span className="icon--menu-custom">
                           <span></span>
                           <span></span>
@@ -53,14 +53,14 @@ class Header extends React.Component {
                   <div className="row flex--auto justify-content--space-between align-items--center">
                     <div>
                       <Link to="/" className="logo" aria-label="Home">
-                        <img src={logo} alt={data.site.siteMetadata.title}/>
+                        <img src={logo} alt={site.site.siteMetadata.title}/>
                       </Link>
                     </div>
                     <div>
                       <button type="button" className="btn btn--primary btn--nodesign btn--menu"
                               data-xt-overlay='{"targets": "#site-menu"}'>
                         <span>
-                          {page.post ? page.post.frontmatter.type : page.title}
+                          {seo.title}
                           <span className="icon icon--menu-custom right">
                             <span></span>
                             <span></span>
@@ -79,13 +79,13 @@ class Header extends React.Component {
 
                   <Link to='/'
                         className={`btn btn--primary btn--nodesign btn--left make-line
-                                    ${page.title ? page.title.toLowerCase() === 'home' ? 'active' : '' : null}`}>
+                                    ${seo.title.toLowerCase() === 'home' ? 'active' : ''}`}>
                     <span>Home</span>
                   </Link>
-                  {data.categories.type.map((type, i) => (
+                  {site.categories.type.map((type, i) => (
                     <Link key={i} to={`/${kebabCase(type.title)}/`}
                           className={`btn btn--primary btn--nodesign btn--left make-line
-                                    ${page.post ? page.post.frontmatter.title.toLowerCase() === type.title ? 'active' : '' : null}`}>
+                                    ${seo.title.toLowerCase() === type.title ? 'active' : '' }`}>
                       <span>{type.title}</span>
                     </Link>
                   ))}
@@ -102,8 +102,8 @@ class Header extends React.Component {
           <div className="container">
             <div className="row flex--auto align-items--center align-content--center justify-content--space-between">
               <div className="site-hero-text">
-                <h1>{page.post ? page.post.frontmatter.title : page.title}</h1>
-                <p>{page.post ? page.post.frontmatter.description : page.description}</p>
+                <h1>{seo.title}</h1>
+                <p>{seo.description}</p>
               </div>
               <div className="site-hero-img">
               </div>
@@ -149,13 +149,13 @@ class Header extends React.Component {
 
                     <div className="site-breadcrumbs-meta row row-space--none align-items--center">
                       <div className="display--none-sm display--block-md">
-                        <a href={data.site.siteMetadata.download} target="_blank" rel="noopener"
+                        <a href={site.site.siteMetadata.download} target="_blank" rel="noopener"
                            className="btn btn--primary btn--icon btn--nodesign" aria-label="Download">
                           <span><span className="icon-download icon--big"></span></span>
                         </a>
                       </div>
                       <div className="display--none-sm display--block-md">
-                        <a href={data.site.siteMetadata.github} target="_blank" rel="noopener"
+                        <a href={site.site.siteMetadata.github} target="_blank" rel="noopener"
                            className="btn btn--primary btn--icon btn--nodesign" aria-label="Github">
                           <span><span className="icon-github icon--big"></span></span>
                         </a>
@@ -164,7 +164,7 @@ class Header extends React.Component {
                         <button type="button" className="btn btn--primary btn--nodesign btn--menu"
                                 data-xt-overlay='{"targets": "#site-menu"}'>
                           <span>
-                            {page.post ? page.post.frontmatter.title : page.title}
+                            {seo.title}
                             <span className="icon--menu-custom">
                               <span></span>
                               <span></span>
@@ -189,7 +189,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  data: PropTypes.shape({
+  site: PropTypes.shape({
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
         title: PropTypes.string.isRequired,

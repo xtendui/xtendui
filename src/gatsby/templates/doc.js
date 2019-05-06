@@ -15,12 +15,12 @@ const renderAst = new rehypeReact({
 class Template extends React.Component {
   render() {
     const {data} = this.props
-    const page = {};
-    page.title = data.post.frontmatter.title
-    page.description = data.post.frontmatter.description
+    const seo = {};
+    seo.title = data.post.frontmatter.title
+    seo.description = data.post.frontmatter.description
     return (
-      <Layout page={data}>
-        <SEO title={page.title + ' — ' + page.description}/>
+      <Layout seo={seo} page={data}>
+        <SEO title={seo.title + ' — ' + seo.description}/>
         <div>{renderAst(data.post.htmlAst)}</div>
       </Layout>
     )
@@ -44,7 +44,7 @@ export const query = graphql`
         }
       }
     }
-    adiacentPosts:allMarkdownRemark(filter: {frontmatter: {parent: {eq: $parent}}}) {
+    adiacentPosts:allMarkdownRemark(filter: {frontmatter: {parent: {eq: $parent}}}, sort: {fields: [frontmatter___date], order: ASC}) {
       posts: edges {
         post: node {
           frontmatter {

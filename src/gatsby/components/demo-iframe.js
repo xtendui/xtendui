@@ -12,12 +12,12 @@ class DemoIframe extends React.Component {
 
   render() {
     const {demoName, htmlSource, jsSource, cssSource} = this.props
-    const page = {};
-    page.title = demoName
-    page.description = "Demo"
+    const seo = {};
+    seo.title = demoName
+    seo.description = "Demo"
     return (
-      <Layout page={page} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}>
-        <SEO title={page.title + ' — ' + page.description}/>
+      <Layout seo={seo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}>
+        <SEO title={seo.title + ' — ' + seo.description}/>
         <div id="body-outer">
           <div id="body-inner" className="demo-source-from" dangerouslySetInnerHTML={{__html: htmlSource}} />
         </div>

@@ -5,12 +5,12 @@ import Layout from "components/layout"
 
 class Page extends React.Component {
   render() {
-    const page = {};
-    page.title = "Home"
-    page.description = "Description"
+    const seo = {};
+    seo.title = "Home"
+    seo.description = "Description"
     return (
-      <Layout page={page}>
-        <SEO title={page.title + ' — ' + page.description}/>
+      <Layout seo={seo}>
+        <SEO title={seo.title + ' — ' + seo.description}/>
       </Layout>
     )
   }

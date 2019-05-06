@@ -18,7 +18,7 @@ class Layout extends React.Component {
   }
 
   render() {
-    const {page, children} = this.props
+    const {seo, page, children} = this.props
     return (
       <StaticQuery
         query={graphql`
@@ -43,7 +43,7 @@ class Layout extends React.Component {
           <>
             <div className="site-wrapper">
 
-              <Header data={data} page={page}/>
+              <Header site={data} seo={seo} page={page}/>
 
               <div className="site-wrapper-inner">
 
@@ -52,7 +52,7 @@ class Layout extends React.Component {
                     <div className="container">
 
                       {page && page.adiacentPosts ?
-                        <div class="row">
+                        <div className="row">
                           <div className="col--12 col--9-md">
                             <article className="site-article">
                               {children}
@@ -71,7 +71,7 @@ class Layout extends React.Component {
                   </div>
                 </main>
 
-                <Footer data={data}/>
+                <Footer site={data}/>
 
               </div>
 
