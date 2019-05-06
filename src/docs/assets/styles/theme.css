@@ -1402,7 +1402,6 @@ div.btn {
 .xt-sticky:not(.xt-clone).active {
   position: fixed;
   z-index: 100;
-  width: 100%;
 }
 .xt-sticky--absolute.xt-clone:not(.active) {
   position: relative;
@@ -3265,9 +3264,15 @@ pre {
   -webkit-overflow-scrolling: touch;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  padding: 2rem !important;
   width: 100%;
   max-height: 30rem;
-  line-height: 0;
+  border-radius: 0.75rem;
+  border-width: 0;
+  border-style: solid;
+  border-color: #edf3f6;
+  background: #edf3f6 !important;
+  line-height: 0 !important;
 }
 pre:first-child {
   margin-top: 0 !important;
@@ -3276,16 +3281,10 @@ pre:last-child {
   margin-bottom: 0 !important;
 }
 pre code {
-  padding: 2rem !important;
   width: 100%;
-  border-radius: 0.75rem;
-  border-width: 0;
-  border-style: solid;
-  border-color: #edf3f6;
-  background: #edf3f6 !important;
-  font-size: 12px;
-  color: #343a40;
-  line-height: 1.6;
+  font-size: 12px !important;
+  color: #343a40 !important;
+  line-height: 1.6 !important;
 }
 .text--inverse {
   color: #fff;
@@ -6418,15 +6417,24 @@ transition-timing-function: @bez--out;
     transform: translateX(-1.5rem);
   }
 }
-.collapse--height.active,
-.collapse--width.active {
-  transition-property: all;
+.collapse--height.active {
+  transition-property: height;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36,0,0,1);
 }
-.collapse--height.out,
+.collapse--height.out {
+  transition-property: height;
+  transition-duration: 500ms;
+  transition-delay: 250ms;
+  transition-timing-function: cubic-bezier(.36,0,0,1);
+}
+.collapse--width.active {
+  transition-property: width;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(.36,0,0,1);
+}
 .collapse--width.out {
-  transition-property: all;
+  transition-property: heiwidthght;
   transition-duration: 500ms;
   transition-delay: 250ms;
   transition-timing-function: cubic-bezier(.36,0,0,1);
@@ -7020,12 +7028,12 @@ transition-timing-function: @bez--out;
   content: 'xt-collapse--height';
 }
 .site-menu.active {
-  transition-property: all;
+  transition-property: height;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.36,0,0,1);
 }
 .site-menu.out {
-  transition-property: all;
+  transition-property: height;
   transition-duration: 500ms;
   transition-delay: 250ms;
   transition-timing-function: cubic-bezier(.36,0,0,1);
