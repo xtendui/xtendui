@@ -95,7 +95,8 @@
     "react-helmet": "^5.2.0",
     "semantic-release": "^15.13.3",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-source-stream": "^2.0.0",
+    "webpack-hot-middleware": "git://github.com/minimit/webpack-hot-middleware.git#iframe-fix"
   },
   "release": {
     "plugins": [

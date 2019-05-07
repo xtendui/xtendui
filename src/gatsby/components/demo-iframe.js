@@ -19,7 +19,7 @@ class DemoIframe extends React.Component {
       <Layout seo={seo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}>
         <SEO title={seo.title + ' — ' + seo.description}/>
         <div id="body-outer">
-          <div id="body-inner" className="demo-source-from" dangerouslySetInnerHTML={{__html: htmlSource}} />
+          <div id="body-inner" className="demo-source-from" dangerouslySetInnerHTML={{__html: htmlSource}}/>
         </div>
       </Layout>
     )
