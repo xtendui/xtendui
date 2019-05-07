@@ -27,13 +27,11 @@
   "scripts": {
     "version": "gulp version",
     "build": "gulp build",
-    "build:docs": "gulp build && gatsby clean && gatsby build",
+    "build:docs": "gatsby clean && gatsby build",
     "dev": "gulp watch",
-    "dev:docs": "gulp watch & gatsby develop",
-    "serve": "npm run serve:docs",
-    "serve:docs": "gatsby clean && gatsby build && gatsby serve -p 8000",
-    "dep": "npm run dep:docs",
-    "dep:docs": "gh-pages -d docs",
+    "dev:docs": "gatsby clean && gatsby develop",
+    "serve": "gatsby clean && gatsby build && gatsby serve -p 8000",
+    "dep": "gh-pages -d docs",
     "release": "npx semantic-release --no-ci",
     "release:dry": "npx semantic-release --dry-run",
     "lint": "eslint src/scripts src/docs/assets/scripts"
@@ -107,7 +105,7 @@
       [
         "@semantic-release/exec",
         {
-          "prepareCmd": "npm run version && npm run build:docs",
+          "prepareCmd": "npm run version && npm run build && npm run build:docs",
           "successCmd": "git pull"
         }
       ],

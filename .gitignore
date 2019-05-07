@@ -68,7 +68,13 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-# custom
+# build
+dist/styles/*.css
+dist/styles/*.css.map
+dist/scripts/*.min.js
+dist/scripts/*.min.js.map
+
+# to remove
 .DS_Store
 .idea
 /docs
