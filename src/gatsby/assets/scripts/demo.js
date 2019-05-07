@@ -1,8 +1,5 @@
 import ClipboardJS from "clipboard";
 import Xt from "../../../../src/scripts/xtend";
-if (typeof window !== 'undefined') {
-  require("@webcomponents/shadydom");
-}
 
 import Prism from "prismjs";
 require("prismjs/components/prism-jsx.min");
@@ -136,6 +133,7 @@ const populateDemo = function (container, i) {
         item.classList.remove('loaded');
       });
     } else if (item.getAttribute('data-shadow')) {
+      /* NEEDS
       // demo shadow
       let shadowId = 'shadow-root-' + i + k;
       let shadowSrc = item.getAttribute('data-shadow');
@@ -161,6 +159,7 @@ const populateDemo = function (container, i) {
           item.classList.add('inited');
         }
       });
+      */
     } else {
       populateInline(item);
       // .populated fix scroll
@@ -238,8 +237,8 @@ const populateInline = function (item) {
 
 // populateShadow
 
+/*
 const loadShadow = function (shadowRoot, shadowSrc, source, shadowId, item) {
-  /*
   let request = new XMLHttpRequest();
   let populateShadow = function () {
     // shadowRoot
@@ -297,7 +296,6 @@ const loadShadow = function (shadowRoot, shadowSrc, source, shadowId, item) {
     console.error('Error loading demo', request);
   };
   request.send();
-  */
 }
 
 if (typeof window !== 'undefined') {
@@ -336,6 +334,7 @@ const populateShadow = function (item, shadowRoot) {
     "min": 1
   });
 }
+*/
 
 // populateIframe
 
