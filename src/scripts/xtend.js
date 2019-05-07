@@ -3,21 +3,21 @@
 //////////////////////
 
 import './polyfill';
-import Core from './core';
-import Toggle from './interaction/toggle';
-import Drop from './interaction/drop';
-import Overlay from './interaction/overlay';
-import Smooth from './others/smooth';
-import Slider from './presentation/slider';
-import Scroll from './presentation/scroll';
-import Sticky from './presentation/sticky';
-import Ajax from './others/ajax';
+import {Core} from './core';
+import {Toggle} from './interaction/toggle';
+import {Drop} from './interaction/drop';
+import {Overlay} from './interaction/overlay';
+import {Smooth} from './others/smooth';
+import {Slider} from './presentation/slider';
+import {Scroll} from './presentation/scroll';
+import {Sticky} from './presentation/sticky';
+import {Ajax} from './others/ajax';
 
 //////////////////////
 // constructor
 //////////////////////
 
-const Xt = {
+export const Xt = {
 
   /*! Xtend (https://getxtend.com/)
   @copyright (c) 2017 - 2019 Riccardo Caroli
@@ -1182,5 +1182,3 @@ if (typeof window !== 'undefined') {
 
 typeof define === 'function' && define.amd ? define(Xt) :
   global.Xt = Xt;
-
-export default Xt;

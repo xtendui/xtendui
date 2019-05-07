@@ -2,14 +2,14 @@
 // import
 //////////////////////
 
-import Xt from '../xtend';
-import Core from '../core';
+import {Xt} from '../xtend';
+import {Core} from '../core';
 
 //////////////////////
 // smooth
 //////////////////////
 
-class Smooth extends Core {
+export class Smooth extends Core {
 
   /**
    * constructor
@@ -41,9 +41,3 @@ Smooth.optionsDefault = {
     "frictionLimit": 1.5
   }
 };
-
-//////////////////////
-// export
-//////////////////////
-
-export default Smooth;

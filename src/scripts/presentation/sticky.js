@@ -2,14 +2,14 @@
 // import
 //////////////////////
 
-import Xt from '../xtend';
-import Core from '../core';
+import {Xt} from '../xtend';
+import {Core} from '../core';
 
 //////////////////////
 // Sticky
 //////////////////////
 
-class Sticky extends Core {
+export class Sticky extends Core {
 
   /**
    * constructor
@@ -446,8 +446,3 @@ Sticky.optionsDefault = {
   "aria": false
 };
 
-//////////////////////
-// export
-//////////////////////
-
-export default Sticky;

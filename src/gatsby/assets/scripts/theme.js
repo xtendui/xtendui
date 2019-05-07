@@ -1,4 +1,4 @@
-import Xt from "../../../../src/scripts/xtend";
+import {Xt} from "../../../../src/scripts/xtend";
 
 //////////////////////
 // anchors and sidebar

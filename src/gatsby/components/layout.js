@@ -6,7 +6,7 @@ import Header from "components/header"
 import Footer from "components/footer"
 import Sidebar from "components/sidebar"
 
-import Xt from "xtend-library";
+import {Xt} from "xtend-library";
 import {populateBlock} from "assets/scripts/demo.js"
 import {makeDocument} from "assets/scripts/theme.js"
 

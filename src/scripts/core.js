@@ -2,13 +2,13 @@
 // import
 //////////////////////
 
-import Xt from './xtend';
+import {Xt} from './xtend';
 
 //////////////////////
 // Core
 //////////////////////
 
-class Core {
+export class Core {
 
   /**
    * constructor
@@ -1946,7 +1946,7 @@ class Core {
         if (appendOrigin) {
           appendOrigin.before(el);
           appendOrigin.remove();
-          requestAnimationFrame( function() {
+          requestAnimationFrame(function () {
             el.classList.remove('xt-ignore'); // @FIX ignore Xt.observer and init
           });
         } else {
@@ -2774,8 +2774,3 @@ class Core {
 
 Core.componentName = 'xt-core';
 
-//////////////////////
-// export
-//////////////////////
-
-export default Core;

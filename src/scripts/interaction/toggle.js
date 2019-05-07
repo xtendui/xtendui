@@ -2,14 +2,14 @@
 // import
 //////////////////////
 
-import Xt from '../xtend';
-import Core from '../core';
+import {Xt} from '../xtend';
+import {Core} from '../core';
 
 //////////////////////
 // Toggle
 //////////////////////
 
-class Toggle extends Core {
+export class Toggle extends Core {
 
   /**
    * constructor
@@ -68,9 +68,3 @@ Toggle.optionsDefault = {
   "max": 1,
   "instant": {"elements": true}
 };
-
-//////////////////////
-// export
-//////////////////////
-
-export default Toggle;

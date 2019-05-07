@@ -2,14 +2,14 @@
 // import
 //////////////////////
 
-import Xt from '../xtend';
-import Core from '../core';
+import {Xt} from '../xtend';
+import {Core} from '../core';
 
 //////////////////////
 // Drop
 //////////////////////
 
-class Ajax extends Core {
+export class Ajax extends Core {
 
   /**
    * constructor
@@ -204,8 +204,10 @@ class Ajax extends Core {
     // duration
     self.detail.requestDate = new Date();
     clearTimeout(Xt.dataStorage.get(self.object, self.componentNamespace + 'AjaxDurationTimeout'));
-    if (self.detail.request) { self.detail.request.abort(); } // fix fast change page
-    requestAnimationFrame( function() {
+    if (self.detail.request) {
+      self.detail.request.abort();
+    } // fix fast change page
+    requestAnimationFrame(function () {
       self.detail.requestDuration = options.duration || Xt.animTime(self.queryElement);
       // call
       let request = new XMLHttpRequest();
@@ -237,7 +239,7 @@ class Ajax extends Core {
     // duration
     self.detail.requestDuration -= new Date() - date;
     if (self.detail.requestDuration > 0) {
-      Xt.dataStorage.set(self.object, self.componentNamespace + 'AjaxDurationTimeout', setTimeout( function() {
+      Xt.dataStorage.set(self.object, self.componentNamespace + 'AjaxDurationTimeout', setTimeout(function () {
         // request
         if (request.status >= 200 && request.status <= 300) {
           self.ajaxSuccess(element, url, request, date);
@@ -287,7 +289,7 @@ class Ajax extends Core {
     // reinit
     if (!self.initial
       && date === self.detail.requestDate) { // fix fast change page
-      requestAnimationFrame( function() {
+      requestAnimationFrame(function () {
         self.initial = true;
         self.init();
       });
@@ -341,9 +343,3 @@ Ajax.optionsDefault = {
   "instant": true,
   "aria": false
 };
-
-//////////////////////
-// export
-//////////////////////
-
-export default Ajax;

@@ -2,14 +2,14 @@
 // import
 //////////////////////
 
-import Xt from '../xtend';
-import Core from '../core';
+import {Xt} from '../xtend';
+import {Core} from '../core';
 
 //////////////////////
 // Slider
 //////////////////////
 
-class Slider extends Core {
+export class Slider extends Core {
 
   /**
    * constructor
@@ -850,9 +850,3 @@ Slider.optionsDefault = {
     "timeLimit": 25
   }
 };
-
-//////////////////////
-// export
-//////////////////////
-
-export default Slider;

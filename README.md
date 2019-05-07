@@ -71,7 +71,7 @@ With cdn include [cdn](https://cdnjs.com/libraries/gsap) and [bezier-easing](htt
 With npm import [xtend-library](https://www.npmjs.com/package/xtend-library):
 
 ```
-import Xt from 'xtend-library';
+import {Xt} from 'xtend-library';
 ```
 
 With **script** include **xtend.js**:

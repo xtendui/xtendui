@@ -2,14 +2,14 @@
 // import
 //////////////////////
 
-import Xt from '../xtend';
-import Core from '../core';
+import {Xt} from '../xtend';
+import {Core} from '../core';
 
 //////////////////////
 // Scroll
 //////////////////////
 
-class Scroll extends Core {
+export class Scroll extends Core {
 
   /**
    * constructor
@@ -181,7 +181,7 @@ class Scroll extends Core {
         // position
         self.detail.distance = Xt.windowPercent(options.distance);
         self.detail.trigger = Xt.windowPercent(options.trigger);
-        self.detail.start  = self.detail.startReal = elTop - windowHeight + Xt.windowPercent(options.start) + self.detail.distance;
+        self.detail.start = self.detail.startReal = elTop - windowHeight + Xt.windowPercent(options.start) + self.detail.distance;
         self.detail.start = self.detail.start < self.detail.trigger ? self.detail.trigger : self.detail.start; // limit fixes activation on page top
         self.detail.end = self.detail.endReal = options.end ? self.detail.start + Xt.windowPercent(options.end) - self.detail.distance : elTop + elHeight + self.detail.trigger - self.detail.distance;
         self.detail.end = self.detail.end > self.detail.trigger + scrollHeight - window.innerHeight ? self.detail.trigger + scrollHeight - window.innerHeight : self.detail.end; // limit fixes deactivation on page bottom
@@ -294,9 +294,3 @@ Scroll.optionsDefault = {
   "fallback": 100,
   "aria": false
 };
-
-//////////////////////
-// export
-//////////////////////
-
-export default Scroll;

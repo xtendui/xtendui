@@ -1,5 +1,5 @@
 import ClipboardJS from "clipboard";
-import Xt from "../../../../src/scripts/xtend";
+import {Xt} from "../../../../src/scripts/xtend";
 
 import Prism from "prismjs";
 require("prismjs/components/prism-jsx.min");

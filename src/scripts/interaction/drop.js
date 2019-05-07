@@ -2,14 +2,14 @@
 // import
 //////////////////////
 
-import Xt from '../xtend';
-import Core from '../core';
+import {Xt} from '../xtend';
+import {Core} from '../core';
 
 //////////////////////
 // Drop
 //////////////////////
 
-class Drop extends Core {
+export class Drop extends Core {
 
   /**
    * constructor
@@ -63,9 +63,3 @@ Drop.optionsDefault = {
   "closeOutside": "body",
   "ariaControls": ":scope > a, :scope > button"
 };
-
-//////////////////////
-// export
-//////////////////////
-
-export default Drop;

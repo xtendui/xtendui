@@ -2,14 +2,14 @@
 // import
 //////////////////////
 
-import Xt from '../xtend';
-import Core from '../core';
+import {Xt} from '../xtend';
+import {Core} from '../core';
 
 //////////////////////
 // Overlay
 //////////////////////
 
-class Overlay extends Core {
+export class Overlay extends Core {
 
   /**
    * constructor
@@ -74,9 +74,3 @@ Overlay.optionsDefault = {
   "closeInside": ".overlay_dismiss, :scope > .backdrop",
   "scrollbar": true
 };
-
-//////////////////////
-// export
-//////////////////////
-
-export default Overlay;
