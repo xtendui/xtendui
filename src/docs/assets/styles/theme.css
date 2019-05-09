@@ -1591,6 +1591,9 @@ transition-delay: 0ms; // @start - @child * @decrement
   user-select: none;
   cursor: grab;
 }
+.grab img {
+  pointer-events: none;
+}
 .container {
   padding-right: 15px;
   padding-left: 15px;
