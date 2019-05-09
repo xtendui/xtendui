@@ -208,8 +208,8 @@ class Scroll extends Core {
                 Xt.dataStorage.remove(el, self.componentNamespace + 'Initial');
               }
               // activate
-              Xt.dataStorage.set(el, self.componentNamespace + 'OnCount', currentOff);
-              Xt.dataStorage.set(el, self.componentNamespace + 'OnTot', currentsOff.length);
+              Xt.dataStorage.set(el, self.componentNamespace + 'OnCount', currentOn);
+              Xt.dataStorage.set(el, self.componentNamespace + 'OnTot', currentsOn.length);
               currentOn++;
               self.eventOn(el);
             }));
