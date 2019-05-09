@@ -44,6 +44,7 @@ export class Sticky extends Core {
         container.append(el);
         el.classList.remove('xt-ignore'); // @FIX ignore Xt.observer and init
       }
+      el.style[options.position] = '0px';
       // sticky clone
       let target = container.querySelector('.xt-clone');
       if (!target) {
@@ -146,7 +147,6 @@ export class Sticky extends Core {
    */
   eventFocusInHandler(e) {
     let self = this;
-    let options = self.options;
     // handler
     for (let tr of self.targets) {
       let el = self.getElementsFromTarget(tr)[0];
@@ -154,9 +154,9 @@ export class Sticky extends Core {
       if (el.classList.contains('sticky--hide')) {
         let active = el.contains(e.target);
         if (active) {
-          el.style[options.position] = '0px';
+          el.style.transform = 'translateY(0px)';
         } else {
-          el.style[options.position] = Xt.dataStorage.get(el, self.componentNamespace + 'AddOld') + 'px';
+          el.style.transform = 'translateY(' + Xt.dataStorage.get(el, self.componentNamespace + 'AddOld') + 'px)';
         }
       }
     }
@@ -331,7 +331,7 @@ export class Sticky extends Core {
       */
       // set add
       if (add !== Xt.dataStorage.get(el, self.componentNamespace + 'AddOld')) {
-        el.style[options.position] = add + 'px';
+        el.style.transform = 'translateY(' + add + 'px)';
       }
       // fix position fixed width 100% of parent
       let width = self.normalizeWidth(tr.clientWidth);

@@ -2,7 +2,7 @@
 // import
 //////////////////////
 
-import '@webcomponents/shadydom';
+//import '@webcomponents/shadydom';
 import ClipboardJS from 'clipboard';
 
 //////////////////////

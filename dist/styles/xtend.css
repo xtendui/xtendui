@@ -5890,7 +5890,7 @@ img.slider [data-xt-nav].btn [class*=' icon-'] {
   height: 0.75em;
 }
 .sticky--moving {
-  transition-property: top;
+  transition-property: transform;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(.68,.13,.25,1);
 }
