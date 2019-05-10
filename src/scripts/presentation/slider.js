@@ -841,7 +841,7 @@ Slider.optionsDefault = {
   "pagination": ".slider_pagination",
   "drag": {
     "dragger": ".slides_inner",
-    "threshold": 100,
+    "threshold": 50,
     "linkThreshold": 50,
     "factor": 1,
     "friction": "return Math.pow(velocity, 0.95)",
