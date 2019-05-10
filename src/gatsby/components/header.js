@@ -26,7 +26,7 @@ class Header extends React.Component {
                   <button type="button" className="btn btn--primary btn--nodesign btn--menu"
                           data-xt-overlay='{"targets": "#site-menu"}'>
                       <span>
-                        {seo.title}
+                        {seo.parent || seo.title}
                         <span className="icon--menu-custom">
                           <span></span>
                           <span></span>
@@ -60,7 +60,7 @@ class Header extends React.Component {
                       <button type="button" className="btn btn--primary btn--nodesign btn--menu"
                               data-xt-overlay='{"targets": "#site-menu"}'>
                         <span>
-                          {seo.title}
+                          {seo.parent || seo.title}
                           <span className="icon icon--menu-custom right">
                             <span></span>
                             <span></span>
@@ -164,7 +164,7 @@ class Header extends React.Component {
                         <button type="button" className="btn btn--primary btn--nodesign btn--menu"
                                 data-xt-overlay='{"targets": "#site-menu"}'>
                           <span>
-                            {seo.title}
+                            {seo.parent || seo.title}
                             <span className="icon--menu-custom">
                               <span></span>
                               <span></span>

@@ -12,6 +12,7 @@ class Page extends React.Component {
 
   render() {
     let htmlSource = `
+      <!-- test comment -->
       <div class="drop_outer drop--disable" data-xt-drop>
         <button type="button" class="btn btn--primary">
           <span>Toggle</span>

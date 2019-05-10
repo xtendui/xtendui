@@ -11,23 +11,21 @@ parent: "Form"
 
 <p>Use this markup to create a checkbox or radio <strong>unstyled</strong>.</p>
 
-<pre>
-  <code class="language-markup">
-    <div class="form-item">
-      <input type="checkbox" id="checkbox-unstyled" class="unstyled">
-      <label class="form-label" for="checkbox-unstyled">
-        <!-- content -->
-      </label>
-    </div>
+<script type="text/plain" class="language-markup">
+  <div class="form-item">
+    <input type="checkbox" id="checkbox-unstyled" class="unstyled">
+    <label class="form-label" for="checkbox-unstyled">
+      <!-- content -->
+    </label>
+  </div>
 
-    <div class="form-item">
-      <input type="radio" id="radio-unstyled" name="radio-unstyled" class="unstyled">
-      <label class="form-label" for="radio-unstyled">
-        <!-- content -->
-      </label>
-    </div>
-  </code>
-</pre>
+  <div class="form-item">
+    <input type="radio" id="radio-unstyled" name="radio-unstyled" class="unstyled">
+    <label class="form-label" for="radio-unstyled">
+      <!-- content -->
+    </label>
+  </div>
+</script>
 
 <demo>
   <div class="demo-inner">
@@ -63,23 +61,21 @@ parent: "Form"
 
 <p>Use this markup to create a checkbox or radio <strong>styled</strong>.</p>
 
-<pre>
-  <code class="language-markup">
-    <div class="form-item">
-      <input type="checkbox" id="checkbox-styled">
-      <label class="form-label" for="checkbox-styled">
-        <!-- content -->
-      </label>
-    </div>
+<script type="text/plain" class="language-markup">
+  <div class="form-item">
+    <input type="checkbox" id="checkbox-styled">
+    <label class="form-label" for="checkbox-styled">
+      <!-- content -->
+    </label>
+  </div>
 
-    <div class="form-item">
-      <input type="radio" id="radio-styled" name="radio-styled">
-      <label class="form-label" for="radio-styled">
-        <!-- content -->
-      </label>
-    </div>
-  </code>
-</pre>
+  <div class="form-item">
+    <input type="radio" id="radio-styled" name="radio-styled">
+    <label class="form-label" for="radio-styled">
+      <!-- content -->
+    </label>
+  </div>
+</script>
 
 <demo>
   <div class="demo-inner">
@@ -115,21 +111,19 @@ parent: "Form"
 
 <p>Use this markup to create a <strong>fake</strong> checkbox or radio <strong>styled</strong>.</p>
 
-<pre>
-  <code class="language-markup">
-    <div class="form-item">
-      <div class="checkbox-styled">
-        <!-- content -->
-      </div>
+<script type="text/plain" class="language-markup">
+  <div class="form-item">
+    <div class="checkbox-styled">
+      <!-- content -->
     </div>
+  </div>
 
-    <div class="form-item">
-      <div class="radio-styled">
-        <!-- content -->
-      </div>
+  <div class="form-item">
+    <div class="radio-styled">
+      <!-- content -->
     </div>
-  </code>
-</pre>
+  </div>
+</script>
 
 <demo>
   <div class="demo-inner">
