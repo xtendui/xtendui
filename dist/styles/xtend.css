@@ -1294,6 +1294,7 @@ div.btn {
   visibility: hidden;
   top: 0;
   width: 100%;
+  opacity: 0;
 }
 .xt-sticky:not(.xt-clone) {
   position: relative;
@@ -1764,14 +1765,17 @@ a.links--none,
 }
 .toggle--visible {
   visibility: hidden !important;
+  opacity: 0 !important;
 }
 .toggle--visible.active,
 .toggle--visible.out {
   visibility: visible !important;
+  opacity: 1 !important;
 }
 .toggle--hidden.active,
 .toggle--hidden.out {
   visibility: hidden !important;
+  opacity: 0 !important;
 }
 .transition-none {
   transition: initial !important;

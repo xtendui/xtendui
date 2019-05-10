@@ -137,14 +137,17 @@
 
 .toggle--visible() {
   visibility: hidden;
+  opacity: 0;
   &.active, &.out {
     visibility: visible;
+    opacity: 1;
   }
 }
 
 .toggle--hidden() {
   &.active, &.out {
     visibility: hidden;
+    opacity: 0;
   }
 }
 
