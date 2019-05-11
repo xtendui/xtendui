@@ -1,8 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import {Xt} from "xtend-library";
+
 class Layout extends React.Component {
   componentDidMount() {
+    Xt.ready(Xt.load);
     const {htmlSource, jsSource, cssSource} = this.props
     if (window.self !== window.top) {
       window.addEventListener('load', function () {

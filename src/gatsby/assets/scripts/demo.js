@@ -392,13 +392,13 @@ if (typeof window !== 'undefined') {
 const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) {
   // inject code
   if (htmlSource) {
-    iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="language-markup">' + htmlSource + '</div>'));
+    iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="html">' + htmlSource + '</div>'));
   }
   if (jsSource) {
-    iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="language-jsx">' + jsSource + '</div>'));
+    iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="js">' + jsSource + '</div>'));
   }
   if (cssSource) {
-    iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="language-less">' + cssSource + '</div>'));
+    iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="less">' + cssSource + '</div>'));
   }
   // populate
   for (let [z, source] of item.querySelectorAll('.demo-source').entries()) {
@@ -416,6 +416,7 @@ const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) 
 
 const populateSources = function (item, element, z) {
   let lang = element.getAttribute('data-lang');
+  console.log(lang);
   // populate tabs
   item.querySelector('.demo-code-body').append(Xt.createElement('<div class="demo-code-body-item"><pre class="noedit"><code></code></pre></div>'));
   item.querySelector('.demo-code-tabs-left').append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny"><span>' + lang + '</span></button>'));

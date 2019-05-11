@@ -604,11 +604,11 @@
     padding: 7px;
     width: 30px;
     height: 30px;
+    border-radius: 50%;
     font-size: 17px;
     color: @primary;
     line-height: 1;
     &@{btn--design} {
-      border-radius: 50%;
       border-color: @white !important;
       background: @white !important;
     }
@@ -760,10 +760,8 @@ pre {
     .alert--small();
     .margin(all, none);
     .margin-remove(top, 2px); // remove border space
-    &@{alert--design} {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
   // .demo-source
   .demo-source {

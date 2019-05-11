@@ -5,4 +5,5 @@ date: "2019-05-01"
 title: "Group"
 description: "Description"
 categories: ["100-Content"]
+parent: "Group"
 ---

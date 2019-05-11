@@ -9,6 +9,8 @@ parent: "Form"
 
 <h2>Unstyled</h2>
 
+<h3>Usage</h3>
+
 <p>Use this markup to create a checkbox or radio <strong>unstyled</strong>.</p>
 
 <script type="text/plain" class="language-markup">
@@ -26,6 +28,8 @@ parent: "Form"
     </label>
   </div>
 </script>
+
+<h3>Modes</h3>
 
 <demo>
   <div class="demo-inner">
@@ -59,6 +63,8 @@ parent: "Form"
 
 <h2>Styled</h2>
 
+<h3>Usage</h3>
+
 <p>Use this markup to create a checkbox or radio <strong>styled</strong>.</p>
 
 <script type="text/plain" class="language-markup">
@@ -76,6 +82,8 @@ parent: "Form"
     </label>
   </div>
 </script>
+
+<h3>Modes</h3>
 
 <demo>
   <div class="demo-inner">
@@ -109,6 +117,8 @@ parent: "Form"
 
 <h2>Fake</h2>
 
+<h3>Usage</h3>
+
 <p>Use this markup to create a <strong>fake</strong> checkbox or radio <strong>styled</strong>.</p>
 
 <script type="text/plain" class="language-markup">
@@ -124,6 +134,8 @@ parent: "Form"
     </div>
   </div>
 </script>
+
+<h3>Modes</h3>
 
 <demo>
   <div class="demo-inner">

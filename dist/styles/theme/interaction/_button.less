@@ -10,6 +10,7 @@
 
 .btn {
   // styles
+  border-radius: 4px;
   .font-sans--semibold();
   line-height: 1.2;
   letter-spacing: .075em;
@@ -19,9 +20,7 @@
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
-  }
-  &, &@{btn--design} {
-    border-radius: 4px;
+    border-radius: inherit;
   }
   // option
   .btn--center(); // alignment
@@ -151,8 +150,8 @@
   font-weight: inherit;
   letter-spacing: inherit;
   text-transform: inherit;
+  border-radius: 0;
   &@{btn--design} {
-    border-radius: 0;
     border-width: 0;
     background: transparent !important;
   }
@@ -210,9 +209,6 @@
 
 .btn--squared {
   border-radius: 0;
-  &@{btn--design} {
-    border-radius: 0;
-  }
 }
 
 .btn--noborder {

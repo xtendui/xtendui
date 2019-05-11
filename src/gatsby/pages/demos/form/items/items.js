@@ -3,7 +3,7 @@ import React from "react"
 import DemoIframe from "components/demo-iframe"
 
 const demo = {
-  name: 'tests',
+  name: 'items',
   full: false
 }
 
