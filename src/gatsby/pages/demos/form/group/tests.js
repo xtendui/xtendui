@@ -2,7 +2,10 @@ import React from "react"
 
 import DemoIframe from "components/demo-iframe"
 
-const demoName = 'tests'
+const demo = {
+  name: 'tests',
+  full: false
+}
 
 class Page extends React.Component {
   componentDidMount() {
@@ -91,7 +94,7 @@ class Page extends React.Component {
         </div>
 
         <legend>Test inline input</legend>
-        <div class="form-item--inline-sm">
+        <div class="form-item--inline">
           <div class="form-item">
             <label class="form-label">
               Lorem
@@ -105,7 +108,7 @@ class Page extends React.Component {
             <input type="text" class="form-input">
           </div>
         </div>
-        <div class="form-item--inline-sm">
+        <div class="form-item--inline">
           <div class="form-item">
             <label class="form-label">
               Lorem
@@ -121,9 +124,9 @@ class Page extends React.Component {
         </div>
 
         <legend>Test inline input and label</legend>
-        <div class="form-item--inline-sm">
+        <div class="form-item--inline">
           <div class="form-item">
-            <div class="form-item--inline-sm">
+            <div class="form-item--inline">
               <label class="form-label">
                 Lorem
               </label>
@@ -131,7 +134,7 @@ class Page extends React.Component {
             </div>
           </div>
           <div class="form-item">
-            <div class="form-item--inline-sm">
+            <div class="form-item--inline">
               <label class="form-label">
                 Lorem Ipsum
               </label>
@@ -139,9 +142,9 @@ class Page extends React.Component {
             </div>
           </div>
         </div>
-        <div class="form-item--inline-sm">
+        <div class="form-item--inline">
           <div class="form-item">
-            <div class="form-item--inline-sm">
+            <div class="form-item--inline">
               <label class="form-label">
                 Lorem
               </label>
@@ -149,7 +152,7 @@ class Page extends React.Component {
             </div>
           </div>
           <div class="form-item">
-            <div class="form-item--inline-sm">
+            <div class="form-item--inline">
               <label class="form-label">
                 Lorem Ipsum
               </label>
@@ -201,7 +204,7 @@ class Page extends React.Component {
           </div>
         </div>
 
-        <div class="form-item--inline-sm">
+        <div class="form-item--inline">
           <div class="form-item">
             <label class="form-label">
               Lorem
@@ -216,9 +219,9 @@ class Page extends React.Component {
           </div>
         </div>
 
-        <div class="form-item--inline-sm">
+        <div class="form-item--inline">
           <div class="form-item">
-            <div class="form-item--inline-sm">
+            <div class="form-item--inline">
               <label class="form-label">
                 Lorem
               </label>
@@ -226,7 +229,7 @@ class Page extends React.Component {
             </div>
           </div>
           <div class="form-item">
-            <div class="form-item--inline-sm">
+            <div class="form-item--inline">
               <label class="form-label">
                 Lorem Ipsum
               </label>
@@ -253,7 +256,7 @@ class Page extends React.Component {
     let jsSource = null
     let cssSource = null
     return (
-      <DemoIframe demoName={demoName} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}/>
+      <DemoIframe demo={demo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}/>
     )
   }
 }

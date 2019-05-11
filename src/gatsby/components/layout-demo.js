@@ -2,13 +2,21 @@ import React from "react"
 import PropTypes from "prop-types"
 
 class Layout extends React.Component {
-  render() {
-    const {htmlSource, jsSource, cssSource, children} = this.props
-    if (typeof window !== 'undefined') {
-      if (window.self !== window.top) {
+  componentDidMount() {
+    const {htmlSource, jsSource, cssSource} = this.props
+    if (window.self !== window.top) {
+      window.addEventListener('load', function () {
         window.parent.initIframe(window.name, htmlSource, jsSource, cssSource)
-      }
+        window.parent.resizeIframe(window.name)
+        window.addEventListener('resize', function () {
+          window.parent.resizeIframe(window.name)
+        })
+      })
     }
+  }
+
+  render() {
+    const {children} = this.props
     return (
       <>
         {children}

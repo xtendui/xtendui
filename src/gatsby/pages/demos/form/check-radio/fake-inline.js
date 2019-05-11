@@ -2,7 +2,10 @@ import React from "react"
 
 import DemoIframe from "components/demo-iframe"
 
-const demoName = 'inline'
+const demo = {
+  name: 'inline',
+  full: false
+}
 
 class Page extends React.Component {
   componentDidMount() {
@@ -35,7 +38,7 @@ class Page extends React.Component {
     let jsSource = null
     let cssSource = null
     return (
-      <DemoIframe demoName={demoName} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}/>
+      <DemoIframe demo={demo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}/>
     )
   }
 }

@@ -2,4 +2,4 @@ import {Xt} from "xtend-library";
 
 // test comment
 
-console.log('aaa', Xt, document, document.querySelectorAll('.drop--disable'));
+console.log(document.querySelector('.drop_outer'), Xt, document, document.querySelectorAll('.drop--disable'));

@@ -6,21 +6,24 @@ import Layout from "components/layout-demo"
 
 class DemoReact extends React.Component {
   componentDidMount() {
-    const {demoName} = this.props
-    document.querySelector('html').classList.add('demo-' + demoName)
+    const {demo} = this.props
+    document.querySelector('html').classList.add('demo-' + demo.name)
+    if (demo.full) {
+      document.querySelector('html').classList.add('iframe-full')
+    }
   }
 
   render() {
-    const {demoName, htmlSource, jsSource, cssSource, Component} = this.props
+    const {demo, htmlSource, jsSource, cssSource, Component} = this.props
     const page = {};
-    page.title = demoName
+    page.title = demo.name
     page.description = "Demo"
     return (
       <Layout page={page} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}>
         <SEO title={page.title + ' — ' + page.description}/>
         <div id="body-outer">
           <div id="body-inner" className="demo-source-from">
-            <Component demoName={demoName}></Component>
+            <Component></Component>
           </div>
         </div>
       </Layout>
@@ -31,7 +34,10 @@ class DemoReact extends React.Component {
 export default DemoReact
 
 DemoReact.propTypes = {
-  demoName: PropTypes.string.isRequired,
+  demo: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    full: PropTypes.bool,
+  }).isRequired,
   htmlSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   jsSource: PropTypes.string.isRequired,
   cssSource: PropTypes.string.isRequired,

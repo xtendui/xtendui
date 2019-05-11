@@ -116,7 +116,7 @@ const populateDemo = function (container, i) {
       let id = 'iframe' + i + k;
       if (src) {
         item.append(Xt.createElement('<div class="demo-item-wrapper"><iframe data-src="' + src + '" frameborder="0" name="' + id + '"></iframe></div>'));
-        item.append(Xt.createElement('\n' +
+        item.querySelector('.demo-item-wrapper').append(Xt.createElement('\n' +
           '    <div class="loader loader--spinner">\n' +
           '      <div class="spinner">\n' +
           '        <svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
@@ -358,26 +358,36 @@ if (typeof window !== 'undefined') {
     item.classList.add('loaded');
     if (!item.classList.contains('populated')) {
       populateIframe(item, iframe, htmlSource, jsSource, cssSource);
-      //window.resizeIframe(name);
+      window.resizeIframe(name);
       item.classList.add('populated');
     }
   };
-}
-
-const resizeIframe = function (name) {
-  let src = 'iframe[name="' + name + '"]';
-  let iframe = document.querySelector(src);
-  if (iframe) {
-    if (!iframe.contentWindow.document.body.classList.contains('full')) {
-      let target = iframe.contentWindow.document.body.querySelector('#body-outer');
-      let h = target.offsetHeight;
-      if (h !== iframe.getAttribute('iframeHeight')) {
-        iframe.style.height = h + 'px';
-        iframe.setAttribute('iframeHeight', h);
+  window.resizeIframe = function (name) {
+    let src = 'iframe[name="' + name + '"]';
+    let iframe = document.querySelector(src);
+    let container = Xt.parents(iframe, '.demo')[0];
+    let wrappers = container.querySelectorAll('.demo-item-wrapper');
+    if (iframe) {
+      let iframeFull = iframe.contentWindow.document.documentElement.classList.contains('iframe-full');
+      if (iframeFull) {
+        iframe.classList.add('iframe-full');
+        for (let wrapper of wrappers) {
+          wrapper.style.height = '';
+        }
+      } else {
+        let target = iframe.contentWindow.document.scrollingElement;
+        let h = target.scrollHeight;
+        if (h !== parseFloat(iframe.dataset.iframeHeight)) {
+          iframe.style.height = h + 'px';
+          iframe.dataset.iframeHeight = h.toString();
+        }
+        for (let wrapper of wrappers) {
+          wrapper.style.height = h + 'px';
+        }
       }
     }
-  }
-};
+  };
+}
 
 const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) {
   // inject code

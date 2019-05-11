@@ -6,14 +6,17 @@ import Layout from "components/layout-demo"
 
 class DemoIframe extends React.Component {
   componentDidMount() {
-    const {demoName} = this.props
-    document.querySelector('html').classList.add('demo-' + demoName)
+    const {demo} = this.props
+    document.querySelector('html').classList.add('demo-' + demo.name)
+    if (demo.full) {
+      document.querySelector('html').classList.add('iframe-full')
+    }
   }
 
   render() {
-    const {demoName, htmlSource, jsSource, cssSource} = this.props
+    const {demo, htmlSource, jsSource, cssSource} = this.props
     const seo = {};
-    seo.title = demoName
+    seo.title = demo.name
     seo.description = "Demo"
     return (
       <Layout seo={seo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}>
@@ -29,7 +32,10 @@ class DemoIframe extends React.Component {
 export default DemoIframe
 
 DemoIframe.propTypes = {
-  demoName: PropTypes.string.isRequired,
+  demo: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    full: PropTypes.bool,
+  }).isRequired,
   htmlSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   jsSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   cssSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),

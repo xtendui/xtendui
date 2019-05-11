@@ -623,13 +623,19 @@
 // demos
 //////////////////////
 
+@demo-height: 35rem;
+
+pre {
+  max-height: @demo-height;
+}
+
 // .demo
 
 .demo {
   .margin(y, layout) !important;
   .margin(top, medium);
   .margin(bottom, big);
-  border-radius: .75rem;;
+  border-radius: .75rem;
   border-width: 0;
   border-style: solid;
   border-color: @gray--250;
@@ -660,27 +666,31 @@
     &[data-iframe] {
       &:not(.loaded) {
         .demo-item-wrapper {
-          height: 30rem;
+          position: relative;
+          height: @demo-height;
         }
         iframe {
           display: none;
         }
       }
       &.loaded {
-        .demo-item-wrapper + .loader {
+        .demo-item-wrapper > .loader {
           display: none;
         }
       }
       iframe {
         display: block;
         width: 100%;
-        height: 30rem;
+        height: 0;
+        &.iframe-full {
+          height: @demo-height;
+        }
       }
     }
     &[data-shadow] {
       &:not(.loaded) {
         .demo-item-wrapper {
-          height: 30rem;
+          height: @demo-height;
         }
         .demo-shadow {
           display: none;

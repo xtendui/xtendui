@@ -4,7 +4,7 @@ import {Xt} from "xtend-library";
 
 class Component extends React.Component {
   componentDidMount() {
-    console.log('bbb', Xt, document, document.querySelectorAll('.drop--disable'))
+    console.log(document.querySelector('.drop_outer'), Xt, document, document.querySelectorAll('.drop--disable'))
   }
 
   render() {

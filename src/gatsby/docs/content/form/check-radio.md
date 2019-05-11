@@ -154,7 +154,3 @@ parent: "Form"
     </div>
   </div>
 </demo>
-
-<h2>Input group</h2>
-
-<p>See <a href="{% link _docs/content/group.html %}#input-group">Input group</a>.</p>
