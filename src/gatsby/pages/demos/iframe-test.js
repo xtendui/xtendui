@@ -4,13 +4,19 @@ import DemoIframe from "components/demo-iframe"
 
 const demo = {
   name: 'iframe-test',
+  js: true,
+  css: true,
   full: true
 }
 
 class Page extends React.Component {
   componentDidMount() {
-    require("./" + demo.name + ".source.js")
-    require("./" + demo.name + ".source.less")
+    if (demo.js) {
+      require("./" + demo.name + ".source.js")
+    }
+    if (demo.css) {
+      require("./" + demo.name + ".source.less")
+    }
   }
 
   render() {
@@ -124,8 +130,8 @@ class Page extends React.Component {
         </div>
       </div>
     `
-    let jsSource = require("!!raw-loader!./" + demo.name + ".source.js").default
-    let cssSource = require("!!raw-loader!./" + demo.name + ".source.less").default
+    let jsSource = demo.js ? require("!!raw-loader!./" + demo.name + ".source.js").default : null
+    let cssSource = demo.css ? require("!!raw-loader!./" + demo.name + ".source.less").default : null
     return (
       <DemoIframe demo={demo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}/>
     )

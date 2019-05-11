@@ -416,7 +416,6 @@ const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) 
 
 const populateSources = function (item, element, z) {
   let lang = element.getAttribute('data-lang');
-  console.log(lang);
   // populate tabs
   item.querySelector('.demo-code-body').append(Xt.createElement('<div class="demo-code-body-item"><pre class="noedit"><code></code></pre></div>'));
   item.querySelector('.demo-code-tabs-left').append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny"><span>' + lang + '</span></button>'));

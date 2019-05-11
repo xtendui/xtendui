@@ -4,13 +4,19 @@ import DemoIframe from "components/demo-iframe"
 
 const demo = {
   name: 'number',
+  js: true,
+  css: true,
   full: false
 }
 
 class Page extends React.Component {
   componentDidMount() {
-    require("./" + demo.name + ".source.js")
-    require("./" + demo.name + ".source.less")
+    if (demo.js) {
+      require("./" + demo.name + ".source.js")
+    }
+    if (demo.css) {
+      require("./" + demo.name + ".source.less")
+    }
   }
 
   render() {
