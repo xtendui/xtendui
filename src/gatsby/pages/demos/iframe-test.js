@@ -14,9 +14,6 @@ class Page extends React.Component {
     if (demo.js) {
       require("./" + demo.name + ".source.js")
     }
-    if (demo.css) {
-      require("./" + demo.name + ".source.less")
-    }
   }
 
   render() {
@@ -132,8 +129,9 @@ class Page extends React.Component {
     `
     let jsSource = demo.js ? require("!!raw-loader!./" + demo.name + ".source.js").default : null
     let cssSource = demo.css ? require("!!raw-loader!./" + demo.name + ".source.less").default : null
+    let css = demo.css ? require("!raw-loader!less-loader!./" + demo.name + ".source.less").default : null
     return (
-      <DemoIframe demo={demo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}/>
+      <DemoIframe demo={demo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource} css={css} />
     )
   }
 }

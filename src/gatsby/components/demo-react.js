@@ -1,26 +1,24 @@
 import React from "react"
 import PropTypes from "prop-types"
+import {Helmet} from "react-helmet"
 
 import SEO from "components/seo"
 import Layout from "components/layout-demo"
 
 class DemoReact extends React.Component {
-  componentDidMount() {
-    const {demo} = this.props
-    document.querySelector('html').classList.add('demo-' + demo.name)
-    if (demo.full) {
-      document.querySelector('html').classList.add('iframe-full')
-    }
-  }
-
   render() {
-    const {demo, htmlSource, jsSource, cssSource, Component} = this.props
-    const page = {};
-    page.title = demo.name
-    page.description = "Demo"
+    const {demo, htmlSource, jsSource, cssSource, css, Component} = this.props
+    const seo = {};
+    seo.title = demo.name
+    seo.description = "Demo"
     return (
-      <Layout page={page} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}>
-        <SEO title={page.title + ' — ' + page.description}/>
+      <Layout seo={seo} demo={demo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}>
+        {css ?
+          <Helmet>
+            <style>{css}</style>
+          </Helmet>
+          : null}
+        <SEO title={seo.title + ' — ' + seo.description}/>
         <div id="body-outer">
           <div id="body-inner" className="demo-source-from">
             <Component></Component>

@@ -6,7 +6,10 @@ import {Xt} from "xtend-library";
 class Layout extends React.Component {
   componentDidMount() {
     Xt.ready(Xt.load);
-    const {htmlSource, jsSource, cssSource} = this.props
+    const {demo, htmlSource, jsSource, cssSource} = this.props
+    if (demo.full) {
+      document.querySelector('html').classList.add('iframe-full')
+    }
     if (window.self !== window.top) {
       window.addEventListener('load', function () {
         window.parent.initIframe(window.name, htmlSource, jsSource, cssSource)

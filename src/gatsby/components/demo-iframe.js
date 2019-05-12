@@ -1,25 +1,23 @@
 import React from "react"
 import PropTypes from "prop-types"
+import {Helmet} from "react-helmet"
 
 import SEO from "components/seo"
 import Layout from "components/layout-demo"
 
 class DemoIframe extends React.Component {
-  componentDidMount() {
-    const {demo} = this.props
-    document.querySelector('html').classList.add('demo-' + demo.name)
-    if (demo.full) {
-      document.querySelector('html').classList.add('iframe-full')
-    }
-  }
-
   render() {
-    const {demo, htmlSource, jsSource, cssSource} = this.props
+    const {demo, htmlSource, jsSource, cssSource, css} = this.props
     const seo = {};
     seo.title = demo.name
     seo.description = "Demo"
     return (
-      <Layout seo={seo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}>
+      <Layout seo={seo} demo={demo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}>
+        {css ?
+          <Helmet>
+            <style>{css}</style>
+          </Helmet>
+          : null}
         <SEO title={seo.title + ' — ' + seo.description}/>
         <div id="body-outer">
           <div id="body-inner" className="demo-source-from" dangerouslySetInnerHTML={{__html: htmlSource}}/>
