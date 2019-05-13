@@ -1,9 +1,10 @@
 import React from "react"
+import path from "path";
 
 import DemoReactIframe from "components/demo-react-iframe"
 
 const demo = {
-  name: 'test-react-iframe',
+  name: path.basename(__filename, '.js'),
   js: true,
   css: true,
   full: false
