@@ -24,7 +24,7 @@ class Template extends React.Component {
     return (
       <Layout seo={seo} page={data}>
         <SEO title={seo.title + ' — ' + seo.description}/>
-        <div>{renderAst(data.post.htmlAst)}</div>
+        {renderAst(data.post.htmlAst)}
       </Layout>
     )
   }
@@ -108,6 +108,7 @@ Template.propTypes = {
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         categories: PropTypes.array,
+        parent: PropTypes.string,
       }).isRequired,
     }).isRequired,
   }).isRequired,

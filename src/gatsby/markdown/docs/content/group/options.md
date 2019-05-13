@@ -7,9 +7,9 @@ description: "Description"
 parent: "Group"
 ---
 
-<h2>Full</h2>
+##Full
 
-<p>Full width groups with <code>.full</code></p>
+Full width groups with `.full`
 
 <demo>
   <demovanilla src="demos/docs/content/group/options/full-line" name="line">
@@ -18,9 +18,9 @@ parent: "Group"
   </demovanilla>
 </demo>
 
-<h2>List</h2>
+##List
 
-<p>Space group elements with <a href="">list's options</a>.</p>
+Space group elements with list's options.
 
 <demo>
   <demovanilla src="demos/docs/content/group/options/list-line" name="line">
@@ -29,13 +29,13 @@ parent: "Group"
   </demovanilla>
 </demo>
 
-<h2>Variants</h2>
+##Variants
 
-<p>Optional classes for assigning variant.</p>
+Optional classes for assigning variant.
 
 <div class="alert">
   <div class="alert_content">
-    Group variants are defined inside <code>/theme/_components.less</code>.
+    Group variants are defined inside `/theme/_components.less`.
   </div>
 </div>
 

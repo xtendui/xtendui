@@ -7,9 +7,9 @@ description: "Description"
 parent: "Group"
 ---
 
-<h2>Usage</h2>
+##Usage
 
-<p>Use this markup to merge multiple <code>.btn</code> in one <code>[button]</code> as line.</p>
+Use this markup to merge multiple `.btn` in one `[button]` as line.
 
 <script type="text/plain" class="language-markup">
   <button type="button" class="group">
@@ -27,7 +27,7 @@ parent: "Group"
   </button>
 </script>
 
-<p>Use this markup to merge multiple <code>.btn</code> in one <code>[button]</code> as stack.</p>
+Use this markup to merge multiple `.btn` in one `[button]` as stack.
 
 <script type="text/plain" class="language-markup">
   <button type="button" class="group">
@@ -45,12 +45,12 @@ parent: "Group"
 
 <div class="alert">
   <div class="alert_content">
-    Elements with <code>a, button</code> tag propagate <code>.hover</code> and <code>.active</code> classes on
-    <code>.btn</code> childs automatically.
+    Elements with `a, button` tag propagate `.hover` and `.active` classes on
+    `.btn` childs automatically.
   </div>
 </div>
 
-<h2>Modes</h2>
+##Modes
 
 <demo>
   <demovanilla src="demos/docs/content/group/merge/line" name="line">

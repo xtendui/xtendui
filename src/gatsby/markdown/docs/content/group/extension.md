@@ -7,9 +7,9 @@ description: "Description"
 parent: "Group"
 ---
 
-<h2>Number</h2>
+##Number
 
 <demo>
-  <div class="demo-item" data-iframe="demos/docs/group/extension/number" data-name="line">
+  <div class="demo-item" data-iframe="demos/docs/content/group/extension/number" data-name="line">
   </div>
 </demo>

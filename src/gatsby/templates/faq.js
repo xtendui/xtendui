@@ -20,17 +20,28 @@ class Template extends React.Component {
     const seo = {};
     seo.title = data.post.frontmatter.title
     seo.description = data.post.frontmatter.description
+    seo.parent = data.post.frontmatter.parent
     return (
       <Layout seo={seo} page={data}>
         <SEO title={seo.title + ' — ' + seo.description}/>
-        <div>{renderAst(data.post.htmlAst)}</div>
+        {renderAst(data.post.htmlAst)}
       </Layout>
     )
   }
 }
 
 export const query = graphql`
-  query($path: String!) {
+  query($path: String!, $parent: String) {
+    adiacentPosts:allMarkdownRemark(filter: {frontmatter: {parent: {eq: $parent}}}, sort: {fields: [frontmatter___date], order: ASC}) {
+      posts: edges {
+        post: node {
+          frontmatter {
+            path
+            title
+          }
+        }
+      }
+    }
     post: markdownRemark(frontmatter: {path: {eq: $path}}) {
       htmlAst
       frontmatter {
@@ -38,6 +49,7 @@ export const query = graphql`
         title
         description
         categories
+        parent
       }
     }
   }
@@ -47,6 +59,18 @@ export default Template
 
 Template.propTypes = {
   data: PropTypes.shape({
+    adiacentPosts: PropTypes.shape({
+      posts: PropTypes.arrayOf(
+        PropTypes.shape({
+          post: PropTypes.shape({
+            frontmatter: PropTypes.shape({
+              path: PropTypes.string.isRequired,
+              title: PropTypes.string.isRequired,
+            }).isRequired,
+          }).isRequired,
+        }).isRequired,
+      ),
+    }).isRequired,
     post: PropTypes.shape({
       htmlAst: PropTypes.object.isRequired,
       frontmatter: PropTypes.shape({
@@ -54,6 +78,7 @@ Template.propTypes = {
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         categories: PropTypes.array,
+        parent: PropTypes.string,
       }).isRequired,
     }).isRequired,
   }).isRequired,

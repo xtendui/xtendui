@@ -7,9 +7,9 @@ description: "Description"
 parent: "Group"
 ---
 
-<h2>Usage</h2>
+##Usage
 
-<p>Use this markup to create a button group as line.</p>
+Use this markup to create a button group as line.
 
 <script type="text/plain" class="language-markup">
   <div class="group">
@@ -23,7 +23,7 @@ parent: "Group"
   </div>
 </script>
 
-<p>Use this markup to create a button group as stack.</p>
+Use this markup to create a button group as stack.
 
 <script type="text/plain" class="language-markup">
   <div class="group">
@@ -39,7 +39,7 @@ parent: "Group"
   </div>
 </script>
 
-<h2>Modes</h2>
+##Modes
 
 <demo>
   <demovanilla src="demos/docs/content/group/button/line" name="line">

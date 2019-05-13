@@ -7,7 +7,7 @@ description: "Description"
 parent: "Form"
 ---
 
-<h2>Items</h2>
+##Items
 
 <demo>
   <demovanilla src="demos/docs/content/form/items/items" name="items">

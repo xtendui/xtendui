@@ -122,7 +122,9 @@ exports.createPages = ({actions, graphql}) => {
         createPage({
           path: node.frontmatter.path, // needs gatsby-source-filesystem resolve name
           component: faqTemplate,
-          context: {}
+          context: {
+            parent: node.frontmatter.parent // for query($parent: String) { // put also parent on return graphql
+          }
         })
       } else if (node.frontmatter.type === 'docs') {
         createPage({

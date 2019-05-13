@@ -7,11 +7,11 @@ description: "Description"
 parent: "Form"
 ---
 
-<h2>Unstyled</h2>
+##Unstyled
 
-<h3>Usage</h3>
+###Usage
 
-<p>Use this markup to create a checkbox or radio <strong>unstyled</strong>.</p>
+Use this markup to create a checkbox or radio **unstyled**.
 
 <script type="text/plain" class="language-markup">
   <div class="form-item">
@@ -29,37 +29,22 @@ parent: "Form"
   </div>
 </script>
 
-<h3>Modes</h3>
+###Modes
 
 <demo>
   <demovanilla src="demos/docs/content/form/check-radio/unstyled-block" name="block">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.unstyled</code>
-      </div>
-    </div>
   </demovanilla>
   <demovanilla src="demos/docs/content/form/check-radio/unstyled-inline" name="inline">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.form-item--inline .unstyled</code> (@TODO link to form group)
-      </div>
-    </div>
   </demovanilla>
   <demovanilla src="demos/docs/content/form/check-radio/unstyled-disabled" name="disabled">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.unstyled[disabled]</code>
-      </div>
-    </div>
   </demovanilla>
 </demo>
 
-<h2>Styled</h2>
+##Styled
 
-<h3>Usage</h3>
+###Usage
 
-<p>Use this markup to create a checkbox or radio <strong>styled</strong>.</p>
+Use this markup to create a checkbox or radio **styled**.
 
 <script type="text/plain" class="language-markup">
   <div class="form-item">
@@ -77,37 +62,22 @@ parent: "Form"
   </div>
 </script>
 
-<h3>Modes</h3>
+###Modes
 
 <demo>
   <demovanilla src="demos/docs/content/form/check-radio/styled-block" name="block">
-    <div class="demo-text">
-      <div class="alert_content">
-        Check and radio design
-      </div>
-    </div>
   </demovanilla>
   <demovanilla src="demos/docs/content/form/check-radio/styled-inline" name="inline">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.form-item--inline</code> (@TODO link to form group)
-      </div>
-    </div>
   </demovanilla>
   <demovanilla src="demos/docs/content/form/check-radio/styled-disabled" name="disabled">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>[disabled]</code>
-      </div>
-    </div>
   </demovanilla>
 </demo>
 
-<h2>Fake</h2>
+##Fake
 
-<h3>Usage</h3>
+###Usage
 
-<p>Use this markup to create a <strong>fake</strong> checkbox or radio <strong>styled</strong>.</p>
+Use this markup to create a **fake** checkbox or radio **styled**.
 
 <script type="text/plain" class="language-markup">
   <div class="form-item">
@@ -123,28 +93,13 @@ parent: "Form"
   </div>
 </script>
 
-<h3>Modes</h3>
+###Modes
 
 <demo>
   <demovanilla src="demos/docs/content/form/check-radio/fake-block" name="block">
-    <div class="demo-text">
-      <div class="alert_content">
-        Check and radio design
-      </div>
-    </div>
   </demovanilla>
   <demovanilla src="demos/docs/content/form/check-radio/fake-inline" name="inline">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>.form-item--inline</code> (@TODO link to form group)
-      </div>
-    </div>
   </demovanilla>
   <demovanilla src="demos/docs/content/form/check-radio/fake-disabled" name="disabled">
-    <div class="demo-text">
-      <div class="alert_content">
-        <code>[disabled]</code>
-      </div>
-    </div>
   </demovanilla>
 </demo>

@@ -18,6 +18,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-less`,
+    `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-root-import`,
       options: {
