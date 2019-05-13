@@ -34,7 +34,6 @@ export const query = graphql`
     post: markdownRemark(frontmatter: {path: {eq: $path}}) {
       htmlAst
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         type
         title
         description
@@ -51,7 +50,6 @@ Template.propTypes = {
     post: PropTypes.shape({
       htmlAst: PropTypes.object.isRequired,
       frontmatter: PropTypes.shape({
-        date: PropTypes.string.isRequired,
         type: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,

@@ -49,7 +49,6 @@ Template.propTypes = {
         PropTypes.shape({
           post: PropTypes.shape({
             frontmatter: PropTypes.shape({
-              date: PropTypes.string.isRequired,
               path: PropTypes.string.isRequired,
               title: PropTypes.string.isRequired,
               tags: PropTypes.array.isRequired,
@@ -74,7 +73,6 @@ export const query = graphql`
       posts: edges {
         post: node {
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
             path
             title
             tags

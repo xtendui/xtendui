@@ -38,10 +38,8 @@ export const query = graphql`
         posts: edges {
           post: node {
             frontmatter {
-              date(formatString: "MMMM DD, YYYY")
               path
               title
-              parent
             }
           }
         }
@@ -51,7 +49,6 @@ export const query = graphql`
       posts: edges {
         post: node {
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
             path
             title
           }
@@ -61,7 +58,6 @@ export const query = graphql`
     post: markdownRemark(frontmatter: {path: {eq: $path}}) {
       htmlAst
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         type
         title
         description
@@ -84,10 +80,8 @@ Template.propTypes = {
             PropTypes.shape({
               post: PropTypes.shape({
                 frontmatter: PropTypes.shape({
-                  date: PropTypes.string.isRequired,
                   path: PropTypes.string.isRequired,
                   title: PropTypes.string.isRequired,
-                  parent: PropTypes.string,
                 }).isRequired,
               }).isRequired,
             }).isRequired,
@@ -100,7 +94,6 @@ Template.propTypes = {
         PropTypes.shape({
           post: PropTypes.shape({
             frontmatter: PropTypes.shape({
-              date: PropTypes.string.isRequired,
               path: PropTypes.string.isRequired,
               title: PropTypes.string.isRequired,
             }).isRequired,
@@ -111,7 +104,6 @@ Template.propTypes = {
     post: PropTypes.shape({
       htmlAst: PropTypes.object.isRequired,
       frontmatter: PropTypes.shape({
-        date: PropTypes.string.isRequired,
         type: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
