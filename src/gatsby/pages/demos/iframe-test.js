@@ -6,7 +6,7 @@ const demo = {
   name: 'iframe-test',
   js: true,
   css: true,
-  full: true
+  full: false
 }
 
 class Page extends React.Component {

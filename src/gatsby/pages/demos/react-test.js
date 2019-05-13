@@ -6,7 +6,7 @@ const demo = {
   name: 'react-test',
   js: true,
   css: true,
-  full: false
+  full: true
 }
 
 class Page extends React.Component {

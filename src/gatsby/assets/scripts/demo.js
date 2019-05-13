@@ -371,10 +371,6 @@ if (typeof window !== 'undefined') {
       let iframeFull = iframe.contentWindow.document.documentElement.classList.contains('iframe-full');
       if (iframeFull) {
         iframe.classList.add('iframe-full');
-        for (let wrapper of wrappers) {
-          wrapper.style.height = '';
-        }
-      } else {
         let target = iframe.contentWindow.document.scrollingElement;
         let h = target.scrollHeight;
         if (h !== parseFloat(iframe.dataset.iframeHeight)) {
@@ -383,6 +379,10 @@ if (typeof window !== 'undefined') {
         }
         for (let wrapper of wrappers) {
           wrapper.style.height = h + 'px';
+        }
+      } else {
+        for (let wrapper of wrappers) {
+          wrapper.style.height = '';
         }
       }
     }
