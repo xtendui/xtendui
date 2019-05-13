@@ -11,7 +11,7 @@ parent: "Form"
 
 <demo>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/form/items/items" data-name="items">
+    <div class="demo-item" data-iframe="demos/form/items/items" data-name="items">
     </div>
   </div>
 </demo>

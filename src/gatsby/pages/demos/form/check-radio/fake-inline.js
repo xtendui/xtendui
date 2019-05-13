@@ -6,7 +6,7 @@ const demo = {
   name: 'inline',
   js: false,
   css: false,
-  full: false
+  full: true
 }
 
 class Page extends React.Component {

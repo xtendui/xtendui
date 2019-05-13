@@ -59,11 +59,11 @@ parent: "Group"
 
 <demo>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/group/input/line" data-name="line">
+    <div class="demo-item" data-iframe="demos/group/input/line" data-name="line">
     </div>
   </div>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/group/input/stack" data-name="stack">
+    <div class="demo-item" data-iframe="demos/group/input/stack" data-name="stack">
     </div>
   </div>
 </demo>

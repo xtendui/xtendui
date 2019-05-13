@@ -13,11 +13,11 @@ parent: "Group"
 
 <demo>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/group/options/full-line" data-name="line">
+    <div class="demo-item" data-iframe="demos/group/options/full-line" data-name="line">
     </div>
   </div>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/group/options/full-stack" data-name="stack">
+    <div class="demo-item" data-iframe="demos/group/options/full-stack" data-name="stack">
     </div>
   </div>
 </demo>
@@ -28,11 +28,11 @@ parent: "Group"
 
 <demo>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/group/options/list-line" data-name="line">
+    <div class="demo-item" data-iframe="demos/group/options/list-line" data-name="line">
     </div>
   </div>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/group/options/list-stack" data-name="stack">
+    <div class="demo-item" data-iframe="demos/group/options/list-stack" data-name="stack">
     </div>
   </div>
 </demo>
@@ -49,11 +49,11 @@ parent: "Group"
 
 <demo>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/group/options/variant-line" data-name="line">
+    <div class="demo-item" data-iframe="demos/group/options/variant-line" data-name="line">
     </div>
   </div>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/group/options/variant-stack" data-name="stack">
+    <div class="demo-item" data-iframe="demos/group/options/variant-stack" data-name="stack">
     </div>
   </div>
 </demo>

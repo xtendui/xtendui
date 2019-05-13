@@ -53,7 +53,7 @@ categories: []
 
 <demo>
   <div class="demo-inner">
-    <div class="demo-item demo-preview" data-name="block">
+    <div class="demo-item demo-preview" data-name="vanilla">
       <div class="demo-text">
         <div class="alert_content">
           <code>.unstyled</code>
@@ -89,10 +89,22 @@ categories: []
 
 <demo>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/test-vanilla" data-name="iframe">
-    </div>
-    <div class="demo-item" data-iframe="/demos/test-react" data-name="react">
-    </div>
+    <demovanilla src="demos/test-vanilla" name="vanilla">
+      <div class="demo-text">
+        <div class="alert_content">
+          Test
+        </div>
+      </div>
+    </demovanilla>
+  </div>
+  <div class="demo-inner">
+    <demoreact src="demos/test-react" name="react">
+      <div class="demo-text">
+        <div class="alert_content">
+          Test
+        </div>
+      </div>
+    </demoreact>
   </div>
 </demo>
 
@@ -100,9 +112,19 @@ categories: []
 
 <demo>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/test-vanilla-iframe" data-name="iframe">
+    <div class="demo-item" data-iframe="demos/test-vanilla-iframe" data-name="vanilla">
+      <div class="demo-text">
+        <div class="alert_content">
+          Test
+        </div>
+      </div>
     </div>
-    <div class="demo-item" data-iframe="/demos/test-react-iframe" data-name="react">
+    <div class="demo-item" data-iframe="demos/test-react-iframe" data-name="react">
+      <div class="demo-text">
+        <div class="alert_content">
+          Test
+        </div>
+      </div>
     </div>
   </div>
 </demo>

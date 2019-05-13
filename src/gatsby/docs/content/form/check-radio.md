@@ -33,7 +33,7 @@ parent: "Form"
 
 <demo>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/form/check-radio/unstyled-block" data-name="block">
+    <div class="demo-item" data-iframe="demos/form/check-radio/unstyled-block" data-name="block">
       <div class="demo-text">
         <div class="alert_content">
           <code>.unstyled</code>
@@ -42,7 +42,7 @@ parent: "Form"
     </div>
   </div>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/form/check-radio/unstyled-inline" data-name="inline">
+    <div class="demo-item" data-iframe="demos/form/check-radio/unstyled-inline" data-name="inline">
       <div class="demo-text">
         <div class="alert_content">
           <code>.form-item--inline .unstyled</code> (@TODO link to form group)
@@ -51,7 +51,7 @@ parent: "Form"
     </div>
   </div>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/form/check-radio/unstyled-disabled" data-name="disabled">
+    <div class="demo-item" data-iframe="demos/form/check-radio/unstyled-disabled" data-name="disabled">
       <div class="demo-text">
         <div class="alert_content">
           <code>.unstyled[disabled]</code>
@@ -87,7 +87,7 @@ parent: "Form"
 
 <demo>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/form/check-radio/styled-block" data-name="block">
+    <div class="demo-item" data-iframe="demos/form/check-radio/styled-block" data-name="block">
       <div class="demo-text">
         <div class="alert_content">
           Check and radio design
@@ -96,7 +96,7 @@ parent: "Form"
     </div>
   </div>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/form/check-radio/styled-inline" data-name="inline">
+    <div class="demo-item" data-iframe="demos/form/check-radio/styled-inline" data-name="inline">
       <div class="demo-text">
         <div class="alert_content">
           <code>.form-item--inline</code> (@TODO link to form group)
@@ -105,7 +105,7 @@ parent: "Form"
     </div>
   </div>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/form/check-radio/styled-disabled" data-name="disabled">
+    <div class="demo-item" data-iframe="demos/form/check-radio/styled-disabled" data-name="disabled">
       <div class="demo-text">
         <div class="alert_content">
           <code>[disabled]</code>
@@ -139,7 +139,7 @@ parent: "Form"
 
 <demo>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/form/check-radio/fake-block" data-name="block">
+    <div class="demo-item" data-iframe="demos/form/check-radio/fake-block" data-name="block">
       <div class="demo-text">
         <div class="alert_content">
           Check and radio design
@@ -148,7 +148,7 @@ parent: "Form"
     </div>
   </div>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/form/check-radio/fake-inline" data-name="inline">
+    <div class="demo-item" data-iframe="demos/form/check-radio/fake-inline" data-name="inline">
       <div class="demo-text">
         <div class="alert_content">
           <code>.form-item--inline</code> (@TODO link to form group)
@@ -157,7 +157,7 @@ parent: "Form"
     </div>
   </div>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/form/check-radio/fake-disabled" data-name="disabled">
+    <div class="demo-item" data-iframe="demos/form/check-radio/fake-disabled" data-name="disabled">
       <div class="demo-text">
         <div class="alert_content">
           <code>[disabled]</code>

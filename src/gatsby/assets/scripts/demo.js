@@ -112,7 +112,7 @@ const populateDemo = function (container, i) {
     // inject iframe
     if (item.getAttribute('data-iframe')) {
       // iframe append
-      let src = item.getAttribute('data-iframe');
+      let src = '/' + item.getAttribute('data-iframe');
       let id = 'iframe' + i + k;
       if (src) {
         item.append(Xt.createElement('<div class="demo-item-wrapper"><iframe data-src="' + src + '" frameborder="0" name="' + id + '"></iframe></div>'));
@@ -223,7 +223,7 @@ const populateDemo = function (container, i) {
 // populateInline
 
 const populateInline = function (item) {
-  let els = item.querySelectorAll('.demo-source');
+  let els = item.querySelectorAll('.demo-source[data-lang]');
   for (let [z, el] of els.entries()) {
     populateSources(item, el, z);
     if (!item.classList.contains('demo-preview')) {
@@ -332,7 +332,7 @@ const populateShadow = function (item, shadowRoot) {
     item.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="less">' + less.innerHTML + '</div>'));
   }
   // populate
-  for (let [z, source] of item.querySelectorAll('.demo-source').entries()) {
+  for (let [z, source] of item.querySelectorAll('.demo-source[data-lang]').entries()) {
     populateSources(item, source, z);
     source.remove();
   }
@@ -401,7 +401,7 @@ const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) 
     iframe.append(Xt.createElement('<div class="demo-source xt-ignore" data-lang="less">' + cssSource + '</div>'));
   }
   // populate
-  for (let [z, source] of item.querySelectorAll('.demo-source').entries()) {
+  for (let [z, source] of item.querySelectorAll('.demo-source[data-lang]').entries()) {
     populateSources(item, source, z);
     source.remove();
   }
@@ -416,11 +416,20 @@ const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) 
 
 const populateSources = function (item, element, z) {
   let lang = element.getAttribute('data-lang');
+  // set text
+  if (lang === 'language-markup') {
+    lang = 'html';
+  } else if (lang === 'language-jsx') {
+    lang = 'js';
+  } else if (lang === 'language-less') {
+    lang = 'less';
+  }
   // populate tabs
   item.querySelector('.demo-code-body').append(Xt.createElement('<div class="demo-code-body-item"><pre class="noedit"><code></code></pre></div>'));
   item.querySelector('.demo-code-tabs-left').append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny"><span>' + lang + '</span></button>'));
   // format code
-  let codeInside = item.querySelectorAll('.demo-code-body .demo-code-body-item')[z].querySelector('pre code');
+  let itemInside = item.querySelectorAll('.demo-code-body .demo-code-body-item')[z];
+  let codeInside = itemInside.querySelector('pre code');
   // set text
   if (lang === 'html') {
     lang = 'language-markup';
@@ -431,7 +440,7 @@ const populateSources = function (item, element, z) {
   }
   codeInside.innerHTML = formatCode(element);
   codeInside.classList.add(lang);
-  Prism.highlightElement(codeInside);
+  Prism.highlightElement(codeInside)
 };
 
 // export

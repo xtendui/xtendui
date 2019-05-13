@@ -11,7 +11,7 @@ parent: "Group"
 
 <demo>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/group/extension/number" data-name="line">
+    <div class="demo-item" data-iframe="demos/group/extension/number" data-name="line">
     </div>
   </div>
 </demo>
