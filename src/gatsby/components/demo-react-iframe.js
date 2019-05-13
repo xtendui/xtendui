@@ -5,7 +5,7 @@ import {Helmet} from "react-helmet"
 import SEO from "components/seo"
 import Layout from "components/layout-demo"
 
-class DemoReact extends React.Component {
+class DemoReactIframe extends React.Component {
   render() {
     const {demo, htmlSource, jsSource, cssSource, css, Component} = this.props
     const seo = {};
@@ -29,9 +29,9 @@ class DemoReact extends React.Component {
   }
 }
 
-export default DemoReact
+export default DemoReactIframe
 
-DemoReact.propTypes = {
+DemoReactIframe.propTypes = {
   demo: PropTypes.shape({
     name: PropTypes.string.isRequired,
     full: PropTypes.bool,

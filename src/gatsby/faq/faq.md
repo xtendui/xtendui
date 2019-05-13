@@ -47,9 +47,9 @@ categories: []
   </button>
 </script>
 
-<h2>Tests</h2>
+<h2>Demos</h2>
 
-<h3>Test inline demos</h2>
+<h3>Inline demos</h2>
 
 <demo>
   <div class="demo-inner">
@@ -85,13 +85,24 @@ categories: []
   </div>
 </demo>
 
-<h3>Test iframe demos</h2>
+<h3>Demos</h2>
 
 <demo>
   <div class="demo-inner">
-    <div class="demo-item" data-iframe="/demos/iframe-test" data-name="iframe">
+    <div class="demo-item" data-iframe="/demos/test-vanilla" data-name="iframe">
     </div>
-    <div class="demo-item" data-iframe="/demos/react-test" data-name="react">
+    <div class="demo-item" data-iframe="/demos/test-react" data-name="react">
+    </div>
+  </div>
+</demo>
+
+<h3>Iframe demos</h2>
+
+<demo>
+  <div class="demo-inner">
+    <div class="demo-item" data-iframe="/demos/test-vanilla-iframe" data-name="iframe">
+    </div>
+    <div class="demo-item" data-iframe="/demos/test-react-iframe" data-name="react">
     </div>
   </div>
 </demo>

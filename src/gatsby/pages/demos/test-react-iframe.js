@@ -1,9 +1,9 @@
 import React from "react"
 
-import DemoReact from "components/demo-react"
+import DemoReactIframe from "components/demo-react-iframe"
 
 const demo = {
-  name: 'react-test',
+  name: 'test-react-iframe',
   js: true,
   css: true,
   full: true
@@ -17,7 +17,7 @@ class Page extends React.Component {
     let css = demo.css ? require("!raw-loader!less-loader!./" + demo.name + ".source.less").default : null
     let Component = require("./" + demo.name + ".source.js").default
     return (
-      <DemoReact demo={demo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource} css={css} Component={Component}/>
+      <DemoReactIframe demo={demo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource} css={css} Component={Component}/>
     )
   }
 }

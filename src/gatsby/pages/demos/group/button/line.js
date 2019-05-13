@@ -1,6 +1,6 @@
 import React from "react"
 
-import DemoIframe from "components/demo-iframe"
+import DemoVanillaIframe from "components/demo-vanilla-iframe"
 
 const demo = {
   name: 'line',
@@ -47,7 +47,7 @@ class Page extends React.Component {
     let jsSource = demo.js ? require("!!raw-loader!./" + demo.name + ".source.js").default : null
     let cssSource = demo.css ? require("!!raw-loader!./" + demo.name + ".source.less").default : null
     return (
-      <DemoIframe demo={demo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}/>
+      <DemoVanillaIframe demo={demo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}/>
     )
   }
 }
