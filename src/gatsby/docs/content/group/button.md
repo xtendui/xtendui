@@ -42,12 +42,8 @@ parent: "Group"
 <h2>Modes</h2>
 
 <demo>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/group/button/line" data-name="line">
-    </div>
-  </div>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/group/button/stack" data-name="stack">
-    </div>
-  </div>
+  <demovanilla src="demos/group/button/line" name="line">
+  </demovanilla>
+  <demovanilla src="demos/group/button/stack" name="stack">
+  </demovanilla>
 </demo>

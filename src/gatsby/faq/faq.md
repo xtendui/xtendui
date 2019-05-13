@@ -52,7 +52,7 @@ categories: []
 <h3>Inline demos</h2>
 
 <demo>
-  <div class="demo-inner">
+  <div class="demo-inline">
     <div class="demo-item demo-preview" data-name="vanilla">
       <div class="demo-text">
         <div class="alert_content">
@@ -88,42 +88,36 @@ categories: []
 <h3>Demos</h2>
 
 <demo>
-  <div class="demo-inner">
-    <demovanilla src="demos/test-vanilla" name="vanilla">
-      <div class="demo-text">
-        <div class="alert_content">
-          Test
-        </div>
+  <demovanilla src="demos/test-vanilla" name="vanilla">
+    <div class="demo-text">
+      <div class="alert_content">
+        Test
       </div>
-    </demovanilla>
-  </div>
-  <div class="demo-inner">
-    <demoreact src="demos/test-react" name="react">
-      <div class="demo-text">
-        <div class="alert_content">
-          Test
-        </div>
+    </div>
+  </demovanilla>
+  <demoreact src="demos/test-react" name="react">
+    <div class="demo-text">
+      <div class="alert_content">
+        Test
       </div>
-    </demoreact>
-  </div>
+    </div>
+  </demoreact>
 </demo>
 
 <h3>Iframe demos</h2>
 
 <demo>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/test-vanilla-iframe" data-name="vanilla">
-      <div class="demo-text">
-        <div class="alert_content">
-          Test
-        </div>
+  <div class="demo-item" data-iframe="demos/test-vanilla-iframe" data-name="vanilla">
+    <div class="demo-text">
+      <div class="alert_content">
+        Test
       </div>
     </div>
-    <div class="demo-item" data-iframe="demos/test-react-iframe" data-name="react">
-      <div class="demo-text">
-        <div class="alert_content">
-          Test
-        </div>
+  </div>
+  <div class="demo-item" data-iframe="demos/test-react-iframe" data-name="react">
+    <div class="demo-text">
+      <div class="alert_content">
+        Test
       </div>
     </div>
   </div>

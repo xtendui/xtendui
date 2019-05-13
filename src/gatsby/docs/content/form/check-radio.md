@@ -32,33 +32,27 @@ parent: "Form"
 <h3>Modes</h3>
 
 <demo>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/form/check-radio/unstyled-block" data-name="block">
-      <div class="demo-text">
-        <div class="alert_content">
-          <code>.unstyled</code>
-        </div>
+  <demovanilla src="demos/form/check-radio/unstyled-block" name="block">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>.unstyled</code>
       </div>
     </div>
-  </div>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/form/check-radio/unstyled-inline" data-name="inline">
-      <div class="demo-text">
-        <div class="alert_content">
-          <code>.form-item--inline .unstyled</code> (@TODO link to form group)
-        </div>
+  </demovanilla>
+  <demovanilla src="demos/form/check-radio/unstyled-inline" name="inline">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>.form-item--inline .unstyled</code> (@TODO link to form group)
       </div>
     </div>
-  </div>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/form/check-radio/unstyled-disabled" data-name="disabled">
-      <div class="demo-text">
-        <div class="alert_content">
-          <code>.unstyled[disabled]</code>
-        </div>
+  </demovanilla>
+  <demovanilla src="demos/form/check-radio/unstyled-disabled" name="disabled">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>.unstyled[disabled]</code>
       </div>
     </div>
-  </div>
+  </demovanilla>
 </demo>
 
 <h2>Styled</h2>
@@ -86,33 +80,27 @@ parent: "Form"
 <h3>Modes</h3>
 
 <demo>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/form/check-radio/styled-block" data-name="block">
-      <div class="demo-text">
-        <div class="alert_content">
-          Check and radio design
-        </div>
+  <demovanilla src="demos/form/check-radio/styled-block" name="block">
+    <div class="demo-text">
+      <div class="alert_content">
+        Check and radio design
       </div>
     </div>
-  </div>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/form/check-radio/styled-inline" data-name="inline">
-      <div class="demo-text">
-        <div class="alert_content">
-          <code>.form-item--inline</code> (@TODO link to form group)
-        </div>
+  </demovanilla>
+  <demovanilla src="demos/form/check-radio/styled-inline" name="inline">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>.form-item--inline</code> (@TODO link to form group)
       </div>
     </div>
-  </div>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/form/check-radio/styled-disabled" data-name="disabled">
-      <div class="demo-text">
-        <div class="alert_content">
-          <code>[disabled]</code>
-        </div>
+  </demovanilla>
+  <demovanilla src="demos/form/check-radio/styled-disabled" name="disabled">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>[disabled]</code>
       </div>
     </div>
-  </div>
+  </demovanilla>
 </demo>
 
 <h2>Fake</h2>
@@ -138,31 +126,25 @@ parent: "Form"
 <h3>Modes</h3>
 
 <demo>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/form/check-radio/fake-block" data-name="block">
-      <div class="demo-text">
-        <div class="alert_content">
-          Check and radio design
-        </div>
+  <demovanilla src="demos/form/check-radio/fake-block" name="block">
+    <div class="demo-text">
+      <div class="alert_content">
+        Check and radio design
       </div>
     </div>
-  </div>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/form/check-radio/fake-inline" data-name="inline">
-      <div class="demo-text">
-        <div class="alert_content">
-          <code>.form-item--inline</code> (@TODO link to form group)
-        </div>
+  </demovanilla>
+  <demovanilla src="demos/form/check-radio/fake-inline" name="inline">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>.form-item--inline</code> (@TODO link to form group)
       </div>
     </div>
-  </div>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/form/check-radio/fake-disabled" data-name="disabled">
-      <div class="demo-text">
-        <div class="alert_content">
-          <code>[disabled]</code>
-        </div>
+  </demovanilla>
+  <demovanilla src="demos/form/check-radio/fake-disabled" name="disabled">
+    <div class="demo-text">
+      <div class="alert_content">
+        <code>[disabled]</code>
       </div>
     </div>
-  </div>
+  </demovanilla>
 </demo>

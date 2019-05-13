@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 class DemoVanilla extends React.Component {
   render() {
     const {children, src, name} = this.props
-    let htmlSource = require("./" + src + ".js").htmlSource
+    let htmlSource = require("../" + src + ".js").htmlSource
     return (
       <div className="demo-item demo-preview" data-name={name}>
         {children}

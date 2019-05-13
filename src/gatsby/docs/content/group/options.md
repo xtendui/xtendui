@@ -12,14 +12,10 @@ parent: "Group"
 <p>Full width groups with <code>.full</code></p>
 
 <demo>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/group/options/full-line" data-name="line">
-    </div>
-  </div>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/group/options/full-stack" data-name="stack">
-    </div>
-  </div>
+  <demovanilla src="demos/group/options/full-line" name="line">
+  </demovanilla>
+  <demovanilla src="demos/group/options/full-stack" name="stack">
+  </demovanilla>
 </demo>
 
 <h2>List</h2>
@@ -27,14 +23,10 @@ parent: "Group"
 <p>Space group elements with <a href="">list's options</a>.</p>
 
 <demo>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/group/options/list-line" data-name="line">
-    </div>
-  </div>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/group/options/list-stack" data-name="stack">
-    </div>
-  </div>
+  <demovanilla src="demos/group/options/list-line" name="line">
+  </demovanilla>
+  <demovanilla src="demos/group/options/list-stack" name="stack">
+  </demovanilla>
 </demo>
 
 <h2>Variants</h2>
@@ -48,12 +40,8 @@ parent: "Group"
 </div>
 
 <demo>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/group/options/variant-line" data-name="line">
-    </div>
-  </div>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/group/options/variant-stack" data-name="stack">
-    </div>
-  </div>
+  <demovanilla src="demos/group/options/variant-line" name="line">
+  </demovanilla>
+  <demovanilla src="demos/group/options/variant-stack" name="stack">
+  </demovanilla>
 </demo>

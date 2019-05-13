@@ -10,8 +10,6 @@ parent: "Form"
 <h2>Items</h2>
 
 <demo>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/form/items/items" data-name="items">
-    </div>
-  </div>
+  <demovanilla src="demos/form/items/items" name="items">
+  </demovanilla>
 </demo>

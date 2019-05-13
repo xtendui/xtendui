@@ -17,7 +17,7 @@ class Page extends React.Component {
   }
 
   render() {
-    let htmlSource = `
+    demo.htmlSource = `
       <h4>Line</h4>
       
       <div class="group group-number group-number-line">
@@ -48,11 +48,11 @@ class Page extends React.Component {
           </span>
       </div>
     `
-    let jsSource = require("!!raw-loader!./" + demo.name + ".source.js").default
-    let cssSource = require("!!raw-loader!./" + demo.name + ".source.less").default
-    let css = demo.css ? require("!raw-loader!less-loader!./" + demo.name + ".source.less").default : null
+    demo.jsSource = require("!!raw-loader!./" + demo.name + ".source.js").default
+    demo.cssSource = require("!!raw-loader!./" + demo.name + ".source.less").default
+    demo.css = demo.css ? require("!raw-loader!less-loader!./" + demo.name + ".source.less").default : null
     return (
-      <DemoVanillaIframe demo={demo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource} css={css}/>
+      <DemoVanillaIframe demo={demo}/>
     )
   }
 }

@@ -10,8 +10,6 @@ parent: "Group"
 <h2>Number</h2>
 
 <demo>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/group/extension/number" data-name="line">
-    </div>
+  <div class="demo-item" data-iframe="demos/group/extension/number" data-name="line">
   </div>
 </demo>

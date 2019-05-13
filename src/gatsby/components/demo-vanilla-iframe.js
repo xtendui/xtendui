@@ -7,20 +7,20 @@ import Layout from "components/layout-demo"
 
 class DemoVanillaIframe extends React.Component {
   render() {
-    const {demo, htmlSource, jsSource, cssSource, css} = this.props
+    const {demo} = this.props
     const seo = {};
     seo.title = demo.name
     seo.description = "Demo"
     return (
-      <Layout seo={seo} demo={demo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource}>
-        {css ?
+      <Layout seo={seo} demo={demo}>
+        {demo.css ?
           <Helmet>
-            <style>{css}</style>
+            <style>{demo.css}</style>
           </Helmet>
           : null}
         <SEO title={seo.title + ' — ' + seo.description}/>
         <div id="body-outer">
-          <div id="body-inner" className="demo-source-from" dangerouslySetInnerHTML={{__html: htmlSource}}/>
+          <div id="body-inner" className="demo-source-from" dangerouslySetInnerHTML={{__html: demo.htmlSource}}/>
         </div>
       </Layout>
     )
@@ -33,8 +33,8 @@ DemoVanillaIframe.propTypes = {
   demo: PropTypes.shape({
     name: PropTypes.string.isRequired,
     full: PropTypes.bool,
+    htmlSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    jsSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    cssSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   }).isRequired,
-  htmlSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  jsSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  cssSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
 }

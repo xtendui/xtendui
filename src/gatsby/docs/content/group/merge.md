@@ -53,12 +53,8 @@ parent: "Group"
 <h2>Modes</h2>
 
 <demo>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/group/merge/line" data-name="line">
-    </div>
-  </div>
-  <div class="demo-inner">
-    <div class="demo-item" data-iframe="demos/group/merge/stack" data-name="stack">
-    </div>
-  </div>
+  <demovanilla src="demos/group/merge/line" name="line">
+  </demovanilla>
+  <demovanilla src="demos/group/merge/stack" name="stack">
+  </demovanilla>
 </demo>

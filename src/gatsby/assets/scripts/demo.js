@@ -131,11 +131,11 @@ const populateDemo = function (container, i) {
       }
       // listener
       item.addEventListener('on.xt', function (e) {
-        if (!item.classList.contains('populated')) {
+        //if (!item.classList.contains('populated')) {
           loadIframe(iframe);
-        } else {
-          iframe.contentDocument.location.reload(true);
-        }
+        //} else {
+        //  iframe.contentDocument.location.reload(true);
+        //}
       });
       item.addEventListener('off.xt', function (e) {
         item.classList.remove('loaded');

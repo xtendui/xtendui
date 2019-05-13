@@ -17,7 +17,7 @@ class Page extends React.Component {
   }
 
   render() {
-    let htmlSource = `
+    demo.htmlSource = `
       <!-- test comment -->
       <div class="drop_outer drop--disable" data-xt-drop>
         <button type="button" class="btn btn--primary">
@@ -127,11 +127,11 @@ class Page extends React.Component {
         </div>
       </div>
     `
-    let jsSource = demo.js ? require("!!raw-loader!./" + demo.name + ".source.js").default : null
-    let cssSource = demo.css ? require("!!raw-loader!./" + demo.name + ".source.less").default : null
-    let css = demo.css ? require("!raw-loader!less-loader!./" + demo.name + ".source.less").default : null
+    demo.jsSource = demo.js ? require("!!raw-loader!./" + demo.name + ".source.js").default : null
+    demo.cssSource = demo.css ? require("!!raw-loader!./" + demo.name + ".source.less").default : null
+    demo.css = demo.css ? require("!raw-loader!less-loader!./" + demo.name + ".source.less").default : null
     return (
-      <DemoVanillaIframe demo={demo} htmlSource={htmlSource} jsSource={jsSource} cssSource={cssSource} css={css} />
+      <DemoVanillaIframe demo={demo}/>
     )
   }
 }
