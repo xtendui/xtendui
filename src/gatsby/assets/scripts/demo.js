@@ -139,6 +139,7 @@ const populateDemo = function (container, i) {
       });
       item.addEventListener('off.xt', function (e) {
         item.classList.remove('loaded');
+        unloadIframe(iframe);
       });
     } else if (item.getAttribute('data-shadow')) {
       /* NEEDS
@@ -348,6 +349,10 @@ const populateShadow = function (item, shadowRoot) {
 
 const loadIframe = function (iframe) {
   iframe.setAttribute('src', iframe.getAttribute('data-src'));
+}
+
+const unloadIframe = function (iframe) {
+  iframe.setAttribute('src', '');
 }
 
 if (typeof window !== 'undefined') {

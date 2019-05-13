@@ -53,8 +53,8 @@ parent: "Group"
 <h2>Modes</h2>
 
 <demo>
-  <demovanilla src="demos/group/merge/line" name="line">
+  <demovanilla src="demos/docs/content/group/merge/line" name="line">
   </demovanilla>
-  <demovanilla src="demos/group/merge/stack" name="stack">
+  <demovanilla src="demos/docs/content/group/merge/stack" name="stack">
   </demovanilla>
 </demo>

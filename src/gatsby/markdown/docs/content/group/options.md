@@ -12,9 +12,9 @@ parent: "Group"
 <p>Full width groups with <code>.full</code></p>
 
 <demo>
-  <demovanilla src="demos/group/options/full-line" name="line">
+  <demovanilla src="demos/docs/content/group/options/full-line" name="line">
   </demovanilla>
-  <demovanilla src="demos/group/options/full-stack" name="stack">
+  <demovanilla src="demos/docs/content/group/options/full-stack" name="stack">
   </demovanilla>
 </demo>
 
@@ -23,9 +23,9 @@ parent: "Group"
 <p>Space group elements with <a href="">list's options</a>.</p>
 
 <demo>
-  <demovanilla src="demos/group/options/list-line" name="line">
+  <demovanilla src="demos/docs/content/group/options/list-line" name="line">
   </demovanilla>
-  <demovanilla src="demos/group/options/list-stack" name="stack">
+  <demovanilla src="demos/docs/content/group/options/list-stack" name="stack">
   </demovanilla>
 </demo>
 
@@ -40,8 +40,8 @@ parent: "Group"
 </div>
 
 <demo>
-  <demovanilla src="demos/group/options/variant-line" name="line">
+  <demovanilla src="demos/docs/content/group/options/variant-line" name="line">
   </demovanilla>
-  <demovanilla src="demos/group/options/variant-stack" name="stack">
+  <demovanilla src="demos/docs/content/group/options/variant-stack" name="stack">
   </demovanilla>
 </demo>

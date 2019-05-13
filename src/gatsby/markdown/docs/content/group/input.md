@@ -58,8 +58,8 @@ parent: "Group"
 <h2>Modes</h2>
 
 <demo>
-  <demovanilla src="demos/group/input/line" name="line">
+  <demovanilla src="demos/docs/content/group/input/line" name="line">
   </demovanilla>
-  <demovanilla src="demos/group/input/stack" name="stack">
+  <demovanilla src="demos/docs/content/group/input/stack" name="stack">
   </demovanilla>
 </demo>

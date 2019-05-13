@@ -32,21 +32,21 @@ parent: "Form"
 <h3>Modes</h3>
 
 <demo>
-  <demovanilla src="demos/form/check-radio/unstyled-block" name="block">
+  <demovanilla src="demos/docs/content/form/check-radio/unstyled-block" name="block">
     <div class="demo-text">
       <div class="alert_content">
         <code>.unstyled</code>
       </div>
     </div>
   </demovanilla>
-  <demovanilla src="demos/form/check-radio/unstyled-inline" name="inline">
+  <demovanilla src="demos/docs/content/form/check-radio/unstyled-inline" name="inline">
     <div class="demo-text">
       <div class="alert_content">
         <code>.form-item--inline .unstyled</code> (@TODO link to form group)
       </div>
     </div>
   </demovanilla>
-  <demovanilla src="demos/form/check-radio/unstyled-disabled" name="disabled">
+  <demovanilla src="demos/docs/content/form/check-radio/unstyled-disabled" name="disabled">
     <div class="demo-text">
       <div class="alert_content">
         <code>.unstyled[disabled]</code>
@@ -80,21 +80,21 @@ parent: "Form"
 <h3>Modes</h3>
 
 <demo>
-  <demovanilla src="demos/form/check-radio/styled-block" name="block">
+  <demovanilla src="demos/docs/content/form/check-radio/styled-block" name="block">
     <div class="demo-text">
       <div class="alert_content">
         Check and radio design
       </div>
     </div>
   </demovanilla>
-  <demovanilla src="demos/form/check-radio/styled-inline" name="inline">
+  <demovanilla src="demos/docs/content/form/check-radio/styled-inline" name="inline">
     <div class="demo-text">
       <div class="alert_content">
         <code>.form-item--inline</code> (@TODO link to form group)
       </div>
     </div>
   </demovanilla>
-  <demovanilla src="demos/form/check-radio/styled-disabled" name="disabled">
+  <demovanilla src="demos/docs/content/form/check-radio/styled-disabled" name="disabled">
     <div class="demo-text">
       <div class="alert_content">
         <code>[disabled]</code>
@@ -126,21 +126,21 @@ parent: "Form"
 <h3>Modes</h3>
 
 <demo>
-  <demovanilla src="demos/form/check-radio/fake-block" name="block">
+  <demovanilla src="demos/docs/content/form/check-radio/fake-block" name="block">
     <div class="demo-text">
       <div class="alert_content">
         Check and radio design
       </div>
     </div>
   </demovanilla>
-  <demovanilla src="demos/form/check-radio/fake-inline" name="inline">
+  <demovanilla src="demos/docs/content/form/check-radio/fake-inline" name="inline">
     <div class="demo-text">
       <div class="alert_content">
         <code>.form-item--inline</code> (@TODO link to form group)
       </div>
     </div>
   </demovanilla>
-  <demovanilla src="demos/form/check-radio/fake-disabled" name="disabled">
+  <demovanilla src="demos/docs/content/form/check-radio/fake-disabled" name="disabled">
     <div class="demo-text">
       <div class="alert_content">
         <code>[disabled]</code>

@@ -10,6 +10,6 @@ parent: "Form"
 <h2>Items</h2>
 
 <demo>
-  <demovanilla src="demos/form/items/items" name="items">
+  <demovanilla src="demos/docs/content/form/items/items" name="items">
   </demovanilla>
 </demo>

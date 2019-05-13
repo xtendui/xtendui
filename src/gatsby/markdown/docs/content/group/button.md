@@ -42,8 +42,8 @@ parent: "Group"
 <h2>Modes</h2>
 
 <demo>
-  <demovanilla src="demos/group/button/line" name="line">
+  <demovanilla src="demos/docs/content/group/button/line" name="line">
   </demovanilla>
-  <demovanilla src="demos/group/button/stack" name="stack">
+  <demovanilla src="demos/docs/content/group/button/stack" name="stack">
   </demovanilla>
 </demo>

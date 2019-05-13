@@ -88,14 +88,14 @@ categories: []
 <h3>Demos</h2>
 
 <demo>
-  <demovanilla src="demos/test-vanilla" name="vanilla">
+  <demovanilla src="demos/faq/test-vanilla" name="vanilla">
     <div class="demo-text">
       <div class="alert_content">
         Test
       </div>
     </div>
   </demovanilla>
-  <demoreact src="demos/test-react" name="react">
+  <demoreact src="demos/faq/test-react" name="react">
     <div class="demo-text">
       <div class="alert_content">
         Test
@@ -107,14 +107,14 @@ categories: []
 <h3>Iframe demos</h2>
 
 <demo>
-  <div class="demo-item" data-iframe="demos/test-vanilla-iframe" data-name="vanilla">
+  <div class="demo-item" data-iframe="demos/faq/test-vanilla-iframe" data-name="vanilla">
     <div class="demo-text">
       <div class="alert_content">
         Test
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="demos/test-react-iframe" data-name="react">
+  <div class="demo-item" data-iframe="demos/faq/test-react-iframe" data-name="react">
     <div class="demo-text">
       <div class="alert_content">
         Test

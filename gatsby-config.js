@@ -89,14 +89,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `doc`,
-        path: `${__dirname}/src/gatsby/docs/`,
+        path: `${__dirname}/src/gatsby/markdown/docs/`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `faq`,
-        path: `${__dirname}/src/gatsby/faq/`,
+        path: `${__dirname}/src/gatsby/markdown/faq/`,
       },
     },
   ],

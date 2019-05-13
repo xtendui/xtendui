@@ -120,13 +120,13 @@ exports.createPages = ({actions, graphql}) => {
     result.data.allMarkdownRemark.edges.forEach(({node}) => {
       if (node.frontmatter.type === 'faq') {
         createPage({
-          path: node.frontmatter.path,
+          path: node.frontmatter.path, // needs gatsby-source-filesystem resolve name
           component: faqTemplate,
           context: {}
         })
       } else if (node.frontmatter.type === 'docs') {
         createPage({
-          path: node.frontmatter.path,
+          path: node.frontmatter.path, // needs gatsby-source-filesystem resolve name
           component: docTemplate,
           context: {
             parent: node.frontmatter.parent // for query($parent: String) { // put also parent on return graphql
