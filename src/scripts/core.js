@@ -2502,12 +2502,6 @@ class Core {
     if (options.scrollbar) {
       // checks
       Xt.scrollbar.add(self.namespace);
-      // vars
-      let width = Xt.scrollbarWidth();
-      // scrollbar
-      let container = document.documentElement;
-      container.style.paddingRight = width + 'px';
-      container.classList.add('xt-scrollbar');
       // check fixed
       let checks = document.querySelectorAll('.xt-fixed--check > *');
       for (let check of checks) {
@@ -2518,28 +2512,10 @@ class Core {
           check.classList.remove('xt-fixed');
         }
       }
-      // fixed
-      let elements = document.querySelectorAll('.xt-fixed');
-      for (let element of elements) {
-        element.style.paddingRight = '';
-        let style = getComputedStyle(element);
-        if (self.normalizeWidth(element.clientWidth) === '') { // only if full width
-          let padding = style.paddingRight;
-          let str = 'calc(' + padding + ' + ' + width + 'px)';
-          element.classList.add('transition-none');
-          requestAnimationFrame(function () {
-            element.style.paddingRight = str;
-            requestAnimationFrame(function () {
-              element.classList.remove('transition-none');
-            });
-          });
-        }
-      }
-      // backdrop
-      let backdrops = document.querySelectorAll('.backdrop');
-      for (let backdrop of backdrops) {
-        backdrop.style.right = width + 'px';
-      }
+      // scrollbar
+      let container = document.documentElement;
+      container.classList.add('xt-scrollbar');
+      Xt.scrollbarSpaceOn(container);
     }
   }
 
@@ -2556,41 +2532,10 @@ class Core {
       if (!Xt.scrollbar.get().length) {
         // scrollbar
         let container = document.documentElement;
-        container.style.paddingRight = '';
         container.classList.remove('xt-scrollbar');
-        // fixed
-        let elements = document.querySelectorAll('.xt-fixed');
-        for (let element of elements) {
-          element.classList.add('transition-none');
-          requestAnimationFrame(function () {
-            element.style.paddingRight = '';
-            requestAnimationFrame(function () {
-              element.classList.remove('transition-none');
-            });
-          });
-        }
-        // backdrop
-        let backdrops = self.object.querySelectorAll(':scope > .backdrop');
-        for (let backdrop of backdrops) {
-          backdrop.style.right = '';
-        }
+        Xt.scrollbarSpaceOff(container);
       }
     }
-  }
-
-  /**
-   * if full width return '' else return value in px
-   * @param {Number|String} width
-   * @returns {String} Value in px
-   */
-  normalizeWidth(width) {
-    width = parseFloat(width);
-    if (width + Xt.scrollbarWidth() >= window.innerWidth) {
-      width = '';
-    } else {
-      width += 'px';
-    }
-    return width;
   }
 
   //////////////////////
