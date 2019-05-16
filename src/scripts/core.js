@@ -540,7 +540,11 @@ class Core {
     // images
     for (let el of self.elements) {
       let imgs = el.querySelectorAll('img');
-      let imgsLoaded = 0;
+      el.dataset.imgsLoaded = '0';
+      el.dataset.imgsLoadedLength = imgs.length.toString();
+      if (imgs.length > 0 && parseFloat(el.dataset.imgsLoaded) === imgs.length) {
+        requestAnimationFrame(self.eventImgsLoadedHandler.bind(self).bind(self, el));
+      }
       for (let img of imgs) {
         if (!img.complete) {
           let imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
@@ -551,16 +555,17 @@ class Core {
             img.removeEventListener('load', imgLoadHandler);
           });
         } else {
-          imgsLoaded++;
+          el.dataset.imgsLoaded = parseFloat(el.dataset.imgsLoaded) + 1;
         }
-      }
-      if (imgs.length > 0 && imgsLoaded === imgs.length) {
-        requestAnimationFrame(self.eventImgLoadedHandler.bind(self).bind(self, el));
       }
     }
     for (let tr of self.targets) {
       let imgs = tr.querySelectorAll('img');
-      let imgsLoaded = 0;
+      tr.dataset.imgsLoaded = '0';
+      tr.dataset.imgsLoadedLength = imgs.length.toString();
+      if (imgs.length > 0 && parseFloat(tr.dataset.imgsLoaded) === imgs.length) {
+        requestAnimationFrame(self.eventImgsLoadedHandler.bind(self).bind(self, tr));
+      }
       for (let img of imgs) {
         if (!img.complete) {
           let imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
@@ -571,11 +576,8 @@ class Core {
             img.removeEventListener('load', imgLoadHandler);
           });
         } else {
-          imgsLoaded++;
+          tr.dataset.imgsLoaded = parseFloat(tr.dataset.imgsLoaded) + 1;
         }
-      }
-      if (imgs.length > 0 && imgsLoaded === imgs.length) {
-        requestAnimationFrame(self.eventImgLoadedHandler.bind(self).bind(self, tr));
       }
     }
     // wheel
@@ -871,6 +873,21 @@ class Core {
     // listener dispatch
     let detail = self.eDetailSet(e);
     el.dispatchEvent(new CustomEvent('imageLoaded.xt', {detail: detail}));
+  }
+
+  /**
+   * imagesLoaded
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Node|HTMLElement|EventTarget|Window} img
+   * @param {Event} e
+   */
+  eventImgsLoadedHandler(el, img = null, e = null) {
+    let self = this;
+    // listener dispatch
+    if (parseFloat(el.dataset.imgsLoaded) === parseFloat(el.dataset.imgsLoadedLength)) {
+      let detail = self.eDetailSet(e);
+      el.dispatchEvent(new CustomEvent('imagesLoaded.xt', {detail: detail}));
+    }
   }
 
   //////////////////////
