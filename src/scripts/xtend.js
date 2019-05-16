@@ -1030,6 +1030,76 @@ if (typeof window !== 'undefined') {
   };
 
   /**
+   * if full width return '' else return value in px
+   * @param {Number|String} width
+   * @returns {String} Value in px
+   */
+  Xt.normalizeWidth = function (width) {
+    width = parseFloat(width);
+    if (width + Xt.scrollbarWidth() >= window.innerWidth) {
+      width = '';
+    } else {
+      width += 'px';
+    }
+    return width;
+  };
+
+  /**
+   * fix scrollbar spacing when changing overflow adding padding
+   * @param {Array|Node|HTMLElement|EventTarget|Window} elements Elements to add padding
+   */
+  Xt.scrollbarSpaceOn = function (container) {
+    let width = Xt.scrollbarWidth();
+    container.style.paddingRight = width + 'px';
+    // backdrop
+    let backdrops = container.querySelectorAll('.backdrop');
+    for (let backdrop of backdrops) {
+      backdrop.style.right = width + 'px';
+    }
+    // xt-fixed
+    let elements = container.querySelectorAll('.xt-fixed');
+    for (let element of elements) {
+      element.style.paddingRight = '';
+      let style = getComputedStyle(element);
+      if (Xt.normalizeWidth(element.clientWidth) === '') { // only if full width
+        let padding = style.paddingRight;
+        let str = 'calc(' + padding + ' + ' + width + 'px)';
+        element.classList.add('transition-none');
+        requestAnimationFrame(function () {
+          element.style.paddingRight = str;
+          requestAnimationFrame(function () {
+            element.classList.remove('transition-none');
+          });
+        });
+      }
+    }
+  };
+
+  /**
+   * fix scrollbar spacing when changing overflow adding padding
+   * @param {Array} elements Elements to remove padding
+   */
+  Xt.scrollbarSpaceOff = function (container) {
+    container.style.paddingRight = '';
+    // backdrop
+    let backdrops = container.querySelectorAll('.backdrop');
+    for (let backdrop of backdrops) {
+      backdrop.style.right = '';
+    }
+    // xt-fixed
+    let elements = container.querySelectorAll('.xt-fixed');
+    for (let element of elements) {
+      element.classList.add('transition-none');
+      requestAnimationFrame(function () {
+        element.style.paddingRight = '';
+        requestAnimationFrame(function () {
+          element.classList.remove('transition-none');
+        });
+      });
+    }
+  };
+
+  /**
    * get transition or animation time
    * @param {Node|HTMLElement|EventTarget|Window} el Element animating
    * @param {Number} timing Force duration in milliseconds

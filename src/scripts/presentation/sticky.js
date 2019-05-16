@@ -334,7 +334,7 @@ export class Sticky extends Core {
         el.style.transform = 'translateY(' + add + 'px)';
       }
       // fix position fixed width 100% of parent
-      let width = self.normalizeWidth(tr.clientWidth);
+      let width = Xt.normalizeWidth(tr.clientWidth);
       if (el.style.width !== width) {
         el.style.width = width;
       }
