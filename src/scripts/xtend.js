@@ -54,6 +54,7 @@ if (typeof window !== 'undefined') {
   Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
   Xt.resizeDelay = 100;
   Xt.scrollDelay = false;
+  Xt.imagesDelay = 50;
   Xt.focusables = 'a, button, details, input, iframe, select, textarea';
   Xt.components = [
     {'name': 'xt-core', 'class': Xt.Core},

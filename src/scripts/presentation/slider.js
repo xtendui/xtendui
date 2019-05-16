@@ -159,16 +159,13 @@ export class Slider extends Core {
       if (!Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPosDone') && Xt.visible(slide)) {
         // vars
         let targets = self.getTargets(slide);
-        let slideLeft = slide.offsetLeft;
-        let slideWidth = slide.offsetWidth;
-        let slideHeight = slide.offsetHeight;
+        let slideLeft = Infinity;
+        let slideWidth = 0;
+        let slideHeight = 0;
         // group
         let group = slide.getAttribute('data-xt-group');
         if (group) {
           // vars
-          slideLeft = Infinity;
-          slideWidth = 0;
-          slideHeight = 0;
           for (let [i, target] of targets.entries()) {
             slideLeft = target.offsetLeft < slideLeft ? slide.offsetLeft : slideLeft;
             slideWidth += target.offsetWidth;
@@ -187,6 +184,9 @@ export class Slider extends Core {
             Xt.dataStorage.set(target, self.componentNamespace + 'groupHeight', slideHeight);
           }
         } else {
+          slideLeft = slide.offsetLeft;
+          slideWidth = slide.offsetWidth;
+          slideHeight = slide.offsetHeight;
           Xt.dataStorage.set(slide, self.componentNamespace + 'GroupPosDone', true);
         }
         // pos with alignment
@@ -436,10 +436,13 @@ export class Slider extends Core {
   eventImgLoadedHandler(el, img = null, e = null) {
     super.eventImgLoadedHandler(el, img, e);
     let self = this;
-    // autoHeight
-    if (self.autoHeight) {
-      self.eventAutoHeight(el);
-    }
+    // delay
+    clearTimeout(Xt.dataStorage.get(self.object, 'xt' + self.componentNamespace + 'ImgLoaded' + 'Timeout'));
+      Xt.dataStorage.set(self.object, 'xt' + self.componentNamespace + 'ImgLoaded' + 'Timeout', setTimeout(function () {
+      // reinit scope and on
+      self.initScope();
+      self.eventOn(self.elements[self.currentIndex], true);
+    }, Xt.imagesDelay));
   }
 
   //////////////////////
