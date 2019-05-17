@@ -143,25 +143,14 @@
 }
 
 .btn--link {
-  .link--none();
+  .btn--nodesign();
+  .btn--noeffect();
   // reset
   font-family: inherit;
   font-style: inherit;
   font-weight: inherit;
   letter-spacing: inherit;
   text-transform: inherit;
-  border-radius: 0;
-  &@{btn--design} {
-    border-width: 0;
-    background: transparent !important;
-  }
-  // styles
-  color: @gray--500;
-  &:hover, &.hover, &:active, &.active, &:focus {
-    color: darken(@primary, @perc--xs);
-  }
-  // effect
-  .btn--noeffect();
 }
 
 // size
