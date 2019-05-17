@@ -23,7 +23,8 @@
   flex-direction: row;
 }
 
-.list--block {
+.list-block {
+  .list--base();
   flex-wrap: nowrap;
   flex-direction: column;
 }
@@ -32,15 +33,7 @@
 
 .list_btn(@rules) {
   > li:not(.custom) {
-    > .btn {
-      @rules();
-    }
-  }
-}
-
-.list_btn--all(@rules) {
-  > li {
-    > .btn {
+    > a, > button {
       @rules();
     }
   }

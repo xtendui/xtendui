@@ -25,8 +25,7 @@ a img {
   outline: 0;
 }
 a,
-button,
-.alink {
+button {
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
@@ -888,9 +887,24 @@ input[type="radio"].unstyled ~ .form-label.disabled:after {
 .list > li > * {
   flex: 1 1 auto;
 }
-.list--block {
+.list-block {
+  display: flex;
+  cursor: default;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   flex-wrap: nowrap;
   flex-direction: column;
+}
+.list-block > * {
+  margin: 0;
+}
+.list-block > li {
+  display: flex;
+  align-items: flex-start;
+}
+.list-block > li > * {
+  flex: 1 1 auto;
 }
 .card {
   display: inline-block;
@@ -912,28 +926,6 @@ input[type="radio"].unstyled ~ .form-label.disabled:after {
 .card > .card_content {
   position: relative;
   overflow: hidden;
-}
-a,
-.alink,
-.btn--link {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-}
-[disabled],
-.disabled {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: default;
-  pointer-events: none;
-}
-a[href]:not([href^='#']).active {
-  pointer-events: none;
 }
 .btn {
   -webkit-user-select: none;
@@ -1221,6 +1213,27 @@ div.btn {
 }
 .overlay--disable > .backdrop {
   display: none !important;
+}
+a:not(.btn),
+.btn--link {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+[disabled],
+.disabled {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+a[href]:not([href^='#']).active {
+  pointer-events: none;
 }
 .slider {
   position: relative;
@@ -2118,15 +2131,18 @@ a.links--none,
   justify-content: flex-end !important;
   text-align: right !important;
 }
-.list--left > li:not(.custom) > .btn > span {
+.list--left > li:not(.custom) > a > span,
+.list--left > li:not(.custom) > button > span {
   justify-content: flex-start !important;
   text-align: left !important;
 }
-.list--center > li:not(.custom) > .btn > span {
+.list--center > li:not(.custom) > a > span,
+.list--center > li:not(.custom) > button > span {
   justify-content: center !important;
   text-align: center !important;
 }
-.list--right > li:not(.custom) > .btn > span {
+.list--right > li:not(.custom) > a > span,
+.list--right > li:not(.custom) > button > span {
   justify-content: flex-end !important;
   text-align: right !important;
 }
@@ -3223,10 +3239,6 @@ pre code {
 .text--inverse h6 {
   color: #fff;
 }
-.text--inverse code {
-  background: rgba(255, 255, 255, 0.18);
-  color: #fff;
-}
 ul,
 ol {
   margin-bottom: 1rem;
@@ -3982,43 +3994,415 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
 .list > * {
   margin: 0.5rem 0.5rem;
 }
-.list > li:not(.custom) > .btn > span {
-  justify-content: flex-start;
-  text-align: left;
-}
-.list > li:not(.custom) > .btn {
+.list > li:not(.custom) > a,
+.list > li:not(.custom) > button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+  padding: 0;
+  z-index: 0;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  padding: 0.6em 1.2em;
+  font-size: 1.325rem;
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(1,0,.64,1);
   text-decoration: none;
   color: rgba(52, 58, 64, 0.8);
 }
-.list > li:not(.custom) > .btn:hover,
-.list > li:not(.custom) > .btn.hover,
-.list > li:not(.custom) > .btn:active,
-.list > li:not(.custom) > .btn.active,
-.list > li:not(.custom) > .btn:focus {
+.list > li:not(.custom) > a:hover,
+.list > li:not(.custom) > button:hover,
+.list > li:not(.custom) > a.hover,
+.list > li:not(.custom) > button.hover,
+.list > li:not(.custom) > a:active,
+.list > li:not(.custom) > button:active,
+.list > li:not(.custom) > a.active,
+.list > li:not(.custom) > button.active,
+.list > li:not(.custom) > a:focus,
+.list > li:not(.custom) > button:focus {
+  z-index: 2;
+}
+.list > li:not(.custom) > a.out,
+.list > li:not(.custom) > button.out {
+  z-index: 1;
+}
+.list > li:not(.custom) > a > span,
+.list > li:not(.custom) > button > span {
+  position: relative;
+}
+.list > li:not(.custom) > a > span,
+.list > li:not(.custom) > button > span {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  min-width: 100%;
+}
+.list > li:not(.custom) > a:before,
+.list > li:not(.custom) > button:before {
+  content: '';
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}
+.list > li:not(.custom) > a,
+.list > li:not(.custom) > button,
+.list > li:not(.custom) > a:before,
+.list > li:not(.custom) > button:before {
+  border-radius: 4px;
+}
+.list > li:not(.custom) > a > span,
+.list > li:not(.custom) > button > span {
+  justify-content: center;
+  text-align: center;
+}
+.list > li:not(.custom) > a:hover,
+.list > li:not(.custom) > button:hover,
+.list > li:not(.custom) > a.hover,
+.list > li:not(.custom) > button.hover,
+.list > li:not(.custom) > a:active,
+.list > li:not(.custom) > button:active,
+.list > li:not(.custom) > a.active,
+.list > li:not(.custom) > button.active,
+.list > li:not(.custom) > a:focus,
+.list > li:not(.custom) > button:focus {
   text-decoration: none;
 }
-.list > li:not(.custom) > .btn:before {
+.list > li:not(.custom) > a:before,
+.list > li:not(.custom) > button:before {
   border-color: #edf3f6;
   background: #edf3f6;
 }
-.list > li:not(.custom) > .btn:hover,
-.list > li:not(.custom) > .btn.hover,
-.list > li:not(.custom) > .btn:active,
-.list > li:not(.custom) > .btn.active,
-.list > li:not(.custom) > .btn:focus {
+.list > li:not(.custom) > a:hover,
+.list > li:not(.custom) > button:hover,
+.list > li:not(.custom) > a.hover,
+.list > li:not(.custom) > button.hover,
+.list > li:not(.custom) > a:active,
+.list > li:not(.custom) > button:active,
+.list > li:not(.custom) > a.active,
+.list > li:not(.custom) > button.active,
+.list > li:not(.custom) > a:focus,
+.list > li:not(.custom) > button:focus {
   color: #343a40;
 }
-.list > li:not(.custom) > .btn:hover:before,
-.list > li:not(.custom) > .btn.hover:before,
-.list > li:not(.custom) > .btn:active:before,
-.list > li:not(.custom) > .btn.active:before,
-.list > li:not(.custom) > .btn:focus:before {
+.list > li:not(.custom) > a:hover:before,
+.list > li:not(.custom) > button:hover:before,
+.list > li:not(.custom) > a.hover:before,
+.list > li:not(.custom) > button.hover:before,
+.list > li:not(.custom) > a:active:before,
+.list > li:not(.custom) > button:active:before,
+.list > li:not(.custom) > a.active:before,
+.list > li:not(.custom) > button.active:before,
+.list > li:not(.custom) > a:focus:before,
+.list > li:not(.custom) > button:focus:before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
-.list > li:not(.custom) > .btn:active:before,
-.list > li:not(.custom) > .btn.active:before {
+.list > li:not(.custom) > a:active:before,
+.list > li:not(.custom) > button:active:before,
+.list > li:not(.custom) > a.active:before,
+.list > li:not(.custom) > button.active:before {
   box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+}
+.list > li:not(.custom) > a:before,
+.list > li:not(.custom) > button:before {
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(1,0,.64,1);
+}
+.list > li:not(.custom) > a:active,
+.list > li:not(.custom) > button:active,
+.list > li:not(.custom) > a.active,
+.list > li:not(.custom) > button.active {
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(.36,0,0,1);
+}
+.list > li:not(.custom) > a:active:before,
+.list > li:not(.custom) > button:active:before,
+.list > li:not(.custom) > a.active:before,
+.list > li:not(.custom) > button.active:before {
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(.36,0,0,1);
+}
+.list > li:not(.custom) > a:hover,
+.list > li:not(.custom) > button:hover,
+.list > li:not(.custom) > a.hover,
+.list > li:not(.custom) > button.hover,
+.list > li:not(.custom) > a:active,
+.list > li:not(.custom) > button:active,
+.list > li:not(.custom) > a.active,
+.list > li:not(.custom) > button.active,
+.list > li:not(.custom) > a:focus,
+.list > li:not(.custom) > button:focus {
+  text-decoration: none;
+}
+.list > li:not(.custom) > a:before,
+.list > li:not(.custom) > button:before {
+  border-color: #edf3f6;
+  background: #edf3f6;
+}
+.list > li:not(.custom) > a:hover,
+.list > li:not(.custom) > button:hover,
+.list > li:not(.custom) > a.hover,
+.list > li:not(.custom) > button.hover,
+.list > li:not(.custom) > a:active,
+.list > li:not(.custom) > button:active,
+.list > li:not(.custom) > a.active,
+.list > li:not(.custom) > button.active,
+.list > li:not(.custom) > a:focus,
+.list > li:not(.custom) > button:focus {
+  color: #343a40;
+}
+.list > li:not(.custom) > a:hover:before,
+.list > li:not(.custom) > button:hover:before,
+.list > li:not(.custom) > a.hover:before,
+.list > li:not(.custom) > button.hover:before,
+.list > li:not(.custom) > a:active:before,
+.list > li:not(.custom) > button:active:before,
+.list > li:not(.custom) > a.active:before,
+.list > li:not(.custom) > button.active:before,
+.list > li:not(.custom) > a:focus:before,
+.list > li:not(.custom) > button:focus:before {
+  border-color: #cbdce5;
+  background: #dce8ee;
+}
+.list > li:not(.custom) > a:active:before,
+.list > li:not(.custom) > button:active:before,
+.list > li:not(.custom) > a.active:before,
+.list > li:not(.custom) > button.active:before {
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+}
+.list > li:not(.custom) > a > span,
+.list > li:not(.custom) > button > span {
+  justify-content: flex-start;
+  text-align: left;
+}
+.list-block {
+  margin: -0.5rem -0.5rem;
+}
+.list-block > * {
+  margin: 0.5rem 0.5rem;
+}
+.list-block > li:not(.custom) > a,
+.list-block > li:not(.custom) > button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+  padding: 0;
+  z-index: 0;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  padding: 0.6em 1.2em;
+  font-size: 1.325rem;
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(1,0,.64,1);
+  text-decoration: none;
+  color: rgba(52, 58, 64, 0.8);
+}
+.list-block > li:not(.custom) > a:hover,
+.list-block > li:not(.custom) > button:hover,
+.list-block > li:not(.custom) > a.hover,
+.list-block > li:not(.custom) > button.hover,
+.list-block > li:not(.custom) > a:active,
+.list-block > li:not(.custom) > button:active,
+.list-block > li:not(.custom) > a.active,
+.list-block > li:not(.custom) > button.active,
+.list-block > li:not(.custom) > a:focus,
+.list-block > li:not(.custom) > button:focus {
+  z-index: 2;
+}
+.list-block > li:not(.custom) > a.out,
+.list-block > li:not(.custom) > button.out {
+  z-index: 1;
+}
+.list-block > li:not(.custom) > a > span,
+.list-block > li:not(.custom) > button > span {
+  position: relative;
+}
+.list-block > li:not(.custom) > a > span,
+.list-block > li:not(.custom) > button > span {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  min-width: 100%;
+}
+.list-block > li:not(.custom) > a:before,
+.list-block > li:not(.custom) > button:before {
+  content: '';
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}
+.list-block > li:not(.custom) > a,
+.list-block > li:not(.custom) > button,
+.list-block > li:not(.custom) > a:before,
+.list-block > li:not(.custom) > button:before {
+  border-radius: 4px;
+}
+.list-block > li:not(.custom) > a > span,
+.list-block > li:not(.custom) > button > span {
+  justify-content: center;
+  text-align: center;
+}
+.list-block > li:not(.custom) > a:hover,
+.list-block > li:not(.custom) > button:hover,
+.list-block > li:not(.custom) > a.hover,
+.list-block > li:not(.custom) > button.hover,
+.list-block > li:not(.custom) > a:active,
+.list-block > li:not(.custom) > button:active,
+.list-block > li:not(.custom) > a.active,
+.list-block > li:not(.custom) > button.active,
+.list-block > li:not(.custom) > a:focus,
+.list-block > li:not(.custom) > button:focus {
+  text-decoration: none;
+}
+.list-block > li:not(.custom) > a:before,
+.list-block > li:not(.custom) > button:before {
+  border-color: #edf3f6;
+  background: #edf3f6;
+}
+.list-block > li:not(.custom) > a:hover,
+.list-block > li:not(.custom) > button:hover,
+.list-block > li:not(.custom) > a.hover,
+.list-block > li:not(.custom) > button.hover,
+.list-block > li:not(.custom) > a:active,
+.list-block > li:not(.custom) > button:active,
+.list-block > li:not(.custom) > a.active,
+.list-block > li:not(.custom) > button.active,
+.list-block > li:not(.custom) > a:focus,
+.list-block > li:not(.custom) > button:focus {
+  color: #343a40;
+}
+.list-block > li:not(.custom) > a:hover:before,
+.list-block > li:not(.custom) > button:hover:before,
+.list-block > li:not(.custom) > a.hover:before,
+.list-block > li:not(.custom) > button.hover:before,
+.list-block > li:not(.custom) > a:active:before,
+.list-block > li:not(.custom) > button:active:before,
+.list-block > li:not(.custom) > a.active:before,
+.list-block > li:not(.custom) > button.active:before,
+.list-block > li:not(.custom) > a:focus:before,
+.list-block > li:not(.custom) > button:focus:before {
+  border-color: #cbdce5;
+  background: #dce8ee;
+}
+.list-block > li:not(.custom) > a:active:before,
+.list-block > li:not(.custom) > button:active:before,
+.list-block > li:not(.custom) > a.active:before,
+.list-block > li:not(.custom) > button.active:before {
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+}
+.list-block > li:not(.custom) > a:before,
+.list-block > li:not(.custom) > button:before {
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(1,0,.64,1);
+}
+.list-block > li:not(.custom) > a:active,
+.list-block > li:not(.custom) > button:active,
+.list-block > li:not(.custom) > a.active,
+.list-block > li:not(.custom) > button.active {
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(.36,0,0,1);
+}
+.list-block > li:not(.custom) > a:active:before,
+.list-block > li:not(.custom) > button:active:before,
+.list-block > li:not(.custom) > a.active:before,
+.list-block > li:not(.custom) > button.active:before {
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(.36,0,0,1);
+}
+.list-block > li:not(.custom) > a:hover,
+.list-block > li:not(.custom) > button:hover,
+.list-block > li:not(.custom) > a.hover,
+.list-block > li:not(.custom) > button.hover,
+.list-block > li:not(.custom) > a:active,
+.list-block > li:not(.custom) > button:active,
+.list-block > li:not(.custom) > a.active,
+.list-block > li:not(.custom) > button.active,
+.list-block > li:not(.custom) > a:focus,
+.list-block > li:not(.custom) > button:focus {
+  text-decoration: none;
+}
+.list-block > li:not(.custom) > a:before,
+.list-block > li:not(.custom) > button:before {
+  border-color: #edf3f6;
+  background: #edf3f6;
+}
+.list-block > li:not(.custom) > a:hover,
+.list-block > li:not(.custom) > button:hover,
+.list-block > li:not(.custom) > a.hover,
+.list-block > li:not(.custom) > button.hover,
+.list-block > li:not(.custom) > a:active,
+.list-block > li:not(.custom) > button:active,
+.list-block > li:not(.custom) > a.active,
+.list-block > li:not(.custom) > button.active,
+.list-block > li:not(.custom) > a:focus,
+.list-block > li:not(.custom) > button:focus {
+  color: #343a40;
+}
+.list-block > li:not(.custom) > a:hover:before,
+.list-block > li:not(.custom) > button:hover:before,
+.list-block > li:not(.custom) > a.hover:before,
+.list-block > li:not(.custom) > button.hover:before,
+.list-block > li:not(.custom) > a:active:before,
+.list-block > li:not(.custom) > button:active:before,
+.list-block > li:not(.custom) > a.active:before,
+.list-block > li:not(.custom) > button.active:before,
+.list-block > li:not(.custom) > a:focus:before,
+.list-block > li:not(.custom) > button:focus:before {
+  border-color: #cbdce5;
+  background: #dce8ee;
+}
+.list-block > li:not(.custom) > a:active:before,
+.list-block > li:not(.custom) > button:active:before,
+.list-block > li:not(.custom) > a.active:before,
+.list-block > li:not(.custom) > button.active:before {
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+}
+.list-block > li:not(.custom) > a > span,
+.list-block > li:not(.custom) > button > span {
+  justify-content: flex-start;
+  text-align: left;
 }
 .list--drop {
   flex-wrap: nowrap;
@@ -4028,7 +4412,8 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
 .list--drop > * {
   margin: 0 0;
 }
-.list--drop > li:not(.custom) > .btn {
+.list--drop > li:not(.custom) > a,
+.list--drop > li:not(.custom) > button {
   padding: 0.6em 1.2em;
   font-size: 1.2rem;
   border-radius: 0;
@@ -4036,12 +4421,13 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
   padding-right: 2.2rem;
   white-space: nowrap;
 }
-.list--drop > li:not(.custom) > .btn:before {
+.list--drop > li:not(.custom) > a:before,
+.list--drop > li:not(.custom) > button:before {
   border-radius: 0;
 }
 /*
-.list--secondary-empty {
-  .list_btn({ .btn--secondary-empty(); });
+.list--secondary {
+  .list_btn({ .btn--secondary(); });
 }
 */
 /*
@@ -4102,36 +4488,22 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
 .card--primary > .card_content h6 {
   color: #fff;
 }
-.card--primary > .card_content code {
-  background: rgba(255, 255, 255, 0.18);
-  color: #fff;
-}
 .card--primary > .card_content a:not(.btn),
-.card--primary > .card_content .alink,
 .card--primary > .card_content .btn--link {
   color: #fff;
   text-decoration: underline;
 }
 .card--primary > .card_content a:not(.btn):hover,
-.card--primary > .card_content .alink:hover,
 .card--primary > .card_content .btn--link:hover,
 .card--primary > .card_content a:not(.btn).hover,
-.card--primary > .card_content .alink.hover,
 .card--primary > .card_content .btn--link.hover,
 .card--primary > .card_content a:not(.btn):active,
-.card--primary > .card_content .alink:active,
 .card--primary > .card_content .btn--link:active,
 .card--primary > .card_content a:not(.btn).active,
-.card--primary > .card_content .alink.active,
 .card--primary > .card_content .btn--link.active,
 .card--primary > .card_content a:not(.btn):focus,
-.card--primary > .card_content .alink:focus,
 .card--primary > .card_content .btn--link:focus {
   color: #f2f2f2;
-}
-.card--primary > .card_content .btn--primary-empty,
-.card--primary > .card_content .btn--secondary-empty {
-  color: #fff !important;
 }
 .card--secondary > .card_design {
   border-color: #edf3f6;
@@ -4195,365 +4567,6 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
 .card--none-y > .card_content {
   padding-top: 0;
   padding-bottom: 0;
-}
-.link--underline {
-  text-decoration: none;
-}
-.link--underline:hover,
-.link--underline.hover,
-.link--underline:active,
-.link--underline.active,
-.link--underline:focus {
-  text-decoration: underline;
-}
-.link--none {
-  text-decoration: none;
-}
-.link--none:hover,
-.link--none.hover,
-.link--none:active,
-.link--none.active,
-.link--none:focus {
-  text-decoration: none;
-}
-.text--inverse a:not(.btn),
-.text--inverse .alink,
-.text--inverse .btn--link {
-  color: #fff;
-  text-decoration: underline;
-}
-.text--inverse a:not(.btn):hover,
-.text--inverse .alink:hover,
-.text--inverse .btn--link:hover,
-.text--inverse a:not(.btn).hover,
-.text--inverse .alink.hover,
-.text--inverse .btn--link.hover,
-.text--inverse a:not(.btn):active,
-.text--inverse .alink:active,
-.text--inverse .btn--link:active,
-.text--inverse a:not(.btn).active,
-.text--inverse .alink.active,
-.text--inverse .btn--link.active,
-.text--inverse a:not(.btn):focus,
-.text--inverse .alink:focus,
-.text--inverse .btn--link:focus {
-  color: #f2f2f2;
-}
-.text--inverse .btn--primary-empty,
-.text--inverse .btn--secondary-empty {
-  color: #fff !important;
-}
-a,
-.alink {
-  text-decoration: none;
-  color: #7367F0;
-  transition-property: color;
-  transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(1,0,.64,1);
-}
-a:hover,
-.alink:hover,
-a.hover,
-.alink.hover,
-a:active,
-.alink:active,
-a.active,
-.alink.active,
-a:focus,
-.alink:focus {
-  text-decoration: underline;
-}
-a:hover,
-.alink:hover,
-a.hover,
-.alink.hover,
-a:active,
-.alink:active,
-a.active,
-.alink.active,
-a:focus,
-.alink:focus {
-  color: #5e50ee;
-}
-a:hover,
-.alink:hover,
-a.hover,
-.alink.hover,
-a:active,
-.alink:active,
-a.active,
-.alink.active,
-a:focus,
-.alink:focus {
-  transition-property: color;
-  transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(.36,0,0,1);
-}
-[disabled],
-.disabled {
-  opacity: 0.75;
-}
-.caret > span {
-  justify-content: space-between;
-}
-.caret > span:after {
-  display: inline-block;
-  vertical-align: middle;
-  align-self: center;
-  position: relative;
-  font-size: 1em;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: inherit;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: 'xtend';
-  content: '\e900';
-  font-size: 0.5em;
-}
-img.caret > span:after {
-  top: -0.1em;
-  width: auto;
-  height: 1em;
-}
-.caret > span:after {
-  margin-left: 0.75em;
-}
-.caret.active > span:after {
-  display: inline-block;
-  vertical-align: middle;
-  align-self: center;
-  position: relative;
-  font-size: 1em;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: inherit;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: 'xtend';
-  content: '\e903';
-  font-size: 0.5em;
-}
-img.caret.active > span:after {
-  top: -0.1em;
-  width: auto;
-  height: 1em;
-}
-.caret.active > span:after {
-  opacity: 0;
-  animation-name: anim-y-inverse--in;
-  animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36,0,0,1);
-  animation-fill-mode: forwards;
-}
-.caret.out > span:after {
-  opacity: 0;
-  animation-name: anim-y--in;
-  animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36,0,0,1);
-  animation-fill-mode: forwards;
-}
-.caret.caret--inverse > span:after {
-  display: inline-block;
-  vertical-align: middle;
-  align-self: center;
-  position: relative;
-  font-size: 1em;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: inherit;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: 'xtend';
-  content: '\e903';
-  font-size: 0.5em;
-}
-img.caret.caret--inverse > span:after {
-  top: -0.1em;
-  width: auto;
-  height: 1em;
-}
-.caret.caret--inverse.active > span:after {
-  display: inline-block;
-  vertical-align: middle;
-  align-self: center;
-  position: relative;
-  font-size: 1em;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: inherit;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: 'xtend';
-  content: '\e900';
-  font-size: 0.5em;
-}
-img.caret.caret--inverse.active > span:after {
-  top: -0.1em;
-  width: auto;
-  height: 1em;
-}
-.caret.caret--inverse.active > span:after {
-  opacity: 0;
-  animation-name: anim-y--in;
-  animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36,0,0,1);
-  animation-fill-mode: forwards;
-}
-.caret.caret--inverse.out > span:after {
-  opacity: 0;
-  animation-name: anim-y-inverse--in;
-  animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36,0,0,1);
-  animation-fill-mode: forwards;
-}
-.caret.caret--horizontal > span:after {
-  display: inline-block;
-  vertical-align: middle;
-  align-self: center;
-  position: relative;
-  font-size: 1em;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: inherit;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: 'xtend';
-  content: '\e902';
-  font-size: 0.5em;
-}
-img.caret.caret--horizontal > span:after {
-  top: -0.1em;
-  width: auto;
-  height: 1em;
-}
-.caret.caret--horizontal.active > span:after {
-  display: inline-block;
-  vertical-align: middle;
-  align-self: center;
-  position: relative;
-  font-size: 1em;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: inherit;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: 'xtend';
-  content: '\e901';
-  font-size: 0.5em;
-}
-img.caret.caret--horizontal.active > span:after {
-  top: -0.1em;
-  width: auto;
-  height: 1em;
-}
-.caret.caret--horizontal.active > span:after {
-  opacity: 0;
-  animation-name: anim-x-inverse--in;
-  animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36,0,0,1);
-  animation-fill-mode: forwards;
-}
-.caret.caret--horizontal.out > span:after {
-  opacity: 0;
-  animation-name: anim-x--in;
-  animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36,0,0,1);
-  animation-fill-mode: forwards;
-}
-.caret.caret--horizontal.caret--inverse > span:before {
-  display: inline-block;
-  vertical-align: middle;
-  align-self: center;
-  position: relative;
-  font-size: 1em;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: inherit;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: 'xtend';
-  content: '\e901';
-  font-size: 0.5em;
-}
-img.caret.caret--horizontal.caret--inverse > span:before {
-  top: -0.1em;
-  width: auto;
-  height: 1em;
-}
-.caret.caret--horizontal.caret--inverse > span:after {
-  content: '';
-}
-.caret.caret--horizontal.caret--inverse > span:before {
-  margin-right: 0.75em;
-}
-.caret.caret--horizontal.caret--inverse.active > span:before {
-  display: inline-block;
-  vertical-align: middle;
-  align-self: center;
-  position: relative;
-  font-size: 1em;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: inherit;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: 'xtend';
-  content: '\e902';
-  font-size: 0.5em;
-}
-img.caret.caret--horizontal.caret--inverse.active > span:before {
-  top: -0.1em;
-  width: auto;
-  height: 1em;
-}
-.caret.caret--horizontal.caret--inverse.active > span:before {
-  opacity: 0;
-  animation-name: anim-x--in;
-  animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36,0,0,1);
-  animation-fill-mode: forwards;
-}
-.caret.caret--horizontal.caret--inverse.out > span:before {
-  opacity: 0;
-  animation-name: anim-x-inverse--in;
-  animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(.36,0,0,1);
-  animation-fill-mode: forwards;
-}
-html.xt-focus:not(.xt-focus--disable) :focus {
-  outline-color: #4d90fe;
-}
-html.xt-focus:not(.xt-focus--disable) input[type="checkbox"]:focus ~ .form-label:before,
-html.xt-focus:not(.xt-focus--disable) input[type="radio"]:focus ~ .form-label:before {
-  outline-color: #4d90fe;
-  outline-offset: -2px;
-  outline-style: auto;
-  outline-width: 5px;
 }
 .btn {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -4777,32 +4790,14 @@ html.xt-focus:not(.xt-focus--disable) input[type="radio"]:focus ~ .form-label:be
   box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
 }
 .btn--link {
-  text-decoration: none;
   font-family: inherit;
   font-style: inherit;
   font-weight: inherit;
   letter-spacing: inherit;
   text-transform: inherit;
-  color: #626c76;
-}
-.btn--link:hover,
-.btn--link.hover,
-.btn--link:active,
-.btn--link.active,
-.btn--link:focus {
-  text-decoration: none;
 }
 .btn--link:before {
-  border-radius: 0;
-  border-width: 0;
-  background: transparent !important;
-}
-.btn--link:hover,
-.btn--link.hover,
-.btn--link:active,
-.btn--link.active,
-.btn--link:focus {
-  color: #5e50ee;
+  display: none;
 }
 .btn--link:active:before,
 .btn--link.active:before {
@@ -4983,7 +4978,8 @@ img.btn--close > span:after {
 .drop > .drop_inner > .drop_design {
   box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
 }
-.drop > .drop_inner > .drop_content > .list {
+.drop > .drop_inner > .drop_content > .list,
+.drop > .drop_inner > .drop_content > .list-block {
   padding-top: 1.3rem;
   padding-bottom: 1.3rem;
   min-width: 18rem;
@@ -5002,38 +4998,57 @@ img.btn--close > span:after {
   border-color: #f2f2f2;
   background: #fff;
 }
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn {
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button {
   text-decoration: none;
   color: #7367F0;
 }
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active,
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus {
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:hover,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:hover,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.hover,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.hover,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:active,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:active,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.active,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.active,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:focus,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:focus {
   text-decoration: none;
 }
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:before {
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:before {
   border-color: transparent;
   background: transparent;
 }
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active,
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus {
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:hover,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:hover,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.hover,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.hover,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:active,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:active,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.active,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.active,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:focus,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:focus {
   color: #fff;
 }
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover:before,
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover:before,
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active:before,
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active:before,
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus:before {
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:hover:before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:hover:before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.hover:before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.hover:before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:active:before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:active:before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.active:before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.active:before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:focus:before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:focus:before {
   border-color: #7367F0;
   background: #887ef2;
 }
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active:before,
-.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active:before {
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:active:before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:active:before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.active:before,
+.drop > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.active:before {
   box-shadow: 0 0.1rem 1rem rgba(115, 103, 240, 0.25), 0 0.2rem 2rem rgba(115, 103, 240, 0.4);
 }
 .drop_outer,
@@ -5106,38 +5121,57 @@ img.btn--close > span:after {
   border-color: #5e50ee;
   background: #7367F0;
 }
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn {
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.8);
 }
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus {
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:hover,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:hover,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.hover,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.hover,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:active,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:active,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.active,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.active,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:focus,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:focus {
   text-decoration: none;
 }
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:before {
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:before {
   border-color: #7367F0;
   background: #7367F0;
 }
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus {
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:hover,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:hover,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.hover,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.hover,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:active,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:active,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.active,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.active,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:focus,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:focus {
   color: #fff;
 }
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover:before,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover:before,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active:before,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active:before,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus:before {
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:hover:before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:hover:before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.hover:before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.hover:before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:active:before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:active:before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.active:before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.active:before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:focus:before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:focus:before {
   border-color: #7367F0;
   background: #887ef2;
 }
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active:before,
-.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active:before {
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:active:before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:active:before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.active:before,
+.drop--primary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.active:before {
   box-shadow: 0 0.1rem 1rem rgba(115, 103, 240, 0.25), 0 0.2rem 2rem rgba(115, 103, 240, 0.4);
 }
 .drop--secondary > .drop_inner {
@@ -5147,38 +5181,57 @@ img.btn--close > span:after {
   border-color: #dce8ee;
   background: #edf3f6;
 }
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn {
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button {
   text-decoration: none;
   color: rgba(52, 58, 64, 0.8);
 }
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus {
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:hover,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:hover,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.hover,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.hover,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:active,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:active,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.active,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.active,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:focus,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:focus {
   text-decoration: none;
 }
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:before {
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:before {
   border-color: #edf3f6;
   background: #edf3f6;
 }
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus {
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:hover,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:hover,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.hover,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.hover,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:active,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:active,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.active,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.active,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:focus,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:focus {
   color: #343a40;
 }
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover:before,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover:before,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active:before,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active:before,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus:before {
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:hover:before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:hover:before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.hover:before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.hover:before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:active:before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:active:before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.active:before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.active:before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:focus:before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:focus:before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active:before,
-.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active:before {
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:active:before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:active:before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.active:before,
+.drop--secondary > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.active:before {
   box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
 }
 .drop--white > .drop_inner {
@@ -5188,38 +5241,57 @@ img.btn--close > span:after {
   border-color: #f2f2f2;
   background: #fff;
 }
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn {
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button {
   text-decoration: none;
   color: #7367F0;
 }
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active,
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus {
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:hover,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:hover,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.hover,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.hover,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:active,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:active,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.active,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.active,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:focus,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:focus {
   text-decoration: none;
 }
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:before {
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:before {
   border-color: transparent;
   background: transparent;
 }
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover,
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover,
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active,
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active,
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus {
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:hover,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:hover,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.hover,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.hover,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:active,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:active,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.active,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.active,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:focus,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:focus {
   color: #fff;
 }
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:hover:before,
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.hover:before,
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active:before,
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active:before,
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:focus:before {
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:hover:before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:hover:before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.hover:before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.hover:before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:active:before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:active:before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.active:before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.active:before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:focus:before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:focus:before {
   border-color: #7367F0;
   background: #887ef2;
 }
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn:active:before,
-.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > .btn.active:before {
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a:active:before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button:active:before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > a.active:before,
+.drop--white > .drop_inner > .drop_content > .list--drop > li:not(.custom) > button.active:before {
   box-shadow: 0 0.1rem 1rem rgba(115, 103, 240, 0.25), 0 0.2rem 2rem rgba(115, 103, 240, 0.4);
 }
 .overlay .overlay_design {
@@ -5662,6 +5734,355 @@ img.btn--close > span:after {
 .overlay--none .overlay_content {
   padding: 0 !important;
 }
+.link--underline {
+  text-decoration: underline;
+}
+.link--underline:hover,
+.link--underline.hover,
+.link--underline:active,
+.link--underline.active,
+.link--underline:focus {
+  text-decoration: underline;
+}
+.link--none {
+  text-decoration: none;
+}
+.link--none:hover,
+.link--none.hover,
+.link--none:active,
+.link--none.active,
+.link--none:focus {
+  text-decoration: none;
+}
+.text--inverse a:not(.btn),
+.text--inverse .btn--link {
+  color: #fff;
+  text-decoration: underline;
+}
+.text--inverse a:not(.btn):hover,
+.text--inverse .btn--link:hover,
+.text--inverse a:not(.btn).hover,
+.text--inverse .btn--link.hover,
+.text--inverse a:not(.btn):active,
+.text--inverse .btn--link:active,
+.text--inverse a:not(.btn).active,
+.text--inverse .btn--link.active,
+.text--inverse a:not(.btn):focus,
+.text--inverse .btn--link:focus {
+  color: #f2f2f2;
+}
+a:not(.btn),
+.btn--link {
+  text-decoration: underline;
+  color: #7367F0;
+  transition-property: color;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(1,0,.64,1);
+}
+a:not(.btn):hover,
+.btn--link:hover,
+a:not(.btn).hover,
+.btn--link.hover,
+a:not(.btn):active,
+.btn--link:active,
+a:not(.btn).active,
+.btn--link.active,
+a:not(.btn):focus,
+.btn--link:focus {
+  text-decoration: underline;
+}
+a:not(.btn):hover,
+.btn--link:hover,
+a:not(.btn).hover,
+.btn--link.hover,
+a:not(.btn):active,
+.btn--link:active,
+a:not(.btn).active,
+.btn--link.active,
+a:not(.btn):focus,
+.btn--link:focus {
+  color: #5e50ee;
+}
+a:not(.btn):hover,
+.btn--link:hover,
+a:not(.btn).hover,
+.btn--link.hover,
+a:not(.btn):active,
+.btn--link:active,
+a:not(.btn).active,
+.btn--link.active,
+a:not(.btn):focus,
+.btn--link:focus {
+  transition-property: color;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(.36,0,0,1);
+}
+[disabled],
+.disabled {
+  opacity: 0.75;
+}
+.caret > span {
+  justify-content: space-between;
+}
+.caret > span:after {
+  display: inline-block;
+  vertical-align: middle;
+  align-self: center;
+  position: relative;
+  font-size: 1em;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: inherit;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'xtend';
+  content: '\e900';
+  font-size: 0.5em;
+}
+img.caret > span:after {
+  top: -0.1em;
+  width: auto;
+  height: 1em;
+}
+.caret > span:after {
+  margin-left: 0.75em;
+}
+.caret.active > span:after {
+  display: inline-block;
+  vertical-align: middle;
+  align-self: center;
+  position: relative;
+  font-size: 1em;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: inherit;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'xtend';
+  content: '\e903';
+  font-size: 0.5em;
+}
+img.caret.active > span:after {
+  top: -0.1em;
+  width: auto;
+  height: 1em;
+}
+.caret.active > span:after {
+  opacity: 0;
+  animation-name: anim-y-inverse--in;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(.36,0,0,1);
+  animation-fill-mode: forwards;
+}
+.caret.out > span:after {
+  opacity: 0;
+  animation-name: anim-y--in;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(.36,0,0,1);
+  animation-fill-mode: forwards;
+}
+.caret.caret--inverse > span:after {
+  display: inline-block;
+  vertical-align: middle;
+  align-self: center;
+  position: relative;
+  font-size: 1em;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: inherit;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'xtend';
+  content: '\e903';
+  font-size: 0.5em;
+}
+img.caret.caret--inverse > span:after {
+  top: -0.1em;
+  width: auto;
+  height: 1em;
+}
+.caret.caret--inverse.active > span:after {
+  display: inline-block;
+  vertical-align: middle;
+  align-self: center;
+  position: relative;
+  font-size: 1em;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: inherit;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'xtend';
+  content: '\e900';
+  font-size: 0.5em;
+}
+img.caret.caret--inverse.active > span:after {
+  top: -0.1em;
+  width: auto;
+  height: 1em;
+}
+.caret.caret--inverse.active > span:after {
+  opacity: 0;
+  animation-name: anim-y--in;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(.36,0,0,1);
+  animation-fill-mode: forwards;
+}
+.caret.caret--inverse.out > span:after {
+  opacity: 0;
+  animation-name: anim-y-inverse--in;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(.36,0,0,1);
+  animation-fill-mode: forwards;
+}
+.caret.caret--horizontal > span:after {
+  display: inline-block;
+  vertical-align: middle;
+  align-self: center;
+  position: relative;
+  font-size: 1em;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: inherit;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'xtend';
+  content: '\e902';
+  font-size: 0.5em;
+}
+img.caret.caret--horizontal > span:after {
+  top: -0.1em;
+  width: auto;
+  height: 1em;
+}
+.caret.caret--horizontal.active > span:after {
+  display: inline-block;
+  vertical-align: middle;
+  align-self: center;
+  position: relative;
+  font-size: 1em;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: inherit;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'xtend';
+  content: '\e901';
+  font-size: 0.5em;
+}
+img.caret.caret--horizontal.active > span:after {
+  top: -0.1em;
+  width: auto;
+  height: 1em;
+}
+.caret.caret--horizontal.active > span:after {
+  opacity: 0;
+  animation-name: anim-x-inverse--in;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(.36,0,0,1);
+  animation-fill-mode: forwards;
+}
+.caret.caret--horizontal.out > span:after {
+  opacity: 0;
+  animation-name: anim-x--in;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(.36,0,0,1);
+  animation-fill-mode: forwards;
+}
+.caret.caret--horizontal.caret--inverse > span:before {
+  display: inline-block;
+  vertical-align: middle;
+  align-self: center;
+  position: relative;
+  font-size: 1em;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: inherit;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'xtend';
+  content: '\e901';
+  font-size: 0.5em;
+}
+img.caret.caret--horizontal.caret--inverse > span:before {
+  top: -0.1em;
+  width: auto;
+  height: 1em;
+}
+.caret.caret--horizontal.caret--inverse > span:after {
+  content: '';
+}
+.caret.caret--horizontal.caret--inverse > span:before {
+  margin-right: 0.75em;
+}
+.caret.caret--horizontal.caret--inverse.active > span:before {
+  display: inline-block;
+  vertical-align: middle;
+  align-self: center;
+  position: relative;
+  font-size: 1em;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: inherit;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'xtend';
+  content: '\e902';
+  font-size: 0.5em;
+}
+img.caret.caret--horizontal.caret--inverse.active > span:before {
+  top: -0.1em;
+  width: auto;
+  height: 1em;
+}
+.caret.caret--horizontal.caret--inverse.active > span:before {
+  opacity: 0;
+  animation-name: anim-x--in;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(.36,0,0,1);
+  animation-fill-mode: forwards;
+}
+.caret.caret--horizontal.caret--inverse.out > span:before {
+  opacity: 0;
+  animation-name: anim-x-inverse--in;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(.36,0,0,1);
+  animation-fill-mode: forwards;
+}
+html.xt-focus:not(.xt-focus--disable) :focus {
+  outline-color: #4d90fe;
+}
+html.xt-focus:not(.xt-focus--disable) input[type="checkbox"]:focus ~ .form-label:before,
+html.xt-focus:not(.xt-focus--disable) input[type="radio"]:focus ~ .form-label:before {
+  outline-color: #4d90fe;
+  outline-offset: -2px;
+  outline-style: auto;
+  outline-width: 5px;
+}
 .slides {
   transition-property: height;
   transition-duration: 1000ms;
@@ -5710,43 +6131,207 @@ img.btn--close > span:after {
 .slider_pagination > * {
   margin: 0.5rem 0.5rem;
 }
-.slider_pagination > li:not(.custom) > .btn > span {
-  justify-content: flex-start;
-  text-align: left;
-}
-.slider_pagination > li:not(.custom) > .btn {
+.slider_pagination > li:not(.custom) > a,
+.slider_pagination > li:not(.custom) > button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+  padding: 0;
+  z-index: 0;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  padding: 0.6em 1.2em;
+  font-size: 1.325rem;
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(1,0,.64,1);
   text-decoration: none;
   color: rgba(52, 58, 64, 0.8);
 }
-.slider_pagination > li:not(.custom) > .btn:hover,
-.slider_pagination > li:not(.custom) > .btn.hover,
-.slider_pagination > li:not(.custom) > .btn:active,
-.slider_pagination > li:not(.custom) > .btn.active,
-.slider_pagination > li:not(.custom) > .btn:focus {
+.slider_pagination > li:not(.custom) > a:hover,
+.slider_pagination > li:not(.custom) > button:hover,
+.slider_pagination > li:not(.custom) > a.hover,
+.slider_pagination > li:not(.custom) > button.hover,
+.slider_pagination > li:not(.custom) > a:active,
+.slider_pagination > li:not(.custom) > button:active,
+.slider_pagination > li:not(.custom) > a.active,
+.slider_pagination > li:not(.custom) > button.active,
+.slider_pagination > li:not(.custom) > a:focus,
+.slider_pagination > li:not(.custom) > button:focus {
+  z-index: 2;
+}
+.slider_pagination > li:not(.custom) > a.out,
+.slider_pagination > li:not(.custom) > button.out {
+  z-index: 1;
+}
+.slider_pagination > li:not(.custom) > a > span,
+.slider_pagination > li:not(.custom) > button > span {
+  position: relative;
+}
+.slider_pagination > li:not(.custom) > a > span,
+.slider_pagination > li:not(.custom) > button > span {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  min-width: 100%;
+}
+.slider_pagination > li:not(.custom) > a:before,
+.slider_pagination > li:not(.custom) > button:before {
+  content: '';
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}
+.slider_pagination > li:not(.custom) > a,
+.slider_pagination > li:not(.custom) > button,
+.slider_pagination > li:not(.custom) > a:before,
+.slider_pagination > li:not(.custom) > button:before {
+  border-radius: 4px;
+}
+.slider_pagination > li:not(.custom) > a > span,
+.slider_pagination > li:not(.custom) > button > span {
+  justify-content: center;
+  text-align: center;
+}
+.slider_pagination > li:not(.custom) > a:hover,
+.slider_pagination > li:not(.custom) > button:hover,
+.slider_pagination > li:not(.custom) > a.hover,
+.slider_pagination > li:not(.custom) > button.hover,
+.slider_pagination > li:not(.custom) > a:active,
+.slider_pagination > li:not(.custom) > button:active,
+.slider_pagination > li:not(.custom) > a.active,
+.slider_pagination > li:not(.custom) > button.active,
+.slider_pagination > li:not(.custom) > a:focus,
+.slider_pagination > li:not(.custom) > button:focus {
   text-decoration: none;
 }
-.slider_pagination > li:not(.custom) > .btn:before {
+.slider_pagination > li:not(.custom) > a:before,
+.slider_pagination > li:not(.custom) > button:before {
   border-color: #edf3f6;
   background: #edf3f6;
 }
-.slider_pagination > li:not(.custom) > .btn:hover,
-.slider_pagination > li:not(.custom) > .btn.hover,
-.slider_pagination > li:not(.custom) > .btn:active,
-.slider_pagination > li:not(.custom) > .btn.active,
-.slider_pagination > li:not(.custom) > .btn:focus {
+.slider_pagination > li:not(.custom) > a:hover,
+.slider_pagination > li:not(.custom) > button:hover,
+.slider_pagination > li:not(.custom) > a.hover,
+.slider_pagination > li:not(.custom) > button.hover,
+.slider_pagination > li:not(.custom) > a:active,
+.slider_pagination > li:not(.custom) > button:active,
+.slider_pagination > li:not(.custom) > a.active,
+.slider_pagination > li:not(.custom) > button.active,
+.slider_pagination > li:not(.custom) > a:focus,
+.slider_pagination > li:not(.custom) > button:focus {
   color: #343a40;
 }
-.slider_pagination > li:not(.custom) > .btn:hover:before,
-.slider_pagination > li:not(.custom) > .btn.hover:before,
-.slider_pagination > li:not(.custom) > .btn:active:before,
-.slider_pagination > li:not(.custom) > .btn.active:before,
-.slider_pagination > li:not(.custom) > .btn:focus:before {
+.slider_pagination > li:not(.custom) > a:hover:before,
+.slider_pagination > li:not(.custom) > button:hover:before,
+.slider_pagination > li:not(.custom) > a.hover:before,
+.slider_pagination > li:not(.custom) > button.hover:before,
+.slider_pagination > li:not(.custom) > a:active:before,
+.slider_pagination > li:not(.custom) > button:active:before,
+.slider_pagination > li:not(.custom) > a.active:before,
+.slider_pagination > li:not(.custom) > button.active:before,
+.slider_pagination > li:not(.custom) > a:focus:before,
+.slider_pagination > li:not(.custom) > button:focus:before {
   border-color: #cbdce5;
   background: #dce8ee;
 }
-.slider_pagination > li:not(.custom) > .btn:active:before,
-.slider_pagination > li:not(.custom) > .btn.active:before {
+.slider_pagination > li:not(.custom) > a:active:before,
+.slider_pagination > li:not(.custom) > button:active:before,
+.slider_pagination > li:not(.custom) > a.active:before,
+.slider_pagination > li:not(.custom) > button.active:before {
   box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+}
+.slider_pagination > li:not(.custom) > a:before,
+.slider_pagination > li:not(.custom) > button:before {
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(1,0,.64,1);
+}
+.slider_pagination > li:not(.custom) > a:active,
+.slider_pagination > li:not(.custom) > button:active,
+.slider_pagination > li:not(.custom) > a.active,
+.slider_pagination > li:not(.custom) > button.active {
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(.36,0,0,1);
+}
+.slider_pagination > li:not(.custom) > a:active:before,
+.slider_pagination > li:not(.custom) > button:active:before,
+.slider_pagination > li:not(.custom) > a.active:before,
+.slider_pagination > li:not(.custom) > button.active:before {
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(.36,0,0,1);
+}
+.slider_pagination > li:not(.custom) > a:hover,
+.slider_pagination > li:not(.custom) > button:hover,
+.slider_pagination > li:not(.custom) > a.hover,
+.slider_pagination > li:not(.custom) > button.hover,
+.slider_pagination > li:not(.custom) > a:active,
+.slider_pagination > li:not(.custom) > button:active,
+.slider_pagination > li:not(.custom) > a.active,
+.slider_pagination > li:not(.custom) > button.active,
+.slider_pagination > li:not(.custom) > a:focus,
+.slider_pagination > li:not(.custom) > button:focus {
+  text-decoration: none;
+}
+.slider_pagination > li:not(.custom) > a:before,
+.slider_pagination > li:not(.custom) > button:before {
+  border-color: #edf3f6;
+  background: #edf3f6;
+}
+.slider_pagination > li:not(.custom) > a:hover,
+.slider_pagination > li:not(.custom) > button:hover,
+.slider_pagination > li:not(.custom) > a.hover,
+.slider_pagination > li:not(.custom) > button.hover,
+.slider_pagination > li:not(.custom) > a:active,
+.slider_pagination > li:not(.custom) > button:active,
+.slider_pagination > li:not(.custom) > a.active,
+.slider_pagination > li:not(.custom) > button.active,
+.slider_pagination > li:not(.custom) > a:focus,
+.slider_pagination > li:not(.custom) > button:focus {
+  color: #343a40;
+}
+.slider_pagination > li:not(.custom) > a:hover:before,
+.slider_pagination > li:not(.custom) > button:hover:before,
+.slider_pagination > li:not(.custom) > a.hover:before,
+.slider_pagination > li:not(.custom) > button.hover:before,
+.slider_pagination > li:not(.custom) > a:active:before,
+.slider_pagination > li:not(.custom) > button:active:before,
+.slider_pagination > li:not(.custom) > a.active:before,
+.slider_pagination > li:not(.custom) > button.active:before,
+.slider_pagination > li:not(.custom) > a:focus:before,
+.slider_pagination > li:not(.custom) > button:focus:before {
+  border-color: #cbdce5;
+  background: #dce8ee;
+}
+.slider_pagination > li:not(.custom) > a:active:before,
+.slider_pagination > li:not(.custom) > button:active:before,
+.slider_pagination > li:not(.custom) > a.active:before,
+.slider_pagination > li:not(.custom) > button.active:before {
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.05), 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+}
+.slider_pagination > li:not(.custom) > a > span,
+.slider_pagination > li:not(.custom) > button > span {
+  justify-content: flex-start;
+  text-align: left;
 }
 .slider_pagination > * {
   margin: 0.5rem 0.5rem;
@@ -6448,36 +7033,22 @@ transition-timing-function: @bez--out;
 .alert--primary > .alert_content h6 {
   color: #fff;
 }
-.alert--primary > .alert_content code {
-  background: rgba(255, 255, 255, 0.18);
-  color: #fff;
-}
 .alert--primary > .alert_content a:not(.btn),
-.alert--primary > .alert_content .alink,
 .alert--primary > .alert_content .btn--link {
   color: #fff;
   text-decoration: underline;
 }
 .alert--primary > .alert_content a:not(.btn):hover,
-.alert--primary > .alert_content .alink:hover,
 .alert--primary > .alert_content .btn--link:hover,
 .alert--primary > .alert_content a:not(.btn).hover,
-.alert--primary > .alert_content .alink.hover,
 .alert--primary > .alert_content .btn--link.hover,
 .alert--primary > .alert_content a:not(.btn):active,
-.alert--primary > .alert_content .alink:active,
 .alert--primary > .alert_content .btn--link:active,
 .alert--primary > .alert_content a:not(.btn).active,
-.alert--primary > .alert_content .alink.active,
 .alert--primary > .alert_content .btn--link.active,
 .alert--primary > .alert_content a:not(.btn):focus,
-.alert--primary > .alert_content .alink:focus,
 .alert--primary > .alert_content .btn--link:focus {
   color: #f2f2f2;
-}
-.alert--primary > .alert_content .btn--primary-empty,
-.alert--primary > .alert_content .btn--secondary-empty {
-  color: #fff !important;
 }
 .alert--secondary:before {
   border-color: #edf3f6;
@@ -6501,36 +7072,22 @@ transition-timing-function: @bez--out;
 .alert--error > .alert_content h6 {
   color: #fff;
 }
-.alert--error > .alert_content code {
-  background: rgba(255, 255, 255, 0.18);
-  color: #fff;
-}
 .alert--error > .alert_content a:not(.btn),
-.alert--error > .alert_content .alink,
 .alert--error > .alert_content .btn--link {
   color: #fff;
   text-decoration: underline;
 }
 .alert--error > .alert_content a:not(.btn):hover,
-.alert--error > .alert_content .alink:hover,
 .alert--error > .alert_content .btn--link:hover,
 .alert--error > .alert_content a:not(.btn).hover,
-.alert--error > .alert_content .alink.hover,
 .alert--error > .alert_content .btn--link.hover,
 .alert--error > .alert_content a:not(.btn):active,
-.alert--error > .alert_content .alink:active,
 .alert--error > .alert_content .btn--link:active,
 .alert--error > .alert_content a:not(.btn).active,
-.alert--error > .alert_content .alink.active,
 .alert--error > .alert_content .btn--link.active,
 .alert--error > .alert_content a:not(.btn):focus,
-.alert--error > .alert_content .alink:focus,
 .alert--error > .alert_content .btn--link:focus {
   color: #f2f2f2;
-}
-.alert--error > .alert_content .btn--primary-empty,
-.alert--error > .alert_content .btn--secondary-empty {
-  color: #fff !important;
 }
 .alert--small > .alert_content {
   padding: 0.5em 1em;

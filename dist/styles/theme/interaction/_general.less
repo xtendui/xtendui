@@ -3,7 +3,7 @@
 //////////////////////
 
 .link--underline {
-  text-decoration: none;
+  text-decoration: underline;
   &:hover, &.hover, &:active, &.active, &:focus {
     text-decoration: underline;
   }
@@ -22,17 +22,12 @@
 
 .text--inverse {
   // link color
-  a:not(.btn), .alink, .btn--link {
+  a:not(.btn), .btn--link {
     color: @text--inverse;
     text-decoration: underline;
     &:hover, &.hover, &:active, &.active, &:focus {
       color: darken(@text--inverse, @perc--xs);
     }
-  }
-  // button color
-  .btn--primary-empty,
-  .btn--secondary-empty {
-    color: @text--inverse !important;
   }
 }
 
@@ -40,7 +35,7 @@
 // link
 //////////////////////
 
-a, .alink {
+a:not(.btn), .btn--link {
   .link--underline();
   // styles
   color: @primary;

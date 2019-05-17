@@ -28,3 +28,4 @@ Thumbs.db
 node_modules
 vendor
 /docs
+/public
