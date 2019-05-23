@@ -1,5 +1,5 @@
 export const htmlSource = `
-  <div class="list list-space--small align-items--center demo-source-from">
+  <div class="list list-space--small align-items--center demo_source--from">
     <a href="#">
       link
     </a>

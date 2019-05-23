@@ -6,9 +6,9 @@ class DemoVanilla extends React.Component {
     const {children, src, name} = this.props
     let htmlSource = require("../" + src + ".js").htmlSource
     return (
-      <div className="demo-item demo-preview" data-name={name}>
+      <div className="demo_item demo_preview" data-name={name}>
         {children}
-        <div className="demo-source demo-source-from" data-lang="language-markup" dangerouslySetInnerHTML={{__html: htmlSource}}/>
+        <div className="demo_source demo_source--from" data-lang="language-markup" dangerouslySetInnerHTML={{__html: htmlSource}}/>
       </div>
     )
   }

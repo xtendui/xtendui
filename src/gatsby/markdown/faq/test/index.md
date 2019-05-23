@@ -50,8 +50,8 @@ body {
 
 <demo>
   <div class="demo-inline">
-    <div class="demo-item demo-preview" data-name="vanilla">
-      <div class="demo-source demo-source-from" data-lang="language-markup">
+    <div class="demo_item demo_preview" data-name="vanilla">
+      <div class="demo_source demo_source--from" data-lang="language-markup">
         <div class="form-item">
           <input type="checkbox" class="unstyled" id="checkbox-block-unstyled">
           <label class="form-label" for="checkbox-block-unstyled">
@@ -81,14 +81,14 @@ body {
 
 <demo>
   <demovanilla src="demos/faq/test-vanilla" name="vanilla">
-    <div class="demo-text">
+    <div class="demo_text">
       <div class="alert_content">
         Test
       </div>
     </div>
   </demovanilla>
   <demoreact src="demos/faq/test-react" name="react">
-    <div class="demo-text">
+    <div class="demo_text">
       <div class="alert_content">
         Test
       </div>
@@ -99,15 +99,15 @@ body {
 ###Iframe demos
 
 <demo>
-  <div class="demo-item" data-iframe="demos/faq/test-vanilla-iframe" data-name="vanilla">
-    <div class="demo-text">
+  <div class="demo_item" data-iframe="demos/faq/test-vanilla-iframe" data-name="vanilla">
+    <div class="demo_text">
       <div class="alert_content">
         Test
       </div>
     </div>
   </div>
-  <div class="demo-item" data-iframe="demos/faq/test-react-iframe" data-name="react">
-    <div class="demo-text">
+  <div class="demo_item" data-iframe="demos/faq/test-react-iframe" data-name="react">
+    <div class="demo_text">
       <div class="alert_content">
         Test
       </div>

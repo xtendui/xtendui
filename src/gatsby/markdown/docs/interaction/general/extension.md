@@ -10,6 +10,6 @@ parent: "General"
 ##Usage
 
 <demo>
-  <div class="demo-item" data-iframe="demos/docs/interaction/general/jumptocontent" data-name="jumptocontent">
+  <div class="demo_item" data-iframe="demos/docs/interaction/general/jumptocontent" data-name="jumptocontent">
   </div>
 </demo>

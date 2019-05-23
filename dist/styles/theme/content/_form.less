@@ -232,11 +232,11 @@ legend {
   &.disabled {
     opacity: 1;
     &:before {
-      background: @gray--250 !important;
-      border: 1px solid @gray--300 !important;
+      background: darken(@gray--200, 2.5%) !important;
+      border: 1px solid darken(@gray--300, 2.5%) !important;
     }
     &:after {
-      color: darken(@gray--300, @perc--md) !important;
+      color: darken(@gray--300, 25%) !important;
     }
   }
 }
@@ -252,11 +252,11 @@ legend {
     height: 1.8rem;
   }
   &:before {
-    background: @gray--250;
-    border: 1px solid darken(@gray--250, @perc--sm);
+    background: @gray--200;
+    border: 1px solid @gray--300;
   }
   &:after {
-    color: darken(@gray--250, @perc--lg);
+    color: @primary;
   }
   // animation
   &:before {
@@ -274,7 +274,7 @@ legend {
   }
   &.focus, &:focus {
     &:before {
-      border: 1px solid darken(@gray--250, @perc--md);
+      border: 1px solid @gray--300;
     }
   }
   &.active {

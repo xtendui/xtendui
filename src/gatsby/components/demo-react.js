@@ -7,12 +7,12 @@ class DemoReact extends React.Component {
     let Component = require("../" + src + ".js").default
     let jsSource = require("!!raw-loader!../" + src + ".js").default
     return (
-      <div className="demo-item demo-preview" data-name={name}>
+      <div className="demo_item demo_preview" data-name={name}>
         {children}
-        <div className="demo-source demo-source-from">
+        <div className="demo_source demo_source--from">
           <Component></Component>
         </div>
-        <div className="demo-source" data-lang="language-jsx">
+        <div className="demo_source" data-lang="language-jsx">
           {jsSource}
         </div>
       </div>

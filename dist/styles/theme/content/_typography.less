@@ -99,7 +99,7 @@ h6, .h6 {
   .spacing--big();
   .padding(y, small);
   .padding(x, medium);
-  background: @gray--250;
+  background: @gray--200;
   text-align: center;
 }
 
@@ -154,16 +154,14 @@ pre {
   .margin(y, medium) !important;
   .padding(all, medium) !important;
   width: 100%;
-  border-radius: .75rem;
+  border-radius: .5rem;
   border-width: 0;
   border-style: solid;
-  border-color: @gray--250;
-  background: @gray--250 !important;
   line-height: 0 !important;
   code {
     width: 100%;
+    .font-monospace();
     font-size: 12px !important;
-    color: @gray--750 !important;
     line-height: 1.6 !important;
     white-space: pre-wrap !important;
   }

@@ -44,17 +44,17 @@ const makeDocument = function () {
 export {makeDocument};
 
 /*
-// .demo-cols
+// .demo_cols
 
-for (let element of document.querySelectorAll('.demo-cols')) {
+for (let element of document.querySelectorAll('.demo_cols')) {
   for (let [i, el] of element.querySelectorAll('[class^=\'col--\'], [class*=\' col--\']').entries()) {
     el.setAttribute('data-index', i);
   }
 }
 
-// .demo-cols-nested
+// .demo_cols-nested
 
-for (let element of document.querySelectorAll('.demo-cols-nested [class^=\'col--\'], .demo-cols-nested [class*=\' col--\']')) {
+for (let element of document.querySelectorAll('.demo_cols-nested [class^=\'col--\'], .demo_cols-nested [class*=\' col--\']')) {
   for (let [i, el] of element.querySelectorAll('[class^=\'col--\'], [class*=\' col--\']').entries()) {
     el.setAttribute('data-index', i);
   }

@@ -20,7 +20,7 @@ class DemoVanillaIframe extends React.Component {
           : null}
         <SEO title={seo.title + ' — ' + seo.description}/>
         <div id="body-outer">
-          <div id="body-inner" className="demo-source-from" dangerouslySetInnerHTML={{__html: demo.htmlSource}}/>
+          <div id="body-inner" className="demo_source--from" dangerouslySetInnerHTML={{__html: demo.htmlSource}}/>
         </div>
       </Layout>
     )

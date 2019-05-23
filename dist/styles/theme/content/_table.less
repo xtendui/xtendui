@@ -15,7 +15,7 @@
   font-size: 1.3rem;
   line-height: 1.2;
   tr {
-    border-bottom: @table-border-width solid @gray--250;
+    border-bottom: @table-border-width solid @gray--200;
   }
   th {
     .padding(all, medium);
@@ -33,7 +33,7 @@
   // tfoot
   tfoot {
     .padding(y, big) !important;
-    background: @gray--250;
+    background: @gray--200;
     th {
       .reset-text();
     }
@@ -87,7 +87,7 @@
 
 .table-stripe {
   tbody tr:nth-of-type(odd) {
-    background: @gray--250;
+    background: @gray--200;
   }
   tbody tr:nth-of-type(even) {
     background: transparent;
@@ -97,10 +97,10 @@
 // .table-border
 
 .table-border {
-  border: @table-border-width solid @gray--250;
+  border: @table-border-width solid @gray--200;
   th,
   td {
-    border: @table-border-width solid @gray--250;
+    border: @table-border-width solid @gray--200;
   }
 }
 
@@ -108,7 +108,7 @@
 
 .table--responsive {
   @media @max-sm {
-    border: @table-border-width solid darken(@gray--250, @perc--xs);
+    border: @table-border-width solid darken(@gray--200, @perc--xs);
     border-bottom: 0;
     thead, th {
       display: none;
