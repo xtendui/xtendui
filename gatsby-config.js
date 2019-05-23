@@ -12,6 +12,7 @@ module.exports = {
     description: `Xtend advanded frontend library`,
     author: `Riccardo Caroli`,
     version: version,
+    npm: `https://www.npmjs.com/package/xtend-library`,
     github: `https://github.com/minimit/xtend-library`,
     download: `https://github.com/minimit/xtend-library/releases`,
   },

@@ -3,7 +3,7 @@ path: "/docs/content/form/items"
 type: "docs"
 date: "2030-01-01"
 title: "Items"
-description: "Description"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 parent: "Form"
 ---
 

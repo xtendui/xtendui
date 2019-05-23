@@ -3,7 +3,7 @@ path: "/docs/interaction/general/caret"
 type: "docs"
 date: "2019-04-01"
 title: "Caret"
-description: "Description"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 parent: "General"
 ---
 

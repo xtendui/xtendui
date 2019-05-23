@@ -36,17 +36,6 @@
 
 // variant
 
-.card--primary {
-  > .card_design {
-    border-color: @primary;
-    background: @primary;
-    background: linear-gradient(135deg, @grad--primary);
-  }
-  > .card_content {
-    .text--inverse();
-  }
-}
-
 .card--secondary {
   > .card_design {
     border-color: @secondary;
@@ -87,7 +76,14 @@
 .card--big {
   > .card_content {
     padding: 1.5em 2em;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+}
+
+.card--giant {
+  > .card_content {
+    padding: 4em 4em;
+    font-size: 1.4rem;
   }
 }
 

@@ -3,7 +3,7 @@ path: "/faq"
 type: "faq"
 date: "2019-01-01"
 title: "Faq"
-description: "Description"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: []
 parent: "Faq"
 ---

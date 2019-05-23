@@ -3,7 +3,7 @@ path: "/docs/content/group/merge"
 type: "docs"
 date: "2030-02-01"
 title: "Merge"
-description: "Description"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 parent: "Group"
 ---
 

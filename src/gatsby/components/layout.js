@@ -28,6 +28,7 @@ class Layout extends React.Component {
               title
               author
               version
+              npm
               github
               download
             }
@@ -41,30 +42,49 @@ class Layout extends React.Component {
       `}
         render={data => (
           <>
-            <div className="site-wrapper">
+            <div className="site_wrapper">
 
-              <Header site={data} seo={seo} page={page}/>
+              <Header site={data} seo={seo}/>
 
-              <div className="site-wrapper-inner">
+              <div className="site_wrapper_inner">
 
-                <main className="site-main">
-                  <div className="site-main-inner">
+                <main className="site_main">
+                  <div className="site_main_inner">
                     <div className="container">
 
                       {page && page.adiacentPosts ?
                         <div className="row">
-                          <div className="col--12 col--9-md">
-                            <article className="site-article">
-                              {children}
+                          <div className="col--12 col--2-md">
+                            <Sidebar page={page}/>
+                          </div>
+                          <div className="col--12 col--8-md">
+                            <article className="site_article">
+                              <div className="card card--giant card--squared card--noborder site_hero">
+                                <div className="card_design"></div>
+                                <div className="card_content">
+                                  <h1>{seo.title}</h1>
+                                  <p>{seo.description}</p>
+                                </div>
+                              </div>
+                              <div className="card card--white card--giant card--squared card--noborder">
+                                <div className="card_design"></div>
+                                <div className="card_content">
+                                  {children}
+                                </div>
+                              </div>
                             </article>
                           </div>
-                          <div className="col--12 col--3-md">
-                            <Sidebar page={page}/>
+                          <div className="col--12 col--2-md">
                           </div>
                         </div>
                         :
-                        <article className="site-article">
-                          {children}
+                        <article className="site_article">
+                          <div className="card card--white card--giant card--squared card--noborder">
+                            <div className="card_design"></div>
+                            <div className="card_content">
+                              {children}
+                            </div>
+                          </div>
                         </article>}
 
                     </div>

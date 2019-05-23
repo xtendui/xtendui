@@ -3,7 +3,7 @@ path: "/docs/content/group/input"
 type: "docs"
 date: "2030-03-01"
 title: "Input"
-description: "Description"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 parent: "Group"
 ---
 

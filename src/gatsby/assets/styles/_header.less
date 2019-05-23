@@ -1,0 +1,116 @@
+//////////////////////
+// header
+//////////////////////
+
+// .logo
+
+.logo {
+  .link--none();
+  display: flex;
+  .align-items(center);
+  .padding(y, medium);
+  img {
+    width: 6.6rem;
+    height: 2rem;
+  }
+  // animation
+  opacity: .8;
+  &:hover, &.hover, &:active, &.active, &:focus {
+    opacity: 1;
+  }
+}
+
+// .site_header
+
+.site_header_top {
+  display: flex;
+  color: @white;
+  background: linear-gradient(0deg, @grad--primary);
+}
+
+.site_header_top_links {
+  .list();
+  .btn {
+    .link--none();
+    .btn--squared();
+    .btn--noborder();
+    .btn--noeffect();
+    padding: .3em .5em;
+    .font-sans--semibold();
+    font-size: 14px;
+    color: @text--inverse;
+    line-height: 1;
+    text-transform: uppercase;
+    &@{btn--design} {
+      background: transparent;
+    }
+    &:hover, &.hover, &:active, &.active, &:focus {
+      color: @text--inverse;
+      &@{btn--design} {
+        background: fade(@black, 10%);
+      }
+    }
+  }
+}
+
+.site_header_top_search {
+  .form-input {
+    // styles
+    border-radius: 0;
+    border-width: 0;
+    padding: .5em 1em; // size in em inherit .form-item size
+    .font-sans--semibold();
+    font-size: 14px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    // styles
+    background: fade(@black, 10%);
+    color: @text--inverse;
+    &:focus, &.active {
+      background: fade(@black, 20%);
+    }
+    &:-ms-input-placeholder {
+      color: @text--inverse;
+    }
+    &:-moz-placeholder {
+      color: @text--inverse;
+    }
+    &::-webkit-input-placeholder {
+      color: @text--inverse;
+    }
+    &::-ms-input-placeholder {
+      color: @text--inverse;
+    }
+    &::-moz-placeholder {
+      color: @text--inverse;
+    }
+    &::placeholder {
+      color: @text--inverse;
+    }
+  }
+}
+
+.site_header_top_social {
+  float: right;
+  .list();
+  .btn {
+    .link--none();
+    .btn--noeffect();
+    padding: .3em .5em;
+    border-radius: 0;
+    color: fade(@text--inverse, 80%);
+    line-height: 1;
+    text-transform: uppercase;
+    &@{btn--design} {
+      border-color: transparent;
+      background: transparent;
+    }
+    &:hover, &.hover, &:active, &.active, &:focus {
+      color: @text--inverse;
+      &@{btn--design} {
+        border-color: transparent;
+        background: transparent;
+      }
+    }
+  }
+}

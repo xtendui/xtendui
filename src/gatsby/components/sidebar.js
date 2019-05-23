@@ -5,7 +5,7 @@ class Sidebar extends React.Component {
   render() {
     const {page} = this.props
     return (
-      <aside className="site-aside">
+      <aside className="site_aside">
         {page.adiacentPosts.posts.map(({post}, z) => (
             <div key={z}>
               <Link to={post.frontmatter.path}>

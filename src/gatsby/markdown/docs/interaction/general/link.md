@@ -3,7 +3,7 @@ path: "/docs/interaction/general/link"
 type: "docs"
 date: "2019-02-01"
 title: "Link"
-description: "Description"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 parent: "General"
 ---
 

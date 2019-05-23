@@ -3,5 +3,5 @@ path: "/docs/layout"
 type: "docs"
 date: "2019-03-01"
 title: "Layout"
-description: "Description"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---

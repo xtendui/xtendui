@@ -1,0 +1,26 @@
+//////////////////////
+// footer
+//////////////////////
+
+// .site_footer_inner
+
+.site_footer_inner {
+}
+
+// .site_footer_bottom
+
+.site_footer_bottom {
+  .padding(top, big);
+  .padding(bottom, medium);
+  font-size: 12px;
+  a {
+    .font-sans--semibold();
+    color: @black;
+    text-decoration: none;
+    // animation
+    &:hover, &.hover, &:active, &.active, &:focus {
+      color: @black;
+      text-decoration: underline;
+    }
+  }
+}

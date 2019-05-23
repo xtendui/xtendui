@@ -3,7 +3,7 @@ path: "/docs/content/icon"
 type: "docs"
 date: "2019-02-01"
 title: "Icon"
-description: "Description"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["100-Content"]
 parent: "Icon"
 ---

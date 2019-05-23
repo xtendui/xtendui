@@ -3,7 +3,7 @@ path: "/docs/interaction/button/size"
 type: "docs"
 date: "2019-03-01"
 title: "Size"
-description: "Description"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 parent: "Button"
 ---
 
