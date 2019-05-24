@@ -24,9 +24,7 @@ const babelifyOptions = {
     ['@babel/preset-env',
       {
         modules: 'commonjs',
-        targets: {browsers: ['>0.25%', 'Explorer 11', 'not op_mini all']},
-        useBuiltIns: 'entry',
-        debug: false
+        targets: {browsers: ['>0.25%', 'Explorer 11', 'not op_mini all']}
       }
     ]
   ],
