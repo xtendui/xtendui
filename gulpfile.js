@@ -12,11 +12,31 @@ let terser = require('gulp-terser');
 let rename = require('gulp-rename');
 let replace = require('gulp-replace');
 let browserify = require('browserify');
+let babelify = require('babelify');
 let cleanCSS = require('gulp-clean-css');
 let sourcemaps = require('gulp-sourcemaps');
 
 const version = JSON.parse(fs.readFileSync('package.json')).version;
 const banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
+
+const babelifyOptions = {
+  presets: [
+    ['@babel/preset-env',
+      {
+        modules: 'commonjs',
+        targets: {browsers: ['>0.25%', 'Explorer 11', 'not op_mini all']},
+        useBuiltIns: 'entry',
+        debug: false
+      }
+    ]
+  ],
+  plugins: [
+    ['@babel/plugin-transform-parameters'],
+    ['@babel/plugin-transform-for-of'],
+    ['@babel/plugin-transform-arrow-functions'],
+    ['@babel/plugin-proposal-object-rest-spread']
+  ]
+};
 
 // compile less
 
@@ -86,7 +106,7 @@ gulp.task('js:demos', function () {
   let b = browserify({
     entries: 'src/docs/assets/scripts/demos.js',
     debug: true
-  });
+  }).transform(babelify, babelifyOptions);
   return b.bundle()
     .pipe(source('demos.min.js'))
     .pipe(buffer())
@@ -106,7 +126,7 @@ gulp.task('js:docs', function () {
   let b = browserify({
     entries: 'src/docs/assets/scripts/theme.js',
     debug: true
-  });
+  }).transform(babelify, babelifyOptions);
   return b.bundle()
     .pipe(source('theme.min.js'))
     .pipe(buffer())
@@ -129,7 +149,7 @@ gulp.task('js', function () {
     entries: 'src/scripts/xtend.js',
     standalone: 'Xt',
     debug: true
-  });
+  }).transform(babelify, babelifyOptions);
   return b.bundle()
     .pipe(source('xtend.min.js'))
     .pipe(replace(/\/\*\![^\*]+\*\//, banner))
