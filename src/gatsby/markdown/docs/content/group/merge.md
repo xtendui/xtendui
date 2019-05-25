@@ -14,6 +14,7 @@ Use this markup to merge multiple `.btn` in one `[button]` as line.
 
 <script type="text/plain" class="language-markup">
   <button type="button" class="group">
+  
     <span class="group_inner">
       <span class="btn">
         <span><!-- content --></span>
@@ -25,6 +26,7 @@ Use this markup to merge multiple `.btn` in one `[button]` as line.
         <span><!-- content --></span>
       </span>
     </span>
+    
   </button>
 </script>
 
@@ -32,6 +34,7 @@ Use this markup to merge multiple `.btn` in one `[button]` as stack.
 
 <script type="text/plain" class="language-markup">
   <button type="button" class="group">
+  
     <span class="group_inner">
       <span class="btn">
         <span><!-- content --></span>
@@ -40,6 +43,7 @@ Use this markup to merge multiple `.btn` in one `[button]` as stack.
       <span class="btn">
         <span><!-- content --></span>
       </span>
+      
     </span>
   </button>
 </script>

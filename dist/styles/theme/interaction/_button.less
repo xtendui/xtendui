@@ -32,19 +32,13 @@
 
 .btn {
   // transition
-  transition-property: all;
-  transition-duration: @time--medium;
-  transition-timing-function: @bez--out;
-  &@{btn--design} {
+  &, &@{btn--design}, > span {
     transition-property: all;
     transition-duration: @time--medium;
     transition-timing-function: @bez--out;
   }
   &:active, &.active {
-    transition-property: all;
-    transition-duration: @time--medium;
-    transition-timing-function: @bez--in;
-    &@{btn--design} {
+    &, &@{btn--design}, > span {
       transition-property: all;
       transition-duration: @time--medium;
       transition-timing-function: @bez--in;

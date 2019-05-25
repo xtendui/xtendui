@@ -59,6 +59,7 @@ export const query = graphql`
     post: markdownRemark(frontmatter: {path: {eq: $path}}) {
       htmlAst
       frontmatter {
+        path
         type
         title
         description
@@ -106,6 +107,7 @@ Template.propTypes = {
     post: PropTypes.shape({
       htmlAst: PropTypes.object.isRequired,
       frontmatter: PropTypes.shape({
+        path: PropTypes.string.isRequired,
         type: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,

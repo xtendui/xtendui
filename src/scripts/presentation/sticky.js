@@ -90,7 +90,7 @@ export class Sticky extends Core {
         el.classList.remove('sticky-hide--up');
       }
       // @index--sticky by javascript 100 and decreses with sequential sticky
-      el.style.zIndex = 100 - Xt.getUniqueNum();
+      el.style.zIndex = Xt.getStickyIndex();
     }
   }
 

@@ -38,8 +38,10 @@ const formatCode = function (source) {
   }
   // remove tabs
   let arr = text.split('\n');
-  if (arr[1]) {
-    let toRemove = arr[1].search(/\S/g);
+  let search = arr[0];
+  search = search.length ? search : arr[1];
+  if (search) {
+    let toRemove = search.search(/\S/g);
     for (let i of arr.keys()) {
       arr[i] = arr[i].substring(toRemove);
     }

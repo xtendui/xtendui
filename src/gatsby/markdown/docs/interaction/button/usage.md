@@ -16,6 +16,7 @@ Use `.btn` to create a button.
   <a href="#" class="btn">
     <span><!-- content --></span>
   </a>
+  
   <button type="button" class="btn">
     <span><!-- content --></span>
   </button>

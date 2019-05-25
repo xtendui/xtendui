@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?1zncaz');
-  src:  url('fonts/icomoon.eot?1zncaz#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.woff2?1zncaz') format('woff2'),
-    url('fonts/icomoon.ttf?1zncaz') format('truetype'),
-    url('fonts/icomoon.woff?1zncaz') format('woff'),
-    url('fonts/icomoon.svg?1zncaz#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?ccyg7k');
+  src:  url('fonts/icomoon.eot?ccyg7k#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.woff2?ccyg7k') format('woff2'),
+    url('fonts/icomoon.ttf?ccyg7k') format('truetype'),
+    url('fonts/icomoon.woff?ccyg7k') format('woff'),
+    url('fonts/icomoon.svg?ccyg7k#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -25,6 +25,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-chevron-down:before {
+  content: "\e905";
+}
+.icon-chevron-left:before {
+  content: "\e906";
+}
+.icon-chevron-right:before {
+  content: "\e907";
+}
+.icon-chevron-up:before {
+  content: "\e908";
+}
+.icon-close:before {
+  content: "\e909";
+}
 .icon-npm:before {
   content: "\e904";
 }

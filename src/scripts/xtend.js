@@ -273,6 +273,7 @@ if (typeof window !== 'undefined') {
 
   Xt.load = function (container = document.documentElement) {
     requestAnimationFrame(function () {
+      Xt.stickyIndex = 500;
       Xt.windowHeightSet();
       Xt.initElement(container);
       Xt.initObserve(container);
@@ -945,9 +946,8 @@ if (typeof window !== 'undefined') {
    * Get unique number
    * @returns {Number} Unique number
    */
-  Xt.getUniqueNum = function () {
-    Xt.unumber = Xt.unumber !== undefined ? Xt.unumber : 0;
-    return Xt.unumber++;
+  Xt.getStickyIndex = function () {
+    return Xt.stickyIndex--;
   };
 
   /**

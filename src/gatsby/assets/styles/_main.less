@@ -222,11 +222,17 @@
 // sidebar
 //////////////////////
 
-.site_sidebar {
+.site_article_sidebar {
+  @media @max-md {
+    display: none;
+  }
+}
+
+.site_article_sidebar_inner {
   .padding(y, giant);
 }
 
-.site_sidebar_line {
+.site_article_sidebar_line {
   position: absolute;
   top: .5rem;
   left: 0;
@@ -235,18 +241,18 @@
   background: fade(@black, 10%);
 }
 
-.site_sidebar_cat {
+.site_article_sidebar_cat {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
-.site_sidebar_sub,
-.site_sidebar_adiacent {
+.site_article_sidebar_sub,
+.site_article_sidebar_adiacent {
   display: none;
   .padding(y, .25rem);
-  .site_sidebar_inner {
+  .site_article_sidebar_item {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -257,4 +263,27 @@
   &.active {
     display: block;
   }
+}
+
+//////////////////////
+// aside
+//////////////////////
+
+.site_article_aside {
+  @media @max-md {
+    display: none;
+  }
+}
+
+.site_article_aside_inner {
+  .padding(y, giant);
+}
+
+//////////////////////
+// foot
+//////////////////////
+
+.article_foot {
+  display: flex;
+  justify-content: space-between;
 }

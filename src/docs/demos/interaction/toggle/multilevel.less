@@ -28,6 +28,7 @@
 .multilevel-list {
   // btn
   .list_btn({
+    .btn--flex();
     .btn--secondary-empty();
     .btn--tall();
     .btn--none-x();
@@ -35,9 +36,6 @@
     &@{btn--design} {
       border-top-color: @gray--300 !important;
       border-bottom-color: @gray--300 !important;
-    }
-    > span {
-      justify-content: space-between;
     }
   });
   // caret

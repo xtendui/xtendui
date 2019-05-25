@@ -5,6 +5,8 @@ import {StaticQuery, graphql} from "gatsby"
 import Header from "components/header"
 import Footer from "components/footer"
 import Sidebar from "components/sidebar"
+import DocsAside from "components/docs-aside"
+import DocsFoot from "components/docs-foot"
 
 import {Xt} from "xtend-library";
 import {populateBlock} from "assets/scripts/demo.js"
@@ -70,9 +72,16 @@ class Layout extends React.Component {
                                 {children}
                               </div>
                             </div>
+                            <div className="card card--giant card--squared card--noborder site_hero">
+                              <div className="card_design"></div>
+                              <div className="card_content">
+                                <DocsFoot page={page}/>
+                              </div>
+                            </div>
                           </article>
                         </div>
                         <div className="col--12 col--2-md">
+                          <DocsAside page={page}/>
                         </div>
                       </div>
                       :
@@ -83,7 +92,8 @@ class Layout extends React.Component {
                             {children}
                           </div>
                         </div>
-                      </article>}
+                      </article>
+                    }
 
                   </div>
                 </div>

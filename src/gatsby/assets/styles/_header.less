@@ -30,27 +30,6 @@
 
 .site_header_top_links {
   .list();
-  .btn {
-    .link--none();
-    .btn--squared();
-    .btn--noborder();
-    .btn--noeffect();
-    padding: .3em .5em;
-    .font-sans--semibold();
-    font-size: 14px;
-    color: @text--inverse;
-    line-height: 1;
-    text-transform: uppercase;
-    &@{btn--design} {
-      background: transparent;
-    }
-    &:hover, &.hover, &:active, &.active, &:focus {
-      color: @text--inverse;
-      &@{btn--design} {
-        background: fade(@black, 10%);
-      }
-    }
-  }
 }
 
 .site_header_top_search {
@@ -93,24 +72,5 @@
 .site_header_top_social {
   float: right;
   .list();
-  .btn {
-    .link--none();
-    .btn--noeffect();
-    padding: .3em .5em;
-    border-radius: 0;
-    color: fade(@text--inverse, 80%);
-    line-height: 1;
-    text-transform: uppercase;
-    &@{btn--design} {
-      border-color: transparent;
-      background: transparent;
-    }
-    &:hover, &.hover, &:active, &.active, &:focus {
-      color: @text--inverse;
-      &@{btn--design} {
-        border-color: transparent;
-        background: transparent;
-      }
-    }
-  }
+  .list-space(none);
 }

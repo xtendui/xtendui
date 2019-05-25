@@ -28,9 +28,9 @@ class Header extends React.Component {
                   <div className="list justify-content--space-between align-items--center">
                     <div className="site_header_top_links">
                       {site.categories.type.map((type, i) => (
-                        <Link key={i} to={`/${kebabCase(type.title)}/`}
-                              className={`btn
-                                        ${page ? type.title === page.post.frontmatter.type ? 'active' : '' : seo.title.toLowerCase() === type.title ? 'active' : ''}`}>
+                        <Link key={i} to={`/${kebabCase(type.title)}`}
+                              className={`btn btn--site_header_top_link
+                                        ${page && page.post ? page.post.frontmatter.path === '/' + kebabCase(type.title) ? 'active' : page.post.frontmatter.type === type.title ? 'current' : '' : ''}`}>
                           <span>{type.title}</span>
                         </Link>
                       ))}
@@ -43,11 +43,11 @@ class Header extends React.Component {
                 <div className="col--2-md">
                   <div className="site_header_top_social">
                     <a href={site.site.siteMetadata.github} target="_blank" rel="noopener"
-                       className="btn" aria-label="Github">
+                       className="btn btn--site_header_top_social" aria-label="Github">
                       <span><span className="icon-github icon--big"></span></span>
                     </a>
                     <a href={site.site.siteMetadata.npm} target="_blank" rel="noopener"
-                       className="btn" aria-label="Npm">
+                       className="btn btn--site_header_top_social" aria-label="Npm">
                       <span><span className="icon-npm icon--big"></span></span>
                     </a>
                   </div>
