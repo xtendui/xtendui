@@ -46,54 +46,50 @@ class Layout extends React.Component {
 
               <Header site={data} seo={seo} page={page}/>
 
-              <div className="site_wrapper_inner">
+              <main className="site_main">
+                <div className="site_main_inner">
+                  <div className="container">
 
-                <main className="site_main">
-                  <div className="site_main_inner">
-                    <div className="container">
-
-                      {page && page.adiacentPosts ?
-                        <div className="row">
-                          <div className="col--12 col--2-md">
-                            <Sidebar page={page}/>
-                          </div>
-                          <div className="col--12 col--8-md">
-                            <article className="site_article">
-                              <div className="card card--giant card--squared card--noborder site_hero">
-                                <div className="card_design"></div>
-                                <div className="card_content">
-                                  <h1>{seo.title}</h1>
-                                  <p>{seo.description}</p>
-                                </div>
+                    {page && page.adiacentPosts ?
+                      <div className="row">
+                        <div className="col--12 col--2-md">
+                          <Sidebar page={page}/>
+                        </div>
+                        <div className="col--12 col--8-md">
+                          <article className="site_article">
+                            <div className="card card--giant card--squared card--noborder site_hero">
+                              <div className="card_design"></div>
+                              <div className="card_content">
+                                <h1>{seo.title}</h1>
+                                <p>{seo.description}</p>
                               </div>
-                              <div className="card card--white card--giant card--squared card--noborder">
-                                <div className="card_design"></div>
-                                <div className="card_content">
-                                  {children}
-                                </div>
+                            </div>
+                            <div className="card card--white card--giant card--squared card--noborder">
+                              <div className="card_design"></div>
+                              <div className="card_content">
+                                {children}
                               </div>
-                            </article>
-                          </div>
-                          <div className="col--12 col--2-md">
+                            </div>
+                          </article>
+                        </div>
+                        <div className="col--12 col--2-md">
+                        </div>
+                      </div>
+                      :
+                      <article className="site_article">
+                        <div className="card card--white card--giant card--squared card--noborder">
+                          <div className="card_design"></div>
+                          <div className="card_content">
+                            {children}
                           </div>
                         </div>
-                        :
-                        <article className="site_article">
-                          <div className="card card--white card--giant card--squared card--noborder">
-                            <div className="card_design"></div>
-                            <div className="card_content">
-                              {children}
-                            </div>
-                          </div>
-                        </article>}
+                      </article>}
 
-                    </div>
                   </div>
-                </main>
+                </div>
+              </main>
 
-                <Footer site={data}/>
-
-              </div>
+              <Footer site={data}/>
 
             </div>
           </>

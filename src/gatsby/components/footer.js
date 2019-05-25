@@ -5,8 +5,7 @@ class Footer extends React.Component {
   render() {
     const {site} = this.props
     return (
-      <footer className="site_footer"
-              data-xt-sticky='{"sticky": "fixed", "position": "bottom"}'>
+      <footer className="site_footer">
         <div className="container">
           <div className="site_footer_bottom">
             <div className="row">

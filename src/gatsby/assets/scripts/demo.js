@@ -364,7 +364,6 @@ if (typeof window !== 'undefined') {
     item.classList.add('loaded');
     if (!item.classList.contains('populated')) {
       populateIframe(item, iframe, htmlSource, jsSource, cssSource);
-      window.resizeIframe(name);
       item.classList.add('populated');
     }
   };
@@ -398,18 +397,19 @@ if (typeof window !== 'undefined') {
 const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) {
   // inject code
   if (htmlSource) {
-    iframe.append(Xt.createElement('<div class="demo_source xt-ignore" data-lang="html">' + htmlSource + '</div>'));
+    item.append(Xt.createElement('<div class="demo_source xt-ignore" data-lang="html">' + htmlSource + '</div>'));
   }
   if (jsSource) {
-    iframe.append(Xt.createElement('<div class="demo_source xt-ignore" data-lang="js">' + jsSource + '</div>'));
+    item.append(Xt.createElement('<div class="demo_source xt-ignore" data-lang="js">' + jsSource + '</div>'));
   }
   if (cssSource) {
-    iframe.append(Xt.createElement('<div class="demo_source xt-ignore" data-lang="less">' + cssSource + '</div>'));
+    item.append(Xt.createElement('<div class="demo_source xt-ignore" data-lang="less">' + cssSource + '</div>'));
   }
   // populate
-  for (let [z, source] of item.querySelectorAll('.demo-source[data-lang]').entries()) {
-    populateSources(item, source, z);
-    source.remove();
+  let els = item.querySelectorAll('.demo_source[data-lang]');
+  for (let [z, el] of els.entries()) {
+    populateSources(item, el, z);
+    el.remove();
   }
   Xt.init('xt-toggle', item, {
     "elements": ".demo_code_tabs_left .btn",

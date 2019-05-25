@@ -31,7 +31,7 @@
     "dev": "gulp watch",
     "dev:docs": "gatsby clean && gatsby develop",
     "serve": "gatsby clean && gatsby build && gatsby serve -p 8000",
-    "dep": "gh-pages -d docs",
+    "deploy": "gh-pages -d docs",
     "release": "npx semantic-release --no-ci",
     "release:dry": "npx semantic-release --dry-run",
     "lint": "eslint src/scripts src/docs/assets/scripts"

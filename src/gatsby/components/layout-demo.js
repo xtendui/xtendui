@@ -5,20 +5,26 @@ import {Xt} from "xtend-library";
 
 class Layout extends React.Component {
   componentDidMount() {
-    Xt.ready(Xt.load);
     const {demo} = this.props
     if (demo.full) {
       document.querySelector('html').classList.add('iframe-full')
     }
-    if (window.self !== window.top) {
-      window.addEventListener('load', function () {
+    let iframeLoaded = function () {
+      if (window.self !== window.top) {
         window.parent.initIframe(window.name, demo.htmlSource, demo.jsSource, demo.cssSource)
         window.parent.resizeIframe(window.name)
         window.addEventListener('resize', function () {
           window.parent.resizeIframe(window.name)
         })
-      })
+        Xt.ready(Xt.load);
+      }
     }
+    if (document.readyState === 'complete') {
+      iframeLoaded();
+    }
+    window.addEventListener('load', function () {
+      iframeLoaded();
+    })
   }
 
   render() {
