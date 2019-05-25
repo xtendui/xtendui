@@ -2,8 +2,9 @@
 path: "/docs/content/form/check-radio"
 type: "docs"
 date: "2030-02-01"
-title: "Checkbox and Radio"
+title: "Check and Radio"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+categories: ["100-Content"]
 parent: "Form"
 ---
 

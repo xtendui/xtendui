@@ -1,0 +1,47 @@
+//////////////////////
+// .btn--site_sidebar
+//////////////////////
+
+.btn--site_sidebar {
+  pointer-events: auto !important;
+  .btn--left();
+  .link--none();
+  .btn--squared();
+  .btn--noborder();
+  .btn--noeffect();
+  .margin(y, .5rem);
+  padding: 0;
+  .font-sans--regular();
+  font-size: 1.4rem;
+  color: @gray--500;
+  text-transform: none;
+  // states
+  &@{btn--design} {
+    background: transparent;
+  }
+  &:hover, &.hover, &:active, &:focus {
+    .font-sans--semibold();
+    color: @text;
+    &@{btn--design} {
+      background: transparent;
+    }
+  }
+  &.active {
+    padding: .25em .5em;
+    .font-sans--semibold();
+    color: @text;
+    &@{btn--design} {
+      background: fade(@black, 10%);
+    }
+  }
+  // custom
+  &.btn--site_sidebar--cat {
+    font-size: 1.6rem;
+  }
+  &.btn--site_sidebar--sub {
+    font-size: 1.5rem;
+  }
+  &.btn--site_sidebar--adiacent {
+    font-size: 1.4rem;
+  }
+}

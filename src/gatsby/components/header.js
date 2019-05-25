@@ -7,7 +7,7 @@ import logo from "assets/images/logo.svg"
 
 class Header extends React.Component {
   render() {
-    const {site, seo} = this.props
+    const {site, seo, page} = this.props
     return (
       <header className="site_header">
 
@@ -30,7 +30,7 @@ class Header extends React.Component {
                       {site.categories.type.map((type, i) => (
                         <Link key={i} to={`/${kebabCase(type.title)}/`}
                               className={`btn
-                                        ${seo.title.toLowerCase() === type.title ? 'active' : '' }`}>
+                                        ${page ? type.title === page.post.frontmatter.type ? 'active' : '' : seo.title.toLowerCase() === type.title ? 'active' : ''}`}>
                           <span>{type.title}</span>
                         </Link>
                       ))}

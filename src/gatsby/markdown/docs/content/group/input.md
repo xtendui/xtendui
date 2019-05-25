@@ -4,6 +4,7 @@ type: "docs"
 date: "2030-03-01"
 title: "Input"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+categories: ["100-Content"]
 parent: "Group"
 ---
 

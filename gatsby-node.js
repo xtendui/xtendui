@@ -123,7 +123,8 @@ exports.createPages = ({actions, graphql}) => {
           path: node.frontmatter.path, // needs gatsby-source-filesystem resolve name
           component: faqTemplate,
           context: {
-            parent: node.frontmatter.parent // for query($parent: String) { // put also parent on return graphql
+            type: node.frontmatter.type, // for query($type: String) { // put also on return graphql
+            parent: node.frontmatter.parent // for query($parent: String) { // put also on return graphql
           }
         })
       } else if (node.frontmatter.type === 'docs') {
@@ -131,7 +132,8 @@ exports.createPages = ({actions, graphql}) => {
           path: node.frontmatter.path, // needs gatsby-source-filesystem resolve name
           component: docTemplate,
           context: {
-            parent: node.frontmatter.parent // for query($parent: String) { // put also parent on return graphql
+            type: node.frontmatter.type, // for query($type: String) { // put also on return graphql
+            parent: node.frontmatter.parent // for query($parent: String) { // put also on return graphql
           }
         })
         /* COMMENTED CATEGORIES AND TAGS

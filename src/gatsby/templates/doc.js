@@ -31,8 +31,8 @@ class Template extends React.Component {
 }
 
 export const query = graphql`
-  query($path: String!, $parent: String) {
-    categories: allMarkdownRemark(sort: {fields: [frontmatter___date], order: ASC}) {
+  query($path: String!, $type: String, $parent: String) {
+    categories: allMarkdownRemark(filter: {frontmatter: {type: {eq: $type}}}, sort: {fields: [frontmatter___date], order: ASC}) {
       category: group(field: frontmatter___categories) {
         title: fieldValue
         posts: edges {
@@ -40,12 +40,13 @@ export const query = graphql`
             frontmatter {
               path
               title
+              parent
             }
           }
         }
       }
     }
-    adiacentPosts:allMarkdownRemark(filter: {frontmatter: {parent: {eq: $parent}}}, sort: {fields: [frontmatter___date], order: ASC}) {
+    adiacentPosts:allMarkdownRemark(filter: {frontmatter: {type: {eq: $type}, parent: {eq: $parent}}}, sort: {fields: [frontmatter___date], order: ASC}) {
       posts: edges {
         post: node {
           frontmatter {
@@ -82,6 +83,7 @@ Template.propTypes = {
                 frontmatter: PropTypes.shape({
                   path: PropTypes.string.isRequired,
                   title: PropTypes.string.isRequired,
+                  parent: PropTypes.string,
                 }).isRequired,
               }).isRequired,
             }).isRequired,

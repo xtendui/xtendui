@@ -4,8 +4,7 @@ type: "faq"
 date: "2019-01-01"
 title: "Test"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: []
-parent: "Faq"
+categories: ["100-Test"]
 ---
 
 ##Markdown

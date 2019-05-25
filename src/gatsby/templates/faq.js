@@ -31,8 +31,22 @@ class Template extends React.Component {
 }
 
 export const query = graphql`
-  query($path: String!, $parent: String) {
-    adiacentPosts:allMarkdownRemark(filter: {frontmatter: {parent: {eq: $parent}}}, sort: {fields: [frontmatter___date], order: ASC}) {
+  query($path: String!, $type: String, $parent: String) {
+    categories: allMarkdownRemark(filter: {frontmatter: {type: {eq: $type}}}, sort: {fields: [frontmatter___date], order: ASC}) {
+      category: group(field: frontmatter___categories) {
+        title: fieldValue
+        posts: edges {
+          post: node {
+            frontmatter {
+              path
+              title
+              parent
+            }
+          }
+        }
+      }
+    }
+    adiacentPosts:allMarkdownRemark(filter: {frontmatter: {type: {eq: $type}, parent: {eq: $parent}}}, sort: {fields: [frontmatter___date], order: ASC}) {
       posts: edges {
         post: node {
           frontmatter {
@@ -59,6 +73,24 @@ export default Template
 
 Template.propTypes = {
   data: PropTypes.shape({
+    categories: PropTypes.shape({
+      group: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          posts: PropTypes.arrayOf(
+            PropTypes.shape({
+              post: PropTypes.shape({
+                frontmatter: PropTypes.shape({
+                  path: PropTypes.string.isRequired,
+                  title: PropTypes.string.isRequired,
+                  parent: PropTypes.string,
+                }).isRequired,
+              }).isRequired,
+            }).isRequired,
+          ),
+        }).isRequired
+      ),
+    }),
     adiacentPosts: PropTypes.shape({
       posts: PropTypes.arrayOf(
         PropTypes.shape({

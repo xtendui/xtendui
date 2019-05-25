@@ -136,3 +136,44 @@
     }
   }
 }
+
+//////////////////////
+// sidebar
+//////////////////////
+
+.site_sidebar {
+  .padding(y, giant);
+}
+
+.site_sidebar_line {
+  position: absolute;
+  top: .5rem;
+  left: 0;
+  bottom: .5rem;
+  width: 2px;
+  background: fade(@black, 10%);
+}
+
+.site_sidebar_cat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.site_sidebar_sub,
+.site_sidebar_adiacent {
+  display: none;
+  .padding(y, .25rem);
+  .site_sidebar_inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    .padding(left, 1.5rem);
+  }
+  &.active {
+    display: block;
+  }
+}

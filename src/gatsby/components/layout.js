@@ -44,7 +44,7 @@ class Layout extends React.Component {
           <>
             <div className="site_wrapper">
 
-              <Header site={data} seo={seo}/>
+              <Header site={data} seo={seo} page={page}/>
 
               <div className="site_wrapper_inner">
 
