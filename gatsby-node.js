@@ -89,7 +89,6 @@ const path = require("path")
 
 exports.createPages = ({actions, graphql}) => {
   const {createPage} = actions
-  const faqTemplate = path.resolve(`src/gatsby/templates/faq.js`)
   const docTemplate = path.resolve(`src/gatsby/templates/doc.js`)
   /* COMMENTED CATEGORIES AND TAGS
   const tagTemplate = path.resolve(`src/gatsby/templates/doc-tag.js`)
@@ -118,23 +117,14 @@ exports.createPages = ({actions, graphql}) => {
       return Promise.reject(result.errors)
     }
     result.data.allMarkdownRemark.edges.forEach(({node}) => {
-      if (node.frontmatter.type === 'faq') {
-        createPage({
-          path: node.frontmatter.path, // needs gatsby-source-filesystem resolve name
-          component: faqTemplate,
-          context: {
-            type: node.frontmatter.type, // for query($type: String) { // put also on return graphql
-            parent: node.frontmatter.parent // for query($parent: String) { // put also on return graphql
-          }
-        })
-      } else if (node.frontmatter.type === 'docs') {
+      if (node.frontmatter.type === 'docs' || node.frontmatter.type === 'faq') {
         createPage({
           path: node.frontmatter.path, // needs gatsby-source-filesystem resolve name
           component: docTemplate,
           context: {
             type: node.frontmatter.type, // for query($type: String) { // put also on return graphql
-            parent: node.frontmatter.parent // for query($parent: String) { // put also on return graphql
-          }
+            parent: node.frontmatter.parent, // for query($parent: String) { // put also on return graphql
+          },
         })
         /* COMMENTED CATEGORIES AND TAGS
         if (node.frontmatter.tags) {

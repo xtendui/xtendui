@@ -34,15 +34,8 @@
   // transition
   &, &@{btn--design}, > span {
     transition-property: all;
-    transition-duration: @time--medium;
-    transition-timing-function: @bez--out;
-  }
-  &:active, &.active {
-    &, &@{btn--design}, > span {
-      transition-property: all;
-      transition-duration: @time--medium;
-      transition-timing-function: @bez--in;
-    }
+    transition-duration: @time--small;
+    transition-timing-function: @bez--in-out;
   }
 }
 

@@ -52,7 +52,7 @@ class Layout extends React.Component {
                 <div className="site_main_inner">
                   <div className="container">
 
-                    {page && page.adiacentPosts ?
+                    {page ?
                       <div className="row">
                         <div className="col--12 col--2-md">
                           <Sidebar page={page}/>

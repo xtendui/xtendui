@@ -5,6 +5,7 @@
 // .logo
 
 .logo {
+  float: left;
   .link--none();
   display: flex;
   .align-items(center);
@@ -14,9 +15,17 @@
     height: 2rem;
   }
   // animation
-  opacity: .8;
-  &:hover, &.hover, &:active, &.active, &:focus {
-    opacity: 1;
+  img {
+    transform-origin: left center;
+    transition-property: transform, opacity;
+    transition-duration: @time--small;
+    transition-timing-function: @bez--in-out;
+  }
+  &:hover, &.hover, &:active, &:focus {
+    img {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
   }
 }
 

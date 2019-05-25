@@ -46,7 +46,7 @@ export const query = graphql`
         }
       }
     }
-    adiacentPosts:allMarkdownRemark(filter: {frontmatter: {type: {eq: $type}, parent: {eq: $parent}}}, sort: {fields: [frontmatter___date], order: ASC}) {
+    postsAdiacent:allMarkdownRemark(filter: {frontmatter: {type: {eq: $type}, parent: {eq: $parent}}}, sort: {fields: [frontmatter___date], order: ASC}) {
       posts: edges {
         post: node {
           frontmatter {
@@ -54,6 +54,13 @@ export const query = graphql`
             title
           }
         }
+      }
+    }
+    parent: markdownRemark(frontmatter: {title: {eq: $parent}}) {
+      htmlAst
+      frontmatter {
+        path
+        title
       }
     }
     post: markdownRemark(frontmatter: {path: {eq: $path}}) {
@@ -92,7 +99,7 @@ Template.propTypes = {
         }).isRequired
       ),
     }),
-    adiacentPosts: PropTypes.shape({
+    postsAdiacent: PropTypes.shape({
       posts: PropTypes.arrayOf(
         PropTypes.shape({
           post: PropTypes.shape({
@@ -104,6 +111,12 @@ Template.propTypes = {
         }).isRequired,
       ),
     }).isRequired,
+    parent: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        path: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+      }).isRequired,
+    }),
     post: PropTypes.shape({
       htmlAst: PropTypes.object.isRequired,
       frontmatter: PropTypes.shape({

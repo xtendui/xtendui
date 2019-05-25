@@ -33,7 +33,7 @@ class Sidebar extends React.Component {
                             <div className="site_article_sidebar_adiacent active">
                               <div className="site_article_sidebar_item">
                                 <div className="site_article_sidebar_line"></div>
-                                {page.adiacentPosts.posts.map(({post: adiacent}, i) => (
+                                {page.postsAdiacent.posts.map(({post: adiacent}, i) => (
                                   <div key={i}>
                                     {adiacent.frontmatter.title !== post.frontmatter.parent ?
                                       <Link to={adiacent.frontmatter.path}
