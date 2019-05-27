@@ -2,20 +2,17 @@ import {Xt} from "xtend-library";
 import {TweenMax} from "gsap/TweenMax";
 import BezierEasing from "bezier-easing";
 
-(function () {
+Xt.observe.push({
+  matches: '.slider',
+  fnc: function (slider, index, query) {
 
-  // vars
+    // vars
 
-  let timeHide = 300;
-  let easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
-
-  let sliders = document.querySelectorAll('.slider');
-
-  for (let slider of sliders) {
+    let timeHide = 300;
+    let easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
 
     // xt-slider
 
-    console.log(slider, document.readyState);
     let self = Xt.init('xt-slider', slider, {
       "auto": {
         "time": 4000,
@@ -43,7 +40,7 @@ import BezierEasing from "bezier-easing";
       for (let element of elements) {
         let fillers = element.querySelectorAll('.filler span:nth-child(2)');
         for (let filler of fillers) {
-          TweenMax.set(filler, {height: 0, top: '100%', ease: easeInOut});
+          TweenMax.set(filler, {height: 0, top: '100%'});
           TweenMax.to(filler, self.options.auto.time / 1000, {height: '100%', top: 0, ease: easeInOut});
         }
       }
@@ -52,7 +49,7 @@ import BezierEasing from "bezier-easing";
       for (let target of targets) {
         let fillers = target.querySelectorAll('.filler span:nth-child(2)');
         for (let filler of fillers) {
-          TweenMax.set(filler, {width: 0, left: 0, ease: easeInOut});
+          TweenMax.set(filler, {width: 0, left: 0});
           TweenMax.to(filler, self.options.auto.time / 1000, {width: '100%', left: 0, ease: easeInOut});
         }
       }
@@ -150,5 +147,4 @@ import BezierEasing from "bezier-easing";
     container.addEventListener('mouseleave', mouseleave);
 
   }
-
-})();
+});

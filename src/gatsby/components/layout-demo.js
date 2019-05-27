@@ -16,8 +16,8 @@ class Layout extends React.Component {
         window.addEventListener('resize', function () {
           window.parent.resizeIframe(window.name)
         })
-        Xt.ready(Xt.load);
       }
+      Xt.ready(Xt.load)
     }
     if (document.readyState === 'complete') {
       iframeLoaded();

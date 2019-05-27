@@ -2,19 +2,17 @@ import {Xt} from "xtend-library";
 import {TweenMax} from "gsap/TweenMax";
 import BezierEasing from "bezier-easing";
 
-(function () {
+Xt.observe.push({
+  matches: '.slider',
+  fnc: function (slider, index, query) {
 
-  // vars
+    // vars
 
-  let time = .8;
-  let timeMask = .8;
-  let timeContent = .8;
-  let sizeContent = 100;
-  let easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
-
-  let sliders = document.querySelectorAll('.slider');
-
-  for (let slider of sliders) {
+    let time = .8;
+    let timeMask = .8;
+    let timeContent = .8;
+    let sizeContent = 100;
+    let easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
 
     // xt-slider
 
@@ -115,5 +113,4 @@ import BezierEasing from "bezier-easing";
     }
 
   }
-
-})();
+});

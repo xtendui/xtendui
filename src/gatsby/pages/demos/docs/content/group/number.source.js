@@ -4,48 +4,45 @@ import {Xt} from "xtend-library";
  * xtend extension: group-number
  */
 
-(function () {
+Xt.observe.push({
+  matches: '.group-number',
+  fnc: function (groupNumber, index, query) {
 
-  // methods
+    // methods
 
-  function inputNumberChange(step, e) {
-    if (!e || !e.detail || !e.detail.skip) {
+    function inputNumberChange(step, e) {
+      if (!e || !e.detail || !e.detail.skip) {
+        let main = this;
+        let input = main.querySelector('input');
+        let val = parseFloat(input.value);
+        val = val + step;
+        inputNumberValidate.bind(main)(val);
+      }
+    }
+
+    function inputNumberValidate(val) {
       let main = this;
       let input = main.querySelector('input');
-      let val = parseFloat(input.value);
-      val = val + step;
-      inputNumberValidate.bind(main)(val);
+      let addEl = main.querySelector('.group-number-add');
+      let removeEl = main.querySelector('.group-number-remove');
+      // disabled
+      addEl.removeAttribute('disabled');
+      removeEl.removeAttribute('disabled');
+      // check min and max
+      let inputMin = parseFloat(input.getAttribute('min')) || 1;
+      let inputMax = parseFloat(input.getAttribute('max')) || Infinity;
+      if (val <= inputMin) {
+        val = inputMin;
+        removeEl.setAttribute('disabled', 'disabled');
+      }
+      if (val >= inputMax) {
+        val = inputMax;
+        addEl.setAttribute('disabled', 'disabled');
+      }
+      // set value
+      input.value = val;
+      input.dispatchEvent(new CustomEvent('change', {bubbles: true, detail: {skip: true}}));
     }
-  }
-
-  function inputNumberValidate(val) {
-    let main = this;
-    let input = main.querySelector('input');
-    let addEl = main.querySelector('.group-number-add');
-    let removeEl = main.querySelector('.group-number-remove');
-    // disabled
-    addEl.removeAttribute('disabled');
-    removeEl.removeAttribute('disabled');
-    // check min and max
-    let inputMin = parseFloat(input.getAttribute('min')) || 1;
-    let inputMax = parseFloat(input.getAttribute('max')) || Infinity;
-    if (val <= inputMin) {
-      val = inputMin;
-      removeEl.setAttribute('disabled', 'disabled');
-    }
-    if (val >= inputMax) {
-      val = inputMax;
-      addEl.setAttribute('disabled', 'disabled');
-    }
-    // set value
-    input.value = val;
-    input.dispatchEvent(new CustomEvent('change', {bubbles: true, detail: {skip: true}}));
-  }
-
-  // .group-number
-
-  let groupNumbers = document.querySelectorAll('.group-number');
-  for (let groupNumber of groupNumbers) {
 
     // init
 
@@ -82,5 +79,4 @@ import {Xt} from "xtend-library";
     inputEl.addEventListener('change', inputHandler);
 
   }
-
-})();
+});

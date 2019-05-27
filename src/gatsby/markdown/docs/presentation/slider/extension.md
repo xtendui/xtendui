@@ -1,7 +1,7 @@
 ---
 path: "/docs/presentation/slider/extension"
 type: "docs"
-date: "2019-12-01"
+date: "2019-12-30"
 title: "Extension"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["400-Presentation"]
