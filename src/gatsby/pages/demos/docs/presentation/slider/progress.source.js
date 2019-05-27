@@ -2,7 +2,6 @@ import {Xt} from "xtend-library";
 import {TweenMax} from "gsap/TweenMax";
 import BezierEasing from "bezier-easing";
 
-setTimeout( function() {
 (function () {
 
   // vars
@@ -153,4 +152,3 @@ setTimeout( function() {
   }
 
 })();
-}, 2000);
