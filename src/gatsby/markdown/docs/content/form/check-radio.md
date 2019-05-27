@@ -1,7 +1,7 @@
 ---
 path: "/docs/content/form/check-radio"
 type: "docs"
-date: "2030-02-01"
+date: "2019-02-01"
 title: "Check and Radio"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["100-Content"]
@@ -33,11 +33,11 @@ Use this markup to create a checkbox or radio **unstyled**.
 ###Modes
 
 <demo>
-  <demovanilla src="demos/docs/content/form/check-radio/unstyled-block" name="block">
+  <demovanilla src="demos/docs/content/form/check-radio-unstyled-block" name="block">
   </demovanilla>
-  <demovanilla src="demos/docs/content/form/check-radio/unstyled-inline" name="inline">
+  <demovanilla src="demos/docs/content/form/check-radio-unstyled-inline" name="inline">
   </demovanilla>
-  <demovanilla src="demos/docs/content/form/check-radio/unstyled-disabled" name="disabled">
+  <demovanilla src="demos/docs/content/form/check-radio-unstyled-disabled" name="disabled">
   </demovanilla>
 </demo>
 
@@ -66,11 +66,11 @@ Use this markup to create a checkbox or radio **styled**.
 ###Modes
 
 <demo>
-  <demovanilla src="demos/docs/content/form/check-radio/styled-block" name="block">
+  <demovanilla src="demos/docs/content/form/check-radio-styled-block" name="block">
   </demovanilla>
-  <demovanilla src="demos/docs/content/form/check-radio/styled-inline" name="inline">
+  <demovanilla src="demos/docs/content/form/check-radio-styled-inline" name="inline">
   </demovanilla>
-  <demovanilla src="demos/docs/content/form/check-radio/styled-disabled" name="disabled">
+  <demovanilla src="demos/docs/content/form/check-radio-styled-disabled" name="disabled">
   </demovanilla>
 </demo>
 
@@ -97,10 +97,10 @@ Use this markup to create a **fake** checkbox or radio **styled**.
 ###Modes
 
 <demo>
-  <demovanilla src="demos/docs/content/form/check-radio/fake-block" name="block">
+  <demovanilla src="demos/docs/content/form/check-radio-fake-block" name="block">
   </demovanilla>
-  <demovanilla src="demos/docs/content/form/check-radio/fake-inline" name="inline">
+  <demovanilla src="demos/docs/content/form/check-radio-fake-inline" name="inline">
   </demovanilla>
-  <demovanilla src="demos/docs/content/form/check-radio/fake-disabled" name="disabled">
+  <demovanilla src="demos/docs/content/form/check-radio-fake-disabled" name="disabled">
   </demovanilla>
 </demo>

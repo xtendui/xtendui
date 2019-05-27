@@ -6,7 +6,7 @@ class Footer extends React.Component {
     const {site} = this.props
     return (
       <footer className="site_footer">
-        <div className="container">
+        <div className="container container--fluid">
           <div className="site_footer_bottom">
             <div className="row">
               <div className="col--12 col--2-md">

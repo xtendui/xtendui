@@ -1,7 +1,7 @@
 ---
 path: "/docs/interaction/general/decoration"
 type: "docs"
-date: "2019-01-01"
+date: "2000-01-01"
 title: "Decoration"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]

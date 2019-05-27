@@ -54,8 +54,7 @@
   .btn--squared();
   .btn--noborder();
   .btn--noeffect();
-  .margin(y, .5rem);
-  padding: 0;
+  padding: .5rem 0 !important;
   .font-sans--regular();
   font-size: 1.4rem;
   color: @gray--500;
@@ -73,7 +72,8 @@
   }
   &.active,
   &.current {
-    padding: .25em .5em;
+    .margin(y, .5rem);
+    padding: .25em .5em !important;
     .font-sans--semibold();
     color: @text;
     &@{btn--design} {

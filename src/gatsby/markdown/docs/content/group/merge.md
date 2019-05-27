@@ -1,7 +1,7 @@
 ---
 path: "/docs/content/group/merge"
 type: "docs"
-date: "2030-02-01"
+date: "2019-02-01"
 title: "Merge"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["100-Content"]
@@ -58,8 +58,8 @@ Use this markup to merge multiple `.btn` in one `[button]` as stack.
 ##Modes
 
 <demo>
-  <demovanilla src="demos/docs/content/group/merge/line" name="line">
+  <demovanilla src="demos/docs/content/group/merge-line" name="line">
   </demovanilla>
-  <demovanilla src="demos/docs/content/group/merge/stack" name="stack">
+  <demovanilla src="demos/docs/content/group/merge-stack" name="stack">
   </demovanilla>
 </demo>

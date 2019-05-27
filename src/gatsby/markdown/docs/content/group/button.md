@@ -1,7 +1,7 @@
 ---
 path: "/docs/content/group/button"
 type: "docs"
-date: "2030-01-01"
+date: "2019-01-01"
 title: "Button"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["100-Content"]
@@ -47,8 +47,8 @@ Use this markup to create a button group as stack.
 ##Modes
 
 <demo>
-  <demovanilla src="demos/docs/content/group/button/line" name="line">
+  <demovanilla src="demos/docs/content/group/button-line" name="line">
   </demovanilla>
-  <demovanilla src="demos/docs/content/group/button/stack" name="stack">
+  <demovanilla src="demos/docs/content/group/button-stack" name="stack">
   </demovanilla>
 </demo>

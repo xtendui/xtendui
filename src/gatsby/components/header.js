@@ -14,7 +14,7 @@ class Header extends React.Component {
         <nav className="site_header_top_outer"
              data-xt-sticky='{"sticky": "fixed", "hide": "down"}'>
           <div className="site_header_top">
-            <div className="container">
+            <div className="container container--fluid">
 
               <div className="row flex--auto justify-content--space-between align-items--center">
                 <div className="col--2-md">

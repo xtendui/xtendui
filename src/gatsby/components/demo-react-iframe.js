@@ -37,8 +37,8 @@ DemoReactIframe.propTypes = {
     name: PropTypes.string.isRequired,
     full: PropTypes.bool,
     htmlSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-    jsSource: PropTypes.string.isRequired,
-    cssSource: PropTypes.string.isRequired,
+    jsSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    cssSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     Component: PropTypes.func.isRequired,
   }).isRequired,
 }

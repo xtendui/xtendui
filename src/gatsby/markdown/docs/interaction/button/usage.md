@@ -1,7 +1,7 @@
 ---
 path: "/docs/interaction/button/usage"
 type: "docs"
-date: "2019-01-15"
+date: "2000-01-15"
 title: "Usage"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]

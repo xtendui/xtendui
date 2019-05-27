@@ -1,7 +1,7 @@
 ---
 path: "/docs/content/group/options"
 type: "docs"
-date: "2030-04-01"
+date: "2019-04-01"
 title: "Options"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["100-Content"]
@@ -13,9 +13,9 @@ parent: "Group"
 Full width groups with `.full`
 
 <demo>
-  <demovanilla src="demos/docs/content/group/options/full-line" name="line">
+  <demovanilla src="demos/docs/content/group/options-full-line" name="line">
   </demovanilla>
-  <demovanilla src="demos/docs/content/group/options/full-stack" name="stack">
+  <demovanilla src="demos/docs/content/group/options-full-stack" name="stack">
   </demovanilla>
 </demo>
 
@@ -24,9 +24,9 @@ Full width groups with `.full`
 Space group elements with list's options.
 
 <demo>
-  <demovanilla src="demos/docs/content/group/options/list-line" name="line">
+  <demovanilla src="demos/docs/content/group/options-list-line" name="line">
   </demovanilla>
-  <demovanilla src="demos/docs/content/group/options/list-stack" name="stack">
+  <demovanilla src="demos/docs/content/group/options-list-stack" name="stack">
   </demovanilla>
 </demo>
 
@@ -41,8 +41,8 @@ Optional classes for assigning variant.
 </div>
 
 <demo>
-  <demovanilla src="demos/docs/content/group/options/variant-line" name="line">
+  <demovanilla src="demos/docs/content/group/options-variant-line" name="line">
   </demovanilla>
-  <demovanilla src="demos/docs/content/group/options/variant-stack" name="stack">
+  <demovanilla src="demos/docs/content/group/options-variant-stack" name="stack">
   </demovanilla>
 </demo>

@@ -5,8 +5,8 @@ import {StaticQuery, graphql} from "gatsby"
 import Header from "components/header"
 import Footer from "components/footer"
 import Sidebar from "components/sidebar"
-import DocsAside from "components/docs-aside"
-import DocsFoot from "components/docs-foot"
+import DocsAside from "components/doc-aside"
+import DocsFoot from "components/doc-foot"
 
 import {Xt} from "xtend-library";
 import {populateBlock} from "assets/scripts/demo.js"
@@ -50,7 +50,7 @@ class Layout extends React.Component {
 
               <main className="site_main">
                 <div className="site_main_inner">
-                  <div className="container">
+                  <div className="container container--fluid">
 
                     {page ?
                       <div className="row">

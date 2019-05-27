@@ -334,12 +334,10 @@ export class Sticky extends Core {
         el.style.transform = 'translateY(' + add + 'px)';
       }
       // fix position fixed width 100% of parent
-      /*
       let width = Xt.normalizeWidth(tr.clientWidth);
       if (el.style.width !== width) {
         el.style.width = width;
       }
-      */
       // dispatch
       let detail = self.eDetailSet();
       el.dispatchEvent(new CustomEvent('change.xt.sticky', {detail: detail}));

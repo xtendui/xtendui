@@ -1,0 +1,30 @@
+@import (reference) "../../../../../../../dist/styles/xtend.less";
+
+//##START
+// slider
+
+.slider {
+  .slides_inner {
+    overflow: hidden;
+    // dragger animations
+    .transition-none() !important;
+  }
+  .slide {
+    .toggle--block();
+    .col(12);
+    &:nth-child(3) {
+      .card_content {
+        .padding(y, big);
+      }
+    }
+  }
+}
+
+// card
+
+.card {
+  .card--secondary();
+  .card--big();
+  text-align: center;
+}
+//##END

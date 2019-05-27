@@ -117,8 +117,8 @@ export class Slider extends Core {
           currentPags[i] = clone.cloneNode(true);
           let item = currentPags[i];
           let html = item.innerHTML;
-          html = html.replace(new RegExp('{{num}}', 'ig'), (i + 1).toString());
-          html = html.replace(new RegExp('{{tot}}', 'ig'), arr.length.toString());
+          html = html.replace(new RegExp('xt-num', 'ig'), (i + 1).toString());
+          html = html.replace(new RegExp('xt-tot', 'ig'), arr.length.toString());
           item.innerHTML = html;
           item.classList.remove('xt-clone');
           if (options.groupMq) {

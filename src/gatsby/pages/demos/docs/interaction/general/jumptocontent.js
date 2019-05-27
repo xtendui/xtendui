@@ -38,9 +38,13 @@ class Page extends React.Component {
   }
 
   render() {
-    demo.jsSource = require("!!raw-loader!./" + demo.name + ".source.js").default
-    demo.cssSource = require("!!raw-loader!./" + demo.name + ".source.less").default
-    demo.css = demo.css ? require("!raw-loader!less-loader!./" + demo.name + ".source.less").default : null
+    if (demo.js) {
+      demo.jsSource = require("!!raw-loader!./" + demo.name + ".source.js").default
+    }
+    if (demo.css) {
+      demo.cssSource = require("!!raw-loader!./" + demo.name + ".source.less").default
+      demo.css = demo.css ? require("!raw-loader!less-loader!./" + demo.name + ".source.less").default : null
+    }
     return (
       <DemoVanillaIframe demo={demo}/>
     )
