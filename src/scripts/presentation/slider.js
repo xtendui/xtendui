@@ -91,19 +91,10 @@ export class Slider extends Core {
       if (!pags.length) {
         console.error('Error: Xt.Slider pagination not found for', self.object); // Xt check
       }
-      // remove old
+      // pags
       self.pags = self.pags ? self.pags : [];
-      for (let pags of self.pags) {
-        for (let pag of pags) {
-          pag.remove();
-        }
-      }
-      // add new
-      self.pags = [];
-      for (let pag of pags) {
-        self.pags.push([]);
+      for (let [z, pag] of pags.entries()) {
         // vars
-        let currentPags = self.pags[self.pags.length - 1];
         let clone = pag.querySelector('.xt-clone');
         let container = clone.parentNode;
         let arr;
@@ -112,19 +103,29 @@ export class Slider extends Core {
         } else {
           arr = self.targets;
         }
-        // populate
-        for (let [i, group] of arr.entries()) {
-          currentPags[i] = clone.cloneNode(true);
-          let item = currentPags[i];
-          let html = item.innerHTML;
-          html = html.replace(new RegExp('xt-num', 'ig'), (i + 1).toString());
-          html = html.replace(new RegExp('xt-tot', 'ig'), arr.length.toString());
-          item.innerHTML = html;
-          item.classList.remove('xt-clone');
-          if (options.groupMq) {
-            item.setAttribute('data-xt-group', self.namespace + '-' + i);
+        // check if currentPags has different length
+        if (!self.pags[z] || self.pags[z].length !== arr.length) {
+          // clean
+          if (self.pags[z]) {
+            for (let oldPag of self.pags[z]) {
+              oldPag.remove();
+            }
           }
-          container.insertBefore(item, clone);
+          // populate
+          self.pags[z] = [];
+          for (let [i, group] of arr.entries()) {
+            let item = clone.cloneNode(true);
+            let html = item.innerHTML;
+            html = html.replace(new RegExp('{{num}}', 'ig'), (i + 1).toString());
+            html = html.replace(new RegExp('{{tot}}', 'ig'), arr.length.toString());
+            item.innerHTML = html;
+            item.classList.remove('xt-clone');
+            if (options.groupMq) {
+              item.setAttribute('data-xt-group', self.namespace + '-' + i);
+            }
+            container.insertBefore(item, clone);
+            self.pags[z][i] = item;
+          }
         }
       }
     }
