@@ -582,23 +582,21 @@ class Core {
     }
     // wheel
     if (options.wheel && options.wheel.selector) {
-      self.detail.wheels = options.wheel.selector === 'object' ? Xt.arrSingle(self.object) :
-        options.wheel.selector === 'scrollingElement' ? Xt.arrSingle(document.scrollingElement) :
-          self.object.querySelectorAll(options.wheel.selector);
-      self.destroyElements.push(...self.detail.wheels);
-      for (let wheel of self.detail.wheels) {
-        let eWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
-        // wheel
-        let wheelHandler = Xt.dataStorage.put(wheel, eWheel + '.' + self.namespace,
-          self.eventWheelHandler.bind(self).bind(self, wheel));
-        wheel.addEventListener(eWheel, wheelHandler, Xt.passiveSupported ? {passive: false} : false);
-        // block
-        if (options.wheel.block) {
-          let block = wheel.parentNode;
-          let wheelBlockHandler = Xt.dataStorage.put(block, eWheel + '.' + self.namespace,
-            self.eventWheelBlockHandler.bind(self));
-          block.addEventListener(eWheel, wheelBlockHandler, Xt.passiveSupported ? {passive: false} : false);
-        }
+      let wheel = self.detail.wheel = options.wheel.selector === 'object' ? self.object :
+        options.wheel.selector === 'scrollingElement' ? document.scrollingElement :
+          self.object.querySelector(options.wheel.selector);
+      self.destroyElements.push(wheel);
+      let eWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
+      // wheel
+      let wheelHandler = Xt.dataStorage.put(wheel, eWheel + '.' + self.namespace,
+        self.eventWheelHandler.bind(self).bind(self, wheel));
+      wheel.addEventListener(eWheel, wheelHandler, Xt.passiveSupported ? {passive: false} : false);
+      // block
+      if (options.wheel.block) {
+        let block = wheel.parentNode;
+        let wheelBlockHandler = Xt.dataStorage.put(block, eWheel + '.' + self.namespace,
+          self.eventWheelBlockHandler.bind(self));
+        block.addEventListener(eWheel, wheelBlockHandler, Xt.passiveSupported ? {passive: false} : false);
       }
     }
   }
@@ -2046,6 +2044,7 @@ class Core {
     // prevent wheel
     e.preventDefault();
     // if document.scrollingElement scroll current overflow scroll
+    let elInitial = el;
     if (el === document.scrollingElement) {
       let elFinal;
       for (let composed of e.composedPath()) {
@@ -2088,6 +2087,11 @@ class Core {
       } else if (delta > 0) {
         self.goToPrev(1);
       }
+      // dispatch
+      let detail = self.eDetailSet();
+      elInitial.dispatchEvent(new CustomEvent('wheelstart.xt', {detail: detail}));
+      elInitial.dispatchEvent(new CustomEvent('wheelend.xt', {detail: detail}));
+      // return
       return false;
     }
     // calculate limit
@@ -2148,7 +2152,7 @@ class Core {
       // dispatch
       let detail = self.eDetailSet();
       detail.wheelX = -self.detail.wheelCurrent;
-      el.dispatchEvent(new CustomEvent('wheelstart.xt', {detail: detail}));
+      elInitial.dispatchEvent(new CustomEvent('wheelstart.xt', {detail: detail}));
       // friction
       self.eventFrictionSmooth(el, min, max);
     }

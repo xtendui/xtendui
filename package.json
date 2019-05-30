@@ -36,7 +36,8 @@
     "dep:docs": "gh-pages -d docs",
     "release": "npx semantic-release --no-ci",
     "release:dry": "npx semantic-release --dry-run",
-    "lint": "eslint src/scripts src/docs/assets/scripts"
+    "lint": "eslint src/scripts src/docs/assets/scripts",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "bezier-easing": "^2.1.0"

@@ -267,12 +267,11 @@ class Slider extends Core {
       }
       // wheel
       if (options.wheel && options.wheel.selector) {
-        for (let wheel of self.detail.wheels) {
-          wheel.addEventListener('wheelstart.xt', self.logicDragstart.bind(self).bind(self, dragger));
-          wheel.addEventListener('wheel.xt', self.logicDrag.bind(self).bind(self, dragger));
-          wheel.addEventListener('wheelend.xt', self.logicDragend.bind(self).bind(self, dragger));
-          wheel.addEventListener('wheelend.xt', self.logicDragfrictionend.bind(self).bind(self, dragger));
-        }
+        let wheel = self.detail.wheel;
+        wheel.addEventListener('wheelstart.xt', self.logicDragstart.bind(self).bind(self, dragger));
+        wheel.addEventListener('wheel.xt', self.logicDrag.bind(self).bind(self, dragger));
+        wheel.addEventListener('wheelend.xt', self.logicDragend.bind(self).bind(self, dragger));
+        wheel.addEventListener('wheelend.xt', self.logicDragfrictionend.bind(self).bind(self, dragger));
       }
     }
     // resize
