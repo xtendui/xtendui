@@ -589,12 +589,16 @@ class Core {
       let eWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
       // wheel
       let wheelHandler = Xt.dataStorage.put(wheel, eWheel + '.' + self.namespace,
-        self.eventWheelHandler.bind(self).bind(self, wheel));
+        self.eventWheelHandler.bind(self));
       wheel.addEventListener(eWheel, wheelHandler, Xt.passiveSupported ? {passive: false} : false);
+      // stop
+      let wheelStopHandler = Xt.dataStorage.put(wheel, eWheel + '.stop' + '.' + self.namespace,
+        self.eventWheelStop.bind(self));
+      wheel.addEventListener('stop.wheel.xt', wheelStopHandler, Xt.passiveSupported ? {passive: false} : false);
       // block
       if (options.wheel.block) {
         let block = wheel.parentNode;
-        let wheelBlockHandler = Xt.dataStorage.put(block, eWheel + '.' + self.namespace,
+        let wheelBlockHandler = Xt.dataStorage.put(block, eWheel + '.block' + '.' + self.namespace,
           self.eventWheelBlockHandler.bind(self));
         block.addEventListener(eWheel, wheelBlockHandler, Xt.passiveSupported ? {passive: false} : false);
       }
@@ -2003,9 +2007,9 @@ class Core {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventWheelHandler(el, e) {
+  eventWheelHandler(e) {
     let self = this;
-    self.eventWheelSmooth(el, e);
+    self.eventWheelSmooth(e);
   }
 
   /**
@@ -2021,7 +2025,7 @@ class Core {
     // prevent default if not loop
     let max = self.getElementsSingle().length - 1;
     let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY;
-    if ((delta > 0 && self.currentIndex > 0) || (delta < 0 && self.currentIndex < max)) {
+    if ((delta > 0 && self.currentIndex > 0) || (delta < 0 && self.currentIndex < max - 1)) {
       // prevent wheel
       e.preventDefault();
       e.stopPropagation();
@@ -2034,9 +2038,10 @@ class Core {
    * @param {Event} e
    */
 
-  eventWheelSmooth(el, e) {
+  eventWheelSmooth(e) {
     let self = this;
     let options = self.options;
+    let el = self.detail.wheel;
     // disabled
     if (self.disabled && !self.initial) {
       return false;
@@ -2044,7 +2049,6 @@ class Core {
     // prevent wheel
     e.preventDefault();
     // if document.scrollingElement scroll current overflow scroll
-    let elInitial = el;
     if (el === document.scrollingElement) {
       let elFinal;
       for (let composed of e.composedPath()) {
@@ -2089,8 +2093,8 @@ class Core {
       }
       // dispatch
       let detail = self.eDetailSet();
-      elInitial.dispatchEvent(new CustomEvent('wheelstart.xt', {detail: detail}));
-      elInitial.dispatchEvent(new CustomEvent('wheelend.xt', {detail: detail}));
+      self.detail.wheel.dispatchEvent(new CustomEvent('wheelstart.xt', {detail: detail}));
+      self.detail.wheel.dispatchEvent(new CustomEvent('wheelend.xt', {detail: detail}));
       // return
       return false;
     }
@@ -2152,7 +2156,7 @@ class Core {
       // dispatch
       let detail = self.eDetailSet();
       detail.wheelX = -self.detail.wheelCurrent;
-      elInitial.dispatchEvent(new CustomEvent('wheelstart.xt', {detail: detail}));
+      self.detail.wheel.dispatchEvent(new CustomEvent('wheelstart.xt', {detail: detail}));
       // friction
       self.eventFrictionSmooth(el, min, max);
     }
@@ -2199,14 +2203,14 @@ class Core {
     if (self.detail.wheelCurrent > min && self.detail.wheelCurrent < max && // limit
       Math.abs(delta) >= options.wheel.frictionLimit) { // frictionLimit
       // friction
-      cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'WheelSmoothFrame'));
-      Xt.dataStorage.set(el, self.componentNamespace + 'WheelSmoothFrame', requestAnimationFrame(function () {
+      cancelAnimationFrame(Xt.dataStorage.get(self.detail.wheel, self.componentNamespace + 'WheelSmoothFrame'));
+      Xt.dataStorage.set(self.detail.wheel, self.componentNamespace + 'WheelSmoothFrame', requestAnimationFrame(function () {
         self.eventFrictionSmooth(el, min, max);
       }));
       // dispatch
       let detail = self.eDetailSet();
       detail.wheelX = -self.detail.wheelCurrent;
-      el.dispatchEvent(new CustomEvent('wheel.xt', {detail: detail}));
+      self.detail.wheel.dispatchEvent(new CustomEvent('wheel.xt', {detail: detail}));
     } else {
       // moving
       self.detail.wheelMoving = false;
@@ -2215,8 +2219,19 @@ class Core {
       // dispatch
       let detail = self.eDetailSet();
       detail.wheelX = -self.detail.wheelCurrent;
-      el.dispatchEvent(new CustomEvent('wheelend.xt', {detail: detail}));
+      self.detail.wheel.dispatchEvent(new CustomEvent('wheelend.xt', {detail: detail}));
     }
+  }
+
+  /**
+   * event wheel stop for Xt
+   */
+
+  eventWheelStop() {
+    let self = this;
+    let el = self.detail.wheel;
+    cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'WheelSmoothFrame'));
+    self.detail.wheelMoving = false;
   }
 
   //////////////////////
