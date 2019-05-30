@@ -30,11 +30,12 @@
     "build:docs": "gatsby clean && gatsby build",
     "dev": "gulp watch",
     "dev:docs": "gatsby clean && gatsby develop",
-    "serve": "gatsby clean && gatsby build && gatsby serve -p 8000",
+    "serve": "npm run build:docs && gatsby serve -p 8000",
     "deploy": "gh-pages -d docs",
     "release": "npx semantic-release --no-ci",
     "release:dry": "npx semantic-release --dry-run",
-    "lint": "eslint src/scripts src/docs/assets/scripts"
+    "lint": "eslint src/scripts src/docs/assets/scripts",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "bezier-easing": "^2.1.0",
