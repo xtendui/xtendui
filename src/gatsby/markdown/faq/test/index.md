@@ -34,6 +34,15 @@ body {
 }
 ```
 
+```jsx
+let self = Xt.init('xt-scroll', document.documentElement, {
+  // option
+});
+self.unmount = function() {
+  self = null;
+};
+```
+
 <script type="text/plain" class="language-markup">
   <a href="#" class="btn">
     <span><!-- content --></span>

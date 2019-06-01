@@ -7,3 +7,34 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 categories: ["400-Presentation"]
 parent: "Scroll"
 ---
+
+##Usage
+
+Use this markup to create a scroll.
+
+<script type="text/plain" class="language-markup">
+  <div data-xt-scroll>
+    <div class="scroll">
+      <!-- content -->
+    </div>
+  </div>
+</script>
+
+You can initialize **scroll** by javascript omitting `[data-xt-scroll]`.
+
+```jsx
+let self = Xt.init('xt-scroll', document.documentElement, {
+  // option
+});
+self.unmount = function() {
+  self = null;
+};
+```
+
+<div class="alert alert--primary">
+  <div class="alert_content">
+    It's recomended to animate the scroll elements with <code>animation</code> instead of <code>transition</code>
+    because
+    of <a href="{% link faq.html %}#browsers-bugs-fixed-position">this bug</a>.
+  </div>
+</div>

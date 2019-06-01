@@ -1,0 +1,22 @@
+@import (reference) "../../../../../../../dist/styles/xtend.less";
+
+//##START
+// scroll
+
+.scroll_container > * {
+  opacity: 0;
+  .transition-none() !important; // fix animation on links
+  &.active {
+    .anim-y.active();
+    &.inverse {
+      .anim-y-inverse.active();
+    }
+  }
+  &.out {
+    .anim-y.out();
+    &.inverse {
+      .anim-y-inverse.out();
+    }
+  }
+}
+//##END

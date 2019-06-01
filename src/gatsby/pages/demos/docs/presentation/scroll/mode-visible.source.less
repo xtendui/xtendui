@@ -1,0 +1,18 @@
+@import (reference) "../../../../../../../dist/styles/xtend.less";
+
+//##START
+// scroll
+
+.scroll_container > * {
+  &:not(.scroll--visible) {
+    opacity: 0;
+    .transition-none() !important; // fix animation on links
+    &.active {
+      .anim-x.active();
+    }
+    &.out {
+      .anim-x.out();
+    }
+  }
+}
+//##END
