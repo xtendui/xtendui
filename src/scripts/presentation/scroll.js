@@ -186,7 +186,7 @@ export class Scroll extends Core {
         self.detail.end = self.detail.endReal = options.end ? self.detail.start + Xt.windowPercent(options.end) - self.detail.distance : elTop + elHeight + self.detail.trigger - self.detail.distance;
         self.detail.end = self.detail.end > self.detail.trigger + scrollHeight - window.innerHeight ? self.detail.trigger + scrollHeight - window.innerHeight : self.detail.end; // limit fixes deactivation on page bottom
         self.detail.fallback = self.detail.end - Xt.windowPercent(options.fallback);
-        self.detail.start = self.detail.start > self.detail.min ? self.detail.min : self.detail.start; // limit fixes deactivation on page bottom
+        self.detail.start = self.detail.start > self.detail.end ? self.detail.fallback : self.detail.start; // limit fixes deactivation on page bottom
         // ratio
         let current = scrollTop + self.detail.trigger - self.detail.start;
         let total = self.detail.end - self.detail.start;

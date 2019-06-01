@@ -176,6 +176,7 @@ if (typeof window !== 'undefined') {
    * destroy element
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} removed
    */
+  /*
   Xt.destroyElement = function (removed = document.documentElement) {
     if (removed.classList.contains('xt-ignore') || Xt.parents(removed, '.xt-ignore').length) {
       return false;
@@ -214,6 +215,7 @@ if (typeof window !== 'undefined') {
       }
     }
   };
+   */
 
   /**
    * initObserve
@@ -250,16 +252,17 @@ if (typeof window !== 'undefined') {
     for (let mutation of mutationsList) {
       if (mutation.type === 'childList') {
         // removed
+        /*
         for (let removed of mutation.removedNodes) {
           if (removed.nodeType === 1) {
             Xt.destroyElement(removed);
           }
         }
+        */
         // added
         for (let added of mutation.addedNodes) {
           if (added.nodeType === 1) {
             Xt.initElement(added);
-            Xt.initObserve(added);
           }
         }
       }
@@ -272,17 +275,15 @@ if (typeof window !== 'undefined') {
    */
 
   Xt.load = function (container = document.documentElement) {
-    requestAnimationFrame(function () {
-      Xt.stickyIndex = 500;
-      Xt.windowHeightSet();
-      Xt.initElement(container);
-      Xt.initObserve(container);
-      Xt.observer.observe(container, {
-        characterData: false,
-        attributes: false,
-        childList: true,
-        subtree: true
-      });
+    Xt.stickyIndex = 500;
+    Xt.windowHeightSet();
+    Xt.initElement(container);
+    Xt.initObserve(container);
+    Xt.observer.observe(container, {
+      characterData: false,
+      attributes: false,
+      childList: true,
+      subtree: true
     });
   };
 
@@ -292,16 +293,20 @@ if (typeof window !== 'undefined') {
    */
 
   Xt.ready = function (fnc) {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function () {
+    if (document.readyState === 'complete') {
+      requestAnimationFrame(function () {
         fnc();
       });
     } else {
-      fnc();
+      document.addEventListener('readystatechange', function () {
+        if (document.readyState === 'complete') {
+          requestAnimationFrame(function () {
+            fnc();
+          });
+        }
+      });
     }
   };
-
-  //Xt.ready(Xt.load); // PUT THIS ON JS or ssr bugs
 
   //////////////////////
   // dataStorage
