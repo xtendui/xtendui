@@ -2,13 +2,13 @@
 path: "/docs/presentation/slider/nav-pag"
 type: "docs"
 date: "2019-04-01"
-title: "Nav and Pag"
+title: "Navigation and Pagination"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["400-Presentation"]
 parent: "Slider"
 ---
 
-###Nav and Pag
+###Navigation and Pagination
 
 `"align": "center"` `"align": "left"` `"align": "right"`
 

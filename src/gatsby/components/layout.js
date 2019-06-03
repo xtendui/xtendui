@@ -13,11 +13,14 @@ import {populateBlock} from "assets/scripts/demo.js"
 import {makeDocument} from "assets/scripts/theme.js"
 
 class Layout extends React.Component {
-  render() {
-    const {seo, page, children} = this.props
+  componentDidMount() {
     Xt.ready(Xt.load)
     makeDocument()
     populateBlock()
+  }
+
+  render() {
+    const {seo, page, children} = this.props
     return (
       <StaticQuery
         query={graphql`
