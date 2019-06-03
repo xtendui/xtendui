@@ -22,6 +22,17 @@ export class Core {
     self.optionsJs = optionsJs;
     self.componentName = self.constructor.componentName;
     self.componentNamespace = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '');
+    // @FIX ignore
+    if (self.object.classList.contains('xt-ignore') || Xt.parents(self.object, '.xt-ignore').length) {
+      console.warn(self.componentName + ' inside xt-ignore will not be initialized:', self.object);
+      return null;
+    }
+    // not if already done
+    if (self.object.getAttribute('data-' + self.componentName + '-inited')) {
+      console.warn(self.componentName + ' already initialized:', self.object);
+      return Xt.get(self.componentName, self.object);
+    }
+    self.object.setAttribute('data-' + self.componentName + '-inited', 'true');
     // init
     self.init(object, optionsJs);
   }
@@ -37,14 +48,6 @@ export class Core {
     let self = this;
     self.object = object || self.object;
     self.optionsJs = optionsJs || self.optionsJs;
-    // @FIX ignore
-    if (self.object.classList.contains('xt-ignore') || Xt.parents(self.object, '.xt-ignore').length) {
-      return false;
-    }
-    // destroy if already done
-    if (self.object.getAttribute('data-' + self.componentName + '-inited')) {
-      self.destroy(true);
-    }
     // vars
     self.classes = [];
     self.classesIn = [];
@@ -68,8 +71,6 @@ export class Core {
     self.initScope();
     self.initAria();
     self.initStart(true);
-    // setup
-    self.object.setAttribute('data-' + self.componentName + '-inited', 'true');
   }
 
   /**

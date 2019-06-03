@@ -18,9 +18,6 @@ Xt.ready(function () {
       "pause": "[data-xt-pag]"
     }
   });
-  self.unmount = function () {
-    self = null;
-  };
 
   // auto start
 

@@ -14,9 +14,9 @@ import {makeDocument} from "assets/scripts/theme.js"
 
 class Layout extends React.Component {
   componentDidMount() {
-    Xt.ready(Xt.load)
     makeDocument()
     populateBlock()
+    Xt.ready(Xt.load)
   }
 
   render() {

@@ -20,9 +20,6 @@ Xt.ready(function () {
     "durationOff": time * 1000,
     "instant": false
   });
-  self.unmount = function () {
-    self = null;
-  };
 
   // drag
 

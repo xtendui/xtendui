@@ -17,9 +17,6 @@ Xt.ready(function () {
     "sticky": "fixed",
     "end": 350
   });
-  self.unmount = function () {
-    self = null;
-  };
 
   // event
 
@@ -52,9 +49,6 @@ Xt.ready(function () {
     "sticky": "fixed",
     "end": 350
   });
-  self.unmount = function () {
-    self = null;
-  };
 
   // event
 
@@ -86,9 +80,6 @@ Xt.ready(function () {
     "sticky": true,
     "start": "125%"
   });
-  self.unmount = function () {
-    self = null;
-  };
 
   // event
 
