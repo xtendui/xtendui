@@ -7,3 +7,34 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 categories: ["400-Presentation"]
 parent: "Sticky"
 ---
+
+##Usage
+
+Use this markup to create a sticky.
+
+<script type="text/plain" class="language-markup">
+  <div data-xt-xticky>
+    <div>
+      <!-- content -->
+    </div>
+  </div>
+</script>
+
+You can initialize **sticky** by javascript omitting `[data-xt-sticky]`.
+
+
+```jsx
+let self = Xt.init('xt-sticky', document.querySelector('.my-sticky'), {
+  // option
+});
+self.unmount = function() {
+  self = null;
+};
+```
+
+<div class="alert alert--primary">
+  <div class="alert_content">
+    It's recomended to style and animate a inner div <code>[data-xt-xticky] > div</code> when using <strong>sticky
+    component</strong>.
+  </div>
+</div>
