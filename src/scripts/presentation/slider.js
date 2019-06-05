@@ -249,7 +249,9 @@ export class Slider extends Core {
     // targets
     for (let slide of self.targets) {
       // disable links not active slide
-      slide.classList.add('links--none');
+      if (options.jump) {
+        slide.classList.add('links--none');
+      }
       // slide on
       let slideOnHandler = Xt.dataStorage.put(slide, 'on' + '.' + self.namespace,
         self.eventSlideOnHandler.bind(self).bind(self, dragger, slide));
@@ -465,6 +467,7 @@ export class Slider extends Core {
    */
   eventSlideOn(dragger, e) {
     let self = this;
+    let options = self.options;
     let slide = e.target;
     // only one call per group
     if (Xt.dataStorage.get(slide, self.componentNamespace + 'SlideOnDone')) {
@@ -504,7 +507,9 @@ export class Slider extends Core {
       dragger.classList.remove('links--none');
     }
     // disable links not active slide
-    slide.classList.remove('links--none');
+    if (options.jump) {
+      slide.classList.remove('links--none');
+    }
   }
 
   /**
@@ -514,9 +519,12 @@ export class Slider extends Core {
    */
   eventSlideOff(dragger, e) {
     let self = this;
+    let options = self.options;
     let slide = e.target;
     // disable links not active slide
-    slide.classList.add('links--none');
+    if (options.jump) {
+      slide.classList.add('links--none');
+    }
     // only one call per group
     let targets = self.getTargets(slide);
     for (let target of targets) {
@@ -842,7 +850,7 @@ Slider.optionsDefault = {
     "threshold": 50,
     "linkThreshold": 50,
     "factor": 1,
-    "friction": "return Math.pow(velocity, 0.95)",
+    "friction": "return Math.pow(velocity, 0.9)",
     "frictionLimit": 1.5,
     "overflow": "return Math.pow(overflow, 0.73)",
     "timeLimit": 25
