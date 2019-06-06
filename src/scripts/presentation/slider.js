@@ -41,94 +41,10 @@ class Slider extends Core {
     if (options.autoHeight) {
       self.autoHeight = self.object.querySelector(options.autoHeight);
     }
-    // automatic group
-    let draggerWidthTemp;
-    if (options.groupMq) {
-      // width
-      let draggerWidth = self.dragger ? self.dragger.offsetWidth : self.object.offsetWidth;
-      // groupMq media
-      let mqs = Object.entries(options.groupMq);
-      if (mqs.length) {
-        for (let [key, value] of mqs) {
-          if (window.matchMedia(key).matches) {
-            draggerWidthTemp = draggerWidth * value;
-          }
-        }
-      }
-      draggerWidth = draggerWidthTemp;
-      // generate groups
-      self.groupMq = [];
-      self.groupMq.push([]);
-      let currentCount = draggerWidth;
-      for (let [i, target] of self.targets.entries()) {
-        // calculate
-        let targetWidth = target.offsetWidth;
-        if (targetWidth === 0) { // when display none
-          let container = target.parentNode;
-          let clone = target.cloneNode(true);
-          clone.classList.add('xt-calculating', 'xt-ignore');
-          container.append(clone);
-          targetWidth = clone.offsetWidth;
-          clone.remove();
-        }
-        currentCount -= targetWidth;
-        // overflow
-        let currentGroup = self.groupMq.length - 1;
-        if (currentCount < 0 && self.groupMq[currentGroup].length) {
-          self.groupMq.push([]);
-          currentGroup = self.groupMq.length - 1;
-          currentCount = draggerWidth;
-          currentCount -= targetWidth;
-        }
-        // assign group
-        self.groupMq[currentGroup].push(target);
-        target.setAttribute('data-xt-group', self.namespace + '-' + currentGroup);
-      }
-    }
-    // generate elements
-    if (options.pagination) {
-      let pags = self.object.querySelectorAll(options.pagination);
-      if (!pags.length) {
-        console.error('Error: Xt.Slider pagination not found for', self.object); // Xt check
-      }
-      // pags
-      self.pags = self.pags ? self.pags : [];
-      for (let [z, pag] of pags.entries()) {
-        // vars
-        let clone = pag.querySelector('.xt-clone');
-        let container = clone.parentNode;
-        let arr;
-        if (options.groupMq) {
-          arr = self.groupMq;
-        } else {
-          arr = self.targets;
-        }
-        // check if currentPags has different length
-        if (!self.pags[z] || self.pags[z].length !== arr.length) {
-          // clean
-          if (self.pags[z]) {
-            for (let oldPag of self.pags[z]) {
-              oldPag.remove();
-            }
-          }
-          // populate
-          self.pags[z] = [];
-          for (let [i, group] of arr.entries()) {
-            let item = clone.cloneNode(true);
-            let html = item.innerHTML;
-            html = html.replace(new RegExp('{{num}}', 'ig'), (i + 1).toString());
-            html = html.replace(new RegExp('{{tot}}', 'ig'), arr.length.toString());
-            item.innerHTML = html;
-            item.classList.remove('xt-clone');
-            if (options.groupMq) {
-              item.setAttribute('data-xt-group', self.namespace + '-' + i);
-            }
-            container.insertBefore(item, clone);
-            self.pags[z][i] = item;
-          }
-        }
-      }
-    }
+    // initSliderGroup
+    self.initSliderGroup();
+    // initSliderPags
+    self.initSliderPags();
     // only one call per group
     for (let slide of self.targets) {
       Xt.dataStorage.remove(slide, self.componentNamespace + 'SlideOnDone');
@@ -146,16 +62,112 @@ class Slider extends Core {
   }
 
   /**
+   * init slider group
+   */
+  initSliderGroup() {
+    let self = this;
+    let options = self.options;
+    // width
+    let draggerWidth = self.dragger ? self.dragger.offsetWidth : self.object.offsetWidth;
+    let draggerWidthInit = 0;
+    let draggerWidthCalc = 0;
+    // groupMq media
+    if (options.groupMq) {
+      let mqs = Object.entries(options.groupMq);
+      if (mqs.length) {
+        for (let [key, value] of mqs) {
+          if (window.matchMedia(key).matches) {
+            draggerWidthInit = draggerWidthCalc = draggerWidth * value;
+          }
+        }
+      }
+    }
+    // generate groups
+    self.groupMq = [];
+    self.groupMq.push([]);
+    let currentCount = draggerWidthCalc;
+    for (let [i, target] of self.targets.entries()) {
+      // calculate
+      let targetWidth = target.offsetWidth;
+      if (targetWidth === 0) { // when display none
+        let container = target.parentNode;
+        let clone = target.cloneNode(true);
+        clone.classList.add('xt-calculating', 'xt-ignore');
+        container.append(clone);
+        targetWidth = clone.offsetWidth;
+        clone.remove();
+      }
+      currentCount -= targetWidth;
+      // overflow
+      let currentGroup = self.groupMq.length - 1;
+      if (currentCount < 0 && self.groupMq[currentGroup].length) {
+        self.groupMq.push([]);
+        currentGroup = self.groupMq.length - 1;
+        currentCount = draggerWidthInit;
+        currentCount -= targetWidth;
+      }
+      // assign group
+      self.groupMq[currentGroup].push(target);
+      target.setAttribute('data-xt-group', self.namespace + '-' + currentGroup);
+    }
+  }
+
+  /**
+   * init slider pagination
+   */
+  initSliderPags() {
+    let self = this;
+    let options = self.options;
+    // generate elements
+    if (options.pagination) {
+      let pags = self.object.querySelectorAll(options.pagination);
+      if (!pags.length) {
+        console.error('Error: Xt.Slider pagination not found for', self.object); // Xt check
+      }
+      // pags
+      self.pags = self.pags ? self.pags : [];
+      for (let [z, pag] of pags.entries()) {
+        // vars
+        let clone = pag.querySelector('.xt-clone');
+        let container = clone.parentNode;
+        let arr = self.groupMq;
+        // check if currentPags has different length
+        if (!self.pags[z] || self.pags[z].length !== arr.length) {
+          // clean
+          if (self.pags[z]) {
+            for (let oldPag of self.pags[z]) {
+              oldPag.remove();
+            }
+          }
+          // populate
+          self.pags[z] = [];
+          for (let [i, group] of arr.entries()) {
+            let item = clone.cloneNode(true);
+            let html = item.innerHTML;
+            html = html.replace(new RegExp('{{num}}', 'ig'), (i + 1).toString());
+            html = html.replace(new RegExp('{{tot}}', 'ig'), arr.length.toString());
+            item.innerHTML = html;
+            item.classList.remove('xt-clone');
+            item.setAttribute('data-xt-group', self.namespace + '-' + i);
+            container.insertBefore(item, clone);
+            self.pags[z][i] = item;
+          }
+        }
+      }
+    }
+  }
+
+  /**
    * init slider group positions
    */
   initSliderPos() {
     let self = this;
     let options = self.options;
-    // reset
+    // reset done
     for (let slide of self.targets) {
       Xt.dataStorage.remove(slide, self.componentNamespace + 'GroupPosDone');
     }
-    // set
+    // set pos
     for (let slide of self.targets) {
       if (!Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPosDone') && Xt.visible(slide)) {
         // vars
@@ -163,32 +175,16 @@ class Slider extends Core {
         let slideLeft = Infinity;
         let slideWidth = 0;
         let slideHeight = 0;
-        // group
-        let group = slide.getAttribute('data-xt-group');
-        if (group) {
-          // vars
-          for (let [i, target] of targets.entries()) {
-            slideLeft = target.offsetLeft < slideLeft ? slide.offsetLeft : slideLeft;
-            slideWidth += target.offsetWidth;
-            let h = target.offsetHeight;
-            slideHeight = h > slideHeight ? h : slideHeight;
-            // fix position with negative margin on initial render
-            if (i === 0 && slideLeft < 0) {
-              self.detail.fixNegativeMargin = target.offsetLeft;
-            }
-            if (i === 0 && self.detail.fixNegativeMargin) {
-              slideLeft -= self.detail.fixNegativeMargin;
-            }
-          }
-          for (let target of targets) {
-            Xt.dataStorage.set(target, self.componentNamespace + 'GroupPosDone', true);
-            Xt.dataStorage.set(target, self.componentNamespace + 'groupHeight', slideHeight);
-          }
-        } else {
-          slideLeft = slide.offsetLeft;
-          slideWidth = slide.offsetWidth;
-          slideHeight = slide.offsetHeight;
-          Xt.dataStorage.set(slide, self.componentNamespace + 'GroupPosDone', true);
+        // vars
+        for (let target of targets) {
+          slideLeft = target.offsetLeft < slideLeft ? slide.offsetLeft : slideLeft;
+          slideWidth += target.offsetWidth;
+          let h = target.offsetHeight;
+          slideHeight = h > slideHeight ? h : slideHeight;
+        }
+        for (let target of targets) {
+          Xt.dataStorage.set(target, self.componentNamespace + 'GroupPosDone', true);
+          Xt.dataStorage.set(target, self.componentNamespace + 'groupHeight', slideHeight);
         }
         // pos with alignment
         let pos;
@@ -196,7 +192,7 @@ class Slider extends Core {
           pos = self.dragger.offsetWidth / 2 - slideLeft - slideWidth / 2;
         } else if (options.align === 'left') {
           pos = -slideLeft;
-          pos = pos > 0 ? 0 : pos; // @FIX initial value sometimes is wrong
+          //pos = pos > 0 ? 0 : pos; // @FIX initial value sometimes is wrong
         } else if (options.align === 'right') {
           pos = -slideLeft + self.dragger.offsetWidth - slideWidth;
         }
@@ -211,16 +207,29 @@ class Slider extends Core {
           pos = pos < max ? max : pos;
         }
         // save pos
-        if (group) {
-          for (let target of targets) {
-            Xt.dataStorage.set(target, self.componentNamespace + 'GroupPos', pos);
-          }
-        } else {
-          Xt.dataStorage.set(slide, self.componentNamespace + 'GroupPos', pos);
+        for (let target of targets) {
+          Xt.dataStorage.set(target, self.componentNamespace + 'GroupPos', pos);
         }
       }
     }
-    // wheel
+    // @FIX position with negative margin on initial render
+    for (let [i, group] of self.groupMq.entries()) {
+      for (let [z, target] of group.entries()) {
+        if (i === 0 && z === 0) {
+          self.detail.fixNegativeMargin = target.offsetLeft;
+        }
+        let pos = Xt.dataStorage.get(target, self.componentNamespace + 'GroupPos');
+        if (self.detail.fixNegativeMargin > 0) {
+          if (i !== 0) {
+            pos += self.detail.fixNegativeMargin;
+          }
+        } else {
+          pos += self.detail.fixNegativeMargin;
+        }
+        Xt.dataStorage.set(target, self.componentNamespace + 'GroupPos', pos);
+      }
+    }
+    // set wheel min and max
     if (options.wheel && options.wheel.selector) {
       let first = self.targets[0];
       let last = self.targets[self.targets.length - 1];
@@ -532,10 +541,8 @@ class Slider extends Core {
     let self = this;
     // resize
     let slideHeight = slide.offsetHeight;
-    if (slide.getAttribute('data-xt-group')) {
-      let groupHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'groupHeight');
-      slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight;
-    }
+    let groupHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'groupHeight');
+    slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight;
     self.autoHeight.style.height = slideHeight + 'px';
     // listener dispatch
     let detail = self.eDetailSet(e);
@@ -752,11 +759,8 @@ class Slider extends Core {
     // only one call per group
     let currents = self.getCurrents();
     for (let current of currents) {
-      let group = current.getAttribute('data-xt-group');
-      if (group) {
-        for (let target of self.getTargets(current)) {
-          Xt.dataStorage.remove(target, self.componentNamespace + 'SlideOnDone');
-        }
+      for (let target of self.getTargets(current)) {
+        Xt.dataStorage.remove(target, self.componentNamespace + 'SlideOnDone');
       }
     }
     // activate or reset
@@ -765,17 +769,8 @@ class Slider extends Core {
     if (Math.abs(xDist) > options.drag.threshold) {
       // get nearest
       let found = self.currentIndex;
-      if (options.groupMq) {
-        for (let [i, group] of self.groupMq.entries()) {
-          for (let slideCheck of group) {
-            let check = xPos - dragger.offsetWidth / 2 + slideCheck.offsetLeft;
-            if (check < 0 && Xt.visible(slideCheck)) {
-              found = i;
-            }
-          }
-        }
-      } else {
-        for (let [i, slideCheck] of self.targets.entries()) {
+      for (let [i, group] of self.groupMq.entries()) {
+        for (let slideCheck of group) {
           let check = xPos - dragger.offsetWidth / 2 + slideCheck.offsetLeft;
           if (check < 0 && Xt.visible(slideCheck)) {
             found = i;

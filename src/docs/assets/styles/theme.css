@@ -6170,7 +6170,7 @@ html.xt-focus:not(.xt-focus--disable) input[type="radio"]:focus ~ .form-label:be
   vertical-align: top;
   width: 100%;
   transition-property: height;
-  transition-duration: 500ms;
+  transition-duration: 750ms;
   transition-timing-function: cubic-bezier(.68,.13,.25,1);
 }
 .slides_inner {
@@ -6181,7 +6181,7 @@ html.xt-focus:not(.xt-focus--disable) input[type="radio"]:focus ~ .form-label:be
   flex-wrap: nowrap;
   align-items: flex-start;
   transition-property: transform;
-  transition-duration: 500ms;
+  transition-duration: 750ms;
   transition-timing-function: cubic-bezier(.68,.13,.25,1);
 }
 .slides_inner > * {
