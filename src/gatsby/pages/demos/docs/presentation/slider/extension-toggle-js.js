@@ -2,7 +2,6 @@ import React from "react"
 import path from "path";
 
 import DemoVanillaIframe from "components/demo-vanilla-iframe"
-let spinner = require("components/snippet/spinner").default
 
 const demo = {
   name: path.basename(__filename, '.js'),
