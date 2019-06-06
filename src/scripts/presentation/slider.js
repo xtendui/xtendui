@@ -86,7 +86,7 @@ export class Slider extends Core {
     self.groupMq = [];
     self.groupMq.push([]);
     let currentCount = draggerWidthCalc;
-    for (let [i, target] of self.targets.entries()) {
+    for (let target of self.targets) {
       // calculate
       let targetWidth = target.offsetWidth;
       if (targetWidth === 0) { // when display none
@@ -192,16 +192,17 @@ export class Slider extends Core {
           pos = self.dragger.offsetWidth / 2 - slideLeft - slideWidth / 2;
         } else if (options.align === 'left') {
           pos = -slideLeft;
-          //pos = pos > 0 ? 0 : pos; // @FIX initial value sometimes is wrong
         } else if (options.align === 'right') {
           pos = -slideLeft + self.dragger.offsetWidth - slideWidth;
         }
         // pos with contain
         if (options.contain) {
-          let min = 0;
+          let slideFirst = self.targets[0];
+          let slideFirstLeft = slideFirst.offsetLeft;
           let slideLast = self.targets[self.targets.length - 1];
           let slideLastLeft = slideLast.offsetLeft;
           let slideLastWidth = slideLast.offsetWidth;
+          let min = -slideFirstLeft;
           let max = -slideLastLeft + self.dragger.offsetWidth - slideLastWidth;
           pos = pos > min ? min : pos;
           pos = pos < max ? max : pos;
@@ -212,20 +213,14 @@ export class Slider extends Core {
         }
       }
     }
-    // @FIX position with negative margin on initial render
+    // @FIX position values align center
     for (let [i, group] of self.groupMq.entries()) {
       for (let [z, target] of group.entries()) {
         if (i === 0 && z === 0) {
           self.detail.fixNegativeMargin = target.offsetLeft;
         }
         let pos = Xt.dataStorage.get(target, self.componentNamespace + 'GroupPos');
-        if (self.detail.fixNegativeMargin > 0) {
-          if (i !== 0) {
-            pos += self.detail.fixNegativeMargin;
-          }
-        } else {
-          pos += self.detail.fixNegativeMargin;
-        }
+        pos += self.detail.fixNegativeMargin;
         Xt.dataStorage.set(target, self.componentNamespace + 'GroupPos', pos);
       }
     }
