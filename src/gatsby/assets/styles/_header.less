@@ -2,6 +2,24 @@
 // header
 //////////////////////
 
+@site_header_height: 6rem;
+
+.site_header {
+  height: @site_header_height;
+}
+
+.site_header_top_left {
+  width: @site_article_sidebar_width;
+}
+
+.site_header_top_center {
+  .flex--auto();
+}
+
+.site_header_top_right {
+  width: @site_article_aside_width;
+}
+
 // .logo
 
 .logo {
@@ -37,6 +55,17 @@
   background: linear-gradient(0deg, @grad--primary);
 }
 
+.site_header_top_row {
+  .flex--auto();
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site_header_top_links_outer {
+  align-items: center;
+  justify-content: space-between;
+}
+
 .site_header_top_links {
   .list();
 }
@@ -52,10 +81,10 @@
     line-height: 1.2;
     text-transform: uppercase;
     // styles
-    background: fade(@black, 10%);
+    background: @fade--200;
     color: @text--inverse;
     &:focus, &.active {
-      background: fade(@black, 20%);
+      background: @fade--400
     }
     &:-ms-input-placeholder {
       color: @text--inverse;

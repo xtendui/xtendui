@@ -12,20 +12,22 @@ class Header extends React.Component {
       <header className="site_header">
 
         <nav className="site_header_top_outer"
-             data-xt-sticky='{"sticky": "fixed", "hide": "down"}'>
+             data-xt-sticky='{"sticky": "fixed"}'>
           <div className="site_header_top">
-            <div className="container container--fluid">
 
-              <div className="row flex--auto justify-content--space-between align-items--center">
-                <div className="col--2-md">
+            <div className="row row-space--none site_header_top_row">
+              <div className="site_header_top_left">
+                <div class="container fluid">
                   <Link to="/" aria-label="Home"
                         className={`logo
                                     ${seo.title.toLowerCase() === 'home' ? 'active' : ''}`}>
                     <img src={logo} alt={site.site.siteMetadata.title}/>
                   </Link>
                 </div>
-                <div className="col--8-md">
-                  <div className="list justify-content--space-between align-items--center">
+              </div>
+              <div className="site_header_top_center">
+                <div className="list site_header_top_links_outer">
+                  <div>
                     <div className="site_header_top_links">
                       {site.categories.type.map((type, i) => (
                         <Link key={i} to={`/${kebabCase(type.title)}`}
@@ -35,12 +37,16 @@ class Header extends React.Component {
                         </Link>
                       ))}
                     </div>
+                  </div>
+                  <div>
                     <div className="site_header_top_search">
                       <input className="form-input" placeholder="Search"/>
                     </div>
                   </div>
                 </div>
-                <div className="col--2-md">
+              </div>
+              <div className="site_header_top_right">
+                <div className="container fluid">
                   <div className="site_header_top_social">
                     <a href={site.site.siteMetadata.github} target="_blank" rel="noopener"
                        className="btn btn--site_header_top_social" aria-label="Github">
@@ -53,8 +59,8 @@ class Header extends React.Component {
                   </div>
                 </div>
               </div>
-
             </div>
+
           </div>
         </nav>
 

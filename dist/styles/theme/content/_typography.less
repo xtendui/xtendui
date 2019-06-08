@@ -92,7 +92,7 @@ h6, .h6 {
 .header--line {
   .spacing--big();
   .padding(bottom, small);
-  border-bottom: 1px solid @gray--300;
+  border-bottom: 1px solid @gray--200;
 }
 
 .header--block {
@@ -137,13 +137,10 @@ small {
 code {
   margin: 0 .05em;
   padding: .05em .05em;
-  background: fade(@black, 6%);
+  background: @gray--200 !important;
   .font-monospace();
   font-size: .9em;
-  color: @gray--750;
-  .table-stripe tbody tr:nth-of-type(odd) & {
-    background: fade(@white, 18%);
-  }
+  color: @text;
 }
 
 pre {
@@ -157,6 +154,7 @@ pre {
   border-radius: .5rem;
   border-width: 0;
   border-style: solid;
+  background: @gray--200 !important;
   line-height: 0 !important;
   code {
     width: 100%;

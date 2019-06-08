@@ -175,7 +175,7 @@ legend {
   background: @white;
   color: @text;
   &:focus, &.active {
-    background: darken(@white, @perc--xs);
+    background: @gray--200;
   }
   // select arrow
   select& {
@@ -233,10 +233,10 @@ legend {
     opacity: 1;
     &:before {
       background: darken(@gray--200, 2.5%) !important;
-      border: 1px solid darken(@gray--300, 2.5%) !important;
+      border: 1px solid darken(@gray--200, 2.5%) !important;
     }
     &:after {
-      color: darken(@gray--300, 25%) !important;
+      color: darken(@gray--200, 25%) !important;
     }
   }
 }
@@ -253,7 +253,7 @@ legend {
   }
   &:before {
     background: @gray--200;
-    border: 1px solid @gray--300;
+    border: 1px solid @gray--200;
   }
   &:after {
     color: @primary;
@@ -274,7 +274,7 @@ legend {
   }
   &.focus, &:focus {
     &:before {
-      border: 1px solid @gray--300;
+      border: 1px solid @gray--200;
     }
   }
   &.active {

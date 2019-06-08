@@ -50,52 +50,40 @@ class Layout extends React.Component {
 
               <main className="site_main">
                 <div className="site_main_inner">
-                  <div className="container container--fluid">
 
-                    {page ?
-                      <div className="row">
-                        <div className="col--12 col--2-md">
-                          <Sidebar page={page}/>
-                        </div>
-                        <div className="col--12 col--8-md">
-                          <article className="site_article">
-                            <div className="card card--giant card--squared card--noborder site_hero">
-                              <div className="card_design"></div>
-                              <div className="card_content">
-                                <h1>{seo.title}</h1>
-                                <p>{seo.description}</p>
-                              </div>
-                            </div>
-                            <div className="card card--white card--giant card--squared card--noborder">
-                              <div className="card_design"></div>
-                              <div className="card_content">
-                                {children}
-                              </div>
-                            </div>
-                            <div className="card card--giant card--squared card--noborder site_hero">
-                              <div className="card_design"></div>
-                              <div className="card_content">
-                                <DocsFoot page={page}/>
-                              </div>
-                            </div>
-                          </article>
-                        </div>
-                        <div className="col--12 col--2-md">
-                          <DocsAside page={page}/>
-                        </div>
-                      </div>
-                      :
+                  {page ?
+                    <div>
+                      <Sidebar page={page}/>
                       <article className="site_article">
-                        <div className="card card--white card--giant card--squared card--noborder">
-                          <div className="card_design"></div>
-                          <div className="card_content">
+                        <div className="site_article_hero">
+                          <div className="container fluid">
+                            <h1>{seo.title}</h1>
+                            <p>{seo.description}</p>
+                          </div>
+                        </div>
+                        <div className="site_article_content">
+                          <div className="container fluid">
                             {children}
                           </div>
                         </div>
+                        <div className="site_article_foot">
+                          <div className="container fluid">
+                            <DocsFoot page={page}/>
+                          </div>
+                        </div>
                       </article>
-                    }
+                      <DocsAside page={page}/>
+                    </div>
+                    :
+                    <article className="site_article">
+                      <div className="site_article_content">
+                        <div className="container fluid">
+                          {children}
+                        </div>
+                      </div>
+                    </article>
+                  }
 
-                  </div>
                 </div>
               </main>
 

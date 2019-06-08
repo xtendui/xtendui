@@ -2,16 +2,11 @@
 // footer
 //////////////////////
 
-// .site_footer_inner
-
-.site_footer_inner {
-}
-
 // .site_footer_bottom
 
 .site_footer_bottom {
-  .padding(top, big);
-  .padding(bottom, small);
+  .padding(top, medium);
+  .padding(bottom, medium);
   font-size: 12px;
   a {
     .font-sans--semibold();
@@ -21,6 +16,26 @@
     &:hover, &.hover, &:active, &.active, &:focus {
       color: @black;
       text-decoration: underline;
+    }
+  }
+}
+
+.site_footer_bottom_row {
+  .flex--auto();
+  @media @max-sm {
+    .row-space(none);
+    justify-content: center;
+    line-height: 1.8;
+    text-align: center;
+    .separator {
+      display: none;
+    }
+  }
+  @media @min-sm {
+    .row-space(tiny);
+    justify-content: space-between;
+    br {
+      display: none;
     }
   }
 }

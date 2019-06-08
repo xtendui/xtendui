@@ -2,26 +2,32 @@
 // colors
 //////////////////////
 
-// gray
-
 @white: #fff;
 @black: #000;
-@gray--200: #f5f7ff;
-@gray--300: #D9D9D5;
-@gray--500: #626c76;
-@gray--750: #35394b;
-
-// text
-
-@text: @gray--750;
-@text--inverse: @white;
-
-// color
-
 @primary: #fa1664;
 @secondary: @gray--200;
 
-// percent
+@gray--200: #f5f7ff;
+@gray--300: #c1c8e3;
+@gray--500: #7c86b1;
+@gray--900: #1f2957;
+
+// text
+
+@text: @gray--900;
+@text--inverse: @white;
+
+// fade
+
+@fade--200: fade(@gray--900, 5%);
+@fade--400: fade(@gray--900, 10%);
+
+// gradient
+
+@grad--primary: @primary 33%, darken(@primary, 2%) 100%;
+@grad--secondary: @secondary 33%, darken(@secondary, 2%) 100%;
+
+// percent @TODO refactor
 
 @perc--xs: 5%;
 @perc--sm: 10%;
@@ -29,22 +35,11 @@
 @perc--lg: 40%;
 @perc--xl: 80%;
 
-// gradient
-
-@grad--primary: @primary 33%, darken(@primary, 2%) 100%;
-@grad--secondary: @secondary 33%, darken(@secondary, 1%) 100%;
-
 //////////////////////
 // font
 //////////////////////
 
-@import (css) url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
-
-.font-sans--light() {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
+@import (css) url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
 
 .font-sans--regular() {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
