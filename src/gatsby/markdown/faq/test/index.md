@@ -13,6 +13,16 @@ Lorem ipsum `.btn.test`.
 
 See [Group button's page](/docs/content/group/button).
 
+<script type="text/plain" class="language-markup">
+  <a href="#" class="btn">
+    <span><!-- content --></span>
+  </a>
+  
+  <button type="button" class="btn">
+    <span><!-- content --></span>
+  </button>
+</script>
+
 ```
 $ mkdir -p xtend-library/
 $ cp -r node_modules/xtend-library/dist/ xtend-library/
@@ -43,15 +53,18 @@ self.unmount = function() {
 };
 ```
 
-<script type="text/plain" class="language-markup">
-  <a href="#" class="btn">
-    <span><!-- content --></span>
-  </a>
-  
-  <button type="button" class="btn">
-    <span><!-- content --></span>
-  </button>
-</script>
+##Tables
+
+<div class="table--scroll">
+
+|                         | Syntax                                    | Example                       |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Class                   | `.col--{number}`                          | `.col--6`                     |
+| Class responsive        | `.col--{number}-{breakpoint}`             | `.col--6-sm`                  |
+| Mixin                   | `.col({number})`                          | `.col(6)`                     |
+| Mixin responsive min    | `.col({number}, {breakpoint})`            | `.col(6, sm)`                 |
+
+</div>
 
 ##Demos
 

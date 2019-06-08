@@ -14,8 +14,8 @@ import {makeDocument} from "assets/scripts/theme.js"
 
 class Layout extends React.Component {
   componentDidMount() {
-    makeDocument()
     populateBlock()
+    makeDocument()
     Xt.ready(Xt.load)
   }
 
@@ -44,7 +44,8 @@ class Layout extends React.Component {
       `}
         render={data => (
           <>
-            <div className="site_wrapper">
+            <div className={`site_wrapper
+              ${page ? ' site_wrapper--with-sidebar site_wrapper--with-aside' : ''}`}>
 
               <Header site={data} seo={seo} page={page}/>
 
@@ -52,22 +53,22 @@ class Layout extends React.Component {
                 <div className="site_main_inner">
 
                   {page ?
-                    <div>
+                    <div className="site--with-sidebar site--with-aside">
                       <Sidebar page={page}/>
                       <article className="site_article">
                         <div className="site_article_hero">
-                          <div className="container fluid">
+                          <div className="container full">
                             <h1>{seo.title}</h1>
                             <p>{seo.description}</p>
                           </div>
                         </div>
                         <div className="site_article_content">
-                          <div className="container fluid">
+                          <div className="container full">
                             {children}
                           </div>
                         </div>
                         <div className="site_article_foot">
-                          <div className="container fluid">
+                          <div className="container full">
                             <DocsFoot page={page}/>
                           </div>
                         </div>
@@ -77,7 +78,7 @@ class Layout extends React.Component {
                     :
                     <article className="site_article">
                       <div className="site_article_content">
-                        <div className="container fluid">
+                        <div className="container full">
                           {children}
                         </div>
                       </div>

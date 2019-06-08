@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import {Xt} from "xtend-library";
+import {makeDocument} from "assets/scripts/theme.js"
 
 class Layout extends React.Component {
   componentDidMount() {
@@ -17,6 +18,7 @@ class Layout extends React.Component {
           window.parent.resizeIframe(window.name)
         })
       }
+      makeDocument()
       Xt.ready(Xt.load)
     }
     if (document.readyState === 'complete') {

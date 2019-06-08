@@ -1,7 +1,7 @@
 ---
 path: "/docs/interaction/button/special"
 type: "docs"
-date: "2000-04-01"
+date: "2019-04-01"
 title: "Special"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]

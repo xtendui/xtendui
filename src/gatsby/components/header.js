@@ -17,7 +17,7 @@ class Header extends React.Component {
 
             <div className="row row-space--none site_header_top_row">
               <div className="site_header_top_left">
-                <div class="container fluid">
+                <div className="container full">
                   <Link to="/" aria-label="Home"
                         className={`logo
                                     ${seo.title.toLowerCase() === 'home' ? 'active' : ''}`}>
@@ -46,7 +46,7 @@ class Header extends React.Component {
                 </div>
               </div>
               <div className="site_header_top_right">
-                <div className="container fluid">
+                <div className="container full">
                   <div className="site_header_top_social">
                     <a href={site.site.siteMetadata.github} target="_blank" rel="noopener"
                        className="btn btn--site_header_top_social" aria-label="Github">

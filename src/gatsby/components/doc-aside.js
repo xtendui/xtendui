@@ -6,7 +6,7 @@ class DocAside extends React.Component {
     const {page} = this.props
     return (
       <aside className="site_article_aside">
-        <div className="container fluid">
+        <div className="container full">
           <div className="site_article_aside_inner">
             <Link to="#" className="btn btn--site_multiline btn--right">
               <span>

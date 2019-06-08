@@ -1,7 +1,7 @@
 ---
 path: "/docs/interaction/general/link"
 type: "docs"
-date: "2000-02-01"
+date: "2019-02-01"
 title: "Link"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]

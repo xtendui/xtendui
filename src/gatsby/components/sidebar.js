@@ -7,7 +7,7 @@ class Sidebar extends React.Component {
     const {page} = this.props
     return (
       <nav className="site_article_sidebar">
-        <div className="container fluid">
+        <div className="container full">
           <div className="site_article_sidebar_inner">
             {page.categories.category.map((category, i) => (
               <div key={i}>

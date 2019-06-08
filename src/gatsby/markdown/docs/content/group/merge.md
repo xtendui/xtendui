@@ -50,8 +50,7 @@ Use this markup to merge multiple `.btn` in one `[button]` as stack.
 
 <div class="alert">
   <div class="alert_content">
-    Elements with `a, button` tag propagate `.hover` and `.active` classes on
-    `.btn` childs automatically.
+    Elements with `a, button` tag propagate `.hover` and `.active` classes on `.btn` childs automatically.
   </div>
 </div>
 

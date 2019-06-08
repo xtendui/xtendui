@@ -48,13 +48,15 @@
 
 .site_article,
 .site_footer_bottom {
-  // sidebar
-  @media @min-md {
-    margin-left: @site_article_sidebar_width;
+  .site_wrapper--with-sidebar & {
+    @media @min-md {
+      margin-left: @site_article_sidebar_width;
+    }
   }
-  // aside
-  @media @min-lg {
-    margin-right: @site_article_aside_width;
+  .site_wrapper--with-aside & {
+    @media @min-lg {
+      margin-right: @site_article_aside_width;
+    }
   }
 }
 

@@ -1,7 +1,7 @@
 import {Xt} from "../../../../src/scripts/xtend";
 
 //////////////////////
-// anchors and sidebar
+// makeDocument
 //////////////////////
 
 const makeDocument = function () {
@@ -39,24 +39,30 @@ const makeDocument = function () {
     el.classList.add('make-anchor');
     el.append(Xt.createElement('<span class="site_article_anchor"><span class="btn"><span class="icon-link" aria-hidden="true"></span></span></span>'));
   }
+  // .demo-cols
+  for (let element of document.querySelectorAll('.demo-cols')) {
+    for (let [i, el] of element.querySelectorAll('[class^=\'col--\'], [class*=\' col--\']').entries()) {
+      el.setAttribute('data-index', i);
+    }
+  }
+  // .demo-cols-nested
+  for (let element of document.querySelectorAll('.demo-cols-nested [class^=\'col--\'], .demo-cols-nested [class*=\' col--\']')) {
+    for (let [i, el] of element.querySelectorAll('[class^=\'col--\'], [class*=\' col--\']').entries()) {
+      el.setAttribute('data-index', i);
+    }
+  }
+  // docs tables
+  let docs = document.querySelector('.site_article_content');
+  if (docs) {
+    let tables = docs.querySelectorAll('table');
+    for (let table of tables) {
+      table.classList.add('table', 'table--small');
+      for (let el of table.querySelectorAll('tr td:first-child')) {
+        el.outerHTML = el.outerHTML.replace(/(<\s*\/?\s*)td(\s*([^>]*)?\s*>)/gi ,'$1th$2'); // regex replace tagname
+        el.setAttribute('scope', 'row');
+      }
+    }
+  }
 }
 
 export {makeDocument};
-
-/*
-// .demo_cols
-
-for (let element of document.querySelectorAll('.demo_cols')) {
-  for (let [i, el] of element.querySelectorAll('[class^=\'col--\'], [class*=\' col--\']').entries()) {
-    el.setAttribute('data-index', i);
-  }
-}
-
-// .demo_cols-nested
-
-for (let element of document.querySelectorAll('.demo_cols-nested [class^=\'col--\'], .demo_cols-nested [class*=\' col--\']')) {
-  for (let [i, el] of element.querySelectorAll('[class^=\'col--\'], [class*=\' col--\']').entries()) {
-    el.setAttribute('data-index', i);
-  }
-}
-*/
