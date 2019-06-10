@@ -35,7 +35,7 @@
     "release": "npx semantic-release --no-ci",
     "release:dry": "npx semantic-release --dry-run",
     "lint": "eslint src/scripts src/docs/assets/scripts",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "dependencies": {
     "bezier-easing": "^2.1.0",
@@ -96,7 +96,9 @@
     "remark-grid-tables": "^1.6.1",
     "semantic-release": "^15.13.3",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "resolutions": {
     "webpack-hot-middleware": "git://github.com/minimit/webpack-hot-middleware.git#fix-iframe"
   },
   "release": {
