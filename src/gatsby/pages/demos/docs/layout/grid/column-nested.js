@@ -10,13 +10,13 @@ const demo = {
   full: true
 }
 demo.htmlSource = `
-  <div class="demo-cols demo-source-from">
-    <div class="row">
-      <div class="col--custom-width-percent"></div>
-      <div class="col--custom-width-px"></div>
-      <div class="col--auto"></div>
-    </div>
+<div class="demo-cols demo-source-from">
+  <div class="row">
+    <div class="col--custom-width-percent"></div>
+    <div class="col--custom-width-px"></div>
+    <div class="col--auto"></div>
   </div>
+</div>
 `
 
 class Page extends React.Component {

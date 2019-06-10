@@ -8,6 +8,8 @@ categories: ["400-Presentation"]
 parent: "Slider"
 ---
 
+##Extension
+
 ###Drag and toggle
 
 Use `"drag": false` to disable drag.

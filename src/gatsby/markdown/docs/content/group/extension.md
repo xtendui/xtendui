@@ -8,7 +8,9 @@ categories: ["100-Content"]
 parent: "Group"
 ---
 
-##Number
+##Extension
+
+###Number
 
 <demo>
   <div class="demo_item" data-iframe="demos/docs/content/group/number" data-name="line">

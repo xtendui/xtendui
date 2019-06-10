@@ -10,148 +10,148 @@ const demo = {
   full: false
 }
 demo.htmlSource = `
-  <div class="slider"
-       data-xt-slider>
-  
-    <div class="slides">
-      <ul class="slides_inner">
-  
-        <li class="slide">
-          <div class="slide_inner">
-  
-            <div class="card">
-              <div class="card_design"></div>
-              <div class="card_content">
-                <h1>1</h1>
-                <nav class="slider_pagination">
-                  <button type="button" class="btn" data-xt-nav="-1">
-                    <span class="icon-xt--chevron-left"></span>
-                  </button>
-                  <button type="button" class="xt-clone" data-xt-pag>
-                    <span></span>
-                  </button>
-                  <button type="button" class="btn" data-xt-nav="1">
-                    <span class="icon-xt--chevron-right"></span>
-                  </button>
-                </nav>
-              </div>
+<div class="slider"
+     data-xt-slider>
+
+  <div class="slides">
+    <ul class="slides_inner">
+
+      <li class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>1</h1>
+              <nav class="slider_pagination">
+                <button type="button" class="btn" data-xt-nav="-1">
+                  <span class="icon-xt--chevron-left"></span>
+                </button>
+                <button type="button" class="xt-clone" data-xt-pag>
+                  <span></span>
+                </button>
+                <button type="button" class="btn" data-xt-nav="1">
+                  <span class="icon-xt--chevron-right"></span>
+                </button>
+              </nav>
             </div>
-  
           </div>
-        </li>
-  
-        <li class="slide">
-          <div class="slide_inner">
-  
-            <div class="card">
-              <div class="card_design"></div>
-              <div class="card_content">
-                <h1>2</h1>
-                <nav class="slider_pagination">
-                  <button type="button" class="btn" data-xt-nav="-1">
-                    <span class="icon-xt--chevron-left"></span>
-                  </button>
-                  <button type="button" class="xt-clone" data-xt-pag>
-                    <span></span>
-                  </button>
-                  <button type="button" class="btn" data-xt-nav="1">
-                    <span class="icon-xt--chevron-right"></span>
-                  </button>
-                </nav>
-              </div>
+
+        </div>
+      </li>
+
+      <li class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>2</h1>
+              <nav class="slider_pagination">
+                <button type="button" class="btn" data-xt-nav="-1">
+                  <span class="icon-xt--chevron-left"></span>
+                </button>
+                <button type="button" class="xt-clone" data-xt-pag>
+                  <span></span>
+                </button>
+                <button type="button" class="btn" data-xt-nav="1">
+                  <span class="icon-xt--chevron-right"></span>
+                </button>
+              </nav>
             </div>
-  
           </div>
-        </li>
-  
-        <li class="slide">
-          <div class="slide_inner">
-  
-            <div class="card">
-              <div class="card_design"></div>
-              <div class="card_content">
-                <h1>3</h1>
-                <nav class="slider_pagination">
-                  <button type="button" class="btn" data-xt-nav="-1">
-                    <span class="icon-xt--chevron-left"></span>
-                  </button>
-                  <button type="button" class="xt-clone" data-xt-pag>
-                    <span></span>
-                  </button>
-                  <button type="button" class="btn" data-xt-nav="1">
-                    <span class="icon-xt--chevron-right"></span>
-                  </button>
-                </nav>
-              </div>
+
+        </div>
+      </li>
+
+      <li class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>3</h1>
+              <nav class="slider_pagination">
+                <button type="button" class="btn" data-xt-nav="-1">
+                  <span class="icon-xt--chevron-left"></span>
+                </button>
+                <button type="button" class="xt-clone" data-xt-pag>
+                  <span></span>
+                </button>
+                <button type="button" class="btn" data-xt-nav="1">
+                  <span class="icon-xt--chevron-right"></span>
+                </button>
+              </nav>
             </div>
-  
           </div>
-        </li>
-  
-        <li class="slide">
-          <div class="slide_inner">
-  
-            <div class="card">
-              <div class="card_design"></div>
-              <div class="card_content">
-                <h1>4</h1>
-                <nav class="slider_pagination">
-                  <button type="button" class="btn" data-xt-nav="-1">
-                    <span class="icon-xt--chevron-left"></span>
-                  </button>
-                  <button type="button" class="xt-clone" data-xt-pag>
-                    <span></span>
-                  </button>
-                  <button type="button" class="btn" data-xt-nav="1">
-                    <span class="icon-xt--chevron-right"></span>
-                  </button>
-                </nav>
-              </div>
+
+        </div>
+      </li>
+
+      <li class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>4</h1>
+              <nav class="slider_pagination">
+                <button type="button" class="btn" data-xt-nav="-1">
+                  <span class="icon-xt--chevron-left"></span>
+                </button>
+                <button type="button" class="xt-clone" data-xt-pag>
+                  <span></span>
+                </button>
+                <button type="button" class="btn" data-xt-nav="1">
+                  <span class="icon-xt--chevron-right"></span>
+                </button>
+              </nav>
             </div>
-  
           </div>
-        </li>
-  
-        <li class="slide">
-          <div class="slide_inner">
-  
-            <div class="card">
-              <div class="card_design"></div>
-              <div class="card_content">
-                <h1>5</h1>
-                <nav class="slider_pagination">
-                  <button type="button" class="btn" data-xt-nav="-1">
-                    <span class="icon-xt--chevron-left"></span>
-                  </button>
-                  <button type="button" class="xt-clone" data-xt-pag>
-                    <span></span>
-                  </button>
-                  <button type="button" class="btn" data-xt-nav="1">
-                    <span class="icon-xt--chevron-right"></span>
-                  </button>
-                </nav>
-              </div>
+
+        </div>
+      </li>
+
+      <li class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>5</h1>
+              <nav class="slider_pagination">
+                <button type="button" class="btn" data-xt-nav="-1">
+                  <span class="icon-xt--chevron-left"></span>
+                </button>
+                <button type="button" class="xt-clone" data-xt-pag>
+                  <span></span>
+                </button>
+                <button type="button" class="btn" data-xt-nav="1">
+                  <span class="icon-xt--chevron-right"></span>
+                </button>
+              </nav>
             </div>
-  
           </div>
-        </li>
-  
-      </ul>
-    </div>
-  
-    <nav class="slider_pagination">
-      <button type="button" class="btn" data-xt-nav="-2">
-        <span><span class="icon-xt--chevron-left icon--left"></span> prev</span>
-      </button>
-      <button type="button" class="xt-clone" data-xt-pag>
-        <span>xt-num of xt-tot</span>
-      </button>
-      <button type="button" class="btn" data-xt-nav="2">
-        <span>next <span class="icon-xt--chevron-right icon--right"></span></span>
-      </button>
-    </nav>
-  
+
+        </div>
+      </li>
+
+    </ul>
   </div>
+
+  <nav class="slider_pagination">
+    <button type="button" class="btn" data-xt-nav="-2">
+      <span><span class="icon-xt--chevron-left icon--left"></span> prev</span>
+    </button>
+    <button type="button" class="xt-clone" data-xt-pag>
+      <span>xt-num of xt-tot</span>
+    </button>
+    <button type="button" class="btn" data-xt-nav="2">
+      <span>next <span class="icon-xt--chevron-right icon--right"></span></span>
+    </button>
+  </nav>
+
+</div>
 `
 
 class Page extends React.Component {

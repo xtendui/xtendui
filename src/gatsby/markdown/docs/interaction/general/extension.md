@@ -8,7 +8,9 @@ categories: ["300-Interaction"]
 parent: "General"
 ---
 
-##Jump to content
+##Extension
+
+###Jump to content
 
 <demo>
   <div class="demo_item" data-iframe="demos/docs/interaction/general/jumptocontent" data-name="jumptocontent">

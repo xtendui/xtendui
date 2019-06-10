@@ -1,0 +1,76 @@
+@import (reference) "../../../../../../../dist/styles/xtend.less";
+
+//##START
+/**
+ * xtend extension: multilevel
+ */
+
+// content
+
+.multilevel-title-wrapper {
+  .block();
+  .margin(y, layout) !important;
+  .margin(top, medium);
+  .margin(bottom, tiny);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.multilevel-title {
+  .h4();
+}
+
+.multilevel-reset {
+  .caret.caret--horizontal.caret--inverse();
+}
+
+.multilevel-list {
+  // btn
+  .list_btn({
+    .btn--flex();
+    .btn--secondary-empty();
+    .btn--tall();
+    .btn--none-x();
+    margin-bottom: -1px !important;
+    &@{btn--design} {
+      border-top-color: @gray--200 !important;
+      border-bottom-color: @gray--200 !important;
+    }
+  });
+  // caret
+  > li {
+    > button {
+      .caret();
+      .caret.caret--horizontal();
+    }
+  }
+}
+
+// toggle
+
+.multilevel-body {
+  .block();
+  .toggle--block();
+  // animation
+  .anim-x();
+  animation-duration: @time--small;
+  &.inverse {
+    .anim-x-inverse();
+    animation-duration: @time--small;
+  }
+}
+
+.multilevel-tab {
+  .block();
+  .toggle--block();
+  // animation
+  .anim-x();
+  animation-duration: @time--small;
+  &.inverse {
+    .anim-x-inverse();
+    animation-duration: @time--small;
+  }
+}
+//##END

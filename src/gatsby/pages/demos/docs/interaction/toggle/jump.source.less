@@ -1,0 +1,18 @@
+@import (reference) "../../../../../../../dist/styles/xtend.less";
+
+//##START
+.toggle--custom {
+  .animation-none() !important; // disable default animation
+  // animation
+  opacity: .5 !important;
+  transition-property: opacity;
+  transition-duration: @time--big;
+  transition-timing-function: @bez--out;
+  &.active {
+    opacity: 1 !important;
+    transition-property: opacity;
+    transition-duration: @time--big;
+    transition-timing-function: @bez--in;
+  }
+}
+//##END

@@ -10,23 +10,23 @@ const demo = {
   full: true
 }
 demo.htmlSource = `
-  <ul class="list list--custom">
-    <li>
-      <a href="#">
-        <span>Lorem Ipsum</span>
-      </a>
-    </li>
-    <li>
-      <button type="button">
-        <span>Dolor sit</span>
-      </button>
-    </li>
-    <li class="custom">
-      <button type="button" class="btn">
-        <span>Amet</span>
-      </button>
-    </li>
-  </ul>
+<ul class="list list--custom">
+  <li>
+    <a href="#">
+      <span>Lorem Ipsum</span>
+    </a>
+  </li>
+  <li>
+    <button type="button">
+      <span>Dolor sit</span>
+    </button>
+  </li>
+  <li class="custom">
+    <button type="button" class="btn">
+      <span>Amet</span>
+    </button>
+  </li>
+</ul>
 `
 
 class Page extends React.Component {

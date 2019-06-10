@@ -10,6 +10,8 @@ parent: "Overlay"
 
 ##Extension
 
+###Class html
+
 Change class to add to `html` element on activation. `"classHtml": String`.
 
 <demo>

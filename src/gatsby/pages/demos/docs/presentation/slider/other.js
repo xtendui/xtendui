@@ -10,89 +10,89 @@ const demo = {
   full: false
 }
 demo.htmlSource = `
-  <div class="slider"
-       data-xt-slider='{"loop": false, "jump": false, "autoHeight": false}'>
-  
-    <div class="slides">
-      <ul class="slides_inner">
-  
-        <li class="slide">
-          <div class="slide_inner">
-  
-            <div class="card">
-              <div class="card_design"></div>
-              <div class="card_content">
-                <h1>1</h1>
-              </div>
+<div class="slider"
+     data-xt-slider='{"loop": false, "jump": false, "autoHeight": false}'>
+
+  <div class="slides">
+    <ul class="slides_inner">
+
+      <li class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>1</h1>
             </div>
-  
           </div>
-        </li>
-  
-        <li class="slide">
-          <div class="slide_inner">
-  
-            <div class="card">
-              <div class="card_design"></div>
-              <div class="card_content">
-                <h1>2</h1>
-              </div>
+
+        </div>
+      </li>
+
+      <li class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>2</h1>
             </div>
-  
           </div>
-        </li>
-  
-        <li class="slide active">
-          <div class="slide_inner">
-  
-            <div class="card">
-              <div class="card_design"></div>
-              <div class="card_content">
-                <h1>3</h1>
-              </div>
+
+        </div>
+      </li>
+
+      <li class="slide active">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>3</h1>
             </div>
-  
           </div>
-        </li>
-  
-        <li class="slide">
-          <div class="slide_inner">
-  
-            <div class="card">
-              <div class="card_design"></div>
-              <div class="card_content">
-                <h1>4</h1>
-              </div>
+
+        </div>
+      </li>
+
+      <li class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>4</h1>
             </div>
-  
           </div>
-        </li>
-  
-        <li class="slide">
-          <div class="slide_inner">
-  
-            <div class="card">
-              <div class="card_design"></div>
-              <div class="card_content">
-                <h1>5</h1>
-              </div>
+
+        </div>
+      </li>
+
+      <li class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>5</h1>
             </div>
-  
           </div>
-        </li>
-  
-      </ul>
-    </div>
-  
-    <nav class="slider_pagination">
-      <div class="list list-space--small align-items--center">
-        <button type="button" class="xt-clone" data-xt-pag>
-          <span></span>
-        </button>
-      </div>
-    </nav>
-  
+
+        </div>
+      </li>
+
+    </ul>
   </div>
+
+  <nav class="slider_pagination">
+    <div class="list list-space--small align-items--center">
+      <button type="button" class="xt-clone" data-xt-pag>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+</div>
 `
 
 class Page extends React.Component {

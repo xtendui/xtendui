@@ -11,120 +11,120 @@ const demo = {
   full: false
 }
 demo.htmlSource = `
-  <div class="slider">
-    <div class="loader loader--spinner loader--mouse loader--js">
-      <span class="spinner">
-        ` + spinner + `
-      </span>
-    </div>
-
-    <div class="slides">
-      <ul class="slides_inner">
-
-        <li class="slide">
-          <div class="slide_inner">
-
-            <div class="card">
-              <div class="card_design"></div>
-              <div class="card_content">
-                <h1>1</h1>
-                <div class="loader loader--x loader--size-bottom loader--js">
-                  <div class="filler">
-                    <span></span><span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </li>
-
-        <li class="slide">
-          <div class="slide_inner">
-
-            <div class="card">
-              <div class="card_design"></div>
-              <div class="card_content">
-                <h1>2</h1>
-                <div class="loader loader--x loader--size-bottom loader--js">
-                  <div class="filler">
-                    <span></span><span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </li>
-
-        <li class="slide">
-          <div class="slide_inner">
-
-            <div class="card">
-              <div class="card_design"></div>
-              <div class="card_content">
-                <h1>3</h1>
-                <div class="loader loader--x loader--size-bottom loader--js">
-                  <div class="filler">
-                    <span></span><span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </li>
-
-        <li class="slide">
-          <div class="slide_inner">
-
-            <div class="card">
-              <div class="card_design"></div>
-              <div class="card_content">
-                <h1>4</h1>
-                <div class="loader loader--x loader--size-bottom loader--js">
-                  <div class="filler">
-                    <span></span><span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </li>
-
-        <li class="slide">
-          <div class="slide_inner">
-
-            <div class="card">
-              <div class="card_design"></div>
-              <div class="card_content">
-                <h1>5</h1>
-                <div class="loader loader--x loader--size-bottom loader--js">
-                  <div class="filler">
-                    <span></span><span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </li>
-
-      </ul>
-    </div>
-
-    <nav class="slider_pagination">
-      <button type="button" class="xt-clone" data-xt-pag>
-        <span class="loader loader--y loader--js">
-          <span class="filler">
-            <span></span><span></span>
-          </span>
-        </span>
-      </button>
-    </nav>
-
+<div class="slider">
+  <div class="loader loader--spinner loader--mouse loader--js">
+    <span class="spinner">
+      ` + spinner + `
+    </span>
   </div>
+
+  <div class="slides">
+    <ul class="slides_inner">
+
+      <li class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>1</h1>
+              <div class="loader loader--x loader--size-bottom loader--js">
+                <div class="filler">
+                  <span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>2</h1>
+              <div class="loader loader--x loader--size-bottom loader--js">
+                <div class="filler">
+                  <span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>3</h1>
+              <div class="loader loader--x loader--size-bottom loader--js">
+                <div class="filler">
+                  <span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>4</h1>
+              <div class="loader loader--x loader--size-bottom loader--js">
+                <div class="filler">
+                  <span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide">
+        <div class="slide_inner">
+
+          <div class="card">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>5</h1>
+              <div class="loader loader--x loader--size-bottom loader--js">
+                <div class="filler">
+                  <span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <nav class="slider_pagination">
+    <button type="button" class="xt-clone" data-xt-pag>
+      <span class="loader loader--y loader--js">
+        <span class="filler">
+          <span></span><span></span>
+        </span>
+      </span>
+    </button>
+  </nav>
+
+</div>
 `
 
 class Page extends React.Component {
