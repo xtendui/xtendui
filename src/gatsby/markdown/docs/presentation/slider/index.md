@@ -48,7 +48,4 @@ You can initialize **slider** by javascript omitting `[data-xt-slider]`.
 let self = Xt.init('xt-slider', document.querySelector('.my-slider'), {
   // option
 });
-self.unmount = function() {
-  self = null;
-};
 ```

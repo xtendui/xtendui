@@ -1,0 +1,24 @@
+@import (reference) "../../../../../../../dist/styles/xtend.less";
+
+//##START
+/**
+ * xtend extension: overlay close outside
+ */
+
+.overlay_outer {
+  &.overlay--left {
+    .overlay_inner > .btn--close {
+      .btn--primary();
+      .btn--squared();
+      left: 100% !important;
+    }
+  }
+  &.overlay--right {
+    .overlay_inner > .btn--close {
+      .btn--primary();
+      .btn--squared();
+      right: 100% !important;
+    }
+  }
+}
+//##END

@@ -48,9 +48,6 @@ body {
 let self = Xt.init('xt-scroll', document.documentElement, {
   // option
 });
-self.unmount = function() {
-  self = null;
-};
 ```
 
 ##Tables

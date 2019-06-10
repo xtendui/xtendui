@@ -26,9 +26,6 @@ You can initialize **scroll** by javascript omitting `[data-xt-scroll]`.
 let self = Xt.init('xt-scroll', document.documentElement, {
   // option
 });
-self.unmount = function() {
-  self = null;
-};
 ```
 
 <div class="alert alert--primary">

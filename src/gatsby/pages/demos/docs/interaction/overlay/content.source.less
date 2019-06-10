@@ -1,0 +1,43 @@
+@import (reference) "../../../../../../../dist/styles/xtend.less";
+
+//##START
+/**
+ * xtend extension: overlay content
+ */
+
+.overlay_outer {
+  .overlay_inner > .btn--close {
+    .btn--primary();
+  }
+  .overlay_content--menu {
+    .list();
+    .list-space(none);
+    .flex--auto();
+    height: 63px;
+    background: @primary;
+    > .btn {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .overlay_content--title {
+    border-bottom: 1px solid @gray--200;
+  }
+  .overlay_content--foot {
+    border-top: 1px solid @gray--200;
+  }
+  // animation
+  &.active {
+    .overlay_content--menu {
+      .anim-y.active();
+      animation-delay: @time--small;
+    }
+  }
+  &.out {
+    .overlay_content--menu {
+      .anim-y.out();
+      animation-delay: @time--small;
+    }
+  }
+}
+//##END

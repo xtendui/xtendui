@@ -27,9 +27,6 @@ You can initialize **sticky** by javascript omitting `[data-xt-sticky]`.
 let self = Xt.init('xt-sticky', document.querySelector('.my-sticky'), {
   // option
 });
-self.unmount = function() {
-  self = null;
-};
 ```
 
 <div class="alert alert--primary">
