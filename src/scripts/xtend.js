@@ -276,6 +276,7 @@ if (typeof window !== 'undefined') {
 
   Xt.load = function (container = document.documentElement) {
     Xt.stickyIndex = 500;
+    Xt.setScrollbarWidth();
     Xt.windowHeightSet();
     Xt.initElement(container);
     Xt.initObserve(container);
@@ -903,42 +904,6 @@ if (typeof window !== 'undefined') {
   };
 
   /**
-   * Get scrollbar width of document
-   * @param {Boolean} force Force recalc
-   * @returns {Number} Scrollbar width
-   */
-  Xt.scrollbarWidth = function (force = false) {
-    if (Xt.scrollbarWidthVal === undefined) {
-      let scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize.scrollbar',
-        Xt.scrollbarWidth.bind(this, true));
-      addEventListener('resize', scrollbarWidthHandler);
-    }
-    if (force || Xt.scrollbarWidthVal === undefined) {
-      // add outer
-      let outer = document.createElement('div');
-      outer.style.visibility = 'hidden';
-      outer.style.width = '100px';
-      outer.style.msOverflowStyle = 'scrollbar'; // needed for WinJS apps
-      outer.classList.add('xt-ignore');
-      document.body.appendChild(outer);
-      let widthNoScroll = outer.offsetWidth;
-      // force scrollbars
-      outer.style.overflow = 'scroll';
-      // add inner
-      let inner = document.createElement('div');
-      inner.style.width = '100%';
-      inner.classList.add('xt-ignore');
-      outer.appendChild(inner);
-      let widthWithScroll = inner.offsetWidth;
-      // remove
-      outer.remove();
-      // return
-      Xt.scrollbarWidthVal = widthNoScroll - widthWithScroll;
-    }
-    return Xt.scrollbarWidthVal;
-  };
-
-  /**
    * Get unique id
    * @returns {String} Unique id
    */
@@ -1036,13 +1001,47 @@ if (typeof window !== 'undefined') {
   };
 
   /**
+   * Set scrollbar width of document
+   * @param {Boolean} force Force recalc
+   */
+  Xt.setScrollbarWidth = function (force = false) {
+    if (Xt.scrollbarWidth === undefined) {
+      let scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize.scrollbar',
+        Xt.setScrollbarWidth.bind(this, true));
+      addEventListener('resize', scrollbarWidthHandler);
+    }
+    if (force || Xt.scrollbarWidth === undefined) {
+      // add outer
+      let outer = document.createElement('div');
+      outer.style.visibility = 'hidden';
+      outer.style.width = '100%';
+      outer.style.msOverflowStyle = 'scrollbar'; // needed for WinJS apps
+      outer.classList.add('xt-ignore', 'overflow-style');
+      document.body.appendChild(outer);
+      // force scrollbars
+      outer.style.overflow = 'scroll';
+      // add inner
+      let inner = document.createElement('div');
+      inner.style.width = '100%';
+      inner.classList.add('xt-ignore');
+      outer.appendChild(inner);
+      // return
+      let widthNoScroll = outer.offsetWidth;
+      let widthWithScroll = inner.offsetWidth;
+      Xt.scrollbarWidth = widthNoScroll - widthWithScroll;
+      // remove
+      outer.remove();
+    }
+  };
+
+  /**
    * if full width return '' else return value in px
    * @param {Number|String} width
    * @returns {String} Value in px
    */
   Xt.normalizeWidth = function (width) {
     width = parseFloat(width);
-    if (width + Xt.scrollbarWidth() >= window.innerWidth) {
+    if (width + Xt.scrollbarWidth >= window.innerWidth) {
       width = '';
     } else {
       width += 'px';
@@ -1055,7 +1054,7 @@ if (typeof window !== 'undefined') {
    * @param {Array|Node|HTMLElement|EventTarget|Window} elements Elements to add padding
    */
   Xt.scrollbarSpaceOn = function (container) {
-    let width = Xt.scrollbarWidth();
+    let width = Xt.scrollbarWidth;
     container.style.paddingRight = width + 'px';
     // backdrop
     let backdrops = container.querySelectorAll('.backdrop');
