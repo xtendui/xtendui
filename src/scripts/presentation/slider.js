@@ -168,6 +168,8 @@ class Slider extends Core {
       Xt.dataStorage.remove(slide, self.componentNamespace + 'GroupPosDone');
     }
     // set pos
+    let draggerWidth = self.dragger.offsetWidth;
+    let slidesWidh = 0;
     for (let slide of self.targets) {
       if (!Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPosDone') && Xt.visible(slide)) {
         // vars
@@ -179,6 +181,7 @@ class Slider extends Core {
         for (let target of targets) {
           slideLeft = target.offsetLeft < slideLeft ? slide.offsetLeft : slideLeft;
           slideWidth += target.offsetWidth;
+          slidesWidh += slideWidth;
           let h = target.offsetHeight;
           slideHeight = h > slideHeight ? h : slideHeight;
         }
@@ -189,23 +192,11 @@ class Slider extends Core {
         // pos with alignment
         let pos;
         if (options.align === 'center') {
-          pos = self.dragger.offsetWidth / 2 - slideLeft - slideWidth / 2;
+          pos = draggerWidth / 2 - slideLeft - slideWidth / 2;
         } else if (options.align === 'left') {
           pos = -slideLeft;
         } else if (options.align === 'right') {
-          pos = -slideLeft + self.dragger.offsetWidth - slideWidth;
-        }
-        // pos with contain
-        if (options.contain) {
-          let slideFirst = self.targets[0];
-          let slideFirstLeft = slideFirst.offsetLeft;
-          let slideLast = self.targets[self.targets.length - 1];
-          let slideLastLeft = slideLast.offsetLeft;
-          let slideLastWidth = slideLast.offsetWidth;
-          let min = -slideFirstLeft;
-          let max = -slideLastLeft + self.dragger.offsetWidth - slideLastWidth;
-          pos = pos > min ? min : pos;
-          pos = pos < max ? max : pos;
+          pos = -slideLeft + draggerWidth - slideWidth;
         }
         // save pos
         for (let target of targets) {
@@ -213,7 +204,26 @@ class Slider extends Core {
         }
       }
     }
-    // @FIX position values align center
+    // min max pos with contain
+    if (options.contain
+      && slidesWidh > draggerWidth) { // only if slides overflow dragger
+      let slideFirst = self.targets[0];
+      let slideFirstLeft = slideFirst.offsetLeft;
+      let slideLast = self.targets[self.targets.length - 1];
+      let slideLastLeft = slideLast.offsetLeft;
+      let slideLastWidth = slideLast.offsetWidth;
+      let min = -slideFirstLeft;
+      let max = -slideLastLeft + draggerWidth - slideLastWidth;
+      for (let group of self.groupMq) {
+        for (let target of group) {
+          let pos = Xt.dataStorage.get(target, self.componentNamespace + 'GroupPos');
+          pos = pos > min ? min : pos;
+          pos = pos < max ? max : pos;
+          Xt.dataStorage.set(target, self.componentNamespace + 'GroupPos', pos);
+        }
+      }
+    }
+    // @FIX position values negative margins
     for (let [i, group] of self.groupMq.entries()) {
       for (let [z, target] of group.entries()) {
         if (i === 0 && z === 0) {

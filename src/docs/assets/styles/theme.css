@@ -1335,7 +1335,8 @@ a[href]:not([href^='#']).active {
 .slide {
   position: relative;
 }
-.slide_inner {
+.slide > * {
+  display: block;
   position: relative;
 }
 .slider--disable:after {
@@ -3323,16 +3324,9 @@ pre code {
 }
 ul,
 ol {
+  margin-top: 0;
   margin-bottom: 1rem;
   padding-left: 2rem;
-}
-ul:first-child,
-ol:first-child {
-  margin-top: 0 !important;
-}
-ul:last-child,
-ol:last-child {
-  margin-bottom: 0 !important;
 }
 ul > li,
 ol > li {
