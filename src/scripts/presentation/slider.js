@@ -128,8 +128,9 @@ export class Slider extends Core {
       self.pags = self.pags ? self.pags : [];
       for (let [z, pag] of pags.entries()) {
         // vars
-        let clone = pag.querySelector('.xt-clone');
-        let container = clone.parentNode;
+        let template = pag.querySelector('[data-xt-pag]');
+        template.classList.add('xt-ignore'); // add ignore to no put in elements
+        let container = template.parentNode;
         let arr = self.groupMq;
         // check if currentPags has different length
         if (!self.pags[z] || self.pags[z].length !== arr.length) {
@@ -142,14 +143,14 @@ export class Slider extends Core {
           // populate
           self.pags[z] = [];
           for (let [i, group] of arr.entries()) {
-            let item = clone.cloneNode(true);
+            let item = template.cloneNode(true);
             let html = item.innerHTML;
             html = html.replace(new RegExp('{{num}}', 'ig'), (i + 1).toString());
             html = html.replace(new RegExp('{{tot}}', 'ig'), arr.length.toString());
             item.innerHTML = html;
-            item.classList.remove('xt-clone');
+            item.classList.remove('xt-clone', 'xt-ignore');
             item.setAttribute('data-xt-group', self.namespace + '-' + i);
-            container.insertBefore(item, clone);
+            container.insertBefore(item, template);
             self.pags[z][i] = item;
           }
         }

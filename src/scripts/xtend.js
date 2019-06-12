@@ -50,6 +50,7 @@ if (typeof window !== 'undefined') {
   // vars
   //////////////////////
 
+  Xt.debug = false;
   Xt.observe = [];
   Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
   Xt.resizeDelay = 100;

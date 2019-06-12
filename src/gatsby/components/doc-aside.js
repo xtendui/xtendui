@@ -8,7 +8,7 @@ class DocAside extends React.Component {
       <aside className="site_article_aside">
         <div className="container full">
           <div className="site_article_aside_inner">
-            <Link to="#" className="btn btn--site_multiline btn--right">
+            <a href="#" className="btn btn--site_multiline btn--right">
               <span>
                 <span className="btn--site_multiline_line">
                   12 <strong>EXTENSIONS</strong>
@@ -24,7 +24,7 @@ class DocAside extends React.Component {
                   <strong className="btn--site_multiline_special_text">GO</strong><span className="icon-chevron-right"></span>
                 </span>
               </span>
-            </Link>
+            </a>
           </div>
         </div>
       </aside>

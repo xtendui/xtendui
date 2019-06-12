@@ -218,7 +218,9 @@ export class Ajax extends Core {
       request.onerror = function () {
         self.ajaxResponse(element, url, request, self.detail.requestDate);
       };
-      console.debug('xt-ajax request:', url);
+      if (Xt.debug === true) {
+        console.log('xt-ajax request:', url);
+      }
       request.send();
       self.detail.request = request;
     });
@@ -267,6 +269,10 @@ export class Ajax extends Core {
   ajaxSuccess(element, url, request, date) {
     let self = this;
     let options = self.options;
+    // debug
+    if (Xt.debug === true) {
+      console.log('xt-ajax request success:', url);
+    }
     // autoClose
     dispatchEvent(new CustomEvent('autoCloseFix.xt'));
     // set substitute
@@ -304,6 +310,10 @@ export class Ajax extends Core {
    */
   ajaxError(element, url, request) {
     let self = this;
+    // debug
+    if (Xt.debug === true) {
+      console.log('xt-ajax request failed:', url);
+    }
     // reinit currents
     self.initStart();
     // dispatch

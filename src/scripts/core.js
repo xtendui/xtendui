@@ -24,12 +24,16 @@ export class Core {
     self.componentNamespace = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '');
     // @FIX ignore
     if (self.object.classList.contains('xt-ignore') || Xt.parents(self.object, '.xt-ignore').length) {
-      console.warn(self.componentName + ' inside xt-ignore will not be initialized:', self.object);
+      if (Xt.debug === true) {
+        console.warn(self.componentName + ' inside xt-ignore will not be initialized:', self.object);
+      }
       return null;
     }
     // not if already done
     if (self.object.getAttribute('data-' + self.componentName + '-inited')) {
-      console.warn(self.componentName + ' already initialized:', self.object);
+      if (Xt.debug === true) {
+        console.warn(self.componentName + ' already initialized:', self.object);
+      }
       return Xt.get(self.componentName, self.object);
     }
     self.object.setAttribute('data-' + self.componentName + '-inited', 'true');
