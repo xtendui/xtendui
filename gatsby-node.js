@@ -89,10 +89,10 @@ const path = require("path")
 
 exports.createPages = ({actions, graphql}) => {
   const {createPage} = actions
-  const docTemplate = path.resolve(`src/gatsby/templates/doc.js`)
+  const docTemplate = path.resolve(`src/gatsby/components/templates/doc.js`)
   /* COMMENTED CATEGORIES AND TAGS
-  const tagTemplate = path.resolve(`src/gatsby/templates/doc-tag.js`)
-  const categoryTemplate = path.resolve(`src/gatsby/templates/doc-category.js`)
+  const tagTemplate = path.resolve(`src/gatsby/components/templates/doc-tag.js`)
+  const categoryTemplate = path.resolve(`src/gatsby/components/templates/doc-category.js`)
   const tagSet = new Set()
   const categorySet = new Set()
   */

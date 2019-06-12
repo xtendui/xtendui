@@ -40,7 +40,6 @@ module.exports = {
         "xtend-library": path.join(__dirname, `src/scripts/xtend.js`),
         assets: path.join(__dirname, `src/gatsby/assets`),
         components: path.join(__dirname, `src/gatsby/components`),
-        pages: path.join(__dirname, `src/gatsby/pages`),
       },
     },
     // resolve folders
@@ -61,20 +60,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/gatsby/pages/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `templates`,
-        path: `${__dirname}/src/gatsby/templates/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `doc`,
         path: `${__dirname}/src/gatsby/markdown/docs/`,
       },
@@ -86,25 +71,18 @@ module.exports = {
         path: `${__dirname}/src/gatsby/markdown/faq/`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `demos`,
-        path: `${__dirname}/src/gatsby/demos/`,
-      },
-    },
     // pages
     {
       resolve: `gatsby-plugin-page-creator`,
       options: {
-        path: `${__dirname}/src/gatsby/pages`,
+        path: `${__dirname}/src/gatsby/components/pages/`,
       },
     },
     // pages in /demos
     {
       resolve: `gatsby-plugin-page-creator`,
       options: {
-        path: `${__dirname}/src/gatsby/demos`,
+        path: `${__dirname}/src/gatsby/demos/`,
         ignore: [`inline/**/**`, `**/*.source.js?(x)`],
       },
     },
