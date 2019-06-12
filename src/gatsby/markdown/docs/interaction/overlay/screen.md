@@ -15,6 +15,6 @@ Overlay positioned on the page.
 `.overlay--left` `.overlay--right`
 
 <demo>
-  <demovanilla src="demos/docs/interaction/overlay/screen" name="screen">
+  <demovanilla src="demos/inline/docs/interaction/overlay/screen" name="screen">
   </demovanilla>
 </demo>

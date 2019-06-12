@@ -17,6 +17,6 @@ You can change the default **position** @TODO less path
 `.drop--bottom` `.drop--left` `.drop--right` `.drop--center` `.drop--top` `.drop--left` `.drop--right` `.drop--center` `.drop--left` `.drop--right` `.drop--middle` `.drop--center` `.drop--before` `.drop--top` `.drop--bottom` `.drop--middle` `.drop--after` `.drop--top` `.drop--bottom` `.drop--middle` `.drop--contain-top` `.drop--contain-bottom`
         
 <demo>
-  <demovanilla src="demos/docs/interaction/drop/position" name="position">
+  <demovanilla src="demos/inline/docs/interaction/drop/position" name="position">
   </demovanilla>
 </demo>

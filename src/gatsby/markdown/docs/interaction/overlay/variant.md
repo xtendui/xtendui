@@ -17,6 +17,6 @@ You can change the **default variant** @TODO less path
 `.overlay--primary` `.overlay--secondary` `.overlay--white`
         
 <demo>
-  <demovanilla src="demos/docs/interaction/overlay/variant" name="variant">
+  <demovanilla src="demos/inline/docs/interaction/overlay/variant" name="variant">
   </demovanilla>
 </demo>

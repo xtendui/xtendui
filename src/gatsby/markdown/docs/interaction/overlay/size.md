@@ -32,6 +32,6 @@ You can change the **default size** @TODO less path
 `.overlay--tiny` `.overlay--small` `.overlay--medium` `.overlay--big` `.overlay--giant` `.overlay--full`
         
 <demo>
-  <demovanilla src="demos/docs/interaction/overlay/size" name="size">
+  <demovanilla src="demos/inline/docs/interaction/overlay/size" name="size">
   </demovanilla>
 </demo>

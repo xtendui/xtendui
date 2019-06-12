@@ -20,6 +20,20 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-less`,
     `gatsby-plugin-catch-links`,
+    // manifest
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Xtend`,
+        short_name: `docs`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#fa1664`,
+        display: `minimal-ui`,
+        icon: `src/gatsby/assets/images/favicon.png`,
+      },
+    },
+    // resolve files
     {
       resolve: `gatsby-plugin-root-import`,
       options: {
@@ -29,36 +43,7 @@ module.exports = {
         pages: path.join(__dirname, `src/gatsby/pages`),
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#000000`,
-        theme_color: `#000000`,
-        display: `minimal-ui`,
-        icon: `src/gatsby/assets/images/favicon.png`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-page-creator`,
-      options: {
-        path: `${__dirname}/src/gatsby/pages`,
-        ignore: [`**/*.source.js?(x)`],
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-component`,
-            options: {components: [`demo`]},
-          },
-        ],
-      },
-    },
+    // resolve folders
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -99,6 +84,40 @@ module.exports = {
       options: {
         name: `faq`,
         path: `${__dirname}/src/gatsby/markdown/faq/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `demos`,
+        path: `${__dirname}/src/gatsby/demos/`,
+      },
+    },
+    // pages
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/gatsby/pages`,
+      },
+    },
+    // pages in /demos
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/gatsby/demos`,
+        ignore: [`inline/**/**`, `**/*.source.js?(x)`],
+      },
+    },
+    // remark components
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-component`,
+            options: {components: [`demo`]},
+          },
+        ],
       },
     },
   ],

@@ -13,10 +13,10 @@ parent: "Loader"
 Use `.loader--background` to add the custom background.
 
 <demo>
-  <demovanilla src="demos/docs/presentation/loader/background-spinner" name="spinner">
+  <demovanilla src="demos/inline/docs/presentation/loader/background-spinner" name="spinner">
   </demovanilla>
-  <demovanilla src="demos/docs/presentation/loader/background-direction" name="direction">
+  <demovanilla src="demos/inline/docs/presentation/loader/background-direction" name="direction">
   </demovanilla>
-  <demovanilla src="demos/docs/presentation/loader/background-size" name="size">
+  <demovanilla src="demos/inline/docs/presentation/loader/background-size" name="size">
   </demovanilla>
 </demo>

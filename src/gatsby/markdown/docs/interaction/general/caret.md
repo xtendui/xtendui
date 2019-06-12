@@ -11,6 +11,6 @@ parent: "General"
 ##Usage
 
 <demo>
-  <demovanilla src="demos/docs/interaction/general/caret" name="caret">
+  <demovanilla src="demos/inline/docs/interaction/general/caret" name="caret">
   </demovanilla>
 </demo>

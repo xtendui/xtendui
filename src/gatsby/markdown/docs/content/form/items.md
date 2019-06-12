@@ -11,6 +11,6 @@ parent: "Form"
 ##Items
 
 <demo>
-  <demovanilla src="demos/docs/content/form/items" name="items">
+  <demovanilla src="demos/inline/docs/content/form/items" name="items">
   </demovanilla>
 </demo>

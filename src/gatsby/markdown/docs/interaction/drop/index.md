@@ -41,20 +41,20 @@ You can initialize **drop** by javascript omitting `[data-xt-drop]`.
 You can use drop to make a dropdown with inside anything.
 
 <demo>
-  <demovanilla src="demos/docs/interaction/drop/usage-card" name="card">
+  <demovanilla src="demos/inline/docs/interaction/drop/usage-card" name="card">
   </demovanilla>
 </demo>
 
 ###Drop of lists
 
 <demo>
-  <demovanilla src="demos/docs/interaction/drop/usage-list" name="list">
+  <demovanilla src="demos/inline/docs/interaction/drop/usage-list" name="list">
   </demovanilla>
 </demo>
 
 `.list.list--drop` to override buttons use `li.custom`
 
 <demo>
-  <demovanilla src="demos/docs/interaction/drop/usage-list-drop" name="list drop">
+  <demovanilla src="demos/inline/docs/interaction/drop/usage-list-drop" name="list drop">
   </demovanilla>
 </demo>

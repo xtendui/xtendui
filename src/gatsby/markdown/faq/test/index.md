@@ -99,14 +99,14 @@ let self = Xt.init('xt-scroll', document.documentElement, {
 ###Demos
 
 <demo>
-  <demovanilla src="demos/faq/test-vanilla" name="vanilla">
+  <demovanilla src="demos/inline/faq/test-vanilla" name="vanilla">
     <div class="demo_text">
       <div class="alert_content">
         Test
       </div>
     </div>
   </demovanilla>
-  <demoreact src="demos/faq/test-react" name="react">
+  <demoreact src="demos/inline/faq/test-react" name="react">
     <div class="demo_text">
       <div class="alert_content">
         Test

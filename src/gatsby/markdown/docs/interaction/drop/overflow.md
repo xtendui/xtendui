@@ -13,6 +13,6 @@ parent: "Drop"
 Drop with max sizes with automatic scrollbar on overflow with `drop--overflow-y`.
 
 <demo>
-  <demovanilla src="demos/docs/interaction/drop/overflow" name="overflow">
+  <demovanilla src="demos/inline/docs/interaction/drop/overflow" name="overflow">
   </demovanilla>
 </demo>

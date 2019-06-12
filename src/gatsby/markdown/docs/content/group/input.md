@@ -63,8 +63,8 @@ Use this markup to create a input group as stack.
 ##Modes
 
 <demo>
-  <demovanilla src="demos/docs/content/group/input-line" name="line">
+  <demovanilla src="demos/inline/docs/content/group/input-line" name="line">
   </demovanilla>
-  <demovanilla src="demos/docs/content/group/input-stack" name="stack">
+  <demovanilla src="demos/inline/docs/content/group/input-stack" name="stack">
   </demovanilla>
 </demo>

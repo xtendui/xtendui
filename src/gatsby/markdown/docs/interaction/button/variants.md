@@ -15,6 +15,6 @@ Optional classes for assigning variant.
 You can change the default **variant** inside the `.btn` selector in `/theme/_component.less`.
 
 <demo>
-  <demovanilla src="demos/docs/interaction/button/variant" name="variant">
+  <demovanilla src="demos/inline/docs/interaction/button/variant" name="variant">
   </demovanilla>
 </demo>

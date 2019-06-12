@@ -15,7 +15,7 @@ parent: "Toggle"
 `"auto": {"time": Milliseconds}`.
 
 <demo>
-  <demovanilla src="demos/docs/interaction/toggle/auto-time" name="time">
+  <demovanilla src="demos/inline/docs/interaction/toggle/auto-time" name="time">
   </demovanilla>
 </demo>
 
@@ -24,7 +24,7 @@ parent: "Toggle"
 `"auto": {"step": Number}`.
 
 <demo>
-  <demovanilla src="demos/docs/interaction/toggle/auto-step" name="step">
+  <demovanilla src="demos/inline/docs/interaction/toggle/auto-step" name="step">
   </demovanilla>
 </demo>
 
@@ -33,7 +33,7 @@ parent: "Toggle"
 `"auto": {"initial": Boolean}`.
 
 <demo>
-  <demovanilla src="demos/docs/interaction/toggle/auto-initial" name="initial">
+  <demovanilla src="demos/inline/docs/interaction/toggle/auto-initial" name="initial">
   </demovanilla>
 </demo>
 
@@ -42,7 +42,7 @@ parent: "Toggle"
 `"auto": {"loop": Boolean}`.
 
 <demo>
-  <demovanilla src="demos/docs/interaction/toggle/auto-loop" name="loop">
+  <demovanilla src="demos/inline/docs/interaction/toggle/auto-loop" name="loop">
   </demovanilla>
 </demo>
 
@@ -51,7 +51,7 @@ parent: "Toggle"
 Pause on mouseenter, resume on mouseleave with `"auto": {"pause": Query}`.
 
 <demo>
-  <demovanilla src="demos/docs/interaction/toggle/auto-pause" name="pause">
+  <demovanilla src="demos/inline/docs/interaction/toggle/auto-pause" name="pause">
   </demovanilla>
 </demo>
 
@@ -60,14 +60,14 @@ Pause on mouseenter, resume on mouseleave with `"auto": {"pause": Query}`.
 Pause on mouseenter, resume on mouseleave with `"auto": {"inverse": Boolean}`.
 
 <demo>
-  <demovanilla src="demos/docs/interaction/toggle/auto-inverse" name="inverse">
+  <demovanilla src="demos/inline/docs/interaction/toggle/auto-inverse" name="inverse">
   </demovanilla>
 </demo>
 
 ###Min and Max
 
 <demo>
-  <demovanilla src="demos/docs/interaction/toggle/auto-minmax" name="minmax">
+  <demovanilla src="demos/inline/docs/interaction/toggle/auto-minmax" name="minmax">
   </demovanilla>
 </demo>
 

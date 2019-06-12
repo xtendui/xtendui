@@ -16,6 +16,6 @@ Use the mixins `.link--underline()` or `.link--none()` to add or remove `text-de
   underline;` on links and buttons.
 
 <demo>
-  <demovanilla src="demos/docs/interaction/general/link" name="link">
+  <demovanilla src="demos/inline/docs/interaction/general/link" name="link">
   </demovanilla>
 </demo>
