@@ -1,8 +1,8 @@
 ---
-path: "/docs/presentation/slider/disable"
+path: "/docs/presentation/slider/disable-expand"
 type: "docs"
 date: "2019-07-01"
-title: "Disable"
+title: "Disable and expand"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["400-Presentation"]
 parent: "Slider"

@@ -3,8 +3,11 @@
 //////////////////////
 
 .card {
-  .block();
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   z-index: @index--base; // fix :before negative z-index
   // styles
   > .card_design {

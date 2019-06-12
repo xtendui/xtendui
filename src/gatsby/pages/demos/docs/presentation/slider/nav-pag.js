@@ -6,7 +6,7 @@ import DemoVanillaIframe from "components/demo-vanilla-iframe"
 const demo = {
   name: path.basename(__filename, '.js'),
   js: false,
-  css: true,
+  css: false,
   full: false
 }
 demo.htmlSource = `
@@ -16,10 +16,10 @@ demo.htmlSource = `
   <div class="slides">
     <ul class="slides_inner">
 
-      <li class="slide">
+      <li class="slide col--6 col--4-sm">
         <div class="slide_inner">
 
-          <div class="card">
+          <div class="card card--big text-align--center">
             <div class="card_design"></div>
             <div class="card_content">
               <h1>1</h1>
@@ -40,10 +40,10 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide">
+      <li class="slide col--6 col--4-sm">
         <div class="slide_inner">
 
-          <div class="card">
+          <div class="card card--big text-align--center">
             <div class="card_design"></div>
             <div class="card_content">
               <h1>2</h1>
@@ -64,10 +64,10 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide">
+      <li class="slide col--6 col--4-sm">
         <div class="slide_inner">
 
-          <div class="card">
+          <div class="card card--big text-align--center">
             <div class="card_design"></div>
             <div class="card_content">
               <h1>3</h1>
@@ -88,10 +88,10 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide">
+      <li class="slide col--6 col--4-sm">
         <div class="slide_inner">
 
-          <div class="card">
+          <div class="card card--big text-align--center">
             <div class="card_design"></div>
             <div class="card_content">
               <h1>4</h1>
@@ -112,10 +112,10 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide">
+      <li class="slide col--12">
         <div class="slide_inner">
 
-          <div class="card">
+          <div class="card card--big text-align--center" style="height: 15rem;">
             <div class="card_design"></div>
             <div class="card_content">
               <h1>5</h1>
