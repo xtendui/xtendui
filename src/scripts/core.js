@@ -138,13 +138,13 @@ export class Core {
     let options = self.options;
     // setup (based on xtend mode)
     if (options.targets && options.targets.indexOf('#') !== -1) {
-      // xtend all mode
+      // xtend unique mode
       self.mode = 'unique';
       self.container = document.documentElement;
       options.max = Infinity;
       self.namespace = self.componentName + '-' + options.targets.toString() + '-' + self.classes.toString();
     } else {
-      // xtend unique mode
+      // xtend multiple mode
       self.mode = 'multiple';
       self.container = self.object;
       let uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId');
@@ -1779,7 +1779,8 @@ export class Core {
     self.specialCenter(el, before, after);
     self.specialMiddle(el, before, after);
     self.specialCollapseOn(el, before, after);
-    if (type === 'targets') {
+    if (type === 'targets'
+      || el === self.object) { // @FIX overlay standalone
       // appendTo
       if (options.appendTo) {
         let appendToTarget = document.querySelector(options.appendTo);
