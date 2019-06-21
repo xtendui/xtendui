@@ -144,6 +144,7 @@ class Slider extends Core {
           for (let [i, group] of arr.entries()) {
             let item = clone.cloneNode(true);
             let html = item.innerHTML;
+            html = html.replace(new RegExp('{{content}}', 'ig'), self.targets[i].innerHTML);
             html = html.replace(new RegExp('{{num}}', 'ig'), (i + 1).toString());
             html = html.replace(new RegExp('{{tot}}', 'ig'), arr.length.toString());
             item.innerHTML = html;
