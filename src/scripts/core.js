@@ -72,9 +72,7 @@ export class Core {
     // init
     self.initVars();
     self.initSetup();
-    self.initScope();
-    self.initAria();
-    self.initStart(true);
+    self.initLogic();
   }
 
   /**
@@ -95,6 +93,7 @@ export class Core {
       "offBlock": false,
       "loop": true,
       "jump": false,
+      "imgLoaded": false,
       "delayOn": false,
       "delayOff": false,
       "durationOn": false,
@@ -106,7 +105,6 @@ export class Core {
         "time": false,
         "step": 1,
         "initial": true,
-        "loop": true,
         "inverse": false,
         "pause": false
       },
@@ -155,6 +153,16 @@ export class Core {
     self.namespace = self.namespace.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '');
     // currents array based on namespace (so shared between Xt objects)
     self.setCurrents([]);
+  }
+
+  /**
+   * init logic
+   */
+  initLogic() {
+    let self = this;
+    self.initScope();
+    self.initAria();
+    self.initStart(true);
   }
 
   /**
@@ -246,11 +254,16 @@ export class Core {
       // if currents < min
       let todo = options.min - currents;
       if (todo > 0) {
+        let start = 0;
+        if (self.dragger && options.drag.wrap) {
+          start = 1;
+          todo += start;
+        }
         // initial
         currents++;
         // activate
         requestAnimationFrame(function () {
-          for (let i = 0; i < todo; i++) {
+          for (let i = start; i < todo; i++) {
             self.eventOn(self.elements[i], true);
           }
         });
@@ -271,6 +284,11 @@ export class Core {
     }
     // init events
     self.initEvents();
+    // listener dispatch
+    requestAnimationFrame( function () {
+      let detail = self.eDetailSet();
+      self.object.dispatchEvent(new CustomEvent('init.xt', {detail: detail}));
+    });
   }
 
   /**
@@ -547,45 +565,43 @@ export class Core {
       addEventListener('autoCloseFix.xt', autoCloseFixHandler);
     }
     // images
-    for (let el of self.elements) {
-      let imgs = el.querySelectorAll('img');
-      el.dataset.imgsLoaded = '0';
-      el.dataset.imgsLoadedLength = imgs.length.toString();
-      if (imgs.length > 0 && parseFloat(el.dataset.imgsLoaded) === imgs.length) {
-        requestAnimationFrame(self.eventImgsLoadedHandler.bind(self).bind(self, el));
-      }
-      for (let img of imgs) {
-        if (!img.complete) {
+    if (options.imgLoaded) {
+      for (let el of self.elements) {
+        let imgs = el.querySelectorAll('img');
+        self.destroyElements.push(...imgs);
+        for (let img of imgs) {
           let imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
-            self.eventImgLoadedHandler.bind(self).bind(self, el, img));
-          img.addEventListener('load', imgLoadHandler);
-          // @FIX srcset: call only one time
-          img.addEventListener('load', function (e) {
-            img.removeEventListener('load', imgLoadHandler);
-          });
-        } else {
-          el.dataset.imgsLoaded = parseFloat(el.dataset.imgsLoaded) + 1;
+            self.eventImgLoadedHandler.bind(self).bind(self, el));
+          if (!img.complete) {
+            img.addEventListener('load', imgLoadHandler);
+            // @FIX srcset: call only one time
+            img.addEventListener('load', function (e) {
+              img.removeEventListener('load', imgLoadHandler);
+            });
+          } else {
+            if (!Xt.dataStorage.get(el, self.componentNamespace + 'ImageLoadedDone')) {
+              imgLoadHandler();
+            }
+          }
         }
       }
-    }
-    for (let tr of self.targets) {
-      let imgs = tr.querySelectorAll('img');
-      tr.dataset.imgsLoaded = '0';
-      tr.dataset.imgsLoadedLength = imgs.length.toString();
-      if (imgs.length > 0 && parseFloat(tr.dataset.imgsLoaded) === imgs.length) {
-        requestAnimationFrame(self.eventImgsLoadedHandler.bind(self).bind(self, tr));
-      }
-      for (let img of imgs) {
-        if (!img.complete) {
+      for (let tr of self.targets) {
+        let imgs = tr.querySelectorAll('img');
+        self.destroyElements.push(...imgs);
+        for (let img of imgs) {
           let imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
-            self.eventImgLoadedHandler.bind(self).bind(self, tr, img));
-          img.addEventListener('load', imgLoadHandler);
-          // @FIX srcset: call only one time
-          img.addEventListener('load', function (e) {
-            img.removeEventListener('load', imgLoadHandler);
-          });
-        } else {
-          tr.dataset.imgsLoaded = parseFloat(tr.dataset.imgsLoaded) + 1;
+            self.eventImgLoadedHandler.bind(self).bind(self, tr));
+          if (!img.complete) {
+            img.addEventListener('load', imgLoadHandler);
+            // @FIX srcset: call only one time
+            img.addEventListener('load', function (e) {
+              img.removeEventListener('load', imgLoadHandler);
+            });
+          } else {
+            if (!Xt.dataStorage.get(tr, self.componentNamespace + 'ImageLoadedDone')) {
+              imgLoadHandler();
+            }
+          }
         }
       }
     }
@@ -876,29 +892,26 @@ export class Core {
   /**
    * imageLoaded
    * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Node|HTMLElement|EventTarget|Window} img
    * @param {Event} e
    */
-  eventImgLoadedHandler(el, img = null, e = null) {
+  eventImgLoadedHandler(el, e = null) {
     let self = this;
-    // listener dispatch
-    let detail = self.eDetailSet(e);
-    el.dispatchEvent(new CustomEvent('imageLoaded.xt', {detail: detail}));
-  }
-
-  /**
-   * imagesLoaded
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Node|HTMLElement|EventTarget|Window} img
-   * @param {Event} e
-   */
-  eventImgsLoadedHandler(el, img = null, e = null) {
-    let self = this;
-    // listener dispatch
-    if (parseFloat(el.dataset.imgsLoaded) === parseFloat(el.dataset.imgsLoadedLength)) {
-      let detail = self.eDetailSet(e);
-      el.dispatchEvent(new CustomEvent('imagesLoaded.xt', {detail: detail}));
+    // don't rerurn imagesloaded
+    if (el.classList.contains('xt-wrap')) {
+      return false;
     }
+    if (Xt.dataStorage.get(el, self.componentNamespace + 'ImageLoadedDone')) {
+      return false;
+    }
+    // delay
+    clearTimeout(Xt.dataStorage.get(el, 'xt' + self.componentNamespace + 'ImgLoaded' + 'Timeout'));
+    Xt.dataStorage.set(el, 'xt' + self.componentNamespace + 'ImgLoaded' + 'Timeout', setTimeout(function () {
+      // don't rerurn imagesloaded
+      Xt.dataStorage.set(el, self.componentNamespace + 'ImageLoadedDone', true);
+      // listener dispatch
+      let detail = self.eDetailSet(e);
+      el.dispatchEvent(new CustomEvent('imageLoaded.xt', {detail: detail}));
+    }, Xt.imageLoadedDelay));
   }
 
   //////////////////////
@@ -1379,9 +1392,9 @@ export class Core {
             // auto
             if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
               if (options.auto.inverse) {
-                self.goToPrev(options.auto.step, true, options.auto.loop);
+                self.goToPrev(options.auto.step, true);
               } else {
-                self.goToNext(options.auto.step, true, options.auto.loop);
+                self.goToNext(options.auto.step, true);
               }
             }
           }
@@ -2655,7 +2668,7 @@ export class Core {
       }
     }
     // go
-    let current = self.elements[index];
+    let current = self.getElementsSingle()[index];
     self.eventOn(current, force);
   }
 
