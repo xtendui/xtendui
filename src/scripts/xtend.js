@@ -54,7 +54,7 @@ if (typeof window !== 'undefined') {
   Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
   Xt.resizeDelay = 100;
   Xt.scrollDelay = false;
-  Xt.imagesDelay = 50;
+  Xt.imageLoadedDelay = 50;
   Xt.focusables = 'a, button, details, input, iframe, select, textarea';
   Xt.components = [
     {'name': 'xt-core', 'class': Xt.Core},
@@ -1103,19 +1103,20 @@ if (typeof window !== 'undefined') {
    * execute function after transition or animation
    * @param {Node|HTMLElement|EventTarget|Window} el Element animating
    * @param {Function} func Function to execute after transition or animation
-   * @param {Number} timing Force duration in milliseconds
+   * @param {String} suffix Timeout suffix
    */
-  Xt.animTimeout = function (el, func, timing = null) {
-    clearTimeout(Xt.dataStorage.get(el, 'xtAnimTimeout'));
-    Xt.dataStorage.set(el, 'xtAnimTimeout', setTimeout(func, timing || timing === 0 ? timing : Xt.animTime(el)));
+  Xt.animTimeout = function (el, func, suffix = '') {
+    clearTimeout(Xt.dataStorage.get(el, 'xtAnimTimeout' + suffix));
+    Xt.dataStorage.set(el, 'xtAnimTimeout' + suffix, setTimeout(func, Xt.animTime(el)));
   };
 
   /**
    * clear animTimeout
    * @param {Node|HTMLElement|EventTarget|Window} el Element animating
+   * @param {String} suffix Timeout suffix
    */
-  Xt.animTimeoutClear = function (el) {
-    clearTimeout(Xt.dataStorage.get(el, 'xtAnimTimeout'));
+  Xt.animTimeoutClear = function (el, suffix = '') {
+    clearTimeout(Xt.dataStorage.get(el, 'xtAnimTimeout' + suffix));
   };
 
   /**

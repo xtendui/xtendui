@@ -67,6 +67,19 @@ class Slider extends Core {
   initSliderGroup() {
     let self = this;
     let options = self.options;
+    // drag wrap
+    if (self.dragger && options.drag.wrap) {
+      // clear elements
+      for (let el of self.elements.filter(x => x.classList.contains('xt-wrap'))) {
+        el.remove();
+      }
+      self.elements = self.elements.filter(x => !x.classList.contains('xt-wrap'));
+      // clear targets
+      for (let tr of self.targets.filter(x => x.classList.contains('xt-wrap'))) {
+        tr.remove();
+      }
+      self.targets = self.targets.filter(x => !x.classList.contains('xt-wrap'));
+    }
     // width
     let draggerWidth = self.dragger ? self.dragger.offsetWidth : self.object.offsetWidth;
     let draggerWidthInit = 0;
@@ -86,8 +99,8 @@ class Slider extends Core {
     self.groupMq = [];
     self.groupMq.push([]);
     let currentCount = draggerWidthCalc;
+    // calculate
     for (let target of self.targets) {
-      // calculate
       let targetWidth = target.offsetWidth;
       if (targetWidth === 0) { // when display none
         let container = target.parentNode;
@@ -109,6 +122,67 @@ class Slider extends Core {
       // assign group
       self.groupMq[currentGroup].push(target);
       target.setAttribute('data-xt-group', self.namespace + '-' + currentGroup);
+    }
+    // @FIX position values negative margins
+    self.detail.fixNegativeMargin = self.groupMq[0][0].offsetLeft;
+    // drag wrap
+    if (self.dragger && options.drag.wrap) {
+      if (!options.loop) {
+        console.error('Error: Xt.Slider needs "loop": true when using "drag": {"wrap": true}', self.object); // Xt check
+      }
+      if (options.contain) {
+        console.error('Error: Xt.Slider cannot use "contain": true when using "drag": {"wrap": true}', self.object); // Xt check
+      }
+      // wrapFirst
+      let wrapFirst = [];
+      for (let group of self.groupMq) {
+        wrapFirst.unshift([]);
+      }
+      // wrapLast
+      let wrapLast = [];
+      for (let group of self.groupMq) {
+        wrapLast.push([]);
+      }
+      // merge groupMq with wraps
+      let container = self.targets[0].parentNode;
+      let firstElementInitial = self.groupMq[0][0];
+      self.groupMqInitial = self.groupMq;
+      self.groupMq = wrapFirst.concat(self.groupMq.concat(wrapLast));
+      // wrapFirst
+      for (let [i, group] of self.groupMqInitial.entries()) {
+        for (let [z, slide] of group.entries()) {
+          let clone;
+          if (wrapFirst[i][z]) {
+            clone = wrapFirst[i][z];
+          } else {
+            clone = slide.cloneNode(true);
+            clone.classList.add('xt-wrap');
+            container.insertBefore(clone, firstElementInitial);
+            wrapFirst[i].unshift(clone);
+          }
+          clone.setAttribute('data-xt-group', self.namespace + '-' + 'wrapFirst' + i);
+          self.targets.unshift(clone);
+        }
+      }
+      // wrapLast
+      for (let [i, group] of self.groupMqInitial.entries()) {
+        for (let [z, slide] of group.entries()) {
+          let clone;
+          if (wrapLast[i][z]) {
+            clone = wrapLast[i][z];
+          } else {
+            clone = slide.cloneNode(true);
+            clone.classList.add('xt-wrap');
+            container.append(clone);
+            wrapLast[i].push(clone);
+          }
+          clone.setAttribute('data-xt-group', self.namespace + '-' + 'wrapLast' + i);
+          self.targets.push(clone);
+        }
+      }
+      // save
+      Xt.dataStorage.set(self.object, self.componentNamespace + 'WrapFirst', wrapFirst);
+      Xt.dataStorage.set(self.object, self.componentNamespace + 'WrapLast', wrapLast);
     }
   }
 
@@ -149,9 +223,16 @@ class Slider extends Core {
             html = html.replace(new RegExp('{{tot}}', 'ig'), arr.length.toString());
             item.innerHTML = html;
             item.classList.remove('xt-clone');
-            item.setAttribute('data-xt-group', self.namespace + '-' + i);
+            item.setAttribute('data-xt-group', group[0].getAttribute('data-xt-group'));
             container.insertBefore(item, clone);
             self.pags[z][i] = item;
+            // drag wrap
+            if (self.dragger && options.drag.wrap) {
+              let length = self.groupMqInitial.length;
+              if (i < length || i > length * 2 - 1) {
+                item.classList.add('xt-wrap', 'display--none');
+              }
+            }
           }
         }
       }
@@ -170,7 +251,8 @@ class Slider extends Core {
     }
     // set pos
     let draggerWidth = self.dragger.offsetWidth;
-    let slidesWidh = 0;
+    // slides pos
+    let slidesWidth = 0;
     for (let slide of self.targets) {
       if (!Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPosDone') && Xt.visible(slide)) {
         // vars
@@ -182,7 +264,7 @@ class Slider extends Core {
         for (let target of targets) {
           slideLeft = target.offsetLeft < slideLeft ? slide.offsetLeft : slideLeft;
           slideWidth += target.offsetWidth;
-          slidesWidh += slideWidth;
+          slidesWidth += slideWidth;
           let h = target.offsetHeight;
           slideHeight = h > slideHeight ? h : slideHeight;
         }
@@ -202,12 +284,13 @@ class Slider extends Core {
         // save pos
         for (let target of targets) {
           Xt.dataStorage.set(target, self.componentNamespace + 'GroupPos', pos);
+          //console.log(target, pos);
         }
       }
     }
     // min max pos with contain
     if (options.contain
-      && slidesWidh > draggerWidth) { // only if slides overflow dragger
+      && slidesWidth > draggerWidth) { // only if slides overflow dragger
       let slideFirst = self.targets[0];
       let slideFirstLeft = slideFirst.offsetLeft;
       let slideLast = self.targets[self.targets.length - 1];
@@ -225,15 +308,10 @@ class Slider extends Core {
       }
     }
     // @FIX position values negative margins
-    for (let [i, group] of self.groupMq.entries()) {
-      for (let [z, target] of group.entries()) {
-        if (i === 0 && z === 0) {
-          self.detail.fixNegativeMargin = target.offsetLeft;
-        }
-        let pos = Xt.dataStorage.get(target, self.componentNamespace + 'GroupPos');
-        pos += self.detail.fixNegativeMargin;
-        Xt.dataStorage.set(target, self.componentNamespace + 'GroupPos', pos);
-      }
+    for (let target of self.targets) {
+      let pos = Xt.dataStorage.get(target, self.componentNamespace + 'GroupPos');
+      pos += self.detail.fixNegativeMargin;
+      Xt.dataStorage.set(target, self.componentNamespace + 'GroupPos', pos);
     }
     // set wheel min and max
     if (options.wheel && options.wheel.selector) {
@@ -290,6 +368,13 @@ class Slider extends Core {
         wheel.addEventListener('wheelend.xt', self.logicDragend.bind(self).bind(self, dragger));
         wheel.addEventListener('wheelend.xt', self.logicDragfrictionend.bind(self).bind(self, dragger));
       }
+    }
+    // image loaded
+    for (let slide of self.targets) {
+      // slide on
+      let eventImgLoadedHandler = Xt.dataStorage.put(slide, 'imageLoaded' + '.' + self.namespace,
+        self.eventImgLoaded.bind(self).bind(self, slide));
+      slide.addEventListener('imageLoaded.xt', eventImgLoadedHandler, true); // @FIX event.xt: useCapture for custom events order on re-init
     }
     // resize
     let resizeHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace,
@@ -435,31 +520,15 @@ class Slider extends Core {
    */
   eventResizeHandler(e) {
     let self = this;
+    let options = self.options;
     // reinit
     if (!self.initial) {
       Xt.eventDelay(e, self.object, function () {
-        self.initial = true;
+        self.initial = true; // @FIX initial
+        options.imgLoaded = false; // don't rerun imageLoaded
         self.init();
       }, self.componentNamespace + 'Resize');
     }
-  }
-
-  /**
-   * imageLoaded
-   * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Node|HTMLElement|EventTarget|Window} img
-   * @param {Event} e
-   */
-  eventImgLoadedHandler(el, img = null, e = null) {
-    super.eventImgLoadedHandler(el, img, e);
-    let self = this;
-    // delay
-    clearTimeout(Xt.dataStorage.get(self.object, 'xt' + self.componentNamespace + 'ImgLoaded' + 'Timeout'));
-      Xt.dataStorage.set(self.object, 'xt' + self.componentNamespace + 'ImgLoaded' + 'Timeout', setTimeout(function () {
-      // reinit scope and on
-      self.initScope();
-      self.eventOn(self.elements[self.currentIndex], true);
-    }, Xt.imagesDelay));
   }
 
   //////////////////////
@@ -511,6 +580,32 @@ class Slider extends Core {
       // disable links
       dragger.classList.remove('jumps--none');
       dragger.classList.remove('links--none');
+      // drag wrap
+      if (self.dragger && options.drag.wrap) {
+        let length = self.groupMqInitial.length;
+        if (self.initial) {
+          // @FIX initial activation
+          if (self.currentIndex < length) {
+            requestAnimationFrame(function () {
+              self.initial = true;
+              self.goToIndex(length, true);
+            });
+          }
+        } else {
+          // @FIX wrap with initial
+          Xt.animTimeout(dragger, function () {
+            if (!self.initial) {
+              if (self.currentIndex < length) {
+                self.initial = true;
+                self.goToIndex(length * 2 - 1, true);
+              } else if (self.currentIndex > length * 2 - 1) {
+                self.initial = true;
+                self.goToIndex(length, true);
+              }
+            }
+          }, 'wrap');
+        }
+      }
     }
     // disable links not active slide
     if (options.jump) {
@@ -555,6 +650,17 @@ class Slider extends Core {
     slide.dispatchEvent(new CustomEvent('autoHeight.xt', {detail: detail}));
   }
 
+  /**
+   * image loaded
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   * @param {Event} e
+   */
+  eventImgLoaded(el, e = null) {
+    let self = this;
+    // reinit
+    self.initLogic();
+  }
+
   //////////////////////
   // logic
   //////////////////////
@@ -580,8 +686,10 @@ class Slider extends Core {
     self.detail.xVelocity = null;
     self.detail.xVelocityNext = null;
     // listener dispatch
-    let detail = self.eDetailSet(e);
-    dragger.dispatchEvent(new CustomEvent('dragstart.xt.slider', {detail: detail}));
+    if (!self.initial) {
+      let detail = self.eDetailSet(e);
+      dragger.dispatchEvent(new CustomEvent('dragstart.xt.slider', {detail: detail}));
+    }
   }
 
   /**
@@ -611,8 +719,10 @@ class Slider extends Core {
     // logic
     self.logicDragfriction(dragger, e);
     // listener dispatch
-    let detail = self.eDetailSet(e);
-    dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: detail}));
+    if (!self.initial) {
+      let detail = self.eDetailSet(e);
+      dragger.dispatchEvent(new CustomEvent('dragend.xt.slider', {detail: detail}));
+    }
   }
 
   /**
@@ -745,10 +855,18 @@ class Slider extends Core {
     self.detail.xPosOld = self.detail.xPos;
     self.detail.xPos = xPos;
     // drag position
+    if (self.initial) {
+      self.dragger.classList.add('transition-none');
+    }
     dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
+    if (self.initial) {
+      self.dragger.classList.remove('transition-none');
+    }
     // listener dispatch
-    let detail = self.eDetailSet(e);
-    dragger.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: detail}));
+    if (!self.initial) {
+      let detail = self.eDetailSet(e);
+      dragger.dispatchEvent(new CustomEvent('drag.xt.slider', {detail: detail}));
+    }
   }
 
   /**
@@ -799,16 +917,24 @@ class Slider extends Core {
       // val
       self.detail.xPosOld = self.detail.xPos;
       self.detail.xPos = self.detail.xPosCurrent;
-      // drag position
-      dragger.style.transform = 'translateX(' + self.detail.xPosCurrent + 'px)';
       // disable drag and links
       Xt.animTimeout(dragger, function () {
         // disable drag
         dragger.classList.remove('pointer-events--none');
       });
+      // drag position
+      if (self.initial) {
+        self.dragger.classList.add('transition-none');
+      }
+      dragger.style.transform = 'translateX(' + self.detail.xPosCurrent + 'px)';
+      if (self.initial) {
+        self.dragger.classList.remove('transition-none');
+      }
       // listener dispatch
-      let detail = self.eDetailSet(e);
-      dragger.dispatchEvent(new CustomEvent('dragreset.xt.slider', {detail: detail}));
+      if (!self.initial) {
+        let detail = self.eDetailSet(e);
+        dragger.dispatchEvent(new CustomEvent('dragreset.xt.slider', {detail: detail}));
+      }
     }
   }
 
@@ -827,7 +953,9 @@ Slider.optionsDefault = {
   "min": 1,
   "max": 1,
   "instant": true,
+  "loop": true,
   "jump": true,
+  "imgLoaded": true,
   "navigation": "[data-xt-nav]",
   "wheel": {
     "selector": false,
@@ -852,6 +980,7 @@ Slider.optionsDefault = {
   "contain": false,
   "pagination": ".slider_pagination",
   "drag": {
+    "wrap": false,
     "dragger": ".slides_inner",
     "threshold": 50,
     "linkThreshold": 50,

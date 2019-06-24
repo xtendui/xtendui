@@ -126,6 +126,11 @@ class Ajax extends Core {
     self.pushState(url, document.title);
     // init events
     self.initEvents();
+    // listener dispatch
+    requestAnimationFrame( function () {
+      let detail = self.eDetailSet();
+      self.object.dispatchEvent(new CustomEvent('init.xt', {detail: detail}));
+    });
   }
 
   /**
