@@ -85,7 +85,7 @@ demo.htmlSource = `
 
   <nav class="slider_pagination">
     <div class="list list-space--small align-items--center">
-      <button type="button" class="xt-clone" data-xt-pag>
+      <button type="button" class="xt-ignore" data-xt-pag>
         <span></span>
       </button>
     </div>

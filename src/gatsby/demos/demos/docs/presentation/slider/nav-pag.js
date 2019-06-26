@@ -24,13 +24,13 @@ demo.htmlSource = `
             <div class="card_content">
               <h1>1</h1>
               <nav class="slider_pagination">
-                <button type="button" class="btn" data-xt-nav="-1">
+                <button type="button" class="btn xt-ignore" data-xt-nav="-1">
                   <span class="icon-xt--chevron-left"></span>
                 </button>
-                <button type="button" class="xt-clone" data-xt-pag>
+                <button type="button" class="xt-ignore" data-xt-pag>
                   <span></span>
                 </button>
-                <button type="button" class="btn" data-xt-nav="1">
+                <button type="button" class="btn xt-ignore" data-xt-nav="1">
                   <span class="icon-xt--chevron-right"></span>
                 </button>
               </nav>
@@ -48,13 +48,13 @@ demo.htmlSource = `
             <div class="card_content">
               <h1>2</h1>
               <nav class="slider_pagination">
-                <button type="button" class="btn" data-xt-nav="-1">
+                <button type="button" class="btn xt-ignore" data-xt-nav="-1">
                   <span class="icon-xt--chevron-left"></span>
                 </button>
-                <button type="button" class="xt-clone" data-xt-pag>
+                <button type="button" class="xt-ignore" data-xt-pag>
                   <span></span>
                 </button>
-                <button type="button" class="btn" data-xt-nav="1">
+                <button type="button" class="btn xt-ignore" data-xt-nav="1">
                   <span class="icon-xt--chevron-right"></span>
                 </button>
               </nav>
@@ -72,13 +72,13 @@ demo.htmlSource = `
             <div class="card_content">
               <h1>3</h1>
               <nav class="slider_pagination">
-                <button type="button" class="btn" data-xt-nav="-1">
+                <button type="button" class="btn xt-ignore" data-xt-nav="-1">
                   <span class="icon-xt--chevron-left"></span>
                 </button>
-                <button type="button" class="xt-clone" data-xt-pag>
+                <button type="button" class="xt-ignore" data-xt-pag>
                   <span></span>
                 </button>
-                <button type="button" class="btn" data-xt-nav="1">
+                <button type="button" class="btn xt-ignore" data-xt-nav="1">
                   <span class="icon-xt--chevron-right"></span>
                 </button>
               </nav>
@@ -96,13 +96,13 @@ demo.htmlSource = `
             <div class="card_content">
               <h1>4</h1>
               <nav class="slider_pagination">
-                <button type="button" class="btn" data-xt-nav="-1">
+                <button type="button" class="btn xt-ignore" data-xt-nav="-1">
                   <span class="icon-xt--chevron-left"></span>
                 </button>
-                <button type="button" class="xt-clone" data-xt-pag>
+                <button type="button" class="xt-ignore" data-xt-pag>
                   <span></span>
                 </button>
-                <button type="button" class="btn" data-xt-nav="1">
+                <button type="button" class="btn xt-ignore" data-xt-nav="1">
                   <span class="icon-xt--chevron-right"></span>
                 </button>
               </nav>
@@ -120,13 +120,13 @@ demo.htmlSource = `
             <div class="card_content">
               <h1>5</h1>
               <nav class="slider_pagination">
-                <button type="button" class="btn" data-xt-nav="-1">
+                <button type="button" class="btn xt-ignore" data-xt-nav="-1">
                   <span class="icon-xt--chevron-left"></span>
                 </button>
-                <button type="button" class="xt-clone" data-xt-pag>
+                <button type="button" class="xt-ignore" data-xt-pag>
                   <span></span>
                 </button>
-                <button type="button" class="btn" data-xt-nav="1">
+                <button type="button" class="btn xt-ignore" data-xt-nav="1">
                   <span class="icon-xt--chevron-right"></span>
                 </button>
               </nav>
@@ -140,13 +140,13 @@ demo.htmlSource = `
   </div>
 
   <nav class="slider_pagination">
-    <button type="button" class="btn" data-xt-nav="-2">
+    <button type="button" class="btn xt-ignore" data-xt-nav="-1">
       <span><span class="icon-xt--chevron-left icon--left"></span> prev</span>
     </button>
-    <button type="button" class="xt-clone" data-xt-pag>
+    <button type="button" class="xt-ignore" data-xt-pag>
       <span>xt-num of xt-tot</span>
     </button>
-    <button type="button" class="btn" data-xt-nav="2">
+    <button type="button" class="btn xt-ignore" data-xt-nav="1">
       <span>next <span class="icon-xt--chevron-right icon--right"></span></span>
     </button>
   </nav>

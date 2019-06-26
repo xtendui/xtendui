@@ -1,7 +1,7 @@
 ---
 path: "/docs/presentation/slider/nav-pag"
 type: "docs"
-date: "2019-04-01"
+date: "2019-04-15"
 title: "Navigation and Pagination"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["400-Presentation"]
@@ -10,11 +10,11 @@ parent: "Slider"
 
 ###Navigation and Pagination
 
-`"align": "center"` `"align": "left"` `"align": "right"`
+You can wrap the slides with `"drag": {"wrap": true}`.
 
-You can add navigation with `[data-xt-nav]`, set the amount to add to the current activation with `[data-xt-nav="Number"]`.
+You can add navigation with `[data-xt-nav].xt-ignore`, set the amount to add to the current activation with `[data-xt-nav="Number"]`.
 
-You can add pagination inside `.slider_pagination` with `.xt-clone` to generate the pagination, inside it you can use this variables: `xt-num` `xt-tot`.
+You can add pagination inside `.slider_pagination` with `[data-xt-pag].xt-ignore` to generate the pagination, inside it you can use this variables: `xt-num` `xt-tot`.
 
 <div class="alert alert--primary">
   <div class="alert_content">

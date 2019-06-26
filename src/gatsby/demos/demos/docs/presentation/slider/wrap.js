@@ -11,7 +11,7 @@ const demo = {
 }
 demo.htmlSource = `
 <div class="slider"
-     data-xt-slider='{"align": "center"}'>
+     data-xt-slider='{"drag": {"wrap": true}}'>
 
   <div class="slides">
     <ul class="slides_inner">
@@ -85,11 +85,9 @@ demo.htmlSource = `
   </div>
 
   <nav class="slider_pagination">
-    <div class="list list-space--small align-items--center">
-      <button type="button" class="xt-ignore" data-xt-pag>
-        <span></span>
-      </button>
-    </div>
+    <button type="button" class="xt-ignore" data-xt-pag>
+      <span>xt-num of xt-tot</span>
+    </button>
   </nav>
 
 </div>

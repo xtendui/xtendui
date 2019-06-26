@@ -115,7 +115,7 @@ demo.htmlSource = `
   </div>
 
   <nav class="slider_pagination">
-    <button type="button" class="xt-clone" data-xt-pag>
+    <button type="button" class="xt-ignore" data-xt-pag>
       <span class="loader loader--y loader--js">
         <span class="filler">
           <span></span><span></span>
