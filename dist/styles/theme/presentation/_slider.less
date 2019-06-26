@@ -6,10 +6,12 @@
 
 .slides {
   .block();
-  // autoHeight animations
-  transition-property: height;
-  transition-duration: 750ms;
-  transition-timing-function: @bez--in-out;
+  &.xt-autoHeight {
+    // autoHeight animations
+    transition-property: height;
+    transition-duration: 750ms;
+    transition-timing-function: @bez--in-out;
+  }
 }
 
 .slides_inner {

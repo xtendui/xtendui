@@ -1378,6 +1378,7 @@ a[href]:not([href^='#']).active {
 .slider--expand .slide:not(.active) {
   opacity: 1 !important;
 }
+.slider--expand .xt-wrap,
 .slider--expand .slider_pagination,
 .slider--expand [data-xt-nav],
 .slider--expand .loader,
@@ -2950,7 +2951,7 @@ html.xt-scrollbar body {
 html.xt-scrollbar .overlay_outer {
   overflow-y: scroll;
 }
-[data-xt-pag].xt-clone {
+[data-xt-pag].xt-ignore {
   display: none !important;
 }
 [data-xt-nav] {
@@ -6163,6 +6164,8 @@ html.xt-focus:not(.xt-focus--disable) input[type="radio"]:focus ~ .form-label:be
   display: inline-block;
   vertical-align: top;
   width: 100%;
+}
+.slides.xt-autoHeight {
   transition-property: height;
   transition-duration: 750ms;
   transition-timing-function: cubic-bezier(.68,.13,.25,1);

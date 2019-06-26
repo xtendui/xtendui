@@ -84,7 +84,7 @@ class Core {
       "offBlock": false,
       "loop": true,
       "jump": false,
-      "imgLoaded": false,
+      "imageLoadedInit": false,
       "delayOn": false,
       "delayOff": false,
       "durationOn": false,
@@ -176,8 +176,7 @@ class Core {
     // elements
     if (options.elements) {
       let arr = Array.from(Xt.arrSingle(self.container.querySelectorAll(options.elements)));
-      arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
-      arr = arr.filter(x => !x.getAttribute('data-xt-nav')); // filter out nav
+      arr = arr.filter(x => !x.classList.contains('xt-ignore')); // filter out ignore
       self.elements = arr;
       self.destroyElements.push(...self.elements);
     }
@@ -186,8 +185,7 @@ class Core {
       // @FIX set namespace for next frame
       requestAnimationFrame(function () {
         let arr = Array.from(Xt.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']')));
-        arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
-        arr = arr.filter(x => !x.getAttribute('data-xt-nav')); // filter out nav
+        arr = arr.filter(x => !x.classList.contains('xt-ignore')); // filter out ignore
         if (arr.length) { // fix when using shadow dom doesn't query deep
           self.elements = arr;
           self.destroyElements.push(...self.elements);
@@ -206,7 +204,7 @@ class Core {
     if (options.targets) {
       let arr = Array.from(self.container.querySelectorAll(options.targets));
       arr = arr.filter(x => !Xt.parents(x, options.targets).length); // filter out parent
-      arr = arr.filter(x => !x.classList.contains('xt-clone')); // filter out clone
+      arr = arr.filter(x => !x.classList.contains('xt-ignore')); // filter out ignore
       self.targets = arr;
       self.destroyElements.push(...self.targets);
     }
@@ -290,7 +288,7 @@ class Core {
    * @returns {Boolean} if element was activated
    * @param {Boolean} saveCurrents
    */
-  initReset(el, saveCurrents) {
+  initReset(el, saveCurrents = false) {
     let self = this;
     let found = false;
     // elements
@@ -299,7 +297,7 @@ class Core {
       let groupEls = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group);
       for (let groupEl of groupEls) {
         if (groupEl.classList.contains(self.classes[0])) {
-          groupEl.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial);
+          groupEl.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse);
           Xt.dataStorage.remove(groupEl, self.componentNamespace + 'Initial');
           if (saveCurrents) {
             found = true;
@@ -314,7 +312,7 @@ class Core {
       }
     } else {
       if (el.classList.contains(self.classes[0])) {
-        el.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial);
+        el.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse);
         Xt.dataStorage.remove(el, self.componentNamespace + 'Initial');
         if (saveCurrents) {
           found = true;
@@ -331,7 +329,7 @@ class Core {
     let targets = self.getTargets(el);
     for (let tr of targets) {
       if (tr.classList.contains(self.classes[0])) {
-        tr.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial);
+        tr.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse);
         Xt.dataStorage.remove(tr, self.componentNamespace + 'Initial');
         if (saveCurrents) {
           found = true;
@@ -520,10 +518,10 @@ class Core {
     }
     // navigation
     if (options.navigation) {
-      let navs = self.object.querySelectorAll(options.navigation);
-      if (navs.length) {
-        self.destroyElements.push(...navs);
-        for (let nav of navs) {
+      self.navs = self.object.querySelectorAll(options.navigation);
+      if (self.navs.length) {
+        self.destroyElements.push(...self.navs);
+        for (let nav of self.navs) {
           let navHandler = Xt.dataStorage.put(nav, 'click.nav' + '.' + self.namespace,
             self.eventNavHandler.bind(self).bind(self, nav));
           nav.addEventListener('click', navHandler);
@@ -556,42 +554,34 @@ class Core {
       addEventListener('autoCloseFix.xt', autoCloseFixHandler);
     }
     // images
-    if (options.imgLoaded) {
-      for (let el of self.elements) {
-        let imgs = el.querySelectorAll('img');
-        self.destroyElements.push(...imgs);
-        for (let img of imgs) {
-          let imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
-            self.eventImgLoadedHandler.bind(self).bind(self, el));
+    for (let el of self.elements.filter(x => !x.classList.contains('xt-clone'))) {
+      let imgs = el.querySelectorAll('img');
+      self.destroyElements.push(...imgs);
+      for (let img of imgs) {
+        if (!Xt.dataStorage.get(img, self.componentNamespace + 'ImageLoadedDone')) {
+          Xt.dataStorage.set(img, self.componentNamespace + 'ImageLoadedDone', true);
           if (!img.complete) {
+            let imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
+              self.eventImgLoadedHandler.bind(self).bind(self, el, true));
             img.addEventListener('load', imgLoadHandler);
-            // @FIX srcset: call only one time
-            img.addEventListener('load', function (e) {
-              img.removeEventListener('load', imgLoadHandler);
-            });
           } else {
-            if (!Xt.dataStorage.get(el, self.componentNamespace + 'ImageLoadedDone')) {
-              imgLoadHandler();
-            }
+            self.eventImgLoadedHandler(el, false);
           }
         }
       }
-      for (let tr of self.targets) {
-        let imgs = tr.querySelectorAll('img');
-        self.destroyElements.push(...imgs);
-        for (let img of imgs) {
-          let imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
-            self.eventImgLoadedHandler.bind(self).bind(self, tr));
+    }
+    for (let tr of self.targets.filter(x => !x.classList.contains('xt-clone'))) {
+      let imgs = tr.querySelectorAll('img');
+      self.destroyElements.push(...imgs);
+      for (let img of imgs) {
+        if (!Xt.dataStorage.get(img, self.componentNamespace + 'ImageLoadedDone')) {
+          Xt.dataStorage.set(img, self.componentNamespace + 'ImageLoadedDone', true);
           if (!img.complete) {
+            let imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
+              self.eventImgLoadedHandler.bind(self).bind(self, tr, true));
             img.addEventListener('load', imgLoadHandler);
-            // @FIX srcset: call only one time
-            img.addEventListener('load', function (e) {
-              img.removeEventListener('load', imgLoadHandler);
-            });
           } else {
-            if (!Xt.dataStorage.get(tr, self.componentNamespace + 'ImageLoadedDone')) {
-              imgLoadHandler();
-            }
+            self.eventImgLoadedHandler(tr, false);
           }
         }
       }
@@ -884,25 +874,24 @@ class Core {
    * imageLoaded
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
+   * @param {Boolean} deferred
    */
-  eventImgLoadedHandler(el, e = null) {
+  eventImgLoadedHandler(el, deferred = true) {
     let self = this;
-    // don't rerurn imagesloaded
-    if (el.classList.contains('xt-wrap')) {
-      return false;
+    let options = self.options;
+    // class
+    el.classList.add('xt-imageLoaded');
+    // listener dispatch
+    let detail = self.eDetailSet();
+    detail.deferred = deferred;
+    el.dispatchEvent(new CustomEvent('imageLoaded.xt', {detail: detail}));
+    // imageLoadedInit
+    if (options.imageLoadedInit && deferred) {
+      clearTimeout(Xt.dataStorage.get(self.object, 'xt' + self.componentNamespace + 'imageLoadedInit' + 'Timeout'));
+      Xt.dataStorage.set(self.object, 'xt' + self.componentNamespace + 'imageLoadedInit' + 'Timeout', setTimeout(function () {
+        self.initLogic();
+      }, Xt.imageLoadedDelay));
     }
-    if (Xt.dataStorage.get(el, self.componentNamespace + 'ImageLoadedDone')) {
-      return false;
-    }
-    // delay
-    clearTimeout(Xt.dataStorage.get(el, 'xt' + self.componentNamespace + 'ImgLoaded' + 'Timeout'));
-    Xt.dataStorage.set(el, 'xt' + self.componentNamespace + 'ImgLoaded' + 'Timeout', setTimeout(function () {
-      // don't rerurn imagesloaded
-      Xt.dataStorage.set(el, self.componentNamespace + 'ImageLoadedDone', true);
-      // listener dispatch
-      let detail = self.eDetailSet(e);
-      el.dispatchEvent(new CustomEvent('imageLoaded.xt', {detail: detail}));
-    }, Xt.imageLoadedDelay));
   }
 
   //////////////////////
@@ -943,7 +932,7 @@ class Core {
     if (!self.elements || !self.elements.length) {
       return {all: [], single: null};
     }
-    if (self.mode === 'unique') {
+    if (self.mode === 'unique' || !element) {
       // choose all elements
       let final = self.elements;
       return {all: Xt.arrSingle(final), single: final.length > 1 ? final[0] : final};
@@ -974,7 +963,7 @@ class Core {
     if (!self.targets || !self.targets.length) {
       return [];
     }
-    if (self.mode === 'unique') {
+    if (self.mode === 'unique' || !element) {
       // choose all targets
       return self.targets;
     } else if (self.mode === 'multiple') {
@@ -2106,7 +2095,7 @@ class Core {
         self.goToPrev(1);
       }
       // dispatch
-      let detail = self.eDetailSet();
+      let detail = self.eDetailSet(e);
       self.detail.wheel.dispatchEvent(new CustomEvent('wheelstart.xt', {detail: detail}));
       self.detail.wheel.dispatchEvent(new CustomEvent('wheelend.xt', {detail: detail}));
       // return
@@ -2679,7 +2668,7 @@ class Core {
   eventStatus() {
     let self = this;
     // check disabled
-    if (self.object instanceof HTMLElement // not on window
+    if (self.object instanceof HTMLElement // @FIX not on window
       && getComputedStyle(self.object, ':after').getPropertyValue('content').replace(/['"]+/g, '') === 'xt-disable') {
       self.disable();
     } else if (self.disabled) {
