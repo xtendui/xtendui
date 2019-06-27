@@ -218,9 +218,15 @@ export class Slider extends Core {
           item.classList.remove('xt-ignore');
           item.classList.add('xt-clone');
           let html = item.innerHTML;
-          html = html.replace(new RegExp('xt-content', 'ig'), self.targets[i].innerHTML);
-          html = html.replace(new RegExp('xt-num', 'ig'), (i - self.groupMqFirst.length + 1).toString());
-          html = html.replace(new RegExp('xt-tot', 'ig'), self.groupMqInitial.length.toString());
+          if (html.search(new RegExp('xt-content', 'ig')) !== -1) {
+            html = html.replace(new RegExp('xt-content', 'ig'), self.targets[i].querySelector('.slide_pagination_content').innerHTML);
+          }
+          if (html.search(new RegExp('xt-num', 'ig')) !== -1) {
+            html = html.replace(new RegExp('xt-num', 'ig'), (i - self.groupMqFirst.length + 1).toString());
+          }
+          if (html.search(new RegExp('xt-tot', 'ig')) !== -1) {
+            html = html.replace(new RegExp('xt-tot', 'ig'), self.groupMqInitial.length.toString());
+          }
           item.innerHTML = html;
           item.setAttribute('data-xt-group', group[0].getAttribute('data-xt-group'));
           container.insertBefore(item, cloned);

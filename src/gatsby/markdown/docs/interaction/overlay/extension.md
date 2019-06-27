@@ -28,6 +28,15 @@ You can add as many overlay content as you like. `.overlay_content--menu` `.over
   </div>
 </demo>
 
+##Close fixed
+
+Put `.btn--close_fixed.xt-fixed` outside.
+
+<demo>
+  <div class="demo_item" data-iframe="demos/docs/interaction/overlay/closefixed" data-name="close fixed">
+  </div>
+</demo>
+
 ##Close outside
 
 Put `.btn--close` outside.

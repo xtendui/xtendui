@@ -1067,7 +1067,7 @@ if (typeof window !== 'undefined') {
     for (let element of elements) {
       element.style.paddingRight = '';
       let style = getComputedStyle(element);
-      if (Xt.normalizeWidth(element.clientWidth) === '') { // only if full width
+      if (Xt.normalizeWidth(element.clientWidth) === '' || getComputedStyle(element).right) { // only if full width or right position
         let padding = style.paddingRight;
         let str = 'calc(' + padding + ' + ' + width + 'px)';
         element.classList.add('transition-none');
