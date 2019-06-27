@@ -194,7 +194,8 @@ class Scroll extends Core {
         self.detail.ratioInverse = 1 - self.detail.ratio;
         self.detail.ratioDouble = 1 - Math.abs((self.detail.ratio - 0.5) * 2);
         // activation
-        if (current >= 0 && current <= total) {
+        if (current >= 0 && current <= total
+          || self.detail.start > self.detail.end) { // limit fixes activation on page top
           // inside
           changed = self.checkOn(el);
           if (changed) {

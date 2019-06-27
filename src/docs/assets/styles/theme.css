@@ -4982,7 +4982,8 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
   background: transparent !important;
 }
 .btn--icon {
-  padding: 0.6em 0.8em;
+  padding: 0.8em 0.8em;
+  line-height: 1;
 }
 .btn--transform {
   letter-spacing: 0;
@@ -4991,7 +4992,8 @@ input[type="radio"]:not(.unstyled):disabled ~ .form-label:after {
 .btn--close {
   text-decoration: none;
   color: #7367F0;
-  padding: 0.6em 0.8em !important;
+  padding: 0.8em 0.8em !important;
+  line-height: 1 !important;
 }
 .btn--close:hover,
 .btn--close.hover,
