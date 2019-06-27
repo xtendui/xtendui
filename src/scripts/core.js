@@ -1784,7 +1784,7 @@ export class Core {
     self.specialMiddle(el, before, after);
     self.specialCollapseOn(el, before, after);
     if (type === 'targets'
-      || el === self.object) { // @FIX overlay standalone
+      || (!self.targets.length && type === 'elements')) { // @FIX when standalone
       // appendTo
       if (options.appendTo) {
         let appendToTarget = document.querySelector(options.appendTo);
@@ -1968,7 +1968,8 @@ export class Core {
     // reset
     el.classList.remove(...self.classesOut);
     // special
-    if (type === 'targets') {
+    if (type === 'targets'
+      || (!self.targets.length && type === 'elements')) { // @FIX when standalone
       // appendTo
       if (options.appendTo) {
         let appendOrigin = document.querySelector('[data-xt-origin=' + self.namespace + ']');
