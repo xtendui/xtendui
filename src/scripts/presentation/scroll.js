@@ -52,10 +52,10 @@ class Scroll extends Core {
           target = el.cloneNode(true);
           target.classList.add('xt-clone', 'xt-ignore');
           for (let elId of target.querySelectorAll('[id]')) {
-            elId.removeAttribute('id');
+            elId.setAttribute('id', elId.getAttribute('id') + '-clone');
           }
           for (let elName of target.querySelectorAll('[name]')) {
-            elName.removeAttribute('name');
+            elName.setAttribute('name', elName.getAttribute('name') + '-clone');
           }
           container.append(target);
         }
