@@ -1290,7 +1290,9 @@ export class Core {
       let targets = self.getTargets(element);
       let elementsInner = self.getInside(element, options.elementsInner);
       let targetsInner = self.getInside(targets, options.targetsInner);
-      element.blur(); // fix :focus styles
+      if (element.blur) { // @FIX sometimes blur is undefined
+        element.blur(); // @FIX :focus styles
+      }
       // currentIndex after a frame for sequential events
       requestAnimationFrame(function () {
         if (self.getCurrents().length === 0) {
