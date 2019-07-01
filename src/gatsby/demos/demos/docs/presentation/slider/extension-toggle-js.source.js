@@ -57,55 +57,55 @@ Xt.ready(function () {
     }
   });
 
-  // targets
+  // on
 
-  for (let target of self.targets) {
-
-    // on
-
-    target.addEventListener('on.xt', function (e) {
+  self.object.addEventListener('on.xt', function (e) {
+    let tr = e.target;
+    if (self.targets.includes(tr)) { // event bubbles
       if (!self.initial) {
-        let xMax = target.clientWidth;
+        let xMax = tr.clientWidth;
         // direction
         let direction = 1;
-        if (target.classList.contains('inverse')) {
+        if (tr.classList.contains('inverse')) {
           direction = -1;
         }
         // setup
-        TweenMax.set(target, {opacity: 0});
+        TweenMax.set(tr, {opacity: 0});
         // mask
-        TweenMax.set(target, {x: -xMax * direction});
-        TweenMax.to(target, timeMask, {x: 0, opacity: 1, ease: easeInOut});
+        TweenMax.set(tr, {x: -xMax * direction});
+        TweenMax.to(tr, timeMask, {x: 0, opacity: 1, ease: easeInOut});
         TweenMax.set(self.dragger, {x: xMax * direction});
         TweenMax.to(self.dragger, timeMask, {x: 0, ease: easeInOut});
         // content
-        let contents = target.querySelectorAll('.card_content > *');
+        let contents = tr.querySelectorAll('.card_content > *');
         for (let content of contents) {
           TweenMax.set(content, {x: sizeContent * direction, opacity: 0});
           TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: easeInOut});
         }
       }
-    });
+    }
+  });
 
     // off
 
-    target.addEventListener('off.xt', function (e) {
-      let xMax = target.clientWidth;
+  self.object.addEventListener('off.xt', function (e) {
+    let tr = e.target;
+    if (self.targets.includes(tr)) { // event bubbles
+      let xMax = tr.clientWidth;
       // direction
       let direction = 1;
-      if (target.classList.contains('inverse')) {
+      if (tr.classList.contains('inverse')) {
         direction = -1;
       }
       // mask
-      TweenMax.to(target, timeMask, {x: xMax * direction, opacity: 0, ease: easeInOut});
+      TweenMax.to(tr, timeMask, {x: xMax * direction, opacity: 0, ease: easeInOut});
       TweenMax.to(self.dragger, timeMask, {x: -xMax * direction, ease: easeInOut});
       // content
-      let contents = target.querySelectorAll('.card_content > *');
+      let contents = tr.querySelectorAll('.card_content > *');
       for (let content of contents) {
         TweenMax.to(content, timeContent, {x: -sizeContent * direction, opacity: 0, ease: easeInOut});
       }
-    });
-
-  }
+    }
+  });
 
 });

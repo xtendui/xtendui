@@ -283,14 +283,14 @@ export class Sticky extends Core {
             dispatchEvent(new CustomEvent('autoClose.xt'));
             // listener dispatch
             let detail = self.eDetailSet(e);
-            el.dispatchEvent(new CustomEvent('hide.xt.sticky', {detail: detail}));
+            el.dispatchEvent(new CustomEvent('hide.xt.sticky', {bubbles: true, detail: detail}));
           }
         } else {
           if (el.classList.contains('sticky--hide')) {
             el.classList.remove('sticky--hide');
             // listener dispatch
             let detail = self.eDetailSet(e);
-            el.dispatchEvent(new CustomEvent('show.xt.sticky', {detail: detail}));
+            el.dispatchEvent(new CustomEvent('show.xt.sticky', {bubbles: true, detail: detail}));
           }
         }
       } else {
@@ -340,7 +340,7 @@ export class Sticky extends Core {
       }
       // dispatch
       let detail = self.eDetailSet();
-      el.dispatchEvent(new CustomEvent('change.xt.sticky', {detail: detail}));
+      el.dispatchEvent(new CustomEvent('change.xt.sticky', {bubbles: true, detail: detail}));
       // save for direction
       Xt.dataStorage.set(el, self.componentNamespace + 'AddOld', add);
     }
