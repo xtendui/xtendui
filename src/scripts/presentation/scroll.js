@@ -263,7 +263,7 @@ class Scroll extends Core {
         cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'ScrollDispatchFrame'));
         Xt.dataStorage.set(el, self.componentNamespace + 'ScrollDispatchFrame', requestAnimationFrame(function () {
           let detail = self.eDetailSet();
-          el.dispatchEvent(new CustomEvent('change.xt.scroll', {detail: detail}));
+          el.dispatchEvent(new CustomEvent('change.xt.scroll', {bubbles: true, detail: detail}));
         }));
       }
     }

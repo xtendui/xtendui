@@ -153,7 +153,7 @@ class Slider extends Core {
             cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapFirst' + i);
             self.targets.unshift(cloned);
             wrapFirstCount -= slide.offsetWidth;
-            if (wrapFirstCount <= 0) {
+            if (wrapFirstCount < 0) { // we add one more with < 0, use <= 0 to wrap only size
               break wrapFirstLabel;
             }
           }
@@ -173,7 +173,7 @@ class Slider extends Core {
             cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapLast' + i);
             self.targets.push(cloned);
             wrapLastCount -= slide.offsetWidth;
-            if (wrapLastCount <= 0) {
+            if (wrapLastCount < 0) { // we add one more with < 0, use <= 0 to wrap only size
               break wrapLastLabel;
             }
           }
@@ -568,7 +568,7 @@ class Slider extends Core {
       self.autoHeight.style.height = slideHeight + 'px';
       // listener dispatch
       let detail = self.eDetailSet();
-      slide.dispatchEvent(new CustomEvent('autoHeight.xt', {detail: detail}));
+      slide.dispatchEvent(new CustomEvent('autoHeight.xt', {bubbles: true, detail: detail}));
     }
     // val
     self.detail.xPos = self.detail.xPosCurrent = self.detail.xPosReal = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPos');

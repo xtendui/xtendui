@@ -304,7 +304,7 @@ class Core {
           }
           // listener dispatch
           let detail = self.eDetailSet();
-          groupEl.dispatchEvent(new CustomEvent('off.xt', {detail: detail}));
+          groupEl.dispatchEvent(new CustomEvent('off.xt', {bubbles: true, detail: detail}));
         }
         if (!saveCurrents && self.initialCurrents.includes(groupEl)) {
           found = true;
@@ -319,7 +319,7 @@ class Core {
         }
         // listener dispatch
         let detail = self.eDetailSet();
-        el.dispatchEvent(new CustomEvent('off.xt', {detail: detail}));
+        el.dispatchEvent(new CustomEvent('off.xt', {bubbles: true, detail: detail}));
       }
       if (!saveCurrents && self.initialCurrents.includes(el)) {
         found = true;
@@ -336,7 +336,7 @@ class Core {
         }
         // listener dispatch
         let detail = self.eDetailSet();
-        tr.dispatchEvent(new CustomEvent('off.xt', {detail: detail}));
+        tr.dispatchEvent(new CustomEvent('off.xt', {bubbles: true, detail: detail}));
       }
     }
     return found;
@@ -884,7 +884,7 @@ class Core {
     // listener dispatch
     let detail = self.eDetailSet();
     detail.deferred = deferred;
-    el.dispatchEvent(new CustomEvent('imageLoaded.xt', {detail: detail}));
+    el.dispatchEvent(new CustomEvent('imageLoaded.xt', {bubbles: true, detail: detail}));
     // imageLoadedInit
     if (options.imageLoadedInit && deferred) {
       clearTimeout(Xt.dataStorage.get(self.object, 'xt' + self.componentNamespace + 'imageLoadedInit' + 'Timeout'));
@@ -1818,7 +1818,7 @@ class Core {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('on.xt', {detail: obj[type].detail}));
+    el.dispatchEvent(new CustomEvent('on.xt', {bubbles: true, detail: obj[type].detail}));
   }
 
   /**
@@ -1862,7 +1862,7 @@ class Core {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('off.xt', {detail: obj[type].detail}));
+    el.dispatchEvent(new CustomEvent('off.xt', {bubbles: true, detail: obj[type].detail}));
   }
 
   /**
@@ -1943,7 +1943,7 @@ class Core {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('ondone.xt', {detail: obj[type].detail}));
+    el.dispatchEvent(new CustomEvent('ondone.xt', {bubbles: true, detail: obj[type].detail}));
   }
 
   /**
@@ -2001,7 +2001,7 @@ class Core {
       }
     }
     // listener dispatch
-    el.dispatchEvent(new CustomEvent('offdone.xt', {detail: obj[type].detail}));
+    el.dispatchEvent(new CustomEvent('offdone.xt', {bubbles: true, detail: obj[type].detail}));
   }
 
   //////////////////////
