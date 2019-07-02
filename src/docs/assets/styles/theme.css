@@ -545,9 +545,9 @@ textarea {
 }
 input[type="checkbox"]:not(.unstyled),
 input[type="radio"]:not(.unstyled) {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
+  position: absolute !important;
+  z-index: -1 !important;
+  opacity: 0 !important;
 }
 input[type="checkbox"]:not(.unstyled) ~ .form-label {
   position: relative !important;
@@ -3799,7 +3799,7 @@ legend:last-child {
   font-size: 1em;
   line-height: 1.2;
   border-color: #D9D9D5;
-  background: #fff;
+  background-color: #fff;
   color: #343a40;
   transition-property: color, border, background;
   transition-duration: 500ms;
@@ -3807,7 +3807,7 @@ legend:last-child {
 }
 .form-input:focus,
 .form-input.active {
-  background: #f2f2f2;
+  background-color: #edf3f6;
 }
 select.form-input {
   background-image: linear-gradient(45deg, transparent 50%, #9c9c92 50%), linear-gradient(135deg, #9c9c92 50%, transparent 50%), linear-gradient(to right, #cdcdc8, #cdcdc8);
@@ -3825,12 +3825,12 @@ select.form-input {
 }
 .form-input--gray {
   border-color: #D9D9D5;
-  background: #fff;
+  background-color: #fff;
   color: #343a40;
 }
 .form-input--gray:focus,
 .form-input--gray.active {
-  background: #f2f2f2;
+  background-color: #edf3f6;
 }
 select.form-input--gray {
   background-image: linear-gradient(45deg, transparent 50%, #9c9c92 50%), linear-gradient(135deg, #9c9c92 50%, transparent 50%), linear-gradient(to right, #cdcdc8, #cdcdc8);
