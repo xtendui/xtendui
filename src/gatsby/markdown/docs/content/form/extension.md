@@ -1,18 +1,18 @@
 ---
-path: "/docs/content/group/extension"
+path: "/docs/content/form/extension"
 type: "docs"
-date: "2019-05-01"
+date: "2019-12-01"
 title: "Extension"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["100-Content"]
-parent: "Group"
+parent: "Form"
 ---
 
 ##Extension
 
-###Number
+###Label Addon
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/content/group/number" data-name="number">
+  <div class="demo_item" data-iframe="demos/docs/content/form/label-addon" data-name="label addon">
   </div>
 </demo>

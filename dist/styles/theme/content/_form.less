@@ -172,10 +172,10 @@ legend {
 .form-input--gray {
   // styles
   border-color: @gray--300;
-  background: @white;
+  background-color: @white; // @FIX no background: or it overrides background-image
   color: @text;
   &:focus, &.active {
-    background: @gray--200;
+    background: @gray--200; // @FIX no background: or it overrides background-image
   }
   // select arrow
   select& {
