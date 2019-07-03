@@ -817,6 +817,7 @@ export class Slider extends Core {
     }
     // val
     self.detail.xPosReal = xPos;
+    self.detail.xCurrentReal = self.detail.xCurrent;
     // check
     let xDist = xPos - xPosCurrent;
     if (Math.abs(xDist) > options.drag.linkThreshold) {
@@ -853,6 +854,7 @@ export class Slider extends Core {
       }
     }
     // val
+    self.detail.xCurrent = self.detail.xCurrentReal - (self.detail.xPosReal - xPos); // xCurrent when overflowing
     self.detail.xPosOld = self.detail.xPos;
     self.detail.xPos = xPos;
     // drag position
