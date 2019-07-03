@@ -265,6 +265,7 @@ export class Slider extends Core {
         let slideLeft = Infinity;
         let slideWidth = 0;
         let slideHeight = 0;
+        let slideHeightTemp = 0;
         // vars
         for (let target of targets) {
           let cloneSource = Xt.dataStorage.get(target, 'xt' + self.componentNamespace + 'cloneSource');
@@ -274,16 +275,18 @@ export class Slider extends Core {
             let w = cloneSource.offsetWidth;
             slideWidth += w;
             target.children[0].style.width = w + 'px';
+            // @FIX xt-wrap clone offsetHeight on autoHeight
+            slideHeightTemp = cloneSource.offsetHeight;
           } else {
             slideWidth += target.offsetWidth;
+            slideHeightTemp = target.offsetHeight;
           }
           slidesWidth += slideWidth;
-          let h = target.offsetHeight;
-          slideHeight = h > slideHeight ? h : slideHeight;
+          slideHeight = slideHeightTemp > slideHeight ? slideHeightTemp : slideHeight;
         }
         for (let target of targets) {
           Xt.dataStorage.set(target, self.componentNamespace + 'GroupPosDone', true);
-          Xt.dataStorage.set(target, self.componentNamespace + 'groupHeight', slideHeight);
+          Xt.dataStorage.set(target, self.componentNamespace + 'GroupHeight', slideHeight);
         }
         // pos with alignment
         let pos;
@@ -563,12 +566,15 @@ export class Slider extends Core {
     // autoHeight
     if (self.autoHeight) {
       let slideHeight = slide.offsetHeight;
-      let groupHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'groupHeight');
+      let groupHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupHeight');
       slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight;
-      self.autoHeight.style.height = slideHeight + 'px';
-      // listener dispatch
-      let detail = self.eDetailSet();
-      slide.dispatchEvent(new CustomEvent('autoHeight.xt', {bubbles: true, detail: detail}));
+      slideHeight += 'px';
+      if (self.autoHeight.style.height !== slideHeight) {
+        self.autoHeight.style.height = slideHeight;
+        // listener dispatch
+        let detail = self.eDetailSet();
+        slide.dispatchEvent(new CustomEvent('autoHeight.xt', {bubbles: true, detail: detail}));
+      }
     }
     // val
     self.detail.xPos = self.detail.xPosCurrent = self.detail.xPosReal = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupPos');
