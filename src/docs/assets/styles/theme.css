@@ -1321,6 +1321,10 @@ a[href]:not([href^='#']).active {
   position: relative;
 }
 .slides {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   overflow: hidden;
 }
 .slides_inner {
