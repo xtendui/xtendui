@@ -368,7 +368,7 @@ export class Slider extends Core {
     }
     // dragger
     if (options.drag) {
-      // drag
+      // drag start
       let dragstartHandler = Xt.dataStorage.put(dragger, 'mousedown touchstart' + '.' + self.namespace,
         self.eventDragstartHandler.bind(self).bind(self, dragger));
       let events = ['mousedown', 'touchstart'];
@@ -447,7 +447,7 @@ export class Slider extends Core {
         } else {
           self.eventDragstart(dragger, e);
         }
-        // event off
+        // drag end
         let dragendHandler = Xt.dataStorage.put(dragger, 'mouseup touchend' + '.' + self.namespace,
           self.eventDragendHandler.bind(self).bind(self, dragger));
         let events = ['mouseup', 'touchend'];
@@ -473,12 +473,6 @@ export class Slider extends Core {
       }
     } else {
       self.eventDragend(dragger, e);
-    }
-    // event off
-    let dragendHandler = Xt.dataStorage.get(dragger, 'mouseup touchend' + '.' + self.namespace);
-    let events = ['mouseup', 'touchend'];
-    for (let event of events) {
-      removeEventListener(event, dragendHandler);
     }
   }
 
@@ -507,10 +501,16 @@ export class Slider extends Core {
    */
   eventDragend(dragger, e) {
     let self = this;
+    // event off
+    let dragendHandler = Xt.dataStorage.get(dragger, 'mouseup touchend' + '.' + self.namespace);
+    let eventsoff = ['mouseup', 'touchend'];
+    for (let event of eventsoff) {
+      removeEventListener(event, dragendHandler);
+    }
     // event move
     let dragHandler = Xt.dataStorage.get(dragger, 'mousemove touchmove' + '.' + self.namespace);
-    let events = ['mousemove', 'touchmove'];
-    for (let event of events) {
+    let eventsmove = ['mousemove', 'touchmove'];
+    for (let event of eventsmove) {
       dragger.removeEventListener(event, dragHandler);
     }
     // logic
@@ -719,18 +719,9 @@ export class Slider extends Core {
     }
     // auto
     self.eventAutoStart();
-    // disable dragger
-    requestAnimationFrame(function () { // needed for touch links triggering before logicDragend
-      dragger.classList.add('pointer-events--none');
-      for (let nav of self.navs) {
-        nav.classList.add('pointer-events--none');
-      }
-    });
     // disable links
-    requestAnimationFrame(function () {
-      dragger.classList.remove('links--none');
-      dragger.classList.remove('jumps--none');
-    });
+    dragger.classList.remove('links--none');
+    dragger.classList.remove('jumps--none');
     // logic
     self.logicDragfriction(dragger, e);
     // listener dispatch
