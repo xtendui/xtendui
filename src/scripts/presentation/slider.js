@@ -719,9 +719,6 @@ export class Slider extends Core {
     }
     // auto
     self.eventAutoStart();
-    // disable links
-    dragger.classList.remove('links--none');
-    dragger.classList.remove('jumps--none');
     // logic
     self.logicDragfriction(dragger, e);
     // listener dispatch
@@ -741,6 +738,11 @@ export class Slider extends Core {
     let options = self.options;
     // friction
     if (Math.abs(self.detail.xVelocity) > options.drag.frictionLimit) {
+      // disable dragger
+      dragger.classList.add('pointer-events--none');
+      for (let nav of self.navs) {
+        nav.classList.add('pointer-events--none');
+      }
       // drag
       self.logicDrag(dragger, e, true);
       // loop
@@ -748,6 +750,9 @@ export class Slider extends Core {
         self.logicDragfriction(dragger, e);
       });
     } else {
+      // disable links
+      dragger.classList.remove('links--none');
+      dragger.classList.remove('jumps--none');
       // dragend
       requestAnimationFrame(self.logicDragfrictionend.bind(self).bind(e, dragger));
     }
