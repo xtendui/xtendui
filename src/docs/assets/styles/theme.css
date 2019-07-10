@@ -926,9 +926,6 @@ input[type="radio"].unstyled ~ .form-label.disabled:after {
   width: 100%;
   max-width: 1340px;
 }
-.container.full {
-  max-width: none;
-}
 .row {
   display: flex;
 }
@@ -1921,7 +1918,12 @@ a.links--none,
   flex-shrink: 0 !important;
 }
 .full {
+  max-width: none !important;
   width: 100% !important;
+}
+.full-y {
+  max-height: none !important;
+  height: 100% !important;
 }
 .block {
   display: inline-block !important;
@@ -1997,7 +1999,12 @@ a.links--none,
     flex-shrink: 0 !important;
   }
   .full-sm {
+    max-width: none !important;
     width: 100% !important;
+  }
+  .full-y-sm {
+    max-height: none !important;
+    height: 100% !important;
   }
   .block-sm {
     display: inline-block !important;
@@ -2074,7 +2081,12 @@ a.links--none,
     flex-shrink: 0 !important;
   }
   .full-md {
+    max-width: none !important;
     width: 100% !important;
+  }
+  .full-y-md {
+    max-height: none !important;
+    height: 100% !important;
   }
   .block-md {
     display: inline-block !important;
@@ -2151,7 +2163,12 @@ a.links--none,
     flex-shrink: 0 !important;
   }
   .full-lg {
+    max-width: none !important;
     width: 100% !important;
+  }
+  .full-y-lg {
+    max-height: none !important;
+    height: 100% !important;
   }
   .block-lg {
     display: inline-block !important;

@@ -220,13 +220,28 @@
 // full
 
 .full(@breakpoint:none) when (@breakpoint = none) {
+  max-width: none;
   width: 100%;
 }
 
 .full(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
+    max-width: none;
     width: 100%;
+  }
+}
+
+.full-y(@breakpoint:none) when (@breakpoint = none) {
+  max-height: none;
+  height: 100%;
+}
+
+.full-y(@breakpoint:none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    max-height: none;
+    height: 100%;
   }
 }
 
