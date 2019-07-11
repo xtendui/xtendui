@@ -873,41 +873,50 @@ input[type="radio"].unstyled ~ .form-label.disabled:after {
 .form-input ~ .group_inner > * {
   margin-right: 0;
 }
+.group_inner:first-child > *,
 .group_inner:first-child > *:before {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
+.group_inner:last-child > *,
 .group_inner:last-child > *:before {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
 }
+.group_inner:not(:first-child):not(:last-child) > *,
 .group_inner:not(:first-child):not(:last-child) > *:before {
   border-radius: 0 !important;
 }
+.group_inner:first-child > *:not(:first-child),
 .group_inner:first-child > *:not(:first-child):before {
   border-bottom-right-radius: 0 !important;
   border-top-right-radius: 0 !important;
   border-top-left-radius: 0 !important;
 }
+.group_inner:first-child > *:not(:last-child),
 .group_inner:first-child > *:not(:last-child):before {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
 }
+.group_inner:first-child > *:not(:first-child):not(:last-child),
 .group_inner:first-child > *:not(:first-child):not(:last-child):before {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
 }
+.group_inner:last-child > *:not(:first-child),
 .group_inner:last-child > *:not(:first-child):before {
   border-bottom-left-radius: 0 !important;
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
 }
+.group_inner:last-child > *:not(:last-child),
 .group_inner:last-child > *:not(:last-child):before {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
+.group_inner:last-child > *:not(:first-child):not(:last-child),
 .group_inner:last-child > *:not(:first-child):not(:last-child):before {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
