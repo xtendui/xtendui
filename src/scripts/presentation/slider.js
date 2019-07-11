@@ -139,6 +139,25 @@ export class Slider extends Core {
         if (options.contain) {
           console.error('Error: Xt.Slider cannot use "contain": true when using "drag": {"wrap": true}', self.object);
         }
+        // wrapLast
+        let wrapLastCount = draggerWidth;
+        wrapLastLabel: for (let [i, group] of self.groupMqInitial.entries()) {
+          wrapLast.push([]);
+          for (let slide of group) {
+            let cloned = slide.cloneNode(true);
+            Xt.dataStorage.set(cloned, 'xt' + self.componentNamespace + 'cloneSource', slide);
+            cloned.classList.add('xt-clone', 'xt-wrap');
+            cloned.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse);
+            container.append(cloned);
+            wrapLast[i].push(cloned);
+            cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapLast' + i);
+            self.targets.push(cloned);
+            wrapLastCount -= slide.offsetWidth;
+            if (wrapLastCount < 0) { // we add one more with < 0, use <= 0 to wrap only size
+              break wrapLastLabel;
+            }
+          }
+        }
         // wrapFirst
         let wrapFirstCount = draggerWidth;
         wrapFirstLabel: for (let [i, group] of self.groupMqInitial.reverse().entries()) {
@@ -157,27 +176,9 @@ export class Slider extends Core {
               break wrapFirstLabel;
             }
           }
-          group.reverse();
+          group.reverse(); // reset reverse
         }
-        // wrapLast
-        let wrapLastCount = draggerWidth;
-        wrapLastLabel: for (let [i, group] of self.groupMqInitial.reverse().entries()) {
-          wrapLast.push([]);
-          for (let slide of group) {
-            let cloned = slide.cloneNode(true);
-            Xt.dataStorage.set(cloned, 'xt' + self.componentNamespace + 'cloneSource', slide);
-            cloned.classList.add('xt-clone', 'xt-wrap');
-            cloned.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse);
-            container.append(cloned);
-            wrapLast[i].push(cloned);
-            cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapLast' + i);
-            self.targets.push(cloned);
-            wrapLastCount -= slide.offsetWidth;
-            if (wrapLastCount < 0) { // we add one more with < 0, use <= 0 to wrap only size
-              break wrapLastLabel;
-            }
-          }
-        }
+        self.groupMqInitial.reverse(); // reset reverse
       }
     }
     self.groupMqFirst = wrapFirst;
@@ -295,7 +296,7 @@ export class Slider extends Core {
         } else if (options.align === 'left') {
           pos = -slideLeft;
         } else if (options.align === 'right') {
-          pos = -slideLeft + draggerWidth - slideWidth;
+          pos = draggerWidth - slideLeft - slideWidth;
         }
         //console.log(pos, draggerWidth, slideWidth, slide);
         // save pos
@@ -625,10 +626,10 @@ export class Slider extends Core {
             if (!self.initial) {
               if (self.currentIndex < min) {
                 self.initial = true;
-                self.goToIndex(max, true);
+                self.goToIndex(max + self.currentIndex - min + 1, true); // wrap around xt-wrap items
               } else if (self.currentIndex > max) {
                 self.initial = true;
-                self.goToIndex(min, true);
+                self.goToIndex(min + self.currentIndex - max - 1, true); // wrap around xt-wrap items
               }
             }
           }, 'wrap');
@@ -887,14 +888,22 @@ export class Slider extends Core {
       }
     }
     // activate or reset
-    let xPos = self.detail.xPosReal;
+    let draggerWidth = self.dragger.offsetWidth;
+    let xPos = self.detail.xPos;
     let xDist = xPos - xPosCurrent;
     if (Math.abs(xDist) > options.drag.threshold) {
       // get nearest
       let found = self.currentIndex;
       for (let [i, group] of self.groupMq.entries()) {
         for (let slideCheck of group) {
-          let check = xPos - dragger.offsetWidth / 2 + slideCheck.offsetLeft;
+          let check;
+          if (options.align === 'center') {
+            check = xPos - draggerWidth / 2 + slideCheck.offsetLeft;
+          } else if (options.align === 'left') {
+            check = xPos + slideCheck.offsetLeft;
+          } else if (options.align === 'right') {
+            check = xPos - draggerWidth + slideCheck.offsetLeft + slideCheck.offsetWidth;
+          }
           if (check < 0 && Xt.visible(slideCheck)) {
             found = i;
           }

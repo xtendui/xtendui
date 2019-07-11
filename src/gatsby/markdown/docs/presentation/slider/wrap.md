@@ -19,6 +19,17 @@ You can wrap the slides with `"drag": {"wrap": true}`.
 </div>
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/wrap" data-name="nav pag">
+  <div class="demo_item" data-iframe="demos/docs/presentation/slider/wrap" data-name="wrap">
+  </div>
+</demo>
+
+####Tests
+
+Test with aligment and no overflow.
+
+<demo>
+  <div class="demo_item" data-iframe="demos/docs/presentation/slider/wrap-left" data-name="left">
+  </div>
+  <div class="demo_item" data-iframe="demos/docs/presentation/slider/wrap-right" data-name="right">
   </div>
 </demo>
