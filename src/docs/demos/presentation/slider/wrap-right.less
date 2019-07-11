@@ -1,0 +1,32 @@
+@import (reference) "../../../../../dist/styles/xtend.less";
+
+// slider
+
+.slider {
+  .slide {
+    .col(6);
+    .col(4, sm);
+    // animation
+    opacity: .5;
+    transition-property: opacity;
+    transition-duration: @time--big;
+    transition-timing-function: @bez--out;
+    &.active {
+      opacity: 1;
+      transition-property: opacity;
+      transition-duration: @time--big;
+      transition-timing-function: @bez--in;
+    }
+    &.initial {
+      transition-duration: initial;
+    }
+  }
+}
+
+// card
+
+.card {
+  .card--secondary();
+  .card--big();
+  text-align: center;
+}
