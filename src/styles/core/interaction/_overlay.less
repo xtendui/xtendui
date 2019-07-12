@@ -8,8 +8,8 @@
   z-index: @index--overlay;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  bottom: 0; // @FIX no height or it bugs collapse animation
+  right: 0; // @FIX no width or it bugs collapse animation
   // scroll
   overflow: hidden;
   .overflow-style();

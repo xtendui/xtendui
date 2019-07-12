@@ -2069,8 +2069,6 @@ export class Core {
     if (self.disabled && !self.initial) {
       return false;
     }
-    // prevent wheel
-    e.preventDefault();
     // if document.scrollingElement scroll current overflow scroll
     if (el === document.scrollingElement) {
       let elFinal;
@@ -2121,9 +2119,10 @@ export class Core {
       // return
       return false;
     }
-    // calculate limit
+    // min and max
     let min = self.detail.wheelMin || 0;
     let max = self.detail.wheelMax;
+    // calculate max
     if (!self.detail.wheelMax) {
       if (!options.wheel.transform) {
         if (options.wheel.horizontal) {
@@ -2173,6 +2172,20 @@ export class Core {
       // limit
       self.detail.wheelEnd = Math.max(min, Math.min(self.detail.wheelEnd, max));
     }
+    // propagate if already at min or max
+    if (self.detail.wheelMin && self.detail.wheelMax) { // only when setting wheelMin and wheelMax
+      if (delta < 0) {
+        if (self.detail.wheelCurrent >= max) {
+          return false;
+        }
+      } else if (delta > 0) {
+        if (self.detail.wheelCurrent <= min) {
+          return false;
+        }
+      }
+    }
+    // prevent wheel
+    e.preventDefault();
     // moving
     if (!self.detail.wheelMoving) {
       self.detail.wheelMoving = true;
@@ -2201,13 +2214,18 @@ export class Core {
     }
     // vars
     let delta = self.detail.wheelEnd - self.detail.wheelCurrent;
+    let deltaAbs = Math.abs(delta);
     let sign = Math.sign(delta);
     // momentum
     let fncFriction = options.wheel.friction;
     if (typeof fncFriction === 'string') {
       fncFriction = new Function('delta', fncFriction);
     }
-    self.detail.wheelCurrent += fncFriction(Math.abs(delta)) * sign;
+    if (deltaAbs >= options.wheel.frictionLimit) {
+      self.detail.wheelCurrent += fncFriction(deltaAbs) * sign;
+    } else {
+      self.detail.wheelCurrent = self.detail.wheelEnd;
+    }
     // set
     if (!options.wheel.transform) {
       if (options.wheel.horizontal) {
@@ -2224,7 +2242,7 @@ export class Core {
     }
     // loop
     if (self.detail.wheelCurrent > min && self.detail.wheelCurrent < max && // limit
-      Math.abs(delta) >= options.wheel.frictionLimit) { // frictionLimit
+      deltaAbs >= options.wheel.frictionLimit) { // frictionLimit
       // friction
       cancelAnimationFrame(Xt.dataStorage.get(self.detail.wheel, self.componentNamespace + 'WheelSmoothFrame'));
       Xt.dataStorage.set(self.detail.wheel, self.componentNamespace + 'WheelSmoothFrame', requestAnimationFrame(function () {
@@ -2348,9 +2366,9 @@ export class Core {
   specialCollapseOn(el, before, after) {
     if (el instanceof HTMLElement) {
       if (before === 'xt-collapse--height') {
-        el.classList.add('xt-hide', 'trans-anim-none');
         cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
         Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+          el.classList.add('xt-hide', 'trans-anim-none');
           el.style.height = 'auto';
           el.style.paddingTop = '';
           el.style.paddingBottom = '';
@@ -2370,9 +2388,9 @@ export class Core {
         }));
       }
       if (after === 'xt-collapse--width') {
-        el.classList.add('xt-hide', 'trans-anim-none');
         cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
         Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+          el.classList.add('xt-hide', 'trans-anim-none');
           el.style.width = 'auto';
           el.style.paddingLeft = '';
           el.style.paddingRight = '';
@@ -2403,12 +2421,12 @@ export class Core {
   specialCollapseOff(el, before, after) {
     if (el instanceof HTMLElement) {
       if (before === 'xt-collapse--height') {
-        el.classList.remove('xt-hide', 'trans-anim-none');
         let h = el.offsetHeight + 'px';
         let pt = el.style.paddingTop;
         let pb = el.style.paddingBottom;
         cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
         Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+          el.classList.remove('xt-hide', 'trans-anim-none');
           el.style.height = h;
           el.style.paddingTop = pt;
           el.style.paddingBottom = pb;
@@ -2421,12 +2439,12 @@ export class Core {
         }));
       }
       if (after === 'xt-collapse--width') {
-        el.classList.remove('xt-hide', 'trans-anim-none');
         let w = el.offsetWidth + 'px';
         let pl = el.style.paddingLeft;
         let pr = el.style.paddingRight;
         cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
         Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+          el.classList.remove('xt-hide', 'trans-anim-none');
           el.style.width = w;
           el.style.paddingLeft = pl;
           el.style.paddingRight = pr;
