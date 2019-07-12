@@ -889,8 +889,7 @@ export class Slider extends Core {
     }
     // activate or reset
     let draggerWidth = self.dragger.offsetWidth;
-    let xPos = self.detail.xPos;
-    let xDist = xPos - xPosCurrent;
+    let xDist = self.detail.xPosReal - xPosCurrent;
     if (Math.abs(xDist) > options.drag.threshold) {
       // get nearest
       let found = self.currentIndex;
@@ -898,11 +897,11 @@ export class Slider extends Core {
         for (let slideCheck of group) {
           let check;
           if (options.align === 'center') {
-            check = xPos - draggerWidth / 2 + slideCheck.offsetLeft;
+            check = self.detail.xPos - draggerWidth / 2 + slideCheck.offsetLeft;
           } else if (options.align === 'left') {
-            check = xPos + slideCheck.offsetLeft;
+            check = self.detail.xPos + slideCheck.offsetLeft;
           } else if (options.align === 'right') {
-            check = xPos - draggerWidth + slideCheck.offsetLeft + slideCheck.offsetWidth;
+            check = self.detail.xPos - draggerWidth + slideCheck.offsetLeft + slideCheck.offsetWidth;
           }
           if (check < 0 && Xt.visible(slideCheck)) {
             found = i;
@@ -910,6 +909,7 @@ export class Slider extends Core {
         }
       }
       // goTo with force
+      console.log(self.currentIndex, found);
       if (found === self.currentIndex) {
         // change at least one
         if (Math.sign(xDist) < 0) {
