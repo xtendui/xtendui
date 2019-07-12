@@ -909,7 +909,6 @@ class Slider extends Core {
         }
       }
       // goTo with force
-      console.log(self.currentIndex, found);
       if (found === self.currentIndex) {
         // change at least one
         if (Math.sign(xDist) < 0) {
