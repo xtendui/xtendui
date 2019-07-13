@@ -7,7 +7,7 @@ const demo = {
   name: path.basename(__filename, '.js'),
   js: false,
   css: true,
-  full: false
+  full: true
 }
 demo.htmlSource = `
 <div data-xt-toggle='{"elements": ".list > .btn", "targets": ".list > .example-toggle"}'>

@@ -26,8 +26,8 @@ demo.htmlSource = `
           <div class="overlay_design"></div>
           <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
           <div class="overlay_content">
-            <h2>Lorem ipsum</h2>
-            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+            <div class="h2">Lorem ipsum</div>
+            <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
               ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
             <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
@@ -53,8 +53,8 @@ demo.htmlSource = `
           <div class="overlay_design"></div>
           <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
           <div class="overlay_content">
-            <h2>Lorem ipsum</h2>
-            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+            <div class="h2">Lorem ipsum</div>
+            <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
               ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
             <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id

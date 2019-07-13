@@ -129,16 +129,10 @@ const populateDemo = function (container, i) {
       }
       // load
       let iframe = item.querySelector('iframe');
-      if (k === 0) {
-        loadIframe(iframe);
-      }
-      // listener
       item.addEventListener('on.xt', function (e) {
-        //if (!item.classList.contains('populated')) {
+        if (!item.classList.contains('loaded')) {
           loadIframe(iframe);
-        //} else {
-        //  iframe.contentDocument.location.reload(true);
-        //}
+        }
       });
       item.addEventListener('off.xt', function (e) {
         item.classList.remove('loaded');
@@ -310,15 +304,13 @@ const loadShadow = function (shadowRoot, shadowSrc, source, shadowId, item) {
   request.send();
 }
 
-if (typeof window !== 'undefined') {
-  window.initShadow = function (source, shadowRoot) {
-    let item = Xt.parents(source, '.demo_item')[0];
-    if (!item.classList.contains('populated')) {
-      populateShadow(item, shadowRoot);
-      item.classList.add('populated');
-    }
-  };
-}
+window.initShadow = function (source, shadowRoot) {
+  let item = Xt.parents(source, '.demo_item')[0];
+  if (!item.classList.contains('populated')) {
+    populateShadow(item, shadowRoot);
+    item.classList.add('populated');
+  }
+};
 
 const populateShadow = function (item, shadowRoot) {
   let html = shadowRoot.querySelector('#body-outer');
@@ -351,6 +343,7 @@ const populateShadow = function (item, shadowRoot) {
 // populateIframe
 
 const loadIframe = function (iframe) {
+  console.log('cccc');
   iframe.setAttribute('src', iframe.getAttribute('data-src'));
 }
 
@@ -378,8 +371,8 @@ if (typeof window !== 'undefined') {
       let iframeFull = iframe.contentWindow.document.documentElement.classList.contains('iframe-full');
       if (iframeFull) {
         iframe.classList.add('iframe-full');
-        let target = iframe.contentWindow.document.scrollingElement;
-        let h = target.scrollHeight;
+        let target = iframe.contentWindow.document.querySelector('#body-outer');
+        let h = target.offsetHeight;
         if (h !== parseFloat(iframe.dataset.iframeHeight)) {
           iframe.style.height = h + 'px';
           iframe.dataset.iframeHeight = h.toString();

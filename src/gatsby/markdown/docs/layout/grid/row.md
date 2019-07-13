@@ -288,7 +288,7 @@ Set children's vertical alignment inside the flexbox.
   <div class="demo-inline">
     <div class="demo_item demo_preview" data-name="start">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
-        <div class="row" style="height: 125px; align-items: flex-start">
+        <div class="row" style="height: 150px; align-items: flex-start">
           <div class="col--4"></div>
           <div class="col--8"></div>
           <div class="col--8"></div>
@@ -298,7 +298,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="end">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
-        <div class="row" style="height: 125px; align-items: flex-end">
+        <div class="row" style="height: 150px; align-items: flex-end">
           <div class="col--4"></div>
           <div class="col--8"></div>
           <div class="col--8"></div>
@@ -308,7 +308,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="center">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
-        <div class="row" style="height: 125px; align-items: center">
+        <div class="row" style="height: 150px; align-items: center">
           <div class="col--4"></div>
           <div class="col--8"></div>
           <div class="col--8"></div>
@@ -318,7 +318,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="baseline">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
-        <div class="row" style="height: 125px; align-items: baseline">
+        <div class="row" style="height: 150px; align-items: baseline">
           <div class="col--4"></div>
           <div class="col--8"></div>
           <div class="col--8"></div>
@@ -328,7 +328,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="stretch">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
-        <div class="row" style="height: 125px; align-items: stretch">
+        <div class="row" style="height: 150px; align-items: stretch">
           <div class="col--4"></div>
           <div class="col--8"></div>
           <div class="col--8"></div>
@@ -347,7 +347,7 @@ Set children's vertical alignment inside the flexbox.
   <div class="demo-inline">
     <div class="demo_item demo_preview" data-name="start">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
-        <div class="row" style="height: 125px; align-content: flex-start">
+        <div class="row" style="height: 150px; align-content: flex-start">
           <div class="col--4"></div>
           <div class="col--8"></div>
           <div class="col--8"></div>
@@ -357,7 +357,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="end">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
-        <div class="row" style="height: 125px; align-content: flex-end">
+        <div class="row" style="height: 150px; align-content: flex-end">
           <div class="col--4"></div>
           <div class="col--8"></div>
           <div class="col--8"></div>
@@ -367,7 +367,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="center">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
-        <div class="row" style="height: 125px; align-content: center">
+        <div class="row" style="height: 150px; align-content: center">
           <div class="col--4"></div>
           <div class="col--8"></div>
           <div class="col--8"></div>
@@ -377,7 +377,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="between">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
-        <div class="row" style="height: 125px; align-content: space-between">
+        <div class="row" style="height: 150px; align-content: space-between">
           <div class="col--4"></div>
           <div class="col--8"></div>
           <div class="col--8"></div>
@@ -387,7 +387,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="around">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
-        <div class="row" style="height: 125px; align-content: space-around">
+        <div class="row" style="height: 150px; align-content: space-around">
           <div class="col--4"></div>
           <div class="col--8"></div>
           <div class="col--8"></div>
@@ -397,7 +397,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="stretch">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
-        <div class="row" style="height: 125px; align-content: stretch">
+        <div class="row" style="height: 150px; align-content: stretch">
           <div class="col--4"></div>
           <div class="col--8"></div>
           <div class="col--8"></div>
@@ -418,9 +418,9 @@ If set to **>auto** computes to the parent's `align-items` value.
     <div class="demo_item demo_preview" data-name="start">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row">
-          <div class="col--4" style="height: 60px"></div>
+          <div class="col--4" style="height: 100px"></div>
           <div class="col--8" style="align-self: flex-start"></div>
-          <div class="col--8" style="height: 60px"></div>
+          <div class="col--8" style="height: 100px"></div>
           <div class="col--4" style="align-self: flex-start"></div>
         </div>
       </div>
@@ -428,9 +428,9 @@ If set to **>auto** computes to the parent's `align-items` value.
     <div class="demo_item demo_preview" data-name="end">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row">
-          <div class="col--4" style="height: 60px"></div>
+          <div class="col--4" style="height: 100px"></div>
           <div class="col--8" style="align-self: flex-end"></div>
-          <div class="col--8" style="height: 60px"></div>
+          <div class="col--8" style="height: 100px"></div>
           <div class="col--4" style="align-self: flex-end"></div>
         </div>
       </div>
@@ -438,9 +438,9 @@ If set to **>auto** computes to the parent's `align-items` value.
     <div class="demo_item demo_preview" data-name="center">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row">
-          <div class="col--4" style="height: 60px"></div>
+          <div class="col--4" style="height: 100px"></div>
           <div class="col--8" style="align-self: center"></div>
-          <div class="col--8" style="height: 60px"></div>
+          <div class="col--8" style="height: 100px"></div>
           <div class="col--4" style="align-self: center"></div>
         </div>
       </div>
@@ -448,9 +448,9 @@ If set to **>auto** computes to the parent's `align-items` value.
     <div class="demo_item demo_preview" data-name="baseline">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row">
-          <div class="col--4" style="height: 60px"></div>
+          <div class="col--4" style="height: 100px"></div>
           <div class="col--8" style="align-self: baseline"></div>
-          <div class="col--8" style="height: 60px"></div>
+          <div class="col--8" style="height: 100px"></div>
           <div class="col--4" style="align-self: baseline"></div>
         </div>
       </div>
@@ -458,9 +458,9 @@ If set to **>auto** computes to the parent's `align-items` value.
     <div class="demo_item demo_preview" data-name="stretch">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row">
-          <div class="col--4" style="height: 60px"></div>
+          <div class="col--4" style="height: 100px"></div>
           <div class="col--8" style="align-self: stretch"></div>
-          <div class="col--8" style="height: 60px"></div>
+          <div class="col--8" style="height: 100px"></div>
           <div class="col--4" style="align-self: stretch"></div>
         </div>
       </div>
@@ -468,9 +468,9 @@ If set to **>auto** computes to the parent's `align-items` value.
     <div class="demo_item demo_preview" data-name="auto">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="align-items: center">
-          <div class="col--4" style="height: 60px"></div>
+          <div class="col--4" style="height: 100px"></div>
           <div class="col--8" style="align-self: auto"></div>
-          <div class="col--8" style="height: 60px"></div>
+          <div class="col--8" style="height: 100px"></div>
           <div class="col--4" style="align-self: auto"></div>
         </div>
       </div>

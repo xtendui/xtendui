@@ -7,7 +7,7 @@ const demo = {
   name: path.basename(__filename, '.js'),
   js: false,
   css: false,
-  full: false
+  full: true
 }
 demo.htmlSource = `
 <div class="list list-space--small align-items--center"

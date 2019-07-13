@@ -841,7 +841,7 @@ Set children's vertical alignment inside the flexbox.
   <div class="demo-inline">
     <div class="demo_item demo_preview" data-name="start">
       <div class="demo_source demo_source--from" data-lang="language-markup">
-        <ul class="list" style="height: 125px; align-items: flex-start">
+        <ul class="list" style="height: 150px; align-items: flex-start">
           <li>
             <button type="button">
               <span>Lorem Ipsum</span>
@@ -892,7 +892,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="end">
       <div class="demo_source demo_source--from" data-lang="language-markup">
-        <ul class="list" style="height: 125px; align-items: flex-end">
+        <ul class="list" style="height: 150px; align-items: flex-end">
           <li>
             <button type="button">
               <span>Lorem Ipsum</span>
@@ -943,7 +943,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="center">
       <div class="demo_source demo_source--from" data-lang="language-markup">
-        <ul class="list" style="height: 125px; align-items: center">
+        <ul class="list" style="height: 150px; align-items: center">
           <li>
             <button type="button">
               <span>Lorem Ipsum</span>
@@ -994,7 +994,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="baseline">
       <div class="demo_source demo_source--from" data-lang="language-markup">
-        <ul class="list" style="height: 125px; align-items: baseline">
+        <ul class="list" style="height: 150px; align-items: baseline">
           <li>
             <button type="button">
               <span>Lorem Ipsum</span>
@@ -1045,7 +1045,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="stretch">
       <div class="demo_source demo_source--from" data-lang="language-markup">
-        <ul class="list" style="height: 125px; align-items: stretch">
+        <ul class="list" style="height: 150px; align-items: stretch">
           <li>
             <button type="button" style="align-self: stretch">
               <span>Lorem Ipsum</span>
@@ -1105,7 +1105,7 @@ Set children's vertical alignment inside the flexbox.
   <div class="demo-inline">
     <div class="demo_item demo_preview" data-name="start">
       <div class="demo_source demo_source--from" data-lang="language-markup">
-        <ul class="list" style="height: 125px; align-content: flex-start">
+        <ul class="list" style="height: 150px; align-content: flex-start">
           <li>
             <button type="button">
               <span>Lorem Ipsum</span>
@@ -1156,7 +1156,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="end">
       <div class="demo_source demo_source--from" data-lang="language-markup">
-        <ul class="list" style="height: 125px; align-content: flex-end">
+        <ul class="list" style="height: 150px; align-content: flex-end">
           <li>
             <button type="button">
               <span>Lorem Ipsum</span>
@@ -1207,7 +1207,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="center">
       <div class="demo_source demo_source--from" data-lang="language-markup">
-        <ul class="list" style="height: 125px; align-content: center">
+        <ul class="list" style="height: 150px; align-content: center">
           <li>
             <button type="button">
               <span>Lorem Ipsum</span>
@@ -1258,7 +1258,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="between">
       <div class="demo_source demo_source--from" data-lang="language-markup">
-        <ul class="list" style="height: 125px; align-content: space-between">
+        <ul class="list" style="height: 150px; align-content: space-between">
           <li>
             <button type="button">
               <span>Lorem Ipsum</span>
@@ -1309,7 +1309,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="around">
       <div class="demo_source demo_source--from" data-lang="language-markup">
-        <ul class="list" style="height: 125px; align-content: space-around">
+        <ul class="list" style="height: 150px; align-content: space-around">
           <li>
             <button type="button">
               <span>Lorem Ipsum</span>
@@ -1360,7 +1360,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="demo_item demo_preview" data-name="stretch">
       <div class="demo_source demo_source--from" data-lang="language-markup">
-        <ul class="list" style="height: 125px; align-content: stretch">
+        <ul class="list" style="height: 150px; align-content: stretch">
           <li>
             <button type="button" style="align-self: stretch">
               <span>Lorem Ipsum</span>
@@ -1423,7 +1423,7 @@ If set to **>auto** computes to the parent's `align-items` value.
       <div class="demo_source demo_source--from" data-lang="language-markup">
         <ul class="list">
           <li>
-            <button type="button" class="btn" style="height: 60px">
+            <button type="button" class="btn" style="height: 100px">
               <span>Lorem Ipsum</span>
             </button>
           </li>
@@ -1444,7 +1444,7 @@ If set to **>auto** computes to the parent's `align-items` value.
       <div class="demo_source demo_source--from" data-lang="language-markup">
         <ul class="list">
           <li>
-            <button type="button" class="btn" style="height: 60px">
+            <button type="button" class="btn" style="height: 100px">
               <span>Lorem Ipsum</span>
             </button>
           </li>
@@ -1465,7 +1465,7 @@ If set to **>auto** computes to the parent's `align-items` value.
       <div class="demo_source demo_source--from" data-lang="language-markup">
         <ul class="list">
           <li>
-            <button type="button" class="btn" style="height: 60px">
+            <button type="button" class="btn" style="height: 100px">
               <span>Lorem Ipsum</span>
             </button>
           </li>
@@ -1486,7 +1486,7 @@ If set to **>auto** computes to the parent's `align-items` value.
       <div class="demo_source demo_source--from" data-lang="language-markup">
         <ul class="list">
           <li>
-            <button type="button" class="btn" style="height: 60px">
+            <button type="button" class="btn" style="height: 100px">
               <span>Lorem Ipsum</span>
             </button>
           </li>
@@ -1507,7 +1507,7 @@ If set to **>auto** computes to the parent's `align-items` value.
       <div class="demo_source demo_source--from" data-lang="language-markup">
         <ul class="list">
           <li>
-            <button type="button" class="btn" style="height: 60px">
+            <button type="button" class="btn" style="height: 100px">
               <span>Lorem Ipsum</span>
             </button>
           </li>
@@ -1528,7 +1528,7 @@ If set to **>auto** computes to the parent's `align-items` value.
       <div class="demo_source demo_source--from" data-lang="language-markup">
         <ul class="list" style="align-items: center">
           <li>
-            <button type="button" class="btn" style="height: 60px">
+            <button type="button" class="btn" style="height: 100px">
               <span>Lorem Ipsum</span>
             </button>
           </li>

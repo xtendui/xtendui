@@ -286,6 +286,9 @@ Scroll.componentName = 'xt-scroll';
 Scroll.optionsDefault = {
   "elements": false,
   "on": "scroll resize",
+  "class": "fade",
+  "classIn": "fade--in",
+  "classOut": "fade--out",
   "instant": true,
   "sticky": false,
   "distance": 0,

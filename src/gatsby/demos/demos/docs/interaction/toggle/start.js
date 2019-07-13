@@ -7,7 +7,7 @@ const demo = {
   name: path.basename(__filename, '.js'),
   js: true,
   css: true,
-  full: false
+  full: true
 }
 demo.htmlSource = `
 <button type="button" class="btn btn--primary" id="toggle-restart">

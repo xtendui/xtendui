@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 
 import {Xt} from "xtend-library";
 import {makeDocument} from "assets/scripts/theme.js"
+import ResizeSensor from "assets/scripts/ResizeSensor.js"
 
 class Layout extends React.Component {
   componentDidMount() {
@@ -13,20 +14,14 @@ class Layout extends React.Component {
     let iframeLoaded = function () {
       if (window.self !== window.top) {
         window.parent.initIframe(window.name, demo.htmlSource, demo.jsSource, demo.cssSource)
-        window.parent.resizeIframe(window.name)
-        window.addEventListener('resize', function () {
-          window.parent.resizeIframe(window.name)
+        new ResizeSensor(document.querySelector('#body-outer'), function () {
+          window.parent.resizeIframe(window.frameElement.getAttribute('name'))
         })
       }
       makeDocument()
-      Xt.ready(Xt.load)
+      Xt.load()
     }
-    if (document.readyState === 'complete') {
-      iframeLoaded();
-    }
-    window.addEventListener('load', function () {
-      iframeLoaded();
-    })
+    Xt.ready(iframeLoaded)
   }
 
   render() {

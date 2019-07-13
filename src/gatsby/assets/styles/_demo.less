@@ -2,6 +2,12 @@
 // demos
 //////////////////////
 
+html.iframe-full {
+  body {
+    overflow: hidden !important;
+  }
+}
+
 #body-inner {
   position: relative;
   .padding(all, medium);
@@ -17,7 +23,7 @@
       width: 100%;
       height: 22px;
       min-height: 100%;
-      border: 1px solid @secondary;
+      border: 1px solid darken(@secondary, 5%);
       background: @secondary;
       content: attr(data-index);
       .font-sans--semibold();

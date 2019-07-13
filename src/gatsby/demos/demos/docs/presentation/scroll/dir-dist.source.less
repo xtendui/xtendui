@@ -6,13 +6,13 @@
 .scroll_container > * {
   opacity: 0;
   .transition-none() !important; // fix animation on links
-  &.active {
+  &.fade {
     .anim-y.active();
     &.inverse {
       .anim-y-inverse.active();
     }
   }
-  &.out {
+  &.fade--out {
     .anim-y.out();
     &.inverse {
       .anim-y-inverse.out();
