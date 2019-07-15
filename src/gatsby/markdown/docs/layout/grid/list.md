@@ -152,7 +152,7 @@ List's buttons are styled automatically, but if you want to customize the button
             </button>
           </li>
           <li class="custom">
-            <button type="button" class="btn btn--secondary-empty btn--tiny">
+            <button type="button" class="btn btn--text btn--tiny">
               <span>Amet</span>
             </button>
           </li>
@@ -177,7 +177,7 @@ List's buttons are styled automatically, but if you want to customize the button
                     </button>
                   </li>
                   <li class="custom">
-                    <button type="button" class="btn btn--secondary-empty btn--tiny">
+                    <button type="button" class="btn btn--text btn--tiny">
                       <span>Amet</span>
                     </button>
                   </li>
@@ -189,7 +189,7 @@ List's buttons are styled automatically, but if you want to customize the button
                 </button>
               </li>
               <li class="custom">
-                <button type="button" class="btn btn--secondary-empty btn--tiny">
+                <button type="button" class="btn btn--text btn--tiny">
                   <span>Amet</span>
                 </button>
               </li>
@@ -208,7 +208,7 @@ List's buttons are styled automatically, but if you want to customize the button
                 </button>
               </li>
               <li class="custom">
-                <button type="button" class="btn btn--secondary-empty btn--tiny">
+                <button type="button" class="btn btn--text btn--tiny">
                   <span>Amet</span>
                 </button>
               </li>

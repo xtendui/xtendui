@@ -6,7 +6,7 @@ export const htmlSource = `
       </button>
     </div>
     <div class="group_inner">
-      <button type="button" class="btn btn--primary-empty">
+      <button type="button" class="btn btn--primary">
         <span>btn 2</span>
       </button>
     </div>
@@ -16,7 +16,7 @@ export const htmlSource = `
       </button>
     </div>
     <div class="group_inner">
-      <button type="button" class="btn btn--secondary-empty">
+      <button type="button" class="btn btn--secondary">
         <span>btn 4</span>
       </button>
     </div>

@@ -5,7 +5,7 @@ class DocAside extends React.Component {
   render() {
     const {page} = this.props
     return (
-      <aside className="site_article_aside">
+      <aside className="site_article_aside xt-fixed--check">
         <div className="container full">
           <div className="site_article_aside_inner">
             <a href="#" className="btn btn--site_multiline btn--right">

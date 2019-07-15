@@ -74,8 +74,8 @@ const populateDemo = function (container, i) {
   let items = container.querySelectorAll('.demo_item');
   // multiple elements
   container.prepend(Xt.createElement('<div class="demo_tabs"><div class="demo_tabs_left"></div><div class="demo_tabs_right"></div></div>'));
-  container.querySelector('.demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny btn--narrow btn--show-code" data-toggle="tooltip" data-placement="top" aria-label="Show code"><span class="icon-code icon--big"></span></button>'));
-  container.querySelector('.demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny btn--narrow btn--open-full" data-toggle="tooltip" data-placement="top" aria-label="Open full"><span class="icon-maximize icon--big"></span></button>'));
+  container.querySelector('.demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny btn--narrow btn--show-code" data-toggle="tooltip" data-placement="top" aria-label="Show code"><span class="icon-code icon--big"></span></button>'));
+  container.querySelector('.demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny btn--narrow btn--open-full" data-toggle="tooltip" data-placement="top" aria-label="Open full"><span class="icon-maximize icon--big"></span></button>'));
   // don't show tabs on single
   /*
   if (items.length === 1) {
@@ -95,10 +95,10 @@ const populateDemo = function (container, i) {
         name = 'demo #' + k;
       }
     }
-    let btn = container.querySelector('.demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny"><span>' + name + '</span></button>'));
+    let btn = container.querySelector('.demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny"><span>' + name + '</span></button>'));
     btn = container.querySelectorAll('.demo_tabs_left .btn')[k];
     // tabs
-    item.prepend(Xt.createElement('<div class="demo_code collapse--height"><div class="demo_code_inner"><div class="demo_code_tabs"><div class="demo_code_tabs_left"></div><div class="demo_code_tabs_right"><button type="button" class="btn btn--secondary-empty btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard"><span>copy</span></button></div></div><div class="demo_code_body"></div></div></div>'));
+    item.prepend(Xt.createElement('<div class="demo_code collapse--height"><div class="demo_code_inner"><div class="demo_code_tabs"><div class="demo_code_tabs_left"></div><div class="demo_code_tabs_right"><button type="button" class="btn btn--text btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard"><span>copy</span></button></div></div><div class="demo_code_body"></div></div></div>'));
     // https://github.com/zenorocha/clipboard.js/
     let clipboard = new ClipboardJS('.btn--clipboard', {
       target: function (trigger) {
@@ -343,7 +343,6 @@ const populateShadow = function (item, shadowRoot) {
 // populateIframe
 
 const loadIframe = function (iframe) {
-  console.log('cccc');
   iframe.setAttribute('src', iframe.getAttribute('data-src'));
 }
 
@@ -427,7 +426,7 @@ const populateSources = function (item, element, z) {
   }
   // populate tabs
   item.querySelector('.demo_code_body').append(Xt.createElement('<div class="demo_code_body_item"><pre class="noedit"><code></code></pre></div>'));
-  item.querySelector('.demo_code_tabs_left').append(Xt.createElement('<button type="button" class="btn btn--secondary-empty btn--tiny"><span>' + lang + '</span></button>'));
+  item.querySelector('.demo_code_tabs_left').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny"><span>' + lang + '</span></button>'));
   // format code
   let itemInside = item.querySelectorAll('.demo_code_body .demo_code_body_item')[z];
   let codeInside = itemInside.querySelector('pre code');

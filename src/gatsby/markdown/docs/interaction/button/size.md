@@ -15,6 +15,6 @@ Optional classes for assigning size. Sizes uses `em` padding that depends on fon
 You can change the default **size** inside the `.btn` selector in `/theme/_component.less`.
 
 <demo>
-  <demovanilla src="demos/inline/docs/interaction/button/variant" name="size">
+  <demovanilla src="demos/inline/docs/interaction/button/size" name="size">
   </demovanilla>
 </demo>

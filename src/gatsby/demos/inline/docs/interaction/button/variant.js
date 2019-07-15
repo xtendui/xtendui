@@ -8,16 +8,12 @@ export const htmlSource = `
       <span>primary</span>
     </button>
 
-    <button type="button" class="btn btn--primary-empty">
-      <span>primary empty</span>
-    </button>
-
     <button type="button" class="btn btn--secondary">
       <span>secondary</span>
     </button>
 
-    <button type="button" class="btn btn--secondary-empty">
-      <span>secondary empty</span>
+    <button type="button" class="btn btn--text">
+      <span>text</span>
     </button>
 
     <button type="button" class="btn btn--link">

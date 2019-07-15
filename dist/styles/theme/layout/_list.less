@@ -18,14 +18,20 @@
 .list {
   // option
   .list-space(small); // space
-  .list_btn({ .btn(); .btn--secondary() }); // variant
+  .list_btn({
+    .btn();
+    .btn--secondary()
+  }); // variant
   .list--left(); // alignment
 }
 
 .list-block {
   // option
   .list-space(small); // space
-  .list_btn({ .btn(); .btn--secondary() }); // variant
+  .list_btn({
+    .btn();
+    .btn--secondary()
+  }); // variant
   .list--left(); // alignment
 }
 
@@ -35,7 +41,15 @@
   flex-wrap: nowrap;
   flex-direction: column;
   .list-space(none); // space
-  .list_btn({ .btn--small(); .btn--squared(); padding-left: 2.2rem; padding-right: 2.2rem; white-space: nowrap; }); // all buttons
+  .list_btn({
+    .btn--small();
+    .btn--squared();
+    > span {
+      padding-left: 2.2rem;
+      padding-right: 2.2rem;
+      white-space: nowrap;
+    }
+  }); // all buttons
 }
 
 // variant

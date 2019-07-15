@@ -2580,7 +2580,7 @@ export class Core {
       // checks
       Xt.scrollbar.add(self.namespace);
       // check fixed
-      let checks = document.querySelectorAll('.xt-fixed--check > *');
+      let checks = document.querySelectorAll('.xt-fixed--check, .xt-fixed--check > *');
       for (let check of checks) {
         let style = getComputedStyle(check);
         if (style.position === 'fixed') {

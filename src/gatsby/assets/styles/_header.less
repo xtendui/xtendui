@@ -39,7 +39,7 @@
     transition-duration: @time--small;
     transition-timing-function: @bez--in-out;
   }
-  &:hover, &.hover, &:active, &:focus {
+  &:hover, &.hover, &:active, &.active {
     img {
       transform: scale(1.1);
       opacity: 0.8;
@@ -81,10 +81,10 @@
     line-height: 1.2;
     text-transform: uppercase;
     // styles
-    background: @fade--200;
+    background: fade(@gray--900, 5%);
     color: @text--inverse;
     &:focus, &.active {
-      background: @fade--400
+      background: fade(@gray--900, 10%);
     }
     &:-ms-input-placeholder {
       color: @text--inverse;

@@ -1,9 +1,13 @@
 export const htmlSource = `
   <div class="list list-space--small align-items--center demo_source--from">
+    <button type="button" class="btn">
+      <span>default</span>
+    </button>
+
     <button type="button" class="btn btn--tiny">
       <span>tiny</span>
     </button>
-
+    
     <button type="button" class="btn btn--small">
       <span>small</span>
     </button>
@@ -18,6 +22,10 @@ export const htmlSource = `
 
     <button type="button" class="btn btn--giant">
       <span>giant</span>
+    </button>
+    
+    <button type="button" class="btn btn--huge">
+      <span>huge</span>
     </button>
   </div>
 `

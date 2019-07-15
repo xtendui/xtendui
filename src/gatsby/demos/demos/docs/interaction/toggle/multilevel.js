@@ -5,13 +5,13 @@ import DemoVanillaIframe from "components/demo-vanilla-iframe"
 
 const demo = {
   name: path.basename(__filename, '.js'),
-  js: false,
+  js: true,
   css: true,
   full: true
 }
 demo.htmlSource = `
 <div class="multilevel"
-     data-xt-toggle='{"elements": "#multilevel-tab-reset, .multilevel-tab .multilevel-list button", "targets": ".multilevel-tab", "min": 1}'>
+     data-xt-toggle='{"elements": ".multilevel-tab-reset, .multilevel-tab .multilevel-list button", "targets": ".multilevel-tab", "min": 1}'>
 
   <nav role="navigation" class="multilevel-tab">
 
@@ -19,7 +19,7 @@ demo.htmlSource = `
       <div class="multilevel-title">
         <span>Products</span>
       </div>
-      <button type="button" class="btn btn--secondary-empty btn--none multilevel-reset display--none" id="multilevel-tab-reset">
+      <button type="button" class="btn btn--text btn--none multilevel-reset display--none multilevel-tab-reset">
         <span>Back</span>
       </button>
     </div>
@@ -73,7 +73,7 @@ demo.htmlSource = `
       <div class="multilevel-title">
         <span>Category 0</span>
       </div>
-      <button type="button" class="btn btn--secondary-empty btn--none multilevel-reset">
+      <button type="button" class="btn btn--text btn--none multilevel-reset">
         <span>Back</span>
       </button>
     </div>
@@ -109,7 +109,7 @@ demo.htmlSource = `
       <div class="multilevel-title">
         <span>Category 0a</span>
       </div>
-      <button type="button" class="btn btn--secondary-empty btn--none multilevel-reset">
+      <button type="button" class="btn btn--text btn--none multilevel-reset">
         <span>Back</span>
       </button>
     </div>
@@ -135,7 +135,7 @@ demo.htmlSource = `
       <div class="multilevel-title">
         <span>Category 0b</span>
       </div>
-      <button type="button" class="btn btn--secondary-empty btn--none multilevel-reset">
+      <button type="button" class="btn btn--text btn--none multilevel-reset">
         <span>Back</span>
       </button>
     </div>
@@ -161,7 +161,7 @@ demo.htmlSource = `
       <div class="multilevel-title">
         <span>Category 1</span>
       </div>
-      <button type="button" class="btn btn--secondary-empty btn--none multilevel-reset">
+      <button type="button" class="btn btn--text btn--none multilevel-reset">
         <span>Back</span>
       </button>
     </div>

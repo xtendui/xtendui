@@ -7,11 +7,11 @@
   cursor: pointer;
   display: inline-block;
   position: relative;
-  overflow: hidden;
   vertical-align: middle;
   padding: 0;
   z-index: @index--base; // fix :before negative z-index
-  &:hover, &.hover, &:active, &.active, &:focus {
+  line-height: 0;
+  &:hover, &.hover, &:active, &.active {
     z-index: @index--active;
   }
   &.out {
@@ -20,6 +20,7 @@
   > span {
     display: inline-block;
     position: relative;
+    overflow: hidden;
   }
 }
 

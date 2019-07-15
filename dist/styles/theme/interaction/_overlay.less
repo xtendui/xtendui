@@ -16,9 +16,6 @@
 
 .overlay {
   // styles
-  .overlay_design {
-    box-shadow: 0 0 10rem fade(@black, @perc--md);
-  }
   .overlay_content {
     padding: 3rem;
     @media @min-sm {
@@ -166,8 +163,9 @@
 
 .overlay--primary {
   .overlay_design {
-    border-color: @primary;
+    border-color: @primary--dark;
     background: @primary;
+    box-shadow: @shadow--primary;
   }
   .overlay_content {
     color: @text--inverse;
@@ -179,8 +177,9 @@
 
 .overlay--secondary {
   .overlay_design {
-    border-color: @secondary;
+    border-color: @secondary--dark;
     background: @secondary;
+    box-shadow: @shadow--secondary;
   }
   .overlay_content {
     color: @text;
@@ -192,14 +191,15 @@
 
 .overlay--white {
   .overlay_design {
-    border-color: @white;
+    border-color: @gray--300;
     background: @white;
+    box-shadow: @shadow--secondary;
   }
   .overlay_content {
     color: @text;
   }
   .overlay_inner > .btn--close {
-    .btn--primary-empty();
+    .btn--text();
   }
 }
 

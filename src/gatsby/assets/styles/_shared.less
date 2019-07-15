@@ -7,19 +7,23 @@
   .btn--squared();
   .btn--noborder();
   .btn--noeffect();
-  padding: .3em .5em;
-  .font-sans--semibold();
-  font-size: 14px;
-  color: @text--inverse;
-  line-height: 1;
-  text-transform: uppercase;
+  > span {
+    padding: .3em .5em;
+    .font-sans--semibold();
+    font-size: 14px;
+    color: @text--inverse;
+    line-height: 1;
+    text-transform: uppercase;
+  }
   &@{btn--design} {
     background: transparent;
   }
-  &:hover, &.hover, &:active, &.active, &.current, &:focus {
-    color: @text--inverse;
+  &:hover, &.hover, &:active, &.active, &.current {
+    > span {
+      color: @text--inverse;
+    }
     &@{btn--design} {
-      background: @fade--200;
+      background: fade(@gray--900, 5%);
     }
   }
 }
@@ -32,15 +36,25 @@
   .link--none();
   .btn--nodesign();
   .btn--noeffect();
-  padding: .3em .5em;
   border-radius: 0;
-  color: @text--inverse;
-  line-height: 1;
-  text-transform: uppercase;
-  &:hover, &.hover, &:active, &:focus {
+  > span {
+    padding: .3em .5em;
     color: @text--inverse;
-    transform: scale(1.1);
+    line-height: 1;
+    text-transform: uppercase;
     opacity: 0.8;
+  }
+  &:hover, &.hover, &:active, &.active {
+    > span {
+      color: @text--inverse;
+      opacity: 1;
+    }
+  }
+  // effect
+  &:active, &.active {
+    > span {
+      transform: scale(1.2);
+    }
   }
 }
 
@@ -54,18 +68,22 @@
   .btn--squared();
   .btn--noborder();
   .btn--noeffect();
-  padding: .5rem 0 !important;
-  .font-sans--regular();
-  font-size: 1.4rem;
-  color: @text;
-  text-transform: none;
+  > span {
+    padding: .5rem 0 !important;
+    .font-sans--regular();
+    font-size: 1.4rem;
+    color: @text;
+    text-transform: none;
+  }
   // states
   &@{btn--design} {
     background: transparent;
   }
-  &:hover, &.hover, &:active, &:focus {
-    .font-sans--semibold();
-    color: @text;
+  &:hover, &.hover, &:active, &.active {
+    > span {
+      .font-sans--semibold();
+      color: @text;
+    }
     &@{btn--design} {
       background: transparent;
     }
@@ -73,22 +91,30 @@
   &.active,
   &.current {
     .margin(y, .5rem);
-    padding: .25em .5em !important;
-    .font-sans--semibold();
-    color: @text;
+    > span {
+      padding: .25em .5em !important;
+      .font-sans--semibold();
+      color: @text;
+    }
     &@{btn--design} {
-      background: @fade--200;
+      background: @gray--300;
     }
   }
   // custom
   &.btn--site_article_sidebar--cat {
-    font-size: 1.6rem;
+    > span {
+      font-size: 1.6rem;
+    }
   }
   &.btn--site_article_sidebar--sub {
-    font-size: 1.5rem;
+    > span {
+      font-size: 1.5rem;
+    }
   }
   &.btn--site_article_sidebar--adiacent {
-    font-size: 1.4rem;
+    > span {
+      font-size: 1.4rem;
+    }
   }
 }
 
@@ -103,11 +129,13 @@
   .btn--noborder();
   .btn--nodesign();
   .btn--noeffect();
-  padding: 0;
-  .font-sans--regular();
-  font-size: 1.4rem;
-  color: @text;
-  text-transform: uppercase;
+  > span {
+    padding: 0;
+    .font-sans--regular();
+    font-size: 1.4rem;
+    color: @text;
+    text-transform: uppercase;
+  }
   .btn--site_multiline_line {
     display: inline-block;
     .margin(y, 1px);
@@ -126,7 +154,7 @@
     }
   }
   .btn--site_multiline_special {
-    background: @fade--200;
+    background: fade(@gray--900, 5%);
     .btn--left& {
       .margin(left, .5em);
     }
@@ -137,11 +165,11 @@
   .btn--site_multiline_special_text {
     display: none;
   }
-  &:hover, &.hover, &:active, &.active, &:focus {
-    color: @text;
+  &:hover, &.hover, &:active, &.active {
     > span {
+      color: @text;
       .btn--site_multiline_line {
-        background: @fade--200;
+        background: fade(@gray--900, 5%);
       }
       .btn--site_multiline_special {
         background: @primary;
@@ -199,7 +227,7 @@
       transition: all @time--medium @bez--out;
     }
   }
-  &:hover, &.hover, &:active, &.active, &:focus {
+  &:hover, &.hover, &:active, &.active {
     .make-line_container {
       .make-line_line:after {
         left: 0;
@@ -242,7 +270,7 @@
     opacity: 0;
     transition: all @time--medium @bez--out;
   }
-  &:hover, &.hover, &:active, &.active, &:focus {
+  &:hover, &.hover, &:active, &.active {
     a {
       color: @primary !important;
     }
@@ -266,13 +294,15 @@
     .btn--squared();
     .btn--noborder();
     .btn--noeffect();
-    padding: 7px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    font-size: 17px;
-    color: @primary;
-    line-height: 1;
+    > span {
+      padding: 7px;
+      font-size: 17px;
+      color: @primary;
+      line-height: 1;
+    }
     &@{btn--design} {
       border-color: @white !important;
       background: @white !important;

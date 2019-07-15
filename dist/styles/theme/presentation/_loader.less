@@ -13,7 +13,7 @@
   }
   line-height: 0;
   svg {
-    filter: drop-shadow(0 .1rem .2rem fade(@black, @perc--sm)) drop-shadow(0 .2rem .4rem fade(@black, @perc--md));
+    filter: drop-shadow(0 .1rem .2rem fade(@black, 10%)) drop-shadow(0 .2rem .4rem fade(@black, 25%));
     circle {
       fill: none;
       stroke-width: 30;
@@ -27,7 +27,7 @@
       top: 0;
       left: 0;
       circle {
-        stroke: fade(@primary, @perc--xs);
+        stroke: fade(@primary, 5%);
         stroke-dashoffset: 0;
       }
     }
@@ -75,12 +75,12 @@
 .loader--x {
   .filler {
     span:nth-child(1) {
-      background: fade(@primary, @perc--xs);
+      background: fade(@primary, 5%);
     }
     span:nth-child(2) {
       width: 0;
       background: linear-gradient(90deg, @grad--primary);
-      box-shadow: 0 .1rem 1rem fade(@primary, @perc--md), 0 .2rem 2rem fade(@primary, @perc--lg);
+      box-shadow: @shadow--primary;
       animation: anim-loader--x @time--big * 2 infinite @bez--in;
     }
   }
@@ -89,12 +89,12 @@
 .loader--y {
   .filler {
     span:nth-child(1) {
-      background: fade(@primary, @perc--xs);
+      background: fade(@primary, 5%);
     }
     span:nth-child(2) {
       height: 0;
       background: linear-gradient(0deg, @grad--primary);
-      box-shadow: 0 .1rem 1rem fade(@primary, @perc--md), 0 .2rem 2rem fade(@primary, @perc--lg);
+      box-shadow: @shadow--primary;
       animation: anim-loader--y @time--big * 2 infinite @bez--in;
     }
   }
@@ -167,7 +167,7 @@
 // background
 
 .loader--background {
-  background: fade(@white, @perc--xl);
+  background: fade(@white, 80%);
 }
 
 // animations

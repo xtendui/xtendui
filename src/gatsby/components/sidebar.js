@@ -39,7 +39,7 @@ class Sidebar extends React.Component {
                                         <Link to={adiacent.frontmatter.path}
                                               className={`btn btn--site_article_sidebar btn--site_article_sidebar--adiacent
                                               ${page.post.frontmatter.title === adiacent.frontmatter.title ? 'active' : ''}`}>
-                                        {adiacent.frontmatter.title}
+                                          <span>{adiacent.frontmatter.title}</span>
                                         </Link>
                                         : null
                                       }

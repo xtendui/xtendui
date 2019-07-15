@@ -11,9 +11,6 @@
 .drop {
   // styles
   > .drop_inner {
-    > .drop_design {
-      box-shadow: 0 .1rem 1rem fade(@gray--900, @perc--xs), 0 .2rem 2rem fade(@gray--900, @perc--sm);
-    }
     > .drop_content {
       > .list, > .list-block {
         .padding(y, 1.3rem); // vertical space
@@ -95,8 +92,9 @@
   > .drop_inner {
     color: @text--inverse;
     > .drop_design {
-      border-color: darken(@primary, @perc--xs);
+      border-color: @primary--dark;
       background: @primary;
+      box-shadow: @shadow--primary;
     }
     > .drop_content > .list--drop {
       .list_btn({ .btn--primary() });
@@ -108,8 +106,9 @@
   > .drop_inner {
     color: @text;
     > .drop_design {
-      border-color: darken(@secondary, @perc--xs);
+      border-color: @secondary--dark;
       background: @secondary;
+      box-shadow: @shadow--secondary;
     }
     > .drop_content > .list--drop {
       .list_btn({ .btn--secondary() });
@@ -121,11 +120,12 @@
   > .drop_inner {
     color: @text;
     > .drop_design {
-      border-color: @gray--200;
+      border-color: @gray--300;
       background: @white;
+      box-shadow: @shadow--secondary;
     }
     > .drop_content > .list--drop {
-      .list_btn({ .btn--primary-empty() });
+      .list_btn({ .btn--text() });
     }
   }
 }

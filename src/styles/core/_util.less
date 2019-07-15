@@ -382,52 +382,52 @@
 // btn alignment
 
 .btn--left(@breakpoint:none) when (@breakpoint = none) {
-  text-align: left;
   > span {
     justify-content: flex-start;
+    text-align: left;
   }
 }
 
 .btn--left(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    text-align: left;
     > span {
       justify-content: flex-start;
+      text-align: left;
     }
   }
 }
 
 .btn--center(@breakpoint:none) when (@breakpoint = none) {
-  text-align: center;
   > span {
     justify-content: center;
+    text-align: center;
   }
 }
 
 .btn--center(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    text-align: center;
     > span {
       justify-content: center;
+      text-align: center;
     }
   }
 }
 
 .btn--right(@breakpoint:none) when (@breakpoint = none) {
-  text-align: right;
   > span {
     justify-content: flex-end;
+    text-align: right;
   }
 }
 
 .btn--right(@breakpoint:none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    text-align: right;
     > span {
       justify-content: flex-end;
+      text-align: right;
     }
   }
 }

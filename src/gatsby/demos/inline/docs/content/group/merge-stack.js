@@ -4,7 +4,7 @@ export const htmlSource = `
       <span class="btn btn--primary">
         <span>btn 1a</span>
       </span>
-      <span class="btn btn--primary-empty">
+      <span class="btn btn--primary">
         <span>btn 1b</span>
       </span>
     </span>
@@ -12,7 +12,7 @@ export const htmlSource = `
       <span class="btn btn--secondary">
         <span>btn 2a</span>
       </span>
-      <span class="btn btn--secondary-empty">
+      <span class="btn btn--secondary">
         <span>btn 2b</span>
       </span>
     </span>
@@ -20,7 +20,7 @@ export const htmlSource = `
       <span class="btn btn--primary">
         <span>btn 3a</span>
       </span>
-      <span class="btn btn--primary-empty">
+      <span class="btn btn--primary">
         <span>btn 3b</span>
       </span>
     </span>
@@ -28,7 +28,7 @@ export const htmlSource = `
       <span class="btn btn--secondary">
         <span>btn 4a</span>
       </span>
-      <span class="btn btn--secondary-empty">
+      <span class="btn btn--secondary">
         <span>btn 4b</span>
       </span>
     </span>

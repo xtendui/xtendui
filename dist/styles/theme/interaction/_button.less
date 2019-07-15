@@ -11,16 +11,19 @@
 .btn {
   // styles
   border-radius: 4px;
-  .font-sans--semibold();
-  line-height: 1.2;
-  letter-spacing: 0;
-  text-transform: uppercase;
+  > span {
+    border-radius: inherit;
+    .font-sans--semibold();
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
   &@{btn--design} {
     .design-setup();
+    border-radius: inherit;
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
-    border-radius: inherit;
   }
   // option
   .btn--center(); // alignment
@@ -32,8 +35,9 @@
 
 .btn {
   // transition
-  &, &@{btn--design}, > span {
-    transition-property: color, background, opacity;
+  animation-duration: @time--small; // needed for .out animation timing, put max animation time
+   > span, &@{btn--design} {
+    transition-property: all;
     transition-duration: @time--small;
     transition-timing-function: @bez--in-out;
   }
@@ -43,88 +47,73 @@
 
 .btn--primary {
   .link--none();
-  color: fade(@text--inverse, @perc--xl);
+  > span {
+    color: @text--inverse;
+  }
   &@{btn--design} {
     border-color: @primary;
     background: @primary;
   }
-  &:hover, &.hover, &:active, &.active, &:focus {
-    color: @text--inverse;
+  &:hover, &.hover, &:active, &.active {
+    > span {
+      color: @text--inverse--dark;
+    }
     &@{btn--design} {
-      border-color: @primary;
-      background: lighten(@primary, @perc--xs);
+      border-color: @primary--dark;
+      background: @primary--dark;
     }
   }
   // effect
   &:active, &.active {
     &@{btn--design} {
-      box-shadow: 0 .1rem 1rem fade(@primary, @perc--md), 0 .2rem 2rem fade(@primary, @perc--lg);
-    }
-  }
-}
-
-.btn--primary-empty {
-  .link--none();
-  color: @primary;
-  &@{btn--design} {
-    border-color: transparent;
-    background: transparent;
-  }
-  &:hover, &.hover, &:active, &.active, &:focus {
-    color: @text--inverse;
-    &@{btn--design} {
-      border-color: @primary;
-      background: lighten(@primary, @perc--xs);
-    }
-  }
-  // effect
-  &:active, &.active {
-    &@{btn--design} {
-      box-shadow: 0 .1rem 1rem fade(@primary, @perc--md), 0 .2rem 2rem fade(@primary, @perc--lg);
+      box-shadow: @shadow--primary;
     }
   }
 }
 
 .btn--secondary {
   .link--none();
-  color: fade(@text, @perc--xl);
+  > span {
+    color: @text;
+  }
   &@{btn--design} {
     border-color: @secondary;
     background: @secondary;
   }
-  &:hover, &.hover, &:active, &.active, &:focus {
-    color: @text;
+  &:hover, &.hover, &:active, &.active {
+    > span {
+      color: @text--dark;
+    }
     &@{btn--design} {
-      border-color: darken(@secondary, @perc--sm);
-      background: darken(@secondary, @perc--xs);
+      border-color: @secondary--dark;
+      background: @secondary--dark;
     }
   }
   // effect
   &:active, &.active {
     &@{btn--design} {
-      box-shadow: 0 .1rem 1rem fade(@gray--900, @perc--xs), 0 .2rem 2rem fade(@gray--900, @perc--sm);
+      box-shadow: @shadow--secondary;
     }
   }
 }
 
-.btn--secondary-empty {
+.btn--text {
   .link--none();
-  color: fade(@text, @perc--xl);
+  .btn--noeffect();
+  > span {
+    color: @text;
+  }
   &@{btn--design} {
     border-color: transparent;
     background: transparent;
   }
-  &:hover, &.hover, &:active, &.active, &:focus {
-    color: @text;
-    &@{btn--design} {
-      border-color: darken(@secondary, @perc--sm);
-      background: darken(@secondary, @perc--xs);
+  &:hover, &.hover, &:active, &.active {
+    > span {
+      color: @text--dark;
     }
-  }
-  // effect
-  &:active, &.active {
     &@{btn--design} {
-      box-shadow: 0 .1rem 1rem fade(@gray--900, @perc--xs), 0 .2rem 2rem fade(@gray--900, @perc--sm);
+      border-color: transparent;
+      background: transparent;
     }
   }
 }
@@ -133,38 +122,59 @@
   .btn--nodesign();
   .btn--noeffect();
   // reset
-  font-family: inherit;
-  font-style: inherit;
-  font-weight: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
+  > span {
+    font-family: inherit !important;
+    font-style: inherit !important;
+    font-weight: inherit !important;
+    color: inherit !important;
+    letter-spacing: inherit !important;
+    text-transform: inherit !important;
+    text-decoration: inherit !important;
+  }
 }
 
 // size
 
 .btn--tiny {
-  padding: .5em 1em;
-  font-size: 10px;
+  > span {
+    padding: .5em 1em;
+    font-size: 10px;
+  }
 }
 
 .btn--small {
-  padding: .6em 1.2em;
-  font-size: 1.2rem;
+  > span {
+    padding: .6em 1.2em;
+    font-size: 1.2rem;
+  }
 }
 
 .btn--medium {
-  padding: .6em 1.2em;
-  font-size: 1.325rem; // @FIX odd rem with .025 added
+  > span {
+    padding: .6em 1.2em;
+    font-size: 1.335rem; // @FIX odd rem with .035 added
+  }
 }
 
 .btn--big {
-  padding: .6em 1.2em;
-  font-size: 1.4rem;
+  > span {
+    padding: .6em 1.2em;
+    font-size: 1.4rem;
+  }
 }
 
 .btn--giant {
-  padding: .6em 1.2em;
-  font-size: 1.525rem; // @FIX odd rem with .025 added
+  > span {
+    padding: .6em 1.2em;
+    font-size: 1.535rem; // @FIX odd rem with .035 added
+  }
+}
+
+.btn--huge {
+  > span {
+    padding: .6em 1.2em;
+    font-size: 1.6rem;
+  }
 }
 
 // special
@@ -194,29 +204,39 @@
 }
 
 .btn--tall {
-  padding-top: .9em;
-  padding-bottom: .9em;
+  > span {
+    padding-top: .9em;
+    padding-bottom: .9em;
+  }
 }
 
 .btn--short {
-  padding-top: .3em;
-  padding-bottom: .3em;
+  > span {
+    padding-top: .3em;
+    padding-bottom: .3em;
+  }
 }
 
 .btn--wide {
-  padding-left: 1.8em;
-  padding-right: 1.8em;
+  > span {
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+  }
 }
 
 .btn--narrow {
-  padding-left: .6em;
-  padding-right: .6em;
+  > span {
+    padding-left: .6em;
+    padding-right: .6em;
+  }
 }
 
 .btn--none {
   .btn--noeffect();
   .btn--squared();
-  padding: 0;
+  > span {
+    padding: 0;
+  }
   &@{btn--design} {
     border: 0 !important;
     background: transparent !important;
@@ -226,8 +246,10 @@
 .btn--none-x {
   .btn--noeffect();
   .btn--squared();
-  padding-left: 0;
-  padding-right: 0;
+  > span {
+    padding-left: 0;
+    padding-right: 0;
+  }
   &@{btn--design} {
     border-left: 0 !important;
     border-right: 0 !important;
@@ -238,8 +260,10 @@
 .btn--none-y {
   .btn--noeffect();
   .btn--squared();
-  padding-top: 0;
-  padding-bottom: 0;
+  > span {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   &@{btn--design} {
     border-top: 0 !important;
     border-bottom: 0 !important;
@@ -248,19 +272,23 @@
 }
 
 .btn--icon {
-  padding: .8em .8em;
-  line-height: 1;
+  > span {
+    padding: .8em .8em;
+    line-height: 1;
+  }
 }
 
 .btn--transform {
-  letter-spacing: 0;
-  text-transform: none;
+  > span {
+    letter-spacing: 0;
+    text-transform: none;
+  }
 }
 
 // custom
 
 .btn--close {
-  .btn--primary-empty(); // variant
+  .btn--text(); // variant
   .btn--icon() !important; // special
   > span {
     .icon-xt(@content: @icon-xt--close, @size: @icon--medium);
