@@ -8,7 +8,7 @@ Xt.ready(function () {
 
   let slider = document.querySelector('.slider');
   let timeHide = 300;
-  let easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
+  let easeOut = new Ease(BezierEasing(.14,.63,0,1));
 
   // xt-slider
 
@@ -25,10 +25,10 @@ Xt.ready(function () {
     // on slider
     let spinner = self.object.querySelectorAll('.spinner svg:nth-child(2) circle');
     let timeline = new TimelineMax();
-    timeline.to(spinner, timeHide / 1000, {strokeDashoffset: 628, ease: easeInOut, autoRound: false});
+    timeline.to(spinner, timeHide / 1000, {strokeDashoffset: 628, ease: easeOut, autoRound: false});
     timeline.to(spinner, (self.options.auto.time / 1000) - (timeHide / 1000), {
       strokeDashoffset: 0,
-      ease: easeInOut,
+      ease: easeOut,
       autoRound: false
     });
     // on elements
@@ -37,7 +37,7 @@ Xt.ready(function () {
       let fillers = element.querySelectorAll('.filler span:nth-child(2)');
       for (let filler of fillers) {
         TweenMax.set(filler, {height: 0, top: '100%'});
-        TweenMax.to(filler, self.options.auto.time / 1000, {height: '100%', top: 0, ease: easeInOut});
+        TweenMax.to(filler, self.options.auto.time / 1000, {height: '100%', top: 0, ease: easeOut});
       }
     }
     // on targets
@@ -46,7 +46,7 @@ Xt.ready(function () {
       let fillers = target.querySelectorAll('.filler span:nth-child(2)');
       for (let filler of fillers) {
         TweenMax.set(filler, {width: 0, left: 0});
-        TweenMax.to(filler, self.options.auto.time / 1000, {width: '100%', left: 0, ease: easeInOut});
+        TweenMax.to(filler, self.options.auto.time / 1000, {width: '100%', left: 0, ease: easeOut});
       }
     }
   });
@@ -59,7 +59,7 @@ Xt.ready(function () {
     for (let element of elements) {
       let fillers = element.querySelectorAll('.filler span:nth-child(2)');
       for (let filler of fillers) {
-        TweenMax.to(filler, timeHide / 1000, {height: 0, top: 0, ease: easeInOut});
+        TweenMax.to(filler, timeHide / 1000, {height: 0, top: 0, ease: easeOut});
       }
     }
     // on targets
@@ -67,7 +67,7 @@ Xt.ready(function () {
     for (let target of targets) {
       let fillers = target.querySelectorAll('.filler span:nth-child(2)');
       for (let filler of fillers) {
-        TweenMax.to(filler, timeHide / 1000, {width: 0, left: '100%', ease: easeInOut});
+        TweenMax.to(filler, timeHide / 1000, {width: 0, left: '100%', ease: easeOut});
       }
     }
   });
@@ -77,13 +77,13 @@ Xt.ready(function () {
   self.object.addEventListener('pause.xt.auto', function (e) {
     // on slider
     let spinner = self.object.querySelectorAll('.spinner svg:nth-child(2) circle');
-    TweenMax.to(spinner, timeHide / 1000, {strokeDashoffset: 628, ease: easeInOut, autoRound: false});
+    TweenMax.to(spinner, timeHide / 1000, {strokeDashoffset: 628, ease: easeOut, autoRound: false});
     // on elements
     let elements = self.elements.filter(x => x.classList.contains('active'));
     for (let element of elements) {
       let fillers = element.querySelectorAll('.filler span:nth-child(2)');
       for (let filler of fillers) {
-        TweenMax.to(filler, timeHide / 1000, {height: 0, top: '100%', ease: easeInOut});
+        TweenMax.to(filler, timeHide / 1000, {height: 0, top: '100%', ease: easeOut});
       }
     }
     // on targets
@@ -91,7 +91,7 @@ Xt.ready(function () {
     for (let target of targets) {
       let fillers = target.querySelectorAll('.filler span:nth-child(2)');
       for (let filler of fillers) {
-        TweenMax.to(filler, timeHide / 1000, {width: 0, left: 0, ease: easeInOut});
+        TweenMax.to(filler, timeHide / 1000, {width: 0, left: 0, ease: easeOut});
       }
     }
   });

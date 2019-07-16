@@ -6,12 +6,12 @@ export const htmlSource = `
       </span>
     </span>
     <span class="group_inner">
-      <span class="btn btn--primary">
+      <span class="btn btn--secondary">
         <span>btn 2</span>
       </span>
     </span>
     <span class="group_inner">
-      <span class="btn btn--secondary">
+      <span class="btn btn--primary">
         <span>btn 3</span>
       </span>
     </span>

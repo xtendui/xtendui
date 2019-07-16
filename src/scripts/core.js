@@ -2390,20 +2390,12 @@ export class Core {
         Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
           el.classList.add('xt-hide', 'trans-anim-none');
           el.style.height = 'auto';
-          el.style.paddingTop = '';
-          el.style.paddingBottom = '';
           let h = el.clientHeight + 'px';
-          let pt = el.style.paddingTop;
-          let pb = el.style.paddingBottom;
           el.style.height = '0';
-          el.style.paddingTop = '0';
-          el.style.paddingBottom = '0';
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
           Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
             el.classList.remove('xt-hide', 'trans-anim-none');
             el.style.height = h;
-            el.style.paddingTop = pt;
-            el.style.paddingBottom = pb;
           }));
         }));
       }
@@ -2412,20 +2404,12 @@ export class Core {
         Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
           el.classList.add('xt-hide', 'trans-anim-none');
           el.style.width = 'auto';
-          el.style.paddingLeft = '';
-          el.style.paddingRight = '';
           let w = el.clientHeight + 'px';
-          let pl = el.style.paddingLeft;
-          let pr = el.style.paddingRight;
           el.style.width = '0';
-          el.style.paddingLeft = '0';
-          el.style.paddingRight = '0';
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
           Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
             el.classList.remove('xt-hide', 'trans-anim-none');
             el.style.width = w;
-            el.style.paddingLeft = pl;
-            el.style.paddingRight = pr;
           })).toString();
         }));
       }
@@ -2442,37 +2426,25 @@ export class Core {
     if (el instanceof HTMLElement) {
       if (before === 'xt-collapse--height') {
         let h = el.offsetHeight + 'px';
-        let pt = el.style.paddingTop;
-        let pb = el.style.paddingBottom;
         cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
         Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
           el.classList.remove('xt-hide', 'trans-anim-none');
           el.style.height = h;
-          el.style.paddingTop = pt;
-          el.style.paddingBottom = pb;
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
           Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
             el.style.height = '0';
-            el.style.paddingTop = '0';
-            el.style.paddingBottom = '0';
           }));
         }));
       }
       if (after === 'xt-collapse--width') {
         let w = el.offsetWidth + 'px';
-        let pl = el.style.paddingLeft;
-        let pr = el.style.paddingRight;
         cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
         Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
           el.classList.remove('xt-hide', 'trans-anim-none');
           el.style.width = w;
-          el.style.paddingLeft = pl;
-          el.style.paddingRight = pr;
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
           Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
             el.style.width = '0';
-            el.style.paddingLeft = '0';
-            el.style.paddingRight = '0';
           }));
         }));
       }
@@ -2489,13 +2461,9 @@ export class Core {
     if (el instanceof HTMLElement) {
       if (before === 'xt-collapse--height') {
         el.style.height = 'inherit';
-        el.style.paddingTop = '';
-        el.style.paddingBottom = '';
       }
       if (after === 'xt-collapse--width') {
         el.style.width = 'inherit';
-        el.style.paddingLeft = '';
-        el.style.paddingRight = '';
       }
     }
   }

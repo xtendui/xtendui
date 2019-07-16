@@ -11,7 +11,7 @@ Xt.ready(function () {
   let timeMask = .8;
   let timeContent = .8;
   let sizeContent = 100;
-  let easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
+  let easeOut = new Ease(BezierEasing(.14,.63,0,1));
 
   // xt-slider
 
@@ -47,13 +47,13 @@ Xt.ready(function () {
     let target = self.targets.filter(x => x.classList.contains('active'))[0];
     // mask
     TweenMax.set(target, {x: -self.detail.xPosOld + 'px'});
-    TweenMax.to(target, timeMask, {x: 0, opacity: 1, ease: easeInOut});
+    TweenMax.to(target, timeMask, {x: 0, opacity: 1, ease: easeOut});
     TweenMax.set(self.dragger, {x: self.detail.xPosOld});
-    TweenMax.to(self.dragger, timeMask, {x: 0, ease: easeInOut});
+    TweenMax.to(self.dragger, timeMask, {x: 0, ease: easeOut});
     // content
     let contents = target.querySelectorAll('.card_content > *');
     for (let content of contents) {
-      TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: easeInOut});
+      TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: easeOut});
     }
   });
 
@@ -73,14 +73,14 @@ Xt.ready(function () {
         TweenMax.set(tr, {opacity: 0});
         // mask
         TweenMax.set(tr, {x: -xMax * direction});
-        TweenMax.to(tr, timeMask, {x: 0, opacity: 1, ease: easeInOut});
+        TweenMax.to(tr, timeMask, {x: 0, opacity: 1, ease: easeOut});
         TweenMax.set(self.dragger, {x: xMax * direction});
-        TweenMax.to(self.dragger, timeMask, {x: 0, ease: easeInOut});
+        TweenMax.to(self.dragger, timeMask, {x: 0, ease: easeOut});
         // content
         let contents = tr.querySelectorAll('.card_content > *');
         for (let content of contents) {
           TweenMax.set(content, {x: sizeContent * direction, opacity: 0});
-          TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: easeInOut});
+          TweenMax.to(content, timeContent, {x: 0, opacity: 1, ease: easeOut});
         }
       }
     }
@@ -98,12 +98,12 @@ Xt.ready(function () {
         direction = -1;
       }
       // mask
-      TweenMax.to(tr, timeMask, {x: xMax * direction, opacity: 0, ease: easeInOut});
-      TweenMax.to(self.dragger, timeMask, {x: -xMax * direction, ease: easeInOut});
+      TweenMax.to(tr, timeMask, {x: xMax * direction, opacity: 0, ease: easeOut});
+      TweenMax.to(self.dragger, timeMask, {x: -xMax * direction, ease: easeOut});
       // content
       let contents = tr.querySelectorAll('.card_content > *');
       for (let content of contents) {
-        TweenMax.to(content, timeContent, {x: -sizeContent * direction, opacity: 0, ease: easeInOut});
+        TweenMax.to(content, timeContent, {x: -sizeContent * direction, opacity: 0, ease: easeOut});
       }
     }
   });

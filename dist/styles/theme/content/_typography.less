@@ -165,12 +165,14 @@ pre {
   }
 }
 
-// .text--inverse
+//////////////////////
+// text--inverse
+//////////////////////
 
 .text--inverse {
   color: @text--inverse;
-  h1, h2, h3, h4, h5, h6 {
-    color: @text--inverse;
+  h1, h2, h3, h4, h5, h6, div {
+    color: inherit;
   }
 }
 
@@ -239,7 +241,6 @@ dl {
 // .dl--block
 
 .dl--block {
-  .margin-remove(top, tiny);
   dt {
     .margin(top, small);
   }
@@ -251,7 +252,6 @@ dl {
 // .dl--line
 
 .dl--line {
-  .margin-remove(top, tiny);
   dt {
     .margin(top, tiny);
   }

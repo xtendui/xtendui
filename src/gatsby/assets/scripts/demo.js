@@ -130,13 +130,17 @@ const populateDemo = function (container, i) {
       // load
       let iframe = item.querySelector('iframe');
       item.addEventListener('on.xt', function (e) {
-        if (!item.classList.contains('loaded')) {
-          loadIframe(iframe);
+        if (e.target === item) {
+          if (!item.classList.contains('loaded')) {
+            loadIframe(iframe);
+          }
         }
       });
       item.addEventListener('off.xt', function (e) {
-        item.classList.remove('loaded');
-        unloadIframe(iframe);
+        if (e.target === item) {
+          item.classList.remove('loaded');
+          unloadIframe(iframe);
+        }
       });
     } else if (item.getAttribute('data-shadow')) {
       /* NEEDS
@@ -160,9 +164,11 @@ const populateDemo = function (container, i) {
       }
       // listener
       item.addEventListener('on.xt', function (e) {
-        if (!item.classList.contains('inited')) {
-          loadShadow(shadowRoot, shadowSrc, source, shadowId, item);
-          item.classList.add('inited');
+        if (e.target === item) {
+          if (!item.classList.contains('inited')) {
+            loadShadow(shadowRoot, shadowSrc, source, shadowId, item);
+            item.classList.add('inited');
+          }
         }
       });
       */
@@ -183,10 +189,12 @@ const populateDemo = function (container, i) {
   let codes = container.querySelectorAll('.btn--show-code');
   for (let code of codes) {
     code.addEventListener('on.xt', function () {
-      let btns = document.querySelectorAll('.btn--show-code.active');
-      for (let btn of btns) {
-        if (btn !== code) {
-          btn.dispatchEvent(new CustomEvent('off.xt'));
+      if (e.target === code) {
+        let btns = document.querySelectorAll('.btn--show-code.active');
+        for (let btn of btns) {
+          if (btn !== code) {
+            btn.dispatchEvent(new CustomEvent('off.xt'));
+          }
         }
       }
     });
@@ -213,7 +221,9 @@ const populateDemo = function (container, i) {
   });
   for (let btn of container.querySelectorAll('.demo_tabs_left .btn')) {
     btn.addEventListener('off.xt', function (e) {
-      container.querySelector('.btn--show-code').dispatchEvent(new CustomEvent('off.xt'));
+      if (e.target === btn) {
+        container.querySelector('.btn--show-code').dispatchEvent(new CustomEvent('off.xt'));
+      }
     });
   }
 };

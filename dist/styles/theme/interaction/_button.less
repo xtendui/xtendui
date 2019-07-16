@@ -36,10 +36,17 @@
 .btn {
   // transition
   animation-duration: @time--small; // needed for .out animation timing, put max animation time
-   > span, &@{btn--design} {
+  > span, &@{btn--design} {
     transition-property: all;
     transition-duration: @time--small;
-    transition-timing-function: @bez--in-out;
+    transition-timing-function: @bez--out;
+  }
+  &:hover, &.hover, &:active, &.active {
+    > span, &@{btn--design} {
+      transition-property: all;
+      transition-duration: @time--small;
+      transition-timing-function: @bez--in;
+    }
   }
 }
 

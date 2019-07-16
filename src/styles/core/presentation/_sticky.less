@@ -9,7 +9,6 @@
     visibility: hidden;
     top: 0;
     width: 100%;
-    opacity: 0;
   }
   &:not(.xt-clone) {
     position: relative;
@@ -19,7 +18,7 @@
   &.xt-clone:not(.active) {
     position: absolute;
   }
-  .xt-container > &:not(.xt-clone):not(.active) {
+  &:not(.xt-clone):not(.active) {
     position: relative;
   }
   // showhide
@@ -41,26 +40,41 @@
   &:not(.xt-clone).active {
     position: fixed;
     z-index: @index--sticky;
+    width: 100%;
   }
 }
 
 .xt-sticky--absolute {
   // mode absolute
+  &.xt-clone {
+    position: relative;
+  }
   &.xt-clone:not(.active) {
     position: relative;
   }
-  .xt-container > &:not(.xt-clone):not(.active) {
+  &:not(.xt-clone):not(.active) {
+    position: relative;
+  }
+  &.xt-fixed:not(.xt-clone):not(.active) {
     position: absolute;
+    width: 100%;
   }
 }
 
 .xt-sticky--fixed {
   // mode default
+  &.xt-clone {
+    position: relative;
+  }
   &.xt-clone:not(.active) {
     position: relative;
   }
-  .xt-container > &:not(.xt-clone):not(.active) {
+  &:not(.xt-clone):not(.active) {
+    position: relative;
+  }
+  &.xt-fixed:not(.xt-clone):not(.active) {
     position: fixed;
+    width: 100%;
   }
 }
 
@@ -69,8 +83,16 @@
   &.xt-clone {
     position: absolute;
   }
-  .xt-container > &:not(.xt-clone):not(.active) {
+  &.xt-clone:not(.active) {
+    position: absolute;
+  }
+  &:not(.xt-clone):not(.active) {
     position: fixed;
+    width: 100%;
+  }
+  &.xt-fixed:not(.xt-clone):not(.active) {
+    position: fixed;
+    width: 100%;
   }
 }
 

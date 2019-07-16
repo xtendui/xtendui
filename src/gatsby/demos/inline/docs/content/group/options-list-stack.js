@@ -1,6 +1,6 @@
 export const htmlSource = `
   <div class="group full">
-    <div class="list list-space--medium flex--auto">
+    <div class="list flex--auto">
       <span class="group_inner">
         <button type="button" class="btn btn--primary">
           <span>btn 1a</span>

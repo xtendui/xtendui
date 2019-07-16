@@ -10,7 +10,9 @@ parent: "Group"
 
 ##Full
 
-Full width groups with `.full`
+Full width groups with `.full`.
+
+Use `.group_inner.flex--auto` to expand groups.
 
 <demo>
   <demovanilla src="demos/inline/docs/content/group/options-full-line" name="line">
@@ -32,7 +34,7 @@ Space group elements with list's options.
 
 ##Variants
 
-Optional classes for assigning variant.
+Optional classes for assigning variant (`.group-input`).
 
 <div class="alert">
   <div class="alert_content">

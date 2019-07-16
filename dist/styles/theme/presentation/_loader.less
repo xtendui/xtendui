@@ -23,20 +23,20 @@
       }
     }
     &:nth-child(1) {
+      circle {
+        stroke: @primary;
+        stroke-dashoffset: 628;
+        transform: rotateY(0deg) rotateZ(-90deg);
+        animation: anim-spinner @time--big * 2 infinite @bez--in;
+      }
+    }
+    &:nth-child(2) {
       position: absolute;
       top: 0;
       left: 0;
       circle {
         stroke: fade(@primary, 5%);
         stroke-dashoffset: 0;
-      }
-    }
-    &:nth-child(2) {
-      circle {
-        stroke: @primary;
-        stroke-dashoffset: 628;
-        transform: rotateY(0deg) rotateZ(-90deg);
-        animation: anim-spinner @time--big * 2 infinite @bez--in;
       }
     }
   }
@@ -75,13 +75,13 @@
 .loader--x {
   .filler {
     span:nth-child(1) {
-      background: fade(@primary, 5%);
-    }
-    span:nth-child(2) {
       width: 0;
       background: linear-gradient(90deg, @grad--primary);
       box-shadow: @shadow--primary;
       animation: anim-loader--x @time--big * 2 infinite @bez--in;
+    }
+    span:nth-child(2) {
+      background: fade(@primary, 5%);
     }
   }
 }
@@ -89,13 +89,13 @@
 .loader--y {
   .filler {
     span:nth-child(1) {
-      background: fade(@primary, 5%);
-    }
-    span:nth-child(2) {
       height: 0;
       background: linear-gradient(0deg, @grad--primary);
       box-shadow: @shadow--primary;
       animation: anim-loader--y @time--big * 2 infinite @bez--in;
+    }
+    span:nth-child(2) {
+      background: fade(@primary, 5%);
     }
   }
 }

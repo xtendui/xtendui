@@ -12,9 +12,8 @@
 
 // beziers
 
-@bez--in: @bez-penguin--in;
-@bez--out: @bez-penguin--out;
-@bez--in-out: @bez-cheetah;
+@bez--in: @bez-cheetah;
+@bez--out: @bez-cheetah;
 
 @bez-ease: ease; // others at https://easings.net/
 @bez-cheetah: ~'cubic-bezier(.14,.63,0,1)';
@@ -319,30 +318,18 @@ transition-timing-function: @bez--out;
 
 // collapse
 
-.collapse--height {
-  &.active {
-    transition-property: height;
-    transition-duration: @time--medium;
-    transition-timing-function: @bez--in;
-  }
-  &.out {
-    transition-property: height;
-    transition-duration: @time--medium;
-    transition-delay: @time--small;
-    transition-timing-function: @bez--in;
-  }
-}
-
+.collapse--height,
 .collapse--width {
   &.active {
-    transition-property: width;
+    transition-property: height, width;
     transition-duration: @time--medium;
+    transition-delay: initial;
     transition-timing-function: @bez--in;
   }
   &.out {
-    transition-property: heiwidthght;
+    transition-property: height, width;
     transition-duration: @time--medium;
-    transition-delay: @time--small;
-    transition-timing-function: @bez--in;
+    transition-delay: initial;
+    transition-timing-function: @bez--out;
   }
 }

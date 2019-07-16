@@ -10,7 +10,7 @@ import BezierEasing from "bezier-easing";
   // vars
 
   let timeHide = 300;
-  let easeInOut = new Ease(BezierEasing(.14,.63,0,1));
+  let easeOut = new Ease(BezierEasing(.14,.63,0,1));
 
   let lists = document.querySelectorAll('.list');
 
@@ -36,8 +36,8 @@ import BezierEasing from "bezier-easing";
       for (let element of elements) {
         let fillers = element.querySelectorAll('.filler span:nth-child(2)');
         for (let filler of fillers) {
-          TweenMax.set(filler, {height: 0, top: '100%', ease: easeInOut});
-          TweenMax.to(filler, self.options.auto.time / 1000, {height: '100%', top: 0, ease: easeInOut});
+          TweenMax.set(filler, {height: 0, top: '100%', ease: easeOut});
+          TweenMax.to(filler, self.options.auto.time / 1000, {height: '100%', top: 0, ease: easeOut});
         }
       }
       // on targets
@@ -45,8 +45,8 @@ import BezierEasing from "bezier-easing";
       for (let target of targets) {
         let fillers = target.querySelectorAll('.filler span:nth-child(2)');
         for (let filler of fillers) {
-          TweenMax.set(filler, {width: 0, left: 0, ease: easeInOut});
-          TweenMax.to(filler, self.options.auto.time / 1000, {width: '100%', left: 0, ease: easeInOut});
+          TweenMax.set(filler, {width: 0, left: 0, ease: easeOut});
+          TweenMax.to(filler, self.options.auto.time / 1000, {width: '100%', left: 0, ease: easeOut});
         }
       }
     });
@@ -59,7 +59,7 @@ import BezierEasing from "bezier-easing";
       for (let element of elements) {
         let fillers = element.querySelectorAll('.filler span:nth-child(2)');
         for (let filler of fillers) {
-          TweenMax.to(filler, timeHide / 1000, {height: 0, top: 0, ease: easeInOut});
+          TweenMax.to(filler, timeHide / 1000, {height: 0, top: 0, ease: easeOut});
         }
       }
       // on targets
@@ -67,7 +67,7 @@ import BezierEasing from "bezier-easing";
       for (let target of targets) {
         let fillers = target.querySelectorAll('.filler span:nth-child(2)');
         for (let filler of fillers) {
-          TweenMax.to(filler, timeHide / 1000, {width: 0, left: '100%', ease: easeInOut});
+          TweenMax.to(filler, timeHide / 1000, {width: 0, left: '100%', ease: easeOut});
         }
       }
     });
@@ -80,7 +80,7 @@ import BezierEasing from "bezier-easing";
       for (let element of elements) {
         let fillers = element.querySelectorAll('.filler span:nth-child(2)');
         for (let filler of fillers) {
-          TweenMax.to(filler, timeHide / 1000, {height: 0, top: '100%', ease: easeInOut});
+          TweenMax.to(filler, timeHide / 1000, {height: 0, top: '100%', ease: easeOut});
         }
       }
       // on targets
@@ -88,7 +88,7 @@ import BezierEasing from "bezier-easing";
       for (let target of targets) {
         let fillers = target.querySelectorAll('.filler span:nth-child(2)');
         for (let filler of fillers) {
-          TweenMax.to(filler, timeHide / 1000, {width: 0, left: 0, ease: easeInOut});
+          TweenMax.to(filler, timeHide / 1000, {width: 0, left: 0, ease: easeOut});
         }
       }
     });
