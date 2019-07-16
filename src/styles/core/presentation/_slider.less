@@ -23,6 +23,22 @@
   }
 }
 
+// .slider--nooverflow
+
+.slider--nooverflow {
+  .xt-disable();
+  .slides_inner {
+    // @FIX disable slider if not overflowing
+    .transform-none() !important;
+    .transition-none() !important;
+    justify-content: center !important;
+  }
+  .slider_pagination,
+  [data-xt-nav] {
+    display: none !important;
+  }
+}
+
 // .slider--disable
 
 .slider--disable {

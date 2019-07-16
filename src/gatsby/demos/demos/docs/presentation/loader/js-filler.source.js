@@ -10,7 +10,7 @@ import BezierEasing from "bezier-easing";
   // vars
 
   let time = 2000;
-  let easeInOut = new Ease(BezierEasing(.68, .13, .25, 1));
+  let easeInOut = new Ease(BezierEasing(.14,.63,0,1));
 
   let loader = document.querySelector('.loader');
 

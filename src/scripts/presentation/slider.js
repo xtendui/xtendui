@@ -65,6 +65,8 @@ export class Slider extends Core {
   initSliderGroup() {
     let self = this;
     let options = self.options;
+    // @FIX disable slider if not overflowing
+    self.object.classList.remove('slider--nooverflow');
     // drag wrap
     if (self.dragger && options.drag.wrap) {
       // clear elements
@@ -124,13 +126,27 @@ export class Slider extends Core {
     self.groupMqInitial = self.groupMq;
     // @FIX position values negative margins
     self.detail.fixNegativeMargin = self.groupMq[0][0].offsetLeft;
+    // @FIX disable slider if not overflowing
+    if (totalCount >= 0) {
+      self.object.classList.add('slider--nooverflow');
+      self.disable();
+      // enable all visible elements also if not .active next frame when self.elements is populated
+      let afterInitDisable = function() {
+        let currents = self.getCurrents();
+        for (let el of self.elements.filter(x => !currents.includes(self.getElements(x).single))) {
+          self.activate(el);
+          for (let tr of self.getTargets(el)) {
+            self.activate(tr);
+          }
+        }
+        self.object.removeEventListener('init.xt', afterInitDisable);
+      };
+      self.object.addEventListener('init.xt', afterInitDisable);
+    }
     // drag wrap
     let wrapFirst = [];
     let wrapLast = [];
-    if (totalCount >= 0) {
-      self.object.classList.add('slider--disable'); // disable slider if not overflowing
-    } else {
-      self.object.classList.remove('slider--disable'); // disable slider if not overflowing
+    if (totalCount < 0) {
       if (self.dragger && options.drag.wrap) {
         let container = self.targets[0].parentNode;
         if (!options.loop) {
@@ -291,12 +307,14 @@ export class Slider extends Core {
         }
         // pos with alignment
         let pos;
-        if (options.align === 'center') {
-          pos = draggerWidth / 2 - slideLeft - slideWidth / 2;
-        } else if (options.align === 'left') {
-          pos = -slideLeft;
-        } else if (options.align === 'right') {
-          pos = draggerWidth - slideLeft - slideWidth;
+        if (!self.object.classList.contains('slider--nooverflow')) { // @FIX disable slider if not overflowing
+          if (options.align === 'center') {
+            pos = draggerWidth / 2 - slideLeft - slideWidth / 2;
+          } else if (options.align === 'left') {
+            pos = -slideLeft;
+          } else if (options.align === 'right') {
+            pos = draggerWidth - slideLeft - slideWidth;
+          }
         }
         //console.log(pos, draggerWidth, slideWidth, slide);
         // save pos

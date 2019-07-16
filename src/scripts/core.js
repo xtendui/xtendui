@@ -255,7 +255,7 @@ export class Core {
       let todo = options.min - currents;
       if (todo > 0) {
         let start = 0;
-        if (self.dragger && options.drag.wrap) {
+        if (!self.disabled && self.dragger && options.drag.wrap) {
           start = 1;
           todo += start;
         }
@@ -1176,6 +1176,46 @@ export class Core {
     return detail;
   }
 
+  /**
+   * activate element
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
+   */
+  activate(el) {
+    let self = this;
+    // activate
+    el.classList.add(...self.classes);
+    el.classList.add(...self.classesIn);
+    el.classList.remove(...self.classesOut);
+    if (self.initial || Xt.dataStorage.get(el, self.componentNamespace + 'Initial')) {
+      el.classList.add(...self.classesInitial);
+    }
+    if (!self.detail.inverse) {
+      el.classList.remove(...self.classesInverse);
+    } else {
+      el.classList.add(...self.classesInverse);
+    }
+  }
+
+  /**
+   * deactivate element
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
+   */
+  deactivate(el) {
+    let self = this;
+    // activate
+    el.classList.remove(...self.classes);
+    el.classList.remove(...self.classesIn);
+    el.classList.add(...self.classesOut);
+    if (!self.initial && !Xt.dataStorage.get(el, self.componentNamespace + 'Initial')) {
+      el.classList.remove(...self.classesInitial);
+    }
+    if (!self.detail.inverse) {
+      el.classList.remove(...self.classesInverse);
+    } else {
+      el.classList.add(...self.classesInverse);
+    }
+  }
+
   //////////////////////
   // event
   //////////////////////
@@ -1768,17 +1808,7 @@ export class Core {
     let self = this;
     let options = self.options;
     // activate
-    el.classList.add(...self.classes);
-    el.classList.add(...self.classesIn);
-    el.classList.remove(...self.classesOut);
-    if (self.initial || Xt.dataStorage.get(el, self.componentNamespace + 'Initial')) {
-      el.classList.add(...self.classesInitial);
-    }
-    if (!self.detail.inverse) {
-      el.classList.remove(...self.classesInverse);
-    } else {
-      el.classList.add(...self.classesInverse);
-    }
+    self.activate(el);
     // special
     let before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '');
     let after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '');
@@ -1843,17 +1873,7 @@ export class Core {
     let self = this;
     let options = self.options;
     // deactivate
-    el.classList.remove(...self.classes);
-    el.classList.remove(...self.classesIn);
-    el.classList.add(...self.classesOut);
-    if (!self.initial && !Xt.dataStorage.get(el, self.componentNamespace + 'Initial')) {
-      el.classList.remove(...self.classesInitial);
-    }
-    if (!self.detail.inverse) {
-      el.classList.remove(...self.classesInverse);
-    } else {
-      el.classList.add(...self.classesInverse);
-    }
+    self.deactivate(el);
     // special
     let before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '');
     let after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '');
