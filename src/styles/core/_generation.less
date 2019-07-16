@@ -1,61 +1,5 @@
 & when not (@classes--util = false) {
 
-  /*
-  //////////////////////
-  // grid
-  //////////////////////
-
-  // generate-grid
-
-  .generate-grid(@breakpoint:none; @i:1) when (@i =< @columns) {
-    .generate-grid(@breakpoint; (@i + 1));
-    & when (@breakpoint = none) {
-      .col--@{i} {
-        .col(@i) !important;
-      }
-    }
-    & when not (@breakpoint = none) {
-      .col--@{i}-@{breakpoint} {
-        .col(@i) !important;
-      }
-    }
-  }
-
-  // generate-grids
-
-  .generate-grids();
-  .generate-grids(@breakpoint:none) {
-    & when (@breakpoint = none) {
-      // grid
-      .col--auto {
-        .col--auto() !important;
-      }
-      .generate-grid() !important;
-    }
-    & when not (@breakpoint = none) {
-      @query-min: 'min-@{breakpoint}';
-      @media @@query-min {
-        // grid
-        .col--auto-@{breakpoint} {
-          .col--auto() !important;
-        }
-        .generate-grid(@breakpoint) !important;
-      }
-    }
-  }
-
-  // generate-grid-responsive
-
-  & when not (@classes--grid = true) {
-
-    .generate-grid-responsive();
-    .generate-grid-responsive(@i:length(@classes--grid)) when (@i > 0) {
-      .generate-grid-responsive(@i - 1);
-      @breakpoint: extract(@classes--grid, @i);
-      .generate-grids(@breakpoint);
-    }
-
-  }*/
   //////////////////////
   // util
   //////////////////////
@@ -65,6 +9,13 @@
   .generate-utils();
   .generate-utils(@breakpoint:none) {
     & when (@breakpoint = none) {
+      // various
+      .link--underline {
+        .link--underline() !important;
+      }
+      .link--none {
+        .link--none() !important;
+      }
       // various
       .reset-text {
         .reset-text() !important;
