@@ -29,6 +29,7 @@ node_modules
 vendor
 /docs
 /public
+src/gatsby
 dist/styles/**/*.css
 dist/styles/**/*.css.map
 dist/scripts/**/*.min.js

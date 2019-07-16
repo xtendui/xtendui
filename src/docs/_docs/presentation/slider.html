@@ -208,11 +208,19 @@ description: Lorem Ipsum
 <h3>Disable and expand</h3>
 
 <div class="demo">
+  <div class="demo-item" data-shadow="{{ site.baseurl }}/demos/presentation/slider/nooverflow.html"
+       data-name="nooverflow">
+    <div class="demo-text">
+      <div class="alert_content">
+        Slider automatically disable when not overflowing or by adding manually <code>.slider.slider--nooverflow</code>
+      </div>
+    </div>
+  </div>
   <div class="demo-item" data-shadow="{{ site.baseurl }}/demos/presentation/slider/disable.html"
        data-name="disable">
     <div class="demo-text">
       <div class="alert_content">
-        To disable slider use <code>.slider--disable</code> also within media queries
+        To disable slider use <code>.slider.slider--disable</code> also within media queries
       </div>
     </div>
   </div>
@@ -220,7 +228,7 @@ description: Lorem Ipsum
        data-name="expand">
     <div class="demo-text">
       <div class="alert_content">
-        To disable and expand a slider use <code>.slider--expand</code> also within media queries
+        To disable and expand a slider use <code>.slider.slider--expand</code> also within media queries
       </div>
     </div>
   </div>
