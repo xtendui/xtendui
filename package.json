@@ -102,6 +102,7 @@
     "webpack-hot-middleware": "git://github.com/minimit/webpack-hot-middleware.git#fix-iframe"
   },
   "release": {
+    "branch": "master",
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
