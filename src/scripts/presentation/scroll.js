@@ -40,7 +40,7 @@ export class Scroll extends Core {
         self.targets.push(el);
       } else {
         // sticky container
-        let container = Xt.parents(el, '.xt-container')[0];
+        let container = el.closest('.xt-container');
         if (!container) {
           container = Xt.createElement('<div class="xt-container xt-fixed--check"></div>');
           el.before(container);

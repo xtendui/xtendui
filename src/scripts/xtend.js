@@ -135,7 +135,7 @@ if (typeof window !== 'undefined') {
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} added
    */
   Xt.initElement = function (added = document.documentElement) {
-    if (added.classList.contains('xt-ignore') || Xt.parents(added, '.xt-ignore').length) {
+    if (added.closest('.xt-ignore')) {
       return false;
     }
     added = Xt.arrSingle(added);
@@ -179,7 +179,7 @@ if (typeof window !== 'undefined') {
    */
   /*
   Xt.destroyElement = function (removed = document.documentElement) {
-    if (removed.classList.contains('xt-ignore') || Xt.parents(removed, '.xt-ignore').length) {
+    if (removed.closest('.xt-ignore')) {
       return false;
     }
     removed = Xt.arrSingle(removed);
@@ -224,7 +224,7 @@ if (typeof window !== 'undefined') {
    */
 
   Xt.initObserve = function (added = document.documentElement) {
-    if (added.classList.contains('xt-ignore') || Xt.parents(added, '.xt-ignore').length) {
+    if (added.closest('.xt-ignore')) {
       return false;
     }
     for (let obj of Xt.observe) {
@@ -628,7 +628,7 @@ if (typeof window !== 'undefined') {
      */
     init: function (el) {
       // @FIX ignore
-      if (el.classList.contains('xt-ignore') || Xt.parents(el, '.xt-ignore').length) {
+      if (el.closest('.xt-ignore')) {
         return false;
       }
       // init
@@ -638,7 +638,7 @@ if (typeof window !== 'undefined') {
         el.addEventListener('keydown', Xt.textareaAutosize.keychange.bind(el));
         el.addEventListener('keyup', Xt.textareaAutosize.keychange.bind(el));
         // form
-        let form = Xt.parents(el, 'form')[0];
+        let form = el.closest('form');
         if (form) {
           form.addEventListener('reset', Xt.textareaAutosize.keychange.bind(el));
         }
@@ -658,7 +658,7 @@ if (typeof window !== 'undefined') {
         el.removeEventListener('keydown', Xt.textareaAutosize.keychange.bind(el));
         el.removeEventListener('keyup', Xt.textareaAutosize.keychange.bind(el));
         // form
-        let form = Xt.parents(el, 'form')[0];
+        let form = el.closest('form');
         if (form) {
           form.removeEventListener('reset', Xt.textareaAutosize.keychange.bind(el));
         }
@@ -692,7 +692,7 @@ if (typeof window !== 'undefined') {
      */
     init: function (el) {
       // @FIX ignore
-      if (el.classList.contains('xt-ignore') || Xt.parents(el, '.xt-ignore').length) {
+      if (el.closest('.xt-ignore')) {
         return false;
       }
       // init
@@ -758,7 +758,7 @@ if (typeof window !== 'undefined') {
      */
     init: function (el) {
       // @FIX ignore
-      if (el.classList.contains('xt-ignore') || Xt.parents(el, '.xt-ignore').length) {
+      if (el.closest('.xt-ignore')) {
         return false;
       }
       // init
@@ -971,23 +971,6 @@ if (typeof window !== 'undefined') {
     let div = document.createElement('div');
     div.innerHTML = str.trim();
     return div.firstChild;
-  };
-
-  /**
-   * Query element's parents
-   * @param {Node|HTMLElement|EventTarget|Window} el Child element
-   * @param {String} query Query parents
-   * @return {Array} Parents elements by query
-   */
-  Xt.parents = function (el, query) {
-    let parents = [];
-    if (!el.parentElement) {
-      return parents;
-    }
-    while (el = el.parentElement.closest(query)) {
-      parents.push(el);
-    }
-    return parents;
   };
 
   /**

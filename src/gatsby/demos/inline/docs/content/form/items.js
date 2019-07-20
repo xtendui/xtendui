@@ -14,6 +14,12 @@ export const htmlSource = `
       </label>
       <input type="text" class="form-input">
     </div>
+    <div class="form-item">
+      <label class="form-label">
+        Textarea autoresize
+      </label>
+      <textarea class="form-input"></textarea>
+    </div>
 
     <legend>Test flex</legend>
     <div class="form-item--flex-sm">

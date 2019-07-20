@@ -36,7 +36,7 @@ export class Sticky extends Core {
     self.mode = 'unique';
     // sticky container
     for (let el of self.elements) {
-      let container = Xt.parents(el, '.xt-container')[0];
+      let container = el.closest('.xt-container');
       if (!container) {
         container = Xt.createElement('<div class="xt-container xt-fixed--check"></div>');
         el.before(container);

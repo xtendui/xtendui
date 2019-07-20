@@ -102,7 +102,7 @@ const populateDemo = function (container, i) {
     // https://github.com/zenorocha/clipboard.js/
     let clipboard = new ClipboardJS('.btn--clipboard', {
       target: function (trigger) {
-        return Xt.parents(trigger, '.demo')[0].querySelector('.demo_item.active .demo_code_body_item.active .hljs');
+        return trigger.closest('.demo').querySelector('.demo_item.active .demo_code_body_item.active .hljs');
       }
     });
     clipboard.on('success', function (e) {
@@ -315,7 +315,7 @@ const loadShadow = function (shadowRoot, shadowSrc, source, shadowId, item) {
 }
 
 window.initShadow = function (source, shadowRoot) {
-  let item = Xt.parents(source, '.demo_item')[0];
+  let item = source.closest('.demo_item');
   if (!item.classList.contains('populated')) {
     populateShadow(item, shadowRoot);
     item.classList.add('populated');
@@ -364,7 +364,7 @@ if (typeof window !== 'undefined') {
   window.initIframe = function (name, htmlSource, jsSource, cssSource) {
     let src = 'iframe[name="' + name + '"]';
     let iframe = document.querySelector(src);
-    let item = Xt.parents(iframe, '.demo_item')[0];
+    let item = iframe.closest('.demo_item');
     item.classList.add('loaded');
     if (!item.classList.contains('populated')) {
       populateIframe(item, iframe, htmlSource, jsSource, cssSource);
@@ -374,7 +374,7 @@ if (typeof window !== 'undefined') {
   window.resizeIframe = function (name) {
     let src = 'iframe[name="' + name + '"]';
     let iframe = document.querySelector(src);
-    let container = Xt.parents(iframe, '.demo')[0];
+    let container = iframe.closest('.demo');
     let wrappers = container.querySelectorAll('.demo_item_wrapper');
     if (iframe) {
       let iframeFull = iframe.contentWindow.document.documentElement.classList.contains('iframe-full');

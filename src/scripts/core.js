@@ -23,7 +23,7 @@ export class Core {
     self.componentName = self.constructor.componentName;
     self.componentNamespace = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '');
     // @FIX ignore
-    if (self.object.classList.contains('xt-ignore') || Xt.parents(self.object, '.xt-ignore').length) {
+    if (self.object.closest('.xt-ignore')) {
       if (Xt.debug === true) {
         console.warn(self.componentName + ' inside xt-ignore will not be initialized:', self.object);
       }
@@ -185,7 +185,7 @@ export class Core {
     // elements
     if (options.elements) {
       let arr = Array.from(Xt.arrSingle(self.container.querySelectorAll(options.elements)));
-      arr = arr.filter(x => !x.classList.contains('xt-ignore') && !Xt.parents(x, '.xt-ignore').length); // filter out ignore
+      arr = arr.filter(x => !x.closest('.xt-ignore')); // filter out ignore
       self.elements = arr;
       self.destroyElements.push(...self.elements);
     }
@@ -194,7 +194,7 @@ export class Core {
       // @FIX set namespace for next frame
       requestAnimationFrame(function () {
         let arr = Array.from(Xt.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']')));
-        arr = arr.filter(x => !x.classList.contains('xt-ignore') && !Xt.parents(x, '.xt-ignore').length); // filter out ignore
+        arr = arr.filter(x => !x.closest('.xt-ignore')); // filter out ignore
         if (arr.length) { // fix when using shadow dom doesn't query deep
           self.elements = arr;
           self.destroyElements.push(...self.elements);
@@ -212,8 +212,8 @@ export class Core {
     // targets
     if (options.targets) {
       let arr = Array.from(self.container.querySelectorAll(options.targets));
-      arr = arr.filter(x => !Xt.parents(x, options.targets).length); // filter out parent
-      arr = arr.filter(x => !x.classList.contains('xt-ignore') && !Xt.parents(x, '.xt-ignore').length); // filter out ignore
+      //arr = arr.filter(x => !x.parentElement.closest(options.targets)); // filter out parent
+      arr = arr.filter(x => !x.closest('.xt-ignore')); // filter out ignore
       self.targets = arr;
       self.destroyElements.push(...self.targets);
     }
@@ -1491,7 +1491,7 @@ export class Core {
       return false;
     }
     // check disabled
-    if (el.classList.contains('jumps--none') || Xt.parents(el, '.jumps--none').length) {
+    if (el.closest('.jumps--none')) {
       return false;
     }
     // jump

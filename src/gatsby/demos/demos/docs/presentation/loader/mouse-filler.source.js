@@ -10,7 +10,7 @@
 
   // follow mouse
 
-  let container = Xt.parents(loader, '.card')[0];
+  let container = loader.closest('.card');
   let width;
   let height;
 
