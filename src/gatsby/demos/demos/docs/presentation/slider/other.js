@@ -42,7 +42,7 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide active">
+      <li class="slide col--6 col--4-sm active">
         <div class="slide_inner">
 
           <div class="card card--big text-align--center">
