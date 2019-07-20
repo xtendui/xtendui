@@ -11,6 +11,13 @@ class Page extends React.Component {
     return (
       <Layout seo={seo}>
         <SEO title={seo.title + ' — ' + seo.description}/>
+        <a href="/demos/docs/presentation/slider/other">
+           other
+        </a>
+        <br/>
+        <a href="/demos/docs/presentation/slider/extension-toggle-js">
+          toggle-js
+        </a>
       </Layout>
     )
   }
