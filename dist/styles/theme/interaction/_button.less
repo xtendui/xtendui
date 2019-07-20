@@ -26,9 +26,9 @@
     border-color: transparent;
   }
   // option
-  .btn--center(); // alignment
-  .btn--secondary(); // variant
-  .btn--medium(); // size
+  .btn--center();
+  .btn--secondary();
+  .btn--medium();
 }
 
 // animation
@@ -105,7 +105,7 @@
 .btn--text {
   .btn--noeffect();
   > span {
-    color: @text;
+    color: inherit;
   }
   &@{btn--design} {
     border-color: transparent;
@@ -113,7 +113,8 @@
   }
   &:hover, &.hover, &:active, &.active {
     > span {
-      color: @text--dark;
+      color: inherit;
+      opacity: .75;
     }
     &@{btn--design} {
       border-color: transparent;

@@ -23,7 +23,7 @@
       color: @text--inverse;
     }
     &@{btn--design} {
-      background: fade(@gray--900, 5%);
+      background: fade(@gray--900, 10%);
     }
   }
 }
@@ -97,7 +97,7 @@
       color: @text;
     }
     &@{btn--design} {
-      background: @gray--300;
+      background: linear-gradient(135deg, @grad--light);
     }
   }
   // custom
@@ -154,7 +154,7 @@
     }
   }
   .btn--site_multiline_special {
-    background: fade(@gray--900, 5%);
+    background: linear-gradient(135deg, @grad--light);
     .btn--left& {
       .margin(left, .5em);
     }
@@ -169,13 +169,13 @@
     > span {
       color: @text;
       .btn--site_multiline_line {
-        background: fade(@gray--900, 5%);
+        background: linear-gradient(135deg, @grad--light);
       }
       .btn--site_multiline_special {
-        background: @primary;
-        color: @white;
         .margin(left, 0);
         .margin(right, 0);
+        background: linear-gradient(135deg, @grad--primary);
+        color: @white;
       }
       .btn--site_multiline_special_text {
         display: inline-block;

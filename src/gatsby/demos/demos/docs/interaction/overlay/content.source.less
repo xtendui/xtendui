@@ -6,7 +6,7 @@
  */
 
 .overlay_outer {
-  .overlay_inner > .btn--close {
+  .btn--close.overlay_dismiss {
     .btn--primary();
   }
   .overlay_content--menu {
@@ -21,10 +21,10 @@
     }
   }
   .overlay_content--title {
-    border-bottom: 1px solid @gray--200;
+    border-bottom: 1px solid @gray--500;
   }
   .overlay_content--foot {
-    border-top: 1px solid @gray--200;
+    border-top: 1px solid @gray--500;
   }
   // animation
   &.active {

@@ -14,7 +14,7 @@ Optional classes for assigning variant.
 
 You can change the **default variant** @TODO less path
 
-`.overlay--primary` `.overlay--secondary` `.overlay--white`
+`.overlay--light` `.overlay--dark`
         
 <demo>
   <demovanilla src="demos/inline/docs/interaction/overlay/variant" name="variant">

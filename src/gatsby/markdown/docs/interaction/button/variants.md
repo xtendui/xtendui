@@ -18,3 +18,10 @@ You can change the default **variant** inside the `.btn` selector in `/theme/_co
   <demovanilla src="demos/inline/docs/interaction/button/variant" name="variant">
   </demovanilla>
 </demo>
+
+On containers use `.text--inverse` to have white buttons (needs `color: inherit`).
+
+<demo>
+  <demovanilla src="demos/inline/docs/interaction/button/inverse" name="inverse">
+  </demovanilla>
+</demo>

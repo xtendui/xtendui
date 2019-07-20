@@ -2,7 +2,7 @@ let spinner = require("components/snippets/spinner").default
 
 export const htmlSource = `
   <div class="list list-space--small align-items--center justify-content--center demo-source-from">
-    <div class="card card--secondary">
+    <div class="card card--light">
       <div class="card_design"></div>
       <div class="card_content">
         <h3>Lorem ipsum dolor sit amet</h3>

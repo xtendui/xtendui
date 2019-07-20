@@ -14,7 +14,7 @@ Optional classes for assigning variant. `.list--drop` has drop's list default op
 
 You can change the **default variant** @TODO less path
 
-`.drop--primary` `.drop--secondary` `.drop--white`
+`.drop--light` `.drop--dark`
         
 <demo>
   <demovanilla src="demos/inline/docs/interaction/drop/variant" name="variant">

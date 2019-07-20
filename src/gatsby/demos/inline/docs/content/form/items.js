@@ -20,6 +20,16 @@ export const htmlSource = `
       </label>
       <textarea class="form-input"></textarea>
     </div>
+    <div class="form-item">
+      <label class="form-label">
+        Select
+      </label>
+      <select class="form-input">
+        <option>Test</option>
+        <option>Test</option>
+        <option>Test</option>
+      </select>
+    </div>
 
     <legend>Test flex</legend>
     <div class="form-item--flex-sm">

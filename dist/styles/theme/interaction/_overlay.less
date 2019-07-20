@@ -28,29 +28,27 @@
     border-style: solid;
     border-color: transparent;
   }
-  .overlay_inner > .btn--close {
+  .btn--close.overlay_dismiss {
     position: absolute;
-    top: 2px;
-    right: 2px;
+    top: 0;
+    right: 0;
     .btn--giant();
   }
   // option
-  .overlay--white(); // variant
-  .overlay--size(small); // size
+  .overlay--light();
+  .overlay--size(small);
 }
 
 // addons
 
 .overlay--screen {
   // option
-  .overlay--white(); // variant
-  .overlay--size(giant); // size
+  .overlay--size(giant);
   .overlay--squared();
   .overlay--noborder();
 }
 
 .overlay--pos {
-  // styles
   .overlay {
     .overlay--left& {
       width: 88% !important;
@@ -62,7 +60,7 @@
     }
   }
   // option
-  .overlay--white(); // variant
+  .overlay--dark();
   .overlay--squared();
   .overlay--noborder();
 }
@@ -87,7 +85,7 @@
       .anim-zoom.active();
     }
     .overlay_content,
-    .overlay_inner > .btn--close {
+    .btn--close.overlay_dismiss {
       .anim-y.active();
       animation-delay: @time--small;
     }
@@ -103,7 +101,7 @@
         .anim-x.active();
       }
       .overlay_content,
-      .overlay_inner > .btn--close {
+      .btn--close.overlay_dismiss {
         .anim-x.active();
         animation-delay: @time--small;
       }
@@ -113,7 +111,7 @@
         .anim-x-inverse.active();
       }
       .overlay_content,
-      .overlay_inner > .btn--close {
+      .btn--close.overlay_dismiss {
         .anim-x-inverse.active();
         animation-delay: @time--small;
       }
@@ -125,7 +123,7 @@
       animation-delay: @time--small;
     }
     .overlay_content,
-    .overlay_inner > .btn--close {
+    .btn--close.overlay_dismiss {
       .anim-y.out();
     }
     > .backdrop {
@@ -142,7 +140,7 @@
         animation-delay: @time--small;
       }
       .overlay_content,
-      .overlay_inner > .btn--close {
+      .btn--close.overlay_dismiss {
         .anim-x-inverse.out();
       }
     }
@@ -152,7 +150,7 @@
         animation-delay: @time--small;
       }
       .overlay_content,
-      .overlay_inner > .btn--close {
+      .btn--close.overlay_dismiss {
         .anim-x.out();
       }
     }
@@ -161,44 +159,31 @@
 
 // variant
 
-.overlay--primary {
-  .overlay_design {
-    border-color: @primary--dark;
-    background: @primary;
-    box-shadow: @shadow--primary;
-  }
-  .overlay_content {
-    color: @text--inverse;
-  }
-  .overlay_inner > .btn--close {
-    .btn--primary();
-  }
-}
-
-.overlay--secondary {
-  .overlay_design {
-    border-color: @secondary--dark;
-    background: @secondary;
-    box-shadow: @shadow--secondary;
-  }
-  .overlay_content {
-    color: @text;
-  }
-  .overlay_inner > .btn--close {
-    .btn--secondary();
-  }
-}
-
-.overlay--white {
+.overlay--light {
   .overlay_design {
     border-color: @gray--300;
     background: @white;
-    box-shadow: @shadow--secondary;
+    box-shadow: @shadow--light;
   }
   .overlay_content {
     color: @text;
   }
-  .overlay_inner > .btn--close {
+  .btn--close.overlay_dismiss {
+    .btn--text();
+  }
+}
+
+.overlay--dark {
+  .overlay_design {
+    border-color: @gray--900;
+    background: @gray--900;
+    box-shadow: @shadow--dark;
+  }
+  .overlay_content {
+    .text--inverse();
+  }
+  .btn--close.overlay_dismiss {
+    .text--inverse();
     .btn--text();
   }
 }

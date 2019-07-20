@@ -11,8 +11,8 @@
     border-color: transparent;
   }
   // option
-  .card--big(); // size
-  .card--secondary(); // variant
+  .card--light();
+  .card--big();
 }
 
 // addons
@@ -36,21 +36,20 @@
 
 // variant
 
-.card--secondary {
+.card--dark {
   > .card_design {
-    border-color: @secondary;
-    background: @secondary;
-    background: linear-gradient(135deg, @grad--secondary);
+    border-color: @gray--900;
+    background: linear-gradient(135deg, @grad--dark);
   }
   > .card_content {
-    color: @text;
+    .text--inverse();
   }
 }
 
-.card--white {
+.card--light {
   > .card_design {
-    border-color: @white;
-    background: @white;
+    border-color: @gray--300;
+    background: linear-gradient(135deg, @grad--light);
   }
   > .card_content {
     color: @text;

@@ -150,7 +150,7 @@ legend {
   font-size: 1em; // size in em inherit .form-item size
   line-height: 1.2;
   // option
-  .form-input--white();
+  .form-input--light();
   // animation
   transition-property: color, border, background;
   transition-duration: @time--medium;
@@ -169,18 +169,18 @@ legend {
 
 // variant
 
-.form-input--white {
+.form-input--light {
   // styles
-  border-color: @secondary--dark;
-  background-color: @white; // @FIX no background: or it overrides background-image
+  border-color: @gray--300;
+  background-color: @gray--200; // @FIX no background: or it overrides background-image
   color: @text;
   &:focus, &.active {
-    background-color: @gray--200; // @FIX no background: or it overrides background-image
+    background-color: @gray--300; // @FIX no background: or it overrides background-image
   }
   // select arrow
   select& {
-    @select-arrow-color: darken(@gray--300, 25%);
-    @select-space-color: darken(@gray--300, 5%);
+    @select-arrow-color: @text;
+    @select-space-color: @gray--300;
     background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%),
     linear-gradient(135deg, @select-arrow-color 50%, transparent 50%),
     linear-gradient(to right, @select-space-color, @select-space-color);

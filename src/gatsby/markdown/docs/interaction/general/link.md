@@ -10,12 +10,17 @@ parent: "General"
 
 ##Usage
 
-On containers use `.inverse` to have white links.
-
-Use the mixins `.link--underline()` or `.link--none()` to add or remove `text-decoration:
-  underline;` on links and buttons.
+On links or buttons use `.link--underline` or `.link--none` to add or remove `text-decoration:
+  underline;`.
 
 <demo>
   <demovanilla src="demos/inline/docs/interaction/general/link" name="link">
+  </demovanilla>
+</demo>
+
+On containers use `.text--inverse` to have white links.
+
+<demo>
+  <demovanilla src="demos/inline/docs/interaction/general/inverse" name="inverse">
   </demovanilla>
 </demo>

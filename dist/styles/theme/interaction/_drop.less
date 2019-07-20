@@ -25,9 +25,9 @@
     }
   }
   // option
-  .drop--white(); // variant
-  .drop--left(); // position
-  .drop--bottom(); // position
+  .drop--light();
+  .drop--left();
+  .drop--bottom();
 }
 
 // animation
@@ -88,41 +88,27 @@
 
 // variant
 
-.drop--primary {
-  > .drop_inner {
-    color: @text--inverse;
-    > .drop_design {
-      border-color: @primary--dark;
-      background: @primary;
-      box-shadow: @shadow--primary;
-    }
-    > .drop_content > .list--drop {
-      .list_btn({ .btn--primary() });
-    }
-  }
-}
-
-.drop--secondary {
-  > .drop_inner {
-    color: @text;
-    > .drop_design {
-      border-color: @secondary--dark;
-      background: @secondary;
-      box-shadow: @shadow--secondary;
-    }
-    > .drop_content > .list--drop {
-      .list_btn({ .btn--secondary() });
-    }
-  }
-}
-
-.drop--white {
+.drop--light {
   > .drop_inner {
     color: @text;
     > .drop_design {
       border-color: @gray--300;
       background: @white;
-      box-shadow: @shadow--secondary;
+      box-shadow: @shadow--light;
+    }
+    > .drop_content > .list--drop {
+      .list_btn({ .btn--text() });
+    }
+  }
+}
+
+.drop--dark {
+  > .drop_inner {
+    .text--inverse();
+    > .drop_design {
+      border-color: @gray--900;
+      background: @gray--900;
+      box-shadow: @shadow--dark;
     }
     > .drop_content > .list--drop {
       .list_btn({ .btn--text() });

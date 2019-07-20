@@ -4,20 +4,8 @@ export const htmlSource = `
       link
     </a>
     
-    <button type="button" class="btn--link">
-      <span>btn--link</span>
-    </button>
-    
-    <div class="text--inverse" style="padding: 0.5rem 1rem; background: #7367F0;">
-      <a href="#">
-        link
-      </a>
-    </div>
-    
-    <div class="text--inverse" style="padding: 0.5rem 1rem; background: #7367F0;">
-      <button type="button" class="btn--link">
-        <span>btn--link</span>
-      </button>
-    </div>
+    <a href="#" class="link--none">
+      link
+    </a>
   </div>
 `
