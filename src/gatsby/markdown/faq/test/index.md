@@ -13,6 +13,12 @@ Lorem ipsum `.btn.test`.
 
 See [Group button's page](/docs/content/group/button).
 
+<div class="alert">
+  <div class="alert_content">
+    With **multiple mode** you **can't** specify targets with **#id**.
+  </div>
+</div>
+
 <script type="text/plain" class="language-markup">
   <a href="#" class="btn">
     <span><!-- content --></span>

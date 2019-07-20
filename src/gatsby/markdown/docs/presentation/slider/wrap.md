@@ -12,7 +12,7 @@ parent: "Slider"
 
 You can wrap the slides with `"drag": {"wrap": true}`.
 
-<div class="alert alert--primary">
+<div class="alert">
   <div class="alert_content">
     With `"drag": {"wrap": true}` you have to set `"loop": true` and you can't use `"contain": true`
   </div>

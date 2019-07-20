@@ -52,7 +52,7 @@ let self = Xt.init('xt-toggle', document.querySelector('.my-toggle'), {
 
 You can create a toggle with **mutiple** mode by assigning `[data-xt-toggle]` to a scope element, elements and targets must be inside the scope. Check @TODO toggle defatuls for the default elements and targets.
 
-<div class="alert alert--primary">
+<div class="alert">
   <div class="alert_content">
     With **multiple mode** you **can't** specify targets with **#id**.
   </div>
@@ -85,7 +85,7 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
 
 When you don't specify **elements** the scope becomes global and the element becomes `[data-xt-toggle]` itself.
 
-<div class="alert alert--primary">
+<div class="alert">
   <div class="alert_content">
     With **munique mode** you **need** to specify targets with **#id**.
   </div>

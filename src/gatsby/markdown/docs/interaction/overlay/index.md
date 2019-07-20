@@ -74,7 +74,7 @@ let self = Xt.init('xt-overlay', document.querySelector('.my-overlay'), {
 });
 ```
 
-<div class="alert alert--primary">
+<div class="alert">
   <div class="alert_content">
     Overlays are moved to **body** to prevent **z-index** problems. Use `"appendTo": false` to prevent that.
   </div>

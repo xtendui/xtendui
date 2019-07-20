@@ -1569,7 +1569,7 @@ Set item's order inside the flexbox.
   </div>
 </div>
 
-<div class="alert alert--primary">
+<div class="alert">
   <div class="alert_content">
     By default orders from `.order--0` to `.order--2` are negative values.
   </div>

@@ -16,7 +16,7 @@ You can add navigation with `[data-xt-nav].xt-ignore`, set the amount to add to 
 
 You can add pagination inside `.slider_pagination` with `[data-xt-pag].xt-ignore` to generate the pagination, inside it you can use this variables: `xt-num` `xt-tot`.
 
-<div class="alert alert--primary">
+<div class="alert">
   <div class="alert_content">
     Pagination is essential to the functioning of the slider, so if you don't want to show it add
     `.display--none` to `.slider_pagination`.

@@ -28,7 +28,7 @@ let self = Xt.init('xt-scroll', document.documentElement, {
 });
 ```
 
-<div class="alert alert--primary">
+<div class="alert">
   <div class="alert_content">
     It's recomended to animate the scroll elements with <code>animation</code> instead of <code>transition</code>
     because

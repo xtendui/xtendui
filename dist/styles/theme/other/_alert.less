@@ -16,7 +16,7 @@
     border-color: transparent;
   }
   // option
-  .alert--secondary();
+  .alert--light();
   .alert--medium();
   // animation
   &.active {
@@ -35,20 +35,20 @@
 
 // variant
 
-.alert--primary {
+.alert--dark {
   &@{alert--design} {
-    border-color: @primary;
-    background: @primary;
+    border-color: @gray--900;
+    background: @gray--900;
   }
   > .alert_content {
     .text--inverse();
   }
 }
 
-.alert--secondary {
+.alert--light {
   &@{alert--design} {
-    border-color: @secondary;
-    background: @secondary;
+    border-color: @gray--200;
+    background: @gray--200;
   }
   > .alert_content {
     color: @text;
