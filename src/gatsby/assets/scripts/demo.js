@@ -188,7 +188,7 @@ const populateDemo = function (container, i) {
   });
   let codes = container.querySelectorAll('.btn--show-code');
   for (let code of codes) {
-    code.addEventListener('on.xt', function () {
+    code.addEventListener('on.xt', function (e) {
       if (e.target === code) {
         let btns = document.querySelectorAll('.btn--show-code.active');
         for (let btn of btns) {
