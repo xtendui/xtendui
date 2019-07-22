@@ -21,19 +21,21 @@
 @text--inverse: @white;
 @text--inverse--dark: @gray--200;
 
-// gradient
-
-@grad--dark: @gray--500 33%, darken(@gray--500, 2%) 100%;
-@grad--light: @gray--200 33%, darken(@gray--200, 2%) 100%;
-@grad--primary: @primary 33%, darken(@primary, 2%) 100%;
-@grad--secondary: @secondary 33%, darken(@secondary, 2%) 100%;
-
 // shadow
+// USAGE: box-shadow: @shadow--light;
 
 @shadow--dark: 0 .1rem 1rem fade(@gray--500, 40%), 0 .2rem 2rem fade(@gray--500, 80%);
 @shadow--light: 0 .1rem 1rem fade(@gray--300, 40%), 0 .2rem 2rem fade(@gray--300, 80%);
 @shadow--primary: 0 .1rem 1rem fade(@primary--dark, 10%), 0 .2rem 2rem fade(@primary--dark, 20%);
 @shadow--secondary: 0 .1rem 1rem fade(@secondary--dark, 40%), 0 .2rem 2rem fade(@secondary--dark, 80%);
+
+// gradient
+// USAGE: background: linear-gradient(135deg, @grad--light);
+
+@grad--dark: @gray--500 33%, darken(@gray--500, 2%) 100%;
+@grad--light: @gray--200 33%, darken(@gray--200, 2%) 100%;
+@grad--primary: @primary 33%, darken(@primary, 2%) 100%;
+@grad--secondary: @secondary 33%, darken(@secondary, 2%) 100%;
 
 //////////////////////
 // font
