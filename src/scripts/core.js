@@ -448,6 +448,10 @@ export class Core {
           el.addEventListener(event, onHandler);
         }
         el.addEventListener('on.xt', onHandler);
+        // @FIX off.xt when toggle and no options.off
+        if (options.toggle) {
+          el.addEventListener('off.xt', onHandler);
+        }
         // @FIX prevents click on touch until clicked two times
         if (events.includes('mouseenter') || events.includes('mousehover')) {
           let touchLinksStartHandler = Xt.dataStorage.put(el, 'touchend.touchfix' + '.' + self.namespace,
@@ -477,6 +481,10 @@ export class Core {
         tr.addEventListener('on.xt', onHandler);
         let offHandler = Xt.dataStorage.get(el, options.off + '.' + self.namespace);
         tr.addEventListener('off.xt', offHandler);
+        // @FIX off.xt when toggle and no options.off
+        if (options.toggle) {
+          tr.addEventListener('off.xt', onHandler);
+        }
       }
     }
     // auto
@@ -1235,7 +1243,8 @@ export class Core {
       return false;
     }
     // toggle
-    if (force || self.checkOn(element)) {
+    if (force || self.checkOn(element)
+      && (!e || !e.type || e.type !== 'off.xt')) { // @FIX off.xt when toggle and no options.off
       // auto
       if (options.auto && options.auto.time) {
         self.eventAutoStop();
@@ -1296,7 +1305,8 @@ export class Core {
       }
       // activated
       return true;
-    } else if (options.toggle && (!e || !e.detail || !e.detail.skipToggle)) { // not when skipToggle
+    } else if (options.toggle
+      && (!e || !e.type || e.type !== 'on.xt')) { // @FIX off.xt when toggle and no options.off
       // off
       self.eventOff(element, e);
     }
