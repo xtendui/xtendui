@@ -2105,7 +2105,13 @@ export class Core {
       for (let composed of e.composedPath()) {
         if (composed === document.scrollingElement // always when scrollingElement
           || getComputedStyle(composed).overflowY === 'scroll') {
-          elFinal = composed;
+          if (composed.scrollHeight > composed.clientHeight) { // when scrollable
+            elFinal = composed;
+          } else if (window.self !== window.top) {
+            elFinal = window.top.document.scrollingElement;
+          } else {
+            elFinal = window.self.document.scrollingElement;
+          }
           break;
         }
       }
@@ -2350,6 +2356,12 @@ export class Core {
         if (!backdrop.length) {
           backdrop = Xt.createElement('<div class="backdrop xt-ignore"></div>');
           element.append(backdrop);
+          // @FIX pass wheel event or when you mousewheel over .backdrop it doesn't scroll
+          let eWheel = 'onwheel' in backdrop ? 'wheel' : backdrop.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
+          backdrop.addEventListener(eWheel, function(e) {
+            let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY;
+            element.scrollTop -= delta;
+          }, Xt.passiveSupported ? {passive: false} : false);
         }
       }
     }

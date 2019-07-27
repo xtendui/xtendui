@@ -9,10 +9,9 @@
   .btn--close.overlay_dismiss {
     .btn--primary();
   }
-  .overlay_content--menu {
+  .overlay_menu {
     .list();
     .list-space(none);
-    .flex--auto();
     height: 63px;
     background: @primary;
     > .btn {
@@ -20,23 +19,16 @@
       align-items: center;
     }
   }
-  .overlay_content--title {
-    border-bottom: 1px solid @gray--500;
-  }
-  .overlay_content--foot {
-    border-top: 1px solid @gray--500;
-  }
   // animation
   &.active {
-    .overlay_content--menu {
+    .overlay_menu {
       .anim-y.active();
       animation-delay: @time--small;
     }
   }
   &.out {
-    .overlay_content--menu {
-      .anim-y.out();
-      animation-delay: @time--small;
+    .overlay_menu {
+      .anim-y-inverse.out();
     }
   }
 }

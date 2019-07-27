@@ -17,6 +17,10 @@ export const htmlSource = `
                 ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
               <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
                 justo.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+              <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
+                justo.</p>
 
               <div data-xt-overlay>
                 <button type="button" class="btn btn--primary">
@@ -38,6 +42,10 @@ export const htmlSource = `
                           ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
                         <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui
                           sem id
+                          justo.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
+                          ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
+                        <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
                           justo.</p>
                         <div class="drop_outer" data-xt-drop='{"backdrop": true}'>
                           <button type="button" class="btn btn--primary">

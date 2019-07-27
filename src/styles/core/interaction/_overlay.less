@@ -34,10 +34,15 @@
 }
 
 .overlay_inner {
+  .align-self(center);
   position: relative;
   z-index: @index--overlay;
   width: 100%;
-  .align-self(center);
+}
+
+.overlay_content {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 // addons
@@ -52,6 +57,11 @@
       position: static;
     }
   }
+  .overlay_inner {
+    .flex--auto();
+    display: flex;
+    flex-direction: column;
+  }
   > .backdrop {
     .trans-anim-none() !important;
     opacity: 0 !important;
@@ -62,11 +72,15 @@
   .overlay {
     position: relative;
     z-index: @index--overlay;
-    justify-content: flex-start;
     .padding(all, none) !important;
     .overlay_inner {
       position: static;
     }
+  }
+  .overlay_inner {
+    .flex--auto();
+    display: flex;
+    flex-direction: column;
   }
   .overlay--left& {
     .overlay {
@@ -87,7 +101,10 @@
 .overlay--disable {
   .xt-disable();
   display: flex !important;
-  overflow: auto !important;
+  overflow: initial !important;
+  html.xt-scrollbar & {
+    overflow: initial !important;
+  }
   position: static;
   z-index: initial;
   top: auto;

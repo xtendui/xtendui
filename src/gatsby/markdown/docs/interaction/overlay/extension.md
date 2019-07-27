@@ -19,15 +19,6 @@ Change class to add to `html` element on activation. `"classHtml": String`.
   </div>
 </demo>
 
-##Content
-
-You can add as many overlay content as you like. `.overlay_content--menu` `.overlay_content--title`.
-
-<demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/overlay/content" data-name="content">
-  </div>
-</demo>
-
 ##Close fixed
 
 Put `.btn--close_fixed.xt-fixed` outside.
