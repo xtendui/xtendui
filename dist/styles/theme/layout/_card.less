@@ -4,8 +4,12 @@
 
 .card {
   // styles
-  > .card_design, > .card_content {
-    border-radius: .75rem;
+  border-radius: .75rem;
+  > .card_content {
+    border-radius: inherit;
+  }
+  > .card_design {
+    border-radius: inherit;
     border-width: 0;
     border-style: solid;
     border-color: transparent;
@@ -37,22 +41,22 @@
 // variant
 
 .card--dark {
+  > .card_content {
+    .text--inverse();
+  }
   > .card_design {
     border-color: @gray--900;
     background: linear-gradient(135deg, @grad--dark);
   }
-  > .card_content {
-    .text--inverse();
-  }
 }
 
 .card--light {
+  > .card_content {
+    color: @text;
+  }
   > .card_design {
     border-color: @gray--300;
     background: linear-gradient(135deg, @grad--light);
-  }
-  > .card_content {
-    color: @text;
   }
 }
 

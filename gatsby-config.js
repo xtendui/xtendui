@@ -37,7 +37,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-root-import`,
       options: {
-        "xtend-library": path.join(__dirname, `src/scripts/xtend.js`),
+        "xtend-library": path.join(__dirname, ``),
         assets: path.join(__dirname, `src/gatsby/assets`),
         components: path.join(__dirname, `src/gatsby/components`),
       },

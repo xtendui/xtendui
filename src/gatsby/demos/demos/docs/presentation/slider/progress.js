@@ -28,10 +28,10 @@ demo.htmlSource = `
             <div class="card_design"></div>
             <div class="card_content">
               <h1>1</h1>
-              <div class="loader loader--x loader--size-bottom loader--js">
-                <div class="filler">
-                  <span></span><span></span>
-                </div>
+            </div>
+            <div class="loader loader--x loader--size-bottom loader--js">
+              <div class="filler">
+                <span></span><span></span>
               </div>
             </div>
           </div>
@@ -46,10 +46,10 @@ demo.htmlSource = `
             <div class="card_design"></div>
             <div class="card_content">
               <h1>2</h1>
-              <div class="loader loader--x loader--size-bottom loader--js">
-                <div class="filler">
-                  <span></span><span></span>
-                </div>
+            </div>
+            <div class="loader loader--x loader--size-bottom loader--js">
+              <div class="filler">
+                <span></span><span></span>
               </div>
             </div>
           </div>
@@ -64,10 +64,10 @@ demo.htmlSource = `
             <div class="card_design"></div>
             <div class="card_content">
               <h1>3</h1>
-              <div class="loader loader--x loader--size-bottom loader--js">
-                <div class="filler">
-                  <span></span><span></span>
-                </div>
+            </div>
+            <div class="loader loader--x loader--size-bottom loader--js">
+              <div class="filler">
+                <span></span><span></span>
               </div>
             </div>
           </div>
@@ -82,10 +82,10 @@ demo.htmlSource = `
             <div class="card_design"></div>
             <div class="card_content">
               <h1>4</h1>
-              <div class="loader loader--x loader--size-bottom loader--js">
-                <div class="filler">
-                  <span></span><span></span>
-                </div>
+            </div>
+            <div class="loader loader--x loader--size-bottom loader--js">
+              <div class="filler">
+                <span></span><span></span>
               </div>
             </div>
           </div>
@@ -100,10 +100,10 @@ demo.htmlSource = `
             <div class="card_design"></div>
             <div class="card_content">
               <h1>5</h1>
-              <div class="loader loader--x loader--size-bottom loader--js">
-                <div class="filler">
-                  <span></span><span></span>
-                </div>
+            </div>
+            <div class="loader loader--x loader--size-bottom loader--js">
+              <div class="filler">
+                <span></span><span></span>
               </div>
             </div>
           </div>
@@ -116,9 +116,11 @@ demo.htmlSource = `
 
   <nav class="slider_pagination">
     <button type="button" class="xt-ignore" data-xt-pag>
-      <span class="loader loader--y loader--js">
-        <span class="filler">
-          <span></span><span></span>
+      <span>
+        <span class="loader loader--y loader--js">
+          <span class="filler">
+            <span></span><span></span>
+          </span>
         </span>
       </span>
     </button>

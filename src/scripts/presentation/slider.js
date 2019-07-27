@@ -293,10 +293,10 @@ export class Slider extends Core {
             slideWidth += w;
             target.children[0].style.width = w + 'px';
             // @FIX xt-wrap clone offsetHeight on autoHeight
-            slideHeightTemp = cloneSource.offsetHeight;
+            slideHeightTemp = cloneSource.children[0].offsetHeight;
           } else {
             slideWidth += target.offsetWidth;
-            slideHeightTemp = target.offsetHeight;
+            slideHeightTemp = target.children[0].offsetHeight;
           }
           slidesWidth += slideWidth;
           slideHeight = slideHeightTemp > slideHeight ? slideHeightTemp : slideHeight;
@@ -584,7 +584,7 @@ export class Slider extends Core {
     }
     // autoHeight
     if (self.autoHeight) {
-      let slideHeight = slide.offsetHeight;
+      let slideHeight = slide.children[0].offsetHeight;
       let groupHeight = Xt.dataStorage.get(slide, self.componentNamespace + 'GroupHeight');
       slideHeight = groupHeight > slideHeight ? groupHeight : slideHeight;
       slideHeight += 'px';

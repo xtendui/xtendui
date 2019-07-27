@@ -34,7 +34,7 @@ import BezierEasing from "bezier-easing";
       // on elements
       let elements = self.elements.filter(x => x.classList.contains('active'));
       for (let element of elements) {
-        let fillers = element.querySelectorAll('.filler span:nth-child(2)');
+        let fillers = element.querySelectorAll('.filler span:nth-child(1)');
         for (let filler of fillers) {
           TweenMax.set(filler, {height: 0, top: '100%', ease: easeOut});
           TweenMax.to(filler, self.options.auto.time / 1000, {height: '100%', top: 0, ease: easeOut});
@@ -43,7 +43,7 @@ import BezierEasing from "bezier-easing";
       // on targets
       let targets = self.targets.filter(x => x.classList.contains('active'));
       for (let target of targets) {
-        let fillers = target.querySelectorAll('.filler span:nth-child(2)');
+        let fillers = target.querySelectorAll('.filler span:nth-child(1)');
         for (let filler of fillers) {
           TweenMax.set(filler, {width: 0, left: 0, ease: easeOut});
           TweenMax.to(filler, self.options.auto.time / 1000, {width: '100%', left: 0, ease: easeOut});
@@ -57,7 +57,7 @@ import BezierEasing from "bezier-easing";
       // on elements
       let elements = self.elements.filter(x => x.classList.contains('active'));
       for (let element of elements) {
-        let fillers = element.querySelectorAll('.filler span:nth-child(2)');
+        let fillers = element.querySelectorAll('.filler span:nth-child(1)');
         for (let filler of fillers) {
           TweenMax.to(filler, timeHide / 1000, {height: 0, top: 0, ease: easeOut});
         }
@@ -65,7 +65,7 @@ import BezierEasing from "bezier-easing";
       // on targets
       let targets = self.targets.filter(x => x.classList.contains('active'));
       for (let target of targets) {
-        let fillers = target.querySelectorAll('.filler span:nth-child(2)');
+        let fillers = target.querySelectorAll('.filler span:nth-child(1)');
         for (let filler of fillers) {
           TweenMax.to(filler, timeHide / 1000, {width: 0, left: '100%', ease: easeOut});
         }
@@ -78,7 +78,7 @@ import BezierEasing from "bezier-easing";
       // on elements
       let elements = self.elements.filter(x => x.classList.contains('active'));
       for (let element of elements) {
-        let fillers = element.querySelectorAll('.filler span:nth-child(2)');
+        let fillers = element.querySelectorAll('.filler span:nth-child(1)');
         for (let filler of fillers) {
           TweenMax.to(filler, timeHide / 1000, {height: 0, top: '100%', ease: easeOut});
         }
@@ -86,7 +86,7 @@ import BezierEasing from "bezier-easing";
       // on targets
       let targets = self.targets.filter(x => x.classList.contains('active'));
       for (let target of targets) {
-        let fillers = target.querySelectorAll('.filler span:nth-child(2)');
+        let fillers = target.querySelectorAll('.filler span:nth-child(1)');
         for (let filler of fillers) {
           TweenMax.to(filler, timeHide / 1000, {width: 0, left: 0, ease: easeOut});
         }
