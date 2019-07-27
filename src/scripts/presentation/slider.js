@@ -169,7 +169,7 @@ export class Slider extends Core {
             cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapLast' + i);
             self.targets.push(cloned);
             wrapLastCount -= slide.offsetWidth;
-            if (wrapLastCount < 0) { // we add one more with < 0, use <= 0 to wrap only size
+            if (wrapLastCount <= - draggerWidth * (options.drag.wrap - 1)) {
               break wrapLastLabel;
             }
           }
@@ -188,7 +188,7 @@ export class Slider extends Core {
             cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapFirst' + i);
             self.targets.unshift(cloned);
             wrapFirstCount -= slide.offsetWidth;
-            if (wrapFirstCount < 0) { // we add one more with < 0, use <= 0 to wrap only size
+            if (wrapFirstCount <= - draggerWidth * (options.drag.wrap - 1)) {
               break wrapFirstLabel;
             }
           }

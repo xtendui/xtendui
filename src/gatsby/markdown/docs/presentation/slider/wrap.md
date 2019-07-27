@@ -23,9 +23,16 @@ You can wrap the slides with `"drag": {"wrap": true}`.
   </div>
 </demo>
 
-####Tests
+You can set `"drag": {"wrap": Number}` where `Number` is how many times to cover the dragger with wrap (setting `1` is the same as `true`).
 
-Test with aligment and no overflow.
+It's useful sometimes if the wrap isn't long enough when dragging.
+
+<demo>
+  <div class="demo_item" data-iframe="demos/docs/presentation/slider/wrap-number" data-name="number">
+  </div>
+</demo>
+
+With `"drag": {"wrap": true, "overflow": false}` you don't have the drag overflow on wrap.
 
 <demo>
   <div class="demo_item" data-iframe="demos/docs/presentation/slider/wrap-left" data-name="left">
