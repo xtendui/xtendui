@@ -13,10 +13,10 @@ export const htmlSource = `
     <button type="button" class="btn">
       <span>Toggle 3</span>
     </button>
-    <button type="button" class="btn xt-ignore" data-xt-nav="-1">
+    <button type="button" class="btn xt-ignore" data-xt-nav="-1" title="Previous slide">
       <span class="icon-xt--chevron-left"></span>
     </button>
-    <button type="button" class="btn xt-ignore" data-xt-nav="1">
+    <button type="button" class="btn xt-ignore" data-xt-nav="1" title="Next slide">
       <span class="icon-xt--chevron-right"></span>
     </button>
     <div class="alert toggle--block">

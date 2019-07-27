@@ -93,13 +93,31 @@ demo.htmlSource = `
         </div>
       </li>
 
+      <li class="slide col--6 col--4-sm">
+        <div class="slide_inner">
+
+          <div class="card card--big text-align--center">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>5</h1>
+            </div>
+            <div class="loader loader--x loader--size-bottom loader--js">
+              <div class="filler">
+                <span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
       <li class="slide col--12">
         <div class="slide_inner">
 
           <div class="card card--big text-align--center" style="height: 15rem;">
             <div class="card_design"></div>
             <div class="card_content">
-              <h1>5</h1>
+              <h1>6</h1>
             </div>
             <div class="loader loader--x loader--size-bottom loader--js">
               <div class="filler">
@@ -115,7 +133,7 @@ demo.htmlSource = `
   </div>
 
   <nav class="slider_pagination">
-    <button type="button" class="xt-ignore" data-xt-pag>
+    <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
       <span>
         <span class="loader loader--y loader--js">
           <span class="filler">

@@ -34,13 +34,19 @@ Use this markup to create a drop.
     </div>
 
     <nav class="slider_pagination">
-      <button type="button" class="xt-ignore" data-xt-pag>
+      <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
         <span></span>
       </button>
     </nav>
 
   </div>
 </script>
+
+<div class="alert">
+  <div class="alert_content">
+    `slider_pagination[data-xt-pag].xt-ignore` is essential to the functioning of the slider, so if you don't want to show it add `.display--none`.
+  </div>
+</div>
 
 You can initialize **slider** by javascript omitting `[data-xt-slider]`.
 

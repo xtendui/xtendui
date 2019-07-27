@@ -231,12 +231,18 @@ export class Slider extends Core {
         // populate
         self.pags[z] = [];
         for (let [i, group] of arr.entries()) {
-          let item = cloned.cloneNode(true);
-          item.classList.remove('xt-ignore');
-          item.classList.add('xt-clone');
+          let item = document.createElement('div');
+          let clone = cloned.cloneNode(true);
+          clone.classList.remove('xt-ignore');
+          clone.classList.add('xt-clone');
+          item.appendChild(clone);
           let html = item.innerHTML;
           if (html.search(new RegExp('xt-content', 'ig')) !== -1) {
-            html = html.replace(new RegExp('xt-content', 'ig'), self.targets[i].querySelector('.slide_pagination_content').innerHTML);
+            let replace = '';
+            for (let slide of group) {
+              replace += slide.querySelector('.slide_pagination_content').innerHTML;
+            }
+            html = html.replace(new RegExp('xt-content', 'ig'), replace);
           }
           if (html.search(new RegExp('xt-num', 'ig')) !== -1) {
             html = html.replace(new RegExp('xt-num', 'ig'), (i - self.groupMqFirst.length + 1).toString());
@@ -245,8 +251,9 @@ export class Slider extends Core {
             html = html.replace(new RegExp('xt-tot', 'ig'), self.groupMqInitial.length.toString());
           }
           item.innerHTML = html;
-          item.setAttribute('data-xt-group', group[0].getAttribute('data-xt-group'));
-          container.insertBefore(item, cloned);
+          item.children[0].setAttribute('data-xt-group', group[0].getAttribute('data-xt-group'));
+          container.insertBefore(item.children[0], cloned);
+          item.remove();
           self.pags[z][i] = item;
           // drag wrap
           if (self.dragger && options.drag.wrap) {
@@ -1003,7 +1010,7 @@ Slider.optionsDefault = {
   },
   // slider only
   "autoHeight": ".slides",
-  "groupMq": {"all": 0.8},
+  "groupMq": {"all": 1},
   "align": "center",
   "contain": false,
   "pagination": ".slider_pagination",

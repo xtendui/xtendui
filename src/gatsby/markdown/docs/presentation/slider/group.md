@@ -10,15 +10,20 @@ parent: "Slider"
 
 ###Group
 
-With `"groupMq": {MediaQuery: Number}` you can set a decimal number from 0 to 1 for the available width factor for groupMq. Set to `false` to disable automatic grouping of slides.
-  
-If a slide is bigger, it takes up a single slide anyway.
+With `"groupMq": {MediaQuery: Number}` you set a decimal number from 0 to 1 to group the slides with a factor of the **drag.dragger** width available.
 
-it's based on the current slides visible inside the slider, it get recalculated also on responsive.
+`MediaQuery` is a media query, you can have multiple, for example `"groupMq": {"all": 1, "(min-width: 768px)": 0.8}`.
+
+By default it's set to `"groupMq": {"all": 1}`.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/group-available" data-name="available">
+  <div class="demo_item" data-iframe="demos/docs/presentation/slider/group-responsive" data-name="responsive">
   </div>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/group-disable" data-name="disable">
+</demo>
+
+Set to `"groupMq": false` to disable automatic grouping of slides.
+
+<demo>
+  <div class="demo_item" data-iframe="demos/docs/presentation/slider/group-false" data-name="false">
   </div>
 </demo>

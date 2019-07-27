@@ -1,8 +1,8 @@
 ---
-path: "/docs/presentation/slider/wrap"
+path: "/docs/presentation/slider/drag"
 type: "docs"
 date: "2019-04-01"
-title: "Wrap"
+title: "Drag"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["400-Presentation"]
 parent: "Slider"
@@ -23,7 +23,7 @@ You can wrap the slides with `"drag": {"wrap": true}`.
   </div>
 </demo>
 
-You can set `"drag": {"wrap": Number}` where `Number` is how many times to cover the dragger with wrap (setting `1` is the same as `true`).
+You can set `"drag": {"wrap": Number}` where `Number` is how many times to cover the **drag.dragger** with wrap (setting `1` is the same as `true`).
 
 It's useful sometimes if the wrap isn't long enough when dragging.
 
@@ -40,3 +40,18 @@ With `"drag": {"wrap": true, "overflow": false}` you don't have the drag overflo
   <div class="demo_item" data-iframe="demos/docs/presentation/slider/wrap-right" data-name="right">
   </div>
 </demo>
+
+###Friction
+
+You can set friction with `"drag": {"friction": Function}`, for example `"drag": {"friction": "return Math.pow(velocity, 0.9)"}`.
+
+You can disable friction with `"drag": {"friction": false}`.
+
+<demo>
+  <div class="demo_item" data-iframe="demos/docs/presentation/slider/friction-false" data-name="false">
+  </div>
+</demo>
+
+###Overflow
+
+You can set overflow with `"drag": {"overflow": Function}`, for example `"drag": {"overflow": "return Math.pow(overflow, 0.73)"}`.

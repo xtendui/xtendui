@@ -11,7 +11,7 @@ const demo = {
 }
 demo.htmlSource = `
 <div class="slider"
-     data-xt-slider='{"groupMq": false}'>
+     data-xt-slider='{"groupMq": {"all": 1, "(min-width: 768px)": 0.8}}'>
 
   <div class="slides">
     <ul class="slides_inner">
@@ -68,10 +68,10 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide col--12">
+      <li class="slide col--6 col--4-sm">
         <div class="slide_inner">
 
-          <div class="card card--big text-align--center" style="height: 15rem;">
+          <div class="card card--big text-align--center">
             <div class="card_design"></div>
             <div class="card_content">
               <h1>5</h1>
@@ -81,12 +81,24 @@ demo.htmlSource = `
         </div>
       </li>
 
+      <li class="slide col--12">
+        <div class="slide_inner">
+
+          <div class="card card--big text-align--center" style="height: 15rem;">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>6</h1>
+            </div>
+          </div>
+
+        </div>
+      </li>
     </ul>
   </div>
 
   <nav class="slider_pagination">
     <div class="list list-space--small align-items--center">
-      <button type="button" class="xt-ignore" data-xt-pag>
+      <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
         <span></span>
       </button>
     </div>

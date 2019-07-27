@@ -22,16 +22,10 @@ demo.htmlSource = `
           <div class="card card--big text-align--center">
             <div class="card_design"></div>
             <div class="card_content">
-              <h1>1</h1>
+              <h1 class="slide_pagination_content">1</h1>
               <nav class="slider_pagination">
-                <button type="button" class="btn xt-ignore" data-xt-nav="-1">
-                  <span class="icon-xt--chevron-left"></span>
-                </button>
-                <button type="button" class="xt-ignore" data-xt-pag>
+                <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
                   <span></span>
-                </button>
-                <button type="button" class="btn xt-ignore" data-xt-nav="1">
-                  <span class="icon-xt--chevron-right"></span>
                 </button>
               </nav>
             </div>
@@ -46,16 +40,10 @@ demo.htmlSource = `
           <div class="card card--big text-align--center">
             <div class="card_design"></div>
             <div class="card_content">
-              <h1>2</h1>
+              <h1 class="slide_pagination_content">2</h1>
               <nav class="slider_pagination">
-                <button type="button" class="btn xt-ignore" data-xt-nav="-1">
-                  <span class="icon-xt--chevron-left"></span>
-                </button>
-                <button type="button" class="xt-ignore" data-xt-pag>
+                <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
                   <span></span>
-                </button>
-                <button type="button" class="btn xt-ignore" data-xt-nav="1">
-                  <span class="icon-xt--chevron-right"></span>
                 </button>
               </nav>
             </div>
@@ -70,16 +58,10 @@ demo.htmlSource = `
           <div class="card card--big text-align--center">
             <div class="card_design"></div>
             <div class="card_content">
-              <h1>3</h1>
+              <h1 class="slide_pagination_content">3</h1>
               <nav class="slider_pagination">
-                <button type="button" class="btn xt-ignore" data-xt-nav="-1">
-                  <span class="icon-xt--chevron-left"></span>
-                </button>
-                <button type="button" class="xt-ignore" data-xt-pag>
+                <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
                   <span></span>
-                </button>
-                <button type="button" class="btn xt-ignore" data-xt-nav="1">
-                  <span class="icon-xt--chevron-right"></span>
                 </button>
               </nav>
             </div>
@@ -94,16 +76,28 @@ demo.htmlSource = `
           <div class="card card--big text-align--center">
             <div class="card_design"></div>
             <div class="card_content">
-              <h1>4</h1>
+              <h1 class="slide_pagination_content">4</h1>
               <nav class="slider_pagination">
-                <button type="button" class="btn xt-ignore" data-xt-nav="-1">
-                  <span class="icon-xt--chevron-left"></span>
-                </button>
-                <button type="button" class="xt-ignore" data-xt-pag>
+                <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
                   <span></span>
                 </button>
-                <button type="button" class="btn xt-ignore" data-xt-nav="1">
-                  <span class="icon-xt--chevron-right"></span>
+              </nav>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col--6 col--4-sm">
+        <div class="slide_inner">
+
+          <div class="card card--big text-align--center">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1 class="slide_pagination_content">5</h1>
+              <nav class="slider_pagination">
+                <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
+                  <span></span>
                 </button>
               </nav>
             </div>
@@ -118,16 +112,10 @@ demo.htmlSource = `
           <div class="card card--big text-align--center" style="height: 15rem;">
             <div class="card_design"></div>
             <div class="card_content">
-              <h1>5</h1>
+              <h1 class="slide_pagination_content">6</h1>
               <nav class="slider_pagination">
-                <button type="button" class="btn xt-ignore" data-xt-nav="-1">
-                  <span class="icon-xt--chevron-left"></span>
-                </button>
-                <button type="button" class="xt-ignore" data-xt-pag>
+                <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
                   <span></span>
-                </button>
-                <button type="button" class="btn xt-ignore" data-xt-nav="1">
-                  <span class="icon-xt--chevron-right"></span>
                 </button>
               </nav>
             </div>
@@ -140,14 +128,8 @@ demo.htmlSource = `
   </div>
 
   <nav class="slider_pagination">
-    <button type="button" class="btn xt-ignore" data-xt-nav="-1">
-      <span><span class="icon-xt--chevron-left icon--left"></span> prev</span>
-    </button>
-    <button type="button" class="xt-ignore" data-xt-pag>
-      <span>xt-num of xt-tot</span>
-    </button>
-    <button type="button" class="btn xt-ignore" data-xt-nav="1">
-      <span>next <span class="icon-xt--chevron-right icon--right"></span></span>
+    <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
+      <span>xt-num of xt-tot : xt-content</span>
     </button>
   </nav>
 

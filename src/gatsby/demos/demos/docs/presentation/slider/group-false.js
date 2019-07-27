@@ -11,7 +11,7 @@ const demo = {
 }
 demo.htmlSource = `
 <div class="slider"
-     data-xt-slider='{"align": "center"}'>
+     data-xt-slider='{"groupMq": false}'>
 
   <div class="slides">
     <ul class="slides_inner">
@@ -67,6 +67,7 @@ demo.htmlSource = `
 
         </div>
       </li>
+
 
       <li class="slide col--6 col--4-sm">
         <div class="slide_inner">
