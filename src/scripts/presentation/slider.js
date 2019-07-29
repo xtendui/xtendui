@@ -231,7 +231,7 @@ export class Slider extends Core {
         // populate
         self.pags[z] = [];
         for (let [i, group] of arr.entries()) {
-          let item = document.createElement('div');
+          let item = document.createElement('div'); // needed to set innerHTML instead of outerHTML to do html.search also attributes
           let clone = cloned.cloneNode(true);
           clone.classList.remove('xt-ignore');
           clone.classList.add('xt-clone');
@@ -254,7 +254,7 @@ export class Slider extends Core {
           item.children[0].setAttribute('data-xt-group', group[0].getAttribute('data-xt-group'));
           container.insertBefore(item.children[0], cloned);
           item.remove();
-          self.pags[z][i] = item;
+          self.pags[z][i] = container.querySelectorAll('[data-xt-pag].xt-clone')[i];
           // drag wrap
           if (self.dragger && options.drag.wrap) {
             let min = self.groupMqFirst.length;
