@@ -984,7 +984,6 @@ Slider.optionsDefault = {
   "elements": "[data-xt-pag]",
   "targets": ".slide",
   "on": "click",
-  "toggle": false,
   "min": 1,
   "max": 1,
   "instant": true,

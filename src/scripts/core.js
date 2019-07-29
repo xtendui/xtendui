@@ -89,8 +89,8 @@ export class Core {
       "classInverse": "inverse",
       "instant": false,
       "autoClose": false,
-      "onBlock": false,
-      "offBlock": false,
+      "onBlock": 20, // @FIX fast clicks with delay
+      "offBlock": 20, // @FIX fast clicks with delay
       "loop": true,
       "jump": false,
       "imageLoadedInit": false,
@@ -430,8 +430,6 @@ export class Core {
   initEvents() {
     let self = this;
     let options = self.options;
-    // toggle
-    options.toggle = options.toggle !== undefined ? options.toggle : !options.off;
     // status
     let checkHandler = Xt.dataStorage.put(window, 'resize.check' + '.' + self.namespace,
       self.eventStatusHandler.bind(self).bind(self));
@@ -448,8 +446,8 @@ export class Core {
           el.addEventListener(event, onHandler);
         }
         el.addEventListener('on.xt', onHandler);
-        // @FIX off.xt when toggle and no options.off
-        if (options.toggle) {
+        // @FIX off.xt toggle
+        if (!options.off) {
           el.addEventListener('off.xt', onHandler);
         }
         // @FIX prevents click on touch until clicked two times
@@ -460,7 +458,7 @@ export class Core {
         }
       }
       // event off
-      if (options.off || (options.on && options.toggle)) {
+      if (options.off) {
         let offHandler = Xt.dataStorage.put(el, options.off + '.' + self.namespace,
           self.eventOffHandler.bind(self).bind(self, el));
         if (options.off) {
@@ -481,8 +479,8 @@ export class Core {
         tr.addEventListener('on.xt', onHandler);
         let offHandler = Xt.dataStorage.get(el, options.off + '.' + self.namespace);
         tr.addEventListener('off.xt', offHandler);
-        // @FIX off.xt when toggle and no options.off
-        if (options.toggle) {
+        // @FIX off.xt toggle
+        if (!options.off) {
           tr.addEventListener('off.xt', onHandler);
         }
       }
@@ -1220,7 +1218,7 @@ export class Core {
     }
     // toggle
     if (force || self.checkOn(element)
-      && (!e || !e.type || e.type !== 'off.xt')) { // @FIX off.xt when toggle and no options.off
+      && (!e || !e.type || e.type !== 'off.xt')) { // @FIX off.xt toggle
       // auto
       if (options.auto && options.auto.time) {
         self.eventAutoStop();
@@ -1281,8 +1279,7 @@ export class Core {
       }
       // activated
       return true;
-    } else if (options.toggle
-      && (!e || !e.type || e.type !== 'on.xt')) { // @FIX off.xt when toggle and no options.off
+    } else if ((!e || !e.type || e.type !== 'on.xt')) { // @FIX off.xt toggle
       // off
       self.eventOff(element, e);
     }
@@ -1560,11 +1557,11 @@ export class Core {
    * @param {String} type Type of element
    * @param {Boolean} skipQueue If skip queue
    */
-  queueOnDone(obj, type, skipQueue = false) {
+  queueOnDone(obj, type) {
     let self = this;
     let options = self.options;
     // check
-    if (obj[type] && !skipQueue) {
+    if (obj[type]) {
       // done
       obj[type].done = true;
       let done = 0;
@@ -1836,12 +1833,12 @@ export class Core {
     // queue
     if (!skipQueue) {
       self.queueOnAnim(obj, el, type);
-    }
-    // queue done
-    if (typeof options.instant === 'object' && options.instant[type]) {
-      let els = obj[type].queueEls;
-      if (el === els[els.length - 1]) { // only if last element
-        self.queueOnDone(obj, type, skipQueue);
+      // queue done
+      if (typeof options.instant === 'object' && options.instant[type]) {
+        let els = obj[type].queueEls;
+        if (el === els[els.length - 1]) { // only if last element
+          self.queueOnDone(obj, type);
+        }
       }
     }
     // listener dispatch
@@ -1870,12 +1867,12 @@ export class Core {
     // queue
     if (!skipQueue) {
       self.queueOffAnim(obj, el, type);
-    }
-    // queue done
-    if (typeof options.instant === 'object' && options.instant[type]) {
-      let els = obj[type].queueEls;
-      if (el === els[els.length - 1]) { // only if last element
-        self.queueOffDone(obj, type, skipQueue);
+      // queue done
+      if (typeof options.instant === 'object' && options.instant[type]) {
+        let els = obj[type].queueEls;
+        if (el === els[els.length - 1]) { // only if last element
+          self.queueOffDone(obj, type);
+        }
       }
     }
     // listener dispatch
@@ -1952,11 +1949,14 @@ export class Core {
         }
       }
     }
-    // queue done
-    if (options.instant === false || (typeof options.instant === 'object' && !options.instant[type])) {
-      let els = obj[type].queueEls;
-      if (el === els[els.length - 1]) { // only if last element
-        self.queueOnDone(obj, type, skipQueue);
+    // queue
+    if (!skipQueue) {
+      // queue done
+      if (options.instant === false || (typeof options.instant === 'object' && !options.instant[type])) {
+        let els = obj[type].queueEls;
+        if (el === els[els.length - 1]) { // only if last element
+          self.queueOnDone(obj, type);
+        }
       }
     }
     // listener dispatch
@@ -2016,11 +2016,14 @@ export class Core {
         }
       }
     }
-    // queue done
-    if (options.instant === false || (typeof options.instant === 'object' && !options.instant[type])) {
-      let els = obj[type].queueEls;
-      if (el === els[els.length - 1]) { // only if last element
-        self.queueOffDone(obj, type, skipQueue);
+    // queue
+    if (!skipQueue) {
+      // queue done
+      if (options.instant === false || (typeof options.instant === 'object' && !options.instant[type])) {
+        let els = obj[type].queueEls;
+        if (el === els[els.length - 1]) { // only if last element
+          self.queueOffDone(obj, type);
+        }
       }
     }
     // listener dispatch

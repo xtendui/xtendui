@@ -10,7 +10,7 @@ import BezierEasing from "bezier-easing";
   // vars
 
   let time = 2000;
-  let easeOut = new Ease(BezierEasing(.14,.63,0,1));
+  let easeLinear = Power0.easeNone;
 
   let loader = document.querySelector('.loader');
 
@@ -23,7 +23,7 @@ import BezierEasing from "bezier-easing";
       loader.classList.add('active');
       loader.classList.remove('out');
       TweenMax.set(spinner, {strokeDashoffset: 628});
-      TweenMax.to(spinner, time / 1000, {strokeDashoffset: 0, ease: easeOut, autoRound: false});
+      TweenMax.to(spinner, time / 1000, {strokeDashoffset: 0, ease: easeLinear, autoRound: false});
       setTimeout(loaderTimeout, time);
     } else {
       loader.classList.remove('active');

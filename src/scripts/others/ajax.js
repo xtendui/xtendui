@@ -352,7 +352,6 @@ Ajax.optionsDefault = {
   "duration": false,
   "elements": "a[href]:not([href^='#'])",
   "on": "click",
-  "toggle": false,
   "min": 0,
   "max": 1,
   "instant": true,

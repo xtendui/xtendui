@@ -28,32 +28,32 @@ demo.htmlSource = `
   </div>
   <div class="alert toggle--block" data-xt-group="0">
     <div class="alert_content">
-      Group 0
+      Group 0a
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="1">
     <div class="alert_content">
-      Group 1
+      Group 1a
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="0">
     <div class="alert_content">
-      Group 0
+      Group 0b
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="0">
     <div class="alert_content">
-      Group 0
+      Group 0c
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="1">
     <div class="alert_content">
-      Group 1
+      Group 1b
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="1">
     <div class="alert_content">
-      Group 1
+      Group 1c
     </div>
   </div>
 </div>
@@ -78,32 +78,32 @@ demo.htmlSource = `
   </div>
   <div class="alert toggle--block" data-xt-group="0">
     <div class="alert_content">
-      Group 0
+      Group 0a
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="1">
     <div class="alert_content">
-      Group 1
+      Group 1a
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="0">
     <div class="alert_content">
-      Group 0
+      Group 0b
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="0">
     <div class="alert_content">
-      Group 0
+      Group 0c
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="1">
     <div class="alert_content">
-      Group 1
+      Group 1b
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="1">
     <div class="alert_content">
-      Group 1
+      Group 1c
     </div>
   </div>
 </div>
