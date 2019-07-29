@@ -260,7 +260,7 @@ export class Slider extends Core {
             let min = self.groupMqFirst.length;
             let max = self.groupMqFirst.length + self.groupMqInitial.length - 1;
             if (i < min || i > max) {
-              item.classList.add('xt-clone', 'xt-wrap', 'display--none');
+              self.pags[z][i].classList.add('xt-clone', 'xt-wrap', 'display--none');
             }
           }
         }

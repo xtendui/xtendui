@@ -149,7 +149,7 @@ export class Sticky extends Core {
     let self = this;
     // handler
     for (let tr of self.targets) {
-      let el = self.getElementsFromTarget(tr)[0];
+      let el = self.getTargets(tr)[0];
       // show element if is hiding on focus
       if (el.classList.contains('sticky--hide')) {
         let active = el.contains(e.target);
@@ -190,9 +190,8 @@ export class Sticky extends Core {
     // direction
     self.detail.inverseForce = scrollTop < self.detail.scrollTopOld;
     // loop
-    for (let tr of self.targets) {
-      let el = self.getElementsFromTarget(tr)[0];
-      el = el ? el : tr; // for not sticky: el is the same as tr
+    for (let el of self.elements) {
+      let tr = self.getTargets(el)[0];
       // vars
       let heightEl = parseFloat(getComputedStyle(el).height);
       let heightTr = parseFloat(getComputedStyle(tr).height);

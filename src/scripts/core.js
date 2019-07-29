@@ -374,7 +374,7 @@ export class Core {
           ariaEl.setAttribute('aria-selected', 'false');
         }
         for (let tr of self.targets) {
-          let els = self.getElementsFromTarget(tr);
+          let els = self.getTargets(tr);
           // expanded
           let role = tr.getAttribute('role');
           if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
@@ -474,7 +474,7 @@ export class Core {
     }
     // listener
     for (let tr of self.targets) {
-      let el = self.getElementsFromTarget(tr)[0];
+      let el = self.getTargets(tr)[0];
       if (el) {
         // event
         let onHandler = Xt.dataStorage.get(el, options.on + '.' + self.namespace);
@@ -941,97 +941,75 @@ export class Core {
   }
 
   /**
-   * choose which elements to activate/deactivate (based on xtend mode and containers)
-   * @param {Node|HTMLElement|EventTarget|Window} element Element that triggered interaction
+   * get elements (based on xtend mode and containers)
+   * @param {Node|HTMLElement|EventTarget|Window} el Element that triggered interaction
    * @returns {Object} object.all and object.single
    */
-  getElements(element) {
+  getElements(el) {
     let self = this;
     // getElements
     if (!self.elements || !self.elements.length) {
       return {all: [], single: null};
     }
-    if (self.mode === 'unique' || !element) {
+    if (self.mode === 'unique' || !el) {
       // choose all elements
       let final = self.elements;
       return {all: Xt.arrSingle(final), single: final.length > 1 ? final[0] : final};
     } else if (self.mode === 'multiple') {
       // choose element by group
-      let group = element.getAttribute('data-xt-group');
+      let final;
+      let group = el.getAttribute('data-xt-group');
+      let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group);
+      let groupTargets = Array.from(self.targets).filter(x => x.getAttribute('data-xt-group') === group);
       if (group) {
-        // all group elements if group
-        let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group);
-        let final = Xt.arrSingle(groupElements);
-        return {all: final, single: final[0]};
+        // all group targets if group
+        final = Xt.arrSingle(groupElements);
       } else {
-        // element if not group
-        let final = element;
-        return {all: Xt.arrSingle(final), single: final};
+        // not group targets by index if not group
+        if (Array.from(self.elements).includes(el)) { // @FIX when argument is already element
+          final = Xt.arrSingle(el);
+        } else {
+          let index = groupTargets.findIndex(x => x === el);
+          final = Xt.arrSingle(groupElements[index]);
+        }
       }
+      return {all: final, single: final[0]};
     }
   }
 
   /**
-   * choose which targets to activate/deactivate (based on xtend mode and containers)
-   * @param {Node|HTMLElement|EventTarget|Window} element Element that triggered interaction
+   * get targets (based on xtend mode and containers)
+   * @param {Node|HTMLElement|EventTarget|Window} el Element that triggered interaction
    * @returns {Array}
    */
-  getTargets(element) {
+  getTargets(el) {
     let self = this;
     // getTargets
     if (!self.targets || !self.targets.length) {
       return [];
     }
-    if (self.mode === 'unique' || !element) {
+    if (self.mode === 'unique' || !el) {
       // choose all targets
       return self.targets;
     } else if (self.mode === 'multiple') {
       // choose only target by group
-      let group = element.getAttribute('data-xt-group');
+      let final;
+      let group = el.getAttribute('data-xt-group');
       let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group);
       let groupTargets = Array.from(self.targets).filter(x => x.getAttribute('data-xt-group') === group);
-      let final;
       if (group) {
         // all group targets if group
-        final = groupTargets;
+        final = Xt.arrSingle(groupTargets);
       } else {
         // not group targets by index if not group
-        let index = groupElements.findIndex(x => x === element);
-        final = groupTargets[index];
+        if (Array.from(self.targets).includes(el)) { // @FIX when argument is already target
+          final = Xt.arrSingle(el);
+        } else {
+          let index = groupElements.findIndex(x => x === el);
+          final = Xt.arrSingle(groupTargets[index]);
+        }
       }
-      return Xt.arrSingle(final);
-    }
-  }
-
-  /**
-   * choose which elements to activate/deactivate from target (based on xtend mode and containers)
-   * @param {Node|HTMLElement|EventTarget|Window} target Target to trigger interaction on
-   * @returns {Array}
-   */
-  getElementsFromTarget(target) {
-    let self = this;
-    // getElementsFromTarget
-    if (!self.elements || !self.elements.length) {
-      return [];
-    }
-    if (self.mode === 'unique') {
-      // choose all targets
-      return self.elements;
-    } else if (self.mode === 'multiple') {
-      // choose only target by group
-      let group = target.getAttribute('data-xt-group');
-      let groupElements = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group);
-      let groupTargets = Array.from(self.targets).filter(x => x.getAttribute('data-xt-group') === group);
-      let final;
-      if (group) {
-        // all group targets if group
-        final = groupElements;
-      } else {
-        // not group targets by index if not group
-        let index = groupTargets.findIndex(x => x === target);
-        final = groupElements[index];
-      }
-      return Xt.arrSingle(final);
+      return final;
     }
   }
 
@@ -1102,13 +1080,14 @@ export class Core {
   }
 
   /**
-   * if element is in current (so shared between Xt objects)
+   * if element or target is in current (so shared between Xt objects)
    * @param {Node|HTMLElement|EventTarget|Window} element To be checked
    */
   hasCurrent(element) {
     let self = this;
     // hasCurrent
-    return Xt.currents[self.namespace].filter(x => x === element).length;
+    let groupElements = self.getElements(element);
+    return Xt.currents[self.namespace].filter(x => x === groupElements.single).length;
   }
 
   /**
@@ -1118,8 +1097,7 @@ export class Core {
   checkOn(element) {
     let self = this;
     // check
-    let groupElements = self.getElements(element);
-    return !self.hasCurrent(groupElements.single);
+    return !self.hasCurrent(element);
   }
 
   /**
@@ -1134,8 +1112,7 @@ export class Core {
       return false;
     }
     // check
-    let groupElements = self.getElements(element);
-    return self.hasCurrent(groupElements.single);
+    return self.hasCurrent(element);
   }
 
   /**
@@ -1145,7 +1122,6 @@ export class Core {
    */
   checkAnim(elements) {
     let self = this;
-    let options = self.options;
     // check
     elements = elements.filter(x => x.classList.contains(...self.classesIn) || x.classList.contains(...self.classesOut));
     return elements.length > 0;
@@ -1505,7 +1481,7 @@ export class Core {
       return false;
     }
     // jump
-    let element = self.getElementsFromTarget(el)[0];
+    let element = self.getTargets(el)[0];
     if (self.checkOn(element)) {
       self.eventOn(element);
     }

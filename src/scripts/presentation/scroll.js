@@ -165,9 +165,8 @@ export class Scroll extends Core {
     // direction
     self.detail.inverseForce = scrollTop < self.detail.scrollTopOld;
     // loop
-    for (let tr of self.targets) {
-      let el = self.getElementsFromTarget(tr)[0];
-      el = el ? el : tr; // for not sticky: el is the same as tr
+    for (let el of self.elements) {
+      let tr = self.getTargets(el)[0];
       if (!el.classList.contains('scroll--block') && Xt.visible(el)
         && tr.offsetParent) { // filter out document.documentElement
         // vars

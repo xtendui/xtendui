@@ -24,7 +24,7 @@ Xt.ready(function () {
   // drag
 
   self.dragger.addEventListener('drag.xt.slider', function (e) {
-    let target = self.targets.filter(x => x.classList.contains('active'))[0];
+    let target = self.targets.filter(x => self.hasCurrent(x))[0];
     let ratio = Math.abs(self.detail.xStart - self.detail.xCurrent) / target.clientWidth;
     // direction
     let direction = 1;
@@ -44,7 +44,7 @@ Xt.ready(function () {
   // dragend
 
   self.dragger.addEventListener('dragreset.xt.slider', function (e) {
-    let target = self.targets.filter(x => x.classList.contains('active'))[0];
+    let target = self.targets.filter(x => self.hasCurrent(x))[0];
     // mask
     TweenMax.set(target, {x: -self.detail.xPosOld + 'px'});
     TweenMax.to(target, timeMask, {x: 0, opacity: 1, ease: easeOut});

@@ -34,7 +34,7 @@ Xt.ready(function () {
       autoRound: false
     });
     // on elements
-    let elements = self.elements.filter(x => x.classList.contains('active'));
+    let elements = self.elements.filter(x => self.hasCurrent(x));
     for (let element of elements) {
       let fillers = element.querySelectorAll('.filler span:nth-child(1)');
       for (let filler of fillers) {
@@ -43,7 +43,7 @@ Xt.ready(function () {
       }
     }
     // on targets
-    let targets = self.targets.filter(x => x.classList.contains('active'));
+    let targets = self.targets.filter(x => self.hasCurrent(x));
     for (let target of targets) {
       let fillers = target.querySelectorAll('.filler span:nth-child(1)');
       for (let filler of fillers) {
@@ -57,7 +57,7 @@ Xt.ready(function () {
 
   self.object.addEventListener('stop.xt.auto', function (e) {
     // on elements
-    let elements = self.elements.filter(x => x.classList.contains('active'));
+    let elements = self.elements.filter(x => self.hasCurrent(x));
     for (let element of elements) {
       let fillers = element.querySelectorAll('.filler span:nth-child(1)');
       for (let filler of fillers) {
@@ -65,7 +65,7 @@ Xt.ready(function () {
       }
     }
     // on targets
-    let targets = self.targets.filter(x => x.classList.contains('active'));
+    let targets = self.targets.filter(x => self.hasCurrent(x));
     for (let target of targets) {
       let fillers = target.querySelectorAll('.filler span:nth-child(1)');
       for (let filler of fillers) {
@@ -81,7 +81,7 @@ Xt.ready(function () {
     let spinner = self.object.querySelectorAll('.spinner svg:nth-child(1) circle');
     TweenMax.to(spinner, timeHide / 1000, {strokeDashoffset: 628, ease: easeOut, autoRound: false});
     // on elements
-    let elements = self.elements.filter(x => x.classList.contains('active'));
+    let elements = self.elements.filter(x => self.hasCurrent(x));
     for (let element of elements) {
       let fillers = element.querySelectorAll('.filler span:nth-child(1)');
       for (let filler of fillers) {
@@ -89,7 +89,7 @@ Xt.ready(function () {
       }
     }
     // on targets
-    let targets = self.targets.filter(x => x.classList.contains('active'));
+    let targets = self.targets.filter(x => self.hasCurrent(x));
     for (let target of targets) {
       let fillers = target.querySelectorAll('.filler span:nth-child(1)');
       for (let filler of fillers) {
