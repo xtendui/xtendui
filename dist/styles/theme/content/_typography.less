@@ -242,10 +242,10 @@ dl {
 
 .dl--block {
   dt {
-    .margin(top, small);
+    .padding(top, small);
   }
   dd {
-    .margin(top, tiny);
+    .padding(top, tiny);
   }
 }
 
@@ -253,10 +253,28 @@ dl {
 
 .dl--line {
   dt {
-    .margin(top, tiny);
+    .padding(top, tiny);
   }
   dd {
-    .margin(left, small);
-    .margin(top, tiny);
+    .padding(left, small);
+    .padding(top, tiny);
+  }
+}
+
+// .dl--horizontal
+
+.dl--horizontal {
+  text-align: left;
+  dt {
+    .padding(top, tiny);
+    .padding(right, small);
+    float: left;
+    clear: left;
+    width: 80px;
+  }
+  dd {
+    .padding(left, small);
+    .padding(top, tiny);
+    margin-left: 80px;
   }
 }
