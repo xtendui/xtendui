@@ -15,8 +15,8 @@ Xt.observe.push({
     self.unmount = function () {
       self = null;
     };
-  }
 
+  }
 });
 */
 

@@ -26,48 +26,48 @@ export const Xt = {
 };
 
 //////////////////////
+// components
+//////////////////////
+
+Xt.Core = Core;
+Xt.Toggle = Toggle;
+Xt.Drop = Drop;
+Xt.Overlay = Overlay;
+Xt.Smooth = Smooth;
+Xt.Slider = Slider;
+Xt.Scroll = Scroll;
+Xt.Sticky = Sticky;
+Xt.Ajax = Ajax;
+
+//////////////////////
+// vars
+//////////////////////
+
+Xt.debug = false;
+Xt.observe = [];
+Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
+Xt.resizeDelay = 100;
+Xt.scrollDelay = false;
+Xt.imageLoadedDelay = 50;
+Xt.focusables = 'a, button, details, input, iframe, select, textarea';
+Xt.components = [
+  {'name': 'xt-core', 'class': Xt.Core},
+  {'name': 'xt-toggle', 'class': Xt.Toggle},
+  {'name': 'xt-drop', 'class': Xt.Drop},
+  {'name': 'xt-overlay', 'class': Xt.Overlay},
+  {'name': 'xt-smooth', 'class': Xt.Smooth},
+  {'name': 'xt-slider', 'class': Xt.Slider},
+  {'name': 'xt-scroll', 'class': Xt.Scroll},
+  {'name': 'xt-sticky', 'class': Xt.Sticky},
+  {'name': 'xt-ajax', 'class': Xt.Ajax}
+];
+
+//////////////////////
 // call only if in browser mode
 // https://www.gatsbyjs.org/docs/debugging-html-builds/#how-to-check-if-code-classlanguage-textwindowcode-is-defined
 //////////////////////
 
 if (typeof window !== 'undefined') {
-
-  //////////////////////
-  // components
-  //////////////////////
-
-  Xt.Core = Core;
-  Xt.Toggle = Toggle;
-  Xt.Drop = Drop;
-  Xt.Overlay = Overlay;
-  Xt.Smooth = Smooth;
-  Xt.Slider = Slider;
-  Xt.Scroll = Scroll;
-  Xt.Sticky = Sticky;
-  Xt.Ajax = Ajax;
-
-  //////////////////////
-  // vars
-  //////////////////////
-
-  Xt.debug = false;
-  Xt.observe = [];
-  Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
-  Xt.resizeDelay = 100;
-  Xt.scrollDelay = false;
-  Xt.imageLoadedDelay = 50;
-  Xt.focusables = 'a, button, details, input, iframe, select, textarea';
-  Xt.components = [
-    {'name': 'xt-core', 'class': Xt.Core},
-    {'name': 'xt-toggle', 'class': Xt.Toggle},
-    {'name': 'xt-drop', 'class': Xt.Drop},
-    {'name': 'xt-overlay', 'class': Xt.Overlay},
-    {'name': 'xt-smooth', 'class': Xt.Smooth},
-    {'name': 'xt-slider', 'class': Xt.Slider},
-    {'name': 'xt-scroll', 'class': Xt.Scroll},
-    {'name': 'xt-sticky', 'class': Xt.Sticky},
-    {'name': 'xt-ajax', 'class': Xt.Ajax}
-  ];
 
   //////////////////////
   // component

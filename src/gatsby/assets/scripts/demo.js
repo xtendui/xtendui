@@ -364,6 +364,7 @@ if (typeof window !== 'undefined') {
   window.initIframe = function (name, htmlSource, jsSource, cssSource) {
     let src = 'iframe[name="' + name + '"]';
     let iframe = document.querySelector(src);
+    iframe.contentWindow.document.querySelector('html').classList.add('iframe-inside');
     let item = iframe.closest('.demo_item');
     item.classList.add('loaded');
     if (!item.classList.contains('populated')) {

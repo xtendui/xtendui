@@ -33,7 +33,7 @@
   }
 }
 
-.overflow-style() {
+.overflow-style(@size: none) {
   -webkit-overflow-scrolling: touch;
 }
 
@@ -182,7 +182,7 @@
 
 // responsive
 
-.responsive(@breakpoint:none) when (@breakpoint = none) {
+.responsive(@breakpoint: none) when (@breakpoint = none) {
   max-width: 100%;
   flex-shrink: 0; // fix ie11 images inside flex
   /*
@@ -193,7 +193,7 @@
   */
 }
 
-.responsive(@breakpoint:none) when (default()) {
+.responsive(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     max-width: 100%;
@@ -201,12 +201,12 @@
   }
 }
 
-.responsive-y(@breakpoint:none) when (@breakpoint = none) {
+.responsive-y(@breakpoint: none) when (@breakpoint = none) {
   max-height: 100%;
   flex-shrink: 0; // fix ie11 images inside flex
 }
 
-.responsive-y(@breakpoint:none) when (default()) {
+.responsive-y(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     max-height: 100%;
@@ -216,12 +216,12 @@
 
 // full
 
-.full(@breakpoint:none) when (@breakpoint = none) {
+.full(@breakpoint: none) when (@breakpoint = none) {
   max-width: none;
   width: 100%;
 }
 
-.full(@breakpoint:none) when (default()) {
+.full(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     max-width: none;
@@ -229,12 +229,12 @@
   }
 }
 
-.full-y(@breakpoint:none) when (@breakpoint = none) {
+.full-y(@breakpoint: none) when (@breakpoint = none) {
   max-height: none;
   height: 100%;
 }
 
-.full-y(@breakpoint:none) when (default()) {
+.full-y(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     max-height: none;
@@ -244,13 +244,13 @@
 
 // block
 
-.block(@breakpoint:none) when (@breakpoint = none) {
+.block(@breakpoint: none) when (@breakpoint = none) {
   display: inline-block;
   vertical-align: top; // fix inline-block spacing
   width: 100%;
 }
 
-.block(@breakpoint:none) when (default()) {
+.block(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     display: inline-block;
@@ -265,11 +265,11 @@
 
 // text-transform
 
-.text-transform(@val, @breakpoint:none) when (@breakpoint = none) {
+.text-transform(@val, @breakpoint: none) when (@breakpoint = none) {
   text-transform: @val;
 }
 
-.text-transform(@val, @breakpoint:none) when (default()) {
+.text-transform(@val, @breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     text-transform: @val;
@@ -278,11 +278,11 @@
 
 // text-align
 
-.text-align(@val, @breakpoint:none) when (@breakpoint = none) {
+.text-align(@val, @breakpoint: none) when (@breakpoint = none) {
   text-align: @val;
 }
 
-.text-align(@val, @breakpoint:none) when (default()) {
+.text-align(@val, @breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     text-align: @val;
@@ -295,11 +295,11 @@
 
 // float
 
-.float(@val, @breakpoint:none) when (@breakpoint = none) {
+.float(@val, @breakpoint: none) when (@breakpoint = none) {
   float: @val;
 }
 
-.float(@val, @breakpoint:none) when (default()) {
+.float(@val, @breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     float: @val;
@@ -312,11 +312,11 @@
 
 // display
 
-.display(@val, @breakpoint:none) when (@breakpoint = none) {
+.display(@val, @breakpoint: none) when (@breakpoint = none) {
   display: @val;
 }
 
-.display(@val, @breakpoint:none) when (default()) {
+.display(@val, @breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     display: @val;
@@ -329,11 +329,11 @@
 
 // visibility
 
-.visibility(@val, @breakpoint:none) when (@breakpoint = none) {
+.visibility(@val, @breakpoint: none) when (@breakpoint = none) {
   visibility: @val;
 }
 
-.visibility(@val, @breakpoint:none) when (default()) {
+.visibility(@val, @breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     visibility: @val;
@@ -346,12 +346,12 @@
 
 // order
 
-.order(@i, @breakpoint:none) when (@breakpoint = none) {
+.order(@i, @breakpoint: none) when (@breakpoint = none) {
   @val: extract(@orders, @i + 1);
   order: @val;
 }
 
-.order(@i, @breakpoint:none) when (default()) {
+.order(@i, @breakpoint: none) when (default()) {
   @val: extract(@orders, @i + 1);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
@@ -377,14 +377,14 @@
 
 // btn alignment
 
-.btn--left(@breakpoint:none) when (@breakpoint = none) {
+.btn--left(@breakpoint: none) when (@breakpoint = none) {
   > span {
     justify-content: flex-start;
     text-align: left;
   }
 }
 
-.btn--left(@breakpoint:none) when (default()) {
+.btn--left(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     > span {
@@ -394,14 +394,14 @@
   }
 }
 
-.btn--center(@breakpoint:none) when (@breakpoint = none) {
+.btn--center(@breakpoint: none) when (@breakpoint = none) {
   > span {
     justify-content: center;
     text-align: center;
   }
 }
 
-.btn--center(@breakpoint:none) when (default()) {
+.btn--center(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     > span {
@@ -411,14 +411,14 @@
   }
 }
 
-.btn--right(@breakpoint:none) when (@breakpoint = none) {
+.btn--right(@breakpoint: none) when (@breakpoint = none) {
   > span {
     justify-content: flex-end;
     text-align: right;
   }
 }
 
-.btn--right(@breakpoint:none) when (default()) {
+.btn--right(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     > span {
@@ -434,33 +434,33 @@
 
 // list alignment
 
-.list--left(@breakpoint:none) when (@breakpoint = none) {
+.list--left(@breakpoint: none) when (@breakpoint = none) {
   .list_btn({ .btn--left(); });
 }
 
-.list--left(@breakpoint:none) when (default()) {
+.list--left(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     .list_btn({ .btn--left(); });
   }
 }
 
-.list--center(@breakpoint:none) when (@breakpoint = none) {
+.list--center(@breakpoint: none) when (@breakpoint = none) {
   .list_btn({ .btn--center(); });
 }
 
-.list--center(@breakpoint:none) when (default()) {
+.list--center(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     .list_btn({ .btn--center(); });
   }
 }
 
-.list--right(@breakpoint:none) when (@breakpoint = none) {
+.list--right(@breakpoint: none) when (@breakpoint = none) {
   .list_btn({ .btn--right(); });
 }
 
-.list--right(@breakpoint:none) when (default()) {
+.list--right(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     .list_btn({ .btn--right(); });
@@ -473,7 +473,7 @@
 
 // row space
 
-.row-space--y(@name, @breakpoint:none) when (@breakpoint = none) {
+.row-space--y(@name, @breakpoint: none) when (@breakpoint = none) {
   @arr: ~"row-space--@{name}";
   @vertical: extract(@@arr, 1);
   margin-top: -@vertical;
@@ -484,7 +484,7 @@
   }
 }
 
-.row-space--y(@name, @breakpoint:none) when (default()) {
+.row-space--y(@name, @breakpoint: none) when (default()) {
   @arr: ~"row-space--@{name}";
   @vertical: extract(@@arr, 1);
   @query-min: 'min-@{breakpoint}';
@@ -498,7 +498,7 @@
   }
 }
 
-.row-space--x(@name, @breakpoint:none) when (@breakpoint = none) {
+.row-space--x(@name, @breakpoint: none) when (@breakpoint = none) {
   @arr: ~"row-space--@{name}";
   @horizontal: extract(@@arr, 2);
   margin-left: -@horizontal;
@@ -509,7 +509,7 @@
   }
 }
 
-.row-space--x(@name, @breakpoint:none) when (default()) {
+.row-space--x(@name, @breakpoint: none) when (default()) {
   @arr: ~"row-space--@{name}";
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
@@ -523,7 +523,7 @@
   }
 }
 
-.row-space(@name, @breakpoint:none) when (@breakpoint = none) {
+.row-space(@name, @breakpoint: none) when (@breakpoint = none) {
   @arr: ~"row-space--@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
@@ -533,7 +533,7 @@
   }
 }
 
-.row-space(@name, @breakpoint:none) when (default()) {
+.row-space(@name, @breakpoint: none) when (default()) {
   @arr: ~"row-space--@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
@@ -552,7 +552,7 @@
 
 // list space
 
-.list-space--y(@name, @breakpoint:none) when (@breakpoint = none) {
+.list-space--y(@name, @breakpoint: none) when (@breakpoint = none) {
   @arr: ~"list-space--@{name}";
   @vertical: extract(@@arr, 1);
   margin-top: -@vertical;
@@ -563,7 +563,7 @@
   }
 }
 
-.list-space--y(@name, @breakpoint:none) when (default()) {
+.list-space--y(@name, @breakpoint: none) when (default()) {
   @arr: ~"list-space--@{name}";
   @vertical: extract(@@arr, 1);
   @query-min: 'min-@{breakpoint}';
@@ -577,7 +577,7 @@
   }
 }
 
-.list-space--x(@name, @breakpoint:none) when (@breakpoint = none) {
+.list-space--x(@name, @breakpoint: none) when (@breakpoint = none) {
   @arr: ~"list-space--@{name}";
   @horizontal: extract(@@arr, 2);
   margin-left: -@horizontal;
@@ -588,7 +588,7 @@
   }
 }
 
-.list-space--x(@name, @breakpoint:none) when (default()) {
+.list-space--x(@name, @breakpoint: none) when (default()) {
   @arr: ~"list-space--@{name}";
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
@@ -602,7 +602,7 @@
   }
 }
 
-.list-space(@name, @breakpoint:none) when (@breakpoint = none) {
+.list-space(@name, @breakpoint: none) when (@breakpoint = none) {
   @arr: ~"list-space--@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
@@ -612,7 +612,7 @@
   }
 }
 
-.list-space(@name, @breakpoint:none) when (default()) {
+.list-space(@name, @breakpoint: none) when (default()) {
   @arr: ~"list-space--@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
@@ -631,11 +631,11 @@
 
 // flex--none
 
-.flex--none(@breakpoint:none) when (@breakpoint = none) {
+.flex--none(@breakpoint: none) when (@breakpoint = none) {
   flex: none;
 }
 
-.flex--none(@breakpoint:none) when (default()) {
+.flex--none(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex: none;
@@ -644,11 +644,11 @@
 
 // flex--auto
 
-.flex--auto(@breakpoint:none) when (@breakpoint = none) {
+.flex--auto(@breakpoint: none) when (@breakpoint = none) {
   flex: 1 1 auto;
 }
 
-.flex--auto(@breakpoint:none) when (default()) {
+.flex--auto(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex: 1 1 auto;
@@ -657,11 +657,11 @@
 
 // direction
 
-.flex-direction(@val, @breakpoint:none) when (@breakpoint = none) {
+.flex-direction(@val, @breakpoint: none) when (@breakpoint = none) {
   flex-direction: @val;
 }
 
-.flex-direction(@val, @breakpoint:none) when (default()) {
+.flex-direction(@val, @breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex-direction: @val;
@@ -670,11 +670,11 @@
 
 // wrap
 
-.flex-wrap(@val, @breakpoint:none) when (@breakpoint = none) {
+.flex-wrap(@val, @breakpoint: none) when (@breakpoint = none) {
   flex-wrap: @val;
 }
 
-.flex-wrap(@val, @breakpoint:none) when (default()) {
+.flex-wrap(@val, @breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex-wrap: @val;
@@ -683,11 +683,11 @@
 
 // justify-content
 
-.justify-content(@val, @breakpoint:none) when (@breakpoint = none) {
+.justify-content(@val, @breakpoint: none) when (@breakpoint = none) {
   justify-content: @val;
 }
 
-.justify-content(@val, @breakpoint:none) when (default()) {
+.justify-content(@val, @breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     justify-content: @val;
@@ -696,11 +696,11 @@
 
 // align-items
 
-.align-items(@val, @breakpoint:none) when (@breakpoint = none) {
+.align-items(@val, @breakpoint: none) when (@breakpoint = none) {
   align-items: @val;
 }
 
-.align-items(@val, @breakpoint:none) when (default()) {
+.align-items(@val, @breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     align-items: @val;
@@ -709,11 +709,11 @@
 
 // align-content
 
-.align-content(@val, @breakpoint:none) when (@breakpoint = none) {
+.align-content(@val, @breakpoint: none) when (@breakpoint = none) {
   align-content: @val;
 }
 
-.align-content(@val, @breakpoint:none) when (default()) {
+.align-content(@val, @breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     align-content: @val;
@@ -722,11 +722,11 @@
 
 // align-self
 
-.align-self(@val, @breakpoint:none) when (@breakpoint = none) {
+.align-self(@val, @breakpoint: none) when (@breakpoint = none) {
   align-self: @val;
 }
 
-.align-self(@val, @breakpoint:none) when (default()) {
+.align-self(@val, @breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     align-self: @val;
@@ -740,7 +740,7 @@
 // generate-container-space-responsive
 
 .generate-container-space-responsive();
-.generate-container-space-responsive(@i:length(@container--space)) when (@i > 0) {
+.generate-container-space-responsive(@i: length(@container--space)) when (@i > 0) {
   .generate-container-space-responsive(@i - 1);
   @container: extract(@container--space, @i);
   @breakpoint: extract(@container, 1);
@@ -780,7 +780,7 @@
 // generate-overlay--size
 
 .generate-overlay--size();
-.generate-overlay--size(@i:length(@overlays)) when (@i > 0) {
+.generate-overlay--size(@i: length(@overlays)) when (@i > 0) {
   .generate-overlay--size(@i - 1);
   @name: extract(@overlays, @i);
   .overlay--@{name} {
@@ -791,7 +791,7 @@
 // generate-overlay-space-responsive
 
 .generate-overlay-space-responsive();
-.generate-overlay-space-responsive(@i:length(@container--space)) when (@i > 0) {
+.generate-overlay-space-responsive(@i: length(@container--space)) when (@i > 0) {
   .generate-overlay-space-responsive(@i - 1);
   @overlay: extract(@container--space, @i);
   @breakpoint: extract(@overlay, 1);
@@ -817,7 +817,7 @@
 
 // margin
 
-.margin(@pos:all, @size, @breakpoint:none) when (@breakpoint = none) {
+.margin(@pos: all, @size, @breakpoint: none) when (@breakpoint = none) {
   & when (isnumber(@size)) {
     .print-margin(@pos, @size, @breakpoint);
   }
@@ -863,7 +863,7 @@
   }
 }
 
-.margin(@pos:all, @size, @breakpoint:none) when (default()) {
+.margin(@pos: all, @size, @breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     & when (isnumber(@size)) {
@@ -876,8 +876,8 @@
   }
 }
 
-.loop-margin(@pos:all, @size, @breakpoint:none, @i:length(@margins)) when (@i > 0) {
-  .loop-margin(@pos, @size, @breakpoint:none, @i - 1);
+.loop-margin(@pos: all, @size, @breakpoint: none, @i: length(@margins)) when (@i > 0) {
+  .loop-margin(@pos, @size, @breakpoint: none, @i - 1);
   @margin: extract(@margins, @i);
   @name: extract(@margin, 1);
   @val: extract(@margin, 2);
@@ -912,7 +912,7 @@
 
 // margin-remove
 
-.margin-remove(@pos:all, @size, @breakpoint:none) when (@breakpoint = none) {
+.margin-remove(@pos: all, @size, @breakpoint: none) when (@breakpoint = none) {
   & when (isnumber(@size)) {
     .print-margin-remove(@pos, @size, @breakpoint);
   }
@@ -921,7 +921,7 @@
   }
 }
 
-.margin-remove(@pos:all, @size, @breakpoint:none) when (default()) {
+.margin-remove(@pos: all, @size, @breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     & when (isnumber(@size)) {
@@ -934,8 +934,8 @@
   }
 }
 
-.loop-margin-remove(@pos:all, @size, @breakpoint:none, @i:length(@margins)) when (@i > 0) {
-  .loop-margin-remove(@pos, @size, @breakpoint:none, @i - 1);
+.loop-margin-remove(@pos: all, @size, @breakpoint: none, @i: length(@margins)) when (@i > 0) {
+  .loop-margin-remove(@pos, @size, @breakpoint: none, @i - 1);
   @margin: extract(@margins, @i);
   @name: extract(@margin, 1);
   @val: extract(@margin, 2);
@@ -974,7 +974,7 @@
 
 // padding
 
-.padding(@pos:all, @size, @breakpoint:none) when (@breakpoint = none) {
+.padding(@pos: all, @size, @breakpoint: none) when (@breakpoint = none) {
   & when (isnumber(@size)) {
     .print-padding(@pos, @size, @breakpoint);
   }
@@ -1020,7 +1020,7 @@
   }
 }
 
-.padding(@pos:all, @size, @breakpoint:none) when (default()) {
+.padding(@pos: all, @size, @breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     & when (isnumber(@size)) {
@@ -1033,8 +1033,8 @@
   }
 }
 
-.loop-padding(@pos:all, @size, @breakpoint:none, @i:length(@paddings)) when (@i > 0) {
-  .loop-padding(@pos, @size, @breakpoint:none, @i - 1);
+.loop-padding(@pos: all, @size, @breakpoint: none, @i: length(@paddings)) when (@i > 0) {
+  .loop-padding(@pos, @size, @breakpoint: none, @i - 1);
   @padding: extract(@paddings, @i);
   @name: extract(@padding, 1);
   @val: extract(@padding, 2);

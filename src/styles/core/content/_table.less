@@ -54,7 +54,7 @@
 // generate-container-responsive
 
 .generate-table-scroll-responsive();
-.generate-table-scroll-responsive(@i:length(@breakpoints)) when (@i > 0) {
+.generate-table-scroll-responsive(@i: length(@breakpoints)) when (@i > 0) {
   .generate-table-scroll-responsive(@i - 1);
   @breakpoint: extract(@breakpoints, @i);
   @query-max: 'max-@{breakpoint}';

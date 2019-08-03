@@ -1,98 +1,108 @@
 import {Xt} from "xtend-library";
 import {TweenMax} from "gsap/TweenMax";
 
-Xt.ready(function () {
+Xt.observe.push({
+  matches: '.parallax_title',
+  fnc: function (main, index, query) {
 
-  /**
-   * .parallax_title
-   */
+    /**
+     * .parallax_title
+     */
 
     // vars
 
-  let parallaxTitle = document.querySelector('.parallax_title');
+    let parallaxTitle = main;
 
-  // xt-scroll
+    // xt-scroll
 
-  let self = Xt.init('xt-scroll', parallaxTitle, {
-    "sticky": "fixed",
-    "end": 350
-  });
-
-  // event
-
-  for (let el of self.elements) {
-
-    // scroll change
-
-    el.addEventListener('change.xt.scroll', function (e) {
-      TweenMax.set(el, {transformOrigin: 'left center'});
-      TweenMax.set(el, {opacity: self.detail.ratioInverse, scale: .9 + .1 * self.detail.ratioInverse});
+    let self = Xt.init('xt-scroll', parallaxTitle, {
+      "sticky": "fixed",
+      "end": 350
     });
 
-  }
+    // event
 
+    for (let el of self.elements) {
+
+      // scroll change
+
+      el.addEventListener('change.xt.scroll', function (e) {
+        TweenMax.set(el, {transformOrigin: 'left center'});
+        TweenMax.set(el, {opacity: self.detail.ratioInverse, scale: .9 + .1 * self.detail.ratioInverse});
+      });
+
+    }
+
+  }
 });
+
 
 /**
  * .parallax_img
  */
 
-Xt.ready(function () {
+Xt.observe.push({
+  matches: '.parallax_img',
+  fnc: function (main, index, query) {
 
-  // vars
+    // vars
 
-  let parallaxImg = document.querySelector('.parallax_img');
+    let parallaxImg = main;
 
-  // xt-scroll
+    // xt-scroll
 
-  let self = Xt.init('xt-scroll', parallaxImg, {
-    "sticky": "fixed",
-    "end": 350
-  });
-
-  // event
-
-  for (let el of self.elements) {
-
-    // scroll change
-
-    el.addEventListener('change.xt.scroll', function (e) {
-      TweenMax.set(el, {y: 100 * self.detail.ratio, opacity: self.detail.ratioInverse});
+    let self = Xt.init('xt-scroll', parallaxImg, {
+      "sticky": "fixed",
+      "end": 350
     });
 
-  }
+    // event
 
+    for (let el of self.elements) {
+
+      // scroll change
+
+      el.addEventListener('change.xt.scroll', function (e) {
+        TweenMax.set(el, {y: 100 * self.detail.ratio, opacity: self.detail.ratioInverse});
+      });
+
+    }
+
+  }
 });
 
 /**
  * .parallax_footer
  */
 
-Xt.ready(function () {
+Xt.observe.push({
+  matches: '.parallax_footer',
+  fnc: function (main, index, query) {
 
-  // vars
+    // vars
 
-  let parallaxFooter = document.querySelector('.parallax_footer');
+    let parallaxFooter = main;
 
-  // xt-scroll
+    // xt-scroll
 
-  let self = Xt.init('xt-scroll', parallaxFooter, {
-    "sticky": true,
-    "start": "125%"
-  });
-
-  // event
-
-  for (let el of self.elements) {
-
-    // scroll change
-
-    el.addEventListener('change.xt.scroll', function (e) {
-      TweenMax.set(el, {opacity: self.detail.ratio, scale: .9 + .1 * self.detail.ratio});
+    let self = Xt.init('xt-scroll', parallaxFooter, {
+      "sticky": true,
+      "start": "125%"
     });
 
-  }
+    // event
 
+    for (let el of self.elements) {
+
+      // scroll change
+
+      el.addEventListener('change.xt.scroll', function (e) {
+        TweenMax.set(el, {opacity: self.detail.ratio, scale: .9 + .1 * self.detail.ratio});
+      });
+
+    }
+
+  }
 });
 
 

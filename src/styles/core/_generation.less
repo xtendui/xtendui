@@ -7,7 +7,7 @@
   // generate-utils
   
   .generate-utils();
-  .generate-utils(@breakpoint:none) {
+  .generate-utils(@breakpoint: none) {
     & when (@breakpoint = none) {
       // various
       .link--underline {
@@ -160,7 +160,7 @@
   & when not (@classes--util = true) {
     
     .generate-util-responsive();
-    .generate-util-responsive(@i:length(@classes--util)) when (@i > 0) {
+    .generate-util-responsive(@i: length(@classes--util)) when (@i > 0) {
       .generate-util-responsive(@i - 1);
       @breakpoint: extract(@classes--util, @i);
       .generate-utils(@breakpoint);
@@ -172,7 +172,7 @@
 
   @text-transform--arr: uppercase, lowercase, capitalize, nowrap;
 
-  .generate-text-transform(@breakpoint:none, @i:length(@text-transform--arr)) when (@i > 0) {
+  .generate-text-transform(@breakpoint: none, @i: length(@text-transform--arr)) when (@i > 0) {
     .generate-text-transform(@breakpoint, @i - 1);
     @val: extract(@text-transform--arr, @i);
     & when (@breakpoint = none) {
@@ -191,7 +191,7 @@
 
   @text-align--arr: left, right, center;
 
-  .generate-text-align(@breakpoint:none, @i:length(@text-align--arr)) when (@i > 0) {
+  .generate-text-align(@breakpoint: none, @i: length(@text-align--arr)) when (@i > 0) {
     .generate-text-align(@breakpoint, @i - 1);
     @val: extract(@text-align--arr, @i);
     & when (@breakpoint = none) {
@@ -210,7 +210,7 @@
 
   @float--arr: left, right, none;
 
-  .generate-float(@breakpoint:none, @i:length(@float--arr)) when (@i > 0) {
+  .generate-float(@breakpoint: none, @i: length(@float--arr)) when (@i > 0) {
     .generate-float(@breakpoint, @i - 1);
     @val: extract(@float--arr, @i);
     & when (@breakpoint = none) {
@@ -229,7 +229,7 @@
 
   @display--arr: none, block, inline-block, flex, inline-flex;
 
-  .generate-display(@breakpoint:none, @i:length(@display--arr)) when (@i > 0) {
+  .generate-display(@breakpoint: none, @i: length(@display--arr)) when (@i > 0) {
     .generate-display(@breakpoint, @i - 1);
     @val: extract(@display--arr, @i);
     & when (@breakpoint = none) {
@@ -248,7 +248,7 @@
 
   @visibility--arr: hidden, visible;
 
-  .generate-visibility(@breakpoint:none, @i:length(@visibility--arr)) when (@i > 0) {
+  .generate-visibility(@breakpoint: none, @i: length(@visibility--arr)) when (@i > 0) {
     .generate-visibility(@breakpoint, @i - 1);
     @val: extract(@visibility--arr, @i);
     & when (@breakpoint = none) {
@@ -276,7 +276,7 @@
   // generate-layouts
 
   .generate-layouts();
-  .generate-layouts(@breakpoint:none) {
+  .generate-layouts(@breakpoint: none) {
     & when (@breakpoint = none) {
       // btn alignment
       .btn--left {
@@ -347,7 +347,7 @@
   & when not (@classes--layout = true) {
 
     .generate-layout-responsive();
-    .generate-layout-responsive(@i:length(@classes--layout)) when (@i > 0) {
+    .generate-layout-responsive(@i: length(@classes--layout)) when (@i > 0) {
       .generate-layout-responsive(@i - 1);
       @breakpoint: extract(@classes--layout, @i);
       .generate-layouts(@breakpoint);
@@ -357,7 +357,7 @@
 
   // generate-order
 
-  .generate-order(@breakpoint:none, @i:length(@orders)) when (@i > 0) {
+  .generate-order(@breakpoint: none, @i: length(@orders)) when (@i > 0) {
     .generate-order(@breakpoint, @i - 1);
     @num: @i - 1;
     & when (@breakpoint = none) {
@@ -374,7 +374,7 @@
 
   // generate-row-space
 
-  .generate-row-space(@breakpoint:none, @i:length(@row-spaces)) when (@i > 0) {
+  .generate-row-space(@breakpoint: none, @i: length(@row-spaces)) when (@i > 0) {
     .generate-row-space(@breakpoint, @i - 1);
     @name: extract(@row-spaces, @i);
     & when (@breakpoint = none) {
@@ -403,7 +403,7 @@
 
   // generate-list-space
 
-  .generate-list-space(@breakpoint:none, @i:length(@list-spaces)) when (@i > 0) {
+  .generate-list-space(@breakpoint: none, @i: length(@list-spaces)) when (@i > 0) {
     .generate-list-space(@breakpoint, @i - 1);
     @name: extract(@list-spaces, @i);
     & when (@breakpoint = none) {
@@ -432,7 +432,7 @@
   
   // .generate-flex-util
   
-  .generate-flex-util(@breakpoint:none) {
+  .generate-flex-util(@breakpoint: none) {
     & when (@breakpoint = none) {
       .flex--none {
         .flex--none() !important;
@@ -637,7 +637,7 @@
 
   // generate-grid
 
-  .generate-grid(@breakpoint:none; @i:1) when (@i =< @columns) {
+  .generate-grid(@breakpoint: none; @i: 1) when (@i =< @columns) {
     .generate-grid(@breakpoint; (@i + 1));
     & when (@breakpoint = none) {
       .col--@{i} {
@@ -654,7 +654,7 @@
   // generate-grids
 
   .generate-grids();
-  .generate-grids(@breakpoint:none) {
+  .generate-grids(@breakpoint: none) {
     & when (@breakpoint = none) {
       // grid
       .col--auto {
@@ -679,7 +679,7 @@
   & when not (@classes--grid = true) {
 
     .generate-grid-responsive();
-    .generate-grid-responsive(@i:length(@classes--grid)) when (@i > 0) {
+    .generate-grid-responsive(@i: length(@classes--grid)) when (@i > 0) {
       .generate-grid-responsive(@i - 1);
       @breakpoint: extract(@classes--grid, @i);
       .generate-grids(@breakpoint);
@@ -723,7 +723,7 @@
   // generate-margin
 
   .generate-margins();
-  .generate-margins(@breakpoint:none) {
+  .generate-margins(@breakpoint: none) {
     & when (@breakpoint = none) {
       .generate-margin(@breakpoint);
     }
@@ -737,12 +737,12 @@
 
   // generate-margins
 
-  .generate-margin(@breakpoint:none, @i:length(@margin--arr)) when (@i > 0) {
+  .generate-margin(@breakpoint: none, @i: length(@margin--arr)) when (@i > 0) {
     .generate-margin(@breakpoint, @i - 1);
     @pos: extract(@margin--arr, @i);
     .generate-margin-loop(@pos, @breakpoint);
   }
-  .generate-margin-loop(@pos, @breakpoint, @i:length(@margins)) when (@i > 0) {
+  .generate-margin-loop(@pos, @breakpoint, @i: length(@margins)) when (@i > 0) {
     .generate-margin-loop(@pos, @breakpoint, @i - 1);
     @margin: extract(@margins, @i);
     @name: extract(@margin, 1);
@@ -798,7 +798,7 @@
   & when not (@classes--margin = true) {
 
     .generate-margin-responsive();
-    .generate-margin-responsive(@i:length(@classes--margin)) when (@i > 0) {
+    .generate-margin-responsive(@i: length(@classes--margin)) when (@i > 0) {
       .generate-margin-responsive(@i - 1);
       @breakpoint: extract(@classes--margin, @i);
       .generate-margins(@breakpoint);
@@ -842,7 +842,7 @@
   // generate-padding
 
   .generate-paddings();
-  .generate-paddings(@breakpoint:none) {
+  .generate-paddings(@breakpoint: none) {
     & when (@breakpoint = none) {
       .generate-padding(@breakpoint);
     }
@@ -853,12 +853,12 @@
       }
     }
   }
-  .generate-padding(@breakpoint:none, @i:length(@padding--arr)) when (@i > 0) {
+  .generate-padding(@breakpoint: none, @i: length(@padding--arr)) when (@i > 0) {
     .generate-padding(@breakpoint, @i - 1);
     @pos: extract(@padding--arr, @i);
     .generate-padding-loop(@pos, @breakpoint);
   }
-  .generate-padding-loop(@pos, @breakpoint, @i:length(@paddings)) when (@i > 0) {
+  .generate-padding-loop(@pos, @breakpoint, @i: length(@paddings)) when (@i > 0) {
     .generate-padding-loop(@pos, @breakpoint, @i - 1);
     @padding: extract(@paddings, @i);
     @name: extract(@padding, 1);
@@ -894,7 +894,7 @@
   & when not (@classes--padding = true) {
 
     .generate-padding-responsive();
-    .generate-padding-responsive(@i:length(@classes--padding)) when (@i > 0) {
+    .generate-padding-responsive(@i: length(@classes--padding)) when (@i > 0) {
       .generate-padding-responsive(@i - 1);
       @breakpoint: extract(@classes--padding, @i);
       .generate-paddings(@breakpoint);

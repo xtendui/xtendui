@@ -4,25 +4,28 @@ import {Xt} from "xtend-library";
  * xtend extension: jumptocontent
  */
 
-Xt.ready(function () {
+Xt.observe.push({
+  matches: '.jumptocontent',
+  fnc: function (main, index, query) {
 
-  // vars
+    // vars
 
-  let jumptocontent = document.querySelector('.jumptocontent');
+    let jumptocontent = main;
 
-  // toggle
+    // toggle
 
-  document.addEventListener('focusin', function (e) {
-    let active = jumptocontent.contains(e.target);
-    if (active) {
-      jumptocontent.classList.remove('sr-only');
-      jumptocontent.classList.add('active');
-    } else {
-      jumptocontent.classList.remove('active');
-      Xt.animTimeout(jumptocontent, function () {
-        jumptocontent.classList.add('sr-only');
-      });
-    }
-  });
+    document.addEventListener('focusin', function (e) {
+      let active = jumptocontent.contains(e.target);
+      if (active) {
+        jumptocontent.classList.remove('sr-only');
+        jumptocontent.classList.add('active');
+      } else {
+        jumptocontent.classList.remove('active');
+        Xt.animTimeout(jumptocontent, function () {
+          jumptocontent.classList.add('sr-only');
+        });
+      }
+    });
 
+  }
 });

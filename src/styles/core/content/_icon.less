@@ -67,7 +67,7 @@
 & when (@classes--icon) {
 
   .generate-icons();
-  .generate-icons(@i:length(@icons-xt)) when (@i > 0) {
+  .generate-icons(@i: length(@icons-xt)) when (@i > 0) {
     .generate-icons(@i - 1);
     @name: extract(@icons-xt, @i);
     @val: ~"icon-xt--@{name}";
@@ -131,7 +131,7 @@
   & when (@classes--icon) {
 
     .generate-icons();
-    .generate-icons(@i:length(@icons-theme)) when (@i > 0) {
+    .generate-icons(@i: length(@icons-theme)) when (@i > 0) {
       .generate-icons(@i - 1);
       @name: extract(@icons-theme, @i);
       @val: ~"icon-theme--@{name}";
