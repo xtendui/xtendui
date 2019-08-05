@@ -21,6 +21,23 @@ Use `.group_inner.flex--auto` to expand groups.
   </demovanilla>
 </demo>
 
+##Variants
+
+Optional classes for assigning variant (example: `.group--light`).
+
+<div class="alert">
+  <div class="alert_content">
+    Group variants are defined inside @TODO less path.
+  </div>
+</div>
+
+<demo>
+  <demovanilla src="demos/inline/docs/content/group/options-variant-line" name="line">
+  </demovanilla>
+  <demovanilla src="demos/inline/docs/content/group/options-variant-stack" name="stack">
+  </demovanilla>
+</demo>
+
 ##List
 
 Space group elements with list's options.

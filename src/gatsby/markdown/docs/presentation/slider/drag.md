@@ -55,3 +55,14 @@ You can disable friction with `"drag": {"friction": false}`.
 ###Overflow
 
 You can set overflow with `"drag": {"overflow": Function}`, for example `"drag": {"overflow": "return Math.pow(overflow, 0.73)"}`.
+
+###Drag
+
+You can disable the drag transform position while dragging the **drag.dragger** with `"drag": {"drag": false}`.
+
+Useful when you want to manually set the drag transform position.
+
+<demo>
+  <div class="demo_item" data-iframe="demos/docs/presentation/slider/transform-false" data-name="false">
+  </div>
+</demo>

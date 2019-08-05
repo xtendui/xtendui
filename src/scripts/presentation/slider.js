@@ -883,7 +883,9 @@ export class Slider extends Core {
     if (self.initial) {
       self.dragger.classList.add('transition-none');
     }
-    dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
+    if (options.drag.drag) {
+      dragger.style.transform = 'translateX(' + self.detail.xPos + 'px)';
+    }
     if (self.initial) {
       self.dragger.classList.remove('transition-none');
     }
@@ -1014,6 +1016,7 @@ Slider.optionsDefault = {
   "contain": false,
   "pagination": ".slider_pagination",
   "drag": {
+    "drag": true,
     "wrap": false,
     "dragger": ".slides_inner",
     "threshold": 50,
