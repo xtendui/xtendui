@@ -31,20 +31,3 @@ Space group elements with list's options.
   <demovanilla src="demos/inline/docs/content/group/options-list-stack" name="stack">
   </demovanilla>
 </demo>
-
-##Variants
-
-Optional classes for assigning variant (`.group-input`).
-
-<div class="alert">
-  <div class="alert_content">
-    Group variants are defined inside `/theme/_components.less`.
-  </div>
-</div>
-
-<demo>
-  <demovanilla src="demos/inline/docs/content/group/options-variant-line" name="line">
-  </demovanilla>
-  <demovanilla src="demos/inline/docs/content/group/options-variant-stack" name="stack">
-  </demovanilla>
-</demo>

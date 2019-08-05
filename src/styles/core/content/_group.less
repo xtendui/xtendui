@@ -8,8 +8,8 @@
   flex-wrap: nowrap;
   position: relative;
   padding: 0 !important;
-  // .form-input
-  .form-input {
+  // .form-item
+  .form-item {
     .flex--auto();
     width: auto;
     // border
@@ -39,11 +39,8 @@
     .flex--auto();
     text-align: center;
     white-space: nowrap;
-    + * {
-      margin-top: -@btn--border-width;
-    }
   }
-  .form-input ~ & {
+  .form-item ~ & {
     > * {
       .margin(right, none);
     }
@@ -102,18 +99,5 @@
         border-bottom-right-radius: 0 !important;
       }
     }
-  }
-}
-
-// .group--collapse
-
-.group--collapse {
-  .group_inner {
-    margin-left: 0 !important;
-    margin-right: -@input--border-width !important;
-  }
-  .form-input ~ .group_inner {
-    margin-left: -@input--border-width !important;
-    margin-right: 0 !important;
   }
 }

@@ -12,11 +12,11 @@ const demo = {
 demo.htmlSource = `
 <form>
 
-  <div class="form-item">
+  <div class="form-group">
     <label class="form-label">
       Label
     </label>
-    <input type="text" class="form-input">
+    <input type="text" class="form-item">
     <a class="form-label-addon">
       <span>Label Addon</span>
     </a>

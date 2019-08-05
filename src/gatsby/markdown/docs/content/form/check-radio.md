@@ -15,14 +15,14 @@ parent: "Form"
 Use this markup to create a checkbox or radio **unstyled**.
 
 <script type="text/plain" class="language-markup">
-  <div class="form-item">
+  <div class="form-group">
     <input type="checkbox" id="checkbox-unstyled" class="unstyled">
     <label class="form-label" for="checkbox-unstyled">
       <!-- content -->
     </label>
   </div>
 
-  <div class="form-item">
+  <div class="form-group">
     <input type="radio" id="radio-unstyled" name="radio-unstyled" class="unstyled">
     <label class="form-label" for="radio-unstyled">
       <!-- content -->
@@ -48,14 +48,14 @@ Use this markup to create a checkbox or radio **unstyled**.
 Use this markup to create a checkbox or radio **styled**.
 
 <script type="text/plain" class="language-markup">
-  <div class="form-item">
+  <div class="form-group">
     <input type="checkbox" id="checkbox-styled">
     <label class="form-label" for="checkbox-styled">
       <!-- content -->
     </label>
   </div>
 
-  <div class="form-item">
+  <div class="form-group">
     <input type="radio" id="radio-styled" name="radio-styled">
     <label class="form-label" for="radio-styled">
       <!-- content -->
@@ -81,13 +81,13 @@ Use this markup to create a checkbox or radio **styled**.
 Use this markup to create a **fake** checkbox or radio **styled**.
 
 <script type="text/plain" class="language-markup">
-  <div class="form-item">
+  <div class="form-group">
     <div class="checkbox-styled">
       <!-- content -->
     </div>
   </div>
 
-  <div class="form-item">
+  <div class="form-group">
     <div class="radio-styled">
       <!-- content -->
     </div>

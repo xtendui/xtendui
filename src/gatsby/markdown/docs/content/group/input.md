@@ -21,7 +21,7 @@ Use this markup to create a input group as line.
       </button>
     </span>
 
-    <input type="text" class="form-input">
+    <input type="text" class="form-item">
 
     <span class="group_inner">
       <button type="button" class="btn">
@@ -46,7 +46,7 @@ Use this markup to create a input group as stack.
       </button>
     </span>
 
-    <input type="text" class="form-input">
+    <input type="text" class="form-item">
     
     <span class="group_inner">
       <button type="button" class="btn">

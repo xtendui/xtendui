@@ -40,7 +40,7 @@ class Header extends React.Component {
                   </div>
                   <div>
                     <div className="site_header_top_search">
-                      <input className="form-input" placeholder="Search"/>
+                      <input className="form-item" placeholder="Search"/>
                     </div>
                   </div>
                 </div>

@@ -23,101 +23,101 @@ legend {
 // group
 //////////////////////
 
-.form-item {
+.form-group {
   // option
-  .form-item--medium();
+  .form-group--medium();
 }
 
 // addons
 
-.form-item--flex {
+.form-group--flex {
   .row-space--x(medium);
 }
 
-.form-item--flex-sm {
+.form-group--flex-sm {
   @media @min-sm {
-    .form-item--flex();
+    .form-group--flex();
   }
 }
 
-.form-item--horizontal {
+.form-group--horizontal {
   .row-space--x(medium);
   align-items: center;
   text-align: right;
 }
 
-.form-item--horizontal-sm {
+.form-group--horizontal-sm {
   @media @min-sm {
-    .form-item--horizontal();
+    .form-group--horizontal();
   }
 }
 
-.form-item--inline {
+.form-group--inline {
   .list-space--x(medium);
   align-items: baseline;
 }
 
-.form-item--inline-sm {
+.form-group--inline-sm {
   @media @min-sm {
-    .form-item--inline();
+    .form-group--inline();
   }
 }
 
 // size
 
-.form-item--tiny {
+.form-group--tiny {
   .padding(bottom, 1em);
   font-size: 1.1rem;
 }
 
 .form--tiny {
-  .form-items({ .form-item--tiny() });
+  .form-groups({ .form-group--tiny() });
 }
 
-.form-item--small {
+.form-group--small {
   .padding(bottom, 1.25em);
   font-size: 1.2rem;
 }
 
 .form--small {
-  .form-items({ .form-item--small() });
+  .form-groups({ .form-group--small() });
 }
 
-.form-item--medium {
+.form-group--medium {
   .padding(bottom, 1.5em);
   font-size: 1.3rem;
 }
 
 .form--medium {
-  .form-items({ .form-item--medium() });
+  .form-groups({ .form-group--medium() });
 }
 
-.form-item--big {
+.form-group--big {
   .padding(bottom, 1.5em);
   font-size: 1.4rem;
 }
 
 .form--big {
-  .form-items({ .form-item--big() });
+  .form-groups({ .form-group--big() });
 }
 
-.form-item--giant {
+.form-group--giant {
   .padding(bottom, 1.5em);
   font-size: 1.5rem;
 }
 
 .form--giant {
-  .form-items({ .form-item--giant() });
+  .form-groups({ .form-group--giant() });
 }
 
 // special
 
-.form-item--none {
+.form-group--none {
   .padding(all, none);
 }
 
 .form--none {
-  .form-items({ .form-item--none() });
+  .form-groups({ .form-group--none() });
 }
 
 //////////////////////
@@ -126,9 +126,9 @@ legend {
 
 .form-label {
   // styles
-  .margin(bottom, 1em); // size in em inherit .form-item size
+  .margin(bottom, 1em); // size in em inherit .form-group size
   .font-sans--semibold();
-  font-size: 1em; // size in em inherit .form-item size
+  font-size: 1em; // size in em inherit .form-group size
   color: @gray--500;
   line-height: 1.2;
   letter-spacing: .05em;
@@ -136,21 +136,21 @@ legend {
 }
 
 //////////////////////
-// input
+// item
 //////////////////////
 
-.form-input {
+.form-item {
   // styles
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
-  padding: .75em 1.2em; // size in em inherit .form-item size
+  padding: .75em 1.2em; // size in em inherit .form-group size
   .font-sans--regular();
-  font-size: 1em; // size in em inherit .form-item size
+  font-size: 1em; // size in em inherit .form-group size
   line-height: 1.2;
   // option
-  .form-input--light();
+  .form-item--light();
   // animation
   transition-property: color, border, background;
   transition-duration: @time--medium;
@@ -169,18 +169,19 @@ legend {
 
 // variant
 
-.form-input--light {
+.form-item--light {
   // styles
   border-color: @gray--300;
-  background-color: @gray--200; // @FIX no background: or it overrides background-image
+  background-color: fade(@gray--300, 25%); // @FIX no background: or it overrides background-image
   color: @text;
   &:focus, &.active {
-    background-color: @gray--300; // @FIX no background: or it overrides background-image
+    border-color: @gray--300;
+    background-color: fade(@gray--300, 50%); // @FIX no background: or it overrides background-image
   }
   // select arrow
   select& {
     @select-arrow-color: @text;
-    @select-space-color: @gray--300;
+    @select-space-color: @gray--200;
     background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%),
     linear-gradient(135deg, @select-arrow-color 50%, transparent 50%),
     linear-gradient(to right, @select-space-color, @select-space-color);
@@ -352,7 +353,7 @@ input[type="radio"]:not(.unstyled) {
 // validation
 //////////////////////
 
-.form-input {
+.form-item {
   &:invalid {
     box-shadow: none !important;
   }

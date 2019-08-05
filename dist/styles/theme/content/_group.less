@@ -1,11 +1,4 @@
 //////////////////////
-// variables
-//////////////////////
-
-@btn--border-width: 1px;
-@input--border-width: 1px;
-
-//////////////////////
 // group
 //////////////////////
 
@@ -15,20 +8,4 @@
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
-}
-
-// variants
-
-.group-input {
-  .group--collapse();
-  .form-input {
-    border-color: @gray--200 !important;
-  }
-  .group_inner {
-    > * {
-      &@{btn--design} {
-        border-color: @gray--200 !important;
-      }
-    }
-  }
 }

@@ -18,7 +18,7 @@ demo.htmlSource = `
         <span>-</span>
       </button>
     </span>
-  <input type="number" class="form-input" value="3" data-min="1" data-max="100">
+  <input type="number" class="form-item" value="3" data-min="1" data-max="100">
   <span class="group_inner">
       <button type="button" class="btn group-number-add">
         <span>+</span>
@@ -29,7 +29,7 @@ demo.htmlSource = `
 <h4>Stack</h4>
 
 <div class="group group-number group-number-stack">
-  <input type="number" class="form-input" value="3" data-min="1" data-max="100">
+  <input type="number" class="form-item" value="3" data-min="1" data-max="100">
   <span class="group_inner">
       <button type="button" class="btn btn--short btn--narrow group-number-add">
         <span>+</span>

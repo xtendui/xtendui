@@ -89,7 +89,7 @@ body {
 
 // scrollbars
 
-.overflow-style(@size: none) {
+.overflow-style(@mode: none) {
   &::-webkit-scrollbar {
     height: 8px;
     width: 8px;
@@ -97,16 +97,9 @@ body {
     @media (hover: none) {
       display: none;
     }
-    & when (@size = small) {
-      height: 4px;
-      width: 4px;
-    }
   }
   &::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, @grad--dark);
-    & when (@size = small) {
-      background: linear-gradient(135deg, @grad--dark);
-    }
+    background: fade(#888888, 40%);
   }
 }
 

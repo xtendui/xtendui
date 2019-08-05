@@ -2,35 +2,35 @@
 // group
 //////////////////////
 
-.form-item {
+.form-group {
   position: relative;
 }
 
 // selectors
 
-.form-items(@rules) {
-  .form-item {
+.form-groups(@rules) {
+  .form-group {
     @rules();
   }
 }
 
 // addons
 
-.form-item--flex {
+.form-group--flex {
   display: flex;
 }
 
-.form-item--horizontal {
+.form-group--horizontal {
   display: flex;
   .form-label {
     .margin(all, none);
   }
 }
 
-.form-item--inline {
+.form-group--inline {
   display: flex;
   flex-wrap: nowrap;
-  .form-input {
+  .form-item {
     width: auto;
   }
 }
@@ -47,12 +47,11 @@
 }
 
 //////////////////////
-// input
+// item
 //////////////////////
 
-.form-input {
-  display: block;
-  width: 100%;
+.form-item {
+  .block();
   // select arrow
   select& {
     .padding(right, @select-space--size) !important;

@@ -17,7 +17,7 @@ export const htmlSource = `
           <span>btn 2b</span>
         </button>
       </span>
-      <input type="text" class="form-input">
+      <input type="text" class="form-item">
       <span class="group_inner">
         <button type="button" class="btn btn--primary">
           <span>btn 3a</span>
