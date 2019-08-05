@@ -4,15 +4,12 @@ export const htmlSource = `
     <legend>Test normal</legend>
     <div class="form-group">
       <label class="form-label">
-        Lorem
+        Input
       </label>
       <input type="text" class="form-item">
     </div>
     <div class="form-group">
-      <label class="form-label">
-        Lorem Ipsum
-      </label>
-      <input type="text" class="form-item">
+      <input type="text" class="form-item" placeholder="Placeholder">
     </div>
     <div class="form-group">
       <label class="form-label">

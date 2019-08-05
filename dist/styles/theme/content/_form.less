@@ -66,7 +66,7 @@ legend {
 // size
 
 .form-group--tiny {
-  .padding(bottom, 1em);
+  .margin(bottom, 1em);
   font-size: 1.1rem;
 }
 
@@ -75,7 +75,7 @@ legend {
 }
 
 .form-group--small {
-  .padding(bottom, 1.25em);
+  .margin(bottom, 1.25em);
   font-size: 1.2rem;
 }
 
@@ -84,7 +84,7 @@ legend {
 }
 
 .form-group--medium {
-  .padding(bottom, 1.5em);
+  .margin(bottom, 1.5em);
   font-size: 1.3rem;
 }
 
@@ -93,7 +93,7 @@ legend {
 }
 
 .form-group--big {
-  .padding(bottom, 1.5em);
+  .margin(bottom, 1.5em);
   font-size: 1.4rem;
 }
 
@@ -102,7 +102,7 @@ legend {
 }
 
 .form-group--giant {
-  .padding(bottom, 1.5em);
+  .margin(bottom, 1.5em);
   font-size: 1.5rem;
 }
 
@@ -148,7 +148,7 @@ legend {
   padding: .75em 1.2em; // size in em inherit .form-group size
   .font-sans--regular();
   font-size: 1em; // size in em inherit .form-group size
-  line-height: 1.2;
+  line-height: 1.4;
   // option
   .form-item--light();
   // animation
@@ -172,11 +172,11 @@ legend {
 .form-item--light {
   // styles
   border-color: @gray--300;
-  background-color: fade(@gray--300, 25%); // @FIX no background: or it overrides background-image
+  background-color: fade(@gray--300, 15%); // @FIX no background: or it overrides background-image
   color: @text;
   &:focus, &.active {
     border-color: @gray--300;
-    background-color: fade(@gray--300, 50%); // @FIX no background: or it overrides background-image
+    background-color: fade(@gray--300, 30%); // @FIX no background: or it overrides background-image
   }
   // select arrow
   select& {
