@@ -58,9 +58,9 @@ You can set overflow with `"drag": {"overflow": Function}`, for example `"drag":
 
 ###Drag
 
-You can disable the drag transform position while dragging the **drag.dragger** with `"drag": {"drag": false}`.
+@TODO drag drag vedere se disattivare anche altri o fare demos
 
-Useful when you want to manually set the drag transform position.
+You can disable the drag transform position while dragging the **drag.dragger** with `"drag": {"drag": false}`.
 
 <demo>
   <div class="demo_item" data-iframe="demos/docs/presentation/slider/transform-false" data-name="false">
