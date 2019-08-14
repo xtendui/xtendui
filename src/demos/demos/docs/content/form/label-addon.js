@@ -5,6 +5,7 @@ import DemoVanillaIframe from 'components/demo-vanilla-iframe'
 
 const demo = {
   name: path.basename(__filename, '.js'),
+  folder: path.basename(path.dirname(__filename)),
   js: false,
   css: true,
   full: true
@@ -34,11 +35,10 @@ class Page extends React.Component {
 
   render() {
     if (demo.js) {
-      demo.jsSource = require('!!raw-loader!./' + demo.name + '.source.js').default
+      demo.jsSource = require('!!raw-loader!xtend-library/components/' + demo.name).default
     }
     if (demo.css) {
-      demo.cssSource = require('!!raw-loader!./' + demo.name + '.source.less').default
-      demo.css = demo.css ? require('!raw-loader!less-loader!./' + demo.name + '.source.less').default : null
+      demo.cssSource = require('!!raw-loader!xtend-library/components/' + demo.name + '/' + demo.name + '.less').default
     }
     return (
       <DemoVanillaIframe demo={demo}/>

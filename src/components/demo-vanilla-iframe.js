@@ -13,12 +13,6 @@ class DemoVanillaIframe extends React.Component {
     seo.description = 'Demo'
     return (
       <Layout seo={seo} demo={demo}>
-        {demo.css ?
-          <Helmet>
-            <style>{demo.css}</style>
-          </Helmet>
-          : null
-        }
         <SEO title={seo.title + ' — ' + seo.description}/>
         <div id="body-outer">
           <div id="body-inner" className="demo_source--from" dangerouslySetInnerHTML={{__html: demo.htmlSource}}/>

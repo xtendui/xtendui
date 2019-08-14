@@ -1,4 +1,4 @@
-import {mouseFollow} from 'xtend-library/extensions/mouseFollow';
+import {mouseFollow} from 'xtend-library/components/mouse-follow';
 
 /**
  * mouseFollow

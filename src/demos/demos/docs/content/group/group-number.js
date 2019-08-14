@@ -42,19 +42,12 @@ demo.htmlSource = `
 `
 
 class Page extends React.Component {
-  componentDidMount() {
-    if (demo.js) {
-      require('./' + demo.name + '.source.js')
-    }
-  }
-
   render() {
     if (demo.js) {
-      demo.jsSource = require('!!raw-loader!./' + demo.name + '.source.js').default
+      demo.jsSource = require('!!raw-loader!xtend-library/components/' + demo.name).default
     }
     if (demo.css) {
-      demo.cssSource = require('!!raw-loader!./' + demo.name + '.source.less').default
-      demo.css = demo.css ? require('!raw-loader!less-loader!./' + demo.name + '.source.less').default : null
+      demo.cssSource = require('!!raw-loader!xtend-library/components/' + demo.name + '/' + demo.name + '.less').default
     }
     return (
       <DemoVanillaIframe demo={demo}/>

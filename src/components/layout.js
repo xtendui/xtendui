@@ -8,10 +8,12 @@ import Sidebar from 'components/sidebar'
 import DocsAside from 'components/doc-aside'
 import DocsFoot from 'components/doc-foot'
 
-import {Xt} from 'xtend-library';
+import {Xt} from 'xtend-library'
+import 'xtend-library/components/all'
+import 'assets/styles/theme.less';
+
 import {populateBlock} from 'assets/scripts/demo.js'
 import {makeDocument} from 'assets/scripts/theme.js'
-import 'assets/styles/theme.less';
 
 class Layout extends React.Component {
   componentDidMount() {

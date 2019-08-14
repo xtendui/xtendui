@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import {Xt} from 'xtend-library';
+import {Xt} from 'xtend-library'
+import 'xtend-library/components/all'
+import 'assets/styles/theme.less';
+
 import {makeDocument} from 'assets/scripts/theme.js'
 import ResizeSensor from 'assets/scripts/ResizeSensor.js'
-import 'assets/styles/theme.less';
 
 class Layout extends React.Component {
   componentDidMount() {

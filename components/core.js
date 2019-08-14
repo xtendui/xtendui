@@ -2,7 +2,7 @@
 // import
 //////////////////////
 
-import {Xt} from 'xtend-library';
+import {Xt} from 'xtend-library'
 
 //////////////////////
 // Core

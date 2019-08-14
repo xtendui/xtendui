@@ -1,5 +1,5 @@
 import ClipboardJS from 'clipboard';
-import {Xt} from 'xtend-library';
+import {Xt} from 'xtend-library'
 
 import Prism from 'prismjs';
 require('prismjs/plugins/unescaped-markup/prism-unescaped-markup');

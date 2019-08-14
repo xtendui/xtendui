@@ -1,7 +1,9 @@
 //////////////////////
 // import
-//////////////////////import {Xt} from 'xtend-library';
-import {Core} from '../core'
+//////////////////////
+
+import {Xt} from 'xtend-library'
+import {Core} from 'xtend-library/components/core'
 
 //////////////////////
 // Overlay

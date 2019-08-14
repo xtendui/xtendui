@@ -13,6 +13,6 @@ parent: "Group"
 ###Number
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/content/group/number" data-name="number">
+  <div class="demo_item" data-iframe="demos/docs/content/group/group-number" data-name="group-number">
   </div>
 </demo>

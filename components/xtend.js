@@ -3,15 +3,15 @@
 //////////////////////
 
 import './polyfill';
-import {Core} from './core'
-import {Toggle} from './toggle'
-import {Drop} from './drop'
-import {Overlay} from './overlay'
-import {Smooth} from './smooth'
-import {Slider} from './slider'
-import {Scroll} from './scroll'
-import {Sticky} from './sticky'
-import {Ajax} from './ajax'
+import {Core} from 'xtend-library/components/core'
+import {Toggle} from 'xtend-library/components/toggle'
+import {Drop} from 'xtend-library/components/drop'
+import {Overlay} from 'xtend-library/components/overlay'
+import {Smooth} from 'xtend-library/components/smooth'
+import {Slider} from 'xtend-library/components/slider'
+import {Scroll} from 'xtend-library/components/scroll'
+import {Sticky} from 'xtend-library/components/sticky'
+import {Ajax} from 'xtend-library/components/ajax'
 
 //////////////////////
 // constructor
