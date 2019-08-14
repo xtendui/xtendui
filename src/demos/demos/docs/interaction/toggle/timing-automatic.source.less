@@ -1,0 +1,25 @@
+@import (reference) '~xtend-library/components/xtend';
+
+//##START
+.alert {
+  // animation
+  &.active {
+    animation-duration: @time--giant !important;
+  }
+  &.out {
+    animation-duration: @time--giant !important;
+  }
+}
+
+.in {
+  > * {
+    color: green !important;
+  }
+}
+
+.out {
+  > * {
+    color: red !important;
+  }
+}
+//##END

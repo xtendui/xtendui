@@ -1,0 +1,26 @@
+@import (reference) '~xtend-library/components/xtend';
+
+//##START
+#main {
+  margin-top: 100vh;
+}
+
+/**
+ * xtend extension: jumptocontent
+ */
+
+.jumptocontent {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: @index--top;
+  // animation
+  &.active {
+    .anim-y.active();
+  }
+  &:not(.active) {
+    .anim-y-inverse.out();
+  }
+}
+//##END
