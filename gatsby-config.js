@@ -3,7 +3,6 @@
  */
 
 const fs = require("fs")
-const path = require("path")
 const version = JSON.parse(fs.readFileSync('package.json')).version
 
 module.exports = {
@@ -18,8 +17,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-less`,
     `gatsby-plugin-catch-links`,
+    `gatsby-plugin-less`,
     // manifest
     {
       resolve: `gatsby-plugin-manifest`,
@@ -33,60 +32,48 @@ module.exports = {
         icon: `src/gatsby/assets/images/favicon.png`,
       },
     },
-    // resolve files
+    // resolve js and less
     {
-      resolve: `gatsby-plugin-root-import`,
+      resolve: `gatsby-plugin-module-resolver`,
       options: {
-        "xtend-library": path.join(__dirname, ``),
-        assets: path.join(__dirname, `src/gatsby/assets`),
-        components: path.join(__dirname, `src/gatsby/components`),
+        root: `./`,
+        aliases: {
+          'xtend-library': `./`,
+          assets: `./src/gatsby/assets`,
+          components: `./src/gatsby/components`,
+        },
       },
     },
-    // resolve folders
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `assets`,
-        path: `${__dirname}/src/gatsby/assets/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `components`,
-        path: `${__dirname}/src/gatsby/components/`,
-      },
-    },
+    // resolve markdown
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `doc`,
-        path: `${__dirname}/src/gatsby/markdown/docs/`,
+        path: `./src/gatsby/markdown/docs/`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `faq`,
-        path: `${__dirname}/src/gatsby/markdown/faq/`,
+        path: `./src/gatsby/markdown/faq/`,
       },
     },
     // pages
     {
       resolve: `gatsby-plugin-page-creator`,
       options: {
-        path: `${__dirname}/src/gatsby/components/pages/`,
+        path: `./src/gatsby/components/pages/`,
       },
     },
-    // pages in /demos
     {
       resolve: `gatsby-plugin-page-creator`,
       options: {
-        path: `${__dirname}/src/gatsby/demos/`,
+        path: `./src/gatsby/demos/`,
         ignore: [`inline/**/**`, `**/*.source.js?(x)`],
       },
     },
-    // remark components
+    // remark
     {
       resolve: `gatsby-transformer-remark`,
       options: {
