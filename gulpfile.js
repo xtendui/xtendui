@@ -17,7 +17,7 @@ let cleanCSS = require('gulp-clean-css');
 let sourcemaps = require('gulp-sourcemaps');
 
 const version = JSON.parse(fs.readFileSync('package.json')).version;
-const banner = "/*! xtend v" + version + " (https://getxtend.com/)\n" + "@copyright (c) 2017 - 2019 Riccardo Caroli\n" + "@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */";
+const banner = '/*! xtend v' + version + ' (https://getxtend.com/)\n' + '@copyright (c) 2017 - 2019 Riccardo Caroli\n' + '@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */';
 const babelifyOptions = {
   presets: [
     ['@babel/preset-env',

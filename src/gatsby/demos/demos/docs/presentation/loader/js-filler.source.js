@@ -1,5 +1,5 @@
-import {TweenMax} from "gsap/TweenMax";
-import BezierEasing from "bezier-easing";
+import {TweenMax} from 'gsap/TweenMax'
+import BezierEasing from 'bezier-easing'
 
 /**
  * .loader

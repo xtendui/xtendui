@@ -1,17 +1,17 @@
-import React from "react"
-import PropTypes from "prop-types"
-import {graphql} from "gatsby"
-import rehypeReact from "rehype-react"
+import React from 'react'
+import PropTypes from 'prop-types'
+import {graphql} from 'gatsby'
+import rehypeReact from 'rehype-react'
 
-import SEO from "components/seo"
-import Layout from "components/layout"
-import Demo from "components/demo"
-import DemoVanilla from "components/demo-vanilla"
-import DemoReact from "components/demo-react"
+import SEO from 'components/seo'
+import Layout from 'components/layout'
+import Demo from 'components/demo'
+import DemoVanilla from 'components/demo-vanilla'
+import DemoReact from 'components/demo-react'
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: {"demo": Demo, "demovanilla": DemoVanilla, "demoreact": DemoReact},
+  components: {'demo': Demo, 'demovanilla': DemoVanilla, 'demoreact': DemoReact},
 }).Compiler
 
 class Template extends React.Component {

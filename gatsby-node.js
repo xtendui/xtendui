@@ -84,7 +84,7 @@ exports.onCreateWebpackConfig = ({getConfig, stage}) => {
 
 // markdown
 
-const path = require("path")
+const path = require('path')
 //const kebabCase = require('lodash.kebabcase');
 
 exports.createPages = ({actions, graphql}) => {

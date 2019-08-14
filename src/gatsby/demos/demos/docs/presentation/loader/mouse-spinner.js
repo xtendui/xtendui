@@ -1,8 +1,8 @@
-import React from "react"
-import path from "path";
+import React from 'react'
+import path from 'path'
 
-import DemoVanillaIframe from "components/demo-vanilla-iframe"
-let spinner = require("components/snippets/spinner").default
+import DemoVanillaIframe from 'components/demo-vanilla-iframe'
+let spinner = require('components/snippets/spinner').default
 
 const demo = {
   name: path.basename(__filename, '.js'),
@@ -30,14 +30,14 @@ demo.htmlSource = `
 class Page extends React.Component {
   componentDidMount() {
     if (demo.js) {
-      require("./" + demo.name + ".source.js")
+      require('./' + demo.name + '.source.js')
     }
   }
 
   render() {
-    demo.jsSource = demo.js ? require("!!raw-loader!./" + demo.name + ".source.js").default : null
-    demo.cssSource = demo.css ? require("!!raw-loader!./" + demo.name + ".source.less").default : null
-    demo.css = demo.css ? require("!raw-loader!less-loader!./" + demo.name + ".source.less").default : null
+    demo.jsSource = demo.js ? require('!!raw-loader!./' + demo.name + '.source.js').default : null
+    demo.cssSource = demo.css ? require('!!raw-loader!./' + demo.name + '.source.less').default : null
+    demo.css = demo.css ? require('!raw-loader!less-loader!./' + demo.name + '.source.less').default : null
     return (
       <DemoVanillaIframe demo={demo}/>
     )

@@ -1,4 +1,4 @@
-let spinner = require("components/snippets/spinner").default
+let spinner = require('components/snippets/spinner').default
 
 export const htmlSource = `
   <div class="list list-space--small align-items--center justify-content--center demo-source-from">

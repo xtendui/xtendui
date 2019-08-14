@@ -1,11 +1,11 @@
 /* COMMENTED CATEGORIES AND TAGS
-import React from "react"
-import PropTypes from "prop-types"
-import {Link, graphql} from "gatsby"
-import kebabCase from "lodash/kebabCase"
+import React from 'react'
+import PropTypes from 'prop-types'
+import {Link, graphql} from 'gatsby'
+import kebabCase from 'lodash/kebabCase'
 
-import SEO from "components/seo"
-import Layout from "components/layout"
+import SEO from 'components/seo'
+import Layout from 'components/layout'
 
 class Template extends React.Component {
   render() {

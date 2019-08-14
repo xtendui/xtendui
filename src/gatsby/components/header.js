@@ -1,9 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
-import {Link} from "gatsby"
-import kebabCase from "lodash/kebabCase"
+import React from 'react'
+import PropTypes from 'prop-types'
+import {Link} from 'gatsby'
+import kebabCase from 'lodash/kebabCase'
 
-import logo from "assets/images/logo.svg"
+import logo from 'assets/images/logo.svg'
 
 class Header extends React.Component {
   render() {

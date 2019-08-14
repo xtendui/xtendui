@@ -1,6 +1,6 @@
-import {Xt} from "xtend-library";
-import {TweenMax} from "gsap/TweenMax";
-import BezierEasing from "bezier-easing";
+import {Xt} from 'xtend-library';
+import {TweenMax} from 'gsap/TweenMax'
+import BezierEasing from 'bezier-easing'
 
 import {mouseFollow} from 'xtend-library/dist/extensions/mouseFollow';
 

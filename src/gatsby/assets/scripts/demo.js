@@ -1,13 +1,13 @@
-import ClipboardJS from "clipboard";
-import {Xt} from "../../../../src/scripts/xtend";
+import ClipboardJS from 'clipboard';
+import {Xt} from '../../../../src/scripts/xtend';
 
-import Prism from "prismjs";
-require("prismjs/plugins/unescaped-markup/prism-unescaped-markup");
-require("prismjs/plugins/unescaped-markup/prism-unescaped-markup.css");
-require("prismjs/components/prism-jsx.min");
-require("prismjs/components/prism-less.min");
-require("prism-themes/themes/prism-base16-ateliersulphurpool.light.css");
-//require("prismjs/themes/prism-okaidia.css");
+import Prism from 'prismjs';
+require('prismjs/plugins/unescaped-markup/prism-unescaped-markup');
+require('prismjs/plugins/unescaped-markup/prism-unescaped-markup.css');
+require('prismjs/components/prism-jsx.min');
+require('prismjs/components/prism-less.min');
+require('prism-themes/themes/prism-base16-ateliersulphurpool.light.css');
+//require('prismjs/themes/prism-okaidia.css');
 Prism.manual = true;
 
 /**

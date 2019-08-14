@@ -1,16 +1,16 @@
-import React from "react"
-import PropTypes from "prop-types"
-import {Helmet} from "react-helmet"
+import React from 'react'
+import PropTypes from 'prop-types'
+import {Helmet} from 'react-helmet'
 
-import SEO from "components/seo"
-import Layout from "components/layout-demo"
+import SEO from 'components/seo'
+import Layout from 'components/layout-demo'
 
 class DemoVanillaIframe extends React.Component {
   render() {
     const {demo} = this.props
     const seo = {};
     seo.title = demo.name
-    seo.description = "Demo"
+    seo.description = 'Demo'
     return (
       <Layout seo={seo} demo={demo}>
         {demo.css ?

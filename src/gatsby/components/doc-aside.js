@@ -1,5 +1,5 @@
-import React from "react"
-import {Link} from "gatsby"
+import React from 'react'
+import {Link} from 'gatsby'
 
 class DocAside extends React.Component {
   render() {

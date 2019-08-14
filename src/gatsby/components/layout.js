@@ -1,16 +1,16 @@
-import React from "react"
-import PropTypes from "prop-types"
-import {StaticQuery, graphql} from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import {StaticQuery, graphql} from 'gatsby'
 
-import Header from "components/header"
-import Footer from "components/footer"
-import Sidebar from "components/sidebar"
-import DocsAside from "components/doc-aside"
-import DocsFoot from "components/doc-foot"
+import Header from 'components/header'
+import Footer from 'components/footer'
+import Sidebar from 'components/sidebar'
+import DocsAside from 'components/doc-aside'
+import DocsFoot from 'components/doc-foot'
 
-import {Xt} from "xtend-library";
-import {populateBlock} from "assets/scripts/demo.js"
-import {makeDocument} from "assets/scripts/theme.js"
+import {Xt} from 'xtend-library';
+import {populateBlock} from 'assets/scripts/demo.js'
+import {makeDocument} from 'assets/scripts/theme.js'
 
 class Layout extends React.Component {
   componentDidMount() {

@@ -1,6 +1,6 @@
-import React from "react"
-import {Link} from "gatsby"
-import kebabCase from "lodash/kebabCase"
+import React from 'react'
+import {Link} from 'gatsby'
+import kebabCase from 'lodash/kebabCase'
 
 class DocFoot extends React.Component {
   render() {
