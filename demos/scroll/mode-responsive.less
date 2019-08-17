@@ -1,0 +1,26 @@
+.scroll_container_responsive > * {
+  @media @max-sm {
+    // scroll
+    &:not(.scroll--once) {
+      opacity: 0;
+      .transition-none() !important; // fix animation on links
+      &.fade {
+        .anim-x.active();
+      }
+      &.fade--out {
+        .anim-x.out();
+      }
+    }
+  }
+  @media @min-sm {
+    // infinite
+    opacity: 0;
+    .transition-none() !important; // fix animation on links
+    &.fade {
+      .anim-x.active();
+    }
+    &.fade--out {
+      .anim-x.out();
+    }
+  }
+}

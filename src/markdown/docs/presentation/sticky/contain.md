@@ -13,8 +13,8 @@ parent: "Sticky"
 Use the `"contain": {}` option to stack consecutive sticky elements. with `"contain": {"top": Element}` you stack the sticky to a previous element, with `"contain": {"bottom": Element}` you stack the sticky to a next element. The two solutions brings **different stacking effects**.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/sticky/contain-top" data-name="top">
+  <div class="demo_item" data-iframe="iframe/demos/sticky/contain-top">
   </div>
-  <div class="demo_item" data-iframe="demos/docs/presentation/sticky/contain-bottom" data-name="bottom">
+  <div class="demo_item" data-iframe="iframe/demos/sticky/contain-bottom">
   </div>
 </demo>

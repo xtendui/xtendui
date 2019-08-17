@@ -13,6 +13,7 @@ parent: "Toggle"
 You can animate with javascript, just use Xt events and remember to set `"durationOn": Milliseconds` and `"durationOff": Milliseconds`.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/toggle/javascript" data-name="javascript">
-  </div>
+  <demovanilla src="demos/inline/demos/toggle/javascript">
+  </demovanilla>
 </demo>
+

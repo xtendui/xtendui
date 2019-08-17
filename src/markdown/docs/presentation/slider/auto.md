@@ -11,6 +11,6 @@ parent: "Slider"
 ###Wheel
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/auto" data-name="auto">
-  </div>
+  <demovanilla src="demos/inline/demos/slider/auto">
+  </demovanilla>
 </demo>

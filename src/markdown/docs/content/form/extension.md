@@ -13,6 +13,6 @@ parent: "Form"
 ###Label Addon
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/content/form/label-addon" data-name="label addon">
-  </div>
+  <demovanilla src="demos/inline/extensions/form/label-addon">
+  </demovanilla>
 </demo>

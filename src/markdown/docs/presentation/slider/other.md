@@ -13,6 +13,6 @@ parent: "Slider"
 `.active` `"loop": false` `"jump": false` `"autoHeight": false`
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/other" data-name="other">
-  </div>
+  <demovanilla src="demos/inline/demos/slider/other">
+  </demovanilla>
 </demo>

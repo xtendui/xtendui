@@ -1,147 +1,87 @@
+@import '~xtend-library/components/icon/icon-core';
+
+//////////////////////
+// variables
+//////////////////////
+
+@icon--tiny: .5em;
+@icon--small: .75em;
+@icon--medium: 1em;
+@icon--big: 1.25em;
+@icon--giant: 1.5em;
+
 //////////////////////
 // icon
 //////////////////////
 
-.icon--base() {
-  display: inline-block;
-  vertical-align: middle;
-  .align-self(center);
-  position: relative;
-  font-size: @icon--medium;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: inherit;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+// size
+
+.icon--tiny {
+  font-size: @icon--tiny;
   img& {
-    top: -.1em;
+    width: auto;
+    height: @icon--tiny;
+  }
+  // make same height as 1em
+  vertical-align: middle;
+  margin-top: calc((1em - @icon--tiny) / 2);
+  margin-bottom: calc((1em - @icon--tiny) / 2);
+}
+
+.icon--small {
+  font-size: @icon--small;
+  img& {
+    width: auto;
+    height: @icon--small;
+  }
+  // make same height as 1em
+  vertical-align: middle;
+  margin-top: calc((1em - @icon--small) / 2);
+  margin-bottom: calc((1em - @icon--small) / 2);
+}
+
+.icon--medium {
+  font-size: @icon--medium;
+  img& {
     width: auto;
     height: @icon--medium;
   }
-}
-
-//////////////////////
-// icons xtend
-//////////////////////
-
-// styles
-
-.icon-xt {
-  .icon--base();
-  font-family: @icons-xt--family;
-}
-
-[class^='icon-xt--'], [class*=' icon-xt--'] {
-  display: inline-block;
+  // make same height as 1em
   vertical-align: middle;
-  .align-self(center);
-  &:before {
-    .icon-xt();
-  }
+  margin-top: calc((1em - @icon--medium) / 2);
+  margin-bottom: calc((1em - @icon--medium) / 2);
 }
 
-// mixins
-
-.icon-xt(@content, @size: @icon--medium, @position: after) {
-  & when (@position = before) {
-    &:before {
-      .icon-xt();
-      content: '@{content}';
-      font-size: @size;
-    }
+.icon--big {
+  font-size: @icon--big;
+  img& {
+    width: auto;
+    height: @icon--big;
   }
-  & when (@position = after) {
-    &:after {
-      .icon-xt();
-      content: '@{content}';
-      font-size: @size;
-    }
-  }
-}
-
-// generate icons
-
-& when (@classes--icon) {
-
-  .generate-icons();
-  .generate-icons(@i: length(@icons-xt)) when (@i > 0) {
-    .generate-icons(@i - 1);
-    @name: extract(@icons-xt, @i);
-    @val: ~"icon-xt--@{name}";
-    .icon-xt--@{name} {
-      &:before {
-        content: @@val;
-      }
-    }
-  }
-
-}
-
-//////////////////////
-// icons theme
-//////////////////////
-
-@icons-theme--family: none;
-@icons-theme: none;
-
-// styles
-
-.icon-theme {
-  & when not (@icons-theme--family = none) {
-    .icon--base();
-    font-family: @icons-theme--family;
-  }
-}
-
-[class^='icon-theme--'], [class*=' icon-theme--'] {
-  display: inline-block;
+  // make same height as 1em
   vertical-align: middle;
-  .align-self(center);
-  &:before {
-    .icon-theme();
-  }
+  margin-top: calc((1em - @icon--big) / 2);
+  margin-bottom: calc((1em - @icon--big) / 2);
 }
 
-// mixins
-
-.icon(@content, @size: @icon--medium, @position: after) {
-  & when (@position = before) {
-    &:before {
-      .icon-theme();
-      content: '@{content}';
-      font-size: @size;
-    }
+.icon--giant {
+  font-size: @icon--giant;
+  img& {
+    width: auto;
+    height: @icon--giant;
   }
-  & when (@position = after) {
-    &:after {
-      .icon-theme();
-      content: '@{content}';
-      font-size: @size;
-    }
-  }
+  // make same height as 1em
+  vertical-align: middle;
+  margin-top: calc((1em - @icon--giant) / 2);
+  margin-bottom: calc((1em - @icon--giant) / 2);
 }
 
-// generate icons
+// space
 
-& when not (@icons-theme--family = none) {
+.icon--left {
+  .margin(right, 1rem);
+}
 
-  & when (@classes--icon) {
-
-    .generate-icons();
-    .generate-icons(@i: length(@icons-theme)) when (@i > 0) {
-      .generate-icons(@i - 1);
-      @name: extract(@icons-theme, @i);
-      @val: ~"icon-theme--@{name}";
-      .icon--@{name} {
-        &:before {
-          content: @@val;
-        }
-      }
-    }
-
-  }
-
+.icon--right {
+  .margin(left, 1rem);
 }

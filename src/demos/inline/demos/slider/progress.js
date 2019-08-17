@@ -1,0 +1,148 @@
+import path from 'path'
+
+const spinner = require('components/snippets/spinner').default
+
+const dirs = path.dirname(__filename).split('/');
+export const demo = {
+  name: path.basename(__filename, '.js'),
+  component: dirs.pop(),
+  type: dirs.pop(),
+  css: true,
+  js: true,
+}
+
+demo.htmlSource = `
+<div class="slider slider--progress">
+  <div class="loader loader--spinner loader--mouse loader--js">
+    <span class="spinner">
+    </span>
+  </div>
+
+  <div class="slides">
+    <ul class="slides_inner">
+
+      <li class="slide col--6 col--4-sm">
+        <div class="slide_inner">
+
+          <div class="card card--big text-align--center">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>1</h1>
+            </div>
+            <div class="loader loader--x loader--size-bottom loader--js">
+              <div class="filler">
+                <span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col--6 col--4-sm">
+        <div class="slide_inner">
+
+          <div class="card card--big text-align--center">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>2</h1>
+            </div>
+            <div class="loader loader--x loader--size-bottom loader--js">
+              <div class="filler">
+                <span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col--6 col--4-sm">
+        <div class="slide_inner">
+
+          <div class="card card--big text-align--center">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>3</h1>
+            </div>
+            <div class="loader loader--x loader--size-bottom loader--js">
+              <div class="filler">
+                <span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col--6 col--4-sm">
+        <div class="slide_inner">
+
+          <div class="card card--big text-align--center">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>4</h1>
+            </div>
+            <div class="loader loader--x loader--size-bottom loader--js">
+              <div class="filler">
+                <span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col--6 col--4-sm">
+        <div class="slide_inner">
+
+          <div class="card card--big text-align--center">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>5</h1>
+            </div>
+            <div class="loader loader--x loader--size-bottom loader--js">
+              <div class="filler">
+                <span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+      <li class="slide col--12">
+        <div class="slide_inner">
+
+          <div class="card card--big text-align--center" style="height: 15rem;">
+            <div class="card_design"></div>
+            <div class="card_content">
+              <h1>6</h1>
+            </div>
+            <div class="loader loader--x loader--size-bottom loader--js">
+              <div class="filler">
+                <span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <nav class="slider_pagination">
+    <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
+      <span>
+        <span class="loader loader--y loader--js">
+          <span class="filler">
+            <span></span><span></span>
+          </span>
+        </span>
+      </span>
+    </button>
+  </nav>
+
+</div>
+`

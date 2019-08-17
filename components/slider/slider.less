@@ -1,81 +1,66 @@
+@import '~xtend-library/components/slider/slider-core';
+
 //////////////////////
 // slider
 //////////////////////
-
-// slider
-
-.slider {
-  position: relative;
-}
-
-.slides {
-  .user-select--none();
-  overflow: hidden;
-}
 
 // slides
 
-.slide {
-  position: relative;
-  > * {
-    display: block;
-    position: relative;
+.slides {
+  .block();
+  &.xt-autoHeight {
+    // autoHeight animations
+    transition-property: height;
+    transition-duration: 750ms;
+    transition-timing-function: @bez--out;
   }
 }
 
-// .slider--nooverflow
+.slides_inner {
+  .row();
+  .row-space(medium);
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  // dragger animations
+  transition-property: transform;
+  transition-duration: 750ms;
+  transition-timing-function: @bez--out;
+}
 
-.slider--nooverflow {
-  .xt-disable();
-  .slides_inner {
-    // @FIX disable slider if not overflowing
-    .transform-none() !important;
-    .transition-none() !important;
-    justify-content: center !important;
+// pagination
+
+.slider_pagination {
+  .list();
+  .list-space(small);
+  align-items: center;
+  justify-content: center;
+  .padding(top, medium);
+}
+
+[data-xt-pag].btn {
+  .btn--tiny();
+  border-radius: 2rem;
+  > span {
+    padding: .5em 1.15em;
+    min-height: 2.2rem;
   }
-  .slider_pagination,
-  [data-xt-nav] {
-    display: none !important;
+  &.active {
+    > span {
+      padding: .5em 2em;
+    }
   }
 }
 
-// .slider--disable
+// navigation
 
-.slider--disable {
-  .xt-disable();
-  .slide:not(.active) {
-    .trans-anim-none() !important;
-    opacity: 0 !important;
+[data-xt-nav].btn {
+  .btn--tiny();
+  border-radius: 2rem;
+  > span {
+    padding: .5em 1.15em;
+    min-height: 2.2rem;
   }
-  .slider_pagination,
-  [data-xt-nav],
-  .loader, .filler, .spinner {
-    display: none !important;
-  }
-}
-
-// .slider--expand
-
-.slider--expand {
-  .xt-disable();
-  .slides {
-    overflow: visible;
-    height: auto !important;
-  }
-  .slides_inner {
-    .trans-anim-none() !important;
-    .transform-none() !important;
-  }
-  .slides_inner {
-    flex-wrap: wrap !important;
-  }
-  .slide:not(.active) {
-    opacity: 1 !important;
-  }
-  .xt-wrap,
-  .slider_pagination,
-  [data-xt-nav],
-  .loader, .filler, .spinner {
-    display: none !important;
+  [class^='icon-'], [class*=' icon-'] {
+    .icon--small();
   }
 }

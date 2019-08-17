@@ -13,6 +13,6 @@ parent: "General"
 ###Jump to content
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/general/jumptocontent" data-name="jumptocontent">
+  <div class="demo_item" data-iframe="iframe/extensions/general/jumptocontent">
   </div>
 </demo>

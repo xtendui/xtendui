@@ -1,0 +1,38 @@
+//////////////////////
+// btn
+//////////////////////
+
+.btn {
+  .user-select--none();
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  padding: 0;
+  z-index: @index--base; // fix :before negative z-index
+  line-height: 0;
+  &:hover, &.hover, &:active, &.active {
+    z-index: @index--active;
+  }
+  &.out {
+    z-index: @index--active - 1;
+  }
+  > span {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+// custom
+
+div.btn {
+  // non interactive when div
+  cursor: default;
+  pointer-events: none;
+}
+
+.btn--close {
+  z-index: @index--btn-close;
+}

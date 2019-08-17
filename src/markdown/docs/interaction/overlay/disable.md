@@ -13,6 +13,6 @@ parent: "Overlay"
 To disable drop use `.overlay--disable` useful within media queries.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/overlay/disable" data-name="disable">
-  </div>
+  <demovanilla src="demos/inline/demos/overlay/disable">
+  </demovanilla>
 </demo>

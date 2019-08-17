@@ -1,0 +1,20 @@
+/**
+ * xtend extension: overlay--close-outside
+ */
+
+.overlay--close-outside {
+  &.overlay--left {
+    .btn--close.overlay_dismiss {
+      .btn--primary();
+      .btn--squared();
+      left: 100% !important;
+    }
+  }
+  &.overlay--right {
+    .btn--close.overlay_dismiss {
+      .btn--primary();
+      .btn--squared();
+      right: 100% !important;
+    }
+  }
+}

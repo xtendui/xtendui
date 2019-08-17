@@ -11,8 +11,11 @@ parent: "Loader"
 ## Javascript
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/loader/js-spinner" data-name="spinner">
-  </div>
-  <div class="demo_item" data-iframe="demos/docs/presentation/loader/js-filler" data-name="filler">
-  </div>
+  <demovanilla src="demos/inline/demos/loader/js-spinner">
+  </demovanilla>
+</demo>
+
+<demo>
+  <demovanilla src="demos/inline/demos/loader/js-filler">
+  </demovanilla>
 </demo>

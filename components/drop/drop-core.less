@@ -1,0 +1,200 @@
+//////////////////////
+// drop
+//////////////////////
+
+.drop_outer {
+  display: inline-flex;
+  position: relative;
+  // z-index
+  &.active {
+    &, > .drop {
+      z-index: @index--drop;
+    }
+  }
+  &.out {
+    &, > .drop {
+      z-index: @index--drop - 1;
+    }
+  }
+  // content
+  > .backdrop, > .drop {
+    display: none;
+  }
+  &.active, &.out {
+    > .backdrop, > .drop {
+      display: block;
+    }
+  }
+}
+
+.drop {
+  // styles
+  position: absolute;
+  > .drop_inner {
+    position: relative;
+    z-index: @index--base; // fix :before negative z-index
+    > .drop_design {
+      .design-setup();
+    }
+  }
+  // others
+  &.out {
+    pointer-events: none;
+  }
+}
+
+// addons
+
+.drop_outer--static {
+  position: static;
+  > .drop,
+  > .drop > .drop_inner {
+    width: 100%;
+  }
+}
+
+// before + after
+
+.drop--before() {
+  padding: @drop--space;
+  left: auto;
+  right: 100%;
+}
+
+.drop.drop--before {
+  .drop--before() !important;
+}
+
+.drop--after() {
+  padding: @drop--space;
+  left: 100%;
+  right: auto;
+}
+
+.drop.drop--after {
+  .drop--after() !important;
+}
+
+// left + right
+
+.drop--left() {
+  padding: @drop--space 0;
+  left: 0;
+  right: auto;
+}
+
+.drop.drop--left {
+  .drop--left() !important;
+}
+
+.drop--right() {
+  padding: @drop--space 0;
+  left: auto;
+  right: 0;
+}
+
+.drop.drop--right {
+  .drop--right() !important;
+}
+
+// bottom + top
+
+.drop--bottom() {
+  padding: @drop--space 0;
+  top: 100%;
+  bottom: auto;
+}
+
+.drop.drop--bottom {
+  .drop--bottom() !important;
+}
+
+.drop--top() {
+  padding: @drop--space 0;
+  top: auto;
+  bottom: 100%;
+}
+
+.drop.drop--top {
+  .drop--top() !important;
+}
+
+// center
+
+.drop--center() {
+  &:before {
+    display: none;
+    content: 'xt-drop--center';
+  }
+}
+
+.drop.drop--center {
+  .drop--center() !important;
+}
+
+// middle
+
+.drop--middle() {
+  padding-top: 0;
+  padding-bottom: 0;
+  &:after {
+    display: none;
+    content: 'xt-drop--middle';
+  }
+}
+
+.drop.drop--middle {
+  .drop--middle() !important;
+}
+
+// contain
+
+.drop--contain-bottom() {
+  .drop--middle();
+  top: auto;
+  bottom: 0;
+}
+
+.drop.drop--contain-bottom {
+  .drop--contain-bottom() !important;
+}
+
+.drop--contain-top() {
+  .drop--middle();
+  top: 0;
+  bottom: auto;
+}
+
+.drop.drop--contain-top {
+  .drop--contain-top() !important;
+}
+
+// .drop--disable
+
+.drop--disable {
+  .xt-disable();
+  position: static;
+  z-index: initial;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+  > .btn {
+    display: none !important;
+  }
+  > .drop {
+    display: block !important;
+    position: relative;
+    > .drop_inner {
+      z-index: initial;
+      min-width: auto;
+      > .drop_design {
+        display: none;
+      }
+      > .drop_content {
+        max-width: none;
+        max-height: none;
+      }
+    }
+  }
+}

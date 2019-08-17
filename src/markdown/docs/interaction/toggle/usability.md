@@ -15,7 +15,7 @@ parent: "Toggle"
 Use `"keyboard": {"selector": "object"}` or `"keyboard": {"selector": Query}` to enable keyboard navigation on focus.
 
 <demo>
-  <demovanilla src="demos/inline/docs/interaction/toggle/usability-keyboard" name="keyboard">
+  <demovanilla src="demos/inline/demos/toggle/usability-keyboard">
   </demovanilla>
 </demo>
 
@@ -24,6 +24,6 @@ Use `"keyboard": {"selector": "object"}` or `"keyboard": {"selector": Query}` to
 Use `"aria": false` to disable aria generation, or granularly see @TODO core link.
 
 <demo>
-  <demovanilla src="demos/inline/docs/interaction/toggle/usability-aria" name="aria">
+  <demovanilla src="demos/inline/demos/toggle/usability-aria">
   </demovanilla>
 </demo>

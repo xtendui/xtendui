@@ -13,5 +13,5 @@ parent: "Sticky"
 The default **position** is `"position": "top"` you can also use `"position": "bottom"`.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/sticky/position" data-name="position">
+  <div class="demo_item" data-iframe="iframe/demos/sticky/position">
 </demo>

@@ -13,6 +13,6 @@ parent: "Sticky"
 To hide the sticky when scrolling down or up use `"hide": "down"` or `"hide": "up"`. Here's a complex example with hide behaviour.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/sticky/hide" data-name="hide">
+  <div class="demo_item" data-iframe="iframe/demos/sticky/hide">
   </div>
 </demo>

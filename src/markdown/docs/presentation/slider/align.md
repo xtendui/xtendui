@@ -13,10 +13,16 @@ parent: "Slider"
 `"align": "center"` `"align": "left"` `"align": "right"`
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/align-center" data-name="center">
-  </div>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/align-left" data-name="left">
-  </div>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/align-right" data-name="right">
-  </div>
+  <demovanilla src="demos/inline/demos/slider/align-center">
+  </demovanilla>
+</demo>
+
+<demo>
+  <demovanilla src="demos/inline/demos/slider/align-left">
+  </demovanilla>
+</demo>
+
+<demo>
+  <demovanilla src="demos/inline/demos/slider/align-right">
+  </demovanilla>
 </demo>

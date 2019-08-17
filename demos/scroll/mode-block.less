@@ -1,0 +1,10 @@
+.scroll_container_block > * {
+  opacity: 0;
+  .transition-none() !important; // fix animation on links
+  &.fade {
+    .anim-x.active();
+  }
+  &.fade--out {
+    .anim-x.out();
+  }
+}

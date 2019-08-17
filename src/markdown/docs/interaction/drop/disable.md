@@ -13,6 +13,6 @@ parent: "Drop"
 To disable drop use `.drop--disable` useful within media queries.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/drop/disable" data-name="disable">
-  </div>
+  <demovanilla src="demos/inline/demos/drop/disable">
+  </demovanilla>
 </demo>

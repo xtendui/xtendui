@@ -1,0 +1,147 @@
+//////////////////////
+// icon
+//////////////////////
+
+.icon--base() {
+  display: inline-block;
+  vertical-align: middle;
+  .align-self(center);
+  position: relative;
+  font-size: @icon--medium;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: inherit;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  img& {
+    top: -.1em;
+    width: auto;
+    height: @icon--medium;
+  }
+}
+
+//////////////////////
+// icons xtend
+//////////////////////
+
+// styles
+
+.icon-xt {
+  .icon--base();
+  font-family: @icons-xt--family;
+}
+
+[class^='icon-xt--'], [class*=' icon-xt--'] {
+  display: inline-block;
+  vertical-align: middle;
+  .align-self(center);
+  &:before {
+    .icon-xt();
+  }
+}
+
+// mixins
+
+.icon-xt(@content, @size: @icon--medium, @position: after) {
+  & when (@position = before) {
+    &:before {
+      .icon-xt();
+      content: '@{content}';
+      font-size: @size;
+    }
+  }
+  & when (@position = after) {
+    &:after {
+      .icon-xt();
+      content: '@{content}';
+      font-size: @size;
+    }
+  }
+}
+
+// generate icons
+
+& when (@classes--icon) {
+
+  .generate-icons();
+  .generate-icons(@i: length(@icons-xt)) when (@i > 0) {
+    .generate-icons(@i - 1);
+    @name: extract(@icons-xt, @i);
+    @val: ~"icon-xt--@{name}";
+    .icon-xt--@{name} {
+      &:before {
+        content: @@val;
+      }
+    }
+  }
+
+}
+
+//////////////////////
+// icons theme
+//////////////////////
+
+@icons-theme--family: none;
+@icons-theme: none;
+
+// styles
+
+.icon-theme {
+  & when not (@icons-theme--family = none) {
+    .icon--base();
+    font-family: @icons-theme--family;
+  }
+}
+
+[class^='icon-theme--'], [class*=' icon-theme--'] {
+  display: inline-block;
+  vertical-align: middle;
+  .align-self(center);
+  &:before {
+    .icon-theme();
+  }
+}
+
+// mixins
+
+.icon(@content, @size: @icon--medium, @position: after) {
+  & when (@position = before) {
+    &:before {
+      .icon-theme();
+      content: '@{content}';
+      font-size: @size;
+    }
+  }
+  & when (@position = after) {
+    &:after {
+      .icon-theme();
+      content: '@{content}';
+      font-size: @size;
+    }
+  }
+}
+
+// generate icons
+
+& when not (@icons-theme--family = none) {
+
+  & when (@classes--icon) {
+
+    .generate-icons();
+    .generate-icons(@i: length(@icons-theme)) when (@i > 0) {
+      .generate-icons(@i - 1);
+      @name: extract(@icons-theme, @i);
+      @val: ~"icon-theme--@{name}";
+      .icon--@{name} {
+        &:before {
+          content: @@val;
+        }
+      }
+    }
+
+  }
+
+}

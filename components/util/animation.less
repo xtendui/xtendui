@@ -1,36 +1,318 @@
+@import '~xtend-library/components/util/animation-core';
+
 //////////////////////
-// delay
+// variables
+//////////////////////
+
+// time
+
+@time--tiny: 100ms;
+@time--small: 250ms;
+@time--medium: 500ms;
+@time--big: 1000ms;
+@time--giant: 2000ms;
+
+// beziers
+
+@bez--in: @bez-cheetah;
+@bez--out: @bez-cheetah;
+
+@bez-ease: ease; // others at https://easings.net/
+@bez-cheetah: ~'cubic-bezier(.14,.63,0,1)';
+@bez-tiger: ~'cubic-bezier(.96,.1,.14,.88)';
+@bez-cat: ~'cubic-bezier(.77,.0,.17,1)';
+@bez-penguin--in: ~'cubic-bezier(.36,0,0,1)';
+@bez-penguin--out: ~'cubic-bezier(1,0,.64,1)';
+@bez-penguin--in-out: ~'cubic-bezier(.68,.13,.25,1)';
+
+//////////////////////
+// transition
 //////////////////////
 
 /* USAGE:
-animation-delay: 150ms; // @start + @child * @increment
-transition-delay: 150ms; // @start + @child * @increment
-.nth-child(@child:6, @start: 0ms, @increment: 25ms, @decrement: 0ms, {
-  .optional-nested {
-    @animation-delay();
-    @transition-delay();
-  }
-});
-animation-delay: 0ms; // @start - @child * @decrement
-transition-delay: 0ms; // @start - @child * @decrement
-.nth-child(@child:6, @start: 150ms, @increment: 0ms, @decrement: 25ms, {
-  .optional-nested {
-    @animation-delay();
-    @transition-delay();
-  }
-});
+opacity: 0;
+transform: translateX(-1.5rem);
+transition-property: all;
+transition-duration: @time--medium;
+transition-timing-function: @bez--out;
+&:hover, &.hover, &:active, &.active {
+  opacity: 1;
+  transform: translateX(0);
+  transition-property: all;
+  transition-duration: @time--medium;
+  transition-timing-function: @bez--in;
+}
 */
 
-.nth-child(@child, @start, @increment, @decrement, @rules) when (@child > 0) {
-  .nth-child(@child - 1, @start, @increment, @decrement, @rules);
-  &:nth-child(@{child}) {
-    @rules();
+//////////////////////
+// animation
+//////////////////////
+
+/* USAGE:
+.anim-opacity();
+*/
+
+/* USAGE:
+.anim-opacity.active();
+&:hover, &.hover, &:active, &.active {
+  .anim-opacity.out();
+}
+*/
+
+/* USAGE:
+&.active {
+  .inner {
+    .anim-opacity.active();
+  }
+}
+&.out {
+  .inner {
+    .anim-opacity.out();
+  }
+}
+*/
+
+// anim-opacity
+
+.anim-opacity {
+  &.active {
+    opacity: 0;
+    animation-name: anim-opacity--in;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--in;
+    animation-fill-mode: forwards;
+  }
+  &.out {
+    opacity: 1;
+    animation-name: anim-opacity--out;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--out;
+    animation-fill-mode: forwards;
   }
 }
 
-@animation-delay: { animation-delay: @start + ((@child - 1) * @increment) - ((@child - 1) * @decrement); };
+@keyframes anim-opacity--in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
-@transition-delay: { transition-delay: @start + ((@child - 1) * @increment) - ((@child - 1) * @decrement); };
+@keyframes anim-opacity--out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+// anim-zoom
+
+.anim-zoom {
+  &.active {
+    opacity: 0;
+    animation-name: anim-zoom--in;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--in;
+    animation-fill-mode: forwards;
+  }
+  &.out {
+    opacity: 1;
+    animation-name: anim-zoom--out;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes anim-zoom--in {
+  0% {
+    opacity: 0;
+    transform: scale(.75, .75);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes anim-zoom--out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(.75, .75);
+  }
+}
+
+// anim-y
+
+.anim-y {
+  &.active {
+    opacity: 0;
+    animation-name: anim-y--in;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--in;
+    animation-fill-mode: forwards;
+  }
+  &.out {
+    opacity: 1;
+    animation-name: anim-y--out;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes anim-y--in {
+  0% {
+    opacity: 0;
+    transform: translateY(-1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes anim-y--out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+}
+
+// anim-y-inverse
+
+.anim-y-inverse {
+  &.active {
+    opacity: 0;
+    animation-name: anim-y-inverse--in;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--in;
+    animation-fill-mode: forwards;
+  }
+  &.out {
+    opacity: 1;
+    animation-name: anim-y-inverse--out;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes anim-y-inverse--in {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes anim-y-inverse--out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-1.5rem);
+  }
+}
+
+// anim-x
+
+.anim-x {
+  &.active {
+    opacity: 0;
+    animation-name: anim-x--in;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--in;
+    animation-fill-mode: forwards;
+  }
+  &.out {
+    opacity: 1;
+    animation-name: anim-x--out;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes anim-x--in {
+  0% {
+    opacity: 0;
+    transform: translateX(-1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes anim-x--out {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(1.5rem);
+  }
+}
+
+// anim-x-inverse
+
+.anim-x-inverse {
+  &.active {
+    opacity: 0;
+    animation-name: anim-x-inverse--in;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--in;
+    animation-fill-mode: forwards;
+  }
+  &.out {
+    opacity: 1;
+    animation-name: anim-x-inverse--out;
+    animation-duration: @time--medium;
+    animation-timing-function: @bez--out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes anim-x-inverse--in {
+  0% {
+    opacity: 0;
+    transform: translateX(1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes anim-x-inverse--out {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-1.5rem);
+  }
+}
 
 //////////////////////
 // custom
@@ -38,20 +320,18 @@ transition-delay: 0ms; // @start - @child * @decrement
 
 // collapse
 
-.collapse--height {
-  overflow: hidden;
-  height: 0;
-  &:before {
-    display: none;
-    content: 'xt-collapse--height';
-  }
-}
-
+.collapse--height,
 .collapse--width {
-  overflow: hidden;
-  width: 0;
-  &:after {
-    display: none;
-    content: 'xt-collapse--width';
+  &.active {
+    transition-property: height, width;
+    transition-duration: @time--medium;
+    transition-delay: initial;
+    transition-timing-function: @bez--in;
+  }
+  &.out {
+    transition-property: height, width;
+    transition-duration: @time--medium;
+    transition-delay: initial;
+    transition-timing-function: @bez--out;
   }
 }

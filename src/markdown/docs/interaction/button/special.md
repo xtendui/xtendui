@@ -15,6 +15,6 @@ Special optional modifiers classes.
 `.btn--icon` has special padding for icons.
 
 <demo>
-  <demovanilla src="demos/inline/docs/interaction/button/special" name="special">
+  <demovanilla src="demos/inline/demos/button/special">
   </demovanilla>
 </demo>

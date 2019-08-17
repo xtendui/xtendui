@@ -15,8 +15,8 @@ parent: "Toggle"
 Activation/deactivation automatically waits for the **duration** of animations and transitions on `.active` and `.out`.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/toggle/timing-automatic" data-name="automatic">
-  </div>
+  <demovanilla src="demos/inline/demos/toggle/timing-automatic">
+  </demovanilla>
 </demo>
 
 ###Duration
@@ -24,8 +24,8 @@ Activation/deactivation automatically waits for the **duration** of animations a
 To set duration (if you are animating by js for example) use `"durationOn": Milliseconds` `"durationOff": Milliseconds`.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/toggle/timing-duration" data-name="duration">
-  </div>
+  <demovanilla src="demos/inline/demos/toggle/timing-duration">
+  </demovanilla>
 </demo>
 
 ###Delay
@@ -33,15 +33,15 @@ To set duration (if you are animating by js for example) use `"durationOn": Mill
 To add a delay before duration use `"delayOn": Milliseconds` `"delayOff": Milliseconds`.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/toggle/timing-delay" data-name="delay">
-  </div>
+  <demovanilla src="demos/inline/demos/toggle/timing-delay">
+  </demovanilla>
 </demo>
 
 You can use a function for `"delayOn"` and `"delayOff"` like this: `function(current, total) {return current * 75}`. You can also use a string `"return current * 75"`.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/toggle/timing-delayfnc" data-name="delay function">
-  </div>
+  <demovanilla src="demos/inline/demos/toggle/timing-delay-fnc">
+  </demovanilla>
 </demo>
 
 ###Instant
@@ -49,6 +49,6 @@ You can use a function for `"delayOn"` and `"delayOff"` like this: `function(cur
 To disable queue and automatic duration use `"instant": true`.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/toggle/timing-instant" data-name="instant">
-  </div>
+  <demovanilla src="demos/inline/demos/toggle/timing-instant">
+  </demovanilla>
 </demo>

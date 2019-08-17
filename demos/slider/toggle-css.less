@@ -1,0 +1,97 @@
+.slider-toggle-css {
+  .slides_inner {
+    overflow: hidden;
+    // dragger animations
+    .transition-none() !important;
+  }
+  // animation
+  .slide {
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: 9;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: @white;
+      transform: translateX(0);
+    }
+    &.active {
+      .anim-x-inverse.active();
+      animation-duration: @time--big;
+      &:after {
+        animation-name: slider-toggle-css--in;
+        animation-duration: @time--big;
+        animation-timing-function: @bez--in;
+        transform: translateX(-100%);
+      }
+      &.inverse {
+        .anim-x.active();
+        animation-duration: @time--big;
+        &:after {
+          animation-name: slider-toggle-css-in-inverse;
+          animation-duration: @time--big;
+          animation-timing-function: @bez--in;
+          transform: translateX(100%);
+        }
+      }
+    }
+    &.out {
+      .anim-x-inverse.out();
+      animation-duration: @time--big;
+      &:after {
+        animation-name: slider-toggle-css--out;
+        animation-duration: @time--big;
+        animation-timing-function: @bez--out;
+        transform: translateX(0);
+      }
+      &.inverse {
+        .anim-x.out();
+        animation-duration: @time--big;
+        &:after {
+          animation-name: slider-toggle-css-out-inverse;
+          animation-duration: @time--big;
+          animation-timing-function: @bez--out;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}
+
+@keyframes slider-toggle-css--in {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slider-toggle-css-in-inverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slider-toggle-css--out {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slider-toggle-css-out-inverse {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

@@ -93,6 +93,6 @@ You can nest `.row`, but a flex children can't be a flex itself.
 To have custom width columns use `width` and `max-width`.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/layout/grid/column-nested" data-name="nested">
-  </div>
+  <demovanilla src="demos/inline/demos/grid/custom">
+  </demovanilla>
 </demo>

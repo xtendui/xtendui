@@ -15,13 +15,13 @@ Optional classes for assigning variant.
 You can change the default **variant** inside the `.btn` selector in `/theme/_component.less`.
 
 <demo>
-  <demovanilla src="demos/inline/docs/interaction/button/variant" name="variant">
+  <demovanilla src="demos/inline/demos/button/variant">
   </demovanilla>
 </demo>
 
 On containers use `.text--inverse` to have white buttons (needs `color: inherit`).
 
 <demo>
-  <demovanilla src="demos/inline/docs/interaction/button/inverse" name="inverse">
+  <demovanilla src="demos/inline/demos/button/inverse">
   </demovanilla>
 </demo>

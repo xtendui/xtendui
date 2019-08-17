@@ -15,8 +15,8 @@ Toggled class is by default `.active`.
 You can specify classes to toggle with `"class": "my-class"`.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/toggle/class" data-name="class">
-  </div>
+  <demovanilla src="demos/inline/demos/toggle/class">
+  </demovanilla>
 </demo>
 
 You can start with toggled elements and targets just by adding all of the classes to the **elements** or **targets** you want activated. Following this activation the **min** option will take
@@ -25,6 +25,6 @@ You can start with toggled elements and targets just by adding all of the classe
 If you want to restart the component with the initial starting element use `self.initStart();`.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/toggle/start" data-name="start">
-  </div>
+  <demovanilla src="demos/inline/demos/toggle/start">
+  </demovanilla>
 </demo>

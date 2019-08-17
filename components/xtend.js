@@ -4,14 +4,14 @@
 
 import './polyfill';
 import {Core} from 'xtend-library/components/core'
-import {Toggle} from 'xtend-library/components/toggle'
-import {Drop} from 'xtend-library/components/drop'
-import {Overlay} from 'xtend-library/components/overlay'
-import {Smooth} from 'xtend-library/components/smooth'
-import {Slider} from 'xtend-library/components/slider'
-import {Scroll} from 'xtend-library/components/scroll'
-import {Sticky} from 'xtend-library/components/sticky'
-import {Ajax} from 'xtend-library/components/ajax'
+import {Toggle} from 'xtend-library/components/toggle/toggle'
+import {Drop} from 'xtend-library/components/drop/drop'
+import {Overlay} from 'xtend-library/components/overlay/overlay'
+import {Smooth} from 'xtend-library/components/smooth/smooth'
+import {Slider} from 'xtend-library/components/slider/slider'
+import {Scroll} from 'xtend-library/components/scroll/scroll'
+import {Sticky} from 'xtend-library/components/sticky/sticky'
+import {Ajax} from 'xtend-library/components/ajax/ajax'
 
 //////////////////////
 // constructor
@@ -261,11 +261,13 @@ if (typeof window !== 'undefined') {
         }
         */
         // added
+        /* NO IT BUGS slider react inizialization with wrong width values
         for (let added of mutation.addedNodes) {
           if (added.nodeType === 1) {
             Xt.initElement(added);
           }
         }
+        */
       }
     }
   });

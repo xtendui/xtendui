@@ -13,6 +13,6 @@ parent: "Slider"
 Use events `'start.xt.auto'` `'stop.xt.auto'` `'pause.xt.auto'`
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/progress" data-name="progress">
-  </div>
+  <demovanilla src="demos/inline/demos/slider/progress">
+  </demovanilla>
 </demo>

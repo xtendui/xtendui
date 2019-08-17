@@ -13,8 +13,8 @@ parent: "Slider"
 To disable slider use `.slider.slider--disable` also within media queries.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/disable" data-name="disable">
-  </div>
+  <demovanilla src="demos/inline/demos/slider/disable">
+  </demovanilla>
 </demo>
 
 ###No overflow
@@ -22,8 +22,8 @@ To disable slider use `.slider.slider--disable` also within media queries.
 Slider automatically disable when not overflowing or by adding manually `.slider.slider--nooverflow`.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/nooverflow" data-name="nooverflow">
-  </div>
+  <demovanilla src="demos/inline/demos/slider/no-overflow">
+  </demovanilla>
 </demo>
 
 ###Expand
@@ -31,6 +31,7 @@ Slider automatically disable when not overflowing or by adding manually `.slider
 To disable and expand a slider use `.slider.slider--expand` also within media queries.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/expand" data-name="expand">
-  </div>
+  <demovanilla src="demos/inline/demos/slider/expand">
+  </demovanilla>
 </demo>
+

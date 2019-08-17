@@ -61,22 +61,22 @@ You can create a toggle with **mutiple** mode by assigning `[data-xt-toggle]` to
 With multiple **targets**, the ones activated is the one with the same index of the toggled **element**. Nested **targets** are filtered out.
 
 <demo>
-  <demovanilla src="demos/inline/docs/interaction/toggle/multiple-index" name="index">
+  <demovanilla src="demos/inline/demos/toggle/multiple-index">
   </demovanilla>
 </demo>
 
 Custom **elements** and **targets**.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/toggle/multiple-options" data-name="options">
-  </div>
+  <demovanilla src="demos/inline/demos/toggle/custom-options">
+  </demovanilla>
 </demo>
 
 Custom targets classname that starts with `.toggle--`.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/toggle/multiple-classes" data-name="classes">
-  </div>
+  <demovanilla src="demos/inline/demos/toggle/toggle-class">
+  </demovanilla>
 </demo>
 
 ###Unique
@@ -94,20 +94,20 @@ When you don't specify **elements** the scope becomes global and the element bec
 Toggle a single **element** with `[data-xt-toggle]`.
 
 <demo>
-  <demovanilla src="demos/inline/docs/interaction/toggle/unique-self" name="self">
+  <demovanilla src="demos/inline/demos/toggle/unique-self">
   </demovanilla>
 </demo>
 
 Toggle a single **target** using `targets` with **#id**.
 
 <demo>
-  <demovanilla src="demos/inline/docs/interaction/toggle/unique-single" name="single">
+  <demovanilla src="demos/inline/demos/toggle/unique-single">
   </demovanilla>
 </demo>
 
 Toggle same **targets** using `targets` with **#id**.
 
 <demo>
-  <demovanilla src="demos/inline/docs/interaction/toggle/unique-same" name="same">
+  <demovanilla src="demos/inline/demos/toggle/unique-same">
   </demovanilla>
 </demo>

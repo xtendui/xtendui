@@ -1,0 +1,136 @@
+//////////////////////
+// overlay
+//////////////////////
+
+.overlay_outer {
+  .toggle--flex();
+  position: fixed;
+  z-index: @index--overlay;
+  top: 0;
+  left: 0;
+  bottom: 0; // @FIX no height or it bugs collapse animation
+  right: 0; // @FIX no width or it bugs collapse animation
+  // scroll
+  overflow: hidden;
+  .overflow-style();
+}
+
+.overlay {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto; // @FIX http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
+  width: 100%;
+  min-height: 100vh;
+  // space override @container--space
+  @media @max-sm {
+    padding: 0 !important;
+  }
+  // styles
+  .overlay_design {
+    .design-setup();
+  }
+}
+
+.overlay_inner {
+  .align-self(center);
+  position: relative;
+  z-index: @index--overlay;
+  width: 100%;
+}
+
+.overlay_content {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+// addons
+
+.overlay--screen {
+  .overlay {
+    position: relative;
+    z-index: @index--overlay;
+    max-width: none !important;
+    .padding(all, none) !important;
+    .overlay_inner {
+      position: static;
+    }
+  }
+  .overlay_inner {
+    .flex--auto();
+    display: flex;
+    flex-direction: column;
+  }
+  > .backdrop {
+    .trans-anim-none() !important;
+    opacity: 0 !important;
+  }
+}
+
+.overlay--pos {
+  .overlay {
+    position: relative;
+    z-index: @index--overlay;
+    .padding(all, none) !important;
+    .overlay_inner {
+      position: static;
+    }
+  }
+  .overlay_inner {
+    .flex--auto();
+    display: flex;
+    flex-direction: column;
+  }
+  .overlay--left& {
+    .overlay {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+  .overlay--right& {
+    .overlay {
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+}
+
+// .overlay--disable
+
+.overlay--disable {
+  .xt-disable();
+  display: flex !important;
+  overflow: initial !important;
+  html.xt-scrollbar & {
+    overflow: initial !important;
+  }
+  position: static;
+  z-index: initial;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+  width: auto;
+  height: auto;
+  .overlay {
+    padding: 0;
+    width: auto;
+    min-height: auto;
+    .overlay_inner {
+      z-index: initial;
+      .overlay_design {
+        display: none;
+      }
+      .overlay_content {
+        padding: 0 !important;
+      }
+      .btn--close.overlay_dismiss {
+        display: none !important;
+      }
+    }
+  }
+  > .backdrop {
+    display: none !important;
+  }
+}

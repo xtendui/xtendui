@@ -22,6 +22,6 @@ You can add navigation with `[data-xt-nav="+-Number"].xt-ignore` where `+-Number
 </script>
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/navigation" data-name="navigation">
-  </div>
+  <demovanilla src="demos/inline/demos/slider/navigation">
+  </demovanilla>
 </demo>

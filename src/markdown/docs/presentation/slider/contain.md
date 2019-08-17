@@ -15,10 +15,16 @@ Use `"contain": true` to contain the slides.
 `"contain": true", align": "center"` `"contain": true", "align": "left"` `"contain": true", "align": "right"`
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/contain-center" data-name="center">
-  </div>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/contain-left" data-name="left">
-  </div>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/contain-right" data-name="right">
-  </div>
+  <demovanilla src="demos/inline/demos/slider/contain-center">
+  </demovanilla>
+</demo>
+
+<demo>
+  <demovanilla src="demos/inline/demos/slider/contain-left">
+  </demovanilla>
+</demo>
+
+<demo>
+  <demovanilla src="demos/inline/demos/slider/contain-right">
+  </demovanilla>
 </demo>

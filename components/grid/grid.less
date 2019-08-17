@@ -1,83 +1,25 @@
-//////////////////////
-// container
-//////////////////////
-
-.container {
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: @container--max;
-}
+@import '~xtend-library/components/grid/grid-core';
 
 //////////////////////
-// grid
+// variables
 //////////////////////
 
-// col--auto
-
-.col--auto(@breakpoint: none) when (@breakpoint = none) {
-  flex: 1 1 0; // flex-grow flex-shrink flex-basis
-  max-width: none;
-  width: auto;
-}
-
-.col--auto(@breakpoint: none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    flex: 1 1 0; // flex-grow flex-shrink flex-basis
-    max-width: none;
-    width: auto;
-  }
-}
-
-// col--custom
-
-.col--custom(@val, @breakpoint: none) when (@breakpoint = none) {
-  flex: 0 0 auto; // flex-grow flex-shrink flex-basis
-  max-width: @val;
-  width: @val;
-}
-
-.col--custom(@val, @breakpoint: none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    flex: 0 0 auto; // flex-grow flex-shrink flex-basis
-    max-width: @val;
-    width: @val;
-  }
-}
-
-
-// grid
-
-.col(@number, @breakpoint: none) when (@breakpoint = none) {
-  @val: (percentage(@number / @columns));
-  flex: 0 0 auto; // flex-grow flex-shrink flex-basis
-  max-width: @val;
-  width: @val;
-}
-
-.col(@number, @breakpoint: none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @val: (percentage(@number / @columns));
-  @media @@query-min {
-    flex: 0 0 auto; // flex-grow flex-shrink flex-basis
-    max-width: @val;
-    width: @val;
-  }
-}
+@row-spaces: none, micro, tiny, small, medium, big, giant; // if you change this change also variables names below
+@row-space--none: 0 0; // vertical horizontal
+@row-space--micro: .25rem .25rem;
+@row-space--tiny: .5rem .5rem;
+@row-space--small: .75rem .75rem;
+@row-space--medium: 1rem 1rem;
+@row-space--big: 1.5rem 1.5rem;
+@row-space--giant: 2rem 2rem;
 
 //////////////////////
 // row
 //////////////////////
 
 .row {
-  .list-reset();
-  display: flex;
-}
-
-.row-inline {
-  display: inline-flex;
-  width: 100%;
+  // option
+  .row-space(big);
+  flex-wrap: wrap;
+  flex-direction: row;
 }

@@ -13,6 +13,6 @@ parent: "Sticky"
 To disable sticky use `.sticky--disable` useful within media queries.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/sticky/disable" data-name="disable">
+  <div class="demo_item" data-iframe="iframe/demos/sticky/disable">
   </div>
 </demo>

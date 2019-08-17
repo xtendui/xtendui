@@ -1,0 +1,66 @@
+//////////////////////
+// document
+//////////////////////
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-size-adjust: 100%;
+  .overflow-style();
+}
+
+body {
+  overflow-x: hidden !important;
+  overflow-y: scroll !important;
+  .overflow-style();
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+//////////////////////
+// dl
+//////////////////////
+
+// .dl--block
+
+dl, .dl--block {
+  dt {
+    clear: none;
+    float: none;
+    margin: 0;
+  }
+  dd {
+    float: none;
+    margin: 0;
+  }
+}
+
+// .dl--line
+
+.dl--line {
+  .clearfix();
+  dt {
+    clear: both;
+    float: left;
+    margin: 0;
+  }
+  dd {
+    display: inline-block;
+    float: left;
+    margin: 0;
+  }
+}
+
+//////////////////////
+// code
+//////////////////////
+
+code {
+  text-transform: none;
+  white-space: nowrap;
+}
+
+pre code {
+  float: left;
+  white-space: pre-wrap;
+}

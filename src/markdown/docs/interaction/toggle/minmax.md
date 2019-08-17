@@ -17,7 +17,7 @@ The required **min** activation is fulfilled on initialization.
 Use `"max": "Infinity"`  for no limits.
 
 <demo>
-  <demovanilla src="demos/inline/docs/interaction/toggle/minmax" name="minmax">
+  <demovanilla src="demos/inline/demos/toggle/minmax">
   </demovanilla>
 </demo>
 `

@@ -15,17 +15,17 @@ parent: "Overlay"
 Change class to add to `html` element on activation. `"classHtml": String`.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/overlay/classhtml" data-name="classhtml">
-  </div>
+  <demovanilla src="demos/inline/extensions/overlay/class-html">
+  </demovanilla>
 </demo>
 
 ##Close fixed
 
-Put `.btn--close_fixed.xt-fixed` outside.
+`.overlay_close--fixed.xt-fixed`
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/overlay/closefixed" data-name="close fixed">
-  </div>
+  <demovanilla src="demos/inline/extensions/overlay/close-fixed">
+  </demovanilla>
 </demo>
 
 ##Close outside
@@ -33,15 +33,15 @@ Put `.btn--close_fixed.xt-fixed` outside.
 Put `.btn--close` outside.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/overlay/closeoutside" data-name="close outside">
-  </div>
+  <demovanilla src="demos/inline/extensions/overlay/close-outside">
+  </demovanilla>
 </demo>
 
 ##Message outside
 
-`.overlay_message`
+`.overlay_message--outside`
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/overlay/messageoutside" data-name="message outside">
-  </div>
+  <demovanilla src="demos/inline/extensions/overlay/message-outside">
+  </demovanilla>
 </demo>

@@ -13,10 +13,10 @@ parent: "Sticky"
 You can optionally set in the less mixin a mode `"sticky": "absolute"` or `"sticky": "fixed"` or `"sticky": "fixed-always"` to have that position when the sticky is not activated.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/sticky/mode-absolute" data-name="absolute">
+  <div class="demo_item" data-iframe="iframe/demos/sticky/mode-absolute">
   </div>
-  <div class="demo_item" data-iframe="demos/docs/presentation/sticky/mode-fixed" data-name="fixed">
+  <div class="demo_item" data-iframe="iframe/demos/sticky/mode-fixed">
   </div>
-  <div class="demo_item" data-iframe="demos/docs/presentation/sticky/mode-fixed-always" data-name="fixed-always">
+  <div class="demo_item" data-iframe="iframe/demos/sticky/mode-fixed-always">
   </div>
 </demo>

@@ -1,136 +1,214 @@
+@import '~xtend-library/components/overlay/overlay-core';
+
+//////////////////////
+// variables
+//////////////////////
+
+@overlays: tiny, small, medium, big, giant, full; // if you change this change also variables names below
+@overlay--tiny: @breakpoint--xs - 60;
+@overlay--small: @breakpoint--sm - 60;
+@overlay--medium: @breakpoint--md - 60;
+@overlay--big: @breakpoint--lg - 60;
+@overlay--giant: @breakpoint--xl - 60;
+@overlay--full: none;
+
 //////////////////////
 // overlay
 //////////////////////
 
-.overlay_outer {
-  .toggle--flex();
-  position: fixed;
-  z-index: @index--overlay;
-  top: 0;
-  left: 0;
-  bottom: 0; // @FIX no height or it bugs collapse animation
-  right: 0; // @FIX no width or it bugs collapse animation
-  // scroll
-  overflow: hidden;
-  .overflow-style();
-}
-
 .overlay {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: center;
-  margin: auto; // @FIX http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
-  width: 100%;
-  min-height: 100vh;
-  // space override @container--space
-  @media @max-sm {
-    padding: 0 !important;
-  }
   // styles
-  .overlay_design {
-    .design-setup();
+  .overlay_content {
+    padding: 3rem;
+    @media @min-sm {
+      padding: 4rem;
+    }
+    & + .overlay_content {
+      padding-top: 0 !important;
+    }
   }
-}
-
-.overlay_inner {
-  .align-self(center);
-  position: relative;
-  z-index: @index--overlay;
-  width: 100%;
-}
-
-.overlay_content {
-  margin-top: auto;
-  margin-bottom: auto;
+  .overlay_design, .overlay_content {
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+  }
+  .btn--close.overlay_dismiss {
+    position: absolute;
+    top: 0;
+    right: 0;
+    .btn--giant();
+  }
+  // option
+  .overlay--light();
+  .overlay--size(small);
 }
 
 // addons
 
 .overlay--screen {
-  .overlay {
-    position: relative;
-    z-index: @index--overlay;
-    max-width: none !important;
-    .padding(all, none) !important;
-    .overlay_inner {
-      position: static;
-    }
-  }
-  .overlay_inner {
-    .flex--auto();
-    display: flex;
-    flex-direction: column;
-  }
-  > .backdrop {
-    .trans-anim-none() !important;
-    opacity: 0 !important;
-  }
+  // option
+  .overlay--size(giant);
+  .overlay--squared();
+  .overlay--noborder();
 }
 
 .overlay--pos {
   .overlay {
-    position: relative;
-    z-index: @index--overlay;
-    .padding(all, none) !important;
-    .overlay_inner {
-      position: static;
+    .overlay--left& {
+      width: 88% !important;
+      max-width: 500px !important;
+    }
+    .overlay--right& {
+      width: 88% !important;
+      max-width: 500px !important;
     }
   }
-  .overlay_inner {
-    .flex--auto();
-    display: flex;
-    flex-direction: column;
-  }
-  .overlay--left& {
-    .overlay {
-      margin-left: 0;
-      margin-right: auto;
-    }
-  }
-  .overlay--right& {
-    .overlay {
-      margin-left: auto;
-      margin-right: 0;
+  // option
+  .overlay--dark();
+  .overlay--squared();
+  .overlay--noborder();
+}
+
+.overlay--disable {
+  // disable custom animation
+  .overlay {
+    .overlay_inner,
+    .overlay_content {
+      opacity: 1 !important;
+      .trans-anim-none() !important;
     }
   }
 }
 
-// .overlay--disable
+// animation
 
-.overlay--disable {
-  .xt-disable();
-  display: flex !important;
-  overflow: initial !important;
-  html.xt-scrollbar & {
-    overflow: initial !important;
-  }
-  position: static;
-  z-index: initial;
-  top: auto;
-  left: auto;
-  bottom: auto;
-  right: auto;
-  width: auto;
-  height: auto;
-  .overlay {
-    padding: 0;
-    width: auto;
-    min-height: auto;
-    .overlay_inner {
-      z-index: initial;
+.overlay_outer {
+  animation-duration: @time--medium + @time--small; // needed for .out animation timing, put max animation time
+  &.active {
+    .overlay_design {
+      .anim-zoom.active();
+    }
+    .overlay_content,
+    .btn--close.overlay_dismiss {
+      .anim-y.active();
+      animation-delay: @time--small;
+    }
+    > .backdrop {
+      .backdrop.active();
+    }
+    // addons
+    &.overlay--screen {
+      .anim-opacity.active();
+    }
+    &.overlay--left {
       .overlay_design {
-        display: none;
+        .anim-x.active();
       }
-      .overlay_content {
-        padding: 0 !important;
-      }
+      .overlay_content,
       .btn--close.overlay_dismiss {
-        display: none !important;
+        .anim-x.active();
+        animation-delay: @time--small;
+      }
+    }
+    &.overlay--right {
+      .overlay_design {
+        .anim-x-inverse.active();
+      }
+      .overlay_content,
+      .btn--close.overlay_dismiss {
+        .anim-x-inverse.active();
+        animation-delay: @time--small;
       }
     }
   }
-  > .backdrop {
-    display: none !important;
+  &.out {
+    .overlay_design {
+      .anim-zoom.out();
+      animation-delay: @time--small;
+    }
+    .overlay_content,
+    .btn--close.overlay_dismiss {
+      .anim-y.out();
+    }
+    > .backdrop {
+      .backdrop.out();
+    }
+    // addons
+    &.overlay--screen {
+      .anim-opacity.out();
+      animation-delay: @time--small;
+    }
+    &.overlay--left {
+      .overlay_design {
+        .anim-x-inverse.out();
+        animation-delay: @time--small;
+      }
+      .overlay_content,
+      .btn--close.overlay_dismiss {
+        .anim-x-inverse.out();
+      }
+    }
+    &.overlay--right {
+      .overlay_design {
+        .anim-x.out();
+        animation-delay: @time--small;
+      }
+      .overlay_content,
+      .btn--close.overlay_dismiss {
+        .anim-x.out();
+      }
+    }
+  }
+}
+
+// variant
+
+.overlay--light {
+  .overlay_design {
+    border-color: @gray--300;
+    background: @white;
+    box-shadow: @shadow--light;
+  }
+  .overlay_content {
+    color: @text;
+  }
+  .btn--close.overlay_dismiss {
+    .btn--text();
+  }
+}
+
+.overlay--dark {
+  .overlay_design {
+    border-color: @gray--900;
+    background: @gray--900;
+    box-shadow: @shadow--dark;
+  }
+  .overlay_content {
+    .text--inverse();
+  }
+  .btn--close.overlay_dismiss {
+    .text--inverse();
+    .btn--text();
+  }
+}
+
+// special
+
+.overlay--squared {
+  .overlay_design, .overlay_content {
+    border-radius: 0;
+  }
+}
+
+.overlay--noborder {
+  .overlay_design {
+    border: 0;
+  }
+}
+
+.overlay--none {
+  .overlay_content {
+    padding: 0 !important;
   }
 }

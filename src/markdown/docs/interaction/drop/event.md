@@ -13,6 +13,6 @@ parent: "Drop"
 You can specify **on** and **off** events for the drop. Fore example `"on": "mouseenter"` `"off": "mouseleave"`. Default is `"on": "click"`.
 
 <demo>
-  <demovanilla src="demos/inline/docs/interaction/drop/event" name="event">
+  <demovanilla src="demos/inline/demos/drop/event">
   </demovanilla>
 </demo>

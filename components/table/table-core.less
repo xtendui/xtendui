@@ -1,0 +1,66 @@
+//////////////////////
+// tables
+//////////////////////
+
+// .table
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  th {
+    text-align: left;
+    vertical-align: bottom;
+  }
+  td {
+    text-align: left;
+  }
+}
+
+// .table--middle
+
+.table--middle {
+  th,
+  td {
+    vertical-align: middle;
+  }
+}
+
+// .table--center
+
+.table--center {
+  th,
+  td {
+    text-align: center;
+  }
+}
+
+// .table--right
+
+.table--right {
+  th:not(:nth-child(1)),
+  td:not(:nth-child(1)) {
+    text-align: right;
+  }
+}
+
+// .table--scroll
+
+.table--scroll {
+  .block();
+  overflow-x: auto;
+  .overflow-style();
+}
+
+// generate-container-responsive
+
+.generate-table-scroll-responsive();
+.generate-table-scroll-responsive(@i: length(@breakpoints)) when (@i > 0) {
+  .generate-table-scroll-responsive(@i - 1);
+  @breakpoint: extract(@breakpoints, @i);
+  @query-max: 'max-@{breakpoint}';
+  @media @@query-max {
+    .table--scroll-@{breakpoint} {
+      .table--scroll();
+    }
+  }
+}

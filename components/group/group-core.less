@@ -1,0 +1,103 @@
+//////////////////////
+// group
+//////////////////////
+
+.group {
+  .link--none();
+  display: inline-flex !important;
+  flex-wrap: nowrap;
+  position: relative;
+  padding: 0 !important;
+  // .form-item
+  .form-item {
+    .flex--auto();
+    width: auto;
+    // border
+    &:first-child {
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
+    &:last-child {
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0 !important;
+    }
+  }
+}
+
+// .group_inner
+
+.group_inner {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  //margin-right: -3px; // fix spacing inline
+  // .btn
+  > * {
+    .flex--auto();
+    text-align: center;
+    white-space: nowrap;
+  }
+  .form-item ~ & {
+    > * {
+      .margin(right, none);
+    }
+  }
+  // border inline
+  &:first-child {
+    > * {
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
+  }
+  &:last-child {
+    > * {
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+  }
+  &:not(:first-child):not(:last-child) {
+    > * {
+      border-radius: 0 !important;
+    }
+  }
+  // border stack
+  &:first-child {
+    > * {
+      &:not(:first-child) {
+        border-bottom-right-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+        border-top-left-radius: 0 !important;
+      }
+      &:not(:last-child) {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+      }
+      &:not(:first-child):not(:last-child) {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+      }
+    }
+  }
+  &:last-child {
+    > * {
+      &:not(:first-child) {
+        border-bottom-left-radius: 0 !important;
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+      }
+      &:not(:last-child) {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+      }
+      &:not(:first-child):not(:last-child) {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+      }
+    }
+  }
+}

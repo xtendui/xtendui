@@ -1,200 +1,119 @@
+@import '~xtend-library/components/drop/drop-core';
+
+//////////////////////
+// variables
+//////////////////////
+
+@drop--space: 6px; // space between button and drop
+
 //////////////////////
 // drop
 //////////////////////
 
-.drop_outer {
-  display: inline-flex;
-  position: relative;
-  // z-index
-  &.active {
-    &, > .drop {
-      z-index: @index--drop;
-    }
-  }
-  &.out {
-    &, > .drop {
-      z-index: @index--drop - 1;
-    }
-  }
-  // content
-  > .backdrop, > .drop {
-    display: none;
-  }
-  &.active, &.out {
-    > .backdrop, > .drop {
-      display: block;
-    }
-  }
-}
-
 .drop {
   // styles
-  position: absolute;
   > .drop_inner {
-    position: relative;
-    z-index: @index--base; // fix :before negative z-index
-    > .drop_design {
-      .design-setup();
+    > .drop_content {
+      > .list, > .list-block {
+        .padding(y, 1.3rem); // vertical space
+        min-width: 18rem;
+      }
+    }
+    > .drop_design, > .drop_content {
+      border-radius: 4px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: transparent;
     }
   }
-  // others
+  // option
+  .drop--light();
+  .drop--left();
+  .drop--bottom();
+}
+
+// animation
+
+.drop_outer {
+  &, > .drop {
+    animation-duration: @time--medium + @time--small; // needed for .out animation timing, put max animation time
+  }
+  &.active {
+    > .drop > .drop_inner {
+      > .drop_design {
+        .anim-zoom.active();
+      }
+      > .drop_content {
+        .anim-y.active();
+        animation-delay: @time--small;
+      }
+    }
+    > .backdrop {
+      .backdrop.active();
+    }
+  }
   &.out {
-    pointer-events: none;
+    > .drop > .drop_inner {
+      > .drop_design {
+        .anim-zoom.out();
+        animation-delay: @time--small;
+      }
+      > .drop_content {
+        .anim-y.out();
+      }
+    }
+    > .backdrop {
+      .backdrop.out();
+    }
   }
 }
 
 // addons
 
-.drop_outer--static {
-  position: static;
-  > .drop,
-  > .drop > .drop_inner {
-    width: 100%;
-  }
-}
-
-// before + after
-
-.drop--before() {
-  padding: @drop--space;
-  left: auto;
-  right: 100%;
-}
-
-.drop.drop--before {
-  .drop--before() !important;
-}
-
-.drop--after() {
-  padding: @drop--space;
-  left: 100%;
-  right: auto;
-}
-
-.drop.drop--after {
-  .drop--after() !important;
-}
-
-// left + right
-
-.drop--left() {
-  padding: @drop--space 0;
-  left: 0;
-  right: auto;
-}
-
-.drop.drop--left {
-  .drop--left() !important;
-}
-
-.drop--right() {
-  padding: @drop--space 0;
-  left: auto;
-  right: 0;
-}
-
-.drop.drop--right {
-  .drop--right() !important;
-}
-
-// bottom + top
-
-.drop--bottom() {
-  padding: @drop--space 0;
-  top: 100%;
-  bottom: auto;
-}
-
-.drop.drop--bottom {
-  .drop--bottom() !important;
-}
-
-.drop--top() {
-  padding: @drop--space 0;
-  top: auto;
-  bottom: 100%;
-}
-
-.drop.drop--top {
-  .drop--top() !important;
-}
-
-// center
-
-.drop--center() {
-  &:before {
-    display: none;
-    content: 'xt-drop--center';
-  }
-}
-
-.drop.drop--center {
-  .drop--center() !important;
-}
-
-// middle
-
-.drop--middle() {
-  padding-top: 0;
-  padding-bottom: 0;
-  &:after {
-    display: none;
-    content: 'xt-drop--middle';
-  }
-}
-
-.drop.drop--middle {
-  .drop--middle() !important;
-}
-
-// contain
-
-.drop--contain-bottom() {
-  .drop--middle();
-  top: auto;
-  bottom: 0;
-}
-
-.drop.drop--contain-bottom {
-  .drop--contain-bottom() !important;
-}
-
-.drop--contain-top() {
-  .drop--middle();
-  top: 0;
-  bottom: auto;
-}
-
-.drop.drop--contain-top {
-  .drop--contain-top() !important;
-}
-
-// .drop--disable
-
 .drop--disable {
-  .xt-disable();
-  position: static;
-  z-index: initial;
-  top: auto;
-  left: auto;
-  bottom: auto;
-  right: auto;
-  > .btn {
-    display: none !important;
+  // disable custom animation
+  > .drop > .drop_inner {
+    > .drop_content {
+      opacity: 1 !important;
+      .trans-anim-none() !important;
+    }
   }
-  > .drop {
-    display: block !important;
-    position: relative;
-    > .drop_inner {
-      z-index: initial;
-      min-width: auto;
-      > .drop_design {
-        display: none;
-      }
-      > .drop_content {
-        max-width: none;
-        max-height: none;
-      }
+}
+
+.drop--overflow-y {
+  > .drop_inner > .drop_content {
+    overflow-y: auto;
+    max-height: 25rem;
+    .overflow-style();
+  }
+}
+
+// variant
+
+.drop--light {
+  > .drop_inner {
+    color: @text;
+    > .drop_design {
+      border-color: @gray--300;
+      background: @white;
+      box-shadow: @shadow--light;
+    }
+    > .drop_content > .list--drop {
+      .list_btn({ .btn--text() });
+    }
+  }
+}
+
+.drop--dark {
+  > .drop_inner {
+    .text--inverse();
+    > .drop_design {
+      border-color: @gray--900;
+      background: @gray--900;
+      box-shadow: @shadow--dark;
+    }
+    > .drop_content > .list--drop {
+      .list_btn({ .btn--text() });
     }
   }
 }

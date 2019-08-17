@@ -15,6 +15,6 @@ parent: "Toggle"
 Multi level navigation with toggle.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/toggle/multilevel" data-name="multilevel">
-  </div>
+  <demovanilla src="demos/inline/extensions/toggle/multilevel">
+  </demovanilla>
 </demo>

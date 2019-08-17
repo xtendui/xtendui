@@ -37,7 +37,7 @@ $ cp -r node_modules/xtend-library/dist/ xtend-library/
 ```less
 // test comment
 
-.drop--disable-example {
+.drop--disable-example > * {
   @media @min-sm {
     .drop--disable();
   }
@@ -103,14 +103,14 @@ let self = Xt.init('xt-scroll', document.documentElement, {
 ###Demos
 
 <demo>
-  <demovanilla src="demos/inline/faq/test-vanilla" name="vanilla">
+  <demovanilla src="demos/inline/demos/test/vanilla">
     <div class="demo_text">
       <div class="alert_content">
         Test
       </div>
     </div>
   </demovanilla>
-  <demoreact src="demos/inline/faq/test-react" name="react">
+  <demoreact src="demos/inline/demos/test/react">
     <div class="demo_text">
       <div class="alert_content">
         Test
@@ -122,14 +122,14 @@ let self = Xt.init('xt-scroll', document.documentElement, {
 ###Iframe demos
 
 <demo>
-  <div class="demo_item" data-iframe="demos/faq/test-vanilla-iframe" data-name="vanilla">
+  <div class="demo_item" data-iframe="iframe/demos/test/vanilla-iframe">
     <div class="demo_text">
       <div class="alert_content">
         Test
       </div>
     </div>
   </div>
-  <div class="demo_item" data-iframe="demos/faq/test-react-iframe" data-name="react">
+  <div class="demo_item" data-iframe="iframe/demos/test/react-iframe">
     <div class="demo_text">
       <div class="alert_content">
         Test

@@ -13,6 +13,6 @@ parent: "Overlay"
 For limiting event inside a selector use `.event-limit`.
 
 <demo>
-  <demovanilla src="demos/inline/docs/interaction/overlay/nested" name="nested">
+  <demovanilla src="demos/inline/demos/overlay/nested">
   </demovanilla>
 </demo>

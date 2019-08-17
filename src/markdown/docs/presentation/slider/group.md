@@ -14,16 +14,16 @@ With `"groupMq": {MediaQuery: Number}` you set a decimal number from 0 to 1 to g
 
 `MediaQuery` is a media query, you can have multiple, for example `"groupMq": {"all": 1, "(min-width: 768px)": 0.8}`.
 
-By default it's set to `"groupMq": {"all": 1}`.
+By default it's set to `"groupMq": {"all": 0.8}`.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/group-responsive" data-name="responsive">
-  </div>
+  <demovanilla src="demos/inline/demos/slider/group-responsive">
+  </demovanilla>
 </demo>
 
 Set to `"groupMq": false` to disable automatic grouping of slides.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/group-false" data-name="false">
-  </div>
+  <demovanilla src="demos/inline/demos/slider/group-false">
+  </demovanilla>
 </demo>

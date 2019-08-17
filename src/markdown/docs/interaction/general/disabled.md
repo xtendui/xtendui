@@ -13,6 +13,6 @@ parent: "General"
 Use `[disabled]` or `.disabled` to apply disables styles to **anything**.
 
 <demo>
-  <demovanilla src="demos/inline/docs/interaction/general/disabled" name="disabled">
+  <demovanilla src="demos/inline/demos/general/disabled">
   </demovanilla>
 </demo>

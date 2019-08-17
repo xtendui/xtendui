@@ -1,0 +1,40 @@
+//////////////////////
+// list
+//////////////////////
+
+.list--base {
+  display: flex;
+  .list-reset();
+  // list
+  > li {
+    display: flex;
+    align-items: flex-start;
+    > * {
+      .flex--auto();
+    }
+  }
+}
+
+// .list
+
+.list {
+  .list--base();
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.list-block {
+  .list--base();
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+// selectors
+
+.list_btn(@rules) {
+  > li:not(.custom) {
+    > a, > button {
+      @rules();
+    }
+  }
+}

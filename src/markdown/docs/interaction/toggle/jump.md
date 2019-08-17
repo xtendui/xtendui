@@ -13,6 +13,6 @@ parent: "Toggle"
 Use `"jump": true` to enable clicking on a **target** to jump to them.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/interaction/toggle/jump" data-name="jump">
-  </div>
+  <demovanilla src="demos/inline/demos/toggle/jump">
+  </demovanilla>
 </demo>

@@ -13,8 +13,11 @@ parent: "Loader"
 `.loader--mouse`
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/loader/mouse-spinner" data-name="spinner">
-  </div>
-  <div class="demo_item" data-iframe="demos/docs/presentation/loader/mouse-filler" data-name="filler">
-  </div>
+  <demovanilla src="demos/inline/demos/loader/mouse-spinner">
+  </demovanilla>
+</demo>
+
+<demo>
+  <demovanilla src="demos/inline/demos/loader/mouse-filler">
+  </demovanilla>
 </demo>

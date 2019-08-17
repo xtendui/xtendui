@@ -13,6 +13,6 @@ parent: "Loader"
 `.loader--spinner`.
 
 <demo>
-  <demovanilla src="demos/inline/docs/presentation/loader/spinner" name="spinner">
+  <demovanilla src="demos/inline/demos/loader/spinner">
   </demovanilla>
 </demo>

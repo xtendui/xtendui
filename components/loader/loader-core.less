@@ -1,0 +1,122 @@
+//////////////////////
+// loader
+//////////////////////
+
+.loader {
+  position: absolute !important;
+  z-index: @index--loader;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.loader--mouse {
+  pointer-events: none;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  right: auto;
+  .filler, .spinner {
+    display: block;
+    position: relative;
+  }
+}
+
+// filler
+
+.filler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+// spinner
+
+.spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+// direction
+
+.loader--x {
+  .filler {
+    span {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.loader--y {
+  .filler {
+    span {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// size
+
+.loader--size-top {
+  &:not(.loader--background) {
+    bottom: auto;
+  }
+  .filler {
+    bottom: auto;
+    span {
+      top: 0;
+    }
+  }
+}
+
+.loader--size-bottom {
+  &:not(.loader--background) {
+    top: auto;
+  }
+  .filler {
+    top: auto;
+    span {
+      bottom: 0;
+    }
+  }
+}
+
+.loader--size-left {
+  &:not(.loader--background) {
+    right: auto;
+  }
+  .filler {
+    right: auto;
+    span {
+      left: 0;
+    }
+  }
+}
+
+.loader--size-right {
+  &:not(.loader--background) {
+    left: auto;
+  }
+  .filler {
+    left: auto;
+    span {
+      right: 0;
+    }
+  }
+}

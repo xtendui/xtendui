@@ -1,0 +1,29 @@
+// xtend extension: overlay--content-multiple
+
+.overlay--content-multiple {
+  .btn--close.overlay_dismiss {
+    .btn--primary();
+  }
+  .overlay_menu {
+    .list();
+    .list-space(none);
+    height: 63px;
+    background: @primary;
+    > .btn {
+      display: flex;
+      align-items: center;
+    }
+  }
+  // animation
+  &.active {
+    .overlay_menu {
+      .anim-y.active();
+      animation-delay: @time--small;
+    }
+  }
+  &.out {
+    .overlay_menu {
+      .anim-y-inverse.out();
+    }
+  }
+}

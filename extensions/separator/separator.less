@@ -1,0 +1,41 @@
+/**
+ * xtend extension: separator
+ */
+
+.separator {
+  display: inline-block;
+  position: relative;
+  .margin(x, tiny);
+  font-size: .8em;
+  vertical-align: middle;
+}
+
+.separator--dash {
+  &:after {
+    content: '–';
+  }
+}
+
+.separator--slash {
+  &:after {
+    content: '/';
+  }
+}
+
+.separator--bar {
+  &:after {
+    content: '|';
+  }
+}
+
+.separator--point {
+  &:after {
+    content: '•';
+  }
+}
+
+.separator--arrow {
+  &:after {
+    content: '>';
+  }
+}

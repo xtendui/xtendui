@@ -13,10 +13,10 @@ parent: "Sticky"
 To show or hide content when sticky activates use `.show-sticky` or `.hide-sticky`.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/sticky/showhide-top" data-name="top">
+  <div class="demo_item" data-iframe="iframe/demos/sticky/showhide-top">
   </div>
-  <div class="demo_item" data-iframe="demos/docs/presentation/sticky/showhide-bottom" data-name="bottom">
+  <div class="demo_item" data-iframe="iframe/demos/sticky/showhide-bottom">
   </div>
-  <div class="demo_item" data-iframe="demos/docs/presentation/sticky/showhide-hide" data-name="hide">
+  <div class="demo_item" data-iframe="iframe/demos/sticky/showhide-hide">
   </div>
 </demo>

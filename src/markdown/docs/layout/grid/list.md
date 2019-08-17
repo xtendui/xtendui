@@ -223,8 +223,8 @@ List's buttons are styled automatically, but if you want to customize the button
 In css you can use `.list_btn({});` to style all `.list:not(.custom) > li > .btn`.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/layout/list/custom" data-name="custom">
-  </div>
+  <demovanilla src="demos/inline/demos/list/custom-btn">
+  </demovanilla>
 </demo>
 
 ##Space

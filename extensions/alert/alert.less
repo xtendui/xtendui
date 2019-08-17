@@ -1,0 +1,78 @@
+/**
+ * xtend extension: alert
+ */
+
+@alert--design: ~':before'; // selector for design
+
+.alert {
+  display: flex;
+  flex-direction: column;
+  .flex--auto();
+  width: 100%;
+  position: relative;
+  z-index: @index--base; // fix :before negative z-index
+  // styles
+  .margin(y, medium);
+  border-radius: 4px;
+  &@{alert--design} {
+    .design-setup();
+    border-radius: inherit;
+    border-width: 3px;
+    border-style: solid;
+    border-color: transparent;
+  }
+  // option
+  .alert--light();
+  .alert--medium();
+  // animation
+  &.active {
+    .anim-x.active();
+    &.inverse {
+      .anim-x-inverse.active();
+    }
+  }
+  &.out {
+    .anim-x.out();
+    &.inverse {
+      .anim-x-inverse.out();
+    }
+  }
+}
+
+// variant
+
+.alert--dark {
+  &@{alert--design} {
+    border-color: @gray--900;
+    background: @gray--900;
+  }
+  > .alert_content {
+    .text--inverse();
+  }
+}
+
+.alert--light {
+  &@{alert--design} {
+    border-color: @gray--200;
+    background: @gray--200;
+  }
+  > .alert_content {
+    color: @text;
+  }
+}
+
+// size
+
+.alert--small {
+  > .alert_content {
+    padding: .5em 1em;
+    font-size: 1.3rem;
+  }
+}
+
+.alert--medium {
+  > .alert_content {
+    padding: 1em 1.5em;
+    font-size: 1.4rem;
+  }
+}

@@ -23,19 +23,25 @@ const formatCode = function (source) {
     source = inner[0];
   }
   let text = source.innerHTML;
-  // replace quote entities
-  text = text.replace(/&quot;/g, '"');
-  // replace entities
-  text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  // replace json quotes
-  text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'');
-  // replace empty quotes
-  text = text.replace(/=""/g, '');
+  // replace
+  let lang = source.getAttribute('data-lang');
+  if (lang === 'languag-markup' || lang === 'html' || source.classList.contains('language-markup')) {
+    // replace quote entities
+    text = text.replace(/&quot;/g, '"');
+    // replace entities
+    text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    // replace json quotes
+    text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'');
+    // replace empty quotes
+    text = text.replace(/=""/g, '');
+  }
   // filter meta
+  /*
   let meta = text.match(/\/\/##START([\S\s]*?)\/\/##END/);
   if (meta) {
     text = meta[1];
   }
+  */
   // remove tabs
   let arr = text.split('\n');
   let search = arr[0];
@@ -58,7 +64,7 @@ const formatCode = function (source) {
 const populateBlock = function () {
   for (let el of document.querySelectorAll('script[type="text/plain"][class*="language-"]')) {
     let language = el.getAttribute('class');
-    el.after(Xt.createElement('<pre class="' + language + '"><code>' + el.innerHTML + '</code></pre>'));
+    el.after(Xt.createElement('<pre class="' + language + '"><code class="' + language + '">' + el.innerHTML + '</code></pre>'));
     el.remove();
   }
   for (let el of document.querySelectorAll('pre:not(.noedit) code')) {
@@ -85,13 +91,13 @@ const populateDemo = function (container, i) {
   // loop items
   for (let [k, item] of items.entries()) {
     // populate tabs
-    let name = item.getAttribute('data-name');
-    if (items.length === 1) {
-      if (!item.getAttribute('data-name')) {
+    console.log(item.getAttribute('data-iframe'));
+    let name = item.getAttribute('data-iframe') ? item.getAttribute('data-iframe').split('/').pop() : null;
+    name = item.getAttribute('data-name') ? item.getAttribute('data-name') : name;
+    if (!name) {
+      if (items.length === 1) {
         name = 'demo';
-      }
-    } else {
-      if (!item.getAttribute('data-name')) {
+      } else {
         name = 'demo #' + k;
       }
     }

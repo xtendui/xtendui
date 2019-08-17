@@ -33,8 +33,6 @@ Inside it you can use this strings that gets populated with variables:
 </div>
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/pagination" data-name="pagination">
-  </div>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/pagination-content" data-name="content">
-  </div>
+  <demovanilla src="demos/inline/demos/slider/pagination">
+  </demovanilla>
 </demo>

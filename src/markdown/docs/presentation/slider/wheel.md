@@ -13,6 +13,6 @@ parent: "Slider"
 Use `"wheel": {"selector": "object"}` or `"wheel": {"selector": Query}` to enable mousewheel navigation.
 
 <demo>
-  <div class="demo_item" data-iframe="demos/docs/presentation/slider/wheel" data-name="wheel">
-  </div>
+  <demovanilla src="demos/inline/demos/slider/wheel">
+  </demovanilla>
 </demo>
