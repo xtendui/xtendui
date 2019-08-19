@@ -1,11 +1,9 @@
 import React from 'react'
 
-import {Xt} from 'xtend-library'
-
 class Component extends React.Component {
   render() {
     return (
-      <div className="drop_outer drop--disable-example" data-xt-drop>
+      <div className="drop_outer" data-xt-drop>
         <button type="button" className="btn btn--primary">
           <span>Toggle</span>
         </button>

@@ -3,73 +3,23 @@
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
 //////////////////////
-// icons xt
+// components
 //////////////////////
 
-// font-face
-
-@icons-xt--family: 'xtend';
-@icons-xt--path: 'icon/icons/xtend'; // relative to the compiled .css
-
-@font-face {
-  font-family: @icons-xt--family;
-  src: url('@{icons-xt--path}.ttf') format('truetype'),
-  url('@{icons-xt--path}.woff') format('woff'),
-  url('@{icons-xt--path}.svg#xtend') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-// icons
-// USAGE LESS: .icon-xt(@content: @icon-xt--close, @size: @icon--small, @position: after);
-// USAGE MARKUP: <span class="icon-xt--close"></span>
-
-@icons-xt: close, chevron-down, chevron-left, chevron-right, chevron-up, check, circle;
-
-@icon-xt--chevron-down: '\e900';
-@icon-xt--chevron-left: '\e901';
-@icon-xt--chevron-right: '\e902';
-@icon-xt--chevron-up: '\e903';
-@icon-xt--close: '\e904';
-@icon-xt--check: '\e905';
-@icon-xt--circle: '\e906';
-
-//////////////////////
-// icons theme (fonts)
-//////////////////////
-
-/*
-// font-face
-
-@icons-theme--family: 'luma-icons';
-@icons-theme--path: '../icons-theme/Luma-Icons'; // relative to the compiled .css
-
-@font-face {
-  font-family: @icons-theme--family;
-  src: url('@{icons-theme--path}.eot');
-  src: url('@{icons-theme--path}.eot?#iefix') format('embedded-opentype'),
-  url('@{icons-theme--path}.woff2') format('woff2'),
-  url('@{icons-theme--path}.woff') format('woff'),
-  url('@{icons-theme--path}.ttf') format('truetype'),
-  url('@{icons-theme--path}.svg#@{icons-theme--family}') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-// icons
-// USAGE LESS: .icon(@content: @icon-theme--menu, @size: @icon--small, @position: after);
-// USAGE MARKUP: <span class="icon-theme--menu"></span>
-
-@icons-theme: menu, search; // this will generate classes .icon-theme--{name}
-
-@icon-theme--menu: '\e609';
-@icon-theme--search: '\e615';
-*/
-
-//////////////////////
-// icons theme (css)
-//////////////////////
-
-/*
-@import (css) url(icons-theme/style.css); // relative to the compiled .css
-*/
+@import '~xtend-library/components/util/util'; // always first loaded
+@import '~xtend-library/components/animation/animation';
+@import '~xtend-library/components/button/button';
+@import '~xtend-library/components/card/card';
+@import '~xtend-library/components/drop/drop';
+@import '~xtend-library/components/form/form';
+@import '~xtend-library/components/general/general';
+@import '~xtend-library/components/grid/grid';
+@import '~xtend-library/components/group/group';
+@import '~xtend-library/components/icon/icon';
+@import '~xtend-library/components/list/list';
+@import '~xtend-library/components/loader/loader';
+@import '~xtend-library/components/overlay/overlay';
+@import '~xtend-library/components/slider/slider';
+@import '~xtend-library/components/sticky/sticky';
+@import '~xtend-library/components/table/table';
+@import '~xtend-library/components/typography/typography';

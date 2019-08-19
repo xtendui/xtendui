@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space--small align-items--center list--toggle-progress">
+<div class="list list-space--small align-items--center demo--toggle--progress">
   <button type="button" class="btn">
     <span>
       Toggle 0

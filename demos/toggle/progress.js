@@ -1,12 +1,11 @@
 import {TweenMax} from 'gsap/TweenMax'
-import BezierEasing from 'bezier-easing'
 
 /**
- * .list--toggle-progress
+ * .demo--toggle--progress
  */
 
 Xt.observe.push({
-  matches: '.list--toggle-progress',
+  matches: '.demo--toggle--progress',
   fnc: function (main, index, query) {
 
     // vars

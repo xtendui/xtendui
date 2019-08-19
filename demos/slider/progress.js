@@ -4,7 +4,7 @@ import {TweenMax} from 'gsap/TweenMax'
 import {mouseFollow} from 'xtend-library/extensions/general/mouse-follow';
 
 Xt.observe.push({
-  matches: '.slider--progress',
+  matches: '.demo--slider--progress',
   fnc: function (main, index, query) {
 
     // vars

@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list list--custom-btn">
+<ul class="list demo--list--custom-btn">
   <li>
     <a href="#">
       <span>Lorem Ipsum</span>

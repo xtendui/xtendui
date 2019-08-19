@@ -12,9 +12,10 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="slider slider--progress">
+<div class="slider demo--slider--progress">
   <div class="loader loader--spinner loader--mouse loader--js">
     <span class="spinner">
+      ${spinner}
     </span>
   </div>
 

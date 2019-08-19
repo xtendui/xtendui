@@ -1,6 +1,54 @@
 @import '~xtend-library/components/typography/typography-core';
 
 //////////////////////
+// font face
+//////////////////////
+
+@import (css) url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+.font-sans--regular() {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-sans--semibold() {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.font-monospace() {
+  font-family: monaco, Consolas, 'Lucida Console', monospace;
+  font-weight: normal;
+  font-style: normal;
+}
+
+//////////////////////
+// rem
+//////////////////////
+
+// rem
+
+html {
+  // base font size for rem
+  // 100% is 16px
+  // value(%) = desired(px) * 100 / 16
+  font-size: 56.25%; // 9px
+  @media @min-lg {
+    font-size: 62.5%; // 10px
+  }
+}
+
+body {
+  background: @white;
+  .font-sans--regular();
+  font-size: 1.4rem;
+  color: @text;
+  line-height: 1.6;
+}
+
+//////////////////////
 // size
 //////////////////////
 

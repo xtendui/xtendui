@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="drop_outer drop--disable-example" data-xt-drop>
+<div class="drop_outer" data-xt-drop>
   <button type="button" class="btn btn--primary">
     <span>Toggle</span>
   </button>

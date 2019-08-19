@@ -40,7 +40,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="drop_outer drop--disable-example" data-xt-drop>
+<div class="drop_outer demo--drop--disable-sm" data-xt-drop>
   <button type="button" class="btn btn--primary">
     <span>Toggle</span>
   </button>

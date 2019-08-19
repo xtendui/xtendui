@@ -11,7 +11,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list-space--small align-items--center"
-     data-xt-toggle='{"class": "active class-example-0"}'>
+     data-xt-toggle='{"class": "active demo--toggle--custom-class"}'>
   <button type="button" class="btn">
     <span>Toggle</span>
   </button>

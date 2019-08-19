@@ -2,11 +2,11 @@ import {TweenMax} from 'gsap/TweenMax'
 import BezierEasing from 'bezier-easing'
 
 /**
- * #toggle-0
+ * #demo--toggle-js-0
  */
 
 Xt.observe.push({
-  matches: '#toggle-0',
+  matches: '#demo--toggle-js-0',
   fnc: function (main, index, query) {
 
     // vars
@@ -18,11 +18,11 @@ Xt.observe.push({
     let easeIn = new Ease(BezierEasing(.14, .63, 0, 1));
     let easeOut = new Ease(BezierEasing(.14, .63, 0, 1));
 
-    let toggle0 = main;
+    let toggle = main;
 
     // xt-toggle
 
-    let self = Xt.init('xt-toggle', toggle0, {
+    let self = Xt.init('xt-toggle', toggle, {
       "durationOn": time * 1000,
       "durationOff": time * 1000,
       "delayOn": delay * 1000,
@@ -69,11 +69,11 @@ Xt.observe.push({
 });
 
 /**
- * #toggle-0
+ * #demo--toggle-js-0
  */
 
 Xt.observe.push({
-  matches: '#toggle-1',
+  matches: '#demo--toggle-js-1',
   fnc: function (main, index, query) {
 
     // vars
@@ -85,11 +85,11 @@ Xt.observe.push({
     let easeIn = new Ease(BezierEasing(.14,.63,0,1));
     let easeOut = new Ease(BezierEasing(.14,.63,0,1));
 
-    let toggle1 = main;
+    let toggle = main;
 
     // xt-toggle
 
-    let self = Xt.init('xt-toggle', toggle1, {
+    let self = Xt.init('xt-toggle', toggle, {
       "on": "mouseenter",
       "off": "mouseleave",
       "durationOn": time * 1000,

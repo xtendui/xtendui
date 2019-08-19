@@ -1,11 +1,11 @@
 import {TweenMax} from 'gsap/TweenMax'
 
 /**
- * .loader--js-filler
+ * .demo--loader--js-filler
  */
 
 Xt.observe.push({
-  matches: '.loader--js-filler',
+  matches: '.demo--loader--js-filler',
   fnc: function (main, index, query) {
 
     // vars

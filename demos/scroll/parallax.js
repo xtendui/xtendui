@@ -2,16 +2,12 @@ import {Xt} from 'xtend-library'
 import {TweenMax} from 'gsap/TweenMax'
 
 /**
- * .parallax_title
+ * .demo--parallax_title
  */
 
 Xt.observe.push({
-  matches: '.parallax_title',
+  matches: '.demo--parallax_title',
   fnc: function (main, index, query) {
-
-    /**
-     * .parallax_title
-     */
 
     // vars
 
@@ -42,11 +38,11 @@ Xt.observe.push({
 
 
 /**
- * .parallax_img
+ * .demo--parallax_img
  */
 
 Xt.observe.push({
-  matches: '.parallax_img',
+  matches: '.demo--parallax_img',
   fnc: function (main, index, query) {
 
     // vars
@@ -76,11 +72,11 @@ Xt.observe.push({
 });
 
 /**
- * .parallax_footer
+ * .demo--parallax_footer
  */
 
 Xt.observe.push({
-  matches: '.parallax_footer',
+  matches: '.demo--parallax_footer',
   fnc: function (main, index, query) {
 
     // vars

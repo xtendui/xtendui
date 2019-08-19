@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<button type="button" class="btn btn--primary" id="toggle-restart">
+<button type="button" class="btn btn--primary" id="demo--toggle--restart">
   <span>Restart</span>
 </button>
 

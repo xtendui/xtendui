@@ -3,7 +3,7 @@
 //////////////////////
 
 import {Xt} from 'xtend-library'
-import {Core} from 'xtend-library/components/core'
+import {Core} from 'xtend-library/components/core/core'
 
 //////////////////////
 // Overlay

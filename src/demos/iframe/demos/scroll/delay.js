@@ -20,7 +20,7 @@ demo.htmlSource = `
     "delayOff": "return Math.min((total - current) * 75, 300)",
     "distance": "20%"
   }'>
-  <div class="row scroll_container scroll_container_delay">
+  <div class="row scroll_container demo--scroll_container--delay">
 
     <div class="col--12 col--6-sm">
       <div class="card">

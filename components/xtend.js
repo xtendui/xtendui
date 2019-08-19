@@ -3,7 +3,7 @@
 //////////////////////
 
 import './polyfill';
-import {Core} from 'xtend-library/components/core'
+import {Core} from 'xtend-library/components/core/core'
 import {Toggle} from 'xtend-library/components/toggle/toggle'
 import {Drop} from 'xtend-library/components/drop/drop'
 import {Overlay} from 'xtend-library/components/overlay/overlay'

@@ -10,7 +10,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space--small align-items--center list--toggle-javascript" id="toggle-0">
+<div class="list list-space--small align-items--center demo--toggle-js" id="demo--toggle-js-0">
   <button type="button" class="btn">
     <span>Toggle 0</span>
   </button>
@@ -39,7 +39,7 @@ demo.htmlSource = `
 
 <br>
 
-<div class="list list-space--small align-items--center list--toggle-javascript" id="toggle-1">
+<div class="list list-space--small align-items--center demo--toggle-js" id="demo--toggle-js-1">
   <button type="button" class="btn">
     <span>Toggle 0</span>
   </button>

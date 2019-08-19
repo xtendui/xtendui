@@ -37,9 +37,9 @@ $ cp -r node_modules/xtend-library/dist/ xtend-library/
 ```less
 // test comment
 
-.drop--disable-example > * {
+.test > * {
   @media @min-sm {
-    .drop--disable();
+    .test();
   }
 }
 

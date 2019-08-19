@@ -1,9 +1,9 @@
 /**
- * #toggle-restart
+ * #demo--toggle--restart
  */
 
 Xt.observe.push({
-  matches: '#toggle-restart',
+  matches: '#demo--toggle--restart',
   fnc: function (main, index, query) {
 
     // vars

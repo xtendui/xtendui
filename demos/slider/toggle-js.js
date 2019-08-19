@@ -3,7 +3,7 @@ import {TweenMax} from 'gsap/TweenMax'
 import BezierEasing from 'bezier-easing'
 
 Xt.observe.push({
-  matches: '.slider-toggle-js',
+  matches: '.demo--slider--toggle-js',
   fnc: function (main, index, query) {
 
     // vars

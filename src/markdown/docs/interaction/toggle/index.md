@@ -72,12 +72,7 @@ Custom **elements** and **targets**.
   </demovanilla>
 </demo>
 
-Custom targets classname that starts with `.toggle--`.
-
-<demo>
-  <demovanilla src="demos/inline/demos/toggle/toggle-class">
-  </demovanilla>
-</demo>
+Any class that starts with `.toggle--` can be used as **toggle targets**.
 
 ###Unique
 

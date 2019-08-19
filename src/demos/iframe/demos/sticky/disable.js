@@ -16,7 +16,7 @@ export const demo = {
 demo.htmlSource = `
 <br><br><br><br><br><br><br>
 
-<div class="sticky-0 sticky--disable-sm"
+<div class="sticky-0 demo--sticky--disable-sm"
      data-xt-sticky='{"limit": {"top": 0, "bottom": ".sticky-1.xt-clone"}}'> <!-- if limit to sticky use .xt-clone -->
   <div class="card card--squared card--dark">
     <div class="card_design"></div>
@@ -34,7 +34,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="sticky-1 sticky--disable-sm"
+<div class="sticky-1 demo--sticky--disable-sm"
      data-xt-sticky='{"position": "bottom", "limit": {"bottom": 50}}'>
   <div class="card card--squared card--light">
     <div class="card_design"></div>

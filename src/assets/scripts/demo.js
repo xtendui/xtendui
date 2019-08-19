@@ -25,7 +25,9 @@ const formatCode = function (source) {
   let text = source.innerHTML;
   // replace
   let lang = source.getAttribute('data-lang');
-  if (lang === 'languag-markup' || lang === 'html' || source.classList.contains('language-markup')) {
+  if (lang === 'html' || source.classList.contains('language-markup')
+    || lang === 'js' || source.classList.contains('language-jsx')
+  ) {
     // replace quote entities
     text = text.replace(/&quot;/g, '"');
     // replace entities
@@ -91,7 +93,6 @@ const populateDemo = function (container, i) {
   // loop items
   for (let [k, item] of items.entries()) {
     // populate tabs
-    console.log(item.getAttribute('data-iframe'));
     let name = item.getAttribute('data-iframe') ? item.getAttribute('data-iframe').split('/').pop() : null;
     name = item.getAttribute('data-name') ? item.getAttribute('data-name') : name;
     if (!name) {

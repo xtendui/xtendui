@@ -12,8 +12,8 @@ export const demo = {
 demo.htmlSource = `
 <div class="demo-cols demo-source-from">
   <div class="row">
-    <div class="col--custom-width-percent"></div>
-    <div class="col--custom-width-px"></div>
+    <div class="demo--col--custom-percent"></div>
+    <div class="demo--col--custom-px"></div>
     <div class="col--auto"></div>
   </div>
 </div>

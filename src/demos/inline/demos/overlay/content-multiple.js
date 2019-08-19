@@ -14,7 +14,7 @@ demo.htmlSource = `
   <button type="button" class="btn btn--primary">
     <span>toggle</span>
   </button>
-  <div class="overlay_outer overlay--pos overlay--right overlay--content-multiple">
+  <div class="overlay_outer overlay--pos overlay--right demo--overlay--content-multiple">
     <div class="overlay">
       <div class="overlay_inner">
 
