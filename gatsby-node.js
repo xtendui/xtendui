@@ -4,6 +4,59 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+// write demos's and extensions's less and js
+
+const glob = require('glob')
+const writeFile = require('write')
+
+let lessDemos = ''
+const lessDemosGlob = new glob.Glob('demos/**/*.less', function (er, files) {
+  for (let file of files) {
+    lessDemos += `@import '~xtend-library/${file}';\n`
+  }
+})
+lessDemosGlob.on('end', function(filepath) {
+  writeFile('components/xtend-demos.less', lessDemos, function(err) {
+    if (err) console.log(err)
+  })
+});
+
+let lessExtensions = ''
+const lessExtensionsGlob = new glob.Glob('extensions/**/*.less', function (er, files) {
+  for (let file of files) {
+    lessExtensions += `@import '~xtend-library/${file}';\n`
+  }
+})
+lessExtensionsGlob.on('end', function(filepath) {
+  writeFile('components/xtend-extensions.less', lessExtensions, function(err) {
+    if (err) console.log(err)
+  })
+});
+
+let jsDemos = ''
+const jsDemosGlob = new glob.Glob('demos/**/*.js', function (er, files) {
+  for (let file of files) {
+    jsDemos += `import 'xtend-library/${file}';\n`
+  }
+})
+jsDemosGlob.on('end', function(filepath) {
+  writeFile('components/xtend-demos.js', jsDemos, function(err) {
+    if (err) console.log(err)
+  })
+});
+
+let jsExtensions = ''
+const jsExtensionsGlob = new glob.Glob('extensions/**/*.js', function (er, files) {
+  for (let file of files) {
+    jsExtensions += `import 'xtend-library/${file}';\n`
+  }
+})
+jsExtensionsGlob.on('end', function(filepath) {
+  writeFile('components/xtend-extensions.js', jsExtensions, function(err) {
+    if (err) console.log(err)
+  })
+});
+
 // webpack config
 
 /*

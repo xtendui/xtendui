@@ -6,10 +6,6 @@ class DemoVanilla extends React.Component {
     const {children, src} = this.props
     let demo = require('../' + src + '.js').demo
     if (demo.css) {
-      console.log(`xtend-library/${demo.type}/${demo.component}/${demo.name}.less`);
-      //require(`xtend-library/${demo.type}/${demo.component}/${demo.name}.less`).default
-      //require(`xtend-library/demos/slider/progress.less`).default
-      //require(`xtend-library/${demo.type}/${demo.component}/${demo.name}.less`).default
       if (demo.type === 'demos') {
         demo.cssSource = require(`!!raw-loader!xtend-library/${demo.type}/${demo.component}/${demo.name}.less`).default
       } else {
@@ -17,10 +13,6 @@ class DemoVanilla extends React.Component {
       }
     }
     if (demo.js) {
-      console.log(`xtend-library/${demo.type}/${demo.component}/${demo.name}.js`);
-      //require(`xtend-library/${demo.type}/${demo.component}/${demo.name}.js`).default
-      //require(`xtend-library/demos/slider/progress.js`).default
-      //require(`xtend-library/${demo.type}/${demo.component}/${demo.name}.js`).default
       if (demo.type === 'demos') {
         demo.jsSource = require(`!!raw-loader!xtend-library/${demo.type}/${demo.component}/${demo.name}.js`).default
       } else {

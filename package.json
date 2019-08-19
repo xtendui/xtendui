@@ -73,6 +73,7 @@
     "gatsby-source-filesystem": "^2.0.29",
     "gatsby-transformer-remark": "^2.3.8",
     "gh-pages": "^1.2.0",
+    "glob": "^7.1.4",
     "gulp": "^4.0.0",
     "gulp-browserify": "^0.5.1",
     "gulp-cached": "^1.1.1",
@@ -96,7 +97,8 @@
     "remark-grid-tables": "^1.6.1",
     "semantic-release": "^15.13.3",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-source-stream": "^2.0.0",
+    "write": "^1.0.3"
   },
   "resolutions": {
     "webpack-hot-middleware": "git://github.com/minimit/webpack-hot-middleware.git#fix-iframe"

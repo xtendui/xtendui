@@ -9,8 +9,6 @@ import DocsAside from 'components/doc-aside'
 import DocsFoot from 'components/doc-foot'
 
 import {Xt} from 'xtend-library'
-import 'xtend-library/components/xtend-demos'
-import 'xtend-library/components/xtend-extensions'
 import {populateBlock} from 'assets/scripts/demo.js'
 import {makeDocument} from 'assets/scripts/theme.js'
 

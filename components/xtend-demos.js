@@ -1,16 +1,13 @@
-//////////////////////
-// demos
-//////////////////////
-/*
-import 'xtend-library/demos/loader/js-filler'
-import 'xtend-library/demos/loader/js-spinner'
-import 'xtend-library/demos/slider/progress'
-import 'xtend-library/demos/slider/toggle-js'
-import 'xtend-library/demos/toggle/javascript'
-import 'xtend-library/demos/toggle/progress'
-import 'xtend-library/demos/toggle/start'
-import 'xtend-library/demos/loader/mouse-filler'
-import 'xtend-library/demos/loader/mouse-spinner'
-import 'xtend-library/demos/scroll/mode-block'
-import 'xtend-library/demos/scroll/parallax'
-*/
+import 'xtend-library/demos/loader/js-filler.js';
+import 'xtend-library/demos/loader/js-spinner.js';
+import 'xtend-library/demos/loader/mouse-filler.js';
+import 'xtend-library/demos/loader/mouse-spinner.js';
+import 'xtend-library/demos/scroll/mode-block.js';
+import 'xtend-library/demos/scroll/parallax.js';
+import 'xtend-library/demos/slider/progress.js';
+import 'xtend-library/demos/slider/toggle-js.js';
+import 'xtend-library/demos/test/vanilla-iframe.js';
+import 'xtend-library/demos/test/vanilla.js';
+import 'xtend-library/demos/toggle/javascript.js';
+import 'xtend-library/demos/toggle/progress.js';
+import 'xtend-library/demos/toggle/start.js';

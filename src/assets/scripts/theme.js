@@ -1,4 +1,6 @@
 import {Xt} from 'xtend-library'
+import 'xtend-library/components/xtend-demos'
+import 'xtend-library/components/xtend-extensions'
 
 //////////////////////
 // smooth
