@@ -1,35 +1,39 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {StaticQuery, graphql} from 'gatsby'
+
+import {cssSource, jsSource} from 'assets/scripts/source.js'
 
 class DemoVanilla extends React.Component {
   render() {
-    const {children, src} = this.props
+    const {src, children} = this.props
     let demo = require('../' + src + '.js').demo
-    if (demo.css) {
-      if (demo.type === 'demos') {
-        demo.cssSource = require(`!!raw-loader!xtend-library/src/${demo.type}/${demo.component}/${demo.name}.less`).default
-      } else {
-        demo.cssSource = `@import '~xtend-library/src/${demo.type}/${demo.component}/${demo.name}';`
-      }
-    }
-    if (demo.js) {
-      if (demo.type === 'demos') {
-        demo.jsSource = require(`!!raw-loader!xtend-library/src/${demo.type}/${demo.component}/${demo.name}.js`).default
-      } else {
-        demo.jsSource = `import 'xtend-library/src/${demo.type}/${demo.component}/${demo.name}'`
-      }
-    }
     return (
-      <div className="demo_item demo_preview" data-name={demo.name}>
-        {children}
-        <div className="demo_source demo_source--from" data-lang="html" dangerouslySetInnerHTML={{__html: demo.htmlSource}}/>
-        {demo.cssSource &&
-          <div className="demo_source xt-ignore" data-lang="less" dangerouslySetInnerHTML={{__html: demo.cssSource}}/>
-        }
-        {demo.jsSource &&
-          <div className="demo_source xt-ignore" data-lang="js" dangerouslySetInnerHTML={{__html: demo.jsSource}}/>
-        }
-      </div>
+      <StaticQuery
+        query={graphql`
+          query {
+            allFile {
+              files: edges {
+                file: node {
+                  relativePath
+                }
+              }
+            }
+          }
+        `}
+        render={data => (
+          <div className="demo_item demo_preview" data-name={demo.name}>
+            {children}
+            <div className="demo_source demo_source--from" data-lang="html" dangerouslySetInnerHTML={{__html: demo.htmlSource}}/>
+            {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`).map((file, index) => (
+              <div className="demo_source xt-ignore" data-lang="less" dangerouslySetInnerHTML={{__html: cssSource(demo)}} key={index}/>
+            ))}
+            {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.js`).map((file, index) => (
+              <div className="demo_source xt-ignore" data-lang="js" dangerouslySetInnerHTML={{__html: jsSource(demo)}} key={index}/>
+            ))}
+          </div>
+        )}
+      />
     )
   }
 }

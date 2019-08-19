@@ -33,11 +33,12 @@ lessExtensionsGlob.on('end', function(filepath) {
   })
 });
 
-let jsDemos = ''
+let jsDemos = `if (typeof window !== 'undefined') {\n\n`
 const jsDemosGlob = new glob.Glob('src/demos/**/*.js', function (er, files) {
   for (let file of files) {
-    jsDemos += `import 'xtend-library/${file}';\n`
+    jsDemos += `require('xtend-library/${file}');\n`
   }
+  jsDemos += `\n}`
 })
 jsDemosGlob.on('end', function(filepath) {
   writeFile('src/xtend-demos.js', jsDemos, function(err) {
@@ -45,11 +46,12 @@ jsDemosGlob.on('end', function(filepath) {
   })
 });
 
-let jsExtensions = ''
+let jsExtensions = `if (typeof window !== 'undefined') {\n\n`
 const jsExtensionsGlob = new glob.Glob('src/extensions/**/*.js', function (er, files) {
   for (let file of files) {
-    jsExtensions += `import 'xtend-library/${file}';\n`
+    jsExtensions += `require('xtend-library/${file}');\n`
   }
+  jsExtensions += `\n}`
 })
 jsExtensionsGlob.on('end', function(filepath) {
   writeFile('src/xtend-extensions.js', jsExtensions, function(err) {

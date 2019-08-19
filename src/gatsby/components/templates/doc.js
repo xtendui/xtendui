@@ -30,6 +30,8 @@ class Template extends React.Component {
   }
 }
 
+export default Template
+
 export const query = graphql`
   query($path: String!, $type: String, $parent: String) {
     categories: allMarkdownRemark(filter: {frontmatter: {type: {eq: $type}}}, sort: {fields: [frontmatter___date], order: ASC}) {
@@ -76,8 +78,6 @@ export const query = graphql`
     }
   }
 `
-
-export default Template
 
 Template.propTypes = {
   data: PropTypes.shape({

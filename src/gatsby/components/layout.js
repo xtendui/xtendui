@@ -26,24 +26,24 @@ class Layout extends React.Component {
     return (
       <StaticQuery
         query={graphql`
-        query {
-          site {
-            siteMetadata {
-              title
-              author
-              version
-              npm
-              github
-              download
+          query {
+            site {
+              siteMetadata {
+                title
+                author
+                version
+                npm
+                github
+                download
+              }
+            }
+            categories: allMarkdownRemark {
+              type: group(field: frontmatter___type) {
+                title: fieldValue
+              }
             }
           }
-          categories: allMarkdownRemark {
-            type: group(field: frontmatter___type) {
-              title: fieldValue
-            }
-          }
-        }
-      `}
+        `}
         render={data => (
           <>
             <div className={`site_wrapper
