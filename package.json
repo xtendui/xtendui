@@ -16,7 +16,7 @@
     "theme"
   ],
   "main": "dist/scripts/xtend.min.js",
-  "module": "components/xtend.js",
+  "module": "src/xtend.js",
   "umd:main": "dist/scripts/xtend.min.js",
   "umd:name": "xt",
   "files": [

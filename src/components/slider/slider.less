@@ -1,0 +1,66 @@
+@import '~xtend-library/src/components/slider/slider-core';
+
+//////////////////////
+// slider
+//////////////////////
+
+// slides
+
+.slides {
+  .block();
+  &.xt-autoHeight {
+    // autoHeight animations
+    transition-property: height;
+    transition-duration: 750ms;
+    transition-timing-function: @bez--out;
+  }
+}
+
+.slides_inner {
+  .row();
+  .row-space(medium);
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  // dragger animations
+  transition-property: transform;
+  transition-duration: 750ms;
+  transition-timing-function: @bez--out;
+}
+
+// pagination
+
+.slider_pagination {
+  .list();
+  .list-space(small);
+  align-items: center;
+  justify-content: center;
+  .padding(top, medium);
+}
+
+[data-xt-pag].btn {
+  .btn--tiny();
+  border-radius: 2rem;
+  > span {
+    padding: .5em 1.15em;
+    min-height: 2.2rem;
+  }
+  &.active {
+    > span {
+      padding: .5em 2em;
+    }
+  }
+}
+
+// navigation
+
+[data-xt-nav].btn {
+  .btn--tiny();
+  border-radius: 2rem;
+  > span {
+    padding: .5em 1.15em;
+    min-height: 2.2rem;
+  }
+  [class^='icon-'], [class*=' icon-'] {
+    .icon--small();
+  }
+}

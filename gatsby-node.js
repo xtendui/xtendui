@@ -10,49 +10,49 @@ const glob = require('glob')
 const writeFile = require('write')
 
 let lessDemos = ''
-const lessDemosGlob = new glob.Glob('demos/**/*.less', function (er, files) {
+const lessDemosGlob = new glob.Glob('src/demos/**/*.less', function (er, files) {
   for (let file of files) {
     lessDemos += `@import '~xtend-library/${file}';\n`
   }
 })
 lessDemosGlob.on('end', function(filepath) {
-  writeFile('components/xtend-demos.less', lessDemos, function(err) {
+  writeFile('src/xtend-demos.less', lessDemos, function(err) {
     if (err) console.log(err)
   })
 });
 
 let lessExtensions = ''
-const lessExtensionsGlob = new glob.Glob('extensions/**/*.less', function (er, files) {
+const lessExtensionsGlob = new glob.Glob('src/extensions/**/*.less', function (er, files) {
   for (let file of files) {
     lessExtensions += `@import '~xtend-library/${file}';\n`
   }
 })
 lessExtensionsGlob.on('end', function(filepath) {
-  writeFile('components/xtend-extensions.less', lessExtensions, function(err) {
+  writeFile('src/xtend-extensions.less', lessExtensions, function(err) {
     if (err) console.log(err)
   })
 });
 
 let jsDemos = ''
-const jsDemosGlob = new glob.Glob('demos/**/*.js', function (er, files) {
+const jsDemosGlob = new glob.Glob('src/demos/**/*.js', function (er, files) {
   for (let file of files) {
     jsDemos += `import 'xtend-library/${file}';\n`
   }
 })
 jsDemosGlob.on('end', function(filepath) {
-  writeFile('components/xtend-demos.js', jsDemos, function(err) {
+  writeFile('src/xtend-demos.js', jsDemos, function(err) {
     if (err) console.log(err)
   })
 });
 
 let jsExtensions = ''
-const jsExtensionsGlob = new glob.Glob('extensions/**/*.js', function (er, files) {
+const jsExtensionsGlob = new glob.Glob('src/extensions/**/*.js', function (er, files) {
   for (let file of files) {
     jsExtensions += `import 'xtend-library/${file}';\n`
   }
 })
 jsExtensionsGlob.on('end', function(filepath) {
-  writeFile('components/xtend-extensions.js', jsExtensions, function(err) {
+  writeFile('src/xtend-extensions.js', jsExtensions, function(err) {
     if (err) console.log(err)
   })
 });
@@ -142,10 +142,10 @@ const path = require('path')
 
 exports.createPages = ({actions, graphql}) => {
   const {createPage} = actions
-  const docTemplate = path.resolve(`src/components/templates/doc.js`)
+  const docTemplate = path.resolve(`src/gatsby/components/templates/doc.js`)
   /* COMMENTED CATEGORIES AND TAGS
-  const tagTemplate = path.resolve(`src/components/templates/doc-tag.js`)
-  const categoryTemplate = path.resolve(`src/components/templates/doc-category.js`)
+  const tagTemplate = path.resolve(`src/gatsby/components/templates/doc-tag.js`)
+  const categoryTemplate = path.resolve(`src/gatsby/components/templates/doc-category.js`)
   const tagSet = new Set()
   const categorySet = new Set()
   */

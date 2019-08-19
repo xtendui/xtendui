@@ -1,0 +1,46 @@
+@import '~xtend-library/src/components/util/javascript-core';
+
+//////////////////////
+// various
+//////////////////////
+
+// .backdrop
+
+@backdrop--opacity: .1;
+
+.backdrop {
+  // styles
+  background: darken(@primary, 80%);
+  // animation
+  opacity: 0;
+  &.active {
+    animation-name: anim-backdrop--in;
+    animation-duration: inherit;
+    animation-timing-function: @bez--in;
+    animation-fill-mode: forwards;
+  }
+  &.out {
+    animation-name: anim-backdrop--out;
+    animation-duration: inherit;
+    animation-timing-function: @bez--out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes anim-backdrop--in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: @backdrop--opacity;
+  }
+}
+
+@keyframes anim-backdrop--out {
+  0% {
+    opacity: @backdrop--opacity;
+  }
+  100% {
+    opacity: 0;
+  }
+}

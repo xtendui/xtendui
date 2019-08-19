@@ -29,7 +29,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#fa1664`,
         display: `minimal-ui`,
-        icon: `src/assets/images/favicon.png`,
+        icon: `src/gatsby/assets/images/favicon.png`,
       },
     },
     // resolve js and less
@@ -39,8 +39,8 @@ module.exports = {
         root: `./`,
         aliases: {
           'xtend-library': `./`,
-          assets: `./src/assets`,
-          components: `./src/components`,
+          assets: `./src/gatsby/assets`,
+          components: `./src/gatsby/components`,
         },
       },
     },
@@ -49,27 +49,27 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `doc`,
-        path: `./src/markdown/docs/`,
+        path: `./src/gatsby/markdown/docs/`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `faq`,
-        path: `./src/markdown/faq/`,
+        path: `./src/gatsby/markdown/faq/`,
       },
     },
     // pages
     {
       resolve: `gatsby-plugin-page-creator`,
       options: {
-        path: `./src/components/pages/`,
+        path: `./src/gatsby/components/pages/`,
       },
     },
     {
       resolve: `gatsby-plugin-page-creator`,
       options: {
-        path: `./src/demos/`,
+        path: `./src/gatsby/demos/`,
         ignore: [`inline/**/**`, `**/*.source.js?(x)`],
       },
     },
