@@ -2,6 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import {Xt} from 'xtend-library'
+import {Core} from 'xtend-library/src/components/core/core'
+import {Toggle} from 'xtend-library/src/components/toggle/toggle'
+import {Drop} from 'xtend-library/src/components/drop/drop'
+import {Overlay} from 'xtend-library/src/components/overlay/overlay'
+import {Smooth} from 'xtend-library/src/components/smooth/smooth'
+import {Slider} from 'xtend-library/src/components/slider/slider'
+import {Scroll} from 'xtend-library/src/components/scroll/scroll'
+import {Sticky} from 'xtend-library/src/components/sticky/sticky'
+import {Ajax} from 'xtend-library/src/components/ajax/ajax'
+import 'xtend-library/src/xtend-demos'
+import 'xtend-library/src/xtend-extensions'
 import {makeDocument} from 'assets/scripts/theme.js'
 import ResizeSensor from 'assets/scripts/ResizeSensor.js'
 
@@ -21,7 +32,6 @@ class Layout extends React.Component {
         })
       }
       makeDocument()
-      Xt.load()
     }
     Xt.ready(iframeLoaded)
   }

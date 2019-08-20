@@ -1,10 +1,11 @@
+import {Toggle} from 'xtend-library/src/components/toggle/toggle'
 import {TweenMax} from 'gsap/TweenMax'
 
 /**
  * .demo--toggle--progress
  */
 
-Xt.observe.push({
+Xt.mount.push({
   matches: '.demo--toggle--progress',
   fnc: function (main, index, query) {
 
@@ -16,15 +17,12 @@ Xt.observe.push({
 
     // xt-toggle
 
-    let self = Xt.init('xt-toggle', list, {
+    let self = new Toggle(list, {
       "auto": {
         "time": 2000,
         "pause": ":scope > button"
       }
     });
-    self.unmount = function () {
-      self = null;
-    };
 
     // auto start
 
@@ -90,6 +88,13 @@ Xt.observe.push({
         }
       }
     });
+
+    // destroy
+
+    return function unmount() {
+      self.destroy();
+      self = null;
+    };
 
   }
 });

@@ -46,7 +46,9 @@ export class Scroll extends Core {
           el.before(container);
           el.classList.add('xt-ignore'); // @FIX ignore Xt.observer and init
           container.append(el);
-          el.classList.remove('xt-ignore'); // @FIX ignore Xt.observer and init
+          requestAnimationFrame( function () {
+            el.classList.remove('xt-ignore'); // @FIX ignore Xt.observer and init
+          });
         }
         // sticky clone
         let target = container.querySelector('.xt-clone');
@@ -297,3 +299,23 @@ Scroll.optionsDefault = {
   "fallback": 100,
   "aria": false
 };
+
+//////////////////////
+// observe
+//////////////////////
+
+Xt.mount.push({
+  matches: '[data-' + Scroll.componentName + ']',
+  fnc: function (main, index, query) {
+
+    let self = new Scroll(main, main.getAttribute('data-' + Scroll.componentName));
+
+    // destroy
+
+    return function unmount() {
+      self.destroy();
+      self = null;
+    };
+
+  }
+});

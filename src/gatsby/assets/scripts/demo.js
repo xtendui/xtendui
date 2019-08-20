@@ -1,5 +1,6 @@
 import ClipboardJS from 'clipboard';
 import {Xt} from 'xtend-library'
+import {Toggle} from 'xtend-library/src/components/toggle/toggle'
 
 import Prism from 'prismjs';
 require('prismjs/plugins/unescaped-markup/prism-unescaped-markup');
@@ -188,7 +189,7 @@ const populateDemo = function (container, i) {
   // toggle code
   let demoId = 'demo_' + i;
   container.setAttribute('id', demoId);
-  Xt.init('xt-toggle', container.querySelector('.btn--show-code'), {
+  new Toggle(container.querySelector('.btn--show-code'), {
     "targets": "#" + demoId,
     "targetsInner": ".demo_code",
     "aria": false
@@ -221,7 +222,7 @@ const populateDemo = function (container, i) {
   });
   */
   // demo tabs
-  Xt.init('xt-toggle', container, {
+  new Toggle(container, {
     "elements": ".demo_tabs_left .btn",
     "targets": ".demo_item",
     "min": 1
@@ -251,7 +252,7 @@ const populateInline = function (item) {
     }
     */
   }
-  Xt.init('xt-toggle', item, {
+  new Toggle(item, {
     "elements": ".demo_code_tabs_left .btn",
     "targets": ".demo_code_body_item",
     "min": 1
@@ -349,7 +350,7 @@ const populateShadow = function (item, shadowRoot) {
     populateSources(item, source, z);
     source.remove();
   }
-  Xt.init('xt-toggle', item, {
+  new Toggle(item, {
     "elements": ".demo_code_tabs_left .btn",
     "targets": ".demo_code_body_item",
     "min": 1
@@ -423,7 +424,7 @@ const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) 
     populateSources(item, el, z);
     el.remove();
   }
-  Xt.init('xt-toggle', item, {
+  new Toggle(item, {
     "elements": ".demo_code_tabs_left .btn",
     "targets": ".demo_code_body_item",
     "min": 1

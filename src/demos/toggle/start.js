@@ -2,7 +2,7 @@
  * #demo--toggle--restart
  */
 
-Xt.observe.push({
+Xt.mount.push({
   matches: '#demo--toggle--restart',
   fnc: function (main, index, query) {
 

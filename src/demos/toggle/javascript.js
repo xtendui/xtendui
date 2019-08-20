@@ -1,3 +1,4 @@
+import {Toggle} from 'xtend-library/src/components/toggle/toggle'
 import {TweenMax} from 'gsap/TweenMax'
 import BezierEasing from 'bezier-easing'
 
@@ -5,7 +6,7 @@ import BezierEasing from 'bezier-easing'
  * #demo--toggle-js-0
  */
 
-Xt.observe.push({
+Xt.mount.push({
   matches: '#demo--toggle-js-0',
   fnc: function (main, index, query) {
 
@@ -22,15 +23,12 @@ Xt.observe.push({
 
     // xt-toggle
 
-    let self = Xt.init('xt-toggle', toggle, {
+    let self = new Toggle(toggle, {
       "durationOn": time * 1000,
       "durationOff": time * 1000,
       "delayOn": delay * 1000,
       "delayOff": delay * 1000
     });
-    self.unmount = function () {
-      self = null;
-    };
 
     // toggle items
 
@@ -65,6 +63,13 @@ Xt.observe.push({
 
     }
 
+    // destroy
+
+    return function unmount() {
+      self.destroy();
+      self = null;
+    };
+
   }
 });
 
@@ -72,7 +77,7 @@ Xt.observe.push({
  * #demo--toggle-js-0
  */
 
-Xt.observe.push({
+Xt.mount.push({
   matches: '#demo--toggle-js-1',
   fnc: function (main, index, query) {
 
@@ -89,7 +94,7 @@ Xt.observe.push({
 
     // xt-toggle
 
-    let self = Xt.init('xt-toggle', toggle, {
+    let self = new Toggle(toggle, {
       "on": "mouseenter",
       "off": "mouseleave",
       "durationOn": time * 1000,
@@ -97,9 +102,6 @@ Xt.observe.push({
       "delayOn": delay * 1000,
       "delayOff": delay * 1000
     });
-    self.unmount = function () {
-      self = null;
-    };
 
     // toggle items
 
@@ -133,6 +135,13 @@ Xt.observe.push({
       });
 
     }
+
+    // destroy
+
+    return function unmount() {
+      self.destroy();
+      self = null;
+    };
 
   }
 });

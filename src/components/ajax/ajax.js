@@ -357,3 +357,24 @@ Ajax.optionsDefault = {
   "instant": true,
   "aria": false
 };
+
+//////////////////////
+// observe
+//////////////////////
+
+Xt.mount.push({
+  matches: '[data-' + Ajax.componentName + ']',
+  fnc: function (main, index, query) {
+
+    let self = new Ajax(main, main.getAttribute('data-' + Ajax.componentName));
+
+    // destroy
+
+    return function unmount() {
+      self.destroy();
+      self = null;
+    };
+
+  }
+});
+

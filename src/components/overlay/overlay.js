@@ -74,3 +74,23 @@ Overlay.optionsDefault = {
   "closeInside": ".overlay_dismiss, :scope > .backdrop",
   "scrollbar": true
 };
+
+//////////////////////
+// observe
+//////////////////////
+
+Xt.mount.push({
+  matches: '[data-' + Overlay.componentName + ']',
+  fnc: function (main, index, query) {
+
+    let self = new Overlay(main, main.getAttribute('data-' + Overlay.componentName));
+
+    // destroy
+
+    return function unmount() {
+      self.destroy();
+      self = null;
+    };
+
+  }
+});

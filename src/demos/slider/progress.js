@@ -1,9 +1,10 @@
 import {Xt} from 'xtend-library'
+import {Slider} from 'xtend-library/src/components/slider/slider'
 import {TweenMax} from 'gsap/TweenMax'
 
 import {mouseFollow} from 'xtend-library/src/extensions/general/mouse-follow';
 
-Xt.observe.push({
+Xt.mount.push({
   matches: '.demo--slider--progress',
   fnc: function (main, index, query) {
 
@@ -15,7 +16,7 @@ Xt.observe.push({
 
     // xt-slider
 
-    let self = Xt.init('xt-slider', slider, {
+    let self = new Slider(slider, {
       "auto": {
         "time": 4000,
         "pause": "[data-xt-pag]"

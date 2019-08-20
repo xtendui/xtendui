@@ -41,3 +41,23 @@ Smooth.optionsDefault = {
     "frictionLimit": 1.5
   }
 };
+
+//////////////////////
+// observe
+//////////////////////
+
+Xt.mount.push({
+  matches: '[data-' + Smooth.componentName + ']',
+  fnc: function (main, index, query) {
+
+    let self = new Smooth(main, main.getAttribute('data-' + Smooth.componentName));
+
+    // destroy
+
+    return function unmount() {
+      self.destroy();
+      self = null;
+    };
+
+  }
+});

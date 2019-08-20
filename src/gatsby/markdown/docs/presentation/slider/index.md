@@ -51,7 +51,7 @@ Use this markup to create a drop.
 You can initialize **slider** by javascript omitting `[data-xt-slider]`.
 
 ```jsx
-let self = Xt.init('xt-slider', document.querySelector('.my-slider'), {
+let self = new Slider(document.querySelector('.my-slider'), {
   // option
 });
 ```

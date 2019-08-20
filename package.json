@@ -19,11 +19,6 @@
   "module": "src/xtend.js",
   "umd:main": "dist/scripts/xtend.min.js",
   "umd:name": "xt",
-  "files": [
-    "dist/**/*.*",
-    "src/scripts/**/*.*",
-    "src/styles/**/*.*"
-  ],
   "scripts": {
     "version": "gulp version",
     "build": "gulp build",

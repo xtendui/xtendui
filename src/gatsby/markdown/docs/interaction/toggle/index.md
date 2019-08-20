@@ -34,7 +34,7 @@ You can use this markup to create a toggle with **no targets**.
 You can initialize **toggle** by javascript omitting `[data-xt-toggle]`.
 
 ```jsx
-let self = Xt.init('xt-toggle', document.querySelector('.my-toggle'), {
+let self = new Toggle(document.querySelector('.my-toggle'), {
   // option
 });
 ```

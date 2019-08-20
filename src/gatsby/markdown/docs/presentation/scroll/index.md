@@ -23,7 +23,7 @@ Use this markup to create a scroll.
 You can initialize **scroll** by javascript omitting `[data-xt-scroll]`.
 
 ```jsx
-let self = Xt.init('xt-scroll', document.documentElement, {
+let self = new Scroll(document.documentElement, {
   // option
 });
 ```

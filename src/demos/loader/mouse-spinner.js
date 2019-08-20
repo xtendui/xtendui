@@ -4,7 +4,7 @@ import {mouseFollow} from 'xtend-library/src/extensions/general/mouse-follow';
  * .demo--loader--mouse-spinner
  */
 
-Xt.observe.push({
+Xt.mount.push({
   matches: '.demo--loader--mouse-spinner',
   fnc: function (main, index, query) {
 

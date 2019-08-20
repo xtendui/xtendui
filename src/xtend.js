@@ -1,50 +1,26 @@
+/*! Xtend (https://getxtend.com/)
+@copyright (c) 2017 - 2019 Riccardo Caroli
+@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
+
 //////////////////////
 // import
 //////////////////////
 
 import './polyfill';
-import {Core} from 'xtend-library/src/components/core/core'
-import {Toggle} from 'xtend-library/src/components/toggle/toggle'
-import {Drop} from 'xtend-library/src/components/drop/drop'
-import {Overlay} from 'xtend-library/src/components/overlay/overlay'
-import {Smooth} from 'xtend-library/src/components/smooth/smooth'
-import {Slider} from 'xtend-library/src/components/slider/slider'
-import {Scroll} from 'xtend-library/src/components/scroll/scroll'
-import {Sticky} from 'xtend-library/src/components/sticky/sticky'
-import {Ajax} from 'xtend-library/src/components/ajax/ajax'
 
 //////////////////////
 // constructor
 //////////////////////
 
-export const Xt = {
-
-  /*! Xtend (https://getxtend.com/)
-  @copyright (c) 2017 - 2019 Riccardo Caroli
-  @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
-
-};
-
-//////////////////////
-// components
-//////////////////////
-
-Xt.Core = Core;
-Xt.Toggle = Toggle;
-Xt.Drop = Drop;
-Xt.Overlay = Overlay;
-Xt.Smooth = Smooth;
-Xt.Slider = Slider;
-Xt.Scroll = Scroll;
-Xt.Sticky = Sticky;
-Xt.Ajax = Ajax;
+export const Xt = {};
 
 //////////////////////
 // vars
 //////////////////////
 
-Xt.debug = false;
-Xt.observe = [];
+Xt.debug = true;
+Xt.mount = [];
+Xt.unmount = [];
 Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
 Xt.resizeDelay = 100;
 Xt.scrollDelay = false;
@@ -53,7 +29,6 @@ Xt.focusables = 'a, button, details, input, iframe, select, textarea';
 Xt.components = [
   {'name': 'xt-core', 'class': Xt.Core},
   {'name': 'xt-toggle', 'class': Xt.Toggle},
-  {'name': 'xt-drop', 'class': Xt.Drop},
   {'name': 'xt-overlay', 'class': Xt.Overlay},
   {'name': 'xt-smooth', 'class': Xt.Smooth},
   {'name': 'xt-slider', 'class': Xt.Slider},
@@ -70,226 +45,8 @@ Xt.components = [
 if (typeof window !== 'undefined') {
 
   //////////////////////
-  // component
+  // initialization
   //////////////////////
-
-  /**
-   * init component
-   * @param {String} name Component name
-   * @param {Node|HTMLElement|EventTarget|Window} element Component's element
-   * @param {Object} optionsJs User options
-   */
-
-  Xt.init = function (name, element, optionsJs = {}) {
-    for (let component of Xt.components) {
-      if (name === component.name) {
-        // constructor
-        let self = new component.class(element, optionsJs);
-        // set component
-        Xt.set(name, element, self);
-        // return
-        return self;
-      }
-    }
-  };
-
-  /**
-   * destroy component
-   * @param {String} name Component name
-   * @param {Node|HTMLElement|EventTarget|Window} element Component's element
-   * @param {Boolean} skipCall If skip call destroy component
-   */
-
-  Xt.destroy = function (name, element, skipCall = false) {
-    let self = Xt.get(name, element);
-    if (self) {
-      self.destroy();
-    }
-  };
-
-  /**
-   * set component
-   * @param {String} name Component name
-   * @param {Node|HTMLElement|EventTarget|Window} element Component's element
-   * @param {Object} self Component' self
-   */
-  Xt.set = function (name, element, self) {
-    Xt.dataStorage.set(element, name, self);
-  };
-
-  /**
-   * get component
-   * @param {String} name Component name
-   * @param {Node|HTMLElement|EventTarget|Window} element Component's element
-   */
-  Xt.get = function (name, element) {
-    return Xt.dataStorage.get(element, name);
-  };
-
-  //////////////////////
-  // element
-  //////////////////////
-
-  /**
-   * init element
-   * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} added
-   */
-  Xt.initElement = function (added = document.documentElement) {
-    if (added.closest('.xt-ignore')) {
-      return false;
-    }
-    added = Xt.arrSingle(added);
-    for (let element of added) {
-      // components
-      for (let component of Xt.components) {
-        if (element.matches('[data-' + component.name + ']')) {
-          Xt.init(component.name, element);
-        }
-        for (let el of element.querySelectorAll('[data-' + component.name + ']')) {
-          Xt.init(component.name, el);
-        }
-      }
-      // textareaAutosize
-      if (element.matches('textarea')) {
-        Xt.textareaAutosize.init(element);
-      }
-      for (let el of element.querySelectorAll('textarea')) {
-        Xt.textareaAutosize.init(el);
-      }
-      // media
-      if (element.matches('.media')) {
-        Xt.media.init(element);
-      }
-      for (let el of element.querySelectorAll('.media')) {
-        Xt.media.init(el);
-      }
-      // btnMerge
-      if (element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
-        Xt.btnMerge.init(element);
-      }
-      for (let el of Array.from(element.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
-        Xt.btnMerge.init(el);
-      }
-    }
-  };
-
-  /**
-   * destroy element
-   * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} removed
-   */
-  /*
-  Xt.destroyElement = function (removed = document.documentElement) {
-    if (removed.closest('.xt-ignore')) {
-      return false;
-    }
-    removed = Xt.arrSingle(removed);
-    for (let element of removed) {
-      // components
-      for (let component of Xt.components) {
-        if (element.matches('[data-' + component.name + '-inited]')) {
-          Xt.destroy(component.name, element);
-        }
-        for (let el of element.querySelectorAll('[data-' + component.name + '-inited]')) {
-          Xt.destroy(component.name, el);
-        }
-      }
-      // textareaAutosize
-      if (element.matches('textarea')) {
-        Xt.textareaAutosize.destroy(element);
-      }
-      for (let el of element.querySelectorAll('textarea')) {
-        Xt.textareaAutosize.destroy(el);
-      }
-      // media
-      if (element.matches('.media')) {
-        Xt.media.destroy(element);
-      }
-      for (let el of element.querySelectorAll('.media')) {
-        Xt.media.destroy(el);
-      }
-      // btnMerge
-      if (element.matches('a, button') && Array.from(element).filter(x => x.querySelectorAll('.btn').length !== 0)) {
-        Xt.btnMerge.destroy(element);
-      }
-      for (let el of Array.from(element.querySelectorAll('a, button')).filter(x => x.querySelectorAll('.btn').length !== 0)) {
-        Xt.btnMerge.destroy(el);
-      }
-    }
-  };
-   */
-
-  /**
-   * initObserve
-   * @param {Node|HTMLElement|EventTarget|Window} added
-   */
-
-  Xt.initObserve = function (added = document.documentElement) {
-    if (added.closest('.xt-ignore')) {
-      return false;
-    }
-    for (let obj of Xt.observe) {
-      let els = [];
-      // populate elements
-      for (let element of added.querySelectorAll(obj.matches)) {
-        els.push(element);
-      }
-      if (added.matches(obj.matches)) {
-        els.push(added);
-      }
-      // call
-      if (els.length) {
-        for (let [i, el] of els.entries()) {
-          obj.fnc(el, i, obj.matches);
-        }
-      }
-    }
-  };
-
-  /**
-   * observer
-   */
-
-  Xt.observer = new MutationObserver(function (mutationsList) {
-    for (let mutation of mutationsList) {
-      if (mutation.type === 'childList') {
-        // removed
-        /*
-        for (let removed of mutation.removedNodes) {
-          if (removed.nodeType === 1) {
-            Xt.destroyElement(removed);
-          }
-        }
-        */
-        // added
-        /* NO IT BUGS slider react inizialization with wrong width values
-        for (let added of mutation.addedNodes) {
-          if (added.nodeType === 1) {
-            Xt.initElement(added);
-          }
-        }
-        */
-      }
-    }
-  });
-
-  /**
-   * load
-   * @param {Node|HTMLElement|EventTarget|Window} container Component's element
-   */
-
-  Xt.load = function (container = document.documentElement) {
-    Xt.stickyIndex = 500;
-    Xt.setScrollbarWidth();
-    Xt.windowHeightSet();
-    Xt.initElement(container);
-    Xt.initObserve(container);
-    Xt.observer.observe(container, {
-      characterData: false,
-      attributes: false,
-      childList: true,
-      subtree: true
-    });
-  };
 
   /**
    * ready
@@ -310,6 +67,132 @@ if (typeof window !== 'undefined') {
         }
       });
     }
+  };
+
+  /**
+   * init
+   */
+  Xt.ready(function () {
+    Xt.stickyIndex = 500;
+    Xt.setScrollbarWidth();
+    Xt.windowHeightSet();
+    Xt.mountCheck(document.documentElement);
+    Xt.observer.disconnect();
+    Xt.observer.observe(document.documentElement, {
+      characterData: false,
+      attributes: false,
+      childList: true,
+      subtree: true
+    });
+  });
+
+  //////////////////////
+  // observer
+  //////////////////////
+
+  /**
+   * observer
+   */
+
+  Xt.observer = new MutationObserver(function (mutationsList) {
+    for (let mutation of mutationsList) {
+      if (mutation.type === 'childList') {
+        // removed
+        for (let removed of mutation.removedNodes) {
+          if (removed.nodeType === 1) {
+            Xt.unmountCheck(removed);
+          }
+        }
+        // added
+        for (let added of mutation.addedNodes) {
+          if (added.nodeType === 1) {
+            Xt.mountCheck(added);
+          }
+        }
+      }
+    }
+  });
+
+  /**
+   * destroyCheck
+   * @param {Node|HTMLElement|EventTarget|Window} removed
+   */
+
+  Xt.unmountCheck = function (removed = document.documentElement) {
+    if (removed.closest('.xt-ignore')) {
+      return false;
+    }
+    for (let obj of Xt.unmount) {
+      // check
+      if (removed === obj.element || removed.contains(obj.element)) {
+        if (obj.element.closest('.xt-ignore')) {
+          return false;
+        }
+        // call
+        obj.fnc();
+      }
+    }
+  };
+
+  /**
+   * observeCheck
+   * @param {Node|HTMLElement|EventTarget|Window} added
+   */
+
+  Xt.mountCheck = function (added = document.documentElement) {
+    if (added.closest('.xt-ignore')) {
+      return false;
+    }
+    for (let obj of Xt.mount) {
+      // check
+      let els = [];
+      for (let element of added.querySelectorAll(obj.matches)) {
+        els.push(element);
+      }
+      if (added.matches(obj.matches)) {
+        els.push(added);
+      }
+      // call
+      if (els.length) {
+        for (let [i, el] of els.entries()) {
+          if (el.closest('.xt-ignore')) {
+            return false;
+          }
+          requestAnimationFrame( function() { // @FIX react when componentDidMount
+            let destroy = obj.fnc(el, i, obj.matches);
+            if (destroy) {
+              Xt.unmount.push({
+                element: el,
+                fnc: destroy
+              });
+            }
+          })
+        }
+      }
+    }
+  };
+
+  //////////////////////
+  // component
+  //////////////////////
+
+  /**
+   * set component
+   * @param {String} name Component name
+   * @param {Node|HTMLElement|EventTarget|Window} element Component's element
+   * @param {Object} self Component' self
+   */
+  Xt.set = function (name, element, self) {
+    Xt.dataStorage.set(element, name, self);
+  };
+
+  /**
+   * get component
+   * @param {String} name Component name
+   * @param {Node|HTMLElement|EventTarget|Window} element Component's element
+   */
+  Xt.get = function (name, element) {
+    return Xt.dataStorage.get(element, name);
   };
 
   //////////////////////

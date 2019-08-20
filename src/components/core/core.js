@@ -22,21 +22,8 @@ export class Core {
     self.optionsJs = optionsJs;
     self.componentName = self.constructor.componentName;
     self.componentNamespace = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '');
-    // @FIX ignore
-    if (self.object.closest('.xt-ignore')) {
-      if (Xt.debug === true) {
-        console.warn(self.componentName + ' inside xt-ignore will not be initialized:', self.object);
-      }
-      return null;
-    }
-    // not if already done
-    if (self.object.getAttribute('data-' + self.componentName + '-inited')) {
-      if (Xt.debug === true) {
-        console.warn(self.componentName + ' already initialized:', self.object);
-      }
-      return Xt.get(self.componentName, self.object);
-    }
-    self.object.setAttribute('data-' + self.componentName + '-inited', 'true');
+    // set
+    Xt.set(self.componentName, self.object, self);
     // init
     self.init(object, optionsJs);
   }
@@ -2754,8 +2741,6 @@ export class Core {
         }
       }
     }
-    // remove setup
-    self.object.removeAttribute('data-' + self.componentName + '-inited');
     // not weak destroy
     if (!weak) {
       // unmount
@@ -2774,4 +2759,24 @@ export class Core {
 //////////////////////
 
 Core.componentName = 'xt-core';
+
+//////////////////////
+// observe
+//////////////////////
+
+Xt.mount.push({
+  matches: '[data-' + Core.componentName + ']',
+  fnc: function (main, index, query) {
+
+    let self = new Core(main, main.getAttribute('data-' + Core.componentName));
+
+    // destroy
+
+    return function unmount() {
+      self.destroy();
+      self = null;
+    };
+
+  }
+});
 

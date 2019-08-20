@@ -2,7 +2,7 @@
  * xtend extension: multilevel
  */
 
-Xt.observe.push({
+Xt.mount.push({
   matches: '.multilevel',
   fnc: function (main, index, query) {
 

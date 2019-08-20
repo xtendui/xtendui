@@ -4,7 +4,7 @@ import {mouseFollow} from 'xtend-library/src/extensions/general/mouse-follow';
  * .demo--loader--mouse-filler
  */
 
-Xt.observe.push({
+Xt.mount.push({
   matches: '.demo--loader--mouse-filler',
   fnc: function (main, index, query) {
 

@@ -1,20 +1,20 @@
 import {Xt} from 'xtend-library'
-import 'xtend-library/src/xtend-demos'
-import 'xtend-library/src/xtend-extensions'
 
 //////////////////////
 // smooth
 //////////////////////
 
 /*
-Xt.observe.push({
+Xt.mount.push({
   matches: 'html',
   fnc: function (main, index, query) {
 
-    // smooth
+    let self = new Smooth(document.scrollingElement, {});
 
-    let self = Xt.init('xt-smooth', document.scrollingElement, {});
-    self.unmount = function () {
+    // destroy
+
+    return function unmount() {
+      self.destroy();
       self = null;
     };
 

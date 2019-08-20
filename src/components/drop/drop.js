@@ -63,3 +63,23 @@ Drop.optionsDefault = {
   "closeOutside": "body",
   "ariaControls": ":scope > a, :scope > button"
 };
+
+//////////////////////
+// observe
+//////////////////////
+
+Xt.mount.push({
+  matches: '[data-' + Drop.componentName + ']',
+  fnc: function (main, index, query) {
+
+    let self = new Drop(main, main.getAttribute('data-' + Drop.componentName));
+
+    // destroy
+
+    return function unmount() {
+      self.destroy();
+      self = null;
+    };
+
+  }
+});

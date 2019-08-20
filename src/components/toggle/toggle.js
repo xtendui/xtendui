@@ -68,3 +68,23 @@ Toggle.optionsDefault = {
   "max": 1,
   "instant": {"elements": true}
 };
+
+//////////////////////
+// observe
+//////////////////////
+
+Xt.mount.push({
+  matches: '[data-' + Toggle.componentName + ']',
+  fnc: function (main, index, query) {
+
+    let self = new Toggle(main, main.getAttribute('data-' + Toggle.componentName));
+
+    // destroy
+
+    return function unmount() {
+      self.destroy();
+      self = null;
+    };
+
+  }
+});

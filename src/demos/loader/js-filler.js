@@ -4,7 +4,7 @@ import {TweenMax} from 'gsap/TweenMax'
  * .demo--loader--js-filler
  */
 
-Xt.observe.push({
+Xt.mount.push({
   matches: '.demo--loader--js-filler',
   fnc: function (main, index, query) {
 

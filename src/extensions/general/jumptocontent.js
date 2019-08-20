@@ -4,7 +4,7 @@ import {Xt} from 'xtend-library'
  * xtend extension: jumptocontent
  */
 
-Xt.observe.push({
+Xt.mount.push({
   matches: '.jumptocontent',
   fnc: function (main, index, query) {
 

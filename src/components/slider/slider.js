@@ -1028,3 +1028,24 @@ Slider.optionsDefault = {
     "timeLimit": 25
   }
 };
+
+//////////////////////
+// observe
+//////////////////////
+
+Xt.mount.push({
+  matches: '[data-' + Slider.componentName + ']',
+  fnc: function (main, index, query) {
+
+    let self = new Slider(main, main.getAttribute('data-' + Slider.componentName));
+    console.log(main);
+
+    // destroy
+
+    return function unmount() {
+      self.destroy();
+      self = null;
+    };
+
+  }
+});

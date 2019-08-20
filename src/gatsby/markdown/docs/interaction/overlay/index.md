@@ -69,7 +69,7 @@ You can use this markup to create a overlay with **no toggle**. Be sure to add `
 You can initialize **overlay** by javascript omitting `[data-xt-overlay]`.
 
 ```jsx
-let self = Xt.init('xt-overlay', document.querySelector('.my-overlay'), {
+let self = new Overlay(document.querySelector('.my-overlay'), {
   // option
 });
 ```

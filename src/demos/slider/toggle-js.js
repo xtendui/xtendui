@@ -1,8 +1,9 @@
 import {Xt} from 'xtend-library'
+import {Slider} from 'xtend-library/src/components/slider/slider'
 import {TweenMax} from 'gsap/TweenMax'
 import BezierEasing from 'bezier-easing'
 
-Xt.observe.push({
+Xt.mount.push({
   matches: '.demo--slider--toggle-js',
   fnc: function (main, index, query) {
 
@@ -17,7 +18,7 @@ Xt.observe.push({
 
     // xt-slider
 
-    let self = Xt.init('xt-slider', slider, {
+    let self = new Slider(slider, {
       "durationOn": time * 1000,
       "durationOff": time * 1000,
       "instant": false

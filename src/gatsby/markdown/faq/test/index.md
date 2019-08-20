@@ -49,7 +49,7 @@ body {
 ```
 
 ```jsx
-let self = Xt.init('xt-scroll', document.documentElement, {
+let self = new Scroll(document.documentElement, {
   // option
 });
 ```

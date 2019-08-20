@@ -4,7 +4,7 @@ import {TweenMax} from 'gsap/TweenMax'
  * .demo--loader--js-spinner
  */
 
-Xt.observe.push({
+Xt.mount.push({
   matches: '.demo--loader--js-spinner',
   fnc: function (main, index, query) {
 

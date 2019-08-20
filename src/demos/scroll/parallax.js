@@ -1,11 +1,12 @@
 import {Xt} from 'xtend-library'
+import {Scroll} from 'xtend-library/src/components/scroll/scroll'
 import {TweenMax} from 'gsap/TweenMax'
 
 /**
  * .demo--parallax_title
  */
 
-Xt.observe.push({
+Xt.mount.push({
   matches: '.demo--parallax_title',
   fnc: function (main, index, query) {
 
@@ -15,7 +16,7 @@ Xt.observe.push({
 
     // xt-scroll
 
-    let self = Xt.init('xt-scroll', parallaxTitle, {
+    let self = new Scroll(parallaxTitle, {
       "sticky": "fixed",
       "end": 350
     });
@@ -41,7 +42,7 @@ Xt.observe.push({
  * .demo--parallax_img
  */
 
-Xt.observe.push({
+Xt.mount.push({
   matches: '.demo--parallax_img',
   fnc: function (main, index, query) {
 
@@ -51,7 +52,7 @@ Xt.observe.push({
 
     // xt-scroll
 
-    let self = Xt.init('xt-scroll', parallaxImg, {
+    let self = new Scroll(parallaxImg, {
       "sticky": "fixed",
       "end": 350
     });
@@ -75,7 +76,7 @@ Xt.observe.push({
  * .demo--parallax_footer
  */
 
-Xt.observe.push({
+Xt.mount.push({
   matches: '.demo--parallax_footer',
   fnc: function (main, index, query) {
 
@@ -85,7 +86,7 @@ Xt.observe.push({
 
     // xt-scroll
 
-    let self = Xt.init('xt-scroll', parallaxFooter, {
+    let self = new Scroll(parallaxFooter, {
       "sticky": true,
       "start": "125%"
     });
@@ -104,5 +105,3 @@ Xt.observe.push({
 
   }
 });
-
-

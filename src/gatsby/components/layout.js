@@ -9,6 +9,17 @@ import DocsAside from 'components/doc-aside'
 import DocsFoot from 'components/doc-foot'
 
 import {Xt} from 'xtend-library'
+import {Core} from 'xtend-library/src/components/core/core'
+import {Toggle} from 'xtend-library/src/components/toggle/toggle'
+import {Drop} from 'xtend-library/src/components/drop/drop'
+import {Overlay} from 'xtend-library/src/components/overlay/overlay'
+import {Smooth} from 'xtend-library/src/components/smooth/smooth'
+import {Slider} from 'xtend-library/src/components/slider/slider'
+import {Scroll} from 'xtend-library/src/components/scroll/scroll'
+import {Sticky} from 'xtend-library/src/components/sticky/sticky'
+import {Ajax} from 'xtend-library/src/components/ajax/ajax'
+import 'xtend-library/src/xtend-demos'
+import 'xtend-library/src/xtend-extensions'
 import {populateBlock} from 'assets/scripts/demo.js'
 import {makeDocument} from 'assets/scripts/theme.js'
 
@@ -18,7 +29,6 @@ class Layout extends React.Component {
   componentDidMount() {
     populateBlock()
     makeDocument()
-    Xt.ready(Xt.load)
   }
 
   render() {

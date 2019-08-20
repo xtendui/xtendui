@@ -4,7 +4,7 @@ import {Xt} from 'xtend-library'
  * xtend extension: group-number
  */
 
-Xt.observe.push({
+Xt.mount.push({
   matches: '.group-number',
   fnc: function (main, index, query) {
 

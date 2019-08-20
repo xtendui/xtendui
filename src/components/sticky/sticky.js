@@ -42,7 +42,9 @@ export class Sticky extends Core {
         el.before(container);
         el.classList.add('xt-ignore'); // @FIX ignore Xt.observer and init
         container.append(el);
-        el.classList.remove('xt-ignore'); // @FIX ignore Xt.observer and init
+        requestAnimationFrame( function () {
+          el.classList.remove('xt-ignore'); // @FIX ignore Xt.observer and init
+        });
       }
       el.style[options.position] = '0px';
       // sticky clone
@@ -445,3 +447,22 @@ Sticky.optionsDefault = {
   "aria": false
 };
 
+//////////////////////
+// observe
+//////////////////////
+
+Xt.mount.push({
+  matches: '[data-' + Sticky.componentName + ']',
+  fnc: function (main, index, query) {
+
+    let self = new Sticky(main, main.getAttribute('data-' + Sticky.componentName));
+
+    // destroy
+
+    return function unmount() {
+      self.destroy();
+      self = null;
+    };
+
+  }
+});

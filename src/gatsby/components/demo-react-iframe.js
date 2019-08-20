@@ -33,7 +33,7 @@ class DemoReactIframe extends React.Component {
             <div id="body-outer">
               <div id="body-inner" className="demo_source--from">
                 {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.jsx`).map((file, index) => (
-                  demo.jsSource = jsSource(demo, 'jsx')
+                  demo.jsSource = jsSource(demo, '.jsx')
                 )) &&
                 <div/> // @FIX react render string
                 }
