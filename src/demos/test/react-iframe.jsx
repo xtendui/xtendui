@@ -1,9 +1,6 @@
 import React from 'react'
 
 class Component extends React.Component {
-  componentDidMount() {
-    console.log('react iframe loaded');
-  }
   render() {
     return (
       <div className="drop_outer" data-xt-drop>

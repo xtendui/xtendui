@@ -1038,7 +1038,6 @@ Xt.mount.push({
   fnc: function (main, index, query) {
 
     let self = new Slider(main, main.getAttribute('data-' + Slider.componentName));
-    console.log(main);
 
     // destroy
 

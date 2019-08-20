@@ -1,1 +1,1 @@
-console.log('vanilla iframe loaded');
+// test
