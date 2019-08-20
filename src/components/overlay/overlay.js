@@ -36,7 +36,7 @@ export class Overlay extends Core {
     if (options.aria) {
       if (self.targets.length) {
         for (let el of self.elements) {
-          let ariaEls = self.getInside(el, options.ariaControls);
+          let ariaEls = Xt.queryAll(el, options.ariaControls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
           ariaEl.setAttribute('aria-haspopup', 'dialog');
         }

@@ -76,8 +76,8 @@ export class Core {
       "classInverse": "inverse",
       "instant": false,
       "autoClose": false,
-      "onBlock": 20, // @FIX fast clicks with delay
-      "offBlock": 20, // @FIX fast clicks with delay
+      "onBlock": false,
+      "offBlock": false,
       "loop": true,
       "jump": false,
       "imageLoadedInit": false,
@@ -222,7 +222,7 @@ export class Core {
       el.setAttribute('data-xt-namespace', self.namespace);
     }
     // automatic initial currents
-    let elements = self.getElementsSingle();
+    let elements = self.getGroups();
     if (elements.length) {
       // check elements
       for (let element of elements) {
@@ -348,7 +348,7 @@ export class Core {
     if (options.aria) {
       if (self.targets.length) {
         for (let el of self.elements) {
-          let ariaEls = self.getInside(el, options.ariaControls);
+          let ariaEls = Xt.queryAll(el, options.ariaControls);
           let ariaEl = ariaEls.length ? ariaEls[0] : el;
           // id
           if (options.aria === true || options.aria.labelledby || options.aria.controls) {
@@ -386,7 +386,7 @@ export class Core {
             let str = ' ';
             str += tr.getAttribute('aria-labelledby') || '';
             for (let el of els) {
-              let ariaEls = self.getInside(el, options.ariaControls);
+              let ariaEls = Xt.queryAll(el, options.ariaControls);
               let ariaEl = ariaEls.length ? ariaEls[0] : el;
               str += ' ' + ariaEl.getAttribute('id');
             }
@@ -396,7 +396,7 @@ export class Core {
         if (options.aria === true || options.aria.controls) {
           for (let el of self.elements) {
             let trs = self.getTargets(el);
-            let ariaEls = self.getInside(el, options.ariaControls);
+            let ariaEls = Xt.queryAll(el, options.ariaControls);
             let ariaEl = ariaEls.length ? ariaEls[0] : el;
             // controls
             let str = ' ';
@@ -459,7 +459,7 @@ export class Core {
     }
     // listener
     for (let tr of self.targets) {
-      let el = self.getTargets(tr)[0];
+      let el = self.getElements(tr)[0];
       if (el) {
         // event
         let onHandler = Xt.dataStorage.get(el, options.on + '.' + self.namespace);
@@ -903,10 +903,10 @@ export class Core {
   //////////////////////
 
   /**
-   * get elements array single (one element per group)
+   * get groups (one element per group)
    * @returns {Array} array of elements
    */
-  getElementsSingle() {
+  getGroups() {
     let self = this;
     // groups
     let groups = [];
@@ -926,20 +926,19 @@ export class Core {
   }
 
   /**
-   * get elements (based on xtend mode and containers)
+   * get elements from element or target
    * @param {Node|HTMLElement|EventTarget|Window} el Element that triggered interaction
-   * @returns {Object} object.all and object.single
+   * @returns {Array} The first element is the one on getGroups()
    */
   getElements(el) {
     let self = this;
     // getElements
     if (!self.elements || !self.elements.length) {
-      return {all: [], single: null};
+      return [];
     }
     if (self.mode === 'unique' || !el) {
       // choose all elements
-      let final = self.elements;
-      return {all: Xt.arrSingle(final), single: final.length > 1 ? final[0] : final};
+      return self.elements;
     } else if (self.mode === 'multiple') {
       // choose element by group
       let final;
@@ -958,12 +957,12 @@ export class Core {
           final = Xt.arrSingle(groupElements[index]);
         }
       }
-      return {all: final, single: final[0]};
+      return final;
     }
   }
 
   /**
-   * get targets (based on xtend mode and containers)
+   * get targets from element or target
    * @param {Node|HTMLElement|EventTarget|Window} el Element that triggered interaction
    * @returns {Array}
    */
@@ -995,29 +994,6 @@ export class Core {
         }
       }
       return final;
-    }
-  }
-
-  /**
-   * query for inside
-   * @param {Node|HTMLElement|NodeList|Array} element Element to search from
-   * @param {String} query Query for querySelectorAll
-   * @returns {Array}
-   */
-  getInside(element, query) {
-    if (!query) {
-      return [];
-    }
-    if (!element.length) {
-      // search element
-      return Xt.arrSingle(element.querySelectorAll(query));
-    } else {
-      // search array
-      let arr = [];
-      for (let el of element) {
-        arr.push(...el.querySelectorAll(query));
-      }
-      return arr;
     }
   }
 
@@ -1072,7 +1048,7 @@ export class Core {
     let self = this;
     // hasCurrent
     let groupElements = self.getElements(element);
-    return Xt.currents[self.namespace].filter(x => x === groupElements.single).length;
+    return Xt.currents[self.namespace].filter(x => x === groupElements[0]).length;
   }
 
   /**
@@ -1212,11 +1188,11 @@ export class Core {
       }
       // on
       let groupElements = self.getElements(element);
-      self.addCurrent(groupElements.single);
+      self.addCurrent(groupElements[0]);
       self.setIndexAndDirection(element);
       let targets = self.getTargets(element);
-      let elementsInner = self.getInside(element, options.elementsInner);
-      let targetsInner = self.getInside(targets, options.targetsInner);
+      let elementsInner = Xt.queryAll(element, options.elementsInner);
+      let targetsInner = Xt.queryAll(targets, options.targetsInner);
       // if currents > max
       let currents = self.getCurrents();
       if (currents.length > options.max) {
@@ -1227,34 +1203,29 @@ export class Core {
       let detail = self.eDetailSet(e);
       // queue obj
       let obj = {};
-      if (groupElements.all.length) {
-        obj['elements'] = {
-          detail: detail,
-          queueEls: groupElements.all,
-          groupElements: groupElements
-        };
-      }
+      obj['elements'] = {
+        detail: detail,
+        queueEls: groupElements
+      };
       if (targets.length) {
         obj['targets'] = {
           detail: detail,
-          queueEls: targets,
-          groupElements: groupElements
+          queueEls: targets
         };
       }
       if (elementsInner.length) {
         obj['elementsInner'] = {
           detail: detail,
-          queueEls: elementsInner,
-          groupElements: groupElements
+          queueEls: elementsInner
         };
       }
       if (targetsInner.length) {
         obj['targetsInner'] = {
           detail: detail,
-          queueEls: targetsInner,
-          groupElements: groupElements
+          queueEls: targetsInner
         };
       }
+      // put in queue
       if (typeof options.instant !== 'object' && options.instant === true) {
         self.detail.queueOn = [obj];
       } else {
@@ -1290,16 +1261,12 @@ export class Core {
     }
     // toggle
     if (force || self.checkOff(element)) {
-      // if currents === min
-      if (self.getCurrents().length === options.min) {
-        return false;
-      }
       // off
       let groupElements = self.getElements(element);
-      self.removeCurrent(groupElements.single);
+      self.removeCurrent(groupElements[0]);
       let targets = self.getTargets(element);
-      let elementsInner = self.getInside(element, options.elementsInner);
-      let targetsInner = self.getInside(targets, options.targetsInner);
+      let elementsInner = Xt.queryAll(element, options.elementsInner);
+      let targetsInner = Xt.queryAll(targets, options.targetsInner);
       if (element.blur) { // @FIX sometimes blur is undefined
         element.blur(); // @FIX :focus styles
       }
@@ -1317,34 +1284,29 @@ export class Core {
       let detail = self.eDetailSet(e);
       // queue obj
       let obj = {};
-      if (groupElements.all.length) {
-        obj['elements'] = {
-          detail: detail,
-          queueEls: groupElements.all,
-          groupElements: groupElements
-        };
-      }
+      obj['elements'] = {
+        detail: detail,
+        queueEls: groupElements
+      };
       if (targets.length) {
         obj['targets'] = {
           detail: detail,
-          queueEls: targets,
-          groupElements: groupElements
+          queueEls: targets
         };
       }
       if (elementsInner.length) {
         obj['elementsInner'] = {
           detail: detail,
-          queueEls: elementsInner,
-          groupElements: groupElements
+          queueEls: elementsInner
         };
       }
       if (targetsInner.length) {
         obj['targetsInner'] = {
           detail: detail,
-          queueEls: targetsInner,
-          groupElements: groupElements
+          queueEls: targetsInner
         };
       }
+      // put in queue
       if (typeof options.instant !== 'object' && options.instant === true) {
         self.detail.queueOff = [obj];
       } else {
@@ -1542,7 +1504,6 @@ export class Core {
    * queue on done
    * @param {Object} obj Queue object
    * @param {String} type Type of element
-   * @param {Boolean} skipQueue If skip queue
    */
   queueOnDone(obj, type) {
     let self = this;
@@ -1582,7 +1543,7 @@ export class Core {
         // request @TODO refactor
         if (self.ajaxRequest) {
           if (!self.initial) {
-            self.ajaxRequest(obj[type].groupElements.single);
+            self.ajaxRequest(obj['elements'].queueEls[0]);
           }
         }
         // remove queue
@@ -1597,13 +1558,12 @@ export class Core {
    * queue off done
    * @param {Object} obj Queue object
    * @param {String} type Type of element
-   * @param {Boolean} skipQueue If skip queue
    */
-  queueOffDone(obj, type, skipQueue = false) {
+  queueOffDone(obj, type) {
     let self = this;
     let options = self.options;
     // check
-    if (obj[type] && !skipQueue) {
+    if (obj[type]) {
       // done
       obj[type].done = true;
       let done = 0;
@@ -1687,6 +1647,12 @@ export class Core {
     // delay
     let els = obj[type].queueEls;
     for (let el of els) {
+      // instant
+      if (typeof options.instant !== 'object' && options.instant === true) {
+        obj[type].instant = true;
+      } else if (typeof options.instant === 'object' && options.instant[type]) {
+        obj[type].instant = true;
+      }
       // delay
       let delay;
       if (options.delayOn) {
@@ -1705,7 +1671,7 @@ export class Core {
       // delay fnc
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
-      if (delay) {
+      if (delay && !obj[type].instant) {
         Xt.dataStorage.set(el, self.componentNamespace + 'DelayTimeout', setTimeout(function () {
           self.queueOnDelayDone(obj, el, type);
         }, delay));
@@ -1733,6 +1699,12 @@ export class Core {
     // delay
     let els = obj[type].queueEls;
     for (let el of els) {
+      // instant
+      if (typeof options.instant !== 'object' && options.instant === true) {
+        obj[type].instant = true;
+      } else if (typeof options.instant === 'object' && options.instant[type]) {
+        obj[type].instant = true;
+      }
       // delay
       let delay;
       if (options.delayOff) {
@@ -1751,7 +1723,7 @@ export class Core {
       // delay fnc
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
-      if (delay) {
+      if (delay && !obj[type].instant) {
         Xt.dataStorage.set(el, self.componentNamespace + 'DelayTimeout', setTimeout(function () {
           self.queueOffDelayDone(obj, el, type);
         }, delay));
@@ -1799,13 +1771,13 @@ export class Core {
       }
     }
     if (type === 'targets' || type === 'targetsInner') {
-      self.specialCloseOn(el, obj[type].groupElements.single);
+      self.specialCloseOn(el, obj['elements'].queueEls[0]);
     }
     // aria
     if (options.aria) {
       if (type === 'elements') {
         // selected
-        let ariaEls = self.getInside(el, options.ariaControls);
+        let ariaEls = Xt.queryAll(el, options.ariaControls);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;
         ariaEl.setAttribute('aria-selected', 'true');
       }
@@ -1878,7 +1850,7 @@ export class Core {
     // anim
     let duration = Xt.animTime(el, options.durationOn);
     clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
-    if (!duration) {
+    if (!duration || obj[type].instant) {
       self.queueOnAnimDone(obj, el, type);
     } else {
       Xt.dataStorage.set(el, self.componentNamespace + 'AnimTimeout', setTimeout(function () {
@@ -1899,7 +1871,7 @@ export class Core {
     // anim
     let duration = Xt.animTime(el, options.durationOff);
     clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
-    if (!duration) {
+    if (!duration || obj[type].instant) {
       self.queueOffAnimDone(obj, el, type);
     } else {
       Xt.dataStorage.set(el, self.componentNamespace + 'AnimTimeout', setTimeout(function () {
@@ -1983,7 +1955,7 @@ export class Core {
     if (options.aria) {
       // selected
       if (type === 'elements') {
-        let ariaEls = self.getInside(el, options.ariaControls);
+        let ariaEls = Xt.queryAll(el, options.ariaControls);
         let ariaEl = ariaEls.length ? ariaEls[0] : el;
         ariaEl.setAttribute('aria-selected', 'false');
       }
@@ -2042,7 +2014,7 @@ export class Core {
       return false;
     }
     // prevent default if not loop
-    let max = self.getElementsSingle().length - 1;
+    let max = self.getGroups().length - 1;
     let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY;
     if ((delta > 0 && self.currentIndex > 0) || (delta < 0 && self.currentIndex < max - 1)) {
       // prevent wheel
@@ -2621,7 +2593,7 @@ export class Core {
   goToPrev(amount = 1, force = false, loop = null) {
     let self = this;
     // goToIndex
-    let index = self.getElementsSingle().length - 1;
+    let index = self.getGroups().length - 1;
     if (self.currentIndex !== null) {
       index = self.currentIndex - amount;
     }
@@ -2639,7 +2611,7 @@ export class Core {
     let self = this;
     let options = self.options;
     // check
-    let max = self.getElementsSingle().length - 1;
+    let max = self.getGroups().length - 1;
     if (index > max) {
       if (loop || (loop === null && options.loop)) {
         index = index - max - 1;
@@ -2656,7 +2628,7 @@ export class Core {
       }
     }
     // go
-    let current = self.getElementsSingle()[index];
+    let current = self.getGroups()[index];
     self.eventOn(current, force);
   }
 

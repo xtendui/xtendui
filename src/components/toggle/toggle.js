@@ -41,7 +41,7 @@ export class Toggle extends Core {
             self.object.setAttribute('aria-multiselectable', 'true');
           }
           for (let el of self.elements) {
-            let ariaEls = self.getInside(el, options.ariaControls);
+            let ariaEls = Xt.queryAll(el, options.ariaControls);
             let ariaEl = ariaEls.length ? ariaEls[0] : el;
             ariaEl.setAttribute('role', 'tab');
           }

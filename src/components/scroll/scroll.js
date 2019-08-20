@@ -215,7 +215,7 @@ export class Scroll extends Core {
               Xt.dataStorage.set(el, self.componentNamespace + 'OnCount', currentOn);
               Xt.dataStorage.set(el, self.componentNamespace + 'OnTot', currentsOn.length);
               currentOn++;
-              self.eventOn(el);
+              self.eventOn(el, true);
             }));
           }
         } else {
@@ -237,7 +237,7 @@ export class Scroll extends Core {
               Xt.dataStorage.set(el, self.componentNamespace + 'OffCount', currentOff);
               Xt.dataStorage.set(el, self.componentNamespace + 'OffTot', currentsOff.length);
               currentOff++;
-              self.eventOff(el);
+              self.eventOff(el, true);
             }));
           }
         }

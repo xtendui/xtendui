@@ -133,7 +133,7 @@ export class Slider extends Core {
       // enable all visible elements also if not .active next frame when self.elements is populated
       let afterInitDisable = function() {
         let currents = self.getCurrents();
-        for (let el of self.elements.filter(x => !currents.includes(self.getElements(x).single))) {
+        for (let el of self.elements.filter(x => !currents.includes(self.getElements(x)[0]))) {
           self.activate(el);
           for (let tr of self.getTargets(el)) {
             self.activate(tr);

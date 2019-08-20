@@ -4,24 +4,25 @@
 
 // indexes
 
-/*
 .site_header {
-  z-index: 6 !important;
 }
 
 .site_main {
-  z-index: 5 !important;
 }
 
 .site_footer {
-  z-index: 4 !important;
 }
-*/
 
-// prevent responsive horizontal overflow
+// prevent horizontal overflow
 
 .site_wrapper {
   overflow: hidden;
+}
+
+.site_header,
+.site_main,
+.site_footer {
+  .block();
 }
 
 // sticky footer

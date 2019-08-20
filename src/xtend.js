@@ -1028,6 +1028,29 @@ if (typeof window !== 'undefined') {
   };
 
   /**
+   * query array of elements or element
+   * @param {Node|HTMLElement|NodeList|Array} element Element to search from
+   * @param {String} query Query for querySelectorAll
+   * @returns {Array}
+   */
+  Xt.queryAll = function (element, query) {
+    if (!query) {
+      return [];
+    }
+    if (!element.length) {
+      // search element
+      return Xt.arrSingle(element.querySelectorAll(query));
+    } else {
+      // search array
+      let arr = [];
+      for (let el of element) {
+        arr.push(...el.querySelectorAll(query));
+      }
+      return arr;
+    }
+  };
+
+  /**
    * check element visibility
    * @param {Node|HTMLElement|EventTarget|Window} el Element animating
    * @returns {Boolean}

@@ -151,7 +151,7 @@ export class Sticky extends Core {
     let self = this;
     // handler
     for (let tr of self.targets) {
-      let el = self.getTargets(tr)[0];
+      let el = self.getElements(tr)[0];
       // show element if is hiding on focus
       if (el.classList.contains('sticky--hide')) {
         let active = el.contains(e.target);
@@ -258,7 +258,7 @@ export class Sticky extends Core {
           Xt.dataStorage.remove(el, self.componentNamespace + 'Initial');
         }
         // inside
-        self.eventOn(el);
+        self.eventOn(el, true);
         // hide
         if (addHide) {
           hide = true;
@@ -271,7 +271,7 @@ export class Sticky extends Core {
           Xt.dataStorage.remove(el, self.componentNamespace + 'Initial');
         }
         // outside
-        self.eventOff(el);
+        self.eventOff(el, true);
       }
       // after active
       if (el.classList.contains(...self.classes)) {
@@ -335,7 +335,7 @@ export class Sticky extends Core {
         el.style.transform = 'translateY(' + add + 'px)';
       }
       // fix position fixed width 100% of parent
-      let width = Xt.normalizeWidth(tr.clientWidth);
+      let width = Xt.normalizeWidth(el.clientWidth);
       if (el.style.width !== width) {
         el.style.width = width;
       }
