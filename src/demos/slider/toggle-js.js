@@ -5,7 +5,7 @@ import BezierEasing from 'bezier-easing'
 
 Xt.mount.push({
   matches: '.demo--slider--toggle-js',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     // vars
 

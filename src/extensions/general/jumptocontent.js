@@ -6,7 +6,7 @@ import {Xt} from 'xtend-library'
 
 Xt.mount.push({
   matches: '.jumptocontent',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     // vars
 

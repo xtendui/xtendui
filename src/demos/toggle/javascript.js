@@ -8,7 +8,7 @@ import BezierEasing from 'bezier-easing'
 
 Xt.mount.push({
   matches: '#demo--toggle-js-0',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     // vars
 
@@ -79,7 +79,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#demo--toggle-js-1',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     // vars
 

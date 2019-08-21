@@ -2582,7 +2582,7 @@ Core.componentName = 'xt-core';
 
 Xt.mount.push({
   matches: '[data-' + Core.componentName + ']',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     let self = new Core(main, main.getAttribute('data-' + Core.componentName));
 

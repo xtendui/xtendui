@@ -70,7 +70,7 @@ Drop.optionsDefault = {
 
 Xt.mount.push({
   matches: '[data-' + Drop.componentName + ']',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     let self = new Drop(main, main.getAttribute('data-' + Drop.componentName));
 

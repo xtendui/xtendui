@@ -306,7 +306,7 @@ Scroll.optionsDefault = {
 
 Xt.mount.push({
   matches: '[data-' + Scroll.componentName + ']',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     let self = new Scroll(main, main.getAttribute('data-' + Scroll.componentName));
 

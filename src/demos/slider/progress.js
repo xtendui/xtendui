@@ -6,7 +6,7 @@ import {mouseFollow} from 'xtend-library/src/extensions/general/mouse-follow';
 
 Xt.mount.push({
   matches: '.demo--slider--progress',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     // vars
 

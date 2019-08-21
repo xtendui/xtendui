@@ -6,7 +6,7 @@ import {TweenMax} from 'gsap/TweenMax'
 
 Xt.mount.push({
   matches: '.demo--loader--js-filler',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     // vars
 

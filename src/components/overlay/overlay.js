@@ -81,7 +81,7 @@ Overlay.optionsDefault = {
 
 Xt.mount.push({
   matches: '[data-' + Overlay.componentName + ']',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     let self = new Overlay(main, main.getAttribute('data-' + Overlay.componentName));
 

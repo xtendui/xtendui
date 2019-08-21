@@ -385,7 +385,7 @@ Ajax.optionsDefault = {
 
 Xt.mount.push({
   matches: '[data-' + Ajax.componentName + ']',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     let self = new Ajax(main, main.getAttribute('data-' + Ajax.componentName));
 

@@ -1035,7 +1035,7 @@ Slider.optionsDefault = {
 
 Xt.mount.push({
   matches: '[data-' + Slider.componentName + ']',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     let self = new Slider(main, main.getAttribute('data-' + Slider.componentName));
 

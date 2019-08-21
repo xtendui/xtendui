@@ -8,7 +8,7 @@ import {TweenMax} from 'gsap/TweenMax'
 
 Xt.mount.push({
   matches: '.demo--parallax_title',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     // vars
 
@@ -44,7 +44,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--parallax_img',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     // vars
 
@@ -78,7 +78,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--parallax_footer',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     // vars
 

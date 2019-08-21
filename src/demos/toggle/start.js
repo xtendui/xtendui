@@ -4,7 +4,7 @@
 
 Xt.mount.push({
   matches: '#demo--toggle--restart',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     // vars
 

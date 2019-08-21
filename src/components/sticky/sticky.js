@@ -453,7 +453,7 @@ Sticky.optionsDefault = {
 
 Xt.mount.push({
   matches: '[data-' + Sticky.componentName + ']',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     let self = new Sticky(main, main.getAttribute('data-' + Sticky.componentName));
 

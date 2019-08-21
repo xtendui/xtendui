@@ -7,7 +7,7 @@ import {TweenMax} from 'gsap/TweenMax'
 
 Xt.mount.push({
   matches: '.demo--toggle--progress',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     // vars
 

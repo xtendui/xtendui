@@ -7,7 +7,7 @@ import {Xt} from 'xtend-library'
 /*
 Xt.mount.push({
   matches: 'html',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     let self = new Smooth(document.scrollingElement, {});
 

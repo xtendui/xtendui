@@ -75,7 +75,7 @@ Toggle.optionsDefault = {
 
 Xt.mount.push({
   matches: '[data-' + Toggle.componentName + ']',
-  fnc: function (main, index, query) {
+  fnc: function mount(main, index, query) {
 
     let self = new Toggle(main, main.getAttribute('data-' + Toggle.componentName));
 
