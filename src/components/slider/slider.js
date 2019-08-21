@@ -323,7 +323,7 @@ export class Slider extends Core {
             pos = draggerWidth - slideLeft - slideWidth;
           }
         }
-        //console.log(pos, draggerWidth, slideWidth, slide);
+        //console.debug(pos, draggerWidth, slideWidth, slide);
         // save pos
         for (let target of targets) {
           Xt.dataStorage.set(target, self.componentNamespace + 'GroupPos', pos);
@@ -435,7 +435,7 @@ export class Slider extends Core {
   eventSlideOnHandler(dragger, slide, e) {
     let self = this;
     // handler
-    if (e.target === slide) { // @FIX event.xt: handler triggered by child xt events
+    if (slide === e.target || slide.contains(e.target)) { // @FIX on.xt and off.xt: handler triggered by child xt events
       self.eventSlideOn(dragger, e);
     }
   }
@@ -449,7 +449,7 @@ export class Slider extends Core {
   eventSlideOffHandler(dragger, slide, e) {
     let self = this;
     // handler
-    if (e.target === slide) { // @FIX event.xt: handler triggered by child xt events
+    if (slide === e.target || slide.contains(e.target)) { // @FIX on.xt and off.xt: handler triggered by child xt events
       self.eventSlideOff(dragger, e);
     }
   }

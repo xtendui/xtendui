@@ -86,19 +86,22 @@ export class Ajax extends Core {
     let self = this;
     // initial
     self.initial = true;
+    self.currentIndex = null;
     // automatic initial currents
-    let elements = self.elements;
+    let elements = self.getGroups();
     if (elements.length) {
       let found = false;
-      for (let element of self.elements) {
+      for (let element of elements) {
         let loc = location.pathname + location.search;
         let url = element.pathname + element.search;
         if (url !== '') {
           if (loc === url) {
             found = true;
-            self.eventOn(element, false);
+            // activate
+            self.eventOn(element, true);
           } else {
-            self.eventOff(element, false);
+            // deactivate
+            self.eventOff(element, true);
           }
         }
       }
@@ -183,6 +186,26 @@ export class Ajax extends Core {
   }
 
   //////////////////////
+  // queue
+  //////////////////////
+
+  /**
+   * logic to execute on queue complete
+   * @param {String} actionCurrent Current action
+   * @param {Object} obj Queue object
+   */
+  queueComplete(actionCurrent, obj) {
+    let self = this;
+    if (actionCurrent === 'On') {
+      if (!self.initial) {
+        // trigger ajax request
+        self.ajaxRequest(obj['elements'].queueEls[0], null);
+      }
+    }
+    super.queueComplete(actionCurrent, obj);
+  }
+
+  //////////////////////
   // special
   //////////////////////
 
@@ -224,7 +247,7 @@ export class Ajax extends Core {
         self.ajaxResponse(element, url, request, self.detail.requestDate);
       };
       if (Xt.debug === true) {
-        console.log('xt-ajax request:', url);
+        console.debug('xt-ajax request:', url);
       }
       request.send();
       self.detail.request = request;
@@ -276,10 +299,8 @@ export class Ajax extends Core {
     let options = self.options;
     // debug
     if (Xt.debug === true) {
-      console.log('xt-ajax request success:', url);
+      console.debug('xt-ajax request success:', url);
     }
-    // autoClose
-    dispatchEvent(new CustomEvent('autoCloseFix.xt'));
     // set substitute
     let html = document.createElement('html');
     html.innerHTML = request.responseText.trim();
@@ -317,7 +338,7 @@ export class Ajax extends Core {
     let self = this;
     // debug
     if (Xt.debug === true) {
-      console.log('xt-ajax request failed:', url);
+      console.debug('xt-ajax request failed:', url);
     }
     // reinit currents
     self.initStart();

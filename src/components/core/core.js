@@ -553,9 +553,6 @@ export class Core {
       let autoCloseHandler = Xt.dataStorage.put(window, 'autoClose' + '.' + self.namespace,
         self.eventAutoCloseHandler.bind(self));
       addEventListener('autoClose.xt', autoCloseHandler);
-      let autoCloseFixHandler = Xt.dataStorage.put(window, 'autoCloseFix' + '.' + self.namespace,
-        self.eventAutoCloseFixHandler.bind(self));
-      addEventListener('autoCloseFix.xt', autoCloseFixHandler);
     }
     // images
     for (let el of self.elements.filter(x => !x.classList.contains('xt-clone'))) {
@@ -628,24 +625,26 @@ export class Core {
     let self = this;
     let options = self.options;
     // handler
-    if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
-      // event block
-      if (options.onBlock) {
-        let now = new Date().getTime();
-        let old = Xt.dataStorage.get(element, self.componentNamespace + 'EventBlock' + e.type) || 0;
-        Xt.dataStorage.set(element, self.componentNamespace + 'EventBlock' + e.type, now);
-        if (now - old < options.onBlock) {
-          return false;
+    if (element === e.target || element.contains(e.target)) { // @FIX on.xt and off.xt: handler triggered by child xt events
+      if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
+        // event block
+        if (options.onBlock) {
+          let now = new Date().getTime();
+          let old = Xt.dataStorage.get(element, self.componentNamespace + 'EventBlock' + e.type) || 0;
+          Xt.dataStorage.set(element, self.componentNamespace + 'EventBlock' + e.type, now);
+          if (now - old < options.onBlock) {
+            return false;
+          }
         }
-      }
-      // on handler
-      let eventLimit = self.container.querySelectorAll('.event-limit');
-      if (eventLimit.length) {
-        if (!Xt.checkNested(e.target, eventLimit)) {
+        // on handler
+        let eventLimit = self.container.querySelectorAll('.event-limit');
+        if (eventLimit.length) {
+          if (!Xt.checkNested(e.target, eventLimit)) {
+            self.eventOn(element, false, e);
+          }
+        } else {
           self.eventOn(element, false, e);
         }
-      } else {
-        self.eventOn(element, false, e);
       }
     }
   }
@@ -659,24 +658,26 @@ export class Core {
     let self = this;
     let options = self.options;
     // handler
-    if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
-      // event block
-      if (options.offBlock) {
-        let now = new Date().getTime();
-        let old = Xt.dataStorage.get(element, self.componentNamespace + 'EventBlock' + e.type) || 0;
-        Xt.dataStorage.set(element, self.componentNamespace + 'EventBlock' + e.type, now);
-        if (now - old < options.offBlock) {
-          return false;
+    if (element === e.target || element.contains(e.target)) { // @FIX on.xt and off.xt: handler triggered by child xt events
+      if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
+        // event block
+        if (options.offBlock) {
+          let now = new Date().getTime();
+          let old = Xt.dataStorage.get(element, self.componentNamespace + 'EventBlock' + e.type) || 0;
+          Xt.dataStorage.set(element, self.componentNamespace + 'EventBlock' + e.type, now);
+          if (now - old < options.offBlock) {
+            return false;
+          }
         }
-      }
-      // off handler
-      let eventLimit = self.container.querySelectorAll('.event-limit');
-      if (eventLimit.length) {
-        if (!Xt.checkNested(e.target, eventLimit)) {
+        // off handler
+        let eventLimit = self.container.querySelectorAll('.event-limit');
+        if (eventLimit.length) {
+          if (!Xt.checkNested(e.target, eventLimit)) {
+            self.eventOff(element, false, e);
+          }
+        } else {
           self.eventOff(element, false, e);
         }
-      } else {
-        self.eventOff(element, false, e);
       }
     }
   }
@@ -862,16 +863,6 @@ export class Core {
     for (let current of currents) {
       self.eventOff(current);
     }
-  }
-
-  /**
-   * autoCloseFix handler
-   * @param {Event} e
-   */
-  eventAutoCloseFixHandler(e) {
-    let self = this;
-    // special @TODO refactor
-    self.specialScrollbarOff();
   }
 
   /**
@@ -1202,6 +1193,8 @@ export class Core {
       // detail
       let detail = self.eDetailSet(e);
       // queue obj
+      let actionCurrent = 'On';
+      let actionOther = 'Off';
       let obj = {};
       obj['elements'] = {
         detail: detail,
@@ -1227,13 +1220,13 @@ export class Core {
       }
       // put in queue
       if (typeof options.instant !== 'object' && options.instant === true) {
-        self.detail.queueOn = [obj];
+        self.detail['queue' + actionCurrent] = [obj];
       } else {
-        self.detail.queueOn.unshift(obj);
+        self.detail['queue' + actionCurrent].unshift(obj);
       }
       // queue run
-      for (let type in self.detail.queueOn[0]) {
-        self.queueOn(type, 0, true);
+      for (let type in self.detail['queue' + actionCurrent][0]) {
+        self.queueStart(actionCurrent, actionOther, type, 0, true);
       }
       // activated
       return true;
@@ -1283,6 +1276,8 @@ export class Core {
       // detail
       let detail = self.eDetailSet(e);
       // queue obj
+      let actionCurrent = 'Off';
+      let actionOther = 'On';
       let obj = {};
       obj['elements'] = {
         detail: detail,
@@ -1308,22 +1303,22 @@ export class Core {
       }
       // put in queue
       if (typeof options.instant !== 'object' && options.instant === true) {
-        self.detail.queueOff = [obj];
+        self.detail['queue' + actionCurrent] = [obj];
       } else {
-        self.detail.queueOff.unshift(obj);
+        self.detail['queue' + actionCurrent].unshift(obj);
       }
       // if queue too big
-      if (self.detail.queueOff.length > options.max) {
+      if (self.detail['queue' + actionCurrent].length > options.max) {
         // remove queue on and done other queue
-        let removedOn = self.detail.queueOn.shift();
-        self.queueOnEnd(removedOn);
-        // remove queue off and  done other queue
-        let removedOff = self.detail.queueOff.shift();
-        self.queueOffEnd(removedOff);
+        let removedOn = self.detail['queue' + actionOther].shift();
+        self.queueEnd(actionOther, actionCurrent, removedOn);
+        // remove queue off and done other queue
+        let removedOff = self.detail['queue' + actionCurrent].shift();
+        self.queueEnd(actionCurrent, actionOther, removedOff);
       }
       // queue run
-      for (let type in self.detail.queueOff[0]) {
-        self.queueOff(type, 0, true);
+      for (let type in self.detail['queue' + actionCurrent][0]) {
+        self.queueStart(actionCurrent, actionOther, type, 0, true);
       }
       // deactivated
       return true;
@@ -1453,225 +1448,62 @@ export class Core {
   }
 
   //////////////////////
-  // queue util
-  //////////////////////
-
-  /**
-   * queue on end
-   * @param {Object} obj Queue object to end
-   */
-  queueOnEnd(obj) {
-    let self = this;
-    // check if done
-    for (let type in obj) {
-      if (obj[type].done) {
-        for (let el of obj[type].queueEls) {
-          // clear timeout and frame
-          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
-          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
-          // done other queue
-          self.queueOffDelayDone(obj, el, type, true);
-          self.queueOffAnimDone(obj, el, type, true);
-        }
-      }
-    }
-  }
-
-  /**
-   * queue off end
-   * @param {Object} obj Queue object to end
-   */
-  queueOffEnd(obj) {
-    let self = this;
-    // check if done
-    for (let type in obj) {
-      if (obj[type].done) {
-        for (let el of obj[type].queueEls) {
-          // clear timeout and frame
-          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
-          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
-          // done other queue
-          self.queueOnDelayDone(obj, el, type, true);
-          self.queueOnAnimDone(obj, el, type, true);
-        }
-      }
-    }
-  }
-
-  /**
-   * queue on done
-   * @param {Object} obj Queue object
-   * @param {String} type Type of element
-   */
-  queueOnDone(obj, type) {
-    let self = this;
-    let options = self.options;
-    // check
-    if (obj[type]) {
-      // done
-      obj[type].done = true;
-      let done = 0;
-      for (let type in obj) {
-        if (obj[type].done) {
-          done++;
-        }
-      }
-      // one done
-      if (done === 1) {
-        // special
-        self.specialBackdrop(obj);
-        self.specialClassHtmlOn();
-        self.specialScrollbarOn();
-        // focus
-        if (options.scrollbar) {
-          let el = obj['targets'] ? obj['targets'].queueEls[0] : obj['elements'].queueEls[0];
-          Xt.focus.block = true;
-          Xt.focusLimit.on(el);
-          el.focus();
-        }
-      }
-      // queue
-      self.queueOff(type, self.detail.queueOff.length - 1);
-      // all done
-      if (done === Object.entries(obj).length) {
-        // auto
-        if (options.auto && options.auto.time) {
-          self.eventAutoStart();
-        }
-        // request @TODO refactor
-        if (self.ajaxRequest) {
-          if (!self.initial) {
-            self.ajaxRequest(obj['elements'].queueEls[0]);
-          }
-        }
-        // remove queue
-        self.detail.queueOn.pop();
-        // initial
-        self.initial = false;
-      }
-    }
-  }
-
-  /**
-   * queue off done
-   * @param {Object} obj Queue object
-   * @param {String} type Type of element
-   */
-  queueOffDone(obj, type) {
-    let self = this;
-    let options = self.options;
-    // check
-    if (obj[type]) {
-      // done
-      obj[type].done = true;
-      let done = 0;
-      for (let type in obj) {
-        if (obj[type].done) {
-          done++;
-        }
-      }
-      // one done
-      if (done === 1) {
-        // special
-        self.specialClassHtmlOff();
-        // focus
-        if (options.scrollbar) {
-          Xt.focus.block = false;
-          Xt.focusLimit.off();
-          Xt.focus.current.focus();
-        }
-      }
-      // queue
-      self.queueOn(type, self.detail.queueOn.length - 1);
-      // all done
-      if (done === Object.entries(obj).length) {
-        // special
-        self.specialScrollbarOff();
-        // remove queue
-        self.detail.queueOff.pop();
-      }
-    }
-  }
-
-  //////////////////////
   // queue
   //////////////////////
 
   /**
-   * queue on
+   * queue start
+   * @param {String} actionCurrent Current action
+   * @param {String} actionOther Other action
    * @param {String} type Type of element
    * @param {Number} index Queue index
    * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOn(type, index, queueInitial = false) {
+  queueStart(actionCurrent, actionOther, type, index, queueInitial = false) {
     let self = this;
     let options = self.options;
-    // queueOn
-    let obj = self.detail.queueOn[index];
+    // queue start
+    let obj = self.detail['queue' + actionCurrent][index];
     if (obj && obj[type] && !obj[type].done) {
-      let objOther = self.detail.queueOff[self.detail.queueOff.length - 1];
+      let objOther = self.detail['queue' + actionOther][self.detail['queue' + actionOther].length - 1];
       if (!objOther || !objOther[type] || objOther[type].done) {
         if (typeof options.instant !== 'object' && options.instant === true) {
           obj[type].instant = true;
         } else if (typeof options.instant === 'object' && options.instant[type]) {
           obj[type].instantType = true;
         }
-        self.queueOnDelay(obj, type, queueInitial);
+        self.queueDelay(actionCurrent, actionOther, obj, type, queueInitial);
       }
     }
   }
 
   /**
-   * queue off
-   * @param {String} type Type of element
-   * @param {Number} index Queue index
-   * @param {Boolean} queueInitial If it's the initial queue
-   */
-  queueOff(type, index, queueInitial = false) {
-    let self = this;
-    let options = self.options;
-    // queueOff
-    let obj = self.detail.queueOff[index];
-    if (obj && obj[type] && !obj[type].done) {
-      let objOther = self.detail.queueOn[self.detail.queueOn.length - 1];
-      if (!objOther || !objOther[type] || objOther[type].done) {
-        if (typeof options.instant !== 'object' && options.instant === true) {
-          obj[type].instant = true;
-        } else if (typeof options.instant === 'object' && options.instant[type]) {
-          obj[type].instantType = true;
-        }
-        self.queueOffDelay(obj, type, queueInitial);
-      }
-    }
-  }
-
-  /**
-   * queue on delay
+   * queue delay
+   * @param {String} actionCurrent Current action
+   * @param {String} actionOther Other action
    * @param {Object} obj Queue object
    * @param {String} type Type of elements
    * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueOnDelay(obj, type, queueInitial) {
+  queueDelay(actionCurrent, actionOther, obj, type, queueInitial) {
     let self = this;
     let options = self.options;
     // delay
     let els = obj[type].queueEls;
     for (let el of els) {
       // delay
-      let delay;
-      if (options.delayOn) {
-        if (isNaN(options.delayOn)) {
-          let count = Xt.dataStorage.get(el, self.componentNamespace + 'OnCount') || els.findIndex(x => x === el);
-          let tot = Xt.dataStorage.get(el, self.componentNamespace + 'OnTot') || els.length;
-          let fnc = options.delayOn;
+      let delay = options['delay' + actionCurrent];
+      if (delay) {
+        if (isNaN(delay)) {
+          let count = Xt.dataStorage.get(el, self.componentNamespace + actionCurrent + 'Count') || els.findIndex(x => x === el);
+          let tot = Xt.dataStorage.get(el, self.componentNamespace + actionCurrent + 'Tot') || els.length;
+          let fnc = delay;
           if (typeof fnc === 'string') {
             fnc = new Function('current', 'total', fnc);
           }
           delay = fnc(count, tot - 1).toString();
         } else {
-          delay = queueInitial ? 0 : options.delayOn;
+          delay = queueInitial ? 0 : delay;
         }
       }
       // delay fnc
@@ -1679,301 +1511,203 @@ export class Core {
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
       if (delay && !obj[type].instant && !obj[type].instantType) {
         Xt.dataStorage.set(el, self.componentNamespace + 'DelayTimeout', setTimeout(function () {
-          self.queueOnDelayDone(obj, el, type);
+          self.queueDelayDone(actionCurrent, actionOther, obj, el, type);
         }, delay));
       } else {
-        self.queueOnDelayDone(obj, el, type);
+        self.queueDelayDone(actionCurrent, actionOther, obj, el, type);
       }
       // queue done
       if (obj[type].instant) {
         if (el === els[els.length - 1]) { // only if last element
-          self.queueOnDone(obj, type);
+          self.queueDone(actionCurrent, actionOther, obj, type);
         }
       }
     }
   }
 
   /**
-   * queue off delay
+   * queue delay done
+   * @param {String} actionCurrent Current action
+   * @param {String} actionOther Other action
    * @param {Object} obj Queue object
+   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
    * @param {String} type Type of elements
-   * @param {Boolean} queueInitial If it's the initial queue
+   * @param {Boolean} skipQueue If skip queue
    */
-  queueOffDelay(obj, type, queueInitial) {
+  queueDelayDone(actionCurrent, actionOther, obj, el, type, skipQueue = false) {
     let self = this;
     let options = self.options;
-    // delay
-    let els = obj[type].queueEls;
-    for (let el of els) {
-      // delay
-      let delay;
-      if (options.delayOff) {
-        if (isNaN(options.delayOff)) {
-          let count = Xt.dataStorage.get(el, self.componentNamespace + 'OffCount') || els.findIndex(x => x === el);
-          let tot = Xt.dataStorage.get(el, self.componentNamespace + 'OffTot') || els.length;
-          let fnc = options.delayOff;
-          if (typeof fnc === 'string') {
-            fnc = new Function('current', 'total', fnc);
+    if (actionCurrent === 'On') {
+      // activate
+      self.activate(el);
+      // special
+      let before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '');
+      let after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '');
+      self.specialCenter(el, before, after);
+      self.specialMiddle(el, before, after);
+      self.specialCollapse(actionCurrent, el, before, after);
+      if (type === 'targets'
+        || (!self.targets.length && type === 'elements')) { // @FIX when standalone
+        // appendTo
+        if (options.appendTo) {
+          let appendToTarget = document.querySelector(options.appendTo);
+          let appendOrigin = document.querySelector('[data-xt-origin=' + self.namespace + ']');
+          if (!appendOrigin) {
+            el.before(Xt.createElement('<div class="xt-ignore" data-xt-origin=' + self.namespace + '></div>'));
           }
-          delay = fnc(count, tot - 1).toString();
-        } else {
-          delay = queueInitial ? 0 : options.delayOff;
+          el.classList.add('xt-ignore'); // @FIX ignore Xt.observer and init
+          appendToTarget.appendChild(el);
         }
       }
-      // delay fnc
-      clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
-      clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
-      if (delay && !obj[type].instant && !obj[type].instantType) {
-        Xt.dataStorage.set(el, self.componentNamespace + 'DelayTimeout', setTimeout(function () {
-          self.queueOffDelayDone(obj, el, type);
-        }, delay));
-      } else {
-        self.queueOffDelayDone(obj, el, type);
+      if (type === 'targets' || type === 'targetsInner') {
+        self.specialClose(actionCurrent, el, obj['elements'].queueEls[0]);
       }
-      // queue done
-      if (obj[type].instant) {
-        if (el === els[els.length - 1]) { // only if last element
-          self.queueOffDone(obj, type);
+      // aria
+      if (options.aria) {
+        if (type === 'elements') {
+          // selected
+          let ariaEls = Xt.queryAll(el, options.ariaControls);
+          let ariaEl = ariaEls.length ? ariaEls[0] : el;
+          ariaEl.setAttribute('aria-selected', 'true');
         }
-      }
-    }
-  }
-
-  /**
-   * queue on start
-   * @param {Object} obj Queue object
-   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
-   * @param {String} type Type of elements
-   * @param {Boolean} skipQueue If skip queue
-   */
-  queueOnDelayDone(obj, el, type, skipQueue = false) {
-    let self = this;
-    let options = self.options;
-    // activate
-    self.activate(el);
-    // special
-    let before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '');
-    let after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '');
-    self.specialCenter(el, before, after);
-    self.specialMiddle(el, before, after);
-    self.specialCollapseOn(el, before, after);
-    if (type === 'targets'
-      || (!self.targets.length && type === 'elements')) { // @FIX when standalone
-      // appendTo
-      if (options.appendTo) {
-        let appendToTarget = document.querySelector(options.appendTo);
-        let appendOrigin = document.querySelector('[data-xt-origin=' + self.namespace + ']');
-        if (!appendOrigin) {
-          el.before(Xt.createElement('<div class="xt-ignore" data-xt-origin=' + self.namespace + '></div>'));
-        }
-        el.classList.add('xt-ignore'); // @FIX ignore Xt.observer and init
-        appendToTarget.appendChild(el);
-      }
-    }
-    if (type === 'targets' || type === 'targetsInner') {
-      self.specialCloseOn(el, obj['elements'].queueEls[0]);
-    }
-    // aria
-    if (options.aria) {
-      if (type === 'elements') {
-        // selected
-        let ariaEls = Xt.queryAll(el, options.ariaControls);
-        let ariaEl = ariaEls.length ? ariaEls[0] : el;
-        ariaEl.setAttribute('aria-selected', 'true');
-      }
-      if (type === 'targets') {
-        // expanded
-        let role = el.getAttribute('role');
-        if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
-          el.setAttribute('aria-expanded', 'true');
-        }
-      }
-    }
-    // queue
-    if (!skipQueue) {
-      self.queueOnAnim(obj, el, type);
-      // queue done
-      if (obj[type].instantType) {
-        let els = obj[type].queueEls;
-        if (el === els[els.length - 1]) { // only if last element
-          self.queueOnDone(obj, type);
-        }
-      }
-    }
-    // listener dispatch
-    el.dispatchEvent(new CustomEvent('on.xt', {bubbles: true, detail: obj[type].detail}));
-  }
-
-  /**
-   * queue off start
-   * @param {Object} obj Queue object
-   * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
-   * @param {String} type Type of elements
-   * @param {Boolean} skipQueue If skip queue
-   */
-  queueOffDelayDone(obj, el, type, skipQueue = false) {
-    let self = this;
-    let options = self.options;
-    // deactivate
-    self.deactivate(el);
-    // special
-    let before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '');
-    let after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '');
-    self.specialCollapseOff(el, before, after);
-    if (type === 'targets' || type === 'targetsInner') {
-      self.specialCloseOff(el);
-    }
-    // queue
-    if (!skipQueue) {
-      self.queueOffAnim(obj, el, type);
-      // queue done
-      if (obj[type].instantType) {
-        let els = obj[type].queueEls;
-        if (el === els[els.length - 1]) { // only if last element
-          self.queueOffDone(obj, type);
-        }
-      }
-    }
-    // listener dispatch
-    el.dispatchEvent(new CustomEvent('off.xt', {bubbles: true, detail: obj[type].detail}));
-  }
-
-  /**
-   * queue on anim
-   * @param {Object} obj Queue object
-   * @param {Node|HTMLElement|EventTarget|Window} el Element to be animated
-   * @param {String} type Type of element
-   */
-  queueOnAnim(obj, el, type) {
-    let self = this;
-    let options = self.options;
-    // anim
-    let duration = Xt.animTime(el, options.durationOn);
-    clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
-    if (!duration || obj[type].instant || obj[type].instantType) {
-      self.queueOnAnimDone(obj, el, type);
-    } else {
-      Xt.dataStorage.set(el, self.componentNamespace + 'AnimTimeout', setTimeout(function () {
-        self.queueOnAnimDone(obj, el, type);
-      }, duration));
-    }
-  }
-
-  /**
-   * queue off anim
-   * @param {Object} obj Queue object
-   * @param {Node|HTMLElement|EventTarget|Window} el Element to be animated
-   * @param {String} type Type of element
-   */
-  queueOffAnim(obj, el, type) {
-    let self = this;
-    let options = self.options;
-    // anim
-    let duration = Xt.animTime(el, options.durationOff);
-    clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
-    if (!duration || obj[type].instant || obj[type].instantType) {
-      self.queueOffAnimDone(obj, el, type);
-    } else {
-      Xt.dataStorage.set(el, self.componentNamespace + 'AnimTimeout', setTimeout(function () {
-        self.queueOffAnimDone(obj, el, type);
-      }, duration));
-    }
-  }
-
-  /**
-   * queue on anim done
-   * @param {Object} obj Queue object
-   * @param {Node|HTMLElement|EventTarget|Window} el Element to be animated
-   * @param {String} type Type of element
-   * @param {Boolean} skipQueue If skip queue
-   */
-  queueOnAnimDone(obj, el, type, skipQueue = false) {
-    let self = this;
-    let options = self.options;
-    // reset
-    el.classList.remove(...self.classesIn);
-    // special
-    let before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '');
-    let after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '');
-    self.specialCollapseReset(el, before, after);
-    // aria
-    if (options.aria) {
-      // tabindex
-      if (options.aria === true || options.aria.tabindex) {
         if (type === 'targets') {
-          let focusables = el.querySelectorAll(Xt.focusables);
-          for (let focusable of focusables) {
-            focusable.removeAttribute('tabindex');
+          // expanded
+          let role = el.getAttribute('role');
+          if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
+            el.setAttribute('aria-expanded', 'true');
           }
         }
       }
+      // listener dispatch
+      el.dispatchEvent(new CustomEvent('on.xt', {bubbles: true, detail: obj[type].detail}));
+    } else if (actionCurrent === 'Off') {
+      // deactivate
+      self.deactivate(el);
+      // special
+      let before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '');
+      let after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '');
+      self.specialCollapse(actionCurrent, el, before, after);
+      if (type === 'targets' || type === 'targetsInner') {
+        self.specialClose(actionCurrent, el);
+      }
+      // listener dispatch
+      el.dispatchEvent(new CustomEvent('off.xt', {bubbles: true, detail: obj[type].detail}));
     }
     // queue
     if (!skipQueue) {
+      self.queueAnim(actionCurrent, actionOther, obj, el, type);
       // queue done
-      if (!obj[type].instant && !obj[type].instantType) {
+      if (obj[type].instantType) {
         let els = obj[type].queueEls;
         if (el === els[els.length - 1]) { // only if last element
-          self.queueOnDone(obj, type);
+          self.queueDone(actionCurrent, actionOther, obj, type);
         }
       }
     }
-    // listener dispatch
-    el.dispatchEvent(new CustomEvent('ondone.xt', {bubbles: true, detail: obj[type].detail}));
   }
 
   /**
-   * queue off anim done
+   * queue anim
+   * @param {String} actionCurrent Current action
+   * @param {String} actionOther Other action
+   * @param {Object} obj Queue object
+   * @param {Node|HTMLElement|EventTarget|Window} el Element to be animated
+   * @param {String} type Type of element
+   */
+  queueAnim(actionCurrent, actionOther, obj, el, type) {
+    let self = this;
+    let options = self.options;
+    // anim
+    let duration = Xt.animTime(el, options['duration' + actionCurrent]);
+    clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
+    if (!duration || obj[type].instant || obj[type].instantType) {
+      self.queueAnimDone(actionCurrent, actionOther, obj, el, type);
+    } else {
+      Xt.dataStorage.set(el, self.componentNamespace + 'AnimTimeout', setTimeout(function () {
+        self.queueAnimDone(actionCurrent, actionOther, obj, el, type);
+      }, duration));
+    }
+  }
+
+  /**
+   * queue anim done
+   * @param {String} actionCurrent Current action
+   * @param {String} actionOther Other action
    * @param {Object} obj Queue object
    * @param {Node|HTMLElement|EventTarget|Window} el Element to be animated
    * @param {String} type Type of element
    * @param {Boolean} skipQueue If skip queue
    */
-  queueOffAnimDone(obj, el, type, skipQueue = false) {
+  queueAnimDone(actionCurrent, actionOther, obj, el, type, skipQueue = false) {
     let self = this;
     let options = self.options;
-    // reset
-    el.classList.remove(...self.classesOut);
-    // special
-    if (type === 'targets'
-      || (!self.targets.length && type === 'elements')) { // @FIX when standalone
-      // appendTo
-      if (options.appendTo) {
-        let appendOrigin = document.querySelector('[data-xt-origin=' + self.namespace + ']');
-        if (appendOrigin) {
-          appendOrigin.before(el);
-          appendOrigin.remove();
-          requestAnimationFrame(function () {
-            el.classList.remove('xt-ignore'); // @FIX ignore Xt.observer and init
-          });
-        } else {
-          el.remove();
-        }
-      }
-    }
-    // aria
-    if (options.aria) {
-      // selected
-      if (type === 'elements') {
-        let ariaEls = Xt.queryAll(el, options.ariaControls);
-        let ariaEl = ariaEls.length ? ariaEls[0] : el;
-        ariaEl.setAttribute('aria-selected', 'false');
-      }
-      if (type === 'targets') {
-        // expanded
-        let role = el.getAttribute('role');
-        if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
-          el.setAttribute('aria-expanded', 'false');
-        }
+    if (actionCurrent === 'On') {
+      // reset
+      el.classList.remove(...self.classesIn);
+      // special
+      let before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '');
+      let after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '');
+      self.specialCollapse('Reset', el, before, after);
+      // aria
+      if (options.aria) {
         // tabindex
         if (options.aria === true || options.aria.tabindex) {
-          let focusables = el.querySelectorAll(Xt.focusables);
-          for (let focusable of focusables) {
-            focusable.setAttribute('tabindex', '-1');
-            focusable.blur();
+          if (type === 'targets') {
+            let focusables = el.querySelectorAll(Xt.focusables);
+            for (let focusable of focusables) {
+              focusable.removeAttribute('tabindex');
+            }
           }
         }
       }
+      // listener dispatch
+      el.dispatchEvent(new CustomEvent('ondone.xt', {bubbles: true, detail: obj[type].detail}));
+    } else if (actionCurrent === 'Off') {
+      // reset
+      el.classList.remove(...self.classesOut);
+      // special
+      if (type === 'targets'
+        || (!self.targets.length && type === 'elements')) { // @FIX when standalone
+        // appendTo
+        if (options.appendTo) {
+          let appendOrigin = document.querySelector('[data-xt-origin=' + self.namespace + ']');
+          if (appendOrigin) {
+            appendOrigin.before(el);
+            appendOrigin.remove();
+            requestAnimationFrame(function () {
+              el.classList.remove('xt-ignore'); // @FIX ignore Xt.observer and init
+            });
+          } else {
+            el.remove();
+          }
+        }
+      }
+      // aria
+      if (options.aria) {
+        // selected
+        if (type === 'elements') {
+          let ariaEls = Xt.queryAll(el, options.ariaControls);
+          let ariaEl = ariaEls.length ? ariaEls[0] : el;
+          ariaEl.setAttribute('aria-selected', 'false');
+        }
+        if (type === 'targets') {
+          // expanded
+          let role = el.getAttribute('role');
+          if (role === 'tabpanel' || role === 'listbox' || role === 'dialog') {
+            el.setAttribute('aria-expanded', 'false');
+          }
+          // tabindex
+          if (options.aria === true || options.aria.tabindex) {
+            let focusables = el.querySelectorAll(Xt.focusables);
+            for (let focusable of focusables) {
+              focusable.setAttribute('tabindex', '-1');
+              focusable.blur();
+            }
+          }
+        }
+      }
+      // listener dispatch
+      el.dispatchEvent(new CustomEvent('offdone.xt', {bubbles: true, detail: obj[type].detail}));
     }
     // queue
     if (!skipQueue) {
@@ -1981,12 +1715,125 @@ export class Core {
       if (!obj[type].instant && !obj[type].instantType) {
         let els = obj[type].queueEls;
         if (el === els[els.length - 1]) { // only if last element
-          self.queueOffDone(obj, type);
+          self.queueDone(actionCurrent, actionOther, obj, type);
         }
       }
     }
-    // listener dispatch
-    el.dispatchEvent(new CustomEvent('offdone.xt', {bubbles: true, detail: obj[type].detail}));
+  }
+
+  /**
+   * queue done
+   * @param {String} actionCurrent Current action
+   * @param {String} actionOther Other action
+   * @param {Object} obj Queue object
+   * @param {String} type Type of element
+   */
+
+  queueDone(actionCurrent, actionOther, obj, type) {
+    let self = this;
+    // check
+    if (obj[type]) {
+      // type done
+      obj[type].done = true;
+      // check done
+      let done = 0;
+      for (let type in obj) {
+        if (obj[type].done) {
+          done++;
+        }
+      }
+      // one done
+      if (done === 1) {
+        // queue progress
+        self.queueProgress(actionCurrent, obj);
+      }
+      // queue
+      self.queueStart(actionOther, actionCurrent, type, self.detail['queue' + actionOther].length - 1);
+      // all done
+      if (done === Object.entries(obj).length) {
+        // remove queue
+        self.detail['queue' + actionCurrent].pop();
+        // queue complete
+        self.queueComplete(actionCurrent, obj);
+      }
+    }
+  }
+
+  /**
+   * queue end
+   * @param {String} actionCurrent Current action
+   * @param {String} actionOther Other action
+   * @param {Object} obj Queue object to end
+   */
+  queueEnd(actionCurrent, actionOther, obj) {
+    let self = this;
+    // check if done
+    for (let type in obj) {
+      if (obj[type].done) {
+        for (let el of obj[type].queueEls) {
+          // clear timeout and frame
+          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
+          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
+          // done other queue
+          self.queueDelayDone(actionOther, actionCurrent, obj, el, type, true);
+          self.queueAnimDone(actionOther, actionCurrent, obj, el, type, true);
+        }
+      }
+    }
+  }
+
+  /**
+   * logic to execute on queue first progress
+   * @param {String} actionCurrent Current action
+   * @param {Object} obj Queue object
+   */
+  queueProgress(actionCurrent, obj) {
+    let self = this;
+    let options = self.options;
+    if (actionCurrent === 'On') {
+      // special
+      self.specialBackdrop(obj);
+      self.specialClassHtml(actionCurrent);
+      self.specialScrollbar(actionCurrent);
+      // focus
+      if (options.scrollbar) {
+        let el = obj['targets'] ? obj['targets'].queueEls[0] : obj['elements'].queueEls[0];
+        Xt.focus.block = true;
+        Xt.focusLimit.on(el);
+        el.focus();
+      }
+    } else if (actionCurrent === 'Off') {
+      // special
+      self.specialClassHtml(actionCurrent);
+      // focus
+      if (options.scrollbar) {
+        Xt.focus.block = false;
+        Xt.focusLimit.off();
+        Xt.focus.current.focus();
+      }
+    }
+  }
+
+  /**
+   * logic to execute on queue complete
+   * @param {String} actionCurrent Current action
+   * @param {Object} obj Queue object
+   */
+  queueComplete(actionCurrent, obj) {
+    let self = this;
+    let options = self.options;
+    if (actionCurrent === 'On') {
+      // auto
+      if (options.auto && options.auto.time) {
+        self.eventAutoStart();
+      }
+      // initial
+      self.initial = false;
+    } else if (actionCurrent === 'Off') {
+      // special
+      self.specialScrollbar(actionCurrent);
+    }
   }
 
   //////////////////////
@@ -2254,28 +2101,224 @@ export class Core {
   //////////////////////
 
   /**
-   * add html class
+   * add or remove close events on element
+   * @param {String} actionCurrent Current action
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
+   * @param {Node|HTMLElement|EventTarget|Window} single Element to toggle
    */
-  specialClassHtmlOn() {
+  specialClose(actionCurrent, el, single) {
     let self = this;
     let options = self.options;
-    // class on
-    if (options.classHtml) {
-      let container = document.documentElement;
-      container.classList.add(...options.classHtml.split(' '));
+    if (actionCurrent === 'On') {
+      // closeInside
+      if (options.closeInside) {
+        let closeElements = el.querySelectorAll(options.closeInside);
+        requestAnimationFrame(function () {
+          for (let closeElement of closeElements) {
+            let specialCloseInsideHandler = Xt.dataStorage.put(closeElement, 'click.close' + '.' + self.namespace,
+              self.eventSpecialCloseInsideHandler.bind(self).bind(self, closeElement, single));
+            closeElement.addEventListener('click', specialCloseInsideHandler);
+          }
+        });
+      }
+      // closeOutside
+      if (options.closeOutside) {
+        let closeElements = document.querySelectorAll(options.closeOutside);
+        requestAnimationFrame(function () {
+          for (let closeElement of closeElements) {
+            let specialCloseOutsideHandler = Xt.dataStorage.put(closeElement, 'click.close' + '.' + self.namespace,
+              self.eventSpecialCloseOutsideHandler.bind(self).bind(self, el, single));
+            closeElement.addEventListener('click', specialCloseOutsideHandler);
+          }
+        });
+      }
+    } else if (actionCurrent === 'Off') {
+      // closeInside
+      if (options.closeInside) {
+        let closeElements = el.querySelectorAll(options.closeInside);
+        for (let closeElement of closeElements) {
+          let specialCloseInsideHandler = Xt.dataStorage.get(closeElement, 'click.close' + '.' + self.namespace);
+          closeElement.removeEventListener('click', specialCloseInsideHandler);
+        }
+      }
+      // closeOutside
+      if (options.closeOutside) {
+        let closeElements = document.querySelectorAll(options.closeOutside);
+        for (let closeElement of closeElements) {
+          let specialCloseOutsideHandler = Xt.dataStorage.get(closeElement, 'click.close' + '.' + self.namespace);
+          closeElement.removeEventListener('click', specialCloseOutsideHandler);
+        }
+      }
     }
   }
 
   /**
-   * remove html class
+   * specialClose on handler
+   * @param {Node|HTMLElement|EventTarget|Window} checkEl
+   * @param {Node|HTMLElement|EventTarget|Window} single
+   * @param {Event} e
    */
-  specialClassHtmlOff() {
+  eventSpecialCloseInsideHandler(checkEl, single, e) {
+    let self = this;
+    // prevent closing when nested and moved (ex: overlay)
+    if (!Xt.checkNested(checkEl, self.targets)) {
+      return false;
+    }
+    // handler
+    if (Xt.checkNested(e.target, Xt.arrSingle(checkEl))) {
+      self.eventOff(single);
+    }
+  }
+
+  /**
+   * specialClose off handler
+   * @param {Node|HTMLElement|EventTarget|Window} checkEl
+   * @param {Node|HTMLElement|EventTarget|Window} single
+   * @param {Event} e
+   */
+  eventSpecialCloseOutsideHandler(checkEl, single, e) {
+    let self = this;
+    // handler
+    if (!Xt.checkNested(e.target, Xt.arrSingle(checkEl))) {
+      self.eventOff(single);
+    }
+  }
+
+  /**
+   * open or close or reset collapse
+   * @param {String} actionCurrent Current action
+   * @param {Node|HTMLElement|EventTarget|Window} el Element
+   * @param {String} before Before content
+   * @param {String} after After content
+   */
+  specialCollapse(actionCurrent, el, before, after) {
+    if (el instanceof HTMLElement) {
+      if (actionCurrent === 'On') {
+        if (before === 'xt-collapse--height') {
+          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+          Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+            el.classList.add('xt-hide', 'trans-anim-none');
+            el.style.height = 'auto';
+            let h = el.clientHeight + 'px';
+            el.style.height = '0';
+            cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+            Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+              el.classList.remove('xt-hide', 'trans-anim-none');
+              el.style.height = h;
+            }));
+          }));
+        }
+        if (after === 'xt-collapse--width') {
+          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+          Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+            el.classList.add('xt-hide', 'trans-anim-none');
+            el.style.width = 'auto';
+            let w = el.clientHeight + 'px';
+            el.style.width = '0';
+            cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+            Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+              el.classList.remove('xt-hide', 'trans-anim-none');
+              el.style.width = w;
+            })).toString();
+          }));
+        }
+      } else if (actionCurrent === 'Off') {
+        if (before === 'xt-collapse--height') {
+          let h = el.offsetHeight + 'px';
+          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+          Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+            el.classList.remove('xt-hide', 'trans-anim-none');
+            el.style.height = h;
+            cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+            Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+              el.style.height = '0';
+            }));
+          }));
+        }
+        if (after === 'xt-collapse--width') {
+          let w = el.offsetWidth + 'px';
+          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+          Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+            el.classList.remove('xt-hide', 'trans-anim-none');
+            el.style.width = w;
+            cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+            Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
+              el.style.width = '0';
+            }));
+          }));
+        }
+      } else if (actionCurrent === 'Reset') {
+        if (before === 'xt-collapse--height') {
+          el.style.height = 'inherit';
+        }
+        if (after === 'xt-collapse--width') {
+          el.style.width = 'inherit';
+        }
+      }
+    }
+  }
+
+  /**
+   * scrollbar activation
+   * @param {String} actionCurrent Current action
+   */
+  specialScrollbar(actionCurrent) {
     let self = this;
     let options = self.options;
-    // class off
-    if (options.classHtml) {
-      let container = document.documentElement;
-      container.classList.remove(...options.classHtml.split(' '));
+    if (actionCurrent === 'On') {
+      // scrollbar on
+      if (options.scrollbar) {
+        // checks
+        Xt.scrollbar.add(self.namespace);
+        // check fixed
+        let checks = document.querySelectorAll('.xt-fixed--check, .xt-fixed--check > *');
+        for (let check of checks) {
+          let style = getComputedStyle(check);
+          if (style.position === 'fixed') {
+            check.classList.add('xt-fixed');
+          } else {
+            check.classList.remove('xt-fixed');
+          }
+        }
+        // scrollbar
+        let container = document.documentElement;
+        container.classList.add('xt-scrollbar');
+        Xt.scrollbarSpaceOn(container);
+      }
+    } else if (actionCurrent === 'Off') {
+      // scrollbar off
+      if (options.scrollbar) {
+        // checks
+        Xt.scrollbar.remove(self.namespace);
+        if (!Xt.scrollbar.get().length) {
+          // scrollbar
+          let container = document.documentElement;
+          container.classList.remove('xt-scrollbar');
+          Xt.scrollbarSpaceOff(container);
+        }
+      }
+    }
+  }
+
+  /**
+   * add or remove html class
+   * @param {String} actionCurrent Current action
+   */
+  specialClassHtml(actionCurrent) {
+    let self = this;
+    let options = self.options;
+    if (actionCurrent === 'On') {
+      // class on
+      if (options.classHtml) {
+        let container = document.documentElement;
+        container.classList.add(...options.classHtml.split(' '));
+      }
+    } else if (actionCurrent === 'Off') {
+      // class off
+      if (options.classHtml) {
+        let container = document.documentElement;
+        container.classList.remove(...options.classHtml.split(' '));
+      }
     }
   }
 
@@ -2334,232 +2377,6 @@ export class Core {
       let add = self.object.clientHeight;
       let remove = el.clientHeight;
       el.style.top = ((add - remove) / 2) + 'px';
-    }
-  }
-
-  /**
-   * open collapse on activation
-   * @param {Node|HTMLElement|EventTarget|Window} el Element
-   * @param {String} before Before content
-   * @param {String} after After content
-   */
-  specialCollapseOn(el, before, after) {
-    if (el instanceof HTMLElement) {
-      if (before === 'xt-collapse--height') {
-        cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-        Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-          el.classList.add('xt-hide', 'trans-anim-none');
-          el.style.height = 'auto';
-          let h = el.clientHeight + 'px';
-          el.style.height = '0';
-          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-          Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-            el.classList.remove('xt-hide', 'trans-anim-none');
-            el.style.height = h;
-          }));
-        }));
-      }
-      if (after === 'xt-collapse--width') {
-        cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-        Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-          el.classList.add('xt-hide', 'trans-anim-none');
-          el.style.width = 'auto';
-          let w = el.clientHeight + 'px';
-          el.style.width = '0';
-          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-          Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-            el.classList.remove('xt-hide', 'trans-anim-none');
-            el.style.width = w;
-          })).toString();
-        }));
-      }
-    }
-  }
-
-  /**
-   * close collapse on deactivation
-   * @param {Node|HTMLElement|EventTarget|Window} el Element
-   * @param {String} before Before content
-   * @param {String} after After content
-   */
-  specialCollapseOff(el, before, after) {
-    if (el instanceof HTMLElement) {
-      if (before === 'xt-collapse--height') {
-        let h = el.offsetHeight + 'px';
-        cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-        Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-          el.classList.remove('xt-hide', 'trans-anim-none');
-          el.style.height = h;
-          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-          Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-            el.style.height = '0';
-          }));
-        }));
-      }
-      if (after === 'xt-collapse--width') {
-        let w = el.offsetWidth + 'px';
-        cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-        Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-          el.classList.remove('xt-hide', 'trans-anim-none');
-          el.style.width = w;
-          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-          Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-            el.style.width = '0';
-          }));
-        }));
-      }
-    }
-  }
-
-  /**
-   * reset collapse
-   * @param {Node|HTMLElement|EventTarget|Window} el Element
-   * @param {String} before Before content
-   * @param {String} after After content
-   */
-  specialCollapseReset(el, before, after) {
-    if (el instanceof HTMLElement) {
-      if (before === 'xt-collapse--height') {
-        el.style.height = 'inherit';
-      }
-      if (after === 'xt-collapse--width') {
-        el.style.width = 'inherit';
-      }
-    }
-  }
-
-  /**
-   * add close events on element
-   * @param {Node|HTMLElement|EventTarget|Window} el Element
-   * @param {Node|HTMLElement|EventTarget|Window} single Element to toggle
-   */
-  specialCloseOn(el, single) {
-    let self = this;
-    let options = self.options;
-    // closeInside
-    if (options.closeInside) {
-      let closeElements = el.querySelectorAll(options.closeInside);
-      requestAnimationFrame(function () {
-        for (let closeElement of closeElements) {
-          let specialCloseInsideHandler = Xt.dataStorage.put(closeElement, 'click.close' + '.' + self.namespace,
-            self.eventSpecialCloseInsideHandler.bind(self).bind(self, closeElement, single));
-          closeElement.addEventListener('click', specialCloseInsideHandler);
-        }
-      });
-    }
-    // closeOutside
-    if (options.closeOutside) {
-      let closeElements = document.querySelectorAll(options.closeOutside);
-      requestAnimationFrame(function () {
-        for (let closeElement of closeElements) {
-          let specialCloseOutsideHandler = Xt.dataStorage.put(closeElement, 'click.close' + '.' + self.namespace,
-            self.eventSpecialCloseOutsideHandler.bind(self).bind(self, el, single));
-          closeElement.addEventListener('click', specialCloseOutsideHandler);
-        }
-      });
-    }
-  }
-
-  /**
-   * remove close events on element
-   * @param {Node|HTMLElement|EventTarget|Window} el Element
-   */
-  specialCloseOff(el) {
-    let self = this;
-    let options = self.options;
-    // closeInside
-    if (options.closeInside) {
-      let closeElements = el.querySelectorAll(options.closeInside);
-      for (let closeElement of closeElements) {
-        let specialCloseInsideHandler = Xt.dataStorage.get(closeElement, 'click.close' + '.' + self.namespace);
-        closeElement.removeEventListener('click', specialCloseInsideHandler);
-      }
-    }
-    // closeOutside
-    if (options.closeOutside) {
-      let closeElements = document.querySelectorAll(options.closeOutside);
-      for (let closeElement of closeElements) {
-        let specialCloseOutsideHandler = Xt.dataStorage.get(closeElement, 'click.close' + '.' + self.namespace);
-        closeElement.removeEventListener('click', specialCloseOutsideHandler);
-      }
-    }
-  }
-
-  /**
-   * element on handler
-   * @param {Node|HTMLElement|EventTarget|Window} checkEl
-   * @param {Node|HTMLElement|EventTarget|Window} single
-   * @param {Event} e
-   */
-  eventSpecialCloseInsideHandler(checkEl, single, e) {
-    let self = this;
-    // prevent closing when nested and moved (ex: overlay)
-    if (!Xt.checkNested(checkEl, self.targets)) {
-      return false;
-    }
-    // handler
-    if (Xt.checkNested(e.target, Xt.arrSingle(checkEl))) {
-      self.eventOff(single);
-    }
-  }
-
-  /**
-   * element off handler
-   * @param {Node|HTMLElement|EventTarget|Window} checkEl
-   * @param {Node|HTMLElement|EventTarget|Window} single
-   * @param {Event} e
-   */
-  eventSpecialCloseOutsideHandler(checkEl, single, e) {
-    let self = this;
-    // handler
-    if (!Xt.checkNested(e.target, Xt.arrSingle(checkEl))) {
-      self.eventOff(single);
-    }
-  }
-
-  /**
-   * scrollbar activation
-   */
-  specialScrollbarOn() {
-    let self = this;
-    let options = self.options;
-    // scrollbar on
-    if (options.scrollbar) {
-      // checks
-      Xt.scrollbar.add(self.namespace);
-      // check fixed
-      let checks = document.querySelectorAll('.xt-fixed--check, .xt-fixed--check > *');
-      for (let check of checks) {
-        let style = getComputedStyle(check);
-        if (style.position === 'fixed') {
-          check.classList.add('xt-fixed');
-        } else {
-          check.classList.remove('xt-fixed');
-        }
-      }
-      // scrollbar
-      let container = document.documentElement;
-      container.classList.add('xt-scrollbar');
-      Xt.scrollbarSpaceOn(container);
-    }
-  }
-
-  /**
-   * scrollbar deactivation
-   */
-  specialScrollbarOff() {
-    let self = this;
-    let options = self.options;
-    // scrollbar off
-    if (options.scrollbar) {
-      // checks
-      Xt.scrollbar.remove(self.namespace);
-      if (!Xt.scrollbar.get().length) {
-        // scrollbar
-        let container = document.documentElement;
-        container.classList.remove('xt-scrollbar');
-        Xt.scrollbarSpaceOff(container);
-      }
     }
   }
 

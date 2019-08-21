@@ -138,14 +138,14 @@ const populateDemo = function (container, i) {
       // load
       let iframe = item.querySelector('iframe');
       item.addEventListener('on.xt', function (e) {
-        if (e.target === item) {
+        if (item === e.target || item.contains(e.target)) { // @FIX on.xt and off.xt: handler triggered by child xt events
           if (!item.classList.contains('loaded')) {
             loadIframe(iframe);
           }
         }
       });
       item.addEventListener('off.xt', function (e) {
-        if (e.target === item) {
+        if (item === e.target || item.contains(e.target)) { // @FIX on.xt and off.xt: handler triggered by child xt events
           item.classList.remove('loaded');
           unloadIframe(iframe);
         }
@@ -197,7 +197,7 @@ const populateDemo = function (container, i) {
   let codes = container.querySelectorAll('.btn--show-code');
   for (let code of codes) {
     code.addEventListener('on.xt', function (e) {
-      if (e.target === code) {
+      if (code === e.target || code.contains(e.target)) { // @FIX on.xt and off.xt: handler triggered by child xt events
         let btns = document.querySelectorAll('.btn--show-code.active');
         for (let btn of btns) {
           if (btn !== code) {
@@ -229,7 +229,7 @@ const populateDemo = function (container, i) {
   });
   for (let btn of container.querySelectorAll('.demo_tabs_left .btn')) {
     btn.addEventListener('off.xt', function (e) {
-      if (e.target === btn) {
+      if (btn === e.target || btn.contains(e.target)) { // @FIX on.xt and off.xt: handler triggered by child xt events
         container.querySelector('.btn--show-code').dispatchEvent(new CustomEvent('off.xt'));
       }
     });
