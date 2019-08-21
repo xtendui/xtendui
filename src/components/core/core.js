@@ -22,10 +22,16 @@ export class Core {
     self.optionsJs = optionsJs;
     self.componentName = self.constructor.componentName;
     self.componentNamespace = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '');
-    // set
-    Xt.set(self.componentName, self.object, self);
-    // init
-    self.init(object, optionsJs);
+    // @FIX multiple initializations when setting position fixed
+    let alreadyDefinedInstance = Xt.get(self.componentName, self.object)
+    if (!alreadyDefinedInstance) {
+      // set
+      Xt.set(self.componentName, self.object, self);
+      // init
+      self.init(object, optionsJs);
+    } else {
+      return alreadyDefinedInstance;
+    }
   }
 
   //////////////////////
