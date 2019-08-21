@@ -41,14 +41,14 @@ demo.htmlSource = `
       Group 0b
     </div>
   </div>
-  <div class="alert toggle--block" data-xt-group="0">
-    <div class="alert_content">
-      Group 0c
-    </div>
-  </div>
   <div class="alert toggle--block" data-xt-group="1">
     <div class="alert_content">
       Group 1b
+    </div>
+  </div>
+  <div class="alert toggle--block" data-xt-group="0">
+    <div class="alert_content">
+      Group 0c
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="1">
@@ -91,14 +91,14 @@ demo.htmlSource = `
       Group 0b
     </div>
   </div>
-  <div class="alert toggle--block" data-xt-group="0">
-    <div class="alert_content">
-      Group 0c
-    </div>
-  </div>
   <div class="alert toggle--block" data-xt-group="1">
     <div class="alert_content">
       Group 1b
+    </div>
+  </div>
+  <div class="alert toggle--block" data-xt-group="0">
+    <div class="alert_content">
+      Group 0c
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="1">

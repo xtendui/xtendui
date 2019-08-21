@@ -1607,11 +1607,17 @@ export class Core {
    */
   queueOn(type, index, queueInitial = false) {
     let self = this;
+    let options = self.options;
     // queueOn
     let obj = self.detail.queueOn[index];
     if (obj && obj[type] && !obj[type].done) {
       let objOther = self.detail.queueOff[self.detail.queueOff.length - 1];
       if (!objOther || !objOther[type] || objOther[type].done) {
+        if (typeof options.instant !== 'object' && options.instant === true) {
+          obj[type].instant = true;
+        } else if (typeof options.instant === 'object' && options.instant[type]) {
+          obj[type].instantType = true;
+        }
         self.queueOnDelay(obj, type, queueInitial);
       }
     }
@@ -1625,11 +1631,17 @@ export class Core {
    */
   queueOff(type, index, queueInitial = false) {
     let self = this;
+    let options = self.options;
     // queueOff
     let obj = self.detail.queueOff[index];
     if (obj && obj[type] && !obj[type].done) {
       let objOther = self.detail.queueOn[self.detail.queueOn.length - 1];
       if (!objOther || !objOther[type] || objOther[type].done) {
+        if (typeof options.instant !== 'object' && options.instant === true) {
+          obj[type].instant = true;
+        } else if (typeof options.instant === 'object' && options.instant[type]) {
+          obj[type].instantType = true;
+        }
         self.queueOffDelay(obj, type, queueInitial);
       }
     }
@@ -1647,12 +1659,6 @@ export class Core {
     // delay
     let els = obj[type].queueEls;
     for (let el of els) {
-      // instant
-      if (typeof options.instant !== 'object' && options.instant === true) {
-        obj[type].instant = true;
-      } else if (typeof options.instant === 'object' && options.instant[type]) {
-        obj[type].instant = true;
-      }
       // delay
       let delay;
       if (options.delayOn) {
@@ -1671,7 +1677,7 @@ export class Core {
       // delay fnc
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
-      if (delay && !obj[type].instant) {
+      if (delay && !obj[type].instant && !obj[type].instantType) {
         Xt.dataStorage.set(el, self.componentNamespace + 'DelayTimeout', setTimeout(function () {
           self.queueOnDelayDone(obj, el, type);
         }, delay));
@@ -1679,7 +1685,7 @@ export class Core {
         self.queueOnDelayDone(obj, el, type);
       }
       // queue done
-      if (typeof options.instant !== 'object' && options.instant === true) {
+      if (obj[type].instant) {
         if (el === els[els.length - 1]) { // only if last element
           self.queueOnDone(obj, type);
         }
@@ -1699,12 +1705,6 @@ export class Core {
     // delay
     let els = obj[type].queueEls;
     for (let el of els) {
-      // instant
-      if (typeof options.instant !== 'object' && options.instant === true) {
-        obj[type].instant = true;
-      } else if (typeof options.instant === 'object' && options.instant[type]) {
-        obj[type].instant = true;
-      }
       // delay
       let delay;
       if (options.delayOff) {
@@ -1723,7 +1723,7 @@ export class Core {
       // delay fnc
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
-      if (delay && !obj[type].instant) {
+      if (delay && !obj[type].instant && !obj[type].instantType) {
         Xt.dataStorage.set(el, self.componentNamespace + 'DelayTimeout', setTimeout(function () {
           self.queueOffDelayDone(obj, el, type);
         }, delay));
@@ -1731,7 +1731,7 @@ export class Core {
         self.queueOffDelayDone(obj, el, type);
       }
       // queue done
-      if (typeof options.instant !== 'object' && options.instant === true) {
+      if (obj[type].instant) {
         if (el === els[els.length - 1]) { // only if last element
           self.queueOffDone(obj, type);
         }
@@ -1793,7 +1793,7 @@ export class Core {
     if (!skipQueue) {
       self.queueOnAnim(obj, el, type);
       // queue done
-      if (typeof options.instant === 'object' && options.instant[type]) {
+      if (obj[type].instantType) {
         let els = obj[type].queueEls;
         if (el === els[els.length - 1]) { // only if last element
           self.queueOnDone(obj, type);
@@ -1827,7 +1827,7 @@ export class Core {
     if (!skipQueue) {
       self.queueOffAnim(obj, el, type);
       // queue done
-      if (typeof options.instant === 'object' && options.instant[type]) {
+      if (obj[type].instantType) {
         let els = obj[type].queueEls;
         if (el === els[els.length - 1]) { // only if last element
           self.queueOffDone(obj, type);
@@ -1850,7 +1850,7 @@ export class Core {
     // anim
     let duration = Xt.animTime(el, options.durationOn);
     clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
-    if (!duration || obj[type].instant) {
+    if (!duration || obj[type].instant || obj[type].instantType) {
       self.queueOnAnimDone(obj, el, type);
     } else {
       Xt.dataStorage.set(el, self.componentNamespace + 'AnimTimeout', setTimeout(function () {
@@ -1871,7 +1871,7 @@ export class Core {
     // anim
     let duration = Xt.animTime(el, options.durationOff);
     clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
-    if (!duration || obj[type].instant) {
+    if (!duration || obj[type].instant || obj[type].instantType) {
       self.queueOffAnimDone(obj, el, type);
     } else {
       Xt.dataStorage.set(el, self.componentNamespace + 'AnimTimeout', setTimeout(function () {
@@ -1911,7 +1911,7 @@ export class Core {
     // queue
     if (!skipQueue) {
       // queue done
-      if (options.instant === false || (typeof options.instant === 'object' && !options.instant[type])) {
+      if (!obj[type].instant && !obj[type].instantType) {
         let els = obj[type].queueEls;
         if (el === els[els.length - 1]) { // only if last element
           self.queueOnDone(obj, type);
@@ -1978,7 +1978,7 @@ export class Core {
     // queue
     if (!skipQueue) {
       // queue done
-      if (options.instant === false || (typeof options.instant === 'object' && !options.instant[type])) {
+      if (!obj[type].instant && !obj[type].instantType) {
         let els = obj[type].queueEls;
         if (el === els[els.length - 1]) { // only if last element
           self.queueOffDone(obj, type);
