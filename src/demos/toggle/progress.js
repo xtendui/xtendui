@@ -28,7 +28,7 @@ Xt.mount.push({
 
     self.object.addEventListener('start.xt.auto', function (e) {
       // on elements
-      let elements = self.elements.filter(x => x.classList.contains('active'));
+      let elements = self.elements.filter(x => x.classList.contains(...self.classes));
       for (let element of elements) {
         let fillers = element.querySelectorAll('.filler span:nth-child(1)');
         for (let filler of fillers) {
@@ -37,7 +37,7 @@ Xt.mount.push({
         }
       }
       // on targets
-      let targets = self.targets.filter(x => x.classList.contains('active'));
+      let targets = self.targets.filter(x => x.classList.contains(...self.classes));
       for (let target of targets) {
         let fillers = target.querySelectorAll('.filler span:nth-child(1)');
         for (let filler of fillers) {
@@ -51,7 +51,7 @@ Xt.mount.push({
 
     self.object.addEventListener('stop.xt.auto', function (e) {
       // on elements
-      let elements = self.elements.filter(x => x.classList.contains('active'));
+      let elements = self.elements.filter(x => x.classList.contains(...self.classes));
       for (let element of elements) {
         let fillers = element.querySelectorAll('.filler span:nth-child(1)');
         for (let filler of fillers) {
@@ -59,7 +59,7 @@ Xt.mount.push({
         }
       }
       // on targets
-      let targets = self.targets.filter(x => x.classList.contains('active'));
+      let targets = self.targets.filter(x => x.classList.contains(...self.classes));
       for (let target of targets) {
         let fillers = target.querySelectorAll('.filler span:nth-child(1)');
         for (let filler of fillers) {
@@ -72,7 +72,7 @@ Xt.mount.push({
 
     self.object.addEventListener('pause.xt.auto', function (e) {
       // on elements
-      let elements = self.elements.filter(x => x.classList.contains('active'));
+      let elements = self.elements.filter(x => x.classList.contains(...self.classes));
       for (let element of elements) {
         let fillers = element.querySelectorAll('.filler span:nth-child(1)');
         for (let filler of fillers) {
@@ -80,7 +80,7 @@ Xt.mount.push({
         }
       }
       // on targets
-      let targets = self.targets.filter(x => x.classList.contains('active'));
+      let targets = self.targets.filter(x => x.classList.contains(...self.classes));
       for (let target of targets) {
         let fillers = target.querySelectorAll('.filler span:nth-child(1)');
         for (let filler of fillers) {

@@ -1317,10 +1317,10 @@ export class Core {
       if (self.detail['queue' + actionCurrent].length > options.max) {
         // remove queue on and done other queue
         let removedOn = self.detail['queue' + actionOther].shift();
-        self.queueEnd(actionOther, actionCurrent, removedOn);
+        self.queueStop(actionOther, actionCurrent, removedOn);
         // remove queue off and done other queue
         let removedOff = self.detail['queue' + actionCurrent].shift();
-        self.queueEnd(actionCurrent, actionOther, removedOff);
+        self.queueStop(actionCurrent, actionOther, removedOff);
       }
       // queue run
       for (let type in self.detail['queue' + actionCurrent][0]) {
@@ -1479,6 +1479,49 @@ export class Core {
           obj[type].instantType = true;
         }
         self.queueDelay(actionCurrent, actionOther, obj, type, queueInitial);
+      }
+    }
+  }
+
+  /**
+   * queue stop
+   * @param {String} actionCurrent Current action
+   * @param {String} actionOther Other action
+   * @param {Object} obj Queue object to end
+   */
+  queueStop(actionCurrent, actionOther, obj) {
+    let self = this;
+    // stop type if done
+    for (let type in obj) {
+      if (obj[type].done) {
+        for (let el of obj[type].queueEls) {
+          // clear timeout and frame
+          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
+          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
+          // done other queue
+          self.queueDelayDone(actionOther, actionCurrent, obj, el, type, true);
+          self.queueAnimDone(actionOther, actionCurrent, obj, el, type, true);
+        }
+      }
+    }
+  }
+
+  /**
+   * queue stop all
+   */
+  queueStopAll() {
+    let self = this;
+    // stop all obj in queues
+    let queues = [...self.detail['queue' + 'On'], ...self.detail['queue' + 'Off']];
+    for (let obj in queues) {
+      for (let type in queues[obj]) {
+        for (let el of queues[obj][type].queueEls) {
+          // clear timeout and frame
+          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
+          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
+          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
+        }
       }
     }
   }
@@ -1761,30 +1804,6 @@ export class Core {
         self.detail['queue' + actionCurrent].pop();
         // queue complete
         self.queueComplete(actionCurrent, obj);
-      }
-    }
-  }
-
-  /**
-   * queue end
-   * @param {String} actionCurrent Current action
-   * @param {String} actionOther Other action
-   * @param {Object} obj Queue object to end
-   */
-  queueEnd(actionCurrent, actionOther, obj) {
-    let self = this;
-    // check if done
-    for (let type in obj) {
-      if (obj[type].done) {
-        for (let el of obj[type].queueEls) {
-          // clear timeout and frame
-          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
-          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
-          // done other queue
-          self.queueDelayDone(actionOther, actionCurrent, obj, el, type, true);
-          self.queueAnimDone(actionOther, actionCurrent, obj, el, type, true);
-        }
       }
     }
   }
@@ -2515,7 +2534,9 @@ export class Core {
   destroy(weak = false) {
     let self = this;
     // stop auto
-    clearInterval(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoStartInterval'));
+    self.eventAutoStop();
+    // stop queue
+    self.queueStopAll();
     // remove events
     if (self.destroyElements) {
       for (let element of self.destroyElements) {
