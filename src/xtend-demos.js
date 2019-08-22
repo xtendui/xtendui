@@ -4,18 +4,18 @@
 
 if (typeof window !== 'undefined') {
 
-require('xtend-library/src/demos/loader/js-filler.js');
-require('xtend-library/src/demos/loader/js-spinner.js');
-require('xtend-library/src/demos/loader/mouse-filler.js');
-require('xtend-library/src/demos/loader/mouse-spinner.js');
-require('xtend-library/src/demos/scroll/mode-block.js');
-require('xtend-library/src/demos/scroll/parallax.js');
-require('xtend-library/src/demos/slider/progress.js');
-require('xtend-library/src/demos/slider/toggle-js.js');
-require('xtend-library/src/demos/test/vanilla-iframe.js');
-require('xtend-library/src/demos/test/vanilla.js');
-require('xtend-library/src/demos/toggle/javascript.js');
-require('xtend-library/src/demos/toggle/progress.js');
-require('xtend-library/src/demos/toggle/start.js');
+require('xtend-library/src/demos/loader/js-filler');
+require('xtend-library/src/demos/loader/js-spinner');
+require('xtend-library/src/demos/loader/mouse-filler');
+require('xtend-library/src/demos/loader/mouse-spinner');
+require('xtend-library/src/demos/scroll/mode-block');
+require('xtend-library/src/demos/scroll/parallax');
+require('xtend-library/src/demos/slider/progress');
+require('xtend-library/src/demos/slider/toggle-js');
+require('xtend-library/src/demos/test/vanilla-iframe');
+require('xtend-library/src/demos/test/vanilla');
+require('xtend-library/src/demos/toggle/javascript');
+require('xtend-library/src/demos/toggle/progress');
+require('xtend-library/src/demos/toggle/start');
 
 }

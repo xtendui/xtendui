@@ -3,13 +3,13 @@
 //////////////////////
 
 import {Xt} from 'xtend-library'
-import {Controller} from 'xtend-library/src/core/controller/controller'
+import 'xtend-library/src/core/controller/controller'
 
 //////////////////////
 // Scroll
 //////////////////////
 
-export class Scroll extends Controller {
+class Scroll extends Xt.Controller {
 
   /**
    * constructor
@@ -299,14 +299,20 @@ Scroll.optionsDefault = {
 };
 
 //////////////////////
+// export
+//////////////////////
+
+Xt.Scroll = Scroll;
+
+//////////////////////
 // observe
 //////////////////////
 
 Xt.mount.push({
   matches: '[data-' + Scroll.componentName + ']',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
-    let self = new Scroll(main, main.getAttribute('data-' + Scroll.componentName));
+    let self = new Xt.Scroll(object, object.getAttribute('data-' + Xt.Scroll.componentName));
 
     // unmount
 

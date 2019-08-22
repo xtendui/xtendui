@@ -1,4 +1,8 @@
-export class MouseFollow {
+//////////////////////
+// MouseFollow
+//////////////////////
+
+class MouseFollow {
 
   /**
    * constructor
@@ -100,3 +104,10 @@ export class MouseFollow {
   }
 
 }
+
+//////////////////////
+// export
+//////////////////////
+
+Xt.MouseFollow = MouseFollow;
+

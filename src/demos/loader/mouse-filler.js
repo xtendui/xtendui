@@ -1,4 +1,5 @@
-import {MouseFollow} from 'xtend-library/src/extensions/animation/mouse-follow';
+import {Xt} from 'xtend-library'
+import 'xtend-library/src/extensions/animation/mouse-follow';
 
 /**
  * .demo--loader--mouse-filler
@@ -11,7 +12,7 @@ Xt.mount.push({
     let element = object;
     let container = element.closest('.card');
 
-    let mouseFollow = new MouseFollow({
+    let mouseFollow = new Xt.MouseFollow({
       object: element,
       container: container,
       mouseCheck: function (options) {

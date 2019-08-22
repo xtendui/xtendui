@@ -3,13 +3,13 @@
 //////////////////////
 
 import {Xt} from 'xtend-library'
-import {Controller} from 'xtend-library/src/core/controller/controller'
+import 'xtend-library/src/core/controller/controller'
 
 //////////////////////
 // smooth
 //////////////////////
 
-export class Smooth extends Controller {
+class Smooth extends Xt.Controller {
 
   /**
    * constructor
@@ -43,14 +43,20 @@ Smooth.optionsDefault = {
 };
 
 //////////////////////
+// export
+//////////////////////
+
+Xt.Smooth = Smooth;
+
+//////////////////////
 // observe
 //////////////////////
 
 Xt.mount.push({
-  matches: '[data-' + Smooth.componentName + ']',
+  matches: '[data-' + Xt.Smooth.componentName + ']',
   fnc: function mount(object) {
 
-    let self = new Smooth(object, object.getAttribute('data-' + Smooth.componentName));
+    let self = new Xt.Smooth(object, object.getAttribute('data-' + Xt.Smooth.componentName));
 
     // unmount
 

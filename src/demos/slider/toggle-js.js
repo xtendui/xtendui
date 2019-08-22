@@ -1,5 +1,5 @@
 import {Xt} from 'xtend-library'
-import {Slider} from 'xtend-library/src/core/slider/slider'
+import 'xtend-library/src/core/slider/slider'
 import {TweenMax} from 'gsap/TweenMax'
 import BezierEasing from 'bezier-easing'
 
@@ -18,7 +18,7 @@ Xt.mount.push({
 
     // xt-slider
 
-    let self = new Slider(slider, {
+    let self = new Xt.Slider(slider, {
       "durationOn": time * 1000,
       "durationOff": time * 1000,
       "instant": false

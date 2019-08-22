@@ -3,13 +3,13 @@
 //////////////////////
 
 import {Xt} from 'xtend-library'
-import {Controller} from 'xtend-library/src/core/controller/controller'
+import 'xtend-library/src/core/controller/controller'
 
 //////////////////////
 // Overlay
 //////////////////////
 
-export class Overlay extends Controller {
+class Overlay extends Xt.Controller {
 
   /**
    * constructor
@@ -76,14 +76,20 @@ Overlay.optionsDefault = {
 };
 
 //////////////////////
+// export
+//////////////////////
+
+Xt.Overlay = Overlay;
+
+//////////////////////
 // observe
 //////////////////////
 
 Xt.mount.push({
-  matches: '[data-' + Overlay.componentName + ']',
+  matches: '[data-' + Xt.Overlay.componentName + ']',
   fnc: function mount(object) {
 
-    let self = new Overlay(object, object.getAttribute('data-' + Overlay.componentName));
+    let self = new Xt.Overlay(object, object.getAttribute('data-' + Xt.Overlay.componentName));
 
     // unmount
 

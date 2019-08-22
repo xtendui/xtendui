@@ -3,13 +3,13 @@
 //////////////////////
 
 import {Xt} from 'xtend-library'
-import {Controller} from 'xtend-library/src/core/controller/controller'
+import 'xtend-library/src/core/controller/controller'
 
 //////////////////////
 // Sticky
 //////////////////////
 
-export class Sticky extends Controller {
+class Sticky extends Xt.Controller {
 
   /**
    * constructor
@@ -446,14 +446,20 @@ Sticky.optionsDefault = {
 };
 
 //////////////////////
+// export
+//////////////////////
+
+Xt.Sticky = Sticky;
+
+//////////////////////
 // observe
 //////////////////////
 
 Xt.mount.push({
-  matches: '[data-' + Sticky.componentName + ']',
+  matches: '[data-' + Xt.Sticky.componentName + ']',
   fnc: function mount(object) {
 
-    let self = new Sticky(object, object.getAttribute('data-' + Sticky.componentName));
+    let self = new Xt.Sticky(object, object.getAttribute('data-' + Xt.Sticky.componentName));
 
     // unmount
 

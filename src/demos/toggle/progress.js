@@ -1,4 +1,5 @@
-import {Toggle} from 'xtend-library/src/core/toggle/toggle'
+import {Xt} from 'xtend-library'
+import 'xtend-library/src/core/toggle/toggle'
 import {TweenMax} from 'gsap/TweenMax'
 
 /**
@@ -17,7 +18,7 @@ Xt.mount.push({
 
     // xt-toggle
 
-    let self = new Toggle(list, {
+    let self = new Xt.Toggle(list, {
       "auto": {
         "time": 2000,
         "pause": ":scope > button"

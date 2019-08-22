@@ -3,13 +3,13 @@
 //////////////////////
 
 import {Xt} from 'xtend-library'
-import {Controller} from 'xtend-library/src/core/controller/controller'
+import 'xtend-library/src/core/controller/controller'
 
 //////////////////////
 // Toggle
 //////////////////////
 
-export class Toggle extends Controller {
+class Toggle extends Xt.Controller {
 
   /**
    * constructor
@@ -70,14 +70,20 @@ Toggle.optionsDefault = {
 };
 
 //////////////////////
+// export
+//////////////////////
+
+Xt.Toggle = Toggle;
+
+//////////////////////
 // observe
 //////////////////////
 
 Xt.mount.push({
-  matches: '[data-' + Toggle.componentName + ']',
+  matches: '[data-' + Xt.Toggle.componentName + ']',
   fnc: function mount(object) {
 
-    let self = new Toggle(object, object.getAttribute('data-' + Toggle.componentName));
+    let self = new Xt.Toggle(object, object.getAttribute('data-' + Xt.Toggle.componentName));
 
     // unmount
 

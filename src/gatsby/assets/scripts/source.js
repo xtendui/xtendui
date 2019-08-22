@@ -1,4 +1,4 @@
-let cssSource = function(demo, type = '.less') {
+let cssSource = function(demo, type = '') {
   if (demo.type === 'demos') {
     return require(`!!raw-loader!xtend-library/src/${demo.type}/${demo.component}/${demo.name}${type}`).default
   } else {
@@ -6,7 +6,7 @@ let cssSource = function(demo, type = '.less') {
   }
 };
 
-let jsSource = function(demo, type = '.js') {
+let jsSource = function(demo, type = '') {
   if (demo.type === 'demos') {
     return require(`!!raw-loader!xtend-library/src/${demo.type}/${demo.component}/${demo.name}${type}`).default
   } else {

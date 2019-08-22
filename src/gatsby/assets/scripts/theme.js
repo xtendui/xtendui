@@ -1,28 +1,6 @@
 import {Xt} from 'xtend-library'
 
 //////////////////////
-// smooth
-//////////////////////
-
-/*
-Xt.mount.push({
-  matches: 'html',
-  fnc: function mount(object) {
-
-    let self = new Smooth(document.scrollingElement, {});
-
-    // unmount
-
-    return function unmount() {
-      self.destroy();
-      self = null;
-    };
-
-  }
-});
-*/
-
-//////////////////////
 // makeDocument
 //////////////////////
 

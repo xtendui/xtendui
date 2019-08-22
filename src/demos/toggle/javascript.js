@@ -1,4 +1,5 @@
-import {Toggle} from 'xtend-library/src/core/toggle/toggle'
+import {Xt} from 'xtend-library'
+import 'xtend-library/src/core/toggle/toggle'
 import {TweenMax} from 'gsap/TweenMax'
 import BezierEasing from 'bezier-easing'
 
@@ -23,7 +24,7 @@ Xt.mount.push({
 
     // xt-toggle
 
-    let self = new Toggle(toggle, {
+    let self = new Xt.Toggle(toggle, {
       "durationOn": time * 1000,
       "durationOff": time * 1000,
       "delayOn": delay * 1000,
@@ -94,7 +95,7 @@ Xt.mount.push({
 
     // xt-toggle
 
-    let self = new Toggle(toggle, {
+    let self = new Xt.Toggle(toggle, {
       "on": "mouseenter",
       "off": "mouseleave",
       "durationOn": time * 1000,

@@ -1,3 +1,5 @@
+import {Xt} from 'xtend-library'
+
 /**
  * xtend extension: multilevel
  */

@@ -3,13 +3,13 @@
 //////////////////////
 
 import {Xt} from 'xtend-library'
-import {Controller} from 'xtend-library/src/core/controller/controller'
+import 'xtend-library/src/core/controller/controller'
 
 //////////////////////
 // Slider
 //////////////////////
 
-export class Slider extends Controller {
+class Slider extends Xt.Controller {
 
   /**
    * constructor
@@ -1030,14 +1030,20 @@ Slider.optionsDefault = {
 };
 
 //////////////////////
+// export
+//////////////////////
+
+Xt.Slider = Slider;
+
+//////////////////////
 // observe
 //////////////////////
 
 Xt.mount.push({
-  matches: '[data-' + Slider.componentName + ']',
+  matches: '[data-' + Xt.Slider.componentName + ']',
   fnc: function mount(object) {
 
-    let self = new Slider(object, object.getAttribute('data-' + Slider.componentName));
+    let self = new Xt.Slider(object, object.getAttribute('data-' + Xt.Slider.componentName));
 
     // unmount
 

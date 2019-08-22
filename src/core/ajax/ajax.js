@@ -3,13 +3,13 @@
 //////////////////////
 
 import {Xt} from 'xtend-library'
-import {Controller} from 'xtend-library/src/core/controller/controller'
+import 'xtend-library/src/core/controller/controller'
 
 //////////////////////
 // Drop
 //////////////////////
 
-export class Ajax extends Controller {
+class Ajax extends Xt.Controller {
 
   /**
    * constructor
@@ -380,14 +380,20 @@ Ajax.optionsDefault = {
 };
 
 //////////////////////
+// export
+//////////////////////
+
+Xt.Ajax = Ajax;
+
+//////////////////////
 // observe
 //////////////////////
 
 Xt.mount.push({
-  matches: '[data-' + Ajax.componentName + ']',
+  matches: '[data-' + Xt.Ajax.componentName + ']',
   fnc: function mount(object) {
 
-    let self = new Ajax(object, object.getAttribute('data-' + Ajax.componentName));
+    let self = new Xt.Ajax(object, object.getAttribute('data-' + Xt.Ajax.componentName));
 
     // unmount
 

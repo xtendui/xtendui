@@ -49,7 +49,7 @@ body {
 ```
 
 ```jsx
-let self = new Scroll(document.documentElement, {
+let self = new Xt.Scroll(document.documentElement, {
   // option
 });
 ```

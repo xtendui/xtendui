@@ -8,7 +8,7 @@ import {Xt} from 'xtend-library'
 // Controller
 //////////////////////
 
-export class Controller {
+class Controller {
 
   /**
    * constructor
@@ -2573,14 +2573,20 @@ export class Controller {
 Controller.componentName = 'xt-controller';
 
 //////////////////////
+// export
+//////////////////////
+
+Xt.Controller = Controller;
+
+//////////////////////
 // observe
 //////////////////////
 
 Xt.mount.push({
-  matches: '[data-' + Controller.componentName + ']',
+  matches: '[data-' + Xt.Controller.componentName + ']',
   fnc: function mount(object) {
 
-    let self = new Controller(object, object.getAttribute('data-' + Controller.componentName));
+    let self = new Xt.Controller(object, object.getAttribute('data-' + Xt.Controller.componentName));
 
     // unmount
 

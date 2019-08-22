@@ -1,5 +1,5 @@
 import {Xt} from 'xtend-library'
-import {Scroll} from 'xtend-library/src/core/scroll/scroll'
+import 'xtend-library/src/core/scroll/scroll'
 import {TweenMax} from 'gsap/TweenMax'
 
 /**
@@ -16,7 +16,7 @@ Xt.mount.push({
 
     // xt-scroll
 
-    let self = new Scroll(parallaxTitle, {
+    let self = new Xt.Scroll(parallaxTitle, {
       "sticky": "fixed",
       "end": 350
     });
@@ -59,7 +59,7 @@ Xt.mount.push({
 
     // xt-scroll
 
-    let self = new Scroll(parallaxImg, {
+    let self = new Xt.Scroll(parallaxImg, {
       "sticky": "fixed",
       "end": 350
     });
@@ -100,7 +100,7 @@ Xt.mount.push({
 
     // xt-scroll
 
-    let self = new Scroll(parallaxFooter, {
+    let self = new Xt.Scroll(parallaxFooter, {
       "sticky": true,
       "start": "125%"
     });

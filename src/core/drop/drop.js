@@ -3,13 +3,13 @@
 //////////////////////
 
 import {Xt} from 'xtend-library'
-import {Controller} from 'xtend-library/src/core/controller/controller'
+import 'xtend-library/src/core/controller/controller'
 
 //////////////////////
 // Drop
 //////////////////////
 
-export class Drop extends Controller {
+class Drop extends Xt.Controller {
 
   /**
    * constructor
@@ -65,14 +65,20 @@ Drop.optionsDefault = {
 };
 
 //////////////////////
+// export
+//////////////////////
+
+Xt.Drop = Drop;
+
+//////////////////////
 // observe
 //////////////////////
 
 Xt.mount.push({
-  matches: '[data-' + Drop.componentName + ']',
+  matches: '[data-' + Xt.Drop.componentName + ']',
   fnc: function mount(object) {
 
-    let self = new Drop(object, object.getAttribute('data-' + Drop.componentName));
+    let self = new Xt.Drop(object, object.getAttribute('data-' + Xt.Drop.componentName));
 
     // unmount
 

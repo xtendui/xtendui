@@ -31,7 +31,7 @@ Use this markup to create a drop.
 You can initialize **drop** by javascript omitting `[data-xt-drop]`.
 
 ```jsx
-let self = new Drop(document.querySelector('.my-drop'), {
+let self = new Xt.Drop(document.querySelector('.my-drop'), {
   // option
 });
 ```

@@ -12,10 +12,8 @@
     "vanilla",
     "components"
   ],
-  "main": "dist/scripts/xtend.min.js",
+  "main": "src/xtend-core.min.js",
   "module": "src/xtend.js",
-  "umd:main": "dist/scripts/xtend.min.js",
-  "umd:name": "xt",
   "scripts": {
     "build": "gatsby clean && gatsby build",
     "dev": "gatsby clean && gatsby develop -p 8888",
