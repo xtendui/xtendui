@@ -5,7 +5,7 @@ import {StaticQuery, graphql} from 'gatsby'
 import SEO from 'components/seo'
 import Layout from 'components/layout-demo'
 
-import {cssSource, jsSource} from 'assets/scripts/source.js'
+import {cssSource, jsSource} from 'assets/scripts/source'
 
 class DemoVanillaIframe extends React.Component {
   render() {

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {StaticQuery, graphql} from 'gatsby'
 
-import {cssSource, jsSource} from 'assets/scripts/source.js'
+import {cssSource, jsSource} from 'assets/scripts/source'
 
 class DemoVanilla extends React.Component {
   render() {

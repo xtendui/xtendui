@@ -4,7 +4,9 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const copyrightBanner = `/*! Xtend (https://getxtend.com/)
+const fs = require('fs')
+const version = JSON.parse(fs.readFileSync('package.json')).version
+const copyrightBanner = `/*! Xtend v${version} (https://getxtend.com/)
 @copyright (c) 2017 - 2019 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */\n\n`
 

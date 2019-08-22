@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import {populateDemo} from 'assets/scripts/demo.js'
+import {populateDemo} from 'assets/scripts/demo'
 
 let demoIndex = 0
 

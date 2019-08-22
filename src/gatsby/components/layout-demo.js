@@ -1,20 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import {Xt} from 'xtend-library'
-import {Controller} from 'xtend-library/src/core/controller/controller'
-import {Toggle} from 'xtend-library/src/core/toggle/toggle'
-import {Drop} from 'xtend-library/src/core/drop/drop'
-import {Overlay} from 'xtend-library/src/core/overlay/overlay'
-import {Smooth} from 'xtend-library/src/core/smooth/smooth'
-import {Slider} from 'xtend-library/src/core/slider/slider'
-import {Scroll} from 'xtend-library/src/core/scroll/scroll'
-import {Sticky} from 'xtend-library/src/core/sticky/sticky'
-import {Ajax} from 'xtend-library/src/core/ajax/ajax'
+
 import 'xtend-library/src/xtend-demos'
 import 'xtend-library/src/xtend-extensions'
-import {makeDocument} from 'assets/scripts/theme.js'
-import ResizeSensor from 'assets/scripts/ResizeSensor.js'
+import {makeDocument} from 'assets/scripts/theme'
+import ResizeSensor from 'assets/scripts/ResizeSensor'
 
 import 'assets/styles/theme.less';
 
