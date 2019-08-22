@@ -1,3 +1,7 @@
+/*! Xtend (https://getxtend.com/)
+@copyright (c) 2017 - 2019 Riccardo Caroli
+@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
+
 if (typeof window !== 'undefined') {
 
 require('xtend-library/src/demos/loader/js-filler.js');
