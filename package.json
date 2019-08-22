@@ -41,6 +41,7 @@
     "@semantic-release/git": "^7.0.8",
     "@semantic-release/github": "^5.2.10",
     "@semantic-release/release-notes-generator": "^7.1.4",
+    "babel-preset-gatsby": "^0.2.10",
     "clipboard": "^2.0.4",
     "css-loader": "^3.2.0",
     "gatsby": "^2.3.16",
