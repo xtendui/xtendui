@@ -26,16 +26,6 @@ Xt.resizeDelay = 100;
 Xt.scrollDelay = false;
 Xt.imageLoadedDelay = 50;
 Xt.focusables = 'a, button, details, input, iframe, select, textarea';
-Xt.components = [
-  {'name': 'xt-core', 'class': Xt.Core},
-  {'name': 'xt-toggle', 'class': Xt.Toggle},
-  {'name': 'xt-overlay', 'class': Xt.Overlay},
-  {'name': 'xt-smooth', 'class': Xt.Smooth},
-  {'name': 'xt-slider', 'class': Xt.Slider},
-  {'name': 'xt-scroll', 'class': Xt.Scroll},
-  {'name': 'xt-sticky', 'class': Xt.Sticky},
-  {'name': 'xt-ajax', 'class': Xt.Ajax}
-];
 
 //////////////////////
 // call only if in browser mode

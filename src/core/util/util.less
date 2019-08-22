@@ -1,0 +1,125 @@
+@import '~xtend-library/src/core/util/reset-core'; // always first loaded
+@import '~xtend-library/src/core/util/util-core';
+@import '~xtend-library/src/core/util/javascript';
+
+//////////////////////
+// variables
+//////////////////////
+
+// margin
+
+@margins: auto auto, none 0, micro .25rem, tiny .5rem, small 1rem, medium 2rem, big 4rem, giant 6rem, huge 12rem;
+
+// padding
+
+@paddings: auto auto, none 0, micro .25rem, tiny .5rem, small 1rem, medium 2rem, big 4rem, giant 6rem, huge 12rem;
+
+// order
+
+@orders: -3, -2, -1, 0, 1, 2, 3;
+
+// z-index
+
+@index--base: 0;
+@index--active: 2;
+@index--loader: 11;
+@index--sticky: 500; // @index--sticky by javascript 100 and decreses with sequential sticky
+@index--top: 501;
+@index--indicator: 510;
+@index--backdrop: 530;
+@index--drop: 550;
+@index--overlay: 600;
+@index--btn-close: 700;
+@index--last: 701;
+
+// breakpoints
+
+@breakpoints: xs, sm, md, lg, xl; // if you change this change also variables names below
+@breakpoint--xs: 576px;
+@breakpoint--sm: 768px;
+@breakpoint--md: 992px;
+@breakpoint--lg: 1200px;
+@breakpoint--xl: 1300px;
+
+// @media queries
+// USAGE: @media @min-sm and @max-md {}
+
+@min-xs: ~'(min-width:'(@breakpoint--xs)~')';
+@max-xs: ~'(max-width:'(@breakpoint--xs - 1)~')';
+@min-sm: ~'(min-width:'(@breakpoint--sm)~')';
+@max-sm: ~'(max-width:'(@breakpoint--sm - 1)~')';
+@min-md: ~'(min-width:'(@breakpoint--md)~')';
+@max-md: ~'(max-width:'(@breakpoint--md - 1)~')';
+@min-lg: ~'(min-width:'(@breakpoint--lg)~')';
+@max-lg: ~'(max-width:'(@breakpoint--lg - 1)~')';
+@min-xl: ~'(min-width:'(@breakpoint--xl)~')';
+@max-xl: ~'(max-width:'(@breakpoint--xl - 1)~')';
+
+// classes generation
+// false -> not generate any classes
+// true -> only generate non responsive classes
+// array of breakpoints -> generate non responsive classes and responsive classes for those breakpoints
+
+@classes--margin: false;
+@classes--padding: false;
+@classes--util: sm, md, lg;
+@classes--icon: true; // only true or false
+@classes--layout: true;
+@classes--grid: sm, md, lg;
+
+//////////////////////
+// colors
+//////////////////////
+
+@white: #fff;
+@black: #000;
+@gray--200: #eff4fd;
+@gray--300: #e1e7f1;
+@gray--500: #7a7e8e;
+@gray--900: #373944;
+
+@primary: #fa1664;
+@primary--dark: darken(@primary, 5%);
+
+@secondary: @gray--200;
+@secondary--dark: darken(@secondary, 5%);
+
+@text: @gray--900;
+@text--dark: @black;
+
+@text--inverse: @white;
+@text--inverse--dark: @gray--200;
+
+// shadow
+// USAGE: box-shadow: @shadow--light;
+
+@shadow--dark: 0 .1rem 1rem fade(@gray--500, 40%), 0 .2rem 2rem fade(@gray--500, 80%);
+@shadow--light: 0 .1rem 1rem fade(@gray--300, 40%), 0 .2rem 2rem fade(@gray--300, 80%);
+@shadow--primary: 0 .1rem 1rem fade(@primary--dark, 10%), 0 .2rem 2rem fade(@primary--dark, 20%);
+@shadow--secondary: 0 .1rem 1rem fade(@secondary--dark, 40%), 0 .2rem 2rem fade(@secondary--dark, 80%);
+
+// gradient
+// USAGE: background: linear-gradient(135deg, @grad--light);
+
+@grad--dark: @gray--500 33%, darken(@gray--500, 2%) 100%;
+@grad--light: @gray--200 33%, darken(@gray--200, 2%) 100%;
+@grad--primary: @primary 33%, darken(@primary, 2%) 100%;
+@grad--secondary: @secondary 33%, darken(@secondary, 2%) 100%;
+
+//////////////////////
+// scrollbar
+//////////////////////
+
+.overflow-style(@mode: none) {
+  &::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+    background: transparent;
+    @media (hover: none) {
+      display: none;
+    }
+  }
+  &::-webkit-scrollbar-thumb {
+    background: fade(#888888, 40%);
+  }
+}

@@ -1,5 +1,5 @@
 import {Xt} from 'xtend-library'
-import {Scroll} from 'xtend-library/src/components/scroll/scroll'
+import {Scroll} from 'xtend-library/src/core/scroll/scroll'
 import {TweenMax} from 'gsap/TweenMax'
 
 /**

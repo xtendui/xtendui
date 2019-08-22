@@ -1,5 +1,5 @@
 import {Xt} from 'xtend-library'
-import {Slider} from 'xtend-library/src/components/slider/slider'
+import {Slider} from 'xtend-library/src/core/slider/slider'
 import {TweenMax} from 'gsap/TweenMax'
 
 import {MouseFollow} from 'xtend-library/src/extensions/animation/mouse-follow';

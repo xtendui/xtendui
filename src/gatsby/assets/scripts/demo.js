@@ -1,6 +1,6 @@
 import ClipboardJS from 'clipboard';
 import {Xt} from 'xtend-library'
-import {Toggle} from 'xtend-library/src/components/toggle/toggle'
+import {Toggle} from 'xtend-library/src/core/toggle/toggle'
 
 import Prism from 'prismjs';
 require('prismjs/plugins/unescaped-markup/prism-unescaped-markup');

@@ -1,4 +1,4 @@
-import {Toggle} from 'xtend-library/src/components/toggle/toggle'
+import {Toggle} from 'xtend-library/src/core/toggle/toggle'
 import {TweenMax} from 'gsap/TweenMax'
 import BezierEasing from 'bezier-easing'
 

@@ -1,0 +1,36 @@
+@import '~xtend-library/src/core/grid/grid-core';
+
+//////////////////////
+// variables
+//////////////////////
+
+// column
+
+@columns: 12;
+
+// container
+
+@container--max: 1340px; // max-width (none for full width)
+@container--space: none 1.5rem, xs 1.5rem, sm 3rem, md 3rem, lg 3rem, xl 3rem; // container and overlay spacing
+
+// row
+
+@row-spaces: none, micro, tiny, small, medium, big, giant; // if you change this change also variables names below
+@row-space--none: 0 0; // vertical horizontal
+@row-space--micro: .25rem .25rem;
+@row-space--tiny: .5rem .5rem;
+@row-space--small: .75rem .75rem;
+@row-space--medium: 1rem 1rem;
+@row-space--big: 1.5rem 1.5rem;
+@row-space--giant: 2rem 2rem;
+
+//////////////////////
+// row
+//////////////////////
+
+.row {
+  // option
+  .row-space(big);
+  flex-wrap: wrap;
+  flex-direction: row;
+}

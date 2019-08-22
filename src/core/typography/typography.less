@@ -1,0 +1,336 @@
+@import '~xtend-library/src/core/typography/typography-core';
+
+//////////////////////
+// font face
+//////////////////////
+
+@import (css) url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+.font-sans--regular() {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-sans--semibold() {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.font-monospace() {
+  font-family: monaco, Consolas, 'Lucida Console', monospace;
+  font-weight: normal;
+  font-style: normal;
+}
+
+//////////////////////
+// rem
+//////////////////////
+
+// rem
+
+html {
+  // base font size for rem
+  // 100% is 16px
+  // value(%) = desired(px) * 100 / 16
+  font-size: 56.25%; // 9px
+  @media @min-lg {
+    font-size: 62.5%; // 10px
+  }
+}
+
+body {
+  background: @white;
+  .font-sans--regular();
+  font-size: 1.4rem;
+  color: @text;
+  line-height: 1.6;
+}
+
+//////////////////////
+// size
+//////////////////////
+
+.font--medium {
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+.font--giant {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+//////////////////////
+// spacing
+//////////////////////
+
+.spacing--small {
+  .margin(top, small) !important;
+  .margin(bottom, small) !important;
+  .margin(y, layout) !important;
+}
+
+.spacing--medium {
+  .margin(top, medium) !important;
+  .margin(bottom, medium) !important;
+  .margin(y, layout) !important;
+}
+
+.spacing--big {
+  .margin(top, big) !important;
+  .margin(bottom, big) !important;
+  .margin(y, layout) !important;
+}
+
+//////////////////////
+// headers
+//////////////////////
+
+h1, .h1 {
+  .spacing--big();
+  .font-sans--semibold();
+  font-size: 4rem;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+h2, .h2 {
+  .spacing--big();
+  .font-sans--semibold();
+  font-size: 3.5rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+h3, .h3 {
+  .spacing--big();
+  .font-sans--semibold();
+  font-size: 2.5rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+h4, .h4 {
+  .spacing--medium();
+  .font-sans--semibold();
+  font-size: 2rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+h5, .h5 {
+  .spacing--medium();
+  .font-sans--semibold();
+  font-size: 1.7rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+h6, .h6 {
+  .spacing--medium();
+  font-size: 1.3rem;
+  line-height: 1.4;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+// additional headers here (ex: .h7)
+
+// special
+
+.header--line {
+  .spacing--big();
+  .padding(bottom, small);
+  border-bottom: 1px solid @gray--200;
+}
+
+.header--block {
+  .spacing--big();
+  .padding(y, small);
+  .padding(x, medium);
+  background: @gray--200;
+  text-align: center;
+}
+
+// subsequential headers margin reset
+
+h1, h2, h3, h4, h5, h6 {
+  & + & {
+    margin-top: 0 !important;
+  }
+}
+
+//////////////////////
+// text
+//////////////////////
+
+p {
+  .margin(y, layout) !important;
+  .margin(bottom, small);
+}
+
+strong {
+  .font-sans--semibold();
+}
+
+small {
+  font-size: .8em;
+}
+
+.muted {
+  opacity: .5;
+}
+
+// code
+
+code {
+  margin: 0 .05em;
+  padding: .05em .05em;
+  background: @gray--200 !important;
+  .font-monospace();
+  font-size: .9em;
+  color: @text;
+}
+
+pre {
+  overflow-x: hidden;
+  overflow-y: auto;
+  .overflow-style(@mode: inner);
+  .margin(y, layout) !important;
+  .margin(y, medium) !important;
+  .padding(all, medium) !important;
+  width: 100%;
+  border-radius: .5rem;
+  border-width: 0;
+  border-style: solid;
+  background: @gray--200 !important;
+  line-height: 0 !important;
+  code {
+    width: 100%;
+    .font-monospace();
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    white-space: pre-wrap !important;
+  }
+}
+
+//////////////////////
+// text--inverse
+//////////////////////
+
+.text--inverse {
+  color: @text--inverse;
+  h1, h2, h3, h4, h5, h6, div {
+    color: inherit;
+  }
+}
+
+//////////////////////
+// ul ol
+//////////////////////
+
+ul,
+ol {
+  .margin(top, none);
+  .margin(bottom, small);
+  padding-left: 2rem;
+  > li {
+    .margin(bottom, small);
+  }
+  > ul,
+  > ol {
+    .margin(y, small);
+  }
+}
+
+ul {
+  list-style: disc;
+  ul {
+    list-style: circle;
+  }
+}
+
+ol {
+  list-style-type: decimal;
+  ol {
+    list-style-type: lower-alpha;
+  }
+}
+
+// .list-reset
+// use this mixin to reset styles on xtend ul.list ul.slides_inner etc..
+
+.list-reset() {
+  cursor: default;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  > * {
+    margin: 0;
+  }
+}
+
+//////////////////////
+// dl
+//////////////////////
+
+dl {
+  .margin(bottom, layout);
+  .margin(bottom, small);
+  .dl--block();
+  line-height: 1.6;
+  dt {
+    .font-sans--semibold();
+  }
+  dd {
+    .font-sans--regular();
+  }
+}
+
+// .dl--block
+
+.dl--block {
+  dt {
+    .padding(top, small);
+  }
+  dd {
+    .padding(top, tiny);
+  }
+}
+
+// .dl--line
+
+.dl--line {
+  dt {
+    .padding(top, tiny);
+  }
+  dd {
+    .padding(left, small);
+    .padding(top, tiny);
+  }
+}
+
+// .dl--horizontal
+
+.dl--horizontal {
+  text-align: left;
+  dt {
+    .padding(top, tiny);
+    .padding(right, small);
+    float: left;
+    clear: left;
+    width: 80px;
+  }
+  dd {
+    .padding(left, small);
+    .padding(top, tiny);
+    margin-left: 80px;
+  }
+}
