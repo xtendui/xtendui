@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Xt} from 'xtend-library'
 
+import 'xtend-library/src/xtend-core'
 import 'xtend-library/src/xtend-demos'
 import 'xtend-library/src/xtend-extensions'
 import {makeDocument} from 'assets/scripts/theme'

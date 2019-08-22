@@ -8,6 +8,7 @@ import Sidebar from 'components/sidebar'
 import DocsAside from 'components/doc-aside'
 import DocsFoot from 'components/doc-foot'
 
+import 'xtend-library/src/xtend-core'
 import 'xtend-library/src/xtend-demos'
 import 'xtend-library/src/xtend-extensions'
 import {populateBlock} from 'assets/scripts/demo'

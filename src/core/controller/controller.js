@@ -278,7 +278,7 @@ class Controller {
     // init events
     self.initEvents();
     // listener dispatch
-    requestAnimationFrame( function () {
+    requestAnimationFrame(function () {
       let detail = self.eDetailSet();
       self.object.dispatchEvent(new CustomEvent('init.xt', {detail: detail}));
     });
@@ -867,7 +867,7 @@ class Controller {
     // restart
     let currents = self.getCurrents();
     for (let current of currents) {
-      self.eventOff(current);
+      self.eventOff(current, true);
     }
   }
 
@@ -1513,15 +1513,14 @@ class Controller {
   queueStopAll() {
     let self = this;
     // stop all obj in queues
-    let queues = [...self.detail['queue' + 'On'], ...self.detail['queue' + 'Off']];
-    for (let obj in queues) {
-      for (let type in queues[obj]) {
-        for (let el of queues[obj][type].queueEls) {
-          // clear timeout and frame
-          cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'));
-          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'));
-          clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'));
-        }
+    let actions = [
+      {current: 'On', other: 'Off'},
+      {current: 'Off', other: 'On'}
+    ];
+    for (let action of actions) {
+      let queue = self.detail['queue' + action.current];
+      for (let obj in queue) {
+        self.queueStop(action.current, action.other, obj);
       }
     }
   }
@@ -1628,7 +1627,6 @@ class Controller {
         }
       }
       // listener dispatch
-      el.dispatchEvent(new CustomEvent('on.xt', {bubbles: true, detail: obj[type].detail}));
     } else if (actionCurrent === 'Off') {
       // deactivate
       self.deactivate(el);
@@ -2128,7 +2126,7 @@ class Controller {
    * @param {Node|HTMLElement|EventTarget|Window} el Element
    * @param {Node|HTMLElement|EventTarget|Window} single Element to toggle
    */
-  specialClose(actionCurrent, el, single) {
+  specialClose(actionCurrent, el, single = null) {
     let self = this;
     let options = self.options;
     if (actionCurrent === 'On') {
@@ -2361,7 +2359,7 @@ class Controller {
           element.append(backdrop);
           // @FIX pass wheel event or when you mousewheel over .backdrop it doesn't scroll
           let eWheel = 'onwheel' in backdrop ? 'wheel' : backdrop.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll';
-          backdrop.addEventListener(eWheel, function(e) {
+          backdrop.addEventListener(eWheel, function (e) {
             let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY;
             element.scrollTop -= delta;
           }, Xt.passiveSupported ? {passive: false} : false);
@@ -2533,7 +2531,7 @@ class Controller {
     // stop auto
     self.eventAutoStop();
     // stop queue
-    self.queueStopAll();
+    self.queueStopAll(); // @FIX autoClose with appendTo outside ajax
     // remove events
     if (self.destroyElements) {
       for (let element of self.destroyElements) {

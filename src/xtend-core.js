@@ -3,6 +3,7 @@
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
 export const Xt = require('xtend-library/src/xtend').Xt
+
 if (typeof window !== 'undefined') {
 
 require('xtend-library/src/core/ajax/ajax')

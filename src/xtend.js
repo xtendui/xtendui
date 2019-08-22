@@ -153,8 +153,8 @@ if (typeof window !== 'undefined') {
     }
     for (let obj of Xt.unmount) {
       // check
-      if (removed === obj.element || removed.contains(obj.element)) {
-        if (obj.element.closest('.xt-ignore')) {
+      if (removed === obj.object || removed.contains(obj.object)) {
+        if (obj.object.closest('.xt-ignore')) {
           return false;
         }
         // call
