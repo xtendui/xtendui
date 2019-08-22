@@ -5,11 +5,11 @@ import BezierEasing from 'bezier-easing'
 
 Xt.mount.push({
   matches: '.demo--slider--toggle-js',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
     // vars
 
-    let slider = main;
+    let slider = object;
     let time = .8;
     let timeMask = .8;
     let timeContent = .8;
@@ -110,6 +110,13 @@ Xt.mount.push({
         }
       }
     });
+
+    // unmount
+
+    return function unmount() {
+      self.destroy();
+      self = null;
+    };
 
   }
 });

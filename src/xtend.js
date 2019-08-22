@@ -52,7 +52,6 @@ if (typeof window !== 'undefined') {
    * ready
    * @param {Function} fnc Function to execute on dom ready
    */
-
   Xt.ready = function (fnc) {
     if (document.readyState === 'complete') {
       requestAnimationFrame(function () {
@@ -93,20 +92,19 @@ if (typeof window !== 'undefined') {
   /**
    * observer
    */
-
   Xt.observer = new MutationObserver(function (mutationsList) {
     for (let mutation of mutationsList) {
       if (mutation.type === 'childList') {
-        // removed
-        for (let removed of mutation.removedNodes) {
-          if (removed.nodeType === 1) {
-            Xt.unmountCheck(removed);
-          }
-        }
         // added
         for (let added of mutation.addedNodes) {
           if (added.nodeType === 1) {
             Xt.mountCheck(added);
+          }
+        }
+        // removed
+        for (let removed of mutation.removedNodes) {
+          if (removed.nodeType === 1) {
+            Xt.unmountCheck(removed);
           }
         }
       }
@@ -114,10 +112,51 @@ if (typeof window !== 'undefined') {
   });
 
   /**
-   * destroyCheck
+   * mountCheck
+   * @param {Node|HTMLElement|EventTarget|Window} added
+   */
+  Xt.mountCheck = function (added = document.documentElement) {
+    let addedIgnore = added.closest('.xt-ignore');
+    if (addedIgnore) {
+      Xt.ignoreOnce(addedIgnore); // @FIX ignore once for mount when moving
+      return false;
+    }
+    for (let obj of Xt.mount) {
+      // check
+      let els = [];
+      if (added.matches(obj.matches)) {
+        els.push(added);
+      }
+      for (let element of added.querySelectorAll(obj.matches)) {
+        els.push(element);
+      }
+      // call
+      if (els.length) {
+        for (let [i, el] of els.entries()) {
+          let elIgnore = el.closest('.xt-ignore');
+          if (elIgnore) {
+            Xt.ignoreOnce(elIgnore); // @FIX ignore once for mount when moving
+            continue;
+          }
+          // call
+          requestAnimationFrame(function () { // @FIX react when componentDidMount
+            let destroy = obj.fnc(el, i, obj.matches); // object, index, matches
+            if (destroy) {
+              Xt.unmount.push({
+                object: el,
+                fnc: destroy
+              });
+            }
+          });
+        }
+      }
+    }
+  };
+
+  /**
+   * unmountCheck
    * @param {Node|HTMLElement|EventTarget|Window} removed
    */
-
   Xt.unmountCheck = function (removed = document.documentElement) {
     if (removed.closest('.xt-ignore')) {
       return false;
@@ -130,44 +169,6 @@ if (typeof window !== 'undefined') {
         }
         // call
         obj.fnc();
-      }
-    }
-  };
-
-  /**
-   * observeCheck
-   * @param {Node|HTMLElement|EventTarget|Window} added
-   */
-
-  Xt.mountCheck = function (added = document.documentElement) {
-    if (added.closest('.xt-ignore')) {
-      return false;
-    }
-    for (let obj of Xt.mount) {
-      // check
-      let els = [];
-      for (let element of added.querySelectorAll(obj.matches)) {
-        els.push(element);
-      }
-      if (added.matches(obj.matches)) {
-        els.push(added);
-      }
-      // call
-      if (els.length) {
-        for (let [i, el] of els.entries()) {
-          if (el.closest('.xt-ignore')) {
-            return false;
-          }
-          requestAnimationFrame( function() { // @FIX react when componentDidMount
-            let destroy = obj.fnc(el, i, obj.matches);
-            if (destroy) {
-              Xt.unmount.push({
-                element: el,
-                fnc: destroy
-              });
-            }
-          })
-        }
       }
     }
   };
@@ -193,6 +194,15 @@ if (typeof window !== 'undefined') {
    */
   Xt.get = function (name, element) {
     return Xt.dataStorage.get(element, name);
+  };
+
+  /**
+   * remove component
+   * @param {String} name Component name
+   * @param {Node|HTMLElement|EventTarget|Window} element Component's element
+   */
+  Xt.remove = function (name, element) {
+    return Xt.dataStorage.remove(element, name);
   };
 
   //////////////////////
@@ -972,6 +982,20 @@ if (typeof window !== 'undefined') {
       });
     }
   };
+
+  /**
+   * ignoreOnce
+   * @param {Node|HTMLElement|EventTarget|Window} el
+   */
+  Xt.ignoreOnce = function (el) {
+    if (el.classList.contains('xt-ignore--once')) {
+      requestAnimationFrame(function () { // @FIX react when componentDidMount
+        requestAnimationFrame(function () { // @FIX react when componentDidMount
+          el.classList.remove('xt-ignore', 'xt-ignore--once');
+        });
+      });
+    }
+  }
 
   /**
    * get transition or animation time

@@ -2,15 +2,15 @@ import {Xt} from 'xtend-library'
 import {Slider} from 'xtend-library/src/components/slider/slider'
 import {TweenMax} from 'gsap/TweenMax'
 
-import {mouseFollow} from 'xtend-library/src/extensions/general/mouse-follow';
+import {MouseFollow} from 'xtend-library/src/extensions/animation/mouse-follow';
 
 Xt.mount.push({
   matches: '.demo--slider--progress',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
     // vars
 
-    let slider = main;
+    let slider = object;
     let timeHide = 300;
     let easeLinear = Power0.easeNone;
 
@@ -107,13 +107,21 @@ Xt.mount.push({
     let element = document.querySelector('.loader--mouse');
     let container = slider;
 
-    mouseFollow({
-      element: element,
+    let mouseFollow = new MouseFollow({
+      object: element,
       container: container,
       mouseCheck: function(options) {
-        return !options.element.classList.contains('loader--disable') || options.element.classList.contains('loader--js');
+        return !this.object.classList.contains('loader--disable') || this.object.classList.contains('loader--js');
       }
     });
+
+    // unmount
+
+    return function unmount() {
+      self.destroy();
+      self = null;
+      mouseFollow.destroy();
+    };
 
   }
 });

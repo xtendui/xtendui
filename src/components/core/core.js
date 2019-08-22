@@ -22,7 +22,7 @@ export class Core {
     self.optionsJs = optionsJs;
     self.componentName = self.constructor.componentName;
     self.componentNamespace = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '');
-    // @FIX multiple initializations when setting position fixed
+    // @FIX multiple initializations
     let alreadyDefinedInstance = Xt.get(self.componentName, self.object)
     if (!alreadyDefinedInstance) {
       // set
@@ -1604,7 +1604,7 @@ export class Core {
           if (!appendOrigin) {
             el.before(Xt.createElement('<div class="xt-ignore" data-xt-origin=' + self.namespace + '></div>'));
           }
-          el.classList.add('xt-ignore'); // @FIX ignore Xt.observer and init
+          el.classList.add('xt-ignore', 'xt-ignore--once'); // @FIX ignore once for mount when moving
           appendToTarget.appendChild(el);
         }
       }
@@ -1723,9 +1723,6 @@ export class Core {
           if (appendOrigin) {
             appendOrigin.before(el);
             appendOrigin.remove();
-            requestAnimationFrame(function () {
-              el.classList.remove('xt-ignore'); // @FIX ignore Xt.observer and init
-            });
           } else {
             el.remove();
           }
@@ -2559,11 +2556,10 @@ export class Core {
     }
     // not weak destroy
     if (!weak) {
-      // unmount
+      Xt.remove(self.componentName, self.object);
       if (self.unmount) {
         self.unmount();
       }
-      // destroy
       delete this;
     }
   }
@@ -2582,11 +2578,11 @@ Core.componentName = 'xt-core';
 
 Xt.mount.push({
   matches: '[data-' + Core.componentName + ']',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
-    let self = new Core(main, main.getAttribute('data-' + Core.componentName));
+    let self = new Core(object, object.getAttribute('data-' + Core.componentName));
 
-    // destroy
+    // unmount
 
     return function unmount() {
       self.destroy();

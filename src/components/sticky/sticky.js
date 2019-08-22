@@ -40,11 +40,8 @@ export class Sticky extends Core {
       if (!container) {
         container = Xt.createElement('<div class="xt-container xt-fixed--check"></div>');
         el.before(container);
-        el.classList.add('xt-ignore'); // @FIX ignore Xt.observer and init
+        el.classList.add('xt-ignore', 'xt-ignore--once'); // @FIX ignore once for mount when moving
         container.append(el);
-        requestAnimationFrame( function () {
-          el.classList.remove('xt-ignore'); // @FIX ignore Xt.observer and init
-        });
       }
       el.style[options.position] = '0px';
       // sticky clone
@@ -52,6 +49,7 @@ export class Sticky extends Core {
       if (!target) {
         target = el.cloneNode(true);
         target.classList.add('xt-clone', 'xt-ignore');
+        target.classList.remove('xt-ignore--once'); // @FIX ignore once for mount when moving
         for (let elId of target.querySelectorAll('[id]')) {
           elId.setAttribute('id', elId.getAttribute('id') + '-clone');
         }
@@ -116,7 +114,7 @@ export class Sticky extends Core {
     }
     // autoClose
     let autoCloseHandler = Xt.dataStorage.put(self.object, 'hide' + '.' + self.namespace,
-      Xt.autoClose.bind(this, self.object));
+      Xt.autoClose.bind(self, self.object));
     self.object.addEventListener('hide.xt.sticky', autoCloseHandler);
     // focusin
     let focusInHandler = Xt.dataStorage.put(document, 'focusin' + '.' + self.namespace,
@@ -453,11 +451,11 @@ Sticky.optionsDefault = {
 
 Xt.mount.push({
   matches: '[data-' + Sticky.componentName + ']',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
-    let self = new Sticky(main, main.getAttribute('data-' + Sticky.componentName));
+    let self = new Sticky(object, object.getAttribute('data-' + Sticky.componentName));
 
-    // destroy
+    // unmount
 
     return function unmount() {
       self.destroy();

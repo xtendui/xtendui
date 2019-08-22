@@ -7,11 +7,11 @@ import {Xt} from 'xtend-library'
 /*
 Xt.mount.push({
   matches: 'html',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
     let self = new Smooth(document.scrollingElement, {});
 
-    // destroy
+    // unmount
 
     return function unmount() {
       self.destroy();

@@ -81,11 +81,11 @@ Overlay.optionsDefault = {
 
 Xt.mount.push({
   matches: '[data-' + Overlay.componentName + ']',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
-    let self = new Overlay(main, main.getAttribute('data-' + Overlay.componentName));
+    let self = new Overlay(object, object.getAttribute('data-' + Overlay.componentName));
 
-    // destroy
+    // unmount
 
     return function unmount() {
       self.destroy();

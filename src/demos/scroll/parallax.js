@@ -8,11 +8,11 @@ import {TweenMax} from 'gsap/TweenMax'
 
 Xt.mount.push({
   matches: '.demo--parallax_title',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
     // vars
 
-    let parallaxTitle = main;
+    let parallaxTitle = object;
 
     // xt-scroll
 
@@ -34,6 +34,13 @@ Xt.mount.push({
 
     }
 
+    // unmount
+
+    return function unmount() {
+      self.destroy();
+      self = null;
+    };
+
   }
 });
 
@@ -44,11 +51,11 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--parallax_img',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
     // vars
 
-    let parallaxImg = main;
+    let parallaxImg = object;
 
     // xt-scroll
 
@@ -69,6 +76,13 @@ Xt.mount.push({
 
     }
 
+    // unmount
+
+    return function unmount() {
+      self.destroy();
+      self = null;
+    };
+
   }
 });
 
@@ -78,11 +92,11 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--parallax_footer',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
     // vars
 
-    let parallaxFooter = main;
+    let parallaxFooter = object;
 
     // xt-scroll
 
@@ -102,6 +116,13 @@ Xt.mount.push({
       });
 
     }
+
+    // unmount
+
+    return function unmount() {
+      self.destroy();
+      self = null;
+    };
 
   }
 });

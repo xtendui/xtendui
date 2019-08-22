@@ -44,17 +44,15 @@ export class Scroll extends Core {
         if (!container) {
           container = Xt.createElement('<div class="xt-container xt-fixed--check"></div>');
           el.before(container);
-          el.classList.add('xt-ignore'); // @FIX ignore Xt.observer and init
+          el.classList.add('xt-ignore', 'xt-ignore--once'); // @FIX ignore once for mount when moving
           container.append(el);
-          requestAnimationFrame( function () {
-            el.classList.remove('xt-ignore'); // @FIX ignore Xt.observer and init
-          });
         }
         // sticky clone
         let target = container.querySelector('.xt-clone');
         if (!target) {
           target = el.cloneNode(true);
           target.classList.add('xt-clone', 'xt-ignore');
+          target.classList.remove('xt-ignore--once'); // @FIX ignore once for mount when moving
           for (let elId of target.querySelectorAll('[id]')) {
             elId.setAttribute('id', elId.getAttribute('id') + '-clone');
           }
@@ -310,7 +308,7 @@ Xt.mount.push({
 
     let self = new Scroll(main, main.getAttribute('data-' + Scroll.componentName));
 
-    // destroy
+    // unmount
 
     return function unmount() {
       self.destroy();

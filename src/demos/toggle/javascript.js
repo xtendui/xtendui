@@ -8,7 +8,7 @@ import BezierEasing from 'bezier-easing'
 
 Xt.mount.push({
   matches: '#demo--toggle-js-0',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
     // vars
 
@@ -19,7 +19,7 @@ Xt.mount.push({
     let easeIn = new Ease(BezierEasing(.14, .63, 0, 1));
     let easeOut = new Ease(BezierEasing(.14, .63, 0, 1));
 
-    let toggle = main;
+    let toggle = object;
 
     // xt-toggle
 
@@ -63,7 +63,7 @@ Xt.mount.push({
 
     }
 
-    // destroy
+    // unmount
 
     return function unmount() {
       self.destroy();
@@ -79,7 +79,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#demo--toggle-js-1',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
     // vars
 
@@ -90,7 +90,7 @@ Xt.mount.push({
     let easeIn = new Ease(BezierEasing(.14,.63,0,1));
     let easeOut = new Ease(BezierEasing(.14,.63,0,1));
 
-    let toggle = main;
+    let toggle = object;
 
     // xt-toggle
 
@@ -136,7 +136,7 @@ Xt.mount.push({
 
     }
 
-    // destroy
+    // unmount
 
     return function unmount() {
       self.destroy();

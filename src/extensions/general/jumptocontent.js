@@ -6,15 +6,15 @@ import {Xt} from 'xtend-library'
 
 Xt.mount.push({
   matches: '.jumptocontent',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
     // vars
 
-    let jumptocontent = main;
+    let jumptocontent = object;
 
-    // toggle
+    // event
 
-    document.addEventListener('focusin', function (e) {
+    let documentFocusIn = function(e) {
       let active = jumptocontent.contains(e.target);
       if (active) {
         jumptocontent.classList.remove('sr-only');
@@ -26,7 +26,15 @@ Xt.mount.push({
           jumptocontent.classList.add('sr-only');
         });
       }
-    });
+    };
+
+    document.addEventListener('focusin', documentFocusIn);
+
+    // unmount
+
+    return function unmount() {
+      document.removeEventListener('focusin', documentFocusIn);
+    };
 
   }
 });

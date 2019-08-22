@@ -1035,11 +1035,11 @@ Slider.optionsDefault = {
 
 Xt.mount.push({
   matches: '[data-' + Slider.componentName + ']',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
-    let self = new Slider(main, main.getAttribute('data-' + Slider.componentName));
+    let self = new Slider(object, object.getAttribute('data-' + Slider.componentName));
 
-    // destroy
+    // unmount
 
     return function unmount() {
       self.destroy();

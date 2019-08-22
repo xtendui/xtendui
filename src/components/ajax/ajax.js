@@ -385,11 +385,11 @@ Ajax.optionsDefault = {
 
 Xt.mount.push({
   matches: '[data-' + Ajax.componentName + ']',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
-    let self = new Ajax(main, main.getAttribute('data-' + Ajax.componentName));
+    let self = new Ajax(object, object.getAttribute('data-' + Ajax.componentName));
 
-    // destroy
+    // unmount
 
     return function unmount() {
       self.destroy();

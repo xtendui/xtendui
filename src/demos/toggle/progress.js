@@ -7,11 +7,11 @@ import {TweenMax} from 'gsap/TweenMax'
 
 Xt.mount.push({
   matches: '.demo--toggle--progress',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
     // vars
 
-    let list = main;
+    let list = object;
     let timeHide = 300;
     let easeLinear = Power0.easeNone;
 
@@ -89,7 +89,7 @@ Xt.mount.push({
       }
     });
 
-    // destroy
+    // unmount
 
     return function unmount() {
       self.destroy();

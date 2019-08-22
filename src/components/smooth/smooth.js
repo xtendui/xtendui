@@ -48,11 +48,11 @@ Smooth.optionsDefault = {
 
 Xt.mount.push({
   matches: '[data-' + Smooth.componentName + ']',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
-    let self = new Smooth(main, main.getAttribute('data-' + Smooth.componentName));
+    let self = new Smooth(object, object.getAttribute('data-' + Smooth.componentName));
 
-    // destroy
+    // unmount
 
     return function unmount() {
       self.destroy();

@@ -4,11 +4,11 @@
 
 Xt.mount.push({
   matches: '.multilevel',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
     // vars
 
-    let multilevel = main;
+    let multilevel = object;
 
     // btnReset
 

@@ -6,14 +6,14 @@ import {TweenMax} from 'gsap/TweenMax'
 
 Xt.mount.push({
   matches: '.demo--loader--js-filler',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
     // vars
 
     let time = 2000;
     let easeLinear = Power0.easeNone;
 
-    let loader = main;
+    let loader = object;
 
     // timeout
 

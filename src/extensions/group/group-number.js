@@ -6,29 +6,27 @@ import {Xt} from 'xtend-library'
 
 Xt.mount.push({
   matches: '.group-number',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
     // vars
 
-    let groupNumber = main;
+    let groupNumber = object;
 
     // methods
 
     function inputNumberChange(step, e) {
       if (!e || !e.detail || !e.detail.skip) {
-        let main = this;
-        let input = main.querySelector('input');
+        let input = object.querySelector('input');
         let val = parseFloat(input.value);
         val = val + step;
-        inputNumberValidate.bind(main)(val);
+        inputNumberValidate.bind(object)(val);
       }
     }
 
     function inputNumberValidate(val) {
-      let main = this;
-      let input = main.querySelector('input');
-      let addEl = main.querySelector('.group-number-add');
-      let removeEl = main.querySelector('.group-number-remove');
+      let input = object.querySelector('input');
+      let addEl = object.querySelector('.group-number-add');
+      let removeEl = object.querySelector('.group-number-remove');
       // disabled
       addEl.removeAttribute('disabled');
       removeEl.removeAttribute('disabled');

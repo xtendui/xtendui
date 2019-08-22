@@ -4,11 +4,11 @@
 
 Xt.mount.push({
   matches: '#demo--toggle--restart',
-  fnc: function mount(main, index, query) {
+  fnc: function mount(object) {
 
     // vars
 
-    let btn = main;
+    let btn = object;
 
     // event
 
