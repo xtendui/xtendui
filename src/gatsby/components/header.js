@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import {Link} from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
 
-import logo from 'assets/images/logo.svg'
+import logo from 'assets/images/logo-white.svg'
+
+import logoIcon from 'assets/images/logo-icon-white.svg'
 
 class Header extends React.Component {
   render() {
@@ -18,10 +20,10 @@ class Header extends React.Component {
             <div className="row row-space--none site_header_top_row">
               <div className="site_header_top_left">
                 <div className="container full">
-                  <Link to="/" aria-label="Home"
-                        className={`logo
+                  <Link to="/" title="Home"
+                        className={`logo-icon
                                     ${seo.title.toLowerCase() === 'home' ? 'active' : ''}`}>
-                    <img src={logo} alt={site.site.siteMetadata.title}/>
+                    <img src={logoIcon} alt={site.site.siteMetadata.title}/>
                   </Link>
                 </div>
               </div>
@@ -49,11 +51,11 @@ class Header extends React.Component {
                 <div className="container full">
                   <div className="site_header_top_social">
                     <a href={site.site.siteMetadata.github} target="_blank" rel="noopener"
-                       className="btn btn--site_header_top_social" aria-label="Github">
+                       className="btn btn--site_header_top_social" title="Github">
                       <span><span className="icon-github icon--big"></span></span>
                     </a>
                     <a href={site.site.siteMetadata.npm} target="_blank" rel="noopener"
-                       className="btn btn--site_header_top_social" aria-label="Npm">
+                       className="btn btn--site_header_top_social" title="Npm">
                       <span><span className="icon-npm icon--big"></span></span>
                     </a>
                   </div>

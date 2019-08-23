@@ -91,7 +91,7 @@ class Layout extends React.Component {
                 </div>
               </main>
 
-              <Footer site={data}/>
+              <Footer site={data} seo={seo}/>
 
             </div>
           </>

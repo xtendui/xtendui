@@ -1,4 +1,37 @@
 //////////////////////
+// logo-icon
+//////////////////////
+
+.logo-icon {
+  .link--none();
+  display: inline-flex;
+  .align-items(center);
+  height: 100%;
+  .site_header & {
+    .padding(y, 1.5rem);
+  }
+  img {
+    width: 2rem;
+    height: 1.4rem;
+    .site_header & {
+      width: 3.4rem;
+      height: 2.4rem;
+    }
+  }
+  // animation
+  img {
+    transition-property: opacity;
+    transition-duration: @time--small;
+    transition-timing-function: @bez--out;
+  }
+  &:hover, &.hover, &:active {
+    img {
+      opacity: 0.9;
+    }
+  }
+}
+
+//////////////////////
 // .btn--site_header_top_link
 //////////////////////
 

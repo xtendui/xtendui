@@ -8,6 +8,9 @@
   .padding(top, medium);
   .padding(bottom, medium);
   font-size: 12px;
+  .separator {
+    vertical-align: text-top;
+  }
   a {
     .font-sans--semibold();
     color: @black;
@@ -23,20 +26,20 @@
 .site_footer_bottom_row {
   .flex--auto();
   @media @max-sm {
-    .row-space(none);
+    .row-space(tiny);
     flex-direction: column;
     justify-content: center;
     line-height: 1.8;
     text-align: center;
-    .separator {
-      display: none;
-    }
   }
   @media @min-sm {
-    .row-space(tiny);
+    .row-space(small);
     justify-content: space-between;
-    br {
-      display: none;
-    }
+  }
+}
+
+.site_footer_bottom_right {
+  @media @min-sm {
+    margin-left: auto;
   }
 }

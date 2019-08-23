@@ -2,11 +2,7 @@
 // header
 //////////////////////
 
-@site_header_height: 6rem;
-
-.site_header {
-  height: @site_header_height;
-}
+@site_header_height: 5.5rem;
 
 .site_header_top_left {
   width: @site_article_sidebar_width;
@@ -18,33 +14,6 @@
 
 .site_header_top_right {
   width: @site_article_aside_width;
-}
-
-// .logo
-
-.logo {
-  float: left;
-  .link--none();
-  display: flex;
-  .align-items(center);
-  .padding(y, medium);
-  img {
-    width: 6.6rem;
-    height: 2rem;
-  }
-  // animation
-  img {
-    transform-origin: left center;
-    transition-property: transform, opacity;
-    transition-duration: @time--small;
-    transition-timing-function: @bez--out;
-  }
-  &:hover, &.hover, &:active, &.active {
-    img {
-      transform: scale(1.1);
-      opacity: 0.8;
-    }
-  }
 }
 
 // .site_header

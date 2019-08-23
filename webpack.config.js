@@ -4,7 +4,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-  mode: 'production', // production for minification
+  mode: 'production',
   context: path.resolve(__dirname, ''),
   entry: {
     'src/xtend-core': ['./src/xtend-core.js', './src/xtend-core.less'],
