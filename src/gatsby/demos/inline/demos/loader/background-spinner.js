@@ -7,8 +7,6 @@ export const demo = {
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
   type: dirs.pop(),
-  css: false,
-  js: false,
 }
 
 demo.htmlSource = `

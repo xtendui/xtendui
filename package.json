@@ -9,8 +9,8 @@
   "keywords": [
     "frontend",
     "library",
-    "vanilla",
-    "components"
+    "components",
+    "vanilla"
   ],
   "main": "src/xtend-core.min.js",
   "module": "src/xtend.js",
