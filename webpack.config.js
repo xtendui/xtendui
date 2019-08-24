@@ -15,7 +15,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'xtend-library': path.resolve(__dirname, './'), // resolve xtend-library js
+      'xtend-library': path.resolve(__dirname, './'), // resolve xtend-library js and less
     },
   },
   module: {
@@ -34,9 +34,6 @@ module.exports = {
             loader: 'less-loader',
             options: {
               sourceMap: true,
-              paths: [
-                path.resolve(__dirname, './'), // resolve xtend-library less
-              ],
             },
           },
         ]

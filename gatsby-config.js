@@ -19,14 +19,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
-    {
-      resolve: `gatsby-plugin-less`,
-      options: {
-        paths: [
-          path.resolve(__dirname, './'), // resolve xtend-library
-        ],
-      },
-    },
+    `gatsby-plugin-less`,
     // manifest
     {
       resolve: `gatsby-plugin-manifest`,

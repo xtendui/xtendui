@@ -2,7 +2,7 @@
 @copyright (c) 2017 - 2019 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
-export const Xt = require('xtend-library/src/xtend').Xt
+export const Xt = require('xtend-library').Xt
 
 if (typeof window !== 'undefined') {
 

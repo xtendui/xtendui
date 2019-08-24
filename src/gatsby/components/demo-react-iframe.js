@@ -34,13 +34,11 @@ class DemoReactIframe extends React.Component {
               <div id="body-inner" className="demo_source--from">
                 {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.jsx`).map((file, index) => (
                   demo.jsSource = jsSource(demo, '.jsx')
-                )) &&
-                <div/> // @FIX react render string
+                )) && <div/> // @FIX react render string
                 }
                 {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`).map((file, index) => (
                   demo.cssSource = cssSource(demo)
-                )) &&
-                <div/> // @FIX react render string
+                )) && <div/> // @FIX react render string
                 }
                 <demo.Component></demo.Component>
               </div>
