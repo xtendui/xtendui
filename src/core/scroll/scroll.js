@@ -130,7 +130,7 @@ class Scroll extends Xt.Controller {
   eventScrollHandler(e = null, initial = false) {
     let self = this;
     // handler
-    if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
+    if (!e || !e.detail || !e.detail.skip) { // @FIX filter triggered from library (use only in library)
       Xt.eventDelay(e, self.object, function () {
         self.eventScroll(e, initial);
       }, self.componentNamespace + 'Resize');

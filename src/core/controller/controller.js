@@ -631,8 +631,9 @@ class Controller {
     let self = this;
     let options = self.options;
     // handler
-    if (element === e.target || element.contains(e.target)) { // @FIX on.xt and off.xt: handler triggered by child xt events
-      if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
+    if (element === e.target // @FIX on.xt and off.xt event bubbles
+      || element.contains(e.target)) { // @FIX on.xt and off.xt event bubbles (use only in library)
+      if (!e || !e.detail || !e.detail.skip) { // @FIX filter triggered from library (use only in library)
         // event block
         if (options.onBlock) {
           let now = new Date().getTime();
@@ -664,8 +665,9 @@ class Controller {
     let self = this;
     let options = self.options;
     // handler
-    if (element === e.target || element.contains(e.target)) { // @FIX on.xt and off.xt: handler triggered by child xt events
-      if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
+    if (element === e.target // @FIX on.xt and off.xt event bubbles
+      || element.contains(e.target)) { // @FIX on.xt and off.xt event bubbles (use only in library)
+      if (!e || !e.detail || !e.detail.skip) { // @FIX filter triggered from library (use only in library)
         // event block
         if (options.offBlock) {
           let now = new Date().getTime();
@@ -753,7 +755,7 @@ class Controller {
    */
   eventAutoPauseHandler(e) {
     let self = this;
-    if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
+    if (!e || !e.detail || !e.detail.skip) { // @FIX filter triggered from library (use only in library)
       if (!self.detail.autoPaused) {
         self.eventAutoPause();
         // paused
@@ -768,7 +770,7 @@ class Controller {
    */
   eventAutoResumeHandler(e) {
     let self = this;
-    if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
+    if (!e || !e.detail || !e.detail.skip) { // @FIX filter triggered from library (use only in library)
       if (self.detail.autoPaused) {
         self.eventAutoStart();
         // paused

@@ -435,7 +435,7 @@ class Slider extends Xt.Controller {
   eventSlideOnHandler(dragger, slide, e) {
     let self = this;
     // handler
-    if (slide === e.target || slide.contains(e.target)) { // @FIX on.xt and off.xt: handler triggered by child xt events
+    if (slide === e.target) { // @FIX on.xt and off.xt event bubbles
       self.eventSlideOn(dragger, e);
     }
   }
@@ -449,7 +449,7 @@ class Slider extends Xt.Controller {
   eventSlideOffHandler(dragger, slide, e) {
     let self = this;
     // handler
-    if (slide === e.target || slide.contains(e.target)) { // @FIX on.xt and off.xt: handler triggered by child xt events
+    if (slide === e.target) { // @FIX on.xt and off.xt event bubbles
       self.eventSlideOff(dragger, e);
     }
   }

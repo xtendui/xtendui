@@ -156,7 +156,7 @@ class Ajax extends Xt.Controller {
    * @param {Event} e
    */
   eventOnHandler(element, e) {
-    if (!e || !e.detail || !e.detail.skip) { // needed because we trigger .xt event
+    if (!e || !e.detail || !e.detail.skip) { // @FIX filter triggered from library (use only in library)
       // not when opening in new tab
       if (e.metaKey || e.ctrlKey) {
         return false;

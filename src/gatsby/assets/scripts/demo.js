@@ -136,16 +136,18 @@ const populateDemo = function (container, i) {
       // load
       let iframe = item.querySelector('iframe');
       item.addEventListener('on.xt', function (e) {
-        if (item === e.target || item.contains(e.target)) { // @FIX on.xt and off.xt: handler triggered by child xt events
+        if (item === e.target) { // @FIX on.xt and off.xt event bubbles
           if (!item.classList.contains('loaded')) {
             loadIframe(iframe);
           }
         }
       });
       item.addEventListener('off.xt', function (e) {
-        if (item === e.target || item.contains(e.target)) { // @FIX on.xt and off.xt: handler triggered by child xt events
-          item.classList.remove('loaded');
-          unloadIframe(iframe);
+        if (item === e.target) { // @FIX on.xt and off.xt event bubbles
+          if (item.classList.contains('loaded')) {
+            item.classList.remove('loaded');
+            unloadIframe(iframe);
+          }
         }
       });
     } else if (item.getAttribute('data-shadow')) {
@@ -195,7 +197,7 @@ const populateDemo = function (container, i) {
   let codes = container.querySelectorAll('.btn--show-code');
   for (let code of codes) {
     code.addEventListener('on.xt', function (e) {
-      if (code === e.target || code.contains(e.target)) { // @FIX on.xt and off.xt: handler triggered by child xt events
+      if (code === e.target) { // @FIX on.xt and off.xt event bubbles
         let btns = document.querySelectorAll('.btn--show-code.active');
         for (let btn of btns) {
           if (btn !== code) {
@@ -227,7 +229,7 @@ const populateDemo = function (container, i) {
   });
   for (let btn of container.querySelectorAll('.demo_tabs_left .btn')) {
     btn.addEventListener('off.xt', function (e) {
-      if (btn === e.target || btn.contains(e.target)) { // @FIX on.xt and off.xt: handler triggered by child xt events
+      if (btn === e.target) { // @FIX on.xt and off.xt event bubbles
         container.querySelector('.btn--show-code').dispatchEvent(new CustomEvent('off.xt'));
       }
     });
