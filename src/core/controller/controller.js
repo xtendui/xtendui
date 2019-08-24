@@ -1627,6 +1627,7 @@ class Controller {
         }
       }
       // listener dispatch
+      el.dispatchEvent(new CustomEvent('on.xt', {bubbles: true, detail: obj[type].detail}));
     } else if (actionCurrent === 'Off') {
       // deactivate
       self.deactivate(el);
