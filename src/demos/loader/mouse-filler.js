@@ -1,5 +1,5 @@
 import {Xt} from 'xtend-library'
-import 'xtend-library/src/extensions/animation/mouse-follow';
+import 'xtend-library/src/extensions/animation/mouse-follow.js';
 
 /**
  * .demo--loader--mouse-filler

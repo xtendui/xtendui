@@ -1,7 +1,7 @@
 import {Xt} from 'xtend-library'
-import 'xtend-library/src/core/slider/slider'
-import 'xtend-library/src/extensions/animation/mouse-follow';
 import {TweenMax} from 'gsap/TweenMax'
+import 'xtend-library/src/core/slider/slider.js'
+import 'xtend-library/src/extensions/animation/mouse-follow.js';
 
 Xt.mount.push({
   matches: '.demo--slider--progress',

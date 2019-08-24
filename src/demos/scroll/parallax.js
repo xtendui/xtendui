@@ -1,6 +1,6 @@
 import {Xt} from 'xtend-library'
-import 'xtend-library/src/core/scroll/scroll'
 import {TweenMax} from 'gsap/TweenMax'
+import 'xtend-library/src/core/scroll/scroll.js'
 
 /**
  * .demo--parallax_title

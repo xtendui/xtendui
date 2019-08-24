@@ -26,11 +26,18 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: {sourceMap: true},
+            options: {
+              sourceMap: true
+            },
           },
           {
             loader: 'less-loader',
-            options: {sourceMap: true},
+            options: {
+              sourceMap: true,
+              paths: [
+                path.resolve(__dirname, './'), // resolve xtend-library
+              ],
+            },
           },
         ]
       },

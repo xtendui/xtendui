@@ -1,7 +1,7 @@
 import {Xt} from 'xtend-library'
-import 'xtend-library/src/core/toggle/toggle'
 import {TweenMax} from 'gsap/TweenMax'
 import BezierEasing from 'bezier-easing'
+import 'xtend-library/src/core/toggle/toggle.js'
 
 /**
  * #demo--toggle-js-0

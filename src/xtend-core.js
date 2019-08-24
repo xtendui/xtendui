@@ -6,14 +6,14 @@ export const Xt = require('xtend-library/src/xtend').Xt
 
 if (typeof window !== 'undefined') {
 
-require('xtend-library/src/core/ajax/ajax')
-require('xtend-library/src/core/controller/controller')
-require('xtend-library/src/core/drop/drop')
-require('xtend-library/src/core/overlay/overlay')
-require('xtend-library/src/core/scroll/scroll')
-require('xtend-library/src/core/slider/slider')
-require('xtend-library/src/core/smooth/smooth')
-require('xtend-library/src/core/sticky/sticky')
-require('xtend-library/src/core/toggle/toggle')
+require('xtend-library/src/core/ajax/ajax.js')
+require('xtend-library/src/core/controller/controller.js')
+require('xtend-library/src/core/drop/drop.js')
+require('xtend-library/src/core/overlay/overlay.js')
+require('xtend-library/src/core/scroll/scroll.js')
+require('xtend-library/src/core/slider/slider.js')
+require('xtend-library/src/core/smooth/smooth.js')
+require('xtend-library/src/core/sticky/sticky.js')
+require('xtend-library/src/core/toggle/toggle.js')
 
 }

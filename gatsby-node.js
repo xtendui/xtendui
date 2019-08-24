@@ -30,7 +30,7 @@ const copyrightBanner = `/*! Xtend v${version} (https://getxtend.com/)
 let lessCore = copyrightBanner
 const lessCoreGlob = new glob.Glob('src/core/**/*.less', {"ignore":['**/*-core.less']}, function (er, files) {
   for (let file of files) {
-    lessCore += `@import '~xtend-library/${file}';\n`
+    lessCore += `@import '${file}';\n`
   }
 })
 lessCoreGlob.on('end', function(filepath) {
@@ -42,7 +42,7 @@ lessCoreGlob.on('end', function(filepath) {
 let lessDemos = copyrightBanner
 const lessDemosGlob = new glob.Glob('src/demos/**/*.less', function (er, files) {
   for (let file of files) {
-    lessDemos += `@import '~xtend-library/${file}';\n`
+    lessDemos += `@import '${file}';\n`
   }
 })
 lessDemosGlob.on('end', function(filepath) {
@@ -54,7 +54,7 @@ lessDemosGlob.on('end', function(filepath) {
 let lessExtensions = copyrightBanner
 const lessExtensionsGlob = new glob.Glob('src/extensions/**/*.less', function (er, files) {
   for (let file of files) {
-    lessExtensions += `@import '~xtend-library/${file}';\n`
+    lessExtensions += `@import '${file}';\n`
   }
 })
 lessExtensionsGlob.on('end', function(filepath) {
@@ -63,7 +63,6 @@ lessExtensionsGlob.on('end', function(filepath) {
   })
 });
 
-
 // write xtend js
 
 let jsCore = `${copyrightBanner}`
@@ -71,8 +70,7 @@ const jsCoreGlob = new glob.Glob('src/core/**/*.js', function (er, files) {
   jsCore += `export const Xt = require('xtend-library/src/xtend').Xt\n\n`
   jsCore += `if (typeof window !== 'undefined') {\n\n`
   for (let file of files) {
-    const obj = path.parse(file);
-    jsCore += `require('xtend-library/${obj.dir}/${obj.name}')\n`
+    jsCore += `require('xtend-library/${file}')\n`
   }
   jsCore += `\n}`
 })
@@ -85,8 +83,7 @@ jsCoreGlob.on('end', function(filepath) {
 let jsDemos = `${copyrightBanner}if (typeof window !== 'undefined') {\n\n`
 const jsDemosGlob = new glob.Glob('src/demos/**/*.js', function (er, files) {
   for (let file of files) {
-    const obj = path.parse(file);
-    jsDemos += `require('xtend-library/${obj.dir}/${obj.name}')\n`
+    jsDemos += `require('xtend-library/${file}')\n`
   }
   jsDemos += `\n}`
 })
@@ -99,8 +96,8 @@ jsDemosGlob.on('end', function(filepath) {
 let jsExtensions = `${copyrightBanner}if (typeof window !== 'undefined') {\n\n`
 const jsExtensionsGlob = new glob.Glob('src/extensions/**/*.js', function (er, files) {
   for (let file of files) {
-    const obj = path.parse(file);
-    jsExtensions += `require('xtend-library/${obj.dir}/${obj.name}')\n`
+    //const obj = path.parse(file); ${obj.dir}/${obj.name}
+    jsExtensions += `require('xtend-library/${file}')\n`
   }
   jsExtensions += `\n}`
 })
