@@ -46,7 +46,7 @@ module.exports = {
       options: {
         root: `./`,
         aliases: {
-          'xtend-library': `./`,
+          'xtend-library': `./`, // resolve xtend-library gatsby
           assets: `./src/gatsby/assets`,
           components: `./src/gatsby/components`,
         },
