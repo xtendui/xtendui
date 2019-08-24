@@ -1,4 +1,3 @@
-import {Xt} from 'xtend-library'
 import ClipboardJS from 'clipboard';
 import Prism from 'prismjs';
 require('prismjs/plugins/unescaped-markup/prism-unescaped-markup');
@@ -8,6 +7,7 @@ require('prismjs/components/prism-less.min');
 require('prism-themes/themes/prism-base16-ateliersulphurpool.light.css');
 //require('prismjs/themes/prism-okaidia.css');
 Prism.manual = true;
+import {Xt} from 'xtend-library'
 
 /**
  * demo

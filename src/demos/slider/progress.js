@@ -1,5 +1,5 @@
-import {Xt} from 'xtend-library'
 import {TweenMax, TimelineMax} from 'gsap/TweenMax'
+import {Xt} from 'xtend-library'
 import 'xtend-library/src/core/slider/slider.js'
 import 'xtend-library/src/extensions/animation/mouse-follow.js';
 

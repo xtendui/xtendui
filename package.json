@@ -12,18 +12,16 @@
     "components",
     "vanilla"
   ],
-  "main": "src/xtend-core.min.js",
-  "module": "src/xtend.js",
+  "main": "dist/xtend.min.js",
+  "module": "src/xt.js",
   "scripts": {
-    "dist": "webpack --progress --colors",
     "build": "gatsby clean && gatsby build",
     "dev": "gatsby clean && gatsby develop -p 8888",
     "serve": "npm run build && gatsby serve -p 8888",
     "deploy": "gh-pages -d docs",
     "release": "npx semantic-release --no-ci",
     "release:dry": "npx semantic-release --dry-run",
-    "lint": "eslint src/scripts src/docs/assets/scripts",
-    "prepare": "npm run dist"
+    "prepare": "webpack --progress --colors"
   },
   "dependencies": {
     "bezier-easing": "^2.1.0",

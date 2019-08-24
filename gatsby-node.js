@@ -4,30 +4,13 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const fs = require('fs')
 const path = require('path')
 const glob = require('glob')
 const writeFile = require('write')
-const exec = require('child_process').exec
-
-// run webpack
-
-exec('npm run dist',
-  function(err, stdout, stderr) {
-    if (err) throw err;
-    else console.log(stdout);
-  });
-
-// banner with version
-
-const version = JSON.parse(fs.readFileSync('package.json')).version
-const copyrightBanner = `/*! Xtend v${version} (https://getxtend.com/)
-@copyright (c) 2017 - 2019 Riccardo Caroli
-@license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */\n\n`
 
 // write xtend less
 
-let lessCore = copyrightBanner
+let lessCore = '';
 const lessCoreGlob = new glob.Glob('src/core/**/*.less', {"ignore":['**/*-core.less']}, function (er, files) {
   for (let file of files) {
     lessCore += `@import '~xtend-library/${file}';\n`
@@ -39,7 +22,7 @@ lessCoreGlob.on('end', function(filepath) {
   })
 });
 
-let lessDemos = copyrightBanner
+let lessDemos = '';
 const lessDemosGlob = new glob.Glob('src/demos/**/*.less', function (er, files) {
   for (let file of files) {
     lessDemos += `@import '~xtend-library/${file}';\n`
@@ -51,7 +34,7 @@ lessDemosGlob.on('end', function(filepath) {
   })
 });
 
-let lessExtensions = copyrightBanner
+let lessExtensions = '';
 const lessExtensionsGlob = new glob.Glob('src/extensions/**/*.less', function (er, files) {
   for (let file of files) {
     lessExtensions += `@import '~xtend-library/${file}';\n`
@@ -65,9 +48,8 @@ lessExtensionsGlob.on('end', function(filepath) {
 
 // write xtend js
 
-let jsCore = `${copyrightBanner}`
+let jsCore = '';
 const jsCoreGlob = new glob.Glob('src/core/**/*.js', function (er, files) {
-  jsCore += `export const Xt = require('xtend-library').Xt\n\n`
   jsCore += `if (typeof window !== 'undefined') {\n\n`
   for (let file of files) {
     jsCore += `require('xtend-library/${file}')\n`
@@ -80,7 +62,7 @@ jsCoreGlob.on('end', function(filepath) {
   })
 });
 
-let jsDemos = `${copyrightBanner}if (typeof window !== 'undefined') {\n\n`
+let jsDemos = `if (typeof window !== 'undefined') {\n\n`
 const jsDemosGlob = new glob.Glob('src/demos/**/*.js', function (er, files) {
   for (let file of files) {
     jsDemos += `require('xtend-library/${file}')\n`
@@ -93,7 +75,7 @@ jsDemosGlob.on('end', function(filepath) {
   })
 });
 
-let jsExtensions = `${copyrightBanner}if (typeof window !== 'undefined') {\n\n`
+let jsExtensions = `if (typeof window !== 'undefined') {\n\n`
 const jsExtensionsGlob = new glob.Glob('src/extensions/**/*.js', function (er, files) {
   for (let file of files) {
     //const obj = path.parse(file); ${obj.dir}/${obj.name}

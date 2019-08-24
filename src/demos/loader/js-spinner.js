@@ -1,5 +1,5 @@
-import {Xt} from 'xtend-library'
 import {TweenMax} from 'gsap/TweenMax'
+import {Xt} from 'xtend-library'
 
 /**
  * .demo--loader--js-spinner

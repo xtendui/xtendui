@@ -70,7 +70,7 @@ yarn-error.log
 
 # build
 /docs
-*.css
-*.css.map
-*.min.js
-*.min.js.map
+/dist/*.css
+/dist/*.css.map
+/dist/*.min.js
+/dist/*.min.js.map

@@ -7,7 +7,7 @@ module.exports = {
   mode: 'production',
   context: path.resolve(__dirname, ''),
   entry: {
-    'src/xtend-core': ['./src/xtend-core.js', './src/xtend-core.less'],
+    'dist/xtend': ['./dist/xtend.js', './dist/xtend.less'],
   },
   output: {
     filename: '[name].min.js',

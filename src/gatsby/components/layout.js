@@ -8,11 +8,12 @@ import Sidebar from 'components/sidebar'
 import DocsAside from 'components/doc-aside'
 import DocsFoot from 'components/doc-foot'
 
+import {populateBlock} from 'assets/scripts/demo.js'
+import {makeDocument} from 'assets/scripts/theme.js'
+import {Xt} from 'xtend-library'
 import 'xtend-library/src/xtend-core.js'
 import 'xtend-library/src/xtend-demos.js'
 import 'xtend-library/src/xtend-extensions.js'
-import {populateBlock} from 'assets/scripts/demo.js'
-import {makeDocument} from 'assets/scripts/theme.js'
 
 import 'assets/styles/theme.less';
 
