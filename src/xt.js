@@ -1,5 +1,4 @@
-import 'xtend-library/src/polyfill.js' // support explorer 15, firefox 48, opera 34, safari 10, chrome 47
-//import 'xtend-library/src/polyfill-ie11.js' // support old browsers ie11+
+import 'xtend-library/src/polyfill.js'
 
 //////////////////////
 // constructor
