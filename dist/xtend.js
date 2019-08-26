@@ -2,6 +2,8 @@
 @copyright (c) 2017 - 2019 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
+import 'core-js'
+import 'regenerator-runtime/runtime'
 import {Xt} from 'xtend-library'
 import 'xtend-library/src/xtend-core.js'
 
