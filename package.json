@@ -25,7 +25,9 @@
   },
   "dependencies": {
     "bezier-easing": "^2.1.0",
-    "gsap": "^2.1.2"
+    "classlist.js": "^1.1.20150312",
+    "gsap": "^2.1.2",
+    "url-polyfill": "^1.1.7"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",

@@ -1,7 +1,3 @@
-//////////////////////
-// import
-//////////////////////
-
 import {Xt} from 'xtend-library'
 import 'xtend-library/src/core/controller/controller.js'
 
