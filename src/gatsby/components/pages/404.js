@@ -6,13 +6,13 @@ import Layout from 'components/layout'
 class Page extends React.Component {
   render() {
     const seo = {};
-    seo.title = 'Home'
-    seo.description = 'Description'
+    seo.title = '404'
+    seo.description = 'Page not found'
     return (
       <Layout seo={seo}>
         <SEO title={seo.title + ' — ' + seo.description}/>
-        <h1>NOT FOUND</h1>
-        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+        <h1>Error 404</h1>
+        <p>Page not found.</p>
       </Layout>
     )
   }
