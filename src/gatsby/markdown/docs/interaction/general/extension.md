@@ -10,6 +10,17 @@ parent: "General"
 
 ##Extension
 
+###Propagate Interaction
+
+For example to make elements with `a, button` tag propagate `.hover` and `.active` events on `.btn` childs automatically.
+
+<demo>
+  <div class="demo_item" data-iframe="iframe/extensions/general/propagate-interaction-btn">
+  </div>
+  <div class="demo_item" data-iframe="iframe/extensions/general/jumptocontent">
+  </div>
+</demo>
+
 ###Jump to content
 
 <demo>

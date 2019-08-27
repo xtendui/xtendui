@@ -9,13 +9,11 @@ Xt.mount.push({
   matches: '.demo--loader--mouse-spinner',
   fnc: function mount(object) {
 
-    let element = object;
-    let container = element.closest('.card');
+    let mouseFollowObject = object;
+    let mouseFollowContainer = mouseFollowObject.closest('.card');
 
-    let mouseFollow = new Xt.MouseFollow({
-      object: element,
-      container: container,
-      mouseCheck: function (options) {
+    let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
+      mouseCheck: function () {
         return !this.object.classList.contains('loader--disable') || this.object.classList.contains('loader--js');
       }
     });

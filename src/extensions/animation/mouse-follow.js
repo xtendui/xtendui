@@ -8,17 +8,27 @@ class MouseFollow {
 
   /**
    * constructor
-   * @param {Object} options User options
+   * @param {Node|HTMLElement|EventTarget|Window} object Base node
+   * @param {Node|HTMLElement|EventTarget|Window} container Container node
+   * @param {Object} optionsJs User options
    * @constructor
    */
-  constructor(options = {}) {
+  constructor(object, container, optionsJs = {}) {
     let self = this;
-    self.options = options;
-    self.object = options.object;
-    self.container = options.container;
-    self.mouseCheck = options.mouseCheck;
-    self.destroy();
-    self.init();
+    self.object = object;
+    self.container = container;
+    self.options = optionsJs;
+    self.mouseCheck = self.options.mouseCheck;
+    // @FIX multiple initializations
+    let alreadyDefinedInstance = Xt.get(self.componentName, self.object)
+    if (!alreadyDefinedInstance) {
+      // set
+      Xt.set(self.componentName, self.object, self);
+      // init
+      self.init();
+    } else {
+      return alreadyDefinedInstance;
+    }
   }
 
   //////////////////////

@@ -100,16 +100,14 @@ Xt.mount.push({
     });
 
     /**
-     * mouseFollow
+     * MouseFollow
      */
 
-    let element = document.querySelector('.loader--mouse');
-    let container = slider;
+    let mouseFollowObject = document.querySelector('.loader--mouse');
+    let mouseFollowContainer = slider;
 
-    let mouseFollow = new Xt.MouseFollow({
-      object: element,
-      container: container,
-      mouseCheck: function(options) {
+    let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
+      mouseCheck: function() {
         return !this.object.classList.contains('loader--disable') || this.object.classList.contains('loader--js');
       }
     });

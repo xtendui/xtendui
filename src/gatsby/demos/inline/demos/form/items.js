@@ -28,7 +28,7 @@ demo.htmlSource = `
   </div>
   <div class="form-group">
     <label class="form-label">
-      Textarea autoresize
+      Textarea
     </label>
     <textarea class="form-item"></textarea>
   </div>
@@ -250,13 +250,6 @@ demo.htmlSource = `
         <input type="text" class="form-item">
       </div>
     </div>
-  </div>
-
-  <div class="form-group">
-    <label class="form-label">
-      Lorem Ipsum
-    </label>
-    <textarea class="form-item"></textarea>
   </div>
 
   <div class="form-group">

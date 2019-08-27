@@ -59,9 +59,10 @@ a:not(.btn), .btn--link {
 // disabled
 //////////////////////
 
-
 [disabled], .disabled {
-  opacity: .75;
+  &:not(.active) {
+    opacity: .75;
+  }
 }
 
 //////////////////////

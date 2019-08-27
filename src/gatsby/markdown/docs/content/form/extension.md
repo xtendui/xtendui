@@ -16,3 +16,10 @@ parent: "Form"
   <demovanilla src="demos/inline/extensions/form/label-addon">
   </demovanilla>
 </demo>
+
+###Textarea autosize
+
+<demo>
+  <demovanilla src="demos/inline/extensions/form/textarea-autosize">
+  </demovanilla>
+</demo>
