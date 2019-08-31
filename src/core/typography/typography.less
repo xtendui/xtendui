@@ -1,4 +1,4 @@
-@import '~xtend-library/src/core/typography/typography-core.less';
+@import '~xtend-library/src/core/typography/typography-setup.less';
 
 //////////////////////
 // font face
@@ -159,14 +159,6 @@ h6, .h6 {
   text-align: center;
 }
 
-// subsequential headers margin reset
-
-h1, h2, h3, h4, h5, h6 {
-  & + & {
-    margin-top: 0 !important;
-  }
-}
-
 //////////////////////
 // text
 //////////////////////
@@ -264,6 +256,19 @@ ol {
   }
 }
 
+// ul list-style custom
+
+ul {
+  list-style: none;
+  > li {
+    &:before {
+      content: '·';
+      position: absolute;
+      margin-left: -2rem; // same as ul padding
+    }
+  }
+}
+
 // .list-reset
 // use this mixin to reset styles on xtend ul.list ul.slides_inner etc..
 
@@ -274,6 +279,10 @@ ol {
   padding: 0;
   > * {
     margin: 0;
+    // ul list-style custom
+    &:before {
+      display: none;
+    }
   }
 }
 
