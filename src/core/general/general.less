@@ -1,8 +1,8 @@
 @import '~xtend-library/src/core/general/general-setup.less';
 
-//////////////////////
-// decoration
-//////////////////////
+/**
+ * decoration
+ */
 
 .link--underline() {
   text-decoration: underline;
@@ -18,9 +18,9 @@
   }
 }
 
-//////////////////////
-// text--inverse
-//////////////////////
+/**
+ * text--inverse
+ */
 
 .text--inverse {
   // link color
@@ -33,9 +33,9 @@
   }
 }
 
-//////////////////////
-// link
-//////////////////////
+/**
+ * link
+ */
 
 a:not(.btn), .btn--link {
   .link--underline();
@@ -55,9 +55,9 @@ a:not(.btn), .btn--link {
   }
 }
 
-//////////////////////
-// disabled
-//////////////////////
+/**
+ * disabled
+ */
 
 [disabled], .disabled {
   &:not(.active) {
@@ -65,9 +65,9 @@ a:not(.btn), .btn--link {
   }
 }
 
-//////////////////////
-// caret
-//////////////////////
+/**
+ * caret
+ */
 
 .caret {
   .btn--flex();
@@ -164,9 +164,9 @@ a:not(.btn), .btn--link {
   }
 }
 
-//////////////////////
-// focus
-//////////////////////
+/**
+ * focus
+ */
 
 html.xt-focus:not(.xt-focus--disable) {
   // custom focus

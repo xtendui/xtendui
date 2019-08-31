@@ -1,11 +1,6 @@
-import {Xt} from 'xtend-library'
-
-//////////////////////
-// MouseFollow
-//////////////////////
+import { Xt } from 'xtend-library'
 
 class MouseFollow {
-
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
@@ -13,113 +8,111 @@ class MouseFollow {
    * @param {Object} optionsJs User options
    * @constructor
    */
-  constructor(object, container, optionsJs = {}) {
-    let self = this;
-    self.object = object;
-    self.container = container;
-    self.options = optionsJs;
-    self.mouseCheck = self.options.mouseCheck;
+  constructor (object, container, optionsJs = {}) {
+    const self = this
+    self.object = object
+    self.container = container
+    self.options = optionsJs
+    self.mouseCheck = self.options.mouseCheck
     // @FIX multiple initializations
-    let alreadyDefinedInstance = Xt.get(self.componentName, self.object)
+    const alreadyDefinedInstance = Xt.get(self.componentName, self.object)
     if (!alreadyDefinedInstance) {
       // set
-      Xt.set(self.componentName, self.object, self);
+      Xt.set(self.componentName, self.object, self)
       // init
-      self.init();
+      self.init()
     } else {
-      return alreadyDefinedInstance;
+      return alreadyDefinedInstance
     }
   }
 
-  //////////////////////
+  //
   // init
-  //////////////////////
+  //
 
   /**
    * init
    */
-  init() {
-    let self = this;
-    self.container.addEventListener('mousemove', self.mousemove.bind(self));
-    self.container.addEventListener('mouseenter', self.mouseenter.bind(self));
-    self.container.addEventListener('mouseleave', self.mouseleave.bind(self));
+  init () {
+    const self = this
+    self.container.addEventListener('mousemove', self.mousemove.bind(self))
+    self.container.addEventListener('mouseenter', self.mouseenter.bind(self))
+    self.container.addEventListener('mouseleave', self.mouseleave.bind(self))
   }
 
-  //////////////////////
+  //
   // methods
-  //////////////////////
+  //
 
   /**
    * mousemove
    */
-  mousemove(e) {
-    let self = this;
+  mousemove (e) {
+    const self = this
     // fix initial
     if (self.width === undefined) {
-      self.mouseenter(e);
+      self.mouseenter(e)
     }
     // position
     Xt.friction(self.object, {
-      "x": e.clientX + self.width / 2,
-      "y": e.clientY + self.height / 2
-    });
+      x: e.clientX + self.width / 2,
+      y: e.clientY + self.height / 2
+    })
   }
 
   /**
    * mouseenter
    */
-  mouseenter(e) {
-    let self = this;
-    let options = self.options;
+  mouseenter (e) {
+    const self = this
+    const options = self.options
     if (self.mouseCheck(options)) {
       // size
-      let rect = self.object.getBoundingClientRect();
-      self.width = rect.width;
-      self.height = rect.height;
+      const rect = self.object.getBoundingClientRect()
+      self.width = rect.width
+      self.height = rect.height
       // class
-      self.object.classList.add('active');
-      self.object.classList.remove('out');
+      self.object.classList.add('active')
+      self.object.classList.remove('out')
       // initial
       Xt.friction(self.object, {
-        "x": e.clientX - self.width / 2,
-        "y": e.clientY - self.height / 2,
-        "friction": "return delta",
-      });
+        x: e.clientX - self.width / 2,
+        y: e.clientY - self.height / 2,
+        friction: 'return delta'
+      })
     }
   }
 
   /**
    * mouseleave
    */
-  mouseleave() {
-    let self = this;
-    let options = self.options;
+  mouseleave () {
+    const self = this
+    const options = self.options
     if (self.mouseCheck(options)) {
       // class
-      self.object.classList.remove('active');
-      self.object.classList.add('out');
+      self.object.classList.remove('active')
+      self.object.classList.add('out')
     }
   }
 
-  //////////////////////
+  //
   // destroy
-  //////////////////////
+  //
 
   /**
    * destroy
    */
-  destroy() {
-    let self = this;
-    self.container.removeEventListener('mousemove', self.mousemove.bind(self));
-    self.container.removeEventListener('mouseenter', self.mouseenter.bind(self));
-    self.container.removeEventListener('mouseleave', self.mouseleave.bind(self));
+  destroy () {
+    const self = this
+    self.container.removeEventListener('mousemove', self.mousemove.bind(self))
+    self.container.removeEventListener('mouseenter', self.mouseenter.bind(self))
+    self.container.removeEventListener('mouseleave', self.mouseleave.bind(self))
   }
-
 }
 
-//////////////////////
+//
 // export
-//////////////////////
+//
 
-Xt.MouseFollow = MouseFollow;
-
+Xt.MouseFollow = MouseFollow

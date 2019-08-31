@@ -1,5 +1,5 @@
-import {Xt} from 'xtend-library'
-import 'xtend-library/src/extensions/form/TextareaAutosize.js';
+import { Xt } from 'xtend-library'
+import 'xtend-library/src/extensions/form/TextareaAutosize.js'
 
 /**
  * xtend extension: textarea-autosize
@@ -7,15 +7,15 @@ import 'xtend-library/src/extensions/form/TextareaAutosize.js';
 
 Xt.mount.push({
   matches: 'textarea',
-  fnc: function mount(object) {
+  fnc: function mount (object) {
+    // init
 
-    let self = new Xt.TextareaAutosize(object);
+    const self = new Xt.TextareaAutosize(object)
 
     // unmount
 
-    return function unmount() {
-      self.destroy();
-    };
-
+    return function unmount () {
+      self.destroy()
+    }
   }
-});
+})

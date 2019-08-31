@@ -1,34 +1,33 @@
 import 'xtend-library/src/polyfill.js'
 
-//////////////////////
+//
 // constructor
-//////////////////////
+//
 
-export const Xt = {};
+export const Xt = {}
 
-//////////////////////
+//
 // vars
-//////////////////////
+//
 
-Xt.debug = true;
-Xt.mount = [];
-Xt.unmount = [];
-Xt.currents = {}; // Xt currents based on namespace (so shared between Xt objects)
-Xt.resizeDelay = 100;
-Xt.scrollDelay = false;
-Xt.imageLoadedDelay = 50;
-Xt.focusables = 'a, button, details, input, iframe, select, textarea';
+Xt.debug = true
+Xt.mount = []
+Xt.unmount = []
+Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
+Xt.resizeDelay = 100
+Xt.scrollDelay = false
+Xt.imageLoadedDelay = 50
+Xt.focusables = 'a, button, details, input, iframe, select, textarea'
 
-//////////////////////
+//
 // call only if in browser mode
 // https://www.gatsbyjs.org/docs/debugging-html-builds/#how-to-check-if-code-classlanguage-textwindowcode-is-defined
-//////////////////////
+//
 
 if (typeof window !== 'undefined') {
-
-  //////////////////////
+  //
   // initialization
-  //////////////////////
+  //
 
   /**
    * ready
@@ -37,103 +36,103 @@ if (typeof window !== 'undefined') {
   Xt.ready = function (fnc) {
     if (document.readyState === 'complete') {
       requestAnimationFrame(function () {
-        fnc();
-      });
+        fnc()
+      })
     } else {
       document.addEventListener('readystatechange', function () {
         if (document.readyState === 'complete') {
           requestAnimationFrame(function () {
-            fnc();
-          });
+            fnc()
+          })
         }
-      });
+      })
     }
-  };
+  }
 
   /**
    * init
    */
   Xt.ready(function () {
-    Xt.stickyIndex = 500;
-    Xt.setScrollbarWidth();
-    Xt.windowHeightSet();
-    Xt.mountCheck(document.documentElement);
-    Xt.observer.disconnect();
+    Xt.stickyIndex = 500
+    Xt.setScrollbarWidth()
+    Xt.windowHeightSet()
+    Xt.mountCheck(document.documentElement)
+    Xt.observer.disconnect()
     Xt.observer.observe(document.documentElement, {
       characterData: false,
       attributes: false,
       childList: true,
       subtree: true
-    });
-  });
+    })
+  })
 
-  //////////////////////
+  //
   // observer
-  //////////////////////
+  //
 
   /**
    * observer
    */
   Xt.observer = new MutationObserver(function (mutationsList) {
-    for (let mutation of mutationsList) {
+    for (const mutation of mutationsList) {
       if (mutation.type === 'childList') {
         // added
-        for (let added of mutation.addedNodes) {
+        for (const added of mutation.addedNodes) {
           if (added.nodeType === 1) {
-            Xt.mountCheck(added);
+            Xt.mountCheck(added)
           }
         }
         // removed
-        for (let removed of mutation.removedNodes) {
+        for (const removed of mutation.removedNodes) {
           if (removed.nodeType === 1) {
-            Xt.unmountCheck(removed);
+            Xt.unmountCheck(removed)
           }
         }
       }
     }
-  });
+  })
 
   /**
    * mountCheck
    * @param {Node|HTMLElement|EventTarget|Window} added
    */
   Xt.mountCheck = function (added = document.documentElement) {
-    let addedIgnore = added.closest('.xt-ignore');
+    const addedIgnore = added.closest('.xt-ignore')
     if (addedIgnore) {
-      Xt.ignoreOnce(addedIgnore); // @FIX ignore once for mount when moving
-      return false;
+      Xt.ignoreOnce(addedIgnore) // @FIX ignore once for mount when moving
+      return false
     }
-    for (let obj of Xt.mount) {
+    for (const obj of Xt.mount) {
       // check
-      let els = [];
+      const els = []
       if (added.matches(obj.matches)) {
-        els.push(added);
+        els.push(added)
       }
-      for (let element of added.querySelectorAll(obj.matches)) {
-        els.push(element);
+      for (const element of added.querySelectorAll(obj.matches)) {
+        els.push(element)
       }
       // call
       if (els.length) {
-        for (let [i, el] of els.entries()) {
-          let elIgnore = el.closest('.xt-ignore');
+        for (const [i, el] of els.entries()) {
+          const elIgnore = el.closest('.xt-ignore')
           if (elIgnore) {
-            Xt.ignoreOnce(elIgnore); // @FIX ignore once for mount when moving
-            continue;
+            Xt.ignoreOnce(elIgnore) // @FIX ignore once for mount when moving
+            continue
           }
           // call
           requestAnimationFrame(function () { // @FIX react when componentDidMount
-            let destroy = obj.fnc(el, i, obj.matches); // object, index, matches
+            const destroy = obj.fnc(el, i, obj.matches) // object, index, matches
             if (destroy) {
               Xt.unmount.push({
                 object: el,
                 fnc: destroy
-              });
+              })
             }
-          });
+          })
         }
       }
     }
-  };
+  }
 
   /**
    * unmountCheck
@@ -141,23 +140,23 @@ if (typeof window !== 'undefined') {
    */
   Xt.unmountCheck = function (removed = document.documentElement) {
     if (removed.closest('.xt-ignore')) {
-      return false;
+      return false
     }
-    for (let obj of Xt.unmount) {
+    for (const obj of Xt.unmount) {
       // check
       if (removed === obj.object || removed.contains(obj.object)) {
         if (obj.object.closest('.xt-ignore')) {
-          return false;
+          return false
         }
         // call
-        obj.fnc();
+        obj.fnc()
       }
     }
-  };
+  }
 
-  //////////////////////
+  //
   // component
-  //////////////////////
+  //
 
   /**
    * set component
@@ -166,8 +165,8 @@ if (typeof window !== 'undefined') {
    * @param {Object} self Component' self
    */
   Xt.set = function (name, element, self) {
-    Xt.dataStorage.set(element, name, self);
-  };
+    Xt.dataStorage.set(element, name, self)
+  }
 
   /**
    * get component
@@ -175,8 +174,8 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} element Component's element
    */
   Xt.get = function (name, element) {
-    return Xt.dataStorage.get(element, name);
-  };
+    return Xt.dataStorage.get(element, name)
+  }
 
   /**
    * remove component
@@ -184,13 +183,13 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} element Component's element
    */
   Xt.remove = function (name, element) {
-    return Xt.dataStorage.remove(element, name);
-  };
+    return Xt.dataStorage.remove(element, name)
+  }
 
-  //////////////////////
+  //
   // dataStorage
   // map storage for HTML elements
-  //////////////////////
+  //
 
   Xt.dataStorage = {
 
@@ -209,13 +208,13 @@ if (typeof window !== 'undefined') {
     set: function (el, key, obj) {
       // new map if not already there
       if (!this._storage.has(el)) {
-        this._storage.set(el, new Map());
+        this._storage.set(el, new Map())
       }
       // set
-      let getEl = this._storage.get(el);
-      getEl.set(key, obj);
+      const getEl = this._storage.get(el)
+      getEl.set(key, obj)
       // return
-      return getEl.get(key);
+      return getEl.get(key)
     },
 
     /**
@@ -228,18 +227,18 @@ if (typeof window !== 'undefined') {
     put: function (el, key, obj) {
       // new map if not already there
       if (!this._storage.has(el)) {
-        this._storage.set(el, new Map());
+        this._storage.set(el, new Map())
       }
       // return if already set
-      let getEl = this._storage.get(el);
-      let getKey = getEl.get(key);
+      const getEl = this._storage.get(el)
+      const getKey = getEl.get(key)
       if (getKey) {
-        return getKey;
+        return getKey
       }
       // set
-      getEl.set(key, obj);
+      getEl.set(key, obj)
       // return
-      return getEl.get(key);
+      return getEl.get(key)
     },
 
     /**
@@ -249,13 +248,13 @@ if (typeof window !== 'undefined') {
      * @returns {Object|Function}
      */
     get: function (el, key) {
-      let getEl = this._storage.get(el);
+      const getEl = this._storage.get(el)
       // null if empty
       if (!getEl) {
-        return null;
+        return null
       }
       // return
-      return getEl.get(key);
+      return getEl.get(key)
     },
 
     /**
@@ -264,13 +263,13 @@ if (typeof window !== 'undefined') {
      * @returns {Object|Function}
      */
     getAll: function (el) {
-      let getEl = this._storage.get(el);
+      const getEl = this._storage.get(el)
       // null if empty
       if (!getEl) {
-        return null;
+        return null
       }
       // return
-      return getEl;
+      return getEl
     },
 
     /**
@@ -281,7 +280,7 @@ if (typeof window !== 'undefined') {
      */
     has: function (el, key) {
       // return
-      return this._storage.get(el).has(key);
+      return this._storage.get(el).has(key)
     },
 
     /**
@@ -291,27 +290,27 @@ if (typeof window !== 'undefined') {
      * @returns {Boolean}
      */
     remove: function (el, key) {
-      let getEl = this._storage.get(el);
+      const getEl = this._storage.get(el)
       // null if empty
       if (!getEl) {
-        return null;
+        return null
       }
       // remove
-      let ret = getEl.delete(key);
+      const ret = getEl.delete(key)
       // remove storage if empty
       if (getEl.size === false) {
-        this._storage.delete(el);
+        this._storage.delete(el)
       }
       // return
-      return ret;
+      return ret
     }
 
-  };
+  }
 
-  //////////////////////
+  //
   // scrollbar
   // util to remember scrollbar state
-  //////////////////////
+  //
 
   Xt.scrollbar = {
 
@@ -325,7 +324,7 @@ if (typeof window !== 'undefined') {
      * @returns {Array} Currents
      */
     get: function () {
-      return Xt.scrollbar.currents;
+      return Xt.scrollbar.currents
     },
 
     /**
@@ -333,7 +332,7 @@ if (typeof window !== 'undefined') {
      * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
      */
     add: function (el) {
-      Xt.scrollbar.currents.push(el);
+      Xt.scrollbar.currents.push(el)
     },
 
     /**
@@ -341,16 +340,15 @@ if (typeof window !== 'undefined') {
      * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
      */
     remove: function (el) {
-      Xt.scrollbar.currents = Xt.scrollbar.currents.filter(x => x !== el);
+      Xt.scrollbar.currents = Xt.scrollbar.currents.filter(x => x !== el)
     }
 
+  }
 
-  };
-
-  //////////////////////
+  //
   // focus
   // util to remember focus on key or interactions events
-  //////////////////////
+  //
 
   Xt.focus = {
 
@@ -365,14 +363,14 @@ if (typeof window !== 'undefined') {
      */
     on: function () {
       // event key
-      let focusChangeKeyHandler = Xt.dataStorage.put(document, 'keyup.focus',
-        Xt.focus.changeKey);
-      document.addEventListener('keyup', focusChangeKeyHandler);
+      const focusChangeKeyHandler = Xt.dataStorage.put(document, 'keyup.focus',
+        Xt.focus.changeKey)
+      document.addEventListener('keyup', focusChangeKeyHandler)
       // event mouse
-      let focusChangeOtherHandler = Xt.dataStorage.get(document, 'mousedown touchstart pointerdown.focus');
-      document.removeEventListener('mousedown', focusChangeOtherHandler);
-      document.removeEventListener('touchstart', focusChangeOtherHandler);
-      document.removeEventListener('pointerdown', focusChangeOtherHandler);
+      const focusChangeOtherHandler = Xt.dataStorage.get(document, 'mousedown touchstart pointerdown.focus')
+      document.removeEventListener('mousedown', focusChangeOtherHandler)
+      document.removeEventListener('touchstart', focusChangeOtherHandler)
+      document.removeEventListener('pointerdown', focusChangeOtherHandler)
     },
 
     /**
@@ -380,14 +378,14 @@ if (typeof window !== 'undefined') {
      */
     off: function () {
       // event
-      let focusChangeKeyHandler = Xt.dataStorage.get(document, 'keyup.focus');
-      document.removeEventListener('keyup', focusChangeKeyHandler);
+      const focusChangeKeyHandler = Xt.dataStorage.get(document, 'keyup.focus')
+      document.removeEventListener('keyup', focusChangeKeyHandler)
       // event mouse
-      let focusChangeOtherHandler = Xt.dataStorage.put(document, 'mousedown touchstart pointerdown.focus',
-        Xt.focus.changeOther);
-      document.addEventListener('mousedown', focusChangeOtherHandler);
-      document.addEventListener('touchstart', focusChangeOtherHandler, Xt.passiveSupported ? {passive: true} : false);
-      document.addEventListener('pointerdown', focusChangeOtherHandler, Xt.passiveSupported ? {passive: true} : false);
+      const focusChangeOtherHandler = Xt.dataStorage.put(document, 'mousedown touchstart pointerdown.focus',
+        Xt.focus.changeOther)
+      document.addEventListener('mousedown', focusChangeOtherHandler)
+      document.addEventListener('touchstart', focusChangeOtherHandler, Xt.passiveSupported ? { passive: true } : false)
+      document.addEventListener('pointerdown', focusChangeOtherHandler, Xt.passiveSupported ? { passive: true } : false)
     },
 
     /**
@@ -395,17 +393,17 @@ if (typeof window !== 'undefined') {
      * @param {Event} e Event
      */
     changeKey: function (e) {
-      let code = e.keyCode ? e.keyCode : e.which;
+      const code = e.keyCode ? e.keyCode : e.which
       if (code === 9) {
         if (!Xt.focus.block) {
           // remember Xt.focus
-          Xt.focus.current = document.activeElement;
+          Xt.focus.current = document.activeElement
         }
         if (!document.documentElement.classList.contains('xt-focus')) {
           // html.xt-focus
-          document.documentElement.classList.add('xt-focus');
+          document.documentElement.classList.add('xt-focus')
           // switch mode
-          Xt.focus.off();
+          Xt.focus.off()
         }
       }
     },
@@ -417,26 +415,26 @@ if (typeof window !== 'undefined') {
     changeOther: function (e) {
       if (!Xt.focus.block) {
         // remember Xt.focus
-        Xt.focus.current = e.target;
+        Xt.focus.current = e.target
       }
       if (document.documentElement.classList.contains('xt-focus')) {
         // html.xt-focus
-        document.documentElement.classList.remove('xt-focus');
+        document.documentElement.classList.remove('xt-focus')
         // switch mode
-        Xt.focus.on();
+        Xt.focus.on()
       }
     }
 
-  };
+  }
 
   requestAnimationFrame(function () {
-    Xt.focus.on();
-  });
+    Xt.focus.on()
+  })
 
-  //////////////////////
+  //
   // focusLimit
   // util to limit focus inside HTML elements
-  //////////////////////
+  //
 
   Xt.focusLimit = {
 
@@ -446,17 +444,17 @@ if (typeof window !== 'undefined') {
      */
     on: function (el) {
       // @FIX Xt.focus when clicking and not used tab before
-      Xt.focus.current = Xt.focus.current ? Xt.focus.current : document.activeElement;
+      Xt.focus.current = Xt.focus.current ? Xt.focus.current : document.activeElement
       // vars
-      let focusables = el.querySelectorAll(Xt.focusables);
-      focusables = Array.from(focusables).filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])')); // filter out parent
+      let focusables = el.querySelectorAll(Xt.focusables)
+      focusables = Array.from(focusables).filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])')) // filter out parent
       if (focusables.length) {
-        let first = focusables[0];
-        let last = focusables[focusables.length - 1];
+        const first = focusables[0]
+        const last = focusables[focusables.length - 1]
         // event
-        let focusLimitHandler = Xt.dataStorage.put(document, 'keyup.focusLimit',
-          Xt.focusLimit.limit.bind(this).bind(this, focusables, first, last));
-        document.addEventListener('keyup', focusLimitHandler);
+        const focusLimitHandler = Xt.dataStorage.put(document, 'keyup.focusLimit',
+          Xt.focusLimit.limit.bind(this).bind(this, focusables, first, last))
+        document.addEventListener('keyup', focusLimitHandler)
       }
     },
 
@@ -465,8 +463,8 @@ if (typeof window !== 'undefined') {
      */
     off: function () {
       // event
-      let focusLimitHandler = Xt.dataStorage.get(document, 'keyup.focusLimit');
-      document.removeEventListener('keyup', focusLimitHandler);
+      const focusLimitHandler = Xt.dataStorage.get(document, 'keyup.focusLimit')
+      document.removeEventListener('keyup', focusLimitHandler)
     },
 
     /**
@@ -477,56 +475,56 @@ if (typeof window !== 'undefined') {
      * @param {Event} e Event
      */
     limit: function (focusables, first, last, e) {
-      let code = e.keyCode ? e.keyCode : e.which;
+      const code = e.keyCode ? e.keyCode : e.which
       if (code === 9) {
         if (!focusables.includes(document.activeElement)) {
           if (e.shiftKey) {
-            last.focus();
-            e.preventDefault();
+            last.focus()
+            e.preventDefault()
           } else {
-            first.focus();
-            e.preventDefault();
+            first.focus()
+            e.preventDefault()
           }
         }
       }
     }
 
-  };
+  }
 
-  //////////////////////
+  //
   // friction
   // util to friction values
-  //////////////////////
+  //
 
   Xt.friction = function (el, obj) {
-    let xCurrent = Xt.getTranslate(el)[0];
-    let yCurrent = Xt.getTranslate(el)[1];
-    let xDist = obj.x - xCurrent;
-    let yDist = obj.y - yCurrent;
+    let xCurrent = Xt.getTranslate(el)[0]
+    let yCurrent = Xt.getTranslate(el)[1]
+    let xDist = obj.x - xCurrent
+    let yDist = obj.y - yCurrent
     // momentum
-    let fncFriction = obj.friction || "return delta / 9";
+    let fncFriction = obj.friction || 'return delta / 9'
     if (typeof fncFriction === 'string') {
-      fncFriction = new Function('delta', fncFriction);
+      fncFriction = new Function('delta', fncFriction)
     }
-    xCurrent += fncFriction(Math.abs(xDist)) * Math.sign(xDist);
-    yCurrent += fncFriction(Math.abs(yDist)) * Math.sign(yDist);
+    xCurrent += fncFriction(Math.abs(xDist)) * Math.sign(xDist)
+    yCurrent += fncFriction(Math.abs(yDist)) * Math.sign(yDist)
     // set
-    el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)';
+    el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)'
     // loop
-    let frictionLimit = obj.frictionLimit || 1.5;
-    xDist = obj.x - xCurrent;
-    yDist = obj.y - yCurrent;
-    cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionFrame'));
+    const frictionLimit = obj.frictionLimit || 1.5
+    xDist = obj.x - xCurrent
+    yDist = obj.y - yCurrent
+    cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionFrame'))
     if (Math.abs(xDist) >= frictionLimit || Math.abs(yDist >= frictionLimit)) {
       Xt.dataStorage.set(el, 'xtFrictionFrame', requestAnimationFrame(function () {
-        Xt.friction(el, obj);
-      }));
+        Xt.friction(el, obj)
+      }))
     }
-  };
+  }
 
-  //////////////////////
+  //
   // util
-  //////////////////////
+  //
 
   /**
    * Return translate values https://gist.github.com/aderaaij/a6b666bf756b2db1596b366da921755d
@@ -540,19 +538,19 @@ if (typeof window !== 'undefined') {
   */
 
   Xt.getTranslate = function (element) {
-    let transArr = [];
-    let style = getComputedStyle(element);
-    let transform = style.transform;
-    let mat = transform.match(/^matrix3d\((.+)\)$/);
+    const transArr = []
+    const style = getComputedStyle(element)
+    const transform = style.transform
+    let mat = transform.match(/^matrix3d\((.+)\)$/)
     if (mat) {
-      transArr.push(parseFloat(mat[1].split(', ')[13]));
+      transArr.push(parseFloat(mat[1].split(', ')[13]))
     } else {
-      mat = transform.match(/^matrix\((.+)\)$/);
-      mat ? transArr.push(parseFloat(mat[1].split(', ')[4])) : transArr.push(0);
-      mat ? transArr.push(parseFloat(mat[1].split(', ')[5])) : transArr.push(0);
+      mat = transform.match(/^matrix\((.+)\)$/)
+      mat ? transArr.push(parseFloat(mat[1].split(', ')[4])) : transArr.push(0)
+      mat ? transArr.push(parseFloat(mat[1].split(', ')[5])) : transArr.push(0)
     }
-    return transArr;
-  };
+    return transArr
+  }
 
   /**
    * Check if event target is inside elements
@@ -561,31 +559,31 @@ if (typeof window !== 'undefined') {
    * @return {Boolean}
    */
   Xt.checkNested = function (element, targets) {
-    let result = false;
-    for (let t of targets) {
+    let result = false
+    for (const t of targets) {
       if (element === t || t.contains(element)) {
-        result = true;
+        result = true
       }
     }
-    return result;
-  };
+    return result
+  }
 
   /**
    * Get unique id
    * @returns {String} Unique id
    */
   Xt.getuniqueId = function () {
-    Xt.uid = Xt.uid !== undefined ? Xt.uid : 0;
-    return 'xt-' + (Xt.uid++);
-  };
+    Xt.uid = Xt.uid !== undefined ? Xt.uid : 0
+    return 'xt-' + (Xt.uid++)
+  }
 
   /**
    * Get unique number
    * @returns {Number} Unique number
    */
   Xt.getStickyIndex = function () {
-    return Xt.stickyIndex--;
-  };
+    return Xt.stickyIndex--
+  }
 
   /**
    * Merge objects
@@ -593,22 +591,22 @@ if (typeof window !== 'undefined') {
    * @returns {Object} Merged object
    */
   Xt.merge = function (arr) {
-    let final = {};
-    for (let obj of arr) {
+    const final = {}
+    for (const obj of arr) {
       if (obj) {
-        for (let [key, value] of Object.entries(obj)) {
-          if (value !== null && typeof value === 'object'
-            && !value.nodeName // not HTML element
-            && value !== window) { // not window
-            final[key] = Xt.merge([final[key], value]);
+        for (const [key, value] of Object.entries(obj)) {
+          if (value !== null && typeof value === 'object' &&
+            !value.nodeName && // not HTML element
+            value !== window) { // not window
+            final[key] = Xt.merge([final[key], value])
           } else {
-            final[key] = value;
+            final[key] = value
           }
         }
       }
     }
-    return final;
-  };
+    return final
+  }
 
   /**
    * Make an array when element is only one
@@ -617,16 +615,16 @@ if (typeof window !== 'undefined') {
    */
   Xt.arrSingle = function (el) {
     if (!el) {
-      return [];
+      return []
     }
     if (el.length === undefined || el.tagName === 'FORM') {
-      let arr = new Array(1);
-      arr[0] = el;
-      return arr;
+      const arr = new Array(1)
+      arr[0] = el
+      return arr
     } else {
-      return el;
+      return el
     }
-  };
+  }
 
   /**
    * Create HTML elements from html string
@@ -634,21 +632,21 @@ if (typeof window !== 'undefined') {
    * @return {Node} HTML elements
    */
   Xt.createElement = function (str) {
-    let div = document.createElement('div');
-    div.innerHTML = str.trim();
-    return div.firstChild;
-  };
+    const div = document.createElement('div')
+    div.innerHTML = str.trim()
+    return div.firstChild
+  }
 
   /**
    * autoClose inside Element
    * @param {Node|HTMLElement|EventTarget|Window} el Element container
    */
   Xt.autoClose = function (el) {
-    let query = '[data-xt-namespace^="drop-xt-"]';
-    for (let drop of el.querySelectorAll(query)) {
-      drop.dispatchEvent(new CustomEvent('off.xt'));
+    const query = '[data-xt-namespace^="drop-xt-"]'
+    for (const drop of el.querySelectorAll(query)) {
+      drop.dispatchEvent(new CustomEvent('off.xt'))
     }
-  };
+  }
 
   /**
    * Set scrollbar width of document
@@ -656,33 +654,33 @@ if (typeof window !== 'undefined') {
    */
   Xt.setScrollbarWidth = function (force = false) {
     if (Xt.scrollbarWidth === undefined) {
-      let scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize.scrollbar',
-        Xt.setScrollbarWidth.bind(this, true));
-      addEventListener('resize', scrollbarWidthHandler);
+      const scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize.scrollbar',
+        Xt.setScrollbarWidth.bind(this, true))
+      addEventListener('resize', scrollbarWidthHandler)
     }
     if (force || Xt.scrollbarWidth === undefined) {
       // add outer
-      let outer = document.createElement('div');
-      outer.style.visibility = 'hidden';
-      outer.style.width = '100%';
-      outer.style.msOverflowStyle = 'scrollbar'; // needed for WinJS apps
-      outer.classList.add('xt-ignore', 'overflow-style');
-      document.body.appendChild(outer);
+      const outer = document.createElement('div')
+      outer.style.visibility = 'hidden'
+      outer.style.width = '100%'
+      outer.style.msOverflowStyle = 'scrollbar' // needed for WinJS apps
+      outer.classList.add('xt-ignore', 'overflow-style')
+      document.body.appendChild(outer)
       // force scrollbars
-      outer.style.overflow = 'scroll';
+      outer.style.overflow = 'scroll'
       // add inner
-      let inner = document.createElement('div');
-      inner.style.width = '100%';
-      inner.classList.add('xt-ignore');
-      outer.appendChild(inner);
+      const inner = document.createElement('div')
+      inner.style.width = '100%'
+      inner.classList.add('xt-ignore')
+      outer.appendChild(inner)
       // return
-      let widthNoScroll = outer.offsetWidth;
-      let widthWithScroll = inner.offsetWidth;
-      Xt.scrollbarWidth = widthNoScroll - widthWithScroll;
+      const widthNoScroll = outer.offsetWidth
+      const widthWithScroll = inner.offsetWidth
+      Xt.scrollbarWidth = widthNoScroll - widthWithScroll
       // remove
-      outer.remove();
+      outer.remove()
     }
-  };
+  }
 
   /**
    * if full width return '' else return value in px
@@ -690,69 +688,69 @@ if (typeof window !== 'undefined') {
    * @returns {String} Value in px
    */
   Xt.normalizeWidth = function (width) {
-    width = parseFloat(width);
+    width = parseFloat(width)
     if (width + Xt.scrollbarWidth >= window.innerWidth) {
-      width = '';
+      width = ''
     } else {
-      width += 'px';
+      width += 'px'
     }
-    return width;
-  };
+    return width
+  }
 
   /**
    * fix scrollbar spacing when changing overflow adding padding
    * @param {Array|Node|HTMLElement|EventTarget|Window} elements Elements to add padding
    */
   Xt.scrollbarSpaceOn = function (container) {
-    let width = Xt.scrollbarWidth;
-    container.style.paddingRight = width + 'px';
+    const width = Xt.scrollbarWidth
+    container.style.paddingRight = width + 'px'
     // backdrop
-    let backdrops = container.querySelectorAll('.backdrop');
-    for (let backdrop of backdrops) {
-      backdrop.style.right = width + 'px';
+    const backdrops = container.querySelectorAll('.backdrop')
+    for (const backdrop of backdrops) {
+      backdrop.style.right = width + 'px'
     }
     // xt-fixed
-    let elements = container.querySelectorAll('.xt-fixed');
-    for (let element of elements) {
-      element.style.paddingRight = '';
-      let style = getComputedStyle(element);
+    const elements = container.querySelectorAll('.xt-fixed')
+    for (const element of elements) {
+      element.style.paddingRight = ''
+      const style = getComputedStyle(element)
       if (Xt.normalizeWidth(element.clientWidth) === '' || getComputedStyle(element).right) { // only if full width or right position
-        let padding = style.paddingRight;
-        let str = 'calc(' + padding + ' + ' + width + 'px)';
-        element.classList.add('transition-none');
+        const padding = style.paddingRight
+        const str = 'calc(' + padding + ' + ' + width + 'px)'
+        element.classList.add('transition-none')
         requestAnimationFrame(function () {
-          element.style.paddingRight = str;
+          element.style.paddingRight = str
           requestAnimationFrame(function () {
-            element.classList.remove('transition-none');
-          });
-        });
+            element.classList.remove('transition-none')
+          })
+        })
       }
     }
-  };
+  }
 
   /**
    * fix scrollbar spacing when changing overflow adding padding
    * @param {Array} elements Elements to remove padding
    */
   Xt.scrollbarSpaceOff = function (container) {
-    container.style.paddingRight = '';
+    container.style.paddingRight = ''
     // backdrop
-    let backdrops = container.querySelectorAll('.backdrop');
-    for (let backdrop of backdrops) {
-      backdrop.style.right = '';
+    const backdrops = container.querySelectorAll('.backdrop')
+    for (const backdrop of backdrops) {
+      backdrop.style.right = ''
     }
     // xt-fixed
-    let elements = container.querySelectorAll('.xt-fixed');
-    for (let element of elements) {
-      element.classList.add('transition-none');
+    const elements = container.querySelectorAll('.xt-fixed')
+    for (const element of elements) {
+      element.classList.add('transition-none')
       requestAnimationFrame(function () {
-        element.style.paddingRight = '';
+        element.style.paddingRight = ''
         requestAnimationFrame(function () {
-          element.classList.remove('transition-none');
-        });
-      });
+          element.classList.remove('transition-none')
+        })
+      })
     }
-  };
+  }
 
   /**
    * ignoreOnce
@@ -762,9 +760,9 @@ if (typeof window !== 'undefined') {
     if (el.classList.contains('xt-ignore--once')) {
       requestAnimationFrame(function () { // @FIX react when componentDidMount
         requestAnimationFrame(function () { // @FIX react when componentDidMount
-          el.classList.remove('xt-ignore', 'xt-ignore--once');
-        });
-      });
+          el.classList.remove('xt-ignore', 'xt-ignore--once')
+        })
+      })
     }
   }
 
@@ -776,17 +774,17 @@ if (typeof window !== 'undefined') {
    */
   Xt.animTime = function (el, timing = null) {
     if (timing || timing === 0) {
-      return timing;
+      return timing
     } else {
-      let style = getComputedStyle(el);
-      let transition = parseFloat(style.transitionDuration) + parseFloat(style.transitionDelay);
-      let animation = parseFloat(style.animationDuration) + parseFloat(style.animationDelay);
+      const style = getComputedStyle(el)
+      const transition = parseFloat(style.transitionDuration) + parseFloat(style.transitionDelay)
+      const animation = parseFloat(style.animationDuration) + parseFloat(style.animationDelay)
       if (transition || animation) {
-        timing = Math.max(transition, animation);
+        timing = Math.max(transition, animation)
       }
-      return timing * 1000;
+      return timing * 1000
     }
-  };
+  }
 
   /**
    * execute function after transition or animation
@@ -795,9 +793,9 @@ if (typeof window !== 'undefined') {
    * @param {String} suffix Timeout suffix
    */
   Xt.animTimeout = function (el, func, suffix = '') {
-    clearTimeout(Xt.dataStorage.get(el, 'xtAnimTimeout' + suffix));
-    Xt.dataStorage.set(el, 'xtAnimTimeout' + suffix, setTimeout(func, Xt.animTime(el)));
-  };
+    clearTimeout(Xt.dataStorage.get(el, 'xtAnimTimeout' + suffix))
+    Xt.dataStorage.set(el, 'xtAnimTimeout' + suffix, setTimeout(func, Xt.animTime(el)))
+  }
 
   /**
    * clear animTimeout
@@ -805,8 +803,8 @@ if (typeof window !== 'undefined') {
    * @param {String} suffix Timeout suffix
    */
   Xt.animTimeoutClear = function (el, suffix = '') {
-    clearTimeout(Xt.dataStorage.get(el, 'xtAnimTimeout' + suffix));
-  };
+    clearTimeout(Xt.dataStorage.get(el, 'xtAnimTimeout' + suffix))
+  }
 
   /**
    * return window percent if percent string
@@ -814,13 +812,13 @@ if (typeof window !== 'undefined') {
    * @returns {Number}
    */
   Xt.windowPercent = function (num) {
-    if (typeof num == 'string' || num instanceof String) {
+    if (typeof num === 'string' || num instanceof String) {
       if (num.indexOf('%') !== -1) {
-        num = Xt.windowHeight * parseFloat(num) / 100;
+        num = Xt.windowHeight * parseFloat(num) / 100
       }
     }
-    return num;
-  };
+    return num
+  }
 
   /**
    * query array of elements or element
@@ -830,20 +828,20 @@ if (typeof window !== 'undefined') {
    */
   Xt.queryAll = function (element, query) {
     if (!query) {
-      return [];
+      return []
     }
     if (!element.length) {
       // search element
-      return Xt.arrSingle(element.querySelectorAll(query));
+      return Xt.arrSingle(element.querySelectorAll(query))
     } else {
       // search array
-      let arr = [];
-      for (let el of element) {
-        arr.push(...el.querySelectorAll(query));
+      const arr = []
+      for (const el of element) {
+        arr.push(...el.querySelectorAll(query))
       }
-      return arr;
+      return arr
     }
-  };
+  }
 
   /**
    * check element visibility
@@ -851,8 +849,8 @@ if (typeof window !== 'undefined') {
    * @returns {Boolean}
    */
   Xt.visible = function (el) {
-    return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
-  };
+    return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)
+  }
 
   /**
    * Fix resize event multiple calls and adds delay on resize and scroll events
@@ -863,38 +861,38 @@ if (typeof window !== 'undefined') {
    * @param {Boolean} instant If instant
    */
   Xt.eventDelay = function (e, element, func, prefix = '', instant = false) {
-    let container = document.documentElement;
+    const container = document.documentElement
     if (e && e.type && (e.type === 'resize' || e.type === 'scroll')) {
-      let delay = instant ? false : Xt[e.type + 'Delay'];
+      const delay = instant ? false : Xt[e.type + 'Delay']
       if (e.type === 'resize') {
         // multiple calls check
         if (window.innerWidth === Xt.dataStorage.get(container, 'xtEventDelay')) { // only width no height because it changes on scroll on mobile
-          return false;
+          return false
         }
         // save after a frame to execute all eventDelay
-        cancelAnimationFrame(Xt.dataStorage.get(container, 'xtEventDelayFrame'));
+        cancelAnimationFrame(Xt.dataStorage.get(container, 'xtEventDelayFrame'))
         Xt.dataStorage.set(container, 'xtEventDelayFrame', requestAnimationFrame(function () {
-          Xt.dataStorage.set(container, 'xtEventDelay', window.innerWidth);
-        }));
+          Xt.dataStorage.set(container, 'xtEventDelay', window.innerWidth)
+        }))
       }
       // delay
       if (delay === false) {
         // func
-        func(e);
+        func(e)
       } else {
-        clearTimeout(Xt.dataStorage.get(element, 'xt' + e.type + prefix + 'Timeout'));
+        clearTimeout(Xt.dataStorage.get(element, 'xt' + e.type + prefix + 'Timeout'))
         Xt.dataStorage.set(element, 'xt' + e.type + prefix + 'Timeout', setTimeout(function () {
           // func
-          func(e);
+          func(e)
         }, delay))
       }
     } else {
       // func
-      func(e);
+      func(e)
     }
-  };
+  }
 
-  Xt.dataStorage.set(document.documentElement, 'xtEventDelay', window.innerWidth);
+  Xt.dataStorage.set(document.documentElement, 'xtEventDelay', window.innerWidth)
 
   /**
    * Xt.windowHeight
@@ -903,38 +901,37 @@ if (typeof window !== 'undefined') {
 
   addEventListener('resize', function (e) {
     Xt.eventDelay(e, document.documentElement, function () {
-      Xt.windowHeightSet();
-    }, 'xtWindowHeight' + 'Resize', true);
-  });
+      Xt.windowHeightSet()
+    }, 'xtWindowHeight' + 'Resize', true)
+  })
 
   Xt.windowHeightSet = function () {
-    Xt.windowHeight = window.innerHeight;
+    Xt.windowHeight = window.innerHeight
     /* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
      * height: 100vh;
      * height: calc(var(--vh, 1vh) * 100);
      */
-    document.documentElement.style.setProperty('--vh', (Xt.windowHeight * 0.01) + 'px');
-  };
+    document.documentElement.style.setProperty('--vh', (Xt.windowHeight * 0.01) + 'px')
+  }
 
   /**
    * passive events
    * https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Safely_detecting_option_support
    */
 
-  Xt.passiveSupported = false;
+  Xt.passiveSupported = false
 
   try {
-    let options = {
-      get passive() {
-        Xt.passiveSupported = true;
+    const options = {
+      get passive () {
+        Xt.passiveSupported = true
       }
-    };
-    addEventListener('test', options, options);
-    removeEventListener('test', options, options);
+    }
+    addEventListener('test', options, options)
+    removeEventListener('test', options, options)
   } catch (err) {
-    Xt.passiveSupported = false;
+    Xt.passiveSupported = false
   }
 
-  //////////////////////
-
+  //
 }

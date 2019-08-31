@@ -1,8 +1,8 @@
 @import '~xtend-library/src/core/typography/typography-setup.less';
 
-//////////////////////
-// font face
-//////////////////////
+/**
+ * font face
+ */
 
 @import (css) url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
 
@@ -24,9 +24,9 @@
   font-style: normal;
 }
 
-//////////////////////
-// rem
-//////////////////////
+/**
+ * rem
+ */
 
 // rem
 
@@ -48,9 +48,9 @@ body {
   line-height: 1.6;
 }
 
-//////////////////////
-// size
-//////////////////////
+/**
+ * size
+ */
 
 .font--medium {
   font-size: 1.4rem;
@@ -62,9 +62,9 @@ body {
   line-height: 1.6;
 }
 
-//////////////////////
-// spacing
-//////////////////////
+/**
+ * spacing
+ */
 
 .spacing--small {
   .margin(top, small) !important;
@@ -84,9 +84,9 @@ body {
   .margin(y, layout) !important;
 }
 
-//////////////////////
-// headers
-//////////////////////
+/**
+ * headers
+ */
 
 h1, .h1 {
   .spacing--big();
@@ -159,9 +159,9 @@ h6, .h6 {
   text-align: center;
 }
 
-//////////////////////
-// text
-//////////////////////
+/**
+ * text
+ */
 
 p {
   .margin(y, layout) !important;
@@ -213,9 +213,9 @@ pre {
   }
 }
 
-//////////////////////
-// text--inverse
-//////////////////////
+/**
+ * text--inverse
+ */
 
 .text--inverse {
   color: @text--inverse;
@@ -224,9 +224,9 @@ pre {
   }
 }
 
-//////////////////////
-// ul ol
-//////////////////////
+/**
+ * ul ol
+ */
 
 ul,
 ol {
@@ -286,9 +286,9 @@ ul {
   }
 }
 
-//////////////////////
-// dl
-//////////////////////
+/**
+ * dl
+ */
 
 dl {
   .margin(bottom, layout);

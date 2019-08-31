@@ -1,30 +1,25 @@
-//////////////////////
-// call only if in browser mode
-// https://www.gatsbyjs.org/docs/debugging-html-builds/#how-to-check-if-code-classlanguage-textwindowcode-is-defined
-//////////////////////
+/**
+ * call only if in browser mode
+ * https://www.gatsbyjs.org/docs/debugging-html-builds/#how-to-check-if-code-classlanguage-textwindowcode-is-defined
+ */
 
 if (typeof window !== 'undefined') {
-
-  //////////////////////
-  // classlist
-  // https://www.npmjs.com/package/classlist.js
-  //////////////////////
-
+  /**
+   * classlist
+   * https://www.npmjs.com/package/classlist.js
+   */
   require('classlist.js');
 
-  //////////////////////
-  // url-polyfill
-  // https://www.npmjs.com/package/url-polyfill
-  //////////////////////
-
+  /**
+   * url-polyfill
+   * https://www.npmjs.com/package/url-polyfill
+   */
   require('url-polyfill');
 
-  //////////////////////
-  // closest
-  // https://github.com/jonathantneal/closest
-  // USAGE: element.closest(query);
-  //////////////////////
-
+  /**
+   * closest
+   * https://github.com/jonathantneal/closest
+   */
   (function (ElementProto) {
     if (typeof ElementProto.matches !== 'function') {
       ElementProto.matches = ElementProto.msMatchesSelector || ElementProto.mozMatchesSelector || ElementProto.webkitMatchesSelector || function matches(selector) {
@@ -51,12 +46,10 @@ if (typeof window !== 'undefined') {
     }
   })(window.Element.prototype);
 
-  //////////////////////
-  // remove
-  // https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/remove()/remove().md
-  // USAGE: element.remove();
-  //////////////////////
-
+  /**
+   * remove
+   * https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/remove()/remove().md
+   */
   (function (arr) {
     arr.forEach(function (item) {
       if (item.hasOwnProperty('remove')) {
@@ -73,11 +66,10 @@ if (typeof window !== 'undefined') {
     });
   })([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
 
-  //////////////////////
-  // prepend
-  // https://github.com/jserz/js_piece/blob/master/DOM/ParentNode/prepend()/prepend().md
-  //////////////////////
-
+  /**
+   * prepend
+   * https://github.com/jserz/js_piece/blob/master/DOM/ParentNode/prepend()/prepend().md
+   */
   (function (arr) {
     arr.forEach(function (item) {
       if (item.hasOwnProperty('prepend')) {
@@ -102,11 +94,10 @@ if (typeof window !== 'undefined') {
     });
   })([Element.prototype, Document.prototype, DocumentFragment.prototype]);
 
-  //////////////////////
-  // append
-  // https://github.com/jserz/js_piece/blob/master/DOM/ParentNode/append()/append().md
-  //////////////////////
-
+  /**
+   * append
+   * https://github.com/jserz/js_piece/blob/master/DOM/ParentNode/append()/append().md
+   */
   (function (arr) {
     arr.forEach(function (item) {
       if (item.hasOwnProperty('append')) {
@@ -131,11 +122,10 @@ if (typeof window !== 'undefined') {
     });
   })([Element.prototype, Document.prototype, DocumentFragment.prototype]);
 
-  //////////////////////
-  // findIndex
-  // https://tc39.github.io/ecma262/#sec-array.prototype.findindex
-  //////////////////////
-
+  /**
+   * findIndex
+   * https://tc39.github.io/ecma262/#sec-array.prototype.findindex
+   */
   if (!Array.prototype.findIndex) {
     Object.defineProperty(Array.prototype, 'findIndex', {
       value: function (predicate) {
@@ -163,11 +153,10 @@ if (typeof window !== 'undefined') {
     });
   }
 
-  //////////////////////
-  // includes
-  // https://tc39.github.io/ecma262/#sec-array.prototype.includes
-  //////////////////////
-
+  /**
+   * includes
+   * https://tc39.github.io/ecma262/#sec-array.prototype.includes
+   */
   if (!Array.prototype.includes) {
     Object.defineProperty(Array.prototype, 'includes', {
       value: function(valueToFind, fromIndex) {
@@ -219,11 +208,10 @@ if (typeof window !== 'undefined') {
     });
   }
 
-  //////////////////////
-  // CustomEvent
-  // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
-  //////////////////////
-
+  /**
+   * CustomEvent
+   * https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
+   */
   (function () {
     if (typeof window.CustomEvent === "function") {
       return false;
@@ -240,11 +228,10 @@ if (typeof window !== 'undefined') {
     window.CustomEvent = CustomEvent;
   })();
 
-  //////////////////////
-  // scrollingElement
-  // https://github.com/yangg/scrolling-element
-  //////////////////////
-
+  /**
+   * scrollingElement
+   * https://github.com/yangg/scrolling-element
+   */
   (function () {
     if (document.scrollingElement) {
       return;
@@ -273,7 +260,4 @@ if (typeof window !== 'undefined') {
       get: scrollingElement
     })
   })();
-
-  //////////////////////
-
 }

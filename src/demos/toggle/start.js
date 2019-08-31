@@ -1,4 +1,4 @@
-import {Xt} from 'xtend-library'
+import { Xt } from 'xtend-library'
 
 /**
  * #demo--toggle--restart
@@ -6,18 +6,16 @@ import {Xt} from 'xtend-library'
 
 Xt.mount.push({
   matches: '#demo--toggle--restart',
-  fnc: function mount(object) {
-
+  fnc: function mount (object) {
     // event
 
     object.addEventListener('click', function (e) {
       // restart
-      let toggles = document.querySelectorAll('[data-xt-toggle]');
-      for (let toggle of toggles) {
-        let self = Xt.get('xt-toggle', toggle);
-        self.initStart();
+      const toggles = document.querySelectorAll('[data-xt-toggle]')
+      for (const toggle of toggles) {
+        const self = Xt.get('xt-toggle', toggle)
+        self.initStart()
       }
-    });
-
+    })
   }
-});
+})

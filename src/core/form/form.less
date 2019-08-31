@@ -1,19 +1,23 @@
 @import '~xtend-library/src/core/form/form-setup.less';
 
-//////////////////////
-// variables
-//////////////////////
+/**
+ * vars
+ */
 
 @select-arrow--size: 4px; // in px
 @select-space--size: 24px; // in px
 
-//////////////////////
-// fieldset and legend
-//////////////////////
+/**
+ * fieldset
+ */
 
 fieldset + fieldset {
   .margin(top, small);
 }
+
+/**
+ * legend
+ */
 
 legend {
   .block();
@@ -21,9 +25,9 @@ legend {
   .header--line();
 }
 
-//////////////////////
-// group
-//////////////////////
+/**
+ * group
+ */
 
 .form-group {
   // option
@@ -122,9 +126,9 @@ legend {
   .form-groups({ .form-group--none() });
 }
 
-//////////////////////
-// label
-//////////////////////
+/**
+ * label
+ */
 
 .form-label {
   // styles
@@ -137,9 +141,9 @@ legend {
   text-transform: uppercase;
 }
 
-//////////////////////
-// item
-//////////////////////
+/**
+ * item
+ */
 
 .form-item {
   // styles
@@ -216,9 +220,9 @@ legend {
   color: @gray--500;
 }
 
-//////////////////////
-// check and radio
-//////////////////////
+/**
+ * check and radio
+ */
 
 // label
 
@@ -351,9 +355,9 @@ input[type="radio"]:not(.unstyled) {
   }
 }
 
-//////////////////////
-// validation
-//////////////////////
+/**
+ * validation
+ */
 
 .form-item {
   &:invalid {

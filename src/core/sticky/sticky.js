@@ -1,139 +1,134 @@
-import {Xt} from 'xtend-library'
+import { Xt } from 'xtend-library'
 import 'xtend-library/src/core/controller/controller.js'
 
-//////////////////////
-// Sticky
-//////////////////////
-
 class Sticky extends Xt.Controller {
-
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Object} optionsJs User options
    * @constructor
    */
-  constructor(object, optionsJs = {}) {
-    super(object, optionsJs);
+  constructor (object, optionsJs = {}) {
+    super(object, optionsJs)
   }
 
-  //////////////////////
+  //
   // init
-  //////////////////////
+  //
 
   /**
    * init elements, targets and currents
    */
-  initScope() {
-    super.initScope();
-    let self = this;
-    let options = self.options;
+  initScope () {
+    super.initScope()
+    const self = this
+    const options = self.options
     // mode
-    self.mode = 'unique';
+    self.mode = 'unique'
     // sticky container
-    for (let el of self.elements) {
-      let container = el.closest('.xt-container');
+    for (const el of self.elements) {
+      let container = el.closest('.xt-container')
       if (!container) {
-        container = Xt.createElement('<div class="xt-container xt-fixed--check"></div>');
-        el.before(container);
-        el.classList.add('xt-ignore', 'xt-ignore--once'); // @FIX ignore once for mount when moving
-        container.append(el);
+        container = Xt.createElement('<div class="xt-container xt-fixed--check"></div>')
+        el.before(container)
+        el.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
+        container.append(el)
       }
-      el.style[options.position] = '0px';
+      el.style[options.position] = '0px'
       // sticky clone
-      let target = container.querySelector('.xt-clone');
+      let target = container.querySelector('.xt-clone')
       if (!target) {
-        target = el.cloneNode(true);
-        target.classList.add('xt-clone', 'xt-ignore');
-        target.classList.remove('xt-ignore--once'); // @FIX ignore once for mount when moving
-        for (let elId of target.querySelectorAll('[id]')) {
-          elId.setAttribute('id', elId.getAttribute('id') + '-clone');
+        target = el.cloneNode(true)
+        target.classList.add('xt-clone', 'xt-ignore')
+        target.classList.remove('xt-ignore--once') // @FIX ignore once for mount when moving
+        for (const elId of target.querySelectorAll('[id]')) {
+          elId.setAttribute('id', elId.getAttribute('id') + '-clone')
         }
-        for (let elName of target.querySelectorAll('[name]')) {
-          elName.setAttribute('name', elName.getAttribute('name') + '-clone');
+        for (const elName of target.querySelectorAll('[name]')) {
+          elName.setAttribute('name', elName.getAttribute('name') + '-clone')
         }
-        container.append(target);
+        container.append(target)
       }
-      self.targets.push(target);
+      self.targets.push(target)
       // sticky
-      el.classList.add('xt-fixed', 'xt-sticky');
+      el.classList.add('xt-fixed', 'xt-sticky')
       if (options.sticky === 'absolute') {
-        el.classList.add('xt-sticky--absolute');
+        el.classList.add('xt-sticky--absolute')
       } else if (options.sticky === 'fixed') {
-        el.classList.add('xt-sticky--fixed');
+        el.classList.add('xt-sticky--fixed')
       } else if (options.sticky === 'fixed-always') {
-        el.classList.add('xt-sticky--fixed-always');
+        el.classList.add('xt-sticky--fixed-always')
       }
       if (target) {
-        target.classList.add('xt-fixed', 'xt-sticky');
+        target.classList.add('xt-fixed', 'xt-sticky')
         if (options.sticky === 'absolute') {
-          target.classList.add('xt-sticky--absolute');
+          target.classList.add('xt-sticky--absolute')
         } else if (options.sticky === 'fixed') {
-          target.classList.add('xt-sticky--fixed');
+          target.classList.add('xt-sticky--fixed')
         } else if (options.sticky === 'fixed-always') {
-          target.classList.add('xt-sticky--fixed-always');
+          target.classList.add('xt-sticky--fixed-always')
         }
       }
       // hide
       if (options.hide === 'down') {
-        el.classList.add('sticky-hide--down');
+        el.classList.add('sticky-hide--down')
       } else {
-        el.classList.remove('sticky-hide--down');
+        el.classList.remove('sticky-hide--down')
       }
       if (options.hide === 'up') {
-        el.classList.add('sticky-hide--up');
+        el.classList.add('sticky-hide--up')
       } else {
-        el.classList.remove('sticky-hide--up');
+        el.classList.remove('sticky-hide--up')
       }
       // @index--sticky by javascript 100 and decreses with sequential sticky
-      el.style.zIndex = Xt.getStickyIndex();
+      el.style.zIndex = Xt.getStickyIndex()
     }
   }
 
   /**
    * init events
    */
-  initEvents() {
-    let self = this;
-    let options = self.options;
+  initEvents () {
+    const self = this
+    const options = self.options
     // event on
     if (options.on) {
-      let stickyHandler = Xt.dataStorage.put(window, options.on + '.' + self.namespace,
-        self.eventStickyHandler.bind(self));
-      let events = [...options.on.split(' ')];
-      for (let event of events) {
-        addEventListener(event, stickyHandler, Xt.passiveSupported ? {passive: true} : false);
+      const stickyHandler = Xt.dataStorage.put(window, options.on + '.' + self.namespace,
+        self.eventStickyHandler.bind(self))
+      const events = [...options.on.split(' ')]
+      for (const event of events) {
+        addEventListener(event, stickyHandler, Xt.passiveSupported ? { passive: true } : false)
       }
       requestAnimationFrame(function () {
-        self.eventStickyHandler(null, true);
-      });
+        self.eventStickyHandler(null, true)
+      })
     }
     // autoClose
-    let autoCloseHandler = Xt.dataStorage.put(self.object, 'hide' + '.' + self.namespace,
-      Xt.autoClose.bind(self, self.object));
-    self.object.addEventListener('hide.xt.sticky', autoCloseHandler);
+    const autoCloseHandler = Xt.dataStorage.put(self.object, 'hide' + '.' + self.namespace,
+      Xt.autoClose.bind(self, self.object))
+    self.object.addEventListener('hide.xt.sticky', autoCloseHandler)
     // focusin
-    let focusInHandler = Xt.dataStorage.put(document, 'focusin' + '.' + self.namespace,
-      self.eventFocusInHandler.bind(self));
-    document.addEventListener('focusin', focusInHandler, Xt.passiveSupported ? {passive: true} : false);
+    const focusInHandler = Xt.dataStorage.put(document, 'focusin' + '.' + self.namespace,
+      self.eventFocusInHandler.bind(self))
+    document.addEventListener('focusin', focusInHandler, Xt.passiveSupported ? { passive: true } : false)
   }
 
-  //////////////////////
+  //
   // handler
-  //////////////////////
+  //
 
   /**
    * element on handler
    * @param {Event} e
    * @param {Boolean} initial
    */
-  eventStickyHandler(e = null, initial = false) {
-    let self = this;
+  eventStickyHandler (e = null, initial = false) {
+    const self = this
     // handler
     if (!e || !e.detail || !e.detail.skip) { // @FIX filter triggered from library (use only in library)
       Xt.eventDelay(e, self.object, function () {
-        self.eventSticky(e, initial);
-      }, self.componentNamespace + 'Resize');
+        self.eventSticky(e, initial)
+      }, self.componentNamespace + 'Resize')
     }
   }
 
@@ -141,166 +136,166 @@ class Sticky extends Xt.Controller {
    * element focusin handler
    * @param {Event} e
    */
-  eventFocusInHandler(e) {
-    let self = this;
+  eventFocusInHandler (e) {
+    const self = this
     // handler
-    for (let tr of self.targets) {
-      let el = self.getElements(tr)[0];
+    for (const tr of self.targets) {
+      const el = self.getElements(tr)[0]
       // show element if is hiding on focus
       if (el.classList.contains('sticky--hide')) {
-        let active = el.contains(e.target);
+        const active = el.contains(e.target)
         if (active) {
-          el.style.transform = 'translateY(0px)';
+          el.style.transform = 'translateY(0px)'
         } else {
-          el.style.transform = 'translateY(' + Xt.dataStorage.get(el, self.componentNamespace + 'AddOld') + 'px)';
+          el.style.transform = 'translateY(' + Xt.dataStorage.get(el, self.componentNamespace + 'AddOld') + 'px)'
         }
       }
     }
   }
 
-  //////////////////////
+  //
   // event
-  //////////////////////
+  //
 
   /**
    * window scroll
    * @param {Event} e
    * @param {Boolean} initial
    */
-  eventSticky(e, initial) {
-    let self = this;
-    let options = self.options;
+  eventSticky (e, initial) {
+    const self = this
+    const options = self.options
     // disabled
     if (self.disabled && !self.initial) {
-      return false;
+      return false
     }
-    // var
-    let anim = true;
-    let hide = false;
-    let add = 0;
-    let addHide = 0;
-    let windowHeight = Xt.windowHeight;
-    let scrollingElement = document.scrollingElement;
-    let scrollHeight = scrollingElement.scrollHeight;
-    let scrollTop = scrollingElement.scrollTop;
+    // vars
+    let anim = true
+    let hide = false
+    let add = 0
+    let addHide = 0
+    const windowHeight = Xt.windowHeight
+    const scrollingElement = document.scrollingElement
+    const scrollHeight = scrollingElement.scrollHeight
+    const scrollTop = scrollingElement.scrollTop
     // direction
-    self.detail.inverseForce = scrollTop < self.detail.scrollTopOld;
+    self.detail.inverseForce = scrollTop < self.detail.scrollTopOld
     // loop
-    for (let el of self.elements) {
-      let tr = self.getTargets(el)[0];
+    for (const el of self.elements) {
+      const tr = self.getTargets(el)[0]
       // vars
-      let heightEl = parseFloat(getComputedStyle(el).height);
-      let heightTr = parseFloat(getComputedStyle(tr).height);
-      let topTr = tr.getBoundingClientRect().top;
+      const heightEl = parseFloat(getComputedStyle(el).height)
+      const heightTr = parseFloat(getComputedStyle(tr).height)
+      const topTr = tr.getBoundingClientRect().top
       // hide
       if (options.hide === 'down') {
         if (!self.detail.inverseForce) {
-          addHide = heightTr;
+          addHide = heightTr
         }
       }
       if (options.hide === 'up') {
         if (self.detail.inverseForce) {
-          addHide = heightTr;
+          addHide = heightTr
         }
       }
       // scroll
-      let top = self.eventStickyPos(options.limit['top'] || self.targets, scrollTop, topTr);
-      let bottom = self.eventStickyPos(options.limit['bottom'], scrollTop, Infinity);
+      let top = self.eventStickyPos(options.limit.top || self.targets, scrollTop, topTr)
+      let bottom = self.eventStickyPos(options.limit.bottom, scrollTop, Infinity)
       if (options.position === 'top') {
-        bottom -= heightTr;
+        bottom -= heightTr
       }
       if (options.position === 'bottom') {
-        top -= windowHeight - heightTr;
-        bottom = Math.abs(scrollHeight - windowHeight - bottom);
+        top -= windowHeight - heightTr
+        bottom = Math.abs(scrollHeight - windowHeight - bottom)
       }
       // contain and add
-      let addTop = 0;
-      let addBottom = 0;
+      let addTop = 0
+      let addBottom = 0
       if (options.contain) {
-        if (options.contain['top']) {
-          let addTopObj = self.eventStickyHeight(options.contain['top']);
-          addTop = addTopObj.val;
+        if (options.contain.top) {
+          const addTopObj = self.eventStickyHeight(options.contain.top)
+          addTop = addTopObj.val
           if (addTop !== null && addTop > topTr) {
-            add = addTop;
+            add = addTop
             if (!addTopObj.foundHide) {
-              anim = false;
+              anim = false
             }
           } else {
-            addTop = null;
+            addTop = null
           }
         }
-        if (options.contain['bottom']) {
-          addBottom = self.eventStickyPos(options.contain['bottom']);
+        if (options.contain.bottom) {
+          addBottom = self.eventStickyPos(options.contain.bottom)
           if (addBottom !== null && addBottom < heightEl + addTop) {
-            add = addBottom - heightEl;
-            anim = false;
+            add = addBottom - heightEl
+            anim = false
           } else {
-            addBottom = null;
+            addBottom = null
           }
         }
       }
       // save real add for calculation
-      Xt.dataStorage.set(el, self.componentNamespace + 'Add', add);
+      Xt.dataStorage.set(el, self.componentNamespace + 'Add', add)
       // activation
-      let checkTop = scrollTop >= top - add + addHide;
-      let checkBottom = scrollTop < bottom + add - addHide;
+      const checkTop = scrollTop >= top - add + addHide
+      const checkBottom = scrollTop < bottom + add - addHide
       if (checkTop && checkBottom) {
         // initial
         if (initial) {
-          Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true);
+          Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true)
         } else {
-          Xt.dataStorage.remove(el, self.componentNamespace + 'Initial');
+          Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
         }
         // inside
-        self.eventOn(el, true);
+        self.eventOn(el, true)
         // hide
         if (addHide) {
-          hide = true;
+          hide = true
         }
       } else {
         // initial
         if (initial) {
-          Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true);
+          Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true)
         } else {
-          Xt.dataStorage.remove(el, self.componentNamespace + 'Initial');
+          Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
         }
         // outside
-        self.eventOff(el, true);
+        self.eventOff(el, true)
       }
       // after active
       if (el.classList.contains(...self.classes)) {
         // hide
         if (hide) {
-          add = -heightEl;
+          add = -heightEl
           if (!el.classList.contains('sticky--hide')) {
-            el.classList.add('sticky--hide');
+            el.classList.add('sticky--hide')
             // autoClose
-            dispatchEvent(new CustomEvent('autoClose.xt'));
+            dispatchEvent(new CustomEvent('autoClose.xt'))
             // listener dispatch
-            let detail = self.eDetailSet(e);
-            el.dispatchEvent(new CustomEvent('hide.xt.sticky', {bubbles: true, detail: detail}));
+            const detail = self.eDetailSet(e)
+            el.dispatchEvent(new CustomEvent('hide.xt.sticky', { bubbles: true, detail: detail }))
           }
         } else {
           if (el.classList.contains('sticky--hide')) {
-            el.classList.remove('sticky--hide');
+            el.classList.remove('sticky--hide')
             // listener dispatch
-            let detail = self.eDetailSet(e);
-            el.dispatchEvent(new CustomEvent('show.xt.sticky', {bubbles: true, detail: detail}));
+            const detail = self.eDetailSet(e)
+            el.dispatchEvent(new CustomEvent('show.xt.sticky', { bubbles: true, detail: detail }))
           }
         }
       } else {
         // reset
-        add = 0;
-        anim = false;
+        add = 0
+        anim = false
       }
       // anim
       if (anim && (addTop || !addBottom) && self.detail.scrollTopOld !== undefined) {
         if (!el.classList.contains('sticky--moving')) {
-          el.classList.add('sticky--moving');
+          el.classList.add('sticky--moving')
         }
       } else {
         if (el.classList.contains('sticky--moving')) {
-          el.classList.remove('sticky--moving');
+          el.classList.remove('sticky--moving')
         }
       }
       // top and bottom
@@ -326,21 +321,21 @@ class Sticky extends Xt.Controller {
       */
       // set add
       if (add !== Xt.dataStorage.get(el, self.componentNamespace + 'AddOld')) {
-        el.style.transform = 'translateY(' + add + 'px)';
+        el.style.transform = 'translateY(' + add + 'px)'
       }
       // fix position fixed width 100% of parent
-      let width = Xt.normalizeWidth(el.clientWidth);
+      const width = Xt.normalizeWidth(el.clientWidth)
       if (el.style.width !== width) {
-        el.style.width = width;
+        el.style.width = width
       }
       // dispatch
-      let detail = self.eDetailSet();
-      el.dispatchEvent(new CustomEvent('change.xt.sticky', {bubbles: true, detail: detail}));
+      const detail = self.eDetailSet()
+      el.dispatchEvent(new CustomEvent('change.xt.sticky', { bubbles: true, detail: detail }))
       // save for direction
-      Xt.dataStorage.set(el, self.componentNamespace + 'AddOld', add);
+      Xt.dataStorage.set(el, self.componentNamespace + 'AddOld', add)
     }
     // save for direction
-    self.detail.scrollTopOld = scrollTop;
+    self.detail.scrollTopOld = scrollTop
   }
 
   /**
@@ -350,41 +345,41 @@ class Sticky extends Xt.Controller {
    * @param {Number} scrollTop Window's scrollTop
    * @returns {Number} value Option's position (px)
    */
-  eventStickyPos(option, scrollTop = 0, val = null) {
+  eventStickyPos (option, scrollTop = 0, val = null) {
     if (!isNaN(parseFloat(option))) {
-      val = option;
+      val = option
     } else {
-      let elements = Array.isArray(option) || NodeList.prototype.isPrototypeOf(option) ? option : document.querySelectorAll(option);
+      const elements = Array.isArray(option) || NodeList.prototype.isPrototypeOf(option) ? option : document.querySelectorAll(option)
       if (elements.length) {
-        let found = false;
-        val = 0;
-        for (let el of elements) {
-          let add = Xt.dataStorage.get(el, self.componentNamespace + 'Add');
+        let found = false
+        val = 0
+        for (const el of elements) {
+          const add = Xt.dataStorage.get(el, self.componentNamespace + 'Add')
           if (add) { // if sticky--hide get real add
-            let style = getComputedStyle(el);
+            const style = getComputedStyle(el)
             if (style.display !== 'none') {
-              val += add;
-              found = true;
+              val += add
+              found = true
             }
           } else {
-            let rect = el.getBoundingClientRect();
-            val += rect.top;
-            found = true;
+            const rect = el.getBoundingClientRect()
+            val += rect.top
+            found = true
           }
         }
         if (found) {
-          val += scrollTop;
+          val += scrollTop
         } else {
-          val = null;
+          val = null
         }
       }
     }
-    return val;
+    return val
   }
 
-  //////////////////////
+  //
   // event util
-  //////////////////////
+  //
 
   /**
    * get height of option
@@ -392,77 +387,74 @@ class Sticky extends Xt.Controller {
    * @param {Number} val Default value
    * @returns {Object} obj Option's height (px) and if found hide element
    */
-  eventStickyHeight(option, val = null) {
-    let self = this;
+  eventStickyHeight (option, val = null) {
+    const self = this
     // logic
-    let foundHide = false;
+    let foundHide = false
     if (!isNaN(parseFloat(option))) {
-      val = option;
+      val = option
     } else {
-      let elements = Array.isArray(option) || NodeList.prototype.isPrototypeOf(option) ? option : document.querySelectorAll(option);
+      const elements = Array.isArray(option) || NodeList.prototype.isPrototypeOf(option) ? option : document.querySelectorAll(option)
       if (elements.length) {
-        for (let el of elements) {
+        for (const el of elements) {
           if (el.classList.contains('sticky-hide--down') && el.classList.contains(...self.classes)) {
             if (self.detail.inverseForce) {
-              val += el.clientHeight;
-              foundHide = true;
+              val += el.clientHeight
+              foundHide = true
             }
           } else if (el.classList.contains('sticky-hide--up') && el.classList.contains(...self.classes)) {
             if (!self.detail.inverseForce) {
-              val += el.clientHeight;
-              foundHide = true;
+              val += el.clientHeight
+              foundHide = true
             }
           } else {
-            val += el.clientHeight;
+            val += el.clientHeight
           }
         }
       }
     }
-    return {val: val, foundHide: foundHide};
+    return { val: val, foundHide: foundHide }
   }
-
 }
 
-//////////////////////
+//
 // option
-//////////////////////
+//
 
-Sticky.componentName = 'xt-sticky';
+Sticky.componentName = 'xt-sticky'
 Sticky.optionsDefault = {
-  "on": "scroll resize",
-  "min": 0,
-  "max": "Infinity",
-  "instant": true,
-  "sticky": true,
-  "position": "top",
-  "limit": {"bottom": "Infinity"},
-  "contain": false,
-  "hide": false,
-  "aria": false
-};
+  on: 'scroll resize',
+  min: 0,
+  max: 'Infinity',
+  instant: true,
+  sticky: true,
+  position: 'top',
+  limit: { bottom: 'Infinity' },
+  contain: false,
+  hide: false,
+  aria: false
+}
 
-//////////////////////
+//
 // export
-//////////////////////
+//
 
-Xt.Sticky = Sticky;
+Xt.Sticky = Sticky
 
-//////////////////////
+//
 // observe
-//////////////////////
+//
 
 Xt.mount.push({
   matches: '[data-' + Xt.Sticky.componentName + ']',
-  fnc: function mount(object) {
-
-    let self = new Xt.Sticky(object, object.getAttribute('data-' + Xt.Sticky.componentName));
+  fnc: function mount (object) {
+    let self = new Xt.Sticky(object, object.getAttribute('data-' + Xt.Sticky.componentName))
 
     // unmount
 
-    return function unmount() {
-      self.destroy();
-      self = null;
-    };
-
+    return function unmount () {
+      self.destroy()
+      self = null
+    }
   }
-});
+})

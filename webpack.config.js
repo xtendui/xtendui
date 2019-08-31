@@ -7,16 +7,16 @@ module.exports = {
   mode: 'production',
   context: path.resolve(__dirname, ''),
   entry: {
-    'dist/xtend': ['./dist/xtend.js', './dist/xtend.less'],
+    'dist/xtend': ['./dist/xtend.js', './dist/xtend.less']
   },
   output: {
     filename: '[name].min.js',
-    path: __dirname,
+    path: __dirname
   },
   resolve: {
     alias: {
-      'xtend-library': path.resolve(__dirname, './'), // resolve xtend-library js and less
-    },
+      'xtend-library': path.resolve(__dirname, './') // resolve xtend-library js and less
+    }
   },
   module: {
     rules: [
@@ -29,17 +29,17 @@ module.exports = {
               ['@babel/preset-env',
                 {
                   useBuiltIns: 'entry',
-                  corejs: 2,
-                },
-              ],
+                  corejs: 2
+                }
+              ]
             ],
             plugins: [
               ['@babel/plugin-transform-for-of'],
               ['@babel/plugin-transform-arrow-functions'],
-              ['@babel/plugin-proposal-object-rest-spread'],
-            ],
-          },
-        },
+              ['@babel/plugin-proposal-object-rest-spread']
+            ]
+          }
+        }
       },
       {
         test: /\.less$/,
@@ -49,41 +49,41 @@ module.exports = {
             loader: 'css-loader',
             options: {
               sourceMap: true
-            },
+            }
           },
           {
             loader: 'less-loader',
             options: {
-              sourceMap: true,
-            },
-          },
+              sourceMap: true
+            }
+          }
         ]
       },
       {
         test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
         loader: 'url-loader',
         options: {
-          limit: 8192,
-        },
-      },
-    ],
+          limit: 8192
+        }
+      }
+    ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].min.css',
-    }),
+      filename: '[name].min.css'
+    })
   ],
   optimization: {
     minimizer: [new TerserJSPlugin({
-      sourceMap: true,
+      sourceMap: true
     }), new OptimizeCSSAssetsPlugin({
       cssProcessorOptions: {
         map: {
           inline: false,
-          annotation: true,
-        },
-      },
-    })],
+          annotation: true
+        }
+      }
+    })]
   },
-  devtool: 'source-map',
-};
+  devtool: 'source-map'
+}

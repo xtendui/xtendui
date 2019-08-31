@@ -1,92 +1,84 @@
-import {Xt} from 'xtend-library'
+import { Xt } from 'xtend-library'
 import 'xtend-library/src/core/controller/controller.js'
 
-//////////////////////
-// Toggle
-//////////////////////
-
 class Toggle extends Xt.Controller {
-
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Object} optionsJs User options
    * @constructor
    */
-  constructor(object, optionsJs = {}) {
-    super(object, optionsJs);
+  constructor (object, optionsJs = {}) {
+    super(object, optionsJs)
   }
 
-  //////////////////////
+  //
   // init
-  //////////////////////
+  //
 
   /**
    * init aria
    */
-  initAria() {
-    super.initAria();
-    let self = this;
-    let options = self.options;
+  initAria () {
+    super.initAria()
+    const self = this
+    const options = self.options
     // aria
     if (options.aria) {
       if (self.targets.length) {
         if (self.mode === 'multiple') {
-          self.object.setAttribute('role', 'tablist');
+          self.object.setAttribute('role', 'tablist')
           if (options.max > 1) {
-            self.object.setAttribute('aria-multiselectable', 'true');
+            self.object.setAttribute('aria-multiselectable', 'true')
           }
-          for (let el of self.elements) {
-            let ariaEls = Xt.queryAll(el, options.ariaControls);
-            let ariaEl = ariaEls.length ? ariaEls[0] : el;
-            ariaEl.setAttribute('role', 'tab');
+          for (const el of self.elements) {
+            const ariaEls = Xt.queryAll(el, options.ariaControls)
+            const ariaEl = ariaEls.length ? ariaEls[0] : el
+            ariaEl.setAttribute('role', 'tab')
           }
-          for (let tr of self.targets) {
-            tr.setAttribute('role', 'tabpanel');
+          for (const tr of self.targets) {
+            tr.setAttribute('role', 'tabpanel')
           }
         }
       }
     }
   }
-
 }
 
-//////////////////////
+//
 // option
-//////////////////////
+//
 
-Toggle.componentName = 'xt-toggle';
+Toggle.componentName = 'xt-toggle'
 Toggle.optionsDefault = {
-  "elements": ":scope > a, :scope > button",
-  "targets": ":scope > [class^=\"toggle--\"], :scope > [class*=\" toggle--\"]",
-  "on": "click",
-  "min": 0,
-  "max": 1,
-  "instant": {"elements": true}
-};
+  elements: ':scope > a, :scope > button',
+  targets: ':scope > [class^="toggle--"], :scope > [class*=" toggle--"]',
+  on: 'click',
+  min: 0,
+  max: 1,
+  instant: { elements: true }
+}
 
-//////////////////////
+//
 // export
-//////////////////////
+//
 
-Xt.Toggle = Toggle;
+Xt.Toggle = Toggle
 
-//////////////////////
+//
 // observe
-//////////////////////
+//
 
 Xt.mount.push({
   matches: '[data-' + Xt.Toggle.componentName + ']',
-  fnc: function mount(object) {
-
-    let self = new Xt.Toggle(object, object.getAttribute('data-' + Xt.Toggle.componentName));
+  fnc: function mount (object) {
+    let self = new Xt.Toggle(object, object.getAttribute('data-' + Xt.Toggle.componentName))
 
     // unmount
 
-    return function unmount() {
-      self.destroy();
-      self = null;
-    };
-
+    return function unmount () {
+      self.destroy()
+      self = null
+    }
   }
-});
+})

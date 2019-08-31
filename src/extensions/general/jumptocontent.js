@@ -1,4 +1,4 @@
-import {Xt} from 'xtend-library'
+import { Xt } from 'xtend-library'
 
 /**
  * xtend extension: jumptocontent
@@ -6,31 +6,29 @@ import {Xt} from 'xtend-library'
 
 Xt.mount.push({
   matches: '.jumptocontent',
-  fnc: function mount(object) {
-
+  fnc: function mount (object) {
     // event
 
-    let documentFocusIn = function(e) {
-      let active = object.contains(e.target);
+    const documentFocusIn = function (e) {
+      const active = object.contains(e.target)
       if (active) {
-        object.classList.remove('sr-only');
-        object.classList.add('active');
-        Xt.animTimeoutClear(object);
+        object.classList.remove('sr-only')
+        object.classList.add('active')
+        Xt.animTimeoutClear(object)
       } else {
-        object.classList.remove('active');
+        object.classList.remove('active')
         Xt.animTimeout(object, function () {
-          object.classList.add('sr-only');
-        });
+          object.classList.add('sr-only')
+        })
       }
-    };
+    }
 
-    document.addEventListener('focusin', documentFocusIn);
+    document.addEventListener('focusin', documentFocusIn)
 
     // unmount
 
-    return function unmount() {
-      document.removeEventListener('focusin', documentFocusIn);
-    };
-
+    return function unmount () {
+      document.removeEventListener('focusin', documentFocusIn)
+    }
   }
-});
+})

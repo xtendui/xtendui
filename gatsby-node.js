@@ -10,84 +10,84 @@ const writeFile = require('write')
 
 // write xtend less
 
-let lessCore = '';
-const lessCoreGlob = new glob.Glob('src/core/**/*.less', {"ignore":['**/*-setup.less']}, function (er, files) {
-  for (let file of files) {
+let lessCore = ''
+const lessCoreGlob = new glob.Glob('src/core/**/*.less', { ignore: ['**/*-setup.less'] }, function (er, files) {
+  for (const file of files) {
     lessCore += `@import '~xtend-library/${file}';\n`
   }
 })
-lessCoreGlob.on('end', function(filepath) {
-  writeFile('./src/xtend-core.less', lessCore, function(err) {
+lessCoreGlob.on('end', function (filepath) {
+  writeFile('./src/xtend-core.less', lessCore, function (err) {
     if (err) console.log(err)
   })
-});
+})
 
-let lessDemos = '';
+let lessDemos = ''
 const lessDemosGlob = new glob.Glob('src/demos/**/*.less', function (er, files) {
-  for (let file of files) {
+  for (const file of files) {
     lessDemos += `@import '~xtend-library/${file}';\n`
   }
 })
-lessDemosGlob.on('end', function(filepath) {
-  writeFile('./src/xtend-demos.less', lessDemos, function(err) {
+lessDemosGlob.on('end', function (filepath) {
+  writeFile('./src/xtend-demos.less', lessDemos, function (err) {
     if (err) console.log(err)
   })
-});
+})
 
-let lessExtensions = '';
+let lessExtensions = ''
 const lessExtensionsGlob = new glob.Glob('src/extensions/**/*.less', function (er, files) {
-  for (let file of files) {
+  for (const file of files) {
     lessExtensions += `@import '~xtend-library/${file}';\n`
   }
 })
-lessExtensionsGlob.on('end', function(filepath) {
-  writeFile('./src/xtend-extensions.less', lessExtensions, function(err) {
+lessExtensionsGlob.on('end', function (filepath) {
+  writeFile('./src/xtend-extensions.less', lessExtensions, function (err) {
     if (err) console.log(err)
   })
-});
+})
 
 // write xtend js
 
-let jsCore = '';
+let jsCore = ''
 const jsCoreGlob = new glob.Glob('src/core/**/*.js', function (er, files) {
-  jsCore += `if (typeof window !== 'undefined') {\n\n`
-  for (let file of files) {
-    jsCore += `require('xtend-library/${file}')\n`
+  jsCore += 'if (typeof window !== \'undefined\') {\n\n'
+  for (const file of files) {
+    jsCore += `  require('xtend-library/${file}')\n`
   }
-  jsCore += `\n}`
+  jsCore += '\n}'
 })
-jsCoreGlob.on('end', function(filepath) {
-  writeFile('./src/xtend-core.js', jsCore, function(err) {
+jsCoreGlob.on('end', function (filepath) {
+  writeFile('./src/xtend-core.js', jsCore, function (err) {
     if (err) console.log(err)
   })
-});
+})
 
-let jsDemos = `if (typeof window !== 'undefined') {\n\n`
+let jsDemos = 'if (typeof window !== \'undefined\') {\n\n'
 const jsDemosGlob = new glob.Glob('src/demos/**/*.js', function (er, files) {
-  for (let file of files) {
-    jsDemos += `require('xtend-library/${file}')\n`
+  for (const file of files) {
+    jsDemos += `  require('xtend-library/${file}')\n`
   }
-  jsDemos += `\n}`
+  jsDemos += '\n}'
 })
-jsDemosGlob.on('end', function(filepath) {
-  writeFile('./src/xtend-demos.js', jsDemos, function(err) {
+jsDemosGlob.on('end', function (filepath) {
+  writeFile('./src/xtend-demos.js', jsDemos, function (err) {
     if (err) console.log(err)
   })
-});
+})
 
-let jsExtensions = `if (typeof window !== 'undefined') {\n\n`
+let jsExtensions = 'if (typeof window !== \'undefined\') {\n\n'
 const jsExtensionsGlob = new glob.Glob('src/extensions/**/*.js', function (er, files) {
-  for (let file of files) {
-    //const obj = path.parse(file); ${obj.dir}/${obj.name}
-    jsExtensions += `require('xtend-library/${file}')\n`
+  for (const file of files) {
+    // const obj = path.parse(file); ${obj.dir}/${obj.name}
+    jsExtensions += `  require('xtend-library/${file}')\n`
   }
-  jsExtensions += `\n}`
+  jsExtensions += '\n}'
 })
-jsExtensionsGlob.on('end', function(filepath) {
-  writeFile('./src/xtend-extensions.js', jsExtensions, function(err) {
+jsExtensionsGlob.on('end', function (filepath) {
+  writeFile('./src/xtend-extensions.js', jsExtensions, function (err) {
     if (err) console.log(err)
   })
-});
+})
 
 // webpack config
 
@@ -156,7 +156,7 @@ exports.onCreateWebpackConfig = ({getConfig, stage}) => {
 }
 */
 
-exports.onCreateWebpackConfig = ({getConfig, stage}) => {
+exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
   const config = getConfig()
   // https://github.com/gatsbyjs/gatsby/issues/11934
   if (stage.startsWith('develop') && config.resolve) {
@@ -169,12 +169,12 @@ exports.onCreateWebpackConfig = ({getConfig, stage}) => {
 
 // markdown
 
-//const path = require('path')
-//const kebabCase = require('lodash.kebabcase');
+// const path = require('path')
+// const kebabCase = require('lodash.kebabcase');
 
-exports.createPages = ({actions, graphql}) => {
-  const {createPage} = actions
-  const docTemplate = path.resolve(`src/gatsby/components/templates/doc.js`)
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
+  const docTemplate = path.resolve('src/gatsby/components/templates/doc.js')
   /* COMMENTED CATEGORIES AND TAGS
   const tagTemplate = path.resolve(`src/gatsby/components/templates/doc-tag.js`)
   const categoryTemplate = path.resolve(`src/gatsby/components/templates/doc-category.js`)
@@ -201,15 +201,15 @@ exports.createPages = ({actions, graphql}) => {
     if (result.errors) {
       return Promise.reject(result.errors)
     }
-    result.data.allMarkdownRemark.edges.forEach(({node}) => {
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       if (node.frontmatter.type === 'docs' || node.frontmatter.type === 'faq') {
         createPage({
           path: node.frontmatter.path, // needs gatsby-source-filesystem resolve name
           component: docTemplate,
           context: {
             type: node.frontmatter.type, // for query($type: String) { // put also on return graphql
-            parent: node.frontmatter.parent, // for query($parent: String) { // put also on return graphql
-          },
+            parent: node.frontmatter.parent // for query($parent: String) { // put also on return graphql
+          }
         })
         /* COMMENTED CATEGORIES AND TAGS
         if (node.frontmatter.tags) {

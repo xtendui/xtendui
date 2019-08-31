@@ -1,5 +1,5 @@
-import {TweenMax} from 'gsap/TweenMax'
-import {Xt} from 'xtend-library'
+import { TweenMax } from 'gsap/TweenMax'
+import { Xt } from 'xtend-library'
 
 /**
  * .demo--loader--js-filler
@@ -7,30 +7,29 @@ import {Xt} from 'xtend-library'
 
 Xt.mount.push({
   matches: '.demo--loader--js-filler',
-  fnc: function mount(object) {
+  fnc: function mount (object) {
+    // vars
 
-    let time = 2000;
-    let easeLinear = Power0.easeNone;
+    const time = 2000
+    const easeLinear = Power0.easeNone
 
     // timeout
-
-    function loaderTimeout() {
-      let filler = object.querySelectorAll('.filler span:nth-child(1)');
-      object.dataset.loaderActive = object.dataset.loaderActive === 'true' ? 'false' : 'true';
+    function loaderTimeout () {
+      const filler = object.querySelectorAll('.filler span:nth-child(1)')
+      object.dataset.loaderActive = object.dataset.loaderActive === 'true' ? 'false' : 'true'
       if (object.dataset.loaderActive === 'true') {
-        object.classList.add('active');
-        object.classList.remove('out');
-        TweenMax.set(filler, {width: 0});
-        TweenMax.to(filler, time / 1000, {width: '100%', ease: easeLinear});
-        setTimeout(loaderTimeout, time);
+        object.classList.add('active')
+        object.classList.remove('out')
+        TweenMax.set(filler, { width: 0 })
+        TweenMax.to(filler, time / 1000, { width: '100%', ease: easeLinear })
+        setTimeout(loaderTimeout, time)
       } else {
-        object.classList.remove('active');
-        object.classList.add('out');
-        Xt.animTimeout(object, loaderTimeout);
+        object.classList.remove('active')
+        object.classList.add('out')
+        Xt.animTimeout(object, loaderTimeout)
       }
     }
 
-    loaderTimeout();
-
+    loaderTimeout()
   }
-});
+})

@@ -1,15 +1,13 @@
-//////////////////////
-// call only if in browser mode
-// https://www.gatsbyjs.org/docs/debugging-html-builds/#how-to-check-if-code-classlanguage-textwindowcode-is-defined
-//////////////////////
+/**
+ * call only if in browser mode
+ * https://www.gatsbyjs.org/docs/debugging-html-builds/#how-to-check-if-code-classlanguage-textwindowcode-is-defined
+ */
 
 if (typeof window !== 'undefined') {
-
-  //////////////////////
-  // before
-  // https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/before()/before().md
-  //////////////////////
-
+  /**
+   * before
+   * https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/before()/before().md
+   */
   (function (arr) {
     arr.forEach(function (item) {
       if (item.hasOwnProperty('before')) {
@@ -34,11 +32,10 @@ if (typeof window !== 'undefined') {
     });
   })([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
 
-  //////////////////////
-  // after
-  // https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/after()/after().md
-  //////////////////////
-
+  /**
+   * after
+   * https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/after()/after().md
+   */
   (function (arr) {
     arr.forEach(function (item) {
       if (item.hasOwnProperty('after')) {
@@ -63,12 +60,10 @@ if (typeof window !== 'undefined') {
     });
   })([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
 
-  //////////////////////
-  // :scope
-  // https://github.com/jonathantneal/element-qsa-scope
-  // USAGE: querySelectorAll(':scope > .selector');
-  //////////////////////
-
+  /**
+   * :scope
+   * https://github.com/jonathantneal/element-qsa-scope
+   */
   (function (ElementPrototype) {
     try {
       // test for scope support
@@ -126,11 +121,10 @@ if (typeof window !== 'undefined') {
     }
   })(Element.prototype);
 
-  //////////////////////
-  // composedPath
-  // https://gist.github.com/rockinghelvetica/00b9f7b5c97a16d3de75ba99192ff05c
-  //////////////////////
-
+  /**
+   * composedPath
+   * https://gist.github.com/rockinghelvetica/00b9f7b5c97a16d3de75ba99192ff05c
+   */
   (function(E, d, w) {
     if(!E.composedPath) {
       E.composedPath = function() {
@@ -149,7 +143,4 @@ if (typeof window !== 'undefined') {
       }
     }
   })(Event.prototype, document, window);
-
-  //////////////////////
-
 }

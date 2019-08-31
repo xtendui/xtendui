@@ -4,6 +4,6 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-exports.onPreRouteUpdate = ({location, prevLocation}) => {
-  window.dispatchEvent(new CustomEvent('autoClose.xt')); // autoClose xt
+exports.onPreRouteUpdate = ({ location, prevLocation }) => {
+  window.dispatchEvent(new CustomEvent('autoClose.xt')) // autoClose xt
 }

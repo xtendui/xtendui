@@ -1,4 +1,4 @@
-import {Xt} from 'xtend-library'
+import { Xt } from 'xtend-library'
 
 /**
  * xtend extension: multilevel
@@ -6,26 +6,28 @@ import {Xt} from 'xtend-library'
 
 Xt.mount.push({
   matches: '.multilevel',
-  fnc: function mount(object) {
+  fnc: function mount (object) {
+    // init
 
-    let self = new Xt.Toggle(object, {
-      "elements": ".multilevel-tab-reset, .multilevel-tab .multilevel-list button", "targets": ".multilevel-tab", "min": 1
-    });
+    const self = new Xt.Toggle(object, {
+      elements: '.multilevel-tab-reset, .multilevel-tab .multilevel-list button',
+      targets: '.multilevel-tab',
+      min: 1
+    })
 
     // btnReset
 
-    let btns = object.querySelectorAll('.multilevel-reset');
-    for (let btn of btns) {
+    const btns = object.querySelectorAll('.multilevel-reset')
+    for (const btn of btns) {
       btn.addEventListener('click', function (e) {
-        object.querySelector('.multilevel-tab-reset').dispatchEvent(new CustomEvent('on.xt'));
-      });
+        object.querySelector('.multilevel-tab-reset').dispatchEvent(new CustomEvent('on.xt'))
+      })
     }
 
     // unmount
 
-    return function unmount() {
-      self.destroy();
-    };
-
+    return function unmount () {
+      self.destroy()
+    }
   }
-});
+})

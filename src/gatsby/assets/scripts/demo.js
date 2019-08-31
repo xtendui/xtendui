@@ -1,13 +1,13 @@
-import ClipboardJS from 'clipboard';
-import Prism from 'prismjs';
-require('prismjs/plugins/unescaped-markup/prism-unescaped-markup');
-require('prismjs/plugins/unescaped-markup/prism-unescaped-markup.css');
-require('prismjs/components/prism-jsx.min');
-require('prismjs/components/prism-less.min');
-require('prism-themes/themes/prism-base16-ateliersulphurpool.light.css');
-//require('prismjs/themes/prism-okaidia.css');
-Prism.manual = true;
-import {Xt} from 'xtend-library'
+import ClipboardJS from 'clipboard'
+import Prism from 'prismjs'
+import { Xt } from 'xtend-library'
+require('prismjs/plugins/unescaped-markup/prism-unescaped-markup')
+require('prismjs/plugins/unescaped-markup/prism-unescaped-markup.css')
+require('prismjs/components/prism-jsx.min')
+require('prismjs/components/prism-less.min')
+require('prism-themes/themes/prism-base16-ateliersulphurpool.light.css')
+// require('prismjs/themes/prism-okaidia.css');
+Prism.manual = true
 
 /**
  * demo
@@ -16,24 +16,24 @@ import {Xt} from 'xtend-library'
 // formatCode
 
 const formatCode = function (source) {
-  let inner = source.querySelectorAll('.demo_source--from');
-  inner = Array.from(inner).filter(x => !x.querySelectorAll('.demo_source--from').length); // filter out nested
+  let inner = source.querySelectorAll('.demo_source--from')
+  inner = Array.from(inner).filter(x => !x.querySelectorAll('.demo_source--from').length) // filter out nested
   if (inner.length) {
-    source = inner[0];
+    source = inner[0]
   }
-  let text = source.innerHTML;
+  let text = source.innerHTML
   // replace
-  let lang = source.getAttribute('data-lang');
+  const lang = source.getAttribute('data-lang')
   if (lang !== 'less' && !source.classList.contains('language-less')) {
-    console.log(lang, source.classList.contains('language-less'), source);
+    console.log(lang, source.classList.contains('language-less'), source)
     // replace quote entities
-    text = text.replace(/&quot;/g, '"');
+    text = text.replace(/&quot;/g, '"')
     // replace entities
-    text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
     // replace json quotes
-    text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'');
+    text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'')
     // replace empty quotes
-    text = text.replace(/=""/g, '');
+    text = text.replace(/=""/g, '')
   }
   // filter meta
   /*
@@ -43,45 +43,45 @@ const formatCode = function (source) {
   }
   */
   // remove tabs
-  let arr = text.split('\n');
-  let search = arr[0];
-  search = search.length ? search : arr[1];
+  const arr = text.split('\n')
+  let search = arr[0]
+  search = search.length ? search : arr[1]
   if (search) {
-    let toRemove = search.search(/\S/g);
-    for (let i of arr.keys()) {
-      arr[i] = arr[i].substring(toRemove);
+    const toRemove = search.search(/\S/g)
+    for (const i of arr.keys()) {
+      arr[i] = arr[i].substring(toRemove)
     }
-    text = arr.join('\n');
+    text = arr.join('\n')
   }
   // remove newline at start and end
-  text = text.replace(/^\s+|\s+$/g, '');
+  text = text.replace(/^\s+|\s+$/g, '')
   // return
-  return text;
-};
+  return text
+}
 
 // populateBlock
 
 const populateBlock = function () {
-  for (let el of document.querySelectorAll('script[type="text/plain"][class*="language-"]')) {
-    let language = el.getAttribute('class');
-    el.after(Xt.createElement('<pre class="' + language + '"><code class="' + language + '">' + el.innerHTML + '</code></pre>'));
-    el.remove();
+  for (const el of document.querySelectorAll('script[type="text/plain"][class*="language-"]')) {
+    const language = el.getAttribute('class')
+    el.after(Xt.createElement('<pre class="' + language + '"><code class="' + language + '">' + el.innerHTML + '</code></pre>'))
+    el.remove()
   }
-  for (let el of document.querySelectorAll('pre:not(.noedit) code')) {
+  for (const el of document.querySelectorAll('pre:not(.noedit) code')) {
     // set text
-    el.innerHTML = formatCode(el);
-    Prism.highlightElement(el);
+    el.innerHTML = formatCode(el)
+    Prism.highlightElement(el)
   }
 }
 
 // populateDemo
 
 const populateDemo = function (container, i) {
-  let items = container.querySelectorAll('.demo_item');
+  const items = container.querySelectorAll('.demo_item')
   // multiple elements
-  container.prepend(Xt.createElement('<div class="demo_tabs"><div class="demo_tabs_left"></div><div class="demo_tabs_right"></div></div>'));
-  container.querySelector('.demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny btn--narrow btn--show-code" data-toggle="tooltip" data-placement="top" aria-label="Show code"><span class="icon-code icon--big"></span></button>'));
-  container.querySelector('.demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny btn--narrow btn--open-full" data-toggle="tooltip" data-placement="top" aria-label="Open full"><span class="icon-maximize icon--big"></span></button>'));
+  container.prepend(Xt.createElement('<div class="demo_tabs"><div class="demo_tabs_left"></div><div class="demo_tabs_right"></div></div>'))
+  container.querySelector('.demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny btn--narrow btn--show-code" data-toggle="tooltip" data-placement="top" aria-label="Show code"><span class="icon-code icon--big"></span></button>'))
+  container.querySelector('.demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny btn--narrow btn--open-full" data-toggle="tooltip" data-placement="top" aria-label="Open full"><span class="icon-maximize icon--big"></span></button>'))
   // don't show tabs on single
   /*
   if (items.length === 1) {
@@ -89,66 +89,66 @@ const populateDemo = function (container, i) {
   }
   */
   // loop items
-  for (let [k, item] of items.entries()) {
+  for (const [k, item] of items.entries()) {
     // populate tabs
-    let name = item.getAttribute('data-iframe') ? item.getAttribute('data-iframe').split('/').pop() : null;
-    name = item.getAttribute('data-name') ? item.getAttribute('data-name') : name;
+    let name = item.getAttribute('data-iframe') ? item.getAttribute('data-iframe').split('/').pop() : null
+    name = item.getAttribute('data-name') ? item.getAttribute('data-name') : name
     if (!name) {
       if (items.length === 1) {
-        name = 'demo';
+        name = 'demo'
       } else {
-        name = 'demo #' + k;
+        name = 'demo #' + k
       }
     }
-    let btn = container.querySelector('.demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny"><span>' + name + '</span></button>'));
-    btn = container.querySelectorAll('.demo_tabs_left .btn')[k];
+    let btn = container.querySelector('.demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny"><span>' + name + '</span></button>'))
+    btn = container.querySelectorAll('.demo_tabs_left .btn')[k]
     // tabs
-    item.prepend(Xt.createElement('<div class="demo_code collapse--height"><div class="demo_code_inner"><div class="demo_code_tabs"><div class="demo_code_tabs_left"></div><div class="demo_code_tabs_right"><button type="button" class="btn btn--text btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard"><span>copy</span></button></div></div><div class="demo_code_body"></div></div></div>'));
+    item.prepend(Xt.createElement('<div class="demo_code collapse--height"><div class="demo_code_inner"><div class="demo_code_tabs"><div class="demo_code_tabs_left"></div><div class="demo_code_tabs_right"><button type="button" class="btn btn--text btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard"><span>copy</span></button></div></div><div class="demo_code_body"></div></div></div>'))
     // https://github.com/zenorocha/clipboard.js/
-    let clipboard = new ClipboardJS('.btn--clipboard', {
+    const clipboard = new ClipboardJS('.btn--clipboard', {
       target: function (trigger) {
-        return trigger.closest('.demo').querySelector('.demo_item.active .demo_code_body_item.active .hljs');
+        return trigger.closest('.demo').querySelector('.demo_item.active .demo_code_body_item.active .hljs')
       }
-    });
+    })
     clipboard.on('success', function (e) {
-      e.clearSelection();
-      //$(e.trigger).attr('data-original-title', 'Done').tooltip('show');
-    });
+      e.clearSelection()
+      // $(e.trigger).attr('data-original-title', 'Done').tooltip('show');
+    })
     clipboard.on('error', function (e) {
-      //$(e.trigger).attr('data-original-title', 'Error: copy manually').tooltip('show');
-    });
+      // $(e.trigger).attr('data-original-title', 'Error: copy manually').tooltip('show');
+    })
     // inject iframe
     if (item.getAttribute('data-iframe')) {
       // iframe append
-      let src = '/' + item.getAttribute('data-iframe');
-      let id = 'iframe' + i + k;
+      const src = '/' + item.getAttribute('data-iframe')
+      const id = 'iframe' + i + k
       if (src) {
-        item.append(Xt.createElement('<div class="demo_item_wrapper"><iframe data-src="' + src + '" frameborder="0" name="' + id + '"></iframe></div>'));
+        item.append(Xt.createElement('<div class="demo_item_wrapper"><iframe data-src="' + src + '" frameborder="0" name="' + id + '"></iframe></div>'))
         item.querySelector('.demo_item_wrapper').append(Xt.createElement('\n' +
           '    <div class="loader loader--spinner">\n' +
           '      <div class="spinner">\n' +
           '        <svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
           '      </div>\n' +
           '    </div>\n' +
-          '  </div>'));
+          '  </div>'))
       }
       // load
-      let iframe = item.querySelector('iframe');
+      const iframe = item.querySelector('iframe')
       item.addEventListener('on.xt', function (e) {
         if (item === e.target) { // @FIX on.xt and off.xt event bubbles
           if (!item.classList.contains('loaded')) {
-            loadIframe(iframe);
+            loadIframe(iframe)
           }
         }
-      });
+      })
       item.addEventListener('off.xt', function (e) {
         if (item === e.target) { // @FIX on.xt and off.xt event bubbles
           if (item.classList.contains('loaded')) {
-            item.classList.remove('loaded');
-            unloadIframe(iframe);
+            item.classList.remove('loaded')
+            unloadIframe(iframe)
           }
         }
-      });
+      })
     } else if (item.getAttribute('data-shadow')) {
       /* NEEDS
       // demo shadow
@@ -180,31 +180,31 @@ const populateDemo = function (container, i) {
       });
       */
     } else {
-      populateInline(item);
+      populateInline(item)
       // .populated fix scroll
-      item.classList.add('populated');
+      item.classList.add('populated')
     }
   }
   // toggle code
-  let demoId = 'demo_' + i;
-  container.setAttribute('id', demoId);
+  const demoId = 'demo_' + i
+  container.setAttribute('id', demoId)
   new Xt.Toggle(container.querySelector('.btn--show-code'), {
-    "targets": "#" + demoId,
-    "targetsInner": ".demo_code",
-    "aria": false
-  });
-  let codes = container.querySelectorAll('.btn--show-code');
-  for (let code of codes) {
+    targets: '#' + demoId,
+    targetsInner: '.demo_code',
+    aria: false
+  })
+  const codes = container.querySelectorAll('.btn--show-code')
+  for (const code of codes) {
     code.addEventListener('on.xt', function (e) {
       if (code === e.target) { // @FIX on.xt and off.xt event bubbles
-        let btns = document.querySelectorAll('.btn--show-code.active');
-        for (let btn of btns) {
+        const btns = document.querySelectorAll('.btn--show-code.active')
+        for (const btn of btns) {
           if (btn !== code) {
-            btn.dispatchEvent(new CustomEvent('off.xt'));
+            btn.dispatchEvent(new CustomEvent('off.xt'))
           }
         }
       }
-    });
+    })
   }
   // toggle fullscreen
   /*
@@ -222,27 +222,27 @@ const populateDemo = function (container, i) {
   */
   // demo tabs
   new Xt.Toggle(container, {
-    "elements": ".demo_tabs_left .btn",
-    "targets": ".demo_item",
-    "min": 1
-  });
-  for (let btn of container.querySelectorAll('.demo_tabs_left .btn')) {
+    elements: '.demo_tabs_left .btn',
+    targets: '.demo_item',
+    min: 1
+  })
+  for (const btn of container.querySelectorAll('.demo_tabs_left .btn')) {
     btn.addEventListener('off.xt', function (e) {
       if (btn === e.target) { // @FIX on.xt and off.xt event bubbles
-        container.querySelector('.btn--show-code').dispatchEvent(new CustomEvent('off.xt'));
+        container.querySelector('.btn--show-code').dispatchEvent(new CustomEvent('off.xt'))
       }
-    });
+    })
   }
-};
+}
 
 // populateInline
 
 const populateInline = function (item) {
-  let els = item.querySelectorAll('.demo_source[data-lang]');
-  for (let [z, el] of els.entries()) {
-    populateSources(item, el, z);
+  const els = item.querySelectorAll('.demo_source[data-lang]')
+  for (const [z, el] of els.entries()) {
+    populateSources(item, el, z)
     if (!item.classList.contains('demo_preview')) {
-      el.style.display = 'none';
+      el.style.display = 'none'
     }
     /*
     // don't show tabs on single
@@ -252,11 +252,11 @@ const populateInline = function (item) {
     */
   }
   new Xt.Toggle(item, {
-    "elements": ".demo_code_tabs_left .btn",
-    "targets": ".demo_code_body_item",
-    "min": 1
-  });
-};
+    elements: '.demo_code_tabs_left .btn',
+    targets: '.demo_code_body_item',
+    min: 1
+  })
+}
 
 // populateShadow
 
@@ -360,107 +360,107 @@ const populateShadow = function (item, shadowRoot) {
 // populateIframe
 
 const loadIframe = function (iframe) {
-  iframe.setAttribute('src', iframe.getAttribute('data-src'));
+  iframe.setAttribute('src', iframe.getAttribute('data-src'))
 }
 
 const unloadIframe = function (iframe) {
-  iframe.setAttribute('src', '');
+  iframe.setAttribute('src', '')
 }
 
 if (typeof window !== 'undefined') {
   window.initIframe = function (name, htmlSource, jsSource, cssSource) {
-    let src = 'iframe[name="' + name + '"]';
-    let iframe = document.querySelector(src);
-    iframe.contentWindow.document.querySelector('html').classList.add('iframe-inside');
-    let item = iframe.closest('.demo_item');
-    item.classList.add('loaded');
+    const src = 'iframe[name="' + name + '"]'
+    const iframe = document.querySelector(src)
+    iframe.contentWindow.document.querySelector('html').classList.add('iframe-inside')
+    const item = iframe.closest('.demo_item')
+    item.classList.add('loaded')
     if (!item.classList.contains('populated')) {
-      populateIframe(item, iframe, htmlSource, jsSource, cssSource);
-      item.classList.add('populated');
+      populateIframe(item, iframe, htmlSource, jsSource, cssSource)
+      item.classList.add('populated')
     }
-  };
+  }
   window.resizeIframe = function (name) {
-    let src = 'iframe[name="' + name + '"]';
-    let iframe = document.querySelector(src);
-    let container = iframe.closest('.demo');
-    let wrappers = container.querySelectorAll('.demo_item_wrapper');
+    const src = 'iframe[name="' + name + '"]'
+    const iframe = document.querySelector(src)
+    const container = iframe.closest('.demo')
+    const wrappers = container.querySelectorAll('.demo_item_wrapper')
     if (iframe) {
-      let iframeFull = iframe.contentWindow.document.documentElement.classList.contains('iframe-full');
+      const iframeFull = iframe.contentWindow.document.documentElement.classList.contains('iframe-full')
       if (iframeFull) {
-        iframe.classList.add('iframe-full');
-        let target = iframe.contentWindow.document.querySelector('#body-outer');
-        let h = target.offsetHeight;
+        iframe.classList.add('iframe-full')
+        const target = iframe.contentWindow.document.querySelector('#body-outer')
+        const h = target.offsetHeight
         if (h !== parseFloat(iframe.dataset.iframeHeight)) {
-          iframe.style.height = h + 'px';
-          iframe.dataset.iframeHeight = h.toString();
+          iframe.style.height = h + 'px'
+          iframe.dataset.iframeHeight = h.toString()
         }
-        for (let wrapper of wrappers) {
-          wrapper.style.height = h + 'px';
+        for (const wrapper of wrappers) {
+          wrapper.style.height = h + 'px'
         }
       } else {
-        for (let wrapper of wrappers) {
-          wrapper.style.height = '';
+        for (const wrapper of wrappers) {
+          wrapper.style.height = ''
         }
       }
     }
-  };
+  }
 }
 
 const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) {
   // inject code
   if (htmlSource) {
-    item.append(Xt.createElement('<div class="demo_source xt-ignore" data-lang="html">' + htmlSource + '</div>'));
+    item.append(Xt.createElement('<div class="demo_source xt-ignore" data-lang="html">' + htmlSource + '</div>'))
   }
   if (jsSource) {
-    item.append(Xt.createElement('<div class="demo_source xt-ignore" data-lang="js">' + jsSource + '</div>'));
+    item.append(Xt.createElement('<div class="demo_source xt-ignore" data-lang="js">' + jsSource + '</div>'))
   }
   if (cssSource) {
-    item.append(Xt.createElement('<div class="demo_source xt-ignore" data-lang="less">' + cssSource + '</div>'));
+    item.append(Xt.createElement('<div class="demo_source xt-ignore" data-lang="less">' + cssSource + '</div>'))
   }
   // populate
-  let els = item.querySelectorAll('.demo_source[data-lang]');
-  for (let [z, el] of els.entries()) {
-    populateSources(item, el, z);
-    el.remove();
+  const els = item.querySelectorAll('.demo_source[data-lang]')
+  for (const [z, el] of els.entries()) {
+    populateSources(item, el, z)
+    el.remove()
   }
   new Xt.Toggle(item, {
-    "elements": ".demo_code_tabs_left .btn",
-    "targets": ".demo_code_body_item",
-    "min": 1
-  });
+    elements: '.demo_code_tabs_left .btn',
+    targets: '.demo_code_body_item',
+    min: 1
+  })
 }
 
 // populateSources
 
 const populateSources = function (item, element, z) {
-  let lang = element.getAttribute('data-lang');
+  let lang = element.getAttribute('data-lang')
   // set text
   if (lang === 'language-markup') {
-    lang = 'html';
+    lang = 'html'
   } else if (lang === 'language-jsx') {
-    lang = 'js';
+    lang = 'js'
   } else if (lang === 'language-less') {
-    lang = 'less';
+    lang = 'less'
   }
   // populate tabs
-  item.querySelector('.demo_code_body').append(Xt.createElement('<div class="demo_code_body_item"><pre class="noedit"><code></code></pre></div>'));
-  item.querySelector('.demo_code_tabs_left').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny"><span>' + lang + '</span></button>'));
+  item.querySelector('.demo_code_body').append(Xt.createElement('<div class="demo_code_body_item"><pre class="noedit"><code></code></pre></div>'))
+  item.querySelector('.demo_code_tabs_left').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny"><span>' + lang + '</span></button>'))
   // format code
-  let itemInside = item.querySelectorAll('.demo_code_body .demo_code_body_item')[z];
-  let codeInside = itemInside.querySelector('pre code');
+  const itemInside = item.querySelectorAll('.demo_code_body .demo_code_body_item')[z]
+  const codeInside = itemInside.querySelector('pre code')
   // set text
   if (lang === 'html') {
-    lang = 'language-markup';
+    lang = 'language-markup'
   } else if (lang === 'js') {
-    lang = 'language-jsx';
+    lang = 'language-jsx'
   } else if (lang === 'less') {
-    lang = 'language-less';
+    lang = 'language-less'
   }
-  codeInside.innerHTML = formatCode(element);
-  codeInside.classList.add(lang);
+  codeInside.innerHTML = formatCode(element)
+  codeInside.classList.add(lang)
   Prism.highlightElement(codeInside)
-};
+}
 
 // export
 
-export {populateBlock, populateDemo};
+export { populateBlock, populateDemo }
