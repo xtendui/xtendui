@@ -10,15 +10,10 @@ Xt.mount.push({
   matches: '.demo--toggle--progress',
   fnc: function mount(object) {
 
-    // vars
-
-    let list = object;
     let timeHide = 300;
     let easeLinear = Power0.easeNone;
 
-    // xt-toggle
-
-    let self = new Xt.Toggle(list, {
+    let self = new Xt.Toggle(object, {
       "auto": {
         "time": 2000,
         "pause": ":scope > button"

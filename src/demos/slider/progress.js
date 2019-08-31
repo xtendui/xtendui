@@ -1,21 +1,16 @@
 import {TweenMax, TimelineMax} from 'gsap/TweenMax'
 import {Xt} from 'xtend-library'
 import 'xtend-library/src/core/slider/slider.js'
-import 'xtend-library/src/extensions/animation/mouse-follow.js';
+import 'xtend-library/src/extensions/animation/MouseFollow.js';
 
 Xt.mount.push({
   matches: '.demo--slider--progress',
   fnc: function mount(object) {
 
-    // vars
-
-    let slider = object;
     let timeHide = 300;
     let easeLinear = Power0.easeNone;
 
-    // xt-slider
-
-    let self = new Xt.Slider(slider, {
+    let self = new Xt.Slider(object, {
       "auto": {
         "time": 4000,
         "pause": "[data-xt-pag]"
@@ -104,7 +99,7 @@ Xt.mount.push({
      */
 
     let mouseFollowObject = document.querySelector('.loader--mouse');
-    let mouseFollowContainer = slider;
+    let mouseFollowContainer = object;
 
     let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
       mouseCheck: function() {

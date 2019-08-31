@@ -8,22 +8,18 @@ Xt.mount.push({
   matches: '.jumptocontent',
   fnc: function mount(object) {
 
-    // vars
-
-    let jumptocontent = object;
-
     // event
 
     let documentFocusIn = function(e) {
-      let active = jumptocontent.contains(e.target);
+      let active = object.contains(e.target);
       if (active) {
-        jumptocontent.classList.remove('sr-only');
-        jumptocontent.classList.add('active');
-        Xt.animTimeoutClear(jumptocontent);
+        object.classList.remove('sr-only');
+        object.classList.add('active');
+        Xt.animTimeoutClear(object);
       } else {
-        jumptocontent.classList.remove('active');
-        Xt.animTimeout(jumptocontent, function () {
-          jumptocontent.classList.add('sr-only');
+        object.classList.remove('active');
+        Xt.animTimeout(object, function () {
+          object.classList.add('sr-only');
         });
       }
     };

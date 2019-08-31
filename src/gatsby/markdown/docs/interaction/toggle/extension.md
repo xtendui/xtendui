@@ -15,6 +15,6 @@ parent: "Toggle"
 Multi level navigation with toggle.
 
 <demo>
-  <demovanilla src="demos/inline/extensions/toggle/multilevel">
+  <demovanilla src="demos/inline/demos/toggle/multilevel">
   </demovanilla>
 </demo>

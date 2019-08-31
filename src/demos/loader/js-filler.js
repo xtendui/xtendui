@@ -9,28 +9,24 @@ Xt.mount.push({
   matches: '.demo--loader--js-filler',
   fnc: function mount(object) {
 
-    // vars
-
     let time = 2000;
     let easeLinear = Power0.easeNone;
-
-    let loader = object;
 
     // timeout
 
     function loaderTimeout() {
-      let filler = loader.querySelectorAll('.filler span:nth-child(1)');
-      loader.dataset.loaderActive = loader.dataset.loaderActive === 'true' ? 'false' : 'true';
-      if (loader.dataset.loaderActive === 'true') {
-        loader.classList.add('active');
-        loader.classList.remove('out');
+      let filler = object.querySelectorAll('.filler span:nth-child(1)');
+      object.dataset.loaderActive = object.dataset.loaderActive === 'true' ? 'false' : 'true';
+      if (object.dataset.loaderActive === 'true') {
+        object.classList.add('active');
+        object.classList.remove('out');
         TweenMax.set(filler, {width: 0});
         TweenMax.to(filler, time / 1000, {width: '100%', ease: easeLinear});
         setTimeout(loaderTimeout, time);
       } else {
-        loader.classList.remove('active');
-        loader.classList.add('out');
-        Xt.animTimeout(loader, loaderTimeout);
+        object.classList.remove('active');
+        object.classList.add('out');
+        Xt.animTimeout(object, loaderTimeout);
       }
     }
 

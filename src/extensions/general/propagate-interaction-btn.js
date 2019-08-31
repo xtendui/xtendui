@@ -1,5 +1,5 @@
 import {Xt} from 'xtend-library'
-import 'xtend-library/src/extensions/general/propagate-interaction.js';
+import 'xtend-library/src/extensions/general/PropagateInteraction.js';
 
 /**
  * xtend extension: propagate-interaction-btn
@@ -9,13 +9,12 @@ Xt.mount.push({
   matches: 'a, button',
   fnc: function mount(object) {
 
-    let propagateInteractionObject = object;
-    let propagateInteraction = new Xt.PropagateInteraction(propagateInteractionObject, {'targets': '.btn'});
+    let self = new Xt.PropagateInteraction(object, {'targets': '.btn'});
 
     // unmount
 
     return function unmount() {
-      propagateInteraction.destroy();
+      self.destroy();
     };
 
   }

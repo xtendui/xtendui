@@ -10,13 +10,7 @@ Xt.mount.push({
   matches: '.demo--parallax_title',
   fnc: function mount(object) {
 
-    // vars
-
-    let parallaxTitle = object;
-
-    // xt-scroll
-
-    let self = new Xt.Scroll(parallaxTitle, {
+    let self = new Xt.Scroll(object, {
       "sticky": "fixed",
       "end": 350
     });
@@ -53,13 +47,7 @@ Xt.mount.push({
   matches: '.demo--parallax_img',
   fnc: function mount(object) {
 
-    // vars
-
-    let parallaxImg = object;
-
-    // xt-scroll
-
-    let self = new Xt.Scroll(parallaxImg, {
+    let self = new Xt.Scroll(object, {
       "sticky": "fixed",
       "end": 350
     });
@@ -94,13 +82,7 @@ Xt.mount.push({
   matches: '.demo--parallax_footer',
   fnc: function mount(object) {
 
-    // vars
-
-    let parallaxFooter = object;
-
-    // xt-scroll
-
-    let self = new Xt.Scroll(parallaxFooter, {
+    let self = new Xt.Scroll(object, {
       "sticky": true,
       "start": "125%"
     });

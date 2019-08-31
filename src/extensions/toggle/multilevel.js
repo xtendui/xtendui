@@ -8,18 +8,24 @@ Xt.mount.push({
   matches: '.multilevel',
   fnc: function mount(object) {
 
-    // vars
-
-    let multilevel = object;
+    let self = new Xt.Toggle(object, {
+      "elements": ".multilevel-tab-reset, .multilevel-tab .multilevel-list button", "targets": ".multilevel-tab", "min": 1
+    });
 
     // btnReset
 
-    let btns = multilevel.querySelectorAll('.multilevel-reset');
+    let btns = object.querySelectorAll('.multilevel-reset');
     for (let btn of btns) {
       btn.addEventListener('click', function (e) {
-        multilevel.querySelector('.multilevel-tab-reset').dispatchEvent(new CustomEvent('on.xt'));
+        object.querySelector('.multilevel-tab-reset').dispatchEvent(new CustomEvent('on.xt'));
       });
     }
+
+    // unmount
+
+    return function unmount() {
+      self.destroy();
+    };
 
   }
 });

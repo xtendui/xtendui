@@ -2537,14 +2537,18 @@ class Controller {
         let storages = Xt.dataStorage.getAll(element);
         if (storages) {
           for (let [key, storage] of storages) {
-            if (key.endsWith(self.namespace)) {
-              let handler = Xt.dataStorage.get(element, key);
-              let events = key.split('.')[0].split(' ');
-              for (let event of events) {
-                element.removeEventListener(event, handler);
-                element.removeEventListener(event, handler, true);
-                element.removeEventListener(event, handler, {passive: true});
-                Xt.dataStorage.remove(element, key);
+            if (key) {
+              if (key.endsWith(self.namespace)) {
+                let handler = Xt.dataStorage.get(element, key);
+                if (typeof handler === 'function') {
+                  let events = key.split('.')[0].split(' ');
+                  for (let event of events) {
+                    element.removeEventListener(event, handler);
+                    element.removeEventListener(event, handler, true);
+                    element.removeEventListener(event, handler, {passive: true});
+                    Xt.dataStorage.remove(element, key);
+                  }
+                }
               }
             }
           }

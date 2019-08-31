@@ -8,10 +8,6 @@ Xt.mount.push({
   matches: '.group-number',
   fnc: function mount(object) {
 
-    // vars
-
-    let groupNumber = object;
-
     // methods
 
     function inputNumberChange(step, e) {
@@ -48,35 +44,35 @@ Xt.mount.push({
 
     // init
 
-    inputNumberChange.bind(groupNumber, 0)();
+    inputNumberChange.bind(object, 0)();
 
     // vars
 
-    let inputEl = groupNumber.querySelector('input');
+    let inputEl = object.querySelector('input');
     let step = parseFloat(inputEl.getAttribute('step')) || 1;
 
     // add
 
-    let addEl = groupNumber.querySelector('.group-number-add');
+    let addEl = object.querySelector('.group-number-add');
     let addStep = step;
     let addHandler = Xt.dataStorage.get(addEl, 'addHandler');
-    addHandler = addHandler ? addHandler : Xt.dataStorage.set(addEl, 'addHandler', inputNumberChange.bind(groupNumber, addStep));
+    addHandler = addHandler ? addHandler : Xt.dataStorage.set(addEl, 'addHandler', inputNumberChange.bind(object, addStep));
     addEl.removeEventListener('click', addHandler);
     addEl.addEventListener('click', addHandler);
 
     // remove
 
-    let removeEl = groupNumber.querySelector('.group-number-remove');
+    let removeEl = object.querySelector('.group-number-remove');
     let removeStep = -step;
     let removeHandler = Xt.dataStorage.get(removeEl, 'removeHandler');
-    removeHandler = removeHandler ? removeHandler : Xt.dataStorage.set(removeEl, 'removeHandler', inputNumberChange.bind(groupNumber, removeStep));
+    removeHandler = removeHandler ? removeHandler : Xt.dataStorage.set(removeEl, 'removeHandler', inputNumberChange.bind(object, removeStep));
     removeEl.removeEventListener('click', removeHandler);
     removeEl.addEventListener('click', removeHandler);
 
     // change
 
     let inputHandler = Xt.dataStorage.get(inputEl, 'inputHandler');
-    inputHandler = inputHandler ? inputHandler : Xt.dataStorage.set(inputEl, 'inputHandler', inputNumberChange.bind(groupNumber, 0));
+    inputHandler = inputHandler ? inputHandler : Xt.dataStorage.set(inputEl, 'inputHandler', inputNumberChange.bind(object, 0));
     inputEl.removeEventListener('change', inputHandler);
     inputEl.addEventListener('change', inputHandler);
 

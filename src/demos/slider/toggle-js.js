@@ -7,18 +7,13 @@ Xt.mount.push({
   matches: '.demo--slider--toggle-js',
   fnc: function mount(object) {
 
-    // vars
-
-    let slider = object;
     let time = .8;
     let timeMask = .8;
     let timeContent = .8;
     let sizeContent = 100;
     let easeOut = new Ease(BezierEasing(.14,.63,0,1));
 
-    // xt-slider
-
-    let self = new Xt.Slider(slider, {
+    let self = new Xt.Slider(object, {
       "durationOn": time * 1000,
       "durationOff": time * 1000,
       "instant": false

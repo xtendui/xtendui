@@ -11,20 +11,13 @@ Xt.mount.push({
   matches: '#demo--toggle-js-0',
   fnc: function mount(object) {
 
-    // vars
-
     let time = .6;
     let delay = 0;
     let size = 15;
-
     let easeIn = new Ease(BezierEasing(.14, .63, 0, 1));
     let easeOut = new Ease(BezierEasing(.14, .63, 0, 1));
 
-    let toggle = object;
-
-    // xt-toggle
-
-    let self = new Xt.Toggle(toggle, {
+    let self = new Xt.Toggle(object, {
       "durationOn": time * 1000,
       "durationOff": time * 1000,
       "delayOn": delay * 1000,
@@ -82,20 +75,13 @@ Xt.mount.push({
   matches: '#demo--toggle-js-1',
   fnc: function mount(object) {
 
-    // vars
-
     let time = .6;
     let delay = 0;
     let size = 15;
-
     let easeIn = new Ease(BezierEasing(.14,.63,0,1));
     let easeOut = new Ease(BezierEasing(.14,.63,0,1));
 
-    let toggle = object;
-
-    // xt-toggle
-
-    let self = new Xt.Toggle(toggle, {
+    let self = new Xt.Toggle(object, {
       "on": "mouseenter",
       "off": "mouseleave",
       "durationOn": time * 1000,

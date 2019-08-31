@@ -15,9 +15,11 @@ demo.htmlSource = `
       Label
     </label>
     <input type="text" class="form-item">
-    <a class="form-label-addon">
-      <span>Label Addon</span>
-    </a>
+    <div class="form-label-addon">
+      <a href="#" class="btn btn--link btn--none-y">
+        <span>Label Addon</span>
+      </a>
+    </div>
   </div>
 
 </form>
