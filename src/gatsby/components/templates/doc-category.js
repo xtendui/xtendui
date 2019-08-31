@@ -8,7 +8,7 @@ import SEO from 'components/seo'
 import Layout from 'components/layout'
 
 class Template extends React.Component {
-  render() {
+  render () {
     const {data, pageContext} = this.props
     const seo = {};
     seo.title = 'Categories'

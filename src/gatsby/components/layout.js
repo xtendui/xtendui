@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {StaticQuery, graphql} from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 
 import Header from 'components/header'
 import Footer from 'components/footer'
@@ -8,23 +8,23 @@ import Sidebar from 'components/sidebar'
 import DocsAside from 'components/doc-aside'
 import DocsFoot from 'components/doc-foot'
 
-import {populateBlock} from 'assets/scripts/demo.js'
-import {makeDocument} from 'assets/scripts/theme.js'
-import {Xt} from 'xtend-library'
+import { populateBlock } from 'assets/scripts/demo.js'
+import { makeDocument } from 'assets/scripts/theme.js'
+import { Xt } from 'xtend-library'
 import 'xtend-library/src/xtend-core.js'
 import 'xtend-library/src/xtend-demos.js'
 import 'xtend-library/src/xtend-extensions.js'
 
-import 'assets/styles/theme.less';
+import 'assets/styles/theme.less'
 
 class Layout extends React.Component {
-  componentDidMount() {
+  componentDidMount () {
     populateBlock()
     makeDocument()
   }
 
-  render() {
-    const {seo, page, children} = this.props
+  render () {
+    const { seo, page, children } = this.props
     return (
       <StaticQuery
         query={graphql`
@@ -56,8 +56,8 @@ class Layout extends React.Component {
               <main className="site_main">
                 <div className="site_main_inner">
 
-                  {page ?
-                    <div className="site--with-sidebar site--with-aside">
+                  {page
+                    ? <div className="site--with-sidebar site--with-aside">
                       <Sidebar page={page}/>
                       <article className="site_article">
                         <div className="site_article_hero">
@@ -79,8 +79,7 @@ class Layout extends React.Component {
                       </article>
                       <DocsAside page={page}/>
                     </div>
-                    :
-                    <article className="site_article">
+                    : <article className="site_article">
                       <div className="site_article_content">
                         <div className="container full">
                           {children}
@@ -103,7 +102,7 @@ class Layout extends React.Component {
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 export default Layout

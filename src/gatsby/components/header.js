@@ -1,27 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Link} from 'gatsby'
+import { Link } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
-
-import logo from 'assets/images/logo-white.svg'
 
 import logoIcon from 'assets/images/logo-icon-white.svg'
 
 class Header extends React.Component {
-  render() {
-    const {site, seo, page} = this.props
+  render () {
+    const { site, seo, page } = this.props
     return (
       <header className="site_header">
 
         <nav className="site_header_top_outer"
-             data-xt-sticky='{"sticky": "fixed"}'>
+          data-xt-sticky='{"sticky": "fixed"}'>
           <div className="site_header_top">
 
             <div className="row row-space--none site_header_top_row">
               <div className="site_header_top_left">
                 <div className="container full">
                   <Link to="/" title="Home"
-                        className={`logo-icon
+                    className={`logo-icon
                                     ${seo.title.toLowerCase() === 'home' ? 'active' : ''}`}>
                     <img src={logoIcon} alt={site.site.siteMetadata.title}/>
                   </Link>
@@ -33,7 +31,7 @@ class Header extends React.Component {
                     <div className="site_header_top_links">
                       {site.categories.type.map((type, i) => (
                         <Link key={i} to={`/${kebabCase(type.title)}`}
-                              className={`btn btn--site_header_top_link
+                          className={`btn btn--site_header_top_link
                                         ${page && page.post ? page.post.frontmatter.path === '/' + kebabCase(type.title) ? 'active' : page.post.frontmatter.type === type.title ? 'current' : '' : ''}`}>
                           <span>{type.title}</span>
                         </Link>
@@ -51,11 +49,11 @@ class Header extends React.Component {
                 <div className="container full">
                   <div className="site_header_top_social">
                     <a href={site.site.siteMetadata.github} target="_blank" rel="noopener"
-                       className="btn btn--site_header_top_social" title="Github">
+                      className="btn btn--site_header_top_social" title="Github">
                       <span><span className="icon-github icon--big"></span></span>
                     </a>
                     <a href={site.site.siteMetadata.npm} target="_blank" rel="noopener"
-                       className="btn btn--site_header_top_social" title="Npm">
+                      className="btn btn--site_header_top_social" title="Npm">
                       <span><span className="icon-npm icon--big"></span></span>
                     </a>
                   </div>
@@ -77,10 +75,10 @@ Header.propTypes = {
       siteMetadata: PropTypes.shape({
         title: PropTypes.string.isRequired,
         download: PropTypes.string.isRequired,
-        github: PropTypes.string.isRequired,
-      }).isRequired,
-    }).isRequired,
-  }).isRequired,
+        github: PropTypes.string.isRequired
+      }).isRequired
+    }).isRequired
+  }).isRequired
 }
 
 export default Header

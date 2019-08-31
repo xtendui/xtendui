@@ -1,23 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import {populateDemo} from 'assets/scripts/demo'
+import { populateDemo } from 'assets/scripts/demo'
 
 let demoIndex = 0
 
 class Demo extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.demoRef = React.createRef()
   }
 
-  componentDidMount() {
+  componentDidMount () {
     populateDemo(this.demoRef.current, demoIndex)
     demoIndex++
   }
 
-  render() {
-    const {children} = this.props
+  render () {
+    const { children } = this.props
     return (
       <div className="demo" ref={this.demoRef}>
         {children}
@@ -29,5 +29,5 @@ class Demo extends React.Component {
 export default Demo
 
 Demo.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 }

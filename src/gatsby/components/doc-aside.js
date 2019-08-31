@@ -1,9 +1,9 @@
 import React from 'react'
-import {Link} from 'gatsby'
+import { Link } from 'gatsby'
 
 class DocAside extends React.Component {
-  render() {
-    const {page} = this.props
+  render () {
+    const { page } = this.props
     return (
       <aside className="site_article_aside xt-fixed--check">
         <div className="container full">

@@ -4,7 +4,7 @@ import SEO from 'components/seo'
 import Layout from 'components/layout'
 
 class Page extends React.Component {
-  render() {
+  render () {
     const seo = {};
     seo.title = 'Home'
     seo.description = 'Description'

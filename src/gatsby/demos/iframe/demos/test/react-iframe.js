@@ -12,7 +12,7 @@ export const demo = {
 }
 
 class Page extends React.Component {
-  render() {
+  render () {
     return (
       <DemoReactIframe demo={demo}/>
     )

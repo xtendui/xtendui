@@ -66,7 +66,7 @@ demo.htmlSource = `
 `
 
 class Page extends React.Component {
-  render() {
+  render () {
     return (
       <DemoVanillaIframe demo={demo}/>
     )

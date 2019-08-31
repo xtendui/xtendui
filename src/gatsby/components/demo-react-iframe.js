@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {StaticQuery, graphql} from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 
 import SEO from 'components/seo'
 import Layout from 'components/layout-demo'
 
-import {cssSource, jsSource} from 'assets/scripts/source'
+import { cssSource, jsSource } from 'assets/scripts/source'
 
 class DemoReactIframe extends React.Component {
-  render() {
-    const {demo} = this.props
-    const seo = {};
+  render () {
+    const { demo } = this.props
+    const seo = {}
     seo.title = demo.name
     seo.description = 'Demo'
     demo.Component = require(`xtend-library/src/${demo.type}/${demo.component}/${demo.name}.jsx`).default
@@ -54,6 +54,6 @@ export default DemoReactIframe
 
 DemoReactIframe.propTypes = {
   demo: PropTypes.shape({
-    full: PropTypes.bool,
-  }).isRequired,
+    full: PropTypes.bool
+  }).isRequired
 }

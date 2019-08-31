@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {graphql} from 'gatsby'
+import { graphql } from 'gatsby'
 import rehypeReact from 'rehype-react'
 
 import SEO from 'components/seo'
@@ -11,13 +11,13 @@ import DemoReact from 'components/demo-react'
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: {'demo': Demo, 'demovanilla': DemoVanilla, 'demoreact': DemoReact},
+  components: { demo: Demo, demovanilla: DemoVanilla, demoreact: DemoReact }
 }).Compiler
 
 class Template extends React.Component {
-  render() {
-    const {data} = this.props
-    const seo = {};
+  render () {
+    const { data } = this.props
+    const seo = {}
     seo.title = data.post.frontmatter.title
     seo.description = data.post.frontmatter.description
     seo.parent = data.post.frontmatter.parent
@@ -91,13 +91,13 @@ Template.propTypes = {
                 frontmatter: PropTypes.shape({
                   path: PropTypes.string.isRequired,
                   title: PropTypes.string.isRequired,
-                  parent: PropTypes.string,
-                }).isRequired,
-              }).isRequired,
-            }).isRequired,
-          ),
+                  parent: PropTypes.string
+                }).isRequired
+              }).isRequired
+            }).isRequired
+          )
         }).isRequired
-      ),
+      )
     }),
     postsAdiacent: PropTypes.shape({
       posts: PropTypes.arrayOf(
@@ -105,17 +105,17 @@ Template.propTypes = {
           post: PropTypes.shape({
             frontmatter: PropTypes.shape({
               path: PropTypes.string.isRequired,
-              title: PropTypes.string.isRequired,
-            }).isRequired,
-          }).isRequired,
-        }).isRequired,
-      ),
+              title: PropTypes.string.isRequired
+            }).isRequired
+          }).isRequired
+        }).isRequired
+      )
     }).isRequired,
     parent: PropTypes.shape({
       frontmatter: PropTypes.shape({
         path: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-      }).isRequired,
+        title: PropTypes.string.isRequired
+      }).isRequired
     }),
     post: PropTypes.shape({
       htmlAst: PropTypes.object.isRequired,
@@ -125,8 +125,8 @@ Template.propTypes = {
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         categories: PropTypes.array,
-        parent: PropTypes.string,
-      }).isRequired,
-    }).isRequired,
-  }).isRequired,
+        parent: PropTypes.string
+      }).isRequired
+    }).isRequired
+  }).isRequired
 }
