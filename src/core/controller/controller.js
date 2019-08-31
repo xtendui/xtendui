@@ -1236,7 +1236,7 @@ class Controller {
       return true;
     } else if ((!e || !e.type || e.type !== 'on.xt')) { // @FIX off.xt toggle
       // off
-      self.eventOff(element, e);
+      self.eventOff(element, false, e);
     }
     // activated
     return false;

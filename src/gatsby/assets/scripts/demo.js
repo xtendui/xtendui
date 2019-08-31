@@ -24,9 +24,8 @@ const formatCode = function (source) {
   let text = source.innerHTML;
   // replace
   let lang = source.getAttribute('data-lang');
-  if (lang === 'html' || lang === 'language-markup' || source.classList.contains('language-markup')
-    || lang === 'js' || lang === 'language-jsx' || source.classList.contains('language-jsx')
-  ) {
+  if (lang !== 'less' && !source.classList.contains('language-less')) {
+    console.log(lang, source.classList.contains('language-less'), source);
     // replace quote entities
     text = text.replace(/&quot;/g, '"');
     // replace entities
