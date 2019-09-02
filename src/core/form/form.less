@@ -158,16 +158,16 @@ legend {
   // option
   .form-item--light();
   // animation
-  transition-property: color, border, background;
+  transition-property: color, border, background-color;
   transition-duration: @time--medium;
   transition-timing-function: @bez--out;
   &:hover {
-    transition-property: color, border, background;
+    transition-property: color, border, background-color;
     transition-duration: @time--medium;
     transition-timing-function: @bez--in;
   }
   &:focus, &.active {
-    transition-property: color, border, background;
+    transition-property: color, border, background-color;
     transition-duration: @time--medium;
     transition-timing-function: @bez--in;
   }
@@ -221,7 +221,7 @@ legend {
 }
 
 /**
- * select multiple
+ * select[multiple]
  */
 
 select[multiple]& {

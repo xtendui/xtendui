@@ -145,12 +145,6 @@ h6, .h6 {
 
 // special
 
-.header--line {
-  .spacing--big();
-  .padding(bottom, small);
-  border-bottom: 1px solid @gray--200;
-}
-
 .header--block {
   .spacing--big();
   .padding(y, small);
@@ -158,6 +152,37 @@ h6, .h6 {
   background: @gray--200;
   text-align: center;
 }
+
+.header--line {
+  .spacing--big();
+  .padding(bottom, small);
+  border-bottom: 1px solid @gray--200;
+}
+
+/*
+.header--line {
+  display: flex;
+  position: relative;
+  flex-wrap: nowrap;
+  align-items: center;
+  .margin(bottom, big) !important;
+  .padding(bottom, 3rem);
+  // line
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: @gray--250;
+  }
+  // spacing
+  > * + * {
+    .margin(left, small);
+  }
+}
+*/
 
 /**
  * text
