@@ -1,4 +1,4 @@
-@import '~xtend-library/src/core/general/general-setup.less';
+@import '~xtend-library/src/core/link/link-setup.less';
 
 /**
  * decoration
@@ -52,16 +52,6 @@ a:not(.btn), .btn--link {
     transition-property: color, background, opacity;
     transition-duration: @time--medium;
     transition-timing-function: @bez--in;
-  }
-}
-
-/**
- * disabled
- */
-
-[disabled], .disabled {
-  &:not(.active) {
-    opacity: .75;
   }
 }
 
@@ -160,26 +150,6 @@ a:not(.btn), .btn--link {
           }
         }
       }
-    }
-  }
-}
-
-/**
- * focus
- */
-
-html.xt-focus:not(.xt-focus--disable) {
-  // custom focus
-  :focus {
-    outline-color: rgb(77, 144, 254);
-  }
-  // checkbox and radio
-  input[type="checkbox"], input[type="radio"] {
-    &:focus ~ .form-label:before {
-      outline-color: rgb(77, 144, 254);
-      outline-offset: -2px;
-      outline-style: auto;
-      outline-width: 5px;
     }
   }
 }

@@ -41,24 +41,9 @@ html {
 }
 
 body {
-  background: @white;
   .font-sans--regular();
   font-size: 1.4rem;
   color: @text;
-  line-height: 1.6;
-}
-
-/**
- * size
- */
-
-.font--medium {
-  font-size: 1.4rem;
-  line-height: 1.6;
-}
-
-.font--giant {
-  font-size: 1.6rem;
   line-height: 1.6;
 }
 
@@ -85,7 +70,7 @@ body {
 }
 
 /**
- * headers
+ * header
  */
 
 h1, .h1 {
@@ -140,8 +125,6 @@ h6, .h6 {
   letter-spacing: .05em;
   text-transform: uppercase;
 }
-
-// additional headers here (ex: .h7)
 
 // special
 
@@ -205,6 +188,16 @@ small {
   opacity: .5;
 }
 
+.font--medium {
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+.font--giant {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
 // code
 
 code {
@@ -238,9 +231,7 @@ pre {
   }
 }
 
-/**
- * text--inverse
- */
+// text--inverse
 
 .text--inverse {
   color: @text--inverse;
