@@ -185,7 +185,7 @@ legend {
     background-color: fade(@gray--300, 30%); // @FIX no background: or it overrides background-image
   }
   // select arrow
-  select& {
+  select:not([multiple])& {
     @select-arrow-color: @text;
     @select-space-color: @gray--200;
     background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%),
@@ -218,6 +218,17 @@ legend {
 
 ::placeholder {
   color: @gray--500;
+}
+
+/**
+ * select multiple
+ */
+
+select[multiple]& {
+  padding: 0;
+  option {
+    padding: .5rem 1rem;
+  }
 }
 
 /**

@@ -42,6 +42,16 @@ demo.htmlSource = `
       <option>Test</option>
     </select>
   </div>
+  <div class="form-group">
+    <label class="form-label">
+      Select multiple
+    </label>
+    <select class="form-item" multiple>
+      <option>Test</option>
+      <option>Test</option>
+      <option>Test</option>
+    </select>
+  </div>
 
   <legend>Test flex</legend>
   <div class="form-group--flex-sm">
@@ -108,7 +118,7 @@ demo.htmlSource = `
   </div>
 
   <legend>Test inline input</legend>
-  <div class="form-group--inline">
+  <div class="form-group--inline-sm">
     <div class="form-group">
       <label class="form-label">
         Lorem
@@ -122,7 +132,7 @@ demo.htmlSource = `
       <input type="text" class="form-item">
     </div>
   </div>
-  <div class="form-group--inline">
+  <div class="form-group--inline-sm">
     <div class="form-group">
       <label class="form-label">
         Lorem
@@ -138,9 +148,9 @@ demo.htmlSource = `
   </div>
 
   <legend>Test inline input and label</legend>
-  <div class="form-group--inline">
+  <div class="form-group--inline-sm">
     <div class="form-group">
-      <div class="form-group--inline">
+      <div class="form-group--inline-sm">
         <label class="form-label">
           Lorem
         </label>
@@ -148,7 +158,7 @@ demo.htmlSource = `
       </div>
     </div>
     <div class="form-group">
-      <div class="form-group--inline">
+      <div class="form-group--inline-sm">
         <label class="form-label">
           Lorem Ipsum
         </label>
@@ -156,9 +166,9 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
-  <div class="form-group--inline">
+  <div class="form-group--inline-sm">
     <div class="form-group">
-      <div class="form-group--inline">
+      <div class="form-group--inline-sm">
         <label class="form-label">
           Lorem
         </label>
@@ -166,7 +176,7 @@ demo.htmlSource = `
       </div>
     </div>
     <div class="form-group">
-      <div class="form-group--inline">
+      <div class="form-group--inline-sm">
         <label class="form-label">
           Lorem Ipsum
         </label>
@@ -218,7 +228,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="form-group--inline">
+  <div class="form-group--inline-sm">
     <div class="form-group">
       <label class="form-label">
         Lorem
@@ -233,9 +243,9 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="form-group--inline">
+  <div class="form-group--inline-sm">
     <div class="form-group">
-      <div class="form-group--inline">
+      <div class="form-group--inline-sm">
         <label class="form-label">
           Lorem
         </label>
@@ -243,7 +253,7 @@ demo.htmlSource = `
       </div>
     </div>
     <div class="form-group">
-      <div class="form-group--inline">
+      <div class="form-group--inline-sm">
         <label class="form-label">
           Lorem Ipsum
         </label>
