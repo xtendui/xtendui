@@ -25,7 +25,6 @@ const formatCode = function (source) {
   // replace
   const lang = source.getAttribute('data-lang')
   if (lang !== 'less' && !source.classList.contains('language-less')) {
-    console.log(lang, source.classList.contains('language-less'), source)
     // replace quote entities
     text = text.replace(/&quot;/g, '"')
     // replace entities

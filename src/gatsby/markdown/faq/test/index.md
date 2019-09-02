@@ -11,6 +11,10 @@ categories: ["100-Test"]
 
 Lorem ipsum `.btn.test`.
 
+- test
+- test
+- test
+
 See [Group button's page](/docs/content/group/button).
 
 <div class="alert">
