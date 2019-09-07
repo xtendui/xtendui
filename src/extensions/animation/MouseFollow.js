@@ -12,8 +12,7 @@ class MouseFollow {
     const self = this
     self.object = object
     self.container = container
-    self.options = optionsJs
-    self.mouseCheck = self.options.mouseCheck
+    self.optionsJs = optionsJs
     // @FIX multiple initializations
     const alreadyDefinedInstance = Xt.get(self.componentName, self.object)
     if (!alreadyDefinedInstance) {
@@ -35,6 +34,9 @@ class MouseFollow {
    */
   init () {
     const self = this
+    // options
+    self.options = Xt.merge([self.constructor.optionsDefault, self.optionsJs])
+    // events
     self.container.addEventListener('mousemove', self.mousemove.bind(self))
     self.container.addEventListener('mouseenter', self.mouseenter.bind(self))
     self.container.addEventListener('mouseleave', self.mouseleave.bind(self))
@@ -66,7 +68,7 @@ class MouseFollow {
   mouseenter (e) {
     const self = this
     const options = self.options
-    if (self.mouseCheck(options)) {
+    if (!self.options.mouseCheck || self.options.mouseCheck(options)) {
       // size
       const rect = self.object.getBoundingClientRect()
       self.width = rect.width
@@ -89,7 +91,7 @@ class MouseFollow {
   mouseleave () {
     const self = this
     const options = self.options
-    if (self.mouseCheck(options)) {
+    if (!self.options.mouseCheck || self.options.mouseCheck(options)) {
       // class
       self.object.classList.remove('active')
       self.object.classList.add('out')
@@ -109,6 +111,14 @@ class MouseFollow {
     self.container.removeEventListener('mouseenter', self.mouseenter.bind(self))
     self.container.removeEventListener('mouseleave', self.mouseleave.bind(self))
   }
+}
+
+//
+// option
+//
+
+MouseFollow.componentName = 'xt-mouse-follow'
+MouseFollow.optionsDefault = {
 }
 
 //

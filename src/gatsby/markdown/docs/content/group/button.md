@@ -31,7 +31,7 @@ Use this markup to create a button group as stack.
 <script type="text/plain" class="language-markup">
   <div class="group">
   
-    <span class="group_inner">
+    <div class="group_inner">
       <button type="button" class="btn">
         <span><!-- content --></span>
       </button>
@@ -40,7 +40,7 @@ Use this markup to create a button group as stack.
         <span><!-- content --></span>
       </button>
       
-    </span>
+    </div>
   </div>
 </script>
 

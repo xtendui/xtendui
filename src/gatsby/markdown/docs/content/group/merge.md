@@ -15,17 +15,17 @@ Use this markup to merge multiple `.btn` in one `[button]` as line.
 <script type="text/plain" class="language-markup">
   <button type="button" class="group">
   
-    <span class="group_inner">
-      <span class="btn">
+    <div class="group_inner">
+      <div class="btn">
         <span><!-- content --></span>
-      </span>
-    </span>
+      </div>
+    </div>
 
-    <span class="group_inner">
-      <span class="btn">
+    <div class="group_inner">
+      <div class="btn">
         <span><!-- content --></span>
-      </span>
-    </span>
+      </div>
+    </div>
     
   </button>
 </script>
@@ -35,16 +35,16 @@ Use this markup to merge multiple `.btn` in one `[button]` as stack.
 <script type="text/plain" class="language-markup">
   <button type="button" class="group">
   
-    <span class="group_inner">
-      <span class="btn">
+    <div class="group_inner">
+      <div class="btn">
         <span><!-- content --></span>
-      </span>
+      </div>
       
-      <span class="btn">
+      <div class="btn">
         <span><!-- content --></span>
-      </span>
+      </div>
       
-    </span>
+    </div>
   </button>
 </script>
 

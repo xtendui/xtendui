@@ -15,19 +15,19 @@ Use this markup to create a input group as line.
 <script type="text/plain" class="language-markup">
   <div class="group">
   
-    <span class="group_inner">
+    <div class="group_inner">
       <button type="button" class="btn">
         <span><!-- content --></span>
       </button>
-    </span>
+    </div>
 
     <input type="text" class="form-item">
 
-    <span class="group_inner">
+    <div class="group_inner">
       <button type="button" class="btn">
         <span><!-- content --></span>
       </button>
-    </span>
+    </div>
     
   </div>
 </script>
@@ -37,25 +37,25 @@ Use this markup to create a input group as stack.
 <script type="text/plain" class="language-markup">
   <div class="group">
   
-    <span class="group_inner">
+    <div class="group_inner">
       <button type="button" class="btn">
         <span><!-- content --></span>
       </button>
       <button type="button" class="btn">
         <span><!-- content --></span>
       </button>
-    </span>
+    </div>
 
     <input type="text" class="form-item">
     
-    <span class="group_inner">
+    <div class="group_inner">
       <button type="button" class="btn">
         <span><!-- content --></span>
       </button>
       <button type="button" class="btn">
         <span><!-- content --></span>
       </button>
-    </span>
+    </div>
     
   </div>
 </script>

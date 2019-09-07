@@ -4,11 +4,13 @@ class TextareaAutosize {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
+   * @param {Object} optionsJs User options
    * @constructor
    */
-  constructor (object) {
+  constructor (object, optionsJs = {}) {
     const self = this
     self.object = object
+    self.optionsJs = optionsJs
     // @FIX multiple initializations
     const alreadyDefinedInstance = Xt.get(self.componentName, self.object)
     if (!alreadyDefinedInstance) {
@@ -30,6 +32,8 @@ class TextareaAutosize {
    */
   init () {
     const self = this
+    // options
+    self.options = Xt.merge([self.constructor.optionsDefault, self.optionsJs])
     // key
     self.object.addEventListener('keydown', self.keychange.bind(self))
     self.object.addEventListener('keyup', self.keychange.bind(self))
@@ -77,6 +81,14 @@ class TextareaAutosize {
       form.removeEventListener('reset', self.keychange.bind(self))
     }
   }
+}
+
+//
+// option
+//
+
+TextareaAutosize.componentName = 'xt-textarea-autosize'
+TextareaAutosize.optionsDefault = {
 }
 
 //

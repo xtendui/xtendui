@@ -9,25 +9,25 @@ export const demo = {
 
 demo.htmlSource = `
 <button type="button" class="group">
-  <span class="group_inner">
-    <span class="btn btn--primary">
+  <div class="group_inner">
+    <div class="btn btn--primary">
       <span>btn 1</span>
-    </span>
-  </span>
-  <span class="group_inner">
-    <span class="btn btn--secondary">
+    </div>
+  </div>
+  <div class="group_inner">
+    <div class="btn btn--secondary">
       <span>btn 2</span>
-    </span>
-  </span>
-  <span class="group_inner">
-    <span class="btn btn--primary">
+    </div>
+  </div>
+  <div class="group_inner">
+    <div class="btn btn--primary">
       <span>btn 3</span>
-    </span>
-  </span>
-  <span class="group_inner">
-    <span class="btn btn--secondary">
+    </div>
+  </div>
+  <div class="group_inner">
+    <div class="btn btn--secondary">
       <span>btn 4</span>
-    </span>
-  </span>
+    </div>
+  </div>
 </button>
 `

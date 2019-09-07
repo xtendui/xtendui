@@ -596,7 +596,8 @@ if (typeof window !== 'undefined') {
       if (obj) {
         for (const [key, value] of Object.entries(obj)) {
           if (value !== null && typeof value === 'object' &&
-            !value.nodeName && // not HTML element
+            !Array.isArray(value) && // not array
+            !value.nodeName && // not HTML elemen
             value !== window) { // not window
             final[key] = Xt.merge([final[key], value])
           } else {

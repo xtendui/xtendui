@@ -10,7 +10,7 @@ class PropagateInteraction {
   constructor (object, optionsJs = {}) {
     const self = this
     self.object = object
-    self.options = optionsJs
+    self.optionsJs = optionsJs
     // @FIX multiple initializations
     const alreadyDefinedInstance = Xt.get(self.componentName, self.object)
     if (!alreadyDefinedInstance) {
@@ -32,6 +32,9 @@ class PropagateInteraction {
    */
   init () {
     const self = this
+    // options
+    self.options = Xt.merge([self.constructor.optionsDefault, self.optionsJs])
+    // events
     self.targets = self.object.querySelectorAll(self.options.targets)
     if (self.targets.length) {
       self.object.addEventListener('mouseenter', self.hoverOn.bind(self))
@@ -108,6 +111,14 @@ class PropagateInteraction {
     self.object.removeEventListener('mousedown', self.activeOn.bind(self))
     removeEventListener('mouseup', self.activeOff.bind(self))
   }
+}
+
+//
+// option
+//
+
+PropagateInteraction.componentName = 'xt-propagate-interaction'
+PropagateInteraction.optionsDefault = {
 }
 
 //
