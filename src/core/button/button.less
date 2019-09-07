@@ -13,16 +13,12 @@
 .btn {
   // styles
   border-radius: 4px;
-  > span {
-    border-radius: inherit;
-    .font-sans--semibold();
-    line-height: 1.2;
-    letter-spacing: 0;
-    text-transform: uppercase;
-  }
+  .font-sans--semibold();
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: uppercase;
   &@{btn--design} {
     .design-setup();
-    border-radius: inherit;
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
@@ -38,13 +34,13 @@
 .btn {
   // transition
   animation-duration: @time--small; // needed for .out animation timing, put max animation time
-  > span, &@{btn--design} {
+  &, &@{btn--design}, > span {
     transition-property: all;
     transition-duration: @time--small;
     transition-timing-function: @bez--out;
   }
   &:hover, &.hover, &:active, &.active {
-    > span, &@{btn--design} {
+    &, &@{btn--design}, > span {
       transition-property: all;
       transition-duration: @time--small;
       transition-timing-function: @bez--in;
@@ -56,17 +52,13 @@
 
 .btn--primary {
   .link--none();
-  > span {
-    color: @text--inverse;
-  }
+  color: @text--inverse;
   &@{btn--design} {
     border-color: @primary;
     background: @primary;
   }
   &:hover, &.hover, &:active, &.active {
-    > span {
-      color: @text--inverse--dark;
-    }
+    color: @text--inverse--dark;
     &@{btn--design} {
       border-color: @primary--dark;
       background: @primary--dark;
@@ -82,17 +74,13 @@
 
 .btn--secondary {
   .link--none();
-  > span {
-    color: @text;
-  }
+  color: @text;
   &@{btn--design} {
     border-color: @secondary;
     background: @secondary;
   }
   &:hover, &.hover, &:active, &.active {
-    > span {
-      color: @text--dark;
-    }
+    color: @text--dark;
     &@{btn--design} {
       border-color: @secondary--dark;
       background: @secondary--dark;
@@ -110,16 +98,13 @@
   .link--none();
   .btn--noeffect();
   color: inherit;
-  > span {
-    color: inherit;
-  }
   &@{btn--design} {
     border-color: transparent;
     background: transparent;
   }
   &:hover, &.hover, &:active, &.active {
+    color: inherit;
     > span {
-      color: inherit;
       opacity: .75;
     }
     &@{btn--design} {
@@ -133,37 +118,33 @@
   .btn--nodesign();
   .btn--noeffect();
   // reset
-  > span {
-    font-family: inherit !important;
-    font-style: inherit !important;
-    font-weight: inherit !important;
-    color: inherit !important;
-    letter-spacing: inherit !important;
-    text-transform: inherit !important;
-    text-decoration: inherit !important;
-  }
+  font-family: inherit !important;
+  font-style: inherit !important;
+  font-weight: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
 }
 
 // size
 
 .btn--tiny {
+  font-size: 10px;
   > span {
     padding: .5em 1em;
-    font-size: 10px;
   }
 }
 
 .btn--small {
+  font-size: 1.2rem;
   > span {
     padding: .6em 1.2em;
-    font-size: 1.2rem;
   }
 }
 
 .btn--medium {
+  font-size: 1.335rem; // @FIX odd rem with .035 added
   > span {
     padding: .6em 1.2em;
-    font-size: 1.335rem; // @FIX odd rem with .035 added
   }
 }
 
@@ -175,16 +156,16 @@
 }
 
 .btn--giant {
+  font-size: 1.535rem; // @FIX odd rem with .035 added
   > span {
     padding: .6em 1.2em;
-    font-size: 1.535rem; // @FIX odd rem with .035 added
   }
 }
 
 .btn--huge {
+  font-size: 1.6rem;
   > span {
     padding: .6em 1.2em;
-    font-size: 1.6rem;
   }
 }
 
@@ -283,17 +264,15 @@
 }
 
 .btn--icon {
+  line-height: 1;
   > span {
     padding: .8em .8em;
-    line-height: 1;
   }
 }
 
 .btn--transform {
-  > span {
-    letter-spacing: 0;
-    text-transform: none;
-  }
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 // custom

@@ -29,10 +29,10 @@ class Header extends React.Component {
                 <div className="list site_header_top_links_outer">
                   <div>
                     <div className="site_header_top_links">
-                      <Link to='/docs'
+                      <Link to='/core'
                         className={`btn btn--site_header_top_link
-                                        ${page && page.post ? page.post.frontmatter.path === '/' + 'docs' ? 'active' : page.post.frontmatter.type === 'docs' ? 'current' : '' : ''}`}>
-                        <span>Docs</span>
+                                        ${page && page.post ? page.post.frontmatter.path === '/' + 'core' ? 'active' : page.post.frontmatter.type === 'core' ? 'current' : '' : ''}`}>
+                        <span>Core</span>
                       </Link>
                       <Link to='/extensions'
                         className={`btn btn--site_header_top_link

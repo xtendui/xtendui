@@ -172,7 +172,7 @@
     background: @white;
     box-shadow: @shadow--light;
   }
-  .overlay_content {
+  .overlay_inner {
     color: @text;
   }
   .btn--close.overlay_dismiss {
@@ -186,11 +186,10 @@
     background: @gray--900;
     box-shadow: @shadow--dark;
   }
-  .overlay_content {
+  .overlay_inner {
     .text--inverse();
   }
   .btn--close.overlay_dismiss {
-    .text--inverse();
     .btn--text();
   }
 }

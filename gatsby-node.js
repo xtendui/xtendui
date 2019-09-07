@@ -202,7 +202,7 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      if (node.frontmatter.type === 'docs' || node.frontmatter.type === 'extensions' || node.frontmatter.type === 'themes' || node.frontmatter.type === 'faq') {
+      if (node.frontmatter.type === 'core' || node.frontmatter.type === 'extensions' || node.frontmatter.type === 'themes' || node.frontmatter.type === 'faq') {
         createPage({
           path: node.frontmatter.path, // needs gatsby-source-filesystem resolve name
           component: docTemplate,

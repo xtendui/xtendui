@@ -42,22 +42,18 @@
 // variant
 
 .alert--dark {
+  .text--inverse();
   &@{alert--design} {
     border-color: @gray--900;
     background: @gray--900;
   }
-  > .alert_content {
-    .text--inverse();
-  }
 }
 
 .alert--light {
+  color: @text;
   &@{alert--design} {
     border-color: @gray--200;
     background: @gray--200;
-  }
-  > .alert_content {
-    color: @text;
   }
 }
 

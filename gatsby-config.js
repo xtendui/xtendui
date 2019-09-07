@@ -53,20 +53,6 @@ module.exports = {
         path: './src/'
       }
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'doc',
-        path: './src/gatsby/markdown/docs/'
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'faq',
-        path: './src/gatsby/markdown/faq/'
-      }
-    },
     // pages
     {
       resolve: 'gatsby-plugin-page-creator',

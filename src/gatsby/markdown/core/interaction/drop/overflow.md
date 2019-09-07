@@ -1,0 +1,18 @@
+---
+path: "/core/drop/overflow"
+type: "core"
+date: "2019-06-01"
+title: "Overflow"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+categories: ["300-Interaction"]
+parent: "Drop"
+---
+
+##Overflow
+
+Drop with max sizes with automatic scrollbar on overflow with `drop--overflow-y`.
+
+<demo>
+  <demovanilla src="demos/inline/demos/drop/overflow">
+  </demovanilla>
+</demo>
