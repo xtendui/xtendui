@@ -1,5 +1,5 @@
 ---
-path: "/docs/interaction/overlay/special"
+path: "/docs/overlay/special"
 type: "docs"
 date: "2019-02-01"
 title: "Special"

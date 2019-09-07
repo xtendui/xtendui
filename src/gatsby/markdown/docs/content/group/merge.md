@@ -1,5 +1,5 @@
 ---
-path: "/docs/content/group/merge"
+path: "/docs/group/merge"
 type: "docs"
 date: "2019-02-01"
 title: "Merge"

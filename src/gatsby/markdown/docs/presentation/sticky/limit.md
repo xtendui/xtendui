@@ -1,5 +1,5 @@
 ---
-path: "/docs/presentation/sticky/limit"
+path: "/docs/sticky/limit"
 type: "docs"
 date: "2019-02-01"
 title: "Limit"

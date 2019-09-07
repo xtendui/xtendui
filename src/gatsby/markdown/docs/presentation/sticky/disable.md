@@ -1,5 +1,5 @@
 ---
-path: "/docs/presentation/sticky/disable"
+path: "/docs/sticky/disable"
 type: "docs"
 date: "2019-07-01"
 title: "Disable"

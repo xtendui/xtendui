@@ -1,5 +1,5 @@
 ---
-path: "/docs/content/table"
+path: "/docs/table"
 type: "docs"
 date: "2000-03-01"
 title: "Table"

@@ -29,6 +29,27 @@ class Header extends React.Component {
                 <div className="list site_header_top_links_outer">
                   <div>
                     <div className="site_header_top_links">
+                      <Link to='/docs'
+                        className={`btn btn--site_header_top_link
+                                        ${page && page.post ? page.post.frontmatter.path === '/' + 'docs' ? 'active' : page.post.frontmatter.type === 'docs' ? 'current' : '' : ''}`}>
+                        <span>Docs</span>
+                      </Link>
+                      <Link to='/extensions'
+                        className={`btn btn--site_header_top_link
+                                        ${page && page.post ? page.post.frontmatter.path === '/' + 'extensions' ? 'active' : page.post.frontmatter.type === 'extensions' ? 'current' : '' : ''}`}>
+                        <span>Extensions</span>
+                      </Link>
+                      <Link to='/themes'
+                        className={`btn btn--site_header_top_link
+                                        ${page && page.post ? page.post.frontmatter.path === '/' + 'themes' ? 'active' : page.post.frontmatter.type === 'themes' ? 'current' : '' : ''}`}>
+                        <span>Themes</span>
+                      </Link>
+                      <Link to='/faq'
+                        className={`btn btn--site_header_top_link
+                                        ${page && page.post ? page.post.frontmatter.path === '/' + 'faq' ? 'active' : page.post.frontmatter.type === 'faq' ? 'current' : '' : ''}`}>
+                        <span>Faq</span>
+                      </Link>
+                      {/*
                       {site.categories.type.map((type, i) => (
                         <Link key={i} to={`/${kebabCase(type.title)}`}
                           className={`btn btn--site_header_top_link
@@ -36,6 +57,7 @@ class Header extends React.Component {
                           <span>{type.title}</span>
                         </Link>
                       ))}
+                      */}
                     </div>
                   </div>
                   <div>

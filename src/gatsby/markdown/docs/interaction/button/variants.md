@@ -1,5 +1,5 @@
 ---
-path: "/docs/interaction/button/variant"
+path: "/docs/button/variant"
 type: "docs"
 date: "2019-02-01"
 title: "Variant"

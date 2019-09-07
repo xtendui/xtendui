@@ -1,5 +1,5 @@
 ---
-path: "/docs/interaction/drop/nested"
+path: "/docs/drop/nested"
 type: "docs"
 date: "2019-07-01"
 title: "Nested"

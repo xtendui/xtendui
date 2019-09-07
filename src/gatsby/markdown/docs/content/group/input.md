@@ -1,5 +1,5 @@
 ---
-path: "/docs/content/group/input"
+path: "/docs/group/input"
 type: "docs"
 date: "2019-03-01"
 title: "Input"

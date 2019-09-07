@@ -1,5 +1,5 @@
 ---
-path: "/docs/interaction/button"
+path: "/docs/button"
 type: "docs"
 date: "2000-02-01"
 title: "Button"

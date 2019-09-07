@@ -1,5 +1,5 @@
 ---
-path: "/docs/interaction/toggle/auto"
+path: "/docs/toggle/auto"
 type: "docs"
 date: "2019-05-01"
 title: "Auto"

@@ -1,5 +1,5 @@
 ---
-path: "/docs/presentation/sticky"
+path: "/docs/sticky"
 type: "docs"
 date: "2000-04-01"
 title: "Sticky"

@@ -4,6 +4,22 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
+let sidebarArticleScrolltop = 0
+
 exports.onPreRouteUpdate = ({ location, prevLocation }) => {
+  // autoclose
   window.dispatchEvent(new CustomEvent('autoClose.xt')) // autoClose xt
+  // sidebarArticleScrolltop
+  const sidebarArticle = document.querySelector('.site_article_sidebar');
+  if (sidebarArticle) {
+    sidebarArticleScrolltop = sidebarArticle.scrollTop
+  }
+}
+
+exports.onRouteUpdate = ({ location, prevLocation }) => {
+  // sidebarArticleScrolltop
+  const sidebarArticle = document.querySelector('.site_article_sidebar');
+  if (sidebarArticle) {
+    sidebarArticle.scrollTop = sidebarArticleScrolltop
+  }
 }

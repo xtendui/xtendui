@@ -1,5 +1,5 @@
 ---
-path: "/docs/content/form/items"
+path: "/docs/form/items"
 type: "docs"
 date: "2019-01-01"
 title: "Items"

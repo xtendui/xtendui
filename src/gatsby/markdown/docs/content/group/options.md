@@ -1,5 +1,5 @@
 ---
-path: "/docs/content/group/options"
+path: "/docs/group/options"
 type: "docs"
 date: "2019-04-01"
 title: "Options"

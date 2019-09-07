@@ -1,5 +1,5 @@
 ---
-path: "/docs/interaction/toggle/navigation"
+path: "/docs/toggle/navigation"
 type: "docs"
 date: "2019-07-01"
 title: "Navigation"

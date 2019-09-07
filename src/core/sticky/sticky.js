@@ -1,5 +1,5 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/core/controller/controller.js'
+import 'xtend-library/src/core/javascript/controller.js'
 
 class Sticky extends Xt.Controller {
   /**

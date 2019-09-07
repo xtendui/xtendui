@@ -1,5 +1,5 @@
 ---
-path: "/docs/presentation/loader/mouse"
+path: "/docs/loader/mouse"
 type: "docs"
 date: "2019-05-01"
 title: "Mouse"

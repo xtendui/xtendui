@@ -1,5 +1,5 @@
 ---
-path: "/docs/content/form/check-radio"
+path: "/docs/form/check-radio"
 type: "docs"
 date: "2019-02-01"
 title: "Check and Radio"

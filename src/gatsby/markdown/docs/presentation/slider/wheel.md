@@ -1,5 +1,5 @@
 ---
-path: "/docs/presentation/slider/wheel"
+path: "/docs/slider/wheel"
 type: "docs"
 date: "2019-05-01"
 title: "Wheel"

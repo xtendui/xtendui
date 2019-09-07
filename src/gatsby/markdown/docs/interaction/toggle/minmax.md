@@ -1,5 +1,5 @@
 ---
-path: "/docs/interaction/toggle/minmax"
+path: "/docs/toggle/minmax"
 type: "docs"
 date: "2019-03-01"
 title: "Min and Max"

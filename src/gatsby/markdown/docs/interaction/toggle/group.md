@@ -1,5 +1,5 @@
 ---
-path: "/docs/interaction/toggle/group"
+path: "/docs/toggle/group"
 type: "docs"
 date: "2019-01-01"
 title: "Group"

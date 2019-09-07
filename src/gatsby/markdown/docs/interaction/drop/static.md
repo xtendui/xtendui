@@ -1,5 +1,5 @@
 ---
-path: "/docs/interaction/drop/static"
+path: "/docs/drop/static"
 type: "docs"
 date: "2019-04-01"
 title: "Static"

@@ -1,5 +1,5 @@
 ---
-path: "/docs/presentation/sticky/mode"
+path: "/docs/sticky/mode"
 type: "docs"
 date: "2019-03-01"
 title: "Mode"

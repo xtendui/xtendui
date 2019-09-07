@@ -1,5 +1,5 @@
 ---
-path: "/docs/presentation/sticky/showhide"
+path: "/docs/sticky/showhide"
 type: "docs"
 date: "2019-07-01"
 title: "Show and Hide"

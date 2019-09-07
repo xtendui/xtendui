@@ -1,5 +1,5 @@
 ---
-path: "/docs/content/typography"
+path: "/docs/typography"
 type: "docs"
 date: "2000-01-01"
 title: "Typography"

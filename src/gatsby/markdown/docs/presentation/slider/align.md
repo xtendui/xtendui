@@ -1,5 +1,5 @@
 ---
-path: "/docs/presentation/slider/align"
+path: "/docs/slider/align"
 type: "docs"
 date: "2019-02-01"
 title: "Align"

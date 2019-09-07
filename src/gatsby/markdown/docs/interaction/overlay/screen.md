@@ -1,5 +1,5 @@
 ---
-path: "/docs/interaction/overlay/screen"
+path: "/docs/overlay/screen"
 type: "docs"
 date: "2019-03-01"
 title: "Screen"

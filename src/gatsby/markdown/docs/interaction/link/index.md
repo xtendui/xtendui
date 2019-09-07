@@ -1,11 +1,11 @@
 ---
-path: "/docs/interaction/general/link"
+path: "/docs/link"
 type: "docs"
-date: "2019-02-01"
+date: "2000-01-01"
 title: "Link"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]
-parent: "General"
+parent: "Link"
 ---
 
 ##Usage

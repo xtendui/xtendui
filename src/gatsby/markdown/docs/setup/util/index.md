@@ -1,9 +1,9 @@
 ---
-path: "/docs/interaction/general"
+path: "/docs/util"
 type: "docs"
-date: "2000-01-01"
-title: "General"
+date: "2000-12-01"
+title: "Util"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["300-Interaction"]
-parent: "General"
+categories: ["000-Setup"]
+parent: "Util"
 ---

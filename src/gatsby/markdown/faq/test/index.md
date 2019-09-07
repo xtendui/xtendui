@@ -15,7 +15,7 @@ Lorem ipsum `.btn.test`.
 - test
 - test
 
-See [Group button's page](/docs/content/group/button).
+See [Group button's page](/docs/group/button).
 
 <div class="alert">
   <div class="alert_content">

@@ -1,5 +1,5 @@
 ---
-path: "/docs/presentation/slider/disable-expand"
+path: "/docs/slider/disable-expand"
 type: "docs"
 date: "2019-07-01"
 title: "Disable"

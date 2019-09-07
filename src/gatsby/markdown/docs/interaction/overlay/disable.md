@@ -1,5 +1,5 @@
 ---
-path: "/docs/interaction/overlay/disable"
+path: "/docs/overlay/disable"
 type: "docs"
 date: "2019-06-01"
 title: "Disable"

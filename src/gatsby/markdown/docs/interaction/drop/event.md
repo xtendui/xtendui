@@ -1,5 +1,5 @@
 ---
-path: "/docs/interaction/drop/event"
+path: "/docs/drop/event"
 type: "docs"
 date: "2019-04-01"
 title: "Event"

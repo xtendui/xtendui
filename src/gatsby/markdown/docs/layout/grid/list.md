@@ -1,5 +1,5 @@
 ---
-path: "/docs/layout/grid/list"
+path: "/docs/grid/list"
 type: "docs"
 date: "2019-04-01"
 title: "List"
@@ -32,7 +32,7 @@ Use `.list-block`> to create a **column list**.
 
 ###List of anything
 
-You can use list to space childrens like [row](/docs/layout/grid/row) does. But the childrens are spaced with **margin** instead of **padding** so they aren't used to a grid.
+You can use list to space childrens like [row](/docs/grid/row) does. But the childrens are spaced with **margin** instead of **padding** so they aren't used to a grid.
 
 <demo>
   <div class="demo-inline">

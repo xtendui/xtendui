@@ -1,5 +1,5 @@
 ---
-path: "/docs/content/icon"
+path: "/docs/icon"
 type: "docs"
 date: "2000-02-01"
 title: "Icon"

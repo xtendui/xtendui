@@ -1,5 +1,5 @@
 ---
-path: "/docs/interaction/drop/overflow"
+path: "/docs/drop/overflow"
 type: "docs"
 date: "2019-06-01"
 title: "Overflow"

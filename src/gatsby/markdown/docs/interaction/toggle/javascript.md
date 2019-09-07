@@ -1,5 +1,5 @@
 ---
-path: "/docs/interaction/toggle/javascript"
+path: "/docs/toggle/javascript"
 type: "docs"
 date: "2019-09-01"
 title: "Javascript"

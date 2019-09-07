@@ -61,23 +61,6 @@
   }
 }
 
-.site_footer_bottom {
-  .site_wrapper--with-sidebar & {
-    @media @min-md {
-      .container {
-        padding-left: 0 !important;
-      }
-    }
-  }
-  .site_wrapper--with-aside & {
-    @media @min-lg {
-      .container {
-        padding-right: 0 !important;
-      }
-    }
-  }
-}
-
 .site_article_hero {
   .padding(y, giant);
   .padding(x, medium, sm);
@@ -147,7 +130,7 @@
 .site_article_sidebar_sub,
 .site_article_sidebar_adiacent {
   display: none;
-  .padding(y, .25rem);
+  //.padding(y, .25rem);
   .site_article_sidebar_item {
     position: relative;
     display: flex;

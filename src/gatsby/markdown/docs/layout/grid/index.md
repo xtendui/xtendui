@@ -1,5 +1,5 @@
 ---
-path: "/docs/layout/grid"
+path: "/docs/grid"
 type: "docs"
 date: "2000-01-01"
 title: "Grid"

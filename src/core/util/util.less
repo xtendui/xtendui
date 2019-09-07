@@ -4,55 +4,6 @@
  * vars
  */
 
-// margin
-
-@margins: auto auto, none 0, micro .25rem, tiny .5rem, small 1rem, medium 2rem, big 4rem, giant 6rem, huge 12rem;
-
-// padding
-
-@paddings: auto auto, none 0, micro .25rem, tiny .5rem, small 1rem, medium 2rem, big 4rem, giant 6rem, huge 12rem;
-
-// order
-
-@orders: -3, -2, -1, 0, 1, 2, 3;
-
-// z-index
-
-@index--base: 0;
-@index--active: 2;
-@index--loader: 11;
-@index--sticky: 500; // @index--sticky by javascript 100 and decreses with sequential sticky
-@index--top: 501;
-@index--indicator: 510;
-@index--backdrop: 530;
-@index--drop: 550;
-@index--overlay: 600;
-@index--btn-close: 700;
-@index--last: 701;
-
-// breakpoints
-
-@breakpoints: xs, sm, md, lg, xl; // if you change this change also variables names below
-@breakpoint--xs: 576px;
-@breakpoint--sm: 768px;
-@breakpoint--md: 992px;
-@breakpoint--lg: 1200px;
-@breakpoint--xl: 1300px;
-
-// @media queries
-// USAGE: @media @min-sm and @max-md {}
-
-@min-xs: ~'(min-width:'(@breakpoint--xs)~')';
-@max-xs: ~'(max-width:'(@breakpoint--xs - 1)~')';
-@min-sm: ~'(min-width:'(@breakpoint--sm)~')';
-@max-sm: ~'(max-width:'(@breakpoint--sm - 1)~')';
-@min-md: ~'(min-width:'(@breakpoint--md)~')';
-@max-md: ~'(max-width:'(@breakpoint--md - 1)~')';
-@min-lg: ~'(min-width:'(@breakpoint--lg)~')';
-@max-lg: ~'(max-width:'(@breakpoint--lg - 1)~')';
-@min-xl: ~'(min-width:'(@breakpoint--xl)~')';
-@max-xl: ~'(max-width:'(@breakpoint--xl - 1)~')';
-
 // util classes generation
 // false -> not generate any classes
 // true -> only generate non responsive classes

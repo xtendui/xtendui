@@ -12,12 +12,18 @@ class Sidebar extends React.Component {
             {page.categories.category.map((category, i) => (
               <div key={i}>
                 <div className="site_article_sidebar_cat">
+                  {/*
                   <Link to={`/${page.post.frontmatter.type}/${kebabCase(category.title.split('-').pop())}/`}
                     className={`btn btn--site_article_sidebar btn--site_article_sidebar--cat
                               ${!page.post.frontmatter.categories ? page.post.frontmatter.title === category.title.split('-').pop() ? 'active' : '' : page.post.frontmatter.categories.includes(category.title) ? 'current' : ''}`}>
                     <span>{category.title.split('-').pop()}</span>
                   </Link>
-                  <div className={`site_article_sidebar_sub
+                  */}
+                  <div className={`btn btn--site_article_sidebar btn--site_article_sidebar--cat
+                              ${!page.post.frontmatter.categories ? page.post.frontmatter.title === category.title.split('-').pop() ? 'active' : '' : page.post.frontmatter.categories.includes(category.title) ? 'current' : ''}`}>
+                    <span>{category.title.split('-').pop()}</span>
+                  </div>
+                  <div className={`site_article_sidebar_sub active
                               ${!page.post.frontmatter.categories ? page.post.frontmatter.title === category.title.split('-').pop() ? 'active' : '' : page.post.frontmatter.categories.includes(category.title) ? 'active' : ''}`}>
                     <div className="site_article_sidebar_item">
                       <div className="site_article_sidebar_line"></div>
@@ -26,7 +32,7 @@ class Sidebar extends React.Component {
                           ? <div key={z}>
                             <Link to={post.frontmatter.path}
                               className={`btn btn--site_article_sidebar btn--site_article_sidebar--sub
-                                            ${page.post.frontmatter.title === post.frontmatter.title ? 'active' : page.post.frontmatter.parent === post.frontmatter.parent ? 'current' : ''}`}>
+                                            ${page.post.frontmatter.path === post.frontmatter.path ? 'active' : page.post.frontmatter.parent === post.frontmatter.parent ? 'current' : ''}`}>
                               <span>{post.frontmatter.title}</span>
                             </Link>
                             {post.frontmatter.parent === page.post.frontmatter.parent

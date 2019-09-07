@@ -1,5 +1,5 @@
 ---
-path: "/docs/interaction/button/size"
+path: "/docs/button/size"
 type: "docs"
 date: "2019-03-01"
 title: "Size"
