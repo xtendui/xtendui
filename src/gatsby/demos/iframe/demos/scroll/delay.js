@@ -20,7 +20,7 @@ demo.htmlSource = `
   }'>
   <div class="row scroll_container demo--scroll_container--delay">
 
-    <div class="col--12 col--6-sm">
+    <div class="col-12 col-6-sm">
       <div class="card">
         <div class="card_design"></div>
         <div class="card_content">
@@ -30,7 +30,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="col--12 col--6-sm">
+    <div class="col-12 col-6-sm">
       <div class="card">
         <div class="card_design"></div>
         <div class="card_content">
@@ -40,7 +40,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="col--12 col--6-sm">
+    <div class="col-12 col-6-sm">
       <div class="card">
         <div class="card_design"></div>
         <div class="card_content">
@@ -50,7 +50,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="col--12 col--6-sm">
+    <div class="col-12 col-6-sm">
       <div class="card">
         <div class="card_design"></div>
         <div class="card_content">
@@ -60,7 +60,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="col--6 col--4-sm">
+    <div class="col-6 col-4-sm">
       <div class="card">
         <div class="card_design"></div>
         <div class="card_content">
@@ -70,7 +70,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="col--6 col--4-sm">
+    <div class="col-6 col-4-sm">
       <div class="card">
         <div class="card_design"></div>
         <div class="card_content">
@@ -80,7 +80,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="col--6 col--4-sm">
+    <div class="col-6 col-4-sm">
       <div class="card">
         <div class="card_design"></div>
         <div class="card_content">
@@ -90,7 +90,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="col--6 col--2-sm">
+    <div class="col-6 col-2-sm">
       <div class="card">
         <div class="card_design"></div>
         <div class="card_content">
@@ -100,7 +100,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="col--4 col--2-sm">
+    <div class="col-4 col-2-sm">
       <div class="card">
         <div class="card_design"></div>
         <div class="card_content">
@@ -110,7 +110,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="col--4 col--2-sm">
+    <div class="col-4 col-2-sm">
       <div class="card">
         <div class="card_design"></div>
         <div class="card_content">
@@ -120,7 +120,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="col--4 col--2-sm">
+    <div class="col-4 col-2-sm">
       <div class="card">
         <div class="card_design"></div>
         <div class="card_content">
@@ -130,7 +130,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="col--4 col--2-sm">
+    <div class="col-4 col-2-sm">
       <div class="card">
         <div class="card_design"></div>
         <div class="card_content">
@@ -140,7 +140,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="col--4 col--2-sm">
+    <div class="col-4 col-2-sm">
       <div class="card">
         <div class="card_design"></div>
         <div class="card_content">

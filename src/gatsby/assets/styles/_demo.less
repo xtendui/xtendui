@@ -22,7 +22,7 @@ html.iframe-inside {
 // .demo-cols
 
 .demo-cols {
-  [class^='col--'], [class*=' col--'] {
+  [class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-'] {
     &:before {
       position: relative;
       float: left;
@@ -42,7 +42,7 @@ html.iframe-inside {
 }
 
 .demo-cols-nested {
-  [class^='col--'], [class*=' col--'] {
+  [class^='col-'], [class*=' col-'] {
     .demo-cols();
   }
 }

@@ -44,78 +44,78 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
     <div class="demo_item demo_preview" data-name="none">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row row-space--none">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--12 col--8-sm"></div>
-          <div class="col--12 col--4-sm"></div>
-          <div class="col--auto col--2-sm"></div>
-          <div class="col--auto"></div>
-          <div class="col--auto col--2-sm col--auto-lg"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-12 col-8-sm"></div>
+          <div class="col-12 col-4-sm"></div>
+          <div class="col-auto col-2-sm"></div>
+          <div class="col-auto"></div>
+          <div class="col-auto col-2-sm col-auto-lg"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="tiny">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row row-space--tiny">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--12 col--8-sm"></div>
-          <div class="col--12 col--4-sm"></div>
-          <div class="col--auto col--2-sm"></div>
-          <div class="col--auto"></div>
-          <div class="col--auto col--2-sm col--auto-lg"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-12 col-8-sm"></div>
+          <div class="col-12 col-4-sm"></div>
+          <div class="col-auto col-2-sm"></div>
+          <div class="col-auto"></div>
+          <div class="col-auto col-2-sm col-auto-lg"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="small">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row row-space--small">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--12 col--8-sm"></div>
-          <div class="col--12 col--4-sm"></div>
-          <div class="col--auto col--2-sm"></div>
-          <div class="col--auto"></div>
-          <div class="col--auto col--2-sm col--auto-lg"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-12 col-8-sm"></div>
+          <div class="col-12 col-4-sm"></div>
+          <div class="col-auto col-2-sm"></div>
+          <div class="col-auto"></div>
+          <div class="col-auto col-2-sm col-auto-lg"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="medium">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row row-space--medium">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--12 col--8-sm"></div>
-          <div class="col--12 col--4-sm"></div>
-          <div class="col--auto col--2-sm"></div>
-          <div class="col--auto"></div>
-          <div class="col--auto col--2-sm col--auto-lg"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-12 col-8-sm"></div>
+          <div class="col-12 col-4-sm"></div>
+          <div class="col-auto col-2-sm"></div>
+          <div class="col-auto"></div>
+          <div class="col-auto col-2-sm col-auto-lg"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="big">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row row-space--big">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--12 col--8-sm"></div>
-          <div class="col--12 col--4-sm"></div>
-          <div class="col--auto col--2-sm"></div>
-          <div class="col--auto"></div>
-          <div class="col--auto col--2-sm col--auto-lg"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-12 col-8-sm"></div>
+          <div class="col-12 col-4-sm"></div>
+          <div class="col-auto col-2-sm"></div>
+          <div class="col-auto"></div>
+          <div class="col-auto col-2-sm col-auto-lg"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="giant">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row row-space--giant">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--12 col--8-sm"></div>
-          <div class="col--12 col--4-sm"></div>
-          <div class="col--auto col--2-sm"></div>
-          <div class="col--auto"></div>
-          <div class="col--auto col--2-sm col--auto-lg"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-12 col-8-sm"></div>
+          <div class="col-12 col-4-sm"></div>
+          <div class="col-auto col-2-sm"></div>
+          <div class="col-auto"></div>
+          <div class="col-auto col-2-sm col-auto-lg"></div>
         </div>
       </div>
     </div>
@@ -131,52 +131,52 @@ Set children's direction inside the flexbox.
     <div class="demo_item demo_preview" data-name="row">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="flex-direction: row">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--12 col--8-sm"></div>
-          <div class="col--12 col--4-sm"></div>
-          <div class="col--auto col--2-sm"></div>
-          <div class="col--auto"></div>
-          <div class="col--auto col--2-sm col--auto-lg"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-12 col-8-sm"></div>
+          <div class="col-12 col-4-sm"></div>
+          <div class="col-auto col-2-sm"></div>
+          <div class="col-auto"></div>
+          <div class="col-auto col-2-sm col-auto-lg"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="row-reverse">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="flex-direction: row-reverse">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--12 col--8-sm"></div>
-          <div class="col--12 col--4-sm"></div>
-          <div class="col--auto col--2-sm"></div>
-          <div class="col--auto"></div>
-          <div class="col--auto col--2-sm col--auto-lg"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-12 col-8-sm"></div>
+          <div class="col-12 col-4-sm"></div>
+          <div class="col-auto col-2-sm"></div>
+          <div class="col-auto"></div>
+          <div class="col-auto col-2-sm col-auto-lg"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="column">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="flex-direction: column">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--12 col--8-sm"></div>
-          <div class="col--12 col--4-sm"></div>
-          <div class="col--auto col--2-sm"></div>
-          <div class="col--auto"></div>
-          <div class="col--auto col--2-sm col--auto-lg"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-12 col-8-sm"></div>
+          <div class="col-12 col-4-sm"></div>
+          <div class="col-auto col-2-sm"></div>
+          <div class="col-auto"></div>
+          <div class="col-auto col-2-sm col-auto-lg"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="column-reverse">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="flex-direction: column-reverse">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--12 col--8-sm"></div>
-          <div class="col--12 col--4-sm"></div>
-          <div class="col--auto col--2-sm"></div>
-          <div class="col--auto"></div>
-          <div class="col--auto col--2-sm col--auto-lg"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-12 col-8-sm"></div>
+          <div class="col-12 col-4-sm"></div>
+          <div class="col-auto col-2-sm"></div>
+          <div class="col-auto"></div>
+          <div class="col-auto col-2-sm col-auto-lg"></div>
         </div>
       </div>
     </div>
@@ -192,39 +192,39 @@ Set children's wrapping inside the flexbox.
     <div class="demo_item demo_preview" data-name="wrap">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="flex-wrap: wrap">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--12 col--8-sm"></div>
-          <div class="col--12 col--4-sm"></div>
-          <div class="col--auto col--2-sm"></div>
-          <div class="col--auto"></div>
-          <div class="col--auto col--2-sm col--auto-lg"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-12 col-8-sm"></div>
+          <div class="col-12 col-4-sm"></div>
+          <div class="col-auto col-2-sm"></div>
+          <div class="col-auto"></div>
+          <div class="col-auto col-2-sm col-auto-lg"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="wrap-reverse">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="flex-wrap: wrap-reverse">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--12 col--8-sm"></div>
-          <div class="col--12 col--4-sm"></div>
-          <div class="col--auto col--2-sm"></div>
-          <div class="col--auto"></div>
-          <div class="col--auto col--2-sm col--auto-lg"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-12 col-8-sm"></div>
+          <div class="col-12 col-4-sm"></div>
+          <div class="col-auto col-2-sm"></div>
+          <div class="col-auto"></div>
+          <div class="col-auto col-2-sm col-auto-lg"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="nowrap">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="flex-wrap: nowrap">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--12 col--8-sm"></div>
-          <div class="col--12 col--4-sm"></div>
-          <div class="col--auto col--2-sm"></div>
-          <div class="col--auto"></div>
-          <div class="col--auto col--2-sm col--auto-lg"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-12 col-8-sm"></div>
+          <div class="col-12 col-4-sm"></div>
+          <div class="col-auto col-2-sm"></div>
+          <div class="col-auto"></div>
+          <div class="col-auto col-2-sm col-auto-lg"></div>
         </div>
       </div>
     </div>
@@ -240,40 +240,40 @@ Set children's horizontal alignment inside the flexbox.
     <div class="demo_item demo_preview" data-name="start">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="justify-content: flex-start">
-          <div class="col--2"></div>
-          <div class="col--4"></div>
+          <div class="col-2"></div>
+          <div class="col-4"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="end">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="justify-content: flex-end">
-          <div class="col--2"></div>
-          <div class="col--4"></div>
+          <div class="col-2"></div>
+          <div class="col-4"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="center">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="justify-content: center">
-          <div class="col--2"></div>
-          <div class="col--4"></div>
+          <div class="col-2"></div>
+          <div class="col-4"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="between">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="justify-content: space-between">
-          <div class="col--2"></div>
-          <div class="col--4"></div>
+          <div class="col-2"></div>
+          <div class="col-4"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="around">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="justify-content: space-around">
-          <div class="col--2"></div>
-          <div class="col--4"></div>
+          <div class="col-2"></div>
+          <div class="col-4"></div>
         </div>
       </div>
     </div>
@@ -289,50 +289,50 @@ Set children's vertical alignment inside the flexbox.
     <div class="demo_item demo_preview" data-name="start">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-items: flex-start">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--8"></div>
-          <div class="col--4"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-8"></div>
+          <div class="col-4"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="end">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-items: flex-end">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--8"></div>
-          <div class="col--4"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-8"></div>
+          <div class="col-4"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="center">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-items: center">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--8"></div>
-          <div class="col--4"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-8"></div>
+          <div class="col-4"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="baseline">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-items: baseline">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--8"></div>
-          <div class="col--4"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-8"></div>
+          <div class="col-4"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="stretch">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-items: stretch">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--8"></div>
-          <div class="col--4"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-8"></div>
+          <div class="col-4"></div>
         </div>
       </div>
     </div>
@@ -348,60 +348,60 @@ Set children's vertical alignment inside the flexbox.
     <div class="demo_item demo_preview" data-name="start">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-content: flex-start">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--8"></div>
-          <div class="col--4"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-8"></div>
+          <div class="col-4"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="end">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-content: flex-end">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--8"></div>
-          <div class="col--4"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-8"></div>
+          <div class="col-4"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="center">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-content: center">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--8"></div>
-          <div class="col--4"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-8"></div>
+          <div class="col-4"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="between">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-content: space-between">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--8"></div>
-          <div class="col--4"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-8"></div>
+          <div class="col-4"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="around">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-content: space-around">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--8"></div>
-          <div class="col--4"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-8"></div>
+          <div class="col-4"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="stretch">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-content: stretch">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--8"></div>
-          <div class="col--4"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-8"></div>
+          <div class="col-4"></div>
         </div>
       </div>
     </div>
@@ -418,60 +418,60 @@ If set to **>auto** computes to the parent's `align-items` value.
     <div class="demo_item demo_preview" data-name="start">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row">
-          <div class="col--4" style="height: 100px"></div>
-          <div class="col--8" style="align-self: flex-start"></div>
-          <div class="col--8" style="height: 100px"></div>
-          <div class="col--4" style="align-self: flex-start"></div>
+          <div class="col-4" style="height: 100px"></div>
+          <div class="col-8" style="align-self: flex-start"></div>
+          <div class="col-8" style="height: 100px"></div>
+          <div class="col-4" style="align-self: flex-start"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="end">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row">
-          <div class="col--4" style="height: 100px"></div>
-          <div class="col--8" style="align-self: flex-end"></div>
-          <div class="col--8" style="height: 100px"></div>
-          <div class="col--4" style="align-self: flex-end"></div>
+          <div class="col-4" style="height: 100px"></div>
+          <div class="col-8" style="align-self: flex-end"></div>
+          <div class="col-8" style="height: 100px"></div>
+          <div class="col-4" style="align-self: flex-end"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="center">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row">
-          <div class="col--4" style="height: 100px"></div>
-          <div class="col--8" style="align-self: center"></div>
-          <div class="col--8" style="height: 100px"></div>
-          <div class="col--4" style="align-self: center"></div>
+          <div class="col-4" style="height: 100px"></div>
+          <div class="col-8" style="align-self: center"></div>
+          <div class="col-8" style="height: 100px"></div>
+          <div class="col-4" style="align-self: center"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="baseline">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row">
-          <div class="col--4" style="height: 100px"></div>
-          <div class="col--8" style="align-self: baseline"></div>
-          <div class="col--8" style="height: 100px"></div>
-          <div class="col--4" style="align-self: baseline"></div>
+          <div class="col-4" style="height: 100px"></div>
+          <div class="col-8" style="align-self: baseline"></div>
+          <div class="col-8" style="height: 100px"></div>
+          <div class="col-4" style="align-self: baseline"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="stretch">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row">
-          <div class="col--4" style="height: 100px"></div>
-          <div class="col--8" style="align-self: stretch"></div>
-          <div class="col--8" style="height: 100px"></div>
-          <div class="col--4" style="align-self: stretch"></div>
+          <div class="col-4" style="height: 100px"></div>
+          <div class="col-8" style="align-self: stretch"></div>
+          <div class="col-8" style="height: 100px"></div>
+          <div class="col-4" style="align-self: stretch"></div>
         </div>
       </div>
     </div>
     <div class="demo_item demo_preview" data-name="auto">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row" style="align-items: center">
-          <div class="col--4" style="height: 100px"></div>
-          <div class="col--8" style="align-self: auto"></div>
-          <div class="col--8" style="height: 100px"></div>
-          <div class="col--4" style="align-self: auto"></div>
+          <div class="col-4" style="height: 100px"></div>
+          <div class="col-8" style="align-self: auto"></div>
+          <div class="col-8" style="height: 100px"></div>
+          <div class="col-4" style="align-self: auto"></div>
         </div>
       </div>
     </div>
@@ -510,13 +510,13 @@ Set item's order inside the flexbox.
     <div class="demo_item demo_preview" data-name="order">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row">
-          <div class="col--4 order--4"></div>
-          <div class="col--8 order--5"></div>
-          <div class="col--12 col--8-sm order--2-lg"></div>
-          <div class="col--12 col--4-sm order--1-lg"></div>
-          <div class="col--auto col--2-sm order--3"></div>
-          <div class="col--auto order--5"></div>
-          <div class="col--auto col--2-sm col--auto-lg order--3"></div>
+          <div class="col-4 order-4"></div>
+          <div class="col-8 order-5"></div>
+          <div class="col-12 col-8-sm order--2-lg"></div>
+          <div class="col-12 col-4-sm order--1-lg"></div>
+          <div class="col-auto col-2-sm order--3"></div>
+          <div class="col-auto order-5"></div>
+          <div class="col-auto col-2-sm col-auto-lg order--3"></div>
         </div>
       </div>
     </div>

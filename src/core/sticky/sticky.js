@@ -324,7 +324,7 @@ class Sticky extends Xt.Controller {
         el.style.transform = 'translateY(' + add + 'px)'
       }
       // fix position fixed width 100% of parent
-      const width = Xt.normalizeWidth(el.clientWidth)
+      const width = Xt.normalizeWidth(tr.clientWidth)
       if (el.style.width !== width) {
         el.style.width = width
       }

@@ -41,13 +41,13 @@ const makeDocument = function () {
   }
   // .demo-cols
   for (const element of document.querySelectorAll('.demo-cols')) {
-    for (const [i, el] of element.querySelectorAll('[class^=\'col--\'], [class*=\' col--\']').entries()) {
+    for (const [i, el] of element.querySelectorAll('[class^=\'col-\'], [class*=\' col-\'], [class^=\'demo--col-\'], [class*=\' demo--col-\']').entries()) {
       el.setAttribute('data-index', i)
     }
   }
   // .demo-cols-nested
-  for (const element of document.querySelectorAll('.demo-cols-nested [class^=\'col--\'], .demo-cols-nested [class*=\' col--\']')) {
-    for (const [i, el] of element.querySelectorAll('[class^=\'col--\'], [class*=\' col--\']').entries()) {
+  for (const element of document.querySelectorAll('.demo-cols-nested [class^=\'col-\'], .demo-cols-nested [class*=\' col-\']')) {
+    for (const [i, el] of element.querySelectorAll('[class^=\'col-\'], [class*=\' col-\'], [class^=\'demo--col-\'], [class*=\' demo--col-\']').entries()) {
       el.setAttribute('data-index', i)
     }
   }

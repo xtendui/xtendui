@@ -22,14 +22,14 @@ Use `.col` to create a <strong>column</strong>, by default columns have **automa
   </div>
 </script>
 
-You can set **column's width** specifying a number between 1 and 12, for example `.col--6` will take 50% width.
+You can set **column's width** specifying a number between 1 and 12, for example `.col-6` will take 50% width.
 
 <div class="table--scroll">
 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Class                   | `.col--{number}`                          | `.col--6`                     |
-| Class responsive        | `.col--{number}-{breakpoint}`             | `.col--6-sm`                  |
+| Class                   | `.col-{number}`                          | `.col-6`                     |
+| Class responsive        | `.col-{number}-{breakpoint}`             | `.col-6-sm`                  |
 | Mixin                   | `.col({number})`                          | `.col(6)`                     |
 | Mixin responsive min    | `.col({number}, {breakpoint})`            | `.col(6, sm)`                 |
 
@@ -50,13 +50,13 @@ You can nest `.row`, but a flex children can't be a flex itself.
     <div class="demo_item demo_preview" data-name="columns">
       <div class="demo_source demo_source--from demo-cols" data-lang="language-markup">
         <div class="row">
-          <div class="col--4"></div>
-          <div class="col--8"></div>
-          <div class="col--12 col--8-sm"></div>
-          <div class="col--12 col--4-sm"></div>
-          <div class="col--auto col--2-sm"></div>
-          <div class="col--auto"></div>
-          <div class="col--auto col--2-sm col--auto-lg"></div>
+          <div class="col-4"></div>
+          <div class="col-8"></div>
+          <div class="col-12 col-8-sm"></div>
+          <div class="col-12 col-4-sm"></div>
+          <div class="col-auto col-2-sm"></div>
+          <div class="col-auto"></div>
+          <div class="col-auto col-2-sm col-auto-lg"></div>
         </div>
       </div>
     </div>
@@ -68,20 +68,20 @@ You can nest `.row`, but a flex children can't be a flex itself.
     <div class="demo_item demo_preview" data-name="nested">
       <div class="demo_source demo_source--from demo-cols-nested" data-lang="language-markup">
         <div class="row">
-          <div class="col--4">
+          <div class="col-4">
             <div class="row">
-              <div class="col--4"></div>
-              <div class="col--8"></div>
-              <div class="col--8"></div>
-              <div class="col--4"></div>
+              <div class="col-4"></div>
+              <div class="col-8"></div>
+              <div class="col-8"></div>
+              <div class="col-4"></div>
             </div>
           </div>
-          <div class="col--8">
+          <div class="col-8">
             <div class="row">
-              <div class="col--12 col--8-sm"></div>
-              <div class="col--12 col--4-sm"></div>
-              <div class="col--auto"></div>
-              <div class="col--auto col--2-sm col--auto-lg"></div>
+              <div class="col-12 col-8-sm"></div>
+              <div class="col-12 col-4-sm"></div>
+              <div class="col-auto"></div>
+              <div class="col-auto col-2-sm col-auto-lg"></div>
             </div>
           </div>
         </div>

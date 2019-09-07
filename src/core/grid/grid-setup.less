@@ -14,15 +14,15 @@
  * grid
  */
 
-// col--auto
+// col-auto
 
-.col--auto(@breakpoint: none) when (@breakpoint = none) {
+.col-auto(@breakpoint: none) when (@breakpoint = none) {
   flex: 1 1 0; // flex-grow flex-shrink flex-basis
   max-width: none;
   width: auto;
 }
 
-.col--auto(@breakpoint: none) when (default()) {
+.col-auto(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex: 1 1 0; // flex-grow flex-shrink flex-basis
@@ -31,15 +31,15 @@
   }
 }
 
-// col--custom
+// col-custom
 
-.col--custom(@val, @breakpoint: none) when (@breakpoint = none) {
+.col-custom(@val, @breakpoint: none) when (@breakpoint = none) {
   flex: 0 0 auto; // flex-grow flex-shrink flex-basis
   max-width: @val;
   width: @val;
 }
 
-.col--custom(@val, @breakpoint: none) when (default()) {
+.col-custom(@val, @breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex: 0 0 auto; // flex-grow flex-shrink flex-basis

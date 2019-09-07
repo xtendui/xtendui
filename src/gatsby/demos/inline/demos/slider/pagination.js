@@ -14,7 +14,7 @@ demo.htmlSource = `
   <div class="slides">
     <ul class="slides_inner">
 
-      <li class="slide col--6 col--4-sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide_inner">
 
           <div class="card card--big text-align--center">
@@ -32,7 +32,7 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide col--6 col--4-sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide_inner">
 
           <div class="card card--big text-align--center">
@@ -50,7 +50,7 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide col--6 col--4-sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide_inner">
 
           <div class="card card--big text-align--center">
@@ -68,7 +68,7 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide col--6 col--4-sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide_inner">
 
           <div class="card card--big text-align--center">
@@ -86,7 +86,7 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide col--6 col--4-sm">
+      <li class="slide col-6 col-4-sm">
         <div class="slide_inner">
 
           <div class="card card--big text-align--center">
@@ -104,7 +104,7 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide col--12">
+      <li class="slide col-12">
         <div class="slide_inner">
 
           <div class="card card--big text-align--center" style="height: 15rem;">
