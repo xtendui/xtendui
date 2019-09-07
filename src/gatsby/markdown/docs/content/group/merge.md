@@ -50,7 +50,7 @@ Use this markup to merge multiple `.btn` in one `[button]` as stack.
 
 <div class="alert">
   <div class="alert_content">
-    @TODO you need to include extensions/general/propagate-interaction extension
+    @TODO you need to include propagate-interaction extension
   </div>
 </div>
 

@@ -13,22 +13,6 @@ parent: "Link"
 ###Caret
 
 <demo>
-  <demovanilla src="demos/inline/demos/general/caret">
+  <demovanilla src="demos/inline/extensions/link/caret">
   </demovanilla>
-</demo>
-
-###Propagate Interaction
-
-For example to make elements with `a, button` tag propagate `.hover` and `.active` events on `.btn` childs automatically.
-
-<demo>
-  <demovanilla src="demos/inline/extensions/general/propagate-interaction-btn">
-  </demovanilla>
-</demo>
-
-###Jump to content
-
-<demo>
-  <div class="demo_item" data-iframe="iframe/extensions/general/jumptocontent">
-  </div>
 </demo>

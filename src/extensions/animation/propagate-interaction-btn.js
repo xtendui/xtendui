@@ -1,5 +1,5 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/extensions/general/PropagateInteraction.js'
+import 'xtend-library/src/extensions/animation/PropagateInteraction.js'
 
 /**
  * xtend extension: propagate-interaction-btn

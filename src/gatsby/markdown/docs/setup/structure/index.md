@@ -7,3 +7,12 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 categories: ["000-Setup"]
 parent: "Structure"
 ---
+
+##Extension
+
+###Jump to content
+
+<demo>
+  <div class="demo_item" data-iframe="iframe/extensions/structure/jumptocontent">
+  </div>
+</demo>
