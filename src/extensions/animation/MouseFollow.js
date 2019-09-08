@@ -68,7 +68,7 @@ class MouseFollow {
   mouseenter (e) {
     const self = this
     const options = self.options
-    if (!self.options.mouseCheck || self.options.mouseCheck(options)) {
+    if (!options.mouseCheck || options.mouseCheck.call(self)) {
       // size
       const rect = self.object.getBoundingClientRect()
       self.width = rect.width
@@ -91,7 +91,7 @@ class MouseFollow {
   mouseleave () {
     const self = this
     const options = self.options
-    if (!self.options.mouseCheck || self.options.mouseCheck(options)) {
+    if (!options.mouseCheck || options.mouseCheck.call(self)) {
       // class
       self.object.classList.remove('active')
       self.object.classList.add('out')
