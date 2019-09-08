@@ -27,8 +27,7 @@ Xt.mount.push({
 
     self.object.addEventListener('start.xt.auto', function (e) {
       // on elements
-
-      const elements = self.elements.filter(x => x.classList.contains(...self.classes))
+      const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -36,10 +35,8 @@ Xt.mount.push({
           TweenMax.to(filler, self.options.auto.time / 1000, { height: '100%', top: 0, ease: easeLinear })
         }
       }
-
       // on targets
-
-      const targets = self.targets.filter(x => x.classList.contains(...self.classes))
+      const targets = self.targets.filter(x => self.hasCurrent(x))
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -53,18 +50,15 @@ Xt.mount.push({
 
     self.object.addEventListener('stop.xt.auto', function (e) {
       // on elements
-
-      const elements = self.elements.filter(x => x.classList.contains(...self.classes))
+      const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
           TweenMax.to(filler, timeHide / 1000, { height: 0, top: 0, ease: easeLinear })
         }
       }
-
       // on targets
-
-      const targets = self.targets.filter(x => x.classList.contains(...self.classes))
+      const targets = self.targets.filter(x => self.hasCurrent(x))
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
@@ -77,18 +71,15 @@ Xt.mount.push({
 
     self.object.addEventListener('pause.xt.auto', function (e) {
       // on elements
-
-      const elements = self.elements.filter(x => x.classList.contains(...self.classes))
+      const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
         const fillers = element.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {
           TweenMax.to(filler, timeHide / 1000, { height: 0, top: '100%', ease: easeLinear })
         }
       }
-
       // on targets
-
-      const targets = self.targets.filter(x => x.classList.contains(...self.classes))
+      const targets = self.targets.filter(x => self.hasCurrent(x))
       for (const target of targets) {
         const fillers = target.querySelectorAll('.filler span:nth-child(1)')
         for (const filler of fillers) {

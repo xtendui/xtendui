@@ -13,16 +13,9 @@ class MouseFollow {
     self.object = object
     self.container = container
     self.optionsJs = optionsJs
-    // @FIX multiple initializations
-    const alreadyDefinedInstance = Xt.get(self.componentName, self.object)
-    if (!alreadyDefinedInstance) {
-      // set
-      Xt.set(self.componentName, self.object, self)
-      // init
+    Xt.checkDefined(self, function () {
       self.init()
-    } else {
-      return alreadyDefinedInstance
-    }
+    })
   }
 
   //

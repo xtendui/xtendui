@@ -19,7 +19,7 @@ class Smooth extends Xt.Controller {
 
 Smooth.componentName = 'xt-smooth'
 Smooth.optionsDefault = {
-  class: '',
+  class: false,
   wheel: {
     selector: 'scrollingElement',
     block: false,

@@ -13,16 +13,9 @@ class Controller {
     self.optionsJs = optionsJs
     self.componentName = self.constructor.componentName
     self.componentNamespace = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '')
-    // @FIX multiple initializations
-    const alreadyDefinedInstance = Xt.get(self.componentName, self.object)
-    if (!alreadyDefinedInstance) {
-      // set
-      Xt.set(self.componentName, self.object, self)
-      // init
-      self.init(object, optionsJs)
-    } else {
-      return alreadyDefinedInstance
-    }
+    Xt.checkDefined(self, function () {
+      self.init()
+    })
   }
 
   //
@@ -105,11 +98,16 @@ class Controller {
     const markupOptions = self.object.getAttribute('data-' + self.componentName)
     self.options = Xt.merge([self.options, markupOptions ? JSON.parse(markupOptions) : {}])
     // classes
-    self.classes = [...self.options.class.split(' ')]
-    self.classesIn = [...self.options.classIn.split(' ')]
-    self.classesOut = [...self.options.classOut.split(' ')]
-    self.classesInitial = [...self.options.classInitial.split(' ')]
-    self.classesInverse = [...self.options.classInverse.split(' ')]
+    self.classes = self.options.class ? [...self.options.class.split(' ')] : []
+    self.classesIn = self.options.classIn ? [...self.options.classIn.split(' ')] : []
+    self.classesOut = self.options.classOut ? [...self.options.classOut.split(' ')] : []
+    self.classesInitial = self.options.classInitial ? [...self.options.classInitial.split(' ')] : []
+    self.classesInverse = self.options.classInverse ? [...self.options.classInverse.split(' ')] : []
+    self.classesMatch = self.classes.length ? '.' + self.classes.join('.') : false
+    self.classesInMatch = self.classesIn.length ? '.' + self.classesIn.join('.') : false
+    self.classesOutMatch = self.classesOut.length ? '.' + self.classesOut.join('.') : false
+    self.classesInitialMatch = self.classesInitial.length ? '.' + self.classesInitial.join('.') : false
+    self.classesInverseMatch = self.classesInverse.length ? '.' + self.classesInverse.join('.') : false
   }
 
   /**
@@ -284,36 +282,32 @@ class Controller {
   initReset (el, saveCurrents = false) {
     const self = this
     let found = false
-    // elements
-    const group = el.getAttribute('data-xt-group')
-    if (group) {
-      const groupEls = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group)
-      for (const groupEl of groupEls) {
-        if (groupEl.classList.contains(self.classes[0])) {
-          groupEl.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
-          Xt.dataStorage.remove(groupEl, self.componentNamespace + 'Initial')
-          if (saveCurrents) {
-            found = true
-          }
-          // listener dispatch
-          const detail = self.eDetailSet()
-          groupEl.dispatchEvent(new CustomEvent('off.xt', { bubbles: true, detail: detail }))
-        }
-        if (!saveCurrents && self.initialCurrents.includes(groupEl)) {
-          found = true
-        }
-      }
-    } else {
-      if (el.classList.contains(self.classes[0])) {
-        el.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
-        Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
+    // reset
+    const reset = function (elReset) {
+      if (elReset.matches(self.classesMatch)) {
+        elReset.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
+        Xt.dataStorage.remove(elReset, self.componentNamespace + 'Initial')
         if (saveCurrents) {
           found = true
         }
         // listener dispatch
         const detail = self.eDetailSet()
-        el.dispatchEvent(new CustomEvent('off.xt', { bubbles: true, detail: detail }))
+        elReset.dispatchEvent(new CustomEvent('off.xt', { bubbles: true, detail: detail }))
       }
+      return found
+    }
+    // elements
+    const group = el.getAttribute('data-xt-group')
+    if (group) {
+      const groupEls = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group)
+      for (const groupEl of groupEls) {
+        found = reset(groupEl)
+        if (!saveCurrents && self.initialCurrents.includes(groupEl)) {
+          found = true
+        }
+      }
+    } else {
+      found = reset(el)
       if (!saveCurrents && self.initialCurrents.includes(el)) {
         found = true
       }
@@ -321,16 +315,7 @@ class Controller {
     // targets
     const targets = self.getTargets(el)
     for (const tr of targets) {
-      if (tr.classList.contains(self.classes[0])) {
-        tr.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
-        Xt.dataStorage.remove(tr, self.componentNamespace + 'Initial')
-        if (saveCurrents) {
-          found = true
-        }
-        // listener dispatch
-        const detail = self.eDetailSet()
-        tr.dispatchEvent(new CustomEvent('off.xt', { bubbles: true, detail: detail }))
-      }
+      found = reset(tr)
     }
     return found
   }
@@ -631,7 +616,7 @@ class Controller {
           const old = Xt.dataStorage.get(element, self.componentNamespace + 'EventBlock' + e.type) || 0
           Xt.dataStorage.set(element, self.componentNamespace + 'EventBlock' + e.type, now)
           if (now - old < options.onBlock) {
-            return false
+            return
           }
         }
         // on handler
@@ -665,7 +650,7 @@ class Controller {
           const old = Xt.dataStorage.get(element, self.componentNamespace + 'EventBlock' + e.type) || 0
           Xt.dataStorage.set(element, self.componentNamespace + 'EventBlock' + e.type, now)
           if (now - old < options.offBlock) {
-            return false
+            return
           }
         }
         // off handler
@@ -867,7 +852,6 @@ class Controller {
   /**
    * imageLoaded
    * @param {Node|HTMLElement|EventTarget|Window} el
-   * @param {Event} e
    * @param {Boolean} deferred
    */
   eventImgLoadedHandler (el, deferred = true) {
@@ -1044,6 +1028,7 @@ class Controller {
   /**
    * check element on
    * @param {Node|HTMLElement|EventTarget|Window} element To be checked
+   * @returns {Boolean} If elements can activate
    */
   checkOn (element) {
     const self = this
@@ -1054,6 +1039,7 @@ class Controller {
   /**
    * check element off
    * @param {Node|HTMLElement|EventTarget|Window} element To be checked
+   * @returns {Boolean} If elements can deactivate
    */
   checkOff (element) {
     const self = this
@@ -1074,7 +1060,7 @@ class Controller {
   checkAnim (elements) {
     const self = this
     // check
-    elements = elements.filter(x => x.classList.contains(...self.classesIn) || x.classList.contains(...self.classesOut))
+    elements = elements.filter(x => x.matches(self.classesInMatch) || x.matches(self.classesOutMatch))
     return elements.length > 0
   }
 
@@ -1170,8 +1156,8 @@ class Controller {
       return false
     }
     // toggle
-    if (force || self.checkOn(element) &&
-      (!e || !e.type || e.type !== 'off.xt')) { // @FIX off.xt toggle
+    if (force || (self.checkOn(element) &&
+      (!e || !e.type || e.type !== 'off.xt'))) { // @FIX off.xt toggle
       // auto
       if (options.auto && options.auto.time) {
         self.eventAutoStop()
@@ -1194,35 +1180,7 @@ class Controller {
       // queue obj
       const actionCurrent = 'On'
       const actionOther = 'Off'
-      const obj = {}
-      obj.elements = {
-        detail: detail,
-        queueEls: groupElements
-      }
-      if (targets.length) {
-        obj.targets = {
-          detail: detail,
-          queueEls: targets
-        }
-      }
-      if (elementsInner.length) {
-        obj.elementsInner = {
-          detail: detail,
-          queueEls: elementsInner
-        }
-      }
-      if (targetsInner.length) {
-        obj.targetsInner = {
-          detail: detail,
-          queueEls: targetsInner
-        }
-      }
-      // put in queue
-      if (typeof options.instant !== 'object' && options.instant === true) {
-        self.detail['queue' + actionCurrent] = [obj]
-      } else {
-        self.detail['queue' + actionCurrent].unshift(obj)
-      }
+      self.eventQueue(actionCurrent, detail, groupElements, targets, elementsInner, targetsInner)
       // queue run
       for (const type in self.detail['queue' + actionCurrent][0]) {
         self.queueStart(actionCurrent, actionOther, type, 0, true)
@@ -1277,35 +1235,7 @@ class Controller {
       // queue obj
       const actionCurrent = 'Off'
       const actionOther = 'On'
-      const obj = {}
-      obj.elements = {
-        detail: detail,
-        queueEls: groupElements
-      }
-      if (targets.length) {
-        obj.targets = {
-          detail: detail,
-          queueEls: targets
-        }
-      }
-      if (elementsInner.length) {
-        obj.elementsInner = {
-          detail: detail,
-          queueEls: elementsInner
-        }
-      }
-      if (targetsInner.length) {
-        obj.targetsInner = {
-          detail: detail,
-          queueEls: targetsInner
-        }
-      }
-      // put in queue
-      if (typeof options.instant !== 'object' && options.instant === true) {
-        self.detail['queue' + actionCurrent] = [obj]
-      } else {
-        self.detail['queue' + actionCurrent].unshift(obj)
-      }
+      self.eventQueue(actionCurrent, detail, groupElements, targets, elementsInner, targetsInner)
       // if queue too big
       if (self.detail['queue' + actionCurrent].length > options.max) {
         // remove queue on and done other queue
@@ -1327,6 +1257,50 @@ class Controller {
   }
 
   /**
+   * element on
+   * @param {String} actionCurrent
+   * @param {Event} detail
+   * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} groupElements
+   * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} targets
+   * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} elementsInner
+   * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} targetsInner
+   */
+  eventQueue (actionCurrent, detail, groupElements, targets, elementsInner , targetsInner) {
+    const self = this
+    const options = self.options
+    // populate
+    const obj = {}
+    obj.elements = {
+      detail: detail,
+      queueEls: groupElements
+    }
+    if (targets.length) {
+      obj.targets = {
+        detail: detail,
+        queueEls: targets
+      }
+    }
+    if (elementsInner.length) {
+      obj.elementsInner = {
+        detail: detail,
+        queueEls: elementsInner
+      }
+    }
+    if (targetsInner.length) {
+      obj.targetsInner = {
+        detail: detail,
+        queueEls: targetsInner
+      }
+    }
+    // put in queue
+    if (typeof options.instant !== 'object' && options.instant === true) {
+      self.detail['queue' + actionCurrent] = [obj]
+    } else {
+      self.detail['queue' + actionCurrent].unshift(obj)
+    }
+  }
+
+  /**
    * auto start
    */
   eventAutoStart () {
@@ -1334,7 +1308,7 @@ class Controller {
     const options = self.options
     // disabled
     if (self.disabled && !self.initial) {
-      return false
+      return
     }
     // start
     if (options.auto && options.auto.time) {
@@ -1345,7 +1319,7 @@ class Controller {
       // auto
       const time = options.auto.time
       if (self.currentIndex !== null && // not when nothing activated
-        !self.initial || options.auto.initial) { // not when initial
+        (!self.initial || options.auto.initial)) { // not when initial
         Xt.dataStorage.set(self.object, self.componentNamespace + 'AutoStartInterval', setInterval(function () { // interval because can become :visible
           if (Xt.visible(self.object)) {
             // auto
@@ -1373,7 +1347,7 @@ class Controller {
     const options = self.options
     // disabled
     if (self.disabled && !self.initial) {
-      return false
+      return
     }
     // stop
     if (options.auto && options.auto.time) {
@@ -1393,7 +1367,7 @@ class Controller {
     const options = self.options
     // disabled
     if (self.disabled && !self.initial) {
-      return false
+      return
     }
     // pause
     if (options.auto && options.auto.time) {
@@ -1414,11 +1388,11 @@ class Controller {
     const self = this
     // disabled
     if (self.disabled && !self.initial) {
-      return false
+      return
     }
     // check disabled
     if (el.closest('.jumps--none')) {
-      return false
+      return
     }
     // jump
     const element = self.getTargets(el)[0]
@@ -1436,7 +1410,7 @@ class Controller {
     const self = this
     // disabled
     if (self.disabled && !self.initial) {
-      return false
+      return
     }
     // nav
     let index = 0
@@ -1856,7 +1830,6 @@ class Controller {
 
   /**
    * wheel handler
-   * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
   eventWheelHandler (e) {
@@ -1872,7 +1845,7 @@ class Controller {
     const self = this
     // disabled
     if (self.disabled && !self.initial) {
-      return false
+      return
     }
     // prevent default if not loop
     const max = self.getGroups().length - 1
@@ -1886,7 +1859,6 @@ class Controller {
 
   /**
    * event wheel smooth for Xt
-   * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
 
@@ -1896,36 +1868,47 @@ class Controller {
     let el = self.detail.wheel
     // disabled
     if (self.disabled && !self.initial) {
-      return false
-    }
-    // if document.scrollingElement scroll current overflow scroll
-    if (el === document.scrollingElement) {
-      let elFinal
-      for (const composed of e.composedPath()) {
-        if (composed === document.scrollingElement || // always when scrollingElement
-          getComputedStyle(composed).overflowY === 'scroll') {
-          if (composed.scrollHeight > composed.clientHeight) { // when scrollable
-            elFinal = composed
-          } else if (window.self !== window.top) {
-            elFinal = window.top.document.scrollingElement
-          } else {
-            elFinal = window.self.document.scrollingElement
-          }
-          break
-        }
-      }
-      if (!elFinal) {
-        return false
-      } else if (elFinal === document.body) {
-        elFinal = self.object // document.scrollingElement
-      }
-      el = elFinal
+      return
     }
     // delta
     let delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY
     if (delta === 0) {
       return
     }
+    // if document.scrollingElement scroll current overflow scroll
+    if (el === document.scrollingElement) {
+      let elFinal
+      for (let composed of e.composedPath()) {
+        if (composed instanceof Element) {
+          const overflowY = getComputedStyle(composed).overflowY
+          if (composed === document.body) {
+            composed = document.scrollingElement; // @FIX use scrollingElement when body
+          }
+          if (composed === document.scrollingElement || // always when scrollingElement
+            overflowY === 'scroll' || // always when scroll
+            (overflowY === 'auto' && composed.scrollHeight > composed.clientHeight)) { // only when scrollable
+            if (overflowY === 'scroll' && window.self === window.top) { // always when scroll and not iframe
+              elFinal = composed
+            } else if ((delta < 0 || composed.scrollTop > 0) && // limit top
+              (delta > 0 || composed.scrollTop < composed.scrollHeight - composed.clientHeight)) { // limit bottom
+              elFinal = composed
+            } else if (window.self !== window.top) {
+              elFinal = window.top.document.scrollingElement
+            } else {
+              elFinal = window.self.document.scrollingElement
+            }
+            break
+          }
+        }
+      }
+      if (!elFinal) {
+        return
+      } else if (elFinal === document.body) {
+        elFinal = self.object // document.scrollingElement
+      }
+      el = elFinal
+    }
+    // delta
     if (e.deltaMode === 1) {
       // deltaMode 1: by lines
       delta *= 30
@@ -1952,7 +1935,7 @@ class Controller {
       self.detail.wheel.dispatchEvent(new CustomEvent('wheelstart.xt', { detail: detail }))
       self.detail.wheel.dispatchEvent(new CustomEvent('wheelend.xt', { detail: detail }))
       // return
-      return false
+      return
     }
     // min and max
     const min = self.detail.wheelMin || 0
@@ -2011,11 +1994,11 @@ class Controller {
     if (self.detail.wheelMin && self.detail.wheelMax) { // only when setting wheelMin and wheelMax
       if (delta < 0) {
         if (self.detail.wheelCurrent >= max) {
-          return false
+          return
         }
       } else if (delta > 0) {
         if (self.detail.wheelCurrent <= min) {
-          return false
+          return
         }
       }
     }
@@ -2045,7 +2028,7 @@ class Controller {
     const options = self.options
     // disabled
     if (self.disabled && !self.initial) {
-      return false
+      return
     }
     // vars
     const delta = self.detail.wheelEnd - self.detail.wheelCurrent
@@ -2176,7 +2159,7 @@ class Controller {
     const self = this
     // prevent closing when nested and moved (ex: overlay)
     if (!Xt.checkNested(checkEl, self.targets)) {
-      return false
+      return
     }
     // handler
     if (Xt.checkNested(e.target, Xt.arrSingle(checkEl))) {
@@ -2531,7 +2514,7 @@ class Controller {
       for (const element of self.destroyElements) {
         const storages = Xt.dataStorage.getAll(element)
         if (storages) {
-          for (const [key, storage] of storages) {
+          for (const [key] of storages) {
             if (key) {
               if (key.endsWith(self.namespace)) {
                 const handler = Xt.dataStorage.get(element, key)

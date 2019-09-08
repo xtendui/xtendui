@@ -146,45 +146,52 @@ class Slider extends Xt.Controller {
         if (options.contain) {
           console.error('Error: Xt.Slider cannot use "contain": true when using "drag": {"wrap": true}', self.object)
         }
+        const cloneSlide = function (slide) {
+          const cloned = slide.cloneNode(true)
+          Xt.dataStorage.set(cloned, 'xt' + self.componentNamespace + 'cloneSource', slide)
+          cloned.classList.add('xt-clone', 'xt-wrap')
+          cloned.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
+          return cloned
+        }
         // wrapLast
-        let wrapLastCount = draggerWidth
-        wrapLastLabel: for (const [i, group] of self.groupMqInitial.entries()) {
-          wrapLast.push([])
-          for (const slide of group) {
-            const cloned = slide.cloneNode(true)
-            Xt.dataStorage.set(cloned, 'xt' + self.componentNamespace + 'cloneSource', slide)
-            cloned.classList.add('xt-clone', 'xt-wrap')
-            cloned.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
-            container.append(cloned)
-            wrapLast[i].push(cloned)
-            cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapLast' + i)
-            self.targets.push(cloned)
-            wrapLastCount -= slide.offsetWidth
-            if (wrapLastCount <= -draggerWidth * (options.drag.wrap - 1)) {
-              break wrapLastLabel
+        const wrapLastFunction = function () {
+          let wrapLastCount = draggerWidth
+          for (const [i, group] of self.groupMqInitial.entries()) {
+            wrapLast.push([])
+            for (const slide of group) {
+              const cloned = cloneSlide(slide)
+              container.append(cloned)
+              wrapLast[i].push(cloned)
+              cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapLast' + i)
+              self.targets.push(cloned)
+              wrapLastCount -= slide.offsetWidth
+              if (wrapLastCount <= -draggerWidth * (options.drag.wrap - 1)) {
+                return
+              }
             }
           }
         }
+        wrapLastFunction()
         // wrapFirst
-        let wrapFirstCount = draggerWidth
-        wrapFirstLabel: for (const [i, group] of self.groupMqInitial.reverse().entries()) {
-          wrapFirst.unshift([])
-          for (const slide of group.reverse()) {
-            const cloned = slide.cloneNode(true)
-            Xt.dataStorage.set(cloned, 'xt' + self.componentNamespace + 'cloneSource', slide)
-            cloned.classList.add('xt-clone', 'xt-wrap')
-            cloned.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
-            container.prepend(cloned)
-            wrapFirst[0].unshift(cloned)
-            cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapFirst' + i)
-            self.targets.unshift(cloned)
-            wrapFirstCount -= slide.offsetWidth
-            if (wrapFirstCount <= -draggerWidth * (options.drag.wrap - 1)) {
-              break wrapFirstLabel
+        const wrapFirstFunction = function () {
+          let wrapFirstCount = draggerWidth
+          for (const [i, group] of self.groupMqInitial.reverse().entries()) {
+            wrapFirst.unshift([])
+            for (const slide of group.reverse()) {
+              const cloned = cloneSlide(slide)
+              container.prepend(cloned)
+              wrapFirst[0].unshift(cloned)
+              cloned.setAttribute('data-xt-group', self.namespace + '-' + 'wrapFirst' + i)
+              self.targets.unshift(cloned)
+              wrapFirstCount -= slide.offsetWidth
+              if (wrapFirstCount <= -draggerWidth * (options.drag.wrap - 1)) {
+                return
+              }
             }
+            group.reverse() // reset reverse
           }
-          group.reverse() // reset reverse
         }
+        wrapFirstFunction()
         self.groupMqInitial.reverse() // reset reverse
       }
     }
@@ -574,7 +581,7 @@ class Slider extends Xt.Controller {
     const slide = e.target
     // only one call per group
     if (Xt.dataStorage.get(slide, self.componentNamespace + 'SlideOnDone')) {
-      return false
+      return
     }
     const targets = self.getTargets(slide)
     for (const target of targets) {
@@ -691,7 +698,7 @@ class Slider extends Xt.Controller {
     const self = this
     // disabled
     if (self.disabled && !self.initial) {
-      return false
+      return
     }
     // save event
     if (e.detail.wheelX !== undefined) {
@@ -724,7 +731,7 @@ class Slider extends Xt.Controller {
     const self = this
     // disabled
     if (self.disabled && !self.initial) {
-      return false
+      return
     }
     // save event
     if (e.detail.wheelX !== undefined) {
@@ -786,7 +793,7 @@ class Slider extends Xt.Controller {
     const options = self.options
     // disabled
     if (self.disabled && !self.initial) {
-      return false
+      return
     }
     // save event
     if (e.detail.wheelX !== undefined) {

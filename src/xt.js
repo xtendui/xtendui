@@ -100,7 +100,7 @@ if (typeof window !== 'undefined') {
     const addedIgnore = added.closest('.xt-ignore')
     if (addedIgnore) {
       Xt.ignoreOnce(addedIgnore) // @FIX ignore once for mount when moving
-      return false
+      return
     }
     for (const obj of Xt.mount) {
       // check
@@ -140,13 +140,13 @@ if (typeof window !== 'undefined') {
    */
   Xt.unmountCheck = function (removed = document.documentElement) {
     if (removed.closest('.xt-ignore')) {
-      return false
+      return
     }
     for (const obj of Xt.unmount) {
       // check
       if (removed === obj.object || removed.contains(obj.object)) {
         if (obj.object.closest('.xt-ignore')) {
-          return false
+          return
         }
         // call
         obj.fnc()
@@ -184,6 +184,22 @@ if (typeof window !== 'undefined') {
    */
   Xt.remove = function (name, element) {
     return Xt.dataStorage.remove(element, name)
+  }
+
+  /**
+   * check defined component
+   * @param {Object} self Component self
+   * @param {Function} fnc Component init
+   */
+  Xt.checkDefined = function (self, fnc) {
+    // @FIX multiple initializations
+    const alreadyDefinedInstance = Xt.get(self.componentName, self.object)
+    if (!alreadyDefinedInstance) {
+      Xt.set(self.componentName, self.object, self)
+      fnc()
+    } else {
+      return alreadyDefinedInstance
+    }
   }
 
   //
@@ -868,7 +884,7 @@ if (typeof window !== 'undefined') {
       if (e.type === 'resize') {
         // multiple calls check
         if (window.innerWidth === Xt.dataStorage.get(container, 'xtEventDelay')) { // only width no height because it changes on scroll on mobile
-          return false
+          return
         }
         // save after a frame to execute all eventDelay
         cancelAnimationFrame(Xt.dataStorage.get(container, 'xtEventDelayFrame'))

@@ -19,7 +19,7 @@ Xt.mount.push({
 
     const btns = object.querySelectorAll('.multilevel-reset')
     for (const btn of btns) {
-      btn.addEventListener('click', function (e) {
+      btn.addEventListener('click', function () {
         object.querySelector('.multilevel-tab-reset').dispatchEvent(new CustomEvent('on.xt'))
       })
     }

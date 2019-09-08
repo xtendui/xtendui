@@ -167,7 +167,7 @@ class Sticky extends Xt.Controller {
     const options = self.options
     // disabled
     if (self.disabled && !self.initial) {
-      return false
+      return
     }
     // vars
     let anim = true
@@ -263,7 +263,7 @@ class Sticky extends Xt.Controller {
         self.eventOff(el, true)
       }
       // after active
-      if (el.classList.contains(...self.classes)) {
+      if (el.matches(self.classesMatch)) {
         // hide
         if (hide) {
           add = -heightEl
@@ -349,7 +349,7 @@ class Sticky extends Xt.Controller {
     if (!isNaN(parseFloat(option))) {
       val = option
     } else {
-      const elements = Array.isArray(option) || NodeList.prototype.isPrototypeOf(option) ? option : document.querySelectorAll(option)
+      const elements = Array.isArray(option) || option instanceof Element ? option : document.querySelectorAll(option)
       if (elements.length) {
         let found = false
         val = 0
@@ -394,15 +394,15 @@ class Sticky extends Xt.Controller {
     if (!isNaN(parseFloat(option))) {
       val = option
     } else {
-      const elements = Array.isArray(option) || NodeList.prototype.isPrototypeOf(option) ? option : document.querySelectorAll(option)
+      const elements = Array.isArray(option) || option instanceof Element ? option : document.querySelectorAll(option)
       if (elements.length) {
         for (const el of elements) {
-          if (el.classList.contains('sticky-hide--down') && el.classList.contains(...self.classes)) {
+          if (el.classList.contains('sticky-hide--down') && el.matches(self.classesMatch)) {
             if (self.detail.inverseForce) {
               val += el.clientHeight
               foundHide = true
             }
-          } else if (el.classList.contains('sticky-hide--up') && el.classList.contains(...self.classes)) {
+          } else if (el.classList.contains('sticky-hide--up') && el.matches(self.classesMatch)) {
             if (!self.detail.inverseForce) {
               val += el.clientHeight
               foundHide = true

@@ -142,7 +142,7 @@ class Scroll extends Xt.Controller {
     const options = self.options
     // disabled
     if (self.disabled && !self.initial) {
-      return false
+      return
     }
     // vars
     let currentOn = 0

@@ -6,8 +6,14 @@ require('prismjs/plugins/unescaped-markup/prism-unescaped-markup.css')
 require('prismjs/components/prism-jsx.min')
 require('prismjs/components/prism-less.min')
 require('prism-themes/themes/prism-base16-ateliersulphurpool.light.css')
-// require('prismjs/themes/prism-okaidia.css');
 Prism.manual = true
+
+/**
+ * xt-smooth
+ */
+
+//require('xtend-library/src/core/smooth/smooth.js')
+//new Xt.Smooth(document.scrollingElement)
 
 /**
  * demo
@@ -122,11 +128,11 @@ const populateDemo = function (container, i) {
       const src = '/' + item.getAttribute('data-iframe')
       const id = 'iframe' + i + k
       if (src) {
-        item.append(Xt.createElement('<div class="demo_item_wrapper"><iframe data-src="' + src + '" frameborder="0" name="' + id + '"></iframe></div>'))
+        item.append(Xt.createElement('<div class="demo_item_wrapper"><iframe data-src="' + src + '" name="' + id + '"></iframe></div>'))
         item.querySelector('.demo_item_wrapper').append(Xt.createElement('\n' +
           '    <div class="loader loader--spinner">\n' +
           '      <div class="spinner">\n' +
-          '        <svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
+          '        <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
           '      </div>\n' +
           '    </div>\n' +
           '  </div>'))
@@ -157,7 +163,7 @@ const populateDemo = function (container, i) {
       item.append(Xt.createElement('\n' +
         '    <div class="loader loader--spinner">\n' +
         '      <div class="spinner">\n' +
-        '        <svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
+        '        <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
         '      </div>\n' +
         '    </div>\n' +
         '  </div>'));

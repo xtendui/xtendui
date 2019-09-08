@@ -23,7 +23,7 @@ class Ajax extends Xt.Controller {
   /**
    * init
    */
-  init (object = false, optionsJs = false) {
+  init () {
     const self = this
     // vars
     self.locationFrom = self.locationTo || null // fix popstate
@@ -150,7 +150,7 @@ class Ajax extends Xt.Controller {
     if (!e || !e.detail || !e.detail.skip) { // @FIX filter triggered from library (use only in library)
       // not when opening in new tab
       if (e.metaKey || e.ctrlKey) {
-        return false
+        return
       }
       // prevent links (needed for xt-ajax to go to links and propagate event if inside targets)
       e.preventDefault()
