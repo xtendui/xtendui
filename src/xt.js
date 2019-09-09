@@ -518,23 +518,34 @@ if (typeof window !== 'undefined') {
     let xDist = obj.x - xCurrent
     let yDist = obj.y - yCurrent
     // momentum
-    let fncFriction = obj.friction || 'return delta / 9'
-    if (typeof fncFriction === 'string') {
-      fncFriction = new Function('delta', fncFriction)
+    let fncFriction
+    if (obj.friction === false) {
+      fncFriction = false
+    } else if (obj.friction === undefined) {
+      fncFriction = function (delta) { return delta / 9 }
+    } else {
+      fncFriction = obj.friction
     }
-    xCurrent += fncFriction(Math.abs(xDist)) * Math.sign(xDist)
-    yCurrent += fncFriction(Math.abs(yDist)) * Math.sign(yDist)
+    if (fncFriction) {
+      xCurrent += fncFriction(Math.abs(xDist)) * Math.sign(xDist)
+      yCurrent += fncFriction(Math.abs(yDist)) * Math.sign(yDist)
+    } else {
+      xCurrent = obj.x
+      yCurrent = obj.y
+    }
     // set
     el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)'
     // loop
-    const frictionLimit = obj.frictionLimit || 1.5
-    xDist = obj.x - xCurrent
-    yDist = obj.y - yCurrent
-    cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionFrame'))
-    if (Math.abs(xDist) >= frictionLimit || Math.abs(yDist >= frictionLimit)) {
-      Xt.dataStorage.set(el, 'xtFrictionFrame', requestAnimationFrame(function () {
-        Xt.friction(el, obj)
-      }))
+    if (fncFriction) {
+      const frictionLimit = obj.frictionLimit || 1.5
+      xDist = obj.x - xCurrent
+      yDist = obj.y - yCurrent
+      cancelAnimationFrame(Xt.dataStorage.get(el, 'xtFrictionFrame'))
+      if (Math.abs(xDist) >= frictionLimit || Math.abs(yDist >= frictionLimit)) {
+        Xt.dataStorage.set(el, 'xtFrictionFrame', requestAnimationFrame(function () {
+          Xt.friction(el, obj)
+        }))
+      }
     }
   }
 

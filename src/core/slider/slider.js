@@ -809,10 +809,7 @@ class Slider extends Xt.Controller {
     const sign = Math.sign(self.detail.xVelocity)
     if (friction && options.drag.friction) {
       // momentum
-      let fncFriction = options.drag.friction
-      if (typeof fncFriction === 'string') {
-        fncFriction = new Function('velocity', fncFriction)
-      }
+      const fncFriction = options.drag.friction
       self.detail.xVelocity = fncFriction(Math.abs(self.detail.xVelocity)) * sign
       // no momentum when stopping
       if (self.detail.dragDate) {
@@ -853,10 +850,7 @@ class Slider extends Xt.Controller {
       const min = Xt.dataStorage.get(first, self.componentNamespace + 'GroupPos')
       const max = Xt.dataStorage.get(last, self.componentNamespace + 'GroupPos')
       // overflow
-      let fncOverflow = options.drag.overflow
-      if (typeof fncOverflow === 'string') {
-        fncOverflow = new Function('overflow', fncOverflow)
-      }
+      const fncOverflow = options.drag.overflow
       if (friction && options.drag.friction) {
         if (xPos > min || xPos < max) {
           self.detail.xVelocity = fncOverflow(Math.abs(self.detail.xVelocity)) * sign
@@ -997,7 +991,9 @@ Slider.optionsDefault = {
     transform: true,
     horizontal: true,
     factor: 1,
-    friction: 'return delta / 9',
+    friction: function (delta) {
+      return delta / 9
+    },
     frictionLimit: 1.5
   },
   keyboard: {
@@ -1019,9 +1015,13 @@ Slider.optionsDefault = {
     threshold: 50,
     linkThreshold: 50,
     factor: 1,
-    friction: 'return Math.pow(velocity, 0.9)',
+    friction: function (velocity) {
+      return Math.pow(velocity, 0.9)
+    },
     frictionLimit: 1.5,
-    overflow: 'return Math.pow(overflow, 0.73)',
+    overflow: function (overflow) {
+      return Math.pow(overflow, 0.73)
+    },
     timeLimit: 25
   }
 }

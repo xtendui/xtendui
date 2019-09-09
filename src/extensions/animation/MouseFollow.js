@@ -73,7 +73,7 @@ class MouseFollow {
       Xt.friction(self.object, {
         x: e.clientX - self.width / 2,
         y: e.clientY - self.height / 2,
-        friction: 'return delta'
+        friction: false
       })
     }
   }

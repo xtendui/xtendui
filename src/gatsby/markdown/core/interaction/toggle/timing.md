@@ -37,7 +37,7 @@ To add a delay before duration use `"delayOn": Milliseconds` `"delayOff": Millis
   </demovanilla>
 </demo>
 
-You can use a function for `"delayOn"` and `"delayOff"` like this: `function(current, total) {return current * 75}`. You can also use a string `"return current * 75"`.
+You can use a function for `"delayOn"` and `"delayOff"` for example `function(current, total) {return Math.min((total - current) * 150, 300)}`.
 
 <demo>
   <demovanilla src="demos/inline/demos/toggle/timing-delay-fnc">

@@ -7,8 +7,12 @@ Xt.mount.push({
 
     new Xt.Scroll(object, {
       elements: ':scope > *',
-      delayOn: 'return Math.min(current * 75, 300)',
-      delayOff: 'return Math.min((total - current) * 75, 300)',
+      delayOn: function (current) {
+        return Math.min(current * 75, 300)
+      },
+      delayOff: function (current, total) {
+        return Math.min((total - current) * 75, 300)
+      },
       distance: '20%'
     })
   }

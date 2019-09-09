@@ -46,7 +46,7 @@ With `"drag": {"wrap": true, "overflow": false}` you don't have the drag overflo
 
 ###Friction
 
-You can set friction with `"drag": {"friction": Function}`, for example `"drag": {"friction": "return Math.pow(velocity, 0.9)"}`.
+You can set friction with `"drag": {"friction": Function}`, for example `function(velocity) {return Math.pow(velocity, 0.9)}`.
 
 You can disable friction with `"drag": {"friction": false}`.
 
@@ -57,7 +57,7 @@ You can disable friction with `"drag": {"friction": false}`.
 
 ###Overflow
 
-You can set overflow with `"drag": {"overflow": Function}`, for example `"drag": {"overflow": "return Math.pow(overflow, 0.73)"}`.
+You can set overflow with `"drag": {"overflow": Function}`, for example `function(overflow) {return Math.pow(overflow, 0.73)}`.
 
 ###Drag
 

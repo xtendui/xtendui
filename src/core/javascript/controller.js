@@ -1514,11 +1514,9 @@ class Controller {
         if (isNaN(delay)) {
           const count = Xt.dataStorage.get(el, self.componentNamespace + actionCurrent + 'Count') || els.findIndex(x => x === el)
           const tot = Xt.dataStorage.get(el, self.componentNamespace + actionCurrent + 'Tot') || els.length
-          let fnc = delay
-          if (typeof fnc === 'string') {
-            fnc = new Function('current', 'total', fnc)
+          if (typeof delay === 'function') {
+            delay = delay(count, tot - 1)
           }
-          delay = fnc(count, tot - 1)
         } else {
           delay = queueInitial ? 0 : delay
         }
@@ -2037,10 +2035,7 @@ class Controller {
     const deltaAbs = Math.abs(delta)
     const sign = Math.sign(delta)
     // momentum
-    let fncFriction = options.wheel.friction
-    if (typeof fncFriction === 'string') {
-      fncFriction = new Function('delta', fncFriction)
-    }
+    const fncFriction = options.wheel.friction
     if (deltaAbs >= options.wheel.frictionLimit) {
       self.detail.wheelCurrent += fncFriction(deltaAbs) * sign
     } else {

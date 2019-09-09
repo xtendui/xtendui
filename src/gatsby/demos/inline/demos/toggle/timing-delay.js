@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space--small align-items--center list--toggle-delay"
+<div class="list list-space--small align-items--center"
      data-xt-toggle='{"delayOn": 500, "delayOff": 500}'>
   <button type="button" class="btn">
     <span>Toggle 0</span>
@@ -38,7 +38,7 @@ demo.htmlSource = `
 
 <br>
 
-<div class="list list-space--small align-items--center list--toggle-delay"
+<div class="list list-space--small align-items--center"
      data-xt-toggle='{"on": "mouseenter", "off": "mouseleave", "delayOn": 500, "delayOff": 500}'>
   <button type="button" class="btn">
     <span>Toggle 0</span>

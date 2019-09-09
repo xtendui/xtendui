@@ -8,8 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space--small align-items--center list--toggle-delay-fnc"
-     data-xt-toggle='{"delayOn": "return Math.min(current * 150, 300)", "delayOff": "return Math.min((total - current) * 150, 300)"}'>
+<div class="list list-space--small align-items--center demo--toggle--timing-delay-fnc">
   <button type="button" class="btn">
     <span>Toggle 0</span>
   </button>
@@ -58,8 +57,7 @@ demo.htmlSource = `
 
 <br>
 
-<div class="list list-space--small align-items--center list--toggle-delay-fnc"
-     data-xt-toggle='{"on": "mouseenter", "off": "mouseleave", "delayOn": "return Math.min(current * 150, 500)", "delayOff": "return Math.min((total - current) * 150, 500)"}'>
+<div class="list list-space--small align-items--center demo--toggle--timing-delay-fnc--hover">
   <button type="button" class="btn">
     <span>Toggle 0</span>
   </button>

@@ -27,7 +27,9 @@ Smooth.optionsDefault = {
     transform: false,
     horizontal: false,
     factor: 1,
-    friction: 'return delta / 9',
+    friction: function (delta) {
+      return delta / 9
+    },
     frictionLimit: 1.5
   }
 }

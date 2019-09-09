@@ -10,7 +10,7 @@ parent: "Scroll"
 
 ###Delay
 
-You can use a function for `"delayOn"` and `"delayOff"` like this: `function(current, total) {return current * 75}`. You can also use a string `"return current * 75"`.
+You can use a function for `"delayOn"` and `"delayOff"` for example `function(current, total) {return Math.min((total - current) * 150, 300)}`.
 
 <demo>
   <div class="demo_item" data-iframe="iframe/demos/scroll/delay">
