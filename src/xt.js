@@ -529,12 +529,16 @@ if (typeof window !== 'undefined') {
     if (fncFriction) {
       xCurrent += fncFriction(Math.abs(xDist)) * Math.sign(xDist)
       yCurrent += fncFriction(Math.abs(yDist)) * Math.sign(yDist)
+      // set
+      requestAnimationFrame(function () {
+        el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)'
+      })
     } else {
       xCurrent = obj.x
       yCurrent = obj.y
+      // set
+      el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)'
     }
-    // set
-    el.style.transform = 'translateX(' + xCurrent + 'px) translateY(' + yCurrent + 'px)'
     // loop
     if (fncFriction) {
       const frictionLimit = obj.frictionLimit || 1.5
