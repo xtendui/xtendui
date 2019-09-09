@@ -2562,7 +2562,7 @@ Xt.Controller = Controller
 
 Xt.mount.push({
   matches: '[data-' + Xt.Controller.componentName + ']',
-  fnc: function mount (object) {
+  mount: function (object) {
     let self = new Xt.Controller(object, object.getAttribute('data-' + Xt.Controller.componentName))
 
     // unmount

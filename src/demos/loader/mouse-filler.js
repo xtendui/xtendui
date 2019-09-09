@@ -7,13 +7,13 @@ import 'xtend-library/src/extensions/animation/MouseFollow.js'
 
 Xt.mount.push({
   matches: '.demo--loader--mouse-filler',
-  fnc: function mount (object) {
+  mount: function (object) {
     // vars
 
     const mouseFollowObject = object
     const mouseFollowContainer = mouseFollowObject.closest('.card')
 
-    const mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
+    let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
       mouseCheck: function () {
         return !this.object.classList.contains('loader--disable') || this.object.classList.contains('loader--js')
       }
@@ -23,6 +23,7 @@ Xt.mount.push({
 
     return function unmount () {
       mouseFollow.destroy()
+      mouseFollow = null
     }
   }
 })

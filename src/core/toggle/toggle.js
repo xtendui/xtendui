@@ -71,7 +71,7 @@ Xt.Toggle = Toggle
 
 Xt.mount.push({
   matches: '[data-' + Xt.Toggle.componentName + ']',
-  fnc: function mount (object) {
+  mount: function (object) {
     let self = new Xt.Toggle(object, object.getAttribute('data-' + Xt.Toggle.componentName))
 
     // unmount

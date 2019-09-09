@@ -7,7 +7,7 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '.demo--loader--js-spinner',
-  fnc: function mount (object) {
+  mount: function (object) {
     // vars
 
     const time = 2000

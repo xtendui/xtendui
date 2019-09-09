@@ -447,7 +447,7 @@ Xt.Sticky = Sticky
 
 Xt.mount.push({
   matches: '[data-' + Xt.Sticky.componentName + ']',
-  fnc: function mount (object) {
+  mount: function (object) {
     let self = new Xt.Sticky(object, object.getAttribute('data-' + Xt.Sticky.componentName))
 
     // unmount

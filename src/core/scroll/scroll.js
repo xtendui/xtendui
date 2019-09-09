@@ -300,7 +300,7 @@ Xt.Scroll = Scroll
 
 Xt.mount.push({
   matches: '[data-' + Scroll.componentName + ']',
-  fnc: function mount (object) {
+  mount: function (object) {
     let self = new Xt.Scroll(object, object.getAttribute('data-' + Xt.Scroll.componentName))
 
     // unmount

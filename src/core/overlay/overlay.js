@@ -77,7 +77,7 @@ Xt.Overlay = Overlay
 
 Xt.mount.push({
   matches: '[data-' + Xt.Overlay.componentName + ']',
-  fnc: function mount (object) {
+  mount: function (object) {
     let self = new Xt.Overlay(object, object.getAttribute('data-' + Xt.Overlay.componentName))
 
     // unmount

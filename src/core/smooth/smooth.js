@@ -44,7 +44,7 @@ Xt.Smooth = Smooth
 
 Xt.mount.push({
   matches: '[data-' + Xt.Smooth.componentName + ']',
-  fnc: function mount (object) {
+  mount: function (object) {
     let self = new Xt.Smooth(object, object.getAttribute('data-' + Xt.Smooth.componentName))
 
     // unmount

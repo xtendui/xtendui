@@ -5,7 +5,7 @@ import 'xtend-library/src/core/slider/slider.js'
 
 Xt.mount.push({
   matches: '.demo--slider--toggle-js',
-  fnc: function mount (object) {
+  mount: function (object) {
     // vars
 
     const time = 0.8

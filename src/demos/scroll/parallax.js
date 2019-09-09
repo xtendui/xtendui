@@ -8,7 +8,7 @@ import 'xtend-library/src/core/scroll/scroll.js'
 
 Xt.mount.push({
   matches: '.demo--parallax_title',
-  fnc: function mount (object) {
+  mount: function (object) {
     // init
 
     let self = new Xt.Scroll(object, {
@@ -44,7 +44,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--parallax_img',
-  fnc: function mount (object) {
+  mount: function (object) {
     // init
 
     let self = new Xt.Scroll(object, {
@@ -79,7 +79,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--parallax_footer',
-  fnc: function mount (object) {
+  mount: function (object) {
     // init
 
     let self = new Xt.Scroll(object, {

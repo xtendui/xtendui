@@ -121,11 +121,11 @@ if (typeof window !== 'undefined') {
           }
           // call
           requestAnimationFrame(function () { // @FIX react when componentDidMount
-            const destroy = obj.fnc(el, i, obj.matches) // object, index, matches
+            const destroy = obj.mount(el, i, obj.matches) // object, index, matches
             if (destroy) {
               Xt.unmount.push({
                 object: el,
-                fnc: destroy
+                unmount: destroy
               })
             }
           })
@@ -149,7 +149,7 @@ if (typeof window !== 'undefined') {
           return
         }
         // call
-        obj.fnc()
+        obj.unmount()
       }
     }
   }

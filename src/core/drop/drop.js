@@ -66,7 +66,7 @@ Xt.Drop = Drop
 
 Xt.mount.push({
   matches: '[data-' + Xt.Drop.componentName + ']',
-  fnc: function mount (object) {
+  mount: function (object) {
     let self = new Xt.Drop(object, object.getAttribute('data-' + Xt.Drop.componentName))
 
     // unmount

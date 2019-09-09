@@ -6,7 +6,7 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '.group-number',
-  fnc: function mount (object) {
+  mount: function (object) {
     // methods
 
     function inputNumberChange (step, e) {

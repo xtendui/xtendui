@@ -6,7 +6,7 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '.jumptocontent',
-  fnc: function mount (object) {
+  mount: function (object) {
     // event
 
     const documentFocusIn = function (e) {

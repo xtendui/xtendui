@@ -7,7 +7,7 @@ import 'xtend-library/src/extensions/form/TextareaAutosize.js'
 
 Xt.mount.push({
   matches: 'textarea',
-  fnc: function mount (object) {
+  mount: function (object) {
     // init
 
     const self = new Xt.TextareaAutosize(object)

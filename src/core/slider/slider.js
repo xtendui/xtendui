@@ -1038,7 +1038,7 @@ Xt.Slider = Slider
 
 Xt.mount.push({
   matches: '[data-' + Xt.Slider.componentName + ']',
-  fnc: function mount (object) {
+  mount: function (object) {
     let self = new Xt.Slider(object, object.getAttribute('data-' + Xt.Slider.componentName))
 
     // unmount

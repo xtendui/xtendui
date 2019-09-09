@@ -5,7 +5,7 @@ import 'xtend-library/src/extensions/animation/MouseFollow.js'
 
 Xt.mount.push({
   matches: '.demo--slider--progress',
-  fnc: function mount (object) {
+  mount: function (object) {
     // vars
 
     const timeHide = 300
@@ -104,7 +104,7 @@ Xt.mount.push({
     const mouseFollowObject = document.querySelector('.loader--mouse')
     const mouseFollowContainer = object
 
-    const mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
+    let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
       mouseCheck: function () {
         return !this.object.classList.contains('loader--disable') || this.object.classList.contains('loader--js')
       }
@@ -116,6 +116,7 @@ Xt.mount.push({
       self.destroy()
       self = null
       mouseFollow.destroy()
+      mouseFollow = null
     }
   }
 })

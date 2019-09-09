@@ -7,15 +7,16 @@ import 'xtend-library/src/extensions/animation/PropagateInteraction.js'
 
 Xt.mount.push({
   matches: 'a, button',
-  fnc: function mount (object) {
+  mount: function (object) {
     // init
 
-    const self = new Xt.PropagateInteraction(object, { targets: '.btn' })
+    let self = new Xt.PropagateInteraction(object, { targets: '.btn' })
 
     // unmount
 
     return function unmount () {
       self.destroy()
+      self = null
     }
   }
 })

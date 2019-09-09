@@ -6,7 +6,7 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '#demo--toggle--restart',
-  fnc: function mount (object) {
+  mount: function (object) {
     // event
 
     object.addEventListener('click', function (e) {

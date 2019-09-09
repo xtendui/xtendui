@@ -8,7 +8,7 @@ import 'xtend-library/src/core/toggle/toggle.js'
 
 Xt.mount.push({
   matches: '.demo--toggle--progress',
-  fnc: function mount (object) {
+  mount: function (object) {
     // vars
 
     const timeHide = 300

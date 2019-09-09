@@ -9,7 +9,7 @@ import 'xtend-library/src/core/toggle/toggle.js'
 
 Xt.mount.push({
   matches: '#demo--toggle-js-0',
-  fnc: function mount (object) {
+  mount: function (object) {
     // vars
 
     const time = 0.6
@@ -73,7 +73,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#demo--toggle-js-1',
-  fnc: function mount (object) {
+  mount: function (object) {
     // vars
 
     const time = 0.6

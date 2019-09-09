@@ -381,7 +381,7 @@ Xt.Ajax = Ajax
 
 Xt.mount.push({
   matches: '[data-' + Xt.Ajax.componentName + ']',
-  fnc: function mount (object) {
+  mount: function (object) {
     let self = new Xt.Ajax(object, object.getAttribute('data-' + Xt.Ajax.componentName))
 
     // unmount
