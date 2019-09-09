@@ -64,6 +64,8 @@ class Controller {
       classOut: 'out',
       classInitial: 'initial',
       classInverse: 'inverse',
+      min: 0,
+      max: 'Infinity',
       instant: false,
       autoClose: false,
       onBlock: false,
@@ -1516,7 +1518,7 @@ class Controller {
           if (typeof fnc === 'string') {
             fnc = new Function('current', 'total', fnc)
           }
-          delay = fnc(count, tot - 1).toString()
+          delay = fnc(count, tot - 1)
         } else {
           delay = queueInitial ? 0 : delay
         }
@@ -1524,7 +1526,7 @@ class Controller {
       // delay fnc
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'))
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'))
-      if (delay && !obj[type].instant && !obj[type].instantType) {
+      if (delay) {
         Xt.dataStorage.set(el, self.componentNamespace + 'DelayTimeout', setTimeout(function () {
           self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
         }, delay))
@@ -1635,7 +1637,7 @@ class Controller {
     // anim
     const duration = Xt.animTime(el, options['duration' + actionCurrent])
     clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'))
-    if (!duration || obj[type].instant || obj[type].instantType) {
+    if (!duration) {
       self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
     } else {
       Xt.dataStorage.set(el, self.componentNamespace + 'AnimTimeout', setTimeout(function () {

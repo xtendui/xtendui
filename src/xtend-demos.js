@@ -4,6 +4,7 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/demos/loader/js-spinner.js')
   require('xtend-library/src/demos/loader/mouse-filler.js')
   require('xtend-library/src/demos/loader/mouse-spinner.js')
+  require('xtend-library/src/demos/scroll/delay.js')
   require('xtend-library/src/demos/scroll/mode-block.js')
   require('xtend-library/src/demos/scroll/parallax.js')
   require('xtend-library/src/demos/slider/progress.js')
