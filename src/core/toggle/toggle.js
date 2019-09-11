@@ -1269,7 +1269,7 @@ class Toggle {
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} elementsInner
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} targetsInner
    */
-  eventQueue (actionCurrent, detail, groupElements, targets, elementsInner , targetsInner) {
+  eventQueue (actionCurrent, detail, groupElements, targets, elementsInner, targetsInner) {
     const self = this
     const options = self.options
     // populate
@@ -1885,7 +1885,7 @@ class Toggle {
         if (composed instanceof Element) {
           const overflowY = getComputedStyle(composed).overflowY
           if (composed === document.body) {
-            composed = document.scrollingElement; // @FIX use scrollingElement when body
+            composed = document.scrollingElement // @FIX use scrollingElement when body
           }
           if (composed === document.scrollingElement || // always when scrollingElement
             overflowY === 'scroll' || // always when scroll
