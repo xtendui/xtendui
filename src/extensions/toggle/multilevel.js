@@ -9,7 +9,7 @@ Xt.mount.push({
   mount: function (object) {
     // init
 
-    const self = new Xt.Toggle(object, {
+    let self = new Xt.Toggle(object, {
       elements: '.multilevel-tab-reset, .multilevel-tab .multilevel-list button',
       targets: '.multilevel-tab',
       min: 1
@@ -28,6 +28,7 @@ Xt.mount.push({
 
     return function unmount () {
       self.destroy()
+      self = null
     }
   }
 })

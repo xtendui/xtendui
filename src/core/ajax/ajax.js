@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/core/javascript/controller.js'
+import 'xtend-library/src/core/toggle/toggle.js'
 
-class Ajax extends Xt.Controller {
+class Ajax extends Xt.Toggle {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
@@ -358,14 +358,15 @@ class Ajax extends Xt.Controller {
 
 Ajax.componentName = 'xt-ajax'
 Ajax.optionsDefault = {
-  query: 'body', // needs to be unique
-  baseUrl: '/',
-  duration: false,
-  elements: "a[href]:not([href^='#'])",
+  elements: 'a[href]:not([href^=#])',
+  targets: false,
   on: 'click',
   min: 0,
   max: 1,
   instant: true,
+  query: 'body', // needs to be unique
+  baseUrl: '/',
+  duration: false,
   aria: false
 }
 
@@ -382,6 +383,8 @@ Xt.Ajax = Ajax
 Xt.mount.push({
   matches: '[data-' + Xt.Ajax.componentName + ']',
   mount: function (object) {
+    // init
+
     let self = new Xt.Ajax(object, object.getAttribute('data-' + Xt.Ajax.componentName))
 
     // unmount

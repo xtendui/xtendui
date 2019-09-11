@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/core/javascript/controller.js'
+import 'xtend-library/src/core/toggle/toggle.js'
 
-class Scroll extends Xt.Controller {
+class Scroll extends Xt.Toggle {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
@@ -274,11 +274,14 @@ class Scroll extends Xt.Controller {
 Scroll.componentName = 'xt-scroll'
 Scroll.optionsDefault = {
   elements: false,
+  targets: false,
   on: 'scroll resize',
+  min: 0,
+  max: 'Infinity',
+  instant: true,
   class: 'fade',
   classIn: 'fade--in',
   classOut: 'fade--out',
-  instant: true,
   sticky: false,
   distance: '20%',
   trigger: '100%',
@@ -301,6 +304,8 @@ Xt.Scroll = Scroll
 Xt.mount.push({
   matches: '[data-' + Scroll.componentName + ']',
   mount: function (object) {
+    // init
+
     let self = new Xt.Scroll(object, object.getAttribute('data-' + Xt.Scroll.componentName))
 
     // unmount

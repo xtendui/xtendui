@@ -35,7 +35,7 @@ demo.htmlSource = `
   <div class="card card--squared card--light">
     <div class="card_design"></div>
     <div class="card_content">
-      Sticky middle <span class="hide-sticky">.hide-sticky</span>
+      Sticky middle
     </div>
   </div>
 </div>
@@ -52,7 +52,7 @@ demo.htmlSource = `
   <div class="card card--squared card--light">
     <div class="card_design"></div>
     <div class="card_content">
-      Sticky bottom <span class="show-sticky">.show-sticky</span>
+      Sticky bottom <span class="hide-sticky">.hide-sticky</span> <span class="show-sticky">.show-sticky</span>
     </div>
   </div>
 </div>

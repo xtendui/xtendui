@@ -149,7 +149,7 @@ if (typeof window !== 'undefined') {
           return
         }
         // call
-        obj.unmount()
+        obj.unmount(obj)
       }
     }
   }

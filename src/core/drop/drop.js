@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/core/javascript/controller.js'
+import 'xtend-library/src/core/toggle/toggle.js'
 
-class Drop extends Xt.Controller {
+class Drop extends Xt.Toggle {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
@@ -19,12 +19,12 @@ class Drop extends Xt.Controller {
   /**
    * init aria
    */
-  initAria () {
-    super.initAria()
+  initAriaRole () {
     const self = this
     const options = self.options
     // aria
     if (options.aria) {
+      // role
       for (const el of self.elements) {
         const ariaEls = Xt.queryAll(el, options.ariaControls)
         const ariaEl = ariaEls.length ? ariaEls[0] : el
@@ -43,6 +43,7 @@ class Drop extends Xt.Controller {
 
 Drop.componentName = 'xt-drop'
 Drop.optionsDefault = {
+  elements: false,
   targets: ':scope > .drop',
   elementsInner: ':scope > a, :scope > button',
   on: 'click',
@@ -67,6 +68,8 @@ Xt.Drop = Drop
 Xt.mount.push({
   matches: '[data-' + Xt.Drop.componentName + ']',
   mount: function (object) {
+    // init
+
     let self = new Xt.Drop(object, object.getAttribute('data-' + Xt.Drop.componentName))
 
     // unmount

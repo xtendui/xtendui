@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/core/javascript/controller.js'
+import 'xtend-library/src/core/toggle/toggle.js'
 
-class Sticky extends Xt.Controller {
+class Sticky extends Xt.Toggle {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
@@ -423,6 +423,8 @@ class Sticky extends Xt.Controller {
 
 Sticky.componentName = 'xt-sticky'
 Sticky.optionsDefault = {
+  elements: false,
+  targets: false,
   on: 'scroll resize',
   min: 0,
   max: 'Infinity',
@@ -448,6 +450,8 @@ Xt.Sticky = Sticky
 Xt.mount.push({
   matches: '[data-' + Xt.Sticky.componentName + ']',
   mount: function (object) {
+    // init
+
     let self = new Xt.Sticky(object, object.getAttribute('data-' + Xt.Sticky.componentName))
 
     // unmount

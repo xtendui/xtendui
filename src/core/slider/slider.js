@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/core/javascript/controller.js'
+import 'xtend-library/src/core/toggle/toggle.js'
 
-class Slider extends Xt.Controller {
+class Slider extends Xt.Toggle {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
@@ -1039,6 +1039,8 @@ Xt.Slider = Slider
 Xt.mount.push({
   matches: '[data-' + Xt.Slider.componentName + ']',
   mount: function (object) {
+    // init
+
     let self = new Xt.Slider(object, object.getAttribute('data-' + Xt.Slider.componentName))
 
     // unmount

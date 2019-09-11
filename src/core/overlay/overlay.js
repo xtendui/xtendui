@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/core/javascript/controller.js'
+import 'xtend-library/src/core/toggle/toggle.js'
 
-class Overlay extends Xt.Controller {
+class Overlay extends Xt.Toggle {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
@@ -19,12 +19,12 @@ class Overlay extends Xt.Controller {
   /**
    * init aria
    */
-  initAria () {
-    super.initAria()
+  initAriaRole () {
     const self = this
     const options = self.options
     // aria
     if (options.aria) {
+      // role
       if (self.targets.length) {
         for (const el of self.elements) {
           const ariaEls = Xt.queryAll(el, options.ariaControls)
@@ -78,6 +78,8 @@ Xt.Overlay = Overlay
 Xt.mount.push({
   matches: '[data-' + Xt.Overlay.componentName + ']',
   mount: function (object) {
+    // init
+
     let self = new Xt.Overlay(object, object.getAttribute('data-' + Xt.Overlay.componentName))
 
     // unmount

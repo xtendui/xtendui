@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
-import 'xtend-library/src/core/javascript/controller.js'
+import 'xtend-library/src/core/toggle/toggle.js'
 
-class Smooth extends Xt.Controller {
+class Smooth extends Xt.Toggle {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
@@ -47,6 +47,8 @@ Xt.Smooth = Smooth
 Xt.mount.push({
   matches: '[data-' + Xt.Smooth.componentName + ']',
   mount: function (object) {
+    // init
+
     let self = new Xt.Smooth(object, object.getAttribute('data-' + Xt.Smooth.componentName))
 
     // unmount
