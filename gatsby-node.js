@@ -50,11 +50,12 @@ lessExtensionsGlob.on('end', function (filepath) {
 
 let jsCore = ''
 const jsCoreGlob = new glob.Glob('src/core/**/*.js', function (er, files) {
-  jsCore += 'if (typeof window !== \'undefined\') {\n\n'
+  jsCore += 'if (typeof window !== \'undefined\') {\n'
   for (const file of files) {
     jsCore += `  require('xtend-library/${file}')\n`
   }
-  jsCore += '\n}'
+  jsCore += '}'
+  jsCore += '\n'
 })
 jsCoreGlob.on('end', function (filepath) {
   writeFile('./src/xtend-core.js', jsCore, function (err) {
@@ -62,12 +63,13 @@ jsCoreGlob.on('end', function (filepath) {
   })
 })
 
-let jsDemos = 'if (typeof window !== \'undefined\') {\n\n'
+let jsDemos = 'if (typeof window !== \'undefined\') {\n'
 const jsDemosGlob = new glob.Glob('src/demos/**/*.js', function (er, files) {
   for (const file of files) {
     jsDemos += `  require('xtend-library/${file}')\n`
   }
-  jsDemos += '\n}'
+  jsDemos += '}'
+  jsDemos += '\n'
 })
 jsDemosGlob.on('end', function (filepath) {
   writeFile('./src/xtend-demos.js', jsDemos, function (err) {
@@ -75,13 +77,14 @@ jsDemosGlob.on('end', function (filepath) {
   })
 })
 
-let jsExtensions = 'if (typeof window !== \'undefined\') {\n\n'
+let jsExtensions = 'if (typeof window !== \'undefined\') {\n'
 const jsExtensionsGlob = new glob.Glob('src/extensions/**/*.js', function (er, files) {
   for (const file of files) {
     // const obj = path.parse(file); ${obj.dir}/${obj.name}
     jsExtensions += `  require('xtend-library/${file}')\n`
   }
-  jsExtensions += '\n}'
+  jsExtensions += '}'
+  jsExtensions += '\n'
 })
 jsExtensionsGlob.on('end', function (filepath) {
   writeFile('./src/xtend-extensions.js', jsExtensions, function (err) {
@@ -90,71 +93,6 @@ jsExtensionsGlob.on('end', function (filepath) {
 })
 
 // webpack config
-
-/*
-const webpack = require('webpack')
-exports.onCreateWebpackConfig = ({getConfig, actions}) => {
-  const config = getConfig()
-  // disable HotModuleReplacementPlugin
-  console.log(config);
-  const found = config.plugins.find(
-    plugin => plugin instanceof webpack.HotModuleReplacementPlugin
-  )
-  if (found) {
-    found.options = {
-      requestTimeout: 99999999
-    }
-  }
-  const extraConfig = {
-    devServer: {
-      disableHostCheck: true,
-      hotOnly: false,
-      hot: false,
-      inline: false,
-    },
-  };
-  actions.replaceWebpackConfig(merge(config, extraConfig));
-}
-*/
-/*
-exports.onCreateWebpackConfig = ({plugins, actions}) => {
-  const {setWebpackConfig} = actions;
-  setWebpackConfig({
-    plugins: [
-      plugins.define({
-        hotModuleReplacement: false
-      })
-    ]
-  });
-  console.log(plugins);
-};
-*/
-/*
-exports.onCreateWebpackConfig = ({getConfig, actions}) => {
-  const config = getConfig()
-  const extraConfig = {
-    devServer: {
-      disableHostCheck: true,
-      hotOnly: false,
-      hot: false,
-      inline: false,
-    },
-  };
-  actions.replaceWebpackConfig(merge(config, extraConfig));
-  console.log(getConfig());
-}
-*/
-/*
-exports.onCreateWebpackConfig = ({getConfig, stage}) => {
-  const config = getConfig()
-  // https://github.com/gatsbyjs/gatsby/issues/8102 // FIX hot reload when using iframe
-  config.devServer = {
-    ...config.devServer,
-    hot: false,
-    inline: false
-  }
-}
-*/
 
 exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
   const config = getConfig()

@@ -1,5 +1,4 @@
 if (typeof window !== 'undefined') {
-
   require('xtend-library/src/core/ajax/ajax.js')
   require('xtend-library/src/core/drop/drop.js')
   require('xtend-library/src/core/overlay/overlay.js')
@@ -8,5 +7,4 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/core/smooth/smooth.js')
   require('xtend-library/src/core/sticky/sticky.js')
   require('xtend-library/src/core/toggle/toggle.js')
-
 }

@@ -1,5 +1,4 @@
 if (typeof window !== 'undefined') {
-
   require('xtend-library/src/demos/loader/js-filler.js')
   require('xtend-library/src/demos/loader/js-spinner.js')
   require('xtend-library/src/demos/loader/mouse-filler.js')
@@ -16,5 +15,4 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/demos/toggle/progress.js')
   require('xtend-library/src/demos/toggle/start.js')
   require('xtend-library/src/demos/toggle/timing-delay-fnc.js')
-
 }
