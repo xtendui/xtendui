@@ -296,7 +296,7 @@ class Core {
     if (group) {
       let groupEls = Array.from(self.elements).filter(x => x.getAttribute('data-xt-group') === group);
       for (let groupEl of groupEls) {
-        if (groupEl.classList.contains(self.classes[0])) {
+        if (self.classes[0] !== '' && groupEl.classList.contains(self.classes[0])) {
           groupEl.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse);
           Xt.dataStorage.remove(groupEl, self.componentNamespace + 'Initial');
           if (saveCurrents) {
@@ -311,7 +311,7 @@ class Core {
         }
       }
     } else {
-      if (el.classList.contains(self.classes[0])) {
+      if (self.classes[0] !== '' && el.classList.contains(self.classes[0])) {
         el.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse);
         Xt.dataStorage.remove(el, self.componentNamespace + 'Initial');
         if (saveCurrents) {
@@ -328,7 +328,7 @@ class Core {
     // targets
     let targets = self.getTargets(el);
     for (let tr of targets) {
-      if (tr.classList.contains(self.classes[0])) {
+      if (self.classes[0] !== '' && tr.classList.contains(self.classes[0])) {
         tr.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse);
         Xt.dataStorage.remove(tr, self.componentNamespace + 'Initial');
         if (saveCurrents) {
