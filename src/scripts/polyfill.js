@@ -5,6 +5,18 @@
 
 if (typeof window !== 'undefined') {
 
+  /**
+   * classlist
+   * https://www.npmjs.com/package/classlist.js
+   */
+  require('classlist.js');
+
+  /**
+   * url-polyfill
+   * https://www.npmjs.com/package/url-polyfill
+   */
+  require('url-polyfill');
+
   //////////////////////
   // closest
   // https://github.com/jonathantneal/closest
