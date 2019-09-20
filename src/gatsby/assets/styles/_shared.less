@@ -40,21 +40,19 @@
   .btn--squared();
   .btn--noborder();
   .btn--noeffect();
+  .font-sans--semibold();
+  font-size: 14px;
+  color: @text--inverse;
+  line-height: 1;
+  text-transform: uppercase;
   > span {
     padding: .3em .5em;
-    .font-sans--semibold();
-    font-size: 14px;
-    color: @text--inverse;
-    line-height: 1;
-    text-transform: uppercase;
   }
   &@{btn--design} {
     background: transparent;
   }
   &:hover, &.hover, &:active, &.active, &.current {
-    > span {
-      color: @text--inverse;
-    }
+    color: @text--inverse;
     &@{btn--design} {
       background: fade(@gray--900, 10%);
     }
@@ -70,24 +68,20 @@
   .btn--nodesign();
   .btn--noeffect();
   border-radius: 0;
+  color: @text--inverse;
+  line-height: 1;
+  text-transform: uppercase;
+  opacity: 0.8;
   > span {
     padding: .3em .5em;
-    color: @text--inverse;
-    line-height: 1;
-    text-transform: uppercase;
-    opacity: 0.8;
   }
   &:hover, &.hover, &:active, &.active {
-    > span {
-      color: @text--inverse;
-      opacity: 1;
-    }
+    color: @text--inverse;
+    opacity: 1;
   }
   // effect
   &:active, &.active {
-    > span {
-      transform: scale(1.2);
-    }
+    transform: scale(1.2);
   }
 }
 
@@ -101,53 +95,66 @@
   .btn--squared();
   .btn--noborder();
   .btn--noeffect();
-  > span {
-    padding: .5rem 0 !important;
-    .font-sans--regular();
-    font-size: 1.4rem;
-    color: @text;
-    text-transform: none;
-  }
+  .font-sans--regular();
+  color: @text;
+  text-transform: none;
   // states
   &@{btn--design} {
     background: transparent;
   }
   &:hover, &.hover, &:active, &.active {
-    > span {
-      .font-sans--semibold();
-      color: @text;
-    }
+    .font-sans--semibold();
+    color: @text;
     &@{btn--design} {
       background: transparent;
     }
   }
   &.active,
   &.current {
-    //.margin(y, .5rem);
-    > span {
-      //padding: .25em .5em !important;
-      .font-sans--semibold();
-      color: @primary;
-    }
+    .font-sans--semibold();
     &@{btn--design} {
-      //background: linear-gradient(135deg, @grad--light);
       background: transparent;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      left: -1.25rem;
+      background: linear-gradient(0deg, @grad--primary);
+      box-shadow: @shadow--primary;
     }
   }
   // custom
   &.btn--site_article_sidebar--cat {
+    .font-sans--semibold();
+    font-size: 12px;
+    text-transform: uppercase;
     > span {
-      font-size: 1.6rem;
+      padding: 10px 0 7px 0 !important;
+    }
+    &:after {
+      display: none;
     }
   }
   &.btn--site_article_sidebar--sub {
+    font-size: 13px;
     > span {
-      font-size: 1.5rem;
+      padding: 4px 0 !important;
+    }
+    &:after {
+      top: 6px;
+      width: 4px;
+      height: 11px;
     }
   }
   &.btn--site_article_sidebar--adiacent {
+    font-size: 12px;
     > span {
-      font-size: 1.4rem;
+      padding: 4px 0 !important;
+    }
+    &:after {
+      top: 5px;
+      width: 4px;
+      height: 11px;
     }
   }
 }
@@ -163,12 +170,12 @@
   .btn--noborder();
   .btn--nodesign();
   .btn--noeffect();
+  .font-sans--regular();
+  font-size: 1.4rem;
+  color: @text;
+  text-transform: uppercase;
   > span {
     padding: 0;
-    .font-sans--regular();
-    font-size: 1.4rem;
-    color: @text;
-    text-transform: uppercase;
   }
   .btn--site_multiline_line {
     display: inline-block;
@@ -200,8 +207,8 @@
     display: none;
   }
   &:hover, &.hover, &:active, &.active {
+    color: @text;
     > span {
-      color: @text;
       .btn--site_multiline_line {
         background: linear-gradient(135deg, @grad--light);
       }
@@ -331,11 +338,11 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    font-size: 17px;
+    color: @primary;
+    line-height: 1;
     > span {
       padding: 7px;
-      font-size: 17px;
-      color: @primary;
-      line-height: 1;
     }
     &@{btn--design} {
       border-color: @white !important;

@@ -1,9 +1,7 @@
 ---
-path: "/core/util"
-type: "core"
-date: "2000-12-01"
-title: "Util"
+path: "/extensions/presentation"
+type: "extensions"
+date: "2000-05-01"
+title: "Presentation"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["000-Getting started"]
-parent: "Util"
 ---

@@ -1,0 +1,22 @@
+---
+path: "/extensions/loader/background"
+type: "extensions"
+date: "2019-03-01"
+title: "Background"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+categories: ["400-Presentation"]
+parent: "Loader"
+---
+
+## Background
+
+Use `.loader--background` to add the custom background.
+
+<demo>
+  <demovanilla src="demos/inline/demos/loader/background-spinner">
+  </demovanilla>
+  <demovanilla src="demos/inline/demos/loader/background-direction">
+  </demovanilla>
+  <demovanilla src="demos/inline/demos/loader/background-size">
+  </demovanilla>
+</demo>
