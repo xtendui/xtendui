@@ -40,22 +40,16 @@
   .btn--squared();
   .btn--noborder();
   .btn--noeffect();
+  padding: .3em .5em;
+  background: transparent;
   .font-sans--semibold();
   font-size: 14px;
   color: @text--inverse;
   line-height: 1;
   text-transform: uppercase;
-  > span {
-    padding: .3em .5em;
-  }
-  &@{btn--design} {
-    background: transparent;
-  }
   &:hover, &.hover, &:active, &.active, &.current {
+    background: fade(@gray--900, 10%);
     color: @text--inverse;
-    &@{btn--design} {
-      background: fade(@gray--900, 10%);
-    }
   }
 }
 
@@ -67,14 +61,12 @@
   .link--none();
   .btn--nodesign();
   .btn--noeffect();
+  padding: .3em .5em;
   border-radius: 0;
   color: @text--inverse;
   line-height: 1;
   text-transform: uppercase;
   opacity: 0.8;
-  > span {
-    padding: .3em .5em;
-  }
   &:hover, &.hover, &:active, &.active {
     color: @text--inverse;
     opacity: 1;
@@ -95,21 +87,17 @@
   .link--none();
   .btn--squared();
   .btn--noborder();
+  .btn--nodesign();
   .btn--noeffect();
   .font-sans--regular();
   color: @text;
   text-transform: none;
-  & {
-    .transition-none() !important;
-  }
   // states
-  &@{btn--design} {
-    background: transparent;
-  }
-  &:after {
+  .transition-none() !important;
+  &:before {
     content: '';
     position: absolute;
-    left: -1.25rem;
+    margin-left: -1.25rem;
     width: 0;
     height: 11px;
     background: linear-gradient(0deg, @grad--primary);
@@ -121,10 +109,7 @@
   &:hover, &.hover, &:active, &.active,
   &.current {
     .font-sans--semibold();
-    &@{btn--design} {
-      background: transparent;
-    }
-    &:after {
+    &:before {
       width: 4px;
       transition-property: all;
       transition-duration: @time--small;
@@ -133,32 +118,26 @@
   }
   // custom
   &.btn--site_article_sidebar--cat {
+    padding: 10px 0 7px 0 !important;
     .font-sans--semibold();
     font-size: 12px;
     text-transform: uppercase;
-    > span {
-      padding: 10px 0 7px 0 !important;
-    }
-    &:after {
+    &:before {
       display: none;
     }
   }
   &.btn--site_article_sidebar--sub {
+    padding: 4px 0 !important;
     font-size: 13px;
-    > span {
-      padding: 4px 0 !important;
-    }
-    &:after {
-      top: 6px;
+    &:before {
+      margin-top: 2px;
     }
   }
   &.btn--site_article_sidebar--adiacent {
+    padding: 4px 0 !important;
     font-size: 12px;
-    > span {
-      padding: 4px 0 !important;
-    }
-    &:after {
-      top: 5px;
+    &:before {
+      margin-top: 1px;
     }
   }
 }
@@ -174,13 +153,11 @@
   .btn--noborder();
   .btn--nodesign();
   .btn--noeffect();
+  padding: 0;
   .font-sans--regular();
   font-size: 1.4rem;
   color: @text;
   text-transform: uppercase;
-  > span {
-    padding: 0;
-  }
   .btn--site_multiline_line {
     display: inline-block;
     .margin(y, 1px);
@@ -212,24 +189,22 @@
   }
   &:hover, &.hover, &:active, &.active {
     color: @text;
-    > span {
-      .btn--site_multiline_line {
-        background: linear-gradient(135deg, @grad--light);
+    .btn--site_multiline_line {
+      background: linear-gradient(135deg, @grad--light);
+    }
+    .btn--site_multiline_special {
+      .margin(left, 0);
+      .margin(right, 0);
+      background: linear-gradient(135deg, @grad--primary);
+      color: @white;
+    }
+    .btn--site_multiline_special_text {
+      display: inline-block;
+      .btn--left& {
+        .margin(left, .5em);
       }
-      .btn--site_multiline_special {
-        .margin(left, 0);
-        .margin(right, 0);
-        background: linear-gradient(135deg, @grad--primary);
-        color: @white;
-      }
-      .btn--site_multiline_special_text {
-        display: inline-block;
-        .btn--left& {
-          .margin(left, .5em);
-        }
-        .btn--right& {
-          .margin(right, .5em);
-        }
+      .btn--right& {
+        .margin(right, .5em);
       }
     }
   }
@@ -339,18 +314,14 @@
     .btn--squared();
     .btn--noborder();
     .btn--noeffect();
+    padding: 7px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    border-color: @white !important;
+    background: @white !important;
     font-size: 17px;
     color: @primary;
     line-height: 1;
-    > span {
-      padding: 7px;
-    }
-    &@{btn--design} {
-      border-color: @white !important;
-      background: @white !important;
-    }
   }
 }

@@ -61,93 +61,69 @@ a:not(.btn), .btn--link {
 
 .caret {
   .btn--flex();
-  > span {
-    .icon-xt(@content: @icon-xt--chevron-down, @size: @icon--small);
-    &:after {
-      .icon--right();
-    }
+  .icon-xt(@content: @icon-xt--chevron-down, @size: @icon--small);
+  &:after {
+    .icon--right();
   }
   // activation
   &.active {
-    > span {
-      .icon-xt(@content: @icon-xt--chevron-up, @size: @icon--small);
+    .icon-xt(@content: @icon-xt--chevron-up, @size: @icon--small);
+    &:after {
+      .anim-y-inverse.active();
+    }
+  }
+  &.out {
+    &:after {
+      .anim-y.active();
+    }
+  }
+  // inverse
+  &.caret--inverse {
+    .icon-xt(@content: @icon-xt--chevron-up, @size: @icon--small);
+    &.active {
+      .icon-xt(@content: @icon-xt--chevron-down, @size: @icon--small);
+      &:after {
+        .anim-y.active();
+      }
+    }
+    &.out {
       &:after {
         .anim-y-inverse.active();
       }
     }
   }
-  &.out {
-    > span {
-      &:after {
-        .anim-y.active();
-      }
-    }
-  }
-  // inverse
-  &.caret--inverse {
-    > span {
-      .icon-xt(@content: @icon-xt--chevron-up, @size: @icon--small);
-    }
-    &.active {
-      > span {
-        .icon-xt(@content: @icon-xt--chevron-down, @size: @icon--small);
-        &:after {
-          .anim-y.active();
-        }
-      }
-    }
-    &.out {
-      > span {
-        &:after {
-          .anim-y-inverse.active();
-        }
-      }
-    }
-  }
   // horizontal
   &.caret--horizontal {
-    > span {
-      .icon-xt(@content: @icon-xt--chevron-right, @size: @icon--small);
-    }
+    .icon-xt(@content: @icon-xt--chevron-right, @size: @icon--small);
     &.active {
-      > span {
-        .icon-xt(@content: @icon-xt--chevron-left, @size: @icon--small);
-        &:after {
-          .anim-x-inverse.active();
-        }
+      .icon-xt(@content: @icon-xt--chevron-left, @size: @icon--small);
+      &:after {
+        .anim-x-inverse.active();
       }
     }
     &.out {
-      > span {
-        &:after {
-          .anim-x.active();
-        }
+      &:after {
+        .anim-x.active();
       }
     }
     // inverse
     &.caret--inverse {
-      > span {
-        .icon-xt(@content: @icon-xt--chevron-left, @size: @icon--small, @position: before);
-        &:after {
-          content: '';
-        }
-        &:before {
-          .icon--left();
-        }
+      .icon-xt(@content: @icon-xt--chevron-left, @size: @icon--small, @position: before);
+      &:after {
+        content: '';
+      }
+      &:before {
+        .icon--left();
       }
       &.active {
-        > span {
-          .icon-xt(@content: @icon-xt--chevron-right, @size: @icon--small, @position: before);
-          &:before {
-            .anim-x.active();
-          }
+        .icon-xt(@content: @icon-xt--chevron-right, @size: @icon--small, @position: before);
+        &:before {
+          .anim-x.active();
         }
       }
       &.out {
-        > span {
-          &:before {
-            .anim-x-inverse.active();
-          }
+        &:before {
+          .anim-x-inverse.active();
         }
       }
     }

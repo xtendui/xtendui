@@ -383,7 +383,7 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 
 Lists **automatically** has left aligment. You can **specify a different one** with this classes/mixins.
 
-You can also set others flex alignments like `.list_btn({ > span { justify-content: space-between; } })`.
+You can also set others flex alignments like `.list_btn({ justify-content: space-between; })`.
 
 <div class="table--scroll">
 

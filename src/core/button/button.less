@@ -1,28 +1,19 @@
 @import '~xtend-library/src/core/button/button-setup.less';
 
 /**
- * vars
- */
-
-@btn--design: ~':before'; // selector for design
-
-/**
  * button
  */
 
 .btn {
   // styles
   border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
   .font-sans--semibold();
   line-height: 1.2;
   letter-spacing: 0;
   text-transform: uppercase;
-  &@{btn--design} {
-    .design-setup();
-    border-width: 1px;
-    border-style: solid;
-    border-color: transparent;
-  }
   // option
   .btn--center();
   .btn--secondary();
@@ -33,18 +24,13 @@
 
 .btn {
   // transition
-  animation-duration: @time--small; // needed for .out animation timing, put max animation time
-  &, &@{btn--design}, > span {
+  transition-property: all;
+  transition-duration: @time--small;
+  transition-timing-function: @bez--out;
+  &:hover, &.hover, &:active, &.active {
     transition-property: all;
     transition-duration: @time--small;
-    transition-timing-function: @bez--out;
-  }
-  &:hover, &.hover, &:active, &.active {
-    &, &@{btn--design}, > span {
-      transition-property: all;
-      transition-duration: @time--small;
-      transition-timing-function: @bez--in;
-    }
+    transition-timing-function: @bez--in;
   }
 }
 
@@ -52,65 +38,47 @@
 
 .btn--primary {
   .link--none();
+  border-color: @primary;
+  background: @primary;
   color: @text--inverse;
-  &@{btn--design} {
-    border-color: @primary;
-    background: @primary;
-  }
   &:hover, &.hover, &:active, &.active {
+    border-color: @primary--dark;
+    background: @primary--dark;
     color: @text--inverse--dark;
-    &@{btn--design} {
-      border-color: @primary--dark;
-      background: @primary--dark;
-    }
   }
   // effect
   &:active, &.active {
-    &@{btn--design} {
-      box-shadow: @shadow--primary;
-    }
+    box-shadow: @shadow--primary;
   }
 }
 
 .btn--secondary {
   .link--none();
+  border-color: @secondary;
+  background: @secondary;
   color: @text;
-  &@{btn--design} {
-    border-color: @secondary;
-    background: @secondary;
-  }
   &:hover, &.hover, &:active, &.active {
+    border-color: @secondary--dark;
+    background: @secondary--dark;
     color: @text--dark;
-    &@{btn--design} {
-      border-color: @secondary--dark;
-      background: @secondary--dark;
-    }
   }
   // effect
   &:active, &.active {
-    &@{btn--design} {
-      box-shadow: @shadow--secondary;
-    }
+    box-shadow: @shadow--secondary;
   }
 }
 
 .btn--text {
   .link--none();
   .btn--noeffect();
+  border-color: transparent;
+  background: transparent;
   color: inherit;
-  &@{btn--design} {
+  &:hover, &.hover, &:active, &.active {
     border-color: transparent;
     background: transparent;
-  }
-  &:hover, &.hover, &:active, &.active {
     color: inherit;
-    > span {
-      opacity: .75;
-    }
-    &@{btn--design} {
-      border-color: transparent;
-      background: transparent;
-    }
+    opacity: .75;
   }
 }
 
@@ -128,60 +96,45 @@
 // size
 
 .btn--tiny {
+  padding: .5em 1em;
   font-size: 10px;
-  > span {
-    padding: .5em 1em;
-  }
 }
 
 .btn--small {
+  padding: .6em 1.2em;
   font-size: 1.2rem;
-  > span {
-    padding: .6em 1.2em;
-  }
 }
 
 .btn--medium {
+  padding: .6em 1.2em;
   font-size: 1.335rem; // @FIX odd rem with .035 added
-  > span {
-    padding: .6em 1.2em;
-  }
 }
 
 .btn--big {
-  > span {
-    padding: .6em 1.2em;
-    font-size: 1.4rem;
-  }
+  padding: .6em 1.2em;
+  font-size: 1.4rem;
 }
 
 .btn--giant {
+  padding: .6em 1.2em;
   font-size: 1.535rem; // @FIX odd rem with .035 added
-  > span {
-    padding: .6em 1.2em;
-  }
 }
 
 .btn--huge {
+  padding: .6em 1.2em;
   font-size: 1.6rem;
-  > span {
-    padding: .6em 1.2em;
-  }
 }
 
 // special
 
 .btn--nodesign {
-  &@{btn--design} {
-    display: none;
-  }
+  border-color: transparent !important;
+  background: transparent !important;
 }
 
 .btn--noeffect {
   &:active, &.active {
-    &@{btn--design} {
-      box-shadow: none;
-    }
+    box-shadow: none;
   }
 }
 
@@ -190,84 +143,60 @@
 }
 
 .btn--noborder {
-  &@{btn--design} {
-    border: 0;
-  }
+  border: 0;
 }
 
 .btn--tall {
-  > span {
-    padding-top: .9em;
-    padding-bottom: .9em;
-  }
+  padding-top: .9em;
+  padding-bottom: .9em;
 }
 
 .btn--short {
-  > span {
-    padding-top: .3em;
-    padding-bottom: .3em;
-  }
+  padding-top: .3em;
+  padding-bottom: .3em;
 }
 
 .btn--wide {
-  > span {
-    padding-left: 1.8em;
-    padding-right: 1.8em;
-  }
+  padding-left: 1.8em;
+  padding-right: 1.8em;
 }
 
 .btn--narrow {
-  > span {
-    padding-left: .6em;
-    padding-right: .6em;
-  }
+  padding-left: .6em;
+  padding-right: .6em;
 }
 
 .btn--none {
   .btn--noeffect();
   .btn--squared();
-  > span {
-    padding: 0;
-  }
-  &@{btn--design} {
-    border: 0 !important;
-    background: transparent !important;
-  }
+  padding: 0;
+  border: 0 !important;
+  background: transparent !important;
 }
 
 .btn--none-x {
   .btn--noeffect();
   .btn--squared();
-  > span {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  &@{btn--design} {
-    border-left: 0 !important;
-    border-right: 0 !important;
-    background: transparent !important;
-  }
+  padding-left: 0;
+  padding-right: 0;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  background: transparent !important;
 }
 
 .btn--none-y {
   .btn--noeffect();
   .btn--squared();
-  > span {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  &@{btn--design} {
-    border-top: 0 !important;
-    border-bottom: 0 !important;
-    background: transparent !important;
-  }
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  background: transparent !important;
 }
 
 .btn--icon {
   line-height: 1;
-  > span {
-    padding: .8em .8em;
-  }
+  padding: .8em .8em;
 }
 
 .btn--transform {
@@ -280,7 +209,5 @@
 .btn--close {
   .btn--text(); // variant
   .btn--icon() !important; // special
-  > span {
-    .icon-xt(@content: @icon-xt--close, @size: @icon--medium);
-  }
+  .icon-xt(@content: @icon-xt--close, @size: @icon--medium);
 }

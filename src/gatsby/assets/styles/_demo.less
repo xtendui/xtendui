@@ -11,12 +11,12 @@ html.iframe-full {
 html.iframe-inside {
   body {
     .overflow-style(@mode: inner);
+    background: @white !important;
   }
 }
 
 #body-inner {
   position: relative;
-  background: @white;
 }
 
 // .demo-cols
@@ -170,11 +170,9 @@ pre {
     .btn {
       // animation
       &:hover, &.hover, &:active, &.active {
+        border-color: @white;
+        background: @white;
         color: @text;
-        &@{btn--design} {
-          border-color: @white;
-          background: @white;
-        }
       }
     }
   }
