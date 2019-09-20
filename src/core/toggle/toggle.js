@@ -1349,10 +1349,6 @@ class Toggle {
   eventAutoStop () {
     const self = this
     const options = self.options
-    // disabled
-    if (self.disabled && !self.initial) {
-      return
-    }
     // stop
     if (options.auto && options.auto.time) {
       // clear
@@ -2505,10 +2501,10 @@ class Toggle {
    */
   destroy (weak = false) {
     const self = this
-    // stop auto
-    clearInterval(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoStartInterval'))
     // stop queue
     self.queueStopAll() // @FIX autoClose with appendTo outside ajax
+    // stop auto
+    self.eventAutoStop()
     // remove events
     if (self.destroyElements) {
       for (const element of self.destroyElements) {

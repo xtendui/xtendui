@@ -23,9 +23,9 @@ Xt.mount.push({
       }
     })
 
-    // auto start
+    // auto
 
-    self.object.addEventListener('start.xt.auto', function (e) {
+    const eventAutoStart = function () {
       // on elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
@@ -44,11 +44,9 @@ Xt.mount.push({
           TweenMax.to(filler, self.options.auto.time / 1000, { width: '100%', left: 0, ease: easeLinear })
         }
       }
-    })
+    }
 
-    // auto stop
-
-    self.object.addEventListener('stop.xt.auto', function (e) {
+    const eventAutoStop = function () {
       // on elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
@@ -65,11 +63,9 @@ Xt.mount.push({
           TweenMax.to(filler, timeHide / 1000, { width: 0, left: '100%', ease: easeLinear })
         }
       }
-    })
+    }
 
-    // auto pause
-
-    self.object.addEventListener('pause.xt.auto', function (e) {
+    const eventAutoPause = function () {
       // on elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
@@ -86,11 +82,18 @@ Xt.mount.push({
           TweenMax.to(filler, timeHide / 1000, { width: 0, left: 0, ease: easeLinear })
         }
       }
-    })
+    }
+
+    self.object.addEventListener('start.xt.auto', eventAutoStart)
+    self.object.addEventListener('stop.xt.auto', eventAutoStop)
+    self.object.addEventListener('pause.xt.auto', eventAutoPause)
 
     // unmount
 
     return function unmount () {
+      self.object.removeEventListener('start.xt.auto', eventAutoStart)
+      self.object.removeEventListener('stop.xt.auto', eventAutoStop)
+      self.object.removeEventListener('pause.xt.auto', eventAutoPause)
       self.destroy()
       self = null
     }

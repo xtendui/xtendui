@@ -24,7 +24,7 @@ Xt.mount.push({
 
     // drag
 
-    self.dragger.addEventListener('drag.xt.slider', function (e) {
+    const eventDrag = function () {
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       const ratio = Math.abs(self.detail.xStart - self.detail.xCurrent) / target.clientWidth
       // direction
@@ -40,11 +40,9 @@ Xt.mount.push({
       for (const content of contents) {
         TweenMax.set(content, { x: sizeContent * ratio * direction, opacity: 1 })
       }
-    })
+    }
 
-    // dragend
-
-    self.dragger.addEventListener('dragreset.xt.slider', function (e) {
+    const eventDragReset = function () {
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // mask
       TweenMax.set(target, { x: -self.detail.xPosOld + 'px' })
@@ -56,11 +54,14 @@ Xt.mount.push({
       for (const content of contents) {
         TweenMax.to(content, timeContent, { x: 0, opacity: 1, ease: easeOut })
       }
-    })
+    }
 
-    // on
+    self.dragger.addEventListener('drag.xt.slider', eventDrag)
+    self.dragger.addEventListener('dragreset.xt.slider', eventDragReset)
 
-    self.object.addEventListener('on.xt', function (e) {
+    // activation
+
+    const eventOn = function (e) {
       const tr = e.target
       if (self.targets.includes(tr)) { // event bubbles
         if (!self.initial) {
@@ -85,11 +86,9 @@ Xt.mount.push({
           }
         }
       }
-    })
+    }
 
-    // off
-
-    self.object.addEventListener('off.xt', function (e) {
+    const eventOff = function (e) {
       const tr = e.target
       if (self.targets.includes(tr)) { // event bubbles
         const xMax = tr.clientWidth
@@ -107,11 +106,18 @@ Xt.mount.push({
           TweenMax.to(content, timeContent, { x: -sizeContent * direction, opacity: 0, ease: easeOut })
         }
       }
-    })
+    }
+
+    self.object.addEventListener('on.xt', eventOn)
+    self.object.addEventListener('off.xt', eventOff)
 
     // unmount
 
     return function unmount () {
+      self.dragger.removeEventListener('drag.xt.slider', eventDrag)
+      self.dragger.removeEventListener('dragreset.xt.slider', eventDragReset)
+      self.object.removeEventListener('on.xt', eventOn)
+      self.object.removeEventListener('off.xt', eventOff)
       self.destroy()
       self = null
     }

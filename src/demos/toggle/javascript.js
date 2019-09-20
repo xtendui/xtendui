@@ -27,35 +27,34 @@ Xt.mount.push({
       delayOff: delay * 1000
     })
 
-    // toggle items
+    // activation
+
+    const eventOn = function () {
+      const target = this
+      // setup
+      TweenMax.set(target, { opacity: 0 })
+      if (!target.classList.contains('inverse')) {
+        TweenMax.set(target, { x: -size })
+      } else {
+        TweenMax.set(target, { x: size })
+      }
+      // animation
+      TweenMax.to(target, time, { x: 0, opacity: 1, ease: easeIn })
+    }
+
+    const eventOff = function () {
+      const target = this
+      // animation
+      if (!target.classList.contains('inverse')) {
+        TweenMax.to(target, time, { x: size, opacity: 0, ease: easeOut })
+      } else {
+        TweenMax.to(target, time, { x: -size, opacity: 0, ease: easeOut })
+      }
+    }
 
     for (const tr of self.targets) {
-      // on event
-
-      tr.addEventListener('on.xt', function (e) {
-        const target = this
-        // setup
-        TweenMax.set(target, { opacity: 0 })
-        if (!target.classList.contains('inverse')) {
-          TweenMax.set(target, { x: -size })
-        } else {
-          TweenMax.set(target, { x: size })
-        }
-        // animation
-        TweenMax.to(target, time, { x: 0, opacity: 1, ease: easeIn })
-      })
-
-      // off event
-
-      tr.addEventListener('off.xt', function (e) {
-        const target = this
-        // animation
-        if (!target.classList.contains('inverse')) {
-          TweenMax.to(target, time, { x: size, opacity: 0, ease: easeOut })
-        } else {
-          TweenMax.to(target, time, { x: -size, opacity: 0, ease: easeOut })
-        }
-      })
+      tr.addEventListener('on.xt', eventOn)
+      tr.addEventListener('off.xt', eventOff)
     }
 
     // unmount
@@ -93,40 +92,43 @@ Xt.mount.push({
       delayOff: delay * 1000
     })
 
-    // toggle items
+    // activation
+
+    const eventOn = function () {
+      const target = this
+      // setup
+      TweenMax.set(target, { opacity: 0 })
+      if (!target.classList.contains('inverse')) {
+        TweenMax.set(target, { x: -size })
+      } else {
+        TweenMax.set(target, { x: size })
+      }
+      // animation
+      TweenMax.to(target, time, { x: 0, opacity: 1, ease: easeIn })
+    }
+
+    const eventOff = function () {
+      const target = this
+      // animation
+      if (!target.classList.contains('inverse')) {
+        TweenMax.to(target, time, { x: size, opacity: 0, ease: easeOut })
+      } else {
+        TweenMax.to(target, time, { x: -size, opacity: 0, ease: easeOut })
+      }
+    }
 
     for (const tr of self.targets) {
-      // on event
-
-      tr.addEventListener('on.xt', function (e) {
-        const target = this
-        // setup
-        TweenMax.set(target, { opacity: 0 })
-        if (!target.classList.contains('inverse')) {
-          TweenMax.set(target, { x: -size })
-        } else {
-          TweenMax.set(target, { x: size })
-        }
-        // animation
-        TweenMax.to(target, time, { x: 0, opacity: 1, ease: easeIn })
-      })
-
-      // off event
-
-      tr.addEventListener('off.xt', function (e) {
-        const target = this
-        // animation
-        if (!target.classList.contains('inverse')) {
-          TweenMax.to(target, time, { x: size, opacity: 0, ease: easeOut })
-        } else {
-          TweenMax.to(target, time, { x: -size, opacity: 0, ease: easeOut })
-        }
-      })
+      tr.addEventListener('on.xt', eventOn)
+      tr.addEventListener('off.xt', eventOff)
     }
 
     // unmount
 
     return function unmount () {
+      for (const tr of self.targets) {
+        tr.removeEventListener('on.xt', eventOn)
+        tr.removeEventListener('off.xt', eventOff)
+      }
       self.destroy()
       self = null
     }
