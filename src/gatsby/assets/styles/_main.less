@@ -115,7 +115,7 @@
   top: .5rem;
   left: 0;
   bottom: .5rem;
-  width: 1px;
+  width: 1px !important;
   background: @gray--300;
 }
 
@@ -129,6 +129,7 @@
 .site_article_sidebar_sub,
 .site_article_sidebar_adiacent {
   display: none;
+  width: 100%;
   //.padding(y, .25rem);
   .site_article_sidebar_item {
     position: relative;
@@ -137,6 +138,9 @@
     align-items: flex-start;
     justify-content: flex-start;
     .padding(left, 1.25rem);
+    > * {
+      width: 100%;
+    }
   }
   &.active {
     display: block;
