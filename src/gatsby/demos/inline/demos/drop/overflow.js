@@ -11,7 +11,7 @@ demo.htmlSource = `
 <div class="list list-space--small align-items--center demo-source-from">
   <div class="drop_outer" data-xt-drop>
     <button type="button" class="btn btn--primary">
-      <span>overflow-y</span>
+      overflow-y
     </button>
     <div class="drop drop--center drop--middle drop--overflow-y">
       <div class="drop_inner">
@@ -20,72 +20,72 @@ demo.htmlSource = `
           <ul class="list list--drop">
             <li>
               <button type="button">
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </button>
             </li>
           </ul>

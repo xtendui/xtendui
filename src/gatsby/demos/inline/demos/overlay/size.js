@@ -11,13 +11,13 @@ demo.htmlSource = `
 <div class="list list-space--small align-items--center demo-source-from">
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      <span>default</span>
+      default
     </button>
     <div class="overlay_outer">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
           <div class="overlay_content">
             <div class="h2">Lorem ipsum</div>
             <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -37,13 +37,13 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      <span>tiny</span>
+      tiny
     </button>
     <div class="overlay_outer overlay--tiny">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
           <div class="overlay_content">
             <div class="h2">Lorem ipsum</div>
             <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -63,13 +63,13 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      <span>small</span>
+      small
     </button>
     <div class="overlay_outer overlay--small">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
           <div class="overlay_content">
             <div class="h2">Lorem ipsum</div>
             <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -89,13 +89,13 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      <span>medium</span>
+      medium
     </button>
     <div class="overlay_outer overlay--medium">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
           <div class="overlay_content">
             <div class="h2">Lorem ipsum</div>
             <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -115,13 +115,13 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      <span>big</span>
+      big
     </button>
     <div class="overlay_outer overlay--big">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
           <div class="overlay_content">
             <div class="h2">Lorem ipsum</div>
             <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -141,13 +141,13 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      <span>giant</span>
+      giant
     </button>
     <div class="overlay_outer overlay--giant">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
           <div class="overlay_content">
             <div class="h2">Lorem ipsum</div>
             <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -167,13 +167,13 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      <span>full</span>
+      full
     </button>
     <div class="overlay_outer overlay--full">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
           <div class="overlay_content">
             <div class="h2">Lorem ipsum</div>
             <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>

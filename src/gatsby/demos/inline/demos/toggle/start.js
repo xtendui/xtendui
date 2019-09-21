@@ -9,7 +9,7 @@ export const demo = {
 
 demo.htmlSource = `
 <button type="button" class="btn btn--primary" id="demo--toggle--restart">
-  <span>Restart</span>
+  Restart
 </button>
 
 <br>
@@ -17,19 +17,19 @@ demo.htmlSource = `
 <div class="list list-space--small align-items--center"
      data-xt-toggle='{"class": "active class-example-1", "min": 3, "max": 3}'>
   <button type="button" class="btn" data-xt-group="0">
-    <span>Group 0</span>
+    Group 0
   </button>
   <button type="button" class="btn">
-    <span>Toggle 0</span>
+    Toggle 0
   </button>
   <button type="button" class="btn" data-xt-group="0">
-    <span>Group 0</span>
+    Group 0
   </button>
   <button type="button" class="btn active class-example-1">
-    <span>Toggle 1</span>
+    Toggle 1
   </button>
   <button type="button" class="btn" data-xt-group="1">
-    <span>Group 1</span>
+    Group 1
   </button>
   <div class="alert toggle--block">
     <div class="alert_content">

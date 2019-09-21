@@ -99,7 +99,6 @@ demo.htmlSource = `
   <nav class="slider_pagination">
     <div class="list list-space--small align-items--center">
       <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
-        <span></span>
       </button>
     </div>
   </nav>

@@ -11,17 +11,17 @@ demo.htmlSource = `
 <ul class="list demo--list--custom-btn">
   <li>
     <a href="#">
-      <span>Lorem Ipsum</span>
+      Lorem Ipsum
     </a>
   </li>
   <li>
     <button type="button">
-      <span>Dolor sit</span>
+      Dolor sit
     </button>
   </li>
   <li class="custom">
     <button type="button" class="btn">
-      <span>Amet</span>
+      Amet
     </button>
   </li>
 </ul>

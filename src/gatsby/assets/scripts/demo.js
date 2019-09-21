@@ -105,10 +105,10 @@ const populateDemo = function (container, i) {
         name = 'demo #' + k
       }
     }
-    let btn = container.querySelector('.demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny"><span>' + name + '</span></button>'))
+    let btn = container.querySelector('.demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny">' + name + '</button>'))
     btn = container.querySelectorAll('.demo_tabs_left .btn')[k]
     // tabs
-    item.prepend(Xt.createElement('<div class="demo_code collapse--height"><div class="demo_code_inner"><div class="demo_code_tabs"><div class="demo_code_tabs_left"></div><div class="demo_code_tabs_right"><button type="button" class="btn btn--text btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard"><span>copy</span></button></div></div><div class="demo_code_body"></div></div></div>'))
+    item.prepend(Xt.createElement('<div class="demo_code collapse--height"><div class="demo_code_inner"><div class="demo_code_tabs"><div class="demo_code_tabs_left"></div><div class="demo_code_tabs_right"><button type="button" class="btn btn--text btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="demo_code_body"></div></div></div>'))
     // https://github.com/zenorocha/clipboard.js/
     const clipboard = new ClipboardJS('.btn--clipboard', {
       target: function (trigger) {
@@ -449,7 +449,7 @@ const populateSources = function (item, element, z) {
   }
   // populate tabs
   item.querySelector('.demo_code_body').append(Xt.createElement('<div class="demo_code_body_item"><pre class="noedit"><code></code></pre></div>'))
-  item.querySelector('.demo_code_tabs_left').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny"><span>' + lang + '</span></button>'))
+  item.querySelector('.demo_code_tabs_left').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny">' + lang + '</button>'))
   // format code
   const itemInside = item.querySelectorAll('.demo_code_body .demo_code_body_item')[z]
   const codeInside = itemInside.querySelector('pre code')

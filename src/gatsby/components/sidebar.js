@@ -16,11 +16,11 @@ class Sidebar extends React.Component {
                     ? <Link to={`/${page.post.frontmatter.type}/${kebabCase(category.title.split('-').pop())}/`}
                           className={`btn btn--site_article_sidebar btn--site_article_sidebar--cat
                               ${!page.post.frontmatter.categories ? page.post.frontmatter.title === category.title.split('-').pop() ? 'active' : '' : page.post.frontmatter.categories.includes(category.title) ? 'current' : ''}`}>
-                      <span>{category.title.split('-').pop()}</span>
+                      {category.title.split('-').pop()}
                     </Link>
                     : <div className={`btn btn--site_article_sidebar btn--site_article_sidebar--cat
                               ${!page.post.frontmatter.categories ? page.post.frontmatter.title === category.title.split('-').pop() ? 'active' : '' : page.post.frontmatter.categories.includes(category.title) ? 'current' : ''}`}>
-                      <span>{category.title.split('-').pop()}</span>
+                      {category.title.split('-').pop()}
                     </div>
                   }
                   <div className={`site_article_sidebar_sub active
@@ -33,7 +33,7 @@ class Sidebar extends React.Component {
                             <Link to={post.frontmatter.path}
                               className={`btn btn--site_article_sidebar btn--site_article_sidebar--sub
                                             ${page.post.frontmatter.path === post.frontmatter.path ? 'active' : page.post.frontmatter.parent === post.frontmatter.parent ? 'current' : ''}`}>
-                              <span>{post.frontmatter.title}</span>
+                              {post.frontmatter.title}
                             </Link>
                             {post.frontmatter.parent === page.post.frontmatter.parent
                               ? <div className="site_article_sidebar_adiacent active">
@@ -45,7 +45,7 @@ class Sidebar extends React.Component {
                                         ? <Link to={adiacent.frontmatter.path}
                                           className={`btn btn--site_article_sidebar btn--site_article_sidebar--adiacent
                                               ${page.post.frontmatter.title === adiacent.frontmatter.title ? 'active' : ''}`}>
-                                          <span>{adiacent.frontmatter.title}</span>
+                                          {adiacent.frontmatter.title}
                                         </Link>
                                         : null
                                       }

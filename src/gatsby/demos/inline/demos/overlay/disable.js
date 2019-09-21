@@ -10,14 +10,14 @@ export const demo = {
 demo.htmlSource = `
 <div data-xt-overlay>
   <button type="button" class="btn btn--primary demo--overlay--disable-btn">
-    <span>Toggle</span>
+    Toggle
   </button>
   <div class="overlay_outer overlay--big demo--overlay--disable">
     <div class="overlay">
       <div class="overlay_inner">
 
         <div class="overlay_design"></div>
-        <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+        <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
 
         <div class="overlay_content">
           <div class="h2">Lorem ipsum</div>
@@ -33,14 +33,14 @@ demo.htmlSource = `
 
           <div data-xt-overlay>
             <button type="button" class="btn btn--primary">
-              <span>Toggle</span>
+              Toggle
             </button>
             <div class="overlay_outer overlay--small">
               <div class="overlay">
                 <div class="overlay_inner">
 
                   <div class="overlay_design"></div>
-                  <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+                  <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
 
                   <div class="overlay_content">
                     <div class="h2">Lorem ipsum</div>
@@ -56,7 +56,7 @@ demo.htmlSource = `
                     <div class="drop_outer"
                          data-xt-drop='{"backdrop": true}'>
                       <button type="button" class="btn btn--primary">
-                        <span>drop backdrop</span>
+                        drop backdrop
                       </button>
                       <div class="drop drop--bottom drop--left">
                         <div class="drop_inner">
@@ -65,17 +65,17 @@ demo.htmlSource = `
                             <ul class="list list--drop">
                               <li>
                                 <button type="button" class="btn">
-                                  <span>Lorem ipsum dolor</span>
+                                  Lorem ipsum dolor
                                 </button>
                               </li>
                               <li>
                                 <button type="button" class="btn">
-                                  <span>Dolor sit</span>
+                                  Dolor sit
                                 </button>
                               </li>
                               <li>
                                 <button type="button" class="btn">
-                                  <span>Amet</span>
+                                  Amet
                                 </button>
                               </li>
                             </ul>

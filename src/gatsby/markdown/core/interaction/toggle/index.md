@@ -15,7 +15,7 @@ Use this markup to create a toggle.
 <script type="text/plain" class="language-markup">
   <div data-xt-toggle>
     <button type="button">
-      <span><!-- content --></span>
+      <!-- content -->
     </button>
     <div class="toggle--block">
       <!-- content -->
@@ -27,7 +27,7 @@ You can use this markup to create a toggle with **no targets**.
 
 <script type="text/plain" class="language-markup">
   <button type="button" data-xt-toggle>
-    <span><!-- content --></span>
+    <!-- content -->
   </button>
 </script>
 

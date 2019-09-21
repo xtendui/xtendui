@@ -25,11 +25,11 @@ See [Group button's page](/core/group/button).
 
 <script type="text/plain" class="language-markup">
   <a href="#" class="btn">
-    <span><!-- content --></span>
+    <!-- content -->
   </a>
   
   <button type="button" class="btn">
-    <span><!-- content --></span>
+    <!-- content -->
   </button>
 </script>
 

@@ -11,13 +11,13 @@ demo.htmlSource = `
 <div class="list list-space--small align-items--center justify-content--center overlay--class-html--content">
   <div data-xt-overlay='{"classHtml": "overlay--class-html--left"}'>
     <button type="button" class="btn btn--primary">
-      <span>left</span>
+      left
     </button>
     <div class="overlay_outer overlay--pos overlay--left">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
           <div class="overlay_content">
             <div class="h2">Lorem ipsum</div>
             <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -38,13 +38,13 @@ demo.htmlSource = `
   <div
     data-xt-overlay='{"classHtml": "overlay--class-html--right"}'>
     <button type="button" class="btn btn--primary">
-      <span>right</span>
+      right
     </button>
     <div class="overlay_outer overlay--pos overlay--right">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
           <div class="overlay_content">
             <div class="h2">Lorem ipsum</div>
             <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>

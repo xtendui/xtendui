@@ -11,13 +11,13 @@ demo.htmlSource = `
 <div data-xt-toggle='{"elements": ".list > .btn", "targets": ".list > .demo--toggle--custom-options"}'>
   <div class="list list-space--small align-items--center">
     <button type="button" class="btn">
-      <span>Toggle 0</span>
+      Toggle 0
     </button>
     <button type="button" class="btn">
-      <span>Toggle 1</span>
+      Toggle 1
     </button>
     <button type="button" class="btn">
-      <span>Toggle 2</span>
+      Toggle 2
     </button>
     <div class="alert demo--toggle--custom-options">
       <div class="alert_content">

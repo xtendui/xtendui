@@ -10,55 +10,55 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-space--small align-items--center demo_source--from">
   <button type="button" class="btn btn--nodesign">
-    <span>nodesign</span>
+    nodesign
   </button>
 
   <button type="button" class="btn btn--noeffect">
-    <span>noeffect</span>
+    noeffect
   </button>
 
   <button type="button" class="btn btn--medium btn--squared">
-    <span>squared</span>
+    squared
   </button>
 
   <button type="button" class="btn btn--medium btn--noborder">
-    <span>noborder</span>
+    noborder
   </button>
 
   <button type="button" class="btn btn--medium btn--tall">
-    <span>tall</span>
+    tall
   </button>
 
   <button type="button" class="btn btn--medium btn--short">
-    <span>short</span>
+    short
   </button>
 
   <button type="button" class="btn btn--medium btn--wide">
-    <span>wide</span>
+    wide
   </button>
 
   <button type="button" class="btn btn--medium btn--narrow">
-    <span>narrow</span>
+    narrow
   </button>
 
   <button type="button" class="btn btn--medium btn--none">
-    <span>none</span>
+    none
   </button>
 
   <button type="button" class="btn btn--medium btn--none-x">
-    <span>none-x</span>
+    none-x
   </button>
 
   <button type="button" class="btn btn--medium btn--none-y">
-    <span>none-y</span>
+    none-y
   </button>
 
   <button type="button" class="btn btn--medium btn--icon">
-    <span>icon</span>
+    icon
   </button>
 
   <button type="button" class="btn btn--medium btn--transform">
-    <span>transform</span>
+    transform
   </button>
 </div>
 `

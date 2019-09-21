@@ -10,7 +10,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="drop_outer drop--disable" data-xt-drop>
   <button type="button" class="btn btn--primary">
-    <span>Toggle</span>
+    Toggle
   </button>
   <div class="drop">
     <div class="drop_inner">
@@ -19,17 +19,17 @@ demo.htmlSource = `
         <ul class="list list--drop">
           <li>
             <button type="button">
-              <span>Lorem ipsum dolor</span>
+              Lorem ipsum dolor
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -40,7 +40,7 @@ demo.htmlSource = `
 
 <div class="drop_outer demo--drop--disable-sm" data-xt-drop>
   <button type="button" class="btn btn--primary">
-    <span>Toggle</span>
+    Toggle
   </button>
   <div class="drop">
     <div class="drop_inner">
@@ -49,17 +49,17 @@ demo.htmlSource = `
         <ul class="list list--drop">
           <li>
             <button type="button">
-              <span>Lorem ipsum dolor</span>
+              Lorem ipsum dolor
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li class="drop_outer event-limit" data-xt-drop>
             <button type="button">
-              <span>Toggle</span>
+              Toggle
             </button>
             <div class="drop drop--primary drop--after drop--middle">
               <div class="drop_inner">
@@ -68,17 +68,17 @@ demo.htmlSource = `
                   <ul class="list list--drop">
                     <li>
                       <button type="button">
-                        <span>Lorem ipsum dolor</span>
+                        Lorem ipsum dolor
                       </button>
                     </li>
                     <li>
                       <button type="button">
-                        <span>Dolor sit</span>
+                        Dolor sit
                       </button>
                     </li>
                     <li class="drop_outer event-limit" data-xt-drop>
                       <button type="button">
-                        <span>Toggle</span>
+                        Toggle
                       </button>
                       <div class="drop drop--secondary drop--center drop--middle">
                         <div class="drop_inner">
@@ -87,17 +87,17 @@ demo.htmlSource = `
                             <ul class="list list--drop">
                               <li>
                                 <button type="button">
-                                  <span>Lorem ipsum dolor</span>
+                                  Lorem ipsum dolor
                                 </button>
                               </li>
                               <li>
                                 <button type="button">
-                                  <span>Dolor sit</span>
+                                  Dolor sit
                                 </button>
                               </li>
                               <li>
                                 <button type="button">
-                                  <span>Amet</span>
+                                  Amet
                                 </button>
                               </li>
                             </ul>

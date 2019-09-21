@@ -11,34 +11,34 @@ demo.htmlSource = `
 <button type="button" class="group">
   <div class="group_inner">
     <div class="btn btn--primary">
-      <span>btn 1a</span>
+      btn 1a
     </div>
     <div class="btn btn--primary">
-      <span>btn 1b</span>
+      btn 1b
     </div>
   </div>
   <div class="group_inner">
     <div class="btn btn--secondary">
-      <span>btn 2a</span>
+      btn 2a
     </div>
     <div class="btn btn--secondary">
-      <span>btn 2b</span>
+      btn 2b
     </div>
   </div>
   <div class="group_inner">
     <div class="btn btn--primary">
-      <span>btn 3a</span>
+      btn 3a
     </div>
     <div class="btn btn--primary">
-      <span>btn 3b</span>
+      btn 3b
     </div>
   </div>
   <div class="group_inner">
     <div class="btn btn--secondary">
-      <span>btn 4a</span>
+      btn 4a
     </div>
     <div class="btn btn--secondary">
-      <span>btn 4b</span>
+      btn 4b
     </div>
   </div>
 </button>

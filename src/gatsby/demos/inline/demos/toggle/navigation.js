@@ -11,16 +11,16 @@ demo.htmlSource = `
   <div class="list list-space--small align-items--center"
        data-xt-toggle='{"navigation": "[data-xt-nav]"}'>
     <button type="button" class="btn">
-      <span>Toggle 0</span>
+      Toggle 0
     </button>
     <button type="button" class="btn">
-      <span>Toggle 1</span>
+      Toggle 1
     </button>
     <button type="button" class="btn">
-      <span>Toggle 2</span>
+      Toggle 2
     </button>
     <button type="button" class="btn">
-      <span>Toggle 3</span>
+      Toggle 3
     </button>
     <button type="button" class="btn xt-ignore" data-xt-nav="-1" title="Previous slide">
       <span class="icon-xt--chevron-left"></span>

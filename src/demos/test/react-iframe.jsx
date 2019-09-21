@@ -5,7 +5,7 @@ class Component extends React.Component {
     return (
       <div className="drop_outer" data-xt-drop>
         <button type="button" className="btn btn--primary">
-          <span>Toggle</span>
+          Toggle
         </button>
         <div className="drop">
           <div className="drop_inner">
@@ -14,17 +14,17 @@ class Component extends React.Component {
               <ul className="list list--drop">
                 <li>
                   <button type="button">
-                    <span>Lorem ipsum dolor</span>
+                    Lorem ipsum dolor
                   </button>
                 </li>
                 <li>
                   <button type="button">
-                    <span>Dolor sit</span>
+                    Dolor sit
                   </button>
                 </li>
                 <li className="drop_outer event-limit" data-xt-drop>
                   <button type="button">
-                    <span>Toggle</span>
+                    Toggle
                   </button>
                   <div className="drop drop--primary drop--after drop--middle">
                     <div className="drop_inner">
@@ -33,17 +33,17 @@ class Component extends React.Component {
                         <ul className="list list--drop">
                           <li>
                             <button type="button">
-                              <span>Lorem ipsum dolor</span>
+                              Lorem ipsum dolor
                             </button>
                           </li>
                           <li>
                             <button type="button">
-                              <span>Dolor sit</span>
+                              Dolor sit
                             </button>
                           </li>
                           <li className="drop_outer event-limit" data-xt-drop>
                             <button type="button">
-                              <span>Toggle</span>
+                              Toggle
                             </button>
                             <div className="drop drop--secondary drop--center drop--middle">
                               <div className="drop_inner">
@@ -52,17 +52,17 @@ class Component extends React.Component {
                                   <ul className="list list--drop">
                                     <li>
                                       <button type="button">
-                                        <span>Lorem ipsum dolor</span>
+                                        Lorem ipsum dolor
                                       </button>
                                     </li>
                                     <li>
                                       <button type="button">
-                                        <span>Dolor sit</span>
+                                        Dolor sit
                                       </button>
                                     </li>
                                     <li>
                                       <button type="button">
-                                        <span>Amet</span>
+                                        Amet
                                       </button>
                                     </li>
                                   </ul>

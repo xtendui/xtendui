@@ -11,11 +11,11 @@ demo.htmlSource = `
   <div class="list list-space--small align-items--center demo-source-from">
     <button type="button" class="btn"
             data-xt-toggle='{"targets": "#toggle-unique-0"}'>
-      <span>Toggle 0</span>
+      Toggle 0
     </button>
     <button type="button" class="btn"
             data-xt-toggle='{"targets": "#toggle-unique-1"}'>
-      <span>Toggle 1</span>
+      Toggle 1
     </button>
     <div class="alert toggle--block" id="toggle-unique-0">
       <div class="alert_content">

@@ -16,11 +16,11 @@ Use this markup to create a button group as line.
   <div class="group">
   
     <button type="button" class="btn">
-      <span><!-- content --></span>
+      <!-- content -->
     </button>
     
     <button type="button" class="btn">
-      <span><!-- content --></span>
+      <!-- content -->
     </button>
     
   </div>
@@ -33,11 +33,11 @@ Use this markup to create a button group as stack.
   
     <div class="group_inner">
       <button type="button" class="btn">
-        <span><!-- content --></span>
+        <!-- content -->
       </button>
       
       <button type="button" class="btn">
-        <span><!-- content --></span>
+        <!-- content -->
       </button>
       
     </div>

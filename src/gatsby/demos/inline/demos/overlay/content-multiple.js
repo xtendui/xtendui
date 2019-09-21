@@ -10,21 +10,21 @@ export const demo = {
 demo.htmlSource = `
 <div data-xt-overlay>
   <button type="button" class="btn btn--primary">
-    <span>toggle</span>
+    toggle
   </button>
   <div class="overlay_outer overlay--pos overlay--right demo--overlay--content-multiple">
     <div class="overlay">
       <div class="overlay_inner">
 
         <div class="overlay_design"></div>
-        <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+        <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
 
         <div class="overlay_menu">
           <button type="button" class="btn btn--primary btn--big btn--wide btn--tall">
-            <span>Menu</span>
+            Menu
           </button>
           <button type="button" class="btn btn--primary btn--big btn--wide btn--tall">
-            <span>Account</span>
+            Account
           </button>
         </div>
 
@@ -46,7 +46,7 @@ demo.htmlSource = `
 
         <div class="overlay_content" style="margin-bottom: 0">
           <button type="button" class="btn btn--primary overlay_dismiss">
-            <span>Close</span>
+            Close
           </button>
         </div>
 

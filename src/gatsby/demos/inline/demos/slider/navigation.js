@@ -134,13 +134,12 @@ demo.htmlSource = `
   
   <nav class="slider_pagination">
     <button type="button" class="btn xt-ignore" data-xt-nav="-1" title="Previous slide">
-      <span><span class="icon-xt--chevron-left icon--left"></span> prev</span>
+      <span class="icon-xt--chevron-left icon--left"></span> prev
     </button>
     <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
-      <span></span>
     </button>
     <button type="button" class="btn xt-ignore" data-xt-nav="1" title="Next slide">
-      <span>next <span class="icon-xt--chevron-right icon--right"></span></span>
+      next <span class="icon-xt--chevron-right icon--right"></span>
     </button>
   </nav>
 

@@ -9,18 +9,18 @@ export const demo = {
 
 demo.htmlSource = `
 <button type="button" class="btn btn--primary" disabled>
-  <span>primary</span>
+  primary
 </button>
 
 <button type="button" class="btn btn--secondary" disabled>
-  <span>secondary</span>
+  secondary
 </button>
 
 <button type="button" class="btn btn--text" disabled>
-  <span>text</span>
+  text
 </button>
 
 <button type="button" class="btn btn--link" disabled>
-  <span>link</span>
+  link
 </button>
 `

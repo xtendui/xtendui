@@ -11,16 +11,16 @@ demo.htmlSource = `
   <div class="list list-space--small align-items--center"
        data-xt-toggle='{"min": 1, "on": "mouseenter", "off": "mouseleave"}'>
     <a href="#toggle-with-link-0" class="btn">
-      <span>Toggle 0</span>
+      Toggle 0
     </a>
     <a href="#toggle-with-link-1" class="btn">
-      <span>Toggle 1</span>
+      Toggle 1
     </a>
     <button type="button" class="btn">
-      <span><a href="#toggle-with-link-2" class="link--none">Toggle 2</a></span>
+      <a href="#toggle-with-link-2" class="link--none">Toggle 2</a>
     </button>
     <button type="button" class="btn">
-      <span><a href="#toggle-with-link-3" class="link--none">Toggle 3</a></span>
+      <a href="#toggle-with-link-3" class="link--none">Toggle 3</a>
     </button>
     <div class="alert toggle--block">
       <div class="alert_content">

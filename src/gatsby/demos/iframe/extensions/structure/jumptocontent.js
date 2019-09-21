@@ -14,7 +14,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="jumptocontent sr-only">
   <a href="#jumptocontent" class="btn btn--primary btn--wide btn--tall">
-    <span>Jump to content</span>
+    Jump to content
   </a>
 </div>
 

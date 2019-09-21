@@ -264,7 +264,7 @@ demo.htmlSource = `
 
   <div class="form-group">
     <button type="submit" class="btn btn--primary btn--sm">
-      <span>Submit</span>
+      Submit
     </button>
   </div>
 

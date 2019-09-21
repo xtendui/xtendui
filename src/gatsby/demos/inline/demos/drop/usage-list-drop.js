@@ -11,7 +11,7 @@ demo.htmlSource = `
 <div class="list list-space--small align-items--center demo-source-from">
   <div class="drop_outer" data-xt-drop>
     <button type="button" class="btn btn--primary">
-      <span>Toggle</span>
+      Toggle
     </button>
     <div class="drop">
       <div class="drop_inner">
@@ -20,17 +20,17 @@ demo.htmlSource = `
           <ul class="list list--drop">
             <li>
               <a href="#">
-                <span>Lorem Ipsum</span>
+                Lorem Ipsum
               </a>
             </li>
             <li>
               <button type="button">
-                <span>Dolor sit</span>
+                Dolor sit
               </button>
             </li>
             <li class="custom">
               <button type="button" class="btn btn--small btn--squared">
-                <span>Dolor sit</span>
+                Dolor sit
               </button>
             </li>
           </ul>

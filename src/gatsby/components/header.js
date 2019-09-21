@@ -32,29 +32,29 @@ class Header extends React.Component {
                       <Link to='/core'
                         className={`btn btn--site_header_top_link
                                         ${page && page.post ? page.post.frontmatter.path === '/' + 'core' ? 'active' : page.post.frontmatter.type === 'core' ? 'current' : '' : ''}`}>
-                        <span>Core</span>
+                        Core
                       </Link>
                       <Link to='/extensions'
                         className={`btn btn--site_header_top_link
                                         ${page && page.post ? page.post.frontmatter.path === '/' + 'extensions' ? 'active' : page.post.frontmatter.type === 'extensions' ? 'current' : '' : ''}`}>
-                        <span>Extensions</span>
+                        Extensions
                       </Link>
                       <Link to='/themes'
                         className={`btn btn--site_header_top_link
                                         ${page && page.post ? page.post.frontmatter.path === '/' + 'themes' ? 'active' : page.post.frontmatter.type === 'themes' ? 'current' : '' : ''}`}>
-                        <span>Themes</span>
+                        Themes
                       </Link>
                       <Link to='/faq'
                         className={`btn btn--site_header_top_link
                                         ${page && page.post ? page.post.frontmatter.path === '/' + 'faq' ? 'active' : page.post.frontmatter.type === 'faq' ? 'current' : '' : ''}`}>
-                        <span>Faq</span>
+                        Faq
                       </Link>
                       {/*
                       {site.categories.type.map((type, i) => (
                         <Link key={i} to={`/${kebabCase(type.title)}`}
                           className={`btn btn--site_header_top_link
                                         ${page && page.post ? page.post.frontmatter.path === '/' + kebabCase(type.title) ? 'active' : page.post.frontmatter.type === type.title ? 'current' : '' : ''}`}>
-                          <span>{type.title}</span>
+                          {type.title}
                         </Link>
                       ))}
                       */}
@@ -72,11 +72,11 @@ class Header extends React.Component {
                   <div className="site_header_top_social">
                     <a href={site.site.siteMetadata.github} target="_blank" rel="noopener"
                       className="btn btn--site_header_top_social" title="Github">
-                      <span><span className="icon-github icon--big"></span></span>
+                      <span className="icon-github icon--big"></span>
                     </a>
                     <a href={site.site.siteMetadata.npm} target="_blank" rel="noopener"
                       className="btn btn--site_header_top_social" title="Npm">
-                      <span><span className="icon-npm icon--big"></span></span>
+                      <span className="icon-npm icon--big"></span>
                     </a>
                   </div>
                 </div>

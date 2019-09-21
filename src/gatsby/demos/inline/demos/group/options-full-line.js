@@ -11,23 +11,23 @@ demo.htmlSource = `
 <div class="group full">
   <div class="group_inner">
     <button type="button" class="btn btn--primary">
-      <span>btn 1</span>
+      btn 1
     </button>
   </div>
   <div class="group_inner">
     <button type="button" class="btn btn--secondary">
-      <span>btn 2</span>
+      btn 2
     </button>
   </div>
   <input type="text" class="form-item">
   <div class="group_inner">
     <button type="button" class="btn btn--primary">
-      <span>btn 3</span>
+      btn 3
     </button>
   </div>
   <div class="group_inner">
     <button type="button" class="btn btn--secondary">
-      <span>btn 4</span>
+      btn 4
     </button>
   </div>
 </div>
@@ -35,22 +35,22 @@ demo.htmlSource = `
 <div class="group full">
   <div class="group_inner flex--auto">
     <button type="button" class="btn btn--primary">
-      <span>btn 1</span>
+      btn 1
     </button>
   </div>
   <div class="group_inner">
     <button type="button" class="btn btn--secondary">
-      <span>btn 2</span>
+      btn 2
     </button>
   </div>
   <div class="group_inner flex--auto">
     <button type="button" class="btn btn--primary">
-      <span>btn 3</span>
+      btn 3
     </button>
   </div>
   <div class="group_inner">
     <button type="button" class="btn btn--secondary">
-      <span>btn 4</span>
+      btn 4
     </button>
   </div>
 </div>

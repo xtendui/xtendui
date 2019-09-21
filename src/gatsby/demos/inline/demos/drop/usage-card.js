@@ -11,7 +11,7 @@ demo.htmlSource = `
 <div class="list list-space--small align-items--center demo-source-from">
   <div class="drop_outer" data-xt-drop>
     <button type="button" class="btn btn--primary">
-      <span>Toggle</span>
+      Toggle
     </button>
     <div class="drop">
       <div class="drop_inner">

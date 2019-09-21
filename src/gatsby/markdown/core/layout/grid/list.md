@@ -122,17 +122,17 @@ List's buttons are styled automatically, but if you want to customize the button
         <ul class="list">
           <li>
             <a href="#">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </a>
           </li>
           <li>
             <button type="button" class="btn btn--primary btn--tiny">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li class="custom">
             <button type="button" class="btn btn--primary btn--tiny">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -143,17 +143,17 @@ List's buttons are styled automatically, but if you want to customize the button
         <ul class="list-block">
           <li class="custom">
             <button type="button" class="btn btn--primary">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li class="custom">
             <button type="button" class="btn btn--secondary">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li class="custom">
             <button type="button" class="btn btn--text btn--tiny">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -168,29 +168,29 @@ List's buttons are styled automatically, but if you want to customize the button
                 <ul class="list-block">
                   <li class="custom">
                     <button type="button" class="btn btn--primary">
-                      <span>Lorem Ipsum</span>
+                      Lorem Ipsum
                     </button>
                   </li>
                   <li class="custom">
                     <button type="button" class="btn btn--secondary">
-                      <span>Dolor sit</span>
+                      Dolor sit
                     </button>
                   </li>
                   <li class="custom">
                     <button type="button" class="btn btn--text btn--tiny">
-                      <span>Amet</span>
+                      Amet
                     </button>
                   </li>
                 </ul>
               </li>
               <li class="custom">
                 <button type="button" class="btn btn--secondary">
-                  <span>Dolor sit</span>
+                  Dolor sit
                 </button>
               </li>
               <li class="custom">
                 <button type="button" class="btn btn--text btn--tiny">
-                  <span>Amet</span>
+                  Amet
                 </button>
               </li>
             </ul>
@@ -199,17 +199,17 @@ List's buttons are styled automatically, but if you want to customize the button
             <ul class="list">
               <li class="custom">
                 <button type="button" class="btn btn--primary">
-                  <span>Lorem Ipsum</span>
+                  Lorem Ipsum
                 </button>
               </li>
               <li class="custom">
                 <button type="button" class="btn btn--secondary">
-                  <span>Dolor sit</span>
+                  Dolor sit
                 </button>
               </li>
               <li class="custom">
                 <button type="button" class="btn btn--text btn--tiny">
-                  <span>Amet</span>
+                  Amet
                 </button>
               </li>
             </ul>
@@ -255,17 +255,17 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
         <ul class="list list-space--none">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -276,17 +276,17 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
         <ul class="list list-space--tiny">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -297,17 +297,17 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
         <ul class="list list-space--small">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -318,17 +318,17 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
         <ul class="list list-space--medium">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -339,17 +339,17 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
         <ul class="list list-space--big">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -360,17 +360,17 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
         <ul class="list list-space--giant">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -403,17 +403,17 @@ You can also set others flex alignments like `.list_btn({ justify-content: space
         <ul class="list-block list--left">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -424,17 +424,17 @@ You can also set others flex alignments like `.list_btn({ justify-content: space
         <ul class="list-block list--center">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -445,17 +445,17 @@ You can also set others flex alignments like `.list_btn({ justify-content: space
         <ul class="list-block list--right">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -475,17 +475,17 @@ Set children's direction inside the flexbox.
         <ul class="list" style="flex-direction: row">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -496,17 +496,17 @@ Set children's direction inside the flexbox.
         <ul class="list" style="flex-direction: row-reverse">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -517,17 +517,17 @@ Set children's direction inside the flexbox.
         <ul class="list" style="flex-direction: column">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -538,17 +538,17 @@ Set children's direction inside the flexbox.
         <ul class="list" style="flex-direction: column-reverse">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -568,47 +568,47 @@ Set children's wrapping inside the flexbox.
         <ul class="list" style="flex-wrap: wrap">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -619,47 +619,47 @@ Set children's wrapping inside the flexbox.
         <ul class="list" style="flex-wrap: wrap-reverse">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -670,47 +670,47 @@ Set children's wrapping inside the flexbox.
         <ul class="list" style="flex-wrap: nowrap">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -730,17 +730,17 @@ Set children's horizontal alignment inside the flexbox.
         <ul class="list" style="justify-content: flex-start">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -751,17 +751,17 @@ Set children's horizontal alignment inside the flexbox.
         <ul class="list" style="justify-content: flex-end">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -772,17 +772,17 @@ Set children's horizontal alignment inside the flexbox.
         <ul class="list" style="justify-content: center">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -793,17 +793,17 @@ Set children's horizontal alignment inside the flexbox.
         <ul class="list" style="justify-content: space-between">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -814,17 +814,17 @@ Set children's horizontal alignment inside the flexbox.
         <ul class="list" style="justify-content: space-around">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -844,47 +844,47 @@ Set children's vertical alignment inside the flexbox.
         <ul class="list" style="height: 150px; align-items: flex-start">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -895,47 +895,47 @@ Set children's vertical alignment inside the flexbox.
         <ul class="list" style="height: 150px; align-items: flex-end">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -946,47 +946,47 @@ Set children's vertical alignment inside the flexbox.
         <ul class="list" style="height: 150px; align-items: center">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -997,47 +997,47 @@ Set children's vertical alignment inside the flexbox.
         <ul class="list" style="height: 150px; align-items: baseline">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -1048,47 +1048,47 @@ Set children's vertical alignment inside the flexbox.
         <ul class="list" style="height: 150px; align-items: stretch">
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -1108,47 +1108,47 @@ Set children's vertical alignment inside the flexbox.
         <ul class="list" style="height: 150px; align-content: flex-start">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -1159,47 +1159,47 @@ Set children's vertical alignment inside the flexbox.
         <ul class="list" style="height: 150px; align-content: flex-end">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -1210,47 +1210,47 @@ Set children's vertical alignment inside the flexbox.
         <ul class="list" style="height: 150px; align-content: center">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -1261,47 +1261,47 @@ Set children's vertical alignment inside the flexbox.
         <ul class="list" style="height: 150px; align-content: space-between">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -1312,47 +1312,47 @@ Set children's vertical alignment inside the flexbox.
         <ul class="list" style="height: 150px; align-content: space-around">
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -1363,47 +1363,47 @@ Set children's vertical alignment inside the flexbox.
         <ul class="list" style="height: 150px; align-content: stretch">
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button" style="align-self: stretch">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -1424,17 +1424,17 @@ If set to **>auto** computes to the parent's `align-items` value.
         <ul class="list">
           <li>
             <button type="button" class="btn" style="height: 100px">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button" class="btn" style="align-self: flex-start">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button" class="btn" style="align-self: flex-start">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -1445,17 +1445,17 @@ If set to **>auto** computes to the parent's `align-items` value.
         <ul class="list">
           <li>
             <button type="button" class="btn" style="height: 100px">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button" class="btn" style="align-self: flex-end">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button" class="btn" style="align-self: flex-end">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -1466,17 +1466,17 @@ If set to **>auto** computes to the parent's `align-items` value.
         <ul class="list">
           <li>
             <button type="button" class="btn" style="height: 100px">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button" class="btn" style="align-self: center">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button" class="btn" style="align-self: center">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -1487,17 +1487,17 @@ If set to **>auto** computes to the parent's `align-items` value.
         <ul class="list">
           <li>
             <button type="button" class="btn" style="height: 100px">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button" class="btn" style="align-self: baseline">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button" class="btn" style="align-self: baseline">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -1508,17 +1508,17 @@ If set to **>auto** computes to the parent's `align-items` value.
         <ul class="list">
           <li>
             <button type="button" class="btn" style="height: 100px">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button" class="btn" style="align-self: stretch">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button" class="btn" style="align-self: stretch">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -1529,17 +1529,17 @@ If set to **>auto** computes to the parent's `align-items` value.
         <ul class="list" style="align-items: center">
           <li>
             <button type="button" class="btn" style="height: 100px">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li>
             <button type="button" class="btn" style="align-self: auto">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li>
             <button type="button" class="btn" style="align-self: auto">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>
@@ -1582,17 +1582,17 @@ Set item's order inside the flexbox.
         <ul class="list">
           <li class="order--2">
             <button type="button">
-              <span>Lorem Ipsum</span>
+              Lorem Ipsum
             </button>
           </li>
           <li class="order--1">
             <button type="button">
-              <span>Dolor sit</span>
+              Dolor sit
             </button>
           </li>
           <li class="order--0 order--3-sm">
             <button type="button">
-              <span>Amet</span>
+              Amet
             </button>
           </li>
         </ul>

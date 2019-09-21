@@ -10,31 +10,31 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list-space--small align-items--center demo_source--from">
   <button type="button" class="btn">
-    <span>default</span>
+    default
   </button>
 
   <button type="button" class="btn btn--tiny">
-    <span>tiny</span>
+    tiny
   </button>
   
   <button type="button" class="btn btn--small">
-    <span>small</span>
+    small
   </button>
 
   <button type="button" class="btn btn--medium">
-    <span>medium</span>
+    medium
   </button>
 
   <button type="button" class="btn btn--big">
-    <span>big</span>
+    big
   </button>
 
   <button type="button" class="btn btn--giant">
-    <span>giant</span>
+    giant
   </button>
   
   <button type="button" class="btn btn--huge">
-    <span>huge</span>
+    huge
   </button>
 </div>
 `

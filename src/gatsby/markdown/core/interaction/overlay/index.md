@@ -14,13 +14,13 @@ Use this markup to create a overlay.
 
 <script type="text/plain" class="language-markup">
   <button type="button" data-xt-overlay='{"targets": "#overlay-custom"}'>
-    <span><!-- content --></span>
+    <!-- content -->
   </button>
   <div class="overlay_outer" id="overlay-custom">
     <div class="overlay">
       <div class="overlay_inner">
         <div class="overlay_design"></div>
-        <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+        <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
         <div class="overlay_content">
           <!-- content -->
         </div>
@@ -34,13 +34,13 @@ You can use this markup to create a overlay with **no id**.
 <script type="text/plain" class="language-markup">
   <div data-xt-overlay>
     <button type="button">
-      <span><!-- content --></span>
+      <!-- content -->
     </button>
     <div class="overlay_outer">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
           <div class="overlay_content">
             <!-- content -->
           </div>
@@ -57,7 +57,7 @@ You can use this markup to create a overlay with **no toggle**. Be sure to add `
     <div class="overlay">
       <div class="overlay_inner">
         <div class="overlay_design"></div>
-        <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+        <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
         <div class="overlay_content event-limit">
           <!-- content -->
         </div>

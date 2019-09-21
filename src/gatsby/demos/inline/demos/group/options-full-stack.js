@@ -11,35 +11,35 @@ demo.htmlSource = `
 <div class="group full">
   <div class="group_inner">
     <button type="button" class="btn btn--primary">
-      <span>btn 1a</span>
+      btn 1a
     </button>
     <button type="button" class="btn btn--primary">
-      <span>btn 1b</span>
+      btn 1b
     </button>
   </div>
   <div class="group_inner">
     <button type="button" class="btn btn--secondary">
-      <span>btn 2a</span>
+      btn 2a
     </button>
     <button type="button" class="btn btn--secondary">
-      <span>btn 2b</span>
+      btn 2b
     </button>
   </div>
   <input type="text" class="form-item">
   <div class="group_inner">
     <button type="button" class="btn btn--primary">
-      <span>btn 3a</span>
+      btn 3a
     </button>
     <button type="button" class="btn btn--primary">
-      <span>btn 3b</span>
+      btn 3b
     </button>
   </div>
   <div class="group_inner">
     <button type="button" class="btn btn--secondary">
-      <span>btn 4a</span>
+      btn 4a
     </button>
     <button type="button" class="btn btn--secondary">
-      <span>btn 4b</span>
+      btn 4b
     </button>
   </div>
 </div>
@@ -47,34 +47,34 @@ demo.htmlSource = `
 <div class="group full">
   <div class="group_inner flex--auto">
     <button type="button" class="btn btn--primary">
-      <span>btn 1a</span>
+      btn 1a
     </button>
     <button type="button" class="btn btn--primary">
-      <span>btn 1b</span>
+      btn 1b
     </button>
   </div>
   <div class="group_inner">
     <button type="button" class="btn btn--secondary">
-      <span>btn 2a</span>
+      btn 2a
     </button>
     <button type="button" class="btn btn--secondary">
-      <span>btn 2b</span>
+      btn 2b
     </button>
   </div>
   <div class="group_inner flex--auto">
     <button type="button" class="btn btn--primary">
-      <span>btn 3a</span>
+      btn 3a
     </button>
     <button type="button" class="btn btn--primary">
-      <span>btn 3b</span>
+      btn 3b
     </button>
   </div>
   <div class="group_inner">
     <button type="button" class="btn btn--secondary">
-      <span>btn 4a</span>
+      btn 4a
     </button>
     <button type="button" class="btn btn--secondary">
-      <span>btn 4b</span>
+      btn 4b
     </button>
   </div>
 </div>

@@ -11,7 +11,7 @@ demo.htmlSource = `
 <div class="list list-space--small align-items--center demo-source-from">
   <div class="drop_outer" data-xt-drop>
     <button type="button" class="btn btn--primary">
-      <span>default</span>
+      default
     </button>
     <div class="drop">
       <div class="drop_inner">
@@ -20,17 +20,17 @@ demo.htmlSource = `
           <ul class="list list--drop">
             <li>
               <button type="button">
-                <span>Lorem ipsum dolor</span>
+                Lorem ipsum dolor
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Dolor sit</span>
+                Dolor sit
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Amet</span>
+                Amet
               </button>
             </li>
           </ul>
@@ -41,7 +41,7 @@ demo.htmlSource = `
 
   <div class="drop_outer" data-xt-drop>
     <button type="button" class="btn btn--primary">
-      <span>light</span>
+      light
     </button>
     <div class="drop drop--light">
       <div class="drop_inner">
@@ -50,17 +50,17 @@ demo.htmlSource = `
           <ul class="list list--drop">
             <li>
               <button type="button">
-                <span>Lorem ipsum dolor</span>
+                Lorem ipsum dolor
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Dolor sit</span>
+                Dolor sit
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Amet</span>
+                Amet
               </button>
             </li>
           </ul>
@@ -71,7 +71,7 @@ demo.htmlSource = `
 
   <div class="drop_outer" data-xt-drop>
     <button type="button" class="btn btn--primary">
-      <span>dark</span>
+      dark
     </button>
     <div class="drop drop--dark">
       <div class="drop_inner">
@@ -80,17 +80,17 @@ demo.htmlSource = `
           <ul class="list list--drop">
             <li>
               <button type="button">
-                <span>Lorem ipsum dolor</span>
+                Lorem ipsum dolor
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Dolor sit</span>
+                Dolor sit
               </button>
             </li>
             <li>
               <button type="button">
-                <span>Amet</span>
+                Amet
               </button>
             </li>
           </ul>

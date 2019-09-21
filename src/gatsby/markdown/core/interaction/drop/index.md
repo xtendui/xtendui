@@ -15,7 +15,7 @@ Use this markup to create a drop.
 <script type="text/plain" class="language-markup">
   <div class="drop_outer" data-xt-drop>
     <button type="button">
-      <span><!-- content --></span>
+      <!-- content -->
     </button>
     <div class="drop">
       <div class="drop_inner">

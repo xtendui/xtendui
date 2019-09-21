@@ -11,22 +11,22 @@ demo.htmlSource = `
 <button type="button" class="group">
   <div class="group_inner">
     <div class="btn btn--primary">
-      <span>btn 1</span>
+      btn 1
     </div>
   </div>
   <div class="group_inner">
     <div class="btn btn--secondary">
-      <span>btn 2</span>
+      btn 2
     </div>
   </div>
   <div class="group_inner">
     <div class="btn btn--primary">
-      <span>btn 3</span>
+      btn 3
     </div>
   </div>
   <div class="group_inner">
     <div class="btn btn--secondary">
-      <span>btn 4</span>
+      btn 4
     </div>
   </div>
 </button>

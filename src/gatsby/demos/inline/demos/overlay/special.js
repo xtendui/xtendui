@@ -11,13 +11,13 @@ demo.htmlSource = `
 <div class="list list-space--small align-items--center demo-source-from">
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      <span>squared</span>
+      squared
     </button>
     <div class="overlay_outer overlay--squared">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
           <div class="overlay_content">
             <div class="h2">Lorem ipsum</div>
             <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -37,13 +37,13 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      <span>noborder</span>
+      noborder
     </button>
     <div class="overlay_outer overlay--noborder">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
           <div class="overlay_content">
             <div class="h2">Lorem ipsum</div>
             <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -63,13 +63,13 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      <span>none</span>
+      none
     </button>
     <div class="overlay_outer overlay--none">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"><span></span></button>
+          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
           <div class="overlay_content">
             <div class="h2">Lorem ipsum</div>
             <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>

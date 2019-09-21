@@ -35,7 +35,6 @@ Use this markup to create a drop.
 
     <nav class="slider_pagination">
       <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
-        <span></span>
       </button>
     </nav>
 

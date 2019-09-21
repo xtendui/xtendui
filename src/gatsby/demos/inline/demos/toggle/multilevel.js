@@ -15,50 +15,50 @@ demo.htmlSource = `
   
       <div class="multilevel-title-wrapper">
         <div class="h4 multilevel-title">
-          <span>Products</span>
+          Products
         </div>
         <button type="button" class="btn btn--text btn--none multilevel-reset display--none multilevel-tab-reset">
-          <span>Back</span>
+          Back
         </button>
       </div>
   
       <ul class="list-block list-space--none multilevel-list">
         <li>
           <button type="button" class="btn" data-xt-group="cat-0">
-            <span>Category 0</span>
+            Category 0
           </button>
         </li>
         <li>
           <button type="button" class="btn" data-xt-group="cat-1">
-            <span>Category 1</span>
+            Category 1
           </button>
         </li>
         <li>
           <a href="#" class="btn">
-            <span>Link 0</span>
+            Link 0
           </a>
         </li>
         <li>
           <a href="#" class="btn">
-            <span>Link 1</span>
+            Link 1
           </a>
         </li>
       </ul>
   
       <div class="multilevel-title-wrapper">
         <div class="h4 multilevel-title">
-          <span>About</span>
+          About
         </div>
       </div>
       <ul class="list-block list-space--none multilevel-list">
         <li>
           <a href="#" class="btn">
-            <span>Link 0</span>
+            Link 0
           </a>
         </li>
         <li>
           <a href="#" class="btn">
-            <span>Link 1</span>
+            Link 1
           </a>
         </li>
       </ul>
@@ -69,32 +69,32 @@ demo.htmlSource = `
   
       <div class="multilevel-title-wrapper">
         <div class="h4 multilevel-title">
-          <span>Category 0</span>
+          Category 0
         </div>
         <button type="button" class="btn btn--text btn--none multilevel-reset">
-          <span>Back</span>
+          Back
         </button>
       </div>
   
       <ul class="list-block list-space--none multilevel-list">
         <li>
           <button type="button" class="btn" data-xt-group="cat-0a">
-            <span>Category 0a</span>
+            Category 0a
           </button>
         </li>
         <li>
           <button type="button" class="btn" data-xt-group="cat-0b">
-            <span>Category 0b</span>
+            Category 0b
           </button>
         </li>
         <li>
           <a href="#" class="btn">
-            <span>Link 0</span>
+            Link 0
           </a>
         </li>
         <li>
           <a href="#" class="btn">
-            <span>Link 1</span>
+            Link 1
           </a>
         </li>
       </ul>
@@ -105,22 +105,22 @@ demo.htmlSource = `
   
       <div class="multilevel-title-wrapper">
         <div class="h4 multilevel-title">
-          <span>Category 0a</span>
+          Category 0a
         </div>
         <button type="button" class="btn btn--text btn--none multilevel-reset">
-          <span>Back</span>
+          Back
         </button>
       </div>
   
       <ul class="list-block list-space--none multilevel-list">
         <li>
           <a href="#" class="btn">
-            <span>Link 0</span>
+            Link 0
           </a>
         </li>
         <li>
           <a href="#" class="btn">
-            <span>Link 1</span>
+            Link 1
           </a>
         </li>
       </ul>
@@ -131,22 +131,22 @@ demo.htmlSource = `
   
       <div class="multilevel-title-wrapper">
         <div class="h4 multilevel-title">
-          <span>Category 0b</span>
+          Category 0b
         </div>
         <button type="button" class="btn btn--text btn--none multilevel-reset">
-          <span>Back</span>
+          Back
         </button>
       </div>
   
       <ul class="list-block list-space--none multilevel-list">
         <li>
           <a href="#" class="btn">
-            <span>Link 0</span>
+            Link 0
           </a>
         </li>
         <li>
           <a href="#" class="btn">
-            <span>Link 1</span>
+            Link 1
           </a>
         </li>
       </ul>
@@ -157,22 +157,22 @@ demo.htmlSource = `
   
       <div class="multilevel-title-wrapper">
         <div class="h4 multilevel-title">
-          <span>Category 1</span>
+          Category 1
         </div>
         <button type="button" class="btn btn--text btn--none multilevel-reset">
-          <span>Back</span>
+          Back
         </button>
       </div>
   
       <ul class="list-block list-space--none multilevel-list">
         <li>
           <a href="#" class="btn">
-            <span>Link 0</span>
+            Link 0
           </a>
         </li>
         <li>
           <a href="#" class="btn">
-            <span>Link 1</span>
+            Link 1
           </a>
         </li>
       </ul>
