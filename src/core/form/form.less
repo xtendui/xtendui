@@ -271,7 +271,7 @@ select[multiple]& {
   }
   &:before {
     background: @gray--200;
-    border: 1px solid @gray--200;
+    border: 1px solid @gray--300;
   }
   &:after {
     color: @primary;
@@ -279,7 +279,7 @@ select[multiple]& {
   // animation
   &:before {
     transform: scale(.9, .9);
-    transition-property: transform;
+    transition-property: all;
     transition-duration: @time--medium;
     transition-timing-function: @bez--out;
   }
@@ -292,13 +292,13 @@ select[multiple]& {
   }
   &.focus, &:focus {
     &:before {
-      border: 1px solid @gray--200;
+      border: 1px solid @primary;
     }
   }
   &.active {
     &:before {
       transform: scale(1, 1);
-      transition-property: transform;
+      transition-property: all;
       transition-duration: @time--medium;
       transition-timing-function: @bez--in;
     }
