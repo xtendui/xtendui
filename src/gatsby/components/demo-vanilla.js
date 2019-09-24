@@ -22,7 +22,7 @@ class DemoVanilla extends React.Component {
           }
         `}
         render={data => (
-          <div className="demo_item demo_preview" data-name={demo.name}>
+          <div className="demo_item demo_preview" data-name={demo.name} data-inline={src}>
             {children}
             <div className="demo_source demo_source--from" data-lang="html" dangerouslySetInnerHTML={{ __html: demo.htmlSource }}/>
             {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`).map((file, index) => (

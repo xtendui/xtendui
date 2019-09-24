@@ -28,9 +28,9 @@ demo.htmlSource = `
                 Dolor sit
               </button>
             </li>
-            <li class="event-limit">
+            <li>
               <button type="button">
-                event-limit
+                Amet
               </button>
             </li>
           </ul>

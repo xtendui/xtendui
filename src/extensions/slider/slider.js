@@ -459,12 +459,13 @@ class Slider extends Xt.Toggle {
    */
   eventDragstartHandler (dragger, e) {
     const self = this
+    const options = self.options
     // handler
     if (!e.button || e.button !== 2) { // not right click or it gets stuck
       if (self.initial || !self.checkAnim(Xt.arrSingle(dragger))) {
         // logic
-        const eventLimit = self.object.querySelectorAll('.event-limit')
-        if (eventLimit.length) {
+        if (options.eventLimit) {
+          const eventLimit = self.container.querySelectorAll(options.eventLimit)
           if (!Xt.checkNested(e.target, eventLimit)) {
             self.eventDragstart(dragger, e)
           }
@@ -489,9 +490,10 @@ class Slider extends Xt.Toggle {
    */
   eventDragendHandler (dragger, e) {
     const self = this
+    const options = self.options
     // logic
-    const eventLimit = self.object.querySelectorAll('.event-limit')
-    if (eventLimit.length) {
+    if (options.eventLimit) {
+      const eventLimit = self.container.querySelectorAll(options.eventLimit)
       if (!Xt.checkNested(e.target, eventLimit)) {
         self.eventDragend(dragger, e)
       }

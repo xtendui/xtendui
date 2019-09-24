@@ -57,7 +57,7 @@ demo.htmlSource = `
               Dolor sit
             </button>
           </li>
-          <li class="drop_outer event-limit" data-xt-drop>
+          <li class="drop_outer" data-xt-drop>
             <button type="button">
               Toggle
             </button>
@@ -76,7 +76,7 @@ demo.htmlSource = `
                         Dolor sit
                       </button>
                     </li>
-                    <li class="drop_outer event-limit" data-xt-drop>
+                    <li class="drop_outer" data-xt-drop>
                       <button type="button">
                         Toggle
                       </button>

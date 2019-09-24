@@ -10,8 +10,6 @@ parent: "Overlay"
 
 ##Nested
 
-For limiting event inside a selector use `.event-limit`.
-
 <demo>
   <demovanilla src="demos/inline/demos/overlay/nested">
   </demovanilla>

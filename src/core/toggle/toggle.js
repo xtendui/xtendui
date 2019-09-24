@@ -624,13 +624,15 @@ class Toggle {
           }
         }
         // on handler
-        const eventLimit = self.container.querySelectorAll('.event-limit')
-        if (eventLimit.length) {
-          if (!Xt.checkNested(e.target, eventLimit)) {
+        if (options.eventLimit) {
+          const eventLimit = self.container.querySelectorAll(options.eventLimit)
+          if (eventLimit.length) {
+            if (!Xt.checkNested(e.target, eventLimit)) {
+              self.eventOn(element, false, e)
+            }
+          } else {
             self.eventOn(element, false, e)
           }
-        } else {
-          self.eventOn(element, false, e)
         }
       }
     }
@@ -658,13 +660,15 @@ class Toggle {
           }
         }
         // off handler
-        const eventLimit = self.container.querySelectorAll('.event-limit')
-        if (eventLimit.length) {
-          if (!Xt.checkNested(e.target, eventLimit)) {
+        if (options.eventLimit) {
+          const eventLimit = self.container.querySelectorAll(options.eventLimit)
+          if (eventLimit.length) {
+            if (!Xt.checkNested(e.target, eventLimit)) {
+              self.eventOff(element, false, e)
+            }
+          } else {
             self.eventOff(element, false, e)
           }
-        } else {
-          self.eventOff(element, false, e)
         }
       }
     }
@@ -2558,6 +2562,7 @@ Toggle.optionsDefaultSuper = {
   classOut: 'out',
   classInitial: 'initial',
   classInverse: 'inverse',
+  eventLimit: '.event-limit, .drop, .overlay_content',
   autoClose: false,
   onBlock: false,
   offBlock: false,

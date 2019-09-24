@@ -10,8 +10,6 @@ parent: "Drop"
 
 ##Nested
 
-For limiting event inside a selector use `.event-limit`.
-
 <demo>
   <demovanilla src="demos/inline/demos/drop/nested">
   </demovanilla>

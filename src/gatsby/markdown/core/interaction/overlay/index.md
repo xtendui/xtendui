@@ -50,15 +50,15 @@ You can use this markup to create a overlay with **no id**.
   </div>
 </script>
 
-You can use this markup to create a overlay with **no toggle**. Be sure to add `.overlay_content.event-limit`.
+You can use this markup to create a overlay with **no toggle**.
 
 <script type="text/plain" class="language-markup">
-  <div class="overlay_outer" data-xt-overlay>
+  <div class="overlay_outer active" data-xt-overlay>
     <div class="overlay">
       <div class="overlay_inner">
         <div class="overlay_design"></div>
         <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
-        <div class="overlay_content event-limit">
+        <div class="overlay_content">
           <!-- content -->
         </div>
       </div>
