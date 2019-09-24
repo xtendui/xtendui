@@ -76,7 +76,14 @@ dl, dd {
   margin: 0;
 }
 
-fieldset, legend {
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-inline-size: auto;
+}
+
+legend {
   border: 0;
   margin: 0;
   padding: 0;
@@ -84,7 +91,7 @@ fieldset, legend {
 
 input:not([type="checkbox"]):not([type="radio"]),
 textarea {
-  // ios remove shadow
+  // remove shadow
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

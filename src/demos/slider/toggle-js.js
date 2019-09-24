@@ -64,13 +64,22 @@ Xt.mount.push({
     const eventOn = function (e) {
       const tr = e.target
       if (self.targets.includes(tr)) { // event bubbles
-        if (!self.initial) {
-          const xMax = tr.clientWidth
-          // direction
-          let direction = 1
-          if (tr.classList.contains('inverse')) {
-            direction = -1
+        const xMax = tr.clientWidth
+        // direction
+        let direction = 1
+        if (tr.classList.contains('inverse')) {
+          direction = -1
+        }
+        if (self.initial) {
+          // mask
+          TweenMax.set(tr, { x: 0, opacity: 1, ease: easeOut })
+          TweenMax.set(self.dragger, { x: 0, ease: easeOut })
+          // content
+          const contents = tr.querySelectorAll('.card_content > *')
+          for (const content of contents) {
+            TweenMax.set(content, { x: 0, opacity: 1, ease: easeOut })
           }
+        } else {
           // setup
           TweenMax.set(tr, { opacity: 0 })
           // mask

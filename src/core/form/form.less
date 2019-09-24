@@ -155,6 +155,10 @@ legend {
   .font-sans--regular();
   font-size: 1em; // size in em inherit .form-group size
   line-height: 1.4;
+  // @FIX ios page zoom on focus
+  @media (hover: none) {
+    font-size: 16px;
+  }
   // option
   .form-item--light();
   // animation

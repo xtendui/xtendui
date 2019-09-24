@@ -12,7 +12,7 @@ class Ajax extends Xt.Toggle {
     super(object, optionsJs)
     // prevent scroll on popstate
     if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual'
+      history.scrollRestoration = 'manual' // @TODO with Xt.ready
     }
   }
 
