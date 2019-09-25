@@ -12,17 +12,10 @@ class Sidebar extends React.Component {
             {page.categories.category.map((category, i) => (
               <div key={i}>
                 <div className="site_article_sidebar_cat">
-                  {category.posts.length === 1
-                    ? <Link to={`/${page.post.frontmatter.type}/${kebabCase(category.title.split('-').pop())}/`}
-                          className={`btn btn--site_article_sidebar btn--site_article_sidebar--cat
-                              ${!page.post.frontmatter.categories ? page.post.frontmatter.title === category.title.split('-').pop() ? 'active' : '' : page.post.frontmatter.categories.includes(category.title) ? 'current' : ''}`}>
-                      {category.title.split('-').pop()}
-                    </Link>
-                    : <div className={`btn btn--site_article_sidebar btn--site_article_sidebar--cat
-                              ${!page.post.frontmatter.categories ? page.post.frontmatter.title === category.title.split('-').pop() ? 'active' : '' : page.post.frontmatter.categories.includes(category.title) ? 'current' : ''}`}>
-                      {category.title.split('-').pop()}
-                    </div>
-                  }
+                  <div className={`btn btn--site_article_sidebar btn--site_article_sidebar--cat
+                            ${!page.post.frontmatter.categories ? page.post.frontmatter.title === category.title.split('-').pop() ? 'active' : '' : page.post.frontmatter.categories.includes(category.title) ? 'current' : ''}`}>
+                    {category.title.split('-').pop()}
+                  </div>
                   <div className={`site_article_sidebar_sub active
                               ${!page.post.frontmatter.categories ? page.post.frontmatter.title === category.title.split('-').pop() ? 'active' : '' : page.post.frontmatter.categories.includes(category.title) ? 'active' : ''}`}>
                     <div className="site_article_sidebar_item">

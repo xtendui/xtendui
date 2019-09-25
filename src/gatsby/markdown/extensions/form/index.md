@@ -1,14 +1,12 @@
 ---
-path: "/core/form/extension"
-type: "core"
+path: "/extensions/form/extension"
+type: "extensions"
 date: "2019-12-01"
-title: "Extension"
+title: "Form"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["100-Content"]
 parent: "Form"
 ---
-
-##Extension
 
 ###Label Addon
 

@@ -1,14 +1,12 @@
 ---
-path: "/core/toggle/extension"
-type: "core"
+path: "/extensions/toggle/extension"
+type: "extensions"
 date: "2019-12-01"
-title: "Extension"
+title: "Toggle"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]
 parent: "Toggle"
 ---
-
-##Extension
 
 ###Multilevel
 

@@ -48,7 +48,7 @@ export const query = graphql`
         }
       }
     }
-    postsAdiacent:allMarkdownRemark(filter: {frontmatter: {type: {eq: $type}, parent: {eq: $parent}}}, sort: {fields: [frontmatter___date], order: ASC}) {
+    postsAdiacent: allMarkdownRemark(filter: {frontmatter: {type: {eq: $type}, parent: {eq: $parent}}}, sort: {fields: [frontmatter___date], order: ASC}) {
       posts: edges {
         post: node {
           frontmatter {
