@@ -119,10 +119,11 @@ class Slider extends Xt.Toggle {
     self.detail.fixNegativeMargin = self.groupMq[0][0].offsetLeft
     // @FIX disable slider if not overflowing
     if (totalCount >= 0) {
-      self.object.classList.add('slider--nooverflow')
-      self.disable()
-      // enable all visible elements also if not .active next frame when self.elements is populated
       const afterInitDisable = function () {
+        // disable
+        self.object.classList.add('slider--nooverflow')
+        self.disable()
+        // enable all visible elements also if not .active next frame when self.elements is populated
         const currents = self.getCurrents()
         for (const el of self.elements.filter(x => !currents.includes(self.getElements(x)[0]))) {
           self.activate(el)
