@@ -128,10 +128,10 @@ class Slider extends Core {
     self.detail.fixNegativeMargin = self.groupMq[0][0].offsetLeft;
     // @FIX disable slider if not overflowing
     if (totalCount >= 0) {
-      self.object.classList.add('slider--nooverflow');
-      self.disable();
-      // enable all visible elements also if not .active next frame when self.elements is populated
       let afterInitDisable = function() {
+        self.object.classList.add('slider--nooverflow');
+        self.disable();
+        // enable all visible elements also if not .active next frame when self.elements is populated
         let currents = self.getCurrents();
         for (let el of self.elements.filter(x => !currents.includes(self.getElements(x).single))) {
           self.activate(el);
