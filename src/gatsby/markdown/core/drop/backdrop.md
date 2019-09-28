@@ -9,7 +9,7 @@ parent: "Drop"
 
 ##Backdrop
 
-Option to have a backdrop with `data-xt-drop='{"backdrop": true}'`
+Option to have a backdrop with `data-xt-drop="{ backdrop: 'true' }"`
 
 <demo>
   <demovanilla src="demos/inline/demos/drop/backdrop">

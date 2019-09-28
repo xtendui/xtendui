@@ -1,15 +1,15 @@
 import path from 'path'
 
-const dirs = path.dirname(__filename).split('/');
+const dirs = path.dirname(__filename).split('/')
 export const demo = {
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
-  type: dirs.pop(),
+  type: dirs.pop()
 }
 
 demo.htmlSource = `
 <div class="list list-space--small align-items--center justify-content--center overlay--class-html--content">
-  <div data-xt-overlay='{"classHtml": "overlay--class-html--left"}'>
+  <div data-xt-overlay="{ classHtml: 'overlay--class-html--left' }">
     <button type="button" class="btn btn--primary">
       left
     </button>
@@ -36,7 +36,7 @@ demo.htmlSource = `
   </div>
 
   <div
-    data-xt-overlay='{"classHtml": "overlay--class-html--right"}'>
+    data-xt-overlay="{ classHtml: 'overlay--class-html--right' }">
     <button type="button" class="btn btn--primary">
       right
     </button>

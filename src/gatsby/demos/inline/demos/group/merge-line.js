@@ -1,15 +1,15 @@
 import path from 'path'
 
-const dirs = path.dirname(__filename).split('/');
+const dirs = path.dirname(__filename).split('/')
 export const demo = {
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
-  type: dirs.pop(),
+  type: dirs.pop()
 }
 
 demo.htmlSource = `
 <button type="button" class="group"
-  data-xt-propagate-interaction='{"targets": ".btn"}'>
+  data-xt-propagate-interaction="{ targets: '.btn' }">
   <div class="group_inner">
     <div class="btn btn--primary">
       btn 1

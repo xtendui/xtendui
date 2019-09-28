@@ -1,15 +1,15 @@
 import path from 'path'
 
-const dirs = path.dirname(__filename).split('/');
+const dirs = path.dirname(__filename).split('/')
 export const demo = {
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
-  type: dirs.pop(),
+  type: dirs.pop()
 }
 
 demo.htmlSource = `
 <div class="list list-space--small align-items--center"
-     data-xt-toggle='{"delayOn": 500, "delayOff": 500}'>
+     data-xt-toggle="{ delayOn: 500, delayOff: 500 }">
   <button type="button" class="btn">
     Toggle 0
   </button>
@@ -39,7 +39,7 @@ demo.htmlSource = `
 <br>
 
 <div class="list list-space--small align-items--center"
-     data-xt-toggle='{"on": "mouseenter", "off": "mouseleave", "delayOn": 500, "delayOff": 500}'>
+     data-xt-toggle="{ on: 'mouseenter', off: 'mouseleave', delayOn: 500, delayOff: 500 }">
   <button type="button" class="btn">
     Toggle 0
   </button>

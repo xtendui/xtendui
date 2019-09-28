@@ -3,16 +3,16 @@ import path from 'path'
 
 import DemoVanillaIframe from 'components/demo-vanilla-iframe'
 
-const dirs = path.dirname(__filename).split('/');
+const dirs = path.dirname(__filename).split('/')
 export const demo = {
+  full: false,
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
-  type: dirs.pop(),
-  full: false
+  type: dirs.pop()
 }
 
 demo.htmlSource = `
-<div data-xt-scroll='{"elements": ".scroll_container > *", "distance": 0}'>
+<div data-xt-scroll="{ elements: '.scroll_container > *', distance: 0 }">
   <div class="list list-space--medium scroll_container demo--scroll_container--distance">
 
     <div class="card">

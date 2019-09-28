@@ -3,12 +3,12 @@ import path from 'path'
 
 import DemoVanillaIframe from 'components/demo-vanilla-iframe'
 
-const dirs = path.dirname(__filename).split('/');
+const dirs = path.dirname(__filename).split('/')
 export const demo = {
+  full: false,
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
-  type: dirs.pop(),
-  full: false
+  type: dirs.pop()
 }
 
 demo.htmlSource = `
@@ -31,7 +31,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div data-xt-sticky='{"position": "bottom"}'>
+<div data-xt-sticky="{ position: 'bottom' }">
   <div class="card card--squared card--light">
     <div class="card_design"></div>
     <div class="card_content">

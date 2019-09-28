@@ -1,15 +1,15 @@
 import path from 'path'
 
-const dirs = path.dirname(__filename).split('/');
+const dirs = path.dirname(__filename).split('/')
 export const demo = {
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
-  type: dirs.pop(),
+  type: dirs.pop()
 }
 
 demo.htmlSource = `
 <div class="slider"
-     data-xt-slider='{"contain": true, "align": "center"}'>
+     data-xt-slider="{ contain: true, align: 'center' }">
 
   <div class="slides">
     <ul class="slides_inner">

@@ -1,15 +1,15 @@
 import path from 'path'
 
-const dirs = path.dirname(__filename).split('/');
+const dirs = path.dirname(__filename).split('/')
 export const demo = {
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
-  type: dirs.pop(),
+  type: dirs.pop()
 }
 
 demo.htmlSource = `
 <div class="slider"
-     data-xt-slider='{"auto": {"time": 2000, "pause": ".slide, .slider_pagination"}}'>
+     data-xt-slider="{ auto: { time: 2000, pause: '.slide, .slider_pagination' } }">
 
   <div class="slides">
     <ul class="slides_inner">

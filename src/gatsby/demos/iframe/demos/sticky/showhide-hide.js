@@ -3,17 +3,17 @@ import path from 'path'
 
 import DemoVanillaIframe from 'components/demo-vanilla-iframe'
 
-const dirs = path.dirname(__filename).split('/');
+const dirs = path.dirname(__filename).split('/')
 export const demo = {
+  full: false,
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
-  type: dirs.pop(),
-  full: false
+  type: dirs.pop()
 }
 
 demo.htmlSource = `
 <div class="sticky-0"
-     data-xt-sticky='{"sticky": "fixed", "limit": {"top": ".sticky-0-start"}, "hide": "down"}'>
+     data-xt-sticky="{ sticky: 'fixed', limit: { top: '.sticky-0-start' }, hide: 'down' }">
   <div class="card card--squared card--dark">
     <div class="card_design"></div>
     <div class="card_content">
@@ -25,7 +25,7 @@ demo.htmlSource = `
 <div class="sticky-0-start"></div>
 
 <div class="sticky-1"
-     data-xt-sticky='{"sticky": "absolute", "contain": {"top": ".sticky-0:not(.xt-clone)"}}'>
+     data-xt-sticky="{ sticky: 'absolute', contain: { top: '.sticky-0:not(.xt-clone)' } }">
   <div class="card card--squared card--light">
     <div class="card_design"></div>
     <div class="card_content">
@@ -43,7 +43,7 @@ demo.htmlSource = `
 </div>
 
 <div class="sticky-2"
-     data-xt-sticky='{"contain": {"top": ".sticky-0:not(.xt-clone), .sticky-1:not(.xt-clone)", "bottom": ".sticky-3:not(.xt-clone)"}, "hide": "up"}'>
+     data-xt-sticky="{ contain: { top: '.sticky-0:not(.xt-clone), .sticky-1:not(.xt-clone)', bottom: '.sticky-3:not(.xt-clone)' }, hide: 'up' }">
   <div class="card card--squared card--light">
     <div class="card_design"></div>
     <div class="card_content">

@@ -1,15 +1,15 @@
 import path from 'path'
 
-const dirs = path.dirname(__filename).split('/');
+const dirs = path.dirname(__filename).split('/')
 export const demo = {
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
-  type: dirs.pop(),
+  type: dirs.pop()
 }
 
 demo.htmlSource = `
 <div class="slider"
-     data-xt-slider='{"groupMq": {"all": 1, "(min-width: 768px)": 0.5}}'>
+     data-xt-slider="{ groupMq: {'all': 1, '(min-width: 768px)': 0.5 } }">
 
   <div class="slides">
     <ul class="slides_inner">

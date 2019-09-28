@@ -12,7 +12,7 @@ parent: "Overlay"
 Use this markup to create a overlay.
 
 <script type="text/plain" class="language-markup">
-  <button type="button" data-xt-overlay='{"targets": "#overlay-custom"}'>
+  <button type="button" data-xt-overlay="{ targets: '#overlay-custom' }">
     <!-- content -->
   </button>
   <div class="overlay_outer" id="overlay-custom">

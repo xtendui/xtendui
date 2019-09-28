@@ -1,10 +1,10 @@
 import path from 'path'
 
-const dirs = path.dirname(__filename).split('/');
+const dirs = path.dirname(__filename).split('/')
 export const demo = {
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
-  type: dirs.pop(),
+  type: dirs.pop()
 }
 
 demo.htmlSource = `
@@ -55,7 +55,7 @@ demo.htmlSource = `
                         ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
                       <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
                         justo.</p>
-                      <div class="drop_outer" data-xt-drop='{"backdrop": true}'>
+                      <div class="drop_outer" data-xt-drop="{ backdrop: true }">
                         <button type="button" class="btn btn--primary">
                           drop backdrop
                         </button>

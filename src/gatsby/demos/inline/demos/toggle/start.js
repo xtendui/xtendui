@@ -1,10 +1,10 @@
 import path from 'path'
 
-const dirs = path.dirname(__filename).split('/');
+const dirs = path.dirname(__filename).split('/')
 export const demo = {
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
-  type: dirs.pop(),
+  type: dirs.pop()
 }
 
 demo.htmlSource = `
@@ -15,7 +15,7 @@ demo.htmlSource = `
 <br>
 
 <div class="list list-space--small align-items--center"
-     data-xt-toggle='{"class": "active class-example-1", "min": 3, "max": 3}'>
+     data-xt-toggle="{ class: 'active class-example-1', min: 3, max: 3 }">
   <button type="button" class="btn" data-xt-group="0">
     Group 0
   </button>

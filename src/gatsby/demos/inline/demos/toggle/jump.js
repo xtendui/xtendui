@@ -1,15 +1,15 @@
 import path from 'path'
 
-const dirs = path.dirname(__filename).split('/');
+const dirs = path.dirname(__filename).split('/')
 export const demo = {
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
-  type: dirs.pop(),
+  type: dirs.pop()
 }
 
 demo.htmlSource = `
 <div class="list list-space--small align-items--center"
-     data-xt-toggle='{"instant": true, "jump": true}'>
+     data-xt-toggle="{ instant: true, jump: true }">
   <button type="button" class="btn">
     Toggle 0
   </button>

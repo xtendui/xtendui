@@ -144,7 +144,7 @@ class Toggle {
       self.elements = Xt.arrSingle(self.object)
       // @FIX set namespace for next frame
       requestAnimationFrame(function () {
-        let arr = Array.from(Xt.arrSingle(document.querySelectorAll('[data-xt-namespace=' + self.namespace + ']')))
+        let arr = Array.from(Xt.arrSingle(document.querySelectorAll('[data-xt-namespace="' + self.namespace + '"]')))
         arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
         if (arr.length) { // fix when using shadow dom doesn't query deep
           self.elements = arr
@@ -1566,9 +1566,9 @@ class Toggle {
         // appendTo
         if (options.appendTo) {
           const appendToTarget = document.querySelector(options.appendTo)
-          const appendOrigin = document.querySelector('[data-xt-origin=' + self.namespace + ']')
+          const appendOrigin = document.querySelector('[data-xt-origin="' + self.namespace + '"]')
           if (!appendOrigin) {
-            el.before(Xt.createElement('<div class="xt-ignore" data-xt-origin=' + self.namespace + '></div>'))
+            el.before(Xt.createElement('<div class="xt-ignore" data-xt-origin="' + self.namespace + '"></div>'))
           }
           el.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
           appendToTarget.appendChild(el)
@@ -1685,7 +1685,7 @@ class Toggle {
         (!self.targets.length && type === 'elements')) { // @FIX when standalone
         // appendTo
         if (options.appendTo) {
-          const appendOrigin = document.querySelector('[data-xt-origin=' + self.namespace + ']')
+          const appendOrigin = document.querySelector('[data-xt-origin="' + self.namespace + '"]')
           if (appendOrigin) {
             el.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
             appendOrigin.before(el)
