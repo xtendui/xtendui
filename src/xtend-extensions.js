@@ -2,7 +2,6 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/extensions/ajax/ajax.js')
   require('xtend-library/src/extensions/animation/MouseFollow.js')
   require('xtend-library/src/extensions/animation/PropagateInteraction.js')
-  require('xtend-library/src/extensions/form/textarea-autosize.js')
   require('xtend-library/src/extensions/form/TextareaAutosize.js')
   require('xtend-library/src/extensions/group/group-number.js')
   require('xtend-library/src/extensions/scroll/scroll.js')

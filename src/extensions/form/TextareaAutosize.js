@@ -1,3 +1,4 @@
+import RJSON from 'relaxed-json'
 import { Xt } from 'xtend-library'
 
 class TextareaAutosize {
@@ -89,3 +90,28 @@ TextareaAutosize.optionsDefault = {
 //
 
 Xt.TextareaAutosize = TextareaAutosize
+
+//
+// observe
+//
+
+Xt.mount.push({
+  matches: '[data-' + Xt.TextareaAutosize.componentName + ']',
+  mount: function (object) {
+    // vars
+
+    const optionsMarkup = object.getAttribute('data-' + Xt.TextareaAutosize.componentName)
+    const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
+
+    // init
+
+    let self = new Xt.TextareaAutosize(object, options)
+
+    // unmount
+
+    return function unmount () {
+      self.destroy()
+      self = null
+    }
+  }
+})

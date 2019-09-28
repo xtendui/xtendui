@@ -729,35 +729,35 @@
 // list alignment
 
 .list--left(@breakpoint: none) when (@breakpoint = none) {
-  .list_btn({ .btn--left(); });
+  .list-btn({ .btn--left(); });
 }
 
 .list--left(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list_btn({ .btn--left(); });
+    .list-btn({ .btn--left(); });
   }
 }
 
 .list--center(@breakpoint: none) when (@breakpoint = none) {
-  .list_btn({ .btn--center(); });
+  .list-btn({ .btn--center(); });
 }
 
 .list--center(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list_btn({ .btn--center(); });
+    .list-btn({ .btn--center(); });
   }
 }
 
 .list--right(@breakpoint: none) when (@breakpoint = none) {
-  .list_btn({ .btn--right(); });
+  .list-btn({ .btn--right(); });
 }
 
 .list--right(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list_btn({ .btn--right(); });
+    .list-btn({ .btn--right(); });
   }
 }
 
