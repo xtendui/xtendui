@@ -1,14 +1,12 @@
 ---
 type: "Extension"
-parent: "Group"
-title: "Group"
+parent: "Overlay"
+title: "Message Outside"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["100-Content"]
+categories: ["300-Interaction"]
 ---
 
-###Number
-
 <demo>
-  <demovanilla src="demos/inline/extensions/group/group-number">
+  <demovanilla src="demos/inline/extensions/overlay/message-outside">
   </demovanilla>
 </demo>

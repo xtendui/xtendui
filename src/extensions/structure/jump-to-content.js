@@ -1,11 +1,11 @@
 import { Xt } from 'xtend-library'
 
 /**
- * xtend extension: jumptocontent
+ * xtend extension: jump-to-content
  */
 
 Xt.mount.push({
-  matches: '.jumptocontent',
+  matches: '.jump-to-content',
   mount: function (object) {
     // event
 

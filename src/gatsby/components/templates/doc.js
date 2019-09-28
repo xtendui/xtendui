@@ -67,7 +67,7 @@ export const query = graphql`
         title
       }
     }
-    post: markdownRemark(frontmatter: {title: {eq: $title}}) {
+    post: markdownRemark(frontmatter: {type: {eq: $type}, parent: {eq: $parent}, title: {eq: $title}}) {
       htmlAst
       frontmatter {
         type

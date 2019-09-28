@@ -1,8 +1,12 @@
 ---
 type: "Extension"
 parent: "Structure"
-title: "Structure"
+title: "Jump to Content"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["000-General"]
-date: "2000-02-01"
 ---
+
+<demo>
+  <div class="demo_item" data-iframe="iframe/extensions/structure/jump-to-content">
+  </div>
+</demo>
