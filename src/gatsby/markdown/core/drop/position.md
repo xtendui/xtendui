@@ -1,10 +1,9 @@
 ---
-path: "/core/drop/position"
-type: "core"
+type: "Core"
+parent: "Drop"
 title: "Position"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]
-parent: "Drop"
 ---
 
 ##Position

@@ -33,16 +33,16 @@ class Template extends React.Component {
 export default Template
 
 export const query = graphql`
-  query($path: String!, $type: String, $parent: String) {
+  query($title: String!, $type: String, $parent: String) {
     categories: allMarkdownRemark(filter: {frontmatter: {type: {eq: $type}}}, sort: {fields: [frontmatter___date,  frontmatter___title], order: ASC}) {
       category: group(field: frontmatter___categories) {
         title: fieldValue
         posts: edges {
           post: node {
             frontmatter {
-              path
-              title
+              type
               parent
+              title
             }
           }
         }
@@ -52,7 +52,8 @@ export const query = graphql`
       posts: edges {
         post: node {
           frontmatter {
-            path
+            type
+            parent
             title
           }
         }
@@ -61,19 +62,19 @@ export const query = graphql`
     parent: markdownRemark(frontmatter: {title: {eq: $parent}}) {
       htmlAst
       frontmatter {
-        path
+        type
+        parent
         title
       }
     }
-    post: markdownRemark(frontmatter: {path: {eq: $path}}) {
+    post: markdownRemark(frontmatter: {title: {eq: $title}}) {
       htmlAst
       frontmatter {
-        path
         type
+        parent
         title
         description
         categories
-        parent
       }
     }
   }
@@ -89,9 +90,9 @@ Template.propTypes = {
             PropTypes.shape({
               post: PropTypes.shape({
                 frontmatter: PropTypes.shape({
-                  path: PropTypes.string.isRequired,
-                  title: PropTypes.string.isRequired,
-                  parent: PropTypes.string
+                  type: PropTypes.string.isRequired,
+                  parent: PropTypes.string,
+                  title: PropTypes.string.isRequired
                 }).isRequired
               }).isRequired
             }).isRequired
@@ -104,7 +105,8 @@ Template.propTypes = {
         PropTypes.shape({
           post: PropTypes.shape({
             frontmatter: PropTypes.shape({
-              path: PropTypes.string.isRequired,
+              type: PropTypes.string.isRequired,
+              parent: PropTypes.string,
               title: PropTypes.string.isRequired
             }).isRequired
           }).isRequired
@@ -113,19 +115,19 @@ Template.propTypes = {
     }).isRequired,
     parent: PropTypes.shape({
       frontmatter: PropTypes.shape({
-        path: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+        parent: PropTypes.string,
         title: PropTypes.string.isRequired
       }).isRequired
     }),
     post: PropTypes.shape({
       htmlAst: PropTypes.object.isRequired,
       frontmatter: PropTypes.shape({
-        path: PropTypes.string.isRequired,
         type: PropTypes.string.isRequired,
+        parent: PropTypes.string,
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
-        categories: PropTypes.array,
-        parent: PropTypes.string
+        categories: PropTypes.array
       }).isRequired
     }).isRequired
   }).isRequired

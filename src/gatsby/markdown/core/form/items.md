@@ -1,10 +1,9 @@
 ---
-path: "/core/form/items"
-type: "core"
+type: "Core"
+parent: "Form"
 title: "Items"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["100-Content"]
-parent: "Form"
 ---
 
 ##Items

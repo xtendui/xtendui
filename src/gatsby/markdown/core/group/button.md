@@ -1,10 +1,9 @@
 ---
-path: "/core/group/button"
-type: "core"
+type: "Core"
+parent: "Group"
 title: "Button"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["100-Content"]
-parent: "Group"
 ---
 
 ##Usage

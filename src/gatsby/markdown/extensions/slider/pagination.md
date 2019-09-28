@@ -1,10 +1,9 @@
 ---
-path: "/extensions/slider/pagination"
-type: "extensions"
+type: "Extension"
+parent: "Slider"
 title: "Pagination"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["400-Presentation"]
-parent: "Slider"
 ---
 
 ###Pagination

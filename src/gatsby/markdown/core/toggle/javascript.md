@@ -1,10 +1,9 @@
 ---
-path: "/core/toggle/javascript"
-type: "core"
+type: "Core"
+parent: "Toggle"
 title: "Javascript"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]
-parent: "Toggle"
 ---
 
 ##Javascript

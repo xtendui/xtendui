@@ -1,10 +1,9 @@
 ---
-path: "/core/group/input"
-type: "core"
+type: "Core"
+parent: "Group"
 title: "Input"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["100-Content"]
-parent: "Group"
 ---
 
 ##Usage

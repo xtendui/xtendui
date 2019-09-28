@@ -1,10 +1,9 @@
 ---
-path: "/extensions/scroll/parallax"
-type: "extensions"
+type: "Extension"
+parent: "Scroll"
 title: "Parallax"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["400-Presentation"]
-parent: "Scroll"
 ---
 
 ###Delay

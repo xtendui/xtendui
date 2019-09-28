@@ -3,6 +3,10 @@ import { Link } from 'gatsby'
 
 class DocAside extends React.Component {
   render () {
+    return (
+      <div></div>
+    )
+    /*
     const { page } = this.props
     return (
       <aside className="site_article_aside xt-fixed--check">
@@ -29,6 +33,7 @@ class DocAside extends React.Component {
         </div>
       </aside>
     )
+    */
   }
 }
 

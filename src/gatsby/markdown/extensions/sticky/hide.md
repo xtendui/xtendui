@@ -1,10 +1,9 @@
 ---
-path: "/extensions/sticky/hide"
-type: "extensions"
+type: "Extension"
+parent: "Sticky"
 title: "Hide"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["400-Presentation"]
-parent: "Sticky"
 ---
 
 ###Hide

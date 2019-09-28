@@ -1,10 +1,9 @@
 ---
-path: "/core/button/variant"
-type: "core"
+type: "Core"
+parent: "Button"
 title: "Variant"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]
-parent: "Button"
 ---
 
 ##Variant

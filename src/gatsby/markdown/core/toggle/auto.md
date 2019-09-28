@@ -1,10 +1,9 @@
 ---
-path: "/core/toggle/auto"
-type: "core"
+type: "Core"
+parent: "Toggle"
 title: "Auto"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]
-parent: "Toggle"
 ---
 
 ##Auto

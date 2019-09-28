@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import kebabCase from 'lodash/kebabCase'
+import kebabCase from 'lodash.kebabcase'
+import { markdownSlug } from 'components/markdown-slug.js'
 
 import logoIcon from 'assets/images/logo-icon-white.svg'
 
@@ -30,34 +31,21 @@ class Header extends React.Component {
                   <div>
                     <div className="site_header_top_links">
                       <Link to='/core'
-                        className={`btn btn--site_header_top_link
-                                        ${page && page.post ? page.post.frontmatter.path === '/' + 'core' ? 'active' : page.post.frontmatter.type === 'core' ? 'current' : '' : ''}`}>
+                        className={`btn btn--site_header_top_link ${page && page.post ? markdownSlug(page.post) === '/' + 'core' ? 'active' : page.post.frontmatter.type === 'Core' ? 'current' : '' : ''}`}>
                         Core
                       </Link>
-                      <Link to='/extensions'
-                        className={`btn btn--site_header_top_link
-                                        ${page && page.post ? page.post.frontmatter.path === '/' + 'extensions' ? 'active' : page.post.frontmatter.type === 'extensions' ? 'current' : '' : ''}`}>
-                        Extensions
+                      <Link to='/extension'
+                        className={`btn btn--site_header_top_link ${page && page.post ? markdownSlug(page.post) === '/' + 'extension' ? 'active' : page.post.frontmatter.type === 'Extension' ? 'current' : '' : ''}`}>
+                        Extension
                       </Link>
-                      <Link to='/themes'
-                        className={`btn btn--site_header_top_link
-                                        ${page && page.post ? page.post.frontmatter.path === '/' + 'themes' ? 'active' : page.post.frontmatter.type === 'themes' ? 'current' : '' : ''}`}>
-                        Themes
+                      <Link to='/theme'
+                        className={`btn btn--site_header_top_link ${page && page.post ? markdownSlug(page.post) === '/' + 'theme' ? 'active' : page.post.frontmatter.type === 'Theme' ? 'current' : '' : ''}`}>
+                        Theme
                       </Link>
                       <Link to='/faq'
-                        className={`btn btn--site_header_top_link
-                                        ${page && page.post ? page.post.frontmatter.path === '/' + 'faq' ? 'active' : page.post.frontmatter.type === 'faq' ? 'current' : '' : ''}`}>
+                        className={`btn btn--site_header_top_link ${page && page.post ? markdownSlug(page.post) === '/' + 'faq' ? 'active' : page.post.frontmatter.type === 'Faq' ? 'current' : '' : ''}`}>
                         Faq
                       </Link>
-                      {/*
-                      {site.categories.type.map((type, i) => (
-                        <Link key={i} to={`/${kebabCase(type.title)}`}
-                          className={`btn btn--site_header_top_link
-                                        ${page && page.post ? page.post.frontmatter.path === '/' + kebabCase(type.title) ? 'active' : page.post.frontmatter.type === type.title ? 'current' : '' : ''}`}>
-                          {type.title}
-                        </Link>
-                      ))}
-                      */}
                     </div>
                   </div>
                   <div>

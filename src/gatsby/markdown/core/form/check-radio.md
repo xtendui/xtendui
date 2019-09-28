@@ -1,10 +1,9 @@
 ---
-path: "/core/form/check-radio"
-type: "core"
+type: "Core"
+parent: "Form"
 title: "Check and Radio"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["100-Content"]
-parent: "Form"
 ---
 
 ##Unstyled

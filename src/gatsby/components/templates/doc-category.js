@@ -2,7 +2,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Link, graphql} from 'gatsby'
-import kebabCase from 'lodash/kebabCase'
+import { markdownSlug } from 'components/markdown-slug.js'
 
 import SEO from 'components/seo'
 import Layout from 'components/layout'
@@ -25,7 +25,7 @@ class Template extends React.Component {
         ))}
         {data.allMarkdownRemark.posts.map(({post}, index) => (
           <div key={index}>
-            <Link to={post.frontmatter.path}>
+            <Link to={markdownSlug(post)}>
               {post.frontmatter.title}
             </Link>
           </div>
@@ -49,7 +49,6 @@ Template.propTypes = {
         PropTypes.shape({
           post: PropTypes.shape({
             frontmatter: PropTypes.shape({
-              path: PropTypes.string.isRequired,
               title: PropTypes.string.isRequired,
               categories: PropTypes.array.isRequired,
             }).isRequired,
@@ -73,7 +72,6 @@ export const query = graphql`
       posts: edges {
         post: node {
           frontmatter {
-            path
             title
             categories
           }

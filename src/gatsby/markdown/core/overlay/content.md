@@ -1,10 +1,9 @@
 ---
-path: "/core/overlay/content"
-type: "core"
+type: "Core"
+parent: "Overlay"
 title: "Content"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]
-parent: "Overlay"
 ---
 
 ##Content

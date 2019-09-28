@@ -1,10 +1,9 @@
 ---
-path: "/extensions/loader/filler"
-type: "extensions"
+type: "Extension"
+parent: "Loader"
 title: "Filler"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["400-Presentation"]
-parent: "Loader"
 ---
 
 ## Filler
