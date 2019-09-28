@@ -1,7 +1,6 @@
 ---
 path: "/extensions/sticky/position"
 type: "extensions"
-date: "2019-01-01"
 title: "Position"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["400-Presentation"]

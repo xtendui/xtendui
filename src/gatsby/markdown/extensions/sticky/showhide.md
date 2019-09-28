@@ -1,7 +1,6 @@
 ---
 path: "/extensions/sticky/showhide"
 type: "extensions"
-date: "2019-07-01"
 title: "Show and Hide"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["400-Presentation"]

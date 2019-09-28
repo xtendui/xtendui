@@ -36,7 +36,7 @@ const formatCode = function (source) {
     // replace entities
     text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
     // replace json quotes
-    text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'')
+    //text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'')
     // replace empty quotes
     text = text.replace(/=""/g, '')
   }
@@ -465,7 +465,5 @@ const populateSources = function (item, element, z) {
   codeInside.classList.add(lang)
   Prism.highlightElement(codeInside)
 }
-
-// export
 
 export { populateBlock, populateDemo }

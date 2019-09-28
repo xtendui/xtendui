@@ -34,7 +34,7 @@ export default Template
 
 export const query = graphql`
   query($path: String!, $type: String, $parent: String) {
-    categories: allMarkdownRemark(filter: {frontmatter: {type: {eq: $type}}}, sort: {fields: [frontmatter___date], order: ASC}) {
+    categories: allMarkdownRemark(filter: {frontmatter: {type: {eq: $type}}}, sort: {fields: [frontmatter___date,  frontmatter___title], order: ASC}) {
       category: group(field: frontmatter___categories) {
         title: fieldValue
         posts: edges {
@@ -48,7 +48,7 @@ export const query = graphql`
         }
       }
     }
-    postsAdiacent: allMarkdownRemark(filter: {frontmatter: {type: {eq: $type}, parent: {eq: $parent}}}, sort: {fields: [frontmatter___date], order: ASC}) {
+    postsAdiacent: allMarkdownRemark(filter: {frontmatter: {type: {eq: $type}, parent: {eq: $parent}}}, sort: {fields: [frontmatter___date,  frontmatter___title], order: ASC}) {
       posts: edges {
         post: node {
           frontmatter {

@@ -1,7 +1,6 @@
 ---
 path: "/core/toggle/class"
 type: "core"
-date: "2019-02-01"
 title: "Class"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]

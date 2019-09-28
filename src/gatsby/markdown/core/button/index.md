@@ -1,7 +1,6 @@
 ---
 path: "/core/button"
 type: "core"
-date: "2000-02-01"
 title: "Button"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]

@@ -1,7 +1,6 @@
 ---
 path: "/core/grid/list"
 type: "core"
-date: "2019-04-01"
 title: "List"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["200-Layout"]

@@ -1,7 +1,6 @@
 ---
 path: "/core/group/merge"
 type: "core"
-date: "2019-02-01"
 title: "Merge"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["100-Content"]
@@ -50,7 +49,7 @@ Use this markup to merge multiple `.btn` in one `[button]` as stack.
 
 <div class="alert">
   <div class="alert_content">
-    @TODO you need to include propagate-interaction extension
+    @TODO see propagate-interaction
   </div>
 </div>
 

@@ -1,16 +1,17 @@
+import RJSON from 'relaxed-json'
 import { Xt } from 'xtend-library'
 
 class Toggle {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
-   * @param {Object} optionsJs User options
+   * @param {Object} optionsCustom User options
    * @constructor
    */
-  constructor (object, optionsJs = {}) {
+  constructor (object, optionsCustom = {}) {
     const self = this
     self.object = object
-    self.optionsJs = optionsJs
+    self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
     self.componentNamespace = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '')
     Xt.checkDefined(self, function () {
@@ -25,10 +26,10 @@ class Toggle {
   /**
    * init
    */
-  init (object = false, optionsJs = false) {
+  init (object = false, optionsCustom = false) {
     const self = this
     self.object = object || self.object
-    self.optionsJs = optionsJs || self.optionsJs
+    self.optionsCustom = optionsCustom || self.optionsCustom
     // vars
     self.classes = []
     self.classesIn = []
@@ -64,10 +65,7 @@ class Toggle {
       self.optionsDefault = self.constructor.optionsDefaultSuper
     }
     // js options
-    self.options = Xt.merge([self.optionsDefault, self.optionsJs])
-    // markup options
-    const markupOptions = self.object.getAttribute('data-' + self.componentName)
-    self.options = Xt.merge([self.options, markupOptions ? JSON.parse(markupOptions) : {}])
+    self.options = Xt.merge([self.optionsDefault, self.optionsCustom ? self.optionsCustom : {}])
     // classes
     self.classes = self.options.class ? [...self.options.class.split(' ')] : []
     self.classesIn = self.options.classIn ? [...self.options.classIn.split(' ')] : []
@@ -2603,9 +2601,14 @@ Xt.Toggle = Toggle
 Xt.mount.push({
   matches: '[data-' + Xt.Toggle.componentName + ']',
   mount: function (object) {
+    // vars
+
+    const optionsMarkup = object.getAttribute('data-' + Xt.Toggle.componentName)
+    const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
+
     // init
 
-    let self = new Xt.Toggle(object, object.getAttribute('data-' + Xt.Toggle.componentName))
+    let self = new Xt.Toggle(object, options)
 
     // unmount
 

@@ -1,7 +1,6 @@
 ---
 path: "/core/form/check-radio"
 type: "core"
-date: "2019-02-01"
 title: "Check and Radio"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["100-Content"]

@@ -4,13 +4,13 @@ class TextareaAutosize {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
-   * @param {Object} optionsJs User options
+   * @param {Object} optionsCustom User options
    * @constructor
    */
-  constructor (object, optionsJs = {}) {
+  constructor (object, optionsCustom = {}) {
     const self = this
     self.object = object
-    self.optionsJs = optionsJs
+    self.optionsCustom = optionsCustom
     Xt.checkDefined(self, function () {
       self.init()
     })
@@ -26,7 +26,7 @@ class TextareaAutosize {
   init () {
     const self = this
     // options
-    self.options = Xt.merge([self.constructor.optionsDefault, self.optionsJs])
+    self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
     // key
     self.object.addEventListener('keydown', self.keychange.bind(self))
     self.object.addEventListener('keyup', self.keychange.bind(self))

@@ -5,14 +5,14 @@ class MouseFollow {
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Node|HTMLElement|EventTarget|Window} container Container node
-   * @param {Object} optionsJs User options
+   * @param {Object} optionsCustom User options
    * @constructor
    */
-  constructor (object, container, optionsJs = {}) {
+  constructor (object, container, optionsCustom = {}) {
     const self = this
     self.object = object
     self.container = container
-    self.optionsJs = optionsJs
+    self.optionsCustom = optionsCustom
     Xt.checkDefined(self, function () {
       self.init()
     })
@@ -28,7 +28,7 @@ class MouseFollow {
   init () {
     const self = this
     // options
-    self.options = Xt.merge([self.constructor.optionsDefault, self.optionsJs])
+    self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
     // events
     self.container.addEventListener('mousemove', self.mousemove.bind(self))
     self.container.addEventListener('mouseenter', self.mouseenter.bind(self))

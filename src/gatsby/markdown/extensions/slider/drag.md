@@ -1,7 +1,6 @@
 ---
 path: "/extensions/slider/drag"
 type: "extensions"
-date: "2019-04-01"
 title: "Drag"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["400-Presentation"]

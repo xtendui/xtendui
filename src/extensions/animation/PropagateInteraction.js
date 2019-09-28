@@ -1,16 +1,17 @@
+import RJSON from 'relaxed-json'
 import { Xt } from 'xtend-library'
 
 class PropagateInteraction {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
-   * @param {Object} optionsJs User options
+   * @param {Object} optionsCustom User options
    * @constructor
    */
-  constructor (object, optionsJs = {}) {
+  constructor (object, optionsCustom = {}) {
     const self = this
     self.object = object
-    self.optionsJs = optionsJs
+    self.optionsCustom = optionsCustom
     Xt.checkDefined(self, function () {
       self.init()
     })
@@ -26,9 +27,10 @@ class PropagateInteraction {
   init () {
     const self = this
     // options
-    self.options = Xt.merge([self.constructor.optionsDefault, self.optionsJs])
+    self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
     // events
     self.targets = self.object.querySelectorAll(self.options.targets)
+    console.log(self.object, self.options);
     if (self.targets.length) {
       self.object.addEventListener('mouseenter', self.hoverOn.bind(self))
       self.object.addEventListener('mouseleave', self.hoverOff.bind(self))
@@ -119,3 +121,28 @@ PropagateInteraction.optionsDefault = {
 //
 
 Xt.PropagateInteraction = PropagateInteraction
+
+//
+// observe
+//
+
+Xt.mount.push({
+  matches: '[data-' + Xt.PropagateInteraction.componentName + ']',
+  mount: function (object) {
+    // vars
+
+    const optionsMarkup = object.getAttribute('data-' + Xt.PropagateInteraction.componentName)
+    const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
+
+    // init
+
+    let self = new Xt.PropagateInteraction(object, options)
+
+    // unmount
+
+    return function unmount () {
+      self.destroy()
+      self = null
+    }
+  }
+})

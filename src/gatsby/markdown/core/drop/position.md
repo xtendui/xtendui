@@ -1,7 +1,6 @@
 ---
 path: "/core/drop/position"
 type: "core"
-date: "2019-03-01"
 title: "Position"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]

@@ -1,7 +1,6 @@
 ---
 path: "/core/overlay/content"
 type: "core"
-date: "2019-04-15"
 title: "Content"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]

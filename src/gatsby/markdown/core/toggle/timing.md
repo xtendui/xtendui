@@ -1,7 +1,6 @@
 ---
 path: "/core/toggle/timing"
 type: "core"
-date: "2019-08-01"
 title: "Timing"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]

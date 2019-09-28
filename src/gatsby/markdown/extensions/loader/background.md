@@ -1,7 +1,6 @@
 ---
 path: "/extensions/loader/background"
 type: "extensions"
-date: "2019-03-01"
 title: "Background"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["400-Presentation"]

@@ -1,7 +1,6 @@
 ---
 path: "/core/toggle/minmax"
 type: "core"
-date: "2019-03-01"
 title: "Min and Max"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]

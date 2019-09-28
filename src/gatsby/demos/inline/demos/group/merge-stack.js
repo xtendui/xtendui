@@ -8,7 +8,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<button type="button" class="group">
+<button type="button" class="group"
+  data-xt-propagate-interaction='{"targets": ".btn"}'>
   <div class="group_inner">
     <div class="btn btn--primary">
       btn 1a

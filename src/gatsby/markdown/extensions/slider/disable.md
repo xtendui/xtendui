@@ -1,7 +1,6 @@
 ---
 path: "/extensions/slider/disable-expand"
 type: "extensions"
-date: "2019-07-01"
 title: "Disable"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["400-Presentation"]

@@ -1,3 +1,4 @@
+import RJSON from 'relaxed-json'
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/core/toggle/toggle.js'
 
@@ -5,11 +6,11 @@ class Overlay extends Xt.Toggle {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
-   * @param {Object} optionsJs User options
+   * @param {Object} optionsCustom User options
    * @constructor
    */
-  constructor (object, optionsJs = {}) {
-    super(object, optionsJs)
+  constructor (object, optionsCustom = {}) {
+    super(object, optionsCustom)
   }
 
   //
@@ -78,9 +79,14 @@ Xt.Overlay = Overlay
 Xt.mount.push({
   matches: '[data-' + Xt.Overlay.componentName + ']',
   mount: function (object) {
+    // vars
+
+    const optionsMarkup = object.getAttribute('data-' + Xt.Overlay.componentName)
+    const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
+
     // init
 
-    let self = new Xt.Overlay(object, object.getAttribute('data-' + Xt.Overlay.componentName))
+    let self = new Xt.Overlay(object, options)
 
     // unmount
 

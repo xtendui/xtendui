@@ -1,4 +1,6 @@
 if (typeof window !== 'undefined') {
+  require('xtend-library/src/demos/group/merge-line.js')
+  require('xtend-library/src/demos/group/merge-stack.js')
   require('xtend-library/src/demos/loader/js-filler.js')
   require('xtend-library/src/demos/loader/js-spinner.js')
   require('xtend-library/src/demos/loader/mouse-filler.js')

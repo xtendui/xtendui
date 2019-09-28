@@ -8,7 +8,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div data-xt-toggle='{"elements": ".list > .btn", "targets": ".list > .demo--toggle--custom-options"}'>
+<div
+  data-xt-toggle='{"elements": ".list > .btn", "targets": ".list > .demo--toggle--custom-options"}'>
   <div class="list list-space--small align-items--center">
     <button type="button" class="btn">
       Toggle 0

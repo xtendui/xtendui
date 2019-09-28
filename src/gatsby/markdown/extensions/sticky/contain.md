@@ -1,7 +1,6 @@
 ---
 path: "/extensions/sticky/contain"
 type: "extensions"
-date: "2019-04-01"
 title: "Contain"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["400-Presentation"]

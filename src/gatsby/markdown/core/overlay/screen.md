@@ -1,7 +1,6 @@
 ---
 path: "/core/overlay/screen"
 type: "core"
-date: "2019-03-01"
 title: "Screen"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]

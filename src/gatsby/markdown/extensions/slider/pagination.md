@@ -1,7 +1,6 @@
 ---
 path: "/extensions/slider/pagination"
 type: "extensions"
-date: "2019-04-20"
 title: "Pagination"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["400-Presentation"]

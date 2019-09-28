@@ -1,9 +1,9 @@
 ---
-path: "/core/javascript"
+path: "/core/setup"
 type: "core"
-date: "2000-08-01"
-title: "Javascript"
+title: "Setup"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["000-Getting started"]
-parent: "Javascript"
+categories: ["000-General"]
+parent: "Setup"
+date: "2000-01-01"
 ---

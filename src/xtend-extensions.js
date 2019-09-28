@@ -1,7 +1,6 @@
 if (typeof window !== 'undefined') {
   require('xtend-library/src/extensions/ajax/ajax.js')
   require('xtend-library/src/extensions/animation/MouseFollow.js')
-  require('xtend-library/src/extensions/animation/propagate-interaction-btn.js')
   require('xtend-library/src/extensions/animation/PropagateInteraction.js')
   require('xtend-library/src/extensions/form/textarea-autosize.js')
   require('xtend-library/src/extensions/form/TextareaAutosize.js')

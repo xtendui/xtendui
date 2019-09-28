@@ -1,7 +1,6 @@
 ---
 path: "/core/toggle/usability"
 type: "core"
-date: "2019-12-01"
 title: "Usability"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]
