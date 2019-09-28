@@ -398,6 +398,27 @@ You can also set others flex alignments like `.list_btn({ justify-content: space
 
 <demo>
   <div class="demo-inline">
+    <div class="demo_item demo_preview" data-name="default">
+      <div class="demo_source demo_source--from" data-lang="language-markup">
+        <ul class="list-block">
+          <li>
+            <button type="button">
+              Lorem Ipsum
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              Dolor sit
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              Amet
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
     <div class="demo_item demo_preview" data-name="left">
       <div class="demo_source demo_source--from" data-lang="language-markup">
         <ul class="list-block list--left">

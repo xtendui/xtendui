@@ -262,40 +262,34 @@
 
 .btn--left(@breakpoint: none) when (@breakpoint = none) {
   justify-content: flex-start;
-  text-align: left;
 }
 
 .btn--left(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     justify-content: flex-start;
-    text-align: left;
   }
 }
 
 .btn--center(@breakpoint: none) when (@breakpoint = none) {
   justify-content: center;
-  text-align: center;
 }
 
 .btn--center(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     justify-content: center;
-    text-align: center;
   }
 }
 
 .btn--right(@breakpoint: none) when (@breakpoint = none) {
   justify-content: flex-end;
-  text-align: right;
 }
 
 .btn--right(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     justify-content: flex-end;
-    text-align: right;
   }
 }
 
