@@ -57,6 +57,10 @@ class Slider extends Xt.Toggle {
   initSliderGroup () {
     const self = this
     const options = self.options
+    // not when empty
+    if (!self.targets.length) {
+      return false;
+    }
     // @FIX disable slider if not overflowing
     self.object.classList.remove('slider--nooverflow')
     // drag wrap
@@ -208,6 +212,10 @@ class Slider extends Xt.Toggle {
   initSliderPags () {
     const self = this
     const options = self.options
+    // not when empty
+    if (!self.targets.length) {
+      return false;
+    }
     // generate elements
     if (options.pagination) {
       const pags = self.object.querySelectorAll(options.pagination)
