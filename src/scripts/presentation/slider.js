@@ -65,6 +65,10 @@ class Slider extends Core {
   initSliderGroup() {
     let self = this;
     let options = self.options;
+    // not when empty
+    if (!self.targets.length) {
+      return false;
+    }
     // @FIX disable slider if not overflowing
     self.object.classList.remove('slider--nooverflow');
     // drag wrap
@@ -208,6 +212,10 @@ class Slider extends Core {
   initSliderPags() {
     let self = this;
     let options = self.options;
+    // not when empty
+    if (!self.targets.length) {
+      return false;
+    }
     // generate elements
     if (options.pagination) {
       let pags = self.object.querySelectorAll(options.pagination);
