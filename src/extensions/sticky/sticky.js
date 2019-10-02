@@ -146,9 +146,9 @@ class Sticky extends Xt.Toggle {
       if (el.classList.contains('sticky--hide')) {
         const active = el.contains(e.target)
         if (active) {
-          el.style.transform = 'translateY(0px)'
+          el.style.top = '0px'
         } else {
-          el.style.transform = 'translateY(' + Xt.dataStorage.get(el, self.componentNamespace + 'AddOld') + 'px)'
+          el.style.top = Xt.dataStorage.get(el, self.componentNamespace + 'AddOld') + 'px'
         }
       }
     }
@@ -322,7 +322,7 @@ class Sticky extends Xt.Toggle {
       */
       // set add
       if (add !== Xt.dataStorage.get(el, self.componentNamespace + 'AddOld')) {
-        el.style.transform = 'translateY(' + add + 'px)'
+        el.style.top = add + 'px'
       }
       // fix position fixed width 100% of parent
       const width = Xt.normalizeWidth(tr.clientWidth)
