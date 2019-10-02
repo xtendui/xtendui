@@ -329,7 +329,7 @@ class Sticky extends Core {
       */
       // set add
       if (add !== Xt.dataStorage.get(el, self.componentNamespace + 'AddOld')) {
-        el.style.transform = 'translateY(' + add + 'px)';
+        el.style.top = add + 'px'; // @FIX safari position fixed with transform
       }
       // fix position fixed width 100% of parent
       let width = Xt.normalizeWidth(tr.clientWidth);
