@@ -10,7 +10,7 @@ export const Xt = {}
 // vars
 //
 
-Xt.debug = true
+Xt.debug = false
 Xt.mount = []
 Xt.unmount = []
 Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
