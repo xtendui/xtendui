@@ -30,7 +30,6 @@ class PropagateInteraction {
     self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
     // events
     self.targets = self.object.querySelectorAll(self.options.targets)
-    console.log(self.object, self.options);
     if (self.targets.length) {
       self.object.addEventListener('mouseenter', self.hoverOn.bind(self))
       self.object.addEventListener('mouseleave', self.hoverOff.bind(self))
