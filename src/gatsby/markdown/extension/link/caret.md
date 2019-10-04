@@ -1,12 +1,12 @@
 ---
 type: "Extension"
-parent: "Overlay"
-title: "Message Outside"
+parent: "Link"
+title: "Caret"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 categories: ["300-Interaction"]
 ---
 
 <demo>
-  <demovanilla src="demos/inline/extensions/overlay/message-outside">
+  <demovanilla src="demos/inline/extension/link/caret">
   </demovanilla>
 </demo>

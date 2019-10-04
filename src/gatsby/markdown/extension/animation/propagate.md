@@ -9,7 +9,7 @@ categories: ["000-General"]
 ##Usage
 
 ```jsx
-import 'xtend-library/src/extensions/animation/PropagateInteraction.js'
+import 'xtend-library/src/extension/animation/PropagateInteraction.js'
 ```
 
 <script type="text/plain" class="language-markup">

@@ -1,12 +1,12 @@
 ---
 type: "Extension"
-parent: "Link"
-title: "Caret"
+parent: "Form"
+title: "Textarea Autosize"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["300-Interaction"]
+categories: ["100-Content"]
 ---
 
 <demo>
-  <demovanilla src="demos/inline/extensions/link/caret">
+  <demovanilla src="demos/inline/extension/form/textarea-autosize">
   </demovanilla>
 </demo>

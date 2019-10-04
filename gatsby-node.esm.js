@@ -36,13 +36,13 @@ lessDemosGlob.on('end', function (filepath) {
 })
 
 let lessExtensions = ''
-const lessExtensionsGlob = new glob.Glob('src/extensions/**/*.less', function (er, files) {
+const lessExtensionsGlob = new glob.Glob('src/extension/**/*.less', function (er, files) {
   for (const file of files) {
     lessExtensions += `@import '~xtend-library/${file}';\n`
   }
 })
 lessExtensionsGlob.on('end', function (filepath) {
-  writeFile('./src/xtend-extensions.less', lessExtensions, function (err) {
+  writeFile('./src/xtend-extension.less', lessExtensions, function (err) {
     if (err) console.log(err)
   })
 })
@@ -79,7 +79,7 @@ jsDemosGlob.on('end', function (filepath) {
 })
 
 let jsExtensions = 'if (typeof window !== \'undefined\') {\n'
-const jsExtensionsGlob = new glob.Glob('src/extensions/**/*.js', function (er, files) {
+const jsExtensionsGlob = new glob.Glob('src/extension/**/*.js', function (er, files) {
   for (const file of files) {
     // const obj = path.parse(file); ${obj.dir}/${obj.name}
     jsExtensions += `  require('xtend-library/${file}')\n`
@@ -88,7 +88,7 @@ const jsExtensionsGlob = new glob.Glob('src/extensions/**/*.js', function (er, f
   jsExtensions += '\n'
 })
 jsExtensionsGlob.on('end', function (filepath) {
-  writeFile('./src/xtend-extensions.js', jsExtensions, function (err) {
+  writeFile('./src/xtend-extension.js', jsExtensions, function (err) {
     if (err) console.log(err)
   })
 })

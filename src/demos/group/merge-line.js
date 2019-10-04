@@ -1,1 +1,1 @@
-import 'xtend-library/src/extensions/animation/PropagateInteraction.js'
+import 'xtend-library/src/extension/animation/PropagateInteraction.js'

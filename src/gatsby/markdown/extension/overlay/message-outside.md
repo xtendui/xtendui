@@ -1,12 +1,12 @@
 ---
 type: "Extension"
-parent: "Form"
-title: "Textarea Autosize"
+parent: "Overlay"
+title: "Message Outside"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["100-Content"]
+categories: ["300-Interaction"]
 ---
 
 <demo>
-  <demovanilla src="demos/inline/extensions/form/textarea-autosize">
+  <demovanilla src="demos/inline/extension/overlay/message-outside">
   </demovanilla>
 </demo>

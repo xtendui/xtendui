@@ -7,6 +7,6 @@ categories: ["000-General"]
 ---
 
 <demo>
-  <div class="demo_item" data-iframe="iframe/extensions/structure/jump-to-content">
+  <div class="demo_item" data-iframe="iframe/extension/structure/jump-to-content">
   </div>
 </demo>

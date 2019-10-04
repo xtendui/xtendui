@@ -1,12 +1,12 @@
 ---
 type: "Extension"
-parent: "Form"
-title: "Group Number"
+parent: "Overlay"
+title: "Class Html"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-categories: ["100-Content"]
+categories: ["300-Interaction"]
 ---
 
 <demo>
-  <demovanilla src="demos/inline/extensions/form/group-number">
+  <demovanilla src="demos/inline/extension/overlay/class-html">
   </demovanilla>
 </demo>

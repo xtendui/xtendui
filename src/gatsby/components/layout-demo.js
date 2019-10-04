@@ -6,7 +6,7 @@ import ResizeSensor from 'assets/scripts/ResizeSensor.js'
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/xtend-core.js'
 import 'xtend-library/src/xtend-demos.js'
-import 'xtend-library/src/xtend-extensions.js'
+import 'xtend-library/src/xtend-extension.js'
 
 import 'assets/styles/theme.less'
 
