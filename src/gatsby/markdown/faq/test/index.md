@@ -72,8 +72,6 @@ let self = new Xt.Scroll(document.documentElement, {
 
 ##Demo
 
-###Inline demo
-
 <demo>
   <div class="demo-inline">
     <div class="demo_item demo_preview" data-name="vanilla">
@@ -95,7 +93,7 @@ let self = new Xt.Scroll(document.documentElement, {
   </div>
 </demo>
 
-###Demo
+###Inline
 
 <demo>
   <demovanilla src="inline/demo/test/vanilla">
@@ -114,7 +112,7 @@ let self = new Xt.Scroll(document.documentElement, {
   </demoreact>
 </demo>
 
-###Iframe demo
+###Iframe
 
 <demo>
   <div class="demo_item" data-iframe="iframe/demo/test/vanilla-iframe">

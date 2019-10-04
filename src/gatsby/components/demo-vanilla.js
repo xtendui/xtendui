@@ -7,8 +7,7 @@ import { cssSource, jsSource } from 'assets/scripts/source'
 class DemoVanilla extends React.Component {
   render () {
     const { src, children } = this.props
-    const path = 'code/' + src
-    const demo = require('../' + path + '.js').demo
+    const demo = require('../code/' + src + '.js').demo
     return (
       <StaticQuery
         query={graphql`
@@ -23,7 +22,7 @@ class DemoVanilla extends React.Component {
           }
         `}
         render={data => (
-          <div className="demo_item demo_preview" data-name={demo.name} data-inline={path}>
+          <div className="demo_item demo_preview" data-name={demo.name} data-inline={src}>
             {children}
             <div className="demo_source demo_source--from" data-lang="html" dangerouslySetInnerHTML={{ __html: demo.htmlSource }}/>
             {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`).map((file, index) => (
