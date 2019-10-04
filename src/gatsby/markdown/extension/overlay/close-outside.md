@@ -7,6 +7,6 @@ categories: ["300-Interaction"]
 ---
 
 <demo>
-  <demovanilla src="demos/inline/extension/overlay/close-outside">
+  <demovanilla src="inline/extension/overlay/close-outside">
   </demovanilla>
 </demo>

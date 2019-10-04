@@ -11,6 +11,6 @@ categories: ["400-Presentation"]
 You can use a function for `"delayOn"` and `"delayOff"` for example `function(current, total) {return Math.min((total - current) * 150, 300)}`.
 
 <demo>
-  <div class="demo_item" data-iframe="iframe/demos/scroll/delay">
+  <div class="demo_item" data-iframe="iframe/demo/scroll/delay">
   </div>
 </demo>

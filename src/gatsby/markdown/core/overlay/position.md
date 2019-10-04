@@ -13,6 +13,6 @@ Fullscreen overlay but with usable sizes.
 `.overlay--screen`
 
 <demo>
-  <demovanilla src="demos/inline/demos/overlay/position">
+  <demovanilla src="inline/demo/overlay/position">
   </demovanilla>
 </demo>

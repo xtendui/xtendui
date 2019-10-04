@@ -70,9 +70,9 @@ let self = new Xt.Scroll(document.documentElement, {
 
 </div>
 
-##Demos
+##Demo
 
-###Inline demos
+###Inline demo
 
 <demo>
   <div class="demo-inline">
@@ -95,17 +95,17 @@ let self = new Xt.Scroll(document.documentElement, {
   </div>
 </demo>
 
-###Demos
+###Demo
 
 <demo>
-  <demovanilla src="demos/inline/demos/test/vanilla">
+  <demovanilla src="inline/demo/test/vanilla">
     <div class="demo_text">
       <div class="alert_content">
         Test
       </div>
     </div>
   </demovanilla>
-  <demoreact src="demos/inline/demos/test/react">
+  <demoreact src="inline/demo/test/react">
     <div class="demo_text">
       <div class="alert_content">
         Test
@@ -114,17 +114,17 @@ let self = new Xt.Scroll(document.documentElement, {
   </demoreact>
 </demo>
 
-###Iframe demos
+###Iframe demo
 
 <demo>
-  <div class="demo_item" data-iframe="iframe/demos/test/vanilla-iframe">
+  <div class="demo_item" data-iframe="iframe/demo/test/vanilla-iframe">
     <div class="demo_text">
       <div class="alert_content">
         Test
       </div>
     </div>
   </div>
-  <div class="demo_item" data-iframe="iframe/demos/test/react-iframe">
+  <div class="demo_item" data-iframe="iframe/demo/test/react-iframe">
     <div class="demo_text">
       <div class="alert_content">
         Test

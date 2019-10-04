@@ -15,6 +15,6 @@ Use `"loop": false` to disable loop.
 `"navigation": Query`
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/navigation">
+  <demovanilla src="inline/demo/toggle/navigation">
   </demovanilla>
 </demo>

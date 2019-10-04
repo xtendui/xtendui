@@ -11,6 +11,6 @@ categories: ["300-Interaction"]
 Use `"jump": true` to enable clicking on a **target** to jump to them.
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/jump">
+  <demovanilla src="inline/demo/toggle/jump">
   </demovanilla>
 </demo>

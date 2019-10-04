@@ -31,11 +31,11 @@ Use this markup to create a checkbox or radio **unstyled**.
 ###Modes
 
 <demo>
-  <demovanilla src="demos/inline/demos/form/check-radio-unstyled-block">
+  <demovanilla src="inline/demo/form/check-radio-unstyled-block">
   </demovanilla>
-  <demovanilla src="demos/inline/demos/form/check-radio-unstyled-inline">
+  <demovanilla src="inline/demo/form/check-radio-unstyled-inline">
   </demovanilla>
-  <demovanilla src="demos/inline/demos/form/check-radio-unstyled-disabled">
+  <demovanilla src="inline/demo/form/check-radio-unstyled-disabled">
   </demovanilla>
 </demo>
 
@@ -64,11 +64,11 @@ Use this markup to create a checkbox or radio **styled**.
 ###Modes
 
 <demo>
-  <demovanilla src="demos/inline/demos/form/check-radio-styled-block">
+  <demovanilla src="inline/demo/form/check-radio-styled-block">
   </demovanilla>
-  <demovanilla src="demos/inline/demos/form/check-radio-styled-inline">
+  <demovanilla src="inline/demo/form/check-radio-styled-inline">
   </demovanilla>
-  <demovanilla src="demos/inline/demos/form/check-radio-styled-disabled">
+  <demovanilla src="inline/demo/form/check-radio-styled-disabled">
   </demovanilla>
 </demo>
 
@@ -95,10 +95,10 @@ Use this markup to create a **fake** checkbox or radio **styled**.
 ###Modes
 
 <demo>
-  <demovanilla src="demos/inline/demos/form/check-radio-fake-block">
+  <demovanilla src="inline/demo/form/check-radio-fake-block">
   </demovanilla>
-  <demovanilla src="demos/inline/demos/form/check-radio-fake-inline">
+  <demovanilla src="inline/demo/form/check-radio-fake-inline">
   </demovanilla>
-  <demovanilla src="demos/inline/demos/form/check-radio-fake-disabled">
+  <demovanilla src="inline/demo/form/check-radio-fake-disabled">
   </demovanilla>
 </demo>

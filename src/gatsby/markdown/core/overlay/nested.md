@@ -9,6 +9,6 @@ categories: ["300-Interaction"]
 ##Nested
 
 <demo>
-  <demovanilla src="demos/inline/demos/overlay/nested">
+  <demovanilla src="inline/demo/overlay/nested">
   </demovanilla>
 </demo>

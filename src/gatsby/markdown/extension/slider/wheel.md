@@ -11,6 +11,6 @@ categories: ["400-Presentation"]
 Use `"wheel": {"selector": "object"}` or `"wheel": {"selector": Query}` to enable mousewheel navigation.
 
 <demo>
-  <demovanilla src="demos/inline/demos/slider/wheel">
+  <demovanilla src="inline/demo/slider/wheel">
   </demovanilla>
 </demo>

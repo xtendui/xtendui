@@ -11,10 +11,10 @@ categories: ["400-Presentation"]
 To show or hide content when sticky activates use `.show-sticky` or `.hide-sticky`.
 
 <demo>
-  <div class="demo_item" data-iframe="iframe/demos/sticky/showhide-top">
+  <div class="demo_item" data-iframe="iframe/demo/sticky/showhide-top">
   </div>
-  <div class="demo_item" data-iframe="iframe/demos/sticky/showhide-bottom">
+  <div class="demo_item" data-iframe="iframe/demo/sticky/showhide-bottom">
   </div>
-  <div class="demo_item" data-iframe="iframe/demos/sticky/showhide-hide">
+  <div class="demo_item" data-iframe="iframe/demo/sticky/showhide-hide">
   </div>
 </demo>

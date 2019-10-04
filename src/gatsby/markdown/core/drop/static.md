@@ -13,6 +13,6 @@ Drop position relative to closest element with `position: relative;` with `.drop
 For limiting event inside a selector use `.event-limit`.
 
 <demo>
-  <demovanilla src="demos/inline/demos/drop/static">
+  <demovanilla src="inline/demo/drop/static">
   </demovanilla>
 </demo>

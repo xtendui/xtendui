@@ -11,6 +11,6 @@ categories: ["400-Presentation"]
 Use events `'start.xt.auto'` `'stop.xt.auto'` `'pause.xt.auto'`
 
 <demo>
-  <demovanilla src="demos/inline/demos/slider/progress">
+  <demovanilla src="inline/demo/slider/progress">
   </demovanilla>
 </demo>

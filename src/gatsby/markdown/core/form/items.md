@@ -9,6 +9,6 @@ categories: ["100-Content"]
 ##Items
 
 <demo>
-  <demovanilla src="demos/inline/demos/form/items">
+  <demovanilla src="inline/demo/form/items">
   </demovanilla>
 </demo>

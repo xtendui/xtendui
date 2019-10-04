@@ -11,11 +11,11 @@ categories: ["400-Presentation"]
 `.loader--mouse`
 
 <demo>
-  <demovanilla src="demos/inline/demos/loader/mouse-spinner">
+  <demovanilla src="inline/demo/loader/mouse-spinner">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="demos/inline/demos/loader/mouse-filler">
+  <demovanilla src="inline/demo/loader/mouse-filler">
   </demovanilla>
 </demo>

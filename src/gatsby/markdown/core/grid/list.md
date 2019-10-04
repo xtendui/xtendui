@@ -221,7 +221,7 @@ List's buttons are styled automatically, but if you want to customize the button
 In css you can use `.list-btn({});` to style all `.list:not(.custom) > li > .btn`.
 
 <demo>
-  <demovanilla src="demos/inline/demos/list/custom-btn">
+  <demovanilla src="inline/demo/list/custom-btn">
   </demovanilla>
 </demo>
 

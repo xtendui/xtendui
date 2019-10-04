@@ -15,6 +15,6 @@ You can change the **default variant** @TODO less path
 `.drop--light` `.drop--dark`
         
 <demo>
-  <demovanilla src="demos/inline/demos/drop/variant">
+  <demovanilla src="inline/demo/drop/variant">
   </demovanilla>
 </demo>

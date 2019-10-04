@@ -7,6 +7,6 @@ categories: ["300-Interaction"]
 ---
 
 <demo>
-  <demovanilla src="demos/inline/extension/link/caret">
+  <demovanilla src="inline/extension/link/caret">
   </demovanilla>
 </demo>

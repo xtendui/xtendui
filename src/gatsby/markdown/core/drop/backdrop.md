@@ -11,6 +11,6 @@ categories: ["300-Interaction"]
 Option to have a backdrop with `data-xt-drop="{ backdrop: 'true' }"`
 
 <demo>
-  <demovanilla src="demos/inline/demos/drop/backdrop">
+  <demovanilla src="inline/demo/drop/backdrop">
   </demovanilla>
 </demo>

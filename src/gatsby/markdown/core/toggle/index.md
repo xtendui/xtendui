@@ -59,14 +59,14 @@ You can create a toggle with **mutiple** mode by assigning `[data-xt-toggle]` to
 With multiple **targets**, the ones activated is the one with the same index of the toggled **element**. Nested **targets** are filtered out.
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/multiple-index">
+  <demovanilla src="inline/demo/toggle/multiple-index">
   </demovanilla>
 </demo>
 
 Custom **elements** and **targets**.
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/custom-options">
+  <demovanilla src="inline/demo/toggle/custom-options">
   </demovanilla>
 </demo>
 
@@ -87,20 +87,20 @@ When you don't specify **elements** the scope becomes global and the element bec
 Toggle a single **element** with `[data-xt-toggle]`.
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/unique-self">
+  <demovanilla src="inline/demo/toggle/unique-self">
   </demovanilla>
 </demo>
 
 Toggle a single **target** using `targets` with **#id**.
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/unique-single">
+  <demovanilla src="inline/demo/toggle/unique-single">
   </demovanilla>
 </demo>
 
 Toggle same **targets** using `targets` with **#id**.
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/unique-same">
+  <demovanilla src="inline/demo/toggle/unique-same">
   </demovanilla>
 </demo>

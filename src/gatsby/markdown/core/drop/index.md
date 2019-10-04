@@ -39,20 +39,20 @@ let self = new Xt.Drop(document.querySelector('.my-drop'), {
 You can use drop to make a dropdown with inside anything.
 
 <demo>
-  <demovanilla src="demos/inline/demos/drop/usage-card">
+  <demovanilla src="inline/demo/drop/usage-card">
   </demovanilla>
 </demo>
 
 ###Drop of lists
 
 <demo>
-  <demovanilla src="demos/inline/demos/drop/usage-list">
+  <demovanilla src="inline/demo/drop/usage-list">
   </demovanilla>
 </demo>
 
 `.list.list--drop` to override buttons use `li.custom`
 
 <demo>
-  <demovanilla src="demos/inline/demos/drop/usage-list-drop">
+  <demovanilla src="inline/demo/drop/usage-list-drop">
   </demovanilla>
 </demo>

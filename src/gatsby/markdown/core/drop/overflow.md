@@ -11,6 +11,6 @@ categories: ["300-Interaction"]
 Drop with max sizes with automatic scrollbar on overflow with `drop--overflow-y`.
 
 <demo>
-  <demovanilla src="demos/inline/demos/drop/overflow">
+  <demovanilla src="inline/demo/drop/overflow">
   </demovanilla>
 </demo>

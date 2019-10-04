@@ -13,6 +13,6 @@ Overlay positioned on the page.
 `.overlay--left` `.overlay--right`
 
 <demo>
-  <demovanilla src="demos/inline/demos/overlay/screen">
+  <demovanilla src="inline/demo/overlay/screen">
   </demovanilla>
 </demo>

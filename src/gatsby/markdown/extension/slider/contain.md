@@ -13,16 +13,16 @@ Use `"contain": true` to contain the slides.
 `"contain": true", align": "center"` `"contain": true", "align": "left"` `"contain": true", "align": "right"`
 
 <demo>
-  <demovanilla src="demos/inline/demos/slider/contain-center">
+  <demovanilla src="inline/demo/slider/contain-center">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="demos/inline/demos/slider/contain-left">
+  <demovanilla src="inline/demo/slider/contain-left">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="demos/inline/demos/slider/contain-right">
+  <demovanilla src="inline/demo/slider/contain-right">
   </demovanilla>
 </demo>

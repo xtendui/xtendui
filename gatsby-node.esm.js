@@ -23,26 +23,26 @@ lessCoreGlob.on('end', function (filepath) {
   })
 })
 
-let lessDemos = ''
-const lessDemosGlob = new glob.Glob('src/demos/**/*.less', function (er, files) {
+let lessDemo = ''
+const lessDemoGlob = new glob.Glob('src/demo/**/*.less', function (er, files) {
   for (const file of files) {
-    lessDemos += `@import '~xtend-library/${file}';\n`
+    lessDemo += `@import '~xtend-library/${file}';\n`
   }
 })
-lessDemosGlob.on('end', function (filepath) {
-  writeFile('./src/xtend-demos.less', lessDemos, function (err) {
+lessDemoGlob.on('end', function (filepath) {
+  writeFile('./src/xtend-demo.less', lessDemo, function (err) {
     if (err) console.log(err)
   })
 })
 
-let lessExtensions = ''
-const lessExtensionsGlob = new glob.Glob('src/extension/**/*.less', function (er, files) {
+let lessExtension = ''
+const lessExtensionGlob = new glob.Glob('src/extension/**/*.less', function (er, files) {
   for (const file of files) {
-    lessExtensions += `@import '~xtend-library/${file}';\n`
+    lessExtension += `@import '~xtend-library/${file}';\n`
   }
 })
-lessExtensionsGlob.on('end', function (filepath) {
-  writeFile('./src/xtend-extension.less', lessExtensions, function (err) {
+lessExtensionGlob.on('end', function (filepath) {
+  writeFile('./src/xtend-extension.less', lessExtension, function (err) {
     if (err) console.log(err)
   })
 })
@@ -64,31 +64,31 @@ jsCoreGlob.on('end', function (filepath) {
   })
 })
 
-let jsDemos = 'if (typeof window !== \'undefined\') {\n'
-const jsDemosGlob = new glob.Glob('src/demos/**/*.js', function (er, files) {
+let jsDemo = 'if (typeof window !== \'undefined\') {\n'
+const jsDemoGlob = new glob.Glob('src/demo/**/*.js', function (er, files) {
   for (const file of files) {
-    jsDemos += `  require('xtend-library/${file}')\n`
+    jsDemo += `  require('xtend-library/${file}')\n`
   }
-  jsDemos += '}'
-  jsDemos += '\n'
+  jsDemo += '}'
+  jsDemo += '\n'
 })
-jsDemosGlob.on('end', function (filepath) {
-  writeFile('./src/xtend-demos.js', jsDemos, function (err) {
+jsDemoGlob.on('end', function (filepath) {
+  writeFile('./src/xtend-demo.js', jsDemo, function (err) {
     if (err) console.log(err)
   })
 })
 
-let jsExtensions = 'if (typeof window !== \'undefined\') {\n'
-const jsExtensionsGlob = new glob.Glob('src/extension/**/*.js', function (er, files) {
+let jsExtension = 'if (typeof window !== \'undefined\') {\n'
+const jsExtensionGlob = new glob.Glob('src/extension/**/*.js', function (er, files) {
   for (const file of files) {
     // const obj = path.parse(file); ${obj.dir}/${obj.name}
-    jsExtensions += `  require('xtend-library/${file}')\n`
+    jsExtension += `  require('xtend-library/${file}')\n`
   }
-  jsExtensions += '}'
-  jsExtensions += '\n'
+  jsExtension += '}'
+  jsExtension += '\n'
 })
-jsExtensionsGlob.on('end', function (filepath) {
-  writeFile('./src/xtend-extension.js', jsExtensions, function (err) {
+jsExtensionGlob.on('end', function (filepath) {
+  writeFile('./src/xtend-extension.js', jsExtension, function (err) {
     if (err) console.log(err)
   })
 })

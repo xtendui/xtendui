@@ -63,7 +63,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-page-creator',
       options: {
-        path: './src/gatsby/demos/',
+        path: './src/gatsby/code/',
         ignore: ['inline/**/**', '**/*.source.js?(x)']
       }
     },

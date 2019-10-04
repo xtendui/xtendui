@@ -13,7 +13,7 @@ Toggled class is by default `.active`.
 You can specify classes to toggle with `"class": "my-class"`.
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/class">
+  <demovanilla src="inline/demo/toggle/class">
   </demovanilla>
 </demo>
 
@@ -23,6 +23,6 @@ You can start with toggled elements and targets just by adding all of the classe
 If you want to restart the component with the initial starting element use `self.initStart();`.
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/start">
+  <demovanilla src="inline/demo/toggle/start">
   </demovanilla>
 </demo>

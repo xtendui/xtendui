@@ -11,7 +11,7 @@ categories: ["400-Presentation"]
 To disable slider use `.slider.slider--disable` also within media queries.
 
 <demo>
-  <demovanilla src="demos/inline/demos/slider/disable">
+  <demovanilla src="inline/demo/slider/disable">
   </demovanilla>
 </demo>
 
@@ -20,7 +20,7 @@ To disable slider use `.slider.slider--disable` also within media queries.
 Slider automatically disable when not overflowing or by adding manually `.slider.slider--nooverflow`.
 
 <demo>
-  <demovanilla src="demos/inline/demos/slider/no-overflow">
+  <demovanilla src="inline/demo/slider/no-overflow">
   </demovanilla>
 </demo>
 
@@ -29,7 +29,7 @@ Slider automatically disable when not overflowing or by adding manually `.slider
 To disable and expand a slider use `.slider.slider--expand` also within media queries.
 
 <demo>
-  <demovanilla src="demos/inline/demos/slider/expand">
+  <demovanilla src="inline/demo/slider/expand">
   </demovanilla>
 </demo>
 

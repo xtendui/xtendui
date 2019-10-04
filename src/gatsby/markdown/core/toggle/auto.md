@@ -13,7 +13,7 @@ categories: ["300-Interaction"]
 `"auto": {"time": Milliseconds}`.
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/auto-time">
+  <demovanilla src="inline/demo/toggle/auto-time">
   </demovanilla>
 </demo>
 
@@ -22,7 +22,7 @@ categories: ["300-Interaction"]
 `"auto": {"step": Number}`.
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/auto-step">
+  <demovanilla src="inline/demo/toggle/auto-step">
   </demovanilla>
 </demo>
 
@@ -31,7 +31,7 @@ categories: ["300-Interaction"]
 `"auto": {"initial": Boolean}`.
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/auto-initial">
+  <demovanilla src="inline/demo/toggle/auto-initial">
   </demovanilla>
 </demo>
 
@@ -40,7 +40,7 @@ categories: ["300-Interaction"]
 `"auto": {"loop": Boolean}`.
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/auto-loop">
+  <demovanilla src="inline/demo/toggle/auto-loop">
   </demovanilla>
 </demo>
 
@@ -49,7 +49,7 @@ categories: ["300-Interaction"]
 Pause on mouseenter, resume on mouseleave with `"auto": {"pause": Query}`.
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/auto-pause">
+  <demovanilla src="inline/demo/toggle/auto-pause">
   </demovanilla>
 </demo>
 
@@ -58,14 +58,14 @@ Pause on mouseenter, resume on mouseleave with `"auto": {"pause": Query}`.
 Pause on mouseenter, resume on mouseleave with `"auto": {"inverse": Boolean}`.
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/auto-inverse">
+  <demovanilla src="inline/demo/toggle/auto-inverse">
   </demovanilla>
 </demo>
 
 ###Min and Max
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/auto-minmax">
+  <demovanilla src="inline/demo/toggle/auto-minmax">
   </demovanilla>
 </demo>
 
@@ -74,6 +74,6 @@ Pause on mouseenter, resume on mouseleave with `"auto": {"inverse": Boolean}`.
 Use javascript events `'start.xt.auto'` `'stop.xt.auto'` `'pause.xt.auto'`.
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/progress">
+  <demovanilla src="inline/demo/toggle/progress">
   </demovanilla>
 </demo>

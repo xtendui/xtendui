@@ -11,10 +11,10 @@ categories: ["400-Presentation"]
 You can optionally set in the less mixin a mode `"sticky": "absolute"` or `"sticky": "fixed"` or `"sticky": "fixed-always"` to have that position when the sticky is not activated.
 
 <demo>
-  <div class="demo_item" data-iframe="iframe/demos/sticky/mode-absolute">
+  <div class="demo_item" data-iframe="iframe/demo/sticky/mode-absolute">
   </div>
-  <div class="demo_item" data-iframe="iframe/demos/sticky/mode-fixed">
+  <div class="demo_item" data-iframe="iframe/demo/sticky/mode-fixed">
   </div>
-  <div class="demo_item" data-iframe="iframe/demos/sticky/mode-fixed-always">
+  <div class="demo_item" data-iframe="iframe/demo/sticky/mode-fixed-always">
   </div>
 </demo>

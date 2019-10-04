@@ -11,7 +11,7 @@ categories: ["300-Interaction"]
 You can animate with javascript, just use Xt events and remember to set `"durationOn": Milliseconds` and `"durationOff": Milliseconds`.
 
 <demo>
-  <demovanilla src="demos/inline/demos/toggle/javascript">
+  <demovanilla src="inline/demo/toggle/javascript">
   </demovanilla>
 </demo>
 

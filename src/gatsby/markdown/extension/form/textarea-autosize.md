@@ -7,6 +7,6 @@ categories: ["100-Content"]
 ---
 
 <demo>
-  <demovanilla src="demos/inline/extension/form/textarea-autosize">
+  <demovanilla src="inline/extension/form/textarea-autosize">
   </demovanilla>
 </demo>

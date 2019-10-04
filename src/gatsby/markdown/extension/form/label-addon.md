@@ -7,6 +7,6 @@ categories: ["100-Content"]
 ---
 
 <demo>
-  <demovanilla src="demos/inline/extension/form/label-addon">
+  <demovanilla src="inline/extension/form/label-addon">
   </demovanilla>
 </demo>
