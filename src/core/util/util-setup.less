@@ -1,5 +1,5 @@
 /**
- * util
+ * @classes--util
  */
 
 // various
@@ -414,9 +414,7 @@
   }
 }
 
-/**
- * generation
- */
+// generate
 
 & when not (@classes--util = false) {
 
@@ -723,7 +721,7 @@
 }
 
 /**
- * layout
+ * @classes--layout
  */
 
 // list alignment
@@ -766,11 +764,11 @@
 .row-space--y(@name, @breakpoint: none) when (@breakpoint = none) {
   @arr: ~"row-space--@{name}";
   @vertical: extract(@@arr, 1);
-  margin-top: -@vertical;
-  margin-bottom: -@vertical;
+  margin-top: -@vertical !important;
+  margin-bottom: -@vertical !important;
   > * {
-    padding-top: @vertical;
-    padding-bottom: @vertical;
+    padding-top: @vertical !important;
+    padding-bottom: @vertical !important;
   }
 }
 
@@ -779,11 +777,11 @@
   @vertical: extract(@@arr, 1);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    margin-top: -@vertical;
-    margin-bottom: -@vertical;
+    margin-top: -@vertical !important;
+    margin-bottom: -@vertical !important;
     > * {
-      padding-top: @vertical;
-      padding-bottom: @vertical;
+      padding-top: @vertical !important;
+      padding-bottom: @vertical !important;
     }
   }
 }
@@ -791,11 +789,11 @@
 .row-space--x(@name, @breakpoint: none) when (@breakpoint = none) {
   @arr: ~"row-space--@{name}";
   @horizontal: extract(@@arr, 2);
-  margin-left: -@horizontal;
-  margin-right: -@horizontal;
+  margin-left: -@horizontal !important;
+  margin-right: -@horizontal !important;
   > * {
-    padding-left: @horizontal;
-    padding-right: @horizontal;
+    padding-left: @horizontal !important;
+    padding-right: @horizontal !important;
   }
 }
 
@@ -804,11 +802,11 @@
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    margin-left: -@horizontal;
-    margin-right: -@horizontal;
+    margin-left: -@horizontal !important;
+    margin-right: -@horizontal !important;
     > * {
-      padding-left: @horizontal;
-      padding-right: @horizontal;
+      padding-left: @horizontal !important;
+      padding-right: @horizontal !important;
     }
   }
 }
@@ -817,9 +815,9 @@
   @arr: ~"row-space--@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
-  margin: -@vertical -@horizontal;
+  margin: -@vertical -@horizontal !important;
   > * {
-    padding: @vertical @horizontal;
+    padding: @vertical @horizontal !important;
   }
 }
 
@@ -829,9 +827,9 @@
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    margin: -@vertical -@horizontal;
+    margin: -@vertical -@horizontal !important;
     > * {
-      padding: @vertical @horizontal;
+      padding: @vertical @horizontal !important;
     }
   }
 }
@@ -841,11 +839,11 @@
 .list-space--y(@name, @breakpoint: none) when (@breakpoint = none) {
   @arr: ~"list-space--@{name}";
   @vertical: extract(@@arr, 1);
-  margin-top: -@vertical;
-  margin-bottom: -@vertical;
+  margin-top: -@vertical !important;
+  margin-bottom: -@vertical !important;
   > * {
-    margin-top: @vertical;
-    margin-bottom: @vertical;
+    margin-top: @vertical !important;
+    margin-bottom: @vertical !important;
   }
 }
 
@@ -854,11 +852,11 @@
   @vertical: extract(@@arr, 1);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    margin-top: -@vertical;
-    margin-bottom: -@vertical;
+    margin-top: -@vertical !important;
+    margin-bottom: -@vertical !important;
     > * {
-      margin-top: @vertical;
-      margin-bottom: @vertical;
+      margin-top: @vertical !important;
+      margin-bottom: @vertical !important;
     }
   }
 }
@@ -866,11 +864,11 @@
 .list-space--x(@name, @breakpoint: none) when (@breakpoint = none) {
   @arr: ~"list-space--@{name}";
   @horizontal: extract(@@arr, 2);
-  margin-left: -@horizontal;
-  margin-right: -@horizontal;
+  margin-left: -@horizontal !important;
+  margin-right: -@horizontal !important;
   > * {
-    margin-left: @horizontal;
-    margin-right: @horizontal;
+    margin-left: @horizontal !important;
+    margin-right: @horizontal !important;
   }
 }
 
@@ -879,11 +877,11 @@
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    margin-left: -@horizontal;
-    margin-right: -@horizontal;
+    margin-left: -@horizontal !important;
+    margin-right: -@horizontal !important;
     > * {
-      margin-left: @horizontal;
-      margin-right: @horizontal;
+      margin-left: @horizontal !important;
+      margin-right: @horizontal !important;
     }
   }
 }
@@ -892,9 +890,9 @@
   @arr: ~"list-space--@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
-  margin: -@vertical -@horizontal;
+  margin: -@vertical -@horizontal !important;
   > * {
-    margin: @vertical @horizontal;
+    margin: @vertical @horizontal !important;
   }
 }
 
@@ -904,12 +902,134 @@
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    margin: -@vertical -@horizontal;
+    margin: -@vertical -@horizontal !important;
     > * {
-      margin: @vertical @horizontal;
+      margin: @vertical @horizontal !important;
     }
   }
 }
+
+// generate
+
+& when not (@classes--layout = false) {
+
+  // generate-layout
+
+  .generate-layout();
+  .generate-layout(@breakpoint: none) {
+    & when (@breakpoint = none) {
+      // list alignment
+      .list--left {
+        .list--left() !important;
+      }
+      .list--center {
+        .list--center() !important;
+      }
+      .list--right {
+        .list--right() !important;
+      }
+      // row-space
+      .generate-row-space(@breakpoint);
+      // list-space
+      .generate-list-space(@breakpoint);
+    }
+    & when not (@breakpoint = none) {
+      @query-min: 'min-@{breakpoint}';
+      @media @@query-min {
+        // list alignment
+        .list--left-@{breakpoint} {
+          .list--left() !important;
+        }
+        .list--center-@{breakpoint} {
+          .list--center() !important;
+        }
+        .list--right-@{breakpoint} {
+          .list--right() !important;
+        }
+        // row-space
+        .generate-row-space(@breakpoint);
+        // list-space
+        .generate-list-space(@breakpoint);
+      }
+    }
+  }
+
+  // generate-layout-responsive
+
+  & when not (@classes--layout = true) {
+
+    .generate-layout-responsive();
+    .generate-layout-responsive(@i: length(@classes--layout)) when (@i > 0) {
+      .generate-layout-responsive(@i - 1);
+      @breakpoint: extract(@classes--layout, @i);
+      .generate-layout(@breakpoint);
+    }
+
+  }
+
+  // generate-row-space
+
+  .generate-row-space(@breakpoint: none, @i: length(@row-spaces)) when (@i > 0) {
+    .generate-row-space(@breakpoint, @i - 1);
+    @name: extract(@row-spaces, @i);
+    & when (@breakpoint = none) {
+      .row-space--y-@{name} {
+        .row-space--y(@name);
+      }
+      .row-space--x-@{name} {
+        .row-space--x(@name);
+      }
+      .row-space--@{name} {
+        .row-space(@name);
+      }
+    }
+    & when not (@breakpoint = none) {
+      .row-space--y-@{name}-@{breakpoint} {
+        .row-space--y(@name);
+      }
+      .row-space--x-@{name}-@{breakpoint} {
+        .row-space--x(@name);
+      }
+      .row-space--@{name}-@{breakpoint} {
+        .row-space(@name);
+      }
+    }
+  }
+
+  // generate-list-space
+
+  .generate-list-space(@breakpoint: none, @i: length(@list-spaces)) when (@i > 0) {
+    .generate-list-space(@breakpoint, @i - 1);
+    @name: extract(@list-spaces, @i);
+    & when (@breakpoint = none) {
+      .list-space--y-@{name} {
+        .list-space--y(@name);
+      }
+      .list-space--x-@{name} {
+        .list-space--x(@name);
+      }
+      .list-space--@{name} {
+        .list-space(@name);
+      }
+    }
+    & when not (@breakpoint = none) {
+      .list-space--y-@{name}-@{breakpoint} {
+        .list-space--y(@name);
+      }
+      .list-space--x-@{name}-@{breakpoint} {
+        .list-space--x(@name);
+      }
+      .list-space--@{name}-@{breakpoint} {
+        .list-space(@name);
+      }
+    }
+  }
+
+}
+
+/**
+ * @classes--flex
+ */
 
 // flex--none
 
@@ -1015,129 +1135,41 @@
   }
 }
 
-/**
- * generation
- */
+// generate
 
-& when not (@classes--layout = false) {
+& when not (@classes--flex = false) {
 
-  // generate-layouts
+  // generate-flex
 
-  .generate-layouts();
-  .generate-layouts(@breakpoint: none) {
+  .generate-flex();
+  .generate-flex(@breakpoint: none) {
     & when (@breakpoint = none) {
-      // list alignment
-      .list--left {
-        .list--left() !important;
-      }
-      .list--center {
-        .list--center() !important;
-      }
-      .list--right {
-        .list--right() !important;
-      }
-      // row-space
-      .generate-row-space(@breakpoint);
-      // list-space
-      .generate-list-space(@breakpoint);
       // flex util
       .generate-flex-util(@breakpoint);
     }
     & when not (@breakpoint = none) {
       @query-min: 'min-@{breakpoint}';
       @media @@query-min {
-        // list alignment
-        .list--left-@{breakpoint} {
-          .list--left() !important;
-        }
-        .list--center-@{breakpoint} {
-          .list--center() !important;
-        }
-        .list--right-@{breakpoint} {
-          .list--right() !important;
-        }
-        // row-space
-        .generate-row-space(@breakpoint);
-        // list-space
-        .generate-list-space(@breakpoint);
         // flex util
         .generate-flex-util(@breakpoint);
       }
     }
   }
 
-  // generate-layout-responsive
+  // generate-flex-responsive
 
-  & when not (@classes--layout = true) {
+  & when not (@classes--flex = true) {
 
-    .generate-layout-responsive();
-    .generate-layout-responsive(@i: length(@classes--layout)) when (@i > 0) {
-      .generate-layout-responsive(@i - 1);
-      @breakpoint: extract(@classes--layout, @i);
-      .generate-layouts(@breakpoint);
+    .generate-flex-responsive();
+    .generate-flex-responsive(@i: length(@classes--flex)) when (@i > 0) {
+      .generate-flex-responsive(@i - 1);
+      @breakpoint: extract(@classes--flex, @i);
+      .generate-flex(@breakpoint);
     }
 
   }
 
-  // generate-row-space
-
-  .generate-row-space(@breakpoint: none, @i: length(@row-spaces)) when (@i > 0) {
-    .generate-row-space(@breakpoint, @i - 1);
-    @name: extract(@row-spaces, @i);
-    & when (@breakpoint = none) {
-      .row-space--y-@{name} {
-        .row-space--y(@name) !important;
-      }
-      .row-space--x-@{name} {
-        .row-space--x(@name) !important;
-      }
-      .row-space--@{name} {
-        .row-space(@name) !important;
-      }
-    }
-    & when not (@breakpoint = none) {
-      .row-space--y-@{name}-@{breakpoint} {
-        .row-space--y(@name) !important;
-      }
-      .row-space--x-@{name}-@{breakpoint} {
-        .row-space--x(@name) !important;
-      }
-      .row-space--@{name}-@{breakpoint} {
-        .row-space(@name) !important;
-      }
-    }
-  }
-
-  // generate-list-space
-
-  .generate-list-space(@breakpoint: none, @i: length(@list-spaces)) when (@i > 0) {
-    .generate-list-space(@breakpoint, @i - 1);
-    @name: extract(@list-spaces, @i);
-    & when (@breakpoint = none) {
-      .list-space--y-@{name} {
-        .list-space--y(@name) !important;
-      }
-      .list-space--x-@{name} {
-        .list-space--x(@name) !important;
-      }
-      .list-space--@{name} {
-        .list-space(@name) !important;
-      }
-    }
-    & when not (@breakpoint = none) {
-      .list-space--y-@{name}-@{breakpoint} {
-        .list-space--y(@name) !important;
-      }
-      .list-space--x-@{name}-@{breakpoint} {
-        .list-space--x(@name) !important;
-      }
-      .list-space--@{name}-@{breakpoint} {
-        .list-space(@name) !important;
-      }
-    }
-  }
-
-  // .generate-flex-util
+  // generate-flex-util
 
   .generate-flex-util(@breakpoint: none) {
     & when (@breakpoint = none) {
@@ -1335,7 +1367,7 @@
 }
 
 /**
- * grid
+ * @classes--grid
  */
 
 // generate-container-space-responsive
@@ -1363,9 +1395,7 @@
   }
 }
 
-/**
- * generation
- */
+// generate
 
 & when not (@classes--grid = false) {
 
@@ -1424,7 +1454,7 @@
 }
 
 /**
- * margin
+ * @classes--margin
  */
 
 // margin
@@ -1580,15 +1610,9 @@
   margin-right: -@val;
 }
 
-/**
- * generation
- */
+// generate
 
 & when not (@classes--margin = false) {
-
-  /**
-   * margin
-   */
 
   @margin--arr: none, y, x, t, b, l, r;
 
@@ -1613,7 +1637,7 @@
     .margin(right, layout) !important;
   }
 
-  // generate-margin
+  // generate-margins
 
   .generate-margins();
   .generate-margins(@breakpoint: none) {
@@ -1628,7 +1652,7 @@
     }
   }
 
-  // generate-margins
+  // generate-margin
 
   .generate-margin(@breakpoint: none, @i: length(@margin--arr)) when (@i > 0) {
     .generate-margin(@breakpoint, @i - 1);
@@ -1702,7 +1726,7 @@
 }
 
 /**
- * padding
+ * @classes--padding
  */
 
 // padding
@@ -1800,15 +1824,9 @@
   padding-right: @val;
 }
 
-/**
- * generation
- */
+// generate
 
 & when not (@classes--padding = false) {
-
-  /**
-   * padding
-   */
 
   @padding--arr: none, y, x, t, b, l, r;
 
@@ -1833,7 +1851,7 @@
     .padding(right, layout) !important;
   }
 
-  // generate-padding
+  // generate-paddings
 
   .generate-paddings();
   .generate-paddings(@breakpoint: none) {
@@ -1847,6 +1865,9 @@
       }
     }
   }
+
+  // generate-padding
+
   .generate-padding(@breakpoint: none, @i: length(@padding--arr)) when (@i > 0) {
     .generate-padding(@breakpoint, @i - 1);
     @pos: extract(@padding--arr, @i);

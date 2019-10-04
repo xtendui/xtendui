@@ -42,9 +42,9 @@ html {
 
 body {
   .font-sans--regular();
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: @text;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 /**
@@ -166,8 +166,8 @@ h6, .h6 {
  */
 
 p {
-  .margin(bottom, layout) !important;
   .margin(bottom, small);
+  .margin(bottom, layout);
 }
 
 strong {
@@ -183,20 +183,20 @@ small {
 }
 
 .font--medium {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   line-height: 1.6;
 }
 
 .font--giant {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   line-height: 1.6;
 }
 
 // code
 
 code {
-  margin: 0 .05em;
-  padding: .05em .05em;
+  margin: -0.1em 0.1em;
+  padding: 0.1em .3em;
   background: @gray--200 !important;
   .font-monospace();
   font-size: .9em;
@@ -207,8 +207,8 @@ pre {
   overflow-x: hidden !important;
   overflow-y: auto !important;
   .overflow-style(@mode: inner);
-  .margin(y, layout) !important;
   .margin(y, medium) !important;
+  .margin(y, layout) !important;
   .padding(all, medium) !important;
   width: 100%;
   border-radius: .5rem;
@@ -242,6 +242,7 @@ ul,
 ol {
   .margin(top, none);
   .margin(bottom, small);
+  .margin(y, layout);
   padding-left: 2rem;
   > li {
     .margin(bottom, small);
@@ -268,16 +269,19 @@ ol {
 
 // ul list-style custom
 
+/*
 ul {
   list-style: none;
+  padding-left: 0;
   > li {
-    &:before {
-      content: '·';
-      position: absolute;
-      margin-left: -2rem; // same as ul padding
-    }
+    padding-left: 42px;
+    background-image: url('../../assets/images/list-style-image-squared.svg');
+    background-size: 24px auto;
+    background-position: left 6px;
+    background-repeat: no-repeat;
   }
 }
+*/
 
 // .list-reset
 // use this mixin to reset styles on xtend ul.list ul.slides_inner etc..
@@ -287,14 +291,10 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  > * {
-    margin: 0;
-  }
-  // ul list-style custom
   > li {
-    &:before {
-      display: none;
-    }
+    margin: 0;
+    padding: 0;
+    background: none;
   }
 }
 
@@ -303,8 +303,8 @@ ul {
  */
 
 dl {
-  .margin(bottom, layout);
   .margin(bottom, small);
+  .margin(bottom, layout);
   .dl--block();
   line-height: 1.6;
   dt {
