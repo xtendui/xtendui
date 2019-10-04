@@ -4,15 +4,9 @@
  * vars
  */
 
-// util classes generation
-// false -> not generate any classes
-// true -> only generate non responsive classes
-// array of breakpoints -> generate non responsive classes and responsive classes for those breakpoints
+// generate class: [false], [true] non responsive, [sm, md, lg] responsive breakpoints
 
-@classes--icon: true; // only true or false
-@classes--util: sm, md, lg;
-@classes--layout: true;
-@classes--flex: false;
-@classes--grid: sm, md, lg;
-@classes--margin: false;
-@classes--padding: false;
+@generate-class--util: sm, md, lg;
+@generate-class--flex: false;
+@generate-class--margin: false;
+@generate-class--padding: false;

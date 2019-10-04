@@ -38,3 +38,202 @@
     }
   }
 }
+
+/**
+ * @generate-class--layout
+ */
+
+// list alignment
+
+.list--left(@breakpoint: none) when (@breakpoint = none) {
+  .list-btn({ .btn--left(); });
+}
+
+.list--left(@breakpoint: none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    .list-btn({ .btn--left(); });
+  }
+}
+
+.list--center(@breakpoint: none) when (@breakpoint = none) {
+  .list-btn({ .btn--center(); });
+}
+
+.list--center(@breakpoint: none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    .list-btn({ .btn--center(); });
+  }
+}
+
+.list--right(@breakpoint: none) when (@breakpoint = none) {
+  .list-btn({ .btn--right(); });
+}
+
+.list--right(@breakpoint: none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    .list-btn({ .btn--right(); });
+  }
+}
+
+// list-space
+
+.list-space--y(@name, @breakpoint: none) when (@breakpoint = none) {
+  @arr: ~"list-space--@{name}";
+  @vertical: extract(@@arr, 1);
+  margin-top: -@vertical !important;
+  margin-bottom: -@vertical !important;
+  > * {
+    margin-top: @vertical !important;
+    margin-bottom: @vertical !important;
+  }
+}
+
+.list-space--y(@name, @breakpoint: none) when (default()) {
+  @arr: ~"list-space--@{name}";
+  @vertical: extract(@@arr, 1);
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    margin-top: -@vertical !important;
+    margin-bottom: -@vertical !important;
+    > * {
+      margin-top: @vertical !important;
+      margin-bottom: @vertical !important;
+    }
+  }
+}
+
+.list-space--x(@name, @breakpoint: none) when (@breakpoint = none) {
+  @arr: ~"list-space--@{name}";
+  @horizontal: extract(@@arr, 2);
+  margin-left: -@horizontal !important;
+  margin-right: -@horizontal !important;
+  > * {
+    margin-left: @horizontal !important;
+    margin-right: @horizontal !important;
+  }
+}
+
+.list-space--x(@name, @breakpoint: none) when (default()) {
+  @arr: ~"list-space--@{name}";
+  @horizontal: extract(@@arr, 2);
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    margin-left: -@horizontal !important;
+    margin-right: -@horizontal !important;
+    > * {
+      margin-left: @horizontal !important;
+      margin-right: @horizontal !important;
+    }
+  }
+}
+
+.list-space(@name, @breakpoint: none) when (@breakpoint = none) {
+  @arr: ~"list-space--@{name}";
+  @vertical: extract(@@arr, 1);
+  @horizontal: extract(@@arr, 2);
+  margin: -@vertical -@horizontal !important;
+  > * {
+    margin: @vertical @horizontal !important;
+  }
+}
+
+.list-space(@name, @breakpoint: none) when (default()) {
+  @arr: ~"list-space--@{name}";
+  @vertical: extract(@@arr, 1);
+  @horizontal: extract(@@arr, 2);
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    margin: -@vertical -@horizontal !important;
+    > * {
+      margin: @vertical @horizontal !important;
+    }
+  }
+}
+
+// generate
+
+& when not (@generate-class--list = false) {
+
+  // generate-list
+
+  .generate-list();
+  .generate-list(@breakpoint: none) {
+    & when (@breakpoint = none) {
+      // list alignment
+      .list--left {
+        .list--left() !important;
+      }
+      .list--center {
+        .list--center() !important;
+      }
+      .list--right {
+        .list--right() !important;
+      }
+      // list-space
+      .generate-list-space(@breakpoint);
+    }
+    & when not (@breakpoint = none) {
+      @query-min: 'min-@{breakpoint}';
+      @media @@query-min {
+        // list alignment
+        .list--left-@{breakpoint} {
+          .list--left() !important;
+        }
+        .list--center-@{breakpoint} {
+          .list--center() !important;
+        }
+        .list--right-@{breakpoint} {
+          .list--right() !important;
+        }
+        // list-space
+        .generate-list-space(@breakpoint);
+      }
+    }
+  }
+
+  // generate-list-responsive
+
+  & when not (@generate-class--list = true) {
+
+    .generate-list-responsive();
+    .generate-list-responsive(@i: length(@generate-class--list)) when (@i > 0) {
+      .generate-list-responsive(@i - 1);
+      @breakpoint: extract(@generate-class--list, @i);
+      .generate-list(@breakpoint);
+    }
+
+  }
+
+  // generate-list-space
+
+  .generate-list-space(@breakpoint: none, @i: length(@list-spaces)) when (@i > 0) {
+    .generate-list-space(@breakpoint, @i - 1);
+    @name: extract(@list-spaces, @i);
+    & when (@breakpoint = none) {
+      .list-space--y-@{name} {
+        .list-space--y(@name);
+      }
+      .list-space--x-@{name} {
+        .list-space--x(@name);
+      }
+      .list-space--@{name} {
+        .list-space(@name);
+      }
+    }
+    & when not (@breakpoint = none) {
+      .list-space--y-@{name}-@{breakpoint} {
+        .list-space--y(@name);
+      }
+      .list-space--x-@{name}-@{breakpoint} {
+        .list-space--x(@name);
+      }
+      .list-space--@{name}-@{breakpoint} {
+        .list-space(@name);
+      }
+    }
+  }
+
+}

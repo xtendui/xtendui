@@ -24,7 +24,7 @@
 }
 
 /**
- * icons xtend
+ * icon-xt
  */
 
 // styles
@@ -43,45 +43,8 @@
   }
 }
 
-// mixins
-
-.icon-xt(@content, @size: @icon--medium, @position: after) {
-  & when (@position = before) {
-    &:before {
-      .icon-xt();
-      content: '@{content}';
-      font-size: @size;
-    }
-  }
-  & when (@position = after) {
-    &:after {
-      .icon-xt();
-      content: '@{content}';
-      font-size: @size;
-    }
-  }
-}
-
-// generate icons
-
-& when (@classes--icon) {
-
-  .generate-icons();
-  .generate-icons(@i: length(@icons-xt)) when (@i > 0) {
-    .generate-icons(@i - 1);
-    @name: extract(@icons-xt, @i);
-    @val: ~"icon-xt--@{name}";
-    .icon-xt--@{name} {
-      &:before {
-        content: @@val;
-      }
-    }
-  }
-
-}
-
 /**
- * icons theme
+ * icon
  */
 
 @icons-theme--family: none;
@@ -105,7 +68,30 @@
   }
 }
 
-// mixins
+/**
+ * @generate-class--icon
+ */
+
+// .icon-xt
+
+.icon-xt(@content, @size: @icon--medium, @position: after) {
+  & when (@position = before) {
+    &:before {
+      .icon-xt();
+      content: '@{content}';
+      font-size: @size;
+    }
+  }
+  & when (@position = after) {
+    &:after {
+      .icon-xt();
+      content: '@{content}';
+      font-size: @size;
+    }
+  }
+}
+
+// .icon
 
 .icon(@content, @size: @icon--medium, @position: after) {
   & when (@position = before) {
@@ -124,11 +110,27 @@
   }
 }
 
-// generate icons
+// generate
 
-& when not (@icons-theme--family = none) {
+& when (@generate-class--icon) {
 
-  & when (@classes--icon) {
+  // generate-icons-xt
+
+  .generate-icons-xt();
+  .generate-icons-xt(@i: length(@icons-xt)) when (@i > 0) {
+    .generate-icons-xt(@i - 1);
+    @name: extract(@icons-xt, @i);
+    @val: ~"icon-xt--@{name}";
+    .icon-xt--@{name} {
+      &:before {
+        content: @@val;
+      }
+    }
+  }
+
+  // generate-icons
+
+  & when not (@icons-theme--family = none) {
 
     .generate-icons();
     .generate-icons(@i: length(@icons-theme)) when (@i > 0) {

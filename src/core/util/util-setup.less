@@ -1,5 +1,5 @@
 /**
- * @classes--util
+ * @generate-class--util
  */
 
 // various
@@ -416,7 +416,7 @@
 
 // generate
 
-& when not (@classes--util = false) {
+& when not (@generate-class--util = false) {
 
   // generate-utils
 
@@ -595,12 +595,12 @@
 
   // generate-util-responsive
 
-  & when not (@classes--util = true) {
+  & when not (@generate-class--util = true) {
 
     .generate-util-responsive();
-    .generate-util-responsive(@i: length(@classes--util)) when (@i > 0) {
+    .generate-util-responsive(@i: length(@generate-class--util)) when (@i > 0) {
       .generate-util-responsive(@i - 1);
-      @breakpoint: extract(@classes--util, @i);
+      @breakpoint: extract(@generate-class--util, @i);
       .generate-utils(@breakpoint);
     }
 
@@ -721,314 +721,7 @@
 }
 
 /**
- * @classes--layout
- */
-
-// list alignment
-
-.list--left(@breakpoint: none) when (@breakpoint = none) {
-  .list-btn({ .btn--left(); });
-}
-
-.list--left(@breakpoint: none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    .list-btn({ .btn--left(); });
-  }
-}
-
-.list--center(@breakpoint: none) when (@breakpoint = none) {
-  .list-btn({ .btn--center(); });
-}
-
-.list--center(@breakpoint: none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    .list-btn({ .btn--center(); });
-  }
-}
-
-.list--right(@breakpoint: none) when (@breakpoint = none) {
-  .list-btn({ .btn--right(); });
-}
-
-.list--right(@breakpoint: none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    .list-btn({ .btn--right(); });
-  }
-}
-
-// row space
-
-.row-space--y(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"row-space--@{name}";
-  @vertical: extract(@@arr, 1);
-  margin-top: -@vertical !important;
-  margin-bottom: -@vertical !important;
-  > * {
-    padding-top: @vertical !important;
-    padding-bottom: @vertical !important;
-  }
-}
-
-.row-space--y(@name, @breakpoint: none) when (default()) {
-  @arr: ~"row-space--@{name}";
-  @vertical: extract(@@arr, 1);
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    margin-top: -@vertical !important;
-    margin-bottom: -@vertical !important;
-    > * {
-      padding-top: @vertical !important;
-      padding-bottom: @vertical !important;
-    }
-  }
-}
-
-.row-space--x(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"row-space--@{name}";
-  @horizontal: extract(@@arr, 2);
-  margin-left: -@horizontal !important;
-  margin-right: -@horizontal !important;
-  > * {
-    padding-left: @horizontal !important;
-    padding-right: @horizontal !important;
-  }
-}
-
-.row-space--x(@name, @breakpoint: none) when (default()) {
-  @arr: ~"row-space--@{name}";
-  @horizontal: extract(@@arr, 2);
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    margin-left: -@horizontal !important;
-    margin-right: -@horizontal !important;
-    > * {
-      padding-left: @horizontal !important;
-      padding-right: @horizontal !important;
-    }
-  }
-}
-
-.row-space(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"row-space--@{name}";
-  @vertical: extract(@@arr, 1);
-  @horizontal: extract(@@arr, 2);
-  margin: -@vertical -@horizontal !important;
-  > * {
-    padding: @vertical @horizontal !important;
-  }
-}
-
-.row-space(@name, @breakpoint: none) when (default()) {
-  @arr: ~"row-space--@{name}";
-  @vertical: extract(@@arr, 1);
-  @horizontal: extract(@@arr, 2);
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    margin: -@vertical -@horizontal !important;
-    > * {
-      padding: @vertical @horizontal !important;
-    }
-  }
-}
-
-// list space
-
-.list-space--y(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"list-space--@{name}";
-  @vertical: extract(@@arr, 1);
-  margin-top: -@vertical !important;
-  margin-bottom: -@vertical !important;
-  > * {
-    margin-top: @vertical !important;
-    margin-bottom: @vertical !important;
-  }
-}
-
-.list-space--y(@name, @breakpoint: none) when (default()) {
-  @arr: ~"list-space--@{name}";
-  @vertical: extract(@@arr, 1);
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    margin-top: -@vertical !important;
-    margin-bottom: -@vertical !important;
-    > * {
-      margin-top: @vertical !important;
-      margin-bottom: @vertical !important;
-    }
-  }
-}
-
-.list-space--x(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"list-space--@{name}";
-  @horizontal: extract(@@arr, 2);
-  margin-left: -@horizontal !important;
-  margin-right: -@horizontal !important;
-  > * {
-    margin-left: @horizontal !important;
-    margin-right: @horizontal !important;
-  }
-}
-
-.list-space--x(@name, @breakpoint: none) when (default()) {
-  @arr: ~"list-space--@{name}";
-  @horizontal: extract(@@arr, 2);
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    margin-left: -@horizontal !important;
-    margin-right: -@horizontal !important;
-    > * {
-      margin-left: @horizontal !important;
-      margin-right: @horizontal !important;
-    }
-  }
-}
-
-.list-space(@name, @breakpoint: none) when (@breakpoint = none) {
-  @arr: ~"list-space--@{name}";
-  @vertical: extract(@@arr, 1);
-  @horizontal: extract(@@arr, 2);
-  margin: -@vertical -@horizontal !important;
-  > * {
-    margin: @vertical @horizontal !important;
-  }
-}
-
-.list-space(@name, @breakpoint: none) when (default()) {
-  @arr: ~"list-space--@{name}";
-  @vertical: extract(@@arr, 1);
-  @horizontal: extract(@@arr, 2);
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    margin: -@vertical -@horizontal !important;
-    > * {
-      margin: @vertical @horizontal !important;
-    }
-  }
-}
-
-// generate
-
-& when not (@classes--layout = false) {
-
-  // generate-layout
-
-  .generate-layout();
-  .generate-layout(@breakpoint: none) {
-    & when (@breakpoint = none) {
-      // list alignment
-      .list--left {
-        .list--left() !important;
-      }
-      .list--center {
-        .list--center() !important;
-      }
-      .list--right {
-        .list--right() !important;
-      }
-      // row-space
-      .generate-row-space(@breakpoint);
-      // list-space
-      .generate-list-space(@breakpoint);
-    }
-    & when not (@breakpoint = none) {
-      @query-min: 'min-@{breakpoint}';
-      @media @@query-min {
-        // list alignment
-        .list--left-@{breakpoint} {
-          .list--left() !important;
-        }
-        .list--center-@{breakpoint} {
-          .list--center() !important;
-        }
-        .list--right-@{breakpoint} {
-          .list--right() !important;
-        }
-        // row-space
-        .generate-row-space(@breakpoint);
-        // list-space
-        .generate-list-space(@breakpoint);
-      }
-    }
-  }
-
-  // generate-layout-responsive
-
-  & when not (@classes--layout = true) {
-
-    .generate-layout-responsive();
-    .generate-layout-responsive(@i: length(@classes--layout)) when (@i > 0) {
-      .generate-layout-responsive(@i - 1);
-      @breakpoint: extract(@classes--layout, @i);
-      .generate-layout(@breakpoint);
-    }
-
-  }
-
-  // generate-row-space
-
-  .generate-row-space(@breakpoint: none, @i: length(@row-spaces)) when (@i > 0) {
-    .generate-row-space(@breakpoint, @i - 1);
-    @name: extract(@row-spaces, @i);
-    & when (@breakpoint = none) {
-      .row-space--y-@{name} {
-        .row-space--y(@name);
-      }
-      .row-space--x-@{name} {
-        .row-space--x(@name);
-      }
-      .row-space--@{name} {
-        .row-space(@name);
-      }
-    }
-    & when not (@breakpoint = none) {
-      .row-space--y-@{name}-@{breakpoint} {
-        .row-space--y(@name);
-      }
-      .row-space--x-@{name}-@{breakpoint} {
-        .row-space--x(@name);
-      }
-      .row-space--@{name}-@{breakpoint} {
-        .row-space(@name);
-      }
-    }
-  }
-
-  // generate-list-space
-
-  .generate-list-space(@breakpoint: none, @i: length(@list-spaces)) when (@i > 0) {
-    .generate-list-space(@breakpoint, @i - 1);
-    @name: extract(@list-spaces, @i);
-    & when (@breakpoint = none) {
-      .list-space--y-@{name} {
-        .list-space--y(@name);
-      }
-      .list-space--x-@{name} {
-        .list-space--x(@name);
-      }
-      .list-space--@{name} {
-        .list-space(@name);
-      }
-    }
-    & when not (@breakpoint = none) {
-      .list-space--y-@{name}-@{breakpoint} {
-        .list-space--y(@name);
-      }
-      .list-space--x-@{name}-@{breakpoint} {
-        .list-space--x(@name);
-      }
-      .list-space--@{name}-@{breakpoint} {
-        .list-space(@name);
-      }
-    }
-  }
-
-}
-
-/**
- * @classes--flex
+ * @generate-class--flex
  */
 
 // flex--none
@@ -1137,7 +830,7 @@
 
 // generate
 
-& when not (@classes--flex = false) {
+& when not (@generate-class--flex = false) {
 
   // generate-flex
 
@@ -1158,12 +851,12 @@
 
   // generate-flex-responsive
 
-  & when not (@classes--flex = true) {
+  & when not (@generate-class--flex = true) {
 
     .generate-flex-responsive();
-    .generate-flex-responsive(@i: length(@classes--flex)) when (@i > 0) {
+    .generate-flex-responsive(@i: length(@generate-class--flex)) when (@i > 0) {
       .generate-flex-responsive(@i - 1);
-      @breakpoint: extract(@classes--flex, @i);
+      @breakpoint: extract(@generate-class--flex, @i);
       .generate-flex(@breakpoint);
     }
 
@@ -1367,94 +1060,7 @@
 }
 
 /**
- * @classes--grid
- */
-
-// generate-container-space-responsive
-
-.generate-container-space-responsive();
-.generate-container-space-responsive(@i: length(@container--space)) when (@i > 0) {
-  .generate-container-space-responsive(@i - 1);
-  @container: extract(@container--space, @i);
-  @breakpoint: extract(@container, 1);
-  @val: extract(@container, 2);
-  & when (@breakpoint = none) {
-    .container {
-      padding-right: @val;
-      padding-left: @val;
-    }
-  }
-  & when not (@breakpoint = none) {
-    @query-min: 'min-@{breakpoint}';
-    @media @@query-min {
-      .container {
-        padding-right: @val;
-        padding-left: @val;
-      }
-    }
-  }
-}
-
-// generate
-
-& when not (@classes--grid = false) {
-
-  // generate-grid
-
-  .generate-grid(@breakpoint: none; @i: 1) when (@i =< @columns) {
-    .generate-grid(@breakpoint; (@i + 1));
-    & when (@breakpoint = none) {
-      .col-@{i} {
-        .col(@i) !important;
-      }
-    }
-    & when not (@breakpoint = none) {
-      .col-@{i}-@{breakpoint} {
-        .col(@i) !important;
-      }
-    }
-  }
-
-  // generate-grids
-
-  .generate-grids();
-  .generate-grids(@breakpoint: none) {
-    & when (@breakpoint = none) {
-      // grid
-      .col-auto {
-        .col-auto() !important;
-      }
-      .generate-grid() !important;
-    }
-    & when not (@breakpoint = none) {
-      @query-min: 'min-@{breakpoint}';
-      @media @@query-min {
-        // grid
-        .col-auto-@{breakpoint} {
-          .col-auto() !important;
-        }
-        .generate-grid(@breakpoint) !important;
-      }
-    }
-  }
-
-  // generate-grid-responsive
-
-  & when not (@classes--grid = true) {
-
-    .generate-grid-responsive();
-    .generate-grid-responsive(@i: length(@classes--grid)) when (@i > 0) {
-      .generate-grid-responsive(@i - 1);
-      @breakpoint: extract(@classes--grid, @i);
-      .generate-grids(@breakpoint);
-    }
-
-  }
-
-}
-
-/**
- * @classes--margin
+ * @generate-class--margin
  */
 
 // margin
@@ -1612,7 +1218,7 @@
 
 // generate
 
-& when not (@classes--margin = false) {
+& when not (@generate-class--margin = false) {
 
   @margin--arr: none, y, x, t, b, l, r;
 
@@ -1712,12 +1318,12 @@
 
   // generate-margin-responsive
 
-  & when not (@classes--margin = true) {
+  & when not (@generate-class--margin = true) {
 
     .generate-margin-responsive();
-    .generate-margin-responsive(@i: length(@classes--margin)) when (@i > 0) {
+    .generate-margin-responsive(@i: length(@generate-class--margin)) when (@i > 0) {
       .generate-margin-responsive(@i - 1);
-      @breakpoint: extract(@classes--margin, @i);
+      @breakpoint: extract(@generate-class--margin, @i);
       .generate-margins(@breakpoint);
     }
 
@@ -1726,7 +1332,7 @@
 }
 
 /**
- * @classes--padding
+ * @generate-class--padding
  */
 
 // padding
@@ -1826,7 +1432,7 @@
 
 // generate
 
-& when not (@classes--padding = false) {
+& when not (@generate-class--padding = false) {
 
   @padding--arr: none, y, x, t, b, l, r;
 
@@ -1906,12 +1512,12 @@
 
   // generate-padding-responsive
 
-  & when not (@classes--padding = true) {
+  & when not (@generate-class--padding = true) {
 
     .generate-padding-responsive();
-    .generate-padding-responsive(@i: length(@classes--padding)) when (@i > 0) {
+    .generate-padding-responsive(@i: length(@generate-class--padding)) when (@i > 0) {
       .generate-padding-responsive(@i - 1);
-      @breakpoint: extract(@classes--padding, @i);
+      @breakpoint: extract(@generate-class--padding, @i);
       .generate-paddings(@breakpoint);
     }
 
