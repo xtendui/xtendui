@@ -5,12 +5,18 @@
 // indexes
 
 .site_header {
+  position: relative;
+  z-index: 9;
 }
 
 .site_main {
+  position: relative;
+  z-index: 8;
 }
 
 .site_footer {
+  position: relative;
+  z-index: 8;
 }
 
 // prevent horizontal overflow
@@ -104,6 +110,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   .overflow-style(@mode: inner) !important;
+  line-height: 1.5;
 }
 
 .site_article_sidebar_inner {
