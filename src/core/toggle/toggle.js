@@ -72,11 +72,6 @@ class Toggle {
     self.classesOut = self.options.classOut ? [...self.options.classOut.split(' ')] : []
     self.classesInitial = self.options.classInitial ? [...self.options.classInitial.split(' ')] : []
     self.classesInverse = self.options.classInverse ? [...self.options.classInverse.split(' ')] : []
-    self.classesMatch = self.classes.length ? '.' + self.classes.join('.') : false
-    self.classesInMatch = self.classesIn.length ? '.' + self.classesIn.join('.') : false
-    self.classesOutMatch = self.classesOut.length ? '.' + self.classesOut.join('.') : false
-    self.classesInitialMatch = self.classesInitial.length ? '.' + self.classesInitial.join('.') : false
-    self.classesInverseMatch = self.classesInverse.length ? '.' + self.classesInverse.join('.') : false
   }
 
   /**
@@ -253,7 +248,7 @@ class Toggle {
     let found = false
     // reset
     const reset = function (elReset) {
-      if (elReset.matches(self.classesMatch)) {
+      if (elReset.classList.contains(self.classes[0])) {
         elReset.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
         Xt.dataStorage.remove(elReset, self.componentNamespace + 'Initial')
         if (saveCurrents) {
@@ -1066,7 +1061,7 @@ class Toggle {
   checkAnim (elements) {
     const self = this
     // check
-    elements = elements.filter(x => x.matches(self.classesInMatch) || x.matches(self.classesOutMatch))
+    elements = elements.filter(x => x.classList.contains(self.classesIn[0]) || x.classList.contains(self.classesOut[0]))
     return elements.length > 0
   }
 
@@ -2604,6 +2599,7 @@ Xt.mount.push({
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Toggle.componentName)
+    console.log(optionsMarkup);
     const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
 
     // init

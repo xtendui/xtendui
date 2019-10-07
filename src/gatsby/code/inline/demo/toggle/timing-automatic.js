@@ -38,7 +38,7 @@ demo.htmlSource = `
 <br>
 
 <div class="list list-space--small align-items--center"
-     data-xt-toggle="{ on: 'mouseenter', off: 'mouseleave }">
+     data-xt-toggle="{ on: 'mouseenter', off: 'mouseleave' }">
   <button type="button" class="btn">
     Toggle 0
   </button>

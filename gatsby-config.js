@@ -33,7 +33,7 @@ module.exports = {
         icon: 'src/gatsby/assets/images/favicon.png'
       }
     },
-    // resolve js and less
+    // resolve js and css
     {
       resolve: 'gatsby-plugin-module-resolver',
       options: {

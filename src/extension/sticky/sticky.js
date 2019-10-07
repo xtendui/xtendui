@@ -264,7 +264,7 @@ class Sticky extends Xt.Toggle {
         self.eventOff(el, true)
       }
       // after active
-      if (el.matches(self.classesMatch)) {
+      if (el.classList.contains(self.classes[0])) {
         // hide
         if (hide) {
           add = -heightEl
@@ -398,12 +398,12 @@ class Sticky extends Xt.Toggle {
       const elements = Array.isArray(option) || option instanceof Element ? option : document.querySelectorAll(option)
       if (elements.length) {
         for (const el of elements) {
-          if (el.classList.contains('sticky-hide--down') && el.matches(self.classesMatch)) {
+          if (el.classList.contains('sticky-hide--down') && el.classList.contains(self.classes[0])) {
             if (self.detail.inverseForce) {
               val += el.clientHeight
               foundHide = true
             }
-          } else if (el.classList.contains('sticky-hide--up') && el.matches(self.classesMatch)) {
+          } else if (el.classList.contains('sticky-hide--up') && el.classList.contains(self.classes[0])) {
             if (!self.detail.inverseForce) {
               val += el.clientHeight
               foundHide = true
