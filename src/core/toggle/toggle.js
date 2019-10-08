@@ -490,7 +490,7 @@ class Toggle {
       for (const jump of self.targets) {
         const jumpHandler = Xt.dataStorage.put(jump, 'click.jump' + '.' + self.namespace,
           self.eventJumpHandler.bind(self).bind(self, jump))
-        jump.addEventListener('click', jumpHandler, true) // useCapture or it gets the click from elements inside the target
+        jump.addEventListener('click', jumpHandler, true) // @FIX useCapture or it gets the click from elements inside the target
         // jump
         if (!self.disabled) {
           jump.classList.add('jump')

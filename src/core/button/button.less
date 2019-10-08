@@ -23,6 +23,7 @@
 // animation
 
 .btn {
+  /*
   // transition
   transition-property: all;
   transition-duration: @time--small;
@@ -32,6 +33,7 @@
     transition-duration: @time--small;
     transition-timing-function: @bez--in;
   }
+   */
 }
 
 // variant
@@ -57,9 +59,21 @@
   border-color: @secondary;
   background: @secondary;
   color: @text;
+  /*
   &:hover, &.hover, &:active, &.active {
     border-color: @secondary--dark;
     background: @secondary--dark;
+    color: @text--dark;
+  }
+   */
+  &:hover, &.hover {
+    border-color: @secondary--dark;
+    background: @primary;
+    color: @text--dark;
+  }
+  &:active, &.active {
+    border-color: @secondary--dark;
+    background: @black;
     color: @text--dark;
   }
   // effect

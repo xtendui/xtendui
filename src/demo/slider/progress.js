@@ -1,4 +1,4 @@
-import { TweenMax, TimelineMax } from 'gsap/TweenMax'
+import { TweenMax, TimelineMax, Power0 } from 'gsap/TweenMax'
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/extension/slider/slider.js'
 import 'xtend-library/src/extension/animation/MouseFollow.js'

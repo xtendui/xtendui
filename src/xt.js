@@ -927,6 +927,42 @@ if (typeof window !== 'undefined') {
   Xt.dataStorage.set(document.documentElement, 'xtEventDelay', window.innerWidth)
 
   /**
+   * animate css properties
+   * @param {Node|HTMLElement|EventTarget|Window} element Element to save timeout
+   * @param {Array} properties Array of css properties camel case
+   * @returns {Object}
+   */
+  Xt.animCss = function (element, properties) {
+    let isInitial = false
+    // save style
+    let style = Xt.dataStorage.get(element, 'xtAnimCssStyle')
+    style = style || Xt.dataStorage.set(element, 'xtAnimCssStyle', getComputedStyle(element))
+    // save initial
+    for (const property of properties) {
+      let initialized = Xt.dataStorage.get(element, 'xtAnimCssInitial' + property)
+      if (!initialized) {
+        isInitial = true
+        Xt.dataStorage.set(element, 'xtAnimCssInitial' + property, style[property])
+      }
+    }
+    // populate return
+    if (!isInitial) {
+      const obj = {}
+      for (const property of properties) {
+        obj[property] = {}
+        // set current to current style or initial
+        obj[property].current = element.style[property] || Xt.dataStorage.get(element, 'xtAnimCssInitial' + property)
+      }
+      element.style = '' // reset style to get final css value
+      for (const property of properties) {
+        // set final to final css value
+        obj[property].final = style[property]
+      }
+      return obj
+    }
+  }
+
+  /**
    * Xt.windowHeight
    * vindow height value only on width resize to fix mobile window height changes
    */

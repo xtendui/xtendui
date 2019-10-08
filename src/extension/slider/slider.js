@@ -394,11 +394,11 @@ class Slider extends Xt.Toggle {
       // slide on
       const slideOnHandler = Xt.dataStorage.put(slide, 'on' + '.' + self.namespace,
         self.eventSlideOnHandler.bind(self).bind(self, dragger, slide))
-      slide.addEventListener('on.xt', slideOnHandler, true) // @FIX event.xt: useCapture for custom events order on re-init
+      slide.addEventListener('on.xt', slideOnHandler, true) // @FIX useCapture for custom events order on re-init
       // slide off
       const slideOffHandler = Xt.dataStorage.put(slide, 'off' + '.' + self.namespace,
         self.eventSlideOffHandler.bind(self).bind(self, dragger, slide))
-      slide.addEventListener('off.xt', slideOffHandler, true) // @FIX event.xt: useCapture for custom events order on re-init
+      slide.addEventListener('off.xt', slideOffHandler, true) // @FIX useCapture for custom events order on re-init
     }
     // dragger
     if (options.drag) {
