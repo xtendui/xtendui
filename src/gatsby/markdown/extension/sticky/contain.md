@@ -11,8 +11,8 @@ categories: ["400-Presentation"]
 Use the `"contain": {}` option to stack consecutive sticky elements. with `"contain": {"top": Element}` you stack the sticky to a previous element, with `"contain": {"bottom": Element}` you stack the sticky to a next element. The two solutions brings **different stacking effects**.
 
 <demo>
-  <div class="demo_item" data-iframe="iframe/demo/sticky/contain-top">
+  <div class="demo_item" data-iframe="iframe/core/sticky/contain-top">
   </div>
-  <div class="demo_item" data-iframe="iframe/demo/sticky/contain-bottom">
+  <div class="demo_item" data-iframe="iframe/core/sticky/contain-bottom">
   </div>
 </demo>

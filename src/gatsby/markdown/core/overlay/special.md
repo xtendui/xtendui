@@ -13,6 +13,6 @@ Special optional modifiers classes.
 `.overlay--squared` `.overlay--noborder` `.overlay--none`
 
 <demo>
-  <demovanilla src="inline/demo/overlay/special">
+  <demovanilla src="inline/core/overlay/special">
   </demovanilla>
 </demo>

@@ -8,16 +8,18 @@ categories: ["300-Interaction"]
 
 ##Content
 
+This demo uses [extension/overlay/screen](/extension/overlay/screen) and [extension/overlay/position](/extension/overlay/position).
+
 By default `.overlay_content` is center with `margin: auto`. To position on top or bottom just give it `margin-top: 0` or `margin-bottom: 0`.
 
 <demo>
-  <demovanilla src="inline/demo/overlay/content">
+  <demovanilla src="inline/core/overlay/content">
   </demovanilla>
 </demo>
 
 You can add as many overlay content as you like and custom contents like `.overlay_menu`.
 
 <demo>
-  <demovanilla src="inline/demo/overlay/content-multiple">
+  <demovanilla src="inline/core/overlay/content-multiple">
   </demovanilla>
 </demo>

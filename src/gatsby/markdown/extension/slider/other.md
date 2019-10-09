@@ -11,6 +11,6 @@ categories: ["400-Presentation"]
 `.active` `"loop": false` `"jump": false` `"autoHeight": false`
 
 <demo>
-  <demovanilla src="inline/demo/slider/other">
+  <demovanilla src="inline/core/slider/other">
   </demovanilla>
 </demo>

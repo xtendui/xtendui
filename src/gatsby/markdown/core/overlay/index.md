@@ -18,7 +18,9 @@ Use this markup to create a overlay.
     <div class="overlay">
       <div class="overlay_inner">
         <div class="overlay_design"></div>
-        <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
+          <div class="overlay_close xt-fixed--check">
+            <button type="button" class="btn btn--close" aria-label="Close"></button>
+          </div>
         <div class="overlay_content">
           <!-- content -->
         </div>
@@ -38,7 +40,9 @@ You can use this markup to create a overlay with **no id**.
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
+          <div class="overlay_close xt-fixed--check">
+            <button type="button" class="btn btn--close" aria-label="Close"></button>
+          </div>
           <div class="overlay_content">
             <!-- content -->
           </div>
@@ -55,7 +59,9 @@ You can use this markup to create a overlay with **no toggle**.
     <div class="overlay">
       <div class="overlay_inner">
         <div class="overlay_design"></div>
-        <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
+          <div class="overlay_close xt-fixed--check">
+            <button type="button" class="btn btn--close" aria-label="Close"></button>
+          </div>
         <div class="overlay_content">
           <!-- content -->
         </div>

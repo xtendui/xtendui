@@ -13,6 +13,6 @@ Use `"distance": Number` activation and deactivation distance. For percent use `
 The default **distance** is `"distance": "20%"`.
 
 <demo>
-  <div class="demo_item" data-iframe="iframe/demo/scroll/distance">
+  <div class="demo_item" data-iframe="iframe/core/scroll/distance">
   </div>
 </demo>

@@ -11,10 +11,10 @@ categories: ["400-Presentation"]
 Use `.loader--background` to add the custom background.
 
 <demo>
-  <demovanilla src="inline/demo/loader/background-spinner">
+  <demovanilla src="inline/core/loader/background-spinner">
   </demovanilla>
-  <demovanilla src="inline/demo/loader/background-direction">
+  <demovanilla src="inline/core/loader/background-direction">
   </demovanilla>
-  <demovanilla src="inline/demo/loader/background-size">
+  <demovanilla src="inline/core/loader/background-size">
   </demovanilla>
 </demo>

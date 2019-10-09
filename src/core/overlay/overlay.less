@@ -35,7 +35,7 @@
     border-style: solid;
     border-color: transparent;
   }
-  .btn--close.overlay_dismiss {
+  .btn--close {
     position: absolute;
     top: 0;
     right: 0;
@@ -48,122 +48,12 @@
 
 // addons
 
-.overlay--screen {
-  // option
-  .overlay--size(giant);
-  .overlay--squared();
-  .overlay--noborder();
-  // styles
-  .btn--close.overlay_dismiss {
-    .btn--squared();
-  }
-}
-
-.overlay--pos {
-  .overlay {
-    .overlay--left& {
-      width: 88% !important;
-      max-width: 500px !important;
-    }
-    .overlay--right& {
-      width: 88% !important;
-      max-width: 500px !important;
-    }
-  }
-  // option
-  .overlay--dark();
-  .overlay--squared();
-  .overlay--noborder();
-}
-
 .overlay--disable {
   // disable custom animation
   .overlay {
-    .overlay_inner,
-    .overlay_content {
+    .overlay_inner, .overlay_content {
       opacity: 1 !important;
       .trans-anim-none() !important;
-    }
-  }
-}
-
-// animation
-
-.overlay_outer {
-  animation-duration: @time--medium + @time--small; // needed for .out animation timing, put max animation time
-  &.active {
-    .overlay_design {
-      .anim-zoom.active();
-    }
-    .overlay_content,
-    .btn--close.overlay_dismiss {
-      .anim-y.active();
-      animation-delay: @time--small;
-    }
-    > .backdrop {
-      .backdrop.active();
-    }
-    // addons
-    &.overlay--screen {
-      .anim-opacity.active();
-    }
-    &.overlay--left {
-      .overlay_design {
-        .anim-x.active();
-      }
-      .overlay_content,
-      .btn--close.overlay_dismiss {
-        .anim-x.active();
-        animation-delay: @time--small;
-      }
-    }
-    &.overlay--right {
-      .overlay_design {
-        .anim-x-inverse.active();
-      }
-      .overlay_content,
-      .btn--close.overlay_dismiss {
-        .anim-x-inverse.active();
-        animation-delay: @time--small;
-      }
-    }
-  }
-  &.out {
-    .overlay_design {
-      .anim-zoom.out();
-      animation-delay: @time--small;
-    }
-    .overlay_content,
-    .btn--close.overlay_dismiss {
-      .anim-y.out();
-    }
-    > .backdrop {
-      .backdrop.out();
-    }
-    // addons
-    &.overlay--screen {
-      .anim-opacity.out();
-      animation-delay: @time--small;
-    }
-    &.overlay--left {
-      .overlay_design {
-        .anim-x-inverse.out();
-        animation-delay: @time--small;
-      }
-      .overlay_content,
-      .btn--close.overlay_dismiss {
-        .anim-x-inverse.out();
-      }
-    }
-    &.overlay--right {
-      .overlay_design {
-        .anim-x.out();
-        animation-delay: @time--small;
-      }
-      .overlay_content,
-      .btn--close.overlay_dismiss {
-        .anim-x.out();
-      }
     }
   }
 }
@@ -179,7 +69,7 @@
   .overlay_inner {
     color: @text;
   }
-  .btn--close.overlay_dismiss {
+  .btn--close {
     .btn--text();
   }
 }
@@ -193,7 +83,7 @@
   .overlay_inner {
     .text--inverse();
   }
-  .btn--close.overlay_dismiss {
+  .btn--close {
     .btn--text();
   }
 }
@@ -215,5 +105,35 @@
 .overlay--none {
   .overlay_content {
     padding: 0 !important;
+  }
+}
+
+// animation
+
+.overlay_outer {
+  animation-duration: @time--medium + @time--small; // needed for .out animation timing, put max animation time
+  &.active {
+    .overlay_design {
+      .anim-zoom.active();
+    }
+    .overlay_content, .btn--close {
+      .anim-y.active();
+      animation-delay: @time--small;
+    }
+    > .backdrop {
+      .backdrop.active();
+    }
+  }
+  &.out {
+    .overlay_design {
+      .anim-zoom.out();
+      animation-delay: @time--small;
+    }
+    .overlay_content, .btn--close {
+      .anim-y.out();
+    }
+    > .backdrop {
+      .backdrop.out();
+    }
   }
 }

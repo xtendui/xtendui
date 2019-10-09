@@ -7,6 +7,6 @@ categories: ["300-Interaction"]
 ---
 
 <demo>
-  <demovanilla src="inline/demo/toggle/multilevel">
+  <demovanilla src="inline/core/toggle/multilevel">
   </demovanilla>
 </demo>

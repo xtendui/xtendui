@@ -1,8 +1,8 @@
 /**
- * xtend extension: overlay_message--outside
+ * xtend extension: overlay-message-outside
  */
 
-.overlay_message--outside {
+.overlay-message-outside {
   // styles
   position: fixed;
   z-index: @index--overlay !important;
@@ -12,23 +12,23 @@
   @media @max-sm {
     display: none;
   }
-  .overlay--left & {
+  .overlay-position--left & {
     right: 0;
   }
-  .overlay--right & {
+  .overlay-position--right & {
     left: 0;
   }
   // animation
-  .overlay--left.active & {
+  .overlay-position--left.active & {
     .anim-x-inverse.active();
   }
-  .overlay--left.out & {
+  .overlay-position--left.out & {
     .anim-x.out();
   }
-  .overlay--right.active & {
+  .overlay-position--right.active & {
     .anim-x.active();
   }
-  .overlay--right.out & {
+  .overlay-position--right.out & {
     .anim-x-inverse.out();
   }
 }

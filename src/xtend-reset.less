@@ -2,8 +2,7 @@
  * reset
  */
 
-html,
-body {
+html, body {
   height: 100%;
   touch-action: manipulation; // disable double-tap
 }
@@ -17,9 +16,7 @@ body {
   margin: 0;
 }
 
-*,
-*:before,
-*:after {
+*, *:before, *:after {
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
@@ -89,8 +86,7 @@ legend {
   padding: 0;
 }
 
-input:not([type="checkbox"]):not([type="radio"]),
-textarea {
+input:not([type="checkbox"]):not([type="radio"]), textarea {
   // remove shadow
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -115,9 +111,7 @@ button, input, select, textarea {
 
 input, select, textarea {
   // autofill
-  &:-webkit-autofill,
-  &:-webkit-autofill:hover,
-  &:-webkit-autofill:focus {
+  &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus {
     transition-property: background-color, color;
     transition-delay: 10000000s;
   }

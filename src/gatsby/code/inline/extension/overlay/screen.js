@@ -11,13 +11,15 @@ demo.htmlSource = `
 <div class="list list-space--small align-items--center demo-source-from">
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      squared
+      screen
     </button>
-    <div class="overlay_outer overlay--squared">
+    <div class="overlay_outer overlay-screen">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
+          <div class="overlay_close xt-fixed--check">
+            <button type="button" class="btn btn--close" aria-label="Close"></button>
+          </div>
           <div class="overlay_content">
             <div class="h2">Lorem ipsum</div>
             <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -34,42 +36,18 @@ demo.htmlSource = `
       </div>
     </div>
   </div>
-
+  
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      noborder
+      screen full none
     </button>
-    <div class="overlay_outer overlay--noborder">
+    <div class="overlay_outer overlay-screen overlay--full overlay--none">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
-          <div class="overlay_content">
-            <div class="h2">Lorem ipsum</div>
-            <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
-              ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-            <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
-              justo.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
-              ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
-            <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
-              justo.</p>
+          <div class="overlay_close xt-fixed--check">
+            <button type="button" class="btn btn--close" aria-label="Close"></button>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div data-xt-overlay>
-    <button type="button" class="btn btn--primary">
-      none
-    </button>
-    <div class="overlay_outer overlay--none">
-      <div class="overlay">
-        <div class="overlay_inner">
-          <div class="overlay_design"></div>
-          <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
           <div class="overlay_content">
             <div class="h2">Lorem ipsum</div>
             <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>

@@ -98,14 +98,14 @@ let self = new Xt.Scroll(document.documentElement, {
 ###Inline
 
 <demo>
-  <demovanilla src="inline/demo/test/vanilla">
+  <demovanilla src="inline/core/test/vanilla">
     <div class="demo_text">
       <div class="alert_content">
         Test
       </div>
     </div>
   </demovanilla>
-  <demoreact src="inline/demo/test/react">
+  <demoreact src="inline/core/test/react">
     <div class="demo_text">
       <div class="alert_content">
         Test
@@ -117,14 +117,14 @@ let self = new Xt.Scroll(document.documentElement, {
 ###Iframe
 
 <demo>
-  <div class="demo_item" data-iframe="iframe/demo/test/vanilla-iframe">
+  <div class="demo_item" data-iframe="iframe/core/test/vanilla-iframe">
     <div class="demo_text">
       <div class="alert_content">
         Test
       </div>
     </div>
   </div>
-  <div class="demo_item" data-iframe="iframe/demo/test/react-iframe">
+  <div class="demo_item" data-iframe="iframe/core/test/react-iframe">
     <div class="demo_text">
       <div class="alert_content">
         Test

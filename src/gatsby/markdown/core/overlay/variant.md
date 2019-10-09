@@ -15,6 +15,6 @@ You can change the **default variant** @TODO less path
 `.overlay--light` `.overlay--dark`
         
 <demo>
-  <demovanilla src="inline/demo/overlay/variant">
+  <demovanilla src="inline/core/overlay/variant">
   </demovanilla>
 </demo>

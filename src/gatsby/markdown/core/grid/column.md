@@ -91,6 +91,6 @@ You can nest `.row`, but a flex children can't be a flex itself.
 To have custom width columns use `width` and `max-width`.
 
 <demo>
-  <demovanilla src="inline/demo/grid/custom">
+  <demovanilla src="inline/core/grid/custom">
   </demovanilla>
 </demo>

@@ -11,6 +11,6 @@ categories: ["400-Presentation"]
 `.loader--spinner`.
 
 <demo>
-  <demovanilla src="inline/demo/loader/spinner">
+  <demovanilla src="inline/core/loader/spinner">
   </demovanilla>
 </demo>

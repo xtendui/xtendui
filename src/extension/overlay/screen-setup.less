@@ -1,0 +1,24 @@
+/**
+ * xtend extension: overlay-screen
+ */
+
+.overlay-screen {
+  .overlay {
+    position: relative;
+    z-index: @index--overlay;
+    max-width: none !important;
+    .padding(all, none) !important;
+    .overlay_inner {
+      position: static;
+    }
+  }
+  .overlay_inner {
+    .flex--auto();
+    display: flex;
+    flex-direction: column;
+  }
+  > .backdrop {
+    .trans-anim-none() !important;
+    opacity: 0 !important;
+  }
+}

@@ -11,5 +11,5 @@ categories: ["400-Presentation"]
 The default **position** is `"position": "top"` you can also use `"position": "bottom"`.
 
 <demo>
-  <div class="demo_item" data-iframe="iframe/demo/sticky/position"></div>
+  <div class="demo_item" data-iframe="iframe/core/sticky/position"></div>
 </demo>

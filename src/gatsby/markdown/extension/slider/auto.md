@@ -9,6 +9,6 @@ categories: ["400-Presentation"]
 ###Wheel
 
 <demo>
-  <demovanilla src="inline/demo/slider/auto">
+  <demovanilla src="inline/core/slider/auto">
   </demovanilla>
 </demo>

@@ -22,6 +22,7 @@
 
 import {Xt} from 'xtend-library'
 import 'xtend-library/src/xtend-core.js'
+import 'xtend-library/src/xtend-extension.js'
 
 // export UMD
 

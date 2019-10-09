@@ -13,9 +13,9 @@ Full width groups with `.full`.
 Use `.group_inner.flex--auto` to expand groups.
 
 <demo>
-  <demovanilla src="inline/demo/group/options-full-line">
+  <demovanilla src="inline/core/group/options-full-line">
   </demovanilla>
-  <demovanilla src="inline/demo/group/options-full-stack">
+  <demovanilla src="inline/core/group/options-full-stack">
   </demovanilla>
 </demo>
 
@@ -30,9 +30,9 @@ Optional classes for assigning variant (example: `.group--light`).
 </div>
 
 <demo>
-  <demovanilla src="inline/demo/group/options-variant-line">
+  <demovanilla src="inline/core/group/options-variant-line">
   </demovanilla>
-  <demovanilla src="inline/demo/group/options-variant-stack">
+  <demovanilla src="inline/core/group/options-variant-stack">
   </demovanilla>
 </demo>
 
@@ -41,8 +41,8 @@ Optional classes for assigning variant (example: `.group--light`).
 Space group elements with list's options.
 
 <demo>
-  <demovanilla src="inline/demo/group/options-list-line">
+  <demovanilla src="inline/core/group/options-list-line">
   </demovanilla>
-  <demovanilla src="inline/demo/group/options-list-stack">
+  <demovanilla src="inline/core/group/options-list-stack">
   </demovanilla>
 </demo>

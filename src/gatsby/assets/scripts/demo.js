@@ -284,7 +284,7 @@ const loadShadow = function (shadowRoot, shadowSrc, source, shadowId, item) {
         remove.remove();
       }
       item.classList.add('loaded');
-      // style
+      // styles
       let onStylesLoaded = function() {
         // when all link[rel="stylesheet"] are loaded
         Xt.load(shadowTemplate);

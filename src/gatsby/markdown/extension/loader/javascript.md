@@ -9,11 +9,11 @@ categories: ["400-Presentation"]
 ## Javascript
 
 <demo>
-  <demovanilla src="inline/demo/loader/js-spinner">
+  <demovanilla src="inline/core/loader/js-spinner">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="inline/demo/loader/js-filler">
+  <demovanilla src="inline/core/loader/js-filler">
   </demovanilla>
 </demo>

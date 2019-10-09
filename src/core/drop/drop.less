@@ -32,42 +32,6 @@
   .drop--bottom();
 }
 
-// animation
-
-.drop_outer {
-  &, > .drop {
-    animation-duration: @time--medium + @time--small; // needed for .out animation timing, put max animation time
-  }
-  &.active {
-    > .drop > .drop_inner {
-      > .drop_design {
-        .anim-zoom.active();
-      }
-      > .drop_content {
-        .anim-y.active();
-        animation-delay: @time--small;
-      }
-    }
-    > .backdrop {
-      .backdrop.active();
-    }
-  }
-  &.out {
-    > .drop > .drop_inner {
-      > .drop_design {
-        .anim-zoom.out();
-        animation-delay: @time--small;
-      }
-      > .drop_content {
-        .anim-y.out();
-      }
-    }
-    > .backdrop {
-      .backdrop.out();
-    }
-  }
-}
-
 // addons
 
 .drop--disable {
@@ -114,6 +78,42 @@
     }
     > .drop_content > .list--drop {
       .list-btn({ .btn--text() });
+    }
+  }
+}
+
+// animation
+
+.drop_outer {
+  &, > .drop {
+    animation-duration: @time--medium + @time--small; // needed for .out animation timing, put max animation time
+  }
+  &.active {
+    > .drop > .drop_inner {
+      > .drop_design {
+        .anim-zoom.active();
+      }
+      > .drop_content {
+        .anim-y.active();
+        animation-delay: @time--small;
+      }
+    }
+    > .backdrop {
+      .backdrop.active();
+    }
+  }
+  &.out {
+    > .drop > .drop_inner {
+      > .drop_design {
+        .anim-zoom.out();
+        animation-delay: @time--small;
+      }
+      > .drop_content {
+        .anim-y.out();
+      }
+    }
+    > .backdrop {
+      .backdrop.out();
     }
   }
 }

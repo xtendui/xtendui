@@ -45,8 +45,8 @@ Use this markup to create a button group as stack.
 ##Modes
 
 <demo>
-  <demovanilla src="inline/demo/group/button-line" >
+  <demovanilla src="inline/core/group/button-line" >
   </demovanilla>
-  <demovanilla src="inline/demo/group/button-stack">
+  <demovanilla src="inline/core/group/button-stack">
   </demovanilla>
 </demo>

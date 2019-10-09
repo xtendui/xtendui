@@ -11,16 +11,16 @@ categories: ["400-Presentation"]
 `"align": "center"` `"align": "left"` `"align": "right"`
 
 <demo>
-  <demovanilla src="inline/demo/slider/align-center">
+  <demovanilla src="inline/core/slider/align-center">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="inline/demo/slider/align-left">
+  <demovanilla src="inline/core/slider/align-left">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="inline/demo/slider/align-right">
+  <demovanilla src="inline/core/slider/align-right">
   </demovanilla>
 </demo>

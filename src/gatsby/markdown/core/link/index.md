@@ -12,13 +12,13 @@ On links or buttons use `.link--underline` or `.link--none` to add or remove `te
   underline;`.
 
 <demo>
-  <demovanilla src="inline/demo/link/link">
+  <demovanilla src="inline/core/link/link">
   </demovanilla>
 </demo>
 
 On containers use `.text--inverse` to have white links.
 
 <demo>
-  <demovanilla src="inline/demo/link/inverse">
+  <demovanilla src="inline/core/link/inverse">
   </demovanilla>
 </demo>

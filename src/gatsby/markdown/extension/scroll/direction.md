@@ -11,6 +11,6 @@ categories: ["400-Presentation"]
 Animate with inverse `.inverse` or `self.detail.inverse`.
 
 <demo>
-  <div class="demo_item" data-iframe="iframe/demo/scroll/direction">
+  <div class="demo_item" data-iframe="iframe/core/scroll/direction">
   </div>
 </demo>

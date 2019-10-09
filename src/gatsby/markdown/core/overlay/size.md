@@ -30,6 +30,6 @@ You can change the **default size** @TODO less path
 `.overlay--tiny` `.overlay--small` `.overlay--medium` `.overlay--big` `.overlay--giant` `.overlay--full`
         
 <demo>
-  <demovanilla src="inline/demo/overlay/size">
+  <demovanilla src="inline/core/overlay/size">
   </demovanilla>
 </demo>

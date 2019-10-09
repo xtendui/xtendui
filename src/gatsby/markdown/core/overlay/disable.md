@@ -11,6 +11,6 @@ categories: ["300-Interaction"]
 To disable drop use `.overlay--disable` useful within media queries.
 
 <demo>
-  <demovanilla src="inline/demo/overlay/disable">
+  <demovanilla src="inline/core/overlay/disable">
   </demovanilla>
 </demo>

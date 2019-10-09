@@ -11,14 +11,14 @@ categories: ["400-Presentation"]
 You can set scroll mode with **less mixins**.
 
 <demo>
-  <div class="demo_item" data-iframe="iframe/demo/scroll/mode-infinite">
+  <div class="demo_item" data-iframe="iframe/core/scroll/mode-infinite">
   </div>
-  <div class="demo_item" data-iframe="iframe/demo/scroll/mode-scroll">
+  <div class="demo_item" data-iframe="iframe/core/scroll/mode-scroll">
   </div>
-  <div class="demo_item" data-iframe="iframe/demo/scroll/mode-visible">
+  <div class="demo_item" data-iframe="iframe/core/scroll/mode-visible">
   </div>
-  <div class="demo_item" data-iframe="iframe/demo/scroll/mode-responsive">
+  <div class="demo_item" data-iframe="iframe/core/scroll/mode-responsive">
   </div>
-  <div class="demo_item" data-iframe="iframe/demo/scroll/mode-block">
+  <div class="demo_item" data-iframe="iframe/core/scroll/mode-block">
   </div>
 </demo>

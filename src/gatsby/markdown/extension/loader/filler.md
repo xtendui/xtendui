@@ -13,9 +13,9 @@ categories: ["400-Presentation"]
 `.loader--x` or `.loader--y`.
 
 <demo>
-  <demovanilla src="inline/demo/loader/filler-x">
+  <demovanilla src="inline/core/loader/filler-x">
   </demovanilla>
-  <demovanilla src="inline/demo/loader/filler-y">
+  <demovanilla src="inline/core/loader/filler-y">
   </demovanilla>
 </demo>
 
@@ -24,16 +24,16 @@ categories: ["400-Presentation"]
 `.loader--x.loader--size-x` `.loader--y.loader--size-y` `.loader--x.loader--size-top` `.loader--x.loader--size-bottom` `.loader--y.loader--size-left` `.loader--y.loader--size-right`.
 
 <demo>
-  <demovanilla src="inline/demo/loader/filler-size-x">
+  <demovanilla src="inline/core/loader/filler-size-x">
   </demovanilla>
-  <demovanilla src="inline/demo/loader/filler-size-y">
+  <demovanilla src="inline/core/loader/filler-size-y">
   </demovanilla>
-  <demovanilla src="inline/demo/loader/filler-size-top">
+  <demovanilla src="inline/core/loader/filler-size-top">
   </demovanilla>
-  <demovanilla src="inline/demo/loader/filler-size-bottom">
+  <demovanilla src="inline/core/loader/filler-size-bottom">
   </demovanilla>
-  <demovanilla src="inline/demo/loader/filler-size-left">
+  <demovanilla src="inline/core/loader/filler-size-left">
   </demovanilla>
-  <demovanilla src="inline/demo/loader/filler-size-right">
+  <demovanilla src="inline/core/loader/filler-size-right">
   </demovanilla>
 </demo>

@@ -6,6 +6,8 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 categories: ["300-Interaction"]
 ---
 
+This demo uses [extension/overlay/position](/extension/overlay/position).
+
 <demo>
   <demovanilla src="inline/extension/overlay/message-outside">
   </demovanilla>

@@ -55,8 +55,8 @@ Use this markup to merge multiple `.btn` in one `[button]` as stack.
 ##Modes
 
 <demo>
-  <demovanilla src="inline/demo/group/merge-line">
+  <demovanilla src="inline/core/group/merge-line">
   </demovanilla>
-  <demovanilla src="inline/demo/group/merge-stack">
+  <demovanilla src="inline/core/group/merge-stack">
   </demovanilla>
 </demo>

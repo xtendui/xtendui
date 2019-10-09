@@ -1,15 +1,26 @@
 /**
- * xtend extension: overlay_close--fixed
+ * xtend extension: overlay-close-fixed
  */
 
-.overlay_close--fixed {
-  position: fixed;
-  z-index: @index--btn-close;
-  top: 0;
-  right: 0;
-  line-height: 1;
-  text-align: right;
-  .btn--close {
-    position: relative !important;
+.overlay-close-fixed, .overlay-screen {
+  .overlay_close {
+    position: fixed;
+    z-index: @index--btn-close;
+    top: 0;
+    right: 0;
+    line-height: 1;
+    text-align: right;
+    .btn--close {
+      position: relative !important;
+    }
+  }
+}
+
+.overlay-close-fixed {
+  .overlay_close {
+    .btn--close {
+      .btn--primary() !important;
+      .btn--squared() !important;
+    }
   }
 }

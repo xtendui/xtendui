@@ -13,7 +13,7 @@ categories: ["300-Interaction"]
 Use `"keyboard": {"selector": "object"}` or `"keyboard": {"selector": Query}` to enable keyboard navigation on focus.
 
 <demo>
-  <demovanilla src="inline/demo/toggle/usability-keyboard">
+  <demovanilla src="inline/core/toggle/usability-keyboard">
   </demovanilla>
 </demo>
 
@@ -22,6 +22,6 @@ Use `"keyboard": {"selector": "object"}` or `"keyboard": {"selector": Query}` to
 Use `"aria": false` to disable aria generation, or granularly see @TODO core link.
 
 <demo>
-  <demovanilla src="inline/demo/toggle/usability-aria">
+  <demovanilla src="inline/core/toggle/usability-aria">
   </demovanilla>
 </demo>

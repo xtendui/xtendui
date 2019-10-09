@@ -1,21 +1,21 @@
 /**
- * xtend extension: overlay--class-html
+ * xtend extension: overlay-class-html
  */
 
-.overlay--class-html--content { // DO NOT APPLY to selector with descendants with position: fixed;
+.overlay-class-html { // @NOTICE DO NOT APPLY to selector with descendants with position: fixed;
   transition-property: transform;
   transition-duration: @time--medium;
   transition-timing-function: @bez--out;
-  html.overlay--class-html--left & {
-    transform: translateX(3rem);
-    transition-property: transform;
-    transition-duration: @time--medium;
+  html.overlay-class-html--top & {
+    transform: translateY(3rem);
     transition-timing-function: @bez--in;
   }
-  html.overlay--class-html--right & {
+  html.overlay-class-html--left & {
+    transform: translateX(3rem);
+    transition-timing-function: @bez--in;
+  }
+  html.overlay-class-html--right & {
     transform: translateX(-3rem);
-    transition-property: transform;
-    transition-duration: @time--medium;
     transition-timing-function: @bez--in;
   }
 }

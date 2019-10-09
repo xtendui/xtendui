@@ -11,6 +11,6 @@ categories: ["300-Interaction"]
 To disable drop use `.drop--disable` useful within media queries.
 
 <demo>
-  <demovanilla src="inline/demo/drop/disable">
+  <demovanilla src="inline/core/drop/disable">
   </demovanilla>
 </demo>

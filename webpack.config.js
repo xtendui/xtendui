@@ -5,7 +5,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 require('./xtend-build.js')
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
+  performance: { hints: false },
   context: path.resolve(__dirname, ''),
   entry: {
     'dist/xtend': ['./dist/xtend.js', './dist/xtend.less']

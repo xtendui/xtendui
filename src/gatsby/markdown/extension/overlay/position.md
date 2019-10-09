@@ -1,5 +1,5 @@
 ---
-type: "Core"
+type: "Extension"
 parent: "Overlay"
 title: "Position"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
@@ -8,11 +8,7 @@ categories: ["300-Interaction"]
 
 ##Position
 
-Fullscreen overlay but with usable sizes.
-
-`.overlay--screen`
-
 <demo>
-  <demovanilla src="inline/demo/overlay/position">
+  <demovanilla src="inline/extension/overlay/position">
   </demovanilla>
 </demo>

@@ -56,12 +56,8 @@
   select:not([multiple])& {
     .padding(right, @select-space--size) !important;
     white-space: normal;
-    background-position: calc(~'100% - '@select-space--size / 2) 50%,
-    calc(~'100% - ('@select-space--size / 2~') + '@select-arrow--size) 50%,
-    100% 0;
-    background-size: @select-arrow--size @select-arrow--size,
-    @select-arrow--size @select-arrow--size,
-    @select-space--size 100%;
+    background-position: calc(~'100% - '@select-space--size / 2) 50%, calc(~'100% - ('@select-space--size / 2~') + '@select-arrow--size) 50%, 100% 0;
+    background-size: @select-arrow--size @select-arrow--size, @select-arrow--size @select-arrow--size, @select-space--size 100%;
     background-repeat: no-repeat;
   }
 }
@@ -77,8 +73,7 @@ textarea {
  * check and radio
  */
 
-.checkbox,
-.radio {
+.checkbox, .radio {
   position: relative !important;
   &:not(.disabled) {
     cursor: pointer;
@@ -87,8 +82,7 @@ textarea {
   .form-label();
   .checkradio-label();
   // check and radio styled design
-  &:before,
-  &:after {
+  &:before, &:after {
     content: '';
     position: absolute !important;
     top: 0;
@@ -106,8 +100,7 @@ textarea {
 
 // styled
 
-input[type="checkbox"]:not(.unstyled),
-input[type="radio"]:not(.unstyled) {
+input[type="checkbox"]:not(.unstyled), input[type="radio"]:not(.unstyled) {
   position: absolute !important;
   z-index: -1 !important;
   opacity: 0 !important;
@@ -127,8 +120,7 @@ input[type="radio"]:not(.unstyled) {
 
 // unstyled
 
-input[type="checkbox"].unstyled,
-input[type="radio"].unstyled {
+input[type="checkbox"].unstyled, input[type="radio"].unstyled {
   display: block;
   float: left;
   & ~ .form-label {

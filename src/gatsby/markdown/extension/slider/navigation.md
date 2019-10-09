@@ -20,6 +20,6 @@ You can add navigation with `[data-xt-nav="+-Number"].xt-ignore` where `+-Number
 </script>
 
 <demo>
-  <demovanilla src="inline/demo/slider/navigation">
+  <demovanilla src="inline/core/slider/navigation">
   </demovanilla>
 </demo>

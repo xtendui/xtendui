@@ -17,7 +17,9 @@ demo.htmlSource = `
         <div class="overlay">
           <div class="overlay_inner">
             <div class="overlay_design"></div>
-            <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
+            <div class="overlay_close xt-fixed--check">
+              <button type="button" class="btn btn--close" aria-label="Close"></button>
+            </div>
             <div class="overlay_content">
               <div class="h2">Lorem ipsum</div>
               <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -43,7 +45,9 @@ demo.htmlSource = `
         <div class="overlay">
           <div class="overlay_inner">
             <div class="overlay_design"></div>
-            <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
+            <div class="overlay_close xt-fixed--check">
+              <button type="button" class="btn btn--close" aria-label="Close"></button>
+            </div>
             <div class="overlay_content">
               <div class="h2">Lorem ipsum</div>
               <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -69,7 +73,9 @@ demo.htmlSource = `
         <div class="overlay">
           <div class="overlay_inner">
             <div class="overlay_design"></div>
-            <button type="button" class="btn btn--close overlay_dismiss" aria-label="Close"></button>
+            <div class="overlay_close xt-fixed--check">
+              <button type="button" class="btn btn--close" aria-label="Close"></button>
+            </div>
             <div class="overlay_content">
               <div class="h2">Lorem ipsum</div>
               <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
