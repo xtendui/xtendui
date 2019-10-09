@@ -932,6 +932,23 @@ if (typeof window !== 'undefined') {
    * @param {Array} properties Array of css properties camel case
    * @returns {Object}
    */
+  /* USAGE:
+  // setup
+  Xt.animCss(object, ['backgroundColor', 'borderColor', 'boxShadow'])
+  // event
+  const animCss = Xt.animCss(object, ['backgroundColor', 'borderColor', 'boxShadow'])
+  TweenMax.set(object, {
+    backgroundColor: animCss.backgroundColor.current,
+    borderColor: animCss.borderColor.current,
+    boxShadow: animCss.boxShadow.current
+  })
+  TweenMax.to(object, 1, {
+    backgroundColor: animCss.backgroundColor.final,
+    borderColor: animCss.borderColor.final,
+    boxShadow: animCss.boxShadow.final,
+    ease: easeIn
+  })
+  */
   Xt.animCss = function (element, properties) {
     let isInitial = false
     // save style
