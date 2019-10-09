@@ -1,7 +1,7 @@
-import { TweenMax, Ease } from 'gsap/TweenMax'
-import BezierEasing from 'bezier-easing'
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/extension/slider/slider.js'
+import { TweenMax, Ease } from 'gsap/TweenMax'
+import BezierEasing from 'bezier-easing'
 
 Xt.mount.push({
   matches: '.demo--slider--toggle-js',

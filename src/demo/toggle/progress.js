@@ -1,6 +1,6 @@
-import { TweenMax, Power0 } from 'gsap/TweenMax'
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/core/toggle/toggle.js'
+import { TweenMax, Power0 } from 'gsap/TweenMax'
 
 /**
  * .demo--toggle--progress

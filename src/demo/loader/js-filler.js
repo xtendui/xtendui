@@ -1,5 +1,5 @@
-import { TweenMax, Power0 } from 'gsap/TweenMax'
 import { Xt } from 'xtend-library'
+import { TweenMax, Power0 } from 'gsap/TweenMax'
 
 /**
  * .demo--loader--js-filler

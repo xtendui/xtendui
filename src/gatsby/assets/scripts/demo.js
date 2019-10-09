@@ -1,6 +1,7 @@
-import ClipboardJS from 'clipboard'
 import Prism from 'prismjs'
+import ClipboardJS from 'clipboard'
 import { Xt } from 'xtend-library'
+
 require('prismjs/plugins/unescaped-markup/prism-unescaped-markup')
 require('prismjs/plugins/unescaped-markup/prism-unescaped-markup.css')
 require('prismjs/components/prism-jsx.min')

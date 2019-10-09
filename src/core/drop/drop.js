@@ -1,6 +1,6 @@
-import RJSON from 'relaxed-json'
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/core/toggle/toggle.js'
+import RJSON from 'relaxed-json'
 
 class Drop extends Xt.Toggle {
   /**

@@ -8,37 +8,42 @@ You can install with one of the following:
 * [yarn](https://yarnpkg.com/): `yarn add xtend-library --save`
 * [npm](https://www.npmjs.com/): `npm install xtend-library --save`
 
-## Css
+## Usage
 
-You need to copy xtend-library **/dist** to customize the files.
+### Css
 
-```
-$ mkdir -p xtend-library/
-$ cp -r node_modules/xtend-library/dist/ xtend-library/
-```
+@TODO css usage
 
-After in `styles/xtend.less` set `@theme-path` (usually `theme/`) and `@core-path` (usually `../../node_modules/xtend-library/src/styles/core`).
+### Js
 
-## Js
+@TODO js usage
 
-### Polyfill
+<!---
+You need to add [core-js](https://github.com/zloirock/core-js):
 
-For supporting older browsers you need to add [babel polyfill](https://babeljs.io/docs/en/babel-polyfill/)
-
-With npm install and import [babel polyfill](https://www.npmjs.com/package/@babel/polyfill):
-
-```
-$ npm install @babel/polyfill
+```Shell
+import 'core-js'
+import 'regenerator-runtime/runtime'
 ```
 
-```
-import '@babel/polyfill/dist/polyfill';
-```
-
-With cdn include [babel polyfill](https://cdnjs.com/libraries/babel-polyfill):
+Add the required scripts to your html:
 
 ```
-<script src="//cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js"></script>
+import 'xtend-library/src/polyfill.js'
+import 'xtend-library/src/polyfill-old.js' // optional, use this only if you need old browsers support: ie11
+import { Xt } from 'xtend-library'
+```
+
+@TODO linkare a https://github.com/minimit/xtend-theme-vanilla per webpack resolve e forkare css e js e https://github.com/minimit/xtend-theme-vanilla/blob/master/.browserslistrc
+
+```Less
+```
+
+Then you can import javascript directly in your code one by one
+
+```
+import 'xtend-library/src/xtend-core.js'
+import 'xtend-library/src/xtend-extension.js'
 ```
 
 ### Animation
@@ -66,53 +71,49 @@ With cdn include [cdn](https://cdnjs.com/libraries/gsap) and [bezier-easing](htt
 <script src="//cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js"></script>
 ```
 
-### Library
+-->
 
-With npm import [xtend-library](https://www.npmjs.com/package/xtend-library):
+## Browser Usage
 
+With this method you can't modify the styles or the javascript. Use the recommended [Usage](#usage) instead.
+
+Copy the `/dist` folder in your project.
+
+Add the required styles to your html:
+
+```HTML
+<link rel="stylesheet" href="dist/xtend.min.css"/>
 ```
-import {Xt} from 'xtend-library'
+
+Add the required scripts to your html:
+
+```HTML
+<script src="dist/xtend.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.6.9/shim.min.js"></script>
 ```
 
-With **script** include **xtend.js**:
-
-```
-<script src="xtend-library/scripts/xtend.js"></script>
-```
-
-# Compilation
-
-We use gulp to compile and watch files.
+# Prepare
 
 * Install required npm packages with `npm install`
-* Use `npm run build` or `npm run dev` to compile **xtend** css and js
-* Use `npm run build:doc` or `npm run dev:docs` to compile **also docs** css and js
+* Use `npm run prepare` to compile the `/dist` folder
 
 # Documentation
 
-We use jekyll to serve the docs.
+We use gatbsy to serve the docs:
 
-* You need to [install jekyll](https://jekyllrb.com/docs/installation/) on your local machine
-* Use `bundle install` to install jekyll's bundles
-* Use `npm run serve:docs`, docs will be served to `http://127.0.0.1:4000/`
+* Install required npm packages with `npm install`
+* Use `npm run build` to build the docs in `/public`
+* Use `npm run dev` to serve a develop version, docs will be served to `http://127.0.0.1:8888/`
+* Use `npm run serve`to serve a production version, docs will be served to `http://127.0.0.1:8888/`
+
+## Browser support
+
+Supported browsers are as follow: explorer 12, firefox 38, opera 25, safari 10, chrome 38.
 
 # Acknowledgements
 
-* Documentation with [jekyll](https://jekyllrb.com/)
-* Javascript with [babel](https://babeljs.io/)
 * Icons with [feather icons](https://github.com/feathericons/feather)
-* Polyfills:
-  * [closest](https://github.com/jonathantneal/closest/)
-  * [:scope](https://github.com/jonathantneal/element-qsa-scope/)
-  * [remove](https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/remove()/remove().md)
-  * [prepend](https://github.com/jserz/js_piece/blob/master/DOM/ParentNode/prepend()/prepend().md)
-  * [append](https://github.com/jserz/js_piece/blob/master/DOM/ParentNode/append()/append().md)
-  * [before](https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/before()/before().md)
-  * [findIndex](https://tc39.github.io/ecma262/#sec-array.prototype.findindex)
-  * [includes](https://tc39.github.io/ecma262/#sec-array.prototype.includes)
-  * [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent)
-  * [scrollingElement](https://github.com/yangg/scrolling-element)
-  * [composedPath](https://gist.github.com/rockinghelvetica/00b9f7b5c97a16d3de75ba99192ff05c)
+* Images with [picsum](https://picsum.photos/)
   
 # Copyright
 

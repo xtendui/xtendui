@@ -1,5 +1,5 @@
-import RJSON from 'relaxed-json'
 import { Xt } from 'xtend-library'
+import RJSON from 'relaxed-json'
 
 class TextareaAutosize {
   /**

@@ -18,7 +18,7 @@
     "build": "gatsby clean && gatsby build",
     "dev": "gatsby clean && gatsby develop -p 8888",
     "serve": "npm run build && gatsby serve -p 8888",
-    "deploy": "gh-pages -d docs",
+    "deploy": "npm run build && gh-pages -d public",
     "release": "npx semantic-release --no-ci",
     "release:dry": "npx semantic-release --dry-run",
     "prepare": "webpack --progress --colors"
@@ -100,7 +100,7 @@
       [
         "@semantic-release/exec",
         {
-          "prepareCmd": "npm run version && npm run build && npm run build:docs",
+          "prepareCmd": "npm run prepare",
           "successCmd": "git pull"
         }
       ],

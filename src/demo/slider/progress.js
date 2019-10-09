@@ -1,7 +1,7 @@
-import { TweenMax, TimelineMax, Power0 } from 'gsap/TweenMax'
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/extension/slider/slider.js'
 import 'xtend-library/src/extension/animation/MouseFollow.js'
+import { TweenMax, TimelineMax, Power0 } from 'gsap/TweenMax'
 
 Xt.mount.push({
   matches: '.demo--slider--progress',

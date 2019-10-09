@@ -5,6 +5,26 @@
 
 if (typeof window !== 'undefined') {
   /**
+   * remove
+   * https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/remove()/remove().md
+   */
+  (function (arr) {
+    arr.forEach(function (item) {
+      if (item.hasOwnProperty('remove')) {
+        return;
+      }
+      Object.defineProperty(item, 'remove', {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        value: function remove() {
+          this.parentNode.removeChild(this);
+        }
+      });
+    });
+  })([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+
+  /**
    * prepend
    * https://github.com/jserz/js_piece/blob/master/DOM/ParentNode/prepend()/prepend().md
    */
@@ -117,6 +137,29 @@ if (typeof window !== 'undefined') {
   })([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
 
   /**
+   * composedPath
+   * https://gist.github.com/rockinghelvetica/00b9f7b5c97a16d3de75ba99192ff05c
+   */
+  (function(E, d, w) {
+    if(!E.composedPath) {
+      E.composedPath = function() {
+        if (this.path) {
+          return this.path;
+        }
+        var target = this.target;
+
+        this.path = [];
+        while (target.parentNode !== null) {
+          this.path.push(target);
+          target = target.parentNode;
+        }
+        this.path.push(d, w);
+        return this.path;
+      }
+    }
+  })(Event.prototype, document, window);
+
+  /**
    * :scope
    * https://github.com/jonathantneal/element-qsa-scope
    */
@@ -178,29 +221,6 @@ if (typeof window !== 'undefined') {
   })(Element.prototype);
 
   /**
-   * composedPath
-   * https://gist.github.com/rockinghelvetica/00b9f7b5c97a16d3de75ba99192ff05c
-   */
-  (function(E, d, w) {
-    if(!E.composedPath) {
-      E.composedPath = function() {
-        if (this.path) {
-          return this.path;
-        }
-        var target = this.target;
-
-        this.path = [];
-        while (target.parentNode !== null) {
-          this.path.push(target);
-          target = target.parentNode;
-        }
-        this.path.push(d, w);
-        return this.path;
-      }
-    }
-  })(Event.prototype, document, window);
-
-  /**
    * closest
    * https://github.com/jonathantneal/closest
    */
@@ -231,24 +251,37 @@ if (typeof window !== 'undefined') {
   })(window.Element.prototype);
 
   /**
-   * remove
-   * https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/remove()/remove().md
+   * scrollingElement
+   * https://github.com/yangg/scrolling-element
    */
-  (function (arr) {
-    arr.forEach(function (item) {
-      if (item.hasOwnProperty('remove')) {
-        return;
+  (function () {
+    if (document.scrollingElement) {
+      return;
+    }
+    let element = null;
+
+    function scrollingElement() {
+      if (element) {
+        return element;
+      } else if (document.body.scrollTop) {
+        // speed up if scrollTop > 0
+        return (element = document.body);
       }
-      Object.defineProperty(item, 'remove', {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        value: function remove() {
-          this.parentNode.removeChild(this);
-        }
-      });
-    });
-  })([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+      let iframe = document.createElement('iframe');
+      iframe.style.height = '1px';
+      document.documentElement.appendChild(iframe);
+      let doc = iframe.contentWindow.document;
+      doc.write('<!DOCTYPE html><div style="height:9999em">x</div>');
+      doc.close();
+      let isCompliant = doc.documentElement.scrollHeight > doc.body.scrollHeight;
+      iframe.parentNode.removeChild(iframe);
+      return (element = isCompliant ? document.documentElement : document.body);
+    }
+
+    Object.defineProperty(document, 'scrollingElement', {
+      get: scrollingElement
+    })
+  })();
 
   /**
    * includes
@@ -304,39 +337,6 @@ if (typeof window !== 'undefined') {
       }
     });
   }
-
-  /**
-   * scrollingElement
-   * https://github.com/yangg/scrolling-element
-   */
-  (function () {
-    if (document.scrollingElement) {
-      return;
-    }
-    let element = null;
-
-    function scrollingElement() {
-      if (element) {
-        return element;
-      } else if (document.body.scrollTop) {
-        // speed up if scrollTop > 0
-        return (element = document.body);
-      }
-      let iframe = document.createElement('iframe');
-      iframe.style.height = '1px';
-      document.documentElement.appendChild(iframe);
-      let doc = iframe.contentWindow.document;
-      doc.write('<!DOCTYPE html><div style="height:9999em">x</div>');
-      doc.close();
-      let isCompliant = doc.documentElement.scrollHeight > doc.body.scrollHeight;
-      iframe.parentNode.removeChild(iframe);
-      return (element = isCompliant ? document.documentElement : document.body);
-    }
-
-    Object.defineProperty(document, 'scrollingElement', {
-      get: scrollingElement
-    })
-  })();
 
   /**
    * findIndex
