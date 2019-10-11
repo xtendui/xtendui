@@ -6,7 +6,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 categories: ["400-Presentation"]
 ---
 
-###Wheel
+###Auto
 
 <demo>
   <demovanilla src="inline/core/slider/auto">

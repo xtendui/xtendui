@@ -63,7 +63,8 @@ Overlay.optionsDefault = {
   backdrop: 'targets',
   classHtml: 'xt-overlay',
   closeInside: '.overlay_dismiss, .overlay_close > .btn--close, :scope > .backdrop',
-  scrollbar: true
+  scrollbar: true,
+  focusLimit: true
 }
 
 //

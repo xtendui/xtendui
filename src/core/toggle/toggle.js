@@ -797,6 +797,7 @@ class Toggle {
    * @param {Event} e
    */
   eventKeyboardBlurHandler (el, e) {
+    const self = this
     // handler
     const keyboardHandler = Xt.dataStorage.get(document, 'keyup.keyboard' + '.' + self.namespace)
     document.removeEventListener('keyup', keyboardHandler)
@@ -1587,6 +1588,15 @@ class Toggle {
             el.setAttribute('aria-expanded', 'true')
           }
         }
+        // tabindex
+        if (options.aria === true || options.aria.tabindex) {
+          if (type === 'targets') {
+            const focusables = el.querySelectorAll(Xt.focusables)
+            for (const focusable of focusables) {
+              focusable.removeAttribute('tabindex')
+            }
+          }
+        }
       }
       // listener dispatch
       el.dispatchEvent(new CustomEvent('on.xt', { bubbles: true, detail: obj[type].detail }))
@@ -1658,18 +1668,6 @@ class Toggle {
       const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
       const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
       self.specialCollapse('Reset', el, before, after)
-      // aria
-      if (options.aria) {
-        // tabindex
-        if (options.aria === true || options.aria.tabindex) {
-          if (type === 'targets') {
-            const focusables = el.querySelectorAll(Xt.focusables)
-            for (const focusable of focusables) {
-              focusable.removeAttribute('tabindex')
-            }
-          }
-        }
-      }
       // listener dispatch
       el.dispatchEvent(new CustomEvent('ondone.xt', { bubbles: true, detail: obj[type].detail }))
     } else if (actionCurrent === 'Off') {
@@ -1781,20 +1779,16 @@ class Toggle {
       self.specialClassHtml(actionCurrent)
       self.specialScrollbar(actionCurrent)
       // focus
-      if (options.scrollbar) {
+      if (options.focusLimit) {
         const el = obj.targets ? obj.targets.queueEls[0] : obj.elements.queueEls[0]
-        Xt.focus.block = true
         Xt.focusLimit.on(el)
-        el.focus()
       }
     } else if (actionCurrent === 'Off') {
       // special
       self.specialClassHtml(actionCurrent)
       // focus
-      if (options.scrollbar) {
-        Xt.focus.block = false
+      if (options.focusLimit) {
         Xt.focusLimit.off()
-        Xt.focus.current.focus()
       }
     }
   }

@@ -457,17 +457,18 @@ if (typeof window !== 'undefined') {
      * @param {Node|HTMLElement|EventTarget|Window} el Element
      */
     on: function (el) {
+      Xt.focus.block = true
+      el.focus()
       // @FIX Xt.focus when clicking and not used tab before
       Xt.focus.current = Xt.focus.current ? Xt.focus.current : document.activeElement
       // vars
-      let focusables = el.querySelectorAll(Xt.focusables)
-      focusables = Array.from(focusables).filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])')) // filter out parent
-      if (focusables.length) {
-        const first = focusables[0]
-        const last = focusables[focusables.length - 1]
+      Xt.focusLimit.focusables = Array.from(el.querySelectorAll(Xt.focusables)).filter(x => x.matches(':not([disabled]), :not([tabindex="-1"])'))
+      if (Xt.focusLimit.focusables.length) {
+        Xt.focusLimit.first = Xt.focusLimit.focusables[0]
+        Xt.focusLimit.last = Xt.focusLimit.focusables[Xt.focusLimit.focusables.length - 1]
         // event
         const focusLimitHandler = Xt.dataStorage.put(document, 'keyup.focusLimit',
-          Xt.focusLimit.limit.bind(this).bind(this, focusables, first, last))
+          Xt.focusLimit.limit.bind(this))
         document.addEventListener('keyup', focusLimitHandler)
       }
     },
@@ -476,6 +477,8 @@ if (typeof window !== 'undefined') {
      * deactivate focusLimit to an element
      */
     off: function () {
+      Xt.focus.block = false
+      Xt.focus.current.focus()
       // event
       const focusLimitHandler = Xt.dataStorage.get(document, 'keyup.focusLimit')
       document.removeEventListener('keyup', focusLimitHandler)
@@ -483,20 +486,17 @@ if (typeof window !== 'undefined') {
 
     /**
      * limit even on focus when activated
-     * @param {NodeList|Array} focusables Focusables elements
-     * @param {Node|HTMLElement|EventTarget|Window} first First focusable element
-     * @param {Node|HTMLElement|EventTarget|Window} last Last focusable element
      * @param {Event} e Event
      */
-    limit: function (focusables, first, last, e) {
+    limit: function (e) {
       const code = e.keyCode ? e.keyCode : e.which
       if (code === 9) {
-        if (!focusables.includes(document.activeElement)) {
+        if (!Xt.focusLimit.focusables.includes(document.activeElement)) {
           if (e.shiftKey) {
-            last.focus()
+            Xt.focusLimit.last.focus()
             e.preventDefault()
           } else {
-            first.focus()
+            Xt.focusLimit.first.focus()
             e.preventDefault()
           }
         }
