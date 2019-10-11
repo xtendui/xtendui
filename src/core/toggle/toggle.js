@@ -1171,6 +1171,12 @@ class Toggle {
       const targets = self.getTargets(element)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
+      // [disabled]
+      if (options.min === options.max) {
+        for (const disable of groupElements) {
+          disable.setAttribute('disabled', 'disabled')
+        }
+      }
       // if currents > max
       const currents = self.getCurrents()
       if (currents.length > options.max) {
@@ -1221,6 +1227,12 @@ class Toggle {
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
       if (element.blur) { // @FIX sometimes blur is undefined
         element.blur() // @FIX :focus styles
+      }
+      // [disabled]
+      if (options.min === options.max) {
+        for (const disable of groupElements) {
+          disable.removeAttribute('disabled')
+        }
       }
       // currentIndex after a frame for sequential events
       requestAnimationFrame(function () {
@@ -1478,14 +1490,16 @@ class Toggle {
   queueStopAll () {
     const self = this
     // stop all obj in queues
-    const actions = [
-      { current: 'On', other: 'Off' },
-      { current: 'Off', other: 'On' }
-    ]
-    for (const action of actions) {
-      const queue = self.detail['queue' + action.current]
-      for (const obj in queue) {
-        self.queueStop(action.current, action.other, obj)
+    if (self.detail) { // @FIX not already initialized
+      const actions = [
+        { current: 'On', other: 'Off' },
+        { current: 'Off', other: 'On' }
+      ]
+      for (const action of actions) {
+        const queue = self.detail['queue' + action.current]
+        for (const obj in queue) {
+          self.queueStop(action.current, action.other, obj)
+        }
       }
     }
   }
