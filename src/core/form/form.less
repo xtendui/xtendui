@@ -12,7 +12,7 @@
  */
 
 fieldset + fieldset {
-  .margin(top, small);
+  .margin(top, big);
 }
 
 /**
@@ -26,23 +26,34 @@ legend {
 }
 
 /**
+ * text
+ */
+
+.form-text {
+  .block();
+  .margin(top, small);
+  .font--small();
+  .muted();
+}
+
+/**
  * group
  */
 
 .form-group {
   // option
-  .form-group--medium();
+  .form-group.form-group--medium();
 }
 
 // addons
 
-.form-group--flex {
+.form-group--row {
   .row-space--x(medium);
 }
 
-.form-group--flex-sm {
+.form-group--row-sm {
   @media @min-sm {
-    .form-group--flex();
+    .form-group--row();
   }
 }
 
@@ -71,59 +82,31 @@ legend {
 
 // size
 
-.form-group--tiny {
+.form--tiny {
+  .form-groups({ .form-group.form-group--tiny() });
+}
+
+.form--medium {
+  .form-groups({ .form-group.form-group--medium() });
+}
+
+.form--giant {
+  .form-groups({ .form-group.form-group--giant() });
+}
+
+.form-group.form-group--tiny {
   .margin(bottom, 1em);
   font-size: 1.1rem;
 }
 
-.form--tiny {
-  .form-groups({ .form-group--tiny() });
-}
-
-.form-group--small {
-  .margin(bottom, 1.25em);
-  font-size: 1.2rem;
-}
-
-.form--small {
-  .form-groups({ .form-group--small() });
-}
-
-.form-group--medium {
+.form-group.form-group--medium {
   .margin(bottom, 1.5em);
   font-size: 1.3rem;
 }
 
-.form--medium {
-  .form-groups({ .form-group--medium() });
-}
-
-.form-group--big {
-  .margin(bottom, 1.5em);
-  font-size: 1.4rem;
-}
-
-.form--big {
-  .form-groups({ .form-group--big() });
-}
-
-.form-group--giant {
+.form-group.form-group--giant {
   .margin(bottom, 1.5em);
   font-size: 1.5rem;
-}
-
-.form--giant {
-  .form-groups({ .form-group--giant() });
-}
-
-// special
-
-.form-group--none {
-  .padding(all, none);
-}
-
-.form--none {
-  .form-groups({ .form-group--none() });
 }
 
 /**
@@ -240,7 +223,7 @@ select[multiple]& {
   .padding(left, small); // space from checkbox/radio
   // styles
   .font-sans--regular();
-  font-size: 13px;
+  font-size: 1em;
   line-height: 1.2;
   letter-spacing: 0;
   text-transform: none;
@@ -326,7 +309,7 @@ select[multiple]& {
   &:after {
     .icon-xt();
     content: @icon-xt--circle;
-    font-size: 55%;
+    font-size: 50%;
   }
 }
 

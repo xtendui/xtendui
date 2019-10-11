@@ -7,7 +7,7 @@ import { cssSource, jsSource } from 'assets/scripts/source'
 
 class DemoReact extends React.Component {
   render () {
-    const { children, src } = this.props
+    const { children, src, name } = this.props
     const dirs = path.dirname(src).split('/')
     const demo = {
       name: path.basename(src, '.jsx'),
@@ -17,6 +17,7 @@ class DemoReact extends React.Component {
     demo.name = src.split('/').pop()
     demo.type = demo.type === 'core' ? 'demo' : demo.type
     demo.Component = require(`xtend-library/src/${demo.type}/${demo.component}/${demo.name}.jsx`).default
+    demo.name = name || demo.name
     return (
       <StaticQuery
         query={graphql`

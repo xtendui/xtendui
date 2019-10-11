@@ -6,8 +6,9 @@ import { cssSource, jsSource } from 'assets/scripts/source'
 
 class DemoVanilla extends React.Component {
   render () {
-    const { src, children } = this.props
+    const { src, children, name } = this.props
     const demo = require('../code/' + src + '.js').demo
+    demo.name = name || demo.name
     demo.type = demo.type === 'core' ? 'demo' : demo.type
     return (
       <StaticQuery
