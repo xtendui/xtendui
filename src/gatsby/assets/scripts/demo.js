@@ -97,7 +97,7 @@ const populateDemo = function (container, i) {
   // loop items
   for (const [k, item] of items.entries()) {
     // populate tabs
-    let name = item.getAttribute('data-iframe') ? item.getAttribute('data-iframe').split('/').pop() : null
+    let name = item.getAttribute('data-iframe') ? item.getAttribute('data-iframe').split('/').pop().split('-').join(' ') : null
     name = item.getAttribute('data-name') ? item.getAttribute('data-name') : name
     if (!name) {
       if (items.length === 1) {
