@@ -582,15 +582,15 @@ if (typeof window !== 'undefined') {
   }
 
   /**
-   * Check if event target is inside elements
-   * @param {Node|HTMLElement|EventTarget|Window} element Element to check target
-   * @param {NodeList|Array} targets Elements to check inside
+   * Contains for multiple elements
+   * @param {NodeList|Array} elements Elements to check if contains
+   * @param {Node|HTMLElement|EventTarget|Window} target Element to check if contained
    * @return {Boolean}
    */
-  Xt.checkNested = function (element, targets) {
+  Xt.contains = function (elements, target) {
     let result = false
-    for (const t of targets) {
-      if (element === t || t.contains(element)) {
+    for (const el of elements) {
+      if (el.contains(target)) {
         result = true
       }
     }

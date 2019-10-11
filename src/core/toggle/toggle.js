@@ -620,7 +620,7 @@ class Toggle {
         if (options.eventLimit) {
           const eventLimit = self.container.querySelectorAll(options.eventLimit)
           if (eventLimit.length) {
-            if (!Xt.checkNested(e.target, eventLimit)) {
+            if (!Xt.contains(eventLimit, e.target)) {
               self.eventOn(element, false, e)
             }
           } else {
@@ -656,7 +656,7 @@ class Toggle {
         if (options.eventLimit) {
           const eventLimit = self.container.querySelectorAll(options.eventLimit)
           if (eventLimit.length) {
-            if (!Xt.checkNested(e.target, eventLimit)) {
+            if (!Xt.contains(eventLimit, e.target)) {
               self.eventOff(element, false, e)
             }
           } else {
@@ -1788,10 +1788,7 @@ class Toggle {
         el.focus()
       }
     } else if (actionCurrent === 'Off') {
-      // autoclose
-      dispatchEvent(new CustomEvent('autoclose.xt'))
       // special
-      self.specialBackdrop(actionCurrent, obj)
       self.specialClassHtml(actionCurrent)
       // focus
       if (options.scrollbar) {
@@ -1819,6 +1816,7 @@ class Toggle {
       self.initial = false
     } else if (actionCurrent === 'Off') {
       // special
+      self.specialBackdrop(actionCurrent, obj)
       self.specialScrollbar(actionCurrent)
     }
   }
@@ -2154,11 +2152,11 @@ class Toggle {
   eventSpecialCloseInsideHandler (checkEl, single, e) {
     const self = this
     // prevent closing when nested and moved (ex: overlay)
-    if (!Xt.checkNested(checkEl, self.targets)) {
+    if (!Xt.contains(self.targets, checkEl)) {
       return
     }
     // handler
-    if (Xt.checkNested(e.target, Xt.arrSingle(checkEl))) {
+    if (Xt.contains(Xt.arrSingle(checkEl), e.target)) {
       self.eventOff(single)
     }
   }
@@ -2172,7 +2170,7 @@ class Toggle {
   eventSpecialCloseOutsideHandler (checkEl, single, e) {
     const self = this
     // handler
-    if (!Xt.checkNested(e.target, Xt.arrSingle(checkEl))) {
+    if (!Xt.contains(Xt.arrSingle(checkEl), e.target)) {
       self.eventOff(single)
     }
   }

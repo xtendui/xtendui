@@ -476,7 +476,7 @@ class Slider extends Xt.Toggle {
         // logic
         if (options.eventLimit) {
           const eventLimit = self.container.querySelectorAll(options.eventLimit)
-          if (!Xt.checkNested(e.target, eventLimit)) {
+          if (!Xt.contains(eventLimit, e.target)) {
             self.eventDragstart(dragger, e)
           }
         } else {
@@ -504,7 +504,7 @@ class Slider extends Xt.Toggle {
     // logic
     if (options.eventLimit) {
       const eventLimit = self.container.querySelectorAll(options.eventLimit)
-      if (!Xt.checkNested(e.target, eventLimit)) {
+      if (!Xt.contains(eventLimit, e.target)) {
         self.eventDragend(dragger, e)
       }
     } else {
