@@ -58,7 +58,7 @@ Overlay.optionsDefault = {
   min: 0,
   max: 1,
   instant: { elements: true },
-  autoClose: true,
+  autoclose: true,
   appendTo: 'body',
   backdrop: 'targets',
   classHtml: 'xt-overlay',

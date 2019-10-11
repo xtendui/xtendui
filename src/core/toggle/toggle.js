@@ -527,11 +527,11 @@ class Toggle {
         keyboard.addEventListener('blur', keyboardBlurHandler)
       }
     }
-    // autoClose
-    if (options.autoClose) {
-      const autoCloseHandler = Xt.dataStorage.put(window, 'autoClose' + '.' + self.namespace,
-        self.eventAutoCloseHandler.bind(self))
-      addEventListener('autoClose.xt', autoCloseHandler)
+    // autoclose
+    if (options.autoclose) {
+      const autocloseHandler = Xt.dataStorage.put(window, 'autoclose' + '.' + self.namespace,
+        self.eventautocloseHandler.bind(self))
+      addEventListener('autoclose.xt', autocloseHandler)
     }
     // images
     for (const el of self.elements.filter(x => !x.classList.contains('xt-clone'))) {
@@ -838,10 +838,10 @@ class Toggle {
   }
 
   /**
-   * autoClose handler
+   * autoclose handler
    * @param {Event} e
    */
-  eventAutoCloseHandler (e) {
+  eventautocloseHandler (e) {
     const self = this
     // restart
     const currents = self.getCurrents()
@@ -1777,7 +1777,7 @@ class Toggle {
     const options = self.options
     if (actionCurrent === 'On') {
       // special
-      self.specialBackdrop(obj)
+      self.specialBackdrop(actionCurrent, obj)
       self.specialClassHtml(actionCurrent)
       self.specialScrollbar(actionCurrent)
       // focus
@@ -1788,7 +1788,10 @@ class Toggle {
         el.focus()
       }
     } else if (actionCurrent === 'Off') {
+      // autoclose
+      dispatchEvent(new CustomEvent('autoclose.xt'))
       // special
+      self.specialBackdrop(actionCurrent, obj)
       self.specialClassHtml(actionCurrent)
       // focus
       if (options.scrollbar) {
@@ -2314,25 +2317,35 @@ class Toggle {
 
   /**
    * backdrop append to element
+   * @param {String} actionCurrent Current action
    * @param {Object} obj Queue object
    */
-  specialBackdrop (obj) {
+  specialBackdrop (actionCurrent, obj) {
     const self = this
     const options = self.options
     // backdrop
     if (options.backdrop) {
       const elements = typeof options.backdrop === 'string' && obj[options.backdrop] ? Xt.arrSingle(obj[options.backdrop].queueEls) : Xt.arrSingle(self.object)
       for (const element of elements) {
-        let backdrop = element.querySelectorAll('.backdrop')
-        if (!backdrop.length) {
-          backdrop = Xt.createElement('<div class="backdrop xt-ignore"></div>')
-          element.append(backdrop)
-          // @FIX pass wheel event or when you mousewheel over .backdrop it doesn't scroll
-          const eWheel = 'onwheel' in backdrop ? 'wheel' : backdrop.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll'
-          backdrop.addEventListener(eWheel, function (e) {
-            const delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY
-            element.scrollTop -= delta
-          }, Xt.passiveSupported ? { passive: false } : false)
+        if (actionCurrent === 'On') {
+          const backdrops = element.querySelectorAll('.backdrop')
+          if (!backdrops.length) {
+            const backdrop = Xt.createElement('<div class="backdrop xt-ignore"></div>')
+            element.append(backdrop)
+            // @FIX pass wheel event or when you mousewheel over .backdrop it doesn't scroll
+            const eWheel = 'onwheel' in backdrop ? 'wheel' : backdrop.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll'
+            backdrop.addEventListener(eWheel, function (e) {
+              const delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY
+              element.scrollTop -= delta
+            }, Xt.passiveSupported ? { passive: false } : false)
+          }
+        } else if (actionCurrent === 'Off') {
+          const backdrops = element.querySelectorAll('.backdrop')
+          if (backdrops.length) {
+            for (const backdrop of backdrops) {
+              backdrop.remove()
+            }
+          }
         }
       }
     }
@@ -2499,7 +2512,7 @@ class Toggle {
   destroy (weak = false) {
     const self = this
     // stop queue
-    self.queueStopAll() // @FIX autoClose with appendTo outside ajax
+    self.queueStopAll() // @FIX autoclose with appendTo outside ajax
     // stop auto
     self.eventAutoStop()
     // remove events
@@ -2556,7 +2569,7 @@ Toggle.optionsDefaultSuper = {
   classInitial: 'initial',
   classInverse: 'inverse',
   eventLimit: '.event-limit, .drop, .overlay_content',
-  autoClose: false,
+  autoclose: false,
   onBlock: false,
   offBlock: false,
   loop: true,
@@ -2599,7 +2612,6 @@ Xt.mount.push({
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Toggle.componentName)
-    console.log(optionsMarkup);
     const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
 
     // init

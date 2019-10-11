@@ -668,10 +668,10 @@ if (typeof window !== 'undefined') {
   }
 
   /**
-   * autoClose inside Element
+   * autoclose inside Element
    * @param {Node|HTMLElement|EventTarget|Window} el Element container
    */
-  Xt.autoClose = function (el) {
+  Xt.autoclose = function (el) {
     const query = '[data-xt-namespace^="drop-xt-"]'
     for (const drop of el.querySelectorAll(query)) {
       drop.dispatchEvent(new CustomEvent('off.xt'))
