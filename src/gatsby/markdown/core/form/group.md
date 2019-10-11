@@ -9,27 +9,27 @@ categories: ["100-Content"]
 ## Size
 
 <demo>
-  <demovanilla src="inline/core/form/group-tiny" name="tiny">
+  <demovanilla src="inline/core/form/group-tiny">
   </demovanilla>
-  <demovanilla src="inline/core/form/group-medium" name="medium">
+  <demovanilla src="inline/core/form/group-medium">
   </demovanilla>
-  <demovanilla src="inline/core/form/group-giant" name="giant">
+  <demovanilla src="inline/core/form/group-giant">
   </demovanilla>
 </demo>
 
 ## Addon
 
 <demo>
-  <demovanilla src="inline/core/form/addon-none" name="none">
+  <demovanilla src="inline/core/form/addon-none">
   </demovanilla>
-  <demovanilla src="inline/core/form/addon-row" name="row">
+  <demovanilla src="inline/core/form/addon-row">
   </demovanilla>
-  <demovanilla src="inline/core/form/addon-horizontal" name="horizontal">
+  <demovanilla src="inline/core/form/addon-horizontal">
   </demovanilla>
-  <demovanilla src="inline/core/form/addon-inline-input" name="inline-input">
+  <demovanilla src="inline/core/form/addon-inline-input">
   </demovanilla>
-  <demovanilla src="inline/core/form/addon-inline" name="inline">
+  <demovanilla src="inline/core/form/addon-inline">
   </demovanilla>
-  <demovanilla src="inline/core/form/addon-all" name="all">
+  <demovanilla src="inline/core/form/addon-all">
   </demovanilla>
 </demo>

@@ -32,7 +32,7 @@ class DemoReact extends React.Component {
           }
         `}
         render={data => (
-          <div className="demo_item demo_preview" data-name={demo.name.split('-').join(' ')}>
+          <div className="demo_item demo_preview" data-name={demo.name.split('-').pop()}>
             {children}
             <div className="demo_source demo_source--from">
               <demo.Component></demo.Component>
