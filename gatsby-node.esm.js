@@ -5,8 +5,9 @@
  */
 
 import path from 'path'
-import './xtend-build.js'
 import { markdownSlug } from './src/gatsby/components/markdown-slug.js'
+require('./build/less.js')
+require('./build/js.js')
 
 // webpack config
 
