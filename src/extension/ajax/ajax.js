@@ -361,7 +361,7 @@ class Ajax extends Xt.Toggle {
 
 Ajax.componentName = 'xt-ajax'
 Ajax.optionsDefault = {
-  elements: 'a[href]:not([href^=#])',
+  elements: 'a[href]:not([href^="#"])',
   targets: false,
   on: 'click',
   min: 0,

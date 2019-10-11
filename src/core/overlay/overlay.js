@@ -58,6 +58,7 @@ Overlay.optionsDefault = {
   min: 0,
   max: 1,
   instant: { elements: true },
+  eventLimit: '.event-limit, .overlay_content',
   autoclose: true,
   appendTo: 'body',
   backdrop: 'targets',

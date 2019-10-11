@@ -51,6 +51,7 @@ Drop.optionsDefault = {
   min: 0,
   max: 1,
   instant: { elementsInner: true },
+  eventLimit: '.event-limit, .drop',
   autoclose: true,
   closeOutside: 'body',
   ariaControls: ':scope > a, :scope > button'

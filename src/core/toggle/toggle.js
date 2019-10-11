@@ -626,6 +626,8 @@ class Toggle {
           } else {
             self.eventOn(element, false, e)
           }
+        } else {
+          self.eventOn(element, false, e)
         }
       }
     }
@@ -662,6 +664,8 @@ class Toggle {
           } else {
             self.eventOff(element, false, e)
           }
+        } else {
+          self.eventOff(element, false, e)
         }
       }
     }
@@ -2574,7 +2578,7 @@ Toggle.optionsDefaultSuper = {
   classOut: 'out',
   classInitial: 'initial',
   classInverse: 'inverse',
-  eventLimit: '.event-limit, .drop, .overlay_content',
+  eventLimit: '.event-limit',
   autoclose: false,
   onBlock: false,
   offBlock: false,
