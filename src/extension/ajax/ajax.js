@@ -356,7 +356,7 @@ class Ajax extends Xt.Toggle {
 }
 
 //
-// option
+// options
 //
 
 Ajax.componentName = 'xt-ajax'

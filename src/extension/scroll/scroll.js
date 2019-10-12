@@ -269,7 +269,7 @@ class Scroll extends Xt.Toggle {
 }
 
 //
-// option
+// options
 //
 
 Scroll.componentName = 'xt-scroll'

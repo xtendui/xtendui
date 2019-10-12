@@ -108,7 +108,7 @@ class PropagateInteraction {
 }
 
 //
-// option
+// options
 //
 
 PropagateInteraction.componentName = 'xt-propagate-interaction'

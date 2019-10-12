@@ -15,7 +15,7 @@ class Smooth extends Xt.Toggle {
 }
 
 //
-// option
+// options
 //
 
 Smooth.componentName = 'xt-smooth'

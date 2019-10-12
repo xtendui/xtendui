@@ -39,7 +39,7 @@ class Drop extends Xt.Toggle {
 }
 
 //
-// option
+// options
 //
 
 Drop.componentName = 'xt-drop'

@@ -981,7 +981,7 @@ class Slider extends Xt.Toggle {
 }
 
 //
-// option
+// options
 //
 
 Slider.componentName = 'xt-slider'

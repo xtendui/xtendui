@@ -107,7 +107,7 @@ class MouseFollow {
 }
 
 //
-// option
+// options
 //
 
 MouseFollow.componentName = 'xt-mouse-follow'

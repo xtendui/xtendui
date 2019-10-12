@@ -7,22 +7,20 @@
 .card {
   // styles
   border-radius: 4px;
+  a& {
+    .link--none() !important;
+  }
   .card_design {
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
   }
-  // content
   .card_title {
     .spacing--small();
     .font-sans--semibold();
     line-height: 1.2;
     letter-spacing: 0;
     text-transform: none;
-  }
-  // link
-  a& {
-    .link--none() !important;
   }
   // option
   .card--primary();
@@ -31,6 +29,7 @@
 
 // addons
 
+/*
 .card--max-height {
   .card_content {
     overflow-y: auto;
@@ -47,6 +46,7 @@
     .overflow-style();
   }
 }
+*/
 
 // variant
 
@@ -97,7 +97,7 @@
 }
 
 .card--text {
-  .card--none() !important;
+  .card--none();
   color: @text;
   .card_design {
     top: -1.5rem;

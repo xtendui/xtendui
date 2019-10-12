@@ -58,13 +58,12 @@ class Toggle {
    */
   initVars () {
     const self = this
-    // option
+    // options
     if (self.constructor.optionsDefaultSuper) {
       self.optionsDefault = Xt.merge([self.constructor.optionsDefaultSuper, self.constructor.optionsDefault])
     } else {
       self.optionsDefault = self.constructor.optionsDefaultSuper
     }
-    // js options
     self.options = Xt.merge([self.optionsDefault, self.optionsCustom ? self.optionsCustom : {}])
     // classes
     self.classes = self.options.class ? [...self.options.class.split(' ')] : []
@@ -2561,7 +2560,7 @@ class Toggle {
 }
 
 //
-// option
+// options
 //
 
 Toggle.componentName = 'xt-toggle'

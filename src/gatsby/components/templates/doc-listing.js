@@ -20,7 +20,7 @@ class Template extends React.Component {
           <div className="row">
             {data.categories.category.map((category, i) => (
               <div className="gatsby_listing_group" key={i}>
-                <h2 className="h6 header--block">{category.title.split('-').pop()}</h2>
+                <h2 className="gatsby_listing_title">{category.title.split('-').pop()}</h2>
                 <div className="gatsby_listing_items">
                   <div className="row">
                     {category.posts.map(({ post }, z) => (

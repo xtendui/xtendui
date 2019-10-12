@@ -47,7 +47,7 @@ class Overlay extends Xt.Toggle {
 }
 
 //
-// option
+// options
 //
 
 Overlay.componentName = 'xt-overlay'

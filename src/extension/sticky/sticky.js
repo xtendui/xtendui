@@ -419,7 +419,7 @@ class Sticky extends Xt.Toggle {
 }
 
 //
-// option
+// options
 //
 
 Sticky.componentName = 'xt-sticky'

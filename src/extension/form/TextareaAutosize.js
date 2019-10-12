@@ -78,7 +78,7 @@ class TextareaAutosize {
 }
 
 //
-// option
+// options
 //
 
 TextareaAutosize.componentName = 'xt-textarea-autosize'
