@@ -32,7 +32,7 @@ class DemoReactIframe extends React.Component {
           <Layout seo={seo} demo={demo}>
             <SEO title={seo.title + ' — ' + seo.description}/>
             <div id="body-outer">
-              <div id="gatsby_body-inner" className="gatbsy_demo_source--from">
+              <div id="gatsby_body-inner" className="gatsby_demo_source--from">
                 {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.jsx`).map((file, index) => (
                   demo.jsSource = jsSource(demo, '.jsx')
                 )) && <div/> // @FIX react render string

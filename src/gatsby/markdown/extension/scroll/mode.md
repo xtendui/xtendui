@@ -11,14 +11,14 @@ categories: ["400-Presentation"]
 You can set scroll mode with **less mixins**.
 
 <demo>
-  <div class="gatbsy_demo_item" data-iframe="iframe/core/scroll/mode-infinite">
+  <div class="gatsby_demo_item" data-iframe="iframe/core/scroll/mode-infinite">
   </div>
-  <div class="gatbsy_demo_item" data-iframe="iframe/core/scroll/mode-scroll">
+  <div class="gatsby_demo_item" data-iframe="iframe/core/scroll/mode-scroll">
   </div>
-  <div class="gatbsy_demo_item" data-iframe="iframe/core/scroll/mode-visible">
+  <div class="gatsby_demo_item" data-iframe="iframe/core/scroll/mode-visible">
   </div>
-  <div class="gatbsy_demo_item" data-iframe="iframe/core/scroll/mode-responsive">
+  <div class="gatsby_demo_item" data-iframe="iframe/core/scroll/mode-responsive">
   </div>
-  <div class="gatbsy_demo_item" data-iframe="iframe/core/scroll/mode-block">
+  <div class="gatsby_demo_item" data-iframe="iframe/core/scroll/mode-block">
   </div>
 </demo>

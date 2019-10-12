@@ -99,7 +99,7 @@ Add the required scripts to your html:
 
 # Documentation
 
-We use gatbsy to serve the docs:
+We use gatsby to serve the docs:
 
 * Install required npm packages with `npm install`
 * Use `npm run build` to build the docs in `/public`

@@ -38,9 +38,9 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
 </div>
 
 <demo>
-  <div class="gatbsy_demo-inline">
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="none">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_gatsby_demo-cols" data-lang="language-markup">
+  <div class="gatsby_demo-inline">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="none">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_gatsby_demo-cols" data-lang="language-markup">
         <div class="row row-space--none">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -52,8 +52,8 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="tiny">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="tiny">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_gatsby_demo-cols" data-lang="language-markup">
         <div class="row row-space--tiny">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -65,8 +65,8 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="small">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="small">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_gatsby_demo-cols" data-lang="language-markup">
         <div class="row row-space--small">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -78,8 +78,8 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="medium">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="medium">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row row-space--medium">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -91,8 +91,8 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="big">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="big">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row row-space--big">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -104,8 +104,8 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="giant">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="giant">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row row-space--giant">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -125,9 +125,9 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
 Set children's direction inside the flexbox.
 
 <demo>
-  <div class="gatbsy_demo-inline">
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="row">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+  <div class="gatsby_demo-inline">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="row">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="flex-direction: row">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -139,8 +139,8 @@ Set children's direction inside the flexbox.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="row-reverse">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="row-reverse">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="flex-direction: row-reverse">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -152,8 +152,8 @@ Set children's direction inside the flexbox.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="column">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="column">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="flex-direction: column">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -165,8 +165,8 @@ Set children's direction inside the flexbox.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="column-reverse">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="column-reverse">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="flex-direction: column-reverse">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -186,9 +186,9 @@ Set children's direction inside the flexbox.
 Set children's wrapping inside the flexbox.
 
 <demo>
-  <div class="gatbsy_demo-inline">
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="wrap">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+  <div class="gatsby_demo-inline">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="wrap">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="flex-wrap: wrap">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -200,8 +200,8 @@ Set children's wrapping inside the flexbox.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="wrap-reverse">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="wrap-reverse">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="flex-wrap: wrap-reverse">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -213,8 +213,8 @@ Set children's wrapping inside the flexbox.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="nowrap">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="nowrap">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="flex-wrap: nowrap">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -234,41 +234,41 @@ Set children's wrapping inside the flexbox.
 Set children's horizontal alignment inside the flexbox.
 
 <demo>
-  <div class="gatbsy_demo-inline">
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="start">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+  <div class="gatsby_demo-inline">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="start">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="justify-content: flex-start">
           <div class="col-2"></div>
           <div class="col-4"></div>
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="end">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="end">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="justify-content: flex-end">
           <div class="col-2"></div>
           <div class="col-4"></div>
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="center">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="center">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="justify-content: center">
           <div class="col-2"></div>
           <div class="col-4"></div>
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="between">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="between">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="justify-content: space-between">
           <div class="col-2"></div>
           <div class="col-4"></div>
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="around">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="around">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="justify-content: space-around">
           <div class="col-2"></div>
           <div class="col-4"></div>
@@ -283,9 +283,9 @@ Set children's horizontal alignment inside the flexbox.
 Set children's vertical alignment inside the flexbox.
 
 <demo>
-  <div class="gatbsy_demo-inline">
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="start">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+  <div class="gatsby_demo-inline">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="start">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-items: flex-start">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -294,8 +294,8 @@ Set children's vertical alignment inside the flexbox.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="end">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="end">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-items: flex-end">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -304,8 +304,8 @@ Set children's vertical alignment inside the flexbox.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="center">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="center">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-items: center">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -314,8 +314,8 @@ Set children's vertical alignment inside the flexbox.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="baseline">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="baseline">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-items: baseline">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -324,8 +324,8 @@ Set children's vertical alignment inside the flexbox.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="stretch">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="stretch">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-items: stretch">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -342,9 +342,9 @@ Set children's vertical alignment inside the flexbox.
 Set children's vertical alignment inside the flexbox.
 
 <demo>
-  <div class="gatbsy_demo-inline">
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="start">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+  <div class="gatsby_demo-inline">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="start">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-content: flex-start">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -353,8 +353,8 @@ Set children's vertical alignment inside the flexbox.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="end">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="end">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-content: flex-end">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -363,8 +363,8 @@ Set children's vertical alignment inside the flexbox.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="center">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="center">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-content: center">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -373,8 +373,8 @@ Set children's vertical alignment inside the flexbox.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="between">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="between">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-content: space-between">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -383,8 +383,8 @@ Set children's vertical alignment inside the flexbox.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="around">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="around">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-content: space-around">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -393,8 +393,8 @@ Set children's vertical alignment inside the flexbox.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="stretch">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="stretch">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="height: 150px; align-content: stretch">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -412,9 +412,9 @@ Set item's vertical alignment inside the flexbox.
 If set to **>auto** computes to the parent's `align-items` value.
 
 <demo>
-  <div class="gatbsy_demo-inline">
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="start">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+  <div class="gatsby_demo-inline">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="start">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row">
           <div class="col-4" style="height: 100px"></div>
           <div class="col-8" style="align-self: flex-start"></div>
@@ -423,8 +423,8 @@ If set to **>auto** computes to the parent's `align-items` value.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="end">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="end">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row">
           <div class="col-4" style="height: 100px"></div>
           <div class="col-8" style="align-self: flex-end"></div>
@@ -433,8 +433,8 @@ If set to **>auto** computes to the parent's `align-items` value.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="center">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="center">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row">
           <div class="col-4" style="height: 100px"></div>
           <div class="col-8" style="align-self: center"></div>
@@ -443,8 +443,8 @@ If set to **>auto** computes to the parent's `align-items` value.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="baseline">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="baseline">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row">
           <div class="col-4" style="height: 100px"></div>
           <div class="col-8" style="align-self: baseline"></div>
@@ -453,8 +453,8 @@ If set to **>auto** computes to the parent's `align-items` value.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="stretch">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="stretch">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row">
           <div class="col-4" style="height: 100px"></div>
           <div class="col-8" style="align-self: stretch"></div>
@@ -463,8 +463,8 @@ If set to **>auto** computes to the parent's `align-items` value.
         </div>
       </div>
     </div>
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="auto">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="auto">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row" style="align-items: center">
           <div class="col-4" style="height: 100px"></div>
           <div class="col-8" style="align-self: auto"></div>
@@ -504,9 +504,9 @@ Set item's order inside the flexbox.
 </div>
 
 <demo>
-  <div class="gatbsy_demo-inline">
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="order">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_demo-cols" data-lang="language-markup">
+  <div class="gatsby_demo-inline">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="order">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row">
           <div class="col-4 order-4"></div>
           <div class="col-8 order-5"></div>

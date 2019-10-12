@@ -44,9 +44,9 @@ You can nest `.row`, but a flex children can't be a flex itself.
 </div>
 
 <demo>
-  <div class="gatbsy_demo-inline">
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="columns">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_gatsby_demo-cols" data-lang="language-markup">
+  <div class="gatsby_demo-inline">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="columns">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_gatsby_demo-cols" data-lang="language-markup">
         <div class="row">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -62,9 +62,9 @@ You can nest `.row`, but a flex children can't be a flex itself.
 </demo>
 
 <demo>
-  <div class="gatbsy_demo-inline">
-    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="nested">
-      <div class="gatbsy_demo_source gatbsy_demo_source--from gatsby_gatsby_demo-cols-nested" data-lang="language-markup">
+  <div class="gatsby_demo-inline">
+    <div class="gatsby_demo_item gatsby_demo_preview" data-name="nested">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_gatsby_demo-cols-nested" data-lang="language-markup">
         <div class="row">
           <div class="col-4">
             <div class="row">

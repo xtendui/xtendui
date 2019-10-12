@@ -24,14 +24,14 @@ class DemoVanilla extends React.Component {
           }
         `}
         render={data => (
-          <div className="gatbsy_demo_item gatbsy_demo_preview" data-name={name || demo.name.split('-').pop()} data-inline={src}>
+          <div className="gatsby_demo_item gatsby_demo_preview" data-name={name || demo.name.split('-').pop()} data-inline={src}>
             {children}
-            <div className="gatbsy_demo_source gatbsy_demo_source--from" data-lang="html" dangerouslySetInnerHTML={{ __html: demo.htmlSource }}/>
+            <div className="gatsby_demo_source gatsby_demo_source--from" data-lang="html" dangerouslySetInnerHTML={{ __html: demo.htmlSource }}/>
             {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`).map((file, i) => (
-              <div className="gatbsy_demo_source xt-ignore" data-lang="less" dangerouslySetInnerHTML={{ __html: cssSource(demo) }} key={i}/>
+              <div className="gatsby_demo_source xt-ignore" data-lang="less" dangerouslySetInnerHTML={{ __html: cssSource(demo) }} key={i}/>
             ))}
             {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.js`).map((file, i) => (
-              <div className="gatbsy_demo_source xt-ignore" data-lang="js" dangerouslySetInnerHTML={{ __html: jsSource(demo) }} key={i}/>
+              <div className="gatsby_demo_source xt-ignore" data-lang="js" dangerouslySetInnerHTML={{ __html: jsSource(demo) }} key={i}/>
             ))}
           </div>
         )}
