@@ -26,7 +26,8 @@ exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-  const docTemplate = path.resolve('src/gatsby/components/templates/doc.js')
+  const docPageTemplate = path.resolve('src/gatsby/components/templates/doc-page.js')
+  const docListingTemplate = path.resolve('src/gatsby/components/templates/doc-listing.js')
   /* COMMENTED CATEGORIES AND TAGS
   const tagTemplate = path.resolve(`src/gatsby/components/templates/doc-tag.js`)
   const categoryTemplate = path.resolve(`src/gatsby/components/templates/doc-category.js`)
@@ -54,9 +55,13 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      let template = docPageTemplate
+      if (!node.frontmatter.parent) {
+        template = docListingTemplate
+      }
       createPage({
         path: markdownSlug(node), // needs gatsby-source-filesystem resolve name
-        component: docTemplate,
+        component: template,
         context: {
           type: node.frontmatter.type, // for query($type: String) { // put also on return graphql
           parent: node.frontmatter.parent, // for query($parent: String) { // put also on return graphql

@@ -16,15 +16,15 @@ class Template extends React.Component {
     return (
       <Layout seo={seo} page={data}>
         <SEO title={seo.title + ' — ' + seo.description}/>
-        {data.tags.tag.map((category, index) => (
-          <div key={index}>
+        {data.tags.tag.map((category, i) => (
+          <div key={i}>
             <Link to={`/tags/${kebabCase(category.title)}/`}>
               {category.title}
             </Link>
           </div>
         ))}
-        {data.allMarkdownRemark.posts.map(({post}, index) => (
-          <div key={index}>
+        {data.allMarkdownRemark.posts.map(({post}, i) => (
+          <div key={i}>
             <Link to={markdownSlug(post)}>
               {post.frontmatter.title}
             </Link>

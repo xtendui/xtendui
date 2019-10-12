@@ -38,7 +38,12 @@
   min-height: 100vh;
 }
 
-.site_main {
+.site_main,
+.site--with-sidebar,
+.site_main_inner,
+.site_article {
+  display: flex;
+  flex-direction: column;
   .flex--auto();
 }
 
@@ -79,6 +84,7 @@
 }
 
 .site_article_foot {
+  margin-top: auto;
   .padding(y, giant);
   .padding(x, medium, sm);
   background: @gray--200;
@@ -265,4 +271,20 @@
 .article_foot {
   display: flex;
   justify-content: space-between;
+}
+
+/**
+ * listing
+ */
+
+.listing {
+}
+
+.listing_group {
+}
+
+.listing_item {
+}
+
+.listing_item_title {
 }

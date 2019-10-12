@@ -27,11 +27,11 @@ class DemoVanilla extends React.Component {
           <div className="demo_item demo_preview" data-name={demo.name.split('-').pop()} data-inline={src}>
             {children}
             <div className="demo_source demo_source--from" data-lang="html" dangerouslySetInnerHTML={{ __html: demo.htmlSource }}/>
-            {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`).map((file, index) => (
-              <div className="demo_source xt-ignore" data-lang="less" dangerouslySetInnerHTML={{ __html: cssSource(demo) }} key={index}/>
+            {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`).map((file, i) => (
+              <div className="demo_source xt-ignore" data-lang="less" dangerouslySetInnerHTML={{ __html: cssSource(demo) }} key={i}/>
             ))}
-            {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.js`).map((file, index) => (
-              <div className="demo_source xt-ignore" data-lang="js" dangerouslySetInnerHTML={{ __html: jsSource(demo) }} key={index}/>
+            {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.js`).map((file, i) => (
+              <div className="demo_source xt-ignore" data-lang="js" dangerouslySetInnerHTML={{ __html: jsSource(demo) }} key={i}/>
             ))}
           </div>
         )}

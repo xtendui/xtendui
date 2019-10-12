@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from 'components/header'
 import Footer from 'components/footer'
-import Sidebar from 'components/sidebar'
+import DocsSidebar from 'components/doc-sidebar'
 import DocsAside from 'components/doc-aside'
 import DocsFoot from 'components/doc-foot'
 
@@ -55,7 +55,7 @@ class Layout extends React.Component {
 
                   {page
                     ? <div className="site--with-sidebar site--with-aside">
-                      <Sidebar page={page}/>
+                      <DocsSidebar page={page}/>
                       <article className="site_article">
                         <div className="site_article_hero">
                           <div className="container full">

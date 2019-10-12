@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { markdownSlug } from 'components/markdown-slug.js'
 
-class Sidebar extends React.Component {
+class DocSidebar extends React.Component {
   render () {
     const { page } = this.props
     return (
@@ -59,4 +59,4 @@ class Sidebar extends React.Component {
   }
 }
 
-export default Sidebar
+export default DocSidebar
