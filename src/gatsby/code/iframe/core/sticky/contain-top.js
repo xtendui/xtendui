@@ -22,7 +22,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="card card--light">
+<div class="card">
   <div class="card_design"></div>
   <div class="card_content">
     <h3>Lorem ipsum dolor sit amet</h3>
@@ -32,7 +32,7 @@ demo.htmlSource = `
 
 <div class="sticky-1"
      data-xt-sticky="{ contain: { top: '.sticky-0:not(.xt-clone)' } }">
-  <div class="card card--squared card--light">
+  <div class="card card--squared">
     <div class="card_design"></div>
     <div class="card_content">
       Sticky middle
@@ -40,7 +40,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="card card--light">
+<div class="card">
   <div class="card_design"></div>
   <div class="card_content">
     <h3>Lorem ipsum dolor sit amet</h3>
@@ -50,7 +50,7 @@ demo.htmlSource = `
 
 <div class="sticky-2"
      data-xt-sticky="{ contain: { top: '.sticky-0:not(.xt-clone), .sticky-1:not(.xt-clone)' } }">
-  <div class="card card--squared card--light">
+  <div class="card card--squared">
     <div class="card_design"></div>
     <div class="card_content">
       Sticky bottom

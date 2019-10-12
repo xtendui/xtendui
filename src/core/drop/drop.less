@@ -13,14 +13,14 @@
 .drop {
   // styles
   > .drop_inner {
+    border-radius: 4px;
     > .drop_content {
       > .list, > .list-block {
         .padding(y, 1.3rem); // vertical space
         min-width: 18rem;
       }
     }
-    > .drop_design, > .drop_content {
-      border-radius: 4px;
+    > .drop_design {
       border-width: 1px;
       border-style: solid;
       border-color: transparent;
@@ -54,6 +54,20 @@
 
 // variant
 
+.drop--dark {
+  > .drop_inner {
+    .text--inverse();
+    > .drop_design {
+      border-color: @gray--900;
+      background: @gray--900;
+      box-shadow: @shadow--dark;
+    }
+    > .drop_content > .list--drop {
+      .list-btn({ .btn--text() });
+    }
+  }
+}
+
 .drop--light {
   > .drop_inner {
     color: @text;
@@ -68,16 +82,18 @@
   }
 }
 
-.drop--dark {
+// special
+
+.drop--squared {
   > .drop_inner {
-    .text--inverse();
+    border-radius: 0;
+  }
+}
+
+.drop--noborder {
+  > .drop_inner {
     > .drop_design {
-      border-color: @gray--900;
-      background: @gray--900;
-      box-shadow: @shadow--dark;
-    }
-    > .drop_content > .list--drop {
-      .list-btn({ .btn--text() });
+      border: 0;
     }
   }
 }

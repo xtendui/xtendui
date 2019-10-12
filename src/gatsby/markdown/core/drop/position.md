@@ -9,8 +9,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 Optional classes for assigning position.
 
-You can change the default **position** @TODO less path
-
 `.drop--bottom` `.drop--left` `.drop--right` `.drop--center` `.drop--top` `.drop--left` `.drop--right` `.drop--center` `.drop--left` `.drop--right` `.drop--middle` `.drop--center` `.drop--before` `.drop--top` `.drop--bottom` `.drop--middle` `.drop--after` `.drop--top` `.drop--bottom` `.drop--middle` `.drop--contain-top` `.drop--contain-bottom`
         
 <demo>

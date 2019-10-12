@@ -17,23 +17,30 @@ class Template extends React.Component {
       <Layout seo={seo} page={data}>
         <SEO title={seo.title + ' — ' + seo.description}/>
         <div className="gatsby_listing">
-          {data.categories.category.map((category, i) => (
-            <div className="gatsby_listing_group" key={i}>
-              {category.title.split('-').pop()}
-              {category.posts.map(({ post }, z) => (
-                post.frontmatter.parent === post.frontmatter.title
-                  ? <div key={z}>
-                    <Link to={markdownSlug(post)}
-                      className="gatsby_listing_item">
-                      <div className="gatsby_listing_item_title">
-                        {post.frontmatter.title}
-                      </div>
-                    </Link>
+          <div className="row">
+            {data.categories.category.map((category, i) => (
+              <div className="gatsby_listing_group" key={i}>
+                <h2 className="h6 header--block">{category.title.split('-').pop()}</h2>
+                <div className="gatsby_listing_items">
+                  <div className="row">
+                    {category.posts.map(({ post }, z) => (
+                      post.frontmatter.parent === post.frontmatter.title
+                        ? <div className="gatsby_listing_column" key={z}>
+                          <Link to={markdownSlug(post)} className="card card--text gatsby_listing_item">
+                            <div className="card_design"></div>
+                            <div className="card_content">
+                              <div className="card_title">{post.frontmatter.title}</div>
+                              <p>{post.frontmatter.description}</p>
+                            </div>
+                          </Link>
+                        </div>
+                        : null
+                    ))}
                   </div>
-                  : null
-              ))}
-            </div>
-          ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </Layout>
     )
@@ -53,6 +60,7 @@ export const query = graphql`
               type
               parent
               title
+              description
             }
           }
         }
@@ -102,7 +110,8 @@ Template.propTypes = {
                 frontmatter: PropTypes.shape({
                   type: PropTypes.string.isRequired,
                   parent: PropTypes.string,
-                  title: PropTypes.string.isRequired
+                  title: PropTypes.string.isRequired,
+                  description: PropTypes.string.isRequired
                 }).isRequired
               }).isRequired
             }).isRequired

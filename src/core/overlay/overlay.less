@@ -18,6 +18,14 @@
 
 .overlay {
   // styles
+  .overlay_inner {
+    border-radius: 4px;
+  }
+  .overlay_design {
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+  }
   .overlay_content {
     padding: 3rem;
     @media @min-sm {
@@ -26,14 +34,6 @@
     & + .overlay_content {
       padding-top: 0 !important;
     }
-  }
-  .overlay_design, .overlay_content {
-    border-radius: 4px;
-  }
-  .overlay_design {
-    border-width: 1px;
-    border-style: solid;
-    border-color: transparent;
   }
   .btn--close {
     position: absolute;
@@ -91,7 +91,7 @@
 // special
 
 .overlay--squared {
-  .overlay_design, .overlay_content {
+  .overlay_inner {
     border-radius: 0;
   }
 }

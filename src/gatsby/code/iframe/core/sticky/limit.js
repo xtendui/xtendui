@@ -24,7 +24,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="card card--light">
+<div class="card">
   <div class="card_design"></div>
   <div class="card_content">
     <h3>Lorem ipsum dolor sit amet</h3>
@@ -34,7 +34,7 @@ demo.htmlSource = `
 
 <div class="sticky-1"
      data-xt-sticky="{ position: 'bottom', limit: { bottom: 50 } }">
-  <div class="card card--squared card--light">
+  <div class="card card--squared">
     <div class="card_design"></div>
     <div class="card_content">
       Sticky bottom
@@ -42,7 +42,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="card card--light">
+<div class="card">
   <div class="card_design"></div>
   <div class="card_content">
     <h3>Lorem ipsum dolor sit amet</h3>

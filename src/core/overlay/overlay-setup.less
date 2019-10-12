@@ -27,10 +27,6 @@
   @media @max-sm {
     padding: 0 !important;
   }
-  // styles
-  .overlay_design {
-    .design-setup();
-  }
 }
 
 .overlay_inner {
@@ -38,6 +34,14 @@
   position: relative;
   z-index: @index--overlay;
   width: 100%;
+}
+
+.overlay_design {
+  .design-setup();
+}
+
+.overlay_design, .overlay_content {
+  border-radius: inherit;
 }
 
 .overlay_content {

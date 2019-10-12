@@ -9,8 +9,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 Optional classes for assigning variant.
 
-You can change the default **variant** inside the `.btn` selector in `/theme/_component.less`.
-
 <demo>
   <demovanilla src="inline/core/button/variant">
   </demovanilla>

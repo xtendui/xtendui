@@ -9,13 +9,18 @@
   justify-content: center;
   width: 100%;
   z-index: @index--base; // fix :before negative z-index
-  // styles
-  > .card_design {
-    .design-setup();
-  }
-  > .card_content {
-    .flex--auto();
-    position: relative;
-    overflow: hidden;
-  }
+}
+
+.card_design {
+  .design-setup();
+}
+
+.card_content {
+  .flex--auto();
+  position: relative;
+  overflow: hidden;
+}
+
+.card_design, .card_content {
+  border-radius: inherit;
 }

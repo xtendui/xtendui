@@ -1,15 +1,15 @@
 ---
 type: "Core"
-parent: "Button"
+parent: "Card"
 title: "Size"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-##Sizes
+##Size
 
-Optional classes for assigning size. Sizes uses `em` padding that depends on font size.
+Optional classes for assigning size.
 
 <demo>
-  <demovanilla src="inline/core/button/size">
+  <demovanilla src="inline/core/card/size">
   </demovanilla>
 </demo>

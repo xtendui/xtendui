@@ -24,7 +24,7 @@
 
 .text--inverse {
   // link color
-  a:not(.btn), .btn--link {
+  a, .btn--link {
     color: @text--inverse;
     text-decoration: underline;
     &:hover, &.hover, &:active, &.active {
@@ -37,14 +37,18 @@
  * link
  */
 
-a:not(.btn), .btn--link {
-  .link--underline();
+a, .btn--link {
   // styles
+  .link--underline();
   color: @primary;
   &:hover, &.hover, &:active, &.active {
     color: @primary--dark;
   }
-  // animation
+}
+
+// animation
+
+a, .btn--link {
   transition-property: color, background, opacity;
   transition-duration: @time--medium;
   transition-timing-function: @bez--out;

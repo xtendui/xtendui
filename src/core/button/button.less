@@ -20,20 +20,6 @@
   .btn--medium();
 }
 
-// animation
-
-.btn {
-  // transition
-  transition-property: all;
-  transition-duration: @time--big;
-  transition-timing-function: @bez--out;
-  &:hover, &.hover, &:active, &.active {
-    transition-property: all;
-    transition-duration: @time--big;
-    transition-timing-function: @bez--in;
-  }
-}
-
 // variant
 
 .btn--primary {
@@ -46,7 +32,6 @@
     background: @primary--dark;
     color: @text--inverse--dark;
   }
-  // effect
   &:active, &.active {
     box-shadow: @shadow--primary;
   }
@@ -62,7 +47,6 @@
     background: @secondary--dark;
     color: @text--dark;
   }
-  // effect
   &:active, &.active {
     box-shadow: @shadow--secondary;
   }
@@ -70,13 +54,9 @@
 
 .btn--text {
   .link--none();
-  .btn--noeffect();
-  border-color: transparent;
-  background: transparent;
+  .btn--nodesign();
   color: inherit;
   &:hover, &.hover, &:active, &.active {
-    border-color: transparent;
-    background: transparent;
     color: inherit;
     opacity: .75;
   }
@@ -85,7 +65,6 @@
 .btn--link {
   .btn--none();
   .btn--nodesign();
-  .btn--noeffect();
   // reset
   font-family: inherit !important;
   font-style: inherit !important;
@@ -131,12 +110,7 @@
 .btn--nodesign {
   border-color: transparent !important;
   background: transparent !important;
-}
-
-.btn--noeffect {
-  &:active, &.active {
-    box-shadow: none;
-  }
+  box-shadow: none !important;
 }
 
 .btn--squared {
@@ -168,31 +142,23 @@
 }
 
 .btn--none {
-  .btn--noeffect();
+  .btn--nodesign();
   .btn--squared();
   padding: 0;
-  border: 0 !important;
-  background: transparent !important;
 }
 
 .btn--none-x {
-  .btn--noeffect();
+  .btn--nodesign();
   .btn--squared();
   padding-left: 0;
   padding-right: 0;
-  border-left: 0 !important;
-  border-right: 0 !important;
-  background: transparent !important;
 }
 
 .btn--none-y {
-  .btn--noeffect();
+  .btn--nodesign();
   .btn--squared();
   padding-top: 0;
   padding-bottom: 0;
-  border-top: 0 !important;
-  border-bottom: 0 !important;
-  background: transparent !important;
 }
 
 .btn--icon {
@@ -203,6 +169,19 @@
 .btn--transform {
   letter-spacing: 0;
   text-transform: none;
+}
+
+// animation
+
+.btn {
+  transition-property: all;
+  transition-duration: @time--big;
+  transition-timing-function: @bez--out;
+  &:hover, &.hover, &:active, &.active {
+    transition-property: all;
+    transition-duration: @time--big;
+    transition-timing-function: @bez--in;
+  }
 }
 
 // custom

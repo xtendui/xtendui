@@ -52,6 +52,11 @@ body {
  * spacing
  */
 
+.spacing--none {
+  .margin(top, none) !important;
+  .margin(bottom, none) !important;
+}
+
 .spacing--small {
   .margin(top, medium) !important;
   .margin(bottom, small) !important;
@@ -115,6 +120,7 @@ h5, .h5 {
 
 h6, .h6 {
   .spacing--medium();
+  .font-sans--semibold();
   font-size: 1.3rem;
   line-height: 1.4;
   letter-spacing: .05em;
@@ -193,7 +199,7 @@ small {
   line-height: 1.6;
 }
 
-.font--giant {
+.font--big {
   font-size: 1.7rem;
   line-height: 1.6;
 }
@@ -235,7 +241,7 @@ pre {
 
 .text--inverse {
   color: @text--inverse;
-  h1, h2, h3, h4, h5, h6, div {
+  h1, h2, h3, h4, h5, h6, .header {
     color: inherit;
   }
 }

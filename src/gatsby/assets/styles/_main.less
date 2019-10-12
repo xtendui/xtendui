@@ -16,7 +16,7 @@
 
 .gatsby_site_footer {
   position: relative;
-  z-index: 8;
+  z-index: 7;
 }
 
 // prevent horizontal overflow
@@ -74,7 +74,7 @@
   .padding(x, medium, sm);
   background: @gray--200;
   p {
-    .font--giant();
+    .font--big();
   }
 }
 
@@ -165,7 +165,7 @@
   .btn--squared();
   .btn--noborder();
   .btn--nodesign();
-  .btn--noeffect();
+  overflow: visible;
   .font-sans--regular();
   color: @text;
   text-transform: none;
@@ -214,9 +214,8 @@
   // custom
   &.gatsby_btn--site_article_sidebar--cat {
     padding: 10px 0 7px 0 !important;
-    .font-sans--semibold();
-    font-size: 12px;
-    text-transform: uppercase;
+    .h6();
+    .spacing--none();
     &:before {
       display: none;
     }
@@ -278,13 +277,26 @@
  */
 
 .gatsby_listing {
+  > .row {
+    .row-space(huge);
+  }
 }
 
-.gatsby_listing_group {
+.gatsby_listing_category {
+}
+
+.gatsby_listing_items {
+  > .row {
+    .row-space(big);
+  }
+}
+
+.gatsby_listing_column {
+  .col(12);
+  .col(6, sm);
+  .col(4, xl);
 }
 
 .gatsby_listing_item {
 }
 
-.gatsby_listing_item_title {
-}
