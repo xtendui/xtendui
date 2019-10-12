@@ -21,14 +21,16 @@ class Template extends React.Component {
             <div className="gatsby_listing_group" key={i}>
               {category.title.split('-').pop()}
               {category.posts.map(({ post }, z) => (
-                <div key={z}>
-                  <Link to={markdownSlug(post)}
-                    className="gatsby_listing_item">
-                    <div className="gatsby_listing_item_title">
-                      {post.frontmatter.title}
-                    </div>
-                  </Link>
-                </div>
+                post.frontmatter.parent === post.frontmatter.title
+                  ? <div key={z}>
+                    <Link to={markdownSlug(post)}
+                      className="gatsby_listing_item">
+                      <div className="gatsby_listing_item_title">
+                        {post.frontmatter.title}
+                      </div>
+                    </Link>
+                  </div>
+                  : null
               ))}
             </div>
           ))}
