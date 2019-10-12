@@ -8,13 +8,13 @@ class Footer extends React.Component {
   render () {
     const { site, seo } = this.props
     return (
-      <footer className="site_footer">
-        <div className="site_footer_bottom">
+      <footer className="gatsby_site_footer">
+        <div className="gatsby_site_footer_bottom">
           <div className="container full">
-            <div className="row site_footer_bottom_row">
+            <div className="row gatsby_site_footer_bottom_row">
               <div>
                 <Link to="/" title="Home"
-                  className={`logo-icon
+                  className={`gatsby_logo-icon
                                     ${seo.title.toLowerCase() === 'home' ? 'active' : ''}`}>
                   <img src={logoIcon} alt={site.site.siteMetadata.title}/>
                 </Link>
@@ -25,7 +25,7 @@ class Footer extends React.Component {
                   className="separator separator--dash"></span> {site.site.siteMetadata.title} v{site.site.siteMetadata.version} licensed <a
                   href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a><br/>
               </div>
-              <div className="site_footer_bottom_right">
+              <div className="gatsby_site_footer_bottom_right">
                 © 2017 – {new Date().getFullYear()} {site.site.siteMetadata.author}
               </div>
             </div>

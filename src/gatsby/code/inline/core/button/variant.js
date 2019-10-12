@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space--small align-items--center demo_source--from">
+<div class="list list-space--small align-items--center gatbsy_demo_source--from">
   <button type="button" class="btn">
     default
   </button>

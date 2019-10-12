@@ -11,6 +11,6 @@ categories: ["400-Presentation"]
 To disable sticky use `.sticky--disable` useful within media queries.
 
 <demo>
-  <div class="demo_item" data-iframe="iframe/core/sticky/disable">
+  <div class="gatbsy_demo_item" data-iframe="iframe/core/sticky/disable">
   </div>
 </demo>

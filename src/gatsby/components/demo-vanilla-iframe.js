@@ -39,7 +39,7 @@ class DemoVanillaIframe extends React.Component {
                 demo.jsSource = jsSource(demo)
               )) && <div/> // @FIX react render string
               }
-              <div id="body-inner" className="demo_source--from" dangerouslySetInnerHTML={{ __html: demo.htmlSource }}/>
+              <div id="gatsby_body-inner" className="gatbsy_demo_source--from" dangerouslySetInnerHTML={{ __html: demo.htmlSource }}/>
             </div>
           </Layout>
         )}

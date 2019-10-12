@@ -19,7 +19,7 @@ class Demo extends React.Component {
   render () {
     const { children } = this.props
     return (
-      <div className="demo" ref={this.demoRef}>
+      <div className="gatsby_demo" ref={this.demoRef}>
         {children}
       </div>
     )

@@ -5,17 +5,17 @@ import { Xt } from 'xtend-library'
 //
 
 const makeDocument = function () {
-  // .make-line
-  for (const el of document.querySelectorAll('.site_article_content > * > * > h2, .site_article_content > * > * > h3')) {
-    el.classList.add('make-line')
+  // .gatsby_make-line
+  for (const el of document.querySelectorAll('.gatsby_site_article_content > * > * > h2, .gatsby_site_article_content > * > * > h3')) {
+    el.classList.add('gatsby_make-line')
   }
-  for (const el of document.querySelectorAll('.make-line')) {
-    el.innerHTML = '<span class="make-line_line">' + el.innerHTML + '</span>'
-    el.innerHTML = '<span class="make-line_container">' + el.innerHTML + '</span>'
+  for (const el of document.querySelectorAll('.gatsby_make-line')) {
+    el.innerHTML = '<span class="gatsby_make-line_line">' + el.innerHTML + '</span>'
+    el.innerHTML = '<span class="gatsby_make-line_container">' + el.innerHTML + '</span>'
   }
-  // .make-anchor
-  for (const el of document.querySelectorAll('.site_article_content > * > * > h2, .site_article_content > * > * > h3')) {
-    el.classList.add('make-line')
+  // .gatsby_make-anchor
+  for (const el of document.querySelectorAll('.gatsby_site_article_content > * > * > h2, .gatsby_site_article_content > * > * > h3')) {
+    el.classList.add('gatsby_make-line')
     // previous h2 if h3
     let prevElement
     if (el.tagName === 'H3') {
@@ -33,26 +33,26 @@ const makeDocument = function () {
       id += prevElement.textContent.replace(/\s+/g, '-').toLowerCase() + '-'
     }
     id += el.textContent.replace(/\s+/g, '-').toLowerCase()
-    // make-anchor
+    // gatsby_make-anchor
     el.setAttribute('id', id)
     el.innerHTML = '<a href="#' + id + '" aria-label="Anchor to ' + el.textContent + '" tabindex="-1">' + el.innerHTML + '</a>'
-    el.classList.add('make-anchor')
-    el.append(Xt.createElement('<span class="site_article_anchor"><span class="btn"><span class="icon-link" aria-hidden="true"></span></span></span>'))
+    el.classList.add('gatsby_make-anchor')
+    el.append(Xt.createElement('<span class="gatsby_site_article_anchor"><span class="btn"><span class="icon-link" aria-hidden="true"></span></span></span>'))
   }
-  // .demo-cols
-  for (const element of document.querySelectorAll('.demo-cols')) {
+  // .gatsby_gatsby_demo-cols
+  for (const element of document.querySelectorAll('.gatsby_gatsby_demo-cols')) {
     for (const [i, el] of element.querySelectorAll('[class^=\'col-\'], [class*=\' col-\'], [class^=\'demo--col-\'], [class*=\' demo--col-\']').entries()) {
-      el.setAttribute('data-index', i)
+      el.setAttribute('data-index', i.toString())
     }
   }
-  // .demo-cols-nested
-  for (const element of document.querySelectorAll('.demo-cols-nested [class^=\'col-\'], .demo-cols-nested [class*=\' col-\']')) {
+  // .gatsby_gatsby_demo-cols-nested
+  for (const element of document.querySelectorAll('.gatsby_gatsby_demo-cols-nested [class^=\'col-\'], .gatsby_demo-cols-nested [class*=\' col-\']')) {
     for (const [i, el] of element.querySelectorAll('[class^=\'col-\'], [class*=\' col-\'], [class^=\'demo--col-\'], [class*=\' demo--col-\']').entries()) {
-      el.setAttribute('data-index', i)
+      el.setAttribute('data-index', i.toString())
     }
   }
   // docs tables
-  const docs = document.querySelector('.site_article_content')
+  const docs = document.querySelector('.gatsby_site_article_content')
   if (docs) {
     const tables = docs.querySelectorAll('table')
     for (const table of tables) {

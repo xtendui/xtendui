@@ -16,7 +16,7 @@ class Layout extends React.Component {
   componentDidMount () {
     const { demo } = this.props
     if (demo.full) {
-      document.querySelector('html').classList.add('iframe-full')
+      document.querySelector('html').classList.add('gatsby_iframe-full')
     }
     const iframeLoaded = function () {
       if (window.self !== window.top) {

@@ -17,7 +17,6 @@ class DemoReact extends React.Component {
     demo.name = src.split('/').pop()
     demo.type = demo.type === 'core' ? 'demo' : demo.type
     demo.Component = require(`xtend-library/src/${demo.type}/${demo.component}/${demo.name}.jsx`).default
-    demo.name = name || demo.name
     return (
       <StaticQuery
         query={graphql`
@@ -32,16 +31,16 @@ class DemoReact extends React.Component {
           }
         `}
         render={data => (
-          <div className="demo_item demo_preview" data-name={demo.name.split('-').pop()}>
+          <div className="gatbsy_demo_item gatbsy_demo_preview" data-name={name || demo.name.split('-').pop()} data-inline={src}>
             {children}
-            <div className="demo_source demo_source--from">
+            <div className="gatbsy_demo_source gatbsy_demo_source--from">
               <demo.Component></demo.Component>
             </div>
             {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.jsx`).map((file, i) => (
-              <div className="demo_source xt-ignore" data-lang="js" dangerouslySetInnerHTML={{ __html: jsSource(demo, '.jsx') }} key={i}/>
+              <div className="gatbsy_demo_source xt-ignore" data-lang="js" dangerouslySetInnerHTML={{ __html: jsSource(demo, '.jsx') }} key={i}/>
             ))}
             {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`).map((file, i) => (
-              <div className="demo_source xt-ignore" data-lang="less" dangerouslySetInnerHTML={{ __html: cssSource(demo) }} key={i}/>
+              <div className="gatbsy_demo_source xt-ignore" data-lang="less" dangerouslySetInnerHTML={{ __html: cssSource(demo) }} key={i}/>
             ))}
           </div>
         )}

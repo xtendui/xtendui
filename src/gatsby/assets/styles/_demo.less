@@ -2,26 +2,26 @@
  * demo
  */
 
-html.iframe-full {
+html.gatsby_iframe-full {
   body {
     overflow: hidden !important;
   }
 }
 
-html.iframe-inside {
+html.gatsby_iframe-inside {
   body {
     .overflow-style(@mode: inner);
     background: @white !important;
   }
 }
 
-#body-inner {
+#gatsby_body-inner {
   position: relative;
 }
 
-// .demo-cols
+// .gatsby_gatsby_demo-cols
 
-.demo-cols {
+.gatsby_gatsby_demo-cols {
   [class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-'] {
     &:before {
       position: relative;
@@ -41,9 +41,9 @@ html.iframe-inside {
   }
 }
 
-.demo-cols-nested {
+.gatsby_gatsby_demo-cols-nested {
   [class^='col-'], [class*=' col-'] {
-    .demo-cols();
+    .gatsby_gatsby_demo-cols();
   }
 }
 
@@ -51,15 +51,15 @@ html.iframe-inside {
  * demo
  */
 
-@demo-height: 35rem;
+@gatsby_demo-height: 35rem;
 
 pre {
-  max-height: @demo-height;
+  max-height: @gatsby_demo-height;
 }
 
 // .demo
 
-.demo {
+.gatsby_demo {
   .margin(y, layout) !important;
   .margin(top, medium);
   .margin(bottom, big);
@@ -67,20 +67,20 @@ pre {
   border-width: 2px;
   border-style: solid;
   border-color: @gray--200;
-  .demo_tabs {
+  .gatbsy_demo_tabs {
     .margin-remove(top, 2px); // remove border space
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
   }
   // code
-  .demo_item {
+  .gatbsy_demo_item {
     position: relative;
     .toggle--block();
-    .demo_code {
+    .gatbsy_demo_code {
       position: absolute;
       z-index: 4;
       width: 100%;
-      .demo_code_inner {
+      .gatbsy_demo_code_inner {
         display: flex;
         flex-flow: column;
         height: 100%;
@@ -91,16 +91,16 @@ pre {
     }
     &[data-iframe] {
       &:not(.loaded) {
-        .demo_item_wrapper {
+        .gatbsy_demo_item_wrapper {
           position: relative;
-          height: @demo-height;
+          height: @gatsby_demo-height;
         }
         iframe {
           display: none;
         }
       }
       &.loaded {
-        .demo_item_wrapper > .loader {
+        .gatbsy_demo_item_wrapper > .loader {
           display: none;
         }
       }
@@ -109,34 +109,34 @@ pre {
         width: 100%;
         height: 0;
         border: 0;
-        &:not(.iframe-full) {
-          height: @demo-height;
+        &:not(.gatsby_iframe-full) {
+          height: @gatsby_demo-height;
         }
       }
     }
     &[data-shadow] {
       &:not(.loaded) {
-        .demo_item_wrapper {
-          height: @demo-height;
+        .gatbsy_demo_item_wrapper {
+          height: @gatsby_demo-height;
         }
-        .demo_shadow {
+        .gatbsy_demo_shadow {
           display: none;
         }
       }
       &.loaded {
-        .demo_item_wrapper + .loader {
+        .gatbsy_demo_item_wrapper + .loader {
           display: none;
         }
       }
     }
     &:not(.populated) {
-      .demo_code_body {
+      .gatbsy_demo_code_body {
         width: 100%;
         overflow: hidden;
       }
     }
     &.populated {
-      .demo_code_body_item {
+      .gatbsy_demo_code_body_item {
         .toggle--block();
       }
     }
@@ -145,15 +145,15 @@ pre {
     z-index: 1;
     .padding(top, small) !important;
   }
-  .demo_code_body {
+  .gatbsy_demo_code_body {
     z-index: 1;
     flex: 1;
   }
   // tabs
-  .demo_tabs, .demo_code_tabs, .demo_code_body {
+  .gatbsy_demo_tabs, .gatbsy_demo_code_tabs, .gatbsy_demo_code_body {
     background: @gray--200;
   }
-  .demo_tabs, .demo_code_tabs {
+  .gatbsy_demo_tabs, .gatbsy_demo_code_tabs {
     position: relative;
     z-index: 2;
     display: flex;
@@ -173,11 +173,11 @@ pre {
       }
     }
   }
-  .demo_tabs_inner {
+  .gatbsy_demo_tabs_inner {
     margin-top: -3px;
   }
   // text
-  .demo_text {
+  .gatbsy_demo_text {
     .alert();
     .alert--small();
     .margin(all, none);
@@ -185,12 +185,12 @@ pre {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
-  // .demo_source
-  .demo_source {
+  // .gatbsy_demo_source
+  .gatbsy_demo_source {
     .padding(all, medium);
   }
-  .demo_source {
-    &:not(.demo_source--from) {
+  .gatbsy_demo_source {
+    &:not(.gatbsy_demo_source--from) {
       display: none;
     }
   }

@@ -7,9 +7,9 @@ categories: ["200-Layout"]
 ---
 
 <demo>
-  <div class="demo-inline">
-    <div class="demo_item demo_preview" data-name="card">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+  <div class="gatbsy_demo-inline">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="card">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <div class="card">
             <div class="card_design"></div>
             <div class="card_content">

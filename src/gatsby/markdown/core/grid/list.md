@@ -33,9 +33,9 @@ Use `.list-block`> to create a **column list**.
 You can use list to space childrens like [row](/core/grid/row) does. But the childrens are spaced with **margin** instead of **padding** so they aren't used to a grid.
 
 <demo>
-  <div class="demo-inline">
-    <div class="demo_item demo_preview" data-name="list">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+  <div class="gatbsy_demo-inline">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="list">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list">
           <li>
             Lorem ipsum dolor sit amet.
@@ -49,8 +49,8 @@ You can use list to space childrens like [row](/core/grid/row) does. But the chi
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="block">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="block">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list-block">
           <li>
             Lorem ipsum dolor sit amet.
@@ -64,8 +64,8 @@ You can use list to space childrens like [row](/core/grid/row) does. But the chi
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="nested">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="nested">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list-block">
           <li>
             <ul class="list">
@@ -114,9 +114,9 @@ You can use list to space childrens like [row](/core/grid/row) does. But the chi
 List's buttons are styled automatically, but if you want to customize the buttons use the class `li.custom`.
 
 <demo>
-  <div class="demo-inline">
-    <div class="demo_item demo_preview" data-name="custom">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+  <div class="gatbsy_demo-inline">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="custom">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list">
           <li>
             <a href="#">
@@ -136,8 +136,8 @@ List's buttons are styled automatically, but if you want to customize the button
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="list">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="list">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list-block">
           <li class="custom">
             <button type="button" class="btn btn--primary">
@@ -157,8 +157,8 @@ List's buttons are styled automatically, but if you want to customize the button
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="nested">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="nested">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list-block">
           <li>
             <ul class="list">
@@ -247,9 +247,9 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 </div>
 
 <demo>
-  <div class="demo-inline">
-    <div class="demo_item demo_preview" data-name="none">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+  <div class="gatbsy_demo-inline">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="none">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list list-space--none">
           <li>
             <button type="button">
@@ -269,8 +269,8 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="tiny">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="tiny">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list list-space--tiny">
           <li>
             <button type="button">
@@ -290,8 +290,8 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="small">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="small">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list list-space--small">
           <li>
             <button type="button">
@@ -311,8 +311,8 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="medium">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="medium">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list list-space--medium">
           <li>
             <button type="button">
@@ -332,8 +332,8 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="big">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="big">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list list-space--big">
           <li>
             <button type="button">
@@ -353,8 +353,8 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="giant">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="giant">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list list-space--giant">
           <li>
             <button type="button">
@@ -395,9 +395,9 @@ You can also set others flex alignments like `.list-btn({ justify-content: space
 </div>
 
 <demo>
-  <div class="demo-inline">
-    <div class="demo_item demo_preview" data-name="default">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+  <div class="gatbsy_demo-inline">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="default">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list-block">
           <li>
             <button type="button">
@@ -417,8 +417,8 @@ You can also set others flex alignments like `.list-btn({ justify-content: space
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="left">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="left">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list-block list--left">
           <li>
             <button type="button">
@@ -438,8 +438,8 @@ You can also set others flex alignments like `.list-btn({ justify-content: space
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="center">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="center">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list-block list--center">
           <li>
             <button type="button">
@@ -459,8 +459,8 @@ You can also set others flex alignments like `.list-btn({ justify-content: space
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="right">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="right">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list-block list--right">
           <li>
             <button type="button">
@@ -488,9 +488,9 @@ You can also set others flex alignments like `.list-btn({ justify-content: space
 Set children's direction inside the flexbox.
 
 <demo>
-  <div class="demo-inline">
-    <div class="demo_item demo_preview" data-name="row">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+  <div class="gatbsy_demo-inline">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="row">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="flex-direction: row">
           <li>
             <button type="button">
@@ -510,8 +510,8 @@ Set children's direction inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="row-reverse">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="row-reverse">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="flex-direction: row-reverse">
           <li>
             <button type="button">
@@ -531,8 +531,8 @@ Set children's direction inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="column">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="column">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="flex-direction: column">
           <li>
             <button type="button">
@@ -552,8 +552,8 @@ Set children's direction inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="column-reverse">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="column-reverse">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="flex-direction: column-reverse">
           <li>
             <button type="button">
@@ -581,9 +581,9 @@ Set children's direction inside the flexbox.
 Set children's wrapping inside the flexbox.
 
 <demo>
-  <div class="demo-inline">
-    <div class="demo_item demo_preview" data-name="wrap">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+  <div class="gatbsy_demo-inline">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="wrap">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="flex-wrap: wrap">
           <li>
             <button type="button">
@@ -633,8 +633,8 @@ Set children's wrapping inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="wrap-reverse">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="wrap-reverse">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="flex-wrap: wrap-reverse">
           <li>
             <button type="button">
@@ -684,8 +684,8 @@ Set children's wrapping inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="nowrap">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="nowrap">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="flex-wrap: nowrap">
           <li>
             <button type="button">
@@ -743,9 +743,9 @@ Set children's wrapping inside the flexbox.
 Set children's horizontal alignment inside the flexbox.
 
 <demo>
-  <div class="demo-inline">
-    <div class="demo_item demo_preview" data-name="start">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+  <div class="gatbsy_demo-inline">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="start">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="justify-content: flex-start">
           <li>
             <button type="button">
@@ -765,8 +765,8 @@ Set children's horizontal alignment inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="end">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="end">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="justify-content: flex-end">
           <li>
             <button type="button">
@@ -786,8 +786,8 @@ Set children's horizontal alignment inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="center">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="center">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="justify-content: center">
           <li>
             <button type="button">
@@ -807,8 +807,8 @@ Set children's horizontal alignment inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="between">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="between">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="justify-content: space-between">
           <li>
             <button type="button">
@@ -828,8 +828,8 @@ Set children's horizontal alignment inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="around">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="around">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="justify-content: space-around">
           <li>
             <button type="button">
@@ -857,9 +857,9 @@ Set children's horizontal alignment inside the flexbox.
 Set children's vertical alignment inside the flexbox.
 
 <demo>
-  <div class="demo-inline">
-    <div class="demo_item demo_preview" data-name="start">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+  <div class="gatbsy_demo-inline">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="start">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="height: 150px; align-items: flex-start">
           <li>
             <button type="button">
@@ -909,8 +909,8 @@ Set children's vertical alignment inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="end">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="end">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="height: 150px; align-items: flex-end">
           <li>
             <button type="button">
@@ -960,8 +960,8 @@ Set children's vertical alignment inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="center">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="center">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="height: 150px; align-items: center">
           <li>
             <button type="button">
@@ -1011,8 +1011,8 @@ Set children's vertical alignment inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="baseline">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="baseline">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="height: 150px; align-items: baseline">
           <li>
             <button type="button">
@@ -1062,8 +1062,8 @@ Set children's vertical alignment inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="stretch">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="stretch">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="height: 150px; align-items: stretch">
           <li>
             <button type="button" style="align-self: stretch">
@@ -1121,9 +1121,9 @@ Set children's vertical alignment inside the flexbox.
 Set children's vertical alignment inside the flexbox.
 
 <demo>
-  <div class="demo-inline">
-    <div class="demo_item demo_preview" data-name="start">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+  <div class="gatbsy_demo-inline">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="start">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="height: 150px; align-content: flex-start">
           <li>
             <button type="button">
@@ -1173,8 +1173,8 @@ Set children's vertical alignment inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="end">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="end">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="height: 150px; align-content: flex-end">
           <li>
             <button type="button">
@@ -1224,8 +1224,8 @@ Set children's vertical alignment inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="center">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="center">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="height: 150px; align-content: center">
           <li>
             <button type="button">
@@ -1275,8 +1275,8 @@ Set children's vertical alignment inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="between">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="between">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="height: 150px; align-content: space-between">
           <li>
             <button type="button">
@@ -1326,8 +1326,8 @@ Set children's vertical alignment inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="around">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="around">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="height: 150px; align-content: space-around">
           <li>
             <button type="button">
@@ -1377,8 +1377,8 @@ Set children's vertical alignment inside the flexbox.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="stretch">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="stretch">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="height: 150px; align-content: stretch">
           <li>
             <button type="button" style="align-self: stretch">
@@ -1437,9 +1437,9 @@ Set item's vertical alignment inside the flexbox.
 If set to **>auto** computes to the parent's `align-items` value.
 
 <demo>
-  <div class="demo-inline">
-    <div class="demo_item demo_preview" data-name="start">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+  <div class="gatbsy_demo-inline">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="start">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list">
           <li>
             <button type="button" class="btn" style="height: 100px">
@@ -1459,8 +1459,8 @@ If set to **>auto** computes to the parent's `align-items` value.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="end">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="end">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list">
           <li>
             <button type="button" class="btn" style="height: 100px">
@@ -1480,8 +1480,8 @@ If set to **>auto** computes to the parent's `align-items` value.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="center">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="center">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list">
           <li>
             <button type="button" class="btn" style="height: 100px">
@@ -1501,8 +1501,8 @@ If set to **>auto** computes to the parent's `align-items` value.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="baseline">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="baseline">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list">
           <li>
             <button type="button" class="btn" style="height: 100px">
@@ -1522,8 +1522,8 @@ If set to **>auto** computes to the parent's `align-items` value.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="stretch">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="stretch">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list">
           <li>
             <button type="button" class="btn" style="height: 100px">
@@ -1543,8 +1543,8 @@ If set to **>auto** computes to the parent's `align-items` value.
         </ul>
       </div>
     </div>
-    <div class="demo_item demo_preview" data-name="auto">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="auto">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list" style="align-items: center">
           <li>
             <button type="button" class="btn" style="height: 100px">
@@ -1595,9 +1595,9 @@ Set item's order inside the flexbox.
 </div>
 
 <demo>
-  <div class="demo-inline">
-    <div class="demo_item demo_preview" data-name="order">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+  <div class="gatbsy_demo-inline">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="order">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <ul class="list">
           <li class="order--2">
             <button type="button">

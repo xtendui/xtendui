@@ -75,9 +75,9 @@ let self = new Xt.Scroll(document.documentElement, {
 ##Demo
 
 <demo>
-  <div class="demo-inline">
-    <div class="demo_item demo_preview" data-name="vanilla">
-      <div class="demo_source demo_source--from" data-lang="language-markup">
+  <div class="gatbsy_demo-inline">
+    <div class="gatbsy_demo_item gatbsy_demo_preview" data-name="vanilla">
+      <div class="gatbsy_demo_source gatbsy_demo_source--from" data-lang="language-markup">
         <div class="form-group">
           <input type="checkbox" class="unstyled" id="checkbox-block-unstyled">
           <label class="form-label" for="checkbox-block-unstyled"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a> </label>
@@ -99,14 +99,14 @@ let self = new Xt.Scroll(document.documentElement, {
 
 <demo>
   <demovanilla src="inline/core/test/vanilla" name="test vanilla">
-    <div class="demo_text">
+    <div class="gatbsy_demo_text">
       <div class="alert_content">
         Test
       </div>
     </div>
   </demovanilla>
   <demoreact src="inline/core/test/react" name="test react">
-    <div class="demo_text">
+    <div class="gatbsy_demo_text">
       <div class="alert_content">
         Test
       </div>
@@ -117,15 +117,15 @@ let self = new Xt.Scroll(document.documentElement, {
 ###Iframe
 
 <demo>
-  <div class="demo_item" data-iframe="iframe/core/test/vanilla-iframe" data-name="test vanilla frame">
-    <div class="demo_text">
+  <div class="gatbsy_demo_item" data-iframe="iframe/core/test/vanilla-iframe" data-name="test vanilla frame">
+    <div class="gatbsy_demo_text">
       <div class="alert_content">
         Test
       </div>
     </div>
   </div>
-  <div class="demo_item" data-iframe="iframe/core/test/react-iframe" data-name="test react iframe">
-    <div class="demo_text">
+  <div class="gatbsy_demo_item" data-iframe="iframe/core/test/react-iframe" data-name="test react iframe">
+    <div class="gatbsy_demo_text">
       <div class="alert_content">
         Test
       </div>

@@ -12,29 +12,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="drop_outer" data-xt-drop>
-  <button type="button" class="btn btn--primary">
-    Toggle
-  </button>
-  <div class="drop">
-    <div class="drop_inner">
-      <div class="drop_design"></div>
-      <div class="drop_content">
-        <ul class="list list--drop">
-          <li>
-            <button type="button">
-              Lorem ipsum dolor
-            </button>
-          </li>
-          <li>
-            <button type="button">
-              Dolor sit
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<div>
+  Vanilla Iframe
 </div>
 `
 

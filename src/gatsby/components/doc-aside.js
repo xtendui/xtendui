@@ -9,23 +9,23 @@ class DocAside extends React.Component {
     /*
     const { page } = this.props
     return (
-      <aside className="site_article_aside xt-fixed--check">
+      <aside className="gatsby_site_article_aside xt-fixed--check">
         <div className="container full">
-          <div className="site_article_aside_inner">
-            <a href="#" className="btn btn--site_multiline btn--right">
+          <div className="gatsby_site_article_aside_inner">
+            <a href="#" className="btn gatsby_btn--site_multiline btn--right">
               <span>
-                <span className="btn--site_multiline_line">
+                <span className="gatsby_btn--site_multiline_line">
                   12 <strong>EXTENSIONS</strong>
                 </span>
               </span>
               <span>
-                <span className="btn--site_multiline_line">
+                <span className="gatsby_btn--site_multiline_line">
                   FOR <strong>CHECK AND RADIO</strong>
                 </span>
               </span>
               <span>
-                <span className="btn--site_multiline_line btn--site_multiline_special">
-                  <strong className="btn--site_multiline_special_text">GO</strong><span className="icon-chevron-right"></span>
+                <span className="gatsby_btn--site_multiline_line gatsby_btn--site_multiline_special">
+                  <strong className="gatsby_btn--site_multiline_special_text">GO</strong><span className="icon-chevron-right"></span>
                 </span>
               </span>
             </a>

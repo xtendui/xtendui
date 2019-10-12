@@ -45,30 +45,30 @@ class Layout extends React.Component {
         `}
         render={data => (
           <>
-            <div className={`site_wrapper
-              ${page ? ' site_wrapper--with-sidebar site_wrapper--with-aside' : ''}`}>
+            <div className={`gatsby_site_wrapper
+              ${page ? ' gatsby_site_wrapper--with-sidebar gatsby_site_wrapper--with-aside' : ''}`}>
 
               <Header site={data} seo={seo} page={page}/>
 
-              <main className="site_main">
-                <div className="site_main_inner">
+              <main className="gatsby_site_main">
+                <div className="gatsby_site_main_inner">
 
                   {page
-                    ? <div className="site--with-sidebar site--with-aside">
+                    ? <div className="gatsby_site--with-sidebar gatsby_site--with-aside">
                       <DocsSidebar page={page}/>
-                      <article className="site_article">
-                        <div className="site_article_hero">
+                      <article className="gatsby_site_article">
+                        <div className="gatsby_site_article_hero">
                           <div className="container full">
                             <h1>{seo.title}</h1>
                             <p>{seo.description}</p>
                           </div>
                         </div>
-                        <div className="site_article_content">
+                        <div className="gatsby_site_article_content">
                           <div className="container full">
                             {children}
                           </div>
                         </div>
-                        <div className="site_article_foot">
+                        <div className="gatsby_site_article_foot">
                           <div className="container full">
                             <DocsFoot page={page}/>
                           </div>
@@ -76,8 +76,8 @@ class Layout extends React.Component {
                       </article>
                       <DocsAside page={page}/>
                     </div>
-                    : <article className="site_article">
-                      <div className="site_article_content">
+                    : <article className="gatsby_site_article">
+                      <div className="gatsby_site_article_content">
                         <div className="container full">
                           {children}
                         </div>
