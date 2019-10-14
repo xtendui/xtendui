@@ -1,5 +1,5 @@
 /*! Xtend (https://getxtend.com/)
-@copyright (c) 2017 - 2019 Riccardo Caroli
+@copyright (c) 2018 - 2019 Riccardo Caroli
 @license MIT (https://github.com/minimit/xtend-library/blob/master/LICENSE) */
 
 import 'xtend-library/src/polyfill.js'

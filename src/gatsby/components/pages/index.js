@@ -11,9 +11,6 @@ class Page extends React.Component {
     return (
       <Layout seo={seo}>
         <SEO title={seo.title + ' — ' + seo.description}/>
-        <a href="/iframe/demo/scroll/parallax">
-           parallax
-        </a>
       </Layout>
     )
   }

@@ -26,7 +26,7 @@ class Footer extends React.Component {
                   href="https://github.com/minimit/minimit/blob/master/LICENSE" target="_blank" rel="noopener">MIT</a><br/>
               </div>
               <div className="gatsby_site_footer_bottom_right">
-                © 2017 – {new Date().getFullYear()} {site.site.siteMetadata.author}
+                © 2018 – {new Date().getFullYear()} {site.site.siteMetadata.author}
               </div>
             </div>
           </div>
