@@ -218,7 +218,7 @@ List's buttons are styled automatically, but if you want to customize the button
   </div>
 </demo>
 
-In css you can use `.list-btn({});` to style all `.list:not(.custom) > li > .btn`.
+In css you can use `.list-btns({});` to style all `.list:not(.custom) > li > .btn`.
 
 <demo>
   <demovanilla src="inline/core/list/custom-btn">
@@ -381,7 +381,7 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 
 Lists **automatically** has left aligment. You can **specify a different one** with this classes/mixins.
 
-You can also set others flex alignments like `.list-btn({ justify-content: space-between; })`.
+You can also set others flex alignments like `.list-btns({ justify-content: space-between; })`.
 
 <div class="table--scroll">
 

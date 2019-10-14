@@ -9,7 +9,19 @@
 // selectors
 
 .form-groups(@rules) {
-  .form-group {
+  .form-group:not(.custom) {
+    @rules();
+  }
+}
+
+.form-labels(@rules) {
+  .form-label:not(.custom) {
+    @rules();
+  }
+}
+
+.form-items(@rules) {
+  .form-item:not(.custom) {
     @rules();
   }
 }

@@ -18,13 +18,13 @@ Use `.group_inner.flex--auto` to expand groups.
   </demovanilla>
 </demo>
 
-##Variants
+##Variant
 
 Optional classes for assigning variant (example: `.group--light`).
 
 <div class="alert">
   <div class="alert_content">
-    Group variants are defined inside @TODO less path.
+    Group variant's are defined inside @TODO less path.
   </div>
 </div>
 

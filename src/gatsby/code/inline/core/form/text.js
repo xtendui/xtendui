@@ -9,9 +9,9 @@ export const demo = {
 
 demo.htmlSource = `
 <form>
-  <div class="form-group form-group--tiny">
+  <div class="form-group form-group--small">
     <label class="form-label">
-      Lorem
+      Small
     </label>
     <input type="text" class="form-item">
     <div class="form-text">
@@ -21,7 +21,7 @@ demo.htmlSource = `
   
   <div class="form-group form-group--medium">
     <label class="form-label">
-      Lorem Ipsum
+      Medium
     </label>
     <input type="text" class="form-item">
     <div class="form-text">
@@ -29,9 +29,9 @@ demo.htmlSource = `
     </div>
   </div>
   
-  <div class="form-group form-group--giant">
+  <div class="form-group form-group--big">
     <label class="form-label">
-      Lorem
+      Big
     </label>
     <input type="text" class="form-item">
     <div class="form-text">

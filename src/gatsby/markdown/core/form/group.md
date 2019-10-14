@@ -7,12 +7,16 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Size
 
+In css you can use `.form-groups({});` to style all `.form-group:not(.custom)`.
+
+If you want to customize singularly form's group use the class `.form-group.custom`.
+
 <demo>
-  <demovanilla src="inline/core/form/group-tiny">
+  <demovanilla src="inline/core/form/group-small">
   </demovanilla>
   <demovanilla src="inline/core/form/group-medium">
   </demovanilla>
-  <demovanilla src="inline/core/form/group-giant">
+  <demovanilla src="inline/core/form/group-big">
   </demovanilla>
 </demo>
 

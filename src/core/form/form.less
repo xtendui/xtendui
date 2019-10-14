@@ -42,15 +42,24 @@ legend {
  * form-group
  */
 
-.form-group {
-  .form-group--medium();
+/**
+ * form
+ */
+
+form {
+  .form--default();
+  .form--medium();
 }
 
 // size
 
-.form-group--tiny {
+.form-group--small {
   .margin(bottom, 1em);
   font-size: 1.1rem;
+}
+
+.form--small {
+  .form-groups({ .form-group--small(); });
 }
 
 .form-group--medium {
@@ -58,9 +67,17 @@ legend {
   font-size: 1.3rem;
 }
 
-.form-group--giant {
+.form--medium {
+  .form-groups({ .form-group--medium(); });
+}
+
+.form-group--big {
   .margin(bottom, 1.5em);
   font-size: 1.5rem;
+}
+
+.form--big {
+  .form-groups({ .form-group--big(); });
 }
 
 // addons
@@ -106,10 +123,27 @@ legend {
   .margin(bottom, 1em); // size in em inherit .form-group size
   .font-sans--semibold();
   font-size: 1em; // size in em inherit .form-group size
-  color: @gray--500;
   line-height: 1.2;
   letter-spacing: .05em;
   text-transform: uppercase;
+}
+
+// variant
+
+.form-label--default {
+  color: @gray--500;
+}
+
+.form--default {
+  .form-labels({ .form-label--default(); });
+}
+
+.form-label--inverse {
+  color: @text--inverse;
+}
+
+.form--inverse {
+  .form-labels({ .form-label--inverse(); });
 }
 
 /**
@@ -125,26 +159,6 @@ legend {
   .font-sans--regular();
   font-size: 1em; // size in em inherit .form-group size
   line-height: 1.4;
-  // default options
-  .form-item--default();
-}
-
-// animation
-
-.form-item {
-  transition-property: color, border, background-color;
-  transition-duration: @time--medium;
-  transition-timing-function: @bez--out;
-  &:hover {
-    transition-property: color, border, background-color;
-    transition-duration: @time--medium;
-    transition-timing-function: @bez--in;
-  }
-  &:focus, &.active {
-    transition-property: color, border, background-color;
-    transition-duration: @time--medium;
-    transition-timing-function: @bez--in;
-  }
 }
 
 // variant
@@ -163,32 +177,86 @@ legend {
     @select-space-color: @gray--200;
     background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
   }
+  // placeholder
+  &:-ms-input-placeholder {
+    color: @gray--500;
+  }
+  &:-moz-placeholder {
+    color: @gray--500;
+  }
+  &::-webkit-input-placeholder {
+    color: @gray--500;
+  }
+  &::-ms-input-placeholder {
+    color: @gray--500;
+  }
+  &::-moz-placeholder {
+    color: @gray--500;
+  }
+  &::placeholder {
+    color: @gray--500;
+  }
 }
 
-// placeholder
-
-:-ms-input-placeholder {
-  color: @gray--500;
+.form--default {
+  .form-items({ .form-item--default(); });
 }
 
-:-moz-placeholder {
-  color: @gray--500;
+.form-item--inverse {
+  border-color: @primary;
+  background-color: @primary; // @FIX no background: or it overrides background-image
+  color: @text--inverse--dark;
+  &:focus, &.active {
+    border-color: @primary--dark;
+    background-color: @primary--dark; // @FIX no background: or it overrides background-image
+  }
+  // select arrow
+  select:not([multiple])& {
+    @select-arrow-color: @text--inverse;
+    @select-space-color: @primary--dark;
+    background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
+  }
+  // placeholder
+  &:-ms-input-placeholder {
+    color: @text--inverse;
+  }
+  &:-moz-placeholder {
+    color: @text--inverse;
+  }
+  &::-webkit-input-placeholder {
+    color: @text--inverse;
+  }
+  &::-ms-input-placeholder {
+    color: @text--inverse;
+  }
+  &::-moz-placeholder {
+    color: @text--inverse;
+  }
+  &::placeholder {
+    color: @text--inverse;
+  }
 }
 
-::-webkit-input-placeholder {
-  color: @gray--500;
+.form--inverse {
+  .form-items({ .form-item--inverse(); });
 }
 
-::-ms-input-placeholder {
-  color: @gray--500;
-}
+// animation
 
-::-moz-placeholder {
-  color: @gray--500;
-}
-
-::placeholder {
-  color: @gray--500;
+.form-item {
+  transition-property: color, border, background-color;
+  transition-duration: @time--medium;
+  transition-timing-function: @bez--out;
+  &:hover {
+    transition-property: color, border, background-color;
+    transition-duration: @time--medium;
+    transition-timing-function: @bez--in;
+  }
+  &:focus, &.active {
+    transition-property: color, border, background-color;
+    transition-duration: @time--medium;
+    transition-timing-function: @bez--in;
+  }
 }
 
 /**

@@ -9,7 +9,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list--default list-space--small align-items--center gatsby_demo_source--from">
-  <div class="list list--default list-space--small align-items--center text--inverse" style="padding: 0.5rem 1rem; background: black;">
+  <div class="list list--default list-space--small align-items--center text--inverse" style="padding: 1rem 2rem; background: black;">
     <button type="button" class="btn btn--default">
       default
     </button>

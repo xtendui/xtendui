@@ -31,7 +31,7 @@
 
 // selectors
 
-.list-btn(@rules) {
+.list-btns(@rules) {
   > li:not(.custom) {
     > a, > button {
       @rules();
@@ -46,35 +46,35 @@
 // list alignment
 
 .list--left(@breakpoint: none) when (@breakpoint = none) {
-  .list-btn({ .btn--left(); });
+  .list-btns({ .btn--left(); });
 }
 
 .list--left(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list-btn({ .btn--left(); });
+    .list-btns({ .btn--left(); });
   }
 }
 
 .list--center(@breakpoint: none) when (@breakpoint = none) {
-  .list-btn({ .btn--center(); });
+  .list-btns({ .btn--center(); });
 }
 
 .list--center(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list-btn({ .btn--center(); });
+    .list-btns({ .btn--center(); });
   }
 }
 
 .list--right(@breakpoint: none) when (@breakpoint = none) {
-  .list-btn({ .btn--right(); });
+  .list-btns({ .btn--right(); });
 }
 
 .list--right(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    .list-btn({ .btn--right(); });
+    .list-btns({ .btn--right(); });
   }
 }
 
