@@ -11,7 +11,7 @@ categories: ["200-Layout"]
 Use `.list` to create a **row list**.
 
 <script type="text/plain" class="language-markup">
-  <ul class="list list--default ">
+  <ul class="list list--default">
     <li><!-- content --></li>
     <li><!-- content --></li>
     <li><!-- content --></li>
@@ -30,13 +30,13 @@ Use `.list-block`> to create a **column list**.
 
 ###List of anything
 
-You can use list to space childrens like [row](/core/grid/row) does. But the childrens are spaced with **margin** instead of **padding** so they aren't used to a grid.
+You can use list to space childrens like [row](/core/row/row) does. But the childrens are spaced with **margin** instead of **padding** so they aren't used to a grid.
 
 <demo>
   <div class="gatsby_demo-inline">
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="list">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default ">
+        <ul class="list list--default">
           <li>
             Lorem ipsum dolor sit amet.
           </li>
@@ -68,7 +68,7 @@ You can use list to space childrens like [row](/core/grid/row) does. But the chi
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
         <ul class="list-block list--default">
           <li>
-            <ul class="list list--default ">
+            <ul class="list list--default">
               <li>
                 <ul class="list-block list--default">
                   <li>
@@ -91,7 +91,7 @@ You can use list to space childrens like [row](/core/grid/row) does. But the chi
             </ul>
           </li>
           <li>
-            <ul class="list list--default ">
+            <ul class="list list--default">
               <li>
                 Lorem ipsum dolor sit amet.
               </li>
@@ -117,7 +117,7 @@ List's buttons are styled automatically, but if you want to customize the button
   <div class="gatsby_demo-inline">
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="custom">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default ">
+        <ul class="list list--default">
           <li>
             <a href="#">
               Lorem Ipsum
@@ -161,7 +161,7 @@ List's buttons are styled automatically, but if you want to customize the button
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
         <ul class="list-block list--default">
           <li>
-            <ul class="list list--default ">
+            <ul class="list list--default">
               <li>
                 <ul class="list-block list--default">
                   <li class="custom">
@@ -194,7 +194,7 @@ List's buttons are styled automatically, but if you want to customize the button
             </ul>
           </li>
           <li>
-            <ul class="list list--default ">
+            <ul class="list list--default">
               <li class="custom">
                 <button type="button" class="btn btn--primary">
                   Lorem Ipsum
@@ -470,7 +470,7 @@ Set children's direction inside the flexbox.
   <div class="gatsby_demo-inline">
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="row">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="flex-direction: row">
+        <ul class="list list--default" style="flex-direction: row">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -491,7 +491,7 @@ Set children's direction inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="row-reverse">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="flex-direction: row-reverse">
+        <ul class="list list--default" style="flex-direction: row-reverse">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -512,7 +512,7 @@ Set children's direction inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="column">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="flex-direction: column">
+        <ul class="list list--default" style="flex-direction: column">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -533,7 +533,7 @@ Set children's direction inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="column-reverse">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="flex-direction: column-reverse">
+        <ul class="list list--default" style="flex-direction: column-reverse">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -563,7 +563,7 @@ Set children's wrapping inside the flexbox.
   <div class="gatsby_demo-inline">
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="wrap">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="flex-wrap: wrap">
+        <ul class="list list--default" style="flex-wrap: wrap">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -614,7 +614,7 @@ Set children's wrapping inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="wrap-reverse">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="flex-wrap: wrap-reverse">
+        <ul class="list list--default" style="flex-wrap: wrap-reverse">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -665,7 +665,7 @@ Set children's wrapping inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="nowrap">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="flex-wrap: nowrap">
+        <ul class="list list--default" style="flex-wrap: nowrap">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -725,7 +725,7 @@ Set children's horizontal alignment inside the flexbox.
   <div class="gatsby_demo-inline">
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="start">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="justify-content: flex-start">
+        <ul class="list list--default" style="justify-content: flex-start">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -746,7 +746,7 @@ Set children's horizontal alignment inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="end">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="justify-content: flex-end">
+        <ul class="list list--default" style="justify-content: flex-end">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -767,7 +767,7 @@ Set children's horizontal alignment inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="center">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="justify-content: center">
+        <ul class="list list--default" style="justify-content: center">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -788,7 +788,7 @@ Set children's horizontal alignment inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="between">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="justify-content: space-between">
+        <ul class="list list--default" style="justify-content: space-between">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -809,7 +809,7 @@ Set children's horizontal alignment inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="around">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="justify-content: space-around">
+        <ul class="list list--default" style="justify-content: space-around">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -839,7 +839,7 @@ Set children's vertical alignment inside the flexbox.
   <div class="gatsby_demo-inline">
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="start">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="height: 150px; align-items: flex-start">
+        <ul class="list list--default" style="height: 150px; align-items: flex-start">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -890,7 +890,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="end">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="height: 150px; align-items: flex-end">
+        <ul class="list list--default" style="height: 150px; align-items: flex-end">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -941,7 +941,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="center">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="height: 150px; align-items: center">
+        <ul class="list list--default" style="height: 150px; align-items: center">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -992,7 +992,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="baseline">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="height: 150px; align-items: baseline">
+        <ul class="list list--default" style="height: 150px; align-items: baseline">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -1043,7 +1043,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="stretch">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="height: 150px; align-items: stretch">
+        <ul class="list list--default" style="height: 150px; align-items: stretch">
           <li>
             <button type="button" style="align-self: stretch">
               Lorem Ipsum
@@ -1103,7 +1103,7 @@ Set children's vertical alignment inside the flexbox.
   <div class="gatsby_demo-inline">
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="start">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="height: 150px; align-content: flex-start">
+        <ul class="list list--default" style="height: 150px; align-content: flex-start">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -1154,7 +1154,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="end">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="height: 150px; align-content: flex-end">
+        <ul class="list list--default" style="height: 150px; align-content: flex-end">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -1205,7 +1205,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="center">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="height: 150px; align-content: center">
+        <ul class="list list--default" style="height: 150px; align-content: center">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -1256,7 +1256,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="between">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="height: 150px; align-content: space-between">
+        <ul class="list list--default" style="height: 150px; align-content: space-between">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -1307,7 +1307,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="around">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="height: 150px; align-content: space-around">
+        <ul class="list list--default" style="height: 150px; align-content: space-around">
           <li>
             <button type="button">
               Lorem Ipsum
@@ -1358,7 +1358,7 @@ Set children's vertical alignment inside the flexbox.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="stretch">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="height: 150px; align-content: stretch">
+        <ul class="list list--default" style="height: 150px; align-content: stretch">
           <li>
             <button type="button" style="align-self: stretch">
               Lorem Ipsum
@@ -1419,7 +1419,7 @@ If set to **>auto** computes to the parent's `align-items` value.
   <div class="gatsby_demo-inline">
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="start">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default ">
+        <ul class="list list--default">
           <li>
             <button type="button" class="btn btn--default" style="height: 100px">
               Lorem Ipsum
@@ -1440,7 +1440,7 @@ If set to **>auto** computes to the parent's `align-items` value.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="end">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default ">
+        <ul class="list list--default">
           <li>
             <button type="button" class="btn btn--default" style="height: 100px">
               Lorem Ipsum
@@ -1461,7 +1461,7 @@ If set to **>auto** computes to the parent's `align-items` value.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="center">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default ">
+        <ul class="list list--default">
           <li>
             <button type="button" class="btn btn--default" style="height: 100px">
               Lorem Ipsum
@@ -1482,7 +1482,7 @@ If set to **>auto** computes to the parent's `align-items` value.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="baseline">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default ">
+        <ul class="list list--default">
           <li>
             <button type="button" class="btn btn--default" style="height: 100px">
               Lorem Ipsum
@@ -1503,7 +1503,7 @@ If set to **>auto** computes to the parent's `align-items` value.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="stretch">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default ">
+        <ul class="list list--default">
           <li>
             <button type="button" class="btn btn--default" style="height: 100px">
               Lorem Ipsum
@@ -1524,7 +1524,7 @@ If set to **>auto** computes to the parent's `align-items` value.
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="auto">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default " style="align-items: center">
+        <ul class="list list--default" style="align-items: center">
           <li>
             <button type="button" class="btn btn--default" style="height: 100px">
               Lorem Ipsum
@@ -1577,7 +1577,7 @@ Set item's order inside the flexbox.
   <div class="gatsby_demo-inline">
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="order">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <ul class="list list--default ">
+        <ul class="list list--default">
           <li class="order--2">
             <button type="button">
               Lorem Ipsum
