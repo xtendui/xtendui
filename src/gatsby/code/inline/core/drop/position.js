@@ -10,7 +10,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list--default list-space--small align-items--center demo-source-from">
   
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       bottom left
     </button>
@@ -40,7 +40,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       bottom right
     </button>
@@ -70,7 +70,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       bottom center
     </button>
@@ -100,7 +100,7 @@ demo.htmlSource = `
     </div>
   </div>
   
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       top left
     </button>
@@ -130,7 +130,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       top right
     </button>
@@ -160,7 +160,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       top center
     </button>
@@ -190,7 +190,7 @@ demo.htmlSource = `
     </div>
   </div>
   
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       left middle
     </button>
@@ -220,7 +220,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       right middle
     </button>
@@ -250,7 +250,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       center middle
     </button>
@@ -280,7 +280,7 @@ demo.htmlSource = `
     </div>
   </div>
   
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       before top
     </button>
@@ -310,7 +310,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       before bottom
     </button>
@@ -340,7 +340,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       before middle
     </button>
@@ -370,7 +370,7 @@ demo.htmlSource = `
     </div>
   </div>
   
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       after top
     </button>
@@ -400,7 +400,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       after bottom
     </button>
@@ -430,7 +430,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       after middle
     </button>
@@ -460,7 +460,7 @@ demo.htmlSource = `
     </div>
   </div>
   
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       right contain-bottom
     </button>
@@ -490,7 +490,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       right contain-top
     </button>
@@ -520,7 +520,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       left contain-bottom
     </button>
@@ -550,7 +550,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       left contain-top
     </button>
@@ -580,7 +580,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       before contain-bottom
     </button>
@@ -610,7 +610,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       before contain-top
     </button>
@@ -640,7 +640,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       after contain-bottom
     </button>
@@ -670,7 +670,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       after contain-top
     </button>

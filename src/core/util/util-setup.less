@@ -398,14 +398,14 @@
   @breakpoint: extract(@overlay, 1);
   @val: extract(@overlay, 2);
   & when (@breakpoint = none) {
-    .overlay {
+    .overlay_container {
       padding: @val;
     }
   }
   & when not (@breakpoint = none) {
     @query-min: 'min-@{breakpoint}';
     @media @@query-min {
-      .overlay {
+      .overlay_container {
         padding: @val;
       }
     }

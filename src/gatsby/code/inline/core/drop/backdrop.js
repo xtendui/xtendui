@@ -9,7 +9,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list--default list-space--small align-items--center demo-source-from">
-  <div class="drop_outer" data-xt-drop="{ backdrop: true }">
+  <div class="drop_container" data-xt-drop="{ backdrop: true }">
     <button type="button" class="btn btn--primary">
       bottom left
     </button>
@@ -39,7 +39,7 @@ demo.htmlSource = `
     </div>
   </div>
   
-  <div class="drop_outer" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', backdrop: true }">
+  <div class="drop_container" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', backdrop: true }">
     <button type="button" class="btn btn--primary">
       mouseenter
     </button>

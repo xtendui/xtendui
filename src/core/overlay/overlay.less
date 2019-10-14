@@ -98,17 +98,15 @@
 
 .overlay--disable {
   // disable custom animation
-  .overlay {
-    .overlay_inner, .overlay_content {
-      opacity: 1 !important;
-      .trans-anim-none() !important;
-    }
+  .overlay_inner, .overlay_content {
+    opacity: 1 !important;
+    .trans-anim-none() !important;
   }
 }
 
 // animation
 
-.overlay_outer {
+.overlay {
   animation-duration: @time--medium + @time--small; // needed for .out animation timing, put max animation time
   &.active {
     .overlay_design {

@@ -14,8 +14,8 @@ Use this markup to create a overlay.
   <button type="button" data-xt-overlay="{ targets: '#overlay-custom' }">
     <!-- content -->
   </button>
-  <div class="overlay_outer" id="overlay-custom">
-    <div class="overlay">
+  <div class="overlay" id="overlay-custom">
+    <div class="overlay_container">
       <div class="overlay_inner">
         <div class="overlay_design"></div>
           <div class="overlay_close xt-fixed--check">
@@ -36,8 +36,8 @@ You can use this markup to create a overlay with **no id**.
     <button type="button">
       <!-- content -->
     </button>
-    <div class="overlay_outer overlay--default">
-      <div class="overlay">
+    <div class="overlay overlay--default">
+      <div class="overlay_container">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
           <div class="overlay_close xt-fixed--check">
@@ -55,8 +55,8 @@ You can use this markup to create a overlay with **no id**.
 You can use this markup to create a overlay with **no toggle**.
 
 <script type="text/plain" class="language-markup">
-  <div class="overlay_outer overlay--default active" data-xt-overlay>
-    <div class="overlay">
+  <div class="overlay overlay--default active" data-xt-overlay>
+    <div class="overlay_container">
       <div class="overlay_inner">
         <div class="overlay_design"></div>
           <div class="overlay_close xt-fixed--check">

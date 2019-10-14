@@ -2,7 +2,7 @@
  * overlay
  */
 
-.overlay_outer {
+.overlay {
   .toggle--flex();
   position: fixed;
   z-index: @index--overlay;
@@ -15,7 +15,7 @@
   .overflow-style();
 }
 
-.overlay {
+.overlay_container {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -66,7 +66,7 @@
   right: auto;
   width: auto;
   height: auto;
-  .overlay {
+  .overlay_container {
     padding: 0;
     width: auto;
     min-height: auto;

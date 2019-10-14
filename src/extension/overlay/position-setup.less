@@ -3,7 +3,7 @@
  */
 
 .overlay-position {
-  .overlay {
+  .overlay_container {
     position: relative;
     z-index: @index--overlay;
     .padding(all, none) !important;
@@ -17,13 +17,13 @@
     flex-direction: column;
   }
   .overlay-position--left& {
-    .overlay {
+    .overlay_container {
       margin-left: 0;
       margin-right: auto;
     }
   }
   .overlay-position--right& {
-    .overlay {
+    .overlay_container {
       margin-left: auto;
       margin-right: 0;
     }

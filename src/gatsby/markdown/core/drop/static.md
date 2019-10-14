@@ -7,7 +7,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ##Static
 
-Drop position relative to closest element with `position: relative;` with `.drop_outer--static`.
+Drop position relative to closest element with `position: relative;` with `.drop_container--static`.
 
 For limiting event inside a selector use `.event-limit`.
 

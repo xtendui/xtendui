@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="drop_outer drop--disable" data-xt-drop>
+<div class="drop_container drop--disable" data-xt-drop>
   <button type="button" class="btn btn--primary">
     Toggle
   </button>
@@ -38,7 +38,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="drop_outer demo--drop--disable-sm" data-xt-drop>
+<div class="drop_container demo--drop--disable-sm" data-xt-drop>
   <button type="button" class="btn btn--primary">
     Toggle
   </button>
@@ -57,7 +57,7 @@ demo.htmlSource = `
               Dolor sit
             </button>
           </li>
-          <li class="drop_outer" data-xt-drop>
+          <li class="drop_container" data-xt-drop>
             <button type="button">
               Toggle
             </button>
@@ -76,7 +76,7 @@ demo.htmlSource = `
                         Dolor sit
                       </button>
                     </li>
-                    <li class="drop_outer" data-xt-drop>
+                    <li class="drop_container" data-xt-drop>
                       <button type="button">
                         Toggle
                       </button>

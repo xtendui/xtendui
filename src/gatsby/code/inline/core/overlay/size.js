@@ -13,8 +13,8 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       default
     </button>
-    <div class="overlay_outer overlay--default">
-      <div class="overlay">
+    <div class="overlay overlay--default">
+      <div class="overlay_container">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
           <div class="overlay_close xt-fixed--check">
@@ -41,8 +41,8 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       tiny
     </button>
-    <div class="overlay_outer overlay--default overlay--tiny">
-      <div class="overlay">
+    <div class="overlay overlay--default overlay--tiny">
+      <div class="overlay_container">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
           <div class="overlay_close xt-fixed--check">
@@ -69,8 +69,8 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       small
     </button>
-    <div class="overlay_outer overlay--default overlay--small">
-      <div class="overlay">
+    <div class="overlay overlay--default overlay--small">
+      <div class="overlay_container">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
           <div class="overlay_close xt-fixed--check">
@@ -97,8 +97,8 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       medium
     </button>
-    <div class="overlay_outer overlay--default overlay--medium">
-      <div class="overlay">
+    <div class="overlay overlay--default overlay--medium">
+      <div class="overlay_container">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
           <div class="overlay_close xt-fixed--check">
@@ -125,8 +125,8 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       big
     </button>
-    <div class="overlay_outer overlay--default overlay--big">
-      <div class="overlay">
+    <div class="overlay overlay--default overlay--big">
+      <div class="overlay_container">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
           <div class="overlay_close xt-fixed--check">
@@ -153,8 +153,8 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       giant
     </button>
-    <div class="overlay_outer overlay--default overlay--giant">
-      <div class="overlay">
+    <div class="overlay overlay--default overlay--giant">
+      <div class="overlay_container">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
           <div class="overlay_close xt-fixed--check">
@@ -181,8 +181,8 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       full
     </button>
-    <div class="overlay_outer overlay--default overlay--full">
-      <div class="overlay">
+    <div class="overlay overlay--default overlay--full">
+      <div class="overlay_container">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
           <div class="overlay_close xt-fixed--check">

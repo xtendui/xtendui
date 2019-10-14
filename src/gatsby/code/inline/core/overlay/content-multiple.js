@@ -12,8 +12,8 @@ demo.htmlSource = `
   <button type="button" class="btn btn--primary">
     position right
   </button>
-  <div class="overlay_outer overlay--default overlay-position overlay-position--right demo--overlay--content-multiple">
-    <div class="overlay">
+  <div class="overlay overlay--default overlay-position overlay-position--right demo--overlay--content-multiple">
+    <div class="overlay_container">
       <div class="overlay_inner">
         <div class="overlay_design"></div>
         <div class="overlay_close xt-fixed--check">

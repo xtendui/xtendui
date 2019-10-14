@@ -13,8 +13,8 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       Toggle
     </button>
-    <div class="overlay_outer overlay--default overlay--big">
-      <div class="overlay">
+    <div class="overlay overlay--default overlay--big">
+      <div class="overlay_container">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
           <div class="overlay_close xt-fixed--check">
@@ -36,8 +36,8 @@ demo.htmlSource = `
               <button type="button" class="btn btn--primary">
                 Toggle
               </button>
-              <div class="overlay_outer overlay--default overlay--small">
-                <div class="overlay">
+              <div class="overlay overlay--default overlay--small">
+                <div class="overlay_container">
                   <div class="overlay_inner">
                     <div class="overlay_design"></div>
                     <div class="overlay_close xt-fixed--check">
@@ -56,7 +56,7 @@ demo.htmlSource = `
                         ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
                       <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
                         justo.</p>
-                      <div class="drop_outer" data-xt-drop="{ backdrop: true }">
+                      <div class="drop_container" data-xt-drop="{ backdrop: true }">
                         <button type="button" class="btn btn--primary">
                           drop backdrop
                         </button>

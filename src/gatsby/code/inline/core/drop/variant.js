@@ -9,7 +9,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list--default list-space--small align-items--center demo-source-from">
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       default
     </button>
@@ -39,7 +39,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <div class="drop_outer" data-xt-drop>
+  <div class="drop_container" data-xt-drop>
     <button type="button" class="btn btn--primary">
       dark
     </button>

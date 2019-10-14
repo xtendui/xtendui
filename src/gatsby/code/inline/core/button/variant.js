@@ -17,10 +17,6 @@ demo.htmlSource = `
     primary
   </button>
 
-  <button type="button" class="btn btn--default">
-    secondary
-  </button>
-
   <button type="button" class="btn btn--text">
     text
   </button>

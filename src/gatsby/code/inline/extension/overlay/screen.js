@@ -13,8 +13,8 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       screen
     </button>
-    <div class="overlay_outer overlay--default overlay-screen">
-      <div class="overlay">
+    <div class="overlay overlay--default overlay-screen">
+      <div class="overlay_container">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
           <div class="overlay_close xt-fixed--check">
@@ -41,8 +41,8 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       screen full none
     </button>
-    <div class="overlay_outer overlay--default overlay-screen overlay--full overlay--none">
-      <div class="overlay">
+    <div class="overlay overlay--default overlay-screen overlay--full overlay--none">
+      <div class="overlay_container">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
           <div class="overlay_close xt-fixed--check">

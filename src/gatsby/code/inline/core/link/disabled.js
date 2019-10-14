@@ -12,10 +12,6 @@ demo.htmlSource = `
   primary
 </button>
 
-<button type="button" class="btn btn--default" disabled>
-  secondary
-</button>
-
 <button type="button" class="btn btn--text" disabled>
   text
 </button>
