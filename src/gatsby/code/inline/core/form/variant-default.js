@@ -10,10 +10,10 @@ export const demo = {
 demo.htmlSource = `
 <form class="form--default">
   <div class="form-group">
-    <label class="form-label custom form-label--inverse">
+    <label class="form-label form-label--inverse xt-custom">
       Custom
     </label>
-    <input type="text" class="form-item custom form-item--inverse" placeholder="Input">
+    <input type="text" class="form-item form-item--inverse xt-custom" placeholder="Input">
   </div>
   
   <div class="form-group">

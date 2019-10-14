@@ -8,12 +8,12 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form class="form--inverse" style="padding: 1rem 2rem; background: black;">
+<form class="form--inverse" style="padding: 1rem 2rem; background: #7567f8;">
   <div class="form-group">
-    <label class="form-label custom form-label--default">
+    <label class="form-label form-label--default xt-custom">
       Custom
     </label>
-    <input type="text" class="form-item custom form-item--default" placeholder="Input">
+    <input type="text" class="form-item form-item--default xt-custom" placeholder="Input">
   </div>
   
   <div class="form-group">

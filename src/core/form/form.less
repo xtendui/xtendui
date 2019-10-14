@@ -28,28 +28,18 @@ legend {
 }
 
 /**
- * form-text
+ * form
  */
 
-.form-text {
-  .block();
-  .margin(top, small);
-  .font--small();
-  .muted();
+form {
+  // default options
+  .form--default(); // .form-label .form-item
+  .form--medium(); // .form-group
 }
 
 /**
  * form-group
  */
-
-/**
- * form
- */
-
-form {
-  .form--default();
-  .form--medium();
-}
 
 // size
 
@@ -171,12 +161,6 @@ form {
     border-color: @default--dark;
     background-color: @default--dark; // @FIX no background: or it overrides background-image
   }
-  // select arrow
-  select:not([multiple])& {
-    @select-arrow-color: @text;
-    @select-space-color: @gray--200;
-    background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
-  }
   // placeholder
   &:-ms-input-placeholder {
     color: @gray--500;
@@ -203,18 +187,12 @@ form {
 }
 
 .form-item--inverse {
-  border-color: @primary;
-  background-color: @primary; // @FIX no background: or it overrides background-image
+  border-color: fade(@gray--800, 10%);
+  background-color: fade(@gray--800, 10%); // @FIX no background: or it overrides background-image
   color: @text--inverse--dark;
   &:focus, &.active {
-    border-color: @primary--dark;
-    background-color: @primary--dark; // @FIX no background: or it overrides background-image
-  }
-  // select arrow
-  select:not([multiple])& {
-    @select-arrow-color: @text--inverse;
-    @select-space-color: @primary--dark;
-    background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
+    border-color: fade(@gray--800, 15%);
+    background-color: fade(@gray--800, 15%); // @FIX no background: or it overrides background-image
   }
   // placeholder
   &:-ms-input-placeholder {
@@ -260,13 +238,20 @@ form {
 }
 
 /**
- * select[multiple]
+ * select
  */
 
-select[multiple]& {
-  padding: 0;
-  option {
-    padding: .5rem 1rem;
+.form-item {
+  select:not([multiple])& {
+    @select-arrow-color: @text--inverse;
+    @select-space-color: fade(@black, 15%);
+    background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
+  }
+  select[multiple]& {
+    padding: 0;
+    option {
+      padding: .5rem 1rem;
+    }
   }
 }
 
@@ -404,6 +389,17 @@ input[type="radio"]:not(.unstyled) {
       transition-timing-function: @bez--in;
     }
   }
+}
+
+/**
+ * form-text
+ */
+
+.form-text {
+  .block();
+  .margin(top, small);
+  .font--small();
+  .muted();
 }
 
 /**

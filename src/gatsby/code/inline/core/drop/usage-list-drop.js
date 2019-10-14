@@ -28,7 +28,7 @@ demo.htmlSource = `
                 Dolor sit
               </button>
             </li>
-            <li class="custom">
+            <li class="xt-custom">
               <button type="button" class="btn btn--default btn--small btn--squared">
                 Dolor sit
               </button>

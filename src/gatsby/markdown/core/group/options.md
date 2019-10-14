@@ -20,7 +20,7 @@ Use `.group_inner.flex--auto` to expand groups.
 
 ##Variant
 
-Optional classes for assigning variant (example: `.group--light`).
+Optional classes for assigning variant (example: `.group--default`).
 
 <div class="alert">
   <div class="alert_content">

@@ -9,19 +9,19 @@
 // selectors
 
 .form-groups(@rules) {
-  .form-group:not(.custom) {
+  .form-group:not(.xt-custom) {
     @rules();
   }
 }
 
 .form-labels(@rules) {
-  .form-label:not(.custom) {
+  .form-label:not(.xt-custom) {
     @rules();
   }
 }
 
 .form-items(@rules) {
-  .form-item:not(.custom) {
+  .form-item:not(.xt-custom) {
     @rules();
   }
 }
@@ -64,21 +64,27 @@
 
 .form-item {
   .block();
-  // select arrow
-  select:not([multiple])& {
-    .padding(right, @select-space--size) !important;
-    white-space: normal;
-    background-position: calc(~'100% - '@select-space--size / 2) 50%, calc(~'100% - ('@select-space--size / 2~') + '@select-arrow--size) 50%, 100% 0;
-    background-size: @select-arrow--size @select-arrow--size, @select-arrow--size @select-arrow--size, @select-space--size 100%;
-    background-repeat: no-repeat;
+}
+
+// textarea
+
+.form-item {
+  textarea {
+    overflow: hidden;
+    resize: none;
   }
 }
 
-// others
+// select
 
-textarea {
-  overflow: hidden;
-  resize: none;
+.form-item {
+  select:not([multiple])& {
+    .padding(right, @select-space--size) !important;
+    white-space: normal;
+    background-position: calc(~'100% - ' @select-space--size / 2) 50%, calc(~'100% - (' @select-space--size / 2~') + '@select-arrow--size) 50%, 100% 0;
+    background-size: @select-arrow--size @select-arrow--size, @select-arrow--size @select-arrow--size, @select-space--size 100%;
+    background-repeat: no-repeat;
+  }
 }
 
 /**

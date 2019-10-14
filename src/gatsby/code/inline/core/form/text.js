@@ -9,7 +9,7 @@ export const demo = {
 
 demo.htmlSource = `
 <form>
-  <div class="form-group form-group--small">
+  <div class="form-group form-group--small xt-custom">
     <label class="form-label">
       Small
     </label>
@@ -19,7 +19,7 @@ demo.htmlSource = `
     </div>
   </div>
   
-  <div class="form-group form-group--medium">
+  <div class="form-group form-group--medium xt-custom">
     <label class="form-label">
       Medium
     </label>
@@ -29,7 +29,7 @@ demo.htmlSource = `
     </div>
   </div>
   
-  <div class="form-group form-group--big">
+  <div class="form-group form-group--big xt-custom">
     <label class="form-label">
       Big
     </label>

@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="group full group--light">
+<div class="group full group--default">
   <div class="group_inner">
     <button type="button" class="btn btn--default">
       btn 1a
@@ -25,7 +25,7 @@ demo.htmlSource = `
       btn 2b
     </button>
   </div>
-  <input type="text" class="form-item">
+  <input type="text" class="form-item form-item--default">
   <div class="group_inner">
     <button type="button" class="btn btn--default">
       btn 3a
@@ -44,7 +44,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="group full group--light">
+<div class="group full group--default">
   <div class="group_inner flex--auto">
     <button type="button" class="btn btn--default">
       btn 1a

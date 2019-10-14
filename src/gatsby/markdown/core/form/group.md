@@ -7,9 +7,9 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Size
 
-In css you can use `.form-groups({});` to style all `.form-group:not(.custom)`.
+In css you can use `.form-groups({});` to style all `.form-group:not(.xt-custom)`.
 
-If you want to customize singularly form's group use the class `.form-group.custom`.
+If you want to customize singularly form's group use the class `.xt-custom`.
 
 <demo>
   <demovanilla src="inline/core/form/group-small">

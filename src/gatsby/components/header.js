@@ -49,7 +49,7 @@ class Header extends React.Component {
                   </div>
                   <div>
                     <div className="gatsby_site_header_top_search">
-                      <input className="form-item" placeholder="Search"/>
+                      <input className="form-item form-item--inverse" placeholder="Search"/>
                     </div>
                   </div>
                 </div>

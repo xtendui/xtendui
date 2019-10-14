@@ -20,7 +20,7 @@ demo.htmlSource = `
         btn 2
       </button>
     </div>
-    <input type="text" class="form-item">
+    <input type="text" class="form-item form-item--default">
     <div class="group_inner">
       <button type="button" class="btn btn--primary">
         btn 3

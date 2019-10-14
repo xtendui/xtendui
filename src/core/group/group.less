@@ -11,6 +11,20 @@
   border-color: transparent;
 }
 
+// variant
+
+.group--default {
+  .group--collapse();
+  .form-item {
+    border-color: @gray--300 !important;
+  }
+  .group_inner {
+    > * {
+      border-color: @gray--300 !important;
+    }
+  }
+}
+
 // special
 
 .group--collapse {
@@ -19,20 +33,6 @@
     margin-right: -1px;
     > * + * {
       margin-top: -1px;
-    }
-  }
-}
-
-// variant
-
-.group--light {
-  .group--collapse();
-  .form-item {
-    border-color: @gray--300 !important;
-  }
-  .group_inner {
-    > * {
-      border-color: @gray--300 !important;
     }
   }
 }

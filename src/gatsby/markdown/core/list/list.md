@@ -111,7 +111,9 @@ You can use list to space childrens like [row](/core/row/row) does. But the chil
 
 ###List of buttons
 
-List's buttons are styled automatically, but if you want to customize the buttons use the class `li.custom`.
+In css you can use `.list-btns({});` to style all `> li:not(.xt-custom) > .btn`.
+
+If you want to customize singularly list's buttons use the class `.xt-custom`.
 
 <demo>
   <div class="gatsby_demo-inline">
@@ -128,7 +130,7 @@ List's buttons are styled automatically, but if you want to customize the button
               Dolor sit
             </button>
           </li>
-          <li class="custom">
+          <li class="xt-custom">
             <button type="button" class="btn btn--primary btn--tiny">
               Amet
             </button>
@@ -139,17 +141,17 @@ List's buttons are styled automatically, but if you want to customize the button
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="list">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
         <ul class="list-block list--default">
-          <li class="custom">
+          <li class="xt-custom">
             <button type="button" class="btn btn--primary">
               Lorem Ipsum
             </button>
           </li>
-          <li class="custom">
+          <li class="xt-custom">
             <button type="button" class="btn btn--default">
               Dolor sit
             </button>
           </li>
-          <li class="custom">
+          <li class="xt-custom">
             <button type="button" class="btn btn--text btn--tiny">
               Amet
             </button>
@@ -164,29 +166,29 @@ List's buttons are styled automatically, but if you want to customize the button
             <ul class="list list--default">
               <li>
                 <ul class="list-block list--default">
-                  <li class="custom">
+                  <li class="xt-custom">
                     <button type="button" class="btn btn--primary">
                       Lorem Ipsum
                     </button>
                   </li>
-                  <li class="custom">
+                  <li class="xt-custom">
                     <button type="button" class="btn btn--default">
                       Dolor sit
                     </button>
                   </li>
-                  <li class="custom">
+                  <li class="xt-custom">
                     <button type="button" class="btn btn--text btn--tiny">
                       Amet
                     </button>
                   </li>
                 </ul>
               </li>
-              <li class="custom">
+              <li class="xt-custom">
                 <button type="button" class="btn btn--default">
                   Dolor sit
                 </button>
               </li>
-              <li class="custom">
+              <li class="xt-custom">
                 <button type="button" class="btn btn--text btn--tiny">
                   Amet
                 </button>
@@ -195,17 +197,17 @@ List's buttons are styled automatically, but if you want to customize the button
           </li>
           <li>
             <ul class="list list--default">
-              <li class="custom">
+              <li class="xt-custom">
                 <button type="button" class="btn btn--primary">
                   Lorem Ipsum
                 </button>
               </li>
-              <li class="custom">
+              <li class="xt-custom">
                 <button type="button" class="btn btn--default">
                   Dolor sit
                 </button>
               </li>
-              <li class="custom">
+              <li class="xt-custom">
                 <button type="button" class="btn btn--text btn--tiny">
                   Amet
                 </button>
@@ -216,13 +218,6 @@ List's buttons are styled automatically, but if you want to customize the button
       </div>
     </div>
   </div>
-</demo>
-
-In css you can use `.list-btns({});` to style all `.list:not(.custom) > li > .btn`.
-
-<demo>
-  <demovanilla src="inline/core/list/custom-btn">
-  </demovanilla>
 </demo>
 
 ##Space
