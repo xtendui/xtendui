@@ -21,7 +21,7 @@ You can change the **default size** @TODO less path
 </div>
 
 <div class="alert">
-  <div class="alert_content">
+  <div class="alert-content">
     You can set overlay's size in the `_variables.less`.
   </div>
 </div>

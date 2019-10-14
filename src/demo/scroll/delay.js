@@ -1,7 +1,7 @@
 import { Xt } from 'xtend-library'
 
 Xt.mount.push({
-  matches: '.demo--scroll_container--delay',
+  matches: '.demo--scroll-container--delay',
   mount: function (object) {
     // init
 

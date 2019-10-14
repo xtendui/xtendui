@@ -12,12 +12,12 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="row scroll_container demo--scroll_container--delay">
+<div class="row scroll-container demo--scroll-container--delay">
 
   <div class="col-12 col-6-sm">
     <div class="card card--default">
-      <div class="card_design"></div>
-      <div class="card_content">
+      <div class="card-design"></div>
+      <div class="card-content">
         <h3>Lorem ipsum dolor sit amet</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
       </div>
@@ -26,8 +26,8 @@ demo.htmlSource = `
 
   <div class="col-12 col-6-sm">
     <div class="card card--default">
-      <div class="card_design"></div>
-      <div class="card_content">
+      <div class="card-design"></div>
+      <div class="card-content">
         <h3>Lorem ipsum dolor sit amet</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
       </div>
@@ -36,8 +36,8 @@ demo.htmlSource = `
 
   <div class="col-12 col-6-sm">
     <div class="card card--default">
-      <div class="card_design"></div>
-      <div class="card_content">
+      <div class="card-design"></div>
+      <div class="card-content">
         <h3>Lorem ipsum dolor sit amet</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
       </div>
@@ -46,8 +46,8 @@ demo.htmlSource = `
 
   <div class="col-12 col-6-sm">
     <div class="card card--default">
-      <div class="card_design"></div>
-      <div class="card_content">
+      <div class="card-design"></div>
+      <div class="card-content">
         <h3>Lorem ipsum dolor sit amet</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
       </div>
@@ -56,8 +56,8 @@ demo.htmlSource = `
 
   <div class="col-6 col-4-sm">
     <div class="card card--default">
-      <div class="card_design"></div>
-      <div class="card_content">
+      <div class="card-design"></div>
+      <div class="card-content">
         <h3>Lorem ipsum dolor sit amet</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
       </div>
@@ -66,8 +66,8 @@ demo.htmlSource = `
 
   <div class="col-6 col-4-sm">
     <div class="card card--default">
-      <div class="card_design"></div>
-      <div class="card_content">
+      <div class="card-design"></div>
+      <div class="card-content">
         <h3>Lorem ipsum dolor sit amet</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
       </div>
@@ -76,8 +76,8 @@ demo.htmlSource = `
 
   <div class="col-6 col-4-sm">
     <div class="card card--default">
-      <div class="card_design"></div>
-      <div class="card_content">
+      <div class="card-design"></div>
+      <div class="card-content">
         <h3>Lorem ipsum dolor sit amet</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
       </div>
@@ -86,8 +86,8 @@ demo.htmlSource = `
 
   <div class="col-6 col-2-sm">
     <div class="card card--default">
-      <div class="card_design"></div>
-      <div class="card_content">
+      <div class="card-design"></div>
+      <div class="card-content">
         <h3>Lorem ipsum dolor sit amet</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
       </div>
@@ -96,8 +96,8 @@ demo.htmlSource = `
 
   <div class="col-4 col-2-sm">
     <div class="card card--default">
-      <div class="card_design"></div>
-      <div class="card_content">
+      <div class="card-design"></div>
+      <div class="card-content">
         <h3>Lorem ipsum dolor sit amet</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
       </div>
@@ -106,8 +106,8 @@ demo.htmlSource = `
 
   <div class="col-4 col-2-sm">
     <div class="card card--default">
-      <div class="card_design"></div>
-      <div class="card_content">
+      <div class="card-design"></div>
+      <div class="card-content">
         <h3>Lorem ipsum dolor sit amet</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
       </div>
@@ -116,8 +116,8 @@ demo.htmlSource = `
 
   <div class="col-4 col-2-sm">
     <div class="card card--default">
-      <div class="card_design"></div>
-      <div class="card_content">
+      <div class="card-design"></div>
+      <div class="card-content">
         <h3>Lorem ipsum dolor sit amet</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
       </div>
@@ -126,8 +126,8 @@ demo.htmlSource = `
 
   <div class="col-4 col-2-sm">
     <div class="card card--default">
-      <div class="card_design"></div>
-      <div class="card_content">
+      <div class="card-design"></div>
+      <div class="card-content">
         <h3>Lorem ipsum dolor sit amet</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
       </div>
@@ -136,8 +136,8 @@ demo.htmlSource = `
 
   <div class="col-4 col-2-sm">
     <div class="card card--default">
-      <div class="card_design"></div>
-      <div class="card_content">
+      <div class="card-design"></div>
+      <div class="card-content">
         <h3>Lorem ipsum dolor sit amet</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
       </div>

@@ -236,7 +236,7 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 </div>
 
 <div class="alert">
-  <div class="alert_content">
+  <div class="alert-content">
     You can set list's spaces in the `_variables.less` file.
   </div>
 </div>
@@ -1557,13 +1557,13 @@ Set item's order inside the flexbox.
 </div>
 
 <div class="alert">
-  <div class="alert_content">
+  <div class="alert-content">
     You can set orders in the `_variables.less` file.
   </div>
 </div>
 
 <div class="alert">
-  <div class="alert_content">
+  <div class="alert-content">
     By default orders from `.order--0` to `.order--2` are negative values.
   </div>
 </div>

@@ -3,11 +3,11 @@ import 'xtend-library/src/extension/scroll/scroll.js'
 import { TweenMax } from 'gsap/TweenMax'
 
 /**
- * .demo--parallax_title
+ * .demo--parallax-title
  */
 
 Xt.mount.push({
-  matches: '.demo--parallax_title',
+  matches: '.demo--parallax-title',
   mount: function (object) {
     // init
 
@@ -41,11 +41,11 @@ Xt.mount.push({
 })
 
 /**
- * .demo--parallax_img
+ * .demo--parallax-img
  */
 
 Xt.mount.push({
-  matches: '.demo--parallax_img',
+  matches: '.demo--parallax-img',
   mount: function (object) {
     // init
 
@@ -78,11 +78,11 @@ Xt.mount.push({
 })
 
 /**
- * .demo--parallax_footer
+ * .demo--parallax-footer
  */
 
 Xt.mount.push({
-  matches: '.demo--parallax_footer',
+  matches: '.demo--parallax-footer',
   mount: function (object) {
     // init
 

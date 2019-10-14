@@ -19,20 +19,20 @@
  */
 
 .overlay {
-  .overlay_inner {
+  .overlay-inner {
     border-radius: 4px;
   }
-  .overlay_design {
+  .overlay-design {
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
   }
-  .overlay_content {
+  .overlay-content {
     padding: 3rem;
     @media @min-sm {
       padding: 4rem;
     }
-    & + .overlay_content {
+    & + .overlay-content {
       padding-top: 0 !important;
     }
   }
@@ -49,12 +49,12 @@
 // variant
 
 .overlay--default {
-  .overlay_design {
+  .overlay-design {
     border-color: @gray--300;
     background: @white;
     box-shadow: @shadow--light;
   }
-  .overlay_inner {
+  .overlay-inner {
     color: @text;
   }
   .btn--close {
@@ -63,12 +63,12 @@
 }
 
 .overlay--dark {
-  .overlay_design {
+  .overlay-design {
     border-color: @gray--800;
     background: @gray--800;
     box-shadow: @shadow--dark;
   }
-  .overlay_inner {
+  .overlay-inner {
     .text--inverse();
   }
   .btn--close {
@@ -79,19 +79,19 @@
 // special
 
 .overlay--squared {
-  .overlay_inner {
+  .overlay-inner {
     border-radius: 0;
   }
 }
 
 .overlay--noborder {
-  .overlay_design {
+  .overlay-design {
     border: 0;
   }
 }
 
 .overlay--none {
-  .overlay_content {
+  .overlay-content {
     padding: 0 !important;
   }
 }
@@ -100,7 +100,7 @@
 
 .overlay--disable {
   // disable custom animation
-  .overlay_inner, .overlay_content {
+  .overlay-inner, .overlay-content {
     opacity: 1 !important;
     .trans-anim-none() !important;
   }
@@ -111,10 +111,10 @@
 .overlay {
   animation-duration: @time--medium + @time--small; // needed for .out animation timing, put max animation time
   &.active {
-    .overlay_design {
+    .overlay-design {
       .anim-zoom.active();
     }
-    .overlay_content, .btn--close {
+    .overlay-content, .btn--close {
       .anim-y.active();
       animation-delay: @time--small;
     }
@@ -123,11 +123,11 @@
     }
   }
   &.out {
-    .overlay_design {
+    .overlay-design {
       .anim-zoom.out();
       animation-delay: @time--small;
     }
-    .overlay_content, .btn--close {
+    .overlay-content, .btn--close {
       .anim-y.out();
     }
     > .backdrop {

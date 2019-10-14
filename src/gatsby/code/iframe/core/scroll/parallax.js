@@ -13,10 +13,10 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list--default">
-  <div class="demo--parallax_title">
+  <div class="demo--parallax-title">
     <h1>Parallax Title</h1>
   </div>
-  <div class="demo--parallax_img">
+  <div class="demo--parallax-img">
     <img class="responsive" src="https://via.placeholder.com/1000x150"/>
   </div>
 </div>
@@ -26,7 +26,7 @@ demo.htmlSource = `
 <br/><br/><br/><br/><br/><br/>
 <br/><br/><br/><br/><br/><br/>
 
-<div class="demo--parallax_footer">
+<div class="demo--parallax-footer">
   <h4>Parallax Footer</h4>
 </div>
 `

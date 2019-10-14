@@ -248,7 +248,7 @@ class Slider extends Xt.Toggle {
           if (html.search(new RegExp('xt-content', 'ig')) !== -1) {
             let replace = ''
             for (const slide of group) {
-              replace += slide.querySelector('.slide_pagination_content').innerHTML
+              replace += slide.querySelector('.slide_pagination-content').innerHTML
             }
             html = html.replace(new RegExp('xt-content', 'ig'), replace)
           }
@@ -1019,11 +1019,11 @@ Slider.optionsDefault = {
   groupMq: { all: 0.8 },
   align: 'center',
   contain: false,
-  pagination: '.slider_pagination',
+  pagination: '.slider-pagination',
   drag: {
     drag: true,
     wrap: false,
-    dragger: '.slides_inner',
+    dragger: '.slides-inner',
     threshold: 50,
     linkThreshold: 50,
     factor: 1,

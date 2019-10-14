@@ -8,14 +8,14 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="drop_container drop--disable" data-xt-drop>
+<div class="drop-container drop--disable" data-xt-drop>
   <button type="button" class="btn btn--primary">
     Toggle
   </button>
   <div class="drop drop--default">
-    <div class="drop_inner">
-      <div class="drop_design"></div>
-      <div class="drop_content">
+    <div class="drop-inner">
+      <div class="drop-design"></div>
+      <div class="drop-content">
         <ul class="list list--drop">
           <li>
             <button type="button">
@@ -38,14 +38,14 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="drop_container demo--drop--disable-sm" data-xt-drop>
+<div class="drop-container demo--drop--disable-sm" data-xt-drop>
   <button type="button" class="btn btn--primary">
     Toggle
   </button>
   <div class="drop drop--default">
-    <div class="drop_inner">
-      <div class="drop_design"></div>
-      <div class="drop_content">
+    <div class="drop-inner">
+      <div class="drop-design"></div>
+      <div class="drop-content">
         <ul class="list list--drop">
           <li>
             <button type="button">
@@ -57,14 +57,14 @@ demo.htmlSource = `
               Dolor sit
             </button>
           </li>
-          <li class="drop_container" data-xt-drop>
+          <li class="drop-container" data-xt-drop>
             <button type="button">
               Toggle
             </button>
             <div class="drop drop--dark drop--after drop--middle">
-              <div class="drop_inner">
-                <div class="drop_design"></div>
-                <div class="drop_content">
+              <div class="drop-inner">
+                <div class="drop-design"></div>
+                <div class="drop-content">
                   <ul class="list list--drop">
                     <li>
                       <button type="button">
@@ -76,14 +76,14 @@ demo.htmlSource = `
                         Dolor sit
                       </button>
                     </li>
-                    <li class="drop_container" data-xt-drop>
+                    <li class="drop-container" data-xt-drop>
                       <button type="button">
                         Toggle
                       </button>
                       <div class="drop drop--default drop--center drop--middle">
-                        <div class="drop_inner">
-                          <div class="drop_design"></div>
-                          <div class="drop_content">
+                        <div class="drop-inner">
+                          <div class="drop-design"></div>
+                          <div class="drop-content">
                             <ul class="list list--drop">
                               <li>
                                 <button type="button">

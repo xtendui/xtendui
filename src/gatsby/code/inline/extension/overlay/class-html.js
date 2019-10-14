@@ -14,13 +14,13 @@ demo.htmlSource = `
       default
     </button>
     <div class="overlay overlay--default">
-      <div class="overlay_container">
-        <div class="overlay_inner">
-          <div class="overlay_design"></div>
-          <div class="overlay_close xt-fixed--check">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+          <div class="overlay-design"></div>
+          <div class="overlay-close xt-fixed--check">
             <button type="button" class="btn btn--close" aria-label="Close"></button>
           </div>
-          <div class="overlay_content">
+          <div class="overlay-content">
             <div class="h2">Lorem ipsum</div>
             <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -42,13 +42,13 @@ demo.htmlSource = `
       position left
     </button>
     <div class="overlay overlay--default overlay-position overlay-position--left">
-      <div class="overlay_container">
-        <div class="overlay_inner">
-          <div class="overlay_design"></div>
-          <div class="overlay_close xt-fixed--check">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+          <div class="overlay-design"></div>
+          <div class="overlay-close xt-fixed--check">
             <button type="button" class="btn btn--close" aria-label="Close"></button>
           </div>
-          <div class="overlay_content">
+          <div class="overlay-content">
             <div class="h2">Lorem ipsum</div>
             <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
@@ -71,13 +71,13 @@ demo.htmlSource = `
       position right
     </button>
     <div class="overlay overlay--default overlay-position overlay-position--right">
-      <div class="overlay_container">
-        <div class="overlay_inner">
-          <div class="overlay_design"></div>
-          <div class="overlay_close xt-fixed--check">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+          <div class="overlay-design"></div>
+          <div class="overlay-close xt-fixed--check">
             <button type="button" class="btn btn--close" aria-label="Close"></button>
           </div>
-          <div class="overlay_content">
+          <div class="overlay-content">
             <div class="h2">Lorem ipsum</div>
             <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,

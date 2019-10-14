@@ -32,32 +32,32 @@ demo.htmlSource = `
     Group 1
   </button>
   <div class="alert toggle--block">
-    <div class="alert_content">
+    <div class="alert-content">
       Target 0
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="0">
-    <div class="alert_content">
+    <div class="alert-content">
       Group 0
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="1">
-    <div class="alert_content">
+    <div class="alert-content">
       Group 1
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="0">
-    <div class="alert_content">
+    <div class="alert-content">
       Group 0
     </div>
   </div>
   <div class="alert toggle--block">
-    <div class="alert_content">
+    <div class="alert-content">
       Target 1
     </div>
   </div>
   <div class="alert toggle--block active class-example-1" data-xt-group="1">
-    <div class="alert_content">
+    <div class="alert-content">
       Group 1
     </div>
   </div>

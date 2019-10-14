@@ -29,22 +29,22 @@ demo.htmlSource = `
       <span class="icon-xt--chevron-right"></span>
     </button>
     <div class="alert toggle--block">
-      <div class="alert_content">
+      <div class="alert-content">
         Target 0
       </div>
     </div>
     <div class="alert toggle--block">
-      <div class="alert_content">
+      <div class="alert-content">
         Target 1
       </div>
     </div>
     <div class="alert toggle--block">
-      <div class="alert_content">
+      <div class="alert-content">
         Target 2
       </div>
     </div>
     <div class="alert toggle--block">
-      <div class="alert_content">
+      <div class="alert-content">
         Target 3
       </div>
     </div>

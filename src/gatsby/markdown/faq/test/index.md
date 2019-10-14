@@ -19,7 +19,7 @@ Sed gravida massa in commodo eleifend. Curabitur ac pellentesque nisl. Nunc ut p
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.
 
 <div class="alert">
-  <div class="alert_content">
+  <div class="alert-content">
     With **multiple mode** you **can't** specify targets with **#id**.
   </div>
 </div>
@@ -99,14 +99,14 @@ let self = new Xt.Scroll(document.documentElement, {
 <demo>
   <demovanilla src="inline/core/test/vanilla" name="test vanilla">
     <div class="gatsby_demo_text">
-      <div class="alert_content">
+      <div class="alert-content">
         Test
       </div>
     </div>
   </demovanilla>
   <demoreact src="inline/core/test/react" name="test react">
     <div class="gatsby_demo_text">
-      <div class="alert_content">
+      <div class="alert-content">
         Test
       </div>
     </div>
@@ -118,14 +118,14 @@ let self = new Xt.Scroll(document.documentElement, {
 <demo>
   <div class="gatsby_demo_item" data-iframe="iframe/core/test/vanilla-iframe" data-name="test vanilla frame">
     <div class="gatsby_demo_text">
-      <div class="alert_content">
+      <div class="alert-content">
         Test
       </div>
     </div>
   </div>
   <div class="gatsby_demo_item" data-iframe="iframe/core/test/react-iframe" data-name="test react iframe">
     <div class="gatsby_demo_text">
-      <div class="alert_content">
+      <div class="alert-content">
         Test
       </div>
     </div>

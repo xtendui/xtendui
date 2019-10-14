@@ -9,23 +9,23 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="group full group--default">
-  <div class="group_inner">
+  <div class="group-inner">
     <button type="button" class="btn btn--default">
       btn 1
     </button>
   </div>
-  <div class="group_inner">
+  <div class="group-inner">
     <button type="button" class="btn btn--default">
       btn 2
     </button>
   </div>
   <input type="text" class="form-item form-item--default">
-  <div class="group_inner">
+  <div class="group-inner">
     <button type="button" class="btn btn--default">
       btn 3
     </button>
   </div>
-  <div class="group_inner">
+  <div class="group-inner">
     <button type="button" class="btn btn--default">
       btn 4
     </button>
@@ -33,22 +33,22 @@ demo.htmlSource = `
 </div>
 
 <div class="group full group--default">
-  <div class="group_inner flex--auto">
+  <div class="group-inner flex--auto">
     <button type="button" class="btn btn--default">
       btn 1
     </button>
   </div>
-  <div class="group_inner">
+  <div class="group-inner">
     <button type="button" class="btn btn--default">
       btn 2
     </button>
   </div>
-  <div class="group_inner flex--auto">
+  <div class="group-inner flex--auto">
     <button type="button" class="btn btn--default">
       btn 3
     </button>
   </div>
-  <div class="group_inner">
+  <div class="group-inner">
     <button type="button" class="btn btn--default">
       btn 4
     </button>

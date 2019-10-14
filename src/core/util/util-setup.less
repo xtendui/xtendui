@@ -377,7 +377,7 @@
   // .by-key(@overlays, @name);
   @arr: ~"overlay--@{name}";
   @val: @@arr;
-  .overlay_inner {
+  .overlay-inner {
     max-width: @val;
   }
 }
@@ -398,14 +398,14 @@
   @breakpoint: extract(@overlay, 1);
   @val: extract(@overlay, 2);
   & when (@breakpoint = none) {
-    .overlay_container {
+    .overlay-container {
       padding: @val;
     }
   }
   & when not (@breakpoint = none) {
     @query-min: 'min-@{breakpoint}';
     @media @@query-min {
-      .overlay_container {
+      .overlay-container {
         padding: @val;
       }
     }

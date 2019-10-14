@@ -10,7 +10,7 @@ export const demo = {
 demo.htmlSource = `
 <button type="button" class="group"
   data-xt-propagate-interaction="{ targets: '.btn' }">
-  <div class="group_inner">
+  <div class="group-inner">
     <div class="btn btn--primary">
       btn 1a
     </div>
@@ -18,7 +18,7 @@ demo.htmlSource = `
       btn 1b
     </div>
   </div>
-  <div class="group_inner">
+  <div class="group-inner">
     <div class="btn btn--default">
       btn 2a
     </div>
@@ -26,7 +26,7 @@ demo.htmlSource = `
       btn 2b
     </div>
   </div>
-  <div class="group_inner">
+  <div class="group-inner">
     <div class="btn btn--primary">
       btn 3a
     </div>
@@ -34,7 +34,7 @@ demo.htmlSource = `
       btn 3b
     </div>
   </div>
-  <div class="group_inner">
+  <div class="group-inner">
     <div class="btn btn--default">
       btn 4a
     </div>

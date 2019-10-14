@@ -12,9 +12,9 @@ demo.htmlSource = `
   <div class="row row-space--small">
     <div class="col-12 col-6-sm">
       <button type="button" class="card card--default">
-        <div class="card_design"></div>
-        <div class="card_content">
-          <div class="card_title">Default</div>
+        <div class="card-design"></div>
+        <div class="card-content">
+          <div class="card-title">Default</div>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
         </div>
       </button>
@@ -22,9 +22,9 @@ demo.htmlSource = `
     
     <div class="col-12 col-6-sm">
       <button type="button" class="card card--default card--full">
-        <div class="card_design"></div>
-        <div class="card_content">
-          <div class="card_title">Default full</div>
+        <div class="card-design"></div>
+        <div class="card-content">
+          <div class="card-title">Default full</div>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
         </div>
       </button>
@@ -32,9 +32,9 @@ demo.htmlSource = `
     
     <div class="col-12 col-6-sm">
       <button type="button" class="card card--primary">
-        <div class="card_design"></div>
-        <div class="card_content">
-          <div class="card_title">Primary</div>
+        <div class="card-design"></div>
+        <div class="card-content">
+          <div class="card-title">Primary</div>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
         </div>
       </button>
@@ -42,9 +42,9 @@ demo.htmlSource = `
     
     <div class="col-12 col-6-sm">
       <button type="button" class="card card--primary card--full">
-        <div class="card_design"></div>
-        <div class="card_content">
-          <div class="card_title">Primary full</div>
+        <div class="card-design"></div>
+        <div class="card-content">
+          <div class="card-title">Primary full</div>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
         </div>
       </button>

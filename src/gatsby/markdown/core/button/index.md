@@ -21,7 +21,7 @@ Use `.btn` to create a button.
 </script>
 
 <div class="alert">
-  <div class="alert_content">
+  <div class="alert-content">
     The `span` that wraps the content is optional but recommended for animating the content.
   </div>
 </div>

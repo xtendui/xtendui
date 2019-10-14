@@ -3,27 +3,27 @@
  */
 
 .overlay-position {
-  .overlay_container {
+  .overlay-container {
     position: relative;
     z-index: @index--overlay;
     .padding(all, none) !important;
-    .overlay_inner {
+    .overlay-inner {
       position: static;
     }
   }
-  .overlay_inner {
+  .overlay-inner {
     .flex--auto();
     display: flex;
     flex-direction: column;
   }
   .overlay-position--left& {
-    .overlay_container {
+    .overlay-container {
       margin-left: 0;
       margin-right: auto;
     }
   }
   .overlay-position--right& {
-    .overlay_container {
+    .overlay-container {
       margin-left: auto;
       margin-right: 0;
     }

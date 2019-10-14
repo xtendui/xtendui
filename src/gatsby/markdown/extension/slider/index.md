@@ -14,16 +14,16 @@ Use this markup to create a drop.
   <div class="slider" data-xt-slider>
 
     <div class="slides">
-      <ul class="slides_inner">
+      <ul class="slides-inner">
 
         <li class="slide">
-          <div class="slide_inner">
+          <div class="slide-inner">
             <!-- content -->
           </div>
         </li>
 
         <li class="slide">
-          <div class="slide_inner">
+          <div class="slide-inner">
             <!-- content -->
           </div>
         </li>
@@ -31,7 +31,7 @@ Use this markup to create a drop.
       </ul>
     </div>
 
-    <nav class="slider_pagination">
+    <nav class="slider-pagination">
       <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
       </button>
     </nav>
@@ -40,8 +40,8 @@ Use this markup to create a drop.
 </script>
 
 <div class="alert">
-  <div class="alert_content">
-    `slider_pagination[data-xt-pag].xt-ignore` is essential to the functioning of the slider, so if you don't want to show it add `.display--none`.
+  <div class="alert-content">
+    `slider-pagination[data-xt-pag].xt-ignore` is essential to the functioning of the slider, so if you don't want to show it add `.display--none`.
   </div>
 </div>
 

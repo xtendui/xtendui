@@ -9,12 +9,12 @@
   a& {
     .link--none() !important;
   }
-  .card_design {
+  .card-design {
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
   }
-  .card_title {
+  .card-title {
     .spacing--small();
     .font-sans--semibold();
     line-height: 1.2;
@@ -29,20 +29,20 @@
 
 .card--default {
   color: @text;
-  .card_design {
+  .card-design {
     border-color: @default;
     background: @default;
   }
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       color: @text--dark;
-      .card_design {
+      .card-design {
         border-color: @default--dark;
         background: @default--dark;
       }
     }
     &:active, &.active {
-      .card_design {
+      .card-design {
         border-color: @default--dark;
         box-shadow: @shadow--default;
       }
@@ -52,20 +52,20 @@
 
 .card--primary {
   .text--inverse();
-  .card_design {
+  .card-design {
     border-color: @primary;
     background: @primary;
   }
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       color: @text--inverse--dark;
-      .card_design {
+      .card-design {
         border-color: @primary--dark;
         background: @primary--dark;
       }
     }
     &:active, &.active {
-      .card_design {
+      .card-design {
         border-color: @primary--dark;
         box-shadow: @shadow--primary;
       }
@@ -77,15 +77,15 @@
 
 .card--small {
   .font--small();
-  .card_content {
+  .card-content {
     padding: 1.5rem 2rem;
   }
-  .card_title {
+  .card-title {
     font-size: 1.7rem;
   }
   // .card--full
   .card--full& {
-    .card_design {
+    .card-design {
       top: -1.5rem;
       left: -1.5rem;
       bottom: -1.5rem;
@@ -96,15 +96,15 @@
 
 .card--medium {
   .font--medium();
-  .card_content {
+  .card-content {
     padding: 2rem 2.5rem;
   }
-  .card_title {
+  .card-title {
     font-size: 2rem;
   }
   // .card--full
   .card--full& {
-    .card_design {
+    .card-design {
       top: -2rem;
       left: -2rem;
       bottom: -2rem;
@@ -115,15 +115,15 @@
 
 .card--big {
   .font--big();
-  .card_content {
+  .card-content {
     padding: 3rem 3.5rem;
   }
-  .card_title {
+  .card-title {
     font-size: 3rem;
   }
   // .card--full
   .card--full& {
-    .card_design {
+    .card-design {
       top: -3rem;
       left: -3rem;
       bottom: -3rem;
@@ -136,17 +136,17 @@
 
 .card--full {
   color: @text;
-  .card_design {
+  .card-design {
     border-color: transparent;
     background: transparent;
   }
-  .card_content {
+  .card-content {
     padding: 0 !important;
   }
 }
 
 .card--nodesign {
-  .card_design {
+  .card-design {
     display: none;
   }
 }
@@ -156,7 +156,7 @@
 }
 
 .card--noborder {
-  .card_design {
+  .card-design {
     border: 0;
   }
 }
@@ -165,7 +165,7 @@
 
 /*
 .card--max-height {
-  .card_content {
+  .card-content {
     overflow-y: auto;
     max-height: 25rem;
     .overflow-style();
@@ -174,7 +174,7 @@
 
 .card--max-width {
   width: auto;
-  .card_content {
+  .card-content {
     overflow-x: auto;
     max-width: 35rem;
     .overflow-style();
@@ -189,7 +189,7 @@
     transition-property: all;
     transition-duration: @time--big;
     transition-timing-function: @bez--out;
-    .card_design {
+    .card-design {
       transition-property: all;
       transition-duration: @time--big;
       transition-timing-function: @bez--out;
@@ -199,7 +199,7 @@
       transition-property: all;
       transition-duration: @time--big;
       transition-timing-function: @bez--in;
-      .card_design {
+      .card-design {
         transform: scale(1.03, 1.05);
         transition-property: all;
         transition-duration: @time--big;

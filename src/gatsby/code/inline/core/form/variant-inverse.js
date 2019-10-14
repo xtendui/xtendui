@@ -8,8 +8,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form class="form--inverse" style="padding: 1rem 2rem; background: #7567f8;">
-  <div class="form-group">
+<form class="form--inverse" style="padding: 1rem 1.5rem; background: #7567f8;">
+  <div class="form-group" style="padding: 1rem 1.5rem; background: #ffffff;">
     <label class="form-label form-label--default xt-custom">
       Custom
     </label>
@@ -57,12 +57,6 @@ demo.htmlSource = `
       <option>Test</option>
       <option>Test</option>
     </select>
-  </div>
-  
-  <div class="form-group">
-    <button type="submit" class="btn btn--primary btn--sm">
-      Submit
-    </button>
   </div>
 </form>
 `

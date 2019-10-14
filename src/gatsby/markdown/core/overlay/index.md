@@ -15,13 +15,13 @@ Use this markup to create a overlay.
     <!-- content -->
   </button>
   <div class="overlay" id="overlay-custom">
-    <div class="overlay_container">
-      <div class="overlay_inner">
-        <div class="overlay_design"></div>
-          <div class="overlay_close xt-fixed--check">
+    <div class="overlay-container">
+      <div class="overlay-inner">
+        <div class="overlay-design"></div>
+          <div class="overlay-close xt-fixed--check">
             <button type="button" class="btn btn--close" aria-label="Close"></button>
           </div>
-        <div class="overlay_content">
+        <div class="overlay-content">
           <!-- content -->
         </div>
       </div>
@@ -37,13 +37,13 @@ You can use this markup to create a overlay with **no id**.
       <!-- content -->
     </button>
     <div class="overlay overlay--default">
-      <div class="overlay_container">
-        <div class="overlay_inner">
-          <div class="overlay_design"></div>
-          <div class="overlay_close xt-fixed--check">
+      <div class="overlay-container">
+        <div class="overlay-inner">
+          <div class="overlay-design"></div>
+          <div class="overlay-close xt-fixed--check">
             <button type="button" class="btn btn--close" aria-label="Close"></button>
           </div>
-          <div class="overlay_content">
+          <div class="overlay-content">
             <!-- content -->
           </div>
         </div>
@@ -56,13 +56,13 @@ You can use this markup to create a overlay with **no toggle**.
 
 <script type="text/plain" class="language-markup">
   <div class="overlay overlay--default active" data-xt-overlay>
-    <div class="overlay_container">
-      <div class="overlay_inner">
-        <div class="overlay_design"></div>
-          <div class="overlay_close xt-fixed--check">
+    <div class="overlay-container">
+      <div class="overlay-inner">
+        <div class="overlay-design"></div>
+          <div class="overlay-close xt-fixed--check">
             <button type="button" class="btn btn--close" aria-label="Close"></button>
           </div>
-        <div class="overlay_content">
+        <div class="overlay-content">
           <!-- content -->
         </div>
       </div>
@@ -78,7 +78,7 @@ let self = new Xt.Overlay(document.querySelector('.my-overlay'), {
 ```
 
 <div class="alert">
-  <div class="alert_content">
+  <div class="alert-content">
     Overlays are moved to **body** to prevent **z-index** problems. Use `"appendTo": false` to prevent that.
   </div>
 </div>

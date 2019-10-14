@@ -1,8 +1,8 @@
 /**
- * .demo--scroll_container--block
+ * .demo--scroll-container--block
  */
 
-const scrollContainerBlock = document.querySelectorAll('.demo--scroll_container--block > *')
+const scrollContainerBlock = document.querySelectorAll('.demo--scroll-container--block > *')
 
 if (scrollContainerBlock.length) {
   setTimeout(function () { // after 2 seconds

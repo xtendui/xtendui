@@ -2,7 +2,7 @@
  * drop
  */
 
-.drop_container {
+.drop-container {
   display: inline-flex;
   position: relative;
   // z-index
@@ -29,13 +29,13 @@
 
 .drop {
   position: absolute;
-  > .drop_inner {
+  > .drop-inner {
     position: relative;
     z-index: @index--base; // fix :before negative z-index
-    > .drop_design {
+    > .drop-design {
       .design-setup();
     }
-    > .drop_design, > .drop_content {
+    > .drop-design, > .drop-content {
       border-radius: inherit;
     }
   }
@@ -47,9 +47,9 @@
 
 // addons
 
-.drop_container--static {
+.drop-container--static {
   position: static;
-  > .drop, > .drop > .drop_inner {
+  > .drop, > .drop > .drop-inner {
     width: 100%;
   }
 }
@@ -186,13 +186,13 @@
   > .drop {
     display: block !important;
     position: relative;
-    > .drop_inner {
+    > .drop-inner {
       z-index: initial;
       min-width: auto;
-      > .drop_design {
+      > .drop-design {
         display: none;
       }
-      > .drop_content {
+      > .drop-content {
         max-width: none;
         max-height: none;
       }

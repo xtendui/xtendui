@@ -9,7 +9,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 Full width groups with `.full`.
 
-Use `.group_inner.flex--auto` to expand groups.
+Use `.group-inner.flex--auto` to expand groups.
 
 <demo>
   <demovanilla src="inline/core/group/options-full-line">
@@ -23,7 +23,7 @@ Use `.group_inner.flex--auto` to expand groups.
 Optional classes for assigning variant (example: `.group--default`).
 
 <div class="alert">
-  <div class="alert_content">
+  <div class="alert-content">
     Group variant's are defined inside @TODO less path.
   </div>
 </div>

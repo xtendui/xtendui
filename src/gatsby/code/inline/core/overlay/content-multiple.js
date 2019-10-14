@@ -13,13 +13,13 @@ demo.htmlSource = `
     position right
   </button>
   <div class="overlay overlay--default overlay-position overlay-position--right demo--overlay--content-multiple">
-    <div class="overlay_container">
-      <div class="overlay_inner">
-        <div class="overlay_design"></div>
-        <div class="overlay_close xt-fixed--check">
+    <div class="overlay-container">
+      <div class="overlay-inner">
+        <div class="overlay-design"></div>
+        <div class="overlay-close xt-fixed--check">
           <button type="button" class="btn btn--close" aria-label="Close"></button>
         </div>
-        <div class="overlay_menu">
+        <div class="overlay-menu">
           <button type="button" class="btn btn--primary btn--big btn--wide btn--tall">
             Menu
           </button>
@@ -27,10 +27,10 @@ demo.htmlSource = `
             Account
           </button>
         </div>
-        <div class="overlay_content" style="margin-top: 0">
+        <div class="overlay-content" style="margin-top: 0">
           <div class="h2">Lorem ipsum</div>
         </div>
-        <div class="overlay_content" style="margin-top: 0">
+        <div class="overlay-content" style="margin-top: 0">
           <div class="h5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, lectus quis ornare volutpat,
             ligula nulla sollicitudin nunc, ut commodo nulla enim nec nisi.</p>
@@ -41,8 +41,8 @@ demo.htmlSource = `
           <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id
             justo.</p>
         </div>
-        <div class="overlay_content" style="margin-bottom: 0">
-          <button type="button" class="btn btn--primary overlay_dismiss">
+        <div class="overlay-content" style="margin-bottom: 0">
+          <button type="button" class="btn btn--primary overlay-dismiss">
             Close
           </button>
         </div>

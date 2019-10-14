@@ -79,11 +79,5 @@ demo.htmlSource = `
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
     </label>
   </div>
-  
-  <div class="form-group">
-    <button type="submit" class="btn btn--primary btn--sm">
-      Submit
-    </button>
-  </div>
 </form>
 `

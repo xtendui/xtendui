@@ -19,37 +19,37 @@ demo.htmlSource = `
     Group 1
   </button>
   <div class="alert toggle--block">
-    <div class="alert_content">
+    <div class="alert-content">
       Target 0
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="0">
-    <div class="alert_content">
+    <div class="alert-content">
       Group 0a
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="1">
-    <div class="alert_content">
+    <div class="alert-content">
       Group 1a
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="0">
-    <div class="alert_content">
+    <div class="alert-content">
       Group 0b
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="1">
-    <div class="alert_content">
+    <div class="alert-content">
       Group 1b
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="0">
-    <div class="alert_content">
+    <div class="alert-content">
       Group 0c
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="1">
-    <div class="alert_content">
+    <div class="alert-content">
       Group 1c
     </div>
   </div>
@@ -68,37 +68,37 @@ demo.htmlSource = `
     Group 1
   </button>
   <div class="alert toggle--block">
-    <div class="alert_content">
+    <div class="alert-content">
       Target 0
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="0">
-    <div class="alert_content">
+    <div class="alert-content">
       Group 0a
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="1">
-    <div class="alert_content">
+    <div class="alert-content">
       Group 1a
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="0">
-    <div class="alert_content">
+    <div class="alert-content">
       Group 0b
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="1">
-    <div class="alert_content">
+    <div class="alert-content">
       Group 1b
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="0">
-    <div class="alert_content">
+    <div class="alert-content">
       Group 0c
     </div>
   </div>
   <div class="alert toggle--block" data-xt-group="1">
-    <div class="alert_content">
+    <div class="alert-content">
       Group 1c
     </div>
   </div>

@@ -11,14 +11,14 @@ categories: ["300-Interaction"]
 Use this markup to create a drop.
 
 <script type="text/plain" class="language-markup">
-  <div class="drop_container" data-xt-drop>
+  <div class="drop-container" data-xt-drop>
     <button type="button">
       <!-- content -->
     </button>
     <div class="drop drop--default">
-      <div class="drop_inner">
-        <div class="drop_design"></div>
-        <div class="drop_content">
+      <div class="drop-inner">
+        <div class="drop-design"></div>
+        <div class="drop-content">
           <!-- content -->
         </div>
       </div>

@@ -14,7 +14,7 @@ demo.htmlSource = `
     Toggle
   </button>
   <div class="alert toggle--block" id="alert-example">
-    <div class="alert_content">
+    <div class="alert-content">
       Target
     </div>
   </div>

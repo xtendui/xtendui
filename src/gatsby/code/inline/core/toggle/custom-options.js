@@ -21,17 +21,17 @@ demo.htmlSource = `
       Toggle 2
     </button>
     <div class="alert demo--toggle--custom-options">
-      <div class="alert_content">
+      <div class="alert-content">
         Target 0
       </div>
     </div>
     <div class="alert demo--toggle--custom-options">
-      <div class="alert_content">
+      <div class="alert-content">
         Target 1
       </div>
     </div>
     <div class="alert demo--toggle--custom-options">
-      <div class="alert_content">
+      <div class="alert-content">
         Target 2
       </div>
     </div>

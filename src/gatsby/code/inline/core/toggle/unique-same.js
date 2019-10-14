@@ -18,12 +18,12 @@ demo.htmlSource = `
       Toggle
     </button>
     <div class="alert toggle--block" id="toggle-unique-2">
-      <div class="alert_content">
+      <div class="alert-content">
         Target 0
       </div>
     </div>
     <div class="alert toggle--block" id="toggle-unique-3">
-      <div class="alert_content">
+      <div class="alert-content">
         Target 1
       </div>
     </div>

@@ -9,7 +9,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="group full">
-  <div class="group_inner">
+  <div class="group-inner">
     <button type="button" class="btn btn--primary">
       btn 1a
     </button>
@@ -17,7 +17,7 @@ demo.htmlSource = `
       btn 1b
     </button>
   </div>
-  <div class="group_inner">
+  <div class="group-inner">
     <button type="button" class="btn btn--default">
       btn 2a
     </button>
@@ -26,7 +26,7 @@ demo.htmlSource = `
     </button>
   </div>
   <input type="text" class="form-item form-item--default">
-  <div class="group_inner">
+  <div class="group-inner">
     <button type="button" class="btn btn--primary">
       btn 3a
     </button>
@@ -34,7 +34,7 @@ demo.htmlSource = `
       btn 3b
     </button>
   </div>
-  <div class="group_inner">
+  <div class="group-inner">
     <button type="button" class="btn btn--default">
       btn 4a
     </button>
@@ -45,7 +45,7 @@ demo.htmlSource = `
 </div>
 
 <div class="group full">
-  <div class="group_inner flex--auto">
+  <div class="group-inner flex--auto">
     <button type="button" class="btn btn--primary">
       btn 1a
     </button>
@@ -53,7 +53,7 @@ demo.htmlSource = `
       btn 1b
     </button>
   </div>
-  <div class="group_inner">
+  <div class="group-inner">
     <button type="button" class="btn btn--default">
       btn 2a
     </button>
@@ -61,7 +61,7 @@ demo.htmlSource = `
       btn 2b
     </button>
   </div>
-  <div class="group_inner flex--auto">
+  <div class="group-inner flex--auto">
     <button type="button" class="btn btn--primary">
       btn 3a
     </button>
@@ -69,7 +69,7 @@ demo.htmlSource = `
       btn 3b
     </button>
   </div>
-  <div class="group_inner">
+  <div class="group-inner">
     <button type="button" class="btn btn--default">
       btn 4a
     </button>

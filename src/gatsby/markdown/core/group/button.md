@@ -28,7 +28,7 @@ Use this markup to create a button group as stack.
 <script type="text/plain" class="language-markup">
   <div class="group">
   
-    <div class="group_inner">
+    <div class="group-inner">
       <button type="button" class="btn btn--default">
         <!-- content -->
       </button>

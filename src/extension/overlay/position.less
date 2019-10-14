@@ -7,7 +7,7 @@
 .overlay-position {
   .overlay--squared();
   .overlay--noborder();
-  .overlay_container {
+  .overlay-container {
     .overlay-position--left& {
       width: 88% !important;
       max-width: 500px !important;
@@ -25,19 +25,19 @@
   animation-duration: @time--medium + @time--small; // needed for .out animation timing, put max animation time
   &.active {
     &.overlay-position--left {
-      .overlay_design {
+      .overlay-design {
         .anim-x.active();
       }
-      .overlay_content, .btn--close {
+      .overlay-content, .btn--close {
         .anim-x.active();
         animation-delay: @time--small;
       }
     }
     &.overlay-position--right {
-      .overlay_design {
+      .overlay-design {
         .anim-x-inverse.active();
       }
-      .overlay_content, .btn--close {
+      .overlay-content, .btn--close {
         .anim-x-inverse.active();
         animation-delay: @time--small;
       }
@@ -45,20 +45,20 @@
   }
   &.out {
     &.overlay-position--left {
-      .overlay_design {
+      .overlay-design {
         .anim-x-inverse.out();
         animation-delay: @time--small;
       }
-      .overlay_content, .btn--close {
+      .overlay-content, .btn--close {
         .anim-x-inverse.out();
       }
     }
     &.overlay-position--right {
-      .overlay_design {
+      .overlay-design {
         .anim-x.out();
         animation-delay: @time--small;
       }
-      .overlay_content, .btn--close {
+      .overlay-content, .btn--close {
         .anim-x.out();
       }
     }
