@@ -27,7 +27,7 @@ You can set **column's width** specifying a number between 1 and 12, for example
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Class                   | `.col-{number}`                          | `.col-6`                     |
-| Class responsive        | `.col-{number}-{breakpoint}`             | `.col-6-sm`                  |
+| Class responsive        | `.col-{number}-{breakpoint}`             | `.col-6--sm`                  |
 | Mixin                   | `.col({number})`                          | `.col(6)`                     |
 | Mixin responsive min    | `.col({number}, {breakpoint})`            | `.col(6, sm)`                 |
 
@@ -50,11 +50,11 @@ You can nest `.row`, but a flex children can't be a flex itself.
         <div class="row">
           <div class="col-4"></div>
           <div class="col-8"></div>
-          <div class="col-12 col-8-sm"></div>
-          <div class="col-12 col-4-sm"></div>
-          <div class="col-auto col-2-sm"></div>
+          <div class="col-12 col-8--sm"></div>
+          <div class="col-12 col-4--sm"></div>
+          <div class="col-auto col-2--sm"></div>
           <div class="col-auto"></div>
-          <div class="col-auto col-2-sm col-auto-lg"></div>
+          <div class="col-auto col-2--sm col-auto--lg"></div>
         </div>
       </div>
     </div>
@@ -76,10 +76,10 @@ You can nest `.row`, but a flex children can't be a flex itself.
           </div>
           <div class="col-8">
             <div class="row">
-              <div class="col-12 col-8-sm"></div>
-              <div class="col-12 col-4-sm"></div>
+              <div class="col-12 col-8--sm"></div>
+              <div class="col-12 col-4--sm"></div>
               <div class="col-auto"></div>
-              <div class="col-auto col-2-sm col-auto-lg"></div>
+              <div class="col-auto col-2--sm col-auto--lg"></div>
             </div>
           </div>
         </div>

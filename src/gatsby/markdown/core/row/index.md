@@ -44,11 +44,11 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
         <div class="row row-space--none">
           <div class="col-4"></div>
           <div class="col-8"></div>
-          <div class="col-12 col-8-sm"></div>
-          <div class="col-12 col-4-sm"></div>
-          <div class="col-auto col-2-sm"></div>
+          <div class="col-12 col-8--sm"></div>
+          <div class="col-12 col-4--sm"></div>
+          <div class="col-auto col-2--sm"></div>
           <div class="col-auto"></div>
-          <div class="col-auto col-2-sm col-auto-lg"></div>
+          <div class="col-auto col-2--sm col-auto--lg"></div>
         </div>
       </div>
     </div>
@@ -57,11 +57,11 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
         <div class="row row-space--tiny">
           <div class="col-4"></div>
           <div class="col-8"></div>
-          <div class="col-12 col-8-sm"></div>
-          <div class="col-12 col-4-sm"></div>
-          <div class="col-auto col-2-sm"></div>
+          <div class="col-12 col-8--sm"></div>
+          <div class="col-12 col-4--sm"></div>
+          <div class="col-auto col-2--sm"></div>
           <div class="col-auto"></div>
-          <div class="col-auto col-2-sm col-auto-lg"></div>
+          <div class="col-auto col-2--sm col-auto--lg"></div>
         </div>
       </div>
     </div>
@@ -70,11 +70,11 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
         <div class="row row-space--small">
           <div class="col-4"></div>
           <div class="col-8"></div>
-          <div class="col-12 col-8-sm"></div>
-          <div class="col-12 col-4-sm"></div>
-          <div class="col-auto col-2-sm"></div>
+          <div class="col-12 col-8--sm"></div>
+          <div class="col-12 col-4--sm"></div>
+          <div class="col-auto col-2--sm"></div>
           <div class="col-auto"></div>
-          <div class="col-auto col-2-sm col-auto-lg"></div>
+          <div class="col-auto col-2--sm col-auto--lg"></div>
         </div>
       </div>
     </div>
@@ -83,11 +83,11 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
         <div class="row row-space--medium">
           <div class="col-4"></div>
           <div class="col-8"></div>
-          <div class="col-12 col-8-sm"></div>
-          <div class="col-12 col-4-sm"></div>
-          <div class="col-auto col-2-sm"></div>
+          <div class="col-12 col-8--sm"></div>
+          <div class="col-12 col-4--sm"></div>
+          <div class="col-auto col-2--sm"></div>
           <div class="col-auto"></div>
-          <div class="col-auto col-2-sm col-auto-lg"></div>
+          <div class="col-auto col-2--sm col-auto--lg"></div>
         </div>
       </div>
     </div>
@@ -96,11 +96,11 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
         <div class="row row-space--big">
           <div class="col-4"></div>
           <div class="col-8"></div>
-          <div class="col-12 col-8-sm"></div>
-          <div class="col-12 col-4-sm"></div>
-          <div class="col-auto col-2-sm"></div>
+          <div class="col-12 col-8--sm"></div>
+          <div class="col-12 col-4--sm"></div>
+          <div class="col-auto col-2--sm"></div>
           <div class="col-auto"></div>
-          <div class="col-auto col-2-sm col-auto-lg"></div>
+          <div class="col-auto col-2--sm col-auto--lg"></div>
         </div>
       </div>
     </div>
@@ -109,11 +109,11 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
         <div class="row row-space--giant">
           <div class="col-4"></div>
           <div class="col-8"></div>
-          <div class="col-12 col-8-sm"></div>
-          <div class="col-12 col-4-sm"></div>
-          <div class="col-auto col-2-sm"></div>
+          <div class="col-12 col-8--sm"></div>
+          <div class="col-12 col-4--sm"></div>
+          <div class="col-auto col-2--sm"></div>
           <div class="col-auto"></div>
-          <div class="col-auto col-2-sm col-auto-lg"></div>
+          <div class="col-auto col-2--sm col-auto--lg"></div>
         </div>
       </div>
     </div>
@@ -131,11 +131,11 @@ Set children's direction inside the flexbox.
         <div class="row" style="flex-direction: row">
           <div class="col-4"></div>
           <div class="col-8"></div>
-          <div class="col-12 col-8-sm"></div>
-          <div class="col-12 col-4-sm"></div>
-          <div class="col-auto col-2-sm"></div>
+          <div class="col-12 col-8--sm"></div>
+          <div class="col-12 col-4--sm"></div>
+          <div class="col-auto col-2--sm"></div>
           <div class="col-auto"></div>
-          <div class="col-auto col-2-sm col-auto-lg"></div>
+          <div class="col-auto col-2--sm col-auto--lg"></div>
         </div>
       </div>
     </div>
@@ -144,11 +144,11 @@ Set children's direction inside the flexbox.
         <div class="row" style="flex-direction: row-reverse">
           <div class="col-4"></div>
           <div class="col-8"></div>
-          <div class="col-12 col-8-sm"></div>
-          <div class="col-12 col-4-sm"></div>
-          <div class="col-auto col-2-sm"></div>
+          <div class="col-12 col-8--sm"></div>
+          <div class="col-12 col-4--sm"></div>
+          <div class="col-auto col-2--sm"></div>
           <div class="col-auto"></div>
-          <div class="col-auto col-2-sm col-auto-lg"></div>
+          <div class="col-auto col-2--sm col-auto--lg"></div>
         </div>
       </div>
     </div>
@@ -157,11 +157,11 @@ Set children's direction inside the flexbox.
         <div class="row" style="flex-direction: column">
           <div class="col-4"></div>
           <div class="col-8"></div>
-          <div class="col-12 col-8-sm"></div>
-          <div class="col-12 col-4-sm"></div>
-          <div class="col-auto col-2-sm"></div>
+          <div class="col-12 col-8--sm"></div>
+          <div class="col-12 col-4--sm"></div>
+          <div class="col-auto col-2--sm"></div>
           <div class="col-auto"></div>
-          <div class="col-auto col-2-sm col-auto-lg"></div>
+          <div class="col-auto col-2--sm col-auto--lg"></div>
         </div>
       </div>
     </div>
@@ -170,11 +170,11 @@ Set children's direction inside the flexbox.
         <div class="row" style="flex-direction: column-reverse">
           <div class="col-4"></div>
           <div class="col-8"></div>
-          <div class="col-12 col-8-sm"></div>
-          <div class="col-12 col-4-sm"></div>
-          <div class="col-auto col-2-sm"></div>
+          <div class="col-12 col-8--sm"></div>
+          <div class="col-12 col-4--sm"></div>
+          <div class="col-auto col-2--sm"></div>
           <div class="col-auto"></div>
-          <div class="col-auto col-2-sm col-auto-lg"></div>
+          <div class="col-auto col-2--sm col-auto--lg"></div>
         </div>
       </div>
     </div>
@@ -192,11 +192,11 @@ Set children's wrapping inside the flexbox.
         <div class="row" style="flex-wrap: wrap">
           <div class="col-4"></div>
           <div class="col-8"></div>
-          <div class="col-12 col-8-sm"></div>
-          <div class="col-12 col-4-sm"></div>
-          <div class="col-auto col-2-sm"></div>
+          <div class="col-12 col-8--sm"></div>
+          <div class="col-12 col-4--sm"></div>
+          <div class="col-auto col-2--sm"></div>
           <div class="col-auto"></div>
-          <div class="col-auto col-2-sm col-auto-lg"></div>
+          <div class="col-auto col-2--sm col-auto--lg"></div>
         </div>
       </div>
     </div>
@@ -205,11 +205,11 @@ Set children's wrapping inside the flexbox.
         <div class="row" style="flex-wrap: wrap-reverse">
           <div class="col-4"></div>
           <div class="col-8"></div>
-          <div class="col-12 col-8-sm"></div>
-          <div class="col-12 col-4-sm"></div>
-          <div class="col-auto col-2-sm"></div>
+          <div class="col-12 col-8--sm"></div>
+          <div class="col-12 col-4--sm"></div>
+          <div class="col-auto col-2--sm"></div>
           <div class="col-auto"></div>
-          <div class="col-auto col-2-sm col-auto-lg"></div>
+          <div class="col-auto col-2--sm col-auto--lg"></div>
         </div>
       </div>
     </div>
@@ -218,11 +218,11 @@ Set children's wrapping inside the flexbox.
         <div class="row" style="flex-wrap: nowrap">
           <div class="col-4"></div>
           <div class="col-8"></div>
-          <div class="col-12 col-8-sm"></div>
-          <div class="col-12 col-4-sm"></div>
-          <div class="col-auto col-2-sm"></div>
+          <div class="col-12 col-8--sm"></div>
+          <div class="col-12 col-4--sm"></div>
+          <div class="col-auto col-2--sm"></div>
           <div class="col-auto"></div>
-          <div class="col-auto col-2-sm col-auto-lg"></div>
+          <div class="col-auto col-2--sm col-auto--lg"></div>
         </div>
       </div>
     </div>
@@ -510,11 +510,11 @@ Set item's order inside the flexbox.
         <div class="row">
           <div class="col-4 order-4"></div>
           <div class="col-8 order-5"></div>
-          <div class="col-12 col-8-sm order--2-lg"></div>
-          <div class="col-12 col-4-sm order--1-lg"></div>
-          <div class="col-auto col-2-sm order--3"></div>
+          <div class="col-12 col-8--sm order--2--lg"></div>
+          <div class="col-12 col-4--sm order--1--lg"></div>
+          <div class="col-auto col-2--sm order--3"></div>
           <div class="col-auto order-5"></div>
-          <div class="col-auto col-2-sm col-auto-lg order--3"></div>
+          <div class="col-auto col-2--sm col-auto--lg order--3"></div>
         </div>
       </div>
     </div>

@@ -59,31 +59,6 @@
  * @generate-class--grid
  */
 
-// generate-container-space-responsive
-
-.generate-container-space-responsive();
-.generate-container-space-responsive(@i: length(@container--space)) when (@i > 0) {
-  .generate-container-space-responsive(@i - 1);
-  @container: extract(@container--space, @i);
-  @breakpoint: extract(@container, 1);
-  @val: extract(@container, 2);
-  & when (@breakpoint = none) {
-    .container {
-      padding-right: @val;
-      padding-left: @val;
-    }
-  }
-  & when not (@breakpoint = none) {
-    @query-min: 'min-@{breakpoint}';
-    @media @@query-min {
-      .container {
-        padding-right: @val;
-        padding-left: @val;
-      }
-    }
-  }
-}
-
 // generate
 
 & when not (@generate-class--grid = false) {
@@ -98,7 +73,7 @@
       }
     }
     & when not (@breakpoint = none) {
-      .col-@{i}-@{breakpoint} {
+      .col-@{i}--@{breakpoint} {
         .col(@i) !important;
       }
     }
@@ -119,7 +94,7 @@
       @query-min: 'min-@{breakpoint}';
       @media @@query-min {
         // grid
-        .col-auto-@{breakpoint} {
+        .col-auto--@{breakpoint} {
           .col-auto() !important;
         }
         .generate-grid(@breakpoint) !important;

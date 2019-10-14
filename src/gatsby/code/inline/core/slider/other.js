@@ -14,7 +14,7 @@ demo.htmlSource = `
   <div class="slides">
     <ul class="slides-inner">
 
-      <li class="slide col-6 col-4-sm">
+      <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
           <div class="card card--default text-align--center">
@@ -27,7 +27,7 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide col-6 col-4-sm">
+      <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
           <div class="card card--default text-align--center">
@@ -53,7 +53,7 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide col-6 col-4-sm">
+      <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
           <div class="card card--default text-align--center">
@@ -66,7 +66,7 @@ demo.htmlSource = `
         </div>
       </li>
 
-      <li class="slide col-6 col-4-sm">
+      <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
           <div class="card card--default text-align--center">

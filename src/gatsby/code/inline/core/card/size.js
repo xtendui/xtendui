@@ -10,7 +10,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="list list--default list-space--small align-items--center gatsby_demo_source--from">
   <div class="row row-space--small">
-    <div class="col-12 col-6-sm">
+    <div class="col-12 col-6--sm">
       <button type="button" class="card card--default card--small">
         <div class="card-design"></div>
         <div class="card-content">
@@ -20,7 +20,7 @@ demo.htmlSource = `
       </button>
     </div>
     
-    <div class="col-12 col-6-sm">
+    <div class="col-12 col-6--sm">
       <button type="button" class="card card--default card--full card--small">
         <div class="card-design"></div>
         <div class="card-content">
@@ -31,7 +31,7 @@ demo.htmlSource = `
     </div>
     
     
-    <div class="col-12 col-6-sm">
+    <div class="col-12 col-6--sm">
       <button type="button" class="card card--default card--medium">
         <div class="card-design"></div>
         <div class="card-content">
@@ -41,7 +41,7 @@ demo.htmlSource = `
       </button>
     </div>
     
-    <div class="col-12 col-6-sm">
+    <div class="col-12 col-6--sm">
       <button type="button" class="card card--default card--full card--medium">
         <div class="card-design"></div>
         <div class="card-content">
@@ -52,7 +52,7 @@ demo.htmlSource = `
     </div>
     
     
-    <div class="col-12 col-6-sm">
+    <div class="col-12 col-6--sm">
       <button type="button" class="card card--default card--big">
         <div class="card-design"></div>
         <div class="card-content">
@@ -62,7 +62,7 @@ demo.htmlSource = `
       </button>
     </div>
     
-    <div class="col-12 col-6-sm">
+    <div class="col-12 col-6--sm">
       <button type="button" class="card card--default card--full card--big">
         <div class="card-design"></div>
         <div class="card-content">

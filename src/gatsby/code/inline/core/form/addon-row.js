@@ -9,8 +9,8 @@ export const demo = {
 
 demo.htmlSource = `
 <form>
-  <div class="form-group--row-sm">
-    <div class="col-12 col-3-sm">
+  <div class="form-group--row--sm">
+    <div class="col-12 col-3--sm">
       <div class="form-group">
         <label class="form-label">
           Lorem
@@ -18,7 +18,7 @@ demo.htmlSource = `
         <input type="text" class="form-item">
       </div>
     </div>
-    <div class="col-12 col-9-sm">
+    <div class="col-12 col-9--sm">
       <div class="form-group">
         <label class="form-label">
           Lorem Ipsum
@@ -28,8 +28,8 @@ demo.htmlSource = `
     </div>
   </div>
   
-  <div class="form-group--row-sm">
-    <div class="col-12 col-3-sm">
+  <div class="form-group--row--sm">
+    <div class="col-12 col-3--sm">
       <div class="form-group">
         <label class="form-label">
           Lorem
@@ -37,7 +37,7 @@ demo.htmlSource = `
         <input type="text" class="form-item">
       </div>
     </div>
-    <div class="col-12 col-9-sm">
+    <div class="col-12 col-9--sm">
       <div class="form-group">
         <label class="form-label">
           Lorem Ipsum

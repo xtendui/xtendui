@@ -1583,7 +1583,7 @@ Set item's order inside the flexbox.
               Dolor sit
             </button>
           </li>
-          <li class="order--0 order--3-sm">
+          <li class="order--0 order--3--sm">
             <button type="button">
               Amet
             </button>

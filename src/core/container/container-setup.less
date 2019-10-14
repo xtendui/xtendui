@@ -9,3 +9,32 @@
   width: 100%;
   max-width: @container--max;
 }
+
+/**
+ * @generate-container-space
+ */
+
+// generate-container-space-responsive
+
+.generate-container-space-responsive();
+.generate-container-space-responsive(@i: length(@container--space)) when (@i > 0) {
+  .generate-container-space-responsive(@i - 1);
+  @container: extract(@container--space, @i);
+  @breakpoint: extract(@container, 1);
+  @val: extract(@container, 2);
+  & when (@breakpoint = none) {
+    .container {
+      padding-right: @val;
+      padding-left: @val;
+    }
+  }
+  & when not (@breakpoint = none) {
+    @query-min: 'min-@{breakpoint}';
+    @media @@query-min {
+      .container {
+        padding-right: @val;
+        padding-left: @val;
+      }
+    }
+  }
+}
