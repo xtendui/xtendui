@@ -606,18 +606,18 @@
 
   // generate-text-transform
 
-  @text-transform--arr: uppercase, lowercase, capitalize, nowrap;
+  @text-transform-group--arr: uppercase, lowercase, capitalize, nowrap;
 
-  .generate-text-transform(@breakpoint: none, @i: length(@text-transform--arr)) when (@i > 0) {
+  .generate-text-transform(@breakpoint: none, @i: length(@text-transform-group--arr)) when (@i > 0) {
     .generate-text-transform(@breakpoint, @i - 1);
-    @val: extract(@text-transform--arr, @i);
+    @val: extract(@text-transform-group--arr, @i);
     & when (@breakpoint = none) {
-      .text-transform--@{val} {
+      .text-transform-group--@{val} {
         .text-transform(@val) !important;
       }
     }
     & when not (@breakpoint = none) {
-      .text-transform--@{val}-@{breakpoint} {
+      .text-transform-group--@{val}-@{breakpoint} {
         .text-transform(@val) !important;
       }
     }

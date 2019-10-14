@@ -8,14 +8,14 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space--small align-items--center demo--toggle-js" id="demo--toggle-js-0">
-  <button type="button" class="btn">
+<div class="list list--default list-space--small align-items--center demo--toggle-js" id="demo--toggle-js-0">
+  <button type="button" class="btn btn--default">
     Toggle 0
   </button>
-  <button type="button" class="btn">
+  <button type="button" class="btn btn--default">
     Toggle 1
   </button>
-  <button type="button" class="btn">
+  <button type="button" class="btn btn--default">
     Toggle 2
   </button>
   <div class="alert toggle--block">
@@ -37,14 +37,14 @@ demo.htmlSource = `
 
 <br>
 
-<div class="list list-space--small align-items--center demo--toggle-js" id="demo--toggle-js-1">
-  <button type="button" class="btn">
+<div class="list list--default list-space--small align-items--center demo--toggle-js" id="demo--toggle-js-1">
+  <button type="button" class="btn btn--default">
     Toggle 0
   </button>
-  <button type="button" class="btn">
+  <button type="button" class="btn btn--default">
     Toggle 1
   </button>
-  <button type="button" class="btn">
+  <button type="button" class="btn btn--default">
     Toggle 2
   </button>
   <div class="alert toggle--block">

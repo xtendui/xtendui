@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<ul class="list demo--list--custom-btn">
+<ul class="list list--default demo--list--custom-btn">
   <li>
     <a href="#">
       Lorem Ipsum
@@ -20,7 +20,7 @@ demo.htmlSource = `
     </button>
   </li>
   <li class="custom">
-    <button type="button" class="btn">
+    <button type="button" class="btn btn--default">
       Amet
     </button>
   </li>

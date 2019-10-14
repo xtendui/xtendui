@@ -17,7 +17,7 @@ Inside it you can use this strings that gets populated with variables:
 
 <script type="text/plain" class="language-markup">
   <nav class="slider_pagination">
-    <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
+    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
       xt-num of xt-tot
     </button>
   </nav>

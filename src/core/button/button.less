@@ -5,7 +5,6 @@
  */
 
 .btn {
-  // styles
   overflow: hidden;
   border-radius: 4px;
   border-width: 1px;
@@ -15,12 +14,26 @@
   line-height: 1.2;
   letter-spacing: 0;
   text-transform: uppercase;
-  // option
-  .btn--secondary();
+  // default options
   .btn--medium();
 }
 
 // variant
+
+.btn--default {
+  .link--none();
+  border-color: @default;
+  background: @default;
+  color: @text;
+  &:hover, &.hover, &:active, &.active {
+    border-color: @default--dark;
+    background: @default--dark;
+    color: @text--dark;
+  }
+  &:active, &.active {
+    box-shadow: @shadow--default;
+  }
+}
 
 .btn--primary {
   .link--none();
@@ -34,21 +47,6 @@
   }
   &:active, &.active {
     box-shadow: @shadow--primary;
-  }
-}
-
-.btn--secondary {
-  .link--none();
-  border-color: @secondary;
-  background: @secondary;
-  color: @text;
-  &:hover, &.hover, &:active, &.active {
-    border-color: @secondary--dark;
-    background: @secondary--dark;
-    color: @text--dark;
-  }
-  &:active, &.active {
-    box-shadow: @shadow--secondary;
   }
 }
 
@@ -108,9 +106,15 @@
 // special
 
 .btn--nodesign {
-  border-color: transparent !important;
-  background: transparent !important;
-  box-shadow: none !important;
+  border-color: transparent;
+  background: transparent;
+  &:hover, &.hover, &:active, &.active {
+    border-color: transparent;
+    background: transparent;
+  }
+  &:active, &.active {
+    box-shadow: none;
+  }
 }
 
 .btn--squared {

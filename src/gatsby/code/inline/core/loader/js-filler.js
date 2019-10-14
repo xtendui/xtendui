@@ -8,8 +8,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space--small align-items--center justify-content--center demo-source-from">
-  <div class="card">
+<div class="list list--default list-space--small align-items--center justify-content--center demo-source-from">
+  <div class="card card--default">
     <div class="card_design"></div>
     <div class="card_content">
       <h3>Lorem ipsum dolor sit amet</h3>
@@ -22,7 +22,7 @@ demo.htmlSource = `
     </div>
   </div>
 
-  <button type="button" class="btn">
+  <button type="button" class="btn btn--default">
     <span>
       Lorem ipsum
     </span>

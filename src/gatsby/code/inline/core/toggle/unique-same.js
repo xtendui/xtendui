@@ -8,12 +8,12 @@ export const demo = {
 }
 
 demo.htmlSource = `
-  <div class="list list-space--small align-items--center demo-source-from">
-    <button type="button" class="btn"
+  <div class="list list--default list-space--small align-items--center demo-source-from">
+    <button type="button" class="btn btn--default"
             data-xt-toggle="{ targets: '#toggle-unique-2, #toggle-unique-3' }">
       Toggle
     </button>
-    <button type="button" class="btn"
+    <button type="button" class="btn btn--default"
             data-xt-toggle="{ targets: '#toggle-unique-2, #toggle-unique-3' }">
       Toggle
     </button>

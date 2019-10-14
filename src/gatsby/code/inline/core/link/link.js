@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space--small align-items--center gatsby_demo_source--from">
+<div class="list list--default list-space--small align-items--center gatsby_demo_source--from">
   <a href="#">
     link
   </a>

@@ -178,11 +178,11 @@
 .row-space--y(@name, @breakpoint: none) when (@breakpoint = none) {
   @arr: ~"row-space--@{name}";
   @vertical: extract(@@arr, 1);
-  margin-top: -@vertical !important;
-  margin-bottom: -@vertical !important;
-  > * {
-    padding-top: @vertical !important;
-    padding-bottom: @vertical !important;
+  margin-top: -@vertical;
+  margin-bottom: -@vertical;
+  > * , > li {
+    padding-top: @vertical;
+    padding-bottom: @vertical;
   }
 }
 
@@ -191,11 +191,11 @@
   @vertical: extract(@@arr, 1);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    margin-top: -@vertical !important;
-    margin-bottom: -@vertical !important;
-    > * {
-      padding-top: @vertical !important;
-      padding-bottom: @vertical !important;
+    margin-top: -@vertical;
+    margin-bottom: -@vertical;
+    > * , > li {
+      padding-top: @vertical;
+      padding-bottom: @vertical;
     }
   }
 }
@@ -203,11 +203,11 @@
 .row-space--x(@name, @breakpoint: none) when (@breakpoint = none) {
   @arr: ~"row-space--@{name}";
   @horizontal: extract(@@arr, 2);
-  margin-left: -@horizontal !important;
-  margin-right: -@horizontal !important;
-  > * {
-    padding-left: @horizontal !important;
-    padding-right: @horizontal !important;
+  margin-left: -@horizontal;
+  margin-right: -@horizontal;
+  > * , > li {
+    padding-left: @horizontal;
+    padding-right: @horizontal;
   }
 }
 
@@ -216,11 +216,11 @@
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    margin-left: -@horizontal !important;
-    margin-right: -@horizontal !important;
-    > * {
-      padding-left: @horizontal !important;
-      padding-right: @horizontal !important;
+    margin-left: -@horizontal;
+    margin-right: -@horizontal;
+    > * , > li {
+      padding-left: @horizontal;
+      padding-right: @horizontal;
     }
   }
 }
@@ -229,9 +229,9 @@
   @arr: ~"row-space--@{name}";
   @vertical: extract(@@arr, 1);
   @horizontal: extract(@@arr, 2);
-  margin: -@vertical -@horizontal !important;
-  > * {
-    padding: @vertical @horizontal !important;
+  margin: -@vertical -@horizontal;
+  > * , > li {
+    padding: @vertical @horizontal;
   }
 }
 
@@ -241,9 +241,9 @@
   @horizontal: extract(@@arr, 2);
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    margin: -@vertical -@horizontal !important;
-    > * {
-      padding: @vertical @horizontal !important;
+    margin: -@vertical -@horizontal;
+    > * , > li {
+      padding: @vertical @horizontal;
     }
   }
 }
@@ -289,24 +289,24 @@
     @name: extract(@row-spaces, @i);
     & when (@breakpoint = none) {
       .row-space--y-@{name} {
-        .row-space--y(@name);
+        .row-space--y(@name) !important;
       }
       .row-space--x-@{name} {
-        .row-space--x(@name);
+        .row-space--x(@name) !important;
       }
       .row-space--@{name} {
-        .row-space(@name);
+        .row-space(@name) !important;
       }
     }
     & when not (@breakpoint = none) {
       .row-space--y-@{name}-@{breakpoint} {
-        .row-space--y(@name);
+        .row-space--y(@name) !important;
       }
       .row-space--x-@{name}-@{breakpoint} {
-        .row-space--x(@name);
+        .row-space--x(@name) !important;
       }
       .row-space--@{name}-@{breakpoint} {
-        .row-space(@name);
+        .row-space(@name) !important;
       }
     }
   }

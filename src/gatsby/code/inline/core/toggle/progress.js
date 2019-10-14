@@ -8,8 +8,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space--small align-items--center demo--toggle--progress">
-  <button type="button" class="btn">
+<div class="list list--default list-space--small align-items--center demo--toggle--progress">
+  <button type="button" class="btn btn--default">
     <span>
       Toggle 0
     </span>
@@ -19,7 +19,7 @@ demo.htmlSource = `
         </span>
       </span>
   </button>
-  <button type="button" class="btn">
+  <button type="button" class="btn btn--default">
     <span>
       Toggle 1
     </span>
@@ -29,7 +29,7 @@ demo.htmlSource = `
         </span>
       </span>
   </button>
-  <button type="button" class="btn">
+  <button type="button" class="btn btn--default">
     <span>
       Toggle 2
     </span>
@@ -39,7 +39,7 @@ demo.htmlSource = `
         </span>
       </span>
   </button>
-  <button type="button" class="btn">
+  <button type="button" class="btn btn--default">
     <span>
       Toggle 3
     </span>

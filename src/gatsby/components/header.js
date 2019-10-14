@@ -26,7 +26,7 @@ class Header extends React.Component {
                 </div>
               </div>
               <div className="gatsby_site_header_top_center">
-                <div className="list gatsby_site_header_top_links_outer">
+                <div className="list list--default  gatsby_site_header_top_links_outer">
                   <div>
                     <div className="gatsby_site_header_top_links">
                       <Link to='/core'

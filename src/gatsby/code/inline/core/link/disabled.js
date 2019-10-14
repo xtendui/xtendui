@@ -12,7 +12,7 @@ demo.htmlSource = `
   primary
 </button>
 
-<button type="button" class="btn btn--secondary" disabled>
+<button type="button" class="btn btn--default" disabled>
   secondary
 </button>
 

@@ -13,13 +13,13 @@ Use this markup to merge multiple `.btn` in one `[button]` as line.
   <button type="button" class="group">
   
     <div class="group_inner">
-      <div class="btn">
+      <div class="btn btn--default">
         <!-- content -->
       </div>
     </div>
 
     <div class="group_inner">
-      <div class="btn">
+      <div class="btn btn--default">
         <!-- content -->
       </div>
     </div>
@@ -33,11 +33,11 @@ Use this markup to merge multiple `.btn` in one `[button]` as stack.
   <button type="button" class="group">
   
     <div class="group_inner">
-      <div class="btn">
+      <div class="btn btn--default">
         <!-- content -->
       </div>
       
-      <div class="btn">
+      <div class="btn btn--default">
         <!-- content -->
       </div>
       

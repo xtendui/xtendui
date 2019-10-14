@@ -19,9 +19,9 @@ html.gatsby_iframe-inside {
   position: relative;
 }
 
-// .gatsby_gatsby_demo-cols
+// .gatsby_demo-cols
 
-.gatsby_gatsby_demo-cols {
+.gatsby_demo-cols {
   [class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-'] {
     &:before {
       position: relative;
@@ -29,8 +29,8 @@ html.gatsby_iframe-inside {
       width: 100%;
       height: 22px;
       min-height: 100%;
-      border: 1px solid darken(@secondary, 5%);
-      background: @secondary;
+      border: 1px solid darken(@default, 5%);
+      background: @default;
       content: attr(data-index);
       .font-sans--semibold();
       font-size: 12px;
@@ -41,9 +41,9 @@ html.gatsby_iframe-inside {
   }
 }
 
-.gatsby_gatsby_demo-cols-nested {
+.gatsby_demo-cols-nested {
   [class^='col-'], [class*=' col-'] {
-    .gatsby_gatsby_demo-cols();
+    .gatsby_demo-cols();
   }
 }
 
@@ -160,6 +160,7 @@ pre {
     .justify-content(space-between);
     > * {
       .list();
+      .list--default();
       .list-space(tiny);
     }
     .padding(y, small);

@@ -19,10 +19,10 @@ demo.htmlSource = `
     </div>
   </div>
   <div class="group_inner">
-    <div class="btn btn--secondary">
+    <div class="btn btn--default">
       btn 2a
     </div>
-    <div class="btn btn--secondary">
+    <div class="btn btn--default">
       btn 2b
     </div>
   </div>
@@ -35,10 +35,10 @@ demo.htmlSource = `
     </div>
   </div>
   <div class="group_inner">
-    <div class="btn btn--secondary">
+    <div class="btn btn--default">
       btn 4a
     </div>
-    <div class="btn btn--secondary">
+    <div class="btn btn--default">
       btn 4b
     </div>
   </div>

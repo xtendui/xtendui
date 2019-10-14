@@ -11,7 +11,6 @@
  */
 
 .drop {
-  // styles
   > .drop_inner {
     border-radius: 4px;
     > .drop_content {
@@ -26,10 +25,55 @@
       border-color: transparent;
     }
   }
-  // option
-  .drop--light();
+  // default options
   .drop--left();
   .drop--bottom();
+}
+
+// variant
+
+.drop--default {
+  > .drop_inner {
+    color: @text;
+    > .drop_design {
+      border-color: @gray--300;
+      background: @white;
+      box-shadow: @shadow--light;
+    }
+  }
+  > .drop_inner > .drop_content > .list--drop {
+    .list-btn({ .btn--text() });
+  }
+}
+
+.drop--dark {
+  > .drop_inner {
+    .text--inverse();
+    > .drop_design {
+      border-color: @gray--800;
+      background: @gray--800;
+      box-shadow: @shadow--dark;
+    }
+  }
+  > .drop_inner > .drop_content > .list--drop {
+    .list-btn({ .btn--text() });
+  }
+}
+
+// special
+
+.drop--squared {
+  > .drop_inner {
+    border-radius: 0;
+  }
+}
+
+.drop--noborder {
+  > .drop_inner {
+    > .drop_design {
+      border: 0;
+    }
+  }
 }
 
 // addons
@@ -49,52 +93,6 @@
     overflow-y: auto;
     max-height: 25rem;
     .overflow-style();
-  }
-}
-
-// variant
-
-.drop--light {
-  > .drop_inner {
-    color: @text;
-    > .drop_design {
-      border-color: @gray--300;
-      background: @white;
-      box-shadow: @shadow--light;
-    }
-    > .drop_content > .list--drop {
-      .list-btn({ .btn--text() });
-    }
-  }
-}
-
-.drop--dark {
-  > .drop_inner {
-    .text--inverse();
-    > .drop_design {
-      border-color: @gray--800;
-      background: @gray--800;
-      box-shadow: @shadow--dark;
-    }
-    > .drop_content > .list--drop {
-      .list-btn({ .btn--text() });
-    }
-  }
-}
-
-// special
-
-.drop--squared {
-  > .drop_inner {
-    border-radius: 0;
-  }
-}
-
-.drop--noborder {
-  > .drop_inner {
-    > .drop_design {
-      border: 0;
-    }
   }
 }
 

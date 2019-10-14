@@ -13,9 +13,9 @@ export const demo = {
 
 demo.htmlSource = `
 <div data-xt-scroll="{ elements: '.scroll_container > *' }">
-  <div class="list list-space--medium scroll_container demo--scroll_container--scroll">
+  <div class="list list--default list-space--medium scroll_container demo--scroll_container--scroll">
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card_design"></div>
       <div class="card_content">
         <h3>Lorem ipsum dolor sit amet</h3>
@@ -23,7 +23,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card_design"></div>
       <div class="card_content">
         <h3>Lorem ipsum dolor sit amet</h3>
@@ -31,7 +31,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card_design"></div>
       <div class="card_content">
         <h3>Lorem ipsum dolor sit amet</h3>
@@ -39,7 +39,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card_design"></div>
       <div class="card_content">
         <h3>Lorem ipsum dolor sit amet</h3>
@@ -47,7 +47,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card_design"></div>
       <div class="card_content">
         <h3>Lorem ipsum dolor sit amet</h3>
@@ -55,7 +55,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card_design"></div>
       <div class="card_content">
         <h3>Lorem ipsum dolor sit amet</h3>
@@ -63,7 +63,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card_design"></div>
       <div class="card_content">
         <h3>Lorem ipsum dolor sit amet</h3>
@@ -71,7 +71,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card_design"></div>
       <div class="card_content">
         <h3>Lorem ipsum dolor sit amet</h3>
@@ -79,7 +79,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card_design"></div>
       <div class="card_content">
         <h3>Lorem ipsum dolor sit amet</h3>

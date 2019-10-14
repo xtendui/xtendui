@@ -15,7 +15,7 @@ demo.htmlSource = `
     </button>
   </div>
   <div class="group_inner">
-    <button type="button" class="btn btn--secondary">
+    <button type="button" class="btn btn--default">
       btn 2
     </button>
   </div>
@@ -26,7 +26,7 @@ demo.htmlSource = `
     </button>
   </div>
   <div class="group_inner">
-    <button type="button" class="btn btn--secondary">
+    <button type="button" class="btn btn--default">
       btn 4
     </button>
   </div>
@@ -39,7 +39,7 @@ demo.htmlSource = `
     </button>
   </div>
   <div class="group_inner">
-    <button type="button" class="btn btn--secondary">
+    <button type="button" class="btn btn--default">
       btn 2
     </button>
   </div>
@@ -49,7 +49,7 @@ demo.htmlSource = `
     </button>
   </div>
   <div class="group_inner">
-    <button type="button" class="btn btn--secondary">
+    <button type="button" class="btn btn--default">
       btn 4
     </button>
   </div>

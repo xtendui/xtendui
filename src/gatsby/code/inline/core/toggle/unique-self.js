@@ -8,11 +8,11 @@ export const demo = {
 }
 
 demo.htmlSource = `
-  <div class="list list-space--small align-items--center demo-source-from">
-    <button type="button" class="btn" data-xt-toggle>
+  <div class="list list--default list-space--small align-items--center demo-source-from">
+    <button type="button" class="btn btn--default" data-xt-toggle>
       Toggle
     </button>
-    <button type="button" class="btn" data-xt-toggle>
+    <button type="button" class="btn btn--default" data-xt-toggle>
       Toggle
     </button>
   </div>

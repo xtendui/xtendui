@@ -37,16 +37,16 @@ const makeDocument = function () {
     el.setAttribute('id', id)
     el.innerHTML = '<a href="#' + id + '" aria-label="Anchor to ' + el.textContent + '" tabindex="-1">' + el.innerHTML + '</a>'
     el.classList.add('gatsby_make-anchor')
-    el.append(Xt.createElement('<span class="gatsby_site_article_anchor"><span class="btn"><span class="icon-link" aria-hidden="true"></span></span></span>'))
+    el.append(Xt.createElement('<span class="gatsby_site_article_anchor"><span class="btn btn--default"><span class="icon-link" aria-hidden="true"></span></span></span>'))
   }
-  // .gatsby_gatsby_demo-cols
-  for (const element of document.querySelectorAll('.gatsby_gatsby_demo-cols')) {
+  // .gatsby_demo-cols
+  for (const element of document.querySelectorAll('.gatsby_demo-cols')) {
     for (const [i, el] of element.querySelectorAll('[class^=\'col-\'], [class*=\' col-\'], [class^=\'demo--col-\'], [class*=\' demo--col-\']').entries()) {
       el.setAttribute('data-index', i.toString())
     }
   }
-  // .gatsby_gatsby_demo-cols-nested
-  for (const element of document.querySelectorAll('.gatsby_gatsby_demo-cols-nested [class^=\'col-\'], .gatsby_demo-cols-nested [class*=\' col-\']')) {
+  // .gatsby_demo-cols-nested
+  for (const element of document.querySelectorAll('.gatsby_demo-cols-nested [class^=\'col-\'], .gatsby_demo-cols-nested [class*=\' col-\']')) {
     for (const [i, el] of element.querySelectorAll('[class^=\'col-\'], [class*=\' col-\'], [class^=\'demo--col-\'], [class*=\' demo--col-\']').entries()) {
       el.setAttribute('data-index', i.toString())
     }

@@ -40,7 +40,7 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
 <demo>
   <div class="gatsby_demo-inline">
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="none">
-      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_gatsby_demo-cols" data-lang="language-markup">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row row-space--none">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -53,7 +53,7 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
       </div>
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="tiny">
-      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_gatsby_demo-cols" data-lang="language-markup">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row row-space--tiny">
           <div class="col-4"></div>
           <div class="col-8"></div>
@@ -66,7 +66,7 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
       </div>
     </div>
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="small">
-      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_gatsby_demo-cols" data-lang="language-markup">
+      <div class="gatsby_demo_source gatsby_demo_source--from gatsby_demo-cols" data-lang="language-markup">
         <div class="row row-space--small">
           <div class="col-4"></div>
           <div class="col-8"></div>

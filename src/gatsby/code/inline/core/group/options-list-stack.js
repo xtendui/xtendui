@@ -9,7 +9,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="group full">
-  <div class="list flex--auto">
+  <div class="list list--default flex--auto">
     <div class="group_inner">
       <button type="button" class="btn btn--primary">
         btn 1a
@@ -19,10 +19,10 @@ demo.htmlSource = `
       </button>
     </div>
     <div class="group_inner">
-      <button type="button" class="btn btn--secondary">
+      <button type="button" class="btn btn--default">
         btn 2a
       </button>
-      <button type="button" class="btn btn--secondary">
+      <button type="button" class="btn btn--default">
         btn 2b
       </button>
     </div>
@@ -36,10 +36,10 @@ demo.htmlSource = `
       </button>
     </div>
     <div class="group_inner">
-      <button type="button" class="btn btn--secondary">
+      <button type="button" class="btn btn--default">
         btn 4a
       </button>
-      <button type="button" class="btn btn--secondary">
+      <button type="button" class="btn btn--default">
         btn 4b
       </button>
     </div>

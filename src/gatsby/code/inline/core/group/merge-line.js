@@ -16,7 +16,7 @@ demo.htmlSource = `
     </div>
   </div>
   <div class="group_inner">
-    <div class="btn btn--secondary">
+    <div class="btn btn--default">
       btn 2
     </div>
   </div>
@@ -26,7 +26,7 @@ demo.htmlSource = `
     </div>
   </div>
   <div class="group_inner">
-    <div class="btn btn--secondary">
+    <div class="btn btn--default">
       btn 4
     </div>
   </div>

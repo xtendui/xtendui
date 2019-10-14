@@ -8,43 +8,29 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<form class="form--giant">
+<form>
   <div class="form-group form-group--giant">
-    <label class="form-label">
-      Giant
-    </label>
-    <input type="text" class="form-item" placeholder="Input">
-  </div>
-  
-  <div class="form-group form-group--tiny">
-    <label class="form-label">
-      Tiny
-    </label>
-    <input type="text" class="form-item" placeholder="Input">
-  </div>
-  
-  <div class="form-group">
     <label class="form-label">
       Input
     </label>
     <input type="text" class="form-item" placeholder="Input">
   </div>
   
-  <div class="form-group">
+  <div class="form-group form-group--giant">
     <label class="form-label">
       File
     </label>
     <input type="file" class="form-item">
   </div>
   
-  <div class="form-group">
+  <div class="form-group form-group--giant">
     <label class="form-label">
       Textarea
     </label>
     <textarea class="form-item" placeholder="Textarea"></textarea>
   </div>
   
-  <div class="form-group">
+  <div class="form-group form-group--giant">
     <label class="form-label">
       Select
     </label>
@@ -55,7 +41,7 @@ demo.htmlSource = `
     </select>
   </div>
   
-  <div class="form-group">
+  <div class="form-group form-group--giant">
     <label class="form-label">
       Select multiple
     </label>
@@ -66,28 +52,28 @@ demo.htmlSource = `
     </select>
   </div>
   
-  <div class="form-group">
+  <div class="form-group form-group--giant">
     <input type="checkbox" id="checkbox-block" checked>
     <label class="form-label" for="checkbox-block">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
     </label>
   </div>
   
-  <div class="form-group">
+  <div class="form-group form-group--giant">
     <input type="radio" id="radio-block-0" name="radio-block" checked>
     <label class="form-label" for="radio-block-0">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
     </label>
   </div>
   
-  <div class="form-group">
+  <div class="form-group form-group--giant">
     <input type="radio" id="radio-block-1" name="radio-block">
     <label class="form-label" for="radio-block-1">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
     </label>
   </div>
   
-  <div class="form-group">
+  <div class="form-group form-group--giant">
     <button type="submit" class="btn btn--primary btn--sm">
       Submit
     </button>

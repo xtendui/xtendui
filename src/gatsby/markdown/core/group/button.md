@@ -12,11 +12,11 @@ Use this markup to create a button group as line.
 <script type="text/plain" class="language-markup">
   <div class="group">
   
-    <button type="button" class="btn">
+    <button type="button" class="btn btn--default">
       <!-- content -->
     </button>
     
-    <button type="button" class="btn">
+    <button type="button" class="btn btn--default">
       <!-- content -->
     </button>
     
@@ -29,11 +29,11 @@ Use this markup to create a button group as stack.
   <div class="group">
   
     <div class="group_inner">
-      <button type="button" class="btn">
+      <button type="button" class="btn btn--default">
         <!-- content -->
       </button>
       
-      <button type="button" class="btn">
+      <button type="button" class="btn btn--default">
         <!-- content -->
       </button>
       

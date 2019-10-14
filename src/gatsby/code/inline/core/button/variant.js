@@ -8,8 +8,8 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space--small align-items--center gatsby_demo_source--from">
-  <button type="button" class="btn">
+<div class="list list--default list-space--small align-items--center gatsby_demo_source--from">
+  <button type="button" class="btn btn--default">
     default
   </button>
 
@@ -17,7 +17,7 @@ demo.htmlSource = `
     primary
   </button>
 
-  <button type="button" class="btn btn--secondary">
+  <button type="button" class="btn btn--default">
     secondary
   </button>
 

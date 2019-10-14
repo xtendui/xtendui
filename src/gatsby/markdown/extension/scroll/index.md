@@ -22,7 +22,6 @@ You can initialize **scroll** by javascript omitting `[data-xt-scroll]`.
 
 ```jsx
 let self = new Xt.Scroll(document.documentElement, {
-  // option
 });
 ```
 

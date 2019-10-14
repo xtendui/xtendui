@@ -8,12 +8,12 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space--small align-items--center justify-content--center overlay-class-html">
+<div class="list list--default list-space--small align-items--center justify-content--center overlay-class-html">
   <div data-xt-overlay="{ classHtml: 'overlay-class-html--top' }">
     <button type="button" class="btn btn--primary">
       default
     </button>
-    <div class="overlay_outer">
+    <div class="overlay_outer overlay--default">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
@@ -41,7 +41,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       position left
     </button>
-    <div class="overlay_outer overlay-position overlay-position--left">
+    <div class="overlay_outer overlay--default overlay-position overlay-position--left">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
@@ -70,7 +70,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       position right
     </button>
-    <div class="overlay_outer overlay-position overlay-position--right">
+    <div class="overlay_outer overlay--default overlay-position overlay-position--right">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>

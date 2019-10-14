@@ -36,7 +36,7 @@ You can use this markup to create a overlay with **no id**.
     <button type="button">
       <!-- content -->
     </button>
-    <div class="overlay_outer">
+    <div class="overlay_outer overlay--default">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
@@ -55,7 +55,7 @@ You can use this markup to create a overlay with **no id**.
 You can use this markup to create a overlay with **no toggle**.
 
 <script type="text/plain" class="language-markup">
-  <div class="overlay_outer active" data-xt-overlay>
+  <div class="overlay_outer overlay--default active" data-xt-overlay>
     <div class="overlay">
       <div class="overlay_inner">
         <div class="overlay_design"></div>
@@ -74,7 +74,6 @@ You can initialize **overlay** by javascript omitting `[data-xt-overlay]`.
 
 ```jsx
 let self = new Xt.Overlay(document.querySelector('.my-overlay'), {
-  // option
 });
 ```
 

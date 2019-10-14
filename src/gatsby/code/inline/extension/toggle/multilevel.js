@@ -22,7 +22,7 @@ demo.htmlSource = `
         </button>
       </div>
   
-      <ul class="list-block list-space--none multilevel-list">
+      <ul class="list-block list--default list-space--none multilevel-list">
         <li>
           <button type="button" class="btn" data-xt-group="cat-0">
             Category 0
@@ -50,7 +50,7 @@ demo.htmlSource = `
           About
         </div>
       </div>
-      <ul class="list-block list-space--none multilevel-list">
+      <ul class="list-block list--default list-space--none multilevel-list">
         <li>
           <a href="#" class="btn">
             Link 0
@@ -76,7 +76,7 @@ demo.htmlSource = `
         </button>
       </div>
   
-      <ul class="list-block list-space--none multilevel-list">
+      <ul class="list-block list--default list-space--none multilevel-list">
         <li>
           <button type="button" class="btn" data-xt-group="cat-0a">
             Category 0a
@@ -112,7 +112,7 @@ demo.htmlSource = `
         </button>
       </div>
   
-      <ul class="list-block list-space--none multilevel-list">
+      <ul class="list-block list--default list-space--none multilevel-list">
         <li>
           <a href="#" class="btn">
             Link 0
@@ -138,7 +138,7 @@ demo.htmlSource = `
         </button>
       </div>
   
-      <ul class="list-block list-space--none multilevel-list">
+      <ul class="list-block list--default list-space--none multilevel-list">
         <li>
           <a href="#" class="btn">
             Link 0
@@ -164,7 +164,7 @@ demo.htmlSource = `
         </button>
       </div>
   
-      <ul class="list-block list-space--none multilevel-list">
+      <ul class="list-block list--default list-space--none multilevel-list">
         <li>
           <a href="#" class="btn">
             Link 0

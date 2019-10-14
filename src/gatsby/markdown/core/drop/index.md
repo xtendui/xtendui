@@ -15,7 +15,7 @@ Use this markup to create a drop.
     <button type="button">
       <!-- content -->
     </button>
-    <div class="drop">
+    <div class="drop drop--default">
       <div class="drop_inner">
         <div class="drop_design"></div>
         <div class="drop_content">
@@ -30,7 +30,6 @@ You can initialize **drop** by javascript omitting `[data-xt-drop]`.
 
 ```jsx
 let self = new Xt.Drop(document.querySelector('.my-drop'), {
-  // option
 });
 ```
 

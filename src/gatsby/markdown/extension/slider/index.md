@@ -32,7 +32,7 @@ Use this markup to create a drop.
     </div>
 
     <nav class="slider_pagination">
-      <button type="button" class="btn xt-ignore" data-xt-pag title="Slide xt-num">
+      <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
       </button>
     </nav>
 
@@ -49,6 +49,5 @@ You can initialize **slider** by javascript omitting `[data-xt-slider]`.
 
 ```jsx
 let self = new Xt.Slider(document.querySelector('.my-slider'), {
-  // option
 });
 ```

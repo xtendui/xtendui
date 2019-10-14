@@ -11,11 +11,11 @@ categories: ["300-Interaction"]
 Use `.btn` to create a button.
 
 <script type="text/plain" class="language-markup">
-  <a href="#" class="btn">
+  <a href="#" class="btn btn--default">
     <!-- content -->
   </a>
   
-  <button type="button" class="btn">
+  <button type="button" class="btn btn--default">
     <!-- content -->
   </button>
 </script>

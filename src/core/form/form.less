@@ -26,7 +26,7 @@ legend {
 }
 
 /**
- * text
+ * form-text
  */
 
 .form-text {
@@ -37,12 +37,28 @@ legend {
 }
 
 /**
- * group
+ * form-group
  */
 
 .form-group {
-  // option
-  .form-group.form-group--medium();
+  .form-group--medium();
+}
+
+// size
+
+.form-group--tiny {
+  .margin(bottom, 1em);
+  font-size: 1.1rem;
+}
+
+.form-group--medium {
+  .margin(bottom, 1.5em);
+  font-size: 1.3rem;
+}
+
+.form-group--giant {
+  .margin(bottom, 1.5em);
+  font-size: 1.5rem;
 }
 
 // addons
@@ -80,41 +96,11 @@ legend {
   }
 }
 
-// size
-
-.form--tiny {
-  .form-groups({ .form-group.form-group--tiny() });
-}
-
-.form--medium {
-  .form-groups({ .form-group.form-group--medium() });
-}
-
-.form--giant {
-  .form-groups({ .form-group.form-group--giant() });
-}
-
-.form-group.form-group--tiny {
-  .margin(bottom, 1em);
-  font-size: 1.1rem;
-}
-
-.form-group.form-group--medium {
-  .margin(bottom, 1.5em);
-  font-size: 1.3rem;
-}
-
-.form-group.form-group--giant {
-  .margin(bottom, 1.5em);
-  font-size: 1.5rem;
-}
-
 /**
- * label
+ * form-label
  */
 
 .form-label {
-  // styles
   .margin(bottom, 1em); // size in em inherit .form-group size
   .font-sans--semibold();
   font-size: 1em; // size in em inherit .form-group size
@@ -125,11 +111,10 @@ legend {
 }
 
 /**
- * item
+ * form-item
  */
 
 .form-item {
-  // styles
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
@@ -138,8 +123,8 @@ legend {
   .font-sans--regular();
   font-size: 1em; // size in em inherit .form-group size
   line-height: 1.4;
-  // option
-  .form-item--light();
+  // default options
+  .form-item--default();
 }
 
 // animation
@@ -162,14 +147,13 @@ legend {
 
 // variant
 
-.form-item--light {
-  // styles
-  border-color: @gray--300;
-  background-color: fade(@gray--300, 15%); // @FIX no background: or it overrides background-image
+.form-item--default {
+  border-color: @default;
+  background-color: @default; // @FIX no background: or it overrides background-image
   color: @text;
   &:focus, &.active {
-    border-color: @gray--300;
-    background-color: fade(@gray--300, 30%); // @FIX no background: or it overrides background-image
+    border-color: @default--dark;
+    background-color: @default--dark; // @FIX no background: or it overrides background-image
   }
   // select arrow
   select:not([multiple])& {
@@ -225,7 +209,6 @@ select[multiple]& {
 .checkradio-label {
   .margin(all, none); // reset .form-label
   .padding(left, small); // space from checkbox/radio
-  // styles
   .font-sans--regular();
   font-size: 1em;
   line-height: 1.2;

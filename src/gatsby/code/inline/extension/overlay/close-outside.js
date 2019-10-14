@@ -8,12 +8,12 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space--small align-items--center justify-content--center demo-source-from">
+<div class="list list--default list-space--small align-items--center justify-content--center demo-source-from">
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
       default
     </button>
-    <div class="overlay_outer overlay-close-outside">
+    <div class="overlay_outer overlay--default overlay-close-outside">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
@@ -41,7 +41,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       left
     </button>
-    <div class="overlay_outer overlay-position overlay-position--left overlay-close-outside">
+    <div class="overlay_outer overlay--default overlay-position overlay-position--left overlay-close-outside">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>
@@ -69,7 +69,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       right
     </button>
-    <div class="overlay_outer overlay-position overlay-position--right overlay-close-outside">
+    <div class="overlay_outer overlay--default overlay-position overlay-position--right overlay-close-outside">
       <div class="overlay">
         <div class="overlay_inner">
           <div class="overlay_design"></div>

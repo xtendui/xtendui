@@ -8,32 +8,32 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space--small align-items--center gatsby_demo_source--from">
-  <button type="button" class="btn">
+<div class="list list--default list-space--small align-items--center gatsby_demo_source--from">
+  <button type="button" class="btn btn--default">
     default
   </button>
 
-  <button type="button" class="btn btn--tiny">
+  <button type="button" class="btn btn--default btn--tiny">
     tiny
   </button>
   
-  <button type="button" class="btn btn--small">
+  <button type="button" class="btn btn--default btn--small">
     small
   </button>
 
-  <button type="button" class="btn btn--medium">
+  <button type="button" class="btn btn--default btn--medium">
     medium
   </button>
 
-  <button type="button" class="btn btn--big">
+  <button type="button" class="btn btn--default btn--big">
     big
   </button>
 
-  <button type="button" class="btn btn--giant">
+  <button type="button" class="btn btn--default btn--giant">
     giant
   </button>
   
-  <button type="button" class="btn btn--huge">
+  <button type="button" class="btn btn--default btn--huge">
     huge
   </button>
 </div>

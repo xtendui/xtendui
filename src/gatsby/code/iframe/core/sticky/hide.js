@@ -14,7 +14,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="sticky-0"
      data-xt-sticky="{ sticky: 'fixed', limit: { top: '.sticky-0-start' }, hide: 'down' }">
-  <div class="card card--squared card--dark">
+  <div class="card card--default">
     <div class="card_design"></div>
     <div class="card_content">
       Sticky top
@@ -26,7 +26,7 @@ demo.htmlSource = `
 
 <div class="sticky-1"
      data-xt-sticky="{ sticky: 'absolute', contain: { top: '.sticky-0:not(.xt-clone)' } }">
-  <div class="card card--squared">
+  <div class="card card--default">
     <div class="card_design"></div>
     <div class="card_content">
       Sticky middle
@@ -34,7 +34,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="card">
+<div class="card card--default">
   <div class="card_design"></div>
   <div class="card_content">
     <h3>Lorem ipsum dolor sit amet</h3>
@@ -44,7 +44,7 @@ demo.htmlSource = `
 
 <div class="sticky-2"
      data-xt-sticky="{ contain: { top: '.sticky-0:not(.xt-clone), .sticky-1:not(.xt-clone)', bottom: '.sticky-3:not(.xt-clone)' }, hide: 'up' }">
-  <div class="card card--squared">
+  <div class="card card--default">
     <div class="card_design"></div>
     <div class="card_content">
       Sticky bottom
@@ -52,7 +52,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="card">
+<div class="card card--default">
   <div class="card_design"></div>
   <div class="card_content">
     <h3>Lorem ipsum dolor sit amet</h3>

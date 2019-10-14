@@ -24,57 +24,28 @@
  * list
  */
 
-.list {
-  // option
+// variant
+
+.list--default {
+  // default options
   .list-space(small);
   .list-btn({
     .btn();
+    .btn--default();
   });
 }
-
-.list-block {
-  // option
-  .list-space(small);
-  .list-btn({
-    .btn();
-  });
-}
-
-// addons
 
 .list--drop {
   flex-wrap: nowrap;
   flex-direction: column;
-  .list-space(none); // space
+  // default options
+  .list-space(none);
   .list-btn({
+    .btn();
     .btn--small();
     .btn--squared();
     padding-left: 2.2rem;
     padding-right: 2.2rem;
     white-space: nowrap;
-  }); // all buttons
+  });
 }
-
-// variant
-
-/*
-.list--secondary {
-  .list-btn({ .btn--secondary(); });
-}
-*/
-
-// size
-
-/*
-.list--small {
-  .list-btn({ .btn--small(); });
-}
-*/
-
-// special
-
-/*
-.list--wide {
-  .list-btn({ .btn--wide(); });
-}
-*/

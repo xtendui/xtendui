@@ -37,11 +37,11 @@
 
 .gatsby_site_header_top_links {
   .list();
+  .list--default();
 }
 
 .gatsby_site_header_top_search {
   .form-item {
-    // styles
     border-radius: 0;
     border-width: 0;
     padding: .5em 1em; // size in em inherit .form-group size
@@ -49,7 +49,6 @@
     font-size: 14px;
     line-height: 1.2;
     text-transform: uppercase;
-    // styles
     background: fade(@gray--800, 10%);
     color: @text--inverse;
     &:focus, &.active {
@@ -79,6 +78,7 @@
 .gatsby_site_header_top_social {
   float: right;
   .list();
+  .list--default();
   .list-space(none);
 }
 

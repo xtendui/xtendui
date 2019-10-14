@@ -11,7 +11,6 @@
   width: 100%;
   position: relative;
   z-index: @index--base; // fix :before negative z-index
-  // styles
   .margin(y, medium);
   border-radius: 4px;
   &@{alert--design} {
@@ -21,9 +20,6 @@
     border-style: solid;
     border-color: transparent;
   }
-  // option
-  .alert--light();
-  .alert--medium();
   // animation
   &.active {
     .anim-x.active();
@@ -42,6 +38,7 @@
 // variant
 
 .alert--dark {
+  .alert--medium();
   .text--inverse();
   &@{alert--design} {
     border-color: @gray--800;
@@ -50,6 +47,7 @@
 }
 
 .alert--light {
+  .alert--medium();
   color: @text;
   &@{alert--design} {
     border-color: @gray--200;

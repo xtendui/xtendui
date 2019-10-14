@@ -12,7 +12,7 @@ demo.htmlSource = `
   <button type="button" class="btn btn--primary demo--overlay--disable-btn">
     Toggle
   </button>
-  <div class="overlay_outer overlay--big demo--overlay--disable">
+  <div class="overlay_outer overlay--default overlay--big demo--overlay--disable">
     <div class="overlay">
       <div class="overlay_inner">
         <div class="overlay_design"></div>
@@ -35,7 +35,7 @@ demo.htmlSource = `
             <button type="button" class="btn btn--primary">
               Toggle
             </button>
-            <div class="overlay_outer overlay--small">
+            <div class="overlay_outer overlay--default overlay--small">
               <div class="overlay">
                 <div class="overlay_inner">
                   <div class="overlay_design"></div>
@@ -58,23 +58,23 @@ demo.htmlSource = `
                       <button type="button" class="btn btn--primary">
                         drop backdrop
                       </button>
-                      <div class="drop drop--bottom drop--left">
+                      <div class="drop drop--default drop--bottom drop--left">
                         <div class="drop_inner">
                           <div class="drop_design"></div>
                           <div class="drop_content">
                             <ul class="list list--drop">
                               <li>
-                                <button type="button" class="btn">
+                                <button type="button" class="btn btn--default">
                                   Lorem ipsum dolor
                                 </button>
                               </li>
                               <li>
-                                <button type="button" class="btn">
+                                <button type="button" class="btn btn--default">
                                   Dolor sit
                                 </button>
                               </li>
                               <li>
-                                <button type="button" class="btn">
+                                <button type="button" class="btn btn--default">
                                   Amet
                                 </button>
                               </li>

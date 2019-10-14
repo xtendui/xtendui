@@ -8,14 +8,14 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space--small align-items--center demo--toggle--timing-delay-fnc">
-  <button type="button" class="btn">
+<div class="list list--default list-space--small align-items--center demo--toggle--timing-delay-fnc">
+  <button type="button" class="btn btn--default">
     Toggle 0
   </button>
-  <button type="button" class="btn" data-xt-group="0">
+  <button type="button" class="btn btn--default" data-xt-group="0">
     Group 0
   </button>
-  <button type="button" class="btn" data-xt-group="1">
+  <button type="button" class="btn btn--default" data-xt-group="1">
     Group 1
   </button>
   <div class="alert toggle--block">
@@ -57,14 +57,14 @@ demo.htmlSource = `
 
 <br>
 
-<div class="list list-space--small align-items--center demo--toggle--timing-delay-fnc--hover">
-  <button type="button" class="btn">
+<div class="list list--default list-space--small align-items--center demo--toggle--timing-delay-fnc--hover">
+  <button type="button" class="btn btn--default">
     Toggle 0
   </button>
-  <button type="button" class="btn" data-xt-group="0">
+  <button type="button" class="btn btn--default" data-xt-group="0">
     Group 0
   </button>
-  <button type="button" class="btn" data-xt-group="1">
+  <button type="button" class="btn btn--default" data-xt-group="1">
     Group 1
   </button>
   <div class="alert toggle--block">

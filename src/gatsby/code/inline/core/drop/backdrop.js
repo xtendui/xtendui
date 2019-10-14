@@ -8,12 +8,12 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space--small align-items--center demo-source-from">
+<div class="list list--default list-space--small align-items--center demo-source-from">
   <div class="drop_outer" data-xt-drop="{ backdrop: true }">
     <button type="button" class="btn btn--primary">
       bottom left
     </button>
-    <div class="drop drop--bottom drop--left">
+    <div class="drop drop--default drop--bottom drop--left">
       <div class="drop_inner">
         <div class="drop_design"></div>
         <div class="drop_content">
@@ -43,7 +43,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       mouseenter
     </button>
-    <div class="drop drop--bottom drop--left">
+    <div class="drop drop--default drop--bottom drop--left">
       <div class="drop_inner">
         <div class="drop_design"></div>
         <div class="drop_content">

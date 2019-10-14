@@ -25,11 +25,11 @@ Sed gravida massa in commodo eleifend. Curabitur ac pellentesque nisl. Nunc ut p
 </div>
 
 <script type="text/plain" class="language-markup">
-  <a href="#" class="btn">
+  <a href="#" class="btn btn--default">
     <!-- content -->
   </a>
   
-  <button type="button" class="btn">
+  <button type="button" class="btn btn--default">
     <!-- content -->
   </button>
 </script>
@@ -55,7 +55,6 @@ body {
 
 ```jsx
 let self = new Xt.Scroll(document.documentElement, {
-  // option
 });
 ```
 

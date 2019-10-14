@@ -17,7 +17,6 @@
  */
 
 .overlay {
-  // styles
   .overlay_inner {
     border-radius: 4px;
   }
@@ -41,26 +40,13 @@
     right: 0;
     .btn--giant();
   }
-  // option
-  .overlay--light();
+  // default options
   .overlay--size(small);
-}
-
-// addons
-
-.overlay--disable {
-  // disable custom animation
-  .overlay {
-    .overlay_inner, .overlay_content {
-      opacity: 1 !important;
-      .trans-anim-none() !important;
-    }
-  }
 }
 
 // variant
 
-.overlay--light {
+.overlay--default {
   .overlay_design {
     border-color: @gray--300;
     background: @white;
@@ -105,6 +91,18 @@
 .overlay--none {
   .overlay_content {
     padding: 0 !important;
+  }
+}
+
+// addons
+
+.overlay--disable {
+  // disable custom animation
+  .overlay {
+    .overlay_inner, .overlay_content {
+      opacity: 1 !important;
+      .trans-anim-none() !important;
+    }
   }
 }
 

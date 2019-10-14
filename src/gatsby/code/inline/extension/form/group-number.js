@@ -12,13 +12,13 @@ demo.htmlSource = `
 
 <div class="group group-number group-number-line group--light">
     <div class="group_inner">
-      <button type="button" class="btn group-number-remove">
+      <button type="button" class="btn btn--default group-number-remove">
         -
       </button>
     </div>
   <input type="number" class="form-item" value="3" min="1" max="100" step="2">
   <div class="group_inner">
-      <button type="button" class="btn group-number-add">
+      <button type="button" class="btn btn--default group-number-add">
         +
       </button>
     </div>
@@ -29,10 +29,10 @@ demo.htmlSource = `
 <div class="group group-number group-number-stack group--light">
   <input type="number" class="form-item" value="3" min="1" max="100" step="2">
   <div class="group_inner">
-      <button type="button" class="btn btn--short btn--narrow group-number-add">
+      <button type="button" class="btn btn--default btn--short btn--narrow group-number-add">
         +
       </button>
-      <button type="button" class="btn btn--short btn--narrow group-number-remove">
+      <button type="button" class="btn btn--default btn--short btn--narrow group-number-remove">
         -
       </button>
     </div>

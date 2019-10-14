@@ -15,7 +15,7 @@ demo.htmlSource = `
 <br><br><br><br><br><br><br>
 
 <div data-xt-sticky> <!-- defaults to "position": "top" -->
-  <div class="card card--squared card--dark">
+  <div class="card card--default">
     <div class="card_design"></div>
     <div class="card_content">
       Sticky top
@@ -23,7 +23,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="card">
+<div class="card card--default">
   <div class="card_design"></div>
   <div class="card_content">
     <h3>Lorem ipsum dolor sit amet</h3>
@@ -32,7 +32,7 @@ demo.htmlSource = `
 </div>
 
 <div data-xt-sticky="{ position: 'bottom' }">
-  <div class="card card--squared">
+  <div class="card card--default">
     <div class="card_design"></div>
     <div class="card_content">
       Sticky bottom

@@ -12,7 +12,7 @@ demo.htmlSource = `
   <button type="button" class="btn btn--primary">
     position right
   </button>
-  <div class="overlay_outer overlay-position overlay-position--right demo--overlay--content-multiple">
+  <div class="overlay_outer overlay--default overlay-position overlay-position--right demo--overlay--content-multiple">
     <div class="overlay">
       <div class="overlay_inner">
         <div class="overlay_design"></div>

@@ -23,7 +23,6 @@ You can initialize **sticky** by javascript omitting `[data-xt-sticky]`.
 
 ```jsx
 let self = new Xt.Sticky(document.querySelector('.my-sticky'), {
-  // option
 });
 ```
 

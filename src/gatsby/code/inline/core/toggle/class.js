@@ -8,9 +8,9 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list-space--small align-items--center"
+<div class="list list--default list-space--small align-items--center"
      data-xt-toggle="{ class: 'active demo--toggle--custom-class' }">
-  <button type="button" class="btn">
+  <button type="button" class="btn btn--default">
     Toggle
   </button>
   <div class="alert toggle--block" id="alert-example">

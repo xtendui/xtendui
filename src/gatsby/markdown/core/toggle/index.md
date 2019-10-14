@@ -33,7 +33,6 @@ You can initialize **toggle** by javascript omitting `[data-xt-toggle]`.
 
 ```jsx
 let self = new Xt.Toggle(document.querySelector('.my-toggle'), {
-  // option
 });
 ```
 

@@ -5,7 +5,6 @@
  */
 
 .card {
-  // styles
   border-radius: 4px;
   a& {
     .link--none() !important;
@@ -22,94 +21,44 @@
     letter-spacing: 0;
     text-transform: none;
   }
-  // option
-  .card--primary();
+  // default options
   .card--small();
 }
 
-// addons
-
-/*
-.card--max-height {
-  .card_content {
-    overflow-y: auto;
-    max-height: 25rem;
-    .overflow-style();
-  }
-}
-
-.card--max-width {
-  width: auto;
-  .card_content {
-    overflow-x: auto;
-    max-width: 35rem;
-    .overflow-style();
-  }
-}
-*/
-
 // variant
 
+.card--default {
+  color: @text;
+  .card_design {
+    border-color: @default;
+    background: @default;
+  }
+  a&, button& {
+    &:hover, &.hover, &:active, &.active {
+      color: @text--dark;
+      .card_design {
+        border-color: @default--dark;
+        background: @default--dark;
+      }
+    }
+    &:active, &.active {
+      .card_design {
+        border-color: @default--dark;
+        box-shadow: @shadow--default;
+      }
+    }
+  }
+}
+
 .card--primary {
-  color: @text;
+  .text--inverse();
   .card_design {
-    border-color: @secondary;
-    background: @white;
+    border-color: @primary;
+    background: @primary;
   }
   a&, button& {
     &:hover, &.hover, &:active, &.active {
-      .text--inverse();
-      .card_design {
-        border-color: @primary--dark;
-        background: @primary--dark;
-      }
-    }
-    &:active, &.active {
-      .card_design {
-        border-color: @primary--dark;
-        box-shadow: @shadow--primary;
-      }
-    }
-  }
-}
-
-.card--secondary {
-  color: @text;
-  .card_design {
-    border-color: @secondary;
-    background: @white;
-  }
-  a&, button& {
-    &:hover, &.hover, &:active, &.active {
-      color: @text;
-      .card_design {
-        border-color: @secondary;
-        background: @secondary;
-      }
-    }
-    &:active, &.active {
-      .card_design {
-        border-color: @secondary--dark;
-        box-shadow: @shadow--secondary;
-      }
-    }
-  }
-}
-
-.card--text {
-  .card--none();
-  color: @text;
-  .card_design {
-    top: -1.5rem;
-    left: -1.5rem;
-    bottom: -1.5rem;
-    right: -1.5rem;
-    border-color: transparent;
-    background: transparent;
-  }
-  a&, button& {
-    &:hover, &.hover, &:active, &.active {
-      .text--inverse();
+      color: @text--inverse--dark;
       .card_design {
         border-color: @primary--dark;
         background: @primary--dark;
@@ -134,6 +83,15 @@
   .card_title {
     font-size: 1.7rem;
   }
+  // .card--full
+  .card--full& {
+    .card_design {
+      top: -1.5rem;
+      left: -1.5rem;
+      bottom: -1.5rem;
+      right: -1.5rem;
+    }
+  }
 }
 
 .card--medium {
@@ -143,6 +101,15 @@
   }
   .card_title {
     font-size: 2rem;
+  }
+  // .card--full
+  .card--full& {
+    .card_design {
+      top: -2rem;
+      left: -2rem;
+      bottom: -2rem;
+      right: -2rem;
+    }
   }
 }
 
@@ -154,13 +121,27 @@
   .card_title {
     font-size: 3rem;
   }
+  // .card--full
+  .card--full& {
+    .card_design {
+      top: -3rem;
+      left: -3rem;
+      bottom: -3rem;
+      right: -3rem;
+    }
+  }
 }
 
 // special
 
-.card--none {
+.card--full {
+  color: @text;
+  .card_design {
+    border-color: transparent;
+    background: transparent;
+  }
   .card_content {
-    padding: 0;
+    padding: 0 !important;
   }
 }
 
@@ -179,6 +160,27 @@
     border: 0;
   }
 }
+
+// addons
+
+/*
+.card--max-height {
+  .card_content {
+    overflow-y: auto;
+    max-height: 25rem;
+    .overflow-style();
+  }
+}
+
+.card--max-width {
+  width: auto;
+  .card_content {
+    overflow-x: auto;
+    max-width: 35rem;
+    .overflow-style();
+  }
+}
+*/
 
 // animation
 
