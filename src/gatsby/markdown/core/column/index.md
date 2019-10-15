@@ -27,7 +27,7 @@ You can set **column's width** specifying a number between 1 and 12, for example
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Class                   | `.col-{number}`                          | `.col-6`                     |
-| Class responsive        | `.col-{number}-{breakpoint}`             | `.col-6--sm`                  |
+| Class responsive        | `.col-{number}--{breakpoint}`             | `.col-6--sm`                  |
 | Mixin                   | `.col({number})`                          | `.col(6)`                     |
 | Mixin responsive min    | `.col({number}, {breakpoint})`            | `.col(6, sm)`                 |
 

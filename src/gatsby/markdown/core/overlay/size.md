@@ -16,7 +16,7 @@ You can change the **default size** @TODO less path
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Class                   | `.overlay--{size}`                        | `.overlay--small`             |
-| Mixin                   | `.overlay--size({size})`                  | `.overlay--size(small)`       |
+| Mixin                   | `.overlay-size({size})`                  | `.overlay-size(small)`       |
 
 </div>
 

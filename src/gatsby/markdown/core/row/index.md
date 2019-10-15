@@ -25,7 +25,7 @@ Flex **automatically** add horizontal and vertical spacing to the contents. You 
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Class                   | `.row-space--{size}`                      | `.row-space--small`           |
-| Class responsive        | `.row-space--{size}-{breakpoint}`         | `.row-space--small-sm`        |
+| Class responsive        | `.row-space--{size}--{breakpoint}`         | `.row-space--small--sm`        |
 | Mixin                   | `.row-space({size})`                      | `.row-space(small)`           |
 | Mixin responsive min    | `.row-space({size}, {breakpoint})`        | `.row-space(small, sm)`       |
 
@@ -485,7 +485,7 @@ Set item's order inside the flexbox.
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Class                   | `.order--{number}`                        | `.order--1`                   |
-| Class responsive        | `.order--{number}-{breakpoint}`           | `.order--1-sm`                |
+| Class responsive        | `.order--{number}--{breakpoint}`           | `.order--1--sm`                |
 | Mixin                   | `.order({number})`                        | `.order(1)`                   |
 | Mixin responsive min    | `.order({number}, {breakpoint})`          | `.order(1, sm)`               |
 

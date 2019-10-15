@@ -229,7 +229,7 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Class                   | `.list-space--{size}`                     | `.list-space--small`          |
-| Class responsive        | `.list-space--{size}-{breakpoint}`        | `.list-space--small-sm`       |
+| Class responsive        | `.list-space--{size}--{breakpoint}`        | `.list-space--small--sm`       |
 | Mixin                   | `.list-space({size})`                     | `.list-space(small)`          |
 | Mixin responsive min    | `.list-space({size}, {breakpoint})`       | `.list-space(small, sm)`      |
 
@@ -383,7 +383,7 @@ You can also set others flex alignments like `.list-btns({ justify-content: spac
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Class                   | `.list--{alignment}`                      | `.list--center`               |
-| Class responsive        | `.list--{alignment}-{breakpoint}`         | `.list--center-sm`            |
+| Class responsive        | `.list--{alignment}--{breakpoint}`         | `.list--center--sm`            |
 | Mixin                   | `.list--{alignment}()`                    | `.list--center()`             |
 | Mixin responsive min    | `.list--{alignment}({breakpoint})`        | `.list--center(sm)`           |
 
@@ -1550,7 +1550,7 @@ Set item's order inside the flexbox.
 |                         | Syntax                                    | Example                       |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Class                   | `.order--{number}`                        | `.order--1`                   |
-| Class responsive        | `.order--{number}-{breakpoint}`           | `.order--1-sm`                |
+| Class responsive        | `.order--{number}--{breakpoint}`           | `.order--1--sm`                |
 | Mixin                   | `.order({number})`                        | `.order(1)`                   |
 | Mixin responsive min    | `.order({number}, {breakpoint})`          | `.order(1, sm)`               |
 

@@ -179,13 +179,13 @@
       @query-min: 'min-@{breakpoint}';
       @media @@query-min {
         // list alignment
-        .list--left-@{breakpoint} {
+        .list--left--@{breakpoint} {
           .list--left() !important;
         }
-        .list--center-@{breakpoint} {
+        .list--center--@{breakpoint} {
           .list--center() !important;
         }
-        .list--right-@{breakpoint} {
+        .list--right--@{breakpoint} {
           .list--right() !important;
         }
         // list-space
@@ -224,13 +224,13 @@
       }
     }
     & when not (@breakpoint = none) {
-      .list-space--y-@{name}-@{breakpoint} {
+      .list-space--y-@{name}--@{breakpoint} {
         .list-space--y(@name) !important;
       }
-      .list-space--x-@{name}-@{breakpoint} {
+      .list-space--x-@{name}--@{breakpoint} {
         .list-space--x(@name) !important;
       }
-      .list-space--@{name}-@{breakpoint} {
+      .list-space--@{name}--@{breakpoint} {
         .list-space(@name) !important;
       }
     }

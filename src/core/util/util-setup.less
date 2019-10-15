@@ -291,19 +291,6 @@
   }
 }
 
-// text-transform
-
-.text-transform(@val, @breakpoint: none) when (@breakpoint = none) {
-  text-transform: @val;
-}
-
-.text-transform(@val, @breakpoint: none) when (default()) {
-  @query-min: 'min-@{breakpoint}';
-  @media @@query-min {
-    text-transform: @val;
-  }
-}
-
 // text-align
 
 .text-align(@val, @breakpoint: none) when (@breakpoint = none) {
@@ -368,47 +355,6 @@
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     order: @val;
-  }
-}
-
-// overlay size
-
-.overlay--size(@name) {
-  // .by-key(@overlays, @name);
-  @arr: ~"overlay--@{name}";
-  @val: @@arr;
-  .overlay-inner {
-    max-width: @val;
-  }
-}
-
-.generate-overlay--size();
-.generate-overlay--size(@i: length(@overlays)) when (@i > 0) {
-  .generate-overlay--size(@i - 1);
-  @name: extract(@overlays, @i);
-  .overlay--@{name} {
-    .overlay--size(@name) !important;
-  }
-}
-
-.generate-overlay-space-responsive();
-.generate-overlay-space-responsive(@i: length(@container--space)) when (@i > 0) {
-  .generate-overlay-space-responsive(@i - 1);
-  @overlay: extract(@container--space, @i);
-  @breakpoint: extract(@overlay, 1);
-  @val: extract(@overlay, 2);
-  & when (@breakpoint = none) {
-    .overlay-container {
-      padding: @val;
-    }
-  }
-  & when not (@breakpoint = none) {
-    @query-min: 'min-@{breakpoint}';
-    @media @@query-min {
-      .overlay-container {
-        padding: @val;
-      }
-    }
   }
 }
 
@@ -531,8 +477,6 @@
       .btn--right {
         .btn--right() !important;
       }
-      // text-transform
-      .generate-text-transform(@breakpoint);
       // text-align
       .generate-text-align(@breakpoint);
       // float
@@ -548,35 +492,33 @@
       @query-min: 'min-@{breakpoint}';
       @media @@query-min {
         // responsive
-        .responsive-@{breakpoint} {
+        .responsive--@{breakpoint} {
           .responsive() !important;
         }
-        .responsive-y-@{breakpoint} {
+        .responsive-y--@{breakpoint} {
           .responsive-y() !important;
         }
         // full
-        .full-@{breakpoint} {
+        .full--@{breakpoint} {
           .full() !important;
         }
-        .full-y-@{breakpoint} {
+        .full-y--@{breakpoint} {
           .full-y() !important;
         }
         // block
-        .block-@{breakpoint} {
+        .block--@{breakpoint} {
           .block() !important;
         }
         // btn alignment
-        .btn--left-@{breakpoint} {
+        .btn--left--@{breakpoint} {
           .btn--left() !important;
         }
-        .btn--center-@{breakpoint} {
+        .btn--center--@{breakpoint} {
           .btn--center() !important;
         }
-        .btn--right-@{breakpoint} {
+        .btn--right--@{breakpoint} {
           .btn--right() !important;
         }
-        // text-transform
-        .generate-text-transform(@breakpoint);
         // text-align
         .generate-text-align(@breakpoint);
         // float
@@ -604,25 +546,6 @@
 
   }
 
-  // generate-text-transform
-
-  @text-transform-group--arr: uppercase, lowercase, capitalize, nowrap;
-
-  .generate-text-transform(@breakpoint: none, @i: length(@text-transform-group--arr)) when (@i > 0) {
-    .generate-text-transform(@breakpoint, @i - 1);
-    @val: extract(@text-transform-group--arr, @i);
-    & when (@breakpoint = none) {
-      .text-transform-group--@{val} {
-        .text-transform(@val) !important;
-      }
-    }
-    & when not (@breakpoint = none) {
-      .text-transform-group--@{val}-@{breakpoint} {
-        .text-transform(@val) !important;
-      }
-    }
-  }
-
   // generate-text-align
 
   @text-align--arr: left, right, center;
@@ -636,7 +559,7 @@
       }
     }
     & when not (@breakpoint = none) {
-      .text-align--@{val}-@{breakpoint} {
+      .text-align--@{val}--@{breakpoint} {
         .text-align(@val) !important;
       }
     }
@@ -655,7 +578,7 @@
       }
     }
     & when not (@breakpoint = none) {
-      .float--@{val}-@{breakpoint} {
+      .float--@{val}--@{breakpoint} {
         .float(@val) !important;
       }
     }
@@ -674,7 +597,7 @@
       }
     }
     & when not (@breakpoint = none) {
-      .display--@{val}-@{breakpoint} {
+      .display--@{val}--@{breakpoint} {
         .display(@val) !important;
       }
     }
@@ -693,7 +616,7 @@
       }
     }
     & when not (@breakpoint = none) {
-      .visibility--@{val}-@{breakpoint} {
+      .visibility--@{val}--@{breakpoint} {
         .visibility(@val) !important;
       }
     }
@@ -710,7 +633,7 @@
       }
     }
     & when not (@breakpoint = none) {
-      .order--@{num}-@{breakpoint} {
+      .order--@{num}--@{breakpoint} {
         .order(@num) !important;
       }
     }
@@ -959,97 +882,97 @@
       }
     }
     & when not (@breakpoint = none) {
-      .flex--none-@{breakpoint} {
+      .flex--none--@{breakpoint} {
         .flex--none() !important;
       }
-      .flex--auto-@{breakpoint} {
+      .flex--auto--@{breakpoint} {
         .flex--auto() !important;
       }
-      .flex-direction--row-@{breakpoint} {
+      .flex-direction--row--@{breakpoint} {
         .flex-direction(row) !important;
       }
-      .flex-direction--row-reverse-@{breakpoint} {
+      .flex-direction--row-reverse--@{breakpoint} {
         .flex-direction(row-reverse) !important;
       }
-      .flex-direction--column-@{breakpoint} {
+      .flex-direction--column--@{breakpoint} {
         .flex-direction(column) !important;
       }
-      .flex-direction--column-reverse-@{breakpoint} {
+      .flex-direction--column-reverse--@{breakpoint} {
         .flex-direction(column-reverse) !important;
       }
-      .flex-wrap--wrap-@{breakpoint} {
+      .flex-wrap--wrap--@{breakpoint} {
         .flex-wrap(wrap) !important;
       }
-      .flex-wrap--wrap-reverse-@{breakpoint} {
+      .flex-wrap--wrap-reverse--@{breakpoint} {
         .flex-wrap(wrap-reverse) !important;
       }
-      .flex-wrap--nowrap-@{breakpoint} {
+      .flex-wrap--nowrap--@{breakpoint} {
         .flex-wrap(nowrap) !important;
       }
-      .justify-content--flex-start-@{breakpoint} {
+      .justify-content--flex-start--@{breakpoint} {
         .justify-content(flex-start) !important;
       }
-      .justify-content--flex-end-@{breakpoint} {
+      .justify-content--flex-end--@{breakpoint} {
         .justify-content(flex-end) !important;
       }
-      .justify-content--center-@{breakpoint} {
+      .justify-content--center--@{breakpoint} {
         .justify-content(center) !important;
       }
-      .justify-content--space-between-@{breakpoint} {
+      .justify-content--space-between--@{breakpoint} {
         .justify-content(space-between) !important;
       }
-      .justify-content--space-around-@{breakpoint} {
+      .justify-content--space-around--@{breakpoint} {
         .justify-content(space-around) !important;
       }
-      .align-items--flex-start-@{breakpoint} {
+      .align-items--flex-start--@{breakpoint} {
         .align-items(flex-start) !important;
       }
-      .align-items--flex-end-@{breakpoint} {
+      .align-items--flex-end--@{breakpoint} {
         .align-items(flex-end) !important;
       }
-      .align-items--center-@{breakpoint} {
+      .align-items--center--@{breakpoint} {
         .align-items(center) !important;
       }
-      .align-items--baseline-@{breakpoint} {
+      .align-items--baseline--@{breakpoint} {
         .align-items(baseline) !important;
       }
-      .align-items--stretch-@{breakpoint} {
+      .align-items--stretch--@{breakpoint} {
         .align-items(stretch) !important;
       }
-      .align-content--flex-start-@{breakpoint} {
+      .align-content--flex-start--@{breakpoint} {
         .align-content(flex-start) !important;
       }
-      .align-content--flex-end-@{breakpoint} {
+      .align-content--flex-end--@{breakpoint} {
         .align-content(flex-end) !important;
       }
-      .align-content--center-@{breakpoint} {
+      .align-content--center--@{breakpoint} {
         .align-content(center) !important;
       }
-      .align-content--space-between-@{breakpoint} {
+      .align-content--space-between--@{breakpoint} {
         .align-content(space-between) !important;
       }
-      .align-content--space-around-@{breakpoint} {
+      .align-content--space-around--@{breakpoint} {
         .align-content(space-around) !important;
       }
-      .align-content--stretch-@{breakpoint} {
+      .align-content--stretch--@{breakpoint} {
         .align-content(stretch) !important;
       }
-      .align-self--auto-@{breakpoint} {
+      .align-self--auto--@{breakpoint} {
         .align-self(auto) !important;
       }
-      .align-self--flex-start-@{breakpoint} {
+      .align-self--flex-start--@{breakpoint} {
         .align-self(flex-start) !important;
       }
-      .align-self--flex-end-@{breakpoint} {
+      .align-self--flex-end--@{breakpoint} {
         .align-self(flex-end) !important;
       }
-      .align-self--center-@{breakpoint} {
+      .align-self--center--@{breakpoint} {
         .align-self(center) !important;
       }
-      .align-self--baseline-@{breakpoint} {
+      .align-self--baseline--@{breakpoint} {
         .align-self(baseline) !important;
       }
-      .align-self--stretch-@{breakpoint} {
+      .align-self--stretch--@{breakpoint} {
         .align-self(stretch) !important;
       }
     }
@@ -1292,7 +1215,7 @@
     }
     & when not (@breakpoint = none) {
       & when (@pos = none) {
-        .m-@{name}-@{breakpoint} {
+        .m-@{name}--@{breakpoint} {
           .margin(@pos, @name) !important;
         }
         & when not (@size = auto) and not (@size = 0) {
@@ -1302,7 +1225,7 @@
         }
       }
       & when not (@pos = none) {
-        .m@{pos}--@{name}-@{breakpoint} {
+        .m@{pos}--@{name}--@{breakpoint} {
           .margin(@pos, @name) !important;
         }
         & when not (@size = auto) and not (@size = 0) {
@@ -1496,12 +1419,12 @@
     }
     & when not (@breakpoint = none) {
       & when (@pos = none) {
-        .p-@{name}-@{breakpoint} {
+        .p-@{name}--@{breakpoint} {
           .padding(@pos, @name) !important;
         }
       }
       & when not (@pos = none) {
-        .p@{pos}--@{name}-@{breakpoint} {
+        .p@{pos}--@{name}--@{breakpoint} {
           .padding(@pos, @name) !important;
         }
       }

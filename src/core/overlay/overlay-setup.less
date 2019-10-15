@@ -23,10 +23,6 @@
   margin: auto; // @FIX http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
   width: 100%;
   min-height: 100vh;
-  // space override @container--space
-  @media @max-sm {
-    padding: 0 !important;
-  }
 }
 
 .overlay-inner {
@@ -85,5 +81,52 @@
   }
   > .backdrop {
     display: none !important;
+  }
+}
+
+/**
+ * @generate-overlay-size
+ */
+
+.overlay-size(@name) {
+  // .by-key(@overlays, @name);
+  @arr: ~"overlay--@{name}";
+  @val: @@arr;
+  .overlay-inner {
+    max-width: @val;
+  }
+}
+
+.generate-overlay-size();
+.generate-overlay-size(@i: length(@overlays)) when (@i > 0) {
+  .generate-overlay-size(@i - 1);
+  @name: extract(@overlays, @i);
+  .overlay--@{name} {
+    .overlay-size(@name) !important;
+  }
+}
+
+/**
+ * @generate-overlay-space-responsive
+ */
+
+.generate-overlay-space-responsive();
+.generate-overlay-space-responsive(@i: length(@overlay--space)) when (@i > 0) {
+  .generate-overlay-space-responsive(@i - 1);
+  @overlay: extract(@overlay--space, @i);
+  @breakpoint: extract(@overlay, 1);
+  @val: extract(@overlay, 2);
+  & when (@breakpoint = none) {
+    .overlay-container {
+      padding: @val;
+    }
+  }
+  & when not (@breakpoint = none) {
+    @query-min: 'min-@{breakpoint}';
+    @media @@query-min {
+      .overlay-container {
+        padding: @val;
+      }
+    }
   }
 }

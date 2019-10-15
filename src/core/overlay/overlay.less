@@ -4,6 +4,10 @@
  * vars
  */
 
+// space
+
+@overlay--space: @container--space; // overlay side spacing
+
 // size
 
 @overlays: tiny, small, medium, big, giant, full; // if you change this change also variables names below
@@ -43,7 +47,7 @@
     .btn--giant();
   }
   // default options
-  .overlay--size(small);
+  .overlay-size(small);
 }
 
 // variant
@@ -103,6 +107,13 @@
   .overlay-inner, .overlay-content {
     opacity: 1 !important;
     .trans-anim-none() !important;
+  }
+}
+
+.overlay-container {
+  // override @overlay--space side spacing
+  @media @max-sm {
+    padding: 0 !important;
   }
 }
 

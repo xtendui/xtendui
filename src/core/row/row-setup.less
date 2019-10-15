@@ -142,13 +142,13 @@
       }
     }
     & when not (@breakpoint = none) {
-      .row-space--y-@{name}-@{breakpoint} {
+      .row-space--y-@{name}--@{breakpoint} {
         .row-space--y(@name) !important;
       }
-      .row-space--x-@{name}-@{breakpoint} {
+      .row-space--x-@{name}--@{breakpoint} {
         .row-space--x(@name) !important;
       }
-      .row-space--@{name}-@{breakpoint} {
+      .row-space--@{name}--@{breakpoint} {
         .row-space(@name) !important;
       }
     }
