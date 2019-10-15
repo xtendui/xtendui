@@ -11,13 +11,6 @@
   a&, button& {
     cursor: pointer;
   }
-  .card-img {
-    .flex--auto();
-    > img {
-      width: 100%;
-      height: auto;
-    }
-  }
 }
 
 .card-design {
@@ -25,7 +18,16 @@
   border-radius: inherit;
 }
 
-.card-item, .card-content {
+.card-content, .card-item, .card-img {
   .block();
   position: relative;
+}
+
+.card-img {
+  .block();
+  .flex-full();
+  > img {
+    width: 100%;
+    height: auto;
+  }
 }

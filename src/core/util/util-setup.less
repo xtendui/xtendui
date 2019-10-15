@@ -645,29 +645,42 @@
  * @generate-class--flex
  */
 
-// flex--none
+// flex-none
 
-.flex--none(@breakpoint: none) when (@breakpoint = none) {
+.flex-none(@breakpoint: none) when (@breakpoint = none) {
   flex: none;
 }
 
-.flex--none(@breakpoint: none) when (default()) {
+.flex-none(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex: none;
   }
 }
 
-// flex--auto
+// flex-auto
 
-.flex--auto(@breakpoint: none) when (@breakpoint = none) {
+.flex-auto(@breakpoint: none) when (@breakpoint = none) {
   flex: 1 1 auto;
 }
 
-.flex--auto(@breakpoint: none) when (default()) {
+.flex-auto(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
     flex: 1 1 auto;
+  }
+}
+
+// flex-full
+
+.flex-full(@breakpoint: none) when (@breakpoint = none) {
+  flex: 1 1 100%;
+}
+
+.flex-full(@breakpoint: none) when (default()) {
+  @query-min: 'min-@{breakpoint}';
+  @media @@query-min {
+    flex: 1 1 100%;
   }
 }
 
@@ -787,11 +800,14 @@
 
   .generate-flex-util(@breakpoint: none) {
     & when (@breakpoint = none) {
-      .flex--none {
-        .flex--none() !important;
+      .flex-none {
+        .flex-none() !important;
       }
-      .flex--auto {
-        .flex--auto() !important;
+      .flex-auto {
+        .flex-auto() !important;
+      }
+      .flex-full {
+        .flex-full() !important;
       }
       .flex-direction--row {
         .flex-direction(row) !important;
@@ -882,11 +898,14 @@
       }
     }
     & when not (@breakpoint = none) {
-      .flex--none--@{breakpoint} {
-        .flex--none() !important;
+      .flex-none--@{breakpoint} {
+        .flex-none() !important;
       }
-      .flex--auto--@{breakpoint} {
-        .flex--auto() !important;
+      .flex-auto--@{breakpoint} {
+        .flex-auto() !important;
+      }
+      .flex-full--@{breakpoint} {
+        .flex-full() !important;
       }
       .flex-direction--row--@{breakpoint} {
         .flex-direction(row) !important;

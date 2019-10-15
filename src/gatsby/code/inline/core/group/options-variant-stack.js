@@ -45,7 +45,7 @@ demo.htmlSource = `
 </div>
 
 <div class="group full group--default">
-  <div class="group-inner flex--auto">
+  <div class="group-inner flex-auto">
     <button type="button" class="btn btn--default">
       btn 1a
     </button>
@@ -61,7 +61,7 @@ demo.htmlSource = `
       btn 2b
     </button>
   </div>
-  <div class="group-inner flex--auto">
+  <div class="group-inner flex-auto">
     <button type="button" class="btn btn--default">
       btn 3a
     </button>

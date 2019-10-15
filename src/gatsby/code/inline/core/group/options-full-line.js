@@ -33,7 +33,7 @@ demo.htmlSource = `
 </div>
 
 <div class="group full">
-  <div class="group-inner flex--auto">
+  <div class="group-inner flex-auto">
     <button type="button" class="btn btn--primary">
       btn 1
     </button>
@@ -43,7 +43,7 @@ demo.htmlSource = `
       btn 2
     </button>
   </div>
-  <div class="group-inner flex--auto">
+  <div class="group-inner flex-auto">
     <button type="button" class="btn btn--primary">
       btn 3
     </button>

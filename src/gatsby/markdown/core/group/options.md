@@ -9,7 +9,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 Full width groups with `.full`.
 
-Use `.group-inner.flex--auto` to expand groups.
+Use `.group-inner.flex-auto` to expand groups.
 
 <demo>
   <demovanilla src="inline/core/group/options-full-line">
