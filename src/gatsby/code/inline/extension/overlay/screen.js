@@ -1,4 +1,5 @@
 import path from 'path'
+const img = require('components/snippets/img').default
 
 const dirs = path.dirname(__filename).split('/')
 export const demo = {
@@ -49,8 +50,7 @@ demo.htmlSource = `
             <button type="button" class="btn btn--close" aria-label="Close"></button>
           </div>
           <div class="overlay-content">
-            <img src="https://picsum.photos/1200" alt=""
-             class="full"/>
+            ${img(1200, 1200)}
           </div>
         </div>
       </div>

@@ -1,5 +1,4 @@
 import path from 'path'
-
 const spinner = require('components/snippets/spinner').default
 
 const dirs = path.dirname(__filename).split('/')

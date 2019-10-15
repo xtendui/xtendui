@@ -1,5 +1,6 @@
 import React from 'react'
 import path from 'path'
+const img = require('components/snippets/img').default
 
 import DemoVanillaIframe from 'components/demo-vanilla-iframe'
 
@@ -17,7 +18,7 @@ demo.htmlSource = `
     <h1>Parallax Title</h1>
   </div>
   <div class="demo--parallax-img">
-    <img class="responsive" src="https://via.placeholder.com/1000x150"/>
+     ${img(1000, 150)}
   </div>
 </div>
 

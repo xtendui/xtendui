@@ -113,8 +113,10 @@ Supported browsers are as follow: explorer 12, firefox 38, opera 25, safari 10, 
 # Acknowledgements
 
 * Icons with [feather icons](https://github.com/feathericons/feather)
+<!--
 * Images with [picsum](https://picsum.photos/)
-  
+<img class="full" src="https://picsum.photos/1200" alt=""/>
+-->
 # Copyright
 
 Licensed under [MIT license](https://github.com/minimit/xtend-library/blob/master/LICENSE).

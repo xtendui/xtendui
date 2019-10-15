@@ -19,7 +19,19 @@ html.gatsby_iframe-inside {
   position: relative;
 }
 
-// .gatsby_demo-cols
+/**
+ * svg
+ */
+
+svg {
+  .font-sans--semibold();
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+/**
+ * .gatsby_demo-cols
+ */
 
 .gatsby_demo-cols {
   [class^='col-'], [class*=' col-'], [class^='demo--col-'], [class*=' demo--col-'] {
@@ -48,7 +60,7 @@ html.gatsby_iframe-inside {
 }
 
 /**
- * demo
+ * .demo
  */
 
 @gatsby_demo-height: 35rem;
@@ -56,8 +68,6 @@ html.gatsby_iframe-inside {
 pre {
   max-height: @gatsby_demo-height;
 }
-
-// .demo
 
 .gatsby_demo {
   .margin(y, layout) !important;

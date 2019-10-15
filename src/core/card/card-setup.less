@@ -5,22 +5,22 @@
 .card {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   z-index: @index--base; // fix :before negative z-index
+  a&, button& {
+    cursor: pointer;
+  }
 }
 
 .card-design {
   .design-setup();
-}
-
-.card-content {
-  .flex--auto();
-  position: relative;
-  overflow: hidden;
-}
-
-.card-design, .card-content {
   border-radius: inherit;
+}
+
+.card-addon, .card-content {
+  .block();
+  position: relative;
 }
