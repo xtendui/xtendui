@@ -77,18 +77,7 @@ let self = new Xt.Scroll(document.documentElement, {
   <div class="gatsby_demo-inline">
     <div class="gatsby_demo_item gatsby_demo_preview" data-name="vanilla">
       <div class="gatsby_demo_source gatsby_demo_source--from" data-lang="language-markup">
-        <div class="form-group">
-          <input type="checkbox" class="unstyled" id="checkbox-block-unstyled">
-          <label class="form-label" for="checkbox-block-unstyled"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a> </label>
-        </div>
-        <div class="form-group">
-          <input type="radio" class="unstyled" id="radio-block-unstyled-0" name="radio-block-unstyled">
-          <label class="form-label" for="radio-block-unstyled-0"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a> </label>
-        </div>
-        <div class="form-group">
-          <input type="radio" class="unstyled" id="radio-block-unstyled-1" name="radio-block-unstyled">
-          <label class="form-label" for="radio-block-unstyled-1"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a> </label>
-        </div>
+        Inline
       </div>
     </div>
   </div>
@@ -97,14 +86,14 @@ let self = new Xt.Scroll(document.documentElement, {
 ###Inline
 
 <demo>
-  <demovanilla src="inline/core/test/vanilla" name="test vanilla">
+  <demovanilla src="inline/demo/test/vanilla" name="test vanilla">
     <div class="gatsby_demo_text">
       <div class="alert-content">
         Test
       </div>
     </div>
   </demovanilla>
-  <demoreact src="inline/core/test/react" name="test react">
+  <demoreact src="inline/demo/test/react" name="test react">
     <div class="gatsby_demo_text">
       <div class="alert-content">
         Test
@@ -116,14 +105,14 @@ let self = new Xt.Scroll(document.documentElement, {
 ###Iframe
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/core/test/vanilla-iframe" data-name="test vanilla frame">
+  <div class="gatsby_demo_item" data-iframe="iframe/demo/test/vanilla-iframe" data-name="test vanilla frame">
     <div class="gatsby_demo_text">
       <div class="alert-content">
         Test
       </div>
     </div>
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/core/test/react-iframe" data-name="test react iframe">
+  <div class="gatsby_demo_item" data-iframe="iframe/demo/test/react-iframe" data-name="test react iframe">
     <div class="gatsby_demo_text">
       <div class="alert-content">
         Test

@@ -10,10 +10,10 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 To show or hide content when sticky activates use `.show-sticky` or `.hide-sticky`.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/core/sticky/showhide-top">
+  <div class="gatsby_demo_item" data-iframe="iframe/demo/sticky/showhide-top">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/core/sticky/showhide-bottom">
+  <div class="gatsby_demo_item" data-iframe="iframe/demo/sticky/showhide-bottom">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/core/sticky/showhide-hide">
+  <div class="gatsby_demo_item" data-iframe="iframe/demo/sticky/showhide-hide">
   </div>
 </demo>

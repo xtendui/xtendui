@@ -10,6 +10,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 `.active` `"loop": false` `"jump": false` `"autoHeight": false`
 
 <demo>
-  <demovanilla src="inline/core/slider/other">
+  <demovanilla src="inline/demo/slider/other">
   </demovanilla>
 </demo>

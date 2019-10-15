@@ -8,6 +8,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ##Horizontal
 
 <demo>
-  <demovanilla src="inline/core/card/horizontal">
+  <demovanilla src="inline/extension/card/horizontal">
   </demovanilla>
 </demo>

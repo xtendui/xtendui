@@ -8,6 +8,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ###Auto
 
 <demo>
-  <demovanilla src="inline/core/slider/auto">
+  <demovanilla src="inline/demo/slider/auto">
   </demovanilla>
 </demo>

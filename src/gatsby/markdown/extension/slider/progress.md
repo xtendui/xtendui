@@ -10,6 +10,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Use events `'start.xt.auto'` `'stop.xt.auto'` `'pause.xt.auto'`
 
 <demo>
-  <demovanilla src="inline/core/slider/progress">
+  <demovanilla src="inline/demo/slider/progress">
   </demovanilla>
 </demo>

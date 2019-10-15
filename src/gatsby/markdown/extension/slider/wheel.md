@@ -10,6 +10,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Use `"wheel": {"selector": "object"}` or `"wheel": {"selector": Query}` to enable mousewheel navigation.
 
 <demo>
-  <demovanilla src="inline/core/slider/wheel">
+  <demovanilla src="inline/demo/slider/wheel">
   </demovanilla>
 </demo>

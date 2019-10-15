@@ -8,11 +8,11 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ## Javascript
 
 <demo>
-  <demovanilla src="inline/core/loader/js-spinner">
+  <demovanilla src="inline/demo/loader/js-spinner">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="inline/core/loader/js-filler">
+  <demovanilla src="inline/demo/loader/js-filler">
   </demovanilla>
 </demo>

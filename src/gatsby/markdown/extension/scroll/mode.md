@@ -10,14 +10,14 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 You can set scroll mode with **less mixins**.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/core/scroll/mode-infinite">
+  <div class="gatsby_demo_item" data-iframe="iframe/demo/scroll/mode-infinite">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/core/scroll/mode-scroll">
+  <div class="gatsby_demo_item" data-iframe="iframe/demo/scroll/mode-scroll">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/core/scroll/mode-visible">
+  <div class="gatsby_demo_item" data-iframe="iframe/demo/scroll/mode-visible">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/core/scroll/mode-responsive">
+  <div class="gatsby_demo_item" data-iframe="iframe/demo/scroll/mode-responsive">
   </div>
-  <div class="gatsby_demo_item" data-iframe="iframe/core/scroll/mode-block">
+  <div class="gatsby_demo_item" data-iframe="iframe/demo/scroll/mode-block">
   </div>
 </demo>

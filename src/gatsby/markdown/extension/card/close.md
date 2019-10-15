@@ -8,6 +8,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ##Close
 
 <demo>
-  <demovanilla src="inline/core/card/close" name="close">
+  <demovanilla src="inline/extension/card/close" name="close">
   </demovanilla>
 </demo>

@@ -10,5 +10,5 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 The default **position** is `"position": "top"` you can also use `"position": "bottom"`.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/core/sticky/position"></div>
+  <div class="gatsby_demo_item" data-iframe="iframe/demo/sticky/position"></div>
 </demo>

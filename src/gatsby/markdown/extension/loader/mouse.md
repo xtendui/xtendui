@@ -10,11 +10,11 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 `.loader--mouse`
 
 <demo>
-  <demovanilla src="inline/core/loader/mouse-spinner">
+  <demovanilla src="inline/demo/loader/mouse-spinner">
   </demovanilla>
 </demo>
 
 <demo>
-  <demovanilla src="inline/core/loader/mouse-filler">
+  <demovanilla src="inline/demo/loader/mouse-filler">
   </demovanilla>
 </demo>

@@ -30,6 +30,6 @@ Inside it you can use this strings that gets populated with variables:
 </div>
 
 <demo>
-  <demovanilla src="inline/core/slider/pagination">
+  <demovanilla src="inline/demo/slider/pagination">
   </demovanilla>
 </demo>

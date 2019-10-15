@@ -10,6 +10,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 `.loader--spinner`.
 
 <demo>
-  <demovanilla src="inline/core/loader/spinner">
+  <demovanilla src="inline/demo/loader/spinner">
   </demovanilla>
 </demo>

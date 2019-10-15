@@ -10,6 +10,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 To disable sticky use `.sticky--disable` useful within media queries.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="iframe/core/sticky/disable">
+  <div class="gatsby_demo_item" data-iframe="iframe/demo/sticky/disable">
   </div>
 </demo>
