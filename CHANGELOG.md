@@ -44,7 +44,7 @@
 * **slider:** fix slider disabled ([65b971c](https://github.com/minimit/xtend-library/commit/65b971c))
 * **slider:** fix slider dynamic width on images loaded ([34c8225](https://github.com/minimit/xtend-library/commit/34c8225))
 * **slider:** fix slider pos ([68123d5](https://github.com/minimit/xtend-library/commit/68123d5))
-* btn--close_fixed + fix scrollbarSpaceOn with position right + fix slider content pagination + fix xt-scroll on top ([adbda84](https://github.com/minimit/xtend-library/commit/adbda84))
+* btn-close_fixed + fix scrollbarSpaceOn with position right + fix slider content pagination + fix xt-scroll on top ([adbda84](https://github.com/minimit/xtend-library/commit/adbda84))
 * **slider:** infinite slider fixes + autoheight animation + revision xt-ignore and xt-clone + revision imageloaded ([3eeb66e](https://github.com/minimit/xtend-library/commit/3eeb66e))
 * fix event off no force + fix list-reset ([2ac7be7](https://github.com/minimit/xtend-library/commit/2ac7be7))
 * **slider:** fix slider wrap without overflow + fix wrap with alignment + fix link--none css ([c1b2d5f](https://github.com/minimit/xtend-library/commit/c1b2d5f))
