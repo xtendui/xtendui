@@ -10,7 +10,7 @@ export const demo = {
 demo.htmlSource = `
 <form>
   <div class="form-group">
-    <div class="form-group--horizontal--sm">
+    <div class="form-group--horizontal">
       <div class="col-12 col-3--sm">
         <label class="form-label">
           Lorem
@@ -23,7 +23,33 @@ demo.htmlSource = `
   </div>
   
   <div class="form-group">
-    <div class="form-group--horizontal--sm">
+    <div class="form-group--horizontal">
+      <div class="col-12 col-3--sm">
+        <label class="form-label">
+          Lorem Ipsum
+        </label>
+      </div>
+      <div class="col-12 col-9--sm">
+        <input type="text" class="form-item">
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="form-group--horizontal">
+      <div class="col-12 col-3--sm">
+        <label class="form-label">
+          Lorem
+        </label>
+      </div>
+      <div class="col-12 col-9--sm">
+        <input type="text" class="form-item">
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="form-group--horizontal">
       <div class="col-12 col-3--sm">
         <label class="form-label">
           Lorem Ipsum

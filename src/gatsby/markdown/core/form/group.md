@@ -29,10 +29,8 @@ If you want to customize singularly form's group use the class `.xt-custom`.
   </demovanilla>
   <demovanilla src="inline/core/form/addon-horizontal">
   </demovanilla>
-  <demovanilla src="inline/core/form/addon-inline-input">
+  <demovanilla src="inline/core/form/addon-inline-input" name="inline input">
   </demovanilla>
   <demovanilla src="inline/core/form/addon-inline">
-  </demovanilla>
-  <demovanilla src="inline/core/form/addon-all">
   </demovanilla>
 </demo>

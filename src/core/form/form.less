@@ -73,35 +73,33 @@ form {
 // addons
 
 .form-group--row {
-  .row-space--x(medium);
-}
-
-.form-group--row--sm {
   @media @min-sm {
-    .form-group--row();
+    display: flex;
+    .row-space--x(medium);
   }
 }
 
 .form-group--horizontal {
-  .row-space--x(medium);
-  align-items: center;
-  text-align: right;
-}
-
-.form-group--horizontal--sm {
   @media @min-sm {
-    .form-group--horizontal();
+    display: flex;
+    .row-space--x(medium);
+    align-items: center;
+    text-align: right;
+    .form-label {
+      margin: 0;
+    }
   }
 }
 
 .form-group--inline {
-  .list-space--x(medium);
-  align-items: baseline;
-}
-
-.form-group--inline--sm {
   @media @min-sm {
-    .form-group--inline();
+    display: flex;
+    flex-wrap: wrap;
+    .list-space--x(medium);
+    align-items: baseline;
+    .form-item {
+      width: auto;
+    }
   }
 }
 
