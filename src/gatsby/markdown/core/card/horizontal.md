@@ -1,13 +1,13 @@
 ---
-type: "Extension"
+type: "Core"
 parent: "Card"
-title: "Max height"
+title: "Horizontal"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-##Max height
+##Horizontal
 
 <demo>
-  <demovanilla src="inline/extension/card/max-height" name="max height">
+  <demovanilla src="inline/core/card/horizontal">
   </demovanilla>
 </demo>

@@ -10,6 +10,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 Drop with max sizes with automatic scrollbar on overflow with `drop--overflow-y`.
 
 <demo>
-  <demovanilla src="inline/core/drop/overflow">
+  <demovanilla src="inline/core/drop/overflow-y">
   </demovanilla>
 </demo>

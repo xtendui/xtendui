@@ -18,7 +18,7 @@ demo.htmlSource = `
 
           <div class="card card--default text-align--center">
             <div class="card-design"></div>
-            <div class="card-content">
+            <div class="card-item">
               <h1>1</h1>
             </div>
           </div>
@@ -31,7 +31,7 @@ demo.htmlSource = `
 
           <div class="card card--default text-align--center">
             <div class="card-design"></div>
-            <div class="card-content">
+            <div class="card-item">
               <h1>2</h1>
             </div>
           </div>
@@ -44,7 +44,7 @@ demo.htmlSource = `
 
           <div class="card card--default text-align--center">
             <div class="card-design"></div>
-            <div class="card-content">
+            <div class="card-item">
               <h1>3</h1>
             </div>
           </div>
@@ -57,7 +57,7 @@ demo.htmlSource = `
 
           <div class="card card--default text-align--center">
             <div class="card-design"></div>
-            <div class="card-content">
+            <div class="card-item">
               <h1>4</h1>
             </div>
           </div>
@@ -70,7 +70,7 @@ demo.htmlSource = `
 
           <div class="card card--default text-align--center" style="height: 15rem;">
             <div class="card-design"></div>
-            <div class="card-content">
+            <div class="card-item">
               <h1>5</h1>
             </div>
           </div>

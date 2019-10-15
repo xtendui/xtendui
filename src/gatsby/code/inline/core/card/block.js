@@ -1,5 +1,4 @@
 import path from 'path'
-const img = require('components/snippets/img').default
 
 const dirs = path.dirname(__filename).split('/')
 export const demo = {
@@ -15,11 +14,13 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-design"></div>
         <div class="card-content">
-          <div class="card-img">
-            ${img(400, 150)}
+          <div class="card-block card-block--head">
+            <div class="card-title">Lorem ipsum</div>
           </div>
           <div class="card-item">
-            <div class="card-title">Lorem ipsum</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+          </div>
+          <div class="card-item">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>
@@ -32,46 +33,14 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-design"></div>
         <div class="card-content">
-          <div class="card-img">
-            ${img(400, 150)}
+          <div class="card-block card-block--head">
+            <div class="card-title">Lorem ipsum</div>
           </div>
           <div class="card-item">
-            <div class="card-title">Lorem ipsum</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
-        </div>
-      </div>
-    </button>
-  </div>
-  
-  <div class="col-12 col-6--sm">
-    <button type="button" class="card card--primary">
-      <div class="card-inner">
-        <div class="card-design"></div>
-        <div class="card-content">
           <div class="card-item">
-            <div class="card-title">Lorem ipsum</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-          </div>
-          <div class="card-img">
-            ${img(400, 150)}
-          </div>
-        </div>
-      </div>
-    </button>
-  </div>
-  
-  <div class="col-12 col-6--sm">
-    <button type="button" class="card card--primary card--full">
-      <div class="card-inner">
-        <div class="card-design"></div>
-        <div class="card-content">
-          <div class="card-item">
-            <div class="card-title">Lorem ipsum</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-          </div>
-          <div class="card-img">
-            ${img(400, 150)}
           </div>
         </div>
       </div>

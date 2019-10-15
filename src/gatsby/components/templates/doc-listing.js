@@ -28,7 +28,7 @@ class Template extends React.Component {
                         ? <div className="gatsby_listing_column" key={z}>
                           <Link to={markdownSlug(post)} className="card card--primary card--small card--full gatsby_listing_item">
                             <div className="card-design"></div>
-                            <div className="card-content">
+                            <div className="card-item">
                               <div className="card-title">{post.frontmatter.title}</div>
                               <p>{post.frontmatter.description}</p>
                             </div>

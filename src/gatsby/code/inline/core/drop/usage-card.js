@@ -17,16 +17,6 @@ demo.htmlSource = `
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">
-          <div class="card card--default">
-            <div class="card-inner">
-              <div class="card-design"></div>
-              <div class="card-content">
-                <h6>Card</h6>
-                <p>Lorem ipsum <a href="#">dolor sit</a> <code>amet</code>, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat.
-                  Sed sit amet leo nunc.</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

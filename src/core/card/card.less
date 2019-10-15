@@ -1,6 +1,14 @@
 @import '~xtend-library/src/core/card/card-setup.less';
 
 /**
+ * vars
+ */
+
+// generate class: [false], [true] non responsive, [sm, md, lg] responsive breakpoints
+
+@generate-class--card--horizontal: sm, md, lg;
+
+/**
  * card
  */
 
@@ -32,9 +40,9 @@
   color: @text;
   .card-design {
     border-color: @default;
-    background: @white;
+    background: @default;
   }
-  .card-content + .card-content {
+  .card-item + .card-item {
     border-top: 1px solid fade(@gray--800, 20%);
   }
   a&, button& {
@@ -42,7 +50,7 @@
       color: @text--dark;
       .card-design {
         border-color: @default--dark;
-        background: @white;
+        background: @default--dark;
       }
     }
     &:active, &.active {
@@ -61,7 +69,7 @@
     border-color: @primary;
     background: @primary;
   }
-  .card-content + .card-content {
+  .card-item + .card-item {
     border-top: 1px solid fade(@gray--800, 20%);
   }
   a&, button& {
@@ -86,7 +94,7 @@
 
 .card--small {
   .font--small();
-  .card-content, .card-item {
+  .card-item, .card-block {
     padding: 1.5rem 2rem;
   }
   .card-title {
@@ -94,11 +102,13 @@
   }
   // .card--full
   .card--full& {
-    .list-space(small);
+    .card-content {
+      .list-space(small);
+    }
     .card-design {
-      top: -1.5rem;
+      top: -1rem;
       left: -1.5rem;
-      bottom: -1.5rem;
+      bottom: -1rem;
       right: -1.5rem;
     }
   }
@@ -106,7 +116,7 @@
 
 .card--medium {
   .font--medium();
-  .card-content, .card-item {
+  .card-item, .card-block {
     padding: 2rem 2.5rem;
   }
   .card-title {
@@ -114,11 +124,13 @@
   }
   // .card--full
   .card--full& {
-    .list-space(medium);
+    .card-content {
+      .list-space(medium);
+    }
     .card-design {
-      top: -2rem;
+      top: -1.5rem;
       left: -2rem;
-      bottom: -2rem;
+      bottom: -1.5rem;
       right: -2rem;
     }
   }
@@ -126,7 +138,7 @@
 
 .card--big {
   .font--big();
-  .card-content, .card-item {
+  .card-item, .card-block {
     padding: 3rem 3.5rem;
   }
   .card-title {
@@ -134,31 +146,19 @@
   }
   // .card--full
   .card--full& {
-    .list-space(big);
+    .card-content {
+      .list-space(big);
+    }
     .card-design {
-      top: -3rem;
+      top: -2.5rem;
       left: -3rem;
-      bottom: -3rem;
+      bottom: -2.5rem;
       right: -3rem;
     }
   }
 }
 
 // special
-
-.card--full {
-  .list();
-  overflow: visible;
-  color: @text;
-  .card-design {
-    border-color: transparent;
-    background: transparent;
-  }
-  .card-content {
-    padding: 0 !important;
-    border: 0 !important;
-  }
-}
 
 .card--nodesign {
   .card-design {
@@ -176,6 +176,37 @@
   }
 }
 
+// addons
+
+.card--full {
+  overflow: visible;
+  color: @text;
+  .card-content {
+    .list();
+  }
+  .card-design {
+    border-color: transparent;
+    background: transparent;
+  }
+  .card-item {
+    padding: 0 !important;
+    border: 0 !important;
+  }
+}
+
+.card--horizontal {
+  .card-item + .card-item {
+    border: 0;
+    border-left: 1px solid fade(@gray--800, 20%);
+  }
+}
+
+.card--overflow-y {
+  overflow-y: auto;
+  max-height: 30rem;
+  .overflow-style(@mode: inner);
+}
+
 // animation
 
 .card {
@@ -188,7 +219,7 @@
       transition-duration: @time--big;
       transition-timing-function: @bez--out;
     }
-    .card-content {
+    .card-item {
       transition-property: transform;
       transition-duration: @time--big;
       transition-timing-function: @bez--out;
@@ -203,7 +234,7 @@
         transition-duration: @time--big;
         transition-timing-function: @bez--in;
       }
-      .card-content {
+      .card-item {
         transform: scale(0.97, 0.95);
         transition-property: transform;
         transition-duration: @time--big;
