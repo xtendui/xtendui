@@ -191,7 +191,11 @@
 // custom
 
 .btn--close {
-  .btn--text(); // variant
-  .btn--icon() !important; // special
+  position: absolute;
+  top: 0;
+  right: 0;
+  .btn--text();
+  .btn--giant();
+  .btn--icon();
   .icon-xt(@content: @icon-xt--close, @size: @icon--medium);
 }
