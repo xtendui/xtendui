@@ -11,7 +11,7 @@
     .link--none() !important;
   }
   .card-design {
-    border-width: 1px;
+    border-width: 0;
     border-style: solid;
     border-color: transparent;
   }
@@ -35,7 +35,7 @@
     background: @white;
   }
   .card-content + .card-content {
-    border-top: 1px solid fade(@black, 15%);
+    border-top: 1px solid fade(@gray--800, 20%);
   }
   a&, button& {
     &:hover, &.hover, &:active, &.active {
@@ -46,9 +46,10 @@
       }
     }
     &:active, &.active {
+      box-shadow: @shadow--light;
       .card-design {
         border-color: @default--dark;
-        box-shadow: @shadow--default;
+        box-shadow: @shadow--light;
       }
     }
   }
@@ -61,7 +62,7 @@
     background: @primary;
   }
   .card-content + .card-content {
-    border-top: 1px solid fade(@black, 15%);
+    border-top: 1px solid fade(@gray--800, 20%);
   }
   a&, button& {
     &:hover, &.hover, &:active, &.active {
@@ -72,6 +73,7 @@
       }
     }
     &:active, &.active {
+      box-shadow: @shadow--primary;
       .card-design {
         border-color: @primary--dark;
         box-shadow: @shadow--primary;

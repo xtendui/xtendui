@@ -1,25 +1,20 @@
-.card--horizontal {
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: stretch;
-  .card-img {
-    > img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-}
+@import '~xtend-library/src/extension/card/horizontal-setup.less';
+
+/**
+ * vars
+ */
+
+// generate class: [false], [true] non responsive, [sm, md, lg] responsive breakpoints
+
+@generate-class--card--horizontal: sm, md, lg;
+
+/**
+ * xtend extension: card--horizontal
+ */
 
 .card--horizontal {
   .card-content + .card-content {
     border: 0;
-    border-left: 1px solid fade(@black, 15%);
-  }
-}
-
-.card--horizontal--sm {
-  @media @min-sm {
-    .card--horizontal();
+    border-left: 1px solid fade(@gray--800, 20%);
   }
 }

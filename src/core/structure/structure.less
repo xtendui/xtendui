@@ -27,10 +27,9 @@
 // shadow
 // USAGE: box-shadow: @shadow--light;
 
-@shadow--dark: 0 .1rem 1rem fade(@gray--500, 40%), 0 .2rem 2rem fade(@gray--500, 80%);
-@shadow--light: 0 .1rem 1rem fade(@gray--300, 40%), 0 .2rem 2rem fade(@gray--300, 80%);
-@shadow--primary: 0 .1rem 1rem fade(@primary--dark, 10%), 0 .2rem 2rem fade(@primary--dark, 20%);
-@shadow--default: 0 .1rem 1rem fade(@default--dark, 40%), 0 .2rem 2rem fade(@default--dark, 80%);
+@shadow--dark: 0 .1rem 1rem fade(@gray--800, 20%), 0 .2rem 2rem fade(@gray--800, 40%);
+@shadow--light: 0 .1rem 1rem fade(@gray--800, 5%), 0 .2rem 2rem fade(@gray--800, 10%);
+@shadow--primary: 0 .1rem 1rem fade(@primary--dark, 20%), 0 .2rem 2rem fade(@primary--dark, 40%);
 
 // gradient
 // USAGE: background: linear-gradient(135deg, @grad--light);
@@ -116,9 +115,9 @@ body {
     }
   }
   &::-webkit-scrollbar-thumb {
-    background: fade(@black, 20%);
+    background: fade(@gray--800, 20%);
     &:hover {
-      background: fade(@black, 40%);
+      background: fade(@gray--800, 40%);
     }
   }
 }
