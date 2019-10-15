@@ -20,10 +20,3 @@ Add `.card-item` modifiers at pleasure, for example `.card-item--head`.
   <demovanilla src="inline/core/card/item">
   </demovanilla>
 </demo>
-
-##Multiple
-
-<demo>
-  <demovanilla src="inline/core/card/multiple">
-  </demovanilla>
-</demo>

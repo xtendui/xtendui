@@ -1,0 +1,25 @@
+.card--horizontal {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  .card-img {
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.card--horizontal {
+  .card-content + .card-content {
+    border: 0;
+    border-left: 1px solid fade(@black, 15%);
+  }
+}
+
+.card--horizontal--sm {
+  @media @min-sm {
+    .card--horizontal();
+  }
+}

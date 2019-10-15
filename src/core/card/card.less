@@ -22,12 +22,6 @@
     letter-spacing: 0;
     text-transform: none;
   }
-  .btn--close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    .btn--giant();
-  }
   // default options
   .card--medium();
 }
@@ -39,6 +33,9 @@
   .card-design {
     border-color: @default;
     background: @white;
+  }
+  .card-content + .card-content {
+    border-top: 1px solid fade(@black, 15%);
   }
   a&, button& {
     &:hover, &.hover, &:active, &.active {
@@ -62,6 +59,9 @@
   .card-design {
     border-color: @primary;
     background: @primary;
+  }
+  .card-content + .card-content {
+    border-top: 1px solid fade(@black, 15%);
   }
   a&, button& {
     &:hover, &.hover, &:active, &.active {
@@ -172,35 +172,6 @@
   .card-design {
     border: 0;
   }
-}
-
-// addons
-
-.card-item--head {
-  background: fade(@black, 15%);
-}
-
-.card-content + .card-content {
-  border-top: 1px solid fade(@black, 15%);
-}
-
-.card--horizontal {
-  .card-content + .card-content {
-    border: 0;
-    border-left: 1px solid fade(@black, 15%);
-  }
-}
-
-.card--horizontal--sm {
-  @media @min-sm {
-    .card--horizontal();
-  }
-}
-
-.card--max-height {
-  overflow-y: auto;
-  max-height: 30rem;
-  .overflow-style(@mode: inner);
 }
 
 // animation
