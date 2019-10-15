@@ -102,6 +102,13 @@
 
 // addons
 
+.overlay-container {
+  // override @overlay--space side spacing
+  @media @max-sm {
+    padding: 0 !important;
+  }
+}
+
 .overlay--disable {
   // disable custom animation
   .overlay-inner, .overlay-content {
@@ -110,10 +117,11 @@
   }
 }
 
-.overlay-container {
-  // override @overlay--space side spacing
-  @media @max-sm {
-    padding: 0 !important;
+.overlay--overflow-y {
+  .overlay-content {
+    overflow-y: auto;
+    max-height: 25rem;
+    .overflow-style(@mode: inner);
   }
 }
 

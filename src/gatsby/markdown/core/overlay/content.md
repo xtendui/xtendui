@@ -22,3 +22,12 @@ You can add as many overlay content as you like and custom contents like `.overl
   <demovanilla src="inline/core/overlay/content-multiple">
   </demovanilla>
 </demo>
+
+##Overflow
+
+Overlay with max sizes with automatic scrollbar on overflow with `overlay--overflow-y`.
+
+<demo>
+  <demovanilla src="inline/core/overlay/overflow-y">
+  </demovanilla>
+</demo>
