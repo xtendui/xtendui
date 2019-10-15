@@ -18,7 +18,7 @@ demo.htmlSource = `
     <h1>Parallax Title</h1>
   </div>
   <div class="demo--parallax-img">
-     ${img(1000, 150)}
+     ${img(1000, 150, 'full')}
   </div>
 </div>
 

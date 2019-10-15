@@ -50,7 +50,7 @@ demo.htmlSource = `
             <button type="button" class="btn btn--close" aria-label="Close"></button>
           </div>
           <div class="overlay-content">
-            ${img(1200, 1200)}
+            ${img(1200, 1200, 'full')}
           </div>
         </div>
       </div>

@@ -40,11 +40,6 @@
     border-color: @default;
     background: @white;
   }
-  .card-content + .card-content {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-top: 1px solid @default--dark;
-  }
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       color: @text--dark;
@@ -67,11 +62,6 @@
   .card-design {
     border-color: @primary;
     background: @primary;
-  }
-  .card-content + .card-content {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-top: 1px solid fade(@black, 15%);
   }
   a&, button& {
     &:hover, &.hover, &:active, &.active {
@@ -163,10 +153,8 @@
     background: transparent;
   }
   .card-content {
-    padding: 0;
-    & + .card-content {
-      border-top: 0;
-    }
+    padding: 0 !important;
+    border: 0 !important;
   }
 }
 
@@ -190,6 +178,23 @@
 
 .card-item--head {
   background: fade(@black, 15%);
+}
+
+.card-content + .card-content {
+  border-top: 1px solid fade(@black, 15%);
+}
+
+.card--horizontal {
+  .card-content + .card-content {
+    border: 0;
+    border-left: 1px solid fade(@black, 15%);
+  }
+}
+
+.card--horizontal--sm {
+  @media @min-sm {
+    .card--horizontal();
+  }
 }
 
 .card--max-height {

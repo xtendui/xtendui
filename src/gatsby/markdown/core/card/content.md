@@ -7,8 +7,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ##Image
 
-No need for class for full card elements, like images.
-
 <demo>
   <demovanilla src="inline/core/card/image">
   </demovanilla>
