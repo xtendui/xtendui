@@ -1,5 +1,4 @@
 import path from 'path'
-const img = require('components/snippets/img').default
 
 const dirs = path.dirname(__filename).split('/')
 export const demo = {
@@ -13,7 +12,7 @@ demo.htmlSource = `
   <div class="col-12 col-6--sm">
     <button type="button" class="card card--primary">
       <div class="card-design"></div>
-      <div class="card-addon card-addon--head">
+      <div class="card-item card-item--head">
         <div class="card-title">Lorem ipsum</div>
       </div>
       <div class="card-content">
@@ -28,7 +27,7 @@ demo.htmlSource = `
   <div class="col-12 col-6--sm">
     <button type="button" class="card card--primary card--full">
       <div class="card-design"></div>
-      <div class="card-addon card-addon--head">
+      <div class="card-item card-item--head">
         <div class="card-title">Lorem ipsum</div>
       </div>
       <div class="card-content">

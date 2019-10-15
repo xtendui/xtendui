@@ -22,6 +22,12 @@
     letter-spacing: 0;
     text-transform: none;
   }
+  .btn--close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    .btn--giant();
+  }
   // default options
   .card--medium();
 }
@@ -88,7 +94,7 @@
 
 .card--small {
   .font--small();
-  .card-addon, .card-content {
+  .card-item, .card-content {
     padding: 1.5rem 2rem;
   }
   .card-title {
@@ -108,7 +114,7 @@
 
 .card--medium {
   .font--medium();
-  .card-addon, .card-content {
+  .card-item, .card-content {
     padding: 2rem 2.5rem;
   }
   .card-title {
@@ -128,7 +134,7 @@
 
 .card--big {
   .font--big();
-  .card-addon, .card-content {
+  .card-item, .card-content {
     padding: 3rem 3.5rem;
   }
   .card-title {
@@ -149,6 +155,8 @@
 // special
 
 .card--full {
+  .list();
+  overflow: visible;
   color: @text;
   .card-design {
     border-color: transparent;
@@ -180,33 +188,15 @@
 
 // addons
 
-.card--full {
-  .list();
-  overflow: visible;
-}
-
-.card-addon--head {
+.card-item--head {
   background: fade(@black, 15%);
 }
 
-/*
 .card--max-height {
-  .card-content {
-    overflow-y: auto;
-    max-height: 25rem;
-    .overflow-style();
-  }
+  overflow-y: auto;
+  max-height: 30rem;
+  .overflow-style(@mode: inner);
 }
-
-.card--max-width {
-  width: auto;
-  .card-content {
-    overflow-x: auto;
-    max-width: 35rem;
-    .overflow-style();
-  }
-}
-*/
 
 // animation
 
