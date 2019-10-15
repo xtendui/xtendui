@@ -8,6 +8,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ##Max height
 
 <demo>
-  <demovanilla src="inline/extension/card/max-height" name="max height">
+  <demovanilla src="inline/core/card/max-height" name="max height">
   </demovanilla>
 </demo>

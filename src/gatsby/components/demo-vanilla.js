@@ -8,7 +8,6 @@ class DemoVanilla extends React.Component {
   render () {
     const { src, children, name } = this.props
     const demo = require('../code/' + src + '.js').demo
-    demo.name = demo.name
     demo.type = demo.type === 'core' ? 'demo' : demo.type
     return (
       <StaticQuery
