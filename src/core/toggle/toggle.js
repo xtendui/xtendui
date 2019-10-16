@@ -1350,8 +1350,10 @@ class Toggle {
           }
         }, time))
         // listener dispatch
-        const detail = self.eDetailSet()
-        self.object.dispatchEvent(new CustomEvent('start.xt.auto', { detail: detail }))
+        requestAnimationFrame( function () { // @FIX event called before removing classes
+          const detail = self.eDetailSet()
+          self.object.dispatchEvent(new CustomEvent('start.xt.auto', { detail: detail }))
+        })
       }
     }
   }
