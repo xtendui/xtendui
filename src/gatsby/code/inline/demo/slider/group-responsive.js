@@ -119,10 +119,8 @@ demo.htmlSource = `
   </div>
 
   <nav class="slider-pagination">
-    <div class="list list--default list-space--small align-items--center">
-      <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
-      </button>
-    </div>
+    <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
+    </button>
   </nav>
 
 </div>
