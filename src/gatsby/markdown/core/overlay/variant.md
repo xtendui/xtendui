@@ -13,3 +13,19 @@ Optional classes for assigning variant.
   <demovanilla src="inline/core/overlay/variant">
   </demovanilla>
 </demo>
+
+##Screen
+
+This demo uses [extension/overlay/close-fixed](/extension/overlay/close-fixed).
+
+<demo>
+  <demovanilla src="inline/core/overlay/screen">
+  </demovanilla>
+</demo>
+
+##Position
+
+<demo>
+  <demovanilla src="inline/core/overlay/position">
+  </demovanilla>
+</demo>

@@ -11,7 +11,7 @@ demo.htmlSource = `
 <div class="list list--default list-space--small align-items--center demo-source-from">
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      left
+      position left
     </button>
     <div class="overlay overlay--default overlay-position overlay-position--left">
       <div class="overlay-container">
@@ -39,7 +39,7 @@ demo.htmlSource = `
 
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      right
+      position right
     </button>
     <div class="overlay overlay--default overlay-position overlay-position--right">
       <div class="overlay-container">

@@ -7,8 +7,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ##Content
 
-This demo uses [extension/overlay/screen](/extension/overlay/screen) and [extension/overlay/position](/extension/overlay/position).
-
 By default `.overlay-content` is center with `margin: auto`. To position on top or bottom just give it `margin-top: 0` or `margin-bottom: 0`.
 
 <demo>
