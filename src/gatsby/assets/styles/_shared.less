@@ -21,8 +21,8 @@
   // animation
   img {
     transition-property: opacity;
-    transition-duration: @time--small;
-    transition-timing-function: @bez--out;
+    transition-duration: @time-small;
+    transition-timing-function: @bez-out;
   }
   &:hover, &.hover, &:active {
     img {
@@ -62,7 +62,7 @@
     }
   }
   .gatsby_btn--site_multiline_special {
-    background: linear-gradient(135deg, @grad--light);
+    background: linear-gradient(135deg, @grad-light);
     .btn--left& {
       .margin(left, .5em);
     }
@@ -76,12 +76,12 @@
   &:hover, &.hover, &:active, &.active {
     color: @text;
     .gatsby_btn--site_multiline_line {
-      background: linear-gradient(135deg, @grad--light);
+      background: linear-gradient(135deg, @grad-light);
     }
     .gatsby_btn--site_multiline_special {
       .margin(left, 0);
       .margin(right, 0);
-      background: linear-gradient(135deg, @grad--primary);
+      background: linear-gradient(135deg, @grad-primary);
       color: @white;
     }
     .gatsby_btn--site_multiline_special_text {
@@ -121,7 +121,7 @@
       left: 0;
       width: 100%;
       height: 2px;
-      background: @gray--200;
+      background: @gray-200;
     }
   }
   // animation
@@ -130,7 +130,7 @@
       left: 100%;
       width: 0;
       opacity: 0;
-      transition: all @time--medium @bez--out;
+      transition: all @time-medium @bez-out;
     }
   }
   &:hover, &.hover, &:active, &.active {
@@ -139,7 +139,7 @@
         left: 0;
         width: 100%;
         opacity: 1;
-        animation: anim-opacity--in @time--medium @bez--in, line--in @time--medium @bez--in;
+        animation: anim-opacity--in @time-medium @bez-in, line--in @time-medium @bez-in;
       }
     }
   }
@@ -174,15 +174,15 @@
   // animation
   .gatsby_site_article_anchor {
     opacity: 0;
-    transition: all @time--medium @bez--out;
+    transition: all @time-medium @bez-out;
   }
   &:hover, &.hover, &:active, &.active {
     a {
-      color: @primary !important;
+      color: @accent !important;
     }
     .gatsby_site_article_anchor {
       opacity: 1;
-      animation: anim-opacity--in @time--medium @bez--in;
+      animation: anim-opacity--in @time-medium @bez-in;
     }
   }
 }
@@ -206,7 +206,7 @@
     border-color: @white !important;
     background: @white !important;
     font-size: 17px;
-    color: @primary;
+    color: @accent;
     line-height: 1;
   }
 }

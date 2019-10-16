@@ -7,7 +7,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: @container--max;
+  max-width: @container-max;
 }
 
 /**
@@ -16,14 +16,14 @@
 
 // generate
 
-& when not (@container--space = false) {
+& when not (@container-space = false) {
 
   // generate-container-space-responsive
 
   .generate-container-space-responsive();
-  .generate-container-space-responsive(@i: length(@container--space)) when (@i > 0) {
+  .generate-container-space-responsive(@i: length(@container-space)) when (@i > 0) {
     .generate-container-space-responsive(@i - 1);
-    @container: extract(@container--space, @i);
+    @container: extract(@container-space, @i);
     @breakpoint: extract(@container, 1);
     @val: extract(@container, 2);
     & when (@breakpoint = none) {

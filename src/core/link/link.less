@@ -39,9 +39,9 @@
 
 a, .btn--link {
   .link--underline();
-  color: @primary;
+  color: @accent;
   &:hover, &.hover, &:active, &.active {
-    color: @primary--dark;
+    color: @accent--dark;
   }
 }
 
@@ -49,11 +49,11 @@ a, .btn--link {
 
 a, .btn--link {
   transition-property: color, background, opacity;
-  transition-duration: @time--medium;
-  transition-timing-function: @bez--out;
+  transition-duration: @time-medium;
+  transition-timing-function: @bez-out;
   &:hover, &.hover, &:active, &.active {
     transition-property: color, background, opacity;
-    transition-duration: @time--medium;
-    transition-timing-function: @bez--in;
+    transition-duration: @time-medium;
+    transition-timing-function: @bez-in;
   }
 }

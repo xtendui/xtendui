@@ -40,7 +40,7 @@
 }
 
 /**
- * @generate-class--layout
+ * @generate-layout
  */
 
 // list alignment
@@ -155,7 +155,7 @@
 
 // generate
 
-& when not (@generate-class--list = false) {
+& when not (@generate-list = false) {
 
   // generate-list
 
@@ -196,12 +196,12 @@
 
   // generate-list-responsive
 
-  & when not (@generate-class--list = true) {
+  & when not (@generate-list = true) {
 
     .generate-list-responsive();
-    .generate-list-responsive(@i: length(@generate-class--list)) when (@i > 0) {
+    .generate-list-responsive(@i: length(@generate-list)) when (@i > 0) {
       .generate-list-responsive(@i - 1);
-      @breakpoint: extract(@generate-class--list, @i);
+      @breakpoint: extract(@generate-list, @i);
       .generate-list(@breakpoint);
     }
 

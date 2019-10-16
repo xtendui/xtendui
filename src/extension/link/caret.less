@@ -1,11 +1,11 @@
 .caret {
-  .icon-xt(@content: @icon-xt--chevron-down, @size: @icon--small);
+  .icon-xt(@content: @icon-xt--chevron-down, @size: @icon-small);
   &:after {
     .icon--right();
   }
   // activation
   &.active {
-    .icon-xt(@content: @icon-xt--chevron-up, @size: @icon--small);
+    .icon-xt(@content: @icon-xt--chevron-up, @size: @icon-small);
     &:after {
       .anim-y-inverse.active();
     }
@@ -17,9 +17,9 @@
   }
   // inverse
   &.caret--inverse {
-    .icon-xt(@content: @icon-xt--chevron-up, @size: @icon--small);
+    .icon-xt(@content: @icon-xt--chevron-up, @size: @icon-small);
     &.active {
-      .icon-xt(@content: @icon-xt--chevron-down, @size: @icon--small);
+      .icon-xt(@content: @icon-xt--chevron-down, @size: @icon-small);
       &:after {
         .anim-y.active();
       }
@@ -32,9 +32,9 @@
   }
   // horizontal
   &.caret--horizontal {
-    .icon-xt(@content: @icon-xt--chevron-right, @size: @icon--small);
+    .icon-xt(@content: @icon-xt--chevron-right, @size: @icon-small);
     &.active {
-      .icon-xt(@content: @icon-xt--chevron-left, @size: @icon--small);
+      .icon-xt(@content: @icon-xt--chevron-left, @size: @icon-small);
       &:after {
         .anim-x-inverse.active();
       }
@@ -46,7 +46,7 @@
     }
     // inverse
     &.caret--inverse {
-      .icon-xt(@content: @icon-xt--chevron-left, @size: @icon--small, @position: before);
+      .icon-xt(@content: @icon-xt--chevron-left, @size: @icon-small, @position: before);
       &:after {
         content: '';
       }
@@ -54,7 +54,7 @@
         .icon--left();
       }
       &.active {
-        .icon-xt(@content: @icon-xt--chevron-right, @size: @icon--small, @position: before);
+        .icon-xt(@content: @icon-xt--chevron-right, @size: @icon-small, @position: before);
         &:before {
           .anim-x.active();
         }

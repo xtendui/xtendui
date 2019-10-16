@@ -1,5 +1,5 @@
 /**
- * @generate-class--util
+ * @generate-util
  */
 
 // various
@@ -360,7 +360,7 @@
 
 // generate
 
-& when not (@generate-class--util = false) {
+& when not (@generate-util = false) {
 
   // generate-utils
 
@@ -535,12 +535,12 @@
 
   // generate-util-responsive
 
-  & when not (@generate-class--util = true) {
+  & when not (@generate-util = true) {
 
     .generate-util-responsive();
-    .generate-util-responsive(@i: length(@generate-class--util)) when (@i > 0) {
+    .generate-util-responsive(@i: length(@generate-util)) when (@i > 0) {
       .generate-util-responsive(@i - 1);
-      @breakpoint: extract(@generate-class--util, @i);
+      @breakpoint: extract(@generate-util, @i);
       .generate-utils(@breakpoint);
     }
 
@@ -642,7 +642,7 @@
 }
 
 /**
- * @generate-class--flex
+ * @generate-flex
  */
 
 // flex-none
@@ -764,7 +764,7 @@
 
 // generate
 
-& when not (@generate-class--flex = false) {
+& when not (@generate-flex = false) {
 
   // generate-flex
 
@@ -785,12 +785,12 @@
 
   // generate-flex-responsive
 
-  & when not (@generate-class--flex = true) {
+  & when not (@generate-flex = true) {
 
     .generate-flex-responsive();
-    .generate-flex-responsive(@i: length(@generate-class--flex)) when (@i > 0) {
+    .generate-flex-responsive(@i: length(@generate-flex)) when (@i > 0) {
       .generate-flex-responsive(@i - 1);
-      @breakpoint: extract(@generate-class--flex, @i);
+      @breakpoint: extract(@generate-flex, @i);
       .generate-flex(@breakpoint);
     }
 
@@ -1000,7 +1000,7 @@
 }
 
 /**
- * @generate-class--margin
+ * @generate-margin
  */
 
 // margin
@@ -1158,7 +1158,7 @@
 
 // generate
 
-& when not (@generate-class--margin = false) {
+& when not (@generate-margin = false) {
 
   @margin--arr: none, y, x, t, b, l, r;
 
@@ -1258,12 +1258,12 @@
 
   // generate-margin-responsive
 
-  & when not (@generate-class--margin = true) {
+  & when not (@generate-margin = true) {
 
     .generate-margin-responsive();
-    .generate-margin-responsive(@i: length(@generate-class--margin)) when (@i > 0) {
+    .generate-margin-responsive(@i: length(@generate-margin)) when (@i > 0) {
       .generate-margin-responsive(@i - 1);
-      @breakpoint: extract(@generate-class--margin, @i);
+      @breakpoint: extract(@generate-margin, @i);
       .generate-margins(@breakpoint);
     }
 
@@ -1272,7 +1272,7 @@
 }
 
 /**
- * @generate-class--padding
+ * @generate-padding
  */
 
 // padding
@@ -1372,7 +1372,7 @@
 
 // generate
 
-& when not (@generate-class--padding = false) {
+& when not (@generate-padding = false) {
 
   @padding--arr: none, y, x, t, b, l, r;
 
@@ -1452,12 +1452,12 @@
 
   // generate-padding-responsive
 
-  & when not (@generate-class--padding = true) {
+  & when not (@generate-padding = true) {
 
     .generate-padding-responsive();
-    .generate-padding-responsive(@i: length(@generate-class--padding)) when (@i > 0) {
+    .generate-padding-responsive(@i: length(@generate-padding)) when (@i > 0) {
       .generate-padding-responsive(@i - 1);
-      @breakpoint: extract(@generate-class--padding, @i);
+      @breakpoint: extract(@generate-padding, @i);
       .generate-paddings(@breakpoint);
     }
 

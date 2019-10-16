@@ -7,14 +7,14 @@
   a&, button& {
     cursor: pointer;
     &:hover, &.hover, &:active, &.active {
-      z-index: @index--active;
+      z-index: @index-active;
     }
   }
 }
 
 .card-inner {
   position: relative;
-  z-index: @index--base; // fix :before negative z-index
+  z-index: @index-base; // fix :before negative z-index
 }
 
 .card-inner, .card-design, .card-content {

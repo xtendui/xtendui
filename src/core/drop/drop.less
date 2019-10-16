@@ -6,7 +6,7 @@
 
 // space
 
-@drop--space: 6px; // space between button and drop
+@drop-space: 6px; // space between button and drop
 
 /**
  * drop
@@ -38,9 +38,9 @@
   > .drop-inner {
     color: @text;
     > .drop-design {
-      border-color: @gray--300;
+      border-color: @gray-300;
       background: @white;
-      box-shadow: @shadow--light;
+      box-shadow: @shadow-light;
     }
   }
   > .drop-inner > .drop-content > .list--drop {
@@ -52,9 +52,9 @@
   > .drop-inner {
     .text--inverse();
     > .drop-design {
-      border-color: @gray--800;
-      background: @gray--800;
-      box-shadow: @shadow--dark;
+      border-color: @gray-800;
+      background: @gray-800;
+      box-shadow: @shadow-dark;
     }
   }
   > .drop-inner > .drop-content > .list--drop {
@@ -102,7 +102,7 @@
 
 .drop-container {
   &, > .drop {
-    animation-duration: @time--medium + @time--small; // needed for .out animation timing, put max animation time
+    animation-duration: @time-medium + @time-small; // needed for .out animation timing, put max animation time
   }
   &.active {
     > .drop > .drop-inner {
@@ -111,7 +111,7 @@
       }
       > .drop-content {
         .anim-y.active();
-        animation-delay: @time--small;
+        animation-delay: @time-small;
       }
     }
     > .backdrop {
@@ -122,7 +122,7 @@
     > .drop > .drop-inner {
       > .drop-design {
         .anim-zoom.out();
-        animation-delay: @time--small;
+        animation-delay: @time-small;
       }
       > .drop-content {
         .anim-y.out();

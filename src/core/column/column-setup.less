@@ -57,12 +57,12 @@
 }
 
 /**
- * @generate-class--grid
+ * @generate-grid
  */
 
 // generate
 
-& when not (@generate-class--grid = false) {
+& when not (@generate-grid = false) {
 
   // generate-grid
 
@@ -105,12 +105,12 @@
 
   // generate-grid-responsive
 
-  & when not (@generate-class--grid = true) {
+  & when not (@generate-grid = true) {
 
     .generate-grid-responsive();
-    .generate-grid-responsive(@i: length(@generate-class--grid)) when (@i > 0) {
+    .generate-grid-responsive(@i: length(@generate-grid)) when (@i > 0) {
       .generate-grid-responsive(@i - 1);
-      @breakpoint: extract(@generate-class--grid, @i);
+      @breakpoint: extract(@generate-grid, @i);
       .generate-grids(@breakpoint);
     }
 

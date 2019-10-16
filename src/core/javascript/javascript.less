@@ -7,7 +7,7 @@
 @backdrop--opacity: .1;
 
 .backdrop {
-  background: darken(@primary, 80%);
+  background: darken(@accent, 80%);
 }
 
 // animation
@@ -17,13 +17,13 @@
   &.active {
     animation-name: anim-backdrop--in;
     animation-duration: inherit;
-    animation-timing-function: @bez--in;
+    animation-timing-function: @bez-in;
     animation-fill-mode: forwards;
   }
   &.out {
     animation-name: anim-backdrop--out;
     animation-duration: inherit;
-    animation-timing-function: @bez--out;
+    animation-timing-function: @bez-out;
     animation-fill-mode: forwards;
   }
 }

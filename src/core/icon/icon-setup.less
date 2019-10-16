@@ -7,7 +7,7 @@
   vertical-align: middle;
   .align-self(center);
   position: relative;
-  font-size: @icon--medium;
+  font-size: @icon-medium;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -19,7 +19,7 @@
   img& {
     top: -.1em;
     width: auto;
-    height: @icon--medium;
+    height: @icon-medium;
   }
 }
 
@@ -65,12 +65,12 @@
 }
 
 /**
- * @generate-class--icon
+ * @generate-icon
  */
 
 // .icon-xt
 
-.icon-xt(@content, @size: @icon--medium, @position: after) {
+.icon-xt(@content, @size: @icon-medium, @position: after) {
   & when (@position = before) {
     &:before {
       .icon-xt();
@@ -89,7 +89,7 @@
 
 // .icon
 
-.icon(@content, @size: @icon--medium, @position: after) {
+.icon(@content, @size: @icon-medium, @position: after) {
   & when (@position = before) {
     &:before {
       .icon-theme();
@@ -108,7 +108,7 @@
 
 // generate
 
-& when (@generate-class--icon) {
+& when (@generate-icon) {
 
   // generate-icons-xt
 

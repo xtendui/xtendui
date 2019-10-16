@@ -40,27 +40,27 @@
 .card--default {
   color: @text;
   .card-design {
-    border-color: @default;
-    background: @default;
+    border-color: @gray-200;
+    background: @gray-200;
   }
   .card-item + .card-item {
     &:before {
-      background: fade(@gray--800, 10%);
+      background: fade(@gray-800, 10%);
     }
   }
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       color: @text--dark;
       .card-design {
-        border-color: @default--dark;
-        background: @default--dark;
+        border-color: @gray-200--dark;
+        background: @gray-200--dark;
       }
     }
     &:active, &.active {
-      box-shadow: @shadow--light;
+      box-shadow: @shadow-light;
       .card-design {
-        border-color: @default--dark;
-        box-shadow: @shadow--light;
+        border-color: @gray-200--dark;
+        box-shadow: @shadow-light;
       }
     }
   }
@@ -69,27 +69,27 @@
 .card--primary {
   .text--inverse();
   .card-design {
-    border-color: @primary;
-    background: @primary;
+    border-color: @accent;
+    background: @accent;
   }
   .card-item + .card-item {
     &:before {
-      background: fade(@gray--200, 10%);
+      background: fade(@gray-200, 10%);
     }
   }
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       color: @text--inverse--dark;
       .card-design {
-        border-color: @primary--dark;
-        background: @primary--dark;
+        border-color: @accent--dark;
+        background: @accent--dark;
       }
     }
     &:active, &.active {
-      box-shadow: @shadow--primary;
+      box-shadow: @shadow-primary;
       .card-design {
-        border-color: @primary--dark;
-        box-shadow: @shadow--primary;
+        border-color: @accent--dark;
+        box-shadow: @shadow-primary;
       }
     }
   }
@@ -213,33 +213,33 @@
 .card {
   a&, button& {
     transition-property: all;
-    transition-duration: @time--big;
-    transition-timing-function: @bez--out;
+    transition-duration: @time-big;
+    transition-timing-function: @bez-out;
     .card-design {
       transition-property: all;
-      transition-duration: @time--big;
-      transition-timing-function: @bez--out;
+      transition-duration: @time-big;
+      transition-timing-function: @bez-out;
     }
     .card-item {
       transition-property: transform;
-      transition-duration: @time--big;
-      transition-timing-function: @bez--out;
+      transition-duration: @time-big;
+      transition-timing-function: @bez-out;
     }
     &:hover, &.hover, &:active, &.active {
       transform: translateY(-.5rem) scale(1.03, 1.05);
       transition-property: all;
-      transition-duration: @time--big;
-      transition-timing-function: @bez--in;
+      transition-duration: @time-big;
+      transition-timing-function: @bez-in;
       .card-design {
         transition-property: all;
-        transition-duration: @time--big;
-        transition-timing-function: @bez--in;
+        transition-duration: @time-big;
+        transition-timing-function: @bez-in;
       }
       .card-item {
         transform: scale(0.97, 0.95);
         transition-property: transform;
-        transition-duration: @time--big;
-        transition-timing-function: @bez--in;
+        transition-duration: @time-big;
+        transition-timing-function: @bez-in;
       }
     }
   }

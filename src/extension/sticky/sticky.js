@@ -81,7 +81,7 @@ class Sticky extends Xt.Toggle {
       } else {
         el.classList.remove('sticky-hide--up')
       }
-      // @index--sticky by javascript 100 and decreses with sequential sticky
+      // @index-sticky by javascript 100 and decreses with sequential sticky
       el.style.zIndex = Xt.getStickyIndex()
     }
   }

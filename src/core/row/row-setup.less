@@ -13,7 +13,7 @@
 }
 
 /**
- * @generate-class--row
+ * @generate-row
  */
 
 // row-space
@@ -93,7 +93,7 @@
 
 // generate
 
-& when not (@generate-class--row = false) {
+& when not (@generate-row = false) {
 
   // generate-row
 
@@ -114,12 +114,12 @@
 
   // generate-row-responsive
 
-  & when not (@generate-class--row = true) {
+  & when not (@generate-row = true) {
 
     .generate-row-responsive();
-    .generate-row-responsive(@i: length(@generate-class--row)) when (@i > 0) {
+    .generate-row-responsive(@i: length(@generate-row)) when (@i > 0) {
       .generate-row-responsive(@i - 1);
-      @breakpoint: extract(@generate-class--row, @i);
+      @breakpoint: extract(@generate-row, @i);
       .generate-row(@breakpoint);
     }
 

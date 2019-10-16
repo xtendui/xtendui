@@ -6,15 +6,15 @@
 
 // generate class: [false], [true] non responsive, [sm, md, lg] responsive breakpoints
 
-@generate-class--icon: true;
+@generate-icon: true;
 
 // size
 
-@icon--tiny: .5em;
-@icon--small: .75em;
-@icon--medium: 1em;
-@icon--big: 1.25em;
-@icon--giant: 1.5em;
+@icon-tiny: .5em;
+@icon-small: .75em;
+@icon-medium: 1em;
+@icon-big: 1.25em;
+@icon-giant: 1.5em;
 
 /**
  * icon
@@ -23,63 +23,63 @@
 // size
 
 .icon--tiny {
-  font-size: @icon--tiny;
+  font-size: @icon-tiny;
   img& {
     width: auto;
-    height: @icon--tiny;
+    height: @icon-tiny;
   }
   // make same height as 1em
   vertical-align: middle;
-  margin-top: calc((1em - @icon--tiny) / 2);
-  margin-bottom: calc((1em - @icon--tiny) / 2);
+  margin-top: calc((1em - @icon-tiny) / 2);
+  margin-bottom: calc((1em - @icon-tiny) / 2);
 }
 
 .icon--small {
-  font-size: @icon--small;
+  font-size: @icon-small;
   img& {
     width: auto;
-    height: @icon--small;
+    height: @icon-small;
   }
   // make same height as 1em
   vertical-align: middle;
-  margin-top: calc((1em - @icon--small) / 2);
-  margin-bottom: calc((1em - @icon--small) / 2);
+  margin-top: calc((1em - @icon-small) / 2);
+  margin-bottom: calc((1em - @icon-small) / 2);
 }
 
 .icon--medium {
-  font-size: @icon--medium;
+  font-size: @icon-medium;
   img& {
     width: auto;
-    height: @icon--medium;
+    height: @icon-medium;
   }
   // make same height as 1em
   vertical-align: middle;
-  margin-top: calc((1em - @icon--medium) / 2);
-  margin-bottom: calc((1em - @icon--medium) / 2);
+  margin-top: calc((1em - @icon-medium) / 2);
+  margin-bottom: calc((1em - @icon-medium) / 2);
 }
 
 .icon--big {
-  font-size: @icon--big;
+  font-size: @icon-big;
   img& {
     width: auto;
-    height: @icon--big;
+    height: @icon-big;
   }
   // make same height as 1em
   vertical-align: middle;
-  margin-top: calc((1em - @icon--big) / 2);
-  margin-bottom: calc((1em - @icon--big) / 2);
+  margin-top: calc((1em - @icon-big) / 2);
+  margin-bottom: calc((1em - @icon-big) / 2);
 }
 
 .icon--giant {
-  font-size: @icon--giant;
+  font-size: @icon-giant;
   img& {
     width: auto;
-    height: @icon--giant;
+    height: @icon-giant;
   }
   // make same height as 1em
   vertical-align: middle;
-  margin-top: calc((1em - @icon--giant) / 2);
-  margin-bottom: calc((1em - @icon--giant) / 2);
+  margin-top: calc((1em - @icon-giant) / 2);
+  margin-bottom: calc((1em - @icon-giant) / 2);
 }
 
 // space
@@ -109,7 +109,7 @@
 }
 
 // icons
-// USAGE LESS: .icon-xt(@content: @icon-xt--close, @size: @icon--small, @position: after);
+// USAGE LESS: .icon-xt(@content: @icon-xt--close, @size: @icon-small, @position: after);
 // USAGE MARKUP: <span class="icon-xt--close"></span>
 
 @icons-xt: close, chevron-down, chevron-left, chevron-right, chevron-up, check, circle;
@@ -141,7 +141,7 @@
 }
 
 // icons
-// USAGE LESS: .icon(@content: @icon-theme--menu, @size: @icon--small, @position: after);
+// USAGE LESS: .icon(@content: @icon-theme--menu, @size: @icon-small, @position: after);
 // USAGE MARKUP: <span class="icon-theme--menu"></span>
 
 @icons-theme: menu, search; // this will generate classes .icon-theme--{name}

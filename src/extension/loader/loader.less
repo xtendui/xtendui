@@ -26,10 +26,10 @@
     }
     &:nth-child(1) {
       circle {
-        stroke: @primary;
+        stroke: @accent;
         stroke-dashoffset: 628;
         transform: rotateY(0deg) rotateZ(-90deg);
-        animation: anim-spinner @time--big * 2 infinite @bez--in;
+        animation: anim-spinner @time-big * 2 infinite @bez-in;
       }
     }
     &:nth-child(2) {
@@ -37,7 +37,7 @@
       top: 0;
       left: 0;
       circle {
-        stroke: fade(@primary, 5%);
+        stroke: fade(@accent, 5%);
         stroke-dashoffset: 0;
       }
     }
@@ -54,7 +54,7 @@
   50% {
     stroke-dashoffset: 0;
     transform: rotateY(0deg) rotateZ(90deg);
-    animation-timing-function: @bez--out;
+    animation-timing-function: @bez-out;
     // fix no support transform-box: border-box;
     transform-origin: 48% 48%;
   }
@@ -78,12 +78,12 @@
   .filler {
     span:nth-child(1) {
       width: 0;
-      background: linear-gradient(90deg, @grad--primary);
-      box-shadow: @shadow--primary;
-      animation: anim-loader--x @time--big * 2 infinite @bez--in;
+      background: linear-gradient(90deg, @grad-primary);
+      box-shadow: @shadow-primary;
+      animation: anim-loader--x @time-big * 2 infinite @bez-in;
     }
     span:nth-child(2) {
-      background: fade(@primary, 5%);
+      background: fade(@accent, 5%);
     }
   }
 }
@@ -92,12 +92,12 @@
   .filler {
     span:nth-child(1) {
       height: 0;
-      background: linear-gradient(0deg, @grad--primary);
-      box-shadow: @shadow--primary;
-      animation: anim-loader--y @time--big * 2 infinite @bez--in;
+      background: linear-gradient(0deg, @grad-primary);
+      box-shadow: @shadow-primary;
+      animation: anim-loader--y @time-big * 2 infinite @bez-in;
     }
     span:nth-child(2) {
-      background: fade(@primary, 5%);
+      background: fade(@accent, 5%);
     }
   }
 }
@@ -110,7 +110,7 @@
   50% {
     left: 0;
     width: 100%;
-    animation-timing-function: @bez--out;
+    animation-timing-function: @bez-out;
   }
   100% {
     left: 100%;
@@ -126,7 +126,7 @@
   50% {
     top: 0;
     height: 100%;
-    animation-timing-function: @bez--out;
+    animation-timing-function: @bez-out;
   }
   100% {
     top: 0;
@@ -174,27 +174,27 @@
   &.active {
     opacity: 1;
     transition-property: opacity;
-    transition-duration: @time--small;
-    transition-timing-function: @bez--in;
+    transition-duration: @time-small;
+    transition-timing-function: @bez-in;
     .spinner, .filler {
       opacity: 1;
       transform: scale(1);
       transition-property: opacity, transform;
-      transition-duration: @time--small;
-      transition-timing-function: @bez--in;
+      transition-duration: @time-small;
+      transition-timing-function: @bez-in;
     }
   }
   &.out {
     opacity: 0;
     transition-property: opacity;
-    transition-duration: @time--small;
-    transition-timing-function: @bez--out;
+    transition-duration: @time-small;
+    transition-timing-function: @bez-out;
     .spinner, .filler {
       opacity: 0;
       transform: scale(.75, .75);
       transition-property: opacity, transform;
-      transition-duration: @time--small;
-      transition-timing-function: @bez--out;
+      transition-duration: @time-small;
+      transition-timing-function: @bez-out;
     }
   }
 }

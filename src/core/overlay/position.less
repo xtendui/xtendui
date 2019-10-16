@@ -22,7 +22,7 @@
 // animation
 
 .overlay-position {
-  animation-duration: @time--medium + @time--small; // needed for .out animation timing, put max animation time
+  animation-duration: @time-medium + @time-small; // needed for .out animation timing, put max animation time
   &.active {
     &.overlay-position--left {
       .overlay-design {
@@ -30,7 +30,7 @@
       }
       .overlay-content, .overlay-block, .btn-close {
         .anim-x.active();
-        animation-delay: @time--small;
+        animation-delay: @time-small;
       }
     }
     &.overlay-position--right {
@@ -39,7 +39,7 @@
       }
       .overlay-content, .overlay-block, .btn-close {
         .anim-x-inverse.active();
-        animation-delay: @time--small;
+        animation-delay: @time-small;
       }
     }
   }
@@ -47,7 +47,7 @@
     &.overlay-position--left {
       .overlay-design {
         .anim-x-inverse.out();
-        animation-delay: @time--small;
+        animation-delay: @time-small;
       }
       .overlay-content, .overlay-block, .btn-close {
         .anim-x-inverse.out();
@@ -56,7 +56,7 @@
     &.overlay-position--right {
       .overlay-design {
         .anim-x.out();
-        animation-delay: @time--small;
+        animation-delay: @time-small;
       }
       .overlay-content, .overlay-block, .btn-close {
         .anim-x.out();

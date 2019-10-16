@@ -30,19 +30,19 @@
 }
 
 /**
- * @generate-class--card--horizontal
+ * @generate-card--horizontal
  */
 
 // generate
 
-& when not (@generate-class--card--horizontal = false) {
+& when not (@generate-card--horizontal = false) {
 
   // generate-card--horizontal-responsive
 
   .generate-card--horizontal-responsive();
-  .generate-card--horizontal-responsive(@i: length(@generate-class--card--horizontal)) when (@i > 0) {
+  .generate-card--horizontal-responsive(@i: length(@generate-card--horizontal)) when (@i > 0) {
     .generate-card--horizontal-responsive(@i - 1);
-    @breakpoint: extract(@generate-class--card--horizontal, @i);
+    @breakpoint: extract(@generate-card--horizontal, @i);
     & when (@breakpoint = none) {
       .card--horizontal {
         .card--horizontal() !important;

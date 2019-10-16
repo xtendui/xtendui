@@ -10,7 +10,7 @@
   .flex-auto();
   width: 100%;
   position: relative;
-  z-index: @index--base; // fix :before negative z-index
+  z-index: @index-base; // fix :before negative z-index
   .margin(y, medium);
   &@{alert--design} {
     .design-setup();
@@ -40,8 +40,8 @@
   .alert--medium();
   .text--inverse();
   &@{alert--design} {
-    border-color: @gray--800;
-    background: @gray--800;
+    border-color: @gray-800;
+    background: @gray-800;
   }
 }
 
@@ -49,8 +49,8 @@
   .alert--medium();
   color: @text;
   &@{alert--design} {
-    border-color: @gray--200;
-    background: @gray--200;
+    border-color: @gray-200;
+    background: @gray-200;
   }
 }
 

@@ -4,7 +4,7 @@
 
 .backdrop {
   position: fixed;
-  z-index: @index--backdrop;
+  z-index: @index-backdrop;
   top: 0;
   right: 0;
   width: 100%;
@@ -103,7 +103,7 @@ html.xt-scrollbar {
   margin-top: -9px;
   width: 100px;
   height: 18px;
-  z-index: @index--indicator;
+  z-index: @index-indicator;
   line-height: 0;
   text-align: right;
   &:before {
@@ -147,7 +147,7 @@ html.xt-scrollbar {
 .xt-indicator--start-real {
   background-color: red;
   opacity: .3;
-  z-index: @index--indicator - 1;
+  z-index: @index-indicator - 1;
   &:before {
     content: 'start real';
     color: white;
@@ -158,7 +158,7 @@ html.xt-scrollbar {
 .xt-indicator--end-real {
   background-color: blue;
   opacity: .3;
-  z-index: @index--indicator - 1;
+  z-index: @index-indicator - 1;
   &:before {
     content: 'end real';
     color: white;

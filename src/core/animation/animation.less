@@ -6,17 +6,17 @@
 
 // time
 
-@time--tiny: 100ms;
-@time--small: 250ms;
-@time--medium: 500ms;
-@time--big: 1000ms;
-@time--giant: 2000ms;
+@time-tiny: 100ms;
+@time-small: 250ms;
+@time-medium: 500ms;
+@time-big: 1000ms;
+@time-giant: 2000ms;
 
 // beziers
 
 @bez: @bez-cheetah;
-@bez--in: @bez-cheetah;
-@bez--out: @bez-cheetah;
+@bez-in: @bez-cheetah;
+@bez-out: @bez-cheetah;
 
 @bez-ease: ease; // others at https://easings.net/
 @bez-cheetah: ~'cubic-bezier(.14,.63,0,1)';
@@ -34,14 +34,14 @@
 opacity: 0;
 transform: translateX(-1.5rem);
 transition-property: all;
-transition-duration: @time--medium;
-transition-timing-function: @bez--out;
+transition-duration: @time-medium;
+transition-timing-function: @bez-out;
 &:hover, &.hover, &:active, &.active {
   opacity: 1;
   transform: translateX(0);
   transition-property: all;
-  transition-duration: @time--medium;
-  transition-timing-function: @bez--in;
+  transition-duration: @time-medium;
+  transition-timing-function: @bez-in;
 }
 */
 
@@ -79,15 +79,15 @@ transition-timing-function: @bez--out;
   &.active {
     opacity: 0;
     animation-name: anim-opacity--in;
-    animation-duration: @time--medium;
-    animation-timing-function: @bez--in;
+    animation-duration: @time-medium;
+    animation-timing-function: @bez-in;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
     animation-name: anim-opacity--out;
-    animation-duration: @time--medium;
-    animation-timing-function: @bez--out;
+    animation-duration: @time-medium;
+    animation-timing-function: @bez-out;
     animation-fill-mode: forwards;
   }
 }
@@ -116,15 +116,15 @@ transition-timing-function: @bez--out;
   &.active {
     opacity: 0;
     animation-name: anim-zoom--in;
-    animation-duration: @time--medium;
-    animation-timing-function: @bez--in;
+    animation-duration: @time-medium;
+    animation-timing-function: @bez-in;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
     animation-name: anim-zoom--out;
-    animation-duration: @time--medium;
-    animation-timing-function: @bez--out;
+    animation-duration: @time-medium;
+    animation-timing-function: @bez-out;
     animation-fill-mode: forwards;
   }
 }
@@ -157,15 +157,15 @@ transition-timing-function: @bez--out;
   &.active {
     opacity: 0;
     animation-name: anim-y--in;
-    animation-duration: @time--medium;
-    animation-timing-function: @bez--in;
+    animation-duration: @time-medium;
+    animation-timing-function: @bez-in;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
     animation-name: anim-y--out;
-    animation-duration: @time--medium;
-    animation-timing-function: @bez--out;
+    animation-duration: @time-medium;
+    animation-timing-function: @bez-out;
     animation-fill-mode: forwards;
   }
 }
@@ -198,15 +198,15 @@ transition-timing-function: @bez--out;
   &.active {
     opacity: 0;
     animation-name: anim-y-inverse--in;
-    animation-duration: @time--medium;
-    animation-timing-function: @bez--in;
+    animation-duration: @time-medium;
+    animation-timing-function: @bez-in;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
     animation-name: anim-y-inverse--out;
-    animation-duration: @time--medium;
-    animation-timing-function: @bez--out;
+    animation-duration: @time-medium;
+    animation-timing-function: @bez-out;
     animation-fill-mode: forwards;
   }
 }
@@ -239,15 +239,15 @@ transition-timing-function: @bez--out;
   &.active {
     opacity: 0;
     animation-name: anim-x--in;
-    animation-duration: @time--medium;
-    animation-timing-function: @bez--in;
+    animation-duration: @time-medium;
+    animation-timing-function: @bez-in;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
     animation-name: anim-x--out;
-    animation-duration: @time--medium;
-    animation-timing-function: @bez--out;
+    animation-duration: @time-medium;
+    animation-timing-function: @bez-out;
     animation-fill-mode: forwards;
   }
 }
@@ -280,15 +280,15 @@ transition-timing-function: @bez--out;
   &.active {
     opacity: 0;
     animation-name: anim-x-inverse--in;
-    animation-duration: @time--medium;
-    animation-timing-function: @bez--in;
+    animation-duration: @time-medium;
+    animation-timing-function: @bez-in;
     animation-fill-mode: forwards;
   }
   &.out {
     opacity: 1;
     animation-name: anim-x-inverse--out;
-    animation-duration: @time--medium;
-    animation-timing-function: @bez--out;
+    animation-duration: @time-medium;
+    animation-timing-function: @bez-out;
     animation-fill-mode: forwards;
   }
 }
@@ -324,14 +324,14 @@ transition-timing-function: @bez--out;
 .collapse--height, .collapse--width {
   &.active {
     transition-property: height, width;
-    transition-duration: @time--medium;
+    transition-duration: @time-medium;
     transition-delay: initial;
-    transition-timing-function: @bez--in;
+    transition-timing-function: @bez-in;
   }
   &.out {
     transition-property: height, width;
-    transition-duration: @time--medium;
+    transition-duration: @time-medium;
     transition-delay: initial;
-    transition-timing-function: @bez--out;
+    transition-timing-function: @bez-out;
   }
 }

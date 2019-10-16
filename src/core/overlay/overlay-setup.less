@@ -5,7 +5,7 @@
 .overlay {
   .toggle--flex();
   position: fixed;
-  z-index: @index--overlay;
+  z-index: @index-overlay;
   top: 0;
   left: 0;
   bottom: 0; // @FIX no height or it bugs collapse animation
@@ -28,7 +28,7 @@
 .overlay-inner {
   .align-self(center);
   position: relative;
-  z-index: @index--overlay;
+  z-index: @index-overlay;
   width: 100%;
 }
 
@@ -111,9 +111,9 @@
  */
 
 .generate-overlay-space-responsive();
-.generate-overlay-space-responsive(@i: length(@overlay--space)) when (@i > 0) {
+.generate-overlay-space-responsive(@i: length(@overlay-space)) when (@i > 0) {
   .generate-overlay-space-responsive(@i - 1);
-  @overlay: extract(@overlay--space, @i);
+  @overlay: extract(@overlay-space, @i);
   @breakpoint: extract(@overlay, 1);
   @val: extract(@overlay, 2);
   & when (@breakpoint = none) {

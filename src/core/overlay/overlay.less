@@ -8,16 +8,16 @@
 
 // space
 
-@overlay--space: @container--space; // overlay side spacing
+@overlay-space: @container-space; // overlay side spacing
 
 // size
 
 @overlays: tiny, small, medium, big, giant, full; // if you change this change also variables names below
-@overlay--tiny: @breakpoint--xs - 60;
-@overlay--small: @breakpoint--sm - 60;
-@overlay--medium: @breakpoint--md - 60;
-@overlay--big: @breakpoint--lg - 60;
-@overlay--giant: @breakpoint--xl - 60;
+@overlay--tiny: @breakpoint-xs - 60;
+@overlay--small: @breakpoint-sm - 60;
+@overlay--medium: @breakpoint-md - 60;
+@overlay--big: @breakpoint-lg - 60;
+@overlay--giant: @breakpoint-xl - 60;
 @overlay--full: none;
 
 /**
@@ -47,9 +47,9 @@
 
 .overlay--default {
   .overlay-design {
-    border-color: @gray--300;
+    border-color: @gray-300;
     background: @white;
-    box-shadow: @shadow--light;
+    box-shadow: @shadow-light;
   }
   .overlay-inner {
     color: @text;
@@ -58,15 +58,15 @@
     .btn--text();
   }
   .overlay-content + .overlay-content {
-    border-top: 1px solid fade(@gray--800, 10%);
+    border-top: 1px solid fade(@gray-800, 10%);
   }
 }
 
 .overlay--dark {
   .overlay-design {
-    border-color: @gray--800;
-    background: @gray--800;
-    box-shadow: @shadow--dark;
+    border-color: @gray-800;
+    background: @gray-800;
+    box-shadow: @shadow-dark;
   }
   .overlay-inner {
     .text--inverse();
@@ -75,7 +75,7 @@
     .btn--text();
   }
   .overlay-content + .overlay-content {
-    border-top: 1px solid fade(@gray--200, 10%);
+    border-top: 1px solid fade(@gray-200, 10%);
   }
 }
 
@@ -102,7 +102,7 @@
 // addons
 
 .overlay-container {
-  // override @overlay--space side spacing
+  // override @overlay-space side spacing
   @media @max-sm {
     padding: 0 !important;
   }
@@ -127,14 +127,14 @@
 // animation
 
 .overlay {
-  animation-duration: @time--medium + @time--small; // needed for .out animation timing, put max animation time
+  animation-duration: @time-medium + @time-small; // needed for .out animation timing, put max animation time
   &.active {
     .overlay-design {
       .anim-zoom.active();
     }
     .overlay-content, .overlay-block, .btn-close {
       .anim-y.active();
-      animation-delay: @time--small;
+      animation-delay: @time-small;
     }
     > .backdrop {
       .backdrop.active();
@@ -143,7 +143,7 @@
   &.out {
     .overlay-design {
       .anim-zoom.out();
-      animation-delay: @time--small;
+      animation-delay: @time-small;
     }
     .overlay-content, .overlay-block, .btn-close {
       .anim-y.out();

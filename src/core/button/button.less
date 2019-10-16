@@ -22,31 +22,31 @@
 
 .btn--default {
   .link--none();
-  border-color: @default;
-  background: @default;
+  border-color: @gray-200;
+  background: @gray-200;
   color: @text;
   &:hover, &.hover, &:active, &.active {
-    border-color: @default--dark;
-    background: @default--dark;
+    border-color: @gray-200--dark;
+    background: @gray-200--dark;
     color: @text--dark;
   }
   &:active, &.active {
-    box-shadow: @shadow--light;
+    box-shadow: @shadow-light;
   }
 }
 
 .btn--primary {
   .link--none();
-  border-color: @primary;
-  background: @primary;
+  border-color: @accent;
+  background: @accent;
   color: @text--inverse;
   &:hover, &.hover, &:active, &.active {
-    border-color: @primary--dark;
-    background: @primary--dark;
+    border-color: @accent--dark;
+    background: @accent--dark;
     color: @text--inverse--dark;
   }
   &:active, &.active {
-    box-shadow: @shadow--primary;
+    box-shadow: @shadow-primary;
   }
 }
 
@@ -179,12 +179,12 @@
 
 .btn {
   transition-property: all;
-  transition-duration: @time--big;
-  transition-timing-function: @bez--out;
+  transition-duration: @time-big;
+  transition-timing-function: @bez-out;
   &:hover, &.hover, &:active, &.active {
     transition-property: all;
-    transition-duration: @time--big;
-    transition-timing-function: @bez--in;
+    transition-duration: @time-big;
+    transition-timing-function: @bez-in;
   }
 }
 
@@ -197,5 +197,5 @@
   .btn--text();
   .btn--giant();
   .btn--icon();
-  .icon-xt(@content: @icon-xt--close, @size: @icon--medium);
+  .icon-xt(@content: @icon-xt--close, @size: @icon-medium);
 }
