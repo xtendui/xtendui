@@ -39,9 +39,9 @@ demo.htmlSource = `
 
     <div data-xt-overlay>
       <button type="button" class="btn btn--primary">
-        dark
+        primary
       </button>
-      <div class="overlay overlay--dark">
+      <div class="overlay overlay--primary">
         <div class="overlay-container">
           <div class="overlay-inner">
             <div class="overlay-design"></div>

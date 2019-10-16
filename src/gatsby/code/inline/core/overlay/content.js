@@ -11,9 +11,9 @@ demo.htmlSource = `
 <div class="list list--default list-space--small align-items--center demo-source-from">
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      dark
+      primary
     </button>
-    <div class="overlay overlay--dark">
+    <div class="overlay overlay--primary">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>

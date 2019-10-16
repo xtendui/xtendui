@@ -41,9 +41,9 @@ demo.htmlSource = `
 
   <div class="drop-container" data-xt-drop>
     <button type="button" class="btn btn--primary">
-      dark
+      primary
     </button>
-    <div class="drop drop--dark">
+    <div class="drop drop--primary">
       <div class="drop-inner">
         <div class="drop-design"></div>
         <div class="drop-content">

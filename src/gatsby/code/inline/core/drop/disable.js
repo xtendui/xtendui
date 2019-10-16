@@ -61,7 +61,7 @@ demo.htmlSource = `
             <button type="button">
               Toggle
             </button>
-            <div class="drop drop--dark drop--after drop--middle">
+            <div class="drop drop--primary drop--after drop--middle">
               <div class="drop-inner">
                 <div class="drop-design"></div>
                 <div class="drop-content">

@@ -36,21 +36,21 @@
 
 // variant
 
-.alert--dark {
-  .alert--medium();
-  .text--inverse();
-  &@{alert--design} {
-    border-color: @gray-800;
-    background: @gray-800;
-  }
-}
-
-.alert--light {
+.alert--default {
   .alert--medium();
   color: @text;
   &@{alert--design} {
     border-color: @gray-200;
     background: @gray-200;
+  }
+}
+
+.alert--primary {
+  .alert--medium();
+  .text--inverse();
+  &@{alert--design} {
+    border-color: @gray-800;
+    background: @gray-800;
   }
 }
 
