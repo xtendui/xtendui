@@ -1,15 +1,15 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/extension/slider/slider.js'
 import 'xtend-library/src/extension/animation/MouseFollow.js'
-import { TweenMax, TimelineMax, Power0 } from 'gsap/TweenMax'
+import { TweenMax, TimelineMax } from 'gsap/TweenMax'
 
 Xt.mount.push({
   matches: '.demo--slider--progress',
   mount: function (object) {
     // vars
 
-    const timeHide = 300
-    const easeLinear = Power0.easeNone
+    const timeHide = Xt.vars.timeSmall
+    const easeLinear = Xt.vars.easeLinear
 
     // init
 

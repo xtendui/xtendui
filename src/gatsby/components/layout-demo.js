@@ -4,9 +4,11 @@ import PropTypes from 'prop-types'
 import 'xtend-library/src/polyfill.js'
 import 'xtend-library/src/polyfill-old.js'
 import { Xt } from 'xtend-library'
+import 'xtend-library/src/vars.js'
 import 'xtend-library/src/xtend-core.js'
-import 'xtend-library/src/xtend-demo.js'
 import 'xtend-library/src/xtend-extension.js'
+import 'xtend-library/src/xtend-demo.js'
+
 import { makeDocument } from 'assets/scripts/theme.js'
 import ResizeSensor from 'assets/scripts/ResizeSensor.js'
 

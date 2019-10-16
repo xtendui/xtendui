@@ -1,18 +1,17 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/extension/slider/slider.js'
-import { TweenMax, Ease } from 'gsap/TweenMax'
-import BezierEasing from 'bezier-easing'
+import { TweenMax } from 'gsap/TweenMax'
 
 Xt.mount.push({
   matches: '.demo--slider--toggle-js',
   mount: function (object) {
     // vars
 
-    const time = 0.8
-    const timeMask = 0.8
-    const timeContent = 0.8
+    const time = Xt.vars.timeBig
+    const timeMask = Xt.vars.timeBig
+    const timeContent = Xt.vars.timeBig
     const sizeContent = 100
-    const easeOut = new Ease(BezierEasing(0.14, 0.63, 0, 1))
+    const easeOut = Xt.vars.easeOut
 
     // init
 

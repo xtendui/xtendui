@@ -1,7 +1,6 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/core/toggle/toggle.js'
-import { TweenMax, Ease } from 'gsap/TweenMax'
-import BezierEasing from 'bezier-easing'
+import { TweenMax } from 'gsap/TweenMax'
 
 /**
  * #demo--toggle-js-0
@@ -12,11 +11,11 @@ Xt.mount.push({
   mount: function (object) {
     // vars
 
-    const time = 0.6
+    const time = Xt.vars.timeBig
     const delay = 0
     const size = 15
-    const easeIn = new Ease(BezierEasing(0.14, 0.63, 0, 1))
-    const easeOut = new Ease(BezierEasing(0.14, 0.63, 0, 1))
+    const easeIn = Xt.vars.easeIn
+    const easeOut = Xt.vars.easeOut
 
     // init
 
@@ -75,11 +74,11 @@ Xt.mount.push({
   mount: function (object) {
     // vars
 
-    const time = 0.6
+    const time = Xt.vars.timeBig
     const delay = 0
     const size = 15
-    const easeIn = new Ease(BezierEasing(0.14, 0.63, 0, 1))
-    const easeOut = new Ease(BezierEasing(0.14, 0.63, 0, 1))
+    const easeIn = Xt.vars.easeIn
+    const easeOut = Xt.vars.easeOut
 
     // init
 

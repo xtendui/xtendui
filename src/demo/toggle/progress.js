@@ -1,6 +1,6 @@
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/core/toggle/toggle.js'
-import { TweenMax, Power0 } from 'gsap/TweenMax'
+import { TweenMax } from 'gsap/TweenMax'
 
 /**
  * .demo--toggle--progress
@@ -11,8 +11,8 @@ Xt.mount.push({
   mount: function (object) {
     // vars
 
-    const timeHide = 300
-    const easeLinear = Power0.easeNone
+    const timeHide = Xt.vars.timeSmall
+    const easeLinear = Xt.vars.easeLinear
 
     // init
 

@@ -1,5 +1,5 @@
 import { Xt } from 'xtend-library'
-import { TweenMax, Power0 } from 'gsap/TweenMax'
+import { TweenMax } from 'gsap/TweenMax'
 
 /**
  * .demo--loader--js-spinner
@@ -10,8 +10,8 @@ Xt.mount.push({
   mount: function (object) {
     // vars
 
-    const time = 2000
-    const easeLinear = Power0.easeNone
+    const time = Xt.vars.timeGiant
+    const easeLinear = Xt.vars.easeLinear
 
     // timeout
 
