@@ -9,6 +9,6 @@ if (typeof window !== 'undefined') {
   require('xtend-library/src/extension/smooth/smooth.js')
   require('xtend-library/src/extension/sticky/sticky.js')
   require('xtend-library/src/extension/structure/jump-to-content.js')
-  require('xtend-library/src/extension/test/test.js')
+  require('xtend-library/src/extension/test.js')
   require('xtend-library/src/extension/toggle/multilevel.js')
 }

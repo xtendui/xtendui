@@ -1,9 +1,5 @@
 import { Xt } from 'xtend-library'
 
-/**
- * xtend extension: multilevel
- */
-
 Xt.mount.push({
   matches: '.multilevel',
   mount: function (object) {

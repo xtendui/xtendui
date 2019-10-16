@@ -1,9 +1,5 @@
 import { Xt } from 'xtend-library'
 
-/**
- * xtend extension: group-number
- */
-
 Xt.mount.push({
   matches: '.group-number',
   mount: function (object) {

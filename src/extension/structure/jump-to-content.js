@@ -1,9 +1,5 @@
 import { Xt } from 'xtend-library'
 
-/**
- * xtend extension: jump-to-content
- */
-
 Xt.mount.push({
   matches: '.jump-to-content',
   mount: function (object) {

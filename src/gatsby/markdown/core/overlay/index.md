@@ -14,7 +14,7 @@ Use this markup to create a overlay.
   <button type="button" data-xt-overlay="{ targets: '#overlay-custom' }">
     <!-- content -->
   </button>
-  <div class="overlay" id="overlay-custom">
+  <div class="overlay overlay--default" id="overlay-custom">
     <div class="overlay-container">
       <div class="overlay-inner">
         <div class="overlay-design"></div>

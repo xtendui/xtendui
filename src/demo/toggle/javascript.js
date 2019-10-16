@@ -1,4 +1,5 @@
 import { Xt } from 'xtend-library'
+import 'xtend-library/src/vars.js'
 import 'xtend-library/src/core/toggle/toggle.js'
 import { TweenMax } from 'gsap/TweenMax'
 
