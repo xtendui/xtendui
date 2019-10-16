@@ -52,6 +52,7 @@ export default DemoVanillaIframe
 
 DemoVanillaIframe.propTypes = {
   demo: PropTypes.shape({
-    full: PropTypes.bool
+    container: PropTypes.bool.isRequired,
+    full: PropTypes.bool.isRequired
   }).isRequired
 }

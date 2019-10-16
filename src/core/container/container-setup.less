@@ -8,39 +8,40 @@
   margin-right: auto;
   width: 100%;
   max-width: @container-max;
+  .container-space();
 }
 
 /**
  * @generate-container-space
  */
 
-// generate
+.container-space {
 
-& when not (@container-space = false) {
+  // generate
 
-  // generate-container-space-responsive
+  & when not (@container-space = false) {
 
-  .generate-container-space-responsive();
-  .generate-container-space-responsive(@i: length(@container-space)) when (@i > 0) {
-    .generate-container-space-responsive(@i - 1);
-    @container: extract(@container-space, @i);
-    @breakpoint: extract(@container, 1);
-    @val: extract(@container, 2);
-    & when (@breakpoint = none) {
-      .container {
+    // generate-container-space-responsive
+
+    .generate-container-space-responsive();
+    .generate-container-space-responsive(@i: length(@container-space)) when (@i > 0) {
+      .generate-container-space-responsive(@i - 1);
+      @container: extract(@container-space, @i);
+      @breakpoint: extract(@container, 1);
+      @val: extract(@container, 2);
+      & when (@breakpoint = none) {
         padding-right: @val;
         padding-left: @val;
       }
-    }
-    & when not (@breakpoint = none) {
-      @query-min: 'min-@{breakpoint}';
-      @media @@query-min {
-        .container {
+      & when not (@breakpoint = none) {
+        @query-min: 'min-@{breakpoint}';
+        @media @@query-min {
           padding-right: @val;
           padding-left: @val;
         }
       }
     }
+
   }
 
 }

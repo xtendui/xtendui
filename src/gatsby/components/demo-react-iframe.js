@@ -55,6 +55,7 @@ export default DemoReactIframe
 
 DemoReactIframe.propTypes = {
   demo: PropTypes.shape({
-    full: PropTypes.bool
+    container: PropTypes.bool.isRequired,
+    full: PropTypes.bool.isRequired
   }).isRequired
 }

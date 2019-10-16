@@ -6,6 +6,7 @@ import DemoVanillaIframe from 'components/demo-vanilla-iframe'
 
 const dirs = path.dirname(__filename).split('/')
 export const demo = {
+  container: true,
   full: false,
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),

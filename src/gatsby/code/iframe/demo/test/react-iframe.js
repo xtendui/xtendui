@@ -5,7 +5,8 @@ import DemoReactIframe from 'components/demo-react-iframe'
 
 const dirs = path.dirname(__filename).split('/')
 export const demo = {
-  full: true,
+  container: true,
+  full: false,
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
   type: dirs.pop()

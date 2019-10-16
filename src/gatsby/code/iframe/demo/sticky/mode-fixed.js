@@ -5,6 +5,7 @@ import DemoVanillaIframe from 'components/demo-vanilla-iframe'
 
 const dirs = path.dirname(__filename).split('/')
 export const demo = {
+  container: true,
   full: false,
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
@@ -15,7 +16,7 @@ demo.htmlSource = `
 <br><br><br><br><br><br><br>
 
 <div data-xt-sticky="{ sticky: 'fixed' }">
-  <div class="card card--default">
+  <div class="card card--primary card--squared">
     <div class="card-inner">
       <div class="card-design"></div>
       <div class="card-content">
@@ -27,7 +28,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="card card--default">
+<div class="card card--default card--squared">
   <div class="card-inner">
     <div class="card-design"></div>
     <div class="card-content">

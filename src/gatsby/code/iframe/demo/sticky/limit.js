@@ -5,6 +5,7 @@ import DemoVanillaIframe from 'components/demo-vanilla-iframe'
 
 const dirs = path.dirname(__filename).split('/')
 export const demo = {
+  container: true,
   full: false,
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
@@ -16,7 +17,7 @@ demo.htmlSource = `
 
 <div class="sticky-0"
      data-xt-sticky="{ limit: { top: 0, bottom: '.sticky-1.xt-clone' } }"> <!-- if limit to sticky use .xt-clone -->
-  <div class="card card--default">
+  <div class="card card--primary card--squared">
     <div class="card-inner">
       <div class="card-design"></div>
       <div class="card-content">
@@ -28,7 +29,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="card card--default">
+<div class="card card--default card--squared">
   <div class="card-inner">
     <div class="card-design"></div>
     <div class="card-content">
@@ -42,7 +43,7 @@ demo.htmlSource = `
 
 <div class="sticky-1"
      data-xt-sticky="{ position: 'bottom', limit: { bottom: 50 } }">
-  <div class="card card--default">
+  <div class="card card--primary card--squared">
     <div class="card-inner">
       <div class="card-design"></div>
       <div class="card-content">
@@ -54,7 +55,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="card card--default">
+<div class="card card--default card--squared">
   <div class="card-inner">
     <div class="card-design"></div>
     <div class="card-content">
