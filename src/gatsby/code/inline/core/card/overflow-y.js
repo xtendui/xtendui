@@ -11,7 +11,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="row">
   <div class="col-12 col-6--sm">
-    <button type="button" class="card card--primary">
+    <button type="button" class="card card--default">
       <div class="card-inner">
         <div class="card-design"></div>
         <div class="card-content">
@@ -30,7 +30,7 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="card card--primary card--full">
+    <button type="button" class="card card--default card--full">
       <div class="card-inner">
         <div class="card-design"></div>
         <div class="card-content">
@@ -49,7 +49,7 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="card card--primary">
+    <button type="button" class="card card--default">
       <div class="card-inner">
         <div class="card-design"></div>
         <div class="card-content card--overflow-y">
@@ -68,7 +68,7 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="card card--primary card--full">
+    <button type="button" class="card card--default card--full">
       <div class="card-inner">
         <div class="card-design"></div>
         <div class="card-content card--overflow-y">
@@ -87,7 +87,7 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12">
-    <button type="button" class="card card--primary card--horizontal--sm">
+    <button type="button" class="card card--default card--horizontal--sm">
       <div class="card-inner">
         <div class="card-design"></div>
         <div class="card-content">
@@ -112,7 +112,7 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12">
-    <button type="button" class="card card--primary card--full card--horizontal--sm">
+    <button type="button" class="card card--default card--full card--horizontal--sm">
       <div class="card-inner">
         <div class="card-design"></div>
         <div class="card-content">
