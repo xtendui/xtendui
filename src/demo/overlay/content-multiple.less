@@ -4,7 +4,7 @@
   .btn-close {
     .btn--primary();
   }
-  .overlay-menu {
+  .overlay-block--menu {
     .list();
     .list--default();
     .list-space(none);
@@ -13,18 +13,6 @@
     > .btn {
       display: flex;
       align-items: center;
-    }
-  }
-  // animation
-  &.active {
-    .overlay-menu {
-      .anim-y.active();
-      animation-delay: @time--small;
-    }
-  }
-  &.out {
-    .overlay-menu {
-      .anim-y-inverse.out();
     }
   }
 }

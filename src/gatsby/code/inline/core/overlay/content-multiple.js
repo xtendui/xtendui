@@ -11,16 +11,16 @@ demo.htmlSource = `
 <div class="list list--default list-space--small align-items--center demo-source-from">
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      default
+      dark
     </button>
-    <div class="overlay overlay--default demo--overlay--content-multiple">
+    <div class="overlay overlay--dark demo--overlay--content-multiple">
       <div class="overlay-container">
         <div class="overlay-inner">
           <div class="overlay-design"></div>
           <div class="overlay-close xt-fixed--check">
             <button type="button" class="btn btn-close" aria-label="Close"></button>
           </div>
-          <div class="overlay-menu">
+          <div class="overlay-block overlay-block--menu">
             <button type="button" class="btn btn--primary btn--big btn--wide btn--tall">
               Menu
             </button>
@@ -63,7 +63,7 @@ demo.htmlSource = `
           <div class="overlay-close xt-fixed--check">
             <button type="button" class="btn btn-close" aria-label="Close"></button>
           </div>
-          <div class="overlay-menu">
+          <div class="overlay-block overlay-block--menu">
             <button type="button" class="btn btn--primary btn--big btn--wide btn--tall">
               Menu
             </button>
@@ -106,7 +106,7 @@ demo.htmlSource = `
           <div class="overlay-close xt-fixed--check">
             <button type="button" class="btn btn-close" aria-label="Close"></button>
           </div>
-          <div class="overlay-menu">
+          <div class="overlay-block overlay-block--menu">
             <button type="button" class="btn btn--primary btn--big btn--wide btn--tall">
               Menu
             </button>

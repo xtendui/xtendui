@@ -14,7 +14,9 @@ By default `.overlay-content` is center with `margin: auto`. To position on top 
   </demovanilla>
 </demo>
 
-You can add as many overlay content as you like and custom contents like `.overlay-menu`.
+##Block
+
+`.overlay-block`
 
 <demo>
   <demovanilla src="inline/core/overlay/content-multiple">

@@ -38,9 +38,6 @@
     @media @min-sm {
       padding: 4rem;
     }
-    & + .overlay-content {
-      padding-top: 0 !important;
-    }
   }
   // default options
   .overlay-size(small);
@@ -60,6 +57,9 @@
   .btn-close {
     .btn--text();
   }
+  .overlay-content + .overlay-content {
+    border-top: 1px solid fade(@gray--800, 10%);
+  }
 }
 
 .overlay--dark {
@@ -73,6 +73,9 @@
   }
   .btn-close {
     .btn--text();
+  }
+  .overlay-content + .overlay-content {
+    border-top: 1px solid fade(@gray--200, 10%);
   }
 }
 
@@ -129,7 +132,7 @@
     .overlay-design {
       .anim-zoom.active();
     }
-    .overlay-content, .btn-close {
+    .overlay-content, .overlay-block, .btn-close {
       .anim-y.active();
       animation-delay: @time--small;
     }
@@ -142,7 +145,7 @@
       .anim-zoom.out();
       animation-delay: @time--small;
     }
-    .overlay-content, .btn-close {
+    .overlay-content, .overlay-block, .btn-close {
       .anim-y.out();
     }
     > .backdrop {
