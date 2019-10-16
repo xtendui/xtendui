@@ -5,9 +5,9 @@ title: "Content"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-##Image
+##Asset
 
-`.card-img`
+`.card-asset`
 
 <demo>
   <demovanilla src="inline/core/card/image">

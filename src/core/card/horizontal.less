@@ -1,0 +1,20 @@
+@import '~xtend-library/src/core/card/orizontal-setup.less';
+
+/**
+ * vars
+ */
+
+// generate class: [false], [true] non responsive, [sm, md, lg] responsive breakpoints
+
+@generate-class--card--horizontal: sm, md, lg;
+
+/**
+ * card--horizontal
+ */
+
+.card--horizontal {
+  .card-item + .card-item {
+    border: 0;
+    border-left: 1px solid fade(@gray--800, 20%);
+  }
+}

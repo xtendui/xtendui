@@ -15,7 +15,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-design"></div>
         <div class="card-content">
-          <div class="card-img">
+          <div class="card-asset">
             ${img(400, 150)}
           </div>
           <div class="card-item card--overflow-y">
@@ -34,7 +34,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-design"></div>
         <div class="card-content">
-          <div class="card-img">
+          <div class="card-asset">
             ${img(400, 150)}
           </div>
           <div class="card-item card--overflow-y">
@@ -53,7 +53,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-design"></div>
         <div class="card-content card--overflow-y">
-          <div class="card-img">
+          <div class="card-asset">
             ${img(400, 150)}
           </div>
           <div class="card-item">
@@ -72,7 +72,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-design"></div>
         <div class="card-content card--overflow-y">
-          <div class="card-img">
+          <div class="card-asset">
             ${img(400, 150)}
           </div>
           <div class="card-item">
@@ -91,7 +91,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-design"></div>
         <div class="card-content">
-          <div class="card-img">
+          <div class="card-asset">
             ${img(400, 150)}
           </div>
           <div class="card-item card--overflow-y">
@@ -116,7 +116,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-design"></div>
         <div class="card-content">
-          <div class="card-img">
+          <div class="card-asset">
             ${img(400, 150)}
           </div>
           <div class="card-item card--overflow-y">
