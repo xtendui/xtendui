@@ -18,7 +18,7 @@ demo.htmlSource = `
         <div class="overlay-inner">
           <div class="overlay-design"></div>
           <div class="overlay-close xt-fixed--check">
-            <button type="button" class="btn btn-close" aria-label="Close"></button>
+            <button type="button" class="btn btn-close overlay-dismiss" aria-label="Close"></button>
           </div>
           <div class="overlay-block overlay-block--menu">
             <button type="button" class="btn btn--primary btn--big btn--wide btn--tall">
@@ -61,7 +61,7 @@ demo.htmlSource = `
         <div class="overlay-inner">
           <div class="overlay-design"></div>
           <div class="overlay-close xt-fixed--check">
-            <button type="button" class="btn btn-close" aria-label="Close"></button>
+            <button type="button" class="btn btn-close overlay-dismiss" aria-label="Close"></button>
           </div>
           <div class="overlay-block overlay-block--menu">
             <button type="button" class="btn btn--primary btn--big btn--wide btn--tall">
@@ -104,7 +104,7 @@ demo.htmlSource = `
         <div class="overlay-inner">
           <div class="overlay-design"></div>
           <div class="overlay-close xt-fixed--check">
-            <button type="button" class="btn btn-close" aria-label="Close"></button>
+            <button type="button" class="btn btn-close overlay-dismiss" aria-label="Close"></button>
           </div>
           <div class="overlay-block overlay-block--menu">
             <button type="button" class="btn btn--primary btn--big btn--wide btn--tall">
