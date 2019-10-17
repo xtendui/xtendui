@@ -23,6 +23,7 @@
   margin: auto; // @FIX http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container
   width: 100%;
   min-height: 100vh;
+  .overlay-space();
 }
 
 .overlay-inner {
@@ -84,6 +85,17 @@
   }
 }
 
+.overlay-close-fixed {
+  .overlay-close {
+    position: fixed;
+    z-index: @index-btn-close;
+    line-height: 1;
+    .btn-close {
+      position: relative !important;
+    }
+  }
+}
+
 /**
  * @generate-overlay-size
  */
@@ -107,26 +119,34 @@
 }
 
 /**
- * @generate-overlay-space-responsive
+ * @generate-overlay-space
  */
 
-.generate-overlay-space-responsive();
-.generate-overlay-space-responsive(@i: length(@overlay-space)) when (@i > 0) {
-  .generate-overlay-space-responsive(@i - 1);
-  @overlay: extract(@overlay-space, @i);
-  @breakpoint: extract(@overlay, 1);
-  @val: extract(@overlay, 2);
-  & when (@breakpoint = none) {
-    .overlay-container {
-      padding: @val;
-    }
-  }
-  & when not (@breakpoint = none) {
-    @query-min: 'min-@{breakpoint}';
-    @media @@query-min {
-      .overlay-container {
+.overlay-space {
+
+  // generate
+
+  & when not (@overlay-space = false) {
+
+    // generate-overlay-space-responsive
+
+    .generate-overlay-space-responsive();
+    .generate-overlay-space-responsive(@i: length(@overlay-space)) when (@i > 0) {
+      .generate-overlay-space-responsive(@i - 1);
+      @overlay: extract(@overlay-space, @i);
+      @breakpoint: extract(@overlay, 1);
+      @val: extract(@overlay, 2);
+      & when (@breakpoint = none) {
         padding: @val;
       }
+      & when not (@breakpoint = none) {
+        @query-min: 'min-@{breakpoint}';
+        @media @@query-min {
+          padding: @val;
+        }
+      }
     }
+
   }
+
 }

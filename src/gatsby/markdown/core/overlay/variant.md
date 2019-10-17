@@ -16,8 +16,6 @@ Optional classes for assigning variant.
 
 ##Screen
 
-This demo uses [extension/overlay/close-fixed](/extension/overlay/close-fixed).
-
 <demo>
   <demovanilla src="inline/core/overlay/screen">
   </demovanilla>

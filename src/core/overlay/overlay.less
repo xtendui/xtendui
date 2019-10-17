@@ -8,11 +8,11 @@
 
 // space
 
-@overlay-space: @container-space; // overlay side spacing
+@overlay-space: @container-space; // overlay external spacing
 
 // size
 
-@overlays: tiny, small, medium, big, giant, full; // if you change this change also variables names below
+@overlays: tiny, small, medium, big, giant, full; // overlay internal spacing
 @overlay--tiny: @breakpoint-xs - 60;
 @overlay--small: @breakpoint-sm - 60;
 @overlay--medium: @breakpoint-md - 60;
@@ -101,10 +101,36 @@
 
 // addons
 
-.overlay-container {
-  // override @overlay-space side spacing
+.overlay-close-fixed {
+  .overlay-close {
+    top: 0;
+    right: 0;
+    .btn-close {
+      .btn--primary();
+      .btn--squared();
+    }
+  }
+}
+
+.overlay-screen {
+  // close-fixed
+  .overlay-close-fixed();
+}
+
+.overlay {
   @media @max-sm {
-    padding: 0 !important;
+    // no external spacing and no border-radius
+    .overlay-container {
+      padding: 0 !important;
+    }
+    .overlay-inner {
+      border-radius: 0;
+    }
+    // close-fixed
+    .overlay-close-fixed();
+    .overlay-close {
+      top: auto;
+    }
   }
 }
 
