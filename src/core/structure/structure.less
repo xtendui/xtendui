@@ -16,8 +16,8 @@
 
 @text: @gray-800;
 @text--dark: @black;
-@text--inverse: fade(@white, 80%);
-@text--inverse--dark: @white;
+@text-inverse: fade(@white, 80%);
+@text-inverse--dark: @white;
 
 @info: @gray-800;
 @success: #5CC764;
@@ -123,10 +123,10 @@ body {
 
 /**
  * focus
- * to disable focus add html.xt-focus--disable class
+ * to disable focus add html.xt-focus-disable class
  */
 
-html.xt-focus:not(.xt-focus--disable) {
+html.xt-focus:not(.xt-focus-disable) {
   // custom focus
   :focus {
     outline-color: rgb(77, 144, 254);
@@ -155,7 +155,7 @@ html.xt-focus:not(.xt-focus--disable) {
  */
 
 [disabled], .disabled {
-  .user-select--none();
+  .user-select-none();
   cursor: default;
   pointer-events: none;
   // when not .active also graphic changes

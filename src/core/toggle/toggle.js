@@ -2198,7 +2198,7 @@ class Toggle {
   specialCollapse (actionCurrent, el, before, after) {
     if (el instanceof HTMLElement) {
       if (actionCurrent === 'On') {
-        if (before === 'xt-collapse--height') {
+        if (before === 'xt-collapse-height') {
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
           Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
             el.classList.add('xt-hide', 'trans-anim-none')
@@ -2212,7 +2212,7 @@ class Toggle {
             }))
           }))
         }
-        if (after === 'xt-collapse--width') {
+        if (after === 'xt-collapse-width') {
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
           Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
             el.classList.add('xt-hide', 'trans-anim-none')
@@ -2227,7 +2227,7 @@ class Toggle {
           }))
         }
       } else if (actionCurrent === 'Off') {
-        if (before === 'xt-collapse--height') {
+        if (before === 'xt-collapse-height') {
           const h = el.offsetHeight + 'px'
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
           Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
@@ -2239,7 +2239,7 @@ class Toggle {
             }))
           }))
         }
-        if (after === 'xt-collapse--width') {
+        if (after === 'xt-collapse-width') {
           const w = el.offsetWidth + 'px'
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
           Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
@@ -2252,10 +2252,10 @@ class Toggle {
           }))
         }
       } else if (actionCurrent === 'Reset') {
-        if (before === 'xt-collapse--height') {
+        if (before === 'xt-collapse-height') {
           el.style.height = 'inherit'
         }
-        if (after === 'xt-collapse--width') {
+        if (after === 'xt-collapse-width') {
           el.style.width = 'inherit'
         }
       }
@@ -2568,7 +2568,7 @@ class Toggle {
 Toggle.componentName = 'xt-toggle'
 Toggle.optionsDefaultSuper = {
   elements: ':scope > a, :scope > button',
-  targets: ':scope > [class^="toggle--"], :scope > [class*=" toggle--"]',
+  targets: ':scope > [class^="toggle-"], :scope > [class*=" toggle-"]',
   elementsInner: false,
   targetsInner: false,
   on: 'click',

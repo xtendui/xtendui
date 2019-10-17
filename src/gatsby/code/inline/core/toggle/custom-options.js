@@ -9,7 +9,7 @@ export const demo = {
 
 demo.htmlSource = `
 <div
-  data-xt-toggle="{ elements: '.list > .btn', targets: '.list > .demo--toggle--custom-options' }">
+  data-xt-toggle="{ elements: '.list > .btn', targets: '.list > .demo--toggle-custom-options' }">
   <div class="list list--default list-space--small align-items--center">
     <button type="button" class="btn btn--default">
       Toggle 0
@@ -20,17 +20,17 @@ demo.htmlSource = `
     <button type="button" class="btn btn--default">
       Toggle 2
     </button>
-    <div class="alert demo--toggle--custom-options">
+    <div class="alert demo--toggle-custom-options">
       <div class="alert-content">
         Target 0
       </div>
     </div>
-    <div class="alert demo--toggle--custom-options">
+    <div class="alert demo--toggle-custom-options">
       <div class="alert-content">
         Target 1
       </div>
     </div>
-    <div class="alert demo--toggle--custom-options">
+    <div class="alert demo--toggle-custom-options">
       <div class="alert-content">
         Target 2
       </div>

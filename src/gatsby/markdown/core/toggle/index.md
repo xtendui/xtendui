@@ -15,7 +15,7 @@ Use this markup to create a toggle.
     <button type="button">
       <!-- content -->
     </button>
-    <div class="toggle--block">
+    <div class="toggle-block">
       <!-- content -->
     </div>
   </div>
@@ -69,7 +69,7 @@ Custom **elements** and **targets**.
   </demovanilla>
 </demo>
 
-Any class that starts with `.toggle--` can be used as **toggle targets**.
+Any class that starts with `.toggle-` can be used as **toggle targets**.
 
 ###Unique
 

@@ -8,7 +8,7 @@ categories: ["300-Interaction"]
 
 ##Usage
 
-On links or buttons use `.link--underline` or `.link--none` to add or remove `text-decoration:
+On links or buttons use `.link-underline` or `.link-none` to add or remove `text-decoration:
   underline;`.
 
 <demo>
@@ -16,7 +16,7 @@ On links or buttons use `.link--underline` or `.link--none` to add or remove `te
   </demovanilla>
 </demo>
 
-On containers use `.text--inverse` to have white links.
+On containers use `.text-inverse` to have white links.
 
 <demo>
   <demovanilla src="inline/core/link/inverse">

@@ -8,7 +8,7 @@ export const demo = {
 }
 
 demo.htmlSource = `
-<div class="list list--default list-space--small align-items--center demo--toggle--progress">
+<div class="list list--default list-space--small align-items--center demo--toggle-progress">
   <button type="button" class="btn btn--default">
     <span>
       Toggle 0
@@ -49,40 +49,40 @@ demo.htmlSource = `
         </span>
       </span>
   </button>
-  <div class="alert toggle--block">
+  <div class="alert toggle-block">
     <div class="alert-content">
       Target 0
-      <div class="loader loader--x loader--size-bottom loader--js">
+      <div class="loader loader--x loader-size--bottom loader--js">
         <div class="filler">
           <span></span><span></span>
         </div>
       </div>
     </div>
   </div>
-  <div class="alert toggle--block">
+  <div class="alert toggle-block">
     <div class="alert-content">
       Target 1
-      <div class="loader loader--x loader--size-bottom loader--js">
+      <div class="loader loader--x loader-size--bottom loader--js">
         <div class="filler">
           <span></span><span></span>
         </div>
       </div>
     </div>
   </div>
-  <div class="alert toggle--block">
+  <div class="alert toggle-block">
     <div class="alert-content">
       Target 2
-      <div class="loader loader--x loader--size-bottom loader--js">
+      <div class="loader loader--x loader-size--bottom loader--js">
         <div class="filler">
           <span></span><span></span>
         </div>
       </div>
     </div>
   </div>
-  <div class="alert toggle--block">
+  <div class="alert toggle-block">
     <div class="alert-content">
       Target 3
-      <span class="loader loader--x loader--size-bottom loader--js">
+      <span class="loader loader--x loader-size--bottom loader--js">
         <span class="filler">
           <span></span><span></span>
         </span>

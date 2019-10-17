@@ -8,11 +8,11 @@
 
 // space
 
-@overlay-space: @container-space; // overlay external spacing
+@generate-overlay-space: @generate-container-space; // overlay external spacing
 
 // size
 
-@overlays: tiny, small, medium, big, giant, full; // overlay internal spacing
+@generate-overlay-size: tiny, small, medium, big, giant, full; // overlay internal spacing
 @overlay--tiny: @breakpoint-xs - 60;
 @overlay--small: @breakpoint-sm - 60;
 @overlay--medium: @breakpoint-md - 60;
@@ -69,7 +69,7 @@
     box-shadow: @shadow-dark;
   }
   .overlay-inner {
-    .text--inverse();
+    .text-inverse();
   }
   .btn-close {
     .btn--text();

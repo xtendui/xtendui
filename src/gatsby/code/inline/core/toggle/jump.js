@@ -19,17 +19,17 @@ demo.htmlSource = `
   <button type="button" class="btn btn--default">
     Toggle 2
   </button>
-  <div class="alert demo--toggle--jump">
+  <div class="alert demo--toggle-jump">
     <div class="alert-content">
       Target 0
     </div>
   </div>
-  <div class="alert demo--toggle--jump">
+  <div class="alert demo--toggle-jump">
     <div class="alert-content">
       Target 1
     </div>
   </div>
-  <div class="alert demo--toggle--jump">
+  <div class="alert demo--toggle-jump">
     <div class="alert-content">
       Target 2
     </div>

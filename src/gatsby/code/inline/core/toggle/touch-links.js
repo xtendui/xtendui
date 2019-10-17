@@ -17,27 +17,27 @@ demo.htmlSource = `
       Toggle 1
     </a>
     <button type="button" class="btn btn--default">
-      <a href="#toggle-with-link-2" class="link--none">Toggle 2</a>
+      <a href="#toggle-with-link-2" class="link-none">Toggle 2</a>
     </button>
     <button type="button" class="btn btn--default">
-      <a href="#toggle-with-link-3" class="link--none">Toggle 3</a>
+      <a href="#toggle-with-link-3" class="link-none">Toggle 3</a>
     </button>
-    <div class="alert toggle--block">
+    <div class="alert toggle-block">
       <div class="alert-content">
         Target 0
       </div>
     </div>
-    <div class="alert toggle--block">
+    <div class="alert toggle-block">
       <div class="alert-content">
         Target 1
       </div>
     </div>
-    <div class="alert toggle--block">
+    <div class="alert toggle-block">
       <div class="alert-content">
         Target 2
       </div>
     </div>
-    <div class="alert toggle--block">
+    <div class="alert toggle-block">
       <div class="alert-content">
         Target 3
       </div>

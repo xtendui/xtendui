@@ -32,7 +32,7 @@
   font-family: @icons-xt--family;
 }
 
-[class^='icon-xt--'], [class*=' icon-xt--'] {
+[class^='icon-xt-'], [class*=' icon-xt-'] {
   display: inline-block;
   vertical-align: middle;
   .align-self(center);
@@ -55,7 +55,7 @@
   }
 }
 
-[class^='icon-theme--'], [class*=' icon-theme--'] {
+[class^='icon-theme-'], [class*=' icon-theme-'] {
   display: inline-block;
   vertical-align: middle;
   .align-self(center);
@@ -116,8 +116,8 @@
   .generate-icons-xt(@i: length(@icons-xt)) when (@i > 0) {
     .generate-icons-xt(@i - 1);
     @name: extract(@icons-xt, @i);
-    @val: ~"icon-xt--@{name}";
-    .icon-xt--@{name} {
+    @val: ~"icon-xt-@{name}";
+    .icon-xt-@{name} {
       &:before {
         content: @@val;
       }
@@ -132,8 +132,8 @@
     .generate-icons(@i: length(@icons-theme)) when (@i > 0) {
       .generate-icons(@i - 1);
       @name: extract(@icons-theme, @i);
-      @val: ~"icon-theme--@{name}";
-      .icon--@{name} {
+      @val: ~"icon-theme-@{name}";
+      .icon-@{name} {
         &:before {
           content: @@val;
         }

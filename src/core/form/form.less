@@ -6,8 +6,8 @@
 
 // select
 
-@select-arrow--size: 4px; // in px
-@select-space--size: 24px; // in px
+@select-arrow-size: 4px; // in px
+@select-space-size: 24px; // in px
 
 /**
  * fieldset
@@ -127,7 +127,7 @@ form {
 }
 
 .form-label--inverse {
-  color: @text--inverse;
+  color: @text-inverse;
 }
 
 .form--inverse {
@@ -187,29 +187,29 @@ form {
 .form-item--inverse {
   border-color: fade(@gray-800, 20%);
   background-color: fade(@gray-800, 20%); // @FIX no background: or it overrides background-image
-  color: @text--inverse--dark;
+  color: @text-inverse--dark;
   &:focus, &.active {
     border-color: fade(@gray-800, 40%);
     background-color: fade(@gray-800, 40%); // @FIX no background: or it overrides background-image
   }
   // placeholder
   &:-ms-input-placeholder {
-    color: @text--inverse;
+    color: @text-inverse;
   }
   &:-moz-placeholder {
-    color: @text--inverse;
+    color: @text-inverse;
   }
   &::-webkit-input-placeholder {
-    color: @text--inverse;
+    color: @text-inverse;
   }
   &::-ms-input-placeholder {
-    color: @text--inverse;
+    color: @text-inverse;
   }
   &::-moz-placeholder {
-    color: @text--inverse;
+    color: @text-inverse;
   }
   &::placeholder {
-    color: @text--inverse;
+    color: @text-inverse;
   }
 }
 
@@ -236,7 +236,7 @@ form {
 
 .form-item {
   select:not([multiple])& {
-    @select-arrow-color: @text--inverse;
+    @select-arrow-color: @text-inverse;
     @select-space-color: fade(@gray-800, 20%);
     background-image: linear-gradient(45deg, transparent 50%, @select-arrow-color 50%), linear-gradient(135deg, @select-arrow-color 50%, transparent 50%), linear-gradient(to right, @select-space-color, @select-space-color);
   }
@@ -298,7 +298,7 @@ form {
   }
   &:after {
     .icon-xt();
-    content: @icon-xt--check;
+    content: @icon-xt-check;
     font-size: 100%;
   }
 }
@@ -309,7 +309,7 @@ form {
   }
   &:after {
     .icon-xt();
-    content: @icon-xt--circle;
+    content: @icon-xt-circle;
     font-size: 50%;
   }
 }

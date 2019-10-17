@@ -27,27 +27,27 @@ demo.htmlSource = `
     <button type="button" class="btn btn--default" data-xt-group="1">
       Group 1
     </button>
-    <div class="alert toggle--block">
+    <div class="alert toggle-block">
       <div class="alert-content">
         Target 0
       </div>
     </div>
-    <div class="alert toggle--block" data-xt-group="0">
+    <div class="alert toggle-block" data-xt-group="0">
       <div class="alert-content">
         Group 0
       </div>
     </div>
-    <div class="alert toggle--block" data-xt-group="1">
+    <div class="alert toggle-block" data-xt-group="1">
       <div class="alert-content">
         Group 1
       </div>
     </div>
-    <div class="alert toggle--block" data-xt-group="0">
+    <div class="alert toggle-block" data-xt-group="0">
       <div class="alert-content">
         Group 0
       </div>
     </div>
-    <div class="alert toggle--block">
+    <div class="alert toggle-block">
       <div class="alert-content">
         Target 1
       </div>

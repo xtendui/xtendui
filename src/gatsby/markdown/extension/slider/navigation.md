@@ -11,10 +11,10 @@ You can add navigation with `[data-xt-nav="+-Number"].xt-ignore` where `+-Number
 
 <script type="text/plain" class="language-markup">
   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
-    <span class="icon-xt--chevron-left"></span>
+    <span class="icon-xt-chevron-left"></span>
   </button>
   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
-    <span class="icon-xt--chevron-right"></span>
+    <span class="icon-xt-chevron-right"></span>
   </button>
 </script>
 

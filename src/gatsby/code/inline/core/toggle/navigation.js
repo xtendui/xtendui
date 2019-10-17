@@ -23,27 +23,27 @@ demo.htmlSource = `
       Toggle 3
     </button>
     <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
-      <span class="icon-xt--chevron-left"></span>
+      <span class="icon-xt-chevron-left"></span>
     </button>
     <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
-      <span class="icon-xt--chevron-right"></span>
+      <span class="icon-xt-chevron-right"></span>
     </button>
-    <div class="alert toggle--block">
+    <div class="alert toggle-block">
       <div class="alert-content">
         Target 0
       </div>
     </div>
-    <div class="alert toggle--block">
+    <div class="alert toggle-block">
       <div class="alert-content">
         Target 1
       </div>
     </div>
-    <div class="alert toggle--block">
+    <div class="alert toggle-block">
       <div class="alert-content">
         Target 2
       </div>
     </div>
-    <div class="alert toggle--block">
+    <div class="alert toggle-block">
       <div class="alert-content">
         Target 3
       </div>

@@ -34,7 +34,7 @@
   display: block;
   position: relative;
   cursor: pointer;
-  .user-select--none();
+  .user-select-none();
 }
 
 /**
@@ -58,10 +58,10 @@
 
 .form-item {
   select:not([multiple])& {
-    .padding(right, @select-space--size) !important;
+    .padding(right, @select-space-size) !important;
     white-space: normal;
-    background-position: calc(~'100% - ' @select-space--size / 2) 50%, calc(~'100% - (' @select-space--size / 2~') + '@select-arrow--size) 50%, 100% 0;
-    background-size: @select-arrow--size @select-arrow--size, @select-arrow--size @select-arrow--size, @select-space--size 100%;
+    background-position: calc(~'100% - ' @select-space-size / 2) 50%, calc(~'100% - (' @select-space-size / 2~') + '@select-arrow-size) 50%, 100% 0;
+    background-size: @select-arrow-size @select-arrow-size, @select-arrow-size @select-arrow-size, @select-space-size 100%;
     background-repeat: no-repeat;
   }
 }

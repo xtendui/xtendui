@@ -4,14 +4,14 @@
  * decoration
  */
 
-.link--underline() {
+.link-underline() {
   text-decoration: underline;
   &:hover, &.hover, &:active, &.active {
     text-decoration: underline;
   }
 }
 
-.link--none() {
+.link-none() {
   text-decoration: none;
   &:hover, &.hover, &:active, &.active {
     text-decoration: none;
@@ -19,16 +19,16 @@
 }
 
 /**
- * text--inverse
+ * text-inverse
  */
 
-.text--inverse {
+.text-inverse {
   // link color
   a, .btn--link {
-    color: @text--inverse;
+    color: @text-inverse;
     text-decoration: underline;
     &:hover, &.hover, &:active, &.active {
-      color: @text--inverse--dark;
+      color: @text-inverse--dark;
     }
   }
 }
@@ -38,7 +38,7 @@
  */
 
 a, .btn--link {
-  .link--underline();
+  .link-underline();
   color: @accent;
   &:hover, &.hover, &:active, &.active {
     color: @accent--dark;

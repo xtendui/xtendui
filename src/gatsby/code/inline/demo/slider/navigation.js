@@ -24,10 +24,10 @@ demo.htmlSource = `
                 <div class="card-item">
                   <h1>1</h1>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
-                    <span class="icon-xt--chevron-left"></span>
+                    <span class="icon-xt-chevron-left"></span>
                   </button>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
-                    <span class="icon-xt--chevron-right"></span>
+                    <span class="icon-xt-chevron-right"></span>
                   </button>
                 </div>
               </div>
@@ -47,10 +47,10 @@ demo.htmlSource = `
                 <div class="card-item">
                   <h1>2</h1>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
-                    <span class="icon-xt--chevron-left"></span>
+                    <span class="icon-xt-chevron-left"></span>
                   </button>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
-                    <span class="icon-xt--chevron-right"></span>
+                    <span class="icon-xt-chevron-right"></span>
                   </button>
                 </div>
               </div>
@@ -70,10 +70,10 @@ demo.htmlSource = `
                 <div class="card-item">
                   <h1>3</h1>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
-                    <span class="icon-xt--chevron-left"></span>
+                    <span class="icon-xt-chevron-left"></span>
                   </button>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
-                    <span class="icon-xt--chevron-right"></span>
+                    <span class="icon-xt-chevron-right"></span>
                   </button>
                 </div>
               </div>
@@ -93,10 +93,10 @@ demo.htmlSource = `
                 <div class="card-item">
                   <h1>4</h1>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
-                    <span class="icon-xt--chevron-left"></span>
+                    <span class="icon-xt-chevron-left"></span>
                   </button>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
-                    <span class="icon-xt--chevron-right"></span>
+                    <span class="icon-xt-chevron-right"></span>
                   </button>
                 </div>
               </div>
@@ -116,10 +116,10 @@ demo.htmlSource = `
                 <div class="card-item">
                   <h1>5</h1>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
-                    <span class="icon-xt--chevron-left"></span>
+                    <span class="icon-xt-chevron-left"></span>
                   </button>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
-                    <span class="icon-xt--chevron-right"></span>
+                    <span class="icon-xt-chevron-right"></span>
                   </button>
                 </div>
               </div>
@@ -139,10 +139,10 @@ demo.htmlSource = `
                 <div class="card-item" style="height: 15rem;">
                   <h1>6</h1>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
-                    <span class="icon-xt--chevron-left"></span>
+                    <span class="icon-xt-chevron-left"></span>
                   </button>
                   <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
-                    <span class="icon-xt--chevron-right"></span>
+                    <span class="icon-xt-chevron-right"></span>
                   </button>
                 </div>
               </div>
@@ -158,12 +158,12 @@ demo.htmlSource = `
   
   <nav class="slider-pagination">
     <button type="button" class="btn btn--default xt-ignore" data-xt-nav="-1" title="Previous slide">
-      <span class="icon-xt--chevron-left icon--left"></span> prev
+      <span class="icon-xt-chevron-left icon--left"></span> prev
     </button>
     <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
     </button>
     <button type="button" class="btn btn--default xt-ignore" data-xt-nav="1" title="Next slide">
-      next <span class="icon-xt--chevron-right icon--right"></span>
+      next <span class="icon-xt-chevron-right icon--right"></span>
     </button>
   </nav>
 

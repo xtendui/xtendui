@@ -3,7 +3,7 @@
  */
 
 .overlay {
-  .toggle--flex();
+  .toggle-flex();
   position: fixed;
   z-index: @index-overlay;
   top: 0;
@@ -101,7 +101,7 @@
  */
 
 .overlay-size(@name) {
-  // .by-key(@overlays, @name);
+  // .by-key(@generate-overlay-size, @name);
   @arr: ~"overlay--@{name}";
   @val: @@arr;
   .overlay-inner {
@@ -110,9 +110,9 @@
 }
 
 .generate-overlay-size();
-.generate-overlay-size(@i: length(@overlays)) when (@i > 0) {
+.generate-overlay-size(@i: length(@generate-overlay-size)) when (@i > 0) {
   .generate-overlay-size(@i - 1);
-  @name: extract(@overlays, @i);
+  @name: extract(@generate-overlay-size, @i);
   .overlay--@{name} {
     .overlay-size(@name) !important;
   }
@@ -126,14 +126,14 @@
 
   // generate
 
-  & when not (@overlay-space = false) {
+  & when not (@generate-overlay-space = false) {
 
     // generate-overlay-space-responsive
 
     .generate-overlay-space-responsive();
-    .generate-overlay-space-responsive(@i: length(@overlay-space)) when (@i > 0) {
+    .generate-overlay-space-responsive(@i: length(@generate-overlay-space)) when (@i > 0) {
       .generate-overlay-space-responsive(@i - 1);
-      @overlay: extract(@overlay-space, @i);
+      @overlay: extract(@generate-overlay-space, @i);
       @breakpoint: extract(@overlay, 1);
       @val: extract(@overlay, 2);
       & when (@breakpoint = none) {

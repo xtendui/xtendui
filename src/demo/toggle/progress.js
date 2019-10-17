@@ -4,11 +4,11 @@ import 'xtend-library/src/core/toggle/toggle.js'
 import { TweenMax } from 'gsap/TweenMax'
 
 /**
- * .demo--toggle--progress
+ * .demo--toggle-progress
  */
 
 Xt.mount.push({
-  matches: '.demo--toggle--progress',
+  matches: '.demo--toggle-progress',
   mount: function (object) {
     // vars
 

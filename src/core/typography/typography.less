@@ -52,24 +52,24 @@ body {
  * spacing
  */
 
-.spacing--none {
+.spacing-none {
   .margin(top, none) !important;
   .margin(bottom, none) !important;
 }
 
-.spacing--small {
+.spacing-small {
   .margin(top, medium) !important;
   .margin(bottom, small) !important;
   .margin(y, layout) !important;
 }
 
-.spacing--medium {
+.spacing-medium {
   .margin(top, big) !important;
   .margin(bottom, medium) !important;
   .margin(y, layout) !important;
 }
 
-.spacing--big {
+.spacing-big {
   .margin(top, giant) !important;
   .margin(bottom, big) !important;
   .margin(y, layout) !important;
@@ -80,7 +80,7 @@ body {
  */
 
 h1, .h1 {
-  .spacing--medium();
+  .spacing-medium();
   .font-sans--semibold();
   font-size: 4rem;
   line-height: 1;
@@ -89,7 +89,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  .spacing--medium();
+  .spacing-medium();
   .font-sans--semibold();
   font-size: 3.5rem;
   line-height: 1.2;
@@ -98,7 +98,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  .spacing--medium();
+  .spacing-medium();
   .font-sans--semibold();
   font-size: 2.5rem;
   line-height: 1.2;
@@ -107,7 +107,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  .spacing--medium();
+  .spacing-medium();
   .font-sans--semibold();
   font-size: 2rem;
   line-height: 1.2;
@@ -116,7 +116,7 @@ h4, .h4 {
 }
 
 h5, .h5 {
-  .spacing--medium();
+  .spacing-medium();
   .font-sans--semibold();
   font-size: 1.7rem;
   line-height: 1.2;
@@ -125,7 +125,7 @@ h5, .h5 {
 }
 
 h6, .h6 {
-  .spacing--medium();
+  .spacing-medium();
   .font-sans--semibold();
   font-size: 1.3rem;
   line-height: 1.4;
@@ -142,7 +142,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .header--block {
-  .spacing--medium();
+  .spacing-medium();
   .padding(y, small);
   .padding(x, medium);
   background: @gray-200;
@@ -150,7 +150,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .header--line {
-  .spacing--medium();
+  .spacing-medium();
   .padding(bottom, small);
   border-bottom: 1px solid @gray-200;
 }
@@ -249,10 +249,10 @@ pre {
   }
 }
 
-// text--inverse
+// text-inverse
 
-.text--inverse {
-  color: @text--inverse;
+.text-inverse {
+  color: @text-inverse;
   h1, h2, h3, h4, h5, h6, .header {
     color: inherit;
   }

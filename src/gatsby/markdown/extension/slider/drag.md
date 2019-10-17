@@ -69,7 +69,7 @@ You can disable the drag transform position while dragging the **drag.dragger** 
 
 ###False
 
-Use `"drag": false` to disable drag. You need to use the slider in **toggle mode**, so with `.toggle--block` on the slides.
+Use `"drag": false` to disable drag. You need to use the slider in **toggle mode**, so with `.toggle-block` on the slides.
 
 <demo>
   <demovanilla src="inline/demo/slider/toggle-css">

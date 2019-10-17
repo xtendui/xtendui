@@ -110,7 +110,7 @@ const populateDemo = function (container, i) {
     }
     container.querySelector('.gatsby_demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny">' + name + '</button>'))
     // tabs
-    item.prepend(Xt.createElement('<div class="gatsby_demo_code collapse--height"><div class="gatsby_demo_code_inner"><div class="gatsby_demo_code_tabs"><div class="gatsby_demo_code_tabs_left"></div><div class="gatsby_demo_code_tabs_right"><button type="button" class="btn btn--text btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="gatsby_demo_code_body"></div></div></div>'))
+    item.prepend(Xt.createElement('<div class="gatsby_demo_code collapse-height"><div class="gatsby_demo_code_inner"><div class="gatsby_demo_code_tabs"><div class="gatsby_demo_code_tabs_left"></div><div class="gatsby_demo_code_tabs_right"><button type="button" class="btn btn--text btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="gatsby_demo_code_body"></div></div></div>'))
     // https://github.com/zenorocha/clipboard.js/
     const clipboard = new ClipboardJS('.btn--clipboard', {
       target: function (trigger) {

@@ -18,30 +18,30 @@ demo.htmlSource = `
     <button type="button" class="btn btn--default">
       Toggle 2
     </button>
-    <div class="alert toggle--block">
+    <div class="alert toggle-block">
       <div class="alert-content">
         Target 0
-        <div class="alert toggle--block">
+        <div class="alert toggle-block">
           <div class="alert-content">
             Nested not toggled
           </div>
         </div>
       </div>
     </div>
-    <div class="alert toggle--block">
+    <div class="alert toggle-block">
       <div class="alert-content">
         Target 1
-        <div class="alert toggle--block">
+        <div class="alert toggle-block">
           <div class="alert-content">
             Nested not toggled
           </div>
         </div>
       </div>
     </div>
-    <div class="alert toggle--block">
+    <div class="alert toggle-block">
       <div class="alert-content">
         Target 2
-        <div class="alert toggle--block">
+        <div class="alert toggle-block">
           <div class="alert-content">
             Nested not toggled
           </div>

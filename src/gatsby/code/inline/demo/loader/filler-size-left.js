@@ -16,7 +16,7 @@ demo.htmlSource = `
         <div class="card-item">
           <div class="card-title">Lorem ipsum dolor sit amet</div>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
-          <div class="loader loader--y loader--size-left">
+          <div class="loader loader--y loader-size--left">
             <div class="filler">
               <span></span><span></span>
             </div>
@@ -30,7 +30,7 @@ demo.htmlSource = `
     <span>
       Lorem ipsum
     </span>
-    <span class="loader loader--y loader--size-left">
+    <span class="loader loader--y loader-size--left">
         <span class="filler">
           <span></span><span></span>
         </span>

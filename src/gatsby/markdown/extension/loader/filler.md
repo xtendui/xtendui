@@ -20,7 +20,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ### Size
 
-`.loader--x.loader--size-x` `.loader--y.loader--size-y` `.loader--x.loader--size-top` `.loader--x.loader--size-bottom` `.loader--y.loader--size-left` `.loader--y.loader--size-right`.
+`.loader--x.loader-size--x` `.loader--y.loader-size--y` `.loader--x.loader-size--top` `.loader--x.loader-size--bottom` `.loader--y.loader-size--left` `.loader--y.loader-size--right`.
 
 <demo>
   <demovanilla src="inline/demo/loader/filler-size-x">

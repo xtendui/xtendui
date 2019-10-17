@@ -7,7 +7,7 @@
 .card {
   border-radius: .5em;
   a& {
-    .link--none() !important;
+    .link-none() !important;
   }
   .card-design {
     border-width: 0;
@@ -15,7 +15,7 @@
     border-color: transparent;
   }
   .card-title {
-    .spacing--small();
+    .spacing-small();
     .font-sans--semibold();
     line-height: 1.2;
     letter-spacing: 0;
@@ -67,7 +67,7 @@
 }
 
 .card--primary {
-  .text--inverse();
+  .text-inverse();
   .card-design {
     border-color: @accent;
     background: @accent;
@@ -79,7 +79,7 @@
   }
   a&, button& {
     &:hover, &.hover, &:active, &.active {
-      color: @text--inverse--dark;
+      color: @text-inverse--dark;
       .card-design {
         border-color: @accent--dark;
         background: @accent--dark;

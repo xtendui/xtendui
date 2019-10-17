@@ -17,12 +17,12 @@ demo.htmlSource = `
             data-xt-toggle="{ targets: '#toggle-unique-2, #toggle-unique-3' }">
       Toggle
     </button>
-    <div class="alert toggle--block" id="toggle-unique-2">
+    <div class="alert toggle-block" id="toggle-unique-2">
       <div class="alert-content">
         Target 0
       </div>
     </div>
-    <div class="alert toggle--block" id="toggle-unique-3">
+    <div class="alert toggle-block" id="toggle-unique-3">
       <div class="alert-content">
         Target 1
       </div>

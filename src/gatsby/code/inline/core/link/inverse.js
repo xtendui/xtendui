@@ -9,12 +9,12 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="list list--default list-space--small align-items--center gatsby_demo_source--from">
-  <div class="list list--default list-space--small align-items--center text--inverse" style="padding: 1rem 1.5rem; background: #7567f8;">
+  <div class="list list--default list-space--small align-items--center text-inverse" style="padding: 1rem 1.5rem; background: #7567f8;">
     <a href="#">
       link
     </a>
     
-    <a href="#" class="link--none">
+    <a href="#" class="link-none">
       link
     </a>
   </div>

@@ -4,7 +4,7 @@
  * vars
  */
 
-// generate class: [false], [true] non responsive, [sm, md, lg] responsive breakpoints
+// generate class: [false], [true] non responsive only, [sm, md, lg] responsive @breakpoints
 
 @generate-icon: true;
 
@@ -109,18 +109,18 @@
 }
 
 // icons
-// USAGE LESS: .icon-xt(@content: @icon-xt--close, @size: @icon-small, @position: after);
-// USAGE MARKUP: <span class="icon-xt--close"></span>
+// USAGE LESS: .icon-xt(@content: @icon-xt-close, @size: @icon-small, @position: after);
+// USAGE MARKUP: <span class="icon-xt-close"></span>
 
 @icons-xt: close, chevron-down, chevron-left, chevron-right, chevron-up, check, circle;
 
-@icon-xt--chevron-down: '\e900';
-@icon-xt--chevron-left: '\e901';
-@icon-xt--chevron-right: '\e902';
-@icon-xt--chevron-up: '\e903';
-@icon-xt--close: '\e904';
-@icon-xt--check: '\e905';
-@icon-xt--circle: '\e906';
+@icon-xt-chevron-down: '\e900';
+@icon-xt-chevron-left: '\e901';
+@icon-xt-chevron-right: '\e902';
+@icon-xt-chevron-up: '\e903';
+@icon-xt-close: '\e904';
+@icon-xt-check: '\e905';
+@icon-xt-circle: '\e906';
 
 /**
  * icons theme (fonts)
@@ -141,11 +141,11 @@
 }
 
 // icons
-// USAGE LESS: .icon(@content: @icon-theme--menu, @size: @icon-small, @position: after);
-// USAGE MARKUP: <span class="icon-theme--menu"></span>
+// USAGE LESS: .icon(@content: @icon-theme-menu, @size: @icon-small, @position: after);
+// USAGE MARKUP: <span class="icon-theme-menu"></span>
 
-@icons-theme: menu, search; // this will generate classes .icon-theme--{name}
+@icons-theme: menu, search; // this will generate classes .icon-theme-{name}
 
-@icon-theme--menu: '\e609';
-@icon-theme--search: '\e615';
+@icon-theme-menu: '\e609';
+@icon-theme-search: '\e615';
 */

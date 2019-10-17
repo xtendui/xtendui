@@ -21,7 +21,7 @@
 // variant
 
 .btn--default {
-  .link--none();
+  .link-none();
   border-color: @gray-200;
   background: @gray-200;
   color: @text;
@@ -36,14 +36,14 @@
 }
 
 .btn--primary {
-  .link--none();
+  .link-none();
   border-color: @accent;
   background: @accent;
-  color: @text--inverse;
+  color: @text-inverse;
   &:hover, &.hover, &:active, &.active {
     border-color: @accent--dark;
     background: @accent--dark;
-    color: @text--inverse--dark;
+    color: @text-inverse--dark;
   }
   &:active, &.active {
     box-shadow: @shadow-primary;
@@ -51,7 +51,7 @@
 }
 
 .btn--text {
-  .link--none();
+  .link-none();
   .btn--nodesign();
   color: inherit;
   &:hover, &.hover, &:active, &.active {
@@ -197,5 +197,5 @@
   .btn--text();
   .btn--giant();
   .btn--icon();
-  .icon-xt(@content: @icon-xt--close, @size: @icon-medium);
+  .icon-xt(@content: @icon-xt-close, @size: @icon-medium);
 }

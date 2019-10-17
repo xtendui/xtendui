@@ -13,7 +13,7 @@ demo.htmlSource = `
     link
   </a>
   
-  <a href="#" class="link--none">
+  <a href="#" class="link-none">
     link
   </a>
 </div>

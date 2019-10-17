@@ -14,7 +14,7 @@ Optional classes for assigning variant.
   </demovanilla>
 </demo>
 
-On containers use `.text--inverse` to have white buttons (needs `color: inherit`).
+On containers use `.text-inverse` to have white buttons (needs `color: inherit`).
 
 <demo>
   <demovanilla src="inline/core/button/inverse">
