@@ -7,16 +7,12 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ##Block
 
-`.card-block`
-
 <demo>
   <demovanilla src="inline/core/card/block">
   </demovanilla>
 </demo>
 
 ##Asset
-
-`.card-asset`
 
 <demo>
   <demovanilla src="inline/core/card/image">
@@ -36,5 +32,17 @@ Card with max sizes with automatic scrollbar on overflow with `card--overflow-y`
 
 <demo>
   <demovanilla src="inline/core/card/close">
+  </demovanilla>
+</demo>
+
+##Multiple
+
+<demo>
+  <demovanilla src="inline/core/card/multiple">
+  </demovanilla>
+</demo>
+
+<demo>
+  <demovanilla src="inline/core/card/icon">
   </demovanilla>
 </demo>
