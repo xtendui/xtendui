@@ -25,7 +25,7 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <div class="card card--default card--full">
+    <div class="card card--default card--collapse card--full">
       <div class="card-inner">
         <button type="button" class="btn btn-close" aria-label="Close"></button>
         <div class="card-design"></div>
@@ -55,7 +55,7 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <div class="card card--default card--full">
+    <div class="card card--default card--collapse card--full">
       <div class="card-inner">
         <button type="button" class="btn btn-close" aria-label="Close"></button>
         <div class="card-design"></div>

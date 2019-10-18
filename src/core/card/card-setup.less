@@ -4,6 +4,7 @@
 
 .card {
   position: relative;
+  z-index: @index-base; // fix :before negative z-index
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       z-index: @index-active;
@@ -12,12 +13,20 @@
 }
 
 .card-inner {
-  position: relative;
-  z-index: @index-base; // fix :before negative z-index
-}
-
-.card-inner, .card-content {
-  border-radius: inherit;
+  // radius
+  &, & > * {
+    > *:first-child {
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+    }
+    > *:last-child {
+      border-bottom-left-radius: inherit;
+      border-bottom-right-radius: inherit;
+    }
+  }
+  &, & > .card-content {
+    border-radius: inherit;
+  }
 }
 
 .card-design {
@@ -28,14 +37,14 @@
 .card-content {
   display: flex;
   flex-direction: column;
-  > *:first-child {
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
-  }
-  > *:last-child {
-    border-bottom-left-radius: inherit;
-    border-bottom-right-radius: inherit;
-  }
+}
+
+// content
+
+.card-group {
+  display: flex !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .card-item, .card-asset {
@@ -44,15 +53,17 @@
   overflow: hidden;
 }
 
-.card-group {
-  display: flex;
-  margin: 0 !important; // @FIX .card-full
-  padding: 0 !important; // @FIX .card
-}
-
 .card-asset {
   > * {
     width: 100%;
     height: auto;
+  }
+}
+
+// addon
+
+.card--full {
+  .card-content {
+    padding: 0 !important;
   }
 }

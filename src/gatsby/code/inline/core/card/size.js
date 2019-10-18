@@ -11,8 +11,8 @@ demo.htmlSource = `
 <div class="row">
   <div class="col-12 col-6--sm">
     <button type="button" class="card card--default card--small">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Small</div>
@@ -24,9 +24,9 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="card card--default card--full card--small">
+    <button type="button" class="card card--default card--small card--collapse card--full">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Small full</div>
@@ -40,8 +40,8 @@ demo.htmlSource = `
   
   <div class="col-12 col-6--sm">
     <button type="button" class="card card--default card--medium">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Medium</div>
@@ -53,9 +53,9 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="card card--default card--full card--medium">
+    <button type="button" class="card card--default card--medium card--collapse card--full">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Medium full</div>
@@ -69,8 +69,8 @@ demo.htmlSource = `
   
   <div class="col-12 col-6--sm">
     <button type="button" class="card card--default card--big">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Big</div>
@@ -82,9 +82,9 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="card card--default card--full card--big">
+    <button type="button" class="card card--default card--big card--collapse card--full 
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Big full</div>

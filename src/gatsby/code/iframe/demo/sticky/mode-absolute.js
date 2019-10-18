@@ -17,8 +17,8 @@ demo.htmlSource = `
 
 <div data-xt-sticky="{ sticky: 'absolute' }">
   <div class="card card--primary card--squared">
-    <div class="card-inner">
       <div class="card-design"></div>
+      <div class="card-inner">
       <div class="card-content">
         <div class="card-block card-item">
           Sticky
@@ -29,8 +29,8 @@ demo.htmlSource = `
 </div>
 
 <div class="card card--default card--squared">
-  <div class="card-inner">
-    <div class="card-design"></div>
+      <div class="card-design"></div>
+      <div class="card-inner">
     <div class="card-content">
       <div class="card-block card-item">
         <div class="card-title">Lorem ipsum dolor sit amet</div>

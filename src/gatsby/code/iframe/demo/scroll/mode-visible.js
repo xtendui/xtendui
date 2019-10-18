@@ -17,8 +17,8 @@ demo.htmlSource = `
   <div class="list list--default list-space--medium scroll-container demo--scroll-container--visible">
 
     <div class="card card--default">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Lorem ipsum dolor sit amet</div>
@@ -29,8 +29,8 @@ demo.htmlSource = `
     </div>
 
     <div class="card card--default">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Lorem ipsum dolor sit amet</div>
@@ -41,8 +41,8 @@ demo.htmlSource = `
     </div>
     
     <div class="card card--default">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Lorem ipsum dolor sit amet</div>
@@ -53,8 +53,8 @@ demo.htmlSource = `
     </div>
 
     <div class="card card--default">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Lorem ipsum dolor sit amet</div>
@@ -65,8 +65,8 @@ demo.htmlSource = `
     </div>
 
     <div class="card card--default">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Lorem ipsum dolor sit amet</div>
@@ -77,8 +77,8 @@ demo.htmlSource = `
     </div>
 
     <div class="card card--default">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Lorem ipsum dolor sit amet</div>
@@ -89,8 +89,8 @@ demo.htmlSource = `
     </div>
 
     <div class="card card--default">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Lorem ipsum dolor sit amet</div>
@@ -101,8 +101,8 @@ demo.htmlSource = `
     </div>
 
     <div class="card card--default">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Lorem ipsum dolor sit amet</div>
@@ -113,8 +113,8 @@ demo.htmlSource = `
     </div>
 
     <div class="card card--default">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Lorem ipsum dolor sit amet</div>
@@ -125,8 +125,8 @@ demo.htmlSource = `
     </div>
 
     <div class="card card--default">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Lorem ipsum dolor sit amet</div>

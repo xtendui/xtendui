@@ -18,8 +18,8 @@ demo.htmlSource = `
 <div class="sticky-0 demo--sticky--disable--sm"
      data-xt-sticky="{ limit: { top: 0, bottom: '.sticky-1.xt-clone' } }"> <!-- if limit to sticky use .xt-clone -->
   <div class="card card--primary card--squared">
-    <div class="card-inner">
       <div class="card-design"></div>
+      <div class="card-inner">
       <div class="card-content">
         <div class="card-block card-item">
           Sticky top
@@ -30,8 +30,8 @@ demo.htmlSource = `
 </div>
 
 <div class="card card--default card--squared">
-  <div class="card-inner">
-    <div class="card-design"></div>
+      <div class="card-design"></div>
+      <div class="card-inner">
     <div class="card-content">
       <div class="card-block card-item">
         <div class="card-title">Lorem ipsum dolor sit amet</div>
@@ -44,8 +44,8 @@ demo.htmlSource = `
 <div class="sticky-1 demo--sticky--disable--sm"
      data-xt-sticky="{ position: 'bottom', limit: { bottom: 50 } }">
   <div class="card card--primary card--squared">
-    <div class="card-inner">
       <div class="card-design"></div>
+      <div class="card-inner">
       <div class="card-content">
         <div class="card-block card-item">
           Sticky bottom
@@ -56,8 +56,8 @@ demo.htmlSource = `
 </div>
 
 <div class="card card--default card--squared">
-  <div class="card-inner">
-    <div class="card-design"></div>
+      <div class="card-design"></div>
+      <div class="card-inner">
     <div class="card-content">
       <div class="card-block card-item">
         <div class="card-title">Lorem ipsum dolor sit amet</div>

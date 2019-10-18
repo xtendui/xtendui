@@ -114,11 +114,16 @@
   .card-title {
     font-size: 1.7rem;
   }
-  // .card--full
-  .card--full& {
+  // addon
+  .card--collapse& {
+    .card-content {
+      padding: 1.5rem 2rem;
+    }
     .card-content, .card-group {
       .list-space(small);
     }
+  }
+  .card--full& {
     .card-design {
       top: -1rem;
       left: -1.5rem;
@@ -136,11 +141,16 @@
   .card-title {
     font-size: 2rem;
   }
-  // .card--full
-  .card--full& {
+  // addon
+  .card--collapse& {
+    .card-content {
+      padding: 2rem 2.5rem;
+    }
     .card-content, .card-group {
       .list-space(medium);
     }
+  }
+  .card--full& {
     .card-design {
       top: -1.5rem;
       left: -2rem;
@@ -158,11 +168,16 @@
   .card-title {
     font-size: 3rem;
   }
-  // .card--full
-  .card--full& {
+  // addon
+  .card--collapse& {
+    .card-content {
+      padding: 3rem 3.5rem;
+    }
     .card-content, .card-group {
       .list-space(big);
     }
+  }
+  .card--full& {
     .card-design {
       top: -2.5rem;
       left: -3rem;
@@ -192,16 +207,11 @@
 
 // addons
 
-.card--full {
-  color: @text;
+.card--collapse {
   .card-content {
     .list();
   }
-  .card-design {
-    border-color: transparent;
-    background: transparent;
-  }
-  .card-item, .card-collapse {
+  .card-item {
     padding: 0 !important;
   }
   .card-item + .card-item {
@@ -211,7 +221,16 @@
   }
 }
 
+.card--full {
+  color: @text;
+  .card-design {
+    border-color: transparent;
+    background: transparent;
+  }
+}
+
 .card--overflow-y {
+  overflow-x: hidden;
   overflow-y: auto;
   max-height: 30rem;
   .overflow-style(@mode: inner);

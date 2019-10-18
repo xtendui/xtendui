@@ -11,8 +11,8 @@ demo.htmlSource = `
 <div class="row">
   <div class="col-12 col-6--sm">
     <div class="card card--default">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Div</div>
@@ -25,8 +25,8 @@ demo.htmlSource = `
   
   <div class="col-12 col-6--sm">
     <button type="button" class="card card--default">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Button</div>
@@ -39,8 +39,8 @@ demo.htmlSource = `
   
   <div class="col-12 col-6--sm">
     <a href="#" class="card card--default">
+      <div class="card-design"></div>
       <div class="card-inner">
-        <div class="card-design"></div>
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">A</div>

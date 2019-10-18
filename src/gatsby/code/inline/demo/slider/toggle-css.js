@@ -18,8 +18,8 @@ demo.htmlSource = `
         <div class="slide-inner">
 
           <div class="card card--default text-align--center">
+            <div class="card-design"></div>
             <div class="card-inner">
-              <div class="card-design"></div>
               <div class="card-content">
                 <div class="card-block card-item">
                   <h1>1</h1>
@@ -35,8 +35,8 @@ demo.htmlSource = `
         <div class="slide-inner">
 
           <div class="card card--default text-align--center">
+            <div class="card-design"></div>
             <div class="card-inner">
-              <div class="card-design"></div>
               <div class="card-content">
                 <div class="card-block card-item">
                   <h1>2</h1>
@@ -52,8 +52,8 @@ demo.htmlSource = `
         <div class="slide-inner">
 
           <div class="card card--default text-align--center">
+            <div class="card-design"></div>
             <div class="card-inner">
-              <div class="card-design"></div>
               <div class="card-content">
                 <div class="card-block card-item">
                   <h1>3</h1>
@@ -69,8 +69,8 @@ demo.htmlSource = `
         <div class="slide-inner">
 
           <div class="card card--default text-align--center">
+            <div class="card-design"></div>
             <div class="card-inner">
-              <div class="card-design"></div>
               <div class="card-content">
                 <div class="card-block card-item">
                   <h1>4</h1>
@@ -86,8 +86,8 @@ demo.htmlSource = `
         <div class="slide-inner">
 
           <div class="card card--default text-align--center">
+            <div class="card-design"></div>
             <div class="card-inner">
-              <div class="card-design"></div>
               <div class="card-content">
                 <div class="card-block card-item" style="height: 15rem;">
                   <h1>5</h1>

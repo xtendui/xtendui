@@ -5,6 +5,20 @@ title: "Content"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
+##Multiple
+
+<demo>
+  <demovanilla src="inline/core/card/multiple">
+  </demovanilla>
+</demo>
+
+##Collapse
+
+<demo>
+  <demovanilla src="inline/core/card/collapse">
+  </demovanilla>
+</demo>
+
 ##Block
 
 <demo>
@@ -15,7 +29,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ##Asset
 
 <demo>
-  <demovanilla src="inline/core/card/image">
+  <demovanilla src="inline/core/card/asset">
   </demovanilla>
 </demo>
 
@@ -32,12 +46,5 @@ Card with max sizes with automatic scrollbar on overflow with `card--overflow-y`
 
 <demo>
   <demovanilla src="inline/core/card/close">
-  </demovanilla>
-</demo>
-
-##Multiple
-
-<demo>
-  <demovanilla src="inline/core/card/multiple">
   </demovanilla>
 </demo>

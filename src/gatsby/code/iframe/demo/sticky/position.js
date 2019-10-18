@@ -17,8 +17,8 @@ demo.htmlSource = `
 
 <div data-xt-sticky> <!-- defaults to "position": "top" -->
   <div class="card card--primary card--squared">
-    <div class="card-inner">
       <div class="card-design"></div>
+      <div class="card-inner">
       <div class="card-content">
         <div class="card-block card-item">
           Sticky top
@@ -29,8 +29,8 @@ demo.htmlSource = `
 </div>
 
 <div class="card card--default card--squared">
-  <div class="card-inner">
-    <div class="card-design"></div>
+      <div class="card-design"></div>
+      <div class="card-inner">
     <div class="card-content">
       <div class="card-block card-item">
         <div class="card-title">Lorem ipsum dolor sit amet</div>
@@ -42,8 +42,8 @@ demo.htmlSource = `
 
 <div data-xt-sticky="{ position: 'bottom' }">
   <div class="card card--primary card--squared">
-    <div class="card-inner">
       <div class="card-design"></div>
+      <div class="card-inner">
       <div class="card-content">
         <div class="card-block card-item">
           Sticky bottom
