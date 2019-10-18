@@ -44,7 +44,7 @@ demo.htmlSource = `
           </div>
         </div>
         <div class="card-asset">
-          ${img(400, 150)}
+          ${img({})}
         </div>
       </div>
     </button>
@@ -84,7 +84,7 @@ demo.htmlSource = `
           </div>
         </div>
         <div class="card-asset">
-          ${img(400, 150)}
+          ${img({})}
         </div>
       </div>
     </button>

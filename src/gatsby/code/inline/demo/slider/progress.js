@@ -12,7 +12,7 @@ demo.htmlSource = `
 <div class="slider demo--slider--progress">
   <div class="loader loader--spinner loader--mouse loader--js">
     <span class="spinner">
-      ${spinner}
+      ${spinner({})}
     </span>
   </div>
 

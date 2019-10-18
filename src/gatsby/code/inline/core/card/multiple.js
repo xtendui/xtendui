@@ -16,7 +16,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-content">
           <div class="card-asset">
-            ${img(400, 150)}
+            ${img({})}
           </div>
           <div class="card-group card-item">
             <div class="card-block card-item">
@@ -53,7 +53,7 @@ demo.htmlSource = `
       <div class="card-inner">
         <div class="card-content">
           <div class="card-asset">
-            ${img(400, 150)}
+            ${img({})}
           </div>
           <div class="card-group card-item">
             <div class="card-block card-item">

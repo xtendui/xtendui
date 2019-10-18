@@ -1,1 +1,7 @@
-export default `<svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"/></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"/></svg>`
+// USAGE:
+// const spinner = require('components/snippets/spinner').default
+// ${spinner({})}
+
+export default function ({ width = 120, height = 120, radius = 100, dash = 628 }) {
+  return `<svg viewBox="0 0 250 250"><circle cx="${width}" cy="${height}" r="${radius}" stroke-dasharray="${dash}" stroke-dashoffset="${dash}" pathLength="${dash}"/></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="${width}" cy="${height}" r="${radius}" stroke-dasharray="${dash}" stroke-dashoffset="${dash}" pathLength="${dash}"/></svg>`
+}

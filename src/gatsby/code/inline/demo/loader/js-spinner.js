@@ -19,7 +19,7 @@ demo.htmlSource = `
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus egestas congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque hendrerit sagittis quam eget elementum. Vestibulum eu nulla nisl. Duis nec commodo tortor. Aenean feugiat, libero eget ultricies viverra, justo nunc efficitur lorem, at aliquet ante eros in est.</p>
           <div class="loader loader--spinner loader--background loader--js demo--loader--js-spinner">
             <div class="spinner">
-              ${spinner}
+              ${spinner({})}
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@ demo.htmlSource = `
     </span>
     <span class="loader loader--spinner loader--background loader--js demo--loader--js-spinner">
         <span class="spinner">
-          ${spinner}
+          ${spinner({})}
         </span>
       </span>
   </button>
