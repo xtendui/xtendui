@@ -1,4 +1,12 @@
-.card-block--head {
-  .block();
-  background: fade(@gray-800, 10%);
+.card--default {
+  .card-block--head {
+    background: @gray-200--dark;
+  }
+}
+
+.card--primary {
+  .card-block--head {
+    .text-inverse();
+    background: @accent--dark;
+  }
 }
