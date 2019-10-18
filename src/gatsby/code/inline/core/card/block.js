@@ -17,10 +17,10 @@ demo.htmlSource = `
           <div class="card-block card-block--head">
             <div class="card-title">Lorem ipsum</div>
           </div>
-          <div class="card-item">
+          <div class="card-block card-item">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
-          <div class="card-item">
+          <div class="card-block card-item">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>
@@ -36,10 +36,10 @@ demo.htmlSource = `
           <div class="card-block card-block--head">
             <div class="card-title">Lorem ipsum</div>
           </div>
-          <div class="card-item">
+          <div class="card-block card-item">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
-          <div class="card-item">
+          <div class="card-block card-item">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>
@@ -55,10 +55,10 @@ demo.htmlSource = `
           <div class="card-block card-block--head">
             <div class="card-title">Lorem ipsum</div>
           </div>
-          <div class="card-item">
+          <div class="card-block card-item">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
-          <div class="card-item">
+          <div class="card-block card-item">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>
@@ -74,10 +74,10 @@ demo.htmlSource = `
           <div class="card-block card-block--head">
             <div class="card-title">Lorem ipsum</div>
           </div>
-          <div class="card-item">
+          <div class="card-block card-item">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
-          <div class="card-item">
+          <div class="card-block card-item">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>

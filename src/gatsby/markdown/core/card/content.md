@@ -41,8 +41,3 @@ Card with max sizes with automatic scrollbar on overflow with `card--overflow-y`
   <demovanilla src="inline/core/card/multiple">
   </demovanilla>
 </demo>
-
-<demo>
-  <demovanilla src="inline/core/card/icon">
-  </demovanilla>
-</demo>
