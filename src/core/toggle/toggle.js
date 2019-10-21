@@ -2275,7 +2275,7 @@ class Toggle {
         // checks
         Xt.scrollbar.add(self.namespace)
         // check fixed
-        const checks = document.querySelectorAll('.xt-fixed--check, .xt-fixed--check > *')
+        const checks = document.querySelectorAll('.xt-fixed--check, .xt-fixed--check > *, .btn-close')
         for (const check of checks) {
           const style = getComputedStyle(check)
           if (style.position === 'fixed') {

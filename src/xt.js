@@ -742,14 +742,21 @@ if (typeof window !== 'undefined') {
     // xt-fixed
     const elements = container.querySelectorAll('.xt-fixed')
     for (const element of elements) {
+      element.style.right = ''
       element.style.paddingRight = ''
       const style = getComputedStyle(element)
-      if (Xt.normalizeWidth(element.clientWidth) === '' || getComputedStyle(element).right) { // only if full width or right position
-        const padding = style.paddingRight
-        const str = 'calc(' + padding + ' + ' + width + 'px)'
+      let prop;
+      if (style.right) { // only if right position
+        prop = 'right'
+      } else if (Xt.normalizeWidth(element.clientWidth) === '') { // only if full width
+        prop = 'paddingRight'
+      }
+      if (prop) {
+        const val = style[prop]
+        const str = 'calc(' + val + ' + ' + width + 'px)'
         element.classList.add('transition-none')
         requestAnimationFrame(function () {
-          element.style.paddingRight = str
+          element.style[prop] = str
           requestAnimationFrame(function () {
             element.classList.remove('transition-none')
           })
@@ -774,6 +781,7 @@ if (typeof window !== 'undefined') {
     for (const element of elements) {
       element.classList.add('transition-none')
       requestAnimationFrame(function () {
+        element.style.right = ''
         element.style.paddingRight = ''
         requestAnimationFrame(function () {
           element.classList.remove('transition-none')

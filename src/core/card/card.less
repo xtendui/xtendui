@@ -168,7 +168,7 @@
       transition-duration: @time-big;
       transition-timing-function: @bez-out;
     }
-    .card-item {
+    .card-item:not(.card-group) {
       transition-property: transform;
       transition-duration: @time-big;
       transition-timing-function: @bez-out;
@@ -183,7 +183,7 @@
         transition-duration: @time-big;
         transition-timing-function: @bez-in;
       }
-      .card-item {
+      .card-item:not(.card-group) {
         transform: scale(0.97, 0.95);
         transition-property: transform;
         transition-duration: @time-big;
