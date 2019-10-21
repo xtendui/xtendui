@@ -746,10 +746,10 @@ if (typeof window !== 'undefined') {
       element.style.paddingRight = ''
       const style = getComputedStyle(element)
       let prop;
-      if (style.right) { // only if right position
-        prop = 'right'
-      } else if (Xt.normalizeWidth(element.clientWidth) === '') { // only if full width
+      if (Xt.normalizeWidth(element.clientWidth) === '') { // only if full width
         prop = 'paddingRight'
+      } else if (style.right) { // only if right position
+        prop = 'right'
       }
       if (prop) {
         const val = style[prop]
