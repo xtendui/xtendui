@@ -17,12 +17,12 @@ demo.htmlSource = `
       <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
-          <div class="card card--default text-align--center">
+          <div class="card card-slide card-slide--default text-align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <h1>1</h1>
+                  <div class="card-title">1</h1>
                 </div>
               </div>
             </div>
@@ -34,12 +34,12 @@ demo.htmlSource = `
       <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
-          <div class="card card--default text-align--center">
+          <div class="card card-slide card-slide--default text-align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <h1>2</h1>
+                  <div class="card-title">2</h1>
                 </div>
               </div>
             </div>
@@ -51,12 +51,12 @@ demo.htmlSource = `
       <li class="slide col-6 col-4-sm active">
         <div class="slide-inner">
 
-          <div class="card card--default text-align--center">
+          <div class="card card-slide card-slide--default text-align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <h1>3</h1>
+                  <div class="card-title">3</h1>
                 </div>
               </div>
             </div>
@@ -68,12 +68,12 @@ demo.htmlSource = `
       <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
-          <div class="card card--default text-align--center">
+          <div class="card card-slide card-slide--default text-align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <h1>4</h1>
+                  <div class="card-title">4</h1>
                 </div>
               </div>
             </div>
@@ -85,12 +85,12 @@ demo.htmlSource = `
       <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
-          <div class="card card--default text-align--center">
+          <div class="card card-slide card-slide--default text-align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <h1>5</h1>
+                  <div class="card-title">5</h1>
                 </div>
               </div>
             </div>
@@ -102,12 +102,13 @@ demo.htmlSource = `
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card--default text-align--center">
+          <div class="card card-slide card-slide--default text-align-center"
+            style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
-                <div class="card-block card-item" style="height: 15rem;">
-                  <h1>6</h1>
+                <div class="card-block card-item">
+                  <div class="card-title">6</h1>
                 </div>
               </div>
             </div>
