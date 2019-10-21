@@ -1,0 +1,121 @@
+/**
+ * box-card
+ */
+
+.box-card {
+  border-radius: .5em;
+  > .box-design {
+    border-width: 0;
+    border-style: solid;
+    border-color: transparent;
+  }
+  .box-title {
+    .font-sans--semibold();
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .box-item + .box-item {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+    }
+  }
+  // default options
+  .box-card--medium();
+}
+
+// variant
+
+.box-card--default {
+  color: @text;
+  > .box-design {
+    border-color: @gray-200;
+    background: @gray-200;
+  }
+  .box-item + .box-item {
+    &:before {
+      background: fade(@gray-800, 10%);
+    }
+  }
+  a&, button& {
+    &:hover, &.hover, &:active, &.active {
+      color: @text--dark;
+      > .box-design {
+        border-color: @gray-200--dark;
+        background: @gray-200--dark;
+      }
+    }
+    &:active, &.active {
+      > .box-design {
+        box-shadow: @shadow-light;
+      }
+    }
+  }
+}
+
+.box-card--primary {
+  .text-inverse();
+  > .box-design {
+    border-color: @accent;
+    background: @accent;
+  }
+  .box-item + .box-item {
+    &:before {
+      background: fade(@gray-200, 10%);
+    }
+  }
+  a&, button& {
+    &:hover, &.hover, &:active, &.active {
+      color: @text-inverse--dark;
+      > .box-design {
+        border-color: @accent--dark;
+        background: @accent--dark;
+      }
+    }
+    &:active, &.active {
+      > .box-design {
+        box-shadow: @shadow-primary;
+      }
+    }
+  }
+}
+
+// size
+
+.box-card--small {
+  .font--small();
+  .box-block {
+    padding: 1.5rem 2rem;
+  }
+  .box-title {
+    .spacing-small();
+    font-size: 1.7rem;
+  }
+}
+
+.box-card--medium {
+  .font--medium();
+  .box-block {
+    padding: 2rem 2.5rem;
+  }
+  .box-title {
+    .spacing-small();
+    font-size: 2rem;
+  }
+}
+
+.box-card--big {
+  .font--big();
+  .box-block {
+    padding: 3rem 3.5rem;
+  }
+  .box-title {
+    .spacing-small();
+    font-size: 3rem;
+  }
+}

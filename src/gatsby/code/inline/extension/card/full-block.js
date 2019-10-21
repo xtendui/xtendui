@@ -11,17 +11,17 @@ export const demo = {
 demo.htmlSource = `
 <div class="row">
   <div class="col-12 col-6--sm">
-    <button type="button" class="card card--default card--collapse card--full">
-      <div class="card-design"></div>
-      <div class="card-inner">
-        <div class="card-content">
-          <div class="card-block card-block--head">
-            <div class="card-title">Lorem ipsum</div>
+    <button type="button" class="box box-card box-card--default box--collapse box--full">
+      <div class="box-design"></div>
+      <div class="box-inner">
+        <div class="box-content">
+          <div class="box-block box-block--head">
+            <div class="box-title">Lorem ipsum</div>
           </div>
-          <div class="card-block card-item">
+          <div class="box-block box-item">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
-          <div class="card-block card-item">
+          <div class="box-block box-item">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>
@@ -30,17 +30,17 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="card card--primary card--collapse card--full">
-      <div class="card-design"></div>
-      <div class="card-inner">
-        <div class="card-content">
-          <div class="card-block card-block--head">
-            <div class="card-title">Lorem ipsum</div>
+    <button type="button" class="box box-card box-card--primary box--collapse box--full">
+      <div class="box-design"></div>
+      <div class="box-inner">
+        <div class="box-content">
+          <div class="box-block box-block--head">
+            <div class="box-title">Lorem ipsum</div>
           </div>
-          <div class="card-block card-item">
+          <div class="box-block box-item">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
-          <div class="card-block card-item">
+          <div class="box-block box-item">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>

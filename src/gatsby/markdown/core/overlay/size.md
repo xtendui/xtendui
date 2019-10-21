@@ -33,7 +33,7 @@ You can change the **default size** @TODO less path
   </demovanilla>
 </demo>
 
-##Card size
+##box size
 
 <demo>
   <demovanilla src="inline/core/overlay/size-card">

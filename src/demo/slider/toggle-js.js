@@ -36,7 +36,7 @@ Xt.mount.push({
       TweenMax.set(target, { x: -self.detail.xPos + 'px', opacity: 1 })
       TweenMax.set(self.dragger, { x: self.detail.xPos })
       // content
-      const contents = target.querySelectorAll('.card-item > *')
+      const contents = target.querySelectorAll('.box-item > *')
       for (const content of contents) {
         TweenMax.set(content, { x: sizeContent * ratio * direction, opacity: 1 })
       }
@@ -50,7 +50,7 @@ Xt.mount.push({
       TweenMax.set(self.dragger, { x: self.detail.xPosOld })
       TweenMax.to(self.dragger, timeMask, { x: 0, ease: easeOut })
       // content
-      const contents = target.querySelectorAll('.card-item > *')
+      const contents = target.querySelectorAll('.box-item > *')
       for (const content of contents) {
         TweenMax.to(content, timeContent, { x: 0, opacity: 1, ease: easeOut })
       }
@@ -75,7 +75,7 @@ Xt.mount.push({
           TweenMax.set(tr, { x: 0, opacity: 1, ease: easeOut })
           TweenMax.set(self.dragger, { x: 0, ease: easeOut })
           // content
-          const contents = tr.querySelectorAll('.card-item > *')
+          const contents = tr.querySelectorAll('.box-item > *')
           for (const content of contents) {
             TweenMax.set(content, { x: 0, opacity: 1, ease: easeOut })
           }
@@ -88,7 +88,7 @@ Xt.mount.push({
           TweenMax.set(self.dragger, { x: xMax * direction })
           TweenMax.to(self.dragger, timeMask, { x: 0, ease: easeOut })
           // content
-          const contents = tr.querySelectorAll('.card-item > *')
+          const contents = tr.querySelectorAll('.box-item > *')
           for (const content of contents) {
             TweenMax.set(content, { x: sizeContent * direction, opacity: 0 })
             TweenMax.to(content, timeContent, { x: 0, opacity: 1, ease: easeOut })
@@ -110,7 +110,7 @@ Xt.mount.push({
         TweenMax.to(tr, timeMask, { x: xMax * direction, opacity: 0, ease: easeOut })
         TweenMax.to(self.dragger, timeMask, { x: -xMax * direction, ease: easeOut })
         // content
-        const contents = tr.querySelectorAll('.card-item > *')
+        const contents = tr.querySelectorAll('.box-item > *')
         for (const content of contents) {
           TweenMax.to(content, timeContent, { x: -sizeContent * direction, opacity: 0, ease: easeOut })
         }

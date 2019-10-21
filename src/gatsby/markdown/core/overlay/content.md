@@ -6,7 +6,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 @TODO explain we use card
-@TODO link to card extensions for advanced content
+@TODO link to box extensions for advanced content
 
 ##Multiple
 

@@ -18,40 +18,40 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
             
-          <button type="button" class="card card-overlay card-overlay--primary">
-            <div class="card-design"></div>
-            <div class="card-inner">
+          <button type="button" class="box box-overlay box-overlay--primary">
+            <div class="box-design"></div>
+            <div class="box-inner">
               <div class="btn btn-close" aria-label="Close"></div>
-              <div class="card-block card-block--head">
-                <div class="card-title">Lorem ipsum</div>
+              <div class="box-block box-block--head">
+                <div class="box-title">Lorem ipsum</div>
               </div>
-              <div class="card-content">
-                <div class="card-group card-item">
-                  <div class="card-block card-item">
-                    <div class="card-title">Lorem ipsum</div>
+              <div class="box-content">
+                <div class="box-group box-item">
+                  <div class="box-block box-item">
+                    <div class="box-title">Lorem ipsum</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                   </div>
-                  <div class="card-block card-item">
-                    <div class="card-title">Lorem ipsum</div>
+                  <div class="box-block box-item">
+                    <div class="box-title">Lorem ipsum</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                   </div>
                 </div>
-                <div class="card-block card-item">
-                  <div class="card-title">Lorem ipsum</div>
+                <div class="box-block box-item">
+                  <div class="box-title">Lorem ipsum</div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                 </div>
-                <div class="card-group card-item">
-                  <div class="card-block card-item">
-                    <div class="card-title">Lorem ipsum</div>
+                <div class="box-group box-item">
+                  <div class="box-block box-item">
+                    <div class="box-title">Lorem ipsum</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                   </div>
-                  <div class="card-block card-item">
-                    <div class="card-title">Lorem ipsum</div>
+                  <div class="box-block box-item">
+                    <div class="box-title">Lorem ipsum</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                   </div>
                 </div>
               </div>
-              <div class="card-asset">
+              <div class="box-asset">
                 ${img({})}
               </div>
             </div>
@@ -70,24 +70,28 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
             
-          <div class="card card-overlay card-overlay--primary">
-            <div class="card-design"></div>
-            <div class="card-inner">
+          <div class="box box-overlay box-overlay--primary box-overlay--small">
+            <div class="box-design"></div>
+            <div class="box-inner">
               <div class="btn btn-close" aria-label="Close"></div>
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">Lorem ipsum</div>
+              <div class="box-content">
+                <div class="box-block box-item">
+                  <div class="box-title">Lorem ipsum</div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                 </div>
                 
-                <div class="card-block card-item">
-                  <div class="card card--default">
-                    <div class="card-inner">
+                <div class="box-block box-item">
+                  <div class="box box-card box-card--default">
+                    <div class="box-design"></div>
+                    <div class="box-inner">
                       <div class="btn btn-close" aria-label="Close"></div>
-                      <div class="card-design"></div>
-                      <div class="card-content">
-                        <div class="card-block card-item">
-                          <div class="card-title">Default</div>
+                      <div class="box-content">
+                        <div class="box-block box-item">
+                          <div class="box-title">Default</div>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                        </div>
+                        <div class="box-block box-item">
+                          <div class="box-title">Default</div>
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                         </div>
                       </div>
@@ -96,7 +100,7 @@ demo.htmlSource = `
                 </div>
                       
               </div>
-              <div class="card-asset">
+              <div class="box-asset">
                 ${img({})}
               </div>
             </div>
@@ -115,22 +119,22 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
             
-          <div class="card card-overlay card-overlay--primary card--horizontal--sm">
-            <div class="card-design"></div>
-            <div class="card-inner">
+          <div class="box box-overlay box-overlay--primary box--horizontal--sm">
+            <div class="box-design"></div>
+            <div class="box-inner">
               <div class="btn btn-close" aria-label="Close"></div>
-              <div class="card-content">
-                <div class="card-asset">
+              <div class="box-content">
+                <div class="box-asset">
                   ${img({})}
                 </div>
-                <div class="card-block card-item card--overflow-y">
-                  <div class="card-title">Lorem ipsum</div>
+                <div class="box-block box-item box--overflow-y">
+                  <div class="box-title">Lorem ipsum</div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                 </div>
-                <div class="card-block card-item card--overflow-y">
-                  <div class="card-title">Lorem ipsum</div>
+                <div class="box-block box-item box--overflow-y">
+                  <div class="box-title">Lorem ipsum</div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>

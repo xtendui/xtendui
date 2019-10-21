@@ -5,7 +5,7 @@ title: "Content"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-@TODO link to card extensions for advanced content
+@TODO link to box extensions for advanced content
 
 ##Multiple
 
@@ -30,7 +30,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ##Overflow
 
-Card with max sizes with automatic scrollbar on overflow with `card--overflow-y`.
+box with max sizes with automatic scrollbar on overflow with `box--overflow-y`.
 
 <demo>
   <demovanilla src="inline/core/card/overflow-y">

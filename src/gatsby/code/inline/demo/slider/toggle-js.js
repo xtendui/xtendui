@@ -16,12 +16,12 @@ demo.htmlSource = `
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card-slide card-slide--default text-align-center">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">1</h1>
+          <div class="box box-slide box-slide--default text-align-center">
+            <div class="box-design"></div>
+            <div class="box-inner">
+              <div class="box-content">
+                <div class="box-block box-item">
+                  <div class="box-title">1</h1>
                 </div>
               </div>
             </div>
@@ -33,12 +33,12 @@ demo.htmlSource = `
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card-slide card-slide--default text-align-center">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">2</h1>
+          <div class="box box-slide box-slide--default text-align-center">
+            <div class="box-design"></div>
+            <div class="box-inner">
+              <div class="box-content">
+                <div class="box-block box-item">
+                  <div class="box-title">2</h1>
                 </div>
               </div>
             </div>
@@ -50,12 +50,12 @@ demo.htmlSource = `
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card-slide card-slide--default text-align-center">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">3</h1>
+          <div class="box box-slide box-slide--default text-align-center">
+            <div class="box-design"></div>
+            <div class="box-inner">
+              <div class="box-content">
+                <div class="box-block box-item">
+                  <div class="box-title">3</h1>
                 </div>
               </div>
             </div>
@@ -67,12 +67,12 @@ demo.htmlSource = `
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card-slide card-slide--default text-align-center">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">4</h1>
+          <div class="box box-slide box-slide--default text-align-center">
+            <div class="box-design"></div>
+            <div class="box-inner">
+              <div class="box-content">
+                <div class="box-block box-item">
+                  <div class="box-title">4</h1>
                 </div>
               </div>
             </div>
@@ -84,12 +84,12 @@ demo.htmlSource = `
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card-slide card-slide--default text-align-center">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">5</h1>
+          <div class="box box-slide box-slide--default text-align-center">
+            <div class="box-design"></div>
+            <div class="box-inner">
+              <div class="box-content">
+                <div class="box-block box-item">
+                  <div class="box-title">5</h1>
                 </div>
               </div>
             </div>
@@ -101,13 +101,13 @@ demo.htmlSource = `
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card-slide card-slide--default text-align-center"
+          <div class="box box-slide box-slide--default text-align-center"
             style="height: 15rem">
-            <div class="card-design"></div>
-            <div class="card-inner">
-              <div class="card-content">
-                <div class="card-block card-item">
-                  <div class="card-title">6</h1>
+            <div class="box-design"></div>
+            <div class="box-inner">
+              <div class="box-content">
+                <div class="box-block box-item">
+                  <div class="box-title">6</h1>
                 </div>
               </div>
             </div>

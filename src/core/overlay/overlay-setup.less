@@ -67,14 +67,14 @@
       .overlay-design {
         display: none;
       }
-      .card-overlay {
-        .card--disable();
+      .box-overlay {
+        .box--disable();
       }
       .btn-close {
         display: none !important;
       }
     }
-    .overlay-inner, .card-overlay > .card-inner > .card-content {
+    .overlay-inner, .box-overlay > .box-inner > .box-content {
       max-width: none;
     }
   }
@@ -91,7 +91,7 @@
   // .by-key(@generate-overlay-size, @name);
   @arr: ~"overlay--@{name}";
   @val: @@arr;
-  .overlay-inner, .card-overlay > .card-inner > .card-content {
+  .overlay-inner, .box-overlay > .box-inner > .box-content {
     max-width: @val;
   }
 }

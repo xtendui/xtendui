@@ -1,8 +1,8 @@
 /**
- * card
+ * box
  */
 
-.card {
+.box {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,7 +20,7 @@
   }
 }
 
-.card-inner {
+.box-inner {
   .block();
   // radius
   &, & > * {
@@ -33,29 +33,29 @@
       border-bottom-right-radius: inherit;
     }
   }
-  &, & > .card-content {
+  &, & > .box-content {
     border-radius: inherit;
   }
 }
 
-.card-design {
+.box-design {
   .design-setup();
   border-radius: inherit;
 }
 
-.card-content {
+.box-content {
   display: flex;
   flex-direction: column;
 }
 
 // content
 
-.card-item, .card-asset {
+.box-item, .box-asset {
   .flex-full();
   position: relative;
 }
 
-.card-asset {
+.box-asset {
   overflow: hidden;
   > * {
     width: 100%;
@@ -65,9 +65,9 @@
 
 // addon
 
-.card--disable {
-  .card--nodesign();
-  .card-block {
+.box--disable {
+  .box--nodesign();
+  .box-block {
     padding: 0 !important;
   }
   a&, button& {

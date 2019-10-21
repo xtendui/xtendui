@@ -1,37 +1,37 @@
 /**
- * card--group
+ * box--group
  */
 
-.card-group {
+.box-group {
   display: flex;
   margin: 0;
   padding: 0;
 }
 
 /**
- * @generate-card-group
+ * @generate-box-group
  */
 
 // generate
 
-& when not (@generate-card-group = false) {
+& when not (@generate-box-group = false) {
 
-  // generate-card--horizontal-responsive
+  // generate-box--horizontal-responsive
 
-  .generate-card--horizontal-responsive();
-  .generate-card--horizontal-responsive(@i: length(@generate-card-group)) when (@i > 0) {
-    .generate-card--horizontal-responsive(@i - 1);
-    @breakpoint: extract(@generate-card-group, @i);
+  .generate-box--horizontal-responsive();
+  .generate-box--horizontal-responsive(@i: length(@generate-box-group)) when (@i > 0) {
+    .generate-box--horizontal-responsive(@i - 1);
+    @breakpoint: extract(@generate-box-group, @i);
     & when (@breakpoint = none) {
-      .card-group {
-        .card--group() !important;
+      .box-group {
+        .box--group() !important;
       }
     }
     & when not (@breakpoint = none) {
       @query-min: 'min-@{breakpoint}';
       @media @@query-min {
-        .card-group--@{breakpoint} {
-          .card-group() !important;
+        .box-group--@{breakpoint} {
+          .box-group() !important;
         }
       }
     }

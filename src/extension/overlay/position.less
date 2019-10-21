@@ -15,9 +15,9 @@
       max-width: 500px !important;
     }
   }
-  .card-overlay {
-    .card--squared();
-    .card--noborder();
+  .box-overlay {
+    .box--squared();
+    .box--noborder();
   }
 }
 
@@ -27,19 +27,19 @@
   animation-duration: @time-medium + @time-small; // needed for .out animation timing, put max animation time
   &.active {
     &.overlay-position--left {
-      .card-overlay > .card-design {
+      .box-overlay > .box-design {
         .anim-x.active();
       }
-      .card-overlay > .card-inner > * {
+      .box-overlay > .box-inner > * {
         .anim-x.active();
         animation-delay: @time-small;
       }
     }
     &.overlay-position--right {
-      .card-overlay > .card-design {
+      .box-overlay > .box-design {
         .anim-x-inverse.active();
       }
-      .card-overlay > .card-inner > * {
+      .box-overlay > .box-inner > * {
         .anim-x-inverse.active();
         animation-delay: @time-small;
       }
@@ -47,20 +47,20 @@
   }
   &.out {
     &.overlay-position--left {
-      .card-overlay > .card-design {
+      .box-overlay > .box-design {
         .anim-x-inverse.out();
         animation-delay: @time-small;
       }
-      .card-overlay > .card-inner > * {
+      .box-overlay > .box-inner > * {
         .anim-x-inverse.out();
       }
     }
     &.overlay-position--right {
-      .card-overlay > .card-design {
+      .box-overlay > .box-design {
         .anim-x.out();
         animation-delay: @time-small;
       }
-      .card-overlay > .card-inner > * {
+      .box-overlay > .box-inner > * {
         .anim-x.out();
       }
     }
