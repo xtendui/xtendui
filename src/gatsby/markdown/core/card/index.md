@@ -6,6 +6,8 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 categories: ["200-Layout"]
 ---
 
+##Mode
+
 You can use cards normally with `div` or as links with `button` or `a`.
 
 <demo>

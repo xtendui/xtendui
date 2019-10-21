@@ -18,7 +18,7 @@ demo.htmlSource = `
           <div class="card-asset">
             ${img({})}
           </div>
-          <div class="card-group card-item">
+          <div class="card-group card-items">
             <div class="card-block card-item">
               <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
@@ -32,7 +32,7 @@ demo.htmlSource = `
             <div class="card-title">Lorem ipsum</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
-          <div class="card-group card-item">
+          <div class="card-group card-items">
             <div class="card-block card-item">
               <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>

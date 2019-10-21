@@ -14,16 +14,10 @@ Use this markup to create a overlay.
   <button type="button" data-xt-overlay="{ targets: '#overlay-custom' }">
     <!-- content -->
   </button>
-  <div class="overlay overlay--default" id="overlay-custom">
+  <div class="overlay" id="overlay-custom">
     <div class="overlay-container">
       <div class="overlay-inner">
-        <div class="overlay-design"></div>
-          <div class="overlay-close xt-fixed--check">
-            <div class="btn btn-close overlay-dismiss" aria-label="Close"></div>
-          </div>
-        <div class="overlay-content">
-          <!-- content -->
-        </div>
+        <!-- content -->
       </div>
     </div>
   </div>
@@ -36,16 +30,10 @@ You can use this markup to create a overlay with **no id**.
     <button type="button">
       <!-- content -->
     </button>
-    <div class="overlay overlay--default">
+    <div class="overlay">
       <div class="overlay-container">
         <div class="overlay-inner">
-          <div class="overlay-design"></div>
-          <div class="overlay-close xt-fixed--check">
-            <div class="btn btn-close overlay-dismiss" aria-label="Close"></div>
-          </div>
-          <div class="overlay-content">
-            <!-- content -->
-          </div>
+          <!-- content -->
         </div>
       </div>
     </div>
@@ -55,16 +43,10 @@ You can use this markup to create a overlay with **no id**.
 You can use this markup to create a overlay with **no toggle**.
 
 <script type="text/plain" class="language-markup">
-  <div class="overlay overlay--default active" data-xt-overlay>
+  <div class="overlay active" data-xt-overlay>
     <div class="overlay-container">
       <div class="overlay-inner">
-        <div class="overlay-design"></div>
-          <div class="overlay-close xt-fixed--check">
-            <div class="btn btn-close overlay-dismiss" aria-label="Close"></div>
-          </div>
-        <div class="overlay-content">
-          <!-- content -->
-        </div>
+        <!-- content -->
       </div>
     </div>
   </div>

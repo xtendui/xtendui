@@ -67,27 +67,19 @@
       .overlay-design {
         display: none;
       }
-      .overlay-content {
-        padding: 0 !important;
+      .card-overlay {
+        .card--disable();
       }
       .btn-close {
         display: none !important;
       }
     }
+    .overlay-inner, .card-overlay > .card-inner > .card-content {
+      max-width: none;
+    }
   }
   > .backdrop {
     display: none !important;
-  }
-}
-
-.overlay-close--fixed {
-  .overlay-close {
-    position: fixed;
-    z-index: @index-btn-close;
-    line-height: 1;
-    .btn-close {
-      position: relative !important;
-    }
   }
 }
 

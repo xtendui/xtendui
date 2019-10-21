@@ -58,12 +58,12 @@ Overlay.optionsDefault = {
   min: 0,
   max: 1,
   instant: { elements: true },
-  eventLimit: '.event-limit, .overlay-content',
+  eventLimit: '.event-limit',
   autoclose: true,
   appendTo: 'body',
   backdrop: 'targets',
   classHtml: 'xt-overlay',
-  closeInside: '.overlay-dismiss, :scope > .backdrop',
+  closeInside: '.overlay-dismiss, .btn-close, :scope > .backdrop',
   scrollbar: true,
   focusLimit: true
 }

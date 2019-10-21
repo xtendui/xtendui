@@ -53,12 +53,24 @@
 .card-item, .card-asset {
   .flex-full();
   position: relative;
-  overflow: hidden;
 }
 
 .card-asset {
+  overflow: hidden;
   > * {
     width: 100%;
     height: auto;
+  }
+}
+
+// addon
+
+.card--disable {
+  .card--nodesign();
+  .card-block {
+    padding: 0 !important;
+  }
+  a&, button& {
+    cursor: default;
   }
 }

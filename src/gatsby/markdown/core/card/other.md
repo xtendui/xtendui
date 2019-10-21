@@ -1,13 +1,13 @@
 ---
 type: "Core"
-parent: "Overlay"
-title: "Nested"
+parent: "Card"
+title: "Other"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-##Nested
+##Disable
 
 <demo>
-  <demovanilla src="inline/core/overlay/nested">
+  <demovanilla src="inline/core/card/disable">
   </demovanilla>
 </demo>

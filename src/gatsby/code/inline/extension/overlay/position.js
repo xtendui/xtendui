@@ -13,7 +13,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       position left
     </button>
-    <div class="overlay overlay--default overlay-position overlay-position--left">
+    <div class="overlay overlay-position overlay-position--left">
       <div class="overlay-container">
         <div class="overlay-inner">
             
@@ -46,7 +46,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       position right
     </button>
-    <div class="overlay overlay--default overlay-position overlay-position--right">
+    <div class="overlay overlay-position overlay-position--right">
       <div class="overlay-container">
         <div class="overlay-inner">
             

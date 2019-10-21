@@ -147,6 +147,15 @@
   .overflow-style(@mode: inner);
 }
 
+.card--disable {
+  color: @text !important;
+  &, .card-item {
+    opacity: 1 !important;
+    .transform-none() !important;
+    .trans-anim-none() !important;
+  }
+}
+
 // animation
 
 .card {

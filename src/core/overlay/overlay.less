@@ -11,58 +11,26 @@
     border-style: solid;
     border-color: transparent;
   }
+  // default on mobile
+  @media @max-sm {
+    .overlay-container {
+      padding: 0 !important;
+    }
+    .card-overlay {
+      .card--squared();
+    }
+  }
   // default options
   .overlay-size(small);
 }
 
 // addons
 
-.overlay-close--fixed {
-  .overlay-close {
-    top: 0;
-    right: 0;
-    .btn-close {
-      .btn--primary();
-      .btn--squared();
-    }
-  }
-}
-
-.overlay-screen {
-  // close-fixed
-  .overlay-close--fixed();
-}
-
-.overlay {
-  @media @max-sm {
-    // no external spacing and no border-radius
-    .overlay-container {
-      padding: 0 !important;
-    }
-    .overlay-inner {
-      border-radius: 0;
-    }
-    // close-fixed
-    .overlay-close--fixed();
-    .overlay-close {
-      top: auto;
-    }
-  }
-}
-
 .overlay--disable {
   // disable custom animation
-  .overlay-inner, .overlay-content {
+  .overlay-inner, .card-overlay > .card-inner > * {
     opacity: 1 !important;
     .trans-anim-none() !important;
-  }
-}
-
-.overlay--overflow-y {
-  .overlay-content {
-    overflow-y: auto;
-    max-height: 25rem;
-    .overflow-style(@mode: inner);
   }
 }
 

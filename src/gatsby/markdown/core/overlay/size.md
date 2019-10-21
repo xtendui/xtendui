@@ -27,8 +27,15 @@ You can change the **default size** @TODO less path
 </div>
 
 `.overlay--tiny` `.overlay--small` `.overlay--medium` `.overlay--big` `.overlay--giant` `.overlay--full`
-        
+
 <demo>
   <demovanilla src="inline/core/overlay/size">
+  </demovanilla>
+</demo>
+
+##Card size
+
+<demo>
+  <demovanilla src="inline/core/overlay/size-card">
   </demovanilla>
 </demo>

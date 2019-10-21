@@ -14,7 +14,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       screen
     </button>
-    <div class="overlay overlay--default overlay-screen">
+    <div class="overlay overlay-screen">
       <div class="overlay-container">
         <div class="overlay-inner">
         
@@ -47,7 +47,7 @@ demo.htmlSource = `
     <button type="button" class="btn btn--primary">
       screen image
     </button>
-    <div class="overlay overlay--default overlay-screen overlay--full">
+    <div class="overlay overlay-screen overlay--full">
       <div class="overlay-container">
         <div class="overlay-inner">
         
