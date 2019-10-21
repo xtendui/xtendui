@@ -5,8 +5,6 @@
  */
 
 .overlay-position {
-  .overlay--squared();
-  .overlay--noborder();
   .overlay-container {
     .overlay-position--left& {
       width: 88% !important;
@@ -17,6 +15,10 @@
       max-width: 500px !important;
     }
   }
+  .card-overlay {
+    .card--squared();
+    .card--noborder();
+  }
 }
 
 // animation
@@ -25,19 +27,19 @@
   animation-duration: @time-medium + @time-small; // needed for .out animation timing, put max animation time
   &.active {
     &.overlay-position--left {
-      .overlay-design {
+      .card-overlay > .card-design {
         .anim-x.active();
       }
-      .overlay-content, .overlay-block, .btn-close {
+      .card-overlay > .card-inner > * {
         .anim-x.active();
         animation-delay: @time-small;
       }
     }
     &.overlay-position--right {
-      .overlay-design {
+      .card-overlay > .card-design {
         .anim-x-inverse.active();
       }
-      .overlay-content, .overlay-block, .btn-close {
+      .card-overlay > .card-inner > * {
         .anim-x-inverse.active();
         animation-delay: @time-small;
       }
@@ -45,20 +47,20 @@
   }
   &.out {
     &.overlay-position--left {
-      .overlay-design {
+      .card-overlay > .card-design {
         .anim-x-inverse.out();
         animation-delay: @time-small;
       }
-      .overlay-content, .overlay-block, .btn-close {
+      .card-overlay > .card-inner > * {
         .anim-x-inverse.out();
       }
     }
     &.overlay-position--right {
-      .overlay-design {
+      .card-overlay > .card-design {
         .anim-x.out();
         animation-delay: @time-small;
       }
-      .overlay-content, .overlay-block, .btn-close {
+      .card-overlay > .card-inner > * {
         .anim-x.out();
       }
     }

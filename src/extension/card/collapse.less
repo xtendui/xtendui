@@ -1,0 +1,39 @@
+@import '~xtend-library/src/extension/card/collapse-setup.less';
+
+/**
+ * card collapse
+ */
+
+.card--collapse {
+  // default options
+  .card--medium-collapse();
+}
+
+// size
+
+.card--small-collapse {
+  .card-content {
+    padding: 1.5rem 2rem;
+  }
+  .card-content, .card-items {
+    .list-space(small);
+  }
+}
+
+.card--medium-collapse {
+  .card-content {
+    padding: 2rem 2.5rem;
+  }
+  .card-content, .card-items {
+    .list-space(medium);
+  }
+}
+
+.card--big-collapse {
+  .card-content {
+    padding: 3rem 3.5rem;
+  }
+  .card-content, .card-items {
+    .list-space(big);
+  }
+}

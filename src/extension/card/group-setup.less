@@ -1,0 +1,40 @@
+/**
+ * card--group
+ */
+
+.card-group {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * @generate-card-group
+ */
+
+// generate
+
+& when not (@generate-card-group = false) {
+
+  // generate-card--horizontal-responsive
+
+  .generate-card--horizontal-responsive();
+  .generate-card--horizontal-responsive(@i: length(@generate-card-group)) when (@i > 0) {
+    .generate-card--horizontal-responsive(@i - 1);
+    @breakpoint: extract(@generate-card-group, @i);
+    & when (@breakpoint = none) {
+      .card-group {
+        .card--group() !important;
+      }
+    }
+    & when not (@breakpoint = none) {
+      @query-min: 'min-@{breakpoint}';
+      @media @@query-min {
+        .card-group--@{breakpoint} {
+          .card-group() !important;
+        }
+      }
+    }
+  }
+
+}

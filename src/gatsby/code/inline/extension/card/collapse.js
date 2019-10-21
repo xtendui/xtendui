@@ -11,7 +11,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="row">
   <div class="col-12 col-6--sm">
-    <button type="button" class="card card--default card--small card--collapse">
+    <button type="button" class="card card--default card--medium card--collapse">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-block card-block--head">
@@ -51,7 +51,7 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="card card--default card--medium card--collapse">
+    <button type="button" class="card card--default card--small card--collapse card--small-collapse">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-block card-block--head">

@@ -1,0 +1,17 @@
+/**
+ * card collapse
+ */
+
+.card--collapse {
+  .card-content {
+    .list-block();
+  }
+  .card-item {
+    padding: 0 !important;
+  }
+  .card-item + .card-item {
+    &:before {
+      display: none;
+    }
+  }
+}

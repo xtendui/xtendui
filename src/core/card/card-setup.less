@@ -3,8 +3,16 @@
  */
 
 .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
+  width: 100%;
+  .flex-auto();
   z-index: @index-base; // fix :before negative z-index
+  a& {
+    .link-none() !important;
+  }
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       z-index: @index-active;
@@ -13,6 +21,7 @@
 }
 
 .card-inner {
+  .block();
   // radius
   &, & > * {
     > *:first-child {
@@ -41,14 +50,8 @@
 
 // content
 
-.card-group {
-  display: flex !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
 .card-item, .card-asset {
-  .block();
+  .flex-full();
   position: relative;
   overflow: hidden;
 }
@@ -57,13 +60,5 @@
   > * {
     width: 100%;
     height: auto;
-  }
-}
-
-// addon
-
-.card--full {
-  .card-content {
-    padding: 0 !important;
   }
 }

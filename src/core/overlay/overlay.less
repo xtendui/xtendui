@@ -1,25 +1,3 @@
-@import '~xtend-library/src/core/overlay/overlay-setup.less';
-@import '~xtend-library/src/core/overlay/screen.less';
-@import '~xtend-library/src/core/overlay/position.less';
-
-/**
- * vars
- */
-
-// space
-
-@generate-overlay-space: @generate-container-space; // overlay external spacing
-
-// size
-
-@generate-overlay-size: tiny, small, medium, big, giant, full; // overlay internal spacing
-@overlay--tiny: @breakpoint-xs - 60;
-@overlay--small: @breakpoint-sm - 60;
-@overlay--medium: @breakpoint-md - 60;
-@overlay--big: @breakpoint-lg - 60;
-@overlay--giant: @breakpoint-xl - 60;
-@overlay--full: none;
-
 /**
  * overlay
  */
@@ -33,70 +11,8 @@
     border-style: solid;
     border-color: transparent;
   }
-  .overlay-content {
-    padding: 3rem;
-    @media @min-sm {
-      padding: 4rem;
-    }
-  }
   // default options
   .overlay-size(small);
-}
-
-// variant
-
-.overlay--default {
-  .overlay-design {
-    border-color: @gray-300;
-    background: @white;
-    box-shadow: @shadow-light;
-  }
-  .overlay-inner {
-    color: @text;
-  }
-  .btn-close {
-    .btn--text();
-  }
-  .overlay-content + .overlay-content {
-    border-top: 1px solid fade(@gray-800, 10%);
-  }
-}
-
-.overlay--primary {
-  .overlay-design {
-    border-color: @gray-800;
-    background: @gray-800;
-    box-shadow: @shadow-dark;
-  }
-  .overlay-inner {
-    .text-inverse();
-  }
-  .btn-close {
-    .btn--text();
-  }
-  .overlay-content + .overlay-content {
-    border-top: 1px solid fade(@gray-200, 10%);
-  }
-}
-
-// special
-
-.overlay--squared {
-  .overlay-inner {
-    border-radius: 0;
-  }
-}
-
-.overlay--noborder {
-  .overlay-design {
-    border: 0;
-  }
-}
-
-.overlay--none {
-  .overlay-content {
-    padding: 0 !important;
-  }
 }
 
 // addons
@@ -155,10 +71,10 @@
 .overlay {
   animation-duration: @time-medium + @time-small; // needed for .out animation timing, put max animation time
   &.active {
-    .overlay-design {
+    .card-overlay > .card-design {
       .anim-zoom.active();
     }
-    .overlay-content, .overlay-block, .btn-close {
+    .card-overlay > .card-inner > * {
       .anim-y.active();
       animation-delay: @time-small;
     }
@@ -167,11 +83,11 @@
     }
   }
   &.out {
-    .overlay-design {
+    .card-overlay > .card-design {
       .anim-zoom.out();
       animation-delay: @time-small;
     }
-    .overlay-content, .overlay-block, .btn-close {
+    .card-overlay > .card-inner > * {
       .anim-y.out();
     }
     > .backdrop {

@@ -18,7 +18,7 @@ demo.htmlSource = `
         <div class="overlay-inner">
           <div class="overlay-design"></div>
           <div class="overlay-close xt-fixed--check">
-            <button type="button" class="btn btn-close overlay-dismiss" aria-label="Close"></button>
+            <div class="btn btn-close overlay-dismiss" aria-label="Close"></div>
           </div>
           <div class="overlay-content">
             <div class="h2">Lorem ipsum</div>
@@ -41,7 +41,7 @@ demo.htmlSource = `
                   <div class="overlay-inner">
                     <div class="overlay-design"></div>
                     <div class="overlay-close xt-fixed--check">
-                      <button type="button" class="btn btn-close overlay-dismiss" aria-label="Close"></button>
+                      <div class="btn btn-close overlay-dismiss" aria-label="Close"></div>
                     </div>
                     <div class="overlay-content">
                       <div class="h2">Lorem ipsum</div>

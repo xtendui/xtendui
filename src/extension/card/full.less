@@ -1,0 +1,45 @@
+/**
+ * card full
+ */
+
+.card--full {
+  color: @text;
+  .card-design {
+    border-color: transparent;
+    background: transparent;
+  }
+  .card-content {
+    padding: 0 !important;
+  }
+  // default options
+  .card--medium-full();
+}
+
+// size
+
+.card--small-full {
+  .card-design {
+    top: -1rem;
+    left: -1.5rem;
+    bottom: -1rem;
+    right: -1.5rem;
+  }
+}
+
+.card--medium-full {
+  .card-design {
+    top: -1.5rem;
+    left: -2rem;
+    bottom: -1.5rem;
+    right: -2rem;
+  }
+}
+
+.card--big-full {
+  .card-design {
+    top: -2.5rem;
+    left: -3rem;
+    bottom: -2.5rem;
+    right: -3rem;
+  }
+}

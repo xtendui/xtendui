@@ -1,21 +1,15 @@
-@import '~xtend-library/src/core/card/card-setup.less';
-
 /**
  * card
  */
 
 .card {
   border-radius: .5em;
-  a& {
-    .link-none() !important;
-  }
   .card-design {
     border-width: 0;
     border-style: solid;
     border-color: transparent;
   }
   .card-title {
-    .spacing-small();
     .font-sans--semibold();
     line-height: 1.2;
     letter-spacing: 0;
@@ -29,15 +23,6 @@
       left: 0;
       right: 0;
       height: 1px;
-    }
-  }
-  .card-item .card-item + .card-item {
-    &:before {
-      left: 0;
-      bottom: 0;
-      right: auto;
-      width: 1px;
-      height: auto;
     }
   }
   // default options
@@ -66,7 +51,6 @@
       }
     }
     &:active, &.active {
-      box-shadow: @shadow-light;
       .card-design {
         box-shadow: @shadow-light;
       }
@@ -94,7 +78,6 @@
       }
     }
     &:active, &.active {
-      box-shadow: @shadow-primary;
       .card-design {
         box-shadow: @shadow-primary;
       }
@@ -110,24 +93,8 @@
     padding: 1.5rem 2rem;
   }
   .card-title {
+    .spacing-small();
     font-size: 1.7rem;
-  }
-  // addon
-  .card--collapse& {
-    .card-content {
-      padding: 1.5rem 2rem;
-    }
-    .card-content, .card-group {
-      .list-space(small);
-    }
-  }
-  .card--full& {
-    .card-design {
-      top: -1rem;
-      left: -1.5rem;
-      bottom: -1rem;
-      right: -1.5rem;
-    }
   }
 }
 
@@ -137,24 +104,8 @@
     padding: 2rem 2.5rem;
   }
   .card-title {
+    .spacing-small();
     font-size: 2rem;
-  }
-  // addon
-  .card--collapse& {
-    .card-content {
-      padding: 2rem 2.5rem;
-    }
-    .card-content, .card-group {
-      .list-space(medium);
-    }
-  }
-  .card--full& {
-    .card-design {
-      top: -1.5rem;
-      left: -2rem;
-      bottom: -1.5rem;
-      right: -2rem;
-    }
   }
 }
 
@@ -164,24 +115,8 @@
     padding: 3rem 3.5rem;
   }
   .card-title {
+    .spacing-small();
     font-size: 3rem;
-  }
-  // addon
-  .card--collapse& {
-    .card-content {
-      padding: 3rem 3.5rem;
-    }
-    .card-content, .card-group {
-      .list-space(big);
-    }
-  }
-  .card--full& {
-    .card-design {
-      top: -2.5rem;
-      left: -3rem;
-      bottom: -2.5rem;
-      right: -3rem;
-    }
   }
 }
 
@@ -204,28 +139,6 @@
 }
 
 // addons
-
-.card--collapse {
-  .card-content {
-    .list-block();
-  }
-  .card-item {
-    padding: 0 !important;
-  }
-  .card-item + .card-item {
-    &:before {
-      display: none;
-    }
-  }
-}
-
-.card--full {
-  color: @text;
-  .card-design {
-    border-color: transparent;
-    background: transparent;
-  }
-}
 
 .card--overflow-y {
   overflow-x: hidden;

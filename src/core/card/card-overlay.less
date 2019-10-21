@@ -1,0 +1,59 @@
+/**
+ * card-overlay
+ */
+
+.card-overlay {
+  .card-design {
+    border-width: 0;
+    border-style: solid;
+    border-color: red !important;
+  }
+  // default options
+  .card-overlay--medium();
+}
+
+// variant
+
+.card-overlay--default {
+  color: @text;
+  .card-design {
+    border-color: @white;
+    background: @white;
+    box-shadow: @shadow-light;
+  }
+  .btn-close {
+    .btn--text();
+  }
+  .card-item + .card-item {
+    &:before {
+      background: fade(@gray-800, 10%);
+    }
+  }
+}
+
+.card-overlay--primary {
+  .text-inverse();
+  .card-design {
+    border-color: @gray-800;
+    background: @gray-800;
+    box-shadow: @shadow-dark;
+  }
+  .card-item + .card-item {
+    &:before {
+      background: fade(@gray-200, 10%);
+    }
+  }
+}
+
+// size
+
+.card-overlay--medium {
+  .font--medium();
+  .card-block {
+    padding: 3rem 3.5rem;
+  }
+  .card-title {
+    .spacing-medium();
+    font-size: 4rem;
+  }
+}

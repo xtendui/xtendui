@@ -24,21 +24,6 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="card card--default card--small card--collapse card--full">
-      <div class="card-design"></div>
-      <div class="card-inner">
-        <div class="card-content">
-          <div class="card-block card-item">
-            <div class="card-title">Small full</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-          </div>
-        </div>
-      </div>
-    </button>
-  </div>
-  
-  
-  <div class="col-12 col-6--sm">
     <button type="button" class="card card--default card--medium">
       <div class="card-design"></div>
       <div class="card-inner">
@@ -53,41 +38,12 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="card card--default card--medium card--collapse card--full">
-      <div class="card-design"></div>
-      <div class="card-inner">
-        <div class="card-content">
-          <div class="card-block card-item">
-            <div class="card-title">Medium full</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-          </div>
-        </div>
-      </div>
-    </button>
-  </div>
-  
-  
-  <div class="col-12 col-6--sm">
     <button type="button" class="card card--default card--big">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
           <div class="card-block card-item">
             <div class="card-title">Big</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-          </div>
-        </div>
-      </div>
-    </button>
-  </div>
-  
-  <div class="col-12 col-6--sm">
-    <button type="button" class="card card--default card--big card--collapse card--full 
-      <div class="card-design"></div>
-      <div class="card-inner">
-        <div class="card-content">
-          <div class="card-block card-item">
-            <div class="card-title">Big full</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>

@@ -5,20 +5,6 @@ title: "Content"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-##Multiple
-
-<demo>
-  <demovanilla src="inline/core/card/multiple">
-  </demovanilla>
-</demo>
-
-##Collapse
-
-<demo>
-  <demovanilla src="inline/core/card/collapse">
-  </demovanilla>
-</demo>
-
 ##Block
 
 <demo>

@@ -4,7 +4,7 @@ const writeFile = require('write')
 // write xtend less
 
 let lessCore = ''
-const lessCoreGlob = new glob.Glob('src/core/**/*.less', { ignore: ['**/*-setup.less'] }, function (er, files) {
+const lessCoreGlob = new glob.Glob('src/core/**/index.less', function (er, files) {
   for (const file of files) {
     lessCore += `@import '~xtend-library/${file}';\n`
   }

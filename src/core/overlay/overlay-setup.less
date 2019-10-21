@@ -27,7 +27,10 @@
 }
 
 .overlay-inner {
-  .align-self(center);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
   position: relative;
   z-index: @index-overlay;
   width: 100%;
@@ -35,15 +38,7 @@
 
 .overlay-design {
   .design-setup();
-}
-
-.overlay-design, .overlay-content {
   border-radius: inherit;
-}
-
-.overlay-content {
-  margin-top: auto;
-  margin-bottom: auto;
 }
 
 // addons
@@ -104,7 +99,7 @@
   // .by-key(@generate-overlay-size, @name);
   @arr: ~"overlay--@{name}";
   @val: @@arr;
-  .overlay-inner {
+  .overlay-inner, .card-overlay > .card-inner > .card-content {
     max-width: @val;
   }
 }
