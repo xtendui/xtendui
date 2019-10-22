@@ -1,17 +1,17 @@
 /**
- * box collapse
+ * card collapse
  */
 
-.card--collapse {
-  .card-content {
-    .list-block();
-  }
-  .card-item {
-    padding: 0 !important;
-  }
-  .card-item + .card-item {
-    &:before {
-      display: none;
-    }
+.card-content.card-collapse {
+  .list-block();
+}
+
+.card-item.card-collapse {
+  padding: 0;
+}
+
+.card-item + .card-item.card-collapse {
+  &:before {
+    display: none;
   }
 }

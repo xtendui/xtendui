@@ -135,33 +135,45 @@
 
 // size
 
-.card--small {
+.card-block--small {
   .font--small();
-  .card-block {
-    padding: 1.5rem 2rem;
-  }
+  padding: 1.5rem 2rem;
   .card-title {
     font-size: 1.7rem;
   }
 }
 
-.card--medium {
-  .font--medium();
+.card--small {
   .card-block {
-    padding: 2rem 2.5rem;
+    .card-block--small();
   }
+}
+
+.card-block--medium {
+  .font--medium();
+  padding: 2rem 2.5rem;
   .card-title {
     font-size: 2rem;
   }
 }
 
-.card--big {
-  .font--big();
+.card--medium {
   .card-block {
-    padding: 3rem 3.5rem;
+    .card-block--medium();
   }
+}
+
+.card-block--big {
+  .font--big();
+  padding: 3rem 3.5rem;
   .card-title {
     font-size: 3rem;
+  }
+}
+
+.card--big {
+  .card-block {
+    .card-block--big();
   }
 }
 

@@ -1,39 +1,48 @@
 @import '~xtend-library/src/extension/card/collapse-setup.less';
 
 /**
- * box collapse
+ * card collapse
  */
 
-.card--collapse {
-  // default options
-  .card--medium-collapse();
+.card-content.card-collapse {
+  .list-block();
+}
+
+.card-item.card-collapse {
+  padding: 0;
+}
+
+.card-item + .card-item.card-collapse {
+  &:before {
+    display: none;
+  }
 }
 
 // size
 
-.card--small-collapse {
-  .card-content {
+.card--small {
+  .card-content.card-collapse {
     padding: 1.5rem 2rem;
   }
-  .card-content, .card-item-nested {
+  .card-content.card-collapse, .card-item-nested.card-collapse {
     .list-space(small);
   }
 }
 
-.card--medium-collapse {
-  .card-content {
+.card--medium {
+  .card-content.card-collapse {
     padding: 2rem 2.5rem;
   }
-  .card-content, .card-item-nested {
+  .card-content.card-collapse, .card-item-nested.card-collapse {
     .list-space(medium);
   }
 }
 
-.card--big-collapse {
-  .card-content {
+.card--big {
+  .card-content.card-collapse {
     padding: 3rem 3.5rem;
   }
-  .card-content, .card-item-nested {
+  .card-content.card-collapse, .card-item-nested.card-collapse {
     .list-space(big);
   }
 }

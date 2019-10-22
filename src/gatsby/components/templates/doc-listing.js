@@ -26,9 +26,9 @@ class Template extends React.Component {
                     {category.posts.map(({ post }, z) => (
                       post.frontmatter.parent === post.frontmatter.title
                         ? <div className="gatsby_listing_column" key={z}>
-                          <Link to={markdownSlug(post)} className="card card--primary card--small card--collapse card--full gatsby_listing_item">
+                          <Link to={markdownSlug(post)} className="card card--primary card--small card--full gatsby_listing_item">
                             <div className="card-design"></div>
-                            <div className="card-block card-item">
+                            <div className="card-block card-item collapse">
                               <div className="card-title">{post.frontmatter.title}</div>
                               <p>{post.frontmatter.description}</p>
                             </div>
