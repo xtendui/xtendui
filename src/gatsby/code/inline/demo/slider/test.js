@@ -25,10 +25,13 @@ demo.htmlSource = `
                   <div class="box-title">1</h1>
                 </div>
               
-                <div class="box box-card box-card--primary box--squared">
+                <div class="box box-card box-card--primary box-card--medium box--squared">
                   <div class="box-design"></div>
                   <div class="box-inner">
                     <div class="box-content">
+                      <div class="box-block box-item">
+                        <div class="box-title">Lorem ipsum</div>
+                      </div>
                       <div class="box-block box-item">
                         <div class="box-title">Lorem ipsum</div>
                       </div>
@@ -54,10 +57,13 @@ demo.htmlSource = `
                   <div class="box-title">2</h1>
                 </div>
               
-                <div class="box box-card box-card--primary box--squared">
+                <div class="box box-card box-card--primary box-card--medium box--squared">
                   <div class="box-design"></div>
                   <div class="box-inner">
                     <div class="box-content">
+                      <div class="box-block box-item">
+                        <div class="box-title">Lorem ipsum</div>
+                      </div>
                       <div class="box-block box-item">
                         <div class="box-title">Lorem ipsum</div>
                       </div>
@@ -83,10 +89,13 @@ demo.htmlSource = `
                   <div class="box-title">3</h1>
                 </div>
               
-                <div class="box box-card box-card--primary box--squared">
+                <div class="box box-card box-card--primary box-card--medium box--squared">
                   <div class="box-design"></div>
                   <div class="box-inner">
                     <div class="box-content">
+                      <div class="box-block box-item">
+                        <div class="box-title">Lorem ipsum</div>
+                      </div>
                       <div class="box-block box-item">
                         <div class="box-title">Lorem ipsum</div>
                       </div>
@@ -112,10 +121,13 @@ demo.htmlSource = `
                   <div class="box-title">4</h1>
                 </div>
               
-                <div class="box box-card box-card--primary box--squared">
+                <div class="box box-card box-card--primary box-card--medium box--squared">
                   <div class="box-design"></div>
                   <div class="box-inner">
                     <div class="box-content">
+                      <div class="box-block box-item">
+                        <div class="box-title">Lorem ipsum</div>
+                      </div>
                       <div class="box-block box-item">
                         <div class="box-title">Lorem ipsum</div>
                       </div>
@@ -141,10 +153,13 @@ demo.htmlSource = `
                   <div class="box-title">5</h1>
                 </div>
               
-                <div class="box box-card box-card--primary box--squared">
+                <div class="box box-card box-card--primary box-card--medium box--squared">
                   <div class="box-design"></div>
                   <div class="box-inner">
                     <div class="box-content">
+                      <div class="box-block box-item">
+                        <div class="box-title">Lorem ipsum</div>
+                      </div>
                       <div class="box-block box-item">
                         <div class="box-title">Lorem ipsum</div>
                       </div>
@@ -171,10 +186,13 @@ demo.htmlSource = `
                   <div class="box-title">6</h1>
                 </div>
               
-                <div class="box box-card box-card--primary box--squared">
+                <div class="box box-card box-card--primary box-card--medium box--squared">
                   <div class="box-design"></div>
                   <div class="box-inner">
                     <div class="box-content">
+                      <div class="box-block box-item">
+                        <div class="box-title">Lorem ipsum</div>
+                      </div>
                       <div class="box-block box-item">
                         <div class="box-title">Lorem ipsum</div>
                       </div>

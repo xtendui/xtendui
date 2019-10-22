@@ -81,7 +81,7 @@ demo.htmlSource = `
                 </div>
                 
                 <div class="box-block box-item">
-                  <div class="box box-card box-card--default">
+                  <div class="box box-card box-card--default box-card--medium">
                     <div class="box-design"></div>
                     <div class="box-inner">
                       <div class="btn btn-close" aria-label="Close"></div>
@@ -119,7 +119,7 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
             
-          <div class="box box-overlay box-overlay--primary box--horizontal--sm">
+          <div class="box box-overlay box-overlay--default box--horizontal--sm">
             <div class="box-design"></div>
             <div class="box-inner">
               <div class="btn btn-close" aria-label="Close"></div>
