@@ -3,28 +3,6 @@
  */
 
 .box-overlay {
-  border-radius: .5em;
-  > .box-design {
-    border-width: 0;
-    border-style: solid;
-    border-color: transparent;
-  }
-  .box-title {
-    .font-sans--semibold();
-    line-height: 1.2;
-    letter-spacing: 0;
-    text-transform: none;
-  }
-  .box-item + .box-item {
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-    }
-  }
   // default options
   .box-overlay--medium();
 }

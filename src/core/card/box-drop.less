@@ -1,37 +1,15 @@
 /**
- * box-card
+ * box-drop
  */
 
-.box-card {
-  border-radius: .5em;
-  > .box-design {
-    border-width: 0;
-    border-style: solid;
-    border-color: transparent;
-  }
-  .box-title {
-    .font-sans--semibold();
-    line-height: 1.2;
-    letter-spacing: 0;
-    text-transform: none;
-  }
-  .box-item + .box-item {
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-    }
-  }
+.box-drop {
   // default options
-  .box-card--medium();
+  .box-drop--medium();
 }
 
 // variant
 
-.box-card--default {
+.box-drop--default {
   color: @text;
   > .box-design {
     border-color: @gray-200;
@@ -58,7 +36,7 @@
   }
 }
 
-.box-card--primary {
+.box-drop--primary {
   .text-inverse();
   > .box-design {
     border-color: @accent;
@@ -87,7 +65,8 @@
 
 // size
 
-.box-card--small {
+.box-drop--small {
+  width: 30rem;
   .font--small();
   .box-block {
     padding: 1.5rem 2rem;
@@ -98,7 +77,8 @@
   }
 }
 
-.box-card--medium {
+.box-drop--medium {
+  width: 40rem;
   .font--medium();
   .box-block {
     padding: 2rem 2.5rem;
@@ -109,7 +89,8 @@
   }
 }
 
-.box-card--big {
+.box-drop--big {
+  width: 50rem;
   .font--big();
   .box-block {
     padding: 3rem 3.5rem;

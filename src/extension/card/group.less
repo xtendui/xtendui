@@ -1,4 +1,4 @@
-@import '~xtend-library/src/extension/box/horizontal-setup.less';
+@import '~xtend-library/src/extension/card/group-setup.less';
 
 /**
  * vars
@@ -6,13 +6,13 @@
 
 // generate class: [false], [true] non responsive only, [sm, md, lg] responsive @breakpoints
 
-@generate-box-horizontal: sm, md, lg;
+@generate-box-group: sm, md, lg;
 
 /**
- * box--horizontal
+ * box group
  */
 
-.box--horizontal {
+.box-group {
   .box-item + .box-item {
     &:before {
       left: 0;

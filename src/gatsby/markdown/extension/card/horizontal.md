@@ -1,19 +1,18 @@
 ---
 type: "Extension"
-parent: "Box"
-title: "Group"
+parent: "Card"
+title: "Horizontal"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-##Group
+##Horizontal
 
 <demo>
-  <demovanilla src="inline/extension/box/group">
+  <demovanilla src="inline/extension/card/horizontal">
   </demovanilla>
 </demo>
 
-
 <demo>
-  <demovanilla src="inline/extension/box/group-responsive">
+  <demovanilla src="inline/extension/card/horizontal-overflow">
   </demovanilla>
 </demo>

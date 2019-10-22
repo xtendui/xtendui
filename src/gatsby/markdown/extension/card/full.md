@@ -1,6 +1,6 @@
 ---
 type: "Extension"
-parent: "Box"
+parent: "Card"
 title: "Full"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
@@ -8,34 +8,34 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ##Variant
 
 <demo>
-  <demovanilla src="inline/extension/box/full-variant">
+  <demovanilla src="inline/extension/card/full-variant">
   </demovanilla>
 </demo>
 
 ##Size
 
 <demo>
-  <demovanilla src="inline/extension/box/full-size">
+  <demovanilla src="inline/extension/card/full-size">
   </demovanilla>
 </demo>
 
 ##Multiple
 
 <demo>
-  <demovanilla src="inline/extension/box/full-multiple">
+  <demovanilla src="inline/extension/card/full-multiple">
   </demovanilla>
 </demo>
 
 ##Asset
 
 <demo>
-  <demovanilla src="inline/extension/box/full-asset">
+  <demovanilla src="inline/extension/card/full-asset">
   </demovanilla>
 </demo>
 
 ##Block
 
 <demo>
-  <demovanilla src="inline/extension/box/full-block">
+  <demovanilla src="inline/extension/card/full-block">
   </demovanilla>
 </demo>

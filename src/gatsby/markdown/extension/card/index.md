@@ -1,13 +1,7 @@
 ---
 type: "Extension"
-parent: "Box"
-title: "Collapse"
+parent: "Card"
+title: "Card"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+categories: ["200-Layout"]
 ---
-
-##Collapse
-
-<demo>
-  <demovanilla src="inline/extension/box/collapse">
-  </demovanilla>
-</demo>
