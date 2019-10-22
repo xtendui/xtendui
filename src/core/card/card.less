@@ -58,10 +58,8 @@
     border-color: @gray-200;
     background: @gray-200;
   }
-  .card-item + .card-item {
-    &:before {
-      background: fade(@gray-800, 10%);
-    }
+  .card-item {
+    .card-item--default();
   }
   a&, button& {
     &:hover, &.hover, &:active, &.active {
@@ -79,16 +77,22 @@
   }
 }
 
+.card-item--default {
+  & + .card-item {
+    &:before {
+      background: fade(@gray-800, 10%);
+    }
+  }
+}
+
 .card--primary {
   .text-inverse();
   > .card-design {
     border-color: @accent;
     background: @accent;
   }
-  .card-item + .card-item {
-    &:before {
-      background: fade(@gray-200, 10%);
-    }
+  .card-item {
+    .card-item--primary();
   }
   a&, button& {
     &:hover, &.hover, &:active, &.active {
@@ -106,16 +110,22 @@
   }
 }
 
+.card-item--primary {
+  & + .card-item {
+    &:before {
+      background: fade(@gray-200, 10%);
+    }
+  }
+}
+
 .card--white {
   color: @text;
   > .card-design {
     border-color: @white;
     background: @white;
   }
-  .card-item + .card-item {
-    &:before {
-      background: fade(@gray-800, 10%);
-    }
+  .card-item {
+    .card-item--white();
   }
   a&, button& {
     &:hover, &.hover, &:active, &.active {
@@ -133,9 +143,17 @@
   }
 }
 
+.card-item--white {
+  & + .card-item {
+    &:before {
+      background: fade(@gray-800, 10%);
+    }
+  }
+}
+
 // size
 
-.card-block--small {
+.card-block.card-block--small {
   .font--small();
   padding: 1.5rem 2rem;
   .card-title {
@@ -145,11 +163,11 @@
 
 .card--small {
   .card-block {
-    .card-block--small();
+    .card-block.card-block--small();
   }
 }
 
-.card-block--medium {
+.card-block.card-block--medium {
   .font--medium();
   padding: 2rem 2.5rem;
   .card-title {
@@ -159,11 +177,11 @@
 
 .card--medium {
   .card-block {
-    .card-block--medium();
+    .card-block.card-block--medium();
   }
 }
 
-.card-block--big {
+.card-block.card-block--big {
   .font--big();
   padding: 3rem 3.5rem;
   .card-title {
@@ -173,7 +191,7 @@
 
 .card--big {
   .card-block {
-    .card-block--big();
+    .card-block.card-block--big();
   }
 }
 

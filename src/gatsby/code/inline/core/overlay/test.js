@@ -18,7 +18,7 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
             
-          <button type="button" class="card card-overlay card--primary">
+          <button type="button" class="card card-overlay card--white">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
@@ -70,23 +70,37 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
             
-          <div class="card card-overlay card--big">
+          <div class="card card-overlay card--white">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
               <div class="card-content">
               
-                <div class="card-item-nested card-item card-group">
-                  <div class="card-block card-item">
+                <div class="card-item-nested card-item card-group card-collapse">
+                  <div class="card-block card-item card-block--big">
                     <div class="card-title">Lorem ipsum</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                   </div>
-                  <div class="card-block card-item">
+                  <div class="card-block card-item card-block--big">
                     <div class="card-title">Lorem ipsum</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                   </div>
                 </div>
                 
+                <div class="card-asset">
+                  ${img({})}
+                </div>
+                
+                <div class="card-block card-item card-block--small">
+                  <div class="card-title">Default</div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                </div>
+                
+                <div class="card-block card-item card-block--small">
+                  <div class="card-title">Default</div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                </div>
+                      
                 <div class="card-block card-item">
                   <div class="card">
                     <div class="card-design"></div>
@@ -126,20 +140,6 @@ demo.htmlSource = `
                     </div>
                   </div>
                 </div>
-                
-                <div class="card-asset">
-                  ${img({})}
-                </div>
-                
-                <div class="card-block card-item">
-                  <div class="card-title">Default</div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                </div>
-                
-                <div class="card-block card-item">
-                  <div class="card-title">Default</div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
-                </div>
                       
               </div>
               <div class="card-asset">
@@ -161,18 +161,18 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
             
-          <div class="card card-overlay">
+          <div class="card card-overlay card--white">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
               <div class="card-content card-collapse">
               
                 <div class="card-item-nested card-item card-group card-collapse">
-                  <div class="card-block card-item card-block--big card-collapse">
+                  <div class="card-block card-item card-collapse card-block--big">
                     <div class="card-title">Lorem ipsum</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                   </div>
-                  <div class="card-block card-item card-block--big card-collapse">
+                  <div class="card-block card-item card-collapse card-block--big">
                     <div class="card-title">Lorem ipsum</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                   </div>
@@ -182,12 +182,12 @@ demo.htmlSource = `
                   ${img({})}
                 </div>
                 
-                <div class="card-block card-item card-block--big card-collapse">
+                <div class="card-block card-item card-collapse card-block--small">
                   <div class="card-title">Default</div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                 </div>
                 
-                <div class="card-block card-item card-block--big card-collapse">
+                <div class="card-block card-item card-collapse card-block--small">
                   <div class="card-title">Default</div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                 </div>
