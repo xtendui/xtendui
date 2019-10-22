@@ -29,7 +29,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="card card--default card--squared">
+<div class="card card--squared">
       <div class="card-design"></div>
       <div class="card-inner">
     <div class="card-content">
@@ -55,7 +55,7 @@ demo.htmlSource = `
   </div>
 </div>
 
-<div class="card card--default card--squared">
+<div class="card card--squared">
       <div class="card-design"></div>
       <div class="card-inner">
     <div class="card-content">

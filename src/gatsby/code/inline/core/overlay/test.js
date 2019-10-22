@@ -18,7 +18,7 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
             
-          <button type="button" class="card card-overlay card-overlay--primary">
+          <button type="button" class="card card-overlay card--primary">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
@@ -70,7 +70,7 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
             
-          <div class="card card-overlay card-overlay--primary card-overlay--big">
+          <div class="card card-overlay card--big">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
@@ -81,7 +81,26 @@ demo.htmlSource = `
                 </div>
                 
                 <div class="card-block card-item">
-                  <div class="card card--default card--small">
+                  <div class="card">
+                    <div class="card-design"></div>
+                    <div class="card-inner">
+                      <div class="btn btn-close" aria-label="Close"></div>
+                      <div class="card-content">
+                        <div class="card-block card-item">
+                          <div class="card-title">Default</div>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                        </div>
+                        <div class="card-block card-item">
+                          <div class="card-title">Default</div>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="card-block card-item">
+                  <div class="card card--primary card--small">
                     <div class="card-design"></div>
                     <div class="card-inner">
                       <div class="btn btn-close" aria-label="Close"></div>
@@ -119,7 +138,7 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
             
-          <div class="card card-overlay card-overlay--default card--horizontal--sm">
+          <div class="card card-overlay card--horizontal--sm">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>

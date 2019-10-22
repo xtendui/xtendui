@@ -28,6 +28,26 @@
   }
   // default options
   .card--medium();
+  .card--default();
+}
+
+.card-drop {
+  width: 40rem;
+  // default options
+  .card--small();
+  .card--white();
+}
+
+.card-overlay {
+  // default options
+  .card--big();
+  .card--white();
+}
+
+.card-slide {
+  // default options
+  .card--big();
+  .card--default();
 }
 
 // variant
@@ -81,6 +101,33 @@
     &:active, &.active {
       > .card-design {
         box-shadow: @shadow-primary;
+      }
+    }
+  }
+}
+
+.card--white {
+  color: @text;
+  > .card-design {
+    border-color: @white;
+    background: @white;
+  }
+  .card-item + .card-item {
+    &:before {
+      background: fade(@gray-800, 10%);
+    }
+  }
+  a&, button& {
+    &:hover, &.hover, &:active, &.active {
+      color: @text--dark;
+      > .card-design {
+        border-color: @white;
+        background: @white;
+      }
+    }
+    &:active, &.active {
+      > .card-design {
+        box-shadow: @shadow-light;
       }
     }
   }

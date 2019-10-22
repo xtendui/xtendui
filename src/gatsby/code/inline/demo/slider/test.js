@@ -17,7 +17,7 @@ demo.htmlSource = `
       <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
-          <div class="card card-slide card-slide--default card-slide--small text-align-center">
+          <div class="card card-slide card--big text-align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -25,7 +25,21 @@ demo.htmlSource = `
                   <div class="card-title">1</h1>
                 </div>
               
-                <div class="card card--primary card--medium card--squared">
+                <div class="card">
+                  <div class="card-design"></div>
+                  <div class="card-inner">
+                    <div class="card-content">
+                      <div class="card-block card-item">
+                        <div class="card-title">Lorem ipsum</div>
+                      </div>
+                      <div class="card-block card-item">
+                        <div class="card-title">Lorem ipsum</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="card card--primary card--small card--squared">
                   <div class="card-design"></div>
                   <div class="card-inner">
                     <div class="card-content">
@@ -49,7 +63,7 @@ demo.htmlSource = `
       <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
-          <div class="card card-slide card-slide--default card-slide--small text-align-center">
+          <div class="card card-slide card--big text-align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -57,7 +71,21 @@ demo.htmlSource = `
                   <div class="card-title">2</h1>
                 </div>
               
-                <div class="card card--primary card--medium card--squared">
+                <div class="card">
+                  <div class="card-design"></div>
+                  <div class="card-inner">
+                    <div class="card-content">
+                      <div class="card-block card-item">
+                        <div class="card-title">Lorem ipsum</div>
+                      </div>
+                      <div class="card-block card-item">
+                        <div class="card-title">Lorem ipsum</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="card card--primary card--small card--squared">
                   <div class="card-design"></div>
                   <div class="card-inner">
                     <div class="card-content">
@@ -81,7 +109,7 @@ demo.htmlSource = `
       <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
-          <div class="card card-slide card-slide--default card-slide--small text-align-center">
+          <div class="card card-slide card--big text-align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -89,7 +117,21 @@ demo.htmlSource = `
                   <div class="card-title">3</h1>
                 </div>
               
-                <div class="card card--primary card--medium card--squared">
+                <div class="card">
+                  <div class="card-design"></div>
+                  <div class="card-inner">
+                    <div class="card-content">
+                      <div class="card-block card-item">
+                        <div class="card-title">Lorem ipsum</div>
+                      </div>
+                      <div class="card-block card-item">
+                        <div class="card-title">Lorem ipsum</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="card card--primary card--small card--squared">
                   <div class="card-design"></div>
                   <div class="card-inner">
                     <div class="card-content">
@@ -113,7 +155,7 @@ demo.htmlSource = `
       <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
-          <div class="card card-slide card-slide--default card-slide--small text-align-center">
+          <div class="card card-slide card--big text-align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -121,7 +163,21 @@ demo.htmlSource = `
                   <div class="card-title">4</h1>
                 </div>
               
-                <div class="card card--primary card--medium card--squared">
+                <div class="card">
+                  <div class="card-design"></div>
+                  <div class="card-inner">
+                    <div class="card-content">
+                      <div class="card-block card-item">
+                        <div class="card-title">Lorem ipsum</div>
+                      </div>
+                      <div class="card-block card-item">
+                        <div class="card-title">Lorem ipsum</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="card card--primary card--small card--squared">
                   <div class="card-design"></div>
                   <div class="card-inner">
                     <div class="card-content">
@@ -145,7 +201,7 @@ demo.htmlSource = `
       <li class="slide col-6 col-4--sm">
         <div class="slide-inner">
 
-          <div class="card card-slide card-slide--default card-slide--small text-align-center">
+          <div class="card card-slide card--big text-align-center">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="card-content">
@@ -153,7 +209,21 @@ demo.htmlSource = `
                   <div class="card-title">5</h1>
                 </div>
               
-                <div class="card card--primary card--medium card--squared">
+                <div class="card">
+                  <div class="card-design"></div>
+                  <div class="card-inner">
+                    <div class="card-content">
+                      <div class="card-block card-item">
+                        <div class="card-title">Lorem ipsum</div>
+                      </div>
+                      <div class="card-block card-item">
+                        <div class="card-title">Lorem ipsum</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="card card--primary card--small card--squared">
                   <div class="card-design"></div>
                   <div class="card-inner">
                     <div class="card-content">
@@ -177,7 +247,7 @@ demo.htmlSource = `
       <li class="slide col-12">
         <div class="slide-inner">
 
-          <div class="card card-slide card-slide--default card-slide--small text-align-center"
+          <div class="card card-slide card--big text-align-center"
             style="height: 15rem">
             <div class="card-design"></div>
             <div class="card-inner">
@@ -186,7 +256,21 @@ demo.htmlSource = `
                   <div class="card-title">6</h1>
                 </div>
               
-                <div class="card card--primary card--medium card--squared">
+                <div class="card">
+                  <div class="card-design"></div>
+                  <div class="card-inner">
+                    <div class="card-content">
+                      <div class="card-block card-item">
+                        <div class="card-title">Lorem ipsum</div>
+                      </div>
+                      <div class="card-block card-item">
+                        <div class="card-title">Lorem ipsum</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="card card--primary card--small card--squared">
                   <div class="card-design"></div>
                   <div class="card-inner">
                     <div class="card-content">

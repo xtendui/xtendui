@@ -17,7 +17,7 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
             
-          <div class="card card-overlay card-overlay--default">
+          <div class="card card-overlay">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
@@ -50,7 +50,7 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
             
-          <div class="card card-overlay card-overlay--default card-overlay--small">
+          <div class="card card-overlay card--small">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
@@ -83,7 +83,7 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
             
-          <div class="card card-overlay card-overlay--default card-overlay--medium">
+          <div class="card card-overlay card--medium">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
@@ -116,7 +116,7 @@ demo.htmlSource = `
       <div class="overlay-container">
         <div class="overlay-inner">
             
-          <div class="card card-overlay card-overlay--default card-overlay--big">
+          <div class="card card-overlay card--big">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
