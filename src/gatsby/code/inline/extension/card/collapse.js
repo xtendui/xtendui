@@ -11,39 +11,39 @@ export const demo = {
 demo.htmlSource = `
 <div class="row">
   <div class="col-12 col-6--sm">
-    <button type="button" class="box box-card box-card--default box-card--medium box--collapse">
-      <div class="box-design"></div>
-      <div class="box-inner">
-        <div class="box-block box-block--head">
-          <div class="box-title">Lorem ipsum</div>
+    <button type="button" class="card card--default card--medium card--collapse">
+      <div class="card-design"></div>
+      <div class="card-inner">
+        <div class="card-block card-block--head">
+          <div class="card-title">Lorem ipsum</div>
         </div>
-        <div class="box-content">
-          <div class="box-items box-item box-group">
-            <div class="box-block box-item">
-              <div class="box-title">Lorem ipsum</div>
+        <div class="card-content">
+          <div class="card-item-nested card-item card-group">
+            <div class="card-block card-item">
+              <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
             </div>
-            <div class="box-block box-item">
-              <div class="box-title">Lorem ipsum</div>
+            <div class="card-block card-item">
+              <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
             </div>
           </div>
-          <div class="box-block box-item">
-            <div class="box-title">Lorem ipsum</div>
+          <div class="card-block card-item">
+            <div class="card-title">Lorem ipsum</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
-          <div class="box-items box-item box-group">
-            <div class="box-block box-item">
-              <div class="box-title">Lorem ipsum</div>
+          <div class="card-item-nested card-item card-group">
+            <div class="card-block card-item">
+              <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
             </div>
-            <div class="box-block box-item">
-              <div class="box-title">Lorem ipsum</div>
+            <div class="card-block card-item">
+              <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
             </div>
           </div>
         </div>
-        <div class="box-asset">
+        <div class="card-asset">
           ${img({})}
         </div>
       </div>
@@ -51,39 +51,39 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="box box-card box-card--default box-card--small box--collapse box--small-collapse">
-      <div class="box-design"></div>
-      <div class="box-inner">
-        <div class="box-block box-block--head">
-          <div class="box-title">Lorem ipsum</div>
+    <button type="button" class="card card--default card--small card--collapse card--small-collapse">
+      <div class="card-design"></div>
+      <div class="card-inner">
+        <div class="card-block card-block--head">
+          <div class="card-title">Lorem ipsum</div>
         </div>
-        <div class="box-content">
-          <div class="box-items box-item box-group">
-            <div class="box-block box-item">
-              <div class="box-title">Lorem ipsum</div>
+        <div class="card-content">
+          <div class="card-item-nested card-item card-group">
+            <div class="card-block card-item">
+              <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
             </div>
-            <div class="box-block box-item">
-              <div class="box-title">Lorem ipsum</div>
+            <div class="card-block card-item">
+              <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
             </div>
           </div>
-          <div class="box-block box-item">
-            <div class="box-title">Lorem ipsum</div>
+          <div class="card-block card-item">
+            <div class="card-title">Lorem ipsum</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
-          <div class="box-items box-item box-group">
-            <div class="box-block box-item">
-              <div class="box-title">Lorem ipsum</div>
+          <div class="card-item-nested card-item card-group">
+            <div class="card-block card-item">
+              <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
             </div>
-            <div class="box-block box-item">
-              <div class="box-title">Lorem ipsum</div>
+            <div class="card-block card-item">
+              <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
             </div>
           </div>
         </div>
-        <div class="box-asset">
+        <div class="card-asset">
           ${img({})}
         </div>
       </div>
@@ -91,22 +91,22 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="box box-card box-card--default box--collapse">
-      <div class="box-design"></div>
-      <div class="box-inner">
-        <div class="box-content">
-          <div class="box-items box-item box-group--sm">
-            <div class="box-block box-item">
-              <div class="box-title">Lorem ipsum</div>
+    <button type="button" class="card card--default card--collapse">
+      <div class="card-design"></div>
+      <div class="card-inner">
+        <div class="card-content">
+          <div class="card-item-nested card-item card-group--sm">
+            <div class="card-block card-item">
+              <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
             </div>
-            <div class="box-block box-item">
-              <div class="box-title">Lorem ipsum</div>
+            <div class="card-block card-item">
+              <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
             </div>
           </div>
-          <div class="box-block box-item">
-            <div class="box-title">Lorem ipsum</div>
+          <div class="card-block card-item">
+            <div class="card-title">Lorem ipsum</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>
@@ -115,22 +115,22 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="box box-card box-card--default box-card--small box--collapse box--full box--collapse box--small-collapse">
-      <div class="box-design"></div>
-      <div class="box-inner">
-        <div class="box-content">
-          <div class="box-items box-item box-group--sm">
-            <div class="box-block box-item">
-              <div class="box-title">Lorem ipsum</div>
+    <button type="button" class="card card--default card--small card--collapse card--full card--collapse card--small-collapse">
+      <div class="card-design"></div>
+      <div class="card-inner">
+        <div class="card-content">
+          <div class="card-item-nested card-item card-group--sm">
+            <div class="card-block card-item">
+              <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
             </div>
-            <div class="box-block box-item">
-              <div class="box-title">Lorem ipsum</div>
+            <div class="card-block card-item">
+              <div class="card-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
             </div>
           </div>
-          <div class="box-block box-item">
-            <div class="box-title">Lorem ipsum</div>
+          <div class="card-block card-item">
+            <div class="card-title">Lorem ipsum</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>

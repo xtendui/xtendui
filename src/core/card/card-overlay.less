@@ -1,17 +1,20 @@
 /**
- * box-overlay
+ * card-overlay
  */
 
-.box-overlay {
+.card-overlay {
+  .card-title {
+    .spacing-medium();
+  }
   // default options
-  .box-overlay--medium();
+  .card-overlay--medium();
 }
 
 // variant
 
-.box-overlay--default {
+.card-overlay--default {
   color: @text;
-  > .box-design {
+  > .card-design {
     border-color: @white;
     background: @white;
     box-shadow: @shadow-light;
@@ -19,7 +22,7 @@
   .btn-close {
     .btn--text();
   }
-  .box-item + .box-item {
+  .card-item + .card-item {
     &:before {
       background: fade(@gray-800, 10%);
     }
@@ -27,26 +30,26 @@
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       color: @text--dark;
-      > .box-design {
+      > .card-design {
         border-color: @gray-200;
         background: @gray-200;
       }
     }
     &:active, &.active {
-      > .box-design {
+      > .card-design {
         box-shadow: @shadow-light;
       }
     }
   }
 }
 
-.box-overlay--primary {
+.card-overlay--primary {
   .text-inverse();
-  > .box-design {
+  > .card-design {
     border-color: @gray-800;
     background: @gray-800;
   }
-  .box-item + .box-item {
+  .card-item + .card-item {
     &:before {
       background: fade(@gray-200, 10%);
     }
@@ -54,13 +57,13 @@
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       color: @text-inverse--dark;
-      > .box-design {
+      > .card-design {
         border-color: @gray-800;
         background: @gray-800;
       }
     }
     &:active, &.active {
-      > .box-design {
+      > .card-design {
         box-shadow: @shadow-primary;
       }
     }
@@ -69,35 +72,32 @@
 
 // size
 
-.box-overlay--small {
+.card-overlay--small {
   .font--small();
-  .box-block {
+  .card-block {
     padding: 2rem 2.5rem;
   }
-  .box-title {
-    .spacing-medium();
+  .card-title {
     font-size: 3rem;
   }
 }
 
-.box-overlay--medium {
+.card-overlay--medium {
   .font--medium();
-  .box-block {
+  .card-block {
     padding: 3rem 3.5rem;
   }
-  .box-title {
-    .spacing-medium();
+  .card-title {
     font-size: 4rem;
   }
 }
 
-.box-overlay--big {
+.card-overlay--big {
   .font--big();
-  .box-block {
+  .card-block {
     padding: 4rem 4.5rem;
   }
-  .box-title {
-    .spacing-medium();
+  .card-title {
     font-size: 5rem;
   }
 }

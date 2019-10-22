@@ -1,40 +1,40 @@
 /**
- * box--group
+ * card--group
  */
 
-.box-group {
+.card-group {
   display: flex;
 }
 
-.box-items {
+.card-item-nested {
   margin: 0 !important;
   padding: 0 !important;
 }
 
 /**
- * @generate-box-group
+ * @generate-card-group
  */
 
 // generate
 
-& when not (@generate-box-group = false) {
+& when not (@generate-card-group = false) {
 
-  // generate-box--horizontal-responsive
+  // generate-card--horizontal-responsive
 
-  .generate-box--horizontal-responsive();
-  .generate-box--horizontal-responsive(@i: length(@generate-box-group)) when (@i > 0) {
-    .generate-box--horizontal-responsive(@i - 1);
-    @breakpoint: extract(@generate-box-group, @i);
+  .generate-card--horizontal-responsive();
+  .generate-card--horizontal-responsive(@i: length(@generate-card-group)) when (@i > 0) {
+    .generate-card--horizontal-responsive(@i - 1);
+    @breakpoint: extract(@generate-card-group, @i);
     & when (@breakpoint = none) {
-      .box-group {
-        .box--group() !important;
+      .card-group {
+        .card--group() !important;
       }
     }
     & when not (@breakpoint = none) {
       @query-min: 'min-@{breakpoint}';
       @media @@query-min {
-        .box-group--@{breakpoint} {
-          .box-group() !important;
+        .card-group--@{breakpoint} {
+          .card-group() !important;
         }
       }
     }

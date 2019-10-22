@@ -1,0 +1,192 @@
+/**
+ * card
+ */
+
+.card {
+  border-radius: .5em;
+  > .card-design {
+    border-width: 0;
+    border-style: solid;
+    border-color: transparent;
+  }
+  .card-title {
+    .spacing-small();
+    .font-sans--semibold();
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .card-item + .card-item {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+    }
+  }
+  // default options
+  .card--medium();
+}
+
+// variant
+
+.card--default {
+  color: @text;
+  > .card-design {
+    border-color: @gray-200;
+    background: @gray-200;
+  }
+  .card-item + .card-item {
+    &:before {
+      background: fade(@gray-800, 10%);
+    }
+  }
+  a&, button& {
+    &:hover, &.hover, &:active, &.active {
+      color: @text--dark;
+      > .card-design {
+        border-color: @gray-200--dark;
+        background: @gray-200--dark;
+      }
+    }
+    &:active, &.active {
+      > .card-design {
+        box-shadow: @shadow-light;
+      }
+    }
+  }
+}
+
+.card--primary {
+  .text-inverse();
+  > .card-design {
+    border-color: @accent;
+    background: @accent;
+  }
+  .card-item + .card-item {
+    &:before {
+      background: fade(@gray-200, 10%);
+    }
+  }
+  a&, button& {
+    &:hover, &.hover, &:active, &.active {
+      color: @text-inverse--dark;
+      > .card-design {
+        border-color: @accent--dark;
+        background: @accent--dark;
+      }
+    }
+    &:active, &.active {
+      > .card-design {
+        box-shadow: @shadow-primary;
+      }
+    }
+  }
+}
+
+// size
+
+.card--small {
+  .font--small();
+  .card-block {
+    padding: 1.5rem 2rem;
+  }
+  .card-title {
+    font-size: 1.7rem;
+  }
+}
+
+.card--medium {
+  .font--medium();
+  .card-block {
+    padding: 2rem 2.5rem;
+  }
+  .card-title {
+    font-size: 2rem;
+  }
+}
+
+.card--big {
+  .font--big();
+  .card-block {
+    padding: 3rem 3.5rem;
+  }
+  .card-title {
+    font-size: 3rem;
+  }
+}
+
+// special
+
+.card--nodesign {
+  > .card-design {
+    display: none;
+  }
+}
+
+.card--squared {
+  border-radius: 0;
+}
+
+.card--noborder {
+  > .card-design {
+    border: 0;
+  }
+}
+
+// addons
+
+.card--overflow-y {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 30rem;
+  .overflow-style(@mode: inner);
+}
+
+.card--disable {
+  color: @text !important;
+  &, .card-item {
+    opacity: 1 !important;
+    .transform-none() !important;
+    .trans-anim-none() !important;
+  }
+}
+
+// animation
+
+.card {
+  a&, button& {
+    transition-property: all;
+    transition-duration: @time-big;
+    transition-timing-function: @bez-out;
+    > .card-design {
+      transition-property: all;
+      transition-duration: @time-big;
+      transition-timing-function: @bez-out;
+    }
+    .card-block.card-item {
+      transition-property: transform;
+      transition-duration: @time-big;
+      transition-timing-function: @bez-out;
+    }
+    &:hover, &.hover, &:active, &.active {
+      transform: translateY(-.5rem) scale(1.03, 1.05);
+      transition-property: all;
+      transition-duration: @time-big;
+      transition-timing-function: @bez-in;
+      > .card-design {
+        transition-property: all;
+        transition-duration: @time-big;
+        transition-timing-function: @bez-in;
+      }
+      .card-block.card-item {
+        transform: scale(0.97, 0.95);
+        transition-property: transform;
+        transition-duration: @time-big;
+        transition-timing-function: @bez-in;
+      }
+    }
+  }
+}

@@ -10,13 +10,13 @@ export const demo = {
 demo.htmlSource = `
 <div class="row">
   <div class="col-12 col-6--sm">
-    <div class="box box-card box-card--default">
-      <div class="box-design"></div>
-      <div class="box-inner">
+    <div class="card card--default">
+      <div class="card-design"></div>
+      <div class="card-inner">
         <div class="btn btn-close" aria-label="Close"></div>
-        <div class="box-content">
-          <div class="box-block box-item">
-            <div class="box-title">Default</div>
+        <div class="card-content">
+          <div class="card-block card-item">
+            <div class="card-title">Default</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>
@@ -25,13 +25,13 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <div class="box box-card box-card--default">
-      <div class="box-design"></div>
-      <div class="box-inner">
+    <div class="card card--default">
+      <div class="card-design"></div>
+      <div class="card-inner">
         <div class="btn btn-close" aria-label="Close"></div>
-        <div class="box-content">
-          <div class="box-block box-item">
-            <div class="box-title">Primary</div>
+        <div class="card-content">
+          <div class="card-block card-item">
+            <div class="card-title">Primary</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>

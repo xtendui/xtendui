@@ -1,21 +1,21 @@
 /**
- * box-card
+ * card-drop
  */
 
-.box-card {
+.card-drop {
   // default options
-  .box-card--medium();
+  .card-drop--medium();
 }
 
 // variant
 
-.box-card--default {
+.card-drop--default {
   color: @text;
-  > .box-design {
+  > .card-design {
     border-color: @gray-200;
     background: @gray-200;
   }
-  .box-item + .box-item {
+  .card-item + .card-item {
     &:before {
       background: fade(@gray-800, 10%);
     }
@@ -23,26 +23,26 @@
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       color: @text--dark;
-      > .box-design {
+      > .card-design {
         border-color: @gray-200--dark;
         background: @gray-200--dark;
       }
     }
     &:active, &.active {
-      > .box-design {
+      > .card-design {
         box-shadow: @shadow-light;
       }
     }
   }
 }
 
-.box-card--primary {
+.card-drop--primary {
   .text-inverse();
-  > .box-design {
+  > .card-design {
     border-color: @accent;
     background: @accent;
   }
-  .box-item + .box-item {
+  .card-item + .card-item {
     &:before {
       background: fade(@gray-200, 10%);
     }
@@ -50,13 +50,13 @@
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       color: @text-inverse--dark;
-      > .box-design {
+      > .card-design {
         border-color: @accent--dark;
         background: @accent--dark;
       }
     }
     &:active, &.active {
-      > .box-design {
+      > .card-design {
         box-shadow: @shadow-primary;
       }
     }
@@ -65,35 +65,35 @@
 
 // size
 
-.box-card--small {
+.card-drop--small {
+  width: 30rem;
   .font--small();
-  .box-block {
+  .card-block {
     padding: 1.5rem 2rem;
   }
-  .box-title {
-    .spacing-small();
+  .card-title {
     font-size: 1.7rem;
   }
 }
 
-.box-card--medium {
+.card-drop--medium {
+  width: 40rem;
   .font--medium();
-  .box-block {
+  .card-block {
     padding: 2rem 2.5rem;
   }
-  .box-title {
-    .spacing-small();
+  .card-title {
     font-size: 2rem;
   }
 }
 
-.box-card--big {
+.card-drop--big {
+  width: 50rem;
   .font--big();
-  .box-block {
+  .card-block {
     padding: 3rem 3.5rem;
   }
-  .box-title {
-    .spacing-small();
+  .card-title {
     font-size: 3rem;
   }
 }

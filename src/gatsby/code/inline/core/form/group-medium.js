@@ -60,8 +60,8 @@ demo.htmlSource = `
   </div>
   
   <div class="form-group">
-    <input type="checkbox" id="checkbox-block" checked>
-    <label class="form-label" for="checkbox-block">
+    <input type="checkbox" id="checkcard-block" checked>
+    <label class="form-label" for="checkcard-block">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
     </label>
   </div>

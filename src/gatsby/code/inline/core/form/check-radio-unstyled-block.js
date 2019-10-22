@@ -9,8 +9,8 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="form-group">
-  <input type="checkbox" class="unstyled" id="checkbox-block-unstyled" checked>
-  <label class="form-label" for="checkbox-block-unstyled">
+  <input type="checkbox" class="unstyled" id="checkcard-block-unstyled" checked>
+  <label class="form-label" for="checkcard-block-unstyled">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum velit condimentum efficitur feugiat. Sed sit amet leo nunc. <a href="#">sales conditions</a> and the <a href="#">privacy policy</a>
   </label>
 </div>

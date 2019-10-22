@@ -1,21 +1,21 @@
 /**
- * box-slide
+ * card-slide
  */
 
-.box-slide {
+.card-slide {
   // default options
-  .box-slide--medium();
+  .card-slide--medium();
 }
 
 // variant
 
-.box-slide--default {
+.card-slide--default {
   color: @text;
-  > .box-design {
+  > .card-design {
     border-color: @gray-200;
     background: @gray-200;
   }
-  .box-item + .box-item {
+  .card-item + .card-item {
     &:before {
       background: fade(@gray-800, 10%);
     }
@@ -23,13 +23,13 @@
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       color: @text--dark;
-      > .box-design {
+      > .card-design {
         border-color: @gray-200--dark;
         background: @gray-200--dark;
       }
     }
     &:active, &.active {
-      > .box-design {
+      > .card-design {
         box-shadow: @shadow-light;
       }
     }
@@ -38,34 +38,34 @@
 
 // size
 
-.box-slide--small {
+.card-slide--small {
   .font--small();
-  .box-block {
+  .card-block {
     padding: 2rem 2.5rem;
   }
-  .box-title {
+  .card-title {
     .spacing-medium();
     font-size: 3rem;
   }
 }
 
-.box-slide--medium {
+.card-slide--medium {
   .font--medium();
-  .box-block {
+  .card-block {
     padding: 3rem 3.5rem;
   }
-  .box-title {
+  .card-title {
     .spacing-medium();
     font-size: 4rem;
   }
 }
 
-.box-slide--big {
+.card-slide--big {
   .font--big();
-  .box-block {
+  .card-block {
     padding: 4rem 4.5rem;
   }
-  .box-title {
+  .card-title {
     .spacing-medium();
     font-size: 5rem;
   }

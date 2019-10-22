@@ -2,23 +2,23 @@
  * box full
  */
 
-.box--full {
+.card--full {
   color: @text;
-  .box-design {
+  > .card-design {
     border-color: transparent;
     background: transparent;
   }
-  .box-content {
+  .card-content {
     padding: 0 !important;
   }
   // default options
-  .box--medium-full();
+  .card--medium-full();
 }
 
 // size
 
-.box--small-full {
-  .box-design {
+.card--small-full {
+  > .card-design {
     top: -1rem;
     left: -1.5rem;
     bottom: -1rem;
@@ -26,8 +26,8 @@
   }
 }
 
-.box--medium-full {
-  .box-design {
+.card--medium-full {
+  > .card-design {
     top: -1.5rem;
     left: -2rem;
     bottom: -1.5rem;
@@ -35,8 +35,8 @@
   }
 }
 
-.box--big-full {
-  .box-design {
+.card--big-full {
+  > .card-design {
     top: -2.5rem;
     left: -3rem;
     bottom: -2.5rem;

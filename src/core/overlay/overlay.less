@@ -16,8 +16,8 @@
     .overlay-container {
       padding: 0 !important;
     }
-    .box-overlay {
-      .box--squared();
+    .card-overlay {
+      .card--squared();
     }
   }
   // default options
@@ -28,7 +28,7 @@
 
 .overlay--disable {
   // disable custom animation
-  .overlay-inner, .box-overlay > .box-inner > * {
+  .overlay-inner, .card-overlay > .card-inner > * {
     opacity: 1 !important;
     .trans-anim-none() !important;
   }
@@ -39,10 +39,10 @@
 .overlay {
   animation-duration: @time-medium + @time-small; // needed for .out animation timing, put max animation time
   &.active {
-    .box-overlay > .box-design {
+    .card-overlay > .card-design {
       .anim-zoom.active();
     }
-    .box-overlay > .box-inner > * {
+    .card-overlay > .card-inner > * {
       .anim-y.active();
       animation-delay: @time-small;
     }
@@ -51,11 +51,11 @@
     }
   }
   &.out {
-    .box-overlay > .box-design {
+    .card-overlay > .card-design {
       .anim-zoom.out();
       animation-delay: @time-small;
     }
-    .box-overlay > .box-inner > * {
+    .card-overlay > .card-inner > * {
       .anim-y.out();
     }
     > .backdrop {

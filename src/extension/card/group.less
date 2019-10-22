@@ -6,14 +6,14 @@
 
 // generate class: [false], [true] non responsive only, [sm, md, lg] responsive @breakpoints
 
-@generate-box-group: sm, md, lg;
+@generate-card-group: sm, md, lg;
 
 /**
  * box group
  */
 
-.box-group {
-  .box-item + .box-item {
+.card-group {
+  .card-item + .card-item {
     &:before {
       left: 0;
       bottom: 0;

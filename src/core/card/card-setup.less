@@ -2,7 +2,7 @@
  * box
  */
 
-.box {
+.card {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,8 +20,12 @@
   }
 }
 
-.box-inner {
+.card-inner {
   .block();
+  > .card-content {
+    display: flex;
+    flex-direction: column;
+  }
   // radius
   &, & > * {
     > *:first-child {
@@ -33,33 +37,25 @@
       border-bottom-right-radius: inherit;
     }
   }
-  &, & > .box-content {
+  &, & > .card-content {
     border-radius: inherit;
   }
 }
 
-.box-design {
+.card-design {
   .design-setup();
   border-radius: inherit;
 }
 
-.box-content {
-  display: flex;
-  flex-direction: column;
-}
-
-// content
-
-.box-item, .box-asset {
+.card-item {
   .flex-full();
   position: relative;
-}
-
-.box-item {
   display: inline-block;
 }
 
-.box-asset {
+.card-asset {
+  .flex-full();
+  position: relative;
   overflow: hidden;
   > * {
     width: 100%;
@@ -69,9 +65,9 @@
 
 // addon
 
-.box--disable {
-  .box--nodesign();
-  .box-block {
+.card--disable {
+  .card--nodesign();
+  .card-block {
     padding: 0 !important;
   }
   a&, button& {
