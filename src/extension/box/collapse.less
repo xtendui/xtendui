@@ -1,4 +1,4 @@
-@import '~xtend-library/src/extension/card/collapse-setup.less';
+@import '~xtend-library/src/extension/box/collapse-setup.less';
 
 /**
  * box collapse
@@ -15,7 +15,7 @@
   .box-content {
     padding: 1.5rem 2rem;
   }
-  .box-content, [class^='box-group'], [class*=' box-group'] {
+  .box-content, .box-items {
     .list-space(small);
   }
 }
@@ -24,7 +24,7 @@
   .box-content {
     padding: 2rem 2.5rem;
   }
-  .box-content, [class^='box-group'], [class*=' box-group'] {
+  .box-content, .box-items {
     .list-space(medium);
   }
 }
@@ -33,7 +33,7 @@
   .box-content {
     padding: 3rem 3.5rem;
   }
-  .box-content, [class^='box-group'], [class*=' box-group'] {
+  .box-content, .box-items {
     .list-space(big);
   }
 }

@@ -15,7 +15,7 @@ demo.htmlSource = `
       <div class="box-design"></div>
       <div class="box-inner">
         <div class="box-content">
-          <div class="box-group--sm box-item">
+          <div class="box-items box-item box-group--sm">
             <div class="box-block box-item">
               <div class="box-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
@@ -25,17 +25,21 @@ demo.htmlSource = `
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
             </div>
           </div>
+          <div class="box-block box-item">
+            <div class="box-title">Lorem ipsum</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+          </div>
         </div>
       </div>
     </button>
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="box box-card box-card--defaul box--collapse box--full">
+    <button type="button" class="box box-card box-card--default box--collapse box--full">
       <div class="box-design"></div>
       <div class="box-inner">
         <div class="box-content">
-          <div class="box-group--sm box-item">
+          <div class="box-items box-item box-group--sm">
             <div class="box-block box-item">
               <div class="box-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
@@ -44,6 +48,10 @@ demo.htmlSource = `
               <div class="box-title">Lorem ipsum</div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
             </div>
+          </div>
+          <div class="box-block box-item">
+            <div class="box-title">Lorem ipsum</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>
       </div>

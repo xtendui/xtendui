@@ -26,7 +26,7 @@ demo.htmlSource = `
                 <div class="box-title">Lorem ipsum</div>
               </div>
               <div class="box-content">
-                <div class="box-group box-item">
+                <div class="box-items box-item box-group">
                   <div class="box-block box-item">
                     <div class="box-title">Lorem ipsum</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
@@ -40,7 +40,7 @@ demo.htmlSource = `
                   <div class="box-title">Lorem ipsum</div>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
                 </div>
-                <div class="box-group box-item">
+                <div class="box-items box-item box-group">
                   <div class="box-block box-item">
                     <div class="box-title">Lorem ipsum</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>

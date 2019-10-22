@@ -1,6 +1,6 @@
 ---
 type: "Extension"
-parent: "Card"
+parent: "Box"
 title: "Collapse"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
@@ -8,6 +8,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ##Collapse
 
 <demo>
-  <demovanilla src="inline/extension/card/collapse">
+  <demovanilla src="inline/extension/box/collapse">
   </demovanilla>
 </demo>

@@ -10,7 +10,7 @@ export const demo = {
 demo.htmlSource = `
 <div class="row">
   <div class="col-12 col-6--sm">
-    <button type="button" class="box box-card box-card--default  box-card--small">
+    <button type="button" class="box box-card box-card--default box-card--small">
       <div class="box-design"></div>
       <div class="box-inner">
         <div class="box-content">
@@ -24,7 +24,7 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="box box-card box-card--default  box-card--medium">
+    <button type="button" class="box box-card box-card--default box-card--medium">
       <div class="box-design"></div>
       <div class="box-inner">
         <div class="box-content">
@@ -38,7 +38,7 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="box box-card box-card--default  box-card--big">
+    <button type="button" class="box box-card box-card--default box-card--big">
       <div class="box-design"></div>
       <div class="box-inner">
         <div class="box-content">
