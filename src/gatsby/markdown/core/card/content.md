@@ -5,12 +5,17 @@ title: "Content"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
-@TODO link to box extensions for advanced content
-
 ##Multiple
 
 <demo>
   <demovanilla src="inline/core/card/multiple">
+  </demovanilla>
+</demo>
+
+##Group
+
+<demo>
+  <demovanilla src="inline/core/card/group">
   </demovanilla>
 </demo>
 
@@ -34,19 +39,5 @@ box with max sizes with automatic scrollbar on overflow with `card--overflow-y`.
 
 <demo>
   <demovanilla src="inline/core/card/overflow-y">
-  </demovanilla>
-</demo>
-
-##Close
-
-<demo>
-  <demovanilla src="inline/core/card/close">
-  </demovanilla>
-</demo>
-
-##Test
-
-<demo>
-  <demovanilla src="inline/core/card/test">
   </demovanilla>
 </demo>

@@ -26,10 +26,10 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </demovanilla>
 </demo>
 
-##Asset
+##Group
 
 <demo>
-  <demovanilla src="inline/extension/card/full-asset">
+  <demovanilla src="inline/extension/card/full-group">
   </demovanilla>
 </demo>
 
@@ -37,5 +37,21 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 <demo>
   <demovanilla src="inline/extension/card/full-block">
+  </demovanilla>
+</demo>
+
+##Asset
+
+<demo>
+  <demovanilla src="inline/extension/card/full-asset">
+  </demovanilla>
+</demo>
+
+##Overflow
+
+box with max sizes with automatic scrollbar on overflow with `card--overflow-y`.
+
+<demo>
+  <demovanilla src="inline/extension/card/full-overflow-y">
   </demovanilla>
 </demo>

@@ -2,16 +2,18 @@
  * card collapse
  */
 
-.card-content.card-collapse {
-  .list-block();
-}
-
-.card-item.card-collapse {
-  padding: 0;
-}
-
-.card-item + .card-item.card-collapse {
-  &:before {
-    display: none;
+.card--collapse {
+  > .card-inner > .card-content {
+    .list-block();
   }
+  .card-contents({
+    > .card-item {
+      padding: 0;
+      & + .card-item {
+        &:before {
+          display: none;
+        }
+      }
+    }
+  });
 }

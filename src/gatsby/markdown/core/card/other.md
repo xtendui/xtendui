@@ -11,3 +11,10 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   <demovanilla src="inline/core/card/disable">
   </demovanilla>
 </demo>
+
+##Close
+
+<demo>
+  <demovanilla src="inline/core/card/close">
+  </demovanilla>
+</demo>

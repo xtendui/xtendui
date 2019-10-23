@@ -1,4 +1,5 @@
 import path from 'path'
+const img = require('components/snippets/img').default
 
 const dirs = path.dirname(__filename).split('/')
 export const demo = {
@@ -11,7 +12,7 @@ demo.htmlSource = `
 <div class="list list--default list-space--small align-items--center demo-source-from">
   <div data-xt-overlay>
     <button type="button" class="btn btn--primary">
-      block
+      asset
     </button>
     <div class="overlay">
       <div class="overlay-container">
@@ -22,8 +23,8 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
               <div class="card-content">
-                <div class="card-block card-block--custom">
-                  <div class="card-title">Lorem ipsum</div>
+                <div class="card-asset">
+                  ${img({})}
                 </div>
                 <div class="card-block card-item">
                   <div class="card-title">Lorem ipsum</div>

@@ -14,7 +14,7 @@ demo.htmlSource = `
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
-          <div class="card-block card-block--head">
+          <div class="card-block card-block--custom">
             <div class="card-title">Lorem ipsum</div>
           </div>
           <div class="card-block card-item">
@@ -26,15 +26,15 @@ demo.htmlSource = `
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="card card--primary">
+    <button type="button" class="card">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
-          <div class="card-block card-block--head">
-            <div class="card-title">Lorem ipsum</div>
-          </div>
           <div class="card-block card-item">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
+          </div>
+          <div class="card-block card-block--custom">
+            <div class="card-title">Lorem ipsum</div>
           </div>
         </div>
       </div>

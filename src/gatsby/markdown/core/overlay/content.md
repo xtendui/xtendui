@@ -6,12 +6,18 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 ---
 
 @TODO explain we use card
-@TODO link to box extensions for advanced content
 
 ##Multiple
 
 <demo>
   <demovanilla src="inline/core/overlay/multiple">
+  </demovanilla>
+</demo>
+
+##Group
+
+<demo>
+  <demovanilla src="inline/core/overlay/group">
   </demovanilla>
 </demo>
 
@@ -22,9 +28,16 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </demovanilla>
 </demo>
 
-##Test
+##Asset
 
 <demo>
-  <demovanilla src="inline/core/overlay/test">
+  <demovanilla src="inline/core/overlay/asset">
+  </demovanilla>
+</demo>
+
+##Overflow
+
+<demo>
+  <demovanilla src="inline/core/overlay/overflow-y">
   </demovanilla>
 </demo>

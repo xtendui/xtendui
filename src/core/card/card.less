@@ -1,4 +1,13 @@
 /**
+ * vars
+ */
+
+// generate class: [false], [true] non responsive only, [sm, md, lg] responsive @breakpoints
+
+@generate-card-group: sm, md, lg;
+@generate-box-horizontal: sm, md, lg;
+
+/**
  * card
  */
 
@@ -58,9 +67,11 @@
     border-color: @gray-200;
     background: @gray-200;
   }
-  .card-item {
-    .card-item--default();
-  }
+  .card-contents({
+    > .card-item {
+      .card-item--default();
+    }
+  });
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       color: @text--dark;
@@ -91,9 +102,11 @@
     border-color: @accent;
     background: @accent;
   }
-  .card-item {
-    .card-item--primary();
-  }
+  .card-contents({
+    > .card-item {
+      .card-item--primary();
+    }
+  });
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       color: @text-inverse--dark;
@@ -124,9 +137,11 @@
     border-color: @white;
     background: @white;
   }
-  .card-item {
-    .card-item--white();
-  }
+  .card-contents({
+    > .card-item {
+      .card-item--white();
+    }
+  });
   a&, button& {
     &:hover, &.hover, &:active, &.active {
       color: @text--dark;
@@ -214,6 +229,36 @@
 }
 
 // addons
+
+.card-group {
+  > .card-item {
+    & + .card-item {
+      &:before {
+        left: 0;
+        bottom: 0;
+        right: auto;
+        width: 1px;
+        height: auto;
+      }
+    }
+  }
+}
+
+.card--horizontal {
+  .card-contents({
+    > .card-item {
+      & + .card-item {
+        &:before {
+          left: 0;
+          bottom: 0;
+          right: auto;
+          width: 1px;
+          height: auto;
+        }
+      }
+    }
+  });
+}
 
 .card--overflow-y {
   overflow-x: hidden;

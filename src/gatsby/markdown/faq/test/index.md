@@ -120,3 +120,24 @@ let self = new Xt.Scroll(document.documentElement, {
     </div>
   </div>
 </demo>
+
+##Card
+
+<demo>
+  <demovanilla src="inline/demo/test/test-card-content">
+  </demovanilla>
+</demo>
+
+##Overlay
+
+<demo>
+  <demovanilla src="inline/demo/test/test-overlay-content">
+  </demovanilla>
+</demo>
+
+###Slider
+
+<demo>
+  <demovanilla src="inline/demo/test/test-slider-content">
+  </demovanilla>
+</demo>
