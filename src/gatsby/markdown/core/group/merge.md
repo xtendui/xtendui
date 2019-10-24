@@ -2,7 +2,6 @@
 type: "Core"
 parent: "Group"
 title: "Merge"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
 ##Usage

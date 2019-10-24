@@ -2,16 +2,34 @@
 type: "Core"
 parent: "Overlay"
 title: "Content"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+date: "2000-04-01"
 ---
 
-Overlay uses [card](/core/card/options#preset) with a preset just for overlay to assign card's default options like variant or size.
+Overlay uses card to style it's content, refer to [card page](/core/card/content) for complete card's content.
 
-You can customize the preset inside **card.less**.
+##Custom
+
+As it's done with `.card-title`, you can add as many classes for content as you like inside `.card-block` and style them inside [variant](/core/card/option#variant) or [size](/core/card/option#size).
 
 ##Block
 
 You can add custom `.card-block` modifiers and style them as you like (e.g.: `.card-block--custom`).
+
+<script type="text/plain" class="language-markup">
+  <div class="card card--overlay">
+    <div class="card-design"></div>
+    <div class="card-inner">
+      <div class="btn btn-close" aria-label="Close"></div>
+      <div class="card-content">
+
+        <div class="card-block card-block--custom">
+          <!-- content -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</script>
 
 <demo>
   <demovanilla src="inline/core/overlay/block">
@@ -22,7 +40,27 @@ You can add custom `.card-block` modifiers and style them as you like (e.g.: `.c
 
 Sequential `.card-item` stack vertically.
 
-They have a separator automatically styled with [variants](/core/card/options#variant). Just be sure to style `.card-item--{variant}` as in the **card.less** to not break css specificity.
+They have a separator automatically styled with [variants](/core/card/option#variant). Just be sure to style `.card-item--{variant}` as in the **card.less** to not break css specificity.
+
+<script type="text/plain" class="language-markup">
+  <div class="card card--overlay">
+    <div class="card-design"></div>
+    <div class="card-inner">
+      <div class="btn btn-close" aria-label="Close"></div>
+      <div class="card-content">
+
+        <div class="card-block card-item">
+          <!-- content -->
+        </div>
+
+        <div class="card-block card-item">
+          <!-- content -->
+        </div>
+  
+      </div>
+    </div>
+  </div>
+</script>
 
 <demo>
   <demovanilla src="inline/core/overlay/multiple">
@@ -42,6 +80,27 @@ To stack `.card-item` horizontally use `.card-item-nested` and `.card-group` wit
 
 </div>
 
+<script type="text/plain" class="language-markup">
+  <div class="card card--overlay">
+    <div class="card-design"></div>
+    <div class="card-inner">
+      <div class="btn btn-close" aria-label="Close"></div>
+      <div class="card-content">
+
+        <div class="card-item-nested card-item card-group">
+          <div class="card-block card-item">
+             <!-- content -->
+          </div>
+          <div class="card-block card-item">
+             <!-- content -->
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+</script>
+
 <demo>
   <demovanilla src="inline/core/overlay/group">
   </demovanilla>
@@ -50,6 +109,22 @@ To stack `.card-item` horizontally use `.card-item-nested` and `.card-group` wit
 ##Asset
 
 If you want full width assets use `.card-asset`.
+
+<script type="text/plain" class="language-markup">
+  <div class="card card--overlay">
+    <div class="card-design"></div>
+    <div class="card-inner">
+      <div class="btn btn-close" aria-label="Close"></div>
+      <div class="card-content">
+
+        <div class="card-asset">
+          <!-- content -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</script>
 
 <demo>
   <demovanilla src="inline/core/overlay/asset">

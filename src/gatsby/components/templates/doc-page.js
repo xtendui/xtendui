@@ -21,9 +21,12 @@ class Template extends React.Component {
     seo.title = data.post.frontmatter.title
     seo.description = data.post.frontmatter.description
     seo.parent = data.post.frontmatter.parent
+    let title = seo.title
+    title += ' — '
+    title += seo.description ? seo.description : seo.parent
     return (
       <Layout seo={seo} page={data}>
-        <SEO title={seo.title + ' — ' + seo.description}/>
+        <SEO title={title}/>
         {renderAst(data.post.htmlAst)}
       </Layout>
     )
@@ -126,7 +129,7 @@ Template.propTypes = {
         type: PropTypes.string.isRequired,
         parent: PropTypes.string,
         title: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
+        description: PropTypes.string,
         categories: PropTypes.array
       }).isRequired
     }).isRequired

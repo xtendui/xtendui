@@ -2,7 +2,6 @@
 type: "Extension"
 parent: "Card"
 title: "Full"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
 ##Variant

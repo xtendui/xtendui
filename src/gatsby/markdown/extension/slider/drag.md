@@ -2,7 +2,6 @@
 type: "Extension"
 parent: "Slider"
 title: "Drag"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
 ###Wrap

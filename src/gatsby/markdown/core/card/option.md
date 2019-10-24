@@ -1,8 +1,7 @@
 ---
 type: "Core"
 parent: "Card"
-title: "Options"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+title: "Option"
 date: "2000-02-01"
 ---
 

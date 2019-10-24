@@ -2,7 +2,6 @@
 type: "Core"
 parent: "Form"
 title: "Item and Label"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
 ## Item and label

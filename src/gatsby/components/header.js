@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { markdownSlug } from 'components/markdown-slug.js'
 
-import logoIcon from 'assets/images/logo-icon-white.svg'
+import logoIcon from 'assets/images/logo-white.svg'
 
 class Header extends React.Component {
   render () {

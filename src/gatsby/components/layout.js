@@ -61,7 +61,7 @@ class Layout extends React.Component {
                         <div className="gatsby_site_article_hero">
                           <div className="container full">
                             <h1>{seo.title}</h1>
-                            <p>{seo.description}</p>
+                            {seo.description ? <p>{seo.description}</p> : null}
                           </div>
                         </div>
                         <div className="gatsby_site_article_content">
@@ -69,11 +69,14 @@ class Layout extends React.Component {
                             {children}
                           </div>
                         </div>
-                        <div className="gatsby_site_article_foot">
-                          <div className="container full">
-                            <DocsFoot page={page}/>
+                        {page.post.frontmatter.type !== page.post.frontmatter.title
+                          ? <div className="gatsby_site_article_foot">
+                            <div className="container full">
+                              <DocsFoot page={page}/>
+                            </div>
                           </div>
-                        </div>
+                          : null
+                        }
                       </article>
                       <DocsAside page={page}/>
                     </div>

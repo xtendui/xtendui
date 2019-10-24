@@ -2,7 +2,6 @@
 type: "Extension"
 parent: "Sticky"
 title: "Show and Hide"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
 ###Show and Hide

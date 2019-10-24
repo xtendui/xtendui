@@ -2,7 +2,6 @@
 type: "Core"
 parent: "Group"
 title: "Input"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
 ##Usage

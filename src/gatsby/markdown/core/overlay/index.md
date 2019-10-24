@@ -6,6 +6,14 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 categories: ["300-Interaction"]
 ---
 
+Overlay uses card to style it's content, refer to [card page](/core/card) for complete card's usage.
+
+<div class="alert">
+  <div class="alert-content">
+    Overlays are moved to **body** to prevent **z-index** problems. Style overlay accordingly, don't style or query overlay's content from outside the overlay!
+  </div>
+</div>
+
 ##Usage
 
 Use this markup to create a overlay.
@@ -52,15 +60,12 @@ You can use this markup to create a overlay with **no toggle**.
   </div>
 </script>
 
+##Initialization
+
 You can initialize **overlay** by javascript omitting `[data-xt-overlay]`.
 
 ```jsx
-let self = new Xt.Overlay(document.querySelector('.my-overlay'), {
+new Xt.Overlay(document.querySelector('.my-overlay'), {
+  // options
 });
 ```
-
-<div class="alert">
-  <div class="alert-content">
-    Overlays are moved to **body** to prevent **z-index** problems. Use `"appendTo": false` to prevent that.
-  </div>
-</div>

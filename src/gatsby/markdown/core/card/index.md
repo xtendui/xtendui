@@ -17,15 +17,18 @@ You can make interactive cards with `button.card` or `a.card`.
     <div class="card-design"></div>
     <div class="card-inner">
       <div class="card-content">
+
+        <div class="card-asset">
+          <!-- content -->
+        </div>
+  
         <div class="card-block card-item">
           <!-- content -->
         </div>
-      </div>
+
     </div>
   </div>
 </script>
-
-For the usage of card's content see [content](/core/card/content).
 
 <demo>
   <demovanilla src="inline/core/card/usage">

@@ -2,7 +2,6 @@
 type: "Core"
 parent: "Toggle"
 title: "Timing"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 ---
 
 ##Timing
