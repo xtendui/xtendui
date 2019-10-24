@@ -54,7 +54,7 @@ Drop.optionsDefault = {
   eventLimit: '.event-limit, .drop',
   autoclose: true,
   closeOutside: 'body',
-  closeInside: '.drop-dismiss, .card-drop > .card-inner > .btn-close',
+  closeInside: '.drop-dismiss, .card--drop > .card-inner > .btn-close',
   ariaControls: ':scope > a, :scope > button'
 }
 

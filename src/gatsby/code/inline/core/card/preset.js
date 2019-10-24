@@ -9,46 +9,48 @@ export const demo = {
 
 demo.htmlSource = `
 <div class="row">
+
   <div class="col-12 col-6--sm">
-    <button type="button" class="card card--default card--small card--full card--collapse">
+    <div class="card card--overlay">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
           <div class="card-block card-item">
-            <div class="card-title">Small</div>
+            <div class="card-title">Overlay</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>
       </div>
-    </button>
+    </div>
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="card card--default card--medium card--full card--collapse">
+    <div class="card card--slide">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
           <div class="card-block card-item">
-            <div class="card-title">Medium</div>
+            <div class="card-title">Slide</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>
       </div>
-    </button>
+    </div>
   </div>
   
   <div class="col-12 col-6--sm">
-    <button type="button" class="card card--default card--big card--full card--collapse">
+    <div class="card card--drop">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
           <div class="card-block card-item">
-            <div class="card-title">Big</div>
+            <div class="card-title">Drop</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat turpis. Sed pulvinar hendrerit mauris at pharetra. Suspendisse vel aliquam quam, non tincidunt sem.</p>
           </div>
         </div>
       </div>
-    </button>
+    </div>
   </div>
+  
 </div>
 `

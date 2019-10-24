@@ -10,18 +10,21 @@
 // .table
 
 .table {
-  font-size: 1.3rem;
-  line-height: 1.2;
   tr {
     border-bottom: @table-border--width solid @gray-200;
   }
   th {
     .padding(all, small);
-    .h6();
+    .font-sans--semibold();
+    font-size: 1.3rem;
+    line-height: 1.4;
+    letter-spacing: .025em;
+    text-transform: uppercase;
   }
   td {
     .padding(all, small);
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    line-height: 1.4;
   }
   // tfoot
   tfoot {

@@ -18,7 +18,7 @@ demo.htmlSource = `
         <div class="drop-design"></div>
         <div class="drop-content">
         
-          <div class="card card-drop">
+          <div class="card card--drop">
             <div class="card-design"></div>
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>

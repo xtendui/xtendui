@@ -19,6 +19,13 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
   </demovanilla>
 </demo>
 
+##Block
+
+<demo>
+  <demovanilla src="inline/extension/card/full-block">
+  </demovanilla>
+</demo>
+
 ##Multiple
 
 <demo>
@@ -30,13 +37,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 <demo>
   <demovanilla src="inline/extension/card/full-group">
-  </demovanilla>
-</demo>
-
-##Block
-
-<demo>
-  <demovanilla src="inline/extension/card/full-block">
   </demovanilla>
 </demo>
 

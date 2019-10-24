@@ -63,7 +63,7 @@ Overlay.optionsDefault = {
   appendTo: 'body',
   backdrop: 'targets',
   classHtml: 'xt-overlay',
-  closeInside: '.overlay-dismiss, .card-overlay > .card-inner > .btn-close, :scope > .backdrop',
+  closeInside: '.overlay-dismiss, .card--overlay > .card-inner > .btn-close, :scope > .backdrop',
   scrollbar: true,
   focusLimit: true
 }

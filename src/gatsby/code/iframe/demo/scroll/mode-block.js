@@ -16,7 +16,7 @@ demo.htmlSource = `
 <div data-xt-scroll="{ elements: '.scroll-container > *' }">
   <div class="list list--default list-space--medium scroll-container demo--scroll-container--block">
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -28,7 +28,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -40,7 +40,7 @@ demo.htmlSource = `
       </div>
     </div>
     
-    <div class="card">
+    <div class="card card--default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -52,7 +52,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -64,7 +64,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -76,7 +76,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -88,7 +88,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -100,7 +100,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -112,7 +112,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
@@ -124,7 +124,7 @@ demo.htmlSource = `
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card--default">
       <div class="card-design"></div>
       <div class="card-inner">
         <div class="card-content">
