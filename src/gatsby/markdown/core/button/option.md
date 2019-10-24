@@ -1,7 +1,8 @@
 ---
 type: "Core"
 parent: "Button"
-title: "Variant"
+title: "Option"
+date: "2000-02-01"
 ---
 
 ##Variant
@@ -17,5 +18,14 @@ On containers use `.text-inverse` to have white buttons (needs `color: inherit`)
 
 <demo>
   <demovanilla src="inline/core/button/inverse">
+  </demovanilla>
+</demo>
+
+##Sizes
+
+Optional classes for assigning size. Sizes uses `em` padding that depends on font size.
+
+<demo>
+  <demovanilla src="inline/core/button/size">
   </demovanilla>
 </demo>

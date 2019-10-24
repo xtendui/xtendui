@@ -70,6 +70,17 @@ export const query = graphql`
         }
       }
     }
+    postsAll: allMarkdownRemark {
+      posts: edges {
+        post: node {
+          frontmatter {
+            type
+            parent
+            title
+          }
+        }
+      }
+    }
     postsAdiacent: allMarkdownRemark(filter: {frontmatter: {type: {eq: $type}, parent: {eq: $parent}}}, sort: {fields: [frontmatter___date,  frontmatter___title], order: ASC}) {
       posts: edges {
         post: node {
@@ -123,6 +134,19 @@ Template.propTypes = {
         }).isRequired
       )
     }),
+    postsAll: PropTypes.shape({
+      posts: PropTypes.arrayOf(
+        PropTypes.shape({
+          post: PropTypes.shape({
+            frontmatter: PropTypes.shape({
+              type: PropTypes.string.isRequired,
+              parent: PropTypes.string,
+              title: PropTypes.string.isRequired
+            }).isRequired
+          }).isRequired
+        }).isRequired
+      )
+    }).isRequired,
     postsAdiacent: PropTypes.shape({
       posts: PropTypes.arrayOf(
         PropTypes.shape({

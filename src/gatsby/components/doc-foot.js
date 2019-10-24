@@ -6,21 +6,21 @@ import { markdownSlug } from 'components/markdown-slug.js'
 class DocFoot extends React.Component {
   render () {
     const { page } = this.props
-    return (
+    const footer = <>
       <footer className="gatsby_article_foot">
         <div>
           {page.post.frontmatter.parent === page.post.frontmatter.title
             ? <div>
               <Link to={kebabCase(page.post.frontmatter.type)} className="btn gatsby_btn--site_multiline btn--left">
                 <span>
-                  <span className="gatsby_btn--site_multiline_line gatsby_btn--site_multiline_special">
-                    <span className="icon-chevron-left"></span><strong
-                      className="gatsby_btn--site_multiline_special_text">GO</strong>
+                  <span className="gatsby_btn--site_multiline_line">
+                    Back <strong>{page.post.frontmatter.type}</strong>
                   </span>
                 </span>
                 <span>
-                  <span className="gatsby_btn--site_multiline_line">
-                    Back <strong>{page.post.frontmatter.type}</strong>
+                  <span className="gatsby_btn--site_multiline_line gatsby_btn--site_multiline_special">
+                    <span className="icon-chevron-left"></span><strong
+                      className="gatsby_btn--site_multiline_special_text">GO</strong>
                   </span>
                 </span>
               </Link>
@@ -31,14 +31,14 @@ class DocFoot extends React.Component {
                   <div key={i}>
                     <Link to={markdownSlug(adiacent)} className="btn gatsby_btn--site_multiline btn--left">
                       <span>
-                        <span className="gatsby_btn--site_multiline_line gatsby_btn--site_multiline_special">
-                          <span className="icon-chevron-left"></span><strong
-                            className="gatsby_btn--site_multiline_special_text">GO</strong>
+                        <span className="gatsby_btn--site_multiline_line">
+                          Back <strong>{adiacent.frontmatter.title}</strong>
                         </span>
                       </span>
                       <span>
-                        <span className="gatsby_btn--site_multiline_line">
-                          Back <strong>{adiacent.frontmatter.title}</strong>
+                        <span className="gatsby_btn--site_multiline_line gatsby_btn--site_multiline_special">
+                          <span className="icon-chevron-left"></span><strong
+                            className="gatsby_btn--site_multiline_special_text">GO</strong>
                         </span>
                       </span>
                     </Link>
@@ -55,7 +55,6 @@ class DocFoot extends React.Component {
               let index = i + 1
               index = i === page.postsAdiacent.posts.length - 1 ? 0 : index
               index = i === page.postsAdiacent.posts.length - 2 ? 0 : index
-              console.log(index, page.postsAdiacent.posts);
               const nextAdiacent = page.postsAdiacent.posts[index].post
               return (
                 <div key={i}>
@@ -67,7 +66,8 @@ class DocFoot extends React.Component {
                     </span>
                     <span>
                       <span className="gatsby_btn--site_multiline_line gatsby_btn--site_multiline_special">
-                        <strong className="gatsby_btn--site_multiline_special_text">GO</strong><span className="icon-chevron-right"></span>
+                        <strong className="gatsby_btn--site_multiline_special_text">GO</strong><span
+                          className="icon-chevron-right"></span>
                       </span>
                     </span>
                   </Link>
@@ -77,7 +77,8 @@ class DocFoot extends React.Component {
           })}
         </div>
       </footer>
-    )
+    </>
+    return footer
   }
 }
 
