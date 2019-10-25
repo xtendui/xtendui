@@ -28,6 +28,7 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
   const docPageTemplate = path.resolve('src/gatsby/components/templates/doc-page.js')
   const docListingTemplate = path.resolve('src/gatsby/components/templates/doc-listing.js')
+  const docThemeTemplate = path.resolve('src/gatsby/components/templates/doc-theme.js')
   /* COMMENTED CATEGORIES AND TAGS
   const tagTemplate = path.resolve(`src/gatsby/components/templates/doc-tag.js`)
   const categoryTemplate = path.resolve(`src/gatsby/components/templates/doc-category.js`)
@@ -58,6 +59,8 @@ exports.createPages = ({ actions, graphql }) => {
       let template = docPageTemplate
       if (!node.frontmatter.parent) {
         template = docListingTemplate
+      } else if (node.frontmatter.type === 'Theme') {
+        template = docThemeTemplate
       }
       createPage({
         path: markdownSlug(node), // needs gatsby-source-filesystem resolve name

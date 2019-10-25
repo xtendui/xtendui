@@ -19,10 +19,10 @@ Overlay uses card to style it's content, refer to [card page](/core/card) for co
 Use this markup to create a overlay.
 
 <script type="text/plain" class="language-markup">
-  <button type="button" data-xt-overlay="{ targets: '#overlay-custom' }">
+  <button type="button" data-xt-overlay="{ targets: '#overlay--custom' }">
     <!-- content -->
   </button>
-  <div class="overlay" id="overlay-custom">
+  <div class="overlay" id="overlay--custom">
     <div class="overlay-container">
       <div class="overlay-inner">
         <!-- content -->
@@ -35,7 +35,7 @@ You can use this markup to create a overlay with **no toggle**.
 
 <script type="text/plain" class="language-markup">
   <div data-xt-overlay>
-    <div class="overlay active" id="overlay-custom">
+    <div class="overlay active" id="overlay--custom">
       <div class="overlay-container">
         <div class="overlay-inner">
           <!-- content -->
