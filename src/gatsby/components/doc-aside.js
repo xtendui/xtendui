@@ -5,7 +5,7 @@ import kebabCase from 'lodash.kebabcase'
 class DocAside extends React.Component {
   render () {
     const { page } = this.props
-    let filterBy
+    let filterBy = []
     if (page.post.frontmatter.type === 'Core') {
       filterBy = ['Extensions']
     } else if (page.post.frontmatter.type === 'Extensions') {

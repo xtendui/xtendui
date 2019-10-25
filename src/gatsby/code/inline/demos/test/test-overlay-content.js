@@ -23,9 +23,6 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="btn btn-close" aria-label="Close"></div>
               <div class="card-content">
-                <div class="card-block card-block--custom">
-                  <div class="card-title">Lorem ipsum</div>
-                </div>
                 <div class="card-item-nested card-item card-group">
                   <div class="card-block card-item">
                     <div class="card-title">Lorem ipsum</div>

@@ -1,8 +1,8 @@
 ---
 type: "Themes"
 parent: "Overlay"
-title: "Visible"
+title: "Variant"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
 date: "2019-10-24"
-iframe: "iframe/demos/scroll/mode-visible"
+inline: "inline/core/overlay/variant"
 ---

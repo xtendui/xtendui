@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
-import { markdownSlug } from 'components/markdown-slug.js'
+import { graphql } from 'gatsby'
 
 import SEO from 'components/seo'
 import Layout from 'components/layout'
@@ -26,7 +25,7 @@ class Template extends React.Component {
                     adiacent.frontmatter.parent !== adiacent.frontmatter.title
                       ? <div className="gatsby_listing_column" key={i}>
                         <button type="button"
-                          className="card card--primary card--small card--full card--collapse gatsby_listing_item">
+                          className="card card--primary card--small card--full card--collapse gatsby_listing_item" data-iframe-toggle>
                           <div className="card-design"></div>
                           <div className="card-inner">
                             <div className="card-content">
@@ -38,7 +37,7 @@ class Template extends React.Component {
                           </div>
                         </button>
                         <Demo>
-                          <div className="gatsby_demo_item" data-iframe={adiacent.frontmatter.iframe}>
+                          <div className="gatsby_demo_item" data-iframe={adiacent.frontmatter.iframe} data-iframe-fullscreen="true">
                           </div>
                         </Demo>
                       </div>

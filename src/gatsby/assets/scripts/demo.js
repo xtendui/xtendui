@@ -80,6 +80,18 @@ const populateBlock = function () {
     el.innerHTML = formatCode(el)
     Prism.highlightElement(el)
   }
+  // overlay fullscreen
+  for (const el of document.querySelectorAll('[data-iframe-toggle')) {
+    el.addEventListener('click', function () {
+      populateFullscreen(el.nextSibling)
+    })
+  }
+  document.querySelector('#overlay--open-full').addEventListener('offdone.xt', function (e) {
+    if (this === e.target) { // @FIX on.xt and off.xt event bubbles
+      const content = document.querySelector('#overlay--open-full-content')
+      content.innerHTML = ''
+    }
+  })
 }
 
 // populateDemo
@@ -88,8 +100,9 @@ const populateDemo = function (container, i) {
   const items = container.querySelectorAll('.gatsby_demo_item')
   // multiple elements
   container.prepend(Xt.createElement('<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left"></div><div class="gatsby_demo_tabs_right"></div></div>'))
-  container.querySelector('.gatsby_demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny btn--narrow btn--show-code" data-toggle="tooltip" data-placement="top" aria-label="Show code"><span class="icon-code icon--big"></span></button>'))
-  container.querySelector('.gatsby_demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny btn--narrow btn--open-full" data-toggle="tooltip" data-placement="top" aria-label="Open full"><span class="icon-maximize icon--big"></span></button>'))
+  container.querySelector('.gatsby_demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny btn--narrow btn--show-code" data-toggle="tooltip" data-placement="top" aria-label="Code"><span class="icon-code icon--big"></span></button>'))
+  container.querySelector('.gatsby_demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny btn--narrow btn--open-full" data-toggle="tooltip" data-placement="top" aria-label="Fullscreen"><span class="icon-maximize icon--big"></span></button>'))
+  container.querySelector('.gatsby_demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--primary btn--tiny btn--narrow btn--open-full overlay-dismiss" data-toggle="tooltip" data-placement="top" aria-label="Close"><span class="icon-close icon--big"></span></button>'))
   // don't show tabs on single
   /*
   if (items.length === 1) {
@@ -127,35 +140,11 @@ const populateDemo = function (container, i) {
     // inject iframe
     if (item.getAttribute('data-iframe')) {
       // iframe append
-      const src = '/' + item.getAttribute('data-iframe')
       const id = 'iframe' + i + k
-      if (src) {
-        item.append(Xt.createElement('<div class="gatsby_demo_item_wrapper"><iframe data-src="' + src + '" name="' + id + '"></iframe></div>'))
-        item.querySelector('.gatsby_demo_item_wrapper').append(Xt.createElement('\n' +
-          '    <div class="loader loader--spinner">\n' +
-          '      <div class="spinner">\n' +
-          '        <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
-          '      </div>\n' +
-          '    </div>\n' +
-          '  </div>'))
+      item.setAttribute('data-iframe-id', id)
+      if (!item.getAttribute('data-iframe-fullscreen')) {
+        srcIframe(item)
       }
-      // load
-      const iframe = item.querySelector('iframe')
-      item.addEventListener('on.xt', function (e) {
-        if (item === e.target) { // @FIX on.xt and off.xt event bubbles
-          if (!item.classList.contains('loaded')) {
-            loadIframe(iframe)
-          }
-        }
-      })
-      item.addEventListener('off.xt', function (e) {
-        if (item === e.target) { // @FIX on.xt and off.xt event bubbles
-          if (item.classList.contains('loaded')) {
-            item.classList.remove('loaded')
-            unloadIframe(iframe)
-          }
-        }
-      })
     } else if (item.getAttribute('data-shadow')) {
       /* NEEDS
       // demo shadow
@@ -195,11 +184,19 @@ const populateDemo = function (container, i) {
   // toggle code
   const demoId = 'gatsby_demo_' + i
   container.setAttribute('id', demoId)
+  /*
   new Xt.Toggle(container.querySelector('.btn--show-code'), { // eslint-disable-line no-new
     targets: '#' + demoId,
     targetsInner: '.gatsby_demo_code',
     aria: false
   })
+  */
+  // overlay fullscreen
+  for (const el of container.querySelectorAll('.btn--show-code')) {
+    el.addEventListener('click', function () {
+      populateFullscreen(container)
+    })
+  }
   const codes = container.querySelectorAll('.btn--show-code')
   for (const code of codes) {
     code.addEventListener('on.xt', function (e) {
@@ -213,20 +210,12 @@ const populateDemo = function (container, i) {
       }
     })
   }
-  // toggle fullscreen
-  /*
-  element.find('.gatsby_demo_tabs_left .button').on('on', function(e, obj) {
-    let $fullscreen = $(this).parents('.gatsby_demo').find('.button__fullscreen');
-    let iframe = $(this).parents('.gatsby_demo').find('.gatsby_demo_item.active').attr('data-iframe');
-    if (iframe) {
-      $fullscreen.css('display', 'block');
-      $fullscreen.off('click');
-      $fullscreen.on('click', function() {
-        window.open(iframe, '_blank');
-      });
-    }
-  });
-  */
+  // overlay fullscreen
+  for (const btnOpenFull of container.querySelectorAll('.btn--open-full')) {
+    btnOpenFull.addEventListener('click', function () {
+      populateFullscreen(container)
+    })
+  }
   // demo tabs
   new Xt.Toggle(container, { // eslint-disable-line no-new
     elements: '.gatsby_demo_tabs_left .btn',
@@ -237,6 +226,60 @@ const populateDemo = function (container, i) {
     btn.addEventListener('off.xt', function (e) {
       if (btn === e.target) { // @FIX on.xt and off.xt event bubbles
         container.querySelector('.btn--show-code').dispatchEvent(new CustomEvent('off.xt'))
+      }
+    })
+  }
+}
+
+// overlay fullscreen
+
+const populateFullscreen = function (item) {
+  const overlay = document.querySelector('#overlay--open-full')
+  const content = document.querySelector('#overlay--open-full-content')
+  overlay.dispatchEvent(new CustomEvent('on.xt'))
+  content.innerHTML = item.outerHTML
+  // content.appendChild(item)
+  //const cloned = item.cloneNode(true)
+  //content.append(cloned)
+  /*
+  for (const id of item.querySelectorAll('[id]')) {
+    id.setAttribute('data-gatsby-id', id.getAttribute('id'))
+    id.removeAttribute('id')
+  }
+  */
+  srcIframe(content.querySelector('.gatsby_demo_item'))
+  content.querySelector('.gatsby_demo_item').dispatchEvent(new CustomEvent('on.xt'))
+}
+
+// srcIFrame
+
+const srcIframe = function (item) {
+  if (item.getAttribute('data-iframe')) {
+    const src = '/' + item.getAttribute('data-iframe')
+    const id = item.getAttribute('data-iframe-id')
+    item.append(Xt.createElement('<div class="gatsby_demo_item_wrapper"><iframe data-src="' + src + '" name="' + id + '"></iframe></div>'))
+    item.querySelector('.gatsby_demo_item_wrapper').append(Xt.createElement('\n' +
+      '    <div class="loader loader--spinner">\n' +
+      '      <div class="spinner">\n' +
+      '        <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
+      '      </div>\n' +
+      '    </div>\n' +
+      '  </div>'))
+    // load
+    const iframe = item.querySelector('iframe')
+    item.addEventListener('on.xt', function (e) {
+      if (item === e.target) { // @FIX on.xt and off.xt event bubbles
+        if (!item.classList.contains('loaded')) {
+          loadIframe(iframe)
+        }
+      }
+    })
+    item.addEventListener('off.xt', function (e) {
+      if (item === e.target) { // @FIX on.xt and off.xt event bubbles
+        if (item.classList.contains('loaded')) {
+          item.classList.remove('loaded')
+          unloadIframe(iframe)
+        }
       }
     })
   }

@@ -7,13 +7,14 @@ import Footer from 'components/footer'
 import DocsSidebar from 'components/doc-sidebar'
 import DocsAside from 'components/doc-aside'
 import DocsFoot from 'components/doc-foot'
+import DocsAddon from 'components/doc-addon'
 
 import 'xtend-library/src/polyfill.js'
 import 'xtend-library/src/polyfill-old.js'
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/xtend-core.js'
-import 'xtend-library/src/xtend-extension.js'
-import 'xtend-library/src/xtend-demo.js'
+import 'xtend-library/src/xtend-extensions.js'
+import 'xtend-library/src/xtend-demos.js'
 
 import { populateBlock } from 'assets/scripts/demo.js'
 import { makeDocument } from 'assets/scripts/theme.js'
@@ -93,6 +94,7 @@ class Layout extends React.Component {
               </main>
 
               <Footer site={data} seo={seo}/>
+              <DocsAddon/>
 
             </div>
           </>

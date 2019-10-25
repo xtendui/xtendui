@@ -6,7 +6,7 @@ import { markdownSlug } from 'components/markdown-slug.js'
 class DocFoot extends React.Component {
   render () {
     const { page } = this.props
-    const footer = <>
+    return (
       <footer className="gatsby_article_foot">
         <div>
           {page.post.frontmatter.parent === page.post.frontmatter.title
@@ -80,8 +80,7 @@ class DocFoot extends React.Component {
           }
         </div>
       </footer>
-    </>
-    return footer
+    )
   }
 }
 

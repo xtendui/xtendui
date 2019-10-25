@@ -91,7 +91,7 @@ pre {
   // code
   .gatsby_demo_item {
     position: relative;
-    .toggle-block();
+    .toggle-flex();
     .gatsby_demo_code {
       position: absolute;
       z-index: 4;
@@ -212,4 +212,20 @@ pre {
       display: none;
     }
   }
+}
+
+// theme
+
+[data-iframe-toggle] + .gatsby_demo {
+  display: none;
+}
+
+.gatsby_demo, .gatsby_demo_item, .gatsby_demo_item_wrapper, .gatsby_demo_item_wrapper iframe {
+  display: flex;
+  flex-direction: column;
+  .flex-full();
+}
+
+#overlay--open-full-content {
+  height: 100vh;
 }

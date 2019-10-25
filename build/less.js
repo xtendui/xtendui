@@ -16,13 +16,13 @@ lessCoreGlob.on('end', function (filepath) {
 })
 
 let lessDemo = ''
-const lessDemoGlob = new glob.Glob('src/demo/**/*.less', function (er, files) {
+const lessDemoGlob = new glob.Glob('src/demos/**/*.less', function (er, files) {
   for (const file of files) {
     lessDemo += `@import '~xtend-library/${file}';\n`
   }
 })
 lessDemoGlob.on('end', function (filepath) {
-  writeFile('./src/xtend-demo.less', lessDemo, function (err) {
+  writeFile('./src/xtend-demos.less', lessDemo, function (err) {
     if (err) console.log(err)
   })
 })
@@ -34,7 +34,7 @@ const lessExtensionGlob = new glob.Glob('src/extensions/**/*.less', function (er
   }
 })
 lessExtensionGlob.on('end', function (filepath) {
-  writeFile('./src/xtend-extension.less', lessExtension, function (err) {
+  writeFile('./src/xtend-extensions.less', lessExtension, function (err) {
     if (err) console.log(err)
   })
 })

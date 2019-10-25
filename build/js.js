@@ -19,7 +19,7 @@ jsCoreGlob.on('end', function (filepath) {
 })
 
 let jsDemo = 'if (typeof window !== \'undefined\') {\n'
-const jsDemoGlob = new glob.Glob('src/demo/**/*.js', function (er, files) {
+const jsDemoGlob = new glob.Glob('src/demos/**/*.js', function (er, files) {
   for (const file of files) {
     jsDemo += `  require('xtend-library/${file}')\n`
   }
@@ -27,7 +27,7 @@ const jsDemoGlob = new glob.Glob('src/demo/**/*.js', function (er, files) {
   jsDemo += '\n'
 })
 jsDemoGlob.on('end', function (filepath) {
-  writeFile('./src/xtend-demo.js', jsDemo, function (err) {
+  writeFile('./src/xtend-demos.js', jsDemo, function (err) {
     if (err) console.log(err)
   })
 })
@@ -42,7 +42,7 @@ const jsExtensionGlob = new glob.Glob('src/extensions/**/*.js', function (er, fi
   jsExtension += '\n'
 })
 jsExtensionGlob.on('end', function (filepath) {
-  writeFile('./src/xtend-extension.js', jsExtension, function (err) {
+  writeFile('./src/xtend-extensions.js', jsExtension, function (err) {
     if (err) console.log(err)
   })
 })

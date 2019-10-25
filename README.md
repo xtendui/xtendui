@@ -33,7 +33,7 @@ import 'xtend-library/src/polyfill.js'
 import 'xtend-library/src/polyfill-old.js' // optional, use this only if you need old browsers support: ie11
 import { Xt } from 'xtend-library'
 import 'xtend-library/src/xtend-core.js' // optional, you can import xtend-library/src/core one by one
-import 'xtend-library/src/xtend-extension.js' // optional, you can import xtend-library/src/extension one by one
+import 'xtend-library/src/xtend-extensions.js' // optional, you can import xtend-library/src/extension one by one
 ```
 
 @TODO linkare a https://github.com/minimit/xtend-theme-vanilla per webpack resolve e forkare css e js e https://github.com/minimit/xtend-theme-vanilla/blob/master/.browserslistrc
