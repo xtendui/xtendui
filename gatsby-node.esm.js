@@ -59,7 +59,7 @@ exports.createPages = ({ actions, graphql }) => {
       let template = docPageTemplate
       if (!node.frontmatter.parent) {
         template = docListingTemplate
-      } else if (node.frontmatter.type === 'Theme') {
+      } else if (node.frontmatter.type === 'Themes') {
         template = docThemeTemplate
       }
       createPage({

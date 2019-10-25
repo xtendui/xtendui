@@ -28,7 +28,7 @@ lessDemoGlob.on('end', function (filepath) {
 })
 
 let lessExtension = ''
-const lessExtensionGlob = new glob.Glob('src/extension/**/*.less', function (er, files) {
+const lessExtensionGlob = new glob.Glob('src/extensions/**/*.less', function (er, files) {
   for (const file of files) {
     lessExtension += `@import '~xtend-library/${file}';\n`
   }

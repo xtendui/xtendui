@@ -33,17 +33,17 @@ class Header extends React.Component {
                         className={`btn gatsby_btn--site_header_top_link ${page && page.post ? markdownSlug(page.post) === '/' + 'core' ? 'active' : page.post.frontmatter.type === 'Core' ? 'current' : '' : ''}`}>
                         Core
                       </Link>
-                      <Link to='/extension'
-                        className={`btn gatsby_btn--site_header_top_link ${page && page.post ? markdownSlug(page.post) === '/' + 'extension' ? 'active' : page.post.frontmatter.type === 'Extension' ? 'current' : '' : ''}`}>
-                        Extension
+                      <Link to='/extensions'
+                        className={`btn gatsby_btn--site_header_top_link ${page && page.post ? markdownSlug(page.post) === '/' + 'extensions' ? 'active' : page.post.frontmatter.type === 'Extensions' ? 'current' : '' : ''}`}>
+                        Extensions
                       </Link>
-                      <Link to='/theme'
-                        className={`btn gatsby_btn--site_header_top_link ${page && page.post ? markdownSlug(page.post) === '/' + 'theme' ? 'active' : page.post.frontmatter.type === 'Theme' ? 'current' : '' : ''}`}>
-                        Theme
+                      <Link to='/themes'
+                        className={`btn gatsby_btn--site_header_top_link ${page && page.post ? markdownSlug(page.post) === '/' + 'themes' ? 'active' : page.post.frontmatter.type === 'Themes' ? 'current' : '' : ''}`}>
+                        Themes
                       </Link>
-                      <Link to='/faq'
-                        className={`btn gatsby_btn--site_header_top_link ${page && page.post ? markdownSlug(page.post) === '/' + 'faq' ? 'active' : page.post.frontmatter.type === 'Faq' ? 'current' : '' : ''}`}>
-                        Faq
+                      <Link to='/faqs'
+                        className={`btn gatsby_btn--site_header_top_link ${page && page.post ? markdownSlug(page.post) === '/' + 'faqs' ? 'active' : page.post.frontmatter.type === 'Faqs' ? 'current' : '' : ''}`}>
+                        Faqs
                       </Link>
                     </div>
                   </div>

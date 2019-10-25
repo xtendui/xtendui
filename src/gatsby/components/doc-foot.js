@@ -14,7 +14,7 @@ class DocFoot extends React.Component {
               <Link to={kebabCase(page.post.frontmatter.type)} className="btn gatsby_btn--site_multiline btn--left">
                 <span>
                   <span className="gatsby_btn--site_multiline_line">
-                    Back <strong>{page.post.frontmatter.type}</strong>
+                    Back To <strong>{page.post.frontmatter.type}</strong>
                   </span>
                 </span>
                 <span>
@@ -32,7 +32,7 @@ class DocFoot extends React.Component {
                     <Link to={markdownSlug(adiacent)} className="btn gatsby_btn--site_multiline btn--left">
                       <span>
                         <span className="gatsby_btn--site_multiline_line">
-                          Back <strong>{adiacent.frontmatter.title}</strong>
+                          Back To <strong>{adiacent.frontmatter.title}</strong>
                         </span>
                       </span>
                       <span>
@@ -50,31 +50,34 @@ class DocFoot extends React.Component {
         </div>
 
         <div>
-          {page.postsAdiacent.posts.map(({ post: adiacent }, i) => {
-            if (page.postsAdiacent.posts.length > 1 && markdownSlug(adiacent) === markdownSlug(page.post)) {
-              let index = i + 1
-              index = i === page.postsAdiacent.posts.length - 1 ? 0 : index
-              index = i === page.postsAdiacent.posts.length - 2 ? 0 : index
-              const nextAdiacent = page.postsAdiacent.posts[index].post
-              return (
-                <div key={i}>
-                  <Link to={markdownSlug(nextAdiacent)} className="btn gatsby_btn--site_multiline btn--right">
-                    <span>
-                      <span className="gatsby_btn--site_multiline_line">
+          {page.post.frontmatter.type !== 'Themes'
+            ? page.postsAdiacent.posts.map(({ post: adiacent }, i) => {
+              if (page.postsAdiacent.posts.length > 1 && markdownSlug(adiacent) === markdownSlug(page.post)) {
+                let index = i + 1
+                index = i === page.postsAdiacent.posts.length - 1 ? 0 : index
+                index = i === page.postsAdiacent.posts.length - 2 ? 0 : index
+                const nextAdiacent = page.postsAdiacent.posts[index].post
+                return (
+                  <div key={i}>
+                    <Link to={markdownSlug(nextAdiacent)} className="btn gatsby_btn--site_multiline btn--right">
+                      <span>
+                        <span className="gatsby_btn--site_multiline_line">
                         Next <strong>{nextAdiacent.frontmatter.title}</strong>
+                        </span>
                       </span>
-                    </span>
-                    <span>
-                      <span className="gatsby_btn--site_multiline_line gatsby_btn--site_multiline_special">
-                        <strong className="gatsby_btn--site_multiline_special_text">GO</strong><span
-                          className="icon-chevron-right"></span>
+                      <span>
+                        <span className="gatsby_btn--site_multiline_line gatsby_btn--site_multiline_special">
+                          <strong className="gatsby_btn--site_multiline_special_text">GO</strong><span
+                            className="icon-chevron-right"></span>
+                        </span>
                       </span>
-                    </span>
-                  </Link>
-                </div>
-              )
-            }
-          })}
+                    </Link>
+                  </div>
+                )
+              }
+            })
+            : null
+          }
         </div>
       </footer>
     </>

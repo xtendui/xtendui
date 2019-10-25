@@ -25,7 +25,7 @@ class DocSidebar extends React.Component {
                               className={`btn gatsby_btn--site_article_sidebar gatsby_btn--site_article_sidebar--sub ${markdownSlug(page.post) === markdownSlug(post) ? 'active' : page.post.frontmatter.parent === post.frontmatter.parent ? 'current' : ''}`}>
                               {post.frontmatter.title}
                             </Link>
-                            {post.frontmatter.parent === page.post.frontmatter.parent && post.frontmatter.type !== 'Theme'
+                            {post.frontmatter.parent === page.post.frontmatter.parent && post.frontmatter.type !== 'Themes'
                               ? <div className="gatsby_site_article_sidebar_adiacent active">
                                 <div className="gatsby_site_article_sidebar_item">
                                   <div className="gatsby_site_article_sidebar_line"></div>

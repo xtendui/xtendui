@@ -1,0 +1,68 @@
+@import '~xtend-library/src/extensions/overlay/position-setup.less';
+
+/**
+ * overlay-position
+ */
+
+.overlay-position {
+  .overlay-container {
+    .overlay-position--left& {
+      width: 88% !important;
+      max-width: 500px !important;
+    }
+    .overlay-position--right& {
+      width: 88% !important;
+      max-width: 500px !important;
+    }
+  }
+  .card--overlay {
+    .card--squared();
+    .card--noborder();
+  }
+}
+
+// animation
+
+.overlay-position {
+  animation-duration: @time-medium + @time-small; // needed for .out animation timing, put max animation time
+  &.active {
+    &.overlay-position--left {
+      .card--overlay > .card-design {
+        .anim-x.active();
+      }
+      .card--overlay > .card-inner > * {
+        .anim-x.active();
+        animation-delay: @time-small;
+      }
+    }
+    &.overlay-position--right {
+      .card--overlay > .card-design {
+        .anim-x-inverse.active();
+      }
+      .card--overlay > .card-inner > * {
+        .anim-x-inverse.active();
+        animation-delay: @time-small;
+      }
+    }
+  }
+  &.out {
+    &.overlay-position--left {
+      .card--overlay > .card-design {
+        .anim-x-inverse.out();
+        animation-delay: @time-small;
+      }
+      .card--overlay > .card-inner > * {
+        .anim-x-inverse.out();
+      }
+    }
+    &.overlay-position--right {
+      .card--overlay > .card-design {
+        .anim-x.out();
+        animation-delay: @time-small;
+      }
+      .card--overlay > .card-inner > * {
+        .anim-x.out();
+      }
+    }
+  }
+}
