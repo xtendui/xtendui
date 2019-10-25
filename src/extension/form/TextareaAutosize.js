@@ -82,8 +82,8 @@ class TextareaAutosize {
 //
 
 TextareaAutosize.componentName = 'xt-textarea-autosize'
-TextareaAutosize.optionsDefault = {
-}
+TextareaAutosize.optionsDefault = {}
+Xt.optionsGlobal[TextareaAutosize.componentName] = {}
 
 //
 // export

@@ -291,6 +291,7 @@ Scroll.optionsDefault = {
   fallback: 100,
   aria: false
 }
+Xt.optionsGlobal[Scroll.componentName] = {}
 
 //
 // export

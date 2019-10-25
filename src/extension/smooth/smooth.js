@@ -34,6 +34,7 @@ Smooth.optionsDefault = {
     frictionLimit: 1.5
   }
 }
+Xt.optionsGlobal[Smooth.componentName] = {}
 
 //
 // export

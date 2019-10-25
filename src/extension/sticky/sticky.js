@@ -437,6 +437,7 @@ Sticky.optionsDefault = {
   hide: false,
   aria: false
 }
+Xt.optionsGlobal[Sticky.componentName] = {}
 
 //
 // export

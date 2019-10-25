@@ -67,6 +67,7 @@ Overlay.optionsDefault = {
   scrollbar: true,
   focusLimit: true
 }
+Xt.optionsGlobal[Overlay.componentName] = {}
 
 //
 // export

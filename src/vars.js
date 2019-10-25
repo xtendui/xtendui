@@ -2,7 +2,9 @@ import { Xt } from 'xtend-library'
 import { Ease, Power0 } from 'gsap/TweenMax'
 import BezierEasing from 'bezier-easing'
 
+//
 // vars
+//
 
 const vars = {
   // time
@@ -22,6 +24,29 @@ const vars = {
   easePenguinOut: new Ease(BezierEasing(1, 0, 0.64, 1)),
   easePenguinInOut: new Ease(BezierEasing(0.68, 0.13, 0.25, 1)),
   easeLinear: Power0.easeNone
+}
+
+//
+// optionsGlobal
+//
+
+Xt.optionsGlobal['xt-slider'] = {
+  wheel: {},
+  drag: {}
+}
+
+//
+// prefers-reduced-motion
+//
+
+if (window.matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
+  vars.timeTiny = 0
+  vars.timeSmall = 0
+  vars.timeMedium = 0
+  vars.timeBig = 0
+  vars.timeGiant = 0
+  Xt.optionsGlobal['xt-slider'].wheel.friction = false
+  Xt.optionsGlobal['xt-slider'].drag.friction = false
 }
 
 //

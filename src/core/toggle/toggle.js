@@ -64,6 +64,7 @@ class Toggle {
     } else {
       self.optionsDefault = self.constructor.optionsDefaultSuper
     }
+    self.optionsDefault = Xt.merge([self.optionsDefault, Xt.optionsGlobal[self.componentName]])
     self.options = Xt.merge([self.optionsDefault, self.optionsCustom ? self.optionsCustom : {}])
     // classes
     self.classes = self.options.class ? [...self.options.class.split(' ')] : []
@@ -2608,6 +2609,7 @@ Toggle.optionsDefaultSuper = {
     labelledby: true
   }
 }
+Xt.optionsGlobal[Toggle.componentName] = {}
 
 //
 // export

@@ -112,8 +112,8 @@ class PropagateInteraction {
 //
 
 PropagateInteraction.componentName = 'xt-propagate-interaction'
-PropagateInteraction.optionsDefault = {
-}
+PropagateInteraction.optionsDefault = {}
+Xt.optionsGlobal[PropagateInteraction.componentName] = {}
 
 //
 // export

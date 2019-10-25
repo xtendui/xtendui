@@ -111,8 +111,8 @@ class MouseFollow {
 //
 
 MouseFollow.componentName = 'xt-mouse-follow'
-MouseFollow.optionsDefault = {
-}
+MouseFollow.optionsDefault = {}
+Xt.optionsGlobal[MouseFollow.componentName] = {}
 
 //
 // export

@@ -57,6 +57,7 @@ Drop.optionsDefault = {
   closeInside: '.drop-dismiss, .card--drop > .card-inner > .btn-close',
   ariaControls: ':scope > a, :scope > button'
 }
+Xt.optionsGlobal[Drop.componentName] = {}
 
 //
 // export

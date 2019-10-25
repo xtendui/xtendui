@@ -372,6 +372,7 @@ Ajax.optionsDefault = {
   duration: false,
   aria: false
 }
+Xt.optionsGlobal[Ajax.componentName] = {}
 
 //
 // export

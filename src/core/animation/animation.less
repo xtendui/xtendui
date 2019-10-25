@@ -307,3 +307,17 @@ transition-timing-function: @bez-out;
     transition-timing-function: @bez-out;
   }
 }
+
+/**
+ * prefers-reduced-motion
+ */
+
+@media (prefers-reduced-motion: reduce), (update: slow) {
+  *, *:before, *:after {
+    transition-duration: initial !important;
+    transition-delay: initial !important;
+    animation-duration: initial !important;
+    animation-delay: initial !important;
+    animation-iteration-count: 1 !important;
+  }
+}
