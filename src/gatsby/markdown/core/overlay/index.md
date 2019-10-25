@@ -31,30 +31,15 @@ Use this markup to create a overlay.
   </div>
 </script>
 
-You can use this markup to create a overlay with **no id**.
+You can use this markup to create a overlay with **no toggle**.
 
 <script type="text/plain" class="language-markup">
   <div data-xt-overlay>
-    <button type="button">
-      <!-- content -->
-    </button>
-    <div class="overlay">
+    <div class="overlay active" id="overlay-custom">
       <div class="overlay-container">
         <div class="overlay-inner">
           <!-- content -->
         </div>
-      </div>
-    </div>
-  </div>
-</script>
-
-You can use this markup to create a overlay with **no toggle**.
-
-<script type="text/plain" class="language-markup">
-  <div class="overlay active" data-xt-overlay>
-    <div class="overlay-container">
-      <div class="overlay-inner">
-        <!-- content -->
       </div>
     </div>
   </div>
