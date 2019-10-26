@@ -1,1 +1,1 @@
-// Vanilla
+// Vanilla js

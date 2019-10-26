@@ -93,6 +93,7 @@ pre {
     position: relative;
     .toggle-flex();
     .gatsby_demo_code {
+      .toggle-block();
       position: absolute;
       z-index: 4;
       width: 100%;
@@ -103,6 +104,9 @@ pre {
       }
       &.active {
         z-index: 5;
+      }
+      pre {
+        max-height: none;
       }
     }
     &[data-iframe] {
@@ -178,10 +182,12 @@ pre {
       .list--default();
       .list-space(tiny);
     }
-    .padding(y, small);
+    .padding(y, .8rem);
     .padding(x, small);
     .btn {
-      // animation
+      &.btn--icon {
+        padding: .7rem;
+      }
       &:hover, &.hover, &:active, &.active {
         border-color: @white;
         background: @white;
@@ -226,6 +232,17 @@ pre {
   .flex-full();
 }
 
+#overlay--open-full {
+  .gatsby_demo_tabs_right {
+    padding-right: 5rem;
+  }
+  .btn-close {
+    .btn--center();
+    width: 4.1rem;
+    height: 4.1rem;
+  }
+}
+
 #overlay--open-full-content {
-  height: 100vh;
+  min-height: 100vh;
 }

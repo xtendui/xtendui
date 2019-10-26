@@ -160,7 +160,7 @@ Template.propTypes = {
               parent: PropTypes.string,
               title: PropTypes.string.isRequired,
               description: PropTypes.string,
-              iframe: PropTypes.string.isRequired
+              iframe: PropTypes.string
             }).isRequired
           }).isRequired
         }).isRequired

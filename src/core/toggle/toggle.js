@@ -620,7 +620,7 @@ class Toggle {
         if (options.eventLimit) {
           const eventLimit = self.container.querySelectorAll(options.eventLimit)
           if (eventLimit.length) {
-            if (!Xt.contains(eventLimit, e.target)) {
+            if (!Xt.contains(eventLimit, e.target) || e.target.closest('.event-force')) {
               self.eventOn(element, false, e)
             }
           } else {
@@ -658,7 +658,7 @@ class Toggle {
         if (options.eventLimit) {
           const eventLimit = self.container.querySelectorAll(options.eventLimit)
           if (eventLimit.length) {
-            if (!Xt.contains(eventLimit, e.target)) {
+            if (!Xt.contains(eventLimit, e.target) || e.target.closest('.event-force')) {
               self.eventOff(element, false, e)
             }
           } else {

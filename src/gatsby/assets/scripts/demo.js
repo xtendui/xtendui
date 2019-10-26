@@ -19,10 +19,8 @@ new Xt.Smooth(document.scrollingElement)
 */
 
 /**
- * demo
+ * formatCode
  */
-
-// formatCode
 
 const formatCode = function (source) {
   let inner = source.querySelectorAll('.gatsby_demo_source--from')
@@ -67,48 +65,16 @@ const formatCode = function (source) {
   return text
 }
 
-// populateBlock
-
-const populateBlock = function () {
-  for (const el of document.querySelectorAll('script[type="text/plain"][class*="language-"]')) {
-    const language = el.getAttribute('class')
-    el.after(Xt.createElement('<pre class="' + language + '"><code class="' + language + '">' + el.innerHTML + '</code></pre>'))
-    el.remove()
-  }
-  for (const el of document.querySelectorAll('pre:not(.noedit) code')) {
-    // set text
-    el.innerHTML = formatCode(el)
-    Prism.highlightElement(el)
-  }
-  // overlay fullscreen
-  for (const el of document.querySelectorAll('[data-iframe-toggle')) {
-    el.addEventListener('click', function () {
-      populateFullscreen(el.nextSibling)
-    })
-  }
-  document.querySelector('#overlay--open-full').addEventListener('offdone.xt', function (e) {
-    if (this === e.target) { // @FIX on.xt and off.xt event bubbles
-      const content = document.querySelector('#overlay--open-full-content')
-      content.innerHTML = ''
-    }
-  })
-}
-
-// populateDemo
+/**
+ * populateDemo
+ */
 
 const populateDemo = function (container, i) {
   const items = container.querySelectorAll('.gatsby_demo_item')
   // multiple elements
   container.prepend(Xt.createElement('<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left"></div><div class="gatsby_demo_tabs_right"></div></div>'))
-  container.querySelector('.gatsby_demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny btn--narrow btn--show-code" data-toggle="tooltip" data-placement="top" aria-label="Code"><span class="icon-code icon--big"></span></button>'))
-  container.querySelector('.gatsby_demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny btn--narrow btn--open-full" data-toggle="tooltip" data-placement="top" aria-label="Fullscreen"><span class="icon-maximize icon--big"></span></button>'))
-  container.querySelector('.gatsby_demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--primary btn--tiny btn--narrow btn--open-full overlay-dismiss" data-toggle="tooltip" data-placement="top" aria-label="Close"><span class="icon-close icon--big"></span></button>'))
-  // don't show tabs on single
-  /*
-  if (items.length === 1) {
-    container.querySelector('.gatsby_demo_tabs').style.display = 'none';
-  }
-  */
+  container.querySelector('.gatsby_demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny btn--icon btn--show-code" data-toggle="tooltip" data-placement="top" aria-label="Code"><span class="icon-code icon--big"></span></button>'))
+  container.querySelector('.gatsby_demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny btn--icon btn--open-full" data-toggle="tooltip" data-placement="top" aria-label="Fullscreen"><span class="icon-maximize icon--big"></span></button>'))
   // loop items
   for (const [k, item] of items.entries()) {
     // populate tabs
@@ -123,7 +89,7 @@ const populateDemo = function (container, i) {
     }
     container.querySelector('.gatsby_demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny">' + name + '</button>'))
     // tabs
-    item.prepend(Xt.createElement('<div class="gatsby_demo_code collapse-height"><div class="gatsby_demo_code_inner"><div class="gatsby_demo_code_tabs"><div class="gatsby_demo_code_tabs_left"></div><div class="gatsby_demo_code_tabs_right"><button type="button" class="btn btn--text btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="gatsby_demo_code_body"></div></div></div>'))
+    item.prepend(Xt.createElement('<div class="gatsby_demo_code"><div class="gatsby_demo_code_inner"><div class="gatsby_demo_code_tabs"><div class="gatsby_demo_code_tabs_left"></div><div class="gatsby_demo_code_tabs_right"><button type="button" class="btn btn--text btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="gatsby_demo_code_body"></div></div></div>'))
     // https://github.com/zenorocha/clipboard.js/
     const clipboard = new ClipboardJS('.btn--clipboard', {
       target: function (trigger) {
@@ -143,117 +109,91 @@ const populateDemo = function (container, i) {
       const id = 'iframe' + i + k
       item.setAttribute('data-iframe-id', id)
       if (!item.getAttribute('data-iframe-fullscreen')) {
-        srcIframe(item)
+        populateFullscreen(item)
       }
-    } else if (item.getAttribute('data-shadow')) {
-      /* NEEDS
-      // demo shadow
-      let shadowId = 'shadow-root-' + i + k;
-      let shadowSrc = item.getAttribute('data-shadow');
-      item.append(Xt.createElement('<div class="gatsby_demo_item_wrapper"><div class="gatsby_demo_shadow" data-lang="html"></div></div>'));
-      item.append(Xt.createElement('\n' +
-        '    <div class="loader loader--spinner">\n' +
-        '      <div class="spinner">\n' +
-        '        <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
-        '      </div>\n' +
-        '    </div>\n' +
-        '  </div>'));
-      let source = item.querySelector('.gatsby_demo_shadow');
-      let shadowRoot = source.attachShadow({mode: 'open'});
-      // load
-      if (k === 0) {
-        loadShadow(shadowRoot, shadowSrc, source, shadowId, item);
-        item.classList.add('inited');
-      }
-      // listener
-      item.addEventListener('on.xt', function (e) {
-        if (e.target === item) {
-          if (!item.classList.contains('inited')) {
-            loadShadow(shadowRoot, shadowSrc, source, shadowId, item);
-            item.classList.add('inited');
-          }
-        }
-      });
-      */
     } else {
       populateInline(item)
-      // .populated fix scroll
-      item.classList.add('populated')
     }
   }
   // toggle code
   const demoId = 'gatsby_demo_' + i
-  container.setAttribute('id', demoId)
-  /*
-  new Xt.Toggle(container.querySelector('.btn--show-code'), { // eslint-disable-line no-new
-    targets: '#' + demoId,
-    targetsInner: '.gatsby_demo_code',
-    aria: false
-  })
-  */
-  // overlay fullscreen
-  for (const el of container.querySelectorAll('.btn--show-code')) {
-    el.addEventListener('click', function () {
-      populateFullscreen(container)
-    })
-  }
-  const codes = container.querySelectorAll('.btn--show-code')
-  for (const code of codes) {
-    code.addEventListener('on.xt', function (e) {
-      if (code === e.target) { // @FIX on.xt and off.xt event bubbles
-        const btns = document.querySelectorAll('.btn--show-code.active')
-        for (const btn of btns) {
-          if (btn !== code) {
-            btn.dispatchEvent(new CustomEvent('off.xt'))
-          }
-        }
-      }
-    })
-  }
-  // overlay fullscreen
+  container.setAttribute('data-id', demoId)
+  // makeFullscreen
   for (const btnOpenFull of container.querySelectorAll('.btn--open-full')) {
     btnOpenFull.addEventListener('click', function () {
-      populateFullscreen(container)
+      makeFullscreen(container, 'fullscreen')
     })
   }
-  // demo tabs
+  for (const btnShowCode of container.querySelectorAll('.btn--show-code')) {
+    btnShowCode.addEventListener('click', function () {
+      makeFullscreen(container, 'code')
+    })
+  }
+  // gatsby_demo_tabs_left
   new Xt.Toggle(container, { // eslint-disable-line no-new
     elements: '.gatsby_demo_tabs_left .btn',
     targets: '.gatsby_demo_item',
     min: 1
   })
-  for (const btn of container.querySelectorAll('.gatsby_demo_tabs_left .btn')) {
-    btn.addEventListener('off.xt', function (e) {
-      if (btn === e.target) { // @FIX on.xt and off.xt event bubbles
-        container.querySelector('.btn--show-code').dispatchEvent(new CustomEvent('off.xt'))
-      }
-    })
-  }
 }
 
-// overlay fullscreen
+/**
+ * makeFullscreen
+ */
 
-const populateFullscreen = function (item) {
+const makeFullscreen = function (item, type = 'fullsscreen') {
   const overlay = document.querySelector('#overlay--open-full')
   const content = document.querySelector('#overlay--open-full-content')
   overlay.dispatchEvent(new CustomEvent('on.xt'))
   content.innerHTML = item.outerHTML
-  // content.appendChild(item)
-  //const cloned = item.cloneNode(true)
-  //content.append(cloned)
-  /*
-  for (const id of item.querySelectorAll('[id]')) {
-    id.setAttribute('data-gatsby-id', id.getAttribute('id'))
-    id.removeAttribute('id')
+  const container = content.querySelector('.gatsby_demo')
+  for (const item of container.querySelectorAll('.gatsby_demo_item')) {
+    populateFullscreen(item)
   }
-  */
-  srcIframe(content.querySelector('.gatsby_demo_item'))
-  content.querySelector('.gatsby_demo_item').dispatchEvent(new CustomEvent('on.xt'))
+  const btnShowCode = container.querySelector('.btn--show-code');
+  const btnOpenFull = container.querySelector('.btn--open-full');
+  // gatsby_demo_tabs_left
+  new Xt.Toggle(container, { // eslint-disable-line no-new
+    elements: '.gatsby_demo_tabs_left .btn',
+    targets: '.gatsby_demo_item',
+    min: 1
+  })
+  // gatsby_demo_tabs_right
+  new Xt.Toggle(container.querySelector('.gatsby_demo_tabs_right'), { // eslint-disable-line no-new
+    elements: '.btn',
+    min: 1
+  })
+  // btn--show-code
+  const demoId = container.getAttribute('data-id')
+  container.setAttribute('id', demoId)
+  new Xt.Toggle(btnShowCode, { // eslint-disable-line no-new
+    targets: '#' + demoId,
+    targetsInner: '.gatsby_demo_code',
+    aria: false
+  })
+  // btn--open-full
+  btnOpenFull.addEventListener('on.xt', function (e) {
+    if (this === e.target) { // @FIX on.xt and off.xt event bubbles
+      btnShowCode.dispatchEvent(new CustomEvent('off.xt'))
+    }
+  })
+  // type
+  requestAnimationFrame( function () {
+    if (type === 'fullscreen') {
+      btnShowCode.dispatchEvent(new CustomEvent('off.xt'))
+      btnOpenFull.dispatchEvent(new CustomEvent('on.xt'))
+    } else if (type === 'code') {
+      btnOpenFull.dispatchEvent(new CustomEvent('off.xt'))
+      btnShowCode.dispatchEvent(new CustomEvent('on.xt'))
+    }
+  })
 }
 
-// srcIFrame
+/**
+ * populateFullscreen
+ */
 
-const srcIframe = function (item) {
+const populateFullscreen = function (item) {
   if (item.getAttribute('data-iframe')) {
     const src = '/' + item.getAttribute('data-iframe')
     const id = item.getAttribute('data-iframe-id')
@@ -270,6 +210,7 @@ const srcIframe = function (item) {
     item.addEventListener('on.xt', function (e) {
       if (item === e.target) { // @FIX on.xt and off.xt event bubbles
         if (!item.classList.contains('loaded')) {
+          item.classList.add('loaded')
           loadIframe(iframe)
         }
       }
@@ -282,130 +223,10 @@ const srcIframe = function (item) {
         }
       }
     })
+  } else {
+    populateInline(item)
   }
 }
-
-// populateInline
-
-const populateInline = function (item) {
-  const els = item.querySelectorAll('.gatsby_demo_source[data-lang]')
-  for (const [z, el] of els.entries()) {
-    populateSources(item, el, z)
-    if (!item.classList.contains('gatsby_demo_preview')) {
-      el.style.display = 'none'
-    }
-    /*
-    // don't show tabs on single
-    if (els.length === 1) {
-      item.querySelector('.gatsby_demo_code_tabs').style.display = 'none';
-    }
-    */
-  }
-  new Xt.Toggle(item, { // eslint-disable-line no-new
-    elements: '.gatsby_demo_code_tabs_left .btn',
-    targets: '.gatsby_demo_code_body_item',
-    min: 1
-  })
-}
-
-// populateShadow
-
-/*
-const loadShadow = function (shadowRoot, shadowSrc, source, shadowId, item) {
-  let request = new XMLHttpRequest();
-  let populateShadow = function () {
-    // shadowRoot
-    source.setAttribute('id', shadowId);
-    let template = document.createElement('html');
-    template.innerHTML = request.responseText.trim();
-    let shadowTemplate = document.adoptNode(template);
-    // if shadow dom supported
-    // PROBLEM react doesn't initialize inside shadow dom
-    // PROBLEM querySelectorAll inside Xtend javascript doesn't query inside shadowRoot
-    if (document.head.attachShadow) {
-      // remove unsupported shadow dom elements
-      let removes = template.querySelectorAll('link:not([rel="stylesheet"])');
-      for (let remove of removes) {
-        remove.remove();
-      }
-      item.classList.add('loaded');
-      // styles
-      let onStylesLoaded = function() {
-        // when all link[rel="stylesheet"] are loaded
-        Xt.load(shadowTemplate);
-        item.classList.add('loaded');
-        // script
-        let shadowBody = shadowTemplate.querySelector('body');
-        let scripts = template.querySelectorAll('script:not([src])');
-        for (let script of scripts) {
-          let scriptNew = document.createElement('script');
-          scriptNew.textContent = script.innerHTML.replace(/(?=.*\s)(document\.)/g, 'document.querySelector("#' + shadowId + '").shadowRoot.'); // replace document. with a query inside shadow dom
-          shadowBody.appendChild(scriptNew);
-          script.remove();
-        }
-      }
-      let styles = template.querySelectorAll('link[rel="stylesheet"]');
-      let stylesLoaded = 0;
-      for (let style of styles) {
-        if (styles.length === 0) {
-          onStylesLoaded();
-        } else {
-          style.addEventListener('load', function () {
-            stylesLoaded++;
-            if (stylesLoaded === styles.length) {
-              onStylesLoaded();
-            }
-          });
-        }
-      }
-    }
-    // shadowRoot
-    shadowRoot.appendChild(shadowTemplate);
-    initShadow(source, shadowRoot);
-  };
-  request.open('GET', shadowSrc, true);
-  request.onload = populateShadow;
-  request.onerror = function () {
-    console.error('Error loading demo', request);
-  };
-  request.send();
-}
-
-window.initShadow = function (source, shadowRoot) {
-  let item = source.closest('.gatsby_demo_item');
-  if (!item.classList.contains('populated')) {
-    populateShadow(item, shadowRoot);
-    item.classList.add('populated');
-  }
-};
-
-const populateShadow = function (item, shadowRoot) {
-  let html = shadowRoot.querySelector('#body-outer');
-  let js = shadowRoot.querySelector('js-script');
-  let less = shadowRoot.querySelector('less-style');
-  //let css = shadowRoot.querySelector('style[scoped]');
-  // inject code
-  if (html) {
-    item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="html">' + html.innerHTML + '</div>'));
-  }
-  if (js) {
-    item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="js">' + js.innerHTML + '</div>'));
-  }
-  if (less) {
-    item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="less">' + less.innerHTML + '</div>'));
-  }
-  // populate
-  for (let [z, source] of item.querySelectorAll('.gatsby_demo_source[data-lang]').entries()) {
-    populateSources(item, source, z);
-    source.remove();
-  }
-  new Xt.Toggle(item, { // eslint-disable-line no-new
-    "elements": ".gatsby_demo_code_tabs_left .btn",
-    "targets": ".gatsby_demo_code_body_item",
-    "min": 1
-  });
-}
-*/
 
 // populateIframe
 
@@ -420,36 +241,36 @@ const unloadIframe = function (iframe) {
 if (typeof window !== 'undefined') {
   window.initIframe = function (name, htmlSource, jsSource, cssSource) {
     const src = 'iframe[name="' + name + '"]'
-    const iframe = document.querySelector(src)
-    iframe.contentWindow.document.querySelector('html').classList.add('gatsby_iframe-inside')
-    const item = iframe.closest('.gatsby_demo_item')
-    item.classList.add('loaded')
-    if (!item.classList.contains('populated')) {
+    const iframes = document.querySelectorAll(src)
+    for (const iframe of iframes) {
+      iframe.contentWindow.document.querySelector('html').classList.add('gatsby_iframe-inside')
+      const item = iframe.closest('.gatsby_demo_item')
       populateIframe(item, iframe, htmlSource, jsSource, cssSource)
-      item.classList.add('populated')
     }
   }
   window.resizeIframe = function (name) {
     const src = 'iframe[name="' + name + '"]'
-    const iframe = document.querySelector(src)
-    const container = iframe.closest('.gatsby_demo')
-    const wrappers = container.querySelectorAll('.gatsby_demo_item_wrapper')
-    if (iframe) {
-      const iframeFull = iframe.contentWindow.document.documentElement.classList.contains('gatsby_iframe-full')
-      if (iframeFull) {
-        iframe.classList.add('gatsby_iframe-full')
-        const target = iframe.contentWindow.document.querySelector('#body-outer')
-        const h = target.offsetHeight
-        if (h !== parseFloat(iframe.dataset.iframeHeight)) {
-          iframe.style.height = h + 'px'
-          iframe.dataset.iframeHeight = h.toString()
-        }
-        for (const wrapper of wrappers) {
-          wrapper.style.height = h + 'px'
-        }
-      } else {
-        for (const wrapper of wrappers) {
-          wrapper.style.height = ''
+    const iframes = document.querySelectorAll(src)
+    for (const iframe of iframes) {
+      const container = iframe.closest('.gatsby_demo')
+      const wrappers = container.querySelectorAll('.gatsby_demo_item_wrapper')
+      if (iframe) {
+        const iframeFull = iframe.contentWindow.document.documentElement.classList.contains('gatsby_iframe-full')
+        if (iframeFull) {
+          iframe.classList.add('gatsby_iframe-full')
+          const target = iframe.contentWindow.document.querySelector('#body-outer')
+          const h = target.offsetHeight
+          if (h !== parseFloat(iframe.dataset.iframeHeight)) {
+            iframe.style.height = h + 'px'
+            iframe.dataset.iframeHeight = h.toString()
+          }
+          for (const wrapper of wrappers) {
+            wrapper.style.height = h + 'px'
+          }
+        } else {
+          for (const wrapper of wrappers) {
+            wrapper.style.height = ''
+          }
         }
       }
     }
@@ -457,30 +278,61 @@ if (typeof window !== 'undefined') {
 }
 
 const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) {
-  // inject code
-  if (htmlSource) {
-    item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="html">' + htmlSource + '</div>'))
+  if (item.closest('#overlay--open-full-content')) {
+    if (!item.classList.contains('populated')) {
+      item.classList.add('populated')
+      // inject code
+      if (htmlSource) {
+        item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="html">' + htmlSource + '</div>'))
+      }
+      if (jsSource) {
+        item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="js">' + jsSource + '</div>'))
+      }
+      if (cssSource) {
+        item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="less">' + cssSource + '</div>'))
+      }
+      // populate
+      const els = item.querySelectorAll('.gatsby_demo_source[data-lang]')
+      for (const [z, el] of els.entries()) {
+        populateSources(item, el, z)
+        el.remove()
+      }
+      new Xt.Toggle(item, { // eslint-disable-line no-new
+        elements: '.gatsby_demo_code_tabs_left .btn',
+        targets: '.gatsby_demo_code_body_item',
+        min: 1
+      })
+    }
   }
-  if (jsSource) {
-    item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="js">' + jsSource + '</div>'))
-  }
-  if (cssSource) {
-    item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="less">' + cssSource + '</div>'))
-  }
-  // populate
-  const els = item.querySelectorAll('.gatsby_demo_source[data-lang]')
-  for (const [z, el] of els.entries()) {
-    populateSources(item, el, z)
-    el.remove()
-  }
-  new Xt.Toggle(item, { // eslint-disable-line no-new
-    elements: '.gatsby_demo_code_tabs_left .btn',
-    targets: '.gatsby_demo_code_body_item',
-    min: 1
-  })
 }
 
-// populateSources
+/**
+ * populateInline
+ */
+
+const populateInline = function (item) {
+  if (item.closest('#overlay--open-full-content')) {
+    if (!item.classList.contains('populated')) {
+      item.classList.add('populated')
+      const els = item.querySelectorAll('.gatsby_demo_source[data-lang]')
+      for (const [z, el] of els.entries()) {
+        populateSources(item, el, z)
+        if (!item.classList.contains('gatsby_demo_preview')) {
+          el.style.display = 'none'
+        }
+      }
+      new Xt.Toggle(item, { // eslint-disable-line no-new
+        elements: '.gatsby_demo_code_tabs_left .btn',
+        targets: '.gatsby_demo_code_body_item',
+        min: 1
+      })
+    }
+  }
+}
+
+/**
+ * populateSources
+ */
 
 const populateSources = function (item, element, z) {
   let lang = element.getAttribute('data-lang')
@@ -509,6 +361,35 @@ const populateSources = function (item, element, z) {
   codeInside.innerHTML = formatCode(element)
   codeInside.classList.add(lang)
   Prism.highlightElement(codeInside)
+}
+
+/**
+ * populateBlock
+ */
+
+const populateBlock = function () {
+  for (const el of document.querySelectorAll('script[type="text/plain"][class*="language-"]')) {
+    const language = el.getAttribute('class')
+    el.after(Xt.createElement('<pre class="' + language + '"><code class="' + language + '">' + el.innerHTML + '</code></pre>'))
+    el.remove()
+  }
+  for (const el of document.querySelectorAll('pre:not(.noedit) code')) {
+    // set text
+    el.innerHTML = formatCode(el)
+    Prism.highlightElement(el)
+  }
+  // overlay fullscreen
+  for (const el of document.querySelectorAll('[data-iframe-toggle')) {
+    el.addEventListener('click', function () {
+      makeFullscreen(el.nextSibling)
+    })
+  }
+  document.querySelector('#overlay--open-full').addEventListener('offdone.xt', function (e) {
+    if (this === e.target) { // @FIX on.xt and off.xt event bubbles
+      const content = document.querySelector('#overlay--open-full-content')
+      content.innerHTML = ''
+    }
+  })
 }
 
 export { populateBlock, populateDemo }

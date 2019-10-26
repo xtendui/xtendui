@@ -58,7 +58,7 @@ Overlay.optionsDefault = {
   min: 0,
   max: 1,
   instant: { elements: true },
-  eventLimit: '.event-limit',
+  eventLimit: '.event-limit, .card--overlay > .card-inner > .card-content',
   autoclose: true,
   appendTo: 'body',
   backdrop: 'targets',

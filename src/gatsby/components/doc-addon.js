@@ -12,6 +12,7 @@ class DocAddon extends React.Component {
               <div className="card card--overlay">
                 <div className="card-design"></div>
                 <div className="card-inner">
+                  <div className="btn btn-close" aria-label="Close"></div>
                   <div className="card-content" id="overlay--open-full-content">
                   </div>
                 </div>
