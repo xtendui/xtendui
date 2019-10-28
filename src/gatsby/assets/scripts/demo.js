@@ -108,9 +108,9 @@ const populateDemo = function (container, i) {
       // iframe append
       const id = 'iframe' + i + k
       item.setAttribute('data-iframe-id', id)
-      if (!item.getAttribute('data-iframe-fullscreen')) {
+      //if (!item.getAttribute('data-iframe-fullscreen')) { // @TODO
         populateFullscreen(item)
-      }
+      //}
     } else {
       populateInline(item)
     }
@@ -150,11 +150,6 @@ const makeFullscreen = function (item) {
   item.before(Xt.createElement('<div class="xt-ignore" data-xt-origin="overlay--open-full-content" style="height: ' + item.clientHeight + 'px"></div>'))
   item.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
   content.append(item)
-  // populateFullscreen
-  const container = content.querySelector('.gatsby_demo')
-  for (const item of container.querySelectorAll('.gatsby_demo_item')) {
-    populateFullscreen(item)
-  }
   // trigger resize
   requestAnimationFrame(function () {
     dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
@@ -166,35 +161,38 @@ const makeFullscreen = function (item) {
  */
 
 const populateFullscreen = function (item) {
-  if (item.getAttribute('data-iframe')) {
-    const src = '/' + item.getAttribute('data-iframe')
-    const id = item.getAttribute('data-iframe-id')
-    item.append(Xt.createElement('<div class="gatsby_demo_item_wrapper"><iframe data-src="' + src + '" name="' + id + '"></iframe></div>'))
-    item.querySelector('.gatsby_demo_item_wrapper').append(Xt.createElement('\n' +
-      '    <div class="loader loader--spinner">\n' +
-      '      <div class="spinner">\n' +
-      '        <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
-      '      </div>\n' +
-      '    </div>\n' +
-      '  </div>'))
-    // load
-    const iframe = item.querySelector('iframe')
-    item.addEventListener('on.xt', function (e) {
-      if (this === e.target) { // @FIX on.xt and off.xt event bubbles
-        if (!item.classList.contains('loaded')) {
-          item.classList.add('loaded')
-          loadIframe(iframe)
+  if (!item.classList.contains('populated')) {
+    item.classList.add('populated')
+    if (item.getAttribute('data-iframe')) {
+      const src = '/' + item.getAttribute('data-iframe')
+      const id = item.getAttribute('data-iframe-id')
+      item.append(Xt.createElement('<div class="gatsby_demo_item_wrapper"><iframe data-src="' + src + '" name="' + id + '"></iframe></div>'))
+      item.querySelector('.gatsby_demo_item_wrapper').append(Xt.createElement('\n' +
+        '    <div class="loader loader--spinner">\n' +
+        '      <div class="spinner">\n' +
+        '        <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
+        '      </div>\n' +
+        '    </div>\n' +
+        '  </div>'))
+      // load
+      const iframe = item.querySelector('iframe')
+      item.addEventListener('on.xt', function (e) {
+        if (this === e.target) { // @FIX on.xt and off.xt event bubbles
+          if (!item.classList.contains('loaded')) {
+            item.classList.add('loaded')
+            loadIframe(iframe)
+          }
         }
-      }
-    })
-    item.addEventListener('off.xt', function (e) {
-      if (this === e.target) { // @FIX on.xt and off.xt event bubbles
-        if (item.classList.contains('loaded')) {
-          item.classList.remove('loaded')
-          unloadIframe(iframe)
+      })
+      item.addEventListener('off.xt', function (e) {
+        if (this === e.target) { // @FIX on.xt and off.xt event bubbles
+          if (item.classList.contains('loaded')) {
+            item.classList.remove('loaded')
+            unloadIframe(iframe)
+          }
         }
-      }
-    })
+      })
+    }
   }
 }
 
@@ -345,7 +343,7 @@ const populateBlock = function () {
     Prism.highlightElement(el)
   }
   // overlay fullscreen
-  for (const el of document.querySelectorAll('[data-iframe-toggle')) {
+  for (const el of document.querySelectorAll('[data-gatsby-listing-toggle')) {
     el.addEventListener('click', function () {
       makeFullscreen(el.nextSibling)
     })

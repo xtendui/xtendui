@@ -5,6 +5,8 @@ import { graphql } from 'gatsby'
 import SEO from 'components/seo'
 import Layout from 'components/layout'
 import Demo from 'components/demo'
+import DemoVanilla from 'components/demo-vanilla'
+import DemoReact from 'components/demo-react'
 
 class Template extends React.Component {
   render () {
@@ -25,7 +27,7 @@ class Template extends React.Component {
                     adiacent.frontmatter.parent !== adiacent.frontmatter.title
                       ? <div className="gatsby_listing_column" key={i}>
                         <button type="button"
-                          className="card card--primary card--small card--full card--collapse gatsby_listing_item" data-iframe-toggle>
+                          className="card card--primary card--small card--full card--collapse gatsby_listing_item" data-gatsby-listing-toggle>
                           <div className="card-design"></div>
                           <div className="card-inner">
                             <div className="card-content">
@@ -36,10 +38,27 @@ class Template extends React.Component {
                             </div>
                           </div>
                         </button>
-                        <Demo>
-                          <div className="gatsby_demo_item" data-iframe={adiacent.frontmatter.iframe} data-iframe-fullscreen="true">
-                          </div>
-                        </Demo>
+                        {adiacent.frontmatter.iframe
+                          ? <Demo>
+                            <div className="gatsby_demo_item" data-iframe={adiacent.frontmatter.iframe} data-iframe-fullscreen="true">
+                            </div>
+                          </Demo>
+                          : null
+                        }
+                        {adiacent.frontmatter.vanilla
+                          ? <Demo>
+                            <DemoVanilla src={adiacent.frontmatter.vanilla}>
+                            </DemoVanilla>
+                          </Demo>
+                          : null
+                        }
+                        {adiacent.frontmatter.react
+                          ? <Demo>
+                            <DemoReact src={adiacent.frontmatter.react}>
+                            </DemoReact>
+                          </Demo>
+                          : null
+                        }
                       </div>
                       : null
                   ))}
@@ -92,6 +111,8 @@ export const query = graphql`
             title
             description
             iframe
+            vanilla
+            react
           }
         }
       }
@@ -160,7 +181,9 @@ Template.propTypes = {
               parent: PropTypes.string,
               title: PropTypes.string.isRequired,
               description: PropTypes.string,
-              iframe: PropTypes.string
+              iframe: PropTypes.string,
+              vanilla: PropTypes.string,
+              react: PropTypes.string
             }).isRequired
           }).isRequired
         }).isRequired

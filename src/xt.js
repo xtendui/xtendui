@@ -901,12 +901,10 @@ if (typeof window !== 'undefined') {
    */
   Xt.eventDelay = function (e, element, func, prefix = '', instant = false) {
     const container = document.documentElement
-    console.log(e)
     if (e && e.type && (e.type === 'resize' || e.type === 'scroll')) {
       const delay = e.detail !== undefined && e.detail.delay !== undefined ? e.detail.delay : instant ? false : Xt[e.type + 'Delay']
       if (e.type === 'resize') {
         // multiple calls check
-        console.log(e.detail);
         if ((e.detail === undefined || e.detail.force === undefined) && // not when setting delay on event
           window.innerWidth === Xt.dataStorage.get(container, 'xtEventDelay')) { // only width no height because it changes on scroll on mobile
           return

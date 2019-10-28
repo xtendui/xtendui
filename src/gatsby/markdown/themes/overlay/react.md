@@ -1,8 +1,8 @@
 ---
 type: "Themes"
-parent: "Overlay"
-title: "Infinite"
+parent: "Test"
+title: "React"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
-date: "2019-10-25"
-iframe: "iframe/demos/scroll/mode-infinite"
+date: "2019-10-24"
+react: "inline/demos/test/react"
 ---
