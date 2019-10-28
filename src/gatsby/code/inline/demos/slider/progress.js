@@ -27,11 +27,11 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">1</h1>
-                  <div class="loader loader--x loader-size--bottom loader--js">
-                    <div class="filler">
-                      <span></span><span></span>
-                    </div>
+                  <div class="card-title">1</div>
+                </div>
+                <div class="loader loader--x loader-size--bottom loader--js">
+                  <div class="filler">
+                    <span></span><span></span>
                   </div>
                 </div>
               </div>
@@ -49,11 +49,11 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">2</h1>
-                  <div class="loader loader--x loader-size--bottom loader--js">
-                    <div class="filler">
-                      <span></span><span></span>
-                    </div>
+                  <div class="card-title">2</div>
+                </div>
+                <div class="loader loader--x loader-size--bottom loader--js">
+                  <div class="filler">
+                    <span></span><span></span>
                   </div>
                 </div>
               </div>
@@ -71,11 +71,11 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">3</h1>
-                  <div class="loader loader--x loader-size--bottom loader--js">
-                    <div class="filler">
-                      <span></span><span></span>
-                    </div>
+                  <div class="card-title">3</div>
+                </div>
+                <div class="loader loader--x loader-size--bottom loader--js">
+                  <div class="filler">
+                    <span></span><span></span>
                   </div>
                 </div>
               </div>
@@ -93,11 +93,11 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">4</h1>
-                  <div class="loader loader--x loader-size--bottom loader--js">
-                    <div class="filler">
-                      <span></span><span></span>
-                    </div>
+                  <div class="card-title">4</div>
+                </div>
+                <div class="loader loader--x loader-size--bottom loader--js">
+                  <div class="filler">
+                    <span></span><span></span>
                   </div>
                 </div>
               </div>
@@ -115,11 +115,11 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">5</h1>
-                  <div class="loader loader--x loader-size--bottom loader--js">
-                    <div class="filler">
-                      <span></span><span></span>
-                    </div>
+                  <div class="card-title">5</div>
+                </div>
+                <div class="loader loader--x loader-size--bottom loader--js">
+                  <div class="filler">
+                    <span></span><span></span>
                   </div>
                 </div>
               </div>
@@ -138,11 +138,11 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title">6</h1>
-                  <div class="loader loader--x loader-size--bottom loader--js">
-                    <div class="filler">
-                      <span></span><span></span>
-                    </div>
+                  <div class="card-title">6</div>
+                </div>
+                <div class="loader loader--x loader-size--bottom loader--js">
+                  <div class="filler">
+                    <span></span><span></span>
                   </div>
                 </div>
               </div>
@@ -157,11 +157,9 @@ demo.htmlSource = `
 
   <nav class="slider-pagination">
     <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
-      <span>
-        <span class="loader loader--y loader--js">
-          <span class="filler">
-            <span></span><span></span>
-          </span>
+      <span class="loader loader--y loader--js">
+        <span class="filler">
+          <span></span><span></span>
         </span>
       </span>
     </button>

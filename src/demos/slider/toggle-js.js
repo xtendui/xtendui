@@ -17,8 +17,8 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Slider(object, {
-      durationOn: time * 1000,
-      durationOff: time * 1000,
+      durationOn: time,
+      durationOff: time,
       instant: false
     })
 
@@ -46,13 +46,13 @@ Xt.mount.push({
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // mask
       TweenMax.set(target, { x: -self.detail.xPosOld + 'px' })
-      TweenMax.to(target, timeMask, { x: 0, opacity: 1, ease: easeOut })
+      TweenMax.to(target, timeMask / 1000, { x: 0, opacity: 1, ease: easeOut })
       TweenMax.set(self.dragger, { x: self.detail.xPosOld })
-      TweenMax.to(self.dragger, timeMask, { x: 0, ease: easeOut })
+      TweenMax.to(self.dragger, timeMask / 1000, { x: 0, ease: easeOut })
       // content
       const contents = target.querySelectorAll('.card-item > *')
       for (const content of contents) {
-        TweenMax.to(content, timeContent, { x: 0, opacity: 1, ease: easeOut })
+        TweenMax.to(content, timeContent / 1000, { x: 0, opacity: 1, ease: easeOut })
       }
     }
 
@@ -84,14 +84,14 @@ Xt.mount.push({
           TweenMax.set(tr, { opacity: 0 })
           // mask
           TweenMax.set(tr, { x: -xMax * direction })
-          TweenMax.to(tr, timeMask, { x: 0, opacity: 1, ease: easeOut })
+          TweenMax.to(tr, timeMask / 1000, { x: 0, opacity: 1, ease: easeOut })
           TweenMax.set(self.dragger, { x: xMax * direction })
-          TweenMax.to(self.dragger, timeMask, { x: 0, ease: easeOut })
+          TweenMax.to(self.dragger, timeMask / 1000, { x: 0, ease: easeOut })
           // content
           const contents = tr.querySelectorAll('.card-item > *')
           for (const content of contents) {
             TweenMax.set(content, { x: sizeContent * direction, opacity: 0 })
-            TweenMax.to(content, timeContent, { x: 0, opacity: 1, ease: easeOut })
+            TweenMax.to(content, timeContent / 1000, { x: 0, opacity: 1, ease: easeOut })
           }
         }
       }
@@ -107,12 +107,12 @@ Xt.mount.push({
           direction = -1
         }
         // mask
-        TweenMax.to(tr, timeMask, { x: xMax * direction, opacity: 0, ease: easeOut })
-        TweenMax.to(self.dragger, timeMask, { x: -xMax * direction, ease: easeOut })
+        TweenMax.to(tr, timeMask / 1000, { x: xMax * direction, opacity: 0, ease: easeOut })
+        TweenMax.to(self.dragger, timeMask / 1000, { x: -xMax * direction, ease: easeOut })
         // content
         const contents = tr.querySelectorAll('.card-item > *')
         for (const content of contents) {
-          TweenMax.to(content, timeContent, { x: -sizeContent * direction, opacity: 0, ease: easeOut })
+          TweenMax.to(content, timeContent / 1000, { x: -sizeContent * direction, opacity: 0, ease: easeOut })
         }
       }
     }

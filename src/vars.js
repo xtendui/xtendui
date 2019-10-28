@@ -8,11 +8,11 @@ import BezierEasing from 'bezier-easing'
 
 const vars = {
   // time
-  timeTiny: 0.1,
-  timeSmall: 0.25,
-  timeMedium: 0.5,
-  timeBig: 1,
-  timeGiant: 2,
+  timeTiny: 100,
+  timeSmall: 250,
+  timeMedium: 500,
+  timeBig: 1000,
+  timeGiant: 2000,
   // ease
   easeIn: new Ease(BezierEasing(0.14, 0.63, 0, 1)),
   easeOut: new Ease(BezierEasing(0.14, 0.63, 0, 1)),

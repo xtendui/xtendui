@@ -22,7 +22,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title slide_pagination-content">1</div>
+                  <div class="card-title slide-pagination-content">1</div>
                   <nav class="slider-pagination">
                     <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
                     </button>
@@ -43,7 +43,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title slide_pagination-content">2</div>
+                  <div class="card-title slide-pagination-content">2</div>
                   <nav class="slider-pagination">
                     <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
                     </button>
@@ -64,7 +64,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title slide_pagination-content">3</div>
+                  <div class="card-title slide-pagination-content">3</div>
                   <nav class="slider-pagination">
                     <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
                     </button>
@@ -85,7 +85,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title slide_pagination-content">4</div>
+                  <div class="card-title slide-pagination-content">4</div>
                   <nav class="slider-pagination">
                     <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
                     </button>
@@ -106,7 +106,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title slide_pagination-content">5</div>
+                  <div class="card-title slide-pagination-content">5</div>
                   <nav class="slider-pagination">
                     <button type="button" class="btn btn--default xt-ignore" data-xt-pag title="Slide xt-num">
                     </button>
@@ -128,7 +128,7 @@ demo.htmlSource = `
             <div class="card-inner">
               <div class="card-content">
                 <div class="card-block card-item">
-                  <div class="card-title slide_pagination-content">6</div>
+                  <div class="card-title slide-pagination-content">6</div>
                 </div>
               </div>
             </div>

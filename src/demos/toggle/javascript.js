@@ -21,10 +21,10 @@ Xt.mount.push({
     // init
 
     let self = new Xt.Toggle(object, {
-      durationOn: time * 1000,
-      durationOff: time * 1000,
-      delayOn: delay * 1000,
-      delayOff: delay * 1000
+      durationOn: time,
+      durationOff: time,
+      delayOn: delay,
+      delayOff: delay
     })
 
     // activation
@@ -39,16 +39,16 @@ Xt.mount.push({
         TweenMax.set(target, { x: size })
       }
       // animation
-      TweenMax.to(target, time, { x: 0, opacity: 1, ease: easeIn })
+      TweenMax.to(target, time / 1000, { x: 0, opacity: 1, ease: easeIn })
     }
 
     const eventOff = function () {
       const target = this
       // animation
       if (!target.classList.contains('inverse')) {
-        TweenMax.to(target, time, { x: size, opacity: 0, ease: easeOut })
+        TweenMax.to(target, time / 1000, { x: size, opacity: 0, ease: easeOut })
       } else {
-        TweenMax.to(target, time, { x: -size, opacity: 0, ease: easeOut })
+        TweenMax.to(target, time / 1000, { x: -size, opacity: 0, ease: easeOut })
       }
     }
 
@@ -86,10 +86,10 @@ Xt.mount.push({
     let self = new Xt.Toggle(object, {
       on: 'mouseenter',
       off: 'mouseleave',
-      durationOn: time * 1000,
-      durationOff: time * 1000,
-      delayOn: delay * 1000,
-      delayOff: delay * 1000
+      durationOn: time,
+      durationOff: time,
+      delayOn: delay,
+      delayOff: delay
     })
 
     // activation
@@ -104,16 +104,16 @@ Xt.mount.push({
         TweenMax.set(target, { x: size })
       }
       // animation
-      TweenMax.to(target, time, { x: 0, opacity: 1, ease: easeIn })
+      TweenMax.to(target, time / 1000, { x: 0, opacity: 1, ease: easeIn })
     }
 
     const eventOff = function () {
       const target = this
       // animation
       if (!target.classList.contains('inverse')) {
-        TweenMax.to(target, time, { x: size, opacity: 0, ease: easeOut })
+        TweenMax.to(target, time / 1000, { x: size, opacity: 0, ease: easeOut })
       } else {
-        TweenMax.to(target, time, { x: -size, opacity: 0, ease: easeOut })
+        TweenMax.to(target, time / 1000, { x: -size, opacity: 0, ease: easeOut })
       }
     }
 

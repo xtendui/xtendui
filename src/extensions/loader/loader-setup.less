@@ -10,6 +10,7 @@
   bottom: 0;
   right: 0;
   border-radius: inherit;
+  overflow: hidden;
 }
 
 .loader--mouse {
@@ -75,9 +76,6 @@
 // size
 
 .loader-size--top {
-  &:not(.loader--background) {
-    bottom: auto;
-  }
   .filler {
     bottom: auto;
     span {
@@ -87,9 +85,6 @@
 }
 
 .loader-size--bottom {
-  &:not(.loader--background) {
-    top: auto;
-  }
   .filler {
     top: auto;
     span {
@@ -99,9 +94,6 @@
 }
 
 .loader-size--left {
-  &:not(.loader--background) {
-    right: auto;
-  }
   .filler {
     right: auto;
     span {
@@ -111,9 +103,6 @@
 }
 
 .loader-size--right {
-  &:not(.loader--background) {
-    left: auto;
-  }
   .filler {
     left: auto;
     span {

@@ -12,7 +12,7 @@ Inside it you can use this strings that gets populated with variables:
 
 - `xt-num` replaced with pagination's number slide
 - `xt-tot` replaced with pagination's total slides
-- `xt-content` replaced with slide's `.slide_pagination-content` **innerHTML**.
+- `xt-content` replaced with slide's `.slide-pagination-content` **innerHTML**.
 
 <script type="text/plain" class="language-markup">
   <nav class="slider-pagination">
@@ -24,7 +24,7 @@ Inside it you can use this strings that gets populated with variables:
 
 <div class="alert">
   <div class="alert-content">
-    `slider-pagination[data-xt-pag].xt-ignore` is essential to the functioning of the slider, so if you don't want to show it add `.display--none`.
+    `slider-pagination[data-xt-pag].xt-ignore` is essential to the functioning of the slider, so if you don't want to show it add `.display-none`.
   </div>
 </div>
 

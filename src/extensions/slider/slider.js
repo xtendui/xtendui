@@ -59,7 +59,7 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // not when empty
     if (!self.targets.length) {
-      return false;
+      return false
     }
     // @FIX disable slider if not overflowing
     self.object.classList.remove('slider--nooverflow')
@@ -214,7 +214,7 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // not when empty
     if (!self.targets.length) {
-      return false;
+      return false
     }
     // generate elements
     if (options.pagination) {
@@ -248,7 +248,7 @@ class Slider extends Xt.Toggle {
           if (html.search(new RegExp('xt-content', 'ig')) !== -1) {
             let replace = ''
             for (const slide of group) {
-              replace += slide.querySelector('.slide_pagination-content').innerHTML
+              replace += slide.querySelector('.slide-pagination-content').innerHTML
             }
             html = html.replace(new RegExp('xt-content', 'ig'), replace)
           }
@@ -268,7 +268,7 @@ class Slider extends Xt.Toggle {
             const min = self.groupMqFirst.length
             const max = self.groupMqFirst.length + self.groupMqInitial.length - 1
             if (i < min || i > max) {
-              self.pags[z][i].classList.add('xt-clone', 'xt-wrap', 'display--none')
+              self.pags[z][i].classList.add('xt-clone', 'xt-wrap', 'display-none')
             }
           }
         }

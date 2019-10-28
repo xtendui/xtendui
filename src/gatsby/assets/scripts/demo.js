@@ -174,7 +174,7 @@ const populateFullscreen = function (item) {
     // load
     const iframe = item.querySelector('iframe')
     item.addEventListener('on.xt', function (e) {
-      if (item === e.target) { // @FIX on.xt and off.xt event bubbles
+      if (this === e.target) { // @FIX on.xt and off.xt event bubbles
         if (!item.classList.contains('loaded')) {
           item.classList.add('loaded')
           loadIframe(iframe)
@@ -182,7 +182,7 @@ const populateFullscreen = function (item) {
       }
     })
     item.addEventListener('off.xt', function (e) {
-      if (item === e.target) { // @FIX on.xt and off.xt event bubbles
+      if (this === e.target) { // @FIX on.xt and off.xt event bubbles
         if (item.classList.contains('loaded')) {
           item.classList.remove('loaded')
           unloadIframe(iframe)
