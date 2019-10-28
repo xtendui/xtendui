@@ -146,13 +146,19 @@ const makeFullscreen = function (item) {
   const overlay = document.querySelector('#overlay--open-full')
   const content = document.querySelector('#overlay--open-full-content')
   overlay.dispatchEvent(new CustomEvent('on.xt'))
+  // move code block
   item.before(Xt.createElement('<div class="xt-ignore" data-xt-origin="overlay--open-full-content" style="height: ' + item.clientHeight + 'px"></div>'))
   item.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
   content.append(item)
+  // populateFullscreen
   const container = content.querySelector('.gatsby_demo')
   for (const item of container.querySelectorAll('.gatsby_demo_item')) {
     populateFullscreen(item)
   }
+  // trigger resize
+  requestAnimationFrame(function () {
+    dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
+  })
 }
 
 /**
@@ -346,11 +352,16 @@ const populateBlock = function () {
   }
   document.querySelector('#overlay--open-full').addEventListener('off.xt', function (e) {
     if (this === e.target) { // @FIX on.xt and off.xt event bubbles
+      // move code block
       const content = document.querySelector('#overlay--open-full-content')
       const appendOrigin = document.querySelector('[data-xt-origin="overlay--open-full-content"]')
       content.childNodes[0].classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
       appendOrigin.before(content.childNodes[0])
       appendOrigin.remove()
+      // trigger resize
+      requestAnimationFrame(function () {
+        dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
+      })
     }
   })
 }
