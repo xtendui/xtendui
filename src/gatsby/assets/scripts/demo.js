@@ -66,6 +66,48 @@ const formatCode = function (source) {
 }
 
 /**
+ * populateBlock
+ */
+
+const populateBlock = function () {
+  for (const el of document.querySelectorAll('script[type="text/plain"][class*="language-"]')) {
+    const language = el.getAttribute('class')
+    el.after(Xt.createElement('<pre class="' + language + '"><code class="' + language + '">' + el.innerHTML + '</code></pre>'))
+    el.remove()
+  }
+  for (const el of document.querySelectorAll('pre:not(.noedit) code')) {
+    // set text
+    el.innerHTML = formatCode(el)
+    Prism.highlightElement(el)
+  }
+  // overlay fullscreen
+  for (const el of document.querySelectorAll('[data-gatsby-listing-toggle')) {
+    el.addEventListener('click', function () {
+      makeFullscreen(el.nextSibling)
+    })
+  }
+  document.querySelector('#overlay--open-full').addEventListener('off.xt', function (e) {
+    if (this === e.target) { // @FIX on.xt and off.xt event bubbles
+      const content = document.querySelector('#overlay--open-full-content')
+      // populate source
+      const sourceTo = content.querySelector('.gatsby_demo_source_populate')
+      if (sourceTo && !sourceTo.dataset.isRendered) {
+        sourceTo.innerHTML = ''
+      }
+      // move code block
+      const appendOrigin = document.querySelector('[data-xt-origin="overlay--open-full-content"]')
+      content.childNodes[0].classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
+      appendOrigin.before(content.childNodes[0])
+      appendOrigin.remove()
+      // trigger resize
+      requestAnimationFrame(function () {
+        dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
+      })
+    }
+  })
+}
+
+/**
  * populateDemo
  */
 
@@ -108,11 +150,15 @@ const populateDemo = function (container, i) {
       // iframe append
       const id = 'iframe' + i + k
       item.setAttribute('data-iframe-id', id)
-      //if (!item.getAttribute('data-iframe-fullscreen')) { // @TODO
-        populateFullscreen(item)
-      //}
+      initializeIframe(item)
     } else {
       populateInline(item)
+    }
+    // populate source
+    const sourceTo = item.querySelector('.gatsby_demo_source_populate')
+    if (sourceTo && getComputedStyle(sourceTo).display !== 'none') {
+      sourceTo.dataset.isRendered = 'true';
+      sourceTo.innerHTML = item.querySelector('script[data-lang="html"]').innerHTML
     }
   }
   // toggle code
@@ -145,11 +191,20 @@ const populateDemo = function (container, i) {
 const makeFullscreen = function (item) {
   const overlay = document.querySelector('#overlay--open-full')
   const content = document.querySelector('#overlay--open-full-content')
+  const sourceTo = item.querySelector('.gatsby_demo_source_populate')
   overlay.dispatchEvent(new CustomEvent('on.xt'))
   // move code block
   item.before(Xt.createElement('<div class="xt-ignore" data-xt-origin="overlay--open-full-content" style="height: ' + item.clientHeight + 'px"></div>'))
-  item.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
+  if (sourceTo && sourceTo.dataset.isRendered) {
+    item.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
+  }
   content.append(item)
+  // populate source
+  requestAnimationFrame(function () { // requestAnimationFrame fixes errors
+    if (sourceTo && !sourceTo.dataset.isRendered) {
+      sourceTo.innerHTML = item.querySelector('script[data-lang="html"]').innerHTML
+    }
+  })
   // trigger resize
   requestAnimationFrame(function () {
     dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
@@ -157,10 +212,10 @@ const makeFullscreen = function (item) {
 }
 
 /**
- * populateFullscreen
+ * Iframe
  */
 
-const populateFullscreen = function (item) {
+const initializeIframe = function (item) {
   if (!item.classList.contains('populated')) {
     item.classList.add('populated')
     if (item.getAttribute('data-iframe')) {
@@ -195,8 +250,6 @@ const populateFullscreen = function (item) {
     }
   }
 }
-
-// populateIframe
 
 const loadIframe = function (iframe) {
   iframe.setAttribute('src', iframe.getAttribute('data-src'))
@@ -273,7 +326,7 @@ const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) 
 }
 
 /**
- * populateInline
+ * inline
  */
 
 const populateInline = function (item) {
@@ -295,7 +348,7 @@ const populateInline = function (item) {
 }
 
 /**
- * populateSources
+ * sources
  */
 
 const populateSources = function (item, element, z) {
@@ -325,43 +378,6 @@ const populateSources = function (item, element, z) {
   codeInside.innerHTML = formatCode(element)
   codeInside.classList.add(lang)
   Prism.highlightElement(codeInside)
-}
-
-/**
- * populateBlock
- */
-
-const populateBlock = function () {
-  for (const el of document.querySelectorAll('script[type="text/plain"][class*="language-"]')) {
-    const language = el.getAttribute('class')
-    el.after(Xt.createElement('<pre class="' + language + '"><code class="' + language + '">' + el.innerHTML + '</code></pre>'))
-    el.remove()
-  }
-  for (const el of document.querySelectorAll('pre:not(.noedit) code')) {
-    // set text
-    el.innerHTML = formatCode(el)
-    Prism.highlightElement(el)
-  }
-  // overlay fullscreen
-  for (const el of document.querySelectorAll('[data-gatsby-listing-toggle')) {
-    el.addEventListener('click', function () {
-      makeFullscreen(el.nextSibling)
-    })
-  }
-  document.querySelector('#overlay--open-full').addEventListener('off.xt', function (e) {
-    if (this === e.target) { // @FIX on.xt and off.xt event bubbles
-      // move code block
-      const content = document.querySelector('#overlay--open-full-content')
-      const appendOrigin = document.querySelector('[data-xt-origin="overlay--open-full-content"]')
-      content.childNodes[0].classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
-      appendOrigin.before(content.childNodes[0])
-      appendOrigin.remove()
-      // trigger resize
-      requestAnimationFrame(function () {
-        dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
-      })
-    }
-  })
 }
 
 export { populateBlock, populateDemo }

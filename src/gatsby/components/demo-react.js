@@ -52,6 +52,6 @@ class DemoReact extends React.Component {
 export default DemoReact
 
 DemoReact.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   src: PropTypes.string.isRequired
 }
