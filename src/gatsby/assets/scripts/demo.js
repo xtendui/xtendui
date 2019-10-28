@@ -117,16 +117,11 @@ const populateDemo = function (container, i) {
   }
   // toggle code
   const demoId = 'gatsby_demo_' + i
-  container.setAttribute('data-id', demoId)
+  container.setAttribute('id', demoId)
   // makeFullscreen
   for (const btnOpenFull of container.querySelectorAll('.btn--open-full')) {
     btnOpenFull.addEventListener('click', function () {
-      makeFullscreen(container, 'fullscreen')
-    })
-  }
-  for (const btnShowCode of container.querySelectorAll('.btn--show-code')) {
-    btnShowCode.addEventListener('click', function () {
-      makeFullscreen(container, 'code')
+      makeFullscreen(container)
     })
   }
   // gatsby_demo_tabs_left
@@ -135,13 +130,19 @@ const populateDemo = function (container, i) {
     targets: '.gatsby_demo_item',
     min: 1
   })
+  // btn--show-code
+  new Xt.Toggle(container.querySelector('.btn--show-code'), { // eslint-disable-line no-new
+    targets: '#' + demoId,
+    targetsInner: '.gatsby_demo_code',
+    aria: false
+  })
 }
 
 /**
  * makeFullscreen
  */
 
-const makeFullscreen = function (item, type = 'fullsscreen') {
+const makeFullscreen = function (item) {
   const overlay = document.querySelector('#overlay--open-full')
   const content = document.querySelector('#overlay--open-full-content')
   overlay.dispatchEvent(new CustomEvent('on.xt'))
@@ -152,44 +153,6 @@ const makeFullscreen = function (item, type = 'fullsscreen') {
   for (const item of container.querySelectorAll('.gatsby_demo_item')) {
     populateFullscreen(item)
   }
-  const btnShowCode = container.querySelector('.btn--show-code');
-  const btnOpenFull = container.querySelector('.btn--open-full');
-  // gatsby_demo_tabs_left
-  /* @TODO
-  new Xt.Toggle(container, { // eslint-disable-line no-new
-    elements: '.gatsby_demo_tabs_left .btn',
-    targets: '.gatsby_demo_item',
-    min: 1
-  })
-  // gatsby_demo_tabs_right
-  new Xt.Toggle(container.querySelector('.gatsby_demo_tabs_right'), { // eslint-disable-line no-new
-    elements: '.btn',
-    min: 1
-  })
-  // btn--show-code
-  const demoId = container.getAttribute('data-id')
-  container.setAttribute('id', demoId)
-  new Xt.Toggle(btnShowCode, { // eslint-disable-line no-new
-    targets: '#' + demoId,
-    targetsInner: '.gatsby_demo_code',
-    aria: false
-  })
-  // btn--open-full
-  btnOpenFull.addEventListener('on.xt', function (e) {
-    if (this === e.target) { // @FIX on.xt and off.xt event bubbles
-      btnShowCode.dispatchEvent(new CustomEvent('off.xt'))
-    }
-  })
-  // type
-  requestAnimationFrame( function () {
-    if (type === 'fullscreen') {
-      btnShowCode.dispatchEvent(new CustomEvent('off.xt'))
-      btnOpenFull.dispatchEvent(new CustomEvent('on.xt'))
-    } else if (type === 'code') {
-      btnOpenFull.dispatchEvent(new CustomEvent('off.xt'))
-      btnShowCode.dispatchEvent(new CustomEvent('on.xt'))
-    }
-  })*/
 }
 
 /**
@@ -226,8 +189,6 @@ const populateFullscreen = function (item) {
         }
       }
     })
-  } else {
-    populateInline(item)
   }
 }
 
@@ -281,33 +242,29 @@ if (typeof window !== 'undefined') {
 }
 
 const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) {
-  if (item.closest('#overlay--open-full-content')) {
-    if (!item.classList.contains('populated')) {
-      item.classList.add('populated')
-      // inject code
-      if (htmlSource) {
-        item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="html">' + htmlSource + '</div>'))
-      }
-      if (jsSource) {
-        item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="js">' + jsSource + '</div>'))
-      }
-      if (cssSource) {
-        item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="less">' + cssSource + '</div>'))
-      }
-      // populate
-      const els = item.querySelectorAll('.gatsby_demo_source[data-lang]')
-      for (const [z, el] of els.entries()) {
-        populateSources(item, el, z)
-        el.remove()
-      }
-      /* @TODO
-      new Xt.Toggle(item, { // eslint-disable-line no-new
-        elements: '.gatsby_demo_code_tabs_left .btn',
-        targets: '.gatsby_demo_code_body_item',
-        min: 1
-      })
-       */
+  if (!item.classList.contains('populated')) {
+    item.classList.add('populated')
+    // inject code
+    if (htmlSource) {
+      item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="html">' + htmlSource + '</div>'))
     }
+    if (jsSource) {
+      item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="js">' + jsSource + '</div>'))
+    }
+    if (cssSource) {
+      item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="less">' + cssSource + '</div>'))
+    }
+    // populate
+    const els = item.querySelectorAll('.gatsby_demo_source[data-lang]')
+    for (const [z, el] of els.entries()) {
+      populateSources(item, el, z)
+      el.remove()
+    }
+    new Xt.Toggle(item, { // eslint-disable-line no-new
+      elements: '.gatsby_demo_code_tabs_left .btn',
+      targets: '.gatsby_demo_code_body_item',
+      min: 1
+    })
   }
 }
 
@@ -316,23 +273,20 @@ const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) 
  */
 
 const populateInline = function (item) {
-  if (item.closest('#overlay--open-full-content')) {
-    if (!item.classList.contains('populated')) {
-      item.classList.add('populated')
-      const els = item.querySelectorAll('.gatsby_demo_source[data-lang]')
-      for (const [z, el] of els.entries()) {
-        populateSources(item, el, z)
-        if (!item.classList.contains('gatsby_demo_preview')) {
-          el.style.display = 'none'
-        }
+  if (!item.classList.contains('populated')) {
+    item.classList.add('populated')
+    const els = item.querySelectorAll('.gatsby_demo_source[data-lang]')
+    for (const [z, el] of els.entries()) {
+      populateSources(item, el, z)
+      if (!item.classList.contains('gatsby_demo_preview')) {
+        el.style.display = 'none'
       }
-      /* @TODO
-      new Xt.Toggle(item, { // eslint-disable-line no-new
-        elements: '.gatsby_demo_code_tabs_left .btn',
-        targets: '.gatsby_demo_code_body_item',
-        min: 1
-      })*/
     }
+    new Xt.Toggle(item, { // eslint-disable-line no-new
+      elements: '.gatsby_demo_code_tabs_left .btn',
+      targets: '.gatsby_demo_code_body_item',
+      min: 1
+    })
   }
 }
 

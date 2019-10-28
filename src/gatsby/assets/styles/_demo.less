@@ -97,6 +97,7 @@ pre {
       position: absolute;
       z-index: 4;
       width: 100%;
+      height: 100%;
       .gatsby_demo_code_inner {
         display: flex;
         flex-flow: column;
@@ -104,9 +105,6 @@ pre {
       }
       &.active {
         z-index: 5;
-      }
-      pre {
-        max-height: none;
       }
     }
     &[data-iframe] {
@@ -233,9 +231,6 @@ pre {
 }
 
 #overlay--open-full {
-  .gatsby_demo_tabs_right {
-    padding-right: 5rem;
-  }
   .btn-close {
     .btn--center();
     width: 4.1rem;
@@ -245,4 +240,13 @@ pre {
 
 #overlay--open-full-content {
   min-height: 100vh;
+  pre {
+    max-height: none;
+  }
+  .gatsby_demo_tabs_right {
+    padding-right: 5rem;
+  }
+  .btn--open-full {
+    display: none !important;
+  }
 }
