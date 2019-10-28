@@ -145,7 +145,9 @@ const makeFullscreen = function (item, type = 'fullsscreen') {
   const overlay = document.querySelector('#overlay--open-full')
   const content = document.querySelector('#overlay--open-full-content')
   overlay.dispatchEvent(new CustomEvent('on.xt'))
-  content.innerHTML = item.outerHTML
+  item.before(Xt.createElement('<div class="xt-ignore" data-xt-origin="overlay--open-full-content" style="height: ' + item.clientHeight + 'px"></div>'))
+  item.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
+  content.append(item)
   const container = content.querySelector('.gatsby_demo')
   for (const item of container.querySelectorAll('.gatsby_demo_item')) {
     populateFullscreen(item)
@@ -153,6 +155,7 @@ const makeFullscreen = function (item, type = 'fullsscreen') {
   const btnShowCode = container.querySelector('.btn--show-code');
   const btnOpenFull = container.querySelector('.btn--open-full');
   // gatsby_demo_tabs_left
+  /* @TODO
   new Xt.Toggle(container, { // eslint-disable-line no-new
     elements: '.gatsby_demo_tabs_left .btn',
     targets: '.gatsby_demo_item',
@@ -186,7 +189,7 @@ const makeFullscreen = function (item, type = 'fullsscreen') {
       btnOpenFull.dispatchEvent(new CustomEvent('off.xt'))
       btnShowCode.dispatchEvent(new CustomEvent('on.xt'))
     }
-  })
+  })*/
 }
 
 /**
@@ -297,11 +300,13 @@ const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) 
         populateSources(item, el, z)
         el.remove()
       }
+      /* @TODO
       new Xt.Toggle(item, { // eslint-disable-line no-new
         elements: '.gatsby_demo_code_tabs_left .btn',
         targets: '.gatsby_demo_code_body_item',
         min: 1
       })
+       */
     }
   }
 }
@@ -321,11 +326,12 @@ const populateInline = function (item) {
           el.style.display = 'none'
         }
       }
+      /* @TODO
       new Xt.Toggle(item, { // eslint-disable-line no-new
         elements: '.gatsby_demo_code_tabs_left .btn',
         targets: '.gatsby_demo_code_body_item',
         min: 1
-      })
+      })*/
     }
   }
 }
@@ -384,10 +390,13 @@ const populateBlock = function () {
       makeFullscreen(el.nextSibling)
     })
   }
-  document.querySelector('#overlay--open-full').addEventListener('offdone.xt', function (e) {
+  document.querySelector('#overlay--open-full').addEventListener('off.xt', function (e) {
     if (this === e.target) { // @FIX on.xt and off.xt event bubbles
       const content = document.querySelector('#overlay--open-full-content')
-      content.innerHTML = ''
+      const appendOrigin = document.querySelector('[data-xt-origin="overlay--open-full-content"]')
+      content.childNodes[0].classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
+      appendOrigin.before(content.childNodes[0])
+      appendOrigin.remove()
     }
   })
 }
