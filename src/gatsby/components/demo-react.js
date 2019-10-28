@@ -33,9 +33,10 @@ class DemoReact extends React.Component {
         render={data => (
           <div className="gatsby_demo_item gatsby_demo_preview" data-name={name || demo.name.split('-').pop()} data-inline={src}>
             {children}
-            <div className="gatsby_demo_source gatsby_demo_source--from">
+            <script type="text/plain" data-lang="html">
               <demo.Component></demo.Component>
-            </div>
+            </script>
+            <div className="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"/>
             {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.jsx`).map((file, i) => (
               <div className="gatsby_demo_source xt-ignore" data-lang="js" dangerouslySetInnerHTML={{ __html: jsSource(demo, '.jsx') }} key={i}/>
             ))}

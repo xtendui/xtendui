@@ -90,9 +90,19 @@ const populateBlock = function () {
     if (this === e.target) { // @FIX on.xt and off.xt event bubbles
       const content = document.querySelector('#overlay--open-full-content')
       // populate source
-      const sourceTo = content.querySelector('.gatsby_demo_source_populate')
-      if (sourceTo && !sourceTo.dataset.isRendered) {
-        sourceTo.innerHTML = ''
+      const container = content.querySelector('.gatsby_demo')
+      if (container.dataset.isFullscreenOnly) {
+        const sourceTo = content.querySelector('.gatsby_demo_source_populate')
+        if (sourceTo) {
+          sourceTo.innerHTML = ''
+        }
+        for (const item of content.querySelectorAll('.gatsby_demo_item')) {
+          if (item.getAttribute('data-iframe-fullscreen')) {
+            item.classList.remove('populated-iframe', 'loaded')
+            item.removeAttribute('data-iframe')
+            item.querySelector('.gatsby_demo_item_wrapper').remove()
+          }
+        }
       }
       // move code block
       const appendOrigin = document.querySelector('[data-xt-origin="overlay--open-full-content"]')
@@ -147,18 +157,20 @@ const populateDemo = function (container, i) {
     })
     // inject iframe
     if (item.getAttribute('data-iframe')) {
-      // iframe append
       const id = 'iframe' + i + k
       item.setAttribute('data-iframe-id', id)
-      initializeIframe(item)
+      initializeIframe(container, item)
     } else {
       populateInline(item)
     }
     // populate source
     const sourceTo = item.querySelector('.gatsby_demo_source_populate')
-    if (sourceTo && getComputedStyle(sourceTo).display !== 'none') {
-      sourceTo.dataset.isRendered = 'true';
-      sourceTo.innerHTML = item.querySelector('script[data-lang="html"]').innerHTML
+    if (sourceTo) {
+      if (getComputedStyle(sourceTo).display === 'inline-flex') {
+        container.dataset.isFullscreenOnly = 'true'
+      } else {
+        sourceTo.innerHTML = item.querySelector('script[data-lang="html"]').innerHTML
+      }
     }
   }
   // toggle code
@@ -188,23 +200,31 @@ const populateDemo = function (container, i) {
  * makeFullscreen
  */
 
-const makeFullscreen = function (item) {
+const makeFullscreen = function (container) {
   const overlay = document.querySelector('#overlay--open-full')
   const content = document.querySelector('#overlay--open-full-content')
-  const sourceTo = item.querySelector('.gatsby_demo_source_populate')
+  const sourceTo = container.querySelector('.gatsby_demo_source_populate')
   overlay.dispatchEvent(new CustomEvent('on.xt'))
   // move code block
-  item.before(Xt.createElement('<div class="xt-ignore" data-xt-origin="overlay--open-full-content" style="height: ' + item.clientHeight + 'px"></div>'))
-  if (sourceTo && sourceTo.dataset.isRendered) {
-    item.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
+  container.before(Xt.createElement('<div class="xt-ignore" data-xt-origin="overlay--open-full-content" style="height: ' + container.clientHeight + 'px"></div>'))
+  if (!container.dataset.isFullscreenOnly) {
+    container.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
   }
-  content.append(item)
+  content.append(container)
   // populate source
   requestAnimationFrame(function () { // requestAnimationFrame fixes errors
-    if (sourceTo && !sourceTo.dataset.isRendered) {
-      sourceTo.innerHTML = item.querySelector('script[data-lang="html"]').innerHTML
+    if (sourceTo && container.dataset.isFullscreenOnly) {
+      sourceTo.innerHTML = container.querySelector('script[data-lang="html"]').innerHTML
     }
   })
+  // populate iframe
+  for (const item of container.querySelectorAll('.gatsby_demo_item')) {
+    if (item.getAttribute('data-iframe-fullscreen')) {
+      item.setAttribute('data-iframe', item.getAttribute('data-iframe-fullscreen'))
+      initializeIframe(container, item)
+    }
+  }
+  container.querySelector('.gatsby_demo_item.active').dispatchEvent(new CustomEvent('on.xt'))
   // trigger resize
   requestAnimationFrame(function () {
     dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
@@ -215,25 +235,27 @@ const makeFullscreen = function (item) {
  * Iframe
  */
 
-const initializeIframe = function (item) {
-  if (!item.classList.contains('populated')) {
-    item.classList.add('populated')
-    if (item.getAttribute('data-iframe')) {
-      const src = '/' + item.getAttribute('data-iframe')
-      const id = item.getAttribute('data-iframe-id')
-      item.append(Xt.createElement('<div class="gatsby_demo_item_wrapper"><iframe data-src="' + src + '" name="' + id + '"></iframe></div>'))
-      item.querySelector('.gatsby_demo_item_wrapper').append(Xt.createElement('\n' +
-        '    <div class="loader loader--spinner">\n' +
-        '      <div class="spinner">\n' +
-        '        <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
-        '      </div>\n' +
-        '    </div>\n' +
-        '  </div>'))
-      // load
-      const iframe = item.querySelector('iframe')
+const initializeIframe = function (container, item) {
+  if (item.getAttribute('data-iframe') && !item.classList.contains('populated-iframe')) {
+    container.dataset.isFullscreenOnly = 'true'
+    item.classList.add('populated-iframe')
+    const src = '/' + item.getAttribute('data-iframe')
+    const id = item.getAttribute('data-iframe-id')
+    item.append(Xt.createElement('<div class="gatsby_demo_item_wrapper"><iframe data-src="' + src + '" name="' + id + '"></iframe></div>'))
+    item.querySelector('.gatsby_demo_item_wrapper').append(Xt.createElement('\n' +
+      '    <div class="loader loader--spinner">\n' +
+      '      <div class="spinner">\n' +
+      '        <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
+      '      </div>\n' +
+      '    </div>\n' +
+      '  </div>'))
+    // load
+    if (!item.dataset.iframeLoadevents) { // @FIX only one time
+      item.dataset.iframeLoadevents = 'true'
       item.addEventListener('on.xt', function (e) {
         if (this === e.target) { // @FIX on.xt and off.xt event bubbles
           if (!item.classList.contains('loaded')) {
+            const iframe = item.querySelector('iframe')
             item.classList.add('loaded')
             loadIframe(iframe)
           }
@@ -242,6 +264,7 @@ const initializeIframe = function (item) {
       item.addEventListener('off.xt', function (e) {
         if (this === e.target) { // @FIX on.xt and off.xt event bubbles
           if (item.classList.contains('loaded')) {
+            const iframe = item.querySelector('iframe')
             item.classList.remove('loaded')
             unloadIframe(iframe)
           }

@@ -40,7 +40,7 @@ class Template extends React.Component {
                         </button>
                         {adiacent.frontmatter.iframe
                           ? <Demo>
-                            <div className="gatsby_demo_item" data-iframe={adiacent.frontmatter.iframe}>
+                            <div className="gatsby_demo_item" data-iframe-fullscreen={adiacent.frontmatter.iframe}>
                             </div>
                           </Demo>
                           : null
