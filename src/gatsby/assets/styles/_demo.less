@@ -109,12 +109,8 @@ pre {
     }
     &[data-iframe] {
       &:not(.loaded) {
-        .gatsby_demo_item_wrapper {
-          position: relative;
-          height: @gatsby_demo-height;
-        }
         iframe {
-          display: none;
+          visibility: hidden;
         }
       }
       &.loaded {
@@ -138,11 +134,6 @@ pre {
           height: @gatsby_demo-height;
         }
         .gatsby_demo_shadow {
-          display: none;
-        }
-      }
-      &.loaded {
-        .gatsby_demo_item_wrapper + .loader {
           display: none;
         }
       }
@@ -221,7 +212,7 @@ pre {
 // theme
 
 [data-gatsby-listing-toggle] + .gatsby_demo {
-  //display: none;
+  display: none;
   .gatsby_demo_source_populate {
     display: inline-flex; // populate source disable
   }

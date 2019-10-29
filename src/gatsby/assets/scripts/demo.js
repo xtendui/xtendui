@@ -98,6 +98,7 @@ const populateBlock = function () {
         }
         for (const item of content.querySelectorAll('.gatsby_demo_item')) {
           if (item.getAttribute('data-iframe-fullscreen')) {
+            delete item.dataset.iframeLoadCall
             item.classList.remove('populated-iframe', 'loaded')
             item.removeAttribute('data-iframe')
             item.querySelector('.gatsby_demo_item_wrapper').remove()
@@ -160,7 +161,7 @@ const populateDemo = function (container, i) {
       const id = 'iframe' + i + k
       item.setAttribute('data-iframe-id', id)
       initializeIframe(container, item)
-    } else {
+    } else if (!item.getAttribute('data-iframe-fullscreen')) {
       populateInline(item)
     }
     // populate source
@@ -250,22 +251,22 @@ const initializeIframe = function (container, item) {
       '    </div>\n' +
       '  </div>'))
     // load
-    if (!item.dataset.iframeLoadevents) { // @FIX only one time
-      item.dataset.iframeLoadevents = 'true'
+    if (!item.dataset.iframeLoadEvents) {
+      item.dataset.iframeLoadEvents = 'true'
       item.addEventListener('on.xt', function (e) {
         if (this === e.target) { // @FIX on.xt and off.xt event bubbles
-          if (!item.classList.contains('loaded')) {
+          if (!item.dataset.iframeLoadCall) {
+            item.dataset.iframeLoadCall = 'true'
             const iframe = item.querySelector('iframe')
-            item.classList.add('loaded')
             loadIframe(iframe)
           }
         }
       })
       item.addEventListener('off.xt', function (e) {
         if (this === e.target) { // @FIX on.xt and off.xt event bubbles
-          if (item.classList.contains('loaded')) {
+          if (item.dataset.iframeLoadCall) {
+            delete item.dataset.iframeLoadCall
             const iframe = item.querySelector('iframe')
-            item.classList.remove('loaded')
             unloadIframe(iframe)
           }
         }
@@ -279,7 +280,7 @@ const loadIframe = function (iframe) {
 }
 
 const unloadIframe = function (iframe) {
-  iframe.setAttribute('src', '')
+  iframe.removeAttribute('src')
 }
 
 if (typeof window !== 'undefined') {
@@ -287,9 +288,9 @@ if (typeof window !== 'undefined') {
     const src = 'iframe[name="' + name + '"]'
     const iframes = document.querySelectorAll(src)
     for (const iframe of iframes) {
-      iframe.contentWindow.document.querySelector('html').classList.add('gatsby_iframe-inside')
       const item = iframe.closest('.gatsby_demo_item')
       populateIframe(item, iframe, htmlSource, jsSource, cssSource)
+      item.classList.add('loaded')
     }
   }
   window.resizeIframe = function (name) {

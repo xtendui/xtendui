@@ -16,6 +16,7 @@ import 'assets/styles/theme.less'
 class Layout extends React.Component {
   componentDidMount () {
     const { demo } = this.props
+    document.querySelector('html').classList.add('gatsby_iframe-inside')
     if (demo.full) {
       document.querySelector('html').classList.add('gatsby_iframe-full')
     }
