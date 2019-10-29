@@ -338,7 +338,7 @@ const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) 
       item.append(Xt.createElement('<div class="gatsby_demo_source xt-ignore" data-lang="less">' + cssSource + '</div>'))
     }
     // populate
-    const els = item.querySelectorAll('.gatsby_demo_source[data-lang]')
+    const els = item.querySelectorAll('[data-lang]')
     for (const [z, el] of els.entries()) {
       populateSources(item, el, z)
       el.remove()
@@ -358,7 +358,7 @@ const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) 
 const populateInline = function (item) {
   if (!item.classList.contains('populated')) {
     item.classList.add('populated')
-    const els = item.querySelectorAll('.gatsby_demo_source[data-lang]')
+    const els = item.querySelectorAll('[data-lang]')
     for (const [z, el] of els.entries()) {
       populateSources(item, el, z)
       if (!item.classList.contains('gatsby_demo_preview')) {
