@@ -730,7 +730,7 @@ if (typeof window !== 'undefined') {
 
   /**
    * fix scrollbar spacing when changing overflow adding padding
-   * @param {Array|Node|HTMLElement|EventTarget|Window} elements Elements to add padding
+   * @param {Array|Node|HTMLElement|EventTarget|Window} container
    */
   Xt.scrollbarSpaceOn = function (container) {
     const width = Xt.scrollbarWidth
@@ -746,7 +746,7 @@ if (typeof window !== 'undefined') {
       element.style.right = ''
       element.style.paddingRight = ''
       const style = getComputedStyle(element)
-      let prop;
+      let prop
       if (Xt.normalizeWidth(element.clientWidth) === '') { // only if full width
         prop = 'paddingRight'
       } else if (style.right) { // only if right position
@@ -768,7 +768,7 @@ if (typeof window !== 'undefined') {
 
   /**
    * fix scrollbar spacing when changing overflow adding padding
-   * @param {Array} elements Elements to remove padding
+   * @param {Array|Node|HTMLElement|EventTarget|Window} container
    */
   Xt.scrollbarSpaceOff = function (container) {
     container.style.paddingRight = ''
@@ -902,7 +902,7 @@ if (typeof window !== 'undefined') {
   Xt.eventDelay = function (e, element, func, prefix = '', instant = false) {
     const container = document.documentElement
     if (e && e.type && (e.type === 'resize' || e.type === 'scroll')) {
-      const delay = e.detail !== undefined && e.detail.delay !== undefined ? e.detail.delay : instant ? false : Xt[e.type + 'Delay']
+      const delay = e.detail !== undefined && e.detail.delay !== undefined ? e.detail.delay : instant ? 0 : Xt[e.type + 'Delay']
       if (e.type === 'resize') {
         // multiple calls check
         if ((e.detail === undefined || e.detail.force === undefined) && // not when setting delay on event
@@ -916,7 +916,7 @@ if (typeof window !== 'undefined') {
         }))
       }
       // delay
-      if (delay === false) {
+      if (delay === 0) {
         // func
         func(e)
       } else {
@@ -964,7 +964,7 @@ if (typeof window !== 'undefined') {
     style = style || Xt.dataStorage.set(element, 'xtAnimCssStyle', getComputedStyle(element))
     // save initial
     for (const property of properties) {
-      let initialized = Xt.dataStorage.get(element, 'xtAnimCssInitial' + property)
+      const initialized = Xt.dataStorage.get(element, 'xtAnimCssInitial' + property)
       if (!initialized) {
         isInitial = true
         Xt.dataStorage.set(element, 'xtAnimCssInitial' + property, style[property])
