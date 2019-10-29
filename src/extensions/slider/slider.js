@@ -9,7 +9,7 @@ class Slider extends Xt.Toggle {
    * @param {Object} optionsCustom User options
    * @constructor
    */
-  constructor (object, optionsCustom = {}) {
+  constructor(object, optionsCustom = {}) {
     super(object, optionsCustom)
   }
 
@@ -20,7 +20,7 @@ class Slider extends Xt.Toggle {
   /**
    * init elements, targets and currents
    */
-  initScope () {
+  initScope() {
     const self = this
     const options = self.options
     // targets
@@ -54,7 +54,7 @@ class Slider extends Xt.Toggle {
   /**
    * init slider group
    */
-  initSliderGroup () {
+  initSliderGroup() {
     const self = this
     const options = self.options
     // not when empty
@@ -97,7 +97,8 @@ class Slider extends Xt.Toggle {
     let totalCount = draggerWidth
     for (const target of self.targets) {
       let targetWidth = target.offsetWidth
-      if (targetWidth === 0) { // when display none
+      if (targetWidth === 0) {
+        // when display none
         const container = target.parentNode
         const cloned = target.cloneNode(true)
         cloned.classList.add('xt-calculating', 'xt-ignore')
@@ -124,7 +125,7 @@ class Slider extends Xt.Toggle {
     self.detail.fixNegativeMargin = self.groupMq[0][0].offsetLeft
     // @FIX disable slider if not overflowing
     if (totalCount >= 0) {
-      const afterInitDisable = function () {
+      const afterInitDisable = function() {
         // disable
         self.object.classList.add('slider--nooverflow')
         self.disable()
@@ -152,7 +153,7 @@ class Slider extends Xt.Toggle {
         if (options.contain) {
           console.error('Error: Xt.Slider cannot use "contain": true when using "drag": {"wrap": true}', self.object)
         }
-        const cloneSlide = function (slide) {
+        const cloneSlide = function(slide) {
           const cloned = slide.cloneNode(true)
           Xt.dataStorage.set(cloned, 'xt' + self.componentNamespace + 'cloneSource', slide)
           cloned.classList.add('xt-clone', 'xt-wrap')
@@ -160,7 +161,7 @@ class Slider extends Xt.Toggle {
           return cloned
         }
         // wrapLast
-        const wrapLastFunction = function () {
+        const wrapLastFunction = function() {
           let wrapLastCount = draggerWidth
           for (const [i, group] of self.groupMqInitial.entries()) {
             wrapLast.push([])
@@ -179,7 +180,7 @@ class Slider extends Xt.Toggle {
         }
         wrapLastFunction()
         // wrapFirst
-        const wrapFirstFunction = function () {
+        const wrapFirstFunction = function() {
           let wrapFirstCount = draggerWidth
           for (const [i, group] of self.groupMqInitial.reverse().entries()) {
             wrapFirst.unshift([])
@@ -209,7 +210,7 @@ class Slider extends Xt.Toggle {
   /**
    * init slider pagination
    */
-  initSliderPags () {
+  initSliderPags() {
     const self = this
     const options = self.options
     // not when empty
@@ -279,7 +280,7 @@ class Slider extends Xt.Toggle {
   /**
    * init slider group positions
    */
-  initSliderPos () {
+  initSliderPos() {
     const self = this
     const options = self.options
     // reset done
@@ -322,7 +323,8 @@ class Slider extends Xt.Toggle {
         }
         // pos with alignment
         let pos
-        if (!self.object.classList.contains('slider--nooverflow')) { // @FIX disable slider if not overflowing
+        if (!self.object.classList.contains('slider--nooverflow')) {
+          // @FIX disable slider if not overflowing
           if (options.align === 'center') {
             pos = draggerWidth / 2 - slideLeft - slideWidth / 2
           } else if (options.align === 'left') {
@@ -343,8 +345,8 @@ class Slider extends Xt.Toggle {
       target.children[0].style.width = ''
     }
     // min max pos with contain
-    if (options.contain &&
-      slidesWidth > draggerWidth) { // only if slides overflow dragger
+    if (options.contain && slidesWidth > draggerWidth) {
+      // only if slides overflow dragger
       const slideFirst = self.targets[0]
       const slideFirstLeft = slideFirst.offsetLeft
       const slideLast = self.targets[self.targets.length - 1]
@@ -380,7 +382,7 @@ class Slider extends Xt.Toggle {
   /**
    * init events
    */
-  initEvents () {
+  initEvents() {
     super.initEvents()
     const self = this
     const options = self.options
@@ -392,19 +394,20 @@ class Slider extends Xt.Toggle {
         slide.classList.add('links--none')
       }
       // slide on
-      const slideOnHandler = Xt.dataStorage.put(slide, 'on' + '.' + self.namespace,
-        self.eventSlideOnHandler.bind(self).bind(self, dragger, slide))
+      const slideOnHandler = Xt.dataStorage.put(slide, 'on' + '.' + self.namespace, self.eventSlideOnHandler.bind(self).bind(self, dragger, slide))
       slide.addEventListener('on.xt', slideOnHandler, true) // @FIX useCapture for custom events order on re-init
       // slide off
-      const slideOffHandler = Xt.dataStorage.put(slide, 'off' + '.' + self.namespace,
-        self.eventSlideOffHandler.bind(self).bind(self, dragger, slide))
+      const slideOffHandler = Xt.dataStorage.put(slide, 'off' + '.' + self.namespace, self.eventSlideOffHandler.bind(self).bind(self, dragger, slide))
       slide.addEventListener('off.xt', slideOffHandler, true) // @FIX useCapture for custom events order on re-init
     }
     // dragger
     if (options.drag) {
       // drag start
-      const dragstartHandler = Xt.dataStorage.put(dragger, 'mousedown touchstart' + '.' + self.namespace,
-        self.eventDragstartHandler.bind(self).bind(self, dragger))
+      const dragstartHandler = Xt.dataStorage.put(
+        dragger,
+        'mousedown touchstart' + '.' + self.namespace,
+        self.eventDragstartHandler.bind(self).bind(self, dragger)
+      )
       const events = ['mousedown', 'touchstart']
       for (const event of events) {
         dragger.addEventListener(event, dragstartHandler, Xt.passiveSupported ? { passive: true } : false)
@@ -425,8 +428,7 @@ class Slider extends Xt.Toggle {
       }
     }
     // resize
-    const resizeHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace,
-      self.eventResizeHandler.bind(self).bind(self))
+    const resizeHandler = Xt.dataStorage.put(window, 'resize' + '.' + self.namespace, self.eventResizeHandler.bind(self).bind(self))
     addEventListener('resize', resizeHandler)
   }
 
@@ -440,10 +442,11 @@ class Slider extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} slide
    * @param {Event} e
    */
-  eventSlideOnHandler (dragger, slide, e) {
+  eventSlideOnHandler(dragger, slide, e) {
     const self = this
     // handler
-    if (slide === e.target) { // @FIX on.xt and off.xt event bubbles
+    if (slide === e.target) {
+      // @FIX on.xt and off.xt event bubbles
       self.eventSlideOn(dragger, e)
     }
   }
@@ -454,10 +457,11 @@ class Slider extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} slide
    * @param {Event} e
    */
-  eventSlideOffHandler (dragger, slide, e) {
+  eventSlideOffHandler(dragger, slide, e) {
     const self = this
     // handler
-    if (slide === e.target) { // @FIX on.xt and off.xt event bubbles
+    if (slide === e.target) {
+      // @FIX on.xt and off.xt event bubbles
       self.eventSlideOff(dragger, e)
     }
   }
@@ -467,11 +471,12 @@ class Slider extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  eventDragstartHandler (dragger, e) {
+  eventDragstartHandler(dragger, e) {
     const self = this
     const options = self.options
     // handler
-    if (!e.button || e.button !== 2) { // not right click or it gets stuck
+    if (!e.button || e.button !== 2) {
+      // not right click or it gets stuck
       if (self.initial || !self.checkAnim(Xt.arrSingle(dragger))) {
         // logic
         if (options.eventLimit) {
@@ -483,8 +488,7 @@ class Slider extends Xt.Toggle {
           self.eventDragstart(dragger, e)
         }
         // drag end
-        const dragendHandler = Xt.dataStorage.put(dragger, 'mouseup touchend' + '.' + self.namespace,
-          self.eventDragendHandler.bind(self).bind(self, dragger))
+        const dragendHandler = Xt.dataStorage.put(dragger, 'mouseup touchend' + '.' + self.namespace, self.eventDragendHandler.bind(self).bind(self, dragger))
         const events = ['mouseup', 'touchend']
         for (const event of events) {
           addEventListener(event, dragendHandler)
@@ -498,7 +502,7 @@ class Slider extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  eventDragendHandler (dragger, e) {
+  eventDragendHandler(dragger, e) {
     const self = this
     const options = self.options
     // logic
@@ -517,11 +521,10 @@ class Slider extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  eventDragstart (dragger, e) {
+  eventDragstart(dragger, e) {
     const self = this
     // event move
-    const dragHandler = Xt.dataStorage.put(dragger, 'mousemove touchmove' + '.' + self.namespace,
-      self.eventDragHandler.bind(self).bind(self, dragger))
+    const dragHandler = Xt.dataStorage.put(dragger, 'mousemove touchmove' + '.' + self.namespace, self.eventDragHandler.bind(self).bind(self, dragger))
     const events = ['mousemove', 'touchmove']
     for (const event of events) {
       dragger.addEventListener(event, dragHandler)
@@ -535,7 +538,7 @@ class Slider extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  eventDragend (dragger, e) {
+  eventDragend(dragger, e) {
     const self = this
     // event off
     const dragendHandler = Xt.dataStorage.get(dragger, 'mouseup touchend' + '.' + self.namespace)
@@ -558,7 +561,7 @@ class Slider extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  eventDragHandler (dragger, e) {
+  eventDragHandler(dragger, e) {
     const self = this
     // logic
     self.logicDrag(dragger, e)
@@ -568,13 +571,18 @@ class Slider extends Xt.Toggle {
    * resize
    * @param {Event} e
    */
-  eventResizeHandler (e) {
+  eventResizeHandler(e) {
     const self = this
     // reinit
     if (!self.initial) {
-      Xt.eventDelay(e, self.object, function () {
-        self.initLogic()
-      }, self.componentNamespace + 'Resize')
+      Xt.eventDelay(
+        e,
+        self.object,
+        function() {
+          self.initLogic()
+        },
+        self.componentNamespace + 'Resize'
+      )
     }
   }
 
@@ -587,7 +595,7 @@ class Slider extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  eventSlideOn (dragger, e) {
+  eventSlideOn(dragger, e) {
     const self = this
     const options = self.options
     const slide = e.target
@@ -622,7 +630,7 @@ class Slider extends Xt.Toggle {
       if (self.initial) {
         // prevent alignment animation
         dragger.classList.add('duration-none')
-        requestAnimationFrame(function () {
+        requestAnimationFrame(function() {
           dragger.classList.remove('duration-none')
         })
       }
@@ -633,7 +641,7 @@ class Slider extends Xt.Toggle {
       for (const nav of self.navs) {
         nav.classList.add('pointer-events--none')
       }
-      Xt.animTimeout(dragger, function () {
+      Xt.animTimeout(dragger, function() {
         dragger.classList.remove('pointer-events--none')
         for (const nav of self.navs) {
           nav.classList.remove('pointer-events--none')
@@ -649,7 +657,7 @@ class Slider extends Xt.Toggle {
         if (self.initial) {
           // @FIX initial activation
           if (self.currentIndex < min) {
-            requestAnimationFrame(function () {
+            requestAnimationFrame(function() {
               self.initial = true
               self.goToIndex(min, true)
               self.initialCurrents = self.getCurrents().slice(0) // @FIX initialCurrents
@@ -657,17 +665,21 @@ class Slider extends Xt.Toggle {
           }
         } else {
           // @FIX wrap with initial
-          Xt.animTimeout(dragger, function () {
-            if (!self.initial) {
-              if (self.currentIndex < min) {
-                self.initial = true
-                self.goToIndex(max + self.currentIndex - min + 1, true) // wrap around xt-wrap items
-              } else if (self.currentIndex > max) {
-                self.initial = true
-                self.goToIndex(min + self.currentIndex - max - 1, true) // wrap around xt-wrap items
+          Xt.animTimeout(
+            dragger,
+            function() {
+              if (!self.initial) {
+                if (self.currentIndex < min) {
+                  self.initial = true
+                  self.goToIndex(max + self.currentIndex - min + 1, true) // wrap around xt-wrap items
+                } else if (self.currentIndex > max) {
+                  self.initial = true
+                  self.goToIndex(min + self.currentIndex - max - 1, true) // wrap around xt-wrap items
+                }
               }
-            }
-          }, 'wrap')
+            },
+            'wrap'
+          )
         }
       }
     }
@@ -682,7 +694,7 @@ class Slider extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  eventSlideOff (dragger, e) {
+  eventSlideOff(dragger, e) {
     const self = this
     const options = self.options
     const slide = e.target
@@ -706,7 +718,7 @@ class Slider extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  logicDragstart (dragger, e) {
+  logicDragstart(dragger, e) {
     const self = this
     // disabled
     if (self.disabled && !self.initial) {
@@ -739,7 +751,7 @@ class Slider extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  logicDragend (dragger, e) {
+  logicDragend(dragger, e) {
     const self = this
     // disabled
     if (self.disabled && !self.initial) {
@@ -769,7 +781,7 @@ class Slider extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  logicDragfriction (dragger, e) {
+  logicDragfriction(dragger, e) {
     const self = this
     const options = self.options
     // friction
@@ -782,7 +794,7 @@ class Slider extends Xt.Toggle {
       // drag
       self.logicDrag(dragger, e, true)
       // loop
-      requestAnimationFrame(function () {
+      requestAnimationFrame(function() {
         self.logicDragfriction(dragger, e)
       })
     } else {
@@ -800,7 +812,7 @@ class Slider extends Xt.Toggle {
    * @param {Event} e
    * @param {Boolean} friction
    */
-  logicDrag (dragger, e, friction = false) {
+  logicDrag(dragger, e, friction = false) {
     const self = this
     const options = self.options
     // disabled
@@ -905,7 +917,7 @@ class Slider extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} dragger
    * @param {Event} e
    */
-  logicDragfrictionend (dragger, e) {
+  logicDragfrictionend(dragger, e) {
     const self = this
     const options = self.options
     const xPosCurrent = self.detail.xPosCurrent || 0
@@ -956,7 +968,7 @@ class Slider extends Xt.Toggle {
       self.detail.xPosOld = self.detail.xPos
       self.detail.xPos = self.detail.xPosCurrent
       // disable drag and links
-      Xt.animTimeout(dragger, function () {
+      Xt.animTimeout(dragger, function() {
         // disable dragger
         dragger.classList.remove('pointer-events--none')
         for (const nav of self.navs) {
@@ -1003,16 +1015,16 @@ Slider.optionsDefault = {
     transform: true,
     horizontal: true,
     factor: 1,
-    friction: function (delta) {
+    friction: function(delta) {
       return delta / 9
     },
-    frictionLimit: 1.5
+    frictionLimit: 1.5,
   },
   keyboard: {
-    selector: '.slides'
+    selector: '.slides',
   },
   aria: {
-    labelledby: false
+    labelledby: false,
   },
   // slider only
   autoHeight: '.slides',
@@ -1027,15 +1039,15 @@ Slider.optionsDefault = {
     threshold: 50,
     linkThreshold: 50,
     factor: 1,
-    friction: function (velocity) {
+    friction: function(velocity) {
       return Math.pow(velocity, 0.9)
     },
     frictionLimit: 1.5,
-    overflow: function (overflow) {
+    overflow: function(overflow) {
       return Math.pow(overflow, 0.73)
     },
-    timeLimit: 25
-  }
+    timeLimit: 25,
+  },
 }
 Xt.optionsGlobal[Slider.componentName] = {}
 
@@ -1051,7 +1063,7 @@ Xt.Slider = Slider
 
 Xt.mount.push({
   matches: '[data-' + Xt.Slider.componentName + ']',
-  mount: function (object) {
+  mount: function(object) {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Slider.componentName)
@@ -1063,9 +1075,9 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       self.destroy()
       self = null
     }
-  }
+  },
 })

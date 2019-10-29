@@ -7,7 +7,7 @@ import SEO from 'components/seo'
 import Layout from 'components/layout'
 
 class Template extends React.Component {
-  render () {
+  render() {
     const { data } = this.props
     const seo = {}
     seo.title = data.post.frontmatter.title
@@ -15,7 +15,7 @@ class Template extends React.Component {
     seo.parent = data.post.frontmatter.parent
     return (
       <Layout seo={seo} page={data}>
-        <SEO title={seo.title + ' — ' + seo.description}/>
+        <SEO title={seo.title + ' — ' + seo.description} />
         <div className="gatsby_listing">
           <div className="row">
             {data.categories.category.map((category, i) => (
@@ -23,9 +23,9 @@ class Template extends React.Component {
                 <h2 className="gatsby_listing_title">{category.title.split('-').pop()}</h2>
                 <div className="gatsby_listing_items">
                   <div className="row">
-                    {category.posts.map(({ post }, z) => (
-                      post.frontmatter.parent === post.frontmatter.title
-                        ? <div className="gatsby_listing_column" key={z}>
+                    {category.posts.map(({ post }, z) =>
+                      post.frontmatter.parent === post.frontmatter.title ? (
+                        <div className="gatsby_listing_column" key={z}>
                           <Link to={markdownSlug(post)} className="card card--primary card--small card--full card--collapse gatsby_listing_item">
                             <div className="card-design"></div>
                             <div className="card-inner">
@@ -38,8 +38,8 @@ class Template extends React.Component {
                             </div>
                           </Link>
                         </div>
-                        : null
-                    ))}
+                      ) : null
+                    )}
                   </div>
                 </div>
               </div>
@@ -55,7 +55,7 @@ export default Template
 
 export const query = graphql`
   query($title: String!, $type: String, $parent: String) {
-    categories: allMarkdownRemark(filter: {frontmatter: {type: {eq: $type}}}, sort: {fields: [frontmatter___date,  frontmatter___title], order: ASC}) {
+    categories: allMarkdownRemark(filter: { frontmatter: { type: { eq: $type } } }, sort: { fields: [frontmatter___date, frontmatter___title], order: ASC }) {
       category: group(field: frontmatter___categories) {
         title: fieldValue
         posts: edges {
@@ -81,7 +81,10 @@ export const query = graphql`
         }
       }
     }
-    postsAdiacent: allMarkdownRemark(filter: {frontmatter: {type: {eq: $type}, parent: {eq: $parent}}}, sort: {fields: [frontmatter___date,  frontmatter___title], order: ASC}) {
+    postsAdiacent: allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: $type }, parent: { eq: $parent } } }
+      sort: { fields: [frontmatter___date, frontmatter___title], order: ASC }
+    ) {
       posts: edges {
         post: node {
           frontmatter {
@@ -92,7 +95,7 @@ export const query = graphql`
         }
       }
     }
-    parent: markdownRemark(frontmatter: {title: {eq: $parent}}) {
+    parent: markdownRemark(frontmatter: { title: { eq: $parent } }) {
       htmlAst
       frontmatter {
         type
@@ -100,7 +103,7 @@ export const query = graphql`
         title
       }
     }
-    post: markdownRemark(frontmatter: {type: {eq: $type}, parent: {eq: $parent}, title: {eq: $title}}) {
+    post: markdownRemark(frontmatter: { type: { eq: $type }, parent: { eq: $parent }, title: { eq: $title } }) {
       htmlAst
       frontmatter {
         type
@@ -126,13 +129,13 @@ Template.propTypes = {
                   type: PropTypes.string.isRequired,
                   parent: PropTypes.string,
                   title: PropTypes.string.isRequired,
-                  description: PropTypes.string.isRequired
-                }).isRequired
-              }).isRequired
+                  description: PropTypes.string.isRequired,
+                }).isRequired,
+              }).isRequired,
             }).isRequired
-          )
+          ),
         }).isRequired
-      )
+      ),
     }),
     postsAll: PropTypes.shape({
       posts: PropTypes.arrayOf(
@@ -141,11 +144,11 @@ Template.propTypes = {
             frontmatter: PropTypes.shape({
               type: PropTypes.string.isRequired,
               parent: PropTypes.string,
-              title: PropTypes.string.isRequired
-            }).isRequired
-          }).isRequired
+              title: PropTypes.string.isRequired,
+            }).isRequired,
+          }).isRequired,
         }).isRequired
-      )
+      ),
     }).isRequired,
     postsAdiacent: PropTypes.shape({
       posts: PropTypes.arrayOf(
@@ -154,18 +157,18 @@ Template.propTypes = {
             frontmatter: PropTypes.shape({
               type: PropTypes.string.isRequired,
               parent: PropTypes.string,
-              title: PropTypes.string.isRequired
-            }).isRequired
-          }).isRequired
+              title: PropTypes.string.isRequired,
+            }).isRequired,
+          }).isRequired,
         }).isRequired
-      )
+      ),
     }).isRequired,
     parent: PropTypes.shape({
       frontmatter: PropTypes.shape({
         type: PropTypes.string.isRequired,
         parent: PropTypes.string,
-        title: PropTypes.string.isRequired
-      }).isRequired
+        title: PropTypes.string.isRequired,
+      }).isRequired,
     }),
     post: PropTypes.shape({
       htmlAst: PropTypes.object.isRequired,
@@ -174,8 +177,8 @@ Template.propTypes = {
         parent: PropTypes.string,
         title: PropTypes.string.isRequired,
         description: PropTypes.string,
-        categories: PropTypes.array
-      }).isRequired
-    }).isRequired
-  }).isRequired
+        categories: PropTypes.array,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
 }

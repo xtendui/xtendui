@@ -9,7 +9,7 @@ class Ajax extends Xt.Toggle {
    * @param {Object} optionsCustom User options
    * @constructor
    */
-  constructor (object, optionsCustom = {}) {
+  constructor(object, optionsCustom = {}) {
     super(object, optionsCustom)
     // prevent scroll on popstate
     /*
@@ -26,7 +26,7 @@ class Ajax extends Xt.Toggle {
   /**
    * init
    */
-  init () {
+  init() {
     const self = this
     // vars
     self.locationFrom = self.locationTo || null // fix popstate
@@ -38,7 +38,7 @@ class Ajax extends Xt.Toggle {
   /**
    * init setup
    */
-  initSetup () {
+  initSetup() {
     super.initSetup()
     const self = this
     const options = self.options
@@ -49,7 +49,7 @@ class Ajax extends Xt.Toggle {
   /**
    * init elements
    */
-  initScopeElements () {
+  initScopeElements() {
     super.initScopeElements()
     const self = this
     // remove external links
@@ -76,7 +76,7 @@ class Ajax extends Xt.Toggle {
    * init start
    * @param {Boolean} saveCurrents
    */
-  initStart (saveCurrents = false) {
+  initStart(saveCurrents = false) {
     const self = this
     // initial
     self.initial = true
@@ -124,7 +124,7 @@ class Ajax extends Xt.Toggle {
     // init events
     self.initEvents()
     // listener dispatch
-    requestAnimationFrame(function () {
+    requestAnimationFrame(function() {
       const detail = self.eDetailSet()
       self.object.dispatchEvent(new CustomEvent('init.xt', { detail: detail }))
     })
@@ -133,7 +133,7 @@ class Ajax extends Xt.Toggle {
   /**
    * init events
    */
-  initEvents () {
+  initEvents() {
     super.initEvents()
     const self = this
     // event popstate
@@ -149,8 +149,9 @@ class Ajax extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} element
    * @param {Event} e
    */
-  eventOnHandler (element, e) {
-    if (!e || !e.detail || !e.detail.skip) { // @FIX filter triggered from library (use only in library)
+  eventOnHandler(element, e) {
+    if (!e || !e.detail || !e.detail.skip) {
+      // @FIX filter triggered from library (use only in library)
       // not when opening in new tab
       if (e.metaKey || e.ctrlKey) {
         return
@@ -166,14 +167,14 @@ class Ajax extends Xt.Toggle {
    * element popstate handler
    * @param {Event} e
    */
-  eventPopstateHandler (e) {
+  eventPopstateHandler(e) {
     const self = this
     // handler
     if (history.state && history.state.url) {
       // reinit currents
       self.initStart()
       // request set
-      requestAnimationFrame(function () {
+      requestAnimationFrame(function() {
         self.ajaxRequest(null, history.state.url)
       })
     }
@@ -188,7 +189,7 @@ class Ajax extends Xt.Toggle {
    * @param {String} actionCurrent Current action
    * @param {Object} obj Queue object
    */
-  queueComplete (actionCurrent, obj) {
+  queueComplete(actionCurrent, obj) {
     const self = this
     if (actionCurrent === 'On') {
       if (!self.initial) {
@@ -208,7 +209,7 @@ class Ajax extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} element Base node
    * @param {String} url Url to get
    */
-  ajaxRequest (element, url) {
+  ajaxRequest(element, url) {
     const self = this
     const options = self.options
     // url
@@ -229,15 +230,15 @@ class Ajax extends Xt.Toggle {
     if (self.detail.request) {
       self.detail.request.abort()
     } // fix fast change page
-    requestAnimationFrame(function () {
+    requestAnimationFrame(function() {
       self.detail.requestDuration = options.duration || Xt.animTime(self.queryElement)
       // call
       const request = new XMLHttpRequest()
       request.open('GET', url, true)
-      request.onload = function () {
+      request.onload = function() {
         self.ajaxResponse(element, url, request, self.detail.requestDate)
       }
-      request.onerror = function () {
+      request.onerror = function() {
         self.ajaxResponse(element, url, request, self.detail.requestDate)
       }
       if (Xt.debug === true) {
@@ -255,7 +256,7 @@ class Ajax extends Xt.Toggle {
    * @param {XMLHttpRequest} request Html response
    * @param {Date} date Html response
    */
-  ajaxResponse (element, url, request, date) {
+  ajaxResponse(element, url, request, date) {
     const self = this
     // dispatch
     const detail = self.eDetailSet()
@@ -263,14 +264,18 @@ class Ajax extends Xt.Toggle {
     // duration
     self.detail.requestDuration -= new Date() - date
     if (self.detail.requestDuration > 0) {
-      Xt.dataStorage.set(self.object, self.componentNamespace + 'AjaxDurationTimeout', setTimeout(function () {
-        // request
-        if (request.status >= 200 && request.status <= 300) {
-          self.ajaxSuccess(element, url, request, date)
-        } else {
-          self.ajaxError(element, url, request)
-        }
-      }, self.detail.requestDuration))
+      Xt.dataStorage.set(
+        self.object,
+        self.componentNamespace + 'AjaxDurationTimeout',
+        setTimeout(function() {
+          // request
+          if (request.status >= 200 && request.status <= 300) {
+            self.ajaxSuccess(element, url, request, date)
+          } else {
+            self.ajaxError(element, url, request)
+          }
+        }, self.detail.requestDuration)
+      )
     } else {
       // request
       if (request.status >= 200 && request.status <= 300) {
@@ -288,7 +293,7 @@ class Ajax extends Xt.Toggle {
    * @param {XMLHttpRequest} request Html response
    * @param {Date} date Html response
    */
-  ajaxSuccess (element, url, request, date) {
+  ajaxSuccess(element, url, request, date) {
     const self = this
     const options = self.options
     // debug
@@ -313,9 +318,9 @@ class Ajax extends Xt.Toggle {
     const detail = self.eDetailSet()
     self.object.dispatchEvent(new CustomEvent('replace.xt.ajax', { detail: detail }))
     // reinit
-    if (!self.initial &&
-      date === self.detail.requestDate) { // fix fast change page
-      requestAnimationFrame(function () {
+    if (!self.initial && date === self.detail.requestDate) {
+      // fix fast change page
+      requestAnimationFrame(function() {
         self.initial = true
         self.init()
       })
@@ -328,7 +333,7 @@ class Ajax extends Xt.Toggle {
    * @param {String} url Url to get
    * @param {XMLHttpRequest} request Html response
    */
-  ajaxError (element, url, request) {
+  ajaxError(element, url, request) {
     const self = this
     // debug
     if (Xt.debug === true) {
@@ -344,7 +349,7 @@ class Ajax extends Xt.Toggle {
   /**
    * history pushstate
    */
-  pushState (url, title) {
+  pushState(url, title) {
     // push object state
     if (!history.state || !history.state.url || history.state.url !== url) {
       document.title = title
@@ -370,7 +375,7 @@ Ajax.optionsDefault = {
   query: 'body', // needs to be unique
   baseUrl: '/',
   duration: false,
-  aria: false
+  aria: false,
 }
 Xt.optionsGlobal[Ajax.componentName] = {}
 
@@ -386,7 +391,7 @@ Xt.Ajax = Ajax
 
 Xt.mount.push({
   matches: '[data-' + Xt.Ajax.componentName + ']',
-  mount: function (object) {
+  mount: function(object) {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Ajax.componentName)
@@ -398,9 +403,9 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       self.destroy()
       self = null
     }
-  }
+  },
 })

@@ -9,7 +9,7 @@ class Overlay extends Xt.Toggle {
    * @param {Object} optionsCustom User options
    * @constructor
    */
-  constructor (object, optionsCustom = {}) {
+  constructor(object, optionsCustom = {}) {
     super(object, optionsCustom)
   }
 
@@ -20,7 +20,7 @@ class Overlay extends Xt.Toggle {
   /**
    * init aria
    */
-  initAriaRole () {
+  initAriaRole() {
     const self = this
     const options = self.options
     // aria
@@ -65,7 +65,7 @@ Overlay.optionsDefault = {
   classHtml: 'xt-overlay',
   closeInside: '.overlay-dismiss, .card--overlay > .card-inner > .btn-close, :scope > .backdrop',
   scrollbar: true,
-  focusLimit: true
+  focusLimit: true,
 }
 Xt.optionsGlobal[Overlay.componentName] = {}
 
@@ -81,7 +81,7 @@ Xt.Overlay = Overlay
 
 Xt.mount.push({
   matches: '[data-' + Xt.Overlay.componentName + ']',
-  mount: function (object) {
+  mount: function(object) {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Overlay.componentName)
@@ -93,9 +93,9 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       self.destroy()
       self = null
     }
-  }
+  },
 })

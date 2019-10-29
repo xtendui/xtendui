@@ -8,14 +8,14 @@ import { TweenMax } from 'gsap/TweenMax'
 
 Xt.mount.push({
   matches: '.demo--loader--js-filler',
-  mount: function (object) {
+  mount: function(object) {
     // vars
 
     const time = Xt.vars.timeGiant
     const easeLinear = Xt.vars.easeLinear
 
     // timeout
-    function loaderTimeout () {
+    function loaderTimeout() {
       const filler = object.querySelectorAll('.filler span:nth-child(1)')
       object.dataset.loaderActive = object.dataset.loaderActive === 'true' ? 'false' : 'true'
       if (object.dataset.loaderActive === 'true') {
@@ -32,5 +32,5 @@ Xt.mount.push({
     }
 
     loaderTimeout()
-  }
+  },
 })

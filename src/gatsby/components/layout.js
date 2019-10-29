@@ -22,12 +22,12 @@ import { makeDocument } from 'assets/scripts/theme.js'
 import 'assets/styles/theme.less'
 
 class Layout extends React.Component {
-  componentDidMount () {
+  componentDidMount() {
     populateBlock()
     makeDocument()
   }
 
-  render () {
+  render() {
     const { seo, page, children } = this.props
     return (
       <StaticQuery
@@ -47,17 +47,17 @@ class Layout extends React.Component {
         `}
         render={data => (
           <>
-            <div className={`gatsby_site_wrapper
-              ${page ? ' gatsby_site_wrapper--with-sidebar gatsby_site_wrapper--with-aside' : ''}`}>
-
-              <Header site={data} seo={seo} page={page}/>
+            <div
+              className={`gatsby_site_wrapper
+              ${page ? ' gatsby_site_wrapper--with-sidebar gatsby_site_wrapper--with-aside' : ''}`}
+            >
+              <Header site={data} seo={seo} page={page} />
 
               <main className="gatsby_site_main">
                 <div className="gatsby_site_main_inner">
-
-                  {page
-                    ? <div className="gatsby_site--with-sidebar gatsby_site--with-aside">
-                      <DocsSidebar page={page}/>
+                  {page ? (
+                    <div className="gatsby_site--with-sidebar gatsby_site--with-aside">
+                      <DocsSidebar page={page} />
                       <article className="gatsby_site_article">
                         <div className="gatsby_site_article_hero">
                           <div className="container full">
@@ -66,36 +66,30 @@ class Layout extends React.Component {
                           </div>
                         </div>
                         <div className="gatsby_site_article_content">
-                          <div className="container full">
-                            {children}
-                          </div>
+                          <div className="container full">{children}</div>
                         </div>
-                        {page.post.frontmatter.type !== page.post.frontmatter.title
-                          ? <div className="gatsby_site_article_foot">
+                        {page.post.frontmatter.type !== page.post.frontmatter.title ? (
+                          <div className="gatsby_site_article_foot">
                             <div className="container full">
-                              <DocsFoot page={page}/>
+                              <DocsFoot page={page} />
                             </div>
                           </div>
-                          : null
-                        }
+                        ) : null}
                       </article>
-                      <DocsAside page={page}/>
+                      <DocsAside page={page} />
                     </div>
-                    : <article className="gatsby_site_article">
+                  ) : (
+                    <article className="gatsby_site_article">
                       <div className="gatsby_site_article_content">
-                        <div className="container full">
-                          {children}
-                        </div>
+                        <div className="container full">{children}</div>
                       </div>
                     </article>
-                  }
-
+                  )}
                 </div>
               </main>
 
-              <Footer site={data} seo={seo}/>
-              <DocsAddon/>
-
+              <Footer site={data} seo={seo} />
+              <DocsAddon />
             </div>
           </>
         )}
@@ -105,7 +99,7 @@ class Layout extends React.Component {
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout

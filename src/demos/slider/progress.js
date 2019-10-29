@@ -6,7 +6,7 @@ import { TweenMax, TimelineMax } from 'gsap/TweenMax'
 
 Xt.mount.push({
   matches: '.demo--slider--progress',
-  mount: function (object) {
+  mount: function(object) {
     // vars
 
     const timeHide = Xt.vars.timeSmall
@@ -17,21 +17,21 @@ Xt.mount.push({
     let self = new Xt.Slider(object, {
       auto: {
         time: 4000,
-        pause: '[data-xt-pag]'
-      }
+        pause: '[data-xt-pag]',
+      },
     })
 
     // auto
 
-    const eventAutoStart = function () {
+    const eventAutoStart = function() {
       // on slider
       const spinner = self.object.querySelectorAll('.spinner svg:nth-child(1) circle')
       const timeline = new TimelineMax()
       timeline.to(spinner, timeHide / 1000, { strokeDashoffset: 628, ease: easeLinear, autoRound: false })
-      timeline.to(spinner, (self.options.auto.time / 1000) - (timeHide / 1000), {
+      timeline.to(spinner, self.options.auto.time / 1000 - timeHide / 1000, {
         strokeDashoffset: 0,
         ease: easeLinear,
-        autoRound: false
+        autoRound: false,
       })
       // on elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
@@ -53,7 +53,7 @@ Xt.mount.push({
       }
     }
 
-    const eventAutoStop = function () {
+    const eventAutoStop = function() {
       // on elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
@@ -72,7 +72,7 @@ Xt.mount.push({
       }
     }
 
-    const eventAutoPause = function () {
+    const eventAutoPause = function() {
       // on slider
       const spinner = self.object.querySelectorAll('.spinner svg:nth-child(1) circle')
       TweenMax.to(spinner, timeHide / 1000, { strokeDashoffset: 628, ease: easeLinear, autoRound: false })
@@ -104,14 +104,14 @@ Xt.mount.push({
     const mouseFollowContainer = object
 
     let mouseFollow = new Xt.MouseFollow(mouseFollowObject, mouseFollowContainer, {
-      mouseCheck: function () {
+      mouseCheck: function() {
         return !this.object.classList.contains('loader--disable') || this.object.classList.contains('loader--js')
-      }
+      },
     })
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       self.object.removeEventListener('start.xt.auto', eventAutoStart)
       self.object.removeEventListener('stop.xt.auto', eventAutoStop)
       self.object.removeEventListener('pause.xt.auto', eventAutoPause)
@@ -120,5 +120,5 @@ Xt.mount.push({
       mouseFollow.destroy()
       mouseFollow = null
     }
-  }
+  },
 })

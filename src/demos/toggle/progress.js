@@ -9,7 +9,7 @@ import { TweenMax } from 'gsap/TweenMax'
 
 Xt.mount.push({
   matches: '.demo--toggle-progress',
-  mount: function (object) {
+  mount: function(object) {
     // vars
 
     const timeHide = Xt.vars.timeSmall
@@ -20,13 +20,13 @@ Xt.mount.push({
     let self = new Xt.Toggle(object, {
       auto: {
         time: 2000,
-        pause: ':scope > button'
-      }
+        pause: ':scope > button',
+      },
     })
 
     // auto
 
-    const eventAutoStart = function () {
+    const eventAutoStart = function() {
       // on elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
@@ -47,7 +47,7 @@ Xt.mount.push({
       }
     }
 
-    const eventAutoStop = function () {
+    const eventAutoStop = function() {
       // on elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
@@ -66,7 +66,7 @@ Xt.mount.push({
       }
     }
 
-    const eventAutoPause = function () {
+    const eventAutoPause = function() {
       // on elements
       const elements = self.elements.filter(x => self.hasCurrent(x))
       for (const element of elements) {
@@ -91,12 +91,12 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       self.object.removeEventListener('start.xt.auto', eventAutoStart)
       self.object.removeEventListener('stop.xt.auto', eventAutoStop)
       self.object.removeEventListener('pause.xt.auto', eventAutoPause)
       self.destroy()
       self = null
     }
-  }
+  },
 })

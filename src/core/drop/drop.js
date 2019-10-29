@@ -9,7 +9,7 @@ class Drop extends Xt.Toggle {
    * @param {Object} optionsCustom User options
    * @constructor
    */
-  constructor (object, optionsCustom = {}) {
+  constructor(object, optionsCustom = {}) {
     super(object, optionsCustom)
   }
 
@@ -20,7 +20,7 @@ class Drop extends Xt.Toggle {
   /**
    * init aria
    */
-  initAriaRole () {
+  initAriaRole() {
     const self = this
     const options = self.options
     // aria
@@ -55,7 +55,7 @@ Drop.optionsDefault = {
   autoclose: true,
   closeOutside: 'body',
   closeInside: '.drop-dismiss, .card--drop > .card-inner > .btn-close',
-  ariaControls: ':scope > a, :scope > button'
+  ariaControls: ':scope > a, :scope > button',
 }
 Xt.optionsGlobal[Drop.componentName] = {}
 
@@ -71,7 +71,7 @@ Xt.Drop = Drop
 
 Xt.mount.push({
   matches: '[data-' + Xt.Drop.componentName + ']',
-  mount: function (object) {
+  mount: function(object) {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Drop.componentName)
@@ -83,9 +83,9 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       self.destroy()
       self = null
     }
-  }
+  },
 })

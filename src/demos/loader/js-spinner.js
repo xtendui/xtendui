@@ -8,7 +8,7 @@ import { TweenMax } from 'gsap/TweenMax'
 
 Xt.mount.push({
   matches: '.demo--loader--js-spinner',
-  mount: function (object) {
+  mount: function(object) {
     // vars
 
     const time = Xt.vars.timeGiant
@@ -16,7 +16,7 @@ Xt.mount.push({
 
     // timeout
 
-    function loaderTimeout () {
+    function loaderTimeout() {
       const spinner = object.querySelectorAll('.spinner svg:nth-child(1) circle')
       object.dataset.loaderActive = object.dataset.loaderActive === 'true' ? 'false' : 'true'
       if (object.dataset.loaderActive === 'true') {
@@ -33,5 +33,5 @@ Xt.mount.push({
     }
 
     loaderTimeout()
-  }
+  },
 })

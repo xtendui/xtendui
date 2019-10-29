@@ -9,14 +9,12 @@ export const demo = {
   full: false,
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
-  type: dirs.pop()
+  type: dirs.pop(),
 }
 
 class Page extends React.Component {
-  render () {
-    return (
-      <DemoReactIframe demo={demo}/>
-    )
+  render() {
+    return <DemoReactIframe demo={demo} />
   }
 }
 

@@ -8,14 +8,14 @@ import SEO from 'components/seo'
 import Layout from 'components/layout'
 
 class Template extends React.Component {
-  render () {
+  render() {
     const {data, pageContext} = this.props
     const seo = {};
     seo.title = 'Tags'
     seo.description = 'Description'
     return (
       <Layout seo={seo} page={data}>
-        <SEO title={seo.title + ' — ' + seo.description}/>
+        <SEO title={seo.title + ' — ' + seo.description} />
         {data.tags.tag.map((category, i) => (
           <div key={i}>
             <Link to={`/tags/${kebabCase(category.title)}/`}>

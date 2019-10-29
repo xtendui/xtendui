@@ -8,11 +8,11 @@ class PropagateInteraction {
    * @param {Object} optionsCustom User options
    * @constructor
    */
-  constructor (object, optionsCustom = {}) {
+  constructor(object, optionsCustom = {}) {
     const self = this
     self.object = object
     self.optionsCustom = optionsCustom
-    Xt.checkDefined(self, function () {
+    Xt.checkDefined(self, function() {
       self.init()
     })
   }
@@ -24,7 +24,7 @@ class PropagateInteraction {
   /**
    * init
    */
-  init () {
+  init() {
     const self = this
     // options
     self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
@@ -46,7 +46,7 @@ class PropagateInteraction {
   /**
    * hoverOn
    */
-  hoverOn () {
+  hoverOn() {
     const self = this
     for (const tr of self.targets) {
       tr.classList.add('hover')
@@ -57,7 +57,7 @@ class PropagateInteraction {
   /**
    * hoverOff
    */
-  hoverOff () {
+  hoverOff() {
     const self = this
     for (const tr of self.targets) {
       tr.classList.remove('hover')
@@ -68,7 +68,7 @@ class PropagateInteraction {
   /**
    * activeOn
    */
-  activeOn () {
+  activeOn() {
     const self = this
     for (const tr of self.targets) {
       tr.classList.add('active')
@@ -79,7 +79,7 @@ class PropagateInteraction {
   /**
    * activeOff
    */
-  activeOff (isClick) {
+  activeOff(isClick) {
     const self = this
     for (const tr of self.targets) {
       if (isClick) {
@@ -98,7 +98,7 @@ class PropagateInteraction {
   /**
    * destroy
    */
-  destroy () {
+  destroy() {
     const self = this
     self.object.removeEventListener('mouseenter', self.hoverOn.bind(self))
     self.object.removeEventListener('mouseleave', self.hoverOff.bind(self))
@@ -127,7 +127,7 @@ Xt.PropagateInteraction = PropagateInteraction
 
 Xt.mount.push({
   matches: '[data-' + Xt.PropagateInteraction.componentName + ']',
-  mount: function (object) {
+  mount: function(object) {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.PropagateInteraction.componentName)
@@ -139,9 +139,9 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       self.destroy()
       self = null
     }
-  }
+  },
 })

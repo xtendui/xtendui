@@ -22,7 +22,7 @@ new Xt.Smooth(document.scrollingElement)
  * formatCode
  */
 
-const formatCode = function (source) {
+const formatCode = function(source) {
   let inner = source.querySelectorAll('.gatsby_demo_source--from')
   inner = Array.from(inner).filter(x => !x.querySelectorAll('.gatsby_demo_source--from').length) // filter out nested
   if (inner.length) {
@@ -35,7 +35,10 @@ const formatCode = function (source) {
     // replace quote entities
     text = text.replace(/&quot;/g, '"')
     // replace entities
-    text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    text = text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
     // replace json quotes
     // text = text.replace(/("{)/g, '\'{').replace(/(}")/g, '}\'')
     // replace empty quotes
@@ -69,7 +72,7 @@ const formatCode = function (source) {
  * populateBlock
  */
 
-const populateBlock = function () {
+const populateBlock = function() {
   for (const el of document.querySelectorAll('script[type="text/plain"][class*="language-"]')) {
     const language = el.getAttribute('class')
     el.after(Xt.createElement('<pre class="' + language + '"><code class="' + language + '">' + el.innerHTML + '</code></pre>'))
@@ -82,12 +85,13 @@ const populateBlock = function () {
   }
   // overlay fullscreen
   for (const el of document.querySelectorAll('[data-gatsby-listing-toggle')) {
-    el.addEventListener('click', function () {
+    el.addEventListener('click', function() {
       makeFullscreen(el.nextSibling)
     })
   }
-  document.querySelector('#overlay--open-full').addEventListener('off.xt', function (e) {
-    if (this === e.target) { // @FIX on.xt and off.xt event bubbles
+  document.querySelector('#overlay--open-full').addEventListener('off.xt', function(e) {
+    if (this === e.target) {
+      // @FIX on.xt and off.xt event bubbles
       const content = document.querySelector('#overlay--open-full-content')
       // populate source
       const container = content.querySelector('.gatsby_demo')
@@ -111,7 +115,7 @@ const populateBlock = function () {
       appendOrigin.before(content.childNodes[0])
       appendOrigin.remove()
       // trigger resize
-      requestAnimationFrame(function () {
+      requestAnimationFrame(function() {
         dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
       })
     }
@@ -122,16 +126,35 @@ const populateBlock = function () {
  * populateDemo
  */
 
-const populateDemo = function (container, i) {
+const populateDemo = function(container, i) {
   const items = container.querySelectorAll('.gatsby_demo_item')
   // multiple elements
   container.prepend(Xt.createElement('<div class="gatsby_demo_tabs"><div class="gatsby_demo_tabs_left"></div><div class="gatsby_demo_tabs_right"></div></div>'))
-  container.querySelector('.gatsby_demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny btn--icon btn--show-code" data-toggle="tooltip" data-placement="top" aria-label="Code"><span class="icon-code icon--big"></span></button>'))
-  container.querySelector('.gatsby_demo_tabs_right').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny btn--icon btn--open-full" data-toggle="tooltip" data-placement="top" aria-label="Fullscreen"><span class="icon-maximize icon--big"></span></button>'))
+  container
+    .querySelector('.gatsby_demo_tabs_right')
+    .append(
+      Xt.createElement(
+        '<button type="button" class="btn btn--text btn--tiny btn--icon btn--show-code" data-toggle="tooltip" data-placement="top" aria-label="Code"><span class="icon-code icon--big"></span></button>'
+      )
+    )
+  container
+    .querySelector('.gatsby_demo_tabs_right')
+    .append(
+      Xt.createElement(
+        '<button type="button" class="btn btn--text btn--tiny btn--icon btn--open-full" data-toggle="tooltip" data-placement="top" aria-label="Fullscreen"><span class="icon-maximize icon--big"></span></button>'
+      )
+    )
   // loop items
   for (const [k, item] of items.entries()) {
     // populate tabs
-    let name = item.getAttribute('data-iframe') ? item.getAttribute('data-iframe').split('/').pop().split('-').pop() : null
+    let name = item.getAttribute('data-iframe')
+      ? item
+          .getAttribute('data-iframe')
+          .split('/')
+          .pop()
+          .split('-')
+          .pop()
+      : null
     name = item.getAttribute('data-name') ? item.getAttribute('data-name') : name
     if (!name) {
       if (items.length === 1) {
@@ -142,18 +165,22 @@ const populateDemo = function (container, i) {
     }
     container.querySelector('.gatsby_demo_tabs_left').append(Xt.createElement('<button type="button" class="btn btn--text btn--tiny">' + name + '</button>'))
     // tabs
-    item.prepend(Xt.createElement('<div class="gatsby_demo_code"><div class="gatsby_demo_code_inner"><div class="gatsby_demo_code_tabs"><div class="gatsby_demo_code_tabs_left"></div><div class="gatsby_demo_code_tabs_right"><button type="button" class="btn btn--text btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="gatsby_demo_code_body"></div></div></div>'))
+    item.prepend(
+      Xt.createElement(
+        '<div class="gatsby_demo_code"><div class="gatsby_demo_code_inner"><div class="gatsby_demo_code_tabs"><div class="gatsby_demo_code_tabs_left"></div><div class="gatsby_demo_code_tabs_right"><button type="button" class="btn btn--text btn--tiny btn--clipboard" data-toggle="tooltip" data-placement="top" title="Copy to clipboard">copy</button></div></div><div class="gatsby_demo_code_body"></div></div></div>'
+      )
+    )
     // https://github.com/zenorocha/clipboard.js/
     const clipboard = new ClipboardJS('.btn--clipboard', {
-      target: function (trigger) {
+      target: function(trigger) {
         return trigger.closest('.gatsby_demo').querySelector('.gatsby_demo_item.active .gatsby_demo_code_body_item.active .hljs')
-      }
+      },
     })
-    clipboard.on('success', function (e) {
+    clipboard.on('success', function(e) {
       e.clearSelection()
       // $(e.trigger).attr('data-original-title', 'Done').tooltip('show');
     })
-    clipboard.on('error', function (e) {
+    clipboard.on('error', function(e) {
       // $(e.trigger).attr('data-original-title', 'Error: copy manually').tooltip('show');
     })
     // inject iframe
@@ -170,7 +197,8 @@ const populateDemo = function (container, i) {
       if (getComputedStyle(sourceTo).display === 'inline-flex') {
         container.dataset.isFullscreenOnly = 'true'
       } else {
-        requestAnimationFrame(function () { // @FIX multiple initializations
+        requestAnimationFrame(function() {
+          // @FIX multiple initializations
           sourceTo.innerHTML = item.querySelector('script[data-lang="html"]').innerHTML
         })
       }
@@ -181,21 +209,23 @@ const populateDemo = function (container, i) {
   container.setAttribute('id', demoId)
   // makeFullscreen
   for (const btnOpenFull of container.querySelectorAll('.btn--open-full')) {
-    btnOpenFull.addEventListener('click', function () {
+    btnOpenFull.addEventListener('click', function() {
       makeFullscreen(container)
     })
   }
   // gatsby_demo_tabs_left
-  new Xt.Toggle(container, { // eslint-disable-line no-new
+  new Xt.Toggle(container, {
+    // eslint-disable-line no-new
     elements: '.gatsby_demo_tabs_left .btn',
     targets: '.gatsby_demo_item',
-    min: 1
+    min: 1,
   })
   // btn--show-code
-  new Xt.Toggle(container.querySelector('.btn--show-code'), { // eslint-disable-line no-new
+  new Xt.Toggle(container.querySelector('.btn--show-code'), {
+    // eslint-disable-line no-new
     targets: '#' + demoId,
     targetsInner: '.gatsby_demo_code',
-    aria: false
+    aria: false,
   })
 }
 
@@ -203,19 +233,22 @@ const populateDemo = function (container, i) {
  * makeFullscreen
  */
 
-const makeFullscreen = function (container) {
+const makeFullscreen = function(container) {
   const overlay = document.querySelector('#overlay--open-full')
   const content = document.querySelector('#overlay--open-full-content')
   const sourceTo = container.querySelector('.gatsby_demo_source_populate')
   overlay.dispatchEvent(new CustomEvent('on.xt'))
   // move code block
-  container.before(Xt.createElement('<div class="xt-ignore" data-xt-origin="overlay--open-full-content" style="height: ' + container.clientHeight + 'px"></div>'))
+  container.before(
+    Xt.createElement('<div class="xt-ignore" data-xt-origin="overlay--open-full-content" style="height: ' + container.clientHeight + 'px"></div>')
+  )
   if (!container.dataset.isFullscreenOnly) {
     container.classList.add('xt-ignore', 'xt-ignore--once') // @FIX ignore once for mount when moving
   }
   content.append(container)
   // populate source
-  requestAnimationFrame(function () { // requestAnimationFrame fixes errors
+  requestAnimationFrame(function() {
+    // requestAnimationFrame fixes errors
     if (sourceTo && container.dataset.isFullscreenOnly) {
       sourceTo.innerHTML = container.querySelector('script[data-lang="html"]').innerHTML
     }
@@ -229,7 +262,7 @@ const makeFullscreen = function (container) {
   }
   container.querySelector('.gatsby_demo_item.active').dispatchEvent(new CustomEvent('on.xt'))
   // trigger resize
-  requestAnimationFrame(function () {
+  requestAnimationFrame(function() {
     dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
   })
 }
@@ -238,25 +271,32 @@ const makeFullscreen = function (container) {
  * Iframe
  */
 
-const initializeIframe = function (container, item) {
+const initializeIframe = function(container, item) {
   if (item.getAttribute('data-iframe') && !item.classList.contains('populated-iframe')) {
     container.dataset.isFullscreenOnly = 'true'
     item.classList.add('populated-iframe')
     const src = '/' + item.getAttribute('data-iframe')
     const id = item.getAttribute('data-iframe-id')
     item.append(Xt.createElement('<div class="gatsby_demo_item_wrapper"><iframe data-src="' + src + '" name="' + id + '"></iframe></div>'))
-    item.querySelector('.gatsby_demo_item_wrapper').append(Xt.createElement('\n' +
-      '    <div class="loader loader--spinner">\n' +
-      '      <div class="spinner">\n' +
-      '        <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
-      '      </div>\n' +
-      '    </div>\n' +
-      '  </div>'))
+    item
+      .querySelector('.gatsby_demo_item_wrapper')
+      .append(
+        Xt.createElement(
+          '\n' +
+            '    <div class="loader loader--spinner">\n' +
+            '      <div class="spinner">\n' +
+            '        <svg viewBox="0 0 250 250"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg><svg viewBox="0 0 250 250" preserveAspectRatio="xMinYMin meet"><circle cx="120" cy="120" r="100" stroke-dasharray="628" stroke-dashoffset="628" pathLength="628"></circle></svg>\n' +
+            '      </div>\n' +
+            '    </div>\n' +
+            '  </div>'
+        )
+      )
     // load
     if (!item.dataset.iframeLoadEvents) {
       item.dataset.iframeLoadEvents = 'true'
-      item.addEventListener('on.xt', function (e) {
-        if (this === e.target) { // @FIX on.xt and off.xt event bubbles
+      item.addEventListener('on.xt', function(e) {
+        if (this === e.target) {
+          // @FIX on.xt and off.xt event bubbles
           if (!item.dataset.iframeLoadCall) {
             item.dataset.iframeLoadCall = 'true'
             const iframe = item.querySelector('iframe')
@@ -264,8 +304,9 @@ const initializeIframe = function (container, item) {
           }
         }
       })
-      item.addEventListener('off.xt', function (e) {
-        if (this === e.target) { // @FIX on.xt and off.xt event bubbles
+      item.addEventListener('off.xt', function(e) {
+        if (this === e.target) {
+          // @FIX on.xt and off.xt event bubbles
           if (item.dataset.iframeLoadCall) {
             delete item.dataset.iframeLoadCall
             const iframe = item.querySelector('iframe')
@@ -277,16 +318,16 @@ const initializeIframe = function (container, item) {
   }
 }
 
-const loadIframe = function (iframe) {
+const loadIframe = function(iframe) {
   iframe.setAttribute('src', iframe.getAttribute('data-src'))
 }
 
-const unloadIframe = function (iframe) {
+const unloadIframe = function(iframe) {
   iframe.removeAttribute('src')
 }
 
 if (typeof window !== 'undefined') {
-  window.initIframe = function (name, htmlSource, jsSource, cssSource) {
+  window.initIframe = function(name, htmlSource, jsSource, cssSource) {
     const src = 'iframe[name="' + name + '"]'
     const iframes = document.querySelectorAll(src)
     for (const iframe of iframes) {
@@ -295,7 +336,7 @@ if (typeof window !== 'undefined') {
       item.classList.add('loaded')
     }
   }
-  window.resizeIframe = function (name) {
+  window.resizeIframe = function(name) {
     const src = 'iframe[name="' + name + '"]'
     const iframes = document.querySelectorAll(src)
     for (const iframe of iframes) {
@@ -324,7 +365,7 @@ if (typeof window !== 'undefined') {
   }
 }
 
-const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) {
+const populateIframe = function(item, iframe, htmlSource, jsSource, cssSource) {
   if (!item.classList.contains('populated')) {
     item.classList.add('populated')
     // inject code
@@ -343,10 +384,11 @@ const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) 
       populateSources(item, el, z)
       el.remove()
     }
-    new Xt.Toggle(item, { // eslint-disable-line no-new
+    new Xt.Toggle(item, {
+      // eslint-disable-line no-new
       elements: '.gatsby_demo_code_tabs_left .btn',
       targets: '.gatsby_demo_code_body_item',
-      min: 1
+      min: 1,
     })
   }
 }
@@ -355,7 +397,7 @@ const populateIframe = function (item, iframe, htmlSource, jsSource, cssSource) 
  * inline
  */
 
-const populateInline = function (item) {
+const populateInline = function(item) {
   if (!item.classList.contains('populated')) {
     item.classList.add('populated')
     const els = item.querySelectorAll('[data-lang]')
@@ -365,10 +407,11 @@ const populateInline = function (item) {
         el.style.display = 'none'
       }
     }
-    new Xt.Toggle(item, { // eslint-disable-line no-new
+    new Xt.Toggle(item, {
+      // eslint-disable-line no-new
       elements: '.gatsby_demo_code_tabs_left .btn',
       targets: '.gatsby_demo_code_body_item',
-      min: 1
+      min: 1,
     })
   }
 }
@@ -377,7 +420,7 @@ const populateInline = function (item) {
  * sources
  */
 
-const populateSources = function (item, element, z) {
+const populateSources = function(item, element, z) {
   let lang = element.getAttribute('data-lang')
   // set text
   if (lang === 'language-markup') {

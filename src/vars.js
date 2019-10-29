@@ -23,7 +23,7 @@ const vars = {
   easePenguinIn: new Ease(BezierEasing(0.36, 0, 0, 1)),
   easePenguinOut: new Ease(BezierEasing(1, 0, 0.64, 1)),
   easePenguinInOut: new Ease(BezierEasing(0.68, 0.13, 0.25, 1)),
-  easeLinear: Power0.easeNone
+  easeLinear: Power0.easeNone,
 }
 
 //
@@ -32,7 +32,7 @@ const vars = {
 
 Xt.optionsGlobal['xt-slider'] = {
   wheel: {},
-  drag: {}
+  drag: {},
 }
 
 //

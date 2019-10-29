@@ -9,7 +9,7 @@ class Scroll extends Xt.Toggle {
    * @param {Object} optionsCustom User options
    * @constructor
    */
-  constructor (object, optionsCustom = {}) {
+  constructor(object, optionsCustom = {}) {
     super(object, optionsCustom)
   }
 
@@ -20,7 +20,7 @@ class Scroll extends Xt.Toggle {
   /**
    * init elements, targets and currents
    */
-  initScope () {
+  initScope() {
     super.initScope()
     const self = this
     const options = self.options
@@ -93,18 +93,17 @@ class Scroll extends Xt.Toggle {
   /**
    * init events
    */
-  initEvents () {
+  initEvents() {
     const self = this
     const options = self.options
     // event on
     if (options.on) {
-      const scrollHandler = Xt.dataStorage.put(window, options.on + '.' + self.namespace,
-        self.eventScrollHandler.bind(self))
+      const scrollHandler = Xt.dataStorage.put(window, options.on + '.' + self.namespace, self.eventScrollHandler.bind(self))
       const events = [...options.on.split(' ')]
       for (const event of events) {
         addEventListener(event, scrollHandler, Xt.passiveSupported ? { passive: true } : false)
       }
-      requestAnimationFrame(function () {
+      requestAnimationFrame(function() {
         self.eventScrollHandler(null, true)
       })
     }
@@ -119,13 +118,19 @@ class Scroll extends Xt.Toggle {
    * @param {Event} e
    * @param {Boolean} initial
    */
-  eventScrollHandler (e = null, initial = false) {
+  eventScrollHandler(e = null, initial = false) {
     const self = this
     // handler
-    if (!e || !e.detail || !e.detail.skip) { // @FIX filter triggered from library (use only in library)
-      Xt.eventDelay(e, self.object, function () {
-        self.eventScroll(e, initial)
-      }, self.componentNamespace + 'Resize')
+    if (!e || !e.detail || !e.detail.skip) {
+      // @FIX filter triggered from library (use only in library)
+      Xt.eventDelay(
+        e,
+        self.object,
+        function() {
+          self.eventScroll(e, initial)
+        },
+        self.componentNamespace + 'Resize'
+      )
     }
   }
 
@@ -138,7 +143,7 @@ class Scroll extends Xt.Toggle {
    * @param {Event} e
    * @param {Boolean} initial
    */
-  eventScroll (e, initial) {
+  eventScroll(e, initial) {
     const self = this
     const options = self.options
     // disabled
@@ -159,8 +164,8 @@ class Scroll extends Xt.Toggle {
     // loop
     for (const el of self.elements) {
       const tr = self.getTargets(el)[0]
-      if (!el.classList.contains('scroll--block') && Xt.visible(el) &&
-        tr.offsetParent) { // filter out document.documentElement
+      if (!el.classList.contains('scroll--block') && Xt.visible(el) && tr.offsetParent) {
+        // filter out document.documentElement
         // vars
         let changed = false
         const elTop = tr.offsetParent.getBoundingClientRect().top + tr.offsetTop + scrollTop // we use parents to not include transforms animations
@@ -174,8 +179,11 @@ class Scroll extends Xt.Toggle {
         self.detail.trigger = Xt.windowPercent(options.trigger)
         self.detail.start = self.detail.startReal = elTop - windowHeight + Xt.windowPercent(options.start) + self.detail.distance
         self.detail.start = self.detail.start < self.detail.trigger ? self.detail.trigger : self.detail.start // limit fixes activation on page top
-        self.detail.end = self.detail.endReal = options.end ? self.detail.start + Xt.windowPercent(options.end) - self.detail.distance : elTop + elHeight + self.detail.trigger - self.detail.distance
-        self.detail.end = self.detail.end > self.detail.trigger + scrollHeight - window.innerHeight ? self.detail.trigger + scrollHeight - window.innerHeight : self.detail.end // limit fixes deactivation on page bottom
+        self.detail.end = self.detail.endReal = options.end
+          ? self.detail.start + Xt.windowPercent(options.end) - self.detail.distance
+          : elTop + elHeight + self.detail.trigger - self.detail.distance
+        self.detail.end =
+          self.detail.end > self.detail.trigger + scrollHeight - window.innerHeight ? self.detail.trigger + scrollHeight - window.innerHeight : self.detail.end // limit fixes deactivation on page bottom
         self.detail.fallback = self.detail.end - Xt.windowPercent(options.fallback)
         self.detail.start = self.detail.start > self.detail.end ? self.detail.fallback : self.detail.start // limit fixes deactivation on page bottom
         // ratio
@@ -187,26 +195,30 @@ class Scroll extends Xt.Toggle {
         self.detail.ratioInverse = 1 - self.detail.ratio
         self.detail.ratioDouble = 1 - Math.abs((self.detail.ratio - 0.5) * 2)
         // activation
-        if (current >= 0 && current <= total ||
-          self.detail.start > self.detail.end) { // limit fixes activation on page top
+        if ((current >= 0 && current <= total) || self.detail.start > self.detail.end) {
+          // limit fixes activation on page top
           // inside
           changed = self.checkOn(el)
           if (changed) {
             currentsOn.push(el)
             cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'ScrollFrame'))
-            Xt.dataStorage.set(el, self.componentNamespace + 'ScrollFrame', requestAnimationFrame(function () {
-              // initial
-              if (initial) {
-                Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true)
-              } else {
-                Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
-              }
-              // activate
-              Xt.dataStorage.set(el, self.componentNamespace + 'OnCount', currentOn)
-              Xt.dataStorage.set(el, self.componentNamespace + 'OnTot', currentsOn.length)
-              currentOn++
-              self.eventOn(el, true)
-            }))
+            Xt.dataStorage.set(
+              el,
+              self.componentNamespace + 'ScrollFrame',
+              requestAnimationFrame(function() {
+                // initial
+                if (initial) {
+                  Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true)
+                } else {
+                  Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
+                }
+                // activate
+                Xt.dataStorage.set(el, self.componentNamespace + 'OnCount', currentOn)
+                Xt.dataStorage.set(el, self.componentNamespace + 'OnTot', currentsOn.length)
+                currentOn++
+                self.eventOn(el, true)
+              })
+            )
           }
         } else {
           // outside
@@ -216,19 +228,23 @@ class Scroll extends Xt.Toggle {
             el.classList.add('scroll--once')
             currentsOff.push(el)
             cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'ScrollFrame'))
-            Xt.dataStorage.set(el, self.componentNamespace + 'ScrollFrame', requestAnimationFrame(function () {
-              // initial
-              if (initial) {
-                Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true)
-              } else {
-                Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
-              }
-              // deactivate
-              Xt.dataStorage.set(el, self.componentNamespace + 'OffCount', currentOff)
-              Xt.dataStorage.set(el, self.componentNamespace + 'OffTot', currentsOff.length)
-              currentOff++
-              self.eventOff(el, true)
-            }))
+            Xt.dataStorage.set(
+              el,
+              self.componentNamespace + 'ScrollFrame',
+              requestAnimationFrame(function() {
+                // initial
+                if (initial) {
+                  Xt.dataStorage.set(el, self.componentNamespace + 'Initial', true)
+                } else {
+                  Xt.dataStorage.remove(el, self.componentNamespace + 'Initial')
+                }
+                // deactivate
+                Xt.dataStorage.set(el, self.componentNamespace + 'OffCount', currentOff)
+                Xt.dataStorage.set(el, self.componentNamespace + 'OffTot', currentsOff.length)
+                currentOff++
+                self.eventOff(el, true)
+              })
+            )
           }
         }
         // direction
@@ -244,27 +260,35 @@ class Scroll extends Xt.Toggle {
           const triggerEl = document.body.querySelector('.xt-indicator--trigger')
           triggerEl.style.top = self.detail.trigger + 'px'
           const startEl = document.body.querySelector('.xt-indicator--start')
-          startEl.style.top = (self.detail.start - scrollTop) + 'px'
+          startEl.style.top = self.detail.start - scrollTop + 'px'
           const endEl = document.body.querySelector('.xt-indicator--end')
-          endEl.style.top = (self.detail.end - scrollTop) + 'px'
+          endEl.style.top = self.detail.end - scrollTop + 'px'
           const startRealEl = document.body.querySelector('.xt-indicator--start-real')
-          startRealEl.style.top = (self.detail.startReal - scrollTop) + 'px'
+          startRealEl.style.top = self.detail.startReal - scrollTop + 'px'
           const endRealEl = document.body.querySelector('.xt-indicator--end-real')
-          endRealEl.style.top = (self.detail.endReal - scrollTop) + 'px'
+          endRealEl.style.top = self.detail.endReal - scrollTop + 'px'
         }
         // dispatch
         cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'ScrollDispatchFrame'))
-        Xt.dataStorage.set(el, self.componentNamespace + 'ScrollDispatchFrame', requestAnimationFrame(function () {
-          const detail = self.eDetailSet()
-          el.dispatchEvent(new CustomEvent('change.xt.scroll', { bubbles: true, detail: detail }))
-        }))
+        Xt.dataStorage.set(
+          el,
+          self.componentNamespace + 'ScrollDispatchFrame',
+          requestAnimationFrame(function() {
+            const detail = self.eDetailSet()
+            el.dispatchEvent(new CustomEvent('change.xt.scroll', { bubbles: true, detail: detail }))
+          })
+        )
       }
     }
     // save for direction
     cancelAnimationFrame(Xt.dataStorage.get(self.object, self.componentNamespace + 'ScrollObjectFrame'))
-    Xt.dataStorage.set(self.object, self.componentNamespace + 'ScrollDispatchFrame', requestAnimationFrame(function () {
-      self.detail.scrollTopOld = scrollTop
-    }))
+    Xt.dataStorage.set(
+      self.object,
+      self.componentNamespace + 'ScrollDispatchFrame',
+      requestAnimationFrame(function() {
+        self.detail.scrollTopOld = scrollTop
+      })
+    )
   }
 }
 
@@ -289,7 +313,7 @@ Scroll.optionsDefault = {
   start: '100%',
   end: false,
   fallback: 100,
-  aria: false
+  aria: false,
 }
 Xt.optionsGlobal[Scroll.componentName] = {}
 
@@ -305,7 +329,7 @@ Xt.Scroll = Scroll
 
 Xt.mount.push({
   matches: '[data-' + Scroll.componentName + ']',
-  mount: function (object) {
+  mount: function(object) {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Scroll.componentName)
@@ -317,9 +341,9 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       self.destroy()
       self = null
     }
-  }
+  },
 })

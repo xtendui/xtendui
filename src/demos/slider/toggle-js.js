@@ -5,7 +5,7 @@ import { TweenMax } from 'gsap/TweenMax'
 
 Xt.mount.push({
   matches: '.demo--slider--toggle-js',
-  mount: function (object) {
+  mount: function(object) {
     // vars
 
     const time = Xt.vars.timeBig
@@ -19,12 +19,12 @@ Xt.mount.push({
     let self = new Xt.Slider(object, {
       durationOn: time,
       durationOff: time,
-      instant: false
+      instant: false,
     })
 
     // drag
 
-    const eventDrag = function () {
+    const eventDrag = function() {
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       const ratio = Math.abs(self.detail.xStart - self.detail.xCurrent) / target.clientWidth
       // direction
@@ -42,7 +42,7 @@ Xt.mount.push({
       }
     }
 
-    const eventDragReset = function () {
+    const eventDragReset = function() {
       const target = self.targets.filter(x => self.hasCurrent(x))[0]
       // mask
       TweenMax.set(target, { x: -self.detail.xPosOld + 'px' })
@@ -61,9 +61,10 @@ Xt.mount.push({
 
     // activation
 
-    const eventOn = function (e) {
+    const eventOn = function(e) {
       const tr = e.target
-      if (self.targets.includes(tr)) { // event bubbles
+      if (self.targets.includes(tr)) {
+        // event bubbles
         const xMax = tr.clientWidth
         // direction
         let direction = 1
@@ -97,9 +98,10 @@ Xt.mount.push({
       }
     }
 
-    const eventOff = function (e) {
+    const eventOff = function(e) {
       const tr = e.target
-      if (self.targets.includes(tr)) { // event bubbles
+      if (self.targets.includes(tr)) {
+        // event bubbles
         const xMax = tr.clientWidth
         // direction
         let direction = 1
@@ -122,7 +124,7 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       self.dragger.removeEventListener('drag.xt.slider', eventDrag)
       self.dragger.removeEventListener('dragreset.xt.slider', eventDragReset)
       self.object.removeEventListener('on.xt', eventOn)
@@ -130,5 +132,5 @@ Xt.mount.push({
       self.destroy()
       self = null
     }
-  }
+  },
 })

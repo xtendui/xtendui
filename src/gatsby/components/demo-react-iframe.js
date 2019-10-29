@@ -8,7 +8,7 @@ import Layout from 'components/layout-demo'
 import { cssSource, jsSource } from 'assets/scripts/source'
 
 class DemoReactIframe extends React.Component {
-  render () {
+  render() {
     const { demo } = this.props
     const seo = {}
     seo.title = demo.name
@@ -30,16 +30,16 @@ class DemoReactIframe extends React.Component {
         `}
         render={data => (
           <Layout seo={seo} demo={demo}>
-            <SEO title={seo.title + ' — ' + seo.description}/>
+            <SEO title={seo.title + ' — ' + seo.description} />
             <div id="body-outer">
               <div id="gatsby_body-inner" className="gatsby_demo_source--from">
-                {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.jsx`).map((file, index) => (
-                  demo.jsSource = jsSource(demo, '.jsx')
-                )) && <div/> // @FIX react render string
+                {data.allFile.files
+                  .filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.jsx`)
+                  .map((file, index) => (demo.jsSource = jsSource(demo, '.jsx'))) && <div /> // @FIX react render string
                 }
-                {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`).map((file, index) => (
-                  demo.cssSource = cssSource(demo)
-                )) && <div/> // @FIX react render string
+                {data.allFile.files
+                  .filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`)
+                  .map((file, index) => (demo.cssSource = cssSource(demo))) && <div /> // @FIX react render string
                 }
                 <demo.Component></demo.Component>
               </div>
@@ -56,6 +56,6 @@ export default DemoReactIframe
 DemoReactIframe.propTypes = {
   demo: PropTypes.shape({
     container: PropTypes.bool.isRequired,
-    full: PropTypes.bool.isRequired
-  }).isRequired
+    full: PropTypes.bool.isRequired,
+  }).isRequired,
 }

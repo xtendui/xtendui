@@ -9,7 +9,7 @@ class Sticky extends Xt.Toggle {
    * @param {Object} optionsCustom User options
    * @constructor
    */
-  constructor (object, optionsCustom = {}) {
+  constructor(object, optionsCustom = {}) {
     super(object, optionsCustom)
   }
 
@@ -20,7 +20,7 @@ class Sticky extends Xt.Toggle {
   /**
    * init elements, targets and currents
    */
-  initScope () {
+  initScope() {
     super.initScope()
     const self = this
     const options = self.options
@@ -89,28 +89,25 @@ class Sticky extends Xt.Toggle {
   /**
    * init events
    */
-  initEvents () {
+  initEvents() {
     const self = this
     const options = self.options
     // event on
     if (options.on) {
-      const stickyHandler = Xt.dataStorage.put(window, options.on + '.' + self.namespace,
-        self.eventStickyHandler.bind(self))
+      const stickyHandler = Xt.dataStorage.put(window, options.on + '.' + self.namespace, self.eventStickyHandler.bind(self))
       const events = [...options.on.split(' ')]
       for (const event of events) {
         addEventListener(event, stickyHandler, Xt.passiveSupported ? { passive: true } : false)
       }
-      requestAnimationFrame(function () {
+      requestAnimationFrame(function() {
         self.eventStickyHandler(null, true)
       })
     }
     // autoclose
-    const autocloseHandler = Xt.dataStorage.put(self.object, 'hide' + '.' + self.namespace,
-      Xt.autoclose.bind(self, self.object))
+    const autocloseHandler = Xt.dataStorage.put(self.object, 'hide' + '.' + self.namespace, Xt.autoclose.bind(self, self.object))
     self.object.addEventListener('hide.xt.sticky', autocloseHandler)
     // focusin
-    const focusInHandler = Xt.dataStorage.put(document, 'focusin' + '.' + self.namespace,
-      self.eventFocusInHandler.bind(self))
+    const focusInHandler = Xt.dataStorage.put(document, 'focusin' + '.' + self.namespace, self.eventFocusInHandler.bind(self))
     document.addEventListener('focusin', focusInHandler, Xt.passiveSupported ? { passive: true } : false)
   }
 
@@ -123,13 +120,19 @@ class Sticky extends Xt.Toggle {
    * @param {Event} e
    * @param {Boolean} initial
    */
-  eventStickyHandler (e = null, initial = false) {
+  eventStickyHandler(e = null, initial = false) {
     const self = this
     // handler
-    if (!e || !e.detail || !e.detail.skip) { // @FIX filter triggered from library (use only in library)
-      Xt.eventDelay(e, self.object, function () {
-        self.eventSticky(e, initial)
-      }, self.componentNamespace + 'Resize')
+    if (!e || !e.detail || !e.detail.skip) {
+      // @FIX filter triggered from library (use only in library)
+      Xt.eventDelay(
+        e,
+        self.object,
+        function() {
+          self.eventSticky(e, initial)
+        },
+        self.componentNamespace + 'Resize'
+      )
     }
   }
 
@@ -137,7 +140,7 @@ class Sticky extends Xt.Toggle {
    * element focusin handler
    * @param {Event} e
    */
-  eventFocusInHandler (e) {
+  eventFocusInHandler(e) {
     const self = this
     // handler
     for (const tr of self.targets) {
@@ -163,7 +166,7 @@ class Sticky extends Xt.Toggle {
    * @param {Event} e
    * @param {Boolean} initial
    */
-  eventSticky (e, initial) {
+  eventSticky(e, initial) {
     const self = this
     const options = self.options
     // disabled
@@ -346,7 +349,7 @@ class Sticky extends Xt.Toggle {
    * @param {Number} scrollTop Window's scrollTop
    * @returns {Number} value Option's position (px)
    */
-  eventStickyPos (option, scrollTop = 0, val = null) {
+  eventStickyPos(option, scrollTop = 0, val = null) {
     if (!isNaN(parseFloat(option))) {
       val = option
     } else {
@@ -356,7 +359,8 @@ class Sticky extends Xt.Toggle {
         val = 0
         for (const el of elements) {
           const add = Xt.dataStorage.get(el, self.componentNamespace + 'Add')
-          if (add) { // if sticky--hide get real add
+          if (add) {
+            // if sticky--hide get real add
             const style = getComputedStyle(el)
             if (style.display !== 'none') {
               val += add
@@ -388,7 +392,7 @@ class Sticky extends Xt.Toggle {
    * @param {Number} val Default value
    * @returns {Object} obj Option's height (px) and if found hide element
    */
-  eventStickyHeight (option, val = null) {
+  eventStickyHeight(option, val = null) {
     const self = this
     // logic
     let foundHide = false
@@ -435,7 +439,7 @@ Sticky.optionsDefault = {
   limit: { bottom: 'Infinity' },
   contain: false,
   hide: false,
-  aria: false
+  aria: false,
 }
 Xt.optionsGlobal[Sticky.componentName] = {}
 
@@ -451,7 +455,7 @@ Xt.Sticky = Sticky
 
 Xt.mount.push({
   matches: '[data-' + Xt.Sticky.componentName + ']',
-  mount: function (object) {
+  mount: function(object) {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Sticky.componentName)
@@ -463,9 +467,9 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       self.destroy()
       self = null
     }
-  }
+  },
 })

@@ -6,17 +6,17 @@ import { populateDemo } from 'assets/scripts/demo'
 let demoIndex = 0
 
 class Demo extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.demoRef = React.createRef()
   }
 
-  componentDidMount () {
+  componentDidMount() {
     populateDemo(this.demoRef.current, demoIndex)
     demoIndex++
   }
 
-  render () {
+  render() {
     const { children } = this.props
     return (
       <div className="gatsby_demo" ref={this.demoRef}>
@@ -29,5 +29,5 @@ class Demo extends React.Component {
 export default Demo
 
 Demo.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 }

@@ -14,7 +14,7 @@ import ResizeSensor from 'assets/scripts/ResizeSensor.js'
 import 'assets/styles/theme.less'
 
 class Layout extends React.Component {
-  componentDidMount () {
+  componentDidMount() {
     const { demo } = this.props
     document.querySelector('html').classList.add('gatsby_iframe-inside')
     if (demo.full) {
@@ -23,10 +23,10 @@ class Layout extends React.Component {
     if (demo.container) {
       document.querySelector('html').classList.add('gatsby_iframe-container')
     }
-    const iframeLoaded = function () {
+    const iframeLoaded = function() {
       if (window.self !== window.top) {
         window.parent.initIframe(window.name, demo.htmlSource, demo.jsSource, demo.cssSource)
-        new ResizeSensor(document.querySelector('#body-outer'), function () {
+        new ResizeSensor(document.querySelector('#body-outer'), function() {
           window.parent.resizeIframe(window.frameElement.getAttribute('name'))
         })
       }
@@ -35,13 +35,9 @@ class Layout extends React.Component {
     Xt.ready(iframeLoaded)
   }
 
-  render () {
+  render() {
     const { children } = this.props
-    return (
-      <>
-        {children}
-      </>
-    )
+    return <>{children}</>
   }
 }
 
@@ -50,8 +46,8 @@ Layout.propTypes = {
   demo: PropTypes.shape({
     htmlSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     jsSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-    cssSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
-  }).isRequired
+    cssSource: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  }).isRequired,
 }
 
 export default Layout

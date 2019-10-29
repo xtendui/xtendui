@@ -9,7 +9,7 @@ import { TweenMax } from 'gsap/TweenMax'
 
 Xt.mount.push({
   matches: '#demo--toggle-js-0',
-  mount: function (object) {
+  mount: function(object) {
     // vars
 
     const time = Xt.vars.timeBig
@@ -24,12 +24,12 @@ Xt.mount.push({
       durationOn: time,
       durationOff: time,
       delayOn: delay,
-      delayOff: delay
+      delayOff: delay,
     })
 
     // activation
 
-    const eventOn = function () {
+    const eventOn = function() {
       const target = this
       // setup
       TweenMax.set(target, { opacity: 0 })
@@ -42,7 +42,7 @@ Xt.mount.push({
       TweenMax.to(target, time / 1000, { x: 0, opacity: 1, ease: easeIn })
     }
 
-    const eventOff = function () {
+    const eventOff = function() {
       const target = this
       // animation
       if (!target.classList.contains('inverse')) {
@@ -59,11 +59,11 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       self.destroy()
       self = null
     }
-  }
+  },
 })
 
 /**
@@ -72,7 +72,7 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '#demo--toggle-js-1',
-  mount: function (object) {
+  mount: function(object) {
     // vars
 
     const time = Xt.vars.timeBig
@@ -89,12 +89,12 @@ Xt.mount.push({
       durationOn: time,
       durationOff: time,
       delayOn: delay,
-      delayOff: delay
+      delayOff: delay,
     })
 
     // activation
 
-    const eventOn = function () {
+    const eventOn = function() {
       const target = this
       // setup
       TweenMax.set(target, { opacity: 0 })
@@ -107,7 +107,7 @@ Xt.mount.push({
       TweenMax.to(target, time / 1000, { x: 0, opacity: 1, ease: easeIn })
     }
 
-    const eventOff = function () {
+    const eventOff = function() {
       const target = this
       // animation
       if (!target.classList.contains('inverse')) {
@@ -124,7 +124,7 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       for (const tr of self.targets) {
         tr.removeEventListener('on.xt', eventOn)
         tr.removeEventListener('off.xt', eventOff)
@@ -132,5 +132,5 @@ Xt.mount.push({
       self.destroy()
       self = null
     }
-  }
+  },
 })

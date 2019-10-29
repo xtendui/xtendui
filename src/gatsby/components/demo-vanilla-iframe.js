@@ -8,7 +8,7 @@ import Layout from 'components/layout-demo'
 import { cssSource, jsSource } from 'assets/scripts/source'
 
 class DemoVanillaIframe extends React.Component {
-  render () {
+  render() {
     const { demo } = this.props
     const seo = {}
     seo.title = demo.name
@@ -29,17 +29,17 @@ class DemoVanillaIframe extends React.Component {
         `}
         render={data => (
           <Layout seo={seo} demo={demo}>
-            <SEO title={seo.title + ' — ' + seo.description}/>
+            <SEO title={seo.title + ' — ' + seo.description} />
             <div id="body-outer">
-              {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`).map((file, index) => (
-                demo.cssSource = cssSource(demo)
-              )) && <div/> // @FIX react render string
+              {data.allFile.files
+                .filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`)
+                .map((file, index) => (demo.cssSource = cssSource(demo))) && <div /> // @FIX react render string
               }
-              {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.js`).map((file, index) => (
-                demo.jsSource = jsSource(demo)
-              )) && <div/> // @FIX react render string
+              {data.allFile.files
+                .filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.js`)
+                .map((file, index) => (demo.jsSource = jsSource(demo))) && <div /> // @FIX react render string
               }
-              <div id="gatsby_body-inner" className="gatsby_demo_source--from" dangerouslySetInnerHTML={{ __html: demo.htmlSource }}/>
+              <div id="gatsby_body-inner" className="gatsby_demo_source--from" dangerouslySetInnerHTML={{ __html: demo.htmlSource }} />
             </div>
           </Layout>
         )}
@@ -53,6 +53,6 @@ export default DemoVanillaIframe
 DemoVanillaIframe.propTypes = {
   demo: PropTypes.shape({
     container: PropTypes.bool.isRequired,
-    full: PropTypes.bool.isRequired
-  }).isRequired
+    full: PropTypes.bool.isRequired,
+  }).isRequired,
 }

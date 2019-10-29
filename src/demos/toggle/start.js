@@ -6,10 +6,10 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '#demo--toggle-restart',
-  mount: function (object) {
+  mount: function(object) {
     // click
 
-    const eventClick = function () {
+    const eventClick = function() {
       // restart
       const toggles = document.querySelectorAll('[data-xt-toggle]')
       for (const toggle of toggles) {
@@ -22,8 +22,8 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       object.removeEventListener('click', eventClick)
     }
-  }
+  },
 })

@@ -8,13 +8,13 @@ class Toggle {
    * @param {Object} optionsCustom User options
    * @constructor
    */
-  constructor (object, optionsCustom = {}) {
+  constructor(object, optionsCustom = {}) {
     const self = this
     self.object = object
     self.optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
     self.componentNamespace = self.componentName.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '')
-    Xt.checkDefined(self, function () {
+    Xt.checkDefined(self, function() {
       self.init()
     })
   }
@@ -26,7 +26,7 @@ class Toggle {
   /**
    * init
    */
-  init (object = false, optionsCustom = false) {
+  init(object = false, optionsCustom = false) {
     const self = this
     self.object = object || self.object
     self.optionsCustom = optionsCustom || self.optionsCustom
@@ -56,7 +56,7 @@ class Toggle {
   /**
    * init vars
    */
-  initVars () {
+  initVars() {
     const self = this
     // options
     if (self.constructor.optionsDefaultSuper) {
@@ -77,7 +77,7 @@ class Toggle {
   /**
    * init setup
    */
-  initSetup () {
+  initSetup() {
     const self = this
     const options = self.options
     // setup (based on xtend mode)
@@ -104,7 +104,7 @@ class Toggle {
   /**
    * init logic
    */
-  initLogic () {
+  initLogic() {
     const self = this
     self.initScope()
     self.initAria()
@@ -114,7 +114,7 @@ class Toggle {
   /**
    * init elements, targets and currents
    */
-  initScope () {
+  initScope() {
     const self = this
     // elements
     self.initScopeElements()
@@ -125,7 +125,7 @@ class Toggle {
   /**
    * init elements
    */
-  initScopeElements () {
+  initScopeElements() {
     const self = this
     const options = self.options
     // elements
@@ -138,10 +138,11 @@ class Toggle {
     if (!self.elements.length) {
       self.elements = Xt.arrSingle(self.object)
       // @FIX set namespace for next frame
-      requestAnimationFrame(function () {
+      requestAnimationFrame(function() {
         let arr = Array.from(Xt.arrSingle(document.querySelectorAll('[data-xt-namespace="' + self.namespace + '"]')))
         arr = arr.filter(x => !x.closest('.xt-ignore')) // filter out ignore
-        if (arr.length) { // fix when using shadow dom doesn't query deep
+        if (arr.length) {
+          // fix when using shadow dom doesn't query deep
           self.elements = arr
           self.destroyElements.push(...self.elements)
         }
@@ -152,7 +153,7 @@ class Toggle {
   /**
    * init targets
    */
-  initScopeTargets () {
+  initScopeTargets() {
     const self = this
     const options = self.options
     // targets
@@ -169,7 +170,7 @@ class Toggle {
    * init start
    * @param {Boolean} saveCurrents
    */
-  initStart (saveCurrents = false) {
+  initStart(saveCurrents = false) {
     const self = this
     const options = self.options
     // initial
@@ -191,7 +192,7 @@ class Toggle {
           // initial
           currents++
           // reactivate
-          requestAnimationFrame(function () {
+          requestAnimationFrame(function() {
             // activate
             self.eventOn(element, true)
           })
@@ -208,7 +209,7 @@ class Toggle {
         // initial
         currents++
         // activate
-        requestAnimationFrame(function () {
+        requestAnimationFrame(function() {
           for (let i = start; i < todo; i++) {
             self.eventOn(self.elements[i], true)
           }
@@ -217,7 +218,7 @@ class Toggle {
       // initial
       self.setCurrents([])
       if (saveCurrents) {
-        requestAnimationFrame(function () {
+        requestAnimationFrame(function() {
           self.initialCurrents = self.getCurrents().slice(0)
         })
       }
@@ -231,7 +232,7 @@ class Toggle {
     // init events
     self.initEvents()
     // listener dispatch
-    requestAnimationFrame(function () {
+    requestAnimationFrame(function() {
       const detail = self.eDetailSet()
       self.object.dispatchEvent(new CustomEvent('init.xt', { detail: detail }))
     })
@@ -243,11 +244,11 @@ class Toggle {
    * @returns {Boolean} if element was activated
    * @param {Boolean} saveCurrents
    */
-  initReset (el, saveCurrents = false) {
+  initReset(el, saveCurrents = false) {
     const self = this
     let found = false
     // reset
-    const reset = function (elReset) {
+    const reset = function(elReset) {
       if (elReset.classList.contains(self.classes[0])) {
         elReset.classList.remove(...self.classes, ...self.classesIn, ...self.classesOut, ...self.classesInitial, ...self.classesInverse)
         Xt.dataStorage.remove(elReset, self.componentNamespace + 'Initial')
@@ -287,7 +288,7 @@ class Toggle {
   /**
    * init aria
    */
-  initAria () {
+  initAria() {
     const self = this
     const options = self.options
     // role
@@ -365,7 +366,7 @@ class Toggle {
   /**
    * init aria role
    */
-  initAriaRole () {
+  initAriaRole() {
     const self = this
     const options = self.options
     // aria
@@ -393,20 +394,18 @@ class Toggle {
   /**
    * init events
    */
-  initEvents () {
+  initEvents() {
     const self = this
     const options = self.options
     // status
-    const checkHandler = Xt.dataStorage.put(window, 'resize.check' + '.' + self.namespace,
-      self.eventStatusHandler.bind(self).bind(self))
+    const checkHandler = Xt.dataStorage.put(window, 'resize.check' + '.' + self.namespace, self.eventStatusHandler.bind(self).bind(self))
     addEventListener('resize', checkHandler)
     self.eventStatusHandler()
     // event
     for (const el of self.elements) {
       // event on
       if (options.on) {
-        const onHandler = Xt.dataStorage.put(el, options.on + '.' + self.namespace,
-          self.eventOnHandler.bind(self).bind(self, el))
+        const onHandler = Xt.dataStorage.put(el, options.on + '.' + self.namespace, self.eventOnHandler.bind(self).bind(self, el))
         const events = [...options.on.split(' ')]
         for (const event of events) {
           el.addEventListener(event, onHandler)
@@ -418,15 +417,17 @@ class Toggle {
         }
         // @FIX prevents click on touch until clicked two times
         if (events.includes('mouseenter') || events.includes('mousehover')) {
-          const touchLinksStartHandler = Xt.dataStorage.put(el, 'touchend.touchfix' + '.' + self.namespace,
-            self.eventTouchLinksStartHandler.bind(self).bind(self, el))
+          const touchLinksStartHandler = Xt.dataStorage.put(
+            el,
+            'touchend.touchfix' + '.' + self.namespace,
+            self.eventTouchLinksStartHandler.bind(self).bind(self, el)
+          )
           el.addEventListener('touchend', touchLinksStartHandler)
         }
       }
       // event off
       if (options.off) {
-        const offHandler = Xt.dataStorage.put(el, options.off + '.' + self.namespace,
-          self.eventOffHandler.bind(self).bind(self, el))
+        const offHandler = Xt.dataStorage.put(el, options.off + '.' + self.namespace, self.eventOffHandler.bind(self).bind(self, el))
         if (options.off) {
           const events = [...options.off.split(' ')]
           for (const event of events) {
@@ -454,12 +455,10 @@ class Toggle {
     // auto
     if (options.auto && options.auto.time) {
       // focus auto
-      const focusHandler = Xt.dataStorage.put(window, 'focus' + '.' + self.namespace,
-        self.eventAutoResumeHandler.bind(self))
+      const focusHandler = Xt.dataStorage.put(window, 'focus' + '.' + self.namespace, self.eventAutoResumeHandler.bind(self))
       addEventListener('focus', focusHandler)
       // blur auto
-      const blurHandler = Xt.dataStorage.put(window, 'blur' + '.' + self.namespace,
-        self.eventAutoPauseHandler.bind(self))
+      const blurHandler = Xt.dataStorage.put(window, 'blur' + '.' + self.namespace, self.eventAutoPauseHandler.bind(self))
       addEventListener('blur', blurHandler)
       // autoPause
       if (options.auto && options.auto.pause) {
@@ -468,15 +467,13 @@ class Toggle {
           self.destroyElements.push(...autoPauseEls)
           for (const el of autoPauseEls) {
             // pause
-            const autoPauseOnHandler = Xt.dataStorage.put(el, 'mouseenter focus' + '.' + self.namespace,
-              self.eventAutoPauseHandler.bind(self))
+            const autoPauseOnHandler = Xt.dataStorage.put(el, 'mouseenter focus' + '.' + self.namespace, self.eventAutoPauseHandler.bind(self))
             const eventsPause = ['mouseenter', 'focus']
             for (const event of eventsPause) {
               el.addEventListener(event, autoPauseOnHandler)
             }
             // resume
-            const autoResumeOnHandler = Xt.dataStorage.put(el, 'mouseleave blur' + '.' + self.namespace,
-              self.eventAutoResumeHandler.bind(self))
+            const autoResumeOnHandler = Xt.dataStorage.put(el, 'mouseleave blur' + '.' + self.namespace, self.eventAutoResumeHandler.bind(self))
             const eventsResume = ['mouseleave', 'blur']
             for (const event of eventsResume) {
               el.addEventListener(event, autoResumeOnHandler)
@@ -488,8 +485,7 @@ class Toggle {
     // jump
     if (options.jump) {
       for (const jump of self.targets) {
-        const jumpHandler = Xt.dataStorage.put(jump, 'click.jump' + '.' + self.namespace,
-          self.eventJumpHandler.bind(self).bind(self, jump))
+        const jumpHandler = Xt.dataStorage.put(jump, 'click.jump' + '.' + self.namespace, self.eventJumpHandler.bind(self).bind(self, jump))
         jump.addEventListener('click', jumpHandler, true) // @FIX useCapture or it gets the click from elements inside the target
         // jump
         if (!self.disabled) {
@@ -505,8 +501,7 @@ class Toggle {
       if (self.navs.length) {
         self.destroyElements.push(...self.navs)
         for (const nav of self.navs) {
-          const navHandler = Xt.dataStorage.put(nav, 'click.nav' + '.' + self.namespace,
-            self.eventNavHandler.bind(self).bind(self, nav))
+          const navHandler = Xt.dataStorage.put(nav, 'click.nav' + '.' + self.namespace, self.eventNavHandler.bind(self).bind(self, nav))
           nav.addEventListener('click', navHandler)
         }
       }
@@ -518,19 +513,24 @@ class Toggle {
       for (const keyboard of keyboards) {
         keyboard.setAttribute('tabindex', '0')
         // focus
-        const keyboardFocusHandler = Xt.dataStorage.put(keyboard, 'focus.keyboard' + '.' + self.namespace,
-          self.eventKeyboardFocusHandler.bind(self).bind(self, keyboard))
+        const keyboardFocusHandler = Xt.dataStorage.put(
+          keyboard,
+          'focus.keyboard' + '.' + self.namespace,
+          self.eventKeyboardFocusHandler.bind(self).bind(self, keyboard)
+        )
         keyboard.addEventListener('focus', keyboardFocusHandler)
         // blur
-        const keyboardBlurHandler = Xt.dataStorage.put(keyboard, 'blur.keyboard' + '.' + self.namespace,
-          self.eventKeyboardBlurHandler.bind(self).bind(self, keyboard))
+        const keyboardBlurHandler = Xt.dataStorage.put(
+          keyboard,
+          'blur.keyboard' + '.' + self.namespace,
+          self.eventKeyboardBlurHandler.bind(self).bind(self, keyboard)
+        )
         keyboard.addEventListener('blur', keyboardBlurHandler)
       }
     }
     // autoclose
     if (options.autoclose) {
-      const autocloseHandler = Xt.dataStorage.put(window, 'autoclose' + '.' + self.namespace,
-        self.eventautocloseHandler.bind(self))
+      const autocloseHandler = Xt.dataStorage.put(window, 'autoclose' + '.' + self.namespace, self.eventautocloseHandler.bind(self))
       addEventListener('autoclose.xt', autocloseHandler)
     }
     // images
@@ -541,8 +541,7 @@ class Toggle {
         if (!Xt.dataStorage.get(img, self.componentNamespace + 'ImageLoadedDone')) {
           Xt.dataStorage.set(img, self.componentNamespace + 'ImageLoadedDone', true)
           if (!img.complete) {
-            const imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
-              self.eventImgLoadedHandler.bind(self).bind(self, el, true))
+            const imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace, self.eventImgLoadedHandler.bind(self).bind(self, el, true))
             img.addEventListener('load', imgLoadHandler)
           } else {
             self.eventImgLoadedHandler(el, false)
@@ -557,8 +556,7 @@ class Toggle {
         if (!Xt.dataStorage.get(img, self.componentNamespace + 'ImageLoadedDone')) {
           Xt.dataStorage.set(img, self.componentNamespace + 'ImageLoadedDone', true)
           if (!img.complete) {
-            const imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace,
-              self.eventImgLoadedHandler.bind(self).bind(self, tr, true))
+            const imgLoadHandler = Xt.dataStorage.put(img, 'load' + '.' + self.namespace, self.eventImgLoadedHandler.bind(self).bind(self, tr, true))
             img.addEventListener('load', imgLoadHandler)
           } else {
             self.eventImgLoadedHandler(tr, false)
@@ -568,24 +566,24 @@ class Toggle {
     }
     // wheel
     if (options.wheel && options.wheel.selector) {
-      const wheel = self.detail.wheel = options.wheel.selector === 'object' ? self.object
-        : options.wheel.selector === 'scrollingElement' ? document.scrollingElement
-          : self.object.querySelector(options.wheel.selector)
+      const wheel = (self.detail.wheel =
+        options.wheel.selector === 'object'
+          ? self.object
+          : options.wheel.selector === 'scrollingElement'
+          ? document.scrollingElement
+          : self.object.querySelector(options.wheel.selector))
       self.destroyElements.push(wheel)
       const eWheel = 'onwheel' in wheel ? 'wheel' : wheel.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll'
       // wheel
-      const wheelHandler = Xt.dataStorage.put(wheel, eWheel + '.' + self.namespace,
-        self.eventWheelHandler.bind(self))
+      const wheelHandler = Xt.dataStorage.put(wheel, eWheel + '.' + self.namespace, self.eventWheelHandler.bind(self))
       wheel.addEventListener(eWheel, wheelHandler, Xt.passiveSupported ? { passive: false } : false)
       // stop
-      const wheelStopHandler = Xt.dataStorage.put(wheel, eWheel + '.stop' + '.' + self.namespace,
-        self.eventWheelStop.bind(self))
+      const wheelStopHandler = Xt.dataStorage.put(wheel, eWheel + '.stop' + '.' + self.namespace, self.eventWheelStop.bind(self))
       wheel.addEventListener('stop.wheel.xt', wheelStopHandler, Xt.passiveSupported ? { passive: false } : false)
       // block
       if (options.wheel.block) {
         const block = wheel.parentNode
-        const wheelBlockHandler = Xt.dataStorage.put(block, eWheel + '.block' + '.' + self.namespace,
-          self.eventWheelBlockHandler.bind(self))
+        const wheelBlockHandler = Xt.dataStorage.put(block, eWheel + '.block' + '.' + self.namespace, self.eventWheelBlockHandler.bind(self))
         block.addEventListener(eWheel, wheelBlockHandler, Xt.passiveSupported ? { passive: false } : false)
       }
     }
@@ -600,13 +598,17 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} element
    * @param {Event} e
    */
-  eventOnHandler (element, e) {
+  eventOnHandler(element, e) {
     const self = this
     const options = self.options
     // handler
-    if (element === e.target || // @FIX on.xt and off.xt event bubbles
-      element.contains(e.target)) { // @FIX on.xt and off.xt event bubbles (use only in library)
-      if (!e || !e.detail || !e.detail.skip) { // @FIX filter triggered from library (use only in library)
+    if (
+      element === e.target || // @FIX on.xt and off.xt event bubbles
+      element.contains(e.target)
+    ) {
+      // @FIX on.xt and off.xt event bubbles (use only in library)
+      if (!e || !e.detail || !e.detail.skip) {
+        // @FIX filter triggered from library (use only in library)
         // event block
         if (options.onBlock) {
           const now = new Date().getTime()
@@ -638,13 +640,17 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} element
    * @param {Event} e
    */
-  eventOffHandler (element, e) {
+  eventOffHandler(element, e) {
     const self = this
     const options = self.options
     // handler
-    if (element === e.target || // @FIX on.xt and off.xt event bubbles
-      element.contains(e.target)) { // @FIX on.xt and off.xt event bubbles (use only in library)
-      if (!e || !e.detail || !e.detail.skip) { // @FIX filter triggered from library (use only in library)
+    if (
+      element === e.target || // @FIX on.xt and off.xt event bubbles
+      element.contains(e.target)
+    ) {
+      // @FIX on.xt and off.xt event bubbles (use only in library)
+      if (!e || !e.detail || !e.detail.skip) {
+        // @FIX filter triggered from library (use only in library)
         // event block
         if (options.offBlock) {
           const now = new Date().getTime()
@@ -676,15 +682,13 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventTouchLinksStartHandler (el, e) {
+  eventTouchLinksStartHandler(el, e) {
     const self = this
     // event touchLinks
-    const touchLinksHandler = Xt.dataStorage.put(el, 'click.touchfix' + '.' + self.namespace,
-      self.eventTouchLinksHandler.bind(self).bind(self, el))
+    const touchLinksHandler = Xt.dataStorage.put(el, 'click.touchfix' + '.' + self.namespace, self.eventTouchLinksHandler.bind(self).bind(self, el))
     el.addEventListener('click', touchLinksHandler)
     // event touchReset
-    const touchResetHandler = Xt.dataStorage.put(el, 'off.touchfix' + '.' + self.namespace,
-      self.eventTouchLinksResetHandler.bind(self).bind(self, el))
+    const touchResetHandler = Xt.dataStorage.put(el, 'off.touchfix' + '.' + self.namespace, self.eventTouchLinksResetHandler.bind(self).bind(self, el))
     el.addEventListener('off.xt', touchResetHandler)
   }
 
@@ -692,7 +696,7 @@ class Toggle {
    * remove prevents click on touch until clicked two times
    * @param {Node|HTMLElement|EventTarget|Window} el
    */
-  eventTouchLinksEndHandler (el) {
+  eventTouchLinksEndHandler(el) {
     const self = this
     // event touchLinks
     const touchLinksHandler = Xt.dataStorage.get(el, 'click.touchfix' + '.' + self.namespace)
@@ -707,7 +711,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventTouchLinksHandler (el, e) {
+  eventTouchLinksHandler(el, e) {
     const self = this
     if (!Xt.dataStorage.get(el, self.componentNamespace + 'TouchLinksDone')) {
       Xt.dataStorage.set(el, self.componentNamespace + 'TouchLinksDone', true)
@@ -724,7 +728,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventTouchLinksResetHandler (el, e) {
+  eventTouchLinksResetHandler(el, e) {
     const self = this
     self.eventTouchLinksEndHandler(el)
     Xt.dataStorage.remove(el, self.componentNamespace + 'TouchLinksDone')
@@ -734,9 +738,10 @@ class Toggle {
    * auto pause handler
    * @param {Event} e
    */
-  eventAutoPauseHandler (e) {
+  eventAutoPauseHandler(e) {
     const self = this
-    if (!e || !e.detail || !e.detail.skip) { // @FIX filter triggered from library (use only in library)
+    if (!e || !e.detail || !e.detail.skip) {
+      // @FIX filter triggered from library (use only in library)
       if (!self.detail.autoPaused) {
         self.eventAutoPause()
         // paused
@@ -749,9 +754,10 @@ class Toggle {
    * auto resume handler
    * @param {Event} e
    */
-  eventAutoResumeHandler (e) {
+  eventAutoResumeHandler(e) {
     const self = this
-    if (!e || !e.detail || !e.detail.skip) { // @FIX filter triggered from library (use only in library)
+    if (!e || !e.detail || !e.detail.skip) {
+      // @FIX filter triggered from library (use only in library)
       if (self.detail.autoPaused) {
         self.eventAutoStart()
         // paused
@@ -765,7 +771,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventJumpHandler (el, e) {
+  eventJumpHandler(el, e) {
     const self = this
     // handler
     self.eventJump(el, e)
@@ -776,7 +782,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} nav
    * @param {Event} e
    */
-  eventNavHandler (nav, e) {
+  eventNavHandler(nav, e) {
     const self = this
     // handler
     self.eventNav(nav, e)
@@ -787,11 +793,10 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventKeyboardFocusHandler (el, e) {
+  eventKeyboardFocusHandler(el, e) {
     const self = this
     // handler
-    const keyboardHandler = Xt.dataStorage.put(document, 'keyup.keyboard' + '.' + self.namespace,
-      self.eventKeyboardHandler.bind(self))
+    const keyboardHandler = Xt.dataStorage.put(document, 'keyup.keyboard' + '.' + self.namespace, self.eventKeyboardHandler.bind(self))
     document.addEventListener('keyup', keyboardHandler)
   }
 
@@ -800,7 +805,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventKeyboardBlurHandler (el, e) {
+  eventKeyboardBlurHandler(el, e) {
     const self = this
     // handler
     const keyboardHandler = Xt.dataStorage.get(document, 'keyup.keyboard' + '.' + self.namespace)
@@ -811,7 +816,7 @@ class Toggle {
    * keyboard handler
    * @param {Event} e
    */
-  eventKeyboardHandler (e) {
+  eventKeyboardHandler(e) {
     const self = this
     const options = self.options
     // key
@@ -846,7 +851,7 @@ class Toggle {
    * autoclose handler
    * @param {Event} e
    */
-  eventautocloseHandler (e) {
+  eventautocloseHandler(e) {
     const self = this
     // restart
     const currents = self.getCurrents()
@@ -860,7 +865,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Boolean} deferred
    */
-  eventImgLoadedHandler (el, deferred = true) {
+  eventImgLoadedHandler(el, deferred = true) {
     const self = this
     const options = self.options
     // class
@@ -872,9 +877,13 @@ class Toggle {
     // imageLoadedInit
     if (options.imageLoadedInit && deferred) {
       clearTimeout(Xt.dataStorage.get(self.object, 'xt' + self.componentNamespace + 'imageLoadedInit' + 'Timeout'))
-      Xt.dataStorage.set(self.object, 'xt' + self.componentNamespace + 'imageLoadedInit' + 'Timeout', setTimeout(function () {
-        self.initLogic()
-      }, Xt.imageLoadedDelay))
+      Xt.dataStorage.set(
+        self.object,
+        'xt' + self.componentNamespace + 'imageLoadedInit' + 'Timeout',
+        setTimeout(function() {
+          self.initLogic()
+        }, Xt.imageLoadedDelay)
+      )
     }
   }
 
@@ -886,7 +895,7 @@ class Toggle {
    * get groups (one element per group)
    * @returns {Array} array of elements
    */
-  getGroups () {
+  getGroups() {
     const self = this
     // groups
     const groups = []
@@ -910,7 +919,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el Element that triggered interaction
    * @returns {Array} The first element is the one on getGroups()
    */
-  getElements (el) {
+  getElements(el) {
     const self = this
     // getElements
     if (!self.elements || !self.elements.length) {
@@ -930,7 +939,8 @@ class Toggle {
         final = Xt.arrSingle(groupElements)
       } else {
         // not group targets by index if not group
-        if (Array.from(self.elements).includes(el)) { // @FIX when argument is already element
+        if (Array.from(self.elements).includes(el)) {
+          // @FIX when argument is already element
           final = Xt.arrSingle(el)
         } else {
           const index = groupTargets.findIndex(x => x === el)
@@ -946,7 +956,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el Element that triggered interaction
    * @returns {Array}
    */
-  getTargets (el) {
+  getTargets(el) {
     const self = this
     // getTargets
     if (!self.targets || !self.targets.length) {
@@ -966,7 +976,8 @@ class Toggle {
         final = Xt.arrSingle(groupTargets)
       } else {
         // not group targets by index if not group
-        if (Array.from(self.targets).includes(el)) { // @FIX when argument is already target
+        if (Array.from(self.targets).includes(el)) {
+          // @FIX when argument is already target
           final = Xt.arrSingle(el)
         } else {
           const index = groupElements.findIndex(x => x === el)
@@ -981,7 +992,7 @@ class Toggle {
    * get currents based on namespace (so shared between Xt objects)
    * @returns {Array}
    */
-  getCurrents () {
+  getCurrents() {
     const self = this
     // getCurrents
     return Xt.currents[self.namespace]
@@ -991,7 +1002,7 @@ class Toggle {
    * set currents based on namespace (so shared between Xt objects)
    * @param {Array} arr
    */
-  setCurrents (arr) {
+  setCurrents(arr) {
     const self = this
     // setCurrents
     Xt.currents[self.namespace] = arr
@@ -1001,7 +1012,7 @@ class Toggle {
    * add current based on namespace (so shared between Xt objects)
    * @param {Node|HTMLElement|EventTarget|Window} element To be added
    */
-  addCurrent (element) {
+  addCurrent(element) {
     const self = this
     // addCurrent
     if (!self.hasCurrent(element)) {
@@ -1014,7 +1025,7 @@ class Toggle {
    * remove currents based on namespace (so shared between Xt objects)
    * @param {Node|HTMLElement|EventTarget|Window} element To be removed
    */
-  removeCurrent (element) {
+  removeCurrent(element) {
     const self = this
     // removeCurrent
     Xt.currents[self.namespace] = Xt.currents[self.namespace].filter(x => x !== element)
@@ -1024,7 +1035,7 @@ class Toggle {
    * if element or target is in current (so shared between Xt objects)
    * @param {Node|HTMLElement|EventTarget|Window} element To be checked
    */
-  hasCurrent (element) {
+  hasCurrent(element) {
     const self = this
     // hasCurrent
     const groupElements = self.getElements(element)
@@ -1036,7 +1047,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} element To be checked
    * @returns {Boolean} If elements can activate
    */
-  checkOn (element) {
+  checkOn(element) {
     const self = this
     // check
     return !self.hasCurrent(element)
@@ -1047,7 +1058,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} element To be checked
    * @returns {Boolean} If elements can deactivate
    */
-  checkOff (element) {
+  checkOff(element) {
     const self = this
     const options = self.options
     // skip if min >= currents
@@ -1063,7 +1074,7 @@ class Toggle {
    * @param {NodeList|Array} elements To be checked
    * @returns {Boolean} If elements are animating
    */
-  checkAnim (elements) {
+  checkAnim(elements) {
     const self = this
     // check
     elements = elements.filter(x => x.classList.contains(self.classesIn[0]) || x.classList.contains(self.classesOut[0]))
@@ -1074,7 +1085,7 @@ class Toggle {
    * set index and direction
    * @param {Node|HTMLElement|EventTarget|Window} element Current element
    */
-  setIndexAndDirection (element) {
+  setIndexAndDirection(element) {
     const self = this
     // setIndexAndDirection
     let index = 0
@@ -1093,7 +1104,7 @@ class Toggle {
    * set e detail
    * @param {Event} e
    */
-  eDetailSet (e = null) {
+  eDetailSet(e = null) {
     // e.detail
     const detail = e && e.detail && typeof e.detail === 'object' ? e.detail : {}
     // detail
@@ -1107,7 +1118,7 @@ class Toggle {
    * activate element
    * @param {Node|HTMLElement|EventTarget|Window} el Elements to be activated
    */
-  activate (el) {
+  activate(el) {
     const self = this
     // activate
     el.classList.add(...self.classes)
@@ -1127,7 +1138,7 @@ class Toggle {
    * deactivate element
    * @param {Node|HTMLElement|EventTarget|Window} el Elements to be deactivated
    */
-  deactivate (el) {
+  deactivate(el) {
     const self = this
     // activate
     el.classList.remove(...self.classes)
@@ -1154,7 +1165,7 @@ class Toggle {
    * @param {Event} e
    * @returns {Boolean} If activated
    */
-  eventOn (element, force = false, e = null) {
+  eventOn(element, force = false, e = null) {
     const self = this
     const options = self.options
     // disabled
@@ -1162,8 +1173,8 @@ class Toggle {
       return false
     }
     // toggle
-    if (force || (self.checkOn(element) &&
-      (!e || !e.type || e.type !== 'off.xt'))) { // @FIX off.xt toggle
+    if (force || (self.checkOn(element) && (!e || !e.type || e.type !== 'off.xt'))) {
+      // @FIX off.xt toggle
       // auto
       if (options.auto && options.auto.time) {
         self.eventAutoStop()
@@ -1199,7 +1210,8 @@ class Toggle {
       }
       // activated
       return true
-    } else if ((!e || !e.type || e.type !== 'on.xt')) { // @FIX off.xt toggle
+    } else if (!e || !e.type || e.type !== 'on.xt') {
+      // @FIX off.xt toggle
       // off
       self.eventOff(element, false, e)
     }
@@ -1214,7 +1226,7 @@ class Toggle {
    * @param {Event} e
    * @returns {Boolean} If deactivated
    */
-  eventOff (element, force = false, e = null) {
+  eventOff(element, force = false, e = null) {
     const self = this
     const options = self.options
     // disabled
@@ -1229,7 +1241,8 @@ class Toggle {
       const targets = self.getTargets(element)
       const elementsInner = Xt.queryAll(element, options.elementsInner)
       const targetsInner = Xt.queryAll(targets, options.targetsInner)
-      if (element.blur) { // @FIX sometimes blur is undefined
+      if (element.blur) {
+        // @FIX sometimes blur is undefined
         element.blur() // @FIX :focus styles
       }
       // [disabled]
@@ -1239,7 +1252,7 @@ class Toggle {
         }
       }
       // currentIndex after a frame for sequential events
-      requestAnimationFrame(function () {
+      requestAnimationFrame(function() {
         if (self.getCurrents().length === 0) {
           self.currentIndex = null
         }
@@ -1283,31 +1296,31 @@ class Toggle {
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} elementsInner
    * @param {NodeList|Array|Node|HTMLElement|EventTarget|Window} targetsInner
    */
-  eventQueue (actionCurrent, detail, groupElements, targets, elementsInner, targetsInner) {
+  eventQueue(actionCurrent, detail, groupElements, targets, elementsInner, targetsInner) {
     const self = this
     const options = self.options
     // populate
     const obj = {}
     obj.elements = {
       detail: detail,
-      queueEls: groupElements
+      queueEls: groupElements,
     }
     if (targets.length) {
       obj.targets = {
         detail: detail,
-        queueEls: targets
+        queueEls: targets,
       }
     }
     if (elementsInner.length) {
       obj.elementsInner = {
         detail: detail,
-        queueEls: elementsInner
+        queueEls: elementsInner,
       }
     }
     if (targetsInner.length) {
       obj.targetsInner = {
         detail: detail,
-        queueEls: targetsInner
+        queueEls: targetsInner,
       }
     }
     // put in queue
@@ -1321,7 +1334,7 @@ class Toggle {
   /**
    * auto start
    */
-  eventAutoStart () {
+  eventAutoStart() {
     const self = this
     const options = self.options
     // disabled
@@ -1336,22 +1349,32 @@ class Toggle {
       clearInterval(Xt.dataStorage.get(self.object, self.componentNamespace + 'AutoStartInterval'))
       // auto
       const time = options.auto.time
-      if (self.currentIndex !== null && // not when nothing activated
-        (!self.initial || options.auto.initial)) { // not when initial
-        Xt.dataStorage.set(self.object, self.componentNamespace + 'AutoStartInterval', setInterval(function () { // interval because can become :visible
-          if (Xt.visible(self.object)) {
-            // auto
-            if (getComputedStyle(self.object).pointerEvents !== 'none') { // not when disabled
-              if (options.auto.inverse) {
-                self.goToPrev(options.auto.step, true)
-              } else {
-                self.goToNext(options.auto.step, true)
+      if (
+        self.currentIndex !== null && // not when nothing activated
+        (!self.initial || options.auto.initial)
+      ) {
+        // not when initial
+        Xt.dataStorage.set(
+          self.object,
+          self.componentNamespace + 'AutoStartInterval',
+          setInterval(function() {
+            // interval because can become :visible
+            if (Xt.visible(self.object)) {
+              // auto
+              if (getComputedStyle(self.object).pointerEvents !== 'none') {
+                // not when disabled
+                if (options.auto.inverse) {
+                  self.goToPrev(options.auto.step, true)
+                } else {
+                  self.goToNext(options.auto.step, true)
+                }
               }
             }
-          }
-        }, time))
+          }, time)
+        )
         // listener dispatch
-        requestAnimationFrame( function () { // @FIX event called before removing classes
+        requestAnimationFrame(function() {
+          // @FIX event called before removing classes
           const detail = self.eDetailSet()
           self.object.dispatchEvent(new CustomEvent('start.xt.auto', { detail: detail }))
         })
@@ -1362,7 +1385,7 @@ class Toggle {
   /**
    * auto stop
    */
-  eventAutoStop () {
+  eventAutoStop() {
     const self = this
     const options = self.options
     // stop
@@ -1378,7 +1401,7 @@ class Toggle {
   /**
    * auto stop
    */
-  eventAutoPause () {
+  eventAutoPause() {
     const self = this
     const options = self.options
     // disabled
@@ -1400,7 +1423,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el
    * @param {Event} e
    */
-  eventJump (el, e) {
+  eventJump(el, e) {
     const self = this
     // disabled
     if (self.disabled && !self.initial) {
@@ -1422,7 +1445,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} nav
    * @param {Event} e
    */
-  eventNav (nav, e) {
+  eventNav(nav, e) {
     const self = this
     // disabled
     if (self.disabled && !self.initial) {
@@ -1448,7 +1471,7 @@ class Toggle {
    * @param {Number} index Queue index
    * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueStart (actionCurrent, actionOther, type, index, queueInitial = false) {
+  queueStart(actionCurrent, actionOther, type, index, queueInitial = false) {
     const self = this
     const options = self.options
     // queue start
@@ -1472,7 +1495,7 @@ class Toggle {
    * @param {String} actionOther Other action
    * @param {Object} obj Queue object to end
    */
-  queueStop (actionCurrent, actionOther, obj) {
+  queueStop(actionCurrent, actionOther, obj) {
     const self = this
     // stop type if done
     for (const type in obj) {
@@ -1493,14 +1516,12 @@ class Toggle {
   /**
    * queue stop all
    */
-  queueStopAll () {
+  queueStopAll() {
     const self = this
     // stop all obj in queues
-    if (self.detail) { // @FIX not already initialized
-      const actions = [
-        { current: 'On', other: 'Off' },
-        { current: 'Off', other: 'On' }
-      ]
+    if (self.detail) {
+      // @FIX not already initialized
+      const actions = [{ current: 'On', other: 'Off' }, { current: 'Off', other: 'On' }]
       for (const action of actions) {
         const queue = self.detail['queue' + action.current]
         for (const obj in queue) {
@@ -1518,7 +1539,7 @@ class Toggle {
    * @param {String} type Type of elements
    * @param {Boolean} queueInitial If it's the initial queue
    */
-  queueDelay (actionCurrent, actionOther, obj, type, queueInitial) {
+  queueDelay(actionCurrent, actionOther, obj, type, queueInitial) {
     const self = this
     const options = self.options
     // delay
@@ -1541,15 +1562,20 @@ class Toggle {
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'DelayTimeout'))
       clearTimeout(Xt.dataStorage.get(el, self.componentNamespace + 'AnimTimeout'))
       if (delay) {
-        Xt.dataStorage.set(el, self.componentNamespace + 'DelayTimeout', setTimeout(function () {
-          self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
-        }, delay))
+        Xt.dataStorage.set(
+          el,
+          self.componentNamespace + 'DelayTimeout',
+          setTimeout(function() {
+            self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
+          }, delay)
+        )
       } else {
         self.queueDelayDone(actionCurrent, actionOther, obj, el, type)
       }
       // queue done
       if (obj[type].instant) {
-        if (el === els[els.length - 1]) { // only if last element
+        if (el === els[els.length - 1]) {
+          // only if last element
           self.queueDone(actionCurrent, actionOther, obj, type)
         }
       }
@@ -1565,20 +1591,24 @@ class Toggle {
    * @param {String} type Type of elements
    * @param {Boolean} skipQueue If skip queue
    */
-  queueDelayDone (actionCurrent, actionOther, obj, el, type, skipQueue = false) {
+  queueDelayDone(actionCurrent, actionOther, obj, el, type, skipQueue = false) {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
       // activate
       self.activate(el)
       // special
-      const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
-      const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
+      const before = getComputedStyle(el, ':before')
+        .getPropertyValue('content')
+        .replace(/['"]+/g, '')
+      const after = getComputedStyle(el, ':after')
+        .getPropertyValue('content')
+        .replace(/['"]+/g, '')
       self.specialCenter(el, before, after)
       self.specialMiddle(el, before, after)
       self.specialCollapse(actionCurrent, el, before, after)
-      if (type === 'targets' ||
-        (!self.targets.length && type === 'elements')) { // @FIX when standalone
+      if (type === 'targets' || (!self.targets.length && type === 'elements')) {
+        // @FIX when standalone
         // appendTo
         if (options.appendTo) {
           const appendToTarget = document.querySelector(options.appendTo)
@@ -1624,8 +1654,12 @@ class Toggle {
       // deactivate
       self.deactivate(el)
       // special
-      const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
-      const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
+      const before = getComputedStyle(el, ':before')
+        .getPropertyValue('content')
+        .replace(/['"]+/g, '')
+      const after = getComputedStyle(el, ':after')
+        .getPropertyValue('content')
+        .replace(/['"]+/g, '')
       self.specialCollapse(actionCurrent, el, before, after)
       if (type === 'targets' || type === 'targetsInner') {
         self.specialClose(actionCurrent, el)
@@ -1639,7 +1673,8 @@ class Toggle {
       // queue done
       if (obj[type].instantType) {
         const els = obj[type].queueEls
-        if (el === els[els.length - 1]) { // only if last element
+        if (el === els[els.length - 1]) {
+          // only if last element
           self.queueDone(actionCurrent, actionOther, obj, type)
         }
       }
@@ -1654,7 +1689,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el Element to be animated
    * @param {String} type Type of element
    */
-  queueAnim (actionCurrent, actionOther, obj, el, type) {
+  queueAnim(actionCurrent, actionOther, obj, el, type) {
     const self = this
     const options = self.options
     // anim
@@ -1663,9 +1698,13 @@ class Toggle {
     if (!duration) {
       self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
     } else {
-      Xt.dataStorage.set(el, self.componentNamespace + 'AnimTimeout', setTimeout(function () {
-        self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
-      }, duration))
+      Xt.dataStorage.set(
+        el,
+        self.componentNamespace + 'AnimTimeout',
+        setTimeout(function() {
+          self.queueAnimDone(actionCurrent, actionOther, obj, el, type)
+        }, duration)
+      )
     }
   }
 
@@ -1678,15 +1717,19 @@ class Toggle {
    * @param {String} type Type of element
    * @param {Boolean} skipQueue If skip queue
    */
-  queueAnimDone (actionCurrent, actionOther, obj, el, type, skipQueue = false) {
+  queueAnimDone(actionCurrent, actionOther, obj, el, type, skipQueue = false) {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
       // reset
       el.classList.remove(...self.classesIn)
       // special
-      const before = getComputedStyle(el, ':before').getPropertyValue('content').replace(/['"]+/g, '')
-      const after = getComputedStyle(el, ':after').getPropertyValue('content').replace(/['"]+/g, '')
+      const before = getComputedStyle(el, ':before')
+        .getPropertyValue('content')
+        .replace(/['"]+/g, '')
+      const after = getComputedStyle(el, ':after')
+        .getPropertyValue('content')
+        .replace(/['"]+/g, '')
       self.specialCollapse('Reset', el, before, after)
       // listener dispatch
       el.dispatchEvent(new CustomEvent('ondone.xt', { bubbles: true, detail: obj[type].detail }))
@@ -1694,8 +1737,8 @@ class Toggle {
       // reset
       el.classList.remove(...self.classesOut)
       // special
-      if (type === 'targets' ||
-        (!self.targets.length && type === 'elements')) { // @FIX when standalone
+      if (type === 'targets' || (!self.targets.length && type === 'elements')) {
+        // @FIX when standalone
         // appendTo
         if (options.appendTo) {
           const appendOrigin = document.querySelector('[data-xt-origin="' + self.namespace + '"]')
@@ -1740,7 +1783,8 @@ class Toggle {
       // queue done
       if (!obj[type].instant && !obj[type].instantType) {
         const els = obj[type].queueEls
-        if (el === els[els.length - 1]) { // only if last element
+        if (el === els[els.length - 1]) {
+          // only if last element
           self.queueDone(actionCurrent, actionOther, obj, type)
         }
       }
@@ -1755,7 +1799,7 @@ class Toggle {
    * @param {String} type Type of element
    */
 
-  queueDone (actionCurrent, actionOther, obj, type) {
+  queueDone(actionCurrent, actionOther, obj, type) {
     const self = this
     // check
     if (obj[type]) {
@@ -1790,7 +1834,7 @@ class Toggle {
    * @param {String} actionCurrent Current action
    * @param {Object} obj Queue object
    */
-  queueProgress (actionCurrent, obj) {
+  queueProgress(actionCurrent, obj) {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
@@ -1818,7 +1862,7 @@ class Toggle {
    * @param {String} actionCurrent Current action
    * @param {Object} obj Queue object
    */
-  queueComplete (actionCurrent, obj) {
+  queueComplete(actionCurrent, obj) {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
@@ -1843,7 +1887,7 @@ class Toggle {
    * wheel handler
    * @param {Event} e
    */
-  eventWheelHandler (e) {
+  eventWheelHandler(e) {
     const self = this
     self.eventWheelSmooth(e)
   }
@@ -1852,7 +1896,7 @@ class Toggle {
    * wheel block handler
    * @param {Event} e
    */
-  eventWheelBlockHandler (e) {
+  eventWheelBlockHandler(e) {
     const self = this
     // disabled
     if (self.disabled && !self.initial) {
@@ -1873,7 +1917,7 @@ class Toggle {
    * @param {Event} e
    */
 
-  eventWheelSmooth (e) {
+  eventWheelSmooth(e) {
     const self = this
     const options = self.options
     let el = self.detail.wheel
@@ -1895,13 +1939,20 @@ class Toggle {
           if (composed === document.body) {
             composed = document.scrollingElement // @FIX use scrollingElement when body
           }
-          if (composed === document.scrollingElement || // always when scrollingElement
+          if (
+            composed === document.scrollingElement || // always when scrollingElement
             overflowY === 'scroll' || // always when scroll
-            (overflowY === 'auto' && composed.scrollHeight > composed.clientHeight)) { // only when scrollable
-            if (overflowY === 'scroll' && window.self === window.top) { // always when scroll and not iframe
+            (overflowY === 'auto' && composed.scrollHeight > composed.clientHeight)
+          ) {
+            // only when scrollable
+            if (overflowY === 'scroll' && window.self === window.top) {
+              // always when scroll and not iframe
               elFinal = composed
-            } else if ((delta < 0 || composed.scrollTop > 0) && // limit top
-              (delta > 0 || composed.scrollTop < composed.scrollHeight - composed.clientHeight)) { // limit bottom
+            } else if (
+              (delta < 0 || composed.scrollTop > 0) && // limit top
+              (delta > 0 || composed.scrollTop < composed.scrollHeight - composed.clientHeight)
+            ) {
+              // limit bottom
               elFinal = composed
             } else if (window.self !== window.top) {
               elFinal = window.top.document.scrollingElement
@@ -2002,7 +2053,8 @@ class Toggle {
       self.detail.wheelEnd = Math.max(min, Math.min(self.detail.wheelEnd, max))
     }
     // propagate if already at min or max
-    if (self.detail.wheelMin && self.detail.wheelMax) { // only when setting wheelMin and wheelMax
+    if (self.detail.wheelMin && self.detail.wheelMax) {
+      // only when setting wheelMin and wheelMax
       if (delta < 0) {
         if (self.detail.wheelCurrent >= max) {
           return
@@ -2034,7 +2086,7 @@ class Toggle {
    * @param {Number} max Maximum value
    */
 
-  eventFrictionSmooth (el, min, max) {
+  eventFrictionSmooth(el, min, max) {
     const self = this
     const options = self.options
     // disabled
@@ -2061,19 +2113,27 @@ class Toggle {
       }
     } else {
       if (options.wheel.horizontal) {
-        el.style.transform = 'translateX(' + (-self.detail.wheelCurrent) + 'px)'
+        el.style.transform = 'translateX(' + -self.detail.wheelCurrent + 'px)'
       } else {
-        el.style.transform = 'translateY(' + (-self.detail.wheelCurrent) + 'px)'
+        el.style.transform = 'translateY(' + -self.detail.wheelCurrent + 'px)'
       }
     }
     // loop
-    if (self.detail.wheelCurrent > min && self.detail.wheelCurrent < max && // limit
-      deltaAbs >= options.wheel.frictionLimit) { // frictionLimit
+    if (
+      self.detail.wheelCurrent > min &&
+      self.detail.wheelCurrent < max && // limit
+      deltaAbs >= options.wheel.frictionLimit
+    ) {
+      // frictionLimit
       // friction
       cancelAnimationFrame(Xt.dataStorage.get(self.detail.wheel, self.componentNamespace + 'WheelSmoothFrame'))
-      Xt.dataStorage.set(self.detail.wheel, self.componentNamespace + 'WheelSmoothFrame', requestAnimationFrame(function () {
-        self.eventFrictionSmooth(el, min, max)
-      }))
+      Xt.dataStorage.set(
+        self.detail.wheel,
+        self.componentNamespace + 'WheelSmoothFrame',
+        requestAnimationFrame(function() {
+          self.eventFrictionSmooth(el, min, max)
+        })
+      )
       // dispatch
       const detail = self.eDetailSet()
       detail.wheelX = -self.detail.wheelCurrent
@@ -2094,7 +2154,7 @@ class Toggle {
    * event wheel stop for Xt
    */
 
-  eventWheelStop () {
+  eventWheelStop() {
     const self = this
     const el = self.detail.wheel
     cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'WheelSmoothFrame'))
@@ -2111,17 +2171,20 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} el Element
    * @param {Node|HTMLElement|EventTarget|Window} single Element to toggle
    */
-  specialClose (actionCurrent, el, single = null) {
+  specialClose(actionCurrent, el, single = null) {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
       // closeInside
       if (options.closeInside) {
         const closeElements = el.querySelectorAll(options.closeInside)
-        requestAnimationFrame(function () {
+        requestAnimationFrame(function() {
           for (const closeElement of closeElements) {
-            const specialCloseInsideHandler = Xt.dataStorage.put(closeElement, 'click.close' + '.' + self.namespace,
-              self.eventSpecialCloseInsideHandler.bind(self).bind(self, closeElement, single))
+            const specialCloseInsideHandler = Xt.dataStorage.put(
+              closeElement,
+              'click.close' + '.' + self.namespace,
+              self.eventSpecialCloseInsideHandler.bind(self).bind(self, closeElement, single)
+            )
             closeElement.addEventListener('click', specialCloseInsideHandler)
           }
         })
@@ -2129,10 +2192,13 @@ class Toggle {
       // closeOutside
       if (options.closeOutside) {
         const closeElements = document.querySelectorAll(options.closeOutside)
-        requestAnimationFrame(function () {
+        requestAnimationFrame(function() {
           for (const closeElement of closeElements) {
-            const specialCloseOutsideHandler = Xt.dataStorage.put(closeElement, 'click.close' + '.' + self.namespace,
-              self.eventSpecialCloseOutsideHandler.bind(self).bind(self, el, single))
+            const specialCloseOutsideHandler = Xt.dataStorage.put(
+              closeElement,
+              'click.close' + '.' + self.namespace,
+              self.eventSpecialCloseOutsideHandler.bind(self).bind(self, el, single)
+            )
             closeElement.addEventListener('click', specialCloseOutsideHandler)
           }
         })
@@ -2163,7 +2229,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} single
    * @param {Event} e
    */
-  eventSpecialCloseInsideHandler (checkEl, single, e) {
+  eventSpecialCloseInsideHandler(checkEl, single, e) {
     const self = this
     // prevent closing when nested and moved (ex: overlay)
     if (!Xt.contains(self.targets, checkEl)) {
@@ -2181,7 +2247,7 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} single
    * @param {Event} e
    */
-  eventSpecialCloseOutsideHandler (checkEl, single, e) {
+  eventSpecialCloseOutsideHandler(checkEl, single, e) {
     const self = this
     // handler
     if (!Xt.contains(Xt.arrSingle(checkEl), e.target)) {
@@ -2196,61 +2262,95 @@ class Toggle {
    * @param {String} before Before content
    * @param {String} after After content
    */
-  specialCollapse (actionCurrent, el, before, after) {
+  specialCollapse(actionCurrent, el, before, after) {
     if (el instanceof HTMLElement) {
       if (actionCurrent === 'On') {
         if (before === 'xt-collapse-height') {
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
-          Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-            el.classList.add('xt-hide', 'trans-anim-none')
-            el.style.height = 'auto'
-            const h = el.clientHeight + 'px'
-            el.style.height = '0'
-            cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
-            Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-              el.classList.remove('xt-hide', 'trans-anim-none')
-              el.style.height = h
-            }))
-          }))
+          Xt.dataStorage.set(
+            el,
+            self.componentNamespace + 'CollapseFrame',
+            requestAnimationFrame(function() {
+              el.classList.add('xt-hide', 'trans-anim-none')
+              el.style.height = 'auto'
+              const h = el.clientHeight + 'px'
+              el.style.height = '0'
+              cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
+              Xt.dataStorage.set(
+                el,
+                self.componentNamespace + 'CollapseFrame',
+                requestAnimationFrame(function() {
+                  el.classList.remove('xt-hide', 'trans-anim-none')
+                  el.style.height = h
+                })
+              )
+            })
+          )
         }
         if (after === 'xt-collapse-width') {
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
-          Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-            el.classList.add('xt-hide', 'trans-anim-none')
-            el.style.width = 'auto'
-            const w = el.clientHeight + 'px'
-            el.style.width = '0'
-            cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
-            Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-              el.classList.remove('xt-hide', 'trans-anim-none')
-              el.style.width = w
-            })).toString()
-          }))
+          Xt.dataStorage.set(
+            el,
+            self.componentNamespace + 'CollapseFrame',
+            requestAnimationFrame(function() {
+              el.classList.add('xt-hide', 'trans-anim-none')
+              el.style.width = 'auto'
+              const w = el.clientHeight + 'px'
+              el.style.width = '0'
+              cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
+              Xt.dataStorage
+                .set(
+                  el,
+                  self.componentNamespace + 'CollapseFrame',
+                  requestAnimationFrame(function() {
+                    el.classList.remove('xt-hide', 'trans-anim-none')
+                    el.style.width = w
+                  })
+                )
+                .toString()
+            })
+          )
         }
       } else if (actionCurrent === 'Off') {
         if (before === 'xt-collapse-height') {
           const h = el.offsetHeight + 'px'
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
-          Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-            el.classList.remove('xt-hide', 'trans-anim-none')
-            el.style.height = h
-            cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
-            Xt.dataStorage.set(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-              el.style.height = '0'
-            }))
-          }))
+          Xt.dataStorage.set(
+            el,
+            self.componentNamespace + 'CollapseFrame',
+            requestAnimationFrame(function() {
+              el.classList.remove('xt-hide', 'trans-anim-none')
+              el.style.height = h
+              cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
+              Xt.dataStorage.set(
+                el,
+                self.componentNamespace + 'CollapseFrame',
+                requestAnimationFrame(function() {
+                  el.style.height = '0'
+                })
+              )
+            })
+          )
         }
         if (after === 'xt-collapse-width') {
           const w = el.offsetWidth + 'px'
           cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
-          Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-            el.classList.remove('xt-hide', 'trans-anim-none')
-            el.style.width = w
-            cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
-            Xt.dataStorage.put(el, self.componentNamespace + 'CollapseFrame', requestAnimationFrame(function () {
-              el.style.width = '0'
-            }))
-          }))
+          Xt.dataStorage.put(
+            el,
+            self.componentNamespace + 'CollapseFrame',
+            requestAnimationFrame(function() {
+              el.classList.remove('xt-hide', 'trans-anim-none')
+              el.style.width = w
+              cancelAnimationFrame(Xt.dataStorage.get(el, self.componentNamespace + 'CollapseFrame'))
+              Xt.dataStorage.put(
+                el,
+                self.componentNamespace + 'CollapseFrame',
+                requestAnimationFrame(function() {
+                  el.style.width = '0'
+                })
+              )
+            })
+          )
         }
       } else if (actionCurrent === 'Reset') {
         if (before === 'xt-collapse-height') {
@@ -2267,7 +2367,7 @@ class Toggle {
    * scrollbar activation
    * @param {String} actionCurrent Current action
    */
-  specialScrollbar (actionCurrent) {
+  specialScrollbar(actionCurrent) {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
@@ -2309,7 +2409,7 @@ class Toggle {
    * add or remove html class
    * @param {String} actionCurrent Current action
    */
-  specialClassHtml (actionCurrent) {
+  specialClassHtml(actionCurrent) {
     const self = this
     const options = self.options
     if (actionCurrent === 'On') {
@@ -2332,7 +2432,7 @@ class Toggle {
    * @param {String} actionCurrent Current action
    * @param {Object} obj Queue object
    */
-  specialBackdrop (actionCurrent, obj) {
+  specialBackdrop(actionCurrent, obj) {
     const self = this
     const options = self.options
     // backdrop
@@ -2346,10 +2446,14 @@ class Toggle {
             element.append(backdrop)
             // @FIX pass wheel event or when you mousewheel over .backdrop it doesn't scroll
             const eWheel = 'onwheel' in backdrop ? 'wheel' : backdrop.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll'
-            backdrop.addEventListener(eWheel, function (e) {
-              const delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY
-              element.scrollTop -= delta
-            }, Xt.passiveSupported ? { passive: false } : false)
+            backdrop.addEventListener(
+              eWheel,
+              function(e) {
+                const delta = -e.deltaY || -e.detail || e.wheelDelta || e.wheelDeltaY
+                element.scrollTop -= delta
+              },
+              Xt.passiveSupported ? { passive: false } : false
+            )
           }
         } else if (actionCurrent === 'Off') {
           const backdrops = element.querySelectorAll('.backdrop')
@@ -2369,13 +2473,13 @@ class Toggle {
    * @param {String} before Before content
    * @param {String} after After content
    */
-  specialCenter (el, before, after) {
+  specialCenter(el, before, after) {
     const self = this
     // specialCenter
     if (before === 'xt-drop--center') {
       const add = self.object.clientWidth
       const remove = el.clientWidth
-      el.style.left = ((add - remove) / 2) + 'px'
+      el.style.left = (add - remove) / 2 + 'px'
     }
   }
 
@@ -2385,13 +2489,13 @@ class Toggle {
    * @param {String} before Before content
    * @param {String} after After content
    */
-  specialMiddle (el, before, after) {
+  specialMiddle(el, before, after) {
     const self = this
     // specialMiddle
     if (after === 'xt-drop--middle') {
       const add = self.object.clientHeight
       const remove = el.clientHeight
-      el.style.top = ((add - remove) / 2) + 'px'
+      el.style.top = (add - remove) / 2 + 'px'
     }
   }
 
@@ -2405,7 +2509,7 @@ class Toggle {
    * @param {Boolean} force
    * @param {Boolean} loop
    */
-  goToNext (amount = 1, force = false, loop = null) {
+  goToNext(amount = 1, force = false, loop = null) {
     const self = this
     // goToIndex
     let index = 0
@@ -2422,7 +2526,7 @@ class Toggle {
    * @param {Boolean} force
    * @param {Boolean} loop
    */
-  goToPrev (amount = 1, force = false, loop = null) {
+  goToPrev(amount = 1, force = false, loop = null) {
     const self = this
     // goToIndex
     let index = self.getGroups().length - 1
@@ -2439,7 +2543,7 @@ class Toggle {
    * @param {Boolean} force
    * @param {Boolean} loop
    */
-  goToIndex (index, force = false, loop = null) {
+  goToIndex(index, force = false, loop = null) {
     const self = this
     const options = self.options
     // check
@@ -2472,22 +2576,31 @@ class Toggle {
    * status handler
    * @param {Event} e
    */
-  eventStatusHandler (e = null) {
+  eventStatusHandler(e = null) {
     const self = this
     // handler
-    Xt.eventDelay(e, self.object, function () {
-      self.eventStatus()
-    }, self.componentNamespace + 'Resize')
+    Xt.eventDelay(
+      e,
+      self.object,
+      function() {
+        self.eventStatus()
+      },
+      self.componentNamespace + 'Resize'
+    )
   }
 
   /**
    * status
    */
-  eventStatus () {
+  eventStatus() {
     const self = this
     // check disabled
-    if (self.object instanceof HTMLElement && // @FIX not on window
-      getComputedStyle(self.object, ':after').getPropertyValue('content').replace(/['"]+/g, '') === 'xt-disable') {
+    if (
+      self.object instanceof HTMLElement && // @FIX not on window
+      getComputedStyle(self.object, ':after')
+        .getPropertyValue('content')
+        .replace(/['"]+/g, '') === 'xt-disable'
+    ) {
       self.disable()
     } else if (self.disabled) {
       self.enable()
@@ -2497,7 +2610,7 @@ class Toggle {
   /**
    * disable
    */
-  disable () {
+  disable() {
     const self = this
     // disable
     self.disabled = true
@@ -2507,7 +2620,7 @@ class Toggle {
   /**
    * disable
    */
-  enable () {
+  enable() {
     const self = this
     // enable
     self.disabled = false
@@ -2521,7 +2634,7 @@ class Toggle {
   /**
    * destroy
    */
-  destroy (weak = false) {
+  destroy(weak = false) {
     const self = this
     // stop queue
     self.queueStopAll() // @FIX autoclose with appendTo outside ajax
@@ -2594,20 +2707,20 @@ Toggle.optionsDefaultSuper = {
   durationOn: false,
   durationOff: false,
   keyboard: {
-    selector: false
+    selector: false,
   },
   auto: {
     time: false,
     step: 1,
     initial: true,
     inverse: false,
-    pause: false
+    pause: false,
   },
   aria: {
     tabindex: true,
     controls: true,
-    labelledby: true
-  }
+    labelledby: true,
+  },
 }
 Xt.optionsGlobal[Toggle.componentName] = {}
 
@@ -2623,7 +2736,7 @@ Xt.Toggle = Toggle
 
 Xt.mount.push({
   matches: '[data-' + Xt.Toggle.componentName + ']',
-  mount: function (object) {
+  mount: function(object) {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Toggle.componentName)
@@ -2635,9 +2748,9 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       self.destroy()
       self = null
     }
-  }
+  },
 })

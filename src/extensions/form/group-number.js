@@ -2,10 +2,10 @@ import { Xt } from 'xtend-library'
 
 Xt.mount.push({
   matches: '.group-number',
-  mount: function (object) {
+  mount: function(object) {
     // methods
 
-    function inputNumberChange (step, e) {
+    function inputNumberChange(step, e) {
       if (!e || !e.detail || !e.detail.skip) {
         const input = object.querySelector('input')
         let val = parseFloat(input.value)
@@ -14,7 +14,7 @@ Xt.mount.push({
       }
     }
 
-    function inputNumberValidate (val) {
+    function inputNumberValidate(val) {
       const input = object.querySelector('input')
       const addEl = object.querySelector('.group-number-add')
       const removeEl = object.querySelector('.group-number-remove')
@@ -70,5 +70,5 @@ Xt.mount.push({
     inputHandler = inputHandler || Xt.dataStorage.set(inputEl, 'inputHandler', inputNumberChange.bind(object, 0))
     inputEl.removeEventListener('change', inputHandler)
     inputEl.addEventListener('change', inputHandler)
-  }
+  },
 })

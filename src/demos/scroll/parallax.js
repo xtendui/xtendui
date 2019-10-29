@@ -8,18 +8,18 @@ import { TweenMax } from 'gsap/TweenMax'
 
 Xt.mount.push({
   matches: '.demo--parallax-title',
-  mount: function (object) {
+  mount: function(object) {
     // init
 
     let self = new Xt.Scroll(object, {
       sticky: 'fixed',
-      end: 350
+      end: 350,
     })
 
     // change
 
-    const eventChange = function () {
-      const el = this;
+    const eventChange = function() {
+      const el = this
       TweenMax.set(el, { transformOrigin: 'left center' })
       TweenMax.set(el, { opacity: self.detail.ratioInverse, scale: 0.9 + 0.1 * self.detail.ratioInverse })
     }
@@ -30,14 +30,14 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       for (const el of self.elements) {
         el.removeEventListener('change.xt.scroll', eventChange)
       }
       self.destroy()
       self = null
     }
-  }
+  },
 })
 
 /**
@@ -46,18 +46,18 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--parallax-img',
-  mount: function (object) {
+  mount: function(object) {
     // init
 
     let self = new Xt.Scroll(object, {
       sticky: 'fixed',
-      end: 350
+      end: 350,
     })
 
     // change
 
-    const eventChange = function () {
-      const el = this;
+    const eventChange = function() {
+      const el = this
       TweenMax.set(el, { y: 100 * self.detail.ratio, opacity: self.detail.ratioInverse })
     }
 
@@ -67,14 +67,14 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       for (const el of self.elements) {
         el.removeEventListener('change.xt.scroll', eventChange)
       }
       self.destroy()
       self = null
     }
-  }
+  },
 })
 
 /**
@@ -83,18 +83,18 @@ Xt.mount.push({
 
 Xt.mount.push({
   matches: '.demo--parallax-footer',
-  mount: function (object) {
+  mount: function(object) {
     // init
 
     let self = new Xt.Scroll(object, {
       sticky: true,
-      start: '125%'
+      start: '125%',
     })
 
     // change
 
-    const eventChange = function () {
-      const el = this;
+    const eventChange = function() {
+      const el = this
       TweenMax.set(el, { opacity: self.detail.ratio, scale: 0.9 + 0.1 * self.detail.ratio })
     }
 
@@ -104,12 +104,12 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       for (const el of self.elements) {
         el.removeEventListener('change.xt.scroll', eventChange)
       }
       self.destroy()
       self = null
     }
-  }
+  },
 })

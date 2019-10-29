@@ -6,13 +6,13 @@ import { StaticQuery, graphql } from 'gatsby'
 import { cssSource, jsSource } from 'assets/scripts/source'
 
 class DemoReact extends React.Component {
-  render () {
+  render() {
     const { children, src, name } = this.props
     const dirs = path.dirname(src).split('/')
     const demo = {
       name: path.basename(src, '.jsx'),
       component: dirs.pop(),
-      type: dirs.pop()
+      type: dirs.pop(),
     }
     demo.name = src.split('/').pop()
     demo.type = demo.type === 'core' ? 'demos' : demo.type
@@ -36,13 +36,17 @@ class DemoReact extends React.Component {
             <script type="text/plain" data-lang="html">
               <demo.Component></demo.Component>
             </script>
-            <div className="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate"/>
-            {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.jsx`).map((file, i) => (
-              <div className="gatsby_demo_source xt-ignore" data-lang="js" dangerouslySetInnerHTML={{ __html: jsSource(demo, '.jsx') }} key={i}/>
-            ))}
-            {data.allFile.files.filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`).map((file, i) => (
-              <div className="gatsby_demo_source xt-ignore" data-lang="less" dangerouslySetInnerHTML={{ __html: cssSource(demo) }} key={i}/>
-            ))}
+            <div className="gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate" />
+            {data.allFile.files
+              .filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.jsx`)
+              .map((file, i) => (
+                <div className="gatsby_demo_source xt-ignore" data-lang="js" dangerouslySetInnerHTML={{ __html: jsSource(demo, '.jsx') }} key={i} />
+              ))}
+            {data.allFile.files
+              .filter(x => x.file.relativePath === `${demo.type}/${demo.component}/${demo.name}.less`)
+              .map((file, i) => (
+                <div className="gatsby_demo_source xt-ignore" data-lang="less" dangerouslySetInnerHTML={{ __html: cssSource(demo) }} key={i} />
+              ))}
           </div>
         )}
       />
@@ -54,5 +58,5 @@ export default DemoReact
 
 DemoReact.propTypes = {
   children: PropTypes.node,
-  src: PropTypes.string.isRequired
+  src: PropTypes.string.isRequired,
 }

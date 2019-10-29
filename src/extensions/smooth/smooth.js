@@ -9,7 +9,7 @@ class Smooth extends Xt.Toggle {
    * @param {Object} optionsCustom User options
    * @constructor
    */
-  constructor (object, optionsCustom = {}) {
+  constructor(object, optionsCustom = {}) {
     super(object, optionsCustom)
   }
 }
@@ -28,11 +28,11 @@ Smooth.optionsDefault = {
     transform: false,
     horizontal: false,
     factor: 1,
-    friction: function (delta) {
+    friction: function(delta) {
       return delta / 9
     },
-    frictionLimit: 1.5
-  }
+    frictionLimit: 1.5,
+  },
 }
 Xt.optionsGlobal[Smooth.componentName] = {}
 
@@ -48,7 +48,7 @@ Xt.Smooth = Smooth
 
 Xt.mount.push({
   matches: '[data-' + Xt.Smooth.componentName + ']',
-  mount: function (object) {
+  mount: function(object) {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.Smooth.componentName)
@@ -60,9 +60,9 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       self.destroy()
       self = null
     }
-  }
+  },
 })

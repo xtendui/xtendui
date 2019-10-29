@@ -1,7 +1,7 @@
 import React from 'react'
 
 class Component extends React.Component {
-  render () {
+  render() {
     return (
       <div>
         React Iframe

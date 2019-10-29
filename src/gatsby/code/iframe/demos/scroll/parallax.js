@@ -10,7 +10,7 @@ export const demo = {
   full: false,
   name: path.basename(__filename, '.js'),
   component: dirs.pop(),
-  type: dirs.pop()
+  type: dirs.pop(),
 }
 
 demo.htmlSource = `
@@ -34,10 +34,8 @@ demo.htmlSource = `
 `
 
 class Page extends React.Component {
-  render () {
-    return (
-      <DemoVanillaIframe demo={demo}/>
-    )
+  render() {
+    return <DemoVanillaIframe demo={demo} />
   }
 }
 

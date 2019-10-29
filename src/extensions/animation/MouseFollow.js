@@ -8,12 +8,12 @@ class MouseFollow {
    * @param {Object} optionsCustom User options
    * @constructor
    */
-  constructor (object, container, optionsCustom = {}) {
+  constructor(object, container, optionsCustom = {}) {
     const self = this
     self.object = object
     self.container = container
     self.optionsCustom = optionsCustom
-    Xt.checkDefined(self, function () {
+    Xt.checkDefined(self, function() {
       self.init()
     })
   }
@@ -25,7 +25,7 @@ class MouseFollow {
   /**
    * init
    */
-  init () {
+  init() {
     const self = this
     // options
     self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
@@ -42,7 +42,7 @@ class MouseFollow {
   /**
    * mousemove
    */
-  mousemove (e) {
+  mousemove(e) {
     const self = this
     // fix initial
     if (self.width === undefined) {
@@ -51,14 +51,14 @@ class MouseFollow {
     // position
     Xt.friction(self.object, {
       x: e.clientX + self.width / 2,
-      y: e.clientY + self.height / 2
+      y: e.clientY + self.height / 2,
     })
   }
 
   /**
    * mouseenter
    */
-  mouseenter (e) {
+  mouseenter(e) {
     const self = this
     const options = self.options
     if (!options.mouseCheck || options.mouseCheck.call(self)) {
@@ -73,7 +73,7 @@ class MouseFollow {
       Xt.friction(self.object, {
         x: e.clientX - self.width / 2,
         y: e.clientY - self.height / 2,
-        friction: false
+        friction: false,
       })
     }
   }
@@ -81,7 +81,7 @@ class MouseFollow {
   /**
    * mouseleave
    */
-  mouseleave () {
+  mouseleave() {
     const self = this
     const options = self.options
     if (!options.mouseCheck || options.mouseCheck.call(self)) {
@@ -98,7 +98,7 @@ class MouseFollow {
   /**
    * destroy
    */
-  destroy () {
+  destroy() {
     const self = this
     self.container.removeEventListener('mousemove', self.mousemove.bind(self))
     self.container.removeEventListener('mouseenter', self.mouseenter.bind(self))

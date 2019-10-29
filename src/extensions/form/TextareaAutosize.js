@@ -8,11 +8,11 @@ class TextareaAutosize {
    * @param {Object} optionsCustom User options
    * @constructor
    */
-  constructor (object, optionsCustom = {}) {
+  constructor(object, optionsCustom = {}) {
     const self = this
     self.object = object
     self.optionsCustom = optionsCustom
-    Xt.checkDefined(self, function () {
+    Xt.checkDefined(self, function() {
       self.init()
     })
   }
@@ -24,7 +24,7 @@ class TextareaAutosize {
   /**
    * init
    */
-  init () {
+  init() {
     const self = this
     // options
     self.options = Xt.merge([self.constructor.optionsDefault, self.optionsCustom])
@@ -47,13 +47,13 @@ class TextareaAutosize {
   /**
    * keychange
    */
-  keychange () {
+  keychange() {
     const self = this
     self.object.style.height = '5px'
-    self.object.style.height = (self.object.scrollHeight) + 'px' // fixes both safari RAF and form reset
-    requestAnimationFrame(function () {
+    self.object.style.height = self.object.scrollHeight + 'px' // fixes both safari RAF and form reset
+    requestAnimationFrame(function() {
       self.object.style.height = '5px' // fixes both safari RAF and form reset
-      self.object.style.height = (self.object.scrollHeight) + 'px'
+      self.object.style.height = self.object.scrollHeight + 'px'
     })
   }
 
@@ -64,7 +64,7 @@ class TextareaAutosize {
   /**
    * destroy
    */
-  destroy () {
+  destroy() {
     const self = this
     // key
     self.object.removeEventListener('keydown', self.keychange.bind(self))
@@ -97,7 +97,7 @@ Xt.TextareaAutosize = TextareaAutosize
 
 Xt.mount.push({
   matches: '[data-' + Xt.TextareaAutosize.componentName + ']',
-  mount: function (object) {
+  mount: function(object) {
     // vars
 
     const optionsMarkup = object.getAttribute('data-' + Xt.TextareaAutosize.componentName)
@@ -109,9 +109,9 @@ Xt.mount.push({
 
     // unmount
 
-    return function unmount () {
+    return function unmount() {
       self.destroy()
       self = null
     }
-  }
+  },
 })
