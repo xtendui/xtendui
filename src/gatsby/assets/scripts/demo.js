@@ -170,7 +170,9 @@ const populateDemo = function (container, i) {
       if (getComputedStyle(sourceTo).display === 'inline-flex') {
         container.dataset.isFullscreenOnly = 'true'
       } else {
-        sourceTo.innerHTML = item.querySelector('script[data-lang="html"]').innerHTML
+        requestAnimationFrame(function () { // @FIX multiple initializations
+          sourceTo.innerHTML = item.querySelector('script[data-lang="html"]').innerHTML
+        })
       }
     }
   }
