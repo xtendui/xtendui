@@ -44,10 +44,8 @@ Use this markup to merge multiple `.btn` in one `[button]` as stack.
   </button>
 </script>
 
-<div class="alert">
-  <div class="alert-content">
-    @TODO see propagate-interaction
-  </div>
+<div class="note note--primary note--background">
+  @TODO see propagate-interaction
 </div>
 
 ##Modes

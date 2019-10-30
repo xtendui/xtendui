@@ -37,10 +37,8 @@ If you used a responsive columns you can set back automatic width in a bigger br
 
 You can nest `.row`, but a flex children can't be a flex itself.
 
-<div class="alert">
-  <div class="alert-content">
-    You can set grid's count and breakpoints in the `_variables.less` file.
-  </div>
+<div class="note note--primary note--background">
+  You can set grid's count and breakpoints in the `_variables.less` file.
 </div>
 
 <demo>

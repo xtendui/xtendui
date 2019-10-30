@@ -21,10 +21,8 @@ Use `.group-inner.flex-auto` to expand groups.
 
 Optional classes for assigning variant (example: `.group--default`).
 
-<div class="alert">
-  <div class="alert-content">
-    Group variant's are defined inside @TODO less path.
-  </div>
+<div class="note note--primary note--background">
+  Group variant's are defined inside @TODO less path.
 </div>
 
 <demo>

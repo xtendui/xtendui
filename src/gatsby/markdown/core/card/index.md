@@ -26,6 +26,7 @@ You can make interactive cards with `button.card` or `a.card`.
           <!-- content -->
         </div>
 
+      </div>
     </div>
   </div>
 </script>

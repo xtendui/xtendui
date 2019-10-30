@@ -1,0 +1,134 @@
+/**
+ * note
+ */
+
+.note {
+  line-height: 1.4;
+  .note-title {
+    .spacing-small();
+    .font-sans--semibold();
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .note-list {
+    .list--default();
+  }
+  // default options
+  .note--medium();
+}
+
+.note--background {
+  border-radius: .5em;
+  border-width: 0;
+  border-style: solid;
+  border-color: transparent;
+}
+
+// variant
+
+.note--default {
+  &:not(.note--background) {
+    color: @text;
+  }
+  &.note--background {
+    border-color: @gray-200;
+    background: @gray-200;
+    color: @text;
+  }
+}
+
+.note--primary {
+  &:not(.note--background) {
+    color: @accent;
+  }
+  &.note--background {
+    border-color: @accent;
+    background: @accent;
+    .text-inverse();
+  }
+}
+
+.note--success {
+  &:not(.note--background) {
+    color: @success;
+  }
+  &.note--background {
+    border-color: @success;
+    background: @success;
+    .text-inverse();
+  }
+}
+
+.note--error {
+  &:not(.note--background) {
+    color: @error;
+  }
+  &.note--background {
+    border-color: @error;
+    background: @error;
+    .text-inverse();
+  }
+}
+
+// size
+
+.note--small {
+  .margin(y, small);
+  .margin(y, layout);
+  .font--small();
+  &.note--background {
+    padding: 1rem 1.5rem;
+  }
+  .note-list {
+    .list-space(small);
+  }
+  .note-title {
+    font-size: 1.7rem;
+  }
+  .note-icon {
+    font-size: 1.7rem;
+  }
+}
+
+.note--medium {
+  .margin(y, medium);
+  .margin(y, layout);
+  .font--medium();
+  &.note--background {
+    padding: 1.5rem 2rem;
+  }
+  .note-list {
+    .list-space(medium);
+  }
+  .note-title {
+    font-size: 2rem;
+  }
+  .note-icon {
+    font-size: 2rem;
+  }
+}
+
+.note--big {
+  .margin(y, big);
+  .margin(y, layout);
+  .font--big();
+  &.note--background {
+    padding: 2rem 2.5rem;
+  }
+  .note-list {
+    .list-space(big);
+  }
+  .note-title {
+    font-size: 3rem;
+  }
+  .note-icon {
+    font-size: 3rem;
+  }
+}
+
+// special
+
+.note--squared {
+  border-radius: 0;
+}

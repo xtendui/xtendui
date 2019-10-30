@@ -637,13 +637,13 @@
 // flex-none
 
 .flex-none(@breakpoint: none) when (@breakpoint = none) {
-  flex: none;
+  flex: 1 1 0%; // % needed ie11
 }
 
 .flex-none(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    flex: none;
+    flex: 1 1 0%; // % needed ie11
   }
 }
 

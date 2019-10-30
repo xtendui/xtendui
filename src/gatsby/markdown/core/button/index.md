@@ -20,8 +20,6 @@ Use `.btn` to create a button.
   </button>
 </script>
 
-<div class="alert">
-  <div class="alert-content">
-    The `span` that wraps the content is optional but recommended for animating the content.
-  </div>
+<div class="note note--primary note--background">
+  The `span` that wraps the content is optional but recommended for animating the content.
 </div>

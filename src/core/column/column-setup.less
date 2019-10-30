@@ -6,7 +6,7 @@
 
 
 .col-auto(@breakpoint: none) when (@breakpoint = none) {
-  flex: 1 1 0%; // % needed ie11
+  .flex-none();
   max-width: none;
   width: auto;
 }
@@ -14,7 +14,7 @@
 .col-auto(@breakpoint: none) when (default()) {
   @query-min: 'min-@{breakpoint}';
   @media @@query-min {
-    flex: 1 1 0%; // % needed ie11
+    .flex-none();
     max-width: none;
     width: auto;
   }
