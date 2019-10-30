@@ -18,9 +18,8 @@ Sed gravida massa in commodo eleifend. Curabitur ac pellentesque nisl. Nunc ut p
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.
 
-<div class="note note--primary note--background">
-  With **multiple mode** you **can't** specify targets with **#id**.
-</div>
+[[notePrimary]]
+| With **multiple mode** you **can't** specify targets with **#id**.
 
 <script type="text/plain" class="language-markup">
   <a href="#" class="btn btn--default">
@@ -86,12 +85,12 @@ let self = new Xt.Scroll(document.documentElement, {
 <demo>
   <demovanilla src="inline/demos/test/vanilla" name="test vanilla">
     <div class="gatsby_demo_text">
-      test vanilla
+      test vanilla <strong>strong</strong> <code>code</code>
     </div>
   </demovanilla>
   <demoreact src="inline/demos/test/react" name="test react">
     <div class="gatsby_demo_text">
-      test react
+      test react <strong>strong</strong> <code>code</code>
     </div>
   </demoreact>
 </demo>
@@ -101,12 +100,12 @@ let self = new Xt.Scroll(document.documentElement, {
 <demo>
   <div class="gatsby_demo_item" data-iframe="iframe/demos/test/vanilla-iframe" data-name="test vanilla frame">
     <div class="gatsby_demo_text">
-      test vanilla iframe
+      test vanilla iframe <strong>strong</strong> <code>code</code>
     </div>
   </div>
   <div class="gatsby_demo_item" data-iframe="iframe/demos/test/react-iframe" data-name="test react iframe">
     <div class="gatsby_demo_text">
-      test react iframe
+      test react iframe <strong>strong</strong> <code>code</code>
     </div>
   </div>
 </demo>

@@ -25,6 +25,6 @@ let self = new Xt.Scroll(document.documentElement, {
 });
 ```
 
-<div class="note note--primary note--background">
-  It's recomended to animate the scroll elements with <code>animation</code> instead of <code>transition</code> because of <a href="{% link faq.html %}#browsers-bugs-fixed-position">this bug</a>.
-</div>
+[[notePrimary]]
+| It's recomended to animate the scroll elements with <code>animation</code> instead of <code>transition</code> because of <a href="{% link faq.html %}#browsers-bugs-fixed-position">this bug</a>.
+

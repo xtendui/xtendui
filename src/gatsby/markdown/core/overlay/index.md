@@ -8,9 +8,8 @@ categories: ["300-Interaction"]
 
 Overlay uses card to style it's content, refer to [card page](/core/card) for complete card's usage.
 
-<div class="note note--primary note--background">
-  Overlays are moved to **body** to prevent **z-index** problems. Style overlay accordingly, don't style or query overlay's content from outside the overlay!
-</div>
+[[notePrimary]]
+| Overlays are moved to **body** to prevent **z-index** problems. Style overlay accordingly, don't style or query overlay's content from outside the overlay!
 
 ##Usage
 

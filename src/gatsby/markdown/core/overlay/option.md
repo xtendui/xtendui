@@ -39,9 +39,8 @@ You can change the **default size** @TODO less path
 
 </div>
 
-<div class="note note--primary note--background">
-  You can set overlay's size in the `_variables.less`.
-</div>
+[[notePrimary]]
+| You can set overlay's size in the `_variables.less`.
 
 `.overlay--tiny` `.overlay--small` `.overlay--medium` `.overlay--big` `.overlay--giant` `.overlay--full`
 

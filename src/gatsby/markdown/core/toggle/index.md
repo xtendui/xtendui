@@ -38,17 +38,15 @@ let self = new Xt.Toggle(document.querySelector('.my-toggle'), {
 
 ##Mode
 
-<div class="note note--primary note--background">
-  For toggle utils classes read the documentation of <a href="{% link _docs/introduction/utils.html %}#toggle">toggle utils</a>.
-</div>
+[[notePrimary]]
+| For toggle utils classes read the documentation of <a href="{% link _docs/introduction/utils.html %}#toggle">toggle utils</a>.
 
 ###Multiple
 
 You can create a toggle with **mutiple** mode by assigning `[data-xt-toggle]` to a scope element, elements and targets must be inside the scope. Check @TODO toggle defatuls for the default elements and targets.
 
-<div class="note note--primary note--background">
-  With **multiple mode** you **can't** specify targets with **#id**.
-</div>
+[[notePrimary]]
+| With **multiple mode** you **can't** specify targets with **#id**.
 
 With multiple **targets**, the ones activated is the one with the same index of the toggled **element**. Nested **targets** are filtered out.
 
@@ -72,9 +70,8 @@ The **unique** mode is useful when triggering **targets outside the scope** of t
 
 When you don't specify **elements** the scope becomes global and the element becomes `[data-xt-toggle]` itself.
 
-<div class="note note--primary note--background">
-  With **munique mode** you **need** to specify targets with **#id**.
-</div>
+[[notePrimary]]
+| With **munique mode** you **need** to specify targets with **#id**.
 
 Toggle a single **element** with `[data-xt-toggle]`.
 

@@ -14,7 +14,7 @@ module.exports = {
     version: version,
     npm: 'https://www.npmjs.com/package/xtend-library',
     github: 'https://github.com/minimit/xtend-library',
-    download: 'https://github.com/minimit/xtend-library/releases'
+    download: 'https://github.com/minimit/xtend-library/releases',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -30,8 +30,8 @@ module.exports = {
         background_color: '#ffffff',
         theme_color: '#fa1664',
         display: 'minimal-ui',
-        icon: 'src/gatsby/assets/images/favicon.png'
-      }
+        icon: 'src/gatsby/assets/images/favicon.png',
+      },
     },
     // resolve js and css
     {
@@ -41,31 +41,31 @@ module.exports = {
         aliases: {
           'xtend-library': './', // resolve xtend-library gatsby
           assets: './src/gatsby/assets',
-          components: './src/gatsby/components'
-        }
-      }
+          components: './src/gatsby/components',
+        },
+      },
     },
     // resolve graphql
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'src',
-        path: './src/'
-      }
+        path: './src/',
+      },
     },
     // pages
     {
       resolve: 'gatsby-plugin-page-creator',
       options: {
-        path: './src/gatsby/components/pages/'
-      }
+        path: './src/gatsby/components/pages/',
+      },
     },
     {
       resolve: 'gatsby-plugin-page-creator',
       options: {
         path: './src/gatsby/code/',
-        ignore: ['inline/**/**', '**/*.source.js?(x)']
-      }
+        ignore: ['inline/**/**', '**/*.source.js?(x)'],
+      },
     },
     // remark
     {
@@ -74,10 +74,20 @@ module.exports = {
         plugins: [
           {
             resolve: 'gatsby-remark-component',
-            options: { components: ['demo'] }
-          }
-        ]
-      }
-    }
-  ]
+            options: { components: ['demo'] },
+          },
+          {
+            resolve: 'gatsby-remark-custom-blocks',
+            options: {
+              blocks: {
+                notePrimary: {
+                  classes: 'note note--primary note--background',
+                },
+              },
+            },
+          },
+        ],
+      },
+    },
+  ],
 }

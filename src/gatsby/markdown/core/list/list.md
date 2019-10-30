@@ -234,9 +234,8 @@ Lists **automatically** add horizontal and vertical spacing to the contents. You
 
 </div>
 
-<div class="note note--primary note--background">
-  You can set list's spaces in the `_variables.less` file.
-</div>
+[[notePrimary]]
+| You can set list's spaces in the `_variables.less` file.
 
 <demo>
   <div class="gatsby_demo-inline">
@@ -1553,13 +1552,11 @@ Set item's order inside the flexbox.
 
 </div>
 
-<div class="note note--primary note--background">
-  You can set orders in the `_variables.less` file.
-</div>
+[[notePrimary]]
+| You can set orders in the `_variables.less` file.
 
-<div class="note note--primary note--background">
-  By default orders from `.order--0` to `.order--2` are negative values.
-</div>
+[[notePrimary]]
+| By default orders from `.order--0` to `.order--2` are negative values.
 
 <demo>
   <div class="gatsby_demo-inline">

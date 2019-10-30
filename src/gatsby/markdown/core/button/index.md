@@ -20,6 +20,5 @@ Use `.btn` to create a button.
   </button>
 </script>
 
-<div class="note note--primary note--background">
-  The `span` that wraps the content is optional but recommended for animating the content.
-</div>
+[[notePrimary]]
+| The `span` that wraps the content is optional but recommended for animating the content.

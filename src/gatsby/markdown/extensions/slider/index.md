@@ -39,9 +39,8 @@ Use this markup to create a drop.
   </div>
 </script>
 
-<div class="note note--primary note--background">
-  `slider-pagination[data-xt-pag].xt-ignore` is essential to the functioning of the slider, so if you don't want to show it add `.display-none`.
-</div>
+[[notePrimary]]
+| `slider-pagination[data-xt-pag].xt-ignore` is essential to the functioning of the slider, so if you don't want to show it add `.display-none`.
 
 You can initialize **slider** by javascript omitting `[data-xt-slider]`.
 
