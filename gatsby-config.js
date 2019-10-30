@@ -80,8 +80,17 @@ module.exports = {
             resolve: 'gatsby-remark-custom-blocks',
             options: {
               blocks: {
+                noteDefault: {
+                  classes: 'note note--default note--background',
+                },
                 notePrimary: {
                   classes: 'note note--primary note--background',
+                },
+                noteError: {
+                  classes: 'note note--error note--background',
+                },
+                noteSuccess: {
+                  classes: 'note note--success note--background',
                 },
               },
             },

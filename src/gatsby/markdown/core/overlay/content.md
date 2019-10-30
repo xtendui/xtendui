@@ -5,7 +5,8 @@ title: "Content"
 date: "2000-04-01"
 ---
 
-Overlay uses card to style it's content, refer to [card page](/core/card/content) for complete card's content.
+[[notePrimary]]
+| Overlay uses card to style it's content, refer to [card page](/core/card/content) for a complete **API**.
 
 ##Custom
 

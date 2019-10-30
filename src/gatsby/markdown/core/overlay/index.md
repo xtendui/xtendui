@@ -2,18 +2,27 @@
 type: "Core"
 parent: "Overlay"
 title: "Overlay"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+description: "Component to create modals and menus that opens over the content, activable by interactions."
 categories: ["300-Interaction"]
 ---
 
-Overlay uses card to style it's content, refer to [card page](/core/card) for complete card's usage.
+##Setup
 
-[[notePrimary]]
-| Overlays are moved to **body** to prevent **z-index** problems. Style overlay accordingly, don't style or query overlay's content from outside the overlay!
+To use this component import the **less** and **js** files accordingly:
+
+```less
+@import '~xtend-library/src/core/overlay/index.less';
+```
+
+```jsx
+import 'xtend-library/src/core/overlay/overlay.js'
+```
+
+Or just [import core](/core/setup/#@TODO).
 
 ##Usage
 
-Use this markup to create a overlay.
+Use this markup to create an overlay.
 
 <script type="text/plain" class="language-markup">
   <button type="button" data-xt-overlay="{ targets: '#overlay--custom' }">
@@ -28,7 +37,7 @@ Use this markup to create a overlay.
   </div>
 </script>
 
-You can use this markup to create a overlay with **no toggle**.
+You can use this markup to create an overlay with **no toggle**.
 
 <script type="text/plain" class="language-markup">
   <div data-xt-overlay>
@@ -42,12 +51,31 @@ You can use this markup to create a overlay with **no toggle**.
   </div>
 </script>
 
-##Initialization
+[[noteError]]
+| Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
 
-You can initialize **overlay** by javascript omitting `[data-xt-overlay]`.
+##Javascript
+
+###Initialization
+
+Initialize automatically within markup with `[data-xt-overlay]`.
+
+Or initialize with javascript:
 
 ```jsx
 new Xt.Overlay(document.querySelector('.my-overlay'), {
   // options
 });
 ```
+
+###Options
+
+@TODO tables options
+
+Overlay uses toggle for logic, refer to [toggle page](/core/toggle#@TODO) for a complete **API**.
+
+###Events
+
+@TODO tables events
+
+Overlay uses toggle for logic, refer to [toggle page](/core/toggle#@TODO) for a complete **API**.

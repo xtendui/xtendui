@@ -16,7 +16,7 @@ html.gatsby_iframe-full {
 
 html.gatsby_iframe-inside {
   body {
-    .overflow-style(@mode: inner);
+    .overflow-style(@mode: none);
     background: @white !important;
   }
 }
@@ -76,17 +76,11 @@ pre {
 }
 
 .gatsby_demo {
-  .margin(y, layout) !important;
-  .margin(top, medium);
-  .margin(bottom, big);
-  border-radius: .5em;
-  border-width: 2px;
-  border-style: solid;
-  border-color: @gray-200;
-  .gatsby_demo_tabs {
-    .margin-remove(top, 2px); // remove border space
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+  .margin(bottom, medium);
+  .margin(bottom, layout);
+  border: 3px solid @gray-200;
+  #overlay--open-full & {
+    border: 0;
   }
   // code
   .gatsby_demo_item {
@@ -160,7 +154,8 @@ pre {
   }
   // tabs
   .gatsby_demo_tabs, .gatsby_demo_code_tabs, .gatsby_demo_code_body {
-    background: @gray-200;
+    background: @gray-100;
+    border-bottom: 1px solid @gray-200;
   }
   .gatsby_demo_tabs, .gatsby_demo_code_tabs {
     position: relative;
@@ -174,10 +169,14 @@ pre {
     .padding(y, .8rem);
     .padding(x, small);
     .btn {
+      color: fade(@text, 50%);
       &.btn--icon {
         padding: .7rem;
       }
-      &:hover, &.hover, &:active, &.active {
+      &:hover, &.hover {
+        color: @text;
+      }
+       &:active, &.active {
         border-color: @white;
         background: @white;
         color: @text;
@@ -189,15 +188,12 @@ pre {
   }
   // text
   .gatsby_demo_text {
-    .note();
-    .note--default();
-    .note--default.note--background();
-    .note--small();
-    .note--small.note--background();
-    .note--squared();
-    .margin-remove(top, 2px);
+    .font--small();
+    .padding(y, small);
+    .padding(x, medium);
+    border-bottom: 1px solid @gray-200;
     code {
-      background: @gray-200--dark !important;
+      background: @gray-200 !important;
     }
   }
   // .gatsby_demo_source
@@ -223,7 +219,9 @@ pre {
 .gatsby_demo, .gatsby_demo_item, .gatsby_demo_item_wrapper, .gatsby_demo_item_wrapper iframe {
   display: flex;
   flex-direction: column;
-  .flex-full();
+  #overlay--open-full & {
+    .flex-full();
+  }
 }
 
 #overlay--open-full {

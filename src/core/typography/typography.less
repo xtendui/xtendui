@@ -40,9 +40,8 @@ html {
 
 body {
   .font-sans--regular();
-  font-size: 1.4rem;
+  .font--medium();
   color: @text;
-  line-height: 1.8;
   font-variant-ligatures: none;
 }
 
@@ -143,14 +142,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   .spacing-medium();
   .padding(y, small);
   .padding(x, medium);
-  background: @gray-200;
+  border: 1px solid @gray-200;
+  background: @gray-100;
   text-align: center;
 }
 
 .header--line {
   .spacing-medium();
   .padding(bottom, small);
-  border-bottom: 1px solid @gray-200;
+  border-bottom: 3px solid @gray-200;
 }
 
 /*
@@ -183,7 +183,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
  */
 
 p {
-  .margin(bottom, small);
+  .margin(bottom, medium);
   .margin(bottom, layout);
 }
 
@@ -214,39 +214,6 @@ small {
   line-height: 1.6;
 }
 
-// code
-
-code {
-  margin: -0.1em 0.1em;
-  padding: 0.1em .3em;
-  background: @gray-200 !important;
-  .font-monospace();
-  font-size: .9em;
-  color: @text;
-}
-
-pre {
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
-  .overflow-style(@mode: inner);
-  .margin(y, medium) !important;
-  .margin(y, layout) !important;
-  .padding(all, medium) !important;
-  width: 100%;
-  border-radius: .5em;
-  border-width: 0;
-  border-style: solid;
-  background: @gray-200 !important;
-  line-height: 0 !important;
-  code {
-    width: 100%;
-    .font-monospace();
-    font-size: 12px !important;
-    line-height: 1.6 !important;
-    white-space: pre-wrap !important;
-  }
-}
-
 // text-inverse
 
 .text-inverse {
@@ -262,13 +229,13 @@ pre {
 
 ul, ol {
   .margin(top, none);
-  .margin(bottom, small);
+  .margin(bottom, medium);
   padding-left: 2rem;
   > li {
-    .margin(bottom, small);
+    .margin(bottom, medium);
   }
   > ul, > ol {
-    .margin(y, small);
+    .margin(y, medium);
   }
 }
 
@@ -321,7 +288,7 @@ ul {
  */
 
 dl {
-  .margin(bottom, small);
+  .margin(bottom, medium);
   .margin(bottom, layout);
   .dl--block();
   line-height: 1.6;

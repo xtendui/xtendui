@@ -80,7 +80,7 @@
 
 .table--stripe {
   tbody tr:nth-of-type(odd) {
-    background: @gray-200;
+    background: @gray-100;
   }
   tbody tr:nth-of-type(even) {
     background: transparent;
@@ -90,10 +90,8 @@
 // .table--border
 
 .table--border {
-  border: @table-border--width solid @gray-200;
-  th, td {
-    border: @table-border--width solid @gray-200;
-  }
+  border-radius: .5em;
+  border: 3px solid @gray-200;
 }
 
 // .table--responsive

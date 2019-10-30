@@ -18,7 +18,7 @@ Classes for assigning variant (e.g.: border / background / font colors).
 | Class                   | `.overlay--{variant}`                        | `.overlay--default` `.overlay--primary` |
 
 </div>
-        
+
 <demo>
   <demovanilla src="inline/core/overlay/variant">
   </demovanilla>
@@ -28,8 +28,6 @@ Classes for assigning variant (e.g.: border / background / font colors).
 
 Optional classes for assigning width.
 
-You can change the **default size** @TODO less path
-
 <div class="table--scroll">
 
 |                         | Syntax                                    | Example                       |
@@ -38,11 +36,6 @@ You can change the **default size** @TODO less path
 | Mixin                   | `.overlay-size({size})`                  | `.overlay-size(small)`       |
 
 </div>
-
-[[notePrimary]]
-| You can set overlay's size in the `_variables.less`.
-
-`.overlay--tiny` `.overlay--small` `.overlay--medium` `.overlay--big` `.overlay--giant` `.overlay--full`
 
 <demo>
   <demovanilla src="inline/core/overlay/size">
