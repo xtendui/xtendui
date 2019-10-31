@@ -22,19 +22,19 @@
     }
     &.active {
       .anim-x-inverse.active();
-      animation-duration: @time-big;
+      animation-duration: @time-medium;
       &:after {
         animation-name: demo--slider--toggle-css--in;
-        animation-duration: @time-big;
+        animation-duration: @time-medium;
         animation-timing-function: @bez-in;
         transform: translateX(-100%);
       }
       &.inverse {
         .anim-x.active();
-        animation-duration: @time-big;
+        animation-duration: @time-medium;
         &:after {
           animation-name: demo--slider--toggle-css-in-inverse;
-          animation-duration: @time-big;
+          animation-duration: @time-medium;
           animation-timing-function: @bez-in;
           transform: translateX(100%);
         }
@@ -42,19 +42,19 @@
     }
     &.out {
       .anim-x-inverse.out();
-      animation-duration: @time-big;
+      animation-duration: @time-medium;
       &:after {
         animation-name: demo--slider--toggle-css--out;
-        animation-duration: @time-big;
+        animation-duration: @time-medium;
         animation-timing-function: @bez-out;
         transform: translateX(0);
       }
       &.inverse {
         .anim-x.out();
-        animation-duration: @time-big;
+        animation-duration: @time-medium;
         &:after {
           animation-name: demo--slider--toggle-css-out-inverse;
-          animation-duration: @time-big;
+          animation-duration: @time-medium;
           animation-timing-function: @bez-out;
           transform: translateX(0);
         }

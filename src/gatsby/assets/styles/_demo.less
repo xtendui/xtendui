@@ -79,6 +79,22 @@ pre {
   .margin(bottom, medium);
   .margin(bottom, layout);
   border: 3px solid @gray-200;
+  transition-property: border-color;
+  transition-duration: @time-medium;
+  transition-timing-function: @bez-out;
+  &:hover {
+    border-color: @gray-300;
+    transition-property: border-color;
+    transition-duration: @time-medium;
+    transition-timing-function: @bez-in;
+    .gatsby_demo_tabs, .gatsby_demo_code_tabs {
+      .btn {
+        &:active, &.active {
+          border-color: @gray-300 !important;
+        }
+      }
+    }
+  }
   #overlay--open-full & {
     border: 0;
   }
@@ -169,15 +185,13 @@ pre {
     .padding(y, .8rem);
     .padding(x, small);
     .btn {
+      border-width: 3px;
       color: fade(@text, 50%);
       &.btn--icon {
         padding: .7rem;
       }
-      &:hover, &.hover {
-        color: @text;
-      }
-       &:active, &.active {
-        border-color: @white;
+      &:hover, &.hover, &:active, &.active {
+        border-color: @gray-200;
         background: @white;
         color: @text;
       }
@@ -204,6 +218,18 @@ pre {
     &:not(.gatsby_demo_source--from) {
       display: none;
     }
+  }
+}
+
+.gatbsy_table {
+  transition-property: border-color;
+  transition-duration: @time-medium;
+  transition-timing-function: @bez-out;
+  &:hover, &.hover, &:active, &.active {
+    border-color: @gray-300;
+    transition-property: border-color;
+    transition-duration: @time-medium;
+    transition-timing-function: @bez-in;
   }
 }
 

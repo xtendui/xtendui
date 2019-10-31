@@ -135,16 +135,18 @@
       left: 0;
       width: 100%;
       height: 2px;
-      background: @gray-200;
+      background: @gray-300;
     }
   }
   // animation
   .gatsby_make-line_container {
     .gatsby_make-line_line:after {
-      left: 100%;
+      left: 0;
       width: 0;
       opacity: 0;
-      transition: all @time-medium @bez-out;
+      transition-property: all;
+      transition-duration: @time-medium;
+      transition-timing-function: @bez-out;
     }
   }
   &:hover, &.hover, &:active, &.active {
@@ -153,20 +155,11 @@
         left: 0;
         width: 100%;
         opacity: 1;
-        animation: anim-opacity--in @time-medium @bez-in, line--in @time-medium @bez-in;
+        transition-property: all;
+        transition-duration: @time-medium;
+        transition-timing-function: @bez-out;
       }
     }
-  }
-}
-
-@keyframes line--in {
-  0% {
-    left: 0;
-    width: 0;
-  }
-  100% {
-    left: 0;
-    width: 100%;
   }
 }
 
@@ -188,7 +181,9 @@
   // animation
   .gatsby_site_article_anchor {
     opacity: 0;
-    transition: all @time-medium @bez-out;
+    transition-property: all;
+    transition-duration: @time-medium;
+    transition-timing-function: @bez-out;
   }
   &:hover, &.hover, &:active, &.active {
     a {
@@ -196,7 +191,9 @@
     }
     .gatsby_site_article_anchor {
       opacity: 1;
-      animation: anim-opacity--in @time-medium @bez-in;
+      transition-property: all;
+      transition-duration: @time-medium;
+      transition-timing-function: @bez-in;
     }
   }
 }

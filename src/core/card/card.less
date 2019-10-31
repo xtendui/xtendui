@@ -307,32 +307,32 @@
 .card {
   a&, button& {
     transition-property: all;
-    transition-duration: @time-big;
+    transition-duration: @time-medium;
     transition-timing-function: @bez-out;
     > .card-design {
       transition-property: all;
-      transition-duration: @time-big;
+      transition-duration: @time-medium;
       transition-timing-function: @bez-out;
     }
     .card-block.card-item {
       transition-property: transform;
-      transition-duration: @time-big;
+      transition-duration: @time-medium;
       transition-timing-function: @bez-out;
     }
     &:hover, &.hover, &:active, &.active {
       transform: translateY(-.5rem) scale(1.03, 1.05);
       transition-property: all;
-      transition-duration: @time-big;
+      transition-duration: @time-medium;
       transition-timing-function: @bez-in;
       > .card-design {
         transition-property: all;
-        transition-duration: @time-big;
+        transition-duration: @time-medium;
         transition-timing-function: @bez-in;
       }
       .card-block.card-item {
         transform: scale(0.97, 0.95);
         transition-property: transform;
-        transition-duration: @time-big;
+        transition-duration: @time-medium;
         transition-timing-function: @bez-in;
       }
     }
